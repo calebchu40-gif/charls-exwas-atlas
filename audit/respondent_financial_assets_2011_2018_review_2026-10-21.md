@@ -1,8 +1,8 @@
 # 个人收入模块金融资产字段核查（2011–2018）
 
-> **来源身份更正（2026-10-21）：**本文旧版本引用的 `CHARLS_2011_Baseline_Questionnaire_official_extracted.txt` 实际内容是2013随访问卷。本文涉及的2011题干或路由判断须对照正确的官方2011基线问卷复核；在复核完成前，不能把该旧摘录当作2011题意证据。处理范围及当前状态见 [`2011_questionnaire_source_identity_correction_2026-10-21.md`](2011_questionnaire_source_identity_correction_2026-10-21.md)。
+> **来源身份更正（2026-10-22）：**本文2011金融资产来源已改为正式`CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`。旧路径`CHARLS_2011_Baseline_Questionnaire_official_extracted.txt`实际是2013随访问卷。生成脚本此前已引用正确2011基线来源；本次补核了问卷题组和路由，并未使用微观记录。
 
-核查日期：2026-10-21。依据CHARLS官方问卷原文与公开Codebook字段标签建立元数据候选；未读取个人级记录，也未把Codebook频数作为分析样本量。
+核查日期：2026-10-21；2011来源更正复核：2026-10-22。依据CHARLS各波官方问卷原文与公开Codebook字段标签建立元数据候选；未读取个人级记录，也未把Codebook频数作为分析样本量。
 
 ## 纳入的构念
 
@@ -25,6 +25,13 @@
 
 ## 依据与复现
 
-- `sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt`，G&H个人资产题组；`sources_official/CHARLS_2013_Questionnaire.pdf`及其提取文本，个人资产题组；`sources_official/CHARLS_2015_Questionnaire.pdf`及其提取文本，第217页附近个人资产题组；`sources_official/CHARLS_2018_Questionnaire_extracted.txt`，HC001–HC018。
+- `sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`，第6778–6881行附近，G&H个人资产题组；`sources_official/CHARLS_2013_Questionnaire.pdf`及其提取文本，个人资产题组；`sources_official/CHARLS_2015_Questionnaire.pdf`及其提取文本，第217页附近个人资产题组；`sources_official/CHARLS_2018_Questionnaire_extracted.txt`，HC001–HC018。
 - 字段身份另由`audit/raw_variable_catalog_v1.csv`及各波Codebook确认；Codebook频数不用于推断样本量。
 - 生成器：`scripts/build_personal_income_crosswalk.py`；完整重建：`python scripts/build_ep_atlas_metadata.py`。
+
+
+## 2011来源身份复核补充（2026-10-22）
+
+已对照正确2011基线家户问卷确认本审计的核心路由：HC001问受访者与配偶在家的现金；HC003要求共同持有时按50%计，金额与百分比两种报告方式分开；HC004=No跳HC007，HC007=No跳HC010；HC010询问过去一年股票持有，No跳HC015，但HC013标题问当前持有股票市值，故不得把过去一年持有状态直接等同访谈时仍持有。HC015也问过去一年基金持有，No跳至HC020前的程序。HC020按名下存款、债券、股票、基金筛选；HC021/022询问由他人名下持有的本人资产及价值。HC027/028为公积金状态/金额，HC030/031为未归还单位集资款及金额。已保留原审计对过去一年/当前余额口径、条件题分母和特殊缺失值的限制。
+
+代码本中的频数/观测统计不进入网站分析数据；本次只核问卷来源和公开元数据。实际记录的特殊码、HC013适用记录和金额问答缺失仍需通过合法取得的波次数据做受控QA。
