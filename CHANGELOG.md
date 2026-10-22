@@ -2,6 +2,7 @@
 
 ## 2026-10-22 (continued)
 
+- Corrected the rotating-savings audit's 2011 source path and verified the 2011/2013 HC036=No skip to HD001 and conditional HC037 balance against the actual questionnaires. The 2015 private-lending wording and absent HC036_W3 release field remain distinct and unresolved as documented. Five source-identity audits remain.
 - Corrected the respondent financial-assets audit to cite the actual 2011 baseline household questionnaire and rechecked its cash, ownership-share, securities, fund, housing-fund, and employer-held contribution routes. The personal-income builder already used the correct source; no microdata were read. Six source-identity audits remain.
 
 - Re-reviewed the 2011 pension subsidy source against the correctly identified baseline household questionnaire and Codebook. Confirmed FN009 eligibility/skip routing, FN011 annual-versus-lump-sum selector, and six distinct amount fields; corrected the source path and reduced the 2011 source-identity review queue to 7 items. Microdata values and special missing codes remain unverified.
