@@ -1,6 +1,6 @@
 # DB021/DB029 辅助工具使用字段复核（2026-10-17）
 
-> **来源身份更正（2026-10-21）：**本文旧版本引用的 `CHARLS_2011_Baseline_Questionnaire_official_extracted.txt` 实际内容是2013随访问卷。本文涉及的2011题干或路由判断须对照正确的官方2011基线问卷复核；在复核完成前，不能把该旧摘录当作2011题意证据。处理范围及当前状态见 [`2011_questionnaire_source_identity_correction_2026-10-21.md`](2011_questionnaire_source_identity_correction_2026-10-21.md)。
+> **来源身份更正（2026-10-22）：**已用正式2011基线家户问卷复核DB021与DB029的题干和路由。DB021仅在DB010–DB020有任一项需要帮助时询问；无帮助需求者跳至DB029。DB022选“无人帮助”及DB026未付费的路径也跳至DB029，因此DB029与DB021不是相同适用人群或同一测量轮次。DB021为5选项，DB029为7选项，分别保留并按各自路径确定分母。正确问卷见`sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc`及相邻摘录。
 
 ## 结论
 
@@ -12,11 +12,13 @@
 
 ## 分析限制
 
+2011问卷明示DB021的前置条件是DB010–DB020任一项需要帮助；没有帮助需求者跳至DB029。DB022选择无人帮助或DB026未支付帮助费用时也跳至DB029。不要把这些跳转后的空值当作未使用辅助器具；DB021与DB029分别采用各自符合路由的分母。
+
 题目位于功能帮助问卷段，但DB021和DB029的具体适用路由不同，必须分别按逐波问卷重建分母。DB021的“无辅助工具”为选项5，DB029为选项7。未选项的空值不能自动视为“No”；正式分析前必须在获批数据中检查：每个题组的适用路径、该字段的缺失/跳题/多选存储方式、DB021选项5或DB029选项7与其他选项能否同时出现，以及个人受访/代理回答资格。当前仅将其纳入可搜索元数据候选目录，不计算使用率、不构建综合分数，也不进入关联模型。
 
 ## 来源
 
-- `sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt`：DB029 原题和选项，含 DB021 所在位置及“不付费帮助则跳至 DB029”的路由上下文。
+- `sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`：DB021原题、五个选项及功能困难帮助路由；DB029原题、七个选项，以及无帮助需求/无人帮助/未付费帮助等跳转上下文。
 - `sources_official/CHARLS_2013_Questionnaire_extracted.txt`、`sources_official/CHARLS_2015_Questionnaire_extracted.txt`：对应轮次 DB029 原题与选择项。
 - `sources_official/CHARLS_2011_Codebook_extracted.txt`、`sources_official/CHARLS_2013_Codebook_extracted.txt`、`sources_official/CHARLS_2015_Codebook_extracted.txt`：`db029s1`–`db029s7`逐项编码标签；2011代码本也列出`db021s1`–`db021s5`。
 - 映射表：`audit/assistive_device_phenotype_crosswalk_v1.csv`；总构建：`scripts/build_ep_atlas_metadata.py`。
