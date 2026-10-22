@@ -1118,6 +1118,30 @@ def main() -> None:
     out["Value.Labels"] = [existing or reviewed for existing, reviewed in zip(out["Value.Labels"].fillna(""), reviewed_labels)]
     out["Value.Label.Source"] = [existing or reviewed for existing, reviewed in zip(out["Value.Label.Source"].fillna(""), reviewed_sources)]
     out["Value.Label.Review"] = ["conflict" if conflict else ("officially reviewed" if reviewed or source else "not yet reviewed") for conflict, reviewed, source in zip(label_conflicts, reviewed_labels, out["Value.Label.Source"])]
+    # Bring the domain audit's field-level review state into the main E/P
+    # catalogue even when a continuous measure has no discrete value labels.
+    # This prevents reviewed counts, units, and conditional routes from being
+    # presented as generic unreviewed categorical labels.
+    healthcare_review_path = root / "audit" / "healthcare_access_crosswalk_v1.csv"
+    if healthcare_review_path.exists():
+        healthcare_review = pd.read_csv(healthcare_review_path, dtype=str, encoding="utf-8-sig").fillna("")
+        for item in healthcare_review.to_dict(orient="records"):
+            wave = str(item.get("wave", "")).strip()
+            code = str(item.get("code", "")).strip().lower()
+            status = str(item.get("value_label_status", "")).strip()
+            source = str(item.get("value_label_source", "")).strip()
+            if not wave or not code or not status:
+                continue
+            selected = (
+                out["Source.Wave"].astype(str).eq(wave)
+                & out["Variable.Name"].str.lower().eq(code)
+                & out["category"].eq("healthcare access")
+            )
+            unlocked = selected & ~out["Value.Label.Review"].astype(str).str.contains("conflict", case=False, na=False)
+            out.loc[unlocked, "Value.Label.Review"] = status
+            if source:
+                missing_source = unlocked & out["Value.Label.Source"].fillna("").eq("")
+                out.loc[missing_source, "Value.Label.Source"] = source
     # Preserve the explicit wave-specific audit wording for housing labels;
     # the generic label merge above establishes provenance and conflicts.
     housing_label_path = root / "audit" / "housing_value_label_review_v1.csv"

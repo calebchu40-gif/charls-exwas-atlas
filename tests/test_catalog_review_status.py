@@ -134,6 +134,19 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertIn("site-prototype/dist/**", workflow)
         self.assertIn("workflow_dispatch:", workflow)
 
+    def test_healthcare_review_states_reach_main_catalog(self):
+        rows = [
+            row for row in self.catalog
+            if row.get("category") == "healthcare access"
+            and row.get("Variable.Name", "").lower() == "ed005_1_"
+            and row.get("Source.Wave") == "2011"
+        ]
+        self.assertTrue(rows)
+        self.assertTrue(any("连续计数" in row.get("Value.Label.Review", "") for row in rows))
+        self.assertTrue(any("healthcare_access_crosswalk_v1.csv" in row.get("Value.Label.Source", "") or "CHARLS_2011_Codebook" in row.get("Value.Label.Source", "") for row in rows))
+        app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
+        self.assertIn("x.value_label_review&&x.value_label_review!=='not yet reviewed'?x.value_label_review", app)
+
     def test_active_do_not_analyze_inventory_matches_catalog_and_triage_count(self):
         catalog = json.loads((ROOT / "site-prototype/dist/catalog.json").read_text(encoding="utf-8"))
         active = {

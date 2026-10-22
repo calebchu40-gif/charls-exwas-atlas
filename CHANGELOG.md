@@ -3,6 +3,7 @@
 ## 2026-10-23
 
 - Clarified the Chinese labels and review-state explanation in the measurement/design metadata (C) catalog, including that candidate covariates are not automatic adjustment recommendations and continuous measures may have no discrete value labels. GitHub Pages now deploys automatically when published-site assets or the deployment workflow change on `main`; manual dispatch remains available.
+- Propagated all 217 field-level healthcare-access review states into the main E/P catalogue, including insurance coding uncertainty, continuous use counts, conditional hospitalization measures, and cost/bracket structure. This improves metadata provenance and interpretation; it does not make the fields analysis-ready.
 
 ## 2026-10-22 (continued)
 
