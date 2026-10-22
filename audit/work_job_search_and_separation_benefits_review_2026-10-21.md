@@ -1,6 +1,6 @@
 # 就业求职与离职补偿候选审计（2026-10-21）
 
-> **来源身份更正（2026-10-21）：**本文旧版本引用的 `CHARLS_2011_Baseline_Questionnaire_official_extracted.txt` 实际内容是2013随访问卷。本文涉及的2011题干或路由判断须对照正确的官方2011基线问卷复核；在复核完成前，不能把该旧摘录当作2011题意证据。处理范围及当前状态见 [`2011_questionnaire_source_identity_correction_2026-10-21.md`](2011_questionnaire_source_identity_correction_2026-10-21.md)。
+> **来源身份更正（2026-10-22）：**2011依据现改为正式`CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`，旧引用文件实际包含2013 Follow-up Questionnaire。已重核FK002及FL021–FL022题干/路由；2011 Codebook只检出FK002，未检出FL021–FL022条目或分布，故仍不推断其数值表现。
 
 ## 范围和结论
 
@@ -16,7 +16,7 @@
 
 ## 官方依据
 
-- 2011基线家户问卷官方摘录：`sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt`，FK002和FL021–FL022部分。2011代码本`audit/CHARLS_2011_Codebook_extracted.txt`可确认FK002的Yes/No标签，但未检出FL021–FL022对应的代码本分布；不推断观测频数或实际变异。
+- 2011基线家户问卷官方摘录：`sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`第4993行附近FK002及第5006、5139–5145行附近FL021–FL022。FL021–FL022属于最近主要工作史模块，模块路由标为FA007=1或（FA007=2且FA008=2）；仅FL021=Yes后询问FL022金额和工作年数。2011 Codebook检出FK002的Yes/No标签，但未检出FL021–FL022条目或分布；不推断其观测频数或实际变异。
 - 2013、2015问卷与代码本：`sources_official/CHARLS_2013_Questionnaire_extracted.txt`、`sources_official/CHARLS_2013_Codebook_extracted.txt`、`sources_official/CHARLS_2015_Questionnaire_extracted.txt`、`sources_official/CHARLS_2015_Codebook_extracted.txt`。FK002标签为Yes/No；FL021=Yes才问FL022的金额和工作年数。
 - 2018问卷与代码本：`sources_official/CHARLS_2018_Questionnaire_extracted.txt`、`sources_official/CHARLS_2018_Codebook_extracted.txt`。FK002问过去一个月求职；FL021问severance package，Yes后问金额/支付依据/计算年数。
 - 逐变量目录来源和单位见`audit/work_exposure_crosswalk_v1.csv`、`audit/work_exposure_value_labels_v1.csv`；站点概念详情见`site-prototype/dist/work_exposures_v1.json`。
@@ -32,3 +32,7 @@
 ## 构建与验证
 
 就业专题生成脚本`python scripts/build_work_exposure_crosswalk.py`现生成72个工作暴露/工作史概念、199条映射；工作标签脚本`python scripts/build_work_exposure_value_labels.py`处理433条标签/语义记录。全量入口`python scripts/build_ep_atlas_metadata.py`完成；新增16条E/P链接均匹配主目录，新增5个候选概念没有同波同码重复链接。最新全目录845个候选E/P概念（E=585、P=269、交集9），E/P链接5,252条；C类来源记录23条，其中3条既有资格元数据不在E/P字段目录；总字段目录7,629行（E/P 7,151、C 478）。
+
+## 2011来源身份复核补充（2026-10-22）
+
+正确2011问卷中FK002位于非就业/求职问题段，询问上个月是否找新工作；回答No跳至FL001。最近工作问题说明适用条件为FA007=1或（FA007=2且FA008=2）；FL021询问离开最近一份工作时除法定退休金外是否获得其他款项，Yes后才询问FL022补偿金额及补偿计算工作年数。2011 Codebook对FK002有Yes/No标签，但无FL021/FL022条目。生成脚本`build_work_exposure_crosswalk.py`此前已使用正确2011文件，本次修正审计来源与补充分母路由，不读取受访者数据。
