@@ -166,26 +166,16 @@ for rec in raw.itertuples(index=False):
         extra = {"unit": "calendar year" if component == "year" else "calendar month; 0=not remembered",
                  "value_label_status": "official questionnaire date range and month-0 convention reviewed; frequencies omitted",
                  "value_label_source": f"sources_official/CHARLS_{wave}_Questionnaire_extracted.txt; sources_official/CHARLS_{wave}_Codebook_extracted.txt"}
-    elif re.fullmatch(r"fn028_w2_[12]", code) and wave == "2013":
-        component = "year" if code.endswith("_1") else "month"
-        kind, concept, display = ("basic pension participation stop-date component",
-                                  "pension_basic_plan_participation_stop_date",
-                                  "停止参加企业职工基本养老保险的时间")
-        mapping_status = "2013 questionnaire and codebook agree; selected work-unit route verified; candidate only"
-        caveat += " 2013 questionnaire and codebook describe stopping participation; retain year and month separately. Month 0 means not remembered, not January. Do not derive participation duration without validated dates and risk-set definition."
-        extra = {"unit": "calendar year" if component == "year" else "calendar month; 0=not remembered",
-                 "value_label_status": "official questionnaire date range and month-0 convention reviewed; frequencies omitted",
-                 "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"}
-    elif re.fullmatch(r"fn028_w2_[12]", code) and wave == "2015":
+    elif re.fullmatch(r"fn028_w2_[12]", code) and wave in {"2013", "2015"}:
         component = "year" if code.endswith("_1") else "month"
         kind, concept, display = ("conflicted basic pension participation date component",
-                                  "pension_basic_plan_fn028_timing_2015_conflicted",
-                                  "企业职工基本养老保险参保时间组成（2015来源冲突）")
-        mapping_status = "DO NOT ANALYZE: 2015 questionnaire says start participating; 2015 codebook says stop participating"
-        caveat += " Official sources conflict on whether this is a start or stop date. Retain only as a searchable, wave-specific audit candidate; do not recode, derive duration, harmonize with FN027 or 2013 FN028, or analyze until CHARLS resolves the discrepancy."
-        extra = {"unit": "calendar year" if component == "year" else "calendar month; 0 convention needs source resolution",
+                                  "pension_basic_plan_fn028_timing_questionnaire_codebook_conflicted",
+                                  "\u4f01\u4e1a\u804c\u5de5\u57fa\u672c\u517b\u8001\u4fdd\u9669FN028\u5e74\u6708\uff08\u95ee\u5377/\u4ee3\u7801\u672c\u9898\u610f\u51b2\u7a81\uff09")
+        mapping_status = f"DO NOT ANALYZE: {wave} questionnaire says start participating; {wave} codebook says stop participating"
+        caveat += f" {wave} questionnaire wording says start participating, while its Codebook title says stop participating. Keep this wave-code as a locked audit candidate; do not assign start/stop meaning, derive duration, harmonize with FN027 or another wave, or analyze until CHARLS resolves the discrepancy. The questionnaire's month 0 means not remembered, but does not resolve the event-identity conflict."
+        extra = {"unit": "calendar year" if component == "year" else "calendar month; 0=not remembered per questionnaire; event identity unresolved",
                  "value_label_status": "questionnaire/codebook wording conflict; unresolved",
-                 "value_label_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"}
+                 "value_label_source": f"sources_official/CHARLS_{wave}_Questionnaire_extracted.txt; sources_official/CHARLS_{wave}_Codebook_extracted.txt"}
     elif wave == "2013" and code in {"fn072_w2_1", "fn072_w2_2", "fn072_w2_3", "fn072_w2_4", "fn072_w2_5"}:
         fn072_specs = {
             "fn072_w2_1": ("annual", "pension_new_rural_annual_contribution_amount", "新农保年度缴费金额", "Yuan/year", "FN072 contribution form=annual payment"),

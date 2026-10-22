@@ -20,7 +20,6 @@ annual pension subsidy from collective,pension_annual_subsidy_collective_amount_
 annual pension subsidy from government,pension_annual_subsidy_government_amount_named_program,选定养老金计划的政府年度补贴金额,2011,1,fn061_3
 annual premium amount respondent reports paying toward commercial pension insurance,commercial_pension_annual_premium_amount,商业养老保险年度缴费金额,2011,1,fn053
 basic pension participation start-date component,pension_basic_plan_participation_start_date,通过所选工作单位参加企业职工基本养老保险的开始年月,"2013,2015",4,fn027_w2_1;fn027_w2_2
-basic pension participation stop-date component,pension_basic_plan_participation_stop_date,停止参加企业职工基本养老保险的时间,2013,2,fn028_w2_1;fn028_w2_2
 calendar month commercial pension contributions began,pension_commercial_contribution_start_month_2018,商业养老金开始缴费月份,2018,1,fn046_w4_2
 calendar year commercial pension contributions began,pension_commercial_contribution_start_year_2018,商业养老金开始缴费年份,2018,1,fn046_w4_1
 calendar year in which respondent's land was requisitioned,land_requisition_year,土地被征收年份,"2013,2015",2,fn079_w2_2
@@ -54,7 +53,7 @@ commercial pension total premium amount,pension_total_premium_amount_commercial,
 completed annual contribution duration,pension_supplementary_route_years_already_paid_new_rural_social,补缴后按年缴费completed annual contribution duration：新型农村社会养老保险,2015,1,fn072_w3_4_3_1_
 completed annual contribution duration,pension_supplementary_route_years_already_paid_residents,补缴后按年缴费completed annual contribution duration：居民养老金,2015,1,fn072_w3_4_3_2_
 completed annual contribution duration,pension_supplementary_route_years_already_paid_urban_residents,补缴后按年缴费completed annual contribution duration：城镇居民养老金,2015,1,fn072_w3_4_3_3_
-conflicted basic pension participation date component,pension_basic_plan_fn028_timing_2015_conflicted,企业职工基本养老保险参保时间组成（2015来源冲突）,2015,2,fn028_w2_1;fn028_w2_2
+conflicted basic pension participation date component,pension_basic_plan_fn028_timing_questionnaire_codebook_conflicted,企业职工基本养老保险FN028年月（问卷/代码本题意冲突）,"2013,2015",4,fn028_w2_1;fn028_w2_2
 conflicted expected pension lump-sum benefit field,pension_fn094_lump_sum_code_conflict,其他养老金计划预期一次性待遇（问卷代码冲突）,"2013,2015",2,fn094_w2_2
 continued annual pension payment status,pension_supplementary_route_continued_annual_payment_new_rural_social,补缴后是否继续按年缴费：新型农村社会养老保险,2015,1,fn072_w3_4_1_
 continued annual pension payment status,pension_supplementary_route_continued_annual_payment_residents,补缴后是否继续按年缴费：居民养老金,2015,1,fn072_w3_4_2_

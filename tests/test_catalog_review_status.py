@@ -72,6 +72,19 @@ class CatalogReviewStatusTests(unittest.TestCase):
         wave2 = [row for row in self.catalog if row.get("Variable.Name", "").lower() == "fn022_w2" and "2013" in row.get("waves", "").split(",")]
         self.assertEqual(len(wave2), 1)
         self.assertIn("pension_past_basic_plan_participation_when_not_currently_enrolled", wave2[0].get("candidate_concept_ids", ""))
+
+    def test_2013_and_2015_fn028_date_identity_conflict_is_locked(self):
+        import csv
+        with (ROOT / "audit/pension_exposure_variable_mapping_v1.csv").open(encoding="utf-8-sig", newline="") as handle:
+            mapped = list(csv.DictReader(handle))
+        rows = [row for row in mapped if row.get("code", "").lower() in {"fn028_w2_1", "fn028_w2_2"} and row.get("wave") in {"2013", "2015"}]
+        self.assertEqual(len(rows), 4)
+        for row in rows:
+            self.assertEqual(row.get("concept_id"), "pension_basic_plan_fn028_timing_questionnaire_codebook_conflicted")
+            self.assertIn("DO NOT ANALYZE", row.get("mapping_status", ""))
+            self.assertIn("says start participating", row.get("mapping_status", ""))
+            self.assertIn("says stop participating", row.get("mapping_status", ""))
+
     def test_main_search_renderer_surfaces_locked_source_conflict(self):
         app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
         self.assertIn("问卷与Codebook编码冲突，已锁定不可分析", app)
