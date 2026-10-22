@@ -14,6 +14,11 @@ The deployment action checks that the entry files exist, parses every top-level 
 
 ## Hosting constraint
 
-GitHub Docs state that Pages is available for public repositories on GitHub Free and for public or private repositories on Pro/Team/Enterprise plans; Pages content is publicly accessible by default. The account plan and Pages setting still need to be confirmed in the project settings. If the current private repository cannot use Pages on its plan, retain this source repository as private and deploy only the static directory from a separate public site repository.
+GitHub Docs state that Pages is available for public repositories on GitHub Free and for public or private repositories on Pro/Team/Enterprise plans; Pages content is publicly accessible by default. The user explicitly approved making the complete project repository public. The repository remains private pending GitHub account email re-authentication; after the owner completes that challenge, change visibility and choose GitHub Actions in Pages settings. No fallback public site repository is planned unless the owner later changes this preference.
 
 Official references: [GitHub Pages publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site), [creating a Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+
+
+## Current status after owner visibility decision
+
+On 2026-10-22 the owner stated that full public visibility is acceptable. GitHub Settings confirmed the repository is private and Pages is unavailable at the current account tier while private. The visibility flow reached GitHub “Confirm access” and requires the account owner to complete email verification. The project has not yet been made public and no site URL is live. The GitHub Pages artifact remains 32 static files (29 JSON files; 27.61 MB JSON), with zero `.dta`, `.sav`, `.rds`, `.parquet`, `.sqlite`, `.zip`, `.7z`, `.rar` or `.csv` files. Every JSON parses successfully.
