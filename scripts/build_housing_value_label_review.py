@@ -37,6 +37,8 @@ HOUSING_CATEGORIES = {
         "i009": "1=Yes; 2=No",
         "i010": "1=Yes; 2=No",
         "i011": "1=1-5 steps; 2=6-15 steps; 3=16-25 steps; 4=More than 25 steps",
+        "i023": "1=Yes; 2=No",
+        "i024": "1=Yes; 2=No",
     },
     "2013": {
         # Code 8 is not listed in the official 2013 Codebook category table;
@@ -48,6 +50,8 @@ HOUSING_CATEGORIES = {
         "i009": "1=Yes; 2=No",
         "i010": "1=Yes; 2=No",
         "i011": "1=1-5 steps; 2=6-15 steps; 3=16-25 steps; 4=More than 25 steps",
+        "i023": "1=Yes; 2=No",
+        "i024": "1=Yes; 2=No",
     },
     "2015": {
         "i004": "1=Concrete and steel/Bricks and wood; 2=Adobe; 3=Wood/Thatched; 4=Cave dwelling; 5=Mongolian yurt/Woolen felt/Tend (Codebook spelling); 6=Stone; 7=Other",
@@ -57,6 +61,9 @@ HOUSING_CATEGORIES = {
         "i009": "1=Yes; 2=No",
         "i010": "1=Yes; 2=No",
         "i011": "1=0 steps; 2=1-5 steps; 3=6-15 steps; 4=16-25 steps; 5=More than 25 steps",
+        "i023": "1=Yes; 2=No",
+        "i024": "1=Yes; 2=No",
+        "i027_w3": "1=Yes; 2=No",
     },
     "2018": {
         "i004": "1=Concrete and steel/Bricks and wood; 2=Adobe; 3=Wood/Thatched; 4=Cave dwelling; 5=Mongolian yurt/Woolen felt/Tent; 6=Stone; 7=Other",
@@ -66,6 +73,9 @@ HOUSING_CATEGORIES = {
         "i009": "1=Yes; 2=No",
         "i010_w4": "1=Yes; 2=No; 3=Do not need",
         "i011": "1=0 step; 2=1-5 steps; 3=6-15 steps; 4=16-25 steps; 5=More than 25 steps",
+        "i023": "1=Yes; 2=No",
+        "i024": "1=Yes; 2=No",
+        "i027_w3": "1=Yes; 2=No",
     },
     "2020": {
         "i001": "1=Concrete and steel/Bricks and wood; 2=Adobe; 3=Wood/Thatched; 4=Cave dwelling; 5=Mongolian yurt/Woolen felt/Tent; 6=Stone; 7=Other",
@@ -74,6 +84,9 @@ HOUSING_CATEGORIES = {
         "i005": "1=Independent storey; 2=Compound",
         "i007": "1=Yes; 2=No",
         "i009": "1=Yes; 2=No; 3=Do not need",
+        "i022": "1=Yes; 2=No",
+        "i023": "1=Yes; 2=No",
+        "i024": "1=Yes; 2=No",
         # i010 is a continuous number of steps in 2020, so it has no category map.
     },
 }

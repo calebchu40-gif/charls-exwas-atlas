@@ -38,6 +38,14 @@ class HousingValueLabelTests(unittest.TestCase):
         self.assertEqual(catalog_row["Value.Labels"], "")
         self.assertEqual(catalog_row["Harmonization.Status"], "Number/category of steps to entrance; may be top-coded or grouped and is not an individual stair-climbing performance test.")
 
+    def test_household_connectivity_and_air_cleaner_keep_wave_specific_codes(self):
+        lookup = {(row["wave"], row["code"]): row for row in self.labels}
+        for key in (("2011", "i023"), ("2013", "i023"), ("2015", "i023"), ("2018", "i023"), ("2020", "i022"),
+                    ("2011", "i024"), ("2013", "i024"), ("2015", "i024"), ("2018", "i024"), ("2020", "i023"),
+                    ("2015", "i027_w3"), ("2018", "i027_w3"), ("2020", "i024")):
+            self.assertEqual(lookup[key]["value_labels"], "1=Yes; 2=No", key)
+        self.assertNotIn(("2020", "i027"), lookup)
+
     def test_reviewed_labels_reach_field_catalog_concept_crosswalk_and_housing_page(self):
         key = ("2018", "i010_w4")
         field = next(row for row in self.catalog if (row["Source.Wave"], row["Variable.Name"].lower()) == (key[0], key[1]))

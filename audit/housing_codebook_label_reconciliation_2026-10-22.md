@@ -16,6 +16,14 @@ The reviewed categorical fields are:
 | 2018 | i004 | i005_1 | i006 | i007 | i009 | i010_w4 | i011 |
 | 2020 | i001 | i003 | i004 | i005 | i007 | i009 | continuous i010 |
 
+The follow-up pass also reviewed the household telephone and broadband indicators and air-cleaner ownership:
+
+| Construct | 2011 | 2013 | 2015 | 2018 | 2020 |
+|---|---|---|---|---|---|
+| Telephone connection | i023 | i023 | i023 | i023 | i022 |
+| Broadband connection | i024 | i024 | i024 | i024 | i023 |
+| Air cleaner in residence | not mapped in this review | not mapped in this review | i027_w3 | i027_w3 | i024 |
+
 ## Wave differences retained
 
 - 2011 structure uses codes 1–10, including code 8 `Tent`. The 2013 Codebook category table lists 1–7, 9, and 10; code 8 is not imputed from the prior wave.
@@ -24,6 +32,7 @@ The reviewed categorical fields are:
 - Accessibility is Yes/No through 2015. The 2018 and 2020 instruments add `3=Do not need`, which remains separate from No.
 - Entrance steps are categorized in 2011–2018. In 2020, i010 is a continuous count and is deliberately given no categorical value labels.
 - Building-age intervals use codes 1–6 throughout the reviewed waves, but exact upper-bound wording varies slightly by Codebook.
+- Telephone, broadband, and air-cleaner response labels are all Yes/No, but the raw source codes shift in 2020. Air cleaner is not mapped for 2011/2013 in this review. The 2018 released name retains the `_w3` suffix; the 2018 questionnaire asks about the current residence, but the suffix and measurement history should remain visible pending approved-data identity checks.
 
 ## Use limits
 

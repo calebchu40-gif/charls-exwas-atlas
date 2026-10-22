@@ -17,3 +17,10 @@
 - 在审计时间点，总E/P目录仍有2,478行非空值标签文本；此项对账没有增加标签计数。
 
 住房专页没有填补总体标签覆盖的缺口；剩余问题仍需按字段题意、跳题、波次可比性和字段类型逐项审查，不能因为已出现在专页就视为模型就绪。
+
+
+## 2026-10-22 follow-up: explicit housing-category labels added
+
+The earlier conclusion above described the pre-expansion snapshot and is superseded for the selected building/dwelling fields. The `housing_value_label_review_v1.csv` builder now contains 57 reviewed label rows total, including 40 new wave-specific building/dwelling rows (17 distinct wave-field codes). The new labels are present in the main field catalog, concept-source crosswalk, and housing lookup. E/P reviewed-label row coverage increased from 2,834 to 2,868 in the regenerated audit; this is a catalogue-label count, not the number of analysis-ready exposures. The existing housing index still has 817 rows.
+
+The additions were limited to official Codebook category text. Codebook frequencies and percentages were not copied. The wave-specific exceptions and continuous 2020 entrance-step measure are documented in `audit/housing_codebook_label_reconciliation_2026-10-22.md`. All 33 regression tests pass.
