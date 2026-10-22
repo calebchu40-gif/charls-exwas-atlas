@@ -27,6 +27,10 @@ On 2026-10-22 the owner approved full public visibility and changed the reposito
 
 Initial publication completed. Site asset and deployment-workflow changes pushed to `main` now deploy automatically. For a manual redeploy, open **Actions → Deploy public atlas site → Run workflow**, choose `main`, and run it; verify a green completion and check the deployed URL.
 
+## 2026-10-23 automatic deployment verification
+
+Commit `3f859ef` synchronized 217 healthcare-access field review states into the main catalogue and updated the site renderer. GitHub Actions run [`39872665197`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/39872665197) completed successfully. The public `catalog.json` returned HTTP 200 and its 2011 `ed005_1_` record showed the reviewed continuous-count/routing status; `app.js` returned HTTP 200 with the updated status renderer. This confirms the automatic push deployment path.
+
 Live project URL: `https://calebchu40-gif.github.io/charls-exwas-atlas/`. The repository’s default branch is `main` and visibility is public.
 
 The 32.42 MiB figure is the full static directory size (33 files); earlier notes describing 32.30 MiB as JSON-only were inaccurate. Latest generated catalog counts remain 7,544 field rows, 1,408 unique E/P concepts and 6,598 E/P source mappings. The cognition-specific memo’s 7,548/1,409 figures were captured at an intermediate build and are superseded by the canonical build outputs and current directory snapshot. GitHub displayed non-blocking Node.js 20 deprecation and runner-image migration notices; deployment completed successfully.
