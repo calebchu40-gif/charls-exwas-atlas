@@ -2,6 +2,7 @@
 
 ## 2026-10-22 (continued)
 
+- Reconciled official Codebook categories for dwelling structure, building-age bands, floor type, dwelling independence, elevator access, accessibility facilities, and entrance steps across all five waves. Preserved wave-specific codes (including 2013's unlisted structure code 8, the 2018/2020 "Do not need" response, and 2020 continuous step count), omitted Codebook frequencies, and propagated labels into the main field catalogue, concept-source crosswalk, and housing lookup. Added a source reconciliation note and regression tests; all 33 tests pass. No respondent-level records were read.
 - Completed the remaining source-identity audit for social-care helper fields. Corrected the 2011 questionnaire path; recorded DB022/DB023 and DB030/DB031 route semantics and Codebook sparsity in the mapping builder and website metadata. The historical source-identity review queue is now clear; respondent-level applicability remains unverified.
 - Corrected the subjective-living-standard audit's 2013 source filename and verified 2011 G003 is the respondent's own five-level assessment while G001/G002 are fictional-family vignettes. Kept 2011 absolute self-rating separate from the 2013 reference-group comparisons. One source-identity audit remains.
 - Corrected the side-job audit's 2011 source and line references. The baseline questionnaire confirms the FC019=1 route and FJ001–FJ004 count, hours, income, and bracket meanings; the work generator already used this correct source. Two source-identity audits remain.

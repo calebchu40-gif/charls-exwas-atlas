@@ -884,6 +884,9 @@ def main() -> None:
     add_reviewed_labels("community_exposure_value_labels_v1.csv", "wave", "code", "value_labels",
                         "value_label_status", "value_label_source",
                         re.compile(r"official (?:codebook response labels|questionnaire seven-point ordinal scale anchors reviewed; codebook numeric categories only); frequencies omitted", re.I))
+    add_reviewed_labels("housing_value_label_review_v1.csv", "wave", "code", "value_labels",
+                        "value_label_status", "value_label_source",
+                        re.compile(r"official codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding", re.I))
     add_reviewed_labels("social_exposure_crosswalk_v1.csv", "wave", "code", "value_semantics", "mapping_status", None, re.compile(r"Official codebook response labels reviewed", re.I))
     add_reviewed_labels("social_exposure_crosswalk_v1.csv", "wave", "code", "value_labels", "mapping_status", "value_label_source", re.compile(r"Official questionnaire/codebook yes-no response categories reviewed", re.I))
     add_reviewed_labels("measurement_protocol_crosswalk_v1.csv", "wave", "code", "value_labels", "mapping_status", "source_document", re.compile(r"official questionnaire and codebook mapping|2018 questionnaire/codebook verified; C metadata only|2018 questionnaire date-component protocol verified; C metadata", re.I))
@@ -1115,12 +1118,32 @@ def main() -> None:
     out["Value.Labels"] = [existing or reviewed for existing, reviewed in zip(out["Value.Labels"].fillna(""), reviewed_labels)]
     out["Value.Label.Source"] = [existing or reviewed for existing, reviewed in zip(out["Value.Label.Source"].fillna(""), reviewed_sources)]
     out["Value.Label.Review"] = ["conflict" if conflict else ("officially reviewed" if reviewed or source else "not yet reviewed") for conflict, reviewed, source in zip(label_conflicts, reviewed_labels, out["Value.Label.Source"])]
+    # Preserve the explicit wave-specific audit wording for housing labels;
+    # the generic label merge above establishes provenance and conflicts.
+    housing_label_path = root / "audit" / "housing_value_label_review_v1.csv"
+    if housing_label_path.exists():
+        housing_labels = pd.read_csv(housing_label_path, dtype=str, encoding="utf-8-sig").fillna("")
+        for item in housing_labels.to_dict(orient="records"):
+            labels = str(item.get("value_labels", "")).strip()
+            if not labels:
+                continue
+            selected = (
+                out["Source.Wave"].astype(str).eq(str(item.get("wave", "")))
+                & out["Variable.Name"].str.lower().eq(str(item.get("code", "")).lower())
+            )
+            conflict = selected & out["Value.Labels"].ne("") & out["Value.Labels"].ne(labels)
+            out.loc[conflict, "Value.Label.Review"] = "conflict"
+            blank = selected & out["Value.Labels"].eq("")
+            out.loc[blank, "Value.Labels"] = labels
+            out.loc[blank, "Value.Label.Source"] = str(item.get("value_label_source", ""))
+            out.loc[blank, "Value.Label.Review"] = str(item.get("value_label_status", "Official Codebook response categories reviewed"))
     # Preserve user-facing interpretation warnings for checkbox/route labels.
     # A label being correct does not imply that an unselected slot is a No.
     for filename, status_pattern in (
         ("work_exposure_value_labels_v1.csv", re.compile(r"official selected-option label; checkbox slot, absence is not a negative response|official questionnaire checkbox menu and codebook slot coding; frequencies omitted; absence is not a negative response outside the routed checklist|official questionnaire categories; frequencies omitted; FC020 multiple-job main-work route or FC021 single nonfarm-job route|full questionnaire menu transcribed without frequencies; 2011 codebook omits FL014 and later codebook menus may omit unobserved categories; not-currently-working prior-job route|official questionnaire categories; frequencies omitted; 2011 question wording controls its scope|full official questionnaire response menu transcribed without frequencies; current employer firm route|official questionnaire response categories transcribed without frequencies; continuity of the specific prior-wave work activity|official 2020 questionnaire response categories; frequencies omitted; conditional work-history transition route|official questionnaire categories transcribed without frequencies; preserve three-category employment/family-business status|official questionnaire/codebook categories; frequencies omitted; current employer benefit route|wave-specific official questionnaire categories transcribed without frequencies; retrospective first-workplace location|official questionnaire categories; frequencies omitted; conditional agricultural-wage/other-job temporary-absence route|DO NOT ANALYZE; official 2011 baseline questionnaire option label", re.I)),
         ("behavior_exposure_variable_mapping_v1.csv", re.compile(r"official selector code reviewed;", re.I)),
         ("chronic_disease_ancillary_variable_mapping_v1.csv", re.compile(r"official codebook response labels; prior-wave self-awareness/preload route retained; frequencies excluded|official wave codebook category verified; selected option only; frequencies excluded", re.I)),
+        ("housing_value_label_review_v1.csv", re.compile(r"official codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding", re.I)),
     ):
         status_path = root / "audit" / filename
         if not status_path.exists():

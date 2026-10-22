@@ -477,6 +477,24 @@ for item in load("core_concept_coverage_v1.csv").to_dict("records"):
 
 master = pd.DataFrame(rows)
 master = master[master["Wave"].isin(["2011", "2013", "2015", "2018", "2020"]) & master["Source.Code"].ne("")]
+# The housing specialty review also covers a small set of housing fields
+# represented in the food/environment crosswalk to prevent duplicate concept
+# assignments. Attach those reviewed Codebook labels to the existing mappings.
+housing_label_path = AUDIT / "housing_value_label_review_v1.csv"
+if housing_label_path.exists():
+    housing_labels = load("housing_value_label_review_v1.csv")
+    for item in housing_labels.to_dict("records"):
+        labels = text(item, "value_labels")
+        if not labels:
+            continue
+        selected = (
+            master["Wave"].astype(str).eq(text(item, "wave"))
+            & master["Source.Code"].str.lower().eq(text(item, "code").lower())
+            & master["Source.File"].eq("audit/food_environment_crosswalk_v1.csv")
+        )
+        blank = selected & master["Value.Labels"].eq("")
+        master.loc[blank, "Value.Labels"] = labels
+        master.loc[blank, "Source.Document"] = text(item, "value_label_source")
 master["_Module.Key"] = master["Module"].astype(str).str.strip().str.lower()
 master = master.drop_duplicates(["Concept.ID", "Role", "Wave", "Source.Code", "Module", "Source.File"])
 source_provenance_duplicates_collapsed = len(master) - len(master.drop_duplicates(["Concept.ID", "Role", "Wave", "Source.Code", "Module"]))
