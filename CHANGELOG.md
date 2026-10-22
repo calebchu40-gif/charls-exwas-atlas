@@ -2,6 +2,7 @@
 
 ## 2026-10-22 (continued)
 
+- Re-audited agricultural work fields FC001–FC011 against the correct 2011 baseline household questionnaire; corrected the audit’s source path, confirmed questionnaire skips and soft checks, and retained the 2018 FC008 questionnaire/Codebook conflict lock. The source-identity correction queue is now 15 audits.
 - Added the 16 official 2011 FL020 checkbox option meanings to the field-level catalog as questionnaire text only; selected, unselected, and missing-value coding remains unverified and every option is locked `DO NOT ANALYZE`. Corrected the audit citation to the actual 2011 baseline household questionnaire and reduced the source-identity correction queue by one.
 - Rebuilt the metadata catalog and updated value-label coverage to 2,834 E/P rows across 2,808 wave-fields; no respondent data or association models were used.
 - Recorded official Wave 5 Sample Information and Sampling Weights hashes and a source-level verification checklist for the age-domain audit. The local prepared tables cannot yet be matched to those source archives, so the 2020 target age domain remains provisional.

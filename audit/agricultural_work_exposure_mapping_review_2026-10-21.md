@@ -1,6 +1,6 @@
 # 农业劳动状态与工时/收入字段审计（2026-10-21）
 
-> **来源身份更正（2026-10-21）：**本文旧版本引用的 `CHARLS_2011_Baseline_Questionnaire_official_extracted.txt` 实际内容是2013随访问卷。本文涉及的2011题干或路由判断须对照正确的官方2011基线问卷复核；在复核完成前，不能把该旧摘录当作2011题意证据。处理范围及当前状态见 [`2011_questionnaire_source_identity_correction_2026-10-21.md`](2011_questionnaire_source_identity_correction_2026-10-21.md)。
+> **来源身份更正（2026-10-22）：**已用正式2011基线家户问卷逐项复核FC001–FC011题干、分支、量纲和软核查：FC001=No跳至FC008；FC006范围0–16小时并设>16软核查；FC008=No跳至FC013；FC011问卷列0–24小时、>16触发检查。值码与变量标题另由2011 Codebook核对。正确问卷与检索摘录见 `sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc` 和相邻 `_extracted.txt`；不再使用误标为2011的2013文件。
 
 ## 本轮范围
 
@@ -20,7 +20,7 @@
 
 ## 官方材料和证据定位
 
-- 2011：`sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt`中FC001–FC011；2011提问页印刷页147–148附近，审计脚本提取出的章节还保留PDF页标记。值标签/变量标题查`audit/CHARLS_2011_Codebook_extracted.txt`。
+- 2011：`sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`中FC001–FC011（目录列在当前主要工作模块）；值标签/变量标题查`sources_official/CHARLS_2011_Codebook_extracted.txt`。问卷显示FC006的0–16小时范围及超过16小时的软核查；FC011显示0–24小时范围并提示检查超过16小时的答案。
 - 2013：`sources_official/CHARLS_2013_Questionnaire_extracted.txt`及`CHARLS_2013_Codebook_extracted.txt`；农场雇佣与自家劳动题组在问卷约145–151页/代码本约738–740页。
 - 2015：`sources_official/CHARLS_2015_Questionnaire_extracted.txt`及`CHARLS_2015_Codebook_extracted.txt`；FC008明确No跳过后续自家劳动测量。
 - 2018：`sources_official/CHARLS_2018_Questionnaire_extracted.txt`写FC008过去一年至少10天；`sources_official/CHARLS_2018_Codebook_extracted.txt`将FC008标题写作“Self-Employed (Household) Farm Work (for at Least One Month Last Year) or Not”。目前未见可以消解此门槛不一致的更高优先级发布说明，故将2018 FC008及其FC009–FC011后续题列为DO NOT ANALYZE。
@@ -37,3 +37,5 @@
 ## 构建核验
 
 `python scripts/build_work_exposure_crosswalk.py`生成81个工作/退休/就业暴露概念及227条字段映射；`python scripts/build_work_exposure_value_labels.py`处理227条标签/语义行。全量入口`python scripts/build_ep_atlas_metadata.py`成功。新增9个概念、28条E/P链接全部匹配；2018自家农业FC008及FC009–FC011在字段级状态中标记DO NOT ANALYZE。最新总目录854个候选E/P概念（E594、P269、双角色9），E/P唯一字段链接5,280条，C crosswalk23条（20条匹配、3条既有资格/权重说明）；字段目录7,631行（E/P 7,153、C 478）。
+
+复核结论：2011版本的农业劳动筛选与测量定义可由正确基线问卷支持，既有字段映射范围和条件路由无需变更。FC011的问卷输入范围与软核查阈值不同，目录保留原始回答并将范围解释留给数据质控；没有依据自动截断或剔除高值。2018 FC008问卷与Codebook的10天/一个月标题冲突依然未解决，该波FC008及条件后续项继续锁定。未读取个人记录。
