@@ -8,9 +8,15 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from prepare_charls_wave_tables import split_weights  # noqa: E402
+from validate_prepared_wave_tables import get_match_rate_0_to_1  # noqa: E402
 
 
 class SplitWeightsTests(unittest.TestCase):
+    def test_merge_match_rate_is_a_zero_to_one_proportion_and_reads_legacy_name(self):
+        self.assertEqual(get_match_rate_0_to_1({"match_rate_0_to_1": 0.789269}), 0.789269)
+        self.assertEqual(get_match_rate_0_to_1({"match_pct_of_base_nonmissing": 0.990907}), 0.990907)
+        self.assertIsNone(get_match_rate_0_to_1({"match_rate_0_to_1": None}))
+
     def test_wave2_sample_flags_follow_person_weights(self):
         frame = pd.DataFrame(
             {

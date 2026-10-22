@@ -146,7 +146,7 @@ def split_weights(frame: pd.DataFrame, wave: str, qa: list[dict]):
                    "source_rows": len(frame), "source_unique_key_n": x[key].nunique(),
                    "source_missing_key_rows": int(frame[key].isna().sum()),
                    "base_rows_before": None, "base_missing_key_rows": None,
-                   "matched_base_rows": None, "match_pct_of_base_nonmissing": None,
+                   "matched_base_rows": None, "match_rate_0_to_1": None,
                    "other_id_mismatch_counts": json.dumps({"duplicate_rows": int(x[key].duplicated(keep=False).sum()),
                        "noninvariant_weight_variables": variation}, ensure_ascii=False)})
         if bad:
@@ -210,7 +210,7 @@ def merge_source(base: pd.DataFrame, incoming: pd.DataFrame, key: str,
                "source_rows": len(incoming), "source_unique_key_n": int(i_nonnull.sum()),
                "source_missing_key_rows": i_missing, "base_rows_before": len(base),
                "base_missing_key_rows": b_missing, "matched_base_rows": matched,
-               "match_pct_of_base_nonmissing": round(matched / max(int(b_nonnull.sum()), 1), 6),
+               "match_rate_0_to_1": round(matched / max(int(b_nonnull.sum()), 1), 6),
                "other_id_mismatch_counts": json.dumps(mismatches, ensure_ascii=False)})
     return merged
 
@@ -253,7 +253,7 @@ def main():
                            "source_rows": None, "source_unique_key_n": None,
                            "source_missing_key_rows": None, "base_rows_before": None,
                            "base_missing_key_rows": None, "matched_base_rows": None,
-                           "match_pct_of_base_nonmissing": None,
+                           "match_rate_0_to_1": None,
                            "other_id_mismatch_counts": "relationship/roster table excluded from respondent table"})
                 continue
             frame, meta = pyreadstat.read_dta(str(file))
@@ -266,7 +266,7 @@ def main():
                            "source_rows": len(frame), "source_unique_key_n": None,
                            "source_missing_key_rows": None, "base_rows_before": None,
                            "base_missing_key_rows": None, "matched_base_rows": None,
-                           "match_pct_of_base_nonmissing": None,
+                           "match_rate_0_to_1": None,
                            "other_id_mismatch_counts": "no respondent/household/community key; retained as separate source"})
                 continue
             if frame[key].dropna().duplicated().any():
@@ -274,7 +274,7 @@ def main():
                            "source_rows": len(frame), "source_unique_key_n": int(frame[key].nunique()),
                            "source_missing_key_rows": int(frame[key].isna().sum()),
                            "base_rows_before": None, "base_missing_key_rows": None,
-                           "matched_base_rows": None, "match_pct_of_base_nonmissing": None,
+                           "matched_base_rows": None, "match_rate_0_to_1": None,
                            "other_id_mismatch_counts": "duplicate merge key; retained as separate source"})
                 continue
             frames.append((module, key, frame, meta))
@@ -319,7 +319,7 @@ def main():
                        "source_rows": len(f), "source_unique_key_n": None,
                        "source_missing_key_rows": None, "base_rows_before": None,
                        "base_missing_key_rows": None, "matched_base_rows": None,
-                       "match_pct_of_base_nonmissing": None,
+                       "match_rate_0_to_1": None,
                        "other_id_mismatch_counts": "unrecognized key retained separately"})
 
         base.insert(0, "wave", int(wave))

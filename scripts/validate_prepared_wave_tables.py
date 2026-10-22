@@ -17,6 +17,14 @@ def sha256(path: Path) -> str:
     return h.hexdigest()
 
 
+def get_match_rate_0_to_1(record):
+    """Read the current field name or legacy misnamed proportion field."""
+    value = record.get("match_rate_0_to_1")
+    if value is None or pd.isna(value):
+        value = record.get("match_pct_of_base_nonmissing")
+    return None if value is None or pd.isna(value) else float(value)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data-dir", required=True, type=Path)
@@ -47,7 +55,7 @@ def main():
                                 "merge_key": rec.get("merge_key"),
                                 "source_rows": rec.get("source_rows"),
                                 "matched_base_rows": rec.get("matched_base_rows"),
-                                "match_pct_of_base_nonmissing": rec.get("match_pct_of_base_nonmissing"),
+                                "match_rate_0_to_1": get_match_rate_0_to_1(rec),
                                 "note": rec.get("other_id_mismatch_counts")})
 
     out = args.output_dir
