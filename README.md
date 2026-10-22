@@ -97,7 +97,7 @@
 
 历史快照（已被2026-10-22最终全量重建取代）：早期审计曾记录E/P/C未连接字段队列，后续逐项复核并完成角色调整。当前状态以本文顶部为准：未映射E/P均为0；C类字段用于测量、路由及来源元数据，不进入关联配对。早期队列证据仍保存在audit/unassigned_catalog_series_review_v1.md，仅供追溯，不应作为当前待办清单。
 
-目标人群必须按波次解释：2011–2018的刷新样本补入使各波可评估45岁以上的横截面总体；2020 Wave 5手册指出2018年后较年轻队列不再具全国代表性，不能仅凭权重宣称覆盖全部45岁以上。详见[`audit/wave_specific_target_population_and_age_coverage_2026-10-22.md`](audit/wave_specific_target_population_and_age_coverage_2026-10-22.md)及网站“逐波目标人群”说明。
+目标人群必须按波次解释：2011–2018的刷新样本补入使各波可评估45岁以上的横截面总体；2020 Wave 5手册指出2018年后较年轻队列不再具全国代表性，不能仅凭权重宣称覆盖全部45岁以上。2020目标年龄域仍待官方样本信息与权重源文件校验，哈希及核验步骤见[`audit/wave5_sampling_file_source_verification_2026-10-22.md`](audit/wave5_sampling_file_source_verification_2026-10-22.md)。详见[`audit/wave_specific_target_population_and_age_coverage_2026-10-22.md`](audit/wave_specific_target_population_and_age_coverage_2026-10-22.md)及网站“逐波目标人群”说明。
 
 2026-10-22养老金续审：2013 `fn064_w2_2_`接入既有居民养老转入来源概念，值码1–3按官方Codebook核对，严格保留FN063_w2=Yes条件路径；2015同码只见单一标签，留待获批字典确认。审计audit/pension_resident_transfer_source_2013_2015_review_2026-10-22.md。当时目录链接数6,255，全来源crosswalk 6,431（后续养老金区间映射见最新状态），2013共现对111,294（元数据可用性，不是样本量）。
 

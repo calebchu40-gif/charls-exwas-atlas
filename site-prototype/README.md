@@ -4,7 +4,7 @@
 
 当前目录覆盖2011、2013、2015、2018、2020五轮。最新全量重建见项目根目录 `README.md` 和 `audit/current_directory_snapshot_2026-10-22.md`。波次字段概念共现只表示目录元数据覆盖，不是实际人数、配对样本量或关联结果。
 
-官方抽样权重核查记录在 `audit/charls_wave_sampling_and_weight_status_2026-10-22.md`。2018横截面权重有不同目标和非应答调整；2013提供独立横截面生物标志物权重；面板、体检/血样子样本须按各波官方说明处理。Wave 4权重和Sample_Info字段存在于本机受控准备表，但尚未核对其对应官方源文件的版本与哈希；现存历史聚合审计显示五波所有受访者的`communityID`均可匹配官方2013 PSU映射表；这仅验证社区ID键覆盖，原始文件版本及逐波适用性仍需重核，实际方差分层字段/估计方案尚未验证。2013准备脚本现要求保留官方`crosssection`与`longitudinal`标记，并在缺失时停止；由于原始发行包未在项目目录内，当前尚不能重建并拟合设计校正关联或发布实际pairwise N。结果表规范使用 `audit/EXWAS_result_schema_v2.csv`。
+官方抽样权重核查记录在 `audit/charls_wave_sampling_and_weight_status_2026-10-22.md`。2018横截面权重有不同目标和非应答调整；2013提供独立横截面生物标志物权重；面板、体检/血样子样本须按各波官方说明处理。Wave 4权重和Sample_Info字段存在于本机受控准备表，但尚未核对其对应官方源文件的版本与哈希；现存历史聚合审计显示五波所有受访者的`communityID`均可匹配官方2013 PSU映射表；这仅验证社区ID键覆盖，原始文件版本及逐波适用性仍需重核，实际方差分层字段/估计方案尚未验证。2013准备脚本现要求保留官方`crosssection`与`longitudinal`标记，并在缺失时停止；由于原始发行包未在项目目录内，当前尚不能重建并拟合设计校正关联或发布实际pairwise N。Wave 5 年龄目标总体仍待官方样本信息与权重源文件校验，具体哈希和核对步骤见 `audit/wave5_sampling_file_source_verification_2026-10-22.md`。结果表规范使用 `audit/EXWAS_result_schema_v2.csv`。
 
 启动：在项目根目录运行 `python -m http.server 8767 --bind 127.0.0.1 --directory site-prototype\dist`，然后访问 <http://127.0.0.1:8767/>。数据由 `scripts/build_ep_atlas_metadata.py` 生成。
 
