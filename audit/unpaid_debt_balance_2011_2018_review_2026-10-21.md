@@ -1,6 +1,6 @@
 # 未偿贷款与信用卡/消费信贷余额字段审计（2011–2018）
 
-> **来源身份更正（2026-10-21）：**本文旧版本引用的 `CHARLS_2011_Baseline_Questionnaire_official_extracted.txt` 实际内容是2013随访问卷。本文涉及的2011题干或路由判断须对照正确的官方2011基线问卷复核；在复核完成前，不能把该旧摘录当作2011题意证据。处理范围及当前状态见 [`2011_questionnaire_source_identity_correction_2026-10-21.md`](2011_questionnaire_source_identity_correction_2026-10-21.md)。
+> **来源身份更正（2026-10-22）：**2011题干现按正确`CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`复核。旧引用路径实际指向2013随访问卷。复核后将撤回此前没有2011基线问卷支持的“排除房屋装修贷款”说法；生成器已使用正确2011来源。
 
 审计日期：2026-10-21。只依据CHARLS官方问卷、Codebook及公开字段元数据建立候选映射；未读取个人级记录，未把Codebook频数当作样本量。
 
@@ -10,7 +10,7 @@
 
 ## 口径变化与跨波处理
 
-HD001在2011–2015问“尚未偿还的贷款总额”，排除住房贷款（2011还明确排除房屋装修贷款）；2018题干明确排除房贷和信用卡欠款，并要求没有贷款填0。主目录暂将2018 HD001独立为“不含房贷和信用卡的未偿贷款余额”，避免把新口径默认为旧口径。
+HD001在2011–2015问“尚未偿还的贷款总额”，2011/2013/2015问卷明确排除房屋贷款；正确2011基线问卷没有“房屋装修贷款”字样，不据先前错标的问卷扩写排除范围。2018题干明确排除房贷和信用卡欠款，并要求没有贷款填0。主目录暂将2018 HD001独立为“不含房贷和信用卡的未偿贷款余额”，避免把新口径默认为旧口径。
 
 HD003在2011–2015询问信用卡余额。2013、2015、2018题干明确无信用卡填0，2011需以相应官方题页/代码本进一步核实零值规则。2018题干把京东白条、花呗也纳入信用卡定义，因此2018 HD003单列为“信用卡及题干列明平台消费信贷余额”，不与早期传统信用卡口径直接合并。波次间金额比较还需预先指定价格指数、基年、零值及非应答处理。
 
@@ -18,4 +18,8 @@ HD003在2011–2015询问信用卡余额。2013、2015、2018题干明确无信�
 
 ## 官方材料与复现
 
-依据：`sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt`、2013/2015/2018各波`Questionnaire_extracted.txt`及对应`Codebook_extracted.txt`。复现映射由`scripts/build_personal_income_crosswalk.py`生成；完整目录使用`python scripts/build_ep_atlas_metadata.py`重建。
+依据：`sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`第6909–6917行附近；2013/2015/2018各波`Questionnaire_extracted.txt`及对应`Codebook_extracted.txt`。复现映射由`scripts/build_household_lending_debt_crosswalk.py`生成；完整目录使用`python scripts/build_ep_atlas_metadata.py`重建。
+
+## 2011来源身份复核补充（2026-10-22）
+
+正确2011基线问卷第6909行附近的HD001明确排除房屋贷款，并按拒答/记不清路径询问区间（HD002）；HD003询问信用卡欠款余额，拒答/记不清可转区间（HD004）。题干没有明确说明2011信用卡余额无欠款时应填0，因此不推断零值规则。问卷同页的跳转说明回答HD001后转HD003，结构性未问的区间端点不等于金额为零。来源身份更正也撤回“2011排除装修贷款”的旧说法；2018明确加入“无贷款填0”及信用卡/平台信贷定义，继续按独立口径展示。
