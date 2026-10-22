@@ -6,6 +6,7 @@ import argparse
 from pathlib import Path
 import pandas as pd
 import pyreadstat
+from project_paths import require_private_path
 
 DISEASES = {"hypertension": 1, "dyslipidemia": 2, "diabetes": 3,
             "chronic_lung": 5, "heart_disease": 7, "stroke": 8,
@@ -17,6 +18,8 @@ def main() -> None:
     ap.add_argument("--data-dir", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
     a = ap.parse_args()
+    a.data_dir = require_private_path(a.data_dir)
+    a.out = require_private_path(a.out)
     rows = []
     for wave in WAVES:
         path = a.data_dir / f"CHARLS_wave{wave}_person_analytic.dta"

@@ -1,12 +1,11 @@
 """Aggregate complete-case coverage for provisional demographic adjustment sets."""
 from pathlib import Path
-from project_paths import PRIVATE_ROOT
+from project_paths import PRIVATE_ROOT, QA_OUTPUT_DIR
 import pandas as pd
 import pyreadstat
 
 ROOT=PRIVATE_ROOT
 WAVES=[2011,2013,2015,2018,2020]
-PROJECT=Path(__file__).resolve().parents[1]
 
 def read(path,cols): return pyreadstat.read_dta(str(path),usecols=cols)[0]
 
@@ -34,7 +33,8 @@ def main():
                      "weight_field":wcol,"weight_scope_note":"positive individual weight intersection only; does not establish correct target-population weight or full design variance."})
         if len(d)!=len(base) or d.ID.isna().any() or d.ID.duplicated().any(): raise ValueError(f"{w}: join QA failed")
     out=pd.DataFrame(rows)
-    out.to_csv(PROJECT/"audit"/"candidate_adjustment_coverage_v1.csv",index=False,encoding="utf-8-sig")
+    QA_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    out.to_csv(QA_OUTPUT_DIR/"candidate_adjustment_coverage_v1.csv",index=False,encoding="utf-8-sig")
     print(out[["wave","respondent_rows","M1_age_sex_complete_n","M1_with_positive_person_weight_n","M2_complete_candidate_n","M2_with_positive_person_weight_n","M2_strict_education_n","M2_strict_with_positive_person_weight_n"]].to_string(index=False))
 
 if __name__=="__main__": main()

@@ -16,6 +16,7 @@ from pathlib import Path
 
 import pandas as pd
 import pyreadstat
+from project_paths import require_private_path
 
 
 DISEASES = {
@@ -86,6 +87,9 @@ def main() -> None:
     parser.add_argument("--harmonized-dta", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
+    args.derived_dir = require_private_path(args.derived_dir)
+    args.harmonized_dta = require_private_path(args.harmonized_dta)
+    args.out = require_private_path(args.out)
 
     _, hmeta = pyreadstat.read_dta(str(args.harmonized_dta), metadataonly=True)
     available = set(hmeta.column_names)

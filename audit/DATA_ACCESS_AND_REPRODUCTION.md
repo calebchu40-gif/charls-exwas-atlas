@@ -10,6 +10,10 @@
 - 2026-10-22再次按已记录的输入目录核查，`%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\raw_archives`、`D:\CHARLS_Source`和桌面`CHARLS_Source`均不存在；不能据此推断其他未登记位置没有数据。当前源级重建仍待从官方端取得发行档案。
 - 项目此前的数据清点记录曾指出 2015 独立 Blood Data 和 2014 Life History 为缺项。即使后来重新下载五波主包，也应单独核对这两项是否需要及是否已获准。
 
+## 私有输出路径
+
+五波个人级准备表、派生协变量/结局表和由它们计算的QA汇总默认均位于 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas`：个人表放在各自的 `derived_*` 子目录，派生覆盖/路由/配对计数写入 `qa_outputs`。这些报告也留在本机受控目录，不进入同步项目目录。若需指定目录，使用 `CHARLS_EXWAS_PRIVATE_ROOT`、`CHARLS_EXWAS_DATA_DIR` 和 `CHARLS_EXWAS_QA_DIR`；脚本会拒绝把个人数据或数据派生输出写进 OneDrive、Dropbox、Google Drive 或 iCloud 路径。仅 `site-prototype/dist/` 的字段级公开目录可随 GitHub 提交。
+
 ## 个人设备迁移包的安全使用
 
 个人设备包包含 CHARLS 受访者级数据，只用于同一位已获授权用户在本人设备间迁移。不要把它放进 OneDrive/其他同步目录、GitHub、公开网盘或公共服务器，也不要发送给其他研究者。官方协议对原始微观数据披露和访问有明确限制；该迁移包不代表 CHARLS 官方数据授权。
@@ -26,10 +30,12 @@ $project = Join-Path $transfer 'CHARLS_ExWAS_Atlas'
 $private = Join-Path $transfer 'CHARLS_ExWAS_Atlas\private_data'
 $env:CHARLS_EXWAS_PRIVATE_ROOT = $private
 $env:CHARLS_EXWAS_DATA_DIR = Join-Path $private 'derived_wave_tables'
+$qa = Join-Path $private 'qa_outputs'
+New-Item -ItemType Directory -Path $qa -Force | Out-Null
 python -m pip install pandas pyreadstat
 python -m compileall -q (Join-Path $project 'scripts')
-python (Join-Path $project 'scripts\validate_prepared_wave_tables.py') --data-dir $env:CHARLS_EXWAS_DATA_DIR --project-dir $project
-python (Join-Path $project 'scripts\build_core_concept_coverage.py') --data-dir $env:CHARLS_EXWAS_DATA_DIR --project-dir $project
+python (Join-Path $project 'scripts\validate_prepared_wave_tables.py') --data-dir $env:CHARLS_EXWAS_DATA_DIR --output-dir $qa
+python (Join-Path $project 'scripts\build_core_concept_coverage.py') --data-dir $env:CHARLS_EXWAS_DATA_DIR --project-dir $project --output-dir $qa
 ```
 
 这会先验证五波准备表，再重建核心概念覆盖与逐对可用人数等聚合 QA。已在原设备实跑：五波均为 `PASS`（行数分别17,705、18,605、21,095、19,816、19,395；ID缺失和重复均为0），核心概念覆盖重建为31个概念、945行配对可用性结果。新设备运行时应获得相同结构；若数字不同，先核对数据版本和校验清单。其他已可用的波次审计脚本位于 `scripts/`。`audit_harmonized_age_reference.py`、`build_age_candidate_tables.py` 及需要 Harmonized D 的慢病 crosswalk 仍需该 DTA 文件；缺文件时先跳过，不要把其他波次数据当作替代品。

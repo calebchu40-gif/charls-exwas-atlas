@@ -9,7 +9,7 @@ import json
 
 import pandas as pd
 import pyreadstat
-from project_paths import WAVE_DATA_DIR
+from project_paths import QA_OUTPUT_DIR, WAVE_DATA_DIR, require_private_path
 
 
 WAVES = ["2011", "2013", "2015", "2018", "2020"]
@@ -112,7 +112,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data-dir", type=Path, default=DATA_DEFAULT)
     ap.add_argument("--project-dir", type=Path, default=PROJECT)
+    ap.add_argument("--output-dir", type=Path, default=QA_OUTPUT_DIR,
+                    help="Private local directory for coverage and pair-count QA outputs")
     args = ap.parse_args()
+    args.data_dir = require_private_path(args.data_dir)
+    args.output_dir = require_private_path(args.output_dir)
     catalog = pd.read_csv(args.project_dir / "audit" / "raw_variable_catalog_v1.csv", low_memory=False)
     catalog["wave"] = catalog.wave.astype(str)
     rows, wave_data, statuses = [], {}, {}
@@ -137,11 +141,12 @@ def main():
                          "n_nonmissing": n_nonmissing,
                          "coverage_pct": round(100*n_nonmissing/len(data), 2) if n_nonmissing is not None else None})
     concept_df = pd.DataFrame(rows)
-    concept_df.to_csv(args.project_dir / "audit" / "core_concept_coverage_v1.csv", index=False, encoding="utf-8-sig")
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    concept_df.to_csv(args.output_dir / "core_concept_coverage_v1.csv", index=False, encoding="utf-8-sig")
     dictionary = pd.DataFrame([{"concept_id": k, "role": ROLE[k], "concept_zh": ZH[k][0],
                                 "domain": ZH[k][1], "harmonization_caveat": ZH[k][2]}
                                for k in MAP])
-    dictionary.to_csv(args.project_dir / "audit" / "core_concept_dictionary_v1.csv", index=False, encoding="utf-8-sig")
+    dictionary.to_csv(args.output_dir / "core_concept_dictionary_v1.csv", index=False, encoding="utf-8-sig")
 
     exposure_ids = [k for k, role in ROLE.items() if role == "exposure_proxy"]
     outcome_ids = [k for k, role in ROLE.items() if role == "phenotype_or_measurement"]
@@ -163,7 +168,7 @@ def main():
                                   "outcome_concept": out, "outcome_variable": ov or "",
                                   "status": status, "n_complete_pair": n})
     pair_df = pd.DataFrame(pair_rows)
-    pair_df.to_csv(args.project_dir / "audit" / "core_pairwise_complete_n_v1.csv", index=False, encoding="utf-8-sig")
+    pair_df.to_csv(args.output_dir / "core_pairwise_complete_n_v1.csv", index=False, encoding="utf-8-sig")
     wave_summary = []
     for wave in WAVES:
         cc = concept_df[concept_df.wave == wave]
@@ -177,10 +182,10 @@ def main():
                              "pair_n_min": int(pp.n_complete_pair.min()) if len(pp) else None,
                              "pair_n_median": float(pp.n_complete_pair.median()) if len(pp) else None,
                              "pair_n_max": int(pp.n_complete_pair.max()) if len(pp) else None})
-    pd.DataFrame(wave_summary).to_csv(args.project_dir / "audit" / "core_wave_pair_summary_v1.csv", index=False, encoding="utf-8-sig")
+    pd.DataFrame(wave_summary).to_csv(args.output_dir / "core_wave_pair_summary_v1.csv", index=False, encoding="utf-8-sig")
     summary = concept_df.groupby(["role", "wave", "status"], dropna=False).size().reset_index(name="concept_count")
-    summary.to_csv(args.project_dir / "audit" / "core_concept_status_summary_v1.csv", index=False, encoding="utf-8-sig")
-    (args.project_dir / "audit" / "core_coverage_build_metadata_v1.json").write_text(json.dumps({
+    summary.to_csv(args.output_dir / "core_concept_status_summary_v1.csv", index=False, encoding="utf-8-sig")
+    (args.output_dir / "core_coverage_build_metadata_v1.json").write_text(json.dumps({
         "waves": WAVES, "concepts": len(MAP), "exposure_proxy_concepts": len(exposure_ids),
         "phenotype_or_measurement_concepts": len(outcome_ids), "pair_rows": len(pair_rows),
         "privacy": "aggregate counts only; participant-level records remain outside synchronized project directory",

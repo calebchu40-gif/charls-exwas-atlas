@@ -6,6 +6,7 @@ from pathlib import Path
 
 import pandas as pd
 import pyreadstat
+from project_paths import QA_OUTPUT_DIR, require_private_path
 
 
 def sha256(path: Path) -> str:
@@ -19,8 +20,11 @@ def sha256(path: Path) -> str:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data-dir", required=True, type=Path)
-    ap.add_argument("--project-dir", type=Path, default=Path(__file__).resolve().parents[1])
+    ap.add_argument("--output-dir", type=Path, default=QA_OUTPUT_DIR,
+                    help="Private local directory for validation reports; defaults outside synchronized folders")
     args = ap.parse_args()
+    args.data_dir = require_private_path(args.data_dir)
+    args.output_dir = require_private_path(args.output_dir)
     rows, module_rows = [], []
     for wave in ("2011", "2013", "2015", "2018", "2020"):
         f = args.data_dir / f"CHARLS_wave{wave}_person_analytic.dta"
@@ -46,7 +50,7 @@ def main():
                                 "match_pct_of_base_nonmissing": rec.get("match_pct_of_base_nonmissing"),
                                 "note": rec.get("other_id_mismatch_counts")})
 
-    out = args.project_dir / "audit"
+    out = args.output_dir
     out.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(rows).to_csv(out / "prepared_wave_validation_v1.csv", index=False, encoding="utf-8-sig")
     pd.DataFrame(module_rows).to_csv(out / "prepared_module_merge_qa_v1.csv", index=False, encoding="utf-8-sig")

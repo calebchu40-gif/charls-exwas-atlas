@@ -1,11 +1,10 @@
 """Summarize household expenditure candidate coverage without person records."""
 from pathlib import Path
-from project_paths import WAVE_DATA_DIR
+from project_paths import QA_OUTPUT_DIR, WAVE_DATA_DIR
 import pandas as pd
 import pyreadstat
 
 DATA=WAVE_DATA_DIR
-PROJECT=Path(__file__).resolve().parents[1]
 # Periods verified against the CHARLS wave questionnaires. Monetary values are
 # left on their original scale; this script only audits metadata and coverage.
 FIELDS={
@@ -51,7 +50,8 @@ def main():
                 "negative_value_n":int((numeric<0).sum()),
                 "scope_note":"Raw nonmissing/negative count only; household values may repeat across respondents. Components are not summed and no inflation, household-size or special-code adjustment is applied."})
  out=pd.DataFrame(rows)
- out.to_csv(PROJECT/"audit"/"household_ses_field_coverage_v1.csv",index=False,encoding="utf-8-sig")
+ QA_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+ out.to_csv(QA_OUTPUT_DIR/"household_ses_field_coverage_v1.csv",index=False,encoding="utf-8-sig")
  print(out[["wave","candidate_role","variable","respondents_raw_nonmissing_n","households_raw_nonmissing_n","negative_value_n"]].to_string(index=False))
 
 if __name__=="__main__":main()

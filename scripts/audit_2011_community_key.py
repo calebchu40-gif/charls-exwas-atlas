@@ -6,6 +6,7 @@ from pathlib import Path
 
 import pandas as pd
 import pyreadstat
+from project_paths import QA_OUTPUT_DIR, require_private_path
 
 PROJECT = Path(__file__).resolve().parents[1]
 PRIVATE_ROOT = Path(os.environ.get("LOCALAPPDATA", ".")) / "CHARLS_ExWAS_Atlas"
@@ -15,8 +16,11 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--community-data", type=Path, default=PRIVATE_ROOT / "raw_extract_2011_community" / "community.dta")
     ap.add_argument("--person-data", type=Path, default=PRIVATE_ROOT / "derived_wave_tables" / "CHARLS_wave2011_person_analytic.dta")
-    ap.add_argument("--out", type=Path, default=PROJECT / "audit" / "community_2011_key_aggregate_qa_v1.csv")
+    ap.add_argument("--out", type=Path, default=QA_OUTPUT_DIR / "community_2011_key_aggregate_qa_v1.csv")
     args = ap.parse_args()
+    args.community_data = require_private_path(args.community_data)
+    args.person_data = require_private_path(args.person_data)
+    args.out = require_private_path(args.out)
 
     comm, _ = pyreadstat.read_dta(str(args.community_data), usecols=["communityID", "sub_commuID"])
     persons, _ = pyreadstat.read_dta(str(args.person_data), usecols=["communityID"])

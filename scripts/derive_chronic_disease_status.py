@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Derive conservative respondent-wave chronic-disease states locally.
 
-The output contains participant IDs and must remain under LOCALAPPDATA.
-Only aggregate counts are written to the project directory.
+The output contains participant IDs and must remain under the private local root.
+Aggregate counts are written to the private local QA directory.
 """
 from __future__ import annotations
 import argparse
@@ -10,6 +10,7 @@ import os
 from pathlib import Path
 import pandas as pd
 import pyreadstat
+from project_paths import QA_OUTPUT_DIR, require_private_path
 
 DISEASES = {"hypertension": (1, 1), "dyslipidemia": (2, 2), "diabetes": (3, 3),
  "chronic_lung_disease": (5, 5), "heart_disease": (7, 7), "stroke": (8, 8),
@@ -113,10 +114,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data-dir", type=Path, required=True)
     ap.add_argument("--out-dir", type=Path, default=Path(os.environ.get("LOCALAPPDATA", ".")) / "CHARLS_ExWAS_Atlas" / "derived_chronic_disease")
-    ap.add_argument("--aggregate-out", type=Path, required=True)
+    ap.add_argument("--aggregate-out", type=Path, default=QA_OUTPUT_DIR / "chronic_disease_status_aggregate_v1.csv")
     args = ap.parse_args()
-    if "OneDrive" in str(args.out_dir.resolve()) or "Desktop" in str(args.out_dir.resolve()):
-        raise ValueError("Personal-level output must remain outside OneDrive/Desktop synchronization paths")
+    args.data_dir = require_private_path(args.data_dir)
+    args.out_dir = require_private_path(args.out_dir)
+    args.aggregate_out = require_private_path(args.aggregate_out)
     args.out_dir.mkdir(parents=True, exist_ok=True)
     prior_by_wave: dict[tuple[int, str], dict[str, int | None]] = {}
     aggregates = []

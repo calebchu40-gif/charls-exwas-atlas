@@ -8,14 +8,13 @@ verification. Individual-level outputs stay in LOCALAPPDATA.
 """
 from pathlib import Path
 import os
-from project_paths import PRIVATE_ROOT, WAVE_DATA_DIR
+from project_paths import PRIVATE_ROOT, QA_OUTPUT_DIR, WAVE_DATA_DIR, require_private_path
 import pandas as pd
 import pyreadstat
 
 DATA = WAVE_DATA_DIR
 PRIVATE = PRIVATE_ROOT / "age_candidates"
-HARM = Path(os.environ.get("CHARLS_HARMONIZED_D_PATH", str(PRIVATE_ROOT / "references" / "H_CHARLS_D_Data.dta")))
-PROJECT = Path(__file__).resolve().parents[1]
+HARM = require_private_path(Path(os.environ.get("CHARLS_HARMONIZED_D_PATH", str(PRIVATE_ROOT / "references" / "H_CHARLS_D_Data.dta"))))
 
 def norm(x):
     if pd.isna(x): return None
@@ -53,7 +52,8 @@ def main():
     out = pd.DataFrame({"ID": d.ID, "age_years_candidate": age, "age_source": "CHARLS 2020 released xrage; definition verification pending", "age_provisional": 1})
     pyreadstat.write_dta(out, str(PRIVATE / "age_candidate_2020.dta"), version=14)
     summary.append({"wave": 2020, "rows": len(out), "age_nonmissing": int(age.notna().sum()), "age_45plus": int((age >= 45).sum()), "age_under45": int((age < 45).sum()), "age_invalid_outside_18_120": int((age.notna() & ~age.between(18,120)).sum()), "source": "CHARLS released xrage; provisional only"})
-    pd.DataFrame(summary).to_csv(PROJECT / "audit" / "age_candidate_aggregate_qa_v1.csv", index=False, encoding="utf-8-sig")
+    QA_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    pd.DataFrame(summary).to_csv(QA_OUTPUT_DIR / "age_candidate_aggregate_qa_v1.csv", index=False, encoding="utf-8-sig")
     print(pd.DataFrame(summary).to_string(index=False))
     print(f"Private individual-level candidates: {PRIVATE}")
 

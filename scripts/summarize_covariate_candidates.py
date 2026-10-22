@@ -1,11 +1,10 @@
 """Aggregate-only coverage and distributions for demographic covariate candidates."""
 from pathlib import Path
-from project_paths import WAVE_DATA_DIR
+from project_paths import QA_OUTPUT_DIR, WAVE_DATA_DIR
 import pandas as pd
 import pyreadstat
 
 DATA=WAVE_DATA_DIR
-PROJECT=Path(__file__).resolve().parents[1]
 WAVES=["2011","2013","2015","2018","2020"]
 FIELDS={
  "age_reported_or_derived":{"2011":["ba004"],"2013":["ba004"],"2015":["ba002_1","iyear"],"2018":["ba002_1","iyear"],"2020":["xrage"]},
@@ -55,8 +54,9 @@ def main():
       for value,count in vals[observed(d[rawvar])].value_counts(dropna=True).sort_index().items():
        if int(count)>=5: # suppress very small category counts in synced aggregate artifacts
         dist.append({"wave":w,"concept_id":concept,"raw_variable":rawvar,"raw_value":value,"n":int(count)})
- pd.DataFrame(rows).to_csv(PROJECT/"audit"/"covariate_candidate_availability_v1.csv",index=False,encoding="utf-8-sig")
- pd.DataFrame(dist).to_csv(PROJECT/"audit"/"covariate_candidate_value_counts_v1.csv",index=False,encoding="utf-8-sig")
+ QA_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+ pd.DataFrame(rows).to_csv(QA_OUTPUT_DIR/"covariate_candidate_availability_v1.csv",index=False,encoding="utf-8-sig")
+ pd.DataFrame(dist).to_csv(QA_OUTPUT_DIR/"covariate_candidate_value_counts_v1.csv",index=False,encoding="utf-8-sig")
  print("availability rows",len(rows),"value count rows",len(dist))
 
 if __name__=="__main__": main()

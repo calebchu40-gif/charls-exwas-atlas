@@ -5,13 +5,12 @@ and conflict status instead of treating structural skips as ordinary missing.
 These are research candidates, not CHARLS-endorsed harmonized variables.
 """
 from pathlib import Path
-from project_paths import PRIVATE_ROOT, WAVE_DATA_DIR
+from project_paths import PRIVATE_ROOT, QA_OUTPUT_DIR, WAVE_DATA_DIR
 import pandas as pd
 import pyreadstat
 
 DATA = WAVE_DATA_DIR
 OUT = PRIVATE_ROOT / "derived_covariates"
-PROJECT = Path(__file__).resolve().parents[1]
 WAVES = [2011, 2013, 2015, 2018, 2020]
 
 FIELDS = {
@@ -171,8 +170,9 @@ def main():
             for value,n in x.value_counts().sort_index().items():
                 if int(n) >= 5: values.append({"wave":wave,"concept":concept,"candidate_code":int(value),"n":int(n)})
         print(wave, "rows",len(out),"education nonmissing",out.education_level_candidate.notna().sum(),"hukou nonmissing",out.hukou_type_candidate.notna().sum())
-    pd.DataFrame(agg).to_csv(PROJECT/"audit"/"education_hukou_candidate_status_aggregate_v1.csv",index=False,encoding="utf-8-sig")
-    pd.DataFrame(values).to_csv(PROJECT/"audit"/"education_hukou_candidate_value_aggregate_v1.csv",index=False,encoding="utf-8-sig")
+    QA_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    pd.DataFrame(agg).to_csv(QA_OUTPUT_DIR/"education_hukou_candidate_status_aggregate_v1.csv",index=False,encoding="utf-8-sig")
+    pd.DataFrame(values).to_csv(QA_OUTPUT_DIR/"education_hukou_candidate_value_aggregate_v1.csv",index=False,encoding="utf-8-sig")
     print("Private outputs:",OUT)
 
 def _self_test():

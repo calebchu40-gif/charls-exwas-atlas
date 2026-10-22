@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pandas as pd
 import pyreadstat
+from project_paths import require_private_path
 
 
 DISEASE_INDEX = {
@@ -27,6 +28,8 @@ def main() -> None:
     parser.add_argument("--data-dir", required=True, type=Path)
     parser.add_argument("--out", required=True, type=Path)
     args = parser.parse_args()
+    args.data_dir = require_private_path(args.data_dir)
+    args.out = require_private_path(args.out)
 
     output: list[dict[str, object]] = []
     for wave in (2011, 2013, 2015, 2018, 2020):

@@ -4,12 +4,11 @@ Reads only design-related columns from the private wave tables; never reads or
 exports respondent IDs/rows. Small categorical cells are suppressed.
 """
 from pathlib import Path
-from project_paths import WAVE_DATA_DIR
+from project_paths import QA_OUTPUT_DIR, WAVE_DATA_DIR
 import pandas as pd
 import pyreadstat
 
 DATA=WAVE_DATA_DIR
-PROJECT=Path(__file__).resolve().parents[1]
 WAVES=["2011","2013","2015","2018","2020"]
 
 def main():
@@ -52,7 +51,8 @@ def main():
             "n_unique_nonmissing":None,"n_community_clusters":None,
             "scope_note":"Sampling was implicitly stratified, but no explicit variance-stratum variable was found in available public files. Do not substitute province, city, urban_nbs or area type without official analytic guidance."})
     out=pd.DataFrame(rows)
-    out.to_csv(PROJECT/"audit"/"survey_design_field_coverage_v1.csv",index=False,encoding="utf-8-sig")
+    QA_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    out.to_csv(QA_OUTPUT_DIR/"survey_design_field_coverage_v1.csv",index=False,encoding="utf-8-sig")
     print(out.groupby(["wave","field_type"]).size().to_string())
     print("rows",len(out))
 

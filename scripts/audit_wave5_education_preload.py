@@ -1,11 +1,10 @@
 """Aggregate-only check of CHARLS 2020 education preload against Wave 4."""
 from pathlib import Path
-from project_paths import PRIVATE_ROOT
+from project_paths import PRIVATE_ROOT, QA_OUTPUT_DIR
 import pandas as pd
 import pyreadstat
 
 ROOT=PRIVATE_ROOT
-PROJECT=Path(__file__).resolve().parents[1]
 
 def main():
     prev,_=pyreadstat.read_dta(str(ROOT/"derived_covariates"/"education_hukou_candidate_2018.dta"),usecols=["ID","education_level_candidate"])
@@ -21,7 +20,8 @@ def main():
       "ba010_linked_to_2018_candidate_n":int(baold.sum()),"ba010_without_2018_candidate_n":int((ba.notna()&old.isna()).sum()),
       "interpretation":"zredu and ba010 are disjoint; zredu exactly equals linked 2018 candidate. Aggregate QA only; no IDs or person records emitted."
     }])
-    out.to_csv(PROJECT/"audit"/"wave5_education_preload_qa_v1.csv",index=False,encoding="utf-8-sig")
+    QA_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    out.to_csv(QA_OUTPUT_DIR/"wave5_education_preload_qa_v1.csv",index=False,encoding="utf-8-sig")
     print(out.to_string(index=False))
 
 if __name__=="__main__": main()

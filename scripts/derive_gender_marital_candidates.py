@@ -1,12 +1,11 @@
 """Create provisional gender/marital candidates and aggregate route QA."""
 from pathlib import Path
-from project_paths import PRIVATE_ROOT, WAVE_DATA_DIR
+from project_paths import PRIVATE_ROOT, QA_OUTPUT_DIR, WAVE_DATA_DIR
 import pandas as pd
 import pyreadstat
 
 DATA=WAVE_DATA_DIR
 OUT=PRIVATE_ROOT / "derived_covariates"
-PROJECT=Path(__file__).resolve().parents[1]
 MAP={
  2011:{"gender":"rgender","marital":"be001"},
  2013:{"gender":"xrgender","marital":"be001"},
@@ -52,8 +51,9 @@ def main():
             qa.append({"wave":wave,"concept":"gender_conflict_vs_interviewer_record","rows":len(d),"valid_n":int(out.gender_conflict_flag.sum()),"invalid_or_missing_n":int(out.gender_candidate.isna().sum())})
             qa.append({"wave":wave,"concept":"partner_cohabiting","rows":len(d),"valid_n":int(out.partner_cohabiting_candidate.notna().sum()),"invalid_or_missing_n":int(out.partner_cohabiting_candidate.isna().sum())})
         print(wave,"gender",int(gender.notna().sum()),"marital",int(marital.notna().sum()),"gender conflict",int(out.gender_conflict_flag.sum()))
-    pd.DataFrame(qa).to_csv(PROJECT/"audit"/"gender_marital_candidate_aggregate_v1.csv",index=False,encoding="utf-8-sig")
-    pd.DataFrame(dist).to_csv(PROJECT/"audit"/"gender_marital_value_aggregate_v1.csv",index=False,encoding="utf-8-sig")
+    QA_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    pd.DataFrame(qa).to_csv(QA_OUTPUT_DIR/"gender_marital_candidate_aggregate_v1.csv",index=False,encoding="utf-8-sig")
+    pd.DataFrame(dist).to_csv(QA_OUTPUT_DIR/"gender_marital_value_aggregate_v1.csv",index=False,encoding="utf-8-sig")
 
 def _test():
     s=pd.Series([1,2,3,None])

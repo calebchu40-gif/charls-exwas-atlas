@@ -5,13 +5,12 @@ adjustment follows the official Wave 2 release note; IDs never leave memory.
 """
 from pathlib import Path
 import os
-from project_paths import PRIVATE_ROOT, WAVE_DATA_DIR
+from project_paths import PRIVATE_ROOT, QA_OUTPUT_DIR, WAVE_DATA_DIR, require_private_path
 import pandas as pd
 import pyreadstat
 
 DATA=WAVE_DATA_DIR
-HARM=Path(os.environ.get("CHARLS_HARMONIZED_D_PATH", str(PRIVATE_ROOT / "references" / "H_CHARLS_D_Data.dta")))
-PROJECT=Path(__file__).resolve().parents[1]
+HARM=require_private_path(Path(os.environ.get("CHARLS_HARMONIZED_D_PATH", str(PRIVATE_ROOT / "references" / "H_CHARLS_D_Data.dta"))))
 WAVES=[2011,2013,2015,2018]
 
 def norm(x):
@@ -53,7 +52,8 @@ def main():
    "birthyear_approx_within_1year_n":int((approx_overlap&((approx-ref).abs()<=1)).sum()),
    "id_rule":"2011 baseline ID adjusted per official 2013 release note" if w==2011 else "normalized exact respondent ID",
    "interpretation":"Harmonized CHARLS D age is an external reference; use only after source/version and ID crosswalk QA."})
- pd.DataFrame(result).to_csv(PROJECT/'audit'/'harmonized_age_reference_qa_v1.csv',index=False,encoding='utf-8-sig')
+ QA_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+ pd.DataFrame(result).to_csv(QA_OUTPUT_DIR/'harmonized_age_reference_qa_v1.csv',index=False,encoding='utf-8-sig')
  print(pd.DataFrame(result)[['wave','id_rows_with_reference_age','reference_age_valid_45plus','direct_age_reference_overlap_n','birthyear_approx_reference_overlap_n','birthyear_approx_within_1year_n']].to_string(index=False))
 
 if __name__=='__main__':main()

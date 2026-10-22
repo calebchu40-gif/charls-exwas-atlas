@@ -20,6 +20,7 @@ from pathlib import Path
 
 import pandas as pd
 import pyreadstat
+from project_paths import require_private_path
 
 WAVES = {
     "2011": ("rar", "household_and_community_questionnaire_data.rar"),
@@ -224,8 +225,8 @@ def main():
     ap.add_argument("--waves", default=",".join(WAVES),
                     help="Comma-separated waves to prepare, e.g. 2013 or 2013,2015")
     args = ap.parse_args()
-    input_root = args.input_root.resolve() / "原始数据+问卷2011~2020"
-    outdir = args.out_dir.resolve()
+    input_root = require_private_path(args.input_root) / "原始数据+问卷2011~2020"
+    outdir = require_private_path(args.out_dir)
     outdir.mkdir(parents=True, exist_ok=True)
     all_qa, all_maps, all_wave_summaries = [], [], []
 

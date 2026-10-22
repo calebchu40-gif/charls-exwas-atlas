@@ -11,9 +11,10 @@ import zipfile
 
 import pandas as pd
 import pyreadstat
+from project_paths import QA_OUTPUT_DIR, require_private_path
 
 PROJECT = Path(__file__).resolve().parents[1]
-DEFAULT_DATA = Path(os.environ.get("LOCALAPPDATA", ".")) / "CHARLS_ExWAS_Atlas" / "derived_wave_tables"
+DEFAULT_DATA = require_private_path(Path(os.environ.get("LOCALAPPDATA", ".")) / "CHARLS_ExWAS_Atlas" / "derived_wave_tables")
 DEFAULT_RAW = PROJECT.parent / "charls2011~2020清洗好+原版数据" / "原始数据+问卷2011~2020"
 WAVES = (2011, 2013, 2015, 2018, 2020)
 
@@ -42,8 +43,10 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--data-dir", type=Path, default=DEFAULT_DATA)
     ap.add_argument("--raw-root", type=Path, default=DEFAULT_RAW)
-    ap.add_argument("--out", type=Path, default=PROJECT / "audit" / "charls_psu_mapping_aggregate_v1.csv")
+    ap.add_argument("--out", type=Path, default=QA_OUTPUT_DIR / "charls_psu_mapping_aggregate_v1.csv")
     args = ap.parse_args()
+    args.data_dir = require_private_path(args.data_dir)
+    args.out = require_private_path(args.out)
     psu = read_official_psu_map(args.raw_root)
     psu_keys = set(psu["community_key"].dropna())
     rows = []

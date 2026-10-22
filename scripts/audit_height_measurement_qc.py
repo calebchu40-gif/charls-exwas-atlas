@@ -1,17 +1,18 @@
 """Aggregate-only CHARLS measured-height special-code and compliance audit."""
 from pathlib import Path
-from project_paths import WAVE_DATA_DIR
+from project_paths import QA_OUTPUT_DIR, WAVE_DATA_DIR
 
 import pandas as pd
 import pyreadstat
 
 
 DATA = WAVE_DATA_DIR
-OUT = Path(__file__).resolve().parents[1] / "audit" / "height_measurement_qc_aggregate_v1.csv"
+OUT = QA_OUTPUT_DIR / "height_measurement_qc_aggregate_v1.csv"
 WAVES = ["2011", "2013", "2015"]
 
 
 def main() -> None:
+    OUT.parent.mkdir(parents=True, exist_ok=True)
     rows = []
     for wave in WAVES:
         path = DATA / f"CHARLS_wave{wave}_person_analytic.dta"

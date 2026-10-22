@@ -1,15 +1,14 @@
 """Codebook-aware, aggregate-only validity audit for core exposure proxies.
 
 Individual records are read only from the private LocalAppData directory. The
-outputs are disclosure-safe counts and value distributions in the project.
+outputs are local aggregate counts and value distributions in the private QA directory.
 """
 from pathlib import Path
-from project_paths import WAVE_DATA_DIR
+from project_paths import QA_OUTPUT_DIR, WAVE_DATA_DIR
 import pandas as pd
 import pyreadstat
 
 DATA = WAVE_DATA_DIR
-PROJECT = Path(__file__).resolve().parents[1]
 WAVES = ["2011", "2013", "2015", "2018", "2020"]
 FIELDS = {
     "smoke_ever": {"2011":"da059","2013":"da059","2015":"da059","2018":"da059","2020":"da046"},
@@ -75,8 +74,9 @@ def main():
             for value, n in x[nonmissing].value_counts().sort_index().items():
                 is_valid = (0 <= value <= 24) if concept == "sleep_hours" else (value in ALLOWED[concept][wave])
                 values.append({"wave":wave,"concept_id":concept,"raw_variable":var,"raw_value":value,"n":int(n),"valid_under_current_rule":bool(is_valid)})
-    pd.DataFrame(summary).to_csv(PROJECT/"audit"/"core_exposure_validity_v1.csv",index=False,encoding="utf-8-sig")
-    pd.DataFrame(values).to_csv(PROJECT/"audit"/"core_exposure_value_counts_v1.csv",index=False,encoding="utf-8-sig")
+    QA_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    pd.DataFrame(summary).to_csv(QA_OUTPUT_DIR/"core_exposure_validity_v1.csv",index=False,encoding="utf-8-sig")
+    pd.DataFrame(values).to_csv(QA_OUTPUT_DIR/"core_exposure_value_counts_v1.csv",index=False,encoding="utf-8-sig")
     print(pd.DataFrame(summary).groupby(["wave","status"]).size().to_string())
     print(f"rows={len(summary)} value_rows={len(values)}")
 

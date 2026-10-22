@@ -5,6 +5,7 @@ import argparse, os, runpy
 from pathlib import Path
 import pandas as pd
 import pyreadstat
+from project_paths import QA_OUTPUT_DIR, require_private_path
 
 DISEASES = ["hypertension", "dyslipidemia", "diabetes", "chronic_lung_disease",
             "heart_disease", "stroke", "kidney_disease", "arthritis"]
@@ -14,10 +15,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data-dir", type=Path, required=True)
     ap.add_argument("--status-dir", type=Path, required=True)
-    ap.add_argument("--project-dir", type=Path, default=Path(__file__).resolve().parents[1])
+    ap.add_argument("--output-dir", type=Path, default=QA_OUTPUT_DIR,
+                    help="Private local directory for pair-availability counts")
     a=ap.parse_args()
-    if "OneDrive" in str(a.status_dir.resolve()) or "Desktop" in str(a.status_dir.resolve()):
-        raise ValueError("Personal-level status tables must remain outside synchronized paths")
+    a.data_dir=require_private_path(a.data_dir)
+    a.status_dir=require_private_path(a.status_dir)
+    a.output_dir=require_private_path(a.output_dir)
     core=runpy.run_path(str(Path(__file__).with_name("build_core_concept_coverage.py")))
     exposure_rules=runpy.run_path(str(Path(__file__).with_name("summarize_core_exposure_validity.py")))
     mapping, roles, observed = core["MAP"], core["ROLE"], core["observed_mask"]
@@ -51,7 +54,7 @@ def main():
                     "n_pair_complete_including_flagged":n,"n_pairs_with_outcome_conflict_flag":n_conflict,
                     "n_pair_complete_conflict_free":n_conflict_free,"status":state,
                     "sample_count_note":"codebook-valid exposure response × nonmissing provisional disease status; still excludes no design/weight/covariate/model restrictions"})
-    out=a.project_dir/"audit"/"chronic_disease_pairwise_availability_v1.csv"
+    out=a.output_dir/"chronic_disease_pairwise_availability_v1.csv"
     out.parent.mkdir(parents=True,exist_ok=True)
     pd.DataFrame(rows).to_csv(out,index=False,encoding="utf-8-sig")
     print(f"rows={len(rows)} exposures={len(exposures)} outcomes={len(DISEASES)} waves={len(WAVES)}")
