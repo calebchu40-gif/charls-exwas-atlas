@@ -1,5 +1,9 @@
 # Change log
 
+## 2026-10-22 (continued)
+
+- Recorded official Wave 5 Sample Information and Sampling Weights hashes and a source-level verification checklist for the age-domain audit. The local prepared tables cannot yet be matched to those source archives, so the 2020 target age domain remains provisional.
+
 This file records project-level changes that affect reproducibility, methods, data handling, or the local prototype. Individual variable audits remain documented in `audit/`.
 
 ## 2026-10-22
