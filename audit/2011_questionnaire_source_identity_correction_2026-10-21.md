@@ -11,11 +11,10 @@
 
 ## 尚待复核范围
 
-18份专题Markdown审计文件曾引用错误问卷摘录；其中工作史与睡眠情景题审计现已用正确2011基线家户问卷完成来源复核：FB010编码冲突继续锁定，DE010–DE012已确认是虚构人物锚定情景并转C类；FL020 16项问卷选项及其未确认的数据编码也已单独记录，见 `work_history_lifecourse_mapping_review_v1.md`。养老金专项复核也已完成：`pension_2011_fn015_fn016_source_identity_conflict_review_2026-10-22.md`和`pension_2011_fn036_questionnaire_codebook_identity_review_2026-10-21.md`均已按正确2011基线家户问卷更正，相关字段映射恢复。下列12份文件仍需逐项复核；跨波构念须分别依据对应官方波次材料判断，不可只凭相邻波次推定。
+18份专题Markdown审计文件曾引用错误问卷摘录；其中工作史与睡眠情景题审计现已用正确2011基线家户问卷完成来源复核：FB010编码冲突继续锁定，DE010–DE012已确认是虚构人物锚定情景并转C类；FL020 16项问卷选项及其未确认的数据编码也已单独记录，见 `work_history_lifecourse_mapping_review_v1.md`。养老金专项复核也已完成：`pension_2011_fn015_fn016_source_identity_conflict_review_2026-10-22.md`和`pension_2011_fn036_questionnaire_codebook_identity_review_2026-10-21.md`均已按正确2011基线家户问卷更正，相关字段映射恢复。下列11份文件仍需逐项复核；跨波构念须分别依据对应官方波次材料判断，不可只凭相邻波次推定。
 
-其余12份文件为：
+其余11份文件为：
 
-- `last_nonfarm_job_hours_wage_2013_2018_review_2026-10-21.md`
 - `pension_2011_codebook_questionnaire_discrepancy_review_2026-10-17.md`
 - `pension_basic_plan_participation_dates_review_2026-10-21.md`
 - `pension_land_requisition_and_fn094_amount_review_2026-10-21.md`
