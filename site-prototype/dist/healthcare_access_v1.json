@@ -854,7 +854,7 @@
         "value_semantics": "ED004 selects facility types visited for outpatient treatment in the last 4 weeks; ED005 asks visit counts in the last month for each selected facility. ED006 is conditional on total ED005 >1. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; Word p.100, ED004–ED006",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
@@ -866,7 +866,7 @@
         "value_semantics": "ED004 selects facility types visited for outpatient treatment in the last 4 weeks; ED005 asks visit counts in the last month for each selected facility. ED006 is conditional on total ED005 >1. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; Word p.100, ED004–ED006",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
@@ -878,7 +878,7 @@
         "value_semantics": "ED004 selects facility types visited for outpatient treatment in the last 4 weeks; ED005 asks visit counts in the last month for each selected facility. ED006 is conditional on total ED005 >1. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; Word p.100, ED004–ED006",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
@@ -890,7 +890,7 @@
         "value_semantics": "ED004 selects facility types visited for outpatient treatment in the last 4 weeks; ED005 asks visit counts in the last month for each selected facility. ED006 is conditional on total ED005 >1. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; Word p.100, ED004–ED006",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
@@ -902,7 +902,7 @@
         "value_semantics": "ED004 selects facility types visited for outpatient treatment in the last 4 weeks; ED005 asks visit counts in the last month for each selected facility. ED006 is conditional on total ED005 >1. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; Word p.100, ED004–ED006",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
@@ -914,7 +914,7 @@
         "value_semantics": "ED004 selects facility types visited for outpatient treatment in the last 4 weeks; ED005 asks visit counts in the last month for each selected facility. ED006 is conditional on total ED005 >1. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; Word p.100, ED004–ED006",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
@@ -926,7 +926,7 @@
         "value_semantics": "ED004 selects facility types visited for outpatient treatment in the last 4 weeks; ED005 asks visit counts in the last month for each selected facility. ED006 is conditional on total ED005 >1. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; Word p.100, ED004–ED006",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
@@ -938,7 +938,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2013 Questionnaire, pp.116–118 (outpatient recent-month use and provider-specific counts).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
@@ -950,7 +950,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2013 Questionnaire, pp.116–118 (outpatient recent-month use and provider-specific counts).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
@@ -962,7 +962,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2013 Questionnaire, pp.116–118 (outpatient recent-month use and provider-specific counts).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
@@ -974,7 +974,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2013 Questionnaire, pp.116–118 (outpatient recent-month use and provider-specific counts).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
@@ -986,7 +986,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2013 Questionnaire, pp.116–118 (outpatient recent-month use and provider-specific counts).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
@@ -998,7 +998,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2013 Questionnaire, pp.116–118 (outpatient recent-month use and provider-specific counts).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
@@ -1010,7 +1010,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2013 Questionnaire, pp.116–118 (outpatient recent-month use and provider-specific counts).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
@@ -1022,7 +1022,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2015 Questionnaire, pp.104–106 (past-month outpatient use and provider-specific counts).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
@@ -1034,7 +1034,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2015 Questionnaire, pp.104–106 (past-month outpatient use and provider-specific counts).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
@@ -1046,7 +1046,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2015 Questionnaire, pp.104–106 (past-month outpatient use and provider-specific counts).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
@@ -1058,7 +1058,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2015 Questionnaire, pp.104–106 (past-month outpatient use and provider-specific counts).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
@@ -1070,7 +1070,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2015 Questionnaire, pp.104–106 (past-month outpatient use and provider-specific counts).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
@@ -1082,7 +1082,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2015 Questionnaire, pp.104–106 (past-month outpatient use and provider-specific counts).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
@@ -1094,7 +1094,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2015 Questionnaire, pp.104–106 (past-month outpatient use and provider-specific counts).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
@@ -1106,7 +1106,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2018 Questionnaire, pp.154–156 (last-month outpatient use, excludes physical examinations; facility categories reference last 4 weeks).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
@@ -1118,7 +1118,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2018 Questionnaire, pp.154–156 (last-month outpatient use, excludes physical examinations; facility categories reference last 4 weeks).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
@@ -1130,7 +1130,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2018 Questionnaire, pp.154–156 (last-month outpatient use, excludes physical examinations; facility categories reference last 4 weeks).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
@@ -1142,7 +1142,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2018 Questionnaire, pp.154–156 (last-month outpatient use, excludes physical examinations; facility categories reference last 4 weeks).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
@@ -1154,7 +1154,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2018 Questionnaire, pp.154–156 (last-month outpatient use, excludes physical examinations; facility categories reference last 4 weeks).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
@@ -1166,7 +1166,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2018 Questionnaire, pp.154–156 (last-month outpatient use, excludes physical examinations; facility categories reference last 4 weeks).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
@@ -1178,7 +1178,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2018 Questionnaire, pp.154–156 (last-month outpatient use, excludes physical examinations; facility categories reference last 4 weeks).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
@@ -1190,7 +1190,7 @@
         "value_semantics": "Facility-specific visit count slot; slot suffix must be interpreted with same-wave ed004 provider-type categories. Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis.",
         "questionnaire_reference": "2018 Questionnaire, pp.154–156 (last-month outpatient use, excludes physical examinations; facility categories reference last 4 weeks).",
         "value_labels": "",
-        "value_label_status": "连续计数；参照期/機構槽位依波次；极值待核",
+        "value_label_status": "连续计数；参照期/机构槽位依波次；极值待核",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
       }
     ]

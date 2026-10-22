@@ -57,7 +57,7 @@ def enrich(row):
     elif cid == "outpatient_visits_by_facility":
         if "Continuous nonnegative visit count" not in semantics:
             semantics += " Continuous nonnegative visit count (number of visits in the questionnaire recall window); no discrete response categories. Codebook summaries include high values in some waves; inspect raw release special codes and distribution before analysis."
-        status = "连续计数；参照期/機構槽位依波次；极值待核"
+        status = "连续计数；参照期/机构槽位依波次；极值待核"
     elif cid == "inpatient_count_past_year":
         if "Continuous integer count of past-year inpatient episodes" not in semantics:
             semantics += " Continuous integer count of past-year inpatient episodes, asked conditionally after inpatient-care routing; not an ordinal response scale. Codebook maxima vary substantially by wave (including 2,011 in 2011 and 150 in 2018), so verify extreme values and release-specific special codes before analysis."

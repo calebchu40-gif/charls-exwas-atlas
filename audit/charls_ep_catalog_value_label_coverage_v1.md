@@ -48,7 +48,7 @@
 |official selected-option label; checkbox slot, absence is not a negative response|42|
 |代码本逐值标签已核|38|
 |continuous measure metadata available; see description/crosswalk|32|
-|连续计数；参照期/機構槽位依波次；极值待核|29|
+|连续计数；参照期/机构槽位依波次；极值待核|29|
 |continuous raw subtraction response; Codebook extreme maxima occur; valid range and scoring require authorized raw-data QA|25|
 |official response categories/unit reviewed; Codebook frequencies omitted|25|
 |字段标签已核；代码本呈现多选类别频数，未能从摘录确认未选/否的底层存储码|21|

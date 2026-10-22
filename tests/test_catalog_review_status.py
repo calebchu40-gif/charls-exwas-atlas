@@ -142,7 +142,7 @@ class CatalogReviewStatusTests(unittest.TestCase):
             and row.get("Source.Wave") == "2011"
         ]
         self.assertTrue(rows)
-        self.assertTrue(any("连续计数" in row.get("Value.Label.Review", "") for row in rows))
+        self.assertTrue(any("连续计数；参照期/机构槽位依波次；极值待核" == row.get("Value.Label.Review", "") for row in rows))
         self.assertTrue(any("healthcare_access_crosswalk_v1.csv" in row.get("Value.Label.Source", "") or "CHARLS_2011_Codebook" in row.get("Value.Label.Source", "") for row in rows))
         app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
         self.assertIn("x.value_label_review&&x.value_label_review!=='not yet reviewed'?x.value_label_review", app)
