@@ -24,6 +24,8 @@ The follow-up pass also reviewed the household telephone and broadband indicator
 | Broadband connection | i024 | i024 | i024 | i024 | i023 |
 | Air cleaner in residence | not mapped in this review | not mapped in this review | i027_w3 | i027_w3 | i024 |
 
+Additional residence-context fields included after codebook and questionnaire review are 2011–2018 `i003` (whether the residence is also used for business), 2018 `i000_w4_2` (residence location category), 2018 `i000_w4_3` (house type), and 2020 `i027` (floor/ground condition). The 2018 location and house-type fields are a single-wave questionnaire module; they are not harmonized to the NBS urban/rural identifier or to other waves by label similarity.
+
 ## Wave differences retained
 
 - 2011 structure uses codes 1–10, including code 8 `Tent`. The 2013 Codebook category table lists 1–7, 9, and 10; code 8 is not imputed from the prior wave.

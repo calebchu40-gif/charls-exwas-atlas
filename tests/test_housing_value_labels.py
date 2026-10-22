@@ -44,7 +44,15 @@ class HousingValueLabelTests(unittest.TestCase):
                     ("2011", "i024"), ("2013", "i024"), ("2015", "i024"), ("2018", "i024"), ("2020", "i023"),
                     ("2015", "i027_w3"), ("2018", "i027_w3"), ("2020", "i024")):
             self.assertEqual(lookup[key]["value_labels"], "1=Yes; 2=No", key)
-        self.assertNotIn(("2020", "i027"), lookup)
+        self.assertEqual(lookup[("2020", "i027")]["value_labels"], "1=Flat covered; 2=Flat concrete; 3=Uneven")
+
+    def test_residence_use_and_single_wave_housing_categories_are_labeled(self):
+        lookup = {(row["wave"], row["code"]): row for row in self.labels}
+        for wave in ("2011", "2013", "2015", "2018"):
+            self.assertEqual(lookup[(wave, "i003")]["value_labels"], "1=Yes; 2=No")
+        self.assertIn("4=Special zone", lookup[("2018", "i000_w4_2")]["value_labels"])
+        self.assertIn("8=Other", lookup[("2018", "i000_w4_3")]["value_labels"])
+        self.assertEqual(lookup[("2020", "i027")]["value_labels"], "1=Flat covered; 2=Flat concrete; 3=Uneven")
 
     def test_reviewed_labels_reach_field_catalog_concept_crosswalk_and_housing_page(self):
         key = ("2018", "i010_w4")
