@@ -22,6 +22,12 @@ wave_codes = {(row.get("Source.Wave", ""), row.get("Variable.Name", "").lower())
 labelled_wave_codes = {(row.get("Source.Wave", ""), row.get("Variable.Name", "").lower()) for row in labelled}
 status_counts = Counter(row.get("Value.Label.Review", "") for row in ep_rows)
 conflicts = [(row.get("Source.Wave", ""), row.get("Variable.Name", "")) for row in ep_rows if row.get("Value.Label.Review", "") == "conflict"]
+source_discrepancies = sorted({
+    (row.get("Source.Wave", ""), row.get("Variable.Name", ""))
+    for row in ep_rows
+    if "DO NOT ANALYZE" in row.get("Value.Label.Review", "")
+    and "questionnaire:" in row.get("Value.Label.Review", "")
+})
 
 coverage = read_csv(AUDIT / "charls_ep_catalog_value_label_coverage_v1.csv")
 groups: dict[tuple[str, str], dict[str, int]] = defaultdict(lambda: {"rows": 0, "labels": 0, "subcategories": 0})
@@ -42,6 +48,7 @@ lines = [
     f"- E/P字段—角色—类别目录行：{len(ep_rows):,}；不同波次—字段码：{len(wave_codes):,}。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。",
     f"- 有非空官方/已审标签文本的E/P目录行：{len(labelled):,}；不同波次—字段码：{len(labelled_wave_codes):,}。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。",
     f"- 明确标为`conflict`的E/P字段码：{len(set(conflicts))}；详情按主目录波次和变量码检索。",
+    f"- 问卷/Codebook编码差异尚未调和并锁定`DO NOT ANALYZE`的E/P字段：{', '.join(f'{wave} `{code}`' for wave, code in source_discrepancies) if source_discrepancies else '无'}。此项独立于上面的精确`conflict`标签计数。",
     "- 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。",
     "",
     f"## 按角色和类别汇总（{date.today().isoformat()}）",
@@ -56,4 +63,4 @@ for status, count in status_counts.most_common():
     lines.append(f"|{status.replace('|', '\\|')}|{count:,}|")
 lines.append("")
 (AUDIT / "charls_ep_catalog_value_label_coverage_v1.md").write_text("\n".join(lines), encoding="utf-8")
-print(f"E/P rows={len(ep_rows)}; distinct wave-fields={len(wave_codes)}; labelled rows={len(labelled)}; conflicts={len(set(conflicts))}")
+print(f"E/P rows={len(ep_rows)}; distinct wave-fields={len(wave_codes)}; labelled rows={len(labelled)}; conflicts={len(set(conflicts))}; source discrepancies={len(source_discrepancies)}")

@@ -66,7 +66,10 @@ def main():
                 status = "codebook field located; continuous/open response or no categorical labels"
             source = str(BOOKS[wave].relative_to(ROOT)).replace("\\", "/")
             if code == "fb010" and wave == "2011":
-                status = "questionnaire/codebook response-code conflict; codebook labels shown for reference only; do not analyze until reconciled"
+                status = ("DO NOT ANALYZE; questionnaire: 1=Family, 2=Health, 3=School, 4=Unemployment/layoff, 5=Other; "
+                          "Codebook labels retained for reference: 1=Family, 2=Health, 4=School, 5=Unemployment/layoff, 6=Other; "
+                          "released-data coding unresolved")
+                source += "; sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
         rows.append({
             "wave": wave, "code": r.code, "concept_id": r.concept_id,
             "source_label": r.source_label, "value_labels": labels,
@@ -307,7 +310,7 @@ def main():
         wave = str(out.at[idx, "wave"])
         out.at[idx, "value_labels"] = "1=Yes; 2=No"
         out.at[idx, "value_label_status"] = "questionnaire/Codebook item-identity conflict; DO NOT ANALYZE until official source identity and released-data coding are reconciled"
-        questionnaire = "CHARLS_2011_Baseline_Questionnaire_official_extracted.txt" if wave == "2011" else "CHARLS_2020_Questionnaire_English_extracted.txt"
+        questionnaire = "CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt" if wave == "2011" else "CHARLS_2020_Questionnaire_English_extracted.txt"
         out.at[idx, "value_label_source"] = f"sources_official/{questionnaire}; sources_official/CHARLS_{wave}_Codebook_extracted.txt"
     out.to_csv(AUDIT / "work_exposure_value_labels_v1.csv", index=False, encoding="utf-8-sig")
 

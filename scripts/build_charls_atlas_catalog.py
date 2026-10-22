@@ -912,6 +912,14 @@ def main() -> None:
     add_reviewed_labels("housing_owner_relation_value_label_review_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official Codebook response labels complete", re.I))
     add_reviewed_labels("marital_history_exposure_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official wave questionnaire/codebook item definition reviewed", re.I))
     add_reviewed_labels("residual_behavior_exposure_crosswalk_v1.csv", "wave", "code", "value_labels", "mapping_status", "source_archive", re.compile(r"official questionnaire/codebook field identified", re.I))
+    # Keep this confirmed questionnaire/Codebook conflict searchable while
+    # retaining its explicit DO NOT ANALYZE status; it is not a harmonized label.
+    work_labels = root / "audit" / "work_exposure_value_labels_v1.csv"
+    if work_labels.exists():
+        work = pd.read_csv(work_labels, dtype=str, encoding="utf-8-sig").fillna("")
+        for item in work.to_dict(orient="records"):
+            if item.get("wave") == "2011" and item.get("code", "").lower() == "fb010" and item.get("value_labels"):
+                label_map.setdefault(("2011", "fb010"), set()).add((item["value_labels"], item.get("value_label_source", "audit/work_exposure_value_labels_v1.csv")))
     # Fuel response categories are an explicit wave-specific codebook table;
     # aggregate by the actual field, never by the numeric category alone.
     fuel_path = root / "audit" / "cooking_fuel_crosswalk_v1.csv"
@@ -1130,6 +1138,18 @@ def main() -> None:
                 & out["Value.Label.Review"].ne("conflict")
             )
             out.loc[selected, "Value.Label.Review"] = status
+    # The codebook categories remain searchable, but their provenance conflict
+    # must survive the aggregate catalog's generic review-status reduction.
+    fb010_status_path = root / "audit" / "work_exposure_value_labels_v1.csv"
+    if fb010_status_path.exists():
+        work_labels = pd.read_csv(fb010_status_path, dtype=str, encoding="utf-8-sig").fillna("")
+        for item in work_labels.to_dict(orient="records"):
+            if item.get("wave") != "2011" or item.get("code", "").lower() != "fb010":
+                continue
+            selected = out["Source.Wave"].astype(str).eq("2011") & out["Variable.Name"].str.lower().eq("fb010")
+            out.loc[selected, "Value.Label.Review"] = item.get("value_label_status", "DO NOT ANALYZE; questionnaire/Codebook coding unresolved")
+            out.loc[selected, "Value.Label.Source"] = item.get("value_label_source", "")
+
     covid_status_path = root / "audit" / "household_covid_economic_crosswalk_v1.csv"
     if covid_status_path.exists():
         covid_status = pd.read_csv(covid_status_path, dtype=str, encoding="utf-8-sig").fillna("")
@@ -1371,6 +1391,24 @@ def main() -> None:
     out = out.drop_duplicates(source_identity, keep="first")
     out.to_csv(args.out_dir / "charls_atlas_candidate_fields_v0.csv", index=False, encoding="utf-8-sig")
 
+    def summarize_label_review(values: pd.Series) -> str:
+        reviews = [str(value) for value in values if pd.notna(value) and str(value).strip()]
+        blocked = next((value for value in reviews if any(
+            marker in value.lower() for marker in ("do not analyze", "unresolved", "conflict")
+        )), "")
+        if blocked:
+            return blocked
+        partial = next((value for value in reviews if value.startswith("official Codebook extraction exposes only a partial response-code set")), "")
+        if partial:
+            return partial
+        if "officially reviewed" in reviews:
+            return "officially reviewed"
+        if any("audited measurement component" in value for value in reviews):
+            return "audited measurement component"
+        if any("continuous measure metadata available" in value for value in reviews):
+            return "continuous measure metadata available"
+        return "not yet reviewed"
+
     out["_code_key"] = out["Variable.Name"].str.lower()
     series = (out.groupby(["epcf", "category", "subcategory", "_code_key"], dropna=False)
               .agg(**{"Variable.Name": ("Variable.Name", "first"),
@@ -1380,7 +1418,7 @@ def main() -> None:
                    "source_modules": ("Data.File.Name", lambda s: ",".join(sorted(set(s)))),
                    "value_labels": ("Value.Labels", lambda s: " | ".join(sorted({str(v) for v in s if pd.notna(v) and str(v).strip()}))),
                    "value_label_source": ("Value.Label.Source", lambda s: " | ".join(sorted({str(v) for v in s if pd.notna(v) and str(v).strip()}))),
-                   "value_label_review": ("Value.Label.Review", lambda s: "conflict" if "conflict" in set(s) else (next((str(v) for v in s if str(v).startswith("official Codebook extraction exposes only a partial response-code set")), "") or ("officially reviewed" if "officially reviewed" in set(s) else ("audited measurement component" if any("audited measurement component" in str(v) for v in s) else ("continuous measure metadata available" if any("continuous measure metadata available" in str(v) for v in s) else "not yet reviewed"))))),
+                   "value_label_review": ("Value.Label.Review", summarize_label_review),
                    "harmonization_status": ("Harmonization.Status", lambda s: next((str(v) for v in s if str(v).startswith("continuous internal biomarker/clinical or physical measure")), ""))})
               .reset_index().drop(columns=["_code_key"]))
     # Explicitly preserve special review states in the public series view.

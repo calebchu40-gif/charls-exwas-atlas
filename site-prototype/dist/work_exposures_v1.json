@@ -2878,7 +2878,7 @@
         "note": "official 2011 baseline questionnaire FD009 and 2011 Codebook reviewed: questionnaire asks formal employee in the public-institution branch (FD002=2), while Codebook title is 'Regular Worker'. Do not equate this with 2011 FD007 or later-wave public-institution FD009 until field identity and released-data labels are reconciled. DO NOT ANALYZE.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "questionnaire/Codebook item-identity conflict; DO NOT ANALYZE until official source identity and released-data coding are reconciled",
-        "value_label_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },
@@ -6840,8 +6840,8 @@
         "mapping_status": "candidate; category code conflict between questionnaire and codebook; analysis labels unresolved",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "1=Family; 2=Health; 4=School; 5=Unemployment/layoff; 6=Other",
-        "value_label_status": "questionnaire/codebook response-code conflict; codebook labels shown for reference only; do not analyze until reconciled",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+        "value_label_status": "DO NOT ANALYZE; questionnaire: 1=Family, 2=Health, 3=School, 4=Unemployment/layoff, 5=Other; Codebook labels retained for reference: 1=Family, 2=Health, 4=School, 5=Unemployment/layoff, 6=Other; released-data coding unresolved",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",

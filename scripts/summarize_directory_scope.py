@@ -22,9 +22,19 @@ summary={'as_of':date.today().isoformat(),'crosswalk_files':len(domains),'candid
 (ROOT/'audit/directory_scope_counts_v1.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')
 html=ROOT/'site-prototype/dist/index.html'; lines=html.read_text(encoding='utf-8').splitlines()
 e_only=len(e_ids-p_ids); p_only=len(p_ids-e_ids); dual=len(e_ids&p_ids)
-new=f'<div class="stats" aria-label="项目当前进展"><div class="stat"><b>{len(concept_ids)}</b><span>去重候选 E/P Concept ID</span></div><div class="stat"><b>{len(e_ids)} / {len(p_ids)}</b><span>E / P 角色概念；另有{dual}个双角色（去重{len(concept_ids)}）</span></div><div class="stat"><b>5</b><span>已整理波次（2011–2020）</span></div><div class="stat"><b>{rows:,}</b><span>E/P概念—源字段映射；含波次/槽位</span></div><div class="stat"><b>0</b><span>正式关联模型已拟合</span></div></div>'
-indices=[i for i,line in enumerate(lines) if line.lstrip().startswith('<div class="stats" aria-label="项目当前进展">')]
-if len(indices)!=1: raise SystemExit('Expected exactly one KPI line; refusing to overwrite unexpected HTML')
-lines[indices[0]]='    '+new
+indices=[i for i,line in enumerate(lines) if line.lstrip().startswith('<div class="stats"')]
+if len(indices)!=1: raise SystemExit('Expected exactly one stats block; refusing to overwrite unexpected HTML')
+start=indices[0]; indent=len(lines[start])-len(lines[start].lstrip())
+end=next((i for i in range(start+1,len(lines)) if lines[i].strip()=='</div>' and len(lines[i])-len(lines[i].lstrip())==indent),None)
+if end is None: raise SystemExit('Could not locate stats block closing tag; refusing to overwrite unexpected HTML')
+new=[
+    ' '*indent+'<div class="stats" aria-label="目录进度">',
+    ' '*(indent+2)+f'<div class="stat"><b>{len(concept_ids):,}</b><span>候选 E/P 概念</span></div>',
+    ' '*(indent+2)+'<div class="stat"><b>5</b><span>调查波次：2011–2020</span></div>',
+    ' '*(indent+2)+f'<div class="stat"><b>{rows:,}</b><span>E/P 概念—源字段映射</span></div>',
+    ' '*(indent+2)+'<div class="stat"><b>0</b><span>正式关联模型</span></div>',
+    ' '*indent+'</div>',
+]
+lines=lines[:start]+new+lines[end+1:]
 html.write_text('\n'.join(lines)+'\n',encoding='utf-8')
 print(json.dumps({'candidate_concept_ids':len(concept_ids),'exposures':len(e_ids),'phenotypes':len(p_ids),'concept_source_rows':rows},ensure_ascii=False))

@@ -848,6 +848,21 @@ fields.to_csv(field_path,index=False,encoding="utf-8-sig")
 series_path=AUDIT/"charls_atlas_candidate_series_v0.csv"
 fields_for_series=fields.copy()
 fields_for_series["_code_key"]=fields_for_series["Variable.Name"].str.lower()
+def summarize_label_review(values):
+    reviews=[str(value) for value in values if pd.notna(value) and str(value).strip()]
+    blocked=next((value for value in reviews if any(marker in value.lower() for marker in ("do not analyze","unresolved","conflict"))),"")
+    if blocked:
+        return blocked
+    partial=next((value for value in reviews if value.startswith("official Codebook extraction exposes only a partial response-code set")),"")
+    if partial:
+        return partial
+    if "officially reviewed" in reviews:
+        return "officially reviewed"
+    if any("audited measurement component" in value for value in reviews):
+        return "audited measurement component"
+    if any("continuous measure metadata available" in value for value in reviews):
+        return "continuous measure metadata available"
+    return "not yet reviewed"
 series=(fields_for_series.groupby(["epcf","category","subcategory","_code_key"],dropna=False)
  .agg(**{"Variable.Name":("Variable.Name","first"),
        "Variable.Description":("Variable.Description",lambda s:" | ".join(sorted(set(s))[:3])),
@@ -856,7 +871,7 @@ series=(fields_for_series.groupby(["epcf","category","subcategory","_code_key"],
        "source_modules":("Data.File.Name",lambda s:",".join(sorted(set(s)))),
        "value_labels":("Value.Labels",lambda s:" | ".join(sorted({str(v) for v in s if pd.notna(v) and str(v).strip()}))),
        "value_label_source":("Value.Label.Source",lambda s:" | ".join(sorted({str(v) for v in s if pd.notna(v) and str(v).strip()}))),
-       "value_label_review":("Value.Label.Review",lambda s:"conflict" if "conflict" in set(s) else ("officially reviewed" if "officially reviewed" in set(s) else ("audited measurement component" if any("audited measurement component" in str(v) for v in s) else ("continuous measure metadata available" if any("continuous measure metadata" in str(v) for v in s) else "not yet reviewed"))))})
+       "value_label_review":("Value.Label.Review",summarize_label_review)})
  .reset_index().drop(columns=["_code_key"]))
 removed_series="rebuilt"
 series.to_csv(series_path,index=False,encoding="utf-8-sig")

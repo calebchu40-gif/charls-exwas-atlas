@@ -3,8 +3,9 @@
 更新：2026-10-22。由`scripts/summarize_value_label_coverage.py`从当前字段目录和覆盖CSV自动生成。
 
 - E/P字段—角色—类别目录行：6,633；不同波次—字段码：6,552。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
-- 有非空官方/已审标签文本的E/P目录行：2,817；不同波次—字段码：2,791。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
+- 有非空官方/已审标签文本的E/P目录行：2,818；不同波次—字段码：2,792。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
 - 明确标为`conflict`的E/P字段码：0；详情按主目录波次和变量码检索。
+- 问卷/Codebook编码差异尚未调和并锁定`DO NOT ANALYZE`的E/P字段：2011 `fb010`。此项独立于上面的精确`conflict`标签计数。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
 
 ## 按角色和类别汇总（2026-10-22）
@@ -18,7 +19,7 @@
 |e|family and intergenerational context|6|6|1|
 |e|food and household environment|160|28|1|
 |e|housing and built environment|480|18|2|
-|e|social determinants|2,155|893|20|
+|e|social determinants|2,155|894|20|
 |e|social protection|1,331|432|30|
 |p|anthropometric|15|0|1|
 |p|biochemistry|32|0|1|
@@ -35,8 +36,9 @@
 
 |审核状态|E/P目录行|
 |---|---:|
-|not yet reviewed|2,972|
 |officially reviewed|2,645|
+|not yet reviewed|1,953|
+|numeric/time unit metadata available; no discrete labels assigned; see concept crosswalk|1,018|
 |continuous measure metadata available|214|
 |official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories|200|
 |official Codebook numeric/count response located; no discrete answer labels|128|
@@ -67,6 +69,7 @@
 |official questionnaire/codebook categories; frequencies omitted; current employer benefit route|2|
 |wave-specific official questionnaire categories transcribed without frequencies; retrospective first-workplace location|2|
 |local string endpoint pairs checked; Codebook extreme upper value present; route/unit and sentinel semantics unresolved|2|
+|DO NOT ANALYZE; questionnaire: 1=Family, 2=Health, 3=School, 4=Unemployment/layoff, 5=Other; Codebook labels retained for reference: 1=Family, 2=Health, 4=School, 5=Unemployment/layoff, 6=Other; released-data coding unresolved|1|
 |official questionnaire response categories transcribed without frequencies; continuity of the specific prior-wave work activity|1|
 |questionnaire response scale verified; Codebook title conflict retained|1|
 |all observed codes verified against official Codebook; unobserved commercial-insurance option left unmapped|1|

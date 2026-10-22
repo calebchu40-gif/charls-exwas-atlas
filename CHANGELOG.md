@@ -3,6 +3,8 @@
 ## 2026-10-22 (continued)
 
 - Recorded official Wave 5 Sample Information and Sampling Weights hashes and a source-level verification checklist for the age-domain audit. The local prepared tables cannot yet be matched to those source archives, so the 2020 target age domain remains provisional.
+- Rechecked 2011 work-history item `FB010` against the correctly identified official baseline household questionnaire and the wave Codebook. The code discrepancy is confirmed and remains locked; both the work-exposure view and the main catalog now show the conflicting menus and `DO NOT ANALYZE` status. The source-correction register no longer treats this audit as unreviewed.
+- Preserved wave-specific locked review states during catalog aggregation, made the metadata rebuild update the current homepage stats block safely, and expanded value-label coverage notes to distinguish exact conflict flags from unresolved source discrepancies.
 
 This file records project-level changes that affect reproducibility, methods, data handling, or the local prototype. Individual variable audits remain documented in `audit/`.
 
