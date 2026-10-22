@@ -65,12 +65,18 @@ for cid,label,domain,caveat in concepts:
   if rules[cid](r.wave,r.variable):
    if cid=='informal_help_household_chores' and r.wave in {'2013','2015'}:
     status='Official questionnaire/codebook yes-no response categories reviewed; questionnaire item wording conflicts with codebook variable label; candidate mapping only; DO NOT ANALYZE until source version/field alias is reconciled'
+   elif cid=='formal_caregiver_current' and r.wave=='2011':
+    status='2011 baseline questionnaire helper-list category and route reviewed; Codebook reports no observations; candidate metadata only'
+   elif cid=='formal_caregiver_days' and r.wave=='2011':
+    status='2011 baseline questionnaire helper-roster route and 1–31 days unit reviewed; Codebook summary reports one observation; candidate only'
+   elif cid=='formal_care_expected_future' and r.wave=='2011':
+    status='2011 baseline questionnaire future-helper route and category reviewed; candidate only'
    elif cid in {'informal_help_eating','informal_help_meal_preparation','informal_help_household_chores'}:
     status='Official questionnaire/codebook yes-no response categories reviewed; conditional care-support candidate; preserve route and eligible denominator'
    else:
     status='Official codebook response labels reviewed; preserve original category and routing' if cid in {'social_activity_frequency','child_visits','child_contact'} or (cid=='social_participation' and r.wave in {'2018','2020'}) else 'Codebook/catalog label candidate; item-level questionnaire and value-label review required'
-   questionnaire_source=(f'sources_official/CHARLS_{r.wave}_Questionnaire_extracted.txt; {r.variable.upper()}' if cid.startswith('informal_help_') else '')
-   value_label_source=(f'sources_official/CHARLS_{r.wave}_Codebook_extracted.txt' if cid.startswith('informal_help_') else '')
+   questionnaire_source=(f'sources_official/CHARLS_{r.wave}_Questionnaire_extracted.txt; {r.variable.upper()}' if cid.startswith('informal_help_') else 'sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DB022/DB023/DB030/DB031' if r.wave=='2011' and cid in {'formal_caregiver_current','formal_caregiver_days','formal_care_expected_future'} else '')
+   value_label_source=(f'sources_official/CHARLS_{r.wave}_Codebook_extracted.txt' if cid.startswith('informal_help_') else 'sources_official/CHARLS_2011_Codebook_extracted.txt' if r.wave=='2011' and cid in {'formal_caregiver_current','formal_caregiver_days','formal_care_expected_future'} else '')
    rows.append(dict(concept_id=cid,concept_label=label,domain=domain,wave=r.wave,code=r.variable,module=r.module,source_label=r.variable_label,mapping_status=status,value_labels=value_labels(cid,r.wave),value_semantics=value_note(cid,r.wave),questionnaire_source=questionnaire_source,value_label_source=value_label_source,caveat=caveat))
 out=pd.DataFrame(rows).drop_duplicates()
 out.to_csv(ROOT/'audit/social_exposure_crosswalk_v1.csv',index=False,encoding='utf-8-sig')

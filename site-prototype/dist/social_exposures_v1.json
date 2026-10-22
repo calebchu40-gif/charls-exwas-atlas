@@ -2888,11 +2888,11 @@
         "code": "db022s38",
         "module": "health_status_and_functioning",
         "source_label": "Volunteer Helps You Often With Functional Difficulties",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "2011 baseline questionnaire helper-list category and route reviewed; Codebook reports no observations; candidate metadata only",
         "value_labels": "",
         "value_semantics": "官方问卷/代码本标注志愿者或机构人员为照护者名册中的一个类别。2011为是否经常帮助的单项字段（代码本显示无观察值）；2013为按ADL/IADL任务及帮助者槽位展开的类别字段，代码本汇总提示稀疏。值编码及未问/跳题状态需按各波代码本解析；先检查原始数据实际覆盖与分母，再决定是否可建模。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DB022/DB023/DB030/DB031",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -3140,11 +3140,11 @@
         "code": "db023_38_",
         "module": "health_status_and_functioning",
         "source_label": "How Many Days Did  Volunteer Help You LM",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "2011 baseline questionnaire helper-roster route and 1–31 days unit reviewed; Codebook summary reports one observation; candidate only",
         "value_labels": "",
         "value_semantics": "官方问卷：过去一个月志愿者帮助的天数（0–31）；仅在帮助者名册相关条件下询问。代码本汇总仅见1条观察记录，不能据此认为有足够分析样本；先核原始覆盖。保留原始计数及特殊缺失码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DB022/DB023/DB030/DB031",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },
@@ -3159,11 +3159,11 @@
         "code": "db031s37",
         "module": "health_status_and_functioning",
         "source_label": "Volunteer Is The One to Help You In The Future",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "2011 baseline questionnaire future-helper route and category reviewed; candidate only",
         "value_labels": "",
         "value_semantics": "官方问卷将志愿者/机构人员列为未来可能帮助者类别；此题属于未来帮助者名册，不等同当前照护。保留逐波原始编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DB022/DB023/DB030/DB031",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",

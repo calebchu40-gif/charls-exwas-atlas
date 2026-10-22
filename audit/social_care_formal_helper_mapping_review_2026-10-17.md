@@ -1,6 +1,6 @@
 # 社会照护题组：志愿者/机构帮助字段核查（2026-10-17）
 
-> **来源身份更正（2026-10-21）：**本文旧版本引用的 `CHARLS_2011_Baseline_Questionnaire_official_extracted.txt` 实际内容是2013随访问卷。本文涉及的2011题干或路由判断须对照正确的官方2011基线问卷复核；在复核完成前，不能把该旧摘录当作2011题意证据。处理范围及当前状态见 [`2011_questionnaire_source_identity_correction_2026-10-21.md`](2011_questionnaire_source_identity_correction_2026-10-21.md)。
+> **来源身份更正（2026-10-22）：**2011帮助者名册题已按正式`CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`复核；旧引用文件实际为2013随访问卷。当前帮助者类别、过去一个月帮助天数及未来帮助者题的2011路由已补入机器可读crosswalk；低频/无观测边界仍保留。
 
 ## 用途与决定
 
@@ -31,7 +31,12 @@ NHANES页面的价值包括可检索的标准化分析物/指标标识和样本/
 ## 来源与重现
 
 - 官方提取文本：`sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt`、`sources_official/CHARLS_2013_Questionnaire_extracted.txt`。
-- 官方代码本：`audit/CHARLS_2011_Codebook_extracted.txt`、`sources_official/CHARLS_2013_Codebook_extracted.txt`。
+- 官方提取文本：`sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`第2926–2953、2997–3005行附近（DB022/DB023当前帮助及DB030/DB031未来帮助）；`sources_official/CHARLS_2013_Questionnaire_extracted.txt`。
+- 官方代码本：`sources_official/CHARLS_2011_Codebook_extracted.txt`（DB022S38无观察值、DB023_38_摘要1条记录）；`sources_official/CHARLS_2013_Codebook_extracted.txt`。
 - 机器可读映射：`audit/social_exposure_crosswalk_v1.csv`、`audit/ep_concept_source_crosswalk_v1.csv`。2011代码本字段摘要位于 `audit/CHARLS_2011_Codebook_extracted.txt`（`db022s38`、`db023_38_`附近）；2013对应项见 `sources_official/CHARLS_2013_Codebook_extracted.txt`。
 - 目录生成：`scripts/build_social_exposure_crosswalk.py`，然后运行 `python scripts/build_ep_atlas_metadata.py`。
 - 本映射只用公开的字段目录、问卷与代码本元数据；未读取受访者个人记录，也未拟合 ExWAS 模型。
+
+## 2011来源身份复核补充（2026-10-22）
+
+正确2011基线家户问卷第2926行附近的DB022最多可选三名常见帮助者，列表选项38为志愿者或机构工作人员，40为无人帮助；DB022=40时跳至DB029。随后对DB022选出的帮助者逐名询问DB023–DB026，DB023记录过去一个月帮助天数（1–31），不是适用于全体样本的志愿服务天数。DB030询问未来若需要日常生活帮助时是否有亲友可提供长期帮助；No跳至DB032，Yes继续DB031，选项37为志愿者/机构工作人员。2011 Codebook摘要中DB022S38无观察值、DB023_38_仅1条记录；这些官方摘要不是样本量估计，但表明须谨慎保留稀疏标记。已将上述2011证据、官方来源路径及状态写入`audit/social_exposure_crosswalk_v1.csv`和网站源字段元数据。没有读取个人级数据。

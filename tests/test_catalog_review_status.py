@@ -87,6 +87,22 @@ class CatalogReviewStatusTests(unittest.TestCase):
             self.assertIn("FN011 Codebook form selector", row.get("caveat", ""))
             self.assertIn("CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt", row.get("value_label_source", ""))
 
+    def test_2011_social_care_fields_keep_verified_routes_and_codebook_limits(self):
+        import csv
+        expected = {
+            "db022s38": "Codebook reports no observations",
+            "db023_38_": "Codebook summary reports one observation",
+            "db031s37": "future-helper route and category reviewed",
+        }
+        with (ROOT / "audit/social_exposure_crosswalk_v1.csv").open(encoding="utf-8-sig", newline="") as handle:
+            mappings = list(csv.DictReader(handle))
+        for code, status_fragment in expected.items():
+            rows = [row for row in mappings if row.get("wave") == "2011" and row.get("code", "").lower() == code]
+            self.assertEqual(len(rows), 1, code)
+            self.assertIn(status_fragment, rows[0].get("mapping_status", ""), code)
+            self.assertIn("CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt", rows[0].get("questionnaire_source", ""), code)
+            self.assertIn("CHARLS_2011_Codebook_extracted.txt", rows[0].get("value_label_source", ""), code)
+
     def test_2013_and_2015_fn028_date_identity_conflict_is_locked(self):
         import csv
         with (ROOT / "audit/pension_exposure_variable_mapping_v1.csv").open(encoding="utf-8-sig", newline="") as handle:
