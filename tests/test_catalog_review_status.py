@@ -1,4 +1,4 @@
-import json
+﻿import json
 from pathlib import Path
 import unittest
 
@@ -61,6 +61,17 @@ class CatalogReviewStatusTests(unittest.TestCase):
             rows = [row for row in self.catalog if row.get("Variable.Name", "").lower() == code and "2011" in row.get("waves", "").split(",")]
             self.assertEqual(len(rows), 1, code)
             self.assertIn("DO NOT ANALYZE", rows[0].get("value_label_review", ""), code)
+    def test_2011_fn024_is_current_enrollment_separate_from_2013_history(self):
+        wave1 = [row for row in self.catalog if row.get("Variable.Name", "").lower() == "fn024" and "2011" in row.get("waves", "").split(",")]
+        self.assertEqual(len(wave1), 1)
+        row = wave1[0]
+        self.assertIn("pension_current_basic_plan_enrollment_among_nonretired_2011", row.get("candidate_concept_ids", ""))
+        self.assertNotIn("pension_past_basic_plan_participation_when_not_currently_enrolled", row.get("candidate_concept_ids", ""))
+        self.assertIn("3=No", row.get("value_labels", ""))
+        self.assertNotIn("DO NOT ANALYZE", row.get("value_label_review", ""))
+        wave2 = [row for row in self.catalog if row.get("Variable.Name", "").lower() == "fn022_w2" and "2013" in row.get("waves", "").split(",")]
+        self.assertEqual(len(wave2), 1)
+        self.assertIn("pension_past_basic_plan_participation_when_not_currently_enrolled", wave2[0].get("candidate_concept_ids", ""))
     def test_main_search_renderer_surfaces_locked_source_conflict(self):
         app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
         self.assertIn("问卷与Codebook编码冲突，已锁定不可分析", app)

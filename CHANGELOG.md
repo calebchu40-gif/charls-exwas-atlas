@@ -2,6 +2,8 @@
 
 ## 2026-10-22 (continued)
 
+- Rebuilt the full metadata catalog after splitting 2011 `fn024` into a wave-specific current-enrollment concept; total E/P concepts are now 1,409 (1,131 exposure-side, 287 phenotype-side, 9 dual-role). No respondent records were used.
+- Corrected the 2011 pension `fn024` identity: the old discrepancy came from comparing it with 2013 `FN022_W2` using a mislabeled questionnaire. The correct 2011 baseline `FN024` and Codebook `fn024` share the same three categories and ask current enrollment among respondents who have not completed retirement; 2013 `FN022_W2` remains a distinct prior-enrollment follow-up. Corrected the 2011 `fn035` identity note and removed this resolved audit from the source-correction queue (10 remain).
 - Audited 2011 prior non-farm job FL008/FL009 routing, weekly-hours range/check, monthly wage meaning, special values, and bracket fallback against the correct baseline questionnaire. Corrected source path and line references; retained the explicit limit that 2011 Codebook entries were not located. Eleven source-identity audits remain.
 - Reconfirmed 2011 DE010–DE012 against the official baseline sleep-vignette wording and Codebook labels; recorded exact source positions and removed this already-corrected audit from the pending source-identity queue. The three items remain C-class vignette metadata, not respondent sleep outcomes. The queue is now 12 audits.
 - Rechecked 2011 evidence for cross-concept overlap: confirmed the DA051 household random subsample, DA059/DA061 smoking routes, and DA067 past-year drinking categories. Clarified that 2011 chest-pain items DA003/DA004 are not the later general pain-severity item, and corrected source references. The source-identity correction queue is now 13 audits.

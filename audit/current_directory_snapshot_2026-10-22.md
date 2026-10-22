@@ -2,10 +2,10 @@
 
 ## 当前目录
 
-本快照统计公开字段元数据与人工审核映射；未拟合ExWAS关联模型。最新重建扩展2018 HCAP及跨波官方认知标签；将拒答原因、测验工具及施测条件共15字段列为C类，并保留连续认知原始值的有效范围限制；新增慢病辅助题审定标签并消除DA020S2注释文本冲突；工作类复选框及问卷菜单共81个新标签展示，保留未选中/路由/代码本遗漏限制；新增收入/借贷/养老类别标签、养老金参与/资格标签、4个C类金额/日期选择器以及2020家庭疫情经济13个待发行版核实标签；未将个人记录或标识符写入项目材料或交接包。
+本快照统计公开字段元数据与人工审核映射；未拟合ExWAS关联模型。最新重建扩展2018 HCAP及跨波官方认知标签；将拒答原因、测验工具及施测条件共15字段列为C类，并保留连续认知原始值的有效范围限制；新增慢病辅助题审定标签并消除DA020S2注释文本冲突；工作类复选框及问卷菜单共81个新标签展示，保留未选中/路由/代码本遗漏限制；2011养老金fn024与正确基线问卷FN024及Codebook类别一致，已拆为当前参保波次特异概念；新增收入/借贷/养老类别标签、养老金参与/资格标签、4个C类金额/日期选择器以及2020家庭疫情经济13个待发行版核实标签；未将个人记录或标识符写入项目材料或交接包。
 
 - 逐波字段目录：7,544行（E 4,566、P-only 1,903、C 911、E/P双角色164）。
-- 去重候选概念：1,408个（E侧1,130、P侧287，双角色概念9个）。
+- 去重候选概念：1,409个（E侧1,131、P侧287，双角色概念9个）。
 - E/P概念—源字段映射：6,598条；全来源crosswalk 6,804条，其中6,792条匹配目录，12条是目录外C类元数据。
 - 2011/2013/2015/2018/2020波次目录概念对共现：120,052 / 126,301 / 128,984 / 98,667 / 12,598。
 - 当前未映射E/P字段均为0。11个吸烟/饮酒年龄/年份格式选择器已转为C类并排除于关联矩阵；相邻回答组件保留并须按波次选择器解释。C类字段保留测量、问卷路由、回答历史、来源身份等元数据，不进入E/P关联配对。
@@ -22,7 +22,7 @@
 
 2020 `xmainjobdays`的Codebook字段标题和摘要统计无法解释问卷CAPI重复条件的来源变量，继续排除分析；详见[`capi_work_derived_variables_2020_review_2026-10-21.md`](capi_work_derived_variables_2020_review_2026-10-21.md)。
 
-2026-10-22完整元数据重建后，目录、概念—源字段crosswalk、配对覆盖摘要和首页KPI已由同一构建入口刷新：目录7,544行、E/P概念1,408个、E/P链接6,598条、全来源crosswalk 6,804条；DO NOT ANALYZE字段33条，与分流清单一致。HCAP认知偏倚及最新官方类别/施测元数据复核分别见[`hcap_wave4_cognition_bias_guidance_review_2026-10-22.md`](hcap_wave4_cognition_bias_guidance_review_2026-10-22.md)和[`cognition_2018_codebook_categories_and_admin_metadata_review_2026-10-22.md`](cognition_2018_codebook_categories_and_admin_metadata_review_2026-10-22.md)。值标签扩展和连续数值边界见[`cognition_2018_codebook_label_expansion_review_2026-10-22.md`](cognition_2018_codebook_label_expansion_review_2026-10-22.md)。2011–2020逐波认知代码本差异及新增提示见[`cognition_2011_2020_wave_specific_codebook_review_2026-10-22.md`](cognition_2011_2020_wave_specific_codebook_review_2026-10-22.md)，标签导入规则修复和2020施测字段角色复核见[`cognition_label_ingestion_and_role_rebuild_2026-10-22.md`](cognition_label_ingestion_and_role_rebuild_2026-10-22.md)。中间快照`current_directory_snapshot_2026-10-22_route_audit.md`保留历史数字，不作为当前统计。
+2026-10-22完整元数据重建后，目录、概念—源字段crosswalk、配对覆盖摘要和首页KPI已由同一构建入口刷新：目录7,544行、E/P概念1,409个、E/P链接6,598条、全来源crosswalk 6,804条；DO NOT ANALYZE字段33条，与分流清单一致。HCAP认知偏倚及最新官方类别/施测元数据复核分别见[`hcap_wave4_cognition_bias_guidance_review_2026-10-22.md`](hcap_wave4_cognition_bias_guidance_review_2026-10-22.md)和[`cognition_2018_codebook_categories_and_admin_metadata_review_2026-10-22.md`](cognition_2018_codebook_categories_and_admin_metadata_review_2026-10-22.md)。值标签扩展和连续数值边界见[`cognition_2018_codebook_label_expansion_review_2026-10-22.md`](cognition_2018_codebook_label_expansion_review_2026-10-22.md)。2011–2020逐波认知代码本差异及新增提示见[`cognition_2011_2020_wave_specific_codebook_review_2026-10-22.md`](cognition_2011_2020_wave_specific_codebook_review_2026-10-22.md)，标签导入规则修复和2020施测字段角色复核见[`cognition_label_ingestion_and_role_rebuild_2026-10-22.md`](cognition_label_ingestion_and_role_rebuild_2026-10-22.md)。中间快照`current_directory_snapshot_2026-10-22_route_audit.md`保留历史数字，不作为当前统计。
 
 2026-10-22认知标签最终核验：认知类别字段的`not yet reviewed`由19降至0；E/P目录现有非空官方/审定标签2,678行、2,652个不同波次字段码。主目录与认知字段映射对311条非空标签连接后，现存标签冲突为0。具体修复与不推断规则见[`cognition_label_ingestion_and_role_rebuild_2026-10-22.md`](cognition_label_ingestion_and_role_rebuild_2026-10-22.md)。
 

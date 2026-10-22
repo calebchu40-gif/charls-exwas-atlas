@@ -1,6 +1,6 @@
 ﻿role,category,candidate_concept_ids,catalog_field_role_category_rows,distinct_wave_variable_codes,counts_are_nonexclusive
 e,social determinants,599,2157,2155,True
-e,social protection,314,1331,1331,True
+e,social protection,315,1331,1331,True
 e,community context,100,187,187,True
 e,housing and built environment,42,480,480,True
 e,behavior,29,268,243,True

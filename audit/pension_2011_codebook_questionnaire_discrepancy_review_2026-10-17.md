@@ -1,33 +1,24 @@
-# 养老金2011问卷/代码本码值差异核查（2026-10-17）
+# 2011养老金 FN024 变量身份与旧冲突更正（2026-10-22）
 
-> **来源身份更正（2026-10-21）：**本文旧版本引用的 `CHARLS_2011_Baseline_Questionnaire_official_extracted.txt` 实际内容是2013随访问卷。本文涉及的2011题干或路由判断须对照正确的官方2011基线问卷复核；在复核完成前，不能把该旧摘录当作2011题意证据。处理范围及当前状态见 [`2011_questionnaire_source_identity_correction_2026-10-21.md`](2011_questionnaire_source_identity_correction_2026-10-21.md)。
+此前审计误将内容实际为2013随访的`CHARLS_2011_Baseline_Questionnaire_official`材料当作2011证据，因此错误地把2013 `FN022_W2`既往参保追问题干与2011 Codebook `fn024`作比较。使用CHARLS官方2011基线家户问卷后，这一“2011问卷/代码本码值冲突”不成立，已撤销相应锁定。
 
-## 结论
+正确的2011基线问卷在`FN024`询问政府/事业单位或企业基本养老保险当前参保情况，且仅在`FB011=2`（尚未办理退休手续）时询问。答案为1=参加政府和事业单位养老保险、2=参加企业基本养老保险、3=均未参加。2011 Codebook的Wave 1字段`fn024`同样列出1/2/3这三个类别，含义逐项一致；Harmonized CHARLS D也将Wave 1 `FN024`列为参保变量。该项应视为未办理退休者的当前参保类型候选，不是未参保者既往参保史。
 
-Harmonized CHARLS D将Wave 1变量`FN024`列为养老金参保字段，支持把代码本字段`fn024`定位到该题目家族；原始基线问卷将条件性问题标为`FN022_w2`。变量身份有官方对照，但代码本与问卷的答案编码仍存在冲突。目录保留候选Concept ID `pension_past_basic_plan_participation_when_not_currently_enrolled`，状态标为“DO NOT ANALYZE”。候选只用于检索和审计留痕，不能据此重编码或进入关联模型。
+2013 `FN022_W2`是另一道题：仅在当前未参加相关基本养老金的路由中，询问过去是否曾参保；其四类包括政府/事业单位、企业、两者、均无。保留其既往参保概念，不与2011 `fn024`合并。2011/2013字段的题目身份与分母不同，跨波分析需要单独确定目标构念。
 
-## 官方材料证据
+Codebook `fn035`“What do You Plan to Do”则与正确2011基线问卷`FN035`的缴费年限不足时养老金安排计划一致，答案为一次补缴、一次性补偿或不能领取养老金。该处旧先前差异同样来自误用2013问卷，并非2011证据冲突；现有字段映射保留为缴费年限不足条件下的计划候选。
 
-- 2011基线问卷第194页：`FN006_w2`问当前是否参加政府/事业单位养老金或企业职工基本养老保险；回答“都没有”(4)时跳至`FN022_w2`。
-- 2011基线问卷第197页：`FN022_w2`题干说明受访者刚报告当前未参保，追问此前是否参加过；选项为1=政府和事业单位、2=企业职工基本养老保险、3=两种都参加过、4=两种都没有。
-- 2011官方代码本第926页：字段`fn024`标签为“Enrolled in Pension”；代码为1=政府和事业单位养老金、2=企业基本养老保险、3=No，代码本摘要计数为465、340、14,199，总计15,004。
-- Harmonized CHARLS D的Section J把Wave 1 `FN024`列为养老金参保变量，并概述Wave 1的条件路径：有工作经历、尚未办理退休或内退的受访者中，按问卷路由询问是否参加政府/事业单位或企业基本养老保险；回答是后再问养老保险关联工作单位。
+## 目录处理
 
-问卷题号与分析数据变量名不同，但Harmonized CHARLS D提供了其属于同一Wave 1题目家族的证据。仍未解决的是答案类别：代码本“3=No”与问卷“3=两种都参加过、4=两种都没有”存在实质差异。不能自动把码3重编码为未参加，也不能把问卷码3视为否。
-
-另一个容易混淆的编号是代码本`fn035`“What do You Plan to Do”，而基线问卷`FN035_w2`题干为本人和雇主每月合计缴费金额。变量家族和题干不同，不互相映射，直至数据版本对照能解释差异。
-
-## 对目录与分析的处理
-
-- `fn024`纳入为条件性候选指标，清楚显示题目路由和问卷/代码本值码冲突；此项必须排除在正式分析之外，直到CHARLS发布版本的准确存储码和标签得到确认。
-- 不根据`fn024`近似题号推断其与其他波次字段一致；2013/2015/2018题目需逐波独立审核。
-- `fn035`与`FN035_w2`保持分开；未确认前不连接代码本“计划安排”与问卷“合计月缴费金额”。
-- 本轮只使用公开问卷、代码本与Harmonized CHARLS D变量目录；未读取受访者级数据或估计关联。代码本频数仅用于定位冲突。
+- 将2011 `fn024`从`pension_past_basic_plan_participation_when_not_currently_enrolled`拆出，映射为`pension_current_basic_plan_enrollment_among_nonretired_2011`，用波次特异构念标签和正确来源记录。
+- 保留Codebook已核实的1/2/3类别，不再标记问卷/代码本冲突或`DO NOT ANALYZE`。该字段仍是候选变量；实际分析前仍需在批准的数据发行版核对路由、缺失、样本资格、权重和复杂抽样设计。
+- 2013 `fn022_w2`继续属于既往参保追问，题意、选项和路线独立记录。
+- 2011 `fn035`继续映射为缴费年限不足时的退休养老金安排计划；不与“预期待遇金额”或“预计领取时间”字段混淆。
 
 ## 来源
 
-- `sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt`：第194、197页附近，`FN006_w2`、`FN022_w2`。
-- `audit/CHARLS_2011_Codebook_extracted.txt`：第926页附近，`fn024`；第928页附近，`fn035`。
-- [CHARLS官方2011基线资料页](https://charls.pku.edu.cn/en/Data/a2011_CHARLS_Wave1__Baseline_.htm)：列出用户指南、代码本及2013-03-12更新的养老金模块。
+- `sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`：第4352行附近`FB011`退休手续题；第5554–5570行附近`FN024`当前参保项与后续工作单位题；第5598–5607行附近`FN034`与`FN035`安排计划。
+- `sources_official/CHARLS_2011_Codebook_extracted.txt`：第84142行附近`fn024`标签；第84741行附近`fn035`标签。
 - [Harmonized CHARLS D, Section J](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/harmonized_charls/application/Harmonized_CHARLS_D.pdf)：Wave 1变量列表和路由摘要。
-- 未映射家族统计：`audit/unassigned_catalog_series_review_v1.md`；目录源字段：`audit/charls_atlas_candidate_series_v0.csv`。
+
+未读取个体记录、未将Codebook频数作为样本量、未拟合关联模型。

@@ -104,17 +104,17 @@ for wave in ("2013","2015","2018"):
         value_source=f"sources_official/CHARLS_{wave}_Questionnaire_extracted.txt; sources_official/CHARLS_{wave}_Codebook_extracted.txt",
         caveat="仅在FN032对应缴费确定型(DC)方案的条件路径提问；2013 Codebook只列出No观测，问卷仍有Yes回答结构。不得把未问或结构性跳题解释为No。2018题目还绑定具体养老金计划名称。")
 
-# The Harmonized CHARLS D documentation identifies Wave 1 FN024 as the
-# enrollment item, but the 2011 codebook categories do not match the response
-# options in the baseline questionnaire's FN022_w2 routing. Keep the concept
-# searchable while explicitly blocking analytic use until codes are resolved.
-add("2011","fn024","pension_past_basic_plan_participation_when_not_currently_enrolled",
-    "当前未参保者既往政府/事业单位或企业基本养老金参保",
-    "prior participation in government/public institution or enterprise basic pension among respondents routed as not currently enrolled",
-    values="1=Yes, government and institutions; 2=Yes, basic pension insurance of firms; 3=No (2011 codebook labels; questionnaire response schema differs)",
-    value_source="sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; Harmonized_CHARLS_D.pdf (Wave 1 variable list)",
-    status="candidate field; Harmonized CHARLS D confirms Wave 1 FN024 identity; 2011 codebook/questionnaire response-code discrepancy unresolved; DO NOT ANALYZE",
-    caveat="The 2011 questionnaire's routed FN022_w2 asks respondents reporting no current enrollment whether they previously participated; it offers 1=government/institutions, 2=enterprise basic insurance, 3=both, 4=neither. The 2011 codebook field fn024 instead labels 1=government/institutions, 2=enterprise basic insurance, 3=No. Preserve this as a candidate directory mapping only; do not recode or model until the official release-specific value schema is reconciled.")
+# The correctly identified 2011 baseline questionnaire labels this item FN024,
+# and its three response categories agree with Codebook fn024. It asks current
+# enrollment among respondents who have not completed retirement procedures;
+# keep it separate from the 2013 FN022_W2 historical-enrollment follow-up.
+add("2011","fn024","pension_current_basic_plan_enrollment_among_nonretired_2011",
+    "未办理退休者当前政府/事业单位或企业基本养老金参保类型",
+    "current enrollment in government/institution or enterprise basic pension among respondents who have not completed retirement procedures",
+    values="1=Yes, pension program of the government and institutions; 2=Yes, basic pension insurance of the firms; 3=No",
+    value_source="sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt; Harmonized_CHARLS_D.pdf (Wave 1 variable list)",
+    status="official 2011 questionnaire FN024 and Codebook fn024 response categories agree; candidate mapping; asked only when FB011=2 (not retired); route and analysis eligibility require review",
+    caveat="The 2011 baseline FN024 asks current enrollment after FB011=2 (respondent has not completed retirement procedures). Codes are 1=government/institutions, 2=enterprise basic pension, 3=neither. This is distinct from 2013 FN022_W2, which asks previously enrolled respondents routed from current non-enrollment item FN006_W2=4 and has four history categories. Keep as a wave-specific current-enrollment measure; do not merge with the historical follow-up or infer a broader all-pension coverage status.")
 
 # Wave 2 explicit retirement-plan disposition when eligibility contribution years are insufficient.
 plan_values="1=Pay remaining premiums in one payment at retirement; 2=Receive a one-time payment at retirement and not get a pension; 3=Will not receive a pension"
