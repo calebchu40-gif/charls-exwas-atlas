@@ -2,6 +2,7 @@
 
 ## 2026-10-22 (continued)
 
+- Reconfirmed 2011 DE010–DE012 against the official baseline sleep-vignette wording and Codebook labels; recorded exact source positions and removed this already-corrected audit from the pending source-identity queue. The three items remain C-class vignette metadata, not respondent sleep outcomes. The queue is now 12 audits.
 - Rechecked 2011 evidence for cross-concept overlap: confirmed the DA051 household random subsample, DA059/DA061 smoking routes, and DA067 past-year drinking categories. Clarified that 2011 chest-pain items DA003/DA004 are not the later general pain-severity item, and corrected source references. The source-identity correction queue is now 13 audits.
 - Re-audited 2011 DB021/DB029 assistive-device wording and skip routes against the correctly identified baseline household questionnaire. Kept the five-option DB021 and seven-option DB029 item families separate, with route-specific eligible denominators; corrected the source citation. The source-identity correction queue is now 14 audits.
 - Re-audited agricultural work fields FC001–FC011 against the correct 2011 baseline household questionnaire; corrected the audit’s source path, confirmed questionnaire skips and soft checks, and retained the 2018 FC008 questionnaire/Codebook conflict lock. The source-identity correction queue is now 15 audits.
