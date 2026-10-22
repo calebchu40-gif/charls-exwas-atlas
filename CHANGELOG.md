@@ -38,6 +38,9 @@ This file records project-level changes that affect reproducibility, methods, da
 
 ## 2026-10-22
 
+- 对照2011社区问卷修正工业污染字段JB018/JB019的类别方向：Codebook英文字面Poor/Fair/Good/Very good容易误读，网站现按问卷中英锚点显示“很严重/有一些/基本没有/完全没有”，并保留JB019村级单独路由。新增回归检查；社区环境审计同步记录这一差异。
+- 为交互平台添加手动触发的GitHub Pages Actions部署工作流。部署包严格指向`site-prototype/dist/`并检查JSON有效性及意外微观数据/压缩文件；默认预期地址为`https://calebchu40-gif.github.io/charls-exwas-atlas/`。部署需要在仓库Settings → Pages选择GitHub Actions并运行工作流；公开发布仍待完成。
+
 - Established the private GitHub repository `calebchu40-gif/charls-exwas-atlas` and pushed the local project on `main`.
 - Added repository ignore rules for licensed respondent-level data, temporary outputs, locally derived sample/coverage QA tables, credentials, and machine-specific operational notes. These files remain local where needed and are not part of the Git history.
 - Added GitHub Actions checks for the standard-library Python tests, website JSON parsing, and JavaScript syntax. The checks do not download CHARLS respondent data or run association models.

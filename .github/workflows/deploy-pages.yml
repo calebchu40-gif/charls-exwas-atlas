@@ -1,0 +1,52 @@
+name: Deploy public atlas site
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the project
+        uses: actions/checkout@v4
+
+      - name: Validate static site payload
+        shell: bash
+        run: |
+          test -s site-prototype/dist/index.html
+          test -s site-prototype/dist/app.js
+          if find site-prototype/dist -type f \( -name '*.dta' -o -name '*.sav' -o -name '*.rds' -o -name '*.parquet' -o -name '*.sqlite' -o -name '*.zip' \) | grep -q .; then
+            echo "Unexpected respondent-data or archive file in site payload" >&2
+            exit 1
+          fi
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path("site-prototype/dist")
+          for path in root.glob("*.json"):
+              json.loads(path.read_text(encoding="utf-8"))
+          PY
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload only the static website directory
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site-prototype/dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

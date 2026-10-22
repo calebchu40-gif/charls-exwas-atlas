@@ -1,5 +1,11 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-22）
 
+## 公开网站部署
+
+网站使用 GitHub Pages，部署目标只包含 `site-prototype/dist/` 下的静态页面和候选变量元数据；官方源文件、脚本、私有 QA 和个人级数据不进入 Pages 发布包。部署工作流见 `.github/workflows/deploy-pages.yml`，先通过仓库 Settings → Pages 将 Build and deployment 的 Source 设为 GitHub Actions，再运行 Actions 中的 Deploy public atlas site。预计默认地址为 `https://calebchu40-gif.github.io/charls-exwas-atlas/`；首次发布后以 Pages 设置页显示的地址为准。当前工作流仅手动触发，站点尚未完成公开部署。
+
+GitHub 官方说明：GitHub Free 个人仓库需要公开仓库才能使用 Pages；Pro/Team 等计划也支持私有源仓库发布 Pages。GitHub Pages 网站内容默认可被互联网公开访问，因此发布包必须保持为静态目录范围。见[Pages 发布源说明](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
+
 
 > **最新目录状态（2026-10-22）：**网站字段目录7,544行（E 4,566、P-only 1,903、C 911、双角色E/P 164）；候选概念1,408个（暴露侧1,130、表型侧287、双角色概念9），E/P来源字段映射6,598行。全来源crosswalk 6,804行，其中6,792匹配目录、12条为目录外C元数据。2011/2013/2015/2018/2020目录概念对共现为120,052/126,301/128,984/98,667/12,598；**仅表示字段元数据层面的潜在共现，不是人数、配对样本量或分析资格**。2018 HCAP及跨波拒答/施测/工具使用共15个字段列为C类；连续减法和动物流畅性计数维持原始数值候选并标明Codebook范围限制。E/P目录中有2,834行带非空值标签（2,808个波次—字段码），已审来源与发行版待核状态分开显示；精确`conflict`标签计数为0，但2011 `FB010`问卷与Codebook编码差异已确认并单独标记`DO NOT ANALYZE`；FL020 16个多选选项含义已补录，但数值存储尚未验证，保持锁定；2011 `fn024`已纠正为未办理退休者当前参保类型，与2013既往参保题分开。2013 `fn056_w2_5`问卷选项/CodeBook类别表覆盖差异已裁定为非标签冲突；未拟合关联模型。
 

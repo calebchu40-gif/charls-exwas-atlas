@@ -883,7 +883,7 @@ def main() -> None:
     add_reviewed_labels("healthcare_access_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source")
     add_reviewed_labels("community_exposure_value_labels_v1.csv", "wave", "code", "value_labels",
                         "value_label_status", "value_label_source",
-                        re.compile(r"official (?:codebook response labels|questionnaire seven-point ordinal scale anchors reviewed; codebook numeric categories only); frequencies omitted", re.I))
+                        re.compile(r"official (?:codebook response labels|questionnaire seven-point ordinal scale anchors reviewed; codebook numeric categories only|questionnaire semantics reconciled with codebook response categories); frequencies omitted", re.I))
     add_reviewed_labels("housing_value_label_review_v1.csv", "wave", "code", "value_labels",
                         "value_label_status", "value_label_source",
                         re.compile(r"official codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding", re.I))

@@ -36,3 +36,7 @@ python scripts/build_food_environment_crosswalk.py
 ```
 
 The source crosswalk and this audit should be updated together when item wording, wave coverage, or route interpretation changes.
+
+## Questionnaire-anchor reconciliation for industrial pollution (2026-10-22)
+
+The Codebook value labels for JB018 and JB019 say `Poor`, `Fair`, `Good`, and `Very good`, which can reverse the apparent direction if read literally as pollution severity. The official Community Questionnaire supplies the substantive bilingual anchors: 1=`Very severe` (很严重), 2=`Some pollution` (有一些), 3=`Almost none` (基本没有), and 4=`Completely absent` (完全没有). The website lookup labels now use those questionnaire anchors and explicitly state that higher codes indicate less reported pollution. JB019's village-only route remains visible. The raw Codebook labels are retained in source evidence; frequencies were not copied. Regression coverage checks the override and source anchors.

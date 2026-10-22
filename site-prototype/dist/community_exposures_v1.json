@@ -321,9 +321,9 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
-        "value_labels": "1=Poor; 2=Fair; 3=Good; 4=Very good",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+        "value_labels": "1=Very severe (very serious pollution); 2=Some pollution; 3=Almost none; 4=Completely absent",
+        "value_label_status": "official questionnaire semantics reconciled with codebook response categories; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -333,9 +333,9 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
-        "value_labels": "1=Poor; 2=Fair; 3=Good; 4=Very good",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+        "value_labels": "1=Very severe (very serious pollution); 2=Some pollution; 3=Almost none; 4=Completely absent",
+        "value_label_status": "official questionnaire semantics reconciled with codebook response categories; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
