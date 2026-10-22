@@ -133,6 +133,22 @@ def main():
         questionnaire = ("CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt" if wave == "2011" else f"CHARLS_{wave}_Questionnaire_extracted.txt")
         codebook = ("sources_official/CHARLS_2011_Codebook_extracted.txt" if wave == "2011" else f"sources_official/CHARLS_{wave}_Codebook_extracted.txt")
         out.at[idx, "value_label_source"] = f"sources_official/{questionnaire}; {codebook}"
+    # The 2011 questionnaire confirms the option wording and separate checkbox fields,
+    # but does not establish the released selected/unselected/missing value codes.
+    fl020_2011_options = {
+        1: "Business closed", 2: "Quit", 3: "I was laid off", 4: "I was fired",
+        5: "I went to school", 6: "I went abroad", 7: "Stopped working for health reasons",
+        8: "Stopped working for family reasons", 9: "Transferred to another job",
+        10: "Sent down to the countryside for manual labor", 11: "Started working off-farm locally",
+        12: "Went to work away from home", 13: "Better job in the local area",
+        14: "Better job in another location", 15: "Retired", 16: "Other",
+    }
+    for option, meaning in fl020_2011_options.items():
+        mask = out["code"].str.lower().eq(f"fl020s{option}") & out["wave"].astype(str).eq("2011")
+        for idx in out.index[mask]:
+            out.at[idx, "value_labels"] = f"questionnaire option: {meaning} (not an answer-value code)"
+            out.at[idx, "value_label_status"] = "DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No"
+            out.at[idx, "value_label_source"] = "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
     job_exit = out["code"].str.lower().eq("fl021")
     for idx in out.index[job_exit]:
         wave = str(out.at[idx, "wave"])

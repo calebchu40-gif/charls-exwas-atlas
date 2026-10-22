@@ -11,9 +11,9 @@
 
 ## 尚待复核范围
 
-18份专题Markdown审计文件曾引用错误问卷摘录；其中工作史审计现已用正确2011基线家户问卷逐项复核并更正 FB010 证据，见 `work_history_lifecourse_mapping_review_v1.md`。养老金专项复核也已完成：`pension_2011_fn015_fn016_source_identity_conflict_review_2026-10-22.md`和`pension_2011_fn036_questionnaire_codebook_identity_review_2026-10-21.md`均已按正确2011基线家户问卷更正，相关字段映射恢复。下列17份文件仍需逐项复核；跨波构念须分别依据对应官方波次材料判断，不可只凭相邻波次推定。
+18份专题Markdown审计文件曾引用错误问卷摘录；其中工作史审计现已用正确2011基线家户问卷逐项复核并更正 FB010 证据；FL020 16项问卷选项及其未确认的数据编码也已单独记录，见 `work_history_lifecourse_mapping_review_v1.md`。养老金专项复核也已完成：`pension_2011_fn015_fn016_source_identity_conflict_review_2026-10-22.md`和`pension_2011_fn036_questionnaire_codebook_identity_review_2026-10-21.md`均已按正确2011基线家户问卷更正，相关字段映射恢复。下列16份文件仍需逐项复核；跨波构念须分别依据对应官方波次材料判断，不可只凭相邻波次推定。
 
-其余17份文件为：
+其余16份文件为：
 
 - `agricultural_work_exposure_mapping_review_2026-10-21.md`
 - `assistive_device_phenotype_mapping_review_2026-10-17.md`
@@ -30,7 +30,6 @@
 - `social_care_formal_helper_mapping_review_2026-10-17.md`
 - `subjective_living_standard_2011_2013_review_2026-10-21.md`
 - `unpaid_debt_balance_2011_2018_review_2026-10-21.md`
-- `work_exit_reasons_2011_2015_mapping_review_2026-10-21.md`
 - `work_job_search_and_separation_benefits_review_2026-10-21.md`
 
 当前站点仍是公开元数据候选目录，分析资格未建立。逐项使用获准微观数据前，须对受影响的2011字段重看正确基线问卷、Codebook、原始发布字段和值码/路由；遇到冲突或题目缺失应锁定、不凭相邻波次推断。

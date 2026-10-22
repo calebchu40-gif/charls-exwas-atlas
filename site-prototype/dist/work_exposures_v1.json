@@ -8731,9 +8731,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011/2013/2015 FL020 questionnaire located; it says check all that apply and presents 16 reason-specific fields. 2013/2015 codebooks identify the option-specific fields; preserve each option independently and verify selected/unselected/missing storage before analysis. No frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "questionnaire option: Business closed (not an answer-value code)",
+        "value_label_status": "DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -8778,9 +8778,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011/2013/2015 FL020 questionnaire located; it says check all that apply and presents 16 reason-specific fields. 2013/2015 codebooks identify the option-specific fields; preserve each option independently and verify selected/unselected/missing storage before analysis. No frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "questionnaire option: Quit (not an answer-value code)",
+        "value_label_status": "DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -8825,9 +8825,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011/2013/2015 FL020 questionnaire located; it says check all that apply and presents 16 reason-specific fields. 2013/2015 codebooks identify the option-specific fields; preserve each option independently and verify selected/unselected/missing storage before analysis. No frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "questionnaire option: I was laid off (not an answer-value code)",
+        "value_label_status": "DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -8872,9 +8872,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011/2013/2015 FL020 questionnaire located; it says check all that apply and presents 16 reason-specific fields. 2013/2015 codebooks identify the option-specific fields; preserve each option independently and verify selected/unselected/missing storage before analysis. No frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "questionnaire option: I was fired (not an answer-value code)",
+        "value_label_status": "DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -8919,9 +8919,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011/2013/2015 FL020 questionnaire located; it says check all that apply and presents 16 reason-specific fields. 2013/2015 codebooks identify the option-specific fields; preserve each option independently and verify selected/unselected/missing storage before analysis. No frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "questionnaire option: I went to school (not an answer-value code)",
+        "value_label_status": "DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -8966,9 +8966,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011/2013/2015 FL020 questionnaire located; it says check all that apply and presents 16 reason-specific fields. 2013/2015 codebooks identify the option-specific fields; preserve each option independently and verify selected/unselected/missing storage before analysis. No frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "questionnaire option: I went abroad (not an answer-value code)",
+        "value_label_status": "DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -9013,9 +9013,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011/2013/2015 FL020 questionnaire located; it says check all that apply and presents 16 reason-specific fields. 2013/2015 codebooks identify the option-specific fields; preserve each option independently and verify selected/unselected/missing storage before analysis. No frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "questionnaire option: Stopped working for health reasons (not an answer-value code)",
+        "value_label_status": "DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -9060,9 +9060,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011/2013/2015 FL020 questionnaire located; it says check all that apply and presents 16 reason-specific fields. 2013/2015 codebooks identify the option-specific fields; preserve each option independently and verify selected/unselected/missing storage before analysis. No frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "questionnaire option: Stopped working for family reasons (not an answer-value code)",
+        "value_label_status": "DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -9107,9 +9107,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011/2013/2015 FL020 questionnaire located; it says check all that apply and presents 16 reason-specific fields. 2013/2015 codebooks identify the option-specific fields; preserve each option independently and verify selected/unselected/missing storage before analysis. No frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "questionnaire option: Transferred to another job (not an answer-value code)",
+        "value_label_status": "DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -9154,9 +9154,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011/2013/2015 FL020 questionnaire located; it says check all that apply and presents 16 reason-specific fields. 2013/2015 codebooks identify the option-specific fields; preserve each option independently and verify selected/unselected/missing storage before analysis. No frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "questionnaire option: Sent down to the countryside for manual labor (not an answer-value code)",
+        "value_label_status": "DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -9201,9 +9201,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011/2013/2015 FL020 questionnaire located; it says check all that apply and presents 16 reason-specific fields. 2013/2015 codebooks identify the option-specific fields; preserve each option independently and verify selected/unselected/missing storage before analysis. No frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "questionnaire option: Started working off-farm locally (not an answer-value code)",
+        "value_label_status": "DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -9248,9 +9248,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011/2013/2015 FL020 questionnaire located; it says check all that apply and presents 16 reason-specific fields. 2013/2015 codebooks identify the option-specific fields; preserve each option independently and verify selected/unselected/missing storage before analysis. No frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "questionnaire option: Went to work away from home (not an answer-value code)",
+        "value_label_status": "DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -9295,9 +9295,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011/2013/2015 FL020 questionnaire located; it says check all that apply and presents 16 reason-specific fields. 2013/2015 codebooks identify the option-specific fields; preserve each option independently and verify selected/unselected/missing storage before analysis. No frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "questionnaire option: Better job in the local area (not an answer-value code)",
+        "value_label_status": "DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -9342,9 +9342,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011/2013/2015 FL020 questionnaire located; it says check all that apply and presents 16 reason-specific fields. 2013/2015 codebooks identify the option-specific fields; preserve each option independently and verify selected/unselected/missing storage before analysis. No frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "questionnaire option: Better job in another location (not an answer-value code)",
+        "value_label_status": "DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -9389,9 +9389,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011/2013/2015 FL020 questionnaire located; it says check all that apply and presents 16 reason-specific fields. 2013/2015 codebooks identify the option-specific fields; preserve each option independently and verify selected/unselected/missing storage before analysis. No frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "questionnaire option: Retired (not an answer-value code)",
+        "value_label_status": "DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -9436,9 +9436,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011/2013/2015 FL020 questionnaire located; it says check all that apply and presents 16 reason-specific fields. 2013/2015 codebooks identify the option-specific fields; preserve each option independently and verify selected/unselected/missing storage before analysis. No frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "questionnaire option: Other (not an answer-value code)",
+        "value_label_status": "DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",

@@ -2,6 +2,8 @@
 
 ## 2026-10-22 (continued)
 
+- Added the 16 official 2011 FL020 checkbox option meanings to the field-level catalog as questionnaire text only; selected, unselected, and missing-value coding remains unverified and every option is locked `DO NOT ANALYZE`. Corrected the audit citation to the actual 2011 baseline household questionnaire and reduced the source-identity correction queue by one.
+- Rebuilt the metadata catalog and updated value-label coverage to 2,834 E/P rows across 2,808 wave-fields; no respondent data or association models were used.
 - Recorded official Wave 5 Sample Information and Sampling Weights hashes and a source-level verification checklist for the age-domain audit. The local prepared tables cannot yet be matched to those source archives, so the 2020 target age domain remains provisional.
 - Rechecked 2011 work-history item `FB010` against the correctly identified official baseline household questionnaire and the wave Codebook. The code discrepancy is confirmed and remains locked; both the work-exposure view and the main catalog now show the conflicting menus and `DO NOT ANALYZE` status. The source-correction register no longer treats this audit as unreviewed.
 - Preserved wave-specific locked review states during catalog aggregation, made the metadata rebuild update the current homepage stats block safely, and expanded value-label coverage notes to distinguish exact conflict flags from unresolved source discrepancies.

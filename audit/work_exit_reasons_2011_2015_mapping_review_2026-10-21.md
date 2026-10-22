@@ -14,8 +14,11 @@ The official 2011 baseline questionnaire says not to probe and to select all app
 
 2018 FL020_W4 asks why the respondent is no longer working at the prior job and uses a shorter, different response set; it is not mapped into these 16 concepts. The `Other` follow-up free text (FL020_1) is not included as an atlas exposure.
 
-Sources: `sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt` (FL020 around lines 7740–7758); `sources_official/CHARLS_2013_Questionnaire_extracted.txt` (FL020 around lines 6678 onward); `sources_official/CHARLS_2015_Questionnaire_extracted.txt` (FL020 around lines 5708–5726); the 2013/2015 official codebook FL020s1–s16 entries.
+Sources: `sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt` (2011 baseline household questionnaire; FL020); `sources_official/CHARLS_2013_Questionnaire_extracted.txt` (FL020 around lines 6678 onward); `sources_official/CHARLS_2015_Questionnaire_extracted.txt` (FL020 around lines 5708–5726); the 2013/2015 official codebook FL020s1–s16 entries.
 
 ## Mapping and analysis limits
 
 Option-specific fields are linked in `audit/work_exposure_crosswalk_v1.csv`, the candidate field catalog, the concept-source crosswalk and `site-prototype/dist/work_exposures_v1.json`. The unit is an option-specific multi-select field; released-data selected/unselected/missing storage must be verified before analysis. The eligible FL020 route and respondent's last-work context must be respected. These are candidate mappings only; no respondent records or codebook frequencies were analyzed.
+
+
+2011 option labels are now exposed as questionnaire meanings in the field catalog, explicitly not as numeric response codes. The 2011 FL020s1–s16 rows remain DO NOT ANALYZE until the approved released-data format establishes selected, unselected, and missing storage; absence is not interpreted as No.
