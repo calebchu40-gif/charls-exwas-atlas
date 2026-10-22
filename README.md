@@ -6,6 +6,8 @@
 
 网站现包含“候选配对查询”：可选一个波次、一个E概念和一个P概念，查看各自的CHARLS源字段、模块、标签与审计边界。页面只计算元数据层概念组合，不提供配对样本量或关联估计；目前已审查模型仍为0。
 
+截至2026-10-23，公开元数据查询首版已上线；完整结果型ExWAS工作仍在变量审计和调查设计阶段。进度、百分比口径和剩余工期估算见[`audit/project_progress_estimate_2026-10-23.md`](audit/project_progress_estimate_2026-10-23.md)。
+
 GitHub 官方说明：GitHub Free 个人仓库需要公开仓库才能使用 Pages；Pro/Team 等计划也支持私有源仓库发布 Pages。GitHub Pages 网站内容默认可被互联网公开访问，因此发布包必须保持为静态目录范围。见[Pages 发布源说明](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
 
 

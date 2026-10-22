@@ -2,6 +2,8 @@
 
 ## 2026-10-22 (continued)
 
+- Deployed the metadata-only CHARLS ExWAS Atlas to GitHub Pages; the site root, app script and candidate-pair JSON return HTTP 200. Added a dated progress audit that distinguishes the completed public prototype from unfinished field-level review, survey-design resolution and association analysis.
+
 - Added official labels for residence electricity, gas supply, running water, flushable-toilet status, and in-house shower/hot-water categories. Preserved code shifts, the absence of a 2015 electricity field in the public inventory, the distinction between running water and 2020 tap water, and the wording difference in 2020 shower categories. Removed duplicate label rows from the generator; inventory now has 99 wave-field rows. E/P labels total 2,908; all 38 tests pass.
 - Added heating-source categories for 2011–2020 and separate heating-availability Yes/No labels for 2015, 2018, and 2020. Fuel remains nominal; 2018 `8=Heating provided` and 2020 `8=Do not heating` stay distinct, and neither measure is presented as pollutant concentration or dose. Housing review table now contains 97 wave-field rows; E/P labeled rows total 2,904; all 37 tests pass.
 - Added five-wave interviewer-observed household cleanliness and temperature response labels, preserving `6=Not applicable` from 2013 onward but not inventing it for 2011. Added 2020 tap-water access and waterworks-treatment labels, retaining `997=Do not know` and stating clearly these fields are not contaminant measurements. Reviewed-label inventory now has 89 wave-field rows; E/P labeled rows total 2,898; 36 tests pass.
