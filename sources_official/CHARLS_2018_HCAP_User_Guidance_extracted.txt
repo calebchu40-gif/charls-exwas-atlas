@@ -1,0 +1,84 @@
+USER GUIDANCE FOR CHARLS-HCAP WAVE 4
+Alden Gross, Lindsay Kobayashi
+January 28, 2024
+This document provides guidance to users of the CHARLS-HCAP (Wave 4, 2018) data.
+The CHARLS-HCAP battery used in CHARLS Wave 4 was translated into Mandarin from the English
+language version of the HCAP battery used in the US Health and Retirement Study. To maintain a
+high degree of harmonization with the Health and Retirement Study version of the HCAP battery,
+this translation was strict in nature without content adaptations for the cultural context of China, or
+for illiteracy and sensory impairment, which have a higher prevalence in China than in the United
+States.
+All neuropsychological tests rely to varying degrees on written, visual, and auditory cues. Thus,
+illiteracy and sensory impairment can affect performance on neuropsychological tests that have not
+been appropriately adapted to account for these factors. The results of neuropsychological testing
+should be interpreted carefully for CHARLS-HCAP Wave 4 participants with these characteristics.
+In addition, testing a person in a language or dialect that is not their primary language or dialect may
+put them at an unfair disadvantage. China is a linguistically diverse country in which Mandarin is
+widely and officially used across provinces and has been taught in schools since 1956. However, most
+provinces of China also use local spoken dialects of Mandarin and other languages, such as Cantonese
+and Hunanese. Many older adults in China do not fluently speak standard Mandarin or use it in their
+daily lives.
+To reach participants, CHARLS-HCAP recruited interviewers according to their language or dialect
+proficiency and let them communicate with respondents in local dialects or languages. Word lists were
+translated into different languages such as Tibetan, Mongolian and Uygur in picture form beforehand,
+but other tests were communicated verbally by trained interviewers during the CHARLS-HCAP in-
+terviews. For spoken dialects of Mandarin that have no written form, interviewers administered the
+tests in local dialects. In situations where the interviewer did not speak the same language or dialect
+as the study participant, a local translator was informally recruited to translate during interview ses-
+sions at participants’ homes. Local translators were not trained in neuropsychological testing or in
+the administration of the HCAP battery. This approach raises concerns about altered meanings of
+the HCAP test items and responses for CHARLS-HCAP participants who used translators or did not
+speak standard Mandarin, which could affect their measured performance on cognitive tests.
+The following are recommendations intended to assist data users in making informed decisions with
+respect to analyses using the CHARLS-HCAP (Wave 4, 2018) data.
+• Understand the data. We recommend data users read the CHARLS-HCAP documentation in
+detail to understand the content of the CHARLS-HCAP battery and how the CHARLS-HCAP
+data were collected. If possible, review the Mandarin version of the documentation which may
+contain additional details not available in the English translation of the documentation.
+- 1 -
+
+• Examine the prevalence and patterns of non-numeric responses, such as “cannot answer”,
+“don’t know”, refusal to respond, and non-assessment. A variable may have a non-numeric
+value for a given individual in the dataset for a variety of reasons that may be difficult to dis-
+cern, including cannot answer, don’t know, refusal to respond, non-assessment, or other non-
+response, all of which comprise forms of missing data. We recommend that data users scruti-
+nize the CHARLS-HCAP data for prevalence and patterns of these forms of missing data. For
+example, “cannot answer” could be due to the respondent not being able to answer a question
+due to cognitive impairment, not being able to understand the question due to vision or hearing
+impairment, not being able to respond due to illiteracy, or other reasons unrelated to cognition.
+Data users should examine for differential rates of and types of missingness across key analyti-
+cal variables. What is done with this information will vary depending on the research question,
+key exposure and outcome being used in the analysis, and the research discipline.
+• Consider sensitivity analyses by literacy, language, and sensory impairment . As a sen-
+sitivity analysis, consider sample restrictions to individuals who are literate, speak Mandarin,
+and/or do not have a visual or hearing impairment. Such restrictions ensure similar test con-
+ditions and levels of participant comfort with the testing conditions. However, depending on
+one’s scientific question, restriction to these population subgroups, whether simultaneously or
+individually, may also obscure or induce biased associations relative to the general population
+of older adults in China.
+• Scrutinize individual cognitive tests. As a sensitivity analysis or as the main analysis, include
+cognitive tests less sensitive to biases by confounders of an association under study. For exam-
+ple, if literacy might confound an association of interest, then the HCAP test involving writing
+a sentence, or composite scores incorporating this test, should be avoided. Or, if visual impair-
+ment may confound an association of interest, then tests involving visual object identification
+should likewise be avoided.
+• Consider implications for longitudinal analysis . Many key questions of interest in aging
+are longitudinal in nature and involve the assessment of cognitive change. Several tests in the
+CHARLS-HCAP battery, including questions about orientation to time and place and a mem-
+ory test, were also included in the core CHARLS survey in Waves 1, 2, and 3. Immediate
+and delayed word recall of 10 words is perhaps the most widely used test that is longitudinally
+available. It is important for users to be aware that the word list used in the CHARLS-HCAP
+in Wave 4 was different in terms of content and administration than the word list used in prior
+waves. Thus, observed change over time in word recall scores is spuriously steeper in slope
+at Wave 4 relative to change over time observed across prior waves. Simultaneously, the de-
+layed word recall score is elevated in Wave 4 relative to previous waves because three, rather
+than one, immediate recall trials were administered. To address these form differences, we rec-
+ommend use of equipercentile equated scores for memory scores in longitudinal analyses (the
+following paper explains the method: Gross AL, Inouye SK, Rebok GW, Brandt J, Crane PK,
+Parisi JM, Tommet D, Bandeen-Roche K, Carlson MC, Jones RN. Parallel but not equivalent:
+challenges and solutions for repeated assessment of cognition over time. J Clin Exp Neuropsy-
+- 2 -
+
+chol. 2012;34(7):758-72. doi: 10.1080/13803395.2012.681628. Epub 2012 Apr 30. PMID:
+22540849; PMCID: PMC3574868.).
+- 3 -

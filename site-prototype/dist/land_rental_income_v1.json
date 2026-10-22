@@ -1,0 +1,210 @@
+[
+  {
+    "concept_id": "household_past_year_land_rental_income_cultivated_land",
+    "label": "家庭过去一年耕地出租收入",
+    "domain": "household income and material resources",
+    "caveat": "Household land-rental amount in nominal Yuan over the past year. It is conditional on the land-type loop selected in HA054 and an affirmative HA058 rent-out response. Keep the four land types separate; structural skips, nonresponse and not-in-universe are not zero. Treat as household-level context, not respondent personal income. Preserve the exact wave and source code; check special values and land-slot mapping against the approved release dictionary before analysis. The 2011 Codebook reports a minimum of -200 Yuan for this field; meaning unresolved from summary statistics, so preserve raw values and do not interpret or recode negative values without authorized dictionary/data validation.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ha060_1_",
+        "module": "household_income",
+        "source_label": "Rental Income",
+        "unit": "Yuan per household in past year",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire/Codebook item identity matched; candidate concept; selected-land and HA058 routes remain conditional"
+      },
+      {
+        "wave": "2013",
+        "code": "ha060_1_",
+        "module": "Household_Income",
+        "source_label": "Income on Renting Out",
+        "unit": "Yuan per household in past year",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire/Codebook item identity matched; candidate concept; selected-land and HA058 routes remain conditional"
+      },
+      {
+        "wave": "2015",
+        "code": "ha060_1_",
+        "module": "Household_Income",
+        "source_label": "Income on Renting Out",
+        "unit": "Yuan per household in past year",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire/Codebook item identity matched; candidate concept; selected-land and HA058 routes remain conditional"
+      }
+    ]
+  },
+  {
+    "concept_id": "household_past_year_land_rental_income_forest_land",
+    "label": "家庭过去一年林地出租收入",
+    "domain": "household income and material resources",
+    "caveat": "Household land-rental amount in nominal Yuan over the past year. It is conditional on the land-type loop selected in HA054 and an affirmative HA058 rent-out response. Keep the four land types separate; structural skips, nonresponse and not-in-universe are not zero. Treat as household-level context, not respondent personal income. Preserve the exact wave and source code; check special values and land-slot mapping against the approved release dictionary before analysis.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ha060_2_",
+        "module": "household_income",
+        "source_label": "Rental Income",
+        "unit": "Yuan per household in past year",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire/Codebook item identity matched; candidate concept; selected-land and HA058 routes remain conditional"
+      },
+      {
+        "wave": "2013",
+        "code": "ha060_2_",
+        "module": "Household_Income",
+        "source_label": "Income on Renting Out",
+        "unit": "Yuan per household in past year",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire/Codebook item identity matched; candidate concept; selected-land and HA058 routes remain conditional"
+      },
+      {
+        "wave": "2015",
+        "code": "ha060_2_",
+        "module": "Household_Income",
+        "source_label": "Income on Renting Out",
+        "unit": "Yuan per household in past year",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire/Codebook item identity matched; candidate concept; selected-land and HA058 routes remain conditional"
+      }
+    ]
+  },
+  {
+    "concept_id": "household_past_year_land_rental_income_pasture_land",
+    "label": "家庭过去一年牧场出租收入",
+    "domain": "household income and material resources",
+    "caveat": "Household land-rental amount in nominal Yuan over the past year. It is conditional on the land-type loop selected in HA054 and an affirmative HA058 rent-out response. Keep the four land types separate; structural skips, nonresponse and not-in-universe are not zero. Treat as household-level context, not respondent personal income. Preserve the exact wave and source code; check special values and land-slot mapping against the approved release dictionary before analysis.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ha060_3_",
+        "module": "household_income",
+        "source_label": "Rental Income",
+        "unit": "Yuan per household in past year",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire/Codebook item identity matched; candidate concept; selected-land and HA058 routes remain conditional"
+      },
+      {
+        "wave": "2013",
+        "code": "ha060_3_",
+        "module": "Household_Income",
+        "source_label": "Income on Renting Out",
+        "unit": "Yuan per household in past year",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire/Codebook item identity matched; candidate concept; selected-land and HA058 routes remain conditional"
+      },
+      {
+        "wave": "2015",
+        "code": "ha060_3_",
+        "module": "Household_Income",
+        "source_label": "Income on Renting Out",
+        "unit": "Yuan per household in past year",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire/Codebook item identity matched; candidate concept; selected-land and HA058 routes remain conditional"
+      }
+    ]
+  },
+  {
+    "concept_id": "household_past_year_land_rental_income_pond_land",
+    "label": "家庭过去一年水塘出租收入",
+    "domain": "household income and material resources",
+    "caveat": "Household land-rental amount in nominal Yuan over the past year. It is conditional on the land-type loop selected in HA054 and an affirmative HA058 rent-out response. Keep the four land types separate; structural skips, nonresponse and not-in-universe are not zero. Treat as household-level context, not respondent personal income. Preserve the exact wave and source code; check special values and land-slot mapping against the approved release dictionary before analysis.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ha060_4_",
+        "module": "household_income",
+        "source_label": "Rental Income",
+        "unit": "Yuan per household in past year",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire/Codebook item identity matched; candidate concept; selected-land and HA058 routes remain conditional"
+      },
+      {
+        "wave": "2013",
+        "code": "ha060_4_",
+        "module": "Household_Income",
+        "source_label": "Income on Renting Out",
+        "unit": "Yuan per household in past year",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire/Codebook item identity matched; candidate concept; selected-land and HA058 routes remain conditional"
+      },
+      {
+        "wave": "2015",
+        "code": "ha060_4_",
+        "module": "Household_Income",
+        "source_label": "Income on Renting Out",
+        "unit": "Yuan per household in past year",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire/Codebook item identity matched; candidate concept; selected-land and HA058 routes remain conditional"
+      }
+    ]
+  },
+  {
+    "concept_id": "respondent_spouse_past_year_land_rental_income_cultivated_land_2018",
+    "label": "主要受访者及配偶过去一年耕地出租收入",
+    "domain": "household income and material resources",
+    "caveat": "The 2018 questionnaire explicitly limits this household-land rent amount to the main respondent and spouse, unlike the earlier household wording; keep separate and do not pool until respondent/household scope is reviewed. The item is conditional on the HA054 land-type loop and HA058=Yes. Structural skips, nonresponse and not-in-universe are not zero. Preserve the past-year period, nominal Yuan, source wave, and land-slot mapping; validate special codes before analysis.",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "ha060_1_",
+        "module": "Household_Income",
+        "source_label": "Rent Earned for Land[1]",
+        "unit": "Yuan for main respondent and spouse in past year",
+        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire/Codebook item identity matched; candidate concept; selected-land and HA058 routes remain conditional"
+      }
+    ]
+  },
+  {
+    "concept_id": "respondent_spouse_past_year_land_rental_income_forest_land_2018",
+    "label": "主要受访者及配偶过去一年林地出租收入",
+    "domain": "household income and material resources",
+    "caveat": "The 2018 questionnaire explicitly limits this household-land rent amount to the main respondent and spouse, unlike the earlier household wording; keep separate and do not pool until respondent/household scope is reviewed. The item is conditional on the HA054 land-type loop and HA058=Yes. Structural skips, nonresponse and not-in-universe are not zero. Preserve the past-year period, nominal Yuan, source wave, and land-slot mapping; validate special codes before analysis.",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "ha060_2_",
+        "module": "Household_Income",
+        "source_label": "Rent Earned for Land[2]",
+        "unit": "Yuan for main respondent and spouse in past year",
+        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire/Codebook item identity matched; candidate concept; selected-land and HA058 routes remain conditional"
+      }
+    ]
+  },
+  {
+    "concept_id": "respondent_spouse_past_year_land_rental_income_pasture_land_2018",
+    "label": "主要受访者及配偶过去一年牧场出租收入",
+    "domain": "household income and material resources",
+    "caveat": "The 2018 questionnaire explicitly limits this household-land rent amount to the main respondent and spouse, unlike the earlier household wording; keep separate and do not pool until respondent/household scope is reviewed. The item is conditional on the HA054 land-type loop and HA058=Yes. Structural skips, nonresponse and not-in-universe are not zero. Preserve the past-year period, nominal Yuan, source wave, and land-slot mapping; validate special codes before analysis.",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "ha060_3_",
+        "module": "Household_Income",
+        "source_label": "Rent Earned for Land[3]",
+        "unit": "Yuan for main respondent and spouse in past year",
+        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire/Codebook item identity matched; candidate concept; selected-land and HA058 routes remain conditional"
+      }
+    ]
+  },
+  {
+    "concept_id": "respondent_spouse_past_year_land_rental_income_pond_land_2018",
+    "label": "主要受访者及配偶过去一年水塘出租收入",
+    "domain": "household income and material resources",
+    "caveat": "The 2018 questionnaire explicitly limits this household-land rent amount to the main respondent and spouse, unlike the earlier household wording; keep separate and do not pool until respondent/household scope is reviewed. The item is conditional on the HA054 land-type loop and HA058=Yes. Structural skips, nonresponse and not-in-universe are not zero. Preserve the past-year period, nominal Yuan, source wave, and land-slot mapping; validate special codes before analysis.",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "ha060_4_",
+        "module": "Household_Income",
+        "source_label": "Rent Earned for Land[4]",
+        "unit": "Yuan for main respondent and spouse in past year",
+        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire/Codebook item identity matched; candidate concept; selected-land and HA058 routes remain conditional"
+      }
+    ]
+  }
+]

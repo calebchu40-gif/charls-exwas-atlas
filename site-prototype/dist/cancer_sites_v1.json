@@ -1,0 +1,1129 @@
+[
+  {
+    "concept_id": "reported_cancer_site_brain",
+    "label": "自报癌症部位/既往史：Brain",
+    "domain": "chronic disease ancillary",
+    "site": "Brain",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s1",
+        "module": "health_status_and_functioning",
+        "source_label": "The Brain Had or Having Cancer",
+        "value_labels": "1=Brain",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s1",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "1=Brain",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s1",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "1=Brain",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s1",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 1=Brain",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_oral_cavity",
+    "label": "自报癌症部位/既往史：Oral cavity",
+    "domain": "chronic disease ancillary",
+    "site": "Oral cavity",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s2",
+        "module": "health_status_and_functioning",
+        "source_label": "The Oral Had or Cavity Having Cancer",
+        "value_labels": "2=Oral cavity",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s2",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "",
+        "value_label_status": "official codebook reports no observed categories; option index follows CHARLS questionnaire list; wave-specific confirmation pending; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s2",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "2=Oral Cavity",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s2",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 2=Oral cavity",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_larynx",
+    "label": "自报癌症部位/既往史：Larynx",
+    "domain": "chronic disease ancillary",
+    "site": "Larynx",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s3",
+        "module": "health_status_and_functioning",
+        "source_label": "The Larynx Had or Having Cancer",
+        "value_labels": "3=Larynx",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s3",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "3=Larynx",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s3",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "3=Larynx",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s3",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 3=Larynx",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_other_pharynx",
+    "label": "自报癌症部位/既往史：Other pharynx",
+    "domain": "chronic disease ancillary",
+    "site": "Other pharynx",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s4",
+        "module": "health_status_and_functioning",
+        "source_label": "The Other Pharynx Had or Having Cancer",
+        "value_labels": "4=Other pharynx",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s4",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "4=Other Pharynx",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s4",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "4=Other Pharynx",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s4",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 4=Other Pharynx",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_thyroid",
+    "label": "自报癌症部位/既往史：Thyroid",
+    "domain": "chronic disease ancillary",
+    "site": "Thyroid",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s5",
+        "module": "health_status_and_functioning",
+        "source_label": "The Thyroid Had or Having Cancer",
+        "value_labels": "5=Thyroid",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s5",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "5=Thyroid",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s5",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "5=Thyroid",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s5",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 5=Thyroid",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_lung",
+    "label": "自报癌症部位/既往史：Lung",
+    "domain": "chronic disease ancillary",
+    "site": "Lung",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s6",
+        "module": "health_status_and_functioning",
+        "source_label": "The Lung Had or Having Cancer",
+        "value_labels": "6=Lung",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s6",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "6=Lung",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s6",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "6=Lung",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s6",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 6=Lung",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_breast",
+    "label": "自报癌症部位/既往史：Breast",
+    "domain": "chronic disease ancillary",
+    "site": "Breast",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s7",
+        "module": "health_status_and_functioning",
+        "source_label": "The Breast Had or Having Cancer",
+        "value_labels": "7=Breast",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s7",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "7=Breast",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s7",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "7=Breast",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s7",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 7=Breast",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_oesophagus",
+    "label": "自报癌症部位/既往史：Oesophagus",
+    "domain": "chronic disease ancillary",
+    "site": "Oesophagus",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s8",
+        "module": "health_status_and_functioning",
+        "source_label": "The Oesophagus Had or Having Cancer",
+        "value_labels": "8=Oesophagus",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s8",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "8=Oesophagus",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s8",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "8=Oesophagus",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s8",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 8=Oesophagus",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_stomach",
+    "label": "自报癌症部位/既往史：Stomach",
+    "domain": "chronic disease ancillary",
+    "site": "Stomach",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s9",
+        "module": "health_status_and_functioning",
+        "source_label": "The Stomach Had or Having Cancer",
+        "value_labels": "9=Stomach",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s9",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "9=Stomach",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s9",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "9=Stomach",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s9",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 9=Stomach",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_liver",
+    "label": "自报癌症部位/既往史：Liver",
+    "domain": "chronic disease ancillary",
+    "site": "Liver",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s10",
+        "module": "health_status_and_functioning",
+        "source_label": "The Liver Had or Having Cancer",
+        "value_labels": "10=Liver",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s10",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "10=Liver",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s10",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "10=Liver",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s10",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 10=Liver",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_pancreas",
+    "label": "自报癌症部位/既往史：Pancreas",
+    "domain": "chronic disease ancillary",
+    "site": "Pancreas",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s11",
+        "module": "health_status_and_functioning",
+        "source_label": "The Procreas Had or Having Cancer",
+        "value_labels": "11=Pancreas",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s11",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "11=Pancreas",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s11",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "11=Pancreas",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s11",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 11=Pancreas",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_kidney",
+    "label": "自报癌症部位/既往史：Kidney",
+    "domain": "chronic disease ancillary",
+    "site": "Kidney",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s12",
+        "module": "health_status_and_functioning",
+        "source_label": "The Kidney Had or Having Cancer",
+        "value_labels": "12=Kidney",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s12",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "12=Kidney",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s12",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "12=Kidney",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s12",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 12=Kidney",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_prostate",
+    "label": "自报癌症部位/既往史：Prostate",
+    "domain": "chronic disease ancillary",
+    "site": "Prostate",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s13",
+        "module": "health_status_and_functioning",
+        "source_label": "The Prostate Had or Having Cancer",
+        "value_labels": "",
+        "value_label_status": "official codebook reports no observed categories; 2011 option position follows baseline questionnaire DA017 list; no affirmative category observed; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s13",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "13=Prostate",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s13",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "13=Prostate",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s13",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 13=Prostate",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_testicle",
+    "label": "自报癌症部位/既往史：Testicle",
+    "domain": "chronic disease ancillary",
+    "site": "Testicle",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s14",
+        "module": "health_status_and_functioning",
+        "source_label": "The Testicle Had or Having Cancer",
+        "value_labels": "",
+        "value_label_status": "official codebook reports no observed categories; 2011 option position follows baseline questionnaire DA017 list; no affirmative category observed; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s14",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "",
+        "value_label_status": "official codebook reports no observed categories; option index follows CHARLS questionnaire list; wave-specific confirmation pending; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s14",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "",
+        "value_label_status": "official codebook reports no observed categories; option index follows CHARLS questionnaire list; wave-specific confirmation pending; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s14",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No",
+        "value_label_status": "official codebook shows 0=No and no observed affirmative site category; option index confirmed by questionnaire; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_ovary",
+    "label": "自报癌症部位/既往史：Ovary",
+    "domain": "chronic disease ancillary",
+    "site": "Ovary",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s15",
+        "module": "health_status_and_functioning",
+        "source_label": "The Ovary Had or Having Cancer",
+        "value_labels": "15=Ovary",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s15",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "15=Ovary",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s15",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "15=Ovary",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s15",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 15=Ovary",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_cervix",
+    "label": "自报癌症部位/既往史：Cervix",
+    "domain": "chronic disease ancillary",
+    "site": "Cervix",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s16",
+        "module": "health_status_and_functioning",
+        "source_label": "The Cervix Had or Having Cancer",
+        "value_labels": "16=Cervix",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s16",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "16=Cervix",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s16",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "16=Cervix",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s16",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 16=Cervix",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_endometrium",
+    "label": "自报癌症部位/既往史：Endometrium",
+    "domain": "chronic disease ancillary",
+    "site": "Endometrium",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s17",
+        "module": "health_status_and_functioning",
+        "source_label": "The Endometrium Had or Having Cancer",
+        "value_labels": "17=Endometrium",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s17",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "17=Endometrium",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s17",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "17=Endometrium",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s17",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 17=Endometrium",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_colon_or_rectum",
+    "label": "自报癌症部位/既往史：Colon or rectum",
+    "domain": "chronic disease ancillary",
+    "site": "Colon or rectum",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s18",
+        "module": "health_status_and_functioning",
+        "source_label": "The Colon or Rectum Had or Having Cancer",
+        "value_labels": "18=Colon or rectum",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s18",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "18=Colon or Rectum",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s18",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "18=Colon or Rectum",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s18",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 18=Colon or Rectum",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_bladder",
+    "label": "自报癌症部位/既往史：Bladder",
+    "domain": "chronic disease ancillary",
+    "site": "Bladder",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s19",
+        "module": "health_status_and_functioning",
+        "source_label": "The Bladder Had or Having Cancer",
+        "value_labels": "19=Bladder",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s19",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "19=Bladder",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s19",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "19=Bladder",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s19",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 19=Bladder",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_skin",
+    "label": "自报癌症部位/既往史：Skin",
+    "domain": "chronic disease ancillary",
+    "site": "Skin",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s20",
+        "module": "health_status_and_functioning",
+        "source_label": "The Skin Had or Having Cancer",
+        "value_labels": "20=Skin",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s20",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "20=Skin",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s20",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "20=Skin",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s20",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 20=Skin",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_non_hodgkin_lymphoma",
+    "label": "自报癌症部位/既往史：Non-Hodgkin lymphoma",
+    "domain": "chronic disease ancillary",
+    "site": "Non-Hodgkin lymphoma",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s21",
+        "module": "health_status_and_functioning",
+        "source_label": "The Non-Hodgkin Lymphoma Had or Having Cancer",
+        "value_labels": "21=Non-Hodgkin lymphoma",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s21",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "",
+        "value_label_status": "official codebook reports no observed categories; option index follows CHARLS questionnaire list; wave-specific confirmation pending; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s21",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "21=Non-Hodgkin Lymphoma",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s21",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 21=Non-Hodgkin lymphoma",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_leukemia",
+    "label": "自报癌症部位/既往史：Leukemia",
+    "domain": "chronic disease ancillary",
+    "site": "Leukemia",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s22",
+        "module": "health_status_and_functioning",
+        "source_label": "The Leukemia Had or Having Cancer",
+        "value_labels": "22=Leukemia",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s22",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "22=Leukemia",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s22",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "22=Leukemia",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s22",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 22=Leukemia",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  },
+  {
+    "concept_id": "reported_cancer_site_other_organ",
+    "label": "自报癌症部位/既往史：Other organ",
+    "domain": "chronic disease ancillary",
+    "site": "Other organ",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da017s23",
+        "module": "health_status_and_functioning",
+        "source_label": "The Other Organ Had or Having Cancer",
+        "value_labels": "23=Other organ",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "source_archive": "household_and_community_questionnaire_data.rar"
+      },
+      {
+        "wave": "2013",
+        "code": "da017s23",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "23=Other Organ",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "source_archive": "CHARLS2013_Dataset.zip"
+      },
+      {
+        "wave": "2015",
+        "code": "da017s23",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Organ Having Cancer",
+        "value_labels": "23=Other Organ",
+        "value_label_status": "official codebook category verified; no frequencies included; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "source_archive": "CHARLS2015r.zip"
+      },
+      {
+        "wave": "2018",
+        "code": "da017_s23",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Organ or Body Part have Cancer",
+        "value_labels": "0=No; 23=Other organ",
+        "value_label_status": "official codebook category verified; no frequencies included; questionnaire confirms all-that-apply site item",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; CHARLS_2018_Questionnaire.pdf",
+        "source_archive": "CHARLS2018r.zip"
+      }
+    ],
+    "caveat": "Conditional self-reported cancer site/history item; includes known/ever cancer route. Site choice may include metastasis (explicit in 2018 wording); do not interpret as primary-site incidence or population prevalence. Sparse cells require analysis eligibility and disclosure review."
+  }
+]

@@ -1,0 +1,54 @@
+
+--- PAGE 1 ---
+China Health and Retirement
+Longitudinal Study
+Life History Survey
+Release Note
+VersionID: 20160601
+June 2016
+China Center for Economic Research
+Institute of Social Science Survey
+Peking University
+
+
+--- PAGE 2 ---
+1 Released Modules
+In this released version (versionID: 20160601) we released seven main modules, and the
+associatedonedataset(sampleinformation). ThePSUinformationisthesameasthe2013
+wave. Table1providesdetailedinformationaboutthese eightdatasets.
+Table1: ReleasedDatasets
+ModuleinQuestionnaire Dataset Information
+Residence Residence.dta ResidenceandMigrationhistory,historyoflivingconditions
+DemographicBackgrounds Demographic_Backgrounds.dta Spouse,Children,PregnancyandHukouhistory
+FamilyInformation Family_Information.dta Parents,SiblingsandChildhoodhistory
+EducationHistory Education_History.dta FullEducationHistory
+HealthHistory&HealthCareHistory Health_History.dta HealthandHealthCareHistory
+WealthHistory Wealth_History.dta Inheritance,FamilyBackgroundandLandHistory
+WorkHistory Work_History.dta HistoryofWorksforsixmonthsormoreandRetirement
+Sample_Infor.dta SampleIdentification,DeathandInterviewTime
+Youcanalsofindthesummaryinformationofallvariablesfromthereleasedcodebook.
+2 Samples
+The life history sample includes all live respondents in the first two waves (longitudinal
+sample), all refresh sample from wave 1, so you may find a significant samples without
+any 45+ respondent. The same as Wave 2, we also try to interview those non-response
+sampleinthefirsttwowaves.
+Weonlyreleasetherespondedsamples,butyoucanidentifythedeadfrom”Sample_Infor.dta”.
+Theweightisnotprovidedforlifehistorysample.
+3 IDs
+TheIDs(individualID,householdIDandcommunityID)canbematchedwiththeircoun-
+terpartsinthefirsttwowaves,butyoushouldadjusttheminwave1,assuggestedbythe
+releasenoteofwave2.
+1
+
+
+--- PAGE 3 ---
+4 Data Structure
+Most of the life history data are in loop form, in this release version, we only release the
+wide format data, that is, the same structure of the questionnaire, please pay attention to
+thoseProceduresinthequestionnaire,thestartingpoint,theendingpoint,andloopindex
+ofloops.
+Notethatt002_psu_‘i’_inResidence.dtaareaddresscodesforthecorrespondingt002_‘i’_,
+we only release the address code with city level, and these address codes are not compa-
+rable with those in PSU.dta, users can find the corresponding address name from China
+NBS(2011version).
+2

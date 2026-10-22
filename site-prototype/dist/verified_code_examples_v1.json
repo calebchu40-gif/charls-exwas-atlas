@@ -1,0 +1,492 @@
+[
+  {
+    "code": "qa003",
+    "concept": "收缩压·第1次",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Systolic Reading | 2013: Systolic Reading | 2015: Systolic Reading",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qa007",
+    "concept": "收缩压·第2次",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Systolic Reading | 2013: Systolic Reading | 2015: Systolic Reading",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qa011",
+    "concept": "收缩压·第3次",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Systolic Reading | 2013: Systolic Reading | 2015: Systolic Reading",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qa004",
+    "concept": "舒张压·第1次",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Diastolic Reading | 2013: Diastolic Reading | 2015: Diastolic Reading",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qa008",
+    "concept": "舒张压·第2次",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Diastolic Reading | 2013: Diastolic Reading | 2015: Diastolic Reading",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qa012",
+    "concept": "舒张压·第3次",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Diastolic Reading | 2013: Diastolic Reading | 2015: Diastolic Reading",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qa005",
+    "concept": "脉搏·第1次",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Pulse | 2013: Pulse | 2015: PULSE",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qa009",
+    "concept": "脉搏·第2次",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Pulse | 2013: Pulse | 2015: PULSE",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qa013",
+    "concept": "脉搏·第3次",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Pulse | 2013: Pulse | 2015: PULSE",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qc003",
+    "concept": "握力·左手第1次",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Left Hand-1£¨kg£© | 2013: Left Hand 1 | 2015: Left Hand-1(Kg)",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qc004",
+    "concept": "握力·右手第1次",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Right Hand-1£¨kg£© | 2013: Right Hand 1 | 2015: Right Hand-1(Kg)",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qc005",
+    "concept": "握力·左手第2次",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Left Hand-2£¨kg£© | 2013: Left Hand 2 | 2015: Left Hand-2(Kg)",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qc006",
+    "concept": "握力·右手第2次",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Right Hand-2£¨kg£© | 2013: Right Hand 2 | 2015: Right Hand-2(Kg)",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qb002",
+    "concept": "呼吸测试读数·第1次",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Measurement Reading-1 | 2013: Measurement Reading-1 | 2015: Measurement Reading-1",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "qb003",
+    "concept": "呼吸测试读数·第2次",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Measurement Reading-2 | 2013: Measurement Reading-2 | 2015: Measurement Reading-2",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "qb004",
+    "concept": "呼吸测试读数·第3次",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Meaurement Reading-3 | 2013: Measurement Reading-3 | 2015: Measurement Reading-3",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "qd002",
+    "concept": "半串联站立·完成情况",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: How Complete | 2013: Complete The Test | 2015: Complete The Test",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "qd003",
+    "concept": "半串联站立·持续时间",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Seconds | 2013: Sec | 2015: Sec",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "qe002",
+    "concept": "全串联站立·完成情况",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: How Complete | 2013: Complete The Test | 2015: Complete The Test",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "qe003",
+    "concept": "全串联站立·持续时间",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Seconds | 2013: Sec | 2015: Sec",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "qf002",
+    "concept": "并排站立·完成情况",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: How Complete | 2013: Did R Hold Side-By-Side Stand for A Full 10 Seconds Without Stepping Out of Plac | 2015: Did R Hold Side-by-Side Stand for A Full 10 Seconds",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "qf003",
+    "concept": "并排站立·持续时间",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Seconds | 2013: Sec | 2015: Sec",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "qg002",
+    "concept": "步速测试·第1次用时",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Walking Speed Time-1 | 2013: Walking Speed Time-1 | 2015: Walking Speed Time-1",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qg003",
+    "concept": "步速测试·第2次用时",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: \tWalking Speed Time-2 | 2013: \tWalking Speed Time-2 | 2015: \tWalking Speed Time-2",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qh003",
+    "concept": "重复坐站·第1段用时",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Seconds | 2013: Sec | 2015: Sec",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "qh004",
+    "concept": "重复坐站·第2段用时",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Seconds | 2013: Sec | 2015: Sec",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "qh005",
+    "concept": "重复坐站次数",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Times | 2013: Times | 2015: times",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "qi002",
+    "concept": "身高测量",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Height | 2013: Height | 2015: height",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "ql002",
+    "concept": "体重测量",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Weight Measurement | 2013: Weight  Measuremen | 2015: Weight",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qm002",
+    "concept": "腰围测量",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Waist Measurement | 2013: Waist Circumference | 2015: WAIST CIRCUMFERENCE",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qk002",
+    "concept": "膝高测量",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Knee Height | 2013: Knee Height | 2015: Knee Height",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qj002",
+    "concept": "上臂长度测量",
+    "waves": "2011,2013,2015",
+    "modules": "Biomarker,biomarkers",
+    "source_labels": "2011: Arm Length | 2013: Arm Length | 2015: Arm Length",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "qc1_va003",
+    "concept": "空腹状态",
+    "waves": "2011",
+    "modules": "Blood_Assays",
+    "source_labels": "2011: Fasting",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qc1_vb002",
+    "concept": "白细胞",
+    "waves": "2011",
+    "modules": "Blood_Assays",
+    "source_labels": "2011: White Blood Cell in Thousands",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qc1_vb004",
+    "concept": "血红蛋白",
+    "waves": "2011",
+    "modules": "Blood_Assays",
+    "source_labels": "2011: Hemoglobin (g/dl)",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qc1_vb005",
+    "concept": "红细胞压积",
+    "waves": "2011",
+    "modules": "Blood_Assays",
+    "source_labels": "2011: Hematocrit",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qc1_vb006",
+    "concept": "平均红细胞体积",
+    "waves": "2011",
+    "modules": "Blood_Assays",
+    "source_labels": "2011: MCV",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "qc1_vb009",
+    "concept": "血小板",
+    "waves": "2011",
+    "modules": "Blood_Assays",
+    "source_labels": "2011: Platelets",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "重复读数/测量完成资格须按官方问卷和设计文件处理。"
+  },
+  {
+    "code": "newbun",
+    "concept": "尿素氮",
+    "waves": "2011",
+    "modules": "Blood_Assays",
+    "source_labels": "2011: Blood Urea Nitrogen (BUN) (mg/dl)",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "newglu",
+    "concept": "葡萄糖",
+    "waves": "2011",
+    "modules": "Blood_Assays",
+    "source_labels": "2011: Glucose (mg/dl)",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "newcrea",
+    "concept": "肌酐",
+    "waves": "2011",
+    "modules": "Blood_Assays",
+    "source_labels": "2011: Creatinine (mg/dl)",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "newcho",
+    "concept": "总胆固醇",
+    "waves": "2011",
+    "modules": "Blood_Assays",
+    "source_labels": "2011: Total Cholesterol (mg/dl)",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "newtg",
+    "concept": "甘油三酯",
+    "waves": "2011",
+    "modules": "Blood_Assays",
+    "source_labels": "2011: Triglycerides (mg/dl)",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "newhdl",
+    "concept": "HDL胆固醇",
+    "waves": "2011",
+    "modules": "Blood_Assays",
+    "source_labels": "2011: Hdl Cholesterol (mg/dl)",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "newldl",
+    "concept": "LDL胆固醇",
+    "waves": "2011",
+    "modules": "Blood_Assays",
+    "source_labels": "2011: Ldl Cholesterol (mg/dl)",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "newcrp",
+    "concept": "C反应蛋白",
+    "waves": "2011",
+    "modules": "Blood_Assays",
+    "source_labels": "2011: C-Reactive Protein (CRP) (mg/l)",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "newhba1c",
+    "concept": "糖化血红蛋白",
+    "waves": "2011",
+    "modules": "Blood_Assays",
+    "source_labels": "2011: Glycated Hemoglobin (%)",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "newua",
+    "concept": "尿酸",
+    "waves": "2011",
+    "modules": "Blood_Assays",
+    "source_labels": "2011: Uric Acid (mg/dl)",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  },
+  {
+    "code": "cystatinc",
+    "concept": "胱抑素C",
+    "waves": "2011",
+    "modules": "Blood_Assays",
+    "source_labels": "2011: Cystatin C (mg/l)",
+    "source_layer": "CHARLS原始字段",
+    "mapping_status": "字段标签已由官方变量目录核对；派生规则待定",
+    "note": "仅确认2011官方检验字段存在；不可推断其他波次也有该检验。"
+  }
+]

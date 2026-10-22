@@ -1,0 +1,77 @@
+# Python and editor artifacts
+__pycache__/
+*.py[cod]
+.vscode/
+.idea/
+
+# Local scratch, temp outputs, and server files
+tmp/
+.tmp/
+*.log
+*.tmp
+
+# Credentials and machine-specific configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credential*
+*token*
+
+# CHARLS respondent-level or licensed analysis data
+*.dta
+*.sav
+*.sas7bdat
+*.rds
+*.RData
+*.rdata
+*.parquet
+*.feather
+*.por
+*.xpt
+*.dbf
+*.sqlite
+*.sqlite3
+*.mdb
+*.accdb
+*.7z
+*.rar
+*.zip
+
+# Local QA outputs that may be derived from controlled microdata
+audit/*aggregate*.csv
+audit/*prepared*.csv
+audit/*sample*.csv
+
+# Local operational notes containing personal server paths or environment details
+HANDOFF_合作者接手说明.md
+logs/progress_log.md
+audit/背景与方法决策记录.md
+scripts/package_collaborator_bundle.ps1
+audit/*aggregate*
+audit/*_qa_*
+audit/*qa*
+audit/*prepared*
+audit/*sample*
+audit/*validation*
+audit/*subsample*
+audit/*raw_response_counts*
+audit/*pairwise_complete_n*
+audit/*pairwise_availability*
+audit/*value_counts*
+audit/*complete_n*
+audit/*pairwise_n*
+audit/candidate_adjustment_coverage_v1.csv
+audit/candidate_variable_shortlist_v1.csv
+audit/cooking_fuel_crosswalk_v1.csv
+audit/core_concept_coverage_v1.csv
+audit/core_concept_status_summary_v1.csv
+audit/core_coverage_build_metadata_v1.json
+audit/core_exposure_validity_v1.csv
+audit/core_wave_pair_summary_v1.csv
+audit/household_ses_field_coverage_v1.csv
+audit/raw_variable_catalog_v1.csv
+audit/survey_design_field_coverage_v1.csv
+audit/core_availability_recheck_2026-10-17.md
+audit/core_concept_harmonization_notes_v1.md

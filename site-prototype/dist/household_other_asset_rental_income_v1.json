@@ -1,0 +1,96 @@
+[
+  {
+    "concept_id": "household_other_asset_rental_income_amount",
+    "label": "家庭其他非住房/非土地资产租赁收入金额",
+    "domain": "Household economic resources",
+    "caveat": "This amount is conditional on the wave-specific HA064/GE014 item. The 2018 questionnaire explicitly refers to income in the past year; the 2011/2013/2015 amount stems and 2020 GE014_1 stem do not explicitly state the same reference period. Preserve original wave and do not pool, annualize, or impute zero without a prespecified rule.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ha064_1",
+        "module": "household_income",
+        "source_label": "Rental Income",
+        "unit": "Yuan; retain wave-specific reference period and route",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "mapping_status": "candidate; official wave questionnaire/Codebook item located; eligible route and denominator require validation in approved data",
+        "value_labels": ""
+      },
+      {
+        "wave": "2013",
+        "code": "ha064_1",
+        "module": "Household_Income",
+        "source_label": "Rent (Yuan)",
+        "unit": "Yuan; retain wave-specific reference period and route",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "mapping_status": "candidate; official wave questionnaire/Codebook item located; eligible route and denominator require validation in approved data",
+        "value_labels": ""
+      },
+      {
+        "wave": "2015",
+        "code": "ha064_1",
+        "module": "Household_Income",
+        "source_label": "Rent (Yuan)",
+        "unit": "Yuan; retain wave-specific reference period and route",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "mapping_status": "candidate; official wave questionnaire/Codebook item located; eligible route and denominator require validation in approved data",
+        "value_labels": ""
+      },
+      {
+        "wave": "2018",
+        "code": "ha064_1",
+        "module": "Household_Income",
+        "source_label": "Rental Income You Earn",
+        "unit": "Yuan; retain wave-specific reference period and route",
+        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "mapping_status": "candidate; official wave questionnaire/Codebook item located; eligible route and denominator require validation in approved data",
+        "value_labels": ""
+      }
+    ]
+  },
+  {
+    "concept_id": "household_other_asset_rental_income_amount_2020",
+    "label": "家庭其他非住房/非土地资产租赁收入金额（2020）",
+    "domain": "Household economic resources",
+    "caveat": "GE014_1 follows the household rental-income question about trees, fixed capital, durables or livestock, excluding housing and land. The amount stem does not explicitly state a reference period; preserve it as wave-specific and do not label annual or impute zero outside the route.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "ge014_1",
+        "module": "Household_Income",
+        "source_label": "Amount of Rental Income from Other Household Assets",
+        "unit": "Yuan; response amount in the conditional GE014 rental-income route",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "mapping_status": "candidate; official 2020 questionnaire/Codebook item located; eligible route and denominator require validation in approved data",
+        "value_labels": ""
+      }
+    ]
+  },
+  {
+    "concept_id": "household_other_asset_rental_income_status_2018_2020",
+    "label": "家庭其他非住房/非土地资产租赁收入状态",
+    "domain": "Household economic resources",
+    "caveat": "Both items concern other household assets such as trees, fixed capital, durables or livestock, excluding housing and land. Preserve the distinct wave-specific time reference and labels; do not infer household-level non-rental from structural skips.",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "ha064",
+        "module": "Household_Income",
+        "source_label": "Rental Income from Other Household Assets",
+        "unit": "categorical; preserve wave-specific official response labels",
+        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "mapping_status": "candidate; official questionnaire/Codebook item located; route and denominator require validation in approved data",
+        "value_labels": "2018: 1=Yes; 2=No; 997=Don't know; 999=Refused. 2020: 1=Yes; 2=No; 997=Don't know; 999=Refused (Codebook); preserve source wording and validate released-data coding."
+      },
+      {
+        "wave": "2020",
+        "code": "ge014",
+        "module": "Household_Income",
+        "source_label": "Rental Income from Other Household Assets",
+        "unit": "categorical; preserve wave-specific official response labels",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "mapping_status": "candidate; official questionnaire/Codebook item located; route and denominator require validation in approved data",
+        "value_labels": "2018: 1=Yes; 2=No; 997=Don't know; 999=Refused. 2020: 1=Yes; 2=No; 997=Don't know; 999=Refused (Codebook); preserve source wording and validate released-data coding."
+      }
+    ]
+  }
+]

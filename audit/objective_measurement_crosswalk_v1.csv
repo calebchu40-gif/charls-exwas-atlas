@@ -1,0 +1,46 @@
+﻿concept_id,concept_label,domain,wave,variables,module,value_semantics,source_status,source_document
+systolic_bp,收缩压,血压/循环,2011,qa003;qa007;qa011,biomarkers,三次读数；保留原始读数并按分析方案定义均值。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+systolic_bp,收缩压,血压/循环,2013,qa003;qa007;qa011,Biomarker,三次读数；保留原始读数并按分析方案定义均值。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+systolic_bp,收缩压,血压/循环,2015,qa003;qa007;qa011,Biomarker,三次读数；保留原始读数并按分析方案定义均值。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+diastolic_bp,舒张压,血压/循环,2011,qa004;qa008;qa012,biomarkers,三次读数；保留原始读数并按分析方案定义均值。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+diastolic_bp,舒张压,血压/循环,2013,qa004;qa008;qa012,Biomarker,三次读数；保留原始读数并按分析方案定义均值。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+diastolic_bp,舒张压,血压/循环,2015,qa004;qa008;qa012,Biomarker,三次读数；保留原始读数并按分析方案定义均值。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+pulse_rate,脉搏,血压/循环,2011,qa005;qa009;qa013,biomarkers,伴随血压测量的重复读数；确认单位/异常值规则。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+pulse_rate,脉搏,血压/循环,2013,qa005;qa009;qa013,Biomarker,伴随血压测量的重复读数；确认单位/异常值规则。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+pulse_rate,脉搏,血压/循环,2015,qa005;qa009;qa013,Biomarker,伴随血压测量的重复读数；确认单位/异常值规则。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+peak_flow,呼气峰流速,肺功能,2011,qb002;qb003;qb004,biomarkers,最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+peak_flow,呼气峰流速,肺功能,2013,qb002;qb003;qb004,Biomarker,最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+peak_flow,呼气峰流速,肺功能,2015,qb002;qb003;qb004,Biomarker,最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+grip_strength,握力,肌力/功能,2011,qc003;qc004;qc005;qc006,biomarkers,左右手各两次；保留原侧别和重复次序，汇总值需预先定义。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+grip_strength,握力,肌力/功能,2013,qc003;qc004;qc005;qc006,Biomarker,左右手各两次；保留原侧别和重复次序，汇总值需预先定义。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+grip_strength,握力,肌力/功能,2015,qc003;qc004;qc005;qc006,Biomarker,左右手各两次；保留原侧别和重复次序，汇总值需预先定义。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+balance_semi_tandem,半串联站立平衡,平衡/功能,2011,qd002;qd003;qd004,biomarkers,完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+balance_semi_tandem,半串联站立平衡,平衡/功能,2013,qd002;qd003;qd004,Biomarker,完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+balance_semi_tandem,半串联站立平衡,平衡/功能,2015,qd002;qd003;qd004,Biomarker,完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+balance_full_tandem,全串联站立平衡,平衡/功能,2011,qe002;qe003;qe004,biomarkers,完成状态、持续时间、代偿动作；按问卷资格解释缺失。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+balance_full_tandem,全串联站立平衡,平衡/功能,2013,qe002;qe003;qe004,Biomarker,完成状态、持续时间、代偿动作；按问卷资格解释缺失。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+balance_full_tandem,全串联站立平衡,平衡/功能,2015,qe002;qe003;qe004,Biomarker,完成状态、持续时间、代偿动作；按问卷资格解释缺失。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+balance_side_by_side,并排站立平衡,平衡/功能,2011,qf002;qf003;qf004,biomarkers,是否坚持满10秒、持续时间、代偿动作；分别保留。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+balance_side_by_side,并排站立平衡,平衡/功能,2013,qf002;qf003;qf004,Biomarker,是否坚持满10秒、持续时间、代偿动作；分别保留。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+balance_side_by_side,并排站立平衡,平衡/功能,2015,qf002;qf003;qf004,Biomarker,是否坚持满10秒、持续时间、代偿动作；分别保留。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+walking_speed,步行速度/计时步行,移动/功能,2011,qg002;qg003,biomarkers,两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+walking_speed,步行速度/计时步行,移动/功能,2013,qg002;qg003,Biomarker,两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+walking_speed,步行速度/计时步行,移动/功能,2015,qg002;qg003,Biomarker,两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+repeated_chair_stand,重复椅子起立表现,下肢功能,2011,qh002;qh003;qh004;qh005,biomarkers,站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+repeated_chair_stand,重复椅子起立表现,下肢功能,2013,qh002;qh003;qh004;qh005,Biomarker,站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+repeated_chair_stand,重复椅子起立表现,下肢功能,2015,qh002;qh003;qh004;qh005,Biomarker,站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+standing_height,身高,人体测量,2011,qi002,biomarkers,现场身高读数；与qh006等椅子测试字段区分。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+standing_height,身高,人体测量,2013,qi002,Biomarker,现场身高读数；与qh006等椅子测试字段区分。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+standing_height,身高,人体测量,2015,qi002,Biomarker,现场身高读数；与qh006等椅子测试字段区分。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+arm_length,上臂长度,人体测量,2011,qj002,biomarkers,记录值并保留测量侧别qj003。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+arm_length,上臂长度,人体测量,2013,qj002,Biomarker,记录值并保留测量侧别qj003。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+arm_length,上臂长度,人体测量,2015,qj002,Biomarker,记录值并保留测量侧别qj003。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+knee_height,膝高,人体测量,2011,qk002,biomarkers,记录值并保留测量侧别/腿别qk003。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+knee_height,膝高,人体测量,2013,qk002,Biomarker,记录值并保留测量侧别/腿别qk003。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+knee_height,膝高,人体测量,2015,qk002,Biomarker,记录值并保留测量侧别/腿别qk003。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+body_weight,体重,人体测量,2011,ql002,biomarkers,部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+body_weight,体重,人体测量,2013,ql002,Biomarker,部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+body_weight,体重,人体测量,2015,ql002,Biomarker,部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+waist_circumference,腰围,人体测量/脂肪分布,2011,qm002,biomarkers,注意厚重衣物、测量完成状态及波次问卷的路由。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+waist_circumference,腰围,人体测量/脂肪分布,2013,qm002,Biomarker,注意厚重衣物、测量完成状态及波次问卷的路由。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire
+waist_circumference,腰围,人体测量/脂肪分布,2015,qm002,Biomarker,注意厚重衣物、测量完成状态及波次问卷的路由。,原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核,CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire

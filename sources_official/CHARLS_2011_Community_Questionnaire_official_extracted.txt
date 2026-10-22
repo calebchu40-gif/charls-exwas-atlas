@@ -1,0 +1,2124 @@
+--- PDF page 1 ---
+ 
+ 
+ 
+ 
+ 
+ 
+CHINA HEALTH AND RETIREMENT 
+LONGITUDINAL STUDY  
+ 
+COMMUNITY QUESTIONNAIRE 
+ 
+中国健康与养老追踪调查 
+社区问卷 
+ 
+ 
+ 
+ 
+2011 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+北京大学   中国疾病预防控制中心 
+
+--- PDF page 2 ---
+ 
+ 2
+ 
+社区调查 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+JO001. Community Name 社区名称  
+JO002. Community type 社区类型 111 city 主城区  
+112 combined urban-rural areas 城乡结合区  
+121 town center areas 镇中心区  
+122 combined town-township areas 镇乡结合区 
+123 special district 特殊区域  
+210 township center areas 乡中心区  
+220 village 村庄 
+JO003. Postal Code 邮编  
+JO004. Phone (Office)电话(办公)  
+
+--- PDF page 3 ---
+ 
+ 
+ 
+CONTENTS  目 录 
+ 
+PART A  BASIC INFORMATION  基本信息............................................................ 1 
+PART B  INFRASTRUCTURE AND PUBLIC FACILITIES  基础设施和活动场所 .. 7 
+PART C  POPULATION, LABOR  人口、劳动力................................................... 14 
+PART D  ENTERPRISES AND WAGE  企业及工资 .............................................. 17 
+P A R T  E   M I G R A T I O N   外出务工及迁移情况 .......................................................... 19 
+P A R T  F   H E A L T H  A N D  I N S U R A N C E   医疗、保险和健康状况 ............................ 21 
+P A R T  G   S O C I A L  P O L I C Y   社会保障政策 ............................................................. 25 
+P A R T  H   C O M M U N I T Y  H I S T O R Y   社区历史 ....................................................... 28 
+PART I  HISTORY OF POLICY CHANGES  流行病和自然灾害 ........................... 32 
+P A R T  J   P R O D U C T I O N ,  I N C O M E  A N D  P R I C E   生产、收入及物价 ..................... 34 
+PART K  INTERVIEWERS ’ OBSERVATIONS  访问员观察 .................................. 37 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- PDF page 4 ---
+PART A  BASIC INFORMATION 基本信息 
+ 1
+[CAPI: Questions titled “V ONLY” need to be answered by village committee office only, “C ONLY” 
+indicates questions that need to be answered by the community office only, and questions without 
+marks in the beginning need to be answered by both V and C. When we write “village /community”, 
+the enumerator should read the word “village” for the respondent of the village committee office, 
+and read “community” for the respondent of the community office.] 
+[CAPI: 题目的标记(用V标识的题目，由村委会回答；用C标识的题目，由居委会回答；如果题目前面没有标
+识，那么村委会和居委会都要回答。当题目中出现 “村/社区”，访问员应该给村委会的受访者念“村”，给居委
+会的受访者念“社区”。] 
+ 
+PART A  BASIC INFORMATION  基本信息 
+JA001. Is this office a community office or a village committee office? 请问你这里是居委会还是村委会？ 
+(1) Village committee office 村委会      
+(2) Community office 居委会 
+(3) Both village committee office and community office 村委会和居委会都有 
+ 
+JA002. When was the village/community office established? 你们村/居委会哪年建立？_______Year 年 
+ 
+JA003. What is the physical area of this village/community? 你们村/社区的占地面积是多少？ 
+_______________(JA003_1) km
+2 平方公里 or 或 ________(JA003_2)Mu 亩 
+ 
+JA004. Have the boundary of this village/community even changed?本村/社区曾经发生过边界变化吗？ 
+(1) Yes 是 
+(2) No 否 -> skip to JA007 跳至JA007 
+ 
+JA005. In which year did the change happened most recently? 最近的边界变化是哪年发生的？
+_______Year 年 
+ 
+JA006. What was the physical area of this village/community before the change? 变化之前本村/社区的面积
+多大？_______ km2 平方公里 
+ 
+JA007. [CAPI: C ONLY] Whether this community office is changed from the village office? 你们居委会是从
+村委会改建的吗？ 
+ (1) Yes 是  
+(2) No 否  ->Skip to JA009 跳至JA009 
+JA008. [CAPI: C ONLY] When was the change happen? 哪一年改建的？_______Year 年 
+ 
+JA009. [CAPI: V ONLY] Has your village been designated into the city planning area? 你们村是否已经被纳
+入城镇规划区之内？ 
+(1) Yes 是  
+(2)  No  否  ->Skip to JA011 跳至  JA011 
+ 
+JA010. [CAPI: V ONLY] Which year? 哪一年纳入的城镇规划区? _______Year 年 
+ 
+JA011. [ CAPI: V ONLY ] How many of the land is arable land at the end of the year 2010? 到2010年年底
+你们村有多少亩耕地(包括水田和旱地)？ ____ Mu 亩  
+ 
+JA012. [ CAPI: V ONLY] Among arable land, how many is paddy field 其中，水田面积是多少亩？___ Mu 亩 
+ 
+JA013. [ CAPI: V ONLY ] How much of the land was arable land at the end of 2007? 2007年年底，你们村
+的耕地面积是多少(包括水田和旱地)？ ____Mu亩 
+ 
+JA014. [CAPI: V ONLY] How much of the land is rural construction land at the end of  
+
+--- PDF page 5 ---
+PART A  BASIC INFORMATION 基本信息 
+ 2
+year 2010? 到2010年底你们村建设用地(包括村庄居民点占地(宅基地)、村庄公益性用地、乡镇企
+业用地等)总面积是多少？____ Mu 亩 
+ 
+ 
+JA015. [CAPI: V ONLY] Has your village carried out property rights delineation and land  
+titling in the past 5 years 你们村最近5年内是否进行了农地确权(所谓农地确权就是把农用地的使
+用权明确到每家每户，并且通过向农户发放相关证书，用法律的形式把权利固定下来)？ 
+(1) Yes 是 
+(2) No 否 －>Skip to JA017 请跳至JA017 
+ 
+JA016. [CAPI: V ONLY] Which year did you carry it out? 确权的时间是哪一年？_____Year 年 
+ 
+JA017. [CAPI: V ONLY] Have your village residents got the Contract Certificate for Farmland?  你
+们村的村民是否已经领到土地承包经营权证? 
+(1) Yes 是 
+(2) No 否 －>Skip to JA019 请跳至JA019 
+ 
+JA018. [CAPI: V ONLY] Which year did they get it? 领取的时间是哪一年？_____Year 年 
+ 
+JA019. [CAPI: V ONLY] Have your village residents got the User Rights Certificate for Rural Constr
+uction Land (Housing Land)?  你们村的村民是否已经领到集体建设用地(宅基地)使用权证？ 
+ 
+(1) Yes 是 
+(2) No 否 －>Skip to JA021 请跳至JA021 
+ 
+JA020. [CAPI: V ONLY] Which year did they get it? 领取的时间是哪一年？_____Year 年 
+ 
+JA021. [CAPI: V ONLY] Have your village residents got the Certificate for Housing Ownership?  你
+们村的村民是否已经领到房屋所有权证？ 
+(1) Yes 是 
+(2) No 否 －>Skip to JA023 请跳至JA023 
+ 
+JA022. [CAPI: V ONLY] Which year did they get it? 领取的时间是哪一年？_____Year 年 
+ 
+JA023. [CAPI: V ONLY] Have your village residents got the Forest Rights Certificate? 你们村的村民
+是否已经领到林权证？ 
+(1) Yes 是 
+(2) No 否 －>Skip to JA025 请跳至JA025 
+(3) Not applicable 本村没有森林 －>Skip to JA025 请跳至JA025 
+ 
+JA024. [CAPI: V ONLY] Which year did they get it? 领取的时间是哪一年？_____Year 年 
+ 
+JA025. [CAPI: V ONLY] Have your village residents got the Share Certificate for Collective Assets 
+你们村的村民是否已经领到集体资产股权证(集体资产的股权证，代表了村民对集体资产的权益，具体名称可
+能叫做“某某村集体股权证” 或者 “某某经济合作社股权证”等)？ 
+ 
+(1) Yes 是 
+(2) No 否 －>Skip to JA027 请跳至JA027 
+ 
+JA026. [CAPI: V ONLY] Which year did they get it? 领取的时间是哪一年？_____Year 年 
+ 
+JA027. [CAPI: V ONLY] Has your village gone through land development or consolidation since 20
+05? 你们村在2005年以来曾经进行过土地开发或者农用地整理吗？(土地开发指的是对未利用地，包括荒地、
+
+--- PDF page 6 ---
+PART A  BASIC INFORMATION 基本信息 
+ 3
+盐碱地、沙地、滩涂、沼泽等，进行整治，使其变为可供建设或可供农业使用的土地。农用地整理指的是通过
+调整用地结构、归并零散地块、平整土地、整治道路和沟渠等方式，提高农用地的利用率。土地开发和农用地
+整理会增加耕地面积)？ 
+(1) Yes 是 
+(2) No 否    －>Skip to JA030 请跳至JA030 
+ 
+JA028. [CAPI: V ONLY]  When did the most recent one happen? 最近一次是在哪一年？____       
+       Year 年 
+ 
+JA029. [CAPI: V ONLY] How much new arable land were added 5 through land development /cons
+olidation since 200? 2005 年以来的土地开发或农用地整理中，新增耕地的面积为多少亩？____ Mu 
+亩 
+ 
+JA030. [CAPI: V ONLY] Has your village gone through village consolidation since 2005? 你们村在2
+005年以来曾进行过村庄建设用地整理(包括退宅还田、拆院并院等)吗？(建设用地整理指的是通过将
+建设用地复垦还耕，在增加耕地面积的同时减少建设用地面积，具体措施包括将废旧厂房或宅基地复
+垦还耕、将老宅院合并后农民搬迁到一起集中居住等，建设用地整理会减少建设用地的面积) 
+(1) Yes 是 
+(2) No 否        －>Skip to JA033 请跳至JA033 
+ 
+JA031. [CAPI: V ONLY] When did the most recent one happen? 最近一次是在哪一年？____        
+       Year 年 
+ 
+JA032. [CAPI: V ONLY] How many construction land were reduced through village consolidation sinc
+e 2005? 2005 年以来通过村庄整理减少的建设用地为多少亩？____ Mu 亩 
+ 
+JA033. [CAPI: V ONLY] What is the percentage of arable land in your village that has been subcon
+tracted or leased out? 你们村农地被转包或者出租的比例大致是百分之多少?  _____% 
+ 
+JA034. [ CAPI: V ONLY] What is the rental price for land each year in your village?
+ 你们村村民转包、出租
+农地的租金大致是每年多少钱_____Yuan/Mu 元/亩 
+ 
+JA050. [CAPI: V ONLY] What is the average area of house site per person? 你们村2010年人均宅基地面积
+是多少?____亩 
+ 
+JA051. [CAPI: V ONLY] Please specify under which of the following conditions, the household may get 
+another house site? 请问以下哪些情况下家庭能够获得新的宅基地（可多选）？ 
+       (1) single adult son 单身成年儿子  
+       (2) married son with a wife coming to his family 已经娶妻的儿子 
+       (3) married son going to the wife’s family 有倒插门出去的儿子 
+(4) single adult daughter 单身成年女儿  
+       (5)married daughter going to her husband’s family 有已经嫁入别家的女儿 
+       (6)married daughter with a husband coming to her family 有上门女婿的女儿 
+ 
+JA052. [CAPI: V ONLY] what’s the resource of house site? 这些宅基地的来源是什么？ 
+(1) Private plots of the household 自家自留地 
+(2) Contracted field of the household自家承包地 
+(3) Road-side public land 路边的公田 
+(4) Others 其他，____[JA052_1]请填写 
+ 
+ 
+JA053 [CAPI: V ONLY] Since 2000, have the rules of house site allocation been changed in your village? 
+
+--- PDF page 7 ---
+PART A  BASIC INFORMATION 基本信息 
+ 4
+2000年以来，你们村的宅基地分配标准是否发生过变化？ 
+(1) Yes 是 
+(2) No 否 －>Skip to JA035 请跳至JA035 
+ 
+JA054 [CAPI: V ONLY]When did this happen? 宅基地分配标准变化是哪一年发生的？____Year 年 
+ 
+ 
+JA035. Has your community/village gone through land expropriation since year 2000? 自从2000年以
+来你们村/社区曾经被征地吗？ 
+(1) Yes 是 
+(2) No 否        －>Skip to JA038 请跳至JA038 
+ 
+JA036. When was the most recent land expropriation? 最近一次征地的时间是哪年？_____Year 年 
+ 
+JA037. What is the compensation per mu for the most recent land procurement? 最近一次征地的货
+币补偿是每亩多少钱？_______yuan 元 
+ 
+JA038. What is the main terrain/topography of your village /community? 你村/社区的主要地形属于哪一类？
+[IWER: Read the options to the respondent. 访员注意：给受访者读出下列选项。] 
+(1)  Plain 平原 
+(2)  Hill 丘陵 
+(3)  Mountainous region 山地       
+(4)  高原 
+(5)  盆地 
+ 
+JA039.  What is the highest and lowest temperature for the last calendar year (2010)? 你们村/社区2010年
+的最低温度是多少？______ (JA039_1) Centigrade 摄氏度，最高温度是多少？_____ (JA039_2) 
+Centigrade摄氏度 
+ 
+JA040. How many days are rainy days in your village/community for the last calendar year (2010)? 2010年
+你们村/社区下雨的天数是多少？ ____ Days 天 
+ 
+JA041. How many days are snowy days in your village/community for the last calendar year (2010)? 2010
+年你们村/社区下雪的天数是多少？ ____  Days 天 
+ 
+JA042. Please fill in the following table 请填写以下关于村/社区干部的年龄和教育程度的表。 
+ 
+Title 
+职位 
+Education Level 文化程度
+1 Primary school 小学     
+2 Junior high school 初中  
+3 High school 高中        
+4 Middle professional 
+school 中专 
+5  Advanced professional 
+school 大专 
+6 University and above
+大学及以上 
+7 illiterate 没文化 
+Age  
+年龄 
+How long  did 
+he/she  
+ hold this 
+position? 
+在此职位几年了？
+[CAPI:C Only] 
+Community director 居
+委会主任  
+JA042_1[1] JA042_2[1] JA042_3[1] 
+
+--- PDF page 8 ---
+PART A  BASIC INFORMATION 基本信息 
+ 5
+ 
+ 
+ 
+[CAPI：V Only] 
+Village head 村主任 
+JA042_1[2] JA042_2[2] JA042_3[2] 
+[CAPI ： V Only] Village 
+secretary 村支书 
+JA042_1[3] JA042_2[3] JA042_3[3] 
+[CAPI ： V Only] Village 
+accountant 村会计 
+JA042_1[4] JA042_2[4] JA042_3[4] 
+
+--- PDF page 9 ---
+PART A  BASIC INFORMATION 基本信息 
+ 6
+ 
+JA043. [CAPI: V ONLY] Does your village has large surnames? (Large surname: the percentage of local 
+persons who have the same surname is above 20%)你们村有大姓吗(大姓指当地居民属于同一个姓
+氏的人家超过20％)？ 
+       ( 1 )  Y e s  有 
+(2) No 没有    －>Skip to JA047 请跳至JA047 
+ 
+JA044. [CAPI: V ONLY]How many big surnames are there in your village? 你们村有几个大姓？ 
+(1) One 1个  
+(2) Two 2个 
+(3) Three 3个 
+(4) More than three 3个以上 
+ 
+JA045-JA046 [ CAPI: V ONLY. If JA044=1, ask1. If JA044=2, ask until2. If JA044=3 or 4, ask until 3. 对
+于(JA045, JA046)，如果JA044=1,提问1;如果JA044=2,提问1,2;如果JA044=3,4, 提问1,2,3] 
+ The 1
+st largest  
+surname 第一大 
+The 2 nd largest 
+surname第二大 
+The 3 rd largest 
+surname第三大 
+JA045.Please fill in the three largest 
+surnames in your village 你们村
+主要的三大姓 
+JA045_1  JA045_2  JA045_3 
+JA046.The number of households 
+for that surname 你们村姓该大姓的
+户数 
+JA046_1  JA046_2 JA046_3 
+ 
+JA047. Respondent name for part A  A 部分受访者姓名_____________ 
+ 
+JA048. Respondent Identity for part A  A 部分受访者职务___________  
+(1) Village head 村主任 
+(2) Village secretary 村支书 
+(3) Village accountant 村会计 
+(4) Director of the street committee 居委会主任 
+(5) Others, please specify 其他，请注明_______(JA048_1) 
+ 
+JA049. Phone number for the respondent of Part A  A 部分受访者联系电话__________
+
+--- PDF page 10 ---
+PART B INFRASTRUCTURE AND PUBLIC FACILITIES  基础设施和活动场所 
+ 7
+PART B  INFRASTRUCTURE AND PUBLIC FACILITIES  基础设施和活动场所 
+JB001. What type of road does your village/community mainly have? 你们村/社区的路主要是以下哪种类
+型？[IWER: Read the options to the respondent. 访员注意：给受访者读出下列选项。] 
+(1) Paved road 柏油路/水泥路 
+(2) Pathway/Dirt/unpaved road 土路 
+(3) Sand-stone road 砂石路 
+(4) Highway 高速路 
+(5) Other 其他 
+ 
+JB002. How many days were the roads not passable last year? 过去一年这条路有多少天不能通行?____         
+       D a y s 天 
+ 
+JB003. How many bus lines are accessible this village/community? 有多少路公交车能到达你们村/社区？ 
+       _ _ _ _   
+ 
+JB004. What is the distance from the village/community office to the most commonly used bus stop if this 
+bus stop locates in this village/community)? 从村/居委会办公室到你们村/社区居民最常去的公交车站
+有多远(如果这个车站在本村/社区，请填0)？ ____km 公里 
+ 
+JB005. What is the distance from the village/community office to the most commonly used train station 
+(answer 0 if this train station locates in this village/community)? 从村/居委会办公室到你们村/社区居
+民最常去的火车站有多远？(如果这火车站在本村/社区，请填0) ____km 公里 
+ 
+JB006. The next table asks about the usage of drinking water in your village/community at the end of the last 
+calendar year (2010). 下表是关于你们村/社区住户2010年饮用水的情况，请填写有关项目 
+ 
+ How many households in your 
+village/community use drinking 
+water from the following sources? 
+你们村 /社区有多少户家庭饮用下列
+水资源? (households)户 
+Tap water 净化了的自来水 JB006_1 
+Well water 井水 JB006_2 
+pool water 池塘水 JB006_3 
+River, lakes, and brooks 江河湖水 JB006_4 
+Rain water, snow water 雨水，雪水 JB006_5 
+Cellar water 窖水 JB006_6 
+Spring 泉水 JB006_7 
+Other 其他方式 JB006_8 
+ 
+JB007. The next table asks about the usage of fuel in your village/community at the end of the last calendar 
+year (2010). 下表是关于2010年你们村/社区燃料使用的情况，请填写有关项目。 
+ 
+ How many households in your village use fuel 
+from the following sources? (households) 
+ 你村有多少户家庭使用下列资源作为燃料? (户) 
+Hay 柴草 JB007_1 
+Coal 煤炭 JB007_2 
+Marsh gas 沼气 JB007_3 
+
+--- PDF page 11 ---
+PART B INFRASTRUCTURE AND PUBLIC FACILITIES  基础设施和活动场所 
+ 8
+Natural gas  
+管道天然气或煤气 
+JB007_4 
+Liquefied Petroleum Gas  
+液化石油气 
+JB007_5 
+Other 其他方式 JB007_6 
+ 
+JB008. Does your village/community have a central heating system for winter? 你们村/社区在冬天是否有集
+中供暖？ 
+(1) Yes 有 
+(2) No 没有     Skip to JB010 请跳至JB010 
+ 
+JB009. What fuel is used for the center heating system s in your village/community? (Circle all the apply) 你
+们村/社区的集中供暖是采用何种燃料？(可多选) 
+(1) Electronic heating 电暖 
+(2) Coal heating 用煤取暖 
+(3) Natural gas heating 用天然气取暖 
+(4) Others, specify 其他，请注明__________(JB009_1) 
+ 
+JB010. Is there any sewer system in this village/community? 你们村/社区有下水道系统吗？ 
+(1) Yes 是 
+(2) No 否    ->Skip to JB012 请跳至JB012 
+ 
+JB011. When did this village/community start to use the sewer system? 目前这套下水道系统是哪年开始投
+入使用的？ _______Year 年 
+ 
+JB012. How is the waste being managed in your village/community? 你们村/社区的生活垃圾如何处理？ 
+(1) Moved away by truck 垃圾车定期运走处理 
+(2) Buried in this village 有组织的本地填埋 
+(3) Burn away 有组织的焚烧 
+(4) Put into nearby river 有组织的倒入附近河中冲走 
+(5) Do not manage 不集中处理 
+ 
+JB013. What is main type of toilet your village/community? 你们村/社区的厕所主要是哪种类型？ 
+(1) Inside toilet with water 室内冲水 
+(2) Inside toilet without water 室内马桶(无冲水) 
+(3) Outside toilet with water 
+室外冲水 
+(4) Outside public toilet without water 室外非冲水公厕 
+(5) Open-air 开放式茅坑 
+(6) Others, please specify 其他，请注明_______(JB013_1) 
+ 
+JB014. Does your village/community have public restroom? 你们村/社区是否有公共厕所？ 
+(1) Yes 是 
+(2) No 否 
+ 
+JB015. [CAPI: V ONLY]Has your village restructured the toilet and sewer system? 你们村是否进行过改水
+改厕工程？ 
+(1) Yes 是 
+(2) No 否   ->Skip to JB017 请跳至JB017 
+ 
+JB016. [CAPI: V ONLY]When was the restructuring of toilet and sewer system been done? 你们村改水改厕
+工程是哪一年进行的？_______Year 年 
+
+--- PDF page 12 ---
+PART B INFRASTRUCTURE AND PUBLIC FACILITIES  基础设施和活动场所 
+ 9
+ 
+JB017. What percentage of households in your village/community use electricity in daily life? 你们村/社区通
+电的住户比例是百分之多少(全部通电则为100%)？____  % 
+ 
+JB018. Does your village /community have industrial pollution? 在你们村/社区有工业污染排放吗？ 
+(1) Poor 很严重     
+(2) Fair 有一些       
+(3) Good 基本没有      
+(4) Very good 完全没有 
+ 
+JB019. [CAPI: V ONLY] Do villages or townships nearby have industrial pollution? 你们村临近的村镇有工
+业污染排放吗？ 
+(1) Poor 很严重     
+(2) Fair 有一些       
+(3) Good 基本没有      
+(4) Very good 完全没有 
+ 
+JB027. [CAPI: V ONLY] How far is the closest industrial pollution site? (Answer 0 if located in the village) 最
+近的工业污染源距离你们村多远(如果在本村，请填0)？__________km公里 
+ 
+ 
+JB020 What is the number of days with electricity supply throughout the year? 一年供电的天数是多少？
+_______0…366  Days 天 
+ 
+JB021. What is the average daily electricity supply throughout the year? 整年来看，平均每天供电多少小时
+(全天供电则为24小时)？         0…24  Hours 小时 
+ 
+JB022. [CAPI:V ONLY] When electricity was first available in the village? 你们村是哪年通电的？
+_______Year 年 
+ 
+JB023. [CAPI: V ONLY] What percentage of households in your village has telephone? 你村有固定电话的
+农户比例是百分之多少？_________0…100 %  
+ 
+JB024. [CAPI: V ONLY] What percentage of households in your village has one (or more) cell phones?  
+你村有手机的农户比例是百分之多少(按户计算，如果一家有多个手机仍然算一户)？
+_________0…100  %  
+ 
+JB025.[CAPI: V ONLY] What percentage of households in your village have a TV? 你村有电视机的农户比
+例是百分之多少？_________ 0…100 % 
+ 
+JB026. [CAPI: V only] What percentage of households in your village has a refrigerator? 你村有电冰箱的农
+户比例是百分之多少？_________ 0…100 % 
+ 
+ 
+JB028. The following questions ask about the availability of some public facilities. 
+下面是有关公共设施的使用问题。 
+ 
+ How many such facilities 
+are there in your village/ 
+community?  
+ 
+你们村/社区有多少个这
+种设施？(个)  
+What is the distance from the 
+village/community office to the most 
+commonly used kindergarten (answer 0 if this 
+kindergarten locates in this 
+village/community) (km)? 
+从村/居委会办公室到你村/社区居民最常去的
+
+--- PDF page 13 ---
+PART B INFRASTRUCTURE AND PUBLIC FACILITIES  基础设施和活动场所 
+ 10
+那个设施有多远？(如果在本村/社区，请填
+“0”)(公里) 
+Kindergartens 幼儿园 JB028_1[1] JB028_2[1] 
+primary schools 小学 JB028_1[2] JB028_2[2] 
+junior middle schools 初中 JB028_1[3] JB028_2[3] 
+senior high schools 高中 JB028_1[4] JB028_2[4] 
+post offices 邮局 JB028_1[5] JB028_2[5] 
+Libraries 图书室 JB028_1[6] JB028_2[6] 
+police stations 派出所/警务室 JB028_1[7] JB028_2[7] 
+banks 银行 JB028_1[8] JB028_2[8] 
+theatres 电影院/剧院 JB028_1[9] JB028_2[9] 
+nursing homes 敬老院 JB028_1[10] JB028_2[10] 
+convenience stores 便利店 JB028_1[11] JB028_2[11] 
+farmers’ markets 农贸市场 JB028_1[12] JB028_2[12] 
+supermarkets 超市 JB028_1[13] JB028_2[13] 
+ 
+JB029 Please fill in the following table about community facilities 请填写如下关于社区活动场所的表: 
+Does your village /community have 
+the following type of facilities? 你们
+村/社区有下列机构或者活动场所
+吗？ 
+Who initiated this? 是谁发
+起的？ 
+1 upper-level government 
+上级政府 
+2 village/community 
+government 村/社区 
+3 village/community 
+residents 村民/社区居民 
+4  others 其他 
+Who funded this? 谁是主要投
+资人？ 
+1 upper-level government 上级
+政府 
+2 village/community 
+government 村/社区 
+3 village/community residents 
+村民/社区居民 
+4  others 其他 
+JB029_1[1]  
+Basket-ball 篮球场  
+1. Yes 有   
+2. No 没有 ->Skip to JB029_2 跳
+至JB029_2 
+JB029_2[1] JB029_3[1] 
+JB029_1[2] 
+Swimming pool 游泳池  
+1. Yes 有   
+2. No 没有 ->Skip to JB029_3 跳
+至JB029_3 
+JB029_2[2] JB029_3[2] 
+JB029_1[3]. 
+Outside exercising facilities 露天健
+身器材 
+1. Yes 有   
+2. No 没有 ->Skip to JB029_4 跳
+至JB029_4 
+JB029_2[3] JB029_3[3] 
+JB029_1[4]. 
+Table tennis 乒乓球桌 
+1. Yes 有   
+2. No 没有 ->Skip to JB029_5 跳
+至JB029_5 
+JB029_2[4] JB029_3[4] 
+JB029_1[5]. 
+Room for card games and chess 
+JB029_2[5] JB029_3[5] 
+
+--- PDF page 14 ---
+PART B INFRASTRUCTURE AND PUBLIC FACILITIES  基础设施和活动场所 
+ 11
+games 棋牌活动室 
+1. Yes 有   
+2. No 没有 ->Skip to JB029_6 跳
+至JB029_6 
+JB029_1[6]. 
+Room for Ping Pong 乒乓球室 
+1. Yes 有   
+2. No 没有 ->Skip to JB029_7 跳
+至JB029_7 
+JB029_2[6] JB029_3[6] 
+JB029_1[7]. 
+Association for calligraphy and 
+painting 书画协会 
+1. Yes 有   
+2. No 没有 ->Skip to JB029_8 跳
+至JB029_8 
+JB029_2[7] JB029_3[7] 
+JB029_1[8]. 
+Dancing team or other exercise 
+organizations 舞蹈队或者其他锻炼
+队 
+1. Yes 有   
+2. No 没有 ->Skip to JB029_9 跳
+至JB029_9 
+JB029_2[8] JB029_3[8] 
+JB029_1[9]. 
+Organizations for helping the 
+elderly and the handicapped 协助
+老弱病残的组织 
+1 Yes 有   
+2 No 没有 ->Skip to JB029_10 跳
+至JB029_10 
+JB029_2[9] JB029_3[9] 
+JB029_1[10]. 
+Employment service 就业服务中心 
+1. Yes 有   
+2. No 没有 ->Skip to JB029_11 跳
+至JB029_11 
+JB029_2[10] JB029_3[10] 
+JB029_1[11]. 
+Activity center for the elderly 老年
+活动中心 
+1. Yes 有   
+2. No 没有 -> Skip to JB029_12 
+跳至JB029_12 
+JB029_2[11] JB029_3[11] 
+JB029_1[12]. 
+Elderly association 老年协会 
+1. Yes 有   
+2. No 没有 -> Skip to JB029_13 
+跳至JB029_13 
+JB029_2[12] JB029_3[12] 
+JB029_1[13]. 
+Nursing Home 养老院 
+1. Yes 有   
+2. No 没有 -> Skip to JB029_14 
+跳至JB029_14 
+JB029_2[13] JB029_3[13] 
+JB029_1[14]. JB029_2[14] JB029_3[14] 
+
+--- PDF page 15 ---
+PART B INFRASTRUCTURE AND PUBLIC FACILITIES  基础设施和活动场所 
+ 12
+ 
+Other entertainment facilities  其
+他娱乐设施 
+1. Yes 有   
+2. No 没有 -> Skip to JB030 跳至
+JB030 
+
+--- PDF page 16 ---
+PART B INFRASTRUCTURE AND PUBLIC FACILITIES  基础设施和活动场所 
+ 13
+ 
+JB030. [CAPI: C ONLY] Does your community have communi ty-based elderly care center? 你们社区有老
+年保健服务中心吗？ 
+(1) Yes 有 
+(2) No 没有    －> Skip to JB036 请跳至JB036 
+ 
+JB031. [CAPI: C ONLY] How large is the community-based elderly care center? 
+你们社区这个老年保健服务中心有多大面积？____________ Square meters 平方米  
+ 
+JB032. [CAPI: C ONLY] How many elder are using this community-based elderly care center? 有多少老人
+在使用这个中心？_______ Persons 人 
+ 
+JB033. [CAPI: C ONLY] What services are provided? (Circle all that apply) 
+这个中心都提供什么服务？(可多选) 
+(1) Health care 医疗 
+(2) Entertain activities 娱乐活动 
+(3) Exercise equipments 健身器材 
+(4) Other 其他，请说明_______ (JB033_1) 
+ 
+JB034. [CAPI: C ONLY] How much each elder need to pay for it if they use this center? (fill in 0 if the 
+services are free to the elderly. )_______yuan/year  使用了这个中心的老人，每年要付多少钱？(如
+果服务对老人免费，请填“0”。)_______元/年 
+ 
+JB035. [CAPI: C ONLY] Who provides the funds for establishing and running this elderly care center? 这个
+老年保健中心建立和运行的资金来源是哪儿？ 
+(1) Community 社区 
+(2) Country finance 国家财政 
+(3) Both 两者都有 
+(4) Others 其他，请说明        (JB035_1) 
+ 
+JB036. What’s the percentage of households that hire nanny to live in their house to take care of old elderly 
+in your community? 你们社区有百分之多少的家户雇佣保姆在家照料老人的？ ____%   
+ 
+JB037. [CAPI: V ONLY] Does your village have a fam ily-based elder-care center? 你们村是否有居家养老
+服务站? 
+(1) Yes 是 
+(2) No 否 --> Skip to JB039 请跳至JB039 
+ 
+JB038. [CAPI: V ONLY] How many persons are served? 多少老人接受了居家养老服务站的服务 ? 
+_______person 人 
+ 
+JB039. Respondent name for part B B部分受访者姓名__________ 
+ 
+JB040. Respondent Identity for part B B部分受访者职务__________  
+(1) Village head 村主任 
+(2) Village secretary 村支书 
+(3) Village accountant 村会计 
+(4) Director of the street committee 居委会主任 
+(5) Others, please specify 其他，请注明_______(JB040_1) 
+ 
+JB041.Phone number for the respondent of Part B 部分受访者联系电话___________
+
+--- PDF page 17 ---
+PART C POPULATION, LABOR 人口、劳动力 
+ 14
+ 
+PART C  POPULATION, LABOR  人口、劳动力 
+[IWER: This section should be filled in by the person most familiar with the population and employment in 
+this village/community. 访员注意：这部分应该请最熟悉本地人口和就业状况的人回答。] 
+ 
+C. We would like to ask questions about the population and labor of your village/community. 下面要
+问一些人口和劳动力的问题。 
+ 
+JC001. What was the total population who live in your village/community for more than half a year at the end 
+of the last calendar year (2010)? 2010年底，在你们村/社区居住半年以上的常住人口总数是多少？
+_______ Persons 人 
+ 
+JC002. How many of them have non-agriculture Hukou？其中，多少人是非农业户口？ _______ Persons 人 
+ 
+JC003. How many of them have Hukou in your village/community? 其中，有本地户口的常住人口总数是多
+少？________ (Persons人；how many households?这些人有多少户? ____ (JC003_1)Households 
+户 
+ 
+JC004. How many of them are from other places who do not have Hukou in your village/community? 其中，
+没有本地户口的外来人口总数是多少？________  Persons 人；How many households 这些人有多
+少户? ____ (JC004_1) Households 户 
+ 
+JC005. What was the total population with Hukou in your village/community but do not live here for more 
+than half a year at the end of the last calendar year(2010)? 2010年底，你们村/社区有本地户口但不
+在本地常住的人口有多少人(包括人户分离的)? ____ Persons人。How many households? 这些人有
+多少户？____(JC005_1) Households户 
+ 
+JC006. What was the total migrant population who live less than half a year in your village/community at the 
+end of the last calendar year(2010)? 去年(2010年)年底，在你们村/社区居住不满半年的流动人口总
+数是多少？_______ Persons 人。 
+ 
+JC007. What was the total population who live in your village/community for more than half a year at the end 
+of the year 2009? 前年年底，也就是2009年年底，你们村/社区常住人口总数是多少？_________ 
+Persons人。  
+ 
+JC008. How many of them have Hukou in your village/community? 其中，有本地户口的常住人口总数是多
+少？_____  Persons 人 
+ 
+JC009. What is the total number of adult population in your village/community (adult means people aged 16 
+and over)? 你们村/社区有多少16岁以上的成年人？ _____Persons 人。 How many boys? 有多少
+男孩？____(JC009_1) Persons 人 
+ 
+JC010.What is the total number of population aged 65 and over in your village/community? 你们村/社区有
+多少65岁以上的人？ _____Persons 人。How many males 其中多少是男性？
+____(JC010_1)Person 人 
+ 
+JC011.What is the total number of population aged 80 and over in your village/community? 你们村/社区有多
+少80岁以上的老人？ _____Persons 人。 How many males 其中多少是男性？
+____(JC011_1)Person 人 
+ 
+
+--- PDF page 18 ---
+PART C POPULATION, LABOR 人口、劳动力 
+ 15
+JC012. What is the total number of bachelors aged above 40 who have never been married? 你们村/社区有
+多少40岁以上从未结婚的老光棍? _____Persons 人。How many males 其中多少是男性？
+____(JC012_1)Person 人 
+ 
+ 
+JC013. Does your village/community have minorities? 你们村/社区有少数民族吗？             
+(1) Yes 有   How many ？共有     (JC013_1) 种少数民族 
+(2) No 无    -->Skip to JC019   跳至JC019 
+ 
+ 
+JC014. Which minority has the largest population among all the minorities in your village/community 
+at the end of the last calendar year? 你们村/社区少数民族人口占第一位的是_______族？ 
+ 
+JC015. How many households belong to this minority at the end of the last calendar year?  有多少
+家庭是这种少数民族？ _______households 户 
+ 
+JC016. Which minority has the second largest population among all the minorities in your village/   
+community at the end of the last calendar year? 你们村/社区少数民族人口占第二位的是什么
+族？___ 族 
+ 
+JC017. How many households belong to this minority at the end of the last calendar year?  有多少
+家庭是这种少数民族？_______households户 
+ 
+JC018. How many households belong to other minorities  in your village/community at the end of the
+ last calendar year? 你们村/社区其他少数民族一共有几户？_______households户 
+ 
+JC019. What percentage of the adult population is illiterate / semi-illiterate? ______% (IWER：Please select 
+from the following options if you don’t know the exact number.)你们村/社区的成年人中，文盲或半文
+盲的比例是多少？______%  
+[访员注意：如果受访者不知道具体的比例数，请从以下选项中选择JC019_1。] 
+(1) 0 －20％ 
+(2) 20 －40％ 
+(3) 40 －60％ 
+(4) 60 －80％ 
+(5) 80 －100％ 
+ 
+JC020. What percentage of them have only completed primary school? ______% (IWER：Please select 
+from the following options if you don’t know the exact number.) 
+你们村/社区的成年人中，小学文化程
+度的比例是多少？______% 
+ [访员注意：如果受访者不知道具体的比例数，请从以下选项中选择。JC020_1] 
+(1) 0 －10％ 
+(2) 10 －20％ 
+(3) 20 －30％ 
+(4) 30 －40％ 
+(5) >40 ％ 
+ 
+JC021. What percentage of them have completed only up to junior middle school? ______% (IWER：Please 
+select from the following options if you don’t know the exact number.) 你们村/社区的成年人中，初中
+文化程度的比例是多少？______% 
+[访员注意：如果受访者不知道具体的比例数，请从以下选项中选择。JC021_1] 
+(1) 0 －10％ 
+(2) 10 －20％ 
+
+--- PDF page 19 ---
+PART C POPULATION, LABOR 人口、劳动力 
+ 16
+(3) 20 －30％ 
+(4) 30 －40％ 
+(5) >40 ％ 
+ 
+JC022. What percentage of them have completed only up to senior high school? ____% (IWER：Please 
+select from the following options if you don’t know the exact number.)你们村/社区的成年人中，高中
+文化程度的比例是多少？______%(访员注意：如果受访者不知道具体的比例数，请从以下选项中选择。
+JC022_1) 
+(1) 0 －10％ 
+(2) 10 －20％ 
+(3) 20 －30％ 
+(4) 30 －40％ 
+(5) >40 ％ 
+ 
+JC023. What percentage of them have completed only up to college? ______% (IWER：Please select from 
+the following options if you don’t know the exact number.) 你们村/社区的成年人中，本科学历的比例
+有多少？______% 
+[访员注意：如果受访者不知道具体的比例数，请从以下选项中选择。JC023_1] 
+(1) 没有 No. 
+(2) 0 －1％ 
+(3) 1 －5％ 
+(4) 5 －10％ 
+(5) 10 －15％ 
+(6) >15 ％ 
+ 
+JC024. What percentage of them have completed only up to graduate school? ______% (IWER：Please 
+select from the following options if you don’t know the exact number.) 你们村/社区的成年人中，硕士
+或以上学历的比例有多少？______%(访员注意：如果受访者不知道具体的比例数，请从以下选项中选
+择。JC024_1) 
+(1) 没有 No 
+(2) 0 －1％ 
+(3) 1 －5％ 
+(4) 5 －10％ 
+(5) >10 ％ 
+ 
+JC025. Respondent name for part C  C 部分受访者姓名__________ 
+ 
+JC026 .Respondent Identity for part C  C 部分受访者职务__________  
+(1) Village head 村主任 
+(2) Village secretary 村支书 
+(3) Village accountant 村会计 
+(4) Director of the street committee 居委会主任 
+(5) Others, please specify 其他，请注明_______ 
+ 
+JC027 .Phone number for the respondent of Part C  C 部分受访者联系电话___________ 
+
+--- PDF page 20 ---
+PART D ENTERPRISES AND WAGE 企业及工资 
+ 17
+ 
+PART D  ENTERPRISES AND WAGE  企业及工资  
+Please answer the questions about enterprises and wage in your village/community. 下面我们想了解
+一下你们村/社区的企业和工资情况。 
+ 
+JD001. [CAPI: V ONLY]How many households (at least one household member) were engaged in 
+non-agricultural work (including Getihu, working in employment, etc.) in this village in 2010? 2010
+年你们村有多少户(家里至少有一个人)在本村从事非农业工作(包括在企业工作、当个体户等)？       
+Households 户 
+ 
+JD002. How many Getihu were there in your village/community at the end of 2010? 2010年底，你们村/社区
+有多少家个体户？___ Firms 家 
+ 
+JD003. How many enterprises were there in your village /community at the end of 2010? （An enterprise has 
+at least 8 employees.） 2010年底， 你们村/社区有多少家企业(企业至少应有8个员工)？_____ Firms 
+家 
+ 
+JD004. Please list the three major products of these enterprises. 你们村/社区企业主要生产什么工业产品（可
+多选）？ 
+（1） Handicraft products 手工业产品加工  
+（2） Minerals 采掘品加工（矿产品 
+（3） Light industry products 轻工业产品加工 
+（4） Part manufacturing 工业零件加工 
+ 
+JD005. Approximately how many workers were working in these (non-geti) enterprises at the end of 2010? 
+2010年底，大概有多少人在这些本地企业工作？ ______ Persons 人  
+ 
+JD006. [CAPI: V ONLY] How many of them were male in 2010? 2010年在本地企业工作的职工中，有多少人
+是男性？             P e r s o n s  人 
+ 
+JD007. [CAPI: V ONLY] What was the average salary of male employees in the local firms in 2010? 2010年
+本地企业给男性的平均工资(日薪或月薪)是多少？  
+（1） Daily salary 日薪______(JD007_1) Yuan/day 元/日  
+（2） Monthly 月薪______ (JD007_2)Yuan/month 元/月  
+ 
+JD008. [CAPI: V  ONLY] What was the average salary of female employees in the local firms in 2010?  
+2010年本地企业给女性的平均工资(日薪或月薪)是多少？______ Yuan 元 
+（1） Daily salary 日薪______(JD008_1) Yuan/day 元/日 
+（2） Monthly 月薪______ (JD008_2)Yuan/month 元/月 
+ 
+JD009.[ CAPI: V ONLY]In average, how many days did employees in the local firms work per month in 2010? 
+2010年本地企业的员工平均每月工作多少天？___________days 天 
+ 
+JD010. [CAPI: V ONLY] What is the average daily wage for manual male labor in this village in 2010? 2010
+年,在你们村雇一个男工一天要多少钱?          Yuan 元 
+ 
+JD011. [CAPI: V ONLY] What is the average daily wage for manual female labor in this village in 2010? 
+2010年，在你们村雇一个女工一天要多少钱? _____ Yuan 元 
+ 
+JD012. What is the monthly salary for nannies in addition to living and meal expense? 在家住的保姆，除去
+
+--- PDF page 21 ---
+PART D ENTERPRISES AND WAGE 企业及工资 
+ 18
+包吃住之外，一般的月工资多少元？______yuan 元 
+ 
+JD013. Respondent name for part D  D 部分受访者姓名__________ 
+ 
+JD014 .Respondent Identity for part D  D 部分受访者职务__________  
+(1) Village head 村主任 
+(2) Village secretary 村支书 
+(3) Village accountant 村会计 
+(4) Director of the street committee 居委会主任 
+(5) Others, please specify 其他，请注明_______(JD014_1) 
+ 
+JD015 .Phone number for the respondent of Part D  D 部分受访者联系电话___________ 
+
+--- PDF page 22 ---
+PART E MIGRATION  外出务工及迁移情况 
+ 19
+ 
+PART E  MIGRATION  外出务工及迁移情况 
+ 
+[ CAPI: V ONLY]Please answer the questions about residents’ working outside and out-migration of 
+the village. 下面我们想了解一下你们村农户外出务工、经商和迁移的情况。  
+ 
+JE001.[CAPI: V ONLY]  What is the total number of people working outside of the village for more than 
+three months in 2010?  2010 年，到你们村以外务工、经商超过 3个月的总人数是多少？_______ 
+Persons 人 
+ 
+JE002.[CAPI: V ONLY] Among them, what percentage is female？其中，女性占多大百分比?________% 
+ 
+JE003. [CAPI: V ONLY] Among them, what percentage of them works at other towns or townships in the 
+same county? 外出打工或经商的人中，在本县其他乡镇工作的比例是多少？ 
+(1) 0－20％ 
+(2) 20－40％ 
+(3) 40－60％ 
+(4) 60－80％ 
+(5) 80－100％ 
+ 
+JE004. [CAPI: V ONLY] Among them, what percentage of them works at other counties in the same 
+city/prefecture? 外出打工或经商的人中，在本市/地区其他县工作的比例是多少？ 
+(1) 0－20％ 
+(2) 20－40％ 
+(3) 40－60％ 
+(4) 60－80％ 
+(5) 80－100％ 
+ 
+JE005. [CAPI: V ONLY]Among them, what percentage of them works at other cities/prefectures in the same 
+province? 外出打工或经商的人中，在本省其他市/地区工作的比例是多少？ 
+(1) 0－20％ 
+(2) 20－40％ 
+(3) 40－60％ 
+(4) 60－80％ 
+(5) 80－100％ 
+ 
+JE006. [CAPI: V ONLY] Among them, what percentage of them works at other provinces? 外出打工或经 
+       商的人中，在其他省工作的比例是多少？ 
+(1) 0－20％ 
+(2) 20－40％ 
+(3) 40－60％ 
+(4) 60－80％ 
+(5) 80－100％ 
+ 
+JE007. [CAPI: V ONLY] What are the main provinces that people go to when they decide to work outside of 
+the village？(circle all that applies) 他们到你们村以外工作，主要去哪些省呢？(可多选) 
+[IWER: Choose from the list of provinces，see appendix 2 请选择省份，见附表二] 
+ 
+JE008. [CAPI: V ONLY] What are the main jobs that male workers seek when they work outside? 外出打工
+
+--- PDF page 23 ---
+PART E MIGRATION  外出务工及迁移情况 
+ 20
+的男性主要做什么工作？______ 
+ 
+JE009. [CAPI: V ONLY] What is the average monthly wage for these male workers? 外出打工的男性 
+       的月平均工资有多少？ ______ Yuan 元 
+ 
+JE010. [CAPI: V ONLY]  What are the main jobs for females workers?  外出打工的女性主要做什么工 
+   作？______ 
+ 
+JE011. [CAPI: V ONLY] What is the average monthly wage for these female migrants? 外出打工的女  
+性的月平均工资有多少？  ______Yuan 元 
+ 
+JE012. How many households have permanently moved outside of this village /community since 2000?  
+2000年以来，一共有多少户人家永久性地迁出了(指户口迁出)本村/社区？________ Households 户 
+ 
+JE013. Respondent name for part E  E 部分受访者姓名__________ 
+ 
+JE014. Respondent Identity for part E  E 部分受访者职务__________  
+(1) Village head 村主任 
+(2) Village secretary 村支书 
+(3) Village accountant 村会计 
+(4) Director of the street committee 居委会主任 
+(5) Others, please specify 其他，请注明_______(JE014_1) 
+ 
+JE015 .Phone number for the respondent of Part E  E 部分受访者联系电话___________ 
+
+--- PDF page 24 ---
+PART F HEALTH AND INSURANCE  医疗、保险和健康状况 
+ 21
+ 
+PART F  HEALTH AND INSURANCE  医疗、保险和健康状况 
+[IWER: This section should be filled in by the person most familiar with rural medical issues in this 
+village/community. 访员注意：这部分应该请熟悉农村医疗问题的人回答，例如村医。] 
+ 
+JF001.  For residents of your village /community, What types of medical facilities do residents go when they 
+seek medical care? (Circle all that applies) 你们村/社区的住户需要看病时，会去哪些类型的医疗机构
+(可多选)？  
+(1) General hospitals 综合医院 
+(2) Specialized hospitals 专科医院 
+(3) Chinese medicine hospitals 中医院 
+(4) Nearby pharmacy store 附近的药店 
+(5) Community health care center 社区卫生服务中心 
+(6) Community health care medical post 社区卫生服务站  
+(7) Township health clinic (hospital)  乡镇卫生院 
+(8) Village medical post 村诊所/医务室 
+ 
+[PROCUDURE: Ask JF002-JF009 for every choice in JF001. 对JF001 所选的医疗机构逐一询问
+JF001-JF009] 
+ 
+JF002. Does your village/community has (preload each circled type in JF001) ? 你们村/社区是否有[JF002
+中的选项]?  
+(1) Yes 是 
+(2) No 否， --- > skip to JF003, 跳至JF003 
+ 
+JF002_1. How many (preload each circled type in JF001) are there in your village /community?____家 
+ 
+ 
+JF003. What is the location of this facility?  这家医疗机构的具体的地址是什么？ 
+       1 .  p r o v i n c e  省 
+         A .  T h i s  p r o v i n c e   本省 
+         B .  O t h e r  p r o v i n c e  外省  ->Skip to JF004 请跳至JF004 
+2. county/city县/市 
+         A .  T h i s  c o u n t y  /  c i t y   本县/市 
+         B. Other county / city 外县/市  ->Skip to JF004 请跳至JF004 
+       3. township/district 乡/区 
+A. This township/district 本乡/ 区 
+         B. Other township/district 外乡/区  ->Skip to JF003 请跳至JF004 
+       4. village/street 村/街道 
+         A. This village/street 本村/街道 
+         B. Other village/street 外村/街道  ->Skip to JF003 请跳至JF004 
+ 
+JF004. Is this facility public or private? 这家机构是公立的还是私立的？ 
+(1) Public 公立的 
+(2) Private 私立的 
+ 
+If JF001=1-3, ask JF005 如果 JF001=1-3，请回答 JF005。 
+
+--- PDF page 25 ---
+PART F HEALTH AND INSURANCE  医疗、保险和健康状况 
+ 22
+JF005. What’s the level of this facility? 这家机构是什么级别的？ 
+(1) County/district 县/市/区级 
+(2) Regional /city  地/市 
+(3) Provincial/ affiliated to a ministry 省/部属 
+(4) Military 军队 
+(5) Others 其他  
+(6) Not applicable 不适用   
+ 
+JF006. How many kilometers is it from the medical facility to the village or community office (answer 0 if this 
+medical facility in this village/community)? 从村委会/社区办公室到这家医疗机构有多远(如果这家医
+疗机构在社区内则填0)？└─┴─┴─┘.└─┴─┘ Km 公里 [softcheck upper limit 上限: 53000] 
+ 
+JF007. What is most commonly used type of transportation to that facility? 去这家医疗机构最常用的交通工
+具是什么? (JF006_1) 
+(1) Walk 步行 
+(2) Bus 公交车 
+(3) Car 私家车或出租车 
+(4) Bicycle or other manual vehicles  自行车或其他人力车 
+(5) Electric bicycle/electric tricycle  电动自行车/电动三轮车 
+(6) Motorcycle 摩托车 
+(7) Tractor 拖拉机 
+(8) Train 火车 
+(9) Animal or animal pulled cart 骑牲畜或坐畜力车 
+ 
+JF008. What is the travel time (one-way) to that facility using this type of transportation? 使用这种交通工具，
+去这家医疗机构单程一般花多少时间？______ 
+└─┴─┘(JF007_2)Hour 小时 [soft check upper limit 上限: 20] 
+└─┴─┘(JF007_1)Minute 分钟 [check range 范围: 1-59]  
+ 
+JF009. What is the average total transportation cost to the facility using this type of transportation (Including   
+ fuel cost, one way trip)? 使用这种交通工具，去这家医疗机构的单程交通成本一般是多少？(包括燃料 
+ 费)________RMB 元  
+ 
+[CAPI: QUESTION JF010 IS MULTIPLE CHOICE QUESTION. JUMP TO THE CORRESPONDING 
+FOLLOW-UP QUESTIONS IF THE OPTIONS ARE CHOSEN. FOR EXAMPLE, IF 1 AND 2 ARE CHOSEN, 
+THEN ASK JF011 - JF013, AND JF014 - JF016; JF010是多选题，按照所选的各项回答相应的问题。例：如
+果JF010＝1和2，那么提问JF011 - JF013和JF014 - JF016] 
+ 
+JF010. Which of the following types of insurance are provided through the community?(Choose all that 
+  apply) 以下保险中哪些是在村/居委会办理？(可多选) 
+    (1) Urban resident medical insurance 城镇居民医疗保险(JF010_1) 
+[CAPI: IF CHOSEN, ANSWER  JF011 - JF013 提问JF011 - JF013] 
+    (2) Rural cooperative medical insurance 新型农村合作医疗保险(JF010_2)  
+[CAPI: IF CHOSEN, ANSWER JF014 - JF016提问JF014 - JF016] 
+ 
+JF011. When did your village/community start the Urban resident medical insurance (yi-bao)? 
+你们村/社区从哪一年开始有城镇居民医疗保险(医保)的？ _________ Year 年 
+ 
+JF012.  
+
+--- PDF page 26 ---
+PART F HEALTH AND INSURANCE  医疗、保险和健康状况 
+ 23
+Year 年份 How many households in your village/community 
+participated in Urban resident medical insurance? 你们
+社区参加城镇居民医疗保险的住户有多少户? 
+_______households户 
+2010 JF012_1 
+2009 JF012_2 
+2008 JF012_3 
+…  … 
+the year 
+answered 
+in 
+JF011.JF01
+1的答案 
+ 
+ 
+JF013. What is the premium for participants in Urban resident medical insurance? 你们社区/村参加城镇居 
+     民医疗保险的人每年交保费多少？________ Yuan元 
+ 
+JF014. When did your village/community start the New Rural Cooperative Medical Insurance ?  
+你们村/社区从哪一年开始有新型农村合作医疗(合作医疗)的？_______ Year 年[IWER: Mark the year  
+using four digits. 访员注意: 用4位数表示年。] 
+ 
+JF015.  
+Year 年份 How many households in your 
+village/community participated in Rural 
+Cooperative Medical Insurance? 你们村/社区
+参加新型农村合作医疗的农户有多少户?  
+2010 JF015_1 
+2009 JF015_2 
+2008 JF015_3 
+…  … 
+the year 
+answered 
+in JF014. 
+JF014的答
+案 
+ 
+ 
+JF016. How much do villagers pay for the rural cooperation medical insurance each year in your 
+village/community? 你们村/社区新型农村合作医疗，农民每年交保费多少？________ Yuan元 
+ 
+JF017. What is the total population that died in the past three years(since 2008) in your village/community? 
+   你们村/社区最近三年(2008 年以来)总的死亡人数是多少? (JF017_1)_______person 人 
+Persons who are died of suicide 因为自杀死亡的(JF017_2) _______person 人。 
+ 
+JF018. What are the three major diseases that affect the older persons’health? How many people died of 
+  those diseases in the past three years?  影响老年人健康的前三种主要疾病依次是哪三种？近三年有
+多少人因为该疾病而死亡? 
+ 
+the first major 
+disease 
+第一种疾病  
+the second major 
+disease第二种疾病     
+the third major disease 
+第三种疾病  
+病名  JF018_1[1]  JF018_1[2]  JF018_1[3] 
+近三年总死亡人数  JF018_2[1]  JF018_2[2]  JF018_2[3] 
+ 
+ 
+
+--- PDF page 27 ---
+PART F HEALTH AND INSURANCE  医疗、保险和健康状况 
+ 24
+JF019 .Respondent name for part F  F 部分受访者姓名__________ 
+ 
+JF020.Respondent Identity for part F  F 部分受访者职务__________  
+(1) Village head 村主任 
+(2) Village secretary 村支书 
+(3) Village accountant 村会计 
+(4) Director of the street committee 居委会主任 
+(5) Others, please specify 其他，请注明_______ 
+ 
+JF021 .Phone number for the respondent of Part F  F 部分受访者联系电话___________ 
+
+--- PDF page 28 ---
+PART G SOCIAL POLICY  社会保障政策 
+ 25
+ 
+PART G  SOCIAL POLICY  社会保障政策 
+[IWER: This section should be filled in by the person most familiar with social policies.  访员注意，这
+部分要请最了解社会保障政策的人士回答] 
+ 
+Please provide the following policy information about your village/community. 请填写有关你们村/社区社会政
+策的一些信息。 
+ 
+JG001. Does your village/community have unemployment subsidies? 您村/社区实行了失业补助吗？ 
+(1) Yes  是  
+(2) No  否 
+ 
+JG002. When did unemployment subsidies start to  be implemented in this village/community? 您村/社区什
+么时候开始实行失业补助？_________ year 年 
+ 
+JG003. How many people in this village/community re ceived unemployment subsidies in year 2010? 2010
+年您村/社区有多少人领取了失业补助？_______ Persons 人 
+ 
+JG004. What is the average subsidies standard? 平均失业补助标准是什么？_____ yuan/month 元/月 
+ 
+JG005. Does your village/community have minimum living allowance? 您村/社区实行了最低生活保障金吗？ 
+(1) Yes 是 
+(2) No  否  ->skip to JG008 请跳至JG008 
+ 
+JG006. When did the minimum living allowance start to be implemented in this village/community?  您村/社
+区什么时候开始实行最低生活保障金？_________year 年 
+ 
+JG007. How many people in this village/community rece ived the minimum living allowance in year 2010? 
+2010年您村/社区有多少人领取了最低生活保障金？_______ Persons 人 
+ 
+JG008. What is the average subsidies standard? 平均失业补助标准是多少钱？_____ yuan/month 元/月 
+ 
+ 
+JG009. Does your village/community have other subsidies? 您村/社区是否还有其他贫困补助？ 
+(1) Yes 是  Please specify 请写出_______(JG009_1) 
+(2) No 否， skip to JG013, 跳至JG013 
+ 
+[PROCUDURE: Ask JG010-JG012 for every answer in JG009_1. 对JG009_1 所答的各种补助逐一询问
+JG010-JG012] 
+ 
+JG010. When did （preloaded from JG009）loans start to be implemented in this village/community? 您村/
+社区什么时候开始实行[从JG009中提取的]？_________year 年 
+ 
+JG011. How many households in this village/community received （preloaded from JG009） in year 2010? 
+2010年您村/社区有多少户人家领取了[从JG009中提取的]？__________ Households户 
+ 
+JG012 What is the average subsidies standard of （preloaded from JG009）? 平均[从JG009中提取的]标准
+是多少钱？_____ yuan/month 元/月 
+ 
+ 
+
+--- PDF page 29 ---
+PART G SOCIAL POLICY  社会保障政策 
+ 26
+JG013. Does your village/community have subsidies for being parents of single child? 您村/社区实行了独生
+子女父母奖励金吗？ 
+(1). Yes 是 
+(2). No 否 ->skip to JG0017 请跳至JG0017 
+ 
+JG014. When did subsidies for being parents of single child start to be implemented in this 
+village/community? 您村/社区什么时候开始实行独生子女父母奖励金？_________year 年  
+ 
+JG015. How many households in this village/community received subsidies for being parents of single child? 
+2010年您村/社区有多少户人家领取独生子女父母奖励金？ _____Households户 
+ 
+JG016 What is the average subsidies standard? 平均奖励标准是多少钱？_____ yuan/month 元/月 
+ 
+JG017. [CAPI: V ONLY] Does your village have farm subsidies? 您村实行了农业补贴吗？(包括粮食直补，良
+种补贴，农机具购置补贴和农资综合补贴等) 
+(1). Yes 是 
+(2). No 否 ->skip to JG021 请跳至JG021  
+ 
+JG018. When did farm subsidies start to be implemented in this village? 您村/社区什么时候开始实行农业补
+贴？(包括粮食直补，良种补贴，农机具购置补贴和农资综合补贴等)________year 年  
+ 
+JG019.How many households in this village received farm subsidies in year 2010? 2010 年您村有多少户人
+家领取了农业补贴？ _____Households 户  
+ 
+JG020. What is the average subsidies standard? 平均奖励标准是多少钱？_____yuan/mu 元/亩 
+ 
+JG021. [CAPI: V ONLY] Does your village have subsidies for reforestation? 您村/实行了退耕还林补贴吗？ 
+1. Yes 是 
+2. No 否 ->skip to JG025 请跳至JG025  
+ 
+JG022. When did subsidies for reforestation start to be implemented in this village? 您村/社区什么时候开始
+实行退耕还林补贴_________year 年 
+ 
+JG023. How many households in this village received subsidies for reforestation in year 2010? 2010年您村/
+社区有多少户人家领取了退耕还林补贴？ _____( Households 户) 
+ 
+JG024. What is the average subsidies standard? 平均奖励标准是多少钱?____yuan/mu 元/亩 
+ 
+JG025. Does your village/community i ssue pension to persons older than 65? 您村/社区给65岁以上老人发
+放补助吗？ 
+(1) Yes 是 
+(2) No 否 ->skip to JG029 请跳到JG029  
+ 
+JG026.When did your village/comm unity start this policy? 您村 /社区什么时候开始实行这项政策？  
+_________year 年 
+ 
+JG027. How many persons older than 65 in this village/ community received the pension in the last year in 
+year 2010? 2010年您村/社区有多少65岁以上老人领取到了这份补助？ _____ Persons 人 JG004_7 
+ 
+JG028. What is the average subsidies standard? 平均补助标准是多少钱？_____ yuan/month 元/月 
+ 
+JG029. Does your village/community hav e subsidy for persons older than 80? 您村/社区有对80岁以上老人
+
+--- PDF page 30 ---
+PART G SOCIAL POLICY  社会保障政策 
+ 27
+的补助吗？ 
+(1). Yes 是 
+(2) No 否 ->skip to JG033 请跳至JG033 
+JG030. When did the subsidy for 80ish people start to be implemented in this village/community?   
+您村/社区什么时候开始80岁以上老人补助的？________year 年   
+ 
+JG031. How many people in this vi llage/community have received in the subsidy for 80ish people in year 
+2010?  2010 年您村/社区有多少80岁以上老人得到补贴？ _____ Persons 人 
+ 
+JG032. What is the average subsidies standard? 平均补助标准是多少钱？_____ yuan/month 元/月 
+ 
+JG033. [CAPI: V ONLY] Does your village have the new rural pension system? 您村 实施新型农村社会养老
+保险了吗？ 
+(1). Yes 是 
+(2). No 否 ->skip to JG036 请跳到JG036  
+ 
+JG034. When did your village/community start this policy? 您村 /社区什么时候开始实行这项政策？  
+_________year 年  
+ 
+JG035. How many persons received the pension thr ough this policy in the last year (year 2010)? 2010 年您
+村/社区有多少人领取到了这种保险？ _____Persons 人 
+ 
+JG036.What is the average subsidies standard? 平均补助标准是多少钱？_____ yuan/month 元/月 
+ 
+JG037. [CAPI: V ONLY] Does your vill age have the old rural pension system? 您村实施农村社会养老保险
+(老农保)了吗？ 
+(1). Yes 是 
+(2). No 否 -- >skip to JG041 跳至JG041 
+ 
+JG038. When did your village/community start this policy? 您村 /社区什么时候开始实行这项政策？  
+_________year 年  
+ 
+JG039. How many persons received the pension thr ough this policy in the last year (year 2010)? 2010 年您
+村/社区有多少人领取到了这种保险？ _____Persons 人  
+ 
+JG040. What is the average subsidies standard? 平均补助标准是多少钱？_____ yuan/month 元/月 
+ 
+ 
+JG041. Respondent name for part G  G 部分受访者姓名__________ 
+ 
+JG042. Respondent Identity for part G  G 部分受访者职务__________  
+(1) Village head 村主任 
+(2) Village secretary 村支书 
+(3) Village accountant 村会计 
+(4) Director of the street committee 居委会主任 
+(5) Others, please specify 其他，请注明_______ 
+ 
+JG043. Phone number for the respondent of Part G G部分受访者联系电话___________ 
+ 
+ 
+
+--- PDF page 31 ---
+PART H COMMUNITY HISTORY  社区历史 
+ 28
+ 
+PART H  COMMUNITY HISTORY  社区历史 
+[IWER: Part H and I should be filled in by the person most familiar with the history of community. 访员注意：
+H和I 部分应该请熟悉村/社区历史的2-3名老人回答，最好是着急几个有文化的老人开一个小型会议。] 
+JH001. About the meeting 会议情况 
+ 
+Date日期：    (JH001_1) 年    (JH001_2) 月     (JG001_3) 日 
+Time 时间：(JH001_4) 
+Numbers of people who attended the meeting参加人数：(JH001_5) 
+ 
+ 
+JH003. [CAPI：V ONLY] When did your village found the people’s commune? 你们村历史上哪年成立的公
+社？_______Year 年 
+ 
+JH004. [CAPI：V ONLY] When did the people’s commune disintegrate in your village?公社哪年 
+ 解体？_______Year 年 
+ 
+JH005. [CAPI：V ONLY] When did the Household Contract Responsibility System start to fully operate in this 
+village? 你们村从哪一年开始实行家庭联产承包责任制？_____ Year年 
+ 
+JH006.[CAPI: V ONLY] Has your village or a village small group reallocated land since the household 
+responsibility system? 土地联产承包责任制以来，本村或村小组是否发生过土地调整(土地调整是指因
+为人口增减、嫁入嫁出等原因，承包地在村民之间的重新分配)？ 
+(1) Yes 是 
+(2) No 否        －>Skip to JH008 请跳至JH008 
+ 
+JH007. [CAPI: V ONLY] What was the last year that the village or a village small group reallocated 
+land? 最近一次村或者村小组土地调整的是哪一年发生的？ _____Year 年  
+ 
+JH002 Education Level 文化程度 
+1 Primary school 小学        
+2 Junior high school 初中       
+3 High school 高中          
+4 Middle professional school 中
+专 
+5  Advanced professional 
+school 大专 
+6 University and above
+大学及以上 
+7 illiterate 没文化 
+Gender 性
+别 
+1. Male 男
+2. Female 
+女 
+Age 
+年龄
+What kind of jobs 
+or positions did 
+this person used 
+to take? 
+该老人曾做过什么
+工作或担任过什么
+职位？ 
+Phone 
+number 
+联系电话
+1.Respondent 
+Number 1 受访
+老人1 
+(JH002_1[1]) (JH002_2[
+1]) 
+(JH0
+02_3
+[1]) 
+(JH002_4[1]) (JH002_
+5[1]) 
+2.Respondent 
+Number 2 受访
+老人2 
+(JH002_1[2]) (JH002_2[
+2]) 
+(JH0
+02_3
+[2]) 
+(JH002_4[2]) (JH002_
+5[2]) 
+3.Respondent 
+Number 3 受访老
+人3 
+(JH002_1[3]) (JH002_2[
+3]) 
+(JH0
+02_3
+[3]) 
+(JH002_4[3]) (JH002_
+5[3]) 
+
+--- PDF page 32 ---
+PART H COMMUNITY HISTORY  社区历史 
+ 29
+JH008. [CAPI: V ONLY] In what year were village residents first allowed to subcontract, rent or lend 
+   land to their family members?  你们村从哪一年开始允许村民转包、出租或者承包农地给其他家庭成员？ 
+_______ Year 年 
+In what year were village residents first allowed to subcontract, rent or lend 
+  land to unrelated village residents?  你们村从哪一年开始允许村民转包、出租或者承包农地给其他没
+有亲戚关系的村民?  _______ （JH008_1） Year 年 
+ 
+JH009. [CAPI: V ONLY] How many rusticated youth did your village accept during 1960s and 
+1970s? 你们村在上世纪六七十年代一共接纳了大约多少名知青？______ person 人  
+ 
+JH010. [CAPI: V ONLY]When did the rusticated youth come to your village mostly? 知青主要是哪一年到你
+们村来的？_______Year年。  
+ 
+JH011. [CAPI: V ONLY]Among them, how many got married and settled down instead of going back to town?
+其中多少人后来没有回城，而是在在本地结婚安家了？______ person 人。  
+ 
+JH012. [CAPI: V ONLY]When did the rusticated youth go back to town mostly?回城的知青主要是哪一年离
+开的______Year年。 
+ 
+JH013. [CAPI: V ONLY]Where are the youth rusticated to your village mostly from?你们村 
+ 的知青主要是来自哪里？ 
+          1 .  p r o v i n c e  省 
+            A .  T h i s  p r o v i n c e   本省 
+            B. Other province, (preload province)  外省(选择省份)（JH013_1） 
+[IWER: Choose from the list of provinces，see appendix 2 请选择省份，见附表二] 
+2. county/city县/市(JH013_2) 
+            A.  This county / city  本县/市 
+            B.  Other county / city, specify 外县/市        (JH013_3) 县/市 
+ 
+JH014. [CAPI: V ONLY]How many barefoot doctors were in your village during 1970s?你们村在上世纪七十
+年代大约 
+ 有几名赤脚医生？_______ person 人 
+ 
+JH015. [CAPI：V ONLY] In the past 20 years, was any of the primary schools in your village merged or 
+  dissolved? 过去20年中，你们村的小学是否曾经被撤销、合并过？ 
+(1) Yes 是 
+(2) No  否 ->skip to JH018 请跳到JH018 
+ 
+JH016. [CAPI：V ONLY] Which year did that happen? 哪一年进行的撤销、合并？_______ Year年 
+ 
+JH017. [CAPI：V ONLY] Before that, how many primary schools did your village have? 在那之前你们 
+村前有几所小学？_______ schools 所 
+ 
+JH018. [CAPI：V ONLY] Pleae fill in the following table 请填写下面的表 
+Year 年份 The number of 
+people who join the 
+army 参军人数 
+persons (人) 
+The number of 
+people who are 
+admitted to the 
+university考上大学
+(本科)人数 persons 
+(人) 
+2010 JH018_1[1] JH018_2[1] 
+
+--- PDF page 33 ---
+PART H COMMUNITY HISTORY  社区历史 
+ 30
+2009 JH018_1[2] JH018_2[2] 
+2008 JH018_1[3] JH018_2[3] 
+2007 JH018_1[4] JH018_2[4] 
+2006 JH018_1[5] JH018_2[5] 
+2000-2005 JH018_1[6] JH018_2[6] 
+1996-2000 JH018_1[7] JH018_2[7] 
+1990-1995 JH018_1[8] JH018_2[8] 
+1986-1990 JH018_1[9] JH018_2[9] 
+1981-1985 JH018_1[10] JH018_2[10] 
+1977-1980 JH018_1[11] JH018_2[11] 
+ 
+JH019. When did your village/community start to execute the family planning policy that were performed  
+ nationwide in the late 1970s? 上世纪70年代末开始在全国进行的计划生育政策，在你们村/社区是
+哪一年开始执行的？ _______Year年 
+ 
+JH020. What was the specific family planning policy for ethnic Han in your village/community at that time? 
+刚开始执行计划生育政策的时候，你们村/社区汉族具体实行的是哪种政策？ 
+(1) 一对夫妇只能生育一胎 
+(2) 第一胎是女孩的话可以生第二胎(也叫“一孩半”政策) 
+(3) 一对夫妇可以生育两胎 
+(4) 一对夫妇可以生育两胎以上 
+ 
+JH021. Was there any change on the family planning policy? 后来具体执行的计划生育政策曾经发生过变 
+ 化吗？ 
+(3) Yes 是 
+(2)  No  否    S k i p  t o  J H 0 2 4     - >跳到JH024  
+ 
+JH022. Changed to what? 变化成哪种政策？ 
+(1) Only one 一对夫妇只能生育一胎 
+(2) Two, if the first one is a girl第一胎是女孩的话可以生第二胎(也叫“一孩半”政策) 
+(3) Two  一对夫妇可以生育两胎 
+(4) More than two 一对夫妇可以生育两胎以上 
+  
+JH023. Which year did that change happen? 哪一年发生的变化？______Year年 
+ 
+JH024. What is the current family planning policy for ethnic Han? 你们村/社区汉族现在执行的是哪种政策？ 
+(1) Only one 一对夫妇只能生育一胎 
+(2) Two, if the first one is a girl第一胎是女孩的话可以生第二胎(也叫“一孩半”政策) 
+(3) Two  一对夫妇可以生育两胎 
+(4) More than two 一对夫妇可以生育两胎以上 
+ 
+JH025. What is the family planning policy for et hnic minorities in your community/village
+? 你们村/ 
+ 社区少数民族执行的计划生育政策怎么样？ 
+(1) Only one 一对夫妇只能生育一胎 
+(2) Two, if the first one is a girl第一胎是女孩的话可以生第二胎(也叫“一孩半”政策) 
+(3) Two  一对夫妇可以生育两胎 
+(4) More than two 一对夫妇可以生育两胎以上 
+  
+JH026. Is there penalty for unplanned birth in your village/community? 你们村/社区是否有超生罚款的政 
+ 策? 
+(1) Yes 是  When did this policy start? 这项政策是什么时候开始的？(JH026_1)year年 
+(2) No  否       - > S k i p  o t  J H 0 3 0   请跳至关于“晚、稀、少”的政策问题 
+
+--- PDF page 34 ---
+PART H COMMUNITY HISTORY  社区历史 
+ 31
+ 
+JH027.What was the initial penalty amount? (Please specify) 最初超生罚款多少钱?______yuan 元 
+ 
+JH028. Was there any change on the penalty policy? 超生罚款的政策是否发生过变化？ 
+(1) Yes  是    
+(2) No   否  - > S k i p  t o  J H 0 3 0请跳至 JH030 
+ 
+JH029.Please fill in the changes of penalty policy 请填写超生罚款的政策变动 
+changes变动 Year 年 Amount for penalty 超生罚款金额_____yuan 元
+the first change 
+第一次变动 JH029a[1] JH029b[1] 
+the second change 
+第二次变动 JH029a[2] JH029b[2] 
+the third change 
+第三次变动 JH029a[3] JH029b[3] 
+ 
+JH030. In the early 1970’s,  did your village follow the “late, scarcy, few”policy of family planning in  
+ the 1970s? 在上世纪70年代早期，你们村/社区是否实行过“晚、稀、少”的生育政策？ 
+(1)Yes  是    
+(2) No  否  ->Skip to JH032 请跳至 JH032 
+ 
+JH031. What is the specific terms in that “late, scarcy, few”policy (please use a few words to describe)? 
+   “晚、稀、少”的生育政策具体是什么样的(访问员，请用几句话记录)？_______ 
+ 
+JH032. When did the villagers (residents) start to get national identification cards? 你们村/社区的村民/居民
+哪一年开始领到全国居民身份证？ _______Year年 
+ 
+JH033. When did the villagers (residents) start to get the second-generation national identification cards?  
+ 你们村/社区的村民/居民哪一年开始领到第二代身份证？ _______Year年 
+ 
+
+--- PDF page 35 ---
+PART I HISTORY OF POLICY CHANGES 流行病和自然灾害 
+ 32
+ 
+PART I  HISTORY OF POLICY CHANGES  流行病和自然灾害 
+Now I would like to ask you about natural disasters and epidemics that occurred in this village/community in 
+the last five years. 下面我想了解一下，过去五年你们村/社区经历过的重大自然灾害或者传染病的信息。 
+ 
+JI001. Has your village/community experienced serious natural disasters in the past five years? 你们村/社区
+过去五年有没有发生过重大的自然灾害？ 
+(1) Yes 是 
+(2) No 否 -> skip toJI003 跳至JI003 
+ 
+JI002. 
+ Were there any 
+natural disasters in 
+your 
+village/community 
+in the last 5 years? 
+过去五年，你们村/
+社区有没发生过这
+种灾害？ 
+How many times has 
+it occurred in your 
+village/community in 
+the past five years? 
+过去五年，你们村/社
+区发生了几次这种灾
+害？ 
+When was the 
+most severe one 
+occurred？过去五
+年中，最严重的一
+次是发生在哪一年
+那一月？ 
+How many people 
+were injured or 
+dead in that most 
+severe one?最严
+重这次的死伤人数
+是多少人? 
+_________perso
+n人 
+Flood 洪水 JI002_a[1] 
+1 Yes 是 
+2 No 否  Skip to 
+JI002_a[2] 跳至
+JI002_a[2] 
+JI002_b[1] 
+________times 次 
+JI002_c[1] 
+______year 年
+JI002_d[1] 
+_____month月 
+JI002_e[1] 
+Drought 干旱 JI002_a[2] 
+1 Yes 是 
+2 No 否  Skip to 
+JI002_a[3] 跳至
+JI002_a[3] 
+JI002_b[2] 
+________times 次 
+JI002_c[2] 
+______year 年
+JI002_d[2] 
+_____month月 
+JI002_e[2] 
+Fire 火灾 JI002_a[3] 
+1 Yes 是 
+2 No 否  Skip to 
+JI002_a[4] 跳至
+JI002_a[4] 
+JI002_b[3] 
+________times 次 
+JI002_c[3] 
+______year 年
+JI002_d[3] 
+_____month月 
+JI002_e[3] 
+Earthquake 
+地震 
+JI002_a[4] 
+1 Yes 是 
+2 No 否  Skip to 
+JI002_a[5] 跳至
+JI002_a[5] 
+JI002_b[4] 
+________times 次 
+JI002_c[4] 
+______year 年
+JI002_d[4] 
+_____month月 
+JI002_e[4] 
+Typhoon 台风 JI002_a[5] 
+1 Yes 是 
+2 No 否  Skip to 
+JI002_a[6] 跳至
+JI002_a[6] 
+JI002_b[5] 
+________times 次 
+JI002_c[5] 
+______year 年
+JI002_d[5] 
+_____month月 
+JI002_e[5] 
+Snow storm 
+冰雪灾害 
+JI002_a[6] 
+1 Yes 是 
+2 No 否  Skip to 
+JI002_b[6] 
+________times 次 
+JI002_c[6] 
+______year 年
+JI002_d[6] 
+_____month月 
+JI002_e[6] 
+
+--- PDF page 36 ---
+PART I HISTORY OF POLICY CHANGES 流行病和自然灾害 
+ 33
+JI002_a[7] 跳至
+JI002_a[7] 
+Other 
+disasters 其
+他自然灾害 
+JI002_a[7] 
+1 Yes 是， please 
+specify 请注明
+_______ 
+2 No 否  Skip to 
+JI003 跳至JI003 
+JI002_b[7] 
+________times 次 
+JI002_c[7] 
+______year 年
+JI002_d[7] 
+_____month月 
+JI002_e[7] 
+ 
+Now I would like to ask you about very severe natural disasters and epidemics that occurred in this 
+village/community since 1945. 下面我想了解一下，自从1945年以来你们村/社区经历过的比较重大自然灾害
+或者传染病流行的信息。 
+ 
+JI003. Please provide information the the three most severe natural disaster/epidemics occurred in this 
+village/community since 1945. 请提供1945年以来你们村/社区曾出现过的最大规模的三次自然灾害/流行病的
+信息。 
+CAPI，请显示如下列表：洪水、干旱、火灾、地震、台风、冰雪灾害、甲肝、非典型性肺炎、鼠疫、麻疹、
+腮腺炎、手足口病、甲型流感、艾滋病、浮肿 
+访员：请将上述灾害和流行病列表一一念给受访人听 
+灾害和流行病的名称 When did it 
+occur?发生于
+哪一年那一
+月？ 
+When did it 
+end? 结束于
+哪一年那一
+月？ 
+How many 
+people were 
+injured or dead 
+in that most 
+severe one?最
+严重这次的死
+伤人数是多少
+人? 
+______person
+人 
+What was the 
+percentage of 
+people dead 
+or injured in 
+your village/ 
+community? 
+死伤人数约占
+全村/社区人口
+的大约百分之
+多少? 
+_____ % 
+What was the 
+percentage 
+by which 
+grain output 
+went down? 
+粮食减产百
+分之多少? 
+The most severe one
+最重大的一次
+_________JI003_1
+a 
+JI003_1b 
+ _____ year年 
+JI003_1c 
+_____month月 
+JI003_1d 
+ _____ year年
+JI003_1e 
+_____month月
+JI003_1f JI003_1g JI003_1h 
+The second most 
+severe one 第二重大
+的一次
+_________JI003_2a 
+JI003_2b 
+ _____ year年 
+JI003_2c 
+_____month月 
+JI003_2d 
+ _____ year年
+JI003_2e 
+_____month月
+JI003_2f JI003_2g JI003_2h 
+The third most 
+severe one 第三重大
+的一次
+_________JI003_3a 
+JI003_3b 
+ _____ year年 
+JI003_3c 
+_____month月 
+JI003_3d 
+ _____ year年
+JI003_3e 
+_____month月
+JI003_3f JI003_3g JI003_3h 
+ 
+
+--- PDF page 37 ---
+PART J PRODUCTION，INCOME AND PRICE 生产、收入及物价 
+ 34
+ 
+PART J  PRODUCTION, INCOME AND PRICE  生产、收入及物价 
+[IWER: This section should be filled in by the person most familiar with the statistics in this village/community. 
+访员注意：这部分应该请最了解村/社区统计数据的人作答。] 
+ 
+JJ001. [CAPI: V ONLY] Please tell me about the three major agricultural products in your village请告 
+ 诉我你们村最主要的三种农作物的一些情况 [访员注意，提示受访者按照农作物的重要顺序，依次作答]。 
+ 
+Crop name  
+农作物名称 
+ 
+What is the 
+planting area 
+in 2010?  
+2010年播种
+面积为
+_______mu 
+亩 
+What is the 
+average output 
+per mu ? 2010年
+的亩产量大约多
+少斤？ 
+_______jin 斤 
+Do you use 
+machines on 
+this crop? 是否
+采用机械帮助耕
+种收割？ 
+1 Yes 是 
+2 No 否 
+How many 
+seasons do you 
+harvest this 
+crop? 目前种植
+该作物一般一年
+几熟？ 
+What is the 
+maximum 
+number of 
+havest seasons 
+for this crop? 
+历史上最高可以
+做到一年几熟？
+JJ001_1a JJ001_1b JJ001_1c JJ001_1d JJ001_1e JJ001_1f 
+JJ001_2a JJ001_2b JJ001_2c JJ001_2d JJ001_2e JJ001_2f 
+JJ001_3a JJ001_3b JJ001_3c JJ001_3d JJ001_3e JJ001_3f 
+ 
+JJ002. [CAPI: V ONLY] What is the percentage of agricultural products on which agricultural machines are 
+used? 总的来看，你们村多大比例的农作物采用了农用机械帮助进行耕种收割？______% 
+ 
+JJ003. [CAPI: V ONLY] Do you rent big machines (combined harvester) to help your agricultural production? 
+你们村是否租用大型农机(例如联合收割机)进行农耕或收割? 
+(1) Yes 是 
+(2) No 否 -> skip to JJ006 请跳到JJ006 
+ 
+JJ004. [CAPI: V ONLY] What is the rental price per day for these big machines? 租用大型农机的价格 
+ 多少钱一天？______yuan元 
+ 
+JJ005. [CAPI: V ONLY] Where are these big machines coming from? 这些大型农机来自哪里？ 
+(1) This county/city 本县/市 
+(2) Another county/city in this province 本省其他县/市：___________(JJ005_1) county/city 县/市 
+(3) Another province外省：_________(JJ005_2)province /autonomous region/municipality (preload) 
+省/自治区/直辖市 
+ 
+JJ006. [CAPI: V ONLY] What is the name of the most commonly used fertilizers? 本地农业生产最常 
+ 用的一种化肥是什么? ___________ 
+ 
+JJ007. [CAPI: V ONLY] What is the price of that fertilizer? 这种化肥的价格是多少？______yuan/jin 元/斤 
+ 
+JJ008. [CAPI: V ONLY] What is the price of rice seed? 这里稻种的价格是多少？______yuan/jin 元/ 
+   斤 
+ 
+JJ009. [CAPI: V ONLY] What is the price of rice seedling? 这里秧苗的价格是多少？______yuan/jin 
+  元/斤 
+ 
+JJ010. [CAPI: V ONLY] What is the price of wheat seed? 这里小麦种的价格是多少？______yuan/jin 
+ 元/斤 
+ 
+
+--- PDF page 38 ---
+PART J PRODUCTION，INCOME AND PRICE 生产、收入及物价 
+ 35
+JJ011. [CAPI: V ONLY]. What was the total agricultural revenue of this village in 2010? 2010年你们村  
+  的农业总收入是多少？            Ten thousand Yuan 万元   
+ 
+JJ012. [CAPI: V ONLY] What was the total industrial revenue of this village/community in 2010?  2010 
+年你们村工业总收入是多少？             Ten thousand Yuan 万元 
+ 
+JJ013. [CAPI: V ONLY]What is the total village public expenditure in 2010? 2010年，你们村的公共财 
+政支出(修建公共设施、福利支出)是多少？ ______Yuan 元 
+ 
+JJ014. [CAPI: V ONLY]What is the total village income in 2010? 2010年，你们村的总收入是多少(包 
+   括政府财政转移支付，村办企业收入，村募集资金。以村为单位的收入情况，不包括村民家庭的收入？ 
+______ Yuan 元  
+ 
+JJ015. [CAPI: V ONLY]What is the total village net investment in 2010? 2010年，你们村的净投资总 
+   额是多少？ ______Yuan 元 
+ 
+JJ016. What was the per-capita net income of this village/community in 2010? 2010年你们村/社区人均纯收  
+入/人均可支配收入是多少？            Yuan 元 
+ 
+JJ017. What is the average unit price for the liji part of pork in this village/community now?  你们村/社区， 
+ 里脊肉现在平均每斤多少钱？_____yuan/jin 元/斤 
+ 
+JJ018. What is the average unit price for chicken eggs in this village/community now? 你们村/社区，鸡蛋现 
+在平均每斤多少钱？_____ yuan/jin 元/斤 
+ 
+JJ019. What is the average unit price for rice in this village/community now? 你们村/社区，大米现在平均每 
+斤多少钱？_____yuan/jin 元/斤 
+ 
+JJ020. What is the average unit price for flour in this village/community now? 你们村/社区，面粉现在平均每 
+斤多少钱？_____yuan/jin 元/斤 
+ 
+JJ021. What is the average unit price for natural gas in this village/community now? 你们村/社区，管道天然 
+气现在多少钱一立方米？  _____ yuan/m
+3 元/立方米 
+ 
+JJ022. What is the average unit price for Liquefied Petroleum Gas in this village/community now? 你们村/ 
+社区，罐装液化气现在多少钱一罐？  _____ yuan/ bottle 元/罐 
+ 
+JJ023. What is the average unit price for water in this village/community now? 你们村/社区，水现在多少钱 
+一吨？_____ yuan/ton 元/吨 
+ 
+JJ024. What is the average unit price for electricity in this village/community now? 你们村/社区，电现在多少 
+钱一度？_____ yuan/du 元/度 
+ 
+JJ025. What is the average unit price for coal in this village/community now? 你们村/社区，煤炭现在平均多 
+少钱一斤？ _____ yuan/jin 元/斤 
+ 
+JJ026. What is the average price for a new apartment in your village/community? 你们村/社区，新房的均价 
+是多少？______yuan/m
+2 元/平方米 
+ 
+JJ027. What is the average price for a used apartment in your village/community? 你们村/社区，二手房均价 
+是多少？______yuan/m2 元/平方米 
+ 
+
+--- PDF page 39 ---
+PART J PRODUCTION，INCOME AND PRICE 生产、收入及物价 
+ 36
+JJ028. What is the average rental price for 2-bedroom apartment in your village/community? 在你们村/社 
+区，租两居的房子平均每月多少钱？______yuan/month 元/月 
+ 
+JJ029. What is the percentage of households that have leased their house out? 你们村/社区中居民 
+把家中房屋向外出租的比例大致是 _______% 
+ 
+JJ030. What percentage of households in this village/community live in commercial housing (housing 
+bought through the market)? 你们村/社区有百分之多少的家庭住的是商品房(市场上购买的房屋)？
+______% 
+ 
+JJ031. [CAPI: V ONLY] What was the proportion of farmers who got loans from the formal financial      
+ institutions to all the farmers in this village in 2010? 你们村在2010年从信用社获得贷款的农户占本
+村总农户数的比例是多少？ _______% 
+ 
+JJ032. [CAPI: V ONLY] Compared with the situation three years ago, how about the situation of loaning 
+from the formal financial institutions for households in this village/community? 与三年前相比，你们
+村/社区住户从金融机构获得贷款情况如何？   
+(1) Very difficult 很难    
+(2) Somewhat difficult 较难  
+(3) The same 一样     
+(4) Somewhat easy 较容易     
+(5) Easily 很容易 
+ 
+JJ033.Respondent name for part J  J 部分受访者姓名__________ 
+ 
+JJ034.Respondent Identity for part J  J 部分受访者职务__________  
+(1) Village head 村主任 
+(2) Village secretary 村支书 
+(3) Village accountant 村会计 
+(4) Director of the street committee 居委会主任 
+(5) Others, please specify 其他，请注明___ JJ034_1____ 
+ 
+JJ035.Phone number for the respondent of Part J  J 部分受访者联系电话___________ 
+
+--- PDF page 40 ---
+PART K INTERVIEWERS’ OBSERVATIONS 访问员观察 
+ 37
+ 
+PART K  INTERVIEWERS’ OBSERVATIONS  访问员观察  
+[IWER: please observe the community to make a judgement about the following questions.][请访问员
+观察被访社区如下情况] 
+JK001. Does your village/community have roads passing through? 该村/社区有可以通车的马路吗？ 
+(1) Yes 有 
+(2) No  无    
+ 
+JK002. Social economic status 村/社区经济状况： 
+Poor 很穷--1--2--3--4--5--6--7--〉很富 rich  
+ 
+JK003. The degree of tidiness of the roads in this village/community 村/社区内部马路的整洁程度： 
+Very dirty 很乱--1--2--3--4--5--6--7--〉很整洁 very tidy 
+ 
+JK004. The construction structure 村/社区的建筑格局： 
+Very disorganized 很乱--1--2--3--4--5--6--7--〉很整洁 very organized 
+ 
+JK005. The degree of crowdness 村/社区的拥挤程度： 
+Very crowded 拥挤--1--2--3--4--5--6--7--〉宽松 very sparse 
+ 
+JK006. The degree of community handicapped access 残疾人行动便利程度 
+No handicapped access 没有残疾人设施--1--2--3--4--5--6--7--〉非常方便 very convenient  
+ 
+JK007. The degree of mandarin fluency: 受访者的普通话程度： 
+Cannot speak 不会--1--2--3--4--5--6--7--〉流利 fluent 

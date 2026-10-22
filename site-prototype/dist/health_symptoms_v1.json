@@ -1,0 +1,2235 @@
+[
+  {
+    "concept_id": "self_rated_health",
+    "label": "自评总体健康",
+    "domain": "自评健康",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da001",
+        "source_label": "Self Comment of Your Health",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "da002",
+        "source_label": "Self Comment of Your Health",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "value_labels": "1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "da079",
+        "source_label": "Self Comment of Your Health By Comparing With Others",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "value_labels": "1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor",
+        "value_label_status": "official questionnaire response scale verified; Codebook variable-title conflict retained; confirm released data dictionary before analysis",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da001",
+        "source_label": "Self Assessed Health Status (Excellent)",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da002",
+        "source_label": "Self Assessed Health Status (Very Good)",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "value_labels": "1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da079",
+        "source_label": "Health Status(Self)",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "value_labels": "1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da001",
+        "source_label": "Self Assessed Health Status (Excellent)",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da002",
+        "source_label": "Self Assessed Health Status (Very Good)",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "value_labels": "1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da079",
+        "source_label": "Health Status(Self)",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "value_labels": "1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da002",
+        "source_label": "Self-Reported Health Status",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "value_labels": "1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da001",
+        "source_label": "Self-Reported Health Status",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "value_labels": "1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor; 997=Don’t know",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。"
+  },
+  {
+    "concept_id": "self_rated_health_alt_scale",
+    "label": "自评总体健康（Excellent至Poor题型）",
+    "domain": "自评健康",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da080",
+        "source_label": "Self Comment of Your Health",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；DA080使用1=Excellent、2=Very good、3=Good、4=Fair、5=Poor，与DA079的1=Very good至5=Very poor题型不同；官方问卷要求本人回答、不得代理。保留题型和波次，调查分配/非应答路由未完全厘清，不与其他自评健康版本直接合并。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da080",
+        "source_label": "Self Comment of Your Health",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；DA080使用1=Excellent、2=Very good、3=Good、4=Fair、5=Poor，与DA079的1=Very good至5=Very poor题型不同；官方问卷要求本人回答、不得代理。保留题型和波次，调查分配/非应答路由未完全厘清，不与其他自评健康版本直接合并。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da080",
+        "source_label": "Self Comment of Your Health",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；DA080使用1=Excellent、2=Very good、3=Good、4=Fair、5=Poor，与DA079的1=Very good至5=Very poor题型不同；官方问卷要求本人回答、不得代理。保留题型和波次，调查分配/非应答路由未完全厘清，不与其他自评健康版本直接合并。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "DA080使用1=Excellent、2=Very good、3=Good、4=Fair、5=Poor，与DA079的1=Very good至5=Very poor题型不同；官方问卷要求本人回答、不得代理。保留题型和波次，调查分配/非应答路由未完全厘清，不与其他自评健康版本直接合并。"
+  },
+  {
+    "concept_id": "health_change",
+    "label": "与既往访谈相比的健康变化",
+    "domain": "自评健康",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "da002_w2_1",
+        "source_label": "Compared Health Status with Last Interview",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；返访/既往访谈比较题；不是同一时点总体健康等级，不能与自评总体健康合并。",
+        "value_labels": "1=Better; 2=About the same; 3=Worse",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da002_w2_1",
+        "source_label": "Compared Health Status with Last Interview",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；返访/既往访谈比较题；不是同一时点总体健康等级，不能与自评总体健康合并。",
+        "value_labels": "1=Better; 2=About the same; 3=Worse",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da002_w2_1",
+        "source_label": "Health Status Compared with ZIWTime",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；返访/既往访谈比较题；不是同一时点总体健康等级，不能与自评总体健康合并。",
+        "value_labels": "1=Better; 2=About the same; 3=Worse",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "返访/既往访谈比较题；不是同一时点总体健康等级，不能与自评总体健康合并。"
+  },
+  {
+    "concept_id": "chest_pain_symptoms",
+    "label": "胸痛症状（左侧胸痛与活动相关胸痛分项）",
+    "domain": "症状",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da003",
+        "source_label": "Pain on the Left Side of Your Chest",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；包含左侧胸痛与爬楼/上坡/快走时胸痛两个分别提问的症状项；不等于心绞痛临床诊断，保留两个分项、波次和非代理路由，不合成一个分数。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "da004",
+        "source_label": "Chest Pains When Climbing Stairs/Uphill or Walking Quickly",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；包含左侧胸痛与爬楼/上坡/快走时胸痛两个分别提问的症状项；不等于心绞痛临床诊断，保留两个分项、波次和非代理路由，不合成一个分数。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da003",
+        "source_label": "Any Pain on The Left Side of Chest",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；包含左侧胸痛与爬楼/上坡/快走时胸痛两个分别提问的症状项；不等于心绞痛临床诊断，保留两个分项、波次和非代理路由，不合成一个分数。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da004",
+        "source_label": "Any Pains When Climbing Stairs or",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；包含左侧胸痛与爬楼/上坡/快走时胸痛两个分别提问的症状项；不等于心绞痛临床诊断，保留两个分项、波次和非代理路由，不合成一个分数。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "包含左侧胸痛与爬楼/上坡/快走时胸痛两个分别提问的症状项；不等于心绞痛临床诊断，保留两个分项、波次和非代理路由，不合成一个分数。"
+  },
+  {
+    "concept_id": "who_bodily_pain_severity",
+    "label": "过去一个月身体疼痛程度（WHO自报健康题）",
+    "domain": "症状",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "de001",
+        "source_label": "Bodily Aches or Pains",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011年DE前6项本人健康题；仅随机抽中的一半家庭提问，且DE部分禁止代理回答。未问到是设计性缺失，不可编码为无症状；与疼痛部位/DA疼痛题分开，非跨波复测指标。",
+        "value_labels": "1=None; 2=Mild; 3=Moderate; 4=Severe; 5=Extreme",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011年DE前6项本人健康题；仅随机抽中的一半家庭提问，且DE部分禁止代理回答。未问到是设计性缺失，不可编码为无症状；与疼痛部位/DA疼痛题分开，非跨波复测指标。"
+  },
+  {
+    "concept_id": "who_sleep_difficulty_severity",
+    "label": "过去一个月睡眠困难程度（WHO自报健康题）",
+    "domain": "睡眠/症状",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "de002",
+        "source_label": "The Difficulty of Falling Asleep and Waking Up",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011年DE前6项本人健康题；仅随机抽中的一半家庭提问，且DE部分禁止代理回答。未问到是设计性缺失，不可编码为无症状；与睡眠时长/质量题分开，非跨波复测指标。",
+        "value_labels": "1=None; 2=Mild; 3=Moderate; 4=Severe; 5=Extreme",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011年DE前6项本人健康题；仅随机抽中的一半家庭提问，且DE部分禁止代理回答。未问到是设计性缺失，不可编码为无症状；与睡眠时长/质量题分开，非跨波复测指标。"
+  },
+  {
+    "concept_id": "who_mobility_problem_severity",
+    "label": "过去一个月活动/行走问题程度（WHO自报健康题）",
+    "domain": "身体功能",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "de003",
+        "source_label": "Moving Around",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011年DE前6项本人健康题；仅随机抽中的一半家庭提问，且DE部分禁止代理回答。未问到是设计性缺失，不可编码为无症状；不与ADL/IADL功能限制题合成，非跨波复测指标。",
+        "value_labels": "1=None; 2=Mild; 3=Moderate; 4=Severe; 5=Extreme",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011年DE前6项本人健康题；仅随机抽中的一半家庭提问，且DE部分禁止代理回答。未问到是设计性缺失，不可编码为无症状；不与ADL/IADL功能限制题合成，非跨波复测指标。"
+  },
+  {
+    "concept_id": "who_concentration_memory_difficulty",
+    "label": "过去一个月注意力/记忆困难程度（WHO自报健康题）",
+    "domain": "认知症状",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "de004",
+        "source_label": "The Difficulty of Concentrating or Remembering Things",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011年DE前6项本人健康题；仅随机抽中的一半家庭提问，且DE部分禁止代理回答。未问到是设计性缺失，不可编码为无症状；自评主观困难，不等同客观认知测验，非跨波复测指标。",
+        "value_labels": "1=None; 2=Mild; 3=Moderate; 4=Severe; 5=Extreme",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011年DE前6项本人健康题；仅随机抽中的一半家庭提问，且DE部分禁止代理回答。未问到是设计性缺失，不可编码为无症状；自评主观困难，不等同客观认知测验，非跨波复测指标。"
+  },
+  {
+    "concept_id": "who_breathlessness_severity",
+    "label": "过去一个月气短问题程度（WHO自报健康题）",
+    "domain": "症状",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "de005",
+        "source_label": "A Problem Because of Shortness of Breath",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011年DE前6项本人健康题；仅随机抽中的一半家庭提问，且DE部分禁止代理回答。未问到是设计性缺失，不可编码为无症状；非跨波复测指标。",
+        "value_labels": "1=None; 2=Mild; 3=Moderate; 4=Severe; 5=Extreme",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011年DE前6项本人健康题；仅随机抽中的一半家庭提问，且DE部分禁止代理回答。未问到是设计性缺失，不可编码为无症状；非跨波复测指标。"
+  },
+  {
+    "concept_id": "who_low_mood_severity",
+    "label": "过去一个月低落/悲伤/抑郁感程度（WHO自报健康题）",
+    "domain": "情绪症状",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "de006",
+        "source_label": "Feeling Sad,Low,or Depressed",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011年DE前6项本人健康题；仅随机抽中的一半家庭提问，且DE部分禁止代理回答。未问到是设计性缺失，不可编码为无症状；与CES-D频率条目及量表分数分开，非跨波复测指标。",
+        "value_labels": "1=None; 2=Mild; 3=Moderate; 4=Severe; 5=Extreme",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011年DE前6项本人健康题；仅随机抽中的一半家庭提问，且DE部分禁止代理回答。未问到是设计性缺失，不可编码为无症状；与CES-D频率条目及量表分数分开，非跨波复测指标。"
+  },
+  {
+    "concept_id": "affect_sad_yesterday",
+    "label": "昨日悲伤程度",
+    "domain": "短期情绪状态",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "wb06",
+        "source_label": "Did You Feel Sad?",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；2013年询问昨天的情绪状态，采用1–5程度等级；回忆窗为昨日，与过去一周CES-D条目及2011 WHO过去一个月情绪题不同，单独保留、不合成抑郁量表。",
+        "value_labels": "1=Not at all; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2013年询问昨天的情绪状态，采用1–5程度等级；回忆窗为昨日，与过去一周CES-D条目及2011 WHO过去一个月情绪题不同，单独保留、不合成抑郁量表。"
+  },
+  {
+    "concept_id": "affect_lonely_yesterday",
+    "label": "昨日孤独程度",
+    "domain": "短期情绪状态",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "wb08",
+        "source_label": "Did You Feel Lonely?",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；2013年询问昨天的情绪状态，采用1–5程度等级；回忆窗为昨日，与过去一周CES-D孤独条目不同，单独保留、不合成抑郁量表。",
+        "value_labels": "1=Not at all; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2013年询问昨天的情绪状态，采用1–5程度等级；回忆窗为昨日，与过去一周CES-D孤独条目不同，单独保留、不合成抑郁量表。"
+  },
+  {
+    "concept_id": "chewing_difficulty_solid_foods",
+    "label": "因牙齿导致的硬食咀嚼困难",
+    "domain": "口腔/进食功能",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "da040_w4_2",
+        "source_label": "Difficulty Chewing Hard Food",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；2018年波次特定题项；问卷依既往牙齿状态安排提问，佩戴假牙者按戴假牙时能力回答。代码3=Not Applicable（不适用）须与No（否）分开，跨波可比性未建立。",
+        "value_labels": "1=Yes; 2=No; 3=Not Applicable",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2018年波次特定题项；问卷依既往牙齿状态安排提问，佩戴假牙者按戴假牙时能力回答。代码3=Not Applicable（不适用）须与No（否）分开，跨波可比性未建立。"
+  },
+  {
+    "concept_id": "pain_presence",
+    "label": "身体疼痛（存在/程度题）",
+    "domain": "症状",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da041",
+        "source_label": "Currently Feel Any Body Pains",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011问当前疼痛、2015问经常受身体疼痛困扰、2018/2020题目设置有变化；跨波可比性尚未确认。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da041",
+        "source_label": "Are You Often Troubled with Any Body Pains?",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；2011问当前疼痛、2015问经常受身体疼痛困扰、2018/2020题目设置有变化；跨波可比性尚未确认。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da041_w4",
+        "source_label": "Troubled with Body Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；2011问当前疼痛、2015问经常受身体疼痛困扰、2018/2020题目设置有变化；跨波可比性尚未确认。",
+        "value_labels": "1=None; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da027",
+        "source_label": "Troubled with Body Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；2011问当前疼痛、2015问经常受身体疼痛困扰、2018/2020题目设置有变化；跨波可比性尚未确认。",
+        "value_labels": "1=None; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011问当前疼痛、2015问经常受身体疼痛困扰、2018/2020题目设置有变化；跨波可比性尚未确认。"
+  },
+  {
+    "concept_id": "pain_yesterday",
+    "label": "昨日疼痛程度/有无",
+    "domain": "症状",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "wb16",
+        "source_label": "Did You Feel Any Pain?",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；2013问‘昨天是否疼痛’，回忆期明显不同于其他波的当前/经常疼痛题，单独保留。",
+        "value_labels": "1=None; 2=A little; 3=Some; 4=Quite a bit; 5=A lot",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2013问‘昨天是否疼痛’，回忆期明显不同于其他波的当前/经常疼痛题，单独保留。"
+  },
+  {
+    "concept_id": "pain_location",
+    "label": "身体疼痛部位",
+    "domain": "症状",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da042s1",
+        "source_label": "Y/N the Head Pains",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "1=Head (Headache) (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "da042s10",
+        "source_label": "Y/N the Buttocks Pains",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "10=Buttocks (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "da042s11",
+        "source_label": "Y/N the Leg Pains",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "11=Leg (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "da042s12",
+        "source_label": "Y/N the Knees Pains",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "12=Knees (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "da042s13",
+        "source_label": "Y/N the Ankle Pains",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "13=Ankle (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "da042s14",
+        "source_label": "Y/N the Toes Pains",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "14=Toes (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "da042s15",
+        "source_label": "Y/N the Neck Pains",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "15=Neck (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "da042s2",
+        "source_label": "Y/N the Shoulder Pains",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "2=Shoulder (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "da042s3",
+        "source_label": "Y/N the Arm Pains",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "3=Arm (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "da042s4",
+        "source_label": "Y/N the Wrist Pains",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "4=Wrist (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "da042s5",
+        "source_label": "Y/N the Fingers Pains",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "5=Fingers (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "da042s6",
+        "source_label": "Y/N the Chest Pains",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "6=Chest (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "da042s7",
+        "source_label": "Y/N the Stomach Pains",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "7=Stomach (Stomachache) (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "da042s8",
+        "source_label": "Y/N the Back Pains",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "8=Back (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "da042s9",
+        "source_label": "Y/N the Waist Pains",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "9=Waist (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042s1",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "1=Head (Headache) (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042s10",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "10=Buttocks (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042s11",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "11=Leg (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042s12",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "12=Knees (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042s13",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "13=Ankle (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042s14",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "14=Toes (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042s15",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "15=Neck (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042s2",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "2=Shoulder (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042s3",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "3=Arm (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042s4",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "4=Wrist (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042s5",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "5=Fingers (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042s6",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "6=Chest (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042s7",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "7=Stomach (Stomachache) (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042s8",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "8=Back (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042s9",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "9=Waist (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042s1",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "1=Head (Headache) (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042s10",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "10=Buttocks (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042s11",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "11=Leg (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042s12",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "12=Knees (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042s13",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "13=Ankle (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042s14",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "14=Toes (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042s15",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "15=Neck (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042s16",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "16=Other (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042s2",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "2=Shoulder (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042s3",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "3=Arm (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042s4",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "4=Wrist (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042s5",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "5=Fingers (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042s6",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "6=Chest (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042s7",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "7=Stomach (Stomachache) (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042s8",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "8=Back (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042s9",
+        "source_label": "Where Are The Body Pains",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "9=Waist (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, nonselection storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_s1",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 1=Head (Headache)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_s10",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 10=Buttocks",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_s11",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 11=Leg",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_s12",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 12=Knees",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_s13",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 13=Ankle",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_s14",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 14=Toes",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_s15",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 15=Neck",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_s16",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 16=Other, please specify",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_s2",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 2=Shoulder",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_s3",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 3=Arm",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_s4",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 4=Wrist",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_s5",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 5=Fingers",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_s6",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 6=Chest",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_s7",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 7=Stomach (Stomachache)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_s8",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 8=Back",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_s9",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 9=Waist",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da028_s1",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 1=Head (Headache)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da028_s10",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 10=Buttocks",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da028_s11",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 11=Leg",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da028_s12",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 12=Knees",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da028_s13",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 13=Ankle",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da028_s14",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 14=Toes",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da028_s15",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 15=Neck",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da028_s16",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 16=Other, please specify",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da028_s2",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 2=Shoulder",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da028_s3",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 3=Arm",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da028_s4",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 4=Wrist",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da028_s5",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 5=Fingers",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da028_s6",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 6=Chest",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da028_s7",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 7=Stomach (Stomachache)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da028_s8",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 8=Back",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da028_s9",
+        "source_label": "Body Parts Feeling Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。",
+        "value_labels": "0=No; 9=Waist",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "身体部位为多选拆分字段；选项数量/具体部位和‘其他’的编码需逐波对照，不把每个部位字段当独立疾病。"
+  },
+  {
+    "concept_id": "pain_management_measures",
+    "label": "疼痛缓解措施",
+    "domain": "疼痛管理",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "da042_w2_1s1",
+        "source_label": "Whether Taking Medications",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "1=Taking Chinese traditional medicine (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, unselected/missing storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042_w2_1s2",
+        "source_label": "Whether Taking Medications",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "2=Taking Western modern medicine (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, unselected/missing storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042_w2_1s3",
+        "source_label": "Whether Taking Medications",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "3=Acupuncture treatment (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, unselected/missing storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042_w2_1s4",
+        "source_label": "Whether Taking Medications",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "4=Professional massage therapy (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, unselected/missing storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042_w2_1s5",
+        "source_label": "Whether Taking Medications",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "5=Other, please specify (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, unselected/missing storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da042_w2_1s6",
+        "source_label": "Whether Taking Medications",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "6=None (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, unselected/missing storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042_w2_1s1",
+        "source_label": "Whether Taking Medications",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "1=Taking Chinese traditional medicine (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, unselected/missing storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042_w2_1s2",
+        "source_label": "Whether Taking Medications",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "2=Taking Western modern medicine (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, unselected/missing storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042_w2_1s3",
+        "source_label": "Whether Taking Medications",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "3=Acupuncture treatment (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, unselected/missing storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042_w2_1s4",
+        "source_label": "Whether Taking Medications",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "4=Professional massage therapy (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, unselected/missing storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042_w2_1s5",
+        "source_label": "Whether Taking Medications",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "5=Other, please specify (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, unselected/missing storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da042_w2_1s6",
+        "source_label": "Whether Taking Medications",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "6=None (selected option; unselected/missing storage code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; positive selected option only, unselected/missing storage code not inferred",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_w2_1_s1",
+        "source_label": "Measures to Reduce Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "0=No; 1=Taking Chinese traditional medicine",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_w2_1_s2",
+        "source_label": "Measures to Reduce Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "0=No; 2=Taking Western modern medicine",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_w2_1_s3",
+        "source_label": "Measures to Reduce Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "0=No; 3=Acupuncture treatment",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_w2_1_s4",
+        "source_label": "Measures to Reduce Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "0=No; 4=Professional massage therapy",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_w2_1_s5",
+        "source_label": "Measures to Reduce Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "0=No; 5=Other, please specify",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da042_w2_1_s6",
+        "source_label": "Measures to Reduce Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。",
+        "value_labels": "0=No; 6=None",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "疼痛缓解多选题，条件于问卷疼痛路由；含中/西药、针灸、按摩、其他及无措施等选项。选项各自拆栏，不能把未选择/缺失推断成No；2011及2020无直接对应的同组措施题，波次间措辞和底层存储仍须按原码本确认。"
+  },
+  {
+    "concept_id": "other_important_medical_condition",
+    "label": "未列出的其他重要疾病或健康状况",
+    "domain": "其他自报健康状况",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da045",
+        "source_label": "Any Other Medical Diseases",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；询问前述疾病之外、受访者认为对健康重要的其他疾病或状况；它是宽泛的自报补充项，不替代具名慢病诊断。仅映射是否有其他状况，不将后续开放文本作为公开网站内容；缺少2020直接等价字段。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da045",
+        "source_label": "Other Medical Diseases or Conditions",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；询问前述疾病之外、受访者认为对健康重要的其他疾病或状况；它是宽泛的自报补充项，不替代具名慢病诊断。仅映射是否有其他状况，不将后续开放文本作为公开网站内容；缺少2020直接等价字段。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da045",
+        "source_label": "Other Medical Diseases or Conditions",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；询问前述疾病之外、受访者认为对健康重要的其他疾病或状况；它是宽泛的自报补充项，不替代具名慢病诊断。仅映射是否有其他状况，不将后续开放文本作为公开网站内容；缺少2020直接等价字段。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da045",
+        "source_label": "Other Medical Diseases or Conditions",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；询问前述疾病之外、受访者认为对健康重要的其他疾病或状况；它是宽泛的自报补充项，不替代具名慢病诊断。仅映射是否有其他状况，不将后续开放文本作为公开网站内容；缺少2020直接等价字段。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "询问前述疾病之外、受访者认为对健康重要的其他疾病或状况；它是宽泛的自报补充项，不替代具名慢病诊断。仅映射是否有其他状况，不将后续开放文本作为公开网站内容；缺少2020直接等价字段。"
+  },
+  {
+    "concept_id": "pain_intensity",
+    "label": "疼痛严重程度/等级题",
+    "domain": "症状",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da043",
+        "source_label": "How Bad Is Your Pain",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；候选字段的题型和响应类别未证明等价；2013是昨日疼痛等级，其他波需检查选项与参照期后再决定能否建统一严重程度指标。",
+        "value_labels": "1=Mild; 2=Moderate; 3=Severe",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "wb16",
+        "source_label": "Did You Feel Any Pain?",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；候选字段的题型和响应类别未证明等价；2013是昨日疼痛等级，其他波需检查选项与参照期后再决定能否建统一严重程度指标。",
+        "value_labels": "1=None; 2=A little; 3=Some; 4=Quite a bit; 5=A lot",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da041_w4",
+        "source_label": "Troubled with Body Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；候选字段的题型和响应类别未证明等价；2013是昨日疼痛等级，其他波需检查选项与参照期后再决定能否建统一严重程度指标。",
+        "value_labels": "1=None; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "da027",
+        "source_label": "Troubled with Body Pain",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；候选字段的题型和响应类别未证明等价；2013是昨日疼痛等级，其他波需检查选项与参照期后再决定能否建统一严重程度指标。",
+        "value_labels": "1=None; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "候选字段的题型和响应类别未证明等价；2013是昨日疼痛等级，其他波需检查选项与参照期后再决定能否建统一严重程度指标。"
+  },
+  {
+    "concept_id": "vision_distance",
+    "label": "自评远视力",
+    "domain": "感官功能",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da033",
+        "source_label": "Your Eyesight for Seeing Things at A Distance",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；问卷题目涉及戴眼镜/矫正镜时的自评远视力；目前目录未检出2020对应字段。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da033",
+        "source_label": "Eyesight for Seeing Things at A Distance",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；问卷题目涉及戴眼镜/矫正镜时的自评远视力；目前目录未检出2020对应字段。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da033",
+        "source_label": "Eyesight for Seeing Things at A Distance",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；问卷题目涉及戴眼镜/矫正镜时的自评远视力；目前目录未检出2020对应字段。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da033",
+        "source_label": "Eyesight at a Distance",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；问卷题目涉及戴眼镜/矫正镜时的自评远视力；目前目录未检出2020对应字段。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor; 997=Don’t know",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "问卷题目涉及戴眼镜/矫正镜时的自评远视力；目前目录未检出2020对应字段。"
+  },
+  {
+    "concept_id": "vision_near",
+    "label": "自评近视力",
+    "domain": "感官功能",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da034",
+        "source_label": "Your Eyesight for Seeing Things Up Close",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；问卷题目涉及戴眼镜/矫正镜时的自评近视力；目前目录未检出2020对应字段。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da034",
+        "source_label": "Eyesight for Seeing Things up Close",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；问卷题目涉及戴眼镜/矫正镜时的自评近视力；目前目录未检出2020对应字段。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da034",
+        "source_label": "Eyesight for Seeing Things up Close",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；问卷题目涉及戴眼镜/矫正镜时的自评近视力；目前目录未检出2020对应字段。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da034",
+        "source_label": "Eyesight up Close",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；问卷题目涉及戴眼镜/矫正镜时的自评近视力；目前目录未检出2020对应字段。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor; 997=Don’t know",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "问卷题目涉及戴眼镜/矫正镜时的自评近视力；目前目录未检出2020对应字段。"
+  },
+  {
+    "concept_id": "hearing_quality",
+    "label": "自评听力",
+    "domain": "感官功能",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da039",
+        "source_label": "Hearing With A Hearing Aid",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；题干按是否通常佩戴助听器决定是否戴/不戴时回答；须保留助听器状态和代理应答路由。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da039",
+        "source_label": "Hearing",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；题干按是否通常佩戴助听器决定是否戴/不戴时回答；须保留助听器状态和代理应答路由。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da039",
+        "source_label": "Hearing",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；题干按是否通常佩戴助听器决定是否戴/不戴时回答；须保留助听器状态和代理应答路由。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da039",
+        "source_label": "Hearing Status",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；题干按是否通常佩戴助听器决定是否戴/不戴时回答；须保留助听器状态和代理应答路由。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor; 997=Don’t know",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "题干按是否通常佩戴助听器决定是否戴/不戴时回答；须保留助听器状态和代理应答路由。"
+  },
+  {
+    "concept_id": "hearing_aid",
+    "label": "助听器使用",
+    "domain": "感官功能",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da038",
+        "source_label": "Wearing A Hearing Aid",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；自报是否使用助听器；zda038是前次访谈记录/返访路由字段，不等同于本轮重新询问；当前目录未检出2020对应字段，不能将缺波填成未使用。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da038",
+        "source_label": "Wearing A Hearing Aid",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；自报是否使用助听器；zda038是前次访谈记录/返访路由字段，不等同于本轮重新询问；当前目录未检出2020对应字段，不能将缺波填成未使用。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "zda038",
+        "source_label": "Wearing A Hearing Aid",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "前次访谈/返访预加载的助听器使用状态；条件性显示，不是本轮重新询问。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; prior-wave preload/return-interview route, not a new current-wave answer",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da038",
+        "source_label": "Wearing A Hearing Aid",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；自报是否使用助听器；zda038是前次访谈记录/返访路由字段，不等同于本轮重新询问；当前目录未检出2020对应字段，不能将缺波填成未使用。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "zda038",
+        "source_label": "Wearing A Hearing Aid",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "前次访谈/返访预加载的助听器使用状态；条件性显示，不是本轮重新询问。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented; prior-wave preload/return-interview route, not a new current-wave answer",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da038_w4",
+        "source_label": "Wear a Hearing Aid",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "结局概念候选；自报是否使用助听器；zda038是前次访谈记录/返访路由字段，不等同于本轮重新询问；当前目录未检出2020对应字段，不能将缺波填成未使用。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "自报是否使用助听器；zda038是前次访谈记录/返访路由字段，不等同于本轮重新询问；当前目录未检出2020对应字段，不能将缺波填成未使用。"
+  },
+  {
+    "concept_id": "infectious_history_tuberculosis",
+    "label": "曾被医生告知患有：结核病史",
+    "domain": "既往感染病史",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da044s1",
+        "source_label": "Y/N Been Diagnosed With Tuberculosis",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。",
+        "value_labels": "1=Tuberculosis (selected category; unselected/missing code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。"
+  },
+  {
+    "concept_id": "infectious_history_hepatitis_b",
+    "label": "曾被医生告知患有：乙型肝炎史",
+    "domain": "既往感染病史",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da044s2",
+        "source_label": "Y/N Been Diagnosed With Hepatitis B",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。",
+        "value_labels": "2=Hepatitis B (selected category; unselected/missing code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。"
+  },
+  {
+    "concept_id": "infectious_history_malaria",
+    "label": "曾被医生告知患有：疟疾史",
+    "domain": "既往感染病史",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da044s3",
+        "source_label": "Y/N Been Diagnosed With Malaria",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。",
+        "value_labels": "3=Malaria (selected category; unselected/missing code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。"
+  },
+  {
+    "concept_id": "infectious_history_influenza",
+    "label": "曾被医生告知患有：流感史",
+    "domain": "既往感染病史",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da044s4",
+        "source_label": "Y/N Been Diagnosed With Influenza",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。",
+        "value_labels": "4=Influenza (selected category; unselected/missing code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。"
+  },
+  {
+    "concept_id": "infectious_history_rabies",
+    "label": "曾被医生告知患有：狂犬病史",
+    "domain": "既往感染病史",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da044s5",
+        "source_label": "Y/N Been Diagnosed With Rabies",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。",
+        "value_labels": "5=Rabies (selected category; unselected/missing code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。"
+  },
+  {
+    "concept_id": "infectious_history_schistosomiasis",
+    "label": "曾被医生告知患有：血吸虫病史",
+    "domain": "既往感染病史",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da044s6",
+        "source_label": "Y/N Been Diagnosed With Schistosomiasis",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。",
+        "value_labels": "6=Schistosomiasis (selected category; unselected/missing code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。"
+  },
+  {
+    "concept_id": "infectious_history_hiv_aids",
+    "label": "曾被医生告知患有：艾滋病/感染者病史",
+    "domain": "既往感染病史",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da044s7",
+        "source_label": "Y/N Been Diagnosed With AIDS Patients and Infecious Ones",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。",
+        "value_labels": "7=AIDS patients and infectious ones (selected category; unselected/missing code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。"
+  },
+  {
+    "concept_id": "infectious_history_encephalitis_b",
+    "label": "曾被医生告知患有：乙型脑炎史",
+    "domain": "既往感染病史",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da044s8",
+        "source_label": "Y/N Been Diagnosed With Encephalitis B",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。",
+        "value_labels": "8=Encephalitis B (selected category; unselected/missing code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。"
+  },
+  {
+    "concept_id": "infectious_history_dysentery",
+    "label": "曾被医生告知患有：痢疾史",
+    "domain": "既往感染病史",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da044s9",
+        "source_label": "Y/N Been Diagnosed With Dysentery",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。",
+        "value_labels": "9=Dysentery (selected category; unselected/missing code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。"
+  },
+  {
+    "concept_id": "infectious_history_measles",
+    "label": "曾被医生告知患有：麻疹史",
+    "domain": "既往感染病史",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da044s10",
+        "source_label": "Y/N Been Diagnosed With Measles",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。",
+        "value_labels": "10=Measles (selected category; unselected/missing code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。"
+  },
+  {
+    "concept_id": "infectious_history_brucellosis",
+    "label": "曾被医生告知患有：布氏杆菌病史",
+    "domain": "既往感染病史",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da044s11",
+        "source_label": "Y/N Been Diagnosed With Brucellosis",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。",
+        "value_labels": "11=Brucellosis (selected category; unselected/missing code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。"
+  },
+  {
+    "concept_id": "infectious_history_gonorrhea",
+    "label": "曾被医生告知患有：淋病史",
+    "domain": "既往感染病史",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da044s12",
+        "source_label": "Y/N Been Diagnosed With Gonorrhea",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。",
+        "value_labels": "12=Gonorrhea (selected category; unselected/missing code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。"
+  },
+  {
+    "concept_id": "infectious_history_syphilis",
+    "label": "曾被医生告知患有：梅毒史",
+    "domain": "既往感染病史",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da044s13",
+        "source_label": "Y/N Been Diagnosed With Syphilis",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。",
+        "value_labels": "13=Syphilis (selected category; unselected/missing code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。"
+  },
+  {
+    "concept_id": "infectious_history_other_infectious_disease",
+    "label": "曾被医生告知患有：其他传染病史（未具体指明）",
+    "domain": "既往感染病史",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da044s14",
+        "source_label": "Y/N Been Diagnosed With Others",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。",
+        "value_labels": "14=Others, please specify (selected category; unselected/missing code not inferred)",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2011基线单波回顾性病史，不代表当前感染或现患状态。官方代码本仅显示被选中的类别代码；不得将未显示/未选存储值推断为No。单病种记录可能稀疏，分析前应核查发布数据的选择题编码、缺失及披露风险。"
+  },
+  {
+    "concept_id": "balance_test_preventing_health_problems_2013",
+    "label": "近期健康问题导致的平衡测试受限（2013）",
+    "domain": "physical function",
+    "status": "单波P候选；平衡测试前健康适宜性/功能限制题，不是平衡障碍诊断或平衡测试分数。",
+    "caveat": "Before balance testing, asks whether recent surgery, injury, or another health condition could prevent standing from a chair and balancing. This is a self-reported physical-function/measurement-eligibility candidate, not a diagnosed balance disorder or performance score. Preserve test route and missingness.",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "pd001",
+        "source_label": "Any Problems Prevent Balance",
+        "module": "Biomarker",
+        "value_labels": "1=Yes; 5=No",
+        "value_label_status": "official codebook response labels reviewed; questionnaire wording clarifies the physical-function and measurement-gate construct",
+        "value_label_source": "sources_official/CHARLS_2013_Biomarker_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "mapping_status": "2013 single-wave candidate; official biomarker questionnaire and Codebook field identity, wording, route, and response categories reviewed"
+      }
+    ]
+  }
+]

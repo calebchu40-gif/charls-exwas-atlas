@@ -1,0 +1,4 @@
+﻿concept_id,concept_label,fields,source_codes,meaning
+pension_2015_participation_or_receipt_type,2015年报告参加或领取的养老金类型,4,fn057_w3s1;fn057_w3s2;fn057_w3s3;fn057_w3s4,Pension type reported as participated in or received
+pension_qualified_but_not_participating_by_scheme,具备资格但未参加的养老保险类型,3,fn057_w3_0s1;fn057_w3_0s2;fn057_w3_0s3,Qualified but not participating in scheme
+pension_residents_scheme_eligibility_status,是否具备居民养老保险参保资格及未获资格原因,1,fn069_w3,Eligibility/status for resident pension insurance

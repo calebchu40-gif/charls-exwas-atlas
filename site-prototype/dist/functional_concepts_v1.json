@@ -1,0 +1,1141 @@
+[
+  {
+    "concept_id": "mobility_run",
+    "label": "跑步/慢跑困难",
+    "domain": "physical limitation",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db001",
+        "source_label": "Have Difficulty Running or Jogging About 1 Km",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db001",
+        "source_label": "Running or Jogging about 1 Km",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db001",
+        "source_label": "Running or Jogging about 1 Km",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db001",
+        "source_label": "Difficulty with Running or Jogging about 1Km",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "mobility_walk_1km",
+    "label": "步行约1公里困难",
+    "domain": "physical limitation",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db002",
+        "source_label": "Have Difficulty Walking 1 KM",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db002",
+        "source_label": "Walkinf 1 Km",
+        "module": "Health_Status_and_Functioning",
+        "note": "变量目录标签有拼写错误‘Walkinf’；2013官方问卷原题确认是步行1公里困难。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db002",
+        "source_label": "Walking 1 Km",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db002",
+        "source_label": "Difficulty with Walking 1Km",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "mobility_walk_100m",
+    "label": "步行100米困难",
+    "domain": "physical limitation",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db003",
+        "source_label": "Have Difficulty Walking 100 Metres",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db003",
+        "source_label": "Walking 100 Metres",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db003",
+        "source_label": "Walking 100 Metres",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db003",
+        "source_label": "Difficulty with Walking 100 Metres",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "mobility_chair",
+    "label": "久坐后起身/坐姿困难",
+    "domain": "physical limitation",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db004",
+        "source_label": "Have Difficulty Getting Up From A Chair After Sitting for Long Periods",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db004",
+        "source_label": "Difficulty with Sitting",
+        "module": "Health_Status_and_Functioning",
+        "note": "变量目录标签简写为‘Difficulty with Sitting’；官方问卷原题确认是久坐后从椅子上站起困难。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db004",
+        "source_label": "Difficulty with Sitting",
+        "module": "Health_Status_and_Functioning",
+        "note": "变量目录标签简写为‘Difficulty with Sitting’；官方问卷原题确认是久坐后从椅子上站起困难。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db004",
+        "source_label": "Difficulty with Getting up from a Chair",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "mobility_stairs",
+    "label": "爬楼困难",
+    "domain": "physical limitation",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db005",
+        "source_label": "Have Difficulty Climbing Several Flights of Stairs Without Resting",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db005",
+        "source_label": "Difficulty with Climbing",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db005",
+        "source_label": "Difficulty with Climbing",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db005",
+        "source_label": "Difficulty with Climbing Several Flights of Stairs Without Resting",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "mobility_bend",
+    "label": "弯腰/下蹲困难",
+    "domain": "physical limitation",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db006",
+        "source_label": "Have Difficulty Stooping, Kneeling, or Crouching",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db006",
+        "source_label": "Difficulty with Stooping, Kneeling, Crouching",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db006",
+        "source_label": "Difficulty with Stooping, Kneeling, Crouching",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db006",
+        "source_label": "Difficulty with Stooping, Kneeling, or Crouching",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "mobility_reach",
+    "label": "伸手/举臂困难",
+    "domain": "physical limitation",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db007",
+        "source_label": "Have Difficulty Reaching or Extending Your Arms Above Shoulder Level",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db007",
+        "source_label": "Difficulty with Reaching or Extending",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db007",
+        "source_label": "Difficulty with Reaching or Extending",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db007",
+        "source_label": "Difficulty with Reaching or Extending Your arms",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "mobility_lift",
+    "label": "提举/搬运困难",
+    "domain": "physical limitation",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db008",
+        "source_label": "Have Difficulty Lifting or Carrying Weights Over 10 Jin",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db008",
+        "source_label": "Difficulty with Lifting",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db008",
+        "source_label": "Difficulty with Lifting",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db008",
+        "source_label": "Difficulty with Lifting or Carrying Weights over 10 Jin",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "mobility_coin",
+    "label": "拾取小物件困难",
+    "domain": "physical limitation",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db009",
+        "source_label": "Have Difficulty Picking Up A Small Coin From A Table",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db009",
+        "source_label": "Difficulty with Picking up",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db009",
+        "source_label": "Difficulty with Picking up",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db009",
+        "source_label": "Difficulty with Picking up a Small Coin",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "adl_dressing",
+    "label": "ADL：穿衣困难",
+    "domain": "ADL",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db010",
+        "source_label": "Have Any Difficulty With Dressing Because of Health And Memory Problem",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db010",
+        "source_label": "Difficulty with Dressing",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db010",
+        "source_label": "Difficulty with Dressing",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db010",
+        "source_label": "Difficulty with Dressing",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "db001",
+        "source_label": "Difficulty with Dressing",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "adl_bathing",
+    "label": "ADL：洗澡困难",
+    "domain": "ADL",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db011",
+        "source_label": "Have Any Difficulty With Bathing or Showering",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db011",
+        "source_label": "Difficulty with Bathing or Showering",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db011",
+        "source_label": "Difficulty with Bathing or Showering",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db011",
+        "source_label": "Difficulty with Bathing or Showering",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "db003",
+        "source_label": "Difficulty with Bathing or Showering",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "adl_eating",
+    "label": "ADL：进食困难",
+    "domain": "ADL",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db012",
+        "source_label": "Have Any Difficulty With Eating Because of Health And Memory Problem",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db012",
+        "source_label": "Difficulty with Eating",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db012",
+        "source_label": "Difficulty with Eating",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db012",
+        "source_label": "Difficulty with Eating",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "db005",
+        "source_label": "Difficulty with Eating",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "adl_bed",
+    "label": "ADL：上下床困难",
+    "domain": "ADL",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db013",
+        "source_label": "Have Any Difficulty With Getting Out of Bed and Walking Across A Room",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db013",
+        "source_label": "Difficulty with Getting Into or Out of Bed",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db013",
+        "source_label": "Difficulty with Getting Into or Out of Bed",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db013",
+        "source_label": "Difficulty with Getting into or out of Bed",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "db007",
+        "source_label": "Difficulty with Getting into or out of Bed",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "adl_toilet",
+    "label": "ADL：如厕困难",
+    "domain": "ADL",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db014",
+        "source_label": "Have Any Difficulty With Using the Toilet, Getting Up and Down",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db014",
+        "source_label": "Difficulty with Using The Toilet",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db014",
+        "source_label": "Difficulty with Using The Toilet",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db014",
+        "source_label": "Difficulty with Using the Toilet",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "db009",
+        "source_label": "Difficulty with Using the Toilet",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "adl_continence",
+    "label": "ADL：大小便控制困难",
+    "domain": "ADL",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db015",
+        "source_label": "Have Any Difficulty With Controlling Urination and Defecation",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db015",
+        "source_label": "Difficulty with Controlling Urination and Defecation",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db015",
+        "source_label": "Difficulty with Controlling Urination and Defecation",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db015",
+        "source_label": "Difficulty with Controlling Urination and Defecation",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "db011",
+        "source_label": "Difficulty with Controlling Urination and Defecation",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "iadl_chores",
+    "label": "IADL：做家务困难",
+    "domain": "IADL",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db016",
+        "source_label": "Have Any Difficulty With Doing Household Chores",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db016",
+        "source_label": "Difficulty with Doing Household Chores",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db016",
+        "source_label": "Difficulty with Doing Household Chores",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db016",
+        "source_label": "Difficulty with Household Chores",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "db012",
+        "source_label": "Difficulty with Household Chores",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "iadl_meals",
+    "label": "IADL：准备热餐困难",
+    "domain": "IADL",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db017",
+        "source_label": "Have Any Difficulty With Preparing Hot Meals",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db017",
+        "source_label": "Difficulty with Preparing Hot Meals",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db017",
+        "source_label": "Difficulty with Preparing Hot Meals",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db017",
+        "source_label": "Difficulty with Preparing Hot Meals",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "db014",
+        "source_label": "Difficulty with Preparing Hot Meals",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "iadl_shopping",
+    "label": "IADL：购买日用品困难",
+    "domain": "IADL",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db018",
+        "source_label": "Have Any Difficulty With Shopping Because of Health And Memory Problem",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db018",
+        "source_label": "Difficulty with Shopping for Groceries",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db018",
+        "source_label": "Difficulty with Shopping for Groceries",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db018",
+        "source_label": "Difficulty with Shopping for Groceries",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "db016",
+        "source_label": "Difficulty with Shopping for Groceries",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "iadl_phone",
+    "label": "IADL：打电话困难",
+    "domain": "IADL",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "db035",
+        "source_label": "Difficulties with Making Phone Calls?",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db035",
+        "source_label": "Difficulties with Making Phone Calls?",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db035",
+        "source_label": "Difficulty with Making Phone Calls",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "db018",
+        "source_label": "Difficulty with Making Phone Calls",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "iadl_medication",
+    "label": "IADL：服药管理困难",
+    "domain": "IADL",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db020",
+        "source_label": "Have Any Difficulty With Taking Medications Because of Health And Memory Problem",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db020",
+        "source_label": "Difficulty with Taking Medications",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db020",
+        "source_label": "Difficulty with Taking Medications",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db020",
+        "source_label": "Difficulty with Taking Medications",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "db020",
+        "source_label": "Difficulty with Taking Medications",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  },
+  {
+    "concept_id": "iadl_money",
+    "label": "IADL：管理钱财困难",
+    "domain": "IADL",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "db019",
+        "source_label": "Have Any Difficulty With Managing Assets Because of Health And Memory Problem",
+        "module": "health_status_and_functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "db019",
+        "source_label": "Difficulty with Managing Your Money",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "db019",
+        "source_label": "Difficulty with Managing Your Money",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "db019",
+        "source_label": "Difficulty with Managing Money",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "db022",
+        "source_label": "Difficulty with Managing Money",
+        "module": "Health_Status_and_Functioning",
+        "note": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。",
+        "value_labels": "1=No, I don’t have any difficulty; 2=I have difficulty but can still do it; 3=I have difficulty and need help; 4=I cannot do it",
+        "value_label_status": "official codebook response labels reviewed; item routing/derived scale remain separate",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "候选题目映射；量表/派生定义待审",
+    "caveat": "按官方标签匹配源字段；未生成合成分数，题目措辞和响应尺度需回查逐波问卷。"
+  }
+]

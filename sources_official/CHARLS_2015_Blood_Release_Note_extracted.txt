@@ -1,0 +1,102 @@
+China Health and Retirement
+Longitudinal Study
+Followup 2015
+Blood Data Release Note
+VersionID: 20190620
+June 2019
+China Center for Economic Research
+Institute of Social Science Survey
+Peking University\n1 Introduction
+CHARLS is harmonized to the Health and Retirement Study (HRS) and surveys in the fam-
+ily of related surveys. CHARLS began with a pilot study in two provinces in 2008 which is
+described in Zhao et al. (2009). The national baseline survey was then conducted in 2011-
+2012 with a follow-up wave in 2013. This follow-up wave did not include the collection of
+biomarkers. Wave 3 was then mainly completed between July and October 2015 (one PSU
+was collected in 2016). This included the second wave of blood collection that is described
+here. The CHARLS national sample includes respondents in 150 counties/districts, 450
+villages/urban communities, across the country. In the first wave, 17,708 individuals in
+10,257 households, reflecting the Chinese mid-aged and elderly population collectively ,
+were interviewed. Blood data were available for 11,847 participants. In Wave 2, 19,055
+were interviewed. In Wave 3, 21,100 were interviewed.
+2 Blood-Based Bioassays
+The venous blood samples described in this document have been assayed for high-sensitivity
+C-reactive protein (hsCRP), glycated hemoglobin (HbA1c), total cholesterol, HDL choles-
+terol, LDL cholesterol, triglycerides, glucose, blood urea nitrogen (BUN), creatinine, uric
+acid, and cystatin C. In addition information from a complete blood count (CBC) analysis
+done at local county health centers is described (this included hemoglobin, hematocrit,
+white blood cell count, platelet counts and mean corpuscular volume).
+A more detailed description of released variables can be found in Table1.
+All the data sets are stored in Stata 13 format, you can also find the summary information
+of variables from the released codebook.
+3 ID
+The variable “ID” can be used to match the blood data with the other Wave 3 data, as well
+as with data from earlier waves including the Wave 1 blood data. You need to adjust the
+householdID and ID in the baseline, as noted in the release note of 2013 wave.
+1\n4 Response Rate
+The target sample for taking blood samples was the entire group of 21,100 individuals
+who were interviewed in CHARLS wave 3 (20,284 were cross sectional sample). Out of
+this, we collected blood samples for 13,420 individuals (13,013 for cross sectional sample),
+a response rate of 64% (see Table 2). Women had a 3.77 response rate than men (65.95%
+versus 62.18%), and rural respondents had a 6.88 rate: 66.94% versus 60.06% for urban
+respondents.
+5 Weights
+We will only release cross-sectional weights from this wave, since panel weights depend on
+analysis purpose. Users can construct panel weights according to any appropriate sample
+arrition adjustment method.
+The released cross-sectional blood sample weight, which callBlood_weight in the blood
+data, was constructed in the same way as that in wave 1 (Zhao et al., 2014). The weight
+is calculated based on the individual cross-sectional weights and a logit regression of
+whether the individual responses in blood collection, the blood level inverse probabil-
+ity weight factor is calculated by the inverse of predicted probability for each individual
+(cap at the99th percentile).
+6 Ethical Approval
+The protocol of the blood-based biomarker sample collection study was approved by the
+ethical review committee (IRB) of Peking University (IRB 00001052-11014). Written in-
+formed consent was obtained from all study participants. For any inquiry about IRB doc-
+ument of CHARLS blood sample collection, please contactcharls_info@pku.edu.cn.
+2\n7 Documentation
+For a detailed description of the process of blood collection, the methods for blood-based
+bioassays and descriptive results, please refer to the following forthcoming paper: Xinxin
+Chen, Eileen Crimmins, Peifeng (Perry) Hu, Jung Ki Kim, Qinqin Meng, John Strauss,
+Yafeng Wang, Junxia Zeng, Yuan Zhang, Yaohui Zhao (2019), “Venous Blood-based Biomark-
+ers in the China Health and Retirement Longitudinal Study (CHARLS): Rational, Design,
+and Results of the 2015 Wave”,American Journal of Epidemiology , forthcoming.
+Reference
+[1] Yaohui Zhao, John Strauss, Albert Park, Yan Shen, Yan Sun (2009), “China
+Health and Retirement Longitudinal Study - Pilot Users’ Guide”, http:
+//charls.pku.edu.cn/uploads/document/2008-charls-pilot/application/
+User_s_guide_Updated_on_Feb_16__2013_.doc
+[2] Yaohui Zhao, Eileen Crimmins, Perry Hu, Yisong Hu, Tao Ge, Jung Ki Kim, John
+Strauss, Gonghuan Yang，Xiangjun Yin，Yafeng Wang (2014), “China Health and
+Retirement Longitudinal Study 2011-2012 National Baseline Blood Data Users’
+Guide”, http://charls.pku.edu.cn/uploads/document/2011-charls-wave1/
+application/blood_user_guide_en_20140429.pdf
+3\nTable 1: Released Variables
+V ariable Definition Unit
+bl_fasting Fasting Blood Sample or not —
+bl_wbc White Blood Cell 1000
+bl_hgb Hemoglobin g/dl
+bl_hct Hematocrit %
+bl_mcv Mean Corpuscular Volume fl
+bl_plt Platelets 109/L
+bl_tg Triglycerides mg/dl
+bl_top_coding_tg Whether top-coding Triglycerides values to 500 if orginal Triglycerides values more
+than 500
+—
+bl_crea Creatinine mg/dl
+bl_bun Blood Urea Nitrogen (BUN) mg/dl
+bl_hdl High Density Lipoprotein Cholesterol mg/dl
+bl_ldl Low Density Lipoprotein Cholesterol mg/dl
+bl_cho T otal Cholesterol mg/dl
+bl_glu Glucose mg/dl
+bl_ua Uric Acid mg/dl
+bl_cysc Cystatin C mg/l
+bl_crp C-Reactive Protein (CRP) mg/l
+bl_hbalc Glycated Hemoglobin %
+Table 2: Blood Sample Response Rate
+T otal Cross Section
+T otal Female Male Rural Urban
+Target Sample 21,100 20,284 10,625 9,659 12,075 8,209
+Response Sample 13,420 13,013 7,007 6,006 8,083 4,930
+Response Rate (%) 63.60 64.15 65.95 62.18 66.94 60.06
+4

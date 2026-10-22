@@ -1,0 +1,4 @@
+﻿concept_id,concept_label,waves,mappings,source_codes
+cohabiting_partner_status,是否与伴侣以配偶身份共同生活,"2011,2018,2020",3,ba012;be002
+marital_status_current,当前婚姻状态,"2011,2013,2015,2018,2020",5,ba011;be001
+partner_highest_education,配偶/伴侣最高受教育程度,"2011,2013,2015",3,bf004

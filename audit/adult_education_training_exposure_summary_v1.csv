@@ -1,0 +1,9 @@
+﻿concept_id,concept_label,waves,source_fields,source_codes
+adult_education_degree_received,成人教育是否获得文凭/学位,"2011,2013,2015,2018",6,bd009;bd009_w2_1;bd009_w4_1
+adult_education_duration_years,成人教育学习年限（年）,"2011,2013,2015,2018",6,bd008;bd008_w2_1;bd008_w4_1
+adult_education_highest_credential,成人教育最高学历/文凭类别,"2011,2013,2015,2018",5,bd011;bd011_w4
+adult_education_program_participation,成人教育参与形式（按问卷多选与访谈路径）,"2011,2013,2015,2018",48,bd007_w2_1_s1;bd007_w2_1_s2;bd007_w2_1_s3;bd007_w2_1_s4;bd007_w2_1_s5;bd007_w2_1_s6;bd007_w2_1_s7;bd007_w2_1_s8;bd007_w2_1s1;bd007_w2_1s2;bd007_w2_1s3;bd007_w2_1s4;bd007_w2_1s5;bd007_w2_1s6;bd007_w2_1s7;bd007_w2_1s8;bd007_w4_1_s1;bd007_w4_1_s2;bd007_w4_1_s3;bd007_w4_1_s4;bd007_w4_1_s5;bd007_w4_1_s6;bd007_w4_1_s7;bd007_w4_1_s8;bd007s1;bd007s2;bd007s3;bd007s4;bd007s5;bd007s6;bd007s7;bd007s8
+vocational_certificate_attained,职业培训后是否获得职业证书,2018,1,bd015_w4
+vocational_training_duration_months,职业技术培训累计时长（月）,2018,2,bd014;bd014_w4
+vocational_training_episode_count,职业技术培训参加次数,"2015,2018",3,bd013;bd013_w4
+vocational_training_participation,职业技术培训参与,"2015,2018",3,bd012;bd012_w4

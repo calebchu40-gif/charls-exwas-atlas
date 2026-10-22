@@ -1,0 +1,30 @@
+DATA ALERT
+The CHARLS Team
+February 4, 2023
+The CHARLS 2018 wave included a module, CHARLS-HCAP, intended to assess the cognitive sta-
+tus of our respondents 60 years and older. It has come to our attention that one of our assessment
+instruments, the Mini-Mental State Examination (MMSE), which is a widely used cognition assess-
+ment, is likely biased because the Chinese version of MMSE was validated only among people who
+can read and write and those without vision impairments and in mandarin.
+In particular, the following questions require literacy:
+• dc019_w4: Read the words on the screen, then do what it says.
+• dc023_w4: Write any complete sentence
+• dc024_w4: Copy the overlapping pentagons
+The following questions require vision:
+• dc019_w4: Read the words on the screen, then do what it says.
+• dc016_w4: Naming a watch
+• dc017_w4: Naming a pencil
+• dc024_w4: Copy the overlapping pentagons
+In addition, word lists used for memory tests are paraphrased in mandarin and may disadvantage
+non-mandarin speakers:
+• dc013_w4_1 and dc015_w4: Word list recalls
+• dc018_w4: Repeating a phrase
+Additionally, some other items in the CHARLS-HCAP may be biased as well. One example is an
+HRS-TICS item, “dc026_w4. What do you call the kind of prickly plant that grows in the desert?”
+Because the cactus is a less-known plant in China, many people failed to answer correctly, especially
+less educated people. Another example is CERAD 10-word recall. Some words on the list, such as
+butter and queen, are not familiar to many Chinese, especially among less educated people.
+We are working on detecting biases of MMSE and other instruments against the illiterate, vision
+impaired and non-mandarin speakers and are finding ways to correct the biases. Once this is finished,
+we will update the data. Meanwhile, users are advised to use the data with caution.
+- 1 -

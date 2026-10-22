@@ -1,0 +1,66 @@
+"""Map wave-specific recent hukou change and conditional reason items."""
+from pathlib import Path
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parents[1]
+AUDIT = ROOT / "audit"
+RAW = pd.read_csv(AUDIT / "raw_variable_catalog_v1.csv", dtype=str, encoding="utf-8-sig").fillna("")
+
+CONCEPTS = {
+    "hukou_change_since_prior_interview": ("自上次访谈以来户口变化", "Whether hukou status/type/location changed since the prior interview"),
+    "reason_for_hukou_type_change_since_prior_interview": ("自上次访谈以来户口类型变化原因", "Reported reason for hukou type change since prior interview"),
+    "reason_for_hukou_change_to_agricultural_since_prior_interview": ("自上次访谈以来转为农业户口的原因（2013）", "Reason for changing to agricultural hukou since the prior interview; 2013 route-specific item"),
+    "reason_for_hukou_change_to_nonagricultural_since_prior_interview": ("自上次访谈以来转为非农业户口的原因（2013）", "Reason for changing to non-agricultural hukou since the prior interview; 2013 route-specific item"),
+    "reason_for_hukou_location_change_since_prior_interview": ("自上次访谈以来户口所在地变化原因", "Reported reason for hukou registration-location change since prior interview"),
+    "hukou_type_change_since_prior_interview_date": ("自上次访谈以来户口类型变化时间", "Reported year/month of hukou-type change since prior interview"),
+    "hukou_location_change_since_prior_interview_date": ("自上次访谈以来户口所在地变化时间", "Reported year/month of hukou-location change since prior interview"),
+    "hukou_location_change_since_prior_interview_2013": ("自上次访谈以来户口登记地是否变化（2013）", "Whether hukou registration location changed since the prior interview; 2013 yes/no item"),
+}
+
+FIELDS = [
+    ("2013", "bc001_w2_1", "hukou_change_since_prior_interview", "Have Your Hukou Status Changed Since Last Interview", "1=Yes; 2=No", "Asked in the 2013 follow-up module; retain the exact routing and do not recode structural skips as No.", "CHARLS2013_Dataset.zip", "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"),
+    ("2013", "bc001_w2_2", "reason_for_hukou_change_to_agricultural_since_prior_interview", "What Is the Reason That You Changed to the Agricultural Hukou", "1=Live in rural areas after graduating from college; 2=Marriage; 3=Employment; 4=Whole-village migration; 5=No change; 6=Other", "Conditional on the returner route with a changed hukou-status comparison and current BC001=1. Code 5 is a route/no-change response, not a change reason; retain it as a distinct category and do not convert structural skip to a reason.", "CHARLS2013_Dataset.zip", "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"),
+    ("2013", "bc001_w2_3", "reason_for_hukou_change_to_nonagricultural_since_prior_interview", "What Is the Reason That You Changed to the Non-agricultural Hukou", "1=Go to a college; 2=Marriage; 3=Employment; 4=Land acquired by government; 5=Whole-village migration; 6=No change; 7=Other", "Conditional on the returner route with a changed hukou-status comparison and current BC001=2. Code 6 is a route/no-change response, not a change reason; category set differs from the agricultural-hukou item.", "CHARLS2013_Dataset.zip", "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"),
+    ("2013", "bc001_w2_4", "hukou_type_change_since_prior_interview_date", "When Did You Change the Status of Hukou", "", "Year-only change date, asked on the returner route only when the current hukou is unified-residence type (BC001=3); this is not a general date for every type change. Preserve raw special/missing values pending approved-data verification.", "CHARLS2013_Dataset.zip", "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"),
+    ("2013", "bc005_w2_1", "hukou_location_change_since_prior_interview_2013", "Since Last Interview, Has Your Hukou Location Changed", "1=Yes; 2=No", "Asked on the reinterview route when prior-wave hukou location is available. New interviews and reinterviews without a prior location route to the current-location item; structural skips are not No.", "CHARLS2013_Dataset.zip", "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"),
+    ("2013", "bc005_w2_2", "reason_for_hukou_location_change_since_prior_interview", "Why Is the Location of Current Hukou Different from Last Wave", "1=Marriage; 2=Go to school; 3=Employment; 4=Retirement/revolutionary retirement; 5=Whole-village migration; 6=Other", "Only on reinterview route when BC005_W2_1=1; preserve the prior-wave reference and do not infer a reason from the current hukou-location field.", "CHARLS2013_Dataset.zip", "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"),
+    ("2013", "bc005_w2_3", "hukou_location_change_since_prior_interview_date", "When Did You Change Location of Hukou", "", "Only on reinterview route when BC005_W2_1=1; year-only precision in 2013. Preserve raw special/missing values pending approved-data verification.", "CHARLS2013_Dataset.zip", "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"),
+    ("2015", "bc002_w3", "hukou_change_since_prior_interview", "Since [ZIWTime], Have Your Hukou Type and Location Changed", "1=Hukou type changed; 2=Hukou location changed; 3=Both changed; 4=None changed", "Use the wave-specific nominal categories; the 2013 item is only a yes/no status-change question. Do not interpret raw codes as a common ordered scale.", "CHARLS2015r.zip", "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"),
+    ("2018", "bc002_w3", "hukou_change_since_prior_interview", "Hukou Type and Hukou Location Changed", "1=Only hukou type; 2=Only hukou place; 3=Both type and place; 4=Neither changed", "2018 questionnaire asks this section on reinterview route (XRType=1); new-interview route skips it. Preserve this structural eligibility and the prior-interview reference.", "CHARLS2018r.zip", "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"),
+    ("2015", "bc002_w3_2", "reason_for_hukou_type_change_since_prior_interview", "The Reason Why Hukou Type Changed", "1=Schooling; 2=Marriage; 3=Career; 4=Land expropriation; 5=Whole-village relocation; 6=Other", "Conditional on the prior-interview change item indicating hukou type changed (codes 1 or 3); no response is not a zero or a reason category.", "CHARLS2015r.zip", "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"),
+    ("2018", "bc002_w3_2", "reason_for_hukou_type_change_since_prior_interview", "Reason of Hukou Type Changed", "1=Go to school; 2=Marriage; 3=Employment; 4=Land acquired by government; 5=Whole-village migration; 6=Other", "Conditional on the prior-interview change item indicating hukou type changed (codes 1 or 3); reinterview route applies.", "CHARLS2018r.zip", "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"),
+    ("2015", "bc002_w3_5", "reason_for_hukou_location_change_since_prior_interview", "Why Your Hukou Location Changed", "1=Schooling; 2=Marriage; 3=Career; 4=Land expropriation; 5=Whole-village relocation", "Conditional on the prior-interview change item indicating hukou location changed (codes 2 or 3). The 2015 codebook lists five categories; do not import a sixth category from another wave.", "CHARLS2015r.zip", "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"),
+    ("2018", "bc002_w3_5", "reason_for_hukou_location_change_since_prior_interview", "Why did Your Location of Hukou Change", "1=Go to school; 2=Marriage; 3=Employment; 4=Land acquired by government; 5=Whole-village migration; 6=Other", "Conditional on the prior-interview change item indicating hukou location changed (codes 2 or 3); reinterview route applies.", "CHARLS2018r.zip", "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"),
+    ("2015", "bc002_w3_3_1", "hukou_type_change_since_prior_interview_date", "When Your Hukou Type Changed: Year", "", "Only asked when BC002_W3 indicates hukou-type change (codes 1 or 3); calendar-year component, retain source range and missing codes.", "CHARLS2015r.zip", "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"),
+    ("2015", "bc002_w3_3_2", "hukou_type_change_since_prior_interview_date", "When Your Hukou Type Changed: Month", "", "Only asked when BC002_W3 indicates hukou-type change (codes 1 or 3); calendar-month component, preserve special values until checked against released-data documentation.", "CHARLS2015r.zip", "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"),
+    ("2018", "bc002_w3_3_1", "hukou_type_change_since_prior_interview_date", "Year of Type of Hukou Change", "", "Only asked when BC002_W3 indicates hukou-type change (codes 1 or 3) on the reinterview route; calendar-year component.", "CHARLS2018r.zip", "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"),
+    ("2018", "bc002_w3_3_2", "hukou_type_change_since_prior_interview_date", "Month of Type of Hukou Change", "", "Only asked when BC002_W3 indicates hukou-type change (codes 1 or 3) on the reinterview route; calendar-month component, preserve special values until verified.", "CHARLS2018r.zip", "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"),
+    ("2015", "bc002_w3_6_1", "hukou_location_change_since_prior_interview_date", "When Your Hukou Location Changed: Year", "", "Only asked when BC002_W3 indicates hukou-location change (codes 2 or 3); calendar-year component, retain source range and missing codes.", "CHARLS2015r.zip", "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"),
+    ("2015", "bc002_w3_6_2", "hukou_location_change_since_prior_interview_date", "When Your Hukou Location Changed: Month", "", "Only asked when BC002_W3 indicates hukou-location change (codes 2 or 3); calendar-month component, preserve special values until checked against released-data documentation.", "CHARLS2015r.zip", "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"),
+    ("2018", "bc002_w3_6_1", "hukou_location_change_since_prior_interview_date", "Year of Location of Hukou Change", "", "Only asked when BC002_W3 indicates hukou-location change (codes 2 or 3) on the reinterview route; calendar-year component.", "CHARLS2018r.zip", "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"),
+    ("2018", "bc002_w3_6_2", "hukou_location_change_since_prior_interview_date", "Month of Location of Hukou Change", "", "Only asked when BC002_W3 indicates hukou-location change (codes 2 or 3) on the reinterview route; calendar-month component, preserve special values until verified.", "CHARLS2018r.zip", "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"),
+]
+
+rows = []
+for wave, code, concept, source_label, labels, caveat, archive, source in FIELDS:
+    if not ((RAW.wave.astype(str) == wave) & RAW.variable.str.lower().eq(code)).any():
+        raise SystemExit(f"No raw-catalog field found: {wave} {code}")
+    rows.append({
+        "wave": wave, "code": code, "concept_id": concept,
+        "concept_label": CONCEPTS[concept][0], "domain": "hukou history and social position",
+        "module": "Demographic_Background", "source_label": source_label,
+        "unit": ("calendar month" if code in {"bc002_w3_3_2", "bc002_w3_6_2"} else ("calendar year" if concept.endswith("_date") else "")),
+        "value_labels": labels,
+        "value_label_status": ("official wave questionnaire/codebook labels reviewed; frequencies omitted" if labels else "continuous/date component and questionnaire range reviewed; value labels not applicable"),
+        "value_label_source": source,
+        "mapping_status": "candidate wave-specific exposure; exact source item and routing reviewed",
+        "construct": CONCEPTS[concept][1],
+        "value_semantics": ("categorical self-report; preserve original categories and wave-specific codes" if labels else "date component; preserve wave-specific precision and raw special codes"),
+        "caveat": caveat, "source_archive": f"{archive}; {source}",
+    })
+
+out = pd.DataFrame(rows)
+if out.duplicated(["wave", "code"]).any():
+    raise SystemExit("Duplicate wave-code rows in recent hukou crosswalk")
+out.to_csv(AUDIT / "hukou_recent_change_crosswalk_v1.csv", index=False, encoding="utf-8-sig")
+print(f"recent hukou-change mappings={len(out)}; concepts={out.concept_id.nunique()}")

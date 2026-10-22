@@ -1,0 +1,3529 @@
+[
+  {
+    "concept_id": "cog_subjective_memory",
+    "label": "自评记忆",
+    "domain": "主观认知",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "dc004",
+        "source_label": "Self Comment of Memory",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；自评记忆题；应按各波响应选项统一方向后再比较。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md",
+        "value_label_status": "official response categories transcribed; special/missing-code completeness pending"
+      },
+      {
+        "wave": "2013",
+        "code": "dc004",
+        "source_label": "Self Rated Memory",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；自评记忆题；应按各波响应选项统一方向后再比较。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md",
+        "value_label_status": "official response categories transcribed; special/missing-code completeness pending"
+      },
+      {
+        "wave": "2015",
+        "code": "dc004",
+        "source_label": "Self rated memory",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；自评记忆题；应按各波响应选项统一方向后再比较。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md",
+        "value_label_status": "official response categories transcribed; special/missing-code completeness pending"
+      },
+      {
+        "wave": "2018",
+        "code": "dc004",
+        "source_label": "Self-Rated Memory",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；自评记忆题；应按各波响应选项统一方向后再比较。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md",
+        "value_label_status": "official response categories transcribed; special/missing-code completeness pending"
+      },
+      {
+        "wave": "2020",
+        "code": "dc006",
+        "source_label": "Self-Rated Memory",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；自评记忆题；应按各波响应选项统一方向后再比较。",
+        "value_labels": "1=Excellent; 2=Very Good; 3=Good; 4=Fair; 5=Poor; 997=Don't Know (codebook category)",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md",
+        "value_label_status": "official response categories transcribed; special/missing-code completeness pending"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "自评记忆题；应按各波响应选项统一方向后再比较。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample."
+  },
+  {
+    "concept_id": "cog_orientation_time",
+    "label": "时间定向",
+    "domain": "定向能力",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "dc001s1",
+        "source_label": "Year Is Correct",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Year is correct",
+        "value_label_status": "official Codebook extraction exposes only a partial response-code set; only the correct category is listed; do not infer unlisted codes",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc001s2",
+        "source_label": "Month Is Correct",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "2=Month is correct",
+        "value_label_status": "official Codebook extraction exposes only a partial response-code set; only the correct category is listed; do not infer unlisted codes",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc001s3",
+        "source_label": "Day Is Correct",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "3=Day is correct",
+        "value_label_status": "official Codebook extraction exposes only a partial response-code set; only the correct category is listed; do not infer unlisted codes",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc002",
+        "source_label": "Checking Day of Week",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Day of week correct; 2=Day of week incorrect",
+        "value_label_status": "official Codebook response categories; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc003",
+        "source_label": "Checking Season",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Season correct; 2=Season incorrect",
+        "value_label_status": "official Codebook response categories; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc001s1",
+        "source_label": "Checking Date",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Year is correct",
+        "value_label_status": "official Codebook extraction exposes only a partial response-code set; only the correct category is listed; do not infer unlisted codes",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc001s2",
+        "source_label": "Checking Date",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "2=Month is correct",
+        "value_label_status": "official Codebook extraction exposes only a partial response-code set; only the correct category is listed; do not infer unlisted codes",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc001s3",
+        "source_label": "Checking Date",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "3=Day is correct",
+        "value_label_status": "official Codebook extraction exposes only a partial response-code set; only the correct category is listed; do not infer unlisted codes",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc002",
+        "source_label": "Checking Day of Week",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Day of week correct; 2=Day of week incorrect",
+        "value_label_status": "official Codebook response categories; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc003",
+        "source_label": "Checking Season",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Season correct; 2=Season incorrect",
+        "value_label_status": "official Codebook response categories; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc001s1",
+        "source_label": "checking date",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Year is correct",
+        "value_label_status": "official Codebook extraction exposes only a partial response-code set; only the correct category is listed; do not infer unlisted codes",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc001s2",
+        "source_label": "checking date\\n684 CHARLS 2015 CodeBook",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "2=Month is correct",
+        "value_label_status": "official Codebook extraction exposes only a partial response-code set; only the correct category is listed; do not infer unlisted codes",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc001s3",
+        "source_label": "checking date",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "3=Day is correct",
+        "value_label_status": "official Codebook extraction exposes only a partial response-code set; only the correct category is listed; do not infer unlisted codes",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc002",
+        "source_label": "Checking day of week",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Day of week correct; 2=Day of week incorrect",
+        "value_label_status": "official Codebook response categories; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc003",
+        "source_label": "Checking season",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Season correct; 2=Season incorrect",
+        "value_label_status": "official Codebook response categories; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc001_w4",
+        "source_label": "Checking Year",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Correct; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook response categories; preserve not-assessed separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc002_w4",
+        "source_label": "Checking Season",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Correct; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook response categories; preserve not-assessed separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc005_w4",
+        "source_label": "Checking Day",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Correct; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook response categories; preserve not-assessed separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc006_w4",
+        "source_label": "Checking Month",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Correct; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook response categories; preserve not-assessed separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc001",
+        "source_label": "Checking Year",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Correct; 2=Error; 997=Don't Know; 999=Refused",
+        "value_label_status": "2020 codebook response categories; confirm structural/routing missingness in the data",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc002",
+        "source_label": "Checking Season",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Correct; 2=Error; 997=Don't Know; 999=Refused",
+        "value_label_status": "2020 codebook response categories; confirm structural/routing missingness in the data",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc003",
+        "source_label": "Checking Date",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Correct; 2=Error; 997=Don't Know; 999=Refused",
+        "value_label_status": "2020 codebook response categories; confirm structural/routing missingness in the data",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc004",
+        "source_label": "Checking Day",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Correct; 2=Error; 997=Don't Know; 999=Refused",
+        "value_label_status": "2020 codebook response categories; confirm structural/routing missingness in the data",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc005",
+        "source_label": "Checking Month",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。",
+        "value_labels": "1=Correct; 2=Error; 997=Don't Know; 999=Refused",
+        "value_label_status": "2020 codebook response categories; confirm structural/routing missingness in the data",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample."
+  },
+  {
+    "concept_id": "cog_orientation_place",
+    "label": "地点/个人信息定向",
+    "domain": "定向能力",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "dc007_w4",
+        "source_label": "Checking State",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展认知模块独有的省市、乡镇、楼层及地址/个人信息题；须按年龄适用规则处理。",
+        "value_labels": "1=Correct; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook response categories; preserve not-assessed separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc008_w4",
+        "source_label": "Checking County",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展认知模块独有的省市、乡镇、楼层及地址/个人信息题；须按年龄适用规则处理。",
+        "value_labels": "1=Correct; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook response categories; preserve not-assessed separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc009_w4",
+        "source_label": "Checking City",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展认知模块独有的省市、乡镇、楼层及地址/个人信息题；须按年龄适用规则处理。",
+        "value_labels": "1=Correct; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook response categories; preserve not-assessed separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc010_w4",
+        "source_label": "Checking Floor",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展认知模块独有的省市、乡镇、楼层及地址/个人信息题；须按年龄适用规则处理。",
+        "value_labels": "1=Correct; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook response categories; preserve not-assessed separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc012_w4",
+        "source_label": "Checking Address",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展认知模块独有的省市、乡镇、楼层及地址/个人信息题；须按年龄适用规则处理。",
+        "value_labels": "1=Correct; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook response categories; preserve not-assessed separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "2018扩展认知模块独有的省市、乡镇、楼层及地址/个人信息题；须按年龄适用规则处理。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample."
+  },
+  {
+    "concept_id": "cog_serial7",
+    "label": "连续减 7",
+    "domain": "注意/计算",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "dc019",
+        "source_label": "100 Minus 7",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2011",
+        "code": "dc020",
+        "source_label": "Minus 7",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2011",
+        "code": "dc021",
+        "source_label": "Minus 7",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2011",
+        "code": "dc022",
+        "source_label": "Minus 7",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2011",
+        "code": "dc023",
+        "source_label": "Minus 7",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2011",
+        "code": "dc024",
+        "source_label": "Use aid for the Number Substraction",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official Codebook categories for paper/pencil or other aid use; test-administration metadata, not cognitive performance",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc019",
+        "source_label": "100 Minus 7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2013",
+        "code": "dc020",
+        "source_label": "Minus 7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2013",
+        "code": "dc021",
+        "source_label": "Minus 7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2013",
+        "code": "dc022",
+        "source_label": "Minus 7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2013",
+        "code": "dc023",
+        "source_label": "Minus 7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2013",
+        "code": "dc024",
+        "source_label": "Used Paper and Pencil or Any Other Aid",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official Codebook categories for paper/pencil or other aid use; test-administration metadata, not cognitive performance",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc019",
+        "source_label": "100 minus 7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2015",
+        "code": "dc020",
+        "source_label": "minus 7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2015",
+        "code": "dc021",
+        "source_label": "MINUS 7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2015",
+        "code": "dc022",
+        "source_label": "MINUS 7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2015",
+        "code": "dc023",
+        "source_label": "MINUS 7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2015",
+        "code": "dc024",
+        "source_label": "Used Paper and Pencil or Any Other Aid",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official Codebook categories for paper/pencil or other aid use; test-administration metadata, not cognitive performance",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc014_w4_1",
+        "source_label": "Reason for Missing from 100-7",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "97=Don't Know; 98=Refused",
+        "value_label_status": "official Codebook extraction exposes only a partial response-code set; 97/98 are listed reason/response-status codes; do not infer other codes",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc014_w4_1_1",
+        "source_label": "Specific Result from 100-7",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2018",
+        "code": "dc014_w4_2",
+        "source_label": "Reason for Missing from dc014_w4_1-7",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "97=Don't Know; 98=Refused",
+        "value_label_status": "official Codebook extraction exposes only a partial response-code set; 97/98 are listed reason/response-status codes; do not infer other codes",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc014_w4_2_1",
+        "source_label": "Specific Result from dc014_w4_2-7",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2018",
+        "code": "dc014_w4_3",
+        "source_label": "Reason for Missing from dc014_w4_2-7",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "97=Don't Know; 98=Refused",
+        "value_label_status": "official Codebook extraction exposes only a partial response-code set; 97/98 are listed reason/response-status codes; do not infer other codes",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc014_w4_3_1",
+        "source_label": "Specific Result from dc014_w4_3-7",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2018",
+        "code": "dc014_w4_4",
+        "source_label": "Reason for Missing from dc014_w4_3-7",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "97=Don't Know; 98=Refused",
+        "value_label_status": "official Codebook extraction exposes only a partial response-code set; 97/98 are listed reason/response-status codes; do not infer other codes",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc014_w4_4_1",
+        "source_label": "Specific Result from dc014_w4_4-7",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2018",
+        "code": "dc014_w4_5",
+        "source_label": "Reason for Missing from dc014_w4_4-7",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "97=Don't Know; 98=Refused",
+        "value_label_status": "official Codebook extraction exposes only a partial response-code set; 97/98 are listed reason/response-status codes; do not infer other codes",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc014_w4_5_1",
+        "source_label": "Specific Result from dc014_w4_5-7",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
+      },
+      {
+        "wave": "2018",
+        "code": "dc024",
+        "source_label": "Use Pen Paper or Other Instruments for Mathmatics",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "1=Used; 2=Not Used",
+        "value_label_status": "2018 official Codebook response categories; instrument-use metadata, not cognitive performance",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc007_1",
+        "source_label": "Result for 100-7\\n214 CHARLS 2020 CODEBOOK",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "1=Record Answer; 997=Don't Know; 999=Refused",
+        "value_label_status": "2020 codebook response-status categories; answer content is stored in the paired _1 field",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc007_1_1",
+        "source_label": "Specific Result from 100-7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "",
+        "value_label_status": "continuous raw subtraction response; Codebook extreme maxima occur; valid range and scoring require authorized raw-data QA",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc007_2",
+        "source_label": "Result for dc007_1_1-7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "1=Record Answer; 997=Don't Know; 999=Refused",
+        "value_label_status": "2020 codebook response-status categories; answer content is stored in the paired _1 field",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc007_2_1",
+        "source_label": "Specific Result from dc007_1_1-7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "",
+        "value_label_status": "continuous raw subtraction response; Codebook extreme maxima occur; valid range and scoring require authorized raw-data QA",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc007_3",
+        "source_label": "Result for dc007_2_1-7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "1=Record Answer; 997=Don't Know; 999=Refused",
+        "value_label_status": "2020 codebook response-status categories; answer content is stored in the paired _1 field",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc007_3_1",
+        "source_label": "Specific Result from dc007_2_1-7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "",
+        "value_label_status": "continuous raw subtraction response; Codebook extreme maxima occur; valid range and scoring require authorized raw-data QA",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc007_4",
+        "source_label": "Result for dc007_4_1-7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "1=Record Answer; 997=Don't Know; 999=Refused",
+        "value_label_status": "2020 codebook response-status categories; answer content is stored in the paired _1 field",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc007_4_1",
+        "source_label": "Specific Result from dc007_3_1-7\\nMODULE D. HEALTH STATUS AND FUNCTIONING 215",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "",
+        "value_label_status": "continuous raw subtraction response; Codebook extreme maxima occur; valid range and scoring require authorized raw-data QA",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc007_5",
+        "source_label": "Result for dc007_4_1-7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "1=Record Answer; 997=Don't Know; 999=Refused",
+        "value_label_status": "2020 codebook response-status categories; answer content is stored in the paired _1 field",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc007_5_1",
+        "source_label": "Specific Result from dc007_4_1-7",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "",
+        "value_label_status": "continuous raw subtraction response; Codebook extreme maxima occur; valid range and scoring require authorized raw-data QA",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc008",
+        "source_label": "Use Pen Paper or Other Instruments for Mathmatics",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。",
+        "value_labels": "1=Used; 2=Not Used",
+        "value_label_status": "2020 codebook response categories",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample."
+  },
+  {
+    "concept_id": "cog_figure_copy",
+    "label": "相交五边形临摹",
+    "domain": "视空间能力",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "dc025",
+        "source_label": "Drew the Picture or Failed",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；相同任务语义的候选映射；核对评分规则、影像/纸笔记录及未评估代码后才能跨波合并。",
+        "value_labels": "1=Drew the picture; 2=Failed to draw the picture",
+        "value_label_status": "official Codebook response categories; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc025",
+        "source_label": "Draw Picture",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；相同任务语义的候选映射；核对评分规则、影像/纸笔记录及未评估代码后才能跨波合并。",
+        "value_labels": "1=Drew the picture; 2=Failed to draw the picture",
+        "value_label_status": "official Codebook response categories; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc025",
+        "source_label": "Draw picture",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；相同任务语义的候选映射；核对评分规则、影像/纸笔记录及未评估代码后才能跨波合并。",
+        "value_labels": "1=Drew the picture; 2=Failed to draw the picture",
+        "value_label_status": "official Codebook response categories; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc024_w4",
+        "source_label": "Draw Correct",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；相同任务语义的候选映射；核对评分规则、影像/纸笔记录及未评估代码后才能跨波合并。 Official CHARLS HCAP Data Alert identifies overlapping-pentagon copying as potentially affected by literacy and vision. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "1=Correct; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook response categories; preserve not-assessed separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc009",
+        "source_label": "Draw",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；相同任务语义的候选映射；核对评分规则、影像/纸笔记录及未评估代码后才能跨波合并。",
+        "value_labels": "1=Correct; 2=Error; 3=Not Assessed; 997=Don't Know; 999=Refused",
+        "value_label_status": "2020 codebook response categories; separate not-assessed from incorrect",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "相同任务语义的候选映射；核对评分规则、影像/纸笔记录及未评估代码后才能跨波合并。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample."
+  },
+  {
+    "concept_id": "cog_word_immediate",
+    "label": "词语即时回忆",
+    "domain": "情景记忆",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "dc006s1",
+        "source_label": "Words Recall",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "1=Wordlist[1]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc006s10",
+        "source_label": "Words Recall",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "10=Wordlist[10]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc006s11",
+        "source_label": "Words Recall",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "11=None",
+        "value_label_status": "Official codebook none-of-the-above category; absence/unselected storage not inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc006s2",
+        "source_label": "Words Recall",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "2=Wordlist[2]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc006s3",
+        "source_label": "Words Recall",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "3=Wordlist[3]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc006s4",
+        "source_label": "Words Recall",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "4=Wordlist[4]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc006s5",
+        "source_label": "Words Recall",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "5=Wordlist[5]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc006s6",
+        "source_label": "Words Recall",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "6=Wordlist[6]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc006s7",
+        "source_label": "Words Recall",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "7=Wordlist[7]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc006s8",
+        "source_label": "Words Recall",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "8=Wordlist[8]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc006s9",
+        "source_label": "Words Recall",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "9=Wordlist[9]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_1_s1",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "1=Wordlist[1]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_1_s10",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "10=Wordlist[10]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_1_s11",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "11=None",
+        "value_label_status": "Official codebook none-of-the-above category; absence/unselected storage not inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_1_s2",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "2=Wordlist[2]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_1_s3",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "3=Wordlist[3]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_1_s4",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "4=Wordlist[4]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_1_s5",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "5=Wordlist[5]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_1_s6",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "6=Wordlist[6]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_1_s7",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "7=Wordlist[7]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_1_s8",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "8=Wordlist[8]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_1_s9",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "9=Wordlist[9]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_2_s1",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "1=Wordlist[1]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_2_s10",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "10=Wordlist[10]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_2_s11",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "11=None",
+        "value_label_status": "Official codebook none-of-the-above category; absence/unselected storage not inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_2_s2",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "2=Wordlist[2]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_2_s3",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "3=Wordlist[3]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_2_s4",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "4=Wordlist[4]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_2_s5",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "5=Wordlist[5]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_2_s6",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "6=Wordlist[6]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_2_s7",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "7=Wordlist[7]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_2_s8",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "8=Wordlist[8]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_2_s9",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "9=Wordlist[9]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_3_s1",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "1=Wordlist[1]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_3_s10",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "10=Wordlist[10]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_3_s11",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "11=None",
+        "value_label_status": "Official codebook none-of-the-above category; absence/unselected storage not inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_3_s2",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "2=Wordlist[2]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_3_s3",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "3=Wordlist[3]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_3_s4",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "4=Wordlist[4]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_3_s5",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "5=Wordlist[5]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_3_s6",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "6=Wordlist[6]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_3_s7",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "7=Wordlist[7]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_3_s8",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "8=Wordlist[8]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc006_3_s9",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "9=Wordlist[9]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc006s1",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "1=Wordlist[1]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc006s10",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "10=Wordlist[10]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc006s11",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "11=None",
+        "value_label_status": "Official codebook none-of-the-above category; absence/unselected storage not inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc006s12",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "12=Refuse to Recall",
+        "value_label_status": "Official codebook refusal category; separate from no words recalled",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc006s2",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "2=Wordlist[2]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc006s3",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "3=Wordlist[3]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc006s4",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "4=Wordlist[4]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc006s5",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "5=Wordlist[5]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc006s6",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "6=Wordlist[6]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc006s7",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "7=Wordlist[7]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc006s8",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "8=Wordlist[8]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc006s9",
+        "source_label": "Recalled Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "9=Wordlist[9]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc028_w4_s1",
+        "source_label": "Word Recall 1st: Butter",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Butter",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc028_w4_s10",
+        "source_label": "Word Recall 1st: Engine",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 10=Engine",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc028_w4_s11",
+        "source_label": "Word Recall 1st: None",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 11=None",
+        "value_label_status": "2018 codebook none-of-the-above checkbox",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc028_w4_s12",
+        "source_label": "Word Recall 1st: Refused to Recall",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 12=Refused to Recall",
+        "value_label_status": "2018 codebook refusal checkbox; not an incorrect answer",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc028_w4_s2",
+        "source_label": "Word Recall 1st: Arm",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 2=Arm",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc028_w4_s3",
+        "source_label": "Word Recall 1st: Shore",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 3=Shore",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc028_w4_s4",
+        "source_label": "Word Recall 1st: Letter",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 4=Letter",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc028_w4_s5",
+        "source_label": "Word Recall 1st: Queen",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 5=Queen",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc028_w4_s6",
+        "source_label": "Word Recall 1st: Cabin",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 6=Cabin",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc028_w4_s7",
+        "source_label": "Word Recall 1st: Pole",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 7=Pole",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc028_w4_s8",
+        "source_label": "Word Recall 1st: Ticket",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 8=Ticket",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc028_w4_s9",
+        "source_label": "Word Recall 1st: Grass",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 9=Grass",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc029_w4_s1",
+        "source_label": "Word Recall 2nd: Pole",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Pole",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc029_w4_s10",
+        "source_label": "Word Recall 2nd: Engine",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 10=Engine",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc029_w4_s11",
+        "source_label": "Word Recall 2nd: None",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 11=None",
+        "value_label_status": "2018 codebook none-of-the-above checkbox",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc029_w4_s12",
+        "source_label": "Word Recall 2nd: Refused to Recall",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 12=Refused to Recall",
+        "value_label_status": "2018 codebook refusal checkbox; not an incorrect answer",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc029_w4_s2",
+        "source_label": "Word Recall 2nd: Letter",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 2=Letter",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc029_w4_s3",
+        "source_label": "Word Recall 2nd: Butter",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 3=Butter",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc029_w4_s4",
+        "source_label": "Word Recall 2nd: Queen",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 4=Queen",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc029_w4_s5",
+        "source_label": "Word Recall 2nd: Arm",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 5=Arm",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc029_w4_s6",
+        "source_label": "Word Recall 2nd: Shore",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 6=Shore",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc029_w4_s7",
+        "source_label": "Word Recall 2nd: Grass",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 7=Grass",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc029_w4_s8",
+        "source_label": "Word Recall 2nd: Cabin",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 8=Cabin",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc029_w4_s9",
+        "source_label": "Word Recall 2nd: Ticket",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 9=Ticket",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc030_w4_s1",
+        "source_label": "Word Recall 3rd: Shore",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Shore",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc030_w4_s10",
+        "source_label": "Word Recall 3rd: Queen",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 10=Queen",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc030_w4_s11",
+        "source_label": "Word Recall 3rd: None",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 11=None",
+        "value_label_status": "2018 codebook none-of-the-above checkbox",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc030_w4_s12",
+        "source_label": "Word Recall 3rd: Refused to Recall",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 12=Refused to Recall",
+        "value_label_status": "2018 codebook refusal checkbox; not an incorrect answer",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc030_w4_s2",
+        "source_label": "Word Recall 3rd: Letter",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 2=Letter",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc030_w4_s3",
+        "source_label": "Word Recall 3rd: Arm",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 3=Arm",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc030_w4_s4",
+        "source_label": "Word Recall 3rd: Cabin",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 4=Cabin",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc030_w4_s5",
+        "source_label": "Word Recall 3rd: Pole",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 5=Pole",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc030_w4_s6",
+        "source_label": "Word Recall 3rd: Ticket",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 6=Ticket",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc030_w4_s7",
+        "source_label": "Word Recall 3rd: Engine",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 7=Engine",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc030_w4_s8",
+        "source_label": "Word Recall 3rd: Grass",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 8=Grass",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc030_w4_s9",
+        "source_label": "Word Recall 3rd: Butter",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 9=Butter",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc012_s1",
+        "source_label": "Wordlist[9]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc012_s10",
+        "source_label": "Wordlist[7]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc012_s11",
+        "source_label": "None of the Above",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 11=Yes (None of the Above)",
+        "value_label_status": "official 2020 Codebook multi-response special-option checkbox; preserve separately from individual word responses; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc012_s12",
+        "source_label": "Refused to Recall",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 12=Yes (Refused to Recall)",
+        "value_label_status": "official 2020 Codebook multi-response special-option checkbox; preserve separately from individual word responses; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc012_s13",
+        "source_label": "Can’t Understand or Incaple of the Test",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 13=Yes (Unable to Understand or Complete the Test)",
+        "value_label_status": "official 2020 Codebook multi-response special-option checkbox; preserve separately from individual word responses; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc012_s2",
+        "source_label": "Wordlist[3]\\nMODULE D. HEALTH STATUS AND FUNCTIONING 217",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc012_s3",
+        "source_label": "Wordlist[1]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc012_s4",
+        "source_label": "Wordlist[2]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc012_s5",
+        "source_label": "Wordlist[10]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc012_s6",
+        "source_label": "Wordlist[4]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc012_s7",
+        "source_label": "Wordlist[5]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc012_s8",
+        "source_label": "Wordlist[6]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc012_s9",
+        "source_label": "Wordlist[8]\\n218 CHARLS 2020 CODEBOOK",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc013_s1",
+        "source_label": "Wordlist[5]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc013_s10",
+        "source_label": "Wordlist[7]\\n220 CHARLS 2020 CODEBOOK",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc013_s11",
+        "source_label": "None of the Above",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 11=Yes (None of the Above)",
+        "value_label_status": "official 2020 Codebook multi-response special-option checkbox; preserve separately from individual word responses; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc013_s12",
+        "source_label": "Refused to Recall",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 12=Yes (Refused to Recall)",
+        "value_label_status": "official 2020 Codebook multi-response special-option checkbox; preserve separately from individual word responses; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc013_s2",
+        "source_label": "Wordlist[2]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc013_s3",
+        "source_label": "Wordlist[9]\\nMODULE D. HEALTH STATUS AND FUNCTIONING 219",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc013_s4",
+        "source_label": "Wordlist[10]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc013_s5",
+        "source_label": "Wordlist[3]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc013_s6",
+        "source_label": "Wordlist[1]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc013_s7",
+        "source_label": "Wordlist[8]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc013_s8",
+        "source_label": "Wordlist[4]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc013_s9",
+        "source_label": "Wordlist[6]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc014_s1",
+        "source_label": "Wordlist[1]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc014_s10",
+        "source_label": "Wordlist[10]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc014_s11",
+        "source_label": "None of the Above",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 11=Yes (None of the Above)",
+        "value_label_status": "official 2020 Codebook multi-response special-option checkbox; preserve separately from individual word responses; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc014_s12",
+        "source_label": "Refused to Recall\\n222 CHARLS 2020 CODEBOOK",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 12=Yes (Refused to Recall)",
+        "value_label_status": "official 2020 Codebook multi-response special-option checkbox; preserve separately from individual word responses; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc014_s2",
+        "source_label": "Wordlist[2]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc014_s3",
+        "source_label": "Wordlist[3]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc014_s4",
+        "source_label": "Wordlist[4]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc014_s5",
+        "source_label": "Wordlist[5]\\nMODULE D. HEALTH STATUS AND FUNCTIONING 221",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc014_s6",
+        "source_label": "Wordlist[6]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc014_s7",
+        "source_label": "Wordlist[7]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc014_s8",
+        "source_label": "Wordlist[8]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc014_s9",
+        "source_label": "Wordlist[9]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 codebook binary word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "2011/2013/2015与2020为多词即时学习/回忆；2013有重复呈现轮次，2018有三轮词语回忆，2020有三种词表。字段级项目不等于总分；代码本未明确的未选择存储码保持未知。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample. Official CHARLS-HCAP User Guidance notes that Wave 4 ten-word memory content and administration differ from prior waves; three immediate-recall trials were used, elevating delayed recall scores. Raw Wave 4 memory scores must not be treated as directly comparable change; the guidance recommends equipercentile-equated scores for longitudinal memory analyses. The Data Alert also cautions that some CERAD words may be unfamiliar."
+  },
+  {
+    "concept_id": "cog_wordlist_repetition_count",
+    "label": "词表提示重复次数",
+    "domain": "认知测验过程",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "dc006_cnt",
+        "source_label": "Number of Times to Repeat The Word List",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；2013代码本确认DC006_CNT取值类别1/2/3，标签为词表重复次数；问卷允许受访者未回忆出词时重复提示，最多3次。它是受施测流程影响的辅助认知表现候选，不是标准即时回忆得分；初次呈现是否计入及与逐词回忆答案的关系仍需核实。",
+        "value_labels": "1=1 repeat; 2=2 repeats; 3=3 repeats",
+        "value_label_status": "2013 official codebook values for number of word-list repeats; codebook frequency counts are not shown; verify whether initial presentation is counted before deriving or pooling",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "2013代码本确认DC006_CNT取值类别1/2/3，标签为词表重复次数；问卷允许受访者未回忆出词时重复提示，最多3次。它是受施测流程影响的辅助认知表现候选，不是标准即时回忆得分；初次呈现是否计入及与逐词回忆答案的关系仍需核实。"
+  },
+  {
+    "concept_id": "cog_word_delayed",
+    "label": "词语延迟回忆",
+    "domain": "情景记忆",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "dc027s1",
+        "source_label": "Recall Words",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "1=Wordlist[1]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc027s10",
+        "source_label": "Recall Words",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "10=Wordlist[10]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc027s11",
+        "source_label": "Recall Words",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "11=None",
+        "value_label_status": "Official codebook none-of-the-above category; absence/unselected storage not inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc027s2",
+        "source_label": "Recall Words",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "2=Wordlist[2]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc027s3",
+        "source_label": "Recall Words",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "3=Wordlist[3]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc027s4",
+        "source_label": "Recall Words",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "4=Wordlist[4]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc027s5",
+        "source_label": "Recall Words",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "5=Wordlist[5]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc027s6",
+        "source_label": "Recall Words",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "6=Wordlist[6]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc027s7",
+        "source_label": "Recall Words",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "7=Wordlist[7]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc027s8",
+        "source_label": "Recall Words",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "8=Wordlist[8]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2011",
+        "code": "dc027s9",
+        "source_label": "Recall Words",
+        "module": "health_status_and_functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "9=Wordlist[9]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc027s1",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "1=Wordlist[1]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc027s10",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "10=Wordlist[10]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc027s11",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "11=None",
+        "value_label_status": "Official codebook none-of-the-above category; absence/unselected storage not inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc027s2",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "2=Wordlist[2]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc027s3",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "3=Wordlist[3]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc027s4",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "4=Wordlist[4]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc027s5",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "5=Wordlist[5]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc027s6",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "6=Wordlist[6]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc027s7",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "7=Wordlist[7]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc027s8",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "8=Wordlist[8]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2013",
+        "code": "dc027s9",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "9=Wordlist[9]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc027s1",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "1=Wordlist[1]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc027s10",
+        "source_label": "Recall Words\\nCONTENTS 693",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "10=Wordlist[10]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc027s11",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "11=None",
+        "value_label_status": "Official codebook none-of-the-above category; absence/unselected storage not inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc027s12",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "12=Refuse to Recall",
+        "value_label_status": "Official codebook refusal category; separate from no words recalled",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc027s2",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "2=Wordlist[2]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc027s3",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "3=Wordlist[3]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc027s4",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "4=Wordlist[4]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc027s5",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "5=Wordlist[5]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc027s6",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "6=Wordlist[6]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc027s7",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "7=Wordlist[7]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc027s8",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "8=Wordlist[8]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2015",
+        "code": "dc027s9",
+        "source_label": "Recall Words",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "9=Wordlist[9]",
+        "value_label_status": "Official codebook stored category is the word-list position; no unselected-value code inferred",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc047_w4_s1",
+        "source_label": "Delayed Recall: Shore",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 1=Shore",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc047_w4_s10",
+        "source_label": "Delayed Recall: Queen",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 10=Queen",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc047_w4_s11",
+        "source_label": "Delayed Recall: None",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 11=None",
+        "value_label_status": "2018 codebook none-of-the-above checkbox",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc047_w4_s12",
+        "source_label": "Delayed Recall: Refused to Recall",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 12=Refused to Recall",
+        "value_label_status": "2018 codebook refusal checkbox; not an incorrect answer",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc047_w4_s2",
+        "source_label": "Delayed Recall: Letter",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 2=Letter",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc047_w4_s3",
+        "source_label": "Delayed Recall: Arm",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 3=Arm",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc047_w4_s4",
+        "source_label": "Delayed Recall: Cabin",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 4=Cabin",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc047_w4_s5",
+        "source_label": "Delayed Recall: Pole",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 5=Pole",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc047_w4_s6",
+        "source_label": "Delayed Recall: Ticket",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 6=Ticket",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc047_w4_s7",
+        "source_label": "Delayed Recall: Engine",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 7=Engine",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc047_w4_s8",
+        "source_label": "Delayed Recall: Grass",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 8=Grass",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc047_w4_s9",
+        "source_label": "Delayed Recall: Butter",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 9=Butter",
+        "value_label_status": "2018 codebook item-specific binary storage; 0=no and item code=selected",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc028_s1",
+        "source_label": "Wordlist[1]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 official Codebook delayed-recall word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc028_s10",
+        "source_label": "Wordlist[10]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 official Codebook delayed-recall word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc028_s11",
+        "source_label": "None of the Above",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 11=Yes (None of the Above)",
+        "value_label_status": "2020 official Codebook delayed-recall none-of-the-above checkbox",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc028_s12",
+        "source_label": "Refused to Recall",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 12=Yes (Refused to Recall)",
+        "value_label_status": "2020 official Codebook delayed-recall refusal checkbox; separate from no words recalled",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc028_s2",
+        "source_label": "Wordlist[2]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 official Codebook delayed-recall word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc028_s3",
+        "source_label": "Wordlist[3]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 official Codebook delayed-recall word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc028_s4",
+        "source_label": "Wordlist[4]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 official Codebook delayed-recall word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc028_s5",
+        "source_label": "Wordlist[5]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 official Codebook delayed-recall word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc028_s6",
+        "source_label": "Wordlist[6]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 official Codebook delayed-recall word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc028_s7",
+        "source_label": "Wordlist[7]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 official Codebook delayed-recall word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc028_s8",
+        "source_label": "Wordlist[8]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 official Codebook delayed-recall word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2020",
+        "code": "dc028_s9",
+        "source_label": "Wordlist[9]",
+        "module": "Health_Status_and_Functioning",
+        "note": "问卷语义映射候选；延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。",
+        "value_labels": "0=No; 1=Yes",
+        "value_label_status": "2020 official Codebook delayed-recall word-item checkbox; exact word-list position is in source_label",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "延迟回忆题；2018为扩展十词表延迟回忆，2020 DC028为延迟回忆；2020 DC029访员观察不是认知结局。各波词表/编码结构需分别解释。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample. Official CHARLS-HCAP User Guidance notes that Wave 4 ten-word memory content and administration differ from prior waves; three immediate-recall trials were used, elevating delayed recall scores. Raw Wave 4 memory scores must not be treated as directly comparable change; the guidance recommends equipercentile-equated scores for longitudinal memory analyses. The Data Alert also cautions that some CERAD words may be unfamiliar."
+  },
+  {
+    "concept_id": "cog_word_recognition",
+    "label": "词语辨识记忆",
+    "domain": "情景记忆",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "dc048_w4",
+        "source_label": "Word Recognition: Church",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc049_w4",
+        "source_label": "Word Recognition: Coffee",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc050_w4",
+        "source_label": "Word Recognition: Butter",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc051_w4",
+        "source_label": "Word Recognition: Dollar",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc052_w4",
+        "source_label": "Word Recognition: Arm",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc053_w4",
+        "source_label": "Word Recognition: Shore",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc054_w4",
+        "source_label": "Word Recognition: Five",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc055_w4",
+        "source_label": "Word Recognition: Letter",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc056_w4",
+        "source_label": "Word Recognition: Hotel",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc057_w4",
+        "source_label": "Word Recognition: Mountain",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc058_w4",
+        "source_label": "Word Recognition: Queen",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc059_w4",
+        "source_label": "Word Recognition: Cabin",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc060_w4",
+        "source_label": "Word Recognition: Slipper",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc061_w4",
+        "source_label": "Word Recognition: Pole",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc062_w4",
+        "source_label": "Word Recognition: Village",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc063_w4",
+        "source_label": "Word Recognition: String",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc064_w4",
+        "source_label": "Word Recognition: Ticket",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc065_w4",
+        "source_label": "Word Recognition: Troops",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc066_w4",
+        "source_label": "Word Recognition: Grass",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc067_w4",
+        "source_label": "Word Recognition: Engine",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。",
+        "value_labels": "1=Yes; 5=No; 8=Don't Know",
+        "value_label_status": "official 2018 codebook response categories; WRE word-recognition item; no score derived",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "2018 WRE词语辨识任务的20个词卡条目；每项询问是否在先前词表中见过，保留逐词响应，不合成为未经验证的总分。题目适用路由依赖WR101_INTRO和DC028_W4s12；拒答/未进入任务不编码为辨识错误。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample."
+  },
+  {
+    "concept_id": "cog_word_recall_administration",
+    "label": "词语回忆施测情况",
+    "domain": "认知测验条件",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "dc028_w4_1",
+        "source_label": "Reasons for Rufused Word Recall Test",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018拒绝/无法完成的原因及词语回忆施测时的访员观察/中断/阅读困难；属于测验条件，不作回忆得分。",
+        "value_labels": "1=Refused; 3=Unable at old age; 4=Deaf; 5=Other",
+        "value_label_status": "2018 official Codebook lists categories 1, 3, 4, and 5 only; code 2 is not listed and completeness is unconfirmed; task nonresponse metadata, not a recall score",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc031_w4_s1",
+        "source_label": "Whether any of the Following Apply: Administered Verbally",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018拒绝/无法完成的原因及词语回忆施测时的访员观察/中断/阅读困难；属于测验条件，不作回忆得分。",
+        "value_labels": "0=No; 1=Administered verbally",
+        "value_label_status": "2018 official Codebook multi-response administration-condition indicator; frequencies omitted; measurement-condition metadata, not cognitive performance",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc031_w4_s2",
+        "source_label": "Whether any of the Following Apply: Interruption Occured during",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018拒绝/无法完成的原因及词语回忆施测时的访员观察/中断/阅读困难；属于测验条件，不作回忆得分。",
+        "value_labels": "0=No; 2=Interruption occurred during administration",
+        "value_label_status": "2018 official Codebook multi-response administration-condition indicator; frequencies omitted; measurement-condition metadata, not cognitive performance",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc031_w4_s3",
+        "source_label": "Whether any of the Following Apply: Respondent Had Difficulty Read-",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018拒绝/无法完成的原因及词语回忆施测时的访员观察/中断/阅读困难；属于测验条件，不作回忆得分。",
+        "value_labels": "0=No; 3=Respondent had difficulty reading the words",
+        "value_label_status": "2018 official Codebook multi-response administration-condition indicator; frequencies omitted; measurement-condition metadata, not cognitive performance",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc031_w4_s4",
+        "source_label": "Whether any of the Following Apply: None of the above",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018拒绝/无法完成的原因及词语回忆施测时的访员观察/中断/阅读困难；属于测验条件，不作回忆得分。",
+        "value_labels": "0=No; 4=None of the above",
+        "value_label_status": "2018 official Codebook multi-response administration-condition indicator; frequencies omitted; measurement-condition metadata, not cognitive performance",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "2018拒绝/无法完成的原因及词语回忆施测时的访员观察/中断/阅读困难；属于测验条件，不作回忆得分。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample."
+  },
+  {
+    "concept_id": "cog_animal_fluency",
+    "label": "动物命名流畅性",
+    "domain": "语言/执行功能",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "dc032_w4",
+        "source_label": "Total Number during 0-15 Seconds",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018限时60秒动物命名，按时间段记录总数与正确数；不要与词语回忆合并。"
+      },
+      {
+        "wave": "2018",
+        "code": "dc033_w4",
+        "source_label": "Correct Number during 0-15 Seconds",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018限时60秒动物命名，按时间段记录总数与正确数；不要与词语回忆合并。"
+      },
+      {
+        "wave": "2018",
+        "code": "dc034_w4",
+        "source_label": "Total Number during 16-30 Seconds",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018限时60秒动物命名，按时间段记录总数与正确数；不要与词语回忆合并。"
+      },
+      {
+        "wave": "2018",
+        "code": "dc035_w4",
+        "source_label": "Correct Number during 16-30 Seconds",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018限时60秒动物命名，按时间段记录总数与正确数；不要与词语回忆合并。"
+      },
+      {
+        "wave": "2018",
+        "code": "dc036_w4",
+        "source_label": "Total Number during 31-45 Seconds",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018限时60秒动物命名，按时间段记录总数与正确数；不要与词语回忆合并。"
+      },
+      {
+        "wave": "2018",
+        "code": "dc037_w4",
+        "source_label": "Correct Number during 31-45 Seconds",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018限时60秒动物命名，按时间段记录总数与正确数；不要与词语回忆合并。"
+      },
+      {
+        "wave": "2018",
+        "code": "dc038_w4",
+        "source_label": "Total Number during 46-60 Seconds",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018限时60秒动物命名，按时间段记录总数与正确数；不要与词语回忆合并。"
+      },
+      {
+        "wave": "2018",
+        "code": "dc039_w4",
+        "source_label": "Correct Number during 46-60 Seconds",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018限时60秒动物命名，按时间段记录总数与正确数；不要与词语回忆合并。"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "2018限时60秒动物命名，按时间段记录总数与正确数；不要与词语回忆合并。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample."
+  },
+  {
+    "concept_id": "cog_csid_items",
+    "label": "简明社区痴呆筛查认知条目",
+    "domain": "认知筛查",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "dc042_w4",
+        "source_label": "Elbow Correct",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 CSI-D受访者认知部分的四项单题表现；按原题正确/错误/不能回答分别处理，不合成为量表分。",
+        "value_labels": "1=Correct; 5=Error; 97=Cannot Answer",
+        "value_label_status": "2018 official Codebook response categories; preserve cannot-answer separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc043_w4",
+        "source_label": "Hammer Correct",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 CSI-D受访者认知部分的四项单题表现；按原题正确/错误/不能回答分别处理，不合成为量表分。",
+        "value_labels": "1=Correct; 5=Error; 97=Cannot Answer",
+        "value_label_status": "2018 official Codebook response categories; preserve cannot-answer separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc044_w4",
+        "source_label": "Store Correct",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 CSI-D受访者认知部分的四项单题表现；按原题正确/错误/不能回答分别处理，不合成为量表分。",
+        "value_labels": "1=Clearly indicate the route; 2=Address of market; 3=Name of market; 4=A vague answer; 5=Don't Know; 97=Cannot Answer",
+        "value_label_status": "2018 official Codebook response categories; preserve distinct answer levels and cannot-answer; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc045_w4",
+        "source_label": "Point Correct",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 CSI-D受访者认知部分的四项单题表现；按原题正确/错误/不能回答分别处理，不合成为量表分。",
+        "value_labels": "1=Point to window and then door; 2=Point to window only (no door available); 3=Point to door only (no window available); 4=Not Applicable; 5=Incorrect action; 97=Cannot Answer",
+        "value_label_status": "2018 official Codebook response categories; preserve not-applicable and cannot-answer separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "2018 CSI-D受访者认知部分的四项单题表现；按原题正确/错误/不能回答分别处理，不合成为量表分。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample."
+  },
+  {
+    "concept_id": "cog_object_learning",
+    "label": "三物品学习/注册",
+    "domain": "情景记忆",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "dc013_w4_1_s1",
+        "source_label": "Repeated Time 1: Ball",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。 Official CHARLS HCAP Data Alert says the Mandarin-paraphrased three-object learning list may disadvantage non-Mandarin speakers. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "0=No; 1=Ball",
+        "value_label_status": "2018 official Codebook multi-response item field; checkbox-specific No is not equivalent to task failure",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_1_s2",
+        "source_label": "Repeated Time 1: Flag",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。 Official CHARLS HCAP Data Alert says the Mandarin-paraphrased three-object learning list may disadvantage non-Mandarin speakers. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "0=No; 2=Flag",
+        "value_label_status": "2018 official Codebook multi-response item field; checkbox-specific No is not equivalent to task failure",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_1_s3",
+        "source_label": "Repeated Time 1: Tree",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。 Official CHARLS HCAP Data Alert says the Mandarin-paraphrased three-object learning list may disadvantage non-Mandarin speakers. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "0=No; 3=Tree",
+        "value_label_status": "2018 official Codebook multi-response item field; checkbox-specific No is not equivalent to task failure",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_1_s4",
+        "source_label": "Repeated Time 1: None",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。 Official CHARLS HCAP Data Alert says the Mandarin-paraphrased three-object learning list may disadvantage non-Mandarin speakers. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "0=No; 4=None",
+        "value_label_status": "2018 official Codebook multi-response none-of-the-above field",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_1_s97",
+        "source_label": "Repeated Time 1: Not Assessed",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。 Official CHARLS HCAP Data Alert says the Mandarin-paraphrased three-object learning list may disadvantage non-Mandarin speakers. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "0=No; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook separate assessment-status field; not an incorrect recall response",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_2_s1",
+        "source_label": "Repeated Time 2: Ball",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 1=Ball",
+        "value_label_status": "2018 official Codebook multi-response item field; checkbox-specific No is not equivalent to task failure",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_2_s2",
+        "source_label": "Repeated Time 2: Flag",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 2=Flag",
+        "value_label_status": "2018 official Codebook multi-response item field; checkbox-specific No is not equivalent to task failure",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_2_s3",
+        "source_label": "Repeated Time 2: Tree",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 3=Tree",
+        "value_label_status": "2018 official Codebook multi-response item field; checkbox-specific No is not equivalent to task failure",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_2_s4",
+        "source_label": "Repeated Time 2: None",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 4=None",
+        "value_label_status": "2018 official Codebook multi-response none-of-the-above field",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_2_s97",
+        "source_label": "Repeated Time 2: Not Assessed",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook separate assessment-status field; not an incorrect recall response",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_3_s1",
+        "source_label": "Repeated Time 3: Ball",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 1=Ball",
+        "value_label_status": "2018 official Codebook multi-response item field; checkbox-specific No is not equivalent to task failure",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_3_s2",
+        "source_label": "Repeated Time 3: Flag",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 2=Flag",
+        "value_label_status": "2018 official Codebook multi-response item field; checkbox-specific No is not equivalent to task failure",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_3_s3",
+        "source_label": "Repeated Time 3: Tree",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 3=Tree",
+        "value_label_status": "2018 official Codebook multi-response item field; checkbox-specific No is not equivalent to task failure",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_3_s4",
+        "source_label": "Repeated Time 3: None",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 4=None",
+        "value_label_status": "2018 official Codebook multi-response none-of-the-above field",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_3_s97",
+        "source_label": "Repeated Time 3: Not Assessed",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook separate assessment-status field; not an incorrect recall response",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_4_s1",
+        "source_label": "Repeated Time 4: Ball",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 1=Ball",
+        "value_label_status": "2018 official Codebook multi-response item field; checkbox-specific No is not equivalent to task failure",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_4_s2",
+        "source_label": "Repeated Time 4: Flag",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 2=Flag",
+        "value_label_status": "2018 official Codebook multi-response item field; checkbox-specific No is not equivalent to task failure",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_4_s3",
+        "source_label": "Repeated Time 4: Tree",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 3=Tree",
+        "value_label_status": "2018 official Codebook multi-response item field; checkbox-specific No is not equivalent to task failure",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_4_s4",
+        "source_label": "Repeated Time 4: None",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 4=None",
+        "value_label_status": "2018 official Codebook multi-response none-of-the-above field",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_4_s97",
+        "source_label": "Repeated Time 4: Not Assessed",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook separate assessment-status field; not an incorrect recall response",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_5_s1",
+        "source_label": "Repeated Time 5: Ball",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 1=Ball",
+        "value_label_status": "2018 official Codebook multi-response item field; checkbox-specific No is not equivalent to task failure",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_5_s2",
+        "source_label": "Repeated Time 5: Flag",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 2=Flag",
+        "value_label_status": "2018 official Codebook multi-response item field; checkbox-specific No is not equivalent to task failure",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_5_s3",
+        "source_label": "Repeated Time 5: Tree",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 3=Tree",
+        "value_label_status": "2018 official Codebook multi-response item field; checkbox-specific No is not equivalent to task failure",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_5_s4",
+        "source_label": "Repeated Time 5: None",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 4=None",
+        "value_label_status": "2018 official Codebook multi-response none-of-the-above field",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013_w4_5_s97",
+        "source_label": "Repeated Time 5: Not Assessed",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。",
+        "value_labels": "0=No; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook separate assessment-status field; not an incorrect recall response",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "2018扩展模块三物品重复学习记录，存在最多五轮及提前停止路由；勿与10词学习字段直接等同。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample."
+  },
+  {
+    "concept_id": "cog_object_delayed",
+    "label": "三物品延迟回忆",
+    "domain": "情景记忆",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "dc015_w4_s1",
+        "source_label": "Delayed Recall: Ball Flag Tree",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018三物品延迟回忆，任务不同于其他波的10词延迟回忆。 Official CHARLS HCAP Data Alert says the Mandarin-paraphrased three-object delayed-recall list may disadvantage non-Mandarin speakers. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "0=No; 1=Ball",
+        "value_label_status": "2018 official Codebook multi-response delayed-recall item field; preserve separate item coding",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc015_w4_s2",
+        "source_label": "Delayed Recall: Ball Flag Tree",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018三物品延迟回忆，任务不同于其他波的10词延迟回忆。 Official CHARLS HCAP Data Alert says the Mandarin-paraphrased three-object delayed-recall list may disadvantage non-Mandarin speakers. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "0=No; 2=Flag",
+        "value_label_status": "2018 official Codebook multi-response delayed-recall item field; preserve separate item coding",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc015_w4_s3",
+        "source_label": "Delayed Recall: Ball Flag Tree",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018三物品延迟回忆，任务不同于其他波的10词延迟回忆。 Official CHARLS HCAP Data Alert says the Mandarin-paraphrased three-object delayed-recall list may disadvantage non-Mandarin speakers. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "0=No; 3=Tree",
+        "value_label_status": "2018 official Codebook multi-response delayed-recall item field; preserve separate item coding",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc015_w4_s4",
+        "source_label": "Delayed Recall: Ball Flag Tree",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018三物品延迟回忆，任务不同于其他波的10词延迟回忆。 Official CHARLS HCAP Data Alert says the Mandarin-paraphrased three-object delayed-recall list may disadvantage non-Mandarin speakers. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "0=No; 4=None",
+        "value_label_status": "2018 official Codebook none-of-the-above checkbox",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc015_w4_s97",
+        "source_label": "Delayed Recall: Ball Flag Tree",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018三物品延迟回忆，任务不同于其他波的10词延迟回忆。 Official CHARLS HCAP Data Alert says the Mandarin-paraphrased three-object delayed-recall list may disadvantage non-Mandarin speakers. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "0=No; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook separate assessment-status field; not an incorrect recall response",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "2018三物品延迟回忆，任务不同于其他波的10词延迟回忆。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample."
+  },
+  {
+    "concept_id": "cog_naming",
+    "label": "物品命名",
+    "domain": "语言能力",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "dc016_w4",
+        "source_label": "Watch Correct",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展认知任务：手表和铅笔命名。 Official CHARLS HCAP Data Alert identifies watch naming as potentially affected by vision. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "1=Correct; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook naming-task categories; preserve not-assessed separately",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc017_w4",
+        "source_label": "Pencil Correct",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展认知任务：手表和铅笔命名。 Official CHARLS HCAP Data Alert identifies pencil naming as potentially affected by vision. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "1=Correct; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook naming-task categories; preserve not-assessed separately",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "2018扩展认知任务：手表和铅笔命名。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample."
+  },
+  {
+    "concept_id": "cog_repetition",
+    "label": "句子重复",
+    "domain": "语言能力",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "dc018_w4",
+        "source_label": "Repeat Correct",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展认知任务；按原题正确性选项核验。 Official CHARLS HCAP Data Alert says phrase repetition may disadvantage non-Mandarin speakers. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "1=Correct; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook response categories; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "2018扩展认知任务；按原题正确性选项核验。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample."
+  },
+  {
+    "concept_id": "cog_reading_comprehension",
+    "label": "阅读理解/执行指令",
+    "domain": "语言与执行功能",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "dc019_w4",
+        "source_label": "Read Correct",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展认知任务的阅读及多步骤指令题，保留单题级字段。 Official CHARLS HCAP Data Alert identifies this read-and-follow instruction as potentially affected by both literacy and vision. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "1=Correct, respondent closed eyes; 2=Correct after instruction was read aloud; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook response categories; preserve assisted-correct and not-assessed separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc020_w4",
+        "source_label": "Hand Correct",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展认知任务的阅读及多步骤指令题，保留单题级字段。",
+        "value_labels": "1=Correct; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook response categories; preserve not-assessed separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc021_w4",
+        "source_label": "Folds Correct",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展认知任务的阅读及多步骤指令题，保留单题级字段。",
+        "value_labels": "1=Correct; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook response categories; preserve not-assessed separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc022_w4",
+        "source_label": "Leg Correct",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展认知任务的阅读及多步骤指令题，保留单题级字段。",
+        "value_labels": "1=Correct; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook response categories; preserve not-assessed separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "2018扩展认知任务的阅读及多步骤指令题，保留单题级字段。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample."
+  },
+  {
+    "concept_id": "cog_sentence_writing",
+    "label": "书写句子",
+    "domain": "语言/执行功能",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "dc023_w4",
+        "source_label": "Sentence Correct",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018扩展认知模块独有。 Official CHARLS HCAP Data Alert identifies sentence writing as potentially affected by literacy. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "1=Correct; 5=Error; 97=Not Assessed",
+        "value_label_status": "2018 official Codebook response categories; preserve not-assessed separately; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "2018扩展认知模块独有。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample."
+  },
+  {
+    "concept_id": "cog_semantic_knowledge_item",
+    "label": "语义知识单题：仙人掌命名",
+    "domain": "一般知识/认知筛查",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "dc026_w4",
+        "source_label": "Cactus Correct",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 HRS-TICS仙人掌命名单题。官方Data Alert提示其正确性可能受文化熟悉度和教育影响；dc026_w4_revised是Codebook中的替代评分字段，具体修订规则需官方发行定义，不能当作独立认知任务或与原始字段同时计入。 Official CHARLS HCAP Data Alert cautions that the cactus naming item may reflect cultural familiarity and education, not cognition alone. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "1=Correct; 5=Error; 8=Don't Know; 97=Refused; 99=Other",
+        "value_label_status": "2018 Codebook categories; cultural familiarity/education warning applies; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      },
+      {
+        "wave": "2018",
+        "code": "dc026_w4_revised",
+        "source_label": "Cactus Correct: Revised",
+        "module": "Cognition",
+        "note": "问卷语义映射候选；2018 HRS-TICS仙人掌命名单题。官方Data Alert提示其正确性可能受文化熟悉度和教育影响；dc026_w4_revised是Codebook中的替代评分字段，具体修订规则需官方发行定义，不能当作独立认知任务或与原始字段同时计入。 Official CHARLS HCAP Data Alert's cultural-familiarity caution applies to this alternate scoring field as well; its revision rule remains unconfirmed. (2023 Data Alert; 2024 User Guidance).",
+        "value_labels": "1=Correct; 5=Error; 8=Don't Know; 97=Refused",
+        "value_label_status": "2018 Codebook alternate revised scoring field; exact revision rule unconfirmed; frequencies omitted",
+        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md"
+      }
+    ],
+    "status": "问卷题意候选映射；未派生分数",
+    "caveat": "2018 HRS-TICS仙人掌命名单题。官方Data Alert提示其正确性可能受文化熟悉度和教育影响；dc026_w4_revised是Codebook中的替代评分字段，具体修订规则需官方发行定义，不能当作独立认知任务或与原始字段同时计入。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample."
+  }
+]

@@ -1,0 +1,582 @@
+[
+  {
+    "concept_id": "mood_bothered",
+    "label": "因小事烦恼",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "dc009",
+        "source_label": "Bothered by Things",
+        "module": "health_status_and_functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "dc009",
+        "source_label": "Bothered by Things",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "dc009",
+        "source_label": "Bothered by Things",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "dc009",
+        "source_label": "Bothered by Things",
+        "module": "Cognition",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 8=Don’t know; 9=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "dc016",
+        "source_label": "Bothered by Things",
+        "module": "Health_Status_and_Functioning",
+        "note": "2020条目编码改为dc016–dc025序列；不可套用2011–2018题号。条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 997=Don’t know; 999=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "独立条目候选，不是已计分量表",
+    "caveat": "不能直接当作一个总分；响应类别、计分方向、时间窗、缺失题处理及跨波可比性需逐波审定。"
+  },
+  {
+    "concept_id": "mood_concentration",
+    "label": "难以集中注意",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "dc010",
+        "source_label": "Had Trouble Keeping Mind",
+        "module": "health_status_and_functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "dc010",
+        "source_label": "Had Trouble Keeping Mind",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "dc010",
+        "source_label": "Had Trouble Keeping Mind",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "dc010",
+        "source_label": "Had Trouble Keeping Mind",
+        "module": "Cognition",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 8=Don’t know; 9=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "dc017",
+        "source_label": "Had Trouble Keeping Mind",
+        "module": "Health_Status_and_Functioning",
+        "note": "2020条目编码改为dc016–dc025序列；不可套用2011–2018题号。条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 997=Don’t know; 999=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "独立条目候选，不是已计分量表",
+    "caveat": "不能直接当作一个总分；响应类别、计分方向、时间窗、缺失题处理及跨波可比性需逐波审定。"
+  },
+  {
+    "concept_id": "mood_depressed",
+    "label": "情绪低落",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "dc011",
+        "source_label": "Felt Depressed",
+        "module": "health_status_and_functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "dc011",
+        "source_label": "Felt Depressed",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "dc011",
+        "source_label": "Felt Depressed",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "dc011",
+        "source_label": "Felt Depressed",
+        "module": "Cognition",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 8=Don’t know; 9=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "dc018",
+        "source_label": "Felt Depressed",
+        "module": "Health_Status_and_Functioning",
+        "note": "2020条目编码改为dc016–dc025序列；不可套用2011–2018题号。条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 997=Don’t know; 999=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "独立条目候选，不是已计分量表",
+    "caveat": "不能直接当作一个总分；响应类别、计分方向、时间窗、缺失题处理及跨波可比性需逐波审定。"
+  },
+  {
+    "concept_id": "mood_effort",
+    "label": "做事费力",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "dc012",
+        "source_label": "Felt Everything I Did Was An Effort",
+        "module": "health_status_and_functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "dc012",
+        "source_label": "I Felt Everything I Did Was An Effort.",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "dc012",
+        "source_label": "I Felt Everything I Did Was An Effort.",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "dc012",
+        "source_label": "I Felt Everything I Did Was An Effort",
+        "module": "Cognition",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 8=Don’t know; 9=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "dc019",
+        "source_label": "I Felt Everything I Did Was An Effort",
+        "module": "Health_Status_and_Functioning",
+        "note": "2020条目编码改为dc016–dc025序列；不可套用2011–2018题号。条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 997=Don’t know; 999=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "独立条目候选，不是已计分量表",
+    "caveat": "不能直接当作一个总分；响应类别、计分方向、时间窗、缺失题处理及跨波可比性需逐波审定。"
+  },
+  {
+    "concept_id": "mood_hopeful",
+    "label": "对未来有希望",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "dc013",
+        "source_label": "Felt Hopeful About the Future",
+        "module": "health_status_and_functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "dc013",
+        "source_label": "I Felt Hopeful about The Future.",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "dc013",
+        "source_label": "I Felt Hopeful about The Future.",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "dc013",
+        "source_label": "I Felt Hopeful about the Future",
+        "module": "Cognition",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 8=Don’t know; 9=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "dc020",
+        "source_label": "I Felt Hopeful about the Future",
+        "module": "Health_Status_and_Functioning",
+        "note": "2020条目编码改为dc016–dc025序列；不可套用2011–2018题号。条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 997=Don’t know; 999=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "独立条目候选，不是已计分量表",
+    "caveat": "不能直接当作一个总分；响应类别、计分方向、时间窗、缺失题处理及跨波可比性需逐波审定。"
+  },
+  {
+    "concept_id": "mood_fearful",
+    "label": "感到害怕",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "dc014",
+        "source_label": "Felt fearful",
+        "module": "health_status_and_functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "dc014",
+        "source_label": "I Felt Fearful.",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "dc014",
+        "source_label": "I Felt Fearful.",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "dc014",
+        "source_label": "I Felt Fearful",
+        "module": "Cognition",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 8=Don’t know; 9=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "dc021",
+        "source_label": "I Felt Fearful",
+        "module": "Health_Status_and_Functioning",
+        "note": "2020条目编码改为dc016–dc025序列；不可套用2011–2018题号。条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 997=Don’t know; 999=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "独立条目候选，不是已计分量表",
+    "caveat": "不能直接当作一个总分；响应类别、计分方向、时间窗、缺失题处理及跨波可比性需逐波审定。"
+  },
+  {
+    "concept_id": "mood_restless_sleep",
+    "label": "睡眠不安稳",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "dc015",
+        "source_label": "Sleep Was Restless",
+        "module": "health_status_and_functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "dc015",
+        "source_label": "My Sleep Was Restless.",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "dc015",
+        "source_label": "My Sleep Was Restless.",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "dc015",
+        "source_label": "My Sleep Was Restless",
+        "module": "Cognition",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 8=Don’t know; 9=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "dc022",
+        "source_label": "My Sleep Was Restless",
+        "module": "Health_Status_and_Functioning",
+        "note": "2020条目编码改为dc016–dc025序列；不可套用2011–2018题号。条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 997=Don’t know; 999=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "独立条目候选，不是已计分量表",
+    "caveat": "不能直接当作一个总分；响应类别、计分方向、时间窗、缺失题处理及跨波可比性需逐波审定。"
+  },
+  {
+    "concept_id": "mood_happy",
+    "label": "感到快乐",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "dc016",
+        "source_label": "Happy",
+        "module": "health_status_and_functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "dc016",
+        "source_label": "I Was Happy.",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "dc016",
+        "source_label": "I Was Happy.",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "dc016",
+        "source_label": "I Was Happy",
+        "module": "Cognition",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 8=Don’t know; 9=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "dc023",
+        "source_label": "I Was Happy",
+        "module": "Health_Status_and_Functioning",
+        "note": "2020条目编码改为dc016–dc025序列；不可套用2011–2018题号。条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 997=Don’t know; 999=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "独立条目候选，不是已计分量表",
+    "caveat": "不能直接当作一个总分；响应类别、计分方向、时间窗、缺失题处理及跨波可比性需逐波审定。"
+  },
+  {
+    "concept_id": "mood_lonely",
+    "label": "感到孤独",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "dc017",
+        "source_label": "Felt Lonely",
+        "module": "health_status_and_functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "dc017",
+        "source_label": "I Felt Lonely.",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "dc017",
+        "source_label": "I Felt Lonely.",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "dc017",
+        "source_label": "I Felt Lonely",
+        "module": "Cognition",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 8=Don’t know; 9=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "dc024",
+        "source_label": "I Felt Lonely",
+        "module": "Health_Status_and_Functioning",
+        "note": "2020条目编码改为dc016–dc025序列；不可套用2011–2018题号。条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 997=Don’t know; 999=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "独立条目候选，不是已计分量表",
+    "caveat": "不能直接当作一个总分；响应类别、计分方向、时间窗、缺失题处理及跨波可比性需逐波审定。"
+  },
+  {
+    "concept_id": "mood_could_not_get_going",
+    "label": "提不起劲",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "dc018",
+        "source_label": "Could Not Get Going",
+        "module": "health_status_and_functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "dc018",
+        "source_label": "I Could Not Get",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "dc018",
+        "source_label": "I Could Not Get",
+        "module": "Health_Status_and_Functioning",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most or all of the time (5–7 days)",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "dc018",
+        "source_label": "I Could Not Get on",
+        "module": "Cognition",
+        "note": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 8=Don’t know; 9=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "dc025",
+        "source_label": "I Could Not Get on",
+        "module": "Health_Status_and_Functioning",
+        "note": "2020条目编码改为dc016–dc025序列；不可套用2011–2018题号。条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。",
+        "value_labels": "1=Rarely or none (<1 day); 2=Some or a little (1–2 days); 3=Occasionally or a moderate amount (3–4 days); 4=Most of the time (5–7 days); 997=Don’t know; 999=Refused",
+        "value_label_status": "official codebook item response labels reviewed; no scale score derived",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "独立条目候选，不是已计分量表",
+    "caveat": "不能直接当作一个总分；响应类别、计分方向、时间窗、缺失题处理及跨波可比性需逐波审定。"
+  }
+]

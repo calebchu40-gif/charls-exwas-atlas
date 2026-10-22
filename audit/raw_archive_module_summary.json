@@ -1,0 +1,37 @@
+[
+  {
+    "wave": "2011",
+    "archive": "C:\\Users\\yawch\\OneDrive\\Desktop\\交互平台构建\\charls2011~2020清洗好+原版数据\\原始数据+问卷2011~2020\\2011\\household_and_community_questionnaire_data.rar",
+    "sha1": "5BB36F9F37A7EA7CA9E93BA4D083D1306C280105",
+    "integrity": "ARCHIVE_READ_PASS",
+    "dta_modules": 15
+  },
+  {
+    "wave": "2013",
+    "archive": "C:\\Users\\yawch\\OneDrive\\Desktop\\交互平台构建\\charls2011~2020清洗好+原版数据\\原始数据+问卷2011~2020\\2013\\CHARLS2013_Dataset.zip",
+    "sha1": "7517D597D2EB5ABFA91D58F3CD03AA9845DEFC85",
+    "integrity": "PASS",
+    "dta_modules": 18
+  },
+  {
+    "wave": "2015",
+    "archive": "C:\\Users\\yawch\\OneDrive\\Desktop\\交互平台构建\\charls2011~2020清洗好+原版数据\\原始数据+问卷2011~2020\\2015\\CHARLS2015r.zip",
+    "sha1": "47AAB04178A6895CE687BEB2F74286215E8F6B33",
+    "integrity": "PASS",
+    "dta_modules": 17
+  },
+  {
+    "wave": "2018",
+    "archive": "C:\\Users\\yawch\\OneDrive\\Desktop\\交互平台构建\\charls2011~2020清洗好+原版数据\\原始数据+问卷2011~2020\\2018\\CHARLS2018r.zip",
+    "sha1": "42F3E6BF26CEA8072D9FA9F6050F413556D20A69",
+    "integrity": "PASS",
+    "dta_modules": 14
+  },
+  {
+    "wave": "2020",
+    "archive": "C:\\Users\\yawch\\OneDrive\\Desktop\\交互平台构建\\charls2011~2020清洗好+原版数据\\原始数据+问卷2011~2020\\2020\\CHARLS2020r.zip",
+    "sha1": "FD73EB699CBACBFAAFF1C55BCDBA11B23EAA0736",
+    "integrity": "PASS",
+    "dta_modules": 10
+  }
+]

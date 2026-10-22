@@ -1,0 +1,226 @@
+﻿epcf,category,subcategory,source_field_wave_rows,distinct_source_codes,wave_count
+c,covariate candidate,birth-date source and age derivation metadata,5,5,2
+c,covariate candidate,demographic / design / socioeconomic adjustment candidate,424,270,5
+c,measurement metadata,2011 proxy interview and Section E assistance context,3,3,1
+c,measurement metadata,2018 employer pension contribution amount/share unit selector,1,1,1
+c,measurement metadata,2018 respondent pension contribution amount/share unit selector,1,1,1
+c,measurement metadata,2020 CAPI-derived work-day formula under review,1,1,1
+c,measurement metadata,2020 current-employer start-date verification flag,1,1,1
+c,measurement metadata,2020 pandemic work-module selection flag,1,1,1
+c,measurement metadata,CAPI-derived survey-home linkage flag,1,1,1
+c,measurement metadata,age/calendar-year response-format selector,11,3,4
+c,measurement metadata,blood pressure recent pretest conditions,3,1,3
+c,measurement metadata,chair setup for repeated chair-stand test,4,2,3
+c,measurement metadata,checklist none-option coding,3,1,3
+c,measurement metadata,cognitive word-list form and stimulus metadata,41,28,4
+c,measurement metadata,cognitive-test administration and nonresponse metadata,10,10,1
+c,measurement metadata,cognitive-test instrument-use metadata,5,2,5
+c,measurement metadata,commercial-pension expected claim timing format selector,1,1,1
+c,measurement metadata,current home market-value response unit selector,2,1,2
+c,measurement metadata,current residence total-price versus unit-price selector by slot,16,8,2
+c,measurement metadata,defined-contribution pension account balance last-check date component,6,2,3
+c,measurement metadata,detailed hukou/residential geography components,16,14,2
+c,measurement metadata,detailed respondent residential address fields,3,3,2
+c,measurement metadata,early-exit pension reduction amount/percentage selector,1,1,1
+c,measurement metadata,expected formal-retirement benefit amount/percentage selector,1,1,1
+c,measurement metadata,expected pension benefit amount format selector,2,2,1
+c,measurement metadata,expected pension benefit amount-unit selector,3,1,3
+c,measurement metadata,expected pension benefit unit/form selector,6,5,3
+c,measurement metadata,expected pension receipt age-versus-years response selector,5,3,3
+c,measurement metadata,expected pension receipt time format selector,7,4,3
+c,measurement metadata,expected retirement pension benefit format selector,1,1,1
+c,measurement metadata,expected supplementary pension benefit timing response selector,1,1,1
+c,measurement metadata,firm supplementary pension expected-benefit form selector,2,1,2
+c,measurement metadata,household debt unfolding-bracket response metadata,8,8,2
+c,measurement metadata,household financial respondent source,2,2,2
+c,measurement metadata,household income response-format selectors,3,1,3
+c,measurement metadata,household income/expenditure respondent source,1,1,1
+c,measurement metadata,housing rental amount applicability/response-format selector,5,2,3
+c,measurement metadata,hypothetical health anchoring vignettes,12,12,1
+c,measurement metadata,inactive fixed-capital legacy/format fields,2,2,1
+c,measurement metadata,inactive household lending and debt legacy fields,4,4,1
+c,measurement metadata,inactive legacy questionnaire slots with no observations,49,49,2
+c,measurement metadata,individual transfer-income amount unit selector,3,3,1
+c,measurement metadata,interview assistance / proxy response context,2,2,1
+c,measurement metadata,invalid extra disability slot with no Yes category,1,1,1
+c,measurement metadata,knee-height measurement agreement and instruction comprehension,1,1,1
+c,measurement metadata,land-requisition pension expected-benefit amount-format selector,2,1,2
+c,measurement metadata,life-course timing unit selectors,2,1,2
+c,measurement metadata,life-insurance contribution payment-period selector,2,1,2
+c,measurement metadata,life-insurance expected claim timing format selector,1,1,1
+c,measurement metadata,life-insurance expected-benefit amount-format selector,2,1,2
+c,measurement metadata,life-insurance other-type open text,1,1,1
+c,measurement metadata,linked child-roster selection identifiers,50,39,3
+c,measurement metadata,other-pension expected claim timing format selector,1,1,1
+c,measurement metadata,pension amount response-format selector or unfolding-bracket bound,17,17,1
+c,measurement metadata,pension child-roster payer selection slots,6,6,1
+c,measurement metadata,personal wage deduction scope and response-unit selectors,15,6,3
+c,measurement metadata,personal wage-deduction response unit and applicability selector,1,1,1
+c,measurement metadata,prior-interview response-history routing flags,46,35,4
+c,measurement metadata,prior-wave demographic preload and correction route,5,5,2
+c,measurement metadata,prior-wave demographic record verification and response routing,8,4,3
+c,measurement metadata,prior-wave diagnosis-time answer-history flags,14,14,1
+c,measurement metadata,province-level pension-source work-unit location metadata,1,1,1
+c,measurement metadata,questionnaire inserted activity-type labels,3,3,1
+c,measurement metadata,resident-pension supplementary repayment currency selector,1,1,1
+c,measurement metadata,retirement/receding work-unit geographic linkage components,5,5,1
+c,measurement metadata,rural pension contribution frequency selector,1,1,1
+c,measurement metadata,social-pension expected-benefit form selector,6,3,2
+c,measurement metadata,social-pension supplementary repayment currency selector,12,12,1
+c,measurement metadata,stroke recurrence timing response format,3,1,3
+c,measurement metadata,unlisted chronic-disease index placeholder,5,5,1
+c,measurement metadata,unresolved questionnaire and Codebook field identity conflict,1,1,1
+c,measurement metadata,unresolved release-field identity/data-type discrepancy,1,1,1
+c,measurement metadata,unstructured other-specify response text,7,7,2
+c,measurement metadata,unsupported prior-wave disease-awareness slots,15,15,1
+e,behavior,alcohol use,73,24,5
+e,behavior,physical activity,84,36,5
+e,behavior,sleep,25,16,5
+e,behavior,smoking and tobacco,61,32,5
+e,community context,"environment, infrastructure, and services",187,187,1
+e,early-life and family socioeconomic context,parent marital and ethnic context,3,3,2
+e,environmental perception,self-reported air-quality satisfaction,1,1,1
+e,family and intergenerational context,sibling record context,6,3,1
+e,food and household environment,"diet, food security, housing and utilities",160,58,5
+e,housing and built environment,dwelling conditions and household property,477,440,4
+e,housing and built environment,residential setting,3,3,2
+e,social determinants,adult education and lifelong learning,13,12,3
+e,social determinants,annual wage/salary amount reported for household-member roster slots,22,12,2
+e,social determinants,early-life family socioeconomic context,4,2,2
+e,social determinants,education and social position,87,52,5
+e,social determinants,"employment, occupation, and work organization",602,320,5
+e,social determinants,formal schooling history and timing,17,10,4
+e,social determinants,household expenditure and material resources,53,31,5
+e,social determinants,"household income, financial strain, and COVID-period coping",18,18,1
+e,social determinants,hukou history and transitions,57,32,4
+e,social determinants,"income, wealth, and material resources",544,302,5
+e,social determinants,individual income and wage resources,130,63,5
+e,social determinants,marital history and marriage transfers,6,3,3
+e,social determinants,marital status and partner context,11,5,5
+e,social determinants,monthly wage/salary amount reported for household-member roster slots,22,12,2
+e,social determinants,"personal income, wage, and deductions",2,2,1
+e,social determinants,residential and mobility context,1,1,1
+e,social determinants,residential settlement context,3,2,3
+e,social determinants,retirement and employment-transition history,262,117,4
+e,social determinants,social relations and care,292,135,5
+e,social determinants,vocational and technical training,9,7,2
+e,social protection,2011 pension source field verified against correct baseline questionnaire,4,4,1
+e,social protection,2015 plan-specific pension participation context,6,6,1
+e,social protection,2015 residents-pension transfer-from-firm status,2,2,1
+e,social protection,2015 source and duration of firm-pension transfer,2,2,1
+e,social protection,coarse geographic scope of pension participation or source unit,7,7,1
+e,social protection,commercial pension premium start-date component,2,2,1
+e,social protection,current pension claim-age eligibility; questionnaire/Codebook title conflict,3,3,1
+e,social protection,enrolled residents-pension transfer source,1,1,1
+e,social protection,enrolled residents-pension transfer status,1,1,1
+e,social protection,expected formal-plan lump-sum benefit,1,1,1
+e,social protection,expected formal-plan monthly benefit,1,1,1
+e,social protection,formal-plan participation location; coarse plan-loop category,4,4,1
+e,social protection,formal-plan receipt location; coarse plan-loop category,4,4,1
+e,social protection,historical pension eligibility and child-support route at scheme rollout,6,6,1
+e,social protection,household social assistance and transfers,3,2,3
+e,social protection,individual transfer income source and amount,95,75,5
+e,social protection,institution-pension receipt start-date component,2,2,1
+e,social protection,life-insurance payout amount already received,1,1,1
+e,social protection,old-age subsidy delivery and card/voucher use,10,10,1
+e,social protection,pension amount interval-bound field; unresolved response sequence,6,6,1
+e,social protection,"pension participation, receipt, and benefit details",1140,905,4
+e,social protection,pension-source work-unit employer type,2,2,1
+e,social protection,pension-source work-unit reference,2,2,1
+e,social protection,plan-specific coarse location relative to current residence,11,11,1
+e,social protection,selected resident-pension plan contribution start-date component,2,2,1
+e,social protection,selected social-pension program type,1,1,1
+e,social protection,social-pension family participation/expected receipt/current receipt screening status,1,1,1
+e,social protection,string-coded years since firm-pension transfer,2,2,1
+e,social protection,threshold-specific pension expected-benefit bracket response sequence,8,8,1
+e,social protection,years enrolled in the named pension plan,1,1,1
+"e,p",healthcare access,"insurance, outpatient and inpatient utilization",109,66,5
+"e,p",internal biomarker,"internal clinical/physiological measure; phenotype candidate, not exogenous environmental exposure",55,27,3
+p,anthropometric,body size and anthropometry,15,5,3
+p,biochemistry,blood and urine laboratory measures,32,32,2
+p,blood pressure,blood pressure and pulse,27,9,3
+p,chronic disease,self-reported physician diagnosis,248,109,5
+p,chronic disease ancillary,conditional management / diabetes annual testing / selected option: Blood glucose test,2,1,2
+p,chronic disease ancillary,conditional management / diabetes annual testing / selected option: Fundus examination,2,1,2
+p,chronic disease ancillary,conditional management / diabetes annual testing / selected option: Micro-albuminuria test,2,1,2
+p,chronic disease ancillary,conditional management / diabetes annual testing / selected option: None of the above,2,1,2
+p,chronic disease ancillary,conditional management / diabetes annual testing / selected option: Urine glucose test,2,1,2
+p,chronic disease ancillary,conditional management / diabetes community screening / 2015 asks whether community/village doctors usually come and perform a blood-glucose test; not identical to 2018 regular-examination wording.,1,1,1
+p,chronic disease ancillary,conditional management / diabetes community screening / 2018 asks whether community/village doctors regularly performed a diabetes exam during the prior 12 months; preserve distinct wording from 2015.,1,1,1
+p,chronic disease ancillary,conditional management / diabetes community screening / Asked after a Yes to 2015 DA016_W3; 'once every season' wording is not relabeled as an exact three-month interval.,1,1,1
+p,chronic disease ancillary,conditional management / diabetes community screening / Asked after a Yes to 2018 DA016_W4; frequency category 5 differs from the 2015 wording.,1,1,1
+p,chronic disease ancillary,conditional management / diabetes community screening / Whether the community/village blood-glucose examination required payment; asked only after the relevant screening route.,1,1,1
+p,chronic disease ancillary,conditional management / diabetes community screening / Whether the community/village diabetes examination required payment; asked only after the relevant screening route.,1,1,1
+p,chronic disease ancillary,conditional management / diabetes management / annual count: Blood glucose test,4,2,4
+p,chronic disease ancillary,conditional management / diabetes management / annual count: Fundus examination,4,2,4
+p,chronic disease ancillary,conditional management / diabetes management / annual count: Micro-albuminuria test,4,2,4
+p,chronic disease ancillary,conditional management / diabetes management / annual count: Urine glucose test,4,2,4
+p,chronic disease ancillary,conditional management / diabetes management / provider advice option: Diet,4,2,4
+p,chronic disease ancillary,conditional management / diabetes management / provider advice option: Exercise,4,2,4
+p,chronic disease ancillary,conditional management / diabetes management / provider advice option: Foot self-care,4,2,4
+p,chronic disease ancillary,conditional management / diabetes management / provider advice option: None of the above,4,2,4
+p,chronic disease ancillary,conditional management / diabetes management / provider advice option: Smoking control,4,2,4
+p,chronic disease ancillary,conditional management / diabetes management / provider advice option: Weight control,4,2,4
+p,chronic disease ancillary,conditional management / hypertension management / annual number of blood-pressure examinations,4,1,4
+p,chronic disease ancillary,conditional management / hypertension management / checked since prior interview,1,1,1
+p,chronic disease ancillary,conditional management / hypertension management / community blood-pressure check frequency,2,1,2
+p,chronic disease ancillary,conditional management / hypertension management / community/village doctor usually comes,1,1,1
+p,chronic disease ancillary,conditional management / hypertension management / ever checked,3,1,3
+p,chronic disease ancillary,conditional management / hypertension management / payment for community blood-pressure check,2,1,2
+p,chronic disease ancillary,conditional management / hypertension management / provider advice option: Diet,4,2,4
+p,chronic disease ancillary,conditional management / hypertension management / provider advice option: Exercise,4,2,4
+p,chronic disease ancillary,conditional management / hypertension management / provider advice option: None of the above,4,2,4
+p,chronic disease ancillary,conditional management / hypertension management / provider advice option: Smoking control,4,2,4
+p,chronic disease ancillary,conditional management / hypertension management / provider advice option: Weight control,4,2,4
+p,chronic disease ancillary,conditional management / hypertension management / regular blood-pressure check in prior year,1,1,1
+p,chronic disease ancillary,disease awareness / prior-wave self-known disease,9,3,3
+p,chronic disease ancillary,disease awareness / self-known disease,59,22,5
+p,chronic disease ancillary,emotional/psychiatric treatment options,2,2,1
+p,chronic disease ancillary,reported cancer site / Bladder,4,2,4
+p,chronic disease ancillary,reported cancer site / Brain,4,2,4
+p,chronic disease ancillary,reported cancer site / Breast,4,2,4
+p,chronic disease ancillary,reported cancer site / Cervix,4,2,4
+p,chronic disease ancillary,reported cancer site / Colon or rectum,4,2,4
+p,chronic disease ancillary,reported cancer site / Endometrium,4,2,4
+p,chronic disease ancillary,reported cancer site / Kidney,4,2,4
+p,chronic disease ancillary,reported cancer site / Larynx,4,2,4
+p,chronic disease ancillary,reported cancer site / Leukemia,4,2,4
+p,chronic disease ancillary,reported cancer site / Liver,4,2,4
+p,chronic disease ancillary,reported cancer site / Lung,4,2,4
+p,chronic disease ancillary,reported cancer site / Non-Hodgkin lymphoma,4,2,4
+p,chronic disease ancillary,reported cancer site / Oesophagus,4,2,4
+p,chronic disease ancillary,reported cancer site / Oral cavity,4,2,4
+p,chronic disease ancillary,reported cancer site / Other organ,4,2,4
+p,chronic disease ancillary,reported cancer site / Other pharynx,4,2,4
+p,chronic disease ancillary,reported cancer site / Ovary,4,2,4
+p,chronic disease ancillary,reported cancer site / Pancreas,4,2,4
+p,chronic disease ancillary,reported cancer site / Prostate,4,2,4
+p,chronic disease ancillary,reported cancer site / Skin,4,2,4
+p,chronic disease ancillary,reported cancer site / Stomach,4,2,4
+p,chronic disease ancillary,reported cancer site / Testicle,4,2,4
+p,chronic disease ancillary,reported cancer site / Thyroid,4,2,4
+p,chronic disease ancillary,reported diagnosis/knowledge time / age,56,14,4
+p,chronic disease ancillary,reported diagnosis/knowledge time / year,56,14,4
+p,chronic disease ancillary,reported disease change since prior interview / self-rated interval change,18,18,1
+p,chronic disease ancillary,reported disease treatment / age at most recent stroke,2,1,2
+p,chronic disease ancillary,reported disease treatment / antidepressant medication option,1,1,1
+p,chronic disease ancillary,reported disease treatment / doctor-diagnosed recurrent stroke,3,1,3
+p,chronic disease ancillary,reported disease treatment / month of most recent stroke,1,1,1
+p,chronic disease ancillary,reported disease treatment / none-of-the-above treatment option,1,1,1
+p,chronic disease ancillary,reported disease treatment / wave-specific treatment response,261,138,4
+p,chronic disease ancillary,reported disease treatment / wave-specific treatment response; option index only,10,10,1
+p,chronic disease ancillary,reported disease treatment / year of most recent stroke,3,1,3
+p,cognition,memory and cognitive performance,338,275,5
+p,health and symptoms,health-related work absence,6,3,4
+p,health and symptoms,"self-rated health, pain, and symptoms",111,70,5
+p,health and symptoms,"self-rated health, pain, symptoms, and test eligibility",44,22,5
+p,healthcare access,COVID-period delayed or unmet medical care,15,15,1
+p,healthcare access,"insurance, outpatient and inpatient utilization",93,54,4
+p,mental health,depressive symptoms and emotional wellbeing,50,17,5
+p,physical function,assistive-device use in ADL/IADL support,26,12,3
+p,physical function,reported disability history / brain_intellectual,10,4,4
+p,physical function,reported disability history / hearing,10,4,4
+p,physical function,reported disability history / physical,2,1,2
+p,physical function,reported disability history / speech,10,4,4
+p,physical function,reported disability history / vision,10,4,4
+p,physical function,"strength, mobility, lung function, and performance",192,66,5

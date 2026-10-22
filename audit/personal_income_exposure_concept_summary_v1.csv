@@ -1,0 +1,82 @@
+﻿construct,concept_id,concept_label,waves,source_fields,source_codes
+COVID-era wage-impact item,covid_impact_on_personal_wage,COVID-19对个人工资收入的影响,2020,1,ga006
+calendar year of largest inheritance,year_of_largest_inheritance,Year when the largest inheritance occurred,"2011,2013",2,hd009
+cash on hand held by respondent-spouse unit,cash_at_home_and_carried_respondent_spouse_2018,Cash held at home or carried by respondent and spouse (2018 wording),2018,1,hc001
+cash on hand held by respondent-spouse unit,cash_at_home_respondent_spouse,Cash held by respondent and spouse at home,"2011,2013,2015",3,hc001
+categorical fraud type,past_year_fraud_type,Type of attempted fraud in the past year,2018,1,hd007_w4
+cumulative inherited value at receipt,total_inherited_value_at_time_received,Total value of all inherited assets at the time received,"2011,2013",2,hd006
+current bond ownership indicator,respondent_bond_ownership,Respondent holds government/corporate bonds,"2011,2013,2015,2018",4,hc007
+current face value of respondent-held bonds,respondent_bond_face_value,Face value of bonds currently held,"2011,2013,2015,2018",4,hc008
+current financial-institution deposit balance,respondent_deposit_balance,Deposits held in financial institutions,"2011,2013,2015,2018",4,hc005
+current market value of respondent-held mutual funds,mutual_fund_market_value_2011_2015,Current market value of mutual funds held,"2011,2013,2015",3,hc018
+current market value of respondent-held mutual funds,mutual_fund_market_value_2018,Current market value of mutual funds held (2018 item),2018,1,hc018
+current market value of respondent-held stocks,stock_market_value_2011_2015,Current market value of stocks held,"2011,2013,2015",3,hc013
+current market value of respondent-held stocks,stock_market_value_2018,Current market value of stocks held (2018 item),2018,1,hc013
+current mutual fund holding indicator,mutual_fund_ownership_current_2018,Currently holds mutual funds in respondent's name (2018 item),2018,1,hc015
+current other borrowing balance,other_borrowing_balance,"Outstanding borrowing from other households, individuals, or units","2015,2018",2,hd004_w3
+"current ownership of other financial products such as Yu'ebao, P2P, or income insurance",other_wealth_management_product_ownership_2018,Currently holds other wealth-management products in respondent's name,2018,1,hc016_w4
+current public housing provident fund balance,respondent_public_housing_fund_balance,Balance in respondent's public housing fund,"2011,2013,2015,2018",4,hc028
+current revolving/consumer credit balance,consumer_credit_balance_including_platforms_2018,Current credit-card and named platform-credit balance (2018 definition),2018,1,hd003
+current revolving/consumer credit balance,credit_card_balance,Current credit-card balance,"2011,2013,2015",3,hd003
+current stock holding indicator,stock_ownership_current_2018,Currently holds stocks in respondent's name (2018 item),2018,1,hc010
+current unpaid loan balance,unpaid_nonhousing_loan_balance,Unpaid non-housing loan balance,"2011,2013,2015",3,hd001
+current unpaid loan balance,unpaid_nonhousing_noncredit_loan_balance_2018,"Unpaid non-housing, non-credit loan balance (2018 definition)",2018,1,hd001
+current unpaid obligation in private lending,private_lending_unpaid_obligation_2015,Amount still owed in private lending (2015 definition),2015,1,hc037
+current unpaid obligation to rotating savings/credit association,rotating_savings_credit_association_unpaid_obligation_2011_2013,Amount still owed to a rotating savings and credit association,"2011,2013",2,hc037
+current unpaid-wage arrears amount,unpaid_wage_arrears_amount,Amount of unpaid wages currently owed to respondent,"2011,2013,2015,2018",4,hc034
+current unpaid-wage arrears indicator,unpaid_wage_arrears_current,Current employer owes respondent unpaid wages,"2011,2013,2015,2018",4,hc033
+deposit holding indicator,respondent_owns_financial_institution_deposits,Respondent holds deposits in a financial institution,2011,1,hc004
+ever experienced fraud,ever_fraud_experience_2015,Ever experienced fraud (2015 item),2015,1,hd005_w3
+ever inherited indicator,ever_inherited_anything,Ever inherited an asset,"2011,2013",2,hd005
+indicator of respondent-owned assets held under another person's name,respondent_assets_held_in_other_persons_name,Respondent owns financial assets held in another person's name,"2011,2013,2015,2018",4,hc021
+indicator of unrepaid Jizikuan funds provided to a work unit,unrepaid_work_unit_jizikuan_status,Work-unit Jizikuan contribution remains unrepaid,"2011,2013,2015,2018",4,hc030
+inheritance source option: children,inheritance_source_categories,Sources of inherited assets (nonexclusive options),"2011,2013",2,hd008s3
+inheritance source option: other relatives,inheritance_source_categories,Sources of inherited assets (nonexclusive options),"2011,2013",2,hd008s4
+inheritance source option: other sources,inheritance_source_categories,Sources of inherited assets (nonexclusive options),"2011,2013",2,hd008s5
+inheritance source option: parents,inheritance_source_categories,Sources of inherited assets (nonexclusive options),"2011,2013",2,hd008s1
+inheritance source option: parents-in-law,inheritance_source_categories,Sources of inherited assets (nonexclusive options),"2011,2013",2,hd008s2
+largest prior fraud loss amount,largest_prior_fraud_loss_amount,Loss amount in the prior fraud event with the greatest losses,2018,1,hd005_w4_1
+largest single inheritance value at receipt,largest_inheritance_value_at_time_received,Value of the largest inheritance at the time received,"2011,2013",2,hd010
+outstanding lending receivable amount,money_lent_to_others_not_repaid_amount,Amount of unrepaid money lent to others,"2015,2018",2,hc040_w3
+past-year fraud attempt indicator,past_year_fraud_attempt_status,Attempted fraud exposure in the past year,2018,1,hd006_w4
+past-year fraud loss amount,past_year_fraud_loss_amount,Money lost to fraud in the past year,2018,1,hd008_w4
+past-year mutual fund holding indicator,mutual_fund_ownership_past_year,Held mutual funds in respondent's name during the past year,"2011,2013,2015",3,hc015
+past-year other-investment income amount,other_investment_income_past_year_amount,Amount of other income from investments in the past year,"2011,2013",2,hc024
+past-year other-investment income receipt indicator,other_investment_income_past_year_status,Received other income from investments in the past year,"2011,2013",2,hc023
+past-year private-lending participation,private_lending_participation_past_year_2015,Participated in private lending during the past year (2015 definition),2015,1,hc036
+past-year rotating savings/credit association participation,rotating_savings_credit_association_participation_2011_2013,Participated in a rotating savings and credit association,"2011,2013",2,hc036
+past-year stock holding indicator,stock_ownership_past_year,Held stocks in respondent's name during the past year,"2011,2013,2015",3,hc010
+percentage ownership of cash held by respondent and spouse,respondent_share_of_cash_percent,Respondent's percentage share of jointly held cash,"2011,2013,2015",3,hc003_2
+prior fraud event count,prior_fraud_event_count,Number of prior fraud experiences with property loss,2018,1,hd005_w4_0
+prior fraud with property-loss indicator,prior_fraud_with_property_loss_status,Prior fraud experience with property loss before the past year,2018,1,hd005_w4
+public housing provident fund holding indicator,respondent_public_housing_fund_ownership,Respondent has a public housing fund,"2011,2013,2015,2018",4,hc027
+receipt indicator,personal_wage_bonus_income_receipt,个人是否获得工资/奖金收入,"2011,2013,2015,2018,2020",5,ga001
+reported amount lost to fraud,fraud_loss_amount_2015_unspecified_period,Amount lost to fraud (2015 item; period unspecified),2015,1,hd005_w3_1
+reported amount of Jizikuan funds still held by work unit,unrepaid_work_unit_jizikuan_amount,Amount of unrepaid Jizikuan funds,"2011,2013,2015,2018",4,hc031
+reported annual income amount,personal_wage_bonus_income_annual_amount,个人年度工资/奖金收入金额,"2011,2013,2015,2018,2020",5,ga002;ga002_1
+reported decrease amount,covid_related_wage_decrease_amount,COVID-19期间个人工资减少金额,2020,1,ga006_1
+reported income tax deduction,personal_wage_deduction_income_tax_annual,Personal wage deduction: income tax (annual),"2013,2015",2,ga002_w2_2_1a
+reported income tax deduction,personal_wage_deduction_income_tax_monthly,Personal wage deduction: income tax (monthly),"2013,2015",2,ga002_w2_2_1b
+reported income tax deduction,personal_wage_deduction_income_tax_percentage,Personal wage deduction: income tax (percentage),"2013,2015",2,ga002_w2_2_1c
+reported increase amount,covid_related_wage_increase_amount,COVID-19期间个人工资增加金额,2020,1,ga006_2
+reported insurance contributions deduction,personal_wage_deduction_insurance_annual,Personal wage deduction: insurance contributions (annual),"2013,2015",2,ga002_w2_2_2a
+reported insurance contributions deduction,personal_wage_deduction_insurance_monthly,Personal wage deduction: insurance contributions (monthly),"2013,2015",2,ga002_w2_2_2b
+reported insurance contributions deduction,personal_wage_deduction_insurance_percentage,Personal wage deduction: insurance contributions (percentage),"2013,2015",2,ga002_w2_2_2c
+reported monthly income alternative,personal_wage_bonus_income_monthly_amount,个人月工资/奖金收入金额,2011,1,ga002_1
+reported monthly income amount,personal_wage_bonus_income_monthly_amount,个人月工资/奖金收入金额,2013,1,ga002_2
+reported public housing fund deduction,personal_wage_deduction_housing_fund_annual,Personal wage deduction: public housing fund (annual),"2013,2015",2,ga002_w2_2_3a
+reported public housing fund deduction,personal_wage_deduction_housing_fund_monthly,Personal wage deduction: public housing fund (monthly),"2013,2015",2,ga002_w2_2_3b
+reported public housing fund deduction,personal_wage_deduction_housing_fund_percentage,Personal wage deduction: public housing fund (percentage),"2013,2015",2,ga002_w2_2_3c
+reported total wage deductions,personal_wage_deduction_total_annual,Total personal wage deductions (annual),"2013,2015,2018",3,ga002_w2_2a
+reported total wage deductions,personal_wage_deduction_total_monthly,Total personal wage deductions (monthly),"2013,2015,2018",3,ga002_w2_2b
+reported total wage deductions,personal_wage_deduction_total_percentage,Total personal wage deductions (percentage),"2013,2015,2018",3,ga002_w2_2c
+"respondent control percentage for deposits, bonds, stocks and funds",respondent_control_share_of_financial_assets_2013_2015,Share of financial assets controlled by respondent rather than spouse,"2013,2015",2,hc020
+"respondent control percentage for deposits, bonds, stocks, funds and other wealth-management products",respondent_control_share_of_financial_assets_2018,Share of financial products controlled by respondent rather than spouse (2018 scope),2018,1,hc020
+respondent share of cash held by respondent and spouse,respondent_owned_share_of_cash,Respondent-owned amount of jointly held cash,"2011,2013,2015",3,hc003_1
+"respondent-held value of other financial products such as Yu'ebao, P2P, or income insurance",other_wealth_management_product_value_2018,Current market value of other wealth-management products,2018,1,hc017_w4
+respondent-rated own household living standard,subjective_absolute_living_standard,Self-rated household standard of living,2011,1,g003
+subjective relative socioeconomic position,subjective_relative_living_standard,Self-rated living standard relative to social reference groups,2013,5,g001_w2;g002_w2;g003_w2;g004_w2;g005_w2
+unrepaid lending receivable indicator,money_lent_to_others_not_repaid_status,Someone owes respondent money from lending,"2015,2018",2,hc039_w3
+value of other-person-held assets belonging to respondent,value_of_respondent_assets_held_in_other_persons_name,Reported value of respondent-owned assets held in another person's name,"2011,2013,2015,2018",4,hc022
+wage amount exclusion-scope item,personal_wage_exclusion_scope,工资金额是否扣除保险等项目,2020,1,ga003
+year of largest prior fraud loss,year_of_largest_prior_fraud_loss,Year of the prior fraud event with the greatest losses,2018,1,hd005_w4_2

@@ -1,0 +1,24 @@
+﻿wave,code,value_labels,value_label_status,value_label_source
+2011,i015,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2011_Codebook_extracted.txt
+2013,i015,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2013_Codebook_extracted.txt
+2015,i015,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2015_Codebook_extracted.txt
+2018,i015,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2018_Codebook_extracted.txt
+2011,i016,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2011_Codebook_extracted.txt
+2013,i016,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2013_Codebook_extracted.txt
+2018,i016,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2018_Codebook_extracted.txt
+2011,i017,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2011_Codebook_extracted.txt
+2013,i017,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2013_Codebook_extracted.txt
+2015,i017,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2015_Codebook_extracted.txt
+2018,i017,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2018_Codebook_extracted.txt
+2011,i018,1=Hot water provided; 2=Water heater installed by the household; 3=No,Official codebook response labels reviewed,sources_official/CHARLS_2011_Codebook_extracted.txt
+2013,i018,1=Hot water provided; 2=Water heater installed by the household; 3=No,Official codebook response labels reviewed,sources_official/CHARLS_2013_Codebook_extracted.txt
+2015,i018,1=Hot water provided; 2=Water heater installed by the household; 3=No,Official codebook response labels reviewed,sources_official/CHARLS_2015_Codebook_extracted.txt
+2018,i018,1=Hot water provided; 2=Water heater installed by the household; 3=No,Official codebook response labels reviewed,sources_official/CHARLS_2018_Codebook_extracted.txt
+2011,i019,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2011_Codebook_extracted.txt
+2013,i019,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2013_Codebook_extracted.txt
+2015,i019,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2015_Codebook_extracted.txt
+2018,i019,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2018_Codebook_extracted.txt
+2011,i020,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2011_Codebook_extracted.txt
+2013,i020,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2013_Codebook_extracted.txt
+2015,i020,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2015_Codebook_extracted.txt
+2018,i020,1=Yes; 2=No,Official codebook response labels reviewed,sources_official/CHARLS_2018_Codebook_extracted.txt

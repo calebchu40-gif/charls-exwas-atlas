@@ -1,0 +1,20 @@
+﻿alias_concept_id,canonical_concept_id,relation,basis
+current_marital_status,marital_status_current,same_measurement_alias,Same wave-specific marital-status field and categories; retain the audited marital-status concept and review trail.
+arthritis_diagnosis,arthritis_rheumatism_diagnosis,same_measurement_alias,Same indexed doctor-diagnosis response; specific ID is used by the disease crosswalk and related disease-history records.
+diabetes_diagnosis,diabetes_high_blood_sugar_diagnosis,same_measurement_alias,Same indexed doctor-diagnosis response; specific ID is used by the disease crosswalk and related disease-history records.
+sleep_hours,sleep_duration,same_measurement_alias,Same wave-specific sleep-duration source field; retain the domain-reviewed sleep-duration concept.
+depressive_symptom_felt_depressed,mood_depressed,same_measurement_alias,Same depression-item source field; retain the mood-item mapping and its response-scale notes.
+running_water,running_water_at_residence,same_measurement_alias,Same residence running-water item; canonical ID makes the measured context explicit.
+bun_lab,blood_bun,same_analyte_alias,Same blood urea nitrogen assay; retain detailed biomarker unit and blood-sample metadata.
+total_cholesterol_lab,blood_total_cholesterol,same_analyte_alias,Same total-cholesterol assay; retain detailed biomarker unit and blood-sample metadata.
+creatinine_lab,blood_creatinine,same_analyte_alias,Same creatinine assay; retain detailed biomarker unit and blood-sample metadata.
+crp_lab,blood_crp,same_analyte_alias,Same C-reactive protein assay; retain detailed biomarker unit and blood-sample metadata.
+blood_glucose_lab,blood_glucose,same_analyte_alias,Same glucose assay; retain detailed biomarker unit and blood-sample metadata.
+hba1c_lab,blood_hba1c,same_analyte_alias,Same HbA1c assay; retain detailed biomarker unit and blood-sample metadata.
+hdl_lab,blood_hdl,same_analyte_alias,Same HDL cholesterol assay; retain detailed biomarker unit and blood-sample metadata.
+ldl_lab,blood_ldl,same_analyte_alias,Same LDL cholesterol assay; retain detailed biomarker unit and blood-sample metadata.
+triglycerides_lab,blood_triglycerides,same_analyte_alias,Same triglyceride assay; retain detailed biomarker unit and blood-sample metadata.
+uric_acid_lab,blood_uric_acid,same_analyte_alias,Same uric-acid assay; retain detailed biomarker unit and blood-sample metadata.
+height,standing_height,same_measurement_alias,Same measured-height item; retain the objective-measurement crosswalk definition.
+air_cleaner,air_cleaner_home,same_measurement_alias,Same 2015 household air-cleaner item; retain the home-specific concept ID.
+last_job_business_workforce_size_2018,last_self_employed_business_employee_count_2018,same_measurement_alias,"Both reviewed mapping records point to the single 2018 FL012_W4 question in the retrospective self-employed non-farm business route (FL001=2), with the same 0–9999 people response. Retain the route-specific canonical definition; source concept ID remains auditable."

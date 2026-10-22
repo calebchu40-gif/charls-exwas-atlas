@@ -1,0 +1,387 @@
+{
+  "as_of": "2026-10-22",
+  "crosswalk_files": 75,
+  "candidate_concept_ids": 1408,
+  "exposure_concept_ids_including_dual": 1130,
+  "phenotype_concept_ids_including_dual": 287,
+  "wave_field_mapping_rows": 6598,
+  "includes": "all E/P candidate rows from ep_concept_source_crosswalk_v1.csv",
+  "excludes": "C-only measurement eligibility rows; verified_code_examples_v1.csv is a separate multiwave lookup",
+  "domains": [
+    {
+      "file": "audit/adult_education_training_exposure_crosswalk_v1.csv",
+      "mapping_rows": 74,
+      "concept_ids": 8
+    },
+    {
+      "file": "audit/assistive_device_phenotype_crosswalk_v1.csv",
+      "mapping_rows": 26,
+      "concept_ids": 1
+    },
+    {
+      "file": "audit/behavior_exposure_variable_mapping_v1.csv",
+      "mapping_rows": 223,
+      "concept_ids": 21
+    },
+    {
+      "file": "audit/behavior_exposure_variable_mapping_v1.csv | audit/core_concept_coverage_v1.csv",
+      "mapping_rows": 5,
+      "concept_ids": 1
+    },
+    {
+      "file": "audit/blood_biomarker_crosswalk_v1.csv",
+      "mapping_rows": 22,
+      "concept_ids": 16
+    },
+    {
+      "file": "audit/blood_biomarker_crosswalk_v1.csv | audit/core_concept_coverage_v1.csv",
+      "mapping_rows": 10,
+      "concept_ids": 10
+    },
+    {
+      "file": "audit/cancer_site_crosswalk_v1.csv",
+      "mapping_rows": 92,
+      "concept_ids": 23
+    },
+    {
+      "file": "audit/chronic_disease_ancillary_variable_mapping_v1.csv",
+      "mapping_rows": 480,
+      "concept_ids": 79
+    },
+    {
+      "file": "audit/chronic_disease_concept_variable_mapping_v2.csv",
+      "mapping_rows": 191,
+      "concept_ids": 16
+    },
+    {
+      "file": "audit/chronic_disease_concept_variable_mapping_v2.csv | audit/core_concept_coverage_v1.csv",
+      "mapping_rows": 40,
+      "concept_ids": 8
+    },
+    {
+      "file": "audit/chronic_disease_management_crosswalk_v1.csv",
+      "mapping_rows": 90,
+      "concept_ids": 13
+    },
+    {
+      "file": "audit/cognition_item_variable_mapping_v1.csv",
+      "mapping_rows": 329,
+      "concept_ids": 18
+    },
+    {
+      "file": "audit/community_exposure_crosswalk_v1.csv",
+      "mapping_rows": 187,
+      "concept_ids": 100
+    },
+    {
+      "file": "audit/core_concept_coverage_v1.csv",
+      "mapping_rows": 30,
+      "concept_ids": 6
+    },
+    {
+      "file": "audit/demographic_social_exposure_mapping_v1.csv",
+      "mapping_rows": 18,
+      "concept_ids": 7
+    },
+    {
+      "file": "audit/demographic_social_exposure_mapping_v1.csv | audit/partner_context_crosswalk_v1.csv",
+      "mapping_rows": 4,
+      "concept_ids": 1
+    },
+    {
+      "file": "audit/disability_history_crosswalk_v1.csv",
+      "mapping_rows": 65,
+      "concept_ids": 5
+    },
+    {
+      "file": "audit/environmental_perception_crosswalk_v1.csv",
+      "mapping_rows": 1,
+      "concept_ids": 1
+    },
+    {
+      "file": "audit/food_environment_crosswalk_v1.csv",
+      "mapping_rows": 151,
+      "concept_ids": 26
+    },
+    {
+      "file": "audit/food_environment_crosswalk_v1.csv | audit/core_concept_coverage_v1.csv",
+      "mapping_rows": 9,
+      "concept_ids": 2
+    },
+    {
+      "file": "audit/formal_schooling_lifecourse_crosswalk_v1.csv",
+      "mapping_rows": 17,
+      "concept_ids": 10
+    },
+    {
+      "file": "audit/functional_concept_variable_mapping_v1.csv",
+      "mapping_rows": 95,
+      "concept_ids": 21
+    },
+    {
+      "file": "audit/health_symptom_variable_mapping_v1.csv",
+      "mapping_rows": 172,
+      "concept_ids": 38
+    },
+    {
+      "file": "audit/health_work_absence_crosswalk_v1.csv",
+      "mapping_rows": 6,
+      "concept_ids": 6
+    },
+    {
+      "file": "audit/health_work_limitation_crosswalk_v1.csv",
+      "mapping_rows": 8,
+      "concept_ids": 4
+    },
+    {
+      "file": "audit/healthcare_access_crosswalk_v1.csv",
+      "mapping_rows": 217,
+      "concept_ids": 22
+    },
+    {
+      "file": "audit/home_return_frequency_crosswalk_v1.csv",
+      "mapping_rows": 2,
+      "concept_ids": 2
+    },
+    {
+      "file": "audit/household_additional_income_crosswalk_v1.csv",
+      "mapping_rows": 1,
+      "concept_ids": 1
+    },
+    {
+      "file": "audit/household_agricultural_production_crosswalk_v1.csv",
+      "mapping_rows": 41,
+      "concept_ids": 8
+    },
+    {
+      "file": "audit/household_asset_exposure_mapping_v1.csv",
+      "mapping_rows": 206,
+      "concept_ids": 82
+    },
+    {
+      "file": "audit/household_covid_economic_crosswalk_v1.csv",
+      "mapping_rows": 26,
+      "concept_ids": 26
+    },
+    {
+      "file": "audit/household_dibao_amount_crosswalk_v1.csv",
+      "mapping_rows": 3,
+      "concept_ids": 1
+    },
+    {
+      "file": "audit/household_economic_exposure_mapping_v1.csv",
+      "mapping_rows": 104,
+      "concept_ids": 29
+    },
+    {
+      "file": "audit/household_lending_debt_crosswalk_v1.csv",
+      "mapping_rows": 8,
+      "concept_ids": 4
+    },
+    {
+      "file": "audit/household_member_income_mapping_v1.csv",
+      "mapping_rows": 124,
+      "concept_ids": 8
+    },
+    {
+      "file": "audit/household_other_asset_rental_income_amount_crosswalk_v1.csv",
+      "mapping_rows": 5,
+      "concept_ids": 2
+    },
+    {
+      "file": "audit/household_other_asset_rental_income_status_crosswalk_v1.csv",
+      "mapping_rows": 2,
+      "concept_ids": 1
+    },
+    {
+      "file": "audit/household_renovation_expenditure_crosswalk_v1.csv",
+      "mapping_rows": 2,
+      "concept_ids": 1
+    },
+    {
+      "file": "audit/household_sale_proceeds_allocation_crosswalk_v1.csv",
+      "mapping_rows": 54,
+      "concept_ids": 1
+    },
+    {
+      "file": "audit/household_transfer_compensation_crosswalk_v1.csv",
+      "mapping_rows": 9,
+      "concept_ids": 3
+    },
+    {
+      "file": "audit/household_transfer_receipt_crosswalk_v1.csv",
+      "mapping_rows": 9,
+      "concept_ids": 3
+    },
+    {
+      "file": "audit/housing_exposure_variable_mapping_v1.csv",
+      "mapping_rows": 477,
+      "concept_ids": 40
+    },
+    {
+      "file": "audit/hukou_lifecourse_exposure_crosswalk_v1.csv",
+      "mapping_rows": 36,
+      "concept_ids": 13
+    },
+    {
+      "file": "audit/hukou_recent_change_crosswalk_v1.csv",
+      "mapping_rows": 21,
+      "concept_ids": 8
+    },
+    {
+      "file": "audit/individual_transfer_income_crosswalk_v1.csv",
+      "mapping_rows": 95,
+      "concept_ids": 2
+    },
+    {
+      "file": "audit/interwave_other_job_crosswalk_v1.csv",
+      "mapping_rows": 6,
+      "concept_ids": 6
+    },
+    {
+      "file": "audit/land_rental_income_crosswalk_v1.csv",
+      "mapping_rows": 16,
+      "concept_ids": 8
+    },
+    {
+      "file": "audit/life_insurance_exposure_crosswalk_v1.csv",
+      "mapping_rows": 38,
+      "concept_ids": 11
+    },
+    {
+      "file": "audit/loneliness_exposure_role_mapping_v1.csv",
+      "mapping_rows": 6,
+      "concept_ids": 2
+    },
+    {
+      "file": "audit/marital_history_exposure_crosswalk_v1.csv",
+      "mapping_rows": 6,
+      "concept_ids": 3
+    },
+    {
+      "file": "audit/mood_item_variable_mapping_v1.csv",
+      "mapping_rows": 45,
+      "concept_ids": 9
+    },
+    {
+      "file": "audit/mood_item_variable_mapping_v1.csv | audit/core_concept_coverage_v1.csv",
+      "mapping_rows": 5,
+      "concept_ids": 1
+    },
+    {
+      "file": "audit/objective_measurement_crosswalk_v1.csv",
+      "mapping_rows": 102,
+      "concept_ids": 13
+    },
+    {
+      "file": "audit/objective_measurement_crosswalk_v1.csv | audit/core_concept_coverage_v1.csv",
+      "mapping_rows": 6,
+      "concept_ids": 2
+    },
+    {
+      "file": "audit/old_age_support_expectation_crosswalk_v1.csv",
+      "mapping_rows": 1,
+      "concept_ids": 1
+    },
+    {
+      "file": "audit/parent_education_exposure_crosswalk_v1.csv",
+      "mapping_rows": 4,
+      "concept_ids": 2
+    },
+    {
+      "file": "audit/parent_marital_ethnicity_crosswalk_v1.csv",
+      "mapping_rows": 5,
+      "concept_ids": 5
+    },
+    {
+      "file": "audit/parent_roster_context_crosswalk_v1.csv",
+      "mapping_rows": 6,
+      "concept_ids": 3
+    },
+    {
+      "file": "audit/parent_roster_education_crosswalk_v1.csv",
+      "mapping_rows": 4,
+      "concept_ids": 2
+    },
+    {
+      "file": "audit/partner_context_crosswalk_v1.csv",
+      "mapping_rows": 7,
+      "concept_ids": 3
+    },
+    {
+      "file": "audit/pension_2011_nrsp_detail_crosswalk_v1.csv",
+      "mapping_rows": 9,
+      "concept_ids": 6
+    },
+    {
+      "file": "audit/pension_eligibility_2015_crosswalk_v1.csv",
+      "mapping_rows": 8,
+      "concept_ids": 3
+    },
+    {
+      "file": "audit/pension_exposure_variable_mapping_v1.csv",
+      "mapping_rows": 1159,
+      "concept_ids": 292
+    },
+    {
+      "file": "audit/pension_participation_crosswalk_v1.csv",
+      "mapping_rows": 8,
+      "concept_ids": 3
+    },
+    {
+      "file": "audit/pension_subsidy_delivery_2015_crosswalk_v1.csv",
+      "mapping_rows": 10,
+      "concept_ids": 2
+    },
+    {
+      "file": "audit/personal_income_exposure_mapping_v1.csv",
+      "mapping_rows": 176,
+      "concept_ids": 76
+    },
+    {
+      "file": "audit/personal_wage_deductions_2020_crosswalk_v1.csv",
+      "mapping_rows": 3,
+      "concept_ids": 3
+    },
+    {
+      "file": "audit/psych_treatment_2011_crosswalk_v1.csv",
+      "mapping_rows": 2,
+      "concept_ids": 1
+    },
+    {
+      "file": "audit/residential_rental_income_crosswalk_v1.csv",
+      "mapping_rows": 5,
+      "concept_ids": 2
+    },
+    {
+      "file": "audit/residential_settlement_exposure_crosswalk_v1.csv",
+      "mapping_rows": 3,
+      "concept_ids": 1
+    },
+    {
+      "file": "audit/residual_behavior_exposure_crosswalk_v1.csv",
+      "mapping_rows": 15,
+      "concept_ids": 2
+    },
+    {
+      "file": "audit/sibling_record_context_crosswalk_v1.csv",
+      "mapping_rows": 6,
+      "concept_ids": 6
+    },
+    {
+      "file": "audit/social_context_remainder_crosswalk_v1.csv",
+      "mapping_rows": 11,
+      "concept_ids": 9
+    },
+    {
+      "file": "audit/social_exposure_crosswalk_v1.csv",
+      "mapping_rows": 281,
+      "concept_ids": 11
+    },
+    {
+      "file": "audit/work_exposure_crosswalk_v1.csv",
+      "mapping_rows": 858,
+      "concept_ids": 257
+    }
+  ]
+}

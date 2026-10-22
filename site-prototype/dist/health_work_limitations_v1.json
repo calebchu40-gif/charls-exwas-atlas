@@ -1,0 +1,134 @@
+[
+  {
+    "concept_id": "work_specific_health_limitation",
+    "label": "因健康/残疾难以持续完成特定工作",
+    "domain": "work-related functional limitation",
+    "source_fields": [
+      {
+        "wave": "2015",
+        "code": "db036_w3",
+        "source_label": "Can't Do Specific Work For Long Time Because of Disabilities or Health Problems",
+        "module": "Health_Status_and_Functioning",
+        "value_labels": "1=Yes; 2=No; 3=Too old to do the work",
+        "value_label_status": "matched to wave-specific official codebook response categories",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "value_semantics": "specific work cannot be done or cannot be sustained because of disability/health; DB036_W3 route",
+        "mapping_status": "official questionnaire/codebook mapping; candidate phenotype; routing and harmonization remain wave-specific",
+        "note": "2015题询问特定工作是否做不了或无法长时间做；DB036_W3=Yes后跳至DB038_W3_1，DB037_W3不适用。此条仅在2015发现，不能与总体工作能力题互换。"
+      }
+    ],
+    "status": "候选表型；需按波次和问卷路由解释",
+    "caveat": "2015题询问特定工作是否做不了或无法长时间做；DB036_W3=Yes后跳至DB038_W3_1，DB037_W3不适用。此条仅在2015发现，不能与总体工作能力题互换。"
+  },
+  {
+    "concept_id": "housework_specific_health_limitation",
+    "label": "因健康/残疾难以持续完成特定家务",
+    "domain": "work-related functional limitation",
+    "source_fields": [
+      {
+        "wave": "2015",
+        "code": "db037_w3",
+        "source_label": "Can't Do Specific Housework For Long Time Because of Disabilities or Health Prob",
+        "module": "Health_Status_and_Functioning",
+        "value_labels": "1=Yes; 2=No; 3=Too old to do the housework",
+        "value_label_status": "matched to wave-specific official codebook response categories",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "value_semantics": "specific housework cannot be done or cannot be sustained because of disability/health; conditional DB036_W3 route",
+        "mapping_status": "official questionnaire/codebook mapping; candidate phenotype; routing and harmonization remain wave-specific",
+        "note": "2015题询问特定家务是否做不了或无法长时间做；仅在DB036_W3为No/Too old时提问；DB037_W3=Yes后跳至DB038_W3_2。结构性跳题不能作No。"
+      }
+    ],
+    "status": "候选表型；需按波次和问卷路由解释",
+    "caveat": "2015题询问特定家务是否做不了或无法长时间做；仅在DB036_W3为No/Too old时提问；DB037_W3=Yes后跳至DB038_W3_2。结构性跳题不能作No。"
+  },
+  {
+    "concept_id": "work_capacity_health_limitation",
+    "label": "因健康/残疾导致的工作能力受限",
+    "domain": "work-related functional limitation",
+    "source_fields": [
+      {
+        "wave": "2015",
+        "code": "db038_w3_1",
+        "source_label": "Can't Do Any Work Because of Disabilities or Health Problems",
+        "module": "Health_Status_and_Functioning",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "matched to wave-specific official codebook response categories",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "value_semantics": "completely unable to work because of disability/health; asked after DB036_W3=Yes",
+        "mapping_status": "official questionnaire/codebook mapping; candidate phenotype; routing and harmonization remain wave-specific",
+        "note": "跨波问法与量表不同：2015是二分类且仅向特定工作受限者追问完全不能工作；2018/2020为三级自评。保留逐波原值，不直接合并或当作就业状态。2020需同时审查代理回答字段DB045。"
+      },
+      {
+        "wave": "2018",
+        "code": "db036_w4",
+        "source_label": "Can't Work Because of Disability or Health",
+        "module": "Health_Status_and_Functioning",
+        "value_labels": "1=I can't work at all; 2=I can't work for long time; 3=I have no problem working",
+        "value_label_status": "matched to wave-specific official codebook response categories",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "value_semantics": "self-rated work limitation; option 1 skips DB037_W4",
+        "mapping_status": "official questionnaire/codebook mapping; candidate phenotype; routing and harmonization remain wave-specific",
+        "note": "跨波问法与量表不同：2015是二分类且仅向特定工作受限者追问完全不能工作；2018/2020为三级自评。保留逐波原值，不直接合并或当作就业状态。2020需同时审查代理回答字段DB045。"
+      },
+      {
+        "wave": "2020",
+        "code": "db043",
+        "source_label": "Can't Work Because of Disability or Health",
+        "module": "Health_Status_and_Functioning",
+        "value_labels": "1=I can't work at all; 2=I can't work long hours; 3=I don't have any problem",
+        "value_label_status": "matched to wave-specific official codebook response categories",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_semantics": "self-rated work limitation; response assistance/proxy recorded separately in DB045",
+        "mapping_status": "official questionnaire/codebook mapping; candidate phenotype; routing and harmonization remain wave-specific",
+        "note": "跨波问法与量表不同：2015是二分类且仅向特定工作受限者追问完全不能工作；2018/2020为三级自评。保留逐波原值，不直接合并或当作就业状态。2020需同时审查代理回答字段DB045。"
+      }
+    ],
+    "status": "候选表型；需按波次和问卷路由解释",
+    "caveat": "跨波问法与量表不同：2015是二分类且仅向特定工作受限者追问完全不能工作；2018/2020为三级自评。保留逐波原值，不直接合并或当作就业状态。2020需同时审查代理回答字段DB045。"
+  },
+  {
+    "concept_id": "housework_capacity_health_limitation",
+    "label": "因健康/残疾导致的家务能力受限",
+    "domain": "work-related functional limitation",
+    "source_fields": [
+      {
+        "wave": "2015",
+        "code": "db038_w3_2",
+        "source_label": "Can't Do Any Housework Because of Disabilities or Health Problems",
+        "module": "Health_Status_and_Functioning",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "matched to wave-specific official codebook response categories",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "value_semantics": "completely unable to do any housework because of disability/health; asked after DB037_W3=Yes",
+        "mapping_status": "official questionnaire/codebook mapping; candidate phenotype; routing and harmonization remain wave-specific",
+        "note": "跨波问法与量表不同：2015是二分类且仅向特定家务受限者追问完全不能做家务；2018/2020为三级自评。保留逐波原值；2018工作能力题的完全不能选项会跳过家务题。2020需同时审查代理回答字段DB045。"
+      },
+      {
+        "wave": "2018",
+        "code": "db037_w4",
+        "source_label": "Can't Do Household Work Because of Disability or Health",
+        "module": "Health_Status_and_Functioning",
+        "value_labels": "1=I can't do at all; 2=I can't do for long time; 3=I have no problem",
+        "value_label_status": "matched to wave-specific official codebook response categories",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "value_semantics": "self-rated housework limitation; structural skip when DB036_W4 option 1",
+        "mapping_status": "official questionnaire/codebook mapping; candidate phenotype; routing and harmonization remain wave-specific",
+        "note": "跨波问法与量表不同：2015是二分类且仅向特定家务受限者追问完全不能做家务；2018/2020为三级自评。保留逐波原值；2018工作能力题的完全不能选项会跳过家务题。2020需同时审查代理回答字段DB045。"
+      },
+      {
+        "wave": "2020",
+        "code": "db044",
+        "source_label": "Can't Do Household Work Because of Disability or Health",
+        "module": "Health_Status_and_Functioning",
+        "value_labels": "1=I can't do housework at all; 2=I can't do housework for an extended period; 3=I don't have any problem",
+        "value_label_status": "matched to wave-specific official codebook response categories",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_semantics": "self-rated housework limitation; response assistance/proxy recorded separately in DB045",
+        "mapping_status": "official questionnaire/codebook mapping; candidate phenotype; routing and harmonization remain wave-specific",
+        "note": "跨波问法与量表不同：2015是二分类且仅向特定家务受限者追问完全不能做家务；2018/2020为三级自评。保留逐波原值；2018工作能力题的完全不能选项会跳过家务题。2020需同时审查代理回答字段DB045。"
+      }
+    ],
+    "status": "候选表型；需按波次和问卷路由解释",
+    "caveat": "跨波问法与量表不同：2015是二分类且仅向特定家务受限者追问完全不能做家务；2018/2020为三级自评。保留逐波原值；2018工作能力题的完全不能选项会跳过家务题。2020需同时审查代理回答字段DB045。"
+  }
+]

@@ -1,0 +1,37 @@
+﻿field,required,type,definition,release_rule
+analysis_id,yes,string,Stable ID for one fitted association result; includes data release and code version,Public after review
+data_release,yes,string,Official CHARLS release/version identifier,Public metadata only
+wave,yes,category,Single CHARLS wave; never label stacked waves as independent cycles,Public
+exposure_concept_id,yes,string,Harmonized exposure concept identifier,Public metadata only
+exposure_variable,yes,string,Wave-specific source field or derived variable identifier,Release only if permitted and non-identifying
+phenotype_concept_id,yes,string,Harmonized phenotype concept identifier,Public metadata only
+phenotype_variable,yes,string,Wave-specific source field or derived variable identifier,Release only if permitted and non-identifying
+model_id,yes,category,Named model specification such as M0 M1 M2,Public
+estimate_type,yes,category,Estimate scale/model family and contrast definition,Public
+estimate,conditional,numeric,Association estimate on stated scale,Disclosure review before public release
+standard_error,conditional,numeric,Design-based or explicitly labeled approximation SE,Disclosure review before public release
+ci_lower,conditional,numeric,Lower 95 percent confidence limit,Disclosure review before public release
+ci_upper,conditional,numeric,Upper 95 percent confidence limit,Disclosure review before public release
+p_value,conditional,numeric,Unadjusted p value,Disclosure review before public release
+q_value_by,conditional,numeric,Benjamini-Yekutieli adjusted q value within named family,Public after family definition and review
+p_bonferroni,conditional,numeric,Bonferroni-adjusted p value within named family,Public after family definition and review
+multiple_testing_family,yes,string,Predefined test family ID and number of tests K,Public
+n_interview,yes,integer,Wave respondent count before analysis eligibility,Aggregate only
+n_eligible,yes,integer,Eligible target sample count before pairwise completeness,Aggregate only; check small-cell rule
+n_exposure_valid,yes,integer,Eligible participants with valid exposure,Aggregate only; check small-cell rule
+n_phenotype_valid,yes,integer,Eligible participants with valid phenotype,Aggregate only; check small-cell rule
+n_pair_complete,yes,integer,Participants with both valid measures,Aggregate only; check small-cell rule
+n_model,yes,integer,Records used by the fitted model after weight and covariate rules,Aggregate only; check small-cell rule
+weight_id,yes,string,Wave/module-specific official weight used or explicit unweighted status,Public metadata only
+psu_id,yes,string,Official primary sampling unit field used,Public metadata only
+variance_design,yes,string,Stratum/replicate/approximation method and limitation,Public metadata only
+exposure_transform,yes,string,Transformation and scale,Public
+phenotype_transform,yes,string,Transformation and scale,Public
+reference_level,conditional,string,Explicit reference for categorical contrast,Public
+missingness_rule,yes,string,"How structural skips, ineligible module, refusal, don't know, and other missing were handled",Public
+comparability_grade,yes,category,Wave-specific comparability status and rationale,Public metadata only
+fit_status,yes,category,"Success, nonconvergence, inestimable, or code error",Public
+fit_message,conditional,string,Sanitized diagnostic without row-level values,Public after review
+software_versions,yes,string,Runtime and package versions,Public
+code_commit,yes,string,Analysis source commit or immutable version,Public
+provenance,yes,string,Source guide/codebook/questionnaire section and mapping version,Public metadata only

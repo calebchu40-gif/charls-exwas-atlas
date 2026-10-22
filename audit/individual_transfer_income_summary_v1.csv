@@ -1,0 +1,3 @@
+﻿concept_id,concept_label,construct,mappings,waves
+individual_transfer_income_source_amount,按来源分类的个人转移收入金额,amount received from a specific individual transfer-income source,45,"2013,2015,2018,2020"
+individual_transfer_income_source_receipt,个人转移收入来源/领取类别,multi-response individual transfer-income source item,50,"2011,2013,2015,2018,2020"

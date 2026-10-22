@@ -1,0 +1,36 @@
+[
+  {
+    "concept_id": "household_house_decoration_renovation_expense_2011_2013",
+    "label": "Household expenditure on decorating or renovating houses (past year, 2011/2013)",
+    "domain": "household economic resources and housing investment",
+    "caveat": "Household-level reported expenditure, not individual income, house value, maintenance quality, or total housing investment. Do not combine with remodeling/rebuilding questions that explicitly exclude decoration. Keep nominal amounts wave-specific unless a price-adjustment protocol is prespecified. 2015 Codebook lists ha025 as No Observations, so 2015 is deliberately not mapped as observed.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ha025",
+        "module": "household_income",
+        "source_label": "Spending on Decorating or Renovating",
+        "unit": "nominal Yuan spent in the past year",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "mapping_status": "candidate; official questionnaire and Codebook identify field; verify response routing and special codes in authorized data"
+      }
+    ]
+  },
+  {
+    "concept_id": "household_house_decoration_renovation_expense_2011_2013",
+    "label": "Household expenditure on decorating or renovating houses (past year, 2011/2013)",
+    "domain": "household economic resources and housing investment",
+    "caveat": "Household-level reported expenditure, not individual income, house value, maintenance quality, or total housing investment. Do not combine with remodeling/rebuilding questions that explicitly exclude decoration. Keep nominal amounts wave-specific unless a price-adjustment protocol is prespecified. 2015 Codebook lists ha025 as No Observations, so 2015 is deliberately not mapped as observed.",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "ha025",
+        "module": "Household_Income",
+        "source_label": "The Expenditure on Decorating or Renovating",
+        "unit": "nominal Yuan spent in the past year",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "mapping_status": "candidate; official questionnaire and Codebook identify field; verify response routing and special codes in authorized data"
+      }
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+# 2011经工作单位参加企业基本养老保险的起始年月
+
+更新：2026-10-22。2011基线问卷规定，FN029–FN031仅在FN024=2（参加企业基本养老保险）时询问；FN025先选择提供这份保险的当前工作单位、上一份工作单位或办理退休手续的单位，FN029再记录经该单位参加企业基本养老保险的年月。FN029_1范围1900–2011年，FN029_2范围0–12月，访员指引允许记不清月份填0。Codebook字段名分别为Year和Month。
+
+这与2013/2015 FN011_W2“通过本工作单位开始参加企业基本养老保险”的题意和路由相符，故将`fn029_1/_2`接入已有`pension_employer_plan_participation_start_date`概念，不新增概念。合并波次时仍须保留年份范围、0月与工作单位选择路径；不能假设是受访者首次参加社会保险的时间，也不能补全年月。
+
+来源：`sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`中FN024–FN031段落；`sources_official/CHARLS_2011_Codebook_extracted.txt`中fn029_1/_2标签；对照2013/2015 FN011_W2问卷。构建见`scripts/build_pension_supplementary_crosswalk.py`。未读取个体记录。

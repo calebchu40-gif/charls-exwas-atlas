@@ -1,0 +1,3 @@
+﻿wave,code,value_labels,value_label_status,value_label_source
+2011,ba005,1=Yes; 2=No,official questionnaire and CodeBook agree; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2013,ba005,1=Go home almost every day; 2=Go home almost every weekend; 3=Go home once every two weeks or more,official questionnaire and CodeBook labels reviewed; frequencies omitted,sources_official/CHARLS_2013_Codebook_extracted.txt

@@ -1,0 +1,4 @@
+﻿concept_id,fields,codes,interpretation
+pension_nonbasic_program_participation_any,1,fn038,binary gate; excludes government/institution and firms' basic pension
+pension_participation_type_multi_select,6,fn039s1-fn039s6,six distinct checkbox options; only selected-option codes are affirmative; blank is not No
+new_rural_social_pension_participation,1,fn071,plan-specific participation gate; Yes/No routes differ

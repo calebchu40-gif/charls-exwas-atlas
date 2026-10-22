@@ -1,0 +1,63 @@
+[
+  {
+    "concept_id": "respondent_spouse_owned_house_monthly_rental_income",
+    "label": "主要受访者/配偶所拥有房屋的月租收入",
+    "domain": "housing and household economic resources",
+    "caveat": "Household-level monthly rent from currently leased houses/rooms owned by the main respondent or spouse. HA052=1 opens amount response; 2=Not applicable. Do not infer zero from skips or nonresponse; do not annualize or interpret as personal rental income/current-home value.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ha052_1",
+        "module": "household_income",
+        "source_label": "Rental Income",
+        "unit": "Yuan/month",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire and Codebook item matched; candidate concept; preserve household ownership level and applicability route"
+      },
+      {
+        "wave": "2013",
+        "code": "ha052_1",
+        "module": "Household_Income",
+        "source_label": "Rent (Yuan/Month)",
+        "unit": "Yuan/month",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire and Codebook item matched; candidate concept; preserve household ownership level and applicability route"
+      },
+      {
+        "wave": "2015",
+        "code": "ha052_1",
+        "module": "Household_Income",
+        "source_label": "Rent (Yuan/Month)",
+        "unit": "Yuan/month",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire and Codebook item matched; candidate concept; preserve household ownership level and applicability route"
+      }
+    ]
+  },
+  {
+    "concept_id": "other_household_member_owned_house_monthly_rental_income",
+    "label": "其他家户成员所拥有房屋的月租收入",
+    "domain": "housing and household economic resources",
+    "caveat": "Household-level monthly rent from currently leased houses/rooms owned by other household members. HA053=1 opens amount response; 2=Not applicable. Do not infer zero from skips or nonresponse; do not annualize or attribute it to the respondent/spouse.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ha053_1",
+        "module": "household_income",
+        "source_label": "Rental Income",
+        "unit": "Yuan/month",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire and Codebook item matched; candidate concept; preserve household ownership level and applicability route"
+      },
+      {
+        "wave": "2013",
+        "code": "ha053_1",
+        "module": "Household_Income",
+        "source_label": "Rent (Yuan/Month)",
+        "unit": "Yuan/month",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "mapping_status": "official questionnaire and Codebook item matched; candidate concept; preserve household ownership level and applicability route"
+      }
+    ]
+  }
+]

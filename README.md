@@ -1,0 +1,141 @@
+# CHARLS ExWAS Atlas 当前状态（2026-10-22）
+
+
+> **最新目录状态（2026-10-22）：**网站字段目录7,544行（E 4,566、P-only 1,903、C 911、双角色E/P 164）；候选概念1,408个（暴露侧1,130、表型侧287、双角色概念9），E/P来源字段映射6,598行。全来源crosswalk 6,804行，其中6,792匹配目录、12条为目录外C元数据。2011/2013/2015/2018/2020目录概念对共现为120,052/126,301/128,984/98,667/12,598；**仅表示字段元数据层面的潜在共现，不是人数、配对样本量或分析资格**。2018 HCAP及跨波拒答/施测/工具使用共15个字段列为C类；连续减法和动物流畅性计数维持原始数值候选并标明Codebook范围限制。E/P目录中有2,817行带非空值标签，已审来源与发行版待核状态分开显示；2013 `fn056_w2_5`的问卷选项/CodeBook类别表覆盖差异已裁定为非标签冲突，当前目录标签冲突为0；未拟合关联模型。
+
+2011 `FN064_1`–`FN064_4`、`FN070_1`–`FN070_4`的Codebook阈值类别现已恢复到网站标签：每个字段只显示Codebook实际列出的类别，不抄录频数，不推断未列类别。它们仍是条件路由下的阈值回答组件，不是待遇金额；八项继续显示`DO NOT ANALYZE`，直到支付周期、阈值序列与路线问题解决。前端现对全部`Review.Flag`带有`DO NOT ANALYZE`的E/P字段显示警示。见[`audit/pension_2011_fn064_fn070_storage_route_review_2026-10-22.md`](audit/pension_2011_fn064_fn070_storage_route_review_2026-10-22.md)。
+
+2026-10-22官方CHARLS-HCAP Data Alert/User Guidance已核验并纳入认知条目页面；新增2018仙人掌命名及修订评分候选，明确识字/视力/文化偏倚和十词记忆跨波不可直接比。详见`audit/hcap_wave4_cognition_bias_guidance_review_2026-10-22.md`。
+
+环境暴露候选续审已区分住户/住宅层与2011社区告知人层：后者目前有100个概念、187条字段映射且仅覆盖2011，含社区水源和燃料户数、供暖/卫生/电力、社区污染评级与距离、天气及灾害等；它们不是个人剂量。住户住宅候选跨波覆盖饮水、厕所、烹饪/取暖燃料、室内环境等，但同名字段存在波次换码/构念变化（如2020 I016为tap water、I017为淋浴设施、I021为烹饪燃料）。见[`audit/community_environment_candidate_review_2026-10-22.md`](audit/community_environment_candidate_review_2026-10-22.md)及既有[`audit/food_environment_crosswalk_audit_v1.md`](audit/food_environment_crosswalk_audit_v1.md)。
+
+
+2013 Wave 2人寿保险缴费频率`FN056_W2_5`原唯一标签冲突已按官方问卷选项定义解除。季度选项仍会显示，并注明CodeBook类别表没有列出、季度金额子字段另标无观测；未传播CodeBook频数，也未从表格缺项推断原始数据值。详见[`audit/life_insurance_frequency_wave2_category_coverage_review_2026-10-22.md`](audit/life_insurance_frequency_wave2_category_coverage_review_2026-10-22.md)。
+
+2015 `DA061_W3`已按官方问卷核明为回顾上一波吸烟状态（不是2015当轮状态）；2018 `DA061_W4`则引用上轮既往记录后询问当前状态。`DA059`因返访路由可跳题，空值不代表从未吸烟。详细说明及网站关系提示见`audit/concept_overlap_resolution_2026-10-22.md`，跨波状态构造前必须保留时间参照与路由分母。
+
+2026-10-22续审：FM033四个已观测类别和FM011=3路由已核实，从旧菜单冲突锁定中移出；未观测的商业保险选项不推断编码，空白保留为缺失。FM032/FM035端点的成对字符串存储和路径已核实，但极端特殊码仍未解释，继续锁定。当前锁定数33；审计见[`audit/pension_2011_fm032_fm033_fm035_route_storage_review_2026-10-22.md`](audit/pension_2011_fm032_fm033_fm035_route_storage_review_2026-10-22.md)。
+
+本轮认知标签导入和C类施测字段复核见[`audit/cognition_label_ingestion_and_role_rebuild_2026-10-22.md`](audit/cognition_label_ingestion_and_role_rebuild_2026-10-22.md)。结果表schema已配备结构/样本流/设计状态校验器[`scripts/validate_exwas_result_table.py`](scripts/validate_exwas_result_table.py)，4项合成规则测试通过；这不代表CHARLS模型已拟合。
+
+慢病辅助题的84条非空审定值标签现已逐波精确进入主目录；新增13个标签展示，并统一2011 DA020S2多选选项的说明，避免误把未选中代码当作No。具体字段和路由限制见[`audit/chronic_disease_ancillary_label_ingestion_2026-10-22.md`](audit/chronic_disease_ancillary_label_ingestion_2026-10-22.md)。
+
+工作类复选框中53个已有明确官方选项标签的字段也已加入检索目录，并在网站标签旁直接显示“未选中不等于No”的说明；没有因此推断选项存储或分析资格。见[`audit/work_checkbox_value_label_ingestion_2026-10-22.md`](audit/work_checkbox_value_label_ingestion_2026-10-22.md)。
+
+另补入个人收入/家庭经济、借贷和养老的7个逐波官方类别标签；家庭借贷否定路由、养老缴费来源和主观晚年依靠的含义均保留在审计中。见[`audit/additional_income_debt_pension_label_ingestion_2026-10-22.md`](audit/additional_income_debt_pension_label_ingestion_2026-10-22.md)。
+
+补入2011/2015共16个养老金参与/资格选项标签，并在C类元数据中显示2018年/月格式选择器；不把资格、参与、领取或条件性多选合并解释。见[`audit/pension_and_format_selector_label_ingestion_2026-10-22.md`](audit/pension_and_format_selector_label_ingestion_2026-10-22.md)。
+
+2020家庭疫情经济候选变量另有13个官方问卷/Codebook标签进入目录；网页直接显示“发行数据编码、路由及适用人群/分母仍待核”，两条冲突锁定选项继续空白。见[`audit/covid_economic_candidate_label_display_2026-10-22.md`](audit/covid_economic_candidate_label_display_2026-10-22.md)。
+
+工作问卷菜单再补入28个官方类别标签；完整菜单但Codebook字段/类别不完整的FL014显示来源状态。6个CAPI派生字段及4个字段身份/编码冲突项继续空白，见[`audit/work_questionnaire_category_label_ingestion_2026-10-22.md`](audit/work_questionnaire_category_label_ingestion_2026-10-22.md)。
+
+慢病首次诊断/知悉的日历年与年龄，以及复发中风最近事件的年/月/年龄组件，已按对应波次Codebook加入单位元数据；时间组件不合并、不推断有效范围。审计见[`audit/chronic_disease_diagnosis_time_unit_review_2026-10-22.md`](audit/chronic_disease_diagnosis_time_unit_review_2026-10-22.md)和[`audit/recurrent_stroke_timing_unit_review_2026-10-22.md`](audit/recurrent_stroke_timing_unit_review_2026-10-22.md)。
+
+同轮另复核了2011 FN064/FN070八个预期待遇阈值字段：保持类别与阈值标签；受控表显示FN064存在路由/格式选择器不一致，FN070展开回答缺少格式选择器，支付形式和完整序列仍不明，八项继续锁定且不作金额处理。见[`audit/pension_2011_fn064_fn070_storage_route_review_2026-10-22.md`](audit/pension_2011_fn064_fn070_storage_route_review_2026-10-22.md)。
+
+继续审计2013 FN036_W2、FN077_W2和FN094_W2三组区间端点：所有非空边界行符合对应问卷路线，但每组都出现仅保存单边界的记录；FN036/FN094区间记录没有支付形式选择器。FN077虽然明确元/月，端点不成对，不能当作具体待遇金额。六字段仍标DO NOT ANALYZE as numeric；详见[`audit/pension_2013_bracket_bounds_local_route_review_2026-10-22.md`](audit/pension_2013_bracket_bounds_local_route_review_2026-10-22.md)。
+
+
+2011 FM019多选养老金来源题已用受控本地派生表验证选项码存储；空字符串仍无法区分未选与未施测，且发现公开问卷路由外的选择记录，因此5个来源槽保留DO NOT ANALYZE。详见[`audit/pension_2011_fm019_checkbox_storage_review_2026-10-22.md`](audit/pension_2011_fm019_checkbox_storage_review_2026-10-22.md)。 另对2011 FM039进行了本地存储核验：成对字符串上下界及代码本极大上界可复现，但FM038格式选择器在区间记录中为空；已撤回“仅金额分支”旧说明，两个区间字段继续锁定。详见[`audit/pension_2011_fm039_bracket_storage_review_2026-10-22.md`](audit/pension_2011_fm039_bracket_storage_review_2026-10-22.md)。
+
+本轮将2011 `fm031`按官方Codebook的No Observations改为C类停用字段，保留FM032端点但不推断其可分析；详见[`audit/pension_2011_fm031_no_observations_review_2026-10-22.md`](audit/pension_2011_fm031_no_observations_review_2026-10-22.md)。
+
+2013 `zda005_6_`按官方问卷仅列五种残疾、Codebook中额外槽只有13条“No”且无“Yes”类别，转为C类源质量元数据，未映射P字段由35降至34；已在网站保留具体解释并排除关联矩阵，见[`audit/phantom_disability_slot_2013_review_2026-10-22.md`](audit/phantom_disability_slot_2013_review_2026-10-22.md)。
+
+本轮正确使用2011基线问卷更正DE010–DE012：它们是四个领域（疼痛、睡眠、行动、认知）标准化健康锚定情景中的睡眠题，转C类，排除个人表型矩阵；2011 BA005的二元返家题与Codebook相符，撤销旧来源错误留下的分析锁定，仍与2013三档题分开。剩余33条锁定字段及关闭证据见[`audit/do_not_analyze_triage_2026-10-22.md`](audit/do_not_analyze_triage_2026-10-22.md)。
+
+个人其他投资收入审计：2011/2013 HC023/HC024按同一过去一年、个人层级题意设两个跨波候选概念；2011负最小金额待发行版字典核实；2015 Codebook No Observations字段转C类。2013 GA004单位选择字段审计见`audit/2013_individual_transfer_income_unit_selector_review_2026-10-22.md`。详见[`audit/other_investment_income_2011_2015_review_2026-10-22.md`](audit/other_investment_income_2011_2015_review_2026-10-22.md)。
+土地出租审计：2011/2013/2015按耕地、林地、牧场、水塘分别映射家户层HA060金额；2018四字段按主要受访者/配偶口径单列，2015无观测父项转C。见[`audit/land_rental_income_2011_2018_review_2026-10-22.md`](audit/land_rental_income_2011_2018_review_2026-10-22.md)。
+固定资本资产审计：HA066–HA068新增43个候选概念，覆盖2011–2018农用固定资本所有权/估值及其他生产性资产；家户、本人/配偶与两人产权份额分开，2018农用飞机单位保留万元；2015无观测父项/格式项列C。详见[`audit/fixed_capital_asset_exposure_review_2026-10-22.md`](audit/fixed_capital_asset_exposure_review_2026-10-22.md)。
+家庭借贷与负债审计：2011/2013 HA069–HA072映射为4个家户候选概念，2015同组无观测字段转C；HA073区间回退题仅作回答协议元数据。详情见[`audit/household_lending_debt_exposure_review_2026-10-22.md`](audit/household_lending_debt_exposure_review_2026-10-22.md)。
+本轮新增亲属背景候选：2013受访者生父当前婚姻状态，以及2015受访者生父/生母少数民族身份与族别。全部按Parent长表亲属关系、官方跳题与值标签处理；详情见[`audit/parent_marital_ethnicity_review_2026-10-22.md`](audit/parent_marital_ethnicity_review_2026-10-22.md)。网站目录保留全部搜索类别；当前有12个字段身份跨类别重复展示，完整类别键下没有重复行。
+本轮还新增过去一年家户低保金额候选，映射2011 `gd001_c`和2013/2015 `gd001`；已按官方问卷区分2011金额资格题和2013/2015不适用填零规则。详见[`audit/household_dibao_amount_review_2026-10-22.md`](audit/household_dibao_amount_review_2026-10-22.md)。
+家户GD003的捐助、征地补偿、住房拆迁补偿来源勾选项与各自金额字段分开索引；共同None选项列C类元数据，非勾选/缺失存储仍须获准的数据字典确认。详见[`audit/household_transfer_receipt_review_2026-10-22.md`](audit/household_transfer_receipt_review_2026-10-22.md)。
+模块限定字段匹配、重复源项与2015血检独立发布标识的收尾审计见[`audit/module_qualified_source_identity_review_2026-10-22.md`](audit/module_qualified_source_identity_review_2026-10-22.md)。
+
+2026-10-22：2018 `ga000_w4`与2020 `gb001`家庭财务回答者字段依据官方问卷/Codebook改列C类回答来源元数据，排除于E/P关联矩阵；2018特殊码待发行字典确认，见[`audit/financial_respondent_source_review_2026-10-22.md`](audit/financial_respondent_source_review_2026-10-22.md)。
+2026-10-22人口学类复核新增历史学历与条件婚期候选（2013 `bd001_w2_3`、`be004_1/_2`），并将9个身份证/户口本生日及预载核验字段、2020 `xrresidencesurveyhome`改列C类；字段路由、单位和隐私限制见[`audit/education_marriage_history_2013_review_2026-10-22.md`](audit/education_marriage_history_2013_review_2026-10-22.md)与[`audit/demographic_preload_birthdate_surveyhome_roles_review_2026-10-22.md`](audit/demographic_preload_birthdate_surveyhome_roles_review_2026-10-22.md)。 2013户口类型/登记地变化史新增条件性原因、状态与年份候选，户口原因类别保留农业/非农业路线差异；3个“其他，请注明”开放文本字段转C类。问卷跳转与不分析边界见[`audit/hukou_transition_2013_remainder_review_2026-10-22.md`](audit/hukou_transition_2013_remainder_review_2026-10-22.md)。 2013/2015受访者生物学父母学历按父母身份分别列为早期家庭SES代理候选，其他亲属槽位未混入；见[`audit/biological_parent_education_exposure_review_2026-10-22.md`](audit/biological_parent_education_exposure_review_2026-10-22.md)。
+
+本轮新增家庭房产出售所得用途的2013/2015候选映射54条；问卷要求用途比例但发布字段目录未识别比例组件，所有选项槽均标记DO NOT ANALYZE，详见[`audit/household_sale_proceeds_allocation_mapping_review_2026-10-21.md`](audit/household_sale_proceeds_allocation_mapping_review_2026-10-21.md)。
+
+历史阶段快照（其数字早于本文顶部的最新重建口径，仅作历史记录）：候选E/P概念1,160个（E侧895、P侧274、双角色9）；E/P来源链接5,897条全匹配；全来源crosswalk6,055条（C158，155条匹配、3条目录外权重/资格元数据）；网站目录7,818行（E/P7,205、C613）。养老金映射1,042条/257个概念，未归类字段序列202条（不是独立指标）。波次元数据共现对：2011=97,963、2013=96,271、2015=102,072、2018=79,985、2020=11,398；不是样本量。2013/2015/2018 `FN038_w2`现映射为计划特定最早领取资格年龄，见[`audit/pension_earliest_employer_exit_benefit_age_review_2026-10-21.md`](audit/pension_earliest_employer_exit_benefit_age_review_2026-10-21.md)；商业养老金开始缴费日期的路由与月份编码见[`audit/pension_commercial_contribution_start_date_review_2026-10-21.md`](audit/pension_commercial_contribution_start_date_review_2026-10-21.md)；2018 FN065年龄/等待年数单位选择见[`audit/pension_2018_expected_receipt_timing_unit_selector_review_2026-10-21.md`](audit/pension_2018_expected_receipt_timing_unit_selector_review_2026-10-21.md)。近期纠正预期待遇时间及金额单位选择器为C，拆分年龄/等待年数、月金额/工资比例；2013/2018缴费要求题保留冲突审核状态。2013 FN078及2013–2018征地养老金FN079_W2_8年龄/年数选择器拆分见[`audit/pension_expected_claim_timing_selectors_2013_2018_review_2026-10-21.md`](audit/pension_expected_claim_timing_selectors_2013_2018_review_2026-10-21.md)。土地征收经历/年份和征地养老金金额选择器审核见[`audit/pension_land_requisition_history_2013_2015_review_2026-10-21.md`](audit/pension_land_requisition_history_2013_2015_review_2026-10-21.md)。2011代理访谈/问卷协助字段的C类修正见[`audit/proxy_interview_metadata_2011_review_2026-10-21.md`](audit/proxy_interview_metadata_2011_review_2026-10-21.md)。2011商业养老保险按年缴费金额与所需缴费年限审核见[`audit/commercial_pension_annual_contribution_2011_review_2026-10-21.md`](audit/commercial_pension_annual_contribution_2011_review_2026-10-21.md)。2011商业缴费者、缴费方式及计划缴费年限定义见[`audit/commercial_pension_and_plan_contribution_2011_review_2026-10-21.md`](audit/commercial_pension_and_plan_contribution_2011_review_2026-10-21.md)。实际领取年月/当前月待遇路由和波次特殊码审计见[`audit/land_requisition_pension_current_benefit_2013_2018_review_2026-10-21.md`](audit/land_requisition_pension_current_benefit_2013_2018_review_2026-10-21.md)。2011–2015 FL020离职原因16项多选映射及编码限制见[`audit/work_exit_reasons_2011_2015_mapping_review_2026-10-21.md`](audit/work_exit_reasons_2011_2015_mapping_review_2026-10-21.md)。2011 FJ001–FJ003侧业字段按FC019=1路由已新增三个2011专属候选（见audit/side_job_fields_2011_mapping_review_2026-10-21.md）；DE010–DE012现按P候选显示但锁定不得分析，待核实题目身份，详见[`audit/codebook_only_sleep_severity_2011_identity_review_2026-10-21.md`](audit/codebook_only_sleep_severity_2011_identity_review_2026-10-21.md)。当前欠薪状态与金额HC033/HC034映射见[`audit/unpaid_wage_arrears_2011_2018_review_2026-10-21.md`](audit/unpaid_wage_arrears_2011_2018_review_2026-10-21.md)。2013–2018工资扣款组件、单位选择器及跨波限制见[`audit/personal_wage_deductions_2013_2018_review_2026-10-21.md`](audit/personal_wage_deductions_2013_2018_review_2026-10-21.md)；2011/2013继承来源及金额字段边界见[`audit/inheritance_transfer_2011_2013_review_2026-10-21.md`](audit/inheritance_transfer_2011_2013_review_2026-10-21.md)；主观绝对/相对生活水平指标及情景题边界见[`audit/subjective_living_standard_2011_2013_review_2026-10-21.md`](audit/subjective_living_standard_2011_2013_review_2026-10-21.md)；2018诈骗尝试与财物损失字段见[`audit/fraud_exposure_2018_review_2026-10-21.md`](audit/fraud_exposure_2018_review_2026-10-21.md)；HD001/HD003贷款与信用余额的跨波边界见[`audit/unpaid_debt_balance_2011_2018_review_2026-10-21.md`](audit/unpaid_debt_balance_2011_2018_review_2026-10-21.md)。2013 `GA002`按年/月工资金额单位选择器列为C类；详见`audit/wage_amount_unit_selector_2013_review_2026-10-21.md`。2015年HC039_W3/HC040_W3应收款字段与Codebook标签冲突，目录锁定DO NOT ANALYZE，详见`audit/private_lending_receivable_2015_2018_review_2026-10-21.md`。2011八个DA010“以上皆无”字段已接回既有治疗概念但标记DO NOT ANALYZE，见[`audit/2011_disease_treatment_none_option_mapping_review_2026-10-21.md`](audit/2011_disease_treatment_none_option_mapping_review_2026-10-21.md)；网站现新增“家庭资产租赁收入”逐波检索视图。家庭其他资产租赁收入金额、状态和选择器跨波拆分见[`audit/household_other_asset_rental_income_wave_harmonization_review_2026-10-21.md`](audit/household_other_asset_rental_income_wave_harmonization_review_2026-10-21.md)；2020疫情期间家庭收入变化、财务压力与应对字段审计见[`audit/household_covid_economic_2020_review_2026-10-21.md`](audit/household_covid_economic_2020_review_2026-10-21.md)。模型0，未读取个体数据。完整现状见[`audit/current_directory_snapshot_2026-10-22.md`](audit/current_directory_snapshot_2026-10-22.md)，专题审计见`audit/`，许可边界见[`audit/DATA_ACCESS_AND_REPRODUCTION.md`](audit/DATA_ACCESS_AND_REPRODUCTION.md)。
+
+
+2020 CAPI派生工作状态/年化副业量的公式及限制见[`audit/capi_work_derived_variables_2020_review_2026-10-21.md`](audit/capi_work_derived_variables_2020_review_2026-10-21.md)；更正后的2011养老金年月字段与原始跳题路径见[`audit/pension_2011_unmatched_date_components_review_2026-10-21.md`](audit/pension_2011_unmatched_date_components_review_2026-10-21.md)。
+
+工作暴露目录本轮新增就业组织、非农工作安排、雇主福利与农户雇主数候选，并修正2011问卷来源引用；详见[`audit/current_work_organization_field_review_2026-10-21.md`](audit/current_work_organization_field_review_2026-10-21.md)。
+
+2011问卷误标来源的影响、已修正构建脚本以及仍待逐项复核的专题清单见[`audit/2011_questionnaire_source_identity_correction_2026-10-21.md`](audit/2011_questionnaire_source_identity_correction_2026-10-21.md)。2011 `BA005`已修正为与2013三档频率分开的二元每周返家候选。
+
+
+本轮新增2011/2013家户住房装饰/装修支出候选；2015同名字段因官方Codebook标记No Observations而排除，见[`audit/household_renovation_expenditure_review_2026-10-21.md`](audit/household_renovation_expenditure_review_2026-10-21.md)。2011 GE003回答者角色转为C类元数据。
+
+
+本轮还将GB010四波家户牲畜/水产购买支出映射为独立农业购买流量，见[`audit/household_agricultural_production_review_2026-10-21.md`](audit/household_agricultural_production_review_2026-10-21.md)。
+
+
+2011/2013/2015家户社会捐助、征地补偿和住房拆迁补偿金额现按三类概念分开映射；条件路由和零值限制见`audit/household_transfer_compensation_review_2026-10-21.md`。
+
+
+2011 DE007–DE009、DE013–DE018是对假设人物的健康评价，已依据官方问卷改列C类锚定情景元数据并加入五级响应标签；详见`audit/health_anchoring_vignette_metadata_review_2026-10-21.md`。
+
+2013/2015认知词表题组中的DC008经官方问卷确认为CAPI记录的时钟时间，已列为C类施测元数据，见`audit/cognition_unassigned_series_triage_v1.md`。
+
+2011/2013首次工作时间父项FB001现作为C类单位选择器（年龄/日历年），原年龄/年份子字段保留，暂不自动换算；见`audit/lifecourse_timing_selector_review_2026-10-21.md`。
+
+2018 FC013为健康原因造成的自家农业工作缺勤单波表型候选，与2013同码题分开；其路由和范围差异见`audit/health_work_absence_2018_review_2026-10-21.md`。
+
+
+2026-10-22：补入2013/2015家户月度GE009家政/佣工、当地交通、娱乐支出六条字段链接，0与-9999按问卷指示区分，见[`audit/household_monthly_expenses_2013_2015_review_2026-10-22.md`](audit/household_monthly_expenses_2013_2015_review_2026-10-22.md)。
+
+2026-10-22：2013/2015当前住房HA011总价与单位面积价格拆为不同候选概念、HA011父字段为C类单位选择器，见`audit/current_home_market_value_2013_2015_review_2026-10-22.md`。其中2015 HA007=3时跳过估价题；不把总价与元/平方米口径合并，旧房当时价值、多套房槽位及估值区间留待单独核实。
+
+2026-10-22 additions: see the financial-respondent, monthly household expenditure, current-home market value, and demographic record/hukou location audits dated 2026-10-22.
+
+2026-10-22社区灾害开放文本复核：2011 `ji002_other`为“其他灾害请注明”文本，不是标准暴露类别；从E候选移列C类元数据，禁止公开文本或纳入E/P矩阵。见[`audit/community_other_disaster_open_text_review_2026-10-22.md`](audit/community_other_disaster_open_text_review_2026-10-22.md)。
+
+历史快照（已被2026-10-22最终全量重建取代）：早期审计曾记录E/P/C未连接字段队列，后续逐项复核并完成角色调整。当前状态以本文顶部为准：未映射E/P均为0；C类字段用于测量、路由及来源元数据，不进入关联配对。早期队列证据仍保存在audit/unassigned_catalog_series_review_v1.md，仅供追溯，不应作为当前待办清单。
+
+2026-10-22养老金续审：2013 `fn064_w2_2_`接入既有居民养老转入来源概念，值码1–3按官方Codebook核对，严格保留FN063_w2=Yes条件路径；2015同码只见单一标签，留待获批字典确认。审计audit/pension_resident_transfer_source_2013_2015_review_2026-10-22.md。当时目录链接数6,255，全来源crosswalk 6,431（后续养老金区间映射见最新状态），2013共现对111,294（元数据可用性，不是样本量）。
+
+2026-10-22：FN098子女名单链接字段复核后，2013/2015/2018共50个槽位转为C类元数据；FN097老年经济支持来源仍为E候选。最新目录7,408行（E/P 6,660、C 748；唯一身份7,396）；空Concept ID队列E 326/239码、P 35/35码、C 582/402码。详见`audit/child_roster_old_age_support_selector_review_2026-10-22.md`。
+
+2026-10-22续审：2015 Codebook将GA004旧年度/月度拆分18槽标记“No Observations”，转列C类inactive legacy metadata；E/P候选源金额字段保留。当前目录7,408行（E/P 6,660、C748；唯一身份7,396）；未映射E320/233码、P35/35、C584/404。详见`audit/inactive_2015_individual_transfer_income_slots_review_2026-10-22.md`。
+
+2026-10-22养老金区间续审：12个2011金额上下界字段接入已有待遇金额概念，未新增概念；FN045另2条无观测槽转C。当前E/P字段链接6,271，全crosswalk6,447，目录E/P6,660/C748；空Concept队列E320/233、P35、C584/404。见`audit/pension_2011_unfolding_bracket_bounds_review_2026-10-22.md`。
+
+
+2026-10-22 2011养老金路由精确区分及目录更新：FN015/FN016确认属于当前领取者（FN002=4），新建路由专属概念；FN065/FN066属于已参保者（FN039=4），与2013 FN063_W2/FN064_W2共用已参保路线概念。FN048父字段按官方问卷/Codebook转为C类格式元数据，fn048_1/2保留独立E概念。完整目录重建成功：7,454字段行（E 4,609、P 1,861、C 820、双角色164），1,378候选概念，6,459来源链接，6,636全源crosswalk其中6,624匹配、12个C元数据未匹配；波次字段元数据共现2011=115,500、2013=117,960、2015=120,216、2018=94,393、2020=12,598（非样本量）。网站JS语法检查通过。未读取微观数据、未运行关联分析。具体审计见 `audit/pension_2011_fn015_fn016_source_identity_conflict_review_2026-10-22.md`、`audit/pension_2011_residual_review_2026-10-22.md`。
+
+
+2026-10-22 2013养老金残余字段复核：FN007单位来源、FN009来源单位类型、FN010来源单位粗空间关系、FN031企业补充养老金参保地、FN044商业养老金参保地、FN059三类社会养老金参保地，按官方问卷/Codebook映射为带路线的E候选；问卷选项标签包含Codebook未观测类别，但不含频数。FN016_W2省份、FN056_W2_6缴费周期选择器、FN056_W2_9待遇金额格式选择器及FN056_W2_3_1开放文本均按规则转为C。FN036/FN077/FN094的6个字符串Min/Max Bracket字段单独链接为区间边界并锁定DO NOT ANALYZE as numeric。重建后2013未映射E=0；全目录7,454字段行（E 4,605/P 1,861/C 824/双角色164），候选概念1,387（E 1,117/P279/双角色9），来源链接6,476，全crosswalk6,653行/6,641匹配/12个C未匹配。目录元数据共现2011=115,500、2013=119,778、2015=120,216、2018=94,393、2020=12,598（非样本量）；网站JS检查通过。审计见 `audit/pension_2013_residual_review_2026-10-22.md`。
+
+
+2026-10-22续审：2015 `fn064_w2_1_2_`/`fn064_w2_1_3_`按计划路线审查。受控本地表显示非空字段都对应转入状态与企业养老金来源；官方Codebook标题单位为年，但两个字段均以字符串发布，且一个字段有不可数值解析文本。继续保留文本并锁定数值分析，等待官方编码/特殊文本解释。审计见[`audit/pension_2015_transfer_year_string_storage_review_2026-10-22.md`](audit/pension_2015_transfer_year_string_storage_review_2026-10-22.md)。
+
+2026-10-22内部生物标志物角色边界已补充至血检目录：字段页面提示16项化验为已审P角色；目录搜索中的自动E/P标签是待复核发现项，不等于已批准暴露链接。2011胱抑素C权重资格和跨波原始值可比性限制分别展示。详见`audit/internal_biomarker_role_review_2026-10-22.md`和`audit/blood_biomarker_definition_review_v1.md`。
+
+
+2026-10-22补审：11个吸烟/饮酒开始或停止时间格式选择器已按波次官方标签转为C类元数据，排除于E/P关联矩阵；选择器相邻的年龄/年份回答组件仍保留。详见[`audit/behavior_age_year_selector_metadata_role_review_2026-10-22.md`](audit/behavior_age_year_selector_metadata_role_review_2026-10-22.md)。
+
+
+2026-10-22数据准备脚本QA加固：2013官方权重文件缺少`crosssection`或`longitudinal`时现在会失败关闭，避免产生缺失官方样本资格标志的派生表；新增合成测试覆盖标志保留、冲突、相同重复行及标志缺失。测试不读取CHARLS个体数据。详见`audit/prepared_wave_design_field_audit_2026-10-22.md`。
+
+
+本机受控数据状态复核（2026-10-22）：LocalAppData中存在五波已准备分析表，但对应五波原始CHARLS发行包当前不在本机受控数据根目录，桌面旧原始数据路径也不存在；因此本轮仅重跑汇总级样本设计审计，不重建任何个人表。`audit/survey_design_field_coverage_v1.csv`现有54条波次—设计字段汇总：五波均有communityID和权重字段，2015/2018/2020有crosssection/样本标记，当前2013派生表缺crosssection/longitudinal，2011/2013亦未检出相同样本标记；各波均未发现显式方差分层变量。不得从权重非缺失推断样本资格。原始包路径、权重来源版本与2013标记恢复仍是本机分析重建前置项。
+
+
+2026-10-22续建2014 Life History独立回顾性候选目录：官方字段映射18概念组、471行（E 466 / P 5）；生命历程样本无权重且含特殊样本构成，不纳入常规波次配对/加权关联框架。页面和复现材料见 [`audit/life_history_exposure_mapping_review_2026-10-22.md`](audit/life_history_exposure_mapping_review_2026-10-22.md)。
+
+
+2026-10-22生命历程字段差集补审：补入T004逐段城乡模式25个字段、T003c迁出原因13选项×25段居住履历的325个字段，以及A7/A10/A10_1父母离异及发生年龄；合计18概念组/471字段行（E 466、P 5）。循环/选项字段只按概念组归并，不当作数百个独立暴露；迁出多选的存储方式待获准原始数据核验。详见Life History映射审计。
+
+
+2026-10-22候选概念链接审计：核实并分类全部3个未决多概念源字段链接，剩余32个共享字段均已有关系类型；修正父母教育记录分层解释，并将2018同题的两个工作规模候选ID显式合并为别名。概念总数和2018元数据共现已刷新。见 [`audit/concept_overlap_resolution_2026-10-22.md`](audit/concept_overlap_resolution_2026-10-22.md)。
+
+
+行为暴露共享题关系补审：DA067（2020 DA051）过去一年饮酒原始频率三分类与“是否饮酒”二元概念现明确标为派生关系；1/2派生Yes、3派生No，未把它们当作独立暴露，也保留缺失/路由状态。复核细节见 `audit/concept_overlap_resolution_2026-10-22.md`。
+
+
+体力活动共享字段审计：官方问卷将不同强度的发生题分别记录；`physical_activity_occurrence`是分组上位概念，没有独立的总体活动响应。现将10个共享链接标为`umbrella_group_not_independent_measure`，任何“至少一类活动”变量须按预设规则从符合资格的强度题派生；2011随机半数家庭施测限制保留。见`audit/concept_overlap_resolution_2026-10-22.md`。

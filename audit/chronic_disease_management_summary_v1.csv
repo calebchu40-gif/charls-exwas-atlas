@@ -1,0 +1,34 @@
+﻿concept_id,concept_label,construct,subtype,waves,source_fields,source_codes
+blood_glucose_test_count,糖尿病管理：血糖检测次数,diabetes management,annual count: Blood glucose test,"2011,2013,2015,2018",4,da015_1;da015_1_a
+diabetes_community_exam_frequency,糖尿病管理：社区/村医检查频次,diabetes community screening,Asked after a Yes to 2015 DA016_W3; 'once every season' wording is not relabeled as an exact three-month interval.,2015,1,da016_w3_1
+diabetes_community_exam_frequency,糖尿病管理：社区/村医检查频次,diabetes community screening,Asked after a Yes to 2018 DA016_W4; frequency category 5 differs from the 2015 wording.,2018,1,da016_w3_1
+diabetes_community_exam_payment,糖尿病管理：社区/村医检查是否付费,diabetes community screening,Whether the community/village blood-glucose examination required payment; asked only after the relevant screening route.,2015,1,da016_w3_2
+diabetes_community_exam_payment,糖尿病管理：社区/村医检查是否付费,diabetes community screening,Whether the community/village diabetes examination required payment; asked only after the relevant screening route.,2018,1,da016_w3_2
+diabetes_community_exam_status,糖尿病管理：社区/村医检查经历,diabetes community screening,2015 asks whether community/village doctors usually come and perform a blood-glucose test; not identical to 2018 regular-examination wording.,2015,1,da016_w3
+diabetes_community_exam_status,糖尿病管理：社区/村医检查经历,diabetes community screening,2018 asks whether community/village doctors regularly performed a diabetes exam during the prior 12 months; preserve distinct wording from 2015.,2018,1,da016_w4
+diabetes_provider_health_advice,糖尿病管理：医护人员健康建议,diabetes management,provider advice option: Diet,"2011,2013,2015,2018",4,da016_s3;da016s3
+diabetes_provider_health_advice,糖尿病管理：医护人员健康建议,diabetes management,provider advice option: Exercise,"2011,2013,2015,2018",4,da016_s2;da016s2
+diabetes_provider_health_advice,糖尿病管理：医护人员健康建议,diabetes management,provider advice option: Foot self-care,"2011,2013,2015,2018",4,da016_s5;da016s5
+diabetes_provider_health_advice,糖尿病管理：医护人员健康建议,diabetes management,provider advice option: None of the above,"2011,2013,2015,2018",4,da016_s6;da016s6
+diabetes_provider_health_advice,糖尿病管理：医护人员健康建议,diabetes management,provider advice option: Smoking control,"2011,2013,2015,2018",4,da016_s4;da016s4
+diabetes_provider_health_advice,糖尿病管理：医护人员健康建议,diabetes management,provider advice option: Weight control,"2011,2013,2015,2018",4,da016_s1;da016s1
+diabetes_test_type_past_year,糖尿病管理：过去12个月检查项目选择,diabetes annual testing,selected option: Blood glucose test,"2013,2015",2,da015s1
+diabetes_test_type_past_year,糖尿病管理：过去12个月检查项目选择,diabetes annual testing,selected option: Fundus examination,"2013,2015",2,da015s3
+diabetes_test_type_past_year,糖尿病管理：过去12个月检查项目选择,diabetes annual testing,selected option: Micro-albuminuria test,"2013,2015",2,da015s4
+diabetes_test_type_past_year,糖尿病管理：过去12个月检查项目选择,diabetes annual testing,selected option: None of the above,"2013,2015",2,da015s5
+diabetes_test_type_past_year,糖尿病管理：过去12个月检查项目选择,diabetes annual testing,selected option: Urine glucose test,"2013,2015",2,da015s2
+fundus_exam_count,糖尿病管理：眼底检查次数,diabetes management,annual count: Fundus examination,"2011,2013,2015,2018",4,da015_3;da015_3_a
+hypertension_bp_check_status,高血压管理：血压检查经历,hypertension management,checked since prior interview,2018,1,da011_w4_1
+hypertension_bp_check_status,高血压管理：血压检查经历,hypertension management,ever checked,"2013,2015,2018",3,da011_w2_1
+hypertension_bp_exam_count,高血压管理：过去12个月血压检查次数,hypertension management,annual number of blood-pressure examinations,"2011,2013,2015,2018",4,da012
+hypertension_community_screening,高血压管理：社区血压筛查服务,hypertension management,community blood-pressure check frequency,"2015,2018",2,da012_w3_1
+hypertension_community_screening,高血压管理：社区血压筛查服务,hypertension management,community/village doctor usually comes,2015,1,da012_w3
+hypertension_community_screening,高血压管理：社区血压筛查服务,hypertension management,payment for community blood-pressure check,"2015,2018",2,da012_w3_2
+hypertension_community_screening,高血压管理：社区血压筛查服务,hypertension management,regular blood-pressure check in prior year,2018,1,da012_w4
+hypertension_provider_health_advice,高血压管理：医护人员健康建议,hypertension management,provider advice option: Diet,"2011,2013,2015,2018",4,da013_s3;da013s3
+hypertension_provider_health_advice,高血压管理：医护人员健康建议,hypertension management,provider advice option: Exercise,"2011,2013,2015,2018",4,da013_s2;da013s2
+hypertension_provider_health_advice,高血压管理：医护人员健康建议,hypertension management,provider advice option: None of the above,"2011,2013,2015,2018",4,da013_s5;da013s5
+hypertension_provider_health_advice,高血压管理：医护人员健康建议,hypertension management,provider advice option: Smoking control,"2011,2013,2015,2018",4,da013_s4;da013s4
+hypertension_provider_health_advice,高血压管理：医护人员健康建议,hypertension management,provider advice option: Weight control,"2011,2013,2015,2018",4,da013_s1;da013s1
+microalbuminuria_test_count,糖尿病管理：微量白蛋白尿检查次数,diabetes management,annual count: Micro-albuminuria test,"2011,2013,2015,2018",4,da015_4;da015_4_a
+urine_glucose_test_count,糖尿病管理：尿糖检测次数,diabetes management,annual count: Urine glucose test,"2011,2013,2015,2018",4,da015_2;da015_2_a

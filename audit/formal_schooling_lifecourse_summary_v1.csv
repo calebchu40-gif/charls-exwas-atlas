@@ -1,0 +1,11 @@
+﻿concept_id,concept_label,waves,mappings,source_codes
+additional_schooling_years_after_attained_level,所选最高学历之后的额外受教育年数,"2011,2013",2,bd003
+age_started_formal_schooling,开始正规/正式上学年龄,"2011,2013",2,bd005
+age_stopped_schooling,停止上学年龄（完成学业年龄）,"2011,2013,2015,2018",4,bd006
+educated_youth_return_to_city_year,知青经历后回城年份,2018,1,bg006_w4_1
+educated_youth_send_down_experience,上山下乡知青经历,2018,1,bg005_w4
+educated_youth_send_down_start_year,上山下乡知青经历开始年份,2018,1,bg005_w4_1
+primary_grade_completed,小学阶段完成年级,"2011,2013",2,bd002
+return_to_city_after_educated_youth,知青经历后是否回城,2018,1,bg006_w4
+schooling_years_after_highest_credential,最高学历后的继续受教育年数（波次更新题）,"2015,2018",2,bd002_w3
+traditional_home_schooling_years,私塾/家塾教育年数,2013,1,bd002_w2_1

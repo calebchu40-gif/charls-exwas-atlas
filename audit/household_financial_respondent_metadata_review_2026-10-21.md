@@ -1,0 +1,7 @@
+# 2011家户收入支出回答者字段：测量元数据复核
+
+核查日期：2026-10-21。2011基线家户问卷GE003要求访员记录收入/支出问题由谁回答，类别为负责家户食品采购者（非财务受访者）、财务受访者、其他。其前一题GE002提示尽可能让食品主要采购者回答生活支出题。该字段描述报告来源和回答者角色，不是家户收入、消费或个人行为暴露，故从自动E角色转为C类访谈/回答者元数据。
+
+保留GE003用于解释家庭经济答案的报告来源及预先设定的敏感性检查；不能把其类别当作暴露，也不能据回答者身份推断受访者与财务受访者的具体关系。GE003只在2011找到本题证据，本轮不推断后续波有等价字段。
+
+依据：`sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt` GE002–GE004；`sources_official/CHARLS_2011_Codebook_extracted.txt` ge003。角色修正规则列于`audit/catalog_role_override_review_v1.csv`并由`scripts/apply_catalog_role_overrides.py`实施；完整元数据重建入口为`python scripts/build_ep_atlas_metadata.py`。未读取个人记录或频数作为分析结果。

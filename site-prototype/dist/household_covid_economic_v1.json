@@ -1,0 +1,470 @@
+[
+  {
+    "concept_id": "covid_agricultural_income_change_2020",
+    "label": "疫情期间家庭农业净收入变化（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "2020 single-wave retrospective attribution to COVID-19. Household-level item; the stem says agricultural net incomes of household members. Preserve original categories, time frame and route; do not treat as a measured causal COVID effect.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gc007",
+        "module": "Household_Income",
+        "source_label": "Impact of COVID on Agricultural Income",
+        "unit": "Household-level categorical change; Chinese New Year to interview",
+        "value_labels": "1=Decreased; 2=Increased; 3=Unaffected (verify released-data coding)",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_agricultural_income_decreased_amount_2020",
+    "label": "疫情期间家庭农业净收入减少金额（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Conditional amount from Chinese New Year to interview, household-level. Keep decreased and increased amounts separate, retain -1/unknown handling per official rules, and do not set skipped amounts to zero.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gc007_1",
+        "module": "Household_Income",
+        "source_label": "Amount Decreased",
+        "unit": "Yuan; conditional on GC007 direction",
+        "value_labels": "",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_agricultural_income_increased_amount_2020",
+    "label": "疫情期间家庭农业净收入增加金额（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Conditional amount from Chinese New Year to interview, household-level. Keep decreased and increased amounts separate, retain -1/unknown handling per official rules, and do not set skipped amounts to zero.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gc007_2",
+        "module": "Household_Income",
+        "source_label": "Amount Increased",
+        "unit": "Yuan; conditional on GC007 direction",
+        "value_labels": "",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_self_employment_income_change_2020",
+    "label": "疫情期间家庭自雇活动净收入变化（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "2020 single-wave retrospective attribution to COVID-19. Applies to household self-employed activity income; keep distinct from agricultural income and individual employment income.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gd005",
+        "module": "Household_Income",
+        "source_label": "Impact of COVID on Incomes from Self-employed Activities",
+        "unit": "Household-level categorical change; Chinese New Year to interview",
+        "value_labels": "1=Decreased; 2=Increased; 3=Unaffected (verify released-data coding)",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_self_employment_income_decreased_amount_2020",
+    "label": "疫情期间家庭自雇净收入减少金额（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Conditional amount from Chinese New Year to interview, household-level. Keep decreased and increased amounts separate; do not set skipped amounts to zero.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gd005_1",
+        "module": "Household_Income",
+        "source_label": "Amount Decreased",
+        "unit": "Yuan; conditional on GD005 direction",
+        "value_labels": "",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_self_employment_income_increased_amount_2020",
+    "label": "疫情期间家庭自雇净收入增加金额（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Conditional amount from Chinese New Year to interview, household-level. Keep decreased and increased amounts separate; do not set skipped amounts to zero.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gd005_2",
+        "module": "Household_Income",
+        "source_label": "Amount Increased",
+        "unit": "Yuan; conditional on GD005 direction",
+        "value_labels": "",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_income_expense_adequacy_2020",
+    "label": "疫情期间家庭收入覆盖日常开支难度（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Single-wave self-report of financial strain, not an income amount. Preserve the ordered four-category response and source direction.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf014",
+        "module": "Household_Income",
+        "source_label": "Is Expenditure Covered by Income?",
+        "unit": "Household-level ordinal response; COVID outbreak to interview",
+        "value_labels": "1=Very difficult; 2=Difficult; 3=Easy; 4=Very easy",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_payment_arrears_1_2020",
+    "label": "疫情期间停止支付房租（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Single-wave household financial hardship indicator. Questionnaire allows multiple selections; preserve the field-specific route and do not combine with GF014 as though they were one scale.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf015_s1",
+        "module": "Household_Income",
+        "source_label": "Stop Paying Rent",
+        "unit": "Household-level multiple-response item; COVID outbreak to interview",
+        "value_labels": "0=No; 1=Yes",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_payment_arrears_2_2020",
+    "label": "疫情期间停止支付按揭（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Single-wave household financial hardship indicator. Questionnaire allows multiple selections; preserve the field-specific route and do not combine with GF014 as though they were one scale.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf015_s2",
+        "module": "Household_Income",
+        "source_label": "Stop Paying Mortgage",
+        "unit": "Household-level multiple-response item; COVID outbreak to interview",
+        "value_labels": "0=No; 2=Yes",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_payment_arrears_3_2020",
+    "label": "疫情期间停止支付水电/公用事业账单（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Single-wave household financial hardship indicator. Questionnaire allows multiple selections; preserve the field-specific route and do not combine with GF014 as though they were one scale.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf015_s3",
+        "module": "Household_Income",
+        "source_label": "Stop Paying Utility Bill",
+        "unit": "Household-level multiple-response item; COVID outbreak to interview",
+        "value_labels": "0=No; 3=Yes",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_payment_arrears_none_option_2020",
+    "label": "疫情期间未停止支付任一账单（2020；互斥选项字段）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "The questionnaire marks option 4 as a conflict with selections 1–3. Preserve as a routing/consistency marker; DO NOT ANALYZE as an independent exposure until released-data encoding and consistency are validated.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf015_s4",
+        "module": "Household_Income",
+        "source_label": "None of the Above",
+        "unit": "Household-level multiple-response routing/none-of-the-above marker",
+        "value_labels": "0=No; 4=Yes",
+        "mapping_status": "DO NOT ANALYZE pending validation of the none-of-the-above conflict and released-data storage",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_income_coping_strategy_1_2020",
+    "label": "疫情期间通过削减开支应对收入不足（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Asked only when household income cannot cover daily expenses. Preserve item-level selection and route; do not sum strategies into an unvalidated score.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf016_s1",
+        "module": "Household_Income",
+        "source_label": "Reduce Spendings",
+        "unit": "Household-level multiple-response item; COVID outbreak to interview",
+        "value_labels": "0=No; 1=Yes",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_income_coping_strategy_2_2020",
+    "label": "疫情期间通过动用储蓄应对收入不足（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Asked only when household income cannot cover daily expenses. Preserve item-level selection and route; do not sum strategies into an unvalidated score.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf016_s2",
+        "module": "Household_Income",
+        "source_label": "Use Savings",
+        "unit": "Household-level multiple-response item; COVID outbreak to interview",
+        "value_labels": "0=No; 2=Yes",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_income_coping_strategy_3_2020",
+    "label": "疫情期间通过出售资产应对收入不足（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Asked only when household income cannot cover daily expenses. Preserve item-level selection and route; do not sum strategies into an unvalidated score.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf016_s3",
+        "module": "Household_Income",
+        "source_label": "Sale of Assets",
+        "unit": "Household-level multiple-response item; COVID outbreak to interview",
+        "value_labels": "0=No; 3=Yes",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_income_coping_strategy_4_2020",
+    "label": "疫情期间接受亲友帮助应对收入不足（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Asked only when household income cannot cover daily expenses. Preserve item-level selection and route; do not sum strategies into an unvalidated score.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf016_s4",
+        "module": "Household_Income",
+        "source_label": "Help from Relatives and Friends",
+        "unit": "Household-level multiple-response item; COVID outbreak to interview",
+        "value_labels": "0=No; 4=Yes",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_income_coping_strategy_5_2020",
+    "label": "疫情期间向亲友借款应对收入不足（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Asked only when household income cannot cover daily expenses. Preserve item-level selection and route; do not sum strategies into an unvalidated score.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf016_s5",
+        "module": "Household_Income",
+        "source_label": "Borrow Money from Relatives and Friends",
+        "unit": "Household-level multiple-response item; COVID outbreak to interview",
+        "value_labels": "0=No; 5=Yes",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_income_coping_strategy_6_2020",
+    "label": "疫情期间向银行借款应对收入不足（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Asked only when household income cannot cover daily expenses. Preserve item-level selection and route; do not sum strategies into an unvalidated score.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf016_s6",
+        "module": "Household_Income",
+        "source_label": "Borrow Money from Banks",
+        "unit": "Household-level multiple-response item; COVID outbreak to interview",
+        "value_labels": "0=No; 6=Yes",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_income_coping_strategy_7_2020",
+    "label": "疫情期间采用其他方式应对收入不足（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Asked only when household income cannot cover daily expenses. Preserve item-level selection and route; do not sum strategies into an unvalidated score.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf016_s7",
+        "module": "Household_Income",
+        "source_label": "Others",
+        "unit": "Household-level multiple-response item; COVID outbreak to interview",
+        "value_labels": "0=No; 7=Yes",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_income_coping_none_other_conflict_2020",
+    "label": "疫情期间收入不足应对第8选项（GF016；题干与Codebook标签冲突）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "The English questionnaire lists option 8 as Do nothing and flags it as a conflict; the released Codebook labels gf016_s8 as Others. Preserve for traceability only; DO NOT ANALYZE until source encoding and respondent-level meaning are validated.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf016_s8",
+        "module": "Household_Income",
+        "source_label": "Others",
+        "unit": "Household-level response/routing marker; coding unresolved",
+        "value_labels": "Questionnaire: 8=Do nothing; Codebook field label: Others (conflict)",
+        "mapping_status": "DO NOT ANALYZE pending resolution of questionnaire-Codebook conflict and released-data storage",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_income_coping_amount_1_2020",
+    "label": "疫情期间削减开支金额（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Asked only when household income cannot cover daily expenses and the corresponding strategy is selected. Amount is from COVID outbreak to interview; retain as seven distinct strategy-specific fields, do not sum or impute structural skips to zero.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf016_1",
+        "module": "Household_Income",
+        "source_label": "Amount of Spendings Reduced",
+        "unit": "Yuan; conditional on the corresponding GF016 strategy",
+        "value_labels": "",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_income_coping_amount_2_2020",
+    "label": "疫情期间动用储蓄金额（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Asked only when household income cannot cover daily expenses and the corresponding strategy is selected. Amount is from COVID outbreak to interview; retain as seven distinct strategy-specific fields, do not sum or impute structural skips to zero.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf016_2",
+        "module": "Household_Income",
+        "source_label": "Amount of Savings",
+        "unit": "Yuan; conditional on the corresponding GF016 strategy",
+        "value_labels": "",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_income_coping_amount_3_2020",
+    "label": "疫情期间出售资产所得金额（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Asked only when household income cannot cover daily expenses and the corresponding strategy is selected. Amount is from COVID outbreak to interview; retain as seven distinct strategy-specific fields, do not sum or impute structural skips to zero.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf016_3",
+        "module": "Household_Income",
+        "source_label": "Amount of Assets",
+        "unit": "Yuan; conditional on the corresponding GF016 strategy",
+        "value_labels": "",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_income_coping_amount_4_2020",
+    "label": "疫情期间接受亲友帮助金额（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Asked only when household income cannot cover daily expenses and the corresponding strategy is selected. Amount is from COVID outbreak to interview; retain as seven distinct strategy-specific fields, do not sum or impute structural skips to zero.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf016_4",
+        "module": "Household_Income",
+        "source_label": "Value of Helps",
+        "unit": "Yuan; conditional on the corresponding GF016 strategy",
+        "value_labels": "",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_income_coping_amount_5_2020",
+    "label": "疫情期间向亲友借款金额（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Asked only when household income cannot cover daily expenses and the corresponding strategy is selected. Amount is from COVID outbreak to interview; retain as seven distinct strategy-specific fields, do not sum or impute structural skips to zero.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf016_5",
+        "module": "Household_Income",
+        "source_label": "Amount of Money Borrow from Relatives and Friends",
+        "unit": "Yuan; conditional on the corresponding GF016 strategy",
+        "value_labels": "",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_income_coping_amount_6_2020",
+    "label": "疫情期间向银行借款金额（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Asked only when household income cannot cover daily expenses and the corresponding strategy is selected. Amount is from COVID outbreak to interview; retain as seven distinct strategy-specific fields, do not sum or impute structural skips to zero.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf016_6",
+        "module": "Household_Income",
+        "source_label": "Amount of Money Borrow from Banks",
+        "unit": "Yuan; conditional on the corresponding GF016 strategy",
+        "value_labels": "",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  },
+  {
+    "concept_id": "covid_household_income_coping_amount_7_2020",
+    "label": "疫情期间其他收入不足应对方式所得金额（2020）",
+    "domain": "Household COVID-period economic conditions",
+    "caveat": "Asked only when household income cannot cover daily expenses and the corresponding strategy is selected. Amount is from COVID outbreak to interview; retain as seven distinct strategy-specific fields, do not sum or impute structural skips to zero.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "gf016_7",
+        "module": "Household_Income",
+        "source_label": "Amount from Other Methods",
+        "unit": "Yuan; conditional on the corresponding GF016 strategy",
+        "value_labels": "",
+        "mapping_status": "candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt (labels only; frequency tables were not used)"
+      }
+    ]
+  }
+]

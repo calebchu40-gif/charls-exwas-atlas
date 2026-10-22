@@ -1,0 +1,50 @@
+﻿code,concept,waves,modules,source_labels,source_layer,mapping_status,note
+qa003,收缩压·第1次,"2011,2013,2015","Biomarker,biomarkers",2011: Systolic Reading | 2013: Systolic Reading | 2015: Systolic Reading,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qa007,收缩压·第2次,"2011,2013,2015","Biomarker,biomarkers",2011: Systolic Reading | 2013: Systolic Reading | 2015: Systolic Reading,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qa011,收缩压·第3次,"2011,2013,2015","Biomarker,biomarkers",2011: Systolic Reading | 2013: Systolic Reading | 2015: Systolic Reading,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qa004,舒张压·第1次,"2011,2013,2015","Biomarker,biomarkers",2011: Diastolic Reading | 2013: Diastolic Reading | 2015: Diastolic Reading,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qa008,舒张压·第2次,"2011,2013,2015","Biomarker,biomarkers",2011: Diastolic Reading | 2013: Diastolic Reading | 2015: Diastolic Reading,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qa012,舒张压·第3次,"2011,2013,2015","Biomarker,biomarkers",2011: Diastolic Reading | 2013: Diastolic Reading | 2015: Diastolic Reading,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qa005,脉搏·第1次,"2011,2013,2015","Biomarker,biomarkers",2011: Pulse | 2013: Pulse | 2015: PULSE,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qa009,脉搏·第2次,"2011,2013,2015","Biomarker,biomarkers",2011: Pulse | 2013: Pulse | 2015: PULSE,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qa013,脉搏·第3次,"2011,2013,2015","Biomarker,biomarkers",2011: Pulse | 2013: Pulse | 2015: PULSE,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qc003,握力·左手第1次,"2011,2013,2015","Biomarker,biomarkers",2011: Left Hand-1£¨kg£© | 2013: Left Hand 1 | 2015: Left Hand-1(Kg),CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qc004,握力·右手第1次,"2011,2013,2015","Biomarker,biomarkers",2011: Right Hand-1£¨kg£© | 2013: Right Hand 1 | 2015: Right Hand-1(Kg),CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qc005,握力·左手第2次,"2011,2013,2015","Biomarker,biomarkers",2011: Left Hand-2£¨kg£© | 2013: Left Hand 2 | 2015: Left Hand-2(Kg),CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qc006,握力·右手第2次,"2011,2013,2015","Biomarker,biomarkers",2011: Right Hand-2£¨kg£© | 2013: Right Hand 2 | 2015: Right Hand-2(Kg),CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qb002,呼吸测试读数·第1次,"2011,2013,2015","Biomarker,biomarkers",2011: Measurement Reading-1 | 2013: Measurement Reading-1 | 2015: Measurement Reading-1,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+qb003,呼吸测试读数·第2次,"2011,2013,2015","Biomarker,biomarkers",2011: Measurement Reading-2 | 2013: Measurement Reading-2 | 2015: Measurement Reading-2,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+qb004,呼吸测试读数·第3次,"2011,2013,2015","Biomarker,biomarkers",2011: Meaurement Reading-3 | 2013: Measurement Reading-3 | 2015: Measurement Reading-3,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+qd002,半串联站立·完成情况,"2011,2013,2015","Biomarker,biomarkers",2011: How Complete | 2013: Complete The Test | 2015: Complete The Test,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+qd003,半串联站立·持续时间,"2011,2013,2015","Biomarker,biomarkers",2011: Seconds | 2013: Sec | 2015: Sec,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+qe002,全串联站立·完成情况,"2011,2013,2015","Biomarker,biomarkers",2011: How Complete | 2013: Complete The Test | 2015: Complete The Test,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+qe003,全串联站立·持续时间,"2011,2013,2015","Biomarker,biomarkers",2011: Seconds | 2013: Sec | 2015: Sec,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+qf002,并排站立·完成情况,"2011,2013,2015","Biomarker,biomarkers",2011: How Complete | 2013: Did R Hold Side-By-Side Stand for A Full 10 Seconds Without Stepping Out of Plac | 2015: Did R Hold Side-by-Side Stand for A Full 10 Seconds,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+qf003,并排站立·持续时间,"2011,2013,2015","Biomarker,biomarkers",2011: Seconds | 2013: Sec | 2015: Sec,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+qg002,步速测试·第1次用时,"2011,2013,2015","Biomarker,biomarkers",2011: Walking Speed Time-1 | 2013: Walking Speed Time-1 | 2015: Walking Speed Time-1,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qg003,步速测试·第2次用时,"2011,2013,2015","Biomarker,biomarkers",2011: 	Walking Speed Time-2 | 2013: 	Walking Speed Time-2 | 2015: 	Walking Speed Time-2,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qh003,重复坐站·第1段用时,"2011,2013,2015","Biomarker,biomarkers",2011: Seconds | 2013: Sec | 2015: Sec,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+qh004,重复坐站·第2段用时,"2011,2013,2015","Biomarker,biomarkers",2011: Seconds | 2013: Sec | 2015: Sec,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+qh005,重复坐站次数,"2011,2013,2015","Biomarker,biomarkers",2011: Times | 2013: Times | 2015: times,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+qi002,身高测量,"2011,2013,2015","Biomarker,biomarkers",2011: Height | 2013: Height | 2015: height,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+ql002,体重测量,"2011,2013,2015","Biomarker,biomarkers",2011: Weight Measurement | 2013: Weight  Measuremen | 2015: Weight,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qm002,腰围测量,"2011,2013,2015","Biomarker,biomarkers",2011: Waist Measurement | 2013: Waist Circumference | 2015: WAIST CIRCUMFERENCE,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qk002,膝高测量,"2011,2013,2015","Biomarker,biomarkers",2011: Knee Height | 2013: Knee Height | 2015: Knee Height,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qj002,上臂长度测量,"2011,2013,2015","Biomarker,biomarkers",2011: Arm Length | 2013: Arm Length | 2015: Arm Length,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+qc1_va003,空腹状态,2011,Blood_Assays,2011: Fasting,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qc1_vb002,白细胞,2011,Blood_Assays,2011: White Blood Cell in Thousands,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qc1_vb004,血红蛋白,2011,Blood_Assays,2011: Hemoglobin (g/dl),CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qc1_vb005,红细胞压积,2011,Blood_Assays,2011: Hematocrit,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qc1_vb006,平均红细胞体积,2011,Blood_Assays,2011: MCV,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+qc1_vb009,血小板,2011,Blood_Assays,2011: Platelets,CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,重复读数/测量完成资格须按官方问卷和设计文件处理。
+newbun,尿素氮,2011,Blood_Assays,2011: Blood Urea Nitrogen (BUN) (mg/dl),CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+newglu,葡萄糖,2011,Blood_Assays,2011: Glucose (mg/dl),CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+newcrea,肌酐,2011,Blood_Assays,2011: Creatinine (mg/dl),CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+newcho,总胆固醇,2011,Blood_Assays,2011: Total Cholesterol (mg/dl),CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+newtg,甘油三酯,2011,Blood_Assays,2011: Triglycerides (mg/dl),CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+newhdl,HDL胆固醇,2011,Blood_Assays,2011: Hdl Cholesterol (mg/dl),CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+newldl,LDL胆固醇,2011,Blood_Assays,2011: Ldl Cholesterol (mg/dl),CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+newcrp,C反应蛋白,2011,Blood_Assays,2011: C-Reactive Protein (CRP) (mg/l),CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+newhba1c,糖化血红蛋白,2011,Blood_Assays,2011: Glycated Hemoglobin (%),CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+newua,尿酸,2011,Blood_Assays,2011: Uric Acid (mg/dl),CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。
+cystatinc,胱抑素C,2011,Blood_Assays,2011: Cystatin C (mg/l),CHARLS原始字段,字段标签已由官方变量目录核对；派生规则待定,仅确认2011官方检验字段存在；不可推断其他波次也有该检验。

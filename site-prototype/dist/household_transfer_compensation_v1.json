@@ -1,0 +1,155 @@
+[
+  {
+    "concept_id": "household_societal_donation_value_2011_2015",
+    "label": "Household value of societal donations (2011-2015)",
+    "domain": "household transfers and compensation",
+    "caveat": "household donation value in past year; household-level; conditional on source selection; do not treat in-kind valuation as cash receipts. Do not interpret skipped or structurally absent amounts as zero; no individual-level attribution.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "gd003_1",
+        "module": "household_income",
+        "source_label": "Donations from the Society",
+        "unit": "Donations from society, including cash and in-kind food/clothing; reported Yuan value.",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "mapping_status": "2011/2013/2015 candidate; official questionnaire and Codebook identify the amount field; source route and special values must be verified in authorized data"
+      }
+    ]
+  },
+  {
+    "concept_id": "household_societal_donation_value_2011_2015",
+    "label": "Household value of societal donations (2011-2015)",
+    "domain": "household transfers and compensation",
+    "caveat": "household donation value in past year; household-level; conditional on source selection; do not treat in-kind valuation as cash receipts. Do not interpret skipped or structurally absent amounts as zero; no individual-level attribution.",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "gd003_1",
+        "module": "Household_Income",
+        "source_label": "Amount of Donations",
+        "unit": "Donations from society, including cash and in-kind food/clothing; reported Yuan value.",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "mapping_status": "2011/2013/2015 candidate; official questionnaire and Codebook identify the amount field; source route and special values must be verified in authorized data"
+      }
+    ]
+  },
+  {
+    "concept_id": "household_societal_donation_value_2011_2015",
+    "label": "Household value of societal donations (2011-2015)",
+    "domain": "household transfers and compensation",
+    "caveat": "household donation value in past year; household-level; conditional on source selection; do not treat in-kind valuation as cash receipts. Do not interpret skipped or structurally absent amounts as zero; no individual-level attribution.",
+    "source_fields": [
+      {
+        "wave": "2015",
+        "code": "gd003_1",
+        "module": "Household_Income",
+        "source_label": "Amount of Donations",
+        "unit": "Donations from society, including cash and in-kind food/clothing; reported Yuan value.",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "mapping_status": "2011/2013/2015 candidate; official questionnaire and Codebook identify the amount field; source route and special values must be verified in authorized data"
+      }
+    ]
+  },
+  {
+    "concept_id": "household_land_seizure_compensation_2011_2015",
+    "label": "Household land-seizure compensation (2011-2015)",
+    "domain": "household transfers and compensation",
+    "caveat": "Household-level compensation amount under the parent past-year income-source question; preserve land-seizure route and do not combine with house-demolition compensation or land-sale proceeds. Do not interpret skipped or structurally absent amounts as zero; no individual-level attribution.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "gd003_2",
+        "module": "household_income",
+        "source_label": "Compensation for Land Seizure",
+        "unit": "Reported Yuan compensation for land seizure.",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "mapping_status": "2011/2013/2015 candidate; official questionnaire and Codebook identify the amount field; source route and special values must be verified in authorized data"
+      }
+    ]
+  },
+  {
+    "concept_id": "household_land_seizure_compensation_2011_2015",
+    "label": "Household land-seizure compensation (2011-2015)",
+    "domain": "household transfers and compensation",
+    "caveat": "Household-level compensation amount under the parent past-year income-source question; preserve land-seizure route and do not combine with house-demolition compensation or land-sale proceeds. Do not interpret skipped or structurally absent amounts as zero; no individual-level attribution.",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "gd003_2",
+        "module": "Household_Income",
+        "source_label": "Amount of Compensation for Land Seizure",
+        "unit": "Reported Yuan compensation for land seizure.",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "mapping_status": "2011/2013/2015 candidate; official questionnaire and Codebook identify the amount field; source route and special values must be verified in authorized data"
+      }
+    ]
+  },
+  {
+    "concept_id": "household_land_seizure_compensation_2011_2015",
+    "label": "Household land-seizure compensation (2011-2015)",
+    "domain": "household transfers and compensation",
+    "caveat": "Household-level compensation amount under the parent past-year income-source question; preserve land-seizure route and do not combine with house-demolition compensation or land-sale proceeds. Do not interpret skipped or structurally absent amounts as zero; no individual-level attribution.",
+    "source_fields": [
+      {
+        "wave": "2015",
+        "code": "gd003_2",
+        "module": "Household_Income",
+        "source_label": "Amount of Compensation for Land Seizure",
+        "unit": "Reported Yuan compensation for land seizure.",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "mapping_status": "2011/2013/2015 candidate; official questionnaire and Codebook identify the amount field; source route and special values must be verified in authorized data"
+      }
+    ]
+  },
+  {
+    "concept_id": "household_house_demolition_compensation_2011_2015",
+    "label": "Household compensation for house/apartment demolition (2011-2015)",
+    "domain": "household transfers and compensation",
+    "caveat": "Household-level compensation amount under the parent past-year income-source question; preserve the conditional source route and do not combine with land-seizure compensation or housing-sale proceeds. Do not interpret skipped or structurally absent amounts as zero; no individual-level attribution.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "gd003_3",
+        "module": "household_income",
+        "source_label": "Compensation to Pulling Down Your House or Apartment",
+        "unit": "Reported Yuan compensation for pulling down a household house or apartment.",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "mapping_status": "2011/2013/2015 candidate; official questionnaire and Codebook identify the amount field; source route and special values must be verified in authorized data"
+      }
+    ]
+  },
+  {
+    "concept_id": "household_house_demolition_compensation_2011_2015",
+    "label": "Household compensation for house/apartment demolition (2011-2015)",
+    "domain": "household transfers and compensation",
+    "caveat": "Household-level compensation amount under the parent past-year income-source question; preserve the conditional source route and do not combine with land-seizure compensation or housing-sale proceeds. Do not interpret skipped or structurally absent amounts as zero; no individual-level attribution.",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "gd003_3",
+        "module": "Household_Income",
+        "source_label": "Amount of Compensation to Pulling down House",
+        "unit": "Reported Yuan compensation for pulling down a household house or apartment.",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "mapping_status": "2011/2013/2015 candidate; official questionnaire and Codebook identify the amount field; source route and special values must be verified in authorized data"
+      }
+    ]
+  },
+  {
+    "concept_id": "household_house_demolition_compensation_2011_2015",
+    "label": "Household compensation for house/apartment demolition (2011-2015)",
+    "domain": "household transfers and compensation",
+    "caveat": "Household-level compensation amount under the parent past-year income-source question; preserve the conditional source route and do not combine with land-seizure compensation or housing-sale proceeds. Do not interpret skipped or structurally absent amounts as zero; no individual-level attribution.",
+    "source_fields": [
+      {
+        "wave": "2015",
+        "code": "gd003_3",
+        "module": "Household_Income",
+        "source_label": "Amount of Compensation to Pulling down House",
+        "unit": "Reported Yuan compensation for pulling down a household house or apartment.",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "mapping_status": "2011/2013/2015 candidate; official questionnaire and Codebook identify the amount field; source route and special values must be verified in authorized data"
+      }
+    ]
+  }
+]

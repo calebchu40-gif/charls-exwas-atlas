@@ -1,0 +1,102 @@
+﻿construct,subtype,concept_id,concept_label,waves,source_fields,source_codes
+disease awareness,prior-wave self-known disease,self_awareness_chronic_lung_disease,自知疾病状态：慢性肺病,"2013,2015,2018",3,zda008_5_
+disease awareness,prior-wave self-known disease,self_awareness_emotional_psychiatric,自知疾病状态：情绪/神经/精神问题,"2013,2015,2018",3,zda008_11_
+disease awareness,prior-wave self-known disease,self_awareness_hypertension,自知疾病状态：高血压,"2013,2015,2018",3,zda008_1_
+disease awareness,self-known disease,self_awareness_arthritis_rheumatism,自知疾病状态：关节炎/风湿病,"2013,2015,2018",3,da008_w2_1_13_
+disease awareness,self-known disease,self_awareness_asthma,自知疾病状态：哮喘,"2013,2015,2018",3,da008_w2_1_14_
+disease awareness,self-known disease,self_awareness_cancer,自知疾病状态：癌症/恶性肿瘤,"2013,2015,2018",3,da008_w2_1_4_
+disease awareness,self-known disease,self_awareness_chronic_lung_disease,自知疾病状态：慢性肺病,"2011,2013,2015,2018,2020",8,da004_5_;da008_5_;da008_w2_1_5_
+disease awareness,self-known disease,self_awareness_diabetes_high_blood_sugar,自知疾病状态：糖尿病/高血糖,"2013,2015,2018",3,da008_w2_1_3_
+disease awareness,self-known disease,self_awareness_digestive_disease,自知疾病状态：胃/消化系统疾病,"2013,2015,2018",3,da008_w2_1_10_
+disease awareness,self-known disease,self_awareness_dyslipidemia,自知疾病状态：血脂异常,"2013,2015,2018",4,da008_2_;da008_w2_1_2_
+disease awareness,self-known disease,self_awareness_emotional_psychiatric,自知疾病状态：情绪/神经/精神问题,"2011,2013,2015,2018,2020",8,da004_11_;da008_11_;da008_w2_1_11_
+disease awareness,self-known disease,self_awareness_heart_disease,自知疾病状态：心脏病,"2013,2015,2018",3,da008_w2_1_7_
+disease awareness,self-known disease,self_awareness_hypertension,自知疾病状态：高血压,"2011,2013,2015,2018,2020",8,da004_1_;da008_1_;da008_w2_1_1_
+disease awareness,self-known disease,self_awareness_kidney_disease,自知疾病状态：肾病,"2013,2015,2018",3,da008_w2_1_9_
+disease awareness,self-known disease,self_awareness_liver_disease,自知疾病状态：肝病,"2013,2015,2018",4,da008_6_;da008_w2_1_6_
+disease awareness,self-known disease,self_awareness_memory_related_disease,自知疾病状态：记忆相关疾病,"2013,2015,2018",3,da008_w2_1_12_
+disease awareness,self-known disease,self_awareness_stroke,自知疾病状态：中风,"2013,2015,2018",3,da008_w2_1_8_
+reported diagnosis/knowledge time,age,reported_age_first_known_arthritis_rheumatism,自报首次诊断/知悉关节炎/风湿病的年龄,"2011,2013,2015,2018",4,da009_2_13_
+reported diagnosis/knowledge time,age,reported_age_first_known_asthma,自报首次诊断/知悉哮喘的年龄,"2011,2013,2015,2018",4,da009_2_14_
+reported diagnosis/knowledge time,age,reported_age_first_known_cancer,自报首次诊断/知悉癌症/恶性肿瘤的年龄,"2011,2013,2015,2018",4,da009_2_4_
+reported diagnosis/knowledge time,age,reported_age_first_known_chronic_lung_disease,自报首次诊断/知悉慢性肺病的年龄,"2011,2013,2015,2018",4,da009_2_5_
+reported diagnosis/knowledge time,age,reported_age_first_known_diabetes_high_blood_sugar,自报首次诊断/知悉糖尿病/高血糖的年龄,"2011,2013,2015,2018",4,da009_2_3_
+reported diagnosis/knowledge time,age,reported_age_first_known_digestive_disease,自报首次诊断/知悉胃/消化系统疾病的年龄,"2011,2013,2015,2018",4,da009_2_10_
+reported diagnosis/knowledge time,age,reported_age_first_known_dyslipidemia,自报首次诊断/知悉血脂异常的年龄,"2011,2013,2015,2018",4,da009_2_2_
+reported diagnosis/knowledge time,age,reported_age_first_known_emotional_psychiatric,自报首次诊断/知悉情绪/神经/精神问题的年龄,"2011,2013,2015,2018",4,da009_2_11_
+reported diagnosis/knowledge time,age,reported_age_first_known_heart_disease,自报首次诊断/知悉心脏病的年龄,"2011,2013,2015,2018",4,da009_2_7_
+reported diagnosis/knowledge time,age,reported_age_first_known_hypertension,自报首次诊断/知悉高血压的年龄,"2011,2013,2015,2018",4,da009_2_1_
+reported diagnosis/knowledge time,age,reported_age_first_known_kidney_disease,自报首次诊断/知悉肾病的年龄,"2011,2013,2015,2018",4,da009_2_9_
+reported diagnosis/knowledge time,age,reported_age_first_known_liver_disease,自报首次诊断/知悉肝病的年龄,"2011,2013,2015,2018",4,da009_2_6_
+reported diagnosis/knowledge time,age,reported_age_first_known_memory_related_disease,自报首次诊断/知悉记忆相关疾病的年龄,"2011,2013,2015,2018",4,da009_2_12_
+reported diagnosis/knowledge time,age,reported_age_first_known_stroke,自报首次诊断/知悉中风的年龄,"2011,2013,2015,2018",4,da009_2_8_
+reported diagnosis/knowledge time,year,reported_year_first_known_arthritis_rheumatism,自报首次诊断/知悉关节炎/风湿病的年份,"2011,2013,2015,2018",4,da009_1_13_
+reported diagnosis/knowledge time,year,reported_year_first_known_asthma,自报首次诊断/知悉哮喘的年份,"2011,2013,2015,2018",4,da009_1_14_
+reported diagnosis/knowledge time,year,reported_year_first_known_cancer,自报首次诊断/知悉癌症/恶性肿瘤的年份,"2011,2013,2015,2018",4,da009_1_4_
+reported diagnosis/knowledge time,year,reported_year_first_known_chronic_lung_disease,自报首次诊断/知悉慢性肺病的年份,"2011,2013,2015,2018",4,da009_1_5_
+reported diagnosis/knowledge time,year,reported_year_first_known_diabetes_high_blood_sugar,自报首次诊断/知悉糖尿病/高血糖的年份,"2011,2013,2015,2018",4,da009_1_3_
+reported diagnosis/knowledge time,year,reported_year_first_known_digestive_disease,自报首次诊断/知悉胃/消化系统疾病的年份,"2011,2013,2015,2018",4,da009_1_10_
+reported diagnosis/knowledge time,year,reported_year_first_known_dyslipidemia,自报首次诊断/知悉血脂异常的年份,"2011,2013,2015,2018",4,da009_1_2_
+reported diagnosis/knowledge time,year,reported_year_first_known_emotional_psychiatric,自报首次诊断/知悉情绪/神经/精神问题的年份,"2011,2013,2015,2018",4,da009_1_11_
+reported diagnosis/knowledge time,year,reported_year_first_known_heart_disease,自报首次诊断/知悉心脏病的年份,"2011,2013,2015,2018",4,da009_1_7_
+reported diagnosis/knowledge time,year,reported_year_first_known_hypertension,自报首次诊断/知悉高血压的年份,"2011,2013,2015,2018",4,da009_1_1_
+reported diagnosis/knowledge time,year,reported_year_first_known_kidney_disease,自报首次诊断/知悉肾病的年份,"2011,2013,2015,2018",4,da009_1_9_
+reported diagnosis/knowledge time,year,reported_year_first_known_liver_disease,自报首次诊断/知悉肝病的年份,"2011,2013,2015,2018",4,da009_1_6_
+reported diagnosis/knowledge time,year,reported_year_first_known_memory_related_disease,自报首次诊断/知悉记忆相关疾病的年份,"2011,2013,2015,2018",4,da009_1_12_
+reported diagnosis/knowledge time,year,reported_year_first_known_stroke,自报首次诊断/知悉中风的年份,"2011,2013,2015,2018",4,da009_1_8_
+reported disease change since prior interview,self-rated interval change,reported_interval_change_arthritis_rheumatism,自报上次访谈以来关节炎/风湿病变化,"2013,2015,2018",3,da010_w2_2_13_
+reported disease change since prior interview,self-rated interval change,reported_interval_change_asthma,自报上次访谈以来哮喘变化,"2013,2015,2018",3,da010_w2_2_14_
+reported disease change since prior interview,self-rated interval change,reported_interval_change_cancer,自报上次访谈以来癌症/恶性肿瘤变化,"2013,2015,2018",3,da010_w2_2_4_
+reported disease change since prior interview,self-rated interval change,reported_interval_change_chronic_lung_disease,自报上次访谈以来慢性肺病变化,"2013,2015,2018",3,da010_w2_2_5_
+reported disease change since prior interview,self-rated interval change,reported_interval_change_diabetes_high_blood_sugar,自报上次访谈以来糖尿病/高血糖变化,"2013,2015,2018",3,da010_w2_2_3_
+reported disease change since prior interview,self-rated interval change,reported_interval_change_digestive_disease,自报上次访谈以来胃/消化系统疾病变化,"2013,2015,2018",3,da010_w2_2_10_
+reported disease change since prior interview,self-rated interval change,reported_interval_change_dyslipidemia,自报上次访谈以来血脂异常变化,"2013,2015,2018",3,da010_w2_2_2_
+reported disease change since prior interview,self-rated interval change,reported_interval_change_emotional_psychiatric,自报上次访谈以来情绪/神经/精神问题变化,"2013,2015,2018",3,da010_w2_2_11_
+reported disease change since prior interview,self-rated interval change,reported_interval_change_heart_disease,自报上次访谈以来心脏病变化,"2013,2015,2018",3,da010_w2_2_7_
+reported disease change since prior interview,self-rated interval change,reported_interval_change_hypertension,自报上次访谈以来高血压变化,"2013,2015,2018",3,da010_w2_2_1_
+reported disease change since prior interview,self-rated interval change,reported_interval_change_kidney_disease,自报上次访谈以来肾病变化,"2013,2015,2018",3,da010_w2_2_9_
+reported disease change since prior interview,self-rated interval change,reported_interval_change_liver_disease,自报上次访谈以来肝病变化,"2013,2015,2018",3,da010_w2_2_6_
+reported disease change since prior interview,self-rated interval change,reported_interval_change_memory_related_disease,自报上次访谈以来记忆相关疾病变化,"2013,2015,2018",3,da010_w2_2_12_
+reported disease change since prior interview,self-rated interval change,reported_interval_change_stroke,自报上次访谈以来中风变化,"2013,2015,2018",3,da010_w2_2_8_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_arthritis_rheumatism,自报医生诊断病种的状况变化：关节炎/风湿病,2020,1,da002_14_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_asthma,自报医生诊断病种的状况变化：哮喘,2020,1,da002_15_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_cancer,自报医生诊断病种的状况变化：癌症/恶性肿瘤,2020,1,da002_4_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_chronic_lung_disease,自报医生诊断病种的状况变化：慢性肺病,2020,1,da002_5_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_diabetes_high_blood_sugar,自报医生诊断病种的状况变化：糖尿病/高血糖,2020,1,da002_3_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_digestive_disease,自报医生诊断病种的状况变化：胃/消化系统疾病,2020,1,da002_10_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_dyslipidemia,自报医生诊断病种的状况变化：血脂异常,2020,1,da002_2_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_emotional_psychiatric,自报医生诊断病种的状况变化：情绪/神经/精神问题,2020,1,da002_11_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_heart_disease,自报医生诊断病种的状况变化：心脏病,2020,1,da002_7_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_hypertension,自报医生诊断病种的状况变化：高血压,2020,1,da002_1_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_kidney_disease,自报医生诊断病种的状况变化：肾病,2020,1,da002_9_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_liver_disease,自报医生诊断病种的状况变化：肝病,2020,1,da002_6_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_memory_related_disease,自报医生诊断病种的状况变化：记忆相关疾病,2020,1,da002_12_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_parkinsons,自报医生诊断病种的状况变化：帕金森病,2020,1,da002_13_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_prior_known_chronic_lung_disease,自报上次访问时已知病种的状况变化：慢性肺病,2020,1,da002_1_5_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_prior_known_emotional_psychiatric,自报上次访问时已知病种的状况变化：情绪/神经/精神问题,2020,1,da002_1_11_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_prior_known_hypertension,自报上次访问时已知病种的状况变化：高血压,2020,1,da002_1_1_
+reported disease change since prior interview,self-rated longitudinal change,reported_interval_change_stroke,自报医生诊断病种的状况变化：中风,2020,1,da002_8_
+reported disease control,current control,reported_control_diabetes_high_blood_sugar,自报糖尿病/高血糖控制情况,"2013,2015,2018",3,da010_w2_1_3_
+reported disease control,current control,reported_control_hypertension,自报高血压控制情况,"2013,2015,2018",3,da010_w2_1_1_
+reported disease treatment,age at most recent stroke,reported_most_recent_stroke_age,自报最近一次中风年龄,"2015,2018",2,da019_w2_2_2
+reported disease treatment,antidepressant medication option,reported_treatment_emotional_psychiatric,自报情绪/精神问题治疗方式,2011,1,da020s2
+reported disease treatment,doctor-diagnosed recurrent stroke,reported_recurrent_stroke_since_prior_interview,自报上次访谈以来中风复发,"2013,2015,2018",3,da019_w2_1
+reported disease treatment,month of most recent stroke,reported_most_recent_stroke_month,自报最近一次中风月份,2013,1,da019_w2_2_2
+reported disease treatment,none-of-the-above treatment option,reported_treatment_hypertension,自报高血压治疗方式,2011,1,da011s3
+reported disease treatment,wave-specific treatment response,reported_treatment_arthritis_rheumatism,自报关节炎/风湿病治疗方式,"2011,2013,2015,2018",17,da010_13_s1;da010_13_s2;da010_13_s3;da010_13_s4;da010_w4_13__s1;da010_w4_13__s2;da010_w4_13__s3;da010_w4_13__s4;da010_w4_13__s99
+reported disease treatment,wave-specific treatment response,reported_treatment_cancer,自报癌症/恶性肿瘤治疗方式,"2011,2013,2015,2018",21,da018_w4_s1;da018_w4_s2;da018_w4_s3;da018_w4_s4;da018_w4_s5;da018_w4_s6;da018_w4_s7;da018s1;da018s2;da018s3;da018s4;da018s5;da018s6
+reported disease treatment,wave-specific treatment response,reported_treatment_chronic_lung_disease,自报慢性肺病治疗方式,"2011,2013,2015,2018",17,da010_5_s1;da010_5_s2;da010_5_s3;da010_5_s4;da010_w4_5__s1;da010_w4_5__s2;da010_w4_5__s3;da010_w4_5__s4;da010_w4_5__s99
+reported disease treatment,wave-specific treatment response,reported_treatment_diabetes_high_blood_sugar,自报糖尿病/高血糖治疗方式,"2011,2013,2015,2018",15,da014_w4_s1;da014_w4_s2;da014_w4_s3;da014_w4_s4;da014_w4_s5;da014s1;da014s2;da014s3;da014s4
+reported disease treatment,wave-specific treatment response,reported_treatment_digestive_disease,自报胃/消化系统疾病治疗方式,"2011,2013,2015,2018",17,da010_10_s1;da010_10_s2;da010_10_s3;da010_10_s4;da010_w4_10__s1;da010_w4_10__s2;da010_w4_10__s3;da010_w4_10__s4;da010_w4_10__s99
+reported disease treatment,wave-specific treatment response,reported_treatment_dyslipidemia,自报血脂异常治疗方式,"2011,2013,2015,2018",17,da010_2_s1;da010_2_s2;da010_2_s3;da010_2_s4;da010_w4_2__s1;da010_w4_2__s2;da010_w4_2__s3;da010_w4_2__s4;da010_w4_2__s99
+reported disease treatment,wave-specific treatment response,reported_treatment_emotional_psychiatric,自报情绪/神经/精神问题治疗方式,"2011,2013,2015,2018",14,da020_w4_s1;da020_w4_s2;da020_w4_s3;da020_w4_s4;da020_w4_s5;da020s1;da020s2;da020s3;da020s4
+reported disease treatment,wave-specific treatment response,reported_treatment_heart_disease,自报心脏病治疗方式,"2011,2013,2015,2018",17,da010_7_s1;da010_7_s2;da010_7_s3;da010_7_s4;da010_w4_7__s1;da010_w4_7__s2;da010_w4_7__s3;da010_w4_7__s4;da010_w4_7__s99
+reported disease treatment,wave-specific treatment response,reported_treatment_hypertension,自报高血压治疗方式,"2011,2018",6,da011_w4_s1;da011_w4_s2;da011_w4_s3;da011_w4_s4;da011s1;da011s2
+reported disease treatment,wave-specific treatment response,reported_treatment_kidney_disease,自报肾病治疗方式,"2011,2013,2015,2018",17,da010_9_s1;da010_9_s2;da010_9_s3;da010_9_s4;da010_w4_9__s1;da010_w4_9__s2;da010_w4_9__s3;da010_w4_9__s4;da010_w4_9__s99
+reported disease treatment,wave-specific treatment response,reported_treatment_liver_disease,自报肝病治疗方式,"2011,2013,2015,2018",17,da010_6_s1;da010_6_s2;da010_6_s3;da010_6_s4;da010_w4_6__s1;da010_w4_6__s2;da010_w4_6__s3;da010_w4_6__s4;da010_w4_6__s99
+reported disease treatment,wave-specific treatment response,reported_treatment_memory_related_disease,自报记忆相关疾病治疗方式,"2011,2013,2015,2018",17,da010_12_s1;da010_12_s2;da010_12_s3;da010_12_s4;da010_w4_12__s1;da010_w4_12__s2;da010_w4_12__s3;da010_w4_12__s4;da010_w4_12__s99
+reported disease treatment,wave-specific treatment response,reported_treatment_stroke,自报中风治疗方式,"2011,2013,2015,2018",21,da019_w4_s1;da019_w4_s2;da019_w4_s3;da019_w4_s4;da019_w4_s5;da019_w4_s6;da019_w4_s7;da019s1;da019s2;da019s3;da019s4;da019s5;da019s6
+reported disease treatment,wave-specific treatment response; option index only,reported_treatment_cancer,自报癌症/恶性肿瘤治疗方式,2011,4,da018s3;da018s4;da018s5;da018s6
+reported disease treatment,wave-specific treatment response; option index only,reported_treatment_diabetes_high_blood_sugar,自报糖尿病/高血糖治疗方式,2011,2,da014s3;da014s4
+reported disease treatment,wave-specific treatment response; option index only,reported_treatment_stroke,自报中风治疗方式,2011,4,da019s3;da019s4;da019s5;da019s6
+reported disease treatment,year of most recent stroke,reported_most_recent_stroke_year,自报最近一次中风年份,"2013,2015,2018",3,da019_w2_2_1

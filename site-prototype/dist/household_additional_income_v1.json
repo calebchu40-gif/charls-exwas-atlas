@@ -1,0 +1,19 @@
+[
+  {
+    "concept_id": "household_photovoltaic_generation_income_2020",
+    "label": "Household income from photovoltaic generation (2020)",
+    "domain": "Household economic resources",
+    "caveat": "The 2020 questionnaire explicitly defines the past-year measure as both household-use value and grid-sale revenue. This is a household-level, single-wave measure; do not interpret it as cash income only or combine with general business income.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "ge011",
+        "module": "Household_Income",
+        "source_label": "Income from Photovoltaic Power Generation",
+        "unit": "past-year Yuan amount; includes value used at home and electricity sold to the national grid",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "mapping_status": "candidate; official 2020 questionnaire/Codebook item located; route and denominator must be verified in approved data"
+      }
+    ]
+  }
+]

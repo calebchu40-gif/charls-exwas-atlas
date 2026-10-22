@@ -1,0 +1,1522 @@
+[
+  {
+    "concept_id": "individual_meal_frequency",
+    "label": "Individual meal frequency",
+    "domain": "Personal behavior",
+    "caveat": "Candidate item described as number/frequency of eating. Verify exact question, recall window, answer units, and respondent eligibility in the official wave questionnaire before treating as comparable.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da058",
+        "module": "health_status_and_functioning",
+        "source_label": "The Number of Times for Eating",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "da058",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "The Number of Times for Eating",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "household_food_expenditure",
+    "label": "Household food expenditure",
+    "domain": "Household food resources",
+    "caveat": "Household expenditure, not an individual's dietary intake or nutrient biomarker. Verify recall period, currency/unit, exclusions, and equivalence across waves; wave 4/5 labels explicitly indicate exclusions.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ge006",
+        "module": "household_income",
+        "source_label": "Expenditure on Food",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "ge006",
+        "module": "Household_Income",
+        "source_label": "Expenditure on Food",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "ge006",
+        "module": "Household_Income",
+        "source_label": "Expenditure on Food",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "ge006_w4",
+        "module": "Household_Income",
+        "source_label": "Food Expenditure, Excluding Somethings",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "gf006",
+        "module": "Household_Income",
+        "source_label": "Food Expenditure, Excluding Some Items",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "household_eating_out",
+    "label": "Household eating-out expenditure",
+    "domain": "Household food resources",
+    "caveat": "Household-level eating-out measure, not individual frequency or diet quality. Inspect questionnaire reference period and units by wave before harmonization.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ge007",
+        "module": "household_income",
+        "source_label": "Expenditure on Eating Out",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "ge007",
+        "module": "Household_Income",
+        "source_label": "Expenditure on Eating Out",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "ge007",
+        "module": "Household_Income",
+        "source_label": "Expenditure on Eating Out",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "ge007_w4",
+        "module": "Household_Income",
+        "source_label": "Eating Out",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "gf009",
+        "module": "Household_Income",
+        "source_label": "Eating Out",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "household_meal_size",
+    "label": "People sharing household meals",
+    "domain": "Household context",
+    "caveat": "Household/social context indicator, not dietary exposure. Wording changes between regularly sharing meals and people who ate meals in the past week.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ge004",
+        "module": "household_income",
+        "source_label": "Num. of People Eating Together",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "ge004",
+        "module": "Household_Income",
+        "source_label": "Number of People Regularly Having Meals",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "ge004",
+        "module": "Household_Income",
+        "source_label": "Number of People Regularly Having Meals",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "ge004",
+        "module": "Household_Income",
+        "source_label": "Number of People Ate Meals in the Past Week",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "gf004",
+        "module": "Household_Income",
+        "source_label": "Number of People Ate Meals in the Past Week",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "household_food_purchaser",
+    "label": "Primary household food purchaser",
+    "domain": "Household context",
+    "caveat": "Household role/decision context; not an environmental dose or individual food intake.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ge001",
+        "module": "household_income",
+        "source_label": "You are the Primary Person Who Purchases Food for the Household",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2011",
+        "code": "ge002",
+        "module": "household_income",
+        "source_label": "Who Purchasing Food",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "ge001",
+        "module": "Household_Income",
+        "source_label": "The Respodent Is The Primary Person for Purchasing Food",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2013",
+        "code": "ge002",
+        "module": "Household_Income",
+        "source_label": "The Primary Person for Purchasing Food",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "ge001",
+        "module": "Household_Income",
+        "source_label": "The Respodent is The Primary Person for Purchasing Food",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "ge002",
+        "module": "Household_Income",
+        "source_label": "The Primary Person for Purchasing Food",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "ge001",
+        "module": "Household_Income",
+        "source_label": "Primary Person Who Purchases Food",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "ge002",
+        "module": "Household_Income",
+        "source_label": "Who is Primary Person Purchasing Food",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "gf002",
+        "module": "Household_Income",
+        "source_label": "Primary Person Who Purchases Food",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "gf003",
+        "module": "Household_Income",
+        "source_label": "Who is Primary Person Purchasing Food",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "toilet_access",
+    "label": "Toilet access and sanitation",
+    "domain": "Housing environment",
+    "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i012_3",
+        "module": "housing_characteristics",
+        "source_label": "Num. of Toilets",
+        "value_labels": "Continuous count of toilets in residence; codebook max 50 (QA hint, not a validated range).",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2011",
+        "code": "i013",
+        "module": "housing_characteristics",
+        "source_label": "How Far is the Nearest Toilet to Your House",
+        "value_labels": "Continuous distance to nearest toilet; codebook max 1,000 (QA hint, not a validated range).",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2011",
+        "code": "i014s1",
+        "module": "housing_characteristics",
+        "source_label": "Type of Toilet",
+        "value_labels": "Separate multi-response toilet type field: 1=Toilet without a seat; no unselected storage code inferred.",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2011",
+        "code": "i014s2",
+        "module": "housing_characteristics",
+        "source_label": "Type of Toilet",
+        "value_labels": "Separate multi-response toilet type field: 2=Toilet with a seat; no unselected storage code inferred.",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2011",
+        "code": "i015",
+        "module": "housing_characteristics",
+        "source_label": "Is the Toilet Flushable",
+        "value_labels": "1=Yes; 2=No (flushable).",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i012_3",
+        "module": "Housing_Characteristics",
+        "source_label": "How many toilets in your residence?",
+        "value_labels": "Continuous count of toilets in residence; codebook max 50 (QA hint, not a validated range).",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2013",
+        "code": "i013",
+        "module": "Housing_Characteristics",
+        "source_label": "How far is the nearest toilet?",
+        "value_labels": "Continuous distance to nearest toilet; codebook max 1,000 (QA hint, not a validated range).",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2013",
+        "code": "i014s1",
+        "module": "Housing_Characteristics",
+        "source_label": "What is the type of toilet?",
+        "value_labels": "Separate multi-response toilet type field: 1=Toilet without a seat; no unselected storage code inferred.",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2013",
+        "code": "i014s2",
+        "module": "Housing_Characteristics",
+        "source_label": "What is the type of toilet?",
+        "value_labels": "Separate multi-response toilet type field: 2=Toilet with a seat; no unselected storage code inferred.",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2013",
+        "code": "i015",
+        "module": "Housing_Characteristics",
+        "source_label": "Is the toilet flushable?",
+        "value_labels": "1=Yes; 2=No (flushable).",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i012_3",
+        "module": "Housing_Characteristics",
+        "source_label": "How Many Toilets in Your Residence?",
+        "value_labels": "Continuous count of toilets in residence; codebook max 32 (QA hint, not a validated range).",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i013",
+        "module": "Housing_Characteristics",
+        "source_label": "How Far Is The Nearest Toilet?",
+        "value_labels": "Continuous distance to nearest toilet; codebook max 2,000 (QA hint, not a validated range).",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i014s1",
+        "module": "Housing_Characteristics",
+        "source_label": "The Type of Toilet:without A Seat",
+        "value_labels": "Separate multi-response toilet type field: 1=Toilet without a seat; no unselected storage code inferred.",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i014s2",
+        "module": "Housing_Characteristics",
+        "source_label": "The Type of toilet:with A Seat",
+        "value_labels": "Separate multi-response toilet type field: 2=Toilet with a seat; no unselected storage code inferred.",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i015",
+        "module": "Housing_Characteristics",
+        "source_label": "Is The Toilet Flushable?",
+        "value_labels": "1=Yes; 2=No (flushable).",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i012_3",
+        "module": "Housing",
+        "source_label": "Toilets",
+        "value_labels": "Continuous count of toilets in residence; codebook max 50 (QA hint, not a validated range).",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i013",
+        "module": "Housing",
+        "source_label": "Distance from the Nearest Toilet to House",
+        "value_labels": "Continuous distance to nearest toilet; codebook summary includes extreme values; inspect units and raw data before analysis.",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i014",
+        "module": "Housing",
+        "source_label": "Type of Toilet",
+        "value_labels": "1=Without a seat; 2=With a seat.",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i015",
+        "module": "Housing",
+        "source_label": "Flushable Toilet",
+        "value_labels": "1=Yes; 2=No (flushable).",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i011_3",
+        "module": "Household_Income",
+        "source_label": "Toilets",
+        "value_labels": "Continuous count of toilets in residence; codebook max 46 (QA hint, not a validated range).",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i012",
+        "module": "Household_Income",
+        "source_label": "Distance from the Nearest Toilet to House",
+        "value_labels": "Continuous distance to nearest toilet; codebook max 2,000 (QA hint, not a validated range).",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i013",
+        "module": "Household_Income",
+        "source_label": "Type of Toilet",
+        "value_labels": "1=Without a seat; 2=With a seat.",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i014",
+        "module": "Household_Income",
+        "source_label": "Flushable Toilet",
+        "value_labels": "1=Yes; 2=No (flushable).",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "running_water",
+    "label": "Running water in residence",
+    "domain": "Housing environment",
+    "caveat": "Residence-level water access indicator; distinguish from water source, treatment, and drinking-water quality.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i017",
+        "module": "housing_characteristics",
+        "source_label": "Residence Has Running Water",
+        "value_labels": "1=Yes; 2=No",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i017",
+        "module": "Housing_Characteristics",
+        "source_label": "Does your residence have running water?",
+        "value_labels": "1=Yes; 2=No",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i017",
+        "module": "Housing_Characteristics",
+        "source_label": "Does Your Residence Have Running Water?",
+        "value_labels": "1=Yes; 2=No",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i017",
+        "module": "Housing",
+        "source_label": "Running Water",
+        "value_labels": "1=Yes; 2=No",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "residential_heating",
+    "label": "Residential heating availability",
+    "domain": "Housing environment",
+    "caveat": "Residence-level heating availability; expenditure variables with similar code prefixes are different measures.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i020",
+        "module": "housing_characteristics",
+        "source_label": "Residence Has Heating",
+        "value_labels": "1=Yes; 2=No",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i020",
+        "module": "Housing_Characteristics",
+        "source_label": "Does your residence have heating?",
+        "value_labels": "1=Yes; 2=No",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i020",
+        "module": "Housing_Characteristics",
+        "source_label": "Does Your Residence Have Heating?",
+        "value_labels": "1=Yes; 2=No",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i020",
+        "module": "Housing",
+        "source_label": "Heating",
+        "value_labels": "1=Yes; 2=No",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i019",
+        "module": "Household_Income",
+        "source_label": "Centralized Heating",
+        "value_labels": "1=Yes; 2=No (centralized heating wording)",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "heating_energy",
+    "label": "Main heating energy source",
+    "domain": "Housing environment",
+    "caveat": "Nominal fuel/source category; retain wave-specific value labels and never infer an ordered exposure scale.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i021",
+        "module": "housing_characteristics",
+        "source_label": "Heating Energy Source",
+        "value_labels": "1=Solar; 2=Coal; 3=Natural gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i021",
+        "module": "Housing_Characteristics",
+        "source_label": "What is the main heating energy source?",
+        "value_labels": "1=Solar; 2=Coal; 3=Natural gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i021",
+        "module": "Housing_Characteristics",
+        "source_label": "The Main Heating Energy Source",
+        "value_labels": "1=Solar; 2=Coal; 3=Natural gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i021_w4",
+        "module": "Housing",
+        "source_label": "Heating Energy Source",
+        "value_labels": "1=Solar; 2=Coal; 3=Natural Gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop Residue/Wood Burning; 7=Other; 8=Heating Provided",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i020",
+        "module": "Household_Income",
+        "source_label": "Heating Energy Source",
+        "value_labels": "1=Solar; 2=Coal; 3=Natural Gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop Residue/Wood Burning; 7=Others; 8=Do not Heating",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "cooking_fuel_main",
+    "label": "Main cooking fuel",
+    "domain": "Housing environment",
+    "caveat": "Nominal primary cooking fuel; code and response categories change in later waves. See the separate value-label audit; do not treat numeric codes as ordered dose.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i022",
+        "module": "housing_characteristics",
+        "source_label": "Main Source of Cooking Fuel",
+        "value_labels": "1=Coal; 2=Natural gas; 3=Marsh gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i022",
+        "module": "Housing_Characteristics",
+        "source_label": "What is the main source of cooking fuel?",
+        "value_labels": "1=Coal; 2=Natural gas; 3=Marsh gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i022",
+        "module": "Housing_Characteristics",
+        "source_label": "The Main Source of Cooking Fuel",
+        "value_labels": "1=Coal; 2=Natural gas; 3=Marsh gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i022_w4",
+        "module": "Housing",
+        "source_label": "Main Source of Cooking Fuel",
+        "value_labels": "1=Coal; 2=Natural Gas; 3=Marsh Gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop Residue/Wood Burning; 7=Other; 8=Do Not Cook",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i021",
+        "module": "Household_Income",
+        "source_label": "Main Source of Cooking Fuel",
+        "value_labels": "1=Coal; 2=Natural Gas; 3=Marsh Gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop Residue/Wood Burning; 7=Solar Energy; 8=Others; 9=Do not Cook",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "air_cleaner",
+    "label": "Air cleaner in home",
+    "domain": "Housing environment",
+    "caveat": "2015-only candidate from the current catalog; availability/presence does not measure use, filtration performance, or ambient/personal PM exposure.",
+    "source_fields": [
+      {
+        "wave": "2015",
+        "code": "i027_w3",
+        "module": "Housing_Characteristics",
+        "source_label": "Does Your Residence Have An Air Cleaner in Your Home",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "waterworks_treatment",
+    "label": "Water treated by waterworks",
+    "domain": "Housing environment",
+    "caveat": "2020-only candidate in the current catalog; verify the exact questionnaire definition. It is not a direct drinking-water contaminant measurement.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "i029",
+        "module": "Household_Income",
+        "source_label": "Water is Treated by Waterworks",
+        "value_labels": "1=Yes; 2=No; 997=Do not know",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "indoor_cleanliness",
+    "label": "Interviewer-rated household cleanliness",
+    "domain": "Indoor environment",
+    "caveat": "Interviewer-observed household condition; not an individual exposure measurement. Preserve the ordinal response and not-applicable category.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i025",
+        "module": "housing_characteristics",
+        "source_label": "How Clear and Tity is in this Household",
+        "value_labels": "1=Excellent; 2=Very clear; 3=Clear; 4=Fair; 5=Poor",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i025",
+        "module": "Housing_Characteristics",
+        "source_label": "How clear and tity is in this household?",
+        "value_labels": "1=Excellent; 2=Very clear; 3=Clear; 4=Fair; 5=Poor; 6=Not applicable",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i025",
+        "module": "Housing_Characteristics",
+        "source_label": "How Clear and Tity Is in This Household?",
+        "value_labels": "1=Excellent; 2=Very clear; 3=Clear; 4=Fair; 5=Poor; 6=Not applicable",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i025",
+        "module": "Housing",
+        "source_label": "Clear and Tidy in this Household",
+        "value_labels": "1=Excellent; 2=Very clear; 3=Clear; 4=Fair; 5=Poor; 6=Not applicable",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i025",
+        "module": "Household_Income",
+        "source_label": "Clear and Tidy in this Household",
+        "value_labels": "1=Excellent; 2=Very clear; 3=Clear; 4=Fair; 5=Poor; 6=Not applicable",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "indoor_temperature",
+    "label": "Interviewer-rated indoor temperature",
+    "domain": "Indoor environment",
+    "caveat": "Interviewer's categorical observation of household temperature, not a thermometer reading or personal thermal dose.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i026",
+        "module": "housing_characteristics",
+        "source_label": "How is the Temperature in this Household",
+        "value_labels": "1=Very hot; 2=Hot; 3=Bearable; 4=Cold; 5=Very cold",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i026",
+        "module": "Housing_Characteristics",
+        "source_label": "How is the temperature in this household?",
+        "value_labels": "1=Very hot; 2=Hot; 3=Bearable; 4=Cold; 5=Very cold; 6=Not applicable",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i026",
+        "module": "Housing_Characteristics",
+        "source_label": "How Is The Temperature in This Household?",
+        "value_labels": "1=Very hot; 2=Hot; 3=Bearable; 4=Cold; 5=Very cold; 6=Not applicable",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i026",
+        "module": "Housing",
+        "source_label": "Temperature in this Household",
+        "value_labels": "1=Very hot; 2=Hot; 3=Bearable; 4=Cold; 5=Very cold; 6=Not applicable",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i026",
+        "module": "Household_Income",
+        "source_label": "Temperature in this Household",
+        "value_labels": "1=Very hot; 2=Hot; 3=Bearable; 4=Cold; 5=Very cold; 6=Not applicable",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "floor_condition",
+    "label": "Household floor condition",
+    "domain": "Indoor environment",
+    "caveat": "2020-only interviewer observation: covered/flat, concrete, or uneven floor; household condition, not a clinical mobility outcome.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "i027",
+        "module": "Household_Income",
+        "source_label": "Ground Condition in this Household",
+        "value_labels": "1=Flat covered; 2=Flat concrete; 3=Uneven",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "housing_construction_year",
+    "label": "Year dwelling was built",
+    "domain": "Housing environment",
+    "caveat": "Year or interval category varies by wave; retain exact year and interval fields separately and do not impute a single year without a prespecified rule.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i005",
+        "module": "housing_characteristics",
+        "source_label": "Year",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2011",
+        "code": "i005_1",
+        "module": "housing_characteristics",
+        "source_label": "Category",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i005",
+        "module": "Housing_Characteristics",
+        "source_label": "When was this house built? Exact year",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2013",
+        "code": "i005_1",
+        "module": "Housing_Characteristics",
+        "source_label": "When was this house built? Time range",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i005",
+        "module": "Housing_Characteristics",
+        "source_label": "When Was This House Built? Exact Year",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i005_1",
+        "module": "Housing_Characteristics",
+        "source_label": "When Was This House Built? Time Range",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i005",
+        "module": "Housing",
+        "source_label": "Time House Built",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i005_1",
+        "module": "Housing",
+        "source_label": "Time Interval House Built",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i002",
+        "module": "Household_Income",
+        "source_label": "Time House Built",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i003",
+        "module": "Household_Income",
+        "source_label": "Time Interval House Built",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "dwelling_area",
+    "label": "Dwelling area",
+    "domain": "Housing environment",
+    "caveat": "Area wording/variables vary by wave (construction area, house size, usable area); units and target residence must be verified before cross-wave use.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i001",
+        "module": "housing_characteristics",
+        "source_label": "Construction Area of Your Residence",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i001",
+        "module": "Housing_Characteristics",
+        "source_label": "Construction area",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i000_w4_11",
+        "module": "Housing",
+        "source_label": "Usable House Size",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i000_w4_12",
+        "module": "Housing",
+        "source_label": "House Size",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i028",
+        "module": "Household_Income",
+        "source_label": "House Size",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "bedroom_count",
+    "label": "Number of bedrooms",
+    "domain": "Housing environment",
+    "caveat": "Household dwelling attribute; not a measure of crowding unless combined with household composition using a declared method.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i012_1",
+        "module": "housing_characteristics",
+        "source_label": "Num. of Bedrooms",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i012_1",
+        "module": "Housing_Characteristics",
+        "source_label": "How many bedrooms in your residence?",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i012_1",
+        "module": "Housing_Characteristics",
+        "source_label": "How Many Bedrooms in Your Residence?",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i012_1",
+        "module": "Housing",
+        "source_label": "Bedrooms",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i011_1",
+        "module": "Household_Income",
+        "source_label": "Bedrooms",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "livingroom_count",
+    "label": "Number of living rooms",
+    "domain": "Housing environment",
+    "caveat": "Household dwelling attribute; room definitions may differ from usable area and bedrooms.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i012_2",
+        "module": "housing_characteristics",
+        "source_label": "Num. of Living Rooms",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i012_2",
+        "module": "Housing_Characteristics",
+        "source_label": "How many living rooms in your residence?",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i012_2",
+        "module": "Housing_Characteristics",
+        "source_label": "How Many Living Rooms in Your Residence?",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i012_2",
+        "module": "Housing",
+        "source_label": "Livingrooms",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i011_2",
+        "module": "Household_Income",
+        "source_label": "Livingrooms",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "building_structure",
+    "label": "Building structure type",
+    "domain": "Housing environment",
+    "caveat": "Nominal building category; preserve wave-specific value labels and do not assume ordinal levels.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i004",
+        "module": "housing_characteristics",
+        "source_label": "Structure Type of This Building",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i004",
+        "module": "Housing_Characteristics",
+        "source_label": "Type of structure",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i004",
+        "module": "Housing_Characteristics",
+        "source_label": "Type of Structure",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i004",
+        "module": "Housing",
+        "source_label": "Building Structure",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i001",
+        "module": "Household_Income",
+        "source_label": "Building Structure",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "building_stories",
+    "label": "Building levels and residence floor",
+    "domain": "Housing environment",
+    "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i006",
+        "module": "housing_characteristics",
+        "source_label": "One Story or Multi-Level",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2011",
+        "code": "i007",
+        "module": "housing_characteristics",
+        "source_label": "Is the Story Independent or Compound",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2011",
+        "code": "i008",
+        "module": "housing_characteristics",
+        "source_label": "Which Story is this Building on",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i006",
+        "module": "Housing_Characteristics",
+        "source_label": "One story or multi-level building",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2013",
+        "code": "i007",
+        "module": "Housing_Characteristics",
+        "source_label": "Independent or compound",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2013",
+        "code": "i008",
+        "module": "Housing_Characteristics",
+        "source_label": "Which story is this building on?",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i006",
+        "module": "Housing_Characteristics",
+        "source_label": "One-story or Multi-Level Building",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i007",
+        "module": "Housing_Characteristics",
+        "source_label": "Independent or Compound",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i008",
+        "module": "Housing_Characteristics",
+        "source_label": "Which Story Is This Building on?",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i006",
+        "module": "Housing",
+        "source_label": "One Stroy or Multi-level Building",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i007",
+        "module": "Housing",
+        "source_label": "The Stroy is Independent or Compound",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i008",
+        "module": "Housing",
+        "source_label": "Which Story",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i004",
+        "module": "Household_Income",
+        "source_label": "One Storey or Multi-level Building",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i005",
+        "module": "Household_Income",
+        "source_label": "The Storey is Independent or Compound",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i006",
+        "module": "Household_Income",
+        "source_label": "Which Storey",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i006_1",
+        "module": "Household_Income",
+        "source_label": "Which Storey on the Ground",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i006_2",
+        "module": "Household_Income",
+        "source_label": "Which Storey Underground",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "elevator_access",
+    "label": "Elevator availability",
+    "domain": "Housing environment/accessibility",
+    "caveat": "Housing/building-level access feature; distinguish availability from actual use and respondent mobility.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i009",
+        "module": "housing_characteristics",
+        "source_label": "Does It Has Elevator",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i009",
+        "module": "Housing_Characteristics",
+        "source_label": "Does it has elevator£¿",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i009",
+        "module": "Housing_Characteristics",
+        "source_label": "Does It Has Elevatorï¼Ÿ",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i009",
+        "module": "Housing",
+        "source_label": "Elevator",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i007",
+        "module": "Household_Income",
+        "source_label": "Elevator",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "home_accessibility",
+    "label": "Accessibility facilities in residence/building",
+    "domain": "Housing environment/accessibility",
+    "caveat": "Presence of listed accessibility facilities; exact checklist and wave wording need value-label review.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i010",
+        "module": "housing_characteristics",
+        "source_label": "Are There Any Handicapped Facilities",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i010",
+        "module": "Housing_Characteristics",
+        "source_label": "Are there any handicapped facilities?",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i010",
+        "module": "Housing_Characteristics",
+        "source_label": "Are There Any Handicapped Facilities?",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i010_w4",
+        "module": "Housing",
+        "source_label": "Handicapped Facilities",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i009",
+        "module": "Household_Income",
+        "source_label": "Handicapped Facilities",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "entrance_steps",
+    "label": "Steps to main entrance",
+    "domain": "Housing environment/accessibility",
+    "caveat": "Number/category of steps to entrance; may be top-coded or grouped and is not an individual stair-climbing performance test.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i011",
+        "module": "housing_characteristics",
+        "source_label": "How Many Steps",
+        "value_labels": "",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i011",
+        "module": "Housing_Characteristics",
+        "source_label": "How many steps had to be climbed?",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i011",
+        "module": "Housing_Characteristics",
+        "source_label": "How Many Steps Had to Be Climbed?",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i011",
+        "module": "Housing",
+        "source_label": "Steps to Main Entrance of the House",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i010",
+        "module": "Household_Income",
+        "source_label": "Steps to Main Entrance of the House",
+        "value_labels": "",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "electricity_access",
+    "label": "Electricity in residence",
+    "domain": "Housing environment/basic services",
+    "caveat": "Residence-level electricity availability; not household energy consumption or reliability.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i016",
+        "module": "housing_characteristics",
+        "source_label": "Residence Has Electricity",
+        "value_labels": "1=Yes; 2=No",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i016",
+        "module": "Housing_Characteristics",
+        "source_label": "Does your residence have electricity?",
+        "value_labels": "1=Yes; 2=No",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i016",
+        "module": "Housing",
+        "source_label": "Electricity",
+        "value_labels": "1=Yes; 2=No",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i015",
+        "module": "Household_Income",
+        "source_label": "Electricity",
+        "value_labels": "1=Yes; 2=No",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "bathing_facility",
+    "label": "In-house shower/bathing facility",
+    "domain": "Housing environment/basic services",
+    "caveat": "Nominal categories distinguish centralized hot water, household water heater, or none; retain source categories.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i018",
+        "module": "housing_characteristics",
+        "source_label": "In-House Shower or Bath Facility",
+        "value_labels": "1=Hot water provided; 2=Household water heater; 3=None",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i018",
+        "module": "Housing_Characteristics",
+        "source_label": "Is there in-house shower or bath facility?",
+        "value_labels": "1=Hot water provided; 2=Household water heater; 3=None",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i018",
+        "module": "Housing_Characteristics",
+        "source_label": "Is There In-house Shower or Bath Facility?",
+        "value_labels": "1=Hot water provided; 2=Household water heater; 3=None",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i018",
+        "module": "Housing",
+        "source_label": "In-house Shower",
+        "value_labels": "1=Hot water provided; 2=Household water heater; 3=None",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i017",
+        "module": "Household_Income",
+        "source_label": "In-house Shower",
+        "value_labels": "1=Unified hot water supply; 2=Water heater; 3=None",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "piped_gas_access",
+    "label": "Coal/natural gas supply to residence",
+    "domain": "Housing environment/basic services",
+    "caveat": "Availability of coal/natural-gas supply is not the same as the household's main cooking or heating fuel.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "i019",
+        "module": "housing_characteristics",
+        "source_label": "Residence Has Coal Gas or Natural Gas Supply",
+        "value_labels": "1=Yes; 2=No",
+        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+      },
+      {
+        "wave": "2013",
+        "code": "i019",
+        "module": "Housing_Characteristics",
+        "source_label": "Does your residence have coal gas or natural gas supply?",
+        "value_labels": "1=Yes; 2=No",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2015",
+        "code": "i019",
+        "module": "Housing_Characteristics",
+        "source_label": "Does Your Residence Have Coal Gas or Natural Gas Supply?",
+        "value_labels": "1=Yes; 2=No",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2018",
+        "code": "i019",
+        "module": "Housing",
+        "source_label": "Coal Gas or Natural Gas Supply",
+        "value_labels": "1=Yes; 2=No",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i018",
+        "module": "Household_Income",
+        "source_label": "Coal Gas or Natural Gas Supply",
+        "value_labels": "1=Yes; 2=No",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "air_cleaner_home",
+    "label": "Air cleaner present in residence",
+    "domain": "Indoor environment",
+    "caveat": "Presence does not measure use, filter condition, ventilation, indoor pollutant concentration, or personal exposure; wave interview mode differs.",
+    "source_fields": [
+      {
+        "wave": "2015",
+        "code": "i027_w3",
+        "module": "Housing_Characteristics",
+        "source_label": "Does Your Residence Have An Air Cleaner in Your Home",
+        "value_labels": "1=Yes; 2=No",
+        "note": "catalog-label candidate; questionnaire review pending"
+      },
+      {
+        "wave": "2020",
+        "code": "i024",
+        "module": "Household_Income",
+        "source_label": "Air Cleaner",
+        "value_labels": "1=Yes; 2=No",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  },
+  {
+    "concept_id": "tap_water_access",
+    "label": "Tap water in residence",
+    "domain": "Housing environment/basic services",
+    "caveat": "2020 wording is tap-water access; not a direct drinking-water quality or contaminant measurement.",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "i016",
+        "module": "Household_Income",
+        "source_label": "Tap Water",
+        "value_labels": "1=Yes; 2=No",
+        "note": "catalog-label candidate; questionnaire review pending"
+      }
+    ]
+  }
+]

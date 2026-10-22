@@ -1,0 +1,30 @@
+﻿construct,concept_id,concept_label,waves,source_fields,source_codes
+household monthly expenditure component,household_monthly_automobile_expenditure,家庭月度汽车支出,"2011,2013,2015,2018,2020",5,ge010_11;ge010_9;gf013_9
+household monthly expenditure component,household_monthly_banquet_wedding_expenditure,家庭月度宴席/婚礼支出,"2018,2020",2,ge010_15;gf013_15
+household monthly expenditure component,household_monthly_beauty_expenditure,家庭月度美容支出,"2011,2013,2015,2018,2020",5,ge010_8;gf013_8
+household monthly expenditure component,household_monthly_clothing_bedding_expenditure,家庭月度衣物/床上用品支出,"2011,2013,2015,2018,2020",5,ge010_1;gf013_1
+household monthly expenditure component,household_monthly_communication_expenditure,家庭月度通讯支出,"2011,2013,2015,2018",4,ge009_1
+household monthly expenditure component,household_monthly_covid_prevention_expenditure,COVID-19防护月度支出,2020,1,gf013_16
+household monthly expenditure component,household_monthly_domestic_help_expenditure,家庭月度家政/佣工支出,"2013,2015",2,ge009_4
+household monthly expenditure component,household_monthly_donation_expenditure,家庭月度捐赠支出,"2011,2013,2015,2018,2020",5,ge010_13;ge010_14;gf013_13
+household monthly expenditure component,household_monthly_durable_goods_electronics_expenditure,家庭月度耐用品/电子产品支出,"2018,2020",2,ge010_4;gf013_4
+household monthly expenditure component,household_monthly_durable_goods_expenditure,家庭月度家具/耐用品支出,"2011,2013,2015",3,ge010_4
+household monthly expenditure component,household_monthly_education_expenditure,家庭月度教育培训支出,"2011,2013,2015,2018,2020",5,ge010_5;gf013_5
+household monthly expenditure component,household_monthly_electronics_expenditure,家庭月度电子产品支出,2011,1,ge010_12
+household monthly expenditure component,household_monthly_entertainment_expenditure,家庭月度娱乐支出,"2013,2015",2,ge009_7
+household monthly expenditure component,household_monthly_fitness_expenditure,家庭月度健身支出,"2011,2013,2015,2018,2020",5,ge010_7;gf013_7
+household monthly expenditure component,household_monthly_fuel_expenditure,家庭月度燃料支出,"2011,2013,2015,2018",4,ge009_3
+household monthly expenditure component,household_monthly_heating_expenditure,家庭月度取暖支出,"2011,2013,2015,2018,2020",5,ge010_3;gf013_3
+household monthly expenditure component,household_monthly_local_transportation_expenditure,家庭月度市内交通支出,"2013,2015",2,ge009_5
+household monthly expenditure component,household_monthly_medical_expenditure,家庭月度医疗支出,"2011,2013,2015,2018,2020",5,ge010_6;gf013_6
+household monthly expenditure component,household_monthly_property_management_expenditure,家庭月度物业管理费,"2011,2013,2015,2018,2020",5,ge010_11;ge010_13;gf013_11
+household monthly expenditure component,household_monthly_purchase_repair_expenditure,家庭月度购买/维护/维修支出,"2011,2013,2015,2018,2020",5,ge010_10;ge010_9;gf013_10
+household monthly expenditure component,household_monthly_rent_expenditure,家庭月度租金支出,"2018,2020",2,ge010_14;gf013_14
+household monthly expenditure component,household_monthly_taxes_fees_expenditure,家庭月度税费支出,"2011,2013,2015,2018,2020",5,ge010_10;ge010_12;gf013_12
+household monthly expenditure component,household_monthly_travel_expenditure,家庭月度旅行支出,"2011,2013,2015,2018,2020",5,ge010_2;gf013_2
+household monthly expenditure component,household_monthly_utility_expenditure,家庭月度水电等公用事业支出,"2011,2013,2015,2018",4,ge009_2
+household self-produced food value,household_self_consumed_food_market_value,家庭自产自用农产品市场估值,"2013,2015,2018,2020",4,ge006_w2_1;gf008
+household self-production indicator,household_self_produced_food_indicator,家庭是否自产农产品供自用,"2013,2015,2018,2020",4,ge006_w2;gf007
+household weekly expenditure component,household_weekly_alcohol_tobacco_expenditure,家庭过去一周酒类/烟草支出,"2011,2013,2015,2018,2020",5,ge008;gf010
+wave-specific monthly total household expenditure,household_monthly_total_expenditure_2018,2018家庭月度总支出,2018,1,ge000_w4
+wave-specific monthly total household expenditure,household_monthly_total_expenditure_2020,2020家庭月度总支出,2020,1,gf001

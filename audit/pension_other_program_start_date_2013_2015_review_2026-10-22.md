@@ -1,0 +1,9 @@
+# 2013/2015其他养老保险参保起始年月字段审计
+
+更新：2026-10-22。2013与2015问卷在其他养老保险题组中，将FN083_w2分为正在参加但尚未领取、正在领取、未参加三种状态。仅FN083_w2=1对应参保未领取者；FN083_w2=2跳过FN086起始时间题，=3则跳至FN097。FN084记录计划名称，代表的“其他养老保险”可能包含不同制度，故字段可检索为独立的`other_pension_program_participation_start_date`候选概念，不并入基本企业养老或补充企业养老金。
+
+FN086_w2_1/_2分别记录年月。问卷写明2013/2015年份范围分别至2013/2015，且访员指引允许记不清月份填0。官方Codebook摘要却报告2013年份最小观测为1985、2015最小观测为1984，均早于问卷列示下界1990；2013月份摘要还出现1000值。摘要中的频数/极值不能确认这些值在当前公开发行文件里的具体存储意义。
+
+处理：保留四个逐波年月字段与题组路由，标注代码本/问卷值范围冲突及待核特殊值；不按问卷范围截断、不把区间外年份或异常月份解释成有效日期，也不推断跳题为未参加。只有对应获准发布版的数据字典及受控QA确认后，才能制定值域与分析资格。没有读取个人回答。
+
+来源：`sources_official/CHARLS_2013_Questionnaire_extracted.txt`中FN083–FN086；`sources_official/CHARLS_2015_Questionnaire_extracted.txt`中FN083–FN086；`sources_official/CHARLS_2013_Codebook_extracted.txt`与`CHARLS_2015_Codebook_extracted.txt`中fn083_w2、fn086_w2_1/_2条目。映射实现见`scripts/build_pension_supplementary_crosswalk.py`。

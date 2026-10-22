@@ -1,0 +1,75 @@
+import sys
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from validate_exwas_result_table import read_schema, validate_rows  # noqa: E402
+
+
+class ResultTableValidationTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.fields, cls.required = read_schema()
+
+    def base_row(self):
+        row = {field: "" for field in self.fields}
+        for field in self.fields:
+            if self.required[field] == "yes":
+                row[field] = "documented"
+        row.update(
+            analysis_id="synthetic-001",
+            fit_status="blocked_design_verification",
+            weight_status="unresolved",
+            psu_status="unresolved",
+            stratum_status="unresolved",
+            variance_design="not fit-ready; synthetic validation fixture",
+        )
+        return row
+
+    def test_blocked_result_has_no_effect_estimates(self):
+        errors = validate_rows([self.base_row()], self.fields, self.required)
+        self.assertEqual(errors, [])
+
+    def test_blocked_result_cannot_contain_effect_estimate(self):
+        row = self.base_row()
+        row["estimate"] = "0.2"
+        errors = validate_rows([row], self.fields, self.required)
+        self.assertTrue(any("unless fit_status=success" in error for error in errors))
+
+    def test_sample_flow_and_probability_bounds_are_enforced(self):
+        row = self.base_row()
+        row.update(n_eligible="10", n_interview="8", p_value="1.4")
+        errors = validate_rows([row], self.fields, self.required)
+        self.assertTrue(any("n_eligible cannot exceed n_interview" in error for error in errors))
+        self.assertTrue(any("p_value must be between 0 and 1" in error for error in errors))
+
+    def test_design_verified_success_row_passes(self):
+        row = self.base_row()
+        row.update(
+            fit_status="success",
+            weight_status="verified_used",
+            weight_id="synthetic_weight",
+            psu_status="verified_used",
+            psu_id="synthetic_psu",
+            stratum_status="verified_used",
+            stratum_id="synthetic_stratum",
+            variance_design="synthetic design-based variance fixture",
+            estimate="0.1",
+            standard_error="0.05",
+            ci_lower="0.002",
+            ci_upper="0.198",
+            p_value="0.04",
+            n_interview="100",
+            n_eligible="90",
+            n_exposure_valid="85",
+            n_phenotype_valid="80",
+            n_pair_complete="75",
+            n_model="70",
+        )
+        self.assertEqual(validate_rows([row], self.fields, self.required), [])
+
+
+if __name__ == "__main__":
+    unittest.main()

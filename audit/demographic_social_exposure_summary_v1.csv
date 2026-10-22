@@ -1,0 +1,9 @@
+﻿concept_id,concept_label,waves,source_fields,source_codes
+current_hukou_location,当前户口登记地,"2011,2013,2018",3,bc002_w3_4;bc005
+current_hukou_type,当前户口类别,"2011,2013,2015,2018,2020",5,ba009;bc001;bc002_w3_1
+current_marital_status,当前婚姻状况,"2011,2013,2015,2018",4,be001
+education_attainment_current_or_update,当前最高受教育程度（直接报告/返访更新题）,"2011,2013,2015,2018,2020",6,ba010;bd001;bd001_w2_4
+prior_interview_hukou_location_relation_2015,上一轮户口登记地与常住地址关系（2015回顾项）,2015,1,bc001_w3_3
+prior_wave_education_attainment_2013,上一轮最高学历（2013回访核对/更正）,2013,1,bd001_w2_3
+single_marriage_month_2013,唯一一次婚姻月份（2013条件回顾项）,2013,1,be004_2
+single_marriage_year_2013,唯一一次婚姻年份（2013条件回顾项）,2013,1,be004_1

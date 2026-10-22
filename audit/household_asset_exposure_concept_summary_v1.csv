@@ -1,0 +1,83 @@
+﻿construct,concept_id,concept_label,waves,source_fields,source_codes
+explicit none-of-listed-assets response,household_durable_asset_none_reported,家户耐用品清单回答为以上皆无,"2011,2013,2015,2018",4,ha065_s19;ha065s18
+explicit none-of-listed-fixed-capital-assets response,household_fixed_agricultural_assets_none_reported,household农用固定资产清单回答为以上皆无,"2011,2013",2,ha066s6
+explicit none-of-listed-fixed-capital-assets response,respondent_spouse_fixed_agricultural_assets_none_reported,main respondent and spouse农用固定资产清单回答为以上皆无,2015,1,ha066s6
+explicit none-of-listed-fixed-capital-assets response,respondent_spouse_owned_share_fixed_agricultural_assets_none_reported,main respondent and spouse's owned share农用固定资产清单回答为以上皆无,2018,1,ha066_w4_s8
+fixed-capital agricultural asset ownership response,household_owns_fixed_agricultural_asset_processing_equipment,家户是否拥有农用固定资产：加工机械,"2011,2013",2,ha066s5
+fixed-capital agricultural asset ownership response,household_owns_fixed_agricultural_asset_thresher,家户是否拥有农用固定资产：脱粒机,"2011,2013",2,ha066s2
+fixed-capital agricultural asset ownership response,household_owns_fixed_agricultural_asset_tractor,家户是否拥有农用固定资产：拖拉机,"2011,2013",2,ha066s1
+fixed-capital agricultural asset ownership response,household_owns_fixed_agricultural_asset_tractor_tools,家户是否拥有农用固定资产：机引农具,"2011,2013",2,ha066s3
+fixed-capital agricultural asset ownership response,household_owns_fixed_agricultural_asset_water_pump,家户是否拥有农用固定资产：抽水机/水泵,"2011,2013",2,ha066s4
+fixed-capital agricultural asset ownership response,respondent_spouse_owned_share_owns_fixed_agricultural_asset_agricultural_aircraft,受访者及配偶是否拥有农用固定资产：农用飞机,2018,1,ha066_w4_s7
+fixed-capital agricultural asset ownership response,respondent_spouse_owned_share_owns_fixed_agricultural_asset_harvester,受访者及配偶是否拥有农用固定资产：收割机,2018,1,ha066_w4_s3
+fixed-capital agricultural asset ownership response,respondent_spouse_owned_share_owns_fixed_agricultural_asset_processing_equipment,受访者及配偶是否拥有农用固定资产：加工机械,2018,1,ha066_w4_s5
+fixed-capital agricultural asset ownership response,respondent_spouse_owned_share_owns_fixed_agricultural_asset_seeder,受访者及配偶是否拥有农用固定资产：播种机,2018,1,ha066_w4_s6
+fixed-capital agricultural asset ownership response,respondent_spouse_owned_share_owns_fixed_agricultural_asset_thresher,受访者及配偶是否拥有农用固定资产：脱粒机,2018,1,ha066_w4_s2
+fixed-capital agricultural asset ownership response,respondent_spouse_owned_share_owns_fixed_agricultural_asset_tractor,受访者及配偶是否拥有农用固定资产：拖拉机,2018,1,ha066_w4_s1
+fixed-capital agricultural asset ownership response,respondent_spouse_owned_share_owns_fixed_agricultural_asset_water_pump,受访者及配偶是否拥有农用固定资产：抽水机/水泵,2018,1,ha066_w4_s4
+fixed-capital agricultural asset ownership response,respondent_spouse_owns_fixed_agricultural_asset_processing_equipment,受访者和配偶是否拥有农用固定资产：加工机械,2015,1,ha066s5
+fixed-capital agricultural asset ownership response,respondent_spouse_owns_fixed_agricultural_asset_thresher,受访者和配偶是否拥有农用固定资产：脱粒机,2015,1,ha066s2
+fixed-capital agricultural asset ownership response,respondent_spouse_owns_fixed_agricultural_asset_tractor,受访者和配偶是否拥有农用固定资产：拖拉机,2015,1,ha066s1
+fixed-capital agricultural asset ownership response,respondent_spouse_owns_fixed_agricultural_asset_tractor_tools,受访者和配偶是否拥有农用固定资产：机引农具,2015,1,ha066s3
+fixed-capital agricultural asset ownership response,respondent_spouse_owns_fixed_agricultural_asset_water_pump,受访者和配偶是否拥有农用固定资产：抽水机/水泵,2015,1,ha066s4
+household asset ownership response,household_owns_air_conditioner,家户是否拥有：空调,"2011,2013,2015,2018",4,ha065_s11;ha065s11
+household asset ownership response,household_owns_air_purifier,家户是否拥有：空气净化器,2018,1,ha065_s18
+household asset ownership response,household_owns_antiques_art,家户是否拥有：古董、字画及艺术品,"2011,2013,2015,2018",4,ha065_s17;ha065s17
+household asset ownership response,household_owns_automobile,家户是否拥有：汽车,"2011,2013,2015,2018",4,ha065_s1;ha065s1
+household asset ownership response,household_owns_camera,家户是否拥有：照相机,"2011,2013,2015,2018",4,ha065_s10;ha065s10
+household asset ownership response,household_owns_computer,家户是否拥有：电脑,"2011,2013,2015,2018",4,ha065_s7;ha065s7
+household asset ownership response,household_owns_electric_bicycle,家户是否拥有：电动自行车,"2011,2013,2015,2018",4,ha065_s2;ha065s2
+household asset ownership response,household_owns_furniture,家户是否拥有：值钱家具,"2011,2013,2015,2018",4,ha065_s13;ha065s13
+household asset ownership response,household_owns_mobile_phone,家户是否拥有：手机,"2011,2013,2015,2018",4,ha065_s12;ha065s12
+household asset ownership response,household_owns_motorcycle,家户是否拥有：摩托车,"2011,2013,2015,2018",4,ha065_s3;ha065s3
+household asset ownership response,household_owns_music_instrument,家户是否拥有：高档乐器,"2011,2013,2015,2018",4,ha065_s14;ha065s14
+household asset ownership response,household_owns_precious_metals,家户是否拥有：珠宝及贵重金属,"2011,2013,2015,2018",4,ha065_s16;ha065s16
+household asset ownership response,household_owns_refrigerator,家户是否拥有：冰箱/冰柜,"2011,2013,2015,2018",4,ha065_s4;ha065s4
+household asset ownership response,household_owns_stereo_system,家户是否拥有：组合音响,"2011,2013,2015,2018",4,ha065_s8;ha065s8
+household asset ownership response,household_owns_television,家户是否拥有：电视机,"2011,2013,2015,2018",4,ha065_s6;ha065s6
+household asset ownership response,household_owns_valuable_decorations,家户是否拥有：贵重装饰物,"2011,2013,2015,2018",4,ha065_s15;ha065s15
+household asset ownership response,household_owns_video_camera,家户是否拥有：摄像机,"2011,2013,2015,2018",4,ha065_s9;ha065s9
+household asset ownership response,household_owns_washing_machine,家户是否拥有：洗衣机,"2011,2013,2015,2018",4,ha065_s5;ha065s5
+reported current total market value of primary residence,household_current_primary_residence_total_market_value,家庭当前主要住房市场总价,"2013,2015",2,ha011_1
+reported current unit-area market value of primary residence,household_current_primary_residence_unit_market_value,家庭当前主要住房单位面积市场价格,"2013,2015",2,ha011_2
+reported current value of fixed-capital agricultural asset,household_current_value_fixed_agricultural_asset_processing_equipment,家户农用固定资产当前估值：加工机械,"2011,2013",2,ha066_1_5_
+reported current value of fixed-capital agricultural asset,household_current_value_fixed_agricultural_asset_thresher,家户农用固定资产当前估值：脱粒机,"2011,2013",2,ha066_1_2_
+reported current value of fixed-capital agricultural asset,household_current_value_fixed_agricultural_asset_tractor,家户农用固定资产当前估值：拖拉机,"2011,2013",2,ha066_1_1_
+reported current value of fixed-capital agricultural asset,household_current_value_fixed_agricultural_asset_tractor_tools,家户农用固定资产当前估值：机引农具,"2011,2013",2,ha066_1_3_
+reported current value of fixed-capital agricultural asset,household_current_value_fixed_agricultural_asset_water_pump,家户农用固定资产当前估值：抽水机/水泵,"2011,2013",2,ha066_1_4_
+reported current value of fixed-capital agricultural asset,respondent_spouse_current_value_fixed_agricultural_asset_processing_equipment,受访者和配偶农用固定资产当前估值：加工机械,2015,1,ha066_1_5_
+reported current value of fixed-capital agricultural asset,respondent_spouse_current_value_fixed_agricultural_asset_thresher,受访者和配偶农用固定资产当前估值：脱粒机,2015,1,ha066_1_2_
+reported current value of fixed-capital agricultural asset,respondent_spouse_current_value_fixed_agricultural_asset_tractor,受访者和配偶农用固定资产当前估值：拖拉机,2015,1,ha066_1_1_
+reported current value of fixed-capital agricultural asset,respondent_spouse_current_value_fixed_agricultural_asset_tractor_tools,受访者和配偶农用固定资产当前估值：机引农具,2015,1,ha066_1_3_
+reported current value of fixed-capital agricultural asset,respondent_spouse_current_value_fixed_agricultural_asset_water_pump,受访者和配偶农用固定资产当前估值：抽水机/水泵,2015,1,ha066_1_4_
+reported current value of fixed-capital agricultural asset,respondent_spouse_owned_share_current_value_fixed_agricultural_asset_agricultural_aircraft,主要受访者及配偶所拥有的产权份额农用固定资产当前估值：农用飞机,2018,1,ha066_w4_7
+reported current value of fixed-capital agricultural asset,respondent_spouse_owned_share_current_value_fixed_agricultural_asset_harvester,主要受访者及配偶所拥有的产权份额农用固定资产当前估值：收割机,2018,1,ha066_w4_3
+reported current value of fixed-capital agricultural asset,respondent_spouse_owned_share_current_value_fixed_agricultural_asset_processing_equipment,主要受访者及配偶所拥有的产权份额农用固定资产当前估值：加工机械,2018,1,ha066_w4_5
+reported current value of fixed-capital agricultural asset,respondent_spouse_owned_share_current_value_fixed_agricultural_asset_seeder,主要受访者及配偶所拥有的产权份额农用固定资产当前估值：播种机,2018,1,ha066_w4_6
+reported current value of fixed-capital agricultural asset,respondent_spouse_owned_share_current_value_fixed_agricultural_asset_thresher,主要受访者及配偶所拥有的产权份额农用固定资产当前估值：脱粒机,2018,1,ha066_w4_2
+reported current value of fixed-capital agricultural asset,respondent_spouse_owned_share_current_value_fixed_agricultural_asset_tractor,主要受访者及配偶所拥有的产权份额农用固定资产当前估值：拖拉机,2018,1,ha066_w4_1
+reported current value of fixed-capital agricultural asset,respondent_spouse_owned_share_current_value_fixed_agricultural_asset_water_pump,主要受访者及配偶所拥有的产权份额农用固定资产当前估值：抽水机/水泵,2018,1,ha066_w4_4
+reported current value of household durable asset,household_current_value_air_conditioner,家户空调当前估值,"2011,2013,2015,2018",4,ha065_11;ha065_1_11_
+reported current value of household durable asset,household_current_value_air_purifier,家户空气净化器当前估值,2018,1,ha065_18
+reported current value of household durable asset,household_current_value_antiques_art,家户古董、字画及艺术品当前估值,"2011,2013,2015,2018",4,ha065_17;ha065_1_17_
+reported current value of household durable asset,household_current_value_automobile,家户汽车当前估值,"2011,2013,2015,2018",4,ha065_1;ha065_1_1_
+reported current value of household durable asset,household_current_value_camera,家户照相机当前估值,"2011,2013,2015,2018",4,ha065_10;ha065_1_10_
+reported current value of household durable asset,household_current_value_computer,家户电脑当前估值,"2011,2013,2015,2018",4,ha065_1_7_;ha065_7
+reported current value of household durable asset,household_current_value_electric_bicycle,家户电动自行车当前估值,"2011,2013,2015,2018",4,ha065_1_2_;ha065_2
+reported current value of household durable asset,household_current_value_furniture,家户值钱家具当前估值,"2011,2013,2015,2018",4,ha065_13;ha065_1_13_
+reported current value of household durable asset,household_current_value_mobile_phone,家户手机当前估值,"2011,2013,2015,2018",4,ha065_12;ha065_1_12_
+reported current value of household durable asset,household_current_value_motorcycle,家户摩托车当前估值,"2011,2013,2015,2018",4,ha065_1_3_;ha065_3
+reported current value of household durable asset,household_current_value_music_instrument,家户高档乐器当前估值,"2011,2013,2015,2018",4,ha065_14;ha065_1_14_
+reported current value of household durable asset,household_current_value_precious_metals,家户珠宝及贵重金属当前估值,"2011,2013,2015,2018",4,ha065_16;ha065_1_16_
+reported current value of household durable asset,household_current_value_refrigerator,家户冰箱/冰柜当前估值,"2011,2013,2015,2018",4,ha065_1_4_;ha065_4
+reported current value of household durable asset,household_current_value_stereo_system,家户组合音响当前估值,"2011,2013,2015,2018",4,ha065_1_8_;ha065_8
+reported current value of household durable asset,household_current_value_television,家户电视机当前估值,"2011,2013,2015,2018",4,ha065_1_6_;ha065_6
+reported current value of household durable asset,household_current_value_valuable_decorations,家户贵重装饰物当前估值,"2011,2013,2015,2018",4,ha065_15;ha065_1_15_
+reported current value of household durable asset,household_current_value_video_camera,家户摄像机当前估值,"2011,2013,2015,2018",4,ha065_1_9_;ha065_9
+reported current value of household durable asset,household_current_value_washing_machine,家户洗衣机当前估值,"2011,2013,2015,2018",4,ha065_1_5_;ha065_5
+reported current value of other durable/fixed assets,household_other_durable_or_fixed_assets_500_yuan_plus_current_value,家户其他500元及以上耐用品或固定资产当前估值,"2011,2013",2,ha068_1
+reported current value of other durable/fixed assets,respondent_spouse_other_durable_or_fixed_assets_500_yuan_plus_current_value,受访者及配偶其他500元及以上耐用品或固定资产当前估值,"2015,2018",2,ha068_1
+reported current value of other fixed-capital assets used in household production or self-employment,household_other_fixed_capital_current_value,家户其他生产/经营固定资本当前估值,"2011,2013,2015",3,ha067
+reported current value of other fixed-capital assets used in household production or self-employment,respondent_spouse_nonagricultural_other_fixed_capital_current_value,主要受访者及配偶其他生产/经营固定资本当前估值,2018,1,ha067_w4
+reported other durable/fixed asset eligibility status,household_other_durable_or_fixed_assets_500_yuan_plus_status,家户其他500元及以上耐用品或固定资产是否拥有,"2011,2013",2,ha068
+reported other durable/fixed asset eligibility status,respondent_spouse_other_durable_or_fixed_assets_500_yuan_plus_status,受访者及配偶其他500元及以上耐用品或固定资产是否拥有,"2015,2018",2,ha068
