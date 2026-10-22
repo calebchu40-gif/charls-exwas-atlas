@@ -63,6 +63,16 @@ class HousingValueLabelTests(unittest.TestCase):
         self.assertEqual(lookup[("2020", "i016")]["value_labels"], "1=Yes; 2=No")
         self.assertEqual(lookup[("2020", "i029")]["value_labels"], "1=Yes; 2=No; 997=Do not know")
 
+    def test_heating_fuels_remain_nominal_and_preserve_no_heating_codes(self):
+        lookup = {(row["wave"], row["code"]): row for row in self.labels}
+        for key in (("2011", "i021"), ("2013", "i021"), ("2015", "i021")):
+            self.assertIn("7=Other", lookup[key]["value_labels"])
+            self.assertNotIn("8=", lookup[key]["value_labels"])
+        self.assertIn("8=Heating provided", lookup[("2018", "i021_w4")]["value_labels"])
+        self.assertIn("8=Do not heating", lookup[("2020", "i020")]["value_labels"])
+        for key in (("2015", "i020"), ("2018", "i020"), ("2020", "i019")):
+            self.assertEqual(lookup[key]["value_labels"], "1=Yes; 2=No")
+
     def test_reviewed_labels_reach_field_catalog_concept_crosswalk_and_housing_page(self):
         key = ("2018", "i010_w4")
         field = next(row for row in self.catalog if (row["Source.Wave"], row["Variable.Name"].lower()) == (key[0], key[1]))

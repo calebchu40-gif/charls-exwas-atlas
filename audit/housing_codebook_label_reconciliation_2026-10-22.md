@@ -28,6 +28,8 @@ Additional residence-context fields included after codebook and questionnaire re
 
 A further field-level pass covers interviewer-observed home cleanliness (`i025`) and temperature (`i026`) in all five waves, plus 2020 tap-water access (`i016`) and whether tap water is treated by waterworks (`i029`). These are distinct constructs: cleanliness/thermal comfort are interviewer-recorded household observations, tap-water access is not water-quality testing, and `997=Do not know` remains a substantive response category for the 2020 treatment question. The 2011 Codebook does not list the `6=Not applicable` category shown from 2013 onward, so it is not backfilled into 2011.
 
+The heating-source review covers 2011–2015 `i021`, 2018 `i021_w4`, and 2020 `i020`; the fuel classes are nominal and must not be interpreted as an ordinal pollution dose. 2018 adds `8=Heating provided`, while 2020 lists `8=Do not heating`; these similar-numbered categories are retained as different labels. Heating availability is separately recorded in 2015/2018 `i020` and 2020 `i019` as Yes/No. Heating source or availability is not a measurement of indoor pollutant concentration or personal exposure dose.
+
 ## Wave differences retained
 
 - 2011 structure uses codes 1–10, including code 8 `Tent`. The 2013 Codebook category table lists 1–7, 9, and 10; code 8 is not imputed from the prior wave.
