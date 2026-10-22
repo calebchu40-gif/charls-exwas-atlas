@@ -2,6 +2,8 @@
 
 ## 2026-10-22 (continued)
 
+- Re-reviewed the 2011 pension subsidy source against the correctly identified baseline household questionnaire and Codebook. Confirmed FN009 eligibility/skip routing, FN011 annual-versus-lump-sum selector, and six distinct amount fields; corrected the source path and reduced the 2011 source-identity review queue to 7 items. Microdata values and special missing codes remain unverified.
+
 - Corrected the source identity in the pension FN079/FN094 audit: its FN072 supplement is a 2013 Wave 2 item, and the previous path incorrectly described a mislabeled 2013 questionnaire extract as a 2011 baseline. Verified the five FN072 components and route against the correctly named 2013 questionnaire and Codebook; removed this resolved file from the remaining source-identity queue (8 remain).
 
 - Rechecked basic-pension FN028 dates against the correctly identified 2013 questionnaire and 2013/2015 Codebooks: both 2013 and 2015 questionnaires say “start,” while both Codebooks title FN028 as “stop.” Expanded the analysis lock to both waves, corrected the audit citation, and removed it from the source-identity queue (9 remain).

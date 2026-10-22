@@ -51,6 +51,9 @@ def main():
             labels = (labels + "; " if labels else "") + "-1=Unknown (per questionnaire)"
             status = "2018 questionnaire unknown-response code and scale/unit reviewed; frequencies omitted"
             source = "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"
+        if str(r.wave) == "2011" and str(r.code).lower() in {f"fn011_{i}" for i in range(1, 7)}:
+            status = "official 2011 questionnaire/Codebook field identity, route and amount period reviewed; continuous amount; special missing codes not reviewed"
+            source = "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
         rows.append({"wave": str(r.wave), "code": str(r.code), "concept_id": str(r.concept_id),
                      "source_label": str(r.source_label), "value_labels": labels,
                      "value_label_status": status, "value_label_source": source,
@@ -88,6 +91,9 @@ def main():
     fields["value_labels"] = [getattr(label_by_key.get((str(r.wave), str(r.code).lower())), "value_labels", "") for r in fields.itertuples(index=False)]
     fields["value_label_status"] = [getattr(label_by_key.get((str(r.wave), str(r.code).lower())), "value_label_status", "official response label not located; review required") for r in fields.itertuples(index=False)]
     fields["value_label_source"] = [getattr(label_by_key.get((str(r.wave), str(r.code).lower())), "value_label_source", "") for r in fields.itertuples(index=False)]
+    fn011_2011 = fields.wave.astype(str).eq("2011") & fields.code.astype(str).str.lower().isin({f"fn011_{i}" for i in range(1, 7)})
+    fields.loc[fn011_2011, "value_label_status"] = "official 2011 questionnaire/Codebook field identity, route and amount period reviewed; continuous amount; special missing codes not reviewed"
+    fields.loc[fn011_2011, "value_label_source"] = "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
     fields.to_csv(AUDIT / "pension_exposure_variable_mapping_v1.csv", index=False, encoding="utf-8-sig")
 
     # Preserve existing manually reviewed rows; append only new, positively

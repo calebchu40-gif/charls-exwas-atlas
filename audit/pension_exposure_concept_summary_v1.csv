@@ -10,6 +10,7 @@ age at expected receipt for rural resident pension,pension_expected_claim_age_ru
 age at expected receipt for urban residents pension,pension_expected_claim_age_urban_residents,城镇居民养老金预期领取年龄,"2013,2015",2,fn065_w2_1_3_
 age eligibility and receipt status when the scheme began,pension_age_status_at_scheme_start_2015,居民类养老金初次开展时的领取年龄状态（2015）,2015,3,fn057_w3_1_1_;fn057_w3_1_2_;fn057_w3_1_3_
 age-qualified at initial scheme implementation and receiving without personal payment,pension_age_eligible_at_scheme_start_2015,居民类养老金初次开展时是否达到领取年龄并直接领取（2015）,2015,3,fn068_w3_1_;fn068_w3_2_;fn068_w3_3_
+annual contribution,pension_annual_contribution_amount,自报年度养老金缴费金额,2011,1,fn011_1
 annual contribution amount,pension_supplementary_route_annual_contribution_new_rural_social,补缴后按年缴费annual contribution amount：新型农村社会养老保险,2015,1,fn072_w3_4_1_1_
 annual contribution amount,pension_supplementary_route_annual_contribution_residents,补缴后按年缴费annual contribution amount：居民养老金,2015,1,fn072_w3_4_1_2_
 annual contribution amount,pension_supplementary_route_annual_contribution_urban_residents,补缴后按年缴费annual contribution amount：城镇居民养老金,2015,1,fn072_w3_4_1_3_
@@ -19,6 +20,8 @@ annual government subsidy amount,pension_supplementary_route_annual_subsidy_urba
 annual pension subsidy from collective,pension_annual_subsidy_collective_amount_named_program,选定养老金计划的集体年度补贴金额,2011,1,fn061_2
 annual pension subsidy from government,pension_annual_subsidy_government_amount_named_program,选定养老金计划的政府年度补贴金额,2011,1,fn061_3
 annual premium amount respondent reports paying toward commercial pension insurance,commercial_pension_annual_premium_amount,商业养老保险年度缴费金额,2011,1,fn053
+annual subsidy from the collective,pension_subsidy_annual_amount,自报年度养老金补贴金额,2011,1,fn011_2
+annual subsidy from the government,pension_subsidy_annual_amount,自报年度养老金补贴金额,2011,1,fn011_3
 basic pension participation start-date component,pension_basic_plan_participation_start_date,通过所选工作单位参加企业职工基本养老保险的开始年月,"2013,2015",4,fn027_w2_1;fn027_w2_2
 calendar month commercial pension contributions began,pension_commercial_contribution_start_month_2018,商业养老金开始缴费月份,2018,1,fn046_w4_2
 calendar year commercial pension contributions began,pension_commercial_contribution_start_year_2018,商业养老金开始缴费年份,2018,1,fn046_w4_1
@@ -152,6 +155,9 @@ land-expropriation pension monthly subsidy from collective,pension_land_expropri
 land-expropriation pension monthly subsidy from government,pension_land_expropriation_government_monthly_subsidy_amount,征地养老保险政府月补贴金额,"2013,2015",2,fn079_w2_7_1
 land-requisition pension participation and receipt status,pension_land_requisition_plan_participation_receipt_status,征地养老保险参保/领取状态,"2013,2015,2018",3,fn079_w2_3
 location category of pension-program participation relative to the residential reference used in that wave,pension_program_participation_location_relative_to_residence,养老金计划参保地点相对居住地位置,"2013,2015,2018",3,fn085_w2
+lump-sum contribution,pension_lump_sum_contribution_amount,自报一次性养老金缴费金额,2011,1,fn011_4
+lump-sum subsidy from the collective,pension_subsidy_lump_sum_amount,自报一次性养老金补贴金额,2011,1,fn011_5
+lump-sum subsidy from the government,pension_subsidy_lump_sum_amount,自报一次性养老金补贴金额,2011,1,fn011_6
 never received/participated pension history,pension_never_received_or_participated,是否从未领取或参加养老金（自报）,2018,1,fn100_w4_s15
 new-rural pension annual contribution amount,pension_new_rural_annual_contribution_amount,新农保年度缴费金额,2013,1,fn072_w2_1
 new-rural pension lump_sum contribution amount,pension_new_rural_lump_sum_contribution_amount,新农保一次性缴费金额,2013,1,fn072_w2_2
@@ -204,14 +210,14 @@ relative location of the work unit providing pension insurance,pension_employer_
 remaining annual contribution duration,pension_supplementary_route_years_remaining_new_rural_social,补缴后按年缴费remaining annual contribution duration：新型农村社会养老保险,2015,1,fn072_w3_4_4_1_
 remaining annual contribution duration,pension_supplementary_route_years_remaining_residents,补缴后按年缴费remaining annual contribution duration：居民养老金,2015,1,fn072_w3_4_4_2_
 remaining annual contribution duration,pension_supplementary_route_years_remaining_urban_residents,补缴后按年缴费remaining annual contribution duration：城镇居民养老金,2015,1,fn072_w3_4_4_3_
-reported annual pension contribution amount,pension_annual_contribution_amount,自报年度养老金缴费金额,"2011,2013,2015",10,fn011_1;fn062_w2_1_1_;fn062_w2_1_2_;fn062_w2_1_3_;fn079_w2_6;fn090_w2;fn090_w2_bracketbracket_max;fn090_w2_bracketbracket_min
-reported annual pension subsidy amount,pension_subsidy_annual_amount,自报年度养老金补贴金额,"2011,2013",8,fn011_2;fn011_3;fn062_w2_2_1_;fn062_w2_2_2_;fn062_w2_2_3_;fn062_w2_3_1_;fn062_w2_3_2_;fn062_w2_3_3_
+reported annual pension contribution amount,pension_annual_contribution_amount,自报年度养老金缴费金额,"2013,2015",9,fn062_w2_1_1_;fn062_w2_1_2_;fn062_w2_1_3_;fn079_w2_6;fn090_w2;fn090_w2_bracketbracket_max;fn090_w2_bracketbracket_min
+reported annual pension subsidy amount,pension_subsidy_annual_amount,自报年度养老金补贴金额,2013,6,fn062_w2_2_1_;fn062_w2_2_2_;fn062_w2_2_3_;fn062_w2_3_1_;fn062_w2_3_2_;fn062_w2_3_3_
 reported current pension benefit amount (period/unit to verify),pension_current_benefit_amount_unspecified_period,当前养老金待遇金额（期间/单位待核）,"2013,2015",17,fn068_w2_1_;fn068_w2_2_;fn068_w2_3_;fn082_w2;fn082_w2_bracket_max;fn082_w2_bracket_min;fn082_w2_bracketbracket_max;fn082_w2_bracketbracket_min;fn096_w2;fn096_w2_bracket_max;fn096_w2_bracket_min;fn096_w2_bracketbracket_max
 reported employer-plan participation start date component,pension_employer_plan_participation_start_date,通过当前/相关单位参加养老金计划的起始时间组成字段,"2013,2015",6,fn011_w2_1_1_;fn011_w2_1_2_;fn011_w2_2_1_;fn011_w2_2_2_
 reported financial old-age support source,old_age_financial_support_source,自报老年经济支持来源,"2013,2015,2018",3,fn097_w2
 reported life-insurance payout amount,life_insurance_claim_amount,人寿保险已领取赔付金额,2018,1,fn056_w2_8
-reported lump-sum pension contribution amount,pension_lump_sum_contribution_amount,自报一次性养老金缴费金额,"2011,2013",4,fn011_4;fn062_w2_4_1_;fn062_w2_4_2_;fn062_w2_4_3_
-reported lump-sum pension subsidy amount,pension_subsidy_lump_sum_amount,自报一次性养老金补贴金额,"2011,2013",8,fn011_5;fn011_6;fn062_w2_5_1_;fn062_w2_5_2_;fn062_w2_5_3_;fn062_w2_6_1_;fn062_w2_6_2_;fn062_w2_6_3_
+reported lump-sum pension contribution amount,pension_lump_sum_contribution_amount,自报一次性养老金缴费金额,2013,3,fn062_w2_4_1_;fn062_w2_4_2_;fn062_w2_4_3_
+reported lump-sum pension subsidy amount,pension_subsidy_lump_sum_amount,自报一次性养老金补贴金额,2013,6,fn062_w2_5_1_;fn062_w2_5_2_;fn062_w2_5_3_;fn062_w2_6_1_;fn062_w2_6_2_;fn062_w2_6_3_
 reported month when respondent began contributing to selected rural/resident pension plan,pension_resident_plan_contribution_start_month_rural_resident,农村/新农保养老金开始缴费月份,2011,1,fn010_2
 reported month when respondent began paying/participating in residents pension,pension_resident_plan_contribution_start_month_residents,城乡居民养老金开始缴费月份,"2013,2015",2,fn061_w2_2_2_;fn061_w3_2_2_
 reported month when respondent began paying/participating in rural_resident pension,pension_resident_plan_contribution_start_month_rural_resident,农村/新农保养老金开始缴费月份,"2013,2015",2,fn061_w2_2_1_;fn061_w3_2_1_

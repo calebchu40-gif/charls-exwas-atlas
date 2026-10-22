@@ -73,6 +73,20 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertEqual(len(wave2), 1)
         self.assertIn("pension_past_basic_plan_participation_when_not_currently_enrolled", wave2[0].get("candidate_concept_ids", ""))
 
+    def test_2011_fn011_amount_components_have_verified_wave_route_and_period(self):
+        import csv
+        codes = {f"fn011_{i}" for i in range(1, 7)}
+        with (ROOT / "audit/pension_exposure_variable_mapping_v1.csv").open(encoding="utf-8-sig", newline="") as handle:
+            mapped = list(csv.DictReader(handle))
+        rows = [row for row in mapped if row.get("wave") == "2011" and row.get("code", "").lower() in codes]
+        self.assertEqual(len(rows), 6)
+        for row in rows:
+            self.assertIn("route, amount period, and unit reviewed", row.get("mapping_status", ""))
+            self.assertIn("FN002=3/4/5", row.get("caveat", ""))
+            self.assertIn("FN009=Yes", row.get("caveat", ""))
+            self.assertIn("FN011 Codebook form selector", row.get("caveat", ""))
+            self.assertIn("CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt", row.get("value_label_source", ""))
+
     def test_2013_and_2015_fn028_date_identity_conflict_is_locked(self):
         import csv
         with (ROOT / "audit/pension_exposure_variable_mapping_v1.csv").open(encoding="utf-8-sig", newline="") as handle:

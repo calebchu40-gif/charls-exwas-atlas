@@ -246,6 +246,22 @@ for rec in raw.itertuples(index=False):
         caveat += " Retained as an audit/search item only. Do not analyze or harmonize until the questionnaire/codebook field-code discrepancy is resolved."
         extra = {"unit": "Yuan (lump sum per codebook; unresolved)", "value_label_status": "questionnaire/codebook child-code conflict; unresolved",
                  "value_label_source": f"sources_official/CHARLS_{wave}_Questionnaire_extracted.txt; sources_official/CHARLS_{wave}_Codebook_extracted.txt"}
+    elif wave == "2011" and code in {"fn011_1", "fn011_2", "fn011_3", "fn011_4", "fn011_5", "fn011_6"}:
+        fn011_specs = {
+            "fn011_1": ("pension_annual_contribution_amount", "自报年度养老金缴费金额", "Yuan/year", "annual contribution"),
+            "fn011_2": ("pension_subsidy_annual_amount", "自报年度养老金补贴金额", "Yuan/year", "annual subsidy from the collective"),
+            "fn011_3": ("pension_subsidy_annual_amount", "自报年度养老金补贴金额", "Yuan/year", "annual subsidy from the government"),
+            "fn011_4": ("pension_lump_sum_contribution_amount", "自报一次性养老金缴费金额", "Yuan (lump sum)", "lump-sum contribution"),
+            "fn011_5": ("pension_subsidy_lump_sum_amount", "自报一次性养老金补贴金额", "Yuan (lump sum)", "lump-sum subsidy from the collective"),
+            "fn011_6": ("pension_subsidy_lump_sum_amount", "自报一次性养老金补贴金额", "Yuan (lump sum)", "lump-sum subsidy from the government"),
+        }
+        concept, display, unit, kind = fn011_specs[code]
+        payer = "collective" if code in {"fn011_2", "fn011_5"} else "government" if code in {"fn011_3", "fn011_6"} else "respondent contribution"
+        mapping_status = "2011 baseline questionnaire and Codebook item, route, amount period, and unit reviewed; candidate only"
+        caveat += " Asked only in the 2011 selected rural/residents/urban-residents pension route (FN002=3/4/5) after FN009=Yes. Preserve the FN011 Codebook form selector (1=annual, 2=lump sum) and pair it with the corresponding amount component; the questionnaire displays annual and lump-sum blanks together with 'or'. Keep subsidy payer explicit in the source field. Do not interpret skipped or nonselected-form values as zero; participant-level special missing codes and selector/component consistency require authorized-data QA."
+        extra = {"unit": unit,
+                 "value_label_status": "official 2011 questionnaire/Codebook field identity, route and amount period reviewed; special missing codes not reviewed; frequencies omitted",
+                 "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"}
     elif code in {"fn061_2", "fn061_3"}:
         payer = "collective" if code.endswith("_2") else "government"
         payer_zh = "集体" if payer == "collective" else "政府"
