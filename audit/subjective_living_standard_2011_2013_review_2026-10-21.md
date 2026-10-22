@@ -1,6 +1,6 @@
 # 主观生活水平与2011锚定情景字段审计（2011、2013）
 
-> **来源身份更正（2026-10-21）：**本文旧版本引用的 `CHARLS_2011_Baseline_Questionnaire_official_extracted.txt` 实际内容是2013随访问卷。本文涉及的2011题干或路由判断须对照正确的官方2011基线问卷复核；在复核完成前，不能把该旧摘录当作2011题意证据。处理范围及当前状态见 [`2011_questionnaire_source_identity_correction_2026-10-21.md`](2011_questionnaire_source_identity_correction_2026-10-21.md)。
+> **来源身份更正（2026-10-22）：**2011 G003已按正确`CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`复核；旧的`CHARLS_2011_Baseline_Questionnaire_official_extracted.txt`实际上是2013随访问卷。2013相对生活水平题来源现明确列为`CHARLS_2013_Questionnaire_extracted.txt`。
 
 审计日期：2026-10-21。基于本地CHARLS官方问卷与代码本审计字段定义和答案类别；未读取个人级回答、未使用代码本频数作分析样本。
 
@@ -16,6 +16,10 @@
 
 ## 官方依据及复现
 
-- `sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`与`CHARLS_2011_Codebook_extracted.txt`。
-- `sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt`（含2013轮G001_W2–G005_W2题目）与`CHARLS_2013_Codebook_extracted.txt`。
+- `sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`第5885–5910行：G001/G002为虚构家庭收入锚定情景，G003询问受访者本人生活水平；`sources_official/CHARLS_2011_Codebook_extracted.txt`提供字段类别。
+- `sources_official/CHARLS_2013_Questionnaire_extracted.txt`：G001_W2–G005_W2参照群体题；`sources_official/CHARLS_2013_Codebook_extracted.txt`相应类别和特殊回答标签。
 - 映射脚本：`scripts/build_personal_income_crosswalk.py`；2011情景题按来源题意排除于候选暴露；当前版本尚未将其单独建成C类可检索行；总重建：`python scripts/build_ep_atlas_metadata.py`。
+
+## 2011来源身份复核补充（2026-10-22）
+
+正确的2011基线问卷确认G001/G002分别描述王先生、张先生的家庭生活水平，属于情景锚定题；G003问受访者评价自己的生活水平，五级答案从Very high到Poor。故保留G003为主观绝对生活水平候选，将G001/G002排除于个人E/P变量目录。2013 G001_W2–G005_W2是相对参照群体题，已将引用改为正确2013文件；不与2011 G003构成纵向同一测量。本次更正来源及文档，无个人数据分析。

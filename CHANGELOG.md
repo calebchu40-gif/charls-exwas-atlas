@@ -2,6 +2,7 @@
 
 ## 2026-10-22 (continued)
 
+- Corrected the subjective-living-standard audit's 2013 source filename and verified 2011 G003 is the respondent's own five-level assessment while G001/G002 are fictional-family vignettes. Kept 2011 absolute self-rating separate from the 2013 reference-group comparisons. One source-identity audit remains.
 - Corrected the side-job audit's 2011 source and line references. The baseline questionnaire confirms the FC019=1 route and FJ001–FJ004 count, hours, income, and bracket meanings; the work generator already used this correct source. Two source-identity audits remain.
 - Corrected the 2011 source in the job-search/separation-benefit audit and verified the last-job route (FA007/FA008) plus FL021=Yes follow-up to amount and compensation-service years. FK002 remains questionnaire/codebook-supported; 2011 FL021/FL022 stay questionnaire-only candidates because their Codebook entries are absent. Three source-identity audits remain.
 - Corrected the 2011 source and scope in the unpaid-debt audit: the baseline questionnaire excludes house loans but does not say it excludes home-improvement loans. Confirmed the 2011 credit-card item has no explicit zero instruction, so the zero rule remains unassigned; 2018's broader exclusions and explicit zero instructions remain wave-specific. Four source-identity audits remain.
