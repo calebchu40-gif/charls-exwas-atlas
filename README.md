@@ -2,7 +2,7 @@
 
 ## 公开网站部署
 
-网站使用 GitHub Pages，部署目标只包含 `site-prototype/dist/` 下的静态页面和候选变量元数据；Pages 发布包不含个人级数据。用户已明确接受整个仓库公开；截至2026-10-22，GitHub公开API已确认仓库为Public。Pages尚未启用（公开API返回404），站点未上线。下一步在仓库 Settings → Pages 将 Build and deployment 的 Source 设为 GitHub Actions，再手动运行 Actions 中的 Deploy public atlas site。预计默认地址为 `https://calebchu40-gif.github.io/charls-exwas-atlas/`；首次发布后以Pages设置页和成功部署结果显示的地址为准。工作流仅手动触发。
+网站使用 GitHub Pages，部署包只含`site-prototype/dist/`下的静态页面和候选变量元数据，不含CHARLS个体级数据。用户已明确接受整个仓库公开；仓库及Pages已公开上线。2026-10-22首次部署工作流成功（Run #1）；首页、`app.js`和候选配对JSON均经外部HTTP请求验证返回200。公开网址：[https://calebchu40-gif.github.io/charls-exwas-atlas/](https://calebchu40-gif.github.io/charls-exwas-atlas/)。后续更新站点时，在Actions手动运行Deploy public atlas site。
 
 网站现包含“候选配对查询”：可选一个波次、一个E概念和一个P概念，查看各自的CHARLS源字段、模块、标签与审计边界。页面只计算元数据层概念组合，不提供配对样本量或关联估计；目前已审查模型仍为0。
 
