@@ -52,3 +52,9 @@ This file records project-level changes that affect reproducibility, methods, da
 - Changed respondent-data audit scripts to write aggregate QA under the private LocalAppData root by default and added a path guard against common cloud-sync folders. Updated handoff commands; local validation again passed for all five prepared tables and the 31-concept/945-pair availability build.
 - Added a suppressed local-only Wave 5 age/weight coverage audit to evaluate the unresolved 45+ versus 50+ target-domain question; 50+ remains a candidate pending source-release verification, not a frozen analysis target.
 - Confirmed the current project is still in metadata and methods development: no CHARLS association models have been fitted and the website must continue to show zero reviewed results.
+
+## 2026-10-22：血液检测方法学元数据补充
+- 将CHARLS 2011 Blood Users' Guide表2中的11项生化检测方法、批内/批间CV和指南报告检测范围逐项加入血检crosswalk与网页；范围按原表措辞展示，不宣称为LOD。
+- 2011 CBC五项仅显示指南的本地CDC检测说明及未提供逐分析物方法/CV/范围；2015 Release Note只列字段定义/单位，因此2015这些 assay 字段保持空值并明确不得继承2011值。另保留来源原单位文本。
+- 增加4项回归测试；全套44项通过，Python编译、网页JS语法、diff检查通过。审计：`audit/blood_assay_method_metadata_2011_2015_2026-10-22.md`。
+- Pages状态：公开项目授权已由用户确认，但GitHub在变更私有仓库可见性前要求账户邮件验证。当前浏览器停在GitHub Confirm access页面；用户需亲自完成验证。完成后再将Pages设为GitHub Actions部署源、运行工作流并验证站点。尚未公开仓库，也未上线网站。

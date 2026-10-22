@@ -41,18 +41,61 @@ ROLE_BOUNDARY = (
     "宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。"
 )
 
+# 2011 Blood Users' Guide, printed p.7 (PDF p.12), Table 2. These are
+# wave-specific assay metadata and must never be copied into 2015 rows.
+# The guide calls the final column "Detection limits"; preserve that wording
+# as a reported range rather than reinterpreting it as an analytical LOD.
+ASSAY_METADATA_2011 = {
+    "blood_crp": ("Immunoturbidimetric assay", "<1.3%", "<5.7%", "0.1–20 mg/L"),
+    "blood_hba1c": ("Boronate affinity HPLC", "1.90%", "2.10%", "0–40%"),
+    "blood_total_cholesterol": ("Enzymatic colorimetric test", "0.80%", "1.70%", "3–800 mg/dL"),
+    "blood_hdl": ("Enzymatic colorimetric test", "1.00%", "1.30%", "3–120 mg/dL"),
+    "blood_ldl": ("Enzymatic colorimetric test", "0.70%", "1.20%", "3–400 mg/dL"),
+    "blood_triglycerides": ("Enzymatic colorimetric test", "1.50%", "1.80%", "4–1000 mg/dL"),
+    "blood_bun": ("Enzymatic UV method with urease", "<4.4%", "<4.1%", "5–100 mg/dL"),
+    "blood_creatinine": ("Rate-blanked and compensated Jaffe method", "<1.6%", "<2.1%", "0.1–25 mg/dL"),
+    "blood_glucose": ("Enzymatic colorimetric test", "0.90%", "1.80%", "2–450 mg/dL"),
+    "blood_uric_acid": ("UA Plus method", "1.10%", "1.90%", "up to 20 mg/dL"),
+    "blood_cystatin_c": ("Particle-enhanced turbidimetric assay", "<5%", "<5%", "0.5–8 mg/L"),
+}
+ASSAY_SOURCE_2011 = "CHARLS 2011 Blood Data Users' Guide, printed p.7 (PDF p.12), Table 2"
+ASSAY_SOURCE_2015 = "CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620), Table 1; no analyte-specific assay method/CV/detection-range fields reported"
+UNIT_SOURCE = {
+    "blood_wbc": {"2011": "in thousands", "2015": "1000"},
+    "blood_hemoglobin": {"2011": "g/dL", "2015": "g/dL"},
+    "blood_hematocrit": {"2011": "%", "2015": "%"},
+    "blood_mcv": {"2011": "not stated in CBC summary table", "2015": "fl"},
+    "blood_platelets": {"2011": "10^9/L", "2015": "10^9/L"},
+}
+
 rows = []
 for concept, label, domain, v11, v15, unit, note in ANALYTES:
     for wave, variable, module, source_status in [
         ("2011", v11, "Blood_Assays", "本地目录已核；需结合原始血检文件与 bloodweight"),
         ("2015", v15, "Blood_Data_2015_Independent_Release", "Official release note confirms the file; local copy is currently absent"),
     ]:
+        assay = ASSAY_METADATA_2011.get(concept) if wave == "2011" else None
+        assay_status = (
+            "2011 guide reports analyte-specific metadata"
+            if assay else
+            "2011 guide reports CBC collection at county laboratories but not analyte-specific method/CV/range"
+            if wave == "2011" else
+            "2015 release note reports variable definitions/units only; assay method/CV/range not reported there; do not inherit 2011 values"
+        )
+        unit_source = UNIT_SOURCE.get(concept, {}).get(wave, unit)
         rows.append({
             "concept_id": concept, "concept_label": label, "domain": domain, "wave": wave,
             "variable": variable, "module": module, "unit": unit, "value_semantics": note,
             "collection_scope": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对",
             "weight_field": "bloodweight" if wave == "2011" else "Blood_weight",
             "source_status": source_status,
+            "source_unit_text": unit_source,
+            "assay_method": assay[0] if assay else "",
+            "within_assay_cv": assay[1] if assay else "",
+            "between_assay_cv": assay[2] if assay else "",
+            "guide_reported_detection_range": assay[3] if assay else "",
+            "assay_metadata_status": assay_status,
+            "assay_metadata_source": ASSAY_SOURCE_2011 if assay else ASSAY_SOURCE_2015 if wave == "2015" else "CHARLS 2011 Blood Data Users' Guide, printed p.13 (PDF p.19), CBC summary; analyzer method/CV/range not specified",
             "cross_wave_comparability": CROSS_WAVE_NOTE,
             "role_boundary": ROLE_BOUNDARY,
             "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)",
@@ -68,6 +111,9 @@ for wave, variable, label, desc, weight, status in [
                  "value_semantics": desc, "collection_scope": "采血参与者元数据", "weight_field": weight,
                  "cross_wave_comparability": "按波次保留采血状态/处理标记；不可把空腹或截顶标记缺失解释为否。",
                  "role_boundary": "采样/处理元数据(C)，不作为暴露或表型进入关联配对。",
+                 "source_unit_text": "—", "assay_method": "", "within_assay_cv": "", "between_assay_cv": "",
+                 "guide_reported_detection_range": "", "assay_metadata_status": "采样/处理元数据；不适用",
+                 "assay_metadata_source": "CHARLS wave-specific blood documentation",
                  "source_status": status, "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"})
 
 for row in rows:
