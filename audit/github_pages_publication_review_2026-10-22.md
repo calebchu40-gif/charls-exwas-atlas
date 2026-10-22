@@ -34,3 +34,7 @@ Commit `3f859ef` synchronized 217 healthcare-access field review states into the
 Live project URL: `https://calebchu40-gif.github.io/charls-exwas-atlas/`. The repository’s default branch is `main` and visibility is public.
 
 The 32.42 MiB figure is the full static directory size (33 files); earlier notes describing 32.30 MiB as JSON-only were inaccurate. Latest generated catalog counts remain 7,544 field rows, 1,408 unique E/P concepts and 6,598 E/P source mappings. The cognition-specific memo’s 7,548/1,409 figures were captured at an intermediate build and are superseded by the canonical build outputs and current directory snapshot. GitHub displayed non-blocking Node.js 20 deprecation and runner-image migration notices; deployment completed successfully.
+
+## 2026-10-23 chronic-treatment label release
+
+Commit `190837f` was pushed to `main`. GitHub Actions deployment run [`39874593820`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/39874593820) completed successfully. External requests to the site root, `catalog.json`, and `app.js` returned HTTP 200. The live catalog (7,544 rows) contains the reviewed labels for 68 2018 chronic-treatment fields; representative entries include `da010_w4_2__s99` (`99=Never Had the Disease`) and the hypertension, diabetes, cancer, stroke, and mental-health options. The renderer contains the simplified-Chinese status explanation. Published directory: 33 files / 34,098,109 bytes; blocked data/archive extensions: zero.
