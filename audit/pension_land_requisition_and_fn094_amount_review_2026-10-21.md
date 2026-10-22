@@ -1,6 +1,6 @@
 # 征地养老与其他计划预期待遇金额字段复核（2026-10-21）
 
-> **来源身份更正（2026-10-21）：**本文旧版本引用的 `CHARLS_2011_Baseline_Questionnaire_official_extracted.txt` 实际内容是2013随访问卷。本文涉及的2011题干或路由判断须对照正确的官方2011基线问卷复核；在复核完成前，不能把该旧摘录当作2011题意证据。处理范围及当前状态见 [`2011_questionnaire_source_identity_correction_2026-10-21.md`](2011_questionnaire_source_identity_correction_2026-10-21.md)。
+> **来源身份核正（2026-10-22）：**旧版本把`CHARLS_2011_Baseline_Questionnaire_official_extracted.txt`误称为2011基线问卷；该摘录首页实际写明2013 Follow-up Questionnaire。FN072补充段落涉及的是2013 Wave 2，已改用`sources_official/CHARLS_2013_Questionnaire_extracted.txt`复核；本文FN079/FN094覆盖2013、2015、2018，不含2011题意判断。
 
 ## 复核结果
 
@@ -27,9 +27,9 @@
 
 ## 2013新农保缴费方式分支：FN072
 
-另依据2013追访问卷（本地提取文件名为`CHARLS_2011_Baseline_Questionnaire_official_extracted.txt`，文件首页确认系2013 Followup Questionnaire）及2013代码本复核FN072五个数值子字段：`fn072_w2_1`年度缴费；`_2`一次性缴费总额；`_3`一次性缴费的年度折算额；`_4`距领取年龄不足15年者的一次性补缴额；`_5`该路径后续年度缴费额。问卷明确列出不同缴费方式和跳转，代码本为各子项给出连续金额定义。它们以五个独立、路由限定的候选构念进入crosswalk；金额不可相加，且子项跳题不能补0。选择“已满60岁、本人不缴费但子女参保”的类别跳过缴费金额题。
+另依据`sources_official/CHARLS_2013_Questionnaire_extracted.txt`及2013代码本复核FN072五个数值子字段：`fn072_w2_1`年度缴费；`_2`一次性缴费总额；`_3`一次性缴费的年度折算额；`_4`距领取年龄不足15年者的一次性补缴额；`_5`该路径后续年度缴费额。问卷明确列出不同缴费方式和跳转，代码本为各子项给出连续金额定义。它们以五个独立、路由限定的候选构念进入crosswalk；金额不可相加，且子项跳题不能补0。选择“已满60岁、本人不缴费但子女参保”的类别跳过缴费金额题。
 
-来源位置：`sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt` FN072附近；`sources_official/CHARLS_2013_Codebook_extracted.txt` FN072小节。代码本频数未作为样本量或效应证据使用，分析前仍需在获准微观数据中确认分母、特殊缺失和极端值编码。
+来源位置：`sources_official/CHARLS_2013_Questionnaire_extracted.txt` FN072题组（年度缴费、一次性总额、一次性缴费年度折算、距领取年龄不足15年补缴、后续年度缴费及各自跳转）；`sources_official/CHARLS_2013_Codebook_extracted.txt`第27623–27642行附近。代码本频数未作为样本量或效应证据使用，分析前仍需在获准微观数据中确认分母、特殊缺失和极端值编码。
 
 
 ## 征地养老参保/领取状态：FN079_W2_3
@@ -37,3 +37,10 @@
 2013、2015、2018官方问卷与代码本均确认`fn079_w2_3`记录三种状态：1=已参保但尚未领取；2=正在领取；3=未参保。作为一个跨波三分类候选构念映射，保留三类原始响应，不把“参保”与“正在领取”折叠成简单二分类。该题仅对报告土地曾被征用的受访者询问（FN079_W2_1=Yes），因此分析分母必须限制在征地者；未进入题组的空值不代表“未参保”。
 
 官方依据：`sources_official/CHARLS_2013_Questionnaire_extracted.txt`及代码本FN079_W2_3；`sources_official/CHARLS_2015_Questionnaire_extracted.txt`及代码本FN079_W2_3；`sources_official/CHARLS_2018_Questionnaire_extracted.txt`及代码本FN079_W2_3。代码本频数未纳入Atlas样本量。
+
+
+## 来源身份复核补充（2026-10-22）
+
+2013问卷原文将FN072_W2_1标为元/年；FN072_W2_2为一次性金额，随后以FN072_W2_3记录折算年缴费，FN072_W2_4/_5对应不足15年者的一次性补缴及年缴金额。题干对一次性支付及“本人不缴费、由子女参保”的路径有明确跳转；空值不能当作零。官方2013 Codebook逐字段列出上述五项。脚本crosswalk已将这五个代码保留为各自独立、条件路由下的候选项，mapping status说明问卷和代码本已核对。
+
+本次只更正误标来源并重核FN072，不据此声称已验证受访者记录、值缺失码或分析分母。FN079/FN094的2013、2015、2018限制仍按上文保留；其中2013/2015 FN094子项问卷代码重复问题继续锁定。

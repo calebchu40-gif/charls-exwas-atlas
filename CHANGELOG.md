@@ -2,6 +2,8 @@
 
 ## 2026-10-22 (continued)
 
+- Corrected the source identity in the pension FN079/FN094 audit: its FN072 supplement is a 2013 Wave 2 item, and the previous path incorrectly described a mislabeled 2013 questionnaire extract as a 2011 baseline. Verified the five FN072 components and route against the correctly named 2013 questionnaire and Codebook; removed this resolved file from the remaining source-identity queue (8 remain).
+
 - Rechecked basic-pension FN028 dates against the correctly identified 2013 questionnaire and 2013/2015 Codebooks: both 2013 and 2015 questionnaires say “start,” while both Codebooks title FN028 as “stop.” Expanded the analysis lock to both waves, corrected the audit citation, and removed it from the source-identity queue (9 remain).
 - Rebuilt the full metadata catalog after splitting 2011 `fn024` into a wave-specific current-enrollment concept; that intermediate build had 1,409 E/P concepts. The subsequent FN028 conflict correction merged the two locked wave-specific placeholders; current totals are 1,408 (1,130 exposure-side, 287 phenotype-side, 9 dual-role). No respondent records were used.
 - Corrected the 2011 pension `fn024` identity: the old discrepancy came from comparing it with 2013 `FN022_W2` using a mislabeled questionnaire. The correct 2011 baseline `FN024` and Codebook `fn024` share the same three categories and ask current enrollment among respondents who have not completed retirement; 2013 `FN022_W2` remains a distinct prior-enrollment follow-up. Corrected the 2011 `fn035` identity note and removed this resolved audit from the source-correction queue (10 remain).
