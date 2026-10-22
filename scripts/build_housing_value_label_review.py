@@ -5,25 +5,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 raw = pd.read_csv(ROOT / "audit/raw_variable_catalog_v1.csv", dtype=str, encoding="utf-8-sig").fillna("")
 
-LABELS = {
-    "i015": ("1=Yes; 2=No", ["2011", "2013", "2015", "2018"]),
-    "i016": ("1=Yes; 2=No", ["2011", "2013", "2018"]),
-    "i017": ("1=Yes; 2=No", ["2011", "2013", "2015", "2018"]),
-    "i018": ("1=Hot water provided; 2=Water heater installed by the household; 3=No", ["2011", "2013", "2015", "2018"]),
-    "i019": ("1=Yes; 2=No", ["2011", "2013", "2015", "2018"]),
-    "i020": ("1=Yes; 2=No", ["2011", "2013", "2015", "2018"]),
-}
 rows = []
-for code, (labels, waves) in LABELS.items():
-    for wave in waves:
-        found = raw[(raw.wave == wave) & (raw.variable.str.lower() == code.lower())]
-        if found.empty:
-            raise SystemExit(f"Official variable catalog has no {wave} {code}; check mapping.")
-        rows.append({
-            "wave": wave, "code": code, "value_labels": labels,
-            "value_label_status": "Official codebook response labels reviewed",
-            "value_label_source": f"sources_official/CHARLS_{wave}_Codebook_extracted.txt",
-        })
 # Wave-specific response categories for building and dwelling context. The
 # source strings below intentionally contain category labels only: Codebook
 # frequency and percentage columns describe the released sample and must not
@@ -43,6 +25,12 @@ HOUSING_CATEGORIES = {
         "i025": "1=Excellent; 2=Very clear; 3=Clear; 4=Fair; 5=Poor",
         "i026": "1=Very hot; 2=Hot; 3=Bearable; 4=Cold; 5=Very cold",
         "i021": "1=Solar; 2=Coal; 3=Natural gas; 4=Liquefied petroleum gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
+        "i015": "1=Yes; 2=No",
+        "i016": "1=Yes; 2=No",
+        "i017": "1=Yes; 2=No",
+        "i018": "1=Hot water provided; 2=Water heater installed by the household; 3=No",
+        "i019": "1=Yes; 2=No",
+        "i020": "1=Yes; 2=No",
     },
     "2013": {
         # Code 8 is not listed in the official 2013 Codebook category table;
@@ -60,6 +48,12 @@ HOUSING_CATEGORIES = {
         "i025": "1=Excellent; 2=Very clear; 3=Clear; 4=Fair; 5=Poor; 6=Not applicable",
         "i026": "1=Very hot; 2=Hot; 3=Bearable; 4=Cold; 5=Very cold; 6=Not applicable",
         "i021": "1=Solar; 2=Coal; 3=Natural gas; 4=Liquefied petroleum gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
+        "i015": "1=Yes; 2=No",
+        "i016": "1=Yes; 2=No",
+        "i017": "1=Yes; 2=No",
+        "i018": "1=Hot water provided; 2=Water heater installed by the household; 3=No",
+        "i019": "1=Yes; 2=No",
+        "i020": "1=Yes; 2=No",
     },
     "2015": {
         "i004": "1=Concrete and steel/Bricks and wood; 2=Adobe; 3=Wood/Thatched; 4=Cave dwelling; 5=Mongolian yurt/Woolen felt/Tend (Codebook spelling); 6=Stone; 7=Other",
@@ -77,6 +71,10 @@ HOUSING_CATEGORIES = {
         "i026": "1=Very hot; 2=Hot; 3=Bearable; 4=Cold; 5=Very cold; 6=Not applicable",
         "i021": "1=Solar; 2=Coal; 3=Natural gas; 4=Liquefied petroleum gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
         "i020": "1=Yes; 2=No",
+        "i015": "1=Yes; 2=No",
+        "i017": "1=Yes; 2=No",
+        "i018": "1=Hot water provided; 2=Water heater installed by the household; 3=No",
+        "i019": "1=Yes; 2=No",
     },
     "2018": {
         "i004": "1=Concrete and steel/Bricks and wood; 2=Adobe; 3=Wood/Thatched; 4=Cave dwelling; 5=Mongolian yurt/Woolen felt/Tent; 6=Stone; 7=Other",
@@ -96,6 +94,11 @@ HOUSING_CATEGORIES = {
         "i026": "1=Very hot; 2=Hot; 3=Bearable; 4=Cold; 5=Very cold; 6=Not applicable",
         "i021_w4": "1=Solar; 2=Coal; 3=Natural gas; 4=Liquefied petroleum gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other; 8=Heating provided",
         "i020": "1=Yes; 2=No",
+        "i015": "1=Yes; 2=No",
+        "i016": "1=Yes; 2=No",
+        "i017": "1=Yes; 2=No",
+        "i018": "1=Hot water provided; 2=Water heater installed by the household; 3=No",
+        "i019": "1=Yes; 2=No",
     },
     "2020": {
         "i001": "1=Concrete and steel/Bricks and wood; 2=Adobe; 3=Wood/Thatched; 4=Cave dwelling; 5=Mongolian yurt/Woolen felt/Tent; 6=Stone; 7=Other",
@@ -114,6 +117,10 @@ HOUSING_CATEGORIES = {
         "i026": "1=Very hot; 2=Hot; 3=Bearable; 4=Cold; 5=Very cold; 6=Not applicable",
         "i020": "1=Solar; 2=Coal; 3=Natural gas; 4=Liquefied petroleum gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other; 8=Do not heating",
         "i019": "1=Yes; 2=No",
+        "i014": "1=Yes; 2=No",
+        "i015": "1=Yes; 2=No",
+        "i017": "1=Unified hot water supply; 2=Water heater; 3=No",
+        "i018": "1=Yes; 2=No",
         # i010 is a continuous number of steps in 2020, so it has no category map.
     },
 }

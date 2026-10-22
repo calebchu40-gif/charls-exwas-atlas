@@ -70,8 +70,19 @@ class HousingValueLabelTests(unittest.TestCase):
             self.assertNotIn("8=", lookup[key]["value_labels"])
         self.assertIn("8=Heating provided", lookup[("2018", "i021_w4")]["value_labels"])
         self.assertIn("8=Do not heating", lookup[("2020", "i020")]["value_labels"])
-        for key in (("2015", "i020"), ("2018", "i020"), ("2020", "i019")):
+        for key in (("2011", "i020"), ("2013", "i020"), ("2015", "i020"), ("2018", "i020"), ("2020", "i019")):
             self.assertEqual(lookup[key]["value_labels"], "1=Yes; 2=No")
+
+    def test_basic_sanitation_energy_and_shower_fields_keep_wave_code_shifts(self):
+        lookup = {(row["wave"], row["code"]): row for row in self.labels}
+        for key in (("2011", "i016"), ("2013", "i016"), ("2018", "i016"), ("2020", "i015"),
+                    ("2011", "i019"), ("2013", "i019"), ("2015", "i019"), ("2018", "i019"), ("2020", "i018"),
+                    ("2011", "i015"), ("2013", "i015"), ("2015", "i015"), ("2018", "i015"), ("2020", "i014")):
+            self.assertEqual(lookup[key]["value_labels"], "1=Yes; 2=No", key)
+        for wave in ("2011", "2013", "2015", "2018"):
+            self.assertEqual(lookup[(wave, "i018")]["value_labels"], "1=Hot water provided; 2=Water heater installed by the household; 3=No")
+        self.assertEqual(lookup[("2020", "i017")]["value_labels"], "1=Unified hot water supply; 2=Water heater; 3=No")
+        self.assertEqual(lookup[("2020", "i016")]["value_labels"], "1=Yes; 2=No")
 
     def test_reviewed_labels_reach_field_catalog_concept_crosswalk_and_housing_page(self):
         key = ("2018", "i010_w4")

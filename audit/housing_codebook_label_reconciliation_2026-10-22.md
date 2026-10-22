@@ -30,6 +30,8 @@ A further field-level pass covers interviewer-observed home cleanliness (`i025`)
 
 The heating-source review covers 2011–2015 `i021`, 2018 `i021_w4`, and 2020 `i020`; the fuel classes are nominal and must not be interpreted as an ordinal pollution dose. 2018 adds `8=Heating provided`, while 2020 lists `8=Do not heating`; these similar-numbered categories are retained as different labels. Heating availability is separately recorded in 2015/2018 `i020` and 2020 `i019` as Yes/No. Heating source or availability is not a measurement of indoor pollutant concentration or personal exposure dose.
 
+The basic-service pass labels electricity availability, gas supply, flushable-toilet status, and in-house shower/hot-water arrangement. Source codes shift by wave (electricity is `i016` in 2011, 2013, and 2018, is not listed in the 2015 public field inventory, and is `i015` in 2020; flushability is `i015` through 2018 and `i014` in 2020). Running water (`i017` in 2011–2018) is kept distinct from 2020 tap-water access (`i016`). Shower categories remain wave-specific because 2020 uses `Unified hot water supply` where earlier Codebooks use `Hot water provided`. These are service/access indicators, not direct exposure measurements or sanitation scores.
+
 ## Wave differences retained
 
 - 2011 structure uses codes 1–10, including code 8 `Tent`. The 2013 Codebook category table lists 1–7, 9, and 10; code 8 is not imputed from the prior wave.
