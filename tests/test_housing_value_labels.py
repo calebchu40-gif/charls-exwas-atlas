@@ -27,7 +27,7 @@ class HousingValueLabelTests(unittest.TestCase):
         self.assertNotIn("8=", labels[("2013", "i004")])
         self.assertIn("7=Other", labels[("2020", "i001")])
         for row in self.labels:
-            self.assertNotRegex(row["value_labels"], r"\b\d[,.]?\d{2,}\b|%")
+            self.assertNotRegex(row["value_labels"], r"\b\d{1,3},\d{3}\b|\b\d{2,}\.\d{1,2}\b|%")
 
     def test_2018_accessibility_keeps_do_not_need_and_2020_steps_are_continuous(self):
         lookup = {(row["wave"], row["code"]): row for row in self.labels}
@@ -53,6 +53,15 @@ class HousingValueLabelTests(unittest.TestCase):
         self.assertIn("4=Special zone", lookup[("2018", "i000_w4_2")]["value_labels"])
         self.assertIn("8=Other", lookup[("2018", "i000_w4_3")]["value_labels"])
         self.assertEqual(lookup[("2020", "i027")]["value_labels"], "1=Flat covered; 2=Flat concrete; 3=Uneven")
+
+    def test_interviewer_observed_home_conditions_preserve_not_applicable_and_water_dk(self):
+        lookup = {(row["wave"], row["code"]): row for row in self.labels}
+        self.assertNotIn("6=Not applicable", lookup[("2011", "i025")]["value_labels"])
+        self.assertIn("6=Not applicable", lookup[("2013", "i025")]["value_labels"])
+        self.assertIn("6=Not applicable", lookup[("2013", "i026")]["value_labels"])
+        self.assertIn("5=Very cold", lookup[("2011", "i026")]["value_labels"])
+        self.assertEqual(lookup[("2020", "i016")]["value_labels"], "1=Yes; 2=No")
+        self.assertEqual(lookup[("2020", "i029")]["value_labels"], "1=Yes; 2=No; 997=Do not know")
 
     def test_reviewed_labels_reach_field_catalog_concept_crosswalk_and_housing_page(self):
         key = ("2018", "i010_w4")

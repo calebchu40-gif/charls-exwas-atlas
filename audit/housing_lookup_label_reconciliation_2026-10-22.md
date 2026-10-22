@@ -25,4 +25,4 @@ The earlier conclusion above described the pre-expansion snapshot and is superse
 
 The additions were limited to official Codebook category text. Codebook frequencies and percentages were not copied. The wave-specific exceptions and continuous 2020 entrance-step measure are documented in `audit/housing_codebook_label_reconciliation_2026-10-22.md`. All 33 regression tests pass.
 
-The later two housing passes added household telephone/broadband/air-cleaner, residence business-use, 2018 dwelling location/type, and 2020 ground-condition labels. The current review table contains 77 wave-field rows across 24 distinct source-code names; current E/P reviewed-label rows are 2,886. The latest test suite has 35 passing tests.
+The later housing passes added household telephone/broadband/air-cleaner, residence business-use, 2018 dwelling location/type, 2020 ground-condition, five-wave interviewer-observed cleanliness/temperature, and 2020 tap-water fields. The current review table contains 89 wave-field rows across 27 distinct source-code names; current E/P reviewed-label rows are 2,898. The latest test suite has 36 passing tests.

@@ -40,6 +40,8 @@ HOUSING_CATEGORIES = {
         "i023": "1=Yes; 2=No",
         "i024": "1=Yes; 2=No",
         "i003": "1=Yes; 2=No",
+        "i025": "1=Excellent; 2=Very clear; 3=Clear; 4=Fair; 5=Poor",
+        "i026": "1=Very hot; 2=Hot; 3=Bearable; 4=Cold; 5=Very cold",
     },
     "2013": {
         # Code 8 is not listed in the official 2013 Codebook category table;
@@ -54,6 +56,8 @@ HOUSING_CATEGORIES = {
         "i023": "1=Yes; 2=No",
         "i024": "1=Yes; 2=No",
         "i003": "1=Yes; 2=No",
+        "i025": "1=Excellent; 2=Very clear; 3=Clear; 4=Fair; 5=Poor; 6=Not applicable",
+        "i026": "1=Very hot; 2=Hot; 3=Bearable; 4=Cold; 5=Very cold; 6=Not applicable",
     },
     "2015": {
         "i004": "1=Concrete and steel/Bricks and wood; 2=Adobe; 3=Wood/Thatched; 4=Cave dwelling; 5=Mongolian yurt/Woolen felt/Tend (Codebook spelling); 6=Stone; 7=Other",
@@ -67,6 +71,8 @@ HOUSING_CATEGORIES = {
         "i024": "1=Yes; 2=No",
         "i027_w3": "1=Yes; 2=No",
         "i003": "1=Yes; 2=No",
+        "i025": "1=Excellent; 2=Very clear; 3=Clear; 4=Fair; 5=Poor; 6=Not applicable",
+        "i026": "1=Very hot; 2=Hot; 3=Bearable; 4=Cold; 5=Very cold; 6=Not applicable",
     },
     "2018": {
         "i004": "1=Concrete and steel/Bricks and wood; 2=Adobe; 3=Wood/Thatched; 4=Cave dwelling; 5=Mongolian yurt/Woolen felt/Tent; 6=Stone; 7=Other",
@@ -82,6 +88,8 @@ HOUSING_CATEGORIES = {
         "i003": "1=Yes; 2=No",
         "i000_w4_2": "1=City/Town central area; 2=Rural-urban fringe; 3=Rural; 4=Special zone",
         "i000_w4_3": "1=Unit building; 2=Detached house; 3=Attached house; 4=Siheyuan; 5=Compound occupied by many households; 6=Work shed; 7=Haphazard building; 8=Other",
+        "i025": "1=Excellent; 2=Very clear; 3=Clear; 4=Fair; 5=Poor; 6=Not applicable",
+        "i026": "1=Very hot; 2=Hot; 3=Bearable; 4=Cold; 5=Very cold; 6=Not applicable",
     },
     "2020": {
         "i001": "1=Concrete and steel/Bricks and wood; 2=Adobe; 3=Wood/Thatched; 4=Cave dwelling; 5=Mongolian yurt/Woolen felt/Tent; 6=Stone; 7=Other",
@@ -94,6 +102,10 @@ HOUSING_CATEGORIES = {
         "i023": "1=Yes; 2=No",
         "i024": "1=Yes; 2=No",
         "i027": "1=Flat covered; 2=Flat concrete; 3=Uneven",
+        "i016": "1=Yes; 2=No",
+        "i029": "1=Yes; 2=No; 997=Do not know",
+        "i025": "1=Excellent; 2=Very clear; 3=Clear; 4=Fair; 5=Poor; 6=Not applicable",
+        "i026": "1=Very hot; 2=Hot; 3=Bearable; 4=Cold; 5=Very cold; 6=Not applicable",
         # i010 is a continuous number of steps in 2020, so it has no category map.
     },
 }

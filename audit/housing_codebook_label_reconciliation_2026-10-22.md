@@ -26,6 +26,8 @@ The follow-up pass also reviewed the household telephone and broadband indicator
 
 Additional residence-context fields included after codebook and questionnaire review are 2011–2018 `i003` (whether the residence is also used for business), 2018 `i000_w4_2` (residence location category), 2018 `i000_w4_3` (house type), and 2020 `i027` (floor/ground condition). The 2018 location and house-type fields are a single-wave questionnaire module; they are not harmonized to the NBS urban/rural identifier or to other waves by label similarity.
 
+A further field-level pass covers interviewer-observed home cleanliness (`i025`) and temperature (`i026`) in all five waves, plus 2020 tap-water access (`i016`) and whether tap water is treated by waterworks (`i029`). These are distinct constructs: cleanliness/thermal comfort are interviewer-recorded household observations, tap-water access is not water-quality testing, and `997=Do not know` remains a substantive response category for the 2020 treatment question. The 2011 Codebook does not list the `6=Not applicable` category shown from 2013 onward, so it is not backfilled into 2011.
+
 ## Wave differences retained
 
 - 2011 structure uses codes 1–10, including code 8 `Tent`. The 2013 Codebook category table lists 1–7, 9, and 10; code 8 is not imputed from the prior wave.
