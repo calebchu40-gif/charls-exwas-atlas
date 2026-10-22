@@ -2,6 +2,7 @@
 
 ## 2026-10-22 (continued)
 
+- Rechecked 2011 evidence for cross-concept overlap: confirmed the DA051 household random subsample, DA059/DA061 smoking routes, and DA067 past-year drinking categories. Clarified that 2011 chest-pain items DA003/DA004 are not the later general pain-severity item, and corrected source references. The source-identity correction queue is now 13 audits.
 - Re-audited 2011 DB021/DB029 assistive-device wording and skip routes against the correctly identified baseline household questionnaire. Kept the five-option DB021 and seven-option DB029 item families separate, with route-specific eligible denominators; corrected the source citation. The source-identity correction queue is now 14 audits.
 - Re-audited agricultural work fields FC001–FC011 against the correct 2011 baseline household questionnaire; corrected the audit’s source path, confirmed questionnaire skips and soft checks, and retained the 2018 FC008 questionnaire/Codebook conflict lock. The source-identity correction queue is now 15 audits.
 - Added the 16 official 2011 FL020 checkbox option meanings to the field-level catalog as questionnaire text only; selected, unselected, and missing-value coding remains unverified and every option is locked `DO NOT ANALYZE`. Corrected the audit citation to the actual 2011 baseline household questionnaire and reduced the source-identity correction queue by one.
