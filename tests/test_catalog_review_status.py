@@ -120,6 +120,18 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertIn("问卷与Codebook编码冲突，已锁定不可分析", app)
         self.assertIn("DO NOT ANALYZE; questionnaire:", app)
 
+    def test_active_do_not_analyze_inventory_matches_catalog_and_triage_count(self):
+        catalog = json.loads((ROOT / "site-prototype/dist/catalog.json").read_text(encoding="utf-8"))
+        active = {
+            (str(row.get("Source.Wave", "")), str(row.get("Variable.Name", "")).lower())
+            for row in catalog
+            if "DO NOT ANALYZE" in str(row.get("Review.Flag", ""))
+        }
+        triage = (ROOT / "audit/do_not_analyze_triage_2026-10-22.md").read_text(encoding="utf-8")
+        self.assertEqual(len(active), 33)
+        self.assertIn(f"当前主目录有{len(active)}条唯一波次—字段分析锁定项", triage)
+        self.assertNotIn(("2011", "fm033"), active)
+
 
 if __name__ == "__main__":
     unittest.main()

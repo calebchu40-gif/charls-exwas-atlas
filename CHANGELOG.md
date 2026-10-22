@@ -58,3 +58,6 @@ This file records project-level changes that affect reproducibility, methods, da
 - 2011 CBC五项仅显示指南的本地CDC检测说明及未提供逐分析物方法/CV/范围；2015 Release Note只列字段定义/单位，因此2015这些 assay 字段保持空值并明确不得继承2011值。另保留来源原单位文本。
 - 增加4项回归测试；全套44项通过，Python编译、网页JS语法、diff检查通过。审计：`audit/blood_assay_method_metadata_2011_2015_2026-10-22.md`。
 - Pages状态：公开项目授权已由用户确认，但GitHub在变更私有仓库可见性前要求账户邮件验证。当前浏览器停在GitHub Confirm access页面；用户需亲自完成验证。完成后再将Pages设为GitHub Actions部署源、运行工作流并验证站点。尚未公开仓库，也未上线网站。
+
+### 2026-10-22：目录覆盖数与锁定清单一致性复核
+按当前catalog及crosswalk重算并更新值标签覆盖数为2,908行/2,882个波次字段；核实现行DO NOT ANALYZE锁定33条，2011 FM033仅保留为已解除锁定的历史说明。新增回归测试，确保目录锁定数与分流清单摘要一致；全套45项测试通过。
