@@ -120,6 +120,20 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertIn("问卷与Codebook编码冲突，已锁定不可分析", app)
         self.assertIn("DO NOT ANALYZE; questionnaire:", app)
 
+    def test_c_catalog_uses_chinese_categories_and_explains_review_status(self):
+        app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
+        page = (ROOT / "site-prototype/dist/index.html").read_text(encoding="utf-8")
+        self.assertIn("协变量候选", app)
+        self.assertIn("测量/设计元数据", app)
+        self.assertIn("连续变量可能没有离散类别标签", app)
+        self.assertIn("不等于建议自动调整", page)
+
+    def test_pages_workflow_deploys_site_changes_automatically(self):
+        workflow = (ROOT / ".github/workflows/deploy-pages.yml").read_text(encoding="utf-8")
+        self.assertIn("push:", workflow)
+        self.assertIn("site-prototype/dist/**", workflow)
+        self.assertIn("workflow_dispatch:", workflow)
+
     def test_active_do_not_analyze_inventory_matches_catalog_and_triage_count(self):
         catalog = json.loads((ROOT / "site-prototype/dist/catalog.json").read_text(encoding="utf-8"))
         active = {

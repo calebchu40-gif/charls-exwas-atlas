@@ -1,6 +1,11 @@
 name: Deploy public atlas site
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'site-prototype/dist/**'
+      - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 
 permissions:

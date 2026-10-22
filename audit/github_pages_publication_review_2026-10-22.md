@@ -4,7 +4,7 @@
 
 The static site is served from `site-prototype/dist/`. The deployment workflow is `.github/workflows/deploy-pages.yml`; its artifact path is restricted to that directory. The checked directory contains 33 static files, including 30 JSON files and the HTML/JavaScript interface, totaling 32.42 MiB for the full site payload. `index.html` is the root entry point and `.nojekyll` is present. The largest file is the metadata-only candidate-pair lookup; no respondent records or analysis estimates are included.
 
-The expected project-site URL is `https://calebchu40-gif.github.io/charls-exwas-atlas/`. GitHub Pages settings must select GitHub Actions as the publishing source. The first successful deployment determines the final live URL. The workflow is manual-only until the first publication is reviewed and confirmed.
+The expected project-site URL is `https://calebchu40-gif.github.io/charls-exwas-atlas/`. GitHub Pages settings must select GitHub Actions as the publishing source. The first successful deployment determines the final live URL. After initial publication, pushes to `main` that change `site-prototype/dist/**` or the deployment workflow trigger a deployment; manual dispatch remains available.
 
 ## Content boundary
 
@@ -25,7 +25,7 @@ On 2026-10-22 the owner approved full public visibility and changed the reposito
 
 ## Release checklist for the owner
 
-Initial publication completed. For later site updates, open **Actions → Deploy public atlas site → Run workflow**, choose `main`, and run it; verify a green completion and check the deployed URL.
+Initial publication completed. Site asset and deployment-workflow changes pushed to `main` now deploy automatically. For a manual redeploy, open **Actions → Deploy public atlas site → Run workflow**, choose `main`, and run it; verify a green completion and check the deployed URL.
 
 Live project URL: `https://calebchu40-gif.github.io/charls-exwas-atlas/`. The repository’s default branch is `main` and visibility is public.
 

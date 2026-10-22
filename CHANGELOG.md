@@ -1,5 +1,9 @@
 # Change log
 
+## 2026-10-23
+
+- Clarified the Chinese labels and review-state explanation in the measurement/design metadata (C) catalog, including that candidate covariates are not automatic adjustment recommendations and continuous measures may have no discrete value labels. GitHub Pages now deploys automatically when published-site assets or the deployment workflow change on `main`; manual dispatch remains available.
+
 ## 2026-10-22 (continued)
 
 - Deployed the metadata-only CHARLS ExWAS Atlas to GitHub Pages; the site root, app script and candidate-pair JSON return HTTP 200. Added a dated progress audit that distinguishes the completed public prototype from unfinished field-level review, survey-design resolution and association analysis.
