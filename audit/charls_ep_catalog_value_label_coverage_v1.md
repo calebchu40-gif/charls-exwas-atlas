@@ -3,7 +3,7 @@
 更新：2026-10-23。由`scripts/summarize_value_label_coverage.py`从当前字段目录和覆盖CSV自动生成。
 
 - E/P字段—角色—类别目录行：6,633；不同波次—字段码：6,552。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
-- 有非空官方/已审标签文本的E/P目录行：2,908；不同波次—字段码：2,882。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
+- 有非空官方/已审标签文本的E/P目录行：2,977；不同波次—字段码：2,951。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
 - 明确标为`conflict`的E/P字段码：0；详情按主目录波次和变量码检索。
 - 问卷/Codebook编码差异尚未调和并锁定`DO NOT ANALYZE`的E/P字段：2011 `fb010`。此项独立于上面的精确`conflict`标签计数。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -25,7 +25,7 @@
 |p|biochemistry|32|0|1|
 |p|blood pressure|27|0|1|
 |p|chronic disease|248|240|1|
-|p|chronic disease ancillary|664|243|70|
+|p|chronic disease ancillary|664|312|70|
 |p|cognition|338|305|1|
 |p|health and symptoms|161|155|3|
 |p|healthcare access|108|15|2|
@@ -36,13 +36,14 @@
 
 |审核状态|E/P目录行|
 |---|---:|
-|not yet reviewed|2,730|
-|officially reviewed|2,556|
+|not yet reviewed|2,661|
+|officially reviewed|2,524|
 |continuous measure metadata available|214|
 |official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories|200|
 |official Codebook numeric/count response located; no discrete answer labels|128|
 |numeric/time unit metadata available; no discrete labels assigned|118|
 |audited measurement component; derive concept per crosswalk|108|
+|official 2018 Codebook response categories transcribed; frequencies omitted; questionnaire route retained; respondent release coding and eligible denominator require validation|104|
 |Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding|97|
 |连续值/字段结构；代码本未提供离散值标签|93|
 |official selected-option label; checkbox slot, absence is not a negative response|42|
@@ -58,10 +59,10 @@
 |代码本逐字段值标签已核|12|
 |official questionnaire checkbox menu and codebook slot coding; frequencies omitted; absence is not a negative response outside the routed checklist|11|
 |questionnaire options verified; all offered categories shown, including categories with no Codebook observations; frequencies omitted|11|
-|official codebook response labels; prior-wave self-awareness/preload route retained; frequencies excluded|9|
 |official Codebook extraction exposes only a partial response-code set; only the correct category is listed; do not infer unlisted codes|9|
 |continuous count measure; Codebook identifies 15-second animal-fluency intervals; summary statistics are not valid-range evidence|8|
 |official 2011 questionnaire/Codebook threshold categories transcribed; no response frequencies shown|8|
+|official codebook response labels; prior-wave self-awareness/preload route retained; frequencies excluded|6|
 |official questionnaire categories; frequencies omitted; FC020 multiple-job main-work route or FC021 single nonfarm-job route|6|
 |official wave codebook category verified; selected option only; frequencies excluded|5|
 |official response categories transcribed; special/missing-code completeness pending|5|

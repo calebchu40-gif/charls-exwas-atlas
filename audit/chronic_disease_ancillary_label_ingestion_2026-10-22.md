@@ -23,3 +23,9 @@
 ## 可复现入口
 
 标签接受规则位于 `scripts/build_charls_atlas_catalog.py`；2011 DA020标签语义由 `scripts/build_2011_psych_treatment_crosswalk.py` 生成。执行 `python scripts/build_ep_atlas_metadata.py` 可重建目录及网站元数据。
+
+## 2026-10-23：2018慢病治疗选项补充
+
+从官方2018 Codebook提取慢性病辅助治疗题的代码—类别文本，覆盖68个治疗字段：DA010_W4疾病索引治疗40项，DA011_W4高血压4项，DA014_W4糖尿病5项，DA018_W4癌症7项，DA019_W4中风7项，DA020_W4情绪/精神问题5项。仅提取类别，不复制Codebook频数。问卷时段和条件路由继续放在字段说明中；标签导入不表示已确定适用人群分母，也不等于完成发行版响应存储验证。DA010的99=Never Had the Disease按官方标签保留，不当作治疗选择。此批代码可以用于目录检索和语义解释，当前仍不得直接当作已验证分析变量。2011/2013/2015的编码不从2018推断。
+
+问卷来源为`sources_official/CHARLS_2018_Questionnaire_extracted.txt`；类别来源为`sources_official/CHARLS_2018_Codebook_extracted.txt`。同步修正生成器默认审核状态，未标注标签的慢病辅助字段不再继承“官方响应标签已审阅”状态。

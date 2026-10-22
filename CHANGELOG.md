@@ -72,3 +72,5 @@ This file records project-level changes that affect reproducibility, methods, da
 ### 2026-10-22：新增波次级E/P候选配对查询
 新增概念级配对浏览器，允许用户选择波次及E/P候选概念，并查看对应CHARLS源变量码、官方标签、模块、单位和值语义/审核提示。配对数来自概念—源字段crosswalk，排除概念自配对；页面明确不代表人群样本数或统计关联。新增可复现生成脚本并接入全目录构建链；各波候选对数与既有覆盖审计一致。49项测试、JS语法、Python编译和diff检查通过。
 - Published the CHARLS ExWAS Atlas to GitHub Pages after the owner made the repository public and selected GitHub Actions as the source. First manual deployment (Run #1, 2026-10-22) succeeded; the root page, JavaScript app, and candidate-pair metadata returned HTTP 200. Live URL: https://calebchu40-gif.github.io/charls-exwas-atlas/.
+
+- Transcribed 2018 official Codebook response categories for 68 chronic-disease treatment fields into the audited E/P catalog, omitting frequencies and retaining conditional questionnaire routes and denominator/release-coding checks. Corrected the ancillary crosswalk's default review state so unlabeled items remain pending rather than appearing reviewed.

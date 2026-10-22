@@ -19,14 +19,40 @@ DISEASE_ZH = {
     "asthma": "哮喘", "parkinsons": "帕金森病",
 }
 
+def codebook_value_labels(path: Path) -> dict[str, str]:
+    """Extract code-label pairs only; never carry codebook frequencies into the atlas."""
+    text = path.read_text(encoding="utf-8")
+    blocks: dict[str, list[str]] = {}
+    current = ""
+    for line in text.splitlines():
+        header = re.match(r"^([a-z][a-z0-9_]+):\s*.*$", line.strip(), re.I)
+        if header:
+            current = header.group(1).lower()
+            blocks[current] = []
+        elif current:
+            blocks[current].append(line.strip())
+    labels = {}
+    for code, lines in blocks.items():
+        pairs = []
+        for line in lines:
+            match = re.match(r"^(\d+)\s+(.+)$", line)
+            if match and match.group(2).strip().lower() != "total":
+                pairs.append(f"{match.group(1)}={match.group(2).strip()}")
+        if pairs:
+            labels[code] = "; ".join(pairs)
+    return labels
+
+
+official_2018_labels = codebook_value_labels(ROOT / "sources_official" / "CHARLS_2018_Codebook_extracted.txt")
 rows = []
 def add(rec, domain, construct, subtype, concept_id, label, caveat):
     value_labels = ""
-    value_status = "official response labels reviewed; questionnaire/codebook response semantics retained"
+    value_status = "official variable metadata mapped; item-level value labels/routing review pending"
     value_source = ""
     if str(rec.wave) == "2020" and str(rec.variable).lower().startswith("da002_"):
         value_labels = "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview"
         value_source = "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
+        value_status = "official 2020 questionnaire/Codebook response labels reviewed; prior-wave route retained; frequencies excluded"
     elif str(rec.wave) in {"2013", "2015", "2018"} and str(rec.variable).lower().startswith("zda008_"):
         value_labels = "1=Yes; 2=No; 3=Don't know" if str(rec.wave) == "2013" else "1=Yes"
         value_source = f"sources_official/CHARLS_{rec.wave}_Questionnaire_extracted.txt; sources_official/CHARLS_{rec.wave}_Codebook_extracted.txt"
@@ -35,6 +61,10 @@ def add(rec, domain, construct, subtype, concept_id, label, caveat):
         value_labels = "1=Exam after disease attack; 2=Exam after illness; 3=Work-unit exam; 4=Community exam; 5=CHARLS physical exam; 6=Other"
         value_source = f"sources_official/CHARLS_{rec.wave}_Codebook_extracted.txt"
         value_status = "official response labels reviewed from wave-specific codebook; awareness-option labels; conditional disease route retained; frequencies excluded"
+    if str(rec.wave) == "2018" and str(rec.variable).lower() in official_2018_labels:
+        value_labels = official_2018_labels[str(rec.variable).lower()]
+        value_source = "sources_official/CHARLS_2018_Codebook_extracted.txt; sources_official/CHARLS_2018_Questionnaire_extracted.txt"
+        value_status = "official 2018 Codebook response categories transcribed; frequencies omitted; questionnaire route retained; respondent release coding and eligible denominator require validation"
     rows.append({
         "wave": rec.wave, "code": rec.variable, "concept_id": concept_id,
         "concept_label": label, "domain": domain, "module": rec.module,
@@ -130,6 +160,8 @@ for rec in raw.itertuples(index=False):
     if not (wave == "2011" and code == "db020") and (treatment_label or none_option_2011):
         none_note = " This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated." if none_option_2011 else ""
         add(rec, "chronic disease ancillary", "reported disease treatment", "wave-specific treatment response", f"reported_treatment_{disease}", f"自报{disease_label}治疗方式", caveat + " Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized." + none_note)
+        if wave == "2018" and code in official_2018_labels:
+            rows[-1]["mapping_status"] = "official 2018 Codebook response categories transcribed; questionnaire routing/time frame retained; release coding and routed denominator require validation"
         if none_option_2011:
             rows[-1]["mapping_status"] = "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE"
 

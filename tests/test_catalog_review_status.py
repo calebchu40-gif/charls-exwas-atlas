@@ -25,6 +25,43 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertIn("questionnaire:", row.get("value_label_review", ""))
         self.assertIn("released-data coding unresolved", row.get("value_label_review", ""))
 
+    def test_2018_chronic_treatment_categories_are_transcribed_without_frequencies(self):
+        import csv
+        with (ROOT / "audit/chronic_disease_ancillary_variable_mapping_v1.csv").open(encoding="utf-8-sig", newline="") as handle:
+            mappings = list(csv.DictReader(handle))
+        treatment = [row for row in mappings if row.get("wave") == "2018" and row.get("construct") == "reported disease treatment"]
+        reviewed = [row for row in treatment if row.get("value_label_status", "").startswith("official 2018 Codebook response categories transcribed")]
+        self.assertEqual(len(reviewed), 68)
+        expected = {
+            "da010_w4_2__s99": "99=Never Had the Disease",
+            "da011_w4_s4": "4=None of the Above",
+            "da014_w4_s3": "3=Taking Insulin Injections",
+            "da018_w4_s3": "3=Chemotherapy",
+            "da019_w4_s4": "4=Acupuncture and Moxibustion",
+            "da020_w4_s2": "2=Taking Anti Depressants",
+        }
+        for code, label in expected.items():
+            row = next(row for row in treatment if row.get("code", "").lower() == code)
+            self.assertIn(label, row["value_labels"])
+            self.assertNotRegex(row["value_labels"], r"\d{1,3},\d{3}")
+            self.assertIn("frequencies omitted", row["value_label_status"])
+            self.assertIn("route retained", row["value_label_status"])
+            self.assertIn("denominator require validation", row["value_label_status"])
+        catalog = [row for row in self.catalog if row.get("Variable.Name", "").lower() == "da010_w4_2__s99" and "2018" in row.get("waves", "").split(",")]
+        self.assertEqual(len(catalog), 1)
+        self.assertIn("99=Never Had the Disease", catalog[0].get("value_labels", ""))
+        self.assertIn("official 2018 Codebook response categories transcribed", catalog[0].get("value_label_review", ""))
+        self.assertIn("route", catalog[0].get("Harmonization.Status", "").lower())
+
+    def test_unreviewed_chronic_ancillary_fields_are_not_marked_as_reviewed(self):
+        import csv
+        with (ROOT / "audit/chronic_disease_ancillary_variable_mapping_v1.csv").open(encoding="utf-8-sig", newline="") as handle:
+            mappings = list(csv.DictReader(handle))
+        pending = [row for row in mappings if row.get("wave") == "2018" and row.get("code", "").lower() == "da009_1_1_"]
+        self.assertEqual(len(pending), 1)
+        self.assertFalse(pending[0].get("value_labels"))
+        self.assertIn("review pending", pending[0].get("value_label_status", ""))
+
     def test_2011_fb010_specialty_catalog_links_correct_baseline_source(self):
         fields = [
             field
