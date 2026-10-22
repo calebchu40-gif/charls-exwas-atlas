@@ -27,7 +27,7 @@ jobs:
         run: |
           test -s site-prototype/dist/index.html
           test -s site-prototype/dist/app.js
-          if find site-prototype/dist -type f \( -name '*.dta' -o -name '*.sav' -o -name '*.rds' -o -name '*.parquet' -o -name '*.sqlite' -o -name '*.zip' \) | grep -q .; then
+          if find site-prototype/dist -type f \( -name '*.dta' -o -name '*.sav' -o -name '*.rds' -o -name '*.parquet' -o -name '*.sqlite' -o -name '*.zip' -o -name '*.7z' -o -name '*.rar' -o -name '*.csv' \) | grep -q .; then
             echo "Unexpected respondent-data or archive file in site payload" >&2
             exit 1
           fi

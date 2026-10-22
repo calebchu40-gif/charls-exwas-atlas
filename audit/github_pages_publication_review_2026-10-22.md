@@ -2,7 +2,7 @@
 
 ## Proposed site
 
-The static site is served from `site-prototype/dist/`. The deployment workflow is `.github/workflows/deploy-pages.yml`; its artifact path is restricted to that directory. The checked directory contains 32 static files, including 29 JSON files and the HTML/JavaScript interface, totaling approximately 27.6 MB of JSON metadata at review time. `index.html` is the root entry point and `.nojekyll` is present.
+The static site is served from `site-prototype/dist/`. The deployment workflow is `.github/workflows/deploy-pages.yml`; its artifact path is restricted to that directory. The checked directory contains 33 static files, including 30 JSON files and the HTML/JavaScript interface, totaling 32.42 MiB for the full site payload. `index.html` is the root entry point and `.nojekyll` is present. The largest file is the metadata-only candidate-pair lookup; no respondent records or analysis estimates are included.
 
 The expected project-site URL is `https://calebchu40-gif.github.io/charls-exwas-atlas/`. GitHub Pages settings must select GitHub Actions as the publishing source. The first successful deployment determines the final live URL. The workflow is manual-only until the first publication is reviewed and confirmed.
 
@@ -10,7 +10,7 @@ The expected project-site URL is `https://calebchu40-gif.github.io/charls-exwas-
 
 The published site contains variable names, labels, candidate exposure/phenotype roles, questionnaire/codebook-derived value labels, wave availability, units, routing notes, and review caveats. It does not contain respondent-level CHARLS records, local QA outputs, analysis sample counts, estimated associations, credentials, or the `sources_official/` source files. The website explicitly identifies the directory as a candidate inventory and reports zero reviewed association models.
 
-The deployment action checks that the entry files exist, parses every top-level JSON file, and fails if common respondent-data or archive extensions appear inside the publication directory. The upload step names only `site-prototype/dist/`; no repository-wide upload is used.
+The deployment action checks that the entry files exist, parses every top-level JSON file, and fails if `.dta`, `.sav`, `.rds`, `.parquet`, `.sqlite`, `.zip`, `.7z`, `.rar` or `.csv` files appear inside the publication directory. The upload step names only `site-prototype/dist/`; no repository-wide upload is used.
 
 ## Hosting constraint
 
@@ -21,4 +21,15 @@ Official references: [GitHub Pages publishing source](https://docs.github.com/en
 
 ## Current status after owner visibility decision
 
-On 2026-10-22 the owner stated that full public visibility is acceptable. GitHub Settings confirmed the repository is private and Pages is unavailable at the current account tier while private. The visibility flow reached GitHub “Confirm access” and requires the account owner to complete email verification. The project has not yet been made public and no site URL is live. The GitHub Pages artifact remains 32 static files (29 JSON files; 27.61 MB JSON), with zero `.dta`, `.sav`, `.rds`, `.parquet`, `.sqlite`, `.zip`, `.7z`, `.rar` or `.csv` files. Every JSON parses successfully.
+On 2026-10-22 the owner stated that full public visibility is acceptable. GitHub Settings confirmed the repository is private and Pages is unavailable at the current account tier while private. GitHub requires the account owner to complete email verification before changing repository visibility. The project has not yet been made public and no site URL is live. The latest Pages artifact is 33 static files (30 JSON files; 32.42 MiB total), with zero `.dta`, `.sav`, `.rds`, `.parquet`, `.sqlite`, `.zip`, `.7z`, `.rar` or `.csv` files. Every JSON parses successfully.
+
+## Release checklist for the owner
+
+1. Complete the email verification GitHub requests for the signed-in account. Keep the repository page open; GitHub may return to the visibility-confirmation dialog afterward.
+2. In **Settings → General → Danger Zone → Change repository visibility**, set this repository to **Public** and confirm the repository name when prompted. The owner has explicitly approved public visibility.
+3. Open **Settings → Pages**, select **GitHub Actions** as the build and deployment source, and save.
+4. Open **Actions → Deploy public atlas site → Run workflow**, choose `main`, and run it. Check for a green completion, then open the `github-pages` deployment URL shown by the workflow.
+
+Expected project URL: `https://calebchu40-gif.github.io/charls-exwas-atlas/`. Do not report this as live until the deployment succeeds and the page opens outside the local workspace. The repository’s default branch is `main`.
+
+The 32.42 MiB figure is the full static directory size (33 files); earlier notes describing 32.30 MiB as JSON-only were inaccurate. Latest generated catalog counts remain 7,544 field rows, 1,408 unique E/P concepts and 6,598 E/P source mappings. The cognition-specific memo’s 7,548/1,409 figures were captured at an intermediate build and are superseded by the canonical build outputs and current directory snapshot.

@@ -36,9 +36,8 @@
 
 |审核状态|E/P目录行|
 |---|---:|
+|not yet reviewed|2,881|
 |officially reviewed|2,622|
-|not yet reviewed|1,861|
-|numeric/time unit metadata available; no discrete labels assigned; see concept crosswalk|1,020|
 |continuous measure metadata available|214|
 |official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories|200|
 |official Codebook numeric/count response located; no discrete answer labels|128|

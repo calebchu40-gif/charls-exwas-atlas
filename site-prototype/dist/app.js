@@ -15,6 +15,7 @@ const communityExposuresLoaded = fetch('./community_exposures_v1.json?v=3', {cac
 const socialExposuresLoaded = fetch('./social_exposures_v1.json?v=2', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`social exposures HTTP ${r.status}`);return r.json()});
 const healthcareAccessLoaded = fetch('./healthcare_access_v1.json?v=3', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`healthcare access HTTP ${r.status}`);return r.json()});
 const bloodBiomarkersLoaded = fetch('./blood_biomarkers_v1.json?v=3', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`blood biomarkers HTTP ${r.status}`);return r.json()});
+const candidatePairExplorerLoaded = fetch('./candidate_pair_explorer_v1.json?v=1',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`candidate pair explorer HTTP ${r.status}`);return r.json()});
 const objectiveMeasurementsLoaded = fetch('./objective_measurements_v1.json?v=1', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`objective measurements HTTP ${r.status}`);return r.json()});
 const lifeHistoryLoaded=fetch('./life_history_exposures_v1.json?v=1',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`Life History HTTP ${r.status}`);return r.json()});
 const catalogLoaded = fetch('./catalog.json?v=11', {cache:'no-store'}).then(r => {
@@ -31,6 +32,25 @@ function showView(id) {
 }
 document.querySelectorAll('.viewnav button').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
 document.querySelectorAll('.overview-view [data-view]').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
+
+function renderCandidatePairExplorer(data){
+ const wave=byId('candidatePairWave').value,entry=data.waves[wave];
+ const exposureInput=byId('candidateExposure'),phenotypeInput=byId('candidatePhenotype');
+ const exposureList=byId('candidateExposureOptions'),phenotypeList=byId('candidatePhenotypeOptions');
+ const display=x=>`${x.label} [${x.concept_id}]`;
+ const fill=(list,items)=>{list.replaceChildren();for(const x of items){const o=document.createElement('option');o.value=display(x);list.append(o)}};
+ fill(exposureList,entry.exposures);fill(phenotypeList,entry.phenotypes);
+ const eMap=new Map(entry.exposures.map(x=>[display(x),x])),pMap=new Map(entry.phenotypes.map(x=>[display(x),x]));
+ if(!eMap.has(exposureInput.value))exposureInput.value='';
+ if(!pMap.has(phenotypeInput.value))phenotypeInput.value='';
+ byId('candidatePairStatus').textContent=`${wave}波：${entry.exposure_count}个暴露概念 × ${entry.phenotype_count}个表型概念，形成${entry.candidate_pair_count.toLocaleString()}个不同概念的目录候选组合。该数字不是人数或分析样本量。`;
+ const warning=byId('candidatePairWarning'),e=eMap.get(exposureInput.value),p=pMap.get(phenotypeInput.value);
+ warning.hidden=true;warning.textContent='';
+ const showFields=(container,item)=>{container.replaceChildren();if(!item){const msg=document.createElement('p');msg.textContent='请选择一个已列出的概念。';container.append(msg);return}for(const f of item.source_fields){const row=document.createElement('div');row.className='pair-field';const code=document.createElement('strong');code.textContent=f.code;row.append(code);const detail=document.createElement('span');detail.textContent=` · ${f.label||'官方标签待核'} · ${f.module||'模块待核'}${f.unit?` · 单位：${f.unit}`:''}`;row.append(detail);const note=document.createElement('div');note.textContent=[f.value_labels,f.value_semantics,f.mapping_status,f.caveat].filter(Boolean).join('；');if(note.textContent)row.append(note);container.append(row)}};
+ showFields(byId('candidateExposureFields'),e);showFields(byId('candidatePhenotypeFields'),p);
+ if(e&&p&&e.concept_id===p.concept_id){warning.hidden=false;warning.textContent='同一概念不能与自身配对；请选择另一个表型或暴露候选。'}
+}
+candidatePairExplorerLoaded.then(data=>{renderCandidatePairExplorer(data);['candidatePairWave','candidateExposure','candidatePhenotype'].forEach(id=>byId(id).addEventListener(id==='candidatePairWave'?'change':'input',()=>renderCandidatePairExplorer(data)));document.querySelector('[data-view="candidatePairExplorer"]').addEventListener('click',()=>renderCandidatePairExplorer(data))}).catch(err=>{byId('candidatePairStatus').textContent=`候选配对目录载入失败：${err.message}`});
 
 function renderAssociations() {
   byId('rows').replaceChildren();

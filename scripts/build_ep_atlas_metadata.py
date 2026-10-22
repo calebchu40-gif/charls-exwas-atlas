@@ -86,6 +86,7 @@ for script in (
     "summarize_value_label_coverage.py",
     "validate_do_not_analyze_triage.py",
     "build_ep_concept_source_crosswalk.py",
+    "build_candidate_pair_explorer.py",
     "finalize_catalog_semantics.py",
     "summarize_ep_pair_wave_coverage.py",
     "summarize_directory_scope.py",

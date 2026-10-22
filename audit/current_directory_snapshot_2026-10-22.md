@@ -4,13 +4,13 @@
 
 本快照统计公开字段元数据与人工审核映射；未拟合ExWAS关联模型。最新重建扩展2018 HCAP及跨波官方认知标签；将拒答原因、测验工具及施测条件共15字段列为C类，并保留连续认知原始值的有效范围限制；新增慢病辅助题审定标签并消除DA020S2注释文本冲突；工作类复选框及问卷菜单共81个新标签展示，保留未选中/路由/代码本遗漏限制；2011养老金fn024与正确基线问卷FN024及Codebook类别一致，已拆为当前参保波次特异概念；新增收入/借贷/养老类别标签、养老金参与/资格标签、4个C类金额/日期选择器以及2020家庭疫情经济13个待发行版核实标签；未将个人记录或标识符写入项目材料或交接包。
 
-- 逐波字段目录：7,544行（E 4,566、P-only 1,903、C 911、E/P双角色164）。
-- 去重候选概念：1,409个（E侧1,131、P侧287，双角色概念9个）。
-- E/P概念—源字段映射：6,598条；全来源crosswalk 6,804条，其中6,792条匹配目录，12条是目录外C类元数据。
-- 2011/2013/2015/2018/2020波次目录概念对共现：120,052 / 126,301 / 128,984 / 98,667 / 12,598。
-- 当前未映射E/P字段均为0。11个吸烟/饮酒年龄/年份格式选择器已转为C类并排除于关联矩阵；相邻回答组件保留并须按波次选择器解释。C类字段保留测量、问卷路由、回答历史、来源身份等元数据，不进入E/P关联配对。
-- E/P目录现有2,834行含非空值标签（2,808个波次—字段码）；2013 `fn056_w2_5`的问卷选项/CodeBook类别表覆盖差异已复核，精确标为`conflict`的字段码为0；2011 `FB010`问卷与Codebook编码差异另行确认并标记`DO NOT ANALYZE`；FL020 16个选项的问卷含义已列出，但选中/未选中/缺失码未证实，均保持锁定。慢病辅助crosswalk的84条非空标签已全部精确连接至主目录；工作复选框/菜单新增81个标签，收入/家庭借贷/养老新增7个，养老金参与/资格新增16个，2020家庭疫情经济新增13个标签。另在C类展示2018四个格式/日期选择器。依据见[`chronic_disease_ancillary_label_ingestion_2026-10-22.md`](chronic_disease_ancillary_label_ingestion_2026-10-22.md)、[`work_checkbox_value_label_ingestion_2026-10-22.md`](work_checkbox_value_label_ingestion_2026-10-22.md)、[`work_questionnaire_category_label_ingestion_2026-10-22.md`](work_questionnaire_category_label_ingestion_2026-10-22.md)、[`additional_income_debt_pension_label_ingestion_2026-10-22.md`](additional_income_debt_pension_label_ingestion_2026-10-22.md)、[`pension_and_format_selector_label_ingestion_2026-10-22.md`](pension_and_format_selector_label_ingestion_2026-10-22.md)和[`covid_economic_candidate_label_display_2026-10-22.md`](covid_economic_candidate_label_display_2026-10-22.md)。
-- 正式关联模型数为0；未计算关联效应或个人级配对样本量。目录另有33条逐波字段带DO NOT ANALYZE锁定；2011 FM033已依据官方类别和受控存储核查移出旧的菜单冲突锁定，作为路线专属分类候选，并保留一个问卷选项无Codebook观测的警示。锁定字段仍可检索，但不得进入模型。逐字段和所需证据见[`do_not_analyze_triage_2026-10-22.md`](do_not_analyze_triage_2026-10-22.md)。
+- 当前网站字段目录：7,544行（E 4,566、P-only 1,903、C 911、双角色E/P 164）。
+- E/P候选概念：1,408个（暴露侧1,130、表型侧287、双角色9）；另有C概念67个。
+- E/P概念—源字段映射：6,598行；全来源crosswalk 6,804行，其中6,792行匹配目录、12行是目录外C元数据。
+- 五个常规波次元数据概念对共现：2011/2013/2015/2018/2020分别120,052/126,301/128,984/98,667/12,598；仅是目录层潜在配对，不是人数或分析资格。
+- 当前未映射E/P字段为0；问卷/Codebook身份冲突和C类辅助元数据按字段留存，不直接纳入关联配对。
+- E/P值标签：2,908行、覆盖2,882个波次—字段；精确标签冲突0，另有2011 FB010问卷/Codebook差异保持DO NOT ANALYZE。
+- 当前主目录有33条唯一波次—字段DO NOT ANALYZE锁定；正式ExWAS模型数0，未发布任何关联效应或个人记录。
 
 2026-10-22续核：2015 Wave 3官方发布页列出的Codebook及问卷版本与本地PDF校验值一致。发布页/发布说明没有给出`fn057_w3_4_1_`至`_3_`问卷—Codebook字段名冲突的勘误，故维持锁定；`ha065_1_18_`身份冲突也未获官方说明。详情见[`pension_2015_residual_review_2026-10-22.md`](pension_2015_residual_review_2026-10-22.md)和[`2015_inactive_income_housing_asset_fields_review_2026-10-22.md`](2015_inactive_income_housing_asset_fields_review_2026-10-22.md)。
 
@@ -85,3 +85,9 @@ T003c/T004生命历程续补：新增迁出原因与逐段居住城乡模式；T
 
 
 2011 FN064/FN070逐阈值Codebook类别已恢复到E/P值标签目录，共8个字段；不展示频数、不补齐未列类别，仍保留金额/路由分析锁定。网站E/P表现在对所有带`DO NOT ANALYZE`的字段显示醒目警示。详见[`pension_2011_fn064_fn070_storage_route_review_2026-10-22.md`](pension_2011_fn064_fn070_storage_route_review_2026-10-22.md)。
+
+2026-10-22续审：上述现状从当前catalog、概念摘要、来源crosswalk和值标签覆盖脚本复核；专题血检页另加入2011指南11项生化检测方法/CV/范围，2015未报告的检测参数保持空值。
+
+
+### 候选配对查询功能（2026-10-22）
+站点现可按波次、E概念和P概念检索已映射源字段；目录候选组合数与原pair coverage审计一致，且排除同一Concept ID自配对。页面不显示个人样本量、效应或显著性。
