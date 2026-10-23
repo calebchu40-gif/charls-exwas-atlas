@@ -2,6 +2,7 @@
 
 ## 2026-10-23
 
+- Rebuilt the full E/P metadata catalog and propagated 73 source-reviewed continuous behavior measure descriptions (age/year components, smoking/alcohol quantities and sleep durations) that were incorrectly displayed as “not yet reviewed.” The builder preserves blank category labels, conflicts, and `DO NOT ANALYZE` locks; added regression coverage and a dated audit snapshot. No respondent data or association results were used.
 - Renamed the navigation entry that opens the C-class measurement/design metadata catalogue so it no longer implies that the page itself is the methods note; the homepage methods link still goes to the methods cards.
 - Added a public methods card explaining the five-wave weight/sample-flag rules, 2013 rebuild gate, PSU candidate status, and unresolved variance-stratum/replicate-weight availability. Linked the detailed survey-design audit and added a regression test so the site cannot lose these key inferential limits. No respondent data or association estimates were added.
 - Clarified the Chinese labels and review-state explanation in the measurement/design metadata (C) catalog, including that candidate covariates are not automatic adjustment recommendations and continuous measures may have no discrete value labels. GitHub Pages now deploys automatically when published-site assets or the deployment workflow change on `main`; manual dispatch remains available.

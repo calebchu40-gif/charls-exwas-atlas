@@ -18,6 +18,23 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertIn('id="metadata"', html)
         self.assertIn("测量与设计元数据（C）", html)
 
+    def test_reviewed_continuous_behavior_measures_do_not_look_unreviewed(self):
+        examples = [
+            ("2011", "da049", "continuous measure, not a categorical code"),
+            ("2011", "da063", "continuous count, not a categorical code"),
+            ("2013", "da062_1", "continuous component, not a categorical code"),
+            ("2018", "da073", "continuous beverage quantity, not a categorical code"),
+            ("2020", "da030", "continuous measure, not a categorical code"),
+        ]
+        for wave, code, status in examples:
+            rows = [
+                row for row in self.catalog
+                if row.get("Source.Wave") == wave and row.get("Variable.Name", "").lower() == code
+            ]
+            self.assertTrue(rows, (wave, code))
+            self.assertTrue(all(row.get("Value.Label.Review", "").startswith(status) for row in rows), (wave, code))
+            self.assertTrue(all(not row.get("Value.Labels", "") for row in rows), (wave, code))
+
     def test_public_methods_page_discloses_wave_specific_survey_design_gates(self):
         html = (ROOT / "site-prototype/dist/index.html").read_text(encoding="utf-8")
         card = html[html.index("抽样、权重与方差设计状态"):html.index("</section>", html.index("抽样、权重与方差设计状态"))]

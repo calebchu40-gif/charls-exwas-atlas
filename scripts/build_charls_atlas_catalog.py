@@ -1221,6 +1221,34 @@ def main() -> None:
                 & out["Value.Label.Review"].ne("conflict")
             )
             out.loc[selected, "Value.Label.Review"] = status
+    # Continuous behavior measures do not need discrete value-label menus.
+    # Preserve their already-audited units/semantics in the main catalogue,
+    # but only replace the generic pending state and never overwrite labels,
+    # conflicts, or an explicit analysis lock.
+    behavior_path = root / "audit" / "behavior_exposure_variable_mapping_v1.csv"
+    if behavior_path.exists():
+        behavior_values = pd.read_csv(behavior_path, dtype=str, encoding="utf-8-sig").fillna("")
+        continuous_prefixes = (
+            "continuous count, not a categorical code;",
+            "continuous monetary amount, not a categorical code;",
+            "continuous component, not a categorical code;",
+            "continuous beverage quantity, not a categorical code;",
+            "continuous measure, not a categorical code;",
+        )
+        for item in behavior_values.to_dict(orient="records"):
+            status = str(item.get("value_label_status", "")).strip()
+            if not status.startswith(continuous_prefixes):
+                continue
+            selected = (
+                out["Source.Wave"].astype(str).eq(str(item.get("wave", "")))
+                & out["Variable.Name"].str.lower().eq(str(item.get("code", "")).lower())
+                & out["Value.Labels"].eq("")
+                & out["Value.Label.Review"].isin(["", "not yet reviewed"])
+            )
+            out.loc[selected, "Value.Label.Review"] = status
+            source = str(item.get("value_label_source", "")).strip()
+            if source:
+                out.loc[selected, "Value.Label.Source"] = source
     cognition_value_path = root / "audit" / "cognition_item_variable_mapping_v1.csv"
     if cognition_value_path.exists():
         cognition_values = pd.read_csv(cognition_value_path, dtype=str, encoding="utf-8-sig").fillna("")

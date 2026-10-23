@@ -36,8 +36,8 @@
 
 |审核状态|E/P目录行|
 |---|---:|
-|not yet reviewed|2,536|
 |officially reviewed|2,527|
+|not yet reviewed|2,463|
 |continuous measure metadata available|214|
 |official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories|200|
 |official Codebook numeric/count response located; no discrete answer labels|128|
@@ -51,11 +51,13 @@
 |official 2015 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|52|
 |official selected-option label; checkbox slot, absence is not a negative response|42|
 |代码本逐值标签已核|38|
+|continuous component, not a categorical code; component unit reviewed against wave-specific official codebook|38|
 |continuous measure metadata available; see description/crosswalk|32|
 |连续计数；参照期/机构槽位依波次；极值待核|29|
 |continuous raw subtraction response; Codebook extreme maxima occur; valid range and scoring require authorized raw-data QA|25|
 |official response categories/unit reviewed; Codebook frequencies omitted|25|
 |字段标签已核；代码本呈现多选类别频数，未能从摘录确认未选/否的底层存储码|21|
+|continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions|16|
 |DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No|16|
 |2020代码本逐字段多选标签已核；条件分母|14|
 |candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data|13|
@@ -66,7 +68,10 @@
 |official Codebook extraction exposes only a partial response-code set; only the correct category is listed; do not infer unlisted codes|9|
 |continuous count measure; Codebook identifies 15-second animal-fluency intervals; summary statistics are not valid-range evidence|8|
 |official 2011 questionnaire/Codebook threshold categories transcribed; no response frequencies shown|8|
+|continuous count, not a categorical code; daily cigarette count; 2020 current and pre-quit values are separate|6|
 |official questionnaire categories; frequencies omitted; FC020 multiple-job main-work route or FC021 single nonfarm-job route|6|
+|continuous measure, not a categorical code; nap duration appears in minutes; inspect special/missing codes|5|
+|continuous measure, not a categorical code; past-month average sleep hours per night; inspect special/missing codes|5|
 |official response categories transcribed; special/missing-code completeness pending|5|
 |selected option-code storage confirmed in authorized local table; route/denominator unresolved|5|
 |连续计数（夜数）；条件提问；极值待核|4|
@@ -76,6 +81,7 @@
 |official wave codebook category verified; selected option only; frequencies excluded|3|
 |official 2020 questionnaire response categories; frequencies omitted; conditional work-history transition route|3|
 |full official questionnaire response menu transcribed without frequencies; current employer firm route|3|
+|continuous monetary amount, not a categorical code; self-reported price for 20 cigarettes at respondent-specific current/pre-quit reference time|3|
 |official questionnaire categories transcribed without frequencies; preserve three-category employment/family-business status|3|
 |official questionnaire categories; frequencies omitted; 2011 question wording controls its scope|3|
 |questionnaire categories and Codebook title conflict recorded; frequencies omitted|3|
