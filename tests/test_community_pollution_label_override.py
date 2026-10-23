@@ -65,6 +65,10 @@ class CommunityPollutionLabelOverrideTests(unittest.TestCase):
         self.assertIn("not an individual's home-to-source distance", distance["caveat"])
         self.assertIn("field.caveat", (ROOT / "site-prototype" / "dist" / "app.js").read_text(encoding="utf-8"))
         self.assertIn("community_exposures_v1.json?v=4", (ROOT / "site-prototype" / "dist" / "app.js").read_text(encoding="utf-8"))
+        html = (ROOT / "site-prototype" / "dist" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("104个候选概念、198条字段映射", html)
+        self.assertIn("JB018本村污染等级、JB019邻近村镇污染等级", html)
+        self.assertIn("JB027村庄至污染源距离（公里", html)
 
 
 if __name__ == "__main__":

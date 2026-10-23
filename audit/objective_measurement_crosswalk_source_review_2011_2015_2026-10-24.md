@@ -25,3 +25,20 @@ The crosswalk is a metadata aid for a future phenotype catalogue. It contains no
 - `sources_official/CHARLS_2015_Blood_Release_Note.pdf`
 
 The authoritative files are retained in `sources_official/`; the live website exposes only field metadata and source paths, not CHARLS respondent-level records.
+
+
+## 2026-10-24 continued: 2018–2023 objective-measurement coverage boundary
+
+The official CHARLS Wave 4 (2018) User’s Guide states that non-blood biomarkers, including anthropometrics and blood pressure, were collected in Waves 1–3, while whole-blood biomarkers were collected in Waves 1 and 3. This provides direct wave-level evidence for excluding Wave 4 (2018) from the current physical-measurement and blood-biomarker catalogues, rather than relying only on absence of same-named QA–QM fields. The 2018 Codebook token search remains a supporting metadata check, not the basis of this exclusion.
+
+Wave labels and survey phases require care. CHARLS’s official data portal labels the released dataset “2020 CHARLS Wave 5”; the official release announcement dates its publication to 16 November 2023. Separately, CHARLS recruitment notices describe 2020 as a pandemic-specific survey and the 2021–2023 collection as the fifth regular survey, explicitly including physical examinations, biospecimens and wearable-band data collection. These statements concern different data-release/fieldwork references and do not establish that the later regular-survey measurements are present in the released 2020 questionnaire or files. As of this review, the CHARLS data portal lists the 2020 Wave 5 package, but the project has not obtained or validated any 2021–2023 regular-survey data/codebook package. Thus no 2021–2023 rows are added, and no inference is made that the later measures are unavailable forever.
+
+The 2020 questionnaire and Codebook were checked for the existing objective-measurement candidate codes. Self-reported questions about whether a doctor or nurse checked blood pressure, or whether a respondent received physical examinations/tests, are care-use/history reports and are not direct measurements performed by the CHARLS field team. No 2020 objective-measurement records are inferred from these questions. The currently displayed 2011/2013/2015 crosswalk remains candidate metadata; it does not certify release-file availability or analytical eligibility. No respondent records, response frequencies, or Codebook descriptive statistics were used.
+
+Sources checked on 2026-10-24:
+
+- Local official extract: `sources_official/CHARLS_2018_Users_Guide_extracted.txt`; official PDF: https://charls.pku.edu.cn/en/data/User2018.pdf
+- Local official extracts: `sources_official/CHARLS_2020_User_Guide_English_extracted.txt`, `sources_official/CHARLS_2020_Questionnaire_English_extracted.txt`, and `sources_official/CHARLS_2020_Codebook_extracted.txt`.
+- CHARLS recruitment notice for the 2021–2023 fifth regular survey, including physical examination, biospecimen and wearable-band collection: https://charls.pku.edu.cn/info/1131/1761.htm
+- Current CHARLS data portal page listing the 2020 Wave 5 package: https://charls.charlsdata.com/pages/data/111/en.html
+- Official announcement of the 2020 Wave 5 data release: https://charls.pku.edu.cn/en/info/1190/1331.htm

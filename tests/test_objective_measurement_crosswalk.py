@@ -46,8 +46,11 @@ class ObjectiveMeasurementCrosswalkTests(unittest.TestCase):
     def test_site_explains_wave_scope_and_searchable_source_labels(self):
         html = (ROOT / "site-prototype/dist/index.html").read_text(encoding="utf-8")
         app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
-        self.assertIn("2018/2020", html)
-        self.assertIn("变量名不同不等于确认没有类似测量", html)
+        self.assertIn("2018 Wave 4 User’s Guide", html)
+        self.assertIn("非血液生物标志物（如人体测量和血压）采集于Wave 1–3", html)
+        self.assertIn("2021–2023称为第五轮常规调查", html)
+        self.assertIn("尚未取得并核验2021–2023常规调查的发布文件", html)
+        self.assertIn("变量名不同也不能单独证明测量不存在", html)
         self.assertIn("官方Codebook字段标签", html)
         self.assertIn("source_field_labels", app)
         self.assertIn("objective_measurements_v1.json?v=2", app)
