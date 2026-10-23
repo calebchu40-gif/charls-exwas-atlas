@@ -3,7 +3,7 @@
 更新：2026-10-24。由`scripts/summarize_value_label_coverage.py`从当前字段目录和覆盖CSV自动生成。
 
 - E/P字段—角色—类别目录行：6,642；不同波次—字段码：6,561。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
-- 有非空官方/已审标签文本的E/P目录行：3,295；不同波次—字段码：3,269。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
+- 有非空官方/已审标签文本的E/P目录行：3,328；不同波次—字段码：3,302。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
 - 明确标为`conflict`的E/P字段码：0；详情按主目录波次和变量码检索。
 - 问卷/Codebook编码差异尚未调和并锁定`DO NOT ANALYZE`的E/P字段：2011 `fb010`。此项独立于上面的精确`conflict`标签计数。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -12,7 +12,7 @@
 
 |角色|网站类别|字段—角色—类别行（非互斥）|有标签文本行|子类别数|
 |---|---|---:|---:|---:|
-|e|behavior|248|158|5|
+|e|behavior|271|173|5|
 |e|behavioral exposures|2|0|1|
 |e|community context|187|59|1|
 |e|early-life and family socioeconomic context|3|3|1|
@@ -20,7 +20,7 @@
 |e|family and intergenerational context|6|6|1|
 |e|food and household environment|160|87|1|
 |e|housing and built environment|481|34|2|
-|e|social determinants|2,155|974|20|
+|e|social determinants|2,132|992|20|
 |e|social protection|1,331|452|30|
 |p|anthropometric|15|0|1|
 |p|biochemistry|32|0|1|
@@ -37,8 +37,8 @@
 
 |审核状态|E/P目录行|
 |---|---:|
-|officially reviewed|2,636|
-|not yet reviewed|806|
+|officially reviewed|2,677|
+|not yet reviewed|773|
 |official codebook field located; continuous/count or no categorical labels|608|
 |codebook field located; continuous/open response or no categorical labels|339|
 |continuous measure metadata available|214|
@@ -56,8 +56,8 @@
 |official 2015 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|52|
 |official Codebook lists numeric summary; no categorical response menu in this entry|52|
 |official selected-option label; checkbox slot, absence is not a negative response|42|
-|official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned|41|
 |代码本逐值标签已核|38|
+|official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned|33|
 |continuous component, not a categorical code; component unit reviewed against wave-specific official codebook|32|
 |continuous measure metadata available; see description/crosswalk|32|
 |official questionnaire and Codebook option identity reviewed; participant-level No/unselected storage and denominator unresolved; no response-value labels assigned|30|

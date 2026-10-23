@@ -4,10 +4,10 @@
 
 |角色|检索类别|候选Concept ID数|字段—角色—类别行|不同波次—变量码|
 |---|---|---:|---:|---:|
-|e|social determinants|599|2157|2155|
+|e|social determinants|599|2134|2132|
 |e|social protection|314|1331|1331|
 |e|community context|100|187|187|
-|e|behavior|44|273|248|
+|e|behavior|45|296|271|
 |e|housing and built environment|41|481|481|
 |e|food and household environment|29|160|160|
 |e|internal biomarker|20|55|55|
@@ -28,4 +28,4 @@
 |p|anthropometric|5|15|15|
 |p|blood pressure|3|27|27|
 
-总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1425个（E=1146、P=288，9个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。
+总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1426个（E=1147、P=288，9个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。

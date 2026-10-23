@@ -1,4 +1,4 @@
-# CHARLS ExWAS Atlas 项目进度与剩余工作估算（更新至2026-10-24）
+﻿# CHARLS ExWAS Atlas 项目进度与剩余工作估算（更新至2026-10-24）
 
 ## 当前状态更新（2026-10-24，覆盖下方较早快照）
 
@@ -139,3 +139,6 @@ A full metadata rebuild found that 73 already-audited continuous behavior fields
 2026-10-23年龄/性别构造规则复核：查阅CHARLS网站托管的Gateway to Global Aging Data Harmonized CHARLS Version D文档，核实Wave 1–4年龄按访谈年月与最近出生年月计算、缺出生月取6月、Wave 1/2缺出生年才回退自报年龄、农历生日调用CHARLS团队lunar2solar；性别依据跨波和人口学/健康模块一致性构造并保留冲突处理旗标。更正来源身份：该Codebook由USC Gateway团队编制，属于第三方harmonized算法说明，不是CHARLS原始变量字典。项目将其用于算法QA，不冒称原始字段；源差异和Wave 5定义仍待对照。见[`official_age_gender_harmonization_review_2026-10-23.md`](official_age_gender_harmonization_review_2026-10-23.md)。
 
 2026-10-23性别源字段聚合QA：在本机受控准备表中比较Wave 2–5访员记录/预载字段与`xrgender`，仅以内存聚合输出分歧计数；2013/2015/2018分别125/19/0，2020访员记录分歧小于10予以抑制，`zrgender`分歧36。个人行与ID未导出。结果表明需按波次说明生成来源，仍未冻结M1性别字段优先级，见[`official_age_gender_harmonization_review_2026-10-23.md`](official_age_gender_harmonization_review_2026-10-23.md)。
+
+
+2026-10-24跨波次数字行为续审：按2011/2013/2015/2018官方问卷与Codebook整理23条旧版DA056互联网/设备/活动概念映射；明确旧版DA056活动清单与2020 DA040专门互联网筛查题不同。2018路由及值标签已核实，早期多选字段的未选项存储未确认，故标签留空、不把结构性缺失写为“No”。修正主目录生成器，避免与概念交叉表重复导入造成字段双计数，并保留原字段波次记录。E/P/C目录为4,738/2,068/978；156项测试、JavaScript语法、目录重复键检查和差异格式检查通过。正式关联模型仍为0，整体完成度仍估25%–30%，因为研究方案仍需解决获准数据分析资格、调查设计与实际模型验证；本轮只提高候选目录的跨波次可追溯性。详见[`cross_wave_digital_behavior_review_2026-10-24.md`](cross_wave_digital_behavior_review_2026-10-24.md)。

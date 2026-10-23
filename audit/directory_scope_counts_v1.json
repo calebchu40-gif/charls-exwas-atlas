@@ -1,8 +1,8 @@
 {
   "as_of": "2026-10-24",
   "crosswalk_files": 75,
-  "candidate_concept_ids": 1425,
-  "exposure_concept_ids_including_dual": 1146,
+  "candidate_concept_ids": 1426,
+  "exposure_concept_ids_including_dual": 1147,
   "phenotype_concept_ids_including_dual": 288,
   "wave_field_mapping_rows": 6614,
   "includes": "all E/P candidate rows from ep_concept_source_crosswalk_v1.csv",
@@ -376,7 +376,7 @@
     {
       "file": "audit/social_exposure_crosswalk_v1.csv",
       "mapping_rows": 281,
-      "concept_ids": 11
+      "concept_ids": 26
     },
     {
       "file": "audit/work_exposure_crosswalk_v1.csv",

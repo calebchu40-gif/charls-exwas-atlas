@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 569,
+      "exposure_count": 570,
       "phenotype_count": 211,
-      "candidate_pair_count": 120052,
+      "candidate_pair_count": 120263,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -5146,6 +5146,26 @@
           ]
         },
         {
+          "concept_id": "internet_use_social_activity",
+          "label": "Internet use as past-month activity",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056s10",
+              "label": "Internet use (DA056 option 10; past-month activity checklist)",
+              "module": "health_status_and_functioning",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "2011 DA056 option 10 identifies internet use as a last-month social activity. The official Codebook summary does not establish respondent-level selected/unselected coding. Preserve the option identity; do not infer No from absence or combine with a direct internet-use screening item.",
+              "mapping_status": "official 2011 questionnaire identifies DA056 option 10 as Internet use; Codebook does not verify respondent-level storage or unselected coding; frequencies omitted",
+              "caveat": "2011 DA056 option 10 identifies internet use as a last-month social activity. The official Codebook summary does not establish respondent-level selected/unselected coding. Preserve the option identity; do not infer No from absence or combine with a direct internet-use screening item."
+            }
+          ]
+        },
+        {
           "concept_id": "indoor_cleanliness",
           "label": "Interviewer-rated household cleanliness",
           "domain": "Indoor environment",
@@ -7750,16 +7770,6 @@
             {
               "code": "da056s1",
               "label": "Do Activities LM of Interacted With Friends",
-              "module": "health_status_and_functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
-              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
-              "caveat": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA."
-            },
-            {
-              "code": "da056s10",
-              "label": "Do Activities LM of Used the Internet",
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "",
@@ -21452,9 +21462,9 @@
       ]
     },
     "2013": {
-      "exposure_count": 593,
+      "exposure_count": 594,
       "phenotype_count": 213,
-      "candidate_pair_count": 126301,
+      "candidate_pair_count": 126514,
       "exposures": [
         {
           "concept_id": "home_accessibility",
@@ -23865,6 +23875,26 @@
               "value_semantics": "Questionnaire: received inpatient care during the past year. Yes=1, No=2 in codebooks; no routes onward. 2011–2018 Part II interviewer instruction prohibits proxy responses.",
               "mapping_status": "Official value labels transcribed; wave-specific wording/routing and harmonization still require review",
               "caveat": "Self-reported inpatient-care occurrence over the past year in 2011–2018. Check same-condition follow-up wording and non-response codes by wave."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_use_social_activity",
+          "label": "Internet use as past-month activity",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056s10",
+              "label": "Internet use (DA056 option 10; past-month activity checklist)",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "2013 DA056 option 10 identifies internet use as a last-month social activity. The official Codebook summary does not establish respondent-level selected/unselected coding. Preserve the option identity; do not infer No from absence or combine with a direct internet-use screening item.",
+              "mapping_status": "official 2013 questionnaire identifies DA056 option 10 as Internet use; Codebook does not verify respondent-level storage or unselected coding; frequencies omitted",
+              "caveat": "2013 DA056 option 10 identifies internet use as a last-month social activity. The official Codebook summary does not establish respondent-level selected/unselected coding. Preserve the option identity; do not infer No from absence or combine with a direct internet-use screening item."
             }
           ]
         },
@@ -26502,16 +26532,6 @@
           "source_fields": [
             {
               "code": "da056s1",
-              "label": "Do Activities",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
-              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
-              "caveat": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
-            },
-            {
-              "code": "da056s10",
               "label": "Do Activities",
               "module": "Health_Status_and_Functioning",
               "unit": "",
@@ -44447,9 +44467,9 @@
       ]
     },
     "2015": {
-      "exposure_count": 556,
+      "exposure_count": 562,
       "phenotype_count": 232,
-      "candidate_pair_count": 128984,
+      "candidate_pair_count": 130376,
       "exposures": [
         {
           "concept_id": "pension_2015_urban_residents_personal_supplementary_repayment_amount",
@@ -46660,6 +46680,126 @@
               "value_semantics": "Questionnaire: received inpatient care during the past year. Yes=1, No=2 in codebooks; no routes onward. 2011–2018 Part II interviewer instruction prohibits proxy responses.",
               "mapping_status": "Official value labels transcribed; wave-specific wording/routing and harmonization still require review",
               "caveat": "Self-reported inpatient-care occurrence over the past year in 2011–2018. Check same-condition follow-up wording and non-response codes by wave."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_device_cellphone",
+          "label": "Internet access device: cellphone",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w3s4",
+              "label": "Internet access device: Cellphone",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+              "mapping_status": "official 2015 questionnaire and Codebook identify this device option; respondent-level selected/unselected storage is unresolved; no No label inferred",
+              "caveat": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_device_desktop",
+          "label": "Internet access device: desktop computer",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w3s1",
+              "label": "Internet access device: Desktop computer",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+              "mapping_status": "official 2015 questionnaire and Codebook identify this device option; respondent-level selected/unselected storage is unresolved; no No label inferred",
+              "caveat": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_device_laptop",
+          "label": "Internet access device: laptop computer",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w3s2",
+              "label": "Internet access device: Laptop computer",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+              "mapping_status": "official 2015 questionnaire and Codebook identify this device option; respondent-level selected/unselected storage is unresolved; no No label inferred",
+              "caveat": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_device_other",
+          "label": "Internet access device: other device",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w3s5",
+              "label": "Internet access device: Other device",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+              "mapping_status": "official 2015 questionnaire and Codebook identify this device option; respondent-level selected/unselected storage is unresolved; no No label inferred",
+              "caveat": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_device_tablet",
+          "label": "Internet access device: tablet computer",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w3s3",
+              "label": "Internet access device: Tablet computer",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+              "mapping_status": "official 2015 questionnaire and Codebook identify this device option; respondent-level selected/unselected storage is unresolved; no No label inferred",
+              "caveat": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_use_social_activity",
+          "label": "Internet use as past-month activity",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056s10",
+              "label": "Internet use (DA056 option 10; past-month activity checklist)",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "2015 DA056 option 10 identifies internet use as a last-month social activity. The official Codebook summary does not establish respondent-level selected/unselected coding. Preserve the option identity; do not infer No from absence or combine with a direct internet-use screening item.",
+              "mapping_status": "official 2015 questionnaire identifies DA056 option 10 as Internet use; Codebook does not verify respondent-level storage or unselected coding; frequencies omitted",
+              "caveat": "2015 DA056 option 10 identifies internet use as a last-month social activity. The official Codebook summary does not establish respondent-level selected/unselected coding. Preserve the option identity; do not infer No from absence or combine with a direct internet-use screening item."
             }
           ]
         },
@@ -48936,67 +49076,7 @@
           ],
           "source_fields": [
             {
-              "code": "da056_w3s1",
-              "label": "Devices Use for Internet",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
-              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
-              "caveat": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis."
-            },
-            {
-              "code": "da056_w3s2",
-              "label": "Devices Use for Internet",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
-              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
-              "caveat": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis."
-            },
-            {
-              "code": "da056_w3s3",
-              "label": "Devices Use for Internet",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
-              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
-              "caveat": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis."
-            },
-            {
-              "code": "da056_w3s4",
-              "label": "Devices Use for Internet",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
-              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
-              "caveat": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis."
-            },
-            {
-              "code": "da056_w3s5",
-              "label": "Devices Use for Internet",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
-              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
-              "caveat": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis."
-            },
-            {
               "code": "da056s1",
-              "label": "Do Activities",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
-              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
-              "caveat": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
-            },
-            {
-              "code": "da056s10",
               "label": "Do Activities",
               "module": "Health_Status_and_Functioning",
               "unit": "",
@@ -68522,9 +68602,9 @@
       ]
     },
     "2018": {
-      "exposure_count": 479,
+      "exposure_count": 494,
       "phenotype_count": 206,
-      "candidate_pair_count": 98667,
+      "candidate_pair_count": 101757,
       "exposures": [
         {
           "concept_id": "pension_expected_receipt_age_2018_plan_loop",
@@ -70859,6 +70939,246 @@
           ]
         },
         {
+          "concept_id": "internet_device_cellphone",
+          "label": "Internet access device: cellphone",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w3_s4",
+              "label": "Internet access device: Cellphone",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 4=Cellphone (selected option)",
+              "value_semantics": "Multi-select internet device item, asked only after the respondent selected DA056 option 10 (Used the Internet). Preserve each device field and route; the other-device free text is not a standardized exposure and is not published.",
+              "mapping_status": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+              "caveat": "Multi-select internet device item, asked only after the respondent selected DA056 option 10 (Used the Internet). Preserve each device field and route; the other-device free text is not a standardized exposure and is not published."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_device_desktop",
+          "label": "Internet access device: desktop computer",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w3_s1",
+              "label": "Internet access device: Desktop computer",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 1=Desktop computer (selected option)",
+              "value_semantics": "Multi-select internet device item, asked only after the respondent selected DA056 option 10 (Used the Internet). Preserve each device field and route; the other-device free text is not a standardized exposure and is not published.",
+              "mapping_status": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+              "caveat": "Multi-select internet device item, asked only after the respondent selected DA056 option 10 (Used the Internet). Preserve each device field and route; the other-device free text is not a standardized exposure and is not published."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_device_laptop",
+          "label": "Internet access device: laptop computer",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w3_s2",
+              "label": "Internet access device: Laptop computer",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 2=Laptop computer (selected option)",
+              "value_semantics": "Multi-select internet device item, asked only after the respondent selected DA056 option 10 (Used the Internet). Preserve each device field and route; the other-device free text is not a standardized exposure and is not published.",
+              "mapping_status": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+              "caveat": "Multi-select internet device item, asked only after the respondent selected DA056 option 10 (Used the Internet). Preserve each device field and route; the other-device free text is not a standardized exposure and is not published."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_device_other",
+          "label": "Internet access device: other device",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w3_s5",
+              "label": "Internet access device: Other device",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 5=Other device (selected option)",
+              "value_semantics": "Multi-select internet device item, asked only after the respondent selected DA056 option 10 (Used the Internet). Preserve each device field and route; the other-device free text is not a standardized exposure and is not published.",
+              "mapping_status": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+              "caveat": "Multi-select internet device item, asked only after the respondent selected DA056 option 10 (Used the Internet). Preserve each device field and route; the other-device free text is not a standardized exposure and is not published."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_device_tablet",
+          "label": "Internet access device: tablet computer",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w3_s3",
+              "label": "Internet access device: Tablet computer",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 3=Tablet computer (selected option)",
+              "value_semantics": "Multi-select internet device item, asked only after the respondent selected DA056 option 10 (Used the Internet). Preserve each device field and route; the other-device free text is not a standardized exposure and is not published.",
+              "mapping_status": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+              "caveat": "Multi-select internet device item, asked only after the respondent selected DA056 option 10 (Used the Internet). Preserve each device field and route; the other-device free text is not a standardized exposure and is not published."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_activity_chat",
+          "label": "Internet activity: chatting",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w4_1_s1",
+              "label": "Internet activity: Chatting",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 1=Chatting (selected option)",
+              "value_semantics": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+              "mapping_status": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+              "caveat": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_activity_financial_management",
+          "label": "Internet activity: financial management",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w4_1_s5",
+              "label": "Internet activity: Money management",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 5=Money management (selected option)",
+              "value_semantics": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+              "mapping_status": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+              "caveat": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_activity_other",
+          "label": "Internet activity: other activity",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w4_1_s6",
+              "label": "Internet activity: Other internet activity",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 6=Others, please specify (selected option)",
+              "value_semantics": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+              "mapping_status": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+              "caveat": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_activity_games",
+          "label": "Internet activity: playing games",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w4_1_s4",
+              "label": "Internet activity: Playing games",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 4=Playing games (selected option)",
+              "value_semantics": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+              "mapping_status": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+              "caveat": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_activity_news",
+          "label": "Internet activity: reading news",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w4_1_s2",
+              "label": "Internet activity: Reading news",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 2=Reading news (selected option)",
+              "value_semantics": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+              "mapping_status": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+              "caveat": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_activity_video",
+          "label": "Internet activity: watching videos",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w4_1_s3",
+              "label": "Internet activity: Watching videos",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 3=Watching videos (selected option)",
+              "value_semantics": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+              "mapping_status": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+              "caveat": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_use_social_activity",
+          "label": "Internet use as past-month activity",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_s10",
+              "label": "Internet use (DA056 option 10; past-month activity checklist)",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 10=Used the Internet",
+              "value_semantics": "2018 DA056 asks which social activities occurred in the last month; option 10 is internet use. This is a routed activity checklist item, not a dedicated internet screening question. Preserve the DA056 response route and do not equate it with 2020 DA040 without an explicit definition.",
+              "mapping_status": "official 2018 questionnaire and Codebook labels reviewed; frequencies omitted",
+              "caveat": "2018 DA056 asks which social activities occurred in the last month; option 10 is internet use. This is a routed activity checklist item, not a dedicated internet screening question. Preserve the DA056 response route and do not equate it with 2020 DA040 without an explicit definition."
+            }
+          ]
+        },
+        {
           "concept_id": "indoor_cleanliness",
           "label": "Interviewer-rated household cleanliness",
           "domain": "Indoor environment",
@@ -71175,6 +71495,26 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
               "caveat": "FD033_W3 reports the maximum benefit payable after a severe workplace accident, conditional on FD032_W3=Yes. Preserve yuan amount, the insurance-selection route, and wave-specific wording; this is a reported benefit ceiling, not a health outcome or observed compensation."
+            }
+          ]
+        },
+        {
+          "concept_id": "mobile_payment_use",
+          "label": "Mobile payment use",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w4_2",
+              "label": "Payment with Mobile Phone",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "1=Yes; 2=No",
+              "value_semantics": "Self-reported mobile-payment use (examples include Alipay and WeChat Pay); this item is routed after DA056 option 10 (Used the Internet). Preserve route and eligible denominator.",
+              "mapping_status": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+              "caveat": "Self-reported mobile-payment use (examples include Alipay and WeChat Pay); this item is routed after DA056 option 10 (Used the Internet). Preserve route and eligible denominator."
             }
           ]
         },
@@ -72083,6 +72423,26 @@
           ]
         },
         {
+          "concept_id": "wechat_moments_posting",
+          "label": "Posting to WeChat Moments",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w4_4",
+              "label": "Use Wechat Moments",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "1=Yes; 2=No",
+              "value_semantics": "Self-reported WeChat Moments posting, asked only when the respondent uses WeChat. Preserve that route and the eligible denominator; skipped answers are not No.",
+              "mapping_status": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; conditional on WeChat use",
+              "caveat": "Self-reported WeChat Moments posting, asked only when the respondent uses WeChat. Preserve that route and the eligible denominator; skipped answers are not No."
+            }
+          ]
+        },
+        {
           "concept_id": "household_food_purchaser",
           "label": "Primary household food purchaser",
           "domain": "Household context",
@@ -72751,16 +73111,6 @@
               "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
             },
             {
-              "code": "da056_s10",
-              "label": "Activities in Last Month",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
-              "mapping_status": "Official codebook response labels reviewed; preserve original category and routing",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
-            },
-            {
               "code": "da056_s11",
               "label": "Activities in Last Month",
               "module": "Health_Status_and_Functioning",
@@ -72853,146 +73203,6 @@
             {
               "code": "da056_s9",
               "label": "Activities in Last Month",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
-              "mapping_status": "Official codebook response labels reviewed; preserve original category and routing",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
-            },
-            {
-              "code": "da056_w3_s1",
-              "label": "How to Use Internet",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
-              "mapping_status": "Official codebook response labels reviewed; preserve original category and routing",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
-            },
-            {
-              "code": "da056_w3_s2",
-              "label": "How to Use Internet",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
-              "mapping_status": "Official codebook response labels reviewed; preserve original category and routing",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
-            },
-            {
-              "code": "da056_w3_s3",
-              "label": "How to Use Internet",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
-              "mapping_status": "Official codebook response labels reviewed; preserve original category and routing",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
-            },
-            {
-              "code": "da056_w3_s4",
-              "label": "How to Use Internet",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
-              "mapping_status": "Official codebook response labels reviewed; preserve original category and routing",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
-            },
-            {
-              "code": "da056_w3_s5",
-              "label": "How to Use Internet",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
-              "mapping_status": "Official codebook response labels reviewed; preserve original category and routing",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
-            },
-            {
-              "code": "da056_w4_1_s1",
-              "label": "Activities with Internet",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
-              "mapping_status": "Official codebook response labels reviewed; preserve original category and routing",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
-            },
-            {
-              "code": "da056_w4_1_s2",
-              "label": "Activities with Internet",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
-              "mapping_status": "Official codebook response labels reviewed; preserve original category and routing",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
-            },
-            {
-              "code": "da056_w4_1_s3",
-              "label": "Activities with Internet",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
-              "mapping_status": "Official codebook response labels reviewed; preserve original category and routing",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
-            },
-            {
-              "code": "da056_w4_1_s4",
-              "label": "Activities with Internet",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
-              "mapping_status": "Official codebook response labels reviewed; preserve original category and routing",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
-            },
-            {
-              "code": "da056_w4_1_s5",
-              "label": "Activities with Internet",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
-              "mapping_status": "Official codebook response labels reviewed; preserve original category and routing",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
-            },
-            {
-              "code": "da056_w4_1_s6",
-              "label": "Activities with Internet",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
-              "mapping_status": "Official codebook response labels reviewed; preserve original category and routing",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
-            },
-            {
-              "code": "da056_w4_2",
-              "label": "Payment with Mobile Phone",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
-              "mapping_status": "Official codebook response labels reviewed; preserve original category and routing",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
-            },
-            {
-              "code": "da056_w4_3",
-              "label": "Use Wechat",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
-              "mapping_status": "Official codebook response labels reviewed; preserve original category and routing",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
-            },
-            {
-              "code": "da056_w4_4",
-              "label": "Use Wechat Moments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
@@ -74279,6 +74489,26 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
               "caveat": "Farm-module status item. 2011-2015 asks about working for other farmers in wage for at least 10 days in the past year; 2018 says other farmers/employers and get paid. It is a specific paid-farm-work component, not equivalent to the broader agricultural-work question FA001. Preserve the wave-specific eligibility route."
+            }
+          ]
+        },
+        {
+          "concept_id": "wechat_use",
+          "label": "WeChat use",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da056_w4_3",
+              "label": "Use Wechat",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "1=Yes; 2=No",
+              "value_semantics": "Self-reported WeChat use, asked after DA056 option 10 (Used the Internet). A No response routes past the following WeChat Moments question; do not infer a skipped Moments answer as No.",
+              "mapping_status": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+              "caveat": "Self-reported WeChat use, asked after DA056 option 10 (Used the Internet). A No response routes past the following WeChat Moments question; do not infer a skipped Moments answer as No."
             }
           ]
         },

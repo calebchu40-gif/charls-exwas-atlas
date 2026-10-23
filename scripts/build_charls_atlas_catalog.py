@@ -454,7 +454,7 @@ def main() -> None:
                 role.strip(), str(x.get("category", ""))))
 
     def append_audited_crosswalk(file: str, wave_col: str, code_col: str, module_col: str,
-                                 label_col: str, category: str, subcategory: str,
+                                 label_col: str, category, subcategory,
                                  note_col: str | None = None, role: str = "e", role_col: str | None = None) -> None:
         path = Path(__file__).resolve().parents[1] / "audit" / file
         if not path.exists():
@@ -471,8 +471,37 @@ def main() -> None:
             module = canonical_module(wave, code, str(item.get(module_col, "")).strip() or "official crosswalk")
             if module is None:
                 continue
-            key = (wave, code.lower(), module.lower(), role, category, subcategory)
-            broad_key = (wave, code.lower(), module.lower(), role, category)
+            cat = category(item) if callable(category) else category
+            sub = subcategory(item) if callable(subcategory) else subcategory
+            concept = str(item.get("concept_id", "")).strip()
+            if file == "social_exposure_crosswalk_v1.csv" and concept and concept != "social_participation":
+                # Reclassify the existing E row in place. Appending a second
+                # row for the same source field would double-count a testable
+                # exposure and leave stale generic value-label metadata behind.
+                prior = next((row for row in outputs
+                              if str(row.get("Source.Wave", "")) == wave
+                              and str(row.get("Variable.Name", "")).lower() == code.lower()
+                              and str(row.get("Data.File.Name", "")).strip().lower() == module.lower()
+                              and role in str(row.get("epcf", "")).split(",")), None)
+                if prior is not None:
+                    prior.update({
+                        "Variable.Description": str(item.get(label_col, "")).strip() or code,
+                        "category": cat,
+                        "subcategory": sub,
+                        "Candidate.Status": f"audited domain crosswalk candidate; see audit/{file}",
+                        "Concept.ID.Candidates": concept,
+                        "Concept.Label.Candidates": str(item.get("concept_label", "")).strip(),
+                        "Concept.Mapping.Source": f"audit/{file}",
+                        "Concept.Mapping.Status": str(item.get("mapping_status", "")).strip(),
+                        "Concept.Mapping.Caveat": str(item.get("caveat", "")).strip(),
+                        "Value.Labels": str(item.get("value_labels", "")).strip(),
+                        "Value.Label.Source": str(item.get("value_label_source", "")).strip(),
+                        "Value.Label.Review": str(item.get("value_label_status", "")).strip(),
+                        "Harmonization.Status": str(item.get("value_semantics", item.get(note_col, "") if note_col else "")).strip(),
+                    })
+                    continue
+            key = (wave, code.lower(), module.lower(), role, cat, sub)
+            broad_key = (wave, code.lower(), module.lower(), role, cat)
             if key in existing_keys or broad_key in existing_wave_role_category:
                 continue
             description = str(item.get(label_col, "")).strip() or code
@@ -485,17 +514,35 @@ def main() -> None:
                 "Begin.Year": wave, "EndYear": wave, "Component": module,
                 "Use.Constraints": "CHARLS applicant data; access and publication governed by official agreement",
                 "epcf": (str(item.get(role_col, "")).strip() or role) if role_col else role,
-                "category": category, "subcategory": subcategory,
+                "category": cat, "subcategory": sub,
                 "Source.Wave": wave, "Source.Archive": archive,
                 "Candidate.Status": f"audited domain crosswalk candidate; see audit/{file}",
                 "Harmonization.Status": note or "wave-specific source field; cross-wave harmonization remains under review",
                 "Review.Flag": "candidate role is estimand-dependent; do not treat as automatic analytic inclusion",
             })
+            if concept and concept != "social_participation":
+                outputs[-1].update({
+                    "Concept.ID.Candidates": concept,
+                    "Concept.Label.Candidates": str(item.get("concept_label", "")).strip(),
+                    "Concept.Mapping.Source": f"audit/{file}",
+                    "Concept.Mapping.Status": str(item.get("mapping_status", "")).strip(),
+                    "Concept.Mapping.Caveat": str(item.get("caveat", "")).strip(),
+                    "Value.Labels": str(item.get("value_labels", "")).strip(),
+                    "Value.Label.Source": str(item.get("value_label_source", "")).strip(),
+                    "Value.Label.Review": str(item.get("value_label_status", "")).strip(),
+                    "Harmonization.Status": str(item.get("value_semantics", note)).strip() or note,
+                })
             existing_keys.add(key)
             existing_wave_role_category.add(broad_key)
 
+    def social_exposure_category(item: dict) -> str:
+        return "behavior" if item.get("domain") == "internet and digital technology use" else "social determinants"
+
+    def social_exposure_subcategory(item: dict) -> str:
+        return "internet and digital technology use" if item.get("domain") == "internet and digital technology use" else "social relations and care"
+
     append_audited_crosswalk("social_exposure_crosswalk_v1.csv", "wave", "code", "module", "source_label",
-                             "social determinants", "social relations and care", "caveat")
+                             social_exposure_category, social_exposure_subcategory, "caveat")
     append_audited_crosswalk("formal_schooling_lifecourse_crosswalk_v1.csv", "wave", "code", "module", "source_label",
                              "social determinants", "formal schooling history and timing", "caveat")
     append_audited_crosswalk("partner_context_crosswalk_v1.csv", "wave", "code", "module", "source_label",
@@ -517,6 +564,11 @@ def main() -> None:
             code = str(item.get(code_col, "")).strip()
             concept = str(item.get(concept_col, "")).strip()
             if not wave or not code or wave not in WAVES or not concept:
+                continue
+            if file == "social_exposure_crosswalk_v1.csv" and concept != "social_participation" and item.get("domain") == "internet and digital technology use":
+                # The audited social crosswalk above already adds this source
+                # field in its reviewed digital-behavior category. Do not add
+                # a second legacy social-determinants row for the same field.
                 continue
             if (file == "household_sale_proceeds_allocation_crosswalk_v1.csv"
                     and concept != "house_sale_proceeds_allocation_percent_2013_2015"):

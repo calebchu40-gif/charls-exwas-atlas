@@ -17,8 +17,7 @@ def main() -> None:
     if "value_label_status" not in crosswalk:
         crosswalk["value_label_status"] = ""
     selected = crosswalk[
-        crosswalk["concept_id"].eq("social_participation")
-        & crosswalk["wave"].isin(WAVES)
+        crosswalk["wave"].isin(WAVES)
         & crosswalk["code"].str.lower().str.startswith("da056")
     ].copy()
     if len(selected) != 41:
@@ -30,11 +29,15 @@ def main() -> None:
         text = source.read_text(encoding="utf-8", errors="replace").lower()
         if code not in text:
             raise SystemExit(f"Official Codebook field not found: {wave}/{code}")
+        is_digital_concept = str(row.get("concept_id", "")) != "social_participation"
         label_status = (
+            str(row.get("value_label_status", "")) if is_digital_concept else
             "official Codebook identifies selected activity/device option; respondent-level storage, "
             "unselected state, and eligible denominator are unresolved; no response-value labels assigned"
         )
-        if code.startswith("da056_w3"):
+        if is_digital_concept:
+            semantics = str(row.get("value_semantics", ""))
+        elif code.startswith("da056_w3"):
             semantics = (
                 "Official 2015 Codebook identifies the selected internet-device option for this field. "
                 "The listed number is an option/slot identifier in the descriptive table; it does not "
@@ -56,11 +59,12 @@ def main() -> None:
                 "absence; verify released-data coding and the eligible denominator before analysis."
             )
         row["value_labels"] = ""
-        row["value_label_status"] = label_status
-        row["value_label_source"] = f"sources_official/CHARLS_{wave}_Codebook_extracted.txt"
-        row["value_semantics"] = semantics
-        row["mapping_status"] = label_status
-        row["caveat"] = semantics
+        if not is_digital_concept:
+            row["value_label_status"] = label_status
+            row["value_label_source"] = f"sources_official/CHARLS_{wave}_Codebook_extracted.txt"
+            row["value_semantics"] = semantics
+            row["mapping_status"] = label_status
+            row["caveat"] = semantics
         if not row.get("questionnaire_source"):
             questionnaire = "CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt" if wave == "2011" else f"CHARLS_{wave}_Questionnaire_extracted.txt"
             row["questionnaire_source"] = f"sources_official/{questionnaire}"

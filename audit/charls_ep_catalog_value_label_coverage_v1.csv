@@ -79,7 +79,7 @@ c,measurement metadata,unstructured other-specify response text,7,7,0
 c,measurement metadata,unstructured other-use response text,4,4,0
 c,measurement metadata,unsupported prior-wave disease-awareness slots,15,15,0
 e,behavior,alcohol use,73,73,41
-e,behavior,internet and digital technology use,15,15,0
+e,behavior,internet and digital technology use,38,38,15
 e,behavior,physical activity,84,84,84
 e,behavior,sleep,25,25,7
 e,behavior,smoking and tobacco,51,51,26
@@ -109,7 +109,7 @@ e,social determinants,"personal income, wage, and deductions",2,2,0
 e,social determinants,residential and mobility context,1,1,1
 e,social determinants,residential settlement context,3,3,3
 e,social determinants,retirement and employment-transition history,262,262,95
-e,social determinants,social relations and care,292,292,199
+e,social determinants,social relations and care,269,269,217
 e,social determinants,vocational and technical training,9,9,4
 e,social protection,2011 pension source field verified against correct baseline questionnaire,4,4,2
 e,social protection,2015 plan-specific pension participation context,6,6,6
