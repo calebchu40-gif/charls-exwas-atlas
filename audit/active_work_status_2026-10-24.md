@@ -40,6 +40,14 @@ The public C metadata page was clarified on 2026-10-24 after review of its user-
 
 For efficient progress, batch metadata extraction by questionnaire module, generate auditable source mappings, and validate in one pipeline run per batch. Keep ambiguous items as unresolved candidates with precise route notes instead of delaying a whole module or forcing harmonization.
 
+## 2026-10-24 continued: BB004 deployment and BB005 review
+
+GitHub Pages Deploy #90 for commit `bad4879` completed successfully. The BB004 C-metadata wording now uses `HOLD FOR SOURCE VALIDATION` without implying that the field was added to the formal E/P `DO NOT ANALYZE` lock list; that list remains 89 rows.
+
+Reviewed the official 2011, 2013, 2015 and 2018 BB005 questionnaires and Codebooks. Added C-catalog records for all four waves; the earlier candidate seed contained only 2013/2015. The new records preserve the calendar-year measure, questionnaire bounds and conditional route, the 2018 XRType=2 new-interview restriction, and the 2018 current-address BB001_W3 reference versus 2011–2015 permanent-address wording. The 2011 Codebook's generic “Year” label is retained without overclaiming a more specific field label. Codebook means, ranges, OBS counts and participant data were not copied. These fields remain contextual metadata; no E/P concept or association model was created.
+
+The finalize-only pipeline completed and regenerated the C shard to 980 rows. E/P concept and source-mapping counts remain 1,429 and 6,625. All 191 Python tests pass; every static JSON parses, the JavaScript syntax check passes, and `git diff --check` is clean. The new audit is `audit/residential_history_bb005_source_review_2011_2018_2026-10-24.md` and its idempotent updater is registered in both metadata pipeline modes. This BB005 batch is ready to commit and publish; live Pages verification follows deployment.
+
 
 The 2011 Community Part K interviewer-observation block is now represented by four additional distinct context candidates: JK002 socioeconomic status, JK004 built-form organization, JK005 perceived crowding and JK006 disability accessibility. The questionnaire anchors for 1 and 7 are preserved; codes 2–6 are described as intermediate ordinal ratings, not assigned fabricated labels. They remain subjective community-level observations. The community crosswalk now contains 104 concepts and 198 fields; the 2011 E/P metadata co-availability count increased by 844 because four additional E concepts can pair with 211 phenotype concepts in that wave. This is a metadata count only, not sample size or association evidence. See `audit/community_interviewer_observation_review_2026-10-24.md`. The full finalize-only rebuild passed 179 Python tests, JS syntax and `git diff --check`; the 89-row `DO NOT ANALYZE` lock audit remains intact.
 

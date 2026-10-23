@@ -2,6 +2,8 @@
 
 ## 2026-10-24
 
+- Reviewed BB005 residential-history year fields in the 2011, 2013, 2015 and 2018 official questionnaires and Codebooks. Added four wave-specific C metadata records, including previously absent 2011 and 2018 rows; documented conditional routing, the 2018 new-interview restriction, address-reference differences, and release-specific special-value validation. No respondent values or Codebook summary statistics were copied; E/P concept counts and association results remain unchanged.
+- Clarified the BB004 source-validation hold wording, keeping it separate from the formal E/P analysis-lock inventory. The 89-row E/P lock remains intact.
 - Reviewed CHARLS-hosted Harmonized CHARLS Version D documentation as a secondary cross-wave reference. Added a seven-concept field mapping for age, gender, community urbanicity, hukou, self-rated health, BMI, and ADL; clarified its missing-value/construction conventions and survey-design context without copying frequency tables or treating harmonized variables as raw CHARLS measures.
 - Clarified the C metadata page for non-specialist users: covariate candidates are search aids, measurement and routing rows are explanatory metadata, and neither implies a selected adjustment set or completed analysis. Updated labels and cache-busted the page assets.
 - Reviewed 13 remaining 2011 work-module fields against the official questionnaire. Added questionnaire-only option wording where categories are listed, retained numeric release-code uncertainty, and added units, ranges, routes and interviewer instructions for continuous/count fields including 0/999997 handling notes. No questionnaire option order was treated as verified released-data coding.
