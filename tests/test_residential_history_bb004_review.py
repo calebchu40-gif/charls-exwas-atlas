@@ -17,6 +17,7 @@ class ResidentialHistoryBB004ReviewTests(unittest.TestCase):
         self.assertIn("identity conflict", row["Value.Label.Review"])
         self.assertIn("HOLD FOR SOURCE VALIDATION", row["Review.Flag"])
         self.assertIn("same county/city", row["Harmonization.Status"])
+        self.assertNotIn("DO NOT ANALYZE", row["Harmonization.Status"])
 
     def test_later_wave_labels_are_wave_specific_and_routed(self):
         for wave in ("2013", "2015", "2018"):

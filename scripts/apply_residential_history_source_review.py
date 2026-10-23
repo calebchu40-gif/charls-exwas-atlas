@@ -19,7 +19,7 @@ COMMON_REVIEW = "official wave questionnaire and Codebook reviewed; field meanin
 NOTES = {
     "2011": (
         "2011 BB004 has an unresolved official-source identity conflict: the baseline questionnaire asks whether the respondent lived in the same village/community as now when first moving to the permanent address, "
-        "while the 2011 Codebook describes the field as whether the respondent lived in the same county/city as the first move. Keep response labels blank and retain this C record as DO NOT ANALYZE until the released field identity is reconciled. "
+        "while the 2011 Codebook describes the field as whether the respondent lived in the same county/city as the first move. Keep response labels blank and retain this C record on HOLD FOR SOURCE VALIDATION, excluded from analysis until the released field identity is reconciled. "
         "Do not harmonize with later BB004 rows or infer a response meaning from the shared code name."
     ),
     "2013": (
