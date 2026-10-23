@@ -1,14 +1,14 @@
-# Current value-label review queue (2026-10-23)
+# Current value-label review queue (updated 2026-10-24)
 
 This snapshot reads only the public, generated metadata in `site-prototype/dist/catalog_{e,p,c}.json`. It contains no respondent records or response frequencies. “Not yet reviewed” is the catalog value-label review field; it does not mean every row should receive a discrete category label, and it is separate from E/P analysis eligibility.
 
 | Role | Catalog rows | Generic `not yet reviewed` rows |
 |---|---:|---:|
-| E exposure candidates | 4,723 | 0 |
-| P phenotype candidates | 2,067 | 0 |
-| C covariate/measurement metadata | 979 | 202 |
+| E exposure candidates | 4,750 | 0 |
+| P phenotype candidates | 2,068 | 0 |
+| C covariate/measurement metadata | 978 | 187 |
 
-The current E queue contains no rows with a generic pending value-label status. The latest batch audited the final 12 fields across household expenditure, interwave work counts, rental-income status, COVID-period wage direction, occupational classification, and pandemic/work-history items. Several retain specific unresolved source or route caveats and `DO NOT ANALYZE` locks. These are field rows, not independent concepts or tests.
+The current E and P queues contain no rows with a generic pending value-label status. The latest C review covered 11 2018 property-roster location slots and one continuous monthly mortgage-payment field; these now have source-backed role, unit, and scope notes. The remaining 187 C rows require source or role review. Several reviewed E/P rows still retain specific unresolved source or route caveats and `DO NOT ANALYZE` locks. These are field rows, not independent concepts or tests.
 
 ## Processing rule
 
