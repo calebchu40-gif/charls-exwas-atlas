@@ -22,6 +22,10 @@ For 2011, the official baseline questionnaire lists 6=Not applicable for both it
 
 The 2020 questionnaire and Codebook identify I027 as household ground/floor condition: 1=Flat covered, 2=Flat concrete, 3=Uneven. The interviewer is instructed to record it only when inside the respondent's housing and clearly certain; otherwise ask the respondent. These are nominal dwelling-condition categories, not a validated mobility, fall-risk or accessibility measure. Do not impose an ordinal severity scale or interpret the item as an individual's outcome.
 
+## Current-residence move-in timing
+
+The 2020 I002/I003 pair asks when the Household Financial Respondent moved into current housing, despite the Codebook labels “Time House Built” and “Time Interval House Built.” I002 is calendar year with a questionnaire range of 1900–2020 and an interviewer instruction to enter -1 if the respondent cannot answer. I003 is a six-category fallback asked when the year is unclear (0–5 through more than 40 years). Preserve the respondent household referent and two different response formats; neither item measures building construction year. Do not combine I003 into a single year or assume -1 storage without checking the authorized release. Codebook frequencies are excluded.
+
 ## Source files
 
 Wave-specific English questionnaire and Codebook extracts are in `sources_official/`. The 2011 discrepancy is checked against both `CHARLS_2011_Baseline_Questionnaire_official_extracted.txt` and `CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`, plus `CHARLS_2011_Codebook_extracted.txt`. The incremental propagation script is `scripts/apply_housing_context_source_review.py`.

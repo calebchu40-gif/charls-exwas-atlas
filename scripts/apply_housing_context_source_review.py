@@ -33,6 +33,8 @@ REVIEWED = {
     ("2015", "air_cleaner_home", "i027_w3"),
     ("2018", "air_cleaner_home", "i027_w3"),
     ("2020", "floor_condition", "i027"),
+    ("2020", "residence_move_in_time", "i002"),
+    ("2020", "residence_move_in_time", "i003"),
 } | {
     (wave, concept, code)
     for wave in QUESTIONNAIRES
@@ -88,6 +90,13 @@ CONCEPT_CAVEATS = {
         "otherwise ask the respondent. This is a dwelling-condition proxy, not a mobility or fall-risk test. "
         "Preserve the nominal categories; do not infer a severity scale."
     ),
+    "residence_move_in_time": (
+        "2020 I002/I003 refer to when the Household Financial Respondent moved into current housing, not when "
+        "the building was constructed. I002 is a calendar year with questionnaire range 1900–2020 and -1 when "
+        "the respondent cannot answer; I003 is a separate fallback elapsed-time bracket for unclear year. "
+        "Preserve the two response formats and household-person referent; validate special-value storage and "
+        "routing in the authorized release before analysis."
+    ),
 }
 
 FIELD_NOTES = {
@@ -125,6 +134,9 @@ FIELD_NOTES = {
     "floor_condition": {
         "2020": "Official 2020 questionnaire/Codebook reviewed: I027 ground condition; preserve 1=Flat covered, 2=Flat concrete, 3=Uneven. Interviewer records only when in R's housing and certain; otherwise ask R."
     },
+    "residence_move_in_time": {
+        "2020": "Official 2020 questionnaire/Codebook reviewed: I002 is Household Financial Respondent move-in year (1900–2020; interviewer enters -1 if unable to answer); I003 is the separate fallback category for unclear year. Preserve distinct formats; Codebook frequencies are not included."
+    },
 }
 
 
@@ -144,6 +156,18 @@ def validate_sources() -> None:
         if (wave, concept_id, code) == ("2020", "floor_condition", "i027"):
             if "record if interviewer is in r's housing and clearly know the answer, otherwise ask r" not in q:
                 raise ValueError("2020 floor-condition interviewer instruction not found")
+        if (wave, concept_id, code) == ("2020", "residence_move_in_time", "i002"):
+            for phrase in ("when did [ xfinancialresp] move into this housing", "1900, 2020", "enter “-1” if r cannot answer"):
+                if phrase not in q:
+                    raise ValueError(f"2020 move-in-year questionnaire phrase not found: {phrase}")
+            if "i002: time house built" not in cb:
+                raise ValueError("2020 move-in-year Codebook identifier not found")
+        if (wave, concept_id, code) == ("2020", "residence_move_in_time", "i003"):
+            for phrase in ("if respondent is unclear about year", "0-5 years", "more than 40 years"):
+                if phrase not in q:
+                    raise ValueError(f"2020 move-in fallback questionnaire phrase not found: {phrase}")
+            if "i003: time interval house built" not in cb:
+                raise ValueError("2020 move-in fallback Codebook identifier not found")
         if (wave, concept_id, code) in (("2015", "air_cleaner_home", "i027_w3"), ("2018", "air_cleaner_home", "i027_w3")):
             if "does your residence have an air cleaner in your home" not in q:
                 raise ValueError(f"{wave} air-cleaner wording not found")

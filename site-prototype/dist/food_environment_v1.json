@@ -976,7 +976,7 @@
     "concept_id": "residence_move_in_time",
     "label": "Time respondent moved into current housing",
     "domain": "Housing environment",
-    "caveat": "2020 asks when the Household Financial Respondent moved into the current housing, not when the building was constructed. Exact calendar year and fallback elapsed-time category are separate response fields; do not treat either as building age or combine without a validated response-format rule.",
+    "caveat": "2020 I002/I003 refer to when the Household Financial Respondent moved into current housing, not when the building was constructed. I002 is a calendar year with questionnaire range 1900–2020 and -1 when the respondent cannot answer; I003 is a separate fallback elapsed-time bracket for unclear year. Preserve the two response formats and household-person referent; validate special-value storage and routing in the authorized release before analysis.",
     "source_fields": [
       {
         "wave": "2020",
@@ -984,7 +984,8 @@
         "module": "Household_Income",
         "source_label": "Time House Built",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official 2020 questionnaire/Codebook reviewed: I002 is Household Financial Respondent move-in year (1900–2020; interviewer enters -1 if unable to answer); I003 is the separate fallback category for unclear year. Preserve distinct formats; Codebook frequencies are not included. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
       },
       {
         "wave": "2020",
@@ -992,7 +993,8 @@
         "module": "Household_Income",
         "source_label": "Time Interval House Built",
         "value_labels": "1=0-5 years; 2=5-10 years; 3=10-20 years; 4=20-30 years; 5=30-40 years; 6=More than 40 years. Fallback elapsed-time category for the move-in year; preserve separately from i002.",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official 2020 questionnaire/Codebook reviewed: I002 is Household Financial Respondent move-in year (1900–2020; interviewer enters -1 if unable to answer); I003 is the separate fallback category for unclear year. Preserve distinct formats; Codebook frequencies are not included. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
       }
     ]
   },

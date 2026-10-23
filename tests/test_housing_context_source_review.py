@@ -44,6 +44,8 @@ class HousingContextSourceReviewTests(unittest.TestCase):
             ("2015", "air_cleaner_home", "i027_w3"),
             ("2018", "air_cleaner_home", "i027_w3"),
             ("2020", "floor_condition", "i027"),
+            ("2020", "residence_move_in_time", "i002"),
+            ("2020", "residence_move_in_time", "i003"),
         } | {
             (wave, concept, code)
             for wave in ("2011", "2013", "2015", "2018", "2020")
@@ -129,6 +131,18 @@ class HousingContextSourceReviewTests(unittest.TestCase):
             encoding="utf-8"
         )
         self.assertIn("2020 floor-condition interviewer instruction not found", script)
+
+    def test_2020_move_in_time_formats_are_reviewed_separately(self):
+        concept = next(c for c in self.site if c["concept_id"] == "residence_move_in_time")
+        fields = {f["code"].lower(): f for f in concept["source_fields"]}
+        self.assertIn("not when the building was constructed", concept["caveat"])
+        self.assertIn("I003 is a separate fallback", concept["caveat"])
+        self.assertIn("1900–2020", concept["caveat"])
+        self.assertIn("-1", concept["caveat"])
+        self.assertIn("Official 2020 questionnaire/Codebook reviewed", fields["i002"]["note"])
+        self.assertIn("Official 2020 questionnaire/Codebook reviewed", fields["i003"]["note"])
+        self.assertIn("1=0-5 years", fields["i003"]["value_labels"])
+        self.assertNotIn("Freq.", fields["i003"]["note"])
 
 
 if __name__ == "__main__":

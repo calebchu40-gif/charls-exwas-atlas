@@ -96295,8 +96295,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "2020 asks when the Household Financial Respondent moved into the current housing, not when the building was constructed. Exact calendar year and fallback elapsed-time category are separate response fields; do not treat either as building age or combine without a validated response-format rule."
+              "mapping_status": "official 2020 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "2020 I002/I003 refer to when the Household Financial Respondent moved into current housing, not when the building was constructed. I002 is a calendar year with questionnaire range 1900–2020 and -1 when the respondent cannot answer; I003 is a separate fallback elapsed-time bracket for unclear year. Preserve the two response formats and household-person referent; validate special-value storage and routing in the authorized release before analysis."
             },
             {
               "code": "i003",
@@ -96305,8 +96305,8 @@
               "unit": "",
               "value_labels": "1=0-5 years; 2=5-10 years; 3=10-20 years; 4=20-30 years; 5=30-40 years; 6=More than 40 years. Fallback elapsed-time category for the move-in year; preserve separately from i002.",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "2020 asks when the Household Financial Respondent moved into the current housing, not when the building was constructed. Exact calendar year and fallback elapsed-time category are separate response fields; do not treat either as building age or combine without a validated response-format rule."
+              "mapping_status": "official 2020 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "2020 I002/I003 refer to when the Household Financial Respondent moved into current housing, not when the building was constructed. I002 is a calendar year with questionnaire range 1900–2020 and -1 when the respondent cannot answer; I003 is a separate fallback elapsed-time bracket for unclear year. Preserve the two response formats and household-person referent; validate special-value storage and routing in the authorized release before analysis."
             }
           ]
         },
