@@ -189,6 +189,13 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertIn("prior-interview recall route retained", change.get("value_label_status", ""))
         control = next(row for row in rows if row.get("wave") == "2018" and row.get("code", "").lower() == "da010_w2_1_1_")
         self.assertEqual(control.get("value_labels"), "1=Yes; 2=No; 3=Don't Know; 99=Never Had the Disease")
+        for code, expected in (("da010_w2_2_1_", "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease"), ("da010_w2_1_1_", "1=Yes; 2=No; 3=Don't Know; 99=Never Had the Disease")):
+            catalog_row = next(
+                row for row in self.catalog
+                if row.get("Source.Wave") == "2018" and row.get("Variable.Name", "").lower() == code
+            )
+            self.assertEqual(catalog_row.get("Value.Labels"), expected)
+            self.assertIn("eligible denominator require validation", catalog_row.get("Value.Label.Review", ""))
 
     def test_unreviewed_chronic_ancillary_fields_are_not_marked_as_reviewed(self):
         import csv
