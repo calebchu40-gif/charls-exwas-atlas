@@ -4,15 +4,15 @@
   "files": {
     "food_environment_v1.json": {
       "fields": 161,
-      "filled": 35,
-      "existing": 71,
+      "filled": 0,
+      "existing": 106,
       "no_match": 55,
       "ambiguous": 0
     },
     "social_exposures_v1.json": {
       "fields": 281,
-      "filled": 184,
-      "existing": 9,
+      "filled": 0,
+      "existing": 193,
       "no_match": 88,
       "ambiguous": 0
     }

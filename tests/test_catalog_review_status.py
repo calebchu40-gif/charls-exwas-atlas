@@ -65,6 +65,23 @@ class CatalogReviewStatusTests(unittest.TestCase):
                 self.assertTrue(all(not row.get("Value.Labels", "") for row in rows), (wave, code))
                 self.assertTrue(all("not prostate cancer" in row.get("Harmonization.Status", "") for row in rows), (wave, code))
 
+    def test_cancer_site_option_slots_can_be_reviewed_without_inventing_response_codes(self):
+        examples = {
+            ("2011", "da017s13"): "option 13=Prostate",
+            ("2011", "da017s14"): "option 14=Testicle",
+            ("2013", "da017s2"): "option 2=Oral cavity",
+            ("2013", "da017s14"): "option 14=Testicle",
+            ("2013", "da017s21"): "option 21=Non-Hodgkin lymphoma",
+            ("2015", "da017s14"): "option 14=Testicle",
+        }
+        for (wave, code), option in examples.items():
+            rows = [row for row in self.catalog if row.get("Source.Wave") == wave and row.get("Variable.Name", "").lower() == code]
+            self.assertTrue(rows, (wave, code))
+            self.assertTrue(all(option in row.get("Value.Label.Review", "") for row in rows), (wave, code))
+            self.assertTrue(all("storage codes remain unknown" in row.get("Value.Label.Review", "") for row in rows), (wave, code))
+            self.assertTrue(all(not row.get("Value.Labels", "") for row in rows), (wave, code))
+            self.assertTrue(all("DA017 option list" in row.get("Value.Label.Source", "") for row in rows), (wave, code))
+
     def test_located_pension_codebook_fields_are_not_generic_pending_labels(self):
         examples = [
             ("2011", "fn004"),

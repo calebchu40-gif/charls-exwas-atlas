@@ -70,8 +70,8 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "The Organ Having Cancer",
         "value_labels": "",
-        "value_label_status": "official codebook reports no observed categories; option index follows CHARLS questionnaire list; wave-specific confirmation pending; preserve wave-specific selected-slot/missing semantics",
-        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "value_label_status": "official questionnaire confirms DA017 option 2=Oral cavity; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf; DA017 option list",
         "source_archive": "CHARLS2013_Dataset.zip"
       },
       {
@@ -599,8 +599,8 @@
         "module": "health_status_and_functioning",
         "source_label": "The Prostate Had or Having Cancer",
         "value_labels": "",
-        "value_label_status": "official codebook reports no observed categories; 2011 option position follows baseline questionnaire DA017 list; no affirmative category observed; preserve wave-specific selected-slot/missing semantics",
-        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "value_label_status": "official questionnaire confirms DA017 option 13=Prostate; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured); DA017 option list",
         "source_archive": "household_and_community_questionnaire_data.rar"
       },
       {
@@ -648,8 +648,8 @@
         "module": "health_status_and_functioning",
         "source_label": "The Testicle Had or Having Cancer",
         "value_labels": "",
-        "value_label_status": "official codebook reports no observed categories; 2011 option position follows baseline questionnaire DA017 list; no affirmative category observed; preserve wave-specific selected-slot/missing semantics",
-        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured)",
+        "value_label_status": "official questionnaire confirms DA017 option 14=Testicle; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "audit/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc, Word p.64 (DA017; conditional on DA007=4; all-that-apply, includes primary and metastatic sites; ask even if cured); DA017 option list",
         "source_archive": "household_and_community_questionnaire_data.rar"
       },
       {
@@ -658,8 +658,8 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "The Organ Having Cancer",
         "value_labels": "",
-        "value_label_status": "official codebook reports no observed categories; option index follows CHARLS questionnaire list; wave-specific confirmation pending; preserve wave-specific selected-slot/missing semantics",
-        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "value_label_status": "official questionnaire confirms DA017 option 14=Testicle; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf; DA017 option list",
         "source_archive": "CHARLS2013_Dataset.zip"
       },
       {
@@ -668,8 +668,8 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "The Organ Having Cancer",
         "value_labels": "",
-        "value_label_status": "official codebook reports no observed categories; option index follows CHARLS questionnaire list; wave-specific confirmation pending; preserve wave-specific selected-slot/missing semantics",
-        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf",
+        "value_label_status": "official questionnaire confirms DA017 option 14=Testicle; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; CHARLS_2015_Questionnaire.pdf; DA017 option list",
         "source_archive": "CHARLS2015r.zip"
       },
       {
@@ -1001,8 +1001,8 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "The Organ Having Cancer",
         "value_labels": "",
-        "value_label_status": "official codebook reports no observed categories; option index follows CHARLS questionnaire list; wave-specific confirmation pending; preserve wave-specific selected-slot/missing semantics",
-        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf",
+        "value_label_status": "official questionnaire confirms DA017 option 21=Non-Hodgkin lymphoma; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; CHARLS_2013_Questionnaire.pdf; DA017 option list",
         "source_archive": "CHARLS2013_Dataset.zip"
       },
       {

@@ -19,6 +19,15 @@ QUESTIONNAIRES = {
     "2015": "CHARLS_2015_Questionnaire.pdf",
     "2018": "CHARLS_2018_Questionnaire.pdf",
 }
+# A codebook entry saying "No Observations" is not evidence for a response
+# value label. For these rows, the official questionnaire confirms only which
+# numbered DA017 option the field represents; release-file storage remains
+# unknown and the value-label cell must stay blank.
+QUESTIONNAIRE_CONFIRMED_EMPTY_OPTIONS = {
+    ("2011", "da017s13"), ("2011", "da017s14"),
+    ("2013", "da017s2"), ("2013", "da017s14"), ("2013", "da017s21"),
+    ("2015", "da017s14"),
+}
 SITES = [
     "Brain", "Oral cavity", "Larynx", "Other pharynx", "Thyroid", "Lung", "Breast",
     "Oesophagus", "Stomach", "Liver", "Pancreas", "Kidney", "Prostate", "Testicle",
@@ -79,8 +88,12 @@ def main() -> None:
                 raise ValueError(f"Site label mismatch in official codebook: {wave} {code}; expected {site}; got {labels}")
             if not labels:
                 response_labels = ""
-                status = ("official codebook reports no observed categories; 2011 option position follows baseline questionnaire DA017 list; no affirmative category observed"
-                          if wave == "2011" else "official codebook reports no observed categories; option index follows CHARLS questionnaire list; wave-specific confirmation pending")
+                if (wave, code) in QUESTIONNAIRE_CONFIRMED_EMPTY_OPTIONS:
+                    status = (f"official questionnaire confirms DA017 option {index}={site}; codebook reports no observed categories; "
+                              "no response value label assigned; unselected/storage codes remain unknown")
+                else:
+                    status = ("official codebook reports no observed categories; 2011 option position follows baseline questionnaire DA017 list; no affirmative category observed"
+                              if wave == "2011" else "official codebook reports no observed categories; option index follows CHARLS questionnaire list; wave-specific confirmation pending")
             elif not site_values:
                 response_labels = "; ".join(f"{value}={label}" for value, label in labels)
                 status = ("official codebook shows 0=No and no observed affirmative site category; 2011 questionnaire DA017 confirms this site option position"
@@ -95,6 +108,9 @@ def main() -> None:
                 status += "; questionnaire confirms all-that-apply site item"
             else:
                 status += "; preserve wave-specific selected-slot/missing semantics"
+            source_reference = f"{BOOKS[wave].relative_to(ROOT).as_posix()}; {QUESTIONNAIRES[wave]}"
+            if (wave, code) in QUESTIONNAIRE_CONFIRMED_EMPTY_OPTIONS:
+                source_reference += "; DA017 option list"
             caveat = (
                 "Conditional on reported cancer diagnosis/known-history route; includes current or past cancer. "
                 "The 2018 question includes primary and metastatic sites, so a selected site does not establish a primary tumor location. "
@@ -104,7 +120,7 @@ def main() -> None:
                 "wave": wave, "code": code, "concept_id": concept_id, "concept_label": concept_label,
                 "domain": "chronic disease ancillary", "module": module, "source_label": variable_label,
                 "value_labels": response_labels, "value_label_status": status,
-                "value_label_source": f"{BOOKS[wave].relative_to(ROOT).as_posix()}; {QUESTIONNAIRES[wave]}",
+                "value_label_source": source_reference,
                 "source_archive": ARCHIVES[wave],
                 "mapping_status": "official site-specific cancer history item; conditional route; candidate phenotype only",
                 "construct": "reported cancer-site history", "subtype": site,
@@ -113,7 +129,7 @@ def main() -> None:
             source_fields.append({
                 "wave": wave, "code": code, "module": module, "source_label": variable_label,
                 "value_labels": response_labels, "value_label_status": status,
-                "value_label_source": f"{BOOKS[wave].relative_to(ROOT).as_posix()}; {QUESTIONNAIRES[wave]}",
+                "value_label_source": source_reference,
                 "source_archive": ARCHIVES[wave],
             })
         items.append({

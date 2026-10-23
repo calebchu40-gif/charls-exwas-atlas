@@ -838,6 +838,7 @@ def main() -> None:
     # without an explicit reviewed status stay blank in the E/P directory.
     root = Path(__file__).resolve().parents[1]
     label_map: dict[tuple[str, str], set[tuple[str, str]]] = {}
+    reviewed_status_without_value_label: dict[tuple[str, str], tuple[str, str]] = {}
 
     def add_reviewed_labels(file: str, wave_col: str, code_col: str, label_col: str,
                             status_col: str | None = None, source_col: str | None = None,
@@ -857,6 +858,24 @@ def main() -> None:
                 continue
             ref = str(item.get(source_col, "")).strip() if source_col else f"audit/{file}"
             label_map.setdefault((wave, code), set()).add((label, ref or f"audit/{file}"))
+
+    def add_reviewed_status_without_value_label(file: str, wave_col: str, code_col: str,
+                                                status_col: str, source_col: str,
+                                                accepted_status: re.Pattern[str]) -> None:
+        """Expose source review when metadata is known but no response value is observed."""
+        path = root / "audit" / file
+        if not path.exists():
+            return
+        tab = pd.read_csv(path, dtype=str, encoding="utf-8-sig").fillna("")
+        for item in tab.to_dict(orient="records"):
+            status = str(item.get(status_col, "")).strip()
+            if not accepted_status.search(status):
+                continue
+            wave = str(item.get(wave_col, "")).strip()
+            code = str(item.get(code_col, "")).strip().lower()
+            if not wave or not code:
+                continue
+            reviewed_status_without_value_label[(wave, code)] = (status, str(item.get(source_col, "")).strip())
 
     official_review = re.compile(r"official codebook (?:item )?response labels reviewed", re.I)
     add_reviewed_labels("behavior_exposure_variable_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official codebook response labels reviewed|official selector code reviewed;", re.I))
@@ -911,7 +930,8 @@ def main() -> None:
     add_reviewed_labels("household_transfer_none_option_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire/Codebook option label reviewed; frequencies omitted", re.I))
     add_reviewed_labels("social_context_remainder_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire and codebook categories reviewed; frequency counts omitted", re.I))
     add_reviewed_labels("stroke_timing_metadata_crosswalk_v1.csv", "wave", "code", "value_labels", "mapping_status", "source_document", re.compile(r"official codebook/questionnaire response-format field", re.I))
-    add_reviewed_labels("cancer_site_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official codebook (?:category verified|reports no observed categories|shows 0=No)", re.I))
+    add_reviewed_labels("cancer_site_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official (?:codebook (?:category verified|reports no observed categories|shows 0=No)|questionnaire confirms DA017 option)", re.I))
+    add_reviewed_status_without_value_label("cancer_site_crosswalk_v1.csv", "wave", "code", "value_label_status", "value_label_source", re.compile(r"official questionnaire confirms DA017 option", re.I))
     add_reviewed_labels("disability_history_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official codebook|official (?:2018 )?codebook", re.I))
     add_reviewed_labels("chronic_disease_ancillary_variable_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire confirms response options", re.I))
     add_reviewed_labels("assistive_device_phenotype_crosswalk_v1.csv", "wave", "code", "value_labels", "mapping_status", "value_label_source", re.compile(r"official questionnaire and codebook response option labels verified", re.I))
@@ -1130,6 +1150,11 @@ def main() -> None:
     out["Value.Labels"] = [existing or reviewed for existing, reviewed in zip(out["Value.Labels"].fillna(""), reviewed_labels)]
     out["Value.Label.Source"] = [existing or reviewed for existing, reviewed in zip(out["Value.Label.Source"].fillna(""), reviewed_sources)]
     out["Value.Label.Review"] = ["conflict" if conflict else ("officially reviewed" if reviewed or source else "not yet reviewed") for conflict, reviewed, source in zip(label_conflicts, reviewed_labels, out["Value.Label.Source"])]
+    for (wave, code), (status, source_ref) in reviewed_status_without_value_label.items():
+        selected = out["Source.Wave"].astype(str).eq(wave) & out["Variable.Name"].str.lower().eq(code)
+        blank_value = selected & out["Value.Labels"].eq("")
+        out.loc[blank_value, "Value.Label.Source"] = source_ref
+        out.loc[blank_value, "Value.Label.Review"] = status
     awareness_review_path = root / "audit" / "chronic_disease_ancillary_variable_mapping_v1.csv"
     if awareness_review_path.exists():
         awareness_review = pd.read_csv(awareness_review_path, dtype=str, encoding="utf-8-sig").fillna("")
