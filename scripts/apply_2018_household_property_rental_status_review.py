@@ -41,7 +41,7 @@ def update_json(path):
     if seen!=set(FIELDS):raise ValueError(f"{path}: missing {sorted(set(FIELDS)-seen)}")
     for r in sel:
         row={};apply(row,str(r["Variable.Name"]).lower());r.update({k:v for k,v in row.items() if k in ("Value.Labels","Value.Label.Source","Value.Label.Review","Concept.Unit.Candidates","Unit","Harmonization.Status","value_labels","value_label_source","value_label_review","candidate_concept_units","harmonization_status")})
-    path.write_text(json.dumps(rows,ensure_ascii=False,indent=2)+"\n" if path.name=="catalog.json" else json.dumps(rows,ensure_ascii=False,separators=(",",":")),encoding="utf-8");return len(sel)
+    path.write_text(json.dumps(rows,ensure_ascii=False,separators=(",",":")),encoding="utf-8");return len(sel)
 
 
 def main():
