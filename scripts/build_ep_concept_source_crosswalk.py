@@ -585,10 +585,23 @@ overlap_rules = [
     ("last_job_business_workforce_size_2018", "last_self_employed_business_employee_count_2018", "same_measurement_alias", "Both concepts map to the same 2018 FL012_W4 employee-count question, asked on the prior self-employed business route (FL001=2). Canonicalize to one field-level concept; do not count it twice or confuse it with current-business workforce size."),
 ]
 rule_map = {tuple(sorted((left, right))): (kind, note) for left, right, kind, note in overlap_rules}
+digital_concepts = {
+    "internet_use_social_activity", "internet_device_desktop", "internet_device_laptop",
+    "internet_device_tablet", "internet_device_cellphone", "internet_device_other",
+    "internet_activity_chat", "internet_activity_news", "internet_activity_video",
+    "internet_activity_games", "internet_activity_financial_management",
+    "internet_activity_other", "mobile_payment_use", "wechat_use",
+    "wechat_moments_posting",
+}
 relationship_rows = []
 for row in collision_rows:
     ids = row["Candidate.Concept.IDs"].split("; ")
     rule = rule_map.get(tuple(sorted(ids)))
+    if rule is None and "social_participation" in ids and digital_concepts.intersection(ids):
+        rule = (
+            "specific_digital_option_within_social_participation_checklist",
+            "The same wave-specific source field is represented as a specific internet/device/activity concept and as an option in the broader social-participation checklist. Preserve the source item, route, and option identity; do not count the duplicate concept links as independent exposures. For selected-option fields, absence is not No; verify released-data storage and the eligible denominator before analysis.",
+        )
     if rule:
         kind, note = rule
         review_status = "relationship classified from official item wording/labels; verify analytic routing/denominator and any recode before analysis"

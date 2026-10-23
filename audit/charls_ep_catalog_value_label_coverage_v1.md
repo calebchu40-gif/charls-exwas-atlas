@@ -2,8 +2,8 @@
 
 更新：2026-10-24。由`scripts/summarize_value_label_coverage.py`从当前字段目录和覆盖CSV自动生成。
 
-- E/P字段—角色—类别目录行：6,690；不同波次—字段码：6,572。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
-- 有非空官方/已审标签文本的E/P目录行：3,354；不同波次—字段码：3,327。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
+- E/P字段—角色—类别目录行：6,685；不同波次—字段码：6,568。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
+- 有非空官方/已审标签文本的E/P目录行：3,323；不同波次—字段码：3,297。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
 - 明确标为`conflict`的E/P字段码：0；详情按主目录波次和变量码检索。
 - 问卷/Codebook编码差异尚未调和并锁定`DO NOT ANALYZE`的E/P字段：2011 `fb010`。此项独立于上面的精确`conflict`标签计数。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -12,23 +12,23 @@
 
 |角色|网站类别|字段—角色—类别行（非互斥）|有标签文本行|子类别数|
 |---|---|---:|---:|---:|
-|e|behavior|271|173|5|
+|e|behavior|267|169|5|
 |e|behavioral exposures|2|0|1|
 |e|community context|198|69|1|
 |e|early-life and family socioeconomic context|3|3|1|
 |e|environmental perception|1|1|1|
 |e|family and intergenerational context|6|6|1|
 |e|food and household environment|161|88|1|
-|e|housing and built environment|481|34|2|
+|e|housing and built environment|480|33|2|
 |e|social determinants|2,132|1,007|20|
-|e|social protection|1,331|452|30|
+|e|social protection|1,331|426|30|
 |p|anthropometric|24|0|1|
 |p|biochemistry|32|0|1|
 |p|blood pressure|54|0|1|
 |p|chronic disease|248|240|1|
 |p|chronic disease ancillary|664|520|70|
 |p|cognition|338|305|1|
-|p|health and symptoms|162|155|4|
+|p|health and symptoms|162|156|4|
 |p|healthcare access|108|15|2|
 |p|mental health|50|50|1|
 |p|physical function|266|169|7|
@@ -37,16 +37,16 @@
 
 |审核状态|E/P目录行|
 |---|---:|
-|officially reviewed|2,683|
-|not yet reviewed|779|
-|official codebook field located; continuous/count or no categorical labels|608|
+|officially reviewed|2,653|
+|official codebook field located; continuous/count or no categorical labels|727|
+|not yet reviewed|719|
 |codebook field located; continuous/open response or no categorical labels|371|
 |continuous measure metadata available|208|
 |official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories|208|
 |numeric/time unit metadata available; no discrete labels assigned|151|
 |official Codebook numeric/count response located; no discrete answer labels|129|
 |audited measurement component; derive concept per crosswalk|108|
-|Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding|98|
+|Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding|97|
 |连续值/字段结构；代码本未提供离散值标签|93|
 |official 2011 questionnaire identifies Yuan amount period and household-member roster slot; continuous amount with no discrete response categories; authorized-release storage scale and special values remain unverified|80|
 |official 2018 Codebook response categories transcribed; frequencies omitted; questionnaire route retained; respondent release coding and eligible denominator require validation|68|
@@ -57,7 +57,6 @@
 |official Codebook lists numeric summary; no categorical response menu in this entry|52|
 |official selected-option label; checkbox slot, absence is not a negative response|42|
 |代码本逐值标签已核|38|
-|official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned|33|
 |continuous component, not a categorical code; component unit reviewed against wave-specific official codebook|32|
 |official questionnaire and Codebook option identity reviewed; participant-level No/unselected storage and denominator unresolved; no response-value labels assigned|30|
 |连续计数；参照期/机构槽位依波次；极值待核|29|

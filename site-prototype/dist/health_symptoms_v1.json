@@ -1700,6 +1700,26 @@
     "caveat": "候选字段的题型和响应类别未证明等价；2013是昨日疼痛等级，其他波需检查选项与参照期后再决定能否建统一严重程度指标。"
   },
   {
+    "concept_id": "subjective_life_expectancy",
+    "label": "主观预期寿命可能性",
+    "domain": "主观健康预期",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "da029",
+        "source_label": "Life Expectancy",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "结局概念候选；受访者对达到XFAgePossibility所示年龄的主观可能性判断；该阈值由年龄分组生成，必须与DA029一同解释。它不是实际生存结局或客观寿命预测；保留五级原始回答和年龄阈值，不建立跨波等价或衍生分数。",
+        "value_labels": "1=Almost Impossible; 2=Not Very Likely; 3=Maybe; 4=Very Likely; 5=Almost Certain; 997=Don’t Know",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "受访者对达到XFAgePossibility所示年龄的主观可能性判断；该阈值由年龄分组生成，必须与DA029一同解释。它不是实际生存结局或客观寿命预测；保留五级原始回答和年龄阈值，不建立跨波等价或衍生分数。"
+  },
+  {
     "concept_id": "vision_distance",
     "label": "自评远视力",
     "domain": "感官功能",

@@ -1270,8 +1270,338 @@
     "caveat": "白酒/啤酒/葡萄酒等多选字段；各波类别编码与名称需由问卷/值标签复核。"
   },
   {
-    "concept_id": "alcohol_frequency_amount",
-    "label": "酒类频率/饮用量",
+    "concept_id": "internet_use_past_month",
+    "label": "过去一个月互联网使用",
+    "domain": "互联网与数字技术",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "da040",
+        "source_label": "Used the Internet",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "自动概念目录中的逐波字段候选；过去一个月互联网使用筛查题；下游设备和活动题有条件路由，结构性缺失不能解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+      }
+    ],
+    "status": "暴露概念候选，未进行跨波剂量统一",
+    "caveat": "过去一个月互联网使用筛查题；下游设备和活动题有条件路由，结构性缺失不能解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release."
+  },
+  {
+    "concept_id": "internet_device_desktop",
+    "label": "互联网接入设备：台式电脑",
+    "domain": "互联网与数字技术",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "da041_s1",
+        "source_label": "Devices to Use Internet: Desktop Computer",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "自动概念目录中的逐波字段候选；DA041多选设备项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release.",
+        "value_labels": "0=No; 1=Desktop computer (selected option)",
+        "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+      }
+    ],
+    "status": "暴露概念候选，未进行跨波剂量统一",
+    "caveat": "DA041多选设备项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release."
+  },
+  {
+    "concept_id": "internet_device_laptop",
+    "label": "互联网接入设备：笔记本电脑",
+    "domain": "互联网与数字技术",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "da041_s2",
+        "source_label": "Devices to Use Internet: Laptop Computer",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "自动概念目录中的逐波字段候选；DA041多选设备项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release.",
+        "value_labels": "0=No; 2=Laptop computer (selected option)",
+        "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+      }
+    ],
+    "status": "暴露概念候选，未进行跨波剂量统一",
+    "caveat": "DA041多选设备项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release."
+  },
+  {
+    "concept_id": "internet_device_tablet",
+    "label": "互联网接入设备：平板电脑",
+    "domain": "互联网与数字技术",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "da041_s3",
+        "source_label": "Devices to Use Internet: Tablet Computer",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "自动概念目录中的逐波字段候选；DA041多选设备项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release.",
+        "value_labels": "0=No; 3=Tablet computer (selected option)",
+        "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+      }
+    ],
+    "status": "暴露概念候选，未进行跨波剂量统一",
+    "caveat": "DA041多选设备项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release."
+  },
+  {
+    "concept_id": "internet_device_cellphone",
+    "label": "互联网接入设备：手机",
+    "domain": "互联网与数字技术",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "da041_s4",
+        "source_label": "Devices to Use Internet: Cellphone",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "自动概念目录中的逐波字段候选；DA041多选设备项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release.",
+        "value_labels": "0=No; 4=Cellphone (selected option)",
+        "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+      }
+    ],
+    "status": "暴露概念候选，未进行跨波剂量统一",
+    "caveat": "DA041多选设备项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release."
+  },
+  {
+    "concept_id": "internet_device_other",
+    "label": "互联网接入设备：其他",
+    "domain": "互联网与数字技术",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "da041_s5",
+        "source_label": "Devices to Use Internet: Others, Please Specify",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "自动概念目录中的逐波字段候选；DA041多选设备项，仅展示‘其他’是否被选中；非标准化补充文字不公开为指标。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release.",
+        "value_labels": "0=No; 5=Other devices, please specify (selected option)",
+        "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No. The “other” selection is retained, but its free-text response is not a standardized measure and is excluded.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+      }
+    ],
+    "status": "暴露概念候选，未进行跨波剂量统一",
+    "caveat": "DA041多选设备项，仅展示‘其他’是否被选中；非标准化补充文字不公开为指标。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release."
+  },
+  {
+    "concept_id": "internet_activity_chat",
+    "label": "互联网活动：聊天",
+    "domain": "互联网与数字技术",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "da042_s1",
+        "source_label": "Activities with Internet: Chatting",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "自动概念目录中的逐波字段候选；DA042多选活动项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release.",
+        "value_labels": "0=No; 1=Chatting (selected option)",
+        "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+      }
+    ],
+    "status": "暴露概念候选，未进行跨波剂量统一",
+    "caveat": "DA042多选活动项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release."
+  },
+  {
+    "concept_id": "internet_activity_news",
+    "label": "互联网活动：阅读新闻",
+    "domain": "互联网与数字技术",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "da042_s2",
+        "source_label": "Activities with Internet: Reading News",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "自动概念目录中的逐波字段候选；DA042多选活动项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release.",
+        "value_labels": "0=No; 2=Reading news (selected option)",
+        "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+      }
+    ],
+    "status": "暴露概念候选，未进行跨波剂量统一",
+    "caveat": "DA042多选活动项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release."
+  },
+  {
+    "concept_id": "internet_activity_video",
+    "label": "互联网活动：观看视频",
+    "domain": "互联网与数字技术",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "da042_s3",
+        "source_label": "Activities with Internet: Watching Videos",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "自动概念目录中的逐波字段候选；DA042多选活动项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release.",
+        "value_labels": "0=No; 3=Watching videos (selected option)",
+        "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+      }
+    ],
+    "status": "暴露概念候选，未进行跨波剂量统一",
+    "caveat": "DA042多选活动项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release."
+  },
+  {
+    "concept_id": "internet_activity_games",
+    "label": "互联网活动：玩游戏",
+    "domain": "互联网与数字技术",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "da042_s4",
+        "source_label": "Activities with Internet: Playing Games",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "自动概念目录中的逐波字段候选；DA042多选活动项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release.",
+        "value_labels": "0=No; 4=Playing games (selected option)",
+        "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+      }
+    ],
+    "status": "暴露概念候选，未进行跨波剂量统一",
+    "caveat": "DA042多选活动项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release."
+  },
+  {
+    "concept_id": "internet_activity_financial_management",
+    "label": "互联网活动：金融管理",
+    "domain": "互联网与数字技术",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "da042_s5",
+        "source_label": "Activities with Internet: Money Management",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "自动概念目录中的逐波字段候选；DA042多选活动项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release.",
+        "value_labels": "0=No; 5=Money management (selected option)",
+        "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+      }
+    ],
+    "status": "暴露概念候选，未进行跨波剂量统一",
+    "caveat": "DA042多选活动项，仅在互联网使用路由内询问；保留正向选项，不将结构性缺失解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release."
+  },
+  {
+    "concept_id": "internet_activity_other",
+    "label": "互联网活动：其他",
+    "domain": "互联网与数字技术",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "da042_s6",
+        "source_label": "Activities with Internet: Others, Please Specify",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "自动概念目录中的逐波字段候选；DA042多选活动项，仅展示‘其他’是否被选中；非标准化补充文字不公开为指标。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release.",
+        "value_labels": "0=No; 6=Others, please specify (selected option)",
+        "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No. The “other” selection is retained, but its free-text response is not a standardized measure and is excluded.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+      }
+    ],
+    "status": "暴露概念候选，未进行跨波剂量统一",
+    "caveat": "DA042多选活动项，仅展示‘其他’是否被选中；非标准化补充文字不公开为指标。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release."
+  },
+  {
+    "concept_id": "mobile_payment_use",
+    "label": "手机支付",
+    "domain": "互联网与数字技术",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "da043",
+        "source_label": "Payment with Mobile Phone",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "自动概念目录中的逐波字段候选；自报手机支付使用；保留原始问法和互联网使用路由，结构性缺失不能解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+      }
+    ],
+    "status": "暴露概念候选，未进行跨波剂量统一",
+    "caveat": "自报手机支付使用；保留原始问法和互联网使用路由，结构性缺失不能解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release."
+  },
+  {
+    "concept_id": "wechat_use",
+    "label": "微信使用",
+    "domain": "互联网与数字技术",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "da044",
+        "source_label": "Use Wechat",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "自动概念目录中的逐波字段候选；自报微信使用；后续朋友圈题依赖此项路由，不能将跳题解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+      }
+    ],
+    "status": "暴露概念候选，未进行跨波剂量统一",
+    "caveat": "自报微信使用；后续朋友圈题依赖此项路由，不能将跳题解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release."
+  },
+  {
+    "concept_id": "wechat_moments_posting",
+    "label": "微信朋友圈发布",
+    "domain": "互联网与数字技术",
+    "source_fields": [
+      {
+        "wave": "2020",
+        "code": "da045",
+        "source_label": "Use Wechat Moments",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2020r.zip",
+        "note": "自动概念目录中的逐波字段候选；朋友圈发布题仅适用于微信使用者；保留路由和适用分母，跳题不解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No. Asked only under the WeChat-use route.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+      }
+    ],
+    "status": "暴露概念候选，未进行跨波剂量统一",
+    "caveat": "朋友圈发布题仅适用于微信使用者；保留路由和适用分母，跳题不解释为否。 A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the authorized release."
+  },
+  {
+    "concept_id": "alcohol_frequency",
+    "label": "饮酒频率",
     "domain": "饮酒",
     "source_fields": [
       {
@@ -1280,25 +1610,12 @@
         "source_label": "The Frequency for Drink Liquor",
         "module": "health_status_and_functioning",
         "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
+        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
         "questionnaire_source": ""
-      },
-      {
-        "wave": "2011",
-        "code": "da073",
-        "source_label": "How Many Liquor Did You Drink LY",
-        "module": "health_status_and_functioning",
-        "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "",
-        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "liang of liquor; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; beverage amounts/frequency are distinct; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA073, Word p.75"
       },
       {
         "wave": "2011",
@@ -1306,51 +1623,12 @@
         "source_label": "How Many Times Per Month Did You Drink Beer LY",
         "module": "health_status_and_functioning",
         "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
+        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
         "questionnaire_source": ""
-      },
-      {
-        "wave": "2011",
-        "code": "da075",
-        "source_label": "Bottles or Mugs",
-        "module": "health_status_and_functioning",
-        "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "1=Bottles; 2=Mugs (beer serving unit selection)",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA075, Word p.76"
-      },
-      {
-        "wave": "2011",
-        "code": "da075_1",
-        "source_label": "How Many Bottles of Beer Did You Drink LY",
-        "module": "health_status_and_functioning",
-        "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "",
-        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "number of beer bottles; questionnaire defines 1 bottle as 2.5 mugs and 1 mug as 220 ml; recalls the most recent drinking event in the past year; beverage amounts/frequency are distinct; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA075_1, Word p.76"
-      },
-      {
-        "wave": "2011",
-        "code": "da075_2",
-        "source_label": "How Many Mugs of Beer Did You Drink LY",
-        "module": "health_status_and_functioning",
-        "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "",
-        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "number of beer mugs; questionnaire defines 1 mug as 220 ml; recalls the most recent drinking event in the past year; beverage amounts/frequency are distinct; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA075_2, Word p.76"
       },
       {
         "wave": "2011",
@@ -1358,7 +1636,7 @@
         "source_label": "How Often Did You Drink Wine Per Month LY",
         "module": "health_status_and_functioning",
         "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
+        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
@@ -1366,43 +1644,17 @@
         "questionnaire_source": ""
       },
       {
-        "wave": "2011",
-        "code": "da077",
-        "source_label": "How Many Liang of Wine Did You Drink the Last Time You Drank LY",
-        "module": "health_status_and_functioning",
-        "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "",
-        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "liang of wine/rice wine; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; beverage amounts/frequency are distinct; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA077, question page not yet indexed"
-      },
-      {
         "wave": "2013",
         "code": "da072",
         "source_label": "Drink Liquor Frequency",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
+        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
         "questionnaire_source": ""
-      },
-      {
-        "wave": "2013",
-        "code": "da073",
-        "source_label": "How Many Liang of Liquor Did You Drink",
-        "module": "Health_Status_and_Functioning",
-        "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "",
-        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
-        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_semantics": "liang of liquor; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; beverage amounts/frequency are distinct; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3282"
       },
       {
         "wave": "2013",
@@ -1410,51 +1662,12 @@
         "source_label": "Beer",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
+        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
         "questionnaire_source": ""
-      },
-      {
-        "wave": "2013",
-        "code": "da075",
-        "source_label": "How Much Beer Did You Drink",
-        "module": "Health_Status_and_Functioning",
-        "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "1=Bottles; 2=Mugs (beer serving unit selection)",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
-        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3296"
-      },
-      {
-        "wave": "2013",
-        "code": "da075_1",
-        "source_label": "Bottles",
-        "module": "Health_Status_and_Functioning",
-        "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "",
-        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
-        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_semantics": "number of beer bottles; questionnaire defines 1 bottle as 2.5 mugs and 1 mug as 220 ml; recalls the most recent drinking event in the past year; beverage amounts/frequency are distinct; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3296"
-      },
-      {
-        "wave": "2013",
-        "code": "da075_2",
-        "source_label": "Mugs",
-        "module": "Health_Status_and_Functioning",
-        "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "",
-        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
-        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_semantics": "number of beer mugs; questionnaire defines 1 mug as 220 ml; recalls the most recent drinking event in the past year; beverage amounts/frequency are distinct; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3296"
       },
       {
         "wave": "2013",
@@ -1462,25 +1675,12 @@
         "source_label": "Wine or Rice Wine",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
+        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
         "questionnaire_source": ""
-      },
-      {
-        "wave": "2013",
-        "code": "da077",
-        "source_label": "How Many Liang of Wine Did You Drink",
-        "module": "Health_Status_and_Functioning",
-        "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "",
-        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
-        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_semantics": "liang of wine/rice wine; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; beverage amounts/frequency are distinct; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3311"
       },
       {
         "wave": "2015",
@@ -1488,25 +1688,12 @@
         "source_label": "Drink Liquor Frequency",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2015r.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
+        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
         "questionnaire_source": ""
-      },
-      {
-        "wave": "2015",
-        "code": "da073",
-        "source_label": "How Many Liang of Liquor Did You Drink",
-        "module": "Health_Status_and_Functioning",
-        "source_archive": "CHARLS2015r.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "",
-        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
-        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_semantics": "liang of liquor; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; beverage amounts/frequency are distinct; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2684"
       },
       {
         "wave": "2015",
@@ -1514,51 +1701,12 @@
         "source_label": "Beer",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2015r.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
+        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
         "questionnaire_source": ""
-      },
-      {
-        "wave": "2015",
-        "code": "da075",
-        "source_label": "How Much Beer Did You Drink",
-        "module": "Health_Status_and_Functioning",
-        "source_archive": "CHARLS2015r.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "1=Bottles; 2=Mugs (beer serving unit selection)",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
-        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2698"
-      },
-      {
-        "wave": "2015",
-        "code": "da075_1",
-        "source_label": "Bottles",
-        "module": "Health_Status_and_Functioning",
-        "source_archive": "CHARLS2015r.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "",
-        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
-        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_semantics": "number of beer bottles; questionnaire defines 1 bottle as 2.5 mugs and 1 mug as 220 ml; recalls the most recent drinking event in the past year; beverage amounts/frequency are distinct; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2698"
-      },
-      {
-        "wave": "2015",
-        "code": "da075_2",
-        "source_label": "Mugs",
-        "module": "Health_Status_and_Functioning",
-        "source_archive": "CHARLS2015r.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "",
-        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
-        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_semantics": "number of beer mugs; questionnaire defines 1 mug as 220 ml; recalls the most recent drinking event in the past year; beverage amounts/frequency are distinct; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2698"
       },
       {
         "wave": "2015",
@@ -1566,25 +1714,12 @@
         "source_label": "Wine or Rice Wine",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2015r.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
+        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
         "questionnaire_source": ""
-      },
-      {
-        "wave": "2015",
-        "code": "da077",
-        "source_label": "How Many Liang of Wine Did You Drink",
-        "module": "Health_Status_and_Functioning",
-        "source_archive": "CHARLS2015r.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "",
-        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
-        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_semantics": "liang of wine/rice wine; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; beverage amounts/frequency are distinct; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2713"
       },
       {
         "wave": "2018",
@@ -1592,25 +1727,12 @@
         "source_label": "Frequncy Drinking Liquor Per Month in the Last Year",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2018r.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
+        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
         "questionnaire_source": ""
-      },
-      {
-        "wave": "2018",
-        "code": "da073",
-        "source_label": "Liang of Liquor Drank Last Time",
-        "module": "Health_Status_and_Functioning",
-        "source_archive": "CHARLS2018r.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "",
-        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
-        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "value_semantics": "liang of liquor; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; beverage amounts/frequency are distinct; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3158"
       },
       {
         "wave": "2018",
@@ -1618,51 +1740,12 @@
         "source_label": "Frequncy Drinking Beer per Month in the Last Year",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2018r.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
+        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
         "questionnaire_source": ""
-      },
-      {
-        "wave": "2018",
-        "code": "da075",
-        "source_label": "Amount of Beer Drank Last Time",
-        "module": "Health_Status_and_Functioning",
-        "source_archive": "CHARLS2018r.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "1=Bottles; 2=Mugs (beer serving unit selection)",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
-        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3173"
-      },
-      {
-        "wave": "2018",
-        "code": "da075_1",
-        "source_label": "Bottle",
-        "module": "Health_Status_and_Functioning",
-        "source_archive": "CHARLS2018r.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "",
-        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
-        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "value_semantics": "number of beer bottles; questionnaire defines 1 bottle as 2.5 mugs and 1 mug as 220 ml; recalls the most recent drinking event in the past year; beverage amounts/frequency are distinct; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3173"
-      },
-      {
-        "wave": "2018",
-        "code": "da075_2",
-        "source_label": "Mug",
-        "module": "Health_Status_and_Functioning",
-        "source_archive": "CHARLS2018r.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "",
-        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
-        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "value_semantics": "number of beer mugs; questionnaire defines 1 mug as 220 ml; recalls the most recent drinking event in the past year; beverage amounts/frequency are distinct; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3173"
       },
       {
         "wave": "2018",
@@ -1670,7 +1753,7 @@
         "source_label": "Frequncy Drinking Wine per Month in the Last Year",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2018r.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
+        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
@@ -1678,25 +1761,12 @@
         "questionnaire_source": ""
       },
       {
-        "wave": "2018",
-        "code": "da077",
-        "source_label": "Liang of Wine Drank Last Time",
-        "module": "Health_Status_and_Functioning",
-        "source_archive": "CHARLS2018r.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
-        "value_labels": "",
-        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
-        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "value_semantics": "liang of wine/rice wine; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; beverage amounts/frequency are distinct; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3189"
-      },
-      {
         "wave": "2020",
         "code": "da052",
         "source_label": "Frequncy Drinking Per Month in the Last Year",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2020r.zip",
-        "note": "自动概念目录中的逐波字段候选；啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。",
+        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
@@ -1705,7 +1775,224 @@
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
-    "caveat": "啤酒、白酒、葡萄酒的单位和回忆期会变化；不可直接相加为酒精克数，除非有单位/酒精度依据。"
+    "caveat": "按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。"
+  },
+  {
+    "concept_id": "alcohol_quantity_last_drink",
+    "label": "过去一年最近一次饮酒量",
+    "domain": "饮酒",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da073",
+        "source_label": "How Many Liquor Did You Drink LY",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "自动概念目录中的逐波字段候选；连续字段记录过去一年最近一次饮用事件；烈酒和葡萄酒/米酒以两计，啤酒以瓶或杯分列。与频率题分开呈现，不换算乙醇克数、不跨饮品相加，除非另有可靠酒精度和饮品体积依据。",
+        "value_labels": "",
+        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "value_semantics": "liang of liquor; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA073, Word p.75"
+      },
+      {
+        "wave": "2011",
+        "code": "da075_1",
+        "source_label": "How Many Bottles of Beer Did You Drink LY",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "自动概念目录中的逐波字段候选；连续字段记录过去一年最近一次饮用事件；烈酒和葡萄酒/米酒以两计，啤酒以瓶或杯分列。与频率题分开呈现，不换算乙醇克数、不跨饮品相加，除非另有可靠酒精度和饮品体积依据。",
+        "value_labels": "",
+        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "value_semantics": "number of beer bottles; questionnaire defines 1 bottle as 2.5 mugs and 1 mug as 220 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA075_1, Word p.76"
+      },
+      {
+        "wave": "2011",
+        "code": "da075_2",
+        "source_label": "How Many Mugs of Beer Did You Drink LY",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "自动概念目录中的逐波字段候选；连续字段记录过去一年最近一次饮用事件；烈酒和葡萄酒/米酒以两计，啤酒以瓶或杯分列。与频率题分开呈现，不换算乙醇克数、不跨饮品相加，除非另有可靠酒精度和饮品体积依据。",
+        "value_labels": "",
+        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "value_semantics": "number of beer mugs; questionnaire defines 1 mug as 220 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA075_2, Word p.76"
+      },
+      {
+        "wave": "2011",
+        "code": "da077",
+        "source_label": "How Many Liang of Wine Did You Drink the Last Time You Drank LY",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "自动概念目录中的逐波字段候选；连续字段记录过去一年最近一次饮用事件；烈酒和葡萄酒/米酒以两计，啤酒以瓶或杯分列。与频率题分开呈现，不换算乙醇克数、不跨饮品相加，除非另有可靠酒精度和饮品体积依据。",
+        "value_labels": "",
+        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "value_semantics": "liang of wine/rice wine; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA077, question page not yet indexed"
+      },
+      {
+        "wave": "2013",
+        "code": "da073",
+        "source_label": "How Many Liang of Liquor Did You Drink",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "自动概念目录中的逐波字段候选；连续字段记录过去一年最近一次饮用事件；烈酒和葡萄酒/米酒以两计，啤酒以瓶或杯分列。与频率题分开呈现，不换算乙醇克数、不跨饮品相加，除非另有可靠酒精度和饮品体积依据。",
+        "value_labels": "",
+        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "value_semantics": "liang of liquor; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3282"
+      },
+      {
+        "wave": "2013",
+        "code": "da075_1",
+        "source_label": "Bottles",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "自动概念目录中的逐波字段候选；连续字段记录过去一年最近一次饮用事件；烈酒和葡萄酒/米酒以两计，啤酒以瓶或杯分列。与频率题分开呈现，不换算乙醇克数、不跨饮品相加，除非另有可靠酒精度和饮品体积依据。",
+        "value_labels": "",
+        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "value_semantics": "number of beer bottles; questionnaire defines 1 bottle as 2.5 mugs and 1 mug as 220 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3296"
+      },
+      {
+        "wave": "2013",
+        "code": "da075_2",
+        "source_label": "Mugs",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "自动概念目录中的逐波字段候选；连续字段记录过去一年最近一次饮用事件；烈酒和葡萄酒/米酒以两计，啤酒以瓶或杯分列。与频率题分开呈现，不换算乙醇克数、不跨饮品相加，除非另有可靠酒精度和饮品体积依据。",
+        "value_labels": "",
+        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "value_semantics": "number of beer mugs; questionnaire defines 1 mug as 220 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3296"
+      },
+      {
+        "wave": "2013",
+        "code": "da077",
+        "source_label": "How Many Liang of Wine Did You Drink",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "自动概念目录中的逐波字段候选；连续字段记录过去一年最近一次饮用事件；烈酒和葡萄酒/米酒以两计，啤酒以瓶或杯分列。与频率题分开呈现，不换算乙醇克数、不跨饮品相加，除非另有可靠酒精度和饮品体积依据。",
+        "value_labels": "",
+        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "value_semantics": "liang of wine/rice wine; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3311"
+      },
+      {
+        "wave": "2015",
+        "code": "da073",
+        "source_label": "How Many Liang of Liquor Did You Drink",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "自动概念目录中的逐波字段候选；连续字段记录过去一年最近一次饮用事件；烈酒和葡萄酒/米酒以两计，啤酒以瓶或杯分列。与频率题分开呈现，不换算乙醇克数、不跨饮品相加，除非另有可靠酒精度和饮品体积依据。",
+        "value_labels": "",
+        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "value_semantics": "liang of liquor; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2684"
+      },
+      {
+        "wave": "2015",
+        "code": "da075_1",
+        "source_label": "Bottles",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "自动概念目录中的逐波字段候选；连续字段记录过去一年最近一次饮用事件；烈酒和葡萄酒/米酒以两计，啤酒以瓶或杯分列。与频率题分开呈现，不换算乙醇克数、不跨饮品相加，除非另有可靠酒精度和饮品体积依据。",
+        "value_labels": "",
+        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "value_semantics": "number of beer bottles; questionnaire defines 1 bottle as 2.5 mugs and 1 mug as 220 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2698"
+      },
+      {
+        "wave": "2015",
+        "code": "da075_2",
+        "source_label": "Mugs",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "自动概念目录中的逐波字段候选；连续字段记录过去一年最近一次饮用事件；烈酒和葡萄酒/米酒以两计，啤酒以瓶或杯分列。与频率题分开呈现，不换算乙醇克数、不跨饮品相加，除非另有可靠酒精度和饮品体积依据。",
+        "value_labels": "",
+        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "value_semantics": "number of beer mugs; questionnaire defines 1 mug as 220 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2698"
+      },
+      {
+        "wave": "2015",
+        "code": "da077",
+        "source_label": "How Many Liang of Wine Did You Drink",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "自动概念目录中的逐波字段候选；连续字段记录过去一年最近一次饮用事件；烈酒和葡萄酒/米酒以两计，啤酒以瓶或杯分列。与频率题分开呈现，不换算乙醇克数、不跨饮品相加，除非另有可靠酒精度和饮品体积依据。",
+        "value_labels": "",
+        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "value_semantics": "liang of wine/rice wine; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2713"
+      },
+      {
+        "wave": "2018",
+        "code": "da073",
+        "source_label": "Liang of Liquor Drank Last Time",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "自动概念目录中的逐波字段候选；连续字段记录过去一年最近一次饮用事件；烈酒和葡萄酒/米酒以两计，啤酒以瓶或杯分列。与频率题分开呈现，不换算乙醇克数、不跨饮品相加，除非另有可靠酒精度和饮品体积依据。",
+        "value_labels": "",
+        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "value_semantics": "liang of liquor; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3158"
+      },
+      {
+        "wave": "2018",
+        "code": "da075_1",
+        "source_label": "Bottle",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "自动概念目录中的逐波字段候选；连续字段记录过去一年最近一次饮用事件；烈酒和葡萄酒/米酒以两计，啤酒以瓶或杯分列。与频率题分开呈现，不换算乙醇克数、不跨饮品相加，除非另有可靠酒精度和饮品体积依据。",
+        "value_labels": "",
+        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "value_semantics": "number of beer bottles; questionnaire defines 1 bottle as 2.5 mugs and 1 mug as 220 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3173"
+      },
+      {
+        "wave": "2018",
+        "code": "da075_2",
+        "source_label": "Mug",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "自动概念目录中的逐波字段候选；连续字段记录过去一年最近一次饮用事件；烈酒和葡萄酒/米酒以两计，啤酒以瓶或杯分列。与频率题分开呈现，不换算乙醇克数、不跨饮品相加，除非另有可靠酒精度和饮品体积依据。",
+        "value_labels": "",
+        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "value_semantics": "number of beer mugs; questionnaire defines 1 mug as 220 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3173"
+      },
+      {
+        "wave": "2018",
+        "code": "da077",
+        "source_label": "Liang of Wine Drank Last Time",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2018r.zip",
+        "note": "自动概念目录中的逐波字段候选；连续字段记录过去一年最近一次饮用事件；烈酒和葡萄酒/米酒以两计，啤酒以瓶或杯分列。与频率题分开呈现，不换算乙醇克数、不跨饮品相加，除非另有可靠酒精度和饮品体积依据。",
+        "value_labels": "",
+        "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "value_semantics": "liang of wine/rice wine; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3189"
+      }
+    ],
+    "status": "暴露概念候选，未进行跨波剂量统一",
+    "caveat": "连续字段记录过去一年最近一次饮用事件；烈酒和葡萄酒/米酒以两计，啤酒以瓶或杯分列。与频率题分开呈现，不换算乙醇克数、不跨饮品相加，除非另有可靠酒精度和饮品体积依据。"
   },
   {
     "concept_id": "alcohol_start_stop",

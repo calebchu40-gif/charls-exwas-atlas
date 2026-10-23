@@ -648,3 +648,7 @@
 2015,ha026_w2_5_25_s8,e,c,,,,,,,sale_proceeds_selector_metadata
 2015,ha026_w2_5_25_s9,e,c,,,,,,,sale_proceeds_selector_metadata
 2015,ha026_w2_5i_2_,e,c,,,,,,,sale_proceeds_other_use_text
+2011,da075,e,c,,啤酒饮用量单位选择,sources_official/CHARLS_2011_Codebook_extracted.txt,Bottles or Mugs,da075只选择后续啤酒饮用量按瓶还是杯记录；它描述测量单位，不是饮酒行为暴露。与da075_1/da075_2的连续饮用量字段分开保留。,official Codebook unit-selector labels reviewed; no frequencies copied,beer_amount_unit_selector
+2013,da075,e,c,,啤酒饮用量单位选择,sources_official/CHARLS_2013_Codebook_extracted.txt,Beer,da075只选择后续啤酒饮用量按瓶还是杯记录；它描述测量单位，不是饮酒行为暴露。与da075_1/da075_2的连续饮用量字段分开保留。,official Codebook unit-selector labels reviewed; no frequencies copied,beer_amount_unit_selector
+2015,da075,e,c,,啤酒饮用量单位选择,sources_official/CHARLS_2015_Codebook_extracted.txt,How Much Beer Did You Drink,da075只选择后续啤酒饮用量按瓶还是杯记录；它描述测量单位，不是饮酒行为暴露。与da075_1/da075_2的连续饮用量字段分开保留。,official Codebook unit-selector labels reviewed; no frequencies copied,beer_amount_unit_selector
+2018,da075,e,c,,啤酒饮用量单位选择,sources_official/CHARLS_2018_Codebook_extracted.txt,Amount of Beer Drank Last Time,da075只选择后续啤酒饮用量按瓶还是杯记录；它描述测量单位，不是饮酒行为暴露。与da075_1/da075_2的连续饮用量字段分开保留。,official Codebook unit-selector labels reviewed; no frequencies copied,beer_amount_unit_selector

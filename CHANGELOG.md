@@ -2,6 +2,12 @@
 
 ## 2026-10-24
 
+- Made the full metadata rebuild reproducible for the pension and digital-behavior reviews. Pension Codebook fields with no discrete response menu now retain an explicit source-located/no-category status; the bracket-endpoint review runs after supplementary pension fields are added. The separately reviewed 23-row 2011–2018 internet/digital crosswalk is restored after the social builder, and DA056 review now distinguishes its 41 social-participation fields from 8 linked digital fields. Shared DA056 concepts are classified as related checklist options, not independent exposures.
+
+- Split alcohol-frequency and last-drink quantity concepts, removed the beer-unit selector from the E candidate mapping, and retained it as C measurement metadata. Added 2020 DA029 as a single-wave subjective life-expectancy phenotype with the official five-level response labels and XFAgePossibility interpretation note; it is not treated as survival or harmonized with earlier-wave prostate-illness DA029.
+
+- Rebuilt all public metadata shards: E=4,739, P=2,104 and C=990 wave-field rows; 1,429 unique E/P concepts (1,150 E, 288 P, including nine dual-role concepts) and 6,643 concept-source rows. Wave-level E/P metadata co-availability is 121,318 / 126,727 / 130,608 / 101,757 / 13,906 for 2011/2013/2015/2018/2020; these are not sample sizes. All 89 formal analysis locks remain intact, no association models were fitted, and no respondent records or frequencies were used. The full build, all 220 Python tests, Python compilation, JavaScript syntax and JSON parsing passed.
+
 - Reconciled a 30-row gap in the CI E/P concept-link check: blood-pressure readings and knee-height measurements now join the reviewed objective-measurement map by exact wave and variable code, including objective phenotype categories outside `physical function`. The final E/P source catalog has no rows without a candidate concept link; candidate status remains distinct from analysis eligibility.
 
 - Reviewed CHARLS 2011/2013/2015 timed-walk fields `qg002`/`qg003` against official questionnaires and Codebooks. The 2.5 m usual-pace test has two separate elapsed-time trials in seconds; ages 60+ and route/safety eligibility are retained; 993/999 remain non-completion status codes, not seconds. The 2011 manual's LI item identifiers are not asserted as identical to the Codebook's QG release fields. See `audit/walking_speed_source_review_2011_2015_2026-10-24.md`.

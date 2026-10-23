@@ -6,8 +6,8 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 STATUS = (
-    "official Codebook identifies selected activity/device option; respondent-level storage, "
-    "unselected state, and eligible denominator are unresolved; no response-value labels assigned"
+    "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; "
+    "unselected state and eligible denominator are unresolved; no response-value labels assigned"
 )
 
 
@@ -15,21 +15,25 @@ class SocialParticipationOptionStatusTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         with (ROOT / "audit/social_exposure_crosswalk_v1.csv").open(encoding="utf-8-sig", newline="") as handle:
-            cls.crosswalk = [row for row in csv.DictReader(handle)
-                             if row.get("wave") in {"2011", "2013", "2015"}
-                             and row.get("code", "").lower().startswith("da056")]
+            all_rows = [row for row in csv.DictReader(handle)
+                        if row.get("wave") in {"2011", "2013", "2015"}
+                        and row.get("code", "").lower().startswith("da056")]
+            cls.crosswalk = [row for row in all_rows if row.get("concept_id") == "social_participation"]
+            cls.digital_rows = [row for row in all_rows if row.get("concept_id") != "social_participation"]
         with (ROOT / "audit/charls_atlas_candidate_fields_v0.csv").open(encoding="utf-8-sig", newline="") as handle:
             cls.audit = list(csv.DictReader(handle))
         cls.site = json.loads((ROOT / "site-prototype/dist/catalog_e.json").read_text(encoding="utf-8"))
 
     def test_option_identity_is_not_misrepresented_as_respondent_value_labels(self):
         self.assertEqual(len(self.crosswalk), 41)
+        self.assertEqual(len(self.digital_rows), 8)
         for row in self.crosswalk:
             self.assertEqual(row.get("value_labels"), "")
             self.assertIn("Codebook_extracted.txt", row.get("value_label_source", ""))
             if row.get("concept_id") == "social_participation":
                 self.assertEqual(row.get("value_label_status"), STATUS)
                 self.assertIn("do not infer no from absence", row.get("value_semantics", "").lower())
+        self.assertTrue(all(row.get("value_label_status") == STATUS for row in self.digital_rows))
 
     def test_audit_and_public_e_shard_show_review_state_without_invented_values(self):
         for row in self.crosswalk:

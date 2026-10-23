@@ -3,7 +3,6 @@ conditional own-money outlay on acquired residence,new_house_own_money_purchase_
 conditional own-money outlay on newly acquired residence,new_house_own_money_purchase_outlay_2013,新购住房自有资金支出（2013）,2013,1,ha018
 current respondent/spouse residence total market value,current_home_market_total_value_2013_2015,当前居住房屋市场价值：总价（保留槽位）,"2013,2015",8,ha034_1_1_;ha034_1_2_;ha034_1_3_;ha034_1_4_
 current respondent/spouse residence unit market value,current_home_market_unit_value_2013_2015,当前居住房屋市场价值：单位面积价（保留槽位）,"2013,2015",8,ha034_2_1_;ha034_2_2_;ha034_2_3_;ha034_2_4_
-dwelling condition/amenity,dwelling_air_cleaner_access,住宅是否有空气净化器,2018,1,i027_w3
 dwelling condition/amenity,dwelling_balcony_count,住宅阳台数量,"2011,2013,2015,2018",4,i012_5
 dwelling condition/amenity,dwelling_broadband_access,住宅是否有宽带网络,"2011,2013,2015,2018",4,i024
 dwelling condition/amenity,dwelling_business_use,住宅是否兼作经营场所,"2011,2013,2015,2018",4,i003

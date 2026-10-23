@@ -24,6 +24,21 @@ def questionnaire_source(w,c):
     return f'sources_official/{filename}:L{line}' if line else ''
 frequency='1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day'
 products='1=Smoking a pipe; 2=Smoking self-rolled cigarettes; 3=Filtered cigarette; 4=Unfiltered cigarette; 5=Cigar; 6=Water cigarettes'
+digital_labels={
+ 'da040':'1=Yes; 2=No',
+ 'da041_s1':'0=No; 1=Desktop computer (selected option)',
+ 'da041_s2':'0=No; 2=Laptop computer (selected option)',
+ 'da041_s3':'0=No; 3=Tablet computer (selected option)',
+ 'da041_s4':'0=No; 4=Cellphone (selected option)',
+ 'da041_s5':'0=No; 5=Other devices, please specify (selected option)',
+ 'da042_s1':'0=No; 1=Chatting (selected option)',
+ 'da042_s2':'0=No; 2=Reading news (selected option)',
+ 'da042_s3':'0=No; 3=Watching videos (selected option)',
+ 'da042_s4':'0=No; 4=Playing games (selected option)',
+ 'da042_s5':'0=No; 5=Money management (selected option)',
+ 'da042_s6':'0=No; 6=Others, please specify (selected option)',
+ 'da043':'1=Yes; 2=No', 'da044':'1=Yes; 2=No', 'da045':'1=Yes; 2=No',
+}
 def code(cid,w,c):
     if cid=='smoking_status':
         if c in {'da059','da046'}: return '1=Yes; 2=No'
@@ -65,10 +80,10 @@ def code(cid,w,c):
         if w in {'2011','2013','2015'} and re.fullmatch(r'da068s[123]',c):
             n=int(c[-1]); cat={1:'Liquor, including white liquor/whisky/others',2:'Beer',3:'Wine or rice wine'}[n]
             return f'{n}={cat} (selected option; nonselection code not inferred)'
-    if cid=='alcohol_frequency_amount' and ((w in {'2011','2013','2015','2018'} and c in {'da072','da074','da076'}) or (w=='2020' and c=='da052')):
+    if w=='2020' and c.lower() in digital_labels:
+        return digital_labels[c.lower()]
+    if cid=='alcohol_frequency' and ((w in {'2011','2013','2015','2018'} and c in {'da072','da074','da076'}) or (w=='2020' and c=='da052')):
         return frequency
-    if cid=='alcohol_frequency_amount' and w in {'2011','2013','2015','2018'} and c=='da075':
-        return '1=Bottles; 2=Mugs (beer serving unit selection)'
     if cid=='physical_activity_occurrence':
         return '1=Yes; 2=No'
     if cid=='physical_activity_purpose' and c in {'da051_1_1_','da051_1_2_','da051_1_3_','da037_1_','da037_2_','da037_3_'}:
@@ -127,10 +142,20 @@ for i,r in d.iterrows():
         if cid=='alcohol_start_stop' and c in {'da070','da071'}:
             d.loc[i,'value_label_status']='official selector code reviewed; component order differs in 2011 versus 2013–2018'
             d.loc[i,'value_semantics']='Selector only; paired fields encode age/year according to the wave-specific selector labels. Not an ordinal exposure.'
-        if cid=='smoking_dependence' or (cid=='alcohol_frequency_amount' and c=='da075'): d.loc[i,'questionnaire_source']=questionnaire_source(w,c)
+        if cid=='smoking_dependence': d.loc[i,'questionnaire_source']=questionnaire_source(w,c)
         if cid=='physical_activity_purpose':
             d.loc[i,'value_label_status']='official codebook response labels reviewed; frequencies omitted; descriptive purpose only, not activity dose'
             d.loc[i,'value_semantics']='Purpose of intensive/moderate/light physical activity; descriptive category, not activity occurrence, frequency, duration, or dose. Preserve the wave-specific codebook wording and questionnaire route.'
+        if cid.startswith('internet_') or cid in {'mobile_payment_use','wechat_use','wechat_moments_posting'}:
+            code_key=c.lower()
+            d.loc[i,'value_label_status']='2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained'
+            d.loc[i,'value_label_source']=BOOK(w)
+            d.loc[i,'questionnaire_source']='sources_official/CHARLS_2020_Questionnaire_English_extracted.txt'
+            d.loc[i,'value_semantics']='Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.'
+            if code_key in {'da041_s5','da042_s6'}:
+                d.loc[i,'value_semantics']+=' The “other” selection is retained, but its free-text response is not a standardized measure and is excluded.'
+            if code_key=='da045':
+                d.loc[i,'value_semantics']+=' Asked only under the WeChat-use route.'
     elif cid=='smoking_quantity' and c in {'da063','da050_1','da050_2'}:
         d.loc[i,'value_label_status']='continuous count, not a categorical code; daily cigarette count; 2020 current and pre-quit values are separate'
         d.loc[i,'value_label_source']=BOOK(w)
@@ -162,11 +187,11 @@ for i,r in d.iterrows():
         d.loc[i,'value_label_status']='official codebook positive preload label reviewed; non-preloaded values are not interpreted as No'
         d.loc[i,'value_label_source']=BOOK(w)
         d.loc[i,'value_semantics']='prior-interview smoking status preload; codebook exposes positive preload only; do not infer a negative response from absence'
-    elif cid=='alcohol_frequency_amount' and c in {'da073','da075_1','da075_2','da077'}:
+    elif cid=='alcohol_quantity_last_drink' and c in {'da073','da075_1','da075_2','da077'}:
         unit={'da073':'liang of liquor; questionnaire defines 1 liang as 50 ml','da075_1':'number of beer bottles; questionnaire defines 1 bottle as 2.5 mugs and 1 mug as 220 ml','da075_2':'number of beer mugs; questionnaire defines 1 mug as 220 ml','da077':'liang of wine/rice wine; questionnaire defines 1 liang as 50 ml'}[c]
         d.loc[i,'value_label_status']='continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions'
         d.loc[i,'value_label_source']=BOOK(w)
-        d.loc[i,'value_semantics']=unit+'; recalls the most recent drinking event in the past year; beverage amounts/frequency are distinct; no grams of ethanol derived'
+        d.loc[i,'value_semantics']=unit+'; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived'
         d.loc[i,'questionnaire_source']=questionnaire_source(w,c)
     elif cid=='smoking_dependence' and c=='da066':
         d.loc[i,'value_label_source']=BOOK(w)

@@ -55,7 +55,7 @@ metadata_removed=0
 for wave,code in metadata_keys:
     override = overrides.loc[overrides["wave"].str.lower().eq(wave) & overrides["code"].str.lower().eq(code)].iloc[0]
     old_role = str(override["remove_role"]).lower()
-    if str(override.get("metadata_type", "")).strip().lower() in {"age_year_component_selector", "housing_property_value_measure_selector"}:
+    if str(override.get("metadata_type", "")).strip().lower() in {"age_year_component_selector", "housing_property_value_measure_selector", "beer_amount_unit_selector"}:
         # These explicit concept-linked rows describe the coding of paired
         # age/year fields; their E role is still metadata and must be removed.
         selected=(fields["Source.Wave"].str.lower().eq(wave) & fields["Variable.Name"].str.lower().eq(code) & fields["epcf"].str.lower().eq(old_role))
@@ -137,6 +137,15 @@ for wave,code in metadata_keys:
         fields.loc[metadata_rows,"Candidate.Status"]="C metadata; shared None option for the household GD003 multi-select income-source checklist"
         fields.loc[metadata_rows,"Harmonization.Status"]="not a source-specific exposure; preserve as checklist metadata and do not infer No for each source from blanks"
         fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; do not treat as a fourth transfer exposure or reuse as source-specific No"
+    elif metadata_type == "beer_amount_unit_selector":
+        fields.loc[metadata_rows,"category"]="measurement metadata"
+        fields.loc[metadata_rows,"subcategory"]="beer quantity unit selector"
+        fields.loc[metadata_rows,"Value.Labels"]="1=Bottles; 2=Mugs"
+        fields.loc[metadata_rows,"Value.Label.Source"]=f"sources_official/CHARLS_{wave}_Codebook_extracted.txt"
+        fields.loc[metadata_rows,"Value.Label.Review"]="official Codebook beer-quantity unit selector labels reviewed; frequencies omitted; not a behavior measure"
+        fields.loc[metadata_rows,"Candidate.Status"]="C measurement metadata; DA075 selects the unit used by the subsequent beer-quantity field"
+        fields.loc[metadata_rows,"Harmonization.Status"]="measurement unit selector only; interpret da075_1/da075_2 as the corresponding continuous beer quantity; do not include DA075 in an E/P association or infer a quantity from missing values"
+        fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; use only to interpret beer quantity units"
     elif metadata_type == "wage_deduction_protocol":
         fields.loc[metadata_rows,"category"]="measurement metadata"
         fields.loc[metadata_rows,"subcategory"]="personal wage deduction scope and response-unit selectors"

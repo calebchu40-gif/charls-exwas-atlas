@@ -33,7 +33,7 @@ class Wave5DigitalBehaviorReviewTests(unittest.TestCase):
         digital = kept[0]
         self.assertEqual(digital["subcategory"], "internet and digital technology use")
         self.assertIn("skipped", digital["Harmonization.Status"])
-        self.assertIn("997=Don’t know", kept[-1]["Value.Labels"])
+        self.assertIn("997=don’t know", kept[-1]["Value.Labels"].lower())
         self.assertIn("XFAgePossibility", kept[-1]["Harmonization.Status"])
 
 

@@ -20,8 +20,13 @@ def main() -> None:
         crosswalk["wave"].isin(WAVES)
         & crosswalk["code"].str.lower().str.startswith("da056")
     ].copy()
-    if len(selected) != 41:
-        raise SystemExit(f"Expected 41 2011-2015 DA056 source fields; found {len(selected)}")
+    social_selected = selected[selected["concept_id"].eq("social_participation")]
+    digital_selected = selected[~selected["concept_id"].eq("social_participation")]
+    if (len(social_selected), len(digital_selected)) != (41, 8):
+        raise SystemExit(
+            "Expected 41 social-participation and 8 digital-behavior 2011-2015 "
+            f"DA056 source fields; found {len(social_selected)} and {len(digital_selected)}"
+        )
 
     for idx, row in selected.iterrows():
         wave, code = str(row["wave"]), str(row["code"]).lower()
@@ -31,9 +36,8 @@ def main() -> None:
             raise SystemExit(f"Official Codebook field not found: {wave}/{code}")
         is_digital_concept = str(row.get("concept_id", "")) != "social_participation"
         label_status = (
-            str(row.get("value_label_status", "")) if is_digital_concept else
-            "official Codebook identifies selected activity/device option; respondent-level storage, "
-            "unselected state, and eligible denominator are unresolved; no response-value labels assigned"
+            "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; "
+            "unselected state and eligible denominator are unresolved; no response-value labels assigned"
         )
         if is_digital_concept:
             semantics = str(row.get("value_semantics", ""))
@@ -59,9 +63,9 @@ def main() -> None:
                 "absence; verify released-data coding and the eligible denominator before analysis."
             )
         row["value_labels"] = ""
+        row["value_label_status"] = label_status
+        row["value_label_source"] = f"sources_official/CHARLS_{wave}_Codebook_extracted.txt"
         if not is_digital_concept:
-            row["value_label_status"] = label_status
-            row["value_label_source"] = f"sources_official/CHARLS_{wave}_Codebook_extracted.txt"
             row["value_semantics"] = semantics
             row["mapping_status"] = label_status
             row["caveat"] = semantics
@@ -75,7 +79,8 @@ def main() -> None:
     topic_path = ROOT / "site-prototype" / "dist" / "social_exposures_v1.json"
     topics = json.loads(topic_path.read_text(encoding="utf-8"))
     topic = next(item for item in topics if item.get("concept_id") == "social_participation")
-    lookup = {(str(row.wave), str(row.code).lower()): row for row in selected.itertuples(index=False)}
+    social_selected = selected[selected["concept_id"].eq("social_participation")]
+    lookup = {(str(row.wave), str(row.code).lower()): row for row in social_selected.itertuples(index=False)}
     updated = 0
     for item in topic.get("source_fields", []):
         key = (str(item.get("wave", "")), str(item.get("code", "")).lower())

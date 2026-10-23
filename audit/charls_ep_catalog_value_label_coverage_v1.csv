@@ -9,6 +9,7 @@ c,measurement metadata,2020 current-employer start-date verification flag,1,1,1
 c,measurement metadata,2020 pandemic work-module selection flag,1,1,0
 c,measurement metadata,CAPI-derived survey-home linkage flag,1,1,0
 c,measurement metadata,age/calendar-year response-format selector,14,14,14
+c,measurement metadata,beer quantity unit selector,4,4,4
 c,measurement metadata,blood pressure recent pretest conditions,3,3,3
 c,measurement metadata,chair setup for repeated chair-stand test,4,4,1
 c,measurement metadata,checklist none-option coding,3,3,3
@@ -80,7 +81,7 @@ c,measurement metadata,unresolved release-field identity/data-type discrepancy,1
 c,measurement metadata,unstructured other-specify response text,7,7,0
 c,measurement metadata,unstructured other-use response text,4,4,0
 c,measurement metadata,unsupported prior-wave disease-awareness slots,15,15,0
-e,behavior,alcohol use,73,73,41
+e,behavior,alcohol use,69,69,37
 e,behavior,internet and digital technology use,38,38,30
 e,behavior,physical activity,84,84,84
 e,behavior,sleep,25,25,7
@@ -91,7 +92,7 @@ e,early-life and family socioeconomic context,parent marital and ethnic context,
 e,environmental perception,self-reported air-quality satisfaction,1,1,1
 e,family and intergenerational context,sibling record context,6,3,6
 e,food and household environment,"diet, food security, housing and utilities",161,161,88
-e,housing and built environment,dwelling conditions and household property,478,478,31
+e,housing and built environment,dwelling conditions and household property,477,477,30
 e,housing and built environment,residential setting,3,3,3
 e,social determinants,adult education and lifelong learning,13,13,10
 e,social determinants,annual wage/salary amount reported for household-member roster slots,22,22,0
@@ -133,7 +134,7 @@ e,social protection,institution-pension receipt start-date component,2,2,0
 e,social protection,life-insurance payout amount already received,1,1,0
 e,social protection,old-age subsidy delivery and card/voucher use,10,10,10
 e,social protection,pension amount interval-bound field; unresolved response sequence,6,6,0
-e,social protection,"pension participation, receipt, and benefit details",1140,1140,359
+e,social protection,"pension participation, receipt, and benefit details",1140,1140,333
 e,social protection,pension-source work-unit employer type,2,2,2
 e,social protection,pension-source work-unit reference,2,2,2
 e,social protection,plan-specific coarse location relative to current residence,11,11,11

@@ -1,10 +1,10 @@
 {
   "as_of": "2026-10-24",
-  "crosswalk_files": 75,
-  "candidate_concept_ids": 1428,
-  "exposure_concept_ids_including_dual": 1149,
+  "crosswalk_files": 74,
+  "candidate_concept_ids": 1429,
+  "exposure_concept_ids_including_dual": 1150,
   "phenotype_concept_ids_including_dual": 288,
-  "wave_field_mapping_rows": 6624,
+  "wave_field_mapping_rows": 6643,
   "includes": "all E/P candidate rows from ep_concept_source_crosswalk_v1.csv",
   "excludes": "C-only measurement eligibility rows; verified_code_examples_v1.csv is a separate multiwave lookup",
   "domains": [
@@ -20,8 +20,8 @@
     },
     {
       "file": "audit/behavior_exposure_variable_mapping_v1.csv",
-      "mapping_rows": 230,
-      "concept_ids": 36
+      "mapping_rows": 226,
+      "concept_ids": 37
     },
     {
       "file": "audit/behavior_exposure_variable_mapping_v1.csv | audit/core_concept_coverage_v1.csv",
@@ -100,7 +100,7 @@
     },
     {
       "file": "audit/food_environment_crosswalk_v1.csv",
-      "mapping_rows": 151,
+      "mapping_rows": 152,
       "concept_ids": 27
     },
     {
@@ -217,11 +217,6 @@
       "file": "audit/housing_exposure_variable_mapping_v1.csv",
       "mapping_rows": 477,
       "concept_ids": 38
-    },
-    {
-      "file": "audit/housing_exposure_variable_mapping_v1.csv | audit/food_environment_crosswalk_v1.csv",
-      "mapping_rows": 1,
-      "concept_ids": 1
     },
     {
       "file": "audit/hukou_lifecourse_exposure_crosswalk_v1.csv",
@@ -375,7 +370,7 @@
     },
     {
       "file": "audit/social_exposure_crosswalk_v1.csv",
-      "mapping_rows": 281,
+      "mapping_rows": 304,
       "concept_ids": 26
     },
     {

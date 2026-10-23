@@ -10,10 +10,10 @@
       "ambiguous": 0
     },
     "social_exposures_v1.json": {
-      "fields": 281,
+      "fields": 304,
       "filled": 0,
-      "existing": 226,
-      "no_match": 55,
+      "existing": 241,
+      "no_match": 63,
       "ambiguous": 0
     }
   }

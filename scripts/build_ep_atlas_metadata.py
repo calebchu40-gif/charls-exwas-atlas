@@ -10,14 +10,17 @@ FULL_PIPELINE_SCRIPTS = (
     "build_chronic_disease_ancillary_crosswalk.py",
     "build_chronic_disease_management_crosswalk.py",
     "build_pension_exposure_crosswalk.py",
-    "apply_pension_interval_endpoint_review.py",
     "build_pension_participation_crosswalk.py",
     "build_2015_pension_eligibility_crosswalk.py",
     "build_2011_nrsp_detail_crosswalk.py",
     "build_old_age_support_expectation_crosswalk.py",
     "build_2011_psych_treatment_crosswalk.py",
-    "build_pension_codebook_value_labels.py",
     "build_pension_supplementary_crosswalk.py",
+    "build_pension_codebook_value_labels.py",
+    # The supplementary builder adds the bracket-endpoint source fields that
+    # the review script validates and annotates; run review after the complete
+    # pension family has been assembled.
+    "apply_pension_interval_endpoint_review.py",
     "build_2015_pension_subsidy_delivery_crosswalk.py",
     "build_life_insurance_crosswalk.py",
     "build_personal_income_crosswalk.py",
@@ -79,6 +82,7 @@ FULL_PIPELINE_SCRIPTS = (
     "enrich_behavior_value_labels.py",
     "build_social_exposure_crosswalk.py",
     "apply_social_caregiver_metadata_review.py",
+    "apply_internet_digital_exposure_review.py",
     "apply_social_participation_source_status.py",
     "apply_parent_visit_codebook_labels.py",
     "build_cancer_site_crosswalk.py",
@@ -152,6 +156,10 @@ FULL_PIPELINE_SCRIPTS = (
 # change is limited to catalogue propagation, value-label summaries, the
 # concept-source index, candidate-pair metadata, or final static JSON.
 FINALIZATION_PIPELINE_SCRIPTS = (
+    # Restore the independently reviewed legacy internet-use crosswalk before
+    # any catalog build; the full social builder intentionally regenerates
+    # only the general participation family.
+    "apply_internet_digital_exposure_review.py",
     # Restore the full wave-by-wave master catalog before review scripts run.
     # The prior successful build leaves the public site catalog compacted by
     # site_catalog_shards.py, while these review steps expect one row per wave.

@@ -1757,15 +1757,6 @@
         "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
-        "wave": "2020",
-        "code": "i024",
-        "module": "Household_Income",
-        "source_label": "Air Cleaner",
-        "value_labels": "1=Yes; 2=No",
-        "note": "Official questionnaire/Codebook reviewed: presence of an air cleaner in XFinancialResp's house; 1=Yes/2=No. Questionnaire allows interviewer recording only when in the home and certain, otherwise ask respondent. See audit/housing_context_source_review_2026-10-24.md.",
-        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
-      },
-      {
         "wave": "2018",
         "code": "i027_w3",
         "module": "Housing",
@@ -1773,6 +1764,15 @@
         "value_labels": "1=Yes; 2=No",
         "note": "Official questionnaire/Codebook reviewed: I027_W3 asks whether the residence has an air cleaner; preserve 1=Yes/2=No. See audit/housing_context_source_review_2026-10-24.md.",
         "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2020",
+        "code": "i024",
+        "module": "Household_Income",
+        "source_label": "Air Cleaner",
+        "value_labels": "1=Yes; 2=No",
+        "note": "Official questionnaire/Codebook reviewed: presence of an air cleaner in XFinancialResp's house; 1=Yes/2=No. Questionnaire allows interviewer recording only when in the home and certain, otherwise ask respondent. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
       }
     ]
   },

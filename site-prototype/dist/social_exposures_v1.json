@@ -10,7 +10,7 @@
         "code": "da056s1",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Interacted With Friends",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
         "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
@@ -21,7 +21,7 @@
         "code": "da056s2",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Played Ma-jong/Cards/Chess or Went to Community Club",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
         "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
@@ -32,7 +32,7 @@
         "code": "da056s3",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Provided Help to People Who Lived Apart",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
         "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
@@ -43,7 +43,7 @@
         "code": "da056s4",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Went to Club",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
         "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
@@ -54,7 +54,7 @@
         "code": "da056s5",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Took Part In A Community-related Organization",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
         "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
@@ -65,7 +65,7 @@
         "code": "da056s6",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Voluntary or Charity",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
         "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
@@ -76,7 +76,7 @@
         "code": "da056s7",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Cared for A Sick or Disabled Adult Who Lived Apart",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
         "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
@@ -87,7 +87,7 @@
         "code": "da056s8",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Attended An Educational or Training Course",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
         "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
@@ -98,7 +98,7 @@
         "code": "da056s9",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Stock Investment",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
         "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
@@ -109,9 +109,9 @@
         "code": "da056s10",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Used the Internet",
-        "note": "official 2011 questionnaire identifies DA056 option 10 as Internet use; Codebook does not verify respondent-level storage or unselected coding; frequencies omitted",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "2011 DA056 option 10 identifies internet use as a last-month social activity. The official Codebook summary does not establish respondent-level selected/unselected coding. Preserve the option identity; do not infer No from absence or combine with a direct internet-use screening item.",
+        "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
         "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
@@ -120,7 +120,7 @@
         "code": "da056s11",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Other",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
         "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
@@ -131,7 +131,7 @@
         "code": "da056s12",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of None of These",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
         "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
@@ -142,7 +142,7 @@
         "code": "da056s1",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
@@ -153,7 +153,7 @@
         "code": "da056s2",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
@@ -164,7 +164,7 @@
         "code": "da056s3",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
@@ -175,7 +175,7 @@
         "code": "da056s4",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
@@ -186,7 +186,7 @@
         "code": "da056s5",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
@@ -197,7 +197,7 @@
         "code": "da056s6",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
@@ -208,7 +208,7 @@
         "code": "da056s7",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
@@ -219,7 +219,7 @@
         "code": "da056s8",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
@@ -230,7 +230,7 @@
         "code": "da056s9",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
@@ -241,9 +241,9 @@
         "code": "da056s10",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official 2013 questionnaire identifies DA056 option 10 as Internet use; Codebook does not verify respondent-level storage or unselected coding; frequencies omitted",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "2013 DA056 option 10 identifies internet use as a last-month social activity. The official Codebook summary does not establish respondent-level selected/unselected coding. Preserve the option identity; do not infer No from absence or combine with a direct internet-use screening item.",
+        "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
@@ -252,7 +252,7 @@
         "code": "da056s11",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
@@ -263,7 +263,7 @@
         "code": "da056s12",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
@@ -274,7 +274,7 @@
         "code": "da056s1",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
@@ -285,7 +285,7 @@
         "code": "da056s2",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
@@ -296,7 +296,7 @@
         "code": "da056s3",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
@@ -307,7 +307,7 @@
         "code": "da056s4",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
@@ -318,7 +318,7 @@
         "code": "da056s5",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
@@ -329,7 +329,7 @@
         "code": "da056s6",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
@@ -340,7 +340,7 @@
         "code": "da056s7",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
@@ -351,7 +351,7 @@
         "code": "da056s8",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
@@ -362,7 +362,7 @@
         "code": "da056s9",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
@@ -373,9 +373,9 @@
         "code": "da056s10",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official 2015 questionnaire identifies DA056 option 10 as Internet use; Codebook does not verify respondent-level storage or unselected coding; frequencies omitted",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "2015 DA056 option 10 identifies internet use as a last-month social activity. The official Codebook summary does not establish respondent-level selected/unselected coding. Preserve the option identity; do not infer No from absence or combine with a direct internet-use screening item.",
+        "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
@@ -384,7 +384,7 @@
         "code": "da056s11",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
@@ -395,7 +395,7 @@
         "code": "da056s12",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
         "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
@@ -406,9 +406,9 @@
         "code": "da056_w3s1",
         "module": "Health_Status_and_Functioning",
         "source_label": "Devices Use for Internet",
-        "note": "official 2015 questionnaire and Codebook identify this device option; respondent-level selected/unselected storage is unresolved; no No label inferred",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+        "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
@@ -417,9 +417,9 @@
         "code": "da056_w3s2",
         "module": "Health_Status_and_Functioning",
         "source_label": "Devices Use for Internet",
-        "note": "official 2015 questionnaire and Codebook identify this device option; respondent-level selected/unselected storage is unresolved; no No label inferred",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+        "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
@@ -428,9 +428,9 @@
         "code": "da056_w3s3",
         "module": "Health_Status_and_Functioning",
         "source_label": "Devices Use for Internet",
-        "note": "official 2015 questionnaire and Codebook identify this device option; respondent-level selected/unselected storage is unresolved; no No label inferred",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+        "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
@@ -439,9 +439,9 @@
         "code": "da056_w3s4",
         "module": "Health_Status_and_Functioning",
         "source_label": "Devices Use for Internet",
-        "note": "official 2015 questionnaire and Codebook identify this device option; respondent-level selected/unselected storage is unresolved; no No label inferred",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+        "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
@@ -450,9 +450,9 @@
         "code": "da056_w3s5",
         "module": "Health_Status_and_Functioning",
         "source_label": "Devices Use for Internet",
-        "note": "official 2015 questionnaire and Codebook identify this device option; respondent-level selected/unselected storage is unresolved; no No label inferred",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+        "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
         "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
@@ -570,10 +570,10 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities in Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
+        "value_labels": "0=No; 10=Used the Internet",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_label_status": "officially reviewed"
       },
       {
@@ -606,10 +606,10 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "How to Use Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
+        "value_labels": "0=No; 1=Desktop computer (selected option)",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_label_status": "officially reviewed"
       },
       {
@@ -618,10 +618,10 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "How to Use Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
+        "value_labels": "0=No; 2=Laptop computer (selected option)",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_label_status": "officially reviewed"
       },
       {
@@ -630,10 +630,10 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "How to Use Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
+        "value_labels": "0=No; 3=Tablet computer (selected option)",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_label_status": "officially reviewed"
       },
       {
@@ -642,10 +642,10 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "How to Use Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
+        "value_labels": "0=No; 4=Cellphone (selected option)",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_label_status": "officially reviewed"
       },
       {
@@ -654,10 +654,10 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "How to Use Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
+        "value_labels": "0=No; 5=Other device (selected option)",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_label_status": "officially reviewed"
       },
       {
@@ -666,10 +666,10 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities with Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
+        "value_labels": "0=No; 1=Chatting (selected option)",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_label_status": "officially reviewed"
       },
       {
@@ -678,10 +678,10 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities with Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
+        "value_labels": "0=No; 2=Reading news (selected option)",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_label_status": "officially reviewed"
       },
       {
@@ -690,10 +690,10 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities with Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
+        "value_labels": "0=No; 3=Watching videos (selected option)",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_label_status": "officially reviewed"
       },
       {
@@ -702,10 +702,10 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities with Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
+        "value_labels": "0=No; 4=Playing games (selected option)",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_label_status": "officially reviewed"
       },
       {
@@ -714,10 +714,10 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities with Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
+        "value_labels": "0=No; 5=Money management (selected option)",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_label_status": "officially reviewed"
       },
       {
@@ -726,10 +726,10 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities with Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
+        "value_labels": "0=No; 6=Others, please specify (selected option)",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_label_status": "officially reviewed"
       },
       {
@@ -738,10 +738,10 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Payment with Mobile Phone",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
+        "value_labels": "1=Yes; 2=No",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_label_status": "officially reviewed"
       },
       {
@@ -750,10 +750,10 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Use Wechat",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
+        "value_labels": "1=Yes; 2=No",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_label_status": "officially reviewed"
       },
       {
@@ -762,10 +762,10 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Use Wechat Moments",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
+        "value_labels": "1=Yes; 2=No",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_label_status": "officially reviewed"
       },
       {
@@ -3359,6 +3359,379 @@
         "value_semantics": "官方问卷将志愿者/机构人员列为未来可能帮助者类别；此题属于未来帮助者名册，不等同当前照护。保留逐波原始编码。",
         "questionnaire_source": "",
         "value_label_source": ""
+      }
+    ]
+  },
+  {
+    "concept_id": "internet_use_social_activity",
+    "label": "Internet use as past-month activity",
+    "domain": "internet and digital technology use",
+    "caveat": "2011 DA056 option 10 identifies internet use as a last-month social activity. The official Codebook summary does not establish respondent-level selected/unselected coding. Preserve the option identity; do not infer No from absence or combine with a direct internet-use screening item.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da056s10",
+        "module": "health_status_and_functioning",
+        "source_label": "Internet use (DA056 option 10; past-month activity checklist)",
+        "note": "official 2011 questionnaire identifies DA056 option 10 as Internet use; Codebook does not verify respondent-level storage or unselected coding; frequencies omitted",
+        "value_labels": "",
+        "value_semantics": "2011 DA056 option 10 identifies internet use as a last-month social activity. The official Codebook summary does not establish respondent-level selected/unselected coding. Preserve the option identity; do not infer No from absence or combine with a direct internet-use screening item.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da056s10",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet use (DA056 option 10; past-month activity checklist)",
+        "note": "official 2013 questionnaire identifies DA056 option 10 as Internet use; Codebook does not verify respondent-level storage or unselected coding; frequencies omitted",
+        "value_labels": "",
+        "value_semantics": "2013 DA056 option 10 identifies internet use as a last-month social activity. The official Codebook summary does not establish respondent-level selected/unselected coding. Preserve the option identity; do not infer No from absence or combine with a direct internet-use screening item.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da056s10",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet use (DA056 option 10; past-month activity checklist)",
+        "note": "official 2015 questionnaire identifies DA056 option 10 as Internet use; Codebook does not verify respondent-level storage or unselected coding; frequencies omitted",
+        "value_labels": "",
+        "value_semantics": "2015 DA056 option 10 identifies internet use as a last-month social activity. The official Codebook summary does not establish respondent-level selected/unselected coding. Preserve the option identity; do not infer No from absence or combine with a direct internet-use screening item.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da056_s10",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet use (DA056 option 10; past-month activity checklist)",
+        "note": "official 2018 questionnaire and Codebook labels reviewed; frequencies omitted",
+        "value_labels": "0=No; 10=Used the Internet",
+        "value_semantics": "2018 DA056 asks which social activities occurred in the last month; option 10 is internet use. This is a routed activity checklist item, not a dedicated internet screening question. Preserve the DA056 response route and do not equate it with 2020 DA040 without an explicit definition.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "internet_device_desktop",
+    "label": "Internet access device: desktop computer",
+    "domain": "internet and digital technology use",
+    "caveat": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+    "source_fields": [
+      {
+        "wave": "2015",
+        "code": "da056_w3s1",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet access device: Desktop computer",
+        "note": "official 2015 questionnaire and Codebook identify this device option; respondent-level selected/unselected storage is unresolved; no No label inferred",
+        "value_labels": "",
+        "value_semantics": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da056_w3_s1",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet access device: Desktop computer",
+        "note": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+        "value_labels": "0=No; 1=Desktop computer (selected option)",
+        "value_semantics": "Multi-select internet device item, asked only after the respondent selected DA056 option 10 (Used the Internet). Preserve each device field and route; the other-device free text is not a standardized exposure and is not published.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "internet_device_laptop",
+    "label": "Internet access device: laptop computer",
+    "domain": "internet and digital technology use",
+    "caveat": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+    "source_fields": [
+      {
+        "wave": "2015",
+        "code": "da056_w3s2",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet access device: Laptop computer",
+        "note": "official 2015 questionnaire and Codebook identify this device option; respondent-level selected/unselected storage is unresolved; no No label inferred",
+        "value_labels": "",
+        "value_semantics": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da056_w3_s2",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet access device: Laptop computer",
+        "note": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+        "value_labels": "0=No; 2=Laptop computer (selected option)",
+        "value_semantics": "Multi-select internet device item, asked only after the respondent selected DA056 option 10 (Used the Internet). Preserve each device field and route; the other-device free text is not a standardized exposure and is not published.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "internet_device_tablet",
+    "label": "Internet access device: tablet computer",
+    "domain": "internet and digital technology use",
+    "caveat": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+    "source_fields": [
+      {
+        "wave": "2015",
+        "code": "da056_w3s3",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet access device: Tablet computer",
+        "note": "official 2015 questionnaire and Codebook identify this device option; respondent-level selected/unselected storage is unresolved; no No label inferred",
+        "value_labels": "",
+        "value_semantics": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da056_w3_s3",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet access device: Tablet computer",
+        "note": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+        "value_labels": "0=No; 3=Tablet computer (selected option)",
+        "value_semantics": "Multi-select internet device item, asked only after the respondent selected DA056 option 10 (Used the Internet). Preserve each device field and route; the other-device free text is not a standardized exposure and is not published.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "internet_device_cellphone",
+    "label": "Internet access device: cellphone",
+    "domain": "internet and digital technology use",
+    "caveat": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+    "source_fields": [
+      {
+        "wave": "2015",
+        "code": "da056_w3s4",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet access device: Cellphone",
+        "note": "official 2015 questionnaire and Codebook identify this device option; respondent-level selected/unselected storage is unresolved; no No label inferred",
+        "value_labels": "",
+        "value_semantics": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da056_w3_s4",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet access device: Cellphone",
+        "note": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+        "value_labels": "0=No; 4=Cellphone (selected option)",
+        "value_semantics": "Multi-select internet device item, asked only after the respondent selected DA056 option 10 (Used the Internet). Preserve each device field and route; the other-device free text is not a standardized exposure and is not published.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "internet_device_other",
+    "label": "Internet access device: other device",
+    "domain": "internet and digital technology use",
+    "caveat": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+    "source_fields": [
+      {
+        "wave": "2015",
+        "code": "da056_w3s5",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet access device: Other device",
+        "note": "official 2015 questionnaire and Codebook identify this device option; respondent-level selected/unselected storage is unresolved; no No label inferred",
+        "value_labels": "",
+        "value_semantics": "Multi-select device option asked only after DA056 option 10 (Used the Internet). The Codebook summary identifies the selected option but does not verify respondent-level coding or unselected storage. Preserve the device identity and route; do not infer No from absence.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2018",
+        "code": "da056_w3_s5",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet access device: Other device",
+        "note": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+        "value_labels": "0=No; 5=Other device (selected option)",
+        "value_semantics": "Multi-select internet device item, asked only after the respondent selected DA056 option 10 (Used the Internet). Preserve each device field and route; the other-device free text is not a standardized exposure and is not published.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "internet_activity_chat",
+    "label": "Internet activity: chatting",
+    "domain": "internet and digital technology use",
+    "caveat": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "da056_w4_1_s1",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet activity: Chatting",
+        "note": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+        "value_labels": "0=No; 1=Chatting (selected option)",
+        "value_semantics": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "internet_activity_news",
+    "label": "Internet activity: reading news",
+    "domain": "internet and digital technology use",
+    "caveat": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "da056_w4_1_s2",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet activity: Reading news",
+        "note": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+        "value_labels": "0=No; 2=Reading news (selected option)",
+        "value_semantics": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "internet_activity_video",
+    "label": "Internet activity: watching videos",
+    "domain": "internet and digital technology use",
+    "caveat": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "da056_w4_1_s3",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet activity: Watching videos",
+        "note": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+        "value_labels": "0=No; 3=Watching videos (selected option)",
+        "value_semantics": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "internet_activity_games",
+    "label": "Internet activity: playing games",
+    "domain": "internet and digital technology use",
+    "caveat": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "da056_w4_1_s4",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet activity: Playing games",
+        "note": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+        "value_labels": "0=No; 4=Playing games (selected option)",
+        "value_semantics": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "internet_activity_financial_management",
+    "label": "Internet activity: financial management",
+    "domain": "internet and digital technology use",
+    "caveat": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "da056_w4_1_s5",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet activity: Money management",
+        "note": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+        "value_labels": "0=No; 5=Money management (selected option)",
+        "value_semantics": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "internet_activity_other",
+    "label": "Internet activity: other activity",
+    "domain": "internet and digital technology use",
+    "caveat": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "da056_w4_1_s6",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Internet activity: Other internet activity",
+        "note": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+        "value_labels": "0=No; 6=Others, please specify (selected option)",
+        "value_semantics": "Multi-select internet activity item, asked only after DA056 option 10 (Used the Internet). Preserve the routed denominator. The “other” option is not a standardized behavior; free text is not exposed or included as a measure.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "mobile_payment_use",
+    "label": "Mobile payment use",
+    "domain": "internet and digital technology use",
+    "caveat": "Self-reported mobile-payment use (examples include Alipay and WeChat Pay); this item is routed after DA056 option 10 (Used the Internet). Preserve route and eligible denominator.",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "da056_w4_2",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Payment with Mobile Phone",
+        "note": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+        "value_labels": "1=Yes; 2=No",
+        "value_semantics": "Self-reported mobile-payment use (examples include Alipay and WeChat Pay); this item is routed after DA056 option 10 (Used the Internet). Preserve route and eligible denominator.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "wechat_use",
+    "label": "WeChat use",
+    "domain": "internet and digital technology use",
+    "caveat": "Self-reported WeChat use, asked after DA056 option 10 (Used the Internet). A No response routes past the following WeChat Moments question; do not infer a skipped Moments answer as No.",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "da056_w4_3",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Use Wechat",
+        "note": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; asked only after DA056=10",
+        "value_labels": "1=Yes; 2=No",
+        "value_semantics": "Self-reported WeChat use, asked after DA056 option 10 (Used the Internet). A No response routes past the following WeChat Moments question; do not infer a skipped Moments answer as No.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "wechat_moments_posting",
+    "label": "Posting to WeChat Moments",
+    "domain": "internet and digital technology use",
+    "caveat": "Self-reported WeChat Moments posting, asked only when the respondent uses WeChat. Preserve that route and the eligible denominator; skipped answers are not No.",
+    "source_fields": [
+      {
+        "wave": "2018",
+        "code": "da056_w4_4",
+        "module": "Health_Status_and_Functioning",
+        "source_label": "Use Wechat Moments",
+        "note": "official 2018 questionnaire and Codebook response labels reviewed; frequencies omitted; conditional on WeChat use",
+        "value_labels": "1=Yes; 2=No",
+        "value_semantics": "Self-reported WeChat Moments posting, asked only when the respondent uses WeChat. Preserve that route and the eligible denominator; skipped answers are not No.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
       }
     ]
   }

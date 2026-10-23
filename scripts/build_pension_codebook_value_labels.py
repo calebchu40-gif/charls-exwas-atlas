@@ -33,7 +33,13 @@ def main():
         entry = ranked[0] if ranked else None
         similarity = SequenceMatcher(None, target, norm(entry[0])).ratio() if entry else 0
         if entry is None or similarity < 0.48:
-            labels, status, source = "", "official response label not located or title match insufficient", ""
+            labels = ""
+            codebook_text = BOOKS.get(str(r.wave), Path()).read_text(encoding="utf-8", errors="replace") if str(r.wave) in BOOKS else ""
+            if re.search(rf"(?<![A-Za-z0-9]){re.escape(str(r.code))}(?![A-Za-z0-9])", codebook_text, flags=re.I):
+                status = "official codebook field located; continuous/count or no categorical labels"
+                source = BOOKS[str(r.wave)].relative_to(ROOT).as_posix()
+            else:
+                status, source = "official response label not located or title match insufficient", ""
         else:
             labels = "; ".join(f"{value}={label}" for value, label in entry[1])
             source = BOOKS[str(r.wave)].relative_to(ROOT).as_posix()

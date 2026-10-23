@@ -31,6 +31,8 @@ for row in health.to_dict('records'):
         if w=='2011' and code=='da079': status='response scale verified in official questionnaire; Codebook variable-title conflict retained for review' 
     elif cid=='self_rated_health_alt_scale':
         lab=labels_self_health_alt(w,code)
+    elif cid=='subjective_life_expectancy' and w=='2020' and code=='da029':
+        lab='1=Almost Impossible; 2=Not Very Likely; 3=Maybe; 4=Very Likely; 5=Almost Certain; 997=Don’t Know'
     elif cid=='health_change' and (w,code) in {('2013','da002_w2_1'),('2015','da002_w2_1'),('2018','da002_w2_1')}:
         lab='1=Better; 2=About the same; 3=Worse'
     elif cid=='chest_pain_symptoms' and w in {'2011','2013'} and code in {'da003','da004'}:

@@ -9,6 +9,7 @@ c,measurement metadata,2020 current-employer start-date verification flag,1,1,1
 c,measurement metadata,2020 pandemic work-module selection flag,1,1,1
 c,measurement metadata,CAPI-derived survey-home linkage flag,1,1,1
 c,measurement metadata,age/calendar-year response-format selector,14,5,5
+c,measurement metadata,beer quantity unit selector,4,1,4
 c,measurement metadata,blood pressure recent pretest conditions,3,1,3
 c,measurement metadata,chair setup for repeated chair-stand test,4,2,3
 c,measurement metadata,checklist none-option coding,3,1,3
@@ -80,7 +81,7 @@ c,measurement metadata,unresolved release-field identity/data-type discrepancy,1
 c,measurement metadata,unstructured other-specify response text,7,7,2
 c,measurement metadata,unstructured other-use response text,4,3,2
 c,measurement metadata,unsupported prior-wave disease-awareness slots,15,15,1
-e,behavior,alcohol use,73,24,5
+e,behavior,alcohol use,69,23,5
 e,behavior,internet and digital technology use,38,36,5
 e,behavior,physical activity,84,36,5
 e,behavior,sleep,25,16,5
@@ -91,7 +92,7 @@ e,early-life and family socioeconomic context,parent marital and ethnic context,
 e,environmental perception,self-reported air-quality satisfaction,1,1,1
 e,family and intergenerational context,sibling record context,6,3,1
 e,food and household environment,"diet, food security, housing and utilities",161,58,5
-e,housing and built environment,dwelling conditions and household property,478,441,4
+e,housing and built environment,dwelling conditions and household property,477,440,4
 e,housing and built environment,residential setting,3,3,2
 e,social determinants,adult education and lifelong learning,13,12,3
 e,social determinants,annual wage/salary amount reported for household-member roster slots,22,12,2
