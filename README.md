@@ -227,3 +227,6 @@ DA056选项编码边界更新（2026-10-23）：41个2011/2013/2015活动与设�
 家庭支出字段更新（2026-10-23）：53个2011–2020波次字段已按官方问卷补入家庭层级、周/月/年参考期和元单位；4个自产品指标采用Codebook明确的`1=Yes; 2=No`，金额字段不虚构类别。E通用待核降至151，P为0、C为328；E/P官方/已审非空值标签为3,212行、3,186个波次字段。完整范围及限制见[`audit/household_expenditure_metadata_review_2011_2020_2026-10-23.md`](audit/household_expenditure_metadata_review_2011_2020_2026-10-23.md)和[`audit/current_value_label_review_queue_2026-10-23.md`](audit/current_value_label_review_queue_2026-10-23.md)。121项测试和89条禁分析锁校验通过。
 
 个人转移收入来源更新（2026-10-23）：50个五波次选项字段按官方问卷/Codebook审核。2011–2015只确认到选项身份，未推断未选中为No；2018/2020的20个字段显示明确的`0=No`及选项码`=Yes`，不复制频数。养老金区间端点更新：16个2011/2013/2015下界/上界字段说明为条件金额区间，不是点估计；2013字符串类型、2015代码本摘要和2011区间路由分别记录。当前E通用待核85、P为0、C为328；E/P非空官方/已审值标签3,232行、3,206个波次字段。128项测试、JS语法和89条禁分析锁检查通过。审核记录见[`audit/individual_transfer_income_source_review_2011_2020_2026-10-23.md`](audit/individual_transfer_income_source_review_2011_2020_2026-10-23.md)、[`audit/pension_interval_endpoint_review_2011_2015_2026-10-23.md`](audit/pension_interval_endpoint_review_2011_2015_2026-10-23.md)和[`audit/current_value_label_review_queue_2026-10-23.md`](audit/current_value_label_review_queue_2026-10-23.md)。
+
+
+核心调整候选和逐波准备限制汇总见[`audit/core_covariate_readiness_2026-10-23.md`](audit/core_covariate_readiness_2026-10-23.md)。年龄、性别、教育、婚姻/伴侣、户籍、居住地和抽样设计分别核验；目录中的210条自动发现C候选不等于固定调整变量，正式模型仍为0。
