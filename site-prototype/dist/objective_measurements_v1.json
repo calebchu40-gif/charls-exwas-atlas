@@ -5,10 +5,12 @@
     "domain": "血压/循环",
     "wave": "2011",
     "variables": "qa003;qa007;qa011",
-    "module": "biomarkers",
+    "module": "Physical Examination Questionnaire",
     "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+    "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide.pdf",
+    "source_caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "systolic_bp",
@@ -16,10 +18,12 @@
     "domain": "血压/循环",
     "wave": "2013",
     "variables": "qa003;qa007;qa011",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2013_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2013_Codebook_extracted.txt; sources_official/CHARLS_2013_Wave2_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "systolic_bp",
@@ -27,10 +31,12 @@
     "domain": "血压/循环",
     "wave": "2015",
     "variables": "qa003;qa007;qa011",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Blood_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "diastolic_bp",
@@ -38,10 +44,12 @@
     "domain": "血压/循环",
     "wave": "2011",
     "variables": "qa004;qa008;qa012",
-    "module": "biomarkers",
+    "module": "Physical Examination Questionnaire",
     "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+    "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide.pdf",
+    "source_caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "diastolic_bp",
@@ -49,10 +57,12 @@
     "domain": "血压/循环",
     "wave": "2013",
     "variables": "qa004;qa008;qa012",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2013_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2013_Codebook_extracted.txt; sources_official/CHARLS_2013_Wave2_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "diastolic_bp",
@@ -60,10 +70,12 @@
     "domain": "血压/循环",
     "wave": "2015",
     "variables": "qa004;qa008;qa012",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Blood_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "pulse_rate",
@@ -71,10 +83,12 @@
     "domain": "血压/循环",
     "wave": "2011",
     "variables": "qa005;qa009;qa013",
-    "module": "biomarkers",
+    "module": "Physical Examination Questionnaire",
     "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+    "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide.pdf",
+    "source_caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "pulse_rate",
@@ -82,10 +96,12 @@
     "domain": "血压/循环",
     "wave": "2013",
     "variables": "qa005;qa009;qa013",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2013_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2013_Codebook_extracted.txt; sources_official/CHARLS_2013_Wave2_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "pulse_rate",
@@ -93,10 +109,12 @@
     "domain": "血压/循环",
     "wave": "2015",
     "variables": "qa005;qa009;qa013",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Blood_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "peak_flow",
@@ -104,10 +122,12 @@
     "domain": "肺功能",
     "wave": "2011",
     "variables": "qb002;qb003;qb004",
-    "module": "biomarkers",
+    "module": "Physical Examination Questionnaire",
     "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+    "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide.pdf",
+    "source_caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "peak_flow",
@@ -115,10 +135,12 @@
     "domain": "肺功能",
     "wave": "2013",
     "variables": "qb002;qb003;qb004",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2013_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2013_Codebook_extracted.txt; sources_official/CHARLS_2013_Wave2_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "peak_flow",
@@ -126,10 +148,12 @@
     "domain": "肺功能",
     "wave": "2015",
     "variables": "qb002;qb003;qb004",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Blood_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "grip_strength",
@@ -137,10 +161,12 @@
     "domain": "肌力/功能",
     "wave": "2011",
     "variables": "qc003;qc004;qc005;qc006",
-    "module": "biomarkers",
+    "module": "Physical Examination Questionnaire",
     "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+    "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide.pdf",
+    "source_caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "grip_strength",
@@ -148,10 +174,12 @@
     "domain": "肌力/功能",
     "wave": "2013",
     "variables": "qc003;qc004;qc005;qc006",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2013_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2013_Codebook_extracted.txt; sources_official/CHARLS_2013_Wave2_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "grip_strength",
@@ -159,10 +187,12 @@
     "domain": "肌力/功能",
     "wave": "2015",
     "variables": "qc003;qc004;qc005;qc006",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Blood_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "balance_semi_tandem",
@@ -170,10 +200,12 @@
     "domain": "平衡/功能",
     "wave": "2011",
     "variables": "qd002;qd003;qd004",
-    "module": "biomarkers",
+    "module": "Physical Examination Questionnaire",
     "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+    "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide.pdf",
+    "source_caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "balance_semi_tandem",
@@ -181,10 +213,12 @@
     "domain": "平衡/功能",
     "wave": "2013",
     "variables": "qd002;qd003;qd004",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2013_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2013_Codebook_extracted.txt; sources_official/CHARLS_2013_Wave2_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "balance_semi_tandem",
@@ -192,10 +226,12 @@
     "domain": "平衡/功能",
     "wave": "2015",
     "variables": "qd002;qd003;qd004",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Blood_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "balance_full_tandem",
@@ -203,10 +239,12 @@
     "domain": "平衡/功能",
     "wave": "2011",
     "variables": "qe002;qe003;qe004",
-    "module": "biomarkers",
+    "module": "Physical Examination Questionnaire",
     "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+    "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide.pdf",
+    "source_caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "balance_full_tandem",
@@ -214,10 +252,12 @@
     "domain": "平衡/功能",
     "wave": "2013",
     "variables": "qe002;qe003;qe004",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2013_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2013_Codebook_extracted.txt; sources_official/CHARLS_2013_Wave2_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "balance_full_tandem",
@@ -225,10 +265,12 @@
     "domain": "平衡/功能",
     "wave": "2015",
     "variables": "qe002;qe003;qe004",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Blood_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "balance_side_by_side",
@@ -236,10 +278,12 @@
     "domain": "平衡/功能",
     "wave": "2011",
     "variables": "qf002;qf003;qf004",
-    "module": "biomarkers",
+    "module": "Physical Examination Questionnaire",
     "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+    "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide.pdf",
+    "source_caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "balance_side_by_side",
@@ -247,10 +291,12 @@
     "domain": "平衡/功能",
     "wave": "2013",
     "variables": "qf002;qf003;qf004",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2013_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2013_Codebook_extracted.txt; sources_official/CHARLS_2013_Wave2_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "balance_side_by_side",
@@ -258,10 +304,12 @@
     "domain": "平衡/功能",
     "wave": "2015",
     "variables": "qf002;qf003;qf004",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Blood_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "walking_speed",
@@ -269,10 +317,12 @@
     "domain": "移动/功能",
     "wave": "2011",
     "variables": "qg002;qg003",
-    "module": "biomarkers",
+    "module": "Physical Examination Questionnaire",
     "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+    "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide.pdf",
+    "source_caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "walking_speed",
@@ -280,10 +330,12 @@
     "domain": "移动/功能",
     "wave": "2013",
     "variables": "qg002;qg003",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2013_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2013_Codebook_extracted.txt; sources_official/CHARLS_2013_Wave2_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "walking_speed",
@@ -291,10 +343,12 @@
     "domain": "移动/功能",
     "wave": "2015",
     "variables": "qg002;qg003",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Blood_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "repeated_chair_stand",
@@ -302,10 +356,12 @@
     "domain": "下肢功能",
     "wave": "2011",
     "variables": "qh002;qh003;qh004;qh005",
-    "module": "biomarkers",
+    "module": "Physical Examination Questionnaire",
     "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+    "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide.pdf",
+    "source_caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "repeated_chair_stand",
@@ -313,10 +369,12 @@
     "domain": "下肢功能",
     "wave": "2013",
     "variables": "qh002;qh003;qh004;qh005",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2013_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2013_Codebook_extracted.txt; sources_official/CHARLS_2013_Wave2_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "repeated_chair_stand",
@@ -324,10 +382,12 @@
     "domain": "下肢功能",
     "wave": "2015",
     "variables": "qh002;qh003;qh004;qh005",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Blood_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "standing_height",
@@ -335,10 +395,12 @@
     "domain": "人体测量",
     "wave": "2011",
     "variables": "qi002",
-    "module": "biomarkers",
+    "module": "Physical Examination Questionnaire",
     "value_semantics": "现场身高读数；与qh006等椅子测试字段区分。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+    "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide.pdf",
+    "source_caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "standing_height",
@@ -346,10 +408,12 @@
     "domain": "人体测量",
     "wave": "2013",
     "variables": "qi002",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "现场身高读数；与qh006等椅子测试字段区分。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2013_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2013_Codebook_extracted.txt; sources_official/CHARLS_2013_Wave2_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "standing_height",
@@ -357,10 +421,12 @@
     "domain": "人体测量",
     "wave": "2015",
     "variables": "qi002",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "现场身高读数；与qh006等椅子测试字段区分。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Blood_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "arm_length",
@@ -368,10 +434,12 @@
     "domain": "人体测量",
     "wave": "2011",
     "variables": "qj002",
-    "module": "biomarkers",
+    "module": "Physical Examination Questionnaire",
     "value_semantics": "记录值并保留测量侧别qj003。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+    "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide.pdf",
+    "source_caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "arm_length",
@@ -379,10 +447,12 @@
     "domain": "人体测量",
     "wave": "2013",
     "variables": "qj002",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "记录值并保留测量侧别qj003。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2013_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2013_Codebook_extracted.txt; sources_official/CHARLS_2013_Wave2_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "arm_length",
@@ -390,10 +460,12 @@
     "domain": "人体测量",
     "wave": "2015",
     "variables": "qj002",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "记录值并保留测量侧别qj003。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Blood_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "knee_height",
@@ -401,10 +473,12 @@
     "domain": "人体测量",
     "wave": "2011",
     "variables": "qk002",
-    "module": "biomarkers",
+    "module": "Physical Examination Questionnaire",
     "value_semantics": "记录值并保留测量侧别/腿别qk003。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+    "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide.pdf",
+    "source_caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "knee_height",
@@ -412,10 +486,12 @@
     "domain": "人体测量",
     "wave": "2013",
     "variables": "qk002",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "记录值并保留测量侧别/腿别qk003。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2013_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2013_Codebook_extracted.txt; sources_official/CHARLS_2013_Wave2_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "knee_height",
@@ -423,10 +499,12 @@
     "domain": "人体测量",
     "wave": "2015",
     "variables": "qk002",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "记录值并保留测量侧别/腿别qk003。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Blood_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "body_weight",
@@ -434,10 +512,12 @@
     "domain": "人体测量",
     "wave": "2011",
     "variables": "ql002",
-    "module": "biomarkers",
+    "module": "Physical Examination Questionnaire",
     "value_semantics": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+    "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide.pdf",
+    "source_caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "body_weight",
@@ -445,10 +525,12 @@
     "domain": "人体测量",
     "wave": "2013",
     "variables": "ql002",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2013_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2013_Codebook_extracted.txt; sources_official/CHARLS_2013_Wave2_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "body_weight",
@@ -456,10 +538,12 @@
     "domain": "人体测量",
     "wave": "2015",
     "variables": "ql002",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Blood_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "waist_circumference",
@@ -467,10 +551,12 @@
     "domain": "人体测量/脂肪分布",
     "wave": "2011",
     "variables": "qm002",
-    "module": "biomarkers",
+    "module": "Physical Examination Questionnaire",
     "value_semantics": "注意厚重衣物、测量完成状态及波次问卷的路由。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+    "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide.pdf",
+    "source_caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "waist_circumference",
@@ -478,10 +564,12 @@
     "domain": "人体测量/脂肪分布",
     "wave": "2013",
     "variables": "qm002",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "注意厚重衣物、测量完成状态及波次问卷的路由。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2013_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2013_Codebook_extracted.txt; sources_official/CHARLS_2013_Wave2_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   },
   {
     "concept_id": "waist_circumference",
@@ -489,9 +577,11 @@
     "domain": "人体测量/脂肪分布",
     "wave": "2015",
     "variables": "qm002",
-    "module": "Biomarker",
+    "module": "Biomarker Questionnaire",
     "value_semantics": "注意厚重衣物、测量完成状态及波次问卷的路由。",
-    "source_status": "原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-    "source_document": "CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"
+    "source_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Blood_Release_Note.pdf",
+    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability"
   }
 ]

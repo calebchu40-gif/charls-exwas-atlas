@@ -2,7 +2,7 @@
 
 更新：2026-10-24。由`scripts/summarize_value_label_coverage.py`从当前字段目录和覆盖CSV自动生成。
 
-- E/P字段—角色—类别目录行：6,654；不同波次—字段码：6,572。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
+- E/P字段—角色—类别目录行：6,696；不同波次—字段码：6,572。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
 - 有非空官方/已审标签文本的E/P目录行：3,354；不同波次—字段码：3,327。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
 - 明确标为`conflict`的E/P字段码：0；详情按主目录波次和变量码检索。
 - 问卷/Codebook编码差异尚未调和并锁定`DO NOT ANALYZE`的E/P字段：2011 `fb010`。此项独立于上面的精确`conflict`标签计数。
@@ -22,23 +22,23 @@
 |e|housing and built environment|481|34|2|
 |e|social determinants|2,132|1,007|20|
 |e|social protection|1,331|452|30|
-|p|anthropometric|15|0|1|
+|p|anthropometric|24|0|1|
 |p|biochemistry|32|0|1|
-|p|blood pressure|27|0|1|
+|p|blood pressure|54|0|1|
 |p|chronic disease|248|240|1|
 |p|chronic disease ancillary|664|520|70|
 |p|cognition|338|305|1|
 |p|health and symptoms|162|155|4|
 |p|healthcare access|108|15|2|
 |p|mental health|50|50|1|
-|p|physical function|260|169|7|
+|p|physical function|266|169|7|
 
 ## 当前值标签审核状态
 
 |审核状态|E/P目录行|
 |---|---:|
 |officially reviewed|2,683|
-|not yet reviewed|773|
+|not yet reviewed|779|
 |official codebook field located; continuous/count or no categorical labels|608|
 |codebook field located; continuous/open response or no categorical labels|371|
 |continuous measure metadata available|214|
@@ -50,6 +50,7 @@
 |连续值/字段结构；代码本未提供离散值标签|93|
 |official 2011 questionnaire identifies Yuan amount period and household-member roster slot; continuous amount with no discrete response categories; authorized-release storage scale and special values remain unverified|80|
 |official 2018 Codebook response categories transcribed; frequencies omitted; questionnaire route retained; respondent release coding and eligible denominator require validation|68|
+|continuous measure metadata available; see description/crosswalk|68|
 |official 2011 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|53|
 |official 2013 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|52|
 |official 2015 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|52|
@@ -58,7 +59,6 @@
 |代码本逐值标签已核|38|
 |official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned|33|
 |continuous component, not a categorical code; component unit reviewed against wave-specific official codebook|32|
-|continuous measure metadata available; see description/crosswalk|32|
 |official questionnaire and Codebook option identity reviewed; participant-level No/unselected storage and denominator unresolved; no response-value labels assigned|30|
 |连续计数；参照期/机构槽位依波次；极值待核|29|
 |continuous raw subtraction response; Codebook extreme maxima occur; valid range and scoring require authorized raw-data QA|25|

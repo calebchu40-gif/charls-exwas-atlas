@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,16 +24,74 @@ FIELDS = [
     ("waist_circumference", "腰围", "人体测量/脂肪分布", "qm002", "注意厚重衣物、测量完成状态及波次问卷的路由。"),
 ]
 
-rows=[]
-for concept,label,domain,codes,note in FIELDS:
-    for wave,module in [("2011","biomarkers"),("2013","Biomarker"),("2015","Biomarker")]:
-        rows.append({"concept_id":concept,"concept_label":label,"domain":domain,"wave":wave,
-                     "variables":codes,"module":module,"value_semantics":note,
-                     "source_status":"原始字段目录与对应波次体检问卷已定位；概念对应候选，字段路由/单位需逐波复核",
-                     "source_document":"CHARLS 2011 Baseline User Guide; CHARLS 2013/2015 Biomarker Questionnaire"})
+WAVE_SOURCES = {
+    "2011": {
+        "module": "Physical Examination Questionnaire",
+        "documents": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide.pdf",
+        "codebook": "sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+        "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。",
+    },
+    "2013": {
+        "module": "Biomarker Questionnaire",
+        "documents": "sources_official/CHARLS_2013_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2013_Codebook_extracted.txt; sources_official/CHARLS_2013_Wave2_Release_Note.pdf",
+        "codebook": "sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+        "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    },
+    "2015": {
+        "module": "Biomarker Questionnaire",
+        "documents": "sources_official/CHARLS_2015_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Blood_Release_Note.pdf",
+        "codebook": "sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+        "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    },
+}
 
-out=ROOT/"audit"/"objective_measurement_crosswalk_v1.csv"
-with out.open("w",newline="",encoding="utf-8-sig") as f:
-    w=csv.DictWriter(f,fieldnames=rows[0].keys());w.writeheader();w.writerows(rows)
-(ROOT/"site-prototype"/"dist"/"objective_measurements_v1.json").write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding="utf-8")
-print(f"wrote {len(rows)} mappings across {len(FIELDS)} concepts")
+
+def build_rows() -> list[dict[str, str]]:
+    rows = []
+    codes_by_wave: dict[str, set[str]] = {}
+    for wave, source in WAVE_SOURCES.items():
+        codebook_path = ROOT / source["codebook"]
+        codebook_text = codebook_path.read_text(encoding="utf-8", errors="replace").lower()
+        codes_by_wave[wave] = {
+            code.lower() for code in re.findall(r"[a-z]{2}\d{3}(?:_\d+)?", codebook_text)
+        }
+    for concept, label, domain, codes, note in FIELDS:
+        for wave, source in WAVE_SOURCES.items():
+            candidate_codes = [code.strip().lower() for code in codes.split(";")]
+            absent = sorted(set(candidate_codes) - codes_by_wave[wave])
+            if absent:
+                raise ValueError(f"{wave} Codebook is missing candidate code(s) for {concept}: {absent}")
+            rows.append({
+                "concept_id": concept,
+                "concept_label": label,
+                "domain": domain,
+                "wave": wave,
+                "variables": codes,
+                "module": source["module"],
+                "value_semantics": note,
+                "source_status": source["status"],
+                "source_document": source["documents"],
+                "source_caveat": source["caveat"],
+                "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability",
+            })
+    return rows
+
+
+def main() -> None:
+    rows = build_rows()
+    out = ROOT / "audit" / "objective_measurement_crosswalk_v1.csv"
+    with out.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=rows[0].keys())
+        writer.writeheader()
+        writer.writerows(rows)
+    (ROOT / "site-prototype" / "dist" / "objective_measurements_v1.json").write_text(
+        json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    print(f"wrote {len(rows)} mappings across {len(FIELDS)} concepts")
+
+
+if __name__ == "__main__":
+    main()

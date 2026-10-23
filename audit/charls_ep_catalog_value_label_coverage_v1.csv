@@ -143,9 +143,9 @@ e,social protection,threshold-specific pension expected-benefit bracket response
 e,social protection,years enrolled in the named pension plan,1,1,0
 "e,p",healthcare access,"insurance, outpatient and inpatient utilization",109,109,51
 "e,p",internal biomarker,"internal clinical/physiological measure; phenotype candidate, not exogenous environmental exposure",55,55,0
-p,anthropometric,body size and anthropometry,15,15,0
+p,anthropometric,body size and anthropometry,24,15,0
 p,biochemistry,blood and urine laboratory measures,32,32,0
-p,blood pressure,blood pressure and pulse,27,27,0
+p,blood pressure,blood pressure and pulse,54,27,0
 p,chronic disease,self-reported physician diagnosis,248,248,240
 p,chronic disease ancillary,conditional management / diabetes annual testing / selected option: Blood glucose test,2,2,2
 p,chronic disease ancillary,conditional management / diabetes annual testing / selected option: Fundus examination,2,2,2
@@ -231,4 +231,4 @@ p,physical function,reported disability history / hearing,10,10,5
 p,physical function,reported disability history / physical,2,2,0
 p,physical function,reported disability history / speech,10,10,5
 p,physical function,reported disability history / vision,10,10,5
-p,physical function,"strength, mobility, lung function, and performance",192,192,123
+p,physical function,"strength, mobility, lung function, and performance",198,192,123

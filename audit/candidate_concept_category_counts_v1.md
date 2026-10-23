@@ -10,7 +10,7 @@
 |e|behavior|45|296|271|
 |e|housing and built environment|41|481|481|
 |e|food and household environment|29|161|161|
-|e|internal biomarker|20|55|55|
+|e|internal biomarker|15|19|19|
 |e|healthcare access|7|109|109|
 |e|family and intergenerational context|6|6|3|
 |e|early-life and family socioeconomic context|5|5|3|
@@ -22,10 +22,10 @@
 |p|health and symptoms|31|165|162|
 |p|cognition|24|338|338|
 |p|healthcare access|22|217|217|
-|p|internal biomarker|20|55|55|
 |p|biochemistry|16|32|32|
+|p|internal biomarker|15|19|19|
 |p|mental health|10|50|50|
-|p|anthropometric|5|15|15|
+|p|anthropometric|5|21|15|
 |p|blood pressure|3|27|27|
 
 总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1429个（E=1150、P=288，9个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。
