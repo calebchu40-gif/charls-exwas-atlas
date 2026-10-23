@@ -1,8 +1,9 @@
-"""Apply official source review to housing heating, gas, and 2020 water/air items."""
+"""Apply official source review to household housing and indoor-context items."""
 from __future__ import annotations
 
 import csv
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,6 +32,10 @@ REVIEWED = {
     ("2020", "air_cleaner_home", "i024"),
     ("2015", "air_cleaner_home", "i027_w3"),
     ("2018", "air_cleaner_home", "i027_w3"),
+} | {
+    (wave, concept, code)
+    for wave in QUESTIONNAIRES
+    for concept, code in (("indoor_cleanliness", "i025"), ("indoor_temperature", "i026"))
 }
 
 CONCEPT_CAVEATS = {
@@ -65,6 +70,17 @@ CONCEPT_CAVEATS = {
         "Presence does not establish use, filter condition, ventilation, pollutant concentration, or personal "
         "exposure. Preserve wave-specific household referents and confirm linkage before person-level assignment."
     ),
+    "indoor_cleanliness": (
+        "Household-level interviewer-recorded observation of indoor tidiness/cleanliness, with ordered response categories; "
+        "higher codes indicate poorer reported condition. This is not a standardized hygiene audit or a measure "
+        "of indoor pollutants. Preserve the 2011 source-version discrepancy over whether code 6 Not applicable "
+        "is offered; do not infer or harmonize it without the release questionnaire/codebook version."
+    ),
+    "indoor_temperature": (
+        "Household-level interviewer-recorded assessment of perceived indoor temperature, not a thermometer reading or "
+        "personal thermal dose. Preserve the ordered hot-to-cold categories and the wave-specific Not applicable "
+        "category; the 2011 source-version discrepancy is documented in the source review."
+    ),
 }
 
 FIELD_NOTES = {
@@ -91,6 +107,14 @@ FIELD_NOTES = {
         "2018": "Official questionnaire/Codebook reviewed: I027_W3 asks whether the residence has an air cleaner; preserve 1=Yes/2=No.",
         "2020": "Official questionnaire/Codebook reviewed: presence of an air cleaner in XFinancialResp's house; 1=Yes/2=No. Questionnaire allows interviewer recording only when in the home and certain, otherwise ask respondent."
     },
+    "indoor_cleanliness": {
+        wave: "Official questionnaire/Codebook reviewed: I025 is interviewer-recorded household cleanliness/tidiness; preserve the wave's stated ordinal categories and Not applicable only where the source lists it."
+        for wave in QUESTIONNAIRES
+    },
+    "indoor_temperature": {
+        wave: "Official questionnaire/Codebook reviewed: I026 is interviewer-recorded household temperature assessment, not measured temperature; preserve hot-to-cold categories and the wave's stated Not applicable option."
+        for wave in QUESTIONNAIRES
+    },
 }
 
 
@@ -113,6 +137,21 @@ def validate_sources() -> None:
         if (wave, concept_id, code) == ("2020", "residential_heating", "i019"):
             if "i019 does [xfinancialresp]’s house have heating?" not in q or "i019: centralized heating" not in cb:
                 raise ValueError("2020 heating questionnaire/Codebook label discrepancy not found")
+        if concept_id in {"indoor_cleanliness", "indoor_temperature"}:
+            starts = [match.start() for match in re.finditer(code.casefold(), q)]
+            if not any("interviewer records it" in q[start:start + 700] for start in starts):
+                raise ValueError(f"{wave} {code} interviewer-record instruction not found")
+            if "not applicable" not in cb and wave != "2011":
+                raise ValueError(f"{wave} {code} Codebook Not applicable category not found")
+    baseline_q = (ROOT / "sources_official" / "CHARLS_2011_Baseline_Questionnaire_official_extracted.txt").read_text(encoding="utf-8", errors="ignore").casefold()
+    household_q = (ROOT / "sources_official" / QUESTIONNAIRES["2011"]).read_text(encoding="utf-8", errors="ignore").casefold()
+    baseline_cb = (ROOT / "sources_official" / CODEBOOKS["2011"]).read_text(encoding="utf-8", errors="ignore").casefold()
+    if "i025 [interviewer records it]" not in baseline_q or "6. not applicable" not in baseline_q:
+        raise ValueError("2011 baseline questionnaire I025 Not applicable source variant not found")
+    if "i025" not in household_q or "not applicable" in household_q[household_q.find("i025"):household_q.find("i026")]:
+        raise ValueError("2011 household-questionnaire I025 1–5 source variant not found")
+    if "i025" not in baseline_cb or "not applicable" in baseline_cb[baseline_cb.find("i025"):baseline_cb.find("i026")]:
+        raise ValueError("2011 Codebook I025 1–5 categories not found")
 
 
 def main() -> None:
@@ -134,6 +173,8 @@ def main() -> None:
         if (wave, concept_id, code) != ("2018", "air_cleaner_home", "i027_w3"):
             raise ValueError(f"No reviewed insertion rule for {(wave, concept_id, code)}")
         source = matches[0]
+        if concept_id in {"indoor_cleanliness", "indoor_temperature"}:
+            raise ValueError(f"Missing reviewed household field should not be auto-inserted: {(wave, concept_id, code)}")
         rows.append({
             "concept_id": concept_id,
             "concept_label": "Air cleaner present in residence",

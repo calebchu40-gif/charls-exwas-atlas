@@ -43,6 +43,10 @@ class HousingContextSourceReviewTests(unittest.TestCase):
             ("2020", "air_cleaner_home", "i024"),
             ("2015", "air_cleaner_home", "i027_w3"),
             ("2018", "air_cleaner_home", "i027_w3"),
+        } | {
+            (wave, concept, code)
+            for wave in ("2011", "2013", "2015", "2018", "2020")
+            for concept, code in (("indoor_cleanliness", "i025"), ("indoor_temperature", "i026"))
         })
 
     def test_2020_heating_label_conflict_is_explicit_and_preserved(self):
@@ -94,6 +98,21 @@ class HousingContextSourceReviewTests(unittest.TestCase):
             self.assertEqual(fields[wave]["value_labels"], "1=Yes; 2=No")
             self.assertIn("questionnaire/Codebook reviewed", fields[wave]["note"])
         self.assertIn("wave-specific household referents", item["caveat"])
+
+    def test_indoor_observer_measures_preserve_wave_labels_and_2011_source_discrepancy(self):
+        expected_codes = {"indoor_cleanliness": "i025", "indoor_temperature": "i026"}
+        for concept_id, code in expected_codes.items():
+            concept = next(c for c in self.site if c["concept_id"] == concept_id)
+            self.assertEqual({f["wave"] for f in concept["source_fields"]}, {"2011", "2013", "2015", "2018", "2020"})
+            self.assertIn("interviewer-recorded", concept["caveat"])
+            self.assertIn("not", concept["caveat"])
+            row_2011 = next(r for r in self.rows if r["wave"] == "2011" and r["code"].lower() == code)
+            row_2013 = next(r for r in self.rows if r["wave"] == "2013" and r["code"].lower() == code)
+            self.assertIn("2011 source-version discrepancy", row_2011["caveat"])
+            self.assertIn("interviewer-recorded", row_2013["caveat"])
+        review = (ROOT / "audit" / REVIEW).read_text(encoding="utf-8")
+        self.assertIn("I025 and I026", review)
+        self.assertIn("baseline questionnaire lists 6=Not applicable", review)
 
 
 if __name__ == "__main__":
