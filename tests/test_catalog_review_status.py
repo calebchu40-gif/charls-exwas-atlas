@@ -213,6 +213,22 @@ class CatalogReviewStatusTests(unittest.TestCase):
             self.assertEqual(catalog_row.get("Value.Labels"), row.get("value_labels"))
             self.assertIn("frequencies excluded", catalog_row.get("Value.Label.Review", ""))
 
+    def test_2011_and_2020_self_awareness_labels_reach_catalog(self):
+        expected = {
+            "2011": "1=Yes; 2=No; 3=Don't know",
+            "2020": "1=Yes; 2=No; 3=Don't Know",
+        }
+        for wave, label in expected.items():
+            for suffix in ("1", "5", "11"):
+                code = f"da008_{suffix}_" if wave == "2011" else f"da004_{suffix}_"
+                row = next(
+                    item for item in self.catalog
+                    if item.get("Source.Wave") == wave and item.get("Variable.Name", "").lower() == code
+                )
+                self.assertEqual(row.get("Value.Labels"), label)
+                self.assertIn("self-awareness route retained", row.get("Value.Label.Review", ""))
+                self.assertIn("eligible denominator require validation", row.get("Value.Label.Review", ""))
+
     def test_unreviewed_chronic_ancillary_fields_are_not_marked_as_reviewed(self):
         import csv
         with (ROOT / "audit/chronic_disease_ancillary_variable_mapping_v1.csv").open(encoding="utf-8-sig", newline="") as handle:

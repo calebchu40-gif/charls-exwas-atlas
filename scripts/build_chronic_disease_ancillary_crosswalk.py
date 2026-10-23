@@ -55,12 +55,23 @@ official_wave_labels = {
     wave: codebook_value_labels(ROOT / "sources_official" / f"CHARLS_{wave}_Codebook_extracted.txt")
     for wave in ("2011", "2013", "2015", "2018")
 }
+official_2020_awareness_labels = codebook_value_labels(ROOT / "sources_official/CHARLS_2020_Codebook_extracted.txt")
 rows = []
 def add(rec, domain, construct, subtype, concept_id, label, caveat):
     value_labels = ""
     value_status = "official variable metadata mapped; item-level value labels/routing review pending"
     value_source = ""
-    if str(rec.wave) == "2020" and str(rec.variable).lower().startswith("da002_"):
+    wave_code = str(rec.wave)
+    field_code = str(rec.variable).lower()
+    if construct == "disease awareness" and wave_code == "2011" and field_code.rstrip("_") in official_wave_labels[wave_code]:
+        value_labels = official_wave_labels[wave_code][field_code.rstrip("_")].replace("Dont know", "Don't know")
+        value_source = "sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt"
+        value_status = "official 2011 Codebook response categories transcribed; frequencies omitted; self-awareness route retained; release coding and eligible denominator require validation"
+    elif construct == "disease awareness" and wave_code == "2020" and field_code in official_2020_awareness_labels:
+        value_labels = official_2020_awareness_labels[field_code]
+        value_source = "sources_official/CHARLS_2020_Codebook_extracted.txt; sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+        value_status = "official 2020 Codebook response categories transcribed; frequencies omitted; self-awareness route retained; release coding and eligible denominator require validation"
+    elif wave_code == "2020" and field_code.startswith("da002_"):
         value_labels = "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview"
         value_source = "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
         value_status = "official 2020 questionnaire/Codebook response labels reviewed; prior-wave route retained; frequencies excluded"
@@ -72,8 +83,6 @@ def add(rec, domain, construct, subtype, concept_id, label, caveat):
         value_labels = "1=Exam after disease attack; 2=Exam after illness; 3=Work-unit exam; 4=Community exam; 5=CHARLS physical exam; 6=Other"
         value_source = f"sources_official/CHARLS_{rec.wave}_Codebook_extracted.txt"
         value_status = "official response labels reviewed from wave-specific codebook; awareness-option labels; conditional disease route retained; frequencies excluded"
-    wave_code = str(rec.wave)
-    field_code = str(rec.variable).lower()
     if construct == "reported disease control" and wave_code in official_wave_labels and field_code in official_wave_labels[wave_code]:
         value_labels = official_wave_labels[wave_code][field_code]
         value_source = f"sources_official/CHARLS_{wave_code}_Codebook_extracted.txt; sources_official/CHARLS_{wave_code}_Questionnaire_extracted.txt"
