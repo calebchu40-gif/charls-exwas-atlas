@@ -4,8 +4,8 @@
   "files": {
     "food_environment_v1.json": {
       "fields": 161,
-      "filled": 35,
-      "existing": 71,
+      "filled": 34,
+      "existing": 72,
       "no_match": 55,
       "ambiguous": 0
     },

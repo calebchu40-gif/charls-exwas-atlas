@@ -190,6 +190,22 @@ class HousingValueLabelTests(unittest.TestCase):
         self.assertIn("not when the building was constructed", move["caveat"])
         fields = {(row["wave"], row["code"]): row for row in move["source_fields"]}
         self.assertEqual(set(fields), {("2020", "i002"), ("2020", "i003")})
+        self.assertIn("1=0-5 years", fields[("2020", "i003")]["value_labels"])
+
+    def test_housing_area_and_construction_year_units_are_questionnaire_backed(self):
+        expected = {
+            ("2011", "i001"): "square metres", ("2013", "i001"): "square metres",
+            ("2020", "i028"): "square metres", ("2011", "i005"): "calendar year",
+            ("2013", "i005"): "calendar year", ("2015", "i005"): "calendar year",
+            ("2018", "i005"): "calendar year", ("2020", "i002"): "calendar year",
+        }
+        catalog = {(r["Source.Wave"], r["Variable.Name"].lower()): r for r in self.catalog}
+        for key, unit in expected.items():
+            row = catalog[key]
+            self.assertEqual(row["Concept.Unit.Candidates"], unit)
+            self.assertEqual(row["Value.Labels"], "")
+            self.assertIn("authorized release", row["Harmonization.Status"])
+        self.assertIn("not the building construction year", catalog[("2020", "i002")]["Harmonization.Status"])
 
 
 if __name__ == "__main__":

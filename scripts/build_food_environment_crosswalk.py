@@ -163,6 +163,7 @@ VALUE_LABELS = {
 # a concept-wide value label would wrongly attach toilet response codes to
 # toilet counts or distances.
 FIELD_VALUE_LABELS = {
+    (2020, "i003"): "1=0-5 years; 2=5-10 years; 3=10-20 years; 4=20-30 years; 5=30-40 years; 6=More than 40 years. Fallback elapsed-time category for the move-in year; preserve separately from i002.",
     (2011, "i013"): "Continuous distance to nearest toilet; codebook max 1,000 (QA hint, not a validated range).",
     (2013, "i013"): "Continuous distance to nearest toilet; codebook max 1,000 (QA hint, not a validated range).",
     (2015, "i013"): "Continuous distance to nearest toilet; codebook max 2,000 (QA hint, not a validated range).",

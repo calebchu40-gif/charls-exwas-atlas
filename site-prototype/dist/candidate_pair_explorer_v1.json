@@ -95563,7 +95563,7 @@
               "label": "Time Interval House Built",
               "module": "Household_Income",
               "unit": "",
-              "value_labels": "1=0-5 years; 2=5-10 years; 3=10-20 years; 4=20-30 years; 5=30-40 years; 6=More than 40 years",
+              "value_labels": "1=0-5 years; 2=5-10 years; 3=10-20 years; 4=20-30 years; 5=30-40 years; 6=More than 40 years. Fallback elapsed-time category for the move-in year; preserve separately from i002.",
               "value_semantics": "",
               "mapping_status": "catalog-label candidate; questionnaire review pending",
               "caveat": "2020 asks when the Household Financial Respondent moved into the current housing, not when the building was constructed. Exact calendar year and fallback elapsed-time category are separate response fields; do not treat either as building age or combine without a validated response-format rule."

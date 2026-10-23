@@ -876,10 +876,8 @@
         "code": "i003",
         "module": "Household_Income",
         "source_label": "Time Interval House Built",
-        "value_labels": "1=0-5 years; 2=5-10 years; 3=10-20 years; 4=20-30 years; 5=30-40 years; 6=More than 40 years",
-        "note": "catalog-label candidate; questionnaire review pending",
-        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding"
+        "value_labels": "1=0-5 years; 2=5-10 years; 3=10-20 years; 4=20-30 years; 5=30-40 years; 6=More than 40 years. Fallback elapsed-time category for the move-in year; preserve separately from i002.",
+        "note": "catalog-label candidate; questionnaire review pending"
       }
     ]
   },
