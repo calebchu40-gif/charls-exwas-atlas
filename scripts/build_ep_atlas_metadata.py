@@ -21,6 +21,7 @@ FULL_PIPELINE_SCRIPTS = (
     "build_2015_pension_subsidy_delivery_crosswalk.py",
     "build_life_insurance_crosswalk.py",
     "build_personal_income_crosswalk.py",
+    "apply_personal_income_metadata_review.py",
     "build_individual_transfer_income_crosswalk.py",
     "apply_individual_transfer_source_review.py",
     "build_household_member_income_crosswalk.py",

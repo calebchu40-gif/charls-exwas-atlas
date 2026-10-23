@@ -891,6 +891,10 @@ def main() -> None:
     official_review = re.compile(r"official codebook (?:item )?response labels reviewed", re.I)
     add_reviewed_labels("behavior_exposure_variable_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official codebook response labels reviewed|official selector code reviewed;", re.I))
     add_reviewed_labels("personal_income_exposure_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire/codebook response labels reviewed|official questionnaire response categories transcribed|official questionnaire response categories; frequencies omitted|official Codebook response labels reviewed; frequencies omitted", re.I))
+    add_reviewed_status_without_value_label(
+        "personal_income_exposure_mapping_v1.csv", "wave", "code", "value_label_status", "value_label_source",
+        re.compile(r"official Codebook identifies affirmative inheritance-source option; unselected storage and denominator unresolved; no response-value labels assigned|official questionnaire/Codebook field reviewed; continuous amount/count, no categorical response labels; preserve unit and route", re.I),
+    )
     add_reviewed_labels("health_symptom_variable_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official codebook response labels reviewed|official questionnaire response scale verified", re.I))
     add_reviewed_labels("functional_concept_variable_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official codebook response labels reviewed", re.I))
     add_reviewed_labels("health_work_limitation_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"matched to wave-specific official codebook", re.I))

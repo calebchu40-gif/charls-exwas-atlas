@@ -4737,10 +4737,10 @@
               "label": "Held Any Funds",
               "module": "individual_income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "past-year mutual fund holding indicator",
-              "mapping_status": "official questionnaire wording reviewed; response special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011–2015 item refers to past-year holdings and is kept separate from 2018 current ownership. Follow-up value is conditional; preserve wave-specific codes and routing."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011–2015 item refers to past-year holdings and is kept separate from 2018 current ownership. Follow-up value is conditional; preserve wave-specific codes and routing.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -4757,10 +4757,10 @@
               "label": "Held Any Stocks",
               "module": "individual_income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "past-year stock holding indicator",
-              "mapping_status": "official questionnaire wording reviewed; response special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011 questionnaire explicitly excludes work-unit equity; the 2011–2015 item refers to having held stocks in the past year, unlike the current-holding question introduced in 2018. Keep separate from 2018 status and retain follow-up routing."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011 questionnaire explicitly excludes work-unit equity; the 2011–2015 item refers to having held stocks in the past year, unlike the current-holding question introduced in 2018. Keep separate from 2018 status and retain follow-up routing.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -6292,10 +6292,10 @@
               "label": "Participated in Any Rotating Savings and Credit Association",
               "module": "individual_income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "past-year rotating savings/credit association participation",
-              "mapping_status": "official questionnaire and codebook wording reviewed; response codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011/2013 questionnaires ask whether the respondent participated in a rotating savings and credit association during the past year. This is distinct from the broader 2015 private-lending wording. Preserve yes/no code and conditional HC037 route."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011/2013 questionnaires ask whether the respondent participated in a rotating savings and credit association during the past year. This is distinct from the broader 2015 private-lending wording. Preserve yes/no code and conditional HC037 route.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -7112,10 +7112,10 @@
               "label": "Do You Have Public Housing Funding",
               "module": "individual_income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "public housing provident fund holding indicator",
-              "mapping_status": "official questionnaire/codebook field label reviewed; special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Yes/no ownership/holding item; HC028 amount is conditional where the questionnaire routes it. Preserve wave-specific codes and do not infer absence from a skipped/missing value."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Yes/no ownership/holding item; HC028 amount is conditional where the questionnaire routes it. Preserve wave-specific codes and do not infer absence from a skipped/missing value.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -7132,10 +7132,10 @@
               "label": "Holding Any Deposits",
               "module": "individual_income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "deposit holding indicator",
-              "mapping_status": "official 2011 questionnaire/codebook field label reviewed; special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked before the conditional deposit amount HC005; retain its yes/no/refusal coding and routing. Later waves do not have this same status field in the public catalog."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked before the conditional deposit amount HC005; retain its yes/no/refusal coding and routing. Later waves do not have this same status field in the public catalog.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -7152,10 +7152,10 @@
               "label": "Have Any Government Bonds",
               "module": "individual_income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "current bond ownership indicator",
-              "mapping_status": "official questionnaire wording reviewed; response special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked about bonds in respondent's name; exact examples vary (2018 includes corporate bonds). The follow-up face value is conditional. Retain wave-specific response codes and do not infer ownership from missing follow-up amounts."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked about bonds in respondent's name; exact examples vary (2018 includes corporate bonds). The follow-up face value is conditional. Retain wave-specific response codes and do not infer ownership from missing follow-up amounts.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -7974,8 +7974,8 @@
               "unit": "nonexclusive categorical option",
               "value_labels": "",
               "value_semantics": "inheritance source option: parents",
-              "mapping_status": "official questionnaire multi-select option identity reviewed; binary storage semantics pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the parents option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data."
+              "mapping_status": "official Codebook identifies affirmative inheritance-source option; unselected storage and denominator unresolved; no response-value labels assigned",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the parents option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data.; Nonexclusive inheritance-source checkbox option. The official Codebook's affirmative option code identifies the selected source; it does not establish the unselected value or eligible denominator. Do not infer No from blank/missing. No frequencies copied."
             },
             {
               "code": "hd008s2",
@@ -7984,8 +7984,8 @@
               "unit": "nonexclusive categorical option",
               "value_labels": "",
               "value_semantics": "inheritance source option: parents-in-law",
-              "mapping_status": "official questionnaire multi-select option identity reviewed; binary storage semantics pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the parents-in-law option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data."
+              "mapping_status": "official Codebook identifies affirmative inheritance-source option; unselected storage and denominator unresolved; no response-value labels assigned",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the parents-in-law option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data.; Nonexclusive inheritance-source checkbox option. The official Codebook's affirmative option code identifies the selected source; it does not establish the unselected value or eligible denominator. Do not infer No from blank/missing. No frequencies copied."
             },
             {
               "code": "hd008s3",
@@ -7994,8 +7994,8 @@
               "unit": "nonexclusive categorical option",
               "value_labels": "",
               "value_semantics": "inheritance source option: children",
-              "mapping_status": "official questionnaire multi-select option identity reviewed; binary storage semantics pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the children option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data."
+              "mapping_status": "official Codebook identifies affirmative inheritance-source option; unselected storage and denominator unresolved; no response-value labels assigned",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the children option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data.; Nonexclusive inheritance-source checkbox option. The official Codebook's affirmative option code identifies the selected source; it does not establish the unselected value or eligible denominator. Do not infer No from blank/missing. No frequencies copied."
             },
             {
               "code": "hd008s4",
@@ -8004,8 +8004,8 @@
               "unit": "nonexclusive categorical option",
               "value_labels": "",
               "value_semantics": "inheritance source option: other relatives",
-              "mapping_status": "official questionnaire multi-select option identity reviewed; binary storage semantics pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the other relatives option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data."
+              "mapping_status": "official Codebook identifies affirmative inheritance-source option; unselected storage and denominator unresolved; no response-value labels assigned",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the other relatives option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data.; Nonexclusive inheritance-source checkbox option. The official Codebook's affirmative option code identifies the selected source; it does not establish the unselected value or eligible denominator. Do not infer No from blank/missing. No frequencies copied."
             },
             {
               "code": "hd008s5",
@@ -8014,8 +8014,8 @@
               "unit": "nonexclusive categorical option",
               "value_labels": "",
               "value_semantics": "inheritance source option: other sources",
-              "mapping_status": "official questionnaire multi-select option identity reviewed; binary storage semantics pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the other sources option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data."
+              "mapping_status": "official Codebook identifies affirmative inheritance-source option; unselected storage and denominator unresolved; no response-value labels assigned",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the other sources option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data.; Nonexclusive inheritance-source checkbox option. The official Codebook's affirmative option code identifies the selected source; it does not establish the unselected value or eligible denominator. Do not infer No from blank/missing. No frequencies copied."
             }
           ]
         },
@@ -9182,10 +9182,10 @@
               "label": "Any Jizikuan",
               "module": "individual_income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "indicator of unrepaid Jizikuan funds provided to a work unit",
-              "mapping_status": "official questionnaire wording reviewed; response special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The official question describes funds collected from the respondent by their own or another work unit and still held/not repaid; this is a receivable/financial resource, not a deposit, public housing fund, or ordinary loan. Preserve yes/no/refusal coding and HC031 conditional route."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The official question describes funds collected from the respondent by their own or another work unit and still held/not repaid; this is a receivable/financial resource, not a deposit, public housing fund, or ordinary loan. Preserve yes/no/refusal coding and HC031 conditional route.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -9394,8 +9394,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "reported annual income amount",
-              "mapping_status": "official variable label mapped; detailed wording/value codes and reference-period harmonization pending",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011 questionnaire/codebook distinguishes annual yuan from a monthly alternative; 2015 questionnaire specifies annual yuan and the observed amount is GA002 (not the empty GA002_1/_2 codebook aliases). Later question wording and units must still be checked wave by wave. Bracket bounds are not exact observed amounts."
+              "mapping_status": "official questionnaire/Codebook field reviewed; continuous amount/count, no categorical response labels; preserve unit and route",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011 questionnaire/codebook distinguishes annual yuan from a monthly alternative; 2015 questionnaire specifies annual yuan and the observed amount is GA002 (not the empty GA002_1/_2 codebook aliases). Later question wording and units must still be checked wave by wave. Bracket bounds are not exact observed amounts.; Yuan/year; alternative field ga002_1 is Yuan/month Continuous measurement; Codebook descriptive summaries are not respondent-level data or analytic cutoffs. Preserve source scale, special values, missingness, and conditional route."
             }
           ]
         },
@@ -9434,8 +9434,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "reported monthly income alternative",
-              "mapping_status": "official variable label mapped; detailed wording/value codes and reference-period harmonization pending",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. This is the 2011 monthly alternative to the annual amount, per the official baseline questionnaire and codebook; do not combine the two responses."
+              "mapping_status": "official questionnaire/Codebook field reviewed; continuous amount/count, no categorical response labels; preserve unit and route",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. This is the 2011 monthly alternative to the annual amount, per the official baseline questionnaire and codebook; do not combine the two responses.; Yuan/month; alternative to annual field ga002 Continuous measurement; Codebook descriptive summaries are not respondent-level data or analytic cutoffs. Preserve source scale, special values, missingness, and conditional route."
             }
           ]
         },
@@ -23400,10 +23400,10 @@
               "label": "Funds",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "past-year mutual fund holding indicator",
-              "mapping_status": "official questionnaire wording reviewed; response special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011–2015 item refers to past-year holdings and is kept separate from 2018 current ownership. Follow-up value is conditional; preserve wave-specific codes and routing."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011–2015 item refers to past-year holdings and is kept separate from 2018 current ownership. Follow-up value is conditional; preserve wave-specific codes and routing.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -23420,10 +23420,10 @@
               "label": "Stocks",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "past-year stock holding indicator",
-              "mapping_status": "official questionnaire wording reviewed; response special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011 questionnaire explicitly excludes work-unit equity; the 2011–2015 item refers to having held stocks in the past year, unlike the current-holding question introduced in 2018. Keep separate from 2018 status and retain follow-up routing."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011 questionnaire explicitly excludes work-unit equity; the 2011–2015 item refers to having held stocks in the past year, unlike the current-holding question introduced in 2018. Keep separate from 2018 status and retain follow-up routing.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -24815,10 +24815,10 @@
               "label": "Rotating Savings and Credit Association",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "past-year rotating savings/credit association participation",
-              "mapping_status": "official questionnaire and codebook wording reviewed; response codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011/2013 questionnaires ask whether the respondent participated in a rotating savings and credit association during the past year. This is distinct from the broader 2015 private-lending wording. Preserve yes/no code and conditional HC037 route."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011/2013 questionnaires ask whether the respondent participated in a rotating savings and credit association during the past year. This is distinct from the broader 2015 private-lending wording. Preserve yes/no code and conditional HC037 route.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -25675,10 +25675,10 @@
               "label": "Public Housing Fund",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "public housing provident fund holding indicator",
-              "mapping_status": "official questionnaire/codebook field label reviewed; special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Yes/no ownership/holding item; HC028 amount is conditional where the questionnaire routes it. Preserve wave-specific codes and do not infer absence from a skipped/missing value."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Yes/no ownership/holding item; HC028 amount is conditional where the questionnaire routes it. Preserve wave-specific codes and do not infer absence from a skipped/missing value.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -25695,10 +25695,10 @@
               "label": "Goverment Bonds",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "current bond ownership indicator",
-              "mapping_status": "official questionnaire wording reviewed; response special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked about bonds in respondent's name; exact examples vary (2018 includes corporate bonds). The follow-up face value is conditional. Retain wave-specific response codes and do not infer ownership from missing follow-up amounts."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked about bonds in respondent's name; exact examples vary (2018 includes corporate bonds). The follow-up face value is conditional. Retain wave-specific response codes and do not infer ownership from missing follow-up amounts.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -26657,8 +26657,8 @@
               "unit": "nonexclusive categorical option",
               "value_labels": "",
               "value_semantics": "inheritance source option: parents",
-              "mapping_status": "official questionnaire multi-select option identity reviewed; binary storage semantics pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the parents option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data."
+              "mapping_status": "official Codebook identifies affirmative inheritance-source option; unselected storage and denominator unresolved; no response-value labels assigned",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the parents option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data.; Nonexclusive inheritance-source checkbox option. The official Codebook's affirmative option code identifies the selected source; it does not establish the unselected value or eligible denominator. Do not infer No from blank/missing. No frequencies copied."
             },
             {
               "code": "hd008s2",
@@ -26667,8 +26667,8 @@
               "unit": "nonexclusive categorical option",
               "value_labels": "",
               "value_semantics": "inheritance source option: parents-in-law",
-              "mapping_status": "official questionnaire multi-select option identity reviewed; binary storage semantics pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the parents-in-law option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data."
+              "mapping_status": "official Codebook identifies affirmative inheritance-source option; unselected storage and denominator unresolved; no response-value labels assigned",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the parents-in-law option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data.; Nonexclusive inheritance-source checkbox option. The official Codebook's affirmative option code identifies the selected source; it does not establish the unselected value or eligible denominator. Do not infer No from blank/missing. No frequencies copied."
             },
             {
               "code": "hd008s3",
@@ -26677,8 +26677,8 @@
               "unit": "nonexclusive categorical option",
               "value_labels": "",
               "value_semantics": "inheritance source option: children",
-              "mapping_status": "official questionnaire multi-select option identity reviewed; binary storage semantics pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the children option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data."
+              "mapping_status": "official Codebook identifies affirmative inheritance-source option; unselected storage and denominator unresolved; no response-value labels assigned",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the children option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data.; Nonexclusive inheritance-source checkbox option. The official Codebook's affirmative option code identifies the selected source; it does not establish the unselected value or eligible denominator. Do not infer No from blank/missing. No frequencies copied."
             },
             {
               "code": "hd008s4",
@@ -26687,8 +26687,8 @@
               "unit": "nonexclusive categorical option",
               "value_labels": "",
               "value_semantics": "inheritance source option: other relatives",
-              "mapping_status": "official questionnaire multi-select option identity reviewed; binary storage semantics pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the other relatives option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data."
+              "mapping_status": "official Codebook identifies affirmative inheritance-source option; unselected storage and denominator unresolved; no response-value labels assigned",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the other relatives option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data.; Nonexclusive inheritance-source checkbox option. The official Codebook's affirmative option code identifies the selected source; it does not establish the unselected value or eligible denominator. Do not infer No from blank/missing. No frequencies copied."
             },
             {
               "code": "hd008s5",
@@ -26697,8 +26697,8 @@
               "unit": "nonexclusive categorical option",
               "value_labels": "",
               "value_semantics": "inheritance source option: other sources",
-              "mapping_status": "official questionnaire multi-select option identity reviewed; binary storage semantics pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the other sources option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data."
+              "mapping_status": "official Codebook identifies affirmative inheritance-source option; unselected storage and denominator unresolved; no response-value labels assigned",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; the questionnaire says choose all that apply. This field denotes the other sources option. Options are not mutually exclusive; preserve each option field and validate selected/unselected/missing codes in respondent data.; Nonexclusive inheritance-source checkbox option. The official Codebook's affirmative option code identifies the selected source; it does not establish the unselected value or eligible denominator. Do not infer No from blank/missing. No frequencies copied."
             }
           ]
         },
@@ -28215,10 +28215,10 @@
               "label": "Jizikuan",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "indicator of unrepaid Jizikuan funds provided to a work unit",
-              "mapping_status": "official questionnaire wording reviewed; response special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The official question describes funds collected from the respondent by their own or another work unit and still held/not repaid; this is a receivable/financial resource, not a deposit, public housing fund, or ordinary loan. Preserve yes/no/refusal coding and HC031 conditional route."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The official question describes funds collected from the respondent by their own or another work unit and still held/not repaid; this is a receivable/financial resource, not a deposit, public housing fund, or ordinary loan. Preserve yes/no/refusal coding and HC031 conditional route.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -28607,8 +28607,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "reported annual income amount",
-              "mapping_status": "official variable label mapped; detailed wording/value codes and reference-period harmonization pending",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The official variable label specifies the year unit; brackets/nonresponse codes require separate handling."
+              "mapping_status": "official questionnaire/Codebook field reviewed; continuous amount/count, no categorical response labels; preserve unit and route",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The official variable label specifies the year unit; brackets/nonresponse codes require separate handling.; Yuan/year Continuous measurement; Codebook descriptive summaries are not respondent-level data or analytic cutoffs. Preserve source scale, special values, missingness, and conditional route."
             }
           ]
         },
@@ -45814,10 +45814,10 @@
               "label": "Whether to be defrauded",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "ever experienced fraud",
-              "mapping_status": "official 2015 questionnaire wording visually verified; value codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2015 questionnaire asks whether the respondent has experienced fraud, without the explicit property-loss or past-year exclusion wording used by the 2018 items. Keep this wave-specific concept separate from 2018 prior fraud with property loss and past-year attempts; preserve Yes/No, routing and special codes."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2015 questionnaire asks whether the respondent has experienced fraud, without the explicit property-loss or past-year exclusion wording used by the 2018 items. Keep this wave-specific concept separate from 2018 prior fraud with property loss and past-year attempts; preserve Yes/No, routing and special codes.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -46295,10 +46295,10 @@
               "label": "Funds",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "past-year mutual fund holding indicator",
-              "mapping_status": "official questionnaire wording reviewed; response special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011–2015 item refers to past-year holdings and is kept separate from 2018 current ownership. Follow-up value is conditional; preserve wave-specific codes and routing."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011–2015 item refers to past-year holdings and is kept separate from 2018 current ownership. Follow-up value is conditional; preserve wave-specific codes and routing.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -46315,10 +46315,10 @@
               "label": "Stocks",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "past-year stock holding indicator",
-              "mapping_status": "official questionnaire wording reviewed; response special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011 questionnaire explicitly excludes work-unit equity; the 2011–2015 item refers to having held stocks in the past year, unlike the current-holding question introduced in 2018. Keep separate from 2018 status and retain follow-up routing."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011 questionnaire explicitly excludes work-unit equity; the 2011–2015 item refers to having held stocks in the past year, unlike the current-holding question introduced in 2018. Keep separate from 2018 status and retain follow-up routing.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -47470,10 +47470,10 @@
               "label": "Rotating Savings and Credit Association",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "past-year private-lending participation",
-              "mapping_status": "official questionnaire and codebook scope reviewed; value coding pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2015 questionnaire says private lending (e.g., rotating savings association); Codebook uses the narrower rotating-savings label. Keep this broader 2015 wording separate from 2011/2013 participation until harmonization is justified."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2015 questionnaire says private lending (e.g., rotating savings association); Codebook uses the narrower rotating-savings label. Keep this broader 2015 wording separate from 2011/2013 participation until harmonization is justified.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -48260,10 +48260,10 @@
               "label": "Public Housing Fund",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "public housing provident fund holding indicator",
-              "mapping_status": "official questionnaire/codebook field label reviewed; special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Yes/no ownership/holding item; HC028 amount is conditional where the questionnaire routes it. Preserve wave-specific codes and do not infer absence from a skipped/missing value."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Yes/no ownership/holding item; HC028 amount is conditional where the questionnaire routes it. Preserve wave-specific codes and do not infer absence from a skipped/missing value.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -48280,10 +48280,10 @@
               "label": "Goverment Bonds",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "current bond ownership indicator",
-              "mapping_status": "official questionnaire wording reviewed; response special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked about bonds in respondent's name; exact examples vary (2018 includes corporate bonds). The follow-up face value is conditional. Retain wave-specific response codes and do not infer ownership from missing follow-up amounts."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked about bonds in respondent's name; exact examples vary (2018 includes corporate bonds). The follow-up face value is conditional. Retain wave-specific response codes and do not infer ownership from missing follow-up amounts.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -49120,10 +49120,10 @@
               "label": "Amount of Funds Ramaining That Are Obligated Pay to Rotating Savings and Credit",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "unrepaid lending receivable indicator",
-              "mapping_status": "2015 questionnaire/codebook field-label conflict; DO NOT ANALYZE until released-variable identity is resolved",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2015 questionnaire page 219 asks whether other families/individuals still owe the respondent money, but the 2015 Codebook labels HC039_W3 as an amount owed for rotating savings and credit. Preserve as a locked metadata candidate pending confirmation of the released field identity. Keep separate from respondent's own debt balance and preserve conditional routing."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2015 questionnaire page 219 asks whether other families/individuals still owe the respondent money, but the 2015 Codebook labels HC039_W3 as an amount owed for rotating savings and credit. Preserve as a locked metadata candidate pending confirmation of the released field identity. Keep separate from respondent's own debt balance and preserve conditional routing.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -50631,10 +50631,10 @@
               "label": "Jizikuan",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "indicator of unrepaid Jizikuan funds provided to a work unit",
-              "mapping_status": "official questionnaire wording reviewed; response special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The official question describes funds collected from the respondent by their own or another work unit and still held/not repaid; this is a receivable/financial resource, not a deposit, public housing fund, or ordinary loan. Preserve yes/no/refusal coding and HC031 conditional route."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The official question describes funds collected from the respondent by their own or another work unit and still held/not repaid; this is a receivable/financial resource, not a deposit, public housing fund, or ordinary loan. Preserve yes/no/refusal coding and HC031 conditional route.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -51733,8 +51733,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "reported annual income amount",
-              "mapping_status": "official variable label mapped; detailed wording/value codes and reference-period harmonization pending",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011 questionnaire/codebook distinguishes annual yuan from a monthly alternative; 2015 questionnaire specifies annual yuan and the observed amount is GA002 (not the empty GA002_1/_2 codebook aliases). Later question wording and units must still be checked wave by wave. Bracket bounds are not exact observed amounts."
+              "mapping_status": "official questionnaire/Codebook field reviewed; continuous amount/count, no categorical response labels; preserve unit and route",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011 questionnaire/codebook distinguishes annual yuan from a monthly alternative; 2015 questionnaire specifies annual yuan and the observed amount is GA002 (not the empty GA002_1/_2 codebook aliases). Later question wording and units must still be checked wave by wave. Bracket bounds are not exact observed amounts.; Yuan/year Continuous measurement; Codebook descriptive summaries are not respondent-level data or analytic cutoffs. Preserve source scale, special values, missingness, and conditional route."
             }
           ]
         },
@@ -69789,10 +69789,10 @@
               "label": "Own Mutual Fund",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 999=Refused to answer",
               "value_semantics": "current mutual fund holding indicator",
-              "mapping_status": "official 2018 questionnaire wording reviewed; response special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. 2018 asks current holdings, unlike the 2011–2015 past-year item; keep as a wave-specific concept. Follow-up market value is conditional."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. 2018 asks current holdings, unlike the 2011–2015 past-year item; keep as a wave-specific concept. Follow-up market value is conditional.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -69829,10 +69829,10 @@
               "label": "Own Stock",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 999=Refused to answer",
               "value_semantics": "current stock holding indicator",
-              "mapping_status": "official 2018 questionnaire wording reviewed; response special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. 2018 asks current holdings, unlike the 2011–2015 past-year item; keep as a wave-specific concept. Follow-up market value is conditional."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. 2018 asks current holdings, unlike the 2011–2015 past-year item; keep as a wave-specific concept. Follow-up market value is conditional.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -71785,8 +71785,8 @@
               "unit": "events",
               "value_labels": "",
               "value_semantics": "prior fraud event count",
-              "mapping_status": "official 2018 questionnaire wording reviewed; special response codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked only after HD005_W4=Yes; count is not the number of attempts in the past year."
+              "mapping_status": "official questionnaire/Codebook field reviewed; continuous amount/count, no categorical response labels; preserve unit and route",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked only after HD005_W4=Yes; count is not the number of attempts in the past year.; event count; number of lifetime fraud experiences with property loss Continuous measurement; Codebook descriptive summaries are not respondent-level data or analytic cutoffs. Preserve source scale, special values, missingness, and conditional route."
             }
           ]
         },
@@ -72345,10 +72345,10 @@
               "label": "Own Public Housing Funding",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 999=Refused to answer",
               "value_semantics": "public housing provident fund holding indicator",
-              "mapping_status": "official questionnaire/codebook field label reviewed; special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Yes/no ownership/holding item; HC028 amount is conditional where the questionnaire routes it. Preserve wave-specific codes and do not infer absence from a skipped/missing value."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Yes/no ownership/holding item; HC028 amount is conditional where the questionnaire routes it. Preserve wave-specific codes and do not infer absence from a skipped/missing value.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -72365,10 +72365,10 @@
               "label": "Own Bond",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 999=Refused to answer",
               "value_semantics": "current bond ownership indicator",
-              "mapping_status": "official questionnaire wording reviewed; response special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked about bonds in respondent's name; exact examples vary (2018 includes corporate bonds). The follow-up face value is conditional. Retain wave-specific response codes and do not infer ownership from missing follow-up amounts."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked about bonds in respondent's name; exact examples vary (2018 includes corporate bonds). The follow-up face value is conditional. Retain wave-specific response codes and do not infer ownership from missing follow-up amounts.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -73015,10 +73015,10 @@
               "label": "Lend Money to Others",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 999=Refused to answer",
               "value_semantics": "unrepaid lending receivable indicator",
-              "mapping_status": "official questionnaire and codebook wording reviewed; special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2018 item asks whether anyone or any unit has failed to repay money lent by the respondent, excluding arrears/receivables already asked above. Keep separate from respondent's own debt balance and preserve conditional routing."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2018 item asks whether anyone or any unit has failed to repay money lent by the respondent, excluding arrears/receivables already asked above. Keep separate from respondent's own debt balance and preserve conditional routing.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -74495,10 +74495,10 @@
               "label": "Own Jizikuan",
               "module": "Individual_Income",
               "unit": "categorical response",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 999=Refused to answer",
               "value_semantics": "indicator of unrepaid Jizikuan funds provided to a work unit",
-              "mapping_status": "official questionnaire wording reviewed; response special codes pending respondent-data validation",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The official question describes funds collected from the respondent by their own or another work unit and still held/not repaid; this is a receivable/financial resource, not a deposit, public housing fund, or ordinary loan. Preserve yes/no/refusal coding and HC031 conditional route."
+              "mapping_status": "official questionnaire response categories transcribed; Codebook frequencies omitted; validate authorized-release coding and eligible denominator",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The official question describes funds collected from the respondent by their own or another work unit and still held/not repaid; this is a receivable/financial resource, not a deposit, public housing fund, or ordinary loan. Preserve yes/no/refusal coding and HC031 conditional route.; Binary respondent-level item. Categories follow the wave-specific official questionnaire; 2018 additionally identifies 999=refusal. Preserve routing and special/missing values; do not pool as comparable until wording and reference period are harmonized."
             }
           ]
         },
@@ -74767,8 +74767,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "reported annual income amount",
-              "mapping_status": "official variable label mapped; detailed wording/value codes and reference-period harmonization pending",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011 questionnaire/codebook distinguishes annual yuan from a monthly alternative; 2015 questionnaire specifies annual yuan and the observed amount is GA002 (not the empty GA002_1/_2 codebook aliases). Later question wording and units must still be checked wave by wave. Bracket bounds are not exact observed amounts."
+              "mapping_status": "official questionnaire/Codebook field reviewed; continuous amount/count, no categorical response labels; preserve unit and route",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011 questionnaire/codebook distinguishes annual yuan from a monthly alternative; 2015 questionnaire specifies annual yuan and the observed amount is GA002 (not the empty GA002_1/_2 codebook aliases). Later question wording and units must still be checked wave by wave. Bracket bounds are not exact observed amounts.; Yuan/year Continuous measurement; Codebook descriptive summaries are not respondent-level data or analytic cutoffs. Preserve source scale, special values, missingness, and conditional route."
             }
           ]
         },
@@ -94084,8 +94084,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "reported decrease amount",
-              "mapping_status": "official variable label mapped; detailed wording/value codes and reference-period harmonization pending",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. COVID-era, conditional follow-up; bracket limits and sample routing require review."
+              "mapping_status": "official questionnaire/Codebook field reviewed; continuous amount/count, no categorical response labels; preserve unit and route",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. COVID-era, conditional follow-up; bracket limits and sample routing require review.; Yuan; COVID-period wage decrease amount, conditional on decrease Continuous measurement; Codebook descriptive summaries are not respondent-level data or analytic cutoffs. Preserve source scale, special values, missingness, and conditional route."
             }
           ]
         },
@@ -94104,8 +94104,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "reported increase amount",
-              "mapping_status": "official variable label mapped; detailed wording/value codes and reference-period harmonization pending",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. COVID-era, conditional follow-up; bracket limits and sample routing require review."
+              "mapping_status": "official questionnaire/Codebook field reviewed; continuous amount/count, no categorical response labels; preserve unit and route",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. COVID-era, conditional follow-up; bracket limits and sample routing require review.; Yuan; COVID-period wage increase amount, conditional on increase Continuous measurement; Codebook descriptive summaries are not respondent-level data or analytic cutoffs. Preserve source scale, special values, missingness, and conditional route."
             }
           ]
         },
@@ -95995,8 +95995,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "reported annual income amount",
-              "mapping_status": "official variable label mapped; detailed wording/value codes and reference-period harmonization pending",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011 questionnaire/codebook distinguishes annual yuan from a monthly alternative; 2015 questionnaire specifies annual yuan and the observed amount is GA002 (not the empty GA002_1/_2 codebook aliases). Later question wording and units must still be checked wave by wave. Bracket bounds are not exact observed amounts."
+              "mapping_status": "official questionnaire/Codebook field reviewed; continuous amount/count, no categorical response labels; preserve unit and route",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. The 2011 questionnaire/codebook distinguishes annual yuan from a monthly alternative; 2015 questionnaire specifies annual yuan and the observed amount is GA002 (not the empty GA002_1/_2 codebook aliases). Later question wording and units must still be checked wave by wave. Bracket bounds are not exact observed amounts.; Yuan/year Continuous measurement; Codebook descriptive summaries are not respondent-level data or analytic cutoffs. Preserve source scale, special values, missingness, and conditional route."
             }
           ]
         },
@@ -96883,10 +96883,10 @@
               "label": "Exclude Insurance and Some Others",
               "module": "Individual_Income",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 997=Do not know; 999=Refused to answer",
               "value_semantics": "wage amount exclusion-scope item",
-              "mapping_status": "official variable label mapped; detailed wording/value codes and reference-period harmonization pending",
-              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Scope/definition item, not a wage amount."
+              "mapping_status": "official questionnaire/Codebook response labels reviewed; frequencies omitted; preserve special codes",
+              "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Scope/definition item, not a wage amount.; Indicates whether reported wage excludes insurance, income tax, public housing fund, and other fees; this is a scope/measurement flag, not an exposure amount. Preserve 997/999 and routed follow-up."
             }
           ]
         },

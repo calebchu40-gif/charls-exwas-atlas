@@ -1,6 +1,10 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-23）
 
 
+## 最新工作：个人收入与工资元数据
+
+2026-10-23已按官方问卷/Codebook审核2011–2020工资金额单位、金融资产与借贷指示项、继承来源多选项、诈骗经历以及2020工资扣除范围。波次差异和未选项编码不确定性均在目录中保留；没有拷贝代码本频数、均值或极值。E类通用待核由85降至40，P为0；当前仍是元数据目录，正式关联模型数为0。详见[`audit/personal_income_wage_metadata_review_2011_2020_2026-10-23.md`](audit/personal_income_wage_metadata_review_2011_2020_2026-10-23.md)。
+
 ## 本地元数据重建
 
 - `python scripts/build_ep_atlas_metadata.py`：全量重建所有波次来源交叉表、目录、配对索引和网站元数据；官方源文件或上游映射有变化时使用。
