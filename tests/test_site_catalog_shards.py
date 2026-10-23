@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 
 from scripts.site_catalog_shards import ROLES, rows_for_role
+from scripts.build_ep_atlas_metadata import FINALIZATION_PIPELINE_SCRIPTS, FULL_PIPELINE_SCRIPTS
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -38,6 +39,10 @@ class SiteCatalogShardTests(unittest.TestCase):
         for role in ROLES:
             shard = json.loads((ROOT / f"site-prototype/dist/catalog_{role}.json").read_text(encoding="utf-8"))
             self.assertEqual(shard, rows_for_role(master, role))
+
+    def test_both_metadata_pipelines_rebuild_role_shards_after_all_catalog_edits(self):
+        self.assertEqual(FINALIZATION_PIPELINE_SCRIPTS[-1], "site_catalog_shards.py")
+        self.assertEqual(FULL_PIPELINE_SCRIPTS[-1], "site_catalog_shards.py")
 
 
 if __name__ == "__main__":

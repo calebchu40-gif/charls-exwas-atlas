@@ -2,11 +2,13 @@
 
 ## 2026-10-24
 
+- Moved the final E/P/C shard build to the end of both metadata pipelines so late source-reviewed metadata propagation is reflected in the browser catalogue; final role shards match the master field catalogue at E=4,750, P=2,110 and C=986 rows.
+
 - Synchronized the E/P concept-source index with the explicit catalog role audit: seven 2018 HA004 total-value/unit-value format selectors are C-only metadata, not exposure tests. The crosswalk builder now applies exact audited E/P-to-C overrides only when the corresponding C catalogue field and reviewed concept are present; added regression coverage and a reconciliation audit.
   Specialist concept joins now preserve that C-only boundary in the field catalogue as well. Full finalization reports 1,428 E/P concepts (1,149 E, 288 P, including 9 dual-role concepts), 6,624 source mappings, and wave metadata co-availability counts of 121,107 / 126,514 / 130,376 / 101,551 / 13,906 (2011/2013/2015/2018/2020). These counts are not sample sizes or association results. All 210 tests and static checks pass; the 89 analysis locks and zero fitted models remain unchanged.
 
 - Added questionnaire-derived units and field-specific scope notes for the 2011 community weather estimates: annual low/high temperatures (°C) and rainy/snowy day counts (days), explicitly reported by a community informant rather than linked station observations. Added source audit and regression coverage; no responses or Codebook summaries were copied.
-  Full finalization synchronized the weather annotations across the candidate catalogue and community site JSON; 209 tests and 34 static JSON checks pass. The refreshed site catalogue contains E=4,750, P=2,110, C=978; 89 formal E/P locks remain and no association models or pairwise sample sizes are computed.
+  Full finalization synchronized the weather annotations across the candidate catalogue and community site JSON; 209 tests and 34 static JSON checks pass. The refreshed site catalogue contains E=4,750, P=2,110, C=986; 89 formal E/P locks remain and no association models or pairwise sample sizes are computed.
   Deployment verified: commit `0a79030` is GitHub Pages Deploy #100 (run `40028365448`, success); the cache-busted public community JSON returns HTTP 200 and confirms the four weather-field units and caveats.
 
 - Expanded the objective-measurement wave boundary review using official CHARLS sources: the 2018 Wave 4 User’s Guide places non-blood measurements in Waves 1–3 and blood biomarkers in Waves 1 and 3; the 2021–2023 fifth regular survey is kept distinct from the released 2020 Wave 5 package. 2020 care-use recall questions are not coded as direct measurements. Updated the site note and audit; no 2021–2023 rows were inferred without a verified release package.
