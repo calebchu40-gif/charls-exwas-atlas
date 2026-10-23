@@ -18522,9 +18522,9 @@
               "label": "Y/N Treat Stroke by Take Chinese Traditional Medicine",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -18532,9 +18532,9 @@
               "label": "Y/N Treat Stroke by Take Western Morden Medicine",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -18692,9 +18692,9 @@
               "label": "Y/N Treat Emotional or Psychiatric Problems by Psychological Treatment",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Receiving psychiatric or psychological treatment",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -18704,7 +18704,7 @@
               "unit": "",
               "value_labels": "2=Taking antidepressants (selected option; unselected storage code not inferred)",
               "value_semantics": "antidepressant medication option",
-              "mapping_status": "official option field mapped to disease-specific treatment concept; route and nonselection storage remain explicit",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "2011 emotional/psychiatric treatment option. Conditional on the mental-health disease route; codebook gives the selected-option category and does not establish a safe unselected-value code."
             },
             {
@@ -18942,9 +18942,9 @@
               "label": "Y/N Treat Cancer by Take Chinese Traditional Medicine",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -18952,9 +18952,9 @@
               "label": "Y/N Treat Cancer by Take Western Morden Medicine",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -19472,9 +19472,9 @@
               "label": "Take Chinese Traditional Medicine for Diabetes",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -19482,9 +19482,9 @@
               "label": "Take Western Morden Medicine for Diabetes",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -20332,9 +20332,9 @@
               "label": "Take Chinese Traditional Medicine for Hypertension",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -20342,9 +20342,9 @@
               "label": "Take Western Morden Medicine for Hypertension",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -20354,7 +20354,7 @@
               "unit": "",
               "value_labels": "3=None of the above (selected option; unselected storage code not inferred)",
               "value_semantics": "none-of-the-above treatment option",
-              "mapping_status": "official option field mapped to disease-specific treatment concept; route and nonselection storage remain explicit",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "2011 hypertension treatment list's explicit none-of-the-above option. Use with the other option fields; this is not a standalone population-level No without the eligible hypertension denominator."
             }
           ]
@@ -41117,9 +41117,9 @@
               "label": "Treatments for Stroke or Its Complications",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41127,9 +41127,9 @@
               "label": "Treatments for Stroke or Its Complications",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41137,9 +41137,9 @@
               "label": "Treatments for Stroke or Its Complications",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Physical Therapy",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41147,9 +41147,9 @@
               "label": "Treatments for Stroke or Its Complications",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=Acupuncture and Moxibustion",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41157,9 +41157,9 @@
               "label": "Treatments for Stroke or Its Complications",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "5=Occupational Therapy",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41167,9 +41167,9 @@
               "label": "Treatments for Stroke or Its Complications",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "6=None of The above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -41187,9 +41187,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41197,9 +41197,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41207,9 +41207,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other Treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41217,9 +41217,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -41237,9 +41237,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41247,9 +41247,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41257,9 +41257,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other Treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41267,9 +41267,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -41287,9 +41287,9 @@
               "label": "Treatments for Emotional or Psychiatric Problems",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Receiving Psychiatric or Psychological Treatment",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41297,9 +41297,9 @@
               "label": "Treatments for Emotional or Psychiatric Problems",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Anti Depressants",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41307,9 +41307,9 @@
               "label": "Treatments for Emotional or Psychiatric Problems",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Taking Tranquilizers or Sleeping Pills",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41317,9 +41317,9 @@
               "label": "Treatments for Emotional or Psychiatric Problems",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -41337,9 +41337,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41347,9 +41347,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41357,9 +41357,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other Treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41367,9 +41367,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -41627,9 +41627,9 @@
               "label": "Taking Medications to Relieve Cancer Symptoms",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41637,9 +41637,9 @@
               "label": "Taking Medications to Relieve Cancer Symptoms",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41647,9 +41647,9 @@
               "label": "Taking Medications to Relieve Cancer Symptoms",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Chemotherapy",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41657,9 +41657,9 @@
               "label": "Taking Medications to Relieve Cancer Symptoms",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=Surgery",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41667,9 +41667,9 @@
               "label": "Taking Medications to Relieve Cancer Symptoms",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "5=Radiation Therapy",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -41677,9 +41677,9 @@
               "label": "Taking Medications to Relieve Cancer Symptoms",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "6=None of The above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -42177,9 +42177,9 @@
               "label": "Treating or Controlling Diabetes with Medication",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42187,9 +42187,9 @@
               "label": "Treating or Controlling Diabetes with Medication",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42197,9 +42197,9 @@
               "label": "Treating or Controlling Diabetes with Medication",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Taking Insulin Injections",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42207,9 +42207,9 @@
               "label": "Treating or Controlling Diabetes with Medication",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -42227,9 +42227,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42237,9 +42237,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42247,9 +42247,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other Treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42257,9 +42257,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -42277,9 +42277,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42287,9 +42287,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42297,9 +42297,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other Treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42307,9 +42307,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -42327,9 +42327,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42337,9 +42337,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42347,9 +42347,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other Treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42357,9 +42357,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -42377,9 +42377,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42387,9 +42387,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42397,9 +42397,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other Treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42407,9 +42407,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -42427,9 +42427,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42437,9 +42437,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42447,9 +42447,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other Treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -42457,9 +42457,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2013 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -65272,9 +65272,9 @@
               "label": "Treatments for Stroke or Its Complications",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65282,9 +65282,9 @@
               "label": "Treatments for Stroke or Its Complications",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65292,9 +65292,9 @@
               "label": "Treatments for Stroke or Its Complications",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Physical Therapy",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65302,9 +65302,9 @@
               "label": "Treatments for Stroke or Its Complications",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=Acupuncture and Moxibustion",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65312,9 +65312,9 @@
               "label": "Treatments for Stroke or Its Complications",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "5=Occupational Therapy",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65322,9 +65322,9 @@
               "label": "Treatments for Stroke or Its Complications",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "6=None of The Above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -65342,9 +65342,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65352,9 +65352,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65362,9 +65362,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other Treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65372,9 +65372,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The Above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -65392,9 +65392,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65402,9 +65402,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65412,9 +65412,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other Treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65422,9 +65422,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The Above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -65442,9 +65442,9 @@
               "label": "Treatments for Emotional or Psychiatric Problems",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Receiving Psychiatric or Psychological Treatment",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65452,9 +65452,9 @@
               "label": "Treatments for Emotional or Psychiatric Problems",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Anti Depressants",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65462,9 +65462,9 @@
               "label": "Treatments for Emotional or Psychiatric Problems",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Taking Tranquilizers or Sleeping Pills",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65472,9 +65472,9 @@
               "label": "Treatments for Emotional or Psychiatric Problems",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The Above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -65492,9 +65492,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65502,9 +65502,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65512,9 +65512,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other Treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65522,9 +65522,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The Above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -65782,9 +65782,9 @@
               "label": "Taking Medications to Relieve Cancer Symptoms",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65792,9 +65792,9 @@
               "label": "Taking Medications to Relieve Cancer Symptoms",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65802,9 +65802,9 @@
               "label": "Taking Medications to Relieve Cancer Symptoms",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Chemotherapy",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65812,9 +65812,9 @@
               "label": "Taking Medications to Relieve Cancer Symptoms",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=Surgery",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65822,9 +65822,9 @@
               "label": "Taking Medications to Relieve Cancer Symptoms",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "5=Radiation Therapy",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -65832,9 +65832,9 @@
               "label": "Taking Medications to Relieve Cancer Symptoms",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "6=None of The above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -66332,9 +66332,9 @@
               "label": "Treating or Controlling Diabetes with Medication",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66342,9 +66342,9 @@
               "label": "Treating or Controlling Diabetes with Medication",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66352,9 +66352,9 @@
               "label": "Treating or Controlling Diabetes with Medication",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Taking Insulin Injections",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66362,9 +66362,9 @@
               "label": "Treating or Controlling Diabetes with Medication",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The Above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -66382,9 +66382,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66392,9 +66392,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66402,9 +66402,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other Treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66412,9 +66412,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The Above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -66432,9 +66432,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66442,9 +66442,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66452,9 +66452,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other Treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66462,9 +66462,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The Above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -66482,9 +66482,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66492,9 +66492,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66502,9 +66502,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other Treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66512,9 +66512,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The Above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -66532,9 +66532,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66542,9 +66542,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66552,9 +66552,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other Treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66562,9 +66562,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The Above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -66582,9 +66582,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese Traditional Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66592,9 +66592,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=Taking Western Morden Medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66602,9 +66602,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other Treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -66612,9 +66612,9 @@
               "label": "Taking Any Medication or Other Treatments",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of The Above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2015 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             }
           ]
@@ -89525,7 +89525,7 @@
               "label": "Stroke Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
+              "value_labels": "",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89565,7 +89565,7 @@
               "label": "Arthritis Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
+              "value_labels": "",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89585,7 +89585,7 @@
               "label": "Asthma Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
+              "value_labels": "",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89605,7 +89605,7 @@
               "label": "Heart Problems Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
+              "value_labels": "",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89625,7 +89625,7 @@
               "label": "Emotional Problems Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
+              "value_labels": "",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89645,7 +89645,7 @@
               "label": "Chronic Lung Diseases Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
+              "value_labels": "",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89665,7 +89665,7 @@
               "label": "Cancer Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
+              "value_labels": "",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89685,7 +89685,7 @@
               "label": "Diabetes Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
+              "value_labels": "",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89705,7 +89705,7 @@
               "label": "Liver Disease Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
+              "value_labels": "",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89725,7 +89725,7 @@
               "label": "Kidney Disease Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
+              "value_labels": "",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89745,7 +89745,7 @@
               "label": "Digestive Disease Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
+              "value_labels": "",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89765,7 +89765,7 @@
               "label": "Dyslipidemia Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
+              "value_labels": "",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89785,7 +89785,7 @@
               "label": "Memory-Related Disease Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
+              "value_labels": "",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89805,7 +89805,7 @@
               "label": "Hypertension Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
+              "value_labels": "",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -91025,7 +91025,7 @@
               "label": "Sugar Generally under Control",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Yes; 2=No; 3=Don't Know; 99=Never Had the Disease",
+              "value_labels": "",
               "value_semantics": "current control",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Asked only for specified conditions; not an objective biomarker or a diagnosis indicator."
@@ -91965,7 +91965,7 @@
               "label": "Blood Pressure Generally under Control",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Yes; 2=No; 3=Don't Know; 99=Never Had the Disease",
+              "value_labels": "",
               "value_semantics": "current control",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Asked only for specified conditions; not an objective biomarker or a diagnosis indicator."
@@ -92035,7 +92035,7 @@
               "label": "How Did You Know You Had Stroke",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Physical Examination after Had It; 2=Physical Examination after Had Ill; 3=Physical Examination Organized by Work Unit; 4=Physical Examination Organized by Community; 5=Charls Physical Examination; 6=Other",
+              "value_labels": "1=Exam after disease attack; 2=Exam after illness; 3=Work-unit exam; 4=Community exam; 5=CHARLS physical exam; 6=Other",
               "value_semantics": "self-known disease",
               "mapping_status": "official DA007 disease-index mapping and codebook response options reviewed; conditional route and eligibility remain to verify",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92055,7 +92055,7 @@
               "label": "How Did You Know You Had Arthritis",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Physical Examination after Had It; 2=Physical Examination after Had Ill; 3=Physical Examination Organized by Work Unit; 4=Physical Examination Organized by Community; 5=Charls Physical Examination; 6=Other",
+              "value_labels": "1=Exam after disease attack; 2=Exam after illness; 3=Work-unit exam; 4=Community exam; 5=CHARLS physical exam; 6=Other",
               "value_semantics": "self-known disease",
               "mapping_status": "official DA007 disease-index mapping and codebook response options reviewed; conditional route and eligibility remain to verify",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92075,7 +92075,7 @@
               "label": "How Did You Know You Had Asthma",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Physical Examination after Had It; 2=Physical Examination after Had Ill; 3=Physical Examination Organized by Work Unit; 4=Physical Examination Organized by Community; 5=Charls Physical Examination; 6=Other",
+              "value_labels": "1=Exam after disease attack; 2=Exam after illness; 3=Work-unit exam; 4=Community exam; 5=CHARLS physical exam; 6=Other",
               "value_semantics": "self-known disease",
               "mapping_status": "official DA007 disease-index mapping and codebook response options reviewed; conditional route and eligibility remain to verify",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92095,7 +92095,7 @@
               "label": "How Did You Know You Had Heart Attack",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Physical Examination after Had It; 2=Physical Examination after Had Ill; 3=Physical Examination Organized by Work Unit; 4=Physical Examination Organized by Community; 5=Charls Physical Examination; 6=Other",
+              "value_labels": "1=Exam after disease attack; 2=Exam after illness; 3=Work-unit exam; 4=Community exam; 5=CHARLS physical exam; 6=Other",
               "value_semantics": "self-known disease",
               "mapping_status": "official DA007 disease-index mapping and codebook response options reviewed; conditional route and eligibility remain to verify",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92115,7 +92115,7 @@
               "label": "Know Having Emotional Problems",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Yes; 2=No; 3=Don't Know",
+              "value_labels": "",
               "value_semantics": "self-known disease",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92125,7 +92125,7 @@
               "label": "How Did You Know You Had Emotional Problems",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Physical Examination after Had It; 2=Physical Examination after Had Ill; 3=Physical Examination Organized by Work Unit; 4=Physical Examination Organized by Community; 5=Charls Physical Examination; 6=Other",
+              "value_labels": "1=Exam after disease attack; 2=Exam after illness; 3=Work-unit exam; 4=Community exam; 5=CHARLS physical exam; 6=Other",
               "value_semantics": "self-known disease",
               "mapping_status": "official DA007 disease-index mapping and codebook response options reviewed; conditional route and eligibility remain to verify",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92155,7 +92155,7 @@
               "label": "Know Having Chronic Lung Disease",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Yes; 2=No; 3=Don't Know",
+              "value_labels": "",
               "value_semantics": "self-known disease",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92165,7 +92165,7 @@
               "label": "How Did You Know You Had Chronic Lung Diseases",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Physical Examination after Had It; 2=Physical Examination after Had Ill; 3=Physical Examination Organized by Work Unit; 4=Physical Examination Organized by Community; 5=Charls Physical Examination; 6=Other",
+              "value_labels": "1=Exam after disease attack; 2=Exam after illness; 3=Work-unit exam; 4=Community exam; 5=CHARLS physical exam; 6=Other",
               "value_semantics": "self-known disease",
               "mapping_status": "official DA007 disease-index mapping and codebook response options reviewed; conditional route and eligibility remain to verify",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92195,7 +92195,7 @@
               "label": "How Did You Know You Had Cancer",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Physical Examination after Had It; 2=Physical Examination after Had Ill; 3=Physical Examination Organized by Work Unit; 4=Physical Examination Organized by Community; 6=Other",
+              "value_labels": "1=Exam after disease attack; 2=Exam after illness; 3=Work-unit exam; 4=Community exam; 5=CHARLS physical exam; 6=Other",
               "value_semantics": "self-known disease",
               "mapping_status": "official DA007 disease-index mapping and codebook response options reviewed; conditional route and eligibility remain to verify",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92215,7 +92215,7 @@
               "label": "How Did You Know You Had Diabetes",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Physical Examination after Had It; 2=Physical Examination after Had Ill; 3=Physical Examination Organized by Work Unit; 4=Physical Examination Organized by Community; 5=Charls Physical Examination; 6=Other",
+              "value_labels": "1=Exam after disease attack; 2=Exam after illness; 3=Work-unit exam; 4=Community exam; 5=CHARLS physical exam; 6=Other",
               "value_semantics": "self-known disease",
               "mapping_status": "official DA007 disease-index mapping and codebook response options reviewed; conditional route and eligibility remain to verify",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92235,7 +92235,7 @@
               "label": "How Did You Know You Had Liver disease",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Physical Examination after Had It; 2=Physical Examination after Had Ill; 3=Physical Examination Organized by Work Unit; 4=Physical Examination Organized by Community; 5=Charls Physical Examination; 6=Other",
+              "value_labels": "1=Exam after disease attack; 2=Exam after illness; 3=Work-unit exam; 4=Community exam; 5=CHARLS physical exam; 6=Other",
               "value_semantics": "self-known disease",
               "mapping_status": "official DA007 disease-index mapping and codebook response options reviewed; conditional route and eligibility remain to verify",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92255,7 +92255,7 @@
               "label": "How Did You Know You Had Kidney Disease",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Physical Examination after Had It; 2=Physical Examination after Had Ill; 3=Physical Examination Organized by Work Unit; 4=Physical Examination Organized by Community; 5=Charls Physical Examination; 6=Other",
+              "value_labels": "1=Exam after disease attack; 2=Exam after illness; 3=Work-unit exam; 4=Community exam; 5=CHARLS physical exam; 6=Other",
               "value_semantics": "self-known disease",
               "mapping_status": "official DA007 disease-index mapping and codebook response options reviewed; conditional route and eligibility remain to verify",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92275,7 +92275,7 @@
               "label": "How Did You Know You Had Stomach Disease",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Physical Examination after Had It; 2=Physical Examination after Had Ill; 3=Physical Examination Organized by Work Unit; 4=Physical Examination Organized by Community; 5=Charls Physical Examination; 6=Other",
+              "value_labels": "1=Exam after disease attack; 2=Exam after illness; 3=Work-unit exam; 4=Community exam; 5=CHARLS physical exam; 6=Other",
               "value_semantics": "self-known disease",
               "mapping_status": "official DA007 disease-index mapping and codebook response options reviewed; conditional route and eligibility remain to verify",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92295,7 +92295,7 @@
               "label": "How Did You Know You Had Dyslipidemia",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Physical Examination after Had It; 2=Physical Examination after Had Ill; 3=Physical Examination Organized by Work Unit; 4=Physical Examination Organized by Community; 5=Charls Physical Examination; 6=Other",
+              "value_labels": "1=Exam after disease attack; 2=Exam after illness; 3=Work-unit exam; 4=Community exam; 5=CHARLS physical exam; 6=Other",
               "value_semantics": "self-known disease",
               "mapping_status": "official DA007 disease-index mapping and codebook response options reviewed; conditional route and eligibility remain to verify",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92315,7 +92315,7 @@
               "label": "How Did You Know You Had Memory-Related Disease",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Physical Examination after Had It; 2=Physical Examination after Had Ill; 3=Physical Examination Organized by Work Unit; 4=Physical Examination Organized by Community; 5=Charls Physical Examination; 6=Other",
+              "value_labels": "1=Exam after disease attack; 2=Exam after illness; 3=Work-unit exam; 4=Community exam; 5=CHARLS physical exam; 6=Other",
               "value_semantics": "self-known disease",
               "mapping_status": "official DA007 disease-index mapping and codebook response options reviewed; conditional route and eligibility remain to verify",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92335,7 +92335,7 @@
               "label": "Know Having Hypertension",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Yes; 2=No; 3=Don't Know",
+              "value_labels": "",
               "value_semantics": "self-known disease",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92345,7 +92345,7 @@
               "label": "How Did You Know You Had Hypertension",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=Physical Examination after Had It; 2=Physical Examination after Had Ill; 3=Physical Examination Organized by Work Unit; 4=Physical Examination Organized by Community; 5=Charls Physical Examination; 6=Other",
+              "value_labels": "1=Exam after disease attack; 2=Exam after illness; 3=Work-unit exam; 4=Community exam; 5=CHARLS physical exam; 6=Other",
               "value_semantics": "self-known disease",
               "mapping_status": "official DA007 disease-index mapping and codebook response options reviewed; conditional route and eligibility remain to verify",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."

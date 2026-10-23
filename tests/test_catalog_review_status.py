@@ -62,6 +62,21 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertFalse(pending[0].get("value_labels"))
         self.assertIn("review pending", pending[0].get("value_label_status", ""))
 
+    def test_selected_treatment_option_labels_are_wave_specific_and_locked(self):
+        import csv
+        with (ROOT / "audit/chronic_disease_ancillary_variable_mapping_v1.csv").open(encoding="utf-8-sig", newline="") as handle:
+            mappings = list(csv.DictReader(handle))
+        expected_counts = {"2011": 21, "2013": 52, "2015": 52}
+        for wave, expected_count in expected_counts.items():
+            rows = [row for row in mappings if row.get("wave") == wave and row.get("construct") == "reported disease treatment" and row.get("value_label_status", "").startswith(f"official {wave} Codebook selected-option category transcribed")]
+            self.assertEqual(len(rows), expected_count, wave)
+            self.assertTrue(all("DO NOT ANALYZE" in row.get("value_label_status", "") for row in rows), wave)
+            self.assertTrue(all("unselected storage" in row.get("value_label_status", "") for row in rows), wave)
+            self.assertTrue(all(not __import__("re").search(r"\d[\d,]*\s+100\.00", row.get("value_labels", "")) for row in rows), wave)
+        for wave in ("2013", "2015"):
+            row = next(row for row in mappings if row.get("wave") == wave and row.get("code", "").lower() == "da010_2_s1")
+            self.assertIn("1=Taking Chinese Traditional Medicine", row.get("value_labels", ""))
+
     def test_2011_fb010_specialty_catalog_links_correct_baseline_source(self):
         fields = [
             field

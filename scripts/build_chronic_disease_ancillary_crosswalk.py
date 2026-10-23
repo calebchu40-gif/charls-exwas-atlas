@@ -25,25 +25,35 @@ def codebook_value_labels(path: Path) -> dict[str, str]:
     blocks: dict[str, list[str]] = {}
     current = ""
     for line in text.splitlines():
-        header = re.match(r"^([a-z][a-z0-9_]+):\s*.*$", line.strip(), re.I)
+        header = re.match(r"^[•·]?\s*([a-z][a-z0-9_]+)\s*:\s*.*$", line.strip(), re.I)
         if header:
             current = header.group(1).lower()
             blocks[current] = []
         elif current:
             blocks[current].append(line.strip())
     labels = {}
-    for code, lines in blocks.items():
+    for source_code, lines in blocks.items():
         pairs = []
         for line in lines:
-            match = re.match(r"^(\d+)\s+(.+)$", line)
-            if match and match.group(2).strip().lower() != "total":
-                pairs.append(f"{match.group(1)}={match.group(2).strip()}")
+            clean = re.sub(r"\\n(?:Page\s+\d+\s*)?(?:\d+\s+)?CHARLS.*$", "", line, flags=re.I).strip()
+            match = re.match(r"^(\d+)\s+(.+)$", clean)
+            if not match:
+                continue
+            response_code, label = match.groups()
+            # 2013/2015 codebooks often put frequency and percent on the same
+            # line as the selected option. Strip that aggregate information.
+            label = re.sub(r"\s+\d[\d,]*\s+\d+(?:\.\d+)?\s*$", "", label).strip()
+            if label.lower() != "total" and label:
+                pairs.append(f"{response_code}={label}")
         if pairs:
-            labels[code] = "; ".join(pairs)
+            labels[source_code] = "; ".join(pairs)
     return labels
 
 
-official_2018_labels = codebook_value_labels(ROOT / "sources_official" / "CHARLS_2018_Codebook_extracted.txt")
+official_wave_labels = {
+    wave: codebook_value_labels(ROOT / "sources_official" / f"CHARLS_{wave}_Codebook_extracted.txt")
+    for wave in ("2011", "2013", "2015", "2018")
+}
 rows = []
 def add(rec, domain, construct, subtype, concept_id, label, caveat):
     value_labels = ""
@@ -61,10 +71,15 @@ def add(rec, domain, construct, subtype, concept_id, label, caveat):
         value_labels = "1=Exam after disease attack; 2=Exam after illness; 3=Work-unit exam; 4=Community exam; 5=CHARLS physical exam; 6=Other"
         value_source = f"sources_official/CHARLS_{rec.wave}_Codebook_extracted.txt"
         value_status = "official response labels reviewed from wave-specific codebook; awareness-option labels; conditional disease route retained; frequencies excluded"
-    if str(rec.wave) == "2018" and str(rec.variable).lower() in official_2018_labels:
-        value_labels = official_2018_labels[str(rec.variable).lower()]
-        value_source = "sources_official/CHARLS_2018_Codebook_extracted.txt; sources_official/CHARLS_2018_Questionnaire_extracted.txt"
-        value_status = "official 2018 Codebook response categories transcribed; frequencies omitted; questionnaire route retained; respondent release coding and eligible denominator require validation"
+    wave_code = str(rec.wave)
+    field_code = str(rec.variable).lower()
+    if construct == "reported disease treatment" and wave_code in official_wave_labels and field_code in official_wave_labels[wave_code]:
+        value_labels = official_wave_labels[wave_code][field_code]
+        value_source = f"sources_official/CHARLS_{wave_code}_Codebook_extracted.txt; sources_official/CHARLS_{wave_code}_Questionnaire_extracted.txt"
+        if wave_code == "2018":
+            value_status = "official 2018 Codebook response categories transcribed; frequencies omitted; questionnaire route retained; respondent release coding and eligible denominator require validation"
+        else:
+            value_status = f"official {wave_code} Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE"
     rows.append({
         "wave": rec.wave, "code": rec.variable, "concept_id": concept_id,
         "concept_label": label, "domain": domain, "module": rec.module,
@@ -160,8 +175,10 @@ for rec in raw.itertuples(index=False):
     if not (wave == "2011" and code == "db020") and (treatment_label or none_option_2011):
         none_note = " This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated." if none_option_2011 else ""
         add(rec, "chronic disease ancillary", "reported disease treatment", "wave-specific treatment response", f"reported_treatment_{disease}", f"自报{disease_label}治疗方式", caveat + " Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized." + none_note)
-        if wave == "2018" and code in official_2018_labels:
+        if wave == "2018" and code in official_wave_labels[wave]:
             rows[-1]["mapping_status"] = "official 2018 Codebook response categories transcribed; questionnaire routing/time frame retained; release coding and routed denominator require validation"
+        elif wave in {"2011", "2013", "2015"} and code in official_wave_labels[wave]:
+            rows[-1]["mapping_status"] = f"official {wave} Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE"
         if none_option_2011:
             rows[-1]["mapping_status"] = "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE"
 
@@ -184,6 +201,9 @@ def add_explicit(wave, code, concept, label, subtype, value_labels, note, source
     rows[-1]["value_label_status"] = "official wave codebook category verified; selected option only; frequencies excluded"
     rows[-1]["value_label_source"] = source
     rows[-1]["mapping_status"] = "official option field mapped to disease-specific treatment concept; route and nonselection storage remain explicit"
+    if wave == "2011" and rows[-1]["construct"] == "reported disease treatment":
+        rows[-1]["value_label_status"] = "official 2011 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE"
+        rows[-1]["mapping_status"] = "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE"
 
 add_explicit("2011", "da011s3", "reported_treatment_hypertension", "自报高血压治疗方式",
              "none-of-the-above treatment option", "3=None of the above (selected option; unselected storage code not inferred)",
@@ -224,7 +244,7 @@ for code, concept, label, option_label in review_choices_2011:
                  option_label,
                  review_route_2011[family] + " The official questionnaire asks each option as Yes/No, but the Codebook lists this option index and aggregate frequencies. Do not interpret the option index as an answer, infer No from an unselected slot, or analyze until permitted respondent data/release documentation verifies storage and the routed denominator.",
                  review_source_2011)
-    rows[-1]["value_label_status"] = "official codebook response labels reviewed; option index only, frequencies excluded, respondent storage unverified"
+    rows[-1]["value_label_status"] = "official 2011 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE"
     rows[-1]["mapping_status"] = "official 2011 questionnaire/codebook option identity mapped; respondent-level storage and routed denominator require authorized-data validation; DO NOT ANALYZE"
 
 # Recurrent stroke and its most recent event timing are conditional longitudinal

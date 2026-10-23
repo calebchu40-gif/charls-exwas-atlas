@@ -174,7 +174,7 @@ p,chronic disease ancillary,conditional management / hypertension management / p
 p,chronic disease ancillary,conditional management / hypertension management / provider advice option: Weight control,4,4,4
 p,chronic disease ancillary,conditional management / hypertension management / regular blood-pressure check in prior year,1,1,1
 p,chronic disease ancillary,disease awareness / prior-wave self-known disease,9,9,9
-p,chronic disease ancillary,disease awareness / self-known disease,59,59,45
+p,chronic disease ancillary,disease awareness / self-known disease,59,59,42
 p,chronic disease ancillary,emotional/psychiatric treatment options,2,2,2
 p,chronic disease ancillary,reported cancer site / Bladder,4,4,4
 p,chronic disease ancillary,reported cancer site / Brain,4,4,4
@@ -207,7 +207,7 @@ p,chronic disease ancillary,reported disease treatment / antidepressant medicati
 p,chronic disease ancillary,reported disease treatment / doctor-diagnosed recurrent stroke,3,3,3
 p,chronic disease ancillary,reported disease treatment / month of most recent stroke,1,1,0
 p,chronic disease ancillary,reported disease treatment / none-of-the-above treatment option,1,1,1
-p,chronic disease ancillary,reported disease treatment / wave-specific treatment response,261,261,85
+p,chronic disease ancillary,reported disease treatment / wave-specific treatment response,261,261,181
 p,chronic disease ancillary,reported disease treatment / wave-specific treatment response; option index only,10,10,10
 p,chronic disease ancillary,reported disease treatment / year of most recent stroke,3,3,0
 p,cognition,memory and cognitive performance,338,338,305
