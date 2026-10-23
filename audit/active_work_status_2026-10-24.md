@@ -21,6 +21,8 @@ The Wave 5 digital review lives in `audit/wave5_digital_behavior_and_life_expect
 
 Latest checks: `python scripts/build_ep_atlas_metadata.py --finalize-only` completed; all 167 Python tests pass; `node --check site-prototype/dist/app.js` and `git diff --check` pass. The fixed 89-row `DO NOT ANALYZE` lock audit remains intact. The latest 2011 work review carries questionnaire wording/ranges to the public catalogue while preserving release-code uncertainty; detailed source notes are in `audit/work_questionnaire_only_values_2011_review_2026-10-24.md`. The community crosswalk now has 194 field mappings across 100 concepts; exact education percentages and conditional fallback brackets are kept distinct. Catalogue rebuilds now preserve the prior audit-row order and append newly discovered fields, keeping Git review diffs compact.
 
+The public C metadata page was clarified on 2026-10-24 after review of its user-facing labels: “covariate candidate” is explicitly described as a search candidate, not a selected model adjustment; measurement/routing rows are described as interpretation metadata. The update is in commit `6966730` and is live on GitHub Pages. Formal association models remain 0.
+
 ## Next work, in order
 
 1. Continue source-by-source exposure and phenotype expansion, using official wave-specific questionnaires and Codebooks; prioritize lab/biomarker and environmental/social domains with clear measurement units and routes. Cross-wave digital behavior has now been source-reviewed for 2011–2018 and reconciled to the dedicated 2020 module.
