@@ -108,6 +108,34 @@ def available_mask(concept, wave, series):
     return mask
 
 
+def sample_frame_gate(wave, columns, data):
+    """Return an unweighted cross-sectional frame mask or fail closed.
+
+    Counts produced by this module are still availability counts, not final
+    analytic Ns. Wave 2 requires both official sample flags to establish that
+    its prepared table came from the correct Weights file; later waves require
+    the cross-section flag. Wave 1 has no separate flag in the prepared table
+    and is retained as a baseline-frame availability count with that limitation
+    stated explicitly.
+    """
+    names = {str(name).casefold(): name for name in columns}
+    if wave == "2011":
+        return "baseline_frame_flag_not_available", pd.Series(True, index=data.index)
+    required = {"crosssection", "longitudinal"} if wave == "2013" else {"crosssection"}
+    missing = required - names.keys()
+    if missing:
+        return "sample_flags_missing:" + ";".join(sorted(missing)), None
+    flag = pd.to_numeric(data[names["crosssection"]], errors="coerce")
+    return "crosssection_flag_applied", flag.eq(1)
+
+
+def pair_availability_count(exposure_mask, phenotype_mask, frame_mask):
+    """Count raw pair availability within a verified cross-sectional frame."""
+    if frame_mask is None:
+        return None
+    return int((frame_mask & exposure_mask & phenotype_mask).sum())
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data-dir", type=Path, default=DATA_DEFAULT)
@@ -119,14 +147,20 @@ def main():
     args.output_dir = require_private_path(args.output_dir)
     catalog = pd.read_csv(args.project_dir / "audit" / "raw_variable_catalog_v1.csv", low_memory=False)
     catalog["wave"] = catalog.wave.astype(str)
-    rows, wave_data, statuses = [], {}, {}
+    rows, wave_data, statuses, frame_statuses, frame_masks = [], {}, {}, {}, {}
     for wave in WAVES:
         path = args.data_dir / f"CHARLS_wave{wave}_person_analytic.dta"
         _, meta = pyreadstat.read_dta(str(path), metadataonly=True)
         columns = set(meta.column_names)
         requested = sorted({v for concept, mapping in MAP.items() for w, v in mapping.items() if w == wave and v in columns})
-        data, _ = pyreadstat.read_dta(str(path), usecols=["ID"] + requested)
+        sample_columns = {"crosssection", "longitudinal"} if wave == "2013" else ({"crosssection"} if wave in {"2015", "2018", "2020"} else set())
+        controls = [name for name in meta.column_names if name.casefold() in sample_columns]
+        data, _ = pyreadstat.read_dta(str(path), usecols=["ID"] + requested + controls)
         wave_data[wave] = data
+        frame_status, frame_mask = sample_frame_gate(wave, meta.column_names, data)
+        frame_statuses[wave] = frame_status
+        frame_masks[wave] = frame_mask
+        print(f"{wave} sample-frame gate: {frame_status}", flush=True)
         for concept, mapping in MAP.items():
             var = mapping.get(wave)
             status = "not_measured_in_wave" if not var else ("variable_not_in_prepared_table" if var not in columns else "measured")
@@ -153,26 +187,35 @@ def main():
     pair_rows = []
     for wave in WAVES:
         data = wave_data[wave]
+        frame_status = frame_statuses[wave]
+        frame_mask = frame_masks[wave]
         for exp in exposure_ids:
             ev = MAP[exp].get(wave)
             for out in outcome_ids:
                 ov = MAP[out].get(wave)
                 es = statuses[(wave, exp)]; os = statuses[(wave, out)]
-                if es == "measured" and os == "measured":
-                    n = int((available_mask(exp, wave, data[ev]) & available_mask(out, wave, data[ov])).sum())
-                    status = "pair_observed"
+                if es == "measured" and os == "measured" and frame_mask is None:
+                    n = None
+                    status = frame_status
+                elif es == "measured" and os == "measured":
+                    n = pair_availability_count(available_mask(exp, wave, data[ev]),
+                                                available_mask(out, wave, data[ov]), frame_mask)
+                    if n is None:
+                        status = frame_status
+                    else:
+                        status = "pair_availability_only:" + frame_status
                 else:
                     n = None
                     status = "exposure_" + es if es != "measured" else "outcome_" + os
                 pair_rows.append({"wave": wave, "exposure_concept": exp, "exposure_variable": ev or "",
                                   "outcome_concept": out, "outcome_variable": ov or "",
-                                  "status": status, "n_complete_pair": n})
+                                  "sample_frame_status": frame_status, "status": status, "n_complete_pair": n})
     pair_df = pd.DataFrame(pair_rows)
     pair_df.to_csv(args.output_dir / "core_pairwise_complete_n_v1.csv", index=False, encoding="utf-8-sig")
     wave_summary = []
     for wave in WAVES:
         cc = concept_df[concept_df.wave == wave]
-        pp = pair_df[(pair_df.wave == wave) & (pair_df.status == "pair_observed")]
+        pp = pair_df[(pair_df.wave == wave) & pair_df.status.str.startswith("pair_availability_only:")]
         ex_measured = cc[(cc.role == "exposure_proxy") & (cc.status == "measured")].concept_id.nunique()
         outcome_measured = cc[(cc.role == "phenotype_or_measurement") & (cc.status == "measured")].concept_id.nunique()
         wave_summary.append({"wave": wave, "respondent_rows": int(cc.respondent_rows.iloc[0]),
@@ -186,10 +229,11 @@ def main():
     summary = concept_df.groupby(["role", "wave", "status"], dropna=False).size().reset_index(name="concept_count")
     summary.to_csv(args.output_dir / "core_concept_status_summary_v1.csv", index=False, encoding="utf-8-sig")
     (args.output_dir / "core_coverage_build_metadata_v1.json").write_text(json.dumps({
-        "waves": WAVES, "concepts": len(MAP), "exposure_proxy_concepts": len(exposure_ids),
+        "waves": WAVES, "sample_frame_status": frame_statuses,
+        "concepts": len(MAP), "exposure_proxy_concepts": len(exposure_ids),
         "phenotype_or_measurement_concepts": len(outcome_ids), "pair_rows": len(pair_rows),
         "privacy": "aggregate counts only; participant-level records remain outside synchronized project directory",
-        "interpretation": "nonmissing counts and pairwise complete counts describe data availability, not analytic sample after eligibility, weights, QC, or model-specific exclusions"
+        "interpretation": "pairwise nonmissing counts are unweighted data-availability counts after the available cross-section flag only; they are not analytic sample sizes after module eligibility, weights, special codes, QC, or model-specific exclusions. Wave 1 lacks a separate flag and Wave 2 suppresses pair counts when official flags are missing."
     }, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"concepts={len(MAP)} pair_rows={len(pair_rows)}")
     print(concept_df.groupby(["wave", "status"]).size().to_string())

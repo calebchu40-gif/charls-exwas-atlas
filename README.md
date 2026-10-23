@@ -186,3 +186,5 @@ GitHub 官方说明：GitHub Free 个人仓库需要公开仓库才能使用 Pag
 2026-10-23网站加载优化：主页不请求目录JSON；专题目录、候选配对索引及E/P/C角色分片按需加载，主目录仅用于仓库构建/审计且不会进入Pages部署包。各静态JSON使用ETag重新验证缓存。测量结果、构建步骤和测试见[`audit/site_static_asset_cache_review_2026-10-23.md`](audit/site_static_asset_cache_review_2026-10-23.md)。
 
 2026-10-23专题目录同步：饮食/环境专题35条、社交/家庭联系专题184条源字段现在会显示主目录中已审核的官方值标签及其出处/审核状态；仅唯一波次—字段码匹配时填入，已有文本和冲突项受保护。重建报告见[`site-prototype/dist/domain_label_sync_report.json`](site-prototype/dist/domain_label_sync_report.json)，方法与验证见[`audit/domain_catalog_label_sync_2026-10-23.md`](audit/domain_catalog_label_sync_2026-10-23.md)。正式关联模型仍为0。
+
+2026-10-23核心配对可用性门控：私有QA脚本现在逐波读取并应用横截面标记；当前2013派生表缺少官方`crosssection`和`longitudinal`，因此99个核心概念组合的配对N全部留空。2011未见独立标记，输出只标记为基线表可用性；2015/2018/2020按`crosssection=1`筛选。所有此类非缺失计数仍未处理权重、模块路由、特殊码或模型排除，不能当作分析样本量。细节见[`audit/core_availability_sample_frame_gate_2026-10-23.md`](audit/core_availability_sample_frame_gate_2026-10-23.md)。
