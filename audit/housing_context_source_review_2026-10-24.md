@@ -18,6 +18,10 @@ I025 and I026 are present in the 2011, 2013, 2015, 2018 and 2020 housing questio
 
 For 2011, the official baseline questionnaire lists 6=Not applicable for both items, but the 2011 baseline household questionnaire and Codebook list only codes 1–5. The 2011 source-version discrepancy is preserved; the atlas does not add category 6 to the published Codebook-based field labels or infer how it is stored in a particular release. The exact instrument/release supplied with any approved analysis dataset must resolve this before recoding.
 
+## Household floor condition
+
+The 2020 questionnaire and Codebook identify I027 as household ground/floor condition: 1=Flat covered, 2=Flat concrete, 3=Uneven. The interviewer is instructed to record it only when inside the respondent's housing and clearly certain; otherwise ask the respondent. These are nominal dwelling-condition categories, not a validated mobility, fall-risk or accessibility measure. Do not impose an ordinal severity scale or interpret the item as an individual's outcome.
+
 ## Source files
 
 Wave-specific English questionnaire and Codebook extracts are in `sources_official/`. The 2011 discrepancy is checked against both `CHARLS_2011_Baseline_Questionnaire_official_extracted.txt` and `CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`, plus `CHARLS_2011_Codebook_extracted.txt`. The incremental propagation script is `scripts/apply_housing_context_source_review.py`.

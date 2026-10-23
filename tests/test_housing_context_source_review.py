@@ -43,6 +43,7 @@ class HousingContextSourceReviewTests(unittest.TestCase):
             ("2020", "air_cleaner_home", "i024"),
             ("2015", "air_cleaner_home", "i027_w3"),
             ("2018", "air_cleaner_home", "i027_w3"),
+            ("2020", "floor_condition", "i027"),
         } | {
             (wave, concept, code)
             for wave in ("2011", "2013", "2015", "2018", "2020")
@@ -113,6 +114,21 @@ class HousingContextSourceReviewTests(unittest.TestCase):
         review = (ROOT / "audit" / REVIEW).read_text(encoding="utf-8")
         self.assertIn("I025 and I026", review)
         self.assertIn("baseline questionnaire lists 6=Not applicable", review)
+
+    def test_2020_floor_condition_is_nominal_and_household_level(self):
+        row = next(
+            r for r in self.rows
+            if r["wave"] == "2020" and r["concept_id"] == "floor_condition"
+        )
+        self.assertEqual(row["code"].lower(), "i027")
+        self.assertEqual(row["code_value_labels"], "1=Flat covered; 2=Flat concrete; 3=Uneven")
+        self.assertIn("nominal categories", row["caveat"])
+        concept = next(c for c in self.site if c["concept_id"] == "floor_condition")
+        self.assertIn("not a mobility or fall-risk test", concept["caveat"])
+        script = (ROOT / "scripts" / "apply_housing_context_source_review.py").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("2020 floor-condition interviewer instruction not found", script)
 
 
 if __name__ == "__main__":

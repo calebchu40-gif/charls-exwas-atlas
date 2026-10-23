@@ -94915,8 +94915,8 @@
               "unit": "",
               "value_labels": "1=Flat covered; 2=Flat concrete; 3=Uneven",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "2020-only interviewer observation: covered/flat, concrete, or uneven floor; household condition, not a clinical mobility outcome."
+              "mapping_status": "official 2020 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "2020 household-level floor-condition category: flat covered, flat concrete, or uneven. The questionnaire instructs the interviewer to record it only when in the respondent's housing and clearly certain; otherwise ask the respondent. This is a dwelling-condition proxy, not a mobility or fall-risk test. Preserve the nominal categories; do not infer a severity scale."
             }
           ]
         },

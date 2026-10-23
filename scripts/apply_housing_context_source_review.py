@@ -32,6 +32,7 @@ REVIEWED = {
     ("2020", "air_cleaner_home", "i024"),
     ("2015", "air_cleaner_home", "i027_w3"),
     ("2018", "air_cleaner_home", "i027_w3"),
+    ("2020", "floor_condition", "i027"),
 } | {
     (wave, concept, code)
     for wave in QUESTIONNAIRES
@@ -81,6 +82,12 @@ CONCEPT_CAVEATS = {
         "personal thermal dose. Preserve the ordered hot-to-cold categories and the wave-specific Not applicable "
         "category; the 2011 source-version discrepancy is documented in the source review."
     ),
+    "floor_condition": (
+        "2020 household-level floor-condition category: flat covered, flat concrete, or uneven. The questionnaire "
+        "instructs the interviewer to record it only when in the respondent's housing and clearly certain; "
+        "otherwise ask the respondent. This is a dwelling-condition proxy, not a mobility or fall-risk test. "
+        "Preserve the nominal categories; do not infer a severity scale."
+    ),
 }
 
 FIELD_NOTES = {
@@ -115,6 +122,9 @@ FIELD_NOTES = {
         wave: "Official questionnaire/Codebook reviewed: I026 is interviewer-recorded household temperature assessment, not measured temperature; preserve hot-to-cold categories and the wave's stated Not applicable option."
         for wave in QUESTIONNAIRES
     },
+    "floor_condition": {
+        "2020": "Official 2020 questionnaire/Codebook reviewed: I027 ground condition; preserve 1=Flat covered, 2=Flat concrete, 3=Uneven. Interviewer records only when in R's housing and certain; otherwise ask R."
+    },
 }
 
 
@@ -131,6 +141,9 @@ def validate_sources() -> None:
         if (wave, concept_id, code) == ("2020", "air_cleaner_home", "i024"):
             if "record if interviewer is in r's housing and clearly know the answer, otherwise ask r" not in q:
                 raise ValueError("2020 air-cleaner interview mode instruction not found")
+        if (wave, concept_id, code) == ("2020", "floor_condition", "i027"):
+            if "record if interviewer is in r's housing and clearly know the answer, otherwise ask r" not in q:
+                raise ValueError("2020 floor-condition interviewer instruction not found")
         if (wave, concept_id, code) in (("2015", "air_cleaner_home", "i027_w3"), ("2018", "air_cleaner_home", "i027_w3")):
             if "does your residence have an air cleaner in your home" not in q:
                 raise ValueError(f"{wave} air-cleaner wording not found")

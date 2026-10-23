@@ -879,7 +879,7 @@
     "concept_id": "floor_condition",
     "label": "Household floor condition",
     "domain": "Indoor environment",
-    "caveat": "2020-only interviewer observation: covered/flat, concrete, or uneven floor; household condition, not a clinical mobility outcome.",
+    "caveat": "2020 household-level floor-condition category: flat covered, flat concrete, or uneven. The questionnaire instructs the interviewer to record it only when in the respondent's housing and clearly certain; otherwise ask the respondent. This is a dwelling-condition proxy, not a mobility or fall-risk test. Preserve the nominal categories; do not infer a severity scale.",
     "source_fields": [
       {
         "wave": "2020",
@@ -887,7 +887,8 @@
         "module": "Household_Income",
         "source_label": "Ground Condition in this Household",
         "value_labels": "1=Flat covered; 2=Flat concrete; 3=Uneven",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official 2020 questionnaire/Codebook reviewed: I027 ground condition; preserve 1=Flat covered, 2=Flat concrete, 3=Uneven. Interviewer records only when in R's housing and certain; otherwise ask R. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
       }
     ]
   },
