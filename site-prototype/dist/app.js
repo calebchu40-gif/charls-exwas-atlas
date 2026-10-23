@@ -37,7 +37,7 @@ const bloodBiomarkersLoaded=deferJson('./blood_biomarkers_v1.json?v=3','bloodBio
 let candidatePairExplorerLoaded;
 const objectiveMeasurementsLoaded=deferJson('./objective_measurements_v1.json?v=1','objectiveMeasures');
 const lifeHistoryLoaded=deferJson('./life_history_exposures_v1.json?v=1','lifeHistoryExposures');
-let catalogLoaded;
+const catalogLoaded = {};
 
 function showView(id) {
   document.querySelectorAll('.view').forEach(el => { el.hidden = el.id !== id; });
@@ -46,7 +46,9 @@ function showView(id) {
     else btn.removeAttribute('aria-current');
   });
   deferredViewLoaders.get(id)?.();
-  if (['exposures','phenotypes','metadata','groups'].includes(id)) loadCatalog();
+  if (id === 'exposures' || id === 'groups') loadCatalog('e');
+  if (id === 'phenotypes') loadCatalog('p');
+  if (id === 'metadata') loadCatalog('c');
   if (id === 'candidatePairExplorer') loadCandidatePairExplorer();
 }
 document.querySelectorAll('.viewnav button').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
@@ -145,23 +147,24 @@ function renderBrowseCards(containerId,role){
   card.append(title,meta,btn);root.append(card);
 }
 
-function loadCatalog(){
-  if(catalogLoaded)return catalogLoaded;
-  for(const id of ['eCount','pCount','cCount'])byId(id).textContent='正在载入字段目录…';
-  catalogLoaded=fetch('./catalog.json?v=11',{cache:'no-cache'}).then(r=>{
-    if(!r.ok)throw new Error(`catalog.json HTTP ${r.status}`);
+function loadCatalog(role){
+  if(catalogLoaded[role])return catalogLoaded[role];
+  const prefix={e:'e',p:'p',c:'c'}[role],countId={e:'eCount',p:'pCount',c:'cCount'}[role];
+  byId(countId).textContent='正在载入字段目录…';
+  catalogLoaded[role]=fetch(`./catalog_${role}.json?v=1`,{cache:'no-cache'}).then(r=>{
+    if(!r.ok)throw new Error(`catalog_${role}.json HTTP ${r.status}`);
     return r.json();
   }).then(all=>{
-    renderCatalog(all,'e','e');renderCatalog(all,'p','p');renderCatalog(all,'c','c');renderGroups(all);
-    ['eSearch','eCategory','eWave'].forEach(id=>byId(id).addEventListener('input',()=>renderCatalog(all,'e','e')));
-    ['pSearch','pCategory','pWave'].forEach(id=>byId(id).addEventListener('input',()=>renderCatalog(all,'p','p')));
-    ['cSearch','cCategory','cWave'].forEach(id=>byId(id).addEventListener('input',()=>renderCatalog(all,'c','c')));
+    renderCatalog(all,role,prefix);
+    const controls={e:['eSearch','eCategory','eWave'],p:['pSearch','pCategory','pWave'],c:['cSearch','cCategory','cWave']}[role];
+    controls.forEach(id=>byId(id).addEventListener('input',()=>renderCatalog(all,role,prefix)));
+    if(role==='e')renderGroups(all);
     return all;
   }).catch(err=>{
-    for(const id of ['eCount','pCount','cCount'])byId(id).textContent=`候选目录载入失败：${err.message}`;
+    byId(countId).textContent=`候选目录载入失败：${err.message}`;
     return null;
   });
-  return catalogLoaded;
+  return catalogLoaded[role];
 }
 renderBrowseCards('phenotypeBrowse','p');renderBrowseCards('exposureBrowse','e');
 renderAssociations();

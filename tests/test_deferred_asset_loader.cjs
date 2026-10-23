@@ -4,6 +4,7 @@ const vm = require('node:vm');
 
 const source = fs.readFileSync('site-prototype/dist/app.js', 'utf8');
 const html = fs.readFileSync('site-prototype/dist/index.html', 'utf8');
+assert.ok(html.includes('app.js?v=58'), 'HTML should cache-bust the updated app loader');
 const start = source.indexOf('const deferredViewLoaders = new Map();');
 const end = source.indexOf('let candidatePairExplorerLoaded;', start);
 assert.notEqual(start, -1, 'deferred loader helper should exist');
@@ -19,7 +20,10 @@ for (const [, statusId] of statusMap[1].matchAll(/:'([^']+)'/g)) {
   assert.ok(html.includes(`id="${statusId}"`), `loading status ${statusId} should exist in the page`);
 }
 assert.ok(source.includes("candidatePairExplorerLoaded=fetch('./candidate_pair_explorer_v1.json"));
-assert.ok(source.includes("catalogLoaded=fetch('./catalog.json"));
+assert.ok(source.includes('fetch(`./catalog_${role}.json?v=1`'));
+assert.ok(source.includes("loadCatalog('e')"));
+assert.ok(source.includes("loadCatalog('p')"));
+assert.ok(source.includes("loadCatalog('c')"));
 assert.ok(!/^const \w+\s*=\s*fetch\(/m.test(source), 'no JSON request should start during script initialization');
 
 let fetchCount = 0;

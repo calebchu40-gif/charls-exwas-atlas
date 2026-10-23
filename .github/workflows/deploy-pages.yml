@@ -44,13 +44,20 @@ jobs:
               json.loads(path.read_text(encoding="utf-8"))
           PY
 
+      - name: Package only browser-facing site assets
+        shell: bash
+        run: |
+          mkdir -p _site
+          cp -R site-prototype/dist/. _site/
+          rm _site/catalog.json
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
       - name: Upload only the static website directory
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site-prototype/dist
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
