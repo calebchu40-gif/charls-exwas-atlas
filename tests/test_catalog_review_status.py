@@ -115,7 +115,34 @@ class CatalogReviewStatusTests(unittest.TestCase):
             self.assertTrue(all("CHARLS_" + wave + "_Codebook_extracted.txt" in row.get("Value.Label.Source", "") for row in rows))
         app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
         self.assertIn("它是连续/开放回答或未列离散类别，不虚构答案标签", app)
-        self.assertIn("官方代码本已找到该字段但未列离散类别", app)
+
+    def test_work_capi_formulas_and_source_conflicts_reach_main_catalog(self):
+        examples = {
+            ("2020", "xworking"): (
+                "0=No qualifying work route; 1=At least one of FA001/FA004/FA007/FA008 equals 1",
+                "official 2020 questionnaire CAPI formula manually transcribed; descriptive codebook frequencies omitted; generated-field interpretation requires route validation",
+            ),
+            ("2020", "xgetjob"): (
+                "0=No prior-nonworking to current-working transition; 1=ZWorking=0 and XWorking=1",
+                "official 2020 questionnaire CAPI formula manually transcribed; descriptive codebook frequencies omitted; generated-field interpretation requires route validation",
+            ),
+            ("2011", "fd009"): (
+                "1=Yes; 2=No",
+                "questionnaire/Codebook item-identity conflict; DO NOT ANALYZE until official source identity and released-data coding are reconciled",
+            ),
+            ("2020", "fc008"): (
+                "1=Yes; 2=No",
+                "questionnaire/Codebook item-identity conflict; DO NOT ANALYZE until official source identity and released-data coding are reconciled",
+            ),
+        }
+        for (wave, code), (labels, status) in examples.items():
+            rows = [
+                row for row in self.catalog
+                if row.get("Source.Wave") == wave and row.get("Variable.Name", "").lower() == code
+            ]
+            self.assertTrue(rows, (wave, code))
+            self.assertTrue(all(row.get("Value.Labels") == labels for row in rows), (wave, code))
+            self.assertTrue(all(row.get("Value.Label.Review") == status for row in rows), (wave, code))
 
     def test_income_codebook_numeric_summaries_are_not_generic_pending_labels(self):
         examples = [

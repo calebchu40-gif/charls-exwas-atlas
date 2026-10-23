@@ -8,7 +8,7 @@
 
 - 首版公开站点已部署：<https://calebchu40-gif.github.io/charls-exwas-atlas/>。首次GitHub Actions部署成功，站点首页、JavaScript和候选配对元数据均通过外部HTTP 200检查。
 - 五波候选目录当前包含7,544条波次字段记录、1,408个去重E/P候选概念（E侧1,130、P侧287、双角色9）和6,598条E/P概念—源字段映射。已生成候选配对检索页，但目录层配对不代表实际同一受访者样本量或统计模型。
-- E/P字段目录当前有3,199行非空已审/官方类别标签文本、覆盖3,173个波次—字段码；853个目录角色行仍显示`not yet reviewed`。该指标只覆盖类别标签文本，不衡量连续变量的问卷、测量、路由或分析资格审查完成比例；慢病自知/疾病变化/控制字段已有逐波类别，但未关闭它们的发行版编码与适用分母审核。
+- E/P字段目录当前有3,207行非空已审/官方类别标签文本、覆盖3,181个波次—字段码；670个目录角色行仍显示`not yet reviewed`。该指标只覆盖类别标签文本，不衡量连续变量的问卷、测量、路由或分析资格审查完成比例；慢病自知/疾病变化/控制字段已有逐波类别，但未关闭它们的发行版编码与适用分母审核。
 - 公开站点当前正式关联模型数为0；没有公布任何效应估计、显著性或发现。
 - 测量与设计元数据（C）目录共911条，其中429条为协变量候选、482条为测量元数据。`Value.Label.Review`中331条显示`not yet reviewed`。网站所见2011筛选结果70条，是2011年协变量候选子集，不是全项目待办数。C类中的仪器/流程/路由/选择器记录本来就不属于E/P配对；717条C记录没有E/P候选Concept ID，也不能全部视为漏映射。
 - [`audit/current_directory_snapshot_2026-10-23.md`](current_directory_snapshot_2026-10-23.md)记录当前仍有33条逐波字段保持`DO NOT ANALYZE`。权重、方差分层/替代方差方法、目标人群、各模块样本资格及跨波构造均须在实际分析前逐项关闭。
@@ -55,7 +55,7 @@
 
 The published homepage now has a dedicated survey-design disclosure covering wave-specific weight/sample-flag gates, the 2013 source-flag rebuild requirement, the provisional `communityID` PSU match, and the lack of a verified variance-stratum/replicate-weight field in currently reviewed project sources. The C-class catalogue navigation is labeled “measurement/design metadata” so it is not confused with the methods note. Both changes are live on GitHub Pages; the full result atlas remains at 0 fitted association models. Overall completion against the full result-atlas objective remains approximately 25%–30%; this website clarity work does not close analysis or data-access milestones.
 
-2026-10-23续记：目录构建器通过预建波次—字段查找索引，同一`cProfile`方法下从107.8秒降至53.6秒，输出记录语义相同；性能审计见[`metadata_builder_performance_2026-10-23.md`](metadata_builder_performance_2026-10-23.md)。此前补入2013/2015/2018的48个疾病控制/既往访谈变化字段，修复2020既往访谈变化18个字段的目录标签传播，并为2011/2020的6个自知疾病字段补入逐波标签。本轮又补入2013–2018的11个自知疾病字段，并为22个连续残疾发生年份字段注明calendar year。E/P非空标签行现为3,199（3,173个波次—字段码），仍有853行通用待核状态；C类331行仍为通用待核状态。全目标完成度仍估25%–30%，因正式关联模型数仍为0、抽样设计与个体变量审核闸门未解决，这类目录补全不代表结果图谱已接近完成。后续继续审阅候选目录，并优先处理调查设计闭环、变量冻结和合成数据验证。
+2026-10-23续记：目录构建器通过预建波次—字段查找索引，同一`cProfile`方法下从107.8秒降至53.6秒，输出记录语义相同；性能审计见[`metadata_builder_performance_2026-10-23.md`](metadata_builder_performance_2026-10-23.md)。此前补入2013/2015/2018的48个疾病控制/既往访谈变化字段，修复2020既往访谈变化18个字段的目录标签传播，并为2011/2020的6个自知疾病字段补入逐波标签。本轮又补入2013–2018的11个自知疾病字段，并为22个连续残疾发生年份字段注明calendar year。E/P非空标签行现为3,207（3,181个波次—字段码），仍有670行通用待核状态；C类331行仍为通用待核状态。全目标完成度仍估25%–30%，因正式关联模型数仍为0、抽样设计与个体变量审核闸门未解决，这类目录补全不代表结果图谱已接近完成。后续继续审阅候选目录，并优先处理调查设计闭环、变量冻结和合成数据验证。
 
 私有派生表权重覆盖QA续记：2015/2018/2020横截面标记与正个体权重覆盖一致；2011个体权重全覆盖但没有独立横截面标记。2013现存派生表中18,605人只有18,256人有正的个体权重，且缺少`crosssection`/`longitudinal`资格变量。验证器已加强为将2013标记为`CHECK`，70项测试通过；2013官方原始Weights源包须恢复后才能重建与解释。逐波权重覆盖计数见[`survey_design_weight_review_v1.md`](survey_design_weight_review_v1.md)。这是调查设计闸门证据更新，不改变完整结果型Atlas约25%–30%的里程碑估算。
 
@@ -66,3 +66,5 @@ A full metadata rebuild found that 73 already-audited continuous behavior fields
 
 
 2026-10-23网站加载复核：旧版23个前端数据请求现都延迟到对应视图打开时；主目录另分为E（15.46 MB）、P（6.40 MB）、C（1.93 MB）三份并只在进入对应目录时请求。默认首页不请求目录JSON，Pages产物排除主目录副本；ETag使用`no-cache`重新验证缓存。正式finalize-only管线会重新生成分片，部署/验证工作流已加入对应规则。73项Python测试、延迟加载Node测试、前端语法与分片一致性均通过。此改动提升目录原型的首屏和按角色浏览效率，不改变候选指标或结果平台完成度（仍约25%–30%）。详见[`site_static_asset_cache_review_2026-10-23.md`](site_static_asset_cache_review_2026-10-23.md)。
+
+2026-10-23续记：就业/工作暴露交叉表中170个此前通用待核字段已同步为有来源的连续/开放响应或无离散类别状态；另将5个2020 CAPI派生公式和2个问卷/Codebook身份冲突的标签及状态同步至主目录。后两类仍保留路由待核或`DO NOT ANALYZE`，不表示分析资格已验证。当前E/P目录有3,207行非空官方/已审标签文本（3,181波次—字段码）、670行通用待核状态；84项测试通过。目录和网站变更正准备推送。完整目标完成度仍约25%–30%，正式关联模型数仍为0，分析设计与2013样本标记等门槛未解决。相关审计见[`work_numeric_catalog_status_sync_2026-10-23.md`](work_numeric_catalog_status_sync_2026-10-23.md)。
