@@ -72,11 +72,12 @@ def main() -> None:
         propagate()
         return
     rows = json.loads(CATALOG.read_text(encoding="utf-8"))
-    targets = [
-        row for row in rows
-        if row.get("subcategory") in TARGET_FAMILIES
-        and row.get("Value.Label.Review", "").strip().lower() == "not yet reviewed"
-    ]
+    if OUTPUT.exists():
+        previous = pd.read_csv(OUTPUT, dtype=str, encoding="utf-8-sig").fillna("")
+        target_keys = {(str(r.wave), str(r.code).lower()) for r in previous.itertuples(index=False)}
+        targets = [row for row in rows if (str(row.get("Source.Wave", "")), str(row.get("Variable.Name", "")).lower()) in target_keys and row.get("epcf", "").lower() == "c"]
+    else:
+        targets = [row for row in rows if row.get("subcategory") in TARGET_FAMILIES and row.get("Value.Label.Review", "").strip().lower() == "not yet reviewed"]
     observed = {family: sum(row["subcategory"] == family for row in targets) for family in TARGET_FAMILIES}
     if observed != TARGET_FAMILIES:
         raise SystemExit(f"Unexpected pending metadata family sizes: {observed}")

@@ -6,7 +6,7 @@ This snapshot reads only the public, generated metadata in `site-prototype/dist/
 |---|---:|---:|
 | E exposure candidates | 4,723 | 0 |
 | P phenotype candidates | 2,067 | 0 |
-| C covariate/measurement metadata | 979 | 257 |
+| C covariate/measurement metadata | 979 | 233 |
 
 The current E queue contains no rows with a generic pending value-label status. The latest batch audited the final 12 fields across household expenditure, interwave work counts, rental-income status, COVID-period wage direction, occupational classification, and pandemic/work-history items. Several retain specific unresolved source or route caveats and `DO NOT ANALYZE` locks. These are field rows, not independent concepts or tests.
 
@@ -71,3 +71,8 @@ The generated E catalogue has 4,723 field-wave rows and zero generic `not yet re
 ## Latest C metadata batch: prior-wave history and routing
 
 The 41 prior-interview response-history/routing flags and 14 prior-wave diagnosis-time answer-history flags were checked against their wave-specific official Codebooks. They remain C-only metadata; no response categories were inferred, and empty slots are not interpreted as “No.” This resolves 55 C rows with a specific metadata/source status. The latest generated C catalogue now has 257 generic pending rows. Review record: [`prior_wave_history_routing_metadata_review_2026-10-23.md`](prior_wave_history_routing_metadata_review_2026-10-23.md).
+
+
+## Latest C metadata batch: disease-slot placeholders and inactive legacy fields
+
+A further 24 C-only fields were reviewed against the official Codebooks: 15 unsupported prior-wave disease slots, five unlisted disease-index placeholders and four inactive 2015 household lending/debt fields. No response categories were inferred; unsupported disease blanks are not “No.” The latest C generic-pending count is 233. See [`c_placeholder_legacy_field_review_2026-10-23.md`](c_placeholder_legacy_field_review_2026-10-23.md).
