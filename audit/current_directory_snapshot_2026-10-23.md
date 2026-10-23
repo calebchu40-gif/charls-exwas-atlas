@@ -18,7 +18,7 @@
 
 ## 验证
 
-本轮全量元数据流水线及`--finalize-only`传播构建均完成；93项测试通过；延迟加载器Node测试、`node --check site-prototype/dist/app.js`和`git diff --check`通过。E/P/C三份目录分片与主目录筛选结果完全一致；35条`DO NOT ANALYZE`锁定与分流清单完全一致。首页不加载目录JSON；Pages部署包排除仅供构建/审计的主目录JSON，公开行为与E/P/C分片及专题目录按需加载。私有派生表ID/波次验证中2011/2015/2018/2020为PASS、2013因缺少两个必需样本标记为CHECK；逐波权重覆盖汇总见[`survey_design_weight_review_v1.md`](survey_design_weight_review_v1.md)。公开元数据重建未读取任何CHARLS个人记录。新增代码尚待本次提交后的GitHub Actions与Pages部署运行验证。
+本轮全量元数据流水线及`--finalize-only`传播构建均完成；93项测试通过；延迟加载器Node测试、`node --check site-prototype/dist/app.js`和`git diff --check`通过。E/P/C三份目录分片与主目录筛选结果完全一致；35条`DO NOT ANALYZE`锁定与分流清单完全一致。首页不加载目录JSON；Pages部署包排除仅供构建/审计的主目录JSON，公开行为与E/P/C分片及专题目录按需加载。私有派生表ID/波次验证中2011/2015/2018/2020为PASS、2013因缺少两个必需样本标记为CHECK；逐波权重覆盖汇总见[`survey_design_weight_review_v1.md`](survey_design_weight_review_v1.md)。公开元数据重建未读取任何CHARLS个人记录。提交`1ef4069`已推送；公开E分片以无缓存、版本参数请求返回HTTP 200，显示9条2018当前住房产权关系字段，其中1条完整0/1标签、8条部分代码本标签状态，与本地生成内容一致；公开站点已包含此次更新。
 
 2026-10-23 work-field status synchronization: exact wave/code matches to the reviewed work crosswalk moved 170 E/P rows from the generic `not yet reviewed` state to the source-specific continuous/open-response or no-discrete-category status. The current catalog has 677 E/P rows in the generic state, 3,199 rows with nonempty official/reviewed labels, and 339 total entries carrying this specific work-field status. These are metadata-review counts, not independent indicators or analysis eligibility. The full metadata pipeline and 83 tests passed; no respondent data or frequencies were used. See [`work_numeric_catalog_status_sync_2026-10-23.md`](work_numeric_catalog_status_sync_2026-10-23.md).
 
