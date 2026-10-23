@@ -29,11 +29,12 @@ end=next((i for i in range(start+1,len(lines)) if lines[i].strip()=='</div>' and
 if end is None: raise SystemExit('Could not locate stats block closing tag; refusing to overwrite unexpected HTML')
 new=[
     ' '*indent+'<div class="stats" aria-label="目录进度">',
-    ' '*(indent+2)+f'<div class="stat"><b>{len(concept_ids):,}</b><span>候选 E/P 概念</span></div>',
+    ' '*(indent+2)+f'<div class="stat"><b>{len(e_ids):,}</b><span>暴露候选概念</span></div>',
+    ' '*(indent+2)+f'<div class="stat"><b>{len(p_ids):,}</b><span>表型候选概念</span></div>',
     ' '*(indent+2)+'<div class="stat"><b>5</b><span>调查波次：2011–2020</span></div>',
-    ' '*(indent+2)+f'<div class="stat"><b>{rows:,}</b><span>E/P 概念—源字段映射</span></div>',
     ' '*(indent+2)+'<div class="stat"><b>0</b><span>正式关联模型</span></div>',
     ' '*indent+'</div>',
+    ' '*indent+f'<p class="stats-note">去重后共有 {len(concept_ids):,} 个 E/P 候选概念，其中 {len(e_ids & p_ids)} 个同时承担暴露与表型角色；{rows:,} 条概念—源字段映射是目录对应关系，不是样本量或关联结果。</p>',
 ]
 lines=lines[:start]+new+lines[end+1:]
 html.write_text('\n'.join(lines)+'\n',encoding='utf-8')
