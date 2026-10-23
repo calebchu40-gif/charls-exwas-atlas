@@ -8,6 +8,10 @@
 
 本地全量构建和`--finalize-only`均已通过当前项目测试；完整流水线用来保证源映射时，最终目录锁定校验、测试和受限格式扫描仍需照常运行。
 
+## 2013官方样本标记补入
+
+受控数据 QA 发现，现有2013分析表虽含权重列，但缺少官方`crosssection`与`longitudinal`样本标记，不能用权重是否缺失替代样本资格。待通过本人 CHARLS 账户下载官方`Weights.dta`后，将其放入`%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\incoming_2013_weights\Weights.dta`，并按[`audit/wave2_official_weight_intake_2026-10-23.md`](audit/wave2_official_weight_intake_2026-10-23.md)运行受控合并和复核。合并脚本默认另写私有 DTA、输出不含个体记录的汇总 QA，并在 ID 重复/缺失、匹配不全、标记缺失或现有权重值冲突时停止；不应把官方文件或派生个体数据放入项目同步目录或 GitHub。
+
 ## 公开网站部署
 
 网站使用 GitHub Pages，部署包只含`site-prototype/dist/`下的静态页面和候选变量元数据，不含CHARLS个体级数据。用户已明确接受整个仓库公开；仓库及Pages已公开上线。2026-10-22首次部署工作流成功（Run #1）；首页、`app.js`和候选配对JSON均经外部HTTP请求验证返回200。公开网址：[https://calebchu40-gif.github.io/charls-exwas-atlas/](https://calebchu40-gif.github.io/charls-exwas-atlas/)。站点更新或部署工作流变更推送到`main`后会自动部署；Actions仍保留手动运行入口。
