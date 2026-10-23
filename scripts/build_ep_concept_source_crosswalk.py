@@ -620,6 +620,50 @@ for item in fields.to_dict("records"):
     roles = [role_text, *[part.strip() for part in role_text.split(",")]]
     for role in roles:
         catalog_keys.add((str(item.get("Source.Wave", "")), str(item.get("Variable.Name", "")).lower(), str(item.get("Data.File.Name", "")).strip().lower(), role))
+
+# Some domain crosswalks were originally assembled as exposure candidates
+# before an explicit catalog role audit reclassified their source fields as
+# C-only measurement/response-format metadata. Apply those exact, reviewed
+# E/P -> C decisions here as well, so the concept-source index and pair
+# explorer cannot retain a selector as an exposure after the master catalog
+# has removed that role.
+role_override_path = AUDIT / "catalog_role_override_review_v1.csv"
+if role_override_path.exists():
+    role_overrides = load("catalog_role_override_review_v1.csv")
+    c_catalog_keys = {key[:3] for key in catalog_keys if key[3] == "c"}
+    for override in role_overrides.to_dict("records"):
+        wave = str(override.get("wave", "")).strip()
+        code = str(override.get("code", "")).strip().lower()
+        old_role = str(override.get("remove_role", "")).strip().lower()
+        keep_role = str(override.get("keep_role", "")).strip().lower()
+        if keep_role != "c" or old_role not in {"e", "p", "e,p", "p,e"}:
+            continue
+        concept_ids = {x.strip() for x in str(override.get("concept_ids", "")).split(";") if x.strip()}
+        selected = (
+            master["Wave"].astype(str).eq(wave)
+            & master["Source.Code"].astype(str).str.lower().eq(code)
+            & master["Role"].astype(str).str.lower().eq(old_role)
+        )
+        if concept_ids:
+            selected &= master["Concept.ID"].astype(str).isin(concept_ids) | master["Source.Concept.ID"].astype(str).isin(concept_ids)
+        for idx in master.index[selected]:
+            c_key = (str(master.at[idx, "Wave"]), str(master.at[idx, "Source.Code"]).lower(), str(master.at[idx, "Module"]).strip().lower())
+            if c_key not in c_catalog_keys:
+                continue
+            master.at[idx, "Role"] = "c"
+            status = str(master.at[idx, "Mapping.Status"]).strip()
+            marker = "reclassified to C-only metadata by audit/catalog_role_override_review_v1.csv"
+            if marker not in status:
+                master.at[idx, "Mapping.Status"] = f"{status} | {marker}" if status else marker
+            rationale = str(override.get("rationale", "")).strip()
+            caveat = str(master.at[idx, "Caveat"]).strip()
+            if rationale and rationale not in caveat:
+                master.at[idx, "Caveat"] = f"{caveat} {rationale}".strip()
+            source_document = str(master.at[idx, "Source.Document"]).strip()
+            override_source = "audit/catalog_role_override_review_v1.csv"
+            if override_source not in source_document:
+                master.at[idx, "Source.Document"] = f"{source_document}; {override_source}".strip("; ")
+
 master["Catalog.Match"] = [
     "matched" if (str(r.Wave), str(r["Source.Code"]).lower(), str(r["Module"]).strip().lower(), str(r.Role)) in catalog_keys else "not in E/P candidate catalog"
     for _, r in master.iterrows()
@@ -684,6 +728,29 @@ field_catalog["Concept.Label.Candidates"] = ["; ".join(sorted({x[1] for x in xs}
 field_catalog["Concept.Mapping.Source"] = ["; ".join(sorted({x[2] for x in xs})) for xs in mapped_fields]
 field_catalog["Concept.Mapping.Status"] = [" | ".join(sorted({x[3] for x in xs})) for xs in mapped_fields]
 field_catalog["Concept.Unit.Candidates"] = ["; ".join(sorted({f"{x[0]}={x[4]}" for x in xs if x[4]})) for xs in mapped_fields]
+# Re-apply exact, reviewed E/P -> C-only overrides after joining specialist
+# concept maps. C-only selector/measurement fields may retain labels and
+# units for interpretation, but must not regain an E/P candidate concept ID.
+if role_override_path.exists():
+    c_only_overrides = role_overrides[
+        role_overrides["keep_role"].astype(str).str.strip().str.lower().eq("c")
+        & role_overrides["remove_role"].astype(str).str.strip().str.lower().isin({"e", "p", "e,p", "p,e"})
+    ]
+    for override in c_only_overrides.to_dict("records"):
+        selected = (
+            field_catalog["Source.Wave"].astype(str).eq(str(override.get("wave", "")).strip())
+            & field_catalog["Variable.Name"].astype(str).str.lower().eq(str(override.get("code", "")).strip().lower())
+        )
+        candidate_ids = {x.strip() for x in str(override.get("concept_ids", "")).split(";") if x.strip()}
+        if candidate_ids:
+            selected &= field_catalog["Concept.ID.Candidates"].map(
+                lambda value: bool(candidate_ids.intersection({x.strip() for x in str(value).split(";") if x.strip()}))
+            )
+        for column in (
+            "Concept.ID.Candidates", "Concept.Alias.IDs", "Concept.Label.Candidates",
+            "Concept.Mapping.Source", "Concept.Mapping.Status", "Concept.Unit.Candidates",
+        ):
+            field_catalog.loc[selected, column] = ""
 # Preserve the audited continuous calendar-year unit for disability-onset
 # fields; the concept-source mapping layer otherwise replaces this metadata
 # with an empty string because these timing fields have no mapped discrete unit.

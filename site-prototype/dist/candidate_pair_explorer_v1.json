@@ -68812,9 +68812,9 @@
       ]
     },
     "2018": {
-      "exposure_count": 494,
+      "exposure_count": 493,
       "phenotype_count": 206,
-      "candidate_pair_count": 101757,
+      "candidate_pair_count": 101551,
       "exposures": [
         {
           "concept_id": "pension_expected_receipt_age_2018_plan_loop",
@@ -78339,86 +78339,6 @@
               "value_semantics": "Continuous real hours/night for past-month actual sleep; questionnaire range 0-24; released-file special codes still require verification. | 单位/异常值/特殊码复核后按小时统一",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由 | measured",
               "caveat": "自动概念目录中的逐波字段候选；2011/2018/2020标签含过去一个月；2013/2015字段标签较简略，需问卷核对回忆期和单位。 | 单位/异常值/特殊码复核后按小时统一"
-            }
-          ]
-        },
-        {
-          "concept_id": "household_property_value_measure_type",
-          "label": "家庭住房价值总额/单位值类型",
-          "domain": "housing and built environment",
-          "roles": [
-            "e"
-          ],
-          "source_fields": [
-            {
-              "code": "ha004_w4_1_",
-              "label": "Total Value or Unit Value for House[1]",
-              "module": "Housing",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
-            },
-            {
-              "code": "ha004_w4_2_",
-              "label": "Total Value or Unit Value for House[2]",
-              "module": "Housing",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
-            },
-            {
-              "code": "ha004_w4_3_",
-              "label": "Total Value or Unit Value for House[3]",
-              "module": "Housing",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
-            },
-            {
-              "code": "ha004_w4_4_",
-              "label": "Total Value or Unit Value for House[4]",
-              "module": "Housing",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
-            },
-            {
-              "code": "ha004_w4_5_",
-              "label": "Total Value or Unit Value for House[5]",
-              "module": "Housing",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
-            },
-            {
-              "code": "ha004_w4_6_",
-              "label": "Total Value or Unit Value for House[6]",
-              "module": "Housing",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
-            },
-            {
-              "code": "ha004_w4_7_",
-              "label": "Total Value or Unit Value for House[7]",
-              "module": "Housing",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
             }
           ]
         },

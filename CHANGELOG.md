@@ -2,6 +2,9 @@
 
 ## 2026-10-24
 
+- Synchronized the E/P concept-source index with the explicit catalog role audit: seven 2018 HA004 total-value/unit-value format selectors are C-only metadata, not exposure tests. The crosswalk builder now applies exact audited E/P-to-C overrides only when the corresponding C catalogue field and reviewed concept are present; added regression coverage and a reconciliation audit.
+  Specialist concept joins now preserve that C-only boundary in the field catalogue as well. Full finalization reports 1,428 E/P concepts (1,149 E, 288 P, including 9 dual-role concepts), 6,624 source mappings, and wave metadata co-availability counts of 121,107 / 126,514 / 130,376 / 101,551 / 13,906 (2011/2013/2015/2018/2020). These counts are not sample sizes or association results. All 210 tests and static checks pass; the 89 analysis locks and zero fitted models remain unchanged.
+
 - Added questionnaire-derived units and field-specific scope notes for the 2011 community weather estimates: annual low/high temperatures (°C) and rainy/snowy day counts (days), explicitly reported by a community informant rather than linked station observations. Added source audit and regression coverage; no responses or Codebook summaries were copied.
   Full finalization synchronized the weather annotations across the candidate catalogue and community site JSON; 209 tests and 34 static JSON checks pass. The refreshed site catalogue contains E=4,750, P=2,110, C=978; 89 formal E/P locks remain and no association models or pairwise sample sizes are computed.
   Deployment verified: commit `0a79030` is GitHub Pages Deploy #100 (run `40028365448`, success); the cache-busted public community JSON returns HTTP 200 and confirms the four weather-field units and caveats.

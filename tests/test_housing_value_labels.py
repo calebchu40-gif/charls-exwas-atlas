@@ -221,6 +221,17 @@ class HousingValueLabelTests(unittest.TestCase):
             self.assertIn("response-format selector only", row["Harmonization.Status"])
             self.assertEqual(source_fields[("2018", code)]["value_labels"], "1=Total Value; 2=Unit Value")
 
+    def test_2018_property_value_format_selectors_are_not_exposure_concepts(self):
+        selector_codes = {f"ha004_w4_{slot}_" for slot in range(1, 8)}
+        rows = [
+            row for row in self.crosswalk
+            if row["Wave"] == "2018" and row["Source.Code"].lower() in selector_codes
+        ]
+        self.assertEqual(len(rows), 7)
+        self.assertTrue(all(row["Role"] == "c" for row in rows))
+        self.assertTrue(all(row["Catalog.Match"] == "matched" for row in rows))
+        self.assertTrue(all("catalog_role_override_review_v1.csv" in row["Source.Document"] for row in rows))
+
     def test_2011_to_2015_housing_money_fields_keep_verified_units_and_pending_storage_limits(self):
         expected = {
             **{("2011", f"ha049_{i}_"): "Yuan" for i in range(1, 4)},

@@ -28,4 +28,4 @@
 |p|anthropometric|5|21|15|
 |p|blood pressure|3|27|27|
 
-总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1429个（E=1150、P=288，9个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。
+总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1428个（E=1149、P=288，9个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。
