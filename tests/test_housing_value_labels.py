@@ -296,6 +296,15 @@ class HousingValueLabelTests(unittest.TestCase):
                 self.assertEqual(row["Unit"], "count")
                 self.assertEqual(row["Value.Labels"], "")
                 self.assertIn("household-level built-environment context", row["Harmonization.Status"].lower())
+
+    def test_homestead_area_units_and_zero_applicability_are_preserved(self):
+        catalog = {(r["Source.Wave"], r["Variable.Name"].lower()): r for r in self.catalog}
+        for wave in ("2011", "2013", "2015", "2018"):
+            row = catalog[(wave, "i002")]
+            self.assertEqual(row["Unit"], "m²")
+            self.assertIn("rural collective", row["Harmonization.Status"])
+            self.assertIn("potentially structural/nonapplicable", row["Harmonization.Status"])
+            self.assertIn("not validated analytic bounds", row["Harmonization.Status"])
         self.assertIn("excludes banquets/weddings", catalog[("2020", "gf006")]["Harmonization.Status"])
         self.assertIn("excludes banquets/weddings", catalog[("2018", "ge007_w4")]["Harmonization.Status"])
 
