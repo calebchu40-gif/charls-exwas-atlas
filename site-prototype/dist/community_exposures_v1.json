@@ -13,6 +13,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "households",
+        "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -25,6 +26,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "households",
+        "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -37,6 +39,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "households",
+        "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -49,6 +52,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "households",
+        "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -61,6 +65,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "households",
+        "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -73,6 +78,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "households",
+        "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -85,6 +91,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "households",
+        "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -97,6 +104,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "households",
+        "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -117,6 +125,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "households",
+        "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each fuel source. Categories may overlap; the questionnaire gives no total-household denominator here. Not a person-level fuel dose; single-wave only.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -129,6 +138,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "households",
+        "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each fuel source. Categories may overlap; the questionnaire gives no total-household denominator here. Not a person-level fuel dose; single-wave only.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -141,6 +151,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "households",
+        "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each fuel source. Categories may overlap; the questionnaire gives no total-household denominator here. Not a person-level fuel dose; single-wave only.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -153,6 +164,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "households",
+        "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each fuel source. Categories may overlap; the questionnaire gives no total-household denominator here. Not a person-level fuel dose; single-wave only.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -165,6 +177,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "households",
+        "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each fuel source. Categories may overlap; the questionnaire gives no total-household denominator here. Not a person-level fuel dose; single-wave only.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -177,6 +190,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "households",
+        "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each fuel source. Categories may overlap; the questionnaire gives no total-household denominator here. Not a person-level fuel dose; single-wave only.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -197,6 +211,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Community-level availability and fuel type for central winter heating; 2011 only and not an individual residence measure.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -209,6 +224,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Community-level availability and fuel type for central winter heating; 2011 only and not an individual residence measure.",
         "value_labels": "1=Electronic heating",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -221,6 +237,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Community-level availability and fuel type for central winter heating; 2011 only and not an individual residence measure.",
         "value_labels": "2=Coal heating",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -233,6 +250,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Community-level availability and fuel type for central winter heating; 2011 only and not an individual residence measure.",
         "value_labels": "3=Natural gas heating",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -245,6 +263,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Community-level availability and fuel type for central winter heating; 2011 only and not an individual residence measure.",
         "value_labels": "4=Others, specify",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -265,6 +284,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Sewerage, waste management, toilet infrastructure and public restroom indicators. Community representative report; do not conflate with household toilet fields.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -277,6 +297,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Sewerage, waste management, toilet infrastructure and public restroom indicators. Community representative report; do not conflate with household toilet fields.",
         "value_labels": "1=Moved away by truck; 2=Buried in this village; 3=Burn away; 4=Put into nearby river; 5=Do not manage",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -289,6 +310,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Sewerage, waste management, toilet infrastructure and public restroom indicators. Community representative report; do not conflate with household toilet fields.",
         "value_labels": "1=Inside toilet with water; 2=Inside toilet without water; 3=Outside toilet with water; 4=Outside public toilet without water; 5=Open-air; 6=Others, please specify:",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -301,6 +323,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Sewerage, waste management, toilet infrastructure and public restroom indicators. Community representative report; do not conflate with household toilet fields.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -311,16 +334,17 @@
     "concept_id": "community_industrial_pollution",
     "label": "Community industrial pollution indicators",
     "domain": "Community environment",
-    "caveat": "Includes subjective community ratings for local/nearby industrial pollution and village-level distance to nearest source; not instrument-measured concentration. Some items are village-respondent-only.",
+    "caveat": "Three distinct community-level reports: JB018 rates pollution in the village/community; village-only JB019 rates nearby villages/townships; village-only JB027 records distance to the closest industrial pollution site in kilometres, with 0 meaning the site is located in the village. The ratings are subjective ordinal reports, and the distance is not the respondent's home-to-source distance; none is an instrument-measured concentration or individual pollution dose.",
     "source_fields": [
       {
         "wave": "2011",
         "code": "jb018",
         "module": "community",
         "source_label": "Degree of Industrial Pollution",
-        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B, JB018; response anchors reconciled with the official Codebook; frequencies omitted.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Community-informant ordinal report of industrial pollution in this village/community (1=very severe to 4=completely absent); higher codes mean less reported pollution. This is not an instrument-measured concentration or an individual dose.",
         "value_labels": "1=Very severe (very serious pollution); 2=Some pollution; 3=Almost none; 4=Completely absent",
         "value_label_status": "official questionnaire semantics reconciled with codebook response categories; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -330,9 +354,10 @@
         "code": "jb019",
         "module": "community",
         "source_label": "Degree of Nearby Industrial Pollution",
-        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B, village-only CAPI item JB019; response anchors reconciled with the official Codebook; frequencies omitted.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Community-informant ordinal report of industrial pollution in nearby villages/townships (1=very severe to 4=completely absent); higher codes mean less reported pollution. Village-only route; not the respondent's residential distance or an instrument-measured concentration.",
         "value_labels": "1=Very severe (very serious pollution); 2=Some pollution; 3=Almost none; 4=Completely absent",
         "value_label_status": "official questionnaire semantics reconciled with codebook response categories; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -342,9 +367,10 @@
         "code": "jb027",
         "module": "community",
         "source_label": "How Far is the Nearest Industrial Pollution Site",
-        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B, village-only CAPI item JB027; stated unit and in-village zero rule reviewed against the official Codebook field.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
+        "unit": "km",
+        "caveat": "Distance in kilometres from the village to the closest industrial pollution site; questionnaire explicitly says 0 when the site is in the village. Village-only route; not an individual's home-to-source distance, measured concentration, or validated personal dose. Verify release-specific special values and eligible denominator before analysis.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -365,6 +391,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Reported prior calendar-year highest/lowest temperature and rainy/snowy days. These are community-report estimates, not linked meteorological station data.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -377,6 +404,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Reported prior calendar-year highest/lowest temperature and rainy/snowy days. These are community-report estimates, not linked meteorological station data.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -389,6 +417,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Reported prior calendar-year highest/lowest temperature and rainy/snowy days. These are community-report estimates, not linked meteorological station data.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -401,6 +430,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Reported prior calendar-year highest/lowest temperature and rainy/snowy days. These are community-report estimates, not linked meteorological station data.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -421,6 +451,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Road type/outage days and distance/count of transport links/stations. Infrastructure/access indicators, not pollutant exposure.",
         "value_labels": "1=Paved road; 2=Pathway/Dirt/unpaved road; 3=Sand-stone road; 5=Other",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -433,6 +464,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Road type/outage days and distance/count of transport links/stations. Infrastructure/access indicators, not pollutant exposure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -445,6 +477,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Road type/outage days and distance/count of transport links/stations. Infrastructure/access indicators, not pollutant exposure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -457,6 +490,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Road type/outage days and distance/count of transport links/stations. Infrastructure/access indicators, not pollutant exposure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -469,6 +503,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Road type/outage days and distance/count of transport links/stations. Infrastructure/access indicators, not pollutant exposure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -489,6 +524,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Household electricity penetration and annual supply availability/duration; village-level reported metrics.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -501,6 +537,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Household electricity penetration and annual supply availability/duration; village-level reported metrics.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -513,6 +550,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "Household electricity penetration and annual supply availability/duration; village-level reported metrics.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -533,6 +571,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part C p.16 (PDF p.19), JC019-JC024; exact percentage fields and conditional _1 bracket fields verified.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "percent of community adults",
+        "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -545,6 +584,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part C p.16 (PDF p.19), JC019-JC024; exact percentage fields and conditional _1 bracket fields verified.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "percent bracket (fallback category)",
+        "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education.",
         "value_labels": "1=0-20%; 2=20-40%; 3=40-60%; 4=60-80%; 5=80-100%",
         "value_label_status": "official questionnaire numbered fallback categories; Codebook category labels checked and frequencies omitted; asked only when exact percentage is unknown; preserve separately from paired continuous percentage and verify released-data routing",
         "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -557,6 +597,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part C p.16 (PDF p.19), JC019-JC024; exact percentage fields and conditional _1 bracket fields verified.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "percent of community adults",
+        "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -569,6 +610,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part C p.16 (PDF p.19), JC019-JC024; exact percentage fields and conditional _1 bracket fields verified.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "percent bracket (fallback category)",
+        "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education.",
         "value_labels": "1=0-10%; 2=10-20%; 3=20-30%; 4=30-40%; 5=>40%",
         "value_label_status": "official questionnaire numbered fallback categories; Codebook category labels checked and frequencies omitted; asked only when exact percentage is unknown; preserve separately from paired continuous percentage and verify released-data routing",
         "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -581,6 +623,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part C p.16 (PDF p.19), JC019-JC024; exact percentage fields and conditional _1 bracket fields verified.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "percent of community adults",
+        "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -593,6 +636,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part C p.16 (PDF p.19), JC019-JC024; exact percentage fields and conditional _1 bracket fields verified.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "percent bracket (fallback category)",
+        "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education.",
         "value_labels": "1=0-10%; 2=10-20%; 3=20-30%; 4=30-40%; 5=>40%",
         "value_label_status": "official questionnaire numbered fallback categories; Codebook category labels checked and frequencies omitted; asked only when exact percentage is unknown; preserve separately from paired continuous percentage and verify released-data routing",
         "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -605,6 +649,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part C p.16 (PDF p.19), JC019-JC024; exact percentage fields and conditional _1 bracket fields verified.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "percent of community adults",
+        "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -617,6 +662,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part C p.16 (PDF p.19), JC019-JC024; exact percentage fields and conditional _1 bracket fields verified.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "percent bracket (fallback category)",
+        "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education.",
         "value_labels": "1=0-10%; 2=10-20%; 3=20-30%; 4=30-40%; 5=>40%",
         "value_label_status": "official questionnaire numbered fallback categories; Codebook category labels checked and frequencies omitted; asked only when exact percentage is unknown; preserve separately from paired continuous percentage and verify released-data routing",
         "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -629,6 +675,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part C p.16 (PDF p.19), JC019-JC024; exact percentage fields and conditional _1 bracket fields verified.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "percent of community adults",
+        "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -641,6 +688,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part C p.16 (PDF p.19), JC019-JC024; exact percentage fields and conditional _1 bracket fields verified.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "percent bracket (fallback category)",
+        "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education.",
         "value_labels": "1=None; 2=0-1%; 3=1-5%; 4=5-10%; 5=10-15%; 6=>15%",
         "value_label_status": "official questionnaire numbered fallback categories; Codebook category labels checked and frequencies omitted; asked only when exact percentage is unknown; preserve separately from paired continuous percentage and verify released-data routing",
         "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -653,6 +701,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part C p.16 (PDF p.19), JC019-JC024; exact percentage fields and conditional _1 bracket fields verified.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "percent of community adults",
+        "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -665,6 +714,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part C p.16 (PDF p.19), JC019-JC024; exact percentage fields and conditional _1 bracket fields verified.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "percent bracket (fallback category)",
+        "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education.",
         "value_labels": "1=None; 2=0-1%; 3=1-5%; 4=5-10%; 5=>10%",
         "value_label_status": "official questionnaire numbered fallback categories; Codebook category labels checked and frequencies omitted; asked only when exact percentage is unknown; preserve separately from paired continuous percentage and verify released-data routing",
         "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -685,6 +735,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "RMB yuan/ton",
+        "caveat": "2011 community-reported current average water unit price in RMB yuan per ton; community context, not an individual's household bill.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -705,6 +756,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "RMB yuan/kWh",
+        "caveat": "2011 community-reported current average electricity unit price in RMB yuan per degree (kWh); community context, not an individual's household bill.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -725,6 +777,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant Yes/No report of roads passing through the village/community; single-wave context indicator.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -745,6 +798,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant 1-7 ordinal assessment anchored from very dirty to very tidy; subjective road-condition perception, not an environmental sampling measure.",
         "value_labels": "1=Very dirty; 2–6=intermediate ordered ratings; 7=Very tidy",
         "value_label_status": "official questionnaire seven-point ordinal scale anchors reviewed; CodeBook numeric categories only; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -765,6 +819,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part K interviewer observations; item-specific 1–7 endpoint anchors verified.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 interviewer observation on a 1–7 ordinal scale anchored from poor to rich. This is a fieldworker's overall community judgment, not household income or an objective area-level economic statistic.",
         "value_labels": "1=Poor; 2–6=intermediate ordered ratings; 7=Rich",
         "value_label_status": "official questionnaire seven-point ordinal scale anchors reviewed; Codebook numeric categories only; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -785,6 +840,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part K interviewer observations; item-specific 1–7 endpoint anchors verified.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 interviewer observation on a 1–7 ordinal scale anchored from very disorganized to very organized. This is a subjective community-level built-environment proxy, not a standardized urban-form assessment.",
         "value_labels": "1=Very disorganized; 2–6=intermediate ordered ratings; 7=Very organized",
         "value_label_status": "official questionnaire seven-point ordinal scale anchors reviewed; Codebook numeric categories only; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -805,6 +861,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part K interviewer observations; item-specific 1–7 endpoint anchors verified.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 interviewer observation on a 1–7 ordinal scale anchored from very crowded to very sparse; higher values indicate less perceived crowding. This is not a measured population density.",
         "value_labels": "1=Very crowded; 2–6=intermediate ordered ratings; 7=Very sparse",
         "value_label_status": "official questionnaire seven-point ordinal scale anchors reviewed; Codebook numeric categories only; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -825,6 +882,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part K interviewer observations; item-specific 1–7 endpoint anchors verified.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 interviewer observation on a 1–7 ordinal scale anchored from no handicapped access to very convenient. Higher values indicate better perceived access; this is not an audited accessibility standard.",
         "value_labels": "1=No handicapped access; 2–6=intermediate ordered ratings; 7=Very convenient",
         "value_label_status": "official questionnaire seven-point ordinal scale anchors reviewed; Codebook numeric categories only; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -845,6 +903,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-level report of primary-school merger/relocation and prior school count; historical service-access context, not individual schooling.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -857,6 +916,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-level report of primary-school merger/relocation and prior school count; historical service-access context, not individual schooling.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -877,6 +937,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant report of any serious natural disaster during the prior five years (JI001); No routes to JI003, so JI002 event details have a conditional denominator.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -897,6 +958,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 village-only CAPI item asking whether the village restructured toilet/sewer systems; preserve village-only eligibility and do not infer original derivation from the Codebook variable label.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -917,6 +979,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community-informant report of the number of facilities in the village/community. This is a community count, not an individual's access measure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -937,6 +1000,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 distance from the village/community office to the most commonly used facility of this type; the questionnaire records 0 when the facility is in the community. Not distance from a respondent's home.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -957,6 +1021,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community-informant report of the number of facilities in the village/community. This is a community count, not an individual's access measure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -977,6 +1042,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 distance from the village/community office to the most commonly used facility of this type; the questionnaire records 0 when the facility is in the community. Not distance from a respondent's home.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -997,6 +1063,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community-informant report of the number of facilities in the village/community. This is a community count, not an individual's access measure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1017,6 +1084,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 distance from the village/community office to the most commonly used facility of this type; the questionnaire records 0 when the facility is in the community. Not distance from a respondent's home.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1037,6 +1105,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community-informant report of the number of facilities in the village/community. This is a community count, not an individual's access measure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1057,6 +1126,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 distance from the village/community office to the most commonly used facility of this type; the questionnaire records 0 when the facility is in the community. Not distance from a respondent's home.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1077,6 +1147,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community-informant report of the number of facilities in the village/community. This is a community count, not an individual's access measure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1097,6 +1168,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 distance from the village/community office to the most commonly used facility of this type; the questionnaire records 0 when the facility is in the community. Not distance from a respondent's home.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1117,6 +1189,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community-informant report of the number of facilities in the village/community. This is a community count, not an individual's access measure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1137,6 +1210,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 distance from the village/community office to the most commonly used facility of this type; the questionnaire records 0 when the facility is in the community. Not distance from a respondent's home.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1157,6 +1231,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community-informant report of the number of facilities in the village/community. This is a community count, not an individual's access measure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1177,6 +1252,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 distance from the village/community office to the most commonly used facility of this type; the questionnaire records 0 when the facility is in the community. Not distance from a respondent's home.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1197,6 +1273,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community-informant report of the number of facilities in the village/community. This is a community count, not an individual's access measure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1217,6 +1294,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 distance from the village/community office to the most commonly used facility of this type; the questionnaire records 0 when the facility is in the community. Not distance from a respondent's home.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1237,6 +1315,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community-informant report of the number of facilities in the village/community. This is a community count, not an individual's access measure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1257,6 +1336,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 distance from the village/community office to the most commonly used facility of this type; the questionnaire records 0 when the facility is in the community. Not distance from a respondent's home.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1277,6 +1357,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community-informant report of the number of facilities in the village/community. This is a community count, not an individual's access measure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1297,6 +1378,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 distance from the village/community office to the most commonly used facility of this type; the questionnaire records 0 when the facility is in the community. Not distance from a respondent's home.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1317,6 +1399,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community-informant report of the number of facilities in the village/community. This is a community count, not an individual's access measure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1337,6 +1420,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 distance from the village/community office to the most commonly used facility of this type; the questionnaire records 0 when the facility is in the community. Not distance from a respondent's home.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1357,6 +1441,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community-informant report of the number of facilities in the village/community. This is a community count, not an individual's access measure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1377,6 +1462,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 distance from the village/community office to the most commonly used facility of this type; the questionnaire records 0 when the facility is in the community. Not distance from a respondent's home.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1397,6 +1483,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community-informant report of the number of facilities in the village/community. This is a community count, not an individual's access measure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1417,6 +1504,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 distance from the village/community office to the most commonly used facility of this type; the questionnaire records 0 when the facility is in the community. Not distance from a respondent's home.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1437,6 +1525,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "1=General hospitals",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1449,6 +1538,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1461,6 +1551,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1481,6 +1572,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 public/private type for a facility type selected in JF001. Conditional on the community health-informant route; not an individual-level care outcome.",
         "value_labels": "1=Public; 2=Private",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1501,6 +1593,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 one-way distance from the community office to this commonly used facility, in kilometres; 0 means the facility is in the community. Conditional on the JF001 facility route.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1521,6 +1614,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant report of the usual transport mode to this facility. Nominal categories; do not treat numeric codes as an ordered exposure.",
         "value_labels": "1=Walk; 2=Bus; 3=Car; 4=Bicycle or other manual vehicles; 5=Electric bicycle/electric tricycle; 6=Motorcycle",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1541,6 +1635,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "hours",
+        "caveat": "2011 travel time by the reported main transport mode, stored in separate hour and minute fields. Preserve both source components and route; do not assume either component alone is total minutes.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1553,6 +1648,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "minutes",
+        "caveat": "2011 travel time by the reported main transport mode, stored in separate hour and minute fields. Preserve both source components and route; do not assume either component alone is total minutes.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1573,6 +1669,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "RMB yuan",
+        "caveat": "2011 average one-way transportation cost including fuel, reported in RMB yuan. Community-informant measure, conditional on JF001 facility route.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1593,6 +1690,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "2=Specialized hospitals",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1605,6 +1703,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1617,6 +1716,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1637,6 +1737,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 public/private type for a facility type selected in JF001. Conditional on the community health-informant route; not an individual-level care outcome.",
         "value_labels": "1=Public; 2=Private",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1657,6 +1758,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 one-way distance from the community office to this commonly used facility, in kilometres; 0 means the facility is in the community. Conditional on the JF001 facility route.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1677,6 +1779,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant report of the usual transport mode to this facility. Nominal categories; do not treat numeric codes as an ordered exposure.",
         "value_labels": "1=Walk; 2=Bus; 3=Car; 4=Bicycle or other manual vehicles; 5=Electric bicycle/electric tricycle; 6=Motorcycle; 8=Train",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1697,6 +1800,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "hours",
+        "caveat": "2011 travel time by the reported main transport mode, stored in separate hour and minute fields. Preserve both source components and route; do not assume either component alone is total minutes.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1709,6 +1813,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "minutes",
+        "caveat": "2011 travel time by the reported main transport mode, stored in separate hour and minute fields. Preserve both source components and route; do not assume either component alone is total minutes.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1729,6 +1834,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "RMB yuan",
+        "caveat": "2011 average one-way transportation cost including fuel, reported in RMB yuan. Community-informant measure, conditional on JF001 facility route.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1749,6 +1855,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "3=Chinese medicine hospitals",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1761,6 +1868,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1773,6 +1881,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1793,6 +1902,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 public/private type for a facility type selected in JF001. Conditional on the community health-informant route; not an individual-level care outcome.",
         "value_labels": "1=Public; 2=Private",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1813,6 +1923,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 one-way distance from the community office to this commonly used facility, in kilometres; 0 means the facility is in the community. Conditional on the JF001 facility route.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1833,6 +1944,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant report of the usual transport mode to this facility. Nominal categories; do not treat numeric codes as an ordered exposure.",
         "value_labels": "1=Walk; 2=Bus; 3=Car; 4=Bicycle or other manual vehicles; 5=Electric bicycle/electric tricycle; 6=Motorcycle",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1853,6 +1965,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "hours",
+        "caveat": "2011 travel time by the reported main transport mode, stored in separate hour and minute fields. Preserve both source components and route; do not assume either component alone is total minutes.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1865,6 +1978,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "minutes",
+        "caveat": "2011 travel time by the reported main transport mode, stored in separate hour and minute fields. Preserve both source components and route; do not assume either component alone is total minutes.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1885,6 +1999,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "RMB yuan",
+        "caveat": "2011 average one-way transportation cost including fuel, reported in RMB yuan. Community-informant measure, conditional on JF001 facility route.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1905,6 +2020,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "4=Nearby pharmacy store",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1917,6 +2033,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1929,6 +2046,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1949,6 +2067,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 public/private type for a facility type selected in JF001. Conditional on the community health-informant route; not an individual-level care outcome.",
         "value_labels": "1=Public; 2=Private",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1969,6 +2088,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 one-way distance from the community office to this commonly used facility, in kilometres; 0 means the facility is in the community. Conditional on the JF001 facility route.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -1989,6 +2109,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant report of the usual transport mode to this facility. Nominal categories; do not treat numeric codes as an ordered exposure.",
         "value_labels": "1=Walk; 2=Bus; 3=Car; 4=Bicycle or other manual vehicles; 5=Electric bicycle/electric tricycle; 6=Motorcycle",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2009,6 +2130,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "hours",
+        "caveat": "2011 travel time by the reported main transport mode, stored in separate hour and minute fields. Preserve both source components and route; do not assume either component alone is total minutes.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2021,6 +2143,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "minutes",
+        "caveat": "2011 travel time by the reported main transport mode, stored in separate hour and minute fields. Preserve both source components and route; do not assume either component alone is total minutes.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2041,6 +2164,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "RMB yuan",
+        "caveat": "2011 average one-way transportation cost including fuel, reported in RMB yuan. Community-informant measure, conditional on JF001 facility route.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2061,6 +2185,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "5=Community health care center",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2073,6 +2198,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2085,6 +2211,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2105,6 +2232,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 public/private type for a facility type selected in JF001. Conditional on the community health-informant route; not an individual-level care outcome.",
         "value_labels": "1=Public; 2=Private",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2125,6 +2253,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 one-way distance from the community office to this commonly used facility, in kilometres; 0 means the facility is in the community. Conditional on the JF001 facility route.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2145,6 +2274,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant report of the usual transport mode to this facility. Nominal categories; do not treat numeric codes as an ordered exposure.",
         "value_labels": "1=Walk; 2=Bus; 4=Bicycle or other manual vehicles; 5=Electric bicycle/electric tricycle; 6=Motorcycle",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2165,6 +2295,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "hours",
+        "caveat": "2011 travel time by the reported main transport mode, stored in separate hour and minute fields. Preserve both source components and route; do not assume either component alone is total minutes.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2177,6 +2308,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "minutes",
+        "caveat": "2011 travel time by the reported main transport mode, stored in separate hour and minute fields. Preserve both source components and route; do not assume either component alone is total minutes.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2197,6 +2329,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "RMB yuan",
+        "caveat": "2011 average one-way transportation cost including fuel, reported in RMB yuan. Community-informant measure, conditional on JF001 facility route.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2217,6 +2350,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "6=Community health care medical post",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2229,6 +2363,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2241,6 +2376,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2261,6 +2397,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 public/private type for a facility type selected in JF001. Conditional on the community health-informant route; not an individual-level care outcome.",
         "value_labels": "1=Public; 2=Private",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2281,6 +2418,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 one-way distance from the community office to this commonly used facility, in kilometres; 0 means the facility is in the community. Conditional on the JF001 facility route.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2301,6 +2439,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant report of the usual transport mode to this facility. Nominal categories; do not treat numeric codes as an ordered exposure.",
         "value_labels": "1=Walk; 2=Bus; 4=Bicycle or other manual vehicles; 5=Electric bicycle/electric tricycle; 6=Motorcycle",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2321,6 +2460,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "hours",
+        "caveat": "2011 travel time by the reported main transport mode, stored in separate hour and minute fields. Preserve both source components and route; do not assume either component alone is total minutes.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2333,6 +2473,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "minutes",
+        "caveat": "2011 travel time by the reported main transport mode, stored in separate hour and minute fields. Preserve both source components and route; do not assume either component alone is total minutes.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2353,6 +2494,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "RMB yuan",
+        "caveat": "2011 average one-way transportation cost including fuel, reported in RMB yuan. Community-informant measure, conditional on JF001 facility route.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2373,6 +2515,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "7=Township health clinic hospital",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2385,6 +2528,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2397,6 +2541,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2417,6 +2562,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 public/private type for a facility type selected in JF001. Conditional on the community health-informant route; not an individual-level care outcome.",
         "value_labels": "1=Public; 2=Private",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2437,6 +2583,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 one-way distance from the community office to this commonly used facility, in kilometres; 0 means the facility is in the community. Conditional on the JF001 facility route.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2457,6 +2604,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant report of the usual transport mode to this facility. Nominal categories; do not treat numeric codes as an ordered exposure.",
         "value_labels": "1=Walk; 2=Bus; 3=Car; 4=Bicycle or other manual vehicles; 5=Electric bicycle/electric tricycle; 6=Motorcycle; 9=Animal or animal pulled cart",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2477,6 +2625,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "hours",
+        "caveat": "2011 travel time by the reported main transport mode, stored in separate hour and minute fields. Preserve both source components and route; do not assume either component alone is total minutes.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2489,6 +2638,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "minutes",
+        "caveat": "2011 travel time by the reported main transport mode, stored in separate hour and minute fields. Preserve both source components and route; do not assume either component alone is total minutes.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2509,6 +2659,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "RMB yuan",
+        "caveat": "2011 average one-way transportation cost including fuel, reported in RMB yuan. Community-informant measure, conditional on JF001 facility route.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2529,6 +2680,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "8=Village medical post",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2541,6 +2693,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2553,6 +2706,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "facilities",
+        "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2573,6 +2727,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 public/private type for a facility type selected in JF001. Conditional on the community health-informant route; not an individual-level care outcome.",
         "value_labels": "1=Public; 2=Private",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2593,6 +2748,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "km",
+        "caveat": "2011 one-way distance from the community office to this commonly used facility, in kilometres; 0 means the facility is in the community. Conditional on the JF001 facility route.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2613,6 +2769,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant report of the usual transport mode to this facility. Nominal categories; do not treat numeric codes as an ordered exposure.",
         "value_labels": "1=Walk; 2=Bus; 4=Bicycle or other manual vehicles; 5=Electric bicycle/electric tricycle; 6=Motorcycle",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2633,6 +2790,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "hours",
+        "caveat": "2011 travel time by the reported main transport mode, stored in separate hour and minute fields. Preserve both source components and route; do not assume either component alone is total minutes.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2645,6 +2803,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "minutes",
+        "caveat": "2011 travel time by the reported main transport mode, stored in separate hour and minute fields. Preserve both source components and route; do not assume either component alone is total minutes.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2665,6 +2824,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "RMB yuan",
+        "caveat": "2011 average one-way transportation cost including fuel, reported in RMB yuan. Community-informant measure, conditional on JF001 facility route.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2685,6 +2845,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 facility-level category for general, specialized, and Chinese-medicine hospitals only, as specified by the questionnaire. Conditional on JF001 selection.",
         "value_labels": "1=county/district; 2=Regional /city; 3=Provincial/ affiliated to a ministry; 4=Military; 5=Others; 6=Not applicable",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2705,6 +2866,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 facility-level category for general, specialized, and Chinese-medicine hospitals only, as specified by the questionnaire. Conditional on JF001 selection.",
         "value_labels": "1=county/district; 2=Regional /city; 3=Provincial/ affiliated to a ministry; 5=Others; 6=Not applicable",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2725,6 +2887,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 facility-level category for general, specialized, and Chinese-medicine hospitals only, as specified by the questionnaire. Conditional on JF001 selection.",
         "value_labels": "1=county/district; 2=Regional /city; 3=Provincial/ affiliated to a ministry; 6=Not applicable",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2745,6 +2908,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2757,6 +2921,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "events",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2769,6 +2934,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "year",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2781,6 +2947,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "month",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2793,6 +2960,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "people injured or dead",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2813,6 +2981,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2825,6 +2994,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "events",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2837,6 +3007,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "year",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2849,6 +3020,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "month",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2861,6 +3033,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "people injured or dead",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2881,6 +3054,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2893,6 +3067,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "events",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2905,6 +3080,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "year",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2917,6 +3093,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "month",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2929,6 +3106,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "people injured or dead",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2949,6 +3127,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2961,6 +3140,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "events",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2973,6 +3153,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "year",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2985,6 +3166,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "month",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2997,6 +3179,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "people injured or dead",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -3017,6 +3200,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -3029,6 +3213,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "events",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -3041,6 +3226,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "year",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -3053,6 +3239,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "month",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -3065,6 +3252,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "people injured or dead",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -3085,6 +3273,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -3097,6 +3286,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "events",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -3109,6 +3299,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "year",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -3121,6 +3312,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "month",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -3133,6 +3325,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "people injured or dead",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -3153,6 +3346,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "1=Yes; 2=No",
         "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -3165,6 +3359,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "events",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -3177,6 +3372,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "year",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -3189,6 +3385,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "month",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -3201,6 +3398,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "people injured or dead",
+        "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"

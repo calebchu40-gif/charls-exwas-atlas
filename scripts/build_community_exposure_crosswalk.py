@@ -10,7 +10,7 @@ CONCEPTS={
  "community_cooking_fuel_profile":("Community household cooking-fuel profile","Community environment","At the end of calendar year 2010, a community informant reported counts of households using each fuel source. Categories may overlap; the questionnaire gives no total-household denominator here. Not a person-level fuel dose; single-wave only."),
  "community_winter_heating":("Community winter heating system","Community environment","Community-level availability and fuel type for central winter heating; 2011 only and not an individual residence measure."),
  "community_sanitation_services":("Community sanitation and waste services","Community environment","Sewerage, waste management, toilet infrastructure and public restroom indicators. Community representative report; do not conflate with household toilet fields."),
- "community_industrial_pollution":("Community industrial pollution indicators","Community environment","Includes subjective community ratings for local/nearby industrial pollution and village-level distance to nearest source; not instrument-measured concentration. Some items are village-respondent-only."),
+ "community_industrial_pollution":("Community industrial pollution indicators","Community environment","Three distinct community-level reports: JB018 rates pollution in the village/community; village-only JB019 rates nearby villages/townships; village-only JB027 records distance to the closest industrial pollution site in kilometres, with 0 meaning the site is located in the village. The ratings are subjective ordinal reports, and the distance is not the respondent's home-to-source distance; none is an instrument-measured concentration or individual pollution dose."),
  "community_weather":("Community-reported weather indicators","Community environment","Reported prior calendar-year highest/lowest temperature and rainy/snowy days. These are community-report estimates, not linked meteorological station data."),
  "community_transport_road":("Community road and transport access","Community context","Road type/outage days and distance/count of transport links/stations. Infrastructure/access indicators, not pollutant exposure."),
  "community_electricity":("Community electricity access and reliability","Community environment","Household electricity penetration and annual supply availability/duration; village-level reported metrics."),
@@ -169,6 +169,15 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label."
     else:
      evidence="CHARLS 2011 official codebook variable label; questionnaire page/routing review remains required for this added candidate"
+    if code_l == "jb018":
+     evidence="CHARLS 2011 Community Questionnaire, Part B, JB018; response anchors reconciled with the official Codebook; frequencies omitted."
+     caveat="Community-informant ordinal report of industrial pollution in this village/community (1=very severe to 4=completely absent); higher codes mean less reported pollution. This is not an instrument-measured concentration or an individual dose."
+    elif code_l == "jb019":
+     evidence="CHARLS 2011 Community Questionnaire, Part B, village-only CAPI item JB019; response anchors reconciled with the official Codebook; frequencies omitted."
+     caveat="Community-informant ordinal report of industrial pollution in nearby villages/townships (1=very severe to 4=completely absent); higher codes mean less reported pollution. Village-only route; not the respondent's residential distance or an instrument-measured concentration."
+    elif code_l == "jb027":
+     evidence="CHARLS 2011 Community Questionnaire, Part B, village-only CAPI item JB027; stated unit and in-village zero rule reviewed against the official Codebook field."
+     caveat="Distance in kilometres from the village to the closest industrial pollution site; questionnaire explicitly says 0 when the site is in the village. Village-only route; not an individual's home-to-source distance, measured concentration, or validated personal dose. Verify release-specific special values and eligible denominator before analysis."
     if code_l.startswith(("jb006_", "jb007_")):
      unit="households"
     elif code_l.startswith("jb028_1_") or code_l.startswith("jf002_1_"):
@@ -197,6 +206,8 @@ def main():
      unit="RMB yuan/ton"
     elif code_l == "jj024":
      unit="RMB yuan/kWh"
+    elif code_l == "jb027":
+     unit="km"
     else:
      unit=""
     rows.append({"concept_id":cid,"concept_label":label,"domain":domain,"wave":2011,
@@ -212,7 +223,7 @@ def main():
   items.append({"concept_id":cid,"label":label,"domain":domain,"caveat":caveat,
    "source_fields":[{"wave":str(r.wave),"code":r.code,"module":r.module,
     "source_label":r.source_label,"source_evidence":r.source_evidence,
-    "note":r.mapping_status,"unit":r.unit} for r in fs.itertuples()]})
+    "note":r.mapping_status,"unit":r.unit,"caveat":r.caveat} for r in fs.itertuples()]})
  (ROOT/"site-prototype"/"dist"/"community_exposures_v1.json").write_text(json.dumps(items,ensure_ascii=False,indent=2),encoding="utf-8")
  print(f"concepts={len(items)}; mappings={len(out)}; all wave=2011; module=Community")
 if __name__=="__main__": main()

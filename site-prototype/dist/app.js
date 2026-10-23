@@ -30,7 +30,7 @@ const behaviorExposuresLoaded=deferJson('./behavior_exposures_v1.json?v=3','beha
 const healthSymptomsLoaded=deferJson('./health_symptoms_v1.json?v=3','healthSymptoms');
 const foodEnvironmentLoaded=deferJson('./food_environment_v1.json?v=4','foodEnvironment');
 const workExposuresLoaded=deferJson('./work_exposures_v1.json?v=3','workExposures');
-const communityExposuresLoaded=deferJson('./community_exposures_v1.json?v=3','communityExposures');
+const communityExposuresLoaded=deferJson('./community_exposures_v1.json?v=4','communityExposures');
 const socialExposuresLoaded=deferJson('./social_exposures_v1.json?v=3','socialExposures');
 const healthcareAccessLoaded=deferJson('./healthcare_access_v1.json?v=3','healthcareAccess');
 const bloodBiomarkersLoaded=deferJson('./blood_biomarkers_v1.json?v=3','bloodBiomarkers');
@@ -258,9 +258,9 @@ workExposuresLoaded.then(items=>{renderWorkExposures(items);['workSearch','workW
 
 function renderCommunityExposures(items){
  const term=byId('communitySearch').value.trim().toLocaleLowerCase(),wave=byId('communityWave').value,matches=[];
- for(const concept of items)for(const field of concept.source_fields){if(wave&&field.wave!==wave)continue;if(term&&!`${concept.concept_id} ${concept.label} ${concept.domain} ${field.code} ${field.source_label} ${field.module} ${field.value_labels} ${field.value_label_status} ${field.unit||''} ${field.source_evidence||''} ${concept.caveat}`.toLocaleLowerCase().includes(term))continue;matches.push({concept,field})}
+ for(const concept of items)for(const field of concept.source_fields){if(wave&&field.wave!==wave)continue;if(term&&!`${concept.concept_id} ${concept.label} ${concept.domain} ${field.code} ${field.source_label} ${field.module} ${field.value_labels} ${field.value_label_status} ${field.unit||''} ${field.source_evidence||''} ${field.caveat||''} ${concept.caveat}`.toLocaleLowerCase().includes(term))continue;matches.push({concept,field})}
  const body=byId('communityRows');body.replaceChildren();
- for(const {concept,field} of matches){const tr=document.createElement('tr');for(const v of [concept.concept_id,concept.label,concept.domain,field.code,field.wave,field.module,field.source_label,field.unit||'—',field.value_labels||field.value_label_status,`${field.value_label_source||'来源待定位'}；${field.source_evidence||'问卷/代码本来源待定位'}；${field.value_label_status}；${concept.caveat}`]){const td=document.createElement('td');td.textContent=v;tr.append(td)}body.append(tr)}
+ for(const {concept,field} of matches){const tr=document.createElement('tr');for(const v of [concept.concept_id,concept.label,concept.domain,field.code,field.wave,field.module,field.source_label,field.unit||'—',field.value_labels||field.value_label_status,[field.value_label_source,field.source_evidence,field.value_label_status,field.caveat,concept.caveat].filter(Boolean).join('；')]){const td=document.createElement('td');td.textContent=v||'—';tr.append(td)}body.append(tr)}
  const labeled=matches.filter(x=>Boolean(x.field.value_labels)).length;
  byId('communityCount').textContent=`筛选命中 ${matches.length} 条问卷字段映射，涉及 ${new Set(matches.map(x=>x.concept.concept_id)).size} 个社区层概念；其中 ${labeled} 条显示代码本类别标签，全部为2011年。`;
 }

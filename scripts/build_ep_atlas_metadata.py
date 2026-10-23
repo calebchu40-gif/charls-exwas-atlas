@@ -155,6 +155,8 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_final_pending_field_review.py",
     "apply_prior_wave_metadata_review.py",
     "apply_c_placeholder_metadata_review.py",
+    "build_community_exposure_crosswalk.py",
+    "build_community_value_labels.py",
     "apply_objective_measurement_protocol_review.py",
     "build_objective_measurement_crosswalk.py",
     "build_charls_atlas_catalog.py",

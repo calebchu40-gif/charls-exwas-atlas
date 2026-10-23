@@ -2,6 +2,8 @@
 
 ## 2026-10-24
 
+- Reviewed 2011 community industrial-pollution fields against the official questionnaire and Codebook: JB018 (own community ordinal report), JB019 (nearby settlements, village-only route), and JB027 (village-to-site distance in km, with questionnaire-defined zero for an in-village source) remain separate contextual proxies, not personal exposure doses. Added field-specific caveats, searchable metadata, reproducible finalization steps and regression tests; no respondent values or Codebook summary statistics were used. Full 208-test suite and static checks pass.
+
 - Rebuilt the objective-measurement phenotype crosswalk with wave-specific official sources. A reproducible check found every one of the 36 listed candidate field-code tokens in each 2011/2013/2015 Codebook; the site explicitly limits this to token presence, not semantic, routing, unit, or release-file validation. The 2011 manual LI identifiers remain distinct from release QA/QB/QC field names unless independently reconciled. Added regression tests and registered the builder in both metadata pipeline modes. Full finalization pipeline and 203 tests pass; respondent records and Codebook frequencies were not used.
 - Preserved the original Codebook display labels for each of the 108 objective-measurement field-wave entries and added those labels to the searchable phenotype table. The 2013 QL002 extraction truncation is marked in the interface. Updated the objective-metadata cache key; all 204 Python tests and static-site checks pass.
 - Verified commit `e8377e6` on GitHub Pages Deploy #96 (run `40024182348`) succeeded; the live page renders the label column, and the cache-busted public JSON returns all 45 concept-wave mappings.

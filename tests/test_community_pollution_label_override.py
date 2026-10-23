@@ -1,4 +1,5 @@
 import csv
+import json
 import unittest
 from pathlib import Path
 
@@ -30,6 +31,40 @@ class CommunityPollutionLabelOverrideTests(unittest.TestCase):
         for anchor in ("JB018", "JB019", "很严重", "有一些", "基本没有", "完全没有"):
             with self.subTest(anchor=anchor):
                 self.assertIn(anchor, questionnaire)
+
+    def test_nearest_industrial_site_is_a_village_level_kilometre_measure(self):
+        with (ROOT / "audit" / "community_exposure_crosswalk_v1.csv").open(
+            encoding="utf-8-sig", newline=""
+        ) as f:
+            rows = list(csv.DictReader(f))
+        by_code = {row["code"].lower(): row for row in rows}
+        nearby = by_code["jb019"]
+        distance = by_code["jb027"]
+        self.assertIn("village-only CAPI", nearby["source_evidence"])
+        self.assertIn("km", distance["unit"])
+        self.assertIn("village-only CAPI", distance["source_evidence"])
+        self.assertIn("0 when the site is in the village", distance["caveat"])
+        self.assertIn("not an individual's home-to-source distance", distance["caveat"])
+
+    def test_distance_unit_and_zero_rule_are_from_official_questionnaire(self):
+        questionnaire = (
+            ROOT / "sources_official" / "CHARLS_2011_Community_Questionnaire_official_extracted.txt"
+        ).read_text(encoding="utf-8")
+        normalized = " ".join(questionnaire.split()).lower()
+        self.assertIn("how far is the closest industrial pollution site", normalized)
+        self.assertIn("answer 0 if located in the village", normalized)
+        self.assertIn("km公里", normalized)
+
+    def test_public_community_table_carries_field_specific_pollution_caveats(self):
+        items = json.loads((ROOT / "site-prototype" / "dist" / "community_exposures_v1.json").read_text(encoding="utf-8"))
+        concept = next(item for item in items if item["concept_id"] == "community_industrial_pollution")
+        nearby = next(field for field in concept["source_fields"] if field["code"].lower() == "jb019")
+        distance = next(field for field in concept["source_fields"] if field["code"].lower() == "jb027")
+        self.assertIn("Village-only route", nearby["caveat"])
+        self.assertEqual(distance["unit"], "km")
+        self.assertIn("not an individual's home-to-source distance", distance["caveat"])
+        self.assertIn("field.caveat", (ROOT / "site-prototype" / "dist" / "app.js").read_text(encoding="utf-8"))
+        self.assertIn("community_exposures_v1.json?v=4", (ROOT / "site-prototype" / "dist" / "app.js").read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":
