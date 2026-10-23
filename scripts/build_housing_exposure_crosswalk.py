@@ -171,9 +171,9 @@ def classify(rec):
             cid = "household_property_owner_share_slots"
         elif wave == "2018" and code.startswith("ha000_w4_") and re.search(r"own(?:s)? house", label, re.I) and not re.search(r"none of the above|refused|percent", label, re.I):
             cid = "household_property_owner_relation_slots"
-        elif wave == "2018" and re.match(r"ha004_w4_\d+_1_", code): cid = "household_property_total_value_by_slot"
-        elif wave == "2018" and re.match(r"ha004_w4_\d+_2_", code): cid = "household_property_unit_value_by_slot"
-        elif wave == "2018" and re.match(r"ha004_w4_\d+_?$", code): cid = "household_property_value_measure_type"
+        elif wave == "2018" and re.fullmatch(r"ha004_w4_[1-7]_", code): cid = "household_property_value_measure_type"
+        elif wave == "2018" and re.fullmatch(r"ha004_w4_1_[1-7]_", code): cid = "household_property_total_value_by_slot"
+        elif wave == "2018" and re.fullmatch(r"ha004_w4_2_[1-5]_", code): cid = "household_property_unit_value_by_slot"
         elif wave == "2018" and re.fullmatch(r"ha005_w4_\d+_", code): cid = "household_property_rented_out_by_slot"
         elif wave == "2018" and re.fullmatch(r"ha006_w4_\d+_", code): cid = "household_property_rent_by_slot"
         elif wave == "2018" and re.fullmatch(r"ha007_w4_\d+_", code): cid = "household_property_market_rent_by_slot"
@@ -191,11 +191,24 @@ for rec in raw.itertuples(index=False):
     if not result or (wave, code.lower()) in known:
         continue
     concept, label, construct, caveat = result
+    unit = CURRENT_HOME_MEASURE_UNITS.get(concept, "")
+    if concept in {"household_property_owner_share_slots", "current_home_owner_share"}:
+        unit = "% of the specific house's property rights"
+    elif concept == "household_property_total_value_by_slot":
+        unit = "10,000 Yuan (questionnaire reporting unit)"
+    elif concept == "household_property_unit_value_by_slot":
+        unit = "1,000 Yuan/square metre (questionnaire reporting unit)"
+    elif not unit and concept == "housing_property_renovation_event_outlay_2011":
+        unit = "Yuan (questionnaire reporting unit)"
+    elif not unit and concept in {"house_acquisition_building_outlay_2011", "house_own_money_spent_acquisition_2013_2015", "new_house_own_money_purchase_outlay_2011", "demolition_compensation_old_house_market_value_2011", "demolition_compensation_new_house_total_value_2011", "new_house_own_money_purchase_outlay_2013", "demolition_compensation_old_house_market_value_2013", "demolition_compensation_new_house_total_value_2013", "current_home_market_total_value_2013_2015"}:
+        unit = "10,000 Yuan (questionnaire reporting unit)"
+    elif not unit and concept in {"demolition_compensation_new_house_unit_value_2011", "demolition_compensation_new_house_unit_value_2013", "current_home_market_unit_value_2013_2015"}:
+        unit = "1,000 Yuan/m2 (questionnaire reporting unit)"
     rows.append({
         "wave": wave, "code": code, "concept_id": concept, "concept_label": label,
         "domain": "housing and built environment", "module": rec.module,
         "source_label": rec.variable_label,
-        "unit": "% of the specific house's property rights" if concept in {"household_property_owner_share_slots", "current_home_owner_share"} else (CURRENT_HOME_MEASURE_UNITS.get(concept, "Yuan (questionnaire reporting unit)" if concept == "housing_property_renovation_event_outlay_2011" else ("10,000 Yuan (questionnaire reporting unit)" if concept in {"house_acquisition_building_outlay_2011", "house_own_money_spent_acquisition_2013_2015", "new_house_own_money_purchase_outlay_2011", "demolition_compensation_old_house_market_value_2011", "demolition_compensation_new_house_total_value_2011", "new_house_own_money_purchase_outlay_2013", "demolition_compensation_old_house_market_value_2013", "demolition_compensation_new_house_total_value_2013", "current_home_market_total_value_2013_2015"} else ("1,000 Yuan/m2 (questionnaire reporting unit)" if concept in {"demolition_compensation_new_house_unit_value_2011", "demolition_compensation_new_house_unit_value_2013", "current_home_market_unit_value_2013_2015"} else "")))),
+        "unit": unit,
         "mapping_status": "official 2018 questionnaire defines a continuous percentage share; route and house/member-slot interpretation reviewed" if concept in {"household_property_owner_share_slots", "current_home_owner_share"} else ("official 2018 questionnaire confirms numeric response unit; special values, route and release coding still require review" if concept in CURRENT_HOME_MEASURE_UNITS else "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required"),
         "construct": construct, "caveat": ("Official 2018 HA&I questionnaire asks what percentage of a specific house's property rights belongs to each listed family-member slot. This is a continuous percent response, not a categorical value label. Fields repeat by house/person and follow roster-dependent routes; preserve slot identity and denominators, do not sum across incompatible or missing slots, and do not infer respondent-level ownership without a prespecified derivation. The questionnaire instructs interviewers to enter 100% for the 'Other' case when the house is unrelated to the respondent/spouse or listed relatives/friends. Confirm special codes and route eligibility in the authorized release before analysis." if concept in {"household_property_owner_share_slots", "current_home_owner_share"} else ("Official 2018 questionnaire unit is " + CURRENT_HOME_MEASURE_UNITS[concept] + ". Retain the exact current-home measure and ownership/eligibility route. Do not combine the total-price and unit-price forms or derive one from the other without a validated area and response-format selector. Codebook summary extrema are not valid-range evidence; preserve special/missing values and confirm route, denominator and release coding in authorized data before analysis." if concept in CURRENT_HOME_MEASURE_UNITS else caveat)),
         "source_archive": f"{rec.source}; official wave questionnaire/codebook",

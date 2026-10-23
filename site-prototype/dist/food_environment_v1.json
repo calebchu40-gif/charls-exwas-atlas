@@ -199,8 +199,8 @@
         "source_label": "You are the Primary Person Who Purchases Food for the Household",
         "value_labels": "1=Yes; 2=No",
         "note": "Ask whether the respondent is the household's primary food purchaser; 'Yes' routes past the roster selector. Household decision-role context only.",
-        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
         "value_label_status": "official 2011 questionnaire and Codebook identify respondent-as-primary-food-purchaser Yes/No; household-role item, not a dietary measure",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
         "unit": ""
       },
       {
@@ -221,8 +221,8 @@
         "source_label": "The Respodent Is The Primary Person for Purchasing Food",
         "value_labels": "1=Yes; 2=No",
         "note": "Ask whether the respondent is the household's primary food purchaser; 'Yes' routes past the roster selector. Household decision-role context only.",
-        "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
         "value_label_status": "official 2013 questionnaire and Codebook identify respondent-as-primary-food-purchaser Yes/No; household-role item, not a dietary measure",
+        "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
         "unit": ""
       },
       {
@@ -243,8 +243,8 @@
         "source_label": "The Respodent is The Primary Person for Purchasing Food",
         "value_labels": "1=Yes; 2=No",
         "note": "Ask whether the respondent is the household's primary food purchaser; 'Yes' routes past the roster selector. Household decision-role context only.",
-        "value_label_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
         "value_label_status": "official 2015 questionnaire and Codebook identify respondent-as-primary-food-purchaser Yes/No; household-role item, not a dietary measure",
+        "value_label_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
         "unit": ""
       },
       {
@@ -265,8 +265,8 @@
         "source_label": "Primary Person Who Purchases Food",
         "value_labels": "1=Yes; 2=No",
         "note": "Ask whether the respondent is the household's primary food purchaser; 'Yes' routes past the roster selector. Household decision-role context only.",
-        "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
         "value_label_status": "official 2018 questionnaire and Codebook identify respondent-as-primary-food-purchaser Yes/No; household-role item, not a dietary measure",
+        "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
         "unit": ""
       },
       {
@@ -287,8 +287,8 @@
         "source_label": "Primary Person Who Purchases Food",
         "value_labels": "1=Yes; 2=No",
         "note": "Ask whether the respondent is the household's primary food purchaser; 'Yes' routes past the roster selector. Household decision-role context only.",
-        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
         "value_label_status": "official 2020 questionnaire and Codebook identify respondent-as-primary-food-purchaser Yes/No; household-role item, not a dietary measure",
+        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
         "unit": ""
       },
       {

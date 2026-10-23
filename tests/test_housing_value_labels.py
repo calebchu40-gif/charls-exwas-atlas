@@ -166,6 +166,39 @@ class HousingValueLabelTests(unittest.TestCase):
         for code, unit in expected_mapping_units.items():
             self.assertEqual(mapping[("2018", code)]["unit"], unit)
 
+    def test_2018_household_property_values_use_measure_first_slot_second_codes(self):
+        catalog = {(r["Source.Wave"], r["Variable.Name"].lower()): r for r in self.catalog}
+        mapping = {(r["wave"], r["code"].lower()): r for r in self.housing_mapping}
+        source_fields = {(r["wave"], r["code"].lower()): r for r in self.housing_site}
+        crosswalk = {(r["Wave"], r["Source.Code"].lower()): r for r in self.crosswalk}
+        for slot in range(1, 8):
+            code = f"ha004_w4_1_{slot}_"
+            self.assertEqual(mapping[("2018", code)]["concept_id"], "household_property_total_value_by_slot")
+            self.assertEqual(mapping[("2018", code)]["unit"], "10,000 Yuan (questionnaire reporting unit)")
+            row = catalog[("2018", code)]
+            self.assertEqual(row["Concept.Unit.Candidates"], "10,000 Yuan")
+            self.assertEqual(row["Value.Labels"], "")
+            self.assertIn("preserve routing", row["Harmonization.Status"].lower())
+            self.assertEqual(crosswalk[("2018", code)]["Concept.ID"], "household_property_total_value_by_slot")
+            self.assertEqual(crosswalk[("2018", code)]["Unit"], "10,000 Yuan")
+        for slot in range(1, 6):
+            code = f"ha004_w4_2_{slot}_"
+            self.assertEqual(mapping[("2018", code)]["concept_id"], "household_property_unit_value_by_slot")
+            self.assertEqual(mapping[("2018", code)]["unit"], "1,000 Yuan/square metre (questionnaire reporting unit)")
+            row = catalog[("2018", code)]
+            self.assertEqual(row["Concept.Unit.Candidates"], "1,000 Yuan/square metre")
+            self.assertEqual(row["Value.Labels"], "")
+            self.assertIn("preserve routing", row["Harmonization.Status"].lower())
+            self.assertEqual(crosswalk[("2018", code)]["Concept.ID"], "household_property_unit_value_by_slot")
+        for slot in range(1, 8):
+            code = f"ha004_w4_{slot}_"
+            row = catalog[("2018", code)]
+            self.assertEqual(row["epcf"], "c")
+            self.assertEqual(row["Value.Labels"], "1=Total Value; 2=Unit Value")
+            self.assertEqual(row["Concept.ID.Candidates"], "")
+            self.assertIn("response-format selector only", row["Harmonization.Status"])
+            self.assertEqual(source_fields[("2018", code)]["value_labels"], "1=Total Value; 2=Unit Value")
+
     def test_room_and_toilet_counts_are_numeric_and_wave_specific(self):
         expected = {(str(w), f"i012_{suffix}") for w in (2011, 2013, 2015, 2018) for suffix in (1, 2, 3)}
         expected |= {("2020", f"i011_{suffix}") for suffix in (1, 2, 3)}

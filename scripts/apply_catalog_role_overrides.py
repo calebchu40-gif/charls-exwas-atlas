@@ -52,7 +52,7 @@ metadata_removed=0
 for wave,code in metadata_keys:
     override = overrides.loc[overrides["wave"].str.lower().eq(wave) & overrides["code"].str.lower().eq(code)].iloc[0]
     old_role = str(override["remove_role"]).lower()
-    if str(override.get("metadata_type", "")).strip().lower() == "age_year_component_selector":
+    if str(override.get("metadata_type", "")).strip().lower() in {"age_year_component_selector", "housing_property_value_measure_selector"}:
         # These explicit concept-linked rows describe the coding of paired
         # age/year fields; their E role is still metadata and must be removed.
         selected=(fields["Source.Wave"].str.lower().eq(wave) & fields["Variable.Name"].str.lower().eq(code) & fields["epcf"].str.lower().eq(old_role))
@@ -221,6 +221,18 @@ for wave,code in metadata_keys:
         fields.loc[metadata_rows,"Candidate.Status"]="C metadata; HA011 selects one of two incompatible response units for current-home market value"
         fields.loc[metadata_rows,"Harmonization.Status"]="response-unit selector only; preserve the selected route and do not combine total price with unit-area price"
         fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; use only to interpret ha011_1 versus ha011_2 and verify conditional response routing"
+    elif metadata_type == "housing_property_value_measure_selector":
+        fields.loc[metadata_rows,"category"]="measurement metadata"
+        fields.loc[metadata_rows,"subcategory"]="household property total-price versus unit-price response-format selector"
+        fields.loc[metadata_rows,"Value.Labels"]="1=Total Value; 2=Unit Value"
+        fields.loc[metadata_rows,"Value.Label.Source"]="sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"
+        fields.loc[metadata_rows,"Value.Label.Review"]="official 2018 questionnaire and Codebook response-format categories reviewed; frequencies omitted"
+        fields.loc[metadata_rows,"Candidate.Status"]="C metadata; HA004 selects total-price or unit-price reporting for the indexed household property"
+        fields.loc[metadata_rows,"Harmonization.Status"]="response-format selector only; total-price amounts use 10,000 Yuan and unit-price amounts use 1,000 Yuan/square metre; preserve matching property slot"
+        fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; use only to interpret corresponding HA004 total/unit amount fields"
+        for column in ("Concept.Unit.Candidates", "Unit", "Concept.ID.Candidates", "Concept.Alias.IDs", "Concept.Label.Candidates", "Concept.Mapping.Source", "Concept.Mapping.Status", "Concept.Mapping.Caveat", "Concept.Mapping.Collision", "Concept.Mapping.Relationship", "candidate_concept_ids", "candidate_concept_alias_ids", "candidate_concept_labels", "concept_mapping_sources", "concept_mapping_statuses", "concept_mapping_caveats", "concept_mapping_collision", "concept_mapping_relationship", "candidate_concept_units"):
+            if column in fields:
+                fields.loc[metadata_rows,column]=""
     elif metadata_type in {"education_record_validation", "hukou_record_validation", "hukou_location_presence_selector"}:
         fields.loc[metadata_rows,"category"]="measurement metadata"
         fields.loc[metadata_rows,"subcategory"]="prior-wave demographic record verification and response routing"

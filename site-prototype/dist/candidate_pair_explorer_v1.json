@@ -5077,10 +5077,10 @@
               "label": "The Number of Times for Eating",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "1=More than 4 meals per day; 2=4 meals per day; 3=3 meals per day; 4=2 meals per day; 5=1 meal per day; 6=<1 meal per day",
+              "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2011 questionnaire/Codebook labels reviewed; six ordered self-reported usual meals-per-day categories",
-              "caveat": "Self-reported usual individual meals per day; an ordinal behavior measure, not dietary quality, nutrient intake, or a laboratory exposure. Only mapped for 2011 and 2013; do not infer coverage or equivalence in later waves. Verify release-specific special values, item eligibility and missingness before modeling."
+              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
+              "caveat": "Candidate item described as number/frequency of eating. Verify exact question, recall window, answer units, and respondent eligibility in the official wave questionnaire before treating as comparable. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
             }
           ]
         },
@@ -6644,8 +6644,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2011 questionnaire identifies a numeric household person count; continuous count measure, no discrete category labels",
-              "caveat": "Counts household members who usually ate meals together during the past week, excluding guests. Treat as household context, not an individual's dietary frequency; interviewer soft checks are prompts, not analytic cutoffs. Confirm release-specific special values and household linkage before modeling."
+              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
+              "caveat": "Household/social context indicator, not dietary exposure. Wording changes between regularly sharing meals and people who ate meals in the past week. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
             }
           ]
         },
@@ -6802,10 +6802,10 @@
               "label": "You are the Primary Person Who Purchases Food for the Household",
               "module": "household_income",
               "unit": "",
-              "value_labels": "1=Yes; 2=No",
+              "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2011 questionnaire and Codebook identify respondent-as-primary-food-purchaser Yes/No; household-role item, not a dietary measure",
-              "caveat": "Ask whether the respondent is the household's primary food purchaser; 'Yes' routes past the roster selector. Household decision-role context only."
+              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
+              "caveat": "Household role/decision context; not an environmental dose or individual food intake. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
             },
             {
               "code": "ge002",
@@ -6814,8 +6814,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2011 questionnaire identifies primary food purchaser through wave-specific household roster/other-person selector; dynamic identity choices are not fixed value labels",
-              "caveat": "Roster-dependent identity/role selector. Choice ranges and roster construction differ by wave; do not harmonize numeric codes as the same person or publish respondent names. Household-role context only."
+              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
+              "caveat": "Household role/decision context; not an environmental dose or individual food intake. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
             }
           ]
         },
@@ -8432,30 +8432,30 @@
               "label": "How Far is the Nearest Toilet to Your House",
               "module": "housing_characteristics",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "Continuous distance to nearest toilet; codebook max 1,000 (QA hint, not a validated range).",
               "value_semantics": "",
-              "mapping_status": "official 2011 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
-              "caveat": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
+              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
+              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
             },
             {
               "code": "i014s1",
               "label": "Type of Toilet",
               "module": "housing_characteristics",
               "unit": "",
-              "value_labels": "1=Toilet without a seat",
+              "value_labels": "Separate multi-response toilet type field: 1=Toilet without a seat; no unselected storage code inferred.",
               "value_semantics": "",
-              "mapping_status": "official 2011 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
-              "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
+              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
+              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
             },
             {
               "code": "i014s2",
               "label": "Type of Toilet",
               "module": "housing_characteristics",
               "unit": "",
-              "value_labels": "2=Toilet with a seat",
+              "value_labels": "Separate multi-response toilet type field: 2=Toilet with a seat; no unselected storage code inferred.",
               "value_semantics": "",
-              "mapping_status": "official 2011 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
-              "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
+              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
+              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
             },
             {
               "code": "i015",
@@ -23760,10 +23760,10 @@
               "label": "The Number of Times for Eating",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=More than 4 meals per day; 2=4 meals per day; 3=3 meals per day; 4=2 meals per day; 5=1 meal per day; 6=<1 meal per day",
+              "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2013 questionnaire/Codebook labels reviewed; six ordered self-reported usual meals-per-day categories",
-              "caveat": "Self-reported usual individual meals per day; an ordinal behavior measure, not dietary quality, nutrient intake, or a laboratory exposure. Only mapped for 2011 and 2013; do not infer coverage or equivalence in later waves. Verify release-specific special values, item eligibility and missingness before modeling."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Candidate item described as number/frequency of eating. Verify exact question, recall window, answer units, and respondent eligibility in the official wave questionnaire before treating as comparable."
             }
           ]
         },
@@ -24897,8 +24897,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2013 questionnaire identifies a numeric household person count; continuous count measure, no discrete category labels",
-              "caveat": "Counts household members who usually ate meals together during the past week, excluding guests. Treat as household context, not an individual's dietary frequency; interviewer soft checks are prompts, not analytic cutoffs. Confirm release-specific special values and household linkage before modeling."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Household/social context indicator, not dietary exposure. Wording changes between regularly sharing meals and people who ate meals in the past week."
             }
           ]
         },
@@ -25155,10 +25155,10 @@
               "label": "The Respodent Is The Primary Person for Purchasing Food",
               "module": "Household_Income",
               "unit": "",
-              "value_labels": "1=Yes; 2=No",
+              "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2013 questionnaire and Codebook identify respondent-as-primary-food-purchaser Yes/No; household-role item, not a dietary measure",
-              "caveat": "Ask whether the respondent is the household's primary food purchaser; 'Yes' routes past the roster selector. Household decision-role context only."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Household role/decision context; not an environmental dose or individual food intake."
             },
             {
               "code": "ge002",
@@ -25167,8 +25167,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2013 questionnaire identifies primary food purchaser through wave-specific household roster/other-person selector; dynamic identity choices are not fixed value labels",
-              "caveat": "Roster-dependent identity/role selector. Choice ranges and roster construction differ by wave; do not harmonize numeric codes as the same person or publish respondent names. Household-role context only."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Household role/decision context; not an environmental dose or individual food intake."
             }
           ]
         },
@@ -27095,30 +27095,30 @@
               "label": "How far is the nearest toilet?",
               "module": "Housing_Characteristics",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "Continuous distance to nearest toilet; codebook max 1,000 (QA hint, not a validated range).",
               "value_semantics": "",
-              "mapping_status": "official 2013 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
-              "caveat": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
             },
             {
               "code": "i014s1",
               "label": "What is the type of toilet?",
               "module": "Housing_Characteristics",
               "unit": "",
-              "value_labels": "1=Toilet without a seat",
+              "value_labels": "Separate multi-response toilet type field: 1=Toilet without a seat; no unselected storage code inferred.",
               "value_semantics": "",
-              "mapping_status": "official 2013 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
-              "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
             },
             {
               "code": "i014s2",
               "label": "What is the type of toilet?",
               "module": "Housing_Characteristics",
               "unit": "",
-              "value_labels": "2=Toilet with a seat",
+              "value_labels": "Separate multi-response toilet type field: 2=Toilet with a seat; no unselected storage code inferred.",
               "value_semantics": "",
-              "mapping_status": "official 2013 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
-              "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
             },
             {
               "code": "i015",
@@ -47552,8 +47552,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2015 questionnaire identifies a numeric household person count; continuous count measure, no discrete category labels",
-              "caveat": "Counts household members who usually ate meals together during the past week, excluding guests. Treat as household context, not an individual's dietary frequency; interviewer soft checks are prompts, not analytic cutoffs. Confirm release-specific special values and household linkage before modeling."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Household/social context indicator, not dietary exposure. Wording changes between regularly sharing meals and people who ate meals in the past week."
             }
           ]
         },
@@ -47790,10 +47790,10 @@
               "label": "The Respodent is The Primary Person for Purchasing Food",
               "module": "Household_Income",
               "unit": "",
-              "value_labels": "1=Yes; 2=No",
+              "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2015 questionnaire and Codebook identify respondent-as-primary-food-purchaser Yes/No; household-role item, not a dietary measure",
-              "caveat": "Ask whether the respondent is the household's primary food purchaser; 'Yes' routes past the roster selector. Household decision-role context only."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Household role/decision context; not an environmental dose or individual food intake."
             },
             {
               "code": "ge002",
@@ -47802,8 +47802,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2015 questionnaire identifies primary food purchaser through wave-specific household roster/other-person selector; dynamic identity choices are not fixed value labels",
-              "caveat": "Roster-dependent identity/role selector. Choice ranges and roster construction differ by wave; do not harmonize numeric codes as the same person or publish respondent names. Household-role context only."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Household role/decision context; not an environmental dose or individual food intake."
             }
           ]
         },
@@ -49410,30 +49410,30 @@
               "label": "How Far Is The Nearest Toilet?",
               "module": "Housing_Characteristics",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "Continuous distance to nearest toilet; codebook max 2,000 (QA hint, not a validated range).",
               "value_semantics": "",
-              "mapping_status": "official 2015 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
-              "caveat": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
             },
             {
               "code": "i014s1",
               "label": "The Type of Toilet:without A Seat",
               "module": "Housing_Characteristics",
               "unit": "",
-              "value_labels": "1=Toilet without a seat",
+              "value_labels": "Separate multi-response toilet type field: 1=Toilet without a seat; no unselected storage code inferred.",
               "value_semantics": "",
-              "mapping_status": "official 2015 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
-              "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
             },
             {
               "code": "i014s2",
               "label": "The Type of toilet:with A Seat",
               "module": "Housing_Characteristics",
               "unit": "",
-              "value_labels": "2=Toilet with a seat",
+              "value_labels": "Separate multi-response toilet type field: 2=Toilet with a seat; no unselected storage code inferred.",
               "value_semantics": "",
-              "mapping_status": "official 2015 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
-              "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
             },
             {
               "code": "i015",
@@ -72077,8 +72077,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2018 questionnaire identifies a numeric household person count; continuous count measure, no discrete category labels",
-              "caveat": "Counts household members who usually ate meals together during the past week, excluding guests. Treat as household context, not an individual's dietary frequency; interviewer soft checks are prompts, not analytic cutoffs. Confirm release-specific special values and household linkage before modeling."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Household/social context indicator, not dietary exposure. Wording changes between regularly sharing meals and people who ate meals in the past week."
             }
           ]
         },
@@ -72095,10 +72095,10 @@
               "label": "Primary Person Who Purchases Food",
               "module": "Household_Income",
               "unit": "",
-              "value_labels": "1=Yes; 2=No",
+              "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2018 questionnaire and Codebook identify respondent-as-primary-food-purchaser Yes/No; household-role item, not a dietary measure",
-              "caveat": "Ask whether the respondent is the household's primary food purchaser; 'Yes' routes past the roster selector. Household decision-role context only."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Household role/decision context; not an environmental dose or individual food intake."
             },
             {
               "code": "ge002",
@@ -72107,8 +72107,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2018 questionnaire identifies primary food purchaser through wave-specific household roster/other-person selector; dynamic identity choices are not fixed value labels",
-              "caveat": "Roster-dependent identity/role selector. Choice ranges and roster construction differ by wave; do not harmonize numeric codes as the same person or publish respondent names. Household-role context only."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Household role/decision context; not an environmental dose or individual food intake."
             }
           ]
         },
@@ -73465,20 +73465,20 @@
               "label": "Distance from the Nearest Toilet to House",
               "module": "Housing",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "Continuous distance to nearest toilet; codebook summary includes extreme values; inspect units and raw data before analysis.",
               "value_semantics": "",
-              "mapping_status": "official 2018 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
-              "caveat": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
             },
             {
               "code": "i014",
               "label": "Type of Toilet",
               "module": "Housing",
               "unit": "",
-              "value_labels": "1=Toilet without a seat; 2=Toilet with a seat",
+              "value_labels": "1=Without a seat; 2=With a seat.",
               "value_semantics": "",
-              "mapping_status": "official 2018 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
-              "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
             },
             {
               "code": "i015",
@@ -81631,24 +81631,54 @@
           ],
           "source_fields": [
             {
-              "code": "ha004_w4_1_2_",
-              "label": "Total Value for House[2]",
+              "code": "ha004_w4_2_1_",
+              "label": "Unit Value for House[1]",
               "module": "Housing",
-              "unit": "",
+              "unit": "1,000 Yuan/square metre",
               "value_labels": "",
               "value_semantics": "housing/property candidate",
               "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
+              "caveat": "Official 2018 HA&I questionnaire asks the current market unit-area property value for the indexed household property, reported in 1,000 Yuan/square metre. The paired HA004 selector for this same slot determines total-price versus unit-price format. Keep property slots separate; these are household-property records, not stable person-level property IDs. Do not combine total price with unit-area price, sum slots into net worth, or infer a missing format from the amount. Preserve routing, refusal/don't-know and bracket semantics; Codebook summary extrema are not analytic limits. Verify special codes and eligible denominator in the authorized release before modeling."
             },
             {
               "code": "ha004_w4_2_2_",
               "label": "Unit Value for House[2]",
               "module": "Housing",
-              "unit": "",
+              "unit": "1,000 Yuan/square metre",
               "value_labels": "",
               "value_semantics": "housing/property candidate",
               "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
+              "caveat": "Official 2018 HA&I questionnaire asks the current market unit-area property value for the indexed household property, reported in 1,000 Yuan/square metre. The paired HA004 selector for this same slot determines total-price versus unit-price format. Keep property slots separate; these are household-property records, not stable person-level property IDs. Do not combine total price with unit-area price, sum slots into net worth, or infer a missing format from the amount. Preserve routing, refusal/don't-know and bracket semantics; Codebook summary extrema are not analytic limits. Verify special codes and eligible denominator in the authorized release before modeling."
+            },
+            {
+              "code": "ha004_w4_2_3_",
+              "label": "Unit Value for House[3]",
+              "module": "Housing",
+              "unit": "1,000 Yuan/square metre",
+              "value_labels": "",
+              "value_semantics": "housing/property candidate",
+              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
+              "caveat": "Official 2018 HA&I questionnaire asks the current market unit-area property value for the indexed household property, reported in 1,000 Yuan/square metre. The paired HA004 selector for this same slot determines total-price versus unit-price format. Keep property slots separate; these are household-property records, not stable person-level property IDs. Do not combine total price with unit-area price, sum slots into net worth, or infer a missing format from the amount. Preserve routing, refusal/don't-know and bracket semantics; Codebook summary extrema are not analytic limits. Verify special codes and eligible denominator in the authorized release before modeling."
+            },
+            {
+              "code": "ha004_w4_2_4_",
+              "label": "Unit Value for House[4]",
+              "module": "Housing",
+              "unit": "1,000 Yuan/square metre",
+              "value_labels": "",
+              "value_semantics": "housing/property candidate",
+              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
+              "caveat": "Official 2018 HA&I questionnaire asks the current market unit-area property value for the indexed household property, reported in 1,000 Yuan/square metre. The paired HA004 selector for this same slot determines total-price versus unit-price format. Keep property slots separate; these are household-property records, not stable person-level property IDs. Do not combine total price with unit-area price, sum slots into net worth, or infer a missing format from the amount. Preserve routing, refusal/don't-know and bracket semantics; Codebook summary extrema are not analytic limits. Verify special codes and eligible denominator in the authorized release before modeling."
+            },
+            {
+              "code": "ha004_w4_2_5_",
+              "label": "Unit Value for House[5]",
+              "module": "Housing",
+              "unit": "1,000 Yuan/square metre",
+              "value_labels": "",
+              "value_semantics": "housing/property candidate",
+              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
+              "caveat": "Official 2018 HA&I questionnaire asks the current market unit-area property value for the indexed household property, reported in 1,000 Yuan/square metre. The paired HA004 selector for this same slot determines total-price versus unit-price format. Keep property slots separate; these are household-property records, not stable person-level property IDs. Do not combine total price with unit-area price, sum slots into net worth, or infer a missing format from the amount. Preserve routing, refusal/don't-know and bracket semantics; Codebook summary extrema are not analytic limits. Verify special codes and eligible denominator in the authorized release before modeling."
             }
           ]
         },
@@ -81744,21 +81774,71 @@
               "code": "ha004_w4_1_1_",
               "label": "Total Value for House[1]",
               "module": "Housing",
-              "unit": "",
+              "unit": "10,000 Yuan",
               "value_labels": "",
               "value_semantics": "housing/property candidate",
               "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
+              "caveat": "Official 2018 HA&I questionnaire asks the current market total property value for the indexed household property, reported in 10,000 Yuan. The paired HA004 selector for this same slot determines total-price versus unit-price format. Keep property slots separate; these are household-property records, not stable person-level property IDs. Do not combine total price with unit-area price, sum slots into net worth, or infer a missing format from the amount. Preserve routing, refusal/don't-know and bracket semantics; Codebook summary extrema are not analytic limits. Verify special codes and eligible denominator in the authorized release before modeling."
             },
             {
-              "code": "ha004_w4_2_1_",
-              "label": "Unit Value for House[1]",
+              "code": "ha004_w4_1_2_",
+              "label": "Total Value for House[2]",
               "module": "Housing",
-              "unit": "",
+              "unit": "10,000 Yuan",
               "value_labels": "",
               "value_semantics": "housing/property candidate",
               "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
+              "caveat": "Official 2018 HA&I questionnaire asks the current market total property value for the indexed household property, reported in 10,000 Yuan. The paired HA004 selector for this same slot determines total-price versus unit-price format. Keep property slots separate; these are household-property records, not stable person-level property IDs. Do not combine total price with unit-area price, sum slots into net worth, or infer a missing format from the amount. Preserve routing, refusal/don't-know and bracket semantics; Codebook summary extrema are not analytic limits. Verify special codes and eligible denominator in the authorized release before modeling."
+            },
+            {
+              "code": "ha004_w4_1_3_",
+              "label": "Total Value for House[3]",
+              "module": "Housing",
+              "unit": "10,000 Yuan",
+              "value_labels": "",
+              "value_semantics": "housing/property candidate",
+              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
+              "caveat": "Official 2018 HA&I questionnaire asks the current market total property value for the indexed household property, reported in 10,000 Yuan. The paired HA004 selector for this same slot determines total-price versus unit-price format. Keep property slots separate; these are household-property records, not stable person-level property IDs. Do not combine total price with unit-area price, sum slots into net worth, or infer a missing format from the amount. Preserve routing, refusal/don't-know and bracket semantics; Codebook summary extrema are not analytic limits. Verify special codes and eligible denominator in the authorized release before modeling."
+            },
+            {
+              "code": "ha004_w4_1_4_",
+              "label": "Total Value for House[4]",
+              "module": "Housing",
+              "unit": "10,000 Yuan",
+              "value_labels": "",
+              "value_semantics": "housing/property candidate",
+              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
+              "caveat": "Official 2018 HA&I questionnaire asks the current market total property value for the indexed household property, reported in 10,000 Yuan. The paired HA004 selector for this same slot determines total-price versus unit-price format. Keep property slots separate; these are household-property records, not stable person-level property IDs. Do not combine total price with unit-area price, sum slots into net worth, or infer a missing format from the amount. Preserve routing, refusal/don't-know and bracket semantics; Codebook summary extrema are not analytic limits. Verify special codes and eligible denominator in the authorized release before modeling."
+            },
+            {
+              "code": "ha004_w4_1_5_",
+              "label": "Total Value for House[5]",
+              "module": "Housing",
+              "unit": "10,000 Yuan",
+              "value_labels": "",
+              "value_semantics": "housing/property candidate",
+              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
+              "caveat": "Official 2018 HA&I questionnaire asks the current market total property value for the indexed household property, reported in 10,000 Yuan. The paired HA004 selector for this same slot determines total-price versus unit-price format. Keep property slots separate; these are household-property records, not stable person-level property IDs. Do not combine total price with unit-area price, sum slots into net worth, or infer a missing format from the amount. Preserve routing, refusal/don't-know and bracket semantics; Codebook summary extrema are not analytic limits. Verify special codes and eligible denominator in the authorized release before modeling."
+            },
+            {
+              "code": "ha004_w4_1_6_",
+              "label": "Total Value for House[6]",
+              "module": "Housing",
+              "unit": "10,000 Yuan",
+              "value_labels": "",
+              "value_semantics": "housing/property candidate",
+              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
+              "caveat": "Official 2018 HA&I questionnaire asks the current market total property value for the indexed household property, reported in 10,000 Yuan. The paired HA004 selector for this same slot determines total-price versus unit-price format. Keep property slots separate; these are household-property records, not stable person-level property IDs. Do not combine total price with unit-area price, sum slots into net worth, or infer a missing format from the amount. Preserve routing, refusal/don't-know and bracket semantics; Codebook summary extrema are not analytic limits. Verify special codes and eligible denominator in the authorized release before modeling."
+            },
+            {
+              "code": "ha004_w4_1_7_",
+              "label": "Total Value for House[7]",
+              "module": "Housing",
+              "unit": "10,000 Yuan",
+              "value_labels": "",
+              "value_semantics": "housing/property candidate",
+              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
+              "caveat": "Official 2018 HA&I questionnaire asks the current market total property value for the indexed household property, reported in 10,000 Yuan. The paired HA004 selector for this same slot determines total-price versus unit-price format. Keep property slots separate; these are household-property records, not stable person-level property IDs. Do not combine total price with unit-area price, sum slots into net worth, or infer a missing format from the amount. Preserve routing, refusal/don't-know and bracket semantics; Codebook summary extrema are not analytic limits. Verify special codes and eligible denominator in the authorized release before modeling."
             }
           ]
         },
@@ -95065,8 +95145,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2020 questionnaire identifies a numeric household person count; continuous count measure, no discrete category labels",
-              "caveat": "Counts household members who usually ate meals together during the past week, excluding guests. Treat as household context, not an individual's dietary frequency; interviewer soft checks are prompts, not analytic cutoffs. Confirm release-specific special values and household linkage before modeling."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Household/social context indicator, not dietary exposure. Wording changes between regularly sharing meals and people who ate meals in the past week."
             }
           ]
         },
@@ -95163,10 +95243,10 @@
               "label": "Primary Person Who Purchases Food",
               "module": "Household_Income",
               "unit": "",
-              "value_labels": "1=Yes; 2=No",
+              "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2020 questionnaire and Codebook identify respondent-as-primary-food-purchaser Yes/No; household-role item, not a dietary measure",
-              "caveat": "Ask whether the respondent is the household's primary food purchaser; 'Yes' routes past the roster selector. Household decision-role context only."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Household role/decision context; not an environmental dose or individual food intake."
             },
             {
               "code": "gf003",
@@ -95175,8 +95255,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2020 questionnaire identifies primary food purchaser through wave-specific household roster/other-person selector; dynamic identity choices are not fixed value labels",
-              "caveat": "Roster-dependent identity/role selector. Choice ranges and roster construction differ by wave; do not harmonize numeric codes as the same person or publish respondent names. Household-role context only."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Household role/decision context; not an environmental dose or individual food intake."
             }
           ]
         },
@@ -95593,20 +95673,20 @@
               "label": "Distance from the Nearest Toilet to House",
               "module": "Household_Income",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "Continuous distance to nearest toilet; codebook max 2,000 (QA hint, not a validated range).",
               "value_semantics": "",
-              "mapping_status": "official 2020 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
-              "caveat": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
             },
             {
               "code": "i013",
               "label": "Type of Toilet",
               "module": "Household_Income",
               "unit": "",
-              "value_labels": "1=Toilet without a seat; 2=Toilet with a seat",
+              "value_labels": "1=Without a seat; 2=With a seat.",
               "value_semantics": "",
-              "mapping_status": "official 2020 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
-              "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
             },
             {
               "code": "i014",

@@ -4,7 +4,7 @@
   "candidate_concept_ids": 1409,
   "exposure_concept_ids_including_dual": 1131,
   "phenotype_concept_ids_including_dual": 287,
-  "wave_field_mapping_rows": 6590,
+  "wave_field_mapping_rows": 6598,
   "includes": "all E/P candidate rows from ep_concept_source_crosswalk_v1.csv",
   "excludes": "C-only measurement eligibility rows; verified_code_examples_v1.csv is a separate multiwave lookup",
   "domains": [
@@ -215,7 +215,7 @@
     },
     {
       "file": "audit/housing_exposure_variable_mapping_v1.csv",
-      "mapping_rows": 477,
+      "mapping_rows": 485,
       "concept_ids": 40
     },
     {

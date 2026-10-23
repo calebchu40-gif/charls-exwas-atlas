@@ -2,10 +2,10 @@
 
 本快照基于本日完成的全量元数据流水线。仅汇总公开字段元数据和官方来源审核状态；没有拟合ExWAS关联模型，也没有将个体作答或身份信息写入仓库/网站。
 
-- 网站字段目录7,539行：E 4,558、P-only 1,903、C 914、双角色E/P 164。
-- E/P候选概念1,408个：暴露侧1,130、表型侧287、双角色9；E/P概念—源字段映射6,590行。全来源crosswalk 6,804行，其中6,792行匹配目录、12行是目录外C元数据。
+- 网站字段目录角色分片7,711行：E 4,723、P 2,067、C 921；双角色E/P在E与P分片各出现一次。
+- E/P候选概念1,409个：暴露侧1,131、表型侧287、双角色9；E/P概念—源字段映射6,598行。全来源crosswalk 6,812行，其中6,793行匹配目录、19行未匹配目录。
 - 五个常规波次元数据层面的非自配对共现为2011 120,052、2013 126,301、2015 128,984、2018 98,667、2020 12,598。它们不是受访者人数、逐对样本量或分析资格。
-- E/P目录有3,208行带非空已审/官方类别标签文本，覆盖3,182个波次—字段码；624条E/P目录角色行仍显示`not yet reviewed`。连续测量、测量组件和计数可已完成语义审阅而没有类别值标签。2013/2015/2018疾病控制/既往访谈变化48个字段、2020既往访谈变化18个字段，以及2011/2020自知疾病6个字段均已补入逐波官方类别；本轮另补2013–2018自知疾病11个字段，频数未复制，详见[`self_awareness_response_label_review_2026-10-23.md`](self_awareness_response_label_review_2026-10-23.md)。22个连续残疾发生年份字段标注calendar year，见[`disability_onset_year_unit_review_2026-10-23.md`](disability_onset_year_unit_review_2026-10-23.md)。
+- E/P目录有3,208行带非空已审/官方类别标签文本，覆盖3,182个波次—字段码；496条E目录角色行仍显示`not yet reviewed`。连续测量、测量组件和计数可已完成语义审阅而没有类别值标签。2013/2015/2018疾病控制/既往访谈变化48个字段、2020既往访谈变化18个字段，以及2011/2020自知疾病6个字段均已补入逐波官方类别；本轮另补2013–2018自知疾病11个字段，频数未复制，详见[`self_awareness_response_label_review_2026-10-23.md`](self_awareness_response_label_review_2026-10-23.md)。22个连续残疾发生年份字段标注calendar year，见[`disability_onset_year_unit_review_2026-10-23.md`](disability_onset_year_unit_review_2026-10-23.md)。
 - 另对2018当前住房产权关系9个E候选字段核对Codebook：仅1个字段有完整0/1标签，8个字段只有“0=Do Not Own”出现在频数型Codebook摘录中，均未推断缺失类别，也未复制频数。目录元数据与住房专题查询现显示这一完整/部分区分；详见[`housing_current_owner_relation_labels_2018_review_2026-10-23.md`](housing_current_owner_relation_labels_2018_review_2026-10-23.md)。因此通用值标签待核E字段由633降至624。
 - 本轮修复连续行为变量审核状态传播：73条波次—字段行从泛化的未核验状态改为有来源的连续测量/年龄年份语义。细节见[`behavior_numeric_measure_status_sync_2026-10-23.md`](behavior_numeric_measure_status_sync_2026-10-23.md)。
 - 另有608条养老金数值/计数或无离散类别字段从通用待核状态改为“官方代码本字段已定位；未列离散类别”；其余6条源审核记录已有更具体状态而予以保留。此状态不代表单位、路线或发行版编码已核。详见[`pension_numeric_status_sync_2026-10-23.md`](pension_numeric_status_sync_2026-10-23.md)。
@@ -30,3 +30,6 @@ Deployment verification after commit `00a0657`: Pages #31 and validation #90 suc
 2026-10-23 smoking cessation source review: 2013/2015/2018/2020 age/year selectors are classified as C metadata. The 2018 questionnaire and Codebook reverse the DA062_1/DA062_2 component labels; both children remain searchable and locked from analysis, and the selector has no displayed category mapping. Current active locks=35; full rebuild and 86 tests pass. Commits `85509a4` and `b87aa15` are deployed: Pages #33/#35 and Validate #93/#96 succeeded. After `Cache-Control: no-cache` revalidation, the public E/C catalog shards match the local generated JSON exactly; the 2018 DA062 lock and all four 2011 fixed Age/Year markers were verified in their correct role shards.
 
 - 2018年戒烟时间DA062子字段存在问卷与Codebook的年龄/年份标签冲突；DA062_1、DA062_2已保留为可检索但不可分析项，DA062选择器移为C类。2013、2015、2020戒烟时间选择器亦已从E类移为C类；2011 DA062S1/DA062S2及DA065S1/DA065S2固定“Age/Year”标记值均作为C类保存，真实回答字段DA062_1/DA062_2保留为E候选；核对及实现见[`smoking_cessation_2018_age_year_component_conflict_review_2026-10-23.md`](smoking_cessation_2018_age_year_component_conflict_review_2026-10-23.md)。
+
+
+2018 HA004 household property value correction: the official code order is measure first and property slot second. Seven total-value/unit-value selectors are C measurement metadata; all 12 amount fields now map to the correct total or unit-area concept and reporting unit. The full pipeline and 108 tests passed. Details: [`household_property_value_2018_slot_unit_review_2026-10-23.md`](household_property_value_2018_slot_unit_review_2026-10-23.md).

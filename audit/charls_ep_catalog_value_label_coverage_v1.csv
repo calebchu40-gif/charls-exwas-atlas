@@ -36,6 +36,7 @@ c,measurement metadata,household debt unfolding-bracket response metadata,8,8,0
 c,measurement metadata,household financial respondent source,2,2,0
 c,measurement metadata,household income response-format selectors,3,3,0
 c,measurement metadata,household income/expenditure respondent source,1,1,1
+c,measurement metadata,household property total-price versus unit-price response-format selector,7,7,7
 c,measurement metadata,housing rental amount applicability/response-format selector,5,5,5
 c,measurement metadata,hypothetical health anchoring vignettes,12,12,12
 c,measurement metadata,inactive fixed-capital legacy/format fields,2,2,0
@@ -85,7 +86,7 @@ e,early-life and family socioeconomic context,parent marital and ethnic context,
 e,environmental perception,self-reported air-quality satisfaction,1,1,1
 e,family and intergenerational context,sibling record context,6,3,6
 e,food and household environment,"diet, food security, housing and utilities",160,160,87
-e,housing and built environment,dwelling conditions and household property,477,477,31
+e,housing and built environment,dwelling conditions and household property,478,478,31
 e,housing and built environment,residential setting,3,3,3
 e,social determinants,adult education and lifelong learning,13,13,10
 e,social determinants,annual wage/salary amount reported for household-member roster slots,22,22,0
