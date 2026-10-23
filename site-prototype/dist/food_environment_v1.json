@@ -10,16 +10,20 @@
         "code": "da058",
         "module": "health_status_and_functioning",
         "source_label": "The Number of Times for Eating",
-        "value_labels": "",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+        "value_labels": "1=More than 4 meals per day; 2=4 meals per day; 3=3 meals per day; 4=2 meals per day; 5=1 meal per day; 6=<1 meal per day",
+        "note": "Self-reported usual individual meals per day; an ordinal behavior measure, not dietary quality, nutrient intake, or a laboratory exposure. Only mapped for 2011 and 2013; do not infer coverage or equivalence in later waves. Verify release-specific special values, item eligibility and missingness before modeling.",
+        "value_label_status": "official 2011 questionnaire/Codebook labels reviewed; six ordered self-reported usual meals-per-day categories",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
         "code": "da058",
         "module": "Health_Status_and_Functioning",
         "source_label": "The Number of Times for Eating",
-        "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "1=More than 4 meals per day; 2=4 meals per day; 3=3 meals per day; 4=2 meals per day; 5=1 meal per day; 6=<1 meal per day",
+        "note": "Self-reported usual individual meals per day; an ordinal behavior measure, not dietary quality, nutrient intake, or a laboratory exposure. Only mapped for 2011 and 2013; do not infer coverage or equivalence in later waves. Verify release-specific special values, item eligibility and missingness before modeling.",
+        "value_label_status": "official 2013 questionnaire/Codebook labels reviewed; six ordered self-reported usual meals-per-day categories",
+        "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"
       }
     ]
   },

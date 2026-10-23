@@ -279,6 +279,14 @@ class HousingValueLabelTests(unittest.TestCase):
         for wave, code in [("2011", "i013"), ("2013", "i013"), ("2015", "i013"), ("2018", "i013"), ("2020", "i012")]:
             self.assertEqual(catalog[(wave, code)]["Unit"], "meters")
             self.assertEqual(catalog[(wave, code)]["Value.Labels"], "")
+
+    def test_individual_meal_frequency_is_two_wave_ordered_behavior_measure(self):
+        catalog = {(r["Source.Wave"], r["Variable.Name"].lower()): r for r in self.catalog}
+        for wave in ("2011", "2013"):
+            row = catalog[(wave, "da058")]
+            self.assertEqual(row["Value.Labels"], "1=More than 4 meals per day; 2=4 meals per day; 3=3 meals per day; 4=2 meals per day; 5=1 meal per day; 6=<1 meal per day")
+            self.assertIn("ordinal behavior measure", row["Harmonization.Status"])
+            self.assertIn("not dietary quality", row["Harmonization.Status"])
         self.assertIn("excludes banquets/weddings", catalog[("2020", "gf006")]["Harmonization.Status"])
         self.assertIn("excludes banquets/weddings", catalog[("2018", "ge007_w4")]["Harmonization.Status"])
 
