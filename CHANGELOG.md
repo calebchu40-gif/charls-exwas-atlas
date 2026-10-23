@@ -2,6 +2,7 @@
 
 ## 2026-10-23
 
+- Reduced full metadata-catalog build time by pre-indexing wave/field module and source-archive lookups. Same-method profiling fell from 107.8 seconds to 53.6 seconds; output records were verified unchanged. Documented the profiling method and limits in `audit/metadata_builder_performance_2026-10-23.md`.
 - Added official Codebook time units for eight 2011–2018 prostate-illness diagnosis-time fields, preserving separate year/age components, male-only routing, and the exclusion of prostate cancer. Codebook extrema remain explicitly non-valid-range evidence; added unit and caveat regression checks.
 - Added official, wave-specific physical-activity purpose labels for nine 2015/2018/2020 fields, omitting frequencies and preserving the distinction between activity purpose and activity dose; added regression checks and a source audit.
 - Added a guarded `--finalize-only` metadata build path for changes that do not alter upstream mappings. Full rebuild remains the default; the faster mode is documented with its source/crosswalk freshness requirement and was run successfully against the full-build output.

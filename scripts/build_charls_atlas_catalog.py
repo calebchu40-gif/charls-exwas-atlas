@@ -63,9 +63,21 @@ def main() -> None:
 
     source = pd.read_csv(args.catalog, dtype=str, encoding="utf-8-sig").fillna("")
     source = source[source.wave.isin(WAVES)].copy()
+    # Crosswalk enrichment resolves the module for thousands of source-field
+    # rows. Pre-index the small lookup once instead of repeatedly scanning the
+    # full pandas table for every field (which dominated catalog-build time).
+    modules_by_wave_variable: dict[tuple[str, str], list[str]] = {}
+    archive_by_wave_variable: dict[tuple[str, str], str] = {}
+    for wave, variable, source_module, source_archive in source[["wave", "variable", "module", "source"]].itertuples(index=False, name=None):
+        key = (str(wave), str(variable).lower())
+        modules = modules_by_wave_variable.setdefault(key, [])
+        source_module = str(source_module)
+        if source_module not in modules:
+            modules.append(source_module)
+        archive_by_wave_variable.setdefault(key, str(source_archive))
+
     def canonical_module(wave: str, code: str, module: str) -> str | None:
-        found = source[(source.wave.eq(str(wave))) & source.variable.str.lower().eq(str(code).lower())]
-        modules = list(dict.fromkeys(found.module.astype(str).tolist()))
+        modules = modules_by_wave_variable.get((str(wave), str(code).lower()), [])
         if len(modules) == 1:
             return modules[0]
         exact = [name for name in modules if name.strip().lower() == str(module).strip().lower()]
@@ -481,8 +493,7 @@ def main() -> None:
             if broad_key in existing_wave_role_category:
                 continue
             label = str(item.get(label_col, "")).strip() or code
-            raw = source[(source.wave == wave) & (source.variable.str.lower() == code.lower())]
-            archive = raw.iloc[0].source if not raw.empty else f"audit/{file}"
+            archive = archive_by_wave_variable.get((wave, code.lower()), f"audit/{file}")
             detail = "; ".join(str(item.get(col, "")).strip() for col in detail_cols if str(item.get(col, "")).strip())
             outputs.append({
                 "Variable.Name": code, "Variable.Description": label,
