@@ -315,6 +315,18 @@ class HousingValueLabelTests(unittest.TestCase):
             row = catalog[("2018", f"ha005_w4_{i}_")]
             self.assertEqual(row["Value.Labels"], "1=Yes; 2=No; 999=Refuse to answer")
             self.assertIn("Keep each property slot separate", row["Harmonization.Status"])
+
+    def test_2018_actual_and_market_rents_keep_units_routes_and_slots(self):
+        catalog = {(r["Source.Wave"], r["Variable.Name"].lower()): r for r in self.catalog}
+        for code, phrase in [(f"ha006_w4_{i}_", "routed after HA005=Yes") for i in (1,2,3,4,5,7)]:
+            row = catalog[("2018", code)]
+            self.assertEqual(row["Unit"], "Yuan/month")
+            self.assertEqual(row["Value.Labels"], "")
+            self.assertIn(phrase, row["Harmonization.Status"])
+        for i in range(1,8):
+            row = catalog[("2018", f"ha007_w4_{i}_")]
+            self.assertEqual(row["Unit"], "Yuan/month")
+            self.assertIn("separate estimated amount", row["Harmonization.Status"])
         self.assertIn("excludes banquets/weddings", catalog[("2020", "gf006")]["Harmonization.Status"])
         self.assertIn("excludes banquets/weddings", catalog[("2018", "ge007_w4")]["Harmonization.Status"])
 
