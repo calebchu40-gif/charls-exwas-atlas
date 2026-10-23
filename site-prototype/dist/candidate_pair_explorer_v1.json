@@ -13352,10 +13352,10 @@
               "label": "Where is Your Current Hukou",
               "module": "demographic_background",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Same as birthplace; 2=This village/neighborhood; 3=Another village/neighborhood in this county/city; 4=Another county/city in this province; 5=Another province",
               "value_semantics": "Current hukou location candidate; wave-specific item availability.",
-              "mapping_status": "candidate current-state mapping from official wave-variable metadata; route/value review required",
-              "caveat": "Location granularity and update route vary. The codebook fields can contain sensitive geographic detail; do not publish geographic values or identifiers, and obtain disclosure review before deriving area-level categories."
+              "mapping_status": "official questionnaire and codebook response labels reviewed; frequencies omitted; verify routed denominator and authorized-release special codes",
+              "caveat": "Location granularity and update route vary. The codebook fields can contain sensitive geographic detail; do not publish geographic values or identifiers, and obtain disclosure review before deriving area-level categories.; These are wave-specific categorical codes. Preserve conditional routing, special/missing values and source wording; this review does not establish analytic eligibility or cross-wave equivalence."
             }
           ]
         },
@@ -13392,10 +13392,10 @@
               "label": "What is Your Current Hukou Status",
               "module": "demographic_background",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Agricultural Hukou; 2=Non-agricultural Hukou; 3=Unified Residence Hukou; 4=Do not have Hukou",
               "value_semantics": "Current registered-household (hukou) type candidate.",
-              "mapping_status": "candidate current-state mapping from official wave-variable metadata; route/value review required",
-              "caveat": "Response categories and returner/new-interview routes vary by wave. Do not merge raw codes across waves or equate hukou type with actual urban/rural residence; use the audited hukou derivation where appropriate."
+              "mapping_status": "official questionnaire and codebook response labels reviewed; frequencies omitted; verify routed denominator and authorized-release special codes",
+              "caveat": "Response categories and returner/new-interview routes vary by wave. Do not merge raw codes across waves or equate hukou type with actual urban/rural residence; use the audited hukou derivation where appropriate.; These are wave-specific categorical codes. Preserve conditional routing, special/missing values and source wording; this review does not establish analytic eligibility or cross-wave equivalence."
             }
           ]
         },
@@ -13432,10 +13432,10 @@
               "label": "Highest Level of Education Attained",
               "module": "demographic_background",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=No formal education (illiterate); 2=Did not finish primary school but can read/write; 3=Sishu/home school; 4=Elementary school; 5=Middle school; 6=High school; 7=Vocational school; 8=Two/three-year college/associate degree; 9=Four-year college/bachelor’s degree; 10=Master’s degree",
               "value_semantics": "Current education attainment candidate; source items differ by interview route.",
-              "mapping_status": "candidate current-state mapping from official wave-variable metadata; route/value review required",
-              "caveat": "2013–2018 update fields can encode no change as a separate response, not a direct education category. Use the audited education derivation and interview-type/previous-wave route; never interpret z* preloads as a same-wave response. 2020 excludes adult education in the current item."
+              "mapping_status": "official questionnaire and codebook response labels reviewed; frequencies omitted; verify routed denominator and authorized-release special codes",
+              "caveat": "2013–2018 update fields can encode no change as a separate response, not a direct education category. Use the audited education derivation and interview-type/previous-wave route; never interpret z* preloads as a same-wave response. 2020 excludes adult education in the current item.; These are wave-specific categorical codes. Preserve conditional routing, special/missing values and source wording; this review does not establish analytic eligibility or cross-wave equivalence."
             }
           ]
         },
@@ -34075,10 +34075,10 @@
               "label": "Your Current Hukou Location",
               "module": "Demographic_Background",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Permanent address; 2=Birthplace; 3=Another neighborhood in permanent county/city/district; 4=Other city/district within this province; 5=Other province/city/district",
               "value_semantics": "Current hukou location candidate; wave-specific item availability.",
-              "mapping_status": "candidate current-state mapping from official wave-variable metadata; route/value review required",
-              "caveat": "Location granularity and update route vary. The codebook fields can contain sensitive geographic detail; do not publish geographic values or identifiers, and obtain disclosure review before deriving area-level categories."
+              "mapping_status": "official questionnaire and codebook response labels reviewed; frequencies omitted; verify routed denominator and authorized-release special codes",
+              "caveat": "Location granularity and update route vary. The codebook fields can contain sensitive geographic detail; do not publish geographic values or identifiers, and obtain disclosure review before deriving area-level categories.; The 2013 Codebook uses the Z-prefixed alias for this questionnaire field; preserve the exact release variable name and verify the alias in the authorized dataset before analysis."
             }
           ]
         },
@@ -34095,10 +34095,10 @@
               "label": "What is Your Current Hukou Status",
               "module": "Demographic_Background",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Agricultural Hukou; 2=Non-agricultural Hukou; 3=Unified Residence Hukou; 4=Do not have Hukou",
               "value_semantics": "Current registered-household (hukou) type candidate.",
-              "mapping_status": "candidate current-state mapping from official wave-variable metadata; route/value review required",
-              "caveat": "Response categories and returner/new-interview routes vary by wave. Do not merge raw codes across waves or equate hukou type with actual urban/rural residence; use the audited hukou derivation where appropriate."
+              "mapping_status": "official questionnaire and codebook response labels reviewed; frequencies omitted; verify routed denominator and authorized-release special codes",
+              "caveat": "Response categories and returner/new-interview routes vary by wave. Do not merge raw codes across waves or equate hukou type with actual urban/rural residence; use the audited hukou derivation where appropriate.; The 2013 Codebook uses the Z-prefixed alias for this questionnaire field; preserve the exact release variable name and verify the alias in the authorized dataset before analysis."
             }
           ]
         },
@@ -34135,20 +34135,20 @@
               "label": "The Highest level of Education Attained Now",
               "module": "Demographic_Background",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=No formal education (illiterate); 2=Did not finish primary school but can read/write; 3=Sishu/home school; 4=Elementary school; 5=Middle school; 6=High school; 7=Vocational school; 8=Two/three-year college/associate degree; 9=Four-year college/bachelor’s degree; 10=Master’s degree",
               "value_semantics": "Current education attainment candidate; source items differ by interview route.",
-              "mapping_status": "candidate current-state mapping from official wave-variable metadata; route/value review required",
-              "caveat": "2013–2018 update fields can encode no change as a separate response, not a direct education category. Use the audited education derivation and interview-type/previous-wave route; never interpret z* preloads as a same-wave response. 2020 excludes adult education in the current item."
+              "mapping_status": "official questionnaire and codebook response labels reviewed; frequencies omitted; verify routed denominator and authorized-release special codes",
+              "caveat": "2013–2018 update fields can encode no change as a separate response, not a direct education category. Use the audited education derivation and interview-type/previous-wave route; never interpret z* preloads as a same-wave response. 2020 excludes adult education in the current item.; The 2013 Codebook uses the Z-prefixed alias for this questionnaire field; preserve the exact release variable name and verify the alias in the authorized dataset before analysis."
             },
             {
               "code": "bd001_w2_4",
               "label": "Have Your Highest Level of Education Changed? If So, What Is It",
               "module": "Demographic_Background",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=No formal education (illiterate); 2=Did not finish primary school but can read/write; 3=Sishu/home school; 4=Elementary school; 5=Middle school; 6=High school; 7=Vocational school; 8=Two/three-year college/associate degree; 9=Four-year college/bachelor’s degree; 10=Master’s degree; 12=No change",
               "value_semantics": "Current education attainment candidate; source items differ by interview route.",
-              "mapping_status": "candidate current-state mapping from official wave-variable metadata; route/value review required",
-              "caveat": "2013–2018 update fields can encode no change as a separate response, not a direct education category. Use the audited education derivation and interview-type/previous-wave route; never interpret z* preloads as a same-wave response. 2020 excludes adult education in the current item."
+              "mapping_status": "official questionnaire and codebook response labels reviewed; frequencies omitted; verify routed denominator and authorized-release special codes",
+              "caveat": "2013–2018 update fields can encode no change as a separate response, not a direct education category. Use the audited education derivation and interview-type/previous-wave route; never interpret z* preloads as a same-wave response. 2020 excludes adult education in the current item.; These are wave-specific categorical codes. Preserve conditional routing, special/missing values and source wording; this review does not establish analytic eligibility or cross-wave equivalence."
             }
           ]
         },
@@ -58081,10 +58081,10 @@
               "label": "Your Hukou Type This Time?",
               "module": "Demographic_Background",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Agricultural Hukou; 2=Non-agricultural Hukou; 3=Unified Residence Hukou; 4=Do not have Hukou",
               "value_semantics": "Current registered-household (hukou) type candidate.",
-              "mapping_status": "candidate current-state mapping from official wave-variable metadata; route/value review required",
-              "caveat": "Response categories and returner/new-interview routes vary by wave. Do not merge raw codes across waves or equate hukou type with actual urban/rural residence; use the audited hukou derivation where appropriate."
+              "mapping_status": "official questionnaire and codebook response labels reviewed; frequencies omitted; verify routed denominator and authorized-release special codes",
+              "caveat": "Response categories and returner/new-interview routes vary by wave. Do not merge raw codes across waves or equate hukou type with actual urban/rural residence; use the audited hukou derivation where appropriate.; These are wave-specific categorical codes. Preserve conditional routing, special/missing values and source wording; this review does not establish analytic eligibility or cross-wave equivalence."
             }
           ]
         },
@@ -58181,10 +58181,10 @@
               "label": "Have Your Highest Level of Education Changed?",
               "module": "Demographic_Background",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=No formal education (illiterate); 2=Did not finish primary school but can read/write; 3=Sishu/home school; 4=Elementary school; 5=Middle school; 6=High school; 7=Vocational school; 8=Two/three-year college/associate degree; 9=Four-year college/bachelor’s degree; 10=Master’s degree; 12=No change",
               "value_semantics": "Current education attainment candidate; source items differ by interview route.",
-              "mapping_status": "candidate current-state mapping from official wave-variable metadata; route/value review required",
-              "caveat": "2013–2018 update fields can encode no change as a separate response, not a direct education category. Use the audited education derivation and interview-type/previous-wave route; never interpret z* preloads as a same-wave response. 2020 excludes adult education in the current item."
+              "mapping_status": "official questionnaire and codebook response labels reviewed; frequencies omitted; verify routed denominator and authorized-release special codes",
+              "caveat": "2013–2018 update fields can encode no change as a separate response, not a direct education category. Use the audited education derivation and interview-type/previous-wave route; never interpret z* preloads as a same-wave response. 2020 excludes adult education in the current item.; These are wave-specific categorical codes. Preserve conditional routing, special/missing values and source wording; this review does not establish analytic eligibility or cross-wave equivalence."
             }
           ]
         },
@@ -84015,10 +84015,10 @@
               "label": "Current Location of Hukou",
               "module": "Demographic_Background",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Current residential address; 2=Other; 3=Do not have Hukou",
               "value_semantics": "Current hukou location candidate; wave-specific item availability.",
-              "mapping_status": "candidate current-state mapping from official wave-variable metadata; route/value review required",
-              "caveat": "Location granularity and update route vary. The codebook fields can contain sensitive geographic detail; do not publish geographic values or identifiers, and obtain disclosure review before deriving area-level categories."
+              "mapping_status": "official questionnaire and codebook response labels reviewed; frequencies omitted; verify routed denominator and authorized-release special codes",
+              "caveat": "Location granularity and update route vary. The codebook fields can contain sensitive geographic detail; do not publish geographic values or identifiers, and obtain disclosure review before deriving area-level categories.; These are wave-specific categorical codes. Preserve conditional routing, special/missing values and source wording; this review does not establish analytic eligibility or cross-wave equivalence."
             }
           ]
         },
@@ -84035,10 +84035,10 @@
               "label": "Current Hukou Type",
               "module": "Demographic_Background",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Agricultural Hukou; 2=Non-agricultural Hukou; 3=Unified Residence Hukou; 4=Do not have Hukou",
               "value_semantics": "Current registered-household (hukou) type candidate.",
-              "mapping_status": "candidate current-state mapping from official wave-variable metadata; route/value review required",
-              "caveat": "Response categories and returner/new-interview routes vary by wave. Do not merge raw codes across waves or equate hukou type with actual urban/rural residence; use the audited hukou derivation where appropriate."
+              "mapping_status": "official questionnaire and codebook response labels reviewed; frequencies omitted; verify routed denominator and authorized-release special codes",
+              "caveat": "Response categories and returner/new-interview routes vary by wave. Do not merge raw codes across waves or equate hukou type with actual urban/rural residence; use the audited hukou derivation where appropriate.; These are wave-specific categorical codes. Preserve conditional routing, special/missing values and source wording; this review does not establish analytic eligibility or cross-wave equivalence."
             }
           ]
         },
@@ -84095,10 +84095,10 @@
               "label": "Education",
               "module": "Demographic_Background",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=No formal education (illiterate); 2=Did not finish primary school but can read/write; 3=Sishu/home school; 4=Elementary school; 5=Middle school; 6=High school; 7=Vocational school; 8=Two/three-year college/associate degree; 9=Four-year college/bachelor’s degree; 10=Master’s degree; 11=Doctoral degree/Ph.D.",
               "value_semantics": "Current education attainment candidate; source items differ by interview route.",
-              "mapping_status": "candidate current-state mapping from official wave-variable metadata; route/value review required",
-              "caveat": "2013–2018 update fields can encode no change as a separate response, not a direct education category. Use the audited education derivation and interview-type/previous-wave route; never interpret z* preloads as a same-wave response. 2020 excludes adult education in the current item."
+              "mapping_status": "official questionnaire and codebook response labels reviewed; frequencies omitted; verify routed denominator and authorized-release special codes",
+              "caveat": "2013–2018 update fields can encode no change as a separate response, not a direct education category. Use the audited education derivation and interview-type/previous-wave route; never interpret z* preloads as a same-wave response. 2020 excludes adult education in the current item.; These are wave-specific categorical codes. Preserve conditional routing, special/missing values and source wording; this review does not establish analytic eligibility or cross-wave equivalence."
             }
           ]
         },
@@ -96943,10 +96943,10 @@
               "label": "Type of HuKou",
               "module": "Demographic_Background",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Agricultural Hukou; 2=Non-agricultural Hukou; 3=Unified Residence Hukou; 4=Do not have Hukou",
               "value_semantics": "Current registered-household (hukou) type candidate.",
-              "mapping_status": "candidate current-state mapping from official wave-variable metadata; route/value review required",
-              "caveat": "Response categories and returner/new-interview routes vary by wave. Do not merge raw codes across waves or equate hukou type with actual urban/rural residence; use the audited hukou derivation where appropriate."
+              "mapping_status": "official questionnaire and codebook response labels reviewed; frequencies omitted; verify routed denominator and authorized-release special codes",
+              "caveat": "Response categories and returner/new-interview routes vary by wave. Do not merge raw codes across waves or equate hukou type with actual urban/rural residence; use the audited hukou derivation where appropriate.; These are wave-specific categorical codes. Preserve conditional routing, special/missing values and source wording; this review does not establish analytic eligibility or cross-wave equivalence."
             }
           ]
         },
@@ -96963,10 +96963,10 @@
               "label": "What's the Highest Level of Education Now? Not Including Adult Education",
               "module": "Demographic_Background",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=No formal education (illiterate); 2=Did not finish primary school but can read/write; 3=Sishu/home school; 4=Elementary school; 5=Middle school; 6=High school; 7=Vocational school; 8=Two/three-year college/associate degree; 9=Four-year college/bachelor’s degree; 10=Master’s degree; 11=Doctoral degree/Ph.D.",
               "value_semantics": "Current education attainment candidate; source items differ by interview route.",
-              "mapping_status": "candidate current-state mapping from official wave-variable metadata; route/value review required",
-              "caveat": "2013–2018 update fields can encode no change as a separate response, not a direct education category. Use the audited education derivation and interview-type/previous-wave route; never interpret z* preloads as a same-wave response. 2020 excludes adult education in the current item."
+              "mapping_status": "official questionnaire and codebook response labels reviewed; frequencies omitted; verify routed denominator and authorized-release special codes",
+              "caveat": "2013–2018 update fields can encode no change as a separate response, not a direct education category. Use the audited education derivation and interview-type/previous-wave route; never interpret z* preloads as a same-wave response. 2020 excludes adult education in the current item.; These are wave-specific categorical codes. Preserve conditional routing, special/missing values and source wording; this review does not establish analytic eligibility or cross-wave equivalence."
             }
           ]
         },

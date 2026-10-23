@@ -4,11 +4,11 @@ This snapshot reads only the public, generated metadata in `site-prototype/dist/
 
 | Role | Catalog rows | Generic `not yet reviewed` rows |
 |---|---:|---:|
-| E exposure candidates | 4,723 | 26 |
+| E exposure candidates | 4,723 | 12 |
 | P phenotype candidates | 2,067 | 0 |
 | C covariate/measurement metadata | 979 | 328 |
 
-The current E queue contains 26 social-determinant rows and no social-protection rows with a generic pending label. Housing/built-environment, food/household-environment, household expenditure, transfer-income sources, and the reviewed pension interval endpoints have been addressed at the metadata level. The remaining E generic-pending rows are now concentrated in social relations and care, education/social position, income/wealth, employment/work organization, and household income/financial strain/COVID coping. These are field rows, not independent concepts or tests.
+The current E queue contains 12 social-determinant rows and no social-protection rows with a generic pending label. Housing/built-environment, food/household-environment, household expenditure, transfer-income sources, and the reviewed pension interval endpoints have been addressed at the metadata level. The remaining E generic-pending rows are income/wealth (6), employment/work organization (4), and household income/financial strain/COVID coping (2). These are field rows, not independent concepts or tests.
 
 ## Processing rule
 
@@ -16,7 +16,7 @@ Continue by source-backed field families. For each field, establish whether its 
 
 ## Next review batches
 
-The individual income and wage batch is now reviewed at the source-metadata level (46 crosswalk rows reviewed; remaining queue counted from the generated site catalogue). The social-relations/care review is now complete at the metadata level; next are education/social position, each handled by wave-specific family and source module. Completed metadata review does not prove analysis readiness. Continue checking questionnaire scope, response unit, household/person measurement level, wave comparability, routing, and Codebook storage semantics. Amount slots must not be counted as independent exposures without a construct-level rationale.
+The individual income and wage batch is now reviewed at the source-metadata level (46 crosswalk rows reviewed; remaining queue counted from the generated site catalogue). Social-care and education/hukou response labels are now reviewed; the remaining 12 fields are concentrated in income/wealth, employment/work organization, and household financial strain/COVID coping, to be reviewed by wave-specific family and source module. Completed metadata review does not prove analysis readiness. Continue checking questionnaire scope, response unit, household/person measurement level, wave comparability, routing, and Codebook storage semantics. Amount slots must not be counted as independent exposures without a construct-level rationale.
 
 The 2018 current-home owner-relation batch is reviewed at the response-label level: one of nine fields has a complete Codebook 0/1 label set; eight show only the `0=Do Not Own` category in the extracted Codebook and are marked partial without guessing the missing category. Five adjacent current-home ownership-share fields are now identified as continuous percentages. Eight additional area, rent, value and acquisition-year fields now show their exact questionnaire units and route/coding limits; ownership area measures remain route-specific, rent zero may trigger unfolding brackets, and total/unit market-price formats are not combined. Fifteen bedroom, living-room and toilet fields across five waves are now identified as numeric counts, with residence scope, soft-check interpretation and cross-wave caveats. Eight additional dwelling-area, construction-year and 2020 move-in fields now carry units or exact wave-specific measurement meaning. Ten weekly household food/eating-out expense fields now show Yuan/week and describe own-production and banquet/wedding exclusions by wave; they remain household resource measures, not personal dietary intake. Codebook extrema are not treated as valid ranges and no frequencies were copied. See [`housing_current_owner_relation_labels_2018_v1.csv`](housing_current_owner_relation_labels_2018_v1.csv), [`housing_current_owner_relation_labels_2018_review_2026-10-23.md`](housing_current_owner_relation_labels_2018_review_2026-10-23.md), [`housing_current_owner_share_2018_review_2026-10-23.md`](housing_current_owner_share_2018_review_2026-10-23.md), [`housing_current_home_measurements_2018_review_2026-10-23.md`](housing_current_home_measurements_2018_review_2026-10-23.md), [`housing_room_count_measure_review_2026-10-23.md`](housing_room_count_measure_review_2026-10-23.md), [`housing_area_and_year_measure_review_2026-10-23.md`](housing_area_and_year_measure_review_2026-10-23.md), and [`household_food_expenditure_measure_review_2026-10-23.md`](household_food_expenditure_measure_review_2026-10-23.md). The E generic-pending count is now 578.
 
@@ -48,10 +48,16 @@ Latest 2026-10-23 rollup after household expenditure review: E generic pending 1
 2026-10-23 pension interval endpoint review: 16 lower/upper bracket fields across 2011/2013/2015 are identified as conditional amount bounds, not point estimates or response categories. The 2013 Codebook's string type and 2015's summary-only evidence are distinguished; no extrema or frequencies copied. Latest queue: E 85, P 0, C 328. E/P nonempty reviewed/official value-label texts: 3,232 rows across 3,206 wave-fields. See [`pension_interval_endpoint_review_2011_2015_2026-10-23.md`](pension_interval_endpoint_review_2011_2015_2026-10-23.md).
 
 
-2026-10-23 individual income/wage review: official wave-specific wage units, asset indicator response labels, inheritance checkbox limits, fraud measures and 2020 wage-deduction special codes were added to the candidate metadata. No Codebook frequencies or descriptive extrema were copied. E generic pending is now 26; P 0, C 328. See [`personal_income_wage_metadata_review_2011_2020_2026-10-23.md`](personal_income_wage_metadata_review_2011_2020_2026-10-23.md).
+2026-10-23 individual income/wage review: official wave-specific wage units, asset indicator response labels, inheritance checkbox limits, fraud measures and 2020 wage-deduction special codes were added to the candidate metadata. No Codebook frequencies or descriptive extrema were copied. E generic pending is now 12; P 0, C 328. See [`personal_income_wage_metadata_review_2011_2020_2026-10-23.md`](personal_income_wage_metadata_review_2011_2020_2026-10-23.md).
 
 
 Latest rollup after individual income/wage review: E generic pending 40, P 0, C 328; E/P nonempty official/reviewed label texts 3,316 rows across 3,290 wave-fields. The 46-row personal-income crosswalk review includes both categorized and continuous/count metadata states; 89 analysis locks remain unchanged.
 
 
 2026-10-23 social-care metadata review: 14 2011/2013 caregiver/helper fields were checked against the questionnaires and Codebooks. Thirteen helper-option fields retain blank labels because unselected storage/denominators are unresolved; one helper-days field is recorded as a routed continuous count. No categories or frequencies were inferred. E generic pending is now 26; P 0, C 328. See [`social_care_caregiver_metadata_review_2011_2013_2026-10-23.md`](social_care_caregiver_metadata_review_2011_2013_2026-10-23.md).
+
+
+2026-10-23 education/hukou response-label review: 14 wave-field mappings across 2011–2020 now show official wave-specific education and hukou categories, including the special 2013 Z-prefixed Codebook aliases and 2013/2015 `12=No change` education option. Frequencies were omitted. E generic pending is now 12; P 0, C 328. See [`education_hukou_value_label_review_2011_2020_2026-10-23.md`](education_hukou_value_label_review_2011_2020_2026-10-23.md).
+
+
+Latest rollup after education/hukou review: E generic pending 12, P 0, C 328; E/P nonempty official/reviewed labels 3,274 rows. The reviewed 2013 hukou/education fields retain a Z-prefixed Codebook alias caution; 89 analysis locks are unchanged.

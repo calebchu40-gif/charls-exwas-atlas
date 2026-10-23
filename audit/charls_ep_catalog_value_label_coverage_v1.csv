@@ -1,6 +1,6 @@
 ﻿epcf,category,subcategory,field_category_rows,distinct_wave_fields,rows_with_reviewed_labels
 c,covariate candidate,birth-date source and age derivation metadata,5,5,0
-c,covariate candidate,demographic / design / socioeconomic adjustment candidate,419,417,108
+c,covariate candidate,demographic / design / socioeconomic adjustment candidate,419,417,122
 c,measurement metadata,2011 proxy interview and Section E assistance context,3,3,3
 c,measurement metadata,2018 employer pension contribution amount/share unit selector,1,1,1
 c,measurement metadata,2018 respondent pension contribution amount/share unit selector,1,1,1
@@ -93,7 +93,7 @@ e,housing and built environment,residential setting,3,3,3
 e,social determinants,adult education and lifelong learning,13,13,10
 e,social determinants,annual wage/salary amount reported for household-member roster slots,22,22,0
 e,social determinants,early-life family socioeconomic context,4,4,4
-e,social determinants,education and social position,87,87,68
+e,social determinants,education and social position,87,87,82
 e,social determinants,"employment, occupation, and work organization",602,602,324
 e,social determinants,formal schooling history and timing,17,17,17
 e,social determinants,household expenditure and material resources,53,53,4

@@ -50,6 +50,7 @@ FULL_PIPELINE_SCRIPTS = (
     "build_housing_value_label_review.py",
     "build_housing_catalog.py",
     "build_demographic_social_exposure_crosswalk.py",
+    "apply_demographic_value_label_review.py",
     "build_parent_education_exposure_crosswalk.py",
     "build_parent_roster_education_crosswalk.py",
     "build_parent_roster_context_crosswalk.py",
