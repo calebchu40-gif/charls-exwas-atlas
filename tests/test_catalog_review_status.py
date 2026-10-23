@@ -98,6 +98,23 @@ class CatalogReviewStatusTests(unittest.TestCase):
             self.assertTrue(all(row.get("Value.Label.Review", "").startswith("official codebook field located; continuous/count or no categorical labels") for row in rows), (wave, code))
             self.assertTrue(all(not row.get("Value.Labels", "") for row in rows), (wave, code))
         app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
+
+    def test_work_numeric_fields_surface_codebook_presence_without_fabricated_labels(self):
+        examples = [("2011", "fe002"), ("2018", "fd021_1"), ("2020", "fc026")]
+        for wave, code in examples:
+            rows = [
+                row for row in self.catalog
+                if row.get("Source.Wave") == wave and row.get("Variable.Name", "").lower() == code
+            ]
+            self.assertTrue(rows, (wave, code))
+            self.assertTrue(all(
+                row.get("Value.Label.Review") == "codebook field located; continuous/open response or no categorical labels"
+                for row in rows
+            ), (wave, code))
+            self.assertTrue(all(not row.get("Value.Labels", "") for row in rows), (wave, code))
+            self.assertTrue(all("CHARLS_" + wave + "_Codebook_extracted.txt" in row.get("Value.Label.Source", "") for row in rows))
+        app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
+        self.assertIn("它是连续/开放回答或未列离散类别，不虚构答案标签", app)
         self.assertIn("官方代码本已找到该字段但未列离散类别", app)
 
     def test_income_codebook_numeric_summaries_are_not_generic_pending_labels(self):

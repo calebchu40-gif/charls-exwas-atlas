@@ -37,8 +37,9 @@
 |审核状态|E/P目录行|
 |---|---:|
 |officially reviewed|2,536|
-|not yet reviewed|1,668|
+|not yet reviewed|1,313|
 |official codebook field located; continuous/count or no categorical labels|608|
+|codebook field located; continuous/open response or no categorical labels|339|
 |continuous measure metadata available|214|
 |official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories|200|
 |numeric/time unit metadata available; no discrete labels assigned|151|
@@ -62,6 +63,7 @@
 |official 2020 questionnaire/Codebook response labels reviewed; prior-wave route retained; frequencies excluded|18|
 |continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions|16|
 |DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No|16|
+|continuous conditional component; unit and route reviewed; no response-category labels; codebook frequencies omitted|14|
 |2020代码本逐字段多选标签已核；条件分母|14|
 |official 2013 Codebook response categories transcribed; frequencies omitted; prior-interview recall route retained; release coding and eligible denominator require validation|14|
 |official 2018 Codebook response categories transcribed; frequencies omitted; prior-interview recall route retained; release coding and eligible denominator require validation|14|
@@ -96,6 +98,7 @@
 |official questionnaire categories transcribed without frequencies; preserve three-category employment/family-business status|3|
 |official questionnaire categories; frequencies omitted; 2011 question wording controls its scope|3|
 |questionnaire categories and Codebook title conflict recorded; frequencies omitted|3|
+|continuous date component; preserve year/month unit and conditional prior-status correction route; month -1 indicates unable to report; DO NOT ANALYZE pending route and released-data reconciliation|2|
 |official 2013 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|
 |official questionnaire/codebook categories; frequencies omitted; current employer benefit route|2|
 |wave-specific official questionnaire categories transcribed without frequencies; retrospective first-workplace location|2|
