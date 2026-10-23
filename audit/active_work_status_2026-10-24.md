@@ -58,6 +58,12 @@ The full metadata rebuild passed; C rows now total 982, with BB003 and BB005 eac
 
 Next, inspect adjacent migration-history items (BB007–BB009) and only add/source-label them where official question routes and codebook field identity are sufficiently clear.
 
+## 2026-10-24 continued: BB007–BB010 alternate mobility branches
+
+Reviewed the 2011 and 2013 questionnaires and Codebooks. The questionnaire routes BB001=1 or 2 to BB009/BB010; the alternate eligible path uses BB007/BB008. BB007 and BB009 are separate Yes/No gates, each routing to its own cumulative duration pair (years and months). Added the previously missing 2011 BB008_1/BB008_2 and BB010_1/BB010_2 C rows. Kept 2011 BB007's “present county/city” Codebook wording distinct from its questionnaire's “permanent county/city/district” wording and did not force a BB007/BB009 merge. Conditional absence is not zero; 2011 BB010 has a questionnaire check against `2013-BB003`. No Codebook frequencies, means or respondent records were copied.
+
+The source updater is registered in both metadata pipeline modes and has regression coverage for branch logic, labels and duration units. The full metadata rebuild passed and the C shard has 986 rows; E/P concepts and source mappings remain 1,429 and 6,625, and the formal E/P lock audit remains 89. All 198 Python tests pass, every static JSON parses, the JavaScript syntax check passes, and `git diff --check` is clean. This batch is ready to commit and publish. Audit: `audit/residential_history_mobility_duration_review_2011_2013_2026-10-24.md`.
+
 
 The 2011 Community Part K interviewer-observation block is now represented by four additional distinct context candidates: JK002 socioeconomic status, JK004 built-form organization, JK005 perceived crowding and JK006 disability accessibility. The questionnaire anchors for 1 and 7 are preserved; codes 2–6 are described as intermediate ordinal ratings, not assigned fabricated labels. They remain subjective community-level observations. The community crosswalk now contains 104 concepts and 198 fields; the 2011 E/P metadata co-availability count increased by 844 because four additional E concepts can pair with 211 phenotype concepts in that wave. This is a metadata count only, not sample size or association evidence. See `audit/community_interviewer_observation_review_2026-10-24.md`. The full finalize-only rebuild passed 179 Python tests, JS syntax and `git diff --check`; the 89-row `DO NOT ANALYZE` lock audit remains intact.
 
