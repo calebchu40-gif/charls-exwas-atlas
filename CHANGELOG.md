@@ -100,3 +100,4 @@ This file records project-level changes that affect reproducibility, methods, da
 - Corrected the 2011 Codebook parser to normalize spaced variable headings (for example, `da010 2 s4`) to the release variable name. This adds 32 previously omitted treatment option labels; the 2011 count is now 53, and the four-wave total is 225 field-wave label sets. No response values or frequencies were inferred.
 
 - Corrected the 2011 Codebook spaced-header match in commit `4e57ae7`; Pages run [`39876436833`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/39876436833) succeeded. The live site now contains all 53 mapped 2011 treatment-field option labels. Early-wave fields retain the unselected-storage warning and `DO NOT ANALYZE` lock; four-wave total is 225 field-wave labels.
+- Changed static atlas JSON fetches to revalidate against GitHub Pages ETags instead of bypassing the browser cache, reducing repeat downloads while preserving fresh content checks.

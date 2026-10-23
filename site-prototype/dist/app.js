@@ -1,24 +1,24 @@
 // The catalog contains public variable metadata. No CHARLS association results have been fitted.
 
 const byId = id => document.getElementById(id);
-const diseaseLoaded = fetch('./chronic_disease_concepts_v2.json?v=2', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`disease catalog HTTP ${r.status}`);return r.json()});
-const verifiedCodesLoaded = fetch('./verified_code_examples_v1.json?v=1', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`verified codes HTTP ${r.status}`);return r.json()});
-const functionalConceptsLoaded = fetch('./functional_concepts_v1.json?v=2', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`functional concepts HTTP ${r.status}`);return r.json()});
-const healthWorkLimitationsLoaded = fetch('./health_work_limitations_v1.json?v=1', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`health/work limitations HTTP ${r.status}`);return r.json()});
-const moodItemsLoaded = fetch('./mood_items_v1.json?v=2', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`mood items HTTP ${r.status}`);return r.json()});
-const cognitionItemsLoaded = fetch('./cognition_items_v1.json?v=1', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`cognition items HTTP ${r.status}`);return r.json()});
-const behaviorExposuresLoaded = fetch('./behavior_exposures_v1.json?v=3', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`behavior exposures HTTP ${r.status}`);return r.json()});
-const healthSymptomsLoaded = fetch('./health_symptoms_v1.json?v=3', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`health symptoms HTTP ${r.status}`);return r.json()});
-const foodEnvironmentLoaded = fetch('./food_environment_v1.json?v=2', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`food/environment HTTP ${r.status}`);return r.json()});
-const workExposuresLoaded = fetch('./work_exposures_v1.json?v=3', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`work exposures HTTP ${r.status}`);return r.json()});
-const communityExposuresLoaded = fetch('./community_exposures_v1.json?v=3', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`community exposures HTTP ${r.status}`);return r.json()});
-const socialExposuresLoaded = fetch('./social_exposures_v1.json?v=2', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`social exposures HTTP ${r.status}`);return r.json()});
-const healthcareAccessLoaded = fetch('./healthcare_access_v1.json?v=3', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`healthcare access HTTP ${r.status}`);return r.json()});
-const bloodBiomarkersLoaded = fetch('./blood_biomarkers_v1.json?v=3', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`blood biomarkers HTTP ${r.status}`);return r.json()});
-const candidatePairExplorerLoaded = fetch('./candidate_pair_explorer_v1.json?v=1',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`candidate pair explorer HTTP ${r.status}`);return r.json()});
-const objectiveMeasurementsLoaded = fetch('./objective_measurements_v1.json?v=1', {cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`objective measurements HTTP ${r.status}`);return r.json()});
-const lifeHistoryLoaded=fetch('./life_history_exposures_v1.json?v=1',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`Life History HTTP ${r.status}`);return r.json()});
-const catalogLoaded = fetch('./catalog.json?v=11', {cache:'no-store'}).then(r => {
+const diseaseLoaded = fetch('./chronic_disease_concepts_v2.json?v=2', {cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`disease catalog HTTP ${r.status}`);return r.json()});
+const verifiedCodesLoaded = fetch('./verified_code_examples_v1.json?v=1', {cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`verified codes HTTP ${r.status}`);return r.json()});
+const functionalConceptsLoaded = fetch('./functional_concepts_v1.json?v=2', {cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`functional concepts HTTP ${r.status}`);return r.json()});
+const healthWorkLimitationsLoaded = fetch('./health_work_limitations_v1.json?v=1', {cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`health/work limitations HTTP ${r.status}`);return r.json()});
+const moodItemsLoaded = fetch('./mood_items_v1.json?v=2', {cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`mood items HTTP ${r.status}`);return r.json()});
+const cognitionItemsLoaded = fetch('./cognition_items_v1.json?v=1', {cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`cognition items HTTP ${r.status}`);return r.json()});
+const behaviorExposuresLoaded = fetch('./behavior_exposures_v1.json?v=3', {cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`behavior exposures HTTP ${r.status}`);return r.json()});
+const healthSymptomsLoaded = fetch('./health_symptoms_v1.json?v=3', {cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`health symptoms HTTP ${r.status}`);return r.json()});
+const foodEnvironmentLoaded = fetch('./food_environment_v1.json?v=2', {cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`food/environment HTTP ${r.status}`);return r.json()});
+const workExposuresLoaded = fetch('./work_exposures_v1.json?v=3', {cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`work exposures HTTP ${r.status}`);return r.json()});
+const communityExposuresLoaded = fetch('./community_exposures_v1.json?v=3', {cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`community exposures HTTP ${r.status}`);return r.json()});
+const socialExposuresLoaded = fetch('./social_exposures_v1.json?v=2', {cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`social exposures HTTP ${r.status}`);return r.json()});
+const healthcareAccessLoaded = fetch('./healthcare_access_v1.json?v=3', {cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`healthcare access HTTP ${r.status}`);return r.json()});
+const bloodBiomarkersLoaded = fetch('./blood_biomarkers_v1.json?v=3', {cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`blood biomarkers HTTP ${r.status}`);return r.json()});
+const candidatePairExplorerLoaded = fetch('./candidate_pair_explorer_v1.json?v=1',{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`candidate pair explorer HTTP ${r.status}`);return r.json()});
+const objectiveMeasurementsLoaded = fetch('./objective_measurements_v1.json?v=1', {cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`objective measurements HTTP ${r.status}`);return r.json()});
+const lifeHistoryLoaded=fetch('./life_history_exposures_v1.json?v=1',{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`Life History HTTP ${r.status}`);return r.json()});
+const catalogLoaded = fetch('./catalog.json?v=11', {cache:'no-cache'}).then(r => {
   if (!r.ok) throw new Error(`catalog.json HTTP ${r.status}`);
   return r.json();
 });
@@ -267,7 +267,7 @@ function renderObjectiveMeasurements(items){
 objectiveMeasurementsLoaded.then(items=>{renderObjectiveMeasurements(items);['objectiveSearch','objectiveWave'].forEach(id=>byId(id).addEventListener('input',()=>renderObjectiveMeasurements(items)));document.querySelector('[data-view="objectiveMeasures"]').addEventListener('click',()=>renderObjectiveMeasurements(items))}).catch(err=>{byId('objectiveCount').textContent=`客观测量目录载入失败：${err.message}`});
 
 
-const disabilityHistoryLoaded=fetch('./disability_history_v1.json?v=1',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`disability history HTTP ${r.status}`);return r.json()});
+const disabilityHistoryLoaded=fetch('./disability_history_v1.json?v=1',{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`disability history HTTP ${r.status}`);return r.json()});
 function renderDisabilityHistory(items){
  const term=byId('disabilitySearch').value.trim().toLocaleLowerCase(),wave=byId('disabilityWave').value,matches=[];
  for(const concept of items)for(const field of concept.source_fields){if(wave&&field.wave!==wave)continue;if(term&&!`${concept.concept_id} ${concept.label} ${concept.label_en} ${field.code} ${field.field_role} ${field.source_label} ${field.value_labels} ${field.value_label_status} ${field.caveat} ${concept.caveat}`.toLocaleLowerCase().includes(term))continue;matches.push({concept,field})}
@@ -277,7 +277,7 @@ function renderDisabilityHistory(items){
 }
 disabilityHistoryLoaded.then(items=>{renderDisabilityHistory(items);['disabilitySearch','disabilityWave'].forEach(id=>byId(id).addEventListener('input',()=>renderDisabilityHistory(items)));document.querySelector('[data-view="disabilityHistory"]').addEventListener('click',()=>renderDisabilityHistory(items))}).catch(err=>{byId('disabilityCount').textContent=`残疾史目录载入失败：${err.message}`});
 
-const cancerSitesLoaded=fetch('./cancer_sites_v1.json?v=1',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`cancer sites HTTP ${r.status}`);return r.json()});
+const cancerSitesLoaded=fetch('./cancer_sites_v1.json?v=1',{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`cancer sites HTTP ${r.status}`);return r.json()});
 function renderCancerSites(items){
  const term=byId('cancerSearch').value.trim().toLocaleLowerCase(),wave=byId('cancerWave').value,matches=[];
  for(const concept of items)for(const field of concept.source_fields){if(wave&&field.wave!==wave)continue;if(term&&!`${concept.concept_id} ${concept.label} ${concept.site} ${field.code} ${field.source_label} ${field.value_labels} ${field.module} ${field.value_label_source} ${concept.caveat}`.toLocaleLowerCase().includes(term))continue;matches.push({concept,field})}
@@ -287,7 +287,7 @@ function renderCancerSites(items){
 }
 cancerSitesLoaded.then(items=>{renderCancerSites(items);['cancerSearch','cancerWave'].forEach(id=>byId(id).addEventListener('input',()=>renderCancerSites(items)));document.querySelector('[data-view="cancerSites"]').addEventListener('click',()=>renderCancerSites(items))}).catch(err=>{byId('cancerCount').textContent=`癌症部位目录载入失败：${err.message}`});
 
-const housingCatalogLoaded=fetch('./housing_catalog_v1.json?v=2',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`housing catalog HTTP ${r.status}`);return r.json()});
+const housingCatalogLoaded=fetch('./housing_catalog_v1.json?v=2',{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`housing catalog HTTP ${r.status}`);return r.json()});
 function renderHousingCatalog(items){
  const term=byId('housingSearch').value.trim().toLocaleLowerCase(),wave=byId('housingWave').value;
  const matches=items.filter(x=>(!wave||x.wave===wave)&&(!term||`${x.concept_id} ${x.concept_label} ${x.code} ${x.source_label} ${x.module} ${x.unit||''} ${x.value_labels} ${x.caveat}`.toLocaleLowerCase().includes(term)));
@@ -297,7 +297,7 @@ function renderHousingCatalog(items){
 }
 housingCatalogLoaded.then(items=>{renderHousingCatalog(items);['housingSearch','housingWave'].forEach(id=>byId(id).addEventListener('input',()=>renderHousingCatalog(items)));document.querySelector('[data-view="housingCatalog"]').addEventListener('click',()=>renderHousingCatalog(items))}).catch(err=>{byId('housingCount').textContent=`住房编码目录载入失败：${err.message}`});
 
-const householdRentalIncomeLoaded=fetch('./household_other_asset_rental_income_v1.json?v=1',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`household rental income HTTP ${r.status}`);return r.json()});
+const householdRentalIncomeLoaded=fetch('./household_other_asset_rental_income_v1.json?v=1',{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`household rental income HTTP ${r.status}`);return r.json()});
 function renderHouseholdRentalIncome(items){
  const term=byId('rentalIncomeSearch').value.trim().toLocaleLowerCase(),wave=byId('rentalIncomeWave').value,matches=[];
  for(const concept of items)for(const field of concept.source_fields){if(wave&&field.wave!==wave)continue;if(term&&!`${concept.concept_id} ${concept.label} ${field.code} ${field.source_label} ${field.value_labels} ${field.unit} ${field.mapping_status} ${field.source_document} ${concept.caveat}`.toLocaleLowerCase().includes(term))continue;matches.push({concept,field})}
@@ -307,7 +307,7 @@ function renderHouseholdRentalIncome(items){
 }
 householdRentalIncomeLoaded.then(items=>{renderHouseholdRentalIncome(items);['rentalIncomeSearch','rentalIncomeWave'].forEach(id=>byId(id).addEventListener('input',()=>renderHouseholdRentalIncome(items)));document.querySelector('[data-view="householdRentalIncome"]').addEventListener('click',()=>renderHouseholdRentalIncome(items))}).catch(err=>{byId('rentalIncomeCount').textContent=`家庭资产租赁收入目录载入失败：${err.message}`});
 
-const householdCovidEconomicsLoaded=fetch('./household_covid_economic_v1.json?v=1',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`household COVID economics HTTP ${r.status}`);return r.json()});
+const householdCovidEconomicsLoaded=fetch('./household_covid_economic_v1.json?v=1',{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`household COVID economics HTTP ${r.status}`);return r.json()});
 function renderHouseholdCovidEconomics(items){
  const term=byId('covidEconomicSearch').value.trim().toLocaleLowerCase(),wave=byId('covidEconomicWave').value,matches=[];
  for(const concept of items)for(const field of concept.source_fields){if(wave&&field.wave!==wave)continue;if(term&&!`${concept.concept_id} ${concept.label} ${field.code} ${field.source_label} ${field.value_labels} ${field.unit} ${field.mapping_status} ${field.source_document} ${concept.caveat}`.toLocaleLowerCase().includes(term))continue;matches.push({concept,field})}
