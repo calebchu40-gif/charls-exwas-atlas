@@ -3012,9 +3012,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "Questionnaire measurement: planned age to stop all income-related work, 0-120 years; 0 means plans to continue while physically able",
+        "value_label_status": "official questionnaire measurement/range note; continuous or count response, not categorical answer labels; route and special-value handling require release-level review",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -3977,9 +3977,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "Questionnaire options (numeric answer codes unverified): Employed; self-employed; unpaid family business; farming",
+        "value_label_status": "official questionnaire option wording only; released numeric value codes not verified; DO NOT ANALYZE until reconciled to authorized release",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -4037,9 +4037,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "Questionnaire categories (release coding unverified): 1=This village/community; 2=Other village/community in this county/city; 3=Another county/city in this province; 4=Another province; interviewer instructed 0 when no fixed address",
+        "value_label_status": "numbered official questionnaire categories; released-data value coding and no-fixed-address storage unverified; DO NOT ANALYZE pending reconciliation",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -4097,9 +4097,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "Questionnaire answers (release coding unverified): Yes; No",
+        "value_label_status": "official questionnaire answer wording; released numeric value codes not verified; DO NOT ANALYZE until reconciled to authorized release",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -4157,9 +4157,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "Questionnaire options (numeric answer codes unverified): Regular wage worker; contract worker; temporary wage worker; casual wage worker",
+        "value_label_status": "official questionnaire option wording only; released numeric value codes not verified; DO NOT ANALYZE until reconciled to authorized release",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -5783,9 +5783,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "Questionnaire options (numeric answer codes unverified): I was laid-off but the employment contract was not terminated; on leave from this employer; kept my position but received no pay; a friend in the work unit helped; other",
+        "value_label_status": "official questionnaire option wording only; released numeric value codes not verified; DO NOT ANALYZE until reconciled to authorized release",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -5898,9 +5898,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "Questionnaire measurement: work unit's total contribution, Yuan per month; no categorical response menu",
+        "value_label_status": "official questionnaire measurement/range note; continuous or count response, not categorical answer labels; route and special-value handling require release-level review",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -6076,9 +6076,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "Questionnaire options (numeric answer codes unverified): I know my own and the work unit's amounts; I know my own amount but not the work unit's; I know neither amount",
+        "value_label_status": "official questionnaire option wording only; released numeric value codes not verified; DO NOT ANALYZE until reconciled to authorized release",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -7545,9 +7545,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official 2011 questionnaire field located; extracted codebook item not found; candidate; preserve questionnaire route and range",
         "note": "official 2011/2013/2015/2018 FL008 questionnaire located; asked for non-farm work types FL001=1/2/3, not current hours; range 0–168. The extracted 2011 codebook has no FL008 entry; route and range use the official questionnaire. No codebook frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "Questionnaire measurement: usual hours worked per week, 0-168; soft verification prompt above 80 hours; employed route only",
+        "value_label_status": "official questionnaire measurement/range note; continuous or count response, not categorical answer labels; route and special-value handling require release-level review",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -7605,9 +7605,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official 2011 questionnaire field located; extracted codebook item not found; candidate; preserve questionnaire route and range",
         "note": "official 2011/2013/2015/2018 FL009 questionnaire located; conditional on employed work FL001=1; 2011/2013/2015 wording includes subsidies and 2018 allowance; 0=no net income and 999997=deficit per questionnaire. The extracted 2011 codebook has no FL009 entry; bracket prompts remain separate. No codebook frequencies copied.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "Questionnaire measurement: monthly wages, bonuses and subsidies before leaving the job, Yuan; interviewer instructed 0 for no net income and 999997 for running a deficit",
+        "value_label_status": "official questionnaire measurement/range note; continuous or count response, not categorical answer labels; route and special-value handling require release-level review",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -7929,9 +7929,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011-2015 FL questionnaire located; FL021 labels are 1=Yes, 2=No; FL022_1 is a conditional yuan amount after Yes; extracted 2011 codebook lacks this value distribution. 2013/2015 official codebooks reviewed; frequencies omitted.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "Questionnaire measurement: job-exit compensation amount, Yuan; asked on the conditional compensation route; refusal/don't-remember bracket follow-up",
+        "value_label_status": "official questionnaire measurement/range note; continuous or count response, not categorical answer labels; route and special-value handling require release-level review",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -7976,9 +7976,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011-2015 FL questionnaire located; FL021 labels are 1=Yes, 2=No; FL022_1 is a conditional yuan amount after Yes; extracted 2011 codebook lacks this value distribution. 2013/2015 official codebooks reviewed; frequencies omitted.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "Questionnaire measurement: years of work used for compensation, 0-120 years; asked on the conditional compensation route",
+        "value_label_status": "official questionnaire measurement/range note; continuous or count response, not categorical answer labels; route and special-value handling require release-level review",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -12611,9 +12611,9 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
-        "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_labels": "Questionnaire measurement: grandchildren below age 6 at retirement, 0-50 persons; interviewer instructed 0 if none",
+        "value_label_status": "official questionnaire measurement/range note; continuous or count response, not categorical answer labels; route and special-value handling require release-level review",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",

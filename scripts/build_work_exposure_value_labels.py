@@ -341,6 +341,50 @@ def main():
         out.at[idx, "value_label_status"] = "questionnaire/Codebook item-identity conflict; DO NOT ANALYZE until official source identity and released-data coding are reconciled"
         questionnaire = "CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt" if wave == "2011" else "CHARLS_2020_Questionnaire_English_extracted.txt"
         out.at[idx, "value_label_source"] = f"sources_official/{questionnaire}; sources_official/CHARLS_{wave}_Codebook_extracted.txt"
+    # The 2011 English questionnaire documents wording/routes for several
+    # work-module fields whose released numeric coding is absent from the
+    # extracted Codebook. Keep option wording distinct from verified values.
+    questionnaire_2011 = "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
+    questionnaire_only_options = {
+        "fi004": "I was laid-off but the employment contract was not terminated; on leave from this employer; kept my position but received no pay; a friend in the work unit helped; other",
+        "fi008": "I know my own and the work unit's amounts; I know my own amount but not the work unit's; I know neither amount",
+        "fl001": "Employed; self-employed; unpaid family business; farming",
+        "fl013": "Regular wage worker; contract worker; temporary wage worker; casual wage worker",
+    }
+    for code, menu in questionnaire_only_options.items():
+        mask = out["wave"].astype(str).eq("2011") & out["code"].str.lower().eq(code)
+        for idx in out.index[mask]:
+            out.at[idx, "value_labels"] = f"Questionnaire options (numeric answer codes unverified): {menu}"
+            out.at[idx, "value_label_status"] = "official questionnaire option wording only; released numeric value codes not verified; DO NOT ANALYZE until reconciled to authorized release"
+            out.at[idx, "value_label_source"] = questionnaire_2011
+    fl007_2011 = out["wave"].astype(str).eq("2011") & out["code"].str.lower().eq("fl007")
+    for idx in out.index[fl007_2011]:
+        out.at[idx, "value_labels"] = "Questionnaire answers (release coding unverified): Yes; No"
+        out.at[idx, "value_label_status"] = "official questionnaire answer wording; released numeric value codes not verified; DO NOT ANALYZE until reconciled to authorized release"
+        out.at[idx, "value_label_source"] = questionnaire_2011
+    # Unlike the above unnumbered choices, the questionnaire explicitly
+    # numbers the workplace-location answers. The released coding still needs
+    # confirmation; zero is an interviewer instruction for no fixed address.
+    fl004_2011 = out["wave"].astype(str).eq("2011") & out["code"].str.lower().eq("fl004")
+    for idx in out.index[fl004_2011]:
+        out.at[idx, "value_labels"] = "Questionnaire categories (release coding unverified): 1=This village/community; 2=Other village/community in this county/city; 3=Another county/city in this province; 4=Another province; interviewer instructed 0 when no fixed address"
+        out.at[idx, "value_label_status"] = "numbered official questionnaire categories; released-data value coding and no-fixed-address storage unverified; DO NOT ANALYZE pending reconciliation"
+        out.at[idx, "value_label_source"] = questionnaire_2011
+    questionnaire_measurements = {
+        "fi009": "Questionnaire measurement: work unit's total contribution, Yuan per month; no categorical response menu",
+        "fi012": "Questionnaire measurement: planned age to stop all income-related work, 0-120 years; 0 means plans to continue while physically able",
+        "fl008": "Questionnaire measurement: usual hours worked per week, 0-168; soft verification prompt above 80 hours; employed route only",
+        "fl009": "Questionnaire measurement: monthly wages, bonuses and subsidies before leaving the job, Yuan; interviewer instructed 0 for no net income and 999997 for running a deficit",
+        "fl022_1": "Questionnaire measurement: job-exit compensation amount, Yuan; asked on the conditional compensation route; refusal/don't-remember bracket follow-up",
+        "fl022_2": "Questionnaire measurement: years of work used for compensation, 0-120 years; asked on the conditional compensation route",
+        "fm051": "Questionnaire measurement: grandchildren below age 6 at retirement, 0-50 persons; interviewer instructed 0 if none",
+    }
+    for code, note in questionnaire_measurements.items():
+        mask = out["wave"].astype(str).eq("2011") & out["code"].str.lower().eq(code)
+        for idx in out.index[mask]:
+            out.at[idx, "value_labels"] = note
+            out.at[idx, "value_label_status"] = "official questionnaire measurement/range note; continuous or count response, not categorical answer labels; route and special-value handling require release-level review"
+            out.at[idx, "value_label_source"] = questionnaire_2011
     out.to_csv(AUDIT / "work_exposure_value_labels_v1.csv", index=False, encoding="utf-8-sig")
 
     json_path = ROOT / "site-prototype" / "dist" / "work_exposures_v1.json"

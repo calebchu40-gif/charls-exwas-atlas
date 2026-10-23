@@ -3,7 +3,7 @@
 更新：2026-10-24。由`scripts/summarize_value_label_coverage.py`从当前字段目录和覆盖CSV自动生成。
 
 - E/P字段—角色—类别目录行：6,642；不同波次—字段码：6,561。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
-- 有非空官方/已审标签文本的E/P目录行：3,330；不同波次—字段码：3,304。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
+- 有非空官方/已审标签文本的E/P目录行：3,343；不同波次—字段码：3,317。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
 - 明确标为`conflict`的E/P字段码：0；详情按主目录波次和变量码检索。
 - 问卷/Codebook编码差异尚未调和并锁定`DO NOT ANALYZE`的E/P字段：2011 `fb010`。此项独立于上面的精确`conflict`标签计数。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -20,7 +20,7 @@
 |e|family and intergenerational context|6|6|1|
 |e|food and household environment|160|87|1|
 |e|housing and built environment|481|34|2|
-|e|social determinants|2,132|994|20|
+|e|social determinants|2,132|1,007|20|
 |e|social protection|1,331|452|30|
 |p|anthropometric|15|0|1|
 |p|biochemistry|32|0|1|
@@ -78,7 +78,6 @@
 |official 2013 Codebook response categories transcribed; frequencies omitted; prior-interview recall route retained; release coding and eligible denominator require validation|14|
 |official 2018 Codebook response categories transcribed; frequencies omitted; prior-interview recall route retained; release coding and eligible denominator require validation|14|
 |official 2015 Codebook response categories transcribed; frequencies omitted; prior-interview recall route retained; release coding and eligible denominator require validation|14|
-|official codebook category labels not located|13|
 |candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data|13|
 |official 2020 questionnaire and Codebook identify continuous household expenditure; no discrete response categories|13|
 |代码本逐字段值标签已核|12|
@@ -94,6 +93,7 @@
 |official questionnaire/Codebook field reviewed; continuous amount/count, no categorical response labels; preserve unit and route|9|
 |continuous count measure; Codebook identifies 15-second animal-fluency intervals; summary statistics are not valid-range evidence|8|
 |official 2011 questionnaire/Codebook threshold categories transcribed; no response frequencies shown|8|
+|official questionnaire measurement/range note; continuous or count response, not categorical answer labels; route and special-value handling require release-level review|7|
 |continuous count, not a categorical code; daily cigarette count; 2020 current and pre-quit values are separate|6|
 |official 2020 questionnaire CAPI formula manually transcribed; descriptive codebook frequencies omitted; generated-field interpretation requires route validation|6|
 |official questionnaire categories; frequencies omitted; FC020 multiple-job main-work route or FC021 single nonfarm-job route|6|
@@ -108,6 +108,7 @@
 |official Codebook response categories reviewed; frequencies and percentages omitted|4|
 |full questionnaire menu transcribed without frequencies; 2011 codebook omits FL014 and later codebook menus may omit unobserved categories; not-currently-working prior-job route|4|
 |local paired endpoint storage and FM011=3 route checked; Codebook extreme upper value retained; do not derive amount|4|
+|official questionnaire option wording only; released numeric value codes not verified; DO NOT ANALYZE until reconciled to authorized release|4|
 |official 2011 Codebook response categories transcribed; frequencies omitted; self-awareness route retained; release coding and eligible denominator require validation|3|
 |official questionnaire confirms DA017 option 14=Testicle; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics|3|
 |official 2020 Codebook response categories transcribed; frequencies omitted; self-awareness route retained; release coding and eligible denominator require validation|3|
@@ -127,7 +128,7 @@
 |official questionnaire/codebook categories; frequencies omitted; current employer benefit route|2|
 |wave-specific official questionnaire categories transcribed without frequencies; retrospective first-workplace location|2|
 |local string endpoint pairs checked; Codebook extreme upper value present; route/unit and sentinel semantics unresolved|2|
-|occupation classification code; codebook frequency distribution omitted; classification definitions are not response labels|2|
+|occupation classification code; Codebook frequency distribution omitted; classification definitions are not response labels; unpaid family-business route retained|2|
 |official questionnaire/Codebook identify a conditional bracket endpoint; Codebook provides numeric summaries but no discrete response categories|2|
 |official 2018 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|
 |official questionnaire/Codebook identify a conditional bracket endpoint; Codebook explicitly says string; no discrete response categories|2|
@@ -149,5 +150,7 @@
 |official questionnaire identifies caregiver option; Codebook reports no observations; unselected coding and eligible denominator unresolved; no response-value labels assigned|1|
 |continuous amount; Codebook range available; inspect zero and special values|1|
 |all observed codes verified against official Codebook; unobserved commercial-insurance option left unmapped|1|
+|numbered official questionnaire categories; released-data value coding and no-fixed-address storage unverified; DO NOT ANALYZE pending reconciliation|1|
+|official questionnaire answer wording; released numeric value codes not verified; DO NOT ANALYZE until reconciled to authorized release|1|
 |official questionnaire categories; frequencies omitted; conditional agricultural-wage/other-job temporary-absence route|1|
 |2020 official questionnaire and Codebook ordinal categories reviewed; frequencies excluded; interpretation depends on the respondent-specific target age|1|

@@ -1008,6 +1008,14 @@ def main() -> None:
     add_reviewed_labels("life_insurance_exposure_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire/codebook response categories; frequencies omitted", re.I))
     add_reviewed_labels("pension_subsidy_delivery_2015_crosswalk_v1.csv", "wave", "code", "value_labels", "mapping_status", "source_document", re.compile(r"official questionnaire and CodeBook option label matched|option 3 conflict marked DO NOT ANALYZE", re.I))
     add_reviewed_labels("work_exposure_value_labels_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official .*response labels|official questionnaire response categories; codebook frequencies omitted|official selected-option label; checkbox slot, absence is not a negative response|official questionnaire checkbox menu and codebook slot coding; frequencies omitted; absence is not a negative response outside the routed checklist|official questionnaire categories; frequencies omitted; FC020 multiple-job main-work route or FC021 single nonfarm-job route|full questionnaire menu transcribed without frequencies; 2011 codebook omits FL014 and later codebook menus may omit unobserved categories; not-currently-working prior-job route|official questionnaire categories; frequencies omitted; 2011 question wording controls its scope|full official questionnaire response menu transcribed without frequencies; current employer firm route|official questionnaire response categories transcribed without frequencies; continuity of the specific prior-wave work activity|official 2020 questionnaire response categories; frequencies omitted; conditional work-history transition route|official questionnaire categories transcribed without frequencies; preserve three-category employment/family-business status|official questionnaire/codebook categories; frequencies omitted; current employer benefit route|wave-specific official questionnaire categories transcribed without frequencies; retrospective first-workplace location|official questionnaire categories; frequencies omitted; conditional agricultural-wage/other-job temporary-absence route|official 2020 questionnaire CAPI formula manually transcribed; descriptive codebook frequencies omitted; generated-field interpretation requires route validation|questionnaire/Codebook item-identity conflict; DO NOT ANALYZE until official source identity and released-data coding are reconciled|DO NOT ANALYZE; official 2011 baseline questionnaire option label|official 2020 questionnaire response categories; frequencies omitted; conditional prior-status correction route; DO NOT ANALYZE pending route and released-data reconciliation", re.I))
+    # Questionnaire-only 2011 work entries use explicit review statuses that
+    # preserve the distinction between documented wording/ranges and verified
+    # released-data value codes.
+    add_reviewed_labels(
+        "work_exposure_value_labels_v1.csv", "wave", "code", "value_labels",
+        "value_label_status", "value_label_source",
+        re.compile(r"official questionnaire (?:option wording only|answer wording|answers \(release coding unverified\)|measurement/range note)|numbered official questionnaire categories; released-data value coding", re.I),
+    )
     add_reviewed_status_without_value_label(
         "work_exposure_value_labels_v1.csv", "wave", "code", "value_label_status", "value_label_source",
         re.compile(
@@ -1414,6 +1422,25 @@ def main() -> None:
                 continue
             selected = out["Source.Wave"].astype(str).eq("2011") & out["Variable.Name"].str.lower().eq(item["code"].lower())
             out.loc[selected, "Value.Label.Review"] = item.get("value_label_status", "DO NOT ANALYZE; checkbox coding unresolved")
+            out.loc[selected, "Value.Label.Source"] = item.get("value_label_source", "")
+
+    # Keep the audited wording and uncertainty visible in the public row for
+    # the 2011 questionnaire-only work items. Generic "officially reviewed"
+    # loses the important distinction between questionnaire wording and
+    # released-data codes, while FL007 may have no extractable Codebook row.
+    work_review_codes = {
+        "fi004", "fi008", "fi009", "fi012", "fl001", "fl004", "fl007",
+        "fl008", "fl009", "fl013", "fl022_1", "fl022_2", "fm051",
+    }
+    if fl020_status_path.exists():
+        work_labels = pd.read_csv(fl020_status_path, dtype=str, encoding="utf-8-sig").fillna("")
+        for item in work_labels.to_dict(orient="records"):
+            code = str(item.get("code", "")).lower()
+            if item.get("wave") != "2011" or code not in work_review_codes:
+                continue
+            selected = out["Source.Wave"].astype(str).eq("2011") & out["Variable.Name"].str.lower().eq(code)
+            out.loc[selected, "Value.Labels"] = item.get("value_labels", "")
+            out.loc[selected, "Value.Label.Review"] = item.get("value_label_status", "")
             out.loc[selected, "Value.Label.Source"] = item.get("value_label_source", "")
     covid_status_path = root / "audit" / "household_covid_economic_crosswalk_v1.csv"
     if covid_status_path.exists():

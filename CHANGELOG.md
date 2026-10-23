@@ -4,6 +4,7 @@
 
 - Reconciled 2011–2018 internet activity/device fields with official questionnaires and Codebooks, separating the legacy DA056 social-activity checklist from the dedicated 2020 DA040 internet screen. Reclassified 23 existing wave-field mappings in place, preserved unresolved older checkbox storage, and prevented duplicate E rows.
 - Normalized work Codebook identifiers that the 2011 PDF extraction renders with spaces instead of underscores. Numeric/date fields now surface verified field presence without invented answer categories, and occupational/industry classification codes are explicitly marked as lookup codes rather than numeric scales. Codebook frequencies remain excluded.
+- Reviewed 13 remaining 2011 work-module fields against the official questionnaire. Added questionnaire-only option wording where categories are listed, retained numeric release-code uncertainty, and added units, ranges, routes and interviewer instructions for continuous/count fields including 0/999997 handling notes. No questionnaire option order was treated as verified released-data coding.
 - Updated current-work and progress notes, regenerated the public catalog, and added regression coverage; all 159 Python tests pass.
 
 ## 2026-10-23
