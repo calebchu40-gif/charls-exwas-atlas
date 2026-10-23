@@ -1160,7 +1160,10 @@
         "module": "housing_characteristics",
         "source_label": "Which Story is this Building on",
         "value_labels": "",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+        "note": "Questionnaire asks which story the residence is on. Retain as an ordinal/numeric floor position; do not infer a harmonized height dose from Codebook extrema. Verify authorized-release special values, skip routes, residence/respondent linkage and missingness before modeling. Questionnaire hard/soft checks do not establish valid analytic ranges. Cross-wave measurement equivalence is unapproved.",
+        "unit": "storeys",
+        "value_label_status": "official 2011 questionnaire identifies a numeric building floor number; continuous/ordinal measure without discrete value labels",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt"
       },
       {
         "wave": "2013",
@@ -1188,7 +1191,10 @@
         "module": "Housing_Characteristics",
         "source_label": "Which story is this building on?",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Questionnaire asks which story the residence is on. Retain as an ordinal/numeric floor position; do not infer a harmonized height dose from Codebook extrema. Verify authorized-release special values, skip routes, residence/respondent linkage and missingness before modeling. Questionnaire hard/soft checks do not establish valid analytic ranges. Cross-wave measurement equivalence is unapproved.",
+        "unit": "storeys",
+        "value_label_status": "official 2013 questionnaire identifies a numeric building floor number; continuous/ordinal measure without discrete value labels",
+        "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt"
       },
       {
         "wave": "2015",
@@ -1216,7 +1222,10 @@
         "module": "Housing_Characteristics",
         "source_label": "Which Story Is This Building on?",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Questionnaire asks which story the residence is on. Retain as an ordinal/numeric floor position; do not infer a harmonized height dose from Codebook extrema. Verify authorized-release special values, skip routes, residence/respondent linkage and missingness before modeling. Questionnaire hard/soft checks do not establish valid analytic ranges. Cross-wave measurement equivalence is unapproved.",
+        "unit": "storeys",
+        "value_label_status": "official 2015 questionnaire identifies a numeric building floor number; continuous/ordinal measure without discrete value labels",
+        "value_label_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt"
       },
       {
         "wave": "2018",
@@ -1244,7 +1253,10 @@
         "module": "Housing",
         "source_label": "Which Story",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Questionnaire asks which story the residence is on. Retain as an ordinal/numeric floor position; do not infer a harmonized height dose from Codebook extrema. Verify authorized-release special values, skip routes, residence/respondent linkage and missingness before modeling. Questionnaire hard/soft checks do not establish valid analytic ranges. Cross-wave measurement equivalence is unapproved.",
+        "unit": "storeys",
+        "value_label_status": "official 2018 questionnaire identifies a numeric building floor number; continuous/ordinal measure without discrete value labels",
+        "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt"
       },
       {
         "wave": "2020",
@@ -1272,7 +1284,10 @@
         "module": "Household_Income",
         "source_label": "Which Storey",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "2020 records whether the residence is on the ground/above-ground route or underground; the numeric floor count is in the routed child field, so retain selector and count separately. Verify authorized-release special values, skip routes, residence/respondent linkage and missingness before modeling. Questionnaire hard/soft checks do not establish valid analytic ranges. Cross-wave measurement equivalence is unapproved.",
+        "unit": "",
+        "value_label_status": "official 2020 questionnaire identifies a wave-specific categorical above-ground versus underground residence selector; preserve alongside routed count fields",
+        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
       },
       {
         "wave": "2020",
@@ -1280,7 +1295,10 @@
         "module": "Household_Income",
         "source_label": "Which Storey on the Ground",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "2020 records the above-ground storey in a separate numeric field; keep distinct from underground floor count. Verify authorized-release special values, skip routes, residence/respondent linkage and missingness before modeling. Questionnaire hard/soft checks do not establish valid analytic ranges. Cross-wave measurement equivalence is unapproved.",
+        "unit": "storeys",
+        "value_label_status": "official 2020 questionnaire identifies a numeric above-ground floor number; continuous/ordinal measure without discrete value labels",
+        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
       },
       {
         "wave": "2020",
@@ -1288,7 +1306,10 @@
         "module": "Household_Income",
         "source_label": "Which Storey Underground",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "2020 records the underground storey in a separate numeric field; retain its route and do not combine as a signed floor without an explicit rule. Verify authorized-release special values, skip routes, residence/respondent linkage and missingness before modeling. Questionnaire hard/soft checks do not establish valid analytic ranges. Cross-wave measurement equivalence is unapproved.",
+        "unit": "storeys",
+        "value_label_status": "official 2020 questionnaire identifies a numeric underground floor number; continuous/ordinal measure without discrete value labels",
+        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
       }
     ]
   },
@@ -1460,7 +1481,10 @@
         "module": "Household_Income",
         "source_label": "Steps to Main Entrance of the House",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Counts steps to the household flat's main entrance; this is an access-barrier measure, not a respondent mobility test. Soft-check prompts are not cutoffs. Verify authorized-release special values, skip routes, residence/respondent linkage and missingness before modeling. Questionnaire hard/soft checks do not establish valid analytic ranges. Cross-wave measurement equivalence is unapproved.",
+        "unit": "steps",
+        "value_label_status": "official 2020 questionnaire identifies a numeric steps to main entrance; continuous/ordinal measure without discrete value labels",
+        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
       }
     ]
   },

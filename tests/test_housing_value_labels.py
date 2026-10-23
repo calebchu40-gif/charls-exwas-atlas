@@ -41,7 +41,8 @@ class HousingValueLabelTests(unittest.TestCase):
         self.assertNotIn(("2020", "i010"), lookup)
         catalog_row = next(row for row in self.catalog if row["Source.Wave"] == "2020" and row["Variable.Name"].lower() == "i010")
         self.assertEqual(catalog_row["Value.Labels"], "")
-        self.assertEqual(catalog_row["Harmonization.Status"], "Number/category of steps to entrance; may be top-coded or grouped and is not an individual stair-climbing performance test.")
+        self.assertIn("access-barrier measure", catalog_row["Harmonization.Status"])
+        self.assertIn("not a respondent mobility test", catalog_row["Harmonization.Status"])
 
     def test_household_connectivity_and_air_cleaner_keep_wave_specific_codes(self):
         lookup = {(row["wave"], row["code"]): row for row in self.labels}
@@ -239,6 +240,27 @@ class HousingValueLabelTests(unittest.TestCase):
             self.assertEqual(catalog[(wave, count)]["Unit"], "persons")
             self.assertIn("excluding guests", catalog[(wave, count)]["Harmonization.Status"])
             self.assertEqual(mapping[(wave, count)]["unit"], "persons")
+
+    def test_building_floor_and_entrance_access_measures_are_wave_specific(self):
+        catalog = {(r["Source.Wave"], r["Variable.Name"].lower()): r for r in self.catalog}
+        fields = {(f["wave"], f["code"].lower()): f for concept in self.food_site for f in concept["source_fields"]}
+        for wave, code, unit, phrase in [
+            ("2011", "i008", "storeys", "ordinal/numeric floor position"),
+            ("2013", "i008", "storeys", "ordinal/numeric floor position"),
+            ("2015", "i008", "storeys", "ordinal/numeric floor position"),
+            ("2018", "i008", "storeys", "ordinal/numeric floor position"),
+            ("2020", "i006_1", "storeys", "above-ground storey"),
+            ("2020", "i006_2", "storeys", "underground storey"),
+            ("2020", "i010", "steps", "access-barrier measure"),
+        ]:
+            row = catalog[(wave, code)]
+            self.assertEqual(row["Unit"], unit)
+            self.assertEqual(row["Value.Labels"], "")
+            self.assertIn(phrase, row["Harmonization.Status"])
+            self.assertEqual(fields[(wave, code)]["unit"], unit)
+        selector = catalog[("2020", "i006")]
+        self.assertEqual(selector["Value.Labels"], "1=On the ground; 2=Underground")
+        self.assertEqual(selector["Unit"], "")
         self.assertIn("excludes banquets/weddings", catalog[("2020", "gf006")]["Harmonization.Status"])
         self.assertIn("excludes banquets/weddings", catalog[("2018", "ge007_w4")]["Harmonization.Status"])
 
