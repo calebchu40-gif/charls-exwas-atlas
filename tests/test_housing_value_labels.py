@@ -207,6 +207,24 @@ class HousingValueLabelTests(unittest.TestCase):
             self.assertIn("authorized release", row["Harmonization.Status"])
         self.assertIn("not the building construction year", catalog[("2020", "i002")]["Harmonization.Status"])
 
+    def test_weekly_food_spending_units_keep_household_scope_and_wave_exclusions(self):
+        expected = {
+            ("2011", "ge006"), ("2013", "ge006"), ("2015", "ge006"),
+            ("2018", "ge006_w4"), ("2020", "gf006"),
+            ("2011", "ge007"), ("2013", "ge007"), ("2015", "ge007"),
+            ("2018", "ge007_w4"), ("2020", "gf009"),
+        }
+        catalog = {(r["Source.Wave"], r["Variable.Name"].lower()): r for r in self.catalog}
+        for wave, code in expected:
+            row = catalog[(wave, code)]
+            self.assertEqual(row["Concept.Unit.Candidates"], "Yuan/week")
+            self.assertEqual(row["Value.Labels"], "")
+            self.assertIn("not individual dietary intake", row["Harmonization.Status"])
+            self.assertIn("cross-wave equivalence", row["Harmonization.Status"])
+        self.assertIn("includes purchased and own-produced food", catalog[("2011", "ge006")]["Harmonization.Status"])
+        self.assertIn("excludes banquets/weddings", catalog[("2020", "gf006")]["Harmonization.Status"])
+        self.assertIn("excludes banquets/weddings", catalog[("2018", "ge007_w4")]["Harmonization.Status"])
+
 
 if __name__ == "__main__":
     unittest.main()
