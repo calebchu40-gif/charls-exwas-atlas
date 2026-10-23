@@ -51,3 +51,6 @@ Commit `4e57ae7` corrected the 2011 treatment-code parser for official Codebook 
 ## 2026-10-23 survey-design methods disclosure
 
 The homepage methods section now summarizes wave-specific weighting/sample-flag constraints and links to `audit/survey_design_weight_review_v1.md`. It explicitly marks the 2013 prepared-table flag loss as a rebuild blocker, treats `communityID` as a PSU candidate pending exact-release matching, and states that no project-verified variance-stratum ID or replicate weights are currently available. It does not present geography as a substitute stratum or claim complete design-adjusted inference. A regression test guards this disclosure.
+
+
+Commit `a47c401` added the survey-design disclosure. GitHub Actions run [`39876991302`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/39876991302) completed successfully in 19 seconds. The live homepage returned HTTP 200 and includes the new card and audit link.

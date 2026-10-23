@@ -12,6 +12,12 @@ class CatalogReviewStatusTests(unittest.TestCase):
         cls.catalog = json.loads((ROOT / "site-prototype/dist/catalog.json").read_text(encoding="utf-8"))
         cls.work = json.loads((ROOT / "site-prototype/dist/work_exposures_v1.json").read_text(encoding="utf-8"))
 
+    def test_metadata_navigation_label_matches_the_view_content(self):
+        html = (ROOT / "site-prototype/dist/index.html").read_text(encoding="utf-8")
+        self.assertIn('data-view="metadata">测量与设计元数据</button>', html)
+        self.assertIn('id="metadata"', html)
+        self.assertIn("测量与设计元数据（C）", html)
+
     def test_public_methods_page_discloses_wave_specific_survey_design_gates(self):
         html = (ROOT / "site-prototype/dist/index.html").read_text(encoding="utf-8")
         card = html[html.index("抽样、权重与方差设计状态"):html.index("</section>", html.index("抽样、权重与方差设计状态"))]
