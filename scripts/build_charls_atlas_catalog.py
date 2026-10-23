@@ -590,7 +590,7 @@ def main() -> None:
                              "e", "mapping_status", ("source_item", "construct", "unit", "value_semantics", "caveat"))
     append_concept_crosswalk("household_economic_exposure_mapping_v1.csv", "wave", "code", "concept_id", "source_label", "module",
                              "social determinants", "household expenditure and material resources",
-                             "e", "mapping_status", ("construct", "reference_period", "caveat"))
+                             "e", "mapping_status", ("construct", "reference_period", "unit", "value_label_status", "value_label_source", "value_semantics", "caveat"))
     append_concept_crosswalk("household_renovation_expenditure_crosswalk_v1.csv", "wave", "code", "concept_id", "source_label", "module",
                              "social determinants", "income, wealth, and material resources", "e", "mapping_status", ("unit", "caveat"))
     append_concept_crosswalk("health_anchoring_vignette_metadata_crosswalk_v1.csv", "wave", "code", "concept_id", "source_label", "module",
@@ -890,7 +890,7 @@ def main() -> None:
 
     official_review = re.compile(r"official codebook (?:item )?response labels reviewed", re.I)
     add_reviewed_labels("behavior_exposure_variable_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official codebook response labels reviewed|official selector code reviewed;", re.I))
-    add_reviewed_labels("personal_income_exposure_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire/codebook response labels reviewed|official questionnaire response categories transcribed|official questionnaire response categories; frequencies omitted|official Codebook response labels reviewed; frequencies omitted", re.I))
+    add_reviewed_labels("personal_income_exposure_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire/codebook response labels reviewed|official questionnaire response categories transcribed|official questionnaire response categories; frequencies omitted|official Codebook response labels reviewed; frequencies omitted|official questionnaire and Codebook response labels reviewed; frequencies omitted; COVID period and route retained|official questionnaire and Codebook response labels reviewed; frequencies omitted; COVID period and route retained", re.I))
     add_reviewed_status_without_value_label(
         "personal_income_exposure_mapping_v1.csv", "wave", "code", "value_label_status", "value_label_source",
         re.compile(r"official Codebook identifies affirmative inheritance-source option; unselected storage and denominator unresolved; no response-value labels assigned|official questionnaire/Codebook field reviewed; continuous amount/count, no categorical response labels; preserve unit and route", re.I),
@@ -906,19 +906,25 @@ def main() -> None:
     # Keep route/conditional-option caveats in the mapping and analysis locks;
     # importing a display label does not make these fields analysis-ready.
     add_reviewed_labels("chronic_disease_ancillary_variable_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official (?:2011|2020) Codebook response categories transcribed; frequencies omitted; self-awareness route retained; release coding and eligible denominator require validation|official 2020 questionnaire/Codebook response labels reviewed; prior-wave route retained; frequencies excluded|official codebook response labels; prior-wave self-awareness/preload route retained; frequencies excluded|official wave codebook category verified; selected option only; frequencies excluded|official 2018 Codebook response categories transcribed; frequencies omitted|official (?:2013|2015|2018) Codebook response categories transcribed; frequencies omitted; (?:disease-specific|prior-interview recall) route retained; release coding and eligible denominator require validation|official 2011 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|official 2013 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|official 2015 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE", re.I))
+    add_reviewed_labels("household_other_asset_rental_income_status_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire and Codebook response labels reviewed; frequencies omitted; household route and denominator require validation", re.I))
+    add_reviewed_status_without_value_label(
+        "interwave_other_job_crosswalk_v1.csv", "wave", "code", "value_label_status", "value_label_source",
+        re.compile(r"official Codebook field located; continuous job count; no categorical response labels; interwave route retained", re.I),
+    )
     add_reviewed_labels("pension_value_label_review_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", official_review)
     add_reviewed_labels("pension_codebook_value_labels_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official answer labels transcribed; frequencies omitted", re.I))
     add_reviewed_labels("pension_participation_crosswalk_v1.csv", "wave", "code", "value_labels", "mapping_status", "official_source", re.compile(r"official 2011 questionnaire and codebook reviewed; candidate mapping", re.I))
     add_reviewed_labels("pension_eligibility_2015_crosswalk_v1.csv", "wave", "code", "value_labels", "mapping_status", "official_source", re.compile(r"2015 questionnaire and CodeBook labels/routes reviewed; candidate mapping", re.I))
     add_reviewed_labels("life_insurance_exposure_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire/codebook response categories; frequencies omitted", re.I))
     add_reviewed_labels("pension_subsidy_delivery_2015_crosswalk_v1.csv", "wave", "code", "value_labels", "mapping_status", "source_document", re.compile(r"official questionnaire and CodeBook option label matched|option 3 conflict marked DO NOT ANALYZE", re.I))
-    add_reviewed_labels("work_exposure_value_labels_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official .*response labels|official questionnaire response categories; codebook frequencies omitted|official selected-option label; checkbox slot, absence is not a negative response|official questionnaire checkbox menu and codebook slot coding; frequencies omitted; absence is not a negative response outside the routed checklist|official questionnaire categories; frequencies omitted; FC020 multiple-job main-work route or FC021 single nonfarm-job route|full questionnaire menu transcribed without frequencies; 2011 codebook omits FL014 and later codebook menus may omit unobserved categories; not-currently-working prior-job route|official questionnaire categories; frequencies omitted; 2011 question wording controls its scope|full official questionnaire response menu transcribed without frequencies; current employer firm route|official questionnaire response categories transcribed without frequencies; continuity of the specific prior-wave work activity|official 2020 questionnaire response categories; frequencies omitted; conditional work-history transition route|official questionnaire categories transcribed without frequencies; preserve three-category employment/family-business status|official questionnaire/codebook categories; frequencies omitted; current employer benefit route|wave-specific official questionnaire categories transcribed without frequencies; retrospective first-workplace location|official questionnaire categories; frequencies omitted; conditional agricultural-wage/other-job temporary-absence route|official 2020 questionnaire CAPI formula manually transcribed; descriptive codebook frequencies omitted; generated-field interpretation requires route validation|questionnaire/Codebook item-identity conflict; DO NOT ANALYZE until official source identity and released-data coding are reconciled|DO NOT ANALYZE; official 2011 baseline questionnaire option label", re.I))
+    add_reviewed_labels("work_exposure_value_labels_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official .*response labels|official questionnaire response categories; codebook frequencies omitted|official selected-option label; checkbox slot, absence is not a negative response|official questionnaire checkbox menu and codebook slot coding; frequencies omitted; absence is not a negative response outside the routed checklist|official questionnaire categories; frequencies omitted; FC020 multiple-job main-work route or FC021 single nonfarm-job route|full questionnaire menu transcribed without frequencies; 2011 codebook omits FL014 and later codebook menus may omit unobserved categories; not-currently-working prior-job route|official questionnaire categories; frequencies omitted; 2011 question wording controls its scope|full official questionnaire response menu transcribed without frequencies; current employer firm route|official questionnaire response categories transcribed without frequencies; continuity of the specific prior-wave work activity|official 2020 questionnaire response categories; frequencies omitted; conditional work-history transition route|official questionnaire categories transcribed without frequencies; preserve three-category employment/family-business status|official questionnaire/codebook categories; frequencies omitted; current employer benefit route|wave-specific official questionnaire categories transcribed without frequencies; retrospective first-workplace location|official questionnaire categories; frequencies omitted; conditional agricultural-wage/other-job temporary-absence route|official 2020 questionnaire CAPI formula manually transcribed; descriptive codebook frequencies omitted; generated-field interpretation requires route validation|questionnaire/Codebook item-identity conflict; DO NOT ANALYZE until official source identity and released-data coding are reconciled|DO NOT ANALYZE; official 2011 baseline questionnaire option label|official 2020 questionnaire response categories; frequencies omitted; conditional prior-status correction route; DO NOT ANALYZE pending route and released-data reconciliation", re.I))
     add_reviewed_status_without_value_label(
         "work_exposure_value_labels_v1.csv", "wave", "code", "value_label_status", "value_label_source",
         re.compile(
             r"^codebook field located; continuous/open response or no categorical labels$|"
             r"^continuous conditional component; unit and route reviewed; no response-category labels; codebook frequencies omitted$|"
-            r"^continuous date component; preserve year/month unit and conditional (?:transition/correction|prior-status correction) route; month -1 indicates unable to report(?:; DO NOT ANALYZE pending route and released-data reconciliation)?$",
+            r"^continuous date component; preserve year/month unit and conditional (?:transition/correction|prior-status correction) route; month -1 indicates unable to report(?:; DO NOT ANALYZE pending route and released-data reconciliation)?$|"
+            r"^occupation classification code; Codebook frequency distribution omitted; classification definitions are not response labels; unpaid family-business route retained$",
             re.I,
         ),
     )
@@ -1323,6 +1329,13 @@ def main() -> None:
         for item in covid_status.itertuples(index=False):
             status = str(item.mapping_status).strip()
             labels = str(item.value_labels).strip()
+            code = str(item.code).lower()
+            if code in {"gf015_s4", "gf016_s8"} and status.startswith("DO NOT ANALYZE"):
+                selected = out["Source.Wave"].astype(str).eq(str(item.wave)) & out["Variable.Name"].str.lower().eq(code)
+                out.loc[selected, "Value.Labels"] = labels
+                out.loc[selected, "Value.Label.Review"] = str(item.value_label_status)
+                out.loc[selected, "Value.Label.Source"] = str(item.value_label_source or item.source_document)
+                continue
             if not labels or not status.startswith("candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data"):
                 continue
             selected = (
@@ -1733,10 +1746,10 @@ def main() -> None:
                 & out["Variable.Name"].str.lower().eq(str(item.get("code", "")).lower())
                 & out["epcf"].str.lower().eq("e")
                 & out["category"].eq("social determinants")
-                & out["subcategory"].eq("household expenditure and material resources")
             )
             if not selected.any():
                 raise SystemExit(f"Household expenditure metadata field missing from candidate catalog: {item.get('wave')}/{item.get('code')}")
+            out.loc[selected, "subcategory"] = "household expenditure and material resources"
             out.loc[selected, "Value.Label.Review"] = item["value_label_status"]
             out.loc[selected, "Value.Label.Source"] = item["value_label_source"]
             out.loc[selected, "Value.Labels"] = item["value_labels"]

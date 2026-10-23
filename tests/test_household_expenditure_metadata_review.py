@@ -14,9 +14,9 @@ class HouseholdExpenditureMetadataReviewTests(unittest.TestCase):
             cls.fields = list(csv.DictReader(handle))
         cls.catalog = json.loads((ROOT / "site-prototype/dist/catalog_e.json").read_text(encoding="utf-8"))
 
-    def test_53_wave_fields_have_period_and_source_review(self):
+    def test_56_wave_fields_have_period_and_source_review(self):
         reviewed = [r for r in self.fields if r.get("Candidate.Status") == "household-level expenditure/resource candidate; preserve item period and wave wording"]
-        self.assertEqual(len(reviewed), 53)
+        self.assertEqual(len(reviewed), 56)
         for row in reviewed:
             self.assertIn("CHARLS_", row["Value.Label.Source"])
             self.assertIn("Codebook", row["Value.Label.Source"])
@@ -31,8 +31,8 @@ class HouseholdExpenditureMetadataReviewTests(unittest.TestCase):
 
     def test_continuous_amounts_have_units_without_codebook_extrema(self):
         rows = [r for r in self.catalog if r["Candidate.Status"] == "household-level expenditure/resource candidate; preserve item period and wave wording" and r["Variable.Name"].lower() not in {"ge006_w2", "gf007"}]
-        self.assertEqual(len(rows), 49)
-        allowed = {"Yuan/week", "Yuan/month", "Yuan/year"}
+        self.assertEqual(len(rows), 52)
+        allowed = {"Yuan/week", "Yuan/month", "Yuan/year", "Yuan (past month)"}
         for row in rows:
             self.assertIn(row["Unit"], allowed, row["Variable.Name"])
             self.assertEqual(row["Value.Labels"], "", row["Variable.Name"])

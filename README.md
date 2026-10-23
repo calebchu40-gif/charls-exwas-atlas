@@ -1,9 +1,9 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-23）
 
 
-## 最新工作：个人收入与工资元数据
+## 最新工作：最后12条E类通用待核字段审核
 
-2026-10-23已按官方问卷/Codebook审核2011–2020工资金额单位、金融资产与借贷指示项、继承来源多选项、诈骗经历以及2020工资扣除范围。波次差异和未选项编码不确定性均在目录中保留；没有拷贝代码本频数、均值或极值。E类通用待核由85降至12，P为0；当前仍是元数据目录，正式关联模型数为0。个人收入审核见[`audit/personal_income_wage_metadata_review_2011_2020_2026-10-23.md`](audit/personal_income_wage_metadata_review_2011_2020_2026-10-23.md)；社会照护审核见[`audit/social_care_caregiver_metadata_review_2011_2013_2026-10-23.md`](audit/social_care_caregiver_metadata_review_2011_2013_2026-10-23.md)；教育与户口字段审核见[`audit/education_hukou_value_label_review_2011_2020_2026-10-23.md`](audit/education_hukou_value_label_review_2011_2020_2026-10-23.md)。
+2026-10-23完成最后12条E类通用“not yet reviewed”状态的官方来源审核，包括2011家庭月支出、2013跨访谈期其他工作数量、2018/2020其他资产租金收入、2020工资变化方向、2011职业分类，以及保留分析锁的疫情应对和离职原因字段。通用待核E状态现为0；这不代表分析资格已确认。目录仍处于元数据和方法准备阶段，正式关联模型数为0。详细记录见[`audit/final_pending_field_review_2026-10-23.md`](audit/final_pending_field_review_2026-10-23.md)。个人收入与工资、社会照护、教育与户口审核分别见[`audit/personal_income_wage_metadata_review_2011_2020_2026-10-23.md`](audit/personal_income_wage_metadata_review_2011_2020_2026-10-23.md)、[`audit/social_care_caregiver_metadata_review_2011_2013_2026-10-23.md`](audit/social_care_caregiver_metadata_review_2011_2013_2026-10-23.md)、[`audit/education_hukou_value_label_review_2011_2020_2026-10-23.md`](audit/education_hukou_value_label_review_2011_2020_2026-10-23.md)。个人收入审核见[`audit/personal_income_wage_metadata_review_2011_2020_2026-10-23.md`](audit/personal_income_wage_metadata_review_2011_2020_2026-10-23.md)；社会照护审核见[`audit/social_care_caregiver_metadata_review_2011_2013_2026-10-23.md`](audit/social_care_caregiver_metadata_review_2011_2013_2026-10-23.md)；教育与户口字段审核见[`audit/education_hukou_value_label_review_2011_2020_2026-10-23.md`](audit/education_hukou_value_label_review_2011_2020_2026-10-23.md)。
 
 ## 本地元数据重建
 
@@ -16,7 +16,7 @@
 
 受控数据 QA 发现，现有2013分析表虽含权重列，但缺少官方`crosssection`与`longitudinal`样本标记，不能用权重是否缺失替代样本资格。待通过本人 CHARLS 账户下载官方`Weights.dta`后，将其放入`%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\incoming_2013_weights\Weights.dta`，并按[`audit/wave2_official_weight_intake_2026-10-23.md`](audit/wave2_official_weight_intake_2026-10-23.md)运行受控合并和复核。合并脚本默认另写私有 DTA、输出不含个体记录的汇总 QA，并在 ID 重复/缺失、匹配不全、标记缺失或现有权重值冲突时停止；不应把官方文件或派生个体数据放入项目同步目录或 GitHub。
 
-当前仍显示通用值标签待核的元数据行数和优先审核题组见[`audit/current_value_label_review_queue_2026-10-23.md`](audit/current_value_label_review_queue_2026-10-23.md)。这些计数不代表待新增的独立指标数；连续测量、金额和日期字段可能没有离散类别标签。
+当前E类通用待核队列已清零；其余C类通用待核行仍需按优先级逐批审核。历史队列和当前状态见[`audit/current_value_label_review_queue_2026-10-23.md`](audit/current_value_label_review_queue_2026-10-23.md)。这些计数不代表待新增的独立指标数；连续测量、金额和日期字段可能没有离散类别标签。
 
 ## 公开网站部署
 

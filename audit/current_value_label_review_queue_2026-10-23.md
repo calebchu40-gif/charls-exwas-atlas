@@ -4,11 +4,11 @@ This snapshot reads only the public, generated metadata in `site-prototype/dist/
 
 | Role | Catalog rows | Generic `not yet reviewed` rows |
 |---|---:|---:|
-| E exposure candidates | 4,723 | 12 |
+| E exposure candidates | 4,723 | 0 |
 | P phenotype candidates | 2,067 | 0 |
 | C covariate/measurement metadata | 979 | 328 |
 
-The current E queue contains 12 social-determinant rows and no social-protection rows with a generic pending label. Housing/built-environment, food/household-environment, household expenditure, transfer-income sources, and the reviewed pension interval endpoints have been addressed at the metadata level. The remaining E generic-pending rows are income/wealth (6), employment/work organization (4), and household income/financial strain/COVID coping (2). These are field rows, not independent concepts or tests.
+The current E queue contains no rows with a generic pending value-label status. The latest batch audited the final 12 fields across household expenditure, interwave work counts, rental-income status, COVID-period wage direction, occupational classification, and pandemic/work-history items. Several retain specific unresolved source or route caveats and `DO NOT ANALYZE` locks. These are field rows, not independent concepts or tests.
 
 ## Processing rule
 
@@ -16,7 +16,7 @@ Continue by source-backed field families. For each field, establish whether its 
 
 ## Next review batches
 
-The individual income and wage batch is now reviewed at the source-metadata level (46 crosswalk rows reviewed; remaining queue counted from the generated site catalogue). Social-care and education/hukou response labels are now reviewed; the remaining 12 fields are concentrated in income/wealth, employment/work organization, and household financial strain/COVID coping, to be reviewed by wave-specific family and source module. Completed metadata review does not prove analysis readiness. Continue checking questionnaire scope, response unit, household/person measurement level, wave comparability, routing, and Codebook storage semantics. Amount slots must not be counted as independent exposures without a construct-level rationale.
+The individual income and wage batch is reviewed at source-metadata level (46 crosswalk rows); social-care, education/hukou, and final 12-field reviews are also recorded below. Completed metadata review does not prove analysis readiness. Continue checking questionnaire scope, response unit, household/person measurement level, wave comparability, routing, and Codebook storage semantics. Amount slots must not be counted as independent exposures without a construct-level rationale.
 
 The 2018 current-home owner-relation batch is reviewed at the response-label level: one of nine fields has a complete Codebook 0/1 label set; eight show only the `0=Do Not Own` category in the extracted Codebook and are marked partial without guessing the missing category. Five adjacent current-home ownership-share fields are now identified as continuous percentages. Eight additional area, rent, value and acquisition-year fields now show their exact questionnaire units and route/coding limits; ownership area measures remain route-specific, rent zero may trigger unfolding brackets, and total/unit market-price formats are not combined. Fifteen bedroom, living-room and toilet fields across five waves are now identified as numeric counts, with residence scope, soft-check interpretation and cross-wave caveats. Eight additional dwelling-area, construction-year and 2020 move-in fields now carry units or exact wave-specific measurement meaning. Ten weekly household food/eating-out expense fields now show Yuan/week and describe own-production and banquet/wedding exclusions by wave; they remain household resource measures, not personal dietary intake. Codebook extrema are not treated as valid ranges and no frequencies were copied. See [`housing_current_owner_relation_labels_2018_v1.csv`](housing_current_owner_relation_labels_2018_v1.csv), [`housing_current_owner_relation_labels_2018_review_2026-10-23.md`](housing_current_owner_relation_labels_2018_review_2026-10-23.md), [`housing_current_owner_share_2018_review_2026-10-23.md`](housing_current_owner_share_2018_review_2026-10-23.md), [`housing_current_home_measurements_2018_review_2026-10-23.md`](housing_current_home_measurements_2018_review_2026-10-23.md), [`housing_room_count_measure_review_2026-10-23.md`](housing_room_count_measure_review_2026-10-23.md), [`housing_area_and_year_measure_review_2026-10-23.md`](housing_area_and_year_measure_review_2026-10-23.md), and [`household_food_expenditure_measure_review_2026-10-23.md`](household_food_expenditure_measure_review_2026-10-23.md). The E generic-pending count is now 578.
 
@@ -61,3 +61,8 @@ Latest rollup after individual income/wage review: E generic pending 40, P 0, C 
 
 
 Latest rollup after education/hukou review: E generic pending 12, P 0, C 328; E/P nonempty official/reviewed labels 3,274 rows. The reviewed 2013 hukou/education fields retain a Z-prefixed Codebook alias caution; 89 analysis locks are unchanged.
+
+
+## Latest rollup: 2026-10-23 final E review
+
+The generated E catalogue has 4,723 field-wave rows and zero generic `not yet reviewed` value-label states. The P catalogue remains at zero generic pending; C retains 328 generic pending rows. E/P nonempty reviewed/official label text totals 3,279 rows across 3,253 distinct wave-fields. Continuous amounts, counts, classification codes and dates may correctly have no categorical labels. The final 12-field review preserves all existing `DO NOT ANALYZE` locks and questionnaire/Codebook conflicts. Formal association models remain 0. See [`final_pending_field_review_2026-10-23.md`](final_pending_field_review_2026-10-23.md).

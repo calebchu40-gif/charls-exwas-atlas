@@ -81595,7 +81595,7 @@
               "label": "Rental Income from Other Household Assets",
               "module": "Household_Income",
               "unit": "categorical; preserve wave-specific official response labels",
-              "value_labels": "2018: 1=Yes; 2=No; 997=Don't know; 999=Refused. 2020: 1=Yes; 2=No; 997=Don't know; 999=Refused (Codebook); preserve source wording and validate released-data coding.",
+              "value_labels": "1=Yes; 2=No; 997=Don’t know; 999=Refused to answer",
               "value_semantics": "household-level rental-income status",
               "mapping_status": "candidate; official questionnaire/Codebook item located; route and denominator require validation in approved data",
               "caveat": "Both items concern other household assets such as trees, fixed capital, durables or livestock, excluding housing and land. Preserve the distinct wave-specific time reference and labels; do not infer household-level non-rental from structural skips."
@@ -94062,9 +94062,9 @@
               "label": "Impact of COVID on Wage",
               "module": "Individual_Income",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Decreased; 2=Increased; 3=Unaffected",
               "value_semantics": "COVID-era wage-impact item",
-              "mapping_status": "official variable label mapped; detailed wording/value codes and reference-period harmonization pending",
+              "mapping_status": "official questionnaire/codebook response labels reviewed; frequencies omitted; COVID period and route retained",
               "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. A 2020-specific pandemic-period construct; do not treat as the usual wage exposure or a cross-wave trend measure."
             }
           ]
@@ -96463,7 +96463,7 @@
               "label": "Rental Income from Other Household Assets",
               "module": "Household_Income",
               "unit": "categorical; preserve wave-specific official response labels",
-              "value_labels": "2018: 1=Yes; 2=No; 997=Don't know; 999=Refused. 2020: 1=Yes; 2=No; 997=Don't know; 999=Refused (Codebook); preserve source wording and validate released-data coding.",
+              "value_labels": "1=Yes; 2=No; 997=Don’t know; 999=Refused to answer",
               "value_semantics": "household-level rental-income status",
               "mapping_status": "candidate; official questionnaire/Codebook item located; route and denominator require validation in approved data",
               "caveat": "Both items concern other household assets such as trees, fixed capital, durables or livestock, excluding housing and land. Preserve the distinct wave-specific time reference and labels; do not infer household-level non-rental from structural skips."
@@ -97614,7 +97614,7 @@
               "label": "Others",
               "module": "Household_Income",
               "unit": "Household-level response/routing marker; coding unresolved",
-              "value_labels": "Questionnaire: 8=Do nothing; Codebook field label: Others (conflict)",
+              "value_labels": "",
               "value_semantics": "household-level; single-wave COVID-period item",
               "mapping_status": "DO NOT ANALYZE pending resolution of questionnaire-Codebook conflict and released-data storage",
               "caveat": "The English questionnaire lists option 8 as Do nothing and flags it as a conflict; the released Codebook labels gf016_s8 as Others. Preserve for traceability only; DO NOT ANALYZE until source encoding and respondent-level meaning are validated."
