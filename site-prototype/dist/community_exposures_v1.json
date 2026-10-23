@@ -752,6 +752,86 @@
     ]
   },
   {
+    "concept_id": "community_observed_socioeconomic_status",
+    "label": "Observed community socioeconomic status",
+    "domain": "Community social context",
+    "caveat": "2011 interviewer observation on a 1–7 ordinal scale anchored from poor to rich. This is a fieldworker's overall community judgment, not household income or an objective area-level economic statistic.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jk002",
+        "module": "community",
+        "source_label": "Social Economic Status of This V/C",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part K interviewer observations; item-specific 1–7 endpoint anchors verified.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "value_labels": "1=Poor; 2–6=intermediate ordered ratings; 7=Rich",
+        "value_label_status": "official questionnaire seven-point ordinal scale anchors reviewed; Codebook numeric categories only; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_built_form_organization",
+    "label": "Community built-form organization",
+    "domain": "Community environment",
+    "caveat": "2011 interviewer observation on a 1–7 ordinal scale anchored from very disorganized to very organized. This is a subjective community-level built-environment proxy, not a standardized urban-form assessment.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jk004",
+        "module": "community",
+        "source_label": "Construction Structure of this V/C",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part K interviewer observations; item-specific 1–7 endpoint anchors verified.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "value_labels": "1=Very disorganized; 2–6=intermediate ordered ratings; 7=Very organized",
+        "value_label_status": "official questionnaire seven-point ordinal scale anchors reviewed; Codebook numeric categories only; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_observed_crowding",
+    "label": "Observed community crowding/sparsity",
+    "domain": "Community environment",
+    "caveat": "2011 interviewer observation on a 1–7 ordinal scale anchored from very crowded to very sparse; higher values indicate less perceived crowding. This is not a measured population density.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jk005",
+        "module": "community",
+        "source_label": "The Degree of Crowdness of this V/C",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part K interviewer observations; item-specific 1–7 endpoint anchors verified.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "value_labels": "1=Very crowded; 2–6=intermediate ordered ratings; 7=Very sparse",
+        "value_label_status": "official questionnaire seven-point ordinal scale anchors reviewed; Codebook numeric categories only; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_accessibility_observation",
+    "label": "Observed community accessibility for people with disabilities",
+    "domain": "Community environment",
+    "caveat": "2011 interviewer observation on a 1–7 ordinal scale anchored from no handicapped access to very convenient. Higher values indicate better perceived access; this is not an audited accessibility standard.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jk006",
+        "module": "community",
+        "source_label": "The Degree of Handicapped Access",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part K interviewer observations; item-specific 1–7 endpoint anchors verified.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "value_labels": "1=No handicapped access; 2–6=intermediate ordered ratings; 7=Very convenient",
+        "value_label_status": "official questionnaire seven-point ordinal scale anchors reviewed; Codebook numeric categories only; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
     "concept_id": "community_primary_school_change",
     "label": "Primary-school merger or relocation history",
     "domain": "Community social context",

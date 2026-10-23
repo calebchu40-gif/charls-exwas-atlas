@@ -19,6 +19,10 @@ CONCEPTS={
  "community_electricity_price":("Community-reported average electricity price","Community environment","2011 community-reported current average electricity unit price in RMB yuan per degree (kWh); community context, not an individual's household bill."),
  "community_road_presence":("Road access through the village/community","Community environment","2011 community-informant Yes/No report of roads passing through the village/community; single-wave context indicator."),
  "community_road_cleanliness":("Community road tidiness","Community environment","2011 community-informant 1-7 ordinal assessment anchored from very dirty to very tidy; subjective road-condition perception, not an environmental sampling measure."),
+ "community_observed_socioeconomic_status":("Observed community socioeconomic status","Community social context","2011 interviewer observation on a 1–7 ordinal scale anchored from poor to rich. This is a fieldworker's overall community judgment, not household income or an objective area-level economic statistic."),
+ "community_built_form_organization":("Community built-form organization","Community environment","2011 interviewer observation on a 1–7 ordinal scale anchored from very disorganized to very organized. This is a subjective community-level built-environment proxy, not a standardized urban-form assessment."),
+ "community_observed_crowding":("Observed community crowding/sparsity","Community environment","2011 interviewer observation on a 1–7 ordinal scale anchored from very crowded to very sparse; higher values indicate less perceived crowding. This is not a measured population density."),
+ "community_accessibility_observation":("Observed community accessibility for people with disabilities","Community environment","2011 interviewer observation on a 1–7 ordinal scale anchored from no handicapped access to very convenient. Higher values indicate better perceived access; this is not an audited accessibility standard."),
  "community_primary_school_change":("Primary-school merger or relocation history","Community social context","2011 community-level report of primary-school merger/relocation and prior school count; historical service-access context, not individual schooling."),
  "community_disaster_history":("Recent serious natural-disaster occurrence","Community environment","2011 community-informant report of any serious natural disaster during the prior five years (JI001); No routes to JI003, so JI002 event details have a conditional denominator."),
  "community_sanitation_reconstructed":("Reconstructed community toilet/sewer indicator","Community environment","2011 village-only CAPI item asking whether the village restructured toilet/sewer systems; preserve village-only eligibility and do not infer original derivation from the Codebook variable label."),
@@ -37,6 +41,10 @@ MAP={
  "community_electricity_price":["jj024"],
  "community_road_presence":["jk001"],
  "community_road_cleanliness":["jk003"],
+ "community_observed_socioeconomic_status":["jk002"],
+ "community_built_form_organization":["jk004"],
+ "community_observed_crowding":["jk005"],
+ "community_accessibility_observation":["jk006"],
  "community_primary_school_change":["jh015","jh017"],
  "community_disaster_history":["ji001"],
  "community_sanitation_reconstructed":["jb015"],
@@ -117,7 +125,9 @@ QUESTIONNAIRE_REVIEWED = {
  "community_sanitation_services","community_industrial_pollution","community_weather",
  "community_transport_road","community_electricity","community_education_profile",
  "community_water_price","community_electricity_price","community_road_presence",
- "community_road_cleanliness","community_disaster_history","community_sanitation_reconstructed",
+ "community_road_cleanliness","community_observed_socioeconomic_status",
+ "community_built_form_organization","community_observed_crowding",
+ "community_accessibility_observation","community_disaster_history","community_sanitation_reconstructed",
  *[cid for cid in CONCEPTS if cid.startswith("community_kindergarten_") or
     cid.startswith("community_primary_school_") or cid.startswith("community_junior_middle_school_") or
     cid.startswith("community_senior_high_school_") or cid.startswith("community_post_office_") or
@@ -153,6 +163,8 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label."
     elif cid == "community_education_profile":
      evidence="CHARLS 2011 Community Questionnaire, Part C p.16 (PDF p.19), JC019-JC024; exact percentage fields and conditional _1 bracket fields verified."
+    elif cid.startswith("community_observed_") or cid in {"community_built_form_organization", "community_accessibility_observation"}:
+     evidence="CHARLS 2011 Community Questionnaire, Part K interviewer observations; item-specific 1–7 endpoint anchors verified."
     elif is_reviewed:
      evidence="CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label."
     else:

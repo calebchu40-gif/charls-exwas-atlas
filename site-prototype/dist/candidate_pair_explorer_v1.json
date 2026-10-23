@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 570,
+      "exposure_count": 574,
       "phenotype_count": 211,
-      "candidate_pair_count": 120263,
+      "candidate_pair_count": 121107,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -1140,6 +1140,26 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "2011 community informant may select this facility type as commonly used by residents, then reports whether the community has it and gives a count if present. A blank/unselected JF001 option is not confirmed No; JF002 count is conditional. These are community-level reports, not individual use."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_built_form_organization",
+          "label": "Community built-form organization",
+          "domain": "Community environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jk004",
+              "label": "Construction Structure of this V/C",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 interviewer observation on a 1–7 ordinal scale anchored from very disorganized to very organized. This is a subjective community-level built-environment proxy, not a standardized urban-form assessment."
             }
           ]
         },
@@ -6094,6 +6114,66 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "2011 distance from the village/community office to the most commonly used facility of this type; the questionnaire records 0 when the facility is in the community. Not distance from a respondent's home."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_accessibility_observation",
+          "label": "Observed community accessibility for people with disabilities",
+          "domain": "Community environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jk006",
+              "label": "The Degree of Handicapped Access",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 interviewer observation on a 1–7 ordinal scale anchored from no handicapped access to very convenient. Higher values indicate better perceived access; this is not an audited accessibility standard."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_observed_crowding",
+          "label": "Observed community crowding/sparsity",
+          "domain": "Community environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jk005",
+              "label": "The Degree of Crowdness of this V/C",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 interviewer observation on a 1–7 ordinal scale anchored from very crowded to very sparse; higher values indicate less perceived crowding. This is not a measured population density."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_observed_socioeconomic_status",
+          "label": "Observed community socioeconomic status",
+          "domain": "Community social context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jk002",
+              "label": "Social Economic Status of This V/C",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 interviewer observation on a 1–7 ordinal scale anchored from poor to rich. This is a fieldworker's overall community judgment, not household income or an objective area-level economic statistic."
             }
           ]
         },
