@@ -2,6 +2,9 @@
 
 ## 2026-10-24
 
+- Added questionnaire-derived units and field-specific scope notes for the 2011 community weather estimates: annual low/high temperatures (°C) and rainy/snowy day counts (days), explicitly reported by a community informant rather than linked station observations. Added source audit and regression coverage; no responses or Codebook summaries were copied.
+  Full finalization synchronized the weather annotations across the candidate catalogue and community site JSON; 209 tests and 34 static JSON checks pass. The refreshed site catalogue contains E=4,750, P=2,110, C=978; 89 formal E/P locks remain and no association models or pairwise sample sizes are computed.
+
 - Expanded the objective-measurement wave boundary review using official CHARLS sources: the 2018 Wave 4 User’s Guide places non-blood measurements in Waves 1–3 and blood biomarkers in Waves 1 and 3; the 2021–2023 fifth regular survey is kept distinct from the released 2020 Wave 5 package. 2020 care-use recall questions are not coded as direct measurements. Updated the site note and audit; no 2021–2023 rows were inferred without a verified release package.
 
 - Reviewed 2011 community industrial-pollution fields against the official questionnaire and Codebook: JB018 (own community ordinal report), JB019 (nearby settlements, village-only route), and JB027 (village-to-site distance in km, with questionnaire-defined zero for an in-village source) remain separate contextual proxies, not personal exposure doses. Added field-specific caveats, searchable metadata, reproducible finalization steps and regression tests; no respondent values or Codebook summary statistics were used. Full 208-test suite and static checks pass. Updated the community page summary from its stale 100/187 snapshot to the current 104/198 catalogue and added the pollution-field interpretation to the page lead.

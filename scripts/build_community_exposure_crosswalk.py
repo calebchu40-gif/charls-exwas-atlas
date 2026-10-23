@@ -11,7 +11,7 @@ CONCEPTS={
  "community_winter_heating":("Community winter heating system","Community environment","Community-level availability and fuel type for central winter heating; 2011 only and not an individual residence measure."),
  "community_sanitation_services":("Community sanitation and waste services","Community environment","Sewerage, waste management, toilet infrastructure and public restroom indicators. Community representative report; do not conflate with household toilet fields."),
  "community_industrial_pollution":("Community industrial pollution indicators","Community environment","Three distinct community-level reports: JB018 rates pollution in the village/community; village-only JB019 rates nearby villages/townships; village-only JB027 records distance to the closest industrial pollution site in kilometres, with 0 meaning the site is located in the village. The ratings are subjective ordinal reports, and the distance is not the respondent's home-to-source distance; none is an instrument-measured concentration or individual pollution dose."),
- "community_weather":("Community-reported weather indicators","Community environment","Reported prior calendar-year highest/lowest temperature and rainy/snowy days. These are community-report estimates, not linked meteorological station data."),
+ "community_weather":("Community-reported weather indicators","Community environment","Community-informant estimates for calendar year 2010: lowest/highest temperature in degrees Celsius and rainy/snowy day counts. These are not linked meteorological station observations; preserve each component and verify special values and eligible denominators before analysis."),
  "community_transport_road":("Community road and transport access","Community context","Road type/outage days and distance/count of transport links/stations. Infrastructure/access indicators, not pollutant exposure."),
  "community_electricity":("Community electricity access and reliability","Community environment","Household electricity penetration and annual supply availability/duration; village-level reported metrics."),
  "community_education_profile":("Community adult education composition","Community social context","2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education."),
@@ -178,6 +178,14 @@ def main():
     elif code_l == "jb027":
      evidence="CHARLS 2011 Community Questionnaire, Part B, village-only CAPI item JB027; stated unit and in-village zero rule reviewed against the official Codebook field."
      caveat="Distance in kilometres from the village to the closest industrial pollution site; questionnaire explicitly says 0 when the site is in the village. Village-only route; not an individual's home-to-source distance, measured concentration, or validated personal dose. Verify release-specific special values and eligible denominator before analysis."
+    elif code_l == "ja039_1":
+     caveat="Community-informant estimate of the lowest temperature in calendar year 2010, in degrees Celsius. Not linked to a weather station or a respondent's personal temperature exposure; verify release-specific special values before analysis."
+    elif code_l == "ja039_2":
+     caveat="Community-informant estimate of the highest temperature in calendar year 2010, in degrees Celsius. Not linked to a weather station or a respondent's personal temperature exposure; verify release-specific special values before analysis."
+    elif code_l == "ja040":
+     caveat="Community-informant estimated count of rainy days in calendar year 2010. Not linked to a weather station; verify release-specific special values and plausible range before analysis."
+    elif code_l == "ja041":
+     caveat="Community-informant estimated count of snowy days in calendar year 2010. Not linked to a weather station; verify release-specific special values and plausible range before analysis."
     if code_l.startswith(("jb006_", "jb007_")):
      unit="households"
     elif code_l.startswith("jb028_1_") or code_l.startswith("jf002_1_"):
@@ -208,6 +216,10 @@ def main():
      unit="RMB yuan/kWh"
     elif code_l == "jb027":
      unit="km"
+    elif code_l in {"ja039_1", "ja039_2"}:
+     unit="degrees Celsius (°C)"
+    elif code_l in {"ja040", "ja041"}:
+     unit="days"
     else:
      unit=""
     rows.append({"concept_id":cid,"concept_label":label,"domain":domain,"wave":2011,

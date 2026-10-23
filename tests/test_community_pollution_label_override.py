@@ -55,6 +55,31 @@ class CommunityPollutionLabelOverrideTests(unittest.TestCase):
         self.assertIn("answer 0 if located in the village", normalized)
         self.assertIn("km公里", normalized)
 
+
+    def test_weather_units_and_referent_follow_2011_questionnaire(self):
+        with (ROOT / "audit" / "community_exposure_crosswalk_v1.csv").open(
+            encoding="utf-8-sig", newline=""
+        ) as f:
+            rows = list(csv.DictReader(f))
+        by_code = {row["code"].lower(): row for row in rows}
+        self.assertEqual(by_code["ja039_1"]["unit"], "degrees Celsius (°C)")
+        self.assertEqual(by_code["ja039_2"]["unit"], "degrees Celsius (°C)")
+        self.assertEqual(by_code["ja040"]["unit"], "days")
+        self.assertEqual(by_code["ja041"]["unit"], "days")
+        self.assertIn("calendar year 2010", by_code["ja039_1"]["caveat"])
+        questionnaire = (ROOT / "sources_official" / "CHARLS_2011_Community_Questionnaire_official_extracted.txt").read_text(encoding="utf-8")
+        normalized = " ".join(questionnaire.split()).lower()
+        self.assertIn("highest and lowest temperature for the last calendar year (2010)", normalized)
+        self.assertIn("centigrade", normalized)
+        self.assertIn("how many days are rainy days", normalized)
+        self.assertIn("how many days are snowy days", normalized)
+        self.assertIn("not linked to a weather station", by_code["ja040"]["caveat"].lower())
+        items = json.loads((ROOT / "site-prototype" / "dist" / "community_exposures_v1.json").read_text(encoding="utf-8"))
+        weather = next(item for item in items if item["concept_id"] == "community_weather")
+        fields = {field["code"].lower(): field for field in weather["source_fields"]}
+        self.assertEqual(fields["ja041"]["unit"], "days")
+        self.assertIn("not linked to a weather station", fields["ja041"]["caveat"].lower())
+
     def test_public_community_table_carries_field_specific_pollution_caveats(self):
         items = json.loads((ROOT / "site-prototype" / "dist" / "community_exposures_v1.json").read_text(encoding="utf-8"))
         concept = next(item for item in items if item["concept_id"] == "community_industrial_pollution")

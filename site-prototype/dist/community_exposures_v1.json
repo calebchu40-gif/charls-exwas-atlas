@@ -381,7 +381,7 @@
     "concept_id": "community_weather",
     "label": "Community-reported weather indicators",
     "domain": "Community environment",
-    "caveat": "Reported prior calendar-year highest/lowest temperature and rainy/snowy days. These are community-report estimates, not linked meteorological station data.",
+    "caveat": "Community-informant estimates for calendar year 2010: lowest/highest temperature in degrees Celsius and rainy/snowy day counts. These are not linked meteorological station observations; preserve each component and verify special values and eligible denominators before analysis.",
     "source_fields": [
       {
         "wave": "2011",
@@ -390,8 +390,8 @@
         "source_label": "Minimum Temperature",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
-        "caveat": "Reported prior calendar-year highest/lowest temperature and rainy/snowy days. These are community-report estimates, not linked meteorological station data.",
+        "unit": "degrees Celsius (°C)",
+        "caveat": "Community-informant estimate of the lowest temperature in calendar year 2010, in degrees Celsius. Not linked to a weather station or a respondent's personal temperature exposure; verify release-specific special values before analysis.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -403,8 +403,8 @@
         "source_label": "Maximum Temperature",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
-        "caveat": "Reported prior calendar-year highest/lowest temperature and rainy/snowy days. These are community-report estimates, not linked meteorological station data.",
+        "unit": "degrees Celsius (°C)",
+        "caveat": "Community-informant estimate of the highest temperature in calendar year 2010, in degrees Celsius. Not linked to a weather station or a respondent's personal temperature exposure; verify release-specific special values before analysis.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -416,8 +416,8 @@
         "source_label": "How Many Rainy Days in the Past Year",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
-        "caveat": "Reported prior calendar-year highest/lowest temperature and rainy/snowy days. These are community-report estimates, not linked meteorological station data.",
+        "unit": "days",
+        "caveat": "Community-informant estimated count of rainy days in calendar year 2010. Not linked to a weather station; verify release-specific special values and plausible range before analysis.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -429,8 +429,8 @@
         "source_label": "How Many Snowy Days",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
-        "caveat": "Reported prior calendar-year highest/lowest temperature and rainy/snowy days. These are community-report estimates, not linked meteorological station data.",
+        "unit": "days",
+        "caveat": "Community-informant estimated count of snowy days in calendar year 2010. Not linked to a weather station; verify release-specific special values and plausible range before analysis.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"

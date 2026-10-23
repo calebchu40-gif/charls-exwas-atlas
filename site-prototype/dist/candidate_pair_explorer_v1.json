@@ -3005,41 +3005,41 @@
               "code": "ja039_1",
               "label": "Minimum Temperature",
               "module": "community",
-              "unit": "",
+              "unit": "degrees Celsius (°C)",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "Reported prior calendar-year highest/lowest temperature and rainy/snowy days. These are community-report estimates, not linked meteorological station data."
+              "caveat": "Community-informant estimate of the lowest temperature in calendar year 2010, in degrees Celsius. Not linked to a weather station or a respondent's personal temperature exposure; verify release-specific special values before analysis."
             },
             {
               "code": "ja039_2",
               "label": "Maximum Temperature",
               "module": "community",
-              "unit": "",
+              "unit": "degrees Celsius (°C)",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "Reported prior calendar-year highest/lowest temperature and rainy/snowy days. These are community-report estimates, not linked meteorological station data."
+              "caveat": "Community-informant estimate of the highest temperature in calendar year 2010, in degrees Celsius. Not linked to a weather station or a respondent's personal temperature exposure; verify release-specific special values before analysis."
             },
             {
               "code": "ja040",
               "label": "How Many Rainy Days in the Past Year",
               "module": "community",
-              "unit": "",
+              "unit": "days",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "Reported prior calendar-year highest/lowest temperature and rainy/snowy days. These are community-report estimates, not linked meteorological station data."
+              "caveat": "Community-informant estimated count of rainy days in calendar year 2010. Not linked to a weather station; verify release-specific special values and plausible range before analysis."
             },
             {
               "code": "ja041",
               "label": "How Many Snowy Days",
               "module": "community",
-              "unit": "",
+              "unit": "days",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "Reported prior calendar-year highest/lowest temperature and rainy/snowy days. These are community-report estimates, not linked meteorological station data."
+              "caveat": "Community-informant estimated count of snowy days in calendar year 2010. Not linked to a weather station; verify release-specific special values and plausible range before analysis."
             }
           ]
         },
