@@ -66,7 +66,11 @@ def main() -> None:
         row["value_label_source"] = source
         row["unit"] = unit
         row["value_semantics"] = note
-        row["caveat"] = (row["caveat"].rstrip(".") + "; " + note)
+        caveat = row["caveat"]
+        while note in caveat:
+            caveat = caveat.replace(note, "")
+        caveat = re.sub(r"\s*;\s*", "; ", caveat).strip(" ;.")
+        row["caveat"] = (caveat + "; " + note).strip("; ")
         row["mapping_status"] = status
         frame.loc[idx, row.index] = row
         selected.loc[idx, row.index] = row

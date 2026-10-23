@@ -125,7 +125,7 @@ e,social protection,formal-plan participation location; coarse plan-loop categor
 e,social protection,formal-plan receipt location; coarse plan-loop category,4,4,4
 e,social protection,historical pension eligibility and child-support route at scheme rollout,6,6,6
 e,social protection,household social assistance and transfers,3,3,0
-e,social protection,individual transfer income source and amount,95,95,0
+e,social protection,individual transfer income source and amount,95,95,20
 e,social protection,institution-pension receipt start-date component,2,2,0
 e,social protection,life-insurance payout amount already received,1,1,0
 e,social protection,old-age subsidy delivery and card/voucher use,10,10,10

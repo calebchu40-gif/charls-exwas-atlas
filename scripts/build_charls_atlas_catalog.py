@@ -1739,6 +1739,52 @@ def main() -> None:
             out.loc[selected, "Unit"] = item["unit"]
             out.loc[selected, "Candidate.Status"] = "household-level expenditure/resource candidate; preserve item period and wave wording"
             out.loc[selected, "Harmonization.Status"] = item["value_semantics"]
+    transfer_source_path = root / "audit" / "individual_transfer_income_crosswalk_v1.csv"
+    if transfer_source_path.exists():
+        transfer_sources = pd.read_csv(transfer_source_path, dtype=str, encoding="utf-8-sig").fillna("")
+        reviewed_transfer_sources = transfer_sources.loc[transfer_sources["value_label_status"].ne("")]
+        for item in reviewed_transfer_sources.to_dict(orient="records"):
+            selected = (
+                out["Source.Wave"].astype(str).eq(str(item.get("wave", "")))
+                & out["Variable.Name"].str.lower().eq(str(item.get("code", "")).lower())
+                & out["epcf"].str.lower().eq("e")
+                & out["category"].eq("social protection")
+                & out["subcategory"].eq("individual transfer income source and amount")
+            )
+            if not selected.any():
+                raise SystemExit(f"Individual transfer source field missing from candidate catalog: {item.get('wave')}/{item.get('code')}")
+            out.loc[selected, "Value.Label.Review"] = item["value_label_status"]
+            out.loc[selected, "Value.Label.Source"] = item["value_label_source"]
+            out.loc[selected, "Value.Labels"] = item["value_labels"]
+            out.loc[selected, "Candidate.Status"] = "individual transfer-income source candidate; retain person-level source and wave-specific response coding"
+            out.loc[selected, "Harmonization.Status"] = item["value_semantics"]
+    pension_mapping_path = root / "audit" / "pension_exposure_variable_mapping_v1.csv"
+    if pension_mapping_path.exists():
+        pension_mapping = pd.read_csv(pension_mapping_path, dtype=str, encoding="utf-8-sig").fillna("")
+        pension_endpoints = pension_mapping.loc[
+            pension_mapping["code"].str.lower().isin({
+                "fn005_a", "fn005_b", "fn008_a", "fn008_b", "fn014_a", "fn014_b",
+                "fn019_a", "fn019_b", "fn023_a", "fn023_b", "fn037_a", "fn037_b",
+                "fn035_w2_bracketbracket_min", "fn035_w2_bracketbracket_max",
+                "fn035_w2_bracket_min", "fn035_w2_bracket_max",
+            }) & pension_mapping["value_label_status"].str.contains("bracket endpoint|pension bracket endpoint", case=False, regex=True)
+        ]
+        for item in pension_endpoints.to_dict(orient="records"):
+            selected = (
+                out["Source.Wave"].astype(str).eq(str(item.get("wave", "")))
+                & out["Variable.Name"].str.lower().eq(str(item.get("code", "")).lower())
+                & out["epcf"].str.lower().eq("e")
+                & out["category"].eq("social protection")
+                & out["subcategory"].eq("pension participation, receipt, and benefit details")
+            )
+            if not selected.any():
+                raise SystemExit(f"Pension interval endpoint missing from candidate catalog: {item.get('wave')}/{item.get('code')}")
+            out.loc[selected, "Value.Label.Review"] = item["value_label_status"]
+            out.loc[selected, "Value.Label.Source"] = item["value_label_source"]
+            out.loc[selected, "Value.Labels"] = ""
+            out.loc[selected, "Unit"] = item["unit"]
+            out.loc[selected, "Candidate.Status"] = "pension amount bracket endpoint candidate; preserve lower/upper pair and conditional route; not a point estimate"
+            out.loc[selected, "Harmonization.Status"] = item["value_semantics"]
     # Apply onset-year units after generic review-status propagation so these
     # continuous fields retain their unit even when an earlier audit supplied
     # a more detailed route/semantic review string.
