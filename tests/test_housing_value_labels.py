@@ -18,6 +18,7 @@ class HousingValueLabelTests(unittest.TestCase):
         cls.labels = read_csv(AUDIT / "housing_value_label_review_v1.csv")
         cls.current_owner_labels = read_csv(AUDIT / "housing_current_owner_relation_labels_2018_v1.csv")
         cls.housing_mapping = read_csv(AUDIT / "housing_exposure_variable_mapping_v1.csv")
+        cls.food_mapping = read_csv(AUDIT / "food_environment_crosswalk_v1.csv")
         cls.catalog = read_csv(AUDIT / "charls_atlas_candidate_fields_v0.csv")
         cls.crosswalk = read_csv(AUDIT / "ep_concept_source_crosswalk_v1.csv")
         with (ROOT / "site-prototype" / "dist" / "housing_catalog_v1.json").open(encoding="utf-8") as stream:
@@ -130,6 +131,37 @@ class HousingValueLabelTests(unittest.TestCase):
             self.assertIn("do not sum across slots", field["Harmonization.Status"])
             site = next(row for row in self.housing_site if row["wave"] == "2018" and row["code"].lower() == code)
             self.assertEqual(site["unit"], "% of the specific house's property rights")
+
+    def test_2018_current_home_area_rent_value_and_year_measures_keep_units_and_routes(self):
+        expected = {
+            "i000_w4_11": ("square metres", "does not own property rights", "i000_w4_12"),
+            "i000_w4_12": ("square metres", "ownership route", "i000_w4_11"),
+            "i000_w4_13": ("Yuan/month", "allow 0", "unfolding brackets"),
+            "i000_w4_14": ("Yuan/month", "market rent", "point estimates"),
+            "i000_w4_15_1": ("10,000 Yuan", "total-price", "i000_w4_15_2"),
+            "i000_w4_15_2": ("1,000 Yuan/square metre", "unit-price", "i000_w4_15_1"),
+            "i000_w4_16": ("calendar year", "not a duration", "special/missing values"),
+            "i000_w4_17": ("10,000 Yuan", "acquire or build", "current market value"),
+        }
+        for code, (unit, phrase1, phrase2) in expected.items():
+            field = next(row for row in self.catalog if row["Source.Wave"] == "2018" and row["Variable.Name"].lower() == code)
+            self.assertEqual(field["Concept.Unit.Candidates"], unit)
+            self.assertEqual(field["Value.Labels"], "")
+            self.assertIn("extrema are not valid-range evidence", field["Value.Label.Review"])
+            self.assertIn(phrase1.lower(), field["Harmonization.Status"].lower())
+            self.assertIn(phrase2.lower(), field["Harmonization.Status"].lower())
+            site = next(row for row in self.housing_site if row["wave"] == "2018" and row["code"].lower() == code)
+            self.assertEqual(site["unit"], unit)
+        food_areas = {row["code"] for row in self.food_mapping if row["wave"] == "2018" and row["concept_id"] == "dwelling_area"}
+        self.assertTrue({"i000_w4_11", "i000_w4_12"}.issubset(food_areas))
+        expected_mapping_units = {
+            "i000_w4_13": "Yuan/month", "i000_w4_14": "Yuan/month",
+            "i000_w4_15_1": "10,000 Yuan", "i000_w4_15_2": "1,000 Yuan/square metre",
+            "i000_w4_16": "calendar year", "i000_w4_17": "10,000 Yuan",
+        }
+        mapping = {(row["wave"], row["code"].lower()): row for row in self.housing_mapping}
+        for code, unit in expected_mapping_units.items():
+            self.assertEqual(mapping[("2018", code)]["unit"], unit)
 
 
 if __name__ == "__main__":

@@ -4,11 +4,11 @@ This snapshot reads only the public, generated metadata in `site-prototype/dist/
 
 | Role | Catalog rows | Generic `not yet reviewed` rows |
 |---|---:|---:|
-| E exposure candidates | 4,722 | 619 |
+| E exposure candidates | 4,722 | 611 |
 | P phenotype candidates | 2,067 | 0 |
 | C covariate/measurement metadata | 914 | 329 |
 
-The E queue divides into four domains: social determinants 390, housing and built environment 90, food and household environment 73, and social protection 66. The largest subgroups are income/wealth/material resources (140), social relations and care (88), dwelling conditions/property (90), food security/utilities (73), household expenditure (53), transfer income (50), and individual income/wages (45). These are field rows, not independent concepts or tests.
+The E queue divides into four domains: social determinants 390, housing and built environment 84, food and household environment 71, and social protection 66. The largest subgroups are income/wealth/material resources (140), social relations and care (88), dwelling conditions/property (84), food security/utilities (71), household expenditure (53), transfer income (50), and individual income/wages (45). These are field rows, not independent concepts or tests.
 
 ## Processing rule
 
@@ -18,6 +18,6 @@ Continue by source-backed field families. For each field, establish whether its 
 
 The immediate high-yield batches are the remaining housing/property fields (95 rows) and household food/security/utilities (73 rows), followed by the 66 social-protection fields. Each batch needs questionnaire scope, response unit, household/person measurement level, wave comparability, and Codebook storage semantics checked together. Income/wealth and household-member roster amounts remain a larger follow-on group; their numerous amount slots must not be counted as independent exposures without a construct-level rationale.
 
-The 2018 current-home owner-relation batch is reviewed at the response-label level: one of nine fields has a complete Codebook 0/1 label set; eight show only the `0=Do Not Own` category in the extracted Codebook and are marked partial without guessing the missing category. Five adjacent current-home ownership-share fields are now identified as continuous percentages, with the unit and route/special-value limits displayed; their Codebook extrema are not treated as valid ranges and no frequencies were copied. See [`housing_current_owner_relation_labels_2018_v1.csv`](housing_current_owner_relation_labels_2018_v1.csv), [`housing_current_owner_relation_labels_2018_review_2026-10-23.md`](housing_current_owner_relation_labels_2018_review_2026-10-23.md), and [`housing_current_owner_share_2018_review_2026-10-23.md`](housing_current_owner_share_2018_review_2026-10-23.md). The E generic-pending count is now 619.
+The 2018 current-home owner-relation batch is reviewed at the response-label level: one of nine fields has a complete Codebook 0/1 label set; eight show only the `0=Do Not Own` category in the extracted Codebook and are marked partial without guessing the missing category. Five adjacent current-home ownership-share fields are now identified as continuous percentages. Eight additional area, rent, value and acquisition-year fields now show their exact questionnaire units and route/coding limits; ownership area measures remain route-specific, rent zero may trigger unfolding brackets, and total/unit market-price formats are not combined. Codebook extrema are not treated as valid ranges and no frequencies were copied. See [`housing_current_owner_relation_labels_2018_v1.csv`](housing_current_owner_relation_labels_2018_v1.csv), [`housing_current_owner_relation_labels_2018_review_2026-10-23.md`](housing_current_owner_relation_labels_2018_review_2026-10-23.md), [`housing_current_owner_share_2018_review_2026-10-23.md`](housing_current_owner_share_2018_review_2026-10-23.md), and [`housing_current_home_measurements_2018_review_2026-10-23.md`](housing_current_home_measurements_2018_review_2026-10-23.md). The E generic-pending count is now 611.
 
 This queue snapshot is descriptive and does not change the current formal model count (0) or overall result-atlas completion estimate (25%–30%).

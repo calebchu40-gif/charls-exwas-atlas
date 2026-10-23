@@ -12,7 +12,7 @@ Rebuild the housing mapping, then apply the review to field-level catalogs with:
 
 ```powershell
 python scripts/build_housing_exposure_crosswalk.py
-python scripts/apply_2018_current_home_owner_share_review.py
+python scripts/apply_2018_current_home_measurement_review.py
 ```
 
 The application script checks that exactly the five reviewed Wave 4 codes and the continuous-percent unit are present, preserves empty categorical labels, and changes metadata only. It does not read participant-level data.
