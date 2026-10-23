@@ -106,3 +106,4 @@ This file records project-level changes that affect reproducibility, methods, da
 - Deferred topic JSON and the large field/pair indexes until a user opens the corresponding view, reducing first-view network transfer and JSON parsing.
 - Split the browser catalogue into generated E/P/C role shards and stopped publishing the build/test master JSON in the Pages artifact; each directory now fetches only its own role.
 - Updated GitHub Actions to Node 24-compatible releases after the successful Pages run reported forced Node 24 migration warnings: checkout v5, configure-pages v6, upload-pages-artifact v4, deploy-pages v5, setup-python v6, and setup-node v5. The static-site payload boundary and checks remain unchanged; see `audit/github_actions_node24_update_2026-10-23.md`.
+- Verified Pages run #29 (`39913706044`) and metadata validation run #87 (`39913706041`) succeeded on `a4e7a39`; the deployment details no longer report the Node 20 deprecation warning.
