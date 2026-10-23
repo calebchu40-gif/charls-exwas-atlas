@@ -48,6 +48,8 @@ class SiteCatalogShardTests(unittest.TestCase):
     def test_both_metadata_pipelines_rebuild_role_shards_after_all_catalog_edits(self):
         self.assertEqual(FINALIZATION_PIPELINE_SCRIPTS[-1], "site_catalog_shards.py")
         self.assertEqual(FULL_PIPELINE_SCRIPTS[-1], "site_catalog_shards.py")
+        for pipeline in (FINALIZATION_PIPELINE_SCRIPTS, FULL_PIPELINE_SCRIPTS):
+            self.assertLess(pipeline.index("refresh_candidate_series_review_status.py"), len(pipeline) - 1)
 
 
 if __name__ == "__main__":

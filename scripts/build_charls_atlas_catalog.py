@@ -1959,7 +1959,8 @@ def main() -> None:
     out.to_csv(prior_catalog_path, index=False, encoding="utf-8-sig")
 
     def summarize_label_review(values: pd.Series) -> str:
-        reviews = [str(value) for value in values if pd.notna(value) and str(value).strip()]
+        raw_reviews = [str(value).strip() if pd.notna(value) else "" for value in values]
+        reviews = [value for value in raw_reviews if value]
         blocked = next((value for value in reviews if any(
             marker in value.lower() for marker in ("do not analyze", "unresolved", "conflict")
         )), "")
@@ -1968,12 +1969,17 @@ def main() -> None:
         partial = next((value for value in reviews if value.startswith("official Codebook extraction exposes only a partial response-code set")), "")
         if partial:
             return partial
-        if "officially reviewed" in reviews:
-            return "officially reviewed"
-        if any("audited measurement component" in value for value in reviews):
-            return "audited measurement component"
-        if any("continuous measure metadata available" in value for value in reviews):
-            return "continuous measure metadata available"
+        unique_reviews = sorted(set(reviews))
+        pending = any(not value or value.lower() == "not yet reviewed" for value in raw_reviews)
+        reviewed_states = [value for value in unique_reviews if value.lower() != "not yet reviewed"]
+        if pending:
+            if reviewed_states:
+                return "not yet reviewed for at least one source wave; other wave states: " + " | ".join(reviewed_states)
+            return "not yet reviewed"
+        if len(unique_reviews) == 1:
+            return unique_reviews[0]
+        if unique_reviews:
+            return "wave-specific review states: " + " | ".join(unique_reviews)
         return "not yet reviewed"
 
     out["_code_key"] = out["Variable.Name"].str.lower()

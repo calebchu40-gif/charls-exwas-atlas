@@ -21,6 +21,11 @@ summary={'as_of':date.today().isoformat(),'crosswalk_files':len(domains),'candid
          'domains':domains}
 (ROOT/'audit/directory_scope_counts_v1.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')
 html=ROOT/'site-prototype/dist/index.html'; lines=html.read_text(encoding='utf-8').splitlines()
+# This block is regenerated on every metadata finalization. Remove any copy
+# left by an earlier run before locating/rebuilding the statistics section.
+lines=[line for line in lines if not (
+    line.lstrip().startswith('<p class="stats-note">') and '去重后共有' in line
+)]
 e_only=len(e_ids-p_ids); p_only=len(p_ids-e_ids); dual=len(e_ids&p_ids)
 indices=[i for i,line in enumerate(lines) if line.lstrip().startswith('<div class="stats"')]
 if len(indices)!=1: raise SystemExit('Expected exactly one stats block; refusing to overwrite unexpected HTML')

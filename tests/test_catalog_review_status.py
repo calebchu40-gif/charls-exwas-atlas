@@ -221,6 +221,14 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertIn("questionnaire:", row.get("Value.Label.Review", ""))
         self.assertIn("released-data coding unresolved", row.get("Value.Label.Review", ""))
 
+    def test_series_summary_preserves_custom_official_wave_review_state(self):
+        import csv
+        with (ROOT / "audit/charls_atlas_candidate_series_v0.csv").open(encoding="utf-8-sig", newline="") as handle:
+            series = list(csv.DictReader(handle))
+        row = next(item for item in series if item.get("epcf") == "e" and item.get("Variable.Name", "").lower() == "da040")
+        self.assertIn("2020 official questionnaire and Codebook wording/response categories reviewed", row["value_label_review"])
+        self.assertNotEqual(row["value_label_review"], "not yet reviewed")
+
     def test_2018_chronic_treatment_categories_are_transcribed_without_frequencies(self):
         import csv
         with (ROOT / "audit/chronic_disease_ancillary_variable_mapping_v1.csv").open(encoding="utf-8-sig", newline="") as handle:

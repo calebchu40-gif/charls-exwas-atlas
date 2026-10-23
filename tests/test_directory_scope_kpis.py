@@ -11,6 +11,7 @@ class DirectoryScopeKpiTests(unittest.TestCase):
     def test_homepage_reports_exposure_and_phenotype_counts_separately(self):
         scope = json.loads((ROOT / "audit/directory_scope_counts_v1.json").read_text(encoding="utf-8"))
         html = (ROOT / "site-prototype/dist/index.html").read_text(encoding="utf-8")
+        self.assertEqual(html.count('<p class="stats-note">去重后共有'), 1)
         match = re.search(r'<div class="stats"[^>]*>(.*?)</div>\s*<p class="stats-note">(.*?)</p>', html, re.S)
         self.assertIsNotNone(match)
         cards = re.findall(r'<div class="stat"><b>([^<]+)</b><span>([^<]+)</span></div>', match.group(1))

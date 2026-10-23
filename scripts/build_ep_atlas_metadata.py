@@ -142,6 +142,7 @@ FULL_PIPELINE_SCRIPTS = (
     "summarize_ep_pair_wave_coverage.py",
     "summarize_directory_scope.py",
     "summarize_catalog_concept_categories.py",
+    "refresh_candidate_series_review_status.py",
     # C metadata is propagated after the first shard build above; regenerate
     # role-specific browser payloads last so they match the final master file.
     "site_catalog_shards.py",
@@ -208,6 +209,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "summarize_ep_pair_wave_coverage.py",
     "summarize_directory_scope.py",
     "summarize_catalog_concept_categories.py",
+    "refresh_candidate_series_review_status.py",
     "site_catalog_shards.py",
 )
 
