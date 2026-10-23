@@ -295,7 +295,7 @@ function renderObjectiveMeasurements(items){
  const term=byId('objectiveSearch').value.trim().toLocaleLowerCase(),wave=byId('objectiveWave').value;
  const matches=items.filter(x=>(!wave||x.wave===wave)&&(!term||`${x.concept_id} ${x.concept_label} ${x.domain} ${x.variables} ${x.module} ${x.value_semantics}`.toLocaleLowerCase().includes(term)));
  const body=byId('objectiveRows');body.replaceChildren();
- for(const x of matches){const tr=document.createElement('tr');for(const v of [x.concept_id,x.concept_label,x.domain,x.variables,x.wave,x.module,x.value_semantics,x.source_status]){const td=document.createElement('td');td.textContent=v;tr.append(td)}body.append(tr)}
+ for(const x of matches){const tr=document.createElement('tr');for(const v of [x.concept_id,x.concept_label,x.domain,x.variables,x.wave,x.module,x.value_semantics,[x.source_status,x.source_document].filter(Boolean).join('；')]){const td=document.createElement('td');td.textContent=v;tr.append(td)}body.append(tr)}
  byId('objectiveCount').textContent=`筛选命中 ${matches.length} 条波次—概念映射，涉及 ${new Set(matches.map(x=>x.concept_id)).size} 个候选测量概念；同一概念下多个读数不是多个指标。`;
 }
 objectiveMeasurementsLoaded.then(items=>{renderObjectiveMeasurements(items);['objectiveSearch','objectiveWave'].forEach(id=>byId(id).addEventListener('input',()=>renderObjectiveMeasurements(items)));document.querySelector('[data-view="objectiveMeasures"]').addEventListener('click',()=>renderObjectiveMeasurements(items))}).catch(err=>{byId('objectiveCount').textContent=`客观测量目录载入失败：${err.message}`});
@@ -326,7 +326,7 @@ function renderHousingCatalog(items){
  const term=byId('housingSearch').value.trim().toLocaleLowerCase(),wave=byId('housingWave').value;
  const matches=items.filter(x=>(!wave||x.wave===wave)&&(!term||`${x.concept_id} ${x.concept_label} ${x.code} ${x.source_label} ${x.module} ${x.unit||''} ${x.value_labels} ${x.caveat}`.toLocaleLowerCase().includes(term)));
  const body=byId('housingRows');body.replaceChildren();
- for(const x of matches.slice(0,150)){const tr=document.createElement('tr');for(const v of [x.code,x.concept_label,x.wave,x.module,x.source_label,x.unit||"—",x.value_labels||x.value_label_status,x.caveat]){const td=document.createElement('td');td.textContent=v;tr.append(td)}body.append(tr)}
+ for(const x of matches.slice(0,150)){const tr=document.createElement('tr');for(const v of [x.code,x.concept_label,x.wave,x.module,x.source_label,x.unit||"—",x.value_labels||x.value_label_status,[x.mapping_status,x.value_label_status,x.value_label_source,x.caveat].filter(Boolean).join('；')]){const td=document.createElement('td');td.textContent=v;tr.append(td)}body.append(tr)}
  byId('housingCount').textContent=`筛选命中 ${matches.length} 条波次—字段映射，当前展示 ${Math.min(matches.length,150)} 条，涉及 ${new Set(matches.map(x=>x.concept_id)).size} 个候选概念；值码只在对应波次解释。`;
 }
 housingCatalogLoaded.then(items=>{renderHousingCatalog(items);['housingSearch','housingWave'].forEach(id=>byId(id).addEventListener('input',()=>renderHousingCatalog(items)));document.querySelector('[data-view="housingCatalog"]').addEventListener('click',()=>renderHousingCatalog(items))}).catch(err=>{byId('housingCount').textContent=`住房编码目录载入失败：${err.message}`});
@@ -346,7 +346,7 @@ function renderHouseholdCovidEconomics(items){
  const term=byId('covidEconomicSearch').value.trim().toLocaleLowerCase(),wave=byId('covidEconomicWave').value,matches=[];
  for(const concept of items)for(const field of concept.source_fields){if(wave&&field.wave!==wave)continue;if(term&&!`${concept.concept_id} ${concept.label} ${field.code} ${field.source_label} ${field.value_labels} ${field.unit} ${field.mapping_status} ${field.source_document} ${concept.caveat}`.toLocaleLowerCase().includes(term))continue;matches.push({concept,field})}
  const body=byId('covidEconomicRows');body.replaceChildren();
- for(const {concept,field} of matches){const tr=document.createElement('tr');for(const v of [concept.concept_id,concept.label,field.wave,field.code,field.module,field.source_label,field.value_labels||field.unit,`${field.mapping_status}；${concept.caveat}`]){const td=document.createElement('td');td.textContent=v||'—';tr.append(td)}body.append(tr)}
+ for(const {concept,field} of matches){const tr=document.createElement('tr');for(const v of [concept.concept_id,concept.label,field.wave,field.code,field.module,field.source_label,field.value_labels||field.unit,[field.mapping_status,field.source_document,concept.caveat].filter(Boolean).join('；')]){const td=document.createElement('td');td.textContent=v||'—';tr.append(td)}body.append(tr)}
  byId('covidEconomicCount').textContent=`筛选命中 ${matches.length} 条源字段映射，涉及 ${new Set(matches.map(x=>x.concept.concept_id)).size} 个候选概念；不代表有效样本数、跨波可比指标或正式关联结果。`;
 }
 householdCovidEconomicsLoaded.then(items=>{renderHouseholdCovidEconomics(items);['covidEconomicSearch','covidEconomicWave'].forEach(id=>byId(id).addEventListener('input',()=>renderHouseholdCovidEconomics(items)));document.querySelector('[data-view="householdCovidEconomics"]').addEventListener('click',()=>renderHouseholdCovidEconomics(items))}).catch(err=>{byId('covidEconomicCount').textContent=`疫情期间家庭经济目录载入失败：${err.message}`});
