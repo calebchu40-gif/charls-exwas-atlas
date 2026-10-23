@@ -131,7 +131,10 @@
         "module": "household_income",
         "source_label": "Num. of People Eating Together",
         "value_labels": "",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+        "note": "Counts household members who usually ate meals together during the past week, excluding guests. Treat as household context, not an individual's dietary frequency; interviewer soft checks are prompts, not analytic cutoffs. Confirm release-specific special values and household linkage before modeling.",
+        "value_label_status": "official 2011 questionnaire identifies a numeric household person count; continuous count measure, no discrete category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
+        "unit": "persons"
       },
       {
         "wave": "2013",
@@ -139,7 +142,10 @@
         "module": "Household_Income",
         "source_label": "Number of People Regularly Having Meals",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Counts household members who usually ate meals together during the past week, excluding guests. Treat as household context, not an individual's dietary frequency; interviewer soft checks are prompts, not analytic cutoffs. Confirm release-specific special values and household linkage before modeling.",
+        "value_label_status": "official 2013 questionnaire identifies a numeric household person count; continuous count measure, no discrete category labels",
+        "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
+        "unit": "persons"
       },
       {
         "wave": "2015",
@@ -147,7 +153,10 @@
         "module": "Household_Income",
         "source_label": "Number of People Regularly Having Meals",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Counts household members who usually ate meals together during the past week, excluding guests. Treat as household context, not an individual's dietary frequency; interviewer soft checks are prompts, not analytic cutoffs. Confirm release-specific special values and household linkage before modeling.",
+        "value_label_status": "official 2015 questionnaire identifies a numeric household person count; continuous count measure, no discrete category labels",
+        "value_label_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "unit": "persons"
       },
       {
         "wave": "2018",
@@ -155,7 +164,10 @@
         "module": "Household_Income",
         "source_label": "Number of People Ate Meals in the Past Week",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Counts household members who usually ate meals together during the past week, excluding guests. Treat as household context, not an individual's dietary frequency; interviewer soft checks are prompts, not analytic cutoffs. Confirm release-specific special values and household linkage before modeling.",
+        "value_label_status": "official 2018 questionnaire identifies a numeric household person count; continuous count measure, no discrete category labels",
+        "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "unit": "persons"
       },
       {
         "wave": "2020",
@@ -163,7 +175,10 @@
         "module": "Household_Income",
         "source_label": "Number of People Ate Meals in the Past Week",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Counts household members who usually ate meals together during the past week, excluding guests. Treat as household context, not an individual's dietary frequency; interviewer soft checks are prompts, not analytic cutoffs. Confirm release-specific special values and household linkage before modeling.",
+        "value_label_status": "official 2020 questionnaire identifies a numeric household person count; continuous count measure, no discrete category labels",
+        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "unit": "persons"
       }
     ]
   },
@@ -178,8 +193,11 @@
         "code": "ge001",
         "module": "household_income",
         "source_label": "You are the Primary Person Who Purchases Food for the Household",
-        "value_labels": "",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+        "value_labels": "1=Yes; 2=No",
+        "note": "Ask whether the respondent is the household's primary food purchaser; 'Yes' routes past the roster selector. Household decision-role context only.",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
+        "value_label_status": "official 2011 questionnaire and Codebook identify respondent-as-primary-food-purchaser Yes/No; household-role item, not a dietary measure",
+        "unit": ""
       },
       {
         "wave": "2011",
@@ -187,15 +205,21 @@
         "module": "household_income",
         "source_label": "Who Purchasing Food",
         "value_labels": "",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+        "note": "Roster-dependent identity/role selector. Choice ranges and roster construction differ by wave; do not harmonize numeric codes as the same person or publish respondent names. Household-role context only.",
+        "value_label_status": "official 2011 questionnaire identifies primary food purchaser through wave-specific household roster/other-person selector; dynamic identity choices are not fixed value labels",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
+        "unit": ""
       },
       {
         "wave": "2013",
         "code": "ge001",
         "module": "Household_Income",
         "source_label": "The Respodent Is The Primary Person for Purchasing Food",
-        "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "1=Yes; 2=No",
+        "note": "Ask whether the respondent is the household's primary food purchaser; 'Yes' routes past the roster selector. Household decision-role context only.",
+        "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
+        "value_label_status": "official 2013 questionnaire and Codebook identify respondent-as-primary-food-purchaser Yes/No; household-role item, not a dietary measure",
+        "unit": ""
       },
       {
         "wave": "2013",
@@ -203,15 +227,21 @@
         "module": "Household_Income",
         "source_label": "The Primary Person for Purchasing Food",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Roster-dependent identity/role selector. Choice ranges and roster construction differ by wave; do not harmonize numeric codes as the same person or publish respondent names. Household-role context only.",
+        "value_label_status": "official 2013 questionnaire identifies primary food purchaser through wave-specific household roster/other-person selector; dynamic identity choices are not fixed value labels",
+        "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
+        "unit": ""
       },
       {
         "wave": "2015",
         "code": "ge001",
         "module": "Household_Income",
         "source_label": "The Respodent is The Primary Person for Purchasing Food",
-        "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "1=Yes; 2=No",
+        "note": "Ask whether the respondent is the household's primary food purchaser; 'Yes' routes past the roster selector. Household decision-role context only.",
+        "value_label_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_status": "official 2015 questionnaire and Codebook identify respondent-as-primary-food-purchaser Yes/No; household-role item, not a dietary measure",
+        "unit": ""
       },
       {
         "wave": "2015",
@@ -219,15 +249,21 @@
         "module": "Household_Income",
         "source_label": "The Primary Person for Purchasing Food",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Roster-dependent identity/role selector. Choice ranges and roster construction differ by wave; do not harmonize numeric codes as the same person or publish respondent names. Household-role context only.",
+        "value_label_status": "official 2015 questionnaire identifies primary food purchaser through wave-specific household roster/other-person selector; dynamic identity choices are not fixed value labels",
+        "value_label_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "unit": ""
       },
       {
         "wave": "2018",
         "code": "ge001",
         "module": "Household_Income",
         "source_label": "Primary Person Who Purchases Food",
-        "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "1=Yes; 2=No",
+        "note": "Ask whether the respondent is the household's primary food purchaser; 'Yes' routes past the roster selector. Household decision-role context only.",
+        "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "value_label_status": "official 2018 questionnaire and Codebook identify respondent-as-primary-food-purchaser Yes/No; household-role item, not a dietary measure",
+        "unit": ""
       },
       {
         "wave": "2018",
@@ -235,15 +271,21 @@
         "module": "Household_Income",
         "source_label": "Who is Primary Person Purchasing Food",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Roster-dependent identity/role selector. Choice ranges and roster construction differ by wave; do not harmonize numeric codes as the same person or publish respondent names. Household-role context only.",
+        "value_label_status": "official 2018 questionnaire identifies primary food purchaser through wave-specific household roster/other-person selector; dynamic identity choices are not fixed value labels",
+        "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
+        "unit": ""
       },
       {
         "wave": "2020",
         "code": "gf002",
         "module": "Household_Income",
         "source_label": "Primary Person Who Purchases Food",
-        "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "1=Yes; 2=No",
+        "note": "Ask whether the respondent is the household's primary food purchaser; 'Yes' routes past the roster selector. Household decision-role context only.",
+        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "value_label_status": "official 2020 questionnaire and Codebook identify respondent-as-primary-food-purchaser Yes/No; household-role item, not a dietary measure",
+        "unit": ""
       },
       {
         "wave": "2020",
@@ -251,7 +293,10 @@
         "module": "Household_Income",
         "source_label": "Who is Primary Person Purchasing Food",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Roster-dependent identity/role selector. Choice ranges and roster construction differ by wave; do not harmonize numeric codes as the same person or publish respondent names. Household-role context only.",
+        "value_label_status": "official 2020 questionnaire identifies primary food purchaser through wave-specific household roster/other-person selector; dynamic identity choices are not fixed value labels",
+        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "unit": ""
       }
     ]
   },

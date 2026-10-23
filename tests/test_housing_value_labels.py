@@ -222,6 +222,23 @@ class HousingValueLabelTests(unittest.TestCase):
             self.assertIn("not individual dietary intake", row["Harmonization.Status"])
             self.assertIn("cross-wave equivalence", row["Harmonization.Status"])
         self.assertIn("includes purchased and own-produced food", catalog[("2011", "ge006")]["Harmonization.Status"])
+
+    def test_household_food_roles_and_shared_meal_count_keep_distinct_measurement_levels(self):
+        catalog = {(r["Source.Wave"], r["Variable.Name"].lower()): r for r in self.catalog}
+        mapping = {(f["wave"], f["code"].lower()): f for concept in self.food_site for f in concept["source_fields"]}
+        for wave, yes, who, count in [
+            ("2011", "ge001", "ge002", "ge004"),
+            ("2013", "ge001", "ge002", "ge004"),
+            ("2015", "ge001", "ge002", "ge004"),
+            ("2018", "ge001", "ge002", "ge004"),
+            ("2020", "gf002", "gf003", "gf004"),
+        ]:
+            self.assertEqual(catalog[(wave, yes)]["Value.Labels"], "1=Yes; 2=No")
+            self.assertEqual(catalog[(wave, who)]["Value.Labels"], "")
+            self.assertIn("roster", catalog[(wave, who)]["Value.Label.Review"])
+            self.assertEqual(catalog[(wave, count)]["Unit"], "persons")
+            self.assertIn("excluding guests", catalog[(wave, count)]["Harmonization.Status"])
+            self.assertEqual(mapping[(wave, count)]["unit"], "persons")
         self.assertIn("excludes banquets/weddings", catalog[("2020", "gf006")]["Harmonization.Status"])
         self.assertIn("excludes banquets/weddings", catalog[("2018", "ge007_w4")]["Harmonization.Status"])
 
