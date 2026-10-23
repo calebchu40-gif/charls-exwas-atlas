@@ -16,7 +16,7 @@ BOOKS = {
     "2018": SRC / "CHARLS_2018_Codebook_extracted.txt",
     "2020": SRC / "CHARLS_2020_Codebook_extracted.txt",
 }
-HEADING = re.compile(r"^\s*(?:[•●]\s*([^:\s]+).*?|([A-Za-z][A-Za-z0-9_]*))\s*:\s*(.*?)\s*$", re.M)
+HEADING = re.compile(r"^\s*(?:[•●]\s*)?([A-Za-z][A-Za-z0-9_]*(?:\s+[A-Za-z0-9_]+)?)\s*:\s*(.*?)\s*$", re.M)
 VALUE = re.compile(r"^\s*(\d+)\s+(.+?)\s*$")
 FREQUENCY_TAIL = re.compile(r"\s+[\d,]+\s+[\d.]+%?\s*$")
 
@@ -36,8 +36,11 @@ def read_codebook(path):
                 label = re.sub(r"\s+", " ", label)
                 if label and label[0].isalpha() and label.lower() not in {"total", "obs"}:
                     values.append((m.group(1), label))
-        code = (h.group(1) or h.group(2)).lower()
-        out.setdefault(code, []).append((h.group(3).strip(), values))
+        # The extracted 2011 Codebook often renders underscores as spaces
+        # (for example, `fd005 indc` for `fd005_indc`). Normalize both forms
+        # so exact source-field lookup does not depend on PDF text layout.
+        code = re.sub(r"[^a-z0-9]", "", h.group(1).lower())
+        out.setdefault(code, []).append((h.group(2).strip(), values))
     return out
 
 
@@ -47,7 +50,8 @@ def main():
     rows = []
     for r in fields.itertuples(index=False):
         wave, code = str(r.wave), str(r.code).lower()
-        entries = books.get(wave, {}).get(code, [])
+        code_key = re.sub(r"[^a-z0-9]", "", code)
+        entries = books.get(wave, {}).get(code_key, [])
         target = re.sub(r"[^a-z0-9]+", " ", str(r.source_label).lower()).strip()
         ranked = sorted(entries, key=lambda x: SequenceMatcher(None, target, re.sub(r"[^a-z0-9]+", " ", x[0].lower()).strip()).ratio(), reverse=True)
         entry = ranked[0] if ranked else None
@@ -76,6 +80,15 @@ def main():
             "value_label_status": status, "value_label_source": source,
         })
     out = pd.DataFrame(rows).drop_duplicates(["wave", "code", "concept_id"])
+    classification = out["code"].str.lower().str.endswith(("_gb", "_isco", "_indc"))
+    for idx in out.index[classification]:
+        wave = str(out.at[idx, "wave"])
+        out.at[idx, "value_labels"] = ""
+        out.at[idx, "value_label_status"] = (
+            "occupation/industry classification code; not a numeric scale or response menu; "
+            "use the matching official classification lookup; Codebook frequencies omitted"
+        )
+        out.at[idx, "value_label_source"] = str(BOOKS[wave].relative_to(ROOT)).replace("\\", "/")
     # The codebook prints observed response categories with frequencies; FL016's
     # questionnaire defines the full 1-10 menu, including options not observed
     # in a given release. Keep the full official menu and do not carry counts.

@@ -4,7 +4,7 @@
 2015,fe002,employed_days_per_week,How Many Days Did You Work per Week,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2015_Codebook_extracted.txt
 2018,fe002,employed_days_per_week,How Many Days Did You Work per Week,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2018_Codebook_extracted.txt
 2020,fc026,employed_days_per_week,Days of Working per Week,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2020_Codebook_extracted.txt
-2011,fe003,employed_hours_per_day,Hours Per Day Worked in the Past Year,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fe003,employed_hours_per_day,Hours Per Day Worked in the Past Year,1=Yearly salary; 2=Monthly salary; 3=Weekly salary; 4=Daily salary; 5=Hourly salary; 6=Contract-based; 7=Performance-based; 8=Other,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
 2013,fe003,employed_hours_per_day,How Many Hours Did You Work per Day,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2013_Codebook_extracted.txt
 2015,fe003,employed_hours_per_day,How Many Hours Did You Work per Day,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2015_Codebook_extracted.txt
 2018,fe003,employed_hours_per_day,How Many Hours Did You Work per Day,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2018_Codebook_extracted.txt
@@ -56,8 +56,8 @@
 2015,fc019,multiple_current_nonfarm_jobs_2011_2015,More than One Non-Agricultural Job,"1=Yes, more than one current non-agricultural job; 2=No, one job",official questionnaire categories; frequencies omitted; 2011 question wording controls its scope,sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt
 2011,fg014,employer_provided_housing_fund_2011_2013,Employer Provides Funding for Public Housing,1=Yes; 2=No,official questionnaire/codebook categories; frequencies omitted; current employer benefit route,sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt
 2013,fg014,employer_provided_housing_fund_2011_2013,Does Your Employer Provide Funding for Pubic Housing,1=Yes; 2=No,official questionnaire/codebook categories; frequencies omitted; current employer benefit route,sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt
-2011,fh015_gb,unpaid_family_business_occupation_code_2011,Family Business Occupation Code (GB),,occupation classification code; Codebook frequency distribution omitted; classification definitions are not response labels; unpaid family-business route retained,sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt
-2011,fh015_isco,unpaid_family_business_occupation_code_2011,Family Business Occupation Code (ISCO),,occupation classification code; Codebook frequency distribution omitted; classification definitions are not response labels; unpaid family-business route retained,sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt
+2011,fh015_gb,unpaid_family_business_occupation_code_2011,Family Business Occupation Code (GB),,occupation classification code; codebook frequency distribution omitted; classification definitions are not response labels,sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fh015_isco,unpaid_family_business_occupation_code_2011,Family Business Occupation Code (ISCO),,occupation classification code; codebook frequency distribution omitted; classification definitions are not response labels,sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fc002,agricultural_wage_employer_count_past_month_2011_2013,Num. of Employers Worked for in the Past Month,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2013,fc002,agricultural_wage_employer_count_past_month_2011_2013,How Many Employers,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2013_Codebook_extracted.txt
 2011,fd007,formal_employee_status,Formal Employee of an Establishment,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
@@ -67,12 +67,12 @@
 2011,fd017,employment_type,Employment Type,1=Regular worker; 2=Contract worker; 3=Casual worker,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
 2013,fd017,employment_type,Employment Type,1=Regular Worker; 2=Contract Worker; 3=Casual/Part-time Worker,official codebook response labels; frequencies omitted,sources_official/CHARLS_2013_Codebook_extracted.txt
 2015,fd017,employment_type,Employment Type,1=Regular Worker; 2=Contract Worker; 3=Casual/Part-time Worker,official codebook response labels; frequencies omitted,sources_official/CHARLS_2015_Codebook_extracted.txt
-2011,fd005_indc,industry_code,Employed Industry Code,,official codebook category labels not located,
-2011,fd012_gb,occupation_code_gb,Employed Occupation Code (GB),,official codebook category labels not located,
-2011,fd012_isco,occupation_code_isco,Employed Occupation Code (ISCO),,official codebook category labels not located,
+2011,fd005_indc,industry_code,Employed Industry Code,,occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fd012_gb,occupation_code_gb,Employed Occupation Code (GB),,occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fd012_isco,occupation_code_isco,Employed Occupation Code (ISCO),,occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fd021,employment_contract_duration,Agreed Period of Employment,1=Defined period years and months; 2=Not defined; 3=Same as the term of the project,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
-2011,fd021_1,employment_contract_duration,Years,,official codebook category labels not located,
-2011,fd021_2,employment_contract_duration,Months,,official codebook category labels not located,
+2011,fd021_1,employment_contract_duration,Years,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fd021_2,employment_contract_duration,Months,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2013,fd021,employment_contract_duration,Labor Contract Period,1=Defined Preiod; 2=Not Defined; 3=Same as The Term of The Project,official codebook response labels; frequencies omitted,sources_official/CHARLS_2013_Codebook_extracted.txt
 2013,fd021_1,employment_contract_duration,Labor Contract Period(Year),,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2013_Codebook_extracted.txt
 2013,fd021_2,employment_contract_duration,Labor Contract Period(Month),,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2013_Codebook_extracted.txt
@@ -260,8 +260,8 @@
 2020,fa004,nonfarm_work_presence_2020,Has Nonfarm Work,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2020_Codebook_extracted.txt
 2020,fa011,job_arrangement_current_2020,Job Employed or Self-Employed,1=Employed Nonfarm; 2=Self-employed Nonfarm; 3=Unpaid Family Business Nonfarm,official codebook response labels; frequencies omitted,sources_official/CHARLS_2020_Codebook_extracted.txt
 2020,fa010,job_arrangement_during_absence_2020,Main Job Employed or Self Employed,1=Employed Nonfarm; 2=Self-employed Nonfarm; 3=Unpaid Family Business Nonfarm; 4=Farm Employed,official codebook response labels; frequencies omitted,sources_official/CHARLS_2020_Codebook_extracted.txt
-2011,fb001_1,first_work_start_timing,Age,,official codebook category labels not located,
-2011,fb001_2,first_work_start_timing,Year,,official codebook category labels not located,
+2011,fb001_1,first_work_start_timing,Age,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fb001_2,first_work_start_timing,Year,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2013,fb001_1,first_work_start_timing,Age Start Working,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2013_Codebook_extracted.txt
 2013,fb001_2,first_work_start_timing,Year Start Working,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2013_Codebook_extracted.txt
 2011,fb002,first_job_work_unit_type,Type of Work Unit of Your First Job,1=Government; 2=Institutions; 3=NGO; 4=Firm; 5=Individual firm; 6=Farmer; 7=Individual household; 8=Other,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
@@ -274,14 +274,14 @@
 2013,fb006,career_state_collective_enterprise_type,Specific Ownership Type,2=State-controlled Firm; 4=Collective-controlled Firm,official codebook response labels; frequencies omitted,sources_official/CHARLS_2013_Codebook_extracted.txt
 2011,fb007,career_long_work_interruption,Stop Working for an Extended Period of Time,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
 2013,fb007,career_long_work_interruption,"Ever Stop Working due to Family,Health,School",1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2013_Codebook_extracted.txt
-2011,fb008_1,career_total_interruption_duration,Years,,official codebook category labels not located,
-2011,fb008_2,career_total_interruption_duration,Months,,official codebook category labels not located,
+2011,fb008_1,career_total_interruption_duration,Years,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fb008_2,career_total_interruption_duration,Months,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2013,fb008_1,career_total_interruption_duration,How Long the Interruptions in All(Year),,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2013_Codebook_extracted.txt
 2013,fb008_2,career_total_interruption_duration,How Long the Interruptions in All(Month),,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2013_Codebook_extracted.txt
-2011,fb009_2,career_longest_interruption_interval,Beginning Year,,official codebook category labels not located,
-2011,fb009_3,career_longest_interruption_interval,Begining Month,,official codebook category labels not located,
-2011,fb009_5,career_longest_interruption_interval,Ending Year,,official codebook category labels not located,
-2011,fb009_6,career_longest_interruption_interval,Ending Month,,official codebook category labels not located,
+2011,fb009_2,career_longest_interruption_interval,Beginning Year,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fb009_3,career_longest_interruption_interval,Begining Month,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fb009_5,career_longest_interruption_interval,Ending Year,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fb009_6,career_longest_interruption_interval,Ending Month,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2013,fb009_1,career_longest_interruption_interval,Longest Stop(Start Year),,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2013_Codebook_extracted.txt
 2013,fb009_2,career_longest_interruption_interval,Longest Stop(Start Month),,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2013_Codebook_extracted.txt
 2013,fb009_3,career_longest_interruption_interval,Longest Stop(End Year),,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2013_Codebook_extracted.txt
@@ -541,17 +541,17 @@
 2018,fc011,household_agriculture_hours_per_day_2011_2018,Hours for Household Agricultural Work,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2018_Codebook_extracted.txt
 2015,fk000_w3_1,nonfarm_job_satisfaction_2015_2018,Satisfication of Non-agricultural Work,1=Completely Satisfied; 2=Very Satisfied; 3=Some What Satisfied; 4=Not Very Satisfied; 5=Not at All Satisfied,official codebook response labels; frequencies omitted,sources_official/CHARLS_2015_Codebook_extracted.txt
 2018,fk000_w3_1,nonfarm_job_satisfaction_2015_2018,Satisfaction of Non-agricultural Work,1=Completely Satisfied; 2=Very Satisfied; 3=Somewhat Satisfied; 4=Not Very Satisfied; 5=Not at All Satisfied,official codebook response labels; frequencies omitted,sources_official/CHARLS_2018_Codebook_extracted.txt
-2011,fk003,planned_age_to_stop_working_general_2011_2015,Age You Plan to Stop Working,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fk003,planned_age_to_stop_working_general_2011_2015,Age You Plan to Stop Working,1=Employed; 2=Self employed; 3=Unpaid family business; 4=Farming; 1=This village/community; 2=Other village/community in this county/city; 3=Another county/city in this province; 4=Another province; 1=Yes; 2=No; 1=Self-employed with employees; 2=Self-employed without employees; 3=Family business worker without pay; 1=Regular wage worker; 2=Contract worker; 3=Temporary wage worker; 4=Casual wage worker; 1=Government; 2=Institutions; 3=NGO; 4=Firm; 5=Individual firm; 6=Individual farmer; 7=Individual household; 8=Other; 1=Yes; 2=No; 2=State-controlled firm; 4=Collective-controlled firm; 6=Private-controlled firm; 8=Joint venture; 9=Other joint-ownership; 10=Other; 1=Yes; 2=No; 1=Yes; 2=No; 1=Business closed; 2=Quit; 3=I was laid-off; 4=I was fired; 7=I stopped working for health reasons; 8=I stopped working for family reasons; 9=I was transferred to another job; 10=I was sent down to do manual labor; 11=I started working off-farm locally; 12=I went to work away from home; 13=Better job in local area; 14=Better job in another location; 15=I retired; 16=Other; 1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
 2013,fk003,planned_age_to_stop_working_general_2011_2015,Expected Age Stop Working,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2013_Codebook_extracted.txt
 2015,fk003,planned_age_to_stop_working_general_2011_2015,Expected Age Stop Working,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2015_Codebook_extracted.txt
 2015,fk000_w3_2,planned_age_to_stop_nonfarm_work_2015_2018,Expected Age Stop Working,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2015_Codebook_extracted.txt
 2018,fk000_w3_2,planned_age_to_stop_nonfarm_work_2015_2018,Expected Age When to Stop Working,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2018_Codebook_extracted.txt
-2011,fh005_gb,self_employed_occupation_code_2011,Self-Employed Occupation Code (GB),,official codebook category labels not located,
-2011,fh005_isco,self_employed_occupation_code_2011,Self-Employed Occupation Code (ISCO),,official codebook category labels not located,
-2011,fh007_indc,self_employed_industry_code_2011,Self-Employed Industry Code,,official codebook category labels not located,
-2011,fl017_gb,last_job_occupation_code_2011,Most Recent Job Occupation Code (GB),,official codebook category labels not located,
-2011,fl017_isco,last_job_occupation_code_2011,Most Recent Job Occupation Code (ISCO),,official codebook category labels not located,
-2011,fl006_indc,last_job_industry_code_2011,Most Recent Job Industry Code,,official codebook category labels not located,
+2011,fh005_gb,self_employed_occupation_code_2011,Self-Employed Occupation Code (GB),,occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fh005_isco,self_employed_occupation_code_2011,Self-Employed Occupation Code (ISCO),,occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fh007_indc,self_employed_industry_code_2011,Self-Employed Industry Code,,occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fl017_gb,last_job_occupation_code_2011,Most Recent Job Occupation Code (GB),,occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fl017_isco,last_job_occupation_code_2011,Most Recent Job Occupation Code (ISCO),,occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fl006_indc,last_job_industry_code_2011,Most Recent Job Industry Code,,occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fl020s1,last_work_exit_reason_business_closed_2011_2015,Reason for Leaving,questionnaire option: Business closed (not an answer-value code),DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No,sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt
 2013,fl020s1,last_work_exit_reason_business_closed_2011_2015,Why Did You Leave That Employer? Business Closed,1=Business Closed,"official selected-option label; checkbox slot, absence is not a negative response",sources_official/CHARLS_2013_Codebook_extracted.txt
 2015,fl020s1,last_work_exit_reason_business_closed_2011_2015,Why Did You Leave That Employer? Business Closed,1=Business Closed,"official selected-option label; checkbox slot, absence is not a negative response",sources_official/CHARLS_2015_Codebook_extracted.txt
@@ -603,8 +603,8 @@
 2011,fm001,retirement_processing_unit_relation,Work Unit Processed Your Retirement,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm003,retirement_processing_unit_type,Type of Work Unit,1=Government; 2=Institutions; 4=Firm; 5=Ran own business; 6=Other,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm004,retirement_processing_unit_location_relation,Location of Work Unit,1=This village/community; 2=Other village/community in this county/city; 3=Another county/city in this province; 4=Another province,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
-2011,fm005_1,receding_from_position_timing,Year,,official codebook category labels not located,
-2011,fm005_2,receding_from_position_timing,Month,,official codebook category labels not located,
+2011,fm005_1,receding_from_position_timing,Year,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm005_2,receding_from_position_timing,Month,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm006,receding_from_position_reason,Reason You Receded from Your Position,"1=Due to poor health; 4=I receded from my position voluntary; 5=Reach retirement age, but not eligible working age; 6=Other",official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm007,pre_receding_monthly_salary,Salary Per Month,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm008,severance_payment_receipt,Received Any Payments for Leaving Job,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
@@ -613,48 +613,48 @@
 2011,fm011,retirement_type,Type of Retirement,1=Normal retirement; 2=Early retirement; 3=Internal retirement first then regular retirement; 4=Internal retirement and not yet regular retirement,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm012,retirement_worker_or_cadre_status,Retired as Worker or Cadre,1=Worker; 2=Cadre,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm013,revolutionary_retiree_status,Ordinary Retiree or Revolutionary Retiree,1=Ordinary retiree; 2=Revolutionary retiree,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
-2011,fm014_1,formal_retirement_timing,Year,,official codebook category labels not located,
-2011,fm014_2,formal_retirement_timing,Month,,official codebook category labels not located,
+2011,fm014_1,formal_retirement_timing,Year,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm014_2,formal_retirement_timing,Month,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm015,early_retirement_reason,Reason for Early Retirement,1=I have 30 years of job experience; 2=My work unit belonged to the category of high-risk and hard manual labor; 3=My work unit was restructuringbankrupt; 4=Due to poor health; 5=Due to family reason; 6=Other,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm016,pre_retirement_salary,Pre-Retirement Salary,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
-2011,fm017_a,pre_retirement_salary,Min Bracket,,official codebook category labels not located,
-2011,fm017_b,pre_retirement_salary,Max Bracket,,official codebook category labels not located,
-2011,fm018_1,pension_benefit_start_date_components,Year,,official codebook category labels not located,
-2011,fm018_2,pension_benefit_start_date_components,Month,,official codebook category labels not located,
+2011,fm017_a,pre_retirement_salary,Min Bracket,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm017_b,pre_retirement_salary,Max Bracket,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm018_1,pension_benefit_start_date_components,Year,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm018_2,pension_benefit_start_date_components,Month,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm019s1,retirement_pension_benefit_source,Receiving Pension Benefits from,questionnaire option slot=Government (not an answer-value label),official questionnaire/codebook response labels; frequencies omitted; agricultural work route is wave-specific,sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm019s2,retirement_pension_benefit_source,Receiving Pension Benefits from,questionnaire option slot=Previous work unit (not an answer-value label),official questionnaire/codebook response labels; frequencies omitted; agricultural work route is wave-specific,sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm019s3,retirement_pension_benefit_source,Receiving Pension Benefits from,questionnaire option slot=Social insurance agency (not an answer-value label),official questionnaire/codebook response labels; frequencies omitted; agricultural work route is wave-specific,sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm019s4,retirement_pension_benefit_source,Receiving Pension Benefits from,questionnaire option slot=Commercial insurance company (not an answer-value label),official questionnaire/codebook response labels; frequencies omitted; agricultural work route is wave-specific,sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm019s5,retirement_pension_benefit_source,Receiving Pension Benefits from,questionnaire option slot=Other (not an answer-value label),official questionnaire/codebook response labels; frequencies omitted; agricultural work route is wave-specific,sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm020,pension_benefit_amount_at_retirement,Benefis when You Retired,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
-2011,fm021_a,pension_benefit_amount_at_retirement,Min Brackets,,official codebook category labels not located,
-2011,fm021_b,pension_benefit_amount_at_retirement,Max Brackets,,official codebook category labels not located,
+2011,fm021_a,pension_benefit_amount_at_retirement,Min Brackets,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm021_b,pension_benefit_amount_at_retirement,Max Brackets,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm022,current_pension_monthly_amount,Monthly Pension,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
-2011,fm023_a,current_pension_monthly_amount,Min Brackets,,official codebook category labels not located,
-2011,fm023_b,current_pension_monthly_amount,Max Brackets,,official codebook category labels not located,
+2011,fm023_a,current_pension_monthly_amount,Min Brackets,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm023_b,current_pension_monthly_amount,Max Brackets,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm024,eligible_service_years_at_retirement,Eligible Work Years at the Time of Retirement,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
-2011,fm025_1,internal_retirement_timing,Year,,official codebook category labels not located,
-2011,fm025_2,internal_retirement_timing,Month,,official codebook category labels not located,
+2011,fm025_1,internal_retirement_timing,Year,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm025_2,internal_retirement_timing,Month,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm026,internal_retirement_reason,Reason for Internal Retirement,1=I have 30 years of job experience; 2=My work unit was restructuringbankrupt; 3=Due to poor health; 4=Due to family reason; 5=Other,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm027,pre_internal_retirement_salary,Pre-Internal Retirement Salary,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm028,internal_retirement_wage,Internal Retirement Wage,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
-2011,fm029_a,internal_retirement_wage,Min Bracket,,official codebook category labels not located,
-2011,fm029_b,internal_retirement_wage,Max Bracket,,official codebook category labels not located,
-2011,fm030_1,formal_retirement_timing,Year,,official codebook category labels not located,
-2011,fm030_2,formal_retirement_timing,Month,,official codebook category labels not located,
-2011,fm032_a,pension_benefit_amount_at_retirement,Min Bracket,,official codebook category labels not located,
-2011,fm032_b,pension_benefit_amount_at_retirement,Max Bracket,,official codebook category labels not located,
+2011,fm029_a,internal_retirement_wage,Min Bracket,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm029_b,internal_retirement_wage,Max Bracket,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm030_1,formal_retirement_timing,Year,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm030_2,formal_retirement_timing,Month,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm032_a,pension_benefit_amount_at_retirement,Min Bracket,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm032_b,pension_benefit_amount_at_retirement,Max Bracket,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm033,retirement_pension_benefit_source,You Receive Pension from,6=Government; 7=Work unit; 8=Social insurance agency; 10=Other,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm034,current_pension_monthly_amount,Monthly Pension,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
-2011,fm035_a,current_pension_monthly_amount,Min Bracket,,official codebook category labels not located,
-2011,fm035_b,current_pension_monthly_amount,Max Bracket,,official codebook category labels not located,
+2011,fm035_a,current_pension_monthly_amount,Min Bracket,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm035_b,current_pension_monthly_amount,Max Bracket,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm036,eligible_service_years_for_retirement,Eligible Work Years for Formal Retirement,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
-2011,fm037_1,planned_formal_retirement_timing,Year,,official codebook category labels not located,
-2011,fm037_2,planned_formal_retirement_timing,Month,,official codebook category labels not located,
-2011,fm038_1,expected_formal_retirement_benefit_monthly_amount,Amount Per Month,,official codebook category labels not located,
-2011,fm038_2,expected_formal_retirement_benefit_salary_ratio,Percentage,,official codebook category labels not located,
-2011,fm039_a,expected_formal_retirement_benefit_monthly_amount,Min Bracket,,official codebook category labels not located,
-2011,fm039_b,expected_formal_retirement_benefit_monthly_amount,Max Bracket,,official codebook category labels not located,
+2011,fm037_1,planned_formal_retirement_timing,Year,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm037_2,planned_formal_retirement_timing,Month,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm038_1,expected_formal_retirement_benefit_monthly_amount,Amount Per Month,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm038_2,expected_formal_retirement_benefit_salary_ratio,Percentage,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm039_a,expected_formal_retirement_benefit_monthly_amount,Min Bracket,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm039_b,expected_formal_retirement_benefit_monthly_amount,Max Bracket,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm040,eligible_service_years_for_retirement,Eligible Work Years,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm041,current_eligible_service_years,Eligible Work Years Currently Have,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm042,spouse_present_at_retirement,Have a Spouse When Processed Retirement,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
@@ -669,11 +669,11 @@
 2011,fm051,young_grandchildren_at_retirement,Num. of Grandchildren below Age 6 When You Processed Retirement,,official codebook category labels not located,
 2011,fm052,work_after_retirement,Did You Work after Processed Retirement,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm053,time_to_resume_work_after_retirement,How Long did You Start to Work Again after Processed Retirement,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
-2011,fm055_gb,pastime_work_occupation_code_gb,Pasttime Job Occupation Code (GB),,official codebook category labels not located,
-2011,fm055_indc,pastime_work_industry_code,Pasttime Job Industry Code,,official codebook category labels not located,
-2011,fm055_isco,pastime_work_occupation_code_isco,Pasttime Job Occupation Code (ISCO),,official codebook category labels not located,
-2011,fm056_1,pastime_work_start_timing,Year,,official codebook category labels not located,
-2011,fm056_2,pastime_work_start_timing,Month,,official codebook category labels not located,
+2011,fm055_gb,pastime_work_occupation_code_gb,Pasttime Job Occupation Code (GB),,occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm055_indc,pastime_work_industry_code,Pasttime Job Industry Code,,occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm055_isco,pastime_work_occupation_code_isco,Pasttime Job Occupation Code (ISCO),,occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm056_1,pastime_work_start_timing,Year,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,fm056_2,pastime_work_start_timing,Month,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm057,pastime_work_days_per_week,Days Worked Per Week,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm058,pastime_work_hours_per_week,Hours Worked Per Week,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,fm059,pastime_work_monthly_income,Monthly Income,,codebook field located; continuous/open response or no categorical labels,sources_official/CHARLS_2011_Codebook_extracted.txt

@@ -144,14 +144,20 @@ class CatalogReviewStatusTests(unittest.TestCase):
             self.assertTrue(all(row.get("Value.Labels") == labels for row in rows), (wave, code))
             self.assertTrue(all(row.get("Value.Label.Review") == status for row in rows), (wave, code))
 
-    def test_missing_2011_work_codebook_categories_are_reported_as_not_located(self):
-        for wave, code in (("2011", "fd005_indc"), ("2011", "fd021_1"), ("2011", "fm017_a")):
+    def test_2011_work_classifications_and_numeric_components_have_distinct_statuses(self):
+        expected = {
+            "fd005_indc": "occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted",
+            "fd021_1": "codebook field located; continuous/open response or no categorical labels",
+            "fm017_a": "codebook field located; continuous/open response or no categorical labels",
+        }
+        for code, status in expected.items():
+            wave = "2011"
             rows = [
                 row for row in self.catalog
                 if row.get("Source.Wave") == wave and row.get("Variable.Name", "").lower() == code
             ]
             self.assertTrue(rows, (wave, code))
-            self.assertTrue(all(row.get("Value.Label.Review") == "official codebook category labels not located" for row in rows))
+            self.assertTrue(all(row.get("Value.Label.Review") == status for row in rows))
             self.assertTrue(all(not row.get("Value.Labels", "") for row in rows))
             self.assertTrue(all("CHARLS_2011_Codebook_extracted.txt" in row.get("Value.Label.Source", "") for row in rows))
         app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")

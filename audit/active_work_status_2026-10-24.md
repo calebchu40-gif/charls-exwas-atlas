@@ -17,9 +17,9 @@ Latest generated field-wave catalogues contain E=4,738, P=2,068 and C=978 rows. 
 
 ## Reproducibility and checks
 
-The Wave 5 digital review lives in `audit/wave5_digital_behavior_and_life_expectancy_review_2026-10-24.md`; the 2011–2018 cross-wave review is in `audit/cross_wave_digital_behavior_review_2026-10-24.md`. Crosswalk sources are `audit/behavior_exposure_variable_mapping_v1.csv` and `audit/health_symptom_variable_mapping_v1.csv`. The full metadata propagation pipeline calls the Wave 5 core demographic review and the digital-behavior review after the source catalogue rebuild.
+The Wave 5 digital review lives in `audit/wave5_digital_behavior_and_life_expectancy_review_2026-10-24.md`; the 2011–2018 cross-wave review is in `audit/cross_wave_digital_behavior_review_2026-10-24.md`. Work Codebook identifier normalization is documented in `audit/work_codebook_identifier_normalization_2026-10-24.md`. Crosswalk sources are `audit/behavior_exposure_variable_mapping_v1.csv` and `audit/health_symptom_variable_mapping_v1.csv`. The full metadata propagation pipeline calls the Wave 5 core demographic review and the digital-behavior review after the source catalogue rebuild.
 
-Latest checks: `python scripts/build_ep_atlas_metadata.py --finalize-only` completed; all 156 Python tests pass; `node --check site-prototype/dist/app.js` and `git diff --check` pass. The fixed 89-row `DO NOT ANALYZE` lock audit remains intact. Catalogue rebuilds now preserve the prior audit-row order and append newly discovered fields, keeping Git review diffs compact.
+Latest checks: `python scripts/build_ep_atlas_metadata.py --finalize-only` completed; all 159 Python tests pass; `node --check site-prototype/dist/app.js` and `git diff --check` pass. The fixed 89-row `DO NOT ANALYZE` lock audit remains intact. Catalogue rebuilds now preserve the prior audit-row order and append newly discovered fields, keeping Git review diffs compact.
 
 ## Next work, in order
 

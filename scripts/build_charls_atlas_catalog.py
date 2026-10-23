@@ -1014,7 +1014,9 @@ def main() -> None:
             r"^codebook field located; continuous/open response or no categorical labels$|"
             r"^continuous conditional component; unit and route reviewed; no response-category labels; codebook frequencies omitted$|"
             r"^continuous date component; preserve year/month unit and conditional (?:transition/correction|prior-status correction) route; month -1 indicates unable to report(?:; DO NOT ANALYZE pending route and released-data reconciliation)?$|"
-            r"^occupation classification code; Codebook frequency distribution omitted; classification definitions are not response labels; unpaid family-business route retained$",
+            r"^occupation classification code; Codebook frequency distribution omitted; classification definitions are not response labels; unpaid family-business route retained$|"
+            r"^occupation classification code; codebook frequency distribution omitted; classification definitions are not response labels$|"
+            r"^occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted$",
             re.I,
         ),
     )

@@ -87,8 +87,8 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "",
-        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_labels": "1=Yearly salary; 2=Monthly salary; 3=Weekly salary; 4=Daily salary; 5=Hourly salary; 6=Contract-based; 7=Performance-based; 8=Other",
+        "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
@@ -1095,8 +1095,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },
@@ -1116,8 +1116,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },
@@ -1137,8 +1137,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },
@@ -1171,8 +1171,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -1184,8 +1184,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -6438,8 +6438,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -6451,8 +6451,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -6668,8 +6668,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -6681,8 +6681,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -6728,8 +6728,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -6741,8 +6741,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -6754,8 +6754,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -6767,8 +6767,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -8540,8 +8540,8 @@
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official 2011/2013/2015 FK questionnaire/codebook located; expected stop-working age is self-reported and conditional on the applicable work-history/current work route; frequencies omitted.",
-        "value_labels": "",
-        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_labels": "1=Employed; 2=Self employed; 3=Unpaid family business; 4=Farming; 1=This village/community; 2=Other village/community in this county/city; 3=Another county/city in this province; 4=Another province; 1=Yes; 2=No; 1=Self-employed with employees; 2=Self-employed without employees; 3=Family business worker without pay; 1=Regular wage worker; 2=Contract worker; 3=Temporary wage worker; 4=Casual wage worker; 1=Government; 2=Institutions; 3=NGO; 4=Firm; 5=Individual firm; 6=Individual farmer; 7=Individual household; 8=Other; 1=Yes; 2=No; 2=State-controlled firm; 4=Collective-controlled firm; 6=Private-controlled firm; 8=Joint venture; 9=Other joint-ownership; 10=Other; 1=Yes; 2=No; 1=Yes; 2=No; 1=Business closed; 2=Quit; 3=I was laid-off; 4=I was fired; 7=I stopped working for health reasons; 8=I stopped working for family reasons; 9=I was transferred to another job; 10=I was sent down to do manual labor; 11=I started working off-farm locally; 12=I went to work away from home; 13=Better job in local area; 14=Better job in another location; 15=I retired; 16=Other; 1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
@@ -8622,8 +8622,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -8635,8 +8635,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },
@@ -8656,8 +8656,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },
@@ -8677,8 +8677,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -8690,8 +8690,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },
@@ -8711,8 +8711,8 @@
         "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
         "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },
@@ -9685,8 +9685,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -9698,8 +9698,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -10214,8 +10214,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -10227,8 +10227,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },
@@ -10402,8 +10402,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -10415,8 +10415,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -10428,8 +10428,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -10441,8 +10441,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -10743,8 +10743,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -10756,8 +10756,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -10993,8 +10993,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -11006,8 +11006,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -11019,8 +11019,8 @@
         "mapping_status": "DO NOT ANALYZE: FM031 has no Codebook observations; FM032 paired bracket endpoints and special-value meaning remain unresolved",
         "note": "2011 FM011=3 internal-then-formal retirement route. FM031 is explicitly marked No Observations in the Codebook. Controlled local QA confirms FM032 endpoints are paired strings on the FM011=3 route (8 pairs), while the Codebook maximum includes 99,999,996; do not infer a point amount or special-code meaning.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -11032,8 +11032,8 @@
         "mapping_status": "DO NOT ANALYZE: FM031 has no Codebook observations; FM032 paired bracket endpoints and special-value meaning remain unresolved",
         "note": "2011 FM011=3 internal-then-formal retirement route. FM031 is explicitly marked No Observations in the Codebook. Controlled local QA confirms FM032 endpoints are paired strings on the FM011=3 route (8 pairs), while the Codebook maximum includes 99,999,996; do not infer a point amount or special-code meaning.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },
@@ -11066,8 +11066,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -11079,8 +11079,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -11105,8 +11105,8 @@
         "mapping_status": "DO NOT ANALYZE: paired FM035 bracket endpoints and special-value meaning remain unresolved",
         "note": "2011 FM011=3 internal-then-formal retirement route. FM034 asks current monthly pension in Yuan; FM035 is its nonresponse/recall unfolding component. Controlled local QA confirms the two FM035 endpoints are paired strings (2 pairs) on the FM011=3 route, with lower endpoint 0 and upper endpoint 99,999,996, matching the Codebook special/extreme value. Do not derive a numeric amount or infer special-code meaning.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -11118,8 +11118,8 @@
         "mapping_status": "DO NOT ANALYZE: paired FM035 bracket endpoints and special-value meaning remain unresolved",
         "note": "2011 FM011=3 internal-then-formal retirement route. FM034 asks current monthly pension in Yuan; FM035 is its nonresponse/recall unfolding component. Controlled local QA confirms the two FM035 endpoints are paired strings (2 pairs) on the FM011=3 route, with lower endpoint 0 and upper endpoint 99,999,996, matching the Codebook special/extreme value. Do not derive a numeric amount or infer special-code meaning.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },
@@ -11173,8 +11173,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -11186,8 +11186,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -11496,8 +11496,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -11509,8 +11509,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -11647,8 +11647,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -11660,8 +11660,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -11806,8 +11806,8 @@
         "mapping_status": "2011 questionnaire field identity and units verified; conditional future-retirement route retained; parent response-format field remains under review",
         "note": "2011 FM038 is asked for respondents with FM011=4 who have not yet completed formal retirement; record first-year expected benefit as either yuan/month (fm038_1) or percent of pre-retirement salary (fm038_2). Keep the two response units separate; the FM038 parent field may encode answer format and requires separate review.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -11819,8 +11819,8 @@
         "mapping_status": "DO NOT ANALYZE; bracket endpoints and extreme code confirmed, but FM038 unit branch and special-value meaning remain unresolved",
         "note": "2011 questionnaire routes FM037–FM040 to the FM011=4 future-retirement route (or wave-specific returners). FM038 records either Yuan/month or salary percent; FM039 asks an unfolding bracket in Yuan when unwilling/unsure, but the local authorized table has empty FM038 unit selectors on bracket rows. Both bounds are stored as strings and the upper endpoint includes the Codebook extreme value 99,999,996. Keep the candidate link but do not analyze until the bracket unit branch and special-value meaning are confirmed.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -11832,8 +11832,8 @@
         "mapping_status": "DO NOT ANALYZE; bracket endpoints and extreme code confirmed, but FM038 unit branch and special-value meaning remain unresolved",
         "note": "2011 questionnaire routes FM037–FM040 to the FM011=4 future-retirement route (or wave-specific returners). FM038 records either Yuan/month or salary percent; FM039 asks an unfolding bracket in Yuan when unwilling/unsure, but the local authorized table has empty FM038 unit selectors on bracket rows. Both bounds are stored as strings and the upper endpoint includes the Codebook extreme value 99,999,996. Keep the candidate link but do not analyze until the bracket unit branch and special-value meaning are confirmed.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },
@@ -11853,8 +11853,8 @@
         "mapping_status": "2011 questionnaire field identity and units verified; conditional future-retirement route retained; parent response-format field remains under review",
         "note": "2011 FM038 is asked for respondents with FM011=4 who have not yet completed formal retirement; record first-year expected benefit as either yuan/month (fm038_1) or percent of pre-retirement salary (fm038_2). Keep the two response units separate; the FM038 parent field may encode answer format and requires separate review.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },
@@ -12826,8 +12826,8 @@
         "mapping_status": "official occupation/industry code field mapped; classification version and disclosure review required",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },
@@ -12847,8 +12847,8 @@
         "mapping_status": "official occupation/industry code field mapped; classification version and disclosure review required",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },
@@ -12868,8 +12868,8 @@
         "mapping_status": "official occupation/industry code field mapped; classification version and disclosure review required",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },
@@ -12889,8 +12889,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
@@ -12902,8 +12902,8 @@
         "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
         "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
         "value_labels": "",
-        "value_label_status": "official codebook category labels not located",
-        "value_label_source": ""
+        "value_label_status": "codebook field located; continuous/open response or no categorical labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",

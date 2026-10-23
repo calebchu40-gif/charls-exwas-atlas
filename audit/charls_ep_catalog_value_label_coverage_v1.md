@@ -3,7 +3,7 @@
 更新：2026-10-24。由`scripts/summarize_value_label_coverage.py`从当前字段目录和覆盖CSV自动生成。
 
 - E/P字段—角色—类别目录行：6,642；不同波次—字段码：6,561。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
-- 有非空官方/已审标签文本的E/P目录行：3,328；不同波次—字段码：3,302。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
+- 有非空官方/已审标签文本的E/P目录行：3,330；不同波次—字段码：3,304。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
 - 明确标为`conflict`的E/P字段码：0；详情按主目录波次和变量码检索。
 - 问卷/Codebook编码差异尚未调和并锁定`DO NOT ANALYZE`的E/P字段：2011 `fb010`。此项独立于上面的精确`conflict`标签计数。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -20,7 +20,7 @@
 |e|family and intergenerational context|6|6|1|
 |e|food and household environment|160|87|1|
 |e|housing and built environment|481|34|2|
-|e|social determinants|2,132|992|20|
+|e|social determinants|2,132|994|20|
 |e|social protection|1,331|452|30|
 |p|anthropometric|15|0|1|
 |p|biochemistry|32|0|1|
@@ -37,10 +37,10 @@
 
 |审核状态|E/P目录行|
 |---|---:|
-|officially reviewed|2,677|
+|officially reviewed|2,679|
 |not yet reviewed|773|
 |official codebook field located; continuous/count or no categorical labels|608|
-|codebook field located; continuous/open response or no categorical labels|339|
+|codebook field located; continuous/open response or no categorical labels|371|
 |continuous measure metadata available|214|
 |official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories|208|
 |numeric/time unit metadata available; no discrete labels assigned|151|
@@ -50,7 +50,6 @@
 |连续值/字段结构；代码本未提供离散值标签|93|
 |official 2011 questionnaire identifies Yuan amount period and household-member roster slot; continuous amount with no discrete response categories; authorized-release storage scale and special values remain unverified|80|
 |official 2018 Codebook response categories transcribed; frequencies omitted; questionnaire route retained; respondent release coding and eligible denominator require validation|68|
-|official codebook category labels not located|59|
 |official 2011 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|53|
 |official 2013 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|52|
 |official 2015 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|52|
@@ -79,10 +78,12 @@
 |official 2013 Codebook response categories transcribed; frequencies omitted; prior-interview recall route retained; release coding and eligible denominator require validation|14|
 |official 2018 Codebook response categories transcribed; frequencies omitted; prior-interview recall route retained; release coding and eligible denominator require validation|14|
 |official 2015 Codebook response categories transcribed; frequencies omitted; prior-interview recall route retained; release coding and eligible denominator require validation|14|
+|official codebook category labels not located|13|
 |candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data|13|
 |official 2020 questionnaire and Codebook identify continuous household expenditure; no discrete response categories|13|
 |代码本逐字段值标签已核|12|
 |official questionnaire/Codebook identify a pension bracket endpoint; no discrete response categories|12|
+|occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted|12|
 |official questionnaire confirms response options; frequencies omitted; self-awareness route retained; release coding and eligible denominator require validation|11|
 |official questionnaire checkbox menu and codebook slot coding; frequencies omitted; absence is not a negative response outside the routed checklist|11|
 |official Codebook identifies affirmative caregiver-option code; unselected coding and eligible denominator unresolved; no response-value labels assigned|11|
@@ -126,7 +127,7 @@
 |official questionnaire/codebook categories; frequencies omitted; current employer benefit route|2|
 |wave-specific official questionnaire categories transcribed without frequencies; retrospective first-workplace location|2|
 |local string endpoint pairs checked; Codebook extreme upper value present; route/unit and sentinel semantics unresolved|2|
-|occupation classification code; Codebook frequency distribution omitted; classification definitions are not response labels; unpaid family-business route retained|2|
+|occupation classification code; codebook frequency distribution omitted; classification definitions are not response labels|2|
 |official questionnaire/Codebook identify a conditional bracket endpoint; Codebook provides numeric summaries but no discrete response categories|2|
 |official 2018 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|
 |official questionnaire/Codebook identify a conditional bracket endpoint; Codebook explicitly says string; no discrete response categories|2|
