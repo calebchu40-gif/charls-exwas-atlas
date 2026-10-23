@@ -9,10 +9,44 @@ from __future__ import annotations
 
 import argparse
 import json
+from collections import defaultdict
 import re
 from pathlib import Path
 
 import pandas as pd
+
+
+def preserve_existing_catalog_order(out: pd.DataFrame, prior_path: Path) -> pd.DataFrame:
+    """Keep prior row order and append new rows, avoiding noisy generated diffs."""
+    if not prior_path.exists():
+        return out
+    prior = pd.read_csv(prior_path, dtype=str, encoding="utf-8-sig").fillna("")
+    exact_fields = ("Source.Wave", "Variable.Name", "epcf", "Data.File.Name", "category", "subcategory")
+    fallback_fields = ("Source.Wave", "Variable.Name", "epcf", "Data.File.Name")
+
+    def key(row, fields):
+        return tuple(str(row.get(field, "")).lower() if field in {"Variable.Name", "epcf"}
+                     else str(row.get(field, "")) for field in fields)
+
+    exact_positions: dict[tuple, list[int]] = defaultdict(list)
+    fallback_positions: dict[tuple, list[int]] = defaultdict(list)
+    for position, row in enumerate(out.to_dict(orient="records")):
+        exact_positions[key(row, exact_fields)].append(position)
+        fallback_positions[key(row, fallback_fields)].append(position)
+
+    used: set[int] = set()
+    ordered: list[int] = []
+    for row in prior.to_dict(orient="records"):
+        candidates = exact_positions[key(row, exact_fields)]
+        match = next((i for i in candidates if i not in used), None)
+        if match is None:
+            candidates = fallback_positions[key(row, fallback_fields)]
+            match = next((i for i in candidates if i not in used), None)
+        if match is not None:
+            used.add(match)
+            ordered.append(match)
+    ordered.extend(i for i in range(len(out)) if i not in used)
+    return out.iloc[ordered].reset_index(drop=True)
 
 
 WAVES = {"2011", "2013", "2015", "2018", "2020"}
@@ -515,6 +549,8 @@ def main() -> None:
 
     def behavior_subcategory(concept: str, _item: dict) -> str:
         key = concept.lower()
+        if any(term in key for term in ("internet", "online", "wechat", "mobile_payment", "digital")):
+            return "internet and digital technology use"
         if "smok" in key or "tobacco" in key:
             return "smoking and tobacco"
         if "alcohol" in key or "drink" in key:
@@ -538,7 +574,9 @@ def main() -> None:
     append_concept_crosswalk("health_work_absence_crosswalk_v1.csv", "wave", "code", "concept_id", "source_label", "module",
                              "health and symptoms", "health-related work absence", "p", "mapping_status", ("caveat", "value_semantics", "unit"))
     append_concept_crosswalk("health_symptom_variable_mapping_v1.csv", "wave", "code", "concept_id", "source_label", "module",
-                             "health and symptoms", "self-rated health, pain, symptoms, and test eligibility", "p", "mapping_status", ("note", "value_labels", "value_label_status", "value_label_source"))
+                             "health and symptoms",
+                             lambda concept, _item: "subjective health expectancy" if concept == "subjective_life_expectancy" else "self-rated health, pain, symptoms, and test eligibility",
+                             "p", "mapping_status", ("note", "value_labels", "value_label_status", "value_label_source"))
     append_concept_crosswalk("biomarker_measurement_gate_crosswalk_v1.csv", "wave", "code", "concept_id", "source_label", "module",
                              "measurement metadata", "biomarker assessment agreement and completion", "c", "mapping_status", ("caveat", "value_semantics", "value_labels", "source_document"))
     append_concept_crosswalk("mood_item_variable_mapping_v1.csv", "wave", "code", "concept_id", "source_label", "module",
@@ -1815,7 +1853,12 @@ def main() -> None:
                 & out["Value.Labels"].fillna("").eq("")
             )
             out.loc[selected, "Concept.Unit.Candidates"] = "calendar year"
-    out.to_csv(args.out_dir / "charls_atlas_candidate_fields_v0.csv", index=False, encoding="utf-8-sig")
+    prior_catalog_path = args.out_dir / "charls_atlas_candidate_fields_v0.csv"
+    order_reference_path = args.out_dir / ".charls_atlas_candidate_fields_order_reference.tmp"
+    if prior_catalog_path.exists():
+        order_reference_path.write_bytes(prior_catalog_path.read_bytes())
+    out = preserve_existing_catalog_order(out, prior_catalog_path)
+    out.to_csv(prior_catalog_path, index=False, encoding="utf-8-sig")
 
     def summarize_label_review(values: pd.Series) -> str:
         reviews = [str(value) for value in values if pd.notna(value) and str(value).strip()]
@@ -1892,7 +1935,10 @@ def main() -> None:
     print(summary.to_string(index=False))
     # Correct exact-wave exposure-role false positives documented in the audit.
     import subprocess, sys
-    subprocess.run([sys.executable, str(Path(__file__).resolve().parent / "apply_catalog_role_overrides.py")], cwd=root, check=True)
+    try:
+        subprocess.run([sys.executable, str(Path(__file__).resolve().parent / "apply_catalog_role_overrides.py")], cwd=root, check=True)
+    finally:
+        order_reference_path.unlink(missing_ok=True)
 
 
 if __name__ == "__main__":

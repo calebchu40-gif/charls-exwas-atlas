@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import pandas as pd
+from build_charls_atlas_catalog import preserve_existing_catalog_order
 
 ROOT=Path(__file__).resolve().parents[1]
 AUDIT=ROOT/"audit"
@@ -938,6 +939,8 @@ for override in overrides.loc[overrides["keep_role"].str.lower().eq("p") & overr
     fields.loc[selected,"Candidate.Status"]="DO NOT ANALYZE; ordinal symptom response appears in official codebook, but exact questionnaire item and recall period are unresolved"
     fields.loc[selected,"Harmonization.Status"]="retain source item separately; do not merge with other sleep questions or infer a recall period until official question wording is matched"
     fields.loc[selected,"Review.Flag"]="DO NOT ANALYZE pending exact-wave questionnaire/instrument identity and response-route confirmation"
+order_reference=AUDIT/".charls_atlas_candidate_fields_order_reference.tmp"
+fields=preserve_existing_catalog_order(fields,order_reference if order_reference.exists() else field_path)
 fields.to_csv(field_path,index=False,encoding="utf-8-sig")
 
 series_path=AUDIT/"charls_atlas_candidate_series_v0.csv"

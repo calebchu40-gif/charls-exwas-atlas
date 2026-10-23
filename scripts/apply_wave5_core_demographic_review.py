@@ -58,6 +58,23 @@ FIELDS = {
         "note": "String recode of BA001 (1=male, 2=female); an intermediate/derived field rather than a separate respondent report.",
         "source": f"{QUESTIONNAIRE}; {CODEBOOK}",
     },
+    "xfagepossibility": {
+        "labels": "",
+        "review": "officially reviewed: questionnaire auxiliary formula checked; age-threshold target, not respondent age or observed survival",
+        "note": "CAPI-generated target age used in the 2020 DA029 subjective life-expectancy question. It is set by XRAge bands (<65→75; 65–69→80; 70–74→85; 75–79→90; 80–84→95; 85–89→100; 90–94→105; 95–99→110; ≥100→115). This is question-vignette metadata, not an independently reported expectation, a clinical outcome, or a routine covariate. Interpret DA029 responses together with this age-specific threshold; do not treat thresholds as identical across respondents.",
+        "source": f"{QUESTIONNAIRE}; {CODEBOOK}",
+        "category": "measurement metadata",
+        "subcategory": "subjective life-expectancy target age",
+        "unit": "years",
+    },
+    "dc030": {
+        "labels": "1=Mandarin; 2=Local dialect; 3=Other dialect, please specify",
+        "review": "officially reviewed: 2020 interviewer-observation categories checked against questionnaire and Codebook",
+        "note": "Interviewer-observed language used during the interview. This describes interview language, not the respondent’s native language or an environmental exposure. It may be relevant to measurement context; do not recommend it automatically as an adjustment covariate.",
+        "source": f"{QUESTIONNAIRE}; {CODEBOOK}",
+        "category": "measurement metadata",
+        "subcategory": "interview language",
+    },
 }
 
 
@@ -76,6 +93,12 @@ def update_json(path: Path) -> int:
             "Harmonization.Status": meta["note"], "harmonization_status": meta["note"],
             "Review.Flag": "C metadata; source-backed age/gender definition; covariate use remains estimand-specific and unapproved",
         })
+        if "category" in meta:
+            row["category"] = meta["category"]
+            row["subcategory"] = meta["subcategory"]
+        if "unit" in meta:
+            row["Unit"] = meta["unit"]
+            row["Concept.Unit.Candidates"] = meta["unit"]
         changed += 1
     path.write_text(json.dumps(rows, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     return changed
@@ -92,6 +115,10 @@ def update_csv(path: Path) -> int:
             "Value.Labels": meta["labels"], "Value.Label.Source": meta["source"],
             "Value.Label.Review": meta["review"], "Harmonization.Status": meta["note"],
             "Review.Flag": "C metadata; source-backed age/gender definition; covariate use remains estimand-specific and unapproved",
+            "category": meta.get("category", df.at[idx, "category"] if "category" in df else ""),
+            "subcategory": meta.get("subcategory", df.at[idx, "subcategory"] if "subcategory" in df else ""),
+            "Unit": meta.get("unit", df.at[idx, "Unit"] if "Unit" in df else ""),
+            "Concept.Unit.Candidates": meta.get("unit", df.at[idx, "Concept.Unit.Candidates"] if "Concept.Unit.Candidates" in df else ""),
         }.items():
             if col in df.columns:
                 df.at[idx, col] = val

@@ -2,8 +2,8 @@
 e,social determinants,599,2157,2155,True
 e,social protection,314,1331,1331,True
 e,community context,100,187,187,True
+e,behavior,44,273,248,True
 e,housing and built environment,41,481,481,True
-e,behavior,29,258,233,True
 e,food and household environment,29,160,160,True
 e,internal biomarker,20,55,55,True
 e,healthcare access,7,109,109,True
@@ -14,7 +14,7 @@ e,environmental perception,1,1,1,True
 p,chronic disease ancillary,115,664,664,True
 p,physical function,38,260,260,True
 p,chronic disease,33,248,248,True
-p,health and symptoms,30,164,161,True
+p,health and symptoms,31,165,162,True
 p,cognition,24,338,338,True
 p,healthcare access,22,217,217,True
 p,internal biomarker,20,55,55,True

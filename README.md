@@ -1,7 +1,11 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-24）
 
 
-## 最新工作：核实Wave 5年龄与性别官方派生公式
+## 最新工作：扩展Wave 5数字行为与主观寿命预期
+
+2026-10-24依据CHARLS 2020英文问卷和Codebook，将过去一个月互联网使用、5类上网设备、6类互联网活动、手机支付、微信使用和朋友圈发布共15个字段纳入E候选目录；补入DA029“达到年龄阈值的主观可能性”为单波次P候选。每个字段保留官方题目/代码本来源、值标签和路由说明；下游跳题缺失不得当成“No”，其他设备/活动自由文本不作为标准化暴露。DA029须结合按年龄段生成的XFAgePossibility目标年龄解释，不能当作实际生存结局，也不能与早期波次同名的前列腺疾病DA029合并。XFAgePossibility和DC030已从自动协变量关键词线索重新归类为测量元数据。目录现有E 4,738、P 2,068、C 978条字段波次记录；正式关联模型仍为0，候选配对仅表示元数据同波次可用，不是分析样本量或统计结果。详见[`audit/wave5_digital_behavior_and_life_expectancy_review_2026-10-24.md`](audit/wave5_digital_behavior_and_life_expectancy_review_2026-10-24.md)。
+
+## 前期工作：核实Wave 5年龄与性别官方派生公式
 
 2026-10-23完成最后12条E类通用“not yet reviewed”状态的官方来源审核，包括2011家庭月支出、2013跨访谈期其他工作数量、2018/2020其他资产租金收入、2020工资变化方向、2011职业分类，以及保留分析锁的疫情应对和离职原因字段。通用待核E状态现为0；另有55条前访回答历史/路由C字段已按官方Codebook完成来源审核。E类待核清零不代表分析资格已确认。目录仍处于元数据和方法准备阶段，正式关联模型数为0。详细记录见[`audit/final_pending_field_review_2026-10-23.md`](audit/final_pending_field_review_2026-10-23.md)和[`audit/prior_wave_history_routing_metadata_review_2026-10-23.md`](audit/prior_wave_history_routing_metadata_review_2026-10-23.md)和[`audit/c_placeholder_legacy_field_review_2026-10-23.md`](audit/c_placeholder_legacy_field_review_2026-10-23.md)和[`audit/c_measurement_protocol_metadata_review_2026-10-23.md`](audit/c_measurement_protocol_metadata_review_2026-10-23.md)。个人收入与工资、社会照护、教育与户口审核分别见[`audit/personal_income_wage_metadata_review_2011_2020_2026-10-23.md`](audit/personal_income_wage_metadata_review_2011_2020_2026-10-23.md)、[`audit/social_care_caregiver_metadata_review_2011_2013_2026-10-23.md`](audit/social_care_caregiver_metadata_review_2011_2013_2026-10-23.md)、[`audit/education_hukou_value_label_review_2011_2020_2026-10-23.md`](audit/education_hukou_value_label_review_2011_2020_2026-10-23.md)。个人收入审核见[`audit/personal_income_wage_metadata_review_2011_2020_2026-10-23.md`](audit/personal_income_wage_metadata_review_2011_2020_2026-10-23.md)；社会照护审核见[`audit/social_care_caregiver_metadata_review_2011_2013_2026-10-23.md`](audit/social_care_caregiver_metadata_review_2011_2013_2026-10-23.md)；教育与户口字段审核见[`audit/education_hukou_value_label_review_2011_2020_2026-10-23.md`](audit/education_hukou_value_label_review_2011_2020_2026-10-23.md)。
 
@@ -29,7 +33,7 @@
 
 医保与医疗利用专项审计的逐字段状态也已进入主E/P目录：保险未选编码的不确定性、连续就诊/住院次数、条件路由和费用区间边界会随字段展示。完整题目与波次定义见[`audit/healthcare_access_definition_review_v1.md`](audit/healthcare_access_definition_review_v1.md)和[`audit/healthcare_access_value_label_review_v1.md`](audit/healthcare_access_value_label_review_v1.md)；这些状态不表示获准发行数据编码、分母或模型资格已经核实。
 
-截至2026-10-24，公开元数据查询首版已上线；完整结果型ExWAS工作仍在变量审计和调查设计阶段。最新工作状态见[`audit/active_work_status_2026-10-23.md`](audit/active_work_status_2026-10-23.md)，年龄/性别构造复核见[`audit/official_age_gender_harmonization_review_2026-10-23.md`](audit/official_age_gender_harmonization_review_2026-10-23.md)，整体进度口径和剩余工期估算见[`audit/project_progress_estimate_2026-10-23.md`](audit/project_progress_estimate_2026-10-23.md)。
+截至2026-10-24，公开元数据查询首版已上线；完整结果型ExWAS工作仍在变量审计和调查设计阶段。最新工作状态见[`audit/active_work_status_2026-10-24.md`](audit/active_work_status_2026-10-24.md)，Wave 5数字行为复核见[`audit/wave5_digital_behavior_and_life_expectancy_review_2026-10-24.md`](audit/wave5_digital_behavior_and_life_expectancy_review_2026-10-24.md)，年龄/性别构造复核见[`audit/official_age_gender_harmonization_review_2026-10-23.md`](audit/official_age_gender_harmonization_review_2026-10-23.md)，整体进度口径和剩余工期估算见[`audit/project_progress_estimate_2026-10-23.md`](audit/project_progress_estimate_2026-10-23.md)。
 
 GitHub 官方说明：GitHub Free 个人仓库需要公开仓库才能使用 Pages；Pro/Team 等计划也支持私有源仓库发布 Pages。GitHub Pages 网站内容默认可被互联网公开访问，因此发布包必须保持为静态目录范围。见[Pages 发布源说明](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
 

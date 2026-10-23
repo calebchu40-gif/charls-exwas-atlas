@@ -7,8 +7,8 @@
 |e|social determinants|599|2157|2155|
 |e|social protection|314|1331|1331|
 |e|community context|100|187|187|
+|e|behavior|44|273|248|
 |e|housing and built environment|41|481|481|
-|e|behavior|29|258|233|
 |e|food and household environment|29|160|160|
 |e|internal biomarker|20|55|55|
 |e|healthcare access|7|109|109|
@@ -19,7 +19,7 @@
 |p|chronic disease ancillary|115|664|664|
 |p|physical function|38|260|260|
 |p|chronic disease|33|248|248|
-|p|health and symptoms|30|164|161|
+|p|health and symptoms|31|165|162|
 |p|cognition|24|338|338|
 |p|healthcare access|22|217|217|
 |p|internal biomarker|20|55|55|
@@ -28,4 +28,4 @@
 |p|anthropometric|5|15|15|
 |p|blood pressure|3|27|27|
 
-总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1409个（E=1131、P=287，9个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。
+总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1425个（E=1146、P=288，9个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。

@@ -79,6 +79,7 @@ c,measurement metadata,unstructured other-specify response text,7,7,2
 c,measurement metadata,unstructured other-use response text,4,3,2
 c,measurement metadata,unsupported prior-wave disease-awareness slots,15,15,1
 e,behavior,alcohol use,73,24,5
+e,behavior,internet and digital technology use,15,15,1
 e,behavior,physical activity,84,36,5
 e,behavior,sleep,25,16,5
 e,behavior,smoking and tobacco,51,26,5
@@ -220,6 +221,7 @@ p,cognition,memory and cognitive performance,338,275,5
 p,health and symptoms,health-related work absence,6,3,4
 p,health and symptoms,"self-rated health, pain, and symptoms",111,70,5
 p,health and symptoms,"self-rated health, pain, symptoms, and test eligibility",44,22,5
+p,health and symptoms,subjective health expectancy,1,1,1
 p,healthcare access,COVID-period delayed or unmet medical care,15,15,1
 p,healthcare access,"insurance, outpatient and inpatient utilization",93,54,4
 p,mental health,depressive symptoms and emotional wellbeing,50,17,5

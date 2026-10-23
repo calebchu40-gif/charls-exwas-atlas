@@ -93705,9 +93705,9 @@
       ]
     },
     "2020": {
-      "exposure_count": 168,
-      "phenotype_count": 75,
-      "candidate_pair_count": 12598,
+      "exposure_count": 183,
+      "phenotype_count": 76,
+      "candidate_pair_count": 13906,
       "exposures": [
         {
           "concept_id": "household_monthly_total_expenditure_2020",
@@ -94621,6 +94621,226 @@
           ]
         },
         {
+          "concept_id": "internet_device_cellphone",
+          "label": "Internet access device: cellphone",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da041_s4",
+              "label": "Devices to Use Internet: cellphone",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 4=Cellphone (selected option)",
+              "value_semantics": "Self-reported internet/digital technology behavior. Candidate exposure only; preserve the original item and route. Do not interpret skipped or structurally missing answers as No.",
+              "mapping_status": "2020 official questionnaire and Codebook item identity, wording, response labels, and route reviewed; frequency data excluded",
+              "caveat": "Multi-select DA041 device item, asked in the internet-use route. The other-device option is an unstandardized write-in category; do not publish or analyze its free text without separate review. A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the approved release."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_device_desktop",
+          "label": "Internet access device: desktop computer",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da041_s1",
+              "label": "Devices to Use Internet: desktop computer",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 1=Desktop computer (selected option)",
+              "value_semantics": "Self-reported internet/digital technology behavior. Candidate exposure only; preserve the original item and route. Do not interpret skipped or structurally missing answers as No.",
+              "mapping_status": "2020 official questionnaire and Codebook item identity, wording, response labels, and route reviewed; frequency data excluded",
+              "caveat": "Multi-select DA041 device item, asked in the internet-use route. The other-device option is an unstandardized write-in category; do not publish or analyze its free text without separate review. A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the approved release."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_device_laptop",
+          "label": "Internet access device: laptop computer",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da041_s2",
+              "label": "Devices to Use Internet: laptop computer",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 2=Laptop computer (selected option)",
+              "value_semantics": "Self-reported internet/digital technology behavior. Candidate exposure only; preserve the original item and route. Do not interpret skipped or structurally missing answers as No.",
+              "mapping_status": "2020 official questionnaire and Codebook item identity, wording, response labels, and route reviewed; frequency data excluded",
+              "caveat": "Multi-select DA041 device item, asked in the internet-use route. The other-device option is an unstandardized write-in category; do not publish or analyze its free text without separate review. A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the approved release."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_device_other",
+          "label": "Internet access device: other device",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da041_s5",
+              "label": "Devices to Use Internet: other device",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 5=Other devices, please specify (selected option)",
+              "value_semantics": "Self-reported internet/digital technology behavior. Candidate exposure only; preserve the original item and route. Do not interpret skipped or structurally missing answers as No.",
+              "mapping_status": "2020 official questionnaire and Codebook item identity, wording, response labels, and route reviewed; frequency data excluded",
+              "caveat": "Multi-select DA041 device item, asked in the internet-use route. The other-device option is an unstandardized write-in category; do not publish or analyze its free text without separate review. A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the approved release."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_device_tablet",
+          "label": "Internet access device: tablet computer",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da041_s3",
+              "label": "Devices to Use Internet: tablet computer",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 3=Tablet computer (selected option)",
+              "value_semantics": "Self-reported internet/digital technology behavior. Candidate exposure only; preserve the original item and route. Do not interpret skipped or structurally missing answers as No.",
+              "mapping_status": "2020 official questionnaire and Codebook item identity, wording, response labels, and route reviewed; frequency data excluded",
+              "caveat": "Multi-select DA041 device item, asked in the internet-use route. The other-device option is an unstandardized write-in category; do not publish or analyze its free text without separate review. A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the approved release."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_activity_chat",
+          "label": "Internet activity: chatting",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da042_s1",
+              "label": "Activities with Internet: chatting",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 1=Chatting (selected option)",
+              "value_semantics": "Self-reported internet/digital technology behavior. Candidate exposure only; preserve the original item and route. Do not interpret skipped or structurally missing answers as No.",
+              "mapping_status": "2020 official questionnaire and Codebook item identity, wording, response labels, and route reviewed; frequency data excluded",
+              "caveat": "Multi-select DA042 item, asked in the internet-use route. The other-activity option is not a standardized behavior; do not publish or analyze its free text without separate review. A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the approved release."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_activity_financial_management",
+          "label": "Internet activity: financial management",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da042_s5",
+              "label": "Activities with Internet: financial management",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 5=Money management (selected option)",
+              "value_semantics": "Self-reported internet/digital technology behavior. Candidate exposure only; preserve the original item and route. Do not interpret skipped or structurally missing answers as No.",
+              "mapping_status": "2020 official questionnaire and Codebook item identity, wording, response labels, and route reviewed; frequency data excluded",
+              "caveat": "Multi-select DA042 item, asked in the internet-use route. The other-activity option is not a standardized behavior; do not publish or analyze its free text without separate review. A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the approved release."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_activity_other",
+          "label": "Internet activity: other activity",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da042_s6",
+              "label": "Activities with Internet: other activity",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 6=Others, please specify (selected option)",
+              "value_semantics": "Self-reported internet/digital technology behavior. Candidate exposure only; preserve the original item and route. Do not interpret skipped or structurally missing answers as No.",
+              "mapping_status": "2020 official questionnaire and Codebook item identity, wording, response labels, and route reviewed; frequency data excluded",
+              "caveat": "Multi-select DA042 item, asked in the internet-use route. The other-activity option is not a standardized behavior; do not publish or analyze its free text without separate review. A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the approved release."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_activity_games",
+          "label": "Internet activity: playing games",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da042_s4",
+              "label": "Activities with Internet: playing games",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 4=Playing games (selected option)",
+              "value_semantics": "Self-reported internet/digital technology behavior. Candidate exposure only; preserve the original item and route. Do not interpret skipped or structurally missing answers as No.",
+              "mapping_status": "2020 official questionnaire and Codebook item identity, wording, response labels, and route reviewed; frequency data excluded",
+              "caveat": "Multi-select DA042 item, asked in the internet-use route. The other-activity option is not a standardized behavior; do not publish or analyze its free text without separate review. A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the approved release."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_activity_news",
+          "label": "Internet activity: reading news",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da042_s2",
+              "label": "Activities with Internet: reading news",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 2=Reading news (selected option)",
+              "value_semantics": "Self-reported internet/digital technology behavior. Candidate exposure only; preserve the original item and route. Do not interpret skipped or structurally missing answers as No.",
+              "mapping_status": "2020 official questionnaire and Codebook item identity, wording, response labels, and route reviewed; frequency data excluded",
+              "caveat": "Multi-select DA042 item, asked in the internet-use route. The other-activity option is not a standardized behavior; do not publish or analyze its free text without separate review. A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the approved release."
+            }
+          ]
+        },
+        {
+          "concept_id": "internet_activity_video",
+          "label": "Internet activity: watching videos",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da042_s3",
+              "label": "Activities with Internet: watching videos",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "0=No; 3=Watching videos (selected option)",
+              "value_semantics": "Self-reported internet/digital technology behavior. Candidate exposure only; preserve the original item and route. Do not interpret skipped or structurally missing answers as No.",
+              "mapping_status": "2020 official questionnaire and Codebook item identity, wording, response labels, and route reviewed; frequency data excluded",
+              "caveat": "Multi-select DA042 item, asked in the internet-use route. The other-activity option is not a standardized behavior; do not publish or analyze its free text without separate review. A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the approved release."
+            }
+          ]
+        },
+        {
           "concept_id": "indoor_cleanliness",
           "label": "Interviewer-rated household cleanliness",
           "domain": "Indoor environment",
@@ -94807,6 +95027,26 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
               "caveat": "FC023_W4 (2018) and FB003 (2020) classify the respondent's main household-farm activity, with different source menus. Preserve wave-specific categories and the household-agriculture route; do not recode the menus as a common occupational scale without review."
+            }
+          ]
+        },
+        {
+          "concept_id": "mobile_payment_use",
+          "label": "Mobile payment use",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da043",
+              "label": "Payment with Mobile Phone",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "1=Yes; 2=No",
+              "value_semantics": "Self-reported internet/digital technology behavior. Candidate exposure only; preserve the original item and route. Do not interpret skipped or structurally missing answers as No.",
+              "mapping_status": "2020 official questionnaire and Codebook item identity, wording, response labels, and route reviewed; frequency data excluded",
+              "caveat": "Self-reported use of mobile payments such as Alipay or WeChat Pay; preserve the original binary response and verify eligible route in the approved release. A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the approved release."
             }
           ]
         },
@@ -95091,6 +95331,26 @@
           ]
         },
         {
+          "concept_id": "internet_use_past_month",
+          "label": "Past-month internet use",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da040",
+              "label": "Used the Internet",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "1=Yes; 2=No",
+              "value_semantics": "Self-reported internet/digital technology behavior. Candidate exposure only; preserve the original item and route. Do not interpret skipped or structurally missing answers as No.",
+              "mapping_status": "2020 official questionnaire and Codebook item identity, wording, response labels, and route reviewed; frequency data excluded",
+              "caveat": "Asks whether the respondent used the internet in the past month. It is the screening item for the following internet device/activity questions; analyze all respondents only for this screening variable. A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the approved release."
+            }
+          ]
+        },
+        {
           "concept_id": "pandemic_employer_paid_closure",
           "label": "Pay received during employer closure in COVID-19 period",
           "domain": "Pandemic-related work context",
@@ -95227,6 +95487,26 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
               "caveat": "2020-only counterfactual expectation, not observed retirement. Preserve FF004 eligibility and earlier/delayed years; do not assume the FG pandemic-module selection flag xfgsample applies to this FF item. The questionnaire codes health-permitted nonstop work as not affected."
+            }
+          ]
+        },
+        {
+          "concept_id": "wechat_moments_posting",
+          "label": "Posting to WeChat Moments",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da045",
+              "label": "Use Wechat Moments",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "1=Yes; 2=No",
+              "value_semantics": "Self-reported internet/digital technology behavior. Candidate exposure only; preserve the original item and route. Do not interpret skipped or structurally missing answers as No.",
+              "mapping_status": "2020 official questionnaire and Codebook item identity, wording, response labels, and route reviewed; frequency data excluded",
+              "caveat": "Self-reported posting to WeChat Moments; questionnaire route depends on WeChat use. Preserve routed missingness and verify the eligible denominator in the approved release. A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the approved release."
             }
           ]
         },
@@ -95777,6 +96057,26 @@
               "value_semantics": "",
               "mapping_status": "catalog-label candidate; questionnaire review pending",
               "caveat": "2020-only candidate in the current catalog; verify the exact questionnaire definition. It is not a direct drinking-water contaminant measurement."
+            }
+          ]
+        },
+        {
+          "concept_id": "wechat_use",
+          "label": "WeChat use",
+          "domain": "internet and digital technology use",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da044",
+              "label": "Use Wechat",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "1=Yes; 2=No",
+              "value_semantics": "Self-reported internet/digital technology behavior. Candidate exposure only; preserve the original item and route. Do not interpret skipped or structurally missing answers as No.",
+              "mapping_status": "2020 official questionnaire and Codebook item identity, wording, response labels, and route reviewed; frequency data excluded",
+              "caveat": "Self-reported WeChat use; later WeChat Moments item is conditionally routed. Do not infer a skipped Moments response as No. A skipped or structurally missing downstream response is not No; verify eligibility and the denominator in the approved release."
             }
           ]
         },
@@ -98291,6 +98591,26 @@
               "value_semantics": "2020 English Questionnaire DA010: select all service types delayed/not obtained because of COVID-19 impact; asked only after DA009=Yes. For each item, 0=No and the matching option number=Yes. Structural missingness is not No.",
               "mapping_status": "2020官方代码本/问卷已核；保留条件路由、单波限制和字段特异选择码",
               "caveat": "Six separate select-all-that-apply service indicators, asked only after DA009=Yes. Preserve the item-specific selection code and conditional denominator; do not treat unasked fields as No."
+            }
+          ]
+        },
+        {
+          "concept_id": "subjective_life_expectancy",
+          "label": "主观寿命预期（达到年龄阈值的可能性）",
+          "domain": "subjective health expectancy",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "da029",
+              "label": "Life Expectancy",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "1=Almost impossible; 2=Not very likely; 3=Maybe; 4=Very likely; 5=Almost certain; 997=Don’t know",
+              "value_semantics": "",
+              "mapping_status": "2020 official questionnaire and Codebook item identity, wording, response labels, and target-age formula reviewed; frequency data excluded",
+              "caveat": "2020单波次自报结局候选。问卷明确称主观寿命预期，并询问达到XFAgePossibility目标年龄的可能性；目标年龄由XRAge年龄段按官方辅助公式设定，因此同一序数响应在不同年龄受访者中对应不同目标年龄。分析须将目标阈值纳入建模或分层；不能视为实际生存/死亡、临床结局，也不能直接与早期波次同名DA029（前列腺疾病）合并。按官方路由区分不知道、未答和跳题。"
             }
           ]
         },

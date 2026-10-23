@@ -21,6 +21,12 @@ class Wave5CoreDemographicReviewTests(unittest.TestCase):
         self.assertIn("prior-wave gender preload", review.FIELDS["zrgender"]["note"].lower())
         self.assertIn("unapproved", "C metadata; source-backed age/gender definition; covariate use remains estimand-specific and unapproved")
 
+    def test_age_target_and_interview_language_remain_measurement_metadata(self):
+        self.assertIn("target age", review.FIELDS["xfagepossibility"]["note"])
+        self.assertEqual(review.FIELDS["xfagepossibility"]["category"], "measurement metadata")
+        self.assertEqual(review.FIELDS["xfagepossibility"]["unit"], "years")
+        self.assertIn("not the respondent’s native language", review.FIELDS["dc030"]["note"])
+
     def test_json_update_is_wave_and_role_scoped(self):
         rows = [
             {"Source.Wave": "2020", "Variable.Name": "xrage", "epcf": "c", "Value.Label.Review": "not yet reviewed"},
