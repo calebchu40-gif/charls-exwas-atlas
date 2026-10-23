@@ -1,5 +1,9 @@
 # GitHub Pages publication review (2026-10-22)
 
+## 2026-10-23 activity-purpose and diagnosis-time metadata
+
+Commit `c5e4ceb` updated the static catalogue and rebuild scripts. The live [`catalog.json`](https://calebchu40-gif.github.io/charls-exwas-atlas/catalog.json) returned HTTP 200 with 7,544 entries. Spot checks confirmed the 2018 prostate-illness `da030_2` is shown as `age in years` with no discrete labels, while the 2020 `da037_2_` activity-purpose field displays its official four categories and `officially reviewed` state. The Pages content matches the pushed build; no respondent observations or association estimates were published.
+
 ## 2026-10-23 cross-wave physical-activity purpose labels
 
 Commit `abd584f` published nine official Codebook category menus for activity-purpose fields in 2015/2018/2020. GitHub Pages deployment run [`39882127325`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/39882127325) succeeded; metadata validation run [`39882127344`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/39882127344) also succeeded. The live `catalog.json` returned HTTP 200 with 7,544 entries. Spot checks for 2015 `da051_1_1_`, 2018 `da051_1_2_`, and 2020 `da037_3_` returned the exact wave-specific response labels and `officially reviewed` status. Frequencies were omitted. No respondent data or computed association results were published.
