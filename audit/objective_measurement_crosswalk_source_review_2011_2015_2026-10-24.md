@@ -8,6 +8,8 @@ This change improves provenance but does not certify every candidate field mappi
 
 The website displays these 108 wave-specific Codebook field labels in the searchable objective-phenotype table, alongside the 45 concept-wave mappings. The label text is searchable and preserves source spelling/capitalization where extracted; the clipped 2013 QL002 string is visibly marked as a page-boundary extraction issue.
 
+The page is scoped to 2011, 2013 and 2015 because those are the waves represented by the current official questionnaire/Codebook candidate crosswalk. A search of 2018 and 2020 Codebooks did not find the same QA–QM candidate identifiers; this code-name difference alone does not establish that no comparable physical measures exist in those waves. No 2018/2020 physical-measurement rows are inferred until the wave-specific measurement instruments and release documentation are identified and checked. The UI also directs visitors to the separate blood-biomarker catalogue for laboratory analytes and clarifies that 2013 field measurement is not blood testing.
+
 The crosswalk is a metadata aid for a future phenotype catalogue. It contains no respondent observations, Codebook frequencies or summary statistics, or estimated associations. Repeated readings are preserved as separate source fields; derived summaries such as mean blood pressure, walking speed or grip-strength summaries require a prespecified rule before any model is fit. Structural skips are not treated as zero. Cross-wave pooling remains unapproved pending field-level comparability review.
 
 ## Sources

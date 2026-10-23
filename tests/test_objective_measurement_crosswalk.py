@@ -43,6 +43,15 @@ class ObjectiveMeasurementCrosswalkTests(unittest.TestCase):
             self.assertNotIn("Mean", row["source_field_labels"])
             self.assertNotIn("OBS", row["source_field_labels"])
 
+    def test_site_explains_wave_scope_and_searchable_source_labels(self):
+        html = (ROOT / "site-prototype/dist/index.html").read_text(encoding="utf-8")
+        app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
+        self.assertIn("2018/2020", html)
+        self.assertIn("变量名不同不等于确认没有类似测量", html)
+        self.assertIn("官方Codebook字段标签", html)
+        self.assertIn("source_field_labels", app)
+        self.assertIn("objective_measurements_v1.json?v=2", app)
+
 
 if __name__ == "__main__":
     unittest.main()
