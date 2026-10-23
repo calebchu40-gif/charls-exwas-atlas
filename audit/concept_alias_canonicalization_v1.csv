@@ -17,4 +17,5 @@ triglycerides_lab,blood_triglycerides,same_analyte_alias,Same triglyceride assay
 uric_acid_lab,blood_uric_acid,same_analyte_alias,Same uric-acid assay; retain detailed biomarker unit and blood-sample metadata.
 height,standing_height,same_measurement_alias,Same measured-height item; retain the objective-measurement crosswalk definition.
 air_cleaner,air_cleaner_home,same_measurement_alias,Same 2015 household air-cleaner item; retain the home-specific concept ID.
+dwelling_air_cleaner_access,air_cleaner_home,same_measurement_alias,"2018 I027_W3 is the same residence air-cleaner presence question as the 2015 I027_W3 and the canonical home-air-cleaner concept; retain the wave-specific source row and its own questionnaire/Codebook provenance."
 last_job_business_workforce_size_2018,last_self_employed_business_employee_count_2018,same_measurement_alias,"Both reviewed mapping records point to the single 2018 FL012_W4 question in the retrospective self-employed non-farm business route (FL001=2), with the same 0–9999 people response. Retain the route-specific canonical definition; source concept ID remains auditable."

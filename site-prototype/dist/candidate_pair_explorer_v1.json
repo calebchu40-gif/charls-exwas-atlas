@@ -44826,8 +44826,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "2015-only candidate from the current catalog; availability/presence does not measure use, filtration performance, or ambient/personal PM exposure. | Presence does not measure use, filter condition, ventilation, indoor pollutant concentration, or personal exposure; wave interview mode differs."
+              "mapping_status": "catalog-label candidate; questionnaire review pending | official 2015 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "2015-only candidate from the current catalog; availability/presence does not measure use, filtration performance, or ambient/personal PM exposure. | 2015 and 2018 ask whether the residence has an air cleaner (Yes/No); 2020 asks whether XFinancialResp's house has one (Yes/No). The 2020 questionnaire permits interviewer recording only when the interviewer is in the home and clearly knows the answer, otherwise asking the respondent. Presence does not establish use, filter condition, ventilation, pollutant concentration, or personal exposure. Preserve wave-specific household referents and confirm linkage before person-level assignment."
             }
           ]
         },
@@ -69067,6 +69067,26 @@
           ]
         },
         {
+          "concept_id": "air_cleaner_home",
+          "label": "Air cleaner present in residence",
+          "domain": "Indoor environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "i027_w3",
+              "label": "Air Cleaner",
+              "module": "Housing",
+              "unit": "",
+              "value_labels": "1=Yes; 2=No",
+              "value_semantics": "dwelling condition/amenity",
+              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required | official 2018 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Single-residence or household dwelling field. Verify wave-specific response labels, eligibility, missing codes and whether fields describe the same dwelling before pooling. | 2015 and 2018 ask whether the residence has an air cleaner (Yes/No); 2020 asks whether XFinancialResp's house has one (Yes/No). The 2020 questionnaire permits interviewer recording only when the interviewer is in the home and clearly knows the answer, otherwise asking the respondent. Presence does not establish use, filter condition, ventilation, pollutant concentration, or personal exposure. Preserve wave-specific household referents and confirm linkage before person-level assignment."
+            }
+          ]
+        },
+        {
           "concept_id": "unpaid_wage_arrears_amount",
           "label": "Amount of unpaid wages currently owed to respondent",
           "domain": "personal income and economic resources",
@@ -75763,26 +75783,6 @@
             {
               "code": "i023",
               "label": "Telephone",
-              "module": "Housing",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "dwelling condition/amenity",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "Single-residence or household dwelling field. Verify wave-specific response labels, eligibility, missing codes and whether fields describe the same dwelling before pooling."
-            }
-          ]
-        },
-        {
-          "concept_id": "dwelling_air_cleaner_access",
-          "label": "住宅是否有空气净化器",
-          "domain": "housing and built environment",
-          "roles": [
-            "e"
-          ],
-          "source_fields": [
-            {
-              "code": "i027_w3",
-              "label": "Air Cleaner",
               "module": "Housing",
               "unit": "",
               "value_labels": "",
@@ -94105,7 +94105,7 @@
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
               "mapping_status": "official 2020 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
-              "caveat": "2020 asks whether XFinancialResp's house has an air cleaner (Yes/No); the questionnaire permits interviewer recording only when the interviewer is in the home and clearly knows the answer, otherwise asking the respondent. Presence does not establish use, filter condition, ventilation, pollutant concentration, or personal exposure. Confirm household-person linkage."
+              "caveat": "2015 and 2018 ask whether the residence has an air cleaner (Yes/No); 2020 asks whether XFinancialResp's house has one (Yes/No). The 2020 questionnaire permits interviewer recording only when the interviewer is in the home and clearly knows the answer, otherwise asking the respondent. Presence does not establish use, filter condition, ventilation, pollutant concentration, or personal exposure. Preserve wave-specific household referents and confirm linkage before person-level assignment."
             }
           ]
         },

@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / "audit" / "food_environment_crosswalk_v1.csv"
 SITE = ROOT / "site-prototype" / "dist" / "food_environment_v1.json"
+RAW = ROOT / "audit" / "raw_variable_catalog_v1.csv"
 REVIEW = "audit/housing_context_source_review_2026-10-24.md"
 QUESTIONNAIRES = {
     "2011": "CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
@@ -28,6 +29,8 @@ REVIEWED = {
     ("2020", "tap_water_access", "i016"),
     ("2020", "waterworks_treatment", "i029"),
     ("2020", "air_cleaner_home", "i024"),
+    ("2015", "air_cleaner_home", "i027_w3"),
+    ("2018", "air_cleaner_home", "i027_w3"),
 }
 
 CONCEPT_CAVEATS = {
@@ -56,10 +59,11 @@ CONCEPT_CAVEATS = {
         "treatment status, not a contaminant assay or verified water-quality result."
     ),
     "air_cleaner_home": (
-        "2020 asks whether XFinancialResp's house has an air cleaner (Yes/No); the questionnaire permits "
-        "interviewer recording only when the interviewer is in the home and clearly knows the answer, "
-        "otherwise asking the respondent. Presence does not establish use, filter condition, ventilation, "
-        "pollutant concentration, or personal exposure. Confirm household-person linkage."
+        "2015 and 2018 ask whether the residence has an air cleaner (Yes/No); 2020 asks whether "
+        "XFinancialResp's house has one (Yes/No). The 2020 questionnaire permits interviewer recording "
+        "only when the interviewer is in the home and clearly knows the answer, otherwise asking the respondent. "
+        "Presence does not establish use, filter condition, ventilation, pollutant concentration, or personal "
+        "exposure. Preserve wave-specific household referents and confirm linkage before person-level assignment."
     ),
 }
 
@@ -83,6 +87,8 @@ FIELD_NOTES = {
         "2020": "Official questionnaire/Codebook reviewed: asks whether tap water is treated by waterworks; preserve 1=Yes/2=No/997=Do not know. Do not recode 997 as No."
     },
     "air_cleaner_home": {
+        "2015": "Official questionnaire/Codebook reviewed: I027_W3 asks whether the residence has an air cleaner; preserve 1=Yes/2=No.",
+        "2018": "Official questionnaire/Codebook reviewed: I027_W3 asks whether the residence has an air cleaner; preserve 1=Yes/2=No.",
         "2020": "Official questionnaire/Codebook reviewed: presence of an air cleaner in XFinancialResp's house; 1=Yes/2=No. Questionnaire allows interviewer recording only when in the home and certain, otherwise ask respondent."
     },
 }
@@ -101,6 +107,9 @@ def validate_sources() -> None:
         if (wave, concept_id, code) == ("2020", "air_cleaner_home", "i024"):
             if "record if interviewer is in r's housing and clearly know the answer, otherwise ask r" not in q:
                 raise ValueError("2020 air-cleaner interview mode instruction not found")
+        if (wave, concept_id, code) in (("2015", "air_cleaner_home", "i027_w3"), ("2018", "air_cleaner_home", "i027_w3")):
+            if "does your residence have an air cleaner in your home" not in q:
+                raise ValueError(f"{wave} air-cleaner wording not found")
         if (wave, concept_id, code) == ("2020", "residential_heating", "i019"):
             if "i019 does [xfinancialresp]’s house have heating?" not in q or "i019: centralized heating" not in cb:
                 raise ValueError("2020 heating questionnaire/Codebook label discrepancy not found")
@@ -112,6 +121,31 @@ def main() -> None:
         reader = csv.DictReader(stream)
         columns = reader.fieldnames or []
         rows = list(reader)
+    # I027_W3 was present in the 2018 raw variable catalogue and official
+    # sources but was not yet represented in the housing crosswalk. Add it
+    # from the metadata catalogue; never infer any respondent values.
+    raw_rows = list(csv.DictReader(RAW.open(encoding="utf-8-sig", newline="")))
+    for wave, concept_id, code in REVIEWED:
+        if any((str(r["wave"]), str(r["concept_id"]), str(r["code"]).lower()) == (wave, concept_id, code) for r in rows):
+            continue
+        matches = [r for r in raw_rows if str(r["wave"]) == wave and str(r["variable"]).lower() == code]
+        if len(matches) != 1:
+            raise ValueError(f"Expected one raw catalogue row for missing mapping {(wave, concept_id, code)}; found {len(matches)}")
+        if (wave, concept_id, code) != ("2018", "air_cleaner_home", "i027_w3"):
+            raise ValueError(f"No reviewed insertion rule for {(wave, concept_id, code)}")
+        source = matches[0]
+        rows.append({
+            "concept_id": concept_id,
+            "concept_label": "Air cleaner present in residence",
+            "domain": "Indoor environment",
+            "wave": wave,
+            "code": code,
+            "module": source["module"],
+            "source_label": source["variable_label"],
+            "code_value_labels": "1=Yes; 2=No",
+            "mapping_status": "",
+            "caveat": "",
+        })
     found: set[tuple[str, str, str]] = set()
     for row in rows:
         key = (str(row["wave"]), str(row["concept_id"]), str(row["code"]).lower())
@@ -143,6 +177,24 @@ def main() -> None:
                 continue
             field["note"] = f"{FIELD_NOTES[concept_id][wave]} See {REVIEW}."
             field["source_document"] = source_paths(wave)
+            updated.add(key)
+        for wave, expected_concept, code in sorted(REVIEWED):
+            key = (wave, expected_concept, code)
+            if expected_concept != concept_id or key in updated:
+                continue
+            matches = [r for r in raw_rows if str(r["wave"]) == wave and str(r["variable"]).lower() == code]
+            if len(matches) != 1:
+                raise ValueError(f"Expected one raw catalogue source for site mapping {key}")
+            source = matches[0]
+            concept["source_fields"].append({
+                "wave": wave,
+                "code": code,
+                "module": source["module"],
+                "source_label": source["variable_label"],
+                "value_labels": "1=Yes; 2=No",
+                "note": f"{FIELD_NOTES[concept_id][wave]} See {REVIEW}.",
+                "source_document": source_paths(wave),
+            })
             updated.add(key)
     if updated != REVIEWED:
         raise ValueError(f"Site mismatch; missing={sorted(REVIEWED-updated)}")

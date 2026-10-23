@@ -41,6 +41,8 @@ class HousingContextSourceReviewTests(unittest.TestCase):
             ("2020", "tap_water_access", "i016"),
             ("2020", "waterworks_treatment", "i029"),
             ("2020", "air_cleaner_home", "i024"),
+            ("2015", "air_cleaner_home", "i027_w3"),
+            ("2018", "air_cleaner_home", "i027_w3"),
         })
 
     def test_2020_heating_label_conflict_is_explicit_and_preserved(self):
@@ -82,6 +84,16 @@ class HousingContextSourceReviewTests(unittest.TestCase):
         self.assertIn("IWER: Record if interviewer is in R's housing", questionnaire)
         self.assertIn("i019: Centralized Heating", codebook)
         self.assertIn("no respondent data or Codebook frequencies used", script)
+
+    def test_air_cleaner_concept_has_reviewed_2015_2018_2020_fields(self):
+        item = next(c for c in self.site if c["concept_id"] == "air_cleaner_home")
+        fields = {str(f["wave"]): f for f in item["source_fields"]}
+        self.assertEqual(set(fields), {"2015", "2018", "2020"})
+        for wave in ("2015", "2018"):
+            self.assertEqual(fields[wave]["code"].lower(), "i027_w3")
+            self.assertEqual(fields[wave]["value_labels"], "1=Yes; 2=No")
+            self.assertIn("questionnaire/Codebook reviewed", fields[wave]["note"])
+        self.assertIn("wave-specific household referents", item["caveat"])
 
 
 if __name__ == "__main__":

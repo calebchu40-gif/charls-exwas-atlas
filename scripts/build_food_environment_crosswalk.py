@@ -69,7 +69,7 @@ CONCEPTS = {
     "piped_gas_access": ("Coal/natural gas supply to residence", "Housing environment/basic services",
         "Availability of coal/natural-gas supply is not the same as the household's main cooking or heating fuel."),
     "air_cleaner_home": ("Air cleaner present in residence", "Indoor environment",
-        "Presence does not measure use, filter condition, ventilation, indoor pollutant concentration, or personal exposure; wave interview mode differs."),
+        "2015 and 2018 ask whether the residence has an air cleaner; 2020 asks whether XFinancialResp's house has one. Preserve wave-specific target wording and interview mode. Presence does not measure use, filter condition, ventilation, indoor pollutant concentration, or personal exposure."),
     "tap_water_access": ("Tap water in residence", "Housing environment/basic services",
         "2020 wording is tap-water access; not a direct drinking-water quality or contaminant measurement."),
 }
@@ -104,7 +104,7 @@ MAP = {
     "electricity_access": {2011:["i016"],2013:["i016"],2018:["i016"],2020:["i015"]},
     "bathing_facility": {2011:["i018"],2013:["i018"],2015:["i018"],2018:["i018"],2020:["i017"]},
     "piped_gas_access": {2011:["i019"],2013:["i019"],2015:["i019"],2018:["i019"],2020:["i018"]},
-    "air_cleaner_home": {2015:["i027_w3"],2020:["i024"]},
+    "air_cleaner_home": {2015:["i027_w3"],2018:["i027_w3"],2020:["i024"]},
     "tap_water_access": {2020:["i016"]},
 }
 
@@ -156,7 +156,7 @@ VALUE_LABELS = {
         2018:"1=Hot water provided; 2=Household water heater; 3=None",
         2020:"1=Unified hot water supply; 2=Water heater; 3=None",
     },
-    "air_cleaner_home": {2015:"1=Yes; 2=No",2020:"1=Yes; 2=No"},
+    "air_cleaner_home": {2015:"1=Yes; 2=No",2018:"1=Yes; 2=No",2020:"1=Yes; 2=No"},
 }
 
 # Field-level notes are used where a concept expands to unlike source fields;

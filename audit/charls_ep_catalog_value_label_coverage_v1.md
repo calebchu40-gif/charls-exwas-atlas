@@ -2,8 +2,8 @@
 
 更新：2026-10-24。由`scripts/summarize_value_label_coverage.py`从当前字段目录和覆盖CSV自动生成。
 
-- E/P字段—角色—类别目录行：6,649；不同波次—字段码：6,568。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
-- 有非空官方/已审标签文本的E/P目录行：3,349；不同波次—字段码：3,323。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
+- E/P字段—角色—类别目录行：6,650；不同波次—字段码：6,568。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
+- 有非空官方/已审标签文本的E/P目录行：3,350；不同波次—字段码：3,323。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
 - 明确标为`conflict`的E/P字段码：0；详情按主目录波次和变量码检索。
 - 问卷/Codebook编码差异尚未调和并锁定`DO NOT ANALYZE`的E/P字段：2011 `fb010`。此项独立于上面的精确`conflict`标签计数。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -18,7 +18,7 @@
 |e|early-life and family socioeconomic context|3|3|1|
 |e|environmental perception|1|1|1|
 |e|family and intergenerational context|6|6|1|
-|e|food and household environment|160|87|1|
+|e|food and household environment|161|88|1|
 |e|housing and built environment|481|34|2|
 |e|social determinants|2,132|1,007|20|
 |e|social protection|1,331|452|30|
@@ -46,7 +46,7 @@
 |numeric/time unit metadata available; no discrete labels assigned|151|
 |official Codebook numeric/count response located; no discrete answer labels|129|
 |audited measurement component; derive concept per crosswalk|108|
-|Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding|97|
+|Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding|98|
 |连续值/字段结构；代码本未提供离散值标签|93|
 |official 2011 questionnaire identifies Yuan amount period and household-member roster slot; continuous amount with no discrete response categories; authorized-release storage scale and special values remain unverified|80|
 |official 2018 Codebook response categories transcribed; frequencies omitted; questionnaire route retained; respondent release coding and eligible denominator require validation|68|

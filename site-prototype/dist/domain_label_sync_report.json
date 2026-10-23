@@ -3,9 +3,9 @@
   "matching": "exact wave + normalized CHARLS variable code; unique provenance tuple only",
   "files": {
     "food_environment_v1.json": {
-      "fields": 161,
+      "fields": 162,
       "filled": 1,
-      "existing": 108,
+      "existing": 109,
       "no_match": 52,
       "ambiguous": 0
     },

@@ -9,7 +9,7 @@
 |e|community context|100|194|194|
 |e|behavior|45|296|271|
 |e|housing and built environment|41|481|481|
-|e|food and household environment|29|160|160|
+|e|food and household environment|29|161|161|
 |e|internal biomarker|20|55|55|
 |e|healthcare access|7|109|109|
 |e|family and intergenerational context|6|6|3|
@@ -28,4 +28,4 @@
 |p|anthropometric|5|15|15|
 |p|blood pressure|3|27|27|
 
-总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1426个（E=1147、P=288，9个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。
+总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1425个（E=1146、P=288，9个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。
