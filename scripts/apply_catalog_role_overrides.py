@@ -29,8 +29,9 @@ for wave,code in keys:
     if (wave,code,"p") not in existing:
         raise SystemExit(f"role override lacks P candidate row: {wave}/{code}")
 for wave,code in analysis_locked_keys:
-    if (wave,code,"e") not in existing:
-        raise SystemExit(f"analysis-lock override lacks E candidate row: {wave}/{code}")
+    source = raw_catalog[(raw_catalog.wave.str.lower().eq(wave)) & raw_catalog.variable.str.lower().eq(code)]
+    if source.empty:
+        raise SystemExit(f"analysis-lock override lacks official source field: {wave}/{code}")
 for row in overrides.loc[overrides["keep_role"].str.lower().eq("c")].itertuples(index=False):
     wave,code,old_role=row.wave.lower(),row.code.lower(),row.remove_role.lower()
     if (wave,code,old_role) not in existing and (wave,code,"c") not in existing:
@@ -105,6 +106,15 @@ for wave,code in metadata_keys:
         fields.loc[metadata_rows,"Candidate.Status"]="C metadata; official Codebook selector identifies whether the paired smoking/alcohol time component is age or calendar year"
         fields.loc[metadata_rows,"Harmonization.Status"]="response-format selector only; selector code order differs by wave; interpret the paired age/year component using this wave-specific metadata"
         fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; not a smoking/alcohol exposure; use only to interpret the paired age/year response field"
+    elif metadata_type == "age_year_component_selector_source_conflict":
+        fields.loc[metadata_rows,"category"]="measurement metadata"
+        fields.loc[metadata_rows,"subcategory"]="smoking cessation age/calendar-year response-format selector; component labels conflict"
+        fields.loc[metadata_rows,"Value.Labels"]=""
+        fields.loc[metadata_rows,"Value.Label.Source"]="sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3089-L3090; sources_official/CHARLS_2018_Codebook_extracted.txt:L43128-L43151"
+        fields.loc[metadata_rows,"Value.Label.Review"]="selector role confirmed; component order conflicts between official questionnaire and Codebook; selector category labels withheld"
+        fields.loc[metadata_rows,"Candidate.Status"]="C metadata; DA062 identifies age/year response format, but exact selector-to-component mapping is unresolved"
+        fields.loc[metadata_rows,"Harmonization.Status"]="questionnaire labels DA062_1=Age and DA062_2=Year; Codebook labels DA062_1=Year and DA062_2=Age; retain selector only as source metadata until official release clarification"
+        fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; selector retained only as metadata while child component mapping conflict is documented"
     elif metadata_type == "none_checklist_option":
         fields.loc[metadata_rows,"category"]="measurement metadata"
         fields.loc[metadata_rows,"subcategory"]="checklist none-option coding"
@@ -664,6 +674,42 @@ for wave,code in analysis_locked_keys:
     selected=(fields["Source.Wave"].str.lower().eq(wave) & fields["Variable.Name"].str.lower().eq(code) & fields["epcf"].str.lower().eq("e"))
     override=overrides.loc[overrides["wave"].str.lower().eq(wave) & overrides["code"].str.lower().eq(code)].iloc[0]
     metadata_type=str(override.get("metadata_type","")).strip().lower()
+    if metadata_type == "smoking_cessation_component_source_conflict":
+        # These substantive components may be heuristically duplicated as C
+        # covariates because their source labels are Age or Year. Keep only
+        # the E-candidate row, which is explicitly locked below.
+        duplicate_c=(fields["Source.Wave"].str.lower().eq(wave) & fields["Variable.Name"].str.lower().eq(code) & fields["epcf"].str.lower().eq("c"))
+        fields=fields.loc[~duplicate_c].copy()
+        selected=(fields["Source.Wave"].str.lower().eq(wave) & fields["Variable.Name"].str.lower().eq(code) & fields["epcf"].str.lower().eq("e"))
+    if not selected.any():
+        # A source field can be omitted from automatic E/P discovery (or be
+        # misrouted to C) despite being a substantive component. Keep the
+        # reviewed field searchable as a locked E candidate rather than
+        # allowing an unresolved source identity to disappear from the atlas.
+        exact=(fields["Source.Wave"].str.lower().eq(wave) & fields["Variable.Name"].str.lower().eq(code))
+        if exact.any():
+            fields.loc[exact,"epcf"]="e"
+            selected=exact
+        else:
+            source=raw_catalog[(raw_catalog.wave.str.lower().eq(wave)) & raw_catalog.variable.str.lower().eq(code)].iloc[0]
+            same_module=fields[(fields["Source.Wave"].str.lower().eq(wave)) & fields["Data.File.Name"].str.lower().eq(str(source.module).lower())]
+            module_description=same_module.iloc[0]["Data.File.Description"] if not same_module.empty else str(source.module)
+            row={
+                "Variable.Name":str(source.variable), "Variable.Description":str(source.variable_label),
+                "Data.File.Name":str(source.module), "Data.File.Description":str(module_description),
+                "Begin.Year":wave, "EndYear":wave, "Component":str(source.module),
+                "Use.Constraints":"CHARLS applicant data; access and publication governed by official agreement",
+                "epcf":"e", "category":"behavioral exposures", "subcategory":"source-conflicted exposure component",
+                "Source.Wave":wave, "Source.Archive":str(source.source),
+                "Candidate.Status":"DO NOT ANALYZE pending official source identity review",
+                "Harmonization.Status":"source-conflicted field retained for search only",
+                "Review.Flag":"DO NOT ANALYZE pending official source identity review",
+                "Value.Labels":"", "Value.Label.Source":"", "Value.Label.Review":"source conflict; labels withheld",
+            }
+            for column in fields.columns:
+                row.setdefault(column,"")
+            fields=pd.concat([fields,pd.DataFrame([row],columns=fields.columns)],ignore_index=True).fillna("")
+            selected=(fields["Source.Wave"].str.lower().eq(wave) & fields["Variable.Name"].str.lower().eq(code) & fields["epcf"].str.lower().eq("e"))
     fields.loc[selected,"category"]="social protection"
     if metadata_type == "pension_2015_age_field_identity_conflict":
         fields.loc[selected,"subcategory"]="current pension claim-age eligibility; questionnaire/Codebook title conflict"
@@ -679,6 +725,15 @@ for wave,code in analysis_locked_keys:
         fields.loc[selected,"Value.Labels"]=""
         fields.loc[selected,"Harmonization.Status"]="unit is years; preserve raw route-specific strings; one plan field contains nonnumeric text, so do not parse or use either field continuously until official release encoding and special-text rules are clarified"
         fields.loc[selected,"Review.Flag"]="DO NOT ANALYZE numerically until official release string encoding and special-text/missing rules are confirmed; preserve raw strings"
+    elif metadata_type == "smoking_cessation_component_source_conflict":
+        fields.loc[selected,"category"]="behavioral exposures"
+        fields.loc[selected,"subcategory"]="smoking cessation timing component; questionnaire/Codebook identity conflict"
+        fields.loc[selected,"Candidate.Status"]="DO NOT ANALYZE; official 2018 questionnaire and Codebook assign opposite age/year meanings to DA062_1 and DA062_2"
+        fields.loc[selected,"Value.Label.Source"]="sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3089-L3090; sources_official/CHARLS_2018_Codebook_extracted.txt:L43140-L43158"
+        fields.loc[selected,"Value.Label.Review"]="source conflict recorded; do not display a reconciled unit or categories"
+        fields.loc[selected,"Unit"]="unresolved: questionnaire and Codebook disagree"
+        fields.loc[selected,"Harmonization.Status"]="questionnaire: DA062_1=Age, DA062_2=Year; Codebook: DA062_1=Year, DA062_2=Age; do not harmonize or analyze until the official release field identity is reconciled"
+        fields.loc[selected,"Review.Flag"]="DO NOT ANALYZE pending official clarification of 2018 cessation component identities; preserve source discrepancy"
     elif metadata_type == "pension_2018_candidate_verified":
         fields.loc[selected,"Candidate.Status"]="official 2018 Wave 4 questionnaire and Codebook verify the source item, unit/categories, and routed context; candidate only"
         fields.loc[selected,"Value.Label.Source"]="sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"

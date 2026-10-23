@@ -44,6 +44,8 @@ def code(cid,w,c):
     if cid=='smoking_initiation_cessation' and c=='da065':
         return ('1=Age; 2=Year' if w in {'2011','2013','2015'} else
                 '1=Year; 2=Age' if w=='2018' else None)
+    if cid=='smoking_initiation_cessation' and c in {'da062','da049'} and w in {'2013','2015','2018','2020'}:
+        return '1=Year; 2=Age' if w=='2018' else '1=Age; 2=Year'
     if cid=='alcohol_recent' and c in {'da067','da051'}:
         return '1=Drink more than once a month; 2=Drink but less than once a month; 3=None of these'
     if cid=='alcohol_history' and c=='da069':
@@ -92,13 +94,26 @@ for col in ['value_labels','value_label_status','value_label_source','value_sema
     if col not in d.columns: d[col]=''
 for i,r in d.iterrows():
     cid,w,c=r['concept_id'],r['wave'],r['code']; lab=code(cid,w,c)
+    if cid=='smoking_initiation_cessation' and w=='2018' and c in {'da062_1','da062_2'}:
+        d.loc[i,'value_labels']=''
+        d.loc[i,'value_label_status']='DO NOT ANALYZE; official 2018 Questionnaire and Codebook assign opposite age/year meanings to the component'
+        d.loc[i,'value_label_source']='sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3089-L3090; sources_official/CHARLS_2018_Codebook_extracted.txt:L43140-L43158'
+        d.loc[i,'value_semantics']='Questionnaire: DA062_1=Age, DA062_2=Year; Codebook: DA062_1=Year, DA062_2=Age. Preserve unresolved source conflict.'
+        d.loc[i,'questionnaire_source']='sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3089-L3090'
+        d.loc[i,'mapping_status']='DO NOT ANALYZE; official 2018 Questionnaire and Codebook assign opposite age/year meanings to this component'
+        continue
     if lab is not None:
         d.loc[i,'value_labels']=lab
         d.loc[i,'value_label_status']='official codebook response labels reviewed; routing/measurement definition retained separately'
         d.loc[i,'value_label_source']=BOOK(w)
-        if cid=='smoking_initiation_cessation' and c=='da065':
+        if cid=='smoking_initiation_cessation' and c in {'da065','da062','da049'}:
             d.loc[i,'value_label_status']='official selector code reviewed; selects whether the following component is age or calendar year, with order changing in 2018'
-            d.loc[i,'value_semantics']='Selector only; interpret paired component fields using wave-specific code order. Do not analyze as an ordinal exposure.'
+            d.loc[i,'value_semantics']='Selector only; interpret paired cessation/initiation component fields using wave-specific code order. Do not analyze as an ordinal exposure.'
+            if c in {'da062','da049'}:
+                d.loc[i,'mapping_status']='C metadata; smoking-cessation age/year response-format selector; use only to interpret its paired time component'
+                if w=='2018':
+                    d.loc[i,'value_label_status']='official selector code reviewed; Codebook selector options retained; child component identities conflict with the official questionnaire'
+                    d.loc[i,'mapping_status']='C metadata; selector options are Codebook-labeled, but child age/year component identities conflict with the official questionnaire'
         if cid=='alcohol_start_stop' and c in {'da070','da071'}:
             d.loc[i,'value_label_status']='official selector code reviewed; component order differs in 2011 versus 2013–2018'
             d.loc[i,'value_semantics']='Selector only; paired fields encode age/year according to the wave-specific selector labels. Not an ordinal exposure.'

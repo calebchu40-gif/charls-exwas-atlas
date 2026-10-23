@@ -2,6 +2,8 @@
 
 ## 2026-10-23
 
+- Reviewed smoking cessation age/year selectors against each wave’s official questionnaire and Codebook. Reclassified the 2013, 2015, 2018, and 2020 selectors as C metadata; recorded the direct 2018 DA062_1/DA062_2 age/year label conflict and locked both components from analysis. Added regression checks and updated the DO NOT ANALYZE inventory to 35.
+
 - Clarified six DA017 cancer-site fields with no observed Codebook categories: the official questionnaires confirm each numbered site option, while response labels remain blank and underlying unselected/storage codes remain unknown. The main catalog now carries that source-aware review status; added regression coverage and rebuilt the public metadata assets.
 - Pinned the Pages artifact packager to its inspected upstream commit after run #28 showed its v4 release still embeds Node 20 `upload-artifact`; the pinned composite uses Node 24-compatible `upload-artifact@v7.0.1`.
 - Added wave-specific Codebook labels for 48 disease-control and prior-interview disease-change fields from 2013, 2015, and 2018. Frequencies are omitted; prior-disease routing and the unresolved release-data denominator remain explicit. Updated the chronic-disease audit and regression coverage.

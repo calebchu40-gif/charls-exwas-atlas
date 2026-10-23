@@ -1,6 +1,6 @@
 ﻿epcf,category,subcategory,source_field_wave_rows,distinct_source_codes,wave_count
 c,covariate candidate,birth-date source and age derivation metadata,5,5,2
-c,covariate candidate,demographic / design / socioeconomic adjustment candidate,424,270,5
+c,covariate candidate,demographic / design / socioeconomic adjustment candidate,421,268,5
 c,measurement metadata,2011 proxy interview and Section E assistance context,3,3,1
 c,measurement metadata,2018 employer pension contribution amount/share unit selector,1,1,1
 c,measurement metadata,2018 respondent pension contribution amount/share unit selector,1,1,1
@@ -8,7 +8,7 @@ c,measurement metadata,2020 CAPI-derived work-day formula under review,1,1,1
 c,measurement metadata,2020 current-employer start-date verification flag,1,1,1
 c,measurement metadata,2020 pandemic work-module selection flag,1,1,1
 c,measurement metadata,CAPI-derived survey-home linkage flag,1,1,1
-c,measurement metadata,age/calendar-year response-format selector,11,3,4
+c,measurement metadata,age/calendar-year response-format selector,14,5,5
 c,measurement metadata,blood pressure recent pretest conditions,3,1,3
 c,measurement metadata,chair setup for repeated chair-stand test,4,2,3
 c,measurement metadata,checklist none-option coding,3,1,3
@@ -65,6 +65,7 @@ c,measurement metadata,questionnaire inserted activity-type labels,3,3,1
 c,measurement metadata,resident-pension supplementary repayment currency selector,1,1,1
 c,measurement metadata,retirement/receding work-unit geographic linkage components,5,5,1
 c,measurement metadata,rural pension contribution frequency selector,1,1,1
+c,measurement metadata,smoking cessation age/calendar-year response-format selector; component labels conflict,1,1,1
 c,measurement metadata,social-pension expected-benefit form selector,6,3,2
 c,measurement metadata,social-pension supplementary repayment currency selector,12,12,1
 c,measurement metadata,stroke recurrence timing response format,3,1,3
@@ -76,7 +77,8 @@ c,measurement metadata,unsupported prior-wave disease-awareness slots,15,15,1
 e,behavior,alcohol use,73,24,5
 e,behavior,physical activity,84,36,5
 e,behavior,sleep,25,16,5
-e,behavior,smoking and tobacco,61,32,5
+e,behavior,smoking and tobacco,55,30,5
+e,behavioral exposures,smoking cessation timing component; questionnaire/Codebook identity conflict,2,2,1
 e,community context,"environment, infrastructure, and services",187,187,1
 e,early-life and family socioeconomic context,parent marital and ethnic context,3,3,2
 e,environmental perception,self-reported air-quality satisfaction,1,1,1

@@ -2,7 +2,7 @@
 
 更新：2026-10-23。由`scripts/summarize_value_label_coverage.py`从当前字段目录和覆盖CSV自动生成。
 
-- E/P字段—角色—类别目录行：6,633；不同波次—字段码：6,552。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
+- E/P字段—角色—类别目录行：6,629；不同波次—字段码：6,548。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
 - 有非空官方/已审标签文本的E/P目录行：3,207；不同波次—字段码：3,181。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
 - 明确标为`conflict`的E/P字段码：0；详情按主目录波次和变量码检索。
 - 问卷/Codebook编码差异尚未调和并锁定`DO NOT ANALYZE`的E/P字段：2011 `fb010`。此项独立于上面的精确`conflict`标签计数。
@@ -12,7 +12,8 @@
 
 |角色|网站类别|字段—角色—类别行（非互斥）|有标签文本行|子类别数|
 |---|---|---:|---:|---:|
-|e|behavior|243|158|4|
+|e|behavior|237|158|4|
+|e|behavioral exposures|2|0|1|
 |e|community context|187|59|1|
 |e|early-life and family socioeconomic context|3|3|1|
 |e|environmental perception|1|1|1|
@@ -37,7 +38,7 @@
 |审核状态|E/P目录行|
 |---|---:|
 |officially reviewed|2,536|
-|not yet reviewed|1,246|
+|not yet reviewed|1,242|
 |official codebook field located; continuous/count or no categorical labels|608|
 |codebook field located; continuous/open response or no categorical labels|339|
 |continuous measure metadata available|214|
@@ -55,7 +56,7 @@
 |official Codebook lists numeric summary; no categorical response menu in this entry|51|
 |official selected-option label; checkbox slot, absence is not a negative response|42|
 |代码本逐值标签已核|38|
-|continuous component, not a categorical code; component unit reviewed against wave-specific official codebook|38|
+|continuous component, not a categorical code; component unit reviewed against wave-specific official codebook|36|
 |continuous measure metadata available; see description/crosswalk|32|
 |连续计数；参照期/机构槽位依波次；极值待核|29|
 |continuous raw subtraction response; Codebook extreme maxima occur; valid range and scoring require authorized raw-data QA|25|
@@ -100,6 +101,7 @@
 |official questionnaire categories transcribed without frequencies; preserve three-category employment/family-business status|3|
 |official questionnaire categories; frequencies omitted; 2011 question wording controls its scope|3|
 |questionnaire categories and Codebook title conflict recorded; frequencies omitted|3|
+|source conflict recorded; do not display a reconciled unit or categories|2|
 |questionnaire/Codebook item-identity conflict; DO NOT ANALYZE until official source identity and released-data coding are reconciled|2|
 |continuous date component; preserve year/month unit and conditional prior-status correction route; month -1 indicates unable to report; DO NOT ANALYZE pending route and released-data reconciliation|2|
 |official 2013 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|

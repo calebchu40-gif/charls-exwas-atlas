@@ -1,6 +1,6 @@
 # 当前 DO NOT ANALYZE 项分流清单（2026-10-22）
 
-当前主目录有33条唯一波次—字段分析锁定项。下方字段清单含33条现行锁定；FM033仅在说明文字中用于记录其已解除锁定，不计入现行数。此清单不解除任何未关闭的限制；2011 FM019、FM032/FM035、FM039进行受控本地答案存储/路由QA，未导出个人记录或把代码本频数当分析样本量。FM033基于官方问卷、Codebook及受控QA拆出为带未观测选项说明的条件性分类候选。2015 `fn064_w2_1_2_`/`_1_3_`已受控核验路由及字符串存储，年份单位明确，但一个字段有不可数值解析文本，仍锁定。
+当前主目录有35条唯一波次—字段分析锁定项。下方字段清单含35条现行锁定；FM033仅在说明文字中用于记录其已解除锁定，不计入现行数。此清单不解除任何未关闭的限制；2011 FM019、FM032/FM035、FM039进行受控本地答案存储/路由QA，未导出个人记录或把代码本频数当分析样本量。FM033基于官方问卷、Codebook及受控QA拆出为带未观测选项说明的条件性分类候选。2015 `fn064_w2_1_2_`/`_1_3_`已受控核验路由及字符串存储，年份单位明确，但一个字段有不可数值解析文本，仍锁定。
 
 ## 分类与所需证据
 
@@ -68,6 +68,12 @@ Unit is years by the official Codebook title and both plan routes match the loca
 ### 1条：DO NOT ANALYZE; retain only to document the questionnaire/Codebook discrepancy pending official release clarification
 
 2015 `ha065_1_18_`
+
+### 2条：DO NOT ANALYZE pending official clarification of the 2018 smoking-cessation age/year component identity
+
+2018 `da062_1`, 2018 `da062_2`
+
+2018问卷将DA062_1标为年龄、DA062_2标为年份；同波Codebook却将DA062_1标为年份、DA062_2标为年龄。两项均保留检索但锁定分析，DA062选择器仅作为元数据且不展示未解决的映射。详见[`smoking_cessation_2018_age_year_component_conflict_review_2026-10-23.md`](smoking_cessation_2018_age_year_component_conflict_review_2026-10-23.md)。
 
 ## 执行规则
 

@@ -8,12 +8,13 @@
 |e|social protection|314|1331|1331|
 |e|community context|100|187|187|
 |e|housing and built environment|42|480|480|
-|e|behavior|29|268|243|
+|e|behavior|29|262|237|
 |e|food and household environment|28|160|160|
 |e|internal biomarker|20|55|55|
 |e|healthcare access|7|109|109|
 |e|family and intergenerational context|6|6|3|
 |e|early-life and family socioeconomic context|5|5|3|
+|e|behavioral exposures|1|2|2|
 |e|environmental perception|1|1|1|
 |p|chronic disease ancillary|115|664|664|
 |p|physical function|38|260|260|

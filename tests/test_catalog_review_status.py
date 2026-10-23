@@ -489,9 +489,39 @@ class CatalogReviewStatusTests(unittest.TestCase):
             if "DO NOT ANALYZE" in str(row.get("Review.Flag", ""))
         }
         triage = (ROOT / "audit/do_not_analyze_triage_2026-10-22.md").read_text(encoding="utf-8")
-        self.assertEqual(len(active), 33)
+        self.assertEqual(len(active), 35)
         self.assertIn(f"当前主目录有{len(active)}条唯一波次—字段分析锁定项", triage)
         self.assertNotIn(("2011", "fm033"), active)
+
+    def test_smoking_cessation_selectors_are_metadata_and_2018_components_are_locked(self):
+        selectors = {("2013", "da062"), ("2015", "da062"), ("2018", "da062"), ("2020", "da049")}
+        rows = [row for row in self.catalog if (row.get("Source.Wave", ""), row.get("Variable.Name", "").lower()) in selectors]
+        self.assertEqual({(row["Source.Wave"], row["Variable.Name"].lower(), row["epcf"].lower()) for row in rows},
+                         {(wave, code, "c") for wave, code in selectors})
+        locked = {(row.get("Source.Wave", ""), row.get("Variable.Name", "").lower()): row
+                  for row in self.catalog if "DO NOT ANALYZE" in row.get("Review.Flag", "")}
+        for code in ("da062_1", "da062_2"):
+            row = locked[("2018", code)]
+            self.assertIn("questionnaire:", row.get("Harmonization.Status", ""))
+            self.assertIn("Codebook:", row.get("Harmonization.Status", ""))
+            self.assertIn("opposite age/year", row.get("Candidate.Status", ""))
+            self.assertFalse(any(r.get("Source.Wave") == "2018" and r.get("Variable.Name", "").lower() == code
+                                 and r.get("epcf", "").lower() == "c" for r in self.catalog))
+        import csv
+        with (ROOT / "audit/ep_concept_source_crosswalk_v1.csv").open(encoding="utf-8-sig", newline="") as handle:
+            crosswalk = list(csv.DictReader(handle))
+        selector_rows = [row for row in crosswalk if row.get("Source.Code", "").lower() in {"da062", "da049"}
+                         and row.get("Wave") in {"2013", "2015", "2018", "2020"}
+                         and row.get("Concept.ID") == "smoking_initiation_cessation"]
+        self.assertEqual(len(selector_rows), 4)
+        self.assertTrue(all(row.get("Role") == "c" for row in selector_rows))
+        selector_2018 = next(row for row in selector_rows if row.get("Wave") == "2018")
+        self.assertIn("component identities conflict", selector_2018.get("Mapping.Status", ""))
+        component_rows = [row for row in crosswalk if row.get("Wave") == "2018"
+                          and row.get("Source.Code", "").lower() in {"da062_1", "da062_2"}
+                          and row.get("Concept.ID") == "smoking_initiation_cessation"]
+        self.assertEqual(len(component_rows), 2)
+        self.assertTrue(all(row.get("Mapping.Status", "").startswith("DO NOT ANALYZE") for row in component_rows))
 
 
 if __name__ == "__main__":

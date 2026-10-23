@@ -30631,16 +30631,6 @@
           ],
           "source_fields": [
             {
-              "code": "da062",
-              "label": "The Age of Quit",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；年龄、年份及回答时点字段分列；波次存在字段重排和历史信息复核字段。"
-            },
-            {
               "code": "da062_1",
               "label": "Age",
               "module": "Health_Status_and_Functioning",
@@ -55127,16 +55117,6 @@
           ],
           "source_fields": [
             {
-              "code": "da062",
-              "label": "The Age of Quit",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；年龄、年份及回答时点字段分列；波次存在字段重排和历史信息复核字段。"
-            },
-            {
               "code": "da062_1",
               "label": "Age",
               "module": "Health_Status_and_Functioning",
@@ -77311,23 +77291,13 @@
           ],
           "source_fields": [
             {
-              "code": "da062",
-              "label": "Time Totally Quit Smoking",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；年龄、年份及回答时点字段分列；波次存在字段重排和历史信息复核字段。"
-            },
-            {
               "code": "da062_1",
               "label": "Year",
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "Calendar year",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
+              "value_semantics": "Questionnaire: DA062_1=Age, DA062_2=Year; Codebook: DA062_1=Year, DA062_2=Age. Preserve unresolved source conflict.",
+              "mapping_status": "DO NOT ANALYZE; official 2018 Questionnaire and Codebook assign opposite age/year meanings to this component",
               "caveat": "自动概念目录中的逐波字段候选；年龄、年份及回答时点字段分列；波次存在字段重排和历史信息复核字段。"
             },
             {
@@ -77336,8 +77306,8 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "Age in years",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
+              "value_semantics": "Questionnaire: DA062_1=Age, DA062_2=Year; Codebook: DA062_1=Year, DA062_2=Age. Preserve unresolved source conflict.",
+              "mapping_status": "DO NOT ANALYZE; official 2018 Questionnaire and Codebook assign opposite age/year meanings to this component",
               "caveat": "自动概念目录中的逐波字段候选；年龄、年份及回答时点字段分列；波次存在字段重排和历史信息复核字段。"
             },
             {
@@ -96398,16 +96368,6 @@
             "e"
           ],
           "source_fields": [
-            {
-              "code": "da049",
-              "label": "Time Totally Quit Smoking",
-              "module": "Health_Status_and_Functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；年龄、年份及回答时点字段分列；波次存在字段重排和历史信息复核字段。"
-            },
             {
               "code": "da049_1",
               "label": "Age",
