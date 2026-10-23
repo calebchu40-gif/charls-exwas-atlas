@@ -4,7 +4,7 @@
   "candidate_concept_ids": 1426,
   "exposure_concept_ids_including_dual": 1147,
   "phenotype_concept_ids_including_dual": 288,
-  "wave_field_mapping_rows": 6614,
+  "wave_field_mapping_rows": 6621,
   "includes": "all E/P candidate rows from ep_concept_source_crosswalk_v1.csv",
   "excludes": "C-only measurement eligibility rows; verified_code_examples_v1.csv is a separate multiwave lookup",
   "domains": [
@@ -70,7 +70,7 @@
     },
     {
       "file": "audit/community_exposure_crosswalk_v1.csv",
-      "mapping_rows": 187,
+      "mapping_rows": 194,
       "concept_ids": 100
     },
     {

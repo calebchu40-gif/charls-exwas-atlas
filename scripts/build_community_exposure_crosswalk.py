@@ -14,14 +14,14 @@ CONCEPTS={
  "community_weather":("Community-reported weather indicators","Community environment","Reported prior calendar-year highest/lowest temperature and rainy/snowy days. These are community-report estimates, not linked meteorological station data."),
  "community_transport_road":("Community road and transport access","Community context","Road type/outage days and distance/count of transport links/stations. Infrastructure/access indicators, not pollutant exposure."),
  "community_electricity":("Community electricity access and reliability","Community environment","Household electricity penetration and annual supply availability/duration; village-level reported metrics."),
- "community_education_profile":("Community adult education composition","Community social context","2011 village-level percentages of adults by educational attainment; aggregate context, not an individual's education. Denominator and category cut points must be retained from the source questionnaire."),
- "community_water_price":("Community-reported average water price","Community environment","2011 community-reported average water price; currency/unit and reference-period interpretation require questionnaire verification before analysis."),
- "community_electricity_price":("Community-reported average electricity price","Community environment","2011 community-reported average electricity price; currency/unit and reference-period interpretation require questionnaire verification before analysis."),
- "community_road_presence":("Road access through the village/community","Community environment","2011 community-level report of roads passing through the village/community; single-wave context indicator."),
- "community_road_cleanliness":("Community road tidiness","Community environment","2011 ordinal community-level assessment of road tidiness; subjective community report, not an environmental sampling measure."),
+ "community_education_profile":("Community adult education composition","Community social context","2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education."),
+ "community_water_price":("Community-reported average water price","Community environment","2011 community-reported current average water unit price in RMB yuan per ton; community context, not an individual's household bill."),
+ "community_electricity_price":("Community-reported average electricity price","Community environment","2011 community-reported current average electricity unit price in RMB yuan per degree (kWh); community context, not an individual's household bill."),
+ "community_road_presence":("Road access through the village/community","Community environment","2011 community-informant Yes/No report of roads passing through the village/community; single-wave context indicator."),
+ "community_road_cleanliness":("Community road tidiness","Community environment","2011 community-informant 1-7 ordinal assessment anchored from very dirty to very tidy; subjective road-condition perception, not an environmental sampling measure."),
  "community_primary_school_change":("Primary-school merger or relocation history","Community social context","2011 community-level report of primary-school merger/relocation and prior school count; historical service-access context, not individual schooling."),
- "community_disaster_history":("Recent serious natural-disaster occurrence","Community environment","2011 community-level report of serious natural disasters during the prior five years; type-specific slots remain separate and require official category review."),
- "community_sanitation_reconstructed":("Reconstructed community toilet/sewer indicator","Community environment","2011 derived community indicator. Original construction, direction and valid coding must be checked before analysis; do not treat as a raw observed measurement."),
+ "community_disaster_history":("Recent serious natural-disaster occurrence","Community environment","2011 community-informant report of any serious natural disaster during the prior five years (JI001); No routes to JI003, so JI002 event details have a conditional denominator."),
+ "community_sanitation_reconstructed":("Reconstructed community toilet/sewer indicator","Community environment","2011 village-only CAPI item asking whether the village restructured toilet/sewer systems; preserve village-only eligibility and do not infer original derivation from the Codebook variable label."),
 }
 MAP={
  "community_water_sources":["jb006_1","jb006_2","jb006_3","jb006_4","jb006_5","jb006_6","jb006_7","jb006_8"],
@@ -32,7 +32,7 @@ MAP={
  "community_weather":["ja039_1","ja039_2","ja040","ja041"],
  "community_transport_road":["jb001","jb002","jb003","jb004","jb005"],
  "community_electricity":["jb017","jb020","jb021"],
- "community_education_profile":["jc020","jc021","jc022","jc023","jc024"],
+ "community_education_profile":["jc019","jc019_1","jc020","jc020_1","jc021","jc021_1","jc022","jc022_1","jc023","jc023_1","jc024","jc024_1"],
  "community_water_price":["jj023"],
  "community_electricity_price":["jj024"],
  "community_road_presence":["jk001"],
@@ -115,7 +115,9 @@ for idx, slug, label in DISASTERS:
 QUESTIONNAIRE_REVIEWED = {
  "community_water_sources","community_cooking_fuel_profile","community_winter_heating",
  "community_sanitation_services","community_industrial_pollution","community_weather",
- "community_transport_road","community_electricity",
+ "community_transport_road","community_electricity","community_education_profile",
+ "community_water_price","community_electricity_price","community_road_presence",
+ "community_road_cleanliness","community_disaster_history","community_sanitation_reconstructed",
  *[cid for cid in CONCEPTS if cid.startswith("community_kindergarten_") or
     cid.startswith("community_primary_school_") or cid.startswith("community_junior_middle_school_") or
     cid.startswith("community_senior_high_school_") or cid.startswith("community_post_office_") or
@@ -149,6 +151,8 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label."
     elif code_l.startswith("ji002_"):
      evidence="CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label."
+    elif cid == "community_education_profile":
+     evidence="CHARLS 2011 Community Questionnaire, Part C p.16 (PDF p.19), JC019-JC024; exact percentage fields and conditional _1 bracket fields verified."
     elif is_reviewed:
      evidence="CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label."
     else:
@@ -171,6 +175,14 @@ def main():
      unit="month"
     elif code_l.startswith("ji002_e_"):
      unit="people injured or dead"
+    elif code_l in {"jc019","jc020","jc021","jc022","jc023","jc024"}:
+     unit="percent of community adults"
+    elif code_l in {"jc019_1","jc020_1","jc021_1","jc022_1","jc023_1","jc024_1"}:
+     unit="percent bracket (fallback category)"
+    elif code_l == "jj023":
+     unit="RMB yuan/ton"
+    elif code_l == "jj024":
+     unit="RMB yuan/kWh"
     else:
      unit=""
     rows.append({"concept_id":cid,"concept_label":label,"domain":domain,"wave":2011,

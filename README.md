@@ -56,7 +56,7 @@ GitHub 官方说明：GitHub Free 个人仓库需要公开仓库才能使用 Pag
 
 2026-10-22官方CHARLS-HCAP Data Alert/User Guidance已核验并纳入认知条目页面；新增2018仙人掌命名及修订评分候选，明确识字/视力/文化偏倚和十词记忆跨波不可直接比。详见`audit/hcap_wave4_cognition_bias_guidance_review_2026-10-22.md`。
 
-环境暴露候选续审已区分住户/住宅层与2011社区告知人层：后者目前有100个概念、187条字段映射且仅覆盖2011，含社区水源和燃料户数、供暖/卫生/电力、社区污染评级与距离、天气及灾害等；它们不是个人剂量。住户住宅候选跨波覆盖饮水、厕所、烹饪/取暖燃料、室内环境等，但同名字段存在波次换码/构念变化（如2020 I016为tap water、I017为淋浴设施、I021为烹饪燃料）。见[`audit/community_environment_candidate_review_2026-10-22.md`](audit/community_environment_candidate_review_2026-10-22.md)及既有[`audit/food_environment_crosswalk_audit_v1.md`](audit/food_environment_crosswalk_audit_v1.md)。
+环境暴露候选续审已区分住户/住宅层与2011社区告知人层：后者目前有100个概念、194条字段映射且仅覆盖2011，含社区水源和燃料户数、供暖/卫生/电力、社区污染评级与距离、天气、灾害、交通及教育构成等；它们不是个人剂量。社区成人教育保留精确百分比与“未知精确值时填写”的分档字段，二者分开显示，不混算。住户住宅候选跨波覆盖饮水、厕所、烹饪/取暖燃料、室内环境等，但同名字段存在波次换码/构念变化（如2020 I016为tap water、I017为淋浴设施、I021为烹饪燃料）。见[`audit/community_environment_candidate_review_2026-10-22.md`](audit/community_environment_candidate_review_2026-10-22.md)、[`audit/community_education_and_context_review_2026-10-24.md`](audit/community_education_and_context_review_2026-10-24.md)及既有[`audit/food_environment_crosswalk_audit_v1.md`](audit/food_environment_crosswalk_audit_v1.md)。
 
 
 2013 Wave 2人寿保险缴费频率`FN056_W2_5`原唯一标签冲突已按官方问卷选项定义解除。季度选项仍会显示，并注明CodeBook类别表没有列出、季度金额子字段另标无观测；未传播CodeBook频数，也未从表格缺项推断原始数据值。详见[`audit/life_insurance_frequency_wave2_category_coverage_review_2026-10-22.md`](audit/life_insurance_frequency_wave2_category_coverage_review_2026-10-22.md)。

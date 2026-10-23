@@ -1065,7 +1065,7 @@ def main() -> None:
     add_reviewed_labels("healthcare_access_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source")
     add_reviewed_labels("community_exposure_value_labels_v1.csv", "wave", "code", "value_labels",
                         "value_label_status", "value_label_source",
-                        re.compile(r"official (?:codebook response labels|questionnaire seven-point ordinal scale anchors reviewed; codebook numeric categories only|questionnaire semantics reconciled with codebook response categories); frequencies omitted", re.I))
+                        re.compile(r"official (?:codebook response labels|questionnaire seven-point ordinal scale anchors reviewed; codebook numeric categories only|questionnaire semantics reconciled with codebook response categories); frequencies omitted|official questionnaire numbered fallback categories; Codebook category labels checked and frequencies omitted; asked only when exact percentage is unknown; preserve separately from paired continuous percentage and verify released-data routing", re.I))
     add_reviewed_labels("housing_value_label_review_v1.csv", "wave", "code", "value_labels",
                         "value_label_status", "value_label_source",
                         re.compile(r"official codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding", re.I))
@@ -1850,6 +1850,18 @@ def main() -> None:
                 & out["category"].eq("community context")
             )
             out.loc[selected, "Value.Label.Review"] = "official Codebook numeric/count response located; no discrete answer labels"
+            out.loc[selected, "Value.Label.Source"] = str(item.value_label_source)
+        fallback_labels = community_values.loc[
+            community_values["value_label_status"].str.startswith("official questionnaire numbered fallback categories")
+        ]
+        for item in fallback_labels.itertuples(index=False):
+            selected = (
+                out["Source.Wave"].astype(str).eq(str(item.wave))
+                & out["Variable.Name"].str.lower().eq(str(item.code).lower())
+                & out["category"].eq("community context")
+            )
+            out.loc[selected, "Value.Labels"] = str(item.value_labels)
+            out.loc[selected, "Value.Label.Review"] = str(item.value_label_status)
             out.loc[selected, "Value.Label.Source"] = str(item.value_label_source)
     no_labels = out["Value.Labels"].fillna("").str.strip().eq("")
     continuous = out["category"].isin(["biochemistry", "blood pressure", "anthropometric"])

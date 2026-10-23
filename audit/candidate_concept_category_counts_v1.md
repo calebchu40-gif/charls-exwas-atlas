@@ -6,7 +6,7 @@
 |---|---|---:|---:|---:|
 |e|social determinants|599|2134|2132|
 |e|social protection|314|1331|1331|
-|e|community context|100|187|187|
+|e|community context|100|194|194|
 |e|behavior|45|296|271|
 |e|housing and built environment|41|481|481|
 |e|food and household environment|29|160|160|

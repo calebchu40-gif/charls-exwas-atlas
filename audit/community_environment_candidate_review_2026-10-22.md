@@ -4,7 +4,7 @@
 
 This review checks whether CHARLS can contribute environment-related candidates to an NHANES-style exposome–phenome lookup. It uses only the project’s official questionnaire/codebook extracts and metadata crosswalks; it does not inspect respondent-level records or estimate associations.
 
-The current community crosswalk contains 187 source-field mappings across 100 concepts, all from the 2011 Community module. The separate food/housing crosswalk contains repeated household and residence fields across 2011–2020. These are distinct measurement levels and must remain distinct in the site and any later analysis.
+The current community crosswalk contains 194 source-field mappings across 100 concepts, all from the 2011 Community module. The education-profile concept includes six exact percentage fields and six conditional `_1` bracket fallbacks; see `audit/community_education_and_context_review_2026-10-24.md`. The separate food/housing crosswalk contains repeated household and residence fields across 2011–2020. These are distinct measurement levels and must remain distinct in the site and any later analysis.
 
 ## What CHARLS actually measures
 

@@ -702,54 +702,124 @@
           ],
           "source_fields": [
             {
+              "code": "jc019",
+              "label": "Percentage of the Adult Population That are Illiterate/Semi-Illiterate",
+              "module": "community",
+              "unit": "percent of community adults",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education."
+            },
+            {
+              "code": "jc019_1",
+              "label": "Percentage Category",
+              "module": "community",
+              "unit": "percent bracket (fallback category)",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education."
+            },
+            {
               "code": "jc020",
               "label": "Percentage of the Adult Population Have Completed Only Up to Primary Schools",
               "module": "community",
-              "unit": "",
+              "unit": "percent of community adults",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official codebook label located; candidate pending questionnaire/valid-code review",
-              "caveat": "2011 village-level percentages of adults by educational attainment; aggregate context, not an individual's education. Denominator and category cut points must be retained from the source questionnaire."
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education."
+            },
+            {
+              "code": "jc020_1",
+              "label": "Percentage Category",
+              "module": "community",
+              "unit": "percent bracket (fallback category)",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education."
             },
             {
               "code": "jc021",
               "label": "Percentage of the Adult Population Have Completed Only Up to Junior High Schools",
               "module": "community",
-              "unit": "",
+              "unit": "percent of community adults",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official codebook label located; candidate pending questionnaire/valid-code review",
-              "caveat": "2011 village-level percentages of adults by educational attainment; aggregate context, not an individual's education. Denominator and category cut points must be retained from the source questionnaire."
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education."
+            },
+            {
+              "code": "jc021_1",
+              "label": "Percentage Category",
+              "module": "community",
+              "unit": "percent bracket (fallback category)",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education."
             },
             {
               "code": "jc022",
               "label": "Percentage of the Adult Population Have Completed Only Up to Senior High School",
               "module": "community",
-              "unit": "",
+              "unit": "percent of community adults",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official codebook label located; candidate pending questionnaire/valid-code review",
-              "caveat": "2011 village-level percentages of adults by educational attainment; aggregate context, not an individual's education. Denominator and category cut points must be retained from the source questionnaire."
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education."
+            },
+            {
+              "code": "jc022_1",
+              "label": "Percentage Category",
+              "module": "community",
+              "unit": "percent bracket (fallback category)",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education."
             },
             {
               "code": "jc023",
               "label": "Percentage of the Adult Population Have Completed Only Up to College",
               "module": "community",
-              "unit": "",
+              "unit": "percent of community adults",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official codebook label located; candidate pending questionnaire/valid-code review",
-              "caveat": "2011 village-level percentages of adults by educational attainment; aggregate context, not an individual's education. Denominator and category cut points must be retained from the source questionnaire."
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education."
+            },
+            {
+              "code": "jc023_1",
+              "label": "Percentage Category",
+              "module": "community",
+              "unit": "percent bracket (fallback category)",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education."
             },
             {
               "code": "jc024",
               "label": "Percentage of the Adult Population Have Completed Up to Graduate Schools and Abo",
               "module": "community",
-              "unit": "",
+              "unit": "percent of community adults",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official codebook label located; candidate pending questionnaire/valid-code review",
-              "caveat": "2011 village-level percentages of adults by educational attainment; aggregate context, not an individual's education. Denominator and category cut points must be retained from the source questionnaire."
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education."
+            },
+            {
+              "code": "jc024_1",
+              "label": "Percentage Category",
+              "module": "community",
+              "unit": "percent bracket (fallback category)",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education."
             }
           ]
         },
@@ -2628,8 +2698,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official codebook label located; candidate pending questionnaire/valid-code review",
-              "caveat": "2011 ordinal community-level assessment of road tidiness; subjective community report, not an environmental sampling measure."
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant 1-7 ordinal assessment anchored from very dirty to very tidy; subjective road-condition perception, not an environmental sampling measure."
             }
           ]
         },
@@ -2875,11 +2945,11 @@
               "code": "jj024",
               "label": "Average Price of Electricity",
               "module": "community",
-              "unit": "",
+              "unit": "RMB yuan/kWh",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official codebook label located; candidate pending questionnaire/valid-code review",
-              "caveat": "2011 community-reported average electricity price; currency/unit and reference-period interpretation require questionnaire verification before analysis."
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-reported current average electricity unit price in RMB yuan per degree (kWh); community context, not an individual's household bill."
             }
           ]
         },
@@ -2895,11 +2965,11 @@
               "code": "jj023",
               "label": "Average Price of Water",
               "module": "community",
-              "unit": "",
+              "unit": "RMB yuan/ton",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official codebook label located; candidate pending questionnaire/valid-code review",
-              "caveat": "2011 community-reported average water price; currency/unit and reference-period interpretation require questionnaire verification before analysis."
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-reported current average water unit price in RMB yuan per ton; community context, not an individual's household bill."
             }
           ]
         },
@@ -7054,8 +7124,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official codebook label located; candidate pending questionnaire/valid-code review",
-              "caveat": "2011 community-level report of serious natural disasters during the prior five years; type-specific slots remain separate and require official category review."
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of any serious natural disaster during the prior five years (JI001); No routes to JI003, so JI002 event details have a conditional denominator."
             }
           ]
         },
@@ -7074,8 +7144,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official codebook label located; candidate pending questionnaire/valid-code review",
-              "caveat": "2011 derived community indicator. Original construction, direction and valid coding must be checked before analysis; do not treat as a raw observed measurement."
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 village-only CAPI item asking whether the village restructured toilet/sewer systems; preserve village-only eligibility and do not infer original derivation from the Codebook variable label."
             }
           ]
         },
@@ -7274,8 +7344,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official codebook label located; candidate pending questionnaire/valid-code review",
-              "caveat": "2011 community-level report of roads passing through the village/community; single-wave context indicator."
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant Yes/No report of roads passing through the village/community; single-wave context indicator."
             }
           ]
         },
