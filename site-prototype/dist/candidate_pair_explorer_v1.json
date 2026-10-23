@@ -7753,9 +7753,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA."
             },
             {
               "code": "da056s10",
@@ -7763,9 +7763,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA."
             },
             {
               "code": "da056s11",
@@ -7773,9 +7773,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA."
             },
             {
               "code": "da056s12",
@@ -7783,9 +7783,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA."
             },
             {
               "code": "da056s2",
@@ -7793,9 +7793,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA."
             },
             {
               "code": "da056s3",
@@ -7803,9 +7803,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA."
             },
             {
               "code": "da056s4",
@@ -7813,9 +7813,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA."
             },
             {
               "code": "da056s5",
@@ -7823,9 +7823,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA."
             },
             {
               "code": "da056s6",
@@ -7833,9 +7833,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA."
             },
             {
               "code": "da056s7",
@@ -7843,9 +7843,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA."
             },
             {
               "code": "da056s8",
@@ -7853,9 +7853,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA."
             },
             {
               "code": "da056s9",
@@ -7863,9 +7863,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA."
             }
           ]
         },
@@ -26506,9 +26506,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s10",
@@ -26516,9 +26516,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s11",
@@ -26526,9 +26526,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s12",
@@ -26536,9 +26536,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s2",
@@ -26546,9 +26546,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s3",
@@ -26556,9 +26556,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s4",
@@ -26566,9 +26566,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s5",
@@ -26576,9 +26576,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s6",
@@ -26586,9 +26586,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s7",
@@ -26596,9 +26596,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s8",
@@ -26606,9 +26606,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s9",
@@ -26616,9 +26616,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             }
           ]
         },
@@ -48941,9 +48941,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis."
             },
             {
               "code": "da056_w3s2",
@@ -48951,9 +48951,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis."
             },
             {
               "code": "da056_w3s3",
@@ -48961,9 +48961,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis."
             },
             {
               "code": "da056_w3s4",
@@ -48971,9 +48971,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis."
             },
             {
               "code": "da056_w3s5",
@@ -48981,9 +48981,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis."
             },
             {
               "code": "da056s1",
@@ -48991,9 +48991,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s10",
@@ -49001,9 +49001,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s11",
@@ -49011,9 +49011,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s12",
@@ -49021,9 +49021,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s2",
@@ -49031,9 +49031,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s3",
@@ -49041,9 +49041,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s4",
@@ -49051,9 +49051,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s5",
@@ -49061,9 +49061,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s6",
@@ -49071,9 +49071,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s7",
@@ -49081,9 +49081,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s8",
@@ -49091,9 +49091,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             },
             {
               "code": "da056s9",
@@ -49101,9 +49101,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Participation checklist items differ by wave. Activity slots are not fully semantically aligned; 2020 uses xsoctype_* and does not expose frequency in this code family. Preserve item-level fields; do not create an unvalidated social-isolation score."
+              "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+              "mapping_status": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
+              "caveat": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis."
             }
           ]
         },

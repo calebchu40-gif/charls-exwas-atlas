@@ -70,6 +70,7 @@ FULL_PIPELINE_SCRIPTS = (
     "build_behavior_exposure_crosswalk.py",
     "enrich_behavior_value_labels.py",
     "build_social_exposure_crosswalk.py",
+    "apply_social_participation_source_status.py",
     "apply_parent_visit_codebook_labels.py",
     "build_cancer_site_crosswalk.py",
     "build_disability_history_crosswalk.py",
@@ -105,6 +106,7 @@ FULL_PIPELINE_SCRIPTS = (
     "apply_2018_property_rent_amount_review.py",
     "apply_2018_household_property_value_review.py",
     "apply_housing_numeric_measure_review.py",
+    "apply_social_participation_source_status.py",
     "apply_parent_visit_codebook_labels.py",
     "sync_domain_catalog_labels.py",
     "site_catalog_shards.py",
@@ -119,6 +121,7 @@ FULL_PIPELINE_SCRIPTS = (
 # change is limited to catalogue propagation, value-label summaries, the
 # concept-source index, candidate-pair metadata, or final static JSON.
 FINALIZATION_PIPELINE_SCRIPTS = (
+    "apply_social_participation_source_status.py",
     "apply_parent_visit_codebook_labels.py",
     "build_charls_atlas_catalog.py",
     "summarize_value_label_coverage.py",
@@ -139,6 +142,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_2018_property_rent_amount_review.py",
     "apply_2018_household_property_value_review.py",
     "apply_housing_numeric_measure_review.py",
+    "apply_social_participation_source_status.py",
     "apply_parent_visit_codebook_labels.py",
     "sync_domain_catalog_labels.py",
     "site_catalog_shards.py",

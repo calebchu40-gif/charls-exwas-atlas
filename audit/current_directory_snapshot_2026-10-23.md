@@ -5,14 +5,14 @@
 - 网站字段目录角色分片7,769行：E 4,723、P 2,067、C 979；双角色E/P在E与P分片各出现一次。
 - E/P候选概念1,409个：暴露侧1,131、表型侧287、双角色9；E/P概念—源字段映射6,598行。全来源crosswalk 6,812行，其中6,793行匹配目录、19行未匹配目录。
 - 五个常规波次元数据层面的非自配对共现为2011 120,052、2013 126,301、2015 128,984、2018 98,667、2020 12,598。它们不是受访者人数、逐对样本量或分析资格。
-- E/P目录有3,315行带非空已审/官方类别标签文本，覆盖3,238个波次—字段码；369条E目录角色行仍显示`not yet reviewed`。连续测量、测量组件和计数可已完成语义审阅而没有类别值标签。2013/2015/2018疾病控制/既往访谈变化48个字段、2020既往访谈变化18个字段，以及2011/2020自知疾病6个字段均已补入逐波官方类别；本轮另补2013–2018自知疾病11个字段，频数未复制，详见[`self_awareness_response_label_review_2026-10-23.md`](self_awareness_response_label_review_2026-10-23.md)。22个连续残疾发生年份字段标注calendar year，见[`disability_onset_year_unit_review_2026-10-23.md`](disability_onset_year_unit_review_2026-10-23.md)。
+- E/P目录有3,315行带非空已审/官方类别标签文本，覆盖3,238个波次—字段码；328条E目录角色行仍显示`not yet reviewed`。连续测量、测量组件和计数可已完成语义审阅而没有类别值标签。2013/2015/2018疾病控制/既往访谈变化48个字段、2020既往访谈变化18个字段，以及2011/2020自知疾病6个字段均已补入逐波官方类别；本轮另补2013–2018自知疾病11个字段，频数未复制，详见[`self_awareness_response_label_review_2026-10-23.md`](self_awareness_response_label_review_2026-10-23.md)。22个连续残疾发生年份字段标注calendar year，见[`disability_onset_year_unit_review_2026-10-23.md`](disability_onset_year_unit_review_2026-10-23.md)。
 - 另对2018当前住房产权关系9个E候选字段核对Codebook：仅1个字段有完整0/1标签，8个字段只有“0=Do Not Own”出现在频数型Codebook摘录中，均未推断缺失类别，也未复制频数。目录元数据与住房专题查询现显示这一完整/部分区分；详见[`housing_current_owner_relation_labels_2018_review_2026-10-23.md`](housing_current_owner_relation_labels_2018_review_2026-10-23.md)。因此通用值标签待核E字段由633降至624。
 - 本轮修复连续行为变量审核状态传播：73条波次—字段行从泛化的未核验状态改为有来源的连续测量/年龄年份语义。细节见[`behavior_numeric_measure_status_sync_2026-10-23.md`](behavior_numeric_measure_status_sync_2026-10-23.md)。
 - 另有608条养老金数值/计数或无离散类别字段从通用待核状态改为“官方代码本字段已定位；未列离散类别”；其余6条源审核记录已有更具体状态而予以保留。此状态不代表单位、路线或发行版编码已核。详见[`pension_numeric_status_sync_2026-10-23.md`](pension_numeric_status_sync_2026-10-23.md)。
 - 收入/家庭支出类别中有51条精确代码本条目显示数值摘要但未列分类菜单；另为五波工资/奖金收入字段转录`1=Yes; 2=No`类别，频数未复制、波次题目范围仍分开审核。详情见[`income_numeric_and_receipt_label_sync_2026-10-23.md`](income_numeric_and_receipt_label_sync_2026-10-23.md)。
 - 为2015、2018、2020体力活动目的字段补录9条逐波四选项标签；频数未复制，且这描述“为什么活动”，不能当作活动剂量。详见[`physical_activity_purpose_labels_2026-10-23.md`](physical_activity_purpose_labels_2026-10-23.md)。
 - 为2011、2013、2015、2018的前列腺疾病DA030确诊时间组件补上年份/年龄单位状态，年份与年龄分开，保留男性限定路线并注明不含前列腺癌；Codebook摘要极值不作为有效范围。详见[`prostate_illness_diagnosis_time_units_2026-10-23.md`](prostate_illness_diagnosis_time_units_2026-10-23.md)。
-- C类目录有329行仍显示`not yet reviewed`；该项不意味着所有连续测量都应有类别标签，也不意味着每条C记录都进入E/P关联。
+- C类目录有328行仍显示`not yet reviewed`；该项不意味着所有连续测量都应有类别标签，也不意味着每条C记录都进入E/P关联。
 - 现有逐字段`DO NOT ANALYZE`锁定89条；唯一精确`conflict`状态为0，但2011 `FB010`问卷与Codebook编码差异仍单独锁定。正式模型数为0，没有发布关联估计。
 - 官方抽样权重与方差设计限制已写入公开主页；2013样本标记的源文件恢复、逐波模块权重、PSU源版本匹配及可用于方差估计的分层/复制权重仍是正式分析门槛。详见[`survey_design_weight_review_v1.md`](survey_design_weight_review_v1.md)。
 
@@ -44,3 +44,6 @@ Deployment verification after commit `00a0657`: Pages #31 and validation #90 suc
 
 
 2026-10-23父母探访频率类别补录：依据2011、2013、2015、2018四波官方Codebook，对33个父母探访频率源字段逐字段转录类别，不含Codebook频数。27个字段列出1–10完整类别，6个字段仅显示Codebook明确列出的部分类别并标注不可推断缺失项；保留父母类型、配偶路线和名册序号差异，不构造跨波总分。E通用待核369行、P为0、C为329。114项测试、JS语法、diff检查和89条DO NOT ANALYZE锁校验通过。详见[`parent_visit_value_label_review_2026-10-23.md`](parent_visit_value_label_review_2026-10-23.md)。
+
+
+2026-10-23 DA056边界补充：2011/2013/2015共41个活动或上网设备选项字段的Codebook选项身份可核，但未核实受访者级回答值、未选项编码和适用分母。网页不显示虚构的值标签；明确空缺不等于No。E通用待核328，C类通用待核328。Python 116项测试（重测待完成）、JS语法、diff和89条禁分析锁检查见本轮进度记录。

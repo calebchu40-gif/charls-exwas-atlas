@@ -4,11 +4,11 @@ This snapshot reads only the public, generated metadata in `site-prototype/dist/
 
 | Role | Catalog rows | Generic `not yet reviewed` rows |
 |---|---:|---:|
-| E exposure candidates | 4,723 | 369 |
+| E exposure candidates | 4,723 | 328 |
 | P phenotype candidates | 2,067 | 0 |
-| C covariate/measurement metadata | 979 | 329 |
+| C covariate/measurement metadata | 979 | 328 |
 
-The current E queue contains 303 social-determinant rows and 66 social-protection rows; housing/built-environment and food/household-environment rows have no generic pending labels. Remaining largest subgroups are income/wealth/material resources (86), household expenditure (53), social relations and care (55), transfer income (50), individual income/wages (45), and household-member wage roster slots (44). These are field rows, not independent concepts or tests.
+The current E queue contains 262 social-determinant rows and 66 social-protection rows; housing/built-environment and food/household-environment rows have no generic pending labels. Remaining largest subgroups are income/wealth/material resources (86), household expenditure (53), social relations and care (14), transfer income (50), individual income/wages (45), and household-member wage roster slots (44). These are field rows, not independent concepts or tests.
 
 ## Processing rule
 
@@ -32,3 +32,6 @@ This queue snapshot is descriptive and does not change the current formal model 
 
 
 2026-10-23 parent-visit update: 33 wave-specific parent-contact fields (2011/2013/2015/2018) now carry official field-level ordinal category labels in the candidate catalogue and site. Twenty-seven fields list codes 1–10; six show only the categories present in their field-specific Codebook extract. Numeric frequencies and roster names are excluded, partial categories are not imputed, and categories are not treated as equally spaced. The E generic-pending count is now 369; P remains 0 and C remains 329.
+
+
+2026-10-23 DA056 option-status update: 41 2011–2015 social-activity and internet-device fields now show that the Codebook identifies the selected option, while participant-level value coding, unselected-option representation, and denominator remain unresolved. The site intentionally leaves response-value labels empty and states that absence cannot be interpreted as “No.” E generic pending is now 328; C is 328; P remains 0. See [`social_code_value_review_v1.md`](social_code_value_review_v1.md).

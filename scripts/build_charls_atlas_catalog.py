@@ -922,6 +922,10 @@ def main() -> None:
         "work_exposure_value_labels_v1.csv", "wave", "code", "value_label_status", "value_label_source",
         re.compile(r"^official codebook category labels not located$", re.I),
     )
+    add_reviewed_status_without_value_label(
+        "social_exposure_crosswalk_v1.csv", "wave", "code", "value_label_status", "value_label_source",
+        re.compile(r"official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned", re.I),
+    )
     add_reviewed_labels("housing_value_label_review_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", official_review)
     add_reviewed_labels(
         "housing_current_owner_relation_labels_2018_v1.csv", "wave", "code", "value_labels",

@@ -10,451 +10,451 @@
         "code": "da056s1",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Interacted With Friends",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "da056s2",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Played Ma-jong/Cards/Chess or Went to Community Club",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "da056s3",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Provided Help to People Who Lived Apart",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "da056s4",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Went to Club",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "da056s5",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Took Part In A Community-related Organization",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "da056s6",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Voluntary or Charity",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "da056s7",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Cared for A Sick or Disabled Adult Who Lived Apart",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "da056s8",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Attended An Educational or Training Course",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "da056s9",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Stock Investment",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "da056s10",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Used the Internet",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "da056s11",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of Other",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "da056s12",
         "module": "health_status_and_functioning",
         "source_label": "Do Activities LM of None of These",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2011 Codebook identifies this fixed activity category, but its summary lists the selected category without a verified respondent-level negative/unselected code. Preserve the fixed activity identity; do not infer No from absence or treat the option index as an individual response without authorized-release QA.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
         "code": "da056s1",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
         "code": "da056s2",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
         "code": "da056s3",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
         "code": "da056s4",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
         "code": "da056s5",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
         "code": "da056s6",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
         "code": "da056s7",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
         "code": "da056s8",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
         "code": "da056s9",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
         "code": "da056s10",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
         "code": "da056s11",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
         "code": "da056s12",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2013 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "da056s1",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "da056s2",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "da056s3",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "da056s4",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "da056s5",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "da056s6",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "da056s7",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "da056s8",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "da056s9",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "da056s10",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "da056s11",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "da056s12",
         "module": "Health_Status_and_Functioning",
         "source_label": "Do Activities",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2015 Codebook identifies this DA056 activity option. The number shown in its descriptive summary is the selected activity/option identifier; the summary does not verify respondent-level storage or how unselected options are represented. Do not infer No from absence; verify released-data coding and the eligible denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "da056_w3s1",
         "module": "Health_Status_and_Functioning",
         "source_label": "Devices Use for Internet",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "da056_w3s2",
         "module": "Health_Status_and_Functioning",
         "source_label": "Devices Use for Internet",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "da056_w3s3",
         "module": "Health_Status_and_Functioning",
         "source_label": "Devices Use for Internet",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "da056_w3s4",
         "module": "Health_Status_and_Functioning",
         "source_label": "Devices Use for Internet",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "da056_w3s5",
         "module": "Health_Status_and_Functioning",
         "source_label": "Devices Use for Internet",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
+        "note": "official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned",
         "value_labels": "",
-        "value_semantics": "代码本列出活动类型/槽位；当前未逐波确认未选中、未提及和特殊缺失的存储码，不作二元重编码。",
-        "questionnaire_source": "",
-        "value_label_source": ""
+        "value_semantics": "Official 2015 Codebook identifies the selected internet-device option for this field. The listed number is an option/slot identifier in the descriptive table; it does not establish respondent-level coding or the representation of unselected devices. Do not infer No from absence; confirm released-data storage and routed denominator before analysis.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2018",

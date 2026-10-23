@@ -38,7 +38,7 @@
 |审核状态|E/P目录行|
 |---|---:|
 |officially reviewed|2,590|
-|not yet reviewed|1,175|
+|not yet reviewed|1,134|
 |official codebook field located; continuous/count or no categorical labels|608|
 |codebook field located; continuous/open response or no categorical labels|339|
 |continuous measure metadata available|214|
@@ -55,6 +55,7 @@
 |official 2015 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|52|
 |official Codebook lists numeric summary; no categorical response menu in this entry|51|
 |official selected-option label; checkbox slot, absence is not a negative response|42|
+|official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned|41|
 |代码本逐值标签已核|38|
 |continuous component, not a categorical code; component unit reviewed against wave-specific official codebook|32|
 |continuous measure metadata available; see description/crosswalk|32|
