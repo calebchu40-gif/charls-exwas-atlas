@@ -6,8 +6,8 @@ import pandas as pd
 ROOT=Path(__file__).resolve().parents[1]
 CAT=ROOT/"audit"/"raw_variable_catalog_v1.csv"
 CONCEPTS={
- "community_water_sources":("Community drinking-water source profile","Community environment","2011 village/community counts of households using each drinking-water source (not an individual's source or a measured contaminant). Community respondent and denominator must be verified; single-wave only."),
- "community_cooking_fuel_profile":("Community household cooking-fuel profile","Community environment","2011 community-level counts by household fuel category. Not a person-level fuel dose; source categories and denominator require questionnaire/codebook review."),
+ "community_water_sources":("Community drinking-water source profile","Community environment","At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only."),
+ "community_cooking_fuel_profile":("Community household cooking-fuel profile","Community environment","At the end of calendar year 2010, a community informant reported counts of households using each fuel source. Categories may overlap; the questionnaire gives no total-household denominator here. Not a person-level fuel dose; single-wave only."),
  "community_winter_heating":("Community winter heating system","Community environment","Community-level availability and fuel type for central winter heating; 2011 only and not an individual residence measure."),
  "community_sanitation_services":("Community sanitation and waste services","Community environment","Sewerage, waste management, toilet infrastructure and public restroom indicators. Community representative report; do not conflate with household toilet fields."),
  "community_industrial_pollution":("Community industrial pollution indicators","Community environment","Includes subjective community ratings for local/nearby industrial pollution and village-level distance to nearest source; not instrument-measured concentration. Some items are village-respondent-only."),
@@ -157,7 +157,9 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label."
     else:
      evidence="CHARLS 2011 official codebook variable label; questionnaire page/routing review remains required for this added candidate"
-    if code_l.startswith("jb028_1_") or code_l.startswith("jf002_1_"):
+    if code_l.startswith(("jb006_", "jb007_")):
+     unit="households"
+    elif code_l.startswith("jb028_1_") or code_l.startswith("jf002_1_"):
      unit="facilities"
     elif code_l.startswith(("jb028_2_","jf006_")):
      unit="km"

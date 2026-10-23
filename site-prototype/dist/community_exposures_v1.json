@@ -3,7 +3,7 @@
     "concept_id": "community_water_sources",
     "label": "Community drinking-water source profile",
     "domain": "Community environment",
-    "caveat": "2011 village/community counts of households using each drinking-water source (not an individual's source or a measured contaminant). Community respondent and denominator must be verified; single-wave only.",
+    "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only.",
     "source_fields": [
       {
         "wave": "2011",
@@ -12,7 +12,7 @@
         "source_label": "Tap Water",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
+        "unit": "households",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -24,7 +24,7 @@
         "source_label": "Well Water",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
+        "unit": "households",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -36,7 +36,7 @@
         "source_label": "Pool Water",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
+        "unit": "households",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -48,7 +48,7 @@
         "source_label": "River, Lakes and Brooks Water",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
+        "unit": "households",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -60,7 +60,7 @@
         "source_label": "Rain or Snow Water",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
+        "unit": "households",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -72,7 +72,7 @@
         "source_label": "Cellar Water",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
+        "unit": "households",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -84,7 +84,7 @@
         "source_label": "Spring",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
+        "unit": "households",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -96,7 +96,7 @@
         "source_label": "Other",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
+        "unit": "households",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -107,7 +107,7 @@
     "concept_id": "community_cooking_fuel_profile",
     "label": "Community household cooking-fuel profile",
     "domain": "Community environment",
-    "caveat": "2011 community-level counts by household fuel category. Not a person-level fuel dose; source categories and denominator require questionnaire/codebook review.",
+    "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each fuel source. Categories may overlap; the questionnaire gives no total-household denominator here. Not a person-level fuel dose; single-wave only.",
     "source_fields": [
       {
         "wave": "2011",
@@ -116,7 +116,7 @@
         "source_label": "Hay",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
+        "unit": "households",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -128,7 +128,7 @@
         "source_label": "Coal",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
+        "unit": "households",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -140,7 +140,7 @@
         "source_label": "Marsh Gas",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
+        "unit": "households",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -152,7 +152,7 @@
         "source_label": "Natural Gas",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
+        "unit": "households",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -164,7 +164,7 @@
         "source_label": "Liquefied Petroleum Gas",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
+        "unit": "households",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -176,7 +176,7 @@
         "source_label": "Other",
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-        "unit": "",
+        "unit": "households",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"

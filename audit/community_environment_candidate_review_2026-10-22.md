@@ -37,6 +37,10 @@ python scripts/build_food_environment_crosswalk.py
 
 The source crosswalk and this audit should be updated together when item wording, wave coverage, or route interpretation changes.
 
+## Drinking-water and fuel count units (2026-10-24)
+
+The official 2011 Community Questionnaire, Part B p.7 (PDF p.10), says JB006 asks how many households used each drinking-water source at the end of calendar year 2010 and labels the response unit as households. JB007 asks the analogous household count by fuel source. The questions list several sources without defining them as mutually exclusive and provide no total-household denominator in those tables. The public catalogue therefore labels JB006_1–JB006_8 and JB007_1–JB007_6 as `households`, records the 2010 reference period in the concept caveat, and does not convert the counts to percentages or assign a single household-level source. This must remain a community-informant context measure, not an individual exposure or measured water/fuel quality value. Source extracts: `sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt` and `sources_official/CHARLS_2011_Codebook_extracted.txt`; no Codebook frequencies or extrema were copied.
+
 ## Questionnaire-anchor reconciliation for industrial pollution (2026-10-22)
 
 The Codebook value labels for JB018 and JB019 say `Poor`, `Fair`, `Good`, and `Very good`, which can reverse the apparent direction if read literally as pollution severity. The official Community Questionnaire supplies the substantive bilingual anchors: 1=`Very severe` (很严重), 2=`Some pollution` (有一些), 3=`Almost none` (基本没有), and 4=`Completely absent` (完全没有). The website lookup labels now use those questionnaire anchors and explicitly state that higher codes indicate less reported pollution. JB019's village-only route remains visible. The raw Codebook labels are retained in source evidence; frequencies were not copied. Regression coverage checks the override and source anchors.
