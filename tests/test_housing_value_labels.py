@@ -313,6 +313,26 @@ class HousingValueLabelTests(unittest.TestCase):
             self.assertIn("cross-wave equivalence", row["Harmonization.Status"])
         self.assertIn("includes purchased and own-produced food", catalog[("2011", "ge006")]["Harmonization.Status"])
 
+    def test_weekly_food_spending_review_status_matches_domain_crosswalk(self):
+        expected = {
+            ("2011", "ge006"), ("2013", "ge006"), ("2015", "ge006"),
+            ("2018", "ge006_w4"), ("2020", "gf006"),
+            ("2011", "ge007"), ("2013", "ge007"), ("2015", "ge007"),
+            ("2018", "ge007_w4"), ("2020", "gf009"),
+        }
+        rows = {
+            (row["wave"], row["code"].lower()): row
+            for row in self.food_mapping
+            if row["concept_id"] in {"household_food_expenditure", "household_eating_out"}
+        }
+        self.assertEqual(set(rows), expected)
+        for key, row in rows.items():
+            self.assertIn("official", row["mapping_status"])
+            self.assertIn("cross-wave construct comparability not approved", row["mapping_status"])
+            self.assertIn("not individual dietary intake", row["caveat"])
+            self.assertIn("own-production treatment and exclusions vary by wave", row["caveat"].lower())
+            self.assertNotRegex(row["code_value_labels"], r"\bFreq\b|\b%")
+
     def test_household_food_roles_and_shared_meal_count_keep_distinct_measurement_levels(self):
         catalog = {(r["Source.Wave"], r["Variable.Name"].lower()): r for r in self.catalog}
         mapping = {(f["wave"], f["code"].lower()): f for concept in self.food_site for f in concept["source_fields"]}

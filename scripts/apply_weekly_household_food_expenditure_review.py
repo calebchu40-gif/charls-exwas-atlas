@@ -94,6 +94,33 @@ def update_json(path: Path, wave_key: str, code_key: str) -> int:
     return len(selected)
 
 
+def update_domain_crosswalk(path: Path) -> int:
+    df = pd.read_csv(path, dtype=str, encoding="utf-8-sig").fillna("")
+    selected = df.apply(
+        lambda r: (str(r["wave"]), str(r["code"]).lower()) in FIELDS,
+        axis=1,
+    )
+    seen = set(zip(df.loc[selected, "wave"], df.loc[selected, "code"].str.lower()))
+    if not set(FIELDS).issubset(seen):
+        raise ValueError(f"{path}: missing reviewed food-spending mappings {sorted(set(FIELDS)-seen)}")
+    for idx in df.index[selected]:
+        wave = str(df.at[idx, "wave"])
+        code = str(df.at[idx, "code"]).lower()
+        df.at[idx, "mapping_status"] = (
+            f"official {wave} questionnaire wording, past-week Yuan unit and household target reviewed; "
+            "cross-wave construct comparability not approved; see "
+            "audit/household_food_expenditure_measure_review_2026-10-23.md"
+        )
+        df.at[idx, "caveat"] = (
+            FIELDS[(wave, code)] + " Household aggregate, not individual dietary intake or nutrient exposure. "
+            "Own-production treatment and exclusions vary by wave; do not assume cross-wave equivalence. "
+            "Questionnaire soft checks are prompts, not validated exclusions. Verify route, special values, "
+            "missingness and household/respondent linkage before analysis."
+        )
+    df.to_csv(path, index=False, encoding="utf-8-sig")
+    return int(selected.sum())
+
+
 def main() -> None:
     validate_sources()
     counts = [
@@ -102,6 +129,7 @@ def main() -> None:
         update_json(ROOT / "site-prototype/dist/catalog.json", "Source.Wave", "Variable.Name"),
         update_json(ROOT / "site-prototype/dist/catalog_e.json", "Source.Wave", "Variable.Name"),
         update_json(ROOT / "site-prototype/dist/food_environment_v1.json", "wave", "code"),
+        update_domain_crosswalk(ROOT / "audit/food_environment_crosswalk_v1.csv"),
     ]
     print(f"Applied weekly household food-spending metadata to {sum(counts)} field rows; no participant values or frequencies included.")
 
