@@ -169,6 +169,27 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertIn("official 2018 Codebook response categories transcribed", catalog[0].get("value_label_review", ""))
         self.assertIn("route", catalog[0].get("Harmonization.Status", "").lower())
 
+    def test_chronic_disease_control_and_interval_change_labels_are_wave_specific(self):
+        import csv
+        with (ROOT / "audit/chronic_disease_ancillary_variable_mapping_v1.csv").open(encoding="utf-8-sig", newline="") as handle:
+            mappings = list(csv.DictReader(handle))
+        rows = [
+            row for row in mappings
+            if row.get("wave") in {"2013", "2015", "2018"}
+            and row.get("construct") in {"reported disease control", "reported disease change since prior interview"}
+        ]
+        self.assertEqual(len(rows), 48)
+        self.assertTrue(all(row.get("value_labels") for row in rows))
+        for row in rows:
+            self.assertIn("frequencies omitted", row.get("value_label_status", ""))
+            self.assertIn("eligible denominator require validation", row.get("value_label_status", ""))
+            self.assertIn(f"CHARLS_{row['wave']}_Codebook_extracted.txt", row.get("value_label_source", ""))
+        change = next(row for row in rows if row.get("wave") == "2018" and row.get("code", "").lower() == "da010_w2_2_1_")
+        self.assertEqual(change.get("value_labels"), "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease")
+        self.assertIn("prior-interview recall route retained", change.get("value_label_status", ""))
+        control = next(row for row in rows if row.get("wave") == "2018" and row.get("code", "").lower() == "da010_w2_1_1_")
+        self.assertEqual(control.get("value_labels"), "1=Yes; 2=No; 3=Don't Know; 99=Never Had the Disease")
+
     def test_unreviewed_chronic_ancillary_fields_are_not_marked_as_reviewed(self):
         import csv
         with (ROOT / "audit/chronic_disease_ancillary_variable_mapping_v1.csv").open(encoding="utf-8-sig", newline="") as handle:

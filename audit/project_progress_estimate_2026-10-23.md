@@ -8,7 +8,7 @@
 
 - 首版公开站点已部署：<https://calebchu40-gif.github.io/charls-exwas-atlas/>。首次GitHub Actions部署成功，站点首页、JavaScript和候选配对元数据均通过外部HTTP 200检查。
 - 五波候选目录当前包含7,544条波次字段记录、1,408个去重E/P候选概念（E侧1,130、P侧287、双角色9）和6,598条E/P概念—源字段映射。已生成候选配对检索页，但目录层配对不代表实际同一受访者样本量或统计模型。
-- E/P字段目录当前有3,107行非空已审/官方类别标签文本、覆盖3,081个波次—字段码。该指标只覆盖类别标签文本，不衡量连续变量的问卷、测量、路由或分析资格审查完成比例。
+- E/P字段目录当前有3,132行非空已审/官方类别标签文本、覆盖3,106个波次—字段码；1,766行仍显示`not yet reviewed`。该指标只覆盖类别标签文本，不衡量连续变量的问卷、测量、路由或分析资格审查完成比例；本轮为48个疾病控制/既往访谈变化字段补入逐波类别，但未关闭它们的发行版编码与适用分母审核。
 - 公开站点当前正式关联模型数为0；没有公布任何效应估计、显著性或发现。
 - 测量与设计元数据（C）目录共911条，其中429条为协变量候选、482条为测量元数据。`Value.Label.Review`中338条显示`not yet reviewed`。网站所见2011筛选结果70条，是2011年协变量候选子集，不是全项目待办数。C类中的仪器/流程/路由/选择器记录本来就不属于E/P配对；717条C记录没有E/P候选Concept ID，也不能全部视为漏映射。
 - [`audit/current_directory_snapshot_2026-10-23.md`](current_directory_snapshot_2026-10-23.md)记录当前仍有33条逐波字段保持`DO NOT ANALYZE`。权重、方差分层/替代方差方法、目标人群、各模块样本资格及跨波构造均须在实际分析前逐项关闭。
@@ -54,6 +54,8 @@
 ## 2026-10-23 follow-up: methods transparency and navigation
 
 The published homepage now has a dedicated survey-design disclosure covering wave-specific weight/sample-flag gates, the 2013 source-flag rebuild requirement, the provisional `communityID` PSU match, and the lack of a verified variance-stratum/replicate-weight field in currently reviewed project sources. The C-class catalogue navigation is labeled “measurement/design metadata” so it is not confused with the methods note. Both changes are live on GitHub Pages; the full result atlas remains at 0 fitted association models. Overall completion against the full result-atlas objective remains approximately 25%–30%; this website clarity work does not close analysis or data-access milestones.
+
+2026-10-23续记：目录构建器通过预建波次—字段查找索引，同一`cProfile`方法下从107.8秒降至53.6秒，输出记录语义相同；性能审计见[`metadata_builder_performance_2026-10-23.md`](metadata_builder_performance_2026-10-23.md)。本轮新增48个逐波慢病控制/既往访谈变化标签字段，E/P非空标签行增至3,132（3,106个波次—字段码），`not yet reviewed`状态仍有1,766行。全目标完成度仍估25%–30%，因正式关联模型数仍为0、抽样设计与个体变量审核闸门未解决，这类目录补全不代表结果图谱已接近完成。
 
 
 ## 2026-10-23 follow-up: behavior continuous-measure synchronization

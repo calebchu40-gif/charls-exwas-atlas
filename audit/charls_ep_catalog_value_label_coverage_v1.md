@@ -3,7 +3,7 @@
 更新：2026-10-23。由`scripts/summarize_value_label_coverage.py`从当前字段目录和覆盖CSV自动生成。
 
 - E/P字段—角色—类别目录行：6,633；不同波次—字段码：6,552。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
-- 有非空官方/已审标签文本的E/P目录行：3,116；不同波次—字段码：3,090。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
+- 有非空官方/已审标签文本的E/P目录行：3,132；不同波次—字段码：3,106。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
 - 明确标为`conflict`的E/P字段码：0；详情按主目录波次和变量码检索。
 - 问卷/Codebook编码差异尚未调和并锁定`DO NOT ANALYZE`的E/P字段：2011 `fb010`。此项独立于上面的精确`conflict`标签计数。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -25,7 +25,7 @@
 |p|biochemistry|32|0|1|
 |p|blood pressure|27|0|1|
 |p|chronic disease|248|240|1|
-|p|chronic disease ancillary|664|437|70|
+|p|chronic disease ancillary|664|453|70|
 |p|cognition|338|305|1|
 |p|health and symptoms|161|155|3|
 |p|healthcare access|108|15|2|
@@ -37,8 +37,7 @@
 |审核状态|E/P目录行|
 |---|---:|
 |officially reviewed|2,536|
-|not yet reviewed|961|
-|numeric/time unit metadata available; no discrete labels assigned; see concept crosswalk|821|
+|not yet reviewed|1,766|
 |official codebook field located; continuous/count or no categorical labels|608|
 |continuous measure metadata available|214|
 |official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories|200|
@@ -63,6 +62,7 @@
 |continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions|16|
 |DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No|16|
 |2020代码本逐字段多选标签已核；条件分母|14|
+|official 2018 Codebook response categories transcribed; frequencies omitted; prior-interview recall route retained; release coding and eligible denominator require validation|14|
 |candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data|13|
 |代码本逐字段值标签已核|12|
 |official questionnaire checkbox menu and codebook slot coding; frequencies omitted; absence is not a negative response outside the routed checklist|11|
@@ -92,6 +92,7 @@
 |official questionnaire/codebook categories; frequencies omitted; current employer benefit route|2|
 |wave-specific official questionnaire categories transcribed without frequencies; retrospective first-workplace location|2|
 |local string endpoint pairs checked; Codebook extreme upper value present; route/unit and sentinel semantics unresolved|2|
+|official 2018 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|
 |问卷类别标签已核；代码本按连续型摘要呈现，发布文件值标签需复核|1|
 |DO NOT ANALYZE; questionnaire: 1=Family, 2=Health, 3=School, 4=Unemployment/layoff, 5=Other; Codebook labels retained for reference: 1=Family, 2=Health, 4=School, 5=Unemployment/layoff, 6=Other; released-data coding unresolved|1|
 |2020代码本逐值标签已核；疫情期特异|1|

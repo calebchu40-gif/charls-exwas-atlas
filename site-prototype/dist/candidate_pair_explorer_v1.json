@@ -40817,7 +40817,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -40857,7 +40857,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -40877,7 +40877,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -40897,7 +40897,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -40917,7 +40917,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -40937,7 +40937,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -40957,7 +40957,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -40977,7 +40977,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -40997,7 +40997,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -41017,7 +41017,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -41037,7 +41037,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -41057,7 +41057,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -41077,7 +41077,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -41097,7 +41097,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -42157,7 +42157,7 @@
               "label": "Is under Control",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "current control",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Asked only for specified conditions; not an objective biomarker or a diagnosis indicator."
@@ -43037,7 +43037,7 @@
               "label": "Is under Control",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "current control",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Asked only for specified conditions; not an objective biomarker or a diagnosis indicator."
@@ -64972,7 +64972,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -65012,7 +65012,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -65032,7 +65032,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -65052,7 +65052,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -65072,7 +65072,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -65092,7 +65092,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -65112,7 +65112,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -65132,7 +65132,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -65152,7 +65152,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -65172,7 +65172,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -65192,7 +65192,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -65212,7 +65212,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -65232,7 +65232,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -65252,7 +65252,7 @@
               "label": "Compared to Last Wave",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -66312,7 +66312,7 @@
               "label": "Is under Control",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "current control",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Asked only for specified conditions; not an objective biomarker or a diagnosis indicator."
@@ -67192,7 +67192,7 @@
               "label": "Is under Control",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "current control",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Asked only for specified conditions; not an objective biomarker or a diagnosis indicator."
@@ -89525,7 +89525,7 @@
               "label": "Stroke Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89565,7 +89565,7 @@
               "label": "Arthritis Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89585,7 +89585,7 @@
               "label": "Asthma Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89605,7 +89605,7 @@
               "label": "Heart Problems Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89625,7 +89625,7 @@
               "label": "Emotional Problems Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89645,7 +89645,7 @@
               "label": "Chronic Lung Diseases Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89665,7 +89665,7 @@
               "label": "Cancer Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89685,7 +89685,7 @@
               "label": "Diabetes Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89705,7 +89705,7 @@
               "label": "Liver Disease Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89725,7 +89725,7 @@
               "label": "Kidney Disease Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89745,7 +89745,7 @@
               "label": "Digestive Disease Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89765,7 +89765,7 @@
               "label": "Dyslipidemia Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89785,7 +89785,7 @@
               "label": "Memory-Related Disease Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -89805,7 +89805,7 @@
               "label": "Hypertension Compared to ZIWTime",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
@@ -91025,7 +91025,7 @@
               "label": "Sugar Generally under Control",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 3=Don't Know; 99=Never Had the Disease",
               "value_semantics": "current control",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Asked only for specified conditions; not an objective biomarker or a diagnosis indicator."
@@ -91965,7 +91965,7 @@
               "label": "Blood Pressure Generally under Control",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 3=Don't Know; 99=Never Had the Disease",
               "value_semantics": "current control",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Asked only for specified conditions; not an objective biomarker or a diagnosis indicator."
