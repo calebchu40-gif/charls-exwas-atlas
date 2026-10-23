@@ -2,6 +2,7 @@
 
 ## 2026-10-23
 
+- Added official Codebook time units for eight 2011–2018 prostate-illness diagnosis-time fields, preserving separate year/age components, male-only routing, and the exclusion of prostate cancer. Codebook extrema remain explicitly non-valid-range evidence; added unit and caveat regression checks.
 - Added official, wave-specific physical-activity purpose labels for nine 2015/2018/2020 fields, omitting frequencies and preserving the distinction between activity purpose and activity dose; added regression checks and a source audit.
 - Added a guarded `--finalize-only` metadata build path for changes that do not alter upstream mappings. Full rebuild remains the default; the faster mode is documented with its source/crosswalk freshness requirement and was run successfully against the full-build output.
 - Added source-specific status for 51 household-income/expenditure fields whose exact wave Codebook entries show numeric summaries without categorical menus; transcribed five wave-specific `ga001` Yes/No menus without frequencies. Routes, units, special values, release coding, and eligibility remain pending; added tests and audit records.

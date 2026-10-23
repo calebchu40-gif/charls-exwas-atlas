@@ -1460,6 +1460,26 @@ def main() -> None:
             f"reported first diagnosis/awareness time; Codebook unit={unit}; not biological disease onset. "
             "Keep year and age fields separate; preserve route and special values; Codebook extrema do not define a valid range."
         )
+    # DA030_1/DA030_2 are the corresponding prostate-illness timing
+    # components. The official Codebooks label these as calendar year and
+    # age in years. They are not categorical disease outcomes, and their
+    # conditional male-only route and valid ranges remain unverified.
+    prostate_diagnosis_time = (
+        out["Source.Wave"].astype(str).isin({"2011", "2013", "2015", "2018"})
+        & out["Variable.Name"].str.lower().isin({"da030_1", "da030_2"})
+    )
+    for idx in out.index[prostate_diagnosis_time]:
+        wave = str(out.at[idx, "Source.Wave"])
+        code = str(out.at[idx, "Variable.Name"]).lower()
+        unit = "calendar year" if code == "da030_1" else "age in years"
+        out.at[idx, "Concept.Unit.Candidates"] = unit
+        out.at[idx, "Value.Label.Review"] = "numeric/time unit metadata available; no discrete labels assigned"
+        out.at[idx, "Value.Label.Source"] = f"sources_official/CHARLS_{wave}_Codebook_extracted.txt"
+        out.at[idx, "Harmonization.Status"] = (
+            f"male-only, wave-routed prostate illness first-diagnosis time; Codebook unit={unit}; "
+            "not prostate cancer and not biological disease onset. Keep year and age separate; "
+            "preserve route and special values; Codebook extrema do not define a valid range."
+        )
     stroke_timing = (
         out["Source.Wave"].astype(str).isin({"2013", "2015", "2018"})
         & out["Variable.Name"].str.lower().str.fullmatch(r"da019_w2_2_[12]")

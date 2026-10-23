@@ -691,6 +691,15 @@ for idx in field_catalog.index[diagnosis_time_unit]:
     field_catalog.at[idx, "Concept.Unit.Candidates"] = "calendar year" if code.startswith("da009_1_") else "age in years"
 if diagnosis_time_unit.any():
     print(f"verified diagnosis-time unit rows={int(diagnosis_time_unit.sum())}; unique wave fields={field_catalog.loc[diagnosis_time_unit, ['Source.Wave', 'Variable.Name']].drop_duplicates().shape[0]}; year and age kept separate")
+prostate_diagnosis_time_unit = (
+    field_catalog["Source.Wave"].astype(str).isin({"2011", "2013", "2015", "2018"})
+    & field_catalog["Variable.Name"].str.lower().isin({"da030_1", "da030_2"})
+)
+for idx in field_catalog.index[prostate_diagnosis_time_unit]:
+    code = str(field_catalog.at[idx, "Variable.Name"]).lower()
+    field_catalog.at[idx, "Concept.Unit.Candidates"] = "calendar year" if code == "da030_1" else "age in years"
+if prostate_diagnosis_time_unit.any():
+    print(f"verified prostate-illness diagnosis-time unit rows={int(prostate_diagnosis_time_unit.sum())}; year and age kept separate")
 stroke_timing_unit = (
     field_catalog["Source.Wave"].astype(str).isin({"2013", "2015", "2018"})
     & field_catalog["Variable.Name"].str.lower().str.fullmatch(r"da019_w2_2_[12]")

@@ -69,6 +69,12 @@ def code(cid,w,c):
         return '1=Bottles; 2=Mugs (beer serving unit selection)'
     if cid=='physical_activity_occurrence':
         return '1=Yes; 2=No'
+    if cid=='physical_activity_purpose' and c in {'da051_1_1_','da051_1_2_','da051_1_3_','da037_1_','da037_2_','da037_3_'}:
+        return {
+            '2015':'1=Job Demands; 2=Entertainments; 3=Exercise; 4=Other',
+            '2018':'1=Job Demands; 2=Entertainment; 3=Exercise; 4=Other',
+            '2020':'1=Job Demands; 2=Entertainment; 3=Exercise; 4=Others, Please Specify',
+        }.get(w)
     if cid=='physical_activity_days':
         return '1–7=Number of days in the past week; days asked only on the activity route'
     if cid=='physical_activity_duration':
@@ -97,6 +103,9 @@ for i,r in d.iterrows():
             d.loc[i,'value_label_status']='official selector code reviewed; component order differs in 2011 versus 2013–2018'
             d.loc[i,'value_semantics']='Selector only; paired fields encode age/year according to the wave-specific selector labels. Not an ordinal exposure.'
         if cid=='smoking_dependence' or (cid=='alcohol_frequency_amount' and c=='da075'): d.loc[i,'questionnaire_source']=questionnaire_source(w,c)
+        if cid=='physical_activity_purpose':
+            d.loc[i,'value_label_status']='official codebook response labels reviewed; frequencies omitted; descriptive purpose only, not activity dose'
+            d.loc[i,'value_semantics']='Purpose of intensive/moderate/light physical activity; descriptive category, not activity occurrence, frequency, duration, or dose. Preserve the wave-specific codebook wording and questionnaire route.'
     elif cid=='smoking_quantity' and c in {'da063','da050_1','da050_2'}:
         d.loc[i,'value_label_status']='continuous count, not a categorical code; daily cigarette count; 2020 current and pre-quit values are separate'
         d.loc[i,'value_label_source']=BOOK(w)

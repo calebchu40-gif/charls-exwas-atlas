@@ -55,6 +55,16 @@ class CatalogReviewStatusTests(unittest.TestCase):
             self.assertTrue(all(row.get("Value.Label.Review") == "officially reviewed" for row in rows), (wave, code))
             self.assertTrue(all("frequency" not in row.get("Value.Labels", "").lower() for row in rows))
 
+    def test_prostate_illness_diagnosis_time_components_keep_year_and_age_separate(self):
+        for wave in ("2011", "2013", "2015", "2018"):
+            for code, unit in (("da030_1", "calendar year"), ("da030_2", "age in years")):
+                rows = [row for row in self.catalog if row.get("Source.Wave") == wave and row.get("Variable.Name", "").lower() == code]
+                self.assertTrue(rows, (wave, code))
+                self.assertTrue(all(row.get("Concept.Unit.Candidates") == unit for row in rows), (wave, code))
+                self.assertTrue(all(row.get("Value.Label.Review") == "numeric/time unit metadata available; no discrete labels assigned" for row in rows), (wave, code))
+                self.assertTrue(all(not row.get("Value.Labels", "") for row in rows), (wave, code))
+                self.assertTrue(all("not prostate cancer" in row.get("Harmonization.Status", "") for row in rows), (wave, code))
+
     def test_located_pension_codebook_fields_are_not_generic_pending_labels(self):
         examples = [
             ("2011", "fn004"),
