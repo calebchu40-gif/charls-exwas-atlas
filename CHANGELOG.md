@@ -2,7 +2,7 @@
 
 ## 2026-10-24
 
-- Clarified the homepage scope cards by separating exposure and phenotype candidate concepts (1,149 and 288), survey-wave coverage, and the zero formal-model count. The note explains that nine concepts have both roles, there are 1,428 unique E/P concepts, and source-field mappings are not participant counts or association results. Counts are generated from the audited concept index; added a consistency test.
+- Clarified the homepage scope cards by separating exposure and phenotype candidate concepts (1,149 and 288), survey-wave coverage, and the zero formal-model count. The note explains that nine concepts have both roles, there are 1,428 unique E/P concepts, and source-field mappings are not participant counts or association results. Counts are generated from the audited concept index; added a consistency test. Deployed as GitHub Pages #102 and verified the public homepage.
 
 - Moved the final E/P/C shard build to the end of both metadata pipelines so late source-reviewed metadata propagation is reflected in the browser catalogue; final role shards match the master field catalogue at E=4,750, P=2,110 and C=986 rows.
 
