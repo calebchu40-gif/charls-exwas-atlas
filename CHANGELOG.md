@@ -129,3 +129,9 @@ This file records project-level changes that affect reproducibility, methods, da
 - Extended the work-field sync to include five 2020 questionnaire-derived CAPI formulas with unresolved route validation and two questionnaire/Codebook identity conflicts that remain `DO NOT ANALYZE`. Current E/P catalogue counts are 3,207 nonempty-label rows across 3,181 wave-fields and 670 generic-pending rows; the full suite passes 84 tests.
 - Published the work-field CAPI and identity-conflict status update as `00a0657`; Pages run #31 and metadata validation run #90 succeeded, and the live E catalogue returned HTTP 200 with the new statuses.
 - Surfaced 33 2011 work fields whose official Codebook category labels were not located, with a source citation and a website note that “not located” does not mean “no categories.” Current generic-pending E/P rows: 637; full test suite: 85 passed.
+
+
+### 2026-10-24 — residential-history metadata verification
+
+- Published source-reviewed BB007–BB010 residential-mobility routes and durations for 2011/2013, including four previously missing 2011 duration fields. The review preserves the distinct BB007/BB009 branches, conditional missingness, 2011 wording mismatch, and duration units.
+- Verified commit `41bd6a3` in GitHub Pages Deploy #93 (`40018980973`) and confirmed the cache-busted public C catalogue contains 986 rows and the reviewed records. This is metadata only; formal E/P concepts, mappings, and association models remain unchanged.
