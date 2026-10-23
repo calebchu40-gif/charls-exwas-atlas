@@ -1512,7 +1512,7 @@ def main() -> None:
     if housing_mapping_path.exists():
         housing_mapping = pd.read_csv(housing_mapping_path, dtype=str, encoding="utf-8-sig").fillna("")
         owner_share_codes = housing_mapping.loc[
-            housing_mapping["concept_id"].eq("household_property_owner_share_slots")
+            housing_mapping["concept_id"].isin(["household_property_owner_share_slots", "current_home_owner_share"])
             & housing_mapping["wave"].eq("2018"), "code"
         ].drop_duplicates()
         for code in owner_share_codes:
@@ -1521,6 +1521,32 @@ def main() -> None:
         selected = out["Source.Wave"].astype(str).eq(wave) & out["Variable.Name"].str.lower().eq(code)
         out.loc[selected, "Value.Label.Review"] = "continuous measure metadata available"
         out.loc[selected, "Value.Label.Source"] = source
+    # The Wave 4 current-home questionnaire explicitly asks for the percent
+    # share of property rights by relationship category. This is a numeric
+    # percentage, not a categorical response label; Codebook summary extrema
+    # are deliberately not treated as valid-range limits.
+    current_home_share = (
+        out["Source.Wave"].astype(str).eq("2018")
+        & out["Variable.Name"].str.lower().isin({
+            "i000_w4_4_1", "i000_w4_4_3", "i000_w4_4_6", "i000_w4_4_7", "i000_w4_4_8"
+        })
+    )
+    out.loc[current_home_share, "Concept.Unit.Candidates"] = "% of the specific house's property rights"
+    out.loc[current_home_share, "Value.Label.Review"] = (
+        "official 2018 questionnaire confirms continuous percentage share; no discrete labels; "
+        "Codebook summary extrema are not valid-range evidence; verify route and special values"
+    )
+    out.loc[current_home_share, "Value.Label.Source"] = (
+        "sources_official/CHARLS_2018_Questionnaire_extracted.txt; "
+        "sources_official/CHARLS_2018_Codebook_extracted.txt"
+    )
+    out.loc[current_home_share, "Harmonization.Status"] = (
+        "2018 current-home ownership share by listed relationship slot, reported as percent; "
+        "continuous numeric measure, not a categorical label. Preserve each slot and the "
+        "question's multi-response/household route; do not sum across slots or infer respondent "
+        "ownership. Valid range, special values, eligible denominator, and missing-slot semantics "
+        "require authorized-release QA before analysis. Codebook summary extrema do not define a valid range."
+    )
     # DA009's numbered value fields are numeric time measures, not categorical
     # responses. The official wave Codebooks distinguish calendar year from
     # age in years; keep those units separate and do not infer valid ranges

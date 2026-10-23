@@ -17,6 +17,7 @@ class HousingValueLabelTests(unittest.TestCase):
     def setUpClass(cls):
         cls.labels = read_csv(AUDIT / "housing_value_label_review_v1.csv")
         cls.current_owner_labels = read_csv(AUDIT / "housing_current_owner_relation_labels_2018_v1.csv")
+        cls.housing_mapping = read_csv(AUDIT / "housing_exposure_variable_mapping_v1.csv")
         cls.catalog = read_csv(AUDIT / "charls_atlas_candidate_fields_v0.csv")
         cls.crosswalk = read_csv(AUDIT / "ep_concept_source_crosswalk_v1.csv")
         with (ROOT / "site-prototype" / "dist" / "housing_catalog_v1.json").open(encoding="utf-8") as stream:
@@ -114,6 +115,21 @@ class HousingValueLabelTests(unittest.TestCase):
         site_rows = [row for row in self.housing_site if row["wave"] == "2018" and row["code"].lower().startswith("i000_w4_4_s")]
         self.assertEqual(len(site_rows), 9)
         self.assertEqual(sum(bool(row["value_labels"]) for row in site_rows), 1)
+
+    def test_2018_current_home_owner_share_is_continuous_percent_with_explicit_limits(self):
+        codes = {"i000_w4_4_1", "i000_w4_4_3", "i000_w4_4_6", "i000_w4_4_7", "i000_w4_4_8"}
+        mapping = [row for row in self.housing_mapping if row["wave"] == "2018" and row["code"].lower() in codes]
+        self.assertEqual({row["code"].lower() for row in mapping}, codes)
+        self.assertTrue(all(row["unit"] == "% of the specific house's property rights" for row in mapping))
+        self.assertTrue(all("do not sum" in row["caveat"].lower() for row in mapping))
+        for code in codes:
+            field = next(row for row in self.catalog if row["Source.Wave"] == "2018" and row["Variable.Name"].lower() == code)
+            self.assertEqual(field["Value.Labels"], "")
+            self.assertEqual(field["Concept.Unit.Candidates"], "% of the specific house's property rights")
+            self.assertIn("extrema are not valid-range evidence", field["Value.Label.Review"])
+            self.assertIn("do not sum across slots", field["Harmonization.Status"])
+            site = next(row for row in self.housing_site if row["wave"] == "2018" and row["code"].lower() == code)
+            self.assertEqual(site["unit"], "% of the specific house's property rights")
 
 
 if __name__ == "__main__":

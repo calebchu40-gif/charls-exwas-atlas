@@ -95,6 +95,7 @@ FULL_PIPELINE_SCRIPTS = (
     "summarize_ep_pair_wave_coverage.py",
     "summarize_directory_scope.py",
     "summarize_catalog_concept_categories.py",
+    "apply_2018_current_home_owner_share_review.py",
 )
 
 # Use only when the upstream audit/crosswalk files are already current and a
@@ -112,6 +113,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "summarize_ep_pair_wave_coverage.py",
     "summarize_directory_scope.py",
     "summarize_catalog_concept_categories.py",
+    "apply_2018_current_home_owner_share_review.py",
 )
 
 

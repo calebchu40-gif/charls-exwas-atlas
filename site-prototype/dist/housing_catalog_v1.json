@@ -7354,10 +7354,11 @@
     "value_labels": "",
     "value_label_status": "not yet reviewed",
     "value_label_source": "",
-    "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
+    "mapping_status": "official 2018 questionnaire identifies continuous percent share; routes and special values still require authorized-release QA",
     "construct": "housing/property candidate",
-    "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes.",
-    "source_archive": "CHARLS2018r.zip; official wave questionnaire/codebook"
+    "caveat": "2018 current-home ownership share by listed relationship slot, reported as percent; continuous numeric measure, not a categorical label. Preserve each slot and the question's multi-response/household route; do not sum across slots or infer respondent ownership. Valid range, special values, eligible denominator, and missing-slot semantics require authorized-release QA before analysis. Codebook summary extrema do not define a valid range.",
+    "source_archive": "CHARLS2018r.zip; official wave questionnaire/codebook",
+    "unit": "% of the specific house's property rights"
   },
   {
     "wave": "2018",
@@ -7370,10 +7371,11 @@
     "value_labels": "",
     "value_label_status": "not yet reviewed",
     "value_label_source": "",
-    "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
+    "mapping_status": "official 2018 questionnaire identifies continuous percent share; routes and special values still require authorized-release QA",
     "construct": "housing/property candidate",
-    "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes.",
-    "source_archive": "CHARLS2018r.zip; official wave questionnaire/codebook"
+    "caveat": "2018 current-home ownership share by listed relationship slot, reported as percent; continuous numeric measure, not a categorical label. Preserve each slot and the question's multi-response/household route; do not sum across slots or infer respondent ownership. Valid range, special values, eligible denominator, and missing-slot semantics require authorized-release QA before analysis. Codebook summary extrema do not define a valid range.",
+    "source_archive": "CHARLS2018r.zip; official wave questionnaire/codebook",
+    "unit": "% of the specific house's property rights"
   },
   {
     "wave": "2018",
@@ -7386,10 +7388,11 @@
     "value_labels": "",
     "value_label_status": "not yet reviewed",
     "value_label_source": "",
-    "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
+    "mapping_status": "official 2018 questionnaire identifies continuous percent share; routes and special values still require authorized-release QA",
     "construct": "housing/property candidate",
-    "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes.",
-    "source_archive": "CHARLS2018r.zip; official wave questionnaire/codebook"
+    "caveat": "2018 current-home ownership share by listed relationship slot, reported as percent; continuous numeric measure, not a categorical label. Preserve each slot and the question's multi-response/household route; do not sum across slots or infer respondent ownership. Valid range, special values, eligible denominator, and missing-slot semantics require authorized-release QA before analysis. Codebook summary extrema do not define a valid range.",
+    "source_archive": "CHARLS2018r.zip; official wave questionnaire/codebook",
+    "unit": "% of the specific house's property rights"
   },
   {
     "wave": "2018",
@@ -7402,10 +7405,11 @@
     "value_labels": "",
     "value_label_status": "not yet reviewed",
     "value_label_source": "",
-    "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
+    "mapping_status": "official 2018 questionnaire identifies continuous percent share; routes and special values still require authorized-release QA",
     "construct": "housing/property candidate",
-    "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes.",
-    "source_archive": "CHARLS2018r.zip; official wave questionnaire/codebook"
+    "caveat": "2018 current-home ownership share by listed relationship slot, reported as percent; continuous numeric measure, not a categorical label. Preserve each slot and the question's multi-response/household route; do not sum across slots or infer respondent ownership. Valid range, special values, eligible denominator, and missing-slot semantics require authorized-release QA before analysis. Codebook summary extrema do not define a valid range.",
+    "source_archive": "CHARLS2018r.zip; official wave questionnaire/codebook",
+    "unit": "% of the specific house's property rights"
   },
   {
     "wave": "2018",
@@ -7418,10 +7422,11 @@
     "value_labels": "",
     "value_label_status": "not yet reviewed",
     "value_label_source": "",
-    "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
+    "mapping_status": "official 2018 questionnaire identifies continuous percent share; routes and special values still require authorized-release QA",
     "construct": "housing/property candidate",
-    "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes.",
-    "source_archive": "CHARLS2018r.zip; official wave questionnaire/codebook"
+    "caveat": "2018 current-home ownership share by listed relationship slot, reported as percent; continuous numeric measure, not a categorical label. Preserve each slot and the question's multi-response/household route; do not sum across slots or infer respondent ownership. Valid range, special values, eligible denominator, and missing-slot semantics require authorized-release QA before analysis. Codebook summary extrema do not define a valid range.",
+    "source_archive": "CHARLS2018r.zip; official wave questionnaire/codebook",
+    "unit": "% of the specific house's property rights"
   },
   {
     "wave": "2018",
