@@ -7,3 +7,7 @@ HA025 labels: 1=City or town central areas; 2=Town or semi-rural areas; 3=Rural 
 HA057_W3 is a continuous 10,000 Yuan/month household mortgage payment on the active-mortgage route. The 2018 questionnaire asks about mortgages for the respondent's/spouse's houses and excludes properties with a paid-off mortgage. Do not merge it with outstanding principal or unpaid interest. Multiple-property aggregation, special values, and release storage need authorized-data QA.
 
 Sources: `sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt`. No respondent data, Codebook frequencies, minima, maxima, or other descriptive statistics were used.
+
+## Current residence urban/rural item
+
+I000_W4_2 describes the main respondent's currently occupied house selected from the preloaded property list. It is distinct from HA025_W4[i], which records location for each listed property. The questionnaire and Codebook use slightly different English renderings; the catalog keeps the Codebook labels `1=City/Town central area; 2=Rural-urban fringe; 3=Rural; 4=Special zone` and cites both documents. This is a single-wave context candidate; cross-wave equivalence and analysis eligibility remain open. It is not a pollutant measurement or an automatically selected adjustment variable.
