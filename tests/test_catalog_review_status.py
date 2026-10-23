@@ -466,8 +466,9 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertIn("协变量候选", app)
         self.assertIn("测量/设计元数据", app)
         self.assertIn("连续变量可能没有离散类别标签", app)
-        self.assertIn("自动关键词检索线索（未核验协变量）", page)
-        self.assertIn("不代表字段含义已核实或适合作调整", page)
+        self.assertIn("如何理解这里的“协变量候选”", page)
+        self.assertIn("尚未决定是否进入任何模型", page)
+        self.assertIn("不能据此判断字段含义、调整资格或研究结论", page)
 
     def test_pages_workflow_deploys_site_changes_automatically(self):
         workflow = (ROOT / ".github/workflows/deploy-pages.yml").read_text(encoding="utf-8")

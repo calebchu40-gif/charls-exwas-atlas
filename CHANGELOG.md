@@ -2,12 +2,12 @@
 
 ## 2026-10-24
 
-- Reconciled 2011–2018 internet activity/device fields with official questionnaires and Codebooks, separating the legacy DA056 social-activity checklist from the dedicated 2020 DA040 internet screen. Reclassified 23 existing wave-field mappings in place, preserved unresolved older checkbox storage, and prevented duplicate E rows.
-- Normalized work Codebook identifiers that the 2011 PDF extraction renders with spaces instead of underscores. Numeric/date fields now surface verified field presence without invented answer categories, and occupational/industry classification codes are explicitly marked as lookup codes rather than numeric scales. Codebook frequencies remain excluded.
+- Clarified the C metadata page for non-specialist users: covariate candidates are search aids, measurement and routing rows are explanatory metadata, and neither implies a selected adjustment set or completed analysis. Updated labels and cache-busted the page assets.
 - Reviewed 13 remaining 2011 work-module fields against the official questionnaire. Added questionnaire-only option wording where categories are listed, retained numeric release-code uncertainty, and added units, ranges, routes and interviewer instructions for continuous/count fields including 0/999997 handling notes. No questionnaire option order was treated as verified released-data coding.
 - Expanded the 2011 community education profile to include six exact percentage fields and six separate fallback brackets used only when the informant does not know the exact percentage. Verified category bins, current water/electricity price units, road-scale anchors, disaster routing and the village-only sanitation-reconstruction route; codebook frequencies remain excluded.
-- Expanded the 2011 community education profile to include six exact percentage fields and six separately coded fallback brackets used only when the informant does not know the exact percentage. Verified category bins, current water/electricity price units, road scale, disaster routing and the village-only sanitation-reconstruction route against the official questionnaire; frequencies remain excluded.
-- Updated current-work and progress notes, regenerated the public catalog, and added regression coverage; all 159 Python tests pass.
+- Updated the current work and progress notes, regenerated the public catalog, and added regression coverage; all 167 Python tests pass.
+- Reconciled 2011–2018 internet activity/device fields with official questionnaires and Codebooks, separating the legacy DA056 social-activity checklist from the dedicated 2020 DA040 internet screen. Reclassified 23 existing wave-field mappings in place, preserved unresolved older checkbox storage, and prevented duplicate E rows.
+- Normalized work Codebook identifiers that the 2011 PDF extraction renders with spaces instead of underscores. Numeric/date fields now surface verified field presence without invented answer categories, and occupational/industry classification codes are explicitly marked as lookup codes rather than numeric scales. Codebook frequencies remain excluded.
 
 ## 2026-10-23
 
