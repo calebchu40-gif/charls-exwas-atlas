@@ -163,6 +163,22 @@ class HousingValueLabelTests(unittest.TestCase):
         for code, unit in expected_mapping_units.items():
             self.assertEqual(mapping[("2018", code)]["unit"], unit)
 
+    def test_room_and_toilet_counts_are_numeric_and_wave_specific(self):
+        expected = {(str(w), f"i012_{suffix}") for w in (2011, 2013, 2015, 2018) for suffix in (1, 2, 3)}
+        expected |= {("2020", f"i011_{suffix}") for suffix in (1, 2, 3)}
+        rows = {(row["Source.Wave"], row["Variable.Name"].lower()): row for row in self.catalog}
+        self.assertTrue(expected.issubset(rows))
+        for wave, code in expected:
+            row = rows[(wave, code)]
+            self.assertEqual(row["Concept.Unit.Candidates"], "count")
+            self.assertEqual(row["Value.Labels"], "")
+            self.assertIn("Codebook extrema are not valid-range evidence", row["Value.Label.Review"])
+            self.assertIn("household-composition denominator", row["Harmonization.Status"])
+            if wave == "2020":
+                self.assertIn("Household Financial Respondent's house", row["Harmonization.Status"])
+            site = next(r for r in self.housing_site if r["wave"] == wave and r["code"].lower() == code)
+            self.assertEqual(site["unit"], "count")
+
 
 if __name__ == "__main__":
     unittest.main()

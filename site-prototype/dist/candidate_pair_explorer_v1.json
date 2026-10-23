@@ -76997,8 +76997,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
+              "mapping_status": "official 2018 questionnaire confirms numeric response unit; special values, route and release coding still require review",
+              "caveat": "Official 2018 questionnaire unit is calendar year. Retain the exact current-home measure and ownership/eligibility route. Do not combine the total-price and unit-price forms or derive one from the other without a validated area and response-format selector. Codebook summary extrema are not valid-range evidence; preserve special/missing values and confirm route, denominator and release coding in authorized data before analysis."
             }
           ]
         },
@@ -77017,8 +77017,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
+              "mapping_status": "official 2018 questionnaire confirms numeric response unit; special values, route and release coding still require review",
+              "caveat": "Official 2018 questionnaire unit is 10,000 Yuan. Retain the exact current-home measure and ownership/eligibility route. Do not combine the total-price and unit-price forms or derive one from the other without a validated area and response-format selector. Codebook summary extrema are not valid-range evidence; preserve special/missing values and confirm route, denominator and release coding in authorized data before analysis."
             }
           ]
         },
@@ -83527,8 +83527,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
+              "mapping_status": "official 2018 questionnaire confirms numeric response unit; special values, route and release coding still require review",
+              "caveat": "Official 2018 questionnaire unit is 1,000 Yuan/square metre. Retain the exact current-home measure and ownership/eligibility route. Do not combine the total-price and unit-price forms or derive one from the other without a validated area and response-format selector. Codebook summary extrema are not valid-range evidence; preserve special/missing values and confirm route, denominator and release coding in authorized data before analysis."
             }
           ]
         },
@@ -83547,8 +83547,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
+              "mapping_status": "official 2018 questionnaire confirms numeric response unit; special values, route and release coding still require review",
+              "caveat": "Official 2018 questionnaire unit is Yuan/month. Retain the exact current-home measure and ownership/eligibility route. Do not combine the total-price and unit-price forms or derive one from the other without a validated area and response-format selector. Codebook summary extrema are not valid-range evidence; preserve special/missing values and confirm route, denominator and release coding in authorized data before analysis."
             }
           ]
         },
@@ -83567,8 +83567,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
+              "mapping_status": "official 2018 questionnaire confirms numeric response unit; special values, route and release coding still require review",
+              "caveat": "Official 2018 questionnaire unit is 10,000 Yuan. Retain the exact current-home measure and ownership/eligibility route. Do not combine the total-price and unit-price forms or derive one from the other without a validated area and response-format selector. Codebook summary extrema are not valid-range evidence; preserve special/missing values and confirm route, denominator and release coding in authorized data before analysis."
             }
           ]
         },
@@ -83587,8 +83587,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
+              "mapping_status": "official 2018 questionnaire defines a continuous percentage share; route and house/member-slot interpretation reviewed",
+              "caveat": "Official 2018 HA&I questionnaire asks what percentage of a specific house's property rights belongs to each listed family-member slot. This is a continuous percent response, not a categorical value label. Fields repeat by house/person and follow roster-dependent routes; preserve slot identity and denominators, do not sum across incompatible or missing slots, and do not infer respondent-level ownership without a prespecified derivation. The questionnaire instructs interviewers to enter 100% for the 'Other' case when the house is unrelated to the respondent/spouse or listed relatives/friends. Confirm special codes and route eligibility in the authorized release before analysis."
             },
             {
               "code": "i000_w4_4_3",
@@ -83597,8 +83597,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
+              "mapping_status": "official 2018 questionnaire defines a continuous percentage share; route and house/member-slot interpretation reviewed",
+              "caveat": "Official 2018 HA&I questionnaire asks what percentage of a specific house's property rights belongs to each listed family-member slot. This is a continuous percent response, not a categorical value label. Fields repeat by house/person and follow roster-dependent routes; preserve slot identity and denominators, do not sum across incompatible or missing slots, and do not infer respondent-level ownership without a prespecified derivation. The questionnaire instructs interviewers to enter 100% for the 'Other' case when the house is unrelated to the respondent/spouse or listed relatives/friends. Confirm special codes and route eligibility in the authorized release before analysis."
             },
             {
               "code": "i000_w4_4_6",
@@ -83607,8 +83607,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
+              "mapping_status": "official 2018 questionnaire defines a continuous percentage share; route and house/member-slot interpretation reviewed",
+              "caveat": "Official 2018 HA&I questionnaire asks what percentage of a specific house's property rights belongs to each listed family-member slot. This is a continuous percent response, not a categorical value label. Fields repeat by house/person and follow roster-dependent routes; preserve slot identity and denominators, do not sum across incompatible or missing slots, and do not infer respondent-level ownership without a prespecified derivation. The questionnaire instructs interviewers to enter 100% for the 'Other' case when the house is unrelated to the respondent/spouse or listed relatives/friends. Confirm special codes and route eligibility in the authorized release before analysis."
             },
             {
               "code": "i000_w4_4_7",
@@ -83617,8 +83617,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
+              "mapping_status": "official 2018 questionnaire defines a continuous percentage share; route and house/member-slot interpretation reviewed",
+              "caveat": "Official 2018 HA&I questionnaire asks what percentage of a specific house's property rights belongs to each listed family-member slot. This is a continuous percent response, not a categorical value label. Fields repeat by house/person and follow roster-dependent routes; preserve slot identity and denominators, do not sum across incompatible or missing slots, and do not infer respondent-level ownership without a prespecified derivation. The questionnaire instructs interviewers to enter 100% for the 'Other' case when the house is unrelated to the respondent/spouse or listed relatives/friends. Confirm special codes and route eligibility in the authorized release before analysis."
             },
             {
               "code": "i000_w4_4_8",
@@ -83627,8 +83627,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
+              "mapping_status": "official 2018 questionnaire defines a continuous percentage share; route and house/member-slot interpretation reviewed",
+              "caveat": "Official 2018 HA&I questionnaire asks what percentage of a specific house's property rights belongs to each listed family-member slot. This is a continuous percent response, not a categorical value label. Fields repeat by house/person and follow roster-dependent routes; preserve slot identity and denominators, do not sum across incompatible or missing slots, and do not infer respondent-level ownership without a prespecified derivation. The questionnaire instructs interviewers to enter 100% for the 'Other' case when the house is unrelated to the respondent/spouse or listed relatives/friends. Confirm special codes and route eligibility in the authorized release before analysis."
             }
           ]
         },
@@ -83747,8 +83747,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "housing/property candidate",
-              "mapping_status": "candidate mapped from official wave-variable metadata; response labels, routing and comparability review required",
-              "caveat": "2018 housing roster fields may repeat by property and household-member relationship. Slots are components, not independent exposures; do not sum values or equate respondent ownership with household ownership without a prespecified derivation. Confirm units, route and special codes."
+              "mapping_status": "official 2018 questionnaire confirms numeric response unit; special values, route and release coding still require review",
+              "caveat": "Official 2018 questionnaire unit is Yuan/month. Retain the exact current-home measure and ownership/eligibility route. Do not combine the total-price and unit-price forms or derive one from the other without a validated area and response-format selector. Codebook summary extrema are not valid-range evidence; preserve special/missing values and confirm route, denominator and release coding in authorized data before analysis."
             }
           ]
         },

@@ -88,6 +88,8 @@ FULL_PIPELINE_SCRIPTS = (
     "summarize_value_label_coverage.py",
     "validate_do_not_analyze_triage.py",
     "build_ep_concept_source_crosswalk.py",
+    "apply_2018_current_home_measurement_review.py",
+    "apply_housing_room_count_review.py",
     "sync_domain_catalog_labels.py",
     "site_catalog_shards.py",
     "build_candidate_pair_explorer.py",
@@ -95,7 +97,6 @@ FULL_PIPELINE_SCRIPTS = (
     "summarize_ep_pair_wave_coverage.py",
     "summarize_directory_scope.py",
     "summarize_catalog_concept_categories.py",
-    "apply_2018_current_home_measurement_review.py",
 )
 
 # Use only when the upstream audit/crosswalk files are already current and a
@@ -106,6 +107,8 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "summarize_value_label_coverage.py",
     "validate_do_not_analyze_triage.py",
     "build_ep_concept_source_crosswalk.py",
+    "apply_2018_current_home_measurement_review.py",
+    "apply_housing_room_count_review.py",
     "sync_domain_catalog_labels.py",
     "site_catalog_shards.py",
     "build_candidate_pair_explorer.py",
@@ -113,7 +116,6 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "summarize_ep_pair_wave_coverage.py",
     "summarize_directory_scope.py",
     "summarize_catalog_concept_categories.py",
-    "apply_2018_current_home_measurement_review.py",
 )
 
 

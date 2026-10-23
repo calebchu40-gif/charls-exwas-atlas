@@ -38,7 +38,7 @@
 |审核状态|E/P目录行|
 |---|---:|
 |officially reviewed|2,536|
-|not yet reviewed|1,233|
+|not yet reviewed|1,228|
 |official codebook field located; continuous/count or no categorical labels|608|
 |codebook field located; continuous/open response or no categorical labels|339|
 |continuous measure metadata available|214|
@@ -82,6 +82,7 @@
 |continuous count, not a categorical code; daily cigarette count; 2020 current and pre-quit values are separate|6|
 |official 2020 questionnaire CAPI formula manually transcribed; descriptive codebook frequencies omitted; generated-field interpretation requires route validation|6|
 |official questionnaire categories; frequencies omitted; FC020 multiple-job main-work route or FC021 single nonfarm-job route|6|
+|official 2018 questionnaire confirms continuous percentage share; no discrete labels; Codebook summary extrema are not valid-range evidence; verify route and special values|5|
 |official Codebook response categories transcribed; frequencies omitted; cross-wave question scope and release coding pending|5|
 |continuous measure, not a categorical code; nap duration appears in minutes; inspect special/missing codes|5|
 |continuous measure, not a categorical code; past-month average sleep hours per night; inspect special/missing codes|5|
