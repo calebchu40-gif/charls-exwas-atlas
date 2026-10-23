@@ -2,7 +2,7 @@
 
 更新：2026-10-23。由`scripts/summarize_value_label_coverage.py`从当前字段目录和覆盖CSV自动生成。
 
-- E/P字段—角色—类别目录行：6,627；不同波次—字段码：6,546。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
+- E/P字段—角色—类别目录行：6,625；不同波次—字段码：6,544。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
 - 有非空官方/已审标签文本的E/P目录行：3,207；不同波次—字段码：3,181。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
 - 明确标为`conflict`的E/P字段码：0；详情按主目录波次和变量码检索。
 - 问卷/Codebook编码差异尚未调和并锁定`DO NOT ANALYZE`的E/P字段：2011 `fb010`。此项独立于上面的精确`conflict`标签计数。
@@ -12,7 +12,7 @@
 
 |角色|网站类别|字段—角色—类别行（非互斥）|有标签文本行|子类别数|
 |---|---|---:|---:|---:|
-|e|behavior|235|158|4|
+|e|behavior|233|158|4|
 |e|behavioral exposures|2|0|1|
 |e|community context|187|59|1|
 |e|early-life and family socioeconomic context|3|3|1|
@@ -56,7 +56,7 @@
 |official Codebook lists numeric summary; no categorical response menu in this entry|51|
 |official selected-option label; checkbox slot, absence is not a negative response|42|
 |代码本逐值标签已核|38|
-|continuous component, not a categorical code; component unit reviewed against wave-specific official codebook|34|
+|continuous component, not a categorical code; component unit reviewed against wave-specific official codebook|32|
 |continuous measure metadata available; see description/crosswalk|32|
 |连续计数；参照期/机构槽位依波次；极值待核|29|
 |continuous raw subtraction response; Codebook extreme maxima occur; valid range and scoring require authorized raw-data QA|25|

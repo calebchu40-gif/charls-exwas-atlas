@@ -94,14 +94,15 @@ for col in ['value_labels','value_label_status','value_label_source','value_sema
     if col not in d.columns: d[col]=''
 for i,r in d.iterrows():
     cid,w,c=r['concept_id'],r['wave'],r['code']; lab=code(cid,w,c)
-    if cid=='smoking_initiation_cessation' and w=='2011' and c in {'da062s1','da062s2'}:
-        marker='1=Age' if c=='da062s1' else '2=Year'
+    if cid=='smoking_initiation_cessation' and w=='2011' and c in {'da062s1','da062s2','da065s1','da065s2'}:
+        parent=c[:-2]
+        marker='1=Age' if c.endswith('s1') else '2=Year'
         d.loc[i,'value_labels']=marker
-        d.loc[i,'value_label_status']='official component-type marker reviewed; Codebook lists a fixed Age/Year marker, not the respondent’s cessation time'
+        d.loc[i,'value_label_status']='official component-type marker reviewed; Codebook lists a fixed Age/Year marker, not the respondent’s smoking time'
         d.loc[i,'value_label_source']=BOOK(w)
-        d.loc[i,'value_semantics']='C metadata marker for the adjacent continuous DA062 age/year response fields; not an exposure or a respondent-reported cessation age/year.'
-        d.loc[i,'mapping_status']='C metadata; fixed component-type marker only; the respondent’s continuous cessation time is stored separately in da062_1 or da062_2'
-        d.loc[i,'questionnaire_source']='sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DA062 specifies age in da062_1 or calendar year in da062_2 and does not describe an s1/s2 response'
+        d.loc[i,'value_semantics']=f'C metadata marker for the adjacent continuous {parent.upper()} age/year response fields; not an exposure or a respondent-reported smoking time.'
+        d.loc[i,'mapping_status']=f'C metadata; fixed component-type marker only; the respondent’s continuous smoking time is stored separately in {parent}_1 or {parent}_2'
+        d.loc[i,'questionnaire_source']=f'sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; {parent.upper()} directly labels age/year response fields and does not describe an s1/s2 response'
         continue
     if cid=='smoking_initiation_cessation' and w=='2018' and c in {'da062_1','da062_2'}:
         d.loc[i,'value_labels']=''

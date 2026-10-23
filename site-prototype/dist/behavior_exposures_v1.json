@@ -451,10 +451,10 @@
         "source_archive": "household_and_community_questionnaire_data.rar",
         "note": "自动概念目录中的逐波字段候选；年龄、年份及回答时点字段分列；波次存在字段重排和历史信息复核字段。",
         "value_labels": "1=Age",
-        "value_label_status": "official component-type marker reviewed; Codebook lists a fixed Age/Year marker, not the respondent’s cessation time",
+        "value_label_status": "official component-type marker reviewed; Codebook lists a fixed Age/Year marker, not the respondent’s smoking time",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "C metadata marker for the adjacent continuous DA062 age/year response fields; not an exposure or a respondent-reported cessation age/year.",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DA062 specifies age in da062_1 or calendar year in da062_2 and does not describe an s1/s2 response"
+        "value_semantics": "C metadata marker for the adjacent continuous DA062 age/year response fields; not an exposure or a respondent-reported smoking time.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DA062 directly labels age/year response fields and does not describe an s1/s2 response"
       },
       {
         "wave": "2011",
@@ -464,10 +464,10 @@
         "source_archive": "household_and_community_questionnaire_data.rar",
         "note": "自动概念目录中的逐波字段候选；年龄、年份及回答时点字段分列；波次存在字段重排和历史信息复核字段。",
         "value_labels": "2=Year",
-        "value_label_status": "official component-type marker reviewed; Codebook lists a fixed Age/Year marker, not the respondent’s cessation time",
+        "value_label_status": "official component-type marker reviewed; Codebook lists a fixed Age/Year marker, not the respondent’s smoking time",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "C metadata marker for the adjacent continuous DA062 age/year response fields; not an exposure or a respondent-reported cessation age/year.",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DA062 specifies age in da062_1 or calendar year in da062_2 and does not describe an s1/s2 response"
+        "value_semantics": "C metadata marker for the adjacent continuous DA062 age/year response fields; not an exposure or a respondent-reported smoking time.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DA062 directly labels age/year response fields and does not describe an s1/s2 response"
       },
       {
         "wave": "2011",
@@ -502,11 +502,11 @@
         "module": "health_status_and_functioning",
         "source_archive": "household_and_community_questionnaire_data.rar",
         "note": "自动概念目录中的逐波字段候选；年龄、年份及回答时点字段分列；波次存在字段重排和历史信息复核字段。",
-        "value_labels": "",
-        "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
+        "value_labels": "1=Age",
+        "value_label_status": "official component-type marker reviewed; Codebook lists a fixed Age/Year marker, not the respondent’s smoking time",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "Age in years",
-        "questionnaire_source": ""
+        "value_semantics": "C metadata marker for the adjacent continuous DA065 age/year response fields; not an exposure or a respondent-reported smoking time.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DA065 directly labels age/year response fields and does not describe an s1/s2 response"
       },
       {
         "wave": "2011",
@@ -515,11 +515,11 @@
         "module": "health_status_and_functioning",
         "source_archive": "household_and_community_questionnaire_data.rar",
         "note": "自动概念目录中的逐波字段候选；年龄、年份及回答时点字段分列；波次存在字段重排和历史信息复核字段。",
-        "value_labels": "",
-        "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
+        "value_labels": "2=Year",
+        "value_label_status": "official component-type marker reviewed; Codebook lists a fixed Age/Year marker, not the respondent’s smoking time",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "Calendar year",
-        "questionnaire_source": ""
+        "value_semantics": "C metadata marker for the adjacent continuous DA065 age/year response fields; not an exposure or a respondent-reported smoking time.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DA065 directly labels age/year response fields and does not describe an s1/s2 response"
       },
       {
         "wave": "2013",

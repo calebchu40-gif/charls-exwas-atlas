@@ -2,8 +2,8 @@
 
 本快照基于本日完成的全量元数据流水线。仅汇总公开字段元数据和官方来源审核状态；没有拟合ExWAS关联模型，也没有将个体作答或身份信息写入仓库/网站。
 
-- 网站字段目录7,540行：E 4,560、P-only 1,903、C 913、双角色E/P 164。
-- E/P候选概念1,408个：暴露侧1,130、表型侧287、双角色9；E/P概念—源字段映射6,592行。全来源crosswalk 6,804行，其中6,792行匹配目录、12行是目录外C元数据。
+- 网站字段目录7,539行：E 4,558、P-only 1,903、C 914、双角色E/P 164。
+- E/P候选概念1,408个：暴露侧1,130、表型侧287、双角色9；E/P概念—源字段映射6,590行。全来源crosswalk 6,804行，其中6,792行匹配目录、12行是目录外C元数据。
 - 五个常规波次元数据层面的非自配对共现为2011 120,052、2013 126,301、2015 128,984、2018 98,667、2020 12,598。它们不是受访者人数、逐对样本量或分析资格。
 - E/P目录有3,207行带非空已审/官方类别标签文本，覆盖3,181个波次—字段码；633条E/P目录角色行仍显示`not yet reviewed`。连续测量、测量组件和计数可已完成语义审阅而没有类别值标签。2013/2015/2018疾病控制/既往访谈变化48个字段、2020既往访谈变化18个字段，以及2011/2020自知疾病6个字段均已补入逐波官方类别；本轮另补2013–2018自知疾病11个字段，频数未复制，详见[`self_awareness_response_label_review_2026-10-23.md`](self_awareness_response_label_review_2026-10-23.md)。22个连续残疾发生年份字段标注calendar year，见[`disability_onset_year_unit_review_2026-10-23.md`](disability_onset_year_unit_review_2026-10-23.md)。
 - 本轮修复连续行为变量审核状态传播：73条波次—字段行从泛化的未核验状态改为有来源的连续测量/年龄年份语义。细节见[`behavior_numeric_measure_status_sync_2026-10-23.md`](behavior_numeric_measure_status_sync_2026-10-23.md)。
@@ -11,7 +11,7 @@
 - 收入/家庭支出类别中有51条精确代码本条目显示数值摘要但未列分类菜单；另为五波工资/奖金收入字段转录`1=Yes; 2=No`类别，频数未复制、波次题目范围仍分开审核。详情见[`income_numeric_and_receipt_label_sync_2026-10-23.md`](income_numeric_and_receipt_label_sync_2026-10-23.md)。
 - 为2015、2018、2020体力活动目的字段补录9条逐波四选项标签；频数未复制，且这描述“为什么活动”，不能当作活动剂量。详见[`physical_activity_purpose_labels_2026-10-23.md`](physical_activity_purpose_labels_2026-10-23.md)。
 - 为2011、2013、2015、2018的前列腺疾病DA030确诊时间组件补上年份/年龄单位状态，年份与年龄分开，保留男性限定路线并注明不含前列腺癌；Codebook摘要极值不作为有效范围。详见[`prostate_illness_diagnosis_time_units_2026-10-23.md`](prostate_illness_diagnosis_time_units_2026-10-23.md)。
-- C类目录有331行仍显示`not yet reviewed`；该项不意味着所有连续测量都应有类别标签，也不意味着每条C记录都进入E/P关联。
+- C类目录有329行仍显示`not yet reviewed`；该项不意味着所有连续测量都应有类别标签，也不意味着每条C记录都进入E/P关联。
 - 现有逐字段`DO NOT ANALYZE`锁定35条；唯一精确`conflict`状态为0，但2011 `FB010`问卷与Codebook编码差异仍单独锁定。正式模型数为0，没有发布关联估计。
 - 官方抽样权重与方差设计限制已写入公开主页；2013样本标记的源文件恢复、逐波模块权重、PSU源版本匹配及可用于方差估计的分层/复制权重仍是正式分析门槛。详见[`survey_design_weight_review_v1.md`](survey_design_weight_review_v1.md)。
 
@@ -28,4 +28,4 @@ Deployment verification after commit `00a0657`: Pages #31 and validation #90 suc
 
 2026-10-23 smoking cessation source review: 2013/2015/2018/2020 age/year selectors are classified as C metadata. The 2018 questionnaire and Codebook reverse the DA062_1/DA062_2 component labels; both children remain searchable and locked from analysis, and the selector has no displayed category mapping. Current active locks=35; full rebuild and 86 tests pass. Commit `85509a4` is deployed: Validate #93 and Pages #33 succeeded; public index, C catalog, and candidate-pair JSON returned HTTP 200, and the E-catalog byte range containing both locked 2018 smoking components was confirmed live.
 
-- 2018年戒烟时间DA062子字段存在问卷与Codebook的年龄/年份标签冲突；DA062_1、DA062_2已保留为可检索但不可分析项，DA062选择器移为C类。2013、2015、2020戒烟时间选择器亦已从E类移为C类；2011 DA062S1/DA062S2固定“Age/Year”标记值作为C类保存，真实回答字段DA062_1/DA062_2保留为E候选；核对及实现见[`smoking_cessation_2018_age_year_component_conflict_review_2026-10-23.md`](smoking_cessation_2018_age_year_component_conflict_review_2026-10-23.md)。
+- 2018年戒烟时间DA062子字段存在问卷与Codebook的年龄/年份标签冲突；DA062_1、DA062_2已保留为可检索但不可分析项，DA062选择器移为C类。2013、2015、2020戒烟时间选择器亦已从E类移为C类；2011 DA062S1/DA062S2及DA065S1/DA065S2固定“Age/Year”标记值均作为C类保存，真实回答字段DA062_1/DA062_2保留为E候选；核对及实现见[`smoking_cessation_2018_age_year_component_conflict_review_2026-10-23.md`](smoking_cessation_2018_age_year_component_conflict_review_2026-10-23.md)。

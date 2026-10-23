@@ -107,13 +107,14 @@ for wave,code in metadata_keys:
         fields.loc[metadata_rows,"Harmonization.Status"]="response-format selector only; selector code order differs by wave; interpret the paired age/year component using this wave-specific metadata"
         fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; not a smoking/alcohol exposure; use only to interpret the paired age/year response field"
     elif metadata_type == "age_year_component_marker":
+        parent=code[:-2]
         fields.loc[metadata_rows,"category"]="measurement metadata"
         fields.loc[metadata_rows,"subcategory"]="fixed age/calendar-year component-type marker"
-        fields.loc[metadata_rows,"Value.Labels"]="1=Age" if code == "da062s1" else "2=Year"
+        fields.loc[metadata_rows,"Value.Labels"]="1=Age" if code.endswith("s1") else "2=Year"
         fields.loc[metadata_rows,"Value.Label.Source"]="sources_official/CHARLS_2011_Codebook_extracted.txt"
-        fields.loc[metadata_rows,"Value.Label.Review"]="official Codebook single marker value reviewed; frequencies omitted; not the respondent's reported cessation time"
-        fields.loc[metadata_rows,"Candidate.Status"]="C metadata; fixed Age/Year component marker; actual response is stored in da062_1 or da062_2"
-        fields.loc[metadata_rows,"Harmonization.Status"]="format marker only; the 2011 questionnaire directly labels da062_1 as Age and da062_2 as Year; do not analyze this fixed marker as an exposure"
+        fields.loc[metadata_rows,"Value.Label.Review"]="official Codebook single marker value reviewed; frequencies omitted; not the respondent's reported smoking time"
+        fields.loc[metadata_rows,"Candidate.Status"]=f"C metadata; fixed Age/Year component marker; actual response is stored in {parent}_1 or {parent}_2"
+        fields.loc[metadata_rows,"Harmonization.Status"]=f"format marker only; the 2011 questionnaire directly labels {parent}_1 as Age and {parent}_2 as Year; do not analyze this fixed marker as an exposure"
         fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; documentation marker only; no participant response value is needed to interpret the paired continuous component"
     elif metadata_type == "age_year_component_selector_source_conflict":
         fields.loc[metadata_rows,"category"]="measurement metadata"

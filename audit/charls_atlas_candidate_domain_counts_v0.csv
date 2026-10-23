@@ -1,6 +1,6 @@
 ﻿epcf,category,subcategory,source_field_wave_rows,distinct_source_codes,wave_count
 c,covariate candidate,birth-date source and age derivation metadata,5,5,2
-c,covariate candidate,demographic / design / socioeconomic adjustment candidate,420,267,5
+c,covariate candidate,demographic / design / socioeconomic adjustment candidate,419,266,5
 c,measurement metadata,2011 proxy interview and Section E assistance context,3,3,1
 c,measurement metadata,2018 employer pension contribution amount/share unit selector,1,1,1
 c,measurement metadata,2018 respondent pension contribution amount/share unit selector,1,1,1
@@ -31,7 +31,7 @@ c,measurement metadata,expected pension receipt time format selector,7,4,3
 c,measurement metadata,expected retirement pension benefit format selector,1,1,1
 c,measurement metadata,expected supplementary pension benefit timing response selector,1,1,1
 c,measurement metadata,firm supplementary pension expected-benefit form selector,2,1,2
-c,measurement metadata,fixed age/calendar-year component-type marker,2,2,1
+c,measurement metadata,fixed age/calendar-year component-type marker,4,4,1
 c,measurement metadata,household debt unfolding-bracket response metadata,8,8,2
 c,measurement metadata,household financial respondent source,2,2,2
 c,measurement metadata,household income response-format selectors,3,1,3
@@ -78,7 +78,7 @@ c,measurement metadata,unsupported prior-wave disease-awareness slots,15,15,1
 e,behavior,alcohol use,73,24,5
 e,behavior,physical activity,84,36,5
 e,behavior,sleep,25,16,5
-e,behavior,smoking and tobacco,53,28,5
+e,behavior,smoking and tobacco,51,26,5
 e,behavioral exposures,smoking cessation timing component; questionnaire/Codebook identity conflict,2,2,1
 e,community context,"environment, infrastructure, and services",187,187,1
 e,early-life and family socioeconomic context,parent marital and ethnic context,3,3,2
