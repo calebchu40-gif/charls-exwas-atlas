@@ -50,6 +50,12 @@ The finalize-only pipeline completed and regenerated the C shard to 980 rows. E/
 
 Next source batch: review adjacent BB003 county/city/district move-in year fields by wave. These are distinct from BB005 village/community move-in year and must preserve their own residence reference and questionnaire routes.
 
+## 2026-10-24 continued: BB003 county/city/district move-in year
+
+Reviewed the official 2011, 2013, 2015 and 2018 BB003 questionnaires and Codebooks. Added four wave-specific C metadata records, filling the 2011 and 2018 gaps in the prior candidate seed. BB003 records the calendar year first living/moving into the relevant county/city/district and stays separate from BB005's village/community year. The audit preserves the 2015 `BB001_W3`/`XRType=NEWIW` branch, the 2018 `XRType=2` new-interview scope, and the change from 2011–2015 permanent-address wording to the 2018 current-address reference. No Codebook descriptive statistics or respondent data were copied; special missing codes remain for authorized-release validation.
+
+The full metadata rebuild passed; C rows now total 982, with BB003 and BB005 each represented in all four waves. E/P concepts and source mappings remain 1,429 and 6,625; formal E/P locks remain 89. All 194 Python tests pass, every static JSON parses, the JavaScript syntax check passes and `git diff --check` is clean. Commit and Pages verification are pending. Audit: `audit/residential_history_bb003_source_review_2011_2018_2026-10-24.md`.
+
 
 The 2011 Community Part K interviewer-observation block is now represented by four additional distinct context candidates: JK002 socioeconomic status, JK004 built-form organization, JK005 perceived crowding and JK006 disability accessibility. The questionnaire anchors for 1 and 7 are preserved; codes 2–6 are described as intermediate ordinal ratings, not assigned fabricated labels. They remain subjective community-level observations. The community crosswalk now contains 104 concepts and 198 fields; the 2011 E/P metadata co-availability count increased by 844 because four additional E concepts can pair with 211 phenotype concepts in that wave. This is a metadata count only, not sample size or association evidence. See `audit/community_interviewer_observation_review_2026-10-24.md`. The full finalize-only rebuild passed 179 Python tests, JS syntax and `git diff --check`; the 89-row `DO NOT ANALYZE` lock audit remains intact.
 
