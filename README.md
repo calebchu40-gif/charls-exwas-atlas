@@ -159,3 +159,8 @@ GitHub 官方说明：GitHub Free 个人仓库需要公开仓库才能使用 Pag
 2011、2013、2015、2018四波慢病治疗选项目录分别补入53、52、52、68个字段的官方Codebook类别文字。频数不进入网站；2011–2015字段的未选存储未核、暂不可分析，2018字段仍需验证发行版编码和适用分母。标签目录不代表这些字段已进入模型。详见[audit/chronic_disease_ancillary_label_ingestion_2026-10-22.md](audit/chronic_disease_ancillary_label_ingestion_2026-10-22.md)。
 
 本轮2018慢病治疗标签更新已发布：`190837f`对应的GitHub Pages部署成功，线上目录已包含68个官方类别标签；频数不公开，路由和发行版编码/分母待核说明保留。网站仍是元数据原型，没有关联模型结果。发布核查见[`audit/github_pages_publication_review_2026-10-22.md`](audit/github_pages_publication_review_2026-10-22.md)。
+
+
+### 网站方法说明更新（2026-10-23）
+
+主页现逐波概述横截面/纵向样本标记、专用测量权重、2013准备表需恢复官方标记、2020代表性年龄边界，以及方差分层字段仍待核验等限制。页面将 `communityID` 标为 PSU 候选而非已完成的全设计复现，并链接至 [`audit/survey_design_weight_review_v1.md`](audit/survey_design_weight_review_v1.md)。没有发布个体数据或关联估计。

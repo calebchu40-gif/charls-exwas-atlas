@@ -46,3 +46,8 @@ Commit `df0930a` added 125 selected-option labels independently transcribed from
 ## 2026-10-23 2011 header-normalization correction
 
 Commit `4e57ae7` corrected the 2011 treatment-code parser for official Codebook headings that spell variable components with spaces (for example, `da010 2 s4`). This restored 32 2011 option labels omitted from the previous deployment. GitHub Pages run [`39876436833`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/39876436833) succeeded. Live `catalog.json` returned HTTP 200 and shows 2011 `da010_2_s1`, `_s2`, and `_s4` option descriptions; their review state says unselected storage/routed denominator unverified and `DO NOT ANALYZE`. The live site has 225 chronic-treatment wave-field label sets across four waves (53/52/52/68), not 225 unique outcomes. `app.js` contains the matching Chinese warning.
+
+
+## 2026-10-23 survey-design methods disclosure
+
+The homepage methods section now summarizes wave-specific weighting/sample-flag constraints and links to `audit/survey_design_weight_review_v1.md`. It explicitly marks the 2013 prepared-table flag loss as a rebuild blocker, treats `communityID` as a PSU candidate pending exact-release matching, and states that no project-verified variance-stratum ID or replicate weights are currently available. It does not present geography as a substitute stratum or claim complete design-adjusted inference. A regression test guards this disclosure.

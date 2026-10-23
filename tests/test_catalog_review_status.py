@@ -12,6 +12,13 @@ class CatalogReviewStatusTests(unittest.TestCase):
         cls.catalog = json.loads((ROOT / "site-prototype/dist/catalog.json").read_text(encoding="utf-8"))
         cls.work = json.loads((ROOT / "site-prototype/dist/work_exposures_v1.json").read_text(encoding="utf-8"))
 
+    def test_public_methods_page_discloses_wave_specific_survey_design_gates(self):
+        html = (ROOT / "site-prototype/dist/index.html").read_text(encoding="utf-8")
+        card = html[html.index("抽样、权重与方差设计状态"):html.index("</section>", html.index("抽样、权重与方差设计状态"))]
+        for expected in ("2011", "2013", "2015", "2018", "2020", "communityID", "横截面/纵向样本标记", "不得用省、市或城乡字段自行拼成设计分层", "audit/survey_design_weight_review_v1.md"):
+            self.assertIn(expected, card)
+        self.assertIn("尚未发布关联估计", card)
+
     def test_2011_fb010_codebook_values_and_conflict_reach_main_catalog(self):
         rows = [
             row for row in self.catalog

@@ -2,6 +2,7 @@
 
 ## 2026-10-23
 
+- Added a public methods card explaining the five-wave weight/sample-flag rules, 2013 rebuild gate, PSU candidate status, and unresolved variance-stratum/replicate-weight availability. Linked the detailed survey-design audit and added a regression test so the site cannot lose these key inferential limits. No respondent data or association estimates were added.
 - Clarified the Chinese labels and review-state explanation in the measurement/design metadata (C) catalog, including that candidate covariates are not automatic adjustment recommendations and continuous measures may have no discrete value labels. GitHub Pages now deploys automatically when published-site assets or the deployment workflow change on `main`; manual dispatch remains available.
 - Propagated all 217 field-level healthcare-access review states into the main E/P catalogue, including insurance coding uncertainty, continuous use counts, conditional hospitalization measures, and cost/bracket structure. This improves metadata provenance and interpretation; it does not make the fields analysis-ready.
 
