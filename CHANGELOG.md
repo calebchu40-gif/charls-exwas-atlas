@@ -3,6 +3,7 @@
 ## 2026-10-23
 
 - Clarified six DA017 cancer-site fields with no observed Codebook categories: the official questionnaires confirm each numbered site option, while response labels remain blank and underlying unselected/storage codes remain unknown. The main catalog now carries that source-aware review status; added regression coverage and rebuilt the public metadata assets.
+- Pinned the Pages artifact packager to its inspected upstream commit after run #28 showed its v4 release still embeds Node 20 `upload-artifact`; the pinned composite uses Node 24-compatible `upload-artifact@v7.0.1`.
 - Added wave-specific Codebook labels for 48 disease-control and prior-interview disease-change fields from 2013, 2015, and 2018. Frequencies are omitted; prior-disease routing and the unresolved release-data denominator remain explicit. Updated the chronic-disease audit and regression coverage.
 - Fixed catalog propagation for 18 already-reviewed 2020 DA002 prior-interview disease-change fields; code 99 remains explicitly tied to absence of disease at the prior interview. Added a regression check against the site catalog.
 - Added source-reviewed Yes/No/Don't know labels for three 2011 and three 2020 self-awareness items. Kept self-awareness separate from doctor diagnosis and omitted Codebook frequencies; added catalog propagation checks.
