@@ -164,3 +164,8 @@ GitHub 官方说明：GitHub Free 个人仓库需要公开仓库才能使用 Pag
 ### 网站方法说明更新（2026-10-23）
 
 主页现逐波概述横截面/纵向样本标记、专用测量权重、2013准备表需恢复官方标记、2020代表性年龄边界，以及方差分层字段仍待核验等限制。页面将 `communityID` 标为 PSU 候选而非已完成的全设计复现，并链接至 [`audit/survey_design_weight_review_v1.md`](audit/survey_design_weight_review_v1.md)。没有发布个体数据或关联估计。
+
+
+### 当前页面状态更新（2026-10-23）
+
+逐波权重、样本标记和方差设计限制已显示在主页“数据与方法说明”卡片中；主导航中的“测量与设计元数据”会打开 C 类目录。候选配对页可按波次和概念查看来源字段、标签及边界，关联结果页目前明确显示尚无已审真实结果。详情见[`audit/github_pages_publication_review_2026-10-22.md`](audit/github_pages_publication_review_2026-10-22.md)。

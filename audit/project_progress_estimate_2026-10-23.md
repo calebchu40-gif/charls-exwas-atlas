@@ -49,3 +49,8 @@
 - 为提高审计效率，按目录字段行而非独立构念分组待办：E侧1,452行待值标签核验，其中养老金419、收入/财富196、就业/职业140；P侧467行，其中疾病治疗响应260、医疗利用151、自知疾病17、医生诊断时间8。它们不能直接解释为1,919个新指标，也不能全部按“缺标签错误”处理：连续量、年龄/日历年、复选框和条件性治疗题需要不同核验规则。
 - 下一批优先按官方题组与波次批量核对P侧疾病治疗和医疗利用，再处理E侧养老金、收入财富、就业题组。每批先把问卷题意、答案结构、跳题和代码本呈现一起核，再判断应补标签、保留连续单位、转C类或继续锁定；不把已审构念的重复槽位当新增指标。
 
+
+
+## 2026-10-23 follow-up: methods transparency and navigation
+
+The published homepage now has a dedicated survey-design disclosure covering wave-specific weight/sample-flag gates, the 2013 source-flag rebuild requirement, the provisional `communityID` PSU match, and the lack of a verified variance-stratum/replicate-weight field in currently reviewed project sources. The C-class catalogue navigation is labeled “measurement/design metadata” so it is not confused with the methods note. Both changes are live on GitHub Pages; the full result atlas remains at 0 fitted association models. Overall completion against the full result-atlas objective remains approximately 25%–30%; this website clarity work does not close analysis or data-access milestones.

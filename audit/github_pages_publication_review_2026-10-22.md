@@ -54,3 +54,6 @@ The homepage methods section now summarizes wave-specific weighting/sample-flag 
 
 
 Commit `a47c401` added the survey-design disclosure. GitHub Actions run [`39876991302`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/39876991302) completed successfully in 19 seconds. The live homepage returned HTTP 200 and includes the new card and audit link.
+
+
+Commit `e8abfdc` clarified the navigation label for the C-class catalogue. GitHub Actions run [`39877254032`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/39877254032) completed successfully. The deployed homepage returned HTTP 200 and contained both the renamed label and the survey-design methods card.
