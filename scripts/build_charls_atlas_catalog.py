@@ -913,6 +913,7 @@ def main() -> None:
     add_reviewed_labels("stroke_timing_metadata_crosswalk_v1.csv", "wave", "code", "value_labels", "mapping_status", "source_document", re.compile(r"official codebook/questionnaire response-format field", re.I))
     add_reviewed_labels("cancer_site_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official codebook (?:category verified|reports no observed categories|shows 0=No)", re.I))
     add_reviewed_labels("disability_history_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official codebook|official (?:2018 )?codebook", re.I))
+    add_reviewed_labels("chronic_disease_ancillary_variable_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire confirms response options", re.I))
     add_reviewed_labels("assistive_device_phenotype_crosswalk_v1.csv", "wave", "code", "value_labels", "mapping_status", "value_label_source", re.compile(r"official questionnaire and codebook response option labels verified", re.I))
     add_reviewed_labels("adult_education_training_exposure_crosswalk_v1.csv", "wave", "code", "value_labels", "mapping_status", "source_archive", re.compile(r"official questionnaire/codebook field identified", re.I))
     add_reviewed_labels("formal_schooling_lifecourse_crosswalk_v1.csv", "wave", "code", "value_labels", "mapping_status", "source_archive", re.compile(r"official questionnaire and codebook field reviewed", re.I))
@@ -1129,6 +1130,18 @@ def main() -> None:
     out["Value.Labels"] = [existing or reviewed for existing, reviewed in zip(out["Value.Labels"].fillna(""), reviewed_labels)]
     out["Value.Label.Source"] = [existing or reviewed for existing, reviewed in zip(out["Value.Label.Source"].fillna(""), reviewed_sources)]
     out["Value.Label.Review"] = ["conflict" if conflict else ("officially reviewed" if reviewed or source else "not yet reviewed") for conflict, reviewed, source in zip(label_conflicts, reviewed_labels, out["Value.Label.Source"])]
+    awareness_review_path = root / "audit" / "chronic_disease_ancillary_variable_mapping_v1.csv"
+    if awareness_review_path.exists():
+        awareness_review = pd.read_csv(awareness_review_path, dtype=str, encoding="utf-8-sig").fillna("")
+        awareness_review = awareness_review[
+            awareness_review["value_label_status"].str.startswith("official questionnaire confirms response options")
+        ]
+        for item in awareness_review.to_dict(orient="records"):
+            selected = (
+                out["Source.Wave"].astype(str).eq(str(item.get("wave", "")))
+                & out["Variable.Name"].str.lower().eq(str(item.get("code", "")).lower())
+            )
+            out.loc[selected, "Value.Label.Review"] = str(item["value_label_status"])
     # Bring the domain audit's field-level review state into the main E/P
     # catalogue even when a continuous measure has no discrete value labels.
     # This prevents reviewed counts, units, and conditional routes from being

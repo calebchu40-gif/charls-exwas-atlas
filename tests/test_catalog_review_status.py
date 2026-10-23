@@ -229,6 +229,23 @@ class CatalogReviewStatusTests(unittest.TestCase):
                 self.assertIn("self-awareness route retained", row.get("Value.Label.Review", ""))
                 self.assertIn("eligible denominator require validation", row.get("Value.Label.Review", ""))
 
+    def test_2013_to_2018_self_awareness_labels_follow_questionnaire_menu(self):
+        expected = {
+            "2013": {"da008_1_", "da008_2_", "da008_5_", "da008_6_", "da008_11_"},
+            "2015": {"da008_1_", "da008_5_", "da008_11_"},
+            "2018": {"da008_1_", "da008_5_", "da008_11_"},
+        }
+        for wave, codes in expected.items():
+            for code in codes:
+                row = next(
+                    item for item in self.catalog
+                    if item.get("Source.Wave") == wave and item.get("Variable.Name", "").lower() == code
+                )
+                self.assertEqual(row.get("Value.Labels"), "1=Yes; 2=No; 3=Don't know")
+                self.assertIn("frequencies omitted", row.get("Value.Label.Review", ""))
+                self.assertIn("self-awareness route retained", row.get("Value.Label.Review", ""))
+                self.assertNotRegex(row.get("Value.Labels", ""), r"\d[\d,]*\s+\d+\.\d+%?")
+
     def test_disability_onset_years_are_reviewed_as_continuous_time_measures(self):
         rows = [
             row for row in self.catalog

@@ -43137,7 +43137,7 @@
               "label": "Self Aware of Disease",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -43177,7 +43177,7 @@
               "label": "Self Aware of Disease",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -43257,7 +43257,7 @@
               "label": "Self Aware of Disease",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -43327,7 +43327,7 @@
               "label": "Self Aware of Disease",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -43377,7 +43377,7 @@
               "label": "Self Aware of Disease",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -67292,7 +67292,7 @@
               "label": "Self Aware of Disease",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -67332,7 +67332,7 @@
               "label": "Self Aware of Disease",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -67512,7 +67512,7 @@
               "label": "Self Aware of Disease",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92115,7 +92115,7 @@
               "label": "Know Having Emotional Problems",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92155,7 +92155,7 @@
               "label": "Know Having Chronic Lung Disease",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
@@ -92335,7 +92335,7 @@
               "label": "Know Having Hypertension",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
               "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."

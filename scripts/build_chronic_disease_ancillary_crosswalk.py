@@ -67,6 +67,14 @@ def add(rec, domain, construct, subtype, concept_id, label, caveat):
         value_labels = official_wave_labels[wave_code][field_code.rstrip("_")].replace("Dont know", "Don't know")
         value_source = "sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt"
         value_status = "official 2011 Codebook response categories transcribed; frequencies omitted; self-awareness route retained; release coding and eligible denominator require validation"
+    elif construct == "disease awareness" and wave_code in {"2013", "2015", "2018"} and field_code in {
+        "da008_1_", "da008_2_", "da008_5_", "da008_6_", "da008_11_"
+    }:
+        # The questionnaires specify the full response menu even where sparse
+        # Codebook tables show only the categories observed in that release.
+        value_labels = "1=Yes; 2=No; 3=Don't know"
+        value_source = f"sources_official/CHARLS_{wave_code}_Questionnaire_extracted.txt; sources_official/CHARLS_{wave_code}_Codebook_extracted.txt"
+        value_status = "official questionnaire confirms response options; frequencies omitted; self-awareness route retained; release coding and eligible denominator require validation"
     elif construct == "disease awareness" and wave_code == "2020" and field_code in official_2020_awareness_labels:
         value_labels = official_2020_awareness_labels[field_code]
         value_source = "sources_official/CHARLS_2020_Codebook_extracted.txt; sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
