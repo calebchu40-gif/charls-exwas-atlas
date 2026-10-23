@@ -489,7 +489,7 @@ class CatalogReviewStatusTests(unittest.TestCase):
             if "DO NOT ANALYZE" in str(row.get("Review.Flag", ""))
         }
         triage = (ROOT / "audit/do_not_analyze_triage_2026-10-22.md").read_text(encoding="utf-8")
-        self.assertEqual(len(active), 35)
+        self.assertEqual(len(active), 89)
         self.assertIn(f"当前主目录有{len(active)}条唯一波次—字段分析锁定项", triage)
         self.assertNotIn(("2011", "fm033"), active)
 

@@ -62,6 +62,7 @@ c,measurement metadata,prior-interview response-history routing flags,46,35,4
 c,measurement metadata,prior-wave demographic preload and correction route,5,5,2
 c,measurement metadata,prior-wave demographic record verification and response routing,8,4,3
 c,measurement metadata,prior-wave diagnosis-time answer-history flags,14,14,1
+c,measurement metadata,property-sale proceeds use-category selector slot,54,27,2
 c,measurement metadata,province-level pension-source work-unit location metadata,1,1,1
 c,measurement metadata,questionnaire inserted activity-type labels,3,3,1
 c,measurement metadata,resident-pension supplementary repayment currency selector,1,1,1
@@ -75,6 +76,7 @@ c,measurement metadata,unlisted chronic-disease index placeholder,5,5,1
 c,measurement metadata,unresolved questionnaire and Codebook field identity conflict,1,1,1
 c,measurement metadata,unresolved release-field identity/data-type discrepancy,1,1,1
 c,measurement metadata,unstructured other-specify response text,7,7,2
+c,measurement metadata,unstructured other-use response text,4,3,2
 c,measurement metadata,unsupported prior-wave disease-awareness slots,15,15,1
 e,behavior,alcohol use,73,24,5
 e,behavior,physical activity,84,36,5

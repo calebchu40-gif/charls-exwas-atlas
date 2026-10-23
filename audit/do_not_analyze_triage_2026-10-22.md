@@ -1,11 +1,12 @@
-# 当前 DO NOT ANALYZE 项分流清单（2026-10-22）
+# 当前 DO NOT ANALYZE 项分流清单（2026-10-23）
 
-当前主目录有35条唯一波次—字段分析锁定项。下方字段清单含35条现行锁定；FM033仅在说明文字中用于记录其已解除锁定，不计入现行数。此清单不解除任何未关闭的限制；2011 FM019、FM032/FM035、FM039进行受控本地答案存储/路由QA，未导出个人记录或把代码本频数当分析样本量。FM033基于官方问卷、Codebook及受控QA拆出为带未观测选项说明的条件性分类候选。2015 `fn064_w2_1_2_`/`_1_3_`已受控核验路由及字符串存储，年份单位明确，但一个字段有不可数值解析文本，仍锁定。
+当前主目录有89条唯一波次—字段分析锁定项。下方字段清单含89条现行锁定；FM033仅在说明文字中用于记录其已解除锁定，不计入现行数。此清单不解除任何未关闭的限制；2011 FM019、FM032/FM035、FM039进行受控本地答案存储/路由QA，未导出个人记录或把代码本频数当分析样本量。FM033基于官方问卷、Codebook及受控QA拆出为带未观测选项说明的条件性分类候选。2015 `fn064_w2_1_2_`/`_1_3_`已受控核验路由及字符串存储，年份单位明确，但一个字段有不可数值解析文本，仍锁定。
 
 ## 分类与所需证据
 
 | 记录数 | 当前阻断原因 | 关闭阻断所需证据 |
 |---:|---|---|
+| 54 | DO NOT ANALYZE: numeric percentage fields identified, but release identity, selector/category linkage, property-slot routing, special codes, valid range, and denominator require authorized-release QA | 逐波核验获准发行文件与官方数据字典、类别选择器和房产槽对应、路由分母及特殊值；不得将问卷/Codebook摘要代替个体数据QA。详见[`household_sale_proceeds_allocation_mapping_review_2026-10-23.md`](household_sale_proceeds_allocation_mapping_review_2026-10-23.md)。
 | 8 | DO NOT ANALYZE as an amount; preserve threshold categories; controlled QA found FN064 route/selector gaps and FN070 selector gaps; payment form and response sequence remain unresolved | 受控QA已确认类别值与路径/选择器存在上述问题；详见[`pension_2011_fn064_fn070_storage_route_review_2026-10-22.md`](pension_2011_fn064_fn070_storage_route_review_2026-10-22.md)，等待官方发行说明或字段级解释。 |
 | 6 | DO NOT ANALYZE as an amount; controlled QA confirms route but finds unpaired Min/Max endpoints; FN036/FN094 format selectors absent on bracket rows | 受控QA已完成，问题和限值见[`pension_2013_bracket_bounds_local_route_review_2026-10-22.md`](pension_2013_bracket_bounds_local_route_review_2026-10-22.md)；需解决上下界配对及未决格式后才能评估数值用法。 |
 | 5 | DO NOT ANALYZE: selected-option storage is confirmed, but the eligible denominator and route discrepancy remain unresolved; do not infer unselected options as No | 受控本地QA已确认选中值的存储格式；详见[`pension_2011_fm019_checkbox_storage_review_2026-10-22.md`和`pension_2011_fm039_bracket_storage_review_2026-10-22.md`](pension_2011_fm019_checkbox_storage_review_2026-10-22.md)。等待官方解释/发行版路由核实后再解除。 |
@@ -74,6 +75,11 @@ Unit is years by the official Codebook title and both plan routes match the loca
 2018 `da062_1`, 2018 `da062_2`
 
 2018问卷将DA062_1标为年龄、DA062_2标为年份；同波Codebook却将DA062_1标为年份、DA062_2标为年龄。两项均保留检索但锁定分析，DA062选择器仅作为元数据且不展示未解决的映射。详见[`smoking_cessation_2018_age_year_component_conflict_review_2026-10-23.md`](smoking_cessation_2018_age_year_component_conflict_review_2026-10-23.md)。
+
+
+### 54条：DO NOT ANALYZE pending authorized-release identity, selector/category linkage, property-slot routing, special codes, valid range, and denominator QA
+
+2013 `ha026_w2_5a_1_`, 2013 `ha026_w2_5a_25_`, 2013 `ha026_w2_5a_2_`, 2013 `ha026_w2_5b_1_`, 2013 `ha026_w2_5b_25_`, 2013 `ha026_w2_5b_2_`, 2013 `ha026_w2_5c_1_`, 2013 `ha026_w2_5c_25_`, 2013 `ha026_w2_5c_2_`, 2013 `ha026_w2_5d_1_`, 2013 `ha026_w2_5d_25_`, 2013 `ha026_w2_5d_2_`, 2013 `ha026_w2_5e_1_`, 2013 `ha026_w2_5e_25_`, 2013 `ha026_w2_5e_2_`, 2013 `ha026_w2_5f_1_`, 2013 `ha026_w2_5f_25_`, 2013 `ha026_w2_5f_2_`, 2013 `ha026_w2_5g_1_`, 2013 `ha026_w2_5g_25_`, 2013 `ha026_w2_5g_2_`, 2013 `ha026_w2_5h_1_`, 2013 `ha026_w2_5h_25_`, 2013 `ha026_w2_5h_2_`, 2013 `ha026_w2_5j_1_`, 2013 `ha026_w2_5j_25_`, 2013 `ha026_w2_5j_2_`, 2015 `ha026_w2_5a_1_`, 2015 `ha026_w2_5a_25_`, 2015 `ha026_w2_5a_2_`, 2015 `ha026_w2_5b_1_`, 2015 `ha026_w2_5b_25_`, 2015 `ha026_w2_5b_2_`, 2015 `ha026_w2_5c_1_`, 2015 `ha026_w2_5c_25_`, 2015 `ha026_w2_5c_2_`, 2015 `ha026_w2_5d_1_`, 2015 `ha026_w2_5d_25_`, 2015 `ha026_w2_5d_2_`, 2015 `ha026_w2_5e_1_`, 2015 `ha026_w2_5e_25_`, 2015 `ha026_w2_5e_2_`, 2015 `ha026_w2_5f_1_`, 2015 `ha026_w2_5f_25_`, 2015 `ha026_w2_5f_2_`, 2015 `ha026_w2_5g_1_`, 2015 `ha026_w2_5g_25_`, 2015 `ha026_w2_5g_2_`, 2015 `ha026_w2_5h_1_`, 2015 `ha026_w2_5h_25_`, 2015 `ha026_w2_5h_2_`, 2015 `ha026_w2_5j_1_`, 2015 `ha026_w2_5j_25_`, 2015 `ha026_w2_5j_2_`
 
 ## 执行规则
 

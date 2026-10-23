@@ -647,6 +647,24 @@ for wave,code in metadata_keys:
         fields.loc[metadata_rows,"Candidate.Status"]="C metadata; open-ended other-specify text attached to a coded hukou transition reason"
         fields.loc[metadata_rows,"Harmonization.Status"]="unstructured, conditional explanatory text; no standardized category or validated harmonization"
         fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; do not expose respondent text in the public atlas"
+    elif metadata_type == "sale_proceeds_selector_metadata":
+        fields.loc[metadata_rows,"category"]="measurement metadata"
+        fields.loc[metadata_rows,"subcategory"]="property-sale proceeds use-category selector slot"
+        fields.loc[metadata_rows,"Value.Labels"]=""
+        fields.loc[metadata_rows,"Value.Label.Source"]=fields.loc[metadata_rows,"Source.Wave"].map(lambda w:f"sources_official/CHARLS_{w}_Questionnaire_extracted.txt; sources_official/CHARLS_{w}_Codebook_extracted.txt")
+        fields.loc[metadata_rows,"Value.Label.Review"]="questionnaire use-category menu reviewed; option-indexed slot coding and link to percentage amount fields require authorized-release QA"
+        fields.loc[metadata_rows,"Candidate.Status"]="C metadata; option-indexed selector for the use category of property-sale proceeds, not the percentage amount"
+        fields.loc[metadata_rows,"Harmonization.Status"]="selector and numeric percentage are separate source fields; preserve property slot and validate category mapping, routing, and denominator before analysis"
+        fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; do not infer selected categories from blank slots or publish participant values"
+    elif metadata_type == "sale_proceeds_other_use_text":
+        fields.loc[metadata_rows,"category"]="measurement metadata"
+        fields.loc[metadata_rows,"subcategory"]="unstructured other-use response text"
+        fields.loc[metadata_rows,"Value.Labels"]=""
+        fields.loc[metadata_rows,"Value.Label.Source"]=fields.loc[metadata_rows,"Source.Wave"].map(lambda w:f"sources_official/CHARLS_{w}_Questionnaire_extracted.txt; sources_official/CHARLS_{w}_Codebook_extracted.txt")
+        fields.loc[metadata_rows,"Value.Label.Review"]="open-text specification for other use; no standardized category"
+        fields.loc[metadata_rows,"Candidate.Status"]="C metadata; open-ended other-use description attached to property-sale proceeds allocation"
+        fields.loc[metadata_rows,"Harmonization.Status"]="unstructured conditional text; no standardized exposure measure; do not include text in public metadata"
+        fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; never publish respondent-level free text"
     elif metadata_type == "pension_children_roster_selection_metadata":
         fields.loc[metadata_rows,"category"]="measurement metadata"
         fields.loc[metadata_rows,"subcategory"]="pension child-roster payer selection slots"

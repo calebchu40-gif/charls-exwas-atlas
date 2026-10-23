@@ -37,8 +37,8 @@
 
 |审核状态|E/P目录行|
 |---|---:|
-|officially reviewed|2,536|
-|not yet reviewed|1,229|
+|officially reviewed|2,590|
+|not yet reviewed|1,175|
 |official codebook field located; continuous/count or no categorical labels|608|
 |codebook field located; continuous/open response or no categorical labels|339|
 |continuous measure metadata available|214|
@@ -88,14 +88,14 @@
 |continuous measure, not a categorical code; past-month average sleep hours per night; inspect special/missing codes|5|
 |official response categories transcribed; special/missing-code completeness pending|5|
 |selected option-code storage confirmed in authorized local table; route/denominator unresolved|5|
-|连续计数（夜数）；条件提问；极值待核|4|
 |连续计数；条件提问；极值待核|4|
+|连续计数（夜数）；条件提问；极值待核|4|
 |full questionnaire menu transcribed without frequencies; 2011 codebook omits FL014 and later codebook menus may omit unobserved categories; not-currently-working prior-job route|4|
 |local paired endpoint storage and FM011=3 route checked; Codebook extreme upper value retained; do not derive amount|4|
 |official 2011 Codebook response categories transcribed; frequencies omitted; self-awareness route retained; release coding and eligible denominator require validation|3|
 |official questionnaire confirms DA017 option 14=Testicle; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics|3|
-|official wave codebook category verified; selected option only; frequencies excluded|3|
 |official 2020 Codebook response categories transcribed; frequencies omitted; self-awareness route retained; release coding and eligible denominator require validation|3|
+|official wave codebook category verified; selected option only; frequencies excluded|3|
 |official 2020 questionnaire response categories; frequencies omitted; conditional work-history transition route|3|
 |full official questionnaire response menu transcribed without frequencies; current employer firm route|3|
 |continuous monetary amount, not a categorical code; self-reported price for 20 cigarettes at respondent-specific current/pre-quit reference time|3|
@@ -112,8 +112,8 @@
 |official 2018 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|
 |official 2015 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|
 |official questionnaire confirms DA017 option 2=Oral cavity; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics|1|
-|official questionnaire confirms DA017 option 21=Non-Hodgkin lymphoma; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics|1|
 |official questionnaire confirms DA017 option 13=Prostate; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics|1|
+|official questionnaire confirms DA017 option 21=Non-Hodgkin lymphoma; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics|1|
 |问卷类别标签已核；代码本按连续型摘要呈现，发布文件值标签需复核|1|
 |official Codebook response labels complete; frequency counts omitted|1|
 |DO NOT ANALYZE; questionnaire: 1=Family, 2=Health, 3=School, 4=Unemployment/layoff, 5=Other; Codebook labels retained for reference: 1=Family, 2=Health, 4=School, 5=Unemployment/layoff, 6=Other; released-data coding unresolved|1|

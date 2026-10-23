@@ -484,6 +484,11 @@ def main() -> None:
             concept = str(item.get(concept_col, "")).strip()
             if not wave or not code or wave not in WAVES or not concept:
                 continue
+            if (file == "household_sale_proceeds_allocation_crosswalk_v1.csv"
+                    and concept != "house_sale_proceeds_allocation_percent_2013_2015"):
+                # Selector and open-text rows are C-only metadata; only the
+                # numeric percentage components belong in the E candidate catalog.
+                continue
             cat = category(concept, item) if callable(category) else category
             sub = subcategory(concept, item) if callable(subcategory) else subcategory
             module = canonical_module(wave, code, str(item.get(module_col, "")).strip() or "official crosswalk")
@@ -577,6 +582,9 @@ def main() -> None:
     append_concept_crosswalk("personal_income_exposure_mapping_v1.csv", "wave", "code", "concept_id", "source_label", "module",
                              "social determinants", "individual income and wage resources",
                              "e", "mapping_status", ("construct", "unit", "value_labels", "caveat"))
+    append_concept_crosswalk("household_sale_proceeds_allocation_crosswalk_v1.csv", "wave", "code", "concept_id", "source_label", "module",
+                             "social determinants", "income, wealth, and material resources",
+                             "e", "mapping_status", ("reference_period", "unit", "value_label_status", "caveat"))
     append_concept_crosswalk("individual_transfer_income_crosswalk_v1.csv", "wave", "code", "concept_id", "source_label", "module",
                              "social protection", "individual transfer income source and amount",
                              "e", "mapping_status", ("source_item", "construct", "unit", "value_semantics", "caveat"))
@@ -1131,6 +1139,22 @@ def main() -> None:
     out = (out.sort_values("_audit_priority")
            .drop_duplicates(source_identity, keep="first")
            .drop(columns=["_audit_priority"]))
+    sale_path = root / "audit" / "household_sale_proceeds_allocation_crosswalk_v1.csv"
+    if sale_path.exists():
+        sale = pd.read_csv(sale_path, dtype=str, encoding="utf-8-sig").fillna("")
+        sale = sale[sale["concept_id"].eq("house_sale_proceeds_allocation_percent_2013_2015")]
+        sale_meta = {(str(r.wave), str(r.code).lower()): r for r in sale.itertuples(index=False)}
+        for idx in out.index:
+            key = (str(out.at[idx, "Source.Wave"]), str(out.at[idx, "Variable.Name"]).lower())
+            item = sale_meta.get(key)
+            if item is None or str(out.at[idx, "epcf"]).lower() != "e":
+                continue
+            out.at[idx, "Candidate.Status"] = item.mapping_status
+            out.at[idx, "Harmonization.Status"] = f"{item.unit}. {item.caveat}"
+            out.at[idx, "Review.Flag"] = "DO NOT ANALYZE until authorized-release identity, selector/category linkage, property-slot routing, special codes, valid range, and analytic denominator are verified"
+            out.at[idx, "Value.Labels"] = ""
+            out.at[idx, "Value.Label.Source"] = item.value_label_source
+            out.at[idx, "Value.Label.Review"] = item.value_label_status
     # xfgsample selects respondents routed to the 2020 FG pandemic work
     # module. Keep it searchable as routing metadata, never as an exposure;
     # FF005 belongs to the FF path and is not assigned this selector.

@@ -211,10 +211,15 @@ map_direct("household_lending_debt_crosswalk_v1.csv", "e",
            modules=("module",), caveats=("caveat",), semantics=("construct", "value_semantics"),
            value_labels=("value_labels",), units=("unit",), archives=("source_archive",),
            documents=("value_label_source",))
+sale_proceeds = load("household_sale_proceeds_allocation_crosswalk_v1.csv")
+sale_percent_codes = set(sale_proceeds.loc[
+    sale_proceeds["concept_id"].eq("house_sale_proceeds_allocation_percent_2013_2015"), "code"
+].str.lower())
 map_direct("household_sale_proceeds_allocation_crosswalk_v1.csv", "e",
            statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
            modules=("module",), caveats=("caveat",), semantics=("reference_period", "unit"),
-           value_labels=("value_labels",), archives=("source_archive",), documents=("value_label_source",))
+           value_labels=("value_labels",), archives=("source_archive",), documents=("value_label_source",),
+           include_codes=sale_percent_codes)
 map_direct("health_anchoring_vignette_metadata_crosswalk_v1.csv", "c",
            statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
            modules=("module",), caveats=("caveat",), semantics=("value_semantics",),

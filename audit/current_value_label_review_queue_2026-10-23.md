@@ -6,7 +6,7 @@ This snapshot reads only the public, generated metadata in `site-prototype/dist/
 |---|---:|---:|
 | E exposure candidates | 4,723 | 456 |
 | P phenotype candidates | 2,067 | 0 |
-| C covariate/measurement metadata | 921 | 329 |
+| C covariate/measurement metadata | 979 | 329 |
 
 The current E queue divides into four domains: social determinants 390, housing and built environment 0, food and household environment 0, and social protection 66. The largest subgroups are income/wealth/material resources (140), social relations and care (88), dwelling conditions/property (51), household expenditure (53), transfer income (50), and individual income/wages (45). These are field rows, not independent concepts or tests.
 
