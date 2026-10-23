@@ -3,7 +3,7 @@
 更新：2026-10-23。由`scripts/summarize_value_label_coverage.py`从当前字段目录和覆盖CSV自动生成。
 
 - E/P字段—角色—类别目录行：6,633；不同波次—字段码：6,552。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
-- 有非空官方/已审标签文本的E/P目录行：3,107；不同波次—字段码：3,081。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
+- 有非空官方/已审标签文本的E/P目录行：3,116；不同波次—字段码：3,090。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
 - 明确标为`conflict`的E/P字段码：0；详情按主目录波次和变量码检索。
 - 问卷/Codebook编码差异尚未调和并锁定`DO NOT ANALYZE`的E/P字段：2011 `fb010`。此项独立于上面的精确`conflict`标签计数。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -12,7 +12,7 @@
 
 |角色|网站类别|字段—角色—类别行（非互斥）|有标签文本行|子类别数|
 |---|---|---:|---:|---:|
-|e|behavior|243|149|4|
+|e|behavior|243|158|4|
 |e|community context|187|59|1|
 |e|early-life and family socioeconomic context|3|3|1|
 |e|environmental perception|1|1|1|
@@ -36,8 +36,8 @@
 
 |审核状态|E/P目录行|
 |---|---:|
-|officially reviewed|2,527|
-|not yet reviewed|1,799|
+|officially reviewed|2,536|
+|not yet reviewed|1,790|
 |official codebook field located; continuous/count or no categorical labels|608|
 |continuous measure metadata available|214|
 |official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories|200|

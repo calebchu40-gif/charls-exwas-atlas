@@ -74,7 +74,7 @@ c,measurement metadata,unresolved release-field identity/data-type discrepancy,1
 c,measurement metadata,unstructured other-specify response text,7,7,0
 c,measurement metadata,unsupported prior-wave disease-awareness slots,15,15,0
 e,behavior,alcohol use,73,73,41
-e,behavior,physical activity,84,84,75
+e,behavior,physical activity,84,84,84
 e,behavior,sleep,25,25,7
 e,behavior,smoking and tobacco,61,61,26
 e,community context,"environment, infrastructure, and services",187,187,59

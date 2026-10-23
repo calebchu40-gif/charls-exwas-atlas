@@ -52631,7 +52631,7 @@
               "label": "What's The Purpose for Doing Activities",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Job Demands; 2=Entertainments; 3=Exercise; 4=Other",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
               "caveat": "自动概念目录中的逐波字段候选；工作、交通或休闲等目的题可能存在类别变更；可作描述变量，不应混入活动剂量。"
@@ -52641,7 +52641,7 @@
               "label": "What's The Purpose for Doing Activities",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Job Demands; 2=Entertainments; 3=Exercise; 4=Other",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
               "caveat": "自动概念目录中的逐波字段候选；工作、交通或休闲等目的题可能存在类别变更；可作描述变量，不应混入活动剂量。"
@@ -52651,7 +52651,7 @@
               "label": "What's The Purpose for Doing Activities",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Job Demands; 2=Entertainments; 3=Exercise; 4=Other",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
               "caveat": "自动概念目录中的逐波字段候选；工作、交通或休闲等目的题可能存在类别变更；可作描述变量，不应混入活动剂量。"
@@ -75785,7 +75785,7 @@
               "label": "Purpose for Intensive Physical Activity",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Job Demands; 2=Entertainment; 3=Exercise; 4=Other",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
               "caveat": "自动概念目录中的逐波字段候选；工作、交通或休闲等目的题可能存在类别变更；可作描述变量，不应混入活动剂量。"
@@ -75795,7 +75795,7 @@
               "label": "Purpose for Moderate Physical Activity",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Job Demands; 2=Entertainment; 3=Exercise; 4=Other",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
               "caveat": "自动概念目录中的逐波字段候选；工作、交通或休闲等目的题可能存在类别变更；可作描述变量，不应混入活动剂量。"
@@ -75805,7 +75805,7 @@
               "label": "Purpose for Light Physical Activity",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Job Demands; 2=Entertainment; 3=Exercise; 4=Other",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
               "caveat": "自动概念目录中的逐波字段候选；工作、交通或休闲等目的题可能存在类别变更；可作描述变量，不应混入活动剂量。"
@@ -96313,7 +96313,7 @@
               "label": "Purpose for Intensive Physical Activity",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Job Demands; 2=Entertainment; 3=Exercise; 4=Others, Please Specify",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
               "caveat": "自动概念目录中的逐波字段候选；工作、交通或休闲等目的题可能存在类别变更；可作描述变量，不应混入活动剂量。"
@@ -96323,7 +96323,7 @@
               "label": "Purpose for Moderate Physical Activity",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Job Demands; 2=Entertainment; 3=Exercise; 4=Others, Please Specify",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
               "caveat": "自动概念目录中的逐波字段候选；工作、交通或休闲等目的题可能存在类别变更；可作描述变量，不应混入活动剂量。"
@@ -96333,7 +96333,7 @@
               "label": "Purpose for Light Physical Activity",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Job Demands; 2=Entertainment; 3=Exercise; 4=Others, Please Specify",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
               "caveat": "自动概念目录中的逐波字段候选；工作、交通或休闲等目的题可能存在类别变更；可作描述变量，不应混入活动剂量。"

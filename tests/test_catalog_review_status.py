@@ -35,6 +35,26 @@ class CatalogReviewStatusTests(unittest.TestCase):
             self.assertTrue(all(row.get("Value.Label.Review", "").startswith(status) for row in rows), (wave, code))
             self.assertTrue(all(not row.get("Value.Labels", "") for row in rows), (wave, code))
 
+    def test_physical_activity_purpose_labels_are_wave_specific_and_frequency_free(self):
+        examples = {
+            ("2015", code): "1=Job Demands; 2=Entertainments; 3=Exercise; 4=Other"
+            for code in ("da051_1_1_", "da051_1_2_", "da051_1_3_")
+        }
+        examples.update({
+            ("2018", code): "1=Job Demands; 2=Entertainment; 3=Exercise; 4=Other"
+            for code in ("da051_1_1_", "da051_1_2_", "da051_1_3_")
+        })
+        examples.update({
+            ("2020", code): "1=Job Demands; 2=Entertainment; 3=Exercise; 4=Others, Please Specify"
+            for code in ("da037_1_", "da037_2_", "da037_3_")
+        })
+        for (wave, code), labels in examples.items():
+            rows = [row for row in self.catalog if row.get("Source.Wave") == wave and row.get("Variable.Name", "").lower() == code]
+            self.assertTrue(rows, (wave, code))
+            self.assertTrue(all(row.get("Value.Labels") == labels for row in rows), (wave, code))
+            self.assertTrue(all(row.get("Value.Label.Review") == "officially reviewed" for row in rows), (wave, code))
+            self.assertTrue(all("frequency" not in row.get("Value.Labels", "").lower() for row in rows))
+
     def test_located_pension_codebook_fields_are_not_generic_pending_labels(self):
         examples = [
             ("2011", "fn004"),
