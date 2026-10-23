@@ -135,3 +135,10 @@ This file records project-level changes that affect reproducibility, methods, da
 
 - Published source-reviewed BB007–BB010 residential-mobility routes and durations for 2011/2013, including four previously missing 2011 duration fields. The review preserves the distinct BB007/BB009 branches, conditional missingness, 2011 wording mismatch, and duration units.
 - Verified commit `41bd6a3` in GitHub Pages Deploy #93 (`40018980973`) and confirmed the cache-busted public C catalogue contains 986 rows and the reviewed records. This is metadata only; formal E/P concepts, mappings, and association models remain unchanged.
+
+
+### 2026-10-24 — objective measurement protocol metadata
+
+- Added the public 2011 physical-examination manual to official-source materials. Reviewed 2011 pre-blood-pressure behavior QA017/LI875 and chair-height QH006/LI007, leaving the unresolved chair-field identity on hold.
+- Clarified 2013 QH006 as chair height in centimeters and separated 2015 QH006 (chair type) from conditional QH006_1 (other-chair height). These remain C measurement metadata and do not enter E/P association pairs.
+- Full catalogue rebuild and all 200 Python tests passed; site C catalogue now has 986 rows. See `audit/objective_measurement_protocol_source_review_2011_2015_2026-10-24.md`.

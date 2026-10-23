@@ -121,6 +121,9 @@ def main() -> None:
             return None
         return module
     outputs: list[dict[str, str]] = []
+    protocol_path = Path(__file__).resolve().parents[1] / "audit" / "measurement_protocol_crosswalk_v1.csv"
+    protocol_rows = pd.read_csv(protocol_path, dtype=str, encoding="utf-8-sig").fillna("").to_dict(orient="records")
+    protocol_by_key = {(x["wave"], x["code"].lower()): x for x in protocol_rows}
     for row in source.itertuples(index=False):
         var = row.variable.strip()
         label = row.variable_label.strip()
@@ -129,10 +132,9 @@ def main() -> None:
             ("2011", "qh006"), ("2013", "qh006"),
             ("2015", "qh006"), ("2015", "qh006_1"),
         }:
-            # QH006 is chair/setup information for repeated chair stands,
-            # despite legacy 2011/2013 codebook labels that say only Height.
-            # The 2015 questionnaire explicitly records chair height; the
-            # personal standing-height outcome is QI002.
+            protocol = protocol_by_key.get((str(row.wave), var.lower()))
+            if protocol is None:
+                raise ValueError(f"Missing audited chair-setup protocol metadata for {row.wave}/{var}")
             outputs.append({
                 "Variable.Name": var, "Variable.Description": label,
                 "Data.File.Name": module, "Data.File.Description": module.replace("_", " "),
@@ -141,9 +143,12 @@ def main() -> None:
                 "epcf": "c", "category": "measurement metadata",
                 "subcategory": "chair setup for repeated chair-stand test",
                 "Source.Wave": row.wave, "Source.Archive": row.source,
-                "Candidate.Status": "official codebook field; 2015 biomarker questionnaire identifies QH006 as chair-height/setup information",
-                "Harmonization.Status": "2011/2013 codebook reports continuous values around 42 cm; 2015 records standard-chair versus other-chair and QH006_1 height. Individual height is QI002.",
-                "Review.Flag": "protocol/setup metadata, not a respondent phenotype or environmental exposure; retain only for measurement-quality or sensitivity review",
+                "Candidate.Status": protocol["mapping_status"],
+                "Harmonization.Status": f"{protocol['value_semantics']} {protocol['caveat']}",
+                "Review.Flag": protocol["caveat"],
+                "Value.Labels": protocol["value_labels"],
+                "Value.Label.Source": protocol["source_document"],
+                "Value.Label.Review": protocol["mapping_status"],
             })
             continue
         if (not var or var.lower() in ID_VARS or label.lower().endswith(" id") or ADMIN_LABEL.search(label) or ROSTER_NOISE.search(f"{label} {var}") or re.search(r"family_information|family_transfer", module, re.I)):

@@ -1,0 +1,719 @@
+
+中国健康与养老追踪调查
+体检问卷
+The physical examination questionnaire of CHARLS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+国家发展研究院
+National School of Development of Peking University
+
+2011年6月
+June of 2011
+
+
+
+目 录
+一、	BLOOD PRESSURE  血压	4
+　(一)	EQUIPMENT NEEDED 所需设备	4
+　(二)	BLOOD PRESSURE  血压测量	5
+二、	BREATHING 呼吸功能	8
+　(一)	EQUIPMENT NEEDED 所需设备	8
+　(二)	BREATHING  MEASUREMENT 呼吸功能测量	8
+三、	HAND STRENGTH 握力	11
+　(一)	EQUIPMENT NEEDED 所需设备	11
+　(二)	HAND STRENGTH 握力测量	11
+四、	BALANCE TESTS平衡能力	14
+　?	SEMI-TANDEM 双脚半前后站立	15
+　?	FULL-TANDEM 双脚前后成一直线站立	18
+　?	SIDE-BY-SIDE双脚并拢站立测试	21
+五、	WALKING SPEED步行速度测试	23
+　(一)	EQUIPMENT NEEDED 所需设备	23
+　(二)	WALKING SPEED步行速度测试	23
+六、	Repeated Chair Stands 重复从椅子站起的时间测试	28
+　(一)	EQUIPMENT NEEDED 所需设备	28
+　(二)	Repeated Chair Stands Tests 重复从椅子站起的时间测试	28
+七、	STANDING HEIGHT  身高测量	30
+　(一)	EQUIPMENT NEEDED 所需设备	30
+　(二)	STANDING HEIGHT  身高测量	31
+八、	UPPER ARM LENGTH 手臂长度测量	33
+　(一)	EQUIPMENT NEEDED 所需设备	33
+　(二)	UPPER ARM LENGTH MEASURMENT上臂长度测量	34
+九、	KNEE HEIGHT 膝高测量	36
+　(一)	EQUIPMENT NEEDED 所需设备	36
+　（二）KNEE HEIGHT 膝高测量.........................................................................	37
+十、	WEIGHT体重测量	39
+　(一)	EQUIPMENT NEEDED 所需设备	39
+　(二)	体重测量WEIGHT	39
+十一、	WAIST CIRCUMFERENCE 腰围测量	41
+　(一)	EQUIPMENT NEEDED 所需设备	41
+　(二)	腰围测量WAIST CIRCUMFERENCE	42
+
+
+
+一、 BLOOD PRESSURE  血压
+(一) EQUIPMENT NEEDED 所需设备
+Equipment needed: Omron HEM-7200 Monitor, Batteries, Stopwatch
+所需设备：欧姆龙HEM-7200血压计，电池，秒表(二) BLOOD PRESSURE  血压测量
+"Now let's talk about the first activity. I'd like to measure your blood pressure using this monitor and cuff which I will secure around your left arm. I would like to take three blood pressure measures. I will ask you to relax and remain seated and quiet during the measurements. First, I will place the cuff on your left arm. Once the cuff is placed appropriately on your arm and we are ready to begin, I'll ask you to lay your arm on a flat surface palm facing up so that the center of your upper arm is at the same height as your heart. I will then press the Start button. The cuff will inflate and deflate automatically. After we have completed all three measures, I will give you your results.""现在我们来进行第一项测试，我将用血压计为您测量血压，共量3次。测量过程中请您坐下、放松并保持安静。首先，我会将袖带缠绕在您左臂上，袖带固定好后开始测量，请您将手臂放在平面上，手心朝上，使上臂和心脏同一高度，然后我会按"开始"按钮，袖带将自动充气和放气，完成3次测量后，我会告诉您测量结果。"
+IWER: Demonstrate the measurement  访问员: 演示测量方法
+* Insert arm cuff plug into jack on the side of the monitor, place the cuff on your left arm approximately 1/2above the elbow. Position the arrows over the brachial artery on the inside of the arm. Press the START/STOP button to show how the cuff with inflate automatically. 将袖带插头插入血压计一侧的插孔，袖带缠绕于左上臂肘窝上方约1 -2 cm 处，空气管下面的箭头应位于手臂内侧的中心处，按"开始/停止"按钮，演示袖带如何自动充气。
+K001 "Do you have a rash, a cast, edema (swelling) in the arm, open sores or wounds, or a significant bruise where the blood pressure cuff will be in contact?" 
+"您手臂上有皮疹、肿胀、或在血压计袖带接触的地方有开放性溃疡或伤口、或严重瘀伤吗？"
+IWER: Circle one 访问员：选择1项
+    1......YES → do not complete this measure and answer question in box below 是 → 未完成这次测量并回答下面方框中的问题
+　　5......NO → continue  否 → 继续
+K002"Do you understand the directions for this measurement and agree to take it?" "您能明白测量方法并愿意参加这次测量吗？"
+IWER: Circle one 访问员：选择1项
+    1........YES → continue 是 → 继续
+　　5........NO → do not complete this measure and answer question in box below 否 →未完成这项测量，请回答下面方框中的问题。 
+ [Procedure: If K001=1 or K002=5, then go to LI855_1;If K001=5 andK002=1,then go to LI857-LI875.程序：如果K001=1或K002=5，请跳至LI855_1；如果K001=5 且 K002=1，请跳至LI857-LI875]
+（LI845）BASED ON RESPONSES TO QUESTIONS ABOVE 根据上述问题的回答情况
+(LI855_1) IWER: Why didn't R complete the blood pressure measurement? (Circle all that apply) 访问员：为什么受试者未能完成血压测量？（可多选）
+1........ R felt it would not be safe  受试者认为不安全
+2........ IWER felt it would not be safe 访问员认为不安全
+3........ R refused or was not willing to complete the test受试者拒绝或不愿意测量
+4........ R tried but was unable to complete test 受试者尝试了，但无法完成测量
+5........ R did not understand the instructions 受试者无法明白测量的指令
+6........ R had a rash, a cast, edema, etc. on arm; other health reason 受试者手臂有皮疹、水肿，或其他健康原因
+7........ No suitable space 没有合适的地方进行测试
+8........ Problem with equipment or supplies 测量测量仪器或设备有问题
+97....... Other (Specify) 其他（请注明）：                               
+→Go To Next Measurement 进行下一项体检
+GO TO K004 请跳至K004
+LI857-LI875：
+IWER: Record measurements in chart: (Enter '993' in systolic reading if R tried but was unable to do it. Enter '999' if R chose not to do it.)  访员注意：在下表中记录测量值：（如果受试者尝试了但未能完成测量，请在收缩压读栏中填入"993"，如果受试者拒绝测量，则填入"999"） 
+Measurement
+测量Time of Reading
+测量时间Systolic Reading收缩压Diastolic Reading舒张压Pulse
+脉搏1(LI857)__ __:__ __(LI859)   60..300,993,999mmHg(LI860)   30..150mmHg(LI861)  25..150P2(LI862)__ __:__ __ (LI864)   60..300,993,999mmHg(LI865)   30..150mmHg(LI866)  25..150P3(LI867)__ __:__ __(LI869)   60..300,993,999mmHg(LI870)   30..150mmHg(LI871)  25..150P[Procedure:If LI859=993 or 999, then go to LI855_1.
+程序：如果LI859=993或999，跳至LI855-1。]
+（LI872）IWER: Which arm was used to conduct the measurements? (Circle one) 访问员：测量了哪只手臂的血压？（选择1项）
+   1........ Left arm  左臂
+   2........ Right arm 右臂
+（LI873）IWER: How compliant was R during this measurement? (Circle one) 访问员：受试者在测量的过程中依从性如何？（选择1项） 
+1........ R was fully compliant 完全依从
+2........ R was prevented from fully complying due to illness, pain, or other symptoms or discomforts 由于疾病，疼痛或其它症状或不适而不能完全依从
+   3........ R was not fully compliant, but no obvious reason for this 不能完全依从，但没有明显的原因
+（LI874）IWER: What was R's position for this test? (Circle one) 访问员：测量中受试者采用什么体位？（选择1项）
+   1........ Standing 站着
+   2........ Sitting 坐着
+   3........ Lying down 躺着
+（LI875）IWER: Did the R smoke, exercise, consume alcohol or food within the 30 minutes prior to completing the blood pressure test? (Circle one)访问员：在进行测量之前30分钟内，受试者是否吸烟、运动、进食和饮酒？（选择1项）
+   1........ Yes 是
+   5........ No 否
+   8........ Don't Know 不知道
+二、 BREATHING 呼吸功能
+(一) EQUIPMENT NEEDED 所需设备
+Equipment needed: Peak flow meter, Disposable mouthpiece(s) packaged in plastic bag 
+所需设备：肺峰流速仪，有塑料包装的一次性吹嘴(二) BREATHING  MEASUREMENT 呼吸功能测量
+"Next I'm going to ask you to perform a simple measurement that will measure how fast you can expel air from your lungs. It is important that you blow as hard and as fast as you can. I would like you to perform the measurement three times. When we are ready to begin, I'll ask you to stand up. Take as deep a breath as possible. Open your mouth and close your lips firmly around the outside of the
+mouthpiece, and then blow as hard and as fast as you can into the mouthpiece. Like this..." "接下来我们将进行一个简单的测量，测试您排出肺部空气的速度。关键是您要尽全力并以最快速度吹气，共测量3次。测量开始时，请您站立，尽全力深吸气后，屏住气并用嘴完全含住吹嘴，避免漏气，尽全力并以最快速度向吹嘴吹气。像这样..."
+IWER: Demonstrate the measurement. 访问员：演示测量方法
+* Stand up, take a deep breath and then place lips around the outside of the mouthpiece. Blow as hard and as fast as you can. 站立，深吸气后将嘴对准吹嘴，尽全力并以最快速度吹气。
+K004 "Do you understand the directions for this measurement and agree to take it?""您能明白测量方法并愿意参加这次测量吗？"
+IWER: Circle one 访问员：选择1项
+    1........YES → continue 是 → 继续
+　　5........NO → do not complete this measure and answer question in box below 否 → 未能完成这次测量,请回答下面方框中的问题
+ [Procedure: If K004=5,then go to LI855_2;If K001=1,then go to LI807-LI811. 程序：如果K004=5，请跳至LI855_2；如果K004=1，请跳至LI807-LI811。]
+（LI845）BASED ON RESPONSES TO QUESTIONS ABOVE 根据上面问题的回答情况
+(LI855_2) IWER: Why didn't R complete the breathing test? (Circle all that apply)访问员：为什么受试者没有完成呼吸功能测定？（可多选）
+1........ R felt it would not be safe 受试者认为测量不安全
+2........ IWER felt it would not be safe 访问员认为测量不安全
+3........ R refused or was not willing to complete the test 受试者拒绝或不愿意完成测量
+4........ R tried but was unable to complete test 受试者尝试但未能完成测量
+5........ R did not understand the instructions 受试者不明白测量方法
+6........ R could not participate due to health reasons 受试者由于健康原因不能测量
+7........ No suitable space 没有合适的地方进行测量
+8........ Problem with equipment or supplies 测量仪器或测量仪器或设备有问题
+97....... Other (Specify) 其他（请注明）：                               
+→Go To Next Measurement 进行下一项体检
+Go to K006 请跳至K006
+LI807-LI811：
+IWER: Record measurements in chart: (Record 30 if less than 60; Record 890 if past last tick mark; Record 993 if R tried but was unable; or Record 999 if R chose not to do it.) 访问员：在下表中记录测量：（如果结果小于60则记录"30"，如果结果超过最大刻度标记则记录"890"，如果受试者尝试了,但未能完成测量,记录为"993"，如果受试者选择不做这项测量记录"999"）
+Measurement#
+测量Measurement Reading
+测量读数130..800，890，993，999 (LI807)230..800，890，993，999 (LI808) 330..800，890，993，999 (LI809)[If LI807 =993 or 999,then go to LI855_2.
+如果LI807=993或999，回答问题LI855_2.]
+（LI810）IWER: How much effort did R give to this test? (Circle one)访问员：受试者在测试中尽了多大的努力？（选择1项）
+1............. R gave full effort 受试者尽了最大努力
+2............. R was prevented from giving full effort by illness, pain, or other symptoms or discomforts 受试者由于生病、疼痛或其他症状或不适而没有尽全力
+3............. R did not appear to give full effort, but no obvious reason for this 受试者似乎没有尽全力，但没有明显的原因
+（LI811）IWER: What was R's position for this test? (Circle one) 访问员：受试者测量中的体位？（选择1项）
+1............. Standing 站立
+2............. Sitting 坐着
+3............. Lying down 躺着
+三、 HAND STRENGTH 握力
+(一) EQUIPMENT NEEDED 所需设备
+Equipment needed:  Dynamometer.
+所需设备：握力计(二) HAND STRENGTH 握力测量
+"Now I would like to assess the strength of your hand in a gripping action. I will ask you to squeeze this handle as hard as you can, just for a couple of seconds and then let go. I will take alternately two measurements from your right and your left hands." "现在我将测试您手部的最大握力，请你竭尽全力紧握握力计，保持几秒钟，然后放开，我将分别测量您的左右手。"
+IWER: Demonstrate the measurement 访问员：演示测量方法
+*  Stand, hold the dynamometer at a right angle and squeeze the handle for a few seconds.站立，抓住握力计，肘部呈直角，并用力握紧保持几秒钟。
+K006 "Before we begin, I'd like to make sure it is safe for you to do this measurement. Have you had surgery or experienced any swelling, inflammation, severe pain, or injury in one or both hands within the last 6 months?""在测试之前，我要确保您能安全地做这项测试，在过去的6个月里，您的一只手或双手有没有做过手术或者发生任何肿胀、发炎、严重疼痛或受伤？"
+IWER: Circle one 访问员：选择1项
+　　1 ....... YES → continue with the next question 是 → 没有完成这项测量并回答以下问题
+　　5 ....... NO → skip the next question  否→ Go to K008 跳至K008
+K007"In which hand (have you had surgery or experienced any swelling, inflammation, severe pain, or injury in the last 6 months)?"  "哪只手（在过去的6个月，做过手术或肿胀、发炎、严重疼痛或受伤）？"
+IWER: Circle one 访问员：选择1项
+　　1 ....... BOTH HANDS → do not complete this measure and answer question in box below 双手 → 没有完成这次测量并回答下面方框中的问题
+2 ....... LEFT HAND ONLY → continue but do not perform measurement on left hand 仅左手 → 继续但不测量左手
+3 ....... RIGHT HAND ONLY → continue but do not perform measurement on right hand 仅右手 → 继续但不测量右手
+K008"Do you understand the directions for this measurement and agree to take it?" "您能明白测量方法并愿意参加这次测量吗？"
+IWER: Circle one 访问员：选择1项
+    1........YES → continue 是 → 继续
+　　5........NO → do not complete this measure and answer question in box below 否 → 没有完成这次测量并回答下面方框中的问题
+ [(双手受伤)：If K007=1 or K008=5 ,then go to LI855_3;
+(没有受伤)：If K006=5 and K008=1,then go to LI815;
+(左手受伤)：If K006=1 and K007=2 and K008=1,then go to LI851 and LI853,skip LI816 and LI852
+(右手受伤)：If K006=1 and K007=3 and K008=1,then go to LI816 and LI852, skip LI851 and LI853
+（LI845） BASED ON RESPONSES TO QUESTIONS ABOVE 根据对上面问题的回答情况
+(LI855_3) IWER: Why didn't R complete the hand strength test? (Circle all that apply)访问员：为什么受试者没有完成握力测量？
+   1........ R felt it would not be safe 受试者认为测量不安全
+   2........ IWER felt it would not be safe 访问员认为测量不安全
+   3........ R refused or was not willing to complete the test 受试者拒绝或不愿意完成测量
+   4........ R tried but was unable to complete test 受试者尝试但未能完成测量
+   5........ R did not understand the instructions 受试者不明白测量方法
+   6........ R could not participate due to surgery, swelling, etc.; other health reason 受试者由于手术、肿胀或其他健康原因不能测量
+   7........ No suitable space 没有合适的地方进行测量
+   8........ Problem with equipment or supplies 测量仪器或测量仪器或设备有问题
+   97....... Other (Specify) 其他（请注明）：                               
+→Go To Next Measurement 进行下一项体检
+GO TO K010 请跳至K010
+（LI815）"Which is your dominant hand?"  "您习惯用那只手？"
+IWER: Circle one 访问员：选择1项
+1 ......... Right hand 右手
+2 ......... Left hand 左手
+3 ......... Both hands equally dominant 两只手差不多
+（LI816、LI851-LI853）IWER: Record measurements in chart: 访问员：在下表中记录测量结果：
+Measurement #
+测量Left Hand 左手Right Hand 右手1(LI816) __ __ __.__ (0,100],993,999kg(LI851)  __ __ __.__
+(0,100],993,999kg2(LI852) __ __ __.__ (0,100],993,999kg(LI853)  __ __ __.__
+(0,100],993,999kgIWER: Record 993 if R tried but was unable. Record 999 if R chose not to do it. 
+访问员：如果受试者尝试但未能完成测量记录993，如果受试者选择不做这项测量，记录999。
+[IF LI816 or LI851 =993 or 999,then go to LI855_3.
+如果LI816或LI851=993或999，回答问题LI855_3.]
+（LI817）IWER: How much effort did R give to this test? (Circle one) 访问员：受试者在测试中尽了多大的努力？（选择1项）
+1............. R gave full effort 受试者尽了最大努力
+2............. R was prevented from giving full effort by illness, pain, or other symptoms or discomforts受试者由于生病、疼痛或其他症状或不适而没有尽全力
+3............. R did not appear to give full effort, but no obvious reason for this 受试者没有尽全力，但没有明显的原因
+（LI818）IWER: What was R's position for this test? (Circle one) 访问员：受试者
+测量时的体位？（选择1项）
+1............. Standing 站立
+2............. Sitting 坐着
+3............. Lying down 躺着
+　　（LI819）IWER: Did the R rest their arm on a support while performing the test? (Circle one) 访问员：在测试过程中，受试者的手臂是否得到休息？（选择1项）
+　　1............. Yes 有
+　　5............. No 无
+ 
+
+四、 BALANCE TESTS平衡能力
+
+ "I would now like you to try to stand in different positions. I will first describe and show each position to you. Then I'd like you to try to do it. If you cannot do particular position, or if you feel it would be unsafe to try to do it, tell me and we'll move on to the next one. Let me emphasize that I do not want you to try to do any activity that you feel might be unsafe." "现在我希望您能努力以这几个姿势站好。首先我会向你描述一下每种姿势，然后希望您能尽力去做。如果您不能完成某种姿势，或者您感到那样做会很不安全，可以告诉我。我们可以继续下一种姿势。需要强调一点，我不希望您去做任何您感到不安全的动作。"
+
+* SEMI-TANDEM 双脚半前后站立
+(一) EQUIPMENT NEEDED 所需设备
+Equipment needed: Stopwatch, Show Card
+所需设备：秒表，显示卡
+(二) SEMI-TANDEM 双脚半前后站立
+"For the first one, I want you to try to stand with the side of the heel of one foot touching the big toe of the other foot for about 10 seconds. You may put either foot in front, whichever is more comfortable for you. Like this...""首先，我想让您试一下一只脚的脚跟侧面触及另外一只脚的大脚趾站着并持续10秒钟。只要您感到更舒服,你可以把任何一只脚放到前面。就像这样......"
+
+K010"Before we begin, do you have any problems from recent surgery, injury or other health conditions that might prevent you from standing up from a chair and balancing?" "在我们开始前，请问最近是否有手术、损伤或其他疾病影响您从椅子上站起来并保持平衡？"
+IWER: Circle one 访问者：选择1项
+  1 ....... YES→ discuss with him/her whether s/he should attempt each measurement given his/her physical problems after describing each measurement. Do not assume a respondent is too physically limited to attempt a measurement without discussing it with him/her. 是→ 描述完每项测试后，要与他/她讨论，考虑到身体状况，他/她是否希望尝试每个测试。不要假定受访者身体状况不能完成测试，而不去与他们讨论。→  Go to K011 请跳至K011
+  5 ....... NO 否   →  Go to K011 请跳至K011
+
+K011"Do you understand the directions for this measurement and agree to take it?"  "您能明白测量方法并愿意参加这次测量吗？"
+IWER: Circle one 访问员：选择1项
+    1........YES → continue 是 → 继续
+　　5........NO→ do not complete this measure and answer question in box below否→未完成这项测量，请回答下面方框中的问题。
+[ Procedure: IF K011=1,then go to LI879;IF K011=5,then go to LI877
+程序：如果K011=1，跳至LI879；如果K011=5，跳至LI877]
+（L1876）BASED ON RESPONSES TO QUESTIONS ABOVE 根据上述问题的回答情况
+（LI877）IWER: Why didn't R complete the semi-tandem stand? (Circle all that apply) 访问员：为什么受访者没有完成双脚半前后站立测试？（访问员：选择适用的选项）
+ 1 .............. R felt it would not be safe 受试者认为不安全的
+ 2 .............. IWER felt it would not be safe访问员认为不安全 
+ 3 .............. R refused or was not willing to complete the test拒绝或不愿测量 
+ 4 .............. R tried but was unable to complete test受试者尝试了，但无法完成测量 
+ 5 .............. R did not understand the instructions受试者无法明白测量的指令
+ 6........... R had surgery, injury or other health condition that prevented R from standing 受试者有过手术、外伤或其他健康问题影响其站立  
+ 7.............. No suitable space 没有合适的地方进行测量 
+ 8 ............. Problem with equipment or supplies 测量仪器或设备有问题
+97 .... ... .. Other (Specify): 其他（请注明）：____________________________
+→Go To Side-by-Side  转到双脚并拢站立测试
+ GO TO the procedure before K015 请跳至K015前的程序控制
+Answer the questions in the box below. If the participant is unable to hold the position for 10 seconds, record the time in seconds to two decimal places in the box below.
+回答以下方框中的问题。如果受试者不能保持这一姿势10秒钟，请在以下框中记录秒数（保留2位小数）。
+回答以下方框中的问题。如果受试者不能保持这一姿势10秒钟，请在以下框中记录秒数（保留2位小数）。
+（LI879）：IWER: Did R hold semi-tandem stand for a full 10 seconds without stepping out of place or grabbing hold of anything? (Circle one) 是否没有移动或抓住任何东西的情况下保持双脚半前后站持续10秒钟？（访问员：选择1项）
+1... ........YES是
+5.......... .NO 否→Enter amount of time R held stand in seconds to two decimal places: 记录保持站立的秒数（保留两位小数）(LI880) ___  ___ . ___ ___0..10 Sec秒
+993........R tried but was unable 受试者尝试了，但没有成功
+999..... ...R chose not to do it 受试者选择不做
+[IF LI879=993 or 999，then go to LI877.
+如果LI879=993或999，回答问题LI877。]
+（LI881）IWER:Did R use any compensatory movements of his/her trunk, arms or legs to steady him/herself during semi-tandem stand? (Circle one) 访问员：在测试过程中，受试者是否使用躯干、手臂或腿来保持平衡？（单选）
+1... .........YES 是
+5... .........NO 否
+8............ Don't Know 不知道IWER：
+- If R was able to complete the semi-tandem for the full 10 seconds without stepping out of place or grabbing a hold of anything _ Go To Full-Tandem on page 11.
+访问员：
+如果受试者在没有移动或抓住任何东西的情况下，能够双脚半前后站立持续10秒钟，进行双脚前后成一直线站立测试。
+- If R was not able to complete the semi-tandem for the full 10 seconds without stepping out of place or grabbing a hold of anything → Go To Side-By-Side..
+如果受试者在没有移动或抓住任何东西的情况下，不能完成双脚半前后站测试并保持10秒钟，则进行双脚并拢站立测试。
+
+
+* FULL-TANDEM 双脚前后成一直线站立
+(一) EQUIPMENT NEEDED 所需设备   
+Equipment needed: Stopwatch, Show Card
+所需设备：秒表，显示卡(二) FULL-TANDEM 双脚前后成一直线站立
+[Procedure: If R's age>=70, then do this measurement for 30 seconds;if R's age <70, then do this measurement for 60 seconds. 程序：如果受试者≥70岁,进行30秒双脚前后成一条线站立平衡测试；如果受试者<70岁，进行60秒双脚前后成一条线站立平衡测试]
+K013_1.IWER: Refer to inside the front cover of this booklet to locate the full-tandem time for which R is eligible CAPI根据受试者年龄确定受试者进行以下哪项测试。
+　　1....... 30 seconds full-tandem balance measurement （70 years old or above） 30秒双脚前后站立平衡测试 （受试者70岁或以上）
+　　5....... 60 seconds full-tandem balance measurement（Less than 70 years old） 60秒双脚前后站立平衡测试（受试者小于70岁）
+"Now I want you to try to stand with the heel of one foot in front of and touching the toes of the other foot for about [30/60] seconds. You may put either foot in front, whichever is more comfortable for you. You may use your arms, bend your knees, or move your body to maintain your balance, but try not to move your feet. Try to hold this position until I tell you to stop. Like this...""现在请您尝试用后一只脚的足尖抵住前一只脚的足跟站立30/60秒，只要您觉得舒适，任何一只脚放前面都可以。您可以使用双臂，弯曲膝盖，或移动身体来保持平衡，但尽量不要移动您的脚。尝试保持这个姿势直到我告诉您停下来。像这样..."
+
+IWER: Demonstrate the measurement 访问员：演示测试方法
+* Stand and place the heel of one foot touching the toes of the other foot. 用后一只脚的足尖抵住前一只脚的足跟站立
+K013"Do you understand the directions for this measurement and agree to take it?" (IWER: Circle one) "您能明白测量方法并愿意参加这次测量吗？"（访问员：选择1项）
+    1........YES → continue 是 → 继续
+　　5........NO → do not complete this measure and answer question in box below 否 → 未能完成测试，请回答下面方框中的问题
+ [IF K013=1,then go to LI896;IF K013=5,then go to LI894 程序：如果K013=1，跳至LI896；如果K013=5，跳至LI894。]
+（LI893）BASED ON RESPONSES TO QUESTIONS ABOVE 根据上述问题的回答情况
+(LI894)访问员：为什么受试者没有完成双脚前后成一直线站立测量？（可多选）
+1........ R felt it would not be safe 受试者认为测量不安全
+2........ IWER felt it would not be safe 访问员认为测量不安全
+3........ R refused or was not willing to complete the test 受试者拒绝或不愿意完成测量
+4........ R tried but was unable to complete test 受试者尝试了但未能完成测量
+5........ R did not understand the instructions 受试者不明白测量方法
+6........ R had surgery, injury or other health condition that prevented R from standing 受试者由于手术、外伤或其他健康原因不能站立
+7........ No suitable space 没有合适的地方进行测量
+8........ Problem with equipment or supplies 设备的问题
+97....... Other (Specify) 其他（请注明）：                               
+→Go To Next Measurement 进行下一项体检
+（LI896）IWER: Did R hold full-tandem stand for a full [30/60] seconds without stepping out of place or grabbing hold of anything? (Circle one) 访问员：受试者是否能够在没有移动脚或抓任何物的情况下前后脚站立保持[30/60]秒，？ （选择1项）
+1 ......... Yes 是
+5 ........ No→Enter amount of time R held stand in seconds to two decimal places: 否  记录受试者保持的时间，小数点两位：(LI897) ___ . ___ ___Sec秒   
+　　993 ............ R tried but was unable 受试者尝试了，但未能完成
+　　999 .......... R chose not to do it 受试者选择不做测试
+　　[IF LI896=993 or 999,then go to LI894.
+　　如果LI896=993或999，回答问题LI894。]
+（LI898）IWER: Did R use any compensatory movements of his/her trunk, arms or legs to steady him/herself during full- tandem stand? (Circle one) 访问员：在测试过程中，受试者是否使用躯干、手臂或腿来保持平衡？ （选择1项）
+　　1 .............. Yes  是
+　　5 .............. No  否
+　　8 .............. Don't Know 不知道
+（LI899）IWER: Record the type of floor surface that the balance measures were conducted on. (Circle one) 访问员：记录用于测试的地板类型。 （选择1项）
+　　1 .............. Linoleum/tile/wood 地板革/瓷砖/木地板
+　　2 .............. carpet 地毯
+　　3 .............. Clay  土地
+　　4 .............. Concrete 水泥地
+　　5 .............. Not sure  不确定
+　　97 ............ Other (Specify)其他（请注明）：____________________________
+（LI902）IWER: How compliant was R during the balance measurements? (Circle one)访问员：受试者在测量的过程中依从性如何？ （选择1项）
+ 1 .............. R was fully compliant 完全依从
+2 .............. R was prevented from fully complying due to illness, pain, or other symptoms or discomforts 由于疾病，疼痛或其它症状或不适而不能完全依从
+   3 .............. R did not appear to be fully compliant, but no obvious reason for this 不完全依从，但没有明显的原因*  SIDE-BY-SIDE双脚并拢站立测试	
+(一) EQUIPMENT NEEDED 所需设备
+Equipment needed: Stopwatch, Show Card
+所需设备：秒表，显示卡
+(二) SIDE-BY-SIDE双脚并拢站立测试	
+"Now I will show you the next movement. I want you to try to stand with your feet together, side-by-side for about 10 seconds. You may use your arms, bend your knees, or move your body to maintain your balance, but try not to move your feet. Try to hold this position until I tell you to stop. Like this...""现在我向您做下一个动作。希望您能双脚并拢站立持续10秒钟。您可以使用手臂、屈膝或移动身体以保持平衡，但是尽量不移动双脚。尽量保持这一姿势直到我告诉你停下来。就像这样......"
+K015 "Do you understand the directions for this measurement and agree to take it?" (IWER: Circle one) "您能明白测量方法并愿意参加这次测量吗？"（访问员：选择1项）
+    1........YES → continue 是 → 继续
+　　5........NO → do not complete this measure and answer question in box below未能完成测试，请回答下面方框中的问题
+ [Procedure： IF K015=1,then go to LI886;IF K015=5,then go to LI884
+程序：如果K015=1，跳至LI886；如果K015=5，跳至LI884]
+（LI883）BASED ON RESPONSES TO QUESTIONS ABOVE根据上述问题的回答情况
+(LI884) IWER: Why didn't R complete the Side-by-Side stand? (Circle all that apply) 访问员：为什么受试者没有完成双脚并拢站立测试？（可多选）
+1........ R felt it would not be safe 受试者认为测试不安全
+2........ IWER felt it would not be safe 访问员认为测试不安全
+3........ R refused or was not willing to complete the test 受试者拒绝或不愿意完成测试
+4........ R tried but was unable to complete test 受试者尝试了但未能完成测试
+5........ R did not understand the instructions 受试者不明白测试方法
+6........ R had surgery, injury or other health condition that prevented R from standing 受试者由于手术、外伤或其他健康原因不能站立
+7........ No suitable space 没有合适的地方进行测试
+8........ Problem with equipment or supplies 设备问题
+97....... Other (Specify):其他（请注明）：                               
+→Go To Walking Speed 进行下一项体检，步行速度 
+Go to K017 请跳至K017
+Answer the questions in the box below. If the participant is unable to hold the position for 10 seconds, record the time in seconds to two decimal places in the box below. 回答以下框中的问题。如果受试者不能保持这一姿势10秒钟，请在以下框中记录站立的时间（单位：秒，保留2位小数）。
+（LI886）IWER访问员：Did R hold side-by-side stand for a full 10 seconds without stepping out of place or grabbing hold of anything? (Circle one)受试者是否能够在没有移动脚或抓任何物的情况下双脚并拢站立保持10秒？ （选择1项）
+1 .........Yes是
+5 ........ No否，Enter amount of time R held stand in seconds to two decimal places : 记录受试者保持的时间，保留小数点两位：（LI887）___  ___.___ ___0..10秒
+993 ......R tried but was unable受试者尝试了，但未能完成
+999 ..... R chose not to do it 受试者选择不做测试
+[IF LI886=993 or 999, then go to LI884.
+如果LI886=993或999，回答问题LI884。] 
+（LI888）IWER 访问员: Did R use any compensatory movements of his/her trunk, arms or legs to steady him/herself during side-by-side stand? (Circle one) 在测试过程中，受试者是否使用躯干、手臂或腿来保持平衡？ （选择1项）
+1 ..............YES 是
+5 ..............NO 否
+8 ............. Don't Know 不知道
+（LI889）IWER访问员： Record the type of floor surface that the balance measures were conducted on. (Circle one) .记录用于测试的地板类型（选择1项）
+1 .............. Linoleum/tile/wood地板革/瓷砖/木地板
+2 .............. carpet地毯
+3 .............. Clay 土地
+4 .............. Concrete 水泥地
+5 .............. Not sure 不确定
+97 ............ Other (Specify):其他（请注明）：_____________________________________
+（LI902）IWER访问员: How compliant was R during the balance measurements? (Circle one)受试者在测量的过程中依从性如何？（选择1项） 
+1 .............. R was fully compliant 是完全依从
+2 .............. R was prevented from fully complying due to illness, pain, or other symptoms or discomforts 由于疾病，疼痛或其它症状或不适而不能完全依从
+3 .............. R was not fully compliant, but no obvious reason for this 不完全依从，但没有明显的原因
+ →Go to Walking Speed  进入步行速度测试. 
+Go to K017 请跳至K017五、 WALKING SPEED步行速度测试 
+(一) EQUIPMENT NEEDED 所需设备
+Equipment needed: Tape measure, Stopwatch, Masking Tape  
+ 所需设备：卷尺，秒表，美纹纸胶带 
+(二) WALKING SPEED步行速度测试
+K017_1 Is R eligible for Walking Speed Test?是否合乎步行速度测试的条件？
+1 YES R'age ≥60→continue 是 受试者≥60岁→继续
+5 NO  R'age＜ 60→go to K020 否受试者<60岁→跳至K020K017 "Next, I would like to assess whether you can walk a very short distance comfortably (using a walking stick or other aid if necessary). First, I want to make sure it is safe to carry out the measurement. Do you have any problems from recent surgery, injury, or other health conditions that might prevent you from walking?"
+"接下来，我将评估你是否能很舒适地走很短的距离（可以使用拐杖或其它必要的辅助物品）。首先，我需确认这项测试对您来说是否安全。请问您从近期是否因手术、外伤、或有其他健康状况可能对您行走造成限制？"
+IWER: Circle one 访问员：选择1项 
+    1....... No apparent restriction→continue 没有明显的限制→ 继续 
+    2 ...... Yes, recent surgery→do not complete this measure and answer question in box below 是，近期做过手术→未完成这项测试，请回答下面方框中的问题。
+    3 ...... Yes, injury _ do not complete this measure and answer question in box below 是，外伤→未完成这项测试，请回答下面方框中的问题。  
+　　4 ....... Yes, other health condition _ do not complete this measure and answer question in box below 是，其他健康状况→未完成这项测试，请回答下面方框中的问题。
+　　
+"Now let's find a place where we can conduct the measurement. We will need a clear space about 4 meters long in a non-carpeted area, if possible. I'm going to place the measuring tape alongside the space where the walk will take place." 
+"现在让我们找一个合适的地方进行测试。我们需要一个约4米长，没有地毯的开阔的空间。 
+   IWER: Set up the course (2.5 meters) 访问员：设立好2.5米的线路
+ "This is our walking course. I am going to time you as you walk the course. I will be asking you to walk the cour se two times. I'll walk along side you the whole time during the measurement. Now I'd like to demonstrate how to do the measurement. You will start by lining your feet up at the starting point."
+  "这是我们的行走线路。当您沿着线路走的时候，我会计时。我会请您沿着线路走2次。在测量过程中，我会一直在您侧面跟随您行走。现在，我来给您演示如何进行测试。测试开始时，请自测试的起点抬腿开始步行"。
+
+IWER: Demonstrate the measurement.    访问员：演示测试方法。
+K018 "Do you understand the directions for this measurement and agree to take it?" "您能明白测量方法并愿意参加这次测量吗？"
+IWER: Circle one 访问员：选择1项
+    1........YES → continue 是 → 继续
+　　5........NO →_ do not complete this measure and answer question in box below  否 → 未完成这项测试，请回答下面方框中的问题。  
+
+ 
+IF K017=1 and K018=1,then go to LI823
+IF K017=2 or K017=3 or K017=4 or K018=5,then go to LI821
+程序：如果K017=1且K018=1，跳至LI823；
+       如果K017=2或 K017=3 或 K017=4 或K018=5，跳至LI821]
+
+
+（LI820）BASED ON RESPONSES TO QUESTIONS ABOVE 根据上述问题的回答情况 
+（LI821）IWER: Why didn't R complete the walking speed test? (Circle all that apply) 访问员：为什么受试者无法完成步行速度测试？（多选） 
+1 .............. R felt it would not be safe 受试者认为不安全的
+2 .............. IWER felt it would not be safe 调查员认为不安全 
+3 .............. R refused or was not willing to complete the test 受试者拒绝或不愿测量 
+4 .............. R tried but was unable to complete test 受试者尝试了，但无法完成测量 
+5 ..............R did not understand the instructions 受试者不能理解测试的程序
+6 .............. R had surgery, injury, or other health condition that prevented R from walking 受试者因为手术，外伤或其它健康原因妨碍了步行速度
+7 .............. .No suitable space available 没有合适的地方进行测试 
+8 .............. Problem with equipment or supplies 仪器或设备问题；
+97 ............ Other (Specify):其他（请注明）： 
+→Go To Next Measurement转到下一个测试项目
+Go to K020 请跳至K020
+
+
+"I am going to time you as you walk the course at your normal pace. I will be asking you to walk the course at your usual pace a total of two times. I'll walk along side you the whole time during the measurement. I'd like you to stand here with your feet lined up. Start walking when I say 'Begin'. Walk all the way past the other end of the tape before you stop. Are you ready to go
+now? Begin." 对受试者说"当你一正常步速沿着线路行走时，我会给您计时。 我会请您沿着线路以正常步速行走2次。测量过程中，我会一直在您侧面跟随您行走。请在此站立，双脚并列。当我说"开始"，请走到胶带的终点再停下来。准备好了吗？开始" 。
+IWER: Record measurements in chart (Record 993 if R tried but was unable. Record 999 if R chose not to do it) 访问员：将测试结果记录在下表中：（如果尽管受试者尝试了，但无法进行测试，请填写993。如果受试者选择不进行测试，请填写999）
+Measurement #
+测量＃Walking Speed Time
+步行速度时间1（LI823）____ ____.____ ____0.0..999 (seconds)（秒）[IF LI823=993 or 999,then go to LI821.
+如果LI823=993或999，回答问题LI821。]
+
+Repeat the measurement: "Now I want you to repeat the walk. Remember to walk at your usual pace and go all the way past the other end of the course. I'd like you to stand here with your feet lined up. Start walking when I say 'Begin'. Are you ready to go now? Begin." 重复测量的："现在请您重走一遍。请记住，用您平常的步速，沿着线路一直走到胶带的另一端。请您在此站立，双脚并列。当我说"开始"， 请走到胶带的终点再停下来。准备好了吗？开始．．．"
+IWER: Record measurements in chart (Record 993 if R tried but was unable. Record 999 if R chose not to do it) 访问员：将测试结果记录在下表中：（如果尽管受试者尝试了，但无法进行测试，请填写993。如果受试者选择不进行测试，请填写999）  
+ 
+Measurement #
+测量＃Walking Speed Time
+步行速度时间2（LI824） ____ ____.____0.0..999 (seconds)（秒）
+（LI825）：IWER: Record type of floor surface. (Circle one) 访问员记录地面的类型
+1................... Linoleum/tile/wood 地板革/瓷砖/木地板
+2 ...................Carpet 地毯
+3 ...................Clay 土地
+4 ...................Concrete 水泥地 
+5 ................... Not sure 不知道 
+97 ................. Other (Specify): 其他（请注明）：______________________ 
+（LI828）IWER: Record type of aid used. (Circle one)访问员：记录步行辅助器。（单选） 
+1 ................... None 无 
+2 ................... Walking stick or cane 拐杖或手杖 
+3 ................... Elbow crutches 手臂仗、肘拐
+4 ...................Walking frame 助行架 
+97 ................. Other (Specify): 其他（请注明）：_______________________________ 
+（LI830）IWER: How compliant was R during this measurement? (Circle one) 访问员：受试者在测量的过程中依从性如何？ （单选） 
+1 .............. R was fully compliant 是完全依从
+2 .............. R was prevented from fully complying due to illness, pain, or other symptoms or discomforts 由于疾病，疼痛或其它症状或不适而不能完全依从
+3 .............. R was not fully compliant, but no obvious reason for this 不完全依从，但没有明显的原因
+六、 Repeated Chair Stands 重复从椅子站起的时间测试
+(一) EQUIPMENT NEEDED 所需设备
+Equipment needed: Stadiometer所需设备：椅子，秒表
+(二) Repeated Chair Stands Tests 重复从椅子站起的时间测试
+"Now I will show you the next movement. Please keep your arms folded across your chest. When I say 'ready? stand' , please stand up straight and then sit down again at your fastest pace five times without stopping in between and without using your arms to push off. Do you think you can do that for me?  "现在我向您做下一个动作，请将双臂交叉抱于胸前，当我说"您准备好了吗？站起来"时，请以您最快的速度站直然后坐下，重复5次，每两次之间不能停下， 而且不能用手臂推扶。
+
+K020 "Do you understand the directions for this measurement and agree to take it?" (IWER: Circle one) "您能明白测量方法并愿意参加这次测量吗？"（访问员：选择1项）
+    1........YES → continue 是 → 继续
+　　5........NO否 → do not complete this measure and answer question in box below未能完成测试，请回答下面方框中的问题
+
+[IF K020=1,then go to LI003;IF K020=5,then go to LI002.如果K020=1,跳至LI003；如果 K020=5,跳至 LI002。]
+
+（LI001）BASED ON RESPONSES TO QUESTIONS ABOVE 根据上述问题的回答情况
+ (LI002) IWER访问员：: Why didn't R complete the Side-by-Side stand? (Circle all that apply)为什么受试者没有完成重复从椅子站起时间的测试？（可多选）
+1........ R felt it would not be safe 受试者认为测试不安全
+2........ IWER felt it would not be safe 访问员认为测试不安全
+3........ R refused or was not willing to complete the test 受试者拒绝或不愿意完成测试
+4........ R tried but was unable to complete test 受试者尝试了但未能完成测试
+5........ R did not understand the instructions 受试者不明白测试方法
+6........ R had surgery, injury or other health condition that prevented R from standing 受试者由于手术、外伤或其他健康原因不能站立
+7........ No suitable space 没有合适的地方进行测试
+8........ Problem with equipment or supplies 设备问题
+97....... Other (Specify):其他（请注明）：                               
+GO TO K023 请跳至K023
+
+
+（LI003）IWER访问员：Did R can stand up straight and then sit down again at his/her usual pace five times without stopping in between and without using arms to push off (Circle one)（选择1项）
+1 .........是 Yes  Enter amount of time R held stand in seconds to two decimal places: 记录受试者所用的时间，保留小数点两位 (LI004) ： _____.___ __Sec 秒
+5 ........ No 否，_Enter amount of time R held stand in seconds to two decimal places (LI005) : 记录受试者保持的时间，保留小数点两位： _____.___ __Sec 秒
+993 ............. R tried but was unable受试者尝试了，但未能完成
+999 .......... .. R chose not to do it 受试者选择不做测试
+ [IF LI003=993 or 999,then go to LI002.
+如果LI003=993或999，回答问题LI002。]
+Record the number of stands R completed:受试者完成的站立次数：(LI006 )_____0..5times 次
+Record the chair height from floor to seat in the space provided.从地面到坐位之间的椅子的高度: (LI007 )____ _____.____0..999cm（厘米） 
+
+（LI008）I WER 访问员: Did R use his/her trunk arms during repeated chair stands? (Circle one) 在测试过程中，受试者是否用了手臂？ （选择1项）
+　　1 ..............YES 是
+　　5 ..............NO 否
+　　8 ............. Don't Know 不知道  
+七、 STANDING HEIGHT  身高测量 
+(一) EQUIPMENT NEEDED 所需设备
+Equipment needed: Stadiometer所需设备：立式身高计
+
+图5
+(二) STANDING HEIGHT  身高测量
+"Next I will measure your height using this stadiometer. Please stand erect on the floor board of the stadiometer with your back to the vertical backboard of the stadiometer. Your weight should be evenly distributed on both feet. The heels of the feet are placed together with both heels touching the base of the vertical board. Place the feet pointed slightly outward at a 60 degree angle. Your head should be maintained in the Frankfort Horizontal Plane position."
+"接下来我们将测量您的身高。请赤足、以立正姿势站在身高计的底板上，后背靠在测量仪的垂直背板上，上肢自然下垂，足跟并拢，靠垂直背板,足尖分开成60°。头部保持在耳眼平面位置。"
+
+ K023 "Do you understand the directions for this measurement and agree to take it?" "您能明白测量方法并愿意参加这次测量吗？"
+IWER: Circle one 访问员：选择1项
+    1........YES → continue 是 → 继续
+　　5........NO→do not complete this measure and answer question inbox below 否 → 未能完成这次测量,请回答下面方框中的问题
+[IF K023=1,then go to LI011;IF K023=5,then go to LI010.如果 K023=1,跳至 LI011；如果 K023=5,跳至 LI010。]
+ (LI009) BASED ON RESPONSES TO QUESTIONS ABOVE 根据上面问题的回答情况
+(LI010) IWER: Why didn't R complete the breathing test? (Circle all that apply) 访问员：为什么受试者没有完成身高测定？（可多选）
+  1.........R felt it would not be safe受试者认为测量不安全
+  2.........IWER felt it would not be safe访问员认为测量不安全
+　3.........R refused or was not willing to complete the test受试者拒绝或不愿意完成测量
+　4.........R tried but was unable to complete test受试者尝试但未能完成测量
+　5.........R did not understand the instructions受试者不明白测量方法
+　6.........R had humpback, cannot stand, etc. other health reasons受试者由于驼背、不能站立等健康原因不能测量
+　7.........No suitable space没有合适的空间进行测量
+　8.........Problem with equipment or supplies设备问题
+　97.......Other (Specify): 其他（请注明）：______________________________
+　→Go To Next Measurement进行下一项体检
+　GO TO K025 请跳至K025　　
+IWER: Record measurements in chart (Record 993 if R tried but was unable. Record 999 if R chose not to do it) 访问员：将测试结果记录在下表中：（如果尽管受试者尝试了，但无法进行测试，请填写993。如果受试者选择不进行测试，请填写999）  
+ 
+Measurement#测量＃Height 身高（cm）
+   1（LI011）____ ____ ____.____0..210，993,999（cm）[IF LI011=993 or 999,then go to LI010.
+如果LI011=993或999，回答问题LI010。]
+(LI012) IWER: How compliant was R during this measurement? (Circle one) 访问员：受试者在测量的过程中依从性如何？（选择1项）
+1........ R was fully compliant完全依从
+2........ R was prevented from fully complying due to illness, pain, or other symptoms or discomforts由于疾病，疼痛或其它症状或不适而不能完全依从
+   3........ R was not fully compliant, but no obvious reason for this不能完全依从，但没有明显的原因
+八、 UPPER ARM LENGTH 手臂长度测量
+(一) EQUIPMENT NEEDED 所需设备
+Equipment needed: MA DING Rule所需设备：马丁尺
+(二) UPPER ARM LENGTH MEASURMENT上臂长度测量
+"Next I will measure your upper arm length."
+ "接下来我们将测量您的手臂长度。" 
+
+ K025"Do you understand the directions for this measurement and agree to take it?" "您能明白测量方法并愿意参加这次测量吗？" 
+IWER: Circle one 访问员：选择1项
+
+    1........YES → continue 是 → 继续
+　　5........NO →do not complete this measure and answer question inbox below否 → 未能完成这次测量,请回答下面方框中的问题
+
+[IF K025=1,then go to LI015;IF K025=5,then go to LI014.如果 K025=1,跳至 LI015；如果 K025=5,跳至 LI014。]
+(LI013) BASED ON RESPONSES TO QUESTIONS ABOVE根据上面问题的回答情况
+(LI014) IWER: Why didn't R complete the upper arm length? (Circle all that apply) 访问员：为什么受试者没有完成上臂长度测定？（可多选）
+  1.........R felt it would not be safe受试者认为测量不安全
+  2.........IWER felt it would not be safe访问员认为测量不安全
+　3.........R refused or was not willing to complete the test受试者拒绝或不愿意完成测量
+　4.........R tried but was unable to complete test受试者尝试但未能完成测量
+　5.........R did not understand the instructions受试者不明白测量方法
+　6.........R could not participated due to health reasons受试者由于健康原因不能测量
+　7.........No suitable space没有合适的空间进行测量
+　8.........Problem with equipment or supplies设备问题
+　97.......Other (Specify): 其他（请注明）：__________________________________
+　→Go To Next Measurement进行下一项体检
+　GO TO K027 请跳至K027　　
+
+IWER: Record measurements in chart (Record 993 if R tried but was unable. Record 999 if R chose not to do it) 访问员：将测试结果记录在下表中：（如果尽管受试者尝试了，但无法进行测试，请填写993。如果受试者选择不进行测试，请填写999）  
+
+测量＃
+Measurement#上臂长度（cm）
+Upper Arm Length (CM)1（LI015）____ ____ ____.____0..150，993,999（cm）[IF LI015=993 or 999,then go to LI014.如果LI015=993或999，回答问题LI014。]
+(LI016_0)IWER: Which arm was used to conduct the measurements? (Circle one) 访问员：测量了哪侧上臂的长度？（选择1项）
+   1........ Left   左侧
+   2........ Right  右侧
+(LI016) IWER: How compliant was R during this measurement? (Circle one) 访问员：受试者在测量的过程中依从性如何？（选择1项）
+1........ R was fully compliant完全依从
+2........ R was prevented from fully complying due to illness, pain, or other symptoms or discomforts由于疾病，疼痛或其它症状或不适而不能完全依从
+3........ R was not fully compliant, but no obvious reason for this不能完全依从，但没有明显的原因 九、 KNEE HEIGHT 膝高测量
+(一) EQUIPMENT NEEDED 所需设备
+Equipment needed: MA DING Rule 所需设备：马丁尺 
+(二) 膝高测量
+"Next I will measure your knee height. Please sit on a chair with barefoot."
+ "接下来我们将测量您的膝高。请赤足、坐在椅子上。" 
+
+K027"Do you understand the directions for this measurement and agree to take it?" "您能明白测量方法并愿意参加这次测量吗？"
+IWER: Circle one访问员：选择1项
+    1........YES → continue 是 → 继续
+　　5........NO 否→do not complete this measure and answer question inbox below 未能完成这次测量,请回答下面方框中的问题
+
+[IF K027=1,then go to LI019;IF K027=5,then go to LI018.如果K027=1,跳至 LI019；如果K027=5,跳至LI018。]
+ (LI017) BASED ON RESPONSES TO QUESTIONS ABOVE根据上面问题的回答情况
+(LI018) IWER: Why didn't R complete the knee height? (Circle all that apply) 访问员：为什么受试者没有完成膝高测定？（可多选）
+  1.........R felt it would not be safe受试者认为测量不安全
+  2.........IWER felt it would not be safe访问员认为测量不安全
+　3.........R refused or was not willing to complete the test受试者拒绝或不愿意完成测量
+　4.........R tried but was unable to complete test受试者尝试但未能完成测量
+　5.........R did not understand the instructions受试者不明白测量方法
+　6.........R could not participated due to health reasons受试者由于健康原因不能测量
+　7.........No suitable space没有合适的空间进行测量
+　8.........Problem with equipment or supplies设备问题
+　97.......Other (Specify): 其他（请注明）：__________________________________
+　→Go To Next Measurement进行下一项体检
+ Go to K029 请跳至K029
+IWER: Record measurements in chart (Record 993 if R tried but was unable. Record 999 if R chose not to do it) 访问员：将测试结果记录在下表中：（如果尽管受试者尝试了，但无法进行测试，请填写993。如果受试者选择不进行测试，请填写999）  
+
+测量＃
+Measurement#膝高（cm）
+RIGHT KNEE HEIGHT(CM)1（LI019）____ ____.____0..150，993,999（cm）[If LI019=993 or 999,then go to LI018.如果LI019=993或999，回答问题LI018。]
+(LI020_0)IWER: Which leg was used to conduct the measurements? (Circle one) 访问员：测量了哪侧腿的膝高？（选择1项）
+   1........ Left 左侧
+   2........ Right右侧
+(LI020) IWER: How compliant was R during this measurement? (Circle one) 访问员：受试者在测量的过程中依从性如何？（选择1项）
+1........ R was fully compliant完全依从
+2........ R was prevented from fully complying due to illness, pain, or other symptoms or discomforts由于疾病，疼痛或其它症状或不适而不能完全依从
+   3........ R was not fully compliant, but no obvious reason for this不能完全依从，但没有明显的原因
+十、 WEIGHT体重测量　　
+(一) EQUIPMENT NEEDED 所需设备
+Equipment needed: Scale
+所需设备：体重秤
+K029 Is R eligible for Weight Measurement? 是否合乎测量体重的条件？
+1_______ YES weight<150kg→continue 是 体重<150kg→继续
+5_______ NO  weight≥150kg→go to K032 否体重≥150kg→跳至 K032
+(二) 体重测量
+K030"Now, I'd like to measure your weight. To measure your weight, I will ask you to stand on this scale, with your shoes off, while I read the display."
+
+ "现在，我想为您测量体重。请您脱下鞋子，站在体重秤上，我来读数。"
+"Do you understand the directions for this measurement and agree to take it?"  "您能明白测量方法并愿意参加这次测量吗？"
+IWER: Circle one 访问员：选择1项
+    1........YES → continue 是 → 继续
+　　5........NO→do not complete this measure and answer question in box below   否→ 未完成这项测量，请回答下面方框中的问题。
+
+[IF K029=1 and K030=1,then go to LI841;IF K029=5 or K030=5,then go to LI839. 如果 K029=1 和K030=1,跳至 LI841；如果K029=5 或K030=5,跳至LI839。]
+
+（LI838）BASED ON RESPONSES TO QUESTIONS ABOVE根据上述问题的回答情况
+（LI839）IWER: Why weren't you able to measure R's weight? (Circle all that apply)访问员：你为什么无法测量受试者的体重？ （多选） 
+   1 .............. R felt it would not be safe 受试者认为不安全的
+   2 .............. IWER felt it would not be safe  访问员认为不安全 
+   3 .............. R refused or was not willing to complete the test 受试者拒绝或不愿测量 
+   4 .............. R tried but was unable to complete test 受试者尝试了，但无法完成测量 
+   5 ..............R did not understand the instructions 受试者无法明白测量的指令 
+   6 .............. R is not able to stand or balance on scale; other health reason受试者无法在体重秤上站立或保持平衡；其他健康方面的原因 
+   7 .............. No suitable space available  没有合适的地方进行测量 
+   8 .............. Scale did not work; other problem with equipment or supplies体重秤坏了；设备的其他问题；
+   97 ............ Other (Specify): 其他（请注明）_________________________
+   →Go To Next Measurement 转到下一个测试项目
+   GO TO K032IWER: Record measurement in chart: (Enter 993 if R tried but received an error message.) 访问员：将测试结果记录在以下表中：（如果尽管受试者尝试测量了，但是显示错误信息，请填写993） 
+Measurement#
+测量Weight  Measurement 
+体重测量值1（LI841）___ ___ ___.____
+0..150，993,999（kg）公斤 [IF LI841=993,then go to LI839.如果LI841=993，回答问题LI839。]             
+
+（LI842）：IWER: Record type of floor surface. (Circle one) 访问员：记录地面的类型（单选）
+   1................... Linoleum/tile/wood 地板革/瓷砖/木地板
+   2 ...................Carpet 地毯
+   3 ...................Clay 土地
+   4 ...................Concrete 水泥地 
+5 ................... Not sure 不知道 
+97 ................. Other (Specify): 其他（请注明）：______________________
+（LI844）IWER: Was R wearing shoes during the measurement? (Circle one) 受试者是否穿着鞋测量？ （单选） 
+1 ..............Yes 是 
+5 ..............No 否 
+（LI847）IWER: How compliant was R during this measurement? (Circle one)访问员：受试者在测量的过程中依从性如何？ （单选） 
+1 ..........R was fully compliant  完全依从
+2 ..........R was prevented from fully complying due to illness, pain, or other symptoms or discomforts  由于疾病，疼痛或其它症状或不适而不能完全依从
+   3 ..........R was not fully compliant, but no obvious reason for this 不完全依从，但没有明显的原因
+
+十一、 WAIST CIRCUMFERENCE 腰围测量 
+(一) EQUIPMENT NEEDED 所需设备
+Equipment needed: Soft Tape Measure  
+设备：软尺 
+(二) 腰围测量
+"Next I'm going to perform a simple measurement of your waist circumference. For this measurement it is important for you to be standing. I will ask you to identify where on your body your navel (belly button) is located. I will then place this soft measuring tape around your waist, over your clothing, holding it securely at the level of your navel. Once the tape measure is placed  appropriately around your waist then we are ready to begin. I will ask you to take a normal breath and exhale, holding your breath at the end of the exhale. I will then record the measurement." 
+下一步，我会给你做一项简单的腰围测试。这项测试中需要您站着。我将用尺子在您肚脐的位置水平绕腰部一圈。当腰围尺处于正确位置时，我们开始测量。请您平静呼吸。呼气末请屏住呼吸，我会在这时候读数。
+
+IWER: Demonstrate the measurement. 访问员：演示测量方法
+
+* Stand and locate navel. Place measuring tape over the clothing around the waist at the level of the navel. Take a normal breath and exhale, holding breath at end of exhale and letting the tape out slightly.
+立正，定位脐部。腰围尺在脐部位置水平绕受试者一周。平静呼吸，呼气末屏住呼吸，读数。
+K032 IWER: Ask if necessary: ("Before we begin, do you feel you are able to stand while we do this measurement?") (IWER: Circle one) 必要时问受访者：（"开始前，您认为在测试过程中，您是否能够站着？"）
+    1 .............. YES → continue 是→继续 
+    5 .............. NO →_ do not complete this measure and answer question in box below   否→ 未完成这项测量，请回答下面方框中的问题。
+K033 "Do you understand the directions for this measurement and agree to take it?" "您能明白测量方法并愿意参加这次测量吗？"
+IWER: Circle one访问员：选择1项
+    1........YES → continue 是 → 继续
+　　5........NO →_ do not complete this measure and answer question in box below   否→ 未完成这项测量，请回答下面方框中的问题。
+[IF K032=1 and K033=1,then go to LI907;IF K032=5 or K033=5,then go to LI905. 如果 K032=1 且 K033=1,跳至 LI907；如果 K032=5 或 K033=5,跳至LI905]
+(LI904) BASED ON RESPONSES TO QUESTIONS ABOVE根据上述问题的回答情况
+(LI905) IWER: Why weren't you able to measure R's waist? (Circle all that apply)
+访问员：为什么无法完成腰围测量？（多选） 
+1 .............. R felt it would not be safe 受试者认为不安全的
+2 .............. IWER felt it would not be safe 调查员认为不安全 
+3 .............. R refused or was not willing to complete the test 受试者拒绝或不愿测量 
+4 .............. R tried but was unable to complete test 受试者尝试了，但无法完成测量 
+5 ..............R did not understand the instructions 受试者无法明白测量的指令 
+6 .............. R is not able to stand; other health reason 受试者无法站立；其他原因
+7 .............. .No suitable space available 没有合适的地方进行测试 
+8 .............. Problem with equipment or supplies 仪器或设备问题；
+97 ............ Other (Specify):其他（请注明）： __________________________
+→END 
+
+IWER: Record measurements in chart， (Enter 993 if R tried but was unable to do it. Enter 999 if R chose not to do it.) 访问员：将测试结果记录在以下表中：（如果尽管受试者尝试测量了，但是显示错误信息，请填写993。如果受试者选择不进行测试，请填写999） 
+Measurement
+#
+测量Waist  Measurement 腰围测量值1(LI907)_________.____ 0..999（cm）厘米[IF LI907=993 or 999,then go to LI905.如果LI907=993或999，回答问题LI905。]
+(LI908) IWER: What difficulties occurred during this measurement? (Circle all that apply) 访问员：在测量过程中有哪些困难？（单选）
+1 .............没有
+2 .............R had breathing difficulties 受试者呼吸方面有困难
+3 .............R was unable to hold breath at the end of the exhale 受试者在呼气末不能屏住呼吸
+4 .............R was prevented from giving full effort by illness, pain, or other symptoms or discomforts 受试者因为疾病、疼痛或其他症状或不适而不能尽全力配合
+5 .............R did not appear to give full effort, but no obvious reason for this 受试者未能尽全力，但没有明显的原因
+6 .............Had difficulty or unable to locate navel 不能或定位脐部有困难
+97 ...........Other (Specify):其他（请注明）： _____________________________
+(LI910) IWER: How compliant was R during this measurement? (Circle one)访问员：受试者在测量的过程中依从性如何？ （单选） 
+1 .............R was fully compliant 完全依从
+2 ...........R was prevented from fully complying due to illness, pain, or other symptoms or discomforts 由于疾病，疼痛或其它症状或不适而不能完全依从
+3 .............R was not fully compliant, but no obvious reason for this 不完全依从，但没有明显的原因
+ (LI912) IWER: Was the R wearing bulky clothing during this measurement? (Circle one) 访问员：受试者在测量过程中是否穿者厚重的衣服？
+1 .............Yes 是
+5 .............No 否                          
+
+
+ 1 / 43
+
+

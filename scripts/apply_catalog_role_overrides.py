@@ -264,6 +264,11 @@ for wave,code in metadata_keys:
         fields.loc[metadata_rows,"Candidate.Status"]="C metadata; 2013/2015 official biomarker questionnaire identifies behavior within 30 minutes before BP test; 2011 codebook label only"
         fields.loc[metadata_rows,"Harmonization.Status"]="measurement-context flag; not habitual smoking, physical activity, alcohol, or diet exposure; 2011 instrument-level wording remains to verify"
         fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; use only to describe or sensitivity-check blood pressure measurement context; do not generalize to blood biomarkers"
+        manual_2011 = metadata_rows & fields["Source.Wave"].eq("2011")
+        fields.loc[manual_2011,"Value.Label.Source"]="sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt"
+        fields.loc[manual_2011,"Value.Label.Review"]="official 2011 physical-examination manual and Codebook reviewed; measurement-context metadata only"
+        fields.loc[manual_2011,"Candidate.Status"]="C metadata; 2011 manual item LI875 confirms the QA017 Codebook field asks about behavior within 30 minutes before blood-pressure testing"
+        fields.loc[manual_2011,"Harmonization.Status"]="The 2011 physical-examination manual labels the item LI875, while the released-field Codebook label is QA017; wording confirms a combined behavior indicator within 30 minutes before the blood-pressure test. It is not habitual behavior or blood-draw fasting status."
     elif metadata_type == "questionnaire_template_label":
         fields.loc[metadata_rows,"category"]="measurement metadata"
         fields.loc[metadata_rows,"subcategory"]="questionnaire inserted activity-type labels"

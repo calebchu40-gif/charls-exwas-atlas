@@ -14,7 +14,7 @@ FAMILIES = {
     "household debt unfolding-bracket response metadata": 8,
     "personal wage deduction scope and response-unit selectors": 3,
     "household income response-format selectors": 3,
-    "chair setup for repeated chair-stand test": 3,
+    "chair setup for repeated chair-stand test": 4,
     "household financial respondent source": 2,
     "inactive fixed-capital legacy/format fields": 2,
     "2020 pandemic work-module selection flag": 1,
@@ -30,7 +30,7 @@ def propagate():
             for (wave,code),item in targets.items():
                 m=data["Source.Wave"].eq(wave)&data["Variable.Name"].str.lower().eq(code)&data["epcf"].str.lower().eq("c")
                 if m.any():
-                    data.loc[m,"Value.Label.Review"]=item.review_status;data.loc[m,"Value.Label.Source"]=item.official_source;data.loc[m,"Value.Labels"]="";data.loc[m,"Review.Flag"]=item.catalog_note;data.loc[m,"Harmonization.Status"]=item.catalog_note;n+=int(m.sum())
+                    data.loc[m,"Value.Label.Review"]=item.review_status;data.loc[m,"Value.Label.Source"]=item.official_source;data.loc[m,"Value.Labels"]=getattr(item,"value_labels","");data.loc[m,"Review.Flag"]=item.catalog_note;data.loc[m,"Harmonization.Status"]=item.catalog_note;n+=int(m.sum())
             if n!=len(targets): raise SystemExit(f"Expected {len(targets)} C rows in {path}; updated {n}")
             data.to_csv(path,index=False,encoding="utf-8-sig")
         else:
@@ -38,7 +38,7 @@ def propagate():
             for row in data:
                 key=(str(row.get("Source.Wave","")),str(row.get("Variable.Name","")).lower());item=targets.get(key)
                 if item and str(row.get("epcf","")).lower()=="c":
-                    row.update({"Value.Label.Review":item.review_status,"Value.Label.Source":item.official_source,"Value.Labels":"","Review.Flag":item.catalog_note,"Harmonization.Status":item.catalog_note,"value_label_review":item.review_status,"value_label_source":item.official_source,"value_labels":"","harmonization_status":item.catalog_note});n+=1
+                    row.update({"Value.Label.Review":item.review_status,"Value.Label.Source":item.official_source,"Value.Labels":getattr(item,"value_labels",""),"Review.Flag":item.catalog_note,"Harmonization.Status":item.catalog_note,"value_label_review":item.review_status,"value_label_source":item.official_source,"value_labels":getattr(item,"value_labels",""),"harmonization_status":item.catalog_note});n+=1
             if n!=len(targets): raise SystemExit(f"Expected {len(targets)} C rows in {path}; updated {n}")
             path.write_text(json.dumps(data,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
         print(f"Propagated {len(targets)} C metadata rows into {path.relative_to(ROOT)}")
