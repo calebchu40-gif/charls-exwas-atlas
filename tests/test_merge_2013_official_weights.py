@@ -47,6 +47,12 @@ class OfficialWeightMergeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "values conflict"):
             merge_official_weights(self.prepared, conflicting)
 
+    def test_equal_weight_values_with_integer_float_storage_are_accepted(self):
+        mixed_storage = self.weights.copy()
+        mixed_storage["INDV_weight"] = [1, 2]
+        merged, _, _ = merge_official_weights(self.prepared, mixed_storage)
+        self.assertEqual(merged["INDV_weight"].tolist(), [1.0, 2.0])
+
     def test_incomplete_coverage_fails_closed(self):
         with self.assertRaisesRegex(ValueError, "Not all prepared respondents matched"):
             merge_official_weights(self.prepared, self.weights.iloc[[0]])

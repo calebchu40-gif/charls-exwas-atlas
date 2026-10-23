@@ -67,7 +67,13 @@ def merge_official_weights(prepared: pd.DataFrame, weights: pd.DataFrame,
         common = left.index.intersection(right.index)
         lval, rval = left.loc[common], right.loc[common]
         both = lval.notna() & rval.notna()
-        if not lval.loc[both].astype(str).equals(rval.loc[both].astype(str)):
+        left_num = pd.to_numeric(lval.loc[both], errors="coerce")
+        right_num = pd.to_numeric(rval.loc[both], errors="coerce")
+        if left_num.notna().all() and right_num.notna().all():
+            agrees = bool(((left_num - right_num).abs() <= 1e-12 + 1e-8 * right_num.abs()).all())
+        else:
+            agrees = lval.loc[both].astype(str).equals(rval.loc[both].astype(str))
+        if not agrees:
             raise ValueError(f"Existing and official values conflict for {col}; no output written")
         # Fill holes from the official file, preserving existing nonmissing values,
         # then omit the duplicate incoming column to prevent suffix ambiguity.
@@ -130,6 +136,9 @@ def main():
         raise ValueError("Weights source and prepared input must be different files")
     if args.replace_prepared:
         args.output = args.prepared.with_name(args.prepared.stem + "_official_flags.tmp.dta")
+        backup = args.prepared.with_name(args.prepared.stem + ".pre_official_flags_backup.dta")
+        if backup.exists():
+            raise FileExistsError(f"Refusing to replace prepared input because backup exists: {backup}")
     if args.output.resolve() == args.prepared.resolve():
         raise ValueError("Output cannot overwrite prepared input; use --replace-prepared")
 
