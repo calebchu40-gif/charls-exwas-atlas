@@ -4,7 +4,7 @@ const vm = require('node:vm');
 
 const source = fs.readFileSync('site-prototype/dist/app.js', 'utf8');
 const html = fs.readFileSync('site-prototype/dist/index.html', 'utf8');
-assert.ok(html.includes('app.js?v=59'), 'HTML should cache-bust the updated app loader');
+assert.ok(html.includes('app.js?v=60'), 'HTML should cache-bust the updated app loader');
 const start = source.indexOf('const deferredViewLoaders = new Map();');
 const end = source.indexOf('let candidatePairExplorerLoaded;', start);
 assert.notEqual(start, -1, 'deferred loader helper should exist');
@@ -24,6 +24,7 @@ assert.ok(source.includes('fetch(`./catalog_${role}.json?v=1`'));
 assert.ok(source.includes("loadCatalog('e')"));
 assert.ok(source.includes("loadCatalog('p')"));
 assert.ok(source.includes("loadCatalog('c')"));
+assert.ok(source.includes('[field.value_label_status,field.value_label_source,concept.caveat]'), 'food/environment rows should show review status and label source');
 assert.ok(!/^const \w+\s*=\s*fetch\(/m.test(source), 'no JSON request should start during script initialization');
 
 let fetchCount = 0;
