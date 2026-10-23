@@ -1,0 +1,9 @@
+# 2018 current-home owner-relation value-label review
+
+Reviewed 9 mapped E-candidate fields for the 2018 current-home owner-relation concept. The source is the official Wave 4 Codebook text extraction at `sources_official/CHARLS_2018_Codebook_extracted.txt`; the corresponding released field names and question descriptions were checked against `audit/raw_variable_catalog_v1.csv` and `audit/housing_exposure_variable_mapping_v1.csv`.
+
+The Codebook block for `i000_w4_4_s1` exposes both `0=Do Not Own` and `1=Own`; those labels are now shown in the main E catalog and housing lookup. The blocks for `i000_w4_4_s2` through `_s9` expose `0=Do Not Own` but not the `1` category in the frequency-based Codebook extraction. These eight fields have no displayed value-label list and now carry the explicit status “partial response-code set; do not infer omitted categories.” No frequency or percentage was copied. A category absent from an observed-frequency table is not evidence that its response code is invalid or that the code is `1`.
+
+The mapping caveat remains in force: these fields describe household ownership relation categories, can be repeated across household-member/ownership routes, and do not become nine independent exposures. Their question wording, household-level measurement, respondent route, released-data value-label metadata, and wave comparability still need review before analysis. This label review does not approve any model.
+
+Implementation is reproducible with `python scripts/build_2018_current_home_owner_relation_labels.py`; the full metadata pipeline calls this builder before `build_charls_atlas_catalog.py`. Tests assert that exactly one complete code set is shown, eight remain partial, no frequencies appear, and the status/source propagate to both main and housing catalog views.

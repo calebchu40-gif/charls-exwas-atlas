@@ -3,7 +3,7 @@
 更新：2026-10-23。由`scripts/summarize_value_label_coverage.py`从当前字段目录和覆盖CSV自动生成。
 
 - E/P字段—角色—类别目录行：6,625；不同波次—字段码：6,544。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
-- 有非空官方/已审标签文本的E/P目录行：3,207；不同波次—字段码：3,181。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
+- 有非空官方/已审标签文本的E/P目录行：3,208；不同波次—字段码：3,182。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
 - 明确标为`conflict`的E/P字段码：0；详情按主目录波次和变量码检索。
 - 问卷/Codebook编码差异尚未调和并锁定`DO NOT ANALYZE`的E/P字段：2011 `fb010`。此项独立于上面的精确`conflict`标签计数。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -19,7 +19,7 @@
 |e|environmental perception|1|1|1|
 |e|family and intergenerational context|6|6|1|
 |e|food and household environment|160|87|1|
-|e|housing and built environment|480|33|2|
+|e|housing and built environment|480|34|2|
 |e|social determinants|2,155|923|20|
 |e|social protection|1,331|432|30|
 |p|anthropometric|15|0|1|
@@ -38,11 +38,11 @@
 |审核状态|E/P目录行|
 |---|---:|
 |officially reviewed|2,536|
-|not yet reviewed|1,242|
+|not yet reviewed|1,233|
 |official codebook field located; continuous/count or no categorical labels|608|
 |codebook field located; continuous/open response or no categorical labels|339|
 |continuous measure metadata available|214|
-|official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories|200|
+|official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories|208|
 |numeric/time unit metadata available; no discrete labels assigned|151|
 |official Codebook numeric/count response located; no discrete answer labels|128|
 |audited measurement component; derive concept per crosswalk|108|
@@ -114,6 +114,7 @@
 |official questionnaire confirms DA017 option 21=Non-Hodgkin lymphoma; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics|1|
 |official questionnaire confirms DA017 option 13=Prostate; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics|1|
 |问卷类别标签已核；代码本按连续型摘要呈现，发布文件值标签需复核|1|
+|official Codebook response labels complete; frequency counts omitted|1|
 |DO NOT ANALYZE; questionnaire: 1=Family, 2=Health, 3=School, 4=Unemployment/layoff, 5=Other; Codebook labels retained for reference: 1=Family, 2=Health, 4=School, 5=Unemployment/layoff, 6=Other; released-data coding unresolved|1|
 |2020代码本逐值标签已核；疫情期特异|1|
 |official questionnaire response categories transcribed without frequencies; continuity of the specific prior-wave work activity|1|

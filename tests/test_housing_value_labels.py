@@ -16,6 +16,7 @@ class HousingValueLabelTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.labels = read_csv(AUDIT / "housing_value_label_review_v1.csv")
+        cls.current_owner_labels = read_csv(AUDIT / "housing_current_owner_relation_labels_2018_v1.csv")
         cls.catalog = read_csv(AUDIT / "charls_atlas_candidate_fields_v0.csv")
         cls.crosswalk = read_csv(AUDIT / "ep_concept_source_crosswalk_v1.csv")
         with (ROOT / "site-prototype" / "dist" / "housing_catalog_v1.json").open(encoding="utf-8") as stream:
@@ -95,6 +96,24 @@ class HousingValueLabelTests(unittest.TestCase):
         site = [row for row in self.housing_site if row["wave"] == key[0] and row["code"].lower() == key[1]]
         self.assertTrue(site)
         self.assertTrue(all("3=Do not need" in row["value_labels"] for row in site))
+
+    def test_2018_current_home_owner_relation_labels_do_not_infer_unobserved_categories(self):
+        audit = {row["code"]: row for row in self.current_owner_labels}
+        self.assertEqual(len(audit), 9)
+        complete = [row for row in audit.values() if row["value_labels"]]
+        partial = [row for row in audit.values() if not row["value_labels"]]
+        self.assertEqual(len(complete), 1)
+        self.assertEqual(len(partial), 8)
+        self.assertEqual(complete[0]["value_labels"], "0=Do Not Own; 1=Own")
+        self.assertTrue(all("partial response-code set" in row["value_label_status"] for row in partial))
+        self.assertTrue(all("frequency" not in row["value_labels"].lower() for row in complete))
+        for code, status in [(row["code"], row["value_label_status"]) for row in audit.values()]:
+            field = next(row for row in self.catalog if row["Source.Wave"] == "2018" and row["Variable.Name"].lower() == code.lower())
+            self.assertEqual(field["Value.Label.Review"], status)
+            self.assertEqual(field["Value.Label.Source"], "sources_official/CHARLS_2018_Codebook_extracted.txt")
+        site_rows = [row for row in self.housing_site if row["wave"] == "2018" and row["code"].lower().startswith("i000_w4_4_s")]
+        self.assertEqual(len(site_rows), 9)
+        self.assertEqual(sum(bool(row["value_labels"]) for row in site_rows), 1)
 
 
 if __name__ == "__main__":

@@ -5,7 +5,8 @@
 - 网站字段目录7,539行：E 4,558、P-only 1,903、C 914、双角色E/P 164。
 - E/P候选概念1,408个：暴露侧1,130、表型侧287、双角色9；E/P概念—源字段映射6,590行。全来源crosswalk 6,804行，其中6,792行匹配目录、12行是目录外C元数据。
 - 五个常规波次元数据层面的非自配对共现为2011 120,052、2013 126,301、2015 128,984、2018 98,667、2020 12,598。它们不是受访者人数、逐对样本量或分析资格。
-- E/P目录有3,207行带非空已审/官方类别标签文本，覆盖3,181个波次—字段码；633条E/P目录角色行仍显示`not yet reviewed`。连续测量、测量组件和计数可已完成语义审阅而没有类别值标签。2013/2015/2018疾病控制/既往访谈变化48个字段、2020既往访谈变化18个字段，以及2011/2020自知疾病6个字段均已补入逐波官方类别；本轮另补2013–2018自知疾病11个字段，频数未复制，详见[`self_awareness_response_label_review_2026-10-23.md`](self_awareness_response_label_review_2026-10-23.md)。22个连续残疾发生年份字段标注calendar year，见[`disability_onset_year_unit_review_2026-10-23.md`](disability_onset_year_unit_review_2026-10-23.md)。
+- E/P目录有3,208行带非空已审/官方类别标签文本，覆盖3,182个波次—字段码；624条E/P目录角色行仍显示`not yet reviewed`。连续测量、测量组件和计数可已完成语义审阅而没有类别值标签。2013/2015/2018疾病控制/既往访谈变化48个字段、2020既往访谈变化18个字段，以及2011/2020自知疾病6个字段均已补入逐波官方类别；本轮另补2013–2018自知疾病11个字段，频数未复制，详见[`self_awareness_response_label_review_2026-10-23.md`](self_awareness_response_label_review_2026-10-23.md)。22个连续残疾发生年份字段标注calendar year，见[`disability_onset_year_unit_review_2026-10-23.md`](disability_onset_year_unit_review_2026-10-23.md)。
+- 另对2018当前住房产权关系9个E候选字段核对Codebook：仅1个字段有完整0/1标签，8个字段只有“0=Do Not Own”出现在频数型Codebook摘录中，均未推断缺失类别，也未复制频数。目录元数据与住房专题查询现显示这一完整/部分区分；详见[`housing_current_owner_relation_labels_2018_review_2026-10-23.md`](housing_current_owner_relation_labels_2018_review_2026-10-23.md)。因此通用值标签待核E字段由633降至624。
 - 本轮修复连续行为变量审核状态传播：73条波次—字段行从泛化的未核验状态改为有来源的连续测量/年龄年份语义。细节见[`behavior_numeric_measure_status_sync_2026-10-23.md`](behavior_numeric_measure_status_sync_2026-10-23.md)。
 - 另有608条养老金数值/计数或无离散类别字段从通用待核状态改为“官方代码本字段已定位；未列离散类别”；其余6条源审核记录已有更具体状态而予以保留。此状态不代表单位、路线或发行版编码已核。详见[`pension_numeric_status_sync_2026-10-23.md`](pension_numeric_status_sync_2026-10-23.md)。
 - 收入/家庭支出类别中有51条精确代码本条目显示数值摘要但未列分类菜单；另为五波工资/奖金收入字段转录`1=Yes; 2=No`类别，频数未复制、波次题目范围仍分开审核。详情见[`income_numeric_and_receipt_label_sync_2026-10-23.md`](income_numeric_and_receipt_label_sync_2026-10-23.md)。
@@ -17,7 +18,7 @@
 
 ## 验证
 
-`python scripts/build_ep_atlas_metadata.py --finalize-only`成功完成；86项测试通过；延迟加载器Node测试通过；`node --check site-prototype/dist/app.js`通过；网站目录33个JSON均可解析；E/P/C三份目录分片与主目录筛选结果完全一致；35条`DO NOT ANALYZE`锁定与分流清单完全一致；`git diff --check`通过。首页不加载目录JSON；Pages部署包排除仅供构建/审计的主目录JSON，公开行为与E/P/C分片及专题目录按需加载。私有派生表ID/波次验证中2011/2015/2018/2020为PASS、2013因缺少两个必需样本标记为CHECK；逐波权重覆盖汇总见[`survey_design_weight_review_v1.md`](survey_design_weight_review_v1.md)。公开元数据重建未读取任何CHARLS个人记录。分片站点已部署：GitHub Actions Validate #92、Pages #32成功；线上app.js和E/P/C分片HTTP 200，部署主目录HTTP 404。
+本轮全量元数据流水线及`--finalize-only`传播构建均完成；93项测试通过；延迟加载器Node测试、`node --check site-prototype/dist/app.js`和`git diff --check`通过。E/P/C三份目录分片与主目录筛选结果完全一致；35条`DO NOT ANALYZE`锁定与分流清单完全一致。首页不加载目录JSON；Pages部署包排除仅供构建/审计的主目录JSON，公开行为与E/P/C分片及专题目录按需加载。私有派生表ID/波次验证中2011/2015/2018/2020为PASS、2013因缺少两个必需样本标记为CHECK；逐波权重覆盖汇总见[`survey_design_weight_review_v1.md`](survey_design_weight_review_v1.md)。公开元数据重建未读取任何CHARLS个人记录。新增代码尚待本次提交后的GitHub Actions与Pages部署运行验证。
 
 2026-10-23 work-field status synchronization: exact wave/code matches to the reviewed work crosswalk moved 170 E/P rows from the generic `not yet reviewed` state to the source-specific continuous/open-response or no-discrete-category status. The current catalog has 677 E/P rows in the generic state, 3,199 rows with nonempty official/reviewed labels, and 339 total entries carrying this specific work-field status. These are metadata-review counts, not independent indicators or analysis eligibility. The full metadata pipeline and 83 tests passed; no respondent data or frequencies were used. See [`work_numeric_catalog_status_sync_2026-10-23.md`](work_numeric_catalog_status_sync_2026-10-23.md).
 

@@ -40,6 +40,7 @@ FULL_PIPELINE_SCRIPTS = (
     "build_household_lending_debt_crosswalk.py",
     "build_housing_exposure_crosswalk.py",
     "build_housing_owner_relation_labels.py",
+    "build_2018_current_home_owner_relation_labels.py",
     "build_housing_value_label_review.py",
     "build_housing_catalog.py",
     "build_demographic_social_exposure_crosswalk.py",
