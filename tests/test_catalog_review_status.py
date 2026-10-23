@@ -197,6 +197,22 @@ class CatalogReviewStatusTests(unittest.TestCase):
             self.assertEqual(catalog_row.get("Value.Labels"), expected)
             self.assertIn("eligible denominator require validation", catalog_row.get("Value.Label.Review", ""))
 
+    def test_2020_prior_interview_disease_change_labels_reach_catalog(self):
+        import csv
+        with (ROOT / "audit/chronic_disease_ancillary_variable_mapping_v1.csv").open(encoding="utf-8-sig", newline="") as handle:
+            mappings = list(csv.DictReader(handle))
+        rows = [row for row in mappings if row.get("wave") == "2020" and row.get("code", "").lower().startswith("da002_")]
+        self.assertEqual(len(rows), 18)
+        self.assertTrue(all("99=Did not have this disease at the prior interview" in row.get("value_labels", "") for row in rows))
+        self.assertTrue(all("prior-wave route retained" in row.get("value_label_status", "") for row in rows))
+        for row in rows:
+            catalog_row = next(
+                item for item in self.catalog
+                if item.get("Source.Wave") == "2020" and item.get("Variable.Name", "").lower() == row["code"].lower()
+            )
+            self.assertEqual(catalog_row.get("Value.Labels"), row.get("value_labels"))
+            self.assertIn("frequencies excluded", catalog_row.get("Value.Label.Review", ""))
+
     def test_unreviewed_chronic_ancillary_fields_are_not_marked_as_reviewed(self):
         import csv
         with (ROOT / "audit/chronic_disease_ancillary_variable_mapping_v1.csv").open(encoding="utf-8-sig", newline="") as handle:

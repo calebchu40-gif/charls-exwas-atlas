@@ -5,7 +5,7 @@
 - 网站字段目录7,544行：E 4,566、P-only 1,903、C 911、双角色E/P 164。
 - E/P候选概念1,408个：暴露侧1,130、表型侧287、双角色9；E/P概念—源字段映射6,598行。全来源crosswalk 6,804行，其中6,792行匹配目录、12行是目录外C元数据。
 - 五个常规波次元数据层面的非自配对共现为2011 120,052、2013 126,301、2015 128,984、2018 98,667、2020 12,598。它们不是受访者人数、逐对样本量或分析资格。
-- E/P目录有3,164行带非空已审/官方类别标签文本，覆盖3,138个波次—字段码；1,734条E/P目录角色行仍显示`not yet reviewed`。连续测量、测量组件和计数可已完成语义审阅而没有类别值标签。48条2013/2015/2018疾病控制与既往访谈变化字段现已补入逐波官方类别；详见[`chronic_disease_ancillary_label_ingestion_2026-10-22.md`](chronic_disease_ancillary_label_ingestion_2026-10-22.md)。
+- E/P目录有3,182行带非空已审/官方类别标签文本，覆盖3,156个波次—字段码；1,716条E/P目录角色行仍显示`not yet reviewed`。连续测量、测量组件和计数可已完成语义审阅而没有类别值标签。2013/2015/2018疾病控制/既往访谈变化48个字段和2020既往访谈变化18个字段均已补入逐波官方类别；详见[`chronic_disease_ancillary_label_ingestion_2026-10-22.md`](chronic_disease_ancillary_label_ingestion_2026-10-22.md)。
 - 本轮修复连续行为变量审核状态传播：73条波次—字段行从泛化的未核验状态改为有来源的连续测量/年龄年份语义。细节见[`behavior_numeric_measure_status_sync_2026-10-23.md`](behavior_numeric_measure_status_sync_2026-10-23.md)。
 - 另有608条养老金数值/计数或无离散类别字段从通用待核状态改为“官方代码本字段已定位；未列离散类别”；其余6条源审核记录已有更具体状态而予以保留。此状态不代表单位、路线或发行版编码已核。详见[`pension_numeric_status_sync_2026-10-23.md`](pension_numeric_status_sync_2026-10-23.md)。
 - 收入/家庭支出类别中有51条精确代码本条目显示数值摘要但未列分类菜单；另为五波工资/奖金收入字段转录`1=Yes; 2=No`类别，频数未复制、波次题目范围仍分开审核。详情见[`income_numeric_and_receipt_label_sync_2026-10-23.md`](income_numeric_and_receipt_label_sync_2026-10-23.md)。
@@ -17,4 +17,4 @@
 
 ## 验证
 
-`python scripts/build_ep_atlas_metadata.py`成功完成；64项测试通过；`node --check site-prototype/dist/app.js`通过；网站目录30个顶层JSON均可解析；33条`DO NOT ANALYZE`锁定与分流清单完全一致；`git diff --check`通过。重建未读取任何CHARLS个人记录。
+`python scripts/build_ep_atlas_metadata.py`成功完成；65项测试通过；`node --check site-prototype/dist/app.js`通过；网站目录30个顶层JSON均可解析；33条`DO NOT ANALYZE`锁定与分流清单完全一致；`git diff --check`通过。重建未读取任何CHARLS个人记录。
