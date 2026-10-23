@@ -52,11 +52,14 @@ WAVE_SOURCES = {
 def build_rows() -> list[dict[str, str]]:
     rows = []
     codes_by_wave: dict[str, set[str]] = {}
+    codebook_texts: dict[str, str] = {}
     for wave, source in WAVE_SOURCES.items():
         codebook_path = ROOT / source["codebook"]
-        codebook_text = codebook_path.read_text(encoding="utf-8", errors="replace").lower()
+        codebook_text = codebook_path.read_text(encoding="utf-8", errors="replace")
+        codebook_texts[wave] = codebook_text
+        codebook_lower = codebook_text.lower()
         codes_by_wave[wave] = {
-            code.lower() for code in re.findall(r"[a-z]{2}\d{3}(?:_\d+)?", codebook_text)
+            code.lower() for code in re.findall(r"[a-z]{2}\d{3}(?:_\d+)?", codebook_lower)
         }
     for concept, label, domain, codes, note in FIELDS:
         for wave, source in WAVE_SOURCES.items():
@@ -64,6 +67,15 @@ def build_rows() -> list[dict[str, str]]:
             absent = sorted(set(candidate_codes) - codes_by_wave[wave])
             if absent:
                 raise ValueError(f"{wave} Codebook is missing candidate code(s) for {concept}: {absent}")
+            labels = []
+            for code in candidate_codes:
+                match = re.search(r"•\s*" + re.escape(code) + r"\s*:\s*([^\r\n]+)", codebook_texts[wave], re.I)
+                if not match:
+                    raise ValueError(f"{wave} Codebook has no extractable variable label for {code}")
+                label = match.group(1).split(r"\n", 1)[0].strip()
+                if wave == "2013" and code == "ql002":
+                    label += " [extraction clipped at page boundary]"
+                labels.append(f"{code}={label}")
             rows.append({
                 "concept_id": concept,
                 "concept_label": label,
@@ -76,6 +88,7 @@ def build_rows() -> list[dict[str, str]]:
                 "source_document": source["documents"],
                 "source_caveat": source["caveat"],
                 "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability",
+                "source_field_labels": "; ".join(labels),
             })
     return rows
 

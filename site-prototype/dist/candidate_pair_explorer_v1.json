@@ -15883,6 +15883,26 @@
           ]
         },
         {
+          "concept_id": "arm_length",
+          "label": "Arm Length",
+          "domain": "人体测量",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qj002",
+              "label": "qj002",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "记录值并保留测量侧别qj003。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "记录值并保留测量侧别qj003。"
+            }
+          ]
+        },
+        {
           "concept_id": "blood_crp",
           "label": "C反应蛋白",
           "domain": "炎症",
@@ -15899,6 +15919,46 @@
               "value_semantics": "CHARLS血检发布说明称CRP/高敏CRP；分析前需以对应波次实验室文档确认检测定义。 | 当前本地可用血液化验仅2011波",
               "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight | measured",
               "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对 | 当前本地可用血液化验仅2011波"
+            }
+          ]
+        },
+        {
+          "concept_id": "diastolic_bp",
+          "label": "Diastolic Reading",
+          "domain": "血压/循环",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qa004",
+              "label": "qa004",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+            },
+            {
+              "code": "qa008",
+              "label": "qa008",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+            },
+            {
+              "code": "qa012",
+              "label": "qa012",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
             }
           ]
         },
@@ -16010,6 +16070,36 @@
               "value_semantics": "EA001 is a multi-select current health-insurance policy-holder/primary-beneficiary list; keep selected plan indicators separate. Codebook lists category-specific selected responses but does not establish a safe common numeric No code in this text extract; preserve raw selection fields and verify release formats before recoding.",
               "mapping_status": "Field label verified; underlying unselected storage code not confirmed",
               "caveat": "Insurance instrument and coding change by wave. 2015 ea001_w3_2_* only indicates continued coverage for plans reported in the previous wave; it is not a complete current-plan inventory. 2020 ba017 is one categorical type field. Do not sum overlapping plan types without checking coding."
+            }
+          ]
+        },
+        {
+          "concept_id": "standing_height",
+          "label": "Height",
+          "domain": "人体测量",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qi002",
+              "label": "qi002",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "现场身高读数；与qh006等椅子测试字段区分。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "现场身高读数；与qh006等椅子测试字段区分。"
+            },
+            {
+              "code": "qi002",
+              "label": "Height",
+              "module": "biomarkers",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "2011/2013/2015映射体检问卷QI002（cm）；按代码本排除993/999特殊结果码，2018/2020当前发布文件未见可比实测字段",
+              "mapping_status": "measured",
+              "caveat": "2011/2013/2015映射体检问卷QI002（cm）；按代码本排除993/999特殊结果码，2018/2020当前发布文件未见可比实测字段"
             }
           ]
         },
@@ -16151,6 +16241,66 @@
               "value_semantics": "nominal amount; annual module or wave-specific inpatient reference Questionnaire review: EE005 asks past-year cost of inpatient care, limited to fees paid to the hospital; preserve any no-cost branch and the annual inpatient route.",
               "mapping_status": "Official wave questionnaire item/route and Codebook label reviewed; release storage, special codes, denominator and analysis eligibility remain pending; not analysis-ready",
               "caveat": "2011–2015 items summarize cost of inpatient care over the past-year module; 2018 Codebook has a total inpatient-cost item. Confirm route, hospitalization count, missing/special values, and whether each release stores all-stay or referenced-stay cost before harmonizing. Bracket bounds are not exact amounts."
+            }
+          ]
+        },
+        {
+          "concept_id": "knee_height",
+          "label": "Knee Height",
+          "domain": "人体测量",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qk002",
+              "label": "qk002",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "记录值并保留测量侧别/腿别qk003。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "记录值并保留测量侧别/腿别qk003。"
+            }
+          ]
+        },
+        {
+          "concept_id": "peak_flow",
+          "label": "Meaurement Reading-3",
+          "domain": "肺功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qb002",
+              "label": "qb002",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
+            },
+            {
+              "code": "qb003",
+              "label": "qb003",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
+            },
+            {
+              "code": "qb004",
+              "label": "qb004",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
             }
           ]
         },
@@ -16419,6 +16569,186 @@
           ]
         },
         {
+          "concept_id": "pulse_rate",
+          "label": "Pulse",
+          "domain": "血压/循环",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qa005",
+              "label": "qa005",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+            },
+            {
+              "code": "qa009",
+              "label": "qa009",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+            },
+            {
+              "code": "qa013",
+              "label": "qa013",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+            }
+          ]
+        },
+        {
+          "concept_id": "grip_strength",
+          "label": "Right Hand-2kg",
+          "domain": "肌力/功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qc003",
+              "label": "qc003",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+            },
+            {
+              "code": "qc004",
+              "label": "qc004",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+            },
+            {
+              "code": "qc005",
+              "label": "qc005",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+            },
+            {
+              "code": "qc006",
+              "label": "qc006",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+            }
+          ]
+        },
+        {
+          "concept_id": "systolic_bp",
+          "label": "Systolic Reading",
+          "domain": "血压/循环",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qa003",
+              "label": "qa003",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+            },
+            {
+              "code": "qa007",
+              "label": "qa007",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+            },
+            {
+              "code": "qa011",
+              "label": "qa011",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+            }
+          ]
+        },
+        {
+          "concept_id": "repeated_chair_stand",
+          "label": "Times",
+          "domain": "下肢功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qh002",
+              "label": "qh002",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+            },
+            {
+              "code": "qh003",
+              "label": "qh003",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+            },
+            {
+              "code": "qh004",
+              "label": "qh004",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+            },
+            {
+              "code": "qh005",
+              "label": "qh005",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+            }
+          ]
+        },
+        {
           "concept_id": "healthcare_cost_inpatient_last_stay_total",
           "label": "Total medical cost at last inpatient hospitalization",
           "domain": "Healthcare expenditure phenotype",
@@ -16475,6 +16805,126 @@
               "value_semantics": "nominal amount; transport cost; reference visit varies by wave Questionnaire review: ED015 records one-way transport cost to the facility (including fuel) and is skipped under the ED014=1 route; retain that eligibility condition.",
               "mapping_status": "Official wave questionnaire item/route and Codebook label reviewed; release storage, special codes, denominator and analysis eligibility remain pending; not analysis-ready",
               "caveat": "Transportation expenditure associated with the outpatient visit; preserve each wave’s visit reference and route. Not a medical treatment charge."
+            }
+          ]
+        },
+        {
+          "concept_id": "balance_full_tandem",
+          "label": "Use Any Compensatory Movements",
+          "domain": "平衡/功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qe002",
+              "label": "qe002",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+            },
+            {
+              "code": "qe003",
+              "label": "qe003",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+            },
+            {
+              "code": "qe004",
+              "label": "qe004",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+            }
+          ]
+        },
+        {
+          "concept_id": "balance_semi_tandem",
+          "label": "Use Any Compensatory Movements",
+          "domain": "平衡/功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qd002",
+              "label": "qd002",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+            },
+            {
+              "code": "qd003",
+              "label": "qd003",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+            },
+            {
+              "code": "qd004",
+              "label": "qd004",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+            }
+          ]
+        },
+        {
+          "concept_id": "balance_side_by_side",
+          "label": "Use Any Compensatory Movements",
+          "domain": "平衡/功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qf002",
+              "label": "qf002",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
+            },
+            {
+              "code": "qf003",
+              "label": "qf003",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
+            },
+            {
+              "code": "qf004",
+              "label": "qf004",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
             }
           ]
         },
@@ -16609,22 +17059,82 @@
           ]
         },
         {
-          "concept_id": "arm_length",
-          "label": "上臂长度",
+          "concept_id": "waist_circumference",
+          "label": "Waist Measurement",
+          "domain": "人体测量/脂肪分布",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qm002",
+              "label": "qm002",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "注意厚重衣物、测量完成状态及波次问卷的路由。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "注意厚重衣物、测量完成状态及波次问卷的路由。"
+            },
+            {
+              "code": "qm002",
+              "label": "Waist Measurement",
+              "module": "biomarkers",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "仅确认2011—2015；统一单位并检查测量质控",
+              "mapping_status": "measured",
+              "caveat": "仅确认2011—2015；统一单位并检查测量质控"
+            }
+          ]
+        },
+        {
+          "concept_id": "walking_speed",
+          "label": "Walking Speed Time-2",
+          "domain": "移动/功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qg002",
+              "label": "qg002",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。"
+            },
+            {
+              "code": "qg003",
+              "label": "qg003",
+              "module": "Physical Examination Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
+              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+              "caveat": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。"
+            }
+          ]
+        },
+        {
+          "concept_id": "body_weight",
+          "label": "Weight Measurement",
           "domain": "人体测量",
           "roles": [
             "p"
           ],
           "source_fields": [
             {
-              "code": "qj002",
-              "label": "qj002",
+              "code": "ql002",
+              "label": "ql002",
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "记录值并保留测量侧别qj003。",
+              "value_semantics": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "记录值并保留测量侧别qj003。"
+              "caveat": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。"
             }
           ]
         },
@@ -16689,26 +17199,6 @@
           ]
         },
         {
-          "concept_id": "body_weight",
-          "label": "体重",
-          "domain": "人体测量",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "ql002",
-              "label": "ql002",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。"
-            }
-          ]
-        },
-        {
           "concept_id": "mood_effort",
           "label": "做事费力",
           "domain": "",
@@ -16725,46 +17215,6 @@
               "value_semantics": "",
               "mapping_status": "按CHARLS原字段标签匹配；量表计分未定义",
               "caveat": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。"
-            }
-          ]
-        },
-        {
-          "concept_id": "balance_full_tandem",
-          "label": "全串联站立平衡",
-          "domain": "平衡/功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qe002",
-              "label": "qe002",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
-            },
-            {
-              "code": "qe003",
-              "label": "qe003",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
-            },
-            {
-              "code": "qe004",
-              "label": "qe004",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
             }
           ]
         },
@@ -17249,86 +17699,6 @@
           ]
         },
         {
-          "concept_id": "balance_semi_tandem",
-          "label": "半串联站立平衡",
-          "domain": "平衡/功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qd002",
-              "label": "qd002",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
-            },
-            {
-              "code": "qd003",
-              "label": "qd003",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
-            },
-            {
-              "code": "qd004",
-              "label": "qd004",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
-            }
-          ]
-        },
-        {
-          "concept_id": "peak_flow",
-          "label": "呼气峰流速",
-          "domain": "肺功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qb002",
-              "label": "qb002",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
-            },
-            {
-              "code": "qb003",
-              "label": "qb003",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
-            },
-            {
-              "code": "qb004",
-              "label": "qb004",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
-            }
-          ]
-        },
-        {
           "concept_id": "health_related_workdays_missed_2011",
           "label": "因健康问题导致的工作缺勤天数（2011）",
           "domain": "health and work function",
@@ -17425,46 +17795,6 @@
               "value_semantics": "MCV；与2015 bl_mcv对应。",
               "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight",
               "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
-            }
-          ]
-        },
-        {
-          "concept_id": "balance_side_by_side",
-          "label": "并排站立平衡",
-          "domain": "平衡/功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qf002",
-              "label": "qf002",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
-            },
-            {
-              "code": "qf003",
-              "label": "qf003",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
-            },
-            {
-              "code": "qf004",
-              "label": "qf004",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
             }
           ]
         },
@@ -17646,96 +17976,6 @@
               "value_semantics": "",
               "mapping_status": "字段标签候选映射；已抽查逐波官方问卷措辞",
               "caveat": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。 不据此生成ADL/IADL总分；2020题号重排，需按题意对照。"
-            }
-          ]
-        },
-        {
-          "concept_id": "grip_strength",
-          "label": "握力",
-          "domain": "肌力/功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qc003",
-              "label": "qc003",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
-            },
-            {
-              "code": "qc004",
-              "label": "qc004",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
-            },
-            {
-              "code": "qc005",
-              "label": "qc005",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
-            },
-            {
-              "code": "qc006",
-              "label": "qc006",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
-            }
-          ]
-        },
-        {
-          "concept_id": "systolic_bp",
-          "label": "收缩压",
-          "domain": "血压/循环",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qa003",
-              "label": "qa003",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
-            },
-            {
-              "code": "qa007",
-              "label": "qa007",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
-            },
-            {
-              "code": "qa011",
-              "label": "qa011",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
             }
           ]
         },
@@ -18140,36 +18380,6 @@
           ]
         },
         {
-          "concept_id": "walking_speed",
-          "label": "步行速度/计时步行",
-          "domain": "移动/功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qg002",
-              "label": "qg002",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。"
-            },
-            {
-              "code": "qg003",
-              "label": "qg003",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。"
-            }
-          ]
-        },
-        {
           "concept_id": "mobility_stairs",
           "label": "爬楼困难",
           "domain": "physical limitation",
@@ -18546,96 +18756,6 @@
               "value_semantics": "",
               "mapping_status": "field identified in official questionnaire/codebook; see wave-specific caveat",
               "caveat": "结局概念候选；包含左侧胸痛与爬楼/上坡/快走时胸痛两个分别提问的症状项；不等于心绞痛临床诊断，保留两个分项、波次和非代理路由，不合成一个分数。"
-            }
-          ]
-        },
-        {
-          "concept_id": "pulse_rate",
-          "label": "脉搏",
-          "domain": "血压/循环",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qa005",
-              "label": "qa005",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
-            },
-            {
-              "code": "qa009",
-              "label": "qa009",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
-            },
-            {
-              "code": "qa013",
-              "label": "qa013",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
-            }
-          ]
-        },
-        {
-          "concept_id": "waist_circumference",
-          "label": "腰围",
-          "domain": "人体测量/脂肪分布",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qm002",
-              "label": "qm002",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "注意厚重衣物、测量完成状态及波次问卷的路由。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "注意厚重衣物、测量完成状态及波次问卷的路由。"
-            },
-            {
-              "code": "qm002",
-              "label": "Waist Measurement",
-              "module": "biomarkers",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "仅确认2011—2015；统一单位并检查测量质控",
-              "mapping_status": "measured",
-              "caveat": "仅确认2011—2015；统一单位并检查测量质控"
-            }
-          ]
-        },
-        {
-          "concept_id": "knee_height",
-          "label": "膝高",
-          "domain": "人体测量",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qk002",
-              "label": "qk002",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "记录值并保留测量侧别/腿别qk003。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "记录值并保留测量侧别/腿别qk003。"
             }
           ]
         },
@@ -20690,46 +20810,6 @@
           ]
         },
         {
-          "concept_id": "diastolic_bp",
-          "label": "舒张压",
-          "domain": "血压/循环",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qa004",
-              "label": "qa004",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
-            },
-            {
-              "code": "qa008",
-              "label": "qa008",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
-            },
-            {
-              "code": "qa012",
-              "label": "qa012",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
-            }
-          ]
-        },
-        {
           "concept_id": "blood_platelets",
           "label": "血小板计数",
           "domain": "血常规",
@@ -21250,36 +21330,6 @@
           ]
         },
         {
-          "concept_id": "standing_height",
-          "label": "身高",
-          "domain": "人体测量",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qi002",
-              "label": "qi002",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "现场身高读数；与qh006等椅子测试字段区分。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "现场身高读数；与qh006等椅子测试字段区分。"
-            },
-            {
-              "code": "qi002",
-              "label": "Height",
-              "module": "biomarkers",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "2011/2013/2015映射体检问卷QI002（cm）；按代码本排除993/999特殊结果码，2018/2020当前发布文件未见可比实测字段",
-              "mapping_status": "measured",
-              "caveat": "2011/2013/2015映射体检问卷QI002（cm）；按代码本排除993/999特殊结果码，2018/2020当前发布文件未见可比实测字段"
-            }
-          ]
-        },
-        {
           "concept_id": "who_low_mood_severity",
           "label": "过去一个月低落/悲伤/抑郁感程度（WHO自报健康题）",
           "domain": "情绪症状",
@@ -21456,56 +21506,6 @@
               "value_semantics": "",
               "mapping_status": "按波次模块及官方问卷题意映射；需检查值标签/路由",
               "caveat": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
-            }
-          ]
-        },
-        {
-          "concept_id": "repeated_chair_stand",
-          "label": "重复椅子起立表现",
-          "domain": "下肢功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qh002",
-              "label": "qh002",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
-            },
-            {
-              "code": "qh003",
-              "label": "qh003",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
-            },
-            {
-              "code": "qh004",
-              "label": "qh004",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
-            },
-            {
-              "code": "qh005",
-              "label": "qh005",
-              "module": "Physical Examination Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
             }
           ]
         },
@@ -37917,6 +37917,66 @@
           ]
         },
         {
+          "concept_id": "arm_length",
+          "label": "Arm Length",
+          "domain": "人体测量",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qj002",
+              "label": "qj002",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "记录值并保留测量侧别qj003。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "记录值并保留测量侧别qj003。"
+            }
+          ]
+        },
+        {
+          "concept_id": "diastolic_bp",
+          "label": "Diastolic Reading",
+          "domain": "血压/循环",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qa004",
+              "label": "qa004",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+            },
+            {
+              "code": "qa008",
+              "label": "qa008",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+            },
+            {
+              "code": "qa012",
+              "label": "qa012",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+            }
+          ]
+        },
+        {
           "concept_id": "health_insurance_type_status",
           "label": "Health insurance type/status (wave-specific)",
           "domain": "Healthcare access / socioeconomic context",
@@ -38215,6 +38275,66 @@
               "value_semantics": "nominal amount; annual module or wave-specific inpatient reference Questionnaire review: EE005 asks past-year cost of inpatient care, limited to fees paid to the hospital; preserve any no-cost branch and the annual inpatient route.",
               "mapping_status": "Official wave questionnaire item/route and Codebook label reviewed; release storage, special codes, denominator and analysis eligibility remain pending; not analysis-ready",
               "caveat": "2011–2015 items summarize cost of inpatient care over the past-year module; 2018 Codebook has a total inpatient-cost item. Confirm route, hospitalization count, missing/special values, and whether each release stores all-stay or referenced-stay cost before harmonizing. Bracket bounds are not exact amounts."
+            }
+          ]
+        },
+        {
+          "concept_id": "knee_height",
+          "label": "Knee Height",
+          "domain": "人体测量",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qk002",
+              "label": "qk002",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "记录值并保留测量侧别/腿别qk003。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "记录值并保留测量侧别/腿别qk003。"
+            }
+          ]
+        },
+        {
+          "concept_id": "peak_flow",
+          "label": "Measurement Reading-3",
+          "domain": "肺功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qb002",
+              "label": "qb002",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
+            },
+            {
+              "code": "qb003",
+              "label": "qb003",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
+            },
+            {
+              "code": "qb004",
+              "label": "qb004",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
             }
           ]
         },
@@ -38563,6 +38683,46 @@
           ]
         },
         {
+          "concept_id": "pulse_rate",
+          "label": "Pulse",
+          "domain": "血压/循环",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qa005",
+              "label": "qa005",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+            },
+            {
+              "code": "qa009",
+              "label": "qa009",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+            },
+            {
+              "code": "qa013",
+              "label": "qa013",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+            }
+          ]
+        },
+        {
           "concept_id": "balance_test_preventing_health_problems_2013",
           "label": "Recent health conditions that may prevent balance testing (2013)",
           "domain": "physical function",
@@ -38579,6 +38739,146 @@
               "value_semantics": "",
               "mapping_status": "2013 single-wave candidate; official biomarker questionnaire and Codebook field identity, wording, route, and response categories reviewed",
               "caveat": "Before balance testing, asks whether recent surgery, injury, or another health condition could prevent standing from a chair and balancing. This is a self-reported physical-function/measurement-eligibility candidate, not a diagnosed balance disorder or performance score. Preserve test route and missingness."
+            }
+          ]
+        },
+        {
+          "concept_id": "grip_strength",
+          "label": "Right Hand 2",
+          "domain": "肌力/功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qc003",
+              "label": "qc003",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+            },
+            {
+              "code": "qc004",
+              "label": "qc004",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+            },
+            {
+              "code": "qc005",
+              "label": "qc005",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+            },
+            {
+              "code": "qc006",
+              "label": "qc006",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+            }
+          ]
+        },
+        {
+          "concept_id": "systolic_bp",
+          "label": "Systolic Reading",
+          "domain": "血压/循环",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qa003",
+              "label": "qa003",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+            },
+            {
+              "code": "qa007",
+              "label": "qa007",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+            },
+            {
+              "code": "qa011",
+              "label": "qa011",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+            }
+          ]
+        },
+        {
+          "concept_id": "repeated_chair_stand",
+          "label": "Times",
+          "domain": "下肢功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qh002",
+              "label": "qh002",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+            },
+            {
+              "code": "qh003",
+              "label": "qh003",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+            },
+            {
+              "code": "qh004",
+              "label": "qh004",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+            },
+            {
+              "code": "qh005",
+              "label": "qh005",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
             }
           ]
         },
@@ -38663,6 +38963,126 @@
           ]
         },
         {
+          "concept_id": "balance_full_tandem",
+          "label": "Use Any Compensatory Movements?",
+          "domain": "平衡/功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qe002",
+              "label": "qe002",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+            },
+            {
+              "code": "qe003",
+              "label": "qe003",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+            },
+            {
+              "code": "qe004",
+              "label": "qe004",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+            }
+          ]
+        },
+        {
+          "concept_id": "balance_semi_tandem",
+          "label": "Use Any Compensatory Movements?",
+          "domain": "平衡/功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qd002",
+              "label": "qd002",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+            },
+            {
+              "code": "qd003",
+              "label": "qd003",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+            },
+            {
+              "code": "qd004",
+              "label": "qd004",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+            }
+          ]
+        },
+        {
+          "concept_id": "balance_side_by_side",
+          "label": "Use Any Compensatory Movements?",
+          "domain": "平衡/功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qf002",
+              "label": "qf002",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
+            },
+            {
+              "code": "qf003",
+              "label": "qf003",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
+            },
+            {
+              "code": "qf004",
+              "label": "qf004",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
+            }
+          ]
+        },
+        {
           "concept_id": "adl_assistive_device_use",
           "label": "Use of assistive devices for activities of daily living",
           "domain": "functional status / assistive-device use",
@@ -38743,22 +39163,52 @@
           ]
         },
         {
-          "concept_id": "arm_length",
-          "label": "上臂长度",
+          "concept_id": "walking_speed",
+          "label": "Walking Speed Time-2",
+          "domain": "移动/功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qg002",
+              "label": "qg002",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。"
+            },
+            {
+              "code": "qg003",
+              "label": "qg003",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
+              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。"
+            }
+          ]
+        },
+        {
+          "concept_id": "body_weight",
+          "label": "Weight Measuremen [extraction clipped at page boundary]",
           "domain": "人体测量",
           "roles": [
             "p"
           ],
           "source_fields": [
             {
-              "code": "qj002",
-              "label": "qj002",
+              "code": "ql002",
+              "label": "ql002",
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "记录值并保留测量侧别qj003。",
+              "value_semantics": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "记录值并保留测量侧别qj003。"
+              "caveat": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。"
             }
           ]
         },
@@ -38823,26 +39273,6 @@
           ]
         },
         {
-          "concept_id": "body_weight",
-          "label": "体重",
-          "domain": "人体测量",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "ql002",
-              "label": "ql002",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。"
-            }
-          ]
-        },
-        {
           "concept_id": "mood_effort",
           "label": "做事费力",
           "domain": "",
@@ -38879,46 +39309,6 @@
               "value_semantics": "Number of work days missed last year due to health problems; questionnaire explicitly instructs 0 when no work days were missed.",
               "mapping_status": "2013 single-wave outcome candidate; questionnaire/codebook field identity and response range reviewed",
               "caveat": "Asked within the agricultural work branch routed from FA001=1; preserve this eligibility universe. Explicit 0 means no missed work days among routed respondents, not absence of health problems. Structural missingness must not be recoded as zero. This is work-related functional impact, not a diagnosis or general disability score."
-            }
-          ]
-        },
-        {
-          "concept_id": "balance_full_tandem",
-          "label": "全串联站立平衡",
-          "domain": "平衡/功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qe002",
-              "label": "qe002",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
-            },
-            {
-              "code": "qe003",
-              "label": "qe003",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
-            },
-            {
-              "code": "qe004",
-              "label": "qe004",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
             }
           ]
         },
@@ -39853,86 +40243,6 @@
           ]
         },
         {
-          "concept_id": "balance_semi_tandem",
-          "label": "半串联站立平衡",
-          "domain": "平衡/功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qd002",
-              "label": "qd002",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
-            },
-            {
-              "code": "qd003",
-              "label": "qd003",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
-            },
-            {
-              "code": "qd004",
-              "label": "qd004",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
-            }
-          ]
-        },
-        {
-          "concept_id": "peak_flow",
-          "label": "呼气峰流速",
-          "domain": "肺功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qb002",
-              "label": "qb002",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
-            },
-            {
-              "code": "qb003",
-              "label": "qb003",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
-            },
-            {
-              "code": "qb004",
-              "label": "qb004",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
-            }
-          ]
-        },
-        {
           "concept_id": "mood_bothered",
           "label": "因小事烦恼",
           "domain": "",
@@ -39969,46 +40279,6 @@
               "value_semantics": "",
               "mapping_status": "按CHARLS原字段标签匹配；量表计分未定义",
               "caveat": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。"
-            }
-          ]
-        },
-        {
-          "concept_id": "balance_side_by_side",
-          "label": "并排站立平衡",
-          "domain": "平衡/功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qf002",
-              "label": "qf002",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
-            },
-            {
-              "code": "qf003",
-              "label": "qf003",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
-            },
-            {
-              "code": "qf004",
-              "label": "qf004",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
             }
           ]
         },
@@ -40170,96 +40440,6 @@
               "value_semantics": "",
               "mapping_status": "字段标签候选映射；已抽查逐波官方问卷措辞",
               "caveat": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。 不据此生成ADL/IADL总分；2020题号重排，需按题意对照。"
-            }
-          ]
-        },
-        {
-          "concept_id": "grip_strength",
-          "label": "握力",
-          "domain": "肌力/功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qc003",
-              "label": "qc003",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
-            },
-            {
-              "code": "qc004",
-              "label": "qc004",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
-            },
-            {
-              "code": "qc005",
-              "label": "qc005",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
-            },
-            {
-              "code": "qc006",
-              "label": "qc006",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
-            }
-          ]
-        },
-        {
-          "concept_id": "systolic_bp",
-          "label": "收缩压",
-          "domain": "血压/循环",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qa003",
-              "label": "qa003",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
-            },
-            {
-              "code": "qa007",
-              "label": "qa007",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
-            },
-            {
-              "code": "qa011",
-              "label": "qa011",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
             }
           ]
         },
@@ -40441,36 +40621,6 @@
               "value_semantics": "",
               "mapping_status": "字段标签候选映射；已抽查逐波官方问卷措辞",
               "caveat": "变量目录标签有拼写错误‘Walkinf’；2013官方问卷原题确认是步行1公里困难。 不据此生成ADL/IADL总分；2020题号重排，需按题意对照。"
-            }
-          ]
-        },
-        {
-          "concept_id": "walking_speed",
-          "label": "步行速度/计时步行",
-          "domain": "移动/功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qg002",
-              "label": "qg002",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。"
-            },
-            {
-              "code": "qg003",
-              "label": "qg003",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。"
             }
           ]
         },
@@ -40865,46 +41015,6 @@
           ]
         },
         {
-          "concept_id": "pulse_rate",
-          "label": "脉搏",
-          "domain": "血压/循环",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qa005",
-              "label": "qa005",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
-            },
-            {
-              "code": "qa009",
-              "label": "qa009",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
-            },
-            {
-              "code": "qa013",
-              "label": "qa013",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
-            }
-          ]
-        },
-        {
           "concept_id": "waist_circumference",
           "label": "腰围实测值",
           "domain": "体格测量",
@@ -40931,26 +41041,6 @@
               "value_semantics": "注意厚重衣物、测量完成状态及波次问卷的路由。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
               "caveat": "注意厚重衣物、测量完成状态及波次问卷的路由。"
-            }
-          ]
-        },
-        {
-          "concept_id": "knee_height",
-          "label": "膝高",
-          "domain": "人体测量",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qk002",
-              "label": "qk002",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "记录值并保留测量侧别/腿别qk003。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "记录值并保留测量侧别/腿别qk003。"
             }
           ]
         },
@@ -43695,46 +43785,6 @@
           ]
         },
         {
-          "concept_id": "diastolic_bp",
-          "label": "舒张压",
-          "domain": "血压/循环",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qa004",
-              "label": "qa004",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
-            },
-            {
-              "code": "qa008",
-              "label": "qa008",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
-            },
-            {
-              "code": "qa012",
-              "label": "qa012",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
-            }
-          ]
-        },
-        {
           "concept_id": "cog_wordlist_repetition_count",
           "label": "词表提示重复次数",
           "domain": "认知测验过程",
@@ -44481,56 +44531,6 @@
               "value_semantics": "",
               "mapping_status": "按波次模块及官方问卷题意映射；需检查值标签/路由",
               "caveat": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
-            }
-          ]
-        },
-        {
-          "concept_id": "repeated_chair_stand",
-          "label": "重复椅子起立表现",
-          "domain": "下肢功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qh002",
-              "label": "qh002",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
-            },
-            {
-              "code": "qh003",
-              "label": "qh003",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
-            },
-            {
-              "code": "qh004",
-              "label": "qh004",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
-            },
-            {
-              "code": "qh005",
-              "label": "qh005",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
             }
           ]
         },
@@ -61792,6 +61792,26 @@
           ]
         },
         {
+          "concept_id": "arm_length",
+          "label": "Arm Length",
+          "domain": "人体测量",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qj002",
+              "label": "qj002",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "记录值并保留测量侧别qj003。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "记录值并保留测量侧别qj003。"
+            }
+          ]
+        },
+        {
           "concept_id": "blood_crp",
           "label": "C反应蛋白",
           "domain": "炎症",
@@ -61808,6 +61828,46 @@
               "value_semantics": "CHARLS血检发布说明称CRP/高敏CRP；分析前需以对应波次实验室文档确认检测定义。",
               "mapping_status": "Official release note confirms the file; local copy is currently absent",
               "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
+            }
+          ]
+        },
+        {
+          "concept_id": "diastolic_bp",
+          "label": "Diastolic Reading",
+          "domain": "血压/循环",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qa004",
+              "label": "qa004",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+            },
+            {
+              "code": "qa008",
+              "label": "qa008",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+            },
+            {
+              "code": "qa012",
+              "label": "qa012",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
             }
           ]
         },
@@ -62104,6 +62164,66 @@
           ]
         },
         {
+          "concept_id": "knee_height",
+          "label": "Knee Height",
+          "domain": "人体测量",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qk002",
+              "label": "qk002",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "记录值并保留测量侧别/腿别qk003。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "记录值并保留测量侧别/腿别qk003。"
+            }
+          ]
+        },
+        {
+          "concept_id": "peak_flow",
+          "label": "Measurement Reading-3",
+          "domain": "肺功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qb002",
+              "label": "qb002",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
+            },
+            {
+              "code": "qb003",
+              "label": "qb003",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
+            },
+            {
+              "code": "qb004",
+              "label": "qb004",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
+            }
+          ]
+        },
+        {
           "concept_id": "hospital_nights_last_stay",
           "label": "Nights in hospital at last inpatient stay",
           "domain": "Healthcare utilization",
@@ -62388,6 +62508,186 @@
           ]
         },
         {
+          "concept_id": "pulse_rate",
+          "label": "PULSE",
+          "domain": "血压/循环",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qa005",
+              "label": "qa005",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+            },
+            {
+              "code": "qa009",
+              "label": "qa009",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+            },
+            {
+              "code": "qa013",
+              "label": "qa013",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+            }
+          ]
+        },
+        {
+          "concept_id": "grip_strength",
+          "label": "Right Hand-2(Kg)",
+          "domain": "肌力/功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qc003",
+              "label": "qc003",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+            },
+            {
+              "code": "qc004",
+              "label": "qc004",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+            },
+            {
+              "code": "qc005",
+              "label": "qc005",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+            },
+            {
+              "code": "qc006",
+              "label": "qc006",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+            }
+          ]
+        },
+        {
+          "concept_id": "systolic_bp",
+          "label": "Systolic Reading",
+          "domain": "血压/循环",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qa003",
+              "label": "qa003",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+            },
+            {
+              "code": "qa007",
+              "label": "qa007",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+            },
+            {
+              "code": "qa011",
+              "label": "qa011",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+            }
+          ]
+        },
+        {
+          "concept_id": "repeated_chair_stand",
+          "label": "times",
+          "domain": "下肢功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qh002",
+              "label": "qh002",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+            },
+            {
+              "code": "qh003",
+              "label": "qh003",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+            },
+            {
+              "code": "qh004",
+              "label": "qh004",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+            },
+            {
+              "code": "qh005",
+              "label": "qh005",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+            }
+          ]
+        },
+        {
           "concept_id": "healthcare_cost_inpatient_last_stay_total",
           "label": "Total medical cost at last inpatient hospitalization",
           "domain": "Healthcare expenditure phenotype",
@@ -62444,6 +62744,126 @@
               "value_semantics": "nominal amount; transport cost; reference visit varies by wave Questionnaire review: ED015 records one-way transport cost to the facility (including fuel) and is skipped under the ED014=1 route; retain that eligibility condition.",
               "mapping_status": "Official wave questionnaire item/route and Codebook label reviewed; release storage, special codes, denominator and analysis eligibility remain pending; not analysis-ready",
               "caveat": "Transportation expenditure associated with the outpatient visit; preserve each wave’s visit reference and route. Not a medical treatment charge."
+            }
+          ]
+        },
+        {
+          "concept_id": "balance_full_tandem",
+          "label": "use any compensatory movements?",
+          "domain": "平衡/功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qe002",
+              "label": "qe002",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+            },
+            {
+              "code": "qe003",
+              "label": "qe003",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+            },
+            {
+              "code": "qe004",
+              "label": "qe004",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+            }
+          ]
+        },
+        {
+          "concept_id": "balance_semi_tandem",
+          "label": "use any compensatory movements?",
+          "domain": "平衡/功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qd002",
+              "label": "qd002",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+            },
+            {
+              "code": "qd003",
+              "label": "qd003",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+            },
+            {
+              "code": "qd004",
+              "label": "qd004",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+            }
+          ]
+        },
+        {
+          "concept_id": "balance_side_by_side",
+          "label": "use any compensatory movements?",
+          "domain": "平衡/功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qf002",
+              "label": "qf002",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
+            },
+            {
+              "code": "qf003",
+              "label": "qf003",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
+            },
+            {
+              "code": "qf004",
+              "label": "qf004",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
             }
           ]
         },
@@ -62739,22 +63159,52 @@
           ]
         },
         {
-          "concept_id": "arm_length",
-          "label": "上臂长度",
+          "concept_id": "walking_speed",
+          "label": "Walking Speed Time-2",
+          "domain": "移动/功能",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qg002",
+              "label": "qg002",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。"
+            },
+            {
+              "code": "qg003",
+              "label": "qg003",
+              "module": "Biomarker Questionnaire",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
+              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+              "caveat": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。"
+            }
+          ]
+        },
+        {
+          "concept_id": "body_weight",
+          "label": "Weight",
           "domain": "人体测量",
           "roles": [
             "p"
           ],
           "source_fields": [
             {
-              "code": "qj002",
-              "label": "qj002",
+              "code": "ql002",
+              "label": "ql002",
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "记录值并保留测量侧别qj003。",
+              "value_semantics": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "记录值并保留测量侧别qj003。"
+              "caveat": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。"
             }
           ]
         },
@@ -62839,26 +63289,6 @@
           ]
         },
         {
-          "concept_id": "body_weight",
-          "label": "体重",
-          "domain": "人体测量",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "ql002",
-              "label": "ql002",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。"
-            }
-          ]
-        },
-        {
           "concept_id": "mood_effort",
           "label": "做事费力",
           "domain": "",
@@ -62875,46 +63305,6 @@
               "value_semantics": "",
               "mapping_status": "按CHARLS原字段标签匹配；量表计分未定义",
               "caveat": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。"
-            }
-          ]
-        },
-        {
-          "concept_id": "balance_full_tandem",
-          "label": "全串联站立平衡",
-          "domain": "平衡/功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qe002",
-              "label": "qe002",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
-            },
-            {
-              "code": "qe003",
-              "label": "qe003",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
-            },
-            {
-              "code": "qe004",
-              "label": "qe004",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
             }
           ]
         },
@@ -63849,86 +64239,6 @@
           ]
         },
         {
-          "concept_id": "balance_semi_tandem",
-          "label": "半串联站立平衡",
-          "domain": "平衡/功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qd002",
-              "label": "qd002",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
-            },
-            {
-              "code": "qd003",
-              "label": "qd003",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
-            },
-            {
-              "code": "qd004",
-              "label": "qd004",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
-            }
-          ]
-        },
-        {
-          "concept_id": "peak_flow",
-          "label": "呼气峰流速",
-          "domain": "肺功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qb002",
-              "label": "qb002",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
-            },
-            {
-              "code": "qb003",
-              "label": "qb003",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
-            },
-            {
-              "code": "qb004",
-              "label": "qb004",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
-            }
-          ]
-        },
-        {
           "concept_id": "housework_capacity_health_limitation",
           "label": "因健康/残疾导致的家务能力受限",
           "domain": "work-related functional limitation",
@@ -64105,46 +64415,6 @@
               "value_semantics": "MCV；与2015 bl_mcv对应。",
               "mapping_status": "Official release note confirms the file; local copy is currently absent",
               "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
-            }
-          ]
-        },
-        {
-          "concept_id": "balance_side_by_side",
-          "label": "并排站立平衡",
-          "domain": "平衡/功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qf002",
-              "label": "qf002",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
-            },
-            {
-              "code": "qf003",
-              "label": "qf003",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
-            },
-            {
-              "code": "qf004",
-              "label": "qf004",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
             }
           ]
         },
@@ -64330,96 +64600,6 @@
           ]
         },
         {
-          "concept_id": "grip_strength",
-          "label": "握力",
-          "domain": "肌力/功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qc003",
-              "label": "qc003",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
-            },
-            {
-              "code": "qc004",
-              "label": "qc004",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
-            },
-            {
-              "code": "qc005",
-              "label": "qc005",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
-            },
-            {
-              "code": "qc006",
-              "label": "qc006",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
-            }
-          ]
-        },
-        {
-          "concept_id": "systolic_bp",
-          "label": "收缩压",
-          "domain": "血压/循环",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qa003",
-              "label": "qa003",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
-            },
-            {
-              "code": "qa007",
-              "label": "qa007",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
-            },
-            {
-              "code": "qa011",
-              "label": "qa011",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
-            }
-          ]
-        },
-        {
           "concept_id": "cog_orientation_time",
           "label": "时间定向",
           "domain": "定向能力",
@@ -64536,36 +64716,6 @@
               "value_semantics": "",
               "mapping_status": "字段标签候选映射；已抽查逐波官方问卷措辞",
               "caveat": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。 不据此生成ADL/IADL总分；2020题号重排，需按题意对照。"
-            }
-          ]
-        },
-        {
-          "concept_id": "walking_speed",
-          "label": "步行速度/计时步行",
-          "domain": "移动/功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qg002",
-              "label": "qg002",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。"
-            },
-            {
-              "code": "qg003",
-              "label": "qg003",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。"
             }
           ]
         },
@@ -65090,46 +65240,6 @@
           ]
         },
         {
-          "concept_id": "pulse_rate",
-          "label": "脉搏",
-          "domain": "血压/循环",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qa005",
-              "label": "qa005",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
-            },
-            {
-              "code": "qa009",
-              "label": "qa009",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
-            },
-            {
-              "code": "qa013",
-              "label": "qa013",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
-            }
-          ]
-        },
-        {
           "concept_id": "waist_circumference",
           "label": "腰围实测值",
           "domain": "体格测量",
@@ -65156,26 +65266,6 @@
               "value_semantics": "注意厚重衣物、测量完成状态及波次问卷的路由。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
               "caveat": "注意厚重衣物、测量完成状态及波次问卷的路由。"
-            }
-          ]
-        },
-        {
-          "concept_id": "knee_height",
-          "label": "膝高",
-          "domain": "人体测量",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qk002",
-              "label": "qk002",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "记录值并保留测量侧别/腿别qk003。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "记录值并保留测量侧别/腿别qk003。"
             }
           ]
         },
@@ -67900,46 +67990,6 @@
           ]
         },
         {
-          "concept_id": "diastolic_bp",
-          "label": "舒张压",
-          "domain": "血压/循环",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qa004",
-              "label": "qa004",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
-            },
-            {
-              "code": "qa008",
-              "label": "qa008",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
-            },
-            {
-              "code": "qa012",
-              "label": "qa012",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
-            }
-          ]
-        },
-        {
           "concept_id": "blood_platelets",
           "label": "血小板计数",
           "domain": "血常规",
@@ -68576,56 +68626,6 @@
               "value_semantics": "",
               "mapping_status": "按波次模块及官方问卷题意映射；需检查值标签/路由",
               "caveat": "问卷语义映射候选；题目回答字段与访员记录的辅助工具字段分开保留；按正确答案规则派生分数前需核对值标签。"
-            }
-          ]
-        },
-        {
-          "concept_id": "repeated_chair_stand",
-          "label": "重复椅子起立表现",
-          "domain": "下肢功能",
-          "roles": [
-            "p"
-          ],
-          "source_fields": [
-            {
-              "code": "qh002",
-              "label": "qh002",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
-            },
-            {
-              "code": "qh003",
-              "label": "qh003",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
-            },
-            {
-              "code": "qh004",
-              "label": "qh004",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
-            },
-            {
-              "code": "qh005",
-              "label": "qh005",
-              "module": "Biomarker Questionnaire",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
             }
           ]
         },

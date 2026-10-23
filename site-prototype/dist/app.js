@@ -35,7 +35,7 @@ const socialExposuresLoaded=deferJson('./social_exposures_v1.json?v=3','socialEx
 const healthcareAccessLoaded=deferJson('./healthcare_access_v1.json?v=3','healthcareAccess');
 const bloodBiomarkersLoaded=deferJson('./blood_biomarkers_v1.json?v=3','bloodBiomarkers');
 let candidatePairExplorerLoaded;
-const objectiveMeasurementsLoaded=deferJson('./objective_measurements_v1.json?v=1','objectiveMeasures');
+const objectiveMeasurementsLoaded=deferJson('./objective_measurements_v1.json?v=2','objectiveMeasures');
 const lifeHistoryLoaded=deferJson('./life_history_exposures_v1.json?v=1','lifeHistoryExposures');
 const catalogLoaded = {};
 
@@ -295,9 +295,9 @@ bloodBiomarkersLoaded.then(items=>{renderBloodBiomarkers(items);['bloodSearch','
 
 function renderObjectiveMeasurements(items){
  const term=byId('objectiveSearch').value.trim().toLocaleLowerCase(),wave=byId('objectiveWave').value;
- const matches=items.filter(x=>(!wave||x.wave===wave)&&(!term||`${x.concept_id} ${x.concept_label} ${x.domain} ${x.variables} ${x.module} ${x.value_semantics}`.toLocaleLowerCase().includes(term)));
+ const matches=items.filter(x=>(!wave||x.wave===wave)&&(!term||`${x.concept_id} ${x.concept_label} ${x.domain} ${x.variables} ${x.source_field_labels||''} ${x.module} ${x.value_semantics} ${x.source_status} ${x.source_document} ${x.codebook_presence||''} ${x.source_caveat||''}`.toLocaleLowerCase().includes(term)));
  const body=byId('objectiveRows');body.replaceChildren();
- for(const x of matches){const tr=document.createElement('tr');for(const v of [x.concept_id,x.concept_label,x.domain,x.variables,x.wave,x.module,x.value_semantics,[x.source_status,x.source_document].filter(Boolean).join('；')]){const td=document.createElement('td');td.textContent=v;tr.append(td)}body.append(tr)}
+ for(const x of matches){const tr=document.createElement('tr');for(const v of [x.concept_id,x.concept_label,x.domain,x.variables,x.source_field_labels||'Codebook字段标签未提取',x.wave,x.module,x.value_semantics,[x.source_status,x.codebook_presence,x.source_caveat,x.source_document].filter(Boolean).join('；')]){const td=document.createElement('td');td.textContent=v;tr.append(td)}body.append(tr)}
  byId('objectiveCount').textContent=`筛选命中 ${matches.length} 条波次—概念映射，涉及 ${new Set(matches.map(x=>x.concept_id)).size} 个候选测量概念；同一概念下多个读数不是多个指标。`;
 }
 objectiveMeasurementsLoaded.then(items=>{renderObjectiveMeasurements(items);['objectiveSearch','objectiveWave'].forEach(id=>byId(id).addEventListener('input',()=>renderObjectiveMeasurements(items)));document.querySelector('[data-view="objectiveMeasures"]').addEventListener('click',()=>renderObjectiveMeasurements(items))}).catch(err=>{byId('objectiveCount').textContent=`客观测量目录载入失败：${err.message}`});

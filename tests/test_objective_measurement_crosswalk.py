@@ -31,6 +31,18 @@ class ObjectiveMeasurementCrosswalkTests(unittest.TestCase):
             self.assertIn("all listed candidate code tokens found", row["codebook_presence"])
             self.assertIn("does not confirm", row["codebook_presence"])
 
+    def test_wave_specific_codebook_labels_are_preserved_without_summary_statistics(self):
+        rows = builder.build_rows()
+        bp_2011 = next(r for r in rows if r["concept_id"] == "systolic_bp" and r["wave"] == "2011")
+        waist_2013 = next(r for r in rows if r["concept_id"] == "waist_circumference" and r["wave"] == "2013")
+        weight_2013 = next(r for r in rows if r["concept_id"] == "body_weight" and r["wave"] == "2013")
+        self.assertIn("qa003=Systolic Reading", bp_2011["source_field_labels"])
+        self.assertIn("qm002=Waist Circumference", waist_2013["source_field_labels"])
+        self.assertIn("ql002=Weight Measuremen [extraction clipped at page boundary]", weight_2013["source_field_labels"])
+        for row in rows:
+            self.assertNotIn("Mean", row["source_field_labels"])
+            self.assertNotIn("OBS", row["source_field_labels"])
+
 
 if __name__ == "__main__":
     unittest.main()
