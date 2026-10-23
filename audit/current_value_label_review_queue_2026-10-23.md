@@ -6,7 +6,7 @@ This snapshot reads only the public, generated metadata in `site-prototype/dist/
 |---|---:|---:|
 | E exposure candidates | 4,723 | 0 |
 | P phenotype candidates | 2,067 | 0 |
-| C covariate/measurement metadata | 979 | 328 |
+| C covariate/measurement metadata | 979 | 257 |
 
 The current E queue contains no rows with a generic pending value-label status. The latest batch audited the final 12 fields across household expenditure, interwave work counts, rental-income status, COVID-period wage direction, occupational classification, and pandemic/work-history items. Several retain specific unresolved source or route caveats and `DO NOT ANALYZE` locks. These are field rows, not independent concepts or tests.
 
@@ -65,4 +65,9 @@ Latest rollup after education/hukou review: E generic pending 12, P 0, C 328; E/
 
 ## Latest rollup: 2026-10-23 final E review
 
-The generated E catalogue has 4,723 field-wave rows and zero generic `not yet reviewed` value-label states. The P catalogue remains at zero generic pending; C retains 328 generic pending rows. E/P nonempty reviewed/official label text totals 3,279 rows across 3,253 distinct wave-fields. Continuous amounts, counts, classification codes and dates may correctly have no categorical labels. The final 12-field review preserves all existing `DO NOT ANALYZE` locks and questionnaire/Codebook conflicts. Formal association models remain 0. See [`final_pending_field_review_2026-10-23.md`](final_pending_field_review_2026-10-23.md).
+The generated E catalogue has 4,723 field-wave rows and zero generic `not yet reviewed` value-label states. The P catalogue remains at zero generic pending; C retains 257 generic pending rows. E/P nonempty reviewed/official label text totals 3,279 rows across 3,253 distinct wave-fields. Continuous amounts, counts, classification codes and dates may correctly have no categorical labels. The final 12-field review preserves all existing `DO NOT ANALYZE` locks and questionnaire/Codebook conflicts. Formal association models remain 0. See [`final_pending_field_review_2026-10-23.md`](final_pending_field_review_2026-10-23.md).
+
+
+## Latest C metadata batch: prior-wave history and routing
+
+The 41 prior-interview response-history/routing flags and 14 prior-wave diagnosis-time answer-history flags were checked against their wave-specific official Codebooks. They remain C-only metadata; no response categories were inferred, and empty slots are not interpreted as “No.” This resolves 55 C rows with a specific metadata/source status. The latest generated C catalogue now has 257 generic pending rows. Review record: [`prior_wave_history_routing_metadata_review_2026-10-23.md`](prior_wave_history_routing_metadata_review_2026-10-23.md).
