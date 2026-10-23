@@ -8,6 +8,7 @@
 - 已整理核心年龄、性别、教育、婚姻、户籍、居住地/城乡及调查设计的字段来源与准备状态，见[`core_covariate_readiness_2026-10-23.md`](core_covariate_readiness_2026-10-23.md)。它们仍是候选方案，没有固定的统一调整集。
 - 新核对了Gateway to Global Aging Data的Harmonized CHARLS Version D Codebook：前四波年龄算法明确包含访谈年月、最近出生年月、缺出生月按6月、前两波缺出生年才用自报年龄及农历转换；性别字段需要保留跨模块/跨波冲突标记。审计说明和来源见[`official_age_gender_harmonization_review_2026-10-23.md`](official_age_gender_harmonization_review_2026-10-23.md)。
 - 在本机受控准备数据内存中比较性别来源字段，仅写入波次级汇总：2013/2015/2018访员记录与`xrgender`分歧125/19/0；2020访员记录分歧小于10并抑制，`zrgender`与`xrgender`分歧36。没有导出ID或个人行，冲突优先级仍待官方Wave 5定义复核。
+- 年龄输入清点发现，现有2011/2013个人分析准备表缺访谈年月`iyear/imonth`（字段在官方变量目录中指向weight/Weights模块）；2015–2020准备表有这些列。精确按Codebook重算前两波年龄需先恢复辅助模块并本地安全连接，不能用年份差代替。
 
 ## 本轮修正：关键词命中与协变量的区分
 

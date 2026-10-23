@@ -4,7 +4,7 @@
 
 | 概念/用途 | 逐波来源与当前状态 | 建模前必须完成 |
 |---|---|---|
-| 年龄（M1候选） | 2011/2013 `ba004` 极稀疏，仅34/69条；2015/2018 出生日期/出生年字段受访谈路线限制；2020 有CHARLS生成的 `xrage`。Gateway Harmonized CHARLS D 的官方文档定义 `RwAGEY` 使用访谈年/月与最近出生年/月；缺出生月按6月，Wave 1/2缺出生年才回退自报年龄，农历日期用CHARLS的`lunar2solar`转换。本地H-D对照覆盖与Codebook描述N存在小幅差异。 | 按官方构造说明建立逐波派生/核验；保留出生日期纠错来源和特殊缺失状态。对照CHARLS原始波次问卷、授权发行文件、H-D `RwAGEY`与2020 `xrage`；任何差异只发布聚合QA。详见[`official_age_gender_harmonization_review_2026-10-23.md`](official_age_gender_harmonization_review_2026-10-23.md)。 |
+| 年龄（M1候选） | 2011/2013 `ba004` 极稀疏，仅34/69条；2015/2018 出生日期/出生年字段受访谈路线限制；2020 有CHARLS生成的 `xrage`。Gateway Harmonized CHARLS D 的官方文档定义 `RwAGEY` 使用访谈年/月与最近出生年/月；缺出生月按6月，Wave 1/2缺出生年才回退自报年龄，农历日期用CHARLS的`lunar2solar`转换。本地H-D对照覆盖与Codebook描述N存在小幅差异。 | 按官方构造说明建立逐波派生/核验；保留出生日期纠错来源和特殊缺失状态。当前2011/2013私有person准备表缺`iyear/imonth`（原始目录显示分别来自weight/Weights模块），无法精确重算；须恢复并受控连接这些字段。对照CHARLS原始波次问卷、授权发行文件、H-D `RwAGEY`与2020 `xrage`；任何差异只发布聚合QA。详见[`official_age_gender_harmonization_review_2026-10-23.md`](official_age_gender_harmonization_review_2026-10-23.md)。 |
 | 性别（M1候选） | Wave 1官方Harmonized定义用人口学模块；Wave 2–4可能存在同一受访者跨波及人口学/健康模块冲突。`RAGENDER`按最一致报告构造，`RAFGENDR`说明最终取人口学众数、健康/居住模块众数或首个非缺失值。2020 `xrgender`、`zrgender`及访员/当轮记录需按Wave 5 Codebook独立核对。 | 不把任一原始`xrgender`直接视为冲突已解决的统一协变量；逐波比较来源字段和冲突标记，明确构造优先级、缺失和特殊样本处理。详见[`official_age_gender_harmonization_review_2026-10-23.md`](official_age_gender_harmonization_review_2026-10-23.md)。 |
 | 教育（M2候选） | 已有派生状态QA。2013返访/2015/2018更新字段包含“未变化”路由值；2020 `ba010` 与官方预载 `zredu`互补，不能只读取单一字段。 | 冻结沿用前波状态的规则、学历分类与教育缺失/拒答处理；决定成人教育与职业教育如何映射。 |
 | 婚姻/伴侣（M2候选） | `be001`覆盖2011–2018；2020 `ba011`题干/同住伴侣信息有差异。现有完整案例覆盖是候选，不表示跨波类别等价。 | 统一参考组和同居伴侣处理；明确是否把婚姻/同住伴侣作为目标问题的先验混杂因素。 |
