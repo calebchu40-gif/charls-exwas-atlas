@@ -49,4 +49,4 @@ The 2020 household floor-condition item I027 is now source-reviewed with its int
 
 The adjacent 2020 I002/I003 move-in timing pair is now source-reviewed. Although the Codebook labels say “Time House Built,” the questionnaire asks when the Household Financial Respondent moved into current housing. The exact-year item (-1 if unable to answer) and six-level fallback bracket remain separate; they are not treated as building construction year. Codebook frequencies are omitted. See the same housing context source-review audit.
 
-The combined 2020 housing-context batch passes all 182 Python tests, JavaScript syntax validation and `git diff --check`. The I027 update is live after Pages deploy #83; the I002/I003 follow-up is in the next pending commit/deployment. Metadata counts and the 89-row analysis lock are unchanged.
+The combined 2020 housing-context batch passes all 182 Python tests, JavaScript syntax validation and `git diff --check`. I027 is live after Pages deploy #83; I002/I003 is live after commit `28e727c` and Pages deploy #84. Both public JSON entries were verified. Metadata counts and the 89-row analysis lock are unchanged.
