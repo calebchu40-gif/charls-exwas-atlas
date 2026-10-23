@@ -37,7 +37,8 @@
 |审核状态|E/P目录行|
 |---|---:|
 |officially reviewed|2,527|
-|not yet reviewed|2,463|
+|not yet reviewed|1,855|
+|official codebook field located; continuous/count or no categorical labels|608|
 |continuous measure metadata available|214|
 |official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories|200|
 |official Codebook numeric/count response located; no discrete answer labels|128|

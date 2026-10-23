@@ -35,6 +35,24 @@ class CatalogReviewStatusTests(unittest.TestCase):
             self.assertTrue(all(row.get("Value.Label.Review", "").startswith(status) for row in rows), (wave, code))
             self.assertTrue(all(not row.get("Value.Labels", "") for row in rows), (wave, code))
 
+    def test_located_pension_codebook_fields_are_not_generic_pending_labels(self):
+        examples = [
+            ("2011", "fn004"),
+            ("2013", "fn003_w2_1_1_"),
+            ("2015", "fn003_w2_1"),
+            ("2018", "fn003_w2_1_1_"),
+        ]
+        for wave, code in examples:
+            rows = [
+                row for row in self.catalog
+                if row.get("Source.Wave") == wave and row.get("Variable.Name", "").lower() == code
+            ]
+            self.assertTrue(rows, (wave, code))
+            self.assertTrue(all(row.get("Value.Label.Review", "").startswith("official codebook field located; continuous/count or no categorical labels") for row in rows), (wave, code))
+            self.assertTrue(all(not row.get("Value.Labels", "") for row in rows), (wave, code))
+        app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
+        self.assertIn("官方代码本已找到该字段但未列离散类别", app)
+
     def test_public_methods_page_discloses_wave_specific_survey_design_gates(self):
         html = (ROOT / "site-prototype/dist/index.html").read_text(encoding="utf-8")
         card = html[html.index("抽样、权重与方差设计状态"):html.index("</section>", html.index("抽样、权重与方差设计状态"))]

@@ -1249,6 +1249,27 @@ def main() -> None:
             source = str(item.get("value_label_source", "")).strip()
             if source:
                 out.loc[selected, "Value.Label.Source"] = source
+    # Pension Codebook matches with no extracted response categories should
+    # not be presented as if the field itself has never been located. This is
+    # a source-location status only; it does not settle amount units, routes,
+    # special values, or analysis eligibility.
+    pension_codebook_path = root / "audit" / "pension_codebook_value_labels_v1.csv"
+    if pension_codebook_path.exists():
+        pension_values = pd.read_csv(pension_codebook_path, dtype=str, encoding="utf-8-sig").fillna("")
+        pending_codebook_status = "official codebook field located; continuous/count or no categorical labels"
+        for item in pension_values.to_dict(orient="records"):
+            if item.get("value_label_status", "").strip() != pending_codebook_status or item.get("value_labels", "").strip():
+                continue
+            selected = (
+                out["Source.Wave"].astype(str).eq(str(item.get("wave", "")))
+                & out["Variable.Name"].str.lower().eq(str(item.get("code", "")).lower())
+                & out["Value.Labels"].eq("")
+                & out["Value.Label.Review"].isin(["", "not yet reviewed"])
+            )
+            out.loc[selected, "Value.Label.Review"] = pending_codebook_status
+            source = str(item.get("value_label_source", "")).strip()
+            if source:
+                out.loc[selected, "Value.Label.Source"] = source
     cognition_value_path = root / "audit" / "cognition_item_variable_mapping_v1.csv"
     if cognition_value_path.exists():
         cognition_values = pd.read_csv(cognition_value_path, dtype=str, encoding="utf-8-sig").fillna("")
