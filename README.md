@@ -183,3 +183,5 @@ GitHub 官方说明：GitHub Free 个人仓库需要公开仓库才能使用 Pag
 逐波权重、样本标记和方差设计限制已显示在主页“数据与方法说明”卡片中；主导航中的“测量与设计元数据”会打开 C 类目录。候选配对页可按波次和概念查看来源字段、标签及边界，关联结果页目前明确显示尚无已审真实结果。详情见[`audit/github_pages_publication_review_2026-10-22.md`](audit/github_pages_publication_review_2026-10-22.md)。
 
 2026-10-23网站加载优化：静态JSON现在通过ETag重新验证缓存，重复访问可复用未变化的大型目录文件。首访仍会按现有前端结构加载目录；详情见[`audit/site_static_asset_cache_review_2026-10-23.md`](audit/site_static_asset_cache_review_2026-10-23.md)。
+
+2026-10-23首屏加载优化：主题目录按需加载；约23 MB主字段目录和约6.3 MB配对索引只在打开对应视图时读取。首页启动时不再下载目录JSON；静态资源用ETag验证缓存。详见[`audit/site_static_asset_cache_review_2026-10-23.md`](audit/site_static_asset_cache_review_2026-10-23.md)。

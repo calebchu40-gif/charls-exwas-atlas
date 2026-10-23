@@ -37,3 +37,6 @@ jobs:
 
       - name: Check website JavaScript syntax
         run: node --check site-prototype/dist/app.js
+
+      - name: Check deferred website data loading
+        run: node tests/test_deferred_asset_loader.cjs
