@@ -2,6 +2,7 @@
 
 ## 2026-10-24
 
+- Reviewed CHARLS-hosted Harmonized CHARLS Version D documentation as a secondary cross-wave reference. Added a seven-concept field mapping for age, gender, community urbanicity, hukou, self-rated health, BMI, and ADL; clarified its missing-value/construction conventions and survey-design context without copying frequency tables or treating harmonized variables as raw CHARLS measures.
 - Clarified the C metadata page for non-specialist users: covariate candidates are search aids, measurement and routing rows are explanatory metadata, and neither implies a selected adjustment set or completed analysis. Updated labels and cache-busted the page assets.
 - Reviewed 13 remaining 2011 work-module fields against the official questionnaire. Added questionnaire-only option wording where categories are listed, retained numeric release-code uncertainty, and added units, ranges, routes and interviewer instructions for continuous/count fields including 0/999997 handling notes. No questionnaire option order was treated as verified released-data coding.
 - Expanded the 2011 community education profile to include six exact percentage fields and six separate fallback brackets used only when the informant does not know the exact percentage. Verified category bins, current water/electricity price units, road-scale anchors, disaster routing and the village-only sanitation-reconstruction route; codebook frequencies remain excluded.

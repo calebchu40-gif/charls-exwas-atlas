@@ -2,6 +2,8 @@
 
 ## What official documentation establishes
 
+The CHARLS-hosted Harmonized CHARLS Version D codebook was additionally reviewed on 2026-10-24 as a secondary design source. It describes the sample as stratified by per-capita GDP for urban districts and rural counties, multistage county/district–village/community–household, and PPS; it identifies administrative villages/neighborhoods as PSUs. This adds documented context to the study's design description, but the codebook does not name a released variance-stratum field or specify an estimator. It therefore does not close the variance-design gate or authorize inferring strata from geography. See [`harmonized_charls_codebook_reference_review_2026-10-24.md`](harmonized_charls_codebook_reference_review_2026-10-24.md).
+
 The official 2018 Wave 4 User Guide describes the baseline as a nationally representative sample of adults aged 45+ and spouses, drawn in 28 provinces, with 150 county/district units and 450 village/urban communities. The documented design is stratified and multistage PPS: county-level units were sorted by NBS region, urban/rural type, and per-capita GDP; then county/district, village/community, and household stages were sampled. Refreshment respondents were added in follow-up waves to maintain representation of younger age-eligible adults. By Wave 4, cross-sectional respondents plus spouses numbered 19,817. The guide explicitly says the cross-sectional sample is not necessarily the same as the panel sample.
 
 For Wave 4 national cross-sectional inference, the User Guide recommends weights and describes four fields in `Weights.dta`:
