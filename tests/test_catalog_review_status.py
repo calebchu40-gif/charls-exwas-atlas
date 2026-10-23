@@ -144,6 +144,19 @@ class CatalogReviewStatusTests(unittest.TestCase):
             self.assertTrue(all(row.get("Value.Labels") == labels for row in rows), (wave, code))
             self.assertTrue(all(row.get("Value.Label.Review") == status for row in rows), (wave, code))
 
+    def test_missing_2011_work_codebook_categories_are_reported_as_not_located(self):
+        for wave, code in (("2011", "fd005_indc"), ("2011", "fd021_1"), ("2011", "fm017_a")):
+            rows = [
+                row for row in self.catalog
+                if row.get("Source.Wave") == wave and row.get("Variable.Name", "").lower() == code
+            ]
+            self.assertTrue(rows, (wave, code))
+            self.assertTrue(all(row.get("Value.Label.Review") == "official codebook category labels not located" for row in rows))
+            self.assertTrue(all(not row.get("Value.Labels", "") for row in rows))
+            self.assertTrue(all("CHARLS_2011_Codebook_extracted.txt" in row.get("Value.Label.Source", "") for row in rows))
+        app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
+        self.assertIn("已检索的官方代码本中未找到该字段的类别标签；这不代表没有类别", app)
+
     def test_income_codebook_numeric_summaries_are_not_generic_pending_labels(self):
         examples = [
             ("2011", "ge008"),

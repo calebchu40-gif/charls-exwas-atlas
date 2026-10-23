@@ -37,7 +37,7 @@
 |审核状态|E/P目录行|
 |---|---:|
 |officially reviewed|2,536|
-|not yet reviewed|1,305|
+|not yet reviewed|1,246|
 |official codebook field located; continuous/count or no categorical labels|608|
 |codebook field located; continuous/open response or no categorical labels|339|
 |continuous measure metadata available|214|
@@ -48,6 +48,7 @@
 |Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding|97|
 |连续值/字段结构；代码本未提供离散值标签|93|
 |official 2018 Codebook response categories transcribed; frequencies omitted; questionnaire route retained; respondent release coding and eligible denominator require validation|68|
+|official codebook category labels not located|59|
 |official 2011 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|53|
 |official 2013 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|52|
 |official 2015 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|52|

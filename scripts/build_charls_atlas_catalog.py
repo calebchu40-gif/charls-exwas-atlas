@@ -875,7 +875,10 @@ def main() -> None:
             code = str(item.get(code_col, "")).strip().lower()
             if not wave or not code:
                 continue
-            reviewed_status_without_value_label[(wave, code)] = (status, str(item.get(source_col, "")).strip())
+            source_ref = str(item.get(source_col, "")).strip()
+            if not source_ref:
+                source_ref = f"sources_official/CHARLS_{wave}_Codebook_extracted.txt; audit/{file}"
+            reviewed_status_without_value_label[(wave, code)] = (status, source_ref)
 
     official_review = re.compile(r"official codebook (?:item )?response labels reviewed", re.I)
     add_reviewed_labels("behavior_exposure_variable_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official codebook response labels reviewed|official selector code reviewed;", re.I))
@@ -906,6 +909,10 @@ def main() -> None:
             r"^continuous date component; preserve year/month unit and conditional (?:transition/correction|prior-status correction) route; month -1 indicates unable to report(?:; DO NOT ANALYZE pending route and released-data reconciliation)?$",
             re.I,
         ),
+    )
+    add_reviewed_status_without_value_label(
+        "work_exposure_value_labels_v1.csv", "wave", "code", "value_label_status", "value_label_source",
+        re.compile(r"^official codebook category labels not located$", re.I),
     )
     add_reviewed_labels("housing_value_label_review_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", official_review)
     add_reviewed_labels("household_asset_exposure_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire/codebook response labels reviewed|official questionnaire response categories transcribed", re.I))
