@@ -522,6 +522,16 @@ class CatalogReviewStatusTests(unittest.TestCase):
                           and row.get("Concept.ID") == "smoking_initiation_cessation"]
         self.assertEqual(len(component_rows), 2)
         self.assertTrue(all(row.get("Mapping.Status", "").startswith("DO NOT ANALYZE") for row in component_rows))
+        markers = [row for row in self.catalog if row.get("Source.Wave") == "2011"
+                   and row.get("Variable.Name", "").lower() in {"da062s1", "da062s2"}]
+        self.assertEqual({(row["Variable.Name"].lower(), row["epcf"].lower()) for row in markers},
+                         {("da062s1", "c"), ("da062s2", "c")})
+        marker_values = {row["Variable.Name"].lower(): row.get("Value.Labels", "") for row in markers}
+        self.assertEqual(marker_values, {"da062s1": "1=Age", "da062s2": "2=Year"})
+        answer_fields = [row for row in self.catalog if row.get("Source.Wave") == "2011"
+                         and row.get("Variable.Name", "").lower() in {"da062_1", "da062_2"}
+                         and row.get("epcf", "").lower() == "e"]
+        self.assertEqual(len(answer_fields), 2)
 
 
 if __name__ == "__main__":

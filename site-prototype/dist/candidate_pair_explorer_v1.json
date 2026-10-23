@@ -10498,26 +10498,6 @@
               "caveat": "自动概念目录中的逐波字段候选；年龄、年份及回答时点字段分列；波次存在字段重排和历史信息复核字段。"
             },
             {
-              "code": "da062s1",
-              "label": "The Age",
-              "module": "health_status_and_functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "Age in years",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；年龄、年份及回答时点字段分列；波次存在字段重排和历史信息复核字段。"
-            },
-            {
-              "code": "da062s2",
-              "label": "The Year",
-              "module": "health_status_and_functioning",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "Calendar year",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；年龄、年份及回答时点字段分列；波次存在字段重排和历史信息复核字段。"
-            },
-            {
               "code": "da065_1",
               "label": "The Age Beginning Smoking",
               "module": "health_status_and_functioning",

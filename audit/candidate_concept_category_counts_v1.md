@@ -8,7 +8,7 @@
 |e|social protection|314|1331|1331|
 |e|community context|100|187|187|
 |e|housing and built environment|42|480|480|
-|e|behavior|29|262|237|
+|e|behavior|29|260|235|
 |e|food and household environment|28|160|160|
 |e|internal biomarker|20|55|55|
 |e|healthcare access|7|109|109|

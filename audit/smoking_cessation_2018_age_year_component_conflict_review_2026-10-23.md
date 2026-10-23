@@ -11,10 +11,10 @@
 - `sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3087-L3091`
 - `sources_official/CHARLS_2018_Codebook_extracted.txt:L43128-L43158`
 - `audit/behavior_exposure_variable_mapping_v1.csv`保留两份材料各自的标签和明确冲突说明。
-- `audit/catalog_role_override_review_v1.csv`将DA062改为C类，并对两个组件增加波次精确的分析锁。
+- `audit/catalog_role_override_review_v1.csv`将戒烟时间选择器改为C类，并对2018两个组件增加波次精确的分析锁；同时将2011 DA062S1/DA062S2标记改为C类。
 - `scripts/apply_catalog_role_overrides.py`会将自动发现遗漏的组件字段补回为可检索E候选并锁定，避免冲突字段因角色推断而消失。
 
-2013、2015及2020的戒烟时间选择器另经问卷和Codebook核对：1=Age、2=Year，已作为C类元数据处理；具体回答组件仍分别保留年龄/年份含义。
+2013、2015及2020的戒烟时间选择器另经问卷和Codebook核对：1=Age、2=Year，已作为C类元数据处理；具体回答组件仍分别保留年龄/年份含义。2011问卷直接把DA062_1标为年龄、DA062_2标为年份；Codebook中的DA062S1和DA062S2分别只有固定的1=Age、2=Year标记值，不是个人戒烟时间，现转为C类组件类型元数据。类别标签保留但不复制Codebook频数。
 
 ## 验证
 

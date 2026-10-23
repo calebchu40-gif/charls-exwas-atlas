@@ -77,7 +77,9 @@ def map_direct(file: str, role: str, *, wave="wave", code="code", concept="conce
 # Wave-level, domain-audited mappings. Their original status/caveat is retained;
 # several files intentionally describe candidates pending final harmonization.
 behavior = load("behavior_exposure_variable_mapping_v1.csv")
-behavior_selectors = behavior["value_label_status"].str.startswith("official selector code reviewed")
+behavior_selectors = behavior["value_label_status"].str.startswith(
+    ("official selector code reviewed", "official component-type marker reviewed")
+)
 for item in behavior.loc[~behavior_selectors].to_dict("records"):
     add(item, role="e", file="behavior_exposure_variable_mapping_v1.csv",
         wave_key="wave", code_key="code", concept_key="concept_id",

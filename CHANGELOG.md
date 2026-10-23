@@ -2,6 +2,8 @@
 
 ## 2026-10-23
 
+- Reclassified the 2011 DA062S1/DA062S2 fixed Age/Year Codebook markers as C metadata; the questionnaire records actual cessation time in DA062_1/DA062_2. Added regression coverage and preserved the Codebook labels without frequencies.
+
 - Reviewed smoking cessation age/year selectors against each wave’s official questionnaire and Codebook. Reclassified the 2013, 2015, 2018, and 2020 selectors as C metadata; recorded the direct 2018 DA062_1/DA062_2 age/year label conflict and locked both components from analysis. Added regression checks and updated the DO NOT ANALYZE inventory to 35.
 
 - Clarified six DA017 cancer-site fields with no observed Codebook categories: the official questionnaires confirm each numbered site option, while response labels remain blank and underlying unselected/storage codes remain unknown. The main catalog now carries that source-aware review status; added regression coverage and rebuilt the public metadata assets.
