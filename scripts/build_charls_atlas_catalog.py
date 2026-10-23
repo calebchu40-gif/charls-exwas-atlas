@@ -391,13 +391,13 @@ def main() -> None:
                 "Component": module,
                 "Use.Constraints": "CHARLS applicant data; access and publication governed by official agreement",
                 "epcf": "c",
-                "category": "covariate candidate",
-                "subcategory": "demographic / design / socioeconomic adjustment candidate",
+                "category": "automated covariate search hit",
+                "subcategory": "keyword discovery only; not a reviewed covariate or adjustment recommendation",
                 "Source.Wave": row.wave,
                 "Source.Archive": row.source,
-                "Candidate.Status": "automated discovery; questionnaire/codebook review required",
-                "Harmonization.Status": "wave-specific source field; cross-wave concept mapping not yet approved",
-                "Review.Flag": "do not automatically adjust; select by estimand and causal structure",
+                "Candidate.Status": "automated keyword discovery only; source meaning and covariate eligibility not reviewed",
+                "Harmonization.Status": "wave-specific source field; cross-wave concept mapping and model eligibility not approved",
+                "Review.Flag": "search aid only; do not treat as an adjustment variable without source review and estimand-specific causal justification",
             })
             matched = True
         if not matched:

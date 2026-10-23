@@ -16,7 +16,7 @@
 
 受控数据 QA 发现，现有2013分析表虽含权重列，但缺少官方`crosssection`与`longitudinal`样本标记，不能用权重是否缺失替代样本资格。待通过本人 CHARLS 账户下载官方`Weights.dta`后，将其放入`%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\incoming_2013_weights\Weights.dta`，并按[`audit/wave2_official_weight_intake_2026-10-23.md`](audit/wave2_official_weight_intake_2026-10-23.md)运行受控合并和复核。合并脚本默认另写私有 DTA、输出不含个体记录的汇总 QA，并在 ID 重复/缺失、匹配不全、标记缺失或现有权重值冲突时停止；不应把官方文件或派生个体数据放入项目同步目录或 GitHub。
 
-当前E类通用待核队列已清零；55条C类前访回答历史/路由元数据已完成来源审核，55条前访历史/路由字段和24条疾病占位/停用旧字段已完成来源审核，C类剩余通用待核为210行，均为待审的人口学/设计/社会经济协变量候选。历史队列和当前状态见[`audit/current_value_label_review_queue_2026-10-23.md`](audit/current_value_label_review_queue_2026-10-23.md)。这些计数不代表待新增的独立指标数；连续测量、金额和日期字段可能没有离散类别标签。
+当前E类通用待核队列已清零；C类前访回答历史/路由元数据、疾病占位/停用旧字段及测量设计字段已完成来源审核。另有210条由关键词自动发现的C类检索线索，含年龄、性别等核心变量来源，也混有迁移史、疾病发生年龄和家庭名册字段；它们不是已核准的协变量，更不是统一调整集。网站已将其单独标为“自动关键词检索线索（未核验协变量）”。经逐波梳理的年龄、性别、教育、婚姻、户籍、城乡/居住地和调查设计准备情况见[`audit/core_covariate_readiness_2026-10-23.md`](audit/core_covariate_readiness_2026-10-23.md)；历史队列见[`audit/current_value_label_review_queue_2026-10-23.md`](audit/current_value_label_review_queue_2026-10-23.md)。这些计数不代表待新增的独立指标数；连续测量、金额和日期字段可能没有离散类别标签。
 
 ## 公开网站部署
 
@@ -26,7 +26,7 @@
 
 医保与医疗利用专项审计的逐字段状态也已进入主E/P目录：保险未选编码的不确定性、连续就诊/住院次数、条件路由和费用区间边界会随字段展示。完整题目与波次定义见[`audit/healthcare_access_definition_review_v1.md`](audit/healthcare_access_definition_review_v1.md)和[`audit/healthcare_access_value_label_review_v1.md`](audit/healthcare_access_value_label_review_v1.md)；这些状态不表示获准发行数据编码、分母或模型资格已经核实。
 
-截至2026-10-23，公开元数据查询首版已上线；完整结果型ExWAS工作仍在变量审计和调查设计阶段。进度、百分比口径和剩余工期估算见[`audit/project_progress_estimate_2026-10-23.md`](audit/project_progress_estimate_2026-10-23.md)。
+截至2026-10-23，公开元数据查询首版已上线；完整结果型ExWAS工作仍在变量审计和调查设计阶段。最新工作状态见[`audit/active_work_status_2026-10-23.md`](audit/active_work_status_2026-10-23.md)，整体进度口径和剩余工期估算见[`audit/project_progress_estimate_2026-10-23.md`](audit/project_progress_estimate_2026-10-23.md)。
 
 GitHub 官方说明：GitHub Free 个人仓库需要公开仓库才能使用 Pages；Pro/Team 等计划也支持私有源仓库发布 Pages。GitHub Pages 网站内容默认可被互联网公开访问，因此发布包必须保持为静态目录范围。见[Pages 发布源说明](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
 

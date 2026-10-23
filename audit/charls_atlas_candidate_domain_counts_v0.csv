@@ -1,6 +1,6 @@
 ﻿epcf,category,subcategory,source_field_wave_rows,distinct_source_codes,wave_count
+c,automated covariate search hit,keyword discovery only; not a reviewed covariate or adjustment recommendation,419,266,5
 c,covariate candidate,birth-date source and age derivation metadata,5,5,2
-c,covariate candidate,demographic / design / socioeconomic adjustment candidate,419,266,5
 c,measurement metadata,2011 proxy interview and Section E assistance context,3,3,1
 c,measurement metadata,2018 employer pension contribution amount/share unit selector,1,1,1
 c,measurement metadata,2018 respondent pension contribution amount/share unit selector,1,1,1
