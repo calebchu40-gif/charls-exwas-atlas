@@ -57,6 +57,8 @@ The published homepage now has a dedicated survey-design disclosure covering wav
 
 2026-10-23续记：目录构建器通过预建波次—字段查找索引，同一`cProfile`方法下从107.8秒降至53.6秒，输出记录语义相同；性能审计见[`metadata_builder_performance_2026-10-23.md`](metadata_builder_performance_2026-10-23.md)。此前补入2013/2015/2018的48个疾病控制/既往访谈变化字段，修复2020既往访谈变化18个字段的目录标签传播，并为2011/2020的6个自知疾病字段补入逐波标签。本轮又补入2013–2018的11个自知疾病字段，并为22个连续残疾发生年份字段注明calendar year。E/P非空标签行现为3,199（3,173个波次—字段码），仍有853行通用待核状态；C类331行仍为通用待核状态。全目标完成度仍估25%–30%，因正式关联模型数仍为0、抽样设计与个体变量审核闸门未解决，这类目录补全不代表结果图谱已接近完成。后续继续审阅候选目录，并优先处理调查设计闭环、变量冻结和合成数据验证。
 
+私有派生表权重覆盖QA续记：2015/2018/2020横截面标记与正个体权重覆盖一致；2011个体权重全覆盖但没有独立横截面标记。2013现存派生表中18,605人只有18,256人有正的个体权重，且缺少`crosssection`/`longitudinal`资格变量。验证器已加强为将2013标记为`CHECK`，70项测试通过；2013官方原始Weights源包须恢复后才能重建与解释。逐波权重覆盖计数见[`survey_design_weight_review_v1.md`](survey_design_weight_review_v1.md)。这是调查设计闸门证据更新，不改变完整结果型Atlas约25%–30%的里程碑估算。
+
 
 ## 2026-10-23 follow-up: behavior continuous-measure synchronization
 

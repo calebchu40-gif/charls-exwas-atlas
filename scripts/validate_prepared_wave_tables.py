@@ -17,6 +17,13 @@ def sha256(path: Path) -> str:
     return h.hexdigest()
 
 
+def missing_required_sample_flags(wave: str, column_names: list[str]) -> list[str]:
+    """List wave-specific sample flags required to gate prepared tables."""
+    required = {"crosssection", "longitudinal"} if wave == "2013" else set()
+    available = {name.lower() for name in column_names}
+    return sorted(required - available)
+
+
 def get_match_rate_0_to_1(record):
     """Read the current field name or legacy misnamed proportion field."""
     value = record.get("match_rate_0_to_1")
@@ -41,11 +48,16 @@ def main():
         id_missing = int(data.ID.isna().sum())
         id_duplicate = int(data.ID.dropna().duplicated().sum())
         wave_vals = sorted(data.wave.dropna().unique().tolist())
+        required_sample_flags = {"crosssection", "longitudinal"} if wave == "2013" else set()
+        missing_sample_flags = missing_required_sample_flags(wave, meta.column_names)
         row = {"wave": wave, "rows": len(data), "columns": meta.number_columns,
                "ID_missing_rows": id_missing, "duplicate_ID_rows": id_duplicate,
                "wave_values": ",".join(map(str, wave_vals)), "file_bytes": f.stat().st_size,
-               "sha256": sha256(f), "readback": "PASS"}
-        if id_missing or id_duplicate or wave_vals != [float(wave)]:
+               "sha256": sha256(f),
+               "required_sample_flags": ";".join(sorted(required_sample_flags)),
+               "missing_required_sample_flags": ";".join(missing_sample_flags),
+               "readback": "PASS"}
+        if id_missing or id_duplicate or wave_vals != [float(wave)] or missing_sample_flags:
             row["readback"] = "CHECK"
         rows.append(row)
         qf = args.data_dir / f"merge_qa_{wave}.csv"

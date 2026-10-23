@@ -73,3 +73,25 @@ CHARLS 当前公开的 [Harmonized CHARLS Codebook](https://charls.pku.edu.cn/en
 CHARLS来源：[官方抽样设计介绍](https://charls.pku.edu.cn/en/About/Sample.htm)、[2013 Wave 2资料页（PSU与Weights文件）](https://charls.pku.edu.cn/en/Data/a2013_CHARLS_Wave2.htm)、[2018 Wave 4 User's Guide](https://charls.pku.edu.cn/en/data/User2018.pdf)、[Harmonized CHARLS Codebook权重与设计章节](https://charls.pku.edu.cn/en/team/Codebook.pdf)。调查方差变量一般要求的说明见[联合国抽样误差估计手册](https://unstats.un.org/unsd/demographic/sources/surveys/handbook23june05.pdf)。
 
 没有运行任何加权或未加权暴露—结局回归。已确认社区PSU键及跨波匹配；仍未解决公开方差分层变量/复制权重是否可用、血样/体测权重覆盖范围、以及2020疫情期测量方式的估计目标。这些是正式ExWAS之前的设计确认项，不妨碍继续扩展变量字典和缺失/样本审计。
+
+## 2026-10-23 私有派生表样本标记与权重覆盖复核
+
+在用户本机隔离目录的五波派生个人表上运行`validate_prepared_wave_tables.py`，只导出行数、列数、ID完整性、文件哈希和状态；五波均无缺失ID或重复ID，波次值与文件名一致。该验证不检查个人答案，也不等于模型就绪。
+
+聚合核对派生表内的官方`crosssection`标记和个体权重覆盖：2015有20,279/21,095条记录标记为横截面样本，且恰好20,279条记录有正的`INDV_weight`；2018为17,970/19,816且权重覆盖一致；2020为17,364/19,395且权重覆盖一致。2020表中另有2,031条`crosssection=0`记录没有普通个体横截面权重，先前89.5%的权重合并比例由样本标记解释，不应误报为普通权重文件漏合并。2011表中17,705条记录均有正的个体权重，但该派生表不含独立横截面标记，不能据此推断所有分析题项的目标分母。
+
+**2013仍需阻断。**18,605条派生记录中只有18,256条有正的`INDV_weight`；现存派生表缺少`crosssection`与`longitudinal`两个样本资格标记。CHARLS官方[2013 Wave 2资料页](https://charls.charlsdata.com/pages/Data/2013-charls-wave2/en.html)将Weights作为单独数据文件列出，SHA1为`22c4fc89df2e55fa8faf051e88830eebe0e035c0`；官方[Wave 2 Release Note](https://charls.pku.edu.cn/en/data/Release2013.pdf)明确说明该文件含cross-section和longitudinal资格标记。当前准备脚本已要求2013官方Weights来源必须包含这两个字段并把它们合入个人表，但现有派生文件是旧版本；加强后的验证脚本现在将2013标为`CHECK`，不再将五波误报为全部通过。当前已核验的本机私有目录只有派生表、没有可重建的2013原始源包；官方权重下载入口会跳转到[CHARLS登录页](https://charls.charlsdata.com/users/sign_in/en.html)，因此需在获准账号下重新取得官方Wave 2权重文件后重建。暂不臆测349条权重缺失的原因，也不依据普通权重非缺失替代官方样本标记。
+
+另有内部一致的血液/生物标志物权重覆盖计数：2011 `bloodweight` 为11,847条、两个`bio_weight`均为13,974条；2013 `Biomarker_weight`为12,902条；2015为15,822条。它们仅描述派生表中权重非缺失数，不证明每一种实验室指标都适用同一子样本权重或其非应答调整已足够；仍需逐模块核对官方发布说明。
+
+上述仅为安全目录内的聚合QA，不记录或发布个人ID、权重值、作答值或微观数据。逐波汇总如下：
+
+| 波次 | 派生表人数 | 横截面标记为1 | 个体横截面权重为正 | 结论 |
+|---|---:|---:|---:|---|
+| 2011 | 17,705 | 派生表未见独立标记 | 17,705 | 权重覆盖完整不等同于每个模块/题项均合格 |
+| 2013 | 18,605 | `crosssection`/`longitudinal`均缺失 | 18,256 | 349条权重缺失原因未确认；验证为`CHECK` |
+| 2015 | 21,095 | 20,279 | 20,279 | 权重覆盖与横截面样本标记一致 |
+| 2018 | 19,816 | 17,970 | 17,970 | 权重覆盖与横截面样本标记一致 |
+| 2020 | 19,395 | 17,364 | 17,364 | 权重覆盖与横截面样本标记一致 |
+
+本表描述当前本地派生表，不替代官方发布包核验。特别是2013须恢复官方Weights源文件重新构建后，才能关闭样本资格闸门。

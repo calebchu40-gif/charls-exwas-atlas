@@ -17,4 +17,4 @@
 
 ## 验证
 
-`python scripts/build_ep_atlas_metadata.py`成功完成；68项测试通过；`node --check site-prototype/dist/app.js`通过；网站目录30个顶层JSON均可解析；33条`DO NOT ANALYZE`锁定与分流清单完全一致；`git diff --check`通过。重建未读取任何CHARLS个人记录。
+`python scripts/build_ep_atlas_metadata.py`成功完成；70项测试通过；`node --check site-prototype/dist/app.js`通过；网站目录30个顶层JSON均可解析；33条`DO NOT ANALYZE`锁定与分流清单完全一致；`git diff --check`通过。私有派生表ID/波次验证中2011/2015/2018/2020为PASS、2013因缺少两个必需样本标记为CHECK；逐波权重覆盖汇总见[`survey_design_weight_review_v1.md`](survey_design_weight_review_v1.md)。公开元数据重建未读取任何CHARLS个人记录。
