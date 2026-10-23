@@ -1,0 +1,9 @@
+# Parent-visit frequency labels (2011–2018)
+
+Reviewed 2026-10-23 against the four wave-specific CHARLS Codebooks. The public crosswalk and social-exposure topic page now show the exact field-level response categories where the Codebook lists them. No category frequencies or participant values are copied.
+
+The review covers 33 source fields: nine 2011 parent-index items, four 2013 parent/in-law items, twelve 2015 respondent/spouse biological/step/adopted-parent items, and eight 2018 indexed `XConParName` roster fields. Twenty-seven field entries list the full 1–10 Codebook category set; six entries list only a partial set. The parser excludes numeric frequency-table rows and roster names that can follow the response-label table in extracted Codebooks. For partial entries, only categories explicitly printed for that field are shown. An absent category is not imputed from another slot, wave, or questionnaire wording.
+
+The categories are ordered frequency responses from almost every day through almost never, with “Other” where the field-level Codebook lists it. They are ordinal, not equally spaced numeric values. Parent definitions, spouse routing, and roster indices differ by wave. Preserve each source slot and route; this crosswalk does not construct a common parent-contact score, infer an eligible denominator, or establish analysis readiness. Special missing values and structural skips still require authorized-release QA.
+
+The reproducible updater is `scripts/apply_parent_visit_codebook_labels.py`; the full and finalize-only metadata pipelines run it after the main catalog and downstream source reviews, immediately before role shards are rebuilt. It patches the candidate-field audit, master site catalog, and focused social-exposure JSON. It extracts only field labels and deliberately discards Codebook frequencies.

@@ -1413,363 +1413,363 @@
         "code": "cd002_1_",
         "module": "family_information",
         "source_label": "How Often do You/Your Spouse See Your Parent",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2011 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost every day; 2=2-3 times a week; 3=Once a week; 4=Every two weeks; 5=Once a month; 6=Once every three months; 7=Once every six months; 8=Once a year; 9=Almost never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "cd002_2_",
         "module": "family_information",
         "source_label": "How Often do You/Your Spouse See Your Parent",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2011 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost every day; 2=2-3 times a week; 3=Once a week; 4=Every two weeks; 5=Once a month; 6=Once every three months; 7=Once every six months; 8=Once a year; 9=Almost never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "cd002_3_",
         "module": "family_information",
         "source_label": "How Often do You/Your Spouse See Your Parent",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2011 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost every day; 2=2-3 times a week; 3=Once a week; 4=Every two weeks; 5=Once a month; 6=Once every three months; 7=Once every six months; 8=Once a year; 9=Almost never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "cd002_4_",
         "module": "family_information",
         "source_label": "How Often do You/Your Spouse See Your Parent",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2011 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost every day; 2=2-3 times a week; 3=Once a week; 4=Every two weeks; 5=Once a month; 6=Once every three months; 7=Once every six months; 8=Once a year; 9=Almost never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "cd002_5_",
         "module": "family_information",
         "source_label": "How Often do You/Your Spouse See Your Parent",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2011 Codebook value categories located; field-level categories are partial Codebook category set; unlisted categories not inferred; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost every day; 2=2-3 times a week; 3=Once a week; 4=Every two weeks; 5=Once a month; 6=Once every three months; 7=Once every six months; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "cd002_6_",
         "module": "family_information",
         "source_label": "How Often do You/Your Spouse See Your Parent",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2011 Codebook value categories located; field-level categories are partial Codebook category set; unlisted categories not inferred; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "5=Once a month",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "cd002_7_",
         "module": "family_information",
         "source_label": "How Often do You/Your Spouse See Your Parent",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2011 Codebook value categories located; field-level categories are partial Codebook category set; unlisted categories not inferred; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "5=Once a month",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "cd002_8_",
         "module": "family_information",
         "source_label": "How Often do You/Your Spouse See Your Parent",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2011 Codebook value categories located; field-level categories are partial Codebook category set; unlisted categories not inferred; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "3=Once a week",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2011",
         "code": "cd002_9_",
         "module": "family_information",
         "source_label": "How Often do You/Your Spouse See Your Parent",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2011 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost every day; 2=2-3 times a week; 3=Once a week; 4=Every two weeks; 5=Once a month; 6=Once every three months; 7=Once every six months; 8=Once a year; 9=Almost never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
         "code": "cd002_1_",
         "module": "Family_Information",
         "source_label": "See Your Father",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2013 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times A Week; 3=Once A Week; 4=Every Two Weeks; 5=Once A Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once A Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
         "code": "cd002_2_",
         "module": "Family_Information",
         "source_label": "See Your Mother",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2013 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times A Week; 3=Once A Week; 4=Every Two Weeks; 5=Once A Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once A Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
         "code": "cd002_3_",
         "module": "Family_Information",
         "source_label": "See Your Father-in-law",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2013 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times A Week; 3=Once A Week; 4=Every Two Weeks; 5=Once A Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once A Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
         "code": "cd002_4_",
         "module": "Family_Information",
         "source_label": "See Your Mother-in-law",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2013 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times A Week; 3=Once A Week; 4=Every Two Weeks; 5=Once A Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once A Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "cd002_1_",
         "module": "Family_Information",
         "source_label": "How Ofen Do R Or Spouse See R's Biological Father",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week 104 9.62; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "cd002_2_",
         "module": "Family_Information",
         "source_label": "How Ofen Do R Or Spouse See R's Biological Mother",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "cd002_3_",
         "module": "Family_Information",
         "source_label": "How Ofen Do R Or Spouse See R's Stepfather",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "cd002_4_",
         "module": "Family_Information",
         "source_label": "How Ofen Do R Or Spouse See R's Stepmother",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month 6 10.17; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "cd002_5_",
         "module": "Family_Information",
         "source_label": "How Ofen Do R Or Spouse See R's Adopted Father",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "cd002_6_",
         "module": "Family_Information",
         "source_label": "How Ofen Do R Or Spouse See R's Adopted Mother",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2015 Codebook value categories located; field-level categories are partial Codebook category set; unlisted categories not inferred; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "cd002_7_",
         "module": "Family_Information",
         "source_label": "How Ofen Do R Or Spouse See Spouse's Biological Father",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other 36 3.29",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "cd002_8_",
         "module": "Family_Information",
         "source_label": "How Ofen Do R Or Spouse See Spouse's Biological Mother",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "cd002_9_",
         "module": "Family_Information",
         "source_label": "How Ofen Do R Or Spouse See Spouse's Stepfather",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "cd002_10_",
         "module": "Family_Information",
         "source_label": "How Ofen Do R Or Spouse See Spouse's Stepmother",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "cd002_11_",
         "module": "Family_Information",
         "source_label": "How Ofen Do R Or Spouse See Spouse's Adopted Father",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2015 Codebook value categories located; field-level categories are partial Codebook category set; unlisted categories not inferred; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
         "code": "cd002_12_",
         "module": "Family_Information",
         "source_label": "How Ofen Do R Or Spouse See Spouse's Adopted Mother",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2018",
         "code": "cd002_w4_1_",
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XConParName[1]",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2018 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
         "wave": "2018",
         "code": "cd002_w4_2_",
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XConParName[2]",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2018 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
         "wave": "2018",
         "code": "cd002_w4_3_",
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XConParName[3]",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2018 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
         "wave": "2018",
         "code": "cd002_w4_4_",
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XConParName[4]",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2018 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
         "wave": "2018",
         "code": "cd002_w4_5_",
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XConParName[5]",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2018 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
         "wave": "2018",
         "code": "cd002_w4_6_",
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XConParName[6]",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2018 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
         "wave": "2018",
         "code": "cd002_w4_7_",
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XConParName[7]",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2018 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
         "wave": "2018",
         "code": "cd002_w4_8_",
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XConParName[8]",
-        "note": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-        "value_labels": "",
-        "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
+        "note": "official 2018 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+        "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+        "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
       }
     ]
   },

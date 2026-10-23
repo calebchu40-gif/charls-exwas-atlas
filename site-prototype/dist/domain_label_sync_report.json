@@ -12,8 +12,8 @@
     "social_exposures_v1.json": {
       "fields": 281,
       "filled": 0,
-      "existing": 193,
-      "no_match": 88,
+      "existing": 226,
+      "no_match": 55,
       "ambiguous": 0
     }
   }

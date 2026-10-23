@@ -8802,90 +8802,90 @@
               "label": "How Often do You/Your Spouse See Your Parent",
               "module": "family_information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost every day; 2=2-3 times a week; 3=Once a week; 4=Every two weeks; 5=Once a month; 6=Once every three months; 7=Once every six months; 8=Once a year; 9=Almost never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2011 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_2_",
               "label": "How Often do You/Your Spouse See Your Parent",
               "module": "family_information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost every day; 2=2-3 times a week; 3=Once a week; 4=Every two weeks; 5=Once a month; 6=Once every three months; 7=Once every six months; 8=Once a year; 9=Almost never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2011 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_3_",
               "label": "How Often do You/Your Spouse See Your Parent",
               "module": "family_information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost every day; 2=2-3 times a week; 3=Once a week; 4=Every two weeks; 5=Once a month; 6=Once every three months; 7=Once every six months; 8=Once a year; 9=Almost never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2011 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_4_",
               "label": "How Often do You/Your Spouse See Your Parent",
               "module": "family_information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost every day; 2=2-3 times a week; 3=Once a week; 4=Every two weeks; 5=Once a month; 6=Once every three months; 7=Once every six months; 8=Once a year; 9=Almost never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2011 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_5_",
               "label": "How Often do You/Your Spouse See Your Parent",
               "module": "family_information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost every day; 2=2-3 times a week; 3=Once a week; 4=Every two weeks; 5=Once a month; 6=Once every three months; 7=Once every six months; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2011 Codebook value categories located; field-level categories are partial Codebook category set; unlisted categories not inferred; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_6_",
               "label": "How Often do You/Your Spouse See Your Parent",
               "module": "family_information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "5=Once a month",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2011 Codebook value categories located; field-level categories are partial Codebook category set; unlisted categories not inferred; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_7_",
               "label": "How Often do You/Your Spouse See Your Parent",
               "module": "family_information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "5=Once a month",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2011 Codebook value categories located; field-level categories are partial Codebook category set; unlisted categories not inferred; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_8_",
               "label": "How Often do You/Your Spouse See Your Parent",
               "module": "family_information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "3=Once a week",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2011 Codebook value categories located; field-level categories are partial Codebook category set; unlisted categories not inferred; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_9_",
               "label": "How Often do You/Your Spouse See Your Parent",
               "module": "family_information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost every day; 2=2-3 times a week; 3=Once a week; 4=Every two weeks; 5=Once a month; 6=Once every three months; 7=Once every six months; 8=Once a year; 9=Almost never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2011 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             }
           ]
         },
@@ -27795,40 +27795,40 @@
               "label": "See Your Father",
               "module": "Family_Information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times A Week; 3=Once A Week; 4=Every Two Weeks; 5=Once A Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once A Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2013 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_2_",
               "label": "See Your Mother",
               "module": "Family_Information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times A Week; 3=Once A Week; 4=Every Two Weeks; 5=Once A Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once A Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2013 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_3_",
               "label": "See Your Father-in-law",
               "module": "Family_Information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times A Week; 3=Once A Week; 4=Every Two Weeks; 5=Once A Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once A Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2013 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_4_",
               "label": "See Your Mother-in-law",
               "module": "Family_Information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times A Week; 3=Once A Week; 4=Every Two Weeks; 5=Once A Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once A Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2013 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             }
           ]
         },
@@ -50281,120 +50281,120 @@
               "label": "How Ofen Do R Or Spouse See Spouse's Stepmother",
               "module": "Family_Information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_11_",
               "label": "How Ofen Do R Or Spouse See Spouse's Adopted Father",
               "module": "Family_Information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2015 Codebook value categories located; field-level categories are partial Codebook category set; unlisted categories not inferred; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_12_",
               "label": "How Ofen Do R Or Spouse See Spouse's Adopted Mother",
               "module": "Family_Information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_1_",
               "label": "How Ofen Do R Or Spouse See R's Biological Father",
               "module": "Family_Information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week 104 9.62; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_2_",
               "label": "How Ofen Do R Or Spouse See R's Biological Mother",
               "module": "Family_Information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_3_",
               "label": "How Ofen Do R Or Spouse See R's Stepfather",
               "module": "Family_Information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_4_",
               "label": "How Ofen Do R Or Spouse See R's Stepmother",
               "module": "Family_Information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month 6 10.17; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_5_",
               "label": "How Ofen Do R Or Spouse See R's Adopted Father",
               "module": "Family_Information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_6_",
               "label": "How Ofen Do R Or Spouse See R's Adopted Mother",
               "module": "Family_Information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2015 Codebook value categories located; field-level categories are partial Codebook category set; unlisted categories not inferred; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_7_",
               "label": "How Ofen Do R Or Spouse See Spouse's Biological Father",
               "module": "Family_Information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other 36 3.29",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_8_",
               "label": "How Ofen Do R Or Spouse See Spouse's Biological Mother",
               "module": "Family_Information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_9_",
               "label": "How Ofen Do R Or Spouse See Spouse's Stepfather",
               "module": "Family_Information",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2015 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             }
           ]
         },
@@ -74145,80 +74145,80 @@
               "label": "Frequency Visiting XConParName[1]",
               "module": "Family_Transfer",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2018 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_w4_2_",
               "label": "Frequency Visiting XConParName[2]",
               "module": "Family_Transfer",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2018 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_w4_3_",
               "label": "Frequency Visiting XConParName[3]",
               "module": "Family_Transfer",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2018 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_w4_4_",
               "label": "Frequency Visiting XConParName[4]",
               "module": "Family_Transfer",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2018 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_w4_5_",
               "label": "Frequency Visiting XConParName[5]",
               "module": "Family_Transfer",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2018 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_w4_6_",
               "label": "Frequency Visiting XConParName[6]",
               "module": "Family_Transfer",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2018 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_w4_7_",
               "label": "Frequency Visiting XConParName[7]",
               "module": "Family_Transfer",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2018 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             },
             {
               "code": "cd002_w4_8_",
               "label": "Frequency Visiting XConParName[8]",
               "module": "Family_Transfer",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "该波代码标签仍需逐字段回查；保留原码及名册槽位，不进行跨波重编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Parent roster slots and parent definitions vary by wave (biological/step/in-law and spouse routing). Wave 4 labels refer to non-co-resident parents. This is contact frequency, not perceived support."
+              "value_labels": "1=Almost Every Day; 2=2-3 Times a Week; 3=Once a Week; 4=Every Two Weeks; 5=Once a Month; 6=Once Every Three Months; 7=Once Every Six Months; 8=Once a Year; 9=Almost Never; 10=Other",
+              "value_semantics": "Ordered parent-contact frequency response. This is not perceived emotional support or a measured caregiving outcome. Preserve wave-specific kinship definition and the source parent/roster index; do not treat category scores as equally spaced or infer unlisted categories from other fields.",
+              "mapping_status": "official 2018 Codebook value categories located; field-level categories are complete listed 1-10 set; candidate only pending release-level special-code, routing, and eligible-denominator QA",
+              "caveat": "Parent definitions and source slots differ across waves: 2011 uses parent indices; 2013 includes father/mother/in-law items; 2015 distinguishes biological, step, and adopted parent slots for the respondent and spouse; 2018 uses indexed XConParName roster fields. Preserve the original wave and slot; do not collapse parent types or infer nonresponse from an empty roster slot."
             }
           ]
         },

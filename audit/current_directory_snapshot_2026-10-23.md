@@ -5,7 +5,7 @@
 - 网站字段目录角色分片7,769行：E 4,723、P 2,067、C 979；双角色E/P在E与P分片各出现一次。
 - E/P候选概念1,409个：暴露侧1,131、表型侧287、双角色9；E/P概念—源字段映射6,598行。全来源crosswalk 6,812行，其中6,793行匹配目录、19行未匹配目录。
 - 五个常规波次元数据层面的非自配对共现为2011 120,052、2013 126,301、2015 128,984、2018 98,667、2020 12,598。它们不是受访者人数、逐对样本量或分析资格。
-- E/P目录有3,208行带非空已审/官方类别标签文本，覆盖3,182个波次—字段码；456条E目录角色行仍显示`not yet reviewed`。连续测量、测量组件和计数可已完成语义审阅而没有类别值标签。2013/2015/2018疾病控制/既往访谈变化48个字段、2020既往访谈变化18个字段，以及2011/2020自知疾病6个字段均已补入逐波官方类别；本轮另补2013–2018自知疾病11个字段，频数未复制，详见[`self_awareness_response_label_review_2026-10-23.md`](self_awareness_response_label_review_2026-10-23.md)。22个连续残疾发生年份字段标注calendar year，见[`disability_onset_year_unit_review_2026-10-23.md`](disability_onset_year_unit_review_2026-10-23.md)。
+- E/P目录有3,315行带非空已审/官方类别标签文本，覆盖3,238个波次—字段码；369条E目录角色行仍显示`not yet reviewed`。连续测量、测量组件和计数可已完成语义审阅而没有类别值标签。2013/2015/2018疾病控制/既往访谈变化48个字段、2020既往访谈变化18个字段，以及2011/2020自知疾病6个字段均已补入逐波官方类别；本轮另补2013–2018自知疾病11个字段，频数未复制，详见[`self_awareness_response_label_review_2026-10-23.md`](self_awareness_response_label_review_2026-10-23.md)。22个连续残疾发生年份字段标注calendar year，见[`disability_onset_year_unit_review_2026-10-23.md`](disability_onset_year_unit_review_2026-10-23.md)。
 - 另对2018当前住房产权关系9个E候选字段核对Codebook：仅1个字段有完整0/1标签，8个字段只有“0=Do Not Own”出现在频数型Codebook摘录中，均未推断缺失类别，也未复制频数。目录元数据与住房专题查询现显示这一完整/部分区分；详见[`housing_current_owner_relation_labels_2018_review_2026-10-23.md`](housing_current_owner_relation_labels_2018_review_2026-10-23.md)。因此通用值标签待核E字段由633降至624。
 - 本轮修复连续行为变量审核状态传播：73条波次—字段行从泛化的未核验状态改为有来源的连续测量/年龄年份语义。细节见[`behavior_numeric_measure_status_sync_2026-10-23.md`](behavior_numeric_measure_status_sync_2026-10-23.md)。
 - 另有608条养老金数值/计数或无离散类别字段从通用待核状态改为“官方代码本字段已定位；未列离散类别”；其余6条源审核记录已有更具体状态而予以保留。此状态不代表单位、路线或发行版编码已核。详见[`pension_numeric_status_sync_2026-10-23.md`](pension_numeric_status_sync_2026-10-23.md)。
@@ -18,7 +18,7 @@
 
 ## 验证
 
-本轮全量元数据流水线及`--finalize-only`传播构建均完成；111项测试通过；延迟加载器Node测试、`node --check site-prototype/dist/app.js`和`git diff --check`通过。E/P/C三份目录分片与主目录筛选结果完全一致；89条`DO NOT ANALYZE`锁定与分流清单完全一致。首页不加载目录JSON；Pages部署包排除仅供构建/审计的主目录JSON，公开行为与E/P/C分片及专题目录按需加载。私有派生表ID/波次验证中2011/2015/2018/2020为PASS、2013因缺少两个必需样本标记为CHECK；逐波权重覆盖汇总见[`survey_design_weight_review_v1.md`](survey_design_weight_review_v1.md)。公开元数据重建未读取任何CHARLS个人记录。提交`1ef4069`已推送；公开E分片以无缓存、版本参数请求返回HTTP 200，显示9条2018当前住房产权关系字段，其中1条完整0/1标签、8条部分代码本标签状态，与本地生成内容一致；公开站点已包含此次更新。
+本轮全量元数据流水线及`--finalize-only`传播构建均完成；114项测试通过；延迟加载器Node测试、`node --check site-prototype/dist/app.js`和`git diff --check`通过。E/P/C三份目录分片与主目录筛选结果完全一致；89条`DO NOT ANALYZE`锁定与分流清单完全一致。首页不加载目录JSON；Pages部署包排除仅供构建/审计的主目录JSON，公开行为与E/P/C分片及专题目录按需加载。私有派生表ID/波次验证中2011/2015/2018/2020为PASS、2013因缺少两个必需样本标记为CHECK；逐波权重覆盖汇总见[`survey_design_weight_review_v1.md`](survey_design_weight_review_v1.md)。公开元数据重建未读取任何CHARLS个人记录。提交`1ef4069`已推送；公开E分片以无缓存、版本参数请求返回HTTP 200，显示9条2018当前住房产权关系字段，其中1条完整0/1标签、8条部分代码本标签状态，与本地生成内容一致；公开站点已包含此次更新。
 
 2026-10-23 work-field status synchronization: exact wave/code matches to the reviewed work crosswalk moved 170 E/P rows from the generic `not yet reviewed` state to the source-specific continuous/open-response or no-discrete-category status. The current catalog has 677 E/P rows in the generic state, 3,199 rows with nonempty official/reviewed labels, and 339 total entries carrying this specific work-field status. These are metadata-review counts, not independent indicators or analysis eligibility. The full metadata pipeline and 83 tests passed; no respondent data or frequencies were used. See [`work_numeric_catalog_status_sync_2026-10-23.md`](work_numeric_catalog_status_sync_2026-10-23.md).
 
@@ -41,3 +41,6 @@ Deployment verification after commit `00a0657`: Pages #31 and validation #90 suc
 ## 2026-10-23后续更新：家庭房产出售款用途字段
 
 10月21日关于“未找到百分比值字段”的记录经官方Codebook复核被更正。2013/2015共识别54个数值百分比源字段，并按单独候选概念写入E主目录和配对源目录；54个option-indexed选择槽转C类；4个其他用途自由文本字段只作C元数据。字段/槽位映射和有效分析分母仍需授权发行版QA，54个数值字段均进入`DO NOT ANALYZE`清单，锁定总数89。角色分片为E 4,723、P 2,067、C 979；完整目录写回和分片检查已通过，111项测试及锁定一致性验证通过。该处理不读取受访者记录、不公开自由文本或Codebook频数。详见[`household_sale_proceeds_allocation_mapping_review_2026-10-23.md`](household_sale_proceeds_allocation_mapping_review_2026-10-23.md)。
+
+
+2026-10-23父母探访频率类别补录：依据2011、2013、2015、2018四波官方Codebook，对33个父母探访频率源字段逐字段转录类别，不含Codebook频数。27个字段列出1–10完整类别，6个字段仅显示Codebook明确列出的部分类别并标注不可推断缺失项；保留父母类型、配偶路线和名册序号差异，不构造跨波总分。E通用待核369行、P为0、C为329。114项测试、JS语法、diff检查和89条DO NOT ANALYZE锁校验通过。详见[`parent_visit_value_label_review_2026-10-23.md`](parent_visit_value_label_review_2026-10-23.md)。
