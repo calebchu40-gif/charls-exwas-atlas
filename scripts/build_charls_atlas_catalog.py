@@ -928,7 +928,7 @@ def main() -> None:
     )
     add_reviewed_status_without_value_label(
         "social_exposure_crosswalk_v1.csv", "wave", "code", "value_label_status", "value_label_source",
-        re.compile(r"official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned", re.I),
+        re.compile(r"official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned|official Codebook identifies affirmative caregiver-option code; unselected coding and eligible denominator unresolved; no response-value labels assigned|official questionnaire identifies caregiver option; Codebook reports no observations; unselected coding and eligible denominator unresolved; no response-value labels assigned|future-helper route and category reviewed; unselected coding and eligible denominator unresolved; no response-value labels assigned|Codebook summary reports one observation; continuous count, no categorical labels; days measure and route retained", re.I),
     )
     add_reviewed_status_without_value_label(
         "household_member_income_mapping_v1.csv", "wave", "code", "value_label_status", "value_label_source",

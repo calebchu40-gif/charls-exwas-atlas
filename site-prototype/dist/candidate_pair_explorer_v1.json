@@ -3577,9 +3577,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "官方问卷：过去一个月志愿者帮助的天数（0–31）；仅在帮助者名册相关条件下询问。代码本汇总仅见1条观察记录，不能据此认为有足够分析样本；先核原始覆盖。保留原始计数及特殊缺失码。",
-              "mapping_status": "2011 baseline questionnaire helper-roster route and 1–31 days unit reviewed; Codebook summary reports one observation; candidate only",
-              "caveat": "2011 only: DB023_38_ records days in the last month for the volunteer helper category, conditional on the respondent having a listed helper. The 2011 codebook summary has one observed record; treat as a lookup candidate, not evidence of adequate analytic coverage. Preserve the original count and skip/missing codes; no cross-wave equivalence established."
+              "value_semantics": "Continuous count; days per week a volunteer/facility helper provides assistance. Preserve conditional helper/item routing and wave-specific measurement; Codebook summaries are not analytic cutoffs.",
+              "mapping_status": "Codebook summary reports one observation; continuous count, no categorical labels; days measure and route retained",
+              "caveat": "2011 only: DB023_38_ records days in the last month for the volunteer helper category, conditional on the respondent having a listed helper. The 2011 codebook summary has one observed record; treat as a lookup candidate, not evidence of adequate analytic coverage. Preserve the original count and skip/missing codes; no cross-wave equivalence established.; Continuous count; days per week a volunteer/facility helper provides assistance. Preserve conditional helper/item routing and wave-specific measurement; Codebook summaries are not analytic cutoffs."
             }
           ]
         },
@@ -4347,9 +4347,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "官方问卷将志愿者/机构人员列为未来可能帮助者类别；此题属于未来帮助者名册，不等同当前照护。保留逐波原始编码。",
-              "mapping_status": "2011 baseline questionnaire future-helper route and category reviewed; candidate only",
-              "caveat": "2011/2013 future-helper roster category. This is an expectation about potential future help, not current receipt or guaranteed service access; preserve wave-specific wording and response coding."
+              "value_semantics": "The Codebook identifies option 37 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data.",
+              "mapping_status": "future-helper route and category reviewed; unselected coding and eligible denominator unresolved; no response-value labels assigned",
+              "caveat": "2011/2013 future-helper roster category. This is an expectation about potential future help, not current receipt or guaranteed service access; preserve wave-specific wording and response coding.; The Codebook identifies option 37 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data."
             }
           ]
         },
@@ -8903,9 +8903,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "官方问卷/代码本标注志愿者或机构人员为照护者名册中的一个类别。2011为是否经常帮助的单项字段（代码本显示无观察值）；2013为按ADL/IADL任务及帮助者槽位展开的类别字段，代码本汇总提示稀疏。值编码及未问/跳题状态需按各波代码本解析；先检查原始数据实际覆盖与分母，再决定是否可建模。",
-              "mapping_status": "2011 baseline questionnaire helper-list category and route reviewed; Codebook reports no observations; candidate metadata only",
-              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures."
+              "value_semantics": "The Codebook identifies option 38 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data.",
+              "mapping_status": "official questionnaire identifies caregiver option; Codebook reports no observations; unselected coding and eligible denominator unresolved; no response-value labels assigned",
+              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures.; The Codebook identifies option 38 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data."
             }
           ]
         },
@@ -23020,9 +23020,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "官方问卷将志愿者/机构人员列为未来可能帮助者类别；此题属于未来帮助者名册，不等同当前照护。保留逐波原始编码。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "2011/2013 future-helper roster category. This is an expectation about potential future help, not current receipt or guaranteed service access; preserve wave-specific wording and response coding."
+              "value_semantics": "The Codebook identifies option 37 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data.",
+              "mapping_status": "official Codebook identifies affirmative caregiver-option code; unselected coding and eligible denominator unresolved; no response-value labels assigned",
+              "caveat": "2011/2013 future-helper roster category. This is an expectation about potential future help, not current receipt or guaranteed service access; preserve wave-specific wording and response coding.; The Codebook identifies option 37 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data."
             }
           ]
         },
@@ -27846,9 +27846,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "官方问卷/代码本标注志愿者或机构人员为照护者名册中的一个类别。2011为是否经常帮助的单项字段（代码本显示无观察值）；2013为按ADL/IADL任务及帮助者槽位展开的类别字段，代码本汇总提示稀疏。值编码及未问/跳题状态需按各波代码本解析；先检查原始数据实际覆盖与分母，再决定是否可建模。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures."
+              "value_semantics": "The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data.",
+              "mapping_status": "official Codebook identifies affirmative caregiver-option code; unselected coding and eligible denominator unresolved; no response-value labels assigned",
+              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures.; The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data."
             },
             {
               "code": "db022_w2_1_2_s64",
@@ -27856,9 +27856,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "官方问卷/代码本标注志愿者或机构人员为照护者名册中的一个类别。2011为是否经常帮助的单项字段（代码本显示无观察值）；2013为按ADL/IADL任务及帮助者槽位展开的类别字段，代码本汇总提示稀疏。值编码及未问/跳题状态需按各波代码本解析；先检查原始数据实际覆盖与分母，再决定是否可建模。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures."
+              "value_semantics": "The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data.",
+              "mapping_status": "official Codebook identifies affirmative caregiver-option code; unselected coding and eligible denominator unresolved; no response-value labels assigned",
+              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures.; The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data."
             },
             {
               "code": "db022_w2_1_3_s64",
@@ -27866,9 +27866,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "官方问卷/代码本标注志愿者或机构人员为照护者名册中的一个类别。2011为是否经常帮助的单项字段（代码本显示无观察值）；2013为按ADL/IADL任务及帮助者槽位展开的类别字段，代码本汇总提示稀疏。值编码及未问/跳题状态需按各波代码本解析；先检查原始数据实际覆盖与分母，再决定是否可建模。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures."
+              "value_semantics": "The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data.",
+              "mapping_status": "official Codebook identifies affirmative caregiver-option code; unselected coding and eligible denominator unresolved; no response-value labels assigned",
+              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures.; The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data."
             },
             {
               "code": "db022_w2_5_1_s64",
@@ -27876,9 +27876,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "官方问卷/代码本标注志愿者或机构人员为照护者名册中的一个类别。2011为是否经常帮助的单项字段（代码本显示无观察值）；2013为按ADL/IADL任务及帮助者槽位展开的类别字段，代码本汇总提示稀疏。值编码及未问/跳题状态需按各波代码本解析；先检查原始数据实际覆盖与分母，再决定是否可建模。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures."
+              "value_semantics": "The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data.",
+              "mapping_status": "official Codebook identifies affirmative caregiver-option code; unselected coding and eligible denominator unresolved; no response-value labels assigned",
+              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures.; The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data."
             },
             {
               "code": "db022_w2_5_2_s64",
@@ -27886,9 +27886,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "官方问卷/代码本标注志愿者或机构人员为照护者名册中的一个类别。2011为是否经常帮助的单项字段（代码本显示无观察值）；2013为按ADL/IADL任务及帮助者槽位展开的类别字段，代码本汇总提示稀疏。值编码及未问/跳题状态需按各波代码本解析；先检查原始数据实际覆盖与分母，再决定是否可建模。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures."
+              "value_semantics": "The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data.",
+              "mapping_status": "official Codebook identifies affirmative caregiver-option code; unselected coding and eligible denominator unresolved; no response-value labels assigned",
+              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures.; The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data."
             },
             {
               "code": "db022_w2_5_3_s64",
@@ -27896,9 +27896,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "官方问卷/代码本标注志愿者或机构人员为照护者名册中的一个类别。2011为是否经常帮助的单项字段（代码本显示无观察值）；2013为按ADL/IADL任务及帮助者槽位展开的类别字段，代码本汇总提示稀疏。值编码及未问/跳题状态需按各波代码本解析；先检查原始数据实际覆盖与分母，再决定是否可建模。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures."
+              "value_semantics": "The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data.",
+              "mapping_status": "official Codebook identifies affirmative caregiver-option code; unselected coding and eligible denominator unresolved; no response-value labels assigned",
+              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures.; The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data."
             },
             {
               "code": "db022_w2_5_4_s64",
@@ -27906,9 +27906,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "官方问卷/代码本标注志愿者或机构人员为照护者名册中的一个类别。2011为是否经常帮助的单项字段（代码本显示无观察值）；2013为按ADL/IADL任务及帮助者槽位展开的类别字段，代码本汇总提示稀疏。值编码及未问/跳题状态需按各波代码本解析；先检查原始数据实际覆盖与分母，再决定是否可建模。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures."
+              "value_semantics": "The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data.",
+              "mapping_status": "official Codebook identifies affirmative caregiver-option code; unselected coding and eligible denominator unresolved; no response-value labels assigned",
+              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures.; The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data."
             },
             {
               "code": "db022_w2_5_5_s64",
@@ -27916,9 +27916,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "官方问卷/代码本标注志愿者或机构人员为照护者名册中的一个类别。2011为是否经常帮助的单项字段（代码本显示无观察值）；2013为按ADL/IADL任务及帮助者槽位展开的类别字段，代码本汇总提示稀疏。值编码及未问/跳题状态需按各波代码本解析；先检查原始数据实际覆盖与分母，再决定是否可建模。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures."
+              "value_semantics": "The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data.",
+              "mapping_status": "official Codebook identifies affirmative caregiver-option code; unselected coding and eligible denominator unresolved; no response-value labels assigned",
+              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures.; The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data."
             },
             {
               "code": "db022_w2_9_1_s64",
@@ -27926,9 +27926,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "官方问卷/代码本标注志愿者或机构人员为照护者名册中的一个类别。2011为是否经常帮助的单项字段（代码本显示无观察值）；2013为按ADL/IADL任务及帮助者槽位展开的类别字段，代码本汇总提示稀疏。值编码及未问/跳题状态需按各波代码本解析；先检查原始数据实际覆盖与分母，再决定是否可建模。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures."
+              "value_semantics": "The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data.",
+              "mapping_status": "official Codebook identifies affirmative caregiver-option code; unselected coding and eligible denominator unresolved; no response-value labels assigned",
+              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures.; The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data."
             },
             {
               "code": "db022_w2_9_2_s64",
@@ -27936,9 +27936,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "官方问卷/代码本标注志愿者或机构人员为照护者名册中的一个类别。2011为是否经常帮助的单项字段（代码本显示无观察值）；2013为按ADL/IADL任务及帮助者槽位展开的类别字段，代码本汇总提示稀疏。值编码及未问/跳题状态需按各波代码本解析；先检查原始数据实际覆盖与分母，再决定是否可建模。",
-              "mapping_status": "Codebook/catalog label candidate; item-level questionnaire and value-label review required",
-              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures."
+              "value_semantics": "The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data.",
+              "mapping_status": "official Codebook identifies affirmative caregiver-option code; unselected coding and eligible denominator unresolved; no response-value labels assigned",
+              "caveat": "Conditional on functional limitations and the CHARLS helper roster. 2011 checklist and 2013 task/helper-slot fields have different storage structures; retain wave, task, slot, and original code. The 2011 codebook reports no observations for db022s38; 2013 helper-category fields are sparse in the codebook summaries. Do not assume adequate modeling power. These are not population-wide access or service-use measures.; The Codebook identifies option 64 as volunteer/facility help for this routed helper field. The public questionnaire describes a helper-selection item (multiple helpers may be selected). Participant-level unselected coding and the eligible denominator are unresolved; do not infer No from blank/missing and do not treat Codebook frequencies as respondent-level data."
             }
           ]
         },

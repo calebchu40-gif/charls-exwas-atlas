@@ -75,6 +75,7 @@ FULL_PIPELINE_SCRIPTS = (
     "build_behavior_exposure_crosswalk.py",
     "enrich_behavior_value_labels.py",
     "build_social_exposure_crosswalk.py",
+    "apply_social_caregiver_metadata_review.py",
     "apply_social_participation_source_status.py",
     "apply_parent_visit_codebook_labels.py",
     "build_cancer_site_crosswalk.py",
