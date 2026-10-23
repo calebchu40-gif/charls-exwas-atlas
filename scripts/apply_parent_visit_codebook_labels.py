@@ -122,27 +122,11 @@ def main() -> None:
             catalog.loc[selected, "Harmonization.Status"] = row["mapping_status"]
         catalog.to_csv(catalog_path, index=False, encoding="utf-8-sig")
 
-    # Downstream review scripts update the master site JSON after the CSV is
-    # built. Patch that final source immediately before role shards are made.
+    # The full site master is regenerated downstream from the wave-specific
+    # candidate CSV. Do not patch catalog.json here: a previous build may have
+    # compacted multiple waves into one public record, which cannot safely hold
+    # wave-specific response categories.
     master_site_path = ROOT / "site-prototype" / "dist" / "catalog.json"
-    if master_site_path.exists():
-        records = json.loads(master_site_path.read_text(encoding="utf-8"))
-        for row in parent.to_dict("records"):
-            matched = [item for item in records
-                       if str(item.get("Source.Wave", "")) == str(row["wave"])
-                       and str(item.get("Variable.Name", "")).lower() == str(row["code"]).lower()]
-            if not matched:
-                raise SystemExit(f"Parent-visit field missing from master site catalog: {row['wave']}/{row['code']}")
-            for item in matched:
-                item["Value.Labels"] = row["value_labels"]
-                item["Value.Label.Source"] = row["value_label_source"]
-                item["Value.Label.Review"] = row["value_label_status"]
-                item["Harmonization.Status"] = row["mapping_status"]
-                item["value_labels"] = row["value_labels"]
-                item["value_label_source"] = row["value_label_source"]
-                item["value_label_review"] = row["value_label_status"]
-                item["harmonization_status"] = row["mapping_status"]
-        master_site_path.write_text(json.dumps(records, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
     # Keep the focused topic JSON synchronized with the audited source rows.
     site_path = ROOT / "site-prototype" / "dist" / "social_exposures_v1.json"
@@ -159,7 +143,7 @@ def main() -> None:
             field["value_semantics"] = item["value_semantics"]
             field["value_label_source"] = item["value_label_source"]
     site_path.write_text(json.dumps(topics, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"parent visit field labels: {len(parent)}; complete categories={complete}; partial Codebook sets={partial}; candidate catalogue propagated={catalog_path.exists()}; master site catalog propagated={master_site_path.exists()}; no frequencies copied")
+    print(f"parent visit field labels: {len(parent)}; complete categories={complete}; partial Codebook sets={partial}; candidate catalogue propagated={catalog_path.exists()}; public catalog regenerated downstream from wave-specific rows; no frequencies copied")
 
 
 if __name__ == "__main__":

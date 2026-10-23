@@ -1,4 +1,6 @@
 import importlib.util
+import csv
+import json
 from pathlib import Path
 import unittest
 
@@ -30,6 +32,61 @@ class ObjectiveMeasurementCrosswalkTests(unittest.TestCase):
             self.assertTrue(row["source_document"].startswith("sources_official/"))
             self.assertIn("all listed candidate code tokens found", row["codebook_presence"])
             self.assertIn("does not confirm", row["codebook_presence"])
+
+    def test_concept_labels_are_not_overwritten_by_last_codebook_field_label(self):
+        labels = {concept: label for concept, label, _domain, _codes, _note in builder.FIELDS}
+        rows = builder.build_rows()
+        self.assertEqual({r["concept_id"]: r["concept_label"] for r in rows}, labels)
+        self.assertEqual(labels["walking_speed"], "计时步行表现（2.5米，两次计时）")
+
+    def test_walking_trials_are_timed_seconds_with_preserved_status_codes(self):
+        rows = [r for r in builder.build_rows() if r["concept_id"] == "walking_speed"]
+        self.assertEqual({r["wave"] for r in rows}, {"2011", "2013", "2015"})
+        for row in rows:
+            self.assertIn("2.5米", row["value_semantics"])
+            self.assertIn("秒", row["value_semantics"])
+            self.assertIn("993", row["value_semantics"])
+            self.assertIn("999", row["value_semantics"])
+            self.assertIn("2.5米", row["source_status"])
+            self.assertIn("not elapsed seconds", row["source_caveat"])
+        self.assertIn("LI与QG字段逐项等同", next(r for r in rows if r["wave"] == "2011")["source_caveat"])
+
+    def test_final_catalog_maps_timed_walk_to_phenotype_only(self):
+        p_rows = json.loads((ROOT / "site-prototype/dist/catalog_p.json").read_text(encoding="utf-8"))
+        e_rows = json.loads((ROOT / "site-prototype/dist/catalog_e.json").read_text(encoding="utf-8"))
+        targets = [
+            r for r in p_rows
+            if r.get("Source.Wave") in {"2011", "2013", "2015"}
+            and r.get("Variable.Name", "").lower() in {"qg002", "qg003"}
+            and r.get("category", "").lower() == "physical function"
+        ]
+        self.assertEqual({(r["Source.Wave"], r["Variable.Name"].lower()) for r in targets}, {
+            (wave, code) for wave in ("2011", "2013", "2015") for code in ("qg002", "qg003")
+        })
+        self.assertTrue(all(r["Unit"] == "seconds" for r in targets))
+        self.assertTrue(all(r["Concept.ID.Candidates"] == "walking_speed" for r in targets))
+        self.assertTrue(all("not yet reviewed" not in r["Value.Label.Review"].lower() for r in targets))
+        self.assertFalse(any(
+            r.get("Source.Wave") in {"2011", "2013", "2015"}
+            and r.get("Variable.Name", "").lower() in {"qg002", "qg003"}
+            for r in e_rows
+        ))
+
+    def test_objective_p_concepts_attach_outside_physical_function_category(self):
+        with (ROOT / "audit/charls_atlas_candidate_fields_v0.csv").open(encoding="utf-8-sig", newline="") as handle:
+            catalog = list(csv.DictReader(handle))
+        target_codes = {"qa003", "qa004", "qa005", "qa007", "qa008", "qa009", "qa011", "qa012", "qa013", "qk002"}
+        targets = [row for row in catalog if row.get("Source.Wave") in {"2011", "2013", "2015"}
+                   and row.get("Variable.Name", "").lower() in target_codes
+                   and row.get("category", "").lower() in {"blood pressure", "anthropometric"}]
+        expected = {(wave, code) for wave in ("2011", "2013", "2015") for code in target_codes}
+        by_key = {(row["Source.Wave"], row["Variable.Name"].lower()): row for row in targets}
+        self.assertEqual(set(by_key), expected)
+        for (wave, code), row in by_key.items():
+            concept = ("knee_height" if code == "qk002" else
+                       "systolic_bp" if code in {"qa003", "qa007", "qa011"} else
+                       "diastolic_bp" if code in {"qa004", "qa008", "qa012"} else "pulse_rate")
+            self.assertEqual(row["Concept.ID.Candidates"], concept, (wave, code))
 
     def test_wave_specific_codebook_labels_are_preserved_without_summary_statistics(self):
         rows = builder.build_rows()

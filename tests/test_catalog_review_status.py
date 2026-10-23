@@ -211,15 +211,15 @@ class CatalogReviewStatusTests(unittest.TestCase):
     def test_2011_fb010_codebook_values_and_conflict_reach_main_catalog(self):
         rows = [
             row for row in self.catalog
-            if row.get("Variable.Name", "").lower() == "fb010" and "2011" in row.get("waves", "").split(",")
+            if row.get("Variable.Name", "").lower() == "fb010" and row.get("Source.Wave") == "2011"
         ]
         self.assertEqual(len(rows), 1)
         row = rows[0]
-        self.assertIn("4=School", row.get("value_labels", ""))
-        self.assertIn("6=Other", row.get("value_labels", ""))
-        self.assertIn("DO NOT ANALYZE", row.get("value_label_review", ""))
-        self.assertIn("questionnaire:", row.get("value_label_review", ""))
-        self.assertIn("released-data coding unresolved", row.get("value_label_review", ""))
+        self.assertIn("4=School", row.get("Value.Labels", ""))
+        self.assertIn("6=Other", row.get("Value.Labels", ""))
+        self.assertIn("DO NOT ANALYZE", row.get("Value.Label.Review", ""))
+        self.assertIn("questionnaire:", row.get("Value.Label.Review", ""))
+        self.assertIn("released-data coding unresolved", row.get("Value.Label.Review", ""))
 
     def test_2018_chronic_treatment_categories_are_transcribed_without_frequencies(self):
         import csv
@@ -243,10 +243,10 @@ class CatalogReviewStatusTests(unittest.TestCase):
             self.assertIn("frequencies omitted", row["value_label_status"])
             self.assertIn("route retained", row["value_label_status"])
             self.assertIn("denominator require validation", row["value_label_status"])
-        catalog = [row for row in self.catalog if row.get("Variable.Name", "").lower() == "da010_w4_2__s99" and "2018" in row.get("waves", "").split(",")]
+        catalog = [row for row in self.catalog if row.get("Variable.Name", "").lower() == "da010_w4_2__s99" and row.get("Source.Wave") == "2018"]
         self.assertEqual(len(catalog), 1)
-        self.assertIn("99=Never Had the Disease", catalog[0].get("value_labels", ""))
-        self.assertIn("official 2018 Codebook response categories transcribed", catalog[0].get("value_label_review", ""))
+        self.assertIn("99=Never Had the Disease", catalog[0].get("Value.Labels", ""))
+        self.assertIn("official 2018 Codebook response categories transcribed", catalog[0].get("Value.Label.Review", ""))
         self.assertIn("route", catalog[0].get("Harmonization.Status", "").lower())
 
     def test_chronic_disease_control_and_interval_change_labels_are_wave_specific(self):
@@ -398,20 +398,20 @@ class CatalogReviewStatusTests(unittest.TestCase):
             self.assertIn("DO NOT ANALYZE", field.get("value_label_status", ""), code)
             self.assertIn("selected/unselected/missing value coding not verified", field.get("value_label_status", ""), code)
             self.assertIn("CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt", field.get("value_label_source", ""), code)
-            rows = [row for row in self.catalog if row.get("Variable.Name", "").lower() == code and "2011" in row.get("waves", "").split(",")]
+            rows = [row for row in self.catalog if row.get("Variable.Name", "").lower() == code and row.get("Source.Wave") == "2011"]
             self.assertEqual(len(rows), 1, code)
-            self.assertIn("DO NOT ANALYZE", rows[0].get("value_label_review", ""), code)
+            self.assertIn("DO NOT ANALYZE", rows[0].get("Value.Label.Review", ""), code)
     def test_2011_fn024_is_current_enrollment_separate_from_2013_history(self):
-        wave1 = [row for row in self.catalog if row.get("Variable.Name", "").lower() == "fn024" and "2011" in row.get("waves", "").split(",")]
+        wave1 = [row for row in self.catalog if row.get("Variable.Name", "").lower() == "fn024" and row.get("Source.Wave") == "2011"]
         self.assertEqual(len(wave1), 1)
         row = wave1[0]
-        self.assertIn("pension_current_basic_plan_enrollment_among_nonretired_2011", row.get("candidate_concept_ids", ""))
-        self.assertNotIn("pension_past_basic_plan_participation_when_not_currently_enrolled", row.get("candidate_concept_ids", ""))
-        self.assertIn("3=No", row.get("value_labels", ""))
-        self.assertNotIn("DO NOT ANALYZE", row.get("value_label_review", ""))
-        wave2 = [row for row in self.catalog if row.get("Variable.Name", "").lower() == "fn022_w2" and "2013" in row.get("waves", "").split(",")]
+        self.assertIn("pension_current_basic_plan_enrollment_among_nonretired_2011", row.get("Concept.ID.Candidates", ""))
+        self.assertNotIn("pension_past_basic_plan_participation_when_not_currently_enrolled", row.get("Concept.ID.Candidates", ""))
+        self.assertIn("3=No", row.get("Value.Labels", ""))
+        self.assertNotIn("DO NOT ANALYZE", row.get("Value.Label.Review", ""))
+        wave2 = [row for row in self.catalog if row.get("Variable.Name", "").lower() == "fn022_w2" and row.get("Source.Wave") == "2013"]
         self.assertEqual(len(wave2), 1)
-        self.assertIn("pension_past_basic_plan_participation_when_not_currently_enrolled", wave2[0].get("candidate_concept_ids", ""))
+        self.assertIn("pension_past_basic_plan_participation_when_not_currently_enrolled", wave2[0].get("Concept.ID.Candidates", ""))
 
     def test_2011_fn011_amount_components_have_verified_wave_route_and_period(self):
         import csv

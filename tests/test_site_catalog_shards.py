@@ -36,9 +36,14 @@ class SiteCatalogShardTests(unittest.TestCase):
 
     def test_generated_site_role_shards_match_master_catalog(self):
         master = json.loads((ROOT / "site-prototype/dist/catalog.json").read_text(encoding="utf-8"))
+        key = lambda row: (row.get("Source.Wave"), row.get("Variable.Name", "").lower(), row.get("epcf"), row.get("category"), row.get("subcategory"))
         for role in ROLES:
             shard = json.loads((ROOT / f"site-prototype/dist/catalog_{role}.json").read_text(encoding="utf-8"))
-            self.assertEqual(shard, rows_for_role(master, role))
+            expected = rows_for_role(master, role)
+            self.assertEqual([key(row) for row in shard], [key(row) for row in expected])
+            for row in shard:
+                self.assertEqual(row["waves"], row["Source.Wave"])
+                self.assertEqual(row["value_labels"], row["Value.Labels"])
 
     def test_both_metadata_pipelines_rebuild_role_shards_after_all_catalog_edits(self):
         self.assertEqual(FINALIZATION_PIPELINE_SCRIPTS[-1], "site_catalog_shards.py")

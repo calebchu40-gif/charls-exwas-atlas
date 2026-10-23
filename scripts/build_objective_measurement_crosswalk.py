@@ -15,7 +15,7 @@ FIELDS = [
     ("balance_semi_tandem", "半串联站立平衡", "平衡/功能", "qd002;qd003;qd004", "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"),
     ("balance_full_tandem", "全串联站立平衡", "平衡/功能", "qe002;qe003;qe004", "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"),
     ("balance_side_by_side", "并排站立平衡", "平衡/功能", "qf002;qf003;qf004", "是否坚持满10秒、持续时间、代偿动作；分别保留。"),
-    ("walking_speed", "步行速度/计时步行", "移动/功能", "qg002;qg003", "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。"),
+    ("walking_speed", "计时步行表现（2.5米，两次计时）", "移动/功能", "qg002;qg003", "通常步速下的2.5米步行路线，两次原始计时均以秒记录；问卷定义993=尝试但无法完成、999=选择不做，二者不是秒数。保留试次，不把计时直接称为速度，也不自行换算/汇总。"),
     ("repeated_chair_stand", "重复椅子起立表现", "下肢功能", "qh002;qh003;qh004;qh005", "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"),
     ("standing_height", "身高", "人体测量", "qi002", "现场身高读数；与qh006等椅子测试字段区分。"),
     ("arm_length", "上臂长度", "人体测量", "qj002", "记录值并保留测量侧别qj003。"),
@@ -61,7 +61,7 @@ def build_rows() -> list[dict[str, str]]:
         codes_by_wave[wave] = {
             code.lower() for code in re.findall(r"[a-z]{2}\d{3}(?:_\d+)?", codebook_lower)
         }
-    for concept, label, domain, codes, note in FIELDS:
+    for concept, concept_label, domain, codes, note in FIELDS:
         for wave, source in WAVE_SOURCES.items():
             candidate_codes = [code.strip().lower() for code in codes.split(";")]
             absent = sorted(set(candidate_codes) - codes_by_wave[wave])
@@ -72,21 +72,36 @@ def build_rows() -> list[dict[str, str]]:
                 match = re.search(r"•\s*" + re.escape(code) + r"\s*:\s*([^\r\n]+)", codebook_texts[wave], re.I)
                 if not match:
                     raise ValueError(f"{wave} Codebook has no extractable variable label for {code}")
-                label = match.group(1).split(r"\n", 1)[0].strip()
+                field_label = match.group(1).split(r"\n", 1)[0].strip()
                 if wave == "2013" and code == "ql002":
-                    label += " [extraction clipped at page boundary]"
-                labels.append(f"{code}={label}")
+                    field_label += " [extraction clipped at page boundary]"
+                labels.append(f"{code}={field_label}")
+            source_status = source["status"]
+            source_caveat = source["caveat"]
+            if concept == "walking_speed":
+                source_status = (
+                    f"{wave}官方问卷/手册与Codebook已逐项核对：2.5米通常步速路线、两次计时、秒单位、60岁及以上年龄筛选及步行安全/场地路线已记录；"
+                    "这是候选表型字段审查，不含参与者记录、频数或有效值分布。"
+                )
+                if wave == "2011":
+                    source_status += "2011手册LI题号与Codebook/发布字段命名不同，不能仅凭相似题意视为同一字段。"
+                source_caveat = (
+                    "qg002/qg003保留为两次独立原始计时但属于同一候选表型；993=尝试但无法完成、999=选择不做，须作为状态码保留而非秒数。"
+                    "这些状态码不是 elapsed seconds (not elapsed seconds)。"
+                    "不得把结构性未测记为0；从2.5米和计时推导速度或汇总两次试验前，需核验授权发布文件、特殊值、测量资格和预设算法。"
+                    + ("2011问卷手册使用LI题号，Codebook使用QG发布变量名；题意相近不证明LI与QG字段逐项等同，具体字段身份仍待发行版映射验证；不代表LI*与QA*/QB*/QC*代码一一对应。" if wave == "2011" else "跨波协议相似不自动证明样本、设备、路由、存储和数值范围可直接合并。")
+                )
             rows.append({
                 "concept_id": concept,
-                "concept_label": label,
+                "concept_label": concept_label,
                 "domain": domain,
                 "wave": wave,
                 "variables": codes,
                 "module": source["module"],
                 "value_semantics": note,
-                "source_status": source["status"],
+                "source_status": source_status,
                 "source_document": source["documents"],
-                "source_caveat": source["caveat"],
+                "source_caveat": source_caveat,
                 "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability",
                 "source_field_labels": "; ".join(labels),
             })

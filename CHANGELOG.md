@@ -2,6 +2,14 @@
 
 ## 2026-10-24
 
+- Reconciled a 30-row gap in the CI E/P concept-link check: blood-pressure readings and knee-height measurements now join the reviewed objective-measurement map by exact wave and variable code, including objective phenotype categories outside `physical function`. The final E/P source catalog has no rows without a candidate concept link; candidate status remains distinct from analysis eligibility.
+
+- Reviewed CHARLS 2011/2013/2015 timed-walk fields `qg002`/`qg003` against official questionnaires and Codebooks. The 2.5 m usual-pace test has two separate elapsed-time trials in seconds; ages 60+ and route/safety eligibility are retained; 993/999 remain non-completion status codes, not seconds. The 2011 manual's LI item identifiers are not asserted as identical to the Codebook's QG release fields. See `audit/walking_speed_source_review_2011_2015_2026-10-24.md`.
+
+- Fixed review-pipeline ordering so finalization begins from a regenerated wave-level master catalog before source-specific updates. Made DA056 and parent-visit reviews tolerate the compact prior-build catalog state without assigning cross-wave answer categories; kept wave-specific labels in each source record. Fixed household-member amount review to apply the correct wave-specific label-status/source inside the write loop.
+
+- Updated the E/P/C website shards to include the browser search properties while preserving exact wave-level rows and source-reviewed label/status values. Added exact-wave objective concept linkage checks, public shard/catalog checks, and a cache-busting assertion that accepts the current versioned asset. Full finalization completed; 216 unit tests passed, all 34 JSON files parsed, JavaScript syntax passed, deferred asset-loader test passed, and the CI E/P concept-link check found zero unmapped rows. No association models were fitted and no participant-level data or frequencies were used.
+
 - Clarified the homepage scope cards by separating exposure and phenotype candidate concepts (1,149 and 288), survey-wave coverage, and the zero formal-model count. The note explains that nine concepts have both roles, there are 1,428 unique E/P concepts, and source-field mappings are not participant counts or association results. Counts are generated from the audited concept index; added a consistency test. Deployed as GitHub Pages #102 and verified the public homepage.
 
 - Moved the final E/P/C shard build to the end of both metadata pipelines so late source-reviewed metadata propagation is reflected in the browser catalogue; final role shards match the master field catalogue at E=4,750, P=2,110 and C=986 rows.

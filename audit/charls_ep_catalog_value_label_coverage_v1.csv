@@ -1,5 +1,5 @@
 ﻿epcf,category,subcategory,field_category_rows,distinct_wave_fields,rows_with_reviewed_labels
-c,automated covariate search hit,keyword discovery only; not a reviewed covariate or adjustment recommendation,419,417,122
+c,automated covariate search hit,keyword discovery only; not a reviewed covariate or adjustment recommendation,416,414,128
 c,covariate candidate,birth-date source and age derivation metadata,5,5,0
 c,measurement metadata,2011 proxy interview and Section E assistance context,3,3,3
 c,measurement metadata,2018 employer pension contribution amount/share unit selector,1,1,1
@@ -44,6 +44,7 @@ c,measurement metadata,inactive household lending and debt legacy fields,4,4,0
 c,measurement metadata,inactive legacy questionnaire slots with no observations,49,49,0
 c,measurement metadata,individual transfer-income amount unit selector,3,3,3
 c,measurement metadata,interview assistance / proxy response context,2,2,2
+c,measurement metadata,interview language,1,1,1
 c,measurement metadata,invalid extra disability slot with no Yes category,1,1,1
 c,measurement metadata,knee-height measurement agreement and instruction comprehension,1,1,1
 c,measurement metadata,land-requisition pension expected-benefit amount-format selector,2,2,2
@@ -60,7 +61,7 @@ c,measurement metadata,personal wage deduction scope and response-unit selectors
 c,measurement metadata,personal wage-deduction response unit and applicability selector,1,1,1
 c,measurement metadata,prior-interview response-history routing flags,46,46,5
 c,measurement metadata,prior-wave demographic preload and correction route,5,5,0
-c,measurement metadata,prior-wave demographic record verification and response routing,8,4,8
+c,measurement metadata,prior-wave demographic record verification and response routing,4,4,4
 c,measurement metadata,prior-wave diagnosis-time answer-history flags,14,14,0
 c,measurement metadata,property-sale proceeds use-category selector slot,54,54,0
 c,measurement metadata,province-level pension-source work-unit location metadata,1,1,0
@@ -72,6 +73,7 @@ c,measurement metadata,smoking cessation age/calendar-year response-format selec
 c,measurement metadata,social-pension expected-benefit form selector,6,6,6
 c,measurement metadata,social-pension supplementary repayment currency selector,12,12,12
 c,measurement metadata,stroke recurrence timing response format,3,3,3
+c,measurement metadata,subjective life-expectancy target age,1,1,0
 c,measurement metadata,unlisted chronic-disease index placeholder,5,5,0
 c,measurement metadata,unresolved questionnaire and Codebook field identity conflict,1,1,0
 c,measurement metadata,unresolved release-field identity/data-type discrepancy,1,1,0
@@ -79,7 +81,7 @@ c,measurement metadata,unstructured other-specify response text,7,7,0
 c,measurement metadata,unstructured other-use response text,4,4,0
 c,measurement metadata,unsupported prior-wave disease-awareness slots,15,15,0
 e,behavior,alcohol use,73,73,41
-e,behavior,internet and digital technology use,38,38,15
+e,behavior,internet and digital technology use,38,38,30
 e,behavior,physical activity,84,84,84
 e,behavior,sleep,25,25,7
 e,behavior,smoking and tobacco,51,51,26
@@ -142,7 +144,7 @@ e,social protection,string-coded years since firm-pension transfer,2,2,0
 e,social protection,threshold-specific pension expected-benefit bracket response sequence,8,8,8
 e,social protection,years enrolled in the named pension plan,1,1,0
 "e,p",healthcare access,"insurance, outpatient and inpatient utilization",109,109,51
-"e,p",internal biomarker,"internal clinical/physiological measure; phenotype candidate, not exogenous environmental exposure",55,55,0
+"e,p",internal biomarker,"internal clinical/physiological measure; phenotype candidate, not exogenous environmental exposure",49,49,0
 p,anthropometric,body size and anthropometry,24,15,0
 p,biochemistry,blood and urine laboratory measures,32,32,0
 p,blood pressure,blood pressure and pulse,54,27,0
@@ -221,7 +223,7 @@ p,cognition,memory and cognitive performance,338,338,305
 p,health and symptoms,health-related work absence,6,6,0
 p,health and symptoms,"self-rated health, pain, and symptoms",111,111,111
 p,health and symptoms,"self-rated health, pain, symptoms, and test eligibility",44,44,44
-p,health and symptoms,subjective health expectancy,1,1,0
+p,health and symptoms,subjective health expectancy,1,1,1
 p,healthcare access,COVID-period delayed or unmet medical care,15,15,15
 p,healthcare access,"insurance, outpatient and inpatient utilization",93,93,0
 p,mental health,depressive symptoms and emotional wellbeing,50,50,50

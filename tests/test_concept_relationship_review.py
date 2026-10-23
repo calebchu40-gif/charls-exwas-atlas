@@ -48,7 +48,7 @@ class ConceptRelationshipReviewTests(unittest.TestCase):
             site_catalog = json.load(stream)
         site_w3 = [row for row in site_catalog if row["Variable.Name"].lower() == "da061_w3"]
         self.assertEqual(len(site_w3), 1)
-        self.assertIn("not current 2015 status", site_w3[0]["concept_mapping_caveats"])
+        self.assertIn("not current 2015 status", site_w3[0].get("Concept.Mapping.Caveat", site_w3[0].get("concept_mapping_caveats", "")))
 
     def test_2013_life_insurance_frequency_uses_questionnaire_label_with_partial_codebook_caveat(self):
         with (AUDIT / "charls_atlas_candidate_fields_v0.csv").open(encoding="utf-8-sig", newline="") as stream:

@@ -108,6 +108,8 @@ FULL_PIPELINE_SCRIPTS = (
     "validate_do_not_analyze_triage.py",
     "apply_housing_context_source_review.py",
     "build_ep_concept_source_crosswalk.py",
+    "apply_catalog_role_overrides.py",
+    "apply_walking_speed_source_review.py",
     "apply_parent_visit_codebook_labels.py",
     "apply_2018_current_home_measurement_review.py",
     "apply_housing_room_count_review.py",
@@ -149,6 +151,10 @@ FULL_PIPELINE_SCRIPTS = (
 # change is limited to catalogue propagation, value-label summaries, the
 # concept-source index, candidate-pair metadata, or final static JSON.
 FINALIZATION_PIPELINE_SCRIPTS = (
+    # Restore the full wave-by-wave master catalog before review scripts run.
+    # The prior successful build leaves the public site catalog compacted by
+    # site_catalog_shards.py, while these review steps expect one row per wave.
+    "build_charls_atlas_catalog.py",
     "apply_2011_household_member_amount_review.py",
     "apply_social_participation_source_status.py",
     "apply_parent_visit_codebook_labels.py",
@@ -168,6 +174,8 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "summarize_value_label_coverage.py",
     "validate_do_not_analyze_triage.py",
     "build_ep_concept_source_crosswalk.py",
+    "apply_catalog_role_overrides.py",
+    "apply_walking_speed_source_review.py",
     "apply_parent_visit_codebook_labels.py",
     "apply_2018_current_home_measurement_review.py",
     "apply_housing_room_count_review.py",

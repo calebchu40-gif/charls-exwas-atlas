@@ -703,6 +703,7 @@ summary.to_csv(AUDIT / "ep_concept_candidate_summary_v1.csv", index=False, encod
 # Attach explicit candidate concept IDs to the field catalog and its series
 # JSON so the website can search/display the code-to-concept mapping.
 concept_keys: dict[tuple[str, str, str, str], set[tuple[str, str, str, str, str, str]]] = {}
+objective_concept_keys: dict[tuple[str, str], set[tuple[str, str, str, str, str, str]]] = {}
 for r in master[master["Catalog.Match"].eq("matched")].to_dict("records"):
     roles = [r["Role"]]
     if r["Role"] == "e,p":
@@ -710,18 +711,30 @@ for r in master[master["Catalog.Match"].eq("matched")].to_dict("records"):
     for role in roles:
         key = (str(r["Wave"]), str(r["Source.Code"]).lower(), str(r["Module"]).strip().lower(), role)
         concept_keys.setdefault(key, set()).add((str(r["Concept.ID"]), str(r["Concept.Label"]), str(r["Source.File"]), str(r["Mapping.Status"]), str(r["Unit"]), str(r["Source.Concept.ID"])))
+    if str(r["Source.File"]).strip() == "audit/objective_measurement_crosswalk_v1.csv" and str(r["Role"]).lower() == "p":
+        objective_concept_keys.setdefault((str(r["Wave"]), str(r["Source.Code"]).lower()), set()).add(
+            (str(r["Concept.ID"]), str(r["Concept.Label"]), str(r["Source.File"]), str(r["Mapping.Status"]), str(r["Unit"]), str(r["Source.Concept.ID"]))
+        )
 
-def concepts_for(wave: str, code: str, module: str, role_text: str) -> list[tuple[str, str, str, str, str, str]]:
+def concepts_for(wave: str, code: str, module: str, role_text: str, category: str = "") -> list[tuple[str, str, str, str, str, str]]:
     found: set[tuple[str, str, str, str, str, str]] = set()
     for role in [role_text, *[x.strip() for x in role_text.split(",")]]:
         found.update(concept_keys.get((str(wave), str(code).lower(), str(module).strip().lower(), role), set()))
+    # The objective-measurement audit maps exact wave/code/P fields from the
+    # official instrument; the release catalogue may name its containing file
+    # "biomarkers" instead. Bridge only those reviewed P fields (never E or C)
+    # by exact wave and code, and only within the physical-function category.
+    if not found and role_text.strip().lower() == "p" and category.strip().lower() in {
+        "physical function", "blood pressure", "anthropometric"
+    }:
+        found.update(objective_concept_keys.get((str(wave), str(code).lower()), set()))
     return sorted(found)
 
 field_path = AUDIT / "charls_atlas_candidate_fields_v0.csv"
 field_catalog = pd.read_csv(field_path, dtype=str, encoding="utf-8-sig").fillna("")
 field_identity = ["Source.Wave", "Variable.Name", "Data.File.Name", "epcf", "category", "subcategory"]
 field_catalog = field_catalog.drop_duplicates(field_identity, keep="first").copy()
-mapped_fields = [concepts_for(r["Source.Wave"], r["Variable.Name"], r["Data.File.Name"], r["epcf"]) for r in field_catalog.to_dict("records")]
+mapped_fields = [concepts_for(r["Source.Wave"], r["Variable.Name"], r["Data.File.Name"], r["epcf"], r.get("category", "")) for r in field_catalog.to_dict("records")]
 field_catalog["Concept.ID.Candidates"] = ["; ".join(sorted({x[0] for x in xs})) for xs in mapped_fields]
 field_catalog["Concept.Alias.IDs"] = ["; ".join(sorted({alias for x in xs for alias in x[5].split(" | ") if alias and alias != x[0]})) for xs in mapped_fields]
 field_catalog["Concept.Label.Candidates"] = ["; ".join(sorted({x[1] for x in xs})) for xs in mapped_fields]

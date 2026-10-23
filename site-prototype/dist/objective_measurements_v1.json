@@ -1,7 +1,7 @@
 [
   {
     "concept_id": "systolic_bp",
-    "concept_label": "Systolic Reading",
+    "concept_label": "收缩压",
     "domain": "血压/循环",
     "wave": "2011",
     "variables": "qa003;qa007;qa011",
@@ -15,7 +15,7 @@
   },
   {
     "concept_id": "systolic_bp",
-    "concept_label": "Systolic Reading",
+    "concept_label": "收缩压",
     "domain": "血压/循环",
     "wave": "2013",
     "variables": "qa003;qa007;qa011",
@@ -29,7 +29,7 @@
   },
   {
     "concept_id": "systolic_bp",
-    "concept_label": "Systolic Reading",
+    "concept_label": "收缩压",
     "domain": "血压/循环",
     "wave": "2015",
     "variables": "qa003;qa007;qa011",
@@ -43,7 +43,7 @@
   },
   {
     "concept_id": "diastolic_bp",
-    "concept_label": "Diastolic Reading",
+    "concept_label": "舒张压",
     "domain": "血压/循环",
     "wave": "2011",
     "variables": "qa004;qa008;qa012",
@@ -57,7 +57,7 @@
   },
   {
     "concept_id": "diastolic_bp",
-    "concept_label": "Diastolic Reading",
+    "concept_label": "舒张压",
     "domain": "血压/循环",
     "wave": "2013",
     "variables": "qa004;qa008;qa012",
@@ -71,7 +71,7 @@
   },
   {
     "concept_id": "diastolic_bp",
-    "concept_label": "Diastolic Reading",
+    "concept_label": "舒张压",
     "domain": "血压/循环",
     "wave": "2015",
     "variables": "qa004;qa008;qa012",
@@ -85,7 +85,7 @@
   },
   {
     "concept_id": "pulse_rate",
-    "concept_label": "Pulse",
+    "concept_label": "脉搏",
     "domain": "血压/循环",
     "wave": "2011",
     "variables": "qa005;qa009;qa013",
@@ -99,7 +99,7 @@
   },
   {
     "concept_id": "pulse_rate",
-    "concept_label": "Pulse",
+    "concept_label": "脉搏",
     "domain": "血压/循环",
     "wave": "2013",
     "variables": "qa005;qa009;qa013",
@@ -113,7 +113,7 @@
   },
   {
     "concept_id": "pulse_rate",
-    "concept_label": "PULSE",
+    "concept_label": "脉搏",
     "domain": "血压/循环",
     "wave": "2015",
     "variables": "qa005;qa009;qa013",
@@ -127,7 +127,7 @@
   },
   {
     "concept_id": "peak_flow",
-    "concept_label": "Meaurement Reading-3",
+    "concept_label": "呼气峰流速",
     "domain": "肺功能",
     "wave": "2011",
     "variables": "qb002;qb003;qb004",
@@ -141,7 +141,7 @@
   },
   {
     "concept_id": "peak_flow",
-    "concept_label": "Measurement Reading-3",
+    "concept_label": "呼气峰流速",
     "domain": "肺功能",
     "wave": "2013",
     "variables": "qb002;qb003;qb004",
@@ -155,7 +155,7 @@
   },
   {
     "concept_id": "peak_flow",
-    "concept_label": "Measurement Reading-3",
+    "concept_label": "呼气峰流速",
     "domain": "肺功能",
     "wave": "2015",
     "variables": "qb002;qb003;qb004",
@@ -169,7 +169,7 @@
   },
   {
     "concept_id": "grip_strength",
-    "concept_label": "Right Hand-2kg",
+    "concept_label": "握力",
     "domain": "肌力/功能",
     "wave": "2011",
     "variables": "qc003;qc004;qc005;qc006",
@@ -183,7 +183,7 @@
   },
   {
     "concept_id": "grip_strength",
-    "concept_label": "Right Hand 2",
+    "concept_label": "握力",
     "domain": "肌力/功能",
     "wave": "2013",
     "variables": "qc003;qc004;qc005;qc006",
@@ -197,7 +197,7 @@
   },
   {
     "concept_id": "grip_strength",
-    "concept_label": "Right Hand-2(Kg)",
+    "concept_label": "握力",
     "domain": "肌力/功能",
     "wave": "2015",
     "variables": "qc003;qc004;qc005;qc006",
@@ -211,7 +211,7 @@
   },
   {
     "concept_id": "balance_semi_tandem",
-    "concept_label": "Use Any Compensatory Movements",
+    "concept_label": "半串联站立平衡",
     "domain": "平衡/功能",
     "wave": "2011",
     "variables": "qd002;qd003;qd004",
@@ -225,7 +225,7 @@
   },
   {
     "concept_id": "balance_semi_tandem",
-    "concept_label": "Use Any Compensatory Movements?",
+    "concept_label": "半串联站立平衡",
     "domain": "平衡/功能",
     "wave": "2013",
     "variables": "qd002;qd003;qd004",
@@ -239,7 +239,7 @@
   },
   {
     "concept_id": "balance_semi_tandem",
-    "concept_label": "use any compensatory movements?",
+    "concept_label": "半串联站立平衡",
     "domain": "平衡/功能",
     "wave": "2015",
     "variables": "qd002;qd003;qd004",
@@ -253,7 +253,7 @@
   },
   {
     "concept_id": "balance_full_tandem",
-    "concept_label": "Use Any Compensatory Movements",
+    "concept_label": "全串联站立平衡",
     "domain": "平衡/功能",
     "wave": "2011",
     "variables": "qe002;qe003;qe004",
@@ -267,7 +267,7 @@
   },
   {
     "concept_id": "balance_full_tandem",
-    "concept_label": "Use Any Compensatory Movements?",
+    "concept_label": "全串联站立平衡",
     "domain": "平衡/功能",
     "wave": "2013",
     "variables": "qe002;qe003;qe004",
@@ -281,7 +281,7 @@
   },
   {
     "concept_id": "balance_full_tandem",
-    "concept_label": "use any compensatory movements?",
+    "concept_label": "全串联站立平衡",
     "domain": "平衡/功能",
     "wave": "2015",
     "variables": "qe002;qe003;qe004",
@@ -295,7 +295,7 @@
   },
   {
     "concept_id": "balance_side_by_side",
-    "concept_label": "Use Any Compensatory Movements",
+    "concept_label": "并排站立平衡",
     "domain": "平衡/功能",
     "wave": "2011",
     "variables": "qf002;qf003;qf004",
@@ -309,7 +309,7 @@
   },
   {
     "concept_id": "balance_side_by_side",
-    "concept_label": "Use Any Compensatory Movements?",
+    "concept_label": "并排站立平衡",
     "domain": "平衡/功能",
     "wave": "2013",
     "variables": "qf002;qf003;qf004",
@@ -323,7 +323,7 @@
   },
   {
     "concept_id": "balance_side_by_side",
-    "concept_label": "use any compensatory movements?",
+    "concept_label": "并排站立平衡",
     "domain": "平衡/功能",
     "wave": "2015",
     "variables": "qf002;qf003;qf004",
@@ -337,49 +337,49 @@
   },
   {
     "concept_id": "walking_speed",
-    "concept_label": "Walking Speed Time-2",
+    "concept_label": "计时步行表现（2.5米，两次计时）",
     "domain": "移动/功能",
     "wave": "2011",
     "variables": "qg002;qg003",
     "module": "Physical Examination Questionnaire",
-    "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
-    "source_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
+    "value_semantics": "通常步速下的2.5米步行路线，两次原始计时均以秒记录；问卷定义993=尝试但无法完成、999=选择不做，二者不是秒数。保留试次，不把计时直接称为速度，也不自行换算/汇总。",
+    "source_status": "2011官方问卷/手册与Codebook已逐项核对：2.5米通常步速路线、两次计时、秒单位、60岁及以上年龄筛选及步行安全/场地路线已记录；这是候选表型字段审查，不含参与者记录、频数或有效值分布。2011手册LI题号与Codebook/发布字段命名不同，不能仅凭相似题意视为同一字段。",
     "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide.pdf",
-    "source_caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。",
+    "source_caveat": "qg002/qg003保留为两次独立原始计时但属于同一候选表型；993=尝试但无法完成、999=选择不做，须作为状态码保留而非秒数。这些状态码不是 elapsed seconds (not elapsed seconds)。不得把结构性未测记为0；从2.5米和计时推导速度或汇总两次试验前，需核验授权发布文件、特殊值、测量资格和预设算法。2011问卷手册使用LI题号，Codebook使用QG发布变量名；题意相近不证明LI与QG字段逐项等同，具体字段身份仍待发行版映射验证；不代表LI*与QA*/QB*/QC*代码一一对应。",
     "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability",
     "source_field_labels": "qg002=Walking Speed Time-1; qg003=Walking Speed Time-2"
   },
   {
     "concept_id": "walking_speed",
-    "concept_label": "Walking Speed Time-2",
+    "concept_label": "计时步行表现（2.5米，两次计时）",
     "domain": "移动/功能",
     "wave": "2013",
     "variables": "qg002;qg003",
     "module": "Biomarker Questionnaire",
-    "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
-    "source_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "value_semantics": "通常步速下的2.5米步行路线，两次原始计时均以秒记录；问卷定义993=尝试但无法完成、999=选择不做，二者不是秒数。保留试次，不把计时直接称为速度，也不自行换算/汇总。",
+    "source_status": "2013官方问卷/手册与Codebook已逐项核对：2.5米通常步速路线、两次计时、秒单位、60岁及以上年龄筛选及步行安全/场地路线已记录；这是候选表型字段审查，不含参与者记录、频数或有效值分布。",
     "source_document": "sources_official/CHARLS_2013_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2013_Codebook_extracted.txt; sources_official/CHARLS_2013_Wave2_Release_Note.pdf",
-    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "source_caveat": "qg002/qg003保留为两次独立原始计时但属于同一候选表型；993=尝试但无法完成、999=选择不做，须作为状态码保留而非秒数。这些状态码不是 elapsed seconds (not elapsed seconds)。不得把结构性未测记为0；从2.5米和计时推导速度或汇总两次试验前，需核验授权发布文件、特殊值、测量资格和预设算法。跨波协议相似不自动证明样本、设备、路由、存储和数值范围可直接合并。",
     "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability",
     "source_field_labels": "qg002=Walking Speed Time-1; qg003=Walking Speed Time-2"
   },
   {
     "concept_id": "walking_speed",
-    "concept_label": "Walking Speed Time-2",
+    "concept_label": "计时步行表现（2.5米，两次计时）",
     "domain": "移动/功能",
     "wave": "2015",
     "variables": "qg002;qg003",
     "module": "Biomarker Questionnaire",
-    "value_semantics": "两次步行计时；具体速度需按问卷测距与单位推导，不能直接把时间叫速度。",
-    "source_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
+    "value_semantics": "通常步速下的2.5米步行路线，两次原始计时均以秒记录；问卷定义993=尝试但无法完成、999=选择不做，二者不是秒数。保留试次，不把计时直接称为速度，也不自行换算/汇总。",
+    "source_status": "2015官方问卷/手册与Codebook已逐项核对：2.5米通常步速路线、两次计时、秒单位、60岁及以上年龄筛选及步行安全/场地路线已记录；这是候选表型字段审查，不含参与者记录、频数或有效值分布。",
     "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire.pdf; sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Blood_Release_Note.pdf",
-    "source_caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。",
+    "source_caveat": "qg002/qg003保留为两次独立原始计时但属于同一候选表型；993=尝试但无法完成、999=选择不做，须作为状态码保留而非秒数。这些状态码不是 elapsed seconds (not elapsed seconds)。不得把结构性未测记为0；从2.5米和计时推导速度或汇总两次试验前，需核验授权发布文件、特殊值、测量资格和预设算法。跨波协议相似不自动证明样本、设备、路由、存储和数值范围可直接合并。",
     "codebook_presence": "all listed candidate code tokens found; token presence alone does not confirm item semantics, routing, units, or release availability",
     "source_field_labels": "qg002=Walking Speed Time-1; qg003=Walking Speed Time-2"
   },
   {
     "concept_id": "repeated_chair_stand",
-    "concept_label": "Times",
+    "concept_label": "重复椅子起立表现",
     "domain": "下肢功能",
     "wave": "2011",
     "variables": "qh002;qh003;qh004;qh005",
@@ -393,7 +393,7 @@
   },
   {
     "concept_id": "repeated_chair_stand",
-    "concept_label": "Times",
+    "concept_label": "重复椅子起立表现",
     "domain": "下肢功能",
     "wave": "2013",
     "variables": "qh002;qh003;qh004;qh005",
@@ -407,7 +407,7 @@
   },
   {
     "concept_id": "repeated_chair_stand",
-    "concept_label": "times",
+    "concept_label": "重复椅子起立表现",
     "domain": "下肢功能",
     "wave": "2015",
     "variables": "qh002;qh003;qh004;qh005",
@@ -421,7 +421,7 @@
   },
   {
     "concept_id": "standing_height",
-    "concept_label": "Height",
+    "concept_label": "身高",
     "domain": "人体测量",
     "wave": "2011",
     "variables": "qi002",
@@ -435,7 +435,7 @@
   },
   {
     "concept_id": "standing_height",
-    "concept_label": "Height",
+    "concept_label": "身高",
     "domain": "人体测量",
     "wave": "2013",
     "variables": "qi002",
@@ -449,7 +449,7 @@
   },
   {
     "concept_id": "standing_height",
-    "concept_label": "height",
+    "concept_label": "身高",
     "domain": "人体测量",
     "wave": "2015",
     "variables": "qi002",
@@ -463,7 +463,7 @@
   },
   {
     "concept_id": "arm_length",
-    "concept_label": "Arm Length",
+    "concept_label": "上臂长度",
     "domain": "人体测量",
     "wave": "2011",
     "variables": "qj002",
@@ -477,7 +477,7 @@
   },
   {
     "concept_id": "arm_length",
-    "concept_label": "Arm Length",
+    "concept_label": "上臂长度",
     "domain": "人体测量",
     "wave": "2013",
     "variables": "qj002",
@@ -491,7 +491,7 @@
   },
   {
     "concept_id": "arm_length",
-    "concept_label": "Arm Length",
+    "concept_label": "上臂长度",
     "domain": "人体测量",
     "wave": "2015",
     "variables": "qj002",
@@ -505,7 +505,7 @@
   },
   {
     "concept_id": "knee_height",
-    "concept_label": "Knee Height",
+    "concept_label": "膝高",
     "domain": "人体测量",
     "wave": "2011",
     "variables": "qk002",
@@ -519,7 +519,7 @@
   },
   {
     "concept_id": "knee_height",
-    "concept_label": "Knee Height",
+    "concept_label": "膝高",
     "domain": "人体测量",
     "wave": "2013",
     "variables": "qk002",
@@ -533,7 +533,7 @@
   },
   {
     "concept_id": "knee_height",
-    "concept_label": "Knee Height",
+    "concept_label": "膝高",
     "domain": "人体测量",
     "wave": "2015",
     "variables": "qk002",
@@ -547,7 +547,7 @@
   },
   {
     "concept_id": "body_weight",
-    "concept_label": "Weight Measurement",
+    "concept_label": "体重",
     "domain": "人体测量",
     "wave": "2011",
     "variables": "ql002",
@@ -561,7 +561,7 @@
   },
   {
     "concept_id": "body_weight",
-    "concept_label": "Weight Measuremen [extraction clipped at page boundary]",
+    "concept_label": "体重",
     "domain": "人体测量",
     "wave": "2013",
     "variables": "ql002",
@@ -575,7 +575,7 @@
   },
   {
     "concept_id": "body_weight",
-    "concept_label": "Weight",
+    "concept_label": "体重",
     "domain": "人体测量",
     "wave": "2015",
     "variables": "ql002",
@@ -589,7 +589,7 @@
   },
   {
     "concept_id": "waist_circumference",
-    "concept_label": "Waist Measurement",
+    "concept_label": "腰围",
     "domain": "人体测量/脂肪分布",
     "wave": "2011",
     "variables": "qm002",
@@ -603,7 +603,7 @@
   },
   {
     "concept_id": "waist_circumference",
-    "concept_label": "Waist Circumference",
+    "concept_label": "腰围",
     "domain": "人体测量/脂肪分布",
     "wave": "2013",
     "variables": "qm002",
@@ -617,7 +617,7 @@
   },
   {
     "concept_id": "waist_circumference",
-    "concept_label": "WAIST CIRCUMFERENCE",
+    "concept_label": "腰围",
     "domain": "人体测量/脂肪分布",
     "wave": "2015",
     "variables": "qm002",

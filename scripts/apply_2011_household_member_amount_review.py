@@ -83,6 +83,8 @@ def main() -> None:
             mask = catalog["Source.Wave"].eq(row["wave"]) & catalog["Variable.Name"].str.lower().eq(row["code"].lower())
             if not mask.any():
                 raise SystemExit(f"Amount field missing from candidate catalogue: {row['code']}")
+            status = review_status(row["wave"])
+            source = sources(row["wave"])
             catalog.loc[mask, "Unit"] = row["unit"]
             catalog.loc[mask, "Concept.Unit.Candidates"] = row["unit"]
             catalog.loc[mask, "Value.Labels"] = ""

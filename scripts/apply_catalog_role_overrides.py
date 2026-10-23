@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[1]
 AUDIT=ROOT/"audit"
 overrides=pd.read_csv(AUDIT/"catalog_role_override_review_v1.csv",dtype=str,encoding="utf-8-sig").fillna("")
 keys={(r.wave.lower(),r.code.lower()) for r in overrides.itertuples(index=False) if r.keep_role.lower() == "p"}
-dual_to_p={(r.wave.lower(),r.code.lower()) for r in overrides.itertuples(index=False) if r.keep_role.lower() == "p" and r.remove_role.lower() == "e,p"}
+dual_to_p={(r.wave.lower(),r.code.lower()) for r in overrides.itertuples(index=False) if r.keep_role.lower() == "p" and r.remove_role.lower() in {"e", "e,p"}}
 metadata_keys={(r.wave.lower(),r.code.lower()) for r in overrides.itertuples(index=False) if r.keep_role.lower() == "c"}
 analysis_locked_keys={(r.wave.lower(),r.code.lower()) for r in overrides.itertuples(index=False) if r.keep_role.lower() == "e"}
 if len(keys)+len(metadata_keys)+len(analysis_locked_keys)!=len(overrides): raise SystemExit("duplicate or unsupported role override keys")
@@ -39,7 +39,9 @@ for row in overrides.loc[overrides["keep_role"].str.lower().eq("c")].itertuples(
         source = raw_catalog[(raw_catalog.wave.str.lower().eq(wave)) & raw_catalog.variable.str.lower().eq(code)]
         if source.empty:
             raise SystemExit(f"metadata role override lacks official source field: {wave}/{code}/{old_role}")
-# Remove only the redundant automatic E row; preserve the P row and any future explicit E concept mapping.
+# Remove only redundant automatic E/dual-role rows when the audited override
+# retains P and no explicit candidate concept is attached. Preserve the P row
+# and any future explicit E concept mapping.
 concept_col=fields["Concept.ID.Candidates"] if "Concept.ID.Candidates" in fields else pd.Series([""]*len(fields),index=fields.index)
 mask=(fields["epcf"].str.lower().eq("e") & fields.apply(lambda r:(str(r["Source.Wave"]).lower(),str(r["Variable.Name"]).lower()) in keys,axis=1) & concept_col.eq(""))
 mask |= (fields["epcf"].str.lower().eq("e,p") & fields.apply(lambda r:(str(r["Source.Wave"]).lower(),str(r["Variable.Name"]).lower()) in dual_to_p,axis=1) & concept_col.eq(""))

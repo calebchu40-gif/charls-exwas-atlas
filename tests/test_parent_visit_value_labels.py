@@ -40,7 +40,7 @@ class ParentVisitValueLabelTests(unittest.TestCase):
             candidate = [item for item in self.catalog_rows
                          if (item["Source.Wave"], item["Variable.Name"].lower()) == key]
             site = [item for item in self.site_rows
-                    if (item["Source.Wave"], item["Variable.Name"].lower()) == key]
+                    if (item.get("Source.Wave"), item["Variable.Name"].lower()) == key]
             self.assertTrue(candidate, key)
             self.assertTrue(site, key)
             self.assertTrue(all(item["Value.Labels"] == row["value_labels"] for item in candidate), key)

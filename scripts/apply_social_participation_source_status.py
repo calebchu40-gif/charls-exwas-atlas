@@ -109,7 +109,19 @@ def main() -> None:
     if site_json.exists():
         records = json.loads(site_json.read_text(encoding="utf-8"))
         for row in selected.to_dict("records"):
-            matches = [item for item in records if str(item.get("Source.Wave")) == row["wave"] and str(item.get("Variable.Name", "")).lower() == row["code"].lower()]
+            # The public site catalog is compacted by site_catalog_shards.py
+            # after a successful build. It stores comma-separated waves instead
+            # of a row per wave, so accept either the pre-shard or compact shape.
+            matches = [
+                item for item in records
+                if str(item.get("Variable.Name", "")).lower() == row["code"].lower()
+                and (
+                    str(item.get("Source.Wave", "")) == row["wave"]
+                    or row["wave"] in {
+                        value.strip() for value in str(item.get("waves", "")).split(",")
+                    }
+                )
+            ]
             if not matches:
                 raise SystemExit(f"DA056 field missing from master site catalog: {row['wave']}/{row['code']}")
             for item in matches:
