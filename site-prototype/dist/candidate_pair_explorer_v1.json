@@ -668,8 +668,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Availability of coal/natural-gas supply is not the same as the household's main cooking or heating fuel. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Residence-level availability of coal/natural-gas supply, not proof that the household uses it for cooking/heating or a measure of combustion exposure. The 2020 question names XFinancialResp's house; confirm household-person linkage before person-level assignment. Wave-specific item wording and yes/no categories were reviewed; see audit/housing_context_source_review_2026-10-24.md."
             }
           ]
         },
@@ -2095,81 +2095,81 @@
               "code": "jb006_1",
               "label": "Tap Water",
               "module": "community",
-              "unit": "",
+              "unit": "households",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "2011 village/community counts of households using each drinking-water source (not an individual's source or a measured contaminant). Community respondent and denominator must be verified; single-wave only."
+              "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only."
             },
             {
               "code": "jb006_2",
               "label": "Well Water",
               "module": "community",
-              "unit": "",
+              "unit": "households",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "2011 village/community counts of households using each drinking-water source (not an individual's source or a measured contaminant). Community respondent and denominator must be verified; single-wave only."
+              "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only."
             },
             {
               "code": "jb006_3",
               "label": "Pool Water",
               "module": "community",
-              "unit": "",
+              "unit": "households",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "2011 village/community counts of households using each drinking-water source (not an individual's source or a measured contaminant). Community respondent and denominator must be verified; single-wave only."
+              "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only."
             },
             {
               "code": "jb006_4",
               "label": "River, Lakes and Brooks Water",
               "module": "community",
-              "unit": "",
+              "unit": "households",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "2011 village/community counts of households using each drinking-water source (not an individual's source or a measured contaminant). Community respondent and denominator must be verified; single-wave only."
+              "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only."
             },
             {
               "code": "jb006_5",
               "label": "Rain or Snow Water",
               "module": "community",
-              "unit": "",
+              "unit": "households",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "2011 village/community counts of households using each drinking-water source (not an individual's source or a measured contaminant). Community respondent and denominator must be verified; single-wave only."
+              "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only."
             },
             {
               "code": "jb006_6",
               "label": "Cellar Water",
               "module": "community",
-              "unit": "",
+              "unit": "households",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "2011 village/community counts of households using each drinking-water source (not an individual's source or a measured contaminant). Community respondent and denominator must be verified; single-wave only."
+              "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only."
             },
             {
               "code": "jb006_7",
               "label": "Spring",
               "module": "community",
-              "unit": "",
+              "unit": "households",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "2011 village/community counts of households using each drinking-water source (not an individual's source or a measured contaminant). Community respondent and denominator must be verified; single-wave only."
+              "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only."
             },
             {
               "code": "jb006_8",
               "label": "Other",
               "module": "community",
-              "unit": "",
+              "unit": "households",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "2011 village/community counts of households using each drinking-water source (not an individual's source or a measured contaminant). Community respondent and denominator must be verified; single-wave only."
+              "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each drinking-water source. Sources may overlap; the questionnaire gives no total-household denominator here. These are not an individual's source or a measured contaminant. Single-wave only."
             }
           ]
         },
@@ -2465,61 +2465,61 @@
               "code": "jb007_1",
               "label": "Hay",
               "module": "community",
-              "unit": "",
+              "unit": "households",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "2011 community-level counts by household fuel category. Not a person-level fuel dose; source categories and denominator require questionnaire/codebook review."
+              "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each fuel source. Categories may overlap; the questionnaire gives no total-household denominator here. Not a person-level fuel dose; single-wave only."
             },
             {
               "code": "jb007_2",
               "label": "Coal",
               "module": "community",
-              "unit": "",
+              "unit": "households",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "2011 community-level counts by household fuel category. Not a person-level fuel dose; source categories and denominator require questionnaire/codebook review."
+              "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each fuel source. Categories may overlap; the questionnaire gives no total-household denominator here. Not a person-level fuel dose; single-wave only."
             },
             {
               "code": "jb007_3",
               "label": "Marsh Gas",
               "module": "community",
-              "unit": "",
+              "unit": "households",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "2011 community-level counts by household fuel category. Not a person-level fuel dose; source categories and denominator require questionnaire/codebook review."
+              "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each fuel source. Categories may overlap; the questionnaire gives no total-household denominator here. Not a person-level fuel dose; single-wave only."
             },
             {
               "code": "jb007_4",
               "label": "Natural Gas",
               "module": "community",
-              "unit": "",
+              "unit": "households",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "2011 community-level counts by household fuel category. Not a person-level fuel dose; source categories and denominator require questionnaire/codebook review."
+              "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each fuel source. Categories may overlap; the questionnaire gives no total-household denominator here. Not a person-level fuel dose; single-wave only."
             },
             {
               "code": "jb007_5",
               "label": "Liquefied Petroleum Gas",
               "module": "community",
-              "unit": "",
+              "unit": "households",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "2011 community-level counts by household fuel category. Not a person-level fuel dose; source categories and denominator require questionnaire/codebook review."
+              "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each fuel source. Categories may overlap; the questionnaire gives no total-household denominator here. Not a person-level fuel dose; single-wave only."
             },
             {
               "code": "jb007_6",
               "label": "Other",
               "module": "community",
-              "unit": "",
+              "unit": "households",
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "2011 community-level counts by household fuel category. Not a person-level fuel dose; source categories and denominator require questionnaire/codebook review."
+              "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each fuel source. Categories may overlap; the questionnaire gives no total-household denominator here. Not a person-level fuel dose; single-wave only."
             }
           ]
         },
@@ -5590,8 +5590,8 @@
               "unit": "",
               "value_labels": "1=Coal; 2=Natural gas; 3=Marsh gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
               "value_semantics": "需按代码本映射燃料类别，不推断个体污染剂量",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review | measured",
-              "caveat": "Nominal primary cooking fuel; code and response categories change in later waves. See the separate value-label audit; do not treat numeric codes as ordered dose. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization. | 需按代码本映射燃料类别，不推断个体污染剂量"
+              "mapping_status": "official wave-specific questionnaire and Codebook reviewed; wording, response categories, and routes verified; see audit/housing_fuel_source_review_2026-10-24.md | measured",
+              "caveat": "Nominal household cooking-fuel proxy, not measured fuel use or indoor pollutant dose. Code categories change: 2018/2020 include a no-cooking response, 2020 adds solar at 7 and shifts later codes. Do not turn blanks in earlier waves into no cooking or interpret numeric codes as an ordered dose. The 2020 household referent is XFinancialResp's house; confirm household linkage before assigning it to a person. See audit/housing_fuel_source_review_2026-10-24.md. | 需按代码本映射燃料类别，不推断个体污染剂量"
             }
           ]
         },
@@ -5610,8 +5610,8 @@
               "unit": "",
               "value_labels": "1=Solar; 2=Coal; 3=Natural gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Nominal fuel/source category; retain wave-specific value labels and never infer an ordered exposure scale. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official wave-specific questionnaire and Codebook reviewed; wording, response categories, and routes verified; see audit/housing_fuel_source_review_2026-10-24.md",
+              "caveat": "Nominal household heating-source proxy, not measured energy use or pollution dose. In 2011–2018, the source item is routed after the heating-availability question; 2020 instead includes an explicit no-heating response in the source item. Preserve these different denominators and the 2020 household referent (XFinancialResp's house). See audit/housing_fuel_source_review_2026-10-24.md."
             }
           ]
         },
@@ -7184,8 +7184,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Residence-level heating availability; expenditure variables with similar code prefixes are different measures. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Residence-level heating-availability candidate. Preserve questionnaire-specific wording and routes: 2011/2018 explicitly exclude self-made heating and heating-capable AC, and 2011–2018 heating-source routing differs from the 2020 item structure. The 2020 Codebook calls i019 Centralized Heating, while its questionnaire asks whether XFinancialResp's house has heating; retain both source label and question wording. Not a heating-energy or pollution-dose measure. See audit/housing_context_source_review_2026-10-24.md and audit/housing_fuel_source_review_2026-10-24.md."
             }
           ]
         },
@@ -21941,8 +21941,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Availability of coal/natural-gas supply is not the same as the household's main cooking or heating fuel."
+              "mapping_status": "official 2013 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Residence-level availability of coal/natural-gas supply, not proof that the household uses it for cooking/heating or a measure of combustion exposure. The 2020 question names XFinancialResp's house; confirm household-person linkage before person-level assignment. Wave-specific item wording and yes/no categories were reviewed; see audit/housing_context_source_review_2026-10-24.md."
             }
           ]
         },
@@ -24233,8 +24233,8 @@
               "unit": "",
               "value_labels": "1=Coal; 2=Natural gas; 3=Marsh gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
               "value_semantics": "需按代码本映射燃料类别，不推断个体污染剂量",
-              "mapping_status": "catalog-label candidate; questionnaire review pending | measured",
-              "caveat": "Nominal primary cooking fuel; code and response categories change in later waves. See the separate value-label audit; do not treat numeric codes as ordered dose. | 需按代码本映射燃料类别，不推断个体污染剂量"
+              "mapping_status": "official wave-specific questionnaire and Codebook reviewed; wording, response categories, and routes verified; see audit/housing_fuel_source_review_2026-10-24.md | measured",
+              "caveat": "Nominal household cooking-fuel proxy, not measured fuel use or indoor pollutant dose. Code categories change: 2018/2020 include a no-cooking response, 2020 adds solar at 7 and shifts later codes. Do not turn blanks in earlier waves into no cooking or interpret numeric codes as an ordered dose. The 2020 household referent is XFinancialResp's house; confirm household linkage before assigning it to a person. See audit/housing_fuel_source_review_2026-10-24.md. | 需按代码本映射燃料类别，不推断个体污染剂量"
             }
           ]
         },
@@ -24253,8 +24253,8 @@
               "unit": "",
               "value_labels": "1=Solar; 2=Coal; 3=Natural gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Nominal fuel/source category; retain wave-specific value labels and never infer an ordered exposure scale."
+              "mapping_status": "official wave-specific questionnaire and Codebook reviewed; wording, response categories, and routes verified; see audit/housing_fuel_source_review_2026-10-24.md",
+              "caveat": "Nominal household heating-source proxy, not measured energy use or pollution dose. In 2011–2018, the source item is routed after the heating-availability question; 2020 instead includes an explicit no-heating response in the source item. Preserve these different denominators and the 2020 household referent (XFinancialResp's house). See audit/housing_fuel_source_review_2026-10-24.md."
             }
           ]
         },
@@ -25757,8 +25757,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Residence-level heating availability; expenditure variables with similar code prefixes are different measures."
+              "mapping_status": "official 2013 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Residence-level heating-availability candidate. Preserve questionnaire-specific wording and routes: 2011/2018 explicitly exclude self-made heating and heating-capable AC, and 2011–2018 heating-source routing differs from the 2020 item structure. The 2020 Codebook calls i019 Centralized Heating, while its questionnaire asks whether XFinancialResp's house has heating; retain both source label and question wording. Not a heating-energy or pollution-dose measure. See audit/housing_context_source_review_2026-10-24.md and audit/housing_fuel_source_review_2026-10-24.md."
             }
           ]
         },
@@ -45146,8 +45146,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Availability of coal/natural-gas supply is not the same as the household's main cooking or heating fuel."
+              "mapping_status": "official 2015 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Residence-level availability of coal/natural-gas supply, not proof that the household uses it for cooking/heating or a measure of combustion exposure. The 2020 question names XFinancialResp's house; confirm household-person linkage before person-level assignment. Wave-specific item wording and yes/no categories were reviewed; see audit/housing_context_source_review_2026-10-24.md."
             }
           ]
         },
@@ -47058,8 +47058,8 @@
               "unit": "",
               "value_labels": "1=Coal; 2=Natural gas; 3=Marsh gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
               "value_semantics": "需按代码本映射燃料类别，不推断个体污染剂量",
-              "mapping_status": "catalog-label candidate; questionnaire review pending | measured",
-              "caveat": "Nominal primary cooking fuel; code and response categories change in later waves. See the separate value-label audit; do not treat numeric codes as ordered dose. | 需按代码本映射燃料类别，不推断个体污染剂量"
+              "mapping_status": "official wave-specific questionnaire and Codebook reviewed; wording, response categories, and routes verified; see audit/housing_fuel_source_review_2026-10-24.md | measured",
+              "caveat": "Nominal household cooking-fuel proxy, not measured fuel use or indoor pollutant dose. Code categories change: 2018/2020 include a no-cooking response, 2020 adds solar at 7 and shifts later codes. Do not turn blanks in earlier waves into no cooking or interpret numeric codes as an ordered dose. The 2020 household referent is XFinancialResp's house; confirm household linkage before assigning it to a person. See audit/housing_fuel_source_review_2026-10-24.md. | 需按代码本映射燃料类别，不推断个体污染剂量"
             }
           ]
         },
@@ -47078,8 +47078,8 @@
               "unit": "",
               "value_labels": "1=Solar; 2=Coal; 3=Natural gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Nominal fuel/source category; retain wave-specific value labels and never infer an ordered exposure scale."
+              "mapping_status": "official wave-specific questionnaire and Codebook reviewed; wording, response categories, and routes verified; see audit/housing_fuel_source_review_2026-10-24.md",
+              "caveat": "Nominal household heating-source proxy, not measured energy use or pollution dose. In 2011–2018, the source item is routed after the heating-availability question; 2020 instead includes an explicit no-heating response in the source item. Preserve these different denominators and the 2020 household referent (XFinancialResp's house). See audit/housing_fuel_source_review_2026-10-24.md."
             }
           ]
         },
@@ -48452,8 +48452,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Residence-level heating availability; expenditure variables with similar code prefixes are different measures."
+              "mapping_status": "official 2015 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Residence-level heating-availability candidate. Preserve questionnaire-specific wording and routes: 2011/2018 explicitly exclude self-made heating and heating-capable AC, and 2011–2018 heating-source routing differs from the 2020 item structure. The 2020 Codebook calls i019 Centralized Heating, while its questionnaire asks whether XFinancialResp's house has heating; retain both source label and question wording. Not a heating-energy or pollution-dose measure. See audit/housing_context_source_review_2026-10-24.md and audit/housing_fuel_source_review_2026-10-24.md."
             }
           ]
         },
@@ -69321,8 +69321,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Availability of coal/natural-gas supply is not the same as the household's main cooking or heating fuel."
+              "mapping_status": "official 2018 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Residence-level availability of coal/natural-gas supply, not proof that the household uses it for cooking/heating or a measure of combustion exposure. The 2020 question names XFinancialResp's house; confirm household-person linkage before person-level assignment. Wave-specific item wording and yes/no categories were reviewed; see audit/housing_context_source_review_2026-10-24.md."
             }
           ]
         },
@@ -71463,8 +71463,8 @@
               "unit": "",
               "value_labels": "1=Coal; 2=Natural Gas; 3=Marsh Gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop Residue/Wood Burning; 7=Other; 8=Do Not Cook",
               "value_semantics": "需按代码本映射燃料类别，不推断个体污染剂量",
-              "mapping_status": "catalog-label candidate; questionnaire review pending | measured",
-              "caveat": "Nominal primary cooking fuel; code and response categories change in later waves. See the separate value-label audit; do not treat numeric codes as ordered dose. | 需按代码本映射燃料类别，不推断个体污染剂量"
+              "mapping_status": "official wave-specific questionnaire and Codebook reviewed; wording, response categories, and routes verified; see audit/housing_fuel_source_review_2026-10-24.md | measured",
+              "caveat": "Nominal household cooking-fuel proxy, not measured fuel use or indoor pollutant dose. Code categories change: 2018/2020 include a no-cooking response, 2020 adds solar at 7 and shifts later codes. Do not turn blanks in earlier waves into no cooking or interpret numeric codes as an ordered dose. The 2020 household referent is XFinancialResp's house; confirm household linkage before assigning it to a person. See audit/housing_fuel_source_review_2026-10-24.md. | 需按代码本映射燃料类别，不推断个体污染剂量"
             }
           ]
         },
@@ -71483,8 +71483,8 @@
               "unit": "",
               "value_labels": "1=Solar; 2=Coal; 3=Natural Gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop Residue/Wood Burning; 7=Other; 8=Heating Provided",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Nominal fuel/source category; retain wave-specific value labels and never infer an ordered exposure scale."
+              "mapping_status": "official wave-specific questionnaire and Codebook reviewed; wording, response categories, and routes verified; see audit/housing_fuel_source_review_2026-10-24.md",
+              "caveat": "Nominal household heating-source proxy, not measured energy use or pollution dose. In 2011–2018, the source item is routed after the heating-availability question; 2020 instead includes an explicit no-heating response in the source item. Preserve these different denominators and the 2020 household referent (XFinancialResp's house). See audit/housing_fuel_source_review_2026-10-24.md."
             }
           ]
         },
@@ -72757,8 +72757,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Residence-level heating availability; expenditure variables with similar code prefixes are different measures."
+              "mapping_status": "official 2018 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Residence-level heating-availability candidate. Preserve questionnaire-specific wording and routes: 2011/2018 explicitly exclude self-made heating and heating-capable AC, and 2011–2018 heating-source routing differs from the 2020 item structure. The 2020 Codebook calls i019 Centralized Heating, while its questionnaire asks whether XFinancialResp's house has heating; retain both source label and question wording. Not a heating-energy or pollution-dose measure. See audit/housing_context_source_review_2026-10-24.md and audit/housing_fuel_source_review_2026-10-24.md."
             }
           ]
         },
@@ -94104,8 +94104,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Presence does not measure use, filter condition, ventilation, indoor pollutant concentration, or personal exposure; wave interview mode differs."
+              "mapping_status": "official 2020 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "2020 asks whether XFinancialResp's house has an air cleaner (Yes/No); the questionnaire permits interviewer recording only when the interviewer is in the home and clearly knows the answer, otherwise asking the respondent. Presence does not establish use, filter condition, ventilation, pollutant concentration, or personal exposure. Confirm household-person linkage."
             }
           ]
         },
@@ -94324,8 +94324,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Availability of coal/natural-gas supply is not the same as the household's main cooking or heating fuel."
+              "mapping_status": "official 2020 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Residence-level availability of coal/natural-gas supply, not proof that the household uses it for cooking/heating or a measure of combustion exposure. The 2020 question names XFinancialResp's house; confirm household-person linkage before person-level assignment. Wave-specific item wording and yes/no categories were reviewed; see audit/housing_context_source_review_2026-10-24.md."
             }
           ]
         },
@@ -95285,8 +95285,8 @@
               "unit": "",
               "value_labels": "1=Coal; 2=Natural Gas; 3=Marsh Gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop Residue/Wood Burning; 7=Solar Energy; 8=Others; 9=Do not Cook",
               "value_semantics": "需按代码本映射燃料类别，不推断个体污染剂量",
-              "mapping_status": "catalog-label candidate; questionnaire review pending | measured",
-              "caveat": "Nominal primary cooking fuel; code and response categories change in later waves. See the separate value-label audit; do not treat numeric codes as ordered dose. | 需按代码本映射燃料类别，不推断个体污染剂量"
+              "mapping_status": "official wave-specific questionnaire and Codebook reviewed; wording, response categories, and routes verified; see audit/housing_fuel_source_review_2026-10-24.md | measured",
+              "caveat": "Nominal household cooking-fuel proxy, not measured fuel use or indoor pollutant dose. Code categories change: 2018/2020 include a no-cooking response, 2020 adds solar at 7 and shifts later codes. Do not turn blanks in earlier waves into no cooking or interpret numeric codes as an ordered dose. The 2020 household referent is XFinancialResp's house; confirm household linkage before assigning it to a person. See audit/housing_fuel_source_review_2026-10-24.md. | 需按代码本映射燃料类别，不推断个体污染剂量"
             }
           ]
         },
@@ -95305,8 +95305,8 @@
               "unit": "",
               "value_labels": "1=Solar; 2=Coal; 3=Natural Gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop Residue/Wood Burning; 7=Others; 8=Do not Heating",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Nominal fuel/source category; retain wave-specific value labels and never infer an ordered exposure scale."
+              "mapping_status": "official wave-specific questionnaire and Codebook reviewed; wording, response categories, and routes verified; see audit/housing_fuel_source_review_2026-10-24.md",
+              "caveat": "Nominal household heating-source proxy, not measured energy use or pollution dose. In 2011–2018, the source item is routed after the heating-availability question; 2020 instead includes an explicit no-heating response in the source item. Preserve these different denominators and the 2020 household referent (XFinancialResp's house). See audit/housing_fuel_source_review_2026-10-24.md."
             }
           ]
         },
@@ -95915,8 +95915,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No (centralized heating wording)",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Residence-level heating availability; expenditure variables with similar code prefixes are different measures."
+              "mapping_status": "official 2020 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Residence-level heating-availability candidate. Preserve questionnaire-specific wording and routes: 2011/2018 explicitly exclude self-made heating and heating-capable AC, and 2011–2018 heating-source routing differs from the 2020 item structure. The 2020 Codebook calls i019 Centralized Heating, while its questionnaire asks whether XFinancialResp's house has heating; retain both source label and question wording. Not a heating-energy or pollution-dose measure. See audit/housing_context_source_review_2026-10-24.md and audit/housing_fuel_source_review_2026-10-24.md."
             }
           ]
         },
@@ -96195,8 +96195,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "2020 wording is tap-water access; not a direct drinking-water quality or contaminant measurement."
+              "mapping_status": "official 2020 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "2020 asks whether XFinancialResp's house has tap water. This is household access, not a direct water-quality or contaminant measurement, and it is not automatically interchangeable with 2011–2018 'running water' items. Confirm household-person linkage before person-level assignment."
             }
           ]
         },
@@ -96355,8 +96355,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 997=Do not know",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "2020-only candidate in the current catalog; verify the exact questionnaire definition. It is not a direct drinking-water contaminant measurement."
+              "mapping_status": "official 2020 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "2020 asks whether tap water is treated by waterworks; categories are Yes, No, and Do not know. Preserve Do not know and verify release-specific eligibility/missingness. This is reported treatment status, not a contaminant assay or verified water-quality result."
             }
           ]
         },

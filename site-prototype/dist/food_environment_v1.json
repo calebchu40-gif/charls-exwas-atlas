@@ -579,7 +579,7 @@
     "concept_id": "residential_heating",
     "label": "Residential heating availability",
     "domain": "Housing environment",
-    "caveat": "Residence-level heating availability; expenditure variables with similar code prefixes are different measures.",
+    "caveat": "Residence-level heating-availability candidate. Preserve questionnaire-specific wording and routes: 2011/2018 explicitly exclude self-made heating and heating-capable AC, and 2011–2018 heating-source routing differs from the 2020 item structure. The 2020 Codebook calls i019 Centralized Heating, while its questionnaire asks whether XFinancialResp's house has heating; retain both source label and question wording. Not a heating-energy or pollution-dose measure. See audit/housing_context_source_review_2026-10-24.md and audit/housing_fuel_source_review_2026-10-24.md.",
     "source_fields": [
       {
         "wave": "2011",
@@ -587,7 +587,8 @@
         "module": "housing_characteristics",
         "source_label": "Residence Has Heating",
         "value_labels": "1=Yes; 2=No",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+        "note": "Official questionnaire/Codebook reviewed. The availability item and heating-source routes vary by wave; see the source audit and retain the distinct source fields. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -595,7 +596,8 @@
         "module": "Housing_Characteristics",
         "source_label": "Does your residence have heating?",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official questionnaire/Codebook reviewed. The availability item and heating-source routes vary by wave; see the source audit and retain the distinct source fields. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
@@ -603,7 +605,8 @@
         "module": "Housing_Characteristics",
         "source_label": "Does Your Residence Have Heating?",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official questionnaire/Codebook reviewed. The availability item and heating-source routes vary by wave; see the source audit and retain the distinct source fields. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2018",
@@ -611,7 +614,8 @@
         "module": "Housing",
         "source_label": "Heating",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official questionnaire/Codebook reviewed. The availability item and heating-source routes vary by wave; see the source audit and retain the distinct source fields. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
         "wave": "2020",
@@ -619,7 +623,8 @@
         "module": "Household_Income",
         "source_label": "Centralized Heating",
         "value_labels": "1=Yes; 2=No (centralized heating wording)",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official questionnaire/Codebook reviewed: questionnaire asks whether XFinancialResp's house has heating; Codebook label says Centralized Heating. Preserve this wording discrepancy; do not silently narrow the questionnaire meaning. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
       }
     ]
   },
@@ -751,7 +756,7 @@
     "concept_id": "waterworks_treatment",
     "label": "Water treated by waterworks",
     "domain": "Housing environment",
-    "caveat": "2020-only candidate in the current catalog; verify the exact questionnaire definition. It is not a direct drinking-water contaminant measurement.",
+    "caveat": "2020 asks whether tap water is treated by waterworks; categories are Yes, No, and Do not know. Preserve Do not know and verify release-specific eligibility/missingness. This is reported treatment status, not a contaminant assay or verified water-quality result.",
     "source_fields": [
       {
         "wave": "2020",
@@ -759,7 +764,8 @@
         "module": "Household_Income",
         "source_label": "Water is Treated by Waterworks",
         "value_labels": "1=Yes; 2=No; 997=Do not know",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official questionnaire/Codebook reviewed: asks whether tap water is treated by waterworks; preserve 1=Yes/2=No/997=Do not know. Do not recode 997 as No. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
       }
     ]
   },
@@ -1633,7 +1639,7 @@
     "concept_id": "piped_gas_access",
     "label": "Coal/natural gas supply to residence",
     "domain": "Housing environment/basic services",
-    "caveat": "Availability of coal/natural-gas supply is not the same as the household's main cooking or heating fuel.",
+    "caveat": "Residence-level availability of coal/natural-gas supply, not proof that the household uses it for cooking/heating or a measure of combustion exposure. The 2020 question names XFinancialResp's house; confirm household-person linkage before person-level assignment. Wave-specific item wording and yes/no categories were reviewed; see audit/housing_context_source_review_2026-10-24.md.",
     "source_fields": [
       {
         "wave": "2011",
@@ -1641,7 +1647,8 @@
         "module": "housing_characteristics",
         "source_label": "Residence Has Coal Gas or Natural Gas Supply",
         "value_labels": "1=Yes; 2=No",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+        "note": "Official questionnaire/Codebook reviewed: residence has coal-gas or natural-gas supply; preserve 1=Yes/2=No. This records availability, not actual fuel use. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -1649,7 +1656,8 @@
         "module": "Housing_Characteristics",
         "source_label": "Does your residence have coal gas or natural gas supply?",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official questionnaire/Codebook reviewed: residence has coal-gas or natural-gas supply; preserve 1=Yes/2=No. This records availability, not actual fuel use. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
@@ -1657,7 +1665,8 @@
         "module": "Housing_Characteristics",
         "source_label": "Does Your Residence Have Coal Gas or Natural Gas Supply?",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official questionnaire/Codebook reviewed: residence has coal-gas or natural-gas supply; preserve 1=Yes/2=No. This records availability, not actual fuel use. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2018",
@@ -1665,7 +1674,8 @@
         "module": "Housing",
         "source_label": "Coal Gas or Natural Gas Supply",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official questionnaire/Codebook reviewed: residence has coal-gas or natural-gas supply; preserve 1=Yes/2=No. This records availability, not actual fuel use. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
         "wave": "2020",
@@ -1673,7 +1683,8 @@
         "module": "Household_Income",
         "source_label": "Coal Gas or Natural Gas Supply",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official questionnaire/Codebook reviewed: asks whether XFinancialResp's house has coal-gas or natural-gas supply; preserve 1=Yes/2=No. Availability is not actual fuel use. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
       }
     ]
   },
@@ -1681,7 +1692,7 @@
     "concept_id": "air_cleaner_home",
     "label": "Air cleaner present in residence",
     "domain": "Indoor environment",
-    "caveat": "Presence does not measure use, filter condition, ventilation, indoor pollutant concentration, or personal exposure; wave interview mode differs.",
+    "caveat": "2020 asks whether XFinancialResp's house has an air cleaner (Yes/No); the questionnaire permits interviewer recording only when the interviewer is in the home and clearly knows the answer, otherwise asking the respondent. Presence does not establish use, filter condition, ventilation, pollutant concentration, or personal exposure. Confirm household-person linkage.",
     "source_fields": [
       {
         "wave": "2015",
@@ -1697,7 +1708,8 @@
         "module": "Household_Income",
         "source_label": "Air Cleaner",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official questionnaire/Codebook reviewed: presence of an air cleaner in XFinancialResp's house; 1=Yes/2=No. Questionnaire allows interviewer recording only when in the home and certain, otherwise ask respondent. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
       }
     ]
   },
@@ -1705,7 +1717,7 @@
     "concept_id": "tap_water_access",
     "label": "Tap water in residence",
     "domain": "Housing environment/basic services",
-    "caveat": "2020 wording is tap-water access; not a direct drinking-water quality or contaminant measurement.",
+    "caveat": "2020 asks whether XFinancialResp's house has tap water. This is household access, not a direct water-quality or contaminant measurement, and it is not automatically interchangeable with 2011–2018 'running water' items. Confirm household-person linkage before person-level assignment.",
     "source_fields": [
       {
         "wave": "2020",
@@ -1713,7 +1725,8 @@
         "module": "Household_Income",
         "source_label": "Tap Water",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official questionnaire/Codebook reviewed: XFinancialResp's house has tap water; 1=Yes/2=No. Household access only, not water quality. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
       }
     ]
   }
