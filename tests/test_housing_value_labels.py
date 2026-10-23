@@ -305,6 +305,16 @@ class HousingValueLabelTests(unittest.TestCase):
             self.assertIn("rural collective", row["Harmonization.Status"])
             self.assertIn("potentially structural/nonapplicable", row["Harmonization.Status"])
             self.assertIn("not validated analytic bounds", row["Harmonization.Status"])
+
+    def test_2018_property_count_and_rent_status_respect_route_and_slots(self):
+        catalog = {(r["Source.Wave"], r["Variable.Name"].lower()): r for r in self.catalog}
+        count = catalog[("2018", "ha000_w4_0")]
+        self.assertEqual(count["Unit"], "properties")
+        self.assertIn("new-household route only", count["Harmonization.Status"])
+        for i in range(1, 8):
+            row = catalog[("2018", f"ha005_w4_{i}_")]
+            self.assertEqual(row["Value.Labels"], "1=Yes; 2=No; 999=Refuse to answer")
+            self.assertIn("Keep each property slot separate", row["Harmonization.Status"])
         self.assertIn("excludes banquets/weddings", catalog[("2020", "gf006")]["Harmonization.Status"])
         self.assertIn("excludes banquets/weddings", catalog[("2018", "ge007_w4")]["Harmonization.Status"])
 
