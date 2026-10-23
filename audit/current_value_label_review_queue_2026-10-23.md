@@ -6,9 +6,9 @@ This snapshot reads only the public, generated metadata in `site-prototype/dist/
 |---|---:|---:|
 | E exposure candidates | 4,750 | 0 |
 | P phenotype candidates | 2,068 | 0 |
-| C covariate/measurement metadata | 978 | 187 |
+| C covariate/measurement metadata | 978 | 183 |
 
-The current E and P queues contain no rows with a generic pending value-label status. The latest C review covered 11 2018 property-roster location slots and one continuous monthly mortgage-payment field; these now have source-backed role, unit, and scope notes. The remaining 187 C rows require source or role review. Several reviewed E/P rows still retain specific unresolved source or route caveats and `DO NOT ANALYZE` locks. These are field rows, not independent concepts or tests.
+The current E and P queues contain no rows with a generic pending value-label status. The latest C reviews covered 11 2018 property-roster location slots, one continuous monthly mortgage-payment field, and BB004 residential-history fields in 2011–2018. The 2011 BB004 questionnaire/Codebook identity conflict remains locked with response labels withheld; 2013/2015/2018 labels and conditional year follow-ups are documented separately. The remaining 183 C rows require source or role review. Several reviewed E/P rows still retain specific unresolved source or route caveats and `DO NOT ANALYZE` locks. These are field rows, not independent concepts or tests.
 
 ## Processing rule
 
