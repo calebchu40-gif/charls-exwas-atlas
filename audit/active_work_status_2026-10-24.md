@@ -107,3 +107,5 @@ The 15-concept objective-measurement candidate crosswalk now records distinct of
 部署核验补充：提交`9b11898`由GitHub Pages Deploy #95（run `40023419731`）部署成功；缓存绕过的公开`objective_measurements_v1.json`返回HTTP 200、45条映射，波次来源和代码本代码存在说明均已上线。本地随后完成另一轮界面改进：将Codebook的108个波次字段标签显示于可搜索的体测表，2013 QL002标注提取文本被页边界截断；204项测试和静态资源检查通过。当前界面改动尚待提交与部署。
 
 界面部署核验：提交`e8377e6`对应 GitHub Pages Deploy #96（run `40024182348`）成功。带缓存绕过读取公开主页确认新增“官方Codebook字段标签”列；线上app.js使用`objective_measurements_v1.json?v=2`并搜索`source_field_labels`；公开JSON HTTP 200、45条记录，2013 QL002保留经原始PDF页面确认的分页截断提示。该批不发布任何Codebook统计值或个体记录。
+
+后续工作范围复核：实验室分析物目录已单独记录2011/2015血检和2013无实验室采血；客观现场测量目录当前限于2011/2013/2015对应体检/生物标志物问卷。对2018/2020官方Codebook没有检出本目录的QA/QB/QC候选字段代码，也没有找到同一原始题号；这只是当前源文件检索范围结论，不足以单凭缺码证明整波绝无类似测量，因此不补造后续波字段，等待完整的波次测量源目录/发布说明验证。
