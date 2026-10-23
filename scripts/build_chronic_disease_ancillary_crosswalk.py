@@ -25,9 +25,9 @@ def codebook_value_labels(path: Path) -> dict[str, str]:
     blocks: dict[str, list[str]] = {}
     current = ""
     for line in text.splitlines():
-        header = re.match(r"^[•·]?\s*([a-z][a-z0-9_]+)\s*:\s*.*$", line.strip(), re.I)
+        header = re.match(r"^[•·]?\s*([a-z][a-z0-9_ ]*?)\s*:\s*.*$", line.strip(), re.I)
         if header:
-            current = header.group(1).lower()
+            current = re.sub(r"\s+", "_", header.group(1).strip().lower())
             blocks[current] = []
         elif current:
             blocks[current].append(line.strip())
@@ -43,6 +43,7 @@ def codebook_value_labels(path: Path) -> dict[str, str]:
             # 2013/2015 codebooks often put frequency and percent on the same
             # line as the selected option. Strip that aggregate information.
             label = re.sub(r"\s+\d[\d,]*\s+\d+(?:\.\d+)?\s*$", "", label).strip()
+            label = label.rstrip(" ,;")
             if label.lower() != "total" and label:
                 pairs.append(f"{response_code}={label}")
         if pairs:

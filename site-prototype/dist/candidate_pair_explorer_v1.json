@@ -18592,9 +18592,9 @@
               "label": "Take Chinese Traditional Medicine for Arthritis or Rheumatism",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -18602,9 +18602,9 @@
               "label": "Take Western Morden Medicine for Arthritis or Rheumatism",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -18612,9 +18612,9 @@
               "label": "Other Treatments for Arthritis or Rheumatism",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -18622,7 +18622,7 @@
               "label": "None of the Above for Arthritis or Rheumatism",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
               "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
@@ -18642,9 +18642,9 @@
               "label": "Take Chinese Traditional Medicine for Heart Problems",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -18652,9 +18652,9 @@
               "label": "Take Western Morden Medicine for Heart Problems",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -18662,9 +18662,9 @@
               "label": "Other Treatments for Heart Problems",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -18672,7 +18672,7 @@
               "label": "None of the Above for Heart Problems",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
               "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
@@ -18742,9 +18742,9 @@
               "label": "Take Chinese Traditional Medicine for Chronic Lung Diseases",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -18752,9 +18752,9 @@
               "label": "Take Western Morden Medicine for Chronic Lung Diseases",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -18762,9 +18762,9 @@
               "label": "Other Treatments for Chronic Lung Diseases",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -18772,7 +18772,7 @@
               "label": "None of the Above for Chronic Lung Diseases",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
               "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
@@ -19522,9 +19522,9 @@
               "label": "Take Chinese Traditional Medicine for Liver Disease",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -19532,9 +19532,9 @@
               "label": "Take Western Morden Medicine for Liver Disease",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -19542,9 +19542,9 @@
               "label": "Other Treatments for Liver Disease",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -19552,7 +19552,7 @@
               "label": "None of the Above for Liver Disease",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
               "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
@@ -19572,9 +19572,9 @@
               "label": "Take Chinese Traditional Medicine for Kidney Diease",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -19582,9 +19582,9 @@
               "label": "Take Western Morden Medicine for Kidney Diease",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -19592,9 +19592,9 @@
               "label": "Other Treatments for Kidney Diease",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -19602,7 +19602,7 @@
               "label": "None of the Above for Kidney Diease",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
               "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
@@ -19622,9 +19622,9 @@
               "label": "Take Chinese Traditional Medicine for Stomach or Other Digestive Disease",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -19632,9 +19632,9 @@
               "label": "Take Western Morden Medicine for Stomach or Other Digestive Disease",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -19642,9 +19642,9 @@
               "label": "Other Treatments for Stomach or Other Digestive Disease",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -19652,7 +19652,7 @@
               "label": "None of the Above for Stomach or Other Digestive Disease",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
               "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
@@ -19672,9 +19672,9 @@
               "label": "Take Chinese Traditional Medicine for Dyslipidemia",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -19682,9 +19682,9 @@
               "label": "Take Western Morden Medicine for Dyslipidemia",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -19692,9 +19692,9 @@
               "label": "Other Treatments for Dyslipidemia",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -19702,7 +19702,7 @@
               "label": "None of the Above for Dyslipide",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
               "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
@@ -19722,9 +19722,9 @@
               "label": "Take Chinese Traditional Medicine for Memory-Related Disease",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -19732,9 +19732,9 @@
               "label": "Take Western Morden Medicine for Memory-Related Disease",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -19742,9 +19742,9 @@
               "label": "Other Treatments for Memory-Related Disease",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
@@ -19752,7 +19752,7 @@
               "label": "None of the Above for Memory-Related Disease",
               "module": "health_status_and_functioning",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
               "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."

@@ -80,3 +80,5 @@ This file records project-level changes that affect reproducibility, methods, da
 - Added 125 wave-specific chronic-treatment option labels from the 2011, 2013, and 2015 official Codebooks, without aggregate frequencies. Because those sources identify selected-option categories but do not establish unselected storage, the fields stay locked `DO NOT ANALYZE` pending release-data validation. No category was extrapolated across waves.
 
 - Cross-wave follow-up was published in commit `df0930a`; Pages run [`39875503802`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/39875503802) succeeded. The live catalog and status translations were checked for 2011/2013/2015 selected-option labels (`DO NOT ANALYZE`) and distinct 2018 `0=No` labels.
+
+- Corrected the 2011 Codebook parser to normalize spaced variable headings (for example, `da010 2 s4`) to the release variable name. This adds 32 previously omitted treatment option labels; the 2011 count is now 53, and the four-wave total is 225 field-wave label sets. No response values or frequencies were inferred.

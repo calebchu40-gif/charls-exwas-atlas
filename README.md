@@ -156,6 +156,6 @@ GitHub 官方说明：GitHub Free 个人仓库需要公开仓库才能使用 Pag
 
 体力活动共享字段审计：官方问卷将不同强度的发生题分别记录；`physical_activity_occurrence`是分组上位概念，没有独立的总体活动响应。现将10个共享链接标为`umbrella_group_not_independent_measure`，任何“至少一类活动”变量须按预设规则从符合资格的强度题派生；2011随机半数家庭施测限制保留。见`audit/concept_overlap_resolution_2026-10-22.md`。
 
-2011、2013、2015、2018四波慢病治疗选项目录分别补入21、52、52、68个字段的官方Codebook类别文字。频数不进入网站；2011–2015字段的未选存储未核、暂不可分析，2018字段仍需验证发行版编码和适用分母。标签目录不代表这些字段已进入模型。详见[audit/chronic_disease_ancillary_label_ingestion_2026-10-22.md](audit/chronic_disease_ancillary_label_ingestion_2026-10-22.md)。
+2011、2013、2015、2018四波慢病治疗选项目录分别补入53、52、52、68个字段的官方Codebook类别文字。频数不进入网站；2011–2015字段的未选存储未核、暂不可分析，2018字段仍需验证发行版编码和适用分母。标签目录不代表这些字段已进入模型。详见[audit/chronic_disease_ancillary_label_ingestion_2026-10-22.md](audit/chronic_disease_ancillary_label_ingestion_2026-10-22.md)。
 
 本轮2018慢病治疗标签更新已发布：`190837f`对应的GitHub Pages部署成功，线上目录已包含68个官方类别标签；频数不公开，路由和发行版编码/分母待核说明保留。网站仍是元数据原型，没有关联模型结果。发布核查见[`audit/github_pages_publication_review_2026-10-22.md`](audit/github_pages_publication_review_2026-10-22.md)。

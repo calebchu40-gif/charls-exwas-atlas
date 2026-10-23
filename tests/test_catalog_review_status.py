@@ -66,7 +66,7 @@ class CatalogReviewStatusTests(unittest.TestCase):
         import csv
         with (ROOT / "audit/chronic_disease_ancillary_variable_mapping_v1.csv").open(encoding="utf-8-sig", newline="") as handle:
             mappings = list(csv.DictReader(handle))
-        expected_counts = {"2011": 21, "2013": 52, "2015": 52}
+        expected_counts = {"2011": 53, "2013": 52, "2015": 52}
         for wave, expected_count in expected_counts.items():
             rows = [row for row in mappings if row.get("wave") == wave and row.get("construct") == "reported disease treatment" and row.get("value_label_status", "").startswith(f"official {wave} Codebook selected-option category transcribed")]
             self.assertEqual(len(rows), expected_count, wave)
