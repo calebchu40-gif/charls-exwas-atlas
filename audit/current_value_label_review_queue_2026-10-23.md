@@ -6,7 +6,7 @@ This snapshot reads only the public, generated metadata in `site-prototype/dist/
 |---|---:|---:|
 | E exposure candidates | 4,723 | 0 |
 | P phenotype candidates | 2,067 | 0 |
-| C covariate/measurement metadata | 979 | 210 |
+| C covariate/measurement metadata | 979 | 202 |
 
 The current E queue contains no rows with a generic pending value-label status. The latest batch audited the final 12 fields across household expenditure, interwave work counts, rental-income status, COVID-period wage direction, occupational classification, and pandemic/work-history items. Several retain specific unresolved source or route caveats and `DO NOT ANALYZE` locks. These are field rows, not independent concepts or tests.
 
@@ -80,4 +80,9 @@ A further 24 C-only fields were reviewed against the official Codebooks: 15 unsu
 
 ## Latest C metadata batch: measurement protocol and selectors
 
-An additional 23 C fields were checked: debt unfolding-bracket protocol, household/person response selectors, interview assistance, chair setup, financial-respondent source, pandemic work-module selection and one unresolved questionnaire/Codebook conflict. They remain measurement/routing metadata; the conflict stays locked. C generic pending is now 210, all within the broad demographic/design/socioeconomic covariate-candidate family, so the remaining queue needs causal/model-role review rather than category-label transcription. See [`c_measurement_protocol_metadata_review_2026-10-23.md`](c_measurement_protocol_metadata_review_2026-10-23.md).
+An additional 23 C fields were checked: debt unfolding-bracket protocol, household/person response selectors, interview assistance, chair setup, financial-respondent source, pandemic work-module selection and one unresolved questionnaire/Codebook conflict. They remain measurement/routing metadata; the conflict stays locked. C generic pending was then 210, all within the broad demographic/design/socioeconomic covariate-candidate family, so the remaining queue needs causal/model-role review rather than category-label transcription. See [`c_measurement_protocol_metadata_review_2026-10-23.md`](c_measurement_protocol_metadata_review_2026-10-23.md).
+
+
+## 2026-10-24 Wave 5核心人口学字段更新
+
+Wave 5英文问卷CAPI公式已逐项核对。`xrage`按新访/返访分别使用当轮阳历出生年`ba003_1`或前波预载`zrbirthyear`；`xrgender`按前波`zrgender`与访员`ba001`一致性决定取访员记录、冲突时走`ba002`复核、缺少前波值时取`ba001`。相关字段值标签及源角色说明已进入网站C字段目录，8条记录从通用pending变为有来源的专门审查状态。它们仍是候选协变量，不代表模型已采用。目录中的C类关键词检索线索现为456个波次字段行/300个不同字段码，与本表的值标签状态计数不等价。来源与限制见[`official_age_gender_harmonization_review_2026-10-23.md`](official_age_gender_harmonization_review_2026-10-23.md)。

@@ -1,9 +1,12 @@
-# CHARLS ExWAS Atlas 当前状态（2026-10-23）
+# CHARLS ExWAS Atlas 当前状态（2026-10-24）
 
 
-## 最新工作：最后12条E类通用待核字段审核
+## 最新工作：核实Wave 5年龄与性别官方派生公式
 
 2026-10-23完成最后12条E类通用“not yet reviewed”状态的官方来源审核，包括2011家庭月支出、2013跨访谈期其他工作数量、2018/2020其他资产租金收入、2020工资变化方向、2011职业分类，以及保留分析锁的疫情应对和离职原因字段。通用待核E状态现为0；另有55条前访回答历史/路由C字段已按官方Codebook完成来源审核。E类待核清零不代表分析资格已确认。目录仍处于元数据和方法准备阶段，正式关联模型数为0。详细记录见[`audit/final_pending_field_review_2026-10-23.md`](audit/final_pending_field_review_2026-10-23.md)和[`audit/prior_wave_history_routing_metadata_review_2026-10-23.md`](audit/prior_wave_history_routing_metadata_review_2026-10-23.md)和[`audit/c_placeholder_legacy_field_review_2026-10-23.md`](audit/c_placeholder_legacy_field_review_2026-10-23.md)和[`audit/c_measurement_protocol_metadata_review_2026-10-23.md`](audit/c_measurement_protocol_metadata_review_2026-10-23.md)。个人收入与工资、社会照护、教育与户口审核分别见[`audit/personal_income_wage_metadata_review_2011_2020_2026-10-23.md`](audit/personal_income_wage_metadata_review_2011_2020_2026-10-23.md)、[`audit/social_care_caregiver_metadata_review_2011_2013_2026-10-23.md`](audit/social_care_caregiver_metadata_review_2011_2013_2026-10-23.md)、[`audit/education_hukou_value_label_review_2011_2020_2026-10-23.md`](audit/education_hukou_value_label_review_2011_2020_2026-10-23.md)。个人收入审核见[`audit/personal_income_wage_metadata_review_2011_2020_2026-10-23.md`](audit/personal_income_wage_metadata_review_2011_2020_2026-10-23.md)；社会照护审核见[`audit/social_care_caregiver_metadata_review_2011_2013_2026-10-23.md`](audit/social_care_caregiver_metadata_review_2011_2013_2026-10-23.md)；教育与户口字段审核见[`audit/education_hukou_value_label_review_2011_2020_2026-10-23.md`](audit/education_hukou_value_label_review_2011_2020_2026-10-23.md)。
+
+
+2026-10-24逐行核对CHARLS 2020英文问卷的CAPI派生定义，确认Wave 5年龄`xrage`的新访/返访出生年规则及性别`xrgender`的前波记录冲突确认规则。已把8条2020候选C字段写入机器可读目录，转录问卷支持的类别标签，不复制频数；输入字段、预载字段与派生值分别标明角色。它们仍不是已批准的统一协变量或调整集。见[`audit/official_age_gender_harmonization_review_2026-10-23.md`](audit/official_age_gender_harmonization_review_2026-10-23.md)。
 
 ## 本地元数据重建
 
@@ -16,7 +19,7 @@
 
 受控数据 QA 发现，现有2013分析表虽含权重列，但缺少官方`crosssection`与`longitudinal`样本标记，不能用权重是否缺失替代样本资格。待通过本人 CHARLS 账户下载官方`Weights.dta`后，将其放入`%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\incoming_2013_weights\Weights.dta`，并按[`audit/wave2_official_weight_intake_2026-10-23.md`](audit/wave2_official_weight_intake_2026-10-23.md)运行受控合并和复核。合并脚本默认另写私有 DTA、输出不含个体记录的汇总 QA，并在 ID 重复/缺失、匹配不全、标记缺失或现有权重值冲突时停止；不应把官方文件或派生个体数据放入项目同步目录或 GitHub。
 
-当前E类通用待核队列已清零；C类前访回答历史/路由元数据、疾病占位/停用旧字段及测量设计字段已完成来源审核。另有210条由关键词自动发现的C类检索线索，含年龄、性别等核心变量来源，也混有迁移史、疾病发生年龄和家庭名册字段；它们不是已核准的协变量，更不是统一调整集。网站已将其单独标为“自动关键词检索线索（未核验协变量）”。经逐波梳理的年龄、性别、教育、婚姻、户籍、城乡/居住地和调查设计准备情况见[`audit/core_covariate_readiness_2026-10-23.md`](audit/core_covariate_readiness_2026-10-23.md)；历史队列见[`audit/current_value_label_review_queue_2026-10-23.md`](audit/current_value_label_review_queue_2026-10-23.md)。这些计数不代表待新增的独立指标数；连续测量、金额和日期字段可能没有离散类别标签。
+当前E类通用待核队列已清零；C类前访回答历史/路由元数据、疾病占位/停用旧字段及测量设计字段已完成来源审核。另有456条由关键词自动发现的C类检索线索（300个不同字段码；与值标签待核行数不是同一统计），含年龄、性别等核心变量来源，也混有迁移史、疾病发生年龄和家庭名册字段；它们不是已核准的协变量，更不是统一调整集。网站已将其单独标为“自动关键词检索线索（未核验协变量）”。经逐波梳理的年龄、性别、教育、婚姻、户籍、城乡/居住地和调查设计准备情况见[`audit/core_covariate_readiness_2026-10-23.md`](audit/core_covariate_readiness_2026-10-23.md)；历史队列见[`audit/current_value_label_review_queue_2026-10-23.md`](audit/current_value_label_review_queue_2026-10-23.md)。这些计数不代表待新增的独立指标数；连续测量、金额和日期字段可能没有离散类别标签。
 
 ## 公开网站部署
 
@@ -26,7 +29,7 @@
 
 医保与医疗利用专项审计的逐字段状态也已进入主E/P目录：保险未选编码的不确定性、连续就诊/住院次数、条件路由和费用区间边界会随字段展示。完整题目与波次定义见[`audit/healthcare_access_definition_review_v1.md`](audit/healthcare_access_definition_review_v1.md)和[`audit/healthcare_access_value_label_review_v1.md`](audit/healthcare_access_value_label_review_v1.md)；这些状态不表示获准发行数据编码、分母或模型资格已经核实。
 
-截至2026-10-23，公开元数据查询首版已上线；完整结果型ExWAS工作仍在变量审计和调查设计阶段。最新工作状态见[`audit/active_work_status_2026-10-23.md`](audit/active_work_status_2026-10-23.md)，年龄/性别构造复核见[`audit/official_age_gender_harmonization_review_2026-10-23.md`](audit/official_age_gender_harmonization_review_2026-10-23.md)，整体进度口径和剩余工期估算见[`audit/project_progress_estimate_2026-10-23.md`](audit/project_progress_estimate_2026-10-23.md)。
+截至2026-10-24，公开元数据查询首版已上线；完整结果型ExWAS工作仍在变量审计和调查设计阶段。最新工作状态见[`audit/active_work_status_2026-10-23.md`](audit/active_work_status_2026-10-23.md)，年龄/性别构造复核见[`audit/official_age_gender_harmonization_review_2026-10-23.md`](audit/official_age_gender_harmonization_review_2026-10-23.md)，整体进度口径和剩余工期估算见[`audit/project_progress_estimate_2026-10-23.md`](audit/project_progress_estimate_2026-10-23.md)。
 
 GitHub 官方说明：GitHub Free 个人仓库需要公开仓库才能使用 Pages；Pro/Team 等计划也支持私有源仓库发布 Pages。GitHub Pages 网站内容默认可被互联网公开访问，因此发布包必须保持为静态目录范围。见[Pages 发布源说明](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
 
@@ -229,4 +232,4 @@ DA056选项编码边界更新（2026-10-23）：41个2011/2013/2015活动与设�
 个人转移收入来源更新（2026-10-23）：50个五波次选项字段按官方问卷/Codebook审核。2011–2015只确认到选项身份，未推断未选中为No；2018/2020的20个字段显示明确的`0=No`及选项码`=Yes`，不复制频数。养老金区间端点更新：16个2011/2013/2015下界/上界字段说明为条件金额区间，不是点估计；2013字符串类型、2015代码本摘要和2011区间路由分别记录。当前E通用待核85、P为0、C为328；E/P非空官方/已审值标签3,232行、3,206个波次字段。128项测试、JS语法和89条禁分析锁检查通过。审核记录见[`audit/individual_transfer_income_source_review_2011_2020_2026-10-23.md`](audit/individual_transfer_income_source_review_2011_2020_2026-10-23.md)、[`audit/pension_interval_endpoint_review_2011_2015_2026-10-23.md`](audit/pension_interval_endpoint_review_2011_2015_2026-10-23.md)和[`audit/current_value_label_review_queue_2026-10-23.md`](audit/current_value_label_review_queue_2026-10-23.md)。
 
 
-核心调整候选和逐波准备限制汇总见[`audit/core_covariate_readiness_2026-10-23.md`](audit/core_covariate_readiness_2026-10-23.md)。年龄、性别、教育、婚姻/伴侣、户籍、居住地和抽样设计分别核验；目录中的210条自动发现C候选不等于固定调整变量，正式模型仍为0。
+核心调整候选和逐波准备限制汇总见[`audit/core_covariate_readiness_2026-10-23.md`](audit/core_covariate_readiness_2026-10-23.md)。年龄、性别、教育、婚姻/伴侣、户籍、居住地和抽样设计分别核验；目录中的456条自动发现C波次字段线索（300个不同变量码）不等于固定调整变量，正式模型仍为0。

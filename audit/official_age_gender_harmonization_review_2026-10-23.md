@@ -19,18 +19,27 @@
 
 数据输入清点显示，当前私有`person_analytic.dta`准备表在2011、2013波没有`iyear/imonth`，而项目原始字段目录将它们定位在`weight`与`Weights`模块；2015、2018、2020准备表含`iyear/imonth`。因此不能用现有2011/2013年龄表直接精确复算`RwAGEY`。待取得/恢复相应非个人发布辅助文件后，按唯一受访者ID做本地受控连接；在此之前保留Harmonized年龄作为第三方比较值，避免粗略年差替代。该字段来源和缺口也应写入模型就绪状态。
 
+### 2020官方派生年龄公式已确认
+
+进一步逐行核对CHARLS 2020英文问卷的“Auxiliary Variable Definition”（`XRAge`段）后，Wave 5规则已从“定义待查”更新为已知：若`ZRBirthYear`缺失或`XRType=2`（新访），则`XRAge = 2020 - BA003_1`；若`XRType=1`（返访）且`ZRBirthYear`非缺失，则`XRAge = 2020 - ZRBirthYear`。`BA003_1`是受访者按阳历报告的实际出生年份。该算法是固定调查年减出生年，不按访谈月份/日精算周岁；不应误写成Harmonized CHARLS `RwAGEY`的访谈年月算法。它是CHARLS官方CAPI派生字段，但用于本项目时仍需核验发行版、目标样本与缺失/特殊值，不能仅凭存在就纳入全部模型。
+
+2020 Codebook全样本概要将`xrage`列为19,395个观察值，模块变量详情部分又列出19,367；因此覆盖核验必须对应实际源文件/版本及字段文件，不能把不同表格的Obs简单视作矛盾后自行改写。当前私有整合表`xrage`非空19,395仅是本地版本QA，需在源模块和样本标记确认后才可用于分析覆盖。
+
 ## 性别规则
 
 该Codebook第54–56页说明：Wave 1人口学模块的性别作为当波构造值；Wave 2–4人口学与健康模块可能不一致，跨波也可能出现更改。`RAGENDER`依照最一致的报告确定性别，`RAFGENDR`记录采用人口学众数、健康/居住模块众数或首个非缺失报告的情形。因此，`xrgender`不能在没有冲突QA和标记的情况下被视为完整的统一构造。
 
-2020 Codebook中`xrgender`全样本存在，但本次审阅到的说明尚未建立它与前四波`RAGENDER/RAFGENDR`完全同定义。2020人口学模块还出现`zrgender`、`xr20gender`、`xr18gender`和当轮确认/访员记录等字段。先按波次整理字段与Codebook定义、比较冲突聚合数并标注构造来源，再决定M1使用的字段。公开目录不展示个人性别或身份冲突记录。
+2020英文问卷的辅助变量定义现已明确给出`XRGender`构造：若`ZRGender`非缺失且与访员记录`BA001`一致，取`BA001`；若两者不同，取受访者再次确认的`BA002`；若`ZRGender`缺失，取`BA001`。问卷将`BA001`和`BA002`编码为`1=Male; 2=Female`；`XR20Gender`是`BA001`的字符串重编码，`XR18Gender`由`ZRGender`重编码。因此这些字段不是六个独立性别测量：`BA001`、`BA002`、`ZRGender`为构造输入，`XR20Gender`/`XR18Gender`为辅助中间值，`XRGender`才是该轮按问卷逻辑确认的派生候选。该公式不等于Harmonized CHARLS `RAGENDER/RAFGENDR`前四波“跨模块最一致报告”算法，项目不能直接宣称完全跨波同定义。Wave 5样本中准备表的汇总分歧QA仍保留作发行版/整合检查，不替代官方公式。
 
-对本机受控准备数据只作内存聚合比较：`ba000_w2_3`访员记录与`xrgender`在2013/2015/2018的共同非缺失分别为18,409/20,632/19,816，分歧分别为125/19/0；2020 `ba001`与`xrgender`共同非缺失19,395，分歧少于10，故按项目规则抑制。2020 `zrgender`与`xrgender`共同非缺失19,242、分歧36；当轮`ba002`与`xrgender`共同非缺失43且在该重叠子集一致。2020 `xr18gender`/`xr20gender`与`xrgender`在本准备表中没有共同非缺失值，不可据此推定等价或冲突。上述是内部变量质量QA摘要，未导出ID或个体记录，也不代表官方确定的优先级。更细构造仍须逐项核对Wave 5问卷/Codebook和冲突旗标。
+已将2020年龄/性别字段逐项更新到候选目录元数据：为`xrage`标注固定年差及新访/返访来源；为性别字段分别标注当前访员记录、条件确认、前波预载或字符串派生角色，并转录官方类别标签（不含频数）。所有字段继续是C类元数据/协变量候选，目录明确提示不可自动作为调整集。实现脚本为`scripts/apply_wave5_core_demographic_review.py`，回归测试为`tests/test_wave5_core_demographic_review.py`。
+
+对本机受控准备数据只作内存聚合比较：`ba000_w2_3`访员记录与`xrgender`在2013/2015/2018的共同非缺失分别为18,409/20,632/19,816，分歧分别为125/19/0；2020 `ba001`与`xrgender`共同非缺失19,395，分歧少于10，故按项目规则抑制。2020 `zrgender`与`xrgender`共同非缺失19,242、分歧36；当轮`ba002`与`xrgender`共同非缺失43且在该重叠子集一致。2020 `xr18gender`/`xr20gender`与`xrgender`在本准备表中没有共同非缺失值，不可据此推定等价或冲突。上述是内部变量质量QA摘要，未导出ID或个体记录，也不代表官方确定的优先级。官方公式已核实；仍需按授权发行版核对准备表中的`XRGender`是否按该公式生成，并只发布聚合差异QA。
 
 ## 官方来源
 
 - Gateway to Global Aging Data，[Harmonized CHARLS Documentation Version D（CHARLS网站托管PDF）](https://charls.pku.edu.cn/en/team/Codebook.pdf)，Section A “Demographics and Identifiers”，年龄pp.48–53、性别pp.54–56；文档封面标注Version D (2011–2018), June 2021，前言说明Harmonized CHARLS由USC Gateway团队制作。访问日期：2026-10-23。
 - Gateway to Global Aging Data，[Harmonized CHARLS Creation Code说明](https://g2aging.org/harmonized-charls/creation-code)，说明Version D.2需要Wave 1–4及2014 Life History文件，并使用CHARLS GitHub上的`lunar2solar.mmat`。
+- CHARLS，[2020 Wave 5官方英文问卷PDF](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2020-charls-wave5/application/CHARLS_2020_Questionnaire_English.pdf)，`Auxiliary Variable Definition`中的`XRGender`、`XR20Gender`、`XR18Gender`与`XRAge`算法；`BA001/BA002/BA003_1`问卷题及官方编码。访问日期：2026-10-24。
 - CHARLS团队维护的[Chinese lunar to solar date transformation代码库](https://github.com/charls-data/lunar2solar)，说明Stata安装文件包含`.ado`、`.mmat`、`.sthlp`。当前项目尚未复制或调用该程序；应先固定版本/校验和，再用于逐人日期转换。
 - Harmonized CHARLS Codebook要求在使用其数据或Codebook信息的书面分析中致谢Gateway团队；若后续论文实际使用Harmonized CHARLS数据或其信息，应按原文添加致谢并遵循其当前说明。项目当前只是方法和QA参照，没有自动向外发送邮件。
 - 项目本地逐波问卷与Codebook仍是原始字段、问卷路由和值编码的优先证据；上述Harmonized Codebook负责说明其汇总变量的构造，而不是替代每波问卷。
