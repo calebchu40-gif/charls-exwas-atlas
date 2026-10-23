@@ -312,6 +312,17 @@ class HousingValueLabelTests(unittest.TestCase):
             self.assertIn("not individual dietary intake", row["Harmonization.Status"])
             self.assertIn("cross-wave equivalence", row["Harmonization.Status"])
         self.assertIn("includes purchased and own-produced food", catalog[("2011", "ge006")]["Harmonization.Status"])
+        site_rows = {
+            (field["wave"], field["code"].lower()): field
+            for concept in self.food_site
+            if concept["concept_id"] in {"household_food_expenditure", "household_eating_out"}
+            for field in concept["source_fields"]
+        }
+        for key in expected:
+            self.assertIn("Official", site_rows[key]["note"])
+            self.assertNotIn("questionnaire review pending", site_rows[key]["note"])
+            self.assertIn("household_food_expenditure_measure_review_2026-10-23.md", site_rows[key]["note"])
+            self.assertIn("sources_official/", site_rows[key]["source_document"])
 
     def test_weekly_food_spending_review_status_matches_domain_crosswalk(self):
         expected = {

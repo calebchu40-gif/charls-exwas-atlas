@@ -31,7 +31,7 @@
     "concept_id": "household_food_expenditure",
     "label": "Household food expenditure",
     "domain": "Household food resources",
-    "caveat": "Household expenditure, not an individual's dietary intake or nutrient biomarker. Verify recall period, currency/unit, exclusions, and equivalence across waves; wave 4/5 labels explicitly indicate exclusions.",
+    "caveat": "Past-week household expenditure in Yuan; this is not individual dietary intake or nutrient exposure. Own-production treatment and exclusions vary by wave, so cross-wave construct comparability is not approved. Questionnaire soft checks are not validated analytic cutoffs; verify route, special values, missingness and household/respondent linkage before analysis. See audit/household_food_expenditure_measure_review_2026-10-23.md.",
     "source_fields": [
       {
         "wave": "2011",
@@ -39,7 +39,11 @@
         "module": "household_income",
         "source_label": "Expenditure on Food",
         "value_labels": "",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+        "note": "Official 2011 questionnaire reviewed: 2011 past-week household food consumption amount; questionnaire explicitly includes purchased and own-produced food consumed and excludes eating out, alcohol and tobacco. Household aggregate, not individual dietary intake. See audit/household_food_expenditure_measure_review_2026-10-23.md.",
+        "unit": "Yuan/week",
+        "mapping_status": "official 2011 questionnaire wording, past-week Yuan unit and household target reviewed; cross-wave construct comparability not approved",
+        "value_label_status": "official 2011 questionnaire identifies a continuous past-week household Yuan amount; no discrete labels; confirm special values in authorized release",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -47,7 +51,11 @@
         "module": "Household_Income",
         "source_label": "Expenditure on Food",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official 2013 questionnaire reviewed: 2013 past-week household food spending; own-produced food market value is captured in a separate conditional field. Do not assume it is included in cash expenditure. Household aggregate, not individual dietary intake. See audit/household_food_expenditure_measure_review_2026-10-23.md.",
+        "unit": "Yuan/week",
+        "mapping_status": "official 2013 questionnaire wording, past-week Yuan unit and household target reviewed; cross-wave construct comparability not approved",
+        "value_label_status": "official 2013 questionnaire identifies a continuous past-week household Yuan amount; no discrete labels; confirm special values in authorized release",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt"
       },
       {
         "wave": "2015",
@@ -55,7 +63,11 @@
         "module": "Household_Income",
         "source_label": "Expenditure on Food",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official 2015 questionnaire reviewed: 2015 past-week household food spending; own-produced food market value is captured in a separate conditional field. Do not assume it is included in cash expenditure. Household aggregate, not individual dietary intake. See audit/household_food_expenditure_measure_review_2026-10-23.md.",
+        "unit": "Yuan/week",
+        "mapping_status": "official 2015 questionnaire wording, past-week Yuan unit and household target reviewed; cross-wave construct comparability not approved",
+        "value_label_status": "official 2015 questionnaire identifies a continuous past-week household Yuan amount; no discrete labels; confirm special values in authorized release",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt"
       },
       {
         "wave": "2018",
@@ -63,7 +75,11 @@
         "module": "Household_Income",
         "source_label": "Food Expenditure, Excluding Somethings",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official 2018 questionnaire reviewed: 2018 past-week household food spending; excludes eating out, alcohol, tobacco and banquet/wedding spending. Own-produced food value is separate. Household aggregate, not individual dietary intake. See audit/household_food_expenditure_measure_review_2026-10-23.md.",
+        "unit": "Yuan/week",
+        "mapping_status": "official 2018 questionnaire wording, past-week Yuan unit and household target reviewed; cross-wave construct comparability not approved",
+        "value_label_status": "official 2018 questionnaire identifies a continuous past-week household Yuan amount; no discrete labels; confirm special values in authorized release",
+        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt"
       },
       {
         "wave": "2020",
@@ -71,7 +87,11 @@
         "module": "Household_Income",
         "source_label": "Food Expenditure, Excluding Some Items",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official 2020 questionnaire reviewed: 2020 past-week household food spending; excludes banquets/weddings, eating out, alcohol and tobacco. Own-produced food value is separate. Household aggregate, not individual dietary intake. See audit/household_food_expenditure_measure_review_2026-10-23.md.",
+        "unit": "Yuan/week",
+        "mapping_status": "official 2020 questionnaire wording, past-week Yuan unit and household target reviewed; cross-wave construct comparability not approved",
+        "value_label_status": "official 2020 questionnaire identifies a continuous past-week household Yuan amount; no discrete labels; confirm special values in authorized release",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
       }
     ]
   },
@@ -79,7 +99,7 @@
     "concept_id": "household_eating_out",
     "label": "Household eating-out expenditure",
     "domain": "Household food resources",
-    "caveat": "Household-level eating-out measure, not individual frequency or diet quality. Inspect questionnaire reference period and units by wave before harmonization.",
+    "caveat": "Past-week household expenditure in Yuan; this is not individual dietary intake or nutrient exposure. Own-production treatment and exclusions vary by wave, so cross-wave construct comparability is not approved. Questionnaire soft checks are not validated analytic cutoffs; verify route, special values, missingness and household/respondent linkage before analysis. See audit/household_food_expenditure_measure_review_2026-10-23.md.",
     "source_fields": [
       {
         "wave": "2011",
@@ -87,7 +107,11 @@
         "module": "household_income",
         "source_label": "Expenditure on Eating Out",
         "value_labels": "",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+        "note": "Official 2011 questionnaire reviewed: 2011 past-week household eating-out spending; retain its questionnaire scope and do not assume banquet/wedding exclusions. Household aggregate, not individual dietary intake. See audit/household_food_expenditure_measure_review_2026-10-23.md.",
+        "unit": "Yuan/week",
+        "mapping_status": "official 2011 questionnaire wording, past-week Yuan unit and household target reviewed; cross-wave construct comparability not approved",
+        "value_label_status": "official 2011 questionnaire identifies a continuous past-week household Yuan amount; no discrete labels; confirm special values in authorized release",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
       },
       {
         "wave": "2013",
@@ -95,7 +119,11 @@
         "module": "Household_Income",
         "source_label": "Expenditure on Eating Out",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official 2013 questionnaire reviewed: 2013 past-week household eating-out spending; retain its questionnaire scope and do not assume banquet/wedding exclusions. Household aggregate, not individual dietary intake. See audit/household_food_expenditure_measure_review_2026-10-23.md.",
+        "unit": "Yuan/week",
+        "mapping_status": "official 2013 questionnaire wording, past-week Yuan unit and household target reviewed; cross-wave construct comparability not approved",
+        "value_label_status": "official 2013 questionnaire identifies a continuous past-week household Yuan amount; no discrete labels; confirm special values in authorized release",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt"
       },
       {
         "wave": "2015",
@@ -103,7 +131,11 @@
         "module": "Household_Income",
         "source_label": "Expenditure on Eating Out",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official 2015 questionnaire reviewed: 2015 past-week household eating-out spending; retain its questionnaire scope and do not assume banquet/wedding exclusions. Household aggregate, not individual dietary intake. See audit/household_food_expenditure_measure_review_2026-10-23.md.",
+        "unit": "Yuan/week",
+        "mapping_status": "official 2015 questionnaire wording, past-week Yuan unit and household target reviewed; cross-wave construct comparability not approved",
+        "value_label_status": "official 2015 questionnaire identifies a continuous past-week household Yuan amount; no discrete labels; confirm special values in authorized release",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt"
       },
       {
         "wave": "2018",
@@ -111,7 +143,11 @@
         "module": "Household_Income",
         "source_label": "Eating Out",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official 2018 questionnaire reviewed: 2018 past-week household eating-out spending; questionnaire explicitly excludes banquets/weddings. Household aggregate, not individual dietary intake. See audit/household_food_expenditure_measure_review_2026-10-23.md.",
+        "unit": "Yuan/week",
+        "mapping_status": "official 2018 questionnaire wording, past-week Yuan unit and household target reviewed; cross-wave construct comparability not approved",
+        "value_label_status": "official 2018 questionnaire identifies a continuous past-week household Yuan amount; no discrete labels; confirm special values in authorized release",
+        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt"
       },
       {
         "wave": "2020",
@@ -119,7 +155,11 @@
         "module": "Household_Income",
         "source_label": "Eating Out",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official 2020 questionnaire reviewed: 2020 past-week household members' eating-out spending; questionnaire explicitly excludes banquets/weddings. Household aggregate, not individual dietary intake. See audit/household_food_expenditure_measure_review_2026-10-23.md.",
+        "unit": "Yuan/week",
+        "mapping_status": "official 2020 questionnaire wording, past-week Yuan unit and household target reviewed; cross-wave construct comparability not approved",
+        "value_label_status": "official 2020 questionnaire identifies a continuous past-week household Yuan amount; no discrete labels; confirm special values in authorized release",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
       }
     ]
   },

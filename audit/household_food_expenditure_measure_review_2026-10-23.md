@@ -6,4 +6,4 @@ Wave-specific scope must remain visible. The 2011 food question explicitly inclu
 
 Some questionnaires attach soft checks to unusually high responses; these are interviewer prompts, not validated analytic cutoffs. No Codebook extrema, frequencies, or respondent data were used. The unit, recall period and limitations are applied reproducibly by `scripts/apply_weekly_household_food_expenditure_review.py` after concept-catalog construction.
 
-The same source-review status and wave-specific caveats are propagated to all ten household food/eating-out rows in `audit/food_environment_crosswalk_v1.csv`, keeping the domain explorer in sync with the main E catalog.
+The same source-review status and wave-specific caveats are propagated to all ten household food/eating-out rows in `audit/food_environment_crosswalk_v1.csv`, keeping the domain explorer in sync with the main E catalog. The nested domain-page JSON also carries reviewed per-field notes and official questionnaire source paths; it no longer shows the stale generic “questionnaire review pending” note for these ten rows.

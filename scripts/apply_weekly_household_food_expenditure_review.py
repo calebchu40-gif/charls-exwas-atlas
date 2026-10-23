@@ -89,6 +89,12 @@ def update_json(path: Path, wave_key: str, code_key: str) -> int:
             row["mapping_status"] = "official questionnaire confirms weekly household Yuan amount; cross-wave construct comparability remains unapproved"
             row["caveat"] = FIELDS[(wave, code)] + " Not individual dietary intake; own-production treatment and exclusions vary by wave. Verify route, special values, missingness and household/respondent linkage before analysis."
             row["value_label_status"] = row["Value.Label.Review"]
+            row["note"] = (
+                f"Official {wave} questionnaire reviewed: past-week household Yuan amount. "
+                f"{FIELDS[(wave, code)]} Cross-wave comparability remains unapproved; see "
+                "audit/household_food_expenditure_measure_review_2026-10-23.md."
+            )
+            row["source_document"] = f"sources_official/{SOURCE_FIELD[wave]}"
     output = json.dumps(rows, ensure_ascii=False, indent=2) + "\n" if wave_key == "wave" else json.dumps(rows, ensure_ascii=False, separators=(",", ":"))
     path.write_text(output, encoding="utf-8")
     return len(selected)
@@ -121,6 +127,51 @@ def update_domain_crosswalk(path: Path) -> int:
     return int(selected.sum())
 
 
+def update_food_domain_json(path: Path) -> int:
+    concepts = json.loads(path.read_text(encoding="utf-8"))
+    expected = set(FIELDS)
+    found = set()
+    for concept in concepts:
+        concept_rows = [
+            field for field in concept.get("source_fields", [])
+            if (str(field.get("wave", "")), str(field.get("code", "")).lower()) in FIELDS
+        ]
+        if not concept_rows:
+            continue
+        concept["caveat"] = (
+            "Past-week household expenditure in Yuan; this is not individual dietary intake or nutrient exposure. "
+            "Own-production treatment and exclusions vary by wave, so cross-wave construct comparability is "
+            "not approved. Questionnaire soft checks are not validated analytic cutoffs; verify route, special "
+            "values, missingness and household/respondent linkage before analysis. See "
+            "audit/household_food_expenditure_measure_review_2026-10-23.md."
+        )
+        for field in concept_rows:
+            wave = str(field["wave"])
+            code = str(field["code"]).lower()
+            key = (wave, code)
+            found.add(key)
+            field["unit"] = "Yuan/week"
+            field["mapping_status"] = (
+                f"official {wave} questionnaire wording, past-week Yuan unit and household target reviewed; "
+                "cross-wave construct comparability not approved"
+            )
+            field["value_labels"] = ""
+            field["value_label_status"] = (
+                f"official {wave} questionnaire identifies a continuous past-week household Yuan amount; "
+                "no discrete labels; confirm special values in authorized release"
+            )
+            field["note"] = (
+                f"Official {wave} questionnaire reviewed: {FIELDS[key]} "
+                "Household aggregate, not individual dietary intake. See "
+                "audit/household_food_expenditure_measure_review_2026-10-23.md."
+            )
+            field["source_document"] = f"sources_official/{SOURCE_FIELD[wave]}"
+    if found != expected:
+        raise ValueError(f"{path}: missing reviewed food-spending fields {sorted(expected-found)}")
+    path.write_text(json.dumps(concepts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return len(found)
+
+
 def main() -> None:
     validate_sources()
     counts = [
@@ -128,7 +179,7 @@ def main() -> None:
         update_json(ROOT / "audit/charls_atlas_candidate_fields_v0.json", "Source.Wave", "Variable.Name"),
         update_json(ROOT / "site-prototype/dist/catalog.json", "Source.Wave", "Variable.Name"),
         update_json(ROOT / "site-prototype/dist/catalog_e.json", "Source.Wave", "Variable.Name"),
-        update_json(ROOT / "site-prototype/dist/food_environment_v1.json", "wave", "code"),
+        update_food_domain_json(ROOT / "site-prototype/dist/food_environment_v1.json"),
         update_domain_crosswalk(ROOT / "audit/food_environment_crosswalk_v1.csv"),
     ]
     print(f"Applied weekly household food-spending metadata to {sum(counts)} field rows; no participant values or frequencies included.")
