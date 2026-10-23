@@ -1326,7 +1326,7 @@
         "code": "i006",
         "module": "Household_Income",
         "source_label": "Which Storey",
-        "value_labels": "",
+        "value_labels": "1=On the ground; 2=Underground",
         "note": "2020 records whether the residence is on the ground/above-ground route or underground; the numeric floor count is in the routed child field, so retain selector and count separately. Verify authorized-release special values, skip routes, residence/respondent linkage and missingness before modeling. Questionnaire hard/soft checks do not establish valid analytic ranges. Cross-wave measurement equivalence is unapproved.",
         "unit": "",
         "value_label_status": "official 2020 questionnaire identifies a wave-specific categorical above-ground versus underground residence selector; preserve alongside routed count fields",

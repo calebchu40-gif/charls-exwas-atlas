@@ -287,6 +287,15 @@ class HousingValueLabelTests(unittest.TestCase):
             self.assertEqual(row["Value.Labels"], "1=More than 4 meals per day; 2=4 meals per day; 3=3 meals per day; 4=2 meals per day; 5=1 meal per day; 6=<1 meal per day")
             self.assertIn("ordinal behavior measure", row["Harmonization.Status"])
             self.assertIn("not dietary quality", row["Harmonization.Status"])
+
+    def test_kitchen_and_balcony_counts_are_household_numeric_measures(self):
+        catalog = {(r["Source.Wave"], r["Variable.Name"].lower()): r for r in self.catalog}
+        for wave in ("2011", "2013", "2015", "2018"):
+            for code in ("i012_4", "i012_5"):
+                row = catalog[(wave, code)]
+                self.assertEqual(row["Unit"], "count")
+                self.assertEqual(row["Value.Labels"], "")
+                self.assertIn("household-level built-environment context", row["Harmonization.Status"].lower())
         self.assertIn("excludes banquets/weddings", catalog[("2020", "gf006")]["Harmonization.Status"])
         self.assertIn("excludes banquets/weddings", catalog[("2018", "ge007_w4")]["Harmonization.Status"])
 

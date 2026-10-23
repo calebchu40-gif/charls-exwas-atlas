@@ -4,9 +4,9 @@
   "files": {
     "food_environment_v1.json": {
       "fields": 161,
-      "filled": 5,
-      "existing": 106,
-      "no_match": 50,
+      "filled": 1,
+      "existing": 108,
+      "no_match": 52,
       "ambiguous": 0
     },
     "social_exposures_v1.json": {
