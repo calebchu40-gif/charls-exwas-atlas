@@ -1,10 +1,11 @@
 """Rebuild the broad E/P catalog, concept mapping layer, and website JSON."""
 from pathlib import Path
+import argparse
 import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-for script in (
+FULL_PIPELINE_SCRIPTS = (
     "build_chronic_disease_concept_crosswalk.py",
     "build_chronic_disease_ancillary_crosswalk.py",
     "build_chronic_disease_management_crosswalk.py",
@@ -91,7 +92,39 @@ for script in (
     "summarize_ep_pair_wave_coverage.py",
     "summarize_directory_scope.py",
     "summarize_catalog_concept_categories.py",
-):
-    print(f"Running {script}")
-    subprocess.run([sys.executable, str(ROOT / "scripts" / script)], cwd=ROOT, check=True)
-print("E/P field catalog, concept crosswalk, summaries, and domain JSON are current.")
+)
+
+# Use only when the upstream audit/crosswalk files are already current and a
+# change is limited to catalogue propagation, value-label summaries, the
+# concept-source index, candidate-pair metadata, or final static JSON.
+FINALIZATION_PIPELINE_SCRIPTS = (
+    "build_charls_atlas_catalog.py",
+    "summarize_value_label_coverage.py",
+    "validate_do_not_analyze_triage.py",
+    "build_ep_concept_source_crosswalk.py",
+    "build_candidate_pair_explorer.py",
+    "finalize_catalog_semantics.py",
+    "summarize_ep_pair_wave_coverage.py",
+    "summarize_directory_scope.py",
+    "summarize_catalog_concept_categories.py",
+)
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--finalize-only",
+        action="store_true",
+        help="Rebuild the main catalogue and downstream site summaries from current audited crosswalks; do not regenerate upstream mappings.",
+    )
+    args = parser.parse_args()
+    scripts = FINALIZATION_PIPELINE_SCRIPTS if args.finalize_only else FULL_PIPELINE_SCRIPTS
+    for script in scripts:
+        print(f"Running {script}", flush=True)
+        subprocess.run([sys.executable, str(ROOT / "scripts" / script)], cwd=ROOT, check=True)
+    print("E/P field catalog, concept crosswalk, summaries, and domain JSON are current.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

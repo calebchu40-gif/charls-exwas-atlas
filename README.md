@@ -1,5 +1,13 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-23）
 
+
+## 本地元数据重建
+
+- `python scripts/build_ep_atlas_metadata.py`：全量重建所有波次来源交叉表、目录、配对索引和网站元数据；官方源文件或上游映射有变化时使用。
+- `python scripts/build_ep_atlas_metadata.py --finalize-only`：仅在所有上游交叉表/审核文件已更新时，重建主目录和下游汇总/静态网站 JSON；适合只改值标签状态传播、目录前端或下游汇总的迭代。该模式不会重跑上游映射，源问卷、Codebook或交叉表变更后不可用它替代全量构建。
+
+本地全量构建和`--finalize-only`均已通过当前项目测试；完整流水线用来保证源映射时，最终目录锁定校验、测试和受限格式扫描仍需照常运行。
+
 ## 公开网站部署
 
 网站使用 GitHub Pages，部署包只含`site-prototype/dist/`下的静态页面和候选变量元数据，不含CHARLS个体级数据。用户已明确接受整个仓库公开；仓库及Pages已公开上线。2026-10-22首次部署工作流成功（Run #1）；首页、`app.js`和候选配对JSON均经外部HTTP请求验证返回200。公开网址：[https://calebchu40-gif.github.io/charls-exwas-atlas/](https://calebchu40-gif.github.io/charls-exwas-atlas/)。站点更新或部署工作流变更推送到`main`后会自动部署；Actions仍保留手动运行入口。
