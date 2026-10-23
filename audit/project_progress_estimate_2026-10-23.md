@@ -134,3 +134,6 @@ A full metadata rebuild found that 73 already-audited continuous behavior fields
 2026-10-23家庭支出字段复核：53个2011–2020波次字段按官方问卷确认参考期和家庭层级，4个自产品指标采用明确的Yes/No标签。网站目录生成和全量测试完成；当前E/P/C通用待核为151/0/328，E/P非空标签3,212行。待审重点转到个人转移收入（50）和个人工资收入（45）；正式统计关联仍为0，分析方法、正式模型和公开可重复计算流程尚未完成。见[`household_expenditure_metadata_review_2011_2020_2026-10-23.md`](household_expenditure_metadata_review_2011_2020_2026-10-23.md)。
 
 2026-10-23个人转移收入与养老金区间审核：50个转移来源字段已按波次区分已知标签与未选中存储不确定；16个养老金上下界按条件区间记录，2013字符串与2015摘要证据分开。当前E/P/C通用待核85/0/328，E/P标签覆盖3,232行；128项测试、JS语法及89条禁分析锁通过。接下来优先审查45个个人收入/工资字段。公开统计关联仍为0；正式分析方法、模型及可重复计算流程仍未完成。
+
+
+2026-10-23年龄/性别构造规则复核：查阅CHARLS网站托管的Gateway to Global Aging Data Harmonized CHARLS Version D文档，核实Wave 1–4年龄按访谈年月与最近出生年月计算、缺出生月取6月、Wave 1/2缺出生年才回退自报年龄、农历生日调用CHARLS团队lunar2solar；性别依据跨波和人口学/健康模块一致性构造并保留冲突处理旗标。更正来源身份：该Codebook由USC Gateway团队编制，属于第三方harmonized算法说明，不是CHARLS原始变量字典。项目将其用于算法QA，不冒称原始字段；源差异和Wave 5定义仍待对照。见[`official_age_gender_harmonization_review_2026-10-23.md`](official_age_gender_harmonization_review_2026-10-23.md)。
