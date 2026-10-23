@@ -4,6 +4,7 @@
 
 - Added questionnaire-derived units and field-specific scope notes for the 2011 community weather estimates: annual low/high temperatures (°C) and rainy/snowy day counts (days), explicitly reported by a community informant rather than linked station observations. Added source audit and regression coverage; no responses or Codebook summaries were copied.
   Full finalization synchronized the weather annotations across the candidate catalogue and community site JSON; 209 tests and 34 static JSON checks pass. The refreshed site catalogue contains E=4,750, P=2,110, C=978; 89 formal E/P locks remain and no association models or pairwise sample sizes are computed.
+  Deployment verified: commit `0a79030` is GitHub Pages Deploy #100 (run `40028365448`, success); the cache-busted public community JSON returns HTTP 200 and confirms the four weather-field units and caveats.
 
 - Expanded the objective-measurement wave boundary review using official CHARLS sources: the 2018 Wave 4 User’s Guide places non-blood measurements in Waves 1–3 and blood biomarkers in Waves 1 and 3; the 2021–2023 fifth regular survey is kept distinct from the released 2020 Wave 5 package. 2020 care-use recall questions are not coded as direct measurements. Updated the site note and audit; no 2021–2023 rows were inferred without a verified release package.
 
