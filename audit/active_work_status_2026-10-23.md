@@ -7,6 +7,7 @@
 - 89条 `DO NOT ANALYZE` 锁与审计表逐项一致。抽样权重、目标样本标记、PSU/方差估计、模块资格和特殊波次缺失仍是正式分析门槛。
 - 已整理核心年龄、性别、教育、婚姻、户籍、居住地/城乡及调查设计的字段来源与准备状态，见[`core_covariate_readiness_2026-10-23.md`](core_covariate_readiness_2026-10-23.md)。它们仍是候选方案，没有固定的统一调整集。
 - 新核对了Gateway to Global Aging Data的Harmonized CHARLS Version D Codebook：前四波年龄算法明确包含访谈年月、最近出生年月、缺出生月按6月、前两波缺出生年才用自报年龄及农历转换；性别字段需要保留跨模块/跨波冲突标记。审计说明和来源见[`official_age_gender_harmonization_review_2026-10-23.md`](official_age_gender_harmonization_review_2026-10-23.md)。
+- 在本机受控准备数据内存中比较性别来源字段，仅写入波次级汇总：2013/2015/2018访员记录与`xrgender`分歧125/19/0；2020访员记录分歧小于10并抑制，`zrgender`与`xrgender`分歧36。没有导出ID或个人行，冲突优先级仍待官方Wave 5定义复核。
 
 ## 本轮修正：关键词命中与协变量的区分
 

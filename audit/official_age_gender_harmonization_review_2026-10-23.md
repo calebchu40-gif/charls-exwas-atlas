@@ -23,6 +23,8 @@
 
 2020 Codebook中`xrgender`全样本存在，但本次审阅到的说明尚未建立它与前四波`RAGENDER/RAFGENDR`完全同定义。2020人口学模块还出现`zrgender`、`xr20gender`、`xr18gender`和当轮确认/访员记录等字段。先按波次整理字段与Codebook定义、比较冲突聚合数并标注构造来源，再决定M1使用的字段。公开目录不展示个人性别或身份冲突记录。
 
+对本机受控准备数据只作内存聚合比较：`ba000_w2_3`访员记录与`xrgender`在2013/2015/2018的共同非缺失分别为18,409/20,632/19,816，分歧分别为125/19/0；2020 `ba001`与`xrgender`共同非缺失19,395，分歧少于10，故按项目规则抑制。2020 `zrgender`与`xrgender`共同非缺失19,242、分歧36；当轮`ba002`与`xrgender`共同非缺失43且在该重叠子集一致。2020 `xr18gender`/`xr20gender`与`xrgender`在本准备表中没有共同非缺失值，不可据此推定等价或冲突。上述是内部变量质量QA摘要，未导出ID或个体记录，也不代表官方确定的优先级。更细构造仍须逐项核对Wave 5问卷/Codebook和冲突旗标。
+
 ## 官方来源
 
 - Gateway to Global Aging Data，[Harmonized CHARLS Documentation Version D（CHARLS网站托管PDF）](https://charls.pku.edu.cn/en/team/Codebook.pdf)，Section A “Demographics and Identifiers”，年龄pp.48–53、性别pp.54–56；文档封面标注Version D (2011–2018), June 2021，前言说明Harmonized CHARLS由USC Gateway团队制作。访问日期：2026-10-23。
