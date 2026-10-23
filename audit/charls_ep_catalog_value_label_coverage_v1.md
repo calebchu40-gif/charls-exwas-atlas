@@ -3,7 +3,7 @@
 更新：2026-10-23。由`scripts/summarize_value_label_coverage.py`从当前字段目录和覆盖CSV自动生成。
 
 - E/P字段—角色—类别目录行：6,633；不同波次—字段码：6,552。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
-- 有非空官方/已审标签文本的E/P目录行：3,102；不同波次—字段码：3,076。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
+- 有非空官方/已审标签文本的E/P目录行：3,107；不同波次—字段码：3,081。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
 - 明确标为`conflict`的E/P字段码：0；详情按主目录波次和变量码检索。
 - 问卷/Codebook编码差异尚未调和并锁定`DO NOT ANALYZE`的E/P字段：2011 `fb010`。此项独立于上面的精确`conflict`标签计数。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -19,7 +19,7 @@
 |e|family and intergenerational context|6|6|1|
 |e|food and household environment|160|87|1|
 |e|housing and built environment|480|33|2|
-|e|social determinants|2,155|910|20|
+|e|social determinants|2,155|915|20|
 |e|social protection|1,331|432|30|
 |p|anthropometric|15|0|1|
 |p|biochemistry|32|0|1|
@@ -37,7 +37,7 @@
 |审核状态|E/P目录行|
 |---|---:|
 |officially reviewed|2,527|
-|not yet reviewed|1,855|
+|not yet reviewed|1,799|
 |official codebook field located; continuous/count or no categorical labels|608|
 |continuous measure metadata available|214|
 |official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories|200|
@@ -50,6 +50,7 @@
 |official 2011 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|53|
 |official 2013 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|52|
 |official 2015 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|52|
+|official Codebook lists numeric summary; no categorical response menu in this entry|51|
 |official selected-option label; checkbox slot, absence is not a negative response|42|
 |代码本逐值标签已核|38|
 |continuous component, not a categorical code; component unit reviewed against wave-specific official codebook|38|
@@ -71,6 +72,7 @@
 |official 2011 questionnaire/Codebook threshold categories transcribed; no response frequencies shown|8|
 |continuous count, not a categorical code; daily cigarette count; 2020 current and pre-quit values are separate|6|
 |official questionnaire categories; frequencies omitted; FC020 multiple-job main-work route or FC021 single nonfarm-job route|6|
+|official Codebook response categories transcribed; frequencies omitted; cross-wave question scope and release coding pending|5|
 |continuous measure, not a categorical code; nap duration appears in minutes; inspect special/missing codes|5|
 |continuous measure, not a categorical code; past-month average sleep hours per night; inspect special/missing codes|5|
 |official response categories transcribed; special/missing-code completeness pending|5|

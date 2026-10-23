@@ -2,6 +2,7 @@
 
 ## 2026-10-23
 
+- Added source-specific status for 51 household-income/expenditure fields whose exact wave Codebook entries show numeric summaries without categorical menus; transcribed five wave-specific `ga001` Yes/No menus without frequencies. Routes, units, special values, release coding, and eligibility remain pending; added tests and audit records.
 - Propagated 608 pension numeric/count fields whose official Codebook fields are located but have no discrete response categories; preserved six entries with more specific existing review states. The status does not certify units, routes, release coding, or analysis eligibility. Added a dated audit and catalog/UI regression checks.
 - Rebuilt the full E/P metadata catalog and propagated 73 source-reviewed continuous behavior measure descriptions (age/year components, smoking/alcohol quantities and sleep durations) that were incorrectly displayed as “not yet reviewed.” The builder preserves blank category labels, conflicts, and `DO NOT ANALYZE` locks; added regression coverage and a dated audit snapshot. No respondent data or association results were used.
 - Renamed the navigation entry that opens the C-class measurement/design metadata catalogue so it no longer implies that the page itself is the methods note; the homepage methods link still goes to the methods cards.

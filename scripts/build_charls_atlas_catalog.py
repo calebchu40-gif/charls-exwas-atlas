@@ -1270,6 +1270,47 @@ def main() -> None:
             source = str(item.get("value_label_source", "")).strip()
             if source:
                 out.loc[selected, "Value.Label.Source"] = source
+    # Exact Codebook entries for household-income candidates with numeric
+    # summary tables and no categorical menu. This is deliberately narrower
+    # than all numeric-looking expenditure/income fields: unknown routes,
+    # units, special codes, and release coding remain unresolved.
+    income_numeric_path = root / "audit" / "household_income_numeric_status_v1.csv"
+    if income_numeric_path.exists():
+        income_numeric = pd.read_csv(income_numeric_path, dtype=str, encoding="utf-8-sig").fillna("")
+        income_numeric_status = "official Codebook lists numeric summary; no categorical response menu in this entry"
+        for item in income_numeric.to_dict(orient="records"):
+            if item.get("value_label_status", "").strip() != income_numeric_status:
+                continue
+            selected = (
+                out["Source.Wave"].astype(str).eq(str(item.get("wave", "")))
+                & out["Variable.Name"].str.lower().eq(str(item.get("code", "")).lower())
+                & out["category"].eq("social determinants")
+                & out["subcategory"].isin(["income, wealth, and material resources", "household expenditure and material resources"])
+                & out["Value.Labels"].eq("")
+                & out["Value.Label.Review"].isin(["", "not yet reviewed"])
+            )
+            out.loc[selected, "Value.Label.Review"] = income_numeric_status
+            source = str(item.get("value_label_source", "")).strip()
+            if source:
+                out.loc[selected, "Value.Label.Source"] = source
+    wage_receipt_path = root / "audit" / "personal_wage_receipt_value_labels_v1.csv"
+    if wage_receipt_path.exists():
+        wage_receipts = pd.read_csv(wage_receipt_path, dtype=str, encoding="utf-8-sig").fillna("")
+        receipt_status = "official Codebook response categories transcribed; frequencies omitted; cross-wave question scope and release coding pending"
+        for item in wage_receipts.to_dict(orient="records"):
+            if item.get("value_label_status", "").strip() != receipt_status or not item.get("value_labels", "").strip():
+                continue
+            selected = (
+                out["Source.Wave"].astype(str).eq(str(item.get("wave", "")))
+                & out["Variable.Name"].str.lower().eq(str(item.get("code", "")).lower())
+                & out["Value.Labels"].eq("")
+                & out["Value.Label.Review"].isin(["", "not yet reviewed"])
+            )
+            out.loc[selected, "Value.Labels"] = item["value_labels"].strip()
+            out.loc[selected, "Value.Label.Review"] = receipt_status
+            source = str(item.get("value_label_source", "")).strip()
+            if source:
+                out.loc[selected, "Value.Label.Source"] = source
     cognition_value_path = root / "audit" / "cognition_item_variable_mapping_v1.csv"
     if cognition_value_path.exists():
         cognition_values = pd.read_csv(cognition_value_path, dtype=str, encoding="utf-8-sig").fillna("")

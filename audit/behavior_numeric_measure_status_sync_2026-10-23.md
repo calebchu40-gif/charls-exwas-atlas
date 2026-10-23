@@ -22,3 +22,8 @@
 ## 后续全量同步（同日）
 
 后续养老金代码本状态同步再次运行完整元数据流水线，当前目录E/P通用`not yet reviewed`行数已更新为1,034；608条养老金字段另显示代码本字段已定位状态。上文2,463为本审计首次完成时的历史计数，当前值以[`current_directory_snapshot_2026-10-23.md`](current_directory_snapshot_2026-10-23.md)为准。当前59项测试通过。
+
+
+## 后续收入代码本同步（同日）
+
+完整流水线再同步51条收入/家庭支出数值摘要状态及五波工资收入类别后，E/P通用`not yet reviewed`当前为978行，类别标签文本3,107行（3,081波次—字段码），C类通用未核验338行。此前记载的1,034是养老金状态同步后的中间计数，当前请以[`current_directory_snapshot_2026-10-23.md`](current_directory_snapshot_2026-10-23.md)和[`income_numeric_and_receipt_label_sync_2026-10-23.md`](income_numeric_and_receipt_label_sync_2026-10-23.md)为准。61项测试通过。

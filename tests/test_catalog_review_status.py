@@ -53,6 +53,44 @@ class CatalogReviewStatusTests(unittest.TestCase):
         app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
         self.assertIn("官方代码本已找到该字段但未列离散类别", app)
 
+    def test_income_codebook_numeric_summaries_are_not_generic_pending_labels(self):
+        examples = [
+            ("2011", "ge008"),
+            ("2013", "ge009_3"),
+            ("2015", "ge010_6"),
+            ("2018", "ge000_w4"),
+            ("2020", "gf001"),
+        ]
+        for wave, code in examples:
+            rows = [
+                row for row in self.catalog
+                if row.get("Source.Wave") == wave and row.get("Variable.Name", "").lower() == code
+            ]
+            self.assertTrue(rows, (wave, code))
+            self.assertTrue(all(row.get("Value.Label.Review", "").startswith("official Codebook lists numeric summary; no categorical response menu in this entry") for row in rows), (wave, code))
+            self.assertTrue(all(not row.get("Value.Labels", "") for row in rows), (wave, code))
+        # Wage receipt fields have explicit categorical menus and must not be
+        # captured by the numeric-summary status merely because a following
+        # amount field is continuous.
+        wage_rows = [row for row in self.catalog if row.get("Source.Wave") == "2018" and row.get("Variable.Name", "").lower() == "ga001"]
+        self.assertTrue(wage_rows)
+        self.assertTrue(all(not row.get("Value.Label.Review", "").startswith("official Codebook lists numeric summary") for row in wage_rows))
+        app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
+        self.assertIn("官方代码本为该字段列出数值摘要", app)
+
+    def test_wave_specific_wage_receipt_categories_omit_frequencies(self):
+        for wave in ("2011", "2013", "2015", "2018", "2020"):
+            rows = [
+                row for row in self.catalog
+                if row.get("Source.Wave") == wave and row.get("Variable.Name", "").lower() == "ga001"
+            ]
+            self.assertTrue(rows, wave)
+            for row in rows:
+                self.assertEqual(row.get("Value.Labels"), "1=Yes; 2=No", wave)
+                self.assertTrue(row.get("Value.Label.Review", "").startswith("official Codebook response categories transcribed; frequencies omitted"), wave)
+        app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
+        self.assertIn("官方代码本类别已转录且已省略频数", app)
+
     def test_public_methods_page_discloses_wave_specific_survey_design_gates(self):
         html = (ROOT / "site-prototype/dist/index.html").read_text(encoding="utf-8")
         card = html[html.index("抽样、权重与方差设计状态"):html.index("</section>", html.index("抽样、权重与方差设计状态"))]

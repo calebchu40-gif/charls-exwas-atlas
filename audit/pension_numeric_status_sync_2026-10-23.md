@@ -9,3 +9,5 @@
 本轮只处理公开官方代码本和字段元数据，没有读取或发布CHARLS个人记录，也没有拟合关联模型。验证包括完整元数据流水线、59项测试，以及33条`DO NOT ANALYZE`锁定清单逐字段校验。
 
 发布验证：提交`fff5b69`已推送；GitHub Pages部署Run #11（`39879361327`）状态Success。线上`catalog.json`和`app.js`均返回HTTP 200，并确认新养老金字段状态和中文说明已生效。
+
+后续同日全量流水线还完成收入/家庭支出代码本状态更新；当前目录及网站统计见[`current_directory_snapshot_2026-10-23.md`](current_directory_snapshot_2026-10-23.md)。后续收入审计见[`income_numeric_and_receipt_label_sync_2026-10-23.md`](income_numeric_and_receipt_label_sync_2026-10-23.md)。
