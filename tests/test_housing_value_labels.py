@@ -199,6 +199,40 @@ class HousingValueLabelTests(unittest.TestCase):
             self.assertIn("response-format selector only", row["Harmonization.Status"])
             self.assertEqual(source_fields[("2018", code)]["value_labels"], "1=Total Value; 2=Unit Value")
 
+    def test_2011_to_2015_housing_money_fields_keep_verified_units_and_pending_storage_limits(self):
+        expected = {
+            **{("2011", f"ha049_{i}_"): "Yuan" for i in range(1, 4)},
+            **{("2011", f"ha047_{i}_"): "10,000 Yuan" for i in range(1, 3)},
+            **{("2011", f"ha043_{i}_"): "10,000 Yuan" for i in range(1, 4)},
+            ("2011", "ha023_1"): "10,000 Yuan", ("2011", "ha023_2"): "1,000 Yuan/square metre",
+            ("2011", "ha022"): "10,000 Yuan", ("2011", "ha018"): "10,000 Yuan",
+            **{("2013", f"ha043_{i}_"): "10,000 Yuan" for i in range(1, 5)},
+            **{("2013", f"ha034_1_{i}_"): "10,000 Yuan" for i in range(1, 5)},
+            **{("2013", f"ha034_2_{i}_"): "1,000 Yuan/square metre" for i in range(1, 5)},
+            ("2013", "ha023_1"): "10,000 Yuan", ("2013", "ha023_2"): "1,000 Yuan/square metre",
+            ("2013", "ha022"): "10,000 Yuan", ("2013", "ha018"): "10,000 Yuan",
+            **{("2015", f"ha043_{i}_"): "10,000 Yuan" for i in range(1, 5)},
+            **{("2015", f"ha034_1_{i}_"): "10,000 Yuan" for i in range(1, 5)},
+            **{("2015", f"ha034_2_{i}_"): "1,000 Yuan/square metre" for i in range(1, 5)},
+        }
+        catalog = {(r["Source.Wave"], r["Variable.Name"].lower()): r for r in self.catalog}
+        mapping = {(r["wave"], r["code"].lower()): r for r in self.housing_mapping}
+        crosswalk = {(r["Wave"], r["Source.Code"].lower()): r for r in self.crosswalk}
+        site = {(r["wave"], r["code"].lower()): r for r in self.housing_site}
+        self.assertEqual(set(expected).intersection(catalog), set(expected))
+        for key, unit in expected.items():
+            row = catalog[key]
+            self.assertEqual(row["epcf"], "e")
+            self.assertEqual(row["Concept.Unit.Candidates"], unit, key)
+            self.assertEqual(row["Value.Labels"], "", key)
+            self.assertIn("numeric monetary amount", row["Value.Label.Review"].lower())
+            self.assertIn("no discrete category labels", row["Value.Label.Review"].lower())
+            self.assertIn("storage and special codes remain unverified", row["Value.Label.Review"].lower())
+            self.assertIn("soft checks are interviewer prompts", row["Harmonization.Status"].lower())
+            self.assertEqual(mapping[key]["unit"], unit)
+            self.assertEqual(crosswalk[key]["Unit"], unit)
+            self.assertEqual(site[key]["unit"], unit)
+
     def test_room_and_toilet_counts_are_numeric_and_wave_specific(self):
         expected = {(str(w), f"i012_{suffix}") for w in (2011, 2013, 2015, 2018) for suffix in (1, 2, 3)}
         expected |= {("2020", f"i011_{suffix}") for suffix in (1, 2, 3)}
