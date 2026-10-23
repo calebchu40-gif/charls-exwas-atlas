@@ -142,3 +142,5 @@ This file records project-level changes that affect reproducibility, methods, da
 - Added the public 2011 physical-examination manual to official-source materials. Reviewed 2011 pre-blood-pressure behavior QA017/LI875 and chair-height QH006/LI007, leaving the unresolved chair-field identity on hold.
 - Clarified 2013 QH006 as chair height in centimeters and separated 2015 QH006 (chair type) from conditional QH006_1 (other-chair height). These remain C measurement metadata and do not enter E/P association pairs.
 - Full catalogue rebuild and all 200 Python tests passed; site C catalogue now has 986 rows. See `audit/objective_measurement_protocol_source_review_2011_2015_2026-10-24.md`.
+
+- Published commit `7903732` in GitHub Pages Deploy #94 (`40021600663`); cache-busted live C catalogue returned HTTP 200 and confirmed all reviewed 2011/2013/2015 protocol records.
