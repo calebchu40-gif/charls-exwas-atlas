@@ -3,7 +3,7 @@
 更新：2026-10-23。由`scripts/summarize_value_label_coverage.py`从当前字段目录和覆盖CSV自动生成。
 
 - E/P字段—角色—类别目录行：6,626；不同波次—字段码：6,545。一条字段可能按多个候选类别/角色出现，均不是独立分析指标。
-- 有非空官方/已审标签文本的E/P目录行：3,208；不同波次—字段码：3,182。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
+- 有非空官方/已审标签文本的E/P目录行：3,212；不同波次—字段码：3,186。连续测量、计数值及测量流程字段可以已审但没有类别标签，因此不计入此覆盖数。
 - 明确标为`conflict`的E/P字段码：0；详情按主目录波次和变量码检索。
 - 问卷/Codebook编码差异尚未调和并锁定`DO NOT ANALYZE`的E/P字段：2011 `fb010`。此项独立于上面的精确`conflict`标签计数。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -20,7 +20,7 @@
 |e|family and intergenerational context|6|6|1|
 |e|food and household environment|160|87|1|
 |e|housing and built environment|481|34|2|
-|e|social determinants|2,155|923|20|
+|e|social determinants|2,155|927|20|
 |e|social protection|1,331|432|30|
 |p|anthropometric|15|0|1|
 |p|biochemistry|32|0|1|
@@ -38,7 +38,7 @@
 |审核状态|E/P目录行|
 |---|---:|
 |officially reviewed|2,590|
-|not yet reviewed|1,134|
+|not yet reviewed|957|
 |official codebook field located; continuous/count or no categorical labels|608|
 |codebook field located; continuous/open response or no categorical labels|339|
 |continuous measure metadata available|214|
@@ -48,6 +48,7 @@
 |audited measurement component; derive concept per crosswalk|108|
 |Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding|97|
 |连续值/字段结构；代码本未提供离散值标签|93|
+|official 2011 questionnaire identifies Yuan amount period and household-member roster slot; continuous amount with no discrete response categories; authorized-release storage scale and special values remain unverified|80|
 |official 2018 Codebook response categories transcribed; frequencies omitted; questionnaire route retained; respondent release coding and eligible denominator require validation|68|
 |official codebook category labels not located|59|
 |official 2011 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|53|
@@ -62,16 +63,21 @@
 |连续计数；参照期/机构槽位依波次；极值待核|29|
 |continuous raw subtraction response; Codebook extreme maxima occur; valid range and scoring require authorized raw-data QA|25|
 |official response categories/unit reviewed; Codebook frequencies omitted|25|
+|official 2013 questionnaire identifies Yuan amount period and household-member roster slot; continuous amount with no discrete response categories; authorized-release storage scale and special values remain unverified|24|
 |字段标签已核；代码本呈现多选类别频数，未能从摘录确认未选/否的底层存储码|21|
+|official 2015 questionnaire identifies Yuan amount period and household-member roster slot; continuous amount with no discrete response categories; authorized-release storage scale and special values remain unverified|20|
 |official 2020 questionnaire/Codebook response labels reviewed; prior-wave route retained; frequencies excluded|18|
 |continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions|16|
 |DO NOT ANALYZE; official 2011 baseline questionnaire option label; selected/unselected/missing value coding not verified; absence is not No|16|
+|official 2018 questionnaire and Codebook identify continuous household expenditure; no discrete response categories|16|
 |continuous conditional component; unit and route reviewed; no response-category labels; codebook frequencies omitted|14|
+|official 2011 questionnaire and Codebook identify continuous household expenditure; no discrete response categories|14|
 |2020代码本逐字段多选标签已核；条件分母|14|
 |official 2013 Codebook response categories transcribed; frequencies omitted; prior-interview recall route retained; release coding and eligible denominator require validation|14|
 |official 2018 Codebook response categories transcribed; frequencies omitted; prior-interview recall route retained; release coding and eligible denominator require validation|14|
 |official 2015 Codebook response categories transcribed; frequencies omitted; prior-interview recall route retained; release coding and eligible denominator require validation|14|
 |candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data|13|
+|official 2020 questionnaire and Codebook identify continuous household expenditure; no discrete response categories|13|
 |代码本逐字段值标签已核|12|
 |official questionnaire confirms response options; frequencies omitted; self-awareness route retained; release coding and eligible denominator require validation|11|
 |official questionnaire checkbox menu and codebook slot coding; frequencies omitted; absence is not a negative response outside the routed checklist|11|
@@ -91,12 +97,15 @@
 |selected option-code storage confirmed in authorized local table; route/denominator unresolved|5|
 |连续计数；条件提问；极值待核|4|
 |连续计数（夜数）；条件提问；极值待核|4|
+|official Codebook response categories reviewed; frequencies and percentages omitted|4|
 |full questionnaire menu transcribed without frequencies; 2011 codebook omits FL014 and later codebook menus may omit unobserved categories; not-currently-working prior-job route|4|
 |local paired endpoint storage and FM011=3 route checked; Codebook extreme upper value retained; do not derive amount|4|
 |official 2011 Codebook response categories transcribed; frequencies omitted; self-awareness route retained; release coding and eligible denominator require validation|3|
 |official questionnaire confirms DA017 option 14=Testicle; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics|3|
 |official 2020 Codebook response categories transcribed; frequencies omitted; self-awareness route retained; release coding and eligible denominator require validation|3|
 |official wave codebook category verified; selected option only; frequencies excluded|3|
+|official 2015 questionnaire and Codebook identify continuous household expenditure; no discrete response categories|3|
+|official 2013 questionnaire and Codebook identify continuous household expenditure; no discrete response categories|3|
 |official 2020 questionnaire response categories; frequencies omitted; conditional work-history transition route|3|
 |full official questionnaire response menu transcribed without frequencies; current employer firm route|3|
 |continuous monetary amount, not a categorical code; self-reported price for 20 cigarettes at respondent-specific current/pre-quit reference time|3|

@@ -22,7 +22,9 @@ FULL_PIPELINE_SCRIPTS = (
     "build_personal_income_crosswalk.py",
     "build_individual_transfer_income_crosswalk.py",
     "build_household_member_income_crosswalk.py",
+    "apply_2011_household_member_amount_review.py",
     "build_household_economic_exposure_crosswalk.py",
+    "apply_household_expenditure_metadata_review.py",
     "build_household_sale_proceeds_allocation_crosswalk.py",
     "build_household_additional_income_crosswalk.py",
     "build_household_renovation_expenditure_crosswalk.py",
@@ -106,6 +108,7 @@ FULL_PIPELINE_SCRIPTS = (
     "apply_2018_property_rent_amount_review.py",
     "apply_2018_household_property_value_review.py",
     "apply_housing_numeric_measure_review.py",
+    "apply_2011_household_member_amount_review.py",
     "apply_social_participation_source_status.py",
     "apply_parent_visit_codebook_labels.py",
     "sync_domain_catalog_labels.py",
@@ -121,8 +124,10 @@ FULL_PIPELINE_SCRIPTS = (
 # change is limited to catalogue propagation, value-label summaries, the
 # concept-source index, candidate-pair metadata, or final static JSON.
 FINALIZATION_PIPELINE_SCRIPTS = (
+    "apply_2011_household_member_amount_review.py",
     "apply_social_participation_source_status.py",
     "apply_parent_visit_codebook_labels.py",
+    "apply_household_expenditure_metadata_review.py",
     "build_charls_atlas_catalog.py",
     "summarize_value_label_coverage.py",
     "validate_do_not_analyze_triage.py",
@@ -142,6 +147,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_2018_property_rent_amount_review.py",
     "apply_2018_household_property_value_review.py",
     "apply_housing_numeric_measure_review.py",
+    "apply_2011_household_member_amount_review.py",
     "apply_social_participation_source_status.py",
     "apply_parent_visit_codebook_labels.py",
     "sync_domain_catalog_labels.py",

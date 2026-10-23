@@ -371,8 +371,9 @@ map_direct("residual_behavior_exposure_crosswalk_v1.csv", "e",
            documents=("source_archive",))
 map_direct("household_member_income_mapping_v1.csv", "e",
            statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
-           modules=("module",), caveats=("caveat",), semantics=("construct",),
-           archives=("source_archive",), documents=("source_archive",))
+           modules=("module",), caveats=("caveat",), semantics=("construct", "value_semantics"),
+           value_labels=("value_labels",), units=("unit",),
+           archives=("source_archive",), documents=("value_label_source", "source_archive"))
 map_direct("land_rental_income_crosswalk_v1.csv", "e",
            statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
            modules=("module",), caveats=("caveat",), semantics=("value_semantics",),

@@ -926,6 +926,10 @@ def main() -> None:
         "social_exposure_crosswalk_v1.csv", "wave", "code", "value_label_status", "value_label_source",
         re.compile(r"official Codebook identifies selected activity/device option; respondent-level storage, unselected state, and eligible denominator are unresolved; no response-value labels assigned", re.I),
     )
+    add_reviewed_status_without_value_label(
+        "household_member_income_mapping_v1.csv", "wave", "code", "value_label_status", "value_label_source",
+        re.compile(r"official (?:2011|2013|2015) questionnaire identifies Yuan amount period and household-member roster slot; continuous amount with no discrete response categories; authorized-release storage scale and special values remain unverified", re.I),
+    )
     add_reviewed_labels("housing_value_label_review_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", official_review)
     add_reviewed_labels(
         "housing_current_owner_relation_labels_2018_v1.csv", "wave", "code", "value_labels",
@@ -1716,6 +1720,25 @@ def main() -> None:
     objective_component = out["Candidate.Status"].eq("officially audited objective measurement crosswalk candidate")
     out.loc[no_labels & continuous, "Value.Label.Review"] = "continuous measure metadata available; see description/crosswalk"
     out.loc[no_labels & objective_component, "Value.Label.Review"] = "audited measurement component; derive concept per crosswalk"
+    household_exp_path = root / "audit" / "household_economic_exposure_mapping_v1.csv"
+    if household_exp_path.exists():
+        household_exp = pd.read_csv(household_exp_path, dtype=str, encoding="utf-8-sig").fillna("")
+        for item in household_exp.loc[household_exp["value_label_status"].ne("")].to_dict(orient="records"):
+            selected = (
+                out["Source.Wave"].astype(str).eq(str(item.get("wave", "")))
+                & out["Variable.Name"].str.lower().eq(str(item.get("code", "")).lower())
+                & out["epcf"].str.lower().eq("e")
+                & out["category"].eq("social determinants")
+                & out["subcategory"].eq("household expenditure and material resources")
+            )
+            if not selected.any():
+                raise SystemExit(f"Household expenditure metadata field missing from candidate catalog: {item.get('wave')}/{item.get('code')}")
+            out.loc[selected, "Value.Label.Review"] = item["value_label_status"]
+            out.loc[selected, "Value.Label.Source"] = item["value_label_source"]
+            out.loc[selected, "Value.Labels"] = item["value_labels"]
+            out.loc[selected, "Unit"] = item["unit"]
+            out.loc[selected, "Candidate.Status"] = "household-level expenditure/resource candidate; preserve item period and wave wording"
+            out.loc[selected, "Harmonization.Status"] = item["value_semantics"]
     # Apply onset-year units after generic review-status propagation so these
     # continuous fields retain their unit even when an earlier audit supplied
     # a more detailed route/semantic review string.
