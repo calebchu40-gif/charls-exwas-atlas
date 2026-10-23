@@ -781,7 +781,7 @@
     "concept_id": "housing_construction_year",
     "label": "Year dwelling was built",
     "domain": "Housing environment",
-    "caveat": "Year or interval category varies by wave; retain exact year and interval fields separately and do not impute a single year without a prespecified rule.",
+    "caveat": "2011–2018 fields concern the year the dwelling was built; exact-year and fallback interval responses are separate fields. Do not include 2020 move-in time or impute a single year without a prespecified rule.",
     "source_fields": [
       {
         "wave": "2011",
@@ -854,7 +854,15 @@
         "note": "catalog-label candidate; questionnaire review pending",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding"
-      },
+      }
+    ]
+  },
+  {
+    "concept_id": "residence_move_in_time",
+    "label": "Time respondent moved into current housing",
+    "domain": "Housing environment",
+    "caveat": "2020 asks when the Household Financial Respondent moved into the current housing, not when the building was constructed. Exact calendar year and fallback elapsed-time category are separate response fields; do not treat either as building age or combine without a validated response-format rule.",
+    "source_fields": [
       {
         "wave": "2020",
         "code": "i002",

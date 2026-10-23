@@ -19,6 +19,8 @@ class HousingValueLabelTests(unittest.TestCase):
         cls.current_owner_labels = read_csv(AUDIT / "housing_current_owner_relation_labels_2018_v1.csv")
         cls.housing_mapping = read_csv(AUDIT / "housing_exposure_variable_mapping_v1.csv")
         cls.food_mapping = read_csv(AUDIT / "food_environment_crosswalk_v1.csv")
+        with (ROOT / "site-prototype" / "dist" / "food_environment_v1.json").open(encoding="utf-8") as stream:
+            cls.food_site = json.load(stream)
         cls.catalog = read_csv(AUDIT / "charls_atlas_candidate_fields_v0.csv")
         cls.crosswalk = read_csv(AUDIT / "ep_concept_source_crosswalk_v1.csv")
         with (ROOT / "site-prototype" / "dist" / "housing_catalog_v1.json").open(encoding="utf-8") as stream:
@@ -178,6 +180,16 @@ class HousingValueLabelTests(unittest.TestCase):
                 self.assertIn("Household Financial Respondent's house", row["Harmonization.Status"])
             site = next(r for r in self.housing_site if r["wave"] == wave and r["code"].lower() == code)
             self.assertEqual(site["unit"], "count")
+
+    def test_2020_move_in_time_is_not_mapped_as_building_construction_year(self):
+        mapping = {(row["wave"], row["code"]): row["concept_id"] for row in self.food_mapping}
+        self.assertEqual(mapping[("2020", "i002")], "residence_move_in_time")
+        self.assertEqual(mapping[("2020", "i003")], "residence_move_in_time")
+        self.assertNotIn(("2020", "i002"), [(w, c) for w, c in mapping if mapping[(w, c)] == "housing_construction_year"])
+        move = next(row for row in self.food_site if row["concept_id"] == "residence_move_in_time")
+        self.assertIn("not when the building was constructed", move["caveat"])
+        fields = {(row["wave"], row["code"]): row for row in move["source_fields"]}
+        self.assertEqual(set(fields), {("2020", "i002"), ("2020", "i003")})
 
 
 if __name__ == "__main__":

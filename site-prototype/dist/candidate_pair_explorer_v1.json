@@ -9305,7 +9305,7 @@
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Year or interval category varies by wave; retain exact year and interval fields separately and do not impute a single year without a prespecified rule. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "caveat": "2011–2018 fields concern the year the dwelling was built; exact-year and fallback interval responses are separate fields. Do not include 2020 move-in time or impute a single year without a prespecified rule. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
             },
             {
               "code": "i005_1",
@@ -9315,7 +9315,7 @@
               "value_labels": "1=0-5 years; 2=5-10 years; 3=10-20 years; 4=20-30 years; 5=30-40 years; 6=Above 40 years",
               "value_semantics": "",
               "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Year or interval category varies by wave; retain exact year and interval fields separately and do not impute a single year without a prespecified rule. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "caveat": "2011–2018 fields concern the year the dwelling was built; exact-year and fallback interval responses are separate fields. Do not include 2020 move-in time or impute a single year without a prespecified rule. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
             }
           ]
         },
@@ -28338,7 +28338,7 @@
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Year or interval category varies by wave; retain exact year and interval fields separately and do not impute a single year without a prespecified rule."
+              "caveat": "2011–2018 fields concern the year the dwelling was built; exact-year and fallback interval responses are separate fields. Do not include 2020 move-in time or impute a single year without a prespecified rule."
             },
             {
               "code": "i005_1",
@@ -28348,7 +28348,7 @@
               "value_labels": "1=0-5 years; 2=5-10 years; 3=10-20 years; 4=20-30 years; 5=30-40 years; 6=Above 40 years",
               "value_semantics": "",
               "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Year or interval category varies by wave; retain exact year and interval fields separately and do not impute a single year without a prespecified rule."
+              "caveat": "2011–2018 fields concern the year the dwelling was built; exact-year and fallback interval responses are separate fields. Do not include 2020 move-in time or impute a single year without a prespecified rule."
             }
           ]
         },
@@ -50734,7 +50734,7 @@
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Year or interval category varies by wave; retain exact year and interval fields separately and do not impute a single year without a prespecified rule."
+              "caveat": "2011–2018 fields concern the year the dwelling was built; exact-year and fallback interval responses are separate fields. Do not include 2020 move-in time or impute a single year without a prespecified rule."
             },
             {
               "code": "i005_1",
@@ -50744,7 +50744,7 @@
               "value_labels": "1=0-5 years; 2=5-10 years; 3=10-20 years; 4=20-30 years; 5=30-40 years; 6=Above 40 years",
               "value_semantics": "",
               "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Year or interval category varies by wave; retain exact year and interval fields separately and do not impute a single year without a prespecified rule."
+              "caveat": "2011–2018 fields concern the year the dwelling was built; exact-year and fallback interval responses are separate fields. Do not include 2020 move-in time or impute a single year without a prespecified rule."
             }
           ]
         },
@@ -74578,7 +74578,7 @@
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Year or interval category varies by wave; retain exact year and interval fields separately and do not impute a single year without a prespecified rule."
+              "caveat": "2011–2018 fields concern the year the dwelling was built; exact-year and fallback interval responses are separate fields. Do not include 2020 move-in time or impute a single year without a prespecified rule."
             },
             {
               "code": "i005_1",
@@ -74588,7 +74588,7 @@
               "value_labels": "1=0-5 years; 2=5-10 years; 3=10-20 years; 4=20-30 years; 5=30-40 years; 6=More than 40 years",
               "value_semantics": "",
               "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Year or interval category varies by wave; retain exact year and interval fields separately and do not impute a single year without a prespecified rule."
+              "caveat": "2011–2018 fields concern the year the dwelling was built; exact-year and fallback interval responses are separate fields. Do not include 2020 move-in time or impute a single year without a prespecified rule."
             }
           ]
         },
@@ -95541,6 +95541,36 @@
           ]
         },
         {
+          "concept_id": "residence_move_in_time",
+          "label": "Time respondent moved into current housing",
+          "domain": "Housing environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "i002",
+              "label": "Time House Built",
+              "module": "Household_Income",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "2020 asks when the Household Financial Respondent moved into the current housing, not when the building was constructed. Exact calendar year and fallback elapsed-time category are separate response fields; do not treat either as building age or combine without a validated response-format rule."
+            },
+            {
+              "code": "i003",
+              "label": "Time Interval House Built",
+              "module": "Household_Income",
+              "unit": "",
+              "value_labels": "1=0-5 years; 2=5-10 years; 3=10-20 years; 4=20-30 years; 5=30-40 years; 6=More than 40 years",
+              "value_semantics": "",
+              "mapping_status": "catalog-label candidate; questionnaire review pending",
+              "caveat": "2020 asks when the Household Financial Respondent moved into the current housing, not when the building was constructed. Exact calendar year and fallback elapsed-time category are separate response fields; do not treat either as building age or combine without a validated response-format rule."
+            }
+          ]
+        },
+        {
           "concept_id": "toilet_access",
           "label": "Toilet access and sanitation",
           "domain": "Housing environment",
@@ -95807,36 +95837,6 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
               "caveat": "Candidate employment-protection indicator. 2011 label says labor contract without ‘written’; 2013–2020 wording explicitly asks whether a written contract exists, so 2011 requires separate review."
-            }
-          ]
-        },
-        {
-          "concept_id": "housing_construction_year",
-          "label": "Year dwelling was built",
-          "domain": "Housing environment",
-          "roles": [
-            "e"
-          ],
-          "source_fields": [
-            {
-              "code": "i002",
-              "label": "Time House Built",
-              "module": "Household_Income",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Year or interval category varies by wave; retain exact year and interval fields separately and do not impute a single year without a prespecified rule."
-            },
-            {
-              "code": "i003",
-              "label": "Time Interval House Built",
-              "module": "Household_Income",
-              "unit": "",
-              "value_labels": "1=0-5 years; 2=5-10 years; 3=10-20 years; 4=20-30 years; 5=30-40 years; 6=More than 40 years",
-              "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Year or interval category varies by wave; retain exact year and interval fields separately and do not impute a single year without a prespecified rule."
             }
           ]
         },
