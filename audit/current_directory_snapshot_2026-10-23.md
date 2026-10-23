@@ -17,4 +17,4 @@
 
 ## 验证
 
-`python scripts/build_ep_atlas_metadata.py --finalize-only`成功完成；73项测试通过；延迟加载器Node测试通过；`node --check site-prototype/dist/app.js`通过；网站目录33个JSON均可解析；E/P/C三份目录分片与主目录筛选结果完全一致；33条`DO NOT ANALYZE`锁定与分流清单完全一致；`git diff --check`通过。首页不加载目录JSON；Pages部署包排除仅供构建/审计的主目录JSON，公开行为与E/P/C分片及专题目录按需加载。私有派生表ID/波次验证中2011/2015/2018/2020为PASS、2013因缺少两个必需样本标记为CHECK；逐波权重覆盖汇总见[`survey_design_weight_review_v1.md`](survey_design_weight_review_v1.md)。公开元数据重建未读取任何CHARLS个人记录。
+`python scripts/build_ep_atlas_metadata.py --finalize-only`成功完成；73项测试通过；延迟加载器Node测试通过；`node --check site-prototype/dist/app.js`通过；网站目录33个JSON均可解析；E/P/C三份目录分片与主目录筛选结果完全一致；33条`DO NOT ANALYZE`锁定与分流清单完全一致；`git diff --check`通过。首页不加载目录JSON；Pages部署包排除仅供构建/审计的主目录JSON，公开行为与E/P/C分片及专题目录按需加载。私有派生表ID/波次验证中2011/2015/2018/2020为PASS、2013因缺少两个必需样本标记为CHECK；逐波权重覆盖汇总见[`survey_design_weight_review_v1.md`](survey_design_weight_review_v1.md)。公开元数据重建未读取任何CHARLS个人记录。分片站点已部署：GitHub Actions Validate #78、Pages #23成功；线上app.js?v=58和E/P/C分片HTTP 200，部署主目录HTTP 404。
