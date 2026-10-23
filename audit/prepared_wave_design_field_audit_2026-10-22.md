@@ -31,6 +31,22 @@ Wave 2（2013）的官方`Weights.dta`同时包含横断面/纵向样本标志�
 
 这次复验没有改变关键闸门：2013当前派生表仍缺官方 `crosssection` / `longitudinal` 样本标志，2011/2013样本资格也不能用非缺失权重代替；2013/2015活动模块有子样本设计，客观体检/血检还要用专用资格与权重。原始官方发行ZIP/RAR和来源校验值仍未在受控数据根目录，因此已修正的2013合并逻辑尚未从源档案重建验证。所有派生表与逐对精确可用人数仅保留在本机受控目录，禁止推送到GitHub或放进协作者交接包。
 
+## 官方代码本逐波结构核对（2026-10-24）
+
+为把“存在权重/PSU资料”与“完整方差设计可用”分开，本轮只核对官方材料中的字段名称和定义，不转录代码本的描述统计或频数：
+
+| 波次 | 官方材料明确列出的设计资料 | 解释与限制 |
+|---|---|---|
+| 2011 | 基线用户指南定义村/居委会为PSU；官方数据页单列 `PSU` 和 `Weight` 文件，并另列血检数据及血检指南。 | 社区ID只能作为候选PSU键，须用原始发行版核验连接；目前未确认公开文件中显式方差分层变量名。 |
+| 2013 | Wave 2 Codebook 的 Weights 模块列有 `crosssection`、`longitudinal`、家庭/个人横断面权重、纵向权重和 `Biomarker_weight`；PSU模块列有 `communityID`、`province`、`city`、`urban_nbs`。 | `urban_nbs`是NBS城乡类别，不是方差分层ID。当前本地派生表仍缺两个官方样本标记；需从权重文件按ID恢复，不能用权重是否非空倒推。 |
+| 2015 | Codebook 将 `Blood_weight`、`Biomarker_weight` 与一般家庭/个人横断面权重分列，并单列 `Sample Information` 文件及 `crosssection`。 | 血检、现场生物标志物测量和一般个人问卷的目标样本不同，应按分析指标核对资格并选权重；不能互换专用权重。 |
+| 2018 | User Guide说明个人横断面权重、`Sample_Info`中的`crosssection`标记，并称PSU信息与此前波次相同；该指南不提供Wave 3起通用面板权重。 | 面板权重需要按目标分析及流失调整构造；PSU键匹配本身不等同于方差估计设置完整。 |
+| 2020 | Codebook 将个人/家庭抽样权重列在 `AUX2 Sampling Weights` 模块。 | 必须结合Wave 5用户指南、样本信息文件和具体测量模块核验权重适用范围；存在个人权重不能证明其覆盖所有测量子样本。 |
+
+上述材料仍未确认可直接使用的逐波方差分层字段、复制权重或适用于所有测量模块的统一方差方案。官方对抽样分层/排序背景的描述不能用于反向生成个体分层ID；省份、城乡类型、县市代码和`communityID`均不得被自行拼作分层变量。原始发行文件版本和目标样本资格仍须在受控数据目录中逐波核验，之后再由统计方案明确可用的方差估计方法；在此之前不报告完整设计校正的关联推断。
+
+核对依据：`sources_official/CHARLS_2013_Codebook_extracted.txt`（Weights、PSU章节），`sources_official/CHARLS_2015_Codebook_extracted.txt`（Cross-Sectional Weights、Sample Information章节），`sources_official/CHARLS_2018_Users_Guide_extracted.txt`（Weighting、Dataset Information章节），`sources_official/CHARLS_2020_Codebook_extracted.txt`（AUX2 Sampling Weights），及各波官方数据页。代码本内频数与权重描述统计未用于本节。
+
 ## 官方资料
 
 - [`CHARLS 2011 National Baseline User Guide`](../sources_official/CHARLS_2011_National_Baseline_Users_Guide_extracted.txt)：村/居委会作为PSU及抽样排序说明。
