@@ -1471,6 +1471,33 @@ def main() -> None:
             f"reported first diagnosis/awareness time; Codebook unit={unit}; not biological disease onset. "
             "Keep year and age fields separate; preserve route and special values; Codebook extrema do not define a valid range."
         )
+    # Disability-onset year components are continuous time measures. Surface
+    # their unit and route review state even though they have no categorical
+    # value labels; the crosswalk distinguishes current-wave and prior-wave
+    # verification branches and records the corresponding official sources.
+    disability_path = root / "audit" / "disability_history_crosswalk_v1.csv"
+    if disability_path.exists():
+        disability_rows = pd.read_csv(disability_path, dtype=str, encoding="utf-8-sig").fillna("")
+        onset_rows = disability_rows[
+            disability_rows["field_role"].str.contains("onset year", case=False, na=False)
+        ]
+        for item in onset_rows.to_dict(orient="records"):
+            wave = str(item.get("wave", ""))
+            code = str(item.get("code", "")).lower()
+            selected = (
+                out["Source.Wave"].astype(str).eq(wave)
+                & out["Variable.Name"].str.lower().eq(code)
+                & out["Value.Labels"].eq("")
+            )
+            if not selected.any():
+                continue
+            out.loc[selected, "Concept.Unit.Candidates"] = "calendar year"
+            out.loc[selected, "Value.Label.Review"] = "numeric/time unit metadata available; no discrete labels assigned"
+            out.loc[selected, "Value.Label.Source"] = str(item.get("value_label_source", ""))
+            out.loc[selected, "Harmonization.Status"] = (
+                out.loc[selected, "Harmonization.Status"].astype(str)
+                + "; reported onset year in calendar years; conditional disability/verification route; preserve special values; not biological disease onset"
+            ).str.strip("; ")
     # DA030_1/DA030_2 are the corresponding prostate-illness timing
     # components. The official Codebooks label these as calendar year and
     # age in years. They are not categorical disease outcomes, and their
@@ -1564,8 +1591,19 @@ def main() -> None:
     objective_component = out["Candidate.Status"].eq("officially audited objective measurement crosswalk candidate")
     out.loc[no_labels & continuous, "Value.Label.Review"] = "continuous measure metadata available; see description/crosswalk"
     out.loc[no_labels & objective_component, "Value.Label.Review"] = "audited measurement component; derive concept per crosswalk"
+    # Apply onset-year units after generic review-status propagation so these
+    # continuous fields retain their unit even when an earlier audit supplied
+    # a more detailed route/semantic review string.
     args.out_dir.mkdir(parents=True, exist_ok=True)
     out = out.drop_duplicates(source_identity, keep="first")
+    if disability_path.exists():
+        for item in onset_rows.to_dict(orient="records"):
+            selected = (
+                out["Source.Wave"].astype(str).eq(str(item.get("wave", "")))
+                & out["Variable.Name"].str.lower().eq(str(item.get("code", "")).lower())
+                & out["Value.Labels"].fillna("").eq("")
+            )
+            out.loc[selected, "Concept.Unit.Candidates"] = "calendar year"
     out.to_csv(args.out_dir / "charls_atlas_candidate_fields_v0.csv", index=False, encoding="utf-8-sig")
 
     def summarize_label_review(values: pd.Series) -> str:

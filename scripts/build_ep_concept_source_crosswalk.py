@@ -676,6 +676,22 @@ field_catalog["Concept.Label.Candidates"] = ["; ".join(sorted({x[1] for x in xs}
 field_catalog["Concept.Mapping.Source"] = ["; ".join(sorted({x[2] for x in xs})) for xs in mapped_fields]
 field_catalog["Concept.Mapping.Status"] = [" | ".join(sorted({x[3] for x in xs})) for xs in mapped_fields]
 field_catalog["Concept.Unit.Candidates"] = ["; ".join(sorted({f"{x[0]}={x[4]}" for x in xs if x[4]})) for xs in mapped_fields]
+# Preserve the audited continuous calendar-year unit for disability-onset
+# fields; the concept-source mapping layer otherwise replaces this metadata
+# with an empty string because these timing fields have no mapped discrete unit.
+disability_crosswalk_path = AUDIT / "disability_history_crosswalk_v1.csv"
+if disability_crosswalk_path.exists():
+    disability_crosswalk = pd.read_csv(disability_crosswalk_path, dtype=str, encoding="utf-8-sig").fillna("")
+    onset_years = disability_crosswalk[
+        disability_crosswalk["field_role"].str.contains("onset year", case=False, na=False)
+    ]
+    for item in onset_years.to_dict(orient="records"):
+        selected = (
+            field_catalog["Source.Wave"].astype(str).eq(str(item.get("wave", "")))
+            & field_catalog["Variable.Name"].str.lower().eq(str(item.get("code", "")).lower())
+            & field_catalog["Value.Labels"].fillna("").eq("")
+        )
+        field_catalog.loc[selected, "Concept.Unit.Candidates"] = "calendar year"
 # DA009's numeric time fields have a verified wave-specific unit, but their
 # concept mappings deliberately keep diagnosis year and age as separate
 # concepts. Preserve that unit metadata in the catalog even when the source

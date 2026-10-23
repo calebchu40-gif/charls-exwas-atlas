@@ -229,6 +229,21 @@ class CatalogReviewStatusTests(unittest.TestCase):
                 self.assertIn("self-awareness route retained", row.get("Value.Label.Review", ""))
                 self.assertIn("eligible denominator require validation", row.get("Value.Label.Review", ""))
 
+    def test_disability_onset_years_are_reviewed_as_continuous_time_measures(self):
+        rows = [
+            row for row in self.catalog
+            if row.get("epcf", "").lower() == "p"
+            and row.get("Variable.Name", "").lower().startswith("da006")
+            and "reported disability history" in row.get("subcategory", "").lower()
+            and not row.get("Value.Labels", "").strip()
+        ]
+        self.assertEqual(len(rows), 22)
+        for row in rows:
+            self.assertFalse(row.get("Value.Labels", "").strip())
+            self.assertEqual(row.get("Concept.Unit.Candidates"), "calendar year")
+            self.assertEqual(row.get("Value.Label.Review"), "numeric/time unit metadata available; no discrete labels assigned")
+            self.assertIn("conditional disability/verification route", row.get("Harmonization.Status", ""))
+
     def test_unreviewed_chronic_ancillary_fields_are_not_marked_as_reviewed(self):
         import csv
         with (ROOT / "audit/chronic_disease_ancillary_variable_mapping_v1.csv").open(encoding="utf-8-sig", newline="") as handle:
