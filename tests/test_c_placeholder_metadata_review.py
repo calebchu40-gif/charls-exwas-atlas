@@ -10,14 +10,14 @@ class CPlaceholderMetadataReviewTests(unittest.TestCase):
         cls.rows=json.loads((ROOT/"site-prototype/dist/catalog_c.json").read_text(encoding="utf-8"))
         cls.by_key={(r["Source.Wave"],r["Variable.Name"].lower()):r for r in cls.rows}
     def test_audited_family_counts_and_sources(self):
-        self.assertEqual(len(self.audit),24)
+        self.assertEqual(len(self.audit),47)
         counts={family:sum(r["metadata_family"]==family for r in self.audit) for family in {r["metadata_family"] for r in self.audit}}
-        self.assertEqual(counts,{"unsupported prior-wave disease-awareness slots":15,"unlisted chronic-disease index placeholder":5,"inactive household lending and debt legacy fields":4})
+        self.assertEqual(counts,{"unsupported prior-wave disease-awareness slots":15,"unlisted chronic-disease index placeholder":5,"inactive household lending and debt legacy fields":4,"household debt unfolding-bracket response metadata":8,"personal wage deduction scope and response-unit selectors":3,"household income response-format selectors":3,"chair setup for repeated chair-stand test":3,"household financial respondent source":2,"inactive fixed-capital legacy/format fields":2,"2020 pandemic work-module selection flag":1,"unresolved questionnaire and Codebook field identity conflict":1})
         for item in self.audit:self.assertTrue((ROOT/item["official_source"]).exists())
     def test_placeholders_remain_c_only_and_do_not_gain_labels(self):
         for item in self.audit:
             row=self.by_key[(item["wave"],item["code"].lower())]
             self.assertEqual(row["epcf"],"c");self.assertEqual(row["Value.Labels"],"")
             self.assertNotEqual(row["Value.Label.Review"],"not yet reviewed")
-            self.assertIn("C metadata only",row["Value.Label.Review"])
+            self.assertIn("metadata only",row["Value.Label.Review"])
 if __name__=="__main__":unittest.main()

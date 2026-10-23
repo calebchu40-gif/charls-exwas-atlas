@@ -11,6 +11,14 @@ FAMILIES = {
     "unsupported prior-wave disease-awareness slots": 15,
     "unlisted chronic-disease index placeholder": 5,
     "inactive household lending and debt legacy fields": 4,
+    "household debt unfolding-bracket response metadata": 8,
+    "personal wage deduction scope and response-unit selectors": 3,
+    "household income response-format selectors": 3,
+    "chair setup for repeated chair-stand test": 3,
+    "household financial respondent source": 2,
+    "inactive fixed-capital legacy/format fields": 2,
+    "2020 pandemic work-module selection flag": 1,
+    "unresolved questionnaire and Codebook field identity conflict": 1,
 }
 def compact(value): return re.sub(r"[^a-z0-9]", "", value.lower())
 def propagate():
@@ -38,21 +46,37 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument("--propagate",action="store_true");args=parser.parse_args()
     if args.propagate: propagate();return
     rows=json.loads(CATALOG.read_text(encoding="utf-8"))
-    targets=[r for r in rows if r.get("subcategory") in FAMILIES and r.get("Value.Label.Review","").strip().lower()=="not yet reviewed"]
+    current=[r for r in rows if r.get("subcategory") in FAMILIES and r.get("Value.Label.Review","").strip().lower()=="not yet reviewed"]
+    prior_keys=set()
+    if OUTPUT.exists():
+        prior=pd.read_csv(OUTPUT,dtype=str,encoding="utf-8-sig").fillna("")
+        prior_keys={(str(r.wave),str(r.code).lower()) for r in prior.itertuples(index=False)}
+    current_keys={(str(r["Source.Wave"]),str(r["Variable.Name"]).lower()) for r in current}
+    target_keys=prior_keys|current_keys
+    targets=[r for r in rows if (str(r.get("Source.Wave","")),str(r.get("Variable.Name"," ")).lower()) in target_keys and str(r.get("epcf"," ")).lower()=="c"]
     counts={family:sum(r["subcategory"]==family for r in targets) for family in FAMILIES}
-    if counts!=FAMILIES: raise SystemExit(f"Unexpected C placeholder family counts: {counts}")
+    if counts!=FAMILIES: raise SystemExit(f"Unexpected C metadata family counts: {counts}")
     audit=[]
     for r in targets:
         wave=str(r["Source.Wave"]);code=str(r["Variable.Name"]);source=f"sources_official/CHARLS_{wave}_Codebook_extracted.txt";path=ROOT/source
         if not path.exists() or compact(code) not in compact(path.read_text(encoding="utf-8",errors="replace")):
             raise SystemExit(f"Codebook field not confirmed: {wave}/{code}")
-        if r["subcategory"]=="unsupported prior-wave disease-awareness slots":
-            note="Unsupported prior-wave disease-slot placeholder; no disease identity or complete response set is established. Do not infer No from a blank slot; exclude from analysis."
-        elif r["subcategory"]=="unlisted chronic-disease index placeholder":
-            note="Unlisted disease-index placeholder; source field exists but no standardized condition identity is established. Do not infer a phenotype or harmonize."
-        else:
-            note="Inactive 2015 household lending/debt legacy field; official Codebook supplies no observed response categories or amount. Retain as source metadata only."
-        audit.append({"wave":wave,"code":code,"metadata_family":r["subcategory"],"official_source":source,"source_field_label":r.get("Variable.Description",""),"review_status":"official wave Codebook field checked; unresolved/legacy C metadata only; no response-value categories assigned","value_labels":"","catalog_note":note})
+        family=r["subcategory"]
+        notes={
+          "unsupported prior-wave disease-awareness slots":"Unsupported prior-wave disease-slot placeholder; no disease identity or complete response set is established. Do not infer No from a blank slot; exclude from analysis.",
+          "unlisted chronic-disease index placeholder":"Unlisted disease-index placeholder; source field exists but no standardized condition identity is established. Do not infer a phenotype or harmonize.",
+          "inactive household lending and debt legacy fields":"Inactive 2015 household lending/debt legacy field; official Codebook supplies no observed response categories or amount. Retain as source metadata only.",
+          "household debt unfolding-bracket response metadata":"Conditional fallback debt-bracket protocol after the exact amount is not supplied; bounds are not an exact debt amount. Do not calculate a midpoint or treat components as independent exposures.",
+          "personal wage deduction scope and response-unit selectors":"Interview assistance/proxy or response-scope metadata only; not a respondent exposure, phenotype, or routine covariate.",
+          "household income response-format selectors":"Pre-2018 household rental-income response-format metadata; distinguish amount/not-applicable routing from later Yes/No status items. Do not treat as a household income measure.",
+          "chair setup for repeated chair-stand test":"Chair height/setup protocol metadata for the repeated chair-stand assessment; not a participant phenotype. Preserve instrument setup when interpreting the linked performance measure.",
+          "household financial respondent source":"Identifies the informant selected for the household financial module; not a respondent trait or independent exposure. Retain only for source/response context.",
+          "inactive fixed-capital legacy/format fields":"2015 inactive or unresolved fixed-capital legacy/format field; do not infer a current asset value or response category from the field label.",
+          "2020 pandemic work-module selection flag":"CAPI work-module selection/eligibility flag; not a pandemic exposure or work outcome. Preserve selection route and do not substitute it for respondent eligibility without release validation.",
+          "unresolved questionnaire and Codebook field identity conflict":"Questionnaire/Codebook field-identity conflict. Keep response labels blank and retain DO NOT ANALYZE until the official field mapping and released-data coding are reconciled.",
+        }
+        note=notes[family]
+        audit.append({"wave":wave,"code":code,"metadata_family":family,"official_source":source,"source_field_label":r.get("Variable.Description",""),"review_status":"official wave Codebook field checked; measurement/routing metadata only; no response-value categories assigned","value_labels":"","catalog_note":note})
     pd.DataFrame(audit).sort_values(["wave","metadata_family","code"]).to_csv(OUTPUT,index=False,encoding="utf-8-sig")
     print(f"Audited {len(audit)} C placeholder/legacy fields across official Codebooks; no categories inferred.")
 if __name__=="__main__":main()

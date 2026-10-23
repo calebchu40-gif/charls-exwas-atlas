@@ -6,7 +6,7 @@ This snapshot reads only the public, generated metadata in `site-prototype/dist/
 |---|---:|---:|
 | E exposure candidates | 4,723 | 0 |
 | P phenotype candidates | 2,067 | 0 |
-| C covariate/measurement metadata | 979 | 233 |
+| C covariate/measurement metadata | 979 | 210 |
 
 The current E queue contains no rows with a generic pending value-label status. The latest batch audited the final 12 fields across household expenditure, interwave work counts, rental-income status, COVID-period wage direction, occupational classification, and pandemic/work-history items. Several retain specific unresolved source or route caveats and `DO NOT ANALYZE` locks. These are field rows, not independent concepts or tests.
 
@@ -76,3 +76,8 @@ The 41 prior-interview response-history/routing flags and 14 prior-wave diagnosi
 ## Latest C metadata batch: disease-slot placeholders and inactive legacy fields
 
 A further 24 C-only fields were reviewed against the official Codebooks: 15 unsupported prior-wave disease slots, five unlisted disease-index placeholders and four inactive 2015 household lending/debt fields. No response categories were inferred; unsupported disease blanks are not “No.” The latest C generic-pending count is 233. See [`c_placeholder_legacy_field_review_2026-10-23.md`](c_placeholder_legacy_field_review_2026-10-23.md).
+
+
+## Latest C metadata batch: measurement protocol and selectors
+
+An additional 23 C fields were checked: debt unfolding-bracket protocol, household/person response selectors, interview assistance, chair setup, financial-respondent source, pandemic work-module selection and one unresolved questionnaire/Codebook conflict. They remain measurement/routing metadata; the conflict stays locked. C generic pending is now 210, all within the broad demographic/design/socioeconomic covariate-candidate family, so the remaining queue needs causal/model-role review rather than category-label transcription. See [`c_measurement_protocol_metadata_review_2026-10-23.md`](c_measurement_protocol_metadata_review_2026-10-23.md).
