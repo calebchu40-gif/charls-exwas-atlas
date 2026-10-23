@@ -79,6 +79,28 @@ class HousingValueLabelTests(unittest.TestCase):
         for key in (("2011", "i020"), ("2013", "i020"), ("2015", "i020"), ("2018", "i020"), ("2020", "i019")):
             self.assertEqual(lookup[key]["value_labels"], "1=Yes; 2=No")
 
+    def test_fuel_routes_and_source_citations_are_reviewed_across_all_five_waves(self):
+        by_concept = {item["concept_id"]: item for item in self.food_site}
+        for concept_id in ("heating_energy", "cooking_fuel_main"):
+            fields = by_concept[concept_id]["source_fields"]
+            self.assertEqual({field["wave"] for field in fields}, {"2011", "2013", "2015", "2018", "2020"})
+            for field in fields:
+                self.assertIn("official wave-specific questionnaire and Codebook reviewed", field["note"])
+                self.assertIn("sources_official/CHARLS_", field["source_document"])
+                self.assertIn("housing_fuel_source_review_2026-10-24.md", field["note"])
+        heating = by_concept["heating_energy"]["caveat"]
+        cooking = by_concept["cooking_fuel_main"]["caveat"]
+        self.assertIn("2011–2018", heating)
+        self.assertIn("XFinancialResp's house", heating)
+        self.assertIn("2020 adds solar", cooking)
+        self.assertIn("2018/2020 include a no-cooking response", cooking)
+        self.assertIn("not measured", cooking)
+        self.assertIn("XFinancialResp's house", cooking)
+        self.assertIn("8=Heating Provided", next(f for f in by_concept["heating_energy"]["source_fields"] if f["wave"] == "2018")["value_labels"])
+        self.assertIn("7=Solar Energy", next(f for f in by_concept["cooking_fuel_main"]["source_fields"] if f["wave"] == "2020")["value_labels"])
+        app = (ROOT / "site-prototype" / "dist" / "app.js").read_text(encoding="utf-8")
+        self.assertIn("field.note,field.source_document", app)
+
     def test_basic_sanitation_energy_and_shower_fields_keep_wave_code_shifts(self):
         lookup = {(row["wave"], row["code"]): row for row in self.labels}
         for key in (("2011", "i016"), ("2013", "i016"), ("2018", "i016"), ("2020", "i015"),

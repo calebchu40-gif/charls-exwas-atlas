@@ -28,7 +28,7 @@ const moodItemsLoaded=deferJson('./mood_items_v1.json?v=2','moodConcepts');
 const cognitionItemsLoaded=deferJson('./cognition_items_v1.json?v=1','cognitionConcepts');
 const behaviorExposuresLoaded=deferJson('./behavior_exposures_v1.json?v=3','behaviorExposures');
 const healthSymptomsLoaded=deferJson('./health_symptoms_v1.json?v=3','healthSymptoms');
-const foodEnvironmentLoaded=deferJson('./food_environment_v1.json?v=3','foodEnvironment');
+const foodEnvironmentLoaded=deferJson('./food_environment_v1.json?v=4','foodEnvironment');
 const workExposuresLoaded=deferJson('./work_exposures_v1.json?v=3','workExposures');
 const communityExposuresLoaded=deferJson('./community_exposures_v1.json?v=3','communityExposures');
 const socialExposuresLoaded=deferJson('./social_exposures_v1.json?v=3','socialExposures');
@@ -239,9 +239,9 @@ healthSymptomsLoaded.then(items=>{renderHealthSymptoms(items);['symptomSearch','
 
 function renderFoodEnvironment(items){
  const term=byId('foodEnvSearch').value.trim().toLocaleLowerCase(),wave=byId('foodEnvWave').value,matches=[];
- for(const concept of items)for(const field of concept.source_fields){if(wave&&field.wave!==wave)continue;if(term&&!`${concept.concept_id} ${concept.label} ${concept.domain} ${field.code} ${field.source_label} ${field.module} ${field.value_labels} ${field.value_semantics} ${field.value_label_status} ${field.unit||''} ${field.source_evidence||''} ${concept.caveat}`.toLocaleLowerCase().includes(term))continue;matches.push({concept,field})}
+ for(const concept of items)for(const field of concept.source_fields){if(wave&&field.wave!==wave)continue;if(term&&!`${concept.concept_id} ${concept.label} ${concept.domain} ${field.code} ${field.source_label} ${field.module} ${field.value_labels} ${field.value_semantics} ${field.value_label_status} ${field.unit||''} ${field.source_evidence||''} ${field.note||''} ${field.source_document||''} ${concept.caveat}`.toLocaleLowerCase().includes(term))continue;matches.push({concept,field})}
  const body=byId('foodEnvRows');body.replaceChildren();
- for(const {concept,field} of matches){const tr=document.createElement('tr');for(const v of [concept.concept_id,concept.label,concept.domain,field.code,field.wave,field.module,field.source_label,field.value_labels||'值标签待核',[field.value_label_status,field.value_label_source,concept.caveat].filter(Boolean).join('；')]){const td=document.createElement('td');td.textContent=v;tr.append(td)}body.append(tr)}
+ for(const {concept,field} of matches){const tr=document.createElement('tr');for(const v of [concept.concept_id,concept.label,concept.domain,field.code,field.wave,field.module,field.source_label,field.value_labels||'值标签待核',[field.value_label_status,field.value_label_source,field.note,field.source_document,concept.caveat].filter(Boolean).join('；')]){const td=document.createElement('td');td.textContent=v;tr.append(td)}body.append(tr)}
  byId('foodEnvCount').textContent=`筛选命中 ${matches.length} 条源字段映射，涉及 ${new Set(matches.map(x=>x.concept.concept_id)).size} 个概念；字段映射数不是独立指标数。`;
 }
 foodEnvironmentLoaded.then(items=>{renderFoodEnvironment(items);['foodEnvSearch','foodEnvWave'].forEach(id=>byId(id).addEventListener('input',()=>renderFoodEnvironment(items)));document.querySelector('[data-view="foodEnvironment"]').addEventListener('click',()=>renderFoodEnvironment(items))}).catch(err=>{byId('foodEnvCount').textContent=`饮食/环境目录载入失败：${err.message}`});

@@ -44,6 +44,7 @@ FULL_PIPELINE_SCRIPTS = (
     "build_household_asset_exposure_crosswalk.py",
     "build_household_lending_debt_crosswalk.py",
     "build_food_environment_crosswalk.py",
+    "apply_housing_fuel_source_review.py",
     "build_housing_exposure_crosswalk.py",
     "build_housing_owner_relation_labels.py",
     "build_2018_current_home_owner_relation_labels.py",

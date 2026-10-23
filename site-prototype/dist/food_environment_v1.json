@@ -627,7 +627,7 @@
     "concept_id": "heating_energy",
     "label": "Main heating energy source",
     "domain": "Housing environment",
-    "caveat": "Nominal fuel/source category; retain wave-specific value labels and never infer an ordered exposure scale.",
+    "caveat": "Nominal household heating-source proxy, not measured energy use or pollution dose. In 2011–2018, the source item is routed after the heating-availability question; 2020 instead includes an explicit no-heating response in the source item. Preserve these different denominators and the 2020 household referent (XFinancialResp's house). See audit/housing_fuel_source_review_2026-10-24.md.",
     "source_fields": [
       {
         "wave": "2011",
@@ -635,7 +635,8 @@
         "module": "housing_characteristics",
         "source_label": "Heating Energy Source",
         "value_labels": "1=Solar; 2=Coal; 3=Natural gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+        "note": "official wave-specific questionnaire and Codebook reviewed; question wording, response categories, and route differences verified; see audit/housing_fuel_source_review_2026-10-24.md",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -643,7 +644,8 @@
         "module": "Housing_Characteristics",
         "source_label": "What is the main heating energy source?",
         "value_labels": "1=Solar; 2=Coal; 3=Natural gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "official wave-specific questionnaire and Codebook reviewed; question wording, response categories, and route differences verified; see audit/housing_fuel_source_review_2026-10-24.md",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
@@ -651,7 +653,8 @@
         "module": "Housing_Characteristics",
         "source_label": "The Main Heating Energy Source",
         "value_labels": "1=Solar; 2=Coal; 3=Natural gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "official wave-specific questionnaire and Codebook reviewed; question wording, response categories, and route differences verified; see audit/housing_fuel_source_review_2026-10-24.md",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2018",
@@ -659,7 +662,8 @@
         "module": "Housing",
         "source_label": "Heating Energy Source",
         "value_labels": "1=Solar; 2=Coal; 3=Natural Gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop Residue/Wood Burning; 7=Other; 8=Heating Provided",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "official wave-specific questionnaire and Codebook reviewed; question wording, response categories, and route differences verified; see audit/housing_fuel_source_review_2026-10-24.md",
+        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
         "wave": "2020",
@@ -667,7 +671,8 @@
         "module": "Household_Income",
         "source_label": "Heating Energy Source",
         "value_labels": "1=Solar; 2=Coal; 3=Natural Gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop Residue/Wood Burning; 7=Others; 8=Do not Heating",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "official wave-specific questionnaire and Codebook reviewed; question wording, response categories, and route differences verified; see audit/housing_fuel_source_review_2026-10-24.md",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
       }
     ]
   },
@@ -675,7 +680,7 @@
     "concept_id": "cooking_fuel_main",
     "label": "Main cooking fuel",
     "domain": "Housing environment",
-    "caveat": "Nominal primary cooking fuel; code and response categories change in later waves. See the separate value-label audit; do not treat numeric codes as ordered dose.",
+    "caveat": "Nominal household cooking-fuel proxy, not measured fuel use or indoor pollutant dose. Code categories change: 2018/2020 include a no-cooking response, 2020 adds solar at 7 and shifts later codes. Do not turn blanks in earlier waves into no cooking or interpret numeric codes as an ordered dose. The 2020 household referent is XFinancialResp's house; confirm household linkage before assigning it to a person. See audit/housing_fuel_source_review_2026-10-24.md.",
     "source_fields": [
       {
         "wave": "2011",
@@ -683,7 +688,8 @@
         "module": "housing_characteristics",
         "source_label": "Main Source of Cooking Fuel",
         "value_labels": "1=Coal; 2=Natural gas; 3=Marsh gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+        "note": "official wave-specific questionnaire and Codebook reviewed; question wording, response categories, and route differences verified; see audit/housing_fuel_source_review_2026-10-24.md",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -691,7 +697,8 @@
         "module": "Housing_Characteristics",
         "source_label": "What is the main source of cooking fuel?",
         "value_labels": "1=Coal; 2=Natural gas; 3=Marsh gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "official wave-specific questionnaire and Codebook reviewed; question wording, response categories, and route differences verified; see audit/housing_fuel_source_review_2026-10-24.md",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
@@ -699,7 +706,8 @@
         "module": "Housing_Characteristics",
         "source_label": "The Main Source of Cooking Fuel",
         "value_labels": "1=Coal; 2=Natural gas; 3=Marsh gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop residue/Wood burning; 7=Other",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "official wave-specific questionnaire and Codebook reviewed; question wording, response categories, and route differences verified; see audit/housing_fuel_source_review_2026-10-24.md",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2018",
@@ -707,7 +715,8 @@
         "module": "Housing",
         "source_label": "Main Source of Cooking Fuel",
         "value_labels": "1=Coal; 2=Natural Gas; 3=Marsh Gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop Residue/Wood Burning; 7=Other; 8=Do Not Cook",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "official wave-specific questionnaire and Codebook reviewed; question wording, response categories, and route differences verified; see audit/housing_fuel_source_review_2026-10-24.md",
+        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
         "wave": "2020",
@@ -715,7 +724,8 @@
         "module": "Household_Income",
         "source_label": "Main Source of Cooking Fuel",
         "value_labels": "1=Coal; 2=Natural Gas; 3=Marsh Gas; 4=Liquefied Petroleum Gas; 5=Electric; 6=Crop Residue/Wood Burning; 7=Solar Energy; 8=Others; 9=Do not Cook",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "official wave-specific questionnaire and Codebook reviewed; question wording, response categories, and route differences verified; see audit/housing_fuel_source_review_2026-10-24.md",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
       }
     ]
   },
