@@ -1,0 +1,20 @@
+{
+  "source": "catalog.json Value.Labels / Value.Label.Source / Value.Label.Review",
+  "matching": "exact wave + normalized CHARLS variable code; unique provenance tuple only",
+  "files": {
+    "food_environment_v1.json": {
+      "fields": 161,
+      "filled": 35,
+      "existing": 71,
+      "no_match": 55,
+      "ambiguous": 0
+    },
+    "social_exposures_v1.json": {
+      "fields": 281,
+      "filled": 184,
+      "existing": 9,
+      "no_match": 88,
+      "ambiguous": 0
+    }
+  }
+}

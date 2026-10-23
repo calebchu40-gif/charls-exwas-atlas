@@ -4,7 +4,7 @@ const vm = require('node:vm');
 
 const source = fs.readFileSync('site-prototype/dist/app.js', 'utf8');
 const html = fs.readFileSync('site-prototype/dist/index.html', 'utf8');
-assert.ok(html.includes('app.js?v=58'), 'HTML should cache-bust the updated app loader');
+assert.ok(html.includes('app.js?v=59'), 'HTML should cache-bust the updated app loader');
 const start = source.indexOf('const deferredViewLoaders = new Map();');
 const end = source.indexOf('let candidatePairExplorerLoaded;', start);
 assert.notEqual(start, -1, 'deferred loader helper should exist');

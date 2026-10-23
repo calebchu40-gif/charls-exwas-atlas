@@ -462,10 +462,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities in Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -473,10 +474,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities in Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -484,10 +486,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities in Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -495,10 +498,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities in Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -506,10 +510,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities in Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -517,10 +522,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities in Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -528,10 +534,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities in Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -539,10 +546,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities in Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -550,10 +558,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities in Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -561,10 +570,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities in Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -572,10 +582,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities in Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -583,10 +594,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities in Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -594,10 +606,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "How to Use Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -605,10 +618,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "How to Use Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -616,10 +630,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "How to Use Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -627,10 +642,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "How to Use Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -638,10 +654,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "How to Use Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -649,10 +666,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities with Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -660,10 +678,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities with Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -671,10 +690,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities with Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -682,10 +702,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities with Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -693,10 +714,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities with Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -704,10 +726,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Activities with Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -715,10 +738,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Payment with Mobile Phone",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -726,10 +750,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Use Wechat",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -737,10 +762,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Use Wechat Moments",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "value_semantics": "官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2020",
@@ -748,10 +774,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Interacted With Friends",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
         "value_semantics": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2020",
@@ -759,10 +786,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Played Ma-jong, Played Chess, Played Cards, or Went to Community Club",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
         "value_semantics": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2020",
@@ -770,10 +798,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Provided Help to Family, Friends, or Neighbors Who Do Not Live With You",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
         "value_semantics": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2020",
@@ -781,10 +810,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Went to a Sport, Social, or Other Kind of Club",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
         "value_semantics": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2020",
@@ -792,10 +822,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Took Part in a Community-Related Organization",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
         "value_semantics": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2020",
@@ -803,10 +834,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Done Voluntary or Charity work, or Cared for a Sick or Disabled Adult Who Does N",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
         "value_semantics": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2020",
@@ -814,10 +846,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Attended an Educational or Training Course",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
         "value_semantics": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2020",
@@ -825,10 +858,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Others",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
         "value_semantics": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       }
     ]
   },
@@ -844,10 +878,11 @@
         "module": "health_status_and_functioning",
         "source_label": "How Often Do Activities LM of Interacted With Friends",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "value_semantics": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -855,10 +890,11 @@
         "module": "health_status_and_functioning",
         "source_label": "How Often Do Activities LM of Played Ma-jong/Cards/Chess",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "value_semantics": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -866,10 +902,11 @@
         "module": "health_status_and_functioning",
         "source_label": "How Often Do Activities LM of Provided Help to People Who Lived Apart",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "value_semantics": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -877,10 +914,11 @@
         "module": "health_status_and_functioning",
         "source_label": "How Often Do Activities LM of Went to Club",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "value_semantics": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -888,10 +926,11 @@
         "module": "health_status_and_functioning",
         "source_label": "How Often Do Activities LM of Took Part In A Community-related Organization",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "value_semantics": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -899,10 +938,11 @@
         "module": "health_status_and_functioning",
         "source_label": "How Often Do Activities LM of Voluntary or Charity",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "value_semantics": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -910,10 +950,11 @@
         "module": "health_status_and_functioning",
         "source_label": "How Often Do Activities LM of Cared for A Sick or Disabled Adult Who Lived Apart",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "value_semantics": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -921,10 +962,11 @@
         "module": "health_status_and_functioning",
         "source_label": "How Often Do Activities LM of Attended An Educational or Training Course",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "value_semantics": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -932,10 +974,11 @@
         "module": "health_status_and_functioning",
         "source_label": "How Often Do Activities LM of Stock Investment",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "value_semantics": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -943,10 +986,11 @@
         "module": "health_status_and_functioning",
         "source_label": "How Often Do Activities LM of Used the Internet",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "value_semantics": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -954,10 +998,11 @@
         "module": "health_status_and_functioning",
         "source_label": "How Often Do Activities LM of Other",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "value_semantics": "官方代码本值标签：1=Almost daily；2=Almost every week；3=Less often。该波字段按固定活动类型提问（如朋友交往），不与后续波次的位置槽位直接等同。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -965,10 +1010,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 1th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -976,10 +1022,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 2th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -987,10 +1034,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 3th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -998,10 +1046,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 4th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1009,10 +1058,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 5th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1020,10 +1070,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 6th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1031,10 +1082,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 7th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1042,10 +1094,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 8th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1053,10 +1106,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 9th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1064,10 +1118,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 10th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1075,10 +1130,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 11th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -1086,10 +1142,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 1th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -1097,10 +1154,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 2th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -1108,10 +1166,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 3th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -1119,10 +1178,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 4th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -1130,10 +1190,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 5th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -1141,10 +1202,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 6th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -1152,10 +1214,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 7th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -1163,10 +1226,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 8th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -1174,10 +1238,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 9th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -1185,10 +1250,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 10th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -1196,10 +1262,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of The 11th Activity of DA056 in The Last Month",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -1207,10 +1274,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of Activities[1]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -1218,10 +1286,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of Activities[2]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -1229,10 +1298,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of Activities[3]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -1240,10 +1310,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of Activities[4]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -1251,10 +1322,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of Activities[5]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -1262,10 +1334,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of Activities[6]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -1273,10 +1346,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of Activities[7]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -1284,10 +1358,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of Activities[8]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -1295,10 +1370,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of Activities[9]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -1306,10 +1382,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of Activities[10]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -1317,10 +1394,11 @@
         "module": "Health_Status_and_Functioning",
         "source_label": "Frequency of Activities[11]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "value_semantics": "官方代码本值标签：1=Almost Daily；2=Almost Every Week；3=Not Regularly。2013–2018后缀序号指DA056所选活动的顺序槽位，须与相同访谈的活动排列对应。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       }
     ]
   },
@@ -1707,10 +1785,11 @@
         "module": "family_information",
         "source_label": "How Often do You See Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -1718,10 +1797,11 @@
         "module": "family_information",
         "source_label": "How Often do You See Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -1729,10 +1809,11 @@
         "module": "family_information",
         "source_label": "How Often do You See Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -1740,10 +1821,11 @@
         "module": "family_information",
         "source_label": "How Often do You See Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -1751,10 +1833,11 @@
         "module": "family_information",
         "source_label": "How Often do You See Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -1762,10 +1845,11 @@
         "module": "family_information",
         "source_label": "How Often do You See Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -1773,10 +1857,11 @@
         "module": "family_information",
         "source_label": "How Often do You See Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -1784,10 +1869,11 @@
         "module": "family_information",
         "source_label": "How Often do You See Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -1795,10 +1881,11 @@
         "module": "family_information",
         "source_label": "How Often do You See Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -1806,10 +1893,11 @@
         "module": "family_information",
         "source_label": "How Often do You See Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -1817,10 +1905,11 @@
         "module": "family_information",
         "source_label": "How Often do You See Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -1828,10 +1917,11 @@
         "module": "family_information",
         "source_label": "How Often do You See Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -1839,10 +1929,11 @@
         "module": "family_information",
         "source_label": "How Often do You See Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -1850,10 +1941,11 @@
         "module": "family_information",
         "source_label": "How Often do You See Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1861,10 +1953,11 @@
         "module": "Family_Information",
         "source_label": "See Child 1",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1872,10 +1965,11 @@
         "module": "Family_Information",
         "source_label": "See Child 2",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1883,10 +1977,11 @@
         "module": "Family_Information",
         "source_label": "See Child 3",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1894,10 +1989,11 @@
         "module": "Family_Information",
         "source_label": "See Child 4",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1905,10 +2001,11 @@
         "module": "Family_Information",
         "source_label": "See Child 5",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1916,10 +2013,11 @@
         "module": "Family_Information",
         "source_label": "See Child 6",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1927,10 +2025,11 @@
         "module": "Family_Information",
         "source_label": "See Child 7",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1938,10 +2037,11 @@
         "module": "Family_Information",
         "source_label": "See Child 8",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1949,10 +2049,11 @@
         "module": "Family_Information",
         "source_label": "See Child 9",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1960,10 +2061,11 @@
         "module": "Family_Information",
         "source_label": "See Child 10",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -1971,10 +2073,11 @@
         "module": "Family_Information",
         "source_label": "See Child 11",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -1982,10 +2085,11 @@
         "module": "Family_Information",
         "source_label": "How Ofen Do You See Child 1",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -1993,10 +2097,11 @@
         "module": "Family_Information",
         "source_label": "How Ofen Do You See Child 2",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2004,10 +2109,11 @@
         "module": "Family_Information",
         "source_label": "How Ofen Do You See Child 3",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2015,10 +2121,11 @@
         "module": "Family_Information",
         "source_label": "How Ofen Do You See Child 4",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2026,10 +2133,11 @@
         "module": "Family_Information",
         "source_label": "How Ofen Do You See Child 5",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2037,10 +2145,11 @@
         "module": "Family_Information",
         "source_label": "How Ofen Do You See Child 6",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2048,10 +2157,11 @@
         "module": "Family_Information",
         "source_label": "How Ofen Do You See Child 7",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2059,10 +2169,11 @@
         "module": "Family_Information",
         "source_label": "How Ofen Do You See Child 8",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2070,10 +2181,11 @@
         "module": "Family_Information",
         "source_label": "How Ofen Do You See Child 9",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2081,10 +2193,11 @@
         "module": "Family_Information",
         "source_label": "How Ofen Do You See Child 10",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2092,10 +2205,11 @@
         "module": "Family_Information",
         "source_label": "How Ofen Do You See Child 11",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2103,10 +2217,11 @@
         "module": "Family_Information",
         "source_label": "How Ofen Do You See Child 12",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2114,10 +2229,11 @@
         "module": "Family_Information",
         "source_label": "How Ofen Do You See Child 13",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2125,10 +2241,11 @@
         "module": "Family_Information",
         "source_label": "How Ofen Do You See Child 14",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2136,10 +2253,11 @@
         "module": "Family_Information",
         "source_label": "How Ofen Do You See Child 15",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2147,10 +2265,11 @@
         "module": "Family_Information",
         "source_label": "How Ofen Do You See Child 16",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2158,10 +2277,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XChildName[1]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2169,10 +2289,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XChildName[2]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2180,10 +2301,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XChildName[3]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2191,10 +2313,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XChildName[4]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2202,10 +2325,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XChildName[5]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2213,10 +2337,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XChildName[6]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2224,10 +2349,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XChildName[7]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2235,10 +2361,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XChildName[8]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2246,10 +2373,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XChildName[9]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2257,10 +2385,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XChildName[10]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2268,10 +2397,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XChildName[11]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2279,10 +2409,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XChildName[12]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2290,10 +2421,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XChildName[13]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2301,10 +2433,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XChildName[14]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2312,10 +2445,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Visiting XChildName[15]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       }
     ]
   },
@@ -2331,10 +2465,11 @@
         "module": "family_information",
         "source_label": "How Often do You Contact with Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -2342,10 +2477,11 @@
         "module": "family_information",
         "source_label": "How Often do You Contact with Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -2353,10 +2489,11 @@
         "module": "family_information",
         "source_label": "How Often do You Contact with Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -2364,10 +2501,11 @@
         "module": "family_information",
         "source_label": "How Often do You Contact with Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -2375,10 +2513,11 @@
         "module": "family_information",
         "source_label": "How Often do You Contact with Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -2386,10 +2525,11 @@
         "module": "family_information",
         "source_label": "How Often do You Contact with Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -2397,10 +2537,11 @@
         "module": "family_information",
         "source_label": "How Often do You Contact with Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -2408,10 +2549,11 @@
         "module": "family_information",
         "source_label": "How Often do You Contact with Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -2419,10 +2561,11 @@
         "module": "family_information",
         "source_label": "How Often do You Contact with Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -2430,10 +2573,11 @@
         "module": "family_information",
         "source_label": "How Often do You Contact with Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -2441,10 +2585,11 @@
         "module": "family_information",
         "source_label": "How Often do You Contact with Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -2452,10 +2597,11 @@
         "module": "family_information",
         "source_label": "How Often do You Contact with Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -2463,10 +2609,11 @@
         "module": "family_information",
         "source_label": "How Often do You Contact with Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2011",
@@ -2474,10 +2621,11 @@
         "module": "family_information",
         "source_label": "How Often do You Contact with Child",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -2485,10 +2633,11 @@
         "module": "Family_Information",
         "source_label": "Contact with Child 1",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -2496,10 +2645,11 @@
         "module": "Family_Information",
         "source_label": "Contact with Child 2",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -2507,10 +2657,11 @@
         "module": "Family_Information",
         "source_label": "Contact with Child 3",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -2518,10 +2669,11 @@
         "module": "Family_Information",
         "source_label": "Contact with Child 4",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -2529,10 +2681,11 @@
         "module": "Family_Information",
         "source_label": "Contact with Child 5",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -2540,10 +2693,11 @@
         "module": "Family_Information",
         "source_label": "Contact with Child 6",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -2551,10 +2705,11 @@
         "module": "Family_Information",
         "source_label": "Contact with Child 7",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -2562,10 +2717,11 @@
         "module": "Family_Information",
         "source_label": "Contact with Child 8",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -2573,10 +2729,11 @@
         "module": "Family_Information",
         "source_label": "Contact with Child 9",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -2584,10 +2741,11 @@
         "module": "Family_Information",
         "source_label": "Contact with Child 10",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2013",
@@ -2595,10 +2753,11 @@
         "module": "Family_Information",
         "source_label": "Contact with Child 11",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2606,10 +2765,11 @@
         "module": "Family_Information",
         "source_label": "How Often Do You Have Contact with Child 1",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2617,10 +2777,11 @@
         "module": "Family_Information",
         "source_label": "How Often Do You Have Contact with Child 2",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2628,10 +2789,11 @@
         "module": "Family_Information",
         "source_label": "How Often Do You Have Contact with Child 3",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2639,10 +2801,11 @@
         "module": "Family_Information",
         "source_label": "How Often Do You Have Contact with Child 4",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2650,10 +2813,11 @@
         "module": "Family_Information",
         "source_label": "How Often Do You Have Contact with Child 5",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2661,10 +2825,11 @@
         "module": "Family_Information",
         "source_label": "How Often Do You Have Contact with Child 6",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2672,10 +2837,11 @@
         "module": "Family_Information",
         "source_label": "How Often Do You Have Contact with Child 7",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2683,10 +2849,11 @@
         "module": "Family_Information",
         "source_label": "How Often Do You Have Contact with Child 8",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2694,10 +2861,11 @@
         "module": "Family_Information",
         "source_label": "How Often Do You Have Contact with Child 9",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2705,10 +2873,11 @@
         "module": "Family_Information",
         "source_label": "How Often Do You Have Contact with Child 10",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2716,10 +2885,11 @@
         "module": "Family_Information",
         "source_label": "How Often Do You Have Contact with Child 11",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2727,10 +2897,11 @@
         "module": "Family_Information",
         "source_label": "How Often Do You Have Contact with Child 12",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2738,10 +2909,11 @@
         "module": "Family_Information",
         "source_label": "How Often Do You Have Contact with Child 13",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2749,10 +2921,11 @@
         "module": "Family_Information",
         "source_label": "How Often Do You Have Contact with Child 14",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2760,10 +2933,11 @@
         "module": "Family_Information",
         "source_label": "How Often Do You Have Contact with Child 15",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2015",
@@ -2771,10 +2945,11 @@
         "module": "Family_Information",
         "source_label": "How Often Do You Have Contact with Child 16",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2782,10 +2957,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Contacting XChildName[1]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2793,10 +2969,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Contacting XChildName[2]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2804,10 +2981,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Contacting XChildName[3]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2815,10 +2993,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Contacting XChildName[4]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2826,10 +3005,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Contacting XChildName[5]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2837,10 +3017,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Contacting XChildName[6]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2848,10 +3029,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Contacting XChildName[7]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2859,10 +3041,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Contacting XChildName[8]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       },
       {
         "wave": "2018",
@@ -2870,10 +3053,11 @@
         "module": "Family_Transfer",
         "source_label": "Frequency Contacting XChildName[9]",
         "note": "Official codebook response labels reviewed; preserve original category and routing",
-        "value_labels": "",
+        "value_labels": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "value_semantics": "官方代码本有序类别：1=Almost every day；2=2-3 times a week；3=Once a week；4=Every two weeks；5=Once a month；6=Once every three months；7=Once every six months；8=Once a year；9=Almost never；10=Other。保留类别，不当作等距连续量。",
         "questionnaire_source": "",
-        "value_label_source": ""
+        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "value_label_status": "officially reviewed"
       }
     ]
   },
