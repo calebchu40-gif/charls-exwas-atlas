@@ -261,6 +261,24 @@ class HousingValueLabelTests(unittest.TestCase):
         selector = catalog[("2020", "i006")]
         self.assertEqual(selector["Value.Labels"], "1=On the ground; 2=Underground")
         self.assertEqual(selector["Unit"], "")
+
+    def test_toilet_access_labels_preserve_split_and_single_item_waves(self):
+        catalog = {(r["Source.Wave"], r["Variable.Name"].lower()): r for r in self.catalog}
+        fields = {(f["wave"], f["code"].lower()): f for concept in self.food_site for f in concept["source_fields"]}
+        for wave, code, labels in [
+            ("2011", "i014s1", "1=Toilet without a seat"), ("2011", "i014s2", "2=Toilet with a seat"),
+            ("2013", "i014s1", "1=Toilet without a seat"), ("2013", "i014s2", "2=Toilet with a seat"),
+            ("2015", "i014s1", "1=Toilet without a seat"), ("2015", "i014s2", "2=Toilet with a seat"),
+            ("2018", "i014", "1=Toilet without a seat; 2=Toilet with a seat"),
+            ("2020", "i013", "1=Toilet without a seat; 2=Toilet with a seat"),
+        ]:
+            self.assertEqual(catalog[(wave, code)]["Value.Labels"], labels)
+            if wave in ("2011", "2013", "2015"):
+                self.assertIn("Do not infer", catalog[(wave, code)]["Harmonization.Status"])
+            self.assertEqual(fields[(wave, code)]["value_labels"], labels)
+        for wave, code in [("2011", "i013"), ("2013", "i013"), ("2015", "i013"), ("2018", "i013"), ("2020", "i012")]:
+            self.assertEqual(catalog[(wave, code)]["Unit"], "meters")
+            self.assertEqual(catalog[(wave, code)]["Value.Labels"], "")
         self.assertIn("excludes banquets/weddings", catalog[("2020", "gf006")]["Harmonization.Status"])
         self.assertIn("excludes banquets/weddings", catalog[("2018", "ge007_w4")]["Harmonization.Status"])
 

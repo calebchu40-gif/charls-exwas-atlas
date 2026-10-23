@@ -319,24 +319,33 @@
         "code": "i013",
         "module": "housing_characteristics",
         "source_label": "How Far is the Nearest Toilet to Your House",
-        "value_labels": "Continuous distance to nearest toilet; codebook max 1,000 (QA hint, not a validated range).",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+        "value_labels": "",
+        "note": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
+        "value_label_status": "official 2011 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "unit": "meters"
       },
       {
         "wave": "2011",
         "code": "i014s1",
         "module": "housing_characteristics",
         "source_label": "Type of Toilet",
-        "value_labels": "Separate multi-response toilet type field: 1=Toilet without a seat; no unselected storage code inferred.",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+        "value_labels": "1=Toilet without a seat",
+        "note": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
+        "value_label_status": "official 2011 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "unit": ""
       },
       {
         "wave": "2011",
         "code": "i014s2",
         "module": "housing_characteristics",
         "source_label": "Type of Toilet",
-        "value_labels": "Separate multi-response toilet type field: 2=Toilet with a seat; no unselected storage code inferred.",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+        "value_labels": "2=Toilet with a seat",
+        "note": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
+        "value_label_status": "official 2011 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "unit": ""
       },
       {
         "wave": "2011",
@@ -359,24 +368,33 @@
         "code": "i013",
         "module": "Housing_Characteristics",
         "source_label": "How far is the nearest toilet?",
-        "value_labels": "Continuous distance to nearest toilet; codebook max 1,000 (QA hint, not a validated range).",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "",
+        "note": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
+        "value_label_status": "official 2013 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
+        "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "unit": "meters"
       },
       {
         "wave": "2013",
         "code": "i014s1",
         "module": "Housing_Characteristics",
         "source_label": "What is the type of toilet?",
-        "value_labels": "Separate multi-response toilet type field: 1=Toilet without a seat; no unselected storage code inferred.",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "1=Toilet without a seat",
+        "note": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
+        "value_label_status": "official 2013 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
+        "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "unit": ""
       },
       {
         "wave": "2013",
         "code": "i014s2",
         "module": "Housing_Characteristics",
         "source_label": "What is the type of toilet?",
-        "value_labels": "Separate multi-response toilet type field: 2=Toilet with a seat; no unselected storage code inferred.",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "2=Toilet with a seat",
+        "note": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
+        "value_label_status": "official 2013 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
+        "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "unit": ""
       },
       {
         "wave": "2013",
@@ -399,24 +417,33 @@
         "code": "i013",
         "module": "Housing_Characteristics",
         "source_label": "How Far Is The Nearest Toilet?",
-        "value_labels": "Continuous distance to nearest toilet; codebook max 2,000 (QA hint, not a validated range).",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "",
+        "note": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
+        "value_label_status": "official 2015 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
+        "value_label_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "unit": "meters"
       },
       {
         "wave": "2015",
         "code": "i014s1",
         "module": "Housing_Characteristics",
         "source_label": "The Type of Toilet:without A Seat",
-        "value_labels": "Separate multi-response toilet type field: 1=Toilet without a seat; no unselected storage code inferred.",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "1=Toilet without a seat",
+        "note": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
+        "value_label_status": "official 2015 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
+        "value_label_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "unit": ""
       },
       {
         "wave": "2015",
         "code": "i014s2",
         "module": "Housing_Characteristics",
         "source_label": "The Type of toilet:with A Seat",
-        "value_labels": "Separate multi-response toilet type field: 2=Toilet with a seat; no unselected storage code inferred.",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "2=Toilet with a seat",
+        "note": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
+        "value_label_status": "official 2015 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
+        "value_label_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "unit": ""
       },
       {
         "wave": "2015",
@@ -439,16 +466,22 @@
         "code": "i013",
         "module": "Housing",
         "source_label": "Distance from the Nearest Toilet to House",
-        "value_labels": "Continuous distance to nearest toilet; codebook summary includes extreme values; inspect units and raw data before analysis.",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "",
+        "note": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
+        "value_label_status": "official 2018 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
+        "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "unit": "meters"
       },
       {
         "wave": "2018",
         "code": "i014",
         "module": "Housing",
         "source_label": "Type of Toilet",
-        "value_labels": "1=Without a seat; 2=With a seat.",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "1=Toilet without a seat; 2=Toilet with a seat",
+        "note": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
+        "value_label_status": "official 2018 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
+        "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "unit": ""
       },
       {
         "wave": "2018",
@@ -471,16 +504,22 @@
         "code": "i012",
         "module": "Household_Income",
         "source_label": "Distance from the Nearest Toilet to House",
-        "value_labels": "Continuous distance to nearest toilet; codebook max 2,000 (QA hint, not a validated range).",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "",
+        "note": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
+        "value_label_status": "official 2020 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
+        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "unit": "meters"
       },
       {
         "wave": "2020",
         "code": "i013",
         "module": "Household_Income",
         "source_label": "Type of Toilet",
-        "value_labels": "1=Without a seat; 2=With a seat.",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "1=Toilet without a seat; 2=Toilet with a seat",
+        "note": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
+        "value_label_status": "official 2020 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
+        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "unit": ""
       },
       {
         "wave": "2020",
