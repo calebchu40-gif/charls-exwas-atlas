@@ -2,6 +2,7 @@
 
 ## 2026-10-25
 
+- Reviewed written labor-contract status in all five waves, retaining the 2011 questionnaire/Codebook numeric-code distinction, 2018 payor-reference instruction and 2020 current-employer wording. Kept Yes/No follow-up skips separate from status and documented this as a work-condition candidate rather than direct environmental dose.
 - Reviewed current employer organization type in all five waves (`FD002`, 2011–2018; `FC002`, 2020). Preserved the nominal response menus and 2020 “Do not know” code 997, and documented re-interview carry-forward/structural-skip limits so missingness is not misread as no employer.
 - Improved metadata catalogue table readability: widened the desktop catalogue layout, gave the interpretation column room for caveats, and added a smaller horizontal-scroll layout for narrow screens.
 - Reviewed the 2020 current-employer location item (`FC004`) and corrected its inherited unit, which incorrectly described months worked. The catalog now identifies a nominal location category, retains refusal code 999, and excludes conditional place-name fields from public metadata.

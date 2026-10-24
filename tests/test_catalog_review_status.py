@@ -174,6 +174,15 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertIn("997=Do not know", fields["2020"]["value_labels"])
         self.assertIn("structural skips", fields["2013"]["caveat"])
 
+    def test_written_labor_contract_status_preserves_wave_referents(self):
+        concept = next(row for row in self.work if row.get("concept_id") == "written_labor_contract")
+        fields = {field["wave"]: field for field in concept["source_fields"]}
+        self.assertEqual(set(fields), {"2011", "2013", "2015", "2018", "2020"})
+        self.assertTrue(all(field["value_labels"] == "1=Yes; 2=No" for field in fields.values()))
+        self.assertIn("without numeric display codes", fields["2011"]["note"])
+        self.assertIn("wage-paying person", fields["2018"]["caveat"])
+        self.assertIn("not a direct environmental exposure", fields["2020"]["caveat"])
+
     def test_work_capi_formulas_and_source_conflicts_reach_main_catalog(self):
         examples = {
             ("2020", "xworking"): (
