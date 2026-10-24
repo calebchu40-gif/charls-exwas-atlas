@@ -2,6 +2,7 @@
 
 ## 2026-10-25
 
+- Reviewed unpaid family-business location (`FH013`) in 2011–2018. Kept the four wave-specific location menus, documented the 2011 no-fixed-address interviewer code and later-wave carry-forward skips, and excluded address subfields from the public catalogue.
 - Reviewed 10 five-wave employed-work intensity fields (days/week and hours/working day). Preserved the 2018 irregular-workday derivation note and 2020 paid-leave exclusion/low-frequency instruction; kept both as separate continuous measures without invented categories or a combined score.
 - Reviewed written labor-contract status in all five waves, retaining the 2011 questionnaire/Codebook numeric-code distinction, 2018 payor-reference instruction and 2020 current-employer wording. Kept Yes/No follow-up skips separate from status and documented this as a work-condition candidate rather than direct environmental dose.
 - Reviewed current employer organization type in all five waves (`FD002`, 2011–2018; `FC002`, 2020). Preserved the nominal response menus and 2020 “Do not know” code 997, and documented re-interview carry-forward/structural-skip limits so missingness is not misread as no employer.

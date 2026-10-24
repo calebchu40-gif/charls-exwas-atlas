@@ -197,6 +197,15 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertNotIn("2020", day_fields["2018"]["caveat"])
         self.assertFalse(any(field["value_labels"] for field in hour_fields.values()))
 
+    def test_unpaid_family_business_location_preserves_route_and_2011_zero_instruction(self):
+        concept = next(row for row in self.work if row.get("concept_id") == "unpaid_family_business_location_2011_2018")
+        fields = {field["wave"]: field for field in concept["source_fields"]}
+        self.assertEqual(set(fields), {"2011", "2013", "2015", "2018"})
+        self.assertTrue(all("unpaid-family-work route" in field["caveat"] for field in fields.values()))
+        self.assertIn("interviewer code 0 for no fixed address", fields["2011"]["note"])
+        self.assertFalse(fields["2011"]["value_labels"].startswith("0="))
+        self.assertTrue(all("address text and frequencies omitted" in field["value_label_status"] for field in fields.values()))
+
     def test_work_capi_formulas_and_source_conflicts_reach_main_catalog(self):
         examples = {
             ("2020", "xworking"): (
