@@ -17,6 +17,13 @@ class CandidateRoleLinkageCoverageTests(unittest.TestCase):
     def setUpClass(cls):
         cls.series = read_rows(ROOT / "audit/charls_atlas_candidate_series_v0.csv")
         cls.crosswalk = read_rows(ROOT / "audit/ep_concept_source_crosswalk_v1.csv")
+        cls.objective = read_rows(ROOT / "audit/objective_measurement_crosswalk_v1.csv")
+        cls.objective_keys = {
+            (row.get("wave", "").strip(), code.strip().lower())
+            for row in cls.objective
+            for code in row.get("variables", "").split(";")
+            if row.get("wave", "").strip() and code.strip()
+        }
         cls.links = set()
         for row in cls.crosswalk:
             for role in row.get("Role", "").lower().split(","):
@@ -46,12 +53,24 @@ class CandidateRoleLinkageCoverageTests(unittest.TestCase):
                             for _, _, _, row in self.unlinked))
         self.assertTrue(all((wave, code, "p") in self.links
                             for _, wave, code, _ in self.unlinked))
-        self.assertEqual(len({(wave, code) for _, wave, code, _ in self.unlinked}), 49)
+        self.assertEqual(len({(wave, code) for _, wave, code, _ in self.unlinked}), 13)
 
     def test_every_other_candidate_e_or_p_wave_field_has_a_concept_source_role(self):
-        self.assertEqual(len(self.unlinked), 49)
         self.assertTrue(all((role, wave, code) == ("e", wave, code)
                             for role, wave, code, _ in self.unlinked))
+        self.assertFalse({(wave, code) for _, wave, code, _ in self.unlinked} & self.objective_keys)
+
+    def test_official_objective_measurements_are_not_automatic_exposure_candidates(self):
+        for row in self.series:
+            roles = {role.strip().lower() for role in row.get("epcf", "").split(",")}
+            if not roles.intersection({"e", "e,p"}):
+                continue
+            waves = [wave.strip() for wave in row.get("waves", "").split(",") if wave.strip()]
+            code = row.get("Variable.Name", "").strip().lower()
+            self.assertFalse(any((wave, code) in self.objective_keys for wave in waves),
+                             (row.get("epcf"), code, waves))
+        self.assertTrue(self.objective_keys)
+        self.assertTrue(all((wave, code, "p") in self.links for wave, code in self.objective_keys))
 
     def test_public_blood_catalogue_explains_discovery_role_boundary(self):
         page = (ROOT / "site-prototype/dist/index.html").read_text(encoding="utf-8")

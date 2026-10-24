@@ -5,7 +5,7 @@ e,community context,113,270,270,True
 e,behavior,47,315,267,True
 e,housing and built environment,40,480,480,True
 e,food and household environment,29,161,161,True
-e,internal biomarker,15,19,19,True
+e,internal biomarker,13,13,13,True
 e,healthcare access,7,109,109,True
 e,early-life and family socioeconomic context,6,6,4,True
 e,family and intergenerational context,6,6,3,True
@@ -19,7 +19,7 @@ p,chronic disease,33,248,248,True
 p,cognition,24,338,338,True
 p,healthcare access,22,217,217,True
 p,biochemistry,16,32,32,True
-p,internal biomarker,15,19,19,True
+p,internal biomarker,13,13,13,True
 p,mental health,11,52,52,True
 p,anthropometric,5,24,15,True
 p,social wellbeing,4,10,10,True

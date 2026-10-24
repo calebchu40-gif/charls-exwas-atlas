@@ -149,7 +149,7 @@ e,social protection,string-coded years since firm-pension transfer,2,2,1
 e,social protection,threshold-specific pension expected-benefit bracket response sequence,8,8,1
 e,social protection,years enrolled in the named pension plan,1,1,1
 "e,p",healthcare access,"insurance, outpatient and inpatient utilization",109,66,5
-"e,p",internal biomarker,"internal clinical/physiological measure; phenotype candidate, not exogenous environmental exposure",49,25,3
+"e,p",internal biomarker,"internal clinical/physiological measure; phenotype candidate, not exogenous environmental exposure",13,13,1
 p,anthropometric,body size and anthropometry,24,5,3
 p,biochemistry,blood and urine laboratory measures,32,32,2
 p,blood pressure,blood pressure and pulse,54,9,3

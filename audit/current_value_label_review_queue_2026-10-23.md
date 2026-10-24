@@ -4,8 +4,8 @@ This snapshot reads only the public, generated metadata in `site-prototype/dist/
 
 | Role | Catalog rows | Generic `not yet reviewed` rows |
 |---|---:|---:|
-| E exposure candidates | 4,826 | 0 |
-| P phenotype candidates | 2,129 | 0 |
+| E exposure candidates | 4,790 | 0 |
+| P phenotype candidates | 2,093 | 0 |
 | C covariate/measurement metadata | 980 | 0 |
 
 2026-10-25 reconciliation against the current generated role shards (refreshed after crosswalk-status propagation): E/P have zero exact `not yet reviewed` rows; C also has zero. Reviews covered 33 2013/2015 `ZDA009[i]` diagnosis-time preload fields, two 2013 reproductive-history preload fields, gender source/route rows, hukou and marriage-history overlaps, Wave 4 adult-education routes, condition/event-age fields, residential location/migration fields, and the conditional 2015 nurse-wage item. The 2011 `FLDA081_1` Codebook label identifies a target-age selector in subjective-expectation context; it is now explicitly classified as C measurement/question-context metadata, not a phenotype, exposure, covariate recommendation, or adjustment variable. Official questionnaire `DA081` asks a chance-of-reaching-target-age question, but the available extracted questionnaire uses a placeholder and does not establish a one-to-one field link. Do not derive probabilities or infer an analytic role. See `audit/pending_c_field_identity_review_2026-10-24.md`. No geographic code labels or Codebook sample summaries are reproduced. The prior counts C=109/95/62/60/51/31/25/23/19/6/2 are superseded. `scripts/summarize_value_label_coverage.py` independently rebuilds `charls_ep_catalog_value_label_coverage_v1.csv` and `.md` from the same final shards.

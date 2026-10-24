@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-25 continuation: exclude objective measurements from automatic exposure discovery
+
+The official objective-measurement crosswalk marks 108 wave-field keys as phenotype candidates. A broad keyword rule had duplicated 36 of those fields as automatic `e,p` internal-biomarker rows. The catalog builder now omits that automatic dual-role row for exact objective-crosswalk keys while retaining each domain-specific P candidate and its source-backed P mapping. All 108 crosswalk keys have P mappings and none remains in the E series. Thirteen unlinked internal-measure E discovery candidates outside this crosswalk remain flagged for future field-level review. Rebuilt public shards contain E=4,790, P=2,093 and C=980 rows; pair-index metadata co-availability counts are unchanged and do not represent analytic Ns. Audit: `audit/objective_measurements_exposure_role_boundary_2026-10-25.md`. No respondent-level data were read or published; formal models and actual pairwise Ns remain 0.
+
 ## 2026-10-25 continuation: reconcile reviewed phenotype crosswalk statuses
 
 A final E/P-wide audit then identified 107 additional rows that already had an explicit audited concept-source mapping but still carried an automated-discovery status (74 E and 33 P). Added an idempotent finalization step that synchronizes candidate status and the non-inclusion warning across the field-level CSV/JSON, master catalogue, and public role shards. It updates 6,895 E/P rows with concept-source provenance; zero source-mapped E/P rows remain marked automated. This changes discovery/review metadata only and does not approve variables for association testing.

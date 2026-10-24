@@ -10,7 +10,7 @@
 |e|behavior|47|315|267|
 |e|housing and built environment|40|480|480|
 |e|food and household environment|29|161|161|
-|e|internal biomarker|15|19|19|
+|e|internal biomarker|13|13|13|
 |e|healthcare access|7|109|109|
 |e|early-life and family socioeconomic context|6|6|4|
 |e|family and intergenerational context|6|6|3|
@@ -24,7 +24,7 @@
 |p|cognition|24|338|338|
 |p|healthcare access|22|217|217|
 |p|biochemistry|16|32|32|
-|p|internal biomarker|15|19|19|
+|p|internal biomarker|13|13|13|
 |p|mental health|11|52|52|
 |p|anthropometric|5|24|15|
 |p|social wellbeing|4|10|10|

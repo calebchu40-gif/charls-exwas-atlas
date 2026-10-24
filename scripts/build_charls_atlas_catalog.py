@@ -97,6 +97,16 @@ def main() -> None:
 
     source = pd.read_csv(args.catalog, dtype=str, encoding="utf-8-sig").fillna("")
     source = source[source.wave.isin(WAVES)].copy()
+    objective_path = Path(__file__).resolve().parents[1] / "audit" / "objective_measurement_crosswalk_v1.csv"
+    objective_field_wave_keys: set[tuple[str, str]] = set()
+    if objective_path.exists():
+        objective = pd.read_csv(objective_path, dtype=str, encoding="utf-8-sig").fillna("")
+        objective_field_wave_keys = {
+            (str(item.wave).strip(), code.strip().lower())
+            for item in objective.itertuples(index=False)
+            for code in str(item.variables).split(";")
+            if str(item.wave).strip() in WAVES and code.strip()
+        }
     # Crosswalk enrichment resolves the module for thousands of source-field
     # rows. Pre-index the small lookup once instead of repeatedly scanning the
     # full pandas table for every field (which dominated catalog-build time).
@@ -384,6 +394,13 @@ def main() -> None:
             continue
         for role, category, subcategory, mod_re, value_re in RULES:
             if mod_re.search(module) and value_re.search(f"{label} {var}"):
+                # The audited objective-measurement crosswalk defines these
+                # repeated readings and physical measures as phenotype-only.
+                # Do not emit the broad dual-role internal-biomarker discovery
+                # row; the reviewed domain-specific P row is added below.
+                if (role == "e,p" and (row.wave, var.lower()) in objective_field_wave_keys):
+                    matched = True
+                    continue
                 # GE005/GF005 asks a household respondent how many meals the
                 # household provided to guests. It is a household social-
                 # reciprocity measure, not personal diet/food exposure; the

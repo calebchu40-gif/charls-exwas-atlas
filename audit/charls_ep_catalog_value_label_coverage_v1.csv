@@ -14,7 +14,7 @@ e,food and household environment,"diet, food security, housing and utilities",16
 e,healthcare access,"insurance, outpatient and inpatient utilization",109,109,51
 e,housing and built environment,dwelling conditions and household property,477,477,245
 e,housing and built environment,residential setting,3,3,3
-e,internal biomarker,"internal clinical/physiological measure; phenotype candidate, not exogenous environmental exposure",49,49,0
+e,internal biomarker,"internal clinical/physiological measure; phenotype candidate, not exogenous environmental exposure",13,13,0
 e,life-course and reproductive history,reproductive timing,8,8,0
 e,social determinants,adult education and lifelong learning,13,13,10
 e,social determinants,annual wage/salary amount reported for household-member roster slots,22,22,0
@@ -147,7 +147,7 @@ p,health and symptoms,"self-rated health, pain, symptoms, and test eligibility",
 p,health and symptoms,subjective life expectancy,5,5,5
 p,healthcare access,COVID-period delayed or unmet medical care,15,15,15
 p,healthcare access,"insurance, outpatient and inpatient utilization",202,202,51
-p,internal biomarker,"internal clinical/physiological measure; phenotype candidate, not exogenous environmental exposure",49,49,0
+p,internal biomarker,"internal clinical/physiological measure; phenotype candidate, not exogenous environmental exposure",13,13,0
 p,mental health,depressive symptoms and emotional wellbeing,52,52,52
 p,physical function,assistive-device use in ADL/IADL support,26,26,26
 p,physical function,reported disability history / brain_intellectual,10,10,5
