@@ -173,6 +173,7 @@ FULL_PIPELINE_SCRIPTS = (
     "apply_marital_history_exposure_source_review.py",
     "apply_2018_adult_education_c_overlap_review.py",
     "apply_condition_event_age_metadata_review.py",
+    "apply_residential_location_metadata_review.py",
     # C metadata is propagated after the first shard build above; regenerate
     # role-specific browser payloads last so they match the final master file.
     "site_catalog_shards.py",
@@ -275,6 +276,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_marital_history_exposure_source_review.py",
     "apply_2018_adult_education_c_overlap_review.py",
     "apply_condition_event_age_metadata_review.py",
+    "apply_residential_location_metadata_review.py",
     "site_catalog_shards.py",
     "summarize_value_label_coverage.py",
 )
