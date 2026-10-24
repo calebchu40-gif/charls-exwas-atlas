@@ -428,6 +428,19 @@ class HousingValueLabelTests(unittest.TestCase):
             self.assertEqual(catalog[(wave, code)]["Unit"], "meters")
             self.assertEqual(catalog[(wave, code)]["Value.Labels"], "")
 
+    def test_toilet_flushability_preserves_questionnaire_route_and_yes_no_labels(self):
+        catalog = {(r["Source.Wave"], r["Variable.Name"].lower()): r for r in self.catalog}
+        fields = {(f["wave"], f["code"].lower()): f for concept in self.food_site for f in concept["source_fields"]}
+        for wave, code in [("2011", "i015"), ("2013", "i015"), ("2015", "i015"), ("2018", "i015"), ("2020", "i014")]:
+            row = catalog[(wave, code)]
+            self.assertEqual(row["Value.Labels"], "1=Yes; 2=No")
+            self.assertIn("flushability", row["Harmonization.Status"].lower())
+            self.assertEqual(fields[(wave, code)]["value_labels"], "1=Yes; 2=No")
+            self.assertIn("official", fields[(wave, code)]["mapping_status"].lower())
+        for wave in ("2015", "2018"):
+            self.assertIn("structural skip", catalog[(wave, "i015")]["Harmonization.Status"])
+        self.assertIn("CHARLS_2013_2015_housing_questionnaire_pages_extracted.txt", fields[("2013", "i015")]["source_document"])
+
     def test_individual_meal_frequency_is_two_wave_ordered_behavior_measure(self):
         catalog = {(r["Source.Wave"], r["Variable.Name"].lower()): r for r in self.catalog}
         for wave in ("2011", "2013"):

@@ -8,6 +8,8 @@ The 2011–2020 housing catalogue source-reviews residential heating availabilit
 
 ## Water and air-cleaner items
 
+The 2011, 2013, 2015 and 2018 questionnaires ask whether the respondent's residence has running water (`I017`, 1=Yes, 2=No). The 2013/2015 wording was checked in the original PDF pages and retained as a small supplemental extraction because the earlier text extraction omitted that section. Keep it as household access, not water source or quality; do not treat the 2020 tap-water item as automatically equivalent.
+
 The 2020 questionnaire/Codebook review covers tap-water access (I016), reported waterworks treatment (I029), and air-cleaner presence (I024). I016 describes household access, not drinking-water quality. I029 includes “Do not know,” which must not be recoded as “No.” The I024 household referent is XFinancialResp's house; an interviewer may record the air-cleaner item only when in the respondent's housing and clearly certain, otherwise asking the respondent. Presence does not establish use, filter condition, indoor concentration or personal exposure.
 
 The same yes/no residence air-cleaner question I027_W3 appears in 2015 and 2018. These wave-specific source rows now map to the canonical `air_cleaner_home` concept alongside 2020 I024. Preserve the different household referents and verify household-person linkage before person-level assignment.

@@ -47,6 +47,9 @@ class HousingContextSourceReviewTests(unittest.TestCase):
             ("2020", "residence_move_in_time", "i002"),
             ("2020", "residence_move_in_time", "i003"),
         } | {
+            (wave, "running_water", "i017")
+            for wave in ("2011", "2013", "2015", "2018")
+        } | {
             (wave, concept, code)
             for wave in ("2011", "2013", "2015", "2018", "2020")
             for concept, code in (("indoor_cleanliness", "i025"), ("indoor_temperature", "i026"))
@@ -65,6 +68,17 @@ class HousingContextSourceReviewTests(unittest.TestCase):
         )
         self.assertEqual(row["source_label"], "Centralized Heating")
         self.assertIn("questionnaire asks whether XFinancialResp's house has heating", row["caveat"])
+
+    def test_running_water_is_reviewed_as_household_access_and_not_quality(self):
+        selected = [r for r in self.rows if r["concept_id"] == "running_water"]
+        self.assertEqual({(r["wave"], r["code"]) for r in selected}, {
+            (wave, "i017") for wave in ("2011", "2013", "2015", "2018")
+        })
+        for row in selected:
+            self.assertIn("official", row["mapping_status"].lower())
+            self.assertIn("not water quality", row["caveat"].lower())
+        excerpt = (ROOT / "sources_official" / "CHARLS_2013_2015_housing_questionnaire_pages_extracted.txt").read_text(encoding="utf-8")
+        self.assertIn("I017 Does your residence have running water?", excerpt)
         item = next(c for c in self.site if c["concept_id"] == "residential_heating")
         field = next(f for f in item["source_fields"] if f["wave"] == "2020")
         self.assertIn("wording discrepancy", field["note"])

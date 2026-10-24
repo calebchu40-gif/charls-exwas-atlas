@@ -1,0 +1,31 @@
+Supplemental text extraction from the official CHARLS wave questionnaires.
+This excerpt records only the relevant housing items; consult the linked original PDFs for full page layout and surrounding instructions.
+
+CHARLS 2013 Questionnaire, printed page 259 (PDF page 265):
+I015 Is the toilet flushable?
+1. Yes
+2. No
+I016 Does your residence have electricity?
+1. Yes
+2. No
+I017 Does your residence have running water?
+1. Yes
+2. No
+
+CHARLS 2015 Questionnaire, printed page 224 (PDF page 230):
+I014 What is the type of toilet?
+1. Toilet without a seat
+2. Toilet with a seat -> Skip to I016
+I015 Is the toilet flushable?
+1. Yes
+2. No
+
+CHARLS 2015 Questionnaire, printed page 225 (PDF page 231):
+I016 Does your residence have electricity?
+1. Yes
+2. No
+I017 Does your residence have running water?
+1. Yes
+2. No
+
+Source PDFs: sources_official/CHARLS_2013_Questionnaire.pdf; sources_official/CHARLS_2015_Questionnaire.pdf.

@@ -67,6 +67,41 @@ def update_csv(path: Path) -> int:
     return int(selected.sum())
 
 
+def update_food_crosswalk_csv(path: Path) -> dict[tuple[str, str], dict[str, str]]:
+    df = pd.read_csv(path, dtype=str, encoding="utf-8-sig").fillna("")
+    selected = df.apply(lambda r: (str(r["wave"]), str(r["code"]).lower()) in FIELDS, axis=1)
+    found = set(zip(df.loc[selected, "wave"], df.loc[selected, "code"].str.lower()))
+    if found != set(FIELDS):
+        raise ValueError(f"{path}: missing={sorted(set(FIELDS)-found)}, unexpected={sorted(found-set(FIELDS))}")
+    reviewed = {}
+    for idx in df.index[selected]:
+        wave, code = str(df.at[idx, "wave"]), str(df.at[idx, "code"]).lower()
+        row = {}
+        apply(row, wave, code)
+        df.at[idx, "mapping_status"] = row["Value.Label.Review"]
+        df.at[idx, "caveat"] = row["Harmonization.Status"]
+        reviewed[(wave, code)] = {"mapping_status": row["Value.Label.Review"], "caveat": row["Harmonization.Status"]}
+    df.to_csv(path, index=False, encoding="utf-8-sig")
+    return reviewed
+
+
+def update_final_source_index(path: Path, reviewed: dict[tuple[str, str], dict[str, str]]) -> int:
+    df = pd.read_csv(path, dtype=str, encoding="utf-8-sig").fillna("")
+    selected = (
+        df["Source.File"].eq("audit/food_environment_crosswalk_v1.csv")
+        & df.apply(lambda r: (str(r["Wave"]), str(r["Source.Code"]).lower()) in reviewed, axis=1)
+    )
+    found = {(str(r["Wave"]), str(r["Source.Code"]).lower()) for _, r in df[selected].iterrows()}
+    if found != set(reviewed):
+        raise ValueError(f"{path}: housing index mismatch; missing={sorted(set(reviewed)-found)}")
+    for idx in df.index[selected]:
+        key = (str(df.at[idx, "Wave"]), str(df.at[idx, "Source.Code"]).lower())
+        df.at[idx, "Mapping.Status"] = reviewed[key]["mapping_status"]
+        df.at[idx, "Caveat"] = reviewed[key]["caveat"]
+    df.to_csv(path, index=False, encoding="utf-8-sig")
+    return int(selected.sum())
+
+
 def update_json(path: Path, wave_key: str, code_key: str) -> int:
     rows = json.loads(path.read_text(encoding="utf-8"))
     if rows and "source_fields" in rows[0]:
@@ -78,7 +113,7 @@ def update_json(path: Path, wave_key: str, code_key: str) -> int:
         for f in selected:
             row = {}
             apply(row, str(f["wave"]), str(f["code"]).lower())
-            f.update({"unit": row["Unit"], "value_labels": "", "value_label_status": row["Value.Label.Review"], "value_label_source": row["Value.Label.Source"], "note": row["Harmonization.Status"]})
+            f.update({"unit": row["Unit"], "value_labels": "", "value_label_status": row["Value.Label.Review"], "value_label_source": row["Value.Label.Source"], "mapping_status": row["Value.Label.Review"], "caveat": row["Harmonization.Status"], "note": row["Value.Label.Review"] + " " + row["Harmonization.Status"]})
         path.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         return len(selected)
     selected = [r for r in rows if (str(r.get(wave_key, "")), str(r.get(code_key, "")).lower()) in FIELDS]
@@ -99,6 +134,8 @@ def update_json(path: Path, wave_key: str, code_key: str) -> int:
 
 def main() -> None:
     validate_sources()
+    reviewed = update_food_crosswalk_csv(ROOT / "audit/food_environment_crosswalk_v1.csv")
+    update_final_source_index(ROOT / "audit/ep_concept_source_crosswalk_v1.csv", reviewed)
     paths = [
         (ROOT / "audit/charls_atlas_candidate_fields_v0.csv", "csv"),
         (ROOT / "audit/charls_atlas_candidate_fields_v0.json", "source"),

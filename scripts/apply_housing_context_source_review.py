@@ -6,6 +6,8 @@ import json
 import re
 from pathlib import Path
 
+from sync_food_crosswalk_index import sync_food_crosswalk_index
+
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / "audit" / "food_environment_crosswalk_v1.csv"
 SITE = ROOT / "site-prototype" / "dist" / "food_environment_v1.json"
@@ -45,6 +47,8 @@ REVIEWED = {
     ("2018", "home_accessibility", "i010_w4"),
     ("2020", "home_accessibility", "i009"),
 } | {
+    (wave, "running_water", "i017") for wave in ("2011", "2013", "2015", "2018")
+} | {
     (wave, concept, code)
     for wave in QUESTIONNAIRES
     for concept, code in (("indoor_cleanliness", "i025"), ("indoor_temperature", "i026"))
@@ -69,6 +73,13 @@ CONCEPT_CAVEATS = {
         "2020 asks whether XFinancialResp's house has tap water. This is household access, not a direct "
         "water-quality or contaminant measurement, and it is not automatically interchangeable with "
         "2011–2018 'running water' items. Confirm household-person linkage before person-level assignment."
+    ),
+    "running_water": (
+        "Residence-level running-water access, not water quality, source or treatment, a contaminant assay, "
+        "microbial/chemical measurement, "
+        "or individual water intake. The reviewed 2011–2018 questions ask whether the residence has running water; "
+        "2020 tap-water access is a distinct item and is not assumed equivalent. Verify household-person linkage, "
+        "special values, eligible denominator, and missingness in the authorized release."
     ),
     "waterworks_treatment": (
         "2020 asks whether tap water is treated by waterworks; categories are Yes, No, and Do not know. "
@@ -138,6 +149,10 @@ FIELD_NOTES = {
     "tap_water_access": {
         "2020": "Official questionnaire/Codebook reviewed: XFinancialResp's house has tap water; 1=Yes/2=No. Household access only, not water quality."
     },
+    "running_water": {
+        wave: "Official questionnaire/Codebook reviewed: asks whether the residence has running water; preserve 1=Yes/2=No. Household access only, not water quality."
+        for wave in ("2011", "2013", "2015", "2018")
+    },
     "waterworks_treatment": {
         "2020": "Official questionnaire/Codebook reviewed: asks whether tap water is treated by waterworks; preserve 1=Yes/2=No/997=Do not know. Do not recode 997 as No."
     },
@@ -181,6 +196,9 @@ FIELD_VALUE_LABELS = {
     (wave, "elevator_access"): "1=Yes; 2=No"
     for wave in QUESTIONNAIRES
 } | {
+    (wave, "running_water"): "1=Yes; 2=No"
+    for wave in ("2011", "2013", "2015", "2018")
+} | {
     (wave, "home_accessibility"): (
         "1=Yes; 2=No" if wave in {"2011", "2013", "2015"}
         else "1=Yes; 2=No; 3=Do not need"
@@ -189,13 +207,19 @@ FIELD_VALUE_LABELS = {
 }
 
 
-def source_paths(wave: str) -> str:
-    return f"sources_official/{QUESTIONNAIRES[wave]}; sources_official/{CODEBOOKS[wave]}"
+def source_paths(wave: str, concept_id: str = "") -> str:
+    questionnaire = QUESTIONNAIRES[wave]
+    if concept_id == "running_water" and wave in {"2013", "2015"}:
+        questionnaire = "CHARLS_2013_2015_housing_questionnaire_pages_extracted.txt"
+    return f"sources_official/{questionnaire}; sources_official/{CODEBOOKS[wave]}"
 
 
 def validate_sources() -> None:
     for wave, concept_id, code in REVIEWED:
-        q = (ROOT / "sources_official" / QUESTIONNAIRES[wave]).read_text(encoding="utf-8", errors="ignore").casefold()
+        questionnaire = QUESTIONNAIRES[wave]
+        if concept_id == "running_water" and wave in {"2013", "2015"}:
+            questionnaire = "CHARLS_2013_2015_housing_questionnaire_pages_extracted.txt"
+        q = (ROOT / "sources_official" / questionnaire).read_text(encoding="utf-8", errors="ignore").casefold()
         cb = (ROOT / "sources_official" / CODEBOOKS[wave]).read_text(encoding="utf-8", errors="ignore").casefold()
         if code.casefold() not in q or code.casefold() not in cb:
             raise ValueError(f"Official questionnaire/Codebook missing {wave} {code}")
@@ -317,6 +341,7 @@ def main() -> None:
         writer = csv.DictWriter(stream, fieldnames=columns, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
+    sync_food_crosswalk_index(ROOT, {(wave, code.lower(), concept) for wave, concept, code in REVIEWED})
 
     data = json.loads(SITE.read_text(encoding="utf-8"))
     updated: set[tuple[str, str, str]] = set()
@@ -334,7 +359,7 @@ def main() -> None:
             field["note"] = f"{FIELD_NOTES[concept_id][wave]} See {REVIEW}."
             if (wave, concept_id) in FIELD_VALUE_LABELS:
                 field["value_labels"] = FIELD_VALUE_LABELS[(wave, concept_id)]
-            field["source_document"] = source_paths(wave)
+            field["source_document"] = source_paths(wave, concept_id)
             updated.add(key)
         for wave, expected_concept, code in sorted(REVIEWED):
             key = (wave, expected_concept, code)
@@ -351,7 +376,7 @@ def main() -> None:
                 "source_label": source["variable_label"],
                 "value_labels": FIELD_VALUE_LABELS.get((wave, concept_id), "1=Yes; 2=No"),
                 "note": f"{FIELD_NOTES[concept_id][wave]} See {REVIEW}.",
-                "source_document": source_paths(wave),
+                "source_document": source_paths(wave, concept_id),
             })
             updated.add(key)
     if updated != REVIEWED:

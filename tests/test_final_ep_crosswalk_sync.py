@@ -1,4 +1,5 @@
 import csv
+import json
 import unittest
 from pathlib import Path
 
@@ -90,6 +91,27 @@ class FinalEpCrosswalkSyncTests(unittest.TestCase):
             self.assertIn("official", fields[key]["note"].lower(), key)
             self.assertNotIn("pending", fields[key]["note"].lower(), key)
         self.assertIn("special values", fields[("2020", "i011_1")]["note"])
+
+    def test_reviewed_floor_and_entrance_measures_reach_site_and_source_index(self):
+        keys = {
+            ("2011", "i008"), ("2013", "i008"), ("2015", "i008"), ("2018", "i008"),
+            ("2020", "i006"), ("2020", "i006_1"), ("2020", "i006_2"), ("2020", "i010"),
+        }
+        data = json.loads((ROOT / "site-prototype/dist/food_environment_v1.json").read_text(encoding="utf-8"))
+        browser_fields = {
+            (field["wave"], field["code"]): field
+            for concept in data
+            for field in concept["source_fields"]
+        }
+        source_rows = {
+            (r["Wave"], r["Source.Code"].lower()): r
+            for r in read_csv(ROOT / "audit/ep_concept_source_crosswalk_v1.csv")
+            if r["Source.File"] == "audit/food_environment_crosswalk_v1.csv"
+        }
+        for key in keys:
+            self.assertIn("official", browser_fields[key]["mapping_status"].lower(), key)
+            self.assertNotIn("pending", browser_fields[key]["mapping_status"].lower(), key)
+            self.assertEqual(source_rows[key]["Mapping.Status"], browser_fields[key]["mapping_status"], key)
 
 
 if __name__ == "__main__":
