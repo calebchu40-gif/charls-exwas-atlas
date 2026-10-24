@@ -264,6 +264,23 @@ class CatalogReviewStatusTests(unittest.TestCase):
         app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
         self.assertIn("已检索的官方代码本中未找到该字段的类别标签；这不代表没有类别", app)
 
+    def test_pastime_job_codes_remain_unverified_in_catalog_and_public_payload(self):
+        expected_status = "candidate only; 2011 FM055 classification edition and lookup unverified; DO NOT ANALYZE until verified"
+        expected_codes = {"fm055_gb", "fm055_isco", "fm055_indc"}
+        rows = [
+            row for row in self.catalog
+            if row.get("Source.Wave") == "2011"
+            and row.get("Variable.Name", "").lower() in expected_codes
+        ]
+        self.assertEqual({row["Variable.Name"].lower() for row in rows}, expected_codes)
+        self.assertTrue(all(row.get("Concept.Mapping.Status") == expected_status for row in rows))
+        payload = json.loads((ROOT / "site-prototype/dist/work_exposures_v1.json").read_text(encoding="utf-8"))
+        by_id = {item["concept_id"]: item for item in payload}
+        for concept_id in ("pastime_work_occupation_code_gb", "pastime_work_occupation_code_isco", "pastime_work_industry_code"):
+            item = by_id[concept_id]
+            self.assertIn("FM055 is not among the listed items", item["source_fields"][0]["note"])
+            self.assertIn("DO NOT ANALYZE", item["source_fields"][0]["mapping_status"])
+
     def test_income_codebook_numeric_summaries_are_not_generic_pending_labels(self):
         examples = [
             ("2011", "ge008"),
@@ -620,7 +637,7 @@ class CatalogReviewStatusTests(unittest.TestCase):
             if "DO NOT ANALYZE" in str(row.get("Review.Flag", ""))
         }
         triage = (ROOT / "audit/do_not_analyze_triage_2026-10-22.md").read_text(encoding="utf-8")
-        self.assertEqual(len(active), 89)
+        self.assertEqual(len(active), 92)
         self.assertIn(f"当前主目录有{len(active)}条唯一波次—字段分析锁定项", triage)
         self.assertNotIn(("2011", "fm033"), active)
 

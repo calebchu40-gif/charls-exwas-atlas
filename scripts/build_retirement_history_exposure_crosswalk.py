@@ -135,7 +135,9 @@ def main():
   if code in {'fm019s1','fm019s2','fm019s3','fm019s4','fm019s5'}: note+=' The released local prepared table stores the selected option code as a string and uses an empty string otherwise; empty values remain ambiguous between unselected and not-asked.'
   if code.startswith('fm004_'): continue
   if code in SPECIAL_STATUS: continue
-  if code in {'fm055_gb','fm055_isco','fm055_indc'}: status='official occupation/industry code field mapped; classification version and disclosure review required'
+  if code in {'fm055_gb','fm055_isco','fm055_indc'}:
+   note='2011 questionnaire FM055 asks the respondent to describe the specific paid pastime job in open text; the public index excludes the free-text response. The 2011 Codebook lists separate GB occupation, ISCO occupation, and industry child fields, but does not identify the coding-standard edition or provide a verified category lookup here. CHARLS Wave 4 User Guide describes GB six-digit occupation and two-digit industry coding for a specified set of work-module items and says Wave 4 continued Wave 3 procedures; FM055 is not among the listed items, so those procedures cannot be assumed for this field. Keep the three coded fields separate; classification version, category lookup, and small-cell disclosure review are unresolved. Codebook frequencies are not published.'
+   status='candidate only; 2011 FM055 classification edition and lookup unverified; DO NOT ANALYZE until verified'
   unit=UNITS.get(code,'')
   if re.search(r'bracket|min|max',code): unit+='; unfolding interval component' if unit else 'unfolding interval component'
   rows.append({'concept_id':cid,'concept_label':label,'domain':domain,'wave':wave,'code':code,'module':rec.module,'source_label':rec.variable_label,'unit':unit,'source_document':DOCS[wave],'mapping_status':status,'questionnaire_review':note,'caveat':caveat})
@@ -146,6 +148,14 @@ def main():
  base.loc[fm039_mask,'caveat']=CONCEPTS['expected_formal_retirement_benefit_monthly_amount'][2]
  # Keep the existing work-history table intact and add only new item mappings.
  merged=pd.concat([base,out],ignore_index=True).drop_duplicates(['wave','code','concept_id'])
+ # Explicitly refresh the three existing FM055 rows, whose source review was
+ # strengthened after their initial crosswalk entry was created.
+ for code in {'fm055_gb','fm055_isco','fm055_indc'}:
+  source=out[(out.wave.eq('2011')) & out.code.str.lower().eq(code)]
+  target=(merged.wave.eq('2011')) & merged.code.str.lower().eq(code)
+  if len(source)==1 and target.sum()==1:
+   for column in ['mapping_status','questionnaire_review','caveat','unit']:
+    merged.loc[target,column]=source.iloc[0][column]
  merged.to_csv(AUDIT/'work_exposure_crosswalk_v1.csv',index=False,encoding='utf-8-sig')
  items=[]
  for cid,(label,domain,caveat) in CONCEPTS.items():
@@ -155,8 +165,17 @@ def main():
  path=ROOT/'site-prototype'/'dist'/'work_exposures_v1.json'
  old=json.loads(path.read_text(encoding='utf-8'))
  byid={r['concept_id']:r for r in old}
+ review_ids={
+  'pastime_work_occupation_code_gb',
+  'pastime_work_occupation_code_isco',
+  'pastime_work_industry_code',
+ }
  for item in items:
-  byid.setdefault(item['concept_id'],item)
+  # Refresh only the FM055 concepts whose audited status changed. Other
+  # retirement concepts may carry downstream reviews that are not encoded in
+  # this source builder and must remain intact.
+  if item['concept_id'] in review_ids or item['concept_id'] not in byid:
+   byid[item['concept_id']]=item
  path.write_text(json.dumps(list(byid.values()),ensure_ascii=False,indent=2),encoding='utf-8')
  print(f'retirement concepts={len(items)}; mappings={len(out)}; waves={out.groupby("wave").size().to_dict()}')
 if __name__=='__main__': main()

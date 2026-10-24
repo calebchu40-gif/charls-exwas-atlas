@@ -12868,11 +12868,8 @@
         "source_label": "Pasttime Job Occupation Code (GB)",
         "unit": "",
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "mapping_status": "official occupation/industry code field mapped; classification version and disclosure review required",
-        "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
-        "value_labels": "",
-        "value_label_status": "occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+        "mapping_status": "candidate only; 2011 FM055 classification edition and lookup unverified; DO NOT ANALYZE until verified",
+        "note": "2011 questionnaire FM055 asks the respondent to describe the specific paid pastime job in open text; the public index excludes the free-text response. The 2011 Codebook lists separate GB occupation, ISCO occupation, and industry child fields, but does not identify the coding-standard edition or provide a verified category lookup here. CHARLS Wave 4 User Guide describes GB six-digit occupation and two-digit industry coding for a specified set of work-module items and says Wave 4 continued Wave 3 procedures; FM055 is not among the listed items, so those procedures cannot be assumed for this field. Keep the three coded fields separate; classification version, category lookup, and small-cell disclosure review are unresolved. Codebook frequencies are not published."
       }
     ]
   },
@@ -12889,11 +12886,8 @@
         "source_label": "Pasttime Job Occupation Code (ISCO)",
         "unit": "",
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "mapping_status": "official occupation/industry code field mapped; classification version and disclosure review required",
-        "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
-        "value_labels": "",
-        "value_label_status": "occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+        "mapping_status": "candidate only; 2011 FM055 classification edition and lookup unverified; DO NOT ANALYZE until verified",
+        "note": "2011 questionnaire FM055 asks the respondent to describe the specific paid pastime job in open text; the public index excludes the free-text response. The 2011 Codebook lists separate GB occupation, ISCO occupation, and industry child fields, but does not identify the coding-standard edition or provide a verified category lookup here. CHARLS Wave 4 User Guide describes GB six-digit occupation and two-digit industry coding for a specified set of work-module items and says Wave 4 continued Wave 3 procedures; FM055 is not among the listed items, so those procedures cannot be assumed for this field. Keep the three coded fields separate; classification version, category lookup, and small-cell disclosure review are unresolved. Codebook frequencies are not published."
       }
     ]
   },
@@ -12910,11 +12904,8 @@
         "source_label": "Pasttime Job Industry Code",
         "unit": "",
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "mapping_status": "official occupation/industry code field mapped; classification version and disclosure review required",
-        "note": "Official questionnaire section FM001–FM059 located; route applies to retirement/receding respondents or wave-specific returners. See review note for exact item scope.",
-        "value_labels": "",
-        "value_label_status": "occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+        "mapping_status": "candidate only; 2011 FM055 classification edition and lookup unverified; DO NOT ANALYZE until verified",
+        "note": "2011 questionnaire FM055 asks the respondent to describe the specific paid pastime job in open text; the public index excludes the free-text response. The 2011 Codebook lists separate GB occupation, ISCO occupation, and industry child fields, but does not identify the coding-standard edition or provide a verified category lookup here. CHARLS Wave 4 User Guide describes GB six-digit occupation and two-digit industry coding for a specified set of work-module items and says Wave 4 continued Wave 3 procedures; FM055 is not among the listed items, so those procedures cannot be assumed for this field. Keep the three coded fields separate; classification version, category lookup, and small-cell disclosure review are unresolved. Codebook frequencies are not published."
       }
     ]
   },

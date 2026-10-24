@@ -1,6 +1,6 @@
 # 当前 DO NOT ANALYZE 项分流清单（2026-10-23）
 
-当前主目录有89条唯一波次—字段分析锁定项。下方字段清单含89条现行锁定；FM033仅在说明文字中用于记录其已解除锁定，不计入现行数。此清单不解除任何未关闭的限制；2011 FM019、FM032/FM035、FM039进行受控本地答案存储/路由QA，未导出个人记录或把代码本频数当分析样本量。FM033基于官方问卷、Codebook及受控QA拆出为带未观测选项说明的条件性分类候选。2015 `fn064_w2_1_2_`/`_1_3_`已受控核验路由及字符串存储，年份单位明确，但一个字段有不可数值解析文本，仍锁定。
+当前主目录有92条唯一波次—字段分析锁定项。下方字段清单含92条现行锁定；FM033仅在说明文字中用于记录其已解除锁定，不计入现行数。此清单不解除任何未关闭的限制；2011 FM019、FM032/FM035、FM039进行受控本地答案存储/路由QA，未导出个人记录或把代码本频数当分析样本量。FM033基于官方问卷、Codebook及受控QA拆出为带未观测选项说明的条件性分类候选。2015 `fn064_w2_1_2_`/`_1_3_`已受控核验路由及字符串存储，年份单位明确，但一个字段有不可数值解析文本，仍锁定。
 
 ## 分类与所需证据
 
@@ -69,6 +69,12 @@ Unit is years by the official Codebook title and both plan routes match the loca
 ### 1条：DO NOT ANALYZE; retain only to document the questionnaire/Codebook discrepancy pending official release clarification
 
 2015 `ha065_1_18_`
+
+### 3条：DO NOT ANALYZE until the 2011 FM055 occupation/industry coding edition and official category lookup are verified
+
+2011 `fm055_gb`, 2011 `fm055_isco`, 2011 `fm055_indc`
+
+The official questionnaire asks for open-text work content; the Codebook lists three distinct coded child fields but does not identify the coding edition or provide a verified lookup in the sources reviewed. Wave 3/4 coding guidance lists other work-module items, not FM055. See [`pastime_job_classification_review_2026-10-25.md`](pastime_job_classification_review_2026-10-25.md).
 
 ### 2条：DO NOT ANALYZE pending official clarification of the 2018 smoking-cessation age/year component identity
 

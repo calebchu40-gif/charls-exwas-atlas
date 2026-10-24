@@ -2,6 +2,7 @@
 
 ## 2026-10-25
 
+- Reviewed the 2011 paid pastime-work occupation/industry coding against the household questionnaire, Codebook, and Wave 4 User Guide. Kept free-text job descriptions out of the public index, separated GB/ISCO/industry fields, and marked their coding edition/lookup unresolved and `DO NOT ANALYZE`; fixed the retirement crosswalk builder to refresh existing site payload records when audit metadata changes.
 - Audited last-job location (`FL004`, 2011–2018) against wave-specific questionnaire and Codebook sources. Kept 2011 `DO NOT ANALYZE` because the Codebook lacks its category table and no-fixed-address code; surfaced the questionnaire Abroad option omitted by 2013/2018 Codebooks; preserved the concordant 2015 menu.
 - Reviewed unpaid family-business location (`FH013`) in 2011–2018. Kept the four wave-specific location menus, documented the 2011 no-fixed-address interviewer code and later-wave carry-forward skips, and excluded address subfields from the public catalogue.
 - Reviewed 10 five-wave employed-work intensity fields (days/week and hours/working day). Preserved the 2018 irregular-workday derivation note and 2020 paid-leave exclusion/low-frequency instruction; kept both as separate continuous measures without invented categories or a combined score.
