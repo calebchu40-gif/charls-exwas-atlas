@@ -20,6 +20,9 @@ EXPECTED = {
         **{f"jj001_{rank}{suffix}": unit for rank in range(1, 4) for suffix, unit in (("a", ""), ("b", "mu"), ("c", "jin/mu"), ("d", ""), ("e", "harvest seasons/year"), ("f", "harvest seasons/year (historical maximum)"))},
     },
     "community_household_amenity_penetration": {code: "percent of village households" for code in ("jb023", "jb024", "jb025", "jb026")},
+    "community_historical_disaster_epidemic_severity": {
+        **{f"ji003_{rank}{suffix}": unit for rank in range(1, 4) for suffix, unit in (("a", ""), ("b", "year"), ("c", "month"), ("d", "year"), ("e", "month"), ("f", "people"), ("g", "percent of community population"), ("h", "percent of grain output decline"))},
+    },
 }
 
 
@@ -43,7 +46,7 @@ class CommunityLandAgricultureMarketReviewTests(unittest.TestCase):
                 self.assertEqual(rows[code]["wave"], "2011")
                 self.assertIn("analysis eligibility pending", rows[code]["mapping_status"])
                 self.assertTrue(rows[code]["source_evidence"].startswith("CHARLS 2011 Community Questionnaire"))
-        self.assertEqual(sum(map(len, EXPECTED.values())), 48)
+        self.assertEqual(sum(map(len, EXPECTED.values())), 72)
 
     def test_ja012_conflict_is_excluded_and_documented(self):
         self.assertFalse(any(r["code"].lower() == "ja012" for r in self.rows))
@@ -85,6 +88,17 @@ class CommunityLandAgricultureMarketReviewTests(unittest.TestCase):
         for field in concept["source_fields"]:
             self.assertEqual(field["unit"], "percent of village households")
             self.assertIn("not confirmed ownership or use", field["caveat"])
+
+    def test_historical_disaster_dates_and_impacts_keep_distinct_units(self):
+        concept = self.by_id["community_historical_disaster_epidemic_severity"]
+        self.assertIn("since 1945", concept["caveat"])
+        by_code = {f["code"].lower(): f for f in concept["source_fields"]}
+        for rank in range(1, 4):
+            self.assertEqual(by_code[f"ji003_{rank}b"]["unit"], "year")
+            self.assertEqual(by_code[f"ji003_{rank}c"]["unit"], "month")
+            self.assertEqual(by_code[f"ji003_{rank}f"]["unit"], "people")
+            self.assertIn("grain output decline", by_code[f"ji003_{rank}h"]["unit"])
+            self.assertIn("not an individual's verified direct exposure", by_code[f"ji003_{rank}a"]["caveat"])
 
 
 if __name__ == "__main__":

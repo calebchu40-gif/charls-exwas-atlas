@@ -34,6 +34,7 @@ CONCEPTS={
  "community_household_energy_prices":("Community-reported household energy prices","Community environment","2011 informant-reported current local prices for natural gas, bottled LPG and coal. Prices are community context, not household fuel use, fuel mix, combustion or personal pollutant dose; retain distinct units."),
  "community_major_crop_production":("Community major-crop production profile","Community agricultural context","2011 village informant ranks up to three major crops and reports crop-specific planted area, yield per mu, mechanized production, current harvest seasons and historical maximum seasons. Keep crop ranks and unlike measurement units separate; do not sum yields or derive personal pesticide, occupation or dietary exposure."),
  "community_household_amenity_penetration":("Community household communication and appliance penetration","Community socioeconomic context","2011 village-informant estimates of the share of households with fixed telephones, one or more cell phones, televisions, and refrigerators. These are aggregate community percentages, not the sampled household's ownership, use, or an individual's digital exposure; preserve each amenity separately."),
+ "community_historical_disaster_epidemic_severity":("Community history of severe disasters and epidemics","Community environment","2011 community informant retrospectively identifies up to three most severe listed natural disasters or epidemics since 1945, with event start/end month and year, deaths/injuries, affected population share, and grain-output decline. Preserve event ranks, dates, event types and impact measures separately; long recall and community-level reporting do not establish a sampled person's direct exposure."),
 }
 MAP={
  "community_water_sources":["jb006_1","jb006_2","jb006_3","jb006_4","jb006_5","jb006_6","jb006_7","jb006_8"],
@@ -64,6 +65,7 @@ MAP={
  "community_household_energy_prices":["jj021","jj022","jj025"],
  "community_major_crop_production":[*[f"jj001_{i}{suffix}" for i in range(1,4) for suffix in "abcdef"]],
  "community_household_amenity_penetration":["jb023","jb024","jb025","jb026"],
+ "community_historical_disaster_epidemic_severity":[f"ji003_{i}{suffix}" for i in range(1,4) for suffix in "abcdefgh"],
 }
 
 # The 2011 Community Questionnaire pages 10, 21–22, and 32–33 explicitly
@@ -148,6 +150,7 @@ QUESTIONNAIRE_REVIEWED = {
  "community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices",
  "community_major_crop_production",
  "community_household_amenity_penetration",
+ "community_historical_disaster_epidemic_severity",
  *[cid for cid in CONCEPTS if cid.startswith("community_kindergarten_") or
     cid.startswith("community_primary_school_") or cid.startswith("community_junior_middle_school_") or
     cid.startswith("community_senior_high_school_") or cid.startswith("community_post_office_") or
@@ -170,7 +173,7 @@ def validate_added_source_mappings():
  cpath=ROOT/"sources_official"/"CHARLS_2011_Codebook_extracted.txt"
  q=" ".join(qpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
  cb=" ".join(cpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
- codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration") for code in MAP[cid]}
+ codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity") for code in MAP[cid]}
  for code in codes:
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
   q_norm="".join(ch for ch in q if ch.isalnum())
@@ -213,6 +216,12 @@ def validate_added_source_mappings():
   "what percentage of households in your village has one (or more) cell phones",
   "what percentage of households in your village have a tv",
   "what percentage of households in your village has a refrigerator",
+  "three most severe natural disaster/epidemics occurred in this village/community since 1945",
+  "when did it occur",
+  "when did it end",
+  "how many people were injured or dead",
+  "what was the percentage of people dead or injured",
+  "what was the percentage by which grain output went down",
  )
  for phrase in required_q:
   if phrase not in q:
@@ -257,6 +266,8 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part J p.35 (PDF p.38), JJ001 ranked three-crop table; crop name, 2010 planted area, yield per mu, mechanized-production response and crop-season fields checked against the official Codebook; frequencies omitted."
     elif cid == "community_household_amenity_penetration":
      evidence="CHARLS 2011 Community Questionnaire, Part B p.11 (PDF p.14), JB023–JB026 V-only village household-penetration estimates; 0–100 percent scale checked against the official Codebook."
+    elif cid == "community_historical_disaster_epidemic_severity":
+     evidence="CHARLS 2011 Community Questionnaire, Part I pp.34–35 (PDF pp.37–38), JI003 retrospective three-event table since 1945; listed disasters/epidemics, event dates and community impact fields checked against the official Codebook."
     elif cid.startswith("community_observed_") or cid in {"community_built_form_organization", "community_accessibility_observation"}:
      evidence="CHARLS 2011 Community Questionnaire, Part K interviewer observations; item-specific 1–7 endpoint anchors verified."
     elif is_reviewed:
@@ -353,6 +364,10 @@ def main():
     elif code_l in {"jb023","jb024","jb025","jb026"}:
      unit="percent of village households"
      caveat="Community-informant estimate of the share of village households with this amenity (0–100%). Aggregate context, not confirmed ownership or use by the sampled household or individual."
+    elif code_l.startswith("ji003_"):
+     suffix=code_l[-1]
+     unit={"b":"year","c":"month","d":"year","e":"month","f":"people","g":"percent of community population","h":"percent of grain output decline"}.get(suffix,"")
+     caveat="Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
     if code_l.startswith(("jb006_", "jb007_")):
      unit="households"
     elif code_l.startswith("jb028_1_") or code_l.startswith("jf002_1_"):
@@ -417,6 +432,8 @@ def main():
      unit="harvest seasons/year (historical maximum)"
     elif code_l in {"jb023","jb024","jb025","jb026"}:
      unit="percent of village households"
+    elif code_l.startswith("ji003_"):
+     unit={"b":"year","c":"month","d":"year","e":"month","f":"people","g":"percent of community population","h":"percent of grain output decline"}.get(code_l[-1],"")
     else:
      unit=""
     rows.append({"concept_id":cid,"concept_label":label,"domain":domain,"wave":2011,

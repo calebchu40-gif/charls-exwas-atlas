@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 587,
+      "exposure_count": 588,
       "phenotype_count": 213,
-      "candidate_pair_count": 125024,
+      "candidate_pair_count": 125237,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -2510,6 +2510,256 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_historical_disaster_epidemic_severity",
+          "label": "Community history of severe disasters and epidemics",
+          "domain": "Community environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "ji003_1a",
+              "label": "The Most Serve One",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_1b",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_1c",
+              "label": "Month",
+              "module": "community",
+              "unit": "month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_1d",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_1e",
+              "label": "Month",
+              "module": "community",
+              "unit": "month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_1f",
+              "label": "Num. of People Injured or Dead",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_1g",
+              "label": "Percentage of People Injured or Dead",
+              "module": "community",
+              "unit": "percent of community population",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_1h",
+              "label": "Percentage of Drop in Grain Production",
+              "module": "community",
+              "unit": "percent of grain output decline",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_2a",
+              "label": "The Second Serve One",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_2b",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_2c",
+              "label": "Month",
+              "module": "community",
+              "unit": "month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_2d",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_2e",
+              "label": "Month",
+              "module": "community",
+              "unit": "month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_2f",
+              "label": "Num. of People Injured or Dead",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_2g",
+              "label": "Percentage of People Injured or Dead",
+              "module": "community",
+              "unit": "percent of community population",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_2h",
+              "label": "Percentage of Drop in Grain Production",
+              "module": "community",
+              "unit": "percent of grain output decline",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_3a",
+              "label": "The Third Serve One",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_3b",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_3c",
+              "label": "Month",
+              "module": "community",
+              "unit": "month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_3d",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_3e",
+              "label": "Month",
+              "module": "community",
+              "unit": "month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_3f",
+              "label": "Num. of People Injured or Dead",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_3g",
+              "label": "Percentage of People Injured or Dead",
+              "module": "community",
+              "unit": "percent of community population",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+            },
+            {
+              "code": "ji003_3h",
+              "label": "Percentage of Drop in Grain Production",
+              "module": "community",
+              "unit": "percent of grain output decline",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
             }
           ]
         },
