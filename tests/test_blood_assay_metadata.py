@@ -38,6 +38,11 @@ class BloodAssayMetadataTests(unittest.TestCase):
         self.assertEqual(next(r for r in cbc if r["concept_id"] == "blood_wbc")["source_unit_text"], "in thousands")
         self.assertEqual(next(r for r in cbc if r["concept_id"] == "blood_mcv")["source_unit_text"], "not stated in CBC summary table")
 
+    def test_blood_catalogue_links_inventory_audit_and_official_release_note(self):
+        html = (ROOT / "site-prototype/dist/index.html").read_text(encoding="utf-8")
+        self.assertIn("audit/blood_biomarker_release_inventory_review_2026-10-24.md", html)
+        self.assertIn("https://charls.pku.edu.cn/en/data/Blood2015.pdf", html)
+
     def test_guide_ranges_are_not_labeled_as_lod(self):
         self.assertTrue(all("guide_reported_detection_range" in r for r in self.rows))
         self.assertTrue(all("Guide-reported detection range" not in r["assay_metadata_status"] for r in self.rows))
