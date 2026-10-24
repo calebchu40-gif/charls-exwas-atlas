@@ -31,3 +31,12 @@
 ## 页面修订与部署验证
 
 审计后补充了Wave 4用户指南中“尽量追访迁居者”的说明，修正早期页面对迁移能力的宽泛表述。`tests/test_candidate_pair_explorer.py`校验页面同时说明CHARLS追访迁居者、此浏览器不连接个人迁移史。全套341项Python测试通过；提交`e3934be`已推送，公开Pages index返回HTTP 200并包含修订文案。
+
+
+Direct official document links shown in the page:
+
+- Wave 2 Release Note: <https://charls.pku.edu.cn/en/data/Release2013.pdf>
+- Wave 4 User Guide: <https://charls.pku.edu.cn/en/data/User2018.pdf>
+- Wave 5 (2020) User Guide, corrected official CHARLS data-host URL: <https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2020-charls-wave5/application/CHARLS_2020_User_Guide_English.pdf>
+
+The published HTML returned HTTP 200 and contains these links and the mover-tracking note. The separate official PDFs were verified through the official sites; a shell-only HEAD check was inconclusive because of local TLS EOFs.
