@@ -528,3 +528,5 @@ Commit `70a9993` was pushed to `main`; GitHub Validate run `40142235895` and Pag
 ## 2026-10-25 continuation: full upstream rebuild reproducibility
 
 Ran `python scripts/build_ep_atlas_metadata.py` from the upstream crosswalk builders through final wave-specific review replay, role sharding, and coverage summaries. The complete build exited successfully and reproduced E/P/C=4,845/2,082/982, 1,486 E/P concepts (1,208 E, 303 P, 25 dual-role), 6,821 E/P concept-source links, 6,927 E/P rows and 6,714 distinct wave-fields. Re-ran the full suite: 399/399 tests passed; 34 JSON files parse; JavaScript syntax, Python compilation, and whitespace checks pass. The generated full-build deltas are being recorded so the upstream build state, not a prior finalize-only artifact, remains reproducible. No participant microdata were used.
+
+Full rebuild commit `78ec3df` passed Validate jobs (`40142997950`: validate 28s; synthetic-survey-engine 20s) and Pages deploy job (`40142997947`: 20s). Live E, C and health-topic JSON assets returned HTTP 200 and matched the local build after line-ending normalization. Details: `audit/public_release_verification_2026-10-25.md`.

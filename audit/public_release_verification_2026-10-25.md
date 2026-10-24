@@ -31,3 +31,7 @@ This verifies publication of the metadata-only release and that the public files
 ## 2026-10-25 continuation: separate self-rated-health response scales
 
 Commit `70a9993cdedfbdaeaf4d2be4569e8de2e7418e50` passed GitHub Validate run `40142235895` (workflow run #398) and Pages Deploy run `40142235907` (workflow run #195; 27 seconds). The deployed health-topic JSON returned HTTP 200 and contained 48 concepts, including `self_rated_health_excellent_poor`. Its content matched the local generated asset after normalizing GitHub Pages LF and local Windows CRLF line endings. No participant-level data or association estimates are served.
+
+## 2026-10-25 continuation: verify full upstream rebuild publication
+
+Commit `78ec3df` passed both jobs in Validate workflow run `40142997950` (#400): `validate` in 28 seconds and `synthetic-survey-engine` in 20 seconds. Pages Deploy run `40142997947` (#196) completed its `deploy` job in 20 seconds. Live `catalog_e.json`, `catalog_c.json`, and `health_symptoms_v1.json` returned HTTP 200 and matched the current local build after line-ending normalization. The full upstream build and 399-test suite therefore reproduce the published static metadata. No participant-level data or model estimates are present.
