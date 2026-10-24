@@ -63,6 +63,7 @@ FULL_PIPELINE_SCRIPTS = (
     "build_parent_marital_ethnicity_crosswalk.py",
     "build_sibling_record_context_crosswalk.py",
     "build_child_roster_context_crosswalk.py",
+    "build_child_phenotype_crosswalk.py",
     "build_social_context_remainder_crosswalk.py",
     "build_childhood_residential_context_crosswalk.py",
     "build_hukou_lifecourse_crosswalk.py",
@@ -197,6 +198,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     # site_catalog_shards.py, while these review steps expect one row per wave.
     "build_adult_education_training_crosswalk.py",
     "build_child_roster_context_crosswalk.py",
+    "build_child_phenotype_crosswalk.py",
     # Restore reviewed household route/category metadata before catalog propagation.
     "apply_housing_context_source_review.py",
     "build_charls_atlas_catalog.py",

@@ -15,12 +15,13 @@ SOURCES = {
 FAMILY = "family and intergenerational context"
 SUBCATEGORY = "offspring residential, social, and socioeconomic context"
 GATE = (
-    "Questionnaire items refer to Childn and the Codebook lists numbered child-slot variables. "
-    "Treat these as respondent-linked child-roster-slot fields; do not assume a standalone childID "
-    "or long child table. Confirm the authorized release's file layout, respondent key, slot linkage, "
-    "and slot eligibility before any analysis. Multiple child slots may belong to one respondent; "
-    "do not treat slots as independent respondents or aggregate them without a prespecified "
-    "respondent-level estimand and rule. No participant values or Codebook frequencies were used."
+    "The official raw variable inventory lists ID, childID, and HHmemberID in the 2013 and 2015 "
+    "Child modules, supporting a respondent-linked child-record analysis unit. Validate the actual "
+    "release layout, childID uniqueness, respondent join, and eligibility against the authorized files. "
+    "The Codebook's numbered child suffixes describe item slots and must not be confused with the "
+    "Child-module record key. Child records are clustered within respondents; do not treat them as "
+    "independent respondents or collapse them without a prespecified estimand and rule. "
+    "No participant values or Codebook frequencies were used."
 )
 
 COMMON_RESIDENCE = (
@@ -77,10 +78,6 @@ SPECS = [
      "Wave-3 child activity status is not interchangeable with the 2013 yes/no work item. The 2015 Codebook shows an additional unlabeled value 24 in numbered xchildsta slots; do not assign it meaning and verify release variable identity before analysis."),
     ("2015", "cb071_w3", "offspring_house_ownership_2015", "子女是否拥有住房（2015）", "Whether child owns a house", "1=Yes; 2=No",
      "Child-record property ownership is not respondent or household ownership; no value or ownership share is implied."),
-    ("2015", "cb063_w3_1", "offspring_health_status_under16_2015", "16岁以下子女健康状况（2015）", "Child's health status", "1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor",
-     "Questionnaire routes children under age 16 to this item; this is child-reported-by-proxy context, not a phenotype measured on the CHARLS respondent."),
-    ("2015", "cb063_w3_6", "offspring_self_care_ability_over60_2015", "60岁以上子女自理能力（2015）", "Whether child can take care of him/herself", "1=Yes; 2=No",
-     "Questionnaire routes only children older than 60 to this item; preserve as a child-record caregiving-context candidate, not respondent function."),
     ("2015", "cb064_w3_2", "offspring_new_rural_pension_participation_2015", "子女是否参加新农保（2015）", "Child's participation in New Rural Social Pension Insurance", "1=Yes; 2=No",
      "Child-record social-protection status; only asked for the applicable child age/route. Do not infer coverage of the respondent or household."),
 ]
@@ -96,8 +93,8 @@ for wave, code, concept, label, source_label, value_labels, caveat in SPECS:
         "wave": wave, "code": code, "concept_id": concept, "concept_label": label,
         "domain": FAMILY, "subcategory": SUBCATEGORY, "module": "Child",
         "source_label": source_label,
-        "mapping_status": "official questionnaire/Codebook field reviewed; respondent-linked child-record candidate; no respondent-level aggregation approved",
-        "unit": "continuous distance in km, child roster slot" if continuous else "respondent-linked child roster slot; final release key/layout to verify",
+        "mapping_status": "official questionnaire/Codebook field reviewed; respondent-linked child-record candidate; validate ID/childID join and clustered analysis unit in authorized release",
+        "unit": "continuous distance in km, linked child record" if continuous else "linked child record (ID + childID); validate key in authorized release",
         "value_labels": value_labels,
         "value_label_status": (
             "continuous measure; official questionnaire unit and route reviewed; special-value storage requires authorized-data QA"
@@ -107,8 +104,8 @@ for wave, code, concept, label, source_label, value_labels, caveat in SPECS:
             "official questionnaire/Codebook response categories reviewed; frequencies omitted"
         ),
         "value_label_source": SOURCES[wave],
-        "construct": f"{label}; preserve respondent linkage and the numbered child roster slot.",
-        "value_semantics": "continuous conditional distance in kilometres for a child roster slot; not a respondent-level distance until a child-selection/aggregation rule is specified" if continuous else "child-roster-slot categorical context; not a respondent-level exposure until an explicit child-selection/aggregation estimand is specified",
+        "construct": f"{label}; preserve the respondent ID and childID linkage.",
+        "value_semantics": "continuous conditional distance in kilometres for a linked child record; validate special codes and child-level estimand" if continuous else "linked child-record categorical context; define the child-level estimand and account for children clustered within respondents",
         "caveat": f"{caveat} {GATE}",
         "source_archive": f"{rec.source}; official questionnaire/Codebook",
     })
@@ -117,4 +114,4 @@ out = pd.DataFrame(rows)
 if out.duplicated(["wave", "code"]).any():
     raise SystemExit("Duplicate child-record wave/code")
 out.to_csv(AUDIT / "child_roster_context_crosswalk_v1.csv", index=False, encoding="utf-8-sig")
-print(f"child roster-slot mappings={len(out)}; concepts={out.concept_id.nunique()}; waves={sorted(out.wave.unique())}")
+print(f"linked child-context mappings={len(out)}; concepts={out.concept_id.nunique()}; waves={sorted(out.wave.unique())}")

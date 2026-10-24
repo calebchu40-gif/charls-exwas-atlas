@@ -1,9 +1,9 @@
 {
   "as_of": "2026-10-25",
-  "crosswalk_files": 81,
+  "crosswalk_files": 82,
   "candidate_concept_ids": 1472,
-  "exposure_concept_ids_including_dual": 1180,
-  "phenotype_concept_ids_including_dual": 301,
+  "exposure_concept_ids_including_dual": 1178,
+  "phenotype_concept_ids_including_dual": 303,
   "wave_field_mapping_rows": 6772,
   "includes": "all E/P candidate rows from ep_concept_source_crosswalk_v1.csv",
   "excludes": "C-only measurement eligibility rows; verified_code_examples_v1.csv is a separate multiwave lookup",
@@ -44,9 +44,14 @@
       "concept_ids": 23
     },
     {
+      "file": "audit/child_phenotype_crosswalk_v1.csv",
+      "mapping_rows": 2,
+      "concept_ids": 2
+    },
+    {
       "file": "audit/child_roster_context_crosswalk_v1.csv",
-      "mapping_rows": 21,
-      "concept_ids": 14
+      "mapping_rows": 19,
+      "concept_ids": 12
     },
     {
       "file": "audit/childhood_residential_context_crosswalk_v1.csv",

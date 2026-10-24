@@ -17,7 +17,7 @@
 |e|community context|270|270|74|1|
 |e|early-life and family socioeconomic context|4|4|4|2|
 |e|environmental perception|1|1|1|1|
-|e|family and intergenerational context|27|24|25|2|
+|e|family and intergenerational context|25|22|23|2|
 |e|food and household environment|161|161|104|1|
 |e|healthcare access|109|109|51|1|
 |e|housing and built environment|480|480|248|2|
@@ -31,7 +31,7 @@
 |p|chronic disease|248|248|240|1|
 |p|chronic disease ancillary|664|664|520|70|
 |p|cognition|338|338|305|1|
-|p|health and symptoms|175|175|169|4|
+|p|health and symptoms|177|177|171|5|
 |p|healthcare access|217|217|66|2|
 |p|internal biomarker|13|13|0|1|
 |p|mental health|52|52|52|1|

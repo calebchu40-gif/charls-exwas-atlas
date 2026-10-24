@@ -801,6 +801,10 @@ def main() -> None:
                              lambda concept, item: item.get("domain", "family and intergenerational context"),
                              lambda concept, item: item.get("subcategory", "offspring residential, social, and socioeconomic context"),
                              "e", "mapping_status", ("construct", "unit", "value_semantics", "value_labels", "caveat"))
+    append_concept_crosswalk("child_phenotype_crosswalk_v1.csv", "wave", "code", "concept_id", "source_label", "module",
+                             lambda concept, item: item.get("domain", "health and symptoms"),
+                             lambda concept, item: item.get("subcategory", "child health and functioning"),
+                             "p", "mapping_status", ("construct", "unit", "value_semantics", "value_labels", "caveat"))
     append_concept_crosswalk("parent_roster_context_crosswalk_v1.csv", "wave", "code", "concept_id", "source_label", "module",
                              lambda concept, item: item.get("domain", "social determinants"),
                              lambda concept, item: item.get("subcategory", "family context"),
@@ -1172,6 +1176,7 @@ def main() -> None:
     add_reviewed_labels("parent_roster_education_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official wave questionnaire and Codebook response categories reviewed; frequency counts omitted", re.I))
     add_reviewed_labels("sibling_record_context_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire/codebook categories reviewed; codebook frequencies omitted", re.I))
     add_reviewed_labels("child_roster_context_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire/Codebook response categories reviewed; frequencies omitted|official questionnaire response categories reviewed; Codebook contains unlabeled code 24 for 2015 activity slots; do not infer it; frequencies omitted", re.I))
+    add_reviewed_labels("child_phenotype_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official 2015 questionnaire/Codebook response categories reviewed; frequencies omitted", re.I))
     add_reviewed_status_without_value_label(
         "child_roster_context_crosswalk_v1.csv", "wave", "code", "value_label_status", "value_label_source",
         re.compile(r"^continuous measure; official questionnaire unit and route reviewed; special-value storage requires authorized-data QA$", re.I),

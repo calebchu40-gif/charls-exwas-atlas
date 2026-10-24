@@ -6,9 +6,9 @@ This review identifies candidate metadata fields about CHARLS respondents' child
 
 ## Source structure and linkage boundary
 
-The 2013 and 2015 questionnaires phrase items in terms of `Childn`; the Codebooks list numbered child-slot variables (for example, `cb053_1_` and `cb053_2_` in 2013 and `cb053_1_`, `cb053_2_`, etc. in 2015). The public audit therefore describes these as respondent-linked child-roster-slot fields. It does not assume an independent child ID or a long child table. The authorized release must be inspected to confirm the physical file layout, respondent key, slot order/linkage, missing-slot semantics, and eligible denominator before any analysis.
+The official raw variable inventory lists `ID`, `childID`, and `HHmemberID` in both the 2013 and 2015 `Child` modules. This supports treating these audited fields as child records linked to a respondent. The questionnaires phrase items in terms of `Childn`, while Codebooks also list numbered child suffixes (for example, `cb053_1_` and `cb053_2_`) for family-information representations. Those numbered slots must not be confused with the separate `Child` module's record key. Before analysis, inspect the authorized release to confirm its physical layout, childID uniqueness, respondent join, missing-link semantics, and eligible denominator.
 
-Multiple slots can belong to one respondent. Slot records are not independent respondents. Any respondent-level use requires an explicitly defined child selection or aggregation estimand, appropriate design/variance handling, and approved release-data QA.
+Multiple child records can link to one respondent, so child records are clustered rather than independent respondent observations. A child-level analysis must retain the respondent-child linkage and account for within-respondent dependence under a prespecified estimand and survey-design plan. A respondent-level exposure derived from child data requires an explicit child selection or aggregation rule and approved release-data QA.
 
 ## Official questionnaire checks
 
@@ -26,6 +26,6 @@ Multiple slots can belong to one respondent. Slot records are not independent re
 
 ## Machine-readable implementation
 
-`child_roster_context_crosswalk_v1.csv` contains 21 wave-field mappings covering 14 concepts. All rows are `E` candidates in the broad family/intergenerational context discovery catalogue, with explicit roster-slot, route, and aggregation caveats. They are not approved tests, harmonized respondent-level exposures, or evidence of causal adjustment eligibility.
+`child_roster_context_crosswalk_v1.csv` contains 19 `E` candidate wave-field mappings covering 12 family/intergenerational context concepts. `child_phenotype_crosswalk_v1.csv` contains two 2015 `P` candidates: proxy-reported health for children younger than 16 and self-care ability for children older than 60. Both remain child-level outcomes, with respondent linkage, age-routed denominators, and within-respondent clustering caveats. They are not approved tests or respondent-level measures.
 
 Sources: `sources_official/CHARLS_2013_Questionnaire_extracted.txt`, `sources_official/CHARLS_2013_Codebook_extracted.txt`, `sources_official/CHARLS_2015_Questionnaire_extracted.txt`, and `sources_official/CHARLS_2015_Codebook_extracted.txt`. Codebook cell frequencies and distribution summaries were excluded from public outputs.
