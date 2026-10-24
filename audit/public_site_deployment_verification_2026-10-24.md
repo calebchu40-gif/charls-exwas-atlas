@@ -18,3 +18,12 @@ Public site: https://calebchu40-gif.github.io/charls-exwas-atlas/
 ## Scope and method
 
 Verification used the public GitHub Pages origin, cache-busted requests to the deployed site assets, and the generated public directory shards. These checks establish that the expected metadata build is live; they do not establish release-file coverage, respondent eligibility, analysis Ns, model validity, or statistical associations. All wave-specific restrictions and 89 analysis locks remain in force.
+
+## Follow-up deployment — 2026-10-24
+
+Commit `0eaf332` (`Review CHARLS blood pressure and pulse metadata`) was pushed to `main`. GitHub Actions confirmed:
+
+- Pages deploy run [#106 / `40044331718`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40044331718): success.
+- Metadata validation run [#195 / `40044331712`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40044331712): success.
+
+Cache-busted requests to the public `objective_measurements_v1.json` and `catalog_p.json` returned HTTP 200. The objective-measurement asset contains three waves each for systolic BP, diastolic BP and pulse; systolic/diastolic show `mmHg`, pulse unit remains blank, and the 2011 unresolved LI-to-QA identity is explicit. Public P-catalog rows show the corresponding concept units and keep 993/999 as non-completion/status codes, with the 2013/2015 exact field-source status. The objective-measurement asset URL cache key was advanced to `v=3`.
