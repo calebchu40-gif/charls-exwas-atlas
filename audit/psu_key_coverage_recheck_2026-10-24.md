@@ -1,0 +1,7 @@
+# Community-key coverage recheck against protected PSU-map candidate
+
+Rechecked the five prepared wave tables against the `psu.dta` candidate stored in the access-controlled local CHARLS workspace. The candidate contains `communityID`, province, city, NBS urban/rural status, and area type. In every prepared wave, all observed nonmissing community IDs were present in the candidate map, consistent with the earlier aggregate coverage report.
+
+This is a key-coverage check only. The candidate file's exact source archive and checksum have not been independently matched to the official Wave 2 release package, and its geography fields do not establish the sampling variance stratum. Do not use province, city, urban/rural status, or area type as a substitute stratum. The result supports use of `communityID` as a candidate PSU linkage key for further verification; it does not establish that the five prepared person files are derived from the same authenticated release versions or that design-based standard errors are ready.
+
+The validator reads only community IDs from the private person tables and the map, then writes aggregate QA to the protected local QA folder. No row-level IDs or geography values are published. Reproduce with `python scripts/audit_charls_psu_mapping.py`; the default input paths are under `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas`. Code explicitly labels the result as not a complete variance-design validation.

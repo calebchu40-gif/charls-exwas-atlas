@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-24 continuation: recheck community-key coverage for PSU mapping
+
+Re-ran the five-wave community-key coverage against the protected local `psu.dta` candidate. All observed nonmissing community IDs match the candidate map, consistent with the earlier aggregate report. The validator now accepts an explicitly private local map path and labels its result as key coverage only. The candidate's exact source archive identity is still unverified, and province/city/urban/rural/area fields are not accepted as a variance stratum. The official Wave 2 weights file is still absent, and no model-readiness gate was closed. Synthetic key-normalization and duplicate-key tests pass; 344 total tests pass and all 89 analysis locks remain exact. Audit: `audit/psu_key_coverage_recheck_2026-10-24.md`; latest commit forthcoming.
+
 ## 2026-10-24 continuation: protected property-sale field storage review
 
 Ran an aggregate-only QA on the protected 2013/2015 prepared person tables for the household property-sale allocation fields. Numeric amount storage, the 0–100 range, and sold-property routing were internally consistent, but selected options and corresponding amount fields did not always co-occur. This does not resolve the household denominator or source release identity; all 54 amount fields remain `DO NOT ANALYZE`. The private QA output stays under `%LOCALAPPDATA%` and was not committed. Synthetic tests pass; the full suite passes 342 tests and all 89 analysis locks exactly match the triage register. Details: `audit/household_sale_proceeds_storage_review_2026-10-24.md`; implementation: `scripts/audit_household_sale_proceeds_storage.py`; commit `163111f`.
