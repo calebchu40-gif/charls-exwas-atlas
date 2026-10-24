@@ -254,3 +254,6 @@ DA056选项编码边界更新（2026-10-23）：41个2011/2013/2015活动与设�
 
 
 核心调整候选和逐波准备限制汇总见[`audit/core_covariate_readiness_2026-10-23.md`](audit/core_covariate_readiness_2026-10-23.md)。年龄、性别、教育、婚姻/伴侣、户籍、居住地和抽样设计分别核验；目录中的456条自动发现C波次字段线索（300个不同变量码）不等于固定调整变量，正式模型仍为0。
+
+
+2026-10-24 数据访问与网站公开范围：GitHub Pages展示的是字段目录/方法信息，不提供CHARLS个人微观数据。CHARLS现行条款要求学术使用、禁止商业用途、禁止公开或转交原始微观数据，下载须经门户账号与审核；协作者应自行按官方流程获得许可。网站已加入官方条款和数据目录入口。详见[`audit/charls_data_access_license_review_2026-10-24.md`](audit/charls_data_access_license_review_2026-10-24.md)。
