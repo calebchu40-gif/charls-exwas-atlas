@@ -30,6 +30,11 @@
 
 ## 2026-10-25
 
+- Resolved the 2020 `DA035` 30-hours/30-minutes translation discrepancy using the official Chinese questionnaire and Chinese flowchart; the Chinese questionnaire and Codebook both say minutes, and the flowchart shows `DA034<2 hours → DA035`, `DA034≥2 hours → DA036`. Restored reviewed response labels in the metadata crosswalk and documented that authorized-release value-storage/special-code QA is still required before analysis. Kept activity intensity and conditional routing separate; no dose or weekly total is derived. Added the official Chinese source PDFs, checksums, source review and regression coverage. No respondent records or Codebook frequencies were used.
+- The full finalization run also refreshed 14 Wave 5 household-expenditure source references to cite the now-included Chinese questionnaire alongside the Codebook; no household responses were read.
+
+## 2026-10-25
+
 - Completed the finalize-only catalogue rebuild after source reviews and restored the final validation order: all review/lock overlays run before the exact triage check and final website shards. Refreshed the crosswalks, catalog and metadata-only candidate-pair index (6,751 concept-source mappings); actual pairwise Ns and association models remain uncomputed. The 92 locks match the triage inventory, and all 370 tests pass.
 - Reviewed the 2011 paid pastime-work occupation/industry coding against the household questionnaire, Codebook, and Wave 4 User Guide. Kept free-text job descriptions out of the public index, separated GB/ISCO/industry fields, and marked their coding edition/lookup unresolved and `DO NOT ANALYZE`; fixed the retirement crosswalk builder to refresh existing site payload records when audit metadata changes.
 - Audited last-job location (`FL004`, 2011–2018) against wave-specific questionnaire and Codebook sources. Kept 2011 `DO NOT ANALYZE` because the Codebook lacks its category table and no-fixed-address code; surfaced the questionnaire Abroad option omitted by 2013/2018 Codebooks; preserved the concordant 2015 menu.

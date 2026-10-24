@@ -3350,12 +3350,12 @@
         "source_label": "Time with Intensive Physical Activity",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2020r.zip",
-        "note": "2020 physical-activity duration components are not independent measures; preserve intensity and source-field identity. Printed questionnaire does not show the exact skips.",
+        "note": "2020 activity-duration fields are conditionally routed components. Chinese official questionnaire and flowchart agree with Codebook on DA035 minutes; English questionnaire has a translation error. Preserve source-field identity; do not sum or derive activity dose.",
         "value_labels": "1=<2 hours; 2=≥2 hours",
-        "value_label_status": "official codebook response labels reviewed; questionnaire threshold agrees; routing and release-variable structure still require verification",
+        "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
-        "value_semantics": "Intensity-specific activity-day duration category. The printed questionnaire does not establish the skip conditions among DA034/DA035/DA036; preserve these as routed components, not independent activity doses. Do not derive weekly minutes or an IPAQ score.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1116; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1116; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
       },
       {
         "wave": "2020",
@@ -3363,12 +3363,12 @@
         "source_label": "Time with Moderate Physical Activity",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2020r.zip",
-        "note": "2020 physical-activity duration components are not independent measures; preserve intensity and source-field identity. Printed questionnaire does not show the exact skips.",
+        "note": "2020 activity-duration fields are conditionally routed components. Chinese official questionnaire and flowchart agree with Codebook on DA035 minutes; English questionnaire has a translation error. Preserve source-field identity; do not sum or derive activity dose.",
         "value_labels": "1=<2 hours; 2=≥2 hours",
-        "value_label_status": "official codebook response labels reviewed; questionnaire threshold agrees; routing and release-variable structure still require verification",
+        "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
-        "value_semantics": "Intensity-specific activity-day duration category. The printed questionnaire does not establish the skip conditions among DA034/DA035/DA036; preserve these as routed components, not independent activity doses. Do not derive weekly minutes or an IPAQ score.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1116; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1116; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
       },
       {
         "wave": "2020",
@@ -3376,12 +3376,12 @@
         "source_label": "Time with Light Physical Activity",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2020r.zip",
-        "note": "2020 physical-activity duration components are not independent measures; preserve intensity and source-field identity. Printed questionnaire does not show the exact skips.",
+        "note": "2020 activity-duration fields are conditionally routed components. Chinese official questionnaire and flowchart agree with Codebook on DA035 minutes; English questionnaire has a translation error. Preserve source-field identity; do not sum or derive activity dose.",
         "value_labels": "1=<2 hours; 2=≥2 hours",
-        "value_label_status": "official codebook response labels reviewed; questionnaire threshold agrees; routing and release-variable structure still require verification",
+        "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
-        "value_semantics": "Intensity-specific activity-day duration category. The printed questionnaire does not establish the skip conditions among DA034/DA035/DA036; preserve these as routed components, not independent activity doses. Do not derive weekly minutes or an IPAQ score.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1116; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1116; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
       },
       {
         "wave": "2020",
@@ -3389,12 +3389,12 @@
         "source_label": "Time with Intensive Physical Activity",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2020r.zip",
-        "note": "Questionnaire: <30 hours/≥30 hours; Codebook: <30 minutes/≥30 minutes. Unresolved conflict; do not use the category labels for analysis.",
-        "value_labels": "",
-        "value_label_status": "DO NOT ANALYZE; official 2020 questionnaire and Codebook conflict on DA035 threshold units",
-        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1120-L1123; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32; sources_official/CHARLS_2020_Codebook_extracted.txt:L4223-L4232",
-        "value_semantics": "Unresolved official source conflict: questionnaire threshold is 30 hours; Codebook response labels say 30 minutes. Preserve both readings; do not infer which is correct, recode the field, or derive activity dose. The routing relationship to DA034 and DA036 is also not shown in the printed questionnaire.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1120-L1123; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "note": "Chinese questionnaire and Codebook: <30 minutes/≥30 minutes. English questionnaire says “hours” (translation discrepancy). DA035 is routed only after DA034<2 hours; preserve category and conditional denominator.",
+        "value_labels": "1=<30 minutes; 2=≥30 minutes",
+        "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt:L4223-L4232; sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA035; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24)",
+        "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1120; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
       },
       {
         "wave": "2020",
@@ -3402,12 +3402,12 @@
         "source_label": "Time with Moderate Physical Activity",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2020r.zip",
-        "note": "Questionnaire: <30 hours/≥30 hours; Codebook: <30 minutes/≥30 minutes. Unresolved conflict; do not use the category labels for analysis.",
-        "value_labels": "",
-        "value_label_status": "DO NOT ANALYZE; official 2020 questionnaire and Codebook conflict on DA035 threshold units",
-        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1120-L1123; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32; sources_official/CHARLS_2020_Codebook_extracted.txt:L4223-L4232",
-        "value_semantics": "Unresolved official source conflict: questionnaire threshold is 30 hours; Codebook response labels say 30 minutes. Preserve both readings; do not infer which is correct, recode the field, or derive activity dose. The routing relationship to DA034 and DA036 is also not shown in the printed questionnaire.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1120-L1123; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "note": "Chinese questionnaire and Codebook: <30 minutes/≥30 minutes. English questionnaire says “hours” (translation discrepancy). DA035 is routed only after DA034<2 hours; preserve category and conditional denominator.",
+        "value_labels": "1=<30 minutes; 2=≥30 minutes",
+        "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt:L4223-L4232; sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA035; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24)",
+        "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1120; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
       },
       {
         "wave": "2020",
@@ -3415,12 +3415,12 @@
         "source_label": "Time with Light Physical Activity",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2020r.zip",
-        "note": "Questionnaire: <30 hours/≥30 hours; Codebook: <30 minutes/≥30 minutes. Unresolved conflict; do not use the category labels for analysis.",
-        "value_labels": "",
-        "value_label_status": "DO NOT ANALYZE; official 2020 questionnaire and Codebook conflict on DA035 threshold units",
-        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1120-L1123; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32; sources_official/CHARLS_2020_Codebook_extracted.txt:L4223-L4232",
-        "value_semantics": "Unresolved official source conflict: questionnaire threshold is 30 hours; Codebook response labels say 30 minutes. Preserve both readings; do not infer which is correct, recode the field, or derive activity dose. The routing relationship to DA034 and DA036 is also not shown in the printed questionnaire.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1120-L1123; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "note": "Chinese questionnaire and Codebook: <30 minutes/≥30 minutes. English questionnaire says “hours” (translation discrepancy). DA035 is routed only after DA034<2 hours; preserve category and conditional denominator.",
+        "value_labels": "1=<30 minutes; 2=≥30 minutes",
+        "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt:L4223-L4232; sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA035; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24)",
+        "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1120; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
       },
       {
         "wave": "2020",
@@ -3428,12 +3428,12 @@
         "source_label": "Time with Intensive Physical Activity",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2020r.zip",
-        "note": "2020 physical-activity duration components are not independent measures; preserve intensity and source-field identity. Printed questionnaire does not show the exact skips.",
+        "note": "2020 activity-duration fields are conditionally routed components. Chinese official questionnaire and flowchart agree with Codebook on DA035 minutes; English questionnaire has a translation error. Preserve source-field identity; do not sum or derive activity dose.",
         "value_labels": "1=<4 hours; 2=≥4 hours",
-        "value_label_status": "official codebook response labels reviewed; questionnaire threshold agrees; routing and release-variable structure still require verification",
+        "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
-        "value_semantics": "Intensity-specific activity-day duration category. The printed questionnaire does not establish the skip conditions among DA034/DA035/DA036; preserve these as routed components, not independent activity doses. Do not derive weekly minutes or an IPAQ score.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1124; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1124; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
       },
       {
         "wave": "2020",
@@ -3441,12 +3441,12 @@
         "source_label": "Time with Moderate Physical Activity",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2020r.zip",
-        "note": "2020 physical-activity duration components are not independent measures; preserve intensity and source-field identity. Printed questionnaire does not show the exact skips.",
+        "note": "2020 activity-duration fields are conditionally routed components. Chinese official questionnaire and flowchart agree with Codebook on DA035 minutes; English questionnaire has a translation error. Preserve source-field identity; do not sum or derive activity dose.",
         "value_labels": "1=<4 hours; 2=≥4 hours",
-        "value_label_status": "official codebook response labels reviewed; questionnaire threshold agrees; routing and release-variable structure still require verification",
+        "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
-        "value_semantics": "Intensity-specific activity-day duration category. The printed questionnaire does not establish the skip conditions among DA034/DA035/DA036; preserve these as routed components, not independent activity doses. Do not derive weekly minutes or an IPAQ score.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1124; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1124; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
       },
       {
         "wave": "2020",
@@ -3454,12 +3454,12 @@
         "source_label": "Time with Light Physical Activity",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2020r.zip",
-        "note": "2020 physical-activity duration components are not independent measures; preserve intensity and source-field identity. Printed questionnaire does not show the exact skips.",
+        "note": "2020 activity-duration fields are conditionally routed components. Chinese official questionnaire and flowchart agree with Codebook on DA035 minutes; English questionnaire has a translation error. Preserve source-field identity; do not sum or derive activity dose.",
         "value_labels": "1=<4 hours; 2=≥4 hours",
-        "value_label_status": "official codebook response labels reviewed; questionnaire threshold agrees; routing and release-variable structure still require verification",
+        "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
-        "value_semantics": "Intensity-specific activity-day duration category. The printed questionnaire does not establish the skip conditions among DA034/DA035/DA036; preserve these as routed components, not independent activity doses. Do not derive weekly minutes or an IPAQ score.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1124; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1124; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",

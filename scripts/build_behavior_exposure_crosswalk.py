@@ -154,9 +154,9 @@ def main() -> None:
                         beverage = {"da072": "烈酒", "da074": "啤酒", "da076": "葡萄酒/米酒"}.get(rec.variable.lower(), "所选酒类")
                         field_note = f"{wave}年{rec.variable.upper()}仅在受访者选择{beverage}后询问该酒类过去一年内的饮用频率；这是酒类单项频率，不是总体饮酒频率。需保留酒类范围及路由。"
                 if cid == "physical_activity_duration" and wave == "2020":
-                    field_note = (f"2020年{rec.variable.upper()}为强度特异的活动日时长分档组成字段；DA034/DA035/DA036的问卷文本未给出可核实的相互跳题条件，"
-                                  "不可视为三个独立活动剂量或直接相加。DA035问卷与Codebook的30小时/30分钟阈值冲突，保留为DO NOT ANALYZE，等待获准发行版和完整路由核验。"
-                                  "不按IPAQ公式构造分钟数、每周总量或等级。")
+                    field_note = (f"2020年{rec.variable.upper()}为强度特异的活动日时长分档组成字段；官方中文版问卷及流程图显示：DA032回答‘是’后进入DA033和DA034；"
+                                  "DA034<2小时进入DA035，DA034≥2小时进入DA036，再转DA037。中文版问卷与Codebook均确认DA035阈值为30分钟；英文问卷的‘30 hours’为翻译冲突。"
+                                  "保留条件路由和字段身份，不可视为三个独立活动剂量或直接相加；不得按IPAQ公式构造分钟数、每周总量或等级。")
                 elif cid == "physical_activity_duration":
                     field_note = "活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
                 field = {"wave": wave, "code": rec.variable, "source_label": rec.variable_label,

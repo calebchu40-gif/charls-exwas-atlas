@@ -98,7 +98,6 @@ def code(cid,w,c):
     if cid=='physical_activity_days':
         return '1–7=Number of days in the past week; days asked only on the activity route'
     if cid=='physical_activity_duration':
-        if w=='2020' and c.startswith('da035_'): return None
         if c.startswith('da053_'): return '1=<2 hours; 2=≥2 hours'
         if c.startswith('da054_'): return '1=<30 minutes; 2=≥30 minutes'
         if c.startswith('da055_') or c.startswith('da036_'): return '1=<4 hours; 2=≥4 hours'
@@ -151,11 +150,18 @@ for i,r in d.iterrows():
             d.loc[i,'value_label_status']='official codebook response labels reviewed; frequencies omitted; descriptive purpose only, not activity dose'
             d.loc[i,'value_semantics']='Purpose of intensive/moderate/light physical activity; descriptive category, not activity occurrence, frequency, duration, or dose. Preserve the wave-specific codebook wording and questionnaire route.'
         if cid=='physical_activity_duration' and w=='2020':
-            d.loc[i,'questionnaire_source']=f'sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L{QUESTIONNAIRE[w][1].get(c)}; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32'
-            d.loc[i,'value_semantics']='Intensity-specific activity-day duration category. The printed questionnaire does not establish the skip conditions among DA034/DA035/DA036; preserve these as routed components, not independent activity doses. Do not derive weekly minutes or an IPAQ score.'
-            d.loc[i,'value_label_status']='official codebook response labels reviewed; questionnaire threshold agrees; routing and release-variable structure still require verification'
-            d.loc[i,'mapping_status']='official questionnaire/Codebook labels reviewed; nested duration routing and release-variable structure still require verification'
-            d.loc[i,'note']='2020 physical-activity duration components are not independent measures; preserve intensity and source-field identity. Printed questionnaire does not show the exact skips.'
+            d.loc[i,'questionnaire_source']=(f'sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; '
+                'sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); '
+                'sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); '
+                f'sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L{QUESTIONNAIRE[w][1].get(c)}; '
+                'sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32')
+            d.loc[i,'value_semantics']='Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.'
+            d.loc[i,'value_label_status']='official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA'
+            d.loc[i,'mapping_status']='official Chinese questionnaire, flowchart, and Codebook reviewed; conditional duration routing retained; release-variable identity/storage still requires authorized-file QA'
+            d.loc[i,'note']='2020 activity-duration fields are conditionally routed components. Chinese official questionnaire and flowchart agree with Codebook on DA035 minutes; English questionnaire has a translation error. Preserve source-field identity; do not sum or derive activity dose.'
+            if c.startswith('da035_'):
+                d.loc[i,'value_label_source']='sources_official/CHARLS_2020_Codebook_extracted.txt:L4223-L4232; sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA035; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24)'
+                d.loc[i,'note']='Chinese questionnaire and Codebook: <30 minutes/≥30 minutes. English questionnaire says “hours” (translation discrepancy). DA035 is routed only after DA034<2 hours; preserve category and conditional denominator.'
         if cid=='alcohol_frequency' and ((w in {'2011','2013','2015','2018'} and c in {'da072','da074','da076'}) or (w=='2020' and c=='da052')):
             if w=='2020':
                 d.loc[i,'value_semantics']='Overall monthly frequency of any alcoholic beverage in the past year; not beverage-specific. The identical 1–8 response categories do not make this directly comparable with the beverage-specific 2011–2018 items.'
@@ -216,14 +222,6 @@ for i,r in d.iterrows():
         d.loc[i,'value_label_source']=BOOK(w)
         d.loc[i,'value_semantics']=unit+'; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived'
         d.loc[i,'questionnaire_source']=questionnaire_source(w,c)
-    elif cid=='physical_activity_duration' and w=='2020' and c.startswith('da035_'):
-        d.loc[i,'value_labels']=''
-        d.loc[i,'value_label_status']='DO NOT ANALYZE; official 2020 questionnaire and Codebook conflict on DA035 threshold units'
-        d.loc[i,'value_label_source']='sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1120-L1123; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32; sources_official/CHARLS_2020_Codebook_extracted.txt:L4223-L4232'
-        d.loc[i,'value_semantics']='Unresolved official source conflict: questionnaire threshold is 30 hours; Codebook response labels say 30 minutes. Preserve both readings; do not infer which is correct, recode the field, or derive activity dose. The routing relationship to DA034 and DA036 is also not shown in the printed questionnaire.'
-        d.loc[i,'questionnaire_source']='sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1120-L1123; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32'
-        d.loc[i,'mapping_status']='DO NOT ANALYZE; 2020 Questionnaire and Codebook conflict on DA035 threshold units; release-level identity/routing verification required'
-        d.loc[i,'note']='Questionnaire: <30 hours/≥30 hours; Codebook: <30 minutes/≥30 minutes. Unresolved conflict; do not use the category labels for analysis.'
     elif cid=='smoking_dependence' and c=='da066':
         d.loc[i,'value_label_source']=BOOK(w)
         d.loc[i,'questionnaire_source']=questionnaire_source(w,c)
