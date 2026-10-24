@@ -290,6 +290,16 @@ class ResultTableValidationTests(unittest.TestCase):
         row["estimability_review_id"] = "synthetic-rule-v1:pair-001"
         self.assertEqual(validate_rows([row], self.fields, self.required), [])
 
+    def test_reviewed_pass_requires_reference_and_cannot_conflict_with_inestimable_fit(self):
+        row = self.base_row()
+        row.update(fit_status="inestimable", estimability_review_status="reviewed_pass")
+        errors = validate_rows([row], self.fields, self.required)
+        self.assertTrue(any("reviewed_pass requires estimability_review_id" in e for e in errors))
+        self.assertTrue(any("inestimable fit cannot have estimability_review_status=reviewed_pass" in e for e in errors))
+        row["estimability_review_id"] = "synthetic-rule-v1:pair-001"
+        errors = validate_rows([row], self.fields, self.required)
+        self.assertTrue(any("inestimable fit cannot have estimability_review_status=reviewed_pass" in e for e in errors))
+
 
 if __name__ == "__main__":
     unittest.main()

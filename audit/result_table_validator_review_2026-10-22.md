@@ -11,4 +11,4 @@ python scripts/validate_exwas_result_table.py path\to\results.csv
 python -m unittest discover -s tests -v
 ```
 
-2026-10-24状态：校验规则由合成夹具测试；结果校验器专属测试现为13项，全项目268项测试通过。新增 near-separation 回归用例确保有限迭代系数和`NaN`不确定性不能以`inestimable`状态通过；成功行还必须由受控的逐对审查给出`reviewed_pass`和审查编号。分层码未发布时，机器校验要求`variance_design`用`approximate method:`与`limitation:`，或中文的`近似方法：`与`局限：`作明确标签。合成成功行仅是软件测试夹具，不是CHARLS分析结果。该检查器不能替代数据许可、统计方法复核、披露审查或字段级估计资格判断。正式模型仍被逐波样本资格、模块权重覆盖和方差设计核验门槛阻断。
+2026-10-24状态：校验规则由合成夹具测试；结果校验器专属测试现为14项，全项目269项测试通过。新增 near-separation 回归用例确保有限迭代系数和`NaN`不确定性不能以`inestimable`状态通过；成功行还必须由受控的逐对审查给出`reviewed_pass`和审查编号，且不可估计结果不能同时标记审查通过。分层码未发布时，机器校验要求`variance_design`用`approximate method:`与`limitation:`，或中文的`近似方法：`与`局限：`作明确标签。合成成功行仅是软件测试夹具，不是CHARLS分析结果。该检查器不能替代数据许可、统计方法复核、披露审查或字段级估计资格判断。正式模型仍被逐波样本资格、模块权重覆盖和方差设计核验门槛阻断。

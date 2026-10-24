@@ -126,11 +126,15 @@ def validate_rows(rows: list[dict[str, str]], schema_fields: list[str], required
         if estimability_status and estimability_status not in ESTIMABILITY_STATUSES:
             errors.append(f"row {row_no}: unsupported estimability_review_status {estimability_status}")
         review_id = row.get("estimability_review_id", "").strip()
+        if estimability_status == "reviewed_pass" and not review_id:
+            errors.append(f"row {row_no}: reviewed_pass requires estimability_review_id")
         if fit_status == "success":
             if estimability_status != "reviewed_pass":
                 errors.append(f"row {row_no}: successful fit requires estimability_review_status=reviewed_pass")
             if not review_id:
                 errors.append(f"row {row_no}: successful fit requires estimability_review_id")
+        if fit_status == "inestimable" and estimability_status == "reviewed_pass":
+            errors.append(f"row {row_no}: inestimable fit cannot have estimability_review_status=reviewed_pass")
         elif review_id and estimability_status != "reviewed_pass":
             errors.append(f"row {row_no}: estimability_review_id requires estimability_review_status=reviewed_pass")
 

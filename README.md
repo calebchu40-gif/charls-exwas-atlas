@@ -70,7 +70,7 @@ GitHub 官方说明：GitHub Free 个人仓库需要公开仓库才能使用 Pag
 
 2026-10-22续审：FM033四个已观测类别和FM011=3路由已核实，从旧菜单冲突锁定中移出；未观测的商业保险选项不推断编码，空白保留为缺失。FM032/FM035端点的成对字符串存储和路径已核实，但极端特殊码仍未解释，继续锁定。当前锁定数33；审计见[`audit/pension_2011_fm032_fm033_fm035_route_storage_review_2026-10-22.md`](audit/pension_2011_fm032_fm033_fm035_route_storage_review_2026-10-22.md)。
 
-本轮认知标签导入和C类施测字段复核见[`audit/cognition_label_ingestion_and_role_rebuild_2026-10-22.md`](audit/cognition_label_ingestion_and_role_rebuild_2026-10-22.md)。结果表schema已配备结构/样本流/设计状态/逐对可估计性审查校验器[`scripts/validate_exwas_result_table.py`](scripts/validate_exwas_result_table.py)；成功结果必须关联受控审查记录。可复用的空白审查模板见[`audit/estimability_review_record_template_v1.md`](audit/estimability_review_record_template_v1.md)。当前全套268项合成与元数据测试通过；这不代表CHARLS模型已拟合。
+本轮认知标签导入和C类施测字段复核见[`audit/cognition_label_ingestion_and_role_rebuild_2026-10-22.md`](audit/cognition_label_ingestion_and_role_rebuild_2026-10-22.md)。结果表schema已配备结构/样本流/设计状态/逐对可估计性审查校验器[`scripts/validate_exwas_result_table.py`](scripts/validate_exwas_result_table.py)；成功结果必须关联受控审查记录。可复用的空白审查模板见[`audit/estimability_review_record_template_v1.md`](audit/estimability_review_record_template_v1.md)。当前全套269项合成与元数据测试通过；这不代表CHARLS模型已拟合。
 
 慢病辅助题的84条非空审定值标签现已逐波精确进入主目录；新增13个标签展示，并统一2011 DA020S2多选选项的说明，避免误把未选中代码当作No。具体字段和路由限制见[`audit/chronic_disease_ancillary_label_ingestion_2026-10-22.md`](audit/chronic_disease_ancillary_label_ingestion_2026-10-22.md)。
 
