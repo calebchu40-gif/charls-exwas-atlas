@@ -1,5 +1,11 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-24 continuation: map marriage-history event timing by wave
+
+Reviewed 2011 `BE007`/`BE008` and 2013 `BE009_1`/`BE009_2` against the wave-specific official questionnaires and Codebooks. Added four life-course E candidate mappings, keeping year and month precision, the 2011 spouse-death/divorce categories, and 2013 month `0=Do not remember`. Their conditional routing remains explicit. The overlapping C records are retained only as estimand-specific context candidates; a focal exposure must not be adjusted for itself. 2015 `BE009_1`/`BE009_2` remain C source-availability metadata because the official Codebook lists “No Observations”; actual authorized-release availability is unverified, so no 2015 E mapping is inferred. Audit: `audit/marital_history_event_date_review_2026-10-24.md`.
+
+The finalization pipeline rebuilt E=4,752, P=2,127, C=980; E/P concepts=1,449 and source mappings=6,679. Metadata-only candidate pair counts are 123,320 (2011), 134,392 (2013), 133,897 (2015), 104,649 (2018), and 13,906 (2020), not sample sizes or tests. Generic pending counts are E=0, P=0, C=25. All 320 Python tests pass; 34 static JSON files parse; the 89 analysis-lock validator, JavaScript syntax, Python compilation, and `git diff --check` pass. Push and deployment are pending. Formal association models remain 0; no respondent records or Codebook frequencies were used.
+
 ## 2026-10-24 continuation: review C/E overlap for hukou life-course fields
 
 Matched 20 still-pending C rows exactly by wave, code, and module to the source-reviewed hukou life-course/recent-change E crosswalks. Propagated official wave source citations, date/duration semantics, routing and special-value caveats, and concept links while retaining C classification. The updater is idempotent and registered in both full and finalize-only pipelines. Adjustment use remains estimand-specific; no fixed adjustment set was introduced. Audit: `audit/hukou_c_overlap_review_2026-10-24.md`; machine-readable target map: `audit/hukou_c_overlap_review_v1.csv`.

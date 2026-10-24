@@ -2,9 +2,9 @@
 
 更新：2026-10-24。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
-- 最终E/P目录行：6,875；不同波次—字段码：6,600。一个字段可对应多个候选类别/角色。
-- 有非空标签文本的E/P目录行：3,427；不同波次—字段码：3,350。连续测量、计数值及测量流程字段可已审但不需要离散标签。
-- 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：31。具体来源审查状态不等同于通用待审。
+- 最终E/P目录行：6,879；不同波次—字段码：6,604。一个字段可对应多个候选类别/角色。
+- 有非空标签文本的E/P目录行：3,431；不同波次—字段码：3,354。连续测量、计数值及测量流程字段可已审但不需要离散标签。
+- 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：25。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
 
@@ -23,7 +23,7 @@
 |e|housing and built environment|480|480|40|2|
 |e|internal biomarker|49|49|0|1|
 |e|life-course and reproductive history|8|8|0|1|
-|e|social determinants|2,132|2,132|1,007|20|
+|e|social determinants|2,136|2,136|1,011|20|
 |e|social protection|1,331|1,331|427|30|
 |p|anthropometric|24|15|0|1|
 |p|biochemistry|32|32|0|1|
@@ -161,6 +161,8 @@
 |occupation classification code; Codebook frequency distribution omitted; classification definitions are not response labels; unpaid family-business route retained|2|
 |official questionnaire/Codebook identify a conditional bracket endpoint; Codebook provides numeric summaries but no discrete response categories|2|
 |official questionnaire/Codebook identify a conditional bracket endpoint; Codebook explicitly says string; no discrete response categories|2|
+|official questionnaire response categories reviewed; frequencies omitted|2|
+|continuous/date component; no discrete labels|2|
 |official 2013 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|
 |official 2018 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|
 |official 2015 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|

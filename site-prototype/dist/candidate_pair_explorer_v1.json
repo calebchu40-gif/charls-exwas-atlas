@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 577,
+      "exposure_count": 579,
       "phenotype_count": 213,
-      "candidate_pair_count": 122894,
+      "candidate_pair_count": 123320,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -15691,6 +15691,46 @@
           ]
         },
         {
+          "concept_id": "first_marriage_end_reason",
+          "label": "首次婚姻结束原因",
+          "domain": "social determinants",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "be008",
+              "label": "Why End Your First Marriage",
+              "module": "demographic_background",
+              "unit": "",
+              "value_labels": "1=Death of spouse; 2=Divorce",
+              "value_semantics": "1=Death of spouse; 2=Divorce",
+              "mapping_status": "wave-specific life-course marriage-history exposure candidate; questionnaire and Codebook item reviewed; analysis eligibility remains conditional",
+              "caveat": "Conditional first-marriage history item. A spouse's death and divorce are distinct event types; do not merge with current marital status or infer timing from this response. Codes and years are wave-specific; no cross-wave harmonization is implied."
+            }
+          ]
+        },
+        {
+          "concept_id": "first_marriage_end_year",
+          "label": "首次婚姻结束年份",
+          "domain": "social determinants",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "be007",
+              "label": "Year Your First Marriage End",
+              "module": "demographic_background",
+              "unit": "",
+              "value_labels": "Calendar year (1900–2011); questionnaire hard check requires year >= BE006.",
+              "value_semantics": "Calendar year (1900–2011); questionnaire hard check requires year >= BE006.",
+              "mapping_status": "wave-specific life-course marriage-history exposure candidate; questionnaire and Codebook item reviewed; analysis eligibility remains conditional",
+              "caveat": "Asked within the baseline marriage-history route after the respondent reports a first marriage. This records event timing, not current marital status; retain route and verify authorized-release special values. Codes and years are wave-specific; no cross-wave harmonization is implied."
+            }
+          ]
+        },
+        {
           "concept_id": "first_hukou_location_relation_2011",
           "label": "首次户口登记地关系（2011）",
           "domain": "social determinants",
@@ -21722,9 +21762,9 @@
       ]
     },
     "2013": {
-      "exposure_count": 598,
+      "exposure_count": 600,
       "phenotype_count": 224,
-      "candidate_pair_count": 133944,
+      "candidate_pair_count": 134392,
       "exposures": [
         {
           "concept_id": "childhood_residential_setting_before_16_2013",
@@ -35811,6 +35851,46 @@
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
               "caveat": "自动概念目录中的逐波字段候选；2018题目标签显示既往饮酒与频率信息合并，不能简单当作ever二分类；2020当前目录未检出同名的独立历史字段，不以空缺推断从未饮酒。"
+            }
+          ]
+        },
+        {
+          "concept_id": "most_recent_marriage_year",
+          "label": "最近一次婚姻年份",
+          "domain": "social determinants",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "be009_1",
+              "label": "When Was Your Most Recent Marriage: Year",
+              "module": "Demographic_Background",
+              "unit": "",
+              "value_labels": "Calendar year (1900–2013); hard check requires year >= BE007.",
+              "value_semantics": "Calendar year (1900–2013); hard check requires year >= BE007.",
+              "mapping_status": "wave-specific life-course marriage-history exposure candidate; questionnaire and Codebook item reviewed; analysis eligibility remains conditional",
+              "caveat": "Asked on the marriage-history follow-up route for eligible respondents reporting a marriage event; questionnaire routing and interview type define the denominator. Do not treat as a repeated-wave measure for all respondents. Codes and years are wave-specific; no cross-wave harmonization is implied."
+            }
+          ]
+        },
+        {
+          "concept_id": "most_recent_marriage_month",
+          "label": "最近一次婚姻月份",
+          "domain": "social determinants",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "be009_2",
+              "label": "When Was Your Most Recent Marriage: Month",
+              "module": "Demographic_Background",
+              "unit": "",
+              "value_labels": "0=Do not remember; 1–12=calendar month",
+              "value_semantics": "0=Do not remember; 1–12=calendar month",
+              "mapping_status": "wave-specific life-course marriage-history exposure candidate; questionnaire and Codebook item reviewed; analysis eligibility remains conditional",
+              "caveat": "Asked on the marriage-history follow-up route for eligible respondents reporting a marriage event. Zero means month not remembered per questionnaire; preserve it as a distinct response, not January or a missing code. Codes and years are wave-specific; no cross-wave harmonization is implied."
             }
           ]
         },

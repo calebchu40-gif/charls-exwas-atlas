@@ -33,6 +33,27 @@ specs = [
      "sources_official/CHARLS_2013_Questionnaire_extracted.txt"),
 ]
 
+# Source-reviewed life-course event timing. These are wave-specific candidate
+# exposures, not current marital status or automatic adjustment variables.
+reviewed_specs = [
+    ("2011", "be007", "first_marriage_end_year", "首次婚姻结束年份",
+     "Year Your First Marriage End", "Calendar year (1900–2011); questionnaire hard check requires year >= BE006.",
+     "Asked within the baseline marriage-history route after the respondent reports a first marriage. This records event timing, not current marital status; retain route and verify authorized-release special values.",
+     "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt", "continuous/date component; no discrete labels"),
+    ("2011", "be008", "first_marriage_end_reason", "首次婚姻结束原因",
+     "Why End Your First Marriage", "1=Death of spouse; 2=Divorce",
+     "Conditional first-marriage history item. A spouse's death and divorce are distinct event types; do not merge with current marital status or infer timing from this response.",
+     "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt", "official questionnaire response categories reviewed; frequencies omitted"),
+    ("2013", "be009_1", "most_recent_marriage_year", "最近一次婚姻年份",
+     "When Was Your Most Recent Marriage: Year", "Calendar year (1900–2013); hard check requires year >= BE007.",
+     "Asked on the marriage-history follow-up route for eligible respondents reporting a marriage event; questionnaire routing and interview type define the denominator. Do not treat as a repeated-wave measure for all respondents.",
+     "sources_official/CHARLS_2013_Questionnaire_extracted.txt", "continuous/date component; no discrete labels"),
+    ("2013", "be009_2", "most_recent_marriage_month", "最近一次婚姻月份",
+     "When Was Your Most Recent Marriage: Month", "0=Do not remember; 1–12=calendar month",
+     "Asked on the marriage-history follow-up route for eligible respondents reporting a marriage event. Zero means month not remembered per questionnaire; preserve it as a distinct response, not January or a missing code.",
+     "sources_official/CHARLS_2013_Questionnaire_extracted.txt", "official questionnaire response categories reviewed; frequencies omitted"),
+]
+
 raw = pd.read_csv(AUDIT / "raw_variable_catalog_v1.csv", dtype=str, encoding="utf-8-sig").fillna("")
 rows = []
 for wave, code, concept, label_zh, label, semantics, caveat, questionnaire in specs:
@@ -53,6 +74,33 @@ for wave, code, concept, label_zh, label, semantics, caveat, questionnaire in sp
         "mapping_status": "wave-specific marital-history exposure candidate; item definition reviewed; analysis eligibility remains conditional",
         "construct": label_zh, "value_semantics": semantics,
         "caveat": caveat + " Numeric values are not cross-wave harmonization codes.",
+        "source_archive": f"{match.iloc[0].source}; {questionnaire}; {codebook}",
+        "questionnaire_source": questionnaire,
+    })
+
+for wave, code, concept, label_zh, label, semantics, caveat, questionnaire, label_status in reviewed_specs:
+    match = raw[(raw.wave == wave) & (raw.variable.str.lower() == code.lower())]
+    if match.empty:
+        raise SystemExit(f"Missing source catalog field: {wave} {code}")
+    codebook = f"sources_official/CHARLS_{wave}_Codebook_extracted.txt"
+    for rel in (questionnaire, codebook):
+        if not (ROOT / rel).is_file():
+            raise SystemExit(f"Missing official source: {rel}")
+    cbtext = (ROOT / codebook).read_text(encoding="utf-8", errors="replace").replace("\x00", "").lower()
+    if code.lower() not in cbtext:
+        raise SystemExit(f"Official Codebook does not contain {wave} {code}")
+    qtext = (ROOT / questionnaire).read_text(encoding="utf-8", errors="replace").replace("\x00", "").lower()
+    if code.lower() not in qtext:
+        raise SystemExit(f"Official questionnaire does not contain {wave} {code}")
+    rows.append({
+        "wave": wave, "code": code, "concept_id": concept,
+        "concept_label": label_zh, "domain": "social determinants",
+        "module": str(match.iloc[0].module), "source_label": label,
+        "value_labels": semantics, "value_label_status": label_status,
+        "value_label_source": f"{questionnaire}; {codebook}",
+        "mapping_status": "wave-specific life-course marriage-history exposure candidate; questionnaire and Codebook item reviewed; analysis eligibility remains conditional",
+        "construct": label_zh, "value_semantics": semantics,
+        "caveat": caveat + " Codes and years are wave-specific; no cross-wave harmonization is implied.",
         "source_archive": f"{match.iloc[0].source}; {questionnaire}; {codebook}",
         "questionnaire_source": questionnaire,
     })

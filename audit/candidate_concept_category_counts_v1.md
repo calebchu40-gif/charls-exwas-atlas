@@ -4,7 +4,7 @@
 
 |角色|检索类别|候选Concept ID数|字段—角色—类别行|不同波次—变量码|
 |---|---|---:|---:|---:|
-|e|social determinants|599|2134|2132|
+|e|social determinants|603|2138|2136|
 |e|social protection|314|1331|1331|
 |e|community context|104|198|198|
 |e|behavior|47|315|267|
@@ -30,4 +30,4 @@
 |p|social wellbeing|4|10|10|
 |p|blood pressure|3|54|27|
 
-总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1445个（E=1153、P=301，9个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。
+总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1449个（E=1157、P=301，9个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。

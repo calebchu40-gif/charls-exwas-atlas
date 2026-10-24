@@ -168,6 +168,9 @@ FULL_PIPELINE_SCRIPTS = (
     "apply_reproductive_history_preload_metadata_review.py",
     "apply_gender_source_derivation_review.py",
     "apply_hukou_c_overlap_metadata_review.py",
+    "apply_2015_marriage_date_no_observation_review.py",
+    "apply_marital_history_c_overlap_review.py",
+    "apply_marital_history_exposure_source_review.py",
     # C metadata is propagated after the first shard build above; regenerate
     # role-specific browser payloads last so they match the final master file.
     "site_catalog_shards.py",
@@ -264,6 +267,9 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_reproductive_history_preload_metadata_review.py",
     "apply_gender_source_derivation_review.py",
     "apply_hukou_c_overlap_metadata_review.py",
+    "apply_2015_marriage_date_no_observation_review.py",
+    "apply_marital_history_c_overlap_review.py",
+    "apply_marital_history_exposure_source_review.py",
     "site_catalog_shards.py",
     "summarize_value_label_coverage.py",
 )
