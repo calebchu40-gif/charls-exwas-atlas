@@ -18,8 +18,10 @@ class CommunitySubcommunityLinkageTests(unittest.TestCase):
         section = page[start:page.index("</section>", start)]
         self.assertIn("sub_commuID", section)
         self.assertIn("communityID", section)
-        self.assertIn("不能直接并表", section)
+        self.assertIn("通常用于连接社区、家庭和个人模块", section)
+        self.assertIn("不把communityID当作唯一键", section)
         self.assertIn("随意去重", section)
+        self.assertIn("CHARLS_nationalbaseline_users_guide.pdf", section)
 
     def test_duplicate_community_id_blocks_merge_even_with_full_person_key_coverage(self):
         community = pd.DataFrame({
