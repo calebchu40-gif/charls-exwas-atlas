@@ -168,6 +168,28 @@ class ResultTableValidationTests(unittest.TestCase):
         errors = validate_rows([row], self.fields, self.required)
         self.assertTrue(any("limitation:" in e for e in errors))
 
+    def test_unreleased_stratum_accepts_explicit_chinese_method_and_limitation_labels(self):
+        row = self.base_row()
+        row.update(
+            fit_status="success",
+            data_release="synthetic; SHA256=" + "a" * 64,
+            software_versions="commit=" + "b" * 40,
+            weight_status="verified_unweighted",
+            psu_status="verified_used",
+            psu_id="synthetic_psu",
+            stratum_status="not_released",
+            variance_design="近似方法：合成Taylor线性化；局限：未体现官方隐式方差分层",
+            estimate="0.1",
+            standard_error="0.05",
+            ci_lower="0.002",
+            ci_upper="0.198",
+            p_value="0.04",
+            q_value_by="0.04",
+            p_bonferroni="0.04",
+            n_model="70",
+        )
+        self.assertEqual(validate_rows([row], self.fields, self.required), [])
+
     def test_family_size_includes_unestimable_hypotheses_and_adjustments_are_checked(self):
         success = self.base_row()
         success.update(
