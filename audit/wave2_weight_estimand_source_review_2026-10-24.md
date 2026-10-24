@@ -27,3 +27,9 @@ Wave 2 另提供横截面生物标志物权重：以个体横截面权重乘以�
 - [Harmonized CHARLS Codebook, Version D](https://charls.pku.edu.cn/en/team/Codebook.pdf)，第13–14页，调查设计和权重说明。
 
 官方文件提供研究方法与数据结构说明；使用实际 CHARLS 微观数据仍须由每位分析者依当前注册/申请和数据使用协议取得许可。
+
+## 2026-10-25官方入口复核
+
+通过 CHARLS 官方 Wave 2 资料页再次核验：页面仍将 `Weights (updated on 18/11/2015)` 列为发行文件，SHA1仍为 `22c4fc89df2e55fa8faf051e88830eebe0e035c0`；页面同时显示 CHARLS 用户登录/注册入口。对应的官方 Release Note 仍标记 `VersionID: 20151118`，并确认样本旗标和三类不同权重口径（横截面含/不含非应答调整、纵向、横截面生物标志物）。这只是公开清单与文档的在线复核；本机仍未取得该二进制文件，不据此宣称完成数据下载或合并。
+
+来源：[CHARLS 2013 Wave 2 official release page](https://charls.pku.edu.cn/en/Data/a2013_CHARLS_Wave2.htm)；[Wave 2 Release Note](https://charls.pku.edu.cn/en/data/Release2013.pdf)。
