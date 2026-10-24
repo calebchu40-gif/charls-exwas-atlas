@@ -43,6 +43,14 @@ DESIGN_STATUSES = {
     "not_applicable",
     "unresolved",
 }
+ESTIMABILITY_STATUSES = {
+    "pending",
+    "reviewed_pass",
+    "blocked_support",
+    "blocked_separation",
+    "blocked_design",
+    "unresolved",
+}
 ESTIMATE_FIELDS = (
     "estimate",
     "standard_error",
@@ -113,6 +121,18 @@ def validate_rows(rows: list[dict[str, str]], schema_fields: list[str], required
         fit_status = row.get("fit_status", "").strip()
         if fit_status and fit_status not in FIT_STATUSES:
             errors.append(f"row {row_no}: unsupported fit_status {fit_status}")
+
+        estimability_status = row.get("estimability_review_status", "").strip()
+        if estimability_status and estimability_status not in ESTIMABILITY_STATUSES:
+            errors.append(f"row {row_no}: unsupported estimability_review_status {estimability_status}")
+        review_id = row.get("estimability_review_id", "").strip()
+        if fit_status == "success":
+            if estimability_status != "reviewed_pass":
+                errors.append(f"row {row_no}: successful fit requires estimability_review_status=reviewed_pass")
+            if not review_id:
+                errors.append(f"row {row_no}: successful fit requires estimability_review_id")
+        elif review_id and estimability_status != "reviewed_pass":
+            errors.append(f"row {row_no}: estimability_review_id requires estimability_review_status=reviewed_pass")
 
         for field, allowed in (
             ("weight_status", WEIGHT_STATUSES),

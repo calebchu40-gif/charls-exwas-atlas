@@ -22,6 +22,7 @@ class ResultTableValidationTests(unittest.TestCase):
             analysis_id="synthetic-001",
             multiple_testing_family="synthetic_main;K=1",
             fit_status="blocked_design_verification",
+            estimability_review_status="pending",
             weight_status="unresolved",
             psu_status="unresolved",
             stratum_status="unresolved",
@@ -64,6 +65,8 @@ class ResultTableValidationTests(unittest.TestCase):
         row = self.base_row()
         row.update(
             fit_status="success",
+            estimability_review_status="reviewed_pass",
+            estimability_review_id="synthetic-review-v1",
             data_release="CHARLS synthetic release; sha256=" + "a" * 64,
             software_versions="python=synthetic; commit=" + "b" * 40,
             weight_status="verified_used",
@@ -93,6 +96,8 @@ class ResultTableValidationTests(unittest.TestCase):
         row = self.base_row()
         row.update(
             fit_status="success",
+            estimability_review_status="reviewed_pass",
+            estimability_review_id="synthetic-review-v1",
             data_release="CHARLS synthetic release; checksum unavailable",
             software_versions="python=synthetic",
             weight_status="verified_unweighted",
@@ -115,6 +120,8 @@ class ResultTableValidationTests(unittest.TestCase):
         row = self.base_row()
         row.update(
             fit_status="success",
+            estimability_review_status="reviewed_pass",
+            estimability_review_id="synthetic-review-v1",
             data_release="synthetic; SHA256=" + "a" * 64,
             software_versions="commit=" + "b" * 40,
             weight_status="not_applicable",
@@ -139,6 +146,8 @@ class ResultTableValidationTests(unittest.TestCase):
         row = self.base_row()
         row.update(
             fit_status="success",
+            estimability_review_status="reviewed_pass",
+            estimability_review_id="synthetic-review-v1",
             data_release="synthetic; SHA256=" + "a" * 64,
             software_versions="commit=" + "b" * 40,
             weight_status="verified_unweighted",
@@ -163,6 +172,8 @@ class ResultTableValidationTests(unittest.TestCase):
         row = self.base_row()
         row.update(
             fit_status="success",
+            estimability_review_status="reviewed_pass",
+            estimability_review_id="synthetic-review-v1",
             data_release="synthetic; SHA256=" + "a" * 64,
             software_versions="commit=" + "b" * 40,
             weight_status="verified_unweighted",
@@ -186,6 +197,8 @@ class ResultTableValidationTests(unittest.TestCase):
         row = self.base_row()
         row.update(
             fit_status="success",
+            estimability_review_status="reviewed_pass",
+            estimability_review_id="synthetic-review-v1",
             data_release="synthetic; SHA256=" + "a" * 64,
             software_versions="commit=" + "b" * 40,
             weight_status="verified_unweighted",
@@ -210,6 +223,8 @@ class ResultTableValidationTests(unittest.TestCase):
             analysis_id="synthetic-success",
             multiple_testing_family="synthetic_full;K=2",
             fit_status="success",
+            estimability_review_status="reviewed_pass",
+            estimability_review_id="synthetic-review-v1",
             data_release="synthetic; SHA256=" + "a" * 64,
             software_versions="commit=" + "b" * 40,
             weight_status="verified_unweighted",
@@ -247,6 +262,33 @@ class ResultTableValidationTests(unittest.TestCase):
         second["multiple_testing_family"] = "synthetic_full;K=3"
         errors = validate_rows([first, second], self.fields, self.required)
         self.assertTrue(any("contains 2 rows but declares K=3" in e for e in errors))
+
+    def test_success_requires_pair_level_estimability_review(self):
+        row = self.base_row()
+        row.update(
+            fit_status="success",
+            data_release="synthetic; SHA256=" + "a" * 64,
+            software_versions="commit=" + "b" * 40,
+            weight_status="verified_unweighted",
+            psu_status="verified_used",
+            psu_id="synthetic_psu",
+            stratum_status="not_released",
+            variance_design="approximate method: synthetic Taylor; limitation: synthetic strata only",
+            estimate="0.1",
+            standard_error="0.05",
+            ci_lower="0.002",
+            ci_upper="0.198",
+            p_value="0.04",
+            q_value_by="0.04",
+            p_bonferroni="0.04",
+            n_model="70",
+        )
+        errors = validate_rows([row], self.fields, self.required)
+        self.assertTrue(any("estimability_review_status=reviewed_pass" in e for e in errors))
+        self.assertTrue(any("requires estimability_review_id" in e for e in errors))
+        row["estimability_review_status"] = "reviewed_pass"
+        row["estimability_review_id"] = "synthetic-rule-v1:pair-001"
+        self.assertEqual(validate_rows([row], self.fields, self.required), [])
 
 
 if __name__ == "__main__":

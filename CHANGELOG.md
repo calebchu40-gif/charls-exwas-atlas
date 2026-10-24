@@ -1,5 +1,10 @@
 # Change log
 
+## 2026-10-24 (continued)
+
+- Require a pair/contrast-level estimability review reference before any result row can be released as `success`; document support, separation, design-information and model-complexity review without inventing unvalidated numeric cutoffs. This release gate is metadata only and does not claim that any CHARLS fit passed review.
+- Record that finite output and no engine warning in a sparse synthetic logistic case do not establish adequate event support. Formal CHARLS fits remain blocked by unresolved source/design gates.
+
 ## 2026-10-24
 
 - Extended the synthetic-only `svy` design probe to binary-outcome and three-level categorical-exposure logistic models with explicit PSU-level dependence and reference coding. The coefficients, stratified PSU-score sandwich SEs and Student-t p values match independent numerical calculations (`n=216` and `n=270`; each design has 6 strata and 18 PSUs). Complete and near separation both emit `GLM_SEPARATION`; the near-separated exposure coefficient is finite while its uncertainty is non-finite, so that contrast must be `inestimable` with blank estimates. All 266 project tests pass, and the pinned isolated `svy` 0.35.0 probe runs successfully. Other sparse-category/convergence cases, finite-sample df for CHARLS and all real CHARLS fits remain unvalidated.
