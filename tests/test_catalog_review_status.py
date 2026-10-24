@@ -478,6 +478,20 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertIn("尚未决定是否进入任何模型", page)
         self.assertIn("不能据此判断字段含义、调整资格或研究结论", page)
 
+    def test_2011_and_2013_ba004_is_disclosed_as_a_conditional_age_fallback(self):
+        rows = json.loads((ROOT / "site-prototype/dist/catalog_c.json").read_text(encoding="utf-8"))
+        rows = [row for row in rows if row.get("Variable.Name", "").lower() == "ba004"
+                and row.get("Source.Wave") in {"2011", "2013"}]
+        self.assertEqual({row["Source.Wave"] for row in rows}, {"2011", "2013"})
+        self.assertEqual(len(rows), 2)
+        for row in rows:
+            self.assertIn("conditional self-reported age fallback", row["Candidate.Status"])
+            self.assertIn("only when the respondent does not know or declines", row["Harmonization.Status"])
+            self.assertIn("Do not use it alone", row["Harmonization.Status"])
+            self.assertIn(f"CHARLS_{row['Source.Wave']}_Codebook_extracted.txt", row["Value.Label.Source"])
+            self.assertIn(f"official {row['Source.Wave']} questionnaire wording", row["Value.Label.Review"])
+            self.assertEqual(row["Value.Labels"], "")
+
     def test_pages_workflow_deploys_site_changes_automatically(self):
         workflow = (ROOT / ".github/workflows/deploy-pages.yml").read_text(encoding="utf-8")
         self.assertIn("push:", workflow)

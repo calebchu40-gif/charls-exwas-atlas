@@ -1982,6 +1982,35 @@ def main() -> None:
                 & out["Value.Labels"].fillna("").eq("")
             )
             out.loc[selected, "Concept.Unit.Candidates"] = "calendar year"
+    age_fallback = (
+        out["Source.Wave"].astype(str).isin({"2011", "2013"})
+        & out["Variable.Name"].str.lower().eq("ba004")
+        & out["epcf"].str.lower().eq("c")
+    )
+    if age_fallback.any():
+        out.loc[age_fallback, "Candidate.Status"] = (
+            "official questionnaire reviewed; conditional self-reported age fallback, not a complete age measure"
+        )
+        out.loc[age_fallback, "Harmonization.Status"] = (
+            "BA004 is asked only when the respondent does not know or declines the birth date in BA002. "
+            "Do not use it alone as the general age covariate or treat its missingness as absence of age; "
+            "derive age using the official wave-specific birth-date/interview-date rules and verify release fields."
+        )
+        out.loc[age_fallback, "Review.Flag"] = (
+            "conditional age fallback only; not an analysis-ready all-respondent age variable or a universal adjustment recommendation"
+        )
+        for wave in ("2011", "2013"):
+            wave_age_fallback = age_fallback & out["Source.Wave"].astype(str).eq(wave)
+            questionnaire = (
+                "CHARLS_2011_Baseline_Questionnaire_official_extracted.txt"
+                if wave == "2011" else "CHARLS_2013_Questionnaire_extracted.txt"
+            )
+            out.loc[wave_age_fallback, "Value.Label.Source"] = (
+                f"sources_official/{questionnaire}; sources_official/CHARLS_{wave}_Codebook_extracted.txt"
+            )
+            out.loc[wave_age_fallback, "Value.Label.Review"] = (
+                f"official {wave} questionnaire wording and conditional route reviewed; continuous age response; no categorical labels or frequencies used"
+            )
     prior_catalog_path = args.out_dir / "charls_atlas_candidate_fields_v0.csv"
     order_reference_path = args.out_dir / ".charls_atlas_candidate_fields_order_reference.tmp"
     if prior_catalog_path.exists():
