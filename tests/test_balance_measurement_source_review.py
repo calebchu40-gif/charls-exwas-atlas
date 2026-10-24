@@ -1,5 +1,6 @@
 import importlib.util
 import csv
+import json
 from pathlib import Path
 import unittest
 
@@ -33,6 +34,11 @@ class BalanceMeasurementSourceReviewTests(unittest.TestCase):
         self.assertEqual(len(target), 9)
         self.assertTrue(all("candidate phenotype only" in r["source_status"] for r in target))
         self.assertTrue(all("do not assign zero to unasked" in r["source_caveat"] for r in target))
+        public_rows = json.loads((ROOT / "site-prototype/dist/objective_measurements_v1.json").read_text(encoding="utf-8"))
+        public_target = [r for r in public_rows if r["concept_id"] in review.CONCEPTS]
+        self.assertEqual(len(public_target), 9)
+        self.assertTrue(all("up to 10 seconds" in r["value_semantics"] for r in public_target if r["concept_id"] != "balance_full_tandem"))
+        self.assertTrue(all("30 seconds for age 70 or older" in r["value_semantics"] for r in public_target if r["concept_id"] == "balance_full_tandem"))
 
 
 if __name__ == "__main__":

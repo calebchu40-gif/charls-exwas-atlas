@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import csv
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -95,6 +96,9 @@ def apply() -> int:
         writer = csv.DictWriter(handle, fieldnames=headers)
         writer.writeheader()
         writer.writerows(rows)
+    (ROOT / "site-prototype/dist/objective_measurements_v1.json").write_text(
+        json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
     print(f"Reviewed {updated} balance-test concept-wave rows; 2011 field-identity uncertainty and conditional duration/status semantics retained.")
     return updated
 
