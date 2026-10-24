@@ -165,6 +165,44 @@ def main() -> None:
         y="outcome", x=["exposure"], family="gaussian", where=domain
     ).to_polars().to_dicts()
     domain_exposure = next(row for row in domain_model if row["term"] == "exposure")
+    domain_indicator = np.asarray(data["domain"].to_list(), dtype=float)
+    domain_weight = weight * domain_indicator
+    domain_bread = np.linalg.inv(
+        model_matrix.T @ (domain_weight[:, None] * model_matrix)
+    )
+    domain_beta = domain_bread @ (
+        model_matrix.T @ (domain_weight * outcome)
+    )
+    domain_residual = outcome - model_matrix @ domain_beta
+    domain_cluster_scores = {}
+    for h, p in sorted(set(zip(stratum.tolist(), psu.tolist()))):
+        in_psu = (stratum == h) & (psu == p)
+        domain_cluster_scores[(h, p)] = model_matrix[in_psu].T @ (
+            domain_weight[in_psu] * domain_residual[in_psu]
+        )
+    domain_meat = np.zeros((2, 2))
+    for h in sorted(set(stratum.tolist())):
+        scores = np.asarray(
+            [
+                value for (score_stratum, _), value
+                in domain_cluster_scores.items()
+                if score_stratum == h
+            ],
+            dtype=float,
+        )
+        centered = scores - scores.mean(axis=0)
+        domain_meat += len(scores) / (len(scores) - 1) * centered.T @ centered
+    domain_covariance = domain_bread @ domain_meat @ domain_bread
+    manual_domain_beta = float(domain_beta[1])
+    manual_domain_se = float(np.sqrt(domain_covariance[1, 1]))
+    if not np.isclose(
+        domain_exposure["estimate"], manual_domain_beta, rtol=1e-12, atol=1e-12
+    ):
+        raise AssertionError("Domain GLM coefficient does not match manual WLS estimate")
+    if not np.isclose(
+        domain_exposure["std_err"], manual_domain_se, rtol=1e-12, atol=1e-12
+    ):
+        raise AssertionError("Domain GLM SE does not match manual full-design sandwich")
     if full_design.domain_singletons(where=domain).height != 4:
         raise AssertionError("The synthetic domain should have one in-domain PSU per stratum")
     try:
@@ -184,7 +222,10 @@ def main() -> None:
         "full_design_rows_retained": full_design.data.height,
         "domain_singleton_strata": full_design.domain_singletons(where=domain).height,
         "glm_exposure_beta": domain_exposure["estimate"],
+        "manual_glm_exposure_beta": manual_domain_beta,
         "glm_exposure_se": domain_exposure["std_err"],
+        "manual_glm_exposure_se": manual_domain_se,
+        "domain_glm_matches_manual": True,
         "glm_df": domain_exposure["df"],
         "prefiltering_raises_singleton_error": filtered_domain_raises,
     }
