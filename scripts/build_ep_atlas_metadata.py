@@ -176,6 +176,7 @@ FULL_PIPELINE_SCRIPTS = (
     "apply_nurse_wage_metadata_review.py",
     "apply_pastime_job_classification_review.py",
     "validate_do_not_analyze_triage.py",
+    "propagate_ep_crosswalk_status.py",
     # C metadata is propagated after the first shard build above; regenerate
     # role-specific browser payloads last so they match the final master file.
     "site_catalog_shards.py",
@@ -287,6 +288,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_nurse_wage_metadata_review.py",
     "apply_pastime_job_classification_review.py",
     "validate_do_not_analyze_triage.py",
+    "propagate_ep_crosswalk_status.py",
     "site_catalog_shards.py",
     "summarize_value_label_coverage.py",
 )

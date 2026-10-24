@@ -2,6 +2,8 @@
 
 ## 2026-10-25 continuation: reconcile reviewed phenotype crosswalk statuses
 
+A final E/P-wide audit then identified 107 additional rows that already had an explicit audited concept-source mapping but still carried an automated-discovery status (74 E and 33 P). Added an idempotent finalization step that synchronizes candidate status and the non-inclusion warning across the field-level CSV/JSON, master catalogue, and public role shards. It updates 6,895 E/P rows with concept-source provenance; zero source-mapped E/P rows remain marked automated. This changes discovery/review metadata only and does not approve variables for association testing.
+
 The public P catalogue contained source-reviewed functional/disability mappings whose main-catalogue status still read as automated discovery. The catalogue builder now propagates the reviewed source status by exact wave, variable and role while preserving module, field identity, routing notes and analysis caveats; review flags explicitly retain the rule that a documented concept mapping is not approval for testing. Nine duplicate rows previously shown under overlapping cognition/diagnosis search categories were consolidated under their reviewed phenotype concepts; the source fields remain present. Final role shards contain E=4,826, P=2,129, C=980 rows, 6,955 E/P field-category rows, 3,648 labelled E/P rows and zero generic pending labels. Candidate-pair counts remain metadata co-availability only; formal models and actual pairwise analytic Ns remain 0.
 
 ## 2026-10-25 continuation: complete household environment source-status reconciliation

@@ -1320,6 +1320,24 @@ def main() -> None:
         and str(item.get("Candidate.Status", "")).startswith("automated discovery")
     )]
 
+    # Any E/P row carrying an explicit concept-crosswalk source has already
+    # progressed beyond keyword-only discovery. Keep the source trail and an
+    # explicit non-inclusion caution in the catalogue, even when its broad
+    # category was first supplied by discovery rather than the crosswalk.
+    for item in outputs:
+        if item.get("epcf") not in {"e", "p"}:
+            continue
+        source = str(item.get("Concept.Mapping.Source", "")).strip()
+        if not source:
+            continue
+        status = str(item.get("Candidate.Status", "")).lower()
+        if status.startswith(("automated discovery", "automated keyword discovery")):
+            item["Candidate.Status"] = f"concept-source crosswalk candidate; see {source}"
+        review_flag = str(item.get("Review.Flag", "")).strip()
+        if "approved test variable" not in review_flag and "not analytic inclusion" not in review_flag:
+            caution = "documented source mapping is a candidate only; not an approved test variable"
+            item["Review.Flag"] = f"{review_flag}; {caution}" if review_flag else caution
+
     fields = ["Variable.Name", "Variable.Description", "Data.File.Name", "Data.File.Description", "Begin.Year", "EndYear", "Component", "Use.Constraints", "epcf", "category", "subcategory", "Source.Wave", "Source.Archive", "Candidate.Status", "Harmonization.Status", "Review.Flag", "Value.Labels", "Value.Label.Source", "Value.Label.Review"]
     out = pd.DataFrame(outputs, columns=fields).drop_duplicates()
     # Automated discovery and an audited domain crosswalk can point to the
