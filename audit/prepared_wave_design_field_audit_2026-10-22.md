@@ -6,6 +6,8 @@
 
 当前 CHARLS [2013 Wave 2 官方数据页](https://charls.charlsdata.com/pages/Data/2013-charls-wave2/en.html)列出 `Weights`（2015-11-18 更新），SHA-1 为 `22c4fc89df2e55fa8faf051e88830eebe0e035c0`，与 `scripts/merge_2013_official_weights.py` 中的 `EXPECTED_OFFICIAL_WEIGHTS_SHA1` 完全一致。CHARLS [官方 FAQ](https://charls.pku.edu.cn/en/Faq/Frequently_Asked_Questions.htm)说明用户需注册、签署协议并单独申请数据，获批后下载；“公开可申请”并非无需登录的匿名直链。本次仅核对官方公开页面，没有使用或索取账号凭据。
 
+另查到北京大学 Open Research Data Platform 的[2013 Wave 2 `Weights.tab`文件页](https://opendata.pku.edu.cn/file.xhtml?datasetVersionId=95&fileId=198)：页面公开显示版本 1.1、19个变量、19,679条观测、文件 UNF `UNF:6:hN96A+lz1f/NnTajZ7LxSg==`、原始文件 MD5 `fe914ea9ba15da968c756217587e5d4b`。该页同时显示此文件受限，未获权限者需要注册/登录后申请访问；因此当前不能取回或检验文件内容。它是一个可能的官方申请入口，但 `.tab` 文件与 CHARLS 页面列出的 `Weights.dta` 不是同一字节版本，不能用页面元数据或 MD5 替代官方 DTA SHA-1 校验，也不能直接用于现有合并器。取得文件后需核对字段、记录键、版本和与官方 Wave 2 Release Note 的一致性。
+
 2013 权重文件的私有入库暂存目录目前为空，因此现有2013准备表仍缺 `crosssection` 和 `longitudinal`。已准备的合并器会在收到文件后校验官方 SHA-1、两边 ID 唯一且非缺失、官方标记齐全、逐行一对一匹配、原行序不变、已有字段无冲突，并完成 DTA 回读后才写出独立结果及聚合 QA。SHA-1 对应正确版本不等于文件已经取得，也不代表合并已经执行或样本设计闸门已经闭合；不得由权重非缺失倒推样本类别，也不得在未验证时把2013作为已确认横断面样本拟合模型。
 
 ## 本机派生表已含字段
