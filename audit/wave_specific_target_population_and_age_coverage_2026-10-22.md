@@ -28,3 +28,11 @@
 当前本机受控派生表含 Wave 5 `xrage`、`crosssection` 和两种个人权重；新增[`../scripts/audit_wave5_age_target_coverage.py`](../scripts/audit_wave5_age_target_coverage.py)按官方横截面旗标和权重做年龄段覆盖汇总，小于10人的格子抑制，结果仅写入私有 `qa_outputs`。本地覆盖审计提示 50+ 是值得进一步验证的跨波候选年龄域，但权重非缺失本身不能证明该年龄域具有全国代表性。
 
 项目登记目录中仍没有与派生表版本对应的官方 Wave 5 原始发行包，因此字段与发行说明版本、现场缺访调整及样本标志来源尚未从源档案复核。2020目标域仍未冻结；本审计不批准模型启动，也不产生任何关联结果。取得源级文件后，按版本和哈希复核样本流、分年龄权重覆盖，再确定 45+ 与 50+ 方案的适用边界。
+
+## 2026-10-24 补充：主要受访者与配偶记录的年龄域
+
+复核 CHARLS 2018 Wave 4 与 2020 Wave 5 用户手册后，补充一个会影响 ExWAS 分母解释的边界：官方描述的抽样步骤是先从达到年龄条件的家庭成员中选出主要受访者，再访谈其配偶；Wave 4 指南明确个体横截面权重是为主要受访者及其配偶构造。Wave 5 指南同样将基线样本描述为一名45岁及以上家庭成员及其配偶，并将刷新样本和随访受访者及配偶纳入总体记录。因此，`crosssection=1`识别官方横截面样本身份，但不应单独被解释为“该记录年龄必然≥45”；也不能把年龄字段本身当作官方样本资格标记。
+
+对本项目的执行要求：在实际发行版中同时核验 `Sample_Info`/波次样本标记、主要受访者/配偶身份字段、年龄来源及对应权重定义；每个结果预先声明目标年龄域，说明配偶记录是否纳入，并将年龄域筛选作为目标人群定义而非临时的数据清理。不能根据个人记录总数、ID格式或样本标记猜测年龄资格，也不能把加权后的样本自动称作“每位记录均45岁以上”。
+
+公开页的方法面板已补充配偶记录与年龄域提示。该说明来自官方抽样手册，不使用受访者数据、不报告年龄分布，也不解锁任何模型。来源：[2018 Wave 4 User's Guide](https://charls.pku.edu.cn/en/data/User2018.pdf)，第2节与第6节；[2020 Wave 5 User Guide](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2020-charls-wave5/application/CHARLS_2020_User_Guide_English.pdf)，第2节；[CHARLS官方样本介绍](https://charls.pku.edu.cn/en/About/Sample.htm)，2011 respondent-level sampling段。
