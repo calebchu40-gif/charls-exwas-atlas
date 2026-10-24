@@ -1,10 +1,14 @@
 import csv
 import re
+import sys
 import unittest
 from pathlib import Path
 
+import pandas as pd
+
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / "audit"
+sys.path.insert(0, str(ROOT / "scripts"))
 
 
 def rows(path):
@@ -48,6 +52,28 @@ class SaleProceedsAllocationTests(unittest.TestCase):
         text_fields = [r for r in override_map.values() if r["metadata_type"] == "sale_proceeds_other_use_text"]
         self.assertEqual(len(text_fields), 4)
         self.assertTrue(all(r["keep_role"] == "c" for r in text_fields))
+
+    def test_private_storage_qa_maps_slots_and_never_emits_raw_values(self):
+        from audit_household_sale_proceeds_storage import planned_columns, summarize_response
+
+        plan = planned_columns()
+        self.assertEqual(set(plan), {"2013", "2015"})
+        self.assertEqual(len(plan["2013"]), 57)
+        self.assertEqual(len(plan["2015"]), 57)
+        summary = summarize_response(
+            pd.Series(["25", "", "999", "text"]),
+            pd.Series(["1", "", "1", ""]),
+            pd.Series(["3", "3", "2", ""]),
+        )
+        self.assertTrue(summary["amount_present"])
+        self.assertFalse(summary["all_nonblank_amounts_numeric"])
+        self.assertFalse(summary["all_numeric_amounts_within_0_100"])
+        self.assertFalse(summary["selector_amount_linkage_consistent"])
+        self.assertFalse(summary["selector_without_amount_observed"])
+        self.assertTrue(summary["amount_without_selector_observed"])
+        self.assertFalse(summary["amount_only_when_status_sold"])
+        self.assertNotIn("raw_values", summary)
+        self.assertNotIn("ids", summary)
 
 
 if __name__ == "__main__":
