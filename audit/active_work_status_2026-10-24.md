@@ -1,5 +1,11 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-25 continuation: hold 2011 community exposure linkage on subcommunity key ambiguity
+
+The protected local prepared person table's community-level exposure fields were checked against the separate 2011 community file using metadata and aggregate key QA. All catalogued 2011 community E field names are present in that source file, but its `communityID` is not unique; some rows carry a `sub_commuID`, the respondent table has no corresponding subcommunity key, and candidate values differ within repeated community IDs. The local source archive identity is unverified, so detailed QA counts and file hashes remain private. Added a fail-closed audit utility that reports aggregate linkage diagnostics without merging files or emitting IDs/values, plus synthetic regression tests. The official 2011 Users' Guide describes that some large communities were split into geographic sub-neighborhoods; the public site now warns that a communityID-only join, arbitrary deduplication, or subcommunity averaging is not approved. Audit: `audit/community_2011_subcommunity_linkage_review_2026-10-25.md`.
+
+This resolves the field-presence question but does not close the linkage, sample eligibility, weights, PSU/variance, or analysis gates. No respondent values, counts, IDs, weights, frequencies, or association results were published.
+
 ## 2026-10-25 continuation: explicit internal blood-biomarker E/P candidates
 
 To support a broad NHANES-style ExWAS candidate explorer, the 16 officially documented CHARLS blood analyte concepts across 2011 and 2015 (32 wave-field keys) now have explicit, source-backed optional E and P roles. These are internal biomarkers, not exogenous environmental chemicals; an E candidate mapping is not approval to include a variable in a model. Same-wave analyses are cross-sectional and non-directional, must exclude self-pairs, define the estimand and eligible blood subsample, use the wave-specific blood weight, and keep waves separate unless assay comparability is validated. The 2011 Cystatin C age-subset weight status remains unresolved and 2015 blood files are absent locally. No participant values or association results were used. Audit: `audit/internal_biomarker_exposure_role_review_2026-10-25.md`.

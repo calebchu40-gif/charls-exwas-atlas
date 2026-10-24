@@ -1,3 +1,4 @@
+- 2011社区暴露链接增加`communityID`/`sub_commuID`聚合核查：因社区键重复、子社区记录无法对应到个人准备表，公开页面现明确禁止仅按`communityID`直接并表、随意去重或对子社区取均值。新增受控本地QA脚本和合成测试；脚本不输出ID或源值。官方依据与链接限制见 `audit/community_2011_subcommunity_linkage_review_2026-10-25.md`。
 - Reconciled blood biomarker roles across the exposure catalogue, phenotype catalogue, source crosswalk, and pair explorer: 16 officially documented analytes in 2011/2015 now have optional internal-biomarker E and P candidate mappings. They are explicitly distinguished from exogenous environmental chemicals; wave-specific blood weights, eligibility, non-directional same-wave interpretation, self-pair exclusion and assay comparability gates are documented. Rebuilt metadata: E/P/C=4,845/2,082/982 rows, 1,486 E/P concepts and 6,821 source mappings; formal association models remain 0.
 
 ## 2026-10-25 续
