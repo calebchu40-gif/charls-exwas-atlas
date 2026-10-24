@@ -1,5 +1,11 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-24 continuation: review C/E overlap for hukou life-course fields
+
+Matched 20 still-pending C rows exactly by wave, code, and module to the source-reviewed hukou life-course/recent-change E crosswalks. Propagated official wave source citations, date/duration semantics, routing and special-value caveats, and concept links while retaining C classification. The updater is idempotent and registered in both full and finalize-only pipelines. Adjustment use remains estimand-specific; no fixed adjustment set was introduced. Audit: `audit/hukou_c_overlap_review_2026-10-24.md`; machine-readable target map: `audit/hukou_c_overlap_review_v1.csv`.
+
+The finalize-only rebuild completed: E=4,748, P=2,127, C=980; generic pending C rows fell from 51 to 31, while E/P and metadata-only pair counts were unchanged. All 89 `DO NOT ANALYZE` locks remain in place. All 318 Python tests pass; 34 static JSON files parse; the 89-lock validator, JavaScript syntax check, Python compilation, and `git diff --check` pass. Commit/push and live Pages verification are pending. No respondent records or Codebook frequencies were used; formal association models remain 0.
+
 ## 2026-10-24 continuation: audit Wave 1–4 gender sources and module identity
 
 Reviewed nine module-qualified respondent-gender rows against official wave questionnaires/Codebooks and the harmonized documentation QA guidance. Distinguished released gender candidates from interviewer-recorded inputs and the 2018 prior-wave route flag; retained the 2018 duplicate `xrgender` module rows as source records, not independent measures. Category labels are shown without frequencies. The harmonized `RAGENDER/RAFGENDR` algorithm remains a third-party QA reference and is not presented as a CHARLS raw field. Updates are idempotent and registered in both metadata pipelines. These C entries remain source candidates, not automatic covariate recommendations. Source audit: `audit/respondent_gender_source_derivation_review_2011_2018_2026-10-24.md`.
