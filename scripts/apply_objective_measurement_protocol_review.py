@@ -7,6 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CSV_PATH = ROOT / "audit/measurement_protocol_crosswalk_v1.csv"
 MANUAL_2011 = "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official_extracted.txt"
+CODEBOOK_2011 = ROOT / "sources_official/CHARLS_2011_Codebook_extracted.txt"
 DOCS = {
     "2011": ROOT / MANUAL_2011,
     "2013": ROOT / "sources_official/CHARLS_2013_Biomarker_Questionnaire_extracted.txt",
@@ -18,9 +19,12 @@ def apply() -> None:
     for path in DOCS.values():
         if not path.exists():
             raise FileNotFoundError(path)
+    if not CODEBOOK_2011.exists():
+        raise FileNotFoundError(CODEBOOK_2011)
     text = {wave: path.read_text(encoding="utf-8", errors="replace").casefold() for wave, path in DOCS.items()}
+    codebook_2011 = CODEBOOK_2011.read_text(encoding="utf-8", errors="replace").casefold()
     checks = {
-        "2011": ("li875", "within the 30 minutes prior to completing the blood pressure test", "li007", "record the chair height from floor to seat"),
+        "2011": ("li875", "within the 30 minutes prior to completing the blood pressure test", "li006", "record the number of stands", "li007", "record the chair height from floor to seat"),
         "2013": ("qh006", "record the chair height from floor to seat"),
         "2015": ("qh006_1", "other chair, height"),
     }
@@ -28,9 +32,16 @@ def apply() -> None:
         missing = [term for term in terms if term.casefold() not in text[wave]]
         if missing:
             raise ValueError(f"Official physical-examination source {wave} missing expected terms: {missing}")
+    codebook_terms = ("qh005 : times", "qh006 : height", "qi002 : height")
+    missing = [term for term in codebook_terms if term not in codebook_2011]
+    if missing:
+        raise ValueError(f"Official 2011 Codebook missing chair/standing-height distinction: {missing}")
     with CSV_PATH.open(encoding="utf-8-sig", newline="") as f:
         rows = list(csv.DictReader(f))
-        columns = list(rows[0])
+
+    for row in rows:
+        row.setdefault("unit", "")
+    columns = list(rows[0])
 
     for row in rows:
         wave, code = row["wave"], row["code"].casefold()
@@ -43,14 +54,16 @@ def apply() -> None:
             })
         elif row["concept_id"] == "chair_stand_test_chair_setup" and wave == "2011" and code == "qh006":
             row.update({
-                "value_semantics": "2011 Codebook lists released-field QH006 as Height; the official physical-examination manual records chair height from floor to seat as LI007. This is likely chair-test setup metadata, but the QH006/LI007 release-identifier relationship remains unresolved.",
-                "mapping_status": "HOLD FOR RELEASE FIELD IDENTITY RECONCILIATION; 2011 official manual and Codebook differ on item code",
-                "caveat": "Do not interpret as respondent standing height (QI002), and do not claim QH006=LI007 until the release-level crosswalk is confirmed. No response values are inferred.",
-                "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt",
+                "value_semantics": "The 2011 physical-examination manual records chair height from floor to seat as LI007, immediately after LI006 records the number of completed chair stands. The release Codebook lists QH005=Times and QH006=Height in the chair-stand module; this matching module and adjacent item sequence support QH006 as the chair-height field. QI002 is the separate respondent standing-height field.",
+                "unit": "cm",
+                "mapping_status": "official 2011 manual and Codebook module/item-sequence crosswalk reviewed; C measurement metadata only",
+                "caveat": "Chair-test setup metadata in centimeters, not respondent standing height or a phenotype. Preserve the source-instrument LI007 and release Codebook QH006 identifiers; no response values or Codebook frequencies are inferred.",
+                "source_document": "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
             })
         elif row["concept_id"] == "chair_stand_test_chair_setup" and wave == "2013" and code == "qh006":
             row.update({
                 "value_semantics": "Chair height from floor to seat, recorded in centimeters as repeated-chair-stand protocol setup metadata.",
+                "unit": "cm",
                 "mapping_status": "official 2013 Biomarker Questionnaire and Codebook reviewed; C measurement metadata only",
                 "caveat": "Protocol/setup field, not respondent height or a health outcome. Keep separate from the 2015 chair-type selector.",
                 "source_document": "sources_official/CHARLS_2013_Biomarker_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
@@ -66,6 +79,7 @@ def apply() -> None:
         elif row["concept_id"] == "chair_stand_test_chair_setup" and wave == "2015" and code == "qh006_1":
             row.update({
                 "value_semantics": "Height in centimeters of the other chair; asked only when QH006 selects Other chair.",
+                "unit": "cm",
                 "mapping_status": "official 2015 Biomarker Questionnaire and Codebook reviewed; C measurement metadata only",
                 "caveat": "Conditional chair setup, not respondent standing height or an outcome. A blank outside the QH006=Other chair route is structural, not zero.",
                 "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
@@ -82,6 +96,7 @@ def apply() -> None:
             "source_label": "Height of Other Chair",
             "value_labels": "",
             "value_semantics": "Height in centimeters of the other chair; asked only when QH006 selects Other chair.",
+            "unit": "cm",
             "mapping_status": "official 2015 Biomarker Questionnaire and Codebook reviewed; C measurement metadata only",
             "caveat": "Conditional chair setup, not respondent standing height or an outcome. A blank outside the QH006=Other chair route is structural, not zero.",
             "source_document": "sources_official/CHARLS_2015_Biomarker_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
@@ -103,9 +118,11 @@ def apply() -> None:
                 continue
             key = (row.get("wave"), row.get("code", "").casefold())
             if key == ("2011", "qh006"):
-                row["official_source"] = "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official.doc; sources_official/CHARLS_2011_Codebook_extracted.txt"
-                row["review_status"] = "HOLD: manual LI007 versus Codebook QH006; measurement metadata only until release identity is reconciled"
-                row["catalog_note"] = "QH006/LI007 item-code discrepancy; likely chair-test setup metadata, but do not claim equivalence until release identity is reconciled. Not respondent height."
+                row["official_source"] = "sources_official/CHARLS_2011_Physical_Examination_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
+                row["review_status"] = "official manual/Codebook module and adjacent-item sequence crosswalk reviewed; C measurement metadata only"
+                row["catalog_note"] = "Release QH005=chair-stand count and QH006=chair height align in order with manual LI006/LI007; QI002 is respondent standing height. Keep the source-specific codes visible."
+                if "unit" in review_columns:
+                    row["unit"] = "cm"
             elif key == ("2013", "qh006"):
                 row["official_source"] = "sources_official/CHARLS_2013_Biomarker_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"
                 row["review_status"] = "official questionnaire and Codebook reviewed; C measurement metadata only"

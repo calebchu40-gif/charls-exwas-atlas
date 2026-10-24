@@ -33,6 +33,16 @@ class CPlaceholderMetadataReviewTests(unittest.TestCase):
                 self.assertIn("metadata only",row["Value.Label.Review"])
         selector=self.by_key[("2015","qh006")]
         self.assertEqual(selector["Value.Labels"],"1=CHARLS chair with 42 cm height; 2=Other chair")
+    def test_2011_chair_height_unit_reaches_public_field_catalog(self):
+        audit_row=next(r for r in self.audit if r["wave"]=="2011" and r["code"].lower()=="qh006")
+        catalog_row=self.by_key[("2011","qh006")]
+        self.assertEqual(audit_row["unit"],"cm")
+        self.assertEqual(catalog_row["Unit"],"cm")
+        self.assertIn("C measurement metadata",catalog_row["Value.Label.Review"])
+        for wave, code in (("2013", "qh006"), ("2015", "qh006_1")):
+            audit_row=next(r for r in self.audit if r["wave"]==wave and r["code"].lower()==code)
+            self.assertEqual(audit_row["unit"],"cm")
+            self.assertEqual(self.by_key[(wave, code)]["Unit"],"cm")
     def test_helper_option_review_is_synchronized_to_series_catalog(self):
         reviewed={(r["wave"],r["code"].lower()) for r in self.audit if r["metadata_family"]=="2013 money-management helper relationship option slots"}
         series={(wave, r["Variable.Name"].lower()):r for r in self.series for wave in r["waves"].split(";")}

@@ -50,6 +50,10 @@ class SiteCatalogShardTests(unittest.TestCase):
             self.assertEqual(pipeline[-2], "site_catalog_shards.py")
             self.assertEqual(pipeline[-1], "summarize_value_label_coverage.py")
             self.assertLess(pipeline.index("build_housing_catalog.py"), pipeline.index("site_catalog_shards.py"))
+            self.assertLess(
+                pipeline.index("apply_objective_measurement_protocol_review.py"),
+                pipeline.index("propagate_c_placeholder_metadata_review.py"),
+            )
         self.assertGreater(
             FINALIZATION_PIPELINE_SCRIPTS.index("build_housing_catalog.py"),
             FINALIZATION_PIPELINE_SCRIPTS.index("build_charls_atlas_catalog.py"),

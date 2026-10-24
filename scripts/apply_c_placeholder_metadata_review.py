@@ -39,6 +39,8 @@ def propagate():
                 m=data["Source.Wave"].eq(wave)&data["Variable.Name"].str.lower().eq(code)&data["epcf"].str.lower().eq("c")
                 if m.any():
                     data.loc[m,"Value.Label.Review"]=item.review_status;data.loc[m,"Value.Label.Source"]=item.official_source;data.loc[m,"Value.Labels"]=getattr(item,"value_labels","");data.loc[m,"Review.Flag"]=item.catalog_note;data.loc[m,"Harmonization.Status"]=item.catalog_note;n+=int(m.sum())
+                    if getattr(item,"unit",""):
+                        data.loc[m,"Unit"]=item.unit
                     if item.metadata_family == "2013 money-management helper relationship option slots":
                         data.loc[m,"Candidate.Status"]="C source-detail metadata; helper relationship option slot; not a standalone exposure or phenotype"
                         data.loc[m,"category"]="source-detail metadata"
@@ -61,6 +63,8 @@ def propagate():
                 key=(str(row.get("Source.Wave","")),str(row.get("Variable.Name","")).lower());item=targets.get(key)
                 if item and str(row.get("epcf","")).lower()=="c":
                     row.update({"Value.Label.Review":item.review_status,"Value.Label.Source":item.official_source,"Value.Labels":getattr(item,"value_labels",""),"Review.Flag":item.catalog_note,"Harmonization.Status":item.catalog_note,"value_label_review":item.review_status,"value_label_source":item.official_source,"value_labels":getattr(item,"value_labels",""),"harmonization_status":item.catalog_note});n+=1
+                    if getattr(item,"unit",""):
+                        row["Unit"]=item.unit
                     if item.metadata_family == "2013 money-management helper relationship option slots":
                         row.update({"Candidate.Status":"C source-detail metadata; helper relationship option slot; not a standalone exposure or phenotype","category":"source-detail metadata","subcategory":"money-management helper relationship option slots"})
             expected=len(targets)
@@ -113,7 +117,10 @@ def main():
             if not (ROOT/questionnaire).exists(): raise SystemExit(f"Official questionnaire missing: {questionnaire}")
             source_files=f"{questionnaire}; {source}"
             review_status="official 2013 questionnaire and Codebook reviewed; relationship option slots retained as source detail; no cross-wave construct or response denominator inferred"
-        audit.append({"wave":wave,"code":code,"metadata_family":family,"official_source":source_files,"source_field_label":r.get("Variable.Description",""),"review_status":review_status,"value_labels":"","catalog_note":note})
+        unit = "cm" if (wave, code.lower()) in {
+            ("2011", "qh006"), ("2013", "qh006"), ("2015", "qh006_1")
+        } else ""
+        audit.append({"wave":wave,"code":code,"metadata_family":family,"official_source":source_files,"source_field_label":r.get("Variable.Description",""),"review_status":review_status,"value_labels":"","catalog_note":note,"unit":unit})
     pd.DataFrame(audit).sort_values(["wave","metadata_family","code"]).to_csv(OUTPUT,index=False,encoding="utf-8-sig")
     print(f"Audited {len(audit)} C placeholder/legacy fields across official Codebooks; no categories inferred.")
 if __name__=="__main__":main()
