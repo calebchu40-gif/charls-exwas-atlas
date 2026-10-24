@@ -60,6 +60,7 @@ c,measurement metadata,pension amount response-format selector or unfolding-brac
 c,measurement metadata,pension child-roster payer selection slots,6,6,1
 c,measurement metadata,personal wage deduction scope and response-unit selectors,15,6,3
 c,measurement metadata,personal wage-deduction response unit and applicability selector,1,1,1
+c,measurement metadata,physical-activity randomized-module assignment marker,2,1,2
 c,measurement metadata,prior-interview response-history routing flags,46,35,4
 c,measurement metadata,prior-wave demographic preload and correction route,5,5,2
 c,measurement metadata,prior-wave demographic record verification and response routing,4,4,3

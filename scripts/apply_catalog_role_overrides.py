@@ -103,7 +103,18 @@ for wave,code in metadata_keys:
         fields=fields.loc[~redundant].copy()
     metadata_rows=(fields["Source.Wave"].str.lower().eq(wave) & fields["Variable.Name"].str.lower().eq(code) & fields["epcf"].str.lower().eq("c"))
     metadata_type = str(override.get("metadata_type", "")).strip().lower()
-    if metadata_type == "age_year_component_selector":
+    if metadata_type == "activity_random_subsample_marker_unresolved":
+        fields.loc[metadata_rows,"category"]="measurement metadata"
+        fields.loc[metadata_rows,"subcategory"]="physical-activity randomized-module assignment marker"
+        fields.loc[metadata_rows,"Value.Labels"]=""
+        fields.loc[metadata_rows,"Value.Label.Source"]=fields.loc[metadata_rows,"Source.Wave"].map(
+            lambda w:f"sources_official/CHARLS_{w}_Questionnaire_extracted.txt; sources_official/CHARLS_{w}_Codebook_extracted.txt"
+        )
+        fields.loc[metadata_rows,"Value.Label.Review"]="official questionnaire confirms a randomized half-household activity module; Codebook field label is Ca052Random, but released code-to-eligibility meaning is unresolved"
+        fields.loc[metadata_rows,"Candidate.Status"]="C metadata; physical-activity assignment marker retained for design documentation only; do not classify code values as selected/not selected"
+        fields.loc[metadata_rows,"Harmonization.Status"]="wave-specific randomized activity-module metadata; questionnaire describes random half-household routing, but the released 1/2 marker mapping to selection/eligibility is unverified and must not be harmonized"
+        fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; do not infer respondent or household eligibility from this marker, its code values, or missingness; resolve against official release routing before any denominator/weight use"
+    elif metadata_type == "age_year_component_selector":
         fields.loc[metadata_rows,"category"]="measurement metadata"
         fields.loc[metadata_rows,"subcategory"]="age/calendar-year response-format selector"
         fields.loc[metadata_rows,"Candidate.Status"]="C metadata; official Codebook selector identifies whether the paired smoking/alcohol time component is age or calendar year"
