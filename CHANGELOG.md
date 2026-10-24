@@ -2,6 +2,7 @@
 
 ## 2026-10-24
 
+- Localized all 83 distinct C-catalogue subcategory descriptions in the public table, while preserving each original source-category phrase in the cell hover text and search index. Added regression checks for complete translation coverage and source-text retention; no catalogue records or CHARLS data changed.
 - Tightened the result-table success gate for CHARLS survey models: a successful row now requires a verified weight choice (used or explicitly verified unweighted), the verified PSU to be used, and either a verified variance stratum or a clearly labeled approximate variance method when the stratum is not released. `not_applicable` and other incomplete design statuses can no longer pass as successful CHARLS results. Added synthetic regression tests and documented the release rule; no CHARLS models or respondent data were used.
 - Aligned the pre-analysis protocol with the stricter result gate so the survey-weight, PSU and unreleased-stratum requirements are explicit at the analysis-design level as well as in code.
 - Strengthened the unreleased-stratum rule further: a successful row must state both that the variance method is approximate and what its limitation is. Added a synthetic regression test for a method label that omits the limitation; no real model results were used.

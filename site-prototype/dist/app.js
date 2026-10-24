@@ -87,6 +87,91 @@ function renderAssociations() {
 function addOptions(select, values) {
   for (const value of values) {const option=document.createElement('option');option.value=value;option.textContent=select.id==='cCategory'?({'automated covariate search hit':'自动关键词检索线索（未核验协变量）','covariate candidate':'协变量候选','measurement metadata':'测量/设计元数据'}[value]||value):value;select.append(option)}
 }
+const C_SUBCATEGORY_LABELS={
+  "2011 proxy interview and Section E assistance context":"2011代理访谈与E部分协助记录",
+  "2018 employer pension contribution amount/share unit selector":"2018雇主养老金缴费金额/比例单位选择器",
+  "2018 respondent pension contribution amount/share unit selector":"2018受访者养老金缴费金额/比例单位选择器",
+  "2020 CAPI-derived work-day formula under review":"2020 CAPI派生工作日公式，待核验",
+  "2020 current-employer start-date verification flag":"2020当前雇主起始日期核验标记",
+  "2020 pandemic work-module selection flag":"2020疫情期工作模块选择标记",
+  "CAPI-derived survey-home linkage flag":"CAPI派生的调查访谈地址关联标记",
+  "age/calendar-year response-format selector":"年龄/日历年份回答格式选择器",
+  "beer quantity unit selector":"啤酒数量单位选择器",
+  "birth-date source and age derivation metadata":"出生日期来源与年龄推算元数据",
+  "blood pressure recent pretest conditions":"血压测量前近期行为条件",
+  "chair setup for repeated chair-stand test":"重复坐站测试的座椅设置",
+  "checklist none-option coding":"清单题“均无”选项编码",
+  "cognitive word-list form and stimulus metadata":"认知词表版本与刺激材料元数据",
+  "cognitive-test administration and nonresponse metadata":"认知测验实施与未应答元数据",
+  "cognitive-test instrument-use metadata":"认知测验工具使用元数据",
+  "commercial-pension expected claim timing format selector":"城镇职工养老金预计领取时间格式选择器",
+  "current home market-value response unit selector":"现住房市场价值回答单位选择器",
+  "current residence total-price versus unit-price selector by slot":"现住房总价/单位面积价格格式选择器（分槽位）",
+  "defined-contribution pension account balance last-check date component":"缴费确定型养老金账户余额最近核对日期组成项",
+  "detailed hukou/residential geography components":"户口/居住地详细地理信息组成项",
+  "detailed respondent residential address fields":"受访者详细居住地址字段",
+  "early-exit pension reduction amount/percentage selector":"提前领取养老金扣减金额/比例选择器",
+  "expected formal-retirement benefit amount/percentage selector":"预计正式退休待遇金额/比例选择器",
+  "expected pension benefit amount format selector":"预计养老金待遇金额格式选择器",
+  "expected pension benefit amount-unit selector":"预计养老金待遇金额单位选择器",
+  "expected pension benefit unit/form selector":"预计养老金待遇单位/形式选择器",
+  "expected pension receipt age-versus-years response selector":"预计养老金领取时间按年龄/年数回答选择器",
+  "expected pension receipt time format selector":"预计养老金领取时间格式选择器",
+  "expected retirement pension benefit format selector":"预计退休养老金待遇格式选择器",
+  "expected supplementary pension benefit timing response selector":"预计补充养老金待遇时间回答选择器",
+  "firm supplementary pension expected-benefit form selector":"单位补充养老金预计待遇形式选择器",
+  "fixed age/calendar-year component-type marker":"年龄/日历年份组成部分类型标记",
+  "household debt unfolding-bracket response metadata":"家庭债务逐步追问区间回答元数据",
+  "household financial respondent source":"家庭财务回答者来源",
+  "household income response-format selectors":"家庭收入回答格式选择器",
+  "household income/expenditure respondent source":"家庭收入/支出回答者来源",
+  "household property total-price versus unit-price response-format selector":"家庭房产总价/单位面积价格格式选择器",
+  "housing rental amount applicability/response-format selector":"住房租金金额适用性/回答格式选择器",
+  "hypothetical health anchoring vignettes":"假设健康情境锚定题",
+  "inactive fixed-capital legacy/format fields":"未启用的固定资产旧版/格式字段",
+  "inactive household lending and debt legacy fields":"未启用的家庭借贷与债务旧版字段",
+  "inactive legacy questionnaire slots with no observations":"未启用且无观测记录的旧问卷槽位",
+  "individual transfer-income amount unit selector":"个人转移收入金额单位选择器",
+  "interview assistance / proxy response context":"访谈协助/代理回答情况",
+  "interview language":"访谈语言",
+  "invalid extra disability slot with no Yes category":"无“Yes”类别的无效额外残障槽位",
+  "keyword discovery only; not a reviewed covariate or adjustment recommendation":"仅为关键词发现线索；未经核验，不是协变量或调整建议",
+  "knee-height measurement agreement and instruction comprehension":"膝高测量同意与说明理解情况",
+  "land-requisition pension expected-benefit amount-format selector":"被征地农民养老金预计待遇金额格式选择器",
+  "life-course timing unit selectors":"生命历程时间单位选择器",
+  "life-insurance contribution payment-period selector":"人寿保险缴费周期选择器",
+  "life-insurance expected claim timing format selector":"人寿保险预计领取时间格式选择器",
+  "life-insurance expected-benefit amount-format selector":"人寿保险预计待遇金额格式选择器",
+  "life-insurance other-type open text":"人寿保险“其他类型”开放文本",
+  "linked child-roster selection identifiers":"关联子女名册选择标识",
+  "other-pension expected claim timing format selector":"其他养老金预计领取时间格式选择器",
+  "pension amount response-format selector or unfolding-bracket bound":"养老金金额回答格式选择器或逐步追问区间边界",
+  "pension child-roster payer selection slots":"子女名册中的养老金缴费者选择槽位",
+  "personal wage deduction scope and response-unit selectors":"个人工资扣除范围与回答单位选择器",
+  "personal wage-deduction response unit and applicability selector":"个人工资扣除回答单位及适用性选择器",
+  "physical-activity randomized-module assignment marker":"身体活动随机模块分配标记",
+  "prior-interview response-history routing flags":"既往访谈回答历史与跳转标记",
+  "prior-wave demographic preload and correction route":"前一波次人口学信息预载与更正路径",
+  "prior-wave demographic record verification and response routing":"前一波次人口学记录核验与回答路径",
+  "prior-wave diagnosis-time answer-history flags":"前一波次诊断时间回答历史标记",
+  "property-sale proceeds use-category selector slot":"房产出售所得用途类别选择槽位",
+  "province-level pension-source work-unit location metadata":"省级养老金来源单位地点元数据",
+  "questionnaire inserted activity-type labels":"问卷新增活动类型标签",
+  "resident-pension supplementary repayment currency selector":"城乡居民养老金补缴金额币种选择器",
+  "retirement/receding work-unit geographic linkage components":"退休/原工作单位地理关联组成项",
+  "rural pension contribution frequency selector":"农村养老金缴费频率选择器",
+  "smoking cessation age/calendar-year response-format selector; component labels conflict":"戒烟年龄/日历年份回答格式选择器；组成项标签存在冲突",
+  "social-pension expected-benefit form selector":"社会养老金预计待遇形式选择器",
+  "social-pension supplementary repayment currency selector":"社会养老金补缴金额币种选择器",
+  "stroke recurrence timing response format":"卒中复发时间回答格式",
+  "subjective life-expectancy target age":"主观预期寿命题的目标年龄",
+  "unlisted chronic-disease index placeholder":"未列明慢性病的索引占位字段",
+  "unresolved questionnaire and Codebook field identity conflict":"问卷与代码本字段身份冲突，尚未解决",
+  "unresolved release-field identity/data-type discrepancy":"发行字段身份/数据类型差异，尚未解决",
+  "unstructured other-specify response text":"未结构化的“其他，请说明”回答文本",
+  "unstructured other-use response text":"未结构化的“其他用途”回答文本",
+  "unsupported prior-wave disease-awareness slots":"前一波次疾病知晓情况槽位，当前不支持"
+};
 function renderCatalog(all, role, prefix) {
   const records=all.filter(x=>x.epcf.split(',').includes(role));
   const cats=[...new Set(records.map(x=>x.category))].sort((a,b)=>a.localeCompare(b,'zh-CN'));
@@ -115,10 +200,12 @@ function renderCatalog(all, role, prefix) {
     const harmonizationNote=x.harmonization_status?.startsWith('continuous internal biomarker/clinical or physical measure')?'内部生理/临床测量，属于表型候选，不是外源环境暴露；跨波尚未统一':'';
     const labelDisplay=role==='c'?metadataSemantics:[x.value_labels||valueStatus,x.value_labels&&valueStatus!=='官方值标签已核验'?valueStatus:'',harmonizationNote].filter(Boolean).join('；');
     const categoryDisplay=role==='c'?({'automated covariate search hit':'自动关键词检索线索（未核验协变量）','covariate candidate':'协变量候选','measurement metadata':'测量/设计元数据'}[x.category]||x.category):x.category;
-    const displayValues=[x['Variable.Name'],conceptDisplay,categoryDisplay+' · '+x.subcategory,x['Variable.Description'],x.waves,x.source_modules,role==='c'?metadataNote:(x.candidate_concept_units||'未登记单位/分类构成'),labelDisplay];
+    const subcategoryDisplay=role==='c'?(C_SUBCATEGORY_LABELS[x.subcategory]||x.subcategory):x.subcategory;
+    const displayValues=[x['Variable.Name'],conceptDisplay,categoryDisplay+' · '+subcategoryDisplay,x['Variable.Description'],x.waves,x.source_modules,role==='c'?metadataNote:(x.candidate_concept_units||'未登记单位/分类构成'),labelDisplay];
     for(const [i,value] of displayValues.entries()){
       const td=document.createElement('td');td.textContent=value;tr.append(td)
       if(i===1)td.title=role==='c'?'C类角色判定：'+(x['Candidate.Status']||'来源/测量元数据')+'；处理边界：'+(x['Harmonization.Status']||'不进入E/P关联矩阵')+'；审核：'+(x['Review.Flag']||'回查对应波次的官方问卷/代码本')+'；官方来源：'+(x['Value.Label.Source']||'见项目官方来源清单'):'候选概念：'+(x.candidate_concept_labels||'待核')+'；原始别名ID：'+(x.candidate_concept_alias_ids||'无')+'；关系：'+(x.concept_mapping_relationship||'无额外重叠')+'；映射状态：'+(x.concept_mapping_statuses||'待核')+'；解释与路由：'+(x.concept_mapping_caveats||'未登记')+'；来源表：'+(x.concept_mapping_sources||'待核')
+      if(i===2&&role==='c')td.title='原始分类说明：'+x.subcategory
       if(i===6&&x.concept_mapping_sources)td.title='单位来源：'+x.concept_mapping_sources
       if(i===7&&x.value_label_source)td.title='答案标签来源：'+x.value_label_source
     }
