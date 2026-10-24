@@ -568,6 +568,63 @@ def main() -> None:
         "release_interpretation": "inestimable; do not publish the finite iteration coefficients",
     }
 
+    # A single contradictory case can leave a finite iteration coefficient but
+    # still trigger a term-specific separation warning and non-finite variance.
+    near_separated_rows = []
+    for h in range(6):
+        for p in range(3):
+            for person in range(12):
+                exposure_value = person % 2
+                outcome_value = exposure_value
+                if h == 0 and p == 0 and person == 0:
+                    outcome_value = 1
+                near_separated_rows.append(
+                    {
+                        "stratum": h,
+                        "psu": f"{h}-{p}",
+                        "exposure": exposure_value,
+                        "outcome": outcome_value,
+                        "weight": 1.0,
+                    }
+                )
+    near_separated_data = pl.DataFrame(near_separated_rows)
+    near_separated_sample = svy.Sample(
+        data=near_separated_data,
+        design=svy.Design(stratum="stratum", psu="psu", wgt="weight", wr=True),
+    )
+    with warnings.catch_warnings(record=True) as caught:
+        warnings.simplefilter("always")
+        near_separated_result = near_separated_sample.glm.fit(
+            y="outcome", x=["exposure"], family="binomial", link="logit"
+        ).to_polars().to_dicts()
+    near_separation_warning = any(
+        "GLM_SEPARATION" in str(item.message) for item in caught
+    )
+    near_exposure = next(
+        row for row in near_separated_result if row["term"] == "exposure"
+    )
+    near_intercept = next(
+        row for row in near_separated_result if row["term"] == "_intercept_"
+    )
+    if (
+        not near_separation_warning
+        or not np.isfinite(near_exposure["estimate"])
+        or np.isfinite(near_exposure["std_err"])
+        or not np.isfinite(near_intercept["std_err"])
+    ):
+        raise AssertionError(
+            "Near-separated synthetic exposure term must be flagged despite its finite iteration coefficient"
+        )
+    outputs["synthetic_near_separation"] = {
+        "n": near_separated_data.height,
+        "contradictory_cases": 1,
+        "warning_code_detected": "GLM_SEPARATION" if near_separation_warning else "missing",
+        "exposure_iteration_estimate_finite": bool(np.isfinite(near_exposure["estimate"])),
+        "exposure_uncertainty_nonfinite": not bool(np.isfinite(near_exposure["std_err"])),
+        "intercept_uncertainty_finite": bool(np.isfinite(near_intercept["std_err"])),
+        "release_interpretation": "exposure term inestimable; do not release its finite iteration coefficient",
+    }
+
     print(json.dumps({"svy_version": version, "synthetic_only": True, "outputs": outputs}, indent=2))
 
 
