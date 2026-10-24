@@ -2,6 +2,12 @@
 
 日期：2026-10-22。只在本机授权派生表上读取数据文件元数据和受控聚合质量信息；输出不含受访者ID、个人行、权重数值或小单元格。逐波权重、样本标记与PSU候选字段见[`survey_design_field_coverage_v1.csv`](survey_design_field_coverage_v1.csv)，可复现脚本为[`../scripts/audit_survey_design_fields.py`](../scripts/audit_survey_design_fields.py)。该脚本不读取受访者ID，并将少于10人的类别格抑制。
 
+## 2026-10-25 官方 Wave 2 权重文件复核
+
+当前 CHARLS [2013 Wave 2 官方数据页](https://charls.charlsdata.com/pages/Data/2013-charls-wave2/en.html)列出 `Weights`（2015-11-18 更新），SHA-1 为 `22c4fc89df2e55fa8faf051e88830eebe0e035c0`，与 `scripts/merge_2013_official_weights.py` 中的 `EXPECTED_OFFICIAL_WEIGHTS_SHA1` 完全一致。CHARLS [官方 FAQ](https://charls.pku.edu.cn/en/Faq/Frequently_Asked_Questions.htm)说明用户需注册、签署协议并单独申请数据，获批后下载；“公开可申请”并非无需登录的匿名直链。本次仅核对官方公开页面，没有使用或索取账号凭据。
+
+2013 权重文件的私有入库暂存目录目前为空，因此现有2013准备表仍缺 `crosssection` 和 `longitudinal`。已准备的合并器会在收到文件后校验官方 SHA-1、两边 ID 唯一且非缺失、官方标记齐全、逐行一对一匹配、原行序不变、已有字段无冲突，并完成 DTA 回读后才写出独立结果及聚合 QA。SHA-1 对应正确版本不等于文件已经取得，也不代表合并已经执行或样本设计闸门已经闭合；不得由权重非缺失倒推样本类别，也不得在未验证时把2013作为已确认横断面样本拟合模型。
+
 ## 本机派生表已含字段
 
 五个波次准备表均包含 `communityID`。2011、2013包含个人权重及其专用生物标志物权重；2015包含个人权重及`Biomarker_weight`；2018、2020包含`INDV_weight`和`INDV_weight_ad2`。2015、2018、2020表内也有`crosssection`样本标志。故此前“权重和Sample_Info尚未在本机授权资料中取得”的说法不准确：权重和样本文件字段已进入当前派生分析表。
