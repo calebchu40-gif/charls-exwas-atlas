@@ -6,6 +6,7 @@ import json
 import numpy as np
 import polars as pl
 import svy
+from scipy.stats import t as student_t
 
 
 EXPECTED_VERSION = "0.35.0"
@@ -111,11 +112,30 @@ def main() -> None:
             glm_meat += n_psu / (n_psu - 1) * centered.T @ centered
         manual_glm_covariance = bread @ glm_meat @ bread
         manual_glm_se = float(np.sqrt(manual_glm_covariance[1, 1]))
+        manual_glm_beta = float(beta[1])
+        manual_glm_p_value = float(
+            2 * student_t.sf(
+                abs(manual_glm_beta / manual_glm_se), exposure_term["df"]
+            )
+        )
+        if not np.isclose(
+            exposure_term["estimate"], manual_glm_beta, rtol=1e-12, atol=1e-12
+        ):
+            raise AssertionError(
+                f"{name}: svy GLM beta {exposure_term['estimate']} != manual beta {manual_glm_beta}"
+            )
         if not np.isclose(
             exposure_term["std_err"], manual_glm_se, rtol=1e-12, atol=1e-12
         ):
             raise AssertionError(
                 f"{name}: svy GLM SE {exposure_term['std_err']} != manual SE {manual_glm_se}"
+            )
+        if not np.isclose(
+            exposure_term["p_value"], manual_glm_p_value, rtol=1e-10, atol=1e-14
+        ):
+            raise AssertionError(
+                f"{name}: svy GLM p-value {exposure_term['p_value']} "
+                f"!= Student-t calculation {manual_glm_p_value}"
             )
         outputs[name] = {
             "mean": mean["est"],
@@ -124,9 +144,11 @@ def main() -> None:
             "mean_se_matches_manual": True,
             "mean_df": mean["df"],
             "glm_exposure_beta": exposure_term["estimate"],
+            "manual_glm_exposure_beta": manual_glm_beta,
             "glm_exposure_se": exposure_term["std_err"],
             "manual_glm_exposure_se": manual_glm_se,
             "glm_exposure_se_matches_manual": True,
+            "glm_p_value_matches_t_reference": True,
             "glm_exposure_df": exposure_term["df"],
             "n": mean["n"],
         }
