@@ -22,7 +22,19 @@ It creates 4 strata, 2 PSUs per stratum, and 12 synthetic observations per PSU. 
 
 For the mean, the engine's SE exactly matches an independently calculated one-stage with-replacement PSU Taylor variance in the script. Let `u_hi = sum_j w_hij (y_hij - ybar_w)` be the linearized total for PSU i in stratum h. The hand calculation is `Var(ybar_w) = sum_h [m_h/(m_h-1) * sum_i (u_hi - mean_h(u))^2] / (sum w)^2`; omitting strata treats all PSUs as one group in this formula.
 
-For this Gaussian identity-link model, the weighted least-squares coefficient and its PSU-score Taylor sandwich SE are independently calculated in the script and match the engine to floating-point precision. The manual covariance is `B^-1 [sum_h m_h/(m_h-1) * sum_i (s_hi - mean_h(s)) (s_hi - mean_h(s))'] B^-1`, where `B = X'WX` and `s_hi = X_hi' W_hi e_hi`. The script also recomputes the two-sided Student-t p-value from the engine-reported coefficient df and confirms the numerical value. These checks cover this synthetic linear model only; they do not validate other families, whether the selected finite-sample df is appropriate for a real design, or any CHARLS analysis.
+For this Gaussian identity-link model, the weighted least-squares coefficient and its PSU-score Taylor sandwich SE are independently calculated in the script and match the engine to floating-point precision. The manual covariance is `B^-1 [sum_h m_h/(m_h-1) * sum_i (s_hi - mean_h(s)) (s_hi - mean_h(s))'] B^-1`, where `B = X'WX` and `s_hi = X_hi' W_hi e_hi`. The script also recomputes the two-sided Student-t p-value from the engine-reported coefficient df and confirms the numerical value.
+
+## Synthetic binary-outcome logistic check
+
+The same script builds a separate deterministic dataset with 6 strata, 3 PSUs per stratum and 12 records per PSU (`n=216`). Binary outcomes are drawn from a logistic probability that includes a fixed PSU effect; the fitted model includes the exposure only, so uncertainty must account for PSU-level dependence. A root solve of the weighted logistic score independently recovers the coefficient. The covariance is independently calculated from the inverse weighted information matrix and stratum-centered PSU score totals. The engine and manual values agree to numerical tolerance:
+
+| Quantity | `svy` | Independent calculation |
+|---|---:|---:|
+| Exposure log-odds coefficient | 0.40678681 | 0.40678681 |
+| PSU-sandwich standard error | 0.16179455 | 0.16179455 |
+| Student-t p value, engine df=11 | 0.02876984 | 0.02876984 |
+
+This verifies this pinned package's basic binary-logit coefficient, Taylor covariance, and p-value path for one synthetic non-separated model. It does not validate rare outcomes, separation handling, categorical coding, nonlinear terms, marginal effects, finite-sample degrees of freedom for CHARLS, or any CHARLS result. The package documentation itself warns that separated coefficients can have undefined uncertainty; production code must detect and retain nonconvergence/inestimable statuses rather than publish such values.
 
 The point estimates match because the records and weights are unchanged. The standard errors and design degrees of freedom differ substantially in this constructed example. The example intentionally contains strong between-stratum differences; this is an illustration of sensitivity to the declared design, not a general theorem that omitting strata always increases uncertainty. The CRAN `survey` manual likewise treats stratification and cluster structure as explicit design inputs and documents the ultimate-cluster option for multistage variance estimation.
 

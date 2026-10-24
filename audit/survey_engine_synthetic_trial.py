@@ -6,6 +6,8 @@ import json
 import numpy as np
 import polars as pl
 import svy
+from scipy.optimize import root
+from scipy.special import expit
 from scipy.stats import t as student_t
 from svy.errors.singleton_errors import SingletonError
 
@@ -300,6 +302,104 @@ def main() -> None:
         "manual_glm_exposure_se": pair_manual_se,
         "glm_exposure_se": pair_exposure["std_err"],
         "pairwise_model_matches_full_design_manual": True,
+    }
+
+    # Independent design-sandwich check for a synthetic binary-outcome logit.
+    # Cluster effects induce within-PSU dependence; the model intentionally
+    # omits them, so PSU-level score aggregation is essential for its SE.
+    logit_rng = np.random.default_rng(20261024)
+    cluster_effects = np.array(
+        [-0.45, 0.15, 0.40, -0.20, 0.25, -0.10, 0.35, -0.30, 0.20,
+         -0.25, 0.10, 0.30, -0.40, 0.45, 0.05, -0.15, 0.25, -0.35]
+    )
+    logit_rows = []
+    cluster_index = 0
+    for h in range(6):
+        for p in range(3):
+            cluster_effect = cluster_effects[cluster_index]
+            cluster_index += 1
+            for person in range(12):
+                x_value = float(logit_rng.normal())
+                weight_value = 0.8 + 0.1 * (person % 4) + 0.05 * p
+                probability = float(expit(-0.35 + 0.75 * x_value + cluster_effect))
+                logit_rows.append(
+                    {
+                        "stratum": h,
+                        "psu": f"{h}-{p}",
+                        "x": x_value,
+                        "y": int(logit_rng.random() < probability),
+                        "weight": weight_value,
+                    }
+                )
+    logit_data = pl.DataFrame(logit_rows)
+    logit_sample = svy.Sample(
+        data=logit_data,
+        design=svy.Design(stratum="stratum", psu="psu", wgt="weight", wr=True),
+    )
+    logit_result = logit_sample.glm.fit(
+        y="y", x=["x"], family="binomial", link="logit"
+    ).to_polars().to_dicts()
+    logit_term = next(row for row in logit_result if row["term"] == "x")
+
+    logit_x = np.column_stack(
+        (np.ones(len(logit_rows)), np.asarray(logit_data["x"].to_list(), dtype=float))
+    )
+    logit_y = np.asarray(logit_data["y"].to_list(), dtype=float)
+    logit_weight = np.asarray(logit_data["weight"].to_list(), dtype=float)
+    logit_stratum = np.asarray(logit_data["stratum"].to_list())
+    logit_psu = np.asarray(logit_data["psu"].to_list())
+
+    def logit_score(coef: np.ndarray) -> np.ndarray:
+        return logit_x.T @ (
+            logit_weight * (logit_y - expit(logit_x @ coef))
+        )
+
+    logit_solution = root(logit_score, np.zeros(2), tol=1e-12)
+    if not logit_solution.success or np.max(np.abs(logit_score(logit_solution.x))) > 1e-9:
+        raise AssertionError(f"Independent synthetic logit solver failed: {logit_solution.message}")
+    manual_logit_beta = logit_solution.x
+    fitted_probability = expit(logit_x @ manual_logit_beta)
+    logit_bread = np.linalg.inv(
+        logit_x.T @ ((logit_weight * fitted_probability * (1 - fitted_probability))[:, None] * logit_x)
+    )
+    logit_meat = np.zeros((2, 2))
+    for h in sorted(set(logit_stratum.tolist())):
+        psu_scores = []
+        for p in sorted(set(logit_psu[logit_stratum == h].tolist())):
+            in_psu = (logit_stratum == h) & (logit_psu == p)
+            psu_scores.append(
+                logit_x[in_psu].T
+                @ (logit_weight[in_psu] * (logit_y[in_psu] - fitted_probability[in_psu]))
+            )
+        scores = np.asarray(psu_scores, dtype=float)
+        centered = scores - scores.mean(axis=0)
+        logit_meat += len(scores) / (len(scores) - 1) * centered.T @ centered
+    logit_covariance = logit_bread @ logit_meat @ logit_bread
+    manual_logit_se = float(np.sqrt(logit_covariance[1, 1]))
+    manual_logit_p = float(
+        2 * student_t.sf(
+            abs(manual_logit_beta[1] / manual_logit_se), logit_term["df"]
+        )
+    )
+    for label, observed, expected in (
+        ("coefficient", logit_term["estimate"], manual_logit_beta[1]),
+        ("PSU-sandwich SE", logit_term["std_err"], manual_logit_se),
+        ("Student-t p-value", logit_term["p_value"], manual_logit_p),
+    ):
+        if not np.isclose(observed, expected, rtol=1e-8, atol=1e-10):
+            raise AssertionError(f"Synthetic logistic {label} {observed} != manual {expected}")
+    outputs["synthetic_logistic_binary_outcome"] = {
+        "n": logit_data.height,
+        "strata": 6,
+        "psus": 18,
+        "exposure_beta": logit_term["estimate"],
+        "manual_exposure_beta": float(manual_logit_beta[1]),
+        "exposure_se": logit_term["std_err"],
+        "manual_exposure_se": manual_logit_se,
+        "p_value": logit_term["p_value"],
+        "manual_t_p_value": manual_logit_p,
+        "df": logit_term["df"],
+        "coefficient_se_p_match_manual_score_sandwich": True,
     }
 
     print(json.dumps({"svy_version": version, "synthetic_only": True, "outputs": outputs}, indent=2))
