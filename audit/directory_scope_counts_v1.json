@@ -1,10 +1,10 @@
 {
   "as_of": "2026-10-25",
-  "crosswalk_files": 83,
-  "candidate_concept_ids": 1482,
-  "exposure_concept_ids_including_dual": 1188,
+  "crosswalk_files": 84,
+  "candidate_concept_ids": 1485,
+  "exposure_concept_ids_including_dual": 1191,
   "phenotype_concept_ids_including_dual": 303,
-  "wave_field_mapping_rows": 6785,
+  "wave_field_mapping_rows": 6788,
   "includes": "all E/P candidate rows from ep_concept_source_crosswalk_v1.csv",
   "excludes": "C-only measurement eligibility rows; verified_code_examples_v1.csv is a separate multiwave lookup",
   "domains": [
@@ -42,6 +42,11 @@
       "file": "audit/cancer_site_crosswalk_v1.csv",
       "mapping_rows": 92,
       "concept_ids": 23
+    },
+    {
+      "file": "audit/child_education_context_crosswalk_v1.csv",
+      "mapping_rows": 3,
+      "concept_ids": 3
     },
     {
       "file": "audit/child_hukou_lifecourse_crosswalk_v1.csv",

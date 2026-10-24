@@ -64,6 +64,7 @@ FULL_PIPELINE_SCRIPTS = (
     "build_sibling_record_context_crosswalk.py",
     "build_child_roster_context_crosswalk.py",
     "build_child_hukou_lifecourse_crosswalk.py",
+    "build_child_education_crosswalk.py",
     "build_child_phenotype_crosswalk.py",
     "build_social_context_remainder_crosswalk.py",
     "build_childhood_residential_context_crosswalk.py",
@@ -200,6 +201,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "build_adult_education_training_crosswalk.py",
     "build_child_roster_context_crosswalk.py",
     "build_child_hukou_lifecourse_crosswalk.py",
+    "build_child_education_crosswalk.py",
     "build_child_phenotype_crosswalk.py",
     # Restore reviewed household route/category metadata before catalog propagation.
     "apply_housing_context_source_review.py",

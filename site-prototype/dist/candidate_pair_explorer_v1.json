@@ -22572,9 +22572,9 @@
       ]
     },
     "2013": {
-      "exposure_count": 618,
+      "exposure_count": 621,
       "phenotype_count": 224,
-      "candidate_pair_count": 138424,
+      "candidate_pair_count": 139096,
       "exposures": [
         {
           "concept_id": "childhood_residential_setting_before_16_2013",
@@ -32413,6 +32413,26 @@
           ]
         },
         {
+          "concept_id": "offspring_primary_school_years_2013",
+          "label": "子女小学就读年数（2013）",
+          "domain": "family and intergenerational context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "cb061",
+              "label": "How many years did child spend in primary school",
+              "module": "Child",
+              "unit": "child-level years of primary schooling; numeric",
+              "value_labels": "",
+              "value_semantics": "child-level schooling context; not the respondent's own education",
+              "mapping_status": "official raw inventory field; questionnaire/Codebook continuous-item candidate; exact record-field crosswalk pending",
+              "caveat": "Numeric follow-up in the age/schooling-history branch. Verify item eligibility, numeric storage, and special values in the authorized release; Codebook extrema are not validity thresholds. The raw inventory lists this code in the wave's Child module and lists ID, childID, and HHmemberID. Questionnaire/Codebook item menus use numbered family-information slots, with no official one-to-one crosswalk to the Child record field. Retain as a candidate and validate field identity, coding, respondent joins, and missing-link semantics in the authorized release. Child records are clustered within respondents; preserve the child-level estimand and account for that dependence. No participant values or Codebook frequencies are used."
+            }
+          ]
+        },
+        {
           "concept_id": "offspring_current_location_type",
           "label": "子女居住地类型",
           "domain": "family and intergenerational context",
@@ -32509,6 +32529,26 @@
               "value_semantics": "linked child-record categorical context; define the child-level estimand and account for children clustered within respondents",
               "mapping_status": "official questionnaire/Codebook field reviewed; respondent-linked child-record candidate; validate ID/childID join and clustered analysis unit in authorized release",
               "caveat": "Child-record hukou; keep separate from respondent hukou and do not assume the child and respondent share a status. The official raw variable inventory lists ID, childID, and HHmemberID in the 2013 and 2015 Child modules, supporting a respondent-linked child-record analysis unit. Validate the actual release layout, childID uniqueness, respondent join, and eligibility against the authorized files. The Codebook's numbered child suffixes describe item slots and must not be confused with the Child-module record key. Child records are clustered within respondents; do not treat them as independent respondents or collapse them without a prespecified estimand and rule. No participant values or Codebook frequencies were used."
+            }
+          ]
+        },
+        {
+          "concept_id": "offspring_current_school_attendance_2013",
+          "label": "子女当前是否在校（2013）",
+          "domain": "family and intergenerational context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "cb058",
+              "label": "Child is still in school",
+              "module": "Child",
+              "unit": "child-level binary schooling context",
+              "value_labels": "1=Yes; 2=No",
+              "value_semantics": "child-level schooling context; not the respondent's own education",
+              "mapping_status": "official raw inventory field; questionnaire/Codebook item candidate; exact record-field crosswalk pending",
+              "caveat": "The questionnaire skips children younger than 6; No routes past the current-grade question. Preserve age eligibility and skip patterns; skipped fields are not negative responses. The raw inventory lists this code in the wave's Child module and lists ID, childID, and HHmemberID. Questionnaire/Codebook item menus use numbered family-information slots, with no official one-to-one crosswalk to the Child record field. Retain as a candidate and validate field identity, coding, respondent joins, and missing-link semantics in the authorized release. Child records are clustered within respondents; preserve the child-level estimand and account for that dependence. No participant values or Codebook frequencies are used."
             }
           ]
         },
@@ -32629,6 +32669,26 @@
               "value_semantics": "linked child-record categorical context; define the child-level estimand and account for children clustered within respondents",
               "mapping_status": "official questionnaire/Codebook field reviewed; respondent-linked child-record candidate; validate ID/childID join and clustered analysis unit in authorized release",
               "caveat": "Asked for eligible child ages; schooling and adult-education routes are wave-specific. Do not infer respondent education or aggregate children by an unstated rule. The official raw variable inventory lists ID, childID, and HHmemberID in the 2013 and 2015 Child modules, supporting a respondent-linked child-record analysis unit. Validate the actual release layout, childID uniqueness, respondent join, and eligibility against the authorized files. The Codebook's numbered child suffixes describe item slots and must not be confused with the Child-module record key. Child records are clustered within respondents; do not treat them as independent respondents or collapse them without a prespecified estimand and rule. No participant values or Codebook frequencies were used."
+            }
+          ]
+        },
+        {
+          "concept_id": "offspring_additional_schooling_years_2013",
+          "label": "子女最高教育层级后追加就读年数（2013）",
+          "domain": "family and intergenerational context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "cb062",
+              "label": "How many additional years of schooling child received after the selected education level",
+              "module": "Child",
+              "unit": "child-level additional schooling years; numeric",
+              "value_labels": "",
+              "value_semantics": "child-level schooling context; not the respondent's own education",
+              "mapping_status": "official raw inventory field; questionnaire/Codebook continuous-item candidate; exact record-field crosswalk pending",
+              "caveat": "Numeric follow-up after the selected schooling category. Preserve the parent-item route; verify numeric storage and special values in the authorized release; Codebook extrema are not validity thresholds. The raw inventory lists this code in the wave's Child module and lists ID, childID, and HHmemberID. Questionnaire/Codebook item menus use numbered family-information slots, with no official one-to-one crosswalk to the Child record field. Retain as a candidate and validate field identity, coding, respondent joins, and missing-link semantics in the authorized release. Child records are clustered within respondents; preserve the child-level estimand and account for that dependence. No participant values or Codebook frequencies are used."
             }
           ]
         },

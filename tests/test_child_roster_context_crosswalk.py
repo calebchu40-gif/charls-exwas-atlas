@@ -53,9 +53,10 @@ class ChildRosterContextCrosswalkTests(unittest.TestCase):
         for pipeline in (FULL_PIPELINE_SCRIPTS, FINALIZATION_PIPELINE_SCRIPTS):
             self.assertIn("build_child_roster_context_crosswalk.py", pipeline)
             self.assertIn("build_child_hukou_lifecourse_crosswalk.py", pipeline)
+            self.assertIn("build_child_education_crosswalk.py", pipeline)
             self.assertIn("build_child_phenotype_crosswalk.py", pipeline)
             self.assertLess(
-                pipeline.index("build_child_hukou_lifecourse_crosswalk.py"),
+                pipeline.index("build_child_education_crosswalk.py"),
                 pipeline.index("build_charls_atlas_catalog.py"),
             )
 
@@ -78,6 +79,33 @@ class ChildRosterContextCrosswalkTests(unittest.TestCase):
             field = fields[(row["wave"], row["code"].lower())]
             self.assertIn("same-stem questionnaire/Codebook item candidate", field["Concept.Mapping.Status"])
             self.assertIn("one-to-one", field["Concept.Mapping.Caveat"])
+
+    def test_child_education_conflicts_are_c_only_and_schooling_routes_are_preserved(self):
+        exposures = rows(ROOT / "audit/child_education_context_crosswalk_v1.csv")
+        conflicts = rows(ROOT / "audit/child_education_source_conflict_crosswalk_v1.csv")
+        self.assertEqual(
+            {(r["wave"], r["code"]) for r in exposures},
+            {("2013", "cb058"), ("2013", "cb061"), ("2013", "cb062")},
+        )
+        self.assertEqual(
+            {(r["wave"], r["code"]) for r in conflicts},
+            {("2013", "cb059"), ("2015", "cb052_w3_1")},
+        )
+        self.assertIn("younger than 6", next(r["caveat"] for r in exposures if r["code"] == "cb058"))
+        self.assertTrue(all(not r["value_labels"] for r in conflicts))
+        e_catalog = json.loads((ROOT / "site-prototype/dist/catalog_e.json").read_text(encoding="utf-8"))
+        c_catalog = json.loads((ROOT / "site-prototype/dist/catalog_c.json").read_text(encoding="utf-8"))
+        e_keys = {(r["Source.Wave"], r["Variable.Name"].lower()) for r in e_catalog}
+        c_keys = {(r["Source.Wave"], r["Variable.Name"].lower()) for r in c_catalog}
+        for row in exposures:
+            self.assertIn((row["wave"], row["code"].lower()), e_keys)
+        for row in conflicts:
+            key = (row["wave"], row["code"].lower())
+            self.assertIn(key, c_keys)
+            self.assertNotIn(key, e_keys)
+            field = next(r for r in c_catalog if (r["Source.Wave"], r["Variable.Name"].lower()) == key)
+            self.assertNotEqual(field["Value.Label.Review"].lower(), "not yet reviewed")
+            self.assertFalse(field["Value.Labels"])
 
     def test_child_records_are_searchable_with_their_linkage_warning(self):
         catalog = json.loads((ROOT / "site-prototype/dist/catalog_e.json").read_text(encoding="utf-8"))

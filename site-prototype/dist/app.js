@@ -96,6 +96,7 @@ function addOptions(select, values) {
   for (const value of values) {const option=document.createElement('option');option.value=value;option.textContent=select.id==='cCategory'?({'automated covariate search hit':'自动关键词检索线索（未核验协变量）','covariate candidate':'协变量备选字段（未选入模型）','measurement metadata':'测量/调查设计元数据','source-detail metadata':'来源字段细节'}[value]||value):value;select.append(option)}
 }
 const C_SUBCATEGORY_LABELS={
+  "child education questionnaire/Codebook source conflict":"子女教育问卷与代码本来源冲突",
   "2011 proxy interview and Section E assistance context":"2011代理访谈与E部分协助记录",
   "2018 employer pension contribution amount/share unit selector":"2018雇主养老金缴费金额/比例单位选择器",
   "2018 respondent pension contribution amount/share unit selector":"2018受访者养老金缴费金额/比例单位选择器",
