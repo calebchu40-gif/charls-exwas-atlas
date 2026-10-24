@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-24 continuation: baseline community-to-follow-up explorer
+
+Added a distinct candidate-pair design linking the 2011 community-module E catalogue to phenotype concepts in each later wave. The generated index uses the 113 audited community concepts and only community-module fields; the page cites CHARLS 2013 release-note and 2018/2020 user-guide statements that community IDs can match prior-wave counterparts. It explicitly says no participant/community records are joined and flags migration, follow-up residence interpretation, eligibility, attrition, weights and variance design for later validation. This improves the metadata website but does not change formal-model count (still 0) or the whole-project estimate (about 25%–30%). New audit: `audit/charls_community_baseline_to_followup_explorer_2026-10-24.md`. All 341 Python tests pass; all 34 site JSON files parse; JavaScript syntax, Python compilation, and `git diff --check` pass. Deployment verification follows the push.
+
 ## 2026-10-24 continuation: expand community land, agriculture, food, and energy context
 
 Reviewed the 2011 official Community questionnaire and Codebook and added nine community-level candidate concepts across 72 exact source-field mappings: land-use profile, terrain, agricultural mechanization, fertilizer/seed inputs, local food prices, household-energy prices, ranked major-crop production, household communication/appliance penetration, and retrospective disaster/epidemic severity. Kept units and periods distinct, retained conditional routes, and explicitly prevented community prices/land context from being interpreted as an individual's diet, dose, or landholding. JA012 remains excluded because the questionnaire and Codebook headings conflict (paddy-field area versus irrigatable area); no label was guessed. The public catalogue identifies these as 2011 community metadata candidates, not formal associations.

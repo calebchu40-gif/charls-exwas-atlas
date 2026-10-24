@@ -55,16 +55,24 @@ document.querySelectorAll('.viewnav button').forEach(btn => btn.addEventListener
 document.querySelectorAll('.overview-view [data-view]').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
 
 function renderCandidatePairExplorer(data){
- const wave=byId('candidatePairWave').value,entry=data.waves[wave];
+ const design=byId('candidatePairDesign').value;
+ const wave=byId('candidatePairWave').value;
+ const longitudinal=design==='baseline-community';
+ const entry=longitudinal?data.baseline_community_to_followup[wave]:data.waves[wave];
+ const exposureItems=longitudinal?data.baseline_community_exposures:entry.exposures;
+ const phenotypeItems=longitudinal?data.waves[wave].phenotypes.filter(x=>entry.phenotype_concept_ids.includes(x.concept_id)):entry.phenotypes;
  const exposureInput=byId('candidateExposure'),phenotypeInput=byId('candidatePhenotype');
  const exposureList=byId('candidateExposureOptions'),phenotypeList=byId('candidatePhenotypeOptions');
  const display=x=>`${x.label} [${x.concept_id}]`;
  const fill=(list,items)=>{list.replaceChildren();for(const x of items){const o=document.createElement('option');o.value=display(x);list.append(o)}};
- fill(exposureList,entry.exposures);fill(phenotypeList,entry.phenotypes);
- const eMap=new Map(entry.exposures.map(x=>[display(x),x])),pMap=new Map(entry.phenotypes.map(x=>[display(x),x]));
+ fill(exposureList,exposureItems);fill(phenotypeList,phenotypeItems);
+ const eMap=new Map(exposureItems.map(x=>[display(x),x])),pMap=new Map(phenotypeItems.map(x=>[display(x),x]));
  if(!eMap.has(exposureInput.value))exposureInput.value='';
  if(!pMap.has(phenotypeInput.value))phenotypeInput.value='';
- byId('candidatePairStatus').textContent=`${wave}波：${entry.exposure_count}个暴露概念 × ${entry.phenotype_count}个表型概念，形成${entry.candidate_pair_count.toLocaleString()}个不同概念的目录候选组合。该数字不是人数或分析样本量。`;
+ byId('candidateExposureHeading').textContent=longitudinal?'2011基线社区暴露源字段':'暴露源字段';
+ byId('candidatePhenotypeHeading').textContent=longitudinal?`${wave}随访表型源字段`:'表型源字段';
+ byId('candidatePairStatus').textContent=longitudinal?`2011基线社区：${entry.exposure_count}个暴露概念 × ${entry.followup_wave}波：${entry.phenotype_count}个表型概念，形成${entry.candidate_pair_count.toLocaleString()}个目录候选组合。官方指南说明社区ID可与前序波次对应，但此处没有匹配任何个体记录。`: `${wave}波：${entry.exposure_count}个暴露概念 × ${entry.phenotype_count}个表型概念，形成${entry.candidate_pair_count.toLocaleString()}个不同概念的目录候选组合。该数字不是人数或分析样本量。`;
+ byId('candidatePairLongitudinalNote').hidden=!longitudinal;
  const warning=byId('candidatePairWarning'),e=eMap.get(exposureInput.value),p=pMap.get(phenotypeInput.value);
  warning.hidden=true;warning.textContent='';
  const showFields=(container,item)=>{container.replaceChildren();if(!item){const msg=document.createElement('p');msg.textContent='请选择一个已列出的概念。';container.append(msg);return}for(const f of item.source_fields){const row=document.createElement('div');row.className='pair-field';const code=document.createElement('strong');code.textContent=f.code;row.append(code);const detail=document.createElement('span');detail.textContent=` · ${f.label||'官方标签待核'} · ${f.module||'模块待核'}${f.unit?` · 单位：${f.unit}`:''}`;row.append(detail);const note=document.createElement('div');note.textContent=[f.value_labels,f.value_semantics,f.mapping_status,f.caveat].filter(Boolean).join('；');if(note.textContent)row.append(note);container.append(row)}};
@@ -74,7 +82,7 @@ function renderCandidatePairExplorer(data){
 function loadCandidatePairExplorer(){
  if(candidatePairExplorerLoaded)return candidatePairExplorerLoaded;
  byId('candidatePairStatus').textContent='正在载入候选配对索引…';
- candidatePairExplorerLoaded=fetch('./candidate_pair_explorer_v1.json?v=1',{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`candidate pair explorer HTTP ${r.status}`);return r.json()}).then(data=>{renderCandidatePairExplorer(data);['candidatePairWave','candidateExposure','candidatePhenotype'].forEach(id=>byId(id).addEventListener(id==='candidatePairWave'?'change':'input',()=>renderCandidatePairExplorer(data)));return data}).catch(err=>{byId('candidatePairStatus').textContent=`候选配对目录载入失败：${err.message}`;return null});
+ candidatePairExplorerLoaded=fetch('./candidate_pair_explorer_v1.json?v=2',{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`candidate pair explorer HTTP ${r.status}`);return r.json()}).then(data=>{renderCandidatePairExplorer(data);['candidatePairDesign','candidatePairWave','candidateExposure','candidatePhenotype'].forEach(id=>byId(id).addEventListener(id==='candidateExposure'||id==='candidatePhenotype'?'input':'change',()=>{if(byId('candidatePairDesign').value==='baseline-community'&&byId('candidatePairWave').value==='2011')byId('candidatePairWave').value='2013';renderCandidatePairExplorer(data)}));return data}).catch(err=>{byId('candidatePairStatus').textContent=`候选配对目录载入失败：${err.message}`;return null});
  return candidatePairExplorerLoaded;
 }
 

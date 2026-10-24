@@ -35,6 +35,38 @@ class CandidatePairExplorerTests(unittest.TestCase):
         self.assertNotIn("association_results", self.data)
         self.assertNotIn("effect_estimates", self.data)
 
+    def test_baseline_community_candidates_are_separate_from_same_wave_pairs(self):
+        longitudinal = self.data["baseline_community_to_followup"]
+        baseline_exposures = self.data["baseline_community_exposures"]
+        self.assertEqual(set(longitudinal), {"2013", "2015", "2018", "2020"})
+        baseline_ids = None
+        for wave, entry in longitudinal.items():
+            self.assertEqual(entry["baseline_wave"], "2011")
+            self.assertEqual(entry["followup_wave"], wave)
+            self.assertEqual(entry["linkage_status"], "metadata_candidate_only_no_records_joined")
+            self.assertEqual(entry["candidate_pair_count"], entry["exposure_count"] * entry["phenotype_count"])
+            ids = {item["concept_id"] for item in baseline_exposures}
+            self.assertEqual(len(ids), entry["exposure_count"])
+            if baseline_ids is None:
+                baseline_ids = ids
+            self.assertEqual(ids, baseline_ids)
+            self.assertTrue(all(
+                field["module"].strip().lower() == "community"
+                for item in baseline_exposures for field in item["source_fields"]
+            ))
+            followup_ids = {item["concept_id"] for item in self.data["waves"][wave]["phenotypes"]}
+            self.assertTrue(set(entry["phenotype_concept_ids"]).issubset(followup_ids))
+        self.assertEqual(len(baseline_ids), 113)
+        self.assertTrue(any("not matched participants" in note for note in self.data["limitations"]))
+
+    def test_page_explains_cross_wave_linkage_limits(self):
+        html = (ROOT / "site-prototype/dist/index.html").read_text(encoding="utf-8")
+        app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
+        self.assertIn('id="candidatePairDesign"', html)
+        self.assertIn('id="candidatePairLongitudinalNote"', html)
+        self.assertIn("无法判断受访者是否迁居", html)
+        self.assertIn("data.baseline_community_to_followup", app)
+
     def test_page_exposes_candidate_pair_view_without_claiming_results(self):
         html = (ROOT / "site-prototype/dist/index.html").read_text(encoding="utf-8")
         app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
