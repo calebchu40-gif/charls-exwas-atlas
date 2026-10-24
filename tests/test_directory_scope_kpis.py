@@ -31,6 +31,22 @@ class DirectoryScopeKpiTests(unittest.TestCase):
         self.assertIn(f"{scope['wave_field_mapping_rows']:,} 条概念—源字段映射", match.group(2))
         self.assertIn("不是样本量或关联结果", match.group(2))
 
+    def test_readme_snapshot_matches_generated_catalog_and_pair_index(self):
+        scope = json.loads((ROOT / "audit/directory_scope_counts_v1.json").read_text(encoding="utf-8"))
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        pair_index = json.loads((ROOT / "site-prototype/dist/candidate_pair_explorer_v1.json").read_text(encoding="utf-8"))
+        catalogs = {
+            role: json.loads((ROOT / f"site-prototype/dist/catalog_{role}.json").read_text(encoding="utf-8"))
+            for role in "epc"
+        }
+        self.assertIn(f"E={len(catalogs['e']):,}、P={len(catalogs['p']):,}、C={len(catalogs['c']):,}", readme)
+        self.assertIn(f"{scope['candidate_concept_ids']:,} 个候选概念", readme)
+        self.assertIn(f"{scope['exposure_concept_ids_including_dual']:,}", readme)
+        self.assertIn(f"{scope['phenotype_concept_ids_including_dual']:,}", readme)
+        self.assertIn(f"{scope['wave_field_mapping_rows']:,} 条概念—来源映射", readme)
+        for wave, details in pair_index["waves"].items():
+            self.assertIn(f"{details['candidate_pair_count']:,}", readme)
+
 
 if __name__ == "__main__":
     unittest.main()

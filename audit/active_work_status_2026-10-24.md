@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-24 continuation: reconcile README with generated catalogue scope
+
+Rebuilt the count artifact and compared the public-shard row counts, E/P scope summary, metadata-only wave-pair index, homepage KPI, and README snapshot. The README had retained a prior count; it now reports the generated E/P/C rows, candidate concepts, source mappings, and wave-wise metadata pair counts. These pair counts are availability combinations, not respondent Ns or fitted tests. Added a regression test that checks the README against all generated sources so this mismatch is caught in later updates. The homepage itself was already current and did not need a Pages deployment. Commit forthcoming; no respondent data were read.
+
 ## 2026-10-24 continuation: recheck community-key coverage for PSU mapping
 
 Re-ran the five-wave community-key coverage against the protected local `psu.dta` candidate. All observed nonmissing community IDs match the candidate map, consistent with the earlier aggregate report. The validator now accepts an explicitly private local map path and labels its result as key coverage only. The candidate's exact source archive identity is still unverified, and province/city/urban/rural/area fields are not accepted as a variance stratum. The official Wave 2 weights file is still absent, and no model-readiness gate was closed. Synthetic key-normalization and duplicate-key tests pass; 344 total tests pass and all 89 analysis locks remain exact. Audit: `audit/psu_key_coverage_recheck_2026-10-24.md`; commit `9a640dc`.
