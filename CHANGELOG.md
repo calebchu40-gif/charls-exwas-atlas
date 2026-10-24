@@ -1,5 +1,9 @@
 # Change log
 
+## 2026-10-24
+
+- Clarified that CHARLS's 2021–2023 regular fifth-round fieldwork materials are not themselves a public data release. The current official data index lists the 2020 follow-up as the latest nationwide release reviewed for this project. Added a dated source audit and direct links from the objective-measurement catalogue; future waves remain excluded until their released datasets and documentation can be verified.
+
 ## 2026-10-24 (continued)
 
 - Clarify the official Wave 2 distinction between cross-sectional, longitudinal, and cross-sectional biomarker weights, including the stated biomarker nonresponse adjustment and the absence of a longitudinal biomarker weight; link a source-specific review and keep 2013 design gates closed until authorized source files are verified.
