@@ -1,5 +1,11 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-24 continuation: review elevator and home-accessibility context
+
+Official questionnaire/Codebook review completed for five-wave elevator availability and household accessibility-facility fields. Elevator is I009 in 2011–2018 behind the I008 > 1 route, and I007 in 2020; structural skips remain distinct from No. Accessibility is I010 (2011–2015), I010_W4 (2018), and I009 (2020); the 2018/2020 “Do not need” option remains a distinct third category. The catalogue and audit record preserve household context, wave-specific routing, and the interviewer-in-home instruction; no Codebook frequencies or respondent records were used. Script is registered before and after catalog builds in finalize-only and full pipelines.
+
+Commit `6adc381` is pushed to `main`; local full suite passed 332 tests, Python compilation and `git diff --check` passed. Public Pages returned HTTP 200 and its live housing JSON contains the five-wave fields and separate third category. The full metadata rebuild reports E=4,752, P=2,127, C=980 field-wave rows; 1,449 unique E/P concepts and 6,679 E/P source mappings. Candidate co-availability counts remain metadata-only, not pairwise sample sizes; fitted association models remain 0. The remaining generic pending C source-identity row is 2011 `FLDA081_1`; official Wave 1 prompt evidence for DA081 does not prove that exact released-field identity, so it remains unresolved and locked against interpretation.
+
 ## 2026-10-24 continuation: review Wave-4 adult-education duration overlap
 
 Reviewed 2018 `BD008_W2_1` and `BD008_W4_1` against the official questionnaire and Codebook. Both are continuous years, but W2_1 asks total adult-education years while W4_1 asks years since `ZIWTime`; the preceding BD007 `None` route skips the duration item, so structural skips are not zero. Kept both as E candidates and documented C overlap with estimand-specific use; never adjust for a focal exposure itself. Added the route note to the reproducible crosswalk builder and C metadata updater. Audit: `audit/adult_education_duration_overlap_review_2018_2026-10-24.md`.
