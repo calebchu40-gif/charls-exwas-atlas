@@ -49,6 +49,19 @@ class ResidualBehaviorExposureCrosswalkTests(unittest.TestCase):
         self.assertIn("PM-row component", public_sleep["wb03_3"]["Value.Labels"])
         self.assertIn("verify released-file storage", public_sleep["wb03_1"]["harmonization_status"])
 
+    def test_yesterday_mood_pair_is_marked_as_same_day_and_noncausal(self):
+        path = ROOT / "site-prototype" / "dist" / "candidate_pair_explorer_v1.json"
+        with path.open(encoding="utf-8") as stream:
+            wave = __import__("json").load(stream)["waves"]["2013"]
+        exposure = next(x for x in wave["exposures"] if x["concept_id"] == "previous_day_sleep_schedule")
+        phenotype = next(x for x in wave["phenotypes"] if x["concept_id"] == "affect_sad_yesterday")
+        sleep_note = " ".join(field["caveat"] for field in exposure["source_fields"])
+        self.assertIn("no established temporal direction", sleep_note)
+        self.assertTrue(any(field["code"] == "wb06" for field in phenotype["source_fields"]))
+        self.assertEqual(wave["candidate_pair_count"], wave["exposure_count"] * wave["phenotype_count"] - len(
+            {x["concept_id"] for x in wave["exposures"]} & {x["concept_id"] for x in wave["phenotypes"]}
+        ))
+
 
 if __name__ == "__main__":
     unittest.main()
