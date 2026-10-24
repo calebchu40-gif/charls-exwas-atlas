@@ -27,3 +27,9 @@ Commit `0eaf332` (`Review CHARLS blood pressure and pulse metadata`) was pushed 
 - Metadata validation run [#195 / `40044331712`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40044331712): success.
 
 Cache-busted requests to the public `objective_measurements_v1.json` and `catalog_p.json` returned HTTP 200. The objective-measurement asset contains three waves each for systolic BP, diastolic BP and pulse; systolic/diastolic show `mmHg`, pulse unit remains blank, and the 2011 unresolved LI-to-QA identity is explicit. Public P-catalog rows show the corresponding concept units and keep 993/999 as non-completion/status codes, with the 2013/2015 exact field-source status. The objective-measurement asset URL cache key was advanced to `v=3`.
+
+## Follow-up deployment — C-catalogue labels (2026-10-24)
+
+Commit `7e71278` adds Chinese display labels for all 83 distinct C-catalogue subcategories and preserves each English source phrase for search and hover details. Commit `6f2afa6` advances the homepage app-script cache key to `v=63`.
+
+Direct public requests confirmed HTTP 200 for the homepage, `app.js?v=63`, and `catalog_c.json`. The deployed homepage references `app.js?v=63`; the deployed app bundle contains the C-subcategory renderer and localization dictionary. The live C catalogue has 992 field-wave rows and 83 unique subcategories, with no untranslated categories. No catalog source rows, respondent data, model eligibility or association results changed.
