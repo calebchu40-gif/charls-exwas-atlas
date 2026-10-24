@@ -4,7 +4,7 @@
 
 Reviewed 2018 `BD008_W2_1` and `BD008_W4_1` against the official questionnaire and Codebook. Both are continuous years, but W2_1 asks total adult-education years while W4_1 asks years since `ZIWTime`; the preceding BD007 `None` route skips the duration item, so structural skips are not zero. Kept both as E candidates and documented C overlap with estimand-specific use; never adjust for a focal exposure itself. Added the route note to the reproducible crosswalk builder and C metadata updater. Audit: `audit/adult_education_duration_overlap_review_2018_2026-10-24.md`.
 
-The generated catalogue remains E=4,752, P=2,127, C=980; generic pending is E=0, P=0, C=2. Adult-education route review was pushed as `e38c07e`; condition/event-age metadata review as `6715169`; residential metadata review as `0afa2af`. A source correction confirmed four more exact 2011 location fields in the official baseline household questionnaire; 17 residential metadata fields now pass source checks and await publication. The live Pages site remains v78 until this batch deploys. All 325 Python tests pass; 34 static JSON files parse; JavaScript syntax, Python compilation, and `git diff --check` pass. No respondent records or Codebook frequencies were used. Formal association models remain 0.
+The generated catalogue remains E=4,752, P=2,127, C=980; generic pending is E=0, P=0, C=1. Adult-education route review was pushed as `e38c07e`; condition/event-age metadata as `6715169`; 17 residential location/migration fields as `fb511de` (Pages v79, all E/P/C shards hash-match). The 2015 conditional nurse-wage review is local and awaiting deployment. The remaining unreviewed C field is 2011 `FLDA081_1`, whose exact questionnaire identity is unresolved. All 326 Python tests pass; 34 static JSON files parse; JavaScript syntax, Python compilation, and `git diff --check` pass. No respondent records or Codebook frequencies were used. Formal association models remain 0.
 
 ## 2026-10-24 continuation: classify condition/event age metadata
 
@@ -13,6 +13,10 @@ Reviewed 2013/2015/2018 `DA007_W2_6_2` as the age component of the recent-heart-
 ## 2026-10-24 continuation: review residential location and migration metadata
 
 Verified 17 exact 2011/2013/2015 C fields against their wave questionnaires and Codebooks. The 2011 city/province subfields were confirmed in the official baseline household questionnaire, correcting an earlier check against the separate individual questionnaire. Reclassified only records with exact source identifiers in both documents. Place identifiers, settlement type, and migration history remain C metadata, not environmental exposure doses or default covariates; geographic code labels and Codebook sample summaries are omitted. Audit: `audit/residential_location_metadata_review_v1.csv`.
+
+## 2026-10-24 continuation: review conditional nurse wage
+
+Verified 2015 `DB035_W3_2` against the questionnaire and Codebook. It is a prior-month amount in Yuan asked only when the previous item indicates a nurse was hired; hourly-worker wages follow a separate route. Classified it as conditional care-service expense metadata in C, not an exposure, phenotype, or default covariate. Audit: `audit/nurse_wage_metadata_review_2015_v1.csv`.
 
 ## 2026-10-24 continuation: map marriage-history event timing by wave
 

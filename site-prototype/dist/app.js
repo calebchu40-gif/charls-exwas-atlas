@@ -158,6 +158,7 @@ const C_SUBCATEGORY_LABELS={
   "prior-wave diagnosis-time preload values":"前一波次诊断时间预载年龄值（非当前波协变量）",
   "condition or event timing metadata":"疾病或事件时间元数据",
   "residential geography and migration metadata":"居住地与迁居元数据",
+  "conditional nurse-care wage metadata":"条件性护工/护士费用元数据",
   "prior-wave reproductive-history preload values":"前一波次生殖史预载年龄值（非当前波暴露/结局）",
   "prior-wave gender route flag":"前一波次性别信息路由标记",
   "hukou life-course exposure overlap; estimand-specific context candidate":"户口生命历程暴露重叠；按估计目标判断的背景候选",
