@@ -79,8 +79,46 @@ def update_csv(path: Path, wave_col: str, code_col: str) -> int:
     return int(selected.sum())
 
 
+def update_food_crosswalk_csv(path: Path) -> int:
+    df = pd.read_csv(path, dtype=str, encoding="utf-8-sig").fillna("")
+    selected = df.apply(lambda r: str(r["wave"]) in WAVE_FIELDS and str(r["code"]).lower() in WAVE_FIELDS[str(r["wave"])], axis=1)
+    found = {(str(r["wave"]), str(r["code"]).lower()) for _, r in df[selected].iterrows()}
+    expected = {(w, c) for w, fields in WAVE_FIELDS.items() for c in fields}
+    if not expected.issubset(found):
+        raise ValueError(f"{path}: missing expected reviewed fields: {sorted(expected-found)}")
+    for idx in df.index[selected]:
+        wave, code = str(df.at[idx, "wave"]), str(df.at[idx, "code"]).lower()
+        measure = WAVE_FIELDS[wave][code]
+        _, review, harmonization = metadata(wave, code, measure)
+        df.at[idx, "mapping_status"] = f"official {wave} questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA"
+        df.at[idx, "caveat"] = harmonization
+    df.to_csv(path, index=False, encoding="utf-8-sig")
+    return int(selected.sum())
+
+
 def update_json(path: Path, wave_key: str, code_key: str) -> int:
     rows = json.loads(path.read_text(encoding="utf-8"))
+    if rows and wave_key == "wave" and isinstance(rows[0].get("source_fields"), list):
+        selected = [
+            field for concept in rows for field in concept.get("source_fields", [])
+            if str(field.get(wave_key, "")) in WAVE_FIELDS
+            and str(field.get(code_key, "")).lower() in WAVE_FIELDS.get(str(field.get(wave_key, "")), {})
+        ]
+        found = {(str(field[wave_key]), str(field[code_key]).lower()) for field in selected}
+        expected = {(w, c) for w, fields in WAVE_FIELDS.items() for c in fields}
+        if not expected.issubset(found):
+            raise ValueError(f"{path}: missing expected reviewed fields: {sorted(expected-found)}")
+        for field in selected:
+            wave, code = str(field[wave_key]), str(field[code_key]).lower()
+            measure = WAVE_FIELDS[wave][code]
+            _, review, harmonization = metadata(wave, code, measure)
+            field["unit"] = "count"
+            field["mapping_status"] = f"official {wave} questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA"
+            field["note"] = field["mapping_status"]
+            field["caveat"] = harmonization
+            field["value_label_status"] = review
+        path.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        return len(selected)
     if not rows or wave_key not in rows[0]:
         return 0
     selected = [r for r in rows if str(r.get(wave_key, "")) in WAVE_FIELDS and str(r.get(code_key, "")).lower() in WAVE_FIELDS.get(str(r.get(wave_key, "")), {})]
@@ -97,6 +135,8 @@ def update_json(path: Path, wave_key: str, code_key: str) -> int:
             row["mapping_status"] = f"official {wave} questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA"
             row["caveat"] = harmonization
             row["value_label_status"] = review
+            if "note" in row:
+                row["note"] = row["mapping_status"]
     text = json.dumps(rows, ensure_ascii=False, indent=2) + "\n" if wave_key == "wave" else json.dumps(rows, ensure_ascii=False, separators=(",", ":"))
     path.write_text(text, encoding="utf-8")
     return len(selected)
@@ -106,6 +146,7 @@ def main() -> None:
     validate_sources()
     outputs = [
         update_csv(ROOT / "audit/charls_atlas_candidate_fields_v0.csv", "Source.Wave", "Variable.Name"),
+        update_food_crosswalk_csv(ROOT / "audit/food_environment_crosswalk_v1.csv"),
         update_json(ROOT / "audit/charls_atlas_candidate_fields_v0.json", "Source.Wave", "Variable.Name"),
         update_json(ROOT / "site-prototype/dist/catalog.json", "Source.Wave", "Variable.Name"),
         update_json(ROOT / "site-prototype/dist/catalog_e.json", "Source.Wave", "Variable.Name"),

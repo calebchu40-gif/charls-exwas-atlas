@@ -4638,8 +4638,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Area wording/variables vary by wave (construction area, house size, usable area); units and target residence must be verified before cross-wave use. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire identifies continuous numeric square metres measure; no discrete labels; Codebook extrema are not valid-range evidence; verify release special values and eligibility",
+              "caveat": "2011 construction area of the respondent's residence; main-respondent housing module. Questionnaire soft-checks values below 10 or above 500; this is not a validated exclusion range. Do not infer eligible sample or valid range from Codebook summaries; verify authorized release metadata before modeling."
             }
           ]
         },
@@ -6781,8 +6781,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Household dwelling attribute; not a measure of crowding unless combined with household composition using a declared method. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA",
+              "caveat": "2011 bedroom count for the respondent household's residence; household/residence-level measure, not an individual dose. The questionnaire has a soft check above 20; this is not a validated exclusion threshold. Retain wave-specific field and residence wording; do not assume cross-wave equivalence or form a crowding score without a prespecified household-composition denominator. Confirm special values, eligible sample, missingness, and linkage in authorized-release QA before analysis."
             }
           ]
         },
@@ -6882,8 +6882,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Household dwelling attribute; room definitions may differ from usable area and bedrooms. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA",
+              "caveat": "2011 living-room count for the respondent household's residence; household/residence-level measure, not an individual dose. The questionnaire has a soft check above 20; this is not a validated exclusion threshold. Retain wave-specific field and residence wording; do not assume cross-wave equivalence or form a crowding score without a prespecified household-composition denominator. Confirm special values, eligible sample, missingness, and linkage in authorized-release QA before analysis."
             }
           ]
         },
@@ -9404,8 +9404,8 @@
               "unit": "",
               "value_labels": "Continuous count of toilets in residence; codebook max 50 (QA hint, not a validated range).",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA",
+              "caveat": "2011 toilet count for the respondent household's residence; household/residence-level measure, not an individual dose. The questionnaire has a soft check above 20; this is not a validated exclusion threshold. Retain wave-specific field and residence wording; do not assume cross-wave equivalence or form a crowding score without a prespecified household-composition denominator. Confirm special values, eligible sample, missingness, and linkage in authorized-release QA before analysis."
             },
             {
               "code": "i013",
@@ -10284,8 +10284,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "2011–2018 fields concern the year the dwelling was built; exact-year and fallback interval responses are separate fields. Do not include 2020 move-in time or impute a single year without a prespecified rule. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire identifies continuous numeric calendar year measure; no discrete labels; Codebook extrema are not valid-range evidence; verify release special values and eligibility",
+              "caveat": "2011 year the current house was built; if unclear, the questionnaire offers the separate interval field i005_1. Preserve exact year and interval response separately. Do not infer eligible sample or valid range from Codebook summaries; verify authorized release metadata before modeling."
             },
             {
               "code": "i005_1",
@@ -23591,8 +23591,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Area wording/variables vary by wave (construction area, house size, usable area); units and target residence must be verified before cross-wave use."
+              "mapping_status": "official 2013 questionnaire identifies continuous numeric square metres measure; no discrete labels; Codebook extrema are not valid-range evidence; verify release special values and eligibility",
+              "caveat": "2013 construction area of the respondent's residence; main-respondent housing module. Questionnaire soft-checks values below 10 or above 500; this is not a validated exclusion range. Do not infer eligible sample or valid range from Codebook summaries; verify authorized release metadata before modeling."
             }
           ]
         },
@@ -25674,8 +25674,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Household dwelling attribute; not a measure of crowding unless combined with household composition using a declared method."
+              "mapping_status": "official 2013 questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA",
+              "caveat": "2013 bedroom count for the respondent household's residence; household/residence-level measure, not an individual dose. The questionnaire has a soft check above 20; this is not a validated exclusion threshold. Retain wave-specific field and residence wording; do not assume cross-wave equivalence or form a crowding score without a prespecified household-composition denominator. Confirm special values, eligible sample, missingness, and linkage in authorized-release QA before analysis."
             }
           ]
         },
@@ -25755,8 +25755,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Household dwelling attribute; room definitions may differ from usable area and bedrooms."
+              "mapping_status": "official 2013 questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA",
+              "caveat": "2013 living-room count for the respondent household's residence; household/residence-level measure, not an individual dose. The questionnaire has a soft check above 20; this is not a validated exclusion threshold. Retain wave-specific field and residence wording; do not assume cross-wave equivalence or form a crowding score without a prespecified household-composition denominator. Confirm special values, eligible sample, missingness, and linkage in authorized-release QA before analysis."
             }
           ]
         },
@@ -28527,8 +28527,8 @@
               "unit": "",
               "value_labels": "Continuous count of toilets in residence; codebook max 50 (QA hint, not a validated range).",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
+              "mapping_status": "official 2013 questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA",
+              "caveat": "2013 toilet count for the respondent household's residence; household/residence-level measure, not an individual dose. The questionnaire has a soft check above 20; this is not a validated exclusion threshold. Retain wave-specific field and residence wording; do not assume cross-wave equivalence or form a crowding score without a prespecified household-composition denominator. Confirm special values, eligible sample, missingness, and linkage in authorized-release QA before analysis."
             },
             {
               "code": "i013",
@@ -29497,8 +29497,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "2011–2018 fields concern the year the dwelling was built; exact-year and fallback interval responses are separate fields. Do not include 2020 move-in time or impute a single year without a prespecified rule."
+              "mapping_status": "official 2013 questionnaire identifies continuous numeric calendar year measure; no discrete labels; Codebook extrema are not valid-range evidence; verify release special values and eligibility",
+              "caveat": "2013 exact year the current house was built; if unclear, the questionnaire offers the separate interval field i005_1. Preserve exact year and interval response separately. Do not infer eligible sample or valid range from Codebook summaries; verify authorized release metadata before modeling."
             },
             {
               "code": "i005_1",
@@ -48829,8 +48829,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Household dwelling attribute; not a measure of crowding unless combined with household composition using a declared method."
+              "mapping_status": "official 2015 questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA",
+              "caveat": "2015 bedroom count for the respondent household's residence; household/residence-level measure, not an individual dose. The questionnaire has a soft check above 20; this is not a validated exclusion threshold. Retain wave-specific field and residence wording; do not assume cross-wave equivalence or form a crowding score without a prespecified household-composition denominator. Confirm special values, eligible sample, missingness, and linkage in authorized-release QA before analysis."
             }
           ]
         },
@@ -48890,8 +48890,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Household dwelling attribute; room definitions may differ from usable area and bedrooms."
+              "mapping_status": "official 2015 questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA",
+              "caveat": "2015 living-room count for the respondent household's residence; household/residence-level measure, not an individual dose. The questionnaire has a soft check above 20; this is not a validated exclusion threshold. Retain wave-specific field and residence wording; do not assume cross-wave equivalence or form a crowding score without a prespecified household-composition denominator. Confirm special values, eligible sample, missingness, and linkage in authorized-release QA before analysis."
             }
           ]
         },
@@ -51282,8 +51282,8 @@
               "unit": "",
               "value_labels": "Continuous count of toilets in residence; codebook max 32 (QA hint, not a validated range).",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
+              "mapping_status": "official 2015 questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA",
+              "caveat": "2015 toilet count for the respondent household's residence; household/residence-level measure, not an individual dose. The questionnaire has a soft check above 20; this is not a validated exclusion threshold. Retain wave-specific field and residence wording; do not assume cross-wave equivalence or form a crowding score without a prespecified household-composition denominator. Confirm special values, eligible sample, missingness, and linkage in authorized-release QA before analysis."
             },
             {
               "code": "i013",
@@ -52333,8 +52333,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "2011–2018 fields concern the year the dwelling was built; exact-year and fallback interval responses are separate fields. Do not include 2020 move-in time or impute a single year without a prespecified rule."
+              "mapping_status": "official 2015 questionnaire identifies continuous numeric calendar year measure; no discrete labels; Codebook extrema are not valid-range evidence; verify release special values and eligibility",
+              "caveat": "2015 year the current house was built; if unclear, the questionnaire offers the separate interval field i005_1. Preserve exact year and interval response separately. Do not infer eligible sample or valid range from Codebook summaries; verify authorized release metadata before modeling."
             },
             {
               "code": "i005_1",
@@ -73704,8 +73704,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Household dwelling attribute; not a measure of crowding unless combined with household composition using a declared method."
+              "mapping_status": "official 2018 questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA",
+              "caveat": "2018 bedroom count for the respondent household's residence; household/residence-level measure, not an individual dose. The questionnaire has a soft check above 20; this is not a validated exclusion threshold. Retain wave-specific field and residence wording; do not assume cross-wave equivalence or form a crowding score without a prespecified household-composition denominator. Confirm special values, eligible sample, missingness, and linkage in authorized-release QA before analysis."
             }
           ]
         },
@@ -73805,8 +73805,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Household dwelling attribute; room definitions may differ from usable area and bedrooms."
+              "mapping_status": "official 2018 questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA",
+              "caveat": "2018 living-room count for the respondent household's residence; household/residence-level measure, not an individual dose. The questionnaire has a soft check above 20; this is not a validated exclusion threshold. Retain wave-specific field and residence wording; do not assume cross-wave equivalence or form a crowding score without a prespecified household-composition denominator. Confirm special values, eligible sample, missingness, and linkage in authorized-release QA before analysis."
             }
           ]
         },
@@ -75517,8 +75517,8 @@
               "unit": "",
               "value_labels": "Continuous count of toilets in residence; codebook max 50 (QA hint, not a validated range).",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
+              "mapping_status": "official 2018 questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA",
+              "caveat": "2018 toilet count for the respondent household's residence; household/residence-level measure, not an individual dose. The questionnaire has a soft check above 20; this is not a validated exclusion threshold. Retain wave-specific field and residence wording; do not assume cross-wave equivalence or form a crowding score without a prespecified household-composition denominator. Confirm special values, eligible sample, missingness, and linkage in authorized-release QA before analysis."
             },
             {
               "code": "i013",
@@ -76657,8 +76657,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "2011–2018 fields concern the year the dwelling was built; exact-year and fallback interval responses are separate fields. Do not include 2020 move-in time or impute a single year without a prespecified rule."
+              "mapping_status": "official 2018 questionnaire identifies continuous numeric calendar year measure; no discrete labels; Codebook extrema are not valid-range evidence; verify release special values and eligibility",
+              "caveat": "2018 year the currently occupied house was built; if unclear, the questionnaire offers the separate interval field i005_1. Preserve exact year and interval response separately. Do not infer eligible sample or valid range from Codebook summaries; verify authorized release metadata before modeling."
             },
             {
               "code": "i005_1",
@@ -96384,8 +96384,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Area wording/variables vary by wave (construction area, house size, usable area); units and target residence must be verified before cross-wave use."
+              "mapping_status": "official 2020 questionnaire identifies continuous numeric square metres measure; no discrete labels; Codebook extrema are not valid-range evidence; verify release special values and eligibility",
+              "caveat": "2020 size of the Household Financial Respondent's house. Questionnaire permits positive real values and applies a soft check for values outside 10–500; this is not a validated exclusion range. Do not infer eligible sample or valid range from Codebook summaries; verify authorized release metadata before modeling."
             }
           ]
         },
@@ -97125,8 +97125,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Household dwelling attribute; not a measure of crowding unless combined with household composition using a declared method."
+              "mapping_status": "official 2020 questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA",
+              "caveat": "2020 bedroom count for the Household Financial Respondent's house; household/residence-level measure, not an individual dose. The questionnaire specifies a nonnegative integer response and a soft check above 20; this is not a validated exclusion threshold. Retain wave-specific field and residence wording; do not assume cross-wave equivalence or form a crowding score without a prespecified household-composition denominator. Confirm special values, eligible sample, missingness, and linkage in authorized-release QA before analysis."
             }
           ]
         },
@@ -97145,8 +97145,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Household dwelling attribute; room definitions may differ from usable area and bedrooms."
+              "mapping_status": "official 2020 questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA",
+              "caveat": "2020 living-room count for the Household Financial Respondent's house; household/residence-level measure, not an individual dose. The questionnaire specifies a nonnegative integer response and a soft check above 20; this is not a validated exclusion threshold. Retain wave-specific field and residence wording; do not assume cross-wave equivalence or form a crowding score without a prespecified household-composition denominator. Confirm special values, eligible sample, missingness, and linkage in authorized-release QA before analysis."
             }
           ]
         },
@@ -97755,8 +97755,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2020 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
-              "caveat": "2020 I002/I003 refer to when the Household Financial Respondent moved into current housing, not when the building was constructed. I002 is a calendar year with questionnaire range 1900–2020 and -1 when the respondent cannot answer; I003 is a separate fallback elapsed-time bracket for unclear year. Preserve the two response formats and household-person referent; validate special-value storage and routing in the authorized release before analysis."
+              "mapping_status": "official 2020 questionnaire identifies respondent move-in calendar year; no discrete labels; questionnaire -1 unknown code requires authorized-release validation; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "2020 year the Household Financial Respondent moved into current housing, not the building construction year. The questionnaire specifies 1900–2020 and instructs interviewers to enter -1 when the respondent cannot answer; validate release-specific storage and special values before analysis. Do not infer eligible sample or valid range from Codebook summaries; verify authorized release metadata before modeling."
             },
             {
               "code": "i003",
@@ -97785,8 +97785,8 @@
               "unit": "",
               "value_labels": "Continuous count of toilets in residence; codebook max 46 (QA hint, not a validated range).",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
+              "mapping_status": "official 2020 questionnaire and Codebook confirm numeric count; special values and sample eligibility require authorized-release QA",
+              "caveat": "2020 toilet count for the Household Financial Respondent's house; household/residence-level measure, not an individual dose. The questionnaire specifies a nonnegative integer response and a soft check above 20; this is not a validated exclusion threshold. Retain wave-specific field and residence wording; do not assume cross-wave equivalence or form a crowding score without a prespecified household-composition denominator. Confirm special values, eligible sample, missingness, and linkage in authorized-release QA before analysis."
             },
             {
               "code": "i012",

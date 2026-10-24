@@ -48,6 +48,28 @@ def update(row: dict, wave: str, code: str) -> None:
 
 def patch_json(path: Path, wave_key: str, code_key: str) -> int:
     rows = json.loads(path.read_text(encoding="utf-8"))
+    if rows and wave_key == "wave" and isinstance(rows[0].get("source_fields"), list):
+        selected = [
+            field for concept in rows for field in concept.get("source_fields", [])
+            if (str(field.get(wave_key, "")), str(field.get(code_key, "")).lower()) in FIELDS
+        ]
+        seen = {(str(field[wave_key]), str(field[code_key]).lower()) for field in selected}
+        if not set(FIELDS).issubset(seen):
+            raise ValueError(f"{path}: missing reviewed housing fields {sorted(set(FIELDS)-seen)}")
+        for field in selected:
+            wave, code = str(field[wave_key]), str(field[code_key]).lower()
+            unit, note = FIELDS[(wave, code)]
+            status = "official questionnaire unit/measurement identity reviewed; special values and sample eligibility require authorized-release QA"
+            if (wave, code) == ("2020", "i002"):
+                status += "; see audit/housing_context_source_review_2026-10-24.md"
+            field["unit"] = unit
+            field["mapping_status"] = status
+            if (wave, code) != ("2020", "i002") or not field.get("note"):
+                field["note"] = status
+            field["caveat"] = note + " Do not infer eligible sample or valid range from Codebook summaries; verify authorized release metadata before modeling."
+            field["value_label_status"] = review_status(wave, code, unit)
+        path.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        return len(selected)
     if not rows or wave_key not in rows[0]:
         return 0
     selected = [r for r in rows if (str(r.get(wave_key, "")), str(r.get(code_key, "")).lower()) in FIELDS]
@@ -60,6 +82,10 @@ def patch_json(path: Path, wave_key: str, code_key: str) -> int:
         if wave_key == "wave":
             row["unit"] = FIELDS[(wave, code)][0]
             row["mapping_status"] = "official questionnaire unit/measurement identity reviewed; special values and sample eligibility require authorized-release QA"
+            if (wave, code) == ("2020", "i002"):
+                row["mapping_status"] += "; see audit/housing_context_source_review_2026-10-24.md"
+            if "note" in row and (wave, code) != ("2020", "i002"):
+                row["note"] = row["mapping_status"]
             row["caveat"] = FIELDS[(wave, code)][1]
             row["value_label_status"] = review_status(wave, code, FIELDS[(wave, code)][0])
     text = json.dumps(rows, ensure_ascii=False, indent=2) + "\n" if wave_key == "wave" else json.dumps(rows, ensure_ascii=False, separators=(",", ":"))
@@ -80,6 +106,24 @@ def patch_csv(path: Path) -> int:
         for key in ("Concept.Unit.Candidates", "Value.Labels", "Value.Label.Review", "Value.Label.Source", "Harmonization.Status"):
             if key in df.columns:
                 df.at[idx, key] = row[key]
+    df.to_csv(path, index=False, encoding="utf-8-sig")
+    return int(selected.sum())
+
+
+def patch_food_crosswalk_csv(path: Path) -> int:
+    import pandas as pd
+    df = pd.read_csv(path, dtype=str, encoding="utf-8-sig").fillna("")
+    selected = df.apply(lambda r: (str(r["wave"]), str(r["code"]).lower()) in FIELDS, axis=1)
+    seen = set(zip(df.loc[selected, "wave"], df.loc[selected, "code"].str.lower()))
+    if not set(FIELDS).issubset(seen):
+        raise ValueError(f"{path}: missing reviewed housing fields {sorted(set(FIELDS)-seen)}")
+    for idx in df.index[selected]:
+        wave, code = str(df.at[idx, "wave"]), str(df.at[idx, "code"]).lower()
+        unit, note = FIELDS[(wave, code)]
+        df.at[idx, "mapping_status"] = review_status(wave, code, unit)
+        if (wave, code) == ("2020", "i002"):
+            df.at[idx, "mapping_status"] += "; see audit/housing_context_source_review_2026-10-24.md"
+        df.at[idx, "caveat"] = note + " Do not infer eligible sample or valid range from Codebook summaries; verify authorized release metadata before modeling."
     df.to_csv(path, index=False, encoding="utf-8-sig")
     return int(selected.sum())
 
@@ -110,6 +154,7 @@ def main() -> None:
         patch_json(ROOT / "audit/charls_atlas_candidate_fields_v0.json", "Source.Wave", "Variable.Name"),
         patch_json(ROOT / "site-prototype/dist/catalog.json", "Source.Wave", "Variable.Name"),
         patch_json(ROOT / "site-prototype/dist/catalog_e.json", "Source.Wave", "Variable.Name"),
+        patch_food_crosswalk_csv(ROOT / "audit/food_environment_crosswalk_v1.csv"),
         patch_json(ROOT / "site-prototype/dist/food_environment_v1.json", "wave", "code"),
     ]
     print(f"Applied area/year measurement review to {sum(counts)} metadata rows; no participant values or frequencies included.")

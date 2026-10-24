@@ -44,6 +44,53 @@ class FinalEpCrosswalkSyncTests(unittest.TestCase):
             self.assertGreater(final.index(script, last_builder), last_builder)
             self.assertLess(final.index(script, last_builder), first_summary_after)
 
+    def test_reviewed_housing_measure_statuses_reach_the_public_source_crosswalk(self):
+        source = {
+            (r["wave"], r["code"].lower()): r
+            for r in read_csv(ROOT / "audit/food_environment_crosswalk_v1.csv")
+        }
+        reviewed_counts = {
+            (wave, code)
+            for wave, fields in {
+                "2011": ("i012_1", "i012_2", "i012_3"),
+                "2013": ("i012_1", "i012_2", "i012_3"),
+                "2015": ("i012_1", "i012_2", "i012_3"),
+                "2018": ("i012_1", "i012_2", "i012_3"),
+                "2020": ("i011_1", "i011_2", "i011_3"),
+            }.items()
+            for code in fields
+        }
+        reviewed_area_year = {
+            ("2011", "i001"), ("2013", "i001"), ("2020", "i028"),
+            ("2011", "i005"), ("2013", "i005"), ("2015", "i005"),
+            ("2018", "i005"), ("2020", "i002"),
+        }
+        for key in reviewed_counts | reviewed_area_year:
+            row = source[key]
+            self.assertNotIn("pending", row["mapping_status"].lower(), key)
+            self.assertIn("official", row["mapping_status"].lower(), key)
+            self.assertTrue(row["caveat"], key)
+        self.assertIn("special values", source[("2011", "i012_1")]["mapping_status"])
+        self.assertIn("cross-wave", source[("2011", "i012_1")]["caveat"])
+
+    def test_reviewed_housing_measure_statuses_reach_browser_domain_json(self):
+        import json
+
+        data = json.loads((ROOT / "site-prototype/dist/food_environment_v1.json").read_text(encoding="utf-8"))
+        fields = {
+            (field["wave"], field["code"]): field
+            for concept in data
+            for field in concept["source_fields"]
+        }
+        for key in {
+            ("2011", "i012_1"), ("2013", "i012_1"), ("2020", "i011_1"),
+            ("2011", "i001"), ("2013", "i001"), ("2020", "i028"),
+            ("2011", "i005"), ("2013", "i005"), ("2020", "i002"),
+        }:
+            self.assertIn("official", fields[key]["note"].lower(), key)
+            self.assertNotIn("pending", fields[key]["note"].lower(), key)
+        self.assertIn("special values", fields[("2020", "i011_1")]["note"])
+
 
 if __name__ == "__main__":
     unittest.main()
