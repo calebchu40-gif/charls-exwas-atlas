@@ -2,7 +2,7 @@
 
 更新：2026-10-25。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
-- 最终E/P目录行：6,920；不同波次—字段码：6,713。一个字段可对应多个候选类别/角色。
+- 最终E/P目录行：6,921；不同波次—字段码：6,714。一个字段可对应多个候选类别/角色。
 - 有非空标签文本的E/P目录行：3,679；不同波次—字段码：3,598。连续测量、计数值及测量流程字段可已审但不需要离散标签。
 - 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：0。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
@@ -17,7 +17,7 @@
 |e|community context|270|270|74|1|
 |e|early-life and family socioeconomic context|4|4|4|2|
 |e|environmental perception|1|1|1|1|
-|e|family and intergenerational context|41|38|35|4|
+|e|family and intergenerational context|42|39|35|4|
 |e|food and household environment|161|161|104|1|
 |e|healthcare access|109|109|51|1|
 |e|housing and built environment|480|480|248|2|
@@ -136,6 +136,7 @@
 |official questionnaire categories transcribed without frequencies; preserve three-category employment/family-business status|3|
 |official questionnaire categories; frequencies omitted; 2011 question wording controls its scope|3|
 |questionnaire categories and Codebook title conflict recorded; frequencies omitted|3|
+|continuous numeric measure reviewed; special-value and direct field alignment validation pending|3|
 |official 2011 Codebook response categories transcribed; frequencies omitted; self-awareness route retained; release coding and eligible denominator require validation|3|
 |official questionnaire confirms DA017 option 14=Testicle; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics|3|
 |official 2020 Codebook response categories transcribed; frequencies omitted; self-awareness route retained; release coding and eligible denominator require validation|3|
@@ -165,7 +166,6 @@
 |continuous/date component; no discrete labels|2|
 |continuous measure; official questionnaire unit and route reviewed; special-value storage requires authorized-data QA|2|
 |continuous year item reviewed in questionnaire/Codebook context; special-value and storage validation required|2|
-|continuous numeric measure reviewed; special-value and direct field alignment validation pending|2|
 |official 2013 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|
 |official 2018 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|
 |official 2015 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|

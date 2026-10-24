@@ -85,13 +85,17 @@ class ChildRosterContextCrosswalkTests(unittest.TestCase):
         conflicts = rows(ROOT / "audit/child_education_source_conflict_crosswalk_v1.csv")
         self.assertEqual(
             {(r["wave"], r["code"]) for r in exposures},
-            {("2013", "cb058"), ("2013", "cb061"), ("2013", "cb062")},
+            {("2013", "cb058"), ("2013", "cb060_w2_1"), ("2013", "cb061"), ("2013", "cb062")},
         )
         self.assertEqual(
             {(r["wave"], r["code"]) for r in conflicts},
             {("2013", "cb059"), ("2015", "cb052_w3_1")},
         )
         self.assertIn("younger than 6", next(r["caveat"] for r in exposures if r["code"] == "cb058"))
+        homeschooled = next(r for r in exposures if r["code"] == "cb060_w2_1")
+        self.assertEqual(homeschooled["module"], "Family_Information")
+        self.assertIn("CB060=3", homeschooled["caveat"])
+        self.assertIn("do not provide a direct release-field-to-childID crosswalk", homeschooled["caveat"])
         self.assertTrue(all(not r["value_labels"] for r in conflicts))
         e_catalog = json.loads((ROOT / "site-prototype/dist/catalog_e.json").read_text(encoding="utf-8"))
         c_catalog = json.loads((ROOT / "site-prototype/dist/catalog_c.json").read_text(encoding="utf-8"))

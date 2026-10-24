@@ -22572,9 +22572,9 @@
       ]
     },
     "2013": {
-      "exposure_count": 621,
+      "exposure_count": 622,
       "phenotype_count": 224,
-      "candidate_pair_count": 139096,
+      "candidate_pair_count": 139320,
       "exposures": [
         {
           "concept_id": "childhood_residential_setting_before_16_2013",
@@ -32689,6 +32689,26 @@
               "value_semantics": "child-level schooling context; not the respondent's own education",
               "mapping_status": "official raw inventory field; questionnaire/Codebook continuous-item candidate; exact record-field crosswalk pending",
               "caveat": "Numeric follow-up after the selected schooling category. Preserve the parent-item route; verify numeric storage and special values in the authorized release; Codebook extrema are not validity thresholds. The raw inventory lists this code in the wave's Child module and lists ID, childID, and HHmemberID. Questionnaire/Codebook item menus use numbered family-information slots, with no official one-to-one crosswalk to the Child record field. Retain as a candidate and validate field identity, coding, respondent joins, and missing-link semantics in the authorized release. Child records are clustered within respondents; preserve the child-level estimand and account for that dependence. No participant values or Codebook frequencies are used."
+            }
+          ]
+        },
+        {
+          "concept_id": "offspring_home_school_years_2013",
+          "label": "子女私塾/家塾就读年数（2013）",
+          "domain": "family and intergenerational context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "cb060_w2_1",
+              "label": "How Many Years Did Child Spend in Home School",
+              "module": "Family_Information",
+              "unit": "child-level years of sishu/home schooling; numeric",
+              "value_labels": "",
+              "value_semantics": "child-level schooling context; not the respondent's own education",
+              "mapping_status": "official raw inventory Family_Information field; questionnaire/Codebook continuous-item candidate; child-slot linkage pending",
+              "caveat": "Asked only after the highest-education item selects sishu/home school (CB060=3); the questionnaire routes past this item for other education categories. Verify special values and exact link to the named child in the authorized release; Codebook extrema are not validity thresholds. The raw inventory lists this field in the wave's Family_Information module, not the Child module. The questionnaire asks the item for a named child in the numbered offspring roster, but the official materials reviewed here do not provide a direct release-field-to-childID crosswalk. Keep the child-level construct provisional; verify the slot/record linkage, respondent joins, coding, and missing-link semantics in the authorized release. If reshaped to child-level records, retain within-respondent clustering. No participant values or Codebook frequencies are used."
             }
           ]
         },

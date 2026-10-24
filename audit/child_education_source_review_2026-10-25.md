@@ -4,7 +4,7 @@ This review uses only official questionnaires, Codebooks, and the public raw var
 
 ## E candidates
 
-`child_education_context_crosswalk_v1.csv` records three 2013 Child-module candidates: current school attendance (`cb058`), years spent in primary school (`cb061`), and additional schooling years after the selected education category (`cb062`). The questionnaire asks current school attendance only from age six; answering No skips the current-grade item. Schooling-history follow-ups depend on age and prior education responses. Keep numeric years separate from attainment categories, preserve the exact route, and verify the direct Child-record field mapping, special values, and eligible denominator in the authorized release.
+`child_education_context_crosswalk_v1.csv` records four child schooling candidates. Three are 2013 Child-module candidates: current school attendance (`cb058`), years spent in primary school (`cb061`), and additional schooling years after the selected education category (`cb062`). A fourth field, years spent in sishu/home school (`cb060_w2_1`), is listed under the 2013 `Family_Information` module, despite the questionnaire asking the item for a named child. The questionnaire routes it only after the highest-education item selects sishu/home school. Keep numeric years separate from attainment categories, preserve the exact route, and verify the wide-field slot/child-record mapping, special values, and eligible denominator in the authorized release.
 
 ## C-only source conflicts
 
