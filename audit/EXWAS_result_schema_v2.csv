@@ -29,7 +29,7 @@ weight_id,conditional,string,Official wave/module-specific weight actually used;
 weight_source,yes,string,"Official guide/release file and version supporting weight choice, or reason unavailable.",Public metadata
 psu_status,yes,category,"verified_used, not_released, unavailable_pending_authorized_file, not_applicable, or unresolved. A successful CHARLS fit requires the verified PSU to be used.",Public metadata
 psu_id,conditional,string,Official PSU field actually used; blank until verified.,Public metadata
-stratum_status,yes,category,"verified_used, not_released, unavailable_pending_authorized_file, not_applicable, or unresolved. not_released is allowed for success only with a documented approximate variance method and explicit limitation.",Public metadata
+stratum_status,yes,category,"verified_used, not_released, unavailable_pending_authorized_file, not_applicable, or unresolved. not_released is allowed for success only when variance_design includes approximate method: and limitation: labels, or the Chinese labels 近似方法： and 局限：.",Public metadata
 stratum_id,conditional,string,Official stratum field actually used; never infer from geography.,Public metadata
 variance_design,yes,string,Documented variance method and status; state limitations or that model is not fit-ready.,Public metadata
 exposure_transform,yes,string,"Transformation, units, category coding, and reference level.",Public

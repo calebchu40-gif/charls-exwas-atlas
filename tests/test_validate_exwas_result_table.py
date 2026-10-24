@@ -85,7 +85,7 @@ class ResultTableValidationTests(unittest.TestCase):
             psu_status="verified_used",
             psu_id="synthetic_psu",
             stratum_status="not_released",
-            variance_design="synthetic explicitly labeled approximate variance fixture",
+            variance_design="approximate method: synthetic Taylor; limitation: synthetic strata only",
             estimate="0.1",
             standard_error="0.05",
             ci_lower="0.002",
@@ -119,7 +119,7 @@ class ResultTableValidationTests(unittest.TestCase):
         errors = validate_rows([row], self.fields, self.required)
         self.assertTrue(any("verified weight choice" in e for e in errors))
         self.assertTrue(any("verified PSU" in e for e in errors))
-        self.assertTrue(any("explicitly labeled approximate" in e for e in errors))
+        self.assertTrue(any("approximate method:" in e for e in errors))
 
     def test_success_with_verified_unweighted_and_unreleased_stratum_needs_approximation(self):
         row = self.base_row()
@@ -142,8 +142,8 @@ class ResultTableValidationTests(unittest.TestCase):
             n_model="70",
         )
         errors = validate_rows([row], self.fields, self.required)
-        self.assertTrue(any("explicitly labeled approximate" in e for e in errors))
-        self.assertTrue(any("variance limitation to be stated" in e for e in errors))
+        self.assertTrue(any("approximate method:" in e for e in errors))
+        self.assertTrue(any("limitation:" in e for e in errors))
 
     def test_unreleased_stratum_approximation_requires_limitation_text(self):
         row = self.base_row()
@@ -155,7 +155,7 @@ class ResultTableValidationTests(unittest.TestCase):
             psu_status="verified_used",
             psu_id="synthetic_psu",
             stratum_status="not_released",
-            variance_design="synthetic approximate variance method",
+            variance_design="approximate method: synthetic Taylor",
             estimate="0.1",
             standard_error="0.05",
             ci_lower="0.002",
@@ -166,7 +166,7 @@ class ResultTableValidationTests(unittest.TestCase):
             n_model="70",
         )
         errors = validate_rows([row], self.fields, self.required)
-        self.assertTrue(any("variance limitation to be stated" in e for e in errors))
+        self.assertTrue(any("limitation:" in e for e in errors))
 
     def test_family_size_includes_unestimable_hypotheses_and_adjustments_are_checked(self):
         success = self.base_row()
@@ -180,7 +180,7 @@ class ResultTableValidationTests(unittest.TestCase):
             psu_status="verified_used",
             psu_id="synthetic_psu",
             stratum_status="not_released",
-            variance_design="synthetic approximate variance with limitation",
+            variance_design="approximate method: synthetic Taylor; limitation: synthetic strata only",
             estimate="0.1",
             standard_error="0.05",
             ci_lower="0.002",

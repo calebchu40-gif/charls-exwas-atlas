@@ -194,10 +194,18 @@ def validate_rows(rows: list[dict[str, str]], schema_fields: list[str], required
             if "not fit-ready" in variance or "unresolved" in variance or "not verified" in variance:
                 errors.append(f"row {row_no}: successful fit cannot claim an unverified variance design")
             if stratum_status == "not_released":
-                if not any(term in variance for term in ("approximation", "approximate", "近似")):
-                    errors.append(f"row {row_no}: not_released stratum requires an explicitly labeled approximate variance method")
-                if not any(term in variance for term in ("limitation", "limitations", "局限")):
-                    errors.append(f"row {row_no}: not_released stratum requires its variance limitation to be stated")
+                has_method_label = re.search(
+                    r"(?i)\b(?:approximate|approximation)\s+method\s*[:=]|近似方法\s*[:=：]",
+                    variance,
+                ) is not None
+                has_limitation_label = re.search(
+                    r"(?i)\blimitations?\s*[:=]|局限\s*[:=：]",
+                    variance,
+                ) is not None
+                if not has_method_label:
+                    errors.append(f"row {row_no}: not_released stratum requires an 'approximate method:' or '近似方法：' label")
+                if not has_limitation_label:
+                    errors.append(f"row {row_no}: not_released stratum requires a 'limitation:' or '局限：' label")
         elif has_estimate:
             errors.append(f"row {row_no}: estimate fields must be blank unless fit_status=success")
 
