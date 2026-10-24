@@ -1,5 +1,6 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-24）
 
+**最新质控进展：**已在受控本机派生表上完成 2013/2015 房产出售款用途字段的字段级汇总检查。金额储存与出售路由一致，但选项与百分比并非总是同时出现；这批 54 个候选字段继续锁定，不进入模型。原始数据和 QA 输出没有上传；方法与限制见[audit/household_sale_proceeds_storage_review_2026-10-24.md](audit/household_sale_proceeds_storage_review_2026-10-24.md)。
 
 ## 当前快照（2026-10-24）
 
