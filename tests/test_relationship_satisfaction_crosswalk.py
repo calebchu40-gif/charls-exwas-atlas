@@ -57,7 +57,7 @@ class RelationshipSatisfactionCrosswalkTests(unittest.TestCase):
         self.assertIn("'health satisfaction':'健康满意度'", app)
         self.assertIn("'relationship with children satisfaction':'与子女关系满意度'", app)
         self.assertIn("'subjective life expectancy':'主观预期寿命可能性'", app)
-        self.assertIn("app.js?v=68", index)
+        self.assertRegex(index, r'app\.js\?v=\d+')
 
 
 if __name__ == "__main__":

@@ -85,7 +85,7 @@ function renderAssociations() {
 }
 
 function addOptions(select, values) {
-  for (const value of values) {const option=document.createElement('option');option.value=value;option.textContent=select.id==='cCategory'?({'automated covariate search hit':'自动关键词检索线索（未核验协变量）','covariate candidate':'协变量候选','measurement metadata':'测量/设计元数据','source-detail metadata':'来源字段细节'}[value]||value):value;select.append(option)}
+  for (const value of values) {const option=document.createElement('option');option.value=value;option.textContent=select.id==='cCategory'?({'automated covariate search hit':'自动关键词检索线索（未核验协变量）','covariate candidate':'协变量备选字段（未选入模型）','measurement metadata':'测量/调查设计元数据','source-detail metadata':'来源字段细节'}[value]||value):value;select.append(option)}
 }
 const C_SUBCATEGORY_LABELS={
   "2011 proxy interview and Section E assistance context":"2011代理访谈与E部分协助记录",
@@ -200,7 +200,7 @@ function renderCatalog(all, role, prefix) {
     const metadataSemantics=role==='c'?([x.value_labels,metadataReview].filter(Boolean).join('；')||'测量/设计元数据'):'';
     const harmonizationNote=x.harmonization_status?.startsWith('continuous internal biomarker/clinical or physical measure')?'内部生理/临床测量，属于表型候选，不是外源环境暴露；跨波尚未统一':'';
     const labelDisplay=role==='c'?metadataSemantics:[x.value_labels||valueStatus,x.value_labels&&valueStatus!=='官方值标签已核验'?valueStatus:'',harmonizationNote].filter(Boolean).join('；');
-    const categoryDisplay=role==='c'?({'automated covariate search hit':'自动关键词检索线索（未核验协变量）','covariate candidate':'协变量候选','measurement metadata':'测量/设计元数据'}[x.category]||x.category):({'social wellbeing':'社会关系与主观幸福感','health and symptoms':'健康与症状'}[x.category]||x.category);
+    const categoryDisplay=role==='c'?({'automated covariate search hit':'自动关键词检索线索（未核验协变量）','covariate candidate':'协变量备选字段（未选入模型）','measurement metadata':'测量/调查设计元数据'}[x.category]||x.category):({'social wellbeing':'社会关系与主观幸福感','health and symptoms':'健康与症状'}[x.category]||x.category);
     const subcategoryDisplay=role==='c'?(C_SUBCATEGORY_LABELS[x.subcategory]||x.subcategory):({'marital relationship satisfaction':'婚姻关系满意度','life satisfaction':'总体生活满意度','health satisfaction':'健康满意度','relationship with children satisfaction':'与子女关系满意度','subjective life expectancy':'主观预期寿命可能性'}[x.subcategory]||x.subcategory);
     const displayValues=[x['Variable.Name'],conceptDisplay,categoryDisplay+' · '+subcategoryDisplay,x['Variable.Description'],x.waves,x.source_modules,role==='c'?metadataNote:(x.candidate_concept_units||'未登记单位/分类构成'),labelDisplay];
     for(const [i,value] of displayValues.entries()){

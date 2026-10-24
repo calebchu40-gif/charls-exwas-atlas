@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-24 continuation: clarify the C metadata browser
+
+Updated the measurement/design metadata view to state directly that “covariate candidate” is only a search classification and does not select a model adjustment set. Renamed the filter to “record-use category (not analytic role),” widened the eight-column metadata table and added a visible horizontal-scroll hint. Bumped the app JavaScript cache key so deployed browsers load the updated wording. This changes presentation only; no catalog values, analysis results or candidate counts changed.
+
 ## 2026-10-24 continuation: 2013 new rural social pension participation
 
 Reviewed the official 2013 `FN069_W2` question and Codebook response labels. The item asks current participation in New Rural Social Pension Insurance (`1=Yes`, `2=No`); Yes routes to `FN071_W2` for first-coverage month/year, while No routes to `FN070_W2` non-participation reasons. Added a reproducible metadata-only updater and carried its exact labels and route caveat into the E/P source index, catalog, and candidate-pair browser. It remains a candidate concept linked by ID to the existing 2011 concept, without a claim of cross-wave measurement equivalence. Preserve the route and eligible denominator; skipped reason fields are not negative responses. No respondent records or Codebook frequencies were used. The full Python suite passes (301 tests); `DO NOT ANALYZE` locks remain unchanged. Audit: [`new_rural_social_pension_2013_source_review_2026-10-24.md`](new_rural_social_pension_2013_source_review_2026-10-24.md).

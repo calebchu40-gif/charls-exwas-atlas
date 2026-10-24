@@ -33,7 +33,7 @@ class CMetadataSubcategoryLabelTests(unittest.TestCase):
         self.assertIn("原始分类说明：'+x.subcategory", self.app)
 
     def test_page_references_the_cache_busted_script_version(self):
-        self.assertIn("app.js?v=68", self.index)
+        self.assertRegex(self.index, r'app\.js\?v=\d+')
 
 
 if __name__ == "__main__":

@@ -471,8 +471,8 @@ class CatalogReviewStatusTests(unittest.TestCase):
     def test_c_catalog_uses_chinese_categories_and_explains_review_status(self):
         app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
         page = (ROOT / "site-prototype/dist/index.html").read_text(encoding="utf-8")
-        self.assertIn("协变量候选", app)
-        self.assertIn("测量/设计元数据", app)
+        self.assertIn("协变量备选字段（未选入模型）", app)
+        self.assertIn("测量/调查设计元数据", app)
         self.assertIn("连续变量可能没有离散类别标签", app)
         self.assertIn("如何理解这里的“协变量候选”", page)
         self.assertIn("尚未决定是否进入任何模型", page)
