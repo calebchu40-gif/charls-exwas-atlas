@@ -31,6 +31,12 @@ Wave 2（2013）的官方`Weights.dta`同时包含横断面/纵向样本标志�
 
 这次复验没有改变关键闸门：2013当前派生表仍缺官方 `crosssection` / `longitudinal` 样本标志，2011/2013样本资格也不能用非缺失权重代替；2013/2015活动模块有子样本设计，客观体检/血检还要用专用资格与权重。原始官方发行ZIP/RAR和来源校验值仍未在受控数据根目录，因此已修正的2013合并逻辑尚未从源档案重建验证。所有派生表与逐对精确可用人数仅保留在本机受控目录，禁止推送到GitHub或放进协作者交接包。
 
+## 2026-10-24受控准备表结构复验
+
+重新运行`validate_prepared_wave_tables.py`，输入为`%LOCALAPPDATA%/CHARLS_ExWAS_Atlas/derived_wave_tables`，输出仍写在同一受控根目录的`qa_outputs`，不进入项目仓库。2011、2015、2018、2020的表结构和ID检查为PASS；2013为CHECK，缺少官方`crosssection`和`longitudinal`两列。隔离目录`incoming_2013_weights`当前为空，因此无法按已修正的重建脚本补回样本标记，也没有用权重非缺失推断样本资格。
+
+现有受控派生表验证记录的波次行数、ID缺失/重复状态和文件校验值只保留在本机`qa_outputs/prepared_wave_validation_v1.json`；不把文件级哈希、个人行或权重值写入公共仓库。后续须通过获准的 CHARLS 账号取得官方 Wave 2 `Weights.dta`，先核对发行版与哈希，再使用隔离重建脚本按ID合并，并重跑全波唯一性/冲突校验。官方[2013 Wave 2数据页](https://charls.pku.edu.cn/en/Data/a2013_CHARLS_Wave2.htm)单列 Weights 与 PSU 下载项；[Release Note](https://charls.pku.edu.cn/en/data/Release2013.pdf)说明权重文件包含 cross-section/longitudinal 标记。该问题只阻断2013的正式样本资格定义，不改变其他波次的元数据目录。
+
 ## 官方代码本逐波结构核对（2026-10-24）
 
 为把“存在权重/PSU资料”与“完整方差设计可用”分开，本轮只核对官方材料中的字段名称和定义，不转录代码本的描述统计或频数：
