@@ -1610,12 +1610,12 @@
         "source_label": "The Frequency for Drink Liquor",
         "module": "health_status_and_functioning",
         "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
+        "note": "2011年DA072仅在受访者选择烈酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Past-year monthly frequency for liquor, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt:L3931"
       },
       {
         "wave": "2011",
@@ -1623,12 +1623,12 @@
         "source_label": "How Many Times Per Month Did You Drink Beer LY",
         "module": "health_status_and_functioning",
         "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
+        "note": "2011年DA074仅在受访者选择啤酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Past-year monthly frequency for beer, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt:L3950"
       },
       {
         "wave": "2011",
@@ -1636,12 +1636,12 @@
         "source_label": "How Often Did You Drink Wine Per Month LY",
         "module": "health_status_and_functioning",
         "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
+        "note": "2011年DA076仅在受访者选择葡萄酒/米酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Past-year monthly frequency for wine or rice wine, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt:L3965"
       },
       {
         "wave": "2013",
@@ -1649,12 +1649,12 @@
         "source_label": "Drink Liquor Frequency",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
+        "note": "2013年DA072仅在受访者选择烈酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Past-year monthly frequency for liquor, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3272"
       },
       {
         "wave": "2013",
@@ -1662,12 +1662,12 @@
         "source_label": "Beer",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
+        "note": "2013年DA074仅在受访者选择啤酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Past-year monthly frequency for beer, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3286"
       },
       {
         "wave": "2013",
@@ -1675,12 +1675,12 @@
         "source_label": "Wine or Rice Wine",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
+        "note": "2013年DA076仅在受访者选择葡萄酒/米酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Past-year monthly frequency for wine or rice wine, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3301"
       },
       {
         "wave": "2015",
@@ -1688,12 +1688,12 @@
         "source_label": "Drink Liquor Frequency",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2015r.zip",
-        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
+        "note": "2015年DA072仅在受访者选择烈酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Past-year monthly frequency for liquor, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2674"
       },
       {
         "wave": "2015",
@@ -1701,12 +1701,12 @@
         "source_label": "Beer",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2015r.zip",
-        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
+        "note": "2015年DA074仅在受访者选择啤酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Past-year monthly frequency for beer, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2688"
       },
       {
         "wave": "2015",
@@ -1714,12 +1714,12 @@
         "source_label": "Wine or Rice Wine",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2015r.zip",
-        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
+        "note": "2015年DA076仅在受访者选择葡萄酒/米酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Past-year monthly frequency for wine or rice wine, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2703"
       },
       {
         "wave": "2018",
@@ -1727,12 +1727,12 @@
         "source_label": "Frequncy Drinking Liquor Per Month in the Last Year",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2018r.zip",
-        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
+        "note": "2018年DA072仅在受访者选择烈酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Past-year monthly frequency for liquor, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3148"
       },
       {
         "wave": "2018",
@@ -1740,12 +1740,12 @@
         "source_label": "Frequncy Drinking Beer per Month in the Last Year",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2018r.zip",
-        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
+        "note": "2018年DA074仅在受访者选择啤酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Past-year monthly frequency for beer, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3163"
       },
       {
         "wave": "2018",
@@ -1753,12 +1753,12 @@
         "source_label": "Frequncy Drinking Wine per Month in the Last Year",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2018r.zip",
-        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
+        "note": "2018年DA076仅在受访者选择葡萄酒/米酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Past-year monthly frequency for wine or rice wine, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3179"
       },
       {
         "wave": "2020",
@@ -1766,12 +1766,12 @@
         "source_label": "Frequncy Drinking Per Month in the Last Year",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2020r.zip",
-        "note": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。",
+        "note": "2020 DA052 asks overall monthly frequency for any alcoholic beverage in the past year; it is not split by beverage type. Do not treat it as directly equivalent to the 2011–2018 beverage-specific items despite matching response categories.",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Overall monthly frequency of any alcoholic beverage in the past year; not beverage-specific. The identical 1–8 response categories do not make this directly comparable with the beverage-specific 2011–2018 items.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1206"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",

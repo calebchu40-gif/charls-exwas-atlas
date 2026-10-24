@@ -15544,9 +15544,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。"
+              "value_semantics": "Past-year monthly frequency for liquor, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+              "mapping_status": "official 2011 questionnaire/codebook item and labels reviewed; beverage-specific frequency for liquor; preserve selected-type route; not a total across beverages",
+              "caveat": "2011年DA072仅在受访者选择烈酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。"
             },
             {
               "code": "da074",
@@ -15554,9 +15554,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。"
+              "value_semantics": "Past-year monthly frequency for beer, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+              "mapping_status": "official 2011 questionnaire/codebook item and labels reviewed; beverage-specific frequency for beer; preserve selected-type route; not a total across beverages",
+              "caveat": "2011年DA074仅在受访者选择啤酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。"
             },
             {
               "code": "da076",
@@ -15564,9 +15564,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。"
+              "value_semantics": "Past-year monthly frequency for wine or rice wine, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+              "mapping_status": "official 2011 questionnaire/codebook item and labels reviewed; beverage-specific frequency for wine or rice wine; preserve selected-type route; not a total across beverages",
+              "caveat": "2011年DA076仅在受访者选择葡萄酒/米酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。"
             }
           ]
         },
@@ -37578,9 +37578,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。"
+              "value_semantics": "Past-year monthly frequency for liquor, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+              "mapping_status": "official 2013 questionnaire/codebook item and labels reviewed; beverage-specific frequency for liquor; preserve selected-type route; not a total across beverages",
+              "caveat": "2013年DA072仅在受访者选择烈酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。"
             },
             {
               "code": "da074",
@@ -37588,9 +37588,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。"
+              "value_semantics": "Past-year monthly frequency for beer, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+              "mapping_status": "official 2013 questionnaire/codebook item and labels reviewed; beverage-specific frequency for beer; preserve selected-type route; not a total across beverages",
+              "caveat": "2013年DA074仅在受访者选择啤酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。"
             },
             {
               "code": "da076",
@@ -37598,9 +37598,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。"
+              "value_semantics": "Past-year monthly frequency for wine or rice wine, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+              "mapping_status": "official 2013 questionnaire/codebook item and labels reviewed; beverage-specific frequency for wine or rice wine; preserve selected-type route; not a total across beverages",
+              "caveat": "2013年DA076仅在受访者选择葡萄酒/米酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。"
             }
           ]
         },
@@ -61673,9 +61673,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。"
+              "value_semantics": "Past-year monthly frequency for liquor, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+              "mapping_status": "official 2015 questionnaire/codebook item and labels reviewed; beverage-specific frequency for liquor; preserve selected-type route; not a total across beverages",
+              "caveat": "2015年DA072仅在受访者选择烈酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。"
             },
             {
               "code": "da074",
@@ -61683,9 +61683,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。"
+              "value_semantics": "Past-year monthly frequency for beer, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+              "mapping_status": "official 2015 questionnaire/codebook item and labels reviewed; beverage-specific frequency for beer; preserve selected-type route; not a total across beverages",
+              "caveat": "2015年DA074仅在受访者选择啤酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。"
             },
             {
               "code": "da076",
@@ -61693,9 +61693,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。"
+              "value_semantics": "Past-year monthly frequency for wine or rice wine, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+              "mapping_status": "official 2015 questionnaire/codebook item and labels reviewed; beverage-specific frequency for wine or rice wine; preserve selected-type route; not a total across beverages",
+              "caveat": "2015年DA076仅在受访者选择葡萄酒/米酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。"
             }
           ]
         },
@@ -87497,9 +87497,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。"
+              "value_semantics": "Past-year monthly frequency for liquor, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+              "mapping_status": "official 2018 questionnaire/codebook item and labels reviewed; beverage-specific frequency for liquor; preserve selected-type route; not a total across beverages",
+              "caveat": "2018年DA072仅在受访者选择烈酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。"
             },
             {
               "code": "da074",
@@ -87507,9 +87507,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。"
+              "value_semantics": "Past-year monthly frequency for beer, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+              "mapping_status": "official 2018 questionnaire/codebook item and labels reviewed; beverage-specific frequency for beer; preserve selected-type route; not a total across beverages",
+              "caveat": "2018年DA074仅在受访者选择啤酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。"
             },
             {
               "code": "da076",
@@ -87517,9 +87517,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。"
+              "value_semantics": "Past-year monthly frequency for wine or rice wine, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
+              "mapping_status": "official 2018 questionnaire/codebook item and labels reviewed; beverage-specific frequency for wine or rice wine; preserve selected-type route; not a total across beverages",
+              "caveat": "2018年DA076仅在受访者选择葡萄酒/米酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。"
             }
           ]
         }
@@ -98905,9 +98905,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。"
+              "value_semantics": "Overall monthly frequency of any alcoholic beverage in the past year; not beverage-specific. The identical 1–8 response categories do not make this directly comparable with the beverage-specific 2011–2018 items.",
+              "mapping_status": "official 2020 questionnaire/codebook item and labels reviewed; overall alcohol frequency, not beverage-specific; do not pool directly with 2011–2018 beverage-specific fields",
+              "caveat": "2020 DA052 asks overall monthly frequency for any alcoholic beverage in the past year; it is not split by beverage type. Do not treat it as directly equivalent to the 2011–2018 beverage-specific items despite matching response categories."
             }
           ]
         }

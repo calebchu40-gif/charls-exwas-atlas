@@ -43,6 +43,27 @@ class BehaviorAlcoholConceptSeparationTests(unittest.TestCase):
         quantity_fields = by_id["alcohol_quantity_last_drink"]["source_fields"]
         self.assertTrue(all("no grams of ethanol derived" in item["value_semantics"] for item in quantity_fields))
 
+    def test_frequency_scope_is_wave_specific_and_sources_are_located(self):
+        frequency = [row for row in self.alcohol if row["concept_id"] == "alcohol_frequency"]
+        early = [row for row in frequency if row["wave"] in {"2011", "2013", "2015", "2018"}]
+        overall = [row for row in frequency if row["wave"] == "2020"]
+        self.assertEqual(len(early), 12)
+        self.assertEqual(len(overall), 1)
+        self.assertTrue(all("beverage-specific" in row["value_semantics"] for row in early))
+        self.assertTrue(all("not beverage-specific" in row["value_semantics"] for row in overall))
+        self.assertTrue(all("do not pool directly" in row["mapping_status"] for row in overall))
+        self.assertTrue(all("not split by beverage type" in row["note"] for row in overall))
+        self.assertTrue(all("不应与其他酒类字段直接求和" in row["note"] for row in early))
+        self.assertTrue(all("Questionnaire" in row["questionnaire_source"] or "questionnaire" in row["questionnaire_source"] for row in frequency))
+
+        concepts = json.loads((ROOT / "site-prototype" / "dist" / "behavior_exposures_v1.json").read_text(encoding="utf-8"))
+        by_id = {item["concept_id"]: item for item in concepts}
+        site_fields = by_id["alcohol_frequency"]["source_fields"]
+        self.assertTrue(any("not beverage-specific" in f["value_semantics"] for f in site_fields if f["wave"] == "2020"))
+        self.assertTrue(all("beverage-specific" in f["value_semantics"] for f in site_fields if f["wave"] != "2020"))
+        self.assertTrue(all("not split by beverage type" in f["note"] for f in site_fields if f["wave"] == "2020"))
+        self.assertTrue(all("不应与其他酒类字段直接求和" in f["note"] for f in site_fields if f["wave"] != "2020"))
+
 
 if __name__ == "__main__":
     unittest.main()

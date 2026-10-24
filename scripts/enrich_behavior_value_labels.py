@@ -6,12 +6,15 @@ ROOT=Path(__file__).resolve().parents[1]
 BOOK=lambda w:f'sources_official/CHARLS_{w}_Codebook_extracted.txt'
 QUESTIONNAIRE={
  '2011':('CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt',{}),
- '2013':('CHARLS_2013_Questionnaire_extracted.txt',{'da066':3227,'da049':3029,'da050':3033,'da073':3282,'da075':3296,'da075_1':3296,'da075_2':3296,'da077':3311}),
- '2015':('CHARLS_2015_Questionnaire_extracted.txt',{'da049':2429,'da050':2433,'da073':2684,'da075':2698,'da075_1':2698,'da075_2':2698,'da077':2713}),
- '2018':('CHARLS_2018_Questionnaire_extracted.txt',{'da049':2941,'da050':2945,'da073':3158,'da075':3173,'da075_1':3173,'da075_2':3173,'da077':3189}),
- '2020':('CHARLS_2020_Questionnaire_English_extracted.txt',{'da030':1100,'da031':1104}),
+ '2013':('CHARLS_2013_Questionnaire_extracted.txt',{'da066':3227,'da067':3233,'da072':3272,'da074':3286,'da076':3301,'da049':3029,'da050':3033,'da073':3282,'da075':3296,'da075_1':3296,'da075_2':3296,'da077':3311}),
+ '2015':('CHARLS_2015_Questionnaire_extracted.txt',{'da067':2637,'da072':2674,'da074':2688,'da076':2703,'da049':2429,'da050':2433,'da073':2684,'da075':2698,'da075_1':2698,'da075_2':2698,'da077':2713}),
+ '2018':('CHARLS_2018_Questionnaire_extracted.txt',{'da067':3102,'da072':3148,'da074':3163,'da076':3179,'da049':2941,'da050':2945,'da073':3158,'da075':3173,'da075_1':3173,'da075_2':3173,'da077':3189}),
+ '2020':('CHARLS_2020_Questionnaire_English_extracted.txt',{'da030':1100,'da031':1104,'da051':1201,'da052':1206}),
 }
 def questionnaire_source(w,c):
+    if w=='2011' and c in {'da067','da072','da074','da076'}:
+        lines={'da067':3886,'da072':3931,'da074':3950,'da076':3965}
+        return f'sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt:L{lines[c]}'
     if c=='da064':
         filename={'2011':'CHARLS_2011_Baseline_Household_Questionnaire.doc','2013':'CHARLS_2013_Questionnaire_extracted.txt','2015':'CHARLS_2015_Questionnaire_extracted.txt'}.get(w,'')
         if filename: return f'sources_official/{filename}; DA064 (price per pack of 20 cigarettes; prompt specifies reference-time rather than current price)'
@@ -146,6 +149,19 @@ for i,r in d.iterrows():
         if cid=='physical_activity_purpose':
             d.loc[i,'value_label_status']='official codebook response labels reviewed; frequencies omitted; descriptive purpose only, not activity dose'
             d.loc[i,'value_semantics']='Purpose of intensive/moderate/light physical activity; descriptive category, not activity occurrence, frequency, duration, or dose. Preserve the wave-specific codebook wording and questionnaire route.'
+        if cid=='alcohol_frequency' and ((w in {'2011','2013','2015','2018'} and c in {'da072','da074','da076'}) or (w=='2020' and c=='da052')):
+            if w=='2020':
+                d.loc[i,'value_semantics']='Overall monthly frequency of any alcoholic beverage in the past year; not beverage-specific. The identical 1–8 response categories do not make this directly comparable with the beverage-specific 2011–2018 items.'
+                d.loc[i,'mapping_status']='official 2020 questionnaire/codebook item and labels reviewed; overall alcohol frequency, not beverage-specific; do not pool directly with 2011–2018 beverage-specific fields'
+                d.loc[i,'note']='2020 DA052 asks overall monthly frequency for any alcoholic beverage in the past year; it is not split by beverage type. Do not treat it as directly equivalent to the 2011–2018 beverage-specific items despite matching response categories.'
+            else:
+                beverage={'da072':'liquor','da074':'beer','da076':'wine or rice wine'}[c]
+                d.loc[i,'value_semantics']=f'Past-year monthly frequency for {beverage}, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.'
+                d.loc[i,'mapping_status']=f'official {w} questionnaire/codebook item and labels reviewed; beverage-specific frequency for {beverage}; preserve selected-type route; not a total across beverages'
+                beverage_cn={'da072':'烈酒','da074':'啤酒','da076':'葡萄酒/米酒'}[c]
+                d.loc[i,'note']=f'{w}年{c.upper()}仅在受访者选择{beverage_cn}后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。'
+            d.loc[i,'questionnaire_source']=questionnaire_source(w,c)
+            d.loc[i,'value_label_status']='official codebook response labels reviewed; wave-specific beverage scope and routing retained separately'
         if cid.startswith('internet_') or cid in {'mobile_payment_use','wechat_use','wechat_moments_posting'}:
             code_key=c.lower()
             d.loc[i,'value_label_status']='2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained'
@@ -220,7 +236,7 @@ lookup={(r['concept_id'],r['wave'],r['code']):r for r in d.to_dict('records')}
 for concept in concepts:
     for f in concept['source_fields']:
         r=lookup[(concept['concept_id'],f['wave'],f['code'])]
-        f.update(value_labels=r['value_labels'],value_label_status=r['value_label_status'],value_label_source=r['value_label_source'],value_semantics=r['value_semantics'],questionnaire_source=r['questionnaire_source'])
+        f.update(value_labels=r['value_labels'],value_label_status=r['value_label_status'],value_label_source=r['value_label_source'],value_semantics=r['value_semantics'],questionnaire_source=r['questionnaire_source'],note=r['note'])
 jp.write_text(json.dumps(concepts,ensure_ascii=False,indent=2),encoding='utf-8')
 print('behavior mappings',len(d),'explicit codebook label rows',int((d.value_labels!='').sum()),'continuous quantity/measure rows',int(d.value_label_status.str.startswith(('continuous count','continuous measure','continuous beverage quantity')).sum()))
 print(d[d.value_labels!=''].groupby('concept_id').size().to_string())
