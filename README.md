@@ -44,7 +44,7 @@
 
 受控数据 QA 发现，现有2013分析表虽含权重列，但缺少官方`crosssection`与`longitudinal`样本标记，不能用权重是否缺失替代样本资格。官方 Wave 2 页面列出的2015-11-18 `Weights.dta` SHA1为`22c4fc89df2e55fa8faf051e88830eebe0e035c0`；合并脚本会在读取前校验此哈希，不匹配则停止。待通过本人 CHARLS 账户下载官方文件后，将其放入`%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\incoming_2013_weights\Weights.dta`，并按[`audit/wave2_official_weight_intake_2026-10-23.md`](audit/wave2_official_weight_intake_2026-10-23.md)运行受控合并和复核。合并脚本默认另写私有 DTA、输出不含个体记录的汇总 QA，并在 ID 重复/缺失、匹配不全、标记缺失或现有权重值冲突时停止；不应把官方文件或派生个体数据放入项目同步目录或 GitHub。
 
-当前E类通用待核队列已清零；C类前访回答历史/路由元数据、疾病占位/停用旧字段及测量设计字段已完成来源审核。另有456条由关键词自动发现的C类检索线索（300个不同字段码；与值标签待核行数不是同一统计），含年龄、性别等核心变量来源，也混有迁移史、疾病发生年龄和家庭名册字段；它们不是已核准的协变量，更不是统一调整集。网站已将其单独标为“自动关键词检索线索（未核验协变量）”。经逐波梳理的年龄、性别、教育、婚姻、户籍、城乡/居住地和调查设计准备情况见[`audit/core_covariate_readiness_2026-10-23.md`](audit/core_covariate_readiness_2026-10-23.md)；历史队列见[`audit/current_value_label_review_queue_2026-10-23.md`](audit/current_value_label_review_queue_2026-10-23.md)。这些计数不代表待新增的独立指标数；连续测量、金额和日期字段可能没有离散类别标签。
+当前E类通用待核队列已清零；C类前访回答历史/路由元数据、疾病占位/停用旧字段及测量设计字段已完成来源审核。另有403条由关键词自动发现的C类检索线索（258个不同字段码；与值标签待核行数不是同一统计），含年龄、性别等核心变量来源，也混有迁移史、疾病发生年龄和家庭名册字段；它们不是已核准的协变量，更不是统一调整集。网站已将其单独标为“自动关键词检索线索（未核验协变量）”。经逐波梳理的年龄、性别、教育、婚姻、户籍、城乡/居住地和调查设计准备情况见[`audit/core_covariate_readiness_2026-10-23.md`](audit/core_covariate_readiness_2026-10-23.md)；历史队列见[`audit/current_value_label_review_queue_2026-10-23.md`](audit/current_value_label_review_queue_2026-10-23.md)。这些计数不代表待新增的独立指标数；连续测量、金额和日期字段可能没有离散类别标签。
 
 ## 公开网站部署
 
@@ -257,7 +257,7 @@ DA056选项编码边界更新（2026-10-23）：41个2011/2013/2015活动与设�
 个人转移收入来源更新（2026-10-23）：50个五波次选项字段按官方问卷/Codebook审核。2011–2015只确认到选项身份，未推断未选中为No；2018/2020的20个字段显示明确的`0=No`及选项码`=Yes`，不复制频数。养老金区间端点更新：16个2011/2013/2015下界/上界字段说明为条件金额区间，不是点估计；2013字符串类型、2015代码本摘要和2011区间路由分别记录。当前E通用待核85、P为0、C为328；E/P非空官方/已审值标签3,232行、3,206个波次字段。128项测试、JS语法和89条禁分析锁检查通过。审核记录见[`audit/individual_transfer_income_source_review_2011_2020_2026-10-23.md`](audit/individual_transfer_income_source_review_2011_2020_2026-10-23.md)、[`audit/pension_interval_endpoint_review_2011_2015_2026-10-23.md`](audit/pension_interval_endpoint_review_2011_2015_2026-10-23.md)和[`audit/current_value_label_review_queue_2026-10-23.md`](audit/current_value_label_review_queue_2026-10-23.md)。
 
 
-核心调整候选和逐波准备限制汇总见[`audit/core_covariate_readiness_2026-10-23.md`](audit/core_covariate_readiness_2026-10-23.md)。年龄、性别、教育、婚姻/伴侣、户籍、居住地和抽样设计分别核验；目录中的456条自动发现C波次字段线索（300个不同变量码）不等于固定调整变量，正式模型仍为0。
+核心调整候选和逐波准备限制汇总见[`audit/core_covariate_readiness_2026-10-23.md`](audit/core_covariate_readiness_2026-10-23.md)。年龄、性别、教育、婚姻/伴侣、户籍、居住地和抽样设计分别核验；目录中的403条自动发现C波次字段线索（258个不同变量码）不等于固定调整变量，正式模型仍为0。
 
 
 2026-10-24 数据访问与网站公开范围：GitHub Pages展示的是字段目录/方法信息，不提供CHARLS个人微观数据。CHARLS现行条款要求学术使用、禁止商业用途、禁止公开或转交原始微观数据，下载须经门户账号与审核；协作者应自行按官方流程获得许可。网站已加入官方条款和数据目录入口。详见[`audit/charls_data_access_license_review_2026-10-24.md`](audit/charls_data_access_license_review_2026-10-24.md)。
