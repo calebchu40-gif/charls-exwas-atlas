@@ -35,6 +35,10 @@ class CMetadataSubcategoryLabelTests(unittest.TestCase):
     def test_page_references_the_cache_busted_script_version(self):
         self.assertRegex(self.index, r'app\.js\?v=\d+')
 
+    def test_automated_discovery_status_does_not_misstate_current_review_state(self):
+        self.assertIn("自动发现纳入候选目录；逐字段核验状态见来源与值标签列", self.app)
+        self.assertIn("x['Candidate.Status']||'来源/测量元数据'", self.app)
+
 
 if __name__ == "__main__":
     unittest.main()

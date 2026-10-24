@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-24 continuation: distinguish discovery status from field review status in the C browser
+
+The C metadata browser previously rendered the generic `automated discovery; questionnaire/codebook review required` discovery provenance as if it were the current field-level review result. This could contradict the same row's reviewed value-label/source fields and make reviewed candidates appear wholly unaudited. The public row now says the candidate entered through automated discovery and directs readers to the source and value-label columns for the field-specific review state; the original provenance remains available in the hover explanation. This is a presentation correction only: no candidate, label, review flag, or analytic status changed. The app bundle cache key is bumped to v70. Regression coverage is added in `tests/test_c_metadata_subcategory_labels.py`.
+
 ## 2026-10-24 continuation: review the Wave 5 physical-activity duration conflict
 
 Inspected the original CHARLS 2020 questionnaire PDF page 32 and official Codebook entries for `DA032`–`DA037`. Both sources agree on the `DA034` and `DA036` thresholds, but the questionnaire prints `DA035` as `<30 hours`/`≥30 hours` and the Codebook prints `<30 minutes`/`≥30 minutes`. The printed questionnaire also does not show the skip conditions among the three duration fields. The reproducible behavior crosswalk now withholds all three `DA035` value labels, marks those fields `DO NOT ANALYZE`, and preserves both source readings in the E catalogue and pair explorer. `DA034` and `DA036` retain their agreeing labels with a routed-component caveat. The fields are not counted as three independent doses; no minutes, weekly total, or IPAQ score is derived. Audit: [`physical_activity_duration_2020_source_review_2026-10-24.md`](physical_activity_duration_2020_source_review_2026-10-24.md).
