@@ -1,10 +1,10 @@
 {
   "as_of": "2026-10-24",
-  "crosswalk_files": 77,
-  "candidate_concept_ids": 1442,
-  "exposure_concept_ids_including_dual": 1150,
+  "crosswalk_files": 78,
+  "candidate_concept_ids": 1444,
+  "exposure_concept_ids_including_dual": 1152,
   "phenotype_concept_ids_including_dual": 301,
-  "wave_field_mapping_rows": 6666,
+  "wave_field_mapping_rows": 6674,
   "includes": "all E/P candidate rows from ep_concept_source_crosswalk_v1.csv",
   "excludes": "C-only measurement eligibility rows; verified_code_examples_v1.csv is a separate multiwave lookup",
   "domains": [
@@ -352,6 +352,11 @@
       "file": "audit/relationship_satisfaction_crosswalk_v1.csv",
       "mapping_rows": 2,
       "concept_ids": 1
+    },
+    {
+      "file": "audit/reproductive_history_exposure_crosswalk_v1.csv",
+      "mapping_rows": 8,
+      "concept_ids": 2
     },
     {
       "file": "audit/residential_rental_income_crosswalk_v1.csv",

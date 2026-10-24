@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 575,
+      "exposure_count": 577,
       "phenotype_count": 213,
-      "candidate_pair_count": 122468,
+      "candidate_pair_count": 122894,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -10460,6 +10460,26 @@
           ]
         },
         {
+          "concept_id": "age_at_menarche",
+          "label": "初潮年龄",
+          "domain": "life-course and reproductive history",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da026_2",
+              "label": "The Age When You Began the Menarche",
+              "module": "health_status_and_functioning",
+              "unit": "years",
+              "value_labels": "",
+              "value_semantics": "Age in years only when the respondent used the age response component; the calendar-year response is a separate field.",
+              "mapping_status": "wave-specific life-course exposure candidate; official item and age component reviewed; analysis eligibility and cross-wave equivalence not approved",
+              "caveat": "Female-only. The questionnaire routes DA026–DA028 to new respondents; DA026_1 is the separate year component and is not converted to age. In 2018 the parent item also has a separate never-menstruated response; do not encode it as an age. Returning respondents are not generally re-asked this retrospective item. Preserve eligible denominator and recall limitations; no cross-wave equivalence is established."
+            }
+          ]
+        },
+        {
           "concept_id": "daytime_nap",
           "label": "午睡时长/午睡题",
           "domain": "睡眠",
@@ -14737,6 +14757,26 @@
               "value_semantics": "Continuous amount in Yuan; historical nominal amount, not inflation-adjusted.",
               "mapping_status": "wave-specific marital-history exposure candidate; item definition reviewed; analysis eligibility remains conditional",
               "caveat": "Asked only when the lifetime marriage count equals one. The 2011 codebook reports a minimum of -2000, which is not a plausible amount under the question wording; resolve its meaning/special-value handling before any analysis. Do not combine with 2013 without checking currency-year comparability. Numeric values are not cross-wave harmonization codes."
+            }
+          ]
+        },
+        {
+          "concept_id": "age_at_menopause",
+          "label": "绝经年龄",
+          "domain": "life-course and reproductive history",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da028_2",
+              "label": "The Age Started Menopause",
+              "module": "health_status_and_functioning",
+              "unit": "years",
+              "value_labels": "",
+              "value_semantics": "Age in years only when the respondent used the age response component; the calendar-year response is a separate field.",
+              "mapping_status": "wave-specific life-course exposure candidate; official item and age component reviewed; analysis eligibility and cross-wave equivalence not approved",
+              "caveat": "Female-only and conditional on the menopause branch. DA028 is asked only after a yes response to DA027 and an eligible route; DA028_1 is a separate year component and is not converted to age. Follow-up skips for respondents already menopausal and transitions among returnees must remain distinct. Do not infer values from skips or treat this as available for all women; no cross-wave equivalence is established."
             }
           ]
         },
@@ -21682,9 +21722,9 @@
       ]
     },
     "2013": {
-      "exposure_count": 595,
+      "exposure_count": 597,
       "phenotype_count": 224,
-      "candidate_pair_count": 133272,
+      "candidate_pair_count": 133720,
       "exposures": [
         {
           "concept_id": "home_accessibility",
@@ -30613,6 +30653,26 @@
           ]
         },
         {
+          "concept_id": "age_at_menarche",
+          "label": "初潮年龄",
+          "domain": "life-course and reproductive history",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da026_2",
+              "label": "Age",
+              "module": "Health_Status_and_Functioning",
+              "unit": "years",
+              "value_labels": "",
+              "value_semantics": "Age in years only when the respondent used the age response component; the calendar-year response is a separate field.",
+              "mapping_status": "wave-specific life-course exposure candidate; official item and age component reviewed; analysis eligibility and cross-wave equivalence not approved",
+              "caveat": "Female-only. The questionnaire routes DA026–DA028 to new respondents; DA026_1 is the separate year component and is not converted to age. In 2018 the parent item also has a separate never-menstruated response; do not encode it as an age. Returning respondents are not generally re-asked this retrospective item. Preserve eligible denominator and recall limitations; no cross-wave equivalence is established."
+            }
+          ]
+        },
+        {
           "concept_id": "daytime_nap",
           "label": "午睡时长/午睡题",
           "domain": "睡眠",
@@ -36351,6 +36411,26 @@
               "value_semantics": "Continuous amount in Yuan; historical nominal amount, not inflation-adjusted.",
               "mapping_status": "wave-specific marital-history exposure candidate; item definition reviewed; analysis eligibility remains conditional",
               "caveat": "Asked on the single-marriage branch. The value represents parents' total cash and goods, including housing, given to both spouses at marriage; not a household wealth measure. For follow-up respondents, verify whether the branch denominator is controlled by lifetime BE003 or interval BE003_W2_1 before analysis. Do not combine waves before code-range, price-year, and denominator review. Numeric values are not cross-wave harmonization codes."
+            }
+          ]
+        },
+        {
+          "concept_id": "age_at_menopause",
+          "label": "绝经年龄",
+          "domain": "life-course and reproductive history",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da028_2",
+              "label": "Age",
+              "module": "Health_Status_and_Functioning",
+              "unit": "years",
+              "value_labels": "",
+              "value_semantics": "Age in years only when the respondent used the age response component; the calendar-year response is a separate field.",
+              "mapping_status": "wave-specific life-course exposure candidate; official item and age component reviewed; analysis eligibility and cross-wave equivalence not approved",
+              "caveat": "Female-only and conditional on the menopause branch. DA028 is asked only after a yes response to DA027 and an eligible route; DA028_1 is a separate year component and is not converted to age. Follow-up skips for respondents already menopausal and transitions among returnees must remain distinct. Do not infer values from skips or treat this as available for all women; no cross-wave equivalence is established."
             }
           ]
         },
@@ -44937,9 +45017,9 @@
       ]
     },
     "2015": {
-      "exposure_count": 563,
+      "exposure_count": 565,
       "phenotype_count": 237,
-      "candidate_pair_count": 133423,
+      "candidate_pair_count": 133897,
       "exposures": [
         {
           "concept_id": "pension_2015_urban_residents_personal_supplementary_repayment_amount",
@@ -55149,6 +55229,26 @@
           ]
         },
         {
+          "concept_id": "age_at_menarche",
+          "label": "初潮年龄",
+          "domain": "life-course and reproductive history",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da026_2",
+              "label": "Age",
+              "module": "Health_Status_and_Functioning",
+              "unit": "years",
+              "value_labels": "",
+              "value_semantics": "Age in years only when the respondent used the age response component; the calendar-year response is a separate field.",
+              "mapping_status": "wave-specific life-course exposure candidate; official item and age component reviewed; analysis eligibility and cross-wave equivalence not approved",
+              "caveat": "Female-only. The questionnaire routes DA026–DA028 to new respondents; DA026_1 is the separate year component and is not converted to age. In 2018 the parent item also has a separate never-menstruated response; do not encode it as an age. Returning respondents are not generally re-asked this retrospective item. Preserve eligible denominator and recall limitations; no cross-wave equivalence is established."
+            }
+          ]
+        },
+        {
           "concept_id": "daytime_nap",
           "label": "午睡时长/午睡题",
           "domain": "睡眠",
@@ -60406,6 +60506,26 @@
               "value_semantics": "coarse geographic scope of social pension participation",
               "mapping_status": "2015 Wave 3 questionnaire and Codebook exact item/route reviewed; candidate only",
               "caveat": "Urban residents' pension plan; preserve plan context. Preserve structural skips; do not infer No or zero. Codebook frequencies are not analysis sample sizes."
+            }
+          ]
+        },
+        {
+          "concept_id": "age_at_menopause",
+          "label": "绝经年龄",
+          "domain": "life-course and reproductive history",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da028_2",
+              "label": "Age",
+              "module": "Health_Status_and_Functioning",
+              "unit": "years",
+              "value_labels": "",
+              "value_semantics": "Age in years only when the respondent used the age response component; the calendar-year response is a separate field.",
+              "mapping_status": "wave-specific life-course exposure candidate; official item and age component reviewed; analysis eligibility and cross-wave equivalence not approved",
+              "caveat": "Female-only and conditional on the menopause branch. DA028 is asked only after a yes response to DA027 and an eligible route; DA028_1 is a separate year component and is not converted to age. Follow-up skips for respondents already menopausal and transitions among returnees must remain distinct. Do not infer values from skips or treat this as available for all women; no cross-wave equivalence is established."
             }
           ]
         },
@@ -69252,9 +69372,9 @@
       ]
     },
     "2018": {
-      "exposure_count": 494,
+      "exposure_count": 496,
       "phenotype_count": 211,
-      "candidate_pair_count": 104227,
+      "candidate_pair_count": 104649,
       "exposures": [
         {
           "concept_id": "pension_expected_receipt_age_2018_plan_loop",
@@ -77579,6 +77699,26 @@
               "value_semantics": "coarse location category for receipt of named pension benefit",
               "mapping_status": "2018 Wave 4 questionnaire and Codebook item, unit/categories, and route reviewed; candidate only",
               "caveat": "Other-pension route; preserve route and do not expose linked location text. Codebook frequencies are not analysis sample sizes; structural skips are not No or zero."
+            }
+          ]
+        },
+        {
+          "concept_id": "age_at_menarche",
+          "label": "初潮年龄",
+          "domain": "life-course and reproductive history",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da026_2",
+              "label": "Age",
+              "module": "Health_Status_and_Functioning",
+              "unit": "years",
+              "value_labels": "",
+              "value_semantics": "Age in years only when the respondent used the age response component; the calendar-year response is a separate field.",
+              "mapping_status": "wave-specific life-course exposure candidate; official item and age component reviewed; analysis eligibility and cross-wave equivalence not approved",
+              "caveat": "Female-only. The questionnaire routes DA026–DA028 to new respondents; DA026_1 is the separate year component and is not converted to age. In 2018 the parent item also has a separate never-menstruated response; do not encode it as an age. Returning respondents are not generally re-asked this retrospective item. Preserve eligible denominator and recall limitations; no cross-wave equivalence is established."
             }
           ]
         },
@@ -86710,6 +86850,26 @@
               "value_semantics": "returned to the city after the educated-youth movement",
               "mapping_status": "official questionnaire and codebook field reviewed; candidate mapping, preserve wave-specific routing",
               "caveat": "Conditional follow-up among respondents who reported the educated-youth experience. Retain the selected denominator; an unasked response is not No."
+            }
+          ]
+        },
+        {
+          "concept_id": "age_at_menopause",
+          "label": "绝经年龄",
+          "domain": "life-course and reproductive history",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "da028_2",
+              "label": "Age",
+              "module": "Health_Status_and_Functioning",
+              "unit": "years",
+              "value_labels": "",
+              "value_semantics": "Age in years only when the respondent used the age response component; the calendar-year response is a separate field.",
+              "mapping_status": "wave-specific life-course exposure candidate; official item and age component reviewed; analysis eligibility and cross-wave equivalence not approved",
+              "caveat": "Female-only and conditional on the menopause branch. DA028 is asked only after a yes response to DA027 and an eligible route; DA028_1 is a separate year component and is not converted to age. Follow-up skips for respondents already menopausal and transitions among returnees must remain distinct. Do not infer values from skips or treat this as available for all women; no cross-wave equivalence is established."
             }
           ]
         },

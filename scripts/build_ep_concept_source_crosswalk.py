@@ -118,6 +118,11 @@ map_direct("subjective_life_expectancy_2011_2018_crosswalk_v1.csv", "p",
            statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
            modules=("module",), caveats=("caveat",), value_labels=("value_labels",),
            documents=("value_label_source",), archives=("source_archive",))
+map_direct("reproductive_history_exposure_crosswalk_v1.csv", "e",
+           statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
+           modules=("module",), caveats=("caveat",), semantics=("value_semantics",),
+           value_labels=("value_labels",), units=("unit",), archives=("source_archive",),
+           documents=("questionnaire_source", "value_label_source"))
 map_direct("biomarker_measurement_gate_crosswalk_v1.csv", "c",
            statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
            modules=("module",), caveats=("caveat",), semantics=("value_semantics",),

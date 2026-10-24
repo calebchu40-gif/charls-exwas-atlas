@@ -1,5 +1,5 @@
 ﻿epcf,category,subcategory,source_field_wave_rows,distinct_source_codes,wave_count
-c,automated covariate search hit,keyword discovery only; not a reviewed covariate or adjustment recommendation,412,261,5
+c,automated covariate search hit,keyword discovery only; not a reviewed covariate or adjustment recommendation,404,259,5
 c,covariate candidate,birth-date source and age derivation metadata,5,5,2
 c,measurement metadata,2011 proxy interview and Section E assistance context,3,3,1
 c,measurement metadata,2018 employer pension contribution amount/share unit selector,1,1,1
@@ -95,6 +95,7 @@ e,family and intergenerational context,sibling record context,6,3,1
 e,food and household environment,"diet, food security, housing and utilities",161,58,5
 e,housing and built environment,dwelling conditions and household property,477,440,4
 e,housing and built environment,residential setting,3,3,2
+e,life-course and reproductive history,reproductive timing,8,2,4
 e,social determinants,adult education and lifelong learning,13,12,3
 e,social determinants,annual wage/salary amount reported for household-member roster slots,22,12,2
 e,social determinants,early-life family socioeconomic context,4,2,2

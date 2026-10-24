@@ -2,9 +2,9 @@
 
 更新：2026-10-24。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
-- 最终E/P目录行：6,866；不同波次—字段码：6,591。一个字段可对应多个候选类别/角色。
+- 最终E/P目录行：6,874；不同波次—字段码：6,599。一个字段可对应多个候选类别/角色。
 - 有非空标签文本的E/P目录行：3,428；不同波次—字段码：3,351。连续测量、计数值及测量流程字段可已审但不需要离散标签。
-- 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：105。具体来源审查状态不等同于通用待审。
+- 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：97。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
 
@@ -22,6 +22,7 @@
 |e|healthcare access|109|109|51|1|
 |e|housing and built environment|480|480|40|2|
 |e|internal biomarker|49|49|0|1|
+|e|life-course and reproductive history|8|8|0|1|
 |e|social determinants|2,132|2,132|1,007|20|
 |e|social protection|1,331|1,331|426|30|
 |p|anthropometric|24|15|0|1|
@@ -102,6 +103,7 @@
 |连续计数；条件提问；极值待核|8|
 |连续计数（夜数）；条件提问；极值待核|8|
 |official 2011 questionnaire/Codebook threshold categories transcribed; no response frequencies shown|8|
+|Official questionnaire and Codebook identify the age-response component and unit; no response frequencies copied|8|
 |continuous count measure; Codebook identifies 15-second animal-fluency intervals; summary statistics are not valid-range evidence|8|
 |official 2018 questionnaire and Codebook identify total property value; continuous amount in 10,000 Yuan; no discrete labels|7|
 |official 2018 questionnaire/Codebook categories reviewed for the slot-specific house-for-rent item|7|
