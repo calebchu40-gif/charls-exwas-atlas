@@ -206,6 +206,17 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertFalse(fields["2011"]["value_labels"].startswith("0="))
         self.assertTrue(all("address text and frequencies omitted" in field["value_label_status"] for field in fields.values()))
 
+    def test_last_job_location_keeps_questionnaire_codebook_conflicts_visible(self):
+        concept = next(row for row in self.work if row.get("concept_id") == "last_job_workplace_location_2011_2018")
+        fields = {field["wave"]: field for field in concept["source_fields"]}
+        self.assertEqual(set(fields), {"2011", "2013", "2015", "2018"})
+        self.assertTrue(fields["2011"]["mapping_status"].startswith("DO NOT ANALYZE"))
+        self.assertIn("4=Abroad", fields["2013"]["value_labels"])
+        self.assertIn("omits option 4", fields["2013"]["value_label_status"])
+        self.assertIn("4=Abroad", fields["2015"]["value_labels"])
+        self.assertIn("menus agree", fields["2015"]["value_label_status"])
+        self.assertIn("omits option 4", fields["2018"]["value_label_status"])
+
     def test_work_capi_formulas_and_source_conflicts_reach_main_catalog(self):
         examples = {
             ("2020", "xworking"): (
