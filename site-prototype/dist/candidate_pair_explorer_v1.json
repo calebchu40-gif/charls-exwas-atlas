@@ -16752,9 +16752,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-Q-field identity and release eligibility remain unverified",
+              "caveat": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2011 instrument records this test under LI* item identifiers while release Codebook fields use QD/QE/QF*; exact one-to-one release-field identity remains unverified."
             },
             {
               "code": "qe003",
@@ -16762,9 +16762,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-Q-field identity and release eligibility remain unverified",
+              "caveat": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2011 instrument records this test under LI* item identifiers while release Codebook fields use QD/QE/QF*; exact one-to-one release-field identity remains unverified."
             },
             {
               "code": "qe004",
@@ -16772,9 +16772,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-Q-field identity and release eligibility remain unverified",
+              "caveat": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2011 instrument records this test under LI* item identifiers while release Codebook fields use QD/QE/QF*; exact one-to-one release-field identity remains unverified."
             }
           ]
         },
@@ -17272,9 +17272,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-Q-field identity and release eligibility remain unverified",
+              "caveat": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2011 instrument records this test under LI* item identifiers while release Codebook fields use QD/QE/QF*; exact one-to-one release-field identity remains unverified."
             },
             {
               "code": "qd003",
@@ -17282,9 +17282,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-Q-field identity and release eligibility remain unverified",
+              "caveat": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2011 instrument records this test under LI* item identifiers while release Codebook fields use QD/QE/QF*; exact one-to-one release-field identity remains unverified."
             },
             {
               "code": "qd004",
@@ -17292,9 +17292,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-Q-field identity and release eligibility remain unverified",
+              "caveat": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2011 instrument records this test under LI* item identifiers while release Codebook fields use QD/QE/QF*; exact one-to-one release-field identity remains unverified."
             }
           ]
         },
@@ -17452,9 +17452,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-Q-field identity and release eligibility remain unverified",
+              "caveat": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2011 instrument records this test under LI* item identifiers while release Codebook fields use QD/QE/QF*; exact one-to-one release-field identity remains unverified."
             },
             {
               "code": "qf003",
@@ -17462,9 +17462,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-Q-field identity and release eligibility remain unverified",
+              "caveat": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2011 instrument records this test under LI* item identifiers while release Codebook fields use QD/QE/QF*; exact one-to-one release-field identity remains unverified."
             },
             {
               "code": "qf004",
@@ -17472,9 +17472,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-Q-field identity and release eligibility remain unverified",
+              "caveat": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2011 instrument records this test under LI* item identifiers while release Codebook fields use QD/QE/QF*; exact one-to-one release-field identity remains unverified."
             }
           ]
         },
@@ -38916,9 +38916,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2013 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             },
             {
               "code": "qe003",
@@ -38926,9 +38926,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2013 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             },
             {
               "code": "qe004",
@@ -38936,9 +38936,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2013 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             }
           ]
         },
@@ -39886,9 +39886,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2013 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             },
             {
               "code": "qd003",
@@ -39896,9 +39896,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2013 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             },
             {
               "code": "qd004",
@@ -39906,9 +39906,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2013 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             }
           ]
         },
@@ -40006,9 +40006,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2013 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             },
             {
               "code": "qf003",
@@ -40016,9 +40016,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2013 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             },
             {
               "code": "qf004",
@@ -40026,9 +40026,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2013 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             }
           ]
         },
@@ -62972,9 +62972,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2015 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             },
             {
               "code": "qe003",
@@ -62982,9 +62982,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2015 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             },
             {
               "code": "qe004",
@@ -62992,9 +62992,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "The target duration is 30 seconds for age 70 or older and 60 seconds for younger participants. Preserve target duration, full-duration completion, elapsed time, and compensatory movement separately; these are not interchangeable outcomes. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2015 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             }
           ]
         },
@@ -63942,9 +63942,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2015 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             },
             {
               "code": "qd003",
@@ -63952,9 +63952,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2015 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             },
             {
               "code": "qd004",
@@ -63962,9 +63962,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Hold the semi-tandem position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2015 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             }
           ]
         },
@@ -64202,9 +64202,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2015 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             },
             {
               "code": "qf003",
@@ -64212,9 +64212,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2015 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             },
             {
               "code": "qf004",
@@ -64222,9 +64222,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Preserve 993 (tried but unable) and 999 (chose not) as test-status codes, not durations. A routed-out or unasked measurement is not zero seconds.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Hold the side-by-side position up to 10 seconds. Preserve full-duration completion, elapsed time when the full 10 seconds is not achieved, and compensatory-movement response as separate fields. Retain safety/consent and preceding-test routes; do not assign zero to unasked duration or movement fields. Cross-wave comparability and release-specific valid/missing codes remain unapproved. The 2015 questionnaire and wave Codebook use these exact QD/QE/QF* fields; this confirms instrument metadata, not participant-level release availability or analysis eligibility."
             }
           ]
         },
