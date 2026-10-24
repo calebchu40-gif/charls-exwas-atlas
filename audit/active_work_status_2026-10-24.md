@@ -12,6 +12,8 @@ The C-catalogue display now translates all 83 unique metadata subcategories into
 
 Survey-engine selection remains preliminary. A synthetic-only comparison using isolated local `svy` 0.35.0 showed that the same point estimate can have materially different SEs and degrees of freedom when the actual stratum field is omitted; see [`survey_engine_synthetic_trial_2026-10-24.md`](survey_engine_synthetic_trial_2026-10-24.md) and its synthetic code. The trial uses no CHARLS records and does not authorize fitting real models. The machine has no R installation, so the package's publisher-reported comparison against R's `survey` has not been independently reproduced here.
 
+To close the remaining official-design questions without inferring unreleased fields, a bilingual inquiry draft is prepared at [`charls_survey_design_support_inquiry_draft_2026-10-24.md`](charls_survey_design_support_inquiry_draft_2026-10-24.md). It asks about wave-specific variance strata/replicate weights, Wave 2 `Weights.dta` identity and join key, and measurement-specific biomarker eligibility/weights. It is a draft only and has not been sent; no official account was accessed.
+
 ## Current deliverable
 
 The public site is a metadata catalogue and candidate-pair browser. It is not yet a results atlas: formal association models and pairwise complete sample-size calculations are both 0. Pair counts describe only source metadata available in the same wave. No CHARLS respondent-level data or descriptive frequencies are stored in the public repository/site.
