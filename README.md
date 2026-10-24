@@ -5,7 +5,7 @@
 
 本地最新目录重建（2026-10-24）含 E=4,752、P=2,127、C=980 条字段—波次记录；E/P 来源交叉表覆盖 1,449 个候选概念（E=1,157、P=301，含 9 个双角色概念）及 6,679 条概念—来源映射。2011、2013、2015、2018、2020 各波次分别有 123,320、134,392、133,897、104,649、13,906 个同波字段元数据可共同出现的非自配 E/P 概念组合；这些不是人数、有效样本量、已运行检验或关联结果。2013 年 WB05–WB15 为 11 项独立表型候选；2013/2015 `da051_random` 仅作为 C 类设计元数据展示，代码含义未核实，不用于界定活动模块资格。C 类通用待审字段为 1 条。正式关联模型和逐对完整样本量目前均为 0；2013 官方 `crosssection`/`longitudinal` 标记仍待从官方 Weights 文件恢复，方差设计适用字段也须逐波确认。完整项目快照、限制和后续工作见 [`audit/active_work_status_2026-10-24.md`](audit/active_work_status_2026-10-24.md)。
 
-**公开查询站点：**[CHARLS ExWAS Atlas](https://calebchu40-gif.github.io/charls-exwas-atlas/)。Pages 当前资源版本为 `v81`；许可说明已上线，`1e687c5` 最新验证工作流成功。户口、婚姻史、Wave 4 成人教育年限路由、疾病/事件年龄、居住地/迁居和护理工资来源审核均已记录。详情见 [`audit/active_work_status_2026-10-24.md`](audit/active_work_status_2026-10-24.md)、[`audit/charls_data_access_license_review_2026-10-24.md`](audit/charls_data_access_license_review_2026-10-24.md) 和相关专项审计。C 类剩余通用待核为2011 `FLDA081_1`，与 `DA081` 的关系尚无官方精确映射证据。
+**公开查询站点：**[CHARLS ExWAS Atlas](https://calebchu40-gif.github.io/charls-exwas-atlas/)。Pages 当前资源版本为 `v81`；许可说明已上线，`main` 最新提交的 GitHub Validate 工作流已成功。户口、婚姻史、Wave 4 成人教育年限路由、疾病/事件年龄、居住地/迁居和护理工资来源审核均已记录。详情见 [`audit/active_work_status_2026-10-24.md`](audit/active_work_status_2026-10-24.md)、[`audit/charls_data_access_license_review_2026-10-24.md`](audit/charls_data_access_license_review_2026-10-24.md) 和相关专项审计。C 类剩余通用待核为2011 `FLDA081_1`，与 `DA081` 的关系尚无官方精确映射证据。
 
 尚未解决的 2011 `FLDA081_1` 来源身份见[`audit/pending_c_field_identity_review_2026-10-24.md`](audit/pending_c_field_identity_review_2026-10-24.md)。
 
