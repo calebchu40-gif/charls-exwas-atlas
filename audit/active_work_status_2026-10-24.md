@@ -2,6 +2,8 @@
 
 Updated 2026-10-24. Project repository: <https://github.com/calebchu40-gif/charls-exwas-atlas>. Public metadata prototype: <https://calebchu40-gif.github.io/charls-exwas-atlas/>.
 
+The 2026-10-24 private core-coverage refresh is recorded in [`prepared_core_coverage_refresh_2026-10-24.md`](prepared_core_coverage_refresh_2026-10-24.md). Its pair-level availability outputs remain under the local protected QA root. The missing 2013 official sample flags continue to gate that wave; no refreshed private counts are included here.
+
 ## Current deliverable
 
 The public site is a metadata catalogue and candidate-pair browser. It is not yet a results atlas: formal association models and pairwise complete sample-size calculations are both 0. Pair counts describe only source metadata available in the same wave. No CHARLS respondent-level data or descriptive frequencies are stored in the public repository/site.
