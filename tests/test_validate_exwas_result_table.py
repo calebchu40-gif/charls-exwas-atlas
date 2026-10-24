@@ -49,6 +49,8 @@ class ResultTableValidationTests(unittest.TestCase):
         row = self.base_row()
         row.update(
             fit_status="success",
+            data_release="CHARLS synthetic release; sha256=" + "a" * 64,
+            software_versions="python=synthetic; commit=" + "b" * 40,
             weight_status="verified_used",
             weight_id="synthetic_weight",
             psu_status="verified_used",
@@ -69,6 +71,27 @@ class ResultTableValidationTests(unittest.TestCase):
             n_model="70",
         )
         self.assertEqual(validate_rows([row], self.fields, self.required), [])
+
+    def test_success_requires_source_checksum_and_code_commit(self):
+        row = self.base_row()
+        row.update(
+            fit_status="success",
+            data_release="CHARLS synthetic release; checksum unavailable",
+            software_versions="python=synthetic",
+            weight_status="verified_unweighted",
+            psu_status="not_released",
+            stratum_status="not_released",
+            variance_design="synthetic explicitly limited variance fixture",
+            estimate="0.1",
+            standard_error="0.05",
+            ci_lower="0.002",
+            ci_upper="0.198",
+            p_value="0.04",
+            n_model="70",
+        )
+        errors = validate_rows([row], self.fields, self.required)
+        self.assertTrue(any("requires an official release SHA256" in e for e in errors))
+        self.assertTrue(any("requires a code commit" in e for e in errors))
 
 
 if __name__ == "__main__":

@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import csv
 import math
+import re
 from pathlib import Path
 from typing import Any
 
@@ -81,6 +82,14 @@ def _number(value: str, field: str, errors: list[str], row_no: int) -> float | N
         errors.append(f"row {row_no}: {field} must be finite")
         return None
     return parsed
+
+
+def _has_sha256(value: str) -> bool:
+    return re.search(r"(?i)\bsha256\s*[:=]\s*[0-9a-f]{64}\b", value) is not None
+
+
+def _has_git_commit(value: str) -> bool:
+    return re.search(r"(?i)\bcommit\s*[:=]\s*[0-9a-f]{7,40}\b", value) is not None
 
 
 def validate_rows(rows: list[dict[str, str]], schema_fields: list[str], required: dict[str, str]) -> list[str]:
@@ -171,6 +180,10 @@ def validate_rows(rows: list[dict[str, str]], schema_fields: list[str], required
                 errors.append(f"row {row_no}: successful fit has unresolved/unavailable PSU status")
             if row.get("stratum_status", "").strip() in {"unresolved", "unavailable_pending_authorized_file"}:
                 errors.append(f"row {row_no}: successful fit has unresolved/unavailable stratum status")
+            if not _has_sha256(row.get("data_release", "")):
+                errors.append(f"row {row_no}: successful fit requires an official release SHA256 in data_release")
+            if not _has_git_commit(row.get("software_versions", "")):
+                errors.append(f"row {row_no}: successful fit requires a code commit in software_versions")
             variance = row.get("variance_design", "").strip().lower()
             if "not fit-ready" in variance or "unresolved" in variance or "not verified" in variance:
                 errors.append(f"row {row_no}: successful fit cannot claim an unverified variance design")

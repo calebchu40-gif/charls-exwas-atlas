@@ -1,6 +1,6 @@
 ﻿field,required,type,definition,release_rule
 analysis_id,yes,string,"Stable result ID tied to release, code commit, wave, and model specification.",Public metadata after review
-data_release,yes,string,Official CHARLS release name/version and source-file checksums.,Public metadata only
+data_release,yes,string,"Official CHARLS release name/version and source-file checksums; successful rows require at least one SHA256:<64-hex> token.",Public metadata only
 wave,yes,category,One CHARLS wave; stacked waves must retain wave-specific design and harmonization status.,Public
 target_population,yes,string,"Explicit population/domain, age range, respondent type, and cross-sectional or panel estimand.",Public
 exposure_concept_id,yes,string,Harmonized exposure concept identifier.,Public metadata
@@ -38,4 +38,4 @@ missingness_rule,yes,string,"Treatment of structural skips, ineligible modules, 
 comparability_grade,yes,category,Wave-specific comparability status and rationale.,Public metadata
 fit_status,yes,category,"planned, blocked_design_verification, blocked_data_access, success, nonconvergence, inestimable, or code_error.",Public
 fit_message,conditional,string,Sanitized diagnostic without row-level or sensitive details.,Disclosure review
-software_versions,yes,string,"Runtime, package versions, and code commit.",Public
+software_versions,yes,string,"Runtime, package versions, and code commit; successful rows require commit:<7-40 hex>.",Public
