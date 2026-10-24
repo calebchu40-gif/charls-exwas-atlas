@@ -53,7 +53,10 @@ class RelationshipSatisfactionCrosswalkTests(unittest.TestCase):
         index = (ROOT / "site-prototype" / "dist" / "index.html").read_text(encoding="utf-8")
         self.assertIn("'social wellbeing':'社会关系与主观幸福感'", app)
         self.assertIn("'marital relationship satisfaction':'婚姻关系满意度'", app)
-        self.assertIn("app.js?v=66", index)
+        self.assertIn("'life satisfaction':'总体生活满意度'", app)
+        self.assertIn("'health satisfaction':'健康满意度'", app)
+        self.assertIn("'relationship with children satisfaction':'与子女关系满意度'", app)
+        self.assertIn("app.js?v=67", index)
 
 
 if __name__ == "__main__":

@@ -236,4 +236,7 @@ p,physical function,reported disability history / physical,2,1,2
 p,physical function,reported disability history / speech,10,4,4
 p,physical function,reported disability history / vision,10,4,4
 p,physical function,"strength, mobility, lung function, and performance",198,66,5
+p,social wellbeing,health satisfaction,2,1,2
+p,social wellbeing,life satisfaction,4,1,4
 p,social wellbeing,marital relationship satisfaction,2,1,2
+p,social wellbeing,relationship with children satisfaction,2,1,2

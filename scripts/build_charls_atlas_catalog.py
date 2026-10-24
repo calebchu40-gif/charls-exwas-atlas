@@ -562,6 +562,14 @@ def main() -> None:
                              "healthcare access", "insurance, outpatient and inpatient utilization", "caveat", "e,p", "catalog_role")
     append_audited_crosswalk("relationship_satisfaction_crosswalk_v1.csv", "wave", "code", "module", "source_label",
                              "social wellbeing", "marital relationship satisfaction", "caveat", "p")
+    append_audited_crosswalk("other_satisfaction_phenotypes_crosswalk_v1.csv", "wave", "code", "module", "source_label",
+                             "social wellbeing",
+                             lambda item: {
+                                 "life_satisfaction": "life satisfaction",
+                                 "health_satisfaction": "health satisfaction",
+                                 "children_relationship_satisfaction": "relationship with children satisfaction",
+                             }.get(str(item.get("concept_id", "")), "subjective wellbeing satisfaction"),
+                             "caveat", "p")
     append_audited_crosswalk("food_environment_crosswalk_v1.csv", "wave", "code", "module", "source_label",
                              "food and household environment", "diet, food security, housing and utilities", "caveat")
 

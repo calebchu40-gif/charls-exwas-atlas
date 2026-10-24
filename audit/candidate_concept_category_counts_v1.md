@@ -26,7 +26,7 @@
 |p|internal biomarker|15|19|19|
 |p|mental health|10|50|50|
 |p|anthropometric|5|24|15|
+|p|social wellbeing|4|10|10|
 |p|blood pressure|3|54|27|
-|p|social wellbeing|1|2|2|
 
-总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1439个（E=1150、P=298，9个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。
+总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1442个（E=1150、P=301，9个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。

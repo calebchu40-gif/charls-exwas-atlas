@@ -10,8 +10,8 @@
   "waves": {
     "2011": {
       "exposure_count": 575,
-      "phenotype_count": 211,
-      "candidate_pair_count": 121318,
+      "phenotype_count": 212,
+      "candidate_pair_count": 121893,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -17499,6 +17499,26 @@
           ]
         },
         {
+          "concept_id": "life_satisfaction",
+          "label": "总体生活满意度",
+          "domain": "社会关系与主观幸福感",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "dc028",
+              "label": "Self Comment of Your Life",
+              "module": "health_status_and_functioning",
+              "unit": "",
+              "value_labels": "1=Completely satisfied; 2=Very satisfied; 3=Somewhat satisfied; 4=Not very satisfied; 5=Not at all satisfied",
+              "value_semantics": "",
+              "mapping_status": "Official questionnaire and Codebook categories reviewed; candidate phenotype only; do not assume psychometric scale properties or cross-wave measurement invariance",
+              "caveat": "问卷将其作为单题总体生活满意度；保留该波源标签和模块。正式分析前核实授权发行版缺失码及样本/模块资格。"
+            }
+          ]
+        },
+        {
           "concept_id": "blood_total_cholesterol",
           "label": "总胆固醇",
           "domain": "血脂",
@@ -21643,8 +21663,8 @@
     },
     "2013": {
       "exposure_count": 595,
-      "phenotype_count": 222,
-      "candidate_pair_count": 132082,
+      "phenotype_count": 223,
+      "candidate_pair_count": 132677,
       "exposures": [
         {
           "concept_id": "home_accessibility",
@@ -40053,6 +40073,26 @@
           ]
         },
         {
+          "concept_id": "life_satisfaction",
+          "label": "总体生活满意度",
+          "domain": "社会关系与主观幸福感",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "dc028",
+              "label": "Life Satisfaction",
+              "module": "health_status_and_functioning",
+              "unit": "",
+              "value_labels": "1=Completely satisfied; 2=Very satisfied; 3=Somewhat satisfied; 4=Not very satisfied; 5=Not at all satisfied",
+              "value_semantics": "",
+              "mapping_status": "Official questionnaire and Codebook categories reviewed; candidate phenotype only; do not assume psychometric scale properties or cross-wave measurement invariance",
+              "caveat": "问卷将其作为单题总体生活满意度。正式分析前核实授权发行版缺失码及样本/模块资格。"
+            }
+          ]
+        },
+        {
           "concept_id": "mood_depressed",
           "label": "情绪低落",
           "domain": "",
@@ -44858,8 +44898,8 @@
     },
     "2015": {
       "exposure_count": 563,
-      "phenotype_count": 233,
-      "candidate_pair_count": 131171,
+      "phenotype_count": 236,
+      "candidate_pair_count": 132860,
       "exposures": [
         {
           "concept_id": "pension_2015_urban_residents_personal_supplementary_repayment_amount",
@@ -63019,6 +63059,26 @@
           ]
         },
         {
+          "concept_id": "children_relationship_satisfaction",
+          "label": "与子女关系满意度",
+          "domain": "社会关系与主观幸福感",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "dc044_w3",
+              "label": "How Satisfied Are You with Your Relationship with Children?",
+              "module": "health_status_and_functioning",
+              "unit": "",
+              "value_labels": "1=Completely satisfied; 2=Very satisfied; 3=Somewhat satisfied; 4=Not very satisfied; 5=Not at all satisfied; 6=No child now (separate non-ordinal status)",
+              "value_semantics": "",
+              "mapping_status": "Official questionnaire and Codebook reviewed; route-conditional single-item phenotype candidate; missingness and release coding not validated",
+              "caveat": "问卷限定对有在世子女的受访者提问；第 6 类“目前没有子女”是独立状态类别，不属于 1–5 有序满意度。保留条件分母，不将未路由或空白解释为不满意。"
+            }
+          ]
+        },
+        {
           "concept_id": "health_change",
           "label": "与既往访谈相比的健康变化",
           "domain": "自评健康",
@@ -63135,6 +63195,26 @@
               "value_semantics": "",
               "mapping_status": "按CHARLS原字段标签匹配；量表计分未定义",
               "caveat": "条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。"
+            }
+          ]
+        },
+        {
+          "concept_id": "health_satisfaction",
+          "label": "健康满意度",
+          "domain": "社会关系与主观幸福感",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "dc042_w3",
+              "label": "How Satisfied Are You with Your Health?",
+              "module": "health_status_and_functioning",
+              "unit": "",
+              "value_labels": "1=Completely satisfied; 2=Very satisfied; 3=Somewhat satisfied; 4=Not very satisfied; 5=Not at all satisfied",
+              "value_semantics": "",
+              "mapping_status": "Official questionnaire and Codebook categories reviewed; single-item subjective health-satisfaction candidate; related to but not interchangeable with self-rated health",
+              "caveat": "题目测量对自身健康的满意程度，概念上不等同于自评总体健康；建立独立候选概念并标记构念重叠。正式分析前核实发行版缺失码与模块资格。"
             }
           ]
         },
@@ -64445,6 +64525,26 @@
               "value_semantics": "",
               "mapping_status": "字段标签候选映射；已抽查逐波官方问卷措辞",
               "caveat": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。 不据此生成ADL/IADL总分；2020题号重排，需按题意对照。"
+            }
+          ]
+        },
+        {
+          "concept_id": "life_satisfaction",
+          "label": "总体生活满意度",
+          "domain": "社会关系与主观幸福感",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "dc028",
+              "label": "Life Satisfaction",
+              "module": "health_status_and_functioning",
+              "unit": "",
+              "value_labels": "1=Completely satisfied; 2=Very satisfied; 3=Somewhat satisfied; 4=Not very satisfied; 5=Not at all satisfied",
+              "value_semantics": "",
+              "mapping_status": "Official questionnaire and Codebook categories reviewed; candidate phenotype only; do not assume psychometric scale properties or cross-wave measurement invariance",
+              "caveat": "问卷将其作为单题总体生活满意度。正式分析前核实授权发行版缺失码及样本/模块资格。"
             }
           ]
         },
@@ -69093,8 +69193,8 @@
     },
     "2018": {
       "exposure_count": 494,
-      "phenotype_count": 207,
-      "candidate_pair_count": 102251,
+      "phenotype_count": 210,
+      "candidate_pair_count": 103733,
       "exposures": [
         {
           "concept_id": "pension_expected_receipt_age_2018_plan_loop",
@@ -88692,6 +88792,26 @@
           ]
         },
         {
+          "concept_id": "children_relationship_satisfaction",
+          "label": "与子女关系满意度",
+          "domain": "社会关系与主观幸福感",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "dc044_w3",
+              "label": "Chidren Satisfication",
+              "module": "cognition",
+              "unit": "",
+              "value_labels": "1=Completely satisfied; 2=Very satisfied; 3=Somewhat satisfied; 4=Not very satisfied; 5=Not at all satisfied; 6=No child now (separate non-ordinal status)",
+              "value_semantics": "",
+              "mapping_status": "Official questionnaire and Codebook reviewed; route-conditional single-item phenotype candidate; missingness and release coding not validated",
+              "caveat": "问卷限定对有在世子女的受访者提问；第 6 类“目前没有子女”是独立状态类别，不属于 1–5 有序满意度。保留条件分母，不将未路由或空白解释为不满意。2018 发布目录将字段放在 Cognition 文件，保留归档位置。"
+            }
+          ]
+        },
+        {
           "concept_id": "health_change",
           "label": "与既往访谈相比的健康变化",
           "domain": "自评健康",
@@ -88808,6 +88928,26 @@
               "value_semantics": "Number of days the respondent could not perform household agricultural work in the past year because of health problems; questionnaire explicitly codes 0 when no work days were missed.",
               "mapping_status": "2018 single-wave outcome candidate; questionnaire/codebook field identity and response meaning reviewed; observed maximum differs from questionnaire permitted maximum",
               "caveat": "Located in the Self-Employed Agricultural Work module; retain its eligible work universe. Explicit 0 means no missed household agricultural work days, not absence of health problems. Structural missingness must not be recoded as zero. This is not a diagnosis or general disability score and is kept separate from 2013 FC013 because wording and module scope differ. Check values and routing against the approved release data dictionary."
+            }
+          ]
+        },
+        {
+          "concept_id": "health_satisfaction",
+          "label": "健康满意度",
+          "domain": "社会关系与主观幸福感",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "dc042_w3",
+              "label": "Health Satisfication",
+              "module": "cognition",
+              "unit": "",
+              "value_labels": "1=Completely satisfied; 2=Very satisfied; 3=Somewhat satisfied; 4=Not very satisfied; 5=Not at all satisfied",
+              "value_semantics": "",
+              "mapping_status": "Official questionnaire and Codebook categories reviewed; single-item subjective health-satisfaction candidate; related to but not interchangeable with self-rated health",
+              "caveat": "题目测量对自身健康的满意程度，概念上不等同于自评总体健康；建立独立候选概念并标记构念重叠。2018 发布目录将字段放在 Cognition 文件，保留归档位置。正式分析前核实发行版缺失码与模块资格。"
             }
           ]
         },
@@ -89638,6 +89778,26 @@
               "value_semantics": "",
               "mapping_status": "字段标签候选映射；已抽查逐波官方问卷措辞",
               "caveat": "候选映射；题目响应尺度、跳转和缺失规则仍需逐波核验。 不据此生成ADL/IADL总分；2020题号重排，需按题意对照。"
+            }
+          ]
+        },
+        {
+          "concept_id": "life_satisfaction",
+          "label": "总体生活满意度",
+          "domain": "社会关系与主观幸福感",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "dc028",
+              "label": "Life Satisfication",
+              "module": "cognition",
+              "unit": "",
+              "value_labels": "1=Completely satisfied; 2=Very satisfied; 3=Somewhat satisfied; 4=Not very satisfied; 5=Not at all satisfied",
+              "value_semantics": "",
+              "mapping_status": "Official questionnaire and Codebook categories reviewed; candidate phenotype only; do not assume psychometric scale properties or cross-wave measurement invariance",
+              "caveat": "问卷将其作为单题总体生活满意度。2018 发布目录将字段放在 Cognition 文件，保留归档位置，不据此改变题目含义；正式分析前核实发行版缺失码及模块资格。"
             }
           ]
         },
