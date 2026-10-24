@@ -37,3 +37,7 @@ Direct public requests confirmed HTTP 200 for the homepage, `app.js?v=63`, and `
 ## Follow-up validation — pandas compatibility (2026-10-24)
 
 Commit `1339afd` removes deprecated in-place `DataFrame.drop` calls from the guarded Wave 2 official-weight merge. The merge's ID matching, overlap-conflict checks, output ordering and no-overwrite behavior are unchanged. All 263 local tests pass using both pytest and the exact `unittest discover` command used in CI; the pandas 3.1 deprecation warnings are gone. GitHub Validate run [#236 / `40056492623`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40056492623) succeeded. This was a pipeline/documentation change and did not alter public site assets, so it did not require a Pages deployment.
+
+## Follow-up deployment — age-domain disclosure (2026-10-24)
+
+Commit `c274aaf` clarifies that CHARLS interviews an age-eligible main respondent and spouse, and the Wave 4 individual cross-sectional weights apply to both. The methods panel now warns that `crosssection` alone does not mean every record is age 45 or older; analyses must define the age domain and spouse-record handling from the official release. GitHub Validate [#240 / `40057380931`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40057380931) and Pages Deploy [#117 / `40057380880`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40057380880) succeeded. A cache-busted public homepage request returned HTTP 200 and contained the new note. No sample counts, respondent data, or model results changed.
