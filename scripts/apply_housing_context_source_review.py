@@ -36,6 +36,15 @@ REVIEWED = {
     ("2020", "residence_move_in_time", "i002"),
     ("2020", "residence_move_in_time", "i003"),
 } | {
+    (wave, "elevator_access", "i009" if wave != "2020" else "i007")
+    for wave in QUESTIONNAIRES
+} | {
+    ("2011", "home_accessibility", "i010"),
+    ("2013", "home_accessibility", "i010"),
+    ("2015", "home_accessibility", "i010"),
+    ("2018", "home_accessibility", "i010_w4"),
+    ("2020", "home_accessibility", "i009"),
+} | {
     (wave, concept, code)
     for wave in QUESTIONNAIRES
     for concept, code in (("indoor_cleanliness", "i025"), ("indoor_temperature", "i026"))
@@ -97,6 +106,20 @@ CONCEPT_CAVEATS = {
         "Preserve the two response formats and household-person referent; validate special-value storage and "
         "routing in the authorized release before analysis."
     ),
+    "elevator_access": (
+        "Household/building-level elevator availability, not elevator use, an individual's mobility, or a direct "
+        "accessibility outcome. In 2011–2018, the item is asked on the multi-storey/above-ground-floor route; a "
+        "structural skip must not be recoded as No. In 2020, I007 asks about an elevator in the respondent's "
+        "housing and gives an interviewer-in-home/certainty instruction. Retain the wave-specific route and "
+        "household/person linkage; the item is not directly harmonized across waves."
+    ),
+    "home_accessibility": (
+        "Household/building-level presence of accessibility facilities such as a non-stair ramp; not a measure "
+        "of the respondent's disability, mobility, or accessibility standard. Waves 2011–2015 list Yes/No; 2018 "
+        "and 2020 add a distinct 'no steps on flat ground/do not need' category. Preserve that category rather "
+        "than collapsing it into No. The 2011–2018 I010=No route asks the entrance-step item; 2020 wording and "
+        "interviewer instructions differ. Confirm household/person linkage and release-specific storage before use."
+    ),
 }
 
 FIELD_NOTES = {
@@ -137,6 +160,32 @@ FIELD_NOTES = {
     "residence_move_in_time": {
         "2020": "Official 2020 questionnaire/Codebook reviewed: I002 is Household Financial Respondent move-in year (1900–2020; interviewer enters -1 if unable to answer); I003 is the separate fallback category for unclear year. Preserve distinct formats; Codebook frequencies are not included."
     },
+    "elevator_access": {
+        **{
+            wave: "Official questionnaire/Codebook reviewed: elevator availability is asked on the multi-storey residence route (I008 > 1 to I009); preserve 1=Yes/2=No and do not code a structural skip as No."
+            for wave in ("2011", "2013", "2015", "2018")
+        },
+        "2020": "Official questionnaire/Codebook reviewed: I007 asks whether the respondent's housing has an elevator (1=Yes/2=No); interviewer records only when in the home and clearly certain, otherwise asks the respondent. Unlike earlier waves, this item is not shown behind the I008 > 1 route.",
+    },
+    "home_accessibility": {
+        **{
+            wave: "Official questionnaire/Codebook reviewed: I010 asks whether the residence has accessibility facilities such as a non-stair ramp; preserve 1=Yes/2=No. If No, the questionnaire routes to the entrance-step item."
+            for wave in ("2011", "2013", "2015")
+        },
+        "2018": "Official questionnaire/Codebook reviewed: I010_W4 lists 1=Yes, 2=No, and 3=No steps on level ground/no need. Preserve category 3 separately; only category 2 routes to the entrance-step item.",
+        "2020": "Official questionnaire/Codebook reviewed: I009 lists 1=Yes, 2=No, and 3=No steps on flat ground/do not need. Preserve category 3 separately. Interviewer records only when in the respondent's housing and clearly certain, otherwise asks the respondent.",
+    },
+}
+
+FIELD_VALUE_LABELS = {
+    (wave, "elevator_access"): "1=Yes; 2=No"
+    for wave in QUESTIONNAIRES
+} | {
+    (wave, "home_accessibility"): (
+        "1=Yes; 2=No" if wave in {"2011", "2013", "2015"}
+        else "1=Yes; 2=No; 3=Do not need"
+    )
+    for wave in QUESTIONNAIRES
 }
 
 
@@ -180,6 +229,33 @@ def validate_sources() -> None:
                 raise ValueError(f"{wave} {code} interviewer-record instruction not found")
             if "not applicable" not in cb and wave != "2011":
                 raise ValueError(f"{wave} {code} Codebook Not applicable category not found")
+        if concept_id == "elevator_access":
+            if wave == "2020":
+                if "i007 does it have elevator?" not in q or "record if interviewer is in r's housing" not in q:
+                    raise ValueError("2020 elevator wording/interviewer instruction not found")
+            else:
+                if not re.search(r"if\s+i008\s*>\s*1,\s*ask\s+i009", q):
+                    raise ValueError(f"{wave} elevator route wording not found")
+                if "i009" not in q or "1. yes" not in q or "2. no" not in q:
+                    raise ValueError(f"{wave} elevator field/Yes-No categories not found")
+            if not re.search(r"\b1\s+yes\b", cb) or not re.search(r"\b2\s+no\b", cb):
+                raise ValueError(f"{wave} elevator Codebook response labels not found")
+        if concept_id == "home_accessibility":
+            if wave in {"2011", "2013", "2015"}:
+                if "are there any handicapped facilities" not in q or not re.search(r"if\s+i010\s*=\s*2,\s*ask\s+i011", q):
+                    raise ValueError(f"{wave} home-accessibility wording/route not found")
+                if not re.search(r"\b1\s+yes\b", cb) or not re.search(r"\b2\s+no\b", cb):
+                    raise ValueError(f"{wave} home-accessibility Codebook Yes/No labels not found")
+            elif wave == "2018":
+                if not re.search(r"i010_w4\s*=\s*2,\s*ask\s+i011", q) or "no steps on level ground, no need for handicapped facilities" not in q:
+                    raise ValueError("2018 home-accessibility category/route not found")
+                if "3 do not need" not in cb:
+                    raise ValueError("2018 home-accessibility Codebook third category not found")
+            else:
+                if "i009 are there any handicapped facilities" not in q or "no steps on the flat ground, do not need handicapped facilities" not in q:
+                    raise ValueError("2020 home-accessibility wording/category not found")
+                if "3 do not need" not in cb:
+                    raise ValueError("2020 home-accessibility Codebook third category not found")
     baseline_q = (ROOT / "sources_official" / "CHARLS_2011_Baseline_Questionnaire_official_extracted.txt").read_text(encoding="utf-8", errors="ignore").casefold()
     household_q = (ROOT / "sources_official" / QUESTIONNAIRES["2011"]).read_text(encoding="utf-8", errors="ignore").casefold()
     baseline_cb = (ROOT / "sources_official" / CODEBOOKS["2011"]).read_text(encoding="utf-8", errors="ignore").casefold()
@@ -232,6 +308,8 @@ def main() -> None:
         wave, concept_id, code = key
         row["mapping_status"] = f"official {wave} questionnaire/Codebook wording, target and response categories reviewed; see {REVIEW}"
         row["caveat"] = CONCEPT_CAVEATS[concept_id]
+        if (wave, concept_id) in FIELD_VALUE_LABELS:
+            row["code_value_labels"] = FIELD_VALUE_LABELS[(wave, concept_id)]
         found.add(key)
     if found != REVIEWED:
         raise ValueError(f"Crosswalk mismatch; missing={sorted(REVIEWED-found)}, unexpected={sorted(found-REVIEWED)}")
@@ -254,6 +332,8 @@ def main() -> None:
             if key not in REVIEWED:
                 continue
             field["note"] = f"{FIELD_NOTES[concept_id][wave]} See {REVIEW}."
+            if (wave, concept_id) in FIELD_VALUE_LABELS:
+                field["value_labels"] = FIELD_VALUE_LABELS[(wave, concept_id)]
             field["source_document"] = source_paths(wave)
             updated.add(key)
         for wave, expected_concept, code in sorted(REVIEWED):
@@ -269,7 +349,7 @@ def main() -> None:
                 "code": code,
                 "module": source["module"],
                 "source_label": source["variable_label"],
-                "value_labels": "1=Yes; 2=No",
+                "value_labels": FIELD_VALUE_LABELS.get((wave, concept_id), "1=Yes; 2=No"),
                 "note": f"{FIELD_NOTES[concept_id][wave]} See {REVIEW}.",
                 "source_document": source_paths(wave),
             })

@@ -193,6 +193,8 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     # The prior successful build leaves the public site catalog compacted by
     # site_catalog_shards.py, while these review steps expect one row per wave.
     "build_adult_education_training_crosswalk.py",
+    # Restore reviewed household route/category metadata before catalog propagation.
+    "apply_housing_context_source_review.py",
     "build_charls_atlas_catalog.py",
     # Rebuild the housing lookup from the audited owner-label maps before the
     # later housing measurement scripts enrich its units and route notes.
@@ -221,6 +223,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_anthropometric_source_review.py",
     "apply_repeated_chair_stand_source_review.py",
     "build_charls_atlas_catalog.py",
+    "apply_housing_context_source_review.py",
     "apply_wave5_core_demographic_review.py",
     "apply_wave5_digital_behavior_review.py",
     "validate_do_not_analyze_triage.py",

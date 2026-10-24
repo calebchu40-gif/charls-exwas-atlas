@@ -258,8 +258,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Presence of listed accessibility facilities; exact checklist and wave wording need value-label review. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Household/building-level presence of accessibility facilities such as a non-stair ramp; not a measure of the respondent's disability, mobility, or accessibility standard. Waves 2011–2015 list Yes/No; 2018 and 2020 add a distinct 'no steps on flat ground/do not need' category. Preserve that category rather than collapsing it into No. The 2011–2018 I010=No route asks the entrance-step item; 2020 wording and interviewer instructions differ. Confirm household/person linkage and release-specific storage before use."
             }
           ]
         },
@@ -3868,8 +3868,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Housing/building-level access feature; distinguish availability from actual use and respondent mobility. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Household/building-level elevator availability, not elevator use, an individual's mobility, or a direct accessibility outcome. In 2011–2018, the item is asked on the multi-storey/above-ground-floor route; a structural skip must not be recoded as No. In 2020, I007 asks about an elevator in the respondent's housing and gives an interviewer-in-home/certainty instruction. Retain the wave-specific route and household/person linkage; the item is not directly harmonized across waves."
             }
           ]
         },
@@ -21801,8 +21801,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Presence of listed accessibility facilities; exact checklist and wave wording need value-label review."
+              "mapping_status": "official 2013 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Household/building-level presence of accessibility facilities such as a non-stair ramp; not a measure of the respondent's disability, mobility, or accessibility standard. Waves 2011–2015 list Yes/No; 2018 and 2020 add a distinct 'no steps on flat ground/do not need' category. Preserve that category rather than collapsing it into No. The 2011–2018 I010=No route asks the entrance-step item; 2020 wording and interviewer instructions differ. Confirm household/person linkage and release-specific storage before use."
             }
           ]
         },
@@ -22821,8 +22821,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Housing/building-level access feature; distinguish availability from actual use and respondent mobility."
+              "mapping_status": "official 2013 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Household/building-level elevator availability, not elevator use, an individual's mobility, or a direct accessibility outcome. In 2011–2018, the item is asked on the multi-storey/above-ground-floor route; a structural skip must not be recoded as No. In 2020, I007 asks about an elevator in the respondent's housing and gives an interviewer-in-home/certainty instruction. Retain the wave-specific route and household/person linkage; the item is not directly harmonized across waves."
             }
           ]
         },
@@ -45366,8 +45366,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Presence of listed accessibility facilities; exact checklist and wave wording need value-label review."
+              "mapping_status": "official 2015 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Household/building-level presence of accessibility facilities such as a non-stair ramp; not a measure of the respondent's disability, mobility, or accessibility standard. Waves 2011–2015 list Yes/No; 2018 and 2020 add a distinct 'no steps on flat ground/do not need' category. Preserve that category rather than collapsing it into No. The 2011–2018 I010=No route asks the entrance-step item; 2020 wording and interviewer instructions differ. Confirm household/person linkage and release-specific storage before use."
             }
           ]
         },
@@ -46306,8 +46306,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Housing/building-level access feature; distinguish availability from actual use and respondent mobility."
+              "mapping_status": "official 2015 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Household/building-level elevator availability, not elevator use, an individual's mobility, or a direct accessibility outcome. In 2011–2018, the item is asked on the multi-storey/above-ground-floor route; a structural skip must not be recoded as No. In 2020, I007 asks about an elevator in the respondent's housing and gives an interviewer-in-home/certainty instruction. Retain the wave-specific route and household/person linkage; the item is not directly harmonized across waves."
             }
           ]
         },
@@ -69821,8 +69821,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Do not need",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Presence of listed accessibility facilities; exact checklist and wave wording need value-label review."
+              "mapping_status": "official 2018 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Household/building-level presence of accessibility facilities such as a non-stair ramp; not a measure of the respondent's disability, mobility, or accessibility standard. Waves 2011–2015 list Yes/No; 2018 and 2020 add a distinct 'no steps on flat ground/do not need' category. Preserve that category rather than collapsing it into No. The 2011–2018 I010=No route asks the entrance-step item; 2020 wording and interviewer instructions differ. Confirm household/person linkage and release-specific storage before use."
             }
           ]
         },
@@ -70931,8 +70931,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Housing/building-level access feature; distinguish availability from actual use and respondent mobility."
+              "mapping_status": "official 2018 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Household/building-level elevator availability, not elevator use, an individual's mobility, or a direct accessibility outcome. In 2011–2018, the item is asked on the multi-storey/above-ground-floor route; a structural skip must not be recoded as No. In 2020, I007 asks about an elevator in the respondent's housing and gives an interviewer-in-home/certainty instruction. Retain the wave-specific route and household/person linkage; the item is not directly harmonized across waves."
             }
           ]
         },
@@ -95054,8 +95054,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Do not need",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Presence of listed accessibility facilities; exact checklist and wave wording need value-label review."
+              "mapping_status": "official 2020 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Household/building-level presence of accessibility facilities such as a non-stair ramp; not a measure of the respondent's disability, mobility, or accessibility standard. Waves 2011–2015 list Yes/No; 2018 and 2020 add a distinct 'no steps on flat ground/do not need' category. Preserve that category rather than collapsing it into No. The 2011–2018 I010=No route asks the entrance-step item; 2020 wording and interviewer instructions differ. Confirm household/person linkage and release-specific storage before use."
             }
           ]
         },
@@ -95614,8 +95614,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Housing/building-level access feature; distinguish availability from actual use and respondent mobility."
+              "mapping_status": "official 2020 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "Household/building-level elevator availability, not elevator use, an individual's mobility, or a direct accessibility outcome. In 2011–2018, the item is asked on the multi-storey/above-ground-floor route; a structural skip must not be recoded as No. In 2020, I007 asks about an elevator in the respondent's housing and gives an interviewer-in-home/certainty instruction. Retain the wave-specific route and household/person linkage; the item is not directly harmonized across waves."
             }
           ]
         },

@@ -1429,7 +1429,7 @@
     "concept_id": "elevator_access",
     "label": "Elevator availability",
     "domain": "Housing environment/accessibility",
-    "caveat": "Housing/building-level access feature; distinguish availability from actual use and respondent mobility.",
+    "caveat": "Household/building-level elevator availability, not elevator use, an individual's mobility, or a direct accessibility outcome. In 2011–2018, the item is asked on the multi-storey/above-ground-floor route; a structural skip must not be recoded as No. In 2020, I007 asks about an elevator in the respondent's housing and gives an interviewer-in-home/certainty instruction. Retain the wave-specific route and household/person linkage; the item is not directly harmonized across waves.",
     "source_fields": [
       {
         "wave": "2011",
@@ -1437,9 +1437,10 @@
         "module": "housing_characteristics",
         "source_label": "Does It Has Elevator",
         "value_labels": "1=Yes; 2=No",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
+        "note": "Official questionnaire/Codebook reviewed: elevator availability is asked on the multi-storey residence route (I008 > 1 to I009); preserve 1=Yes/2=No and do not code a structural skip as No. See audit/housing_context_source_review_2026-10-24.md.",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding"
+        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -1447,9 +1448,10 @@
         "module": "Housing_Characteristics",
         "source_label": "Does it has elevator£¿",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending",
+        "note": "Official questionnaire/Codebook reviewed: elevator availability is asked on the multi-storey residence route (I008 > 1 to I009); preserve 1=Yes/2=No and do not code a structural skip as No. See audit/housing_context_source_review_2026-10-24.md.",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding"
+        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
@@ -1457,9 +1459,10 @@
         "module": "Housing_Characteristics",
         "source_label": "Does It Has Elevatorï¼Ÿ",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending",
+        "note": "Official questionnaire/Codebook reviewed: elevator availability is asked on the multi-storey residence route (I008 > 1 to I009); preserve 1=Yes/2=No and do not code a structural skip as No. See audit/housing_context_source_review_2026-10-24.md.",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding"
+        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2018",
@@ -1467,9 +1470,10 @@
         "module": "Housing",
         "source_label": "Elevator",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending",
+        "note": "Official questionnaire/Codebook reviewed: elevator availability is asked on the multi-storey residence route (I008 > 1 to I009); preserve 1=Yes/2=No and do not code a structural skip as No. See audit/housing_context_source_review_2026-10-24.md.",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding"
+        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
+        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
         "wave": "2020",
@@ -1477,9 +1481,10 @@
         "module": "Household_Income",
         "source_label": "Elevator",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending",
+        "note": "Official questionnaire/Codebook reviewed: I007 asks whether the respondent's housing has an elevator (1=Yes/2=No); interviewer records only when in the home and clearly certain, otherwise asks the respondent. Unlike earlier waves, this item is not shown behind the I008 > 1 route. See audit/housing_context_source_review_2026-10-24.md.",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding"
+        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
       }
     ]
   },
@@ -1487,7 +1492,7 @@
     "concept_id": "home_accessibility",
     "label": "Accessibility facilities in residence/building",
     "domain": "Housing environment/accessibility",
-    "caveat": "Presence of listed accessibility facilities; exact checklist and wave wording need value-label review.",
+    "caveat": "Household/building-level presence of accessibility facilities such as a non-stair ramp; not a measure of the respondent's disability, mobility, or accessibility standard. Waves 2011–2015 list Yes/No; 2018 and 2020 add a distinct 'no steps on flat ground/do not need' category. Preserve that category rather than collapsing it into No. The 2011–2018 I010=No route asks the entrance-step item; 2020 wording and interviewer instructions differ. Confirm household/person linkage and release-specific storage before use.",
     "source_fields": [
       {
         "wave": "2011",
@@ -1495,9 +1500,10 @@
         "module": "housing_characteristics",
         "source_label": "Are There Any Handicapped Facilities",
         "value_labels": "1=Yes; 2=No",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
+        "note": "Official questionnaire/Codebook reviewed: I010 asks whether the residence has accessibility facilities such as a non-stair ramp; preserve 1=Yes/2=No. If No, the questionnaire routes to the entrance-step item. See audit/housing_context_source_review_2026-10-24.md.",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding"
+        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -1505,9 +1511,10 @@
         "module": "Housing_Characteristics",
         "source_label": "Are there any handicapped facilities?",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending",
+        "note": "Official questionnaire/Codebook reviewed: I010 asks whether the residence has accessibility facilities such as a non-stair ramp; preserve 1=Yes/2=No. If No, the questionnaire routes to the entrance-step item. See audit/housing_context_source_review_2026-10-24.md.",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding"
+        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
@@ -1515,9 +1522,10 @@
         "module": "Housing_Characteristics",
         "source_label": "Are There Any Handicapped Facilities?",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending",
+        "note": "Official questionnaire/Codebook reviewed: I010 asks whether the residence has accessibility facilities such as a non-stair ramp; preserve 1=Yes/2=No. If No, the questionnaire routes to the entrance-step item. See audit/housing_context_source_review_2026-10-24.md.",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding"
+        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2018",
@@ -1525,9 +1533,10 @@
         "module": "Housing",
         "source_label": "Handicapped Facilities",
         "value_labels": "1=Yes; 2=No; 3=Do not need",
-        "note": "catalog-label candidate; questionnaire review pending",
+        "note": "Official questionnaire/Codebook reviewed: I010_W4 lists 1=Yes, 2=No, and 3=No steps on level ground/no need. Preserve category 3 separately; only category 2 routes to the entrance-step item. See audit/housing_context_source_review_2026-10-24.md.",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding"
+        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
+        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
         "wave": "2020",
@@ -1535,9 +1544,10 @@
         "module": "Household_Income",
         "source_label": "Handicapped Facilities",
         "value_labels": "1=Yes; 2=No; 3=Do not need",
-        "note": "catalog-label candidate; questionnaire review pending",
+        "note": "Official questionnaire/Codebook reviewed: I009 lists 1=Yes, 2=No, and 3=No steps on flat ground/do not need. Preserve category 3 separately. Interviewer records only when in the respondent's housing and clearly certain, otherwise asks the respondent. See audit/housing_context_source_review_2026-10-24.md.",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding"
+        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
       }
     ]
   },

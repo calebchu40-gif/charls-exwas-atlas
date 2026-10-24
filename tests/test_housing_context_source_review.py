@@ -50,6 +50,12 @@ class HousingContextSourceReviewTests(unittest.TestCase):
             (wave, concept, code)
             for wave in ("2011", "2013", "2015", "2018", "2020")
             for concept, code in (("indoor_cleanliness", "i025"), ("indoor_temperature", "i026"))
+        } | {
+            (wave, "elevator_access", "i009" if wave != "2020" else "i007")
+            for wave in ("2011", "2013", "2015", "2018", "2020")
+        } | {
+            (wave, "home_accessibility", code)
+            for wave, code in (("2011", "i010"), ("2013", "i010"), ("2015", "i010"), ("2018", "i010_w4"), ("2020", "i009"))
         })
 
     def test_2020_heating_label_conflict_is_explicit_and_preserved(self):
@@ -143,6 +149,28 @@ class HousingContextSourceReviewTests(unittest.TestCase):
         self.assertIn("Official 2020 questionnaire/Codebook reviewed", fields["i003"]["note"])
         self.assertIn("1=0-5 years", fields["i003"]["value_labels"])
         self.assertNotIn("Freq.", fields["i003"]["note"])
+
+    def test_elevator_and_accessibility_keep_routes_and_categories(self):
+        concepts = {c["concept_id"]: c for c in self.site}
+        elevator = concepts["elevator_access"]
+        fields = {str(f["wave"]): f for f in elevator["source_fields"]}
+        self.assertEqual(set(fields), {"2011", "2013", "2015", "2018", "2020"})
+        for wave in ("2011", "2013", "2015", "2018"):
+            self.assertIn("I008 > 1", fields[wave]["note"])
+            self.assertEqual(fields[wave]["value_labels"], "1=Yes; 2=No")
+        self.assertEqual(fields["2020"]["code"].lower(), "i007")
+        self.assertIn("otherwise asks the respondent", fields["2020"]["note"])
+
+        accessibility = concepts["home_accessibility"]
+        a_fields = {str(f["wave"]): f for f in accessibility["source_fields"]}
+        self.assertEqual(set(a_fields), {"2011", "2013", "2015", "2018", "2020"})
+        for wave in ("2011", "2013", "2015"):
+            self.assertEqual(a_fields[wave]["value_labels"], "1=Yes; 2=No")
+        for wave in ("2018", "2020"):
+            self.assertEqual(a_fields[wave]["value_labels"], "1=Yes; 2=No; 3=Do not need")
+        self.assertIn("only category 2 routes", a_fields["2018"]["note"])
+        self.assertIn("Preserve category 3 separately", a_fields["2020"]["note"])
+        self.assertIn("frequencies are not copied", (ROOT / "audit" / REVIEW).read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":

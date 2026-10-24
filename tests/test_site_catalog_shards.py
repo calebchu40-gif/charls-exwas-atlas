@@ -54,6 +54,14 @@ class SiteCatalogShardTests(unittest.TestCase):
                 pipeline.index("apply_objective_measurement_protocol_review.py"),
                 pipeline.index("propagate_c_placeholder_metadata_review.py"),
             )
+            self.assertLess(
+                pipeline.index("apply_housing_context_source_review.py"),
+                pipeline.index("build_charls_atlas_catalog.py"),
+            )
+            self.assertLess(
+                pipeline.index("build_charls_atlas_catalog.py", pipeline.index("apply_housing_context_source_review.py")),
+                pipeline.index("apply_housing_context_source_review.py", pipeline.index("build_charls_atlas_catalog.py")),
+            )
         self.assertGreater(
             FINALIZATION_PIPELINE_SCRIPTS.index("build_housing_catalog.py"),
             FINALIZATION_PIPELINE_SCRIPTS.index("build_charls_atlas_catalog.py"),

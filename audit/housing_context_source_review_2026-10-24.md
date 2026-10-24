@@ -26,6 +26,14 @@ The 2020 questionnaire and Codebook identify I027 as household ground/floor cond
 
 The 2020 I002/I003 pair asks when the Household Financial Respondent moved into current housing, despite the Codebook labels “Time House Built” and “Time Interval House Built.” I002 is calendar year with a questionnaire range of 1900–2020 and an interviewer instruction to enter -1 if the respondent cannot answer. I003 is a six-category fallback asked when the year is unclear (0–5 through more than 40 years). Preserve the respondent household referent and two different response formats; neither item measures building construction year. Do not combine I003 into a single year or assume -1 storage without checking the authorized release. Codebook frequencies are excluded.
 
+## Elevator and home-accessibility items
+
+Elevator availability is I009 in 2011, 2013, 2015 and 2018, and I007 in 2020. In 2011–2018, the questionnaire routes to I009 only when I008 > 1; a skipped item for a lower-floor dwelling is structural missingness, not a “No” response. In 2020, I007 is asked without that displayed I008 > 1 route and includes an interviewer-in-home/certainty instruction. Preserve these wave-specific routes and household referents. The item records availability, not use or an individual's mobility.
+
+Home accessibility facilities are I010 in 2011–2015, I010_W4 in 2018, and I009 in 2020. The 2011–2015 Yes/No items route a “No” response to the entrance-step question. The 2018 and 2020 versions add a third response for a level/flat entrance where facilities are not needed; retain that as its own category, not as “No.” In 2020, the interviewer instruction also limits direct recording to cases where the interviewer is in the respondent's housing and clearly knows the answer. These are household/building context items, not measures of an individual's disability or a standardized accessibility score. Confirm household-to-person linkage and release-specific missing-value storage before analysis.
+
+The public catalogue displays response labels and route caveats only. Questionnaire and Codebook frequencies are not copied or used to define candidate status.
+
 ## Source files
 
 Wave-specific English questionnaire and Codebook extracts are in `sources_official/`. The 2011 discrepancy is checked against both `CHARLS_2011_Baseline_Questionnaire_official_extracted.txt` and `CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`, plus `CHARLS_2011_Codebook_extracted.txt`. The incremental propagation script is `scripts/apply_housing_context_source_review.py`.
