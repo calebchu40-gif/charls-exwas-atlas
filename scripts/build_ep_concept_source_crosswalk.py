@@ -326,6 +326,11 @@ map_direct("sibling_record_context_crosswalk_v1.csv", "e",
            modules=("module",), caveats=("caveat",), semantics=("value_semantics",),
            value_labels=("value_labels",), units=("unit",), archives=("source_archive",),
            documents=("value_label_source",))
+map_direct("child_roster_context_crosswalk_v1.csv", "e",
+           statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
+           modules=("module",), caveats=("caveat",), semantics=("value_semantics",),
+           value_labels=("value_labels",), units=("unit",), archives=("source_archive",),
+           documents=("value_label_source",))
 map_direct("parent_roster_context_crosswalk_v1.csv", "e",
            statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
            modules=("module",), caveats=("caveat",), semantics=("value_semantics",),
