@@ -2,7 +2,7 @@
 
 更新：2026-10-25。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
-- 最终E/P目录行：6,921；不同波次—字段码：6,714。一个字段可对应多个候选类别/角色。
+- 最终E/P目录行：6,927；不同波次—字段码：6,714。一个字段可对应多个候选类别/角色。
 - 有非空标签文本的E/P目录行：3,679；不同波次—字段码：3,598。连续测量、计数值及测量流程字段可已审但不需要离散标签。
 - 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：0。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
@@ -21,7 +21,7 @@
 |e|food and household environment|161|161|104|1|
 |e|healthcare access|109|109|51|1|
 |e|housing and built environment|480|480|248|2|
-|e|internal biomarker|13|13|0|1|
+|e|internal biomarker|32|32|0|1|
 |e|life-course and reproductive history|8|8|0|1|
 |e|social determinants|2,138|2,138|1,013|20|
 |e|social protection|1,331|1,331|427|30|
@@ -33,7 +33,6 @@
 |p|cognition|338|338|305|1|
 |p|health and symptoms|177|177|171|5|
 |p|healthcare access|217|217|66|2|
-|p|internal biomarker|13|13|0|1|
 |p|mental health|52|52|52|1|
 |p|physical function|266|260|169|7|
 |p|social wellbeing|10|10|10|4|
@@ -48,7 +47,7 @@
 |codebook field located; continuous/open response or no categorical labels|371|
 |official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred|224|
 |official Codebook numeric/count response located; no discrete answer labels|196|
-|continuous measure metadata available|185|
+|continuous measure metadata available|191|
 |numeric/time unit metadata available; no discrete labels assigned|151|
 |audited measurement component; derive concept per crosswalk|138|
 |连续值/字段结构；代码本未提供离散值标签|93|

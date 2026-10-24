@@ -19,7 +19,7 @@
     "assay_metadata_status": "2011 guide reports CBC collection at county laboratories but not analyte-specific method/CV/range",
     "assay_metadata_source": "CHARLS 2011 Blood Data Users' Guide, printed p.13 (PDF p.19), CBC summary; analyzer method/CV/range not specified",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -42,7 +42,7 @@
     "assay_metadata_status": "2015 release note reports variable definitions/units only; assay method/CV/range not reported there; do not inherit 2011 values",
     "assay_metadata_source": "CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620), Table 1; no analyte-specific assay method/CV/detection-range fields reported",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -65,7 +65,7 @@
     "assay_metadata_status": "2011 guide reports CBC collection at county laboratories but not analyte-specific method/CV/range",
     "assay_metadata_source": "CHARLS 2011 Blood Data Users' Guide, printed p.13 (PDF p.19), CBC summary; analyzer method/CV/range not specified",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -88,7 +88,7 @@
     "assay_metadata_status": "2015 release note reports variable definitions/units only; assay method/CV/range not reported there; do not inherit 2011 values",
     "assay_metadata_source": "CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620), Table 1; no analyte-specific assay method/CV/detection-range fields reported",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -111,7 +111,7 @@
     "assay_metadata_status": "2011 guide reports CBC collection at county laboratories but not analyte-specific method/CV/range",
     "assay_metadata_source": "CHARLS 2011 Blood Data Users' Guide, printed p.13 (PDF p.19), CBC summary; analyzer method/CV/range not specified",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -134,7 +134,7 @@
     "assay_metadata_status": "2015 release note reports variable definitions/units only; assay method/CV/range not reported there; do not inherit 2011 values",
     "assay_metadata_source": "CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620), Table 1; no analyte-specific assay method/CV/detection-range fields reported",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -157,7 +157,7 @@
     "assay_metadata_status": "2011 guide reports CBC collection at county laboratories but not analyte-specific method/CV/range",
     "assay_metadata_source": "CHARLS 2011 Blood Data Users' Guide, printed p.13 (PDF p.19), CBC summary; analyzer method/CV/range not specified",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -180,7 +180,7 @@
     "assay_metadata_status": "2015 release note reports variable definitions/units only; assay method/CV/range not reported there; do not inherit 2011 values",
     "assay_metadata_source": "CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620), Table 1; no analyte-specific assay method/CV/detection-range fields reported",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -203,7 +203,7 @@
     "assay_metadata_status": "2011 guide reports CBC collection at county laboratories but not analyte-specific method/CV/range",
     "assay_metadata_source": "CHARLS 2011 Blood Data Users' Guide, printed p.13 (PDF p.19), CBC summary; analyzer method/CV/range not specified",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -226,7 +226,7 @@
     "assay_metadata_status": "2015 release note reports variable definitions/units only; assay method/CV/range not reported there; do not inherit 2011 values",
     "assay_metadata_source": "CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620), Table 1; no analyte-specific assay method/CV/detection-range fields reported",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -249,7 +249,7 @@
     "assay_metadata_status": "2011 guide reports analyte-specific metadata",
     "assay_metadata_source": "CHARLS 2011 Blood Data Users' Guide, printed p.7 (PDF p.12), Table 2",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -272,7 +272,7 @@
     "assay_metadata_status": "2015 release note reports variable definitions/units only; assay method/CV/range not reported there; do not inherit 2011 values",
     "assay_metadata_source": "CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620), Table 1; no analyte-specific assay method/CV/detection-range fields reported",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -295,7 +295,7 @@
     "assay_metadata_status": "2011 guide reports analyte-specific metadata",
     "assay_metadata_source": "CHARLS 2011 Blood Data Users' Guide, printed p.7 (PDF p.12), Table 2",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -318,7 +318,7 @@
     "assay_metadata_status": "2015 release note reports variable definitions/units only; assay method/CV/range not reported there; do not inherit 2011 values",
     "assay_metadata_source": "CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620), Table 1; no analyte-specific assay method/CV/detection-range fields reported",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -341,7 +341,7 @@
     "assay_metadata_status": "2011 guide reports analyte-specific metadata",
     "assay_metadata_source": "CHARLS 2011 Blood Data Users' Guide, printed p.7 (PDF p.12), Table 2",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -364,7 +364,7 @@
     "assay_metadata_status": "2015 release note reports variable definitions/units only; assay method/CV/range not reported there; do not inherit 2011 values",
     "assay_metadata_source": "CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620), Table 1; no analyte-specific assay method/CV/detection-range fields reported",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -387,7 +387,7 @@
     "assay_metadata_status": "2011 guide reports analyte-specific metadata",
     "assay_metadata_source": "CHARLS 2011 Blood Data Users' Guide, printed p.7 (PDF p.12), Table 2",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -410,7 +410,7 @@
     "assay_metadata_status": "2015 release note reports variable definitions/units only; assay method/CV/range not reported there; do not inherit 2011 values",
     "assay_metadata_source": "CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620), Table 1; no analyte-specific assay method/CV/detection-range fields reported",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -433,7 +433,7 @@
     "assay_metadata_status": "2011 guide reports analyte-specific metadata",
     "assay_metadata_source": "CHARLS 2011 Blood Data Users' Guide, printed p.7 (PDF p.12), Table 2",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -456,7 +456,7 @@
     "assay_metadata_status": "2015 release note reports variable definitions/units only; assay method/CV/range not reported there; do not inherit 2011 values",
     "assay_metadata_source": "CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620), Table 1; no analyte-specific assay method/CV/detection-range fields reported",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -479,7 +479,7 @@
     "assay_metadata_status": "2011 guide reports analyte-specific metadata",
     "assay_metadata_source": "CHARLS 2011 Blood Data Users' Guide, printed p.7 (PDF p.12), Table 2",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -502,7 +502,7 @@
     "assay_metadata_status": "2015 release note reports variable definitions/units only; assay method/CV/range not reported there; do not inherit 2011 values",
     "assay_metadata_source": "CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620), Table 1; no analyte-specific assay method/CV/detection-range fields reported",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -525,7 +525,7 @@
     "assay_metadata_status": "2011 guide reports analyte-specific metadata",
     "assay_metadata_source": "CHARLS 2011 Blood Data Users' Guide, printed p.7 (PDF p.12), Table 2",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -548,7 +548,7 @@
     "assay_metadata_status": "2015 release note reports variable definitions/units only; assay method/CV/range not reported there; do not inherit 2011 values",
     "assay_metadata_source": "CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620), Table 1; no analyte-specific assay method/CV/detection-range fields reported",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -571,7 +571,7 @@
     "assay_metadata_status": "2011 guide reports analyte-specific metadata",
     "assay_metadata_source": "CHARLS 2011 Blood Data Users' Guide, printed p.7 (PDF p.12), Table 2",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -594,7 +594,7 @@
     "assay_metadata_status": "2015 release note reports variable definitions/units only; assay method/CV/range not reported there; do not inherit 2011 values",
     "assay_metadata_source": "CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620), Table 1; no analyte-specific assay method/CV/detection-range fields reported",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -617,7 +617,7 @@
     "assay_metadata_status": "2011 guide reports analyte-specific metadata",
     "assay_metadata_source": "CHARLS 2011 Blood Data Users' Guide, printed p.7 (PDF p.12), Table 2",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。 2011指南称该项只测量全部70岁及以上血样参与者和70岁以下随机子样本；尚未核实bloodweight是否另行校正此检测子样本，不能假设其自动覆盖该抽样。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -640,7 +640,7 @@
     "assay_metadata_status": "2015 release note reports variable definitions/units only; assay method/CV/range not reported there; do not inherit 2011 values",
     "assay_metadata_source": "CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620), Table 1; no analyte-specific assay method/CV/detection-range fields reported",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -663,7 +663,7 @@
     "assay_metadata_status": "2011 guide reports analyte-specific metadata",
     "assay_metadata_source": "CHARLS 2011 Blood Data Users' Guide, printed p.7 (PDF p.12), Table 2",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -686,7 +686,7 @@
     "assay_metadata_status": "2015 release note reports variable definitions/units only; assay method/CV/range not reported there; do not inherit 2011 values",
     "assay_metadata_source": "CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620), Table 1; no analyte-specific assay method/CV/detection-range fields reported",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -709,7 +709,7 @@
     "assay_metadata_status": "2011 guide reports analyte-specific metadata",
     "assay_metadata_source": "CHARLS 2011 Blood Data Users' Guide, printed p.7 (PDF p.12), Table 2",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {
@@ -732,7 +732,7 @@
     "assay_metadata_status": "2015 release note reports variable definitions/units only; assay method/CV/range not reported there; do not inherit 2011 values",
     "assay_metadata_source": "CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620), Table 1; no analyte-specific assay method/CV/detection-range fields reported",
     "cross_wave_comparability": "2011与2015虽有同名且同单位字段，但CHARLS 2015血检论文记录了采集、运输和检测流程改进，同单位不证明原始测量可直接纵向比较；未经字段级实验室校准验证，按波次分别分析。总胆固醇、HDL-C、hsCRP和HbA1c另有与HRS家族研究之间的跨实验室校准工作，这不等于CHARLS公开原始字段已自动完成2011/2015校正。",
-    "role_boundary": "这是临床/生理内部生物标志物，不是环境污染物或外部环境暴露。当前经审查的概念—源字段crosswalk将其列为表型候选(P)；宽目录中的自动E/P双角色仅是发现阶段标签，未构成已批准的E来源映射。若研究方案拟将某指标作为E，需说明目标估计量、时间顺序/生物学依据及同波测量的横断面解释，并排除同一概念自配对。",
+    "role_boundary": "这是内部临床/生理生物标志物，不是外部环境化学暴露。为支持宽口径ExWAS目录，将官方文件确认的血液分析物列为可选E及P候选；E仅表示内部生物标志物候选，不是模型纳入批准。同波横断面配对只能解释为非方向性关联；正式模型须预先说明估计目标、时间顺序/生物学依据和血检子样本资格，使用波次专用血检权重，排除同概念自配对，并按波次分别分析，除非完成字段级校准。",
     "source_document": "CHARLS 2011 Blood Data Users' Guide; CHARLS Followup 2015 Blood Data Release Note (VersionID 20190620)"
   },
   {

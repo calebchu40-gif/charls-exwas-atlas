@@ -14,3 +14,7 @@
 - 血液指标跨波校准限制、2011胱抑素C抽样权重闸门见[`blood_biomarker_definition_review_v1.md`](blood_biomarker_definition_review_v1.md)。
 
 本轮未改变E/P已审概念映射数、未生成任何模型，也未读取个人血检值。
+
+## 后续口径更新（2026-10-25）
+
+血液分析物的角色决定已由 [`internal_biomarker_exposure_role_review_2026-10-25.md`](internal_biomarker_exposure_role_review_2026-10-25.md) 更新：官方确认的 16 个血液分析物概念（2011/2015共32个波次—字段）可作为内部生物标志物的 E 及 P 候选，仍非外部环境化学暴露，E 候选不等于模型纳入批准。体格和功能测量仍由客观测量审计界定为 P 候选。本文件保留作为角色决定的历史记录。

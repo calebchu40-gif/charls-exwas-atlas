@@ -500,6 +500,23 @@ for item in load("blood_biomarker_crosswalk_v1.csv").to_dict("records"):
         status_keys=("source_status",), caveat_keys=("collection_scope",),
         semantics_keys=("value_semantics",), unit_keys=("unit",),
         document_keys=("source_document",))
+    exposure_item = dict(
+        item,
+        exposure_mapping_status=(
+            "officially documented internal blood biomarker; optional ExWAS exposure candidate, not an external environmental chemical or model-inclusion approval"
+        ),
+        exposure_caveat="; ".join(filter(None, (
+            text(item, "role_boundary"), text(item, "collection_scope"),
+            text(item, "cross_wave_comparability"), text(item, "weight_field"),
+        ))),
+    )
+    add(exposure_item, role="e", file="blood_biomarker_crosswalk_v1.csv",
+        wave_key="wave", code_key="variable", concept_key="concept_id",
+        label_keys=("concept_label",), domain_keys=("domain",), module_keys=("module",),
+        status_keys=("exposure_mapping_status",),
+        caveat_keys=("exposure_caveat",),
+        semantics_keys=("value_semantics",), unit_keys=("unit",),
+        document_keys=("source_document",))
 
 # The 31-concept core coverage is a prepared-data audit layer; carry it as a
 # separate source mapping and translate its explicit role without promoting it.

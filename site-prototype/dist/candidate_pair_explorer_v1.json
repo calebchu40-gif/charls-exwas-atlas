@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 588,
+      "exposure_count": 604,
       "phenotype_count": 213,
-      "candidate_pair_count": 125237,
+      "candidate_pair_count": 128629,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -4460,6 +4460,27 @@
               "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md",
               "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release. 2011 uses village/community and county/province anchors; 2013/2015 refer to permanent address and include abroad; 2018 uses its own permanent/current-residence wording and location detail. 2013/2015 FD002=6/7 routes skip this field. The same code in 2020 means number of employees and is excluded."
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_crp",
+          "label": "C反应蛋白",
+          "domain": "炎症",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "newcrp",
+              "label": "newcrp",
+              "module": "Blood_Assays",
+              "unit": "mg/L",
+              "value_labels": "",
+              "value_semantics": "CHARLS血检发布说明称CRP/高敏CRP；分析前需以对应波次实验室文档确认检测定义。 | 当前本地可用血液化验仅2011波",
+              "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight | measured",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对 | 当前本地可用血液化验仅2011波"
             }
           ]
         },
@@ -10570,6 +10591,27 @@
           ]
         },
         {
+          "concept_id": "blood_ldl",
+          "label": "低密度脂蛋白胆固醇",
+          "domain": "血脂",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "newldl",
+              "label": "newldl",
+              "module": "Blood_Assays",
+              "unit": "mg/dL",
+              "value_labels": "",
+              "value_semantics": "LDL-C；与2015 bl_ldl对应。 | 当前本地可用血液化验仅2011波",
+              "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight | measured",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对 | 当前本地可用血液化验仅2011波"
+            }
+          ]
+        },
+        {
           "concept_id": "dwelling_housing_land_area",
           "label": "住宅占地面积",
           "domain": "housing and built environment",
@@ -14220,6 +14262,27 @@
           ]
         },
         {
+          "concept_id": "blood_uric_acid",
+          "label": "尿酸",
+          "domain": "肾/代谢",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "newua",
+              "label": "newua",
+              "module": "Blood_Assays",
+              "unit": "mg/dL",
+              "value_labels": "",
+              "value_semantics": "尿酸；与2015 bl_ua对应。 | 当前本地可用血液化验仅2011波",
+              "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight | measured",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对 | 当前本地可用血液化验仅2011波"
+            }
+          ]
+        },
+        {
           "concept_id": "pension_employer_expected_monthly_benefit",
           "label": "工作单位养老金预期待遇（月金额）",
           "domain": "social protection",
@@ -14296,6 +14359,27 @@
               "value_semantics": "transfer source among enrolled resident-pension participants",
               "mapping_status": "2011 baseline questionnaire and Codebook exact field identity, route, and response semantics reviewed; candidate only",
               "caveat": "The correct 2011 baseline questionnaire routes FN066 to FN039=4 enrolled residents-pension participants, after FN065=Yes; response categories match 2013 FN064_W2. Keep separate from the 2011 current-recipient FN016 route; other text is not published. Official source frequencies are metadata only, not analysis sample sizes; unknown/refused/skip values must not be converted to zero."
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_mcv",
+          "label": "平均红细胞体积",
+          "domain": "血常规",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qc1_vb006",
+              "label": "qc1_vb006",
+              "module": "Blood_Assays",
+              "unit": "fL",
+              "value_labels": "",
+              "value_semantics": "MCV；与2015 bl_mcv对应。",
+              "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
             }
           ]
         },
@@ -14436,6 +14520,27 @@
               "value_semantics": "Current education attainment candidate; source items differ by interview route.",
               "mapping_status": "official questionnaire and codebook response labels reviewed; frequencies omitted; verify routed denominator and authorized-release special codes",
               "caveat": "2013–2018 update fields can encode no change as a separate response, not a direct education category. Use the audited education derivation and interview-type/previous-wave route; never interpret z* preloads as a same-wave response. 2020 excludes adult education in the current item.; These are wave-specific categorical codes. Preserve conditional routing, special/missing values and source wording; this review does not establish analytic eligibility or cross-wave equivalence."
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_total_cholesterol",
+          "label": "总胆固醇",
+          "domain": "血脂",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "newcho",
+              "label": "newcho",
+              "module": "Blood_Assays",
+              "unit": "mg/dL",
+              "value_labels": "",
+              "value_semantics": "总胆固醇；与2015 bl_cho对应。 | 当前本地可用血液化验仅2011波",
+              "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight | measured",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对 | 当前本地可用血液化验仅2011波"
             }
           ]
         },
@@ -15451,6 +15556,48 @@
           ]
         },
         {
+          "concept_id": "blood_triglycerides",
+          "label": "甘油三酯",
+          "domain": "血脂",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "newtg",
+              "label": "newtg",
+              "module": "Blood_Assays",
+              "unit": "mg/dL",
+              "value_labels": "",
+              "value_semantics": "2015发布说明标注高值截顶至500 mg/dL，并提供截顶标记。 | 当前本地可用血液化验仅2011波",
+              "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight | measured",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对 | 当前本地可用血液化验仅2011波"
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_wbc",
+          "label": "白细胞计数",
+          "domain": "血常规",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qc1_vb002",
+              "label": "qc1_vb002",
+              "module": "Blood_Assays",
+              "unit": "1000 cells/μL",
+              "value_labels": "",
+              "value_semantics": "白细胞计数；与2015 bl_wbc对应。",
+              "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
+            }
+          ]
+        },
+        {
           "concept_id": "sleep_restless",
           "label": "睡眠不安单题",
           "domain": "心理/睡眠",
@@ -15501,6 +15648,27 @@
           ]
         },
         {
+          "concept_id": "blood_hba1c",
+          "label": "糖化血红蛋白",
+          "domain": "糖代谢",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "newhba1c",
+              "label": "newhba1c",
+              "module": "Blood_Assays",
+              "unit": "%",
+              "value_labels": "",
+              "value_semantics": "糖化血红蛋白；与2015 bl_hbalc对应。 | 当前本地可用血液化验仅2011波",
+              "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight | measured",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对 | 当前本地可用血液化验仅2011波"
+            }
+          ]
+        },
+        {
           "concept_id": "lifetime_marriage_count",
           "label": "累计结婚次数",
           "domain": "social determinants",
@@ -15517,6 +15685,27 @@
               "value_semantics": "Nonnegative integer count of lifetime marriages; questionnaire soft check flags values greater than 2.",
               "mapping_status": "wave-specific marital-history exposure candidate; item definition reviewed; analysis eligibility remains conditional",
               "caveat": "Asked at baseline; follow-up marriage-detail route depends on count. This is a self-reported count, not marital status. Numeric values are not cross-wave harmonization codes."
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_hematocrit",
+          "label": "红细胞压积",
+          "domain": "血常规",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qc1_vb005",
+              "label": "qc1_vb005",
+              "module": "Blood_Assays",
+              "unit": "%",
+              "value_labels": "",
+              "value_semantics": "红细胞压积；与2015 bl_hct对应。",
+              "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
             }
           ]
         },
@@ -15627,6 +15816,48 @@
               "value_semantics": "planned pension disposition when qualifying contribution years are insufficient",
               "mapping_status": "official questionnaire/codebook item; candidate mapping; route and analysis eligibility require review",
               "caveat": "仅适用于预计缴费年限不足的特定参保路径；选择的是计划而非实际退休时的缴费/领取行为。三类答案与2013/2015题组对齐为同一候选概念，但仍保留逐波定义与路由。"
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_creatinine",
+          "label": "肌酐",
+          "domain": "肾功能",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "newcrea",
+              "label": "newcrea",
+              "module": "Blood_Assays",
+              "unit": "mg/dL",
+              "value_labels": "",
+              "value_semantics": "肌酐；与2015 bl_crea对应。 | 当前本地可用血液化验仅2011波",
+              "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight | measured",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对 | 当前本地可用血液化验仅2011波"
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_cystatin_c",
+          "label": "胱抑素C",
+          "domain": "肾功能",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "cystatinc",
+              "label": "cystatinc",
+              "module": "Blood_Assays",
+              "unit": "mg/L",
+              "value_labels": "",
+              "value_semantics": "2011指南说明为采血者中的年龄分层子样本检测；不可按全体血样参与者处理。",
+              "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
             }
           ]
         },
@@ -15787,6 +16018,90 @@
               "value_semantics": "annual subsidy from the government",
               "mapping_status": "2011 baseline questionnaire and Codebook item, route, amount period, and unit reviewed; candidate only",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures. Asked only in the 2011 selected rural/residents/urban-residents pension route (FN002=3/4/5) after FN009=Yes. Preserve the FN011 Codebook form selector (1=annual, 2=lump sum) and pair it with the corresponding amount component; the questionnaire displays annual and lump-sum blanks together with 'or'. Keep subsidy payer explicit in the source field. Do not interpret skipped or nonselected-form values as zero; participant-level special missing codes and selector/component consistency require authorized-data QA."
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_platelets",
+          "label": "血小板计数",
+          "domain": "血常规",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qc1_vb009",
+              "label": "qc1_vb009",
+              "module": "Blood_Assays",
+              "unit": "10^9/L",
+              "value_labels": "",
+              "value_semantics": "血小板计数；与2015 bl_plt对应。",
+              "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_bun",
+          "label": "血尿素氮",
+          "domain": "肾功能",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "newbun",
+              "label": "newbun",
+              "module": "Blood_Assays",
+              "unit": "mg/dL",
+              "value_labels": "",
+              "value_semantics": "BUN；与2015 bl_bun对应。 | 当前本地可用血液化验仅2011波",
+              "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight | measured",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对 | 当前本地可用血液化验仅2011波"
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_glucose",
+          "label": "血糖",
+          "domain": "糖代谢",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "newglu",
+              "label": "newglu",
+              "module": "Blood_Assays",
+              "unit": "mg/dL",
+              "value_labels": "",
+              "value_semantics": "血糖；须同时保留是否空腹字段，不应默认均为空腹采血。 | 当前本地可用血液化验仅2011波",
+              "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight | measured",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对 | 当前本地可用血液化验仅2011波"
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_hemoglobin",
+          "label": "血红蛋白",
+          "domain": "血常规",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "qc1_vb004",
+              "label": "qc1_vb004",
+              "module": "Blood_Assays",
+              "unit": "g/dL",
+              "value_labels": "",
+              "value_semantics": "血红蛋白浓度；与2015 bl_hgb对应。",
+              "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
             }
           ]
         },
@@ -16559,6 +16874,27 @@
               "caveat": "Retrospective first-hukou location relation; only asked on the BC009=1/3 route. Preserve the 2011 reference categories; exclude detailed geography fields."
             }
           ]
+        },
+        {
+          "concept_id": "blood_hdl",
+          "label": "高密度脂蛋白胆固醇",
+          "domain": "血脂",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "newhdl",
+              "label": "newhdl",
+              "module": "Blood_Assays",
+              "unit": "mg/dL",
+              "value_labels": "",
+              "value_semantics": "HDL-C；与2015 bl_hdl对应。 | 当前本地可用血液化验仅2011波",
+              "mapping_status": "本地目录已核；需结合原始血检文件与 bloodweight | measured",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对 | 当前本地可用血液化验仅2011波"
+            }
+          ]
         }
       ],
       "phenotypes": [
@@ -16787,6 +17123,7 @@
           "label": "C反应蛋白",
           "domain": "炎症",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -17593,6 +17930,7 @@
           "label": "低密度脂蛋白胆固醇",
           "domain": "血脂",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -18313,6 +18651,7 @@
           "label": "尿酸",
           "domain": "肾/代谢",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -18333,6 +18672,7 @@
           "label": "平均红细胞体积",
           "domain": "血常规",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -18433,6 +18773,7 @@
           "label": "总胆固醇",
           "domain": "血脂",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -19104,6 +19445,7 @@
           "label": "甘油三酯",
           "domain": "血脂",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -19144,6 +19486,7 @@
           "label": "白细胞计数",
           "domain": "血常规",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -19204,6 +19547,7 @@
           "label": "糖化血红蛋白",
           "domain": "糖代谢",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -19374,6 +19718,7 @@
           "label": "红细胞压积",
           "domain": "血常规",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -19394,6 +19739,7 @@
           "label": "肌酐",
           "domain": "肾功能",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -19414,6 +19760,7 @@
           "label": "胱抑素C",
           "domain": "肾功能",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -21644,6 +21991,7 @@
           "label": "血小板计数",
           "domain": "血常规",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -21664,6 +22012,7 @@
           "label": "血尿素氮",
           "domain": "肾功能",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -21684,6 +22033,7 @@
           "label": "血糖",
           "domain": "糖代谢",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -21704,6 +22054,7 @@
           "label": "血红蛋白",
           "domain": "血常规",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -22474,6 +22825,7 @@
           "label": "高密度脂蛋白胆固醇",
           "domain": "血脂",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -46367,9 +46719,9 @@
       ]
     },
     "2015": {
-      "exposure_count": 579,
+      "exposure_count": 595,
       "phenotype_count": 239,
-      "candidate_pair_count": 138373,
+      "candidate_pair_count": 142181,
       "exposures": [
         {
           "concept_id": "pension_2015_urban_residents_personal_supplementary_repayment_amount",
@@ -47478,6 +47830,27 @@
               "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md",
               "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release. 2011 uses village/community and county/province anchors; 2013/2015 refer to permanent address and include abroad; 2018 uses its own permanent/current-residence wording and location detail. 2013/2015 FD002=6/7 routes skip this field. The same code in 2020 means number of employees and is excluded."
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_crp",
+          "label": "C反应蛋白",
+          "domain": "炎症",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "bl_crp",
+              "label": "bl_crp",
+              "module": "Blood_Data_2015_Independent_Release",
+              "unit": "mg/L",
+              "value_labels": "",
+              "value_semantics": "CHARLS血检发布说明称CRP/高敏CRP；分析前需以对应波次实验室文档确认检测定义。",
+              "mapping_status": "Official release note confirms the file; local copy is currently absent",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
             }
           ]
         },
@@ -54239,6 +54612,27 @@
           ]
         },
         {
+          "concept_id": "blood_ldl",
+          "label": "低密度脂蛋白胆固醇",
+          "domain": "血脂",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "bl_ldl",
+              "label": "bl_ldl",
+              "module": "Blood_Data_2015_Independent_Release",
+              "unit": "mg/dL",
+              "value_labels": "",
+              "value_semantics": "LDL-C；与2015 bl_ldl对应。",
+              "mapping_status": "Official release note confirms the file; local copy is currently absent",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
+            }
+          ]
+        },
+        {
           "concept_id": "dwelling_housing_land_area",
           "label": "住宅占地面积",
           "domain": "housing and built environment",
@@ -59489,6 +59883,27 @@
           ]
         },
         {
+          "concept_id": "blood_uric_acid",
+          "label": "尿酸",
+          "domain": "肾/代谢",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "bl_ua",
+              "label": "bl_ua",
+              "module": "Blood_Data_2015_Independent_Release",
+              "unit": "mg/dL",
+              "value_labels": "",
+              "value_semantics": "尿酸；与2015 bl_ua对应。",
+              "mapping_status": "Official release note confirms the file; local copy is currently absent",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
+            }
+          ]
+        },
+        {
           "concept_id": "residential_settlement_type",
           "label": "居住地址城乡/聚落类别",
           "domain": "social determinants",
@@ -59785,6 +60200,27 @@
               "value_semantics": "age eligibility and receipt status when the scheme began",
               "mapping_status": "2015 Wave 3 questionnaire and Codebook exact item/route reviewed; candidate only",
               "caveat": "Urban residents' pension route, conditional on FN057_W3_0 selection. Retain all three nominal states. Preserve structural skips; do not infer No or zero. Codebook frequencies are not analysis sample sizes."
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_mcv",
+          "label": "平均红细胞体积",
+          "domain": "血常规",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "bl_mcv",
+              "label": "bl_mcv",
+              "module": "Blood_Data_2015_Independent_Release",
+              "unit": "fL",
+              "value_labels": "",
+              "value_semantics": "MCV；与2015 bl_mcv对应。",
+              "mapping_status": "Official release note confirms the file; local copy is currently absent",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
             }
           ]
         },
@@ -60755,6 +61191,27 @@
               "value_semantics": "years from interview until expected receipt of land-requisition pension",
               "mapping_status": "official questionnaire/codebook item; candidate mapping; route and analysis eligibility require review",
               "caveat": "FN079_W2_8按征地养老金路径询问响应格式，_1为年龄、_2为距访谈年数；仅在对应征地养老金计划路由下适用。年龄与年数不可合并，跳题不是否定或0。"
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_total_cholesterol",
+          "label": "总胆固醇",
+          "domain": "血脂",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "bl_cho",
+              "label": "bl_cho",
+              "module": "Blood_Data_2015_Independent_Release",
+              "unit": "mg/dL",
+              "value_labels": "",
+              "value_semantics": "总胆固醇；与2015 bl_cho对应。",
+              "mapping_status": "Official release note confirms the file; local copy is currently absent",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
             }
           ]
         },
@@ -62080,6 +62537,48 @@
           ]
         },
         {
+          "concept_id": "blood_triglycerides",
+          "label": "甘油三酯",
+          "domain": "血脂",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "bl_tg",
+              "label": "bl_tg",
+              "module": "Blood_Data_2015_Independent_Release",
+              "unit": "mg/dL",
+              "value_labels": "",
+              "value_semantics": "2015发布说明标注高值截顶至500 mg/dL，并提供截顶标记。",
+              "mapping_status": "Official release note confirms the file; local copy is currently absent",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_wbc",
+          "label": "白细胞计数",
+          "domain": "血常规",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "bl_wbc",
+              "label": "bl_wbc",
+              "module": "Blood_Data_2015_Independent_Release",
+              "unit": "1000 cells/μL",
+              "value_labels": "",
+              "value_semantics": "白细胞计数；与2015 bl_wbc对应。",
+              "mapping_status": "Official release note confirms the file; local copy is currently absent",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
+            }
+          ]
+        },
+        {
           "concept_id": "sleep_restless",
           "label": "睡眠不安单题",
           "domain": "心理/睡眠",
@@ -62136,6 +62635,48 @@
               "value_semantics": "coarse geographic scope of social pension participation",
               "mapping_status": "2015 Wave 3 questionnaire and Codebook exact item/route reviewed; candidate only",
               "caveat": "Urban residents' pension plan; preserve plan context. Preserve structural skips; do not infer No or zero. Codebook frequencies are not analysis sample sizes."
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_hba1c",
+          "label": "糖化血红蛋白",
+          "domain": "糖代谢",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "bl_hbalc",
+              "label": "bl_hbalc",
+              "module": "Blood_Data_2015_Independent_Release",
+              "unit": "%",
+              "value_labels": "",
+              "value_semantics": "糖化血红蛋白；与2015 bl_hbalc对应。",
+              "mapping_status": "Official release note confirms the file; local copy is currently absent",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_hematocrit",
+          "label": "红细胞压积",
+          "domain": "血常规",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "bl_hct",
+              "label": "bl_hct",
+              "module": "Blood_Data_2015_Independent_Release",
+              "unit": "%",
+              "value_labels": "",
+              "value_semantics": "红细胞压积；与2015 bl_hct对应。",
+              "mapping_status": "Official release note confirms the file; local copy is currently absent",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
             }
           ]
         },
@@ -62216,6 +62757,48 @@
               "value_semantics": "since prior interview or route-defined reference period; continuous count; preserve source units and special values",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and value review required",
               "caveat": "The count is asked conditionally after training participation. 2018 BD013/BD013_W4 have route-specific reference periods. Codebook summary statistics are metadata only and must not be treated as participant-level values."
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_creatinine",
+          "label": "肌酐",
+          "domain": "肾功能",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "bl_crea",
+              "label": "bl_crea",
+              "module": "Blood_Data_2015_Independent_Release",
+              "unit": "mg/dL",
+              "value_labels": "",
+              "value_semantics": "肌酐；与2015 bl_crea对应。",
+              "mapping_status": "Official release note confirms the file; local copy is currently absent",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_cystatin_c",
+          "label": "胱抑素C",
+          "domain": "肾功能",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "bl_cysc",
+              "label": "bl_cysc",
+              "module": "Blood_Data_2015_Independent_Release",
+              "unit": "mg/L",
+              "value_labels": "",
+              "value_semantics": "2011指南说明为采血者中的年龄分层子样本检测；不可按全体血样参与者处理。",
+              "mapping_status": "Official release note confirms the file; local copy is currently absent",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
             }
           ]
         },
@@ -62406,6 +62989,90 @@
               "value_semantics": "reported financial old-age support source",
               "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_platelets",
+          "label": "血小板计数",
+          "domain": "血常规",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "bl_plt",
+              "label": "bl_plt",
+              "module": "Blood_Data_2015_Independent_Release",
+              "unit": "10^9/L",
+              "value_labels": "",
+              "value_semantics": "血小板计数；与2015 bl_plt对应。",
+              "mapping_status": "Official release note confirms the file; local copy is currently absent",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_bun",
+          "label": "血尿素氮",
+          "domain": "肾功能",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "bl_bun",
+              "label": "bl_bun",
+              "module": "Blood_Data_2015_Independent_Release",
+              "unit": "mg/dL",
+              "value_labels": "",
+              "value_semantics": "BUN；与2015 bl_bun对应。",
+              "mapping_status": "Official release note confirms the file; local copy is currently absent",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_glucose",
+          "label": "血糖",
+          "domain": "糖代谢",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "bl_glu",
+              "label": "bl_glu",
+              "module": "Blood_Data_2015_Independent_Release",
+              "unit": "mg/dL",
+              "value_labels": "",
+              "value_semantics": "血糖；须同时保留是否空腹字段，不应默认均为空腹采血。",
+              "mapping_status": "Official release note confirms the file; local copy is currently absent",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
+            }
+          ]
+        },
+        {
+          "concept_id": "blood_hemoglobin",
+          "label": "血红蛋白",
+          "domain": "血常规",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "bl_hgb",
+              "label": "bl_hgb",
+              "module": "Blood_Data_2015_Independent_Release",
+              "unit": "g/dL",
+              "value_labels": "",
+              "value_semantics": "血红蛋白浓度；与2015 bl_hgb对应。",
+              "mapping_status": "Official release note confirms the file; local copy is currently absent",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
             }
           ]
         },
@@ -63530,6 +64197,27 @@
           ]
         },
         {
+          "concept_id": "blood_hdl",
+          "label": "高密度脂蛋白胆固醇",
+          "domain": "血脂",
+          "roles": [
+            "e",
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "bl_hdl",
+              "label": "bl_hdl",
+              "module": "Blood_Data_2015_Independent_Release",
+              "unit": "mg/dL",
+              "value_labels": "",
+              "value_semantics": "HDL-C；与2015 bl_hdl对应。",
+              "mapping_status": "Official release note confirms the file; local copy is currently absent",
+              "caveat": "静脉血实验室检测；波次参与及具体检测资格按血检文件/官方说明核对"
+            }
+          ]
+        },
+        {
           "concept_id": "old_age_subsidy_card_voucher_use_2015",
           "label": "高龄老人养老卡/券用途（2015）",
           "domain": "Social protection",
@@ -63926,6 +64614,7 @@
           "label": "C反应蛋白",
           "domain": "炎症",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -64993,6 +65682,7 @@
           "label": "低密度脂蛋白胆固醇",
           "domain": "血脂",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -66283,6 +66973,7 @@
           "label": "尿酸",
           "domain": "肾/代谢",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -66303,6 +66994,7 @@
           "label": "平均红细胞体积",
           "domain": "血常规",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -66403,6 +67095,7 @@
           "label": "总胆固醇",
           "domain": "血脂",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -66794,6 +67487,7 @@
           "label": "甘油三酯",
           "domain": "血脂",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -66884,6 +67578,7 @@
           "label": "白细胞计数",
           "domain": "血常规",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -66944,6 +67639,7 @@
           "label": "糖化血红蛋白",
           "domain": "糖代谢",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -67234,6 +67930,7 @@
           "label": "红细胞压积",
           "domain": "血常规",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -67254,6 +67951,7 @@
           "label": "肌酐",
           "domain": "肾功能",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -67274,6 +67972,7 @@
           "label": "胱抑素C",
           "domain": "肾功能",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -70144,6 +70843,7 @@
           "label": "血小板计数",
           "domain": "血常规",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -70164,6 +70864,7 @@
           "label": "血尿素氮",
           "domain": "肾功能",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -70184,6 +70885,7 @@
           "label": "血糖",
           "domain": "糖代谢",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -70204,6 +70906,7 @@
           "label": "血红蛋白",
           "domain": "血常规",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [
@@ -70884,6 +71587,7 @@
           "label": "高密度脂蛋白胆固醇",
           "domain": "血脂",
           "roles": [
+            "e",
             "p"
           ],
           "source_fields": [

@@ -15,3 +15,7 @@ The current crosswalk contains 108 wave-field keys. The rebuild removed 36 autom
 The targeted candidate-role and objective-measurement tests pass (9 tests). The complete metadata finalization pipeline rebuilt the public shards and candidate-pair index. Public E/P/C catalogue shards contain 4,790 / 2,093 / 980 rows. Metadata co-availability counts and candidate roles are not respondent counts, analytic eligibility, statistical results, or approval to test an association. No respondent-level records were read or published. Formal association models and actual pairwise analytic sample sizes remain 0.
 
 The full Python test suite passes (373 tests); all 34 static JSON files parse, JavaScript syntax and Python compilation pass, all 92 `DO NOT ANALYZE` locks match the triage list, and `git diff --check` passes. Commit `53f40e5` was pushed to `main`; GitHub Pages Deploy run [40122389529](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40122389529) completed successfully. The public homepage returned HTTP 200 and live E/P/C shard counts matched the local build.
+
+## 后续更新（2026-10-25）
+
+原审计中所述 13 个交叉表外的内部生物标志物 E 发现项，已由 [`internal_biomarker_exposure_role_review_2026-10-25.md`](internal_biomarker_exposure_role_review_2026-10-25.md) 作出明确的可选内部E候选决定，并在血检 crosswalk 中补齐 E/P 来源角色。该决定只涉及实验室血液分析物，不扩大客观体格/功能测量角色；客观测量仍为 P-only 候选。候选配对仍需遵守血检权重、子样本资格、波次校准和非方向性解释限制。

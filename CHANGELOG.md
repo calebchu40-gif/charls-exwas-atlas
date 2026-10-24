@@ -1,3 +1,5 @@
+- Reconciled blood biomarker roles across the exposure catalogue, phenotype catalogue, source crosswalk, and pair explorer: 16 officially documented analytes in 2011/2015 now have optional internal-biomarker E and P candidate mappings. They are explicitly distinguished from exogenous environmental chemicals; wave-specific blood weights, eligibility, non-directional same-wave interpretation, self-pair exclusion and assay comparability gates are documented. Rebuilt metadata: E/P/C=4,845/2,082/982 rows, 1,486 E/P concepts and 6,821 source mappings; formal association models remain 0.
+
 ## 2026-10-25 续
 
 - 按 CHARLS 2013/2015 官方问卷与 Codebook 新增子女记录背景候选：19个 E 类波次—字段、12个概念；另将2015年两项年龄路由的子女健康/自理项目作为2个 P 类子女层表型候选，避免与受访者表型混淆。保留路由、波次编码差异、收入分档、极端距离值和2015活动字段未标注代码24等限制。官方原始字段目录显示两个 Child 模块均含 `ID`、`childID`、`HHmemberID`；需在获批发行版核验键、连接和聚类分析单位。未构造受访者层暴露或运行模型。审计见 `audit/child_roster_context_source_review_2026-10-25.md`。

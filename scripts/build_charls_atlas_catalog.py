@@ -107,6 +107,17 @@ def main() -> None:
             for code in str(item.variables).split(";")
             if str(item.wave).strip() in WAVES and code.strip()
         }
+    blood_path = Path(__file__).resolve().parents[1] / "audit" / "blood_biomarker_crosswalk_v1.csv"
+    blood_field_wave_keys: set[tuple[str, str]] = set()
+    if blood_path.exists():
+        blood_keys = pd.read_csv(blood_path, dtype=str, encoding="utf-8-sig").fillna("")
+        blood_field_wave_keys = {
+            (str(item.wave).strip(), str(item.variable).strip().lower())
+            for item in blood_keys.itertuples(index=False)
+            if str(item.wave).strip() in WAVES
+            and str(item.variable).strip()
+            and str(item.concept_id).strip() != "blood_collection_metadata"
+        }
     # Crosswalk enrichment resolves the module for thousands of source-field
     # rows. Pre-index the small lookup once instead of repeatedly scanning the
     # full pandas table for every field (which dominated catalog-build time).
@@ -401,6 +412,12 @@ def main() -> None:
                 if (role == "e,p" and (row.wave, var.lower()) in objective_field_wave_keys):
                     matched = True
                     continue
+                # Blood analytes have a wave-specific official crosswalk that
+                # supplies their phenotype and optional internal-biomarker E
+                # roles. Skip broad discovery rows for these exact fields.
+                if (row.wave, var.lower()) in blood_field_wave_keys and role in {"e,p", "p"}:
+                    matched = True
+                    continue
                 # GE005/GF005 asks a household respondent how many meals the
                 # household provided to guests. It is a household social-
                 # reciprocity measure, not personal diet/food exposure; the
@@ -615,6 +632,10 @@ def main() -> None:
                 # Selector and open-text rows are C-only metadata; only the
                 # numeric percentage components belong in the E candidate catalog.
                 continue
+            if file == "blood_biomarker_crosswalk_v1.csv" and concept == "blood_collection_metadata":
+                # Fasting and triglyceride top-coding are collection/processing
+                # context, not analyte exposure or phenotype concepts.
+                continue
             cat = category(concept, item) if callable(category) else category
             sub = subcategory(concept, item) if callable(subcategory) else subcategory
             module = canonical_module(wave, code, str(item.get(module_col, "")).strip() or "official crosswalk")
@@ -809,6 +830,10 @@ def main() -> None:
                              lambda concept, item: item.get("domain", "family and intergenerational context"),
                              lambda concept, item: item.get("subcategory", "child education and schooling context"),
                              "e", "mapping_status", ("construct", "unit", "value_semantics", "value_labels", "caveat"))
+    append_concept_crosswalk("blood_biomarker_crosswalk_v1.csv", "wave", "variable", "concept_id", "concept_label", "module",
+                             "internal biomarker",
+                             "internal clinical biomarker; optional exposure candidate, not an exogenous environmental chemical",
+                             "e", "source_status", ("unit", "value_semantics", "collection_scope", "weight_field", "role_boundary", "cross_wave_comparability"))
     append_concept_crosswalk("child_education_source_conflict_crosswalk_v1.csv", "wave", "code", "concept_id", "source_label", "module",
                              lambda concept, item: item.get("domain", "measurement metadata"),
                              lambda concept, item: item.get("subcategory", "child education questionnaire/Codebook source conflict"),
@@ -863,7 +888,6 @@ def main() -> None:
     # Laboratory assays are released separately from the wave-level interview
     # module inventory. In particular, 2015 bl_* fields are absent from the
     # raw module catalog but confirmed by CHARLS's official blood release note.
-    blood_path = Path(__file__).resolve().parents[1] / "audit" / "blood_biomarker_crosswalk_v1.csv"
     if blood_path.exists():
         blood = pd.read_csv(blood_path, dtype=str, encoding="utf-8-sig").fillna("")
         for item in blood.to_dict(orient="records"):
@@ -1970,10 +1994,9 @@ def main() -> None:
     out.loc[math_answers, "Value.Label.Review"] = "continuous raw subtraction response; Codebook extreme maxima occur; valid range and scoring require authorized raw-data QA"
     out.loc[math_answers, "Value.Label.Source"] = "wave-specific official CHARLS Codebook; audit/cognition_item_variable_mapping_v1.csv"
     out.loc[math_answers, "Harmonization.Status"] = "raw recorded subtraction response; do not score or define valid range from Codebook summaries; inspect authorized release before analysis"
-    # Objective biomarkers, blood assays and physical measurements are
-    # continuous internal clinical measures, not environmental exposure
-    # analytes. Keep their dual-role discovery tag but make this distinction
-    # explicit and cite the wave-specific official instrument/document.
+    # Continuous internal clinical measurements are not external environmental
+    # chemicals. Blood analytes have an explicit optional E role from their
+    # official crosswalk; objective physical measurements remain P candidates.
     internal_measure = out["category"].eq("internal biomarker") & out["Value.Label.Review"].eq("not yet reviewed")
     for idx in out.index[internal_measure]:
         wave = str(out.at[idx, "Source.Wave"])
@@ -1986,8 +2009,12 @@ def main() -> None:
             refs = f"sources_official/CHARLS_{wave}_Codebook_extracted.txt; sources_official/CHARLS_{wave}_Biomarker_Questionnaire_extracted.txt"
         out.at[idx, "Value.Label.Review"] = "continuous measure metadata available"
         out.at[idx, "Value.Label.Source"] = refs
-        out.at[idx, "Harmonization.Status"] = "continuous internal biomarker/clinical or physical measure; not an exogenous environmental exposure. Candidate phenotype; role as exposure is estimand-dependent. Preserve wave-specific protocol and units; cross-wave harmonization not approved."
-        out.at[idx, "subcategory"] = "internal clinical/physiological measure; phenotype candidate, not exogenous environmental exposure"
+        if "e" in str(out.at[idx, "epcf"]).lower().split(","):
+            out.at[idx, "Harmonization.Status"] = "continuous internal blood biomarker; optional internal-exposome E candidate, not an exogenous environmental chemical. E role is a candidate mapping only; specify estimand and sample eligibility before modeling. Preserve wave-specific blood weight, protocol, and non-directional cross-sectional interpretation; cross-wave harmonization not approved."
+            out.at[idx, "subcategory"] = "internal biomarker exposure candidate; not an exogenous environmental chemical"
+        else:
+            out.at[idx, "Harmonization.Status"] = "continuous internal biomarker/clinical or physical measure; not an exogenous environmental exposure. Candidate phenotype; preserve wave-specific protocol and units; cross-wave harmonization not approved."
+            out.at[idx, "subcategory"] = "internal clinical/physiological measure; phenotype candidate, not exogenous environmental exposure"
     community_value_path = root / "audit" / "community_exposure_value_labels_v1.csv"
     if community_value_path.exists():
         community_values = pd.read_csv(community_value_path, dtype=str, encoding="utf-8-sig").fillna("")

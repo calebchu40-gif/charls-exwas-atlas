@@ -101,6 +101,7 @@ e,family and intergenerational context,sibling record context,6,3,1
 e,food and household environment,"diet, food security, housing and utilities",161,58,5
 e,housing and built environment,dwelling conditions and household property,477,440,4
 e,housing and built environment,residential setting,3,3,2
+e,internal biomarker,internal biomarker exposure candidate; not an exogenous environmental chemical,32,32,2
 e,life-course and reproductive history,reproductive timing,8,2,4
 e,social determinants,adult education and lifelong learning,13,12,3
 e,social determinants,annual wage/salary amount reported for household-member roster slots,22,12,2
@@ -153,7 +154,6 @@ e,social protection,string-coded years since firm-pension transfer,2,2,1
 e,social protection,threshold-specific pension expected-benefit bracket response sequence,8,8,1
 e,social protection,years enrolled in the named pension plan,1,1,1
 "e,p",healthcare access,"insurance, outpatient and inpatient utilization",109,66,5
-"e,p",internal biomarker,"internal clinical/physiological measure; phenotype candidate, not exogenous environmental exposure",13,13,1
 p,anthropometric,body size and anthropometry,24,5,3
 p,biochemistry,blood and urine laboratory measures,32,32,2
 p,blood pressure,blood pressure and pulse,54,9,3
