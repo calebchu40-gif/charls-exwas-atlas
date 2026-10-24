@@ -137,7 +137,8 @@ def update_json(path: Path, wave_key: str, code_key: str) -> int:
             row["value_label_status"] = review
             if "note" in row:
                 row["note"] = row["mapping_status"]
-    text = json.dumps(rows, ensure_ascii=False, indent=2) + "\n" if wave_key == "wave" else json.dumps(rows, ensure_ascii=False, separators=(",", ":"))
+    pretty_json = wave_key == "wave" and path.name != "housing_catalog_v1.json"
+    text = json.dumps(rows, ensure_ascii=False, indent=2) + "\n" if pretty_json else json.dumps(rows, ensure_ascii=False, separators=(",", ":"))
     path.write_text(text, encoding="utf-8")
     return len(selected)
 

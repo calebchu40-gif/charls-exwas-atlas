@@ -88,7 +88,8 @@ def patch_json(path: Path, wave_key: str, code_key: str) -> int:
                 row["note"] = row["mapping_status"]
             row["caveat"] = FIELDS[(wave, code)][1]
             row["value_label_status"] = review_status(wave, code, FIELDS[(wave, code)][0])
-    text = json.dumps(rows, ensure_ascii=False, indent=2) + "\n" if wave_key == "wave" else json.dumps(rows, ensure_ascii=False, separators=(",", ":"))
+    pretty_json = wave_key == "wave" and path.name != "housing_catalog_v1.json"
+    text = json.dumps(rows, ensure_ascii=False, indent=2) + "\n" if pretty_json else json.dumps(rows, ensure_ascii=False, separators=(",", ":"))
     path.write_text(text, encoding="utf-8")
     return len(selected)
 
