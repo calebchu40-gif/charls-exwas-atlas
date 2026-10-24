@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import warnings
 
 import numpy as np
 import polars as pl
@@ -521,6 +522,50 @@ def main() -> None:
         "psus": 18,
         "reference": "low",
         "contrasts_match_manual_score_sandwich": category_checks,
+    }
+
+    # Perfect separation must be surfaced and cannot produce a releasable fit.
+    separated_rows = []
+    for h in range(6):
+        for p in range(3):
+            for person in range(12):
+                exposure_value = person % 2
+                separated_rows.append(
+                    {
+                        "stratum": h,
+                        "psu": f"{h}-{p}",
+                        "exposure": exposure_value,
+                        "outcome": exposure_value,
+                        "weight": 1.0,
+                    }
+                )
+    separated_data = pl.DataFrame(separated_rows)
+    separated_sample = svy.Sample(
+        data=separated_data,
+        design=svy.Design(stratum="stratum", psu="psu", wgt="weight", wr=True),
+    )
+    with warnings.catch_warnings(record=True) as caught:
+        warnings.simplefilter("always")
+        separated_result = separated_sample.glm.fit(
+            y="outcome", x=["exposure"], family="binomial", link="logit"
+        ).to_polars().to_dicts()
+    separation_warning = any("GLM_SEPARATION" in str(item.message) for item in caught)
+    nonfinite_uncertainty = any(
+        not np.isfinite(row["std_err"])
+        or not np.isfinite(row["p_value"])
+        or not np.isfinite(row["conf_low"])
+        or not np.isfinite(row["conf_high"])
+        for row in separated_result
+    )
+    if not separation_warning or not nonfinite_uncertainty:
+        raise AssertionError(
+            "Perfectly separated synthetic logit must warn and return non-finite uncertainty"
+        )
+    outputs["synthetic_perfect_separation"] = {
+        "n": separated_data.height,
+        "warning_code_detected": "GLM_SEPARATION" if separation_warning else "missing",
+        "nonfinite_uncertainty_detected": nonfinite_uncertainty,
+        "release_interpretation": "inestimable; do not publish the finite iteration coefficients",
     }
 
     print(json.dumps({"svy_version": version, "synthetic_only": True, "outputs": outputs}, indent=2))

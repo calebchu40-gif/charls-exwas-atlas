@@ -45,6 +45,8 @@ A second synthetic logistic model treats a three-level exposure as a factor and 
 
 This exercises an explicit categorical reference in a synthetic, adequately populated example; it does not establish a CHARLS wave's harmonized categories, eligible denominator, or minimum category support. The CHARLS codebook must define the category semantics and route before a real pair can be specified.
 
+A third fixture sets a binary outcome equal to a binary exposure across all 216 synthetic records. The pinned engine emits the `GLM_SEPARATION` warning and returns finite iteration coefficients together with `NaN` standard errors, intervals, and p values. Those coefficient values are not finite estimates and must not be released. The project's result validator already permits `fit_status=inestimable` only with blank estimate fields and rejects estimate fields for every non-success status; production code should map this warning/non-finite uncertainty to `inestimable`, keep a sanitized diagnostic, and never mark it successful. This check covers complete separation in one synthetic fixture; it does not validate every quasi-separation, sparse-cell, or convergence case.
+
 The point estimates match because the records and weights are unchanged. The standard errors and design degrees of freedom differ substantially in this constructed example. The example intentionally contains strong between-stratum differences; this is an illustration of sensitivity to the declared design, not a general theorem that omitting strata always increases uncertainty. The CRAN `survey` manual likewise treats stratification and cluster structure as explicit design inputs and documents the ultimate-cluster option for multistage variance estimation.
 
 ## Domain filtering and singleton PSUs
