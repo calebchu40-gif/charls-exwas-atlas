@@ -11,8 +11,9 @@
 - `sources_official/CHARLS_2013_Wave2_Release_Note_extracted.txt` 第62行附近：individualID、householdID和communityID可匹配到基线样本对应记录；说明community IDs相同，同时警告householdID格式不同。此处采用的只是社区ID说明，不采用个体或家庭ID假定。
 - `sources_official/CHARLS_2018_Users_Guide_extracted.txt` 第529行附近：ID、householdID和communityID可与前序波次对应ID匹配；指南还指出基线householdID和ID需要按Wave 2发布说明调整。
 - `sources_official/CHARLS_2020_User_Guide_English_extracted.txt` 第508行附近：同样说明三类ID可与前序波次对应记录匹配，并提示基线ID调整。
+- `sources_official/CHARLS_2018_Users_Guide_extracted.txt` 第348–355行附近：CHARLS称会尽量面对面追访受访者，不论其迁居到何处，并说明会用既有联系信息寻找迁居者。因此不能假设迁居者不再追访；当前浏览器也没有连接个人迁移史或目的地字段。
 
-官方ID说明支持研究者检查跨波次社区键的可连接性，但不能证明每名受访者持续居住在基线社区，也不能确定某社区题项是否适合代表随访时期的暴露。项目已有`audit/charls_psu_mapping_aggregate_v1.csv`仅为旧版聚合键覆盖核查，并明确标记`aggregate_key_coverage_only_not_variance_design_validation`；它不是本次跨波次连接，也不构成方差设计验证。
+官方ID说明支持研究者检查跨波次社区键的可连接性，但不能证明每名受访者持续居住在基线社区，也不能确定某社区题项是否适合代表随访时期的暴露。CHARLS会尽量追访迁居者，因此正式队列定义应核查迁移状态及目的地。项目已有`audit/charls_psu_mapping_aggregate_v1.csv`仅为旧版聚合键覆盖核查，并明确标记`aggregate_key_coverage_only_not_variance_design_validation`；它不是本次跨波次连接，也不构成方差设计验证。
 
 ## 正式分析前仍需核查
 

@@ -64,7 +64,8 @@ class CandidatePairExplorerTests(unittest.TestCase):
         app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
         self.assertIn('id="candidatePairDesign"', html)
         self.assertIn('id="candidatePairLongitudinalNote"', html)
-        self.assertIn("无法判断受访者是否迁居", html)
+        self.assertIn("未连接个人迁移史", html)
+        self.assertIn("会尽量追访迁居者", html)
         self.assertIn("data.baseline_community_to_followup", app)
 
     def test_page_exposes_candidate_pair_view_without_claiming_results(self):
