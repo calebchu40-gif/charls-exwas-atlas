@@ -2,6 +2,8 @@
 
 Updated 2026-10-24. Project repository: <https://github.com/calebchu40-gif/charls-exwas-atlas>. Public metadata prototype: <https://calebchu40-gif.github.io/charls-exwas-atlas/>.
 
+Latest continuation: synthetic survey-domain and pairwise-complete software checks are complete, but they do not authorize or validate CHARLS models. A repository privacy-inventory regression test now blocks tracked licensed respondent-data formats and local pairwise/QA count outputs; the local `core_pairwise_complete_n_v1.csv` is ignored and untracked. All 266 local tests pass, and GitHub Validate [#248](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40058708473) succeeded for commit `d6e7f87`. Formal models and actual analytic pair Ns remain 0 while official wave/sample flags, weights, PSU and variance-design fields, and module eligibility are unresolved.
+
 The 2026-10-24 private core-coverage refresh is recorded in [`core_coverage_gate_refresh_review_2026-10-24.md`](core_coverage_gate_refresh_review_2026-10-24.md). Its pair-level availability outputs remain under the local protected QA root. The missing 2013 official sample flags continue to gate that wave; no refreshed private counts are included here.
 
 The protected five-wave table integrity check was rerun on 2026-10-24: 2011, 2015, 2018 and 2020 passed structure/ID checks; 2013 remains `CHECK` because the required official `crosssection` and `longitudinal` flags are absent. A recursive filename check found no incoming official Wave 2 `Weights.dta`; the local intake folder remains empty. Aggregate validation output stays under `%LOCALAPPDATA%/CHARLS_ExWAS_Atlas/qa_outputs/` and is not part of the repository.
