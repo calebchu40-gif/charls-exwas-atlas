@@ -551,8 +551,7 @@ def main() -> None:
                 continue
             description = str(item.get(label_col, "")).strip() or code
             note = str(item.get(note_col, "")).strip() if note_col else ""
-            raw = source[(source.wave == wave) & (source.variable.str.lower() == code.lower())]
-            archive = raw.iloc[0].source if not raw.empty else "official audit crosswalk"
+            archive = archive_by_wave_variable.get((wave, code.lower()), "official audit crosswalk")
             outputs.append({
                 "Variable.Name": code, "Variable.Description": description,
                 "Data.File.Name": module, "Data.File.Description": module.replace("_", " "),
@@ -609,6 +608,17 @@ def main() -> None:
     append_audited_crosswalk("food_environment_crosswalk_v1.csv", "wave", "code", "module", "source_label",
                              "food and household environment", "diet, food security, housing and utilities", "caveat")
 
+    # Many curated crosswalk rows match fields already present in the broad
+    # catalogue. Index those row references once so each match does not rescan
+    # the full output list.
+    output_rows_by_wave_code: dict[tuple[str, str], list[dict[str, str]]] = {}
+    for output_row in outputs:
+        output_key = (
+            str(output_row.get("Source.Wave", "")),
+            str(output_row.get("Variable.Name", "")).lower(),
+        )
+        output_rows_by_wave_code.setdefault(output_key, []).append(output_row)
+
     def append_concept_crosswalk(file: str, wave_col: str, code_col: str, concept_col: str,
                                  label_col: str, module_col: str, category: str, subcategory,
                                  role: str, status_col: str, detail_cols: tuple[str, ...]) -> None:
@@ -648,10 +658,8 @@ def main() -> None:
                 # the original source/module row, but replace its misleading
                 # automated-review status with the crosswalk provenance.
                 matching_rows = [
-                    row for row in outputs
-                    if str(row.get("Source.Wave", "")) == wave
-                    and str(row.get("Variable.Name", "")).lower() == code.lower()
-                    and role in str(row.get("epcf", "")).lower().split(",")
+                    row for row in output_rows_by_wave_code.get((wave, code.lower()), [])
+                    if role in str(row.get("epcf", "")).lower().split(",")
                 ]
                 for prior in matching_rows:
                     status = str(prior.get("Candidate.Status", "")).lower()
@@ -665,7 +673,7 @@ def main() -> None:
             label = str(item.get(label_col, "")).strip() or code
             archive = archive_by_wave_variable.get((wave, code.lower()), f"audit/{file}")
             detail = "; ".join(str(item.get(col, "")).strip() for col in detail_cols if str(item.get(col, "")).strip())
-            outputs.append({
+            new_row = {
                 "Variable.Name": code, "Variable.Description": label,
                 "Data.File.Name": module, "Data.File.Description": module.replace("_", " "),
                 "Begin.Year": wave, "EndYear": wave, "Component": module,
@@ -675,7 +683,9 @@ def main() -> None:
                 "Candidate.Status": f"concept-source crosswalk candidate; see audit/{file}",
                 "Harmonization.Status": detail or f"candidate mapping to {concept}; confirm source routing and wave compatibility",
                 "Review.Flag": "preserve source item and mapping status; candidate concept is not yet an approved test variable",
-            })
+            }
+            outputs.append(new_row)
+            output_rows_by_wave_code.setdefault((wave, code.lower()), []).append(new_row)
             existing_wave_role_category.add(broad_key)
 
     def behavior_subcategory(concept: str, _item: dict) -> str:
