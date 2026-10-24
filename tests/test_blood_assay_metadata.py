@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import csv
 import unittest
 from pathlib import Path
 
@@ -40,6 +41,24 @@ class BloodAssayMetadataTests(unittest.TestCase):
     def test_guide_ranges_are_not_labeled_as_lod(self):
         self.assertTrue(all("guide_reported_detection_range" in r for r in self.rows))
         self.assertTrue(all("Guide-reported detection range" not in r["assay_metadata_status"] for r in self.rows))
+
+    def test_2015_release_note_inventory_matches_crosswalk(self):
+        expected_2015 = {
+            "bl_fasting", "bl_wbc", "bl_hgb", "bl_hct", "bl_mcv", "bl_plt",
+            "bl_tg", "bl_top_coding_tg", "bl_crea", "bl_bun", "bl_hdl", "bl_ldl",
+            "bl_cho", "bl_glu", "bl_ua", "bl_cysc", "bl_crp", "bl_hbalc",
+        }
+        with (ROOT / "audit/blood_biomarker_crosswalk_v1.csv").open(encoding="utf-8-sig", newline="") as stream:
+            crosswalk = list(csv.DictReader(stream))
+        wave3 = [row for row in crosswalk if row["wave"] == "2015"]
+        self.assertEqual({row["variable"] for row in wave3}, expected_2015)
+        self.assertEqual(len({row["concept_id"] for row in wave3 if row["concept_id"] != "blood_collection_metadata"}), 16)
+        public_wave3 = [row for row in self.rows if row["wave"] == "2015"]
+        self.assertEqual({row["variable"] for row in public_wave3}, expected_2015)
+        official_note = (ROOT / "sources_official/CHARLS_2015_Blood_Release_Note_extracted.txt").read_text(encoding="utf-8")
+        for variable in expected_2015:
+            self.assertIn(variable, official_note)
+        self.assertTrue(all(row["weight_field"] == "Blood_weight" for row in wave3))
 
 
 if __name__ == "__main__":
