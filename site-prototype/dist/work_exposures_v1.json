@@ -4244,7 +4244,7 @@
     "concept_id": "paid_agricultural_workplace_location_2011_2013",
     "label": "Location category of paid agricultural work (2011/2013)",
     "domain": "Workplace context",
-    "caveat": "FC003 is asked in the paid agricultural-work route. Preserve its source location categories and work eligibility; it is a coarse self-reported context, not commute distance, geocoded location, or measured pollution.",
+    "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis.",
     "source_fields": [
       {
         "wave": "2011",
@@ -4253,11 +4253,12 @@
         "source_label": "Workplace for Most Time",
         "unit": "",
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-        "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
+        "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+        "note": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md Interviewer code 0 for no fixed address requires release-level validation.",
         "value_labels": "1=This village/community; 2=Other village/community in this county/city; 3=Another county/city in this province; 4=Another province",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+        "value_label_status": "Official questionnaire/Codebook categories reviewed; frequencies and address text omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
       },
       {
         "wave": "2013",
@@ -4266,11 +4267,12 @@
         "source_label": "Location of Most Frequent Wokrplace",
         "unit": "",
         "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-        "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "1=The Same as Permanent Address; 2=Another Village in Permanent Address's County; 3=Other",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+        "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+        "note": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+        "value_labels": "1=Same as permanent address; 2=Another village/neighborhood in permanent address's county/city/district; 3=Other",
+        "value_label_status": "Official questionnaire/Codebook categories reviewed; frequencies and address text omitted",
+        "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
       }
     ]
   },
@@ -4278,7 +4280,7 @@
     "concept_id": "household_agricultural_workplace_location_2011_2018",
     "label": "Location category of household agricultural work (2011-2018)",
     "domain": "Workplace context",
-    "caveat": "FC012 is asked in the own-household agricultural-work module. Geographic anchors vary by wave; retain source categories and route. It is not an address, commute distance, or environmental concentration.",
+    "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis.",
     "source_fields": [
       {
         "wave": "2011",
@@ -4287,11 +4289,12 @@
         "source_label": "Location of Workplace",
         "unit": "",
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-        "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
+        "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+        "note": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md Interviewer code 0 for no fixed address requires release-level validation.",
         "value_labels": "1=This village/community; 2=Other village/community in this county/city; 3=Another county/city in this province; 4=Another province",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+        "value_label_status": "Official questionnaire/Codebook categories reviewed; frequencies and address text omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
       },
       {
         "wave": "2013",
@@ -4300,11 +4303,12 @@
         "source_label": "Location of Most Frequent Wokrplace",
         "unit": "",
         "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-        "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "1=The Same as Permanent Address; 2=Another Village in Permanent Address's County; 3=Other; 4=Abroad",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+        "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+        "note": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+        "value_labels": "1=Same as permanent address; 2=Another village/neighborhood in permanent address's county/city/district; 3=Other; 4=Abroad",
+        "value_label_status": "Official questionnaire/Codebook categories reviewed; frequencies and address text omitted",
+        "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
       },
       {
         "wave": "2015",
@@ -4313,11 +4317,12 @@
         "source_label": "Location of Most Frequent Wokrplace",
         "unit": "",
         "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-        "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "1=The Same as Permanent Address; 2=Another Village in Permanent Address's County; 3=Other",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+        "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+        "note": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+        "value_labels": "1=Same as permanent address; 2=Another village/neighborhood in permanent address's county/city/district; 3=Other; 4=Abroad",
+        "value_label_status": "Official questionnaire/Codebook categories reviewed; frequencies and address text omitted",
+        "value_label_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
       },
       {
         "wave": "2018",
@@ -4326,11 +4331,12 @@
         "source_label": "Location of the Most Frequent Workplace",
         "unit": "",
         "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-        "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "1=Same as the Residence; 2=Another Neighborhood but Same Province-city as the; 3=Other Domestic Location",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+        "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+        "note": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+        "value_labels": "1=Same as permanent address; 2=Other village/community in the permanent address's county/city/district; 3=Other domestic location",
+        "value_label_status": "Official questionnaire/Codebook categories reviewed; frequencies and address text omitted",
+        "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
       }
     ]
   },
@@ -4338,7 +4344,7 @@
     "concept_id": "household_agricultural_workplace_location_2020",
     "label": "Location of household farm work (2020)",
     "domain": "Workplace context",
-    "caveat": "2020 FB001 records the location of farm work within the agricultural-work module. Preserve the official categories and eligible route; do not geocode detailed place names or treat this as a measured environmental concentration.",
+    "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis.",
     "source_fields": [
       {
         "wave": "2020",
@@ -4347,11 +4353,12 @@
         "source_label": "Location of farm work",
         "unit": "",
         "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
-        "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-        "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "1=Same as the Residence; 2=Another Neighborhood but Same County as the Residence; 3=Other Domestic Location; 4=Abroad 3 0.03\\nMODULE F . WORK AND RETIREMENT 241; 999=Refuse to Answer",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+        "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+        "note": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md Refusal code 999 is retained separately.",
+        "value_labels": "1=Same village/community as current residence; 2=Other village/community in same county/district; 3=Other county/district; 4=Hong Kong, Macao, Taiwan, or abroad; 999=Refuse to answer",
+        "value_label_status": "Official questionnaire/Codebook categories reviewed; frequencies and address text omitted",
+        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
       }
     ]
   },

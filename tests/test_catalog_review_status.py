@@ -141,6 +141,22 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertIn("999=Refuse to answer", fields["2020"]["value_labels"])
         self.assertIn("no fixed address", fields["2011"]["note"])
 
+    def test_agricultural_workplace_locations_keep_work_routes_distinct(self):
+        expected = {
+            "household_agricultural_workplace_location_2011_2018": {"2011", "2013", "2015", "2018"},
+            "household_agricultural_workplace_location_2020": {"2020"},
+            "paid_agricultural_workplace_location_2011_2013": {"2011", "2013"},
+        }
+        for concept_id, waves in expected.items():
+            concept = next(row for row in self.work if row.get("concept_id") == concept_id)
+            fields = {field["wave"]: field for field in concept["source_fields"]}
+            self.assertEqual(set(fields), waves)
+            for field in fields.values():
+                self.assertIn("official wave-specific questionnaire/Codebook", field["mapping_status"])
+                self.assertIn("not a measured environmental concentration", field["caveat"].lower())
+                self.assertIn("frequencies and address text omitted", field["value_label_status"])
+        self.assertIn("999=Refuse to answer", next(row for row in self.work if row.get("concept_id") == "household_agricultural_workplace_location_2020")["source_fields"][0]["value_labels"])
+
     def test_work_capi_formulas_and_source_conflicts_reach_main_catalog(self):
         examples = {
             ("2020", "xworking"): (
