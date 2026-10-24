@@ -59,6 +59,8 @@ class BehaviorAlcoholConceptSeparationTests(unittest.TestCase):
         concepts = json.loads((ROOT / "site-prototype" / "dist" / "behavior_exposures_v1.json").read_text(encoding="utf-8"))
         by_id = {item["concept_id"]: item for item in concepts}
         site_fields = by_id["alcohol_frequency"]["source_fields"]
+        self.assertIn("2020年DA052询问任何酒类的总体饮酒频率", by_id["alcohol_frequency"]["caveat"])
+        self.assertIn("题目粒度并不等价", by_id["alcohol_frequency"]["caveat"])
         self.assertTrue(any("not beverage-specific" in f["value_semantics"] for f in site_fields if f["wave"] == "2020"))
         self.assertTrue(all("beverage-specific" in f["value_semantics"] for f in site_fields if f["wave"] != "2020"))
         self.assertTrue(all("not split by beverage type" in f["note"] for f in site_fields if f["wave"] == "2020"))

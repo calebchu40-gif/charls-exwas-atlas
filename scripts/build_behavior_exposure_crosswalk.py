@@ -93,7 +93,7 @@ SPECS = [
         "2015": [r"da072", r"da074", r"da076"],
         "2018": [r"da072", r"da074", r"da076"],
         "2020": [r"da052"]},
-     "按烈酒、啤酒、葡萄酒/米酒分别询问过去一年内频率；类别档位表示频率而非饮酒量。不同饮品题由饮酒类型路由决定，跨波分析需保留适用范围。"),
+     "2011–2018年按所选酒类分别询问过去一年内频率；2020年DA052询问任何酒类的总体饮酒频率。类别档位表示频率而非饮酒量；虽然回答类别相同，题目粒度并不等价，跨波分析需保留波次、酒类范围和路由。"),
     ("alcohol_quantity_last_drink", "过去一年最近一次饮酒量", "饮酒", {
         "2011": [r"da073", r"da075_[12]", r"da077"],
         "2013": [r"da073", r"da075_[12]", r"da077"],
@@ -146,9 +146,16 @@ def main() -> None:
             part = src[src.wave.eq(wave)]
             matched = part[part.variable.apply(lambda code: any(re.fullmatch(pattern, code, flags=re.I) for pattern in patterns))]
             for _, rec in matched.sort_values(["variable", "module"]).iterrows():
+                field_note = caveat
+                if cid == "alcohol_frequency":
+                    if wave == "2020":
+                        field_note = "2020 DA052询问过去一年任何酒类的总体月均饮酒频率，不按酒类拆分；不能仅凭相同的回答类别将其与早期单酒类字段视为等价。"
+                    else:
+                        beverage = {"da072": "烈酒", "da074": "啤酒", "da076": "葡萄酒/米酒"}.get(rec.variable.lower(), "所选酒类")
+                        field_note = f"{wave}年{rec.variable.upper()}仅在受访者选择{beverage}后询问该酒类过去一年内的饮用频率；这是酒类单项频率，不是总体饮酒频率。需保留酒类范围及路由。"
                 field = {"wave": wave, "code": rec.variable, "source_label": rec.variable_label,
                          "module": rec.module, "source_archive": rec.source,
-                         "note": f"自动概念目录中的逐波字段候选；{caveat}"}
+                         "note": f"自动概念目录中的逐波字段候选；{field_note}"}
                 fields.append(field)
                 rows.append({"concept_id": cid, "concept_label": label, "domain": domain, **field,
                              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"})
