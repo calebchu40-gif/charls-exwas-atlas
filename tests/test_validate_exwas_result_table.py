@@ -39,6 +39,20 @@ class ResultTableValidationTests(unittest.TestCase):
         errors = validate_rows([row], self.fields, self.required)
         self.assertTrue(any("unless fit_status=success" in error for error in errors))
 
+    def test_inestimable_row_rejects_finite_iteration_coefficient_and_nan_uncertainty(self):
+        row = self.base_row()
+        row.update(
+            fit_status="inestimable",
+            estimate="27.2",
+            standard_error="nan",
+            ci_lower="nan",
+            ci_upper="nan",
+            p_value="nan",
+        )
+        errors = validate_rows([row], self.fields, self.required)
+        self.assertTrue(any("standard_error must be finite" in error for error in errors))
+        self.assertTrue(any("estimate fields must be blank unless fit_status=success" in error for error in errors))
+
     def test_sample_flow_and_probability_bounds_are_enforced(self):
         row = self.base_row()
         row.update(n_eligible="10", n_interview="8", p_value="1.4")
