@@ -1,4 +1,6 @@
 import sys
+import hashlib
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -7,7 +9,11 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from merge_2013_official_weights import merge_official_weights  # noqa: E402
+from merge_2013_official_weights import (  # noqa: E402
+    EXPECTED_OFFICIAL_WEIGHTS_SHA1,
+    merge_official_weights,
+    verify_official_weights_sha1,
+)
 
 
 class OfficialWeightMergeTests(unittest.TestCase):
@@ -56,6 +62,17 @@ class OfficialWeightMergeTests(unittest.TestCase):
     def test_incomplete_coverage_fails_closed(self):
         with self.assertRaisesRegex(ValueError, "Not all prepared respondents matched"):
             merge_official_weights(self.prepared, self.weights.iloc[[0]])
+
+    def test_official_weight_intake_requires_matching_release_hash(self):
+        self.assertEqual(EXPECTED_OFFICIAL_WEIGHTS_SHA1, "22c4fc89df2e55fa8faf051e88830eebe0e035c0")
+        payload = b"synthetic test file; not CHARLS data"
+        expected = hashlib.sha1(payload).hexdigest()
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "Weights.dta"
+            path.write_bytes(payload)
+            self.assertEqual(verify_official_weights_sha1(path, expected), expected)
+            with self.assertRaisesRegex(ValueError, "does not match the official"):
+                verify_official_weights_sha1(path, "0" * 40)
 
 
 if __name__ == "__main__":

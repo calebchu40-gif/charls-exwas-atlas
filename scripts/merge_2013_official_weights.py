@@ -20,6 +20,26 @@ from project_paths import PRIVATE_ROOT, QA_OUTPUT_DIR, WAVE_DATA_DIR, require_pr
 
 
 REQUIRED_FLAGS = ("crosssection", "longitudinal")
+EXPECTED_OFFICIAL_WEIGHTS_SHA1 = "22c4fc89df2e55fa8faf051e88830eebe0e035c0"
+
+
+def sha1_file(path: Path) -> str:
+    digest = hashlib.sha1()
+    with path.open("rb") as source:
+        for block in iter(lambda: source.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def verify_official_weights_sha1(path: Path, expected: str = EXPECTED_OFFICIAL_WEIGHTS_SHA1) -> str:
+    """Fail closed unless the intake matches the official Wave 2 release listing."""
+    actual = sha1_file(path)
+    if actual.lower() != expected.lower():
+        raise ValueError(
+            "Weights.dta SHA1 does not match the official CHARLS Wave 2 listing; "
+            f"expected {expected.lower()}, got {actual.lower()}. No merge performed."
+        )
+    return actual
 
 
 def sha256_file(path: Path) -> str:
@@ -142,6 +162,7 @@ def main():
     if args.output.resolve() == args.prepared.resolve():
         raise ValueError("Output cannot overwrite prepared input; use --replace-prepared")
 
+    official_sha1 = verify_official_weights_sha1(args.weights)
     source, source_meta = pyreadstat.read_dta(str(args.weights))
     prepared, prepared_meta = pyreadstat.read_dta(str(args.prepared))
     labels, weight_labels = {}, {}
@@ -168,6 +189,7 @@ def main():
         raise RuntimeError("Read-back respondent order check failed")
     os.replace(temp, args.output)
     qa.update({"source_file": args.weights.name, "source_sha256": sha256_file(args.weights),
+               "official_release_sha1": official_sha1,
                "output_file": args.output.name, "output_sha256": sha256_file(args.output),
                "prepared_source_sha256": sha256_file(args.prepared)})
     args.qa_output.parent.mkdir(parents=True, exist_ok=True)

@@ -18,6 +18,13 @@ and place it in the access-controlled local folder:
 %LOCALAPPDATA%\CHARLS_ExWAS_Atlas\incoming_2013_weights\Weights.dta
 ```
 
+The official Wave 2 release page lists the 2015-11-18 `Weights.dta` package
+with SHA1 `22c4fc89df2e55fa8faf051e88830eebe0e035c0`. The intake script checks
+this release hash before reading or merging the file; a different package is
+rejected until its official source/version is reviewed and the pinned checksum
+is deliberately updated. The post-merge QA also records the official SHA1 and
+a local SHA-256 digest.
+
 Do not place the file in OneDrive, the project folder, GitHub, Pages, or a
 shared server folder. The user must use their own authorized CHARLS account;
 the project does not automate or bypass data access.

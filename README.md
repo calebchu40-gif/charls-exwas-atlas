@@ -27,7 +27,7 @@
 
 ## 2013官方样本标记补入
 
-受控数据 QA 发现，现有2013分析表虽含权重列，但缺少官方`crosssection`与`longitudinal`样本标记，不能用权重是否缺失替代样本资格。待通过本人 CHARLS 账户下载官方`Weights.dta`后，将其放入`%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\incoming_2013_weights\Weights.dta`，并按[`audit/wave2_official_weight_intake_2026-10-23.md`](audit/wave2_official_weight_intake_2026-10-23.md)运行受控合并和复核。合并脚本默认另写私有 DTA、输出不含个体记录的汇总 QA，并在 ID 重复/缺失、匹配不全、标记缺失或现有权重值冲突时停止；不应把官方文件或派生个体数据放入项目同步目录或 GitHub。
+受控数据 QA 发现，现有2013分析表虽含权重列，但缺少官方`crosssection`与`longitudinal`样本标记，不能用权重是否缺失替代样本资格。官方 Wave 2 页面列出的2015-11-18 `Weights.dta` SHA1为`22c4fc89df2e55fa8faf051e88830eebe0e035c0`；合并脚本会在读取前校验此哈希，不匹配则停止。待通过本人 CHARLS 账户下载官方文件后，将其放入`%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\incoming_2013_weights\Weights.dta`，并按[`audit/wave2_official_weight_intake_2026-10-23.md`](audit/wave2_official_weight_intake_2026-10-23.md)运行受控合并和复核。合并脚本默认另写私有 DTA、输出不含个体记录的汇总 QA，并在 ID 重复/缺失、匹配不全、标记缺失或现有权重值冲突时停止；不应把官方文件或派生个体数据放入项目同步目录或 GitHub。
 
 当前E类通用待核队列已清零；C类前访回答历史/路由元数据、疾病占位/停用旧字段及测量设计字段已完成来源审核。另有456条由关键词自动发现的C类检索线索（300个不同字段码；与值标签待核行数不是同一统计），含年龄、性别等核心变量来源，也混有迁移史、疾病发生年龄和家庭名册字段；它们不是已核准的协变量，更不是统一调整集。网站已将其单独标为“自动关键词检索线索（未核验协变量）”。经逐波梳理的年龄、性别、教育、婚姻、户籍、城乡/居住地和调查设计准备情况见[`audit/core_covariate_readiness_2026-10-23.md`](audit/core_covariate_readiness_2026-10-23.md)；历史队列见[`audit/current_value_label_review_queue_2026-10-23.md`](audit/current_value_label_review_queue_2026-10-23.md)。这些计数不代表待新增的独立指标数；连续测量、金额和日期字段可能没有离散类别标签。
 
