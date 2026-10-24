@@ -55,7 +55,12 @@ metadata_removed=0
 for wave,code in metadata_keys:
     override = overrides.loc[overrides["wave"].str.lower().eq(wave) & overrides["code"].str.lower().eq(code)].iloc[0]
     old_role = str(override["remove_role"]).lower()
-    if str(override.get("metadata_type", "")).strip().lower() in {"age_year_component_selector", "housing_property_value_measure_selector", "beer_amount_unit_selector"}:
+    metadata_type = str(override.get("metadata_type", "")).strip().lower()
+    if metadata_type == "subjective_expectation_age_target_selector" and old_role == "c":
+        # Reclassify the existing auto-discovered C row in place; do not
+        # remove it as a duplicate just because its current role is already C.
+        selected=(fields["Source.Wave"].str.lower().eq(wave) & fields["Variable.Name"].str.lower().eq(code) & fields["epcf"].str.lower().eq("c"))
+    elif metadata_type in {"age_year_component_selector", "housing_property_value_measure_selector", "beer_amount_unit_selector"}:
         # These explicit concept-linked rows describe the coding of paired
         # age/year fields; their E role is still metadata and must be removed.
         selected=(fields["Source.Wave"].str.lower().eq(wave) & fields["Variable.Name"].str.lower().eq(code) & fields["epcf"].str.lower().eq(old_role))
@@ -82,10 +87,10 @@ for wave,code in metadata_keys:
         has_c=True
     if not selected.any() and not has_c:
         continue
-    if selected.any() and has_c:
+    if selected.any() and has_c and old_role != "c":
         metadata_removed += int(selected.sum())
         fields=fields.loc[~selected].copy()
-    elif selected.any():
+    elif selected.any() and old_role != "c":
         fields.loc[selected,"epcf"]="c"
         fields.loc[selected,"category"]="measurement metadata"
         fields.loc[selected,"subcategory"]="prior-interview response-history routing flags"
@@ -328,6 +333,15 @@ for wave,code in metadata_keys:
         fields.loc[metadata_rows,"Candidate.Status"]="C metadata; word-list version, assigned stimulus words, completion status, or refusal reason"
         fields.loc[metadata_rows,"Harmonization.Status"]="test-form/stimulus/administration metadata only; not a cognitive score or respondent phenotype"
         fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; use only to interpret test form, stimuli, or task administration"
+    elif metadata_type == "subjective_expectation_age_target_selector":
+        fields.loc[metadata_rows,"category"]="measurement metadata"
+        fields.loc[metadata_rows,"subcategory"]="subjective life-expectancy target-age metadata"
+        fields.loc[metadata_rows,"Value.Labels"]="75; 80; 85; 90; 95; 100; 105; 110; 115"
+        fields.loc[metadata_rows,"Value.Label.Source"]="sources_official/CHARLS_2011_Codebook_extracted.txt:L65182-L65212; sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt:L4068-L4084"
+        fields.loc[metadata_rows,"Value.Label.Review"]="official 2011 Codebook age-category labels transcribed without frequencies; DA081 prompt leaves its age threshold as a placeholder, so direct field linkage remains unverified"
+        fields.loc[metadata_rows,"Candidate.Status"]="C metadata; official Codebook labels flda081_1 as the target age for self-expectation; likely context for DA081, but exact released-field linkage is not documented"
+        fields.loc[metadata_rows,"Harmonization.Status"]="target-age context metadata only; do not treat age categories as the respondent's subjective probability or as a phenotype; DA081 linkage remains unverified"
+        fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; not an outcome or adjustment variable; preserve only as candidate DA081 target-age context and do not derive probabilities or scores"
     elif metadata_type == "lifecourse_timing_unit_selector":
         fields.loc[metadata_rows,"category"]="measurement metadata"
         fields.loc[metadata_rows,"subcategory"]="life-course timing unit selectors"

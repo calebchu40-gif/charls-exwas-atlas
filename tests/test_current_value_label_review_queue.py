@@ -26,10 +26,11 @@ class CurrentValueLabelQueueTests(unittest.TestCase):
             self.assertIsNotNone(match, role)
             self.assertEqual(tuple(int(value.replace(",", "")) for value in match.groups()), counts[role], role)
 
-    def test_keyword_hits_are_not_described_as_an_adjustment_set(self):
+    def test_reviewed_context_metadata_is_not_described_as_an_adjustment_set(self):
         document = (ROOT / "audit/current_value_label_review_queue_2026-10-23.md").read_text(encoding="utf-8")
-        self.assertIn("keyword discovery only; not a reviewed covariate or adjustment recommendation", document)
-        self.assertIn("It is a search lead, not a selected adjustment set", document)
+        self.assertIn("C also has zero", document)
+        self.assertIn("not an adjustment set", document)
+        self.assertIn("one-to-one field link", document)
 
 
 if __name__ == "__main__":

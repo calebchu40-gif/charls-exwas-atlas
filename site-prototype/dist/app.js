@@ -185,6 +185,7 @@ const C_SUBCATEGORY_LABELS={
   "social-pension supplementary repayment currency selector":"社会养老金补缴金额币种选择器",
   "stroke recurrence timing response format":"卒中复发时间回答格式",
   "subjective life-expectancy target age":"主观预期寿命题的目标年龄",
+  "subjective life-expectancy target-age metadata":"主观预期寿命题的目标年龄元数据",
   "unlisted chronic-disease index placeholder":"未列明慢性病的索引占位字段",
   "unresolved questionnaire and Codebook field identity conflict":"问卷与代码本字段身份冲突，尚未解决",
   "unresolved release-field identity/data-type discrepancy":"发行字段身份/数据类型差异，尚未解决",

@@ -1,5 +1,16 @@
-# Remaining C field identity check (2026-10-24)
+# 2011 主观预期年龄字段元数据复核（2026-10-25）
 
-The generated C catalogue has one remaining exact `not yet reviewed` record: 2011 `FLDA081_1`, Codebook label “The Number of Self Expectation Age.” The field identifier and label appear in the extracted 2011 Codebook, but no exact identifier or matching prompt was found in the available official 2011 questionnaire extractions. The exact questionnaire identity remains unresolved. The official baseline questionnaire contains `DA081`, a five-step likelihood matrix asking about reaching age thresholds from 75 through 115. The Codebook label for `FLDA081_1` and its age-like value scheme make a relationship plausible, but the identifier differs and the available official materials do not document a one-to-one mapping or derivation. Do not treat the nearby questionnaire item as proof of the released field identity. The label alone does not establish whether this is a respondent expectation, derived field, or another construct.
+## 当前目录处理
 
-Keep it as an unreviewed C search lead. Do not rename it as life expectancy, treat it as a health phenotype, infer a unit, or use it as an adjustment covariate until the official questionnaire/form or release documentation identifies it. No Codebook frequency or respondent value is reproduced here. The official questionnaire evidence is in `sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt` under `DA081`; the field label is in `sources_official/CHARLS_2011_Codebook_extracted.txt`.
+2011 `flda081_1` 不再作为“自动关键词协变量线索”展示，而是归入 C 类测量/题目上下文元数据。官方 CodeBook 将其标为 “The Number of Self Expectation Age”，并列出年龄档 75、80、85、90、95、100、105、110、115。公开目录只列这些官方类别，不复制 CodeBook 频数。
+
+基线问卷 `DA081` 询问受访者对“活到某个年龄”的五级主观可能性，但问卷提取文本将目标年龄写为 `[...]`。CodeBook 字段名称和年龄档与该题高度吻合，因此可以将 `flda081_1` 作为可能的目标年龄上下文来帮助解释题目；现有官方问卷/CodeBook材料仍没有明确写出 `flda081_1` 与 `DA081` 的逐字段一对一关系。本站保留此不确定性，不把它接入 DA081 关联模型。
+
+`flda081_1` 不是受访者对存活可能性的回答，不能作为独立表型或协变量；不得把它解释为寿命、目标年龄达成概率、百分比或派生分数。DA081 本身也仍须按其 1–5 有序反应解释，不能从年龄档推导概率。
+
+## 官方来源
+
+- `sources_official/CHARLS_2011_Codebook_extracted.txt`，字段条目约第 65182 行起：字段标签与年龄档；CodeBook频数未纳入。
+- `sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt`，第 4068 行起：DA081五级题目及未展开的目标年龄占位符。
+
+该条目从 C 类通用“未审核”队列中移除，但 DA081 与该元数据字段的精确链接仍开放审查。全程仅使用公开的变量定义、题目和类别元数据，没有读取或复制任何受访者记录或频数。

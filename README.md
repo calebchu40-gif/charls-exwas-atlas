@@ -6,13 +6,12 @@
 
 五波 `communityID` 与本机 PSU 映射候选的键覆盖复核也已完成，所有已观察社区键均可匹配；该文件的原始发布包身份仍未独立核验，且此项检查不证明方差分层或模型已就绪。详见[audit/psu_key_coverage_recheck_2026-10-24.md](audit/psu_key_coverage_recheck_2026-10-24.md)。
 
-## 当前快照（2026-10-24）
+## 当前快照（2026-10-25）
 
-本地最新生成目录（2026-10-24）含 E=4,824、P=2,127、C=980 条字段—波次记录；E/P 来源交叉表覆盖 1,458 个候选概念（E=1,166、P=301，含 9 个双角色概念）及 6,751 条概念—来源映射。2011、2013、2015、2018、2020 各波次分别有 125,237、134,392、133,897、104,649、13,906 个同波字段元数据可共同出现的非自配 E/P 概念组合；这些不是人数、有效样本量、已运行检验或关联结果。2013 年 WB05–WB15 为 11 项独立表型候选；2013/2015 `da051_random` 仅作为 C 类设计元数据展示，代码含义未核实，不用于界定活动模块资格。C 类通用待审字段为 1 条。正式关联模型和逐对完整样本量目前均为 0；2013 官方 `crosssection`/`longitudinal` 标记仍待从官方 Weights 文件恢复，方差设计适用字段也须逐波确认。完整项目快照、限制和后续工作见 [`audit/active_work_status_2026-10-24.md`](audit/active_work_status_2026-10-24.md)。
+本地最新生成目录（2026-10-25）含 E=4,824、P=2,127、C=980 条字段—波次记录；E/P 来源交叉表覆盖 1,458 个候选概念（E=1,166、P=301，含 9 个双角色概念）及 6,751 条概念—来源映射。2011、2013、2015、2018、2020 各波次分别有 125,237、134,392、133,897、104,649、13,906 个同波字段元数据可共同出现的非自配 E/P 概念组合；这些不是人数、有效样本量、已运行检验或关联结果。2013 年 WB05–WB15 为 11 项独立表型候选；2013/2015 `da051_random` 仅作为 C 类设计元数据展示，代码含义未核实，不用于界定活动模块资格。C 类通用待审字段为 0 条。正式关联模型和逐对完整样本量目前均为 0；2013 官方 `crosssection`/`longitudinal` 标记仍待从官方 Weights 文件恢复，方差设计适用字段也须逐波确认。完整项目快照、限制和后续工作见 [`audit/active_work_status_2026-10-24.md`](audit/active_work_status_2026-10-24.md)。
 
-**公开查询站点：**[CHARLS ExWAS Atlas](https://calebchu40-gif.github.io/charls-exwas-atlas/)。Pages 当前资源版本为 `v81`；许可说明已上线；GitHub Validate 工作流会在代码更新时检查项目。户口、婚姻史、Wave 4 成人教育年限路由、疾病/事件年龄、居住地/迁居和护理工资来源审核均已记录。详情见 [`audit/active_work_status_2026-10-24.md`](audit/active_work_status_2026-10-24.md)、[`audit/charls_data_access_license_review_2026-10-24.md`](audit/charls_data_access_license_review_2026-10-24.md) 和相关专项审计。C 类剩余通用待核为2011 `FLDA081_1`，与 `DA081` 的关系尚无官方精确映射证据。 2018住房所有者关系字段现逐项保留Codebook列出的原始关系码（包括字段特异非二元码），不再误写成0/1；见[`audit/housing_owner_relation_codebook_label_review_2026-10-24.md`](audit/housing_owner_relation_codebook_label_review_2026-10-24.md)。
+**公开查询站点：**[CHARLS ExWAS Atlas](https://calebchu40-gif.github.io/charls-exwas-atlas/)。Pages 当前资源版本为 `v82`；许可说明已上线；GitHub Validate 工作流会在代码更新时检查项目。户口、婚姻史、Wave 4 成人教育年限路由、疾病/事件年龄、居住地/迁居和护理工资来源审核均已记录。详情见 [`audit/active_work_status_2026-10-24.md`](audit/active_work_status_2026-10-24.md)、[`audit/charls_data_access_license_review_2026-10-24.md`](audit/charls_data_access_license_review_2026-10-24.md) 和相关专项审计。2011 `flda081_1` 已按官方 CodeBook 转为目标年龄上下文元数据并从自动协变量线索中移除；其与问卷 `DA081` 的直接字段链接仍未获官方一对一说明，故保留 C 类且不进入模型。详见[`audit/pending_c_field_identity_review_2026-10-24.md`](audit/pending_c_field_identity_review_2026-10-24.md)。 2018住房所有者关系字段现逐项保留Codebook列出的原始关系码（包括字段特异非二元码），不再误写成0/1；见[`audit/housing_owner_relation_codebook_label_review_2026-10-24.md`](audit/housing_owner_relation_codebook_label_review_2026-10-24.md)。
 
-尚未解决的 2011 `FLDA081_1` 来源身份见[`audit/pending_c_field_identity_review_2026-10-24.md`](audit/pending_c_field_identity_review_2026-10-24.md)。
 
 **波次发布范围：**截至 2026-10-24，CHARLS 官方数据目录列出的最新全国追访数据为 2020 年；2021–2023 常规第五轮的官方招聘/实地实施材料不等于已发布的微观数据包。本项目不把该轮计划采集内容映射为已发布变量，待官方数据目录提供对应数据与版本手册、问卷、代码本和抽样设计文件后再审入。详见 [`audit/regular_wave5_2021_2023_release_status_2026-10-24.md`](audit/regular_wave5_2021_2023_release_status_2026-10-24.md) 与 [CHARLS 官方数据目录](https://charls.charlsdata.com/pages/data/111/zh-cn.html)。
 
