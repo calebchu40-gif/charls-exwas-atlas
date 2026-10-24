@@ -36,6 +36,15 @@ The same script builds a separate deterministic dataset with 6 strata, 3 PSUs pe
 
 This verifies this pinned package's basic binary-logit coefficient, Taylor covariance, and p-value path for one synthetic non-separated model. It does not validate rare outcomes, separation handling, categorical coding, nonlinear terms, marginal effects, finite-sample degrees of freedom for CHARLS, or any CHARLS result. The package documentation itself warns that separated coefficients can have undefined uncertainty; production code must detect and retain nonconvergence/inestimable statuses rather than publish such values.
 
+A second synthetic logistic model treats a three-level exposure as a factor and sets `low` as the explicit reference. Both dummy-variable contrasts match an independently solved weighted logistic score and stratified PSU-score sandwich:
+
+| Contrast vs. low | `svy` estimate (SE) | Manual estimate (SE) | `svy` p | Manual t p | df |
+|---|---:|---:|---:|---:|---:|
+| medium | 0.54842864 (0.35146885) | 0.54842864 (0.35146885) | 0.14972877 | 0.14972877 | 10 |
+| high | -0.25773359 (0.29124097) | -0.25773359 (0.29124097) | 0.39696328 | 0.39696328 | 10 |
+
+This exercises an explicit categorical reference in a synthetic, adequately populated example; it does not establish a CHARLS wave's harmonized categories, eligible denominator, or minimum category support. The CHARLS codebook must define the category semantics and route before a real pair can be specified.
+
 The point estimates match because the records and weights are unchanged. The standard errors and design degrees of freedom differ substantially in this constructed example. The example intentionally contains strong between-stratum differences; this is an illustration of sensitivity to the declared design, not a general theorem that omitting strata always increases uncertainty. The CRAN `survey` manual likewise treats stratification and cluster structure as explicit design inputs and documents the ultimate-cluster option for multistage variance estimation.
 
 ## Domain filtering and singleton PSUs

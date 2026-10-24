@@ -402,6 +402,127 @@ def main() -> None:
         "coefficient_se_p_match_manual_score_sandwich": True,
     }
 
+    # Check explicit reference-category coding and both categorical contrasts.
+    category_rng = np.random.default_rng(20261025)
+    category_effects = np.linspace(-0.35, 0.35, 18)
+    category_rows = []
+    cluster_index = 0
+    category_beta = {"low": 0.0, "medium": 0.45, "high": -0.40}
+    for h in range(6):
+        for p in range(3):
+            cluster_effect = float(category_effects[cluster_index])
+            cluster_index += 1
+            for person in range(15):
+                category = str(category_rng.choice(["low", "medium", "high"], p=[0.40, 0.35, 0.25]))
+                probability = float(
+                    expit(-0.25 + category_beta[category] + cluster_effect)
+                )
+                category_rows.append(
+                    {
+                        "stratum": h,
+                        "psu": f"{h}-{p}",
+                        "category": category,
+                        "y": int(category_rng.random() < probability),
+                        "weight": 0.85 + 0.07 * (person % 5) + 0.04 * p,
+                    }
+                )
+    category_data = pl.DataFrame(category_rows)
+    category_sample = svy.Sample(
+        data=category_data,
+        design=svy.Design(stratum="stratum", psu="psu", wgt="weight", wr=True),
+    )
+    category_result = category_sample.glm.fit(
+        y="y",
+        x=[svy.Cat("category", ref="low")],
+        family="binomial",
+        link="logit",
+    ).to_polars().to_dicts()
+    category_lookup = {row["term"]: row for row in category_result}
+
+    category_values = category_data["category"].to_list()
+    category_x = np.column_stack(
+        (
+            np.ones(len(category_rows)),
+            [value == "medium" for value in category_values],
+            [value == "high" for value in category_values],
+        )
+    ).astype(float)
+    category_y = np.asarray(category_data["y"].to_list(), dtype=float)
+    category_weight = np.asarray(category_data["weight"].to_list(), dtype=float)
+    category_stratum = np.asarray(category_data["stratum"].to_list())
+    category_psu = np.asarray(category_data["psu"].to_list())
+
+    def category_score(coef: np.ndarray) -> np.ndarray:
+        return category_x.T @ (
+            category_weight * (category_y - expit(category_x @ coef))
+        )
+
+    category_solution = root(category_score, np.zeros(3), tol=1e-12)
+    if not category_solution.success or np.max(np.abs(category_score(category_solution.x))) > 1e-9:
+        raise AssertionError(
+            f"Independent categorical logit solver failed: {category_solution.message}"
+        )
+    manual_category_beta = category_solution.x
+    category_probability = expit(category_x @ manual_category_beta)
+    category_bread = np.linalg.inv(
+        category_x.T
+        @ (
+            (category_weight * category_probability * (1 - category_probability))[:, None]
+            * category_x
+        )
+    )
+    category_meat = np.zeros((3, 3))
+    for h in sorted(set(category_stratum.tolist())):
+        psu_scores = []
+        for p in sorted(set(category_psu[category_stratum == h].tolist())):
+            in_psu = (category_stratum == h) & (category_psu == p)
+            psu_scores.append(
+                category_x[in_psu].T
+                @ (
+                    category_weight[in_psu]
+                    * (category_y[in_psu] - category_probability[in_psu])
+                )
+            )
+        scores = np.asarray(psu_scores, dtype=float)
+        centered = scores - scores.mean(axis=0)
+        category_meat += len(scores) / (len(scores) - 1) * centered.T @ centered
+    category_covariance = category_bread @ category_meat @ category_bread
+    category_se = np.sqrt(np.diag(category_covariance))
+    category_checks = []
+    for term, index in (("category_medium", 1), ("category_high", 2)):
+        model_row = category_lookup[term]
+        manual_p_value = float(
+            2 * student_t.sf(
+                abs(manual_category_beta[index] / category_se[index]), model_row["df"]
+            )
+        )
+        observed = (model_row["estimate"], model_row["std_err"], model_row["p_value"])
+        expected = (manual_category_beta[index], category_se[index], manual_p_value)
+        if not np.allclose(observed, expected, rtol=1e-8, atol=1e-10):
+            raise AssertionError(
+                f"Categorical contrast {term}: engine {observed} != manual {expected}"
+            )
+        category_checks.append(
+            {
+                "term": term,
+                "reference": "low",
+                "estimate": model_row["estimate"],
+                "manual_estimate": float(manual_category_beta[index]),
+                "std_err": model_row["std_err"],
+                "manual_std_err": float(category_se[index]),
+                "p_value": model_row["p_value"],
+                "manual_t_p_value": manual_p_value,
+                "df": model_row["df"],
+            }
+        )
+    outputs["synthetic_categorical_logistic_exposure"] = {
+        "n": category_data.height,
+        "strata": 6,
+        "psus": 18,
+        "reference": "low",
+        "contrasts_match_manual_score_sandwich": category_checks,
+    }
+
     print(json.dumps({"svy_version": version, "synthetic_only": True, "outputs": outputs}, indent=2))
 
 
