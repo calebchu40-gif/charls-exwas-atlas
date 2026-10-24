@@ -16630,11 +16630,11 @@
               "code": "qj002",
               "label": "qj002",
               "module": "Physical Examination Questionnaire",
-              "unit": "",
+              "unit": "cm",
               "value_labels": "",
-              "value_semantics": "记录值并保留测量侧别qj003。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Upper-arm length reading in cm; preserve measured arm side (2011 LI016_0; 2013/2015 QJ003) and compliance as separate context fields.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-Q-field identity and release eligibility remain unverified",
+              "caveat": "Do not combine side/context metadata with the length value; noncompletion codes 993/999 remain statuses. Valid ranges, release-specific missing-code implementation, and cross-wave comparability require separate verification. The 2011 instrument records this measure as LI015; the release Codebook candidate uses QJ002. Exact one-to-one release-field identity remains unresolved."
             }
           ]
         },
@@ -16710,11 +16710,11 @@
               "code": "ql002",
               "label": "ql002",
               "module": "Physical Examination Questionnaire",
-              "unit": "",
+              "unit": "kg",
               "value_labels": "",
-              "value_semantics": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Measured body weight in kg, separate from the eligibility route and measurement-quality fields. The questionnaire routes out at the 150 kg threshold; do not interpret routed cases as zero or missing-at-random.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-Q-field identity and release eligibility remain unverified",
+              "caveat": "Keep eligibility, shoes, compliance and surface/context variables separate; preserve 993/999 as measurement statuses. Valid ranges, release-specific missing-code implementation, and cross-wave comparability require separate verification. The 2011 instrument records this measure as LI841; the release Codebook candidate uses QL002. Exact one-to-one release-field identity remains unresolved."
             }
           ]
         },
@@ -18581,11 +18581,11 @@
               "code": "qm002",
               "label": "qm002",
               "module": "Physical Examination Questionnaire",
-              "unit": "",
+              "unit": "cm",
               "value_labels": "",
-              "value_semantics": "注意厚重衣物、测量完成状态及波次问卷的路由。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Waist circumference reading in cm; preserve consent/completion and clothing/context fields separately. Do not derive a health classification here.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-Q-field identity and release eligibility remain unverified",
+              "caveat": "The questionnaire records bulky-clothing context (2013/2015 QM005) and special noncompletion codes 993/999; 2011 route and clothing wording remain wave-specific. Valid ranges, release-specific missing-code implementation, and cross-wave comparability require separate verification. The 2011 instrument records this measure as LI907; the release Codebook candidate uses QM002. Exact one-to-one release-field identity remains unresolved."
             },
             {
               "code": "qm002",
@@ -18611,11 +18611,11 @@
               "code": "qk002",
               "label": "qk002",
               "module": "Physical Examination Questionnaire",
-              "unit": "",
+              "unit": "cm",
               "value_labels": "",
-              "value_semantics": "记录值并保留测量侧别/腿别qk003。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Knee-height reading in cm; preserve measured leg (2011 LI020_0; 2013/2015 QK003) and compliance as separate context fields.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-Q-field identity and release eligibility remain unverified",
+              "caveat": "Do not combine leg/context metadata with the height value; noncompletion codes 993/999 remain statuses. Valid ranges, release-specific missing-code implementation, and cross-wave comparability require separate verification. The 2011 instrument records this measure as LI019; the release Codebook candidate uses QK002. Exact one-to-one release-field identity remains unresolved."
             }
           ]
         },
@@ -21271,11 +21271,11 @@
               "code": "qi002",
               "label": "qi002",
               "module": "Physical Examination Questionnaire",
-              "unit": "",
+              "unit": "cm",
               "value_labels": "",
-              "value_semantics": "现场身高读数；与qh006等椅子测试字段区分。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Single standing-height reading in cm; preserve consent/completion, positioning and compliance context separately. Do not derive BMI in this metadata catalog.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-Q-field identity and release eligibility remain unverified",
+              "caveat": "Stadiometer protocol and noncompletion codes 993/999 are documented. Valid ranges, release-specific missing-code implementation, and cross-wave comparability require separate verification. The 2011 instrument records this measure as LI011; the release Codebook candidate uses QI002. Exact one-to-one release-field identity remains unresolved."
             },
             {
               "code": "qi002",
@@ -38774,11 +38774,11 @@
               "code": "qj002",
               "label": "qj002",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "cm",
               "value_labels": "",
-              "value_semantics": "记录值并保留测量侧别qj003。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Upper-arm length reading in cm; preserve measured arm side (2011 LI016_0; 2013/2015 QJ003) and compliance as separate context fields.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Do not combine side/context metadata with the length value; noncompletion codes 993/999 remain statuses. Valid ranges, release-specific missing-code implementation, and cross-wave comparability require separate verification. The 2013 questionnaire and wave Codebook document the exact QJ002 measurement field; this does not establish participant-level release availability or analytic eligibility."
             }
           ]
         },
@@ -38854,11 +38854,11 @@
               "code": "ql002",
               "label": "ql002",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "kg",
               "value_labels": "",
-              "value_semantics": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Measured body weight in kg, separate from the eligibility route and measurement-quality fields. The questionnaire routes out at the 150 kg threshold; do not interpret routed cases as zero or missing-at-random.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Keep eligibility, shoes, compliance and surface/context variables separate; preserve 993/999 as measurement statuses. Valid ranges, release-specific missing-code implementation, and cross-wave comparability require separate verification. The 2013 questionnaire and wave Codebook document the exact QL002 measurement field; this does not establish participant-level release availability or analytic eligibility."
             }
           ]
         },
@@ -40916,11 +40916,11 @@
               "code": "qm002",
               "label": "qm002",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "cm",
               "value_labels": "",
-              "value_semantics": "注意厚重衣物、测量完成状态及波次问卷的路由。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Waist circumference reading in cm; preserve consent/completion and clothing/context fields separately. Do not derive a health classification here.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "The questionnaire records bulky-clothing context (2013/2015 QM005) and special noncompletion codes 993/999; 2011 route and clothing wording remain wave-specific. Valid ranges, release-specific missing-code implementation, and cross-wave comparability require separate verification. The 2013 questionnaire and wave Codebook document the exact QM002 measurement field; this does not establish participant-level release availability or analytic eligibility."
             }
           ]
         },
@@ -40936,11 +40936,11 @@
               "code": "qk002",
               "label": "qk002",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "cm",
               "value_labels": "",
-              "value_semantics": "记录值并保留测量侧别/腿别qk003。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Knee-height reading in cm; preserve measured leg (2011 LI020_0; 2013/2015 QK003) and compliance as separate context fields.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Do not combine leg/context metadata with the height value; noncompletion codes 993/999 remain statuses. Valid ranges, release-specific missing-code implementation, and cross-wave comparability require separate verification. The 2013 questionnaire and wave Codebook document the exact QK002 measurement field; this does not establish participant-level release availability or analytic eligibility."
             }
           ]
         },
@@ -44436,11 +44436,11 @@
               "code": "qi002",
               "label": "qi002",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "cm",
               "value_labels": "",
-              "value_semantics": "现场身高读数；与qh006等椅子测试字段区分。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Single standing-height reading in cm; preserve consent/completion, positioning and compliance context separately. Do not derive BMI in this metadata catalog.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Stadiometer protocol and noncompletion codes 993/999 are documented. Valid ranges, release-specific missing-code implementation, and cross-wave comparability require separate verification. The 2013 questionnaire and wave Codebook document the exact QI002 measurement field; this does not establish participant-level release availability or analytic eligibility."
             }
           ]
         },
@@ -62830,11 +62830,11 @@
               "code": "qj002",
               "label": "qj002",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "cm",
               "value_labels": "",
-              "value_semantics": "记录值并保留测量侧别qj003。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Upper-arm length reading in cm; preserve measured arm side (2011 LI016_0; 2013/2015 QJ003) and compliance as separate context fields.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Do not combine side/context metadata with the length value; noncompletion codes 993/999 remain statuses. Valid ranges, release-specific missing-code implementation, and cross-wave comparability require separate verification. The 2015 questionnaire and wave Codebook document the exact QJ002 measurement field; this does not establish participant-level release availability or analytic eligibility."
             }
           ]
         },
@@ -62930,11 +62930,11 @@
               "code": "ql002",
               "label": "ql002",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "kg",
               "value_labels": "",
-              "value_semantics": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Measured body weight in kg, separate from the eligibility route and measurement-quality fields. The questionnaire routes out at the 150 kg threshold; do not interpret routed cases as zero or missing-at-random.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Keep eligibility, shoes, compliance and surface/context variables separate; preserve 993/999 as measurement statuses. Valid ranges, release-specific missing-code implementation, and cross-wave comparability require separate verification. The 2015 questionnaire and wave Codebook document the exact QL002 measurement field; this does not establish participant-level release availability or analytic eligibility."
             }
           ]
         },
@@ -65201,11 +65201,11 @@
               "code": "qm002",
               "label": "qm002",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "cm",
               "value_labels": "",
-              "value_semantics": "注意厚重衣物、测量完成状态及波次问卷的路由。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Waist circumference reading in cm; preserve consent/completion and clothing/context fields separately. Do not derive a health classification here.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "The questionnaire records bulky-clothing context (2013/2015 QM005) and special noncompletion codes 993/999; 2011 route and clothing wording remain wave-specific. Valid ranges, release-specific missing-code implementation, and cross-wave comparability require separate verification. The 2015 questionnaire and wave Codebook document the exact QM002 measurement field; this does not establish participant-level release availability or analytic eligibility."
             }
           ]
         },
@@ -65221,11 +65221,11 @@
               "code": "qk002",
               "label": "qk002",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "cm",
               "value_labels": "",
-              "value_semantics": "记录值并保留测量侧别/腿别qk003。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Knee-height reading in cm; preserve measured leg (2011 LI020_0; 2013/2015 QK003) and compliance as separate context fields.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Do not combine leg/context metadata with the height value; noncompletion codes 993/999 remain statuses. Valid ranges, release-specific missing-code implementation, and cross-wave comparability require separate verification. The 2015 questionnaire and wave Codebook document the exact QK002 measurement field; this does not establish participant-level release availability or analytic eligibility."
             }
           ]
         },
@@ -68591,11 +68591,11 @@
               "code": "qi002",
               "label": "qi002",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "cm",
               "value_labels": "",
-              "value_semantics": "现场身高读数；与qh006等椅子测试字段区分。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Single standing-height reading in cm; preserve consent/completion, positioning and compliance context separately. Do not derive BMI in this metadata catalog.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "Stadiometer protocol and noncompletion codes 993/999 are documented. Valid ranges, release-specific missing-code implementation, and cross-wave comparability require separate verification. The 2015 questionnaire and wave Codebook document the exact QI002 measurement field; this does not establish participant-level release availability or analytic eligibility."
             }
           ]
         },
