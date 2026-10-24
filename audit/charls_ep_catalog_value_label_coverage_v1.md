@@ -15,7 +15,7 @@
 |e|behavior|267|267|192|5|
 |e|behavioral exposures|2|2|0|1|
 |e|community context|270|270|74|1|
-|e|early-life and family socioeconomic context|4|4|4|2|
+|e|early-life and family socioeconomic context|2|2|2|2|
 |e|environmental perception|1|1|1|1|
 |e|family and intergenerational context|42|39|35|4|
 |e|food and household environment|161|161|104|1|
@@ -23,18 +23,18 @@
 |e|housing and built environment|480|480|248|2|
 |e|internal biomarker|32|32|0|1|
 |e|life-course and reproductive history|8|8|0|1|
-|e|social determinants|2,138|2,138|1,013|20|
+|e|social determinants|2,140|2,138|1,015|20|
 |e|social protection|1,331|1,331|427|30|
 |p|anthropometric|24|15|0|1|
 |p|biochemistry|32|32|0|1|
 |p|blood pressure|54|27|0|1|
-|p|chronic disease|248|248|240|1|
-|p|chronic disease ancillary|664|664|520|70|
-|p|cognition|338|338|305|1|
+|p|chronic disease|241|241|233|1|
+|p|chronic disease ancillary|662|662|518|69|
+|p|cognition|337|333|304|1|
 |p|health and symptoms|177|177|171|5|
 |p|healthcare access|217|217|66|2|
-|p|mental health|52|52|52|1|
-|p|physical function|266|260|169|7|
+|p|mental health|54|52|54|1|
+|p|physical function|274|260|177|7|
 |p|social wellbeing|10|10|10|4|
 
 ## 当前值标签审核状态

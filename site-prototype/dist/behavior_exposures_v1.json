@@ -15,7 +15,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -28,7 +29,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -41,7 +43,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -54,7 +57,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -67,7 +71,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -80,7 +85,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -93,7 +99,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -106,7 +113,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -119,7 +127,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -132,7 +141,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -145,7 +155,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -158,7 +169,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -180,7 +192,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -193,7 +206,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -206,7 +220,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -219,7 +234,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -232,7 +248,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -245,7 +262,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -258,7 +276,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -271,7 +290,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -293,7 +313,8 @@
         "value_label_status": "continuous count, not a categorical code; daily cigarette count; 2020 current and pre-quit values are separate",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "daily cigarette count; inspect raw special/missing codes before analysis",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -306,7 +327,8 @@
         "value_label_status": "continuous count, not a categorical code; daily cigarette count; 2020 current and pre-quit values are separate",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "daily cigarette count; inspect raw special/missing codes before analysis",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -319,7 +341,8 @@
         "value_label_status": "continuous count, not a categorical code; daily cigarette count; 2020 current and pre-quit values are separate",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "daily cigarette count; inspect raw special/missing codes before analysis",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -332,7 +355,8 @@
         "value_label_status": "continuous count, not a categorical code; daily cigarette count; 2020 current and pre-quit values are separate",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "daily cigarette count; inspect raw special/missing codes before analysis",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -345,7 +369,8 @@
         "value_label_status": "continuous count, not a categorical code; daily cigarette count; 2020 current and pre-quit values are separate",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "daily cigarette count; inspect raw special/missing codes before analysis",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -358,7 +383,8 @@
         "value_label_status": "continuous count, not a categorical code; daily cigarette count; 2020 current and pre-quit values are separate",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "daily cigarette count; inspect raw special/missing codes before analysis",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -380,7 +406,8 @@
         "value_label_status": "continuous monetary amount, not a categorical code; self-reported price for 20 cigarettes at respondent-specific current/pre-quit reference time",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "Currency: Chinese Yuan per pack of 20 cigarettes, as asked in the questionnaire. Historical/pre-quit reference may apply; not a current market price. Conditional smoker/quit-history routing means missingness is not population-wide absence.",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA064 (price per pack of 20 cigarettes; prompt specifies reference-time rather than current price)"
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA064 (price per pack of 20 cigarettes; prompt specifies reference-time rather than current price)",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -393,7 +420,8 @@
         "value_label_status": "continuous monetary amount, not a categorical code; self-reported price for 20 cigarettes at respondent-specific current/pre-quit reference time",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "Currency: Chinese Yuan per pack of 20 cigarettes, as asked in the questionnaire. Historical/pre-quit reference may apply; not a current market price. Conditional smoker/quit-history routing means missingness is not population-wide absence.",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; DA064 (price per pack of 20 cigarettes; prompt specifies reference-time rather than current price)"
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; DA064 (price per pack of 20 cigarettes; prompt specifies reference-time rather than current price)",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -406,7 +434,8 @@
         "value_label_status": "continuous monetary amount, not a categorical code; self-reported price for 20 cigarettes at respondent-specific current/pre-quit reference time",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Currency: Chinese Yuan per pack of 20 cigarettes, as asked in the questionnaire. Historical/pre-quit reference may apply; not a current market price. Conditional smoker/quit-history routing means missingness is not population-wide absence.",
-        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; DA064 (price per pack of 20 cigarettes; prompt specifies reference-time rather than current price)"
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; DA064 (price per pack of 20 cigarettes; prompt specifies reference-time rather than current price)",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -428,7 +457,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "Age in years",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -441,7 +471,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "Calendar year",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -454,7 +485,8 @@
         "value_label_status": "official component-type marker reviewed; Codebook lists a fixed Age/Year marker, not the respondent’s smoking time",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "C metadata marker for the adjacent continuous DA062 age/year response fields; not an exposure or a respondent-reported smoking time.",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DA062 directly labels age/year response fields and does not describe an s1/s2 response"
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DA062 directly labels age/year response fields and does not describe an s1/s2 response",
+        "mapping_status": "C metadata; fixed component-type marker only; the respondent’s continuous smoking time is stored separately in da062_1 or da062_2"
       },
       {
         "wave": "2011",
@@ -467,7 +499,8 @@
         "value_label_status": "official component-type marker reviewed; Codebook lists a fixed Age/Year marker, not the respondent’s smoking time",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "C metadata marker for the adjacent continuous DA062 age/year response fields; not an exposure or a respondent-reported smoking time.",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DA062 directly labels age/year response fields and does not describe an s1/s2 response"
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DA062 directly labels age/year response fields and does not describe an s1/s2 response",
+        "mapping_status": "C metadata; fixed component-type marker only; the respondent’s continuous smoking time is stored separately in da062_1 or da062_2"
       },
       {
         "wave": "2011",
@@ -480,7 +513,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "Age in years",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -493,7 +527,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "Calendar year",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -506,7 +541,8 @@
         "value_label_status": "official component-type marker reviewed; Codebook lists a fixed Age/Year marker, not the respondent’s smoking time",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "C metadata marker for the adjacent continuous DA065 age/year response fields; not an exposure or a respondent-reported smoking time.",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DA065 directly labels age/year response fields and does not describe an s1/s2 response"
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DA065 directly labels age/year response fields and does not describe an s1/s2 response",
+        "mapping_status": "C metadata; fixed component-type marker only; the respondent’s continuous smoking time is stored separately in da065_1 or da065_2"
       },
       {
         "wave": "2011",
@@ -519,7 +555,8 @@
         "value_label_status": "official component-type marker reviewed; Codebook lists a fixed Age/Year marker, not the respondent’s smoking time",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "C metadata marker for the adjacent continuous DA065 age/year response fields; not an exposure or a respondent-reported smoking time.",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DA065 directly labels age/year response fields and does not describe an s1/s2 response"
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; DA065 directly labels age/year response fields and does not describe an s1/s2 response",
+        "mapping_status": "C metadata; fixed component-type marker only; the respondent’s continuous smoking time is stored separately in da065_1 or da065_2"
       },
       {
         "wave": "2013",
@@ -532,7 +569,8 @@
         "value_label_status": "official selector code reviewed; selects whether the following component is age or calendar year, with order changing in 2018",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "Selector only; interpret paired cessation/initiation component fields using wave-specific code order. Do not analyze as an ordinal exposure.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "C metadata; smoking-cessation age/year response-format selector; use only to interpret its paired time component"
       },
       {
         "wave": "2013",
@@ -545,7 +583,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "Age in years",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -558,7 +597,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "Calendar year",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -571,7 +611,8 @@
         "value_label_status": "official selector code reviewed; selects whether the following component is age or calendar year, with order changing in 2018",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "Selector only; interpret paired cessation/initiation component fields using wave-specific code order. Do not analyze as an ordinal exposure.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -584,7 +625,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "Age in years",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -597,7 +639,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "Calendar year",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -610,7 +653,8 @@
         "value_label_status": "official selector code reviewed; selects whether the following component is age or calendar year, with order changing in 2018",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Selector only; interpret paired cessation/initiation component fields using wave-specific code order. Do not analyze as an ordinal exposure.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "C metadata; smoking-cessation age/year response-format selector; use only to interpret its paired time component"
       },
       {
         "wave": "2015",
@@ -623,7 +667,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Age in years",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -636,7 +681,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Calendar year",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -649,7 +695,8 @@
         "value_label_status": "official selector code reviewed; selects whether the following component is age or calendar year, with order changing in 2018",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Selector only; interpret paired cessation/initiation component fields using wave-specific code order. Do not analyze as an ordinal exposure.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -662,7 +709,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Age in years",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -675,7 +723,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Calendar year",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -688,7 +737,8 @@
         "value_label_status": "official selector code reviewed; Codebook selector options retained; child component identities conflict with the official questionnaire",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "Selector only; interpret paired cessation/initiation component fields using wave-specific code order. Do not analyze as an ordinal exposure.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "C metadata; selector options are Codebook-labeled, but child age/year component identities conflict with the official questionnaire"
       },
       {
         "wave": "2018",
@@ -701,7 +751,8 @@
         "value_label_status": "DO NOT ANALYZE; official 2018 Questionnaire and Codebook assign opposite age/year meanings to the component",
         "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3089-L3090; sources_official/CHARLS_2018_Codebook_extracted.txt:L43140-L43158",
         "value_semantics": "Questionnaire: DA062_1=Age, DA062_2=Year; Codebook: DA062_1=Year, DA062_2=Age. Preserve unresolved source conflict.",
-        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3089-L3090"
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3089-L3090",
+        "mapping_status": "DO NOT ANALYZE; official 2018 Questionnaire and Codebook assign opposite age/year meanings to this component"
       },
       {
         "wave": "2018",
@@ -714,7 +765,8 @@
         "value_label_status": "DO NOT ANALYZE; official 2018 Questionnaire and Codebook assign opposite age/year meanings to the component",
         "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3089-L3090; sources_official/CHARLS_2018_Codebook_extracted.txt:L43140-L43158",
         "value_semantics": "Questionnaire: DA062_1=Age, DA062_2=Year; Codebook: DA062_1=Year, DA062_2=Age. Preserve unresolved source conflict.",
-        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3089-L3090"
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3089-L3090",
+        "mapping_status": "DO NOT ANALYZE; official 2018 Questionnaire and Codebook assign opposite age/year meanings to this component"
       },
       {
         "wave": "2018",
@@ -727,7 +779,8 @@
         "value_label_status": "official selector code reviewed; selects whether the following component is age or calendar year, with order changing in 2018",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "Selector only; interpret paired cessation/initiation component fields using wave-specific code order. Do not analyze as an ordinal exposure.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -740,7 +793,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "Calendar year",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -753,7 +807,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "Age in years",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -766,7 +821,8 @@
         "value_label_status": "official selector code reviewed; selects whether the following component is age or calendar year, with order changing in 2018",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Selector only; interpret paired cessation/initiation component fields using wave-specific code order. Do not analyze as an ordinal exposure.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "C metadata; smoking-cessation age/year response-format selector; use only to interpret its paired time component"
       },
       {
         "wave": "2020",
@@ -779,7 +835,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Age in years",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -792,7 +849,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Calendar year",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -814,7 +872,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA066, question page not yet indexed"
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA066, question page not yet indexed",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -827,7 +886,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3227"
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3227",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -844,12 +904,13 @@
         "source_label": "Did You Drink Any Alcoholic Beverages Last Year",
         "module": "health_status_and_functioning",
         "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "自动概念目录中的逐波字段候选；原题回答类别和参照期需逐波核对；2020代码重排。",
+        "note": "Past-year drinking threshold, not a numeric monthly dose. DA067=2/3 bypasses current-year beverage details and continues to past-history items; structural skips are not No.",
         "value_labels": "1=Drink more than once a month; 2=Drink but less than once a month; 3=None of these",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official questionnaire route and response categories reviewed; threshold categories retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Past-year frequency thresholds (>once/month, <once/month, or none), not an exact frequency or alcohol dose. Questionnaire routes DA067=2/3 to DA069, bypassing current-year beverage-detail items. A skipped or structural absence is not No/zero; preserve the eligible denominator and verify authorized-release storage.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt:L3886",
+        "mapping_status": "official questionnaire route and response categories reviewed; threshold measure retained; conditional denominator must be respected"
       },
       {
         "wave": "2013",
@@ -857,12 +918,13 @@
         "source_label": "Drink",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "自动概念目录中的逐波字段候选；原题回答类别和参照期需逐波核对；2020代码重排。",
+        "note": "Past-year drinking threshold, not a numeric monthly dose. DA067=2/3 bypasses current-year beverage details and continues to past-history items; structural skips are not No.",
         "value_labels": "1=Drink more than once a month; 2=Drink but less than once a month; 3=None of these",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official questionnaire route and response categories reviewed; threshold categories retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Past-year frequency thresholds (>once/month, <once/month, or none), not an exact frequency or alcohol dose. Questionnaire routes DA067=2/3 to DA069, bypassing current-year beverage-detail items. A skipped or structural absence is not No/zero; preserve the eligible denominator and verify authorized-release storage.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3233",
+        "mapping_status": "official questionnaire route and response categories reviewed; threshold measure retained; conditional denominator must be respected"
       },
       {
         "wave": "2015",
@@ -870,12 +932,13 @@
         "source_label": "Drink",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2015r.zip",
-        "note": "自动概念目录中的逐波字段候选；原题回答类别和参照期需逐波核对；2020代码重排。",
+        "note": "Past-year drinking threshold, not a numeric monthly dose. DA067=2/3 bypasses current-year beverage details and continues to past-history items; structural skips are not No.",
         "value_labels": "1=Drink more than once a month; 2=Drink but less than once a month; 3=None of these",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official questionnaire route and response categories reviewed; threshold categories retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Past-year frequency thresholds (>once/month, <once/month, or none), not an exact frequency or alcohol dose. Questionnaire routes DA067=2/3 to DA069, bypassing current-year beverage-detail items. A skipped or structural absence is not No/zero; preserve the eligible denominator and verify authorized-release storage.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2637",
+        "mapping_status": "official questionnaire route and response categories reviewed; threshold measure retained; conditional denominator must be respected"
       },
       {
         "wave": "2018",
@@ -883,12 +946,13 @@
         "source_label": "Frequency Drank Alcoholic Beverages in the Past Year",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2018r.zip",
-        "note": "自动概念目录中的逐波字段候选；原题回答类别和参照期需逐波核对；2020代码重排。",
+        "note": "Past-year drinking threshold, not a numeric monthly dose. DA067=2/3 bypasses current-year beverage details and continues to past-history items; structural skips are not No.",
         "value_labels": "1=Drink more than once a month; 2=Drink but less than once a month; 3=None of these",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official questionnaire route and response categories reviewed; threshold categories retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Past-year frequency thresholds (>once/month, <once/month, or none), not an exact frequency or alcohol dose. Questionnaire routes DA067=2/3 to DA069, bypassing current-year beverage-detail items. A skipped or structural absence is not No/zero; preserve the eligible denominator and verify authorized-release storage.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3102",
+        "mapping_status": "official questionnaire route and response categories reviewed; threshold measure retained; conditional denominator must be respected"
       },
       {
         "wave": "2020",
@@ -896,12 +960,13 @@
         "source_label": "Frequency Drank Alcoholic Beverages in the Past Year",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2020r.zip",
-        "note": "自动概念目录中的逐波字段候选；原题回答类别和参照期需逐波核对；2020代码重排。",
+        "note": "2020 DA052 is reached only after DA051=1; do not infer zero from structural skip.",
         "value_labels": "1=Drink more than once a month; 2=Drink but less than once a month; 3=None of these",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
+        "value_label_status": "official Chinese questionnaire labels and flowchart route reviewed; threshold categories retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_semantics": "Past-year frequency thresholds (>once/month, <once/month, or none), not an exact frequency or alcohol dose. The Chinese flowchart routes DA051=1 to DA052 and DA051=2/3 to the end of the alcohol sequence. Structural absence is not No/zero; preserve the eligible denominator.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:L1395; sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24)",
+        "mapping_status": "official Chinese questionnaire and flowchart reviewed; threshold measure and conditional route retained"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -923,7 +988,8 @@
         "value_label_status": "official questionnaire and Codebook response labels reviewed; prior-wave carry-forward and routed denominator retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt; response labels only",
         "value_semantics": "Retrospective alcohol-use history/frequency category: never drank, used to drink less than monthly, or used to drink more than monthly. This is not current past-year drinking, quantity, or an exact monthly frequency. Preserve the DA069 route and historical reference. For re-interviews, DA069 may be skipped when the prior-wave history is already available; in 2018 the questionnaire explicitly uses ZDA069 for this carry-forward. A skipped or absent DA069 is not a No response and must not be pooled as one without release-specific validation.",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt:L2607; DA069 and its skip route"
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt:L2607; DA069 and its skip route",
+        "mapping_status": "official questionnaire and Codebook response categories reviewed; historic construct retained; re-interview carry-forward and eligible denominator must be respected"
       },
       {
         "wave": "2013",
@@ -936,7 +1002,8 @@
         "value_label_status": "official questionnaire and Codebook response labels reviewed; prior-wave carry-forward and routed denominator retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; response labels only",
         "value_semantics": "Retrospective alcohol-use history/frequency category: never drank, used to drink less than monthly, or used to drink more than monthly. This is not current past-year drinking, quantity, or an exact monthly frequency. Preserve the DA069 route and historical reference. For re-interviews, DA069 may be skipped when the prior-wave history is already available; in 2018 the questionnaire explicitly uses ZDA069 for this carry-forward. A skipped or absent DA069 is not a No response and must not be pooled as one without release-specific validation.",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3248; DA069 and its skip route"
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3248; DA069 and its skip route",
+        "mapping_status": "official questionnaire and Codebook response categories reviewed; historic construct retained; re-interview carry-forward and eligible denominator must be respected"
       },
       {
         "wave": "2015",
@@ -949,7 +1016,8 @@
         "value_label_status": "official questionnaire and Codebook response labels reviewed; prior-wave carry-forward and routed denominator retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; response labels only",
         "value_semantics": "Retrospective alcohol-use history/frequency category: never drank, used to drink less than monthly, or used to drink more than monthly. This is not current past-year drinking, quantity, or an exact monthly frequency. Preserve the DA069 route and historical reference. For re-interviews, DA069 may be skipped when the prior-wave history is already available; in 2018 the questionnaire explicitly uses ZDA069 for this carry-forward. A skipped or absent DA069 is not a No response and must not be pooled as one without release-specific validation.",
-        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2651; DA069 and its skip route"
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2651; DA069 and its skip route",
+        "mapping_status": "official questionnaire and Codebook response categories reviewed; historic construct retained; re-interview carry-forward and eligible denominator must be respected"
       },
       {
         "wave": "2018",
@@ -962,7 +1030,8 @@
         "value_label_status": "official questionnaire and Codebook response labels reviewed; prior-wave carry-forward and routed denominator retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; response labels only",
         "value_semantics": "Retrospective alcohol-use history/frequency category: never drank, used to drink less than monthly, or used to drink more than monthly. This is not current past-year drinking, quantity, or an exact monthly frequency. Preserve the DA069 route and historical reference. For re-interviews, DA069 may be skipped when the prior-wave history is already available; in 2018 the questionnaire explicitly uses ZDA069 for this carry-forward. A skipped or absent DA069 is not a No response and must not be pooled as one without release-specific validation.",
-        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3124; DA069 and its skip route"
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3124; DA069 and its skip route",
+        "mapping_status": "official questionnaire and Codebook response categories reviewed; historic construct retained; re-interview carry-forward and eligible denominator must be respected"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -984,7 +1053,8 @@
         "value_label_status": "official questionnaire and Codebook Yes/No labels reviewed; conditional DA069 route and eligible denominator retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt; response labels only",
         "value_semantics": "Past-year morning-drink behavior: first drink in the morning to steady nerves or relieve a hangover. The questionnaire routes respondents with DA069=never or <monthly past drinking past the DA070–DA078 sequence; this item therefore does not have a population-wide denominator. Preserve route and eligible sample; structural skips are not No. This is a candidate dependence-related behavior marker, not alcohol quantity or a diagnosis.",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt:L2666; past-year morning-drink item"
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt:L2666; past-year morning-drink item",
+        "mapping_status": "official questionnaire and Codebook item/Yes-No labels reviewed; conditional DA069 route and eligible denominator retained"
       },
       {
         "wave": "2013",
@@ -997,7 +1067,8 @@
         "value_label_status": "official questionnaire and Codebook Yes/No labels reviewed; conditional DA069 route and eligible denominator retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; response labels only",
         "value_semantics": "Past-year morning-drink behavior: first drink in the morning to steady nerves or relieve a hangover. The questionnaire routes respondents with DA069=never or <monthly past drinking past the DA070–DA078 sequence; this item therefore does not have a population-wide denominator. Preserve route and eligible sample; structural skips are not No. This is a candidate dependence-related behavior marker, not alcohol quantity or a diagnosis.",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3314; past-year morning-drink item"
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3314; past-year morning-drink item",
+        "mapping_status": "official questionnaire and Codebook item/Yes-No labels reviewed; conditional DA069 route and eligible denominator retained"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1019,7 +1090,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1041,7 +1113,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -1054,7 +1127,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1076,7 +1150,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1098,7 +1173,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1120,7 +1196,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -1133,7 +1210,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -1146,7 +1224,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -1159,7 +1238,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -1172,7 +1252,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -1185,7 +1266,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -1198,7 +1280,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -1211,7 +1294,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -1224,7 +1308,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -1237,7 +1322,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -1250,7 +1336,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -1263,7 +1350,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1285,7 +1373,8 @@
         "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1307,7 +1396,8 @@
         "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1329,7 +1419,8 @@
         "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1351,7 +1442,8 @@
         "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1373,7 +1465,8 @@
         "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1395,7 +1488,8 @@
         "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No. The “other” selection is retained, but its free-text response is not a standardized measure and is excluded.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1417,7 +1511,8 @@
         "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1439,7 +1534,8 @@
         "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1461,7 +1557,8 @@
         "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1483,7 +1580,8 @@
         "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1505,7 +1603,8 @@
         "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1527,7 +1626,8 @@
         "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No. The “other” selection is retained, but its free-text response is not a standardized measure and is excluded.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1549,7 +1649,8 @@
         "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1571,7 +1672,8 @@
         "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1593,7 +1695,8 @@
         "value_label_status": "2020 official questionnaire and Codebook item identity, wording, and response categories reviewed; frequencies omitted; routed missingness retained",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Self-reported internet/digital technology behavior; candidate exposure only. Preserve the item route and eligible denominator; skipped or structurally missing responses are not No. Asked only under the WeChat-use route.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1610,12 +1713,13 @@
         "source_label": "The Frequency for Drink Liquor",
         "module": "health_status_and_functioning",
         "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "2011年DA072仅在受访者选择烈酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
+        "note": "Wave 1 text says ask DA072 when DA067=1 but does not explicitly require the DA068 liquor selection; retain the liquor-specific item meaning and verify its exact released-file route before analysis. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate.",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
+        "value_label_status": "official questionnaire item and unit reviewed; DA067=1 route documented; beverage-selection denominator unresolved pending authorized-release QA",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "Past-year monthly frequency for liquor, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt:L3931"
+        "value_semantics": "Past-year monthly frequency category for liquor, a beverage-specific component. Wave 1 text says ask DA072 when DA067=1 but does not explicitly require the DA068 liquor selection; retain the liquor-specific item meaning and verify its exact released-file route before analysis. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt:L3931",
+        "mapping_status": "official questionnaire item and unit reviewed; DA067=1 route documented; beverage-selection denominator unresolved pending authorized-release QA"
       },
       {
         "wave": "2011",
@@ -1623,12 +1727,13 @@
         "source_label": "How Many Times Per Month Did You Drink Beer LY",
         "module": "health_status_and_functioning",
         "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "2011年DA074仅在受访者选择啤酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
+        "note": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate.",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
+        "value_label_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "Past-year monthly frequency for beer, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt:L3950"
+        "value_semantics": "Past-year monthly frequency category for beer, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt:L3950",
+        "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted"
       },
       {
         "wave": "2011",
@@ -1636,12 +1741,13 @@
         "source_label": "How Often Did You Drink Wine Per Month LY",
         "module": "health_status_and_functioning",
         "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "2011年DA076仅在受访者选择葡萄酒/米酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
+        "note": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate.",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
+        "value_label_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "Past-year monthly frequency for wine or rice wine, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt:L3965"
+        "value_semantics": "Past-year monthly frequency category for wine or rice wine, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt:L3965",
+        "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted"
       },
       {
         "wave": "2013",
@@ -1649,12 +1755,13 @@
         "source_label": "Drink Liquor Frequency",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "2013年DA072仅在受访者选择烈酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
+        "note": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate.",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
+        "value_label_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_semantics": "Past-year monthly frequency for liquor, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3272"
+        "value_semantics": "Past-year monthly frequency category for liquor, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3272",
+        "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted"
       },
       {
         "wave": "2013",
@@ -1662,12 +1769,13 @@
         "source_label": "Beer",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "2013年DA074仅在受访者选择啤酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
+        "note": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate.",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
+        "value_label_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_semantics": "Past-year monthly frequency for beer, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3286"
+        "value_semantics": "Past-year monthly frequency category for beer, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3286",
+        "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted"
       },
       {
         "wave": "2013",
@@ -1675,12 +1783,13 @@
         "source_label": "Wine or Rice Wine",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "2013年DA076仅在受访者选择葡萄酒/米酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
+        "note": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate.",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
+        "value_label_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_semantics": "Past-year monthly frequency for wine or rice wine, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3301"
+        "value_semantics": "Past-year monthly frequency category for wine or rice wine, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3301",
+        "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted"
       },
       {
         "wave": "2015",
@@ -1688,12 +1797,13 @@
         "source_label": "Drink Liquor Frequency",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2015r.zip",
-        "note": "2015年DA072仅在受访者选择烈酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
+        "note": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate.",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
+        "value_label_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_semantics": "Past-year monthly frequency for liquor, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
-        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2674"
+        "value_semantics": "Past-year monthly frequency category for liquor, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2674",
+        "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted"
       },
       {
         "wave": "2015",
@@ -1701,12 +1811,13 @@
         "source_label": "Beer",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2015r.zip",
-        "note": "2015年DA074仅在受访者选择啤酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
+        "note": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate.",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
+        "value_label_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_semantics": "Past-year monthly frequency for beer, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
-        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2688"
+        "value_semantics": "Past-year monthly frequency category for beer, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2688",
+        "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted"
       },
       {
         "wave": "2015",
@@ -1714,12 +1825,13 @@
         "source_label": "Wine or Rice Wine",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2015r.zip",
-        "note": "2015年DA076仅在受访者选择葡萄酒/米酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
+        "note": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate.",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
+        "value_label_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_semantics": "Past-year monthly frequency for wine or rice wine, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
-        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2703"
+        "value_semantics": "Past-year monthly frequency category for wine or rice wine, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2703",
+        "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted"
       },
       {
         "wave": "2018",
@@ -1727,12 +1839,13 @@
         "source_label": "Frequncy Drinking Liquor Per Month in the Last Year",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2018r.zip",
-        "note": "2018年DA072仅在受访者选择烈酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
+        "note": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate.",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
+        "value_label_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "value_semantics": "Past-year monthly frequency for liquor, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
-        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3148"
+        "value_semantics": "Past-year monthly frequency category for liquor, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3148",
+        "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted"
       },
       {
         "wave": "2018",
@@ -1740,12 +1853,13 @@
         "source_label": "Frequncy Drinking Beer per Month in the Last Year",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2018r.zip",
-        "note": "2018年DA074仅在受访者选择啤酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
+        "note": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate.",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
+        "value_label_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "value_semantics": "Past-year monthly frequency for beer, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
-        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3163"
+        "value_semantics": "Past-year monthly frequency category for beer, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3163",
+        "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted"
       },
       {
         "wave": "2018",
@@ -1753,12 +1867,13 @@
         "source_label": "Frequncy Drinking Wine per Month in the Last Year",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2018r.zip",
-        "note": "2018年DA076仅在受访者选择葡萄酒/米酒后询问该酒类过去一年内的饮用频率；它是酒类单项频率，不是总体饮酒频率，也不应与其他酒类字段直接求和。跨波需保留题目范围和路由。",
+        "note": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate.",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
+        "value_label_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "value_semantics": "Past-year monthly frequency for wine or rice wine, asked only when that beverage type was selected; this is one beverage-specific component, not total alcohol frequency. Preserve beverage type and route.",
-        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3179"
+        "value_semantics": "Past-year monthly frequency category for wine or rice wine, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3179",
+        "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted"
       },
       {
         "wave": "2020",
@@ -1766,12 +1881,13 @@
         "source_label": "Frequncy Drinking Per Month in the Last Year",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2020r.zip",
-        "note": "2020 DA052 asks overall monthly frequency for any alcoholic beverage in the past year; it is not split by beverage type. Do not treat it as directly equivalent to the 2011–2018 beverage-specific items despite matching response categories.",
+        "note": "2020 overall monthly frequency among DA051=1; it is not split by beverage type, unlike earlier beverage-specific fields. Do not infer zero from structural skip or pool without a prespecified harmonization rule.",
         "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
-        "value_label_status": "official codebook response labels reviewed; wave-specific beverage scope and routing retained separately",
+        "value_label_status": "official Chinese questionnaire response categories and flowchart route reviewed; overall measure and conditional denominator retained; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
-        "value_semantics": "Overall monthly frequency of any alcoholic beverage in the past year; not beverage-specific. The identical 1–8 response categories do not make this directly comparable with the beverage-specific 2011–2018 items.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1206"
+        "value_semantics": "Overall past-year monthly frequency of any alcoholic beverage. The Chinese Wave 5 flowchart routes DA051=1 to DA052 and DA051=2/3 to the end. This is not beverage-specific and is not directly interchangeable with 2011-2018 DA072/DA074/DA076, even though response categories match. Structural skips are not zero.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:L1401; sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24)",
+        "mapping_status": "official Chinese questionnaire and flowchart reviewed; overall any-beverage measure conditional on DA051=1; do not pool directly with earlier beverage-specific items"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -1793,7 +1909,8 @@
         "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "liang of liquor; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA073, Word p.75"
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA073, Word p.75",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -1806,7 +1923,8 @@
         "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "number of beer bottles; questionnaire defines 1 bottle as 2.5 mugs and 1 mug as 220 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA075_1, Word p.76"
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA075_1, Word p.76",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -1819,7 +1937,8 @@
         "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "number of beer mugs; questionnaire defines 1 mug as 220 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA075_2, Word p.76"
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA075_2, Word p.76",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -1832,7 +1951,8 @@
         "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "liang of wine/rice wine; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA077, question page not yet indexed"
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA077, question page not yet indexed",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -1845,7 +1965,8 @@
         "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "liang of liquor; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3282"
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3282",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -1858,7 +1979,8 @@
         "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "number of beer bottles; questionnaire defines 1 bottle as 2.5 mugs and 1 mug as 220 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3296"
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3296",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -1871,7 +1993,8 @@
         "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "number of beer mugs; questionnaire defines 1 mug as 220 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3296"
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3296",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -1884,7 +2007,8 @@
         "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "liang of wine/rice wine; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3311"
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3311",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -1897,7 +2021,8 @@
         "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "liang of liquor; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2684"
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2684",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -1910,7 +2035,8 @@
         "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "number of beer bottles; questionnaire defines 1 bottle as 2.5 mugs and 1 mug as 220 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2698"
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2698",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -1923,7 +2049,8 @@
         "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "number of beer mugs; questionnaire defines 1 mug as 220 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2698"
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2698",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -1936,7 +2063,8 @@
         "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "liang of wine/rice wine; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2713"
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2713",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -1949,7 +2077,8 @@
         "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "liang of liquor; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3158"
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3158",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -1962,7 +2091,8 @@
         "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "number of beer bottles; questionnaire defines 1 bottle as 2.5 mugs and 1 mug as 220 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3173"
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3173",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -1975,7 +2105,8 @@
         "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "number of beer mugs; questionnaire defines 1 mug as 220 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3173"
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3173",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -1988,7 +2119,8 @@
         "value_label_status": "continuous beverage quantity, not a categorical code; last drinking event in past year; inspect out-of-range/special values and do not convert to ethanol grams without alcohol-strength assumptions",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "liang of wine/rice wine; questionnaire defines 1 liang as 50 ml; recalls the most recent drinking event in the past year; quantity is distinct from frequency; no grams of ethanol derived",
-        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3189"
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3189",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -2010,7 +2142,8 @@
         "value_label_status": "official selector code reviewed; component order differs in 2011 versus 2013–2018",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "Selector only; paired fields encode age/year according to the wave-specific selector labels. Not an ordinal exposure.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -2023,7 +2156,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "Calendar year",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -2036,7 +2170,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "Age in years",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -2049,7 +2184,8 @@
         "value_label_status": "official selector code reviewed; component order differs in 2011 versus 2013–2018",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "Selector only; paired fields encode age/year according to the wave-specific selector labels. Not an ordinal exposure.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -2062,7 +2198,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "Calendar year",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -2075,7 +2212,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "Age in years",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -2088,7 +2226,8 @@
         "value_label_status": "official selector code reviewed; component order differs in 2011 versus 2013–2018",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "Selector only; paired fields encode age/year according to the wave-specific selector labels. Not an ordinal exposure.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -2101,7 +2240,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "Calendar year",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -2114,7 +2254,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "Age in years",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -2127,7 +2268,8 @@
         "value_label_status": "official selector code reviewed; component order differs in 2011 versus 2013–2018",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "Selector only; paired fields encode age/year according to the wave-specific selector labels. Not an ordinal exposure.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -2140,7 +2282,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "Calendar year",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -2153,7 +2296,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "Age in years",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -2166,7 +2310,8 @@
         "value_label_status": "official selector code reviewed; component order differs in 2011 versus 2013–2018",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Selector only; paired fields encode age/year according to the wave-specific selector labels. Not an ordinal exposure.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -2179,7 +2324,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Calendar year",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -2192,7 +2338,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Age in years",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -2205,7 +2352,8 @@
         "value_label_status": "official selector code reviewed; component order differs in 2011 versus 2013–2018",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Selector only; paired fields encode age/year according to the wave-specific selector labels. Not an ordinal exposure.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -2218,7 +2366,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Calendar year",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -2231,7 +2380,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Age in years",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -2244,7 +2394,8 @@
         "value_label_status": "official selector code reviewed; component order differs in 2011 versus 2013–2018",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "Selector only; paired fields encode age/year according to the wave-specific selector labels. Not an ordinal exposure.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -2257,7 +2408,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "Calendar year",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -2270,7 +2422,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "Age in years",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -2283,7 +2436,8 @@
         "value_label_status": "official selector code reviewed; component order differs in 2011 versus 2013–2018",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "Selector only; paired fields encode age/year according to the wave-specific selector labels. Not an ordinal exposure.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -2296,7 +2450,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "Calendar year",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -2309,7 +2464,8 @@
         "value_label_status": "continuous component, not a categorical code; component unit reviewed against wave-specific official codebook",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "Age in years",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -2331,7 +2487,8 @@
         "value_label_status": "continuous measure, not a categorical code; past-month average sleep hours per night; inspect special/missing codes",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "Continuous real hours/night for past-month actual sleep; questionnaire range 0-24; released-file special codes still require verification.",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA049, question page not yet indexed"
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA049, question page not yet indexed",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -2344,7 +2501,8 @@
         "value_label_status": "continuous measure, not a categorical code; past-month average sleep hours per night; inspect special/missing codes",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "Continuous real hours/night for past-month actual sleep; questionnaire range 0-24; released-file special codes still require verification.",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3029"
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3029",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -2357,7 +2515,8 @@
         "value_label_status": "continuous measure, not a categorical code; past-month average sleep hours per night; inspect special/missing codes",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Continuous real hours/night for past-month actual sleep; questionnaire range 0-24; released-file special codes still require verification.",
-        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2429"
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2429",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -2370,7 +2529,8 @@
         "value_label_status": "continuous measure, not a categorical code; past-month average sleep hours per night; inspect special/missing codes",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "Continuous real hours/night for past-month actual sleep; questionnaire range 0-24; released-file special codes still require verification.",
-        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L2941"
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L2941",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -2383,7 +2543,8 @@
         "value_label_status": "continuous measure, not a categorical code; past-month average sleep hours per night; inspect special/missing codes",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Continuous real hours/night for past-month actual sleep; valid range 0-24; -1 explicitly means unable to answer.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1100"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1100",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -2405,7 +2566,8 @@
         "value_label_status": "continuous measure, not a categorical code; nap duration appears in minutes; inspect special/missing codes",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "Continuous minutes after lunch in past month; non-napper=0; codebook summary maximum 180; released-file special codes still require verification.",
-        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA050, question page not yet indexed"
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; DA050, question page not yet indexed",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -2418,7 +2580,8 @@
         "value_label_status": "continuous measure, not a categorical code; nap duration appears in minutes; inspect special/missing codes",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "Continuous minutes after lunch in past month; non-napper=0; codebook summary maximum 180; released-file special codes still require verification.",
-        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3033"
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3033",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -2431,7 +2594,8 @@
         "value_label_status": "continuous measure, not a categorical code; nap duration appears in minutes; inspect special/missing codes",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Continuous minutes after lunch in past month; non-napper=0; codebook summary maximum 180; released-file special codes still require verification.",
-        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2433"
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2433",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -2444,7 +2608,8 @@
         "value_label_status": "continuous measure, not a categorical code; nap duration appears in minutes; inspect special/missing codes",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "Continuous minutes after lunch in past month; non-napper=0; codebook summary maximum 999 conflicts with questionnaire/context and remains unresolved.",
-        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L2945"
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L2945",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -2457,7 +2622,8 @@
         "value_label_status": "continuous measure, not a categorical code; nap duration appears in minutes; inspect special/missing codes",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Continuous integer minutes after lunch in past month; non-napper=0; -1 explicitly means unable to answer; questionnaire range 0-300.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1104"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1104",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -2479,7 +2645,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -2492,7 +2659,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -2505,7 +2673,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -2518,7 +2687,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -2531,7 +2701,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -2544,7 +2715,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -2557,7 +2729,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -2570,7 +2743,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -2583,7 +2757,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -2596,7 +2771,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -2609,7 +2785,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -2622,7 +2799,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -2635,7 +2813,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -2648,7 +2827,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -2661,7 +2841,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -2683,7 +2864,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -2696,7 +2878,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -2709,7 +2892,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -2722,7 +2906,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -2735,7 +2920,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -2748,7 +2934,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -2761,7 +2948,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -2774,7 +2962,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -2787,7 +2976,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -2800,7 +2990,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -2813,7 +3004,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -2826,7 +3018,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -2839,7 +3032,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -2852,7 +3046,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -2865,7 +3060,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -2887,7 +3083,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -2900,7 +3097,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -2913,7 +3111,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -2926,7 +3125,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -2939,7 +3139,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -2952,7 +3153,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -2965,7 +3167,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -2978,7 +3181,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2011",
@@ -2991,7 +3195,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -3004,7 +3209,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -3017,7 +3223,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -3030,7 +3237,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -3043,7 +3251,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -3056,7 +3265,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -3069,7 +3279,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -3082,7 +3293,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -3095,7 +3307,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2013",
@@ -3108,7 +3321,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -3121,7 +3335,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -3134,7 +3349,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -3147,7 +3363,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -3160,7 +3377,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -3173,7 +3391,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -3186,7 +3405,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -3199,7 +3419,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -3212,7 +3433,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -3225,7 +3447,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -3238,7 +3461,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -3251,7 +3475,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -3264,7 +3489,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -3277,7 +3503,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -3290,7 +3517,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -3303,7 +3531,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -3316,7 +3545,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -3329,7 +3559,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -3342,7 +3573,8 @@
         "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -3355,7 +3587,8 @@
         "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1116; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1116; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32",
+        "mapping_status": "official Chinese questionnaire, flowchart, and Codebook reviewed; conditional duration routing retained; release-variable identity/storage still requires authorized-file QA"
       },
       {
         "wave": "2020",
@@ -3368,7 +3601,8 @@
         "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1116; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1116; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32",
+        "mapping_status": "official Chinese questionnaire, flowchart, and Codebook reviewed; conditional duration routing retained; release-variable identity/storage still requires authorized-file QA"
       },
       {
         "wave": "2020",
@@ -3381,7 +3615,8 @@
         "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1116; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1116; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32",
+        "mapping_status": "official Chinese questionnaire, flowchart, and Codebook reviewed; conditional duration routing retained; release-variable identity/storage still requires authorized-file QA"
       },
       {
         "wave": "2020",
@@ -3394,7 +3629,8 @@
         "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt:L4223-L4232; sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA035; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24)",
         "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1120; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1120; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32",
+        "mapping_status": "official Chinese questionnaire, flowchart, and Codebook reviewed; conditional duration routing retained; release-variable identity/storage still requires authorized-file QA"
       },
       {
         "wave": "2020",
@@ -3407,7 +3643,8 @@
         "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt:L4223-L4232; sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA035; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24)",
         "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1120; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1120; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32",
+        "mapping_status": "official Chinese questionnaire, flowchart, and Codebook reviewed; conditional duration routing retained; release-variable identity/storage still requires authorized-file QA"
       },
       {
         "wave": "2020",
@@ -3420,7 +3657,8 @@
         "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt:L4223-L4232; sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA035; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24)",
         "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1120; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1120; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32",
+        "mapping_status": "official Chinese questionnaire, flowchart, and Codebook reviewed; conditional duration routing retained; release-variable identity/storage still requires authorized-file QA"
       },
       {
         "wave": "2020",
@@ -3433,7 +3671,8 @@
         "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1124; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1124; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32",
+        "mapping_status": "official Chinese questionnaire, flowchart, and Codebook reviewed; conditional duration routing retained; release-variable identity/storage still requires authorized-file QA"
       },
       {
         "wave": "2020",
@@ -3446,7 +3685,8 @@
         "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1124; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1124; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32",
+        "mapping_status": "official Chinese questionnaire, flowchart, and Codebook reviewed; conditional duration routing retained; release-variable identity/storage still requires authorized-file QA"
       },
       {
         "wave": "2020",
@@ -3459,7 +3699,8 @@
         "value_label_status": "official codebook response labels reviewed; Chinese questionnaire confirms; English translation discrepancy resolved; flowchart routing reviewed; release-variable identity/storage still requires authorized-file QA",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Intensity-specific activity-day duration category. Official Chinese questionnaire/flowchart route: after DA032=Yes and DA033, DA034<2 hours routes to DA035 (<30/≥30 minutes); DA034≥2 hours routes to DA036 (<4/≥4 hours); then DA037. English questionnaire prints “30 hours,” a translation conflict resolved by the Chinese questionnaire and Codebook. Preserve intensity-specific conditional components; do not derive weekly minutes or an IPAQ score. Authorized-release value/storage checks remain necessary.",
-        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1124; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32"
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:DA034-DA036; sources_official/CHARLS_2020_Questionnaire_Chinese.pdf:PDF p.36 (printed p.30); sources_official/CHARLS_2020_Flowchart_Chinese.pdf:PDF p.30 (printed p.24); sources_official/CHARLS_2020_Questionnaire_English_extracted.txt:L1124; sources_official/CHARLS_2020_Questionnaire_English.pdf:p.32",
+        "mapping_status": "official Chinese questionnaire, flowchart, and Codebook reviewed; conditional duration routing retained; release-variable identity/storage still requires authorized-file QA"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -3481,7 +3722,8 @@
         "value_label_status": "official codebook response labels reviewed; frequencies omitted; descriptive purpose only, not activity dose",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Purpose of intensive/moderate/light physical activity; descriptive category, not activity occurrence, frequency, duration, or dose. Preserve the wave-specific codebook wording and questionnaire route.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -3494,7 +3736,8 @@
         "value_label_status": "official codebook response labels reviewed; frequencies omitted; descriptive purpose only, not activity dose",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Purpose of intensive/moderate/light physical activity; descriptive category, not activity occurrence, frequency, duration, or dose. Preserve the wave-specific codebook wording and questionnaire route.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2015",
@@ -3507,7 +3750,8 @@
         "value_label_status": "official codebook response labels reviewed; frequencies omitted; descriptive purpose only, not activity dose",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
         "value_semantics": "Purpose of intensive/moderate/light physical activity; descriptive category, not activity occurrence, frequency, duration, or dose. Preserve the wave-specific codebook wording and questionnaire route.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -3520,7 +3764,8 @@
         "value_label_status": "official codebook response labels reviewed; frequencies omitted; descriptive purpose only, not activity dose",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "Purpose of intensive/moderate/light physical activity; descriptive category, not activity occurrence, frequency, duration, or dose. Preserve the wave-specific codebook wording and questionnaire route.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -3533,7 +3778,8 @@
         "value_label_status": "official codebook response labels reviewed; frequencies omitted; descriptive purpose only, not activity dose",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "Purpose of intensive/moderate/light physical activity; descriptive category, not activity occurrence, frequency, duration, or dose. Preserve the wave-specific codebook wording and questionnaire route.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2018",
@@ -3546,7 +3792,8 @@
         "value_label_status": "official codebook response labels reviewed; frequencies omitted; descriptive purpose only, not activity dose",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
         "value_semantics": "Purpose of intensive/moderate/light physical activity; descriptive category, not activity occurrence, frequency, duration, or dose. Preserve the wave-specific codebook wording and questionnaire route.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -3559,7 +3806,8 @@
         "value_label_status": "official codebook response labels reviewed; frequencies omitted; descriptive purpose only, not activity dose",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Purpose of intensive/moderate/light physical activity; descriptive category, not activity occurrence, frequency, duration, or dose. Preserve the wave-specific codebook wording and questionnaire route.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -3572,7 +3820,8 @@
         "value_label_status": "official codebook response labels reviewed; frequencies omitted; descriptive purpose only, not activity dose",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Purpose of intensive/moderate/light physical activity; descriptive category, not activity occurrence, frequency, duration, or dose. Preserve the wave-specific codebook wording and questionnaire route.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       },
       {
         "wave": "2020",
@@ -3585,7 +3834,8 @@
         "value_label_status": "official codebook response labels reviewed; frequencies omitted; descriptive purpose only, not activity dose",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_semantics": "Purpose of intensive/moderate/light physical activity; descriptive category, not activity occurrence, frequency, duration, or dose. Preserve the wave-specific codebook wording and questionnaire route.",
-        "questionnaire_source": ""
+        "questionnaire_source": "",
+        "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",

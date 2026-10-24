@@ -7,7 +7,7 @@ e,behavior,smoking and tobacco,51,51,26
 e,behavioral exposures,smoking cessation timing component; questionnaire/Codebook identity conflict,2,2,0
 e,community context,"environment, infrastructure, and services",270,270,74
 e,early-life and family socioeconomic context,childhood residential setting,1,1,1
-e,early-life and family socioeconomic context,parent marital and ethnic context,3,3,3
+e,early-life and family socioeconomic context,parent marital and ethnic context,1,1,1
 e,environmental perception,self-reported air-quality satisfaction,1,1,1
 e,family and intergenerational context,child education and schooling context,4,4,1
 e,family and intergenerational context,child hukou and location history,13,13,11
@@ -22,7 +22,7 @@ e,life-course and reproductive history,reproductive timing,8,8,0
 e,social determinants,adult education and lifelong learning,13,13,10
 e,social determinants,annual wage/salary amount reported for household-member roster slots,22,22,0
 e,social determinants,early-life family socioeconomic context,4,4,4
-e,social determinants,education and social position,89,89,84
+e,social determinants,education and social position,91,89,86
 e,social determinants,"employment, occupation, and work organization",602,602,339
 e,social determinants,formal schooling history and timing,17,17,17
 e,social determinants,household expenditure and material resources,56,56,4
@@ -72,7 +72,7 @@ e,social protection,years enrolled in the named pension plan,1,1,0
 p,anthropometric,body size and anthropometry,24,15,0
 p,biochemistry,blood and urine laboratory measures,32,32,0
 p,blood pressure,blood pressure and pulse,54,27,0
-p,chronic disease,self-reported physician diagnosis,248,248,240
+p,chronic disease,self-reported physician diagnosis,241,241,233
 p,chronic disease ancillary,conditional management / diabetes annual testing / selected option: Blood glucose test,2,2,2
 p,chronic disease ancillary,conditional management / diabetes annual testing / selected option: Fundus examination,2,2,2
 p,chronic disease ancillary,conditional management / diabetes annual testing / selected option: Micro-albuminuria test,2,2,2
@@ -136,14 +136,13 @@ p,chronic disease ancillary,reported diagnosis/knowledge time / age,56,56,0
 p,chronic disease ancillary,reported diagnosis/knowledge time / year,56,56,0
 p,chronic disease ancillary,reported disease change since prior interview / self-rated interval change,18,18,18
 p,chronic disease ancillary,reported disease treatment / age at most recent stroke,2,2,0
-p,chronic disease ancillary,reported disease treatment / antidepressant medication option,1,1,1
 p,chronic disease ancillary,reported disease treatment / doctor-diagnosed recurrent stroke,3,3,3
 p,chronic disease ancillary,reported disease treatment / month of most recent stroke,1,1,0
 p,chronic disease ancillary,reported disease treatment / none-of-the-above treatment option,1,1,1
-p,chronic disease ancillary,reported disease treatment / wave-specific treatment response,261,261,261
+p,chronic disease ancillary,reported disease treatment / wave-specific treatment response,260,260,260
 p,chronic disease ancillary,reported disease treatment / wave-specific treatment response; option index only,10,10,10
 p,chronic disease ancillary,reported disease treatment / year of most recent stroke,3,3,0
-p,cognition,memory and cognitive performance,338,338,305
+p,cognition,memory and cognitive performance,337,333,304
 p,health and symptoms,child health and functioning,2,2,2
 p,health and symptoms,health-related work absence,6,6,0
 p,health and symptoms,"self-rated health, pain, and symptoms",111,111,111
@@ -151,14 +150,14 @@ p,health and symptoms,"self-rated health, pain, symptoms, and test eligibility",
 p,health and symptoms,subjective life expectancy,5,5,5
 p,healthcare access,COVID-period delayed or unmet medical care,15,15,15
 p,healthcare access,"insurance, outpatient and inpatient utilization",202,202,51
-p,mental health,depressive symptoms and emotional wellbeing,52,52,52
+p,mental health,depressive symptoms and emotional wellbeing,54,52,54
 p,physical function,assistive-device use in ADL/IADL support,26,26,26
 p,physical function,reported disability history / brain_intellectual,10,10,5
 p,physical function,reported disability history / hearing,10,10,5
 p,physical function,reported disability history / physical,2,2,0
 p,physical function,reported disability history / speech,10,10,5
 p,physical function,reported disability history / vision,10,10,5
-p,physical function,"strength, mobility, lung function, and performance",198,192,123
+p,physical function,"strength, mobility, lung function, and performance",206,192,131
 p,social wellbeing,health satisfaction,2,2,2
 p,social wellbeing,life satisfaction,4,4,4
 p,social wellbeing,marital relationship satisfaction,2,2,2

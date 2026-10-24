@@ -22,6 +22,8 @@
 
 ## 2026-10-25
 
+- Reviewed past-year alcohol-frequency routing across all five waves. Preserved 2011–2018 beverage-specific frequency fields and the distinct 2020 overall-frequency measure; kept the Wave 1 liquor-frequency denominator unresolved pending authorized-release QA. Propagated reviewed labels and caveats to the field catalog and pair explorer, versioned the behavior asset cache, and added regression coverage. No respondent records or Codebook frequency summaries were used.
+
 - 将2011 `flda081_1` 从自动关键词协变量搜索提示改为C类主观预期年龄题目上下文元数据；根据官方CodeBook显示75–115岁年龄档，不展示频数。问卷`DA081`目标年龄在提取文本中仍为占位符，故两字段直接链接继续标为未证实，`flda081_1`不进入E/P或模型。
 - 修正角色覆核构建器，使已有C类记录可原位套用新元数据审查，不会被误当重复项删除；新增来源状态回归检查并刷新公开目录资源缓存键。
 - 目录终结重建通过：E/P字段—类别行6,951、C字段—波次行980、E/P候选概念1,458、概念—来源映射6,751；通用未审核标签 E/P/C 均为0。正式模型数和实际逐对样本量仍为0。

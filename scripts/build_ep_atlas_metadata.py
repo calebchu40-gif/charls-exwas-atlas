@@ -87,6 +87,7 @@ FULL_PIPELINE_SCRIPTS = (
     "build_behavior_exposure_crosswalk.py",
     "enrich_behavior_value_labels.py",
     "apply_alcohol_history_source_review.py",
+    "apply_alcohol_frequency_route_review.py",
     "build_social_exposure_crosswalk.py",
     "apply_social_caregiver_metadata_review.py",
     "apply_internet_digital_exposure_review.py",
@@ -180,6 +181,7 @@ FULL_PIPELINE_SCRIPTS = (
     "apply_residential_location_metadata_review.py",
     "apply_nurse_wage_metadata_review.py",
     "apply_pastime_job_classification_review.py",
+    "propagate_alcohol_metadata_to_catalog.py",
     "validate_do_not_analyze_triage.py",
     "propagate_ep_crosswalk_status.py",
     # C metadata is propagated after the first shard build above; regenerate
@@ -206,7 +208,9 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "build_child_phenotype_crosswalk.py",
     # Restore reviewed household route/category metadata before catalog propagation.
     "apply_housing_context_source_review.py",
+    "enrich_behavior_value_labels.py",
     "apply_alcohol_history_source_review.py",
+    "apply_alcohol_frequency_route_review.py",
     "build_charls_atlas_catalog.py",
     # Rebuild the housing lookup from the audited owner-label maps before the
     # later housing measurement scripts enrich its units and route notes.
@@ -297,6 +301,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_residential_location_metadata_review.py",
     "apply_nurse_wage_metadata_review.py",
     "apply_pastime_job_classification_review.py",
+    "propagate_alcohol_metadata_to_catalog.py",
     "validate_do_not_analyze_triage.py",
     "propagate_ep_crosswalk_status.py",
     "site_catalog_shards.py",
