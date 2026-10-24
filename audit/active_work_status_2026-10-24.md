@@ -227,3 +227,7 @@ JA039_1/JA039_2显示°C，JA040/JA041显示days，参照2010日历年并标注�
 ## 2026-10-24 最新续接：Wave 2 权重方法说明已发布
 
 最新提交 `87f6be0`。Validate #263（https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40061030823）与 Pages Deploy #118（https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40061030880）成功；公开首页 HTTP 200，确认 `app.js?v=64`、Wave 2 权重差异说明和官方来源审计链接均已上线。最近完整测试套件为269项通过（含14项结果schema门槛测试）；页面改动另有回归检查。Wave 2 Release Note确认横截面、纵向、横截面生物标志物权重对应不同估计目标，且不提供纵向生物标志物权重；准备表当前仍缺2013官方`crosssection`/`longitudinal`标记，方差层标识也未核实。不得以地域字段拼造strata。正式CHARLS模型与实际配对N仍为0。
+
+## 2026-10-24 续接记录：文档推送与重跑验证
+
+交接状态文档更新提交 `478ba52` 已推送；GitHub Validate（run `40061185733`）成功。随后本地按仓库CI命令重新运行完整 Python 套件，269项全部通过；线上方法说明继续返回HTTP 200，Wave 2官方来源审计链接也返回HTTP 200。下一步继续做可由公开资料验证的跨波目录与统计方案准备；Wave 2权重原件和真实方差设计仍是模型启动门槛。
