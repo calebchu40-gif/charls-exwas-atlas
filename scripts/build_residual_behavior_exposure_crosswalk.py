@@ -30,10 +30,10 @@ SPECS = {
     "previous_day_sleep_schedule": {
         "label": "Sleep and wake clock-time components on the previous day",
         "module": "Health_Status_and_Functioning",
-        "unit": "clock-time components: AM/PM, hour, minute",
+        "unit": "clock-time response components; wb03/wb04 primary code plus AM/PM-specific hour/minute rows",
         "period": "yesterday / previous-day recall",
-        "semantics": "wave-specific time components; do not combine without validating routing and component meaning",
-        "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. WB03/WB04 use a 12-hour clock in the questionnaire. The codebook distinguishes AM/PM fields and exact-report hour/minute components, with markedly different completion patterns; preserve every source field and verify routing before deriving clock time. This is not usual sleep timing, sleep duration, or a multi-day average. Codebook frequencies are not sample-size estimates for this project.",
+        "semantics": "2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
+        "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average.",
         "codes": {"2013": ["wb03", "wb03_1", "wb03_2", "wb03_3", "wb03_4", "wb04", "wb04_1", "wb04_2", "wb04_3", "wb04_4"]},
         "docs": {"2013": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"},
     },
@@ -47,7 +47,15 @@ for concept, spec in SPECS.items():
             if found.empty:
                 raise SystemExit(f"Source field missing from raw catalog: {wave}/{code}")
             for rec in found.itertuples(index=False):
-                labels = "1=AM; 2=PM (official codebook response codes)" if code.lower() in {"wb03", "wb04"} else ""
+                lower = code.lower()
+                if lower in {"wb03", "wb04"}:
+                    labels = "1=AM; 2=PM (official codebook response codes)"
+                elif lower.startswith(("wb03_", "wb04_")) and lower.endswith(("_1", "_2")):
+                    labels = "AM-row component (official questionnaire layout; verify release storage)"
+                elif lower.startswith(("wb03_", "wb04_")) and lower.endswith(("_3", "_4")):
+                    labels = "PM-row component (official questionnaire layout; verify release storage)"
+                else:
+                    labels = ""
                 rows.append({
                     "wave": wave, "code": code, "concept_id": concept,
                     "concept_label": spec["label"], "domain": "behavior and household social context",

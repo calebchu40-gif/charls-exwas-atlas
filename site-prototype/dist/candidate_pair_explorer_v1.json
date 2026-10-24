@@ -26604,101 +26604,101 @@
               "code": "wb03",
               "label": "What Time Did You Wake Up Yesterday?",
               "module": "Health_Status_and_Functioning",
-              "unit": "clock-time components: AM/PM, hour, minute",
+              "unit": "clock-time response components; wb03/wb04 primary code plus AM/PM-specific hour/minute rows",
               "value_labels": "1=AM; 2=PM (official codebook response codes)",
-              "value_semantics": "yesterday / previous-day recall; wave-specific time components; do not combine without validating routing and component meaning",
+              "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. WB03/WB04 use a 12-hour clock in the questionnaire. The codebook distinguishes AM/PM fields and exact-report hour/minute components, with markedly different completion patterns; preserve every source field and verify routing before deriving clock time. This is not usual sleep timing, sleep duration, or a multi-day average. Codebook frequencies are not sample-size estimates for this project."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb03_1",
               "label": "What Time Did You Wake Up Yesterday, Please Report Exactly Hour?",
               "module": "Health_Status_and_Functioning",
-              "unit": "clock-time components: AM/PM, hour, minute",
-              "value_labels": "",
-              "value_semantics": "yesterday / previous-day recall; wave-specific time components; do not combine without validating routing and component meaning",
+              "unit": "clock-time response components; wb03/wb04 primary code plus AM/PM-specific hour/minute rows",
+              "value_labels": "AM-row component (official questionnaire layout; verify release storage)",
+              "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. WB03/WB04 use a 12-hour clock in the questionnaire. The codebook distinguishes AM/PM fields and exact-report hour/minute components, with markedly different completion patterns; preserve every source field and verify routing before deriving clock time. This is not usual sleep timing, sleep duration, or a multi-day average. Codebook frequencies are not sample-size estimates for this project."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb03_2",
               "label": "What Time Did You Wake Up Yesterday, Please Report Exactly Minute?",
               "module": "Health_Status_and_Functioning",
-              "unit": "clock-time components: AM/PM, hour, minute",
-              "value_labels": "",
-              "value_semantics": "yesterday / previous-day recall; wave-specific time components; do not combine without validating routing and component meaning",
+              "unit": "clock-time response components; wb03/wb04 primary code plus AM/PM-specific hour/minute rows",
+              "value_labels": "AM-row component (official questionnaire layout; verify release storage)",
+              "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. WB03/WB04 use a 12-hour clock in the questionnaire. The codebook distinguishes AM/PM fields and exact-report hour/minute components, with markedly different completion patterns; preserve every source field and verify routing before deriving clock time. This is not usual sleep timing, sleep duration, or a multi-day average. Codebook frequencies are not sample-size estimates for this project."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb03_3",
               "label": "What Time Did You Wake Up Yesterday, Please Report Exactly Hour?",
               "module": "Health_Status_and_Functioning",
-              "unit": "clock-time components: AM/PM, hour, minute",
-              "value_labels": "",
-              "value_semantics": "yesterday / previous-day recall; wave-specific time components; do not combine without validating routing and component meaning",
+              "unit": "clock-time response components; wb03/wb04 primary code plus AM/PM-specific hour/minute rows",
+              "value_labels": "PM-row component (official questionnaire layout; verify release storage)",
+              "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. WB03/WB04 use a 12-hour clock in the questionnaire. The codebook distinguishes AM/PM fields and exact-report hour/minute components, with markedly different completion patterns; preserve every source field and verify routing before deriving clock time. This is not usual sleep timing, sleep duration, or a multi-day average. Codebook frequencies are not sample-size estimates for this project."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb03_4",
               "label": "What Time Did You Wake Up Yesterday, Please Report Exactly Minute?",
               "module": "Health_Status_and_Functioning",
-              "unit": "clock-time components: AM/PM, hour, minute",
-              "value_labels": "",
-              "value_semantics": "yesterday / previous-day recall; wave-specific time components; do not combine without validating routing and component meaning",
+              "unit": "clock-time response components; wb03/wb04 primary code plus AM/PM-specific hour/minute rows",
+              "value_labels": "PM-row component (official questionnaire layout; verify release storage)",
+              "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. WB03/WB04 use a 12-hour clock in the questionnaire. The codebook distinguishes AM/PM fields and exact-report hour/minute components, with markedly different completion patterns; preserve every source field and verify routing before deriving clock time. This is not usual sleep timing, sleep duration, or a multi-day average. Codebook frequencies are not sample-size estimates for this project."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb04",
               "label": "What Time Did You Go to Sleep Yesterday?",
               "module": "Health_Status_and_Functioning",
-              "unit": "clock-time components: AM/PM, hour, minute",
+              "unit": "clock-time response components; wb03/wb04 primary code plus AM/PM-specific hour/minute rows",
               "value_labels": "1=AM; 2=PM (official codebook response codes)",
-              "value_semantics": "yesterday / previous-day recall; wave-specific time components; do not combine without validating routing and component meaning",
+              "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. WB03/WB04 use a 12-hour clock in the questionnaire. The codebook distinguishes AM/PM fields and exact-report hour/minute components, with markedly different completion patterns; preserve every source field and verify routing before deriving clock time. This is not usual sleep timing, sleep duration, or a multi-day average. Codebook frequencies are not sample-size estimates for this project."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb04_1",
               "label": "What Time Did You Go to Sleep Yesterday, Please Report Exactly Hour?",
               "module": "Health_Status_and_Functioning",
-              "unit": "clock-time components: AM/PM, hour, minute",
-              "value_labels": "",
-              "value_semantics": "yesterday / previous-day recall; wave-specific time components; do not combine without validating routing and component meaning",
+              "unit": "clock-time response components; wb03/wb04 primary code plus AM/PM-specific hour/minute rows",
+              "value_labels": "AM-row component (official questionnaire layout; verify release storage)",
+              "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. WB03/WB04 use a 12-hour clock in the questionnaire. The codebook distinguishes AM/PM fields and exact-report hour/minute components, with markedly different completion patterns; preserve every source field and verify routing before deriving clock time. This is not usual sleep timing, sleep duration, or a multi-day average. Codebook frequencies are not sample-size estimates for this project."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb04_2",
               "label": "What Time Did You Go to Sleep Yesterday, Please Report Exactly Minute?",
               "module": "Health_Status_and_Functioning",
-              "unit": "clock-time components: AM/PM, hour, minute",
-              "value_labels": "",
-              "value_semantics": "yesterday / previous-day recall; wave-specific time components; do not combine without validating routing and component meaning",
+              "unit": "clock-time response components; wb03/wb04 primary code plus AM/PM-specific hour/minute rows",
+              "value_labels": "AM-row component (official questionnaire layout; verify release storage)",
+              "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. WB03/WB04 use a 12-hour clock in the questionnaire. The codebook distinguishes AM/PM fields and exact-report hour/minute components, with markedly different completion patterns; preserve every source field and verify routing before deriving clock time. This is not usual sleep timing, sleep duration, or a multi-day average. Codebook frequencies are not sample-size estimates for this project."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb04_3",
               "label": "What Time Did You Go to Sleep Yesterday, Please Report Exactly Hour?",
               "module": "Health_Status_and_Functioning",
-              "unit": "clock-time components: AM/PM, hour, minute",
-              "value_labels": "",
-              "value_semantics": "yesterday / previous-day recall; wave-specific time components; do not combine without validating routing and component meaning",
+              "unit": "clock-time response components; wb03/wb04 primary code plus AM/PM-specific hour/minute rows",
+              "value_labels": "PM-row component (official questionnaire layout; verify release storage)",
+              "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. WB03/WB04 use a 12-hour clock in the questionnaire. The codebook distinguishes AM/PM fields and exact-report hour/minute components, with markedly different completion patterns; preserve every source field and verify routing before deriving clock time. This is not usual sleep timing, sleep duration, or a multi-day average. Codebook frequencies are not sample-size estimates for this project."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb04_4",
               "label": "What Time Did You Go to Sleep Yesterday, Please Report Exactly Minute?",
               "module": "Health_Status_and_Functioning",
-              "unit": "clock-time components: AM/PM, hour, minute",
-              "value_labels": "",
-              "value_semantics": "yesterday / previous-day recall; wave-specific time components; do not combine without validating routing and component meaning",
+              "unit": "clock-time response components; wb03/wb04 primary code plus AM/PM-specific hour/minute rows",
+              "value_labels": "PM-row component (official questionnaire layout; verify release storage)",
+              "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. WB03/WB04 use a 12-hour clock in the questionnaire. The codebook distinguishes AM/PM fields and exact-report hour/minute components, with markedly different completion patterns; preserve every source field and verify routing before deriving clock time. This is not usual sleep timing, sleep duration, or a multi-day average. Codebook frequencies are not sample-size estimates for this project."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             }
           ]
         },
