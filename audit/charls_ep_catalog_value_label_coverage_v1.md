@@ -2,8 +2,8 @@
 
 更新：2026-10-25。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
-- 最终E/P目录行：6,951；不同波次—字段码：6,676。一个字段可对应多个候选类别/角色。
-- 有非空标签文本的E/P目录行：3,644；不同波次—字段码：3,567。连续测量、计数值及测量流程字段可已审但不需要离散标签。
+- 最终E/P目录行：6,955；不同波次—字段码：6,676。一个字段可对应多个候选类别/角色。
+- 有非空标签文本的E/P目录行：3,648；不同波次—字段码：3,567。连续测量、计数值及测量流程字段可已审但不需要离散标签。
 - 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：0。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -23,7 +23,7 @@
 |e|housing and built environment|480|480|248|2|
 |e|internal biomarker|49|49|0|1|
 |e|life-course and reproductive history|8|8|0|1|
-|e|social determinants|2,136|2,136|1,011|20|
+|e|social determinants|2,138|2,138|1,013|20|
 |e|social protection|1,331|1,331|427|30|
 |p|anthropometric|24|15|0|1|
 |p|biochemistry|32|32|0|1|
@@ -34,7 +34,7 @@
 |p|health and symptoms|175|175|169|4|
 |p|healthcare access|217|217|66|2|
 |p|internal biomarker|49|49|0|1|
-|p|mental health|50|50|50|1|
+|p|mental health|52|52|52|1|
 |p|physical function|266|260|169|7|
 |p|social wellbeing|10|10|10|4|
 
@@ -42,7 +42,7 @@
 
 |审核状态|最终E/P目录行|
 |---|---:|
-|officially reviewed|2,632|
+|officially reviewed|2,634|
 |official codebook field located; continuous/count or no categorical labels|726|
 |numeric/time unit metadata available; no discrete labels assigned; see concept crosswalk|508|
 |codebook field located; continuous/open response or no categorical labels|371|
@@ -57,7 +57,7 @@
 |代码本逐值标签已核|76|
 |official 2018 Codebook response categories transcribed; frequencies omitted; questionnaire route retained; respondent release coding and eligible denominator require validation|68|
 |连续计数；参照期/机构槽位依波次；极值待核|58|
-|official 2011 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|53|
+|official 2011 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|55|
 |official Codebook lists numeric summary; no categorical response menu in this entry|52|
 |official 2013 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|52|
 |official 2015 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|52|

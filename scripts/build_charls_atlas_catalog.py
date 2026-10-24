@@ -605,6 +605,24 @@ def main() -> None:
                 continue
             broad_key = (wave, code.lower(), module.lower(), role, cat)
             if broad_key in existing_wave_role_category:
+                # A curated concept crosswalk may describe a source field that
+                # keyword discovery already placed in the same category. Keep
+                # the original source/module row, but replace its misleading
+                # automated-review status with the crosswalk provenance.
+                matching_rows = [
+                    row for row in outputs
+                    if str(row.get("Source.Wave", "")) == wave
+                    and str(row.get("Variable.Name", "")).lower() == code.lower()
+                    and role in str(row.get("epcf", "")).lower().split(",")
+                ]
+                for prior in matching_rows:
+                    status = str(prior.get("Candidate.Status", "")).lower()
+                    if status.startswith("automated discovery") or status.startswith("automated keyword discovery"):
+                        prior["Candidate.Status"] = f"concept-source crosswalk candidate; see audit/{file}"
+                    review_flag = str(prior.get("Review.Flag", "")).strip()
+                    if "approved test variable" not in review_flag and "not analytic inclusion" not in review_flag:
+                        suffix = "crosswalk documents source concept only; not an approved test variable"
+                        prior["Review.Flag"] = f"{review_flag}; {suffix}" if review_flag else suffix
                 continue
             label = str(item.get(label_col, "")).strip() or code
             archive = archive_by_wave_variable.get((wave, code.lower()), f"audit/{file}")

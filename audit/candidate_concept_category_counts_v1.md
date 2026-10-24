@@ -4,7 +4,7 @@
 
 |角色|检索类别|候选Concept ID数|字段—角色—类别行|不同波次—变量码|
 |---|---|---:|---:|---:|
-|e|social determinants|603|2138|2136|
+|e|social determinants|607|2142|2138|
 |e|social protection|314|1331|1331|
 |e|community context|113|270|270|
 |e|behavior|47|315|267|
@@ -25,7 +25,7 @@
 |p|healthcare access|22|217|217|
 |p|biochemistry|16|32|32|
 |p|internal biomarker|15|19|19|
-|p|mental health|10|50|50|
+|p|mental health|11|52|52|
 |p|anthropometric|5|24|15|
 |p|social wellbeing|4|10|10|
 |p|blood pressure|3|54|27|

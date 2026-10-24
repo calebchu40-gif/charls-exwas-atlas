@@ -1,5 +1,5 @@
 ﻿role,category,candidate_concept_ids,catalog_field_role_category_rows,distinct_wave_variable_codes,counts_are_nonexclusive
-e,social determinants,603,2138,2136,True
+e,social determinants,607,2142,2138,True
 e,social protection,314,1331,1331,True
 e,community context,113,270,270,True
 e,behavior,47,315,267,True
@@ -20,7 +20,7 @@ p,cognition,24,338,338,True
 p,healthcare access,22,217,217,True
 p,biochemistry,16,32,32,True
 p,internal biomarker,15,19,19,True
-p,mental health,10,50,50,True
+p,mental health,11,52,52,True
 p,anthropometric,5,24,15,True
 p,social wellbeing,4,10,10,True
 p,blood pressure,3,54,27,True
