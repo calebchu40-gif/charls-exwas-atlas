@@ -85,7 +85,7 @@ function renderAssociations() {
 }
 
 function addOptions(select, values) {
-  for (const value of values) {const option=document.createElement('option');option.value=value;option.textContent=select.id==='cCategory'?({'automated covariate search hit':'自动关键词检索线索（未核验协变量）','covariate candidate':'协变量候选','measurement metadata':'测量/设计元数据'}[value]||value):value;select.append(option)}
+  for (const value of values) {const option=document.createElement('option');option.value=value;option.textContent=select.id==='cCategory'?({'automated covariate search hit':'自动关键词检索线索（未核验协变量）','covariate candidate':'协变量候选','measurement metadata':'测量/设计元数据','source-detail metadata':'来源字段细节'}[value]||value):value;select.append(option)}
 }
 const C_SUBCATEGORY_LABELS={
   "2011 proxy interview and Section E assistance context":"2011代理访谈与E部分协助记录",
@@ -123,6 +123,7 @@ const C_SUBCATEGORY_LABELS={
   "fixed age/calendar-year component-type marker":"年龄/日历年份组成部分类型标记",
   "household debt unfolding-bracket response metadata":"家庭债务逐步追问区间回答元数据",
   "household financial respondent source":"家庭财务回答者来源",
+  "money-management helper relationship option slots":"管理钱财帮助者关系选项槽位",
   "household income response-format selectors":"家庭收入回答格式选择器",
   "household income/expenditure respondent source":"家庭收入/支出回答者来源",
   "household property total-price versus unit-price response-format selector":"家庭房产总价/单位面积价格格式选择器",
