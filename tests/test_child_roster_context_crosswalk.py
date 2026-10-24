@@ -13,11 +13,15 @@ def rows(path):
         return list(csv.DictReader(handle))
 
 
+def child_field_keys():
+    manifest = rows(ROOT / "audit/child_module_field_presence_v1.csv")
+    return {(row["wave"], row["variable"].lower(), row["module"].lower()) for row in manifest}
+
+
 class ChildRosterContextCrosswalkTests(unittest.TestCase):
     def test_crosswalk_fields_are_official_child_module_entries(self):
         mappings = rows(ROOT / "audit/child_roster_context_crosswalk_v1.csv")
-        raw = rows(ROOT / "audit/raw_variable_catalog_v1.csv")
-        raw_keys = {(r["wave"], r["variable"].lower(), r["module"].lower()) for r in raw}
+        raw_keys = child_field_keys()
         for wave in ("2013", "2015"):
             for key in ("id", "childid", "hhmemberid"):
                 self.assertIn((wave, key, "child"), raw_keys)
@@ -62,8 +66,7 @@ class ChildRosterContextCrosswalkTests(unittest.TestCase):
 
     def test_child_hukou_history_candidates_keep_wave_menus_and_linkage_limits(self):
         mappings = rows(ROOT / "audit/child_hukou_lifecourse_crosswalk_v1.csv")
-        raw = rows(ROOT / "audit/raw_variable_catalog_v1.csv")
-        raw_keys = {(r["wave"], r["variable"].lower(), r["module"].lower()) for r in raw}
+        raw_keys = child_field_keys()
         self.assertEqual(len(mappings), 13)
         self.assertEqual(len({r["concept_id"] for r in mappings}), 10)
         self.assertTrue(all((r["wave"], r["code"].lower(), "child") in raw_keys for r in mappings))
