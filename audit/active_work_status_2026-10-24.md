@@ -2,7 +2,7 @@
 
 ## 2026-10-24 continuation: reconcile README with generated catalogue scope
 
-Rebuilt the count artifact and compared the public-shard row counts, E/P scope summary, metadata-only wave-pair index, homepage KPI, and README snapshot. The README had retained a prior count; it now reports the generated E/P/C rows, candidate concepts, source mappings, and wave-wise metadata pair counts. These pair counts are availability combinations, not respondent Ns or fitted tests. Added a regression test that checks the README against all generated sources so this mismatch is caught in later updates. The homepage itself was already current and did not need a Pages deployment. Commit forthcoming; no respondent data were read.
+Rebuilt the count artifact and compared the public-shard row counts, E/P scope summary, metadata-only wave-pair index, homepage KPI, and README snapshot. The README had retained a prior count; it now reports the generated E/P/C rows, candidate concepts, source mappings, and wave-wise metadata pair counts. These pair counts are availability combinations, not respondent Ns or fitted tests. Added a regression test that checks the README against all generated sources so this mismatch is caught in later updates. The homepage itself was already current and did not need a Pages deployment; a live cache-busted request returned HTTP 200 and the same 1,458/6,751 counts. Commit `a102a70`; no respondent data were read.
 
 ## 2026-10-24 continuation: recheck community-key coverage for PSU mapping
 
