@@ -33,3 +33,7 @@ Cache-busted requests to the public `objective_measurements_v1.json` and `catalo
 Commit `7e71278` adds Chinese display labels for all 83 distinct C-catalogue subcategories and preserves each English source phrase for search and hover details. Commit `6f2afa6` advances the homepage app-script cache key to `v=63`.
 
 Direct public requests confirmed HTTP 200 for the homepage, `app.js?v=63`, and `catalog_c.json`. The deployed homepage references `app.js?v=63`; the deployed app bundle contains the C-subcategory renderer and localization dictionary. The live C catalogue has 992 field-wave rows and 83 unique subcategories, with no untranslated categories. No catalog source rows, respondent data, model eligibility or association results changed.
+
+## Follow-up validation — pandas compatibility (2026-10-24)
+
+Commit `1339afd` removes deprecated in-place `DataFrame.drop` calls from the guarded Wave 2 official-weight merge. The merge's ID matching, overlap-conflict checks, output ordering and no-overwrite behavior are unchanged. All 263 local tests pass using both pytest and the exact `unittest discover` command used in CI; the pandas 3.1 deprecation warnings are gone. GitHub Validate run [#236 / `40056492623`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40056492623) succeeded. This was a pipeline/documentation change and did not alter public site assets, so it did not require a Pages deployment.
