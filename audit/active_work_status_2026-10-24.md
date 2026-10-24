@@ -1,8 +1,8 @@
-﻿# CHARLS ExWAS Atlas current work status
+# CHARLS ExWAS Atlas current work status
 
 Updated 2026-10-24. Project repository: <https://github.com/calebchu40-gif/charls-exwas-atlas>. Public metadata prototype: <https://calebchu40-gif.github.io/charls-exwas-atlas/>.
 
-The 2026-10-24 private core-coverage refresh is recorded in [`prepared_core_coverage_refresh_2026-10-24.md`](prepared_core_coverage_refresh_2026-10-24.md). Its pair-level availability outputs remain under the local protected QA root. The missing 2013 official sample flags continue to gate that wave; no refreshed private counts are included here.
+The 2026-10-24 private core-coverage refresh is recorded in [`core_coverage_gate_refresh_review_2026-10-24.md`](core_coverage_gate_refresh_review_2026-10-24.md). Its pair-level availability outputs remain under the local protected QA root. The missing 2013 official sample flags continue to gate that wave; no refreshed private counts are included here.
 
 ## Current deliverable
 
