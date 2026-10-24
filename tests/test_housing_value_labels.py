@@ -17,6 +17,7 @@ class HousingValueLabelTests(unittest.TestCase):
     def setUpClass(cls):
         cls.labels = read_csv(AUDIT / "housing_value_label_review_v1.csv")
         cls.current_owner_labels = read_csv(AUDIT / "housing_current_owner_relation_labels_2018_v1.csv")
+        cls.property_owner_labels = read_csv(AUDIT / "housing_owner_relation_value_label_review_v1.csv")
         cls.housing_mapping = read_csv(AUDIT / "housing_exposure_variable_mapping_v1.csv")
         cls.food_mapping = read_csv(AUDIT / "food_environment_crosswalk_v1.csv")
         with (ROOT / "site-prototype" / "dist" / "food_environment_v1.json").open(encoding="utf-8") as stream:
@@ -124,23 +125,39 @@ class HousingValueLabelTests(unittest.TestCase):
         self.assertTrue(site)
         self.assertTrue(all("3=Do not need" in row["value_labels"] for row in site))
 
-    def test_2018_current_home_owner_relation_labels_do_not_infer_unobserved_categories(self):
+    def test_2018_current_home_owner_relation_preserves_codebook_nonbinary_codes(self):
         audit = {row["code"]: row for row in self.current_owner_labels}
         self.assertEqual(len(audit), 9)
-        complete = [row for row in audit.values() if row["value_labels"]]
-        partial = [row for row in audit.values() if not row["value_labels"]]
-        self.assertEqual(len(complete), 1)
-        self.assertEqual(len(partial), 8)
-        self.assertEqual(complete[0]["value_labels"], "0=Do Not Own; 1=Own")
-        self.assertTrue(all("partial response-code set" in row["value_label_status"] for row in partial))
-        self.assertTrue(all("frequency" not in row["value_labels"].lower() for row in complete))
+        self.assertTrue(all(row["value_labels"] for row in audit.values()))
+        for i in range(1, 10):
+            row = audit[f"i000_w4_4_s{i}"]
+            self.assertEqual(row["value_labels"], f"0=Do Not Own; {i}=Own")
+            self.assertIn("unlisted categories not inferred", row["value_label_status"])
+            self.assertNotRegex(row["value_labels"], r"\b\d{1,3},\d{3}\b|%")
         for code, status in [(row["code"], row["value_label_status"]) for row in audit.values()]:
             field = next(row for row in self.catalog if row["Source.Wave"] == "2018" and row["Variable.Name"].lower() == code.lower())
             self.assertEqual(field["Value.Label.Review"], status)
             self.assertEqual(field["Value.Label.Source"], "sources_official/CHARLS_2018_Codebook_extracted.txt")
+            self.assertEqual(field["Value.Labels"], audit[code]["value_labels"])
         site_rows = [row for row in self.housing_site if row["wave"] == "2018" and row["code"].lower().startswith("i000_w4_4_s")]
         self.assertEqual(len(site_rows), 9)
-        self.assertEqual(sum(bool(row["value_labels"]) for row in site_rows), 1)
+        self.assertEqual(sum(bool(row["value_labels"]) for row in site_rows), 9)
+
+    def test_2018_property_owner_labels_are_transcribed_without_frequencies_or_inference(self):
+        audit = {row["code"].lower(): row for row in self.property_owner_labels}
+        self.assertEqual(len(audit), 215)
+        self.assertTrue(all(row["value_labels"] for row in audit.values()))
+        self.assertEqual(audit["ha000_w4_2_2__s2"]["value_labels"], "0=Do Not Own; 2=Own")
+        self.assertEqual(audit["ha000_w4_2_6__s2"]["value_labels"], "0=Do Not Own")
+        self.assertTrue(all("unlisted categories not inferred" in row["value_label_status"] for row in audit.values()))
+        self.assertTrue(all("frequency" not in row["value_labels"].lower() for row in audit.values()))
+        for code, row in audit.items():
+            field = next(r for r in self.catalog if r["Source.Wave"] == "2018" and r["Variable.Name"].lower() == code)
+            self.assertEqual(field["Value.Labels"], row["value_labels"])
+            self.assertEqual(field["Value.Label.Review"], row["value_label_status"])
+        site = {row["code"].lower(): row for row in self.housing_site if row["wave"] == "2018"}
+        self.assertEqual(site["ha000_w4_2_2__s2"]["value_labels"], "0=Do Not Own; 2=Own")
+        self.assertEqual(site["ha000_w4_2_6__s2"]["value_labels"], "0=Do Not Own")
 
     def test_2018_current_home_owner_share_is_continuous_percent_with_explicit_limits(self):
         codes = {"i000_w4_4_1", "i000_w4_4_3", "i000_w4_4_6", "i000_w4_4_7", "i000_w4_4_8"}

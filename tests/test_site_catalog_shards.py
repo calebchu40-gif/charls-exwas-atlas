@@ -49,6 +49,15 @@ class SiteCatalogShardTests(unittest.TestCase):
         for pipeline in (FINALIZATION_PIPELINE_SCRIPTS, FULL_PIPELINE_SCRIPTS):
             self.assertEqual(pipeline[-2], "site_catalog_shards.py")
             self.assertEqual(pipeline[-1], "summarize_value_label_coverage.py")
+            self.assertLess(pipeline.index("build_housing_catalog.py"), pipeline.index("site_catalog_shards.py"))
+        self.assertGreater(
+            FINALIZATION_PIPELINE_SCRIPTS.index("build_housing_catalog.py"),
+            FINALIZATION_PIPELINE_SCRIPTS.index("build_charls_atlas_catalog.py"),
+        )
+        self.assertLess(
+            FINALIZATION_PIPELINE_SCRIPTS.index("build_housing_catalog.py"),
+            FINALIZATION_PIPELINE_SCRIPTS.index("apply_2018_current_home_measurement_review.py"),
+        )
         for pipeline in (FINALIZATION_PIPELINE_SCRIPTS, FULL_PIPELINE_SCRIPTS):
             self.assertLess(pipeline.index("refresh_candidate_series_review_status.py"), len(pipeline) - 1)
 

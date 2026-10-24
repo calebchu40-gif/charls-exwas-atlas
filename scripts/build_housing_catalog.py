@@ -7,12 +7,14 @@ ROOT = Path(__file__).resolve().parents[1]
 mapping = pd.read_csv(ROOT / "audit/housing_exposure_variable_mapping_v1.csv", dtype=str, encoding="utf-8-sig").fillna("")
 labels = pd.read_csv(ROOT / "audit/housing_value_label_review_v1.csv", dtype=str, encoding="utf-8-sig").fillna("")
 owner_labels = pd.read_csv(ROOT / "audit/housing_current_owner_relation_labels_2018_v1.csv", dtype=str, encoding="utf-8-sig").fillna("")
+property_owner_labels = pd.read_csv(ROOT / "audit/housing_owner_relation_value_label_review_v1.csv", dtype=str, encoding="utf-8-sig").fillna("")
 food = pd.read_csv(ROOT / "audit/food_environment_crosswalk_v1.csv", dtype=str, encoding="utf-8-sig").fillna("")
 cooking = pd.read_csv(ROOT / "audit/cooking_fuel_crosswalk_v1.csv", dtype=str, encoding="utf-8-sig").fillna("")
 assets = pd.read_csv(ROOT / "audit/household_asset_exposure_mapping_v1.csv", dtype=str, encoding="utf-8-sig").fillna("")
 raw = pd.read_csv(ROOT / "audit/raw_variable_catalog_v1.csv", dtype=str, encoding="utf-8-sig").fillna("")
 label_map = {(r.wave, r.code.lower()): (r.value_labels, r.value_label_status, r.value_label_source) for r in labels.itertuples(index=False)}
 label_map.update({(r.wave, r.code.lower()): (r.value_labels, r.value_label_status, r.value_label_source) for r in owner_labels.itertuples(index=False)})
+label_map.update({(r.wave, r.code.lower()): (r.value_labels, r.value_label_status, r.value_label_source) for r in property_owner_labels.itertuples(index=False)})
 rows = []
 for r in mapping.itertuples(index=False):
     source = raw[(raw.wave == r.wave) & (raw.variable.str.lower() == r.code.lower())]

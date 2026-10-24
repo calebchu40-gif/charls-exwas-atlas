@@ -1081,14 +1081,14 @@ def main() -> None:
     )
     add_reviewed_labels("housing_value_label_review_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", official_review)
     add_reviewed_labels(
+        "housing_owner_relation_value_label_review_v1.csv", "wave", "code", "value_labels",
+        "value_label_status", "value_label_source",
+        re.compile(r"official Codebook listed ownership labels transcribed", re.I),
+    )
+    add_reviewed_labels(
         "housing_current_owner_relation_labels_2018_v1.csv", "wave", "code", "value_labels",
         "value_label_status", "value_label_source",
-        re.compile(r"official Codebook response labels complete; frequency counts omitted", re.I),
-    )
-    add_reviewed_status_without_value_label(
-        "housing_current_owner_relation_labels_2018_v1.csv", "wave", "code",
-        "value_label_status", "value_label_source",
-        re.compile(r"official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories", re.I),
+        re.compile(r"official Codebook listed ownership labels transcribed", re.I),
     )
     add_reviewed_labels("household_asset_exposure_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire/codebook response labels reviewed|official questionnaire response categories transcribed", re.I))
     add_reviewed_labels("household_covid_economic_crosswalk_v1.csv", "wave", "code", "value_labels", "mapping_status", "source_document", re.compile(r"candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data", re.I))
@@ -1626,10 +1626,10 @@ def main() -> None:
             out.loc[selected, "Value.Label.Source"] = str(item.value_label_source)
     owner_relation_review = root / "audit" / "housing_owner_relation_value_label_review_v1.csv"
     if owner_relation_review.exists():
-        partial = pd.read_csv(owner_relation_review, dtype=str, encoding="utf-8-sig").fillna("")
-        partial = partial[partial["value_label_status"].str.contains("partial response-code set", case=False, regex=False)]
-        for item in partial.itertuples(index=False):
+        reviewed = pd.read_csv(owner_relation_review, dtype=str, encoding="utf-8-sig").fillna("")
+        for item in reviewed.itertuples(index=False):
             selected = out["Source.Wave"].astype(str).eq(str(item.wave)) & out["Variable.Name"].str.lower().eq(str(item.code).lower())
+            out.loc[selected, "Value.Labels"] = str(item.value_labels)
             out.loc[selected, "Value.Label.Review"] = str(item.value_label_status)
             out.loc[selected, "Value.Label.Source"] = str(item.value_label_source)
     current_owner_relation_review = root / "audit" / "housing_current_owner_relation_labels_2018_v1.csv"
@@ -1637,6 +1637,7 @@ def main() -> None:
         reviewed = pd.read_csv(current_owner_relation_review, dtype=str, encoding="utf-8-sig").fillna("")
         for item in reviewed.itertuples(index=False):
             selected = out["Source.Wave"].astype(str).eq(str(item.wave)) & out["Variable.Name"].str.lower().eq(str(item.code).lower())
+            out.loc[selected, "Value.Labels"] = str(item.value_labels)
             out.loc[selected, "Value.Label.Review"] = str(item.value_label_status)
             out.loc[selected, "Value.Label.Source"] = str(item.value_label_source)
     # 2011 FM019 fields are source-option slots, not self-describing response

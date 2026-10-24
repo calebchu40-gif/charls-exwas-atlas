@@ -1,10 +1,10 @@
 ﻿wave,code,value_labels,value_label_status,value_label_source
-2018,i000_w4_4_s1,0=Do Not Own; 1=Own,official Codebook response labels complete; frequency counts omitted,sources_official/CHARLS_2018_Codebook_extracted.txt
-2018,i000_w4_4_s2,,official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories,sources_official/CHARLS_2018_Codebook_extracted.txt
-2018,i000_w4_4_s3,,official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories,sources_official/CHARLS_2018_Codebook_extracted.txt
-2018,i000_w4_4_s4,,official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories,sources_official/CHARLS_2018_Codebook_extracted.txt
-2018,i000_w4_4_s5,,official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories,sources_official/CHARLS_2018_Codebook_extracted.txt
-2018,i000_w4_4_s6,,official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories,sources_official/CHARLS_2018_Codebook_extracted.txt
-2018,i000_w4_4_s7,,official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories,sources_official/CHARLS_2018_Codebook_extracted.txt
-2018,i000_w4_4_s8,,official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories,sources_official/CHARLS_2018_Codebook_extracted.txt
-2018,i000_w4_4_s9,,official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories,sources_official/CHARLS_2018_Codebook_extracted.txt
+2018,i000_w4_4_s1,0=Do Not Own; 1=Own,official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred,sources_official/CHARLS_2018_Codebook_extracted.txt
+2018,i000_w4_4_s2,0=Do Not Own; 2=Own,official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred,sources_official/CHARLS_2018_Codebook_extracted.txt
+2018,i000_w4_4_s3,0=Do Not Own; 3=Own,official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred,sources_official/CHARLS_2018_Codebook_extracted.txt
+2018,i000_w4_4_s4,0=Do Not Own; 4=Own,official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred,sources_official/CHARLS_2018_Codebook_extracted.txt
+2018,i000_w4_4_s5,0=Do Not Own; 5=Own,official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred,sources_official/CHARLS_2018_Codebook_extracted.txt
+2018,i000_w4_4_s6,0=Do Not Own; 6=Own,official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred,sources_official/CHARLS_2018_Codebook_extracted.txt
+2018,i000_w4_4_s7,0=Do Not Own; 7=Own,official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred,sources_official/CHARLS_2018_Codebook_extracted.txt
+2018,i000_w4_4_s8,0=Do Not Own; 8=Own,official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred,sources_official/CHARLS_2018_Codebook_extracted.txt
+2018,i000_w4_4_s9,0=Do Not Own; 9=Own,official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred,sources_official/CHARLS_2018_Codebook_extracted.txt

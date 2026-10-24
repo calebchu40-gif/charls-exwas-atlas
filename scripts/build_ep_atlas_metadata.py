@@ -194,6 +194,9 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     # site_catalog_shards.py, while these review steps expect one row per wave.
     "build_adult_education_training_crosswalk.py",
     "build_charls_atlas_catalog.py",
+    # Rebuild the housing lookup from the audited owner-label maps before the
+    # later housing measurement scripts enrich its units and route notes.
+    "build_housing_catalog.py",
     "apply_2013_nrsp_participation_source_review.py",
     # Rebuild symptom outcomes and their official labels, then restore the
     # separately reviewed Wave-2 balance-test gate appended to that crosswalk.

@@ -3,7 +3,7 @@
 更新：2026-10-24。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
 - 最终E/P目录行：6,879；不同波次—字段码：6,604。一个字段可对应多个候选类别/角色。
-- 有非空标签文本的E/P目录行：3,431；不同波次—字段码：3,354。连续测量、计数值及测量流程字段可已审但不需要离散标签。
+- 有非空标签文本的E/P目录行：3,639；不同波次—字段码：3,562。连续测量、计数值及测量流程字段可已审但不需要离散标签。
 - 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：1。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -20,7 +20,7 @@
 |e|family and intergenerational context|6|3|6|1|
 |e|food and household environment|161|161|104|1|
 |e|healthcare access|109|109|51|1|
-|e|housing and built environment|480|480|40|2|
+|e|housing and built environment|480|480|248|2|
 |e|internal biomarker|49|49|0|1|
 |e|life-course and reproductive history|8|8|0|1|
 |e|social determinants|2,136|2,136|1,011|20|
@@ -42,12 +42,12 @@
 
 |审核状态|最终E/P目录行|
 |---|---:|
-|officially reviewed|2,642|
+|officially reviewed|2,627|
 |official codebook field located; continuous/count or no categorical labels|726|
 |numeric/time unit metadata available; no discrete labels assigned; see concept crosswalk|508|
 |codebook field located; continuous/open response or no categorical labels|371|
 |continuous measure metadata available|257|
-|official Codebook extraction exposes only a partial response-code set for this field; do not infer omitted categories|208|
+|official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred|224|
 |numeric/time unit metadata available; no discrete labels assigned|151|
 |audited measurement component; derive concept per crosswalk|138|
 |official Codebook numeric/count response located; no discrete answer labels|129|
@@ -223,7 +223,6 @@
 |official 2011 questionnaire/Codebook labels reviewed; six ordered self-reported usual meals-per-day categories|1|
 |official 2018 questionnaire identifies continuous numeric measure (calendar year); no discrete labels; Codebook summary extrema are not valid-range evidence; verify special values and route|1|
 |official 2018 questionnaire identifies continuous numeric measure (1,000 Yuan/square metre); no discrete labels; Codebook summary extrema are not valid-range evidence; verify special values and route|1|
-|official Codebook response labels complete; frequency counts omitted|1|
 |official 2018 questionnaire identifies current-residence homestead land area in square meters; numeric continuous measure with no discrete value labels|1|
 |official 2018 questionnaire and Codebook response categories reviewed; preserve Codebook labels; questionnaire wording differs slightly; confirm route and special values in release|1|
 |official 2018 questionnaire identifies a numeric household-residence balcony count; continuous count, no discrete category labels|1|
