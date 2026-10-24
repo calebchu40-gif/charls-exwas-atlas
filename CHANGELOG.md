@@ -1,3 +1,7 @@
+## 2026-10-25 页面可读性改进
+
+- 针对测量与设计元数据（C）页面的长文本表格明确了各列宽度；字段码列在横向滚动时固定显示，避免长说明挤压代码和概念列。保留官方标签、角色判断与适用范围原文，不改动目录映射或分析状态。详情见 `audit/metadata_table_usability_review_2026-10-25.md`。
+
 - Corrected the self-rated-health phenotype crosswalk using the 2011/2013/2015 questionnaire text: `DA001`/`DA080` are grouped by the Excellent-to-Poor scale, while `DA002`/`DA079` and 2018 `DA002`/2020 `DA001` use the Very-good-to-Very-poor scale. Preserved randomized question order, end-of-section repeat, proxy restriction and unresolved release-level routing gates; no participant data or response frequencies were used. Full metadata rebuild and source-aware regression coverage are included; audit: `audit/self_rated_health_scale_harmonization_review_2026-10-25.md`.
 - Corrected the Wave 5 self-rated-memory review propagator to avoid writing wave-specific notes into the compact website catalog, which merges same-named fields across waves (for example, 2020 `dc004` is Checking Day, while earlier-wave `dc004` is self-rated memory). The full rebuild exposed this existing ambiguity; the corrected finalization flow keeps the authoritative field review in wave-resolved catalogs.
 - 2011社区暴露链接增加`communityID`/`sub_commuID`聚合核查：官方指南将`communityID`列为通用链接键；当前本机文件出现重复键及`sub_commuID`记录，必须结合准确发行版解释，在此之前不假定唯一键、不随意去重或对子社区取均值。新增受控本地QA脚本和合成测试；脚本不输出ID或源值。官方依据与链接限制见 `audit/community_2011_subcommunity_linkage_review_2026-10-25.md`。
