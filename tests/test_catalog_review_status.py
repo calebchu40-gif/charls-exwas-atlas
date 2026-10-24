@@ -157,6 +157,14 @@ class CatalogReviewStatusTests(unittest.TestCase):
                 self.assertIn("frequencies and address text omitted", field["value_label_status"])
         self.assertIn("999=Refuse to answer", next(row for row in self.work if row.get("concept_id") == "household_agricultural_workplace_location_2020")["source_fields"][0]["value_labels"])
 
+    def test_2020_current_employer_location_has_nominal_unit_and_no_public_address(self):
+        concept = next(row for row in self.work if row.get("concept_id") == "current_workplace_location_relative_to_residence_2020")
+        self.assertEqual(len(concept["source_fields"]), 1)
+        field = concept["source_fields"][0]
+        self.assertEqual(field["unit"], "wave-specific nominal workplace location category; not a distance measure")
+        self.assertIn("999=Refuse to answer", field["value_labels"])
+        self.assertIn("place-name fields", field["caveat"])
+
     def test_work_capi_formulas_and_source_conflicts_reach_main_catalog(self):
         examples = {
             ("2020", "xworking"): (

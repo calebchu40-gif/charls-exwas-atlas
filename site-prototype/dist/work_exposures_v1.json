@@ -3949,20 +3949,21 @@
     "concept_id": "current_workplace_location_relative_to_residence_2020",
     "label": "Current employer location relative to residence (2020)",
     "domain": "Workplace context",
-    "caveat": "2020 FC004 uses current-residence anchors and asks the employer's location, with conditional administrative place-name fields. The parent category is a coarse self-reported context, not commute distance or measured pollution; exclude address strings and do not geocode without approved privacy review.",
+    "caveat": "2020 FC004 asks where the current employer is located, among respondents routed to the employer module. This is coarse self-reported geographic context, not commute distance or measured pollution. The instrument has conditional place-name fields; they are excluded from public metadata and must not be geocoded without a separate privacy/data-use review. Preserve nominal response categories and 999 refusal separately; verify exact release storage, route, denominator and linkage before analysis.",
     "source_fields": [
       {
         "wave": "2020",
         "code": "fc004",
         "module": "Work_Retirement",
         "source_label": "Location of the Workplace",
-        "unit": "months in past year; conditional on FC001=Yes",
+        "unit": "wave-specific nominal workplace location category; not a distance measure",
         "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
-        "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-        "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "1=Same as the Residence; 2=Another Neighborhood but Same County as the Residence; 3=Other Domestic Location; 4=Abroad; 999=Refuse to Answer",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+        "mapping_status": "official 2020 questionnaire/Codebook wording, response labels and current-employer route reviewed; release storage, eligible denominator and person linkage require QA; see audit/current_employer_location_2020_review_2026-10-25.md",
+        "note": "official 2020 questionnaire/Codebook wording, response labels and current-employer route reviewed; release storage, eligible denominator and person linkage require QA; see audit/current_employer_location_2020_review_2026-10-25.md",
+        "value_labels": "1=Same village/community as current residence; 2=Other village/community in same county/district; 3=Other county/district; 4=Hong Kong, Macao, Taiwan, or abroad; 999=Refuse to answer",
+        "value_label_status": "Official questionnaire/Codebook categories reviewed; refusal retained, frequencies and address text omitted",
+        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "caveat": "2020 FC004 asks where the current employer is located, among respondents routed to the employer module. This is coarse self-reported geographic context, not commute distance or measured pollution. The instrument has conditional place-name fields; they are excluded from public metadata and must not be geocoded without a separate privacy/data-use review. Preserve nominal response categories and 999 refusal separately; verify exact release storage, route, denominator and linkage before analysis."
       }
     ]
   },
