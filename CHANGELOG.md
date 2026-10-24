@@ -183,3 +183,12 @@ This file records project-level changes that affect reproducibility, methods, da
 - Full catalogue rebuild and all 200 Python tests passed; site C catalogue now has 986 rows. See `audit/objective_measurement_protocol_source_review_2011_2015_2026-10-24.md`.
 
 - Published commit `7903732` in GitHub Pages Deploy #94 (`40021600663`); cache-busted live C catalogue returned HTTP 200 and confirmed all reviewed 2011/2013/2015 protocol records.
+
+- Deployment verification for commit `a5a42e4` is recorded in `audit/public_site_deployment_verification_2026-10-24.md`. GitHub Actions validation run `40042411927` and Pages deploy run `40042411919` succeeded. Cache-busted public checks confirmed E/P/C counts 4,739/2,104/990, all 89 analysis locks, reviewed Wave 5 digital/life-expectancy entries, and no public raw-data catalogue or respondent records. The site continues to identify candidate pairs as metadata-only; fitted models and pairwise complete-case Ns are 0.
+
+### 2026-10-24 — blood-pressure and pulse source review
+
+- Reviewed 2011/2013/2015 official physical-examination/Biomarker questionnaires for repeated BP/pulse measurements, protocol context, and non-completion codes. Systolic and diastolic units are recorded as mmHg; the pulse unit is not explicit (“P”) and remains blank.
+- Kept the 2011 LI-manual versus QA-Codebook field identity unresolved; 2013/2015 exact QA field identities are questionnaire-documented. Preserved three readings, 993/999 status codes, test context, and release/analysis eligibility cautions. No Codebook frequencies or respondent records were used.
+- Added an idempotent source updater to both metadata pipelines, propagated units and source caveats into the concept-source index and public P shard, and refreshed the objective-measurement asset cache key. See `audit/blood_pressure_pulse_source_review_2011_2015_2026-10-24.md`.
+- Full finalization passed 225 Python tests, JSON and JS validation, compilation, and exact 89-row analysis-lock validation. Formal models and pairwise complete-case Ns remain 0.

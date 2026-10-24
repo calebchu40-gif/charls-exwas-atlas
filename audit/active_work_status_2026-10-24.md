@@ -90,6 +90,12 @@ Commit `41bd6a3` is pushed to `main`; GitHub Pages Deploy #93 completed successf
 
 The next work shifts back to source-quality improvements for substantive environmental and objectively measured domains, using the already collected official questionnaires, Codebooks, biomarker guides, and domain crosswalks. Batch full modules where source definitions are clear; retain unresolved release-specific identities and survey design/weight gates.
 
+## 2026-10-24 continued: blood pressure and pulse source review
+
+Reviewed official 2011, 2013 and 2015 physical-examination/Biomarker questionnaires and Codebooks for systolic pressure, diastolic pressure and pulse. All list three repeated readings on the Omron HEM-7200 protocol; systolic and diastolic are explicitly in mmHg. The questionnaire writes the pulse unit only as “P”, so the catalogue leaves the unit blank. The 993/999 codes remain non-completion/status codes, separate from measurements; test arm, position, compliance and recent behaviors remain context fields.
+
+The 2011 questionnaire uses LI identifiers while its Codebook lists QA candidate fields; one-to-one field identity is still unresolved. The 2013/2015 instruments identify exact QA fields, while release availability, valid-value checks and analytic eligibility remain open. The updater is registered in both metadata pipelines and propagates units and source caveats to the public P catalogue. Full finalization and 225 tests passed; all 89 formal analysis locks remain exact. Public deployment is pending for this batch. Audit: `audit/blood_pressure_pulse_source_review_2011_2015_2026-10-24.md`.
+
 
 ## 2026-10-24 continued: objective measurement protocol source review
 

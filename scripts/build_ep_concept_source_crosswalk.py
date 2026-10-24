@@ -446,8 +446,8 @@ for item in load("objective_measurement_crosswalk_v1.csv").to_dict("records"):
         add(expanded, role="p", file="objective_measurement_crosswalk_v1.csv",
             wave_key="wave", code_key="source_label", concept_key="concept_id",
             label_keys=("concept_label",), domain_keys=("domain",), module_keys=("module",),
-            status_keys=("source_status",), caveat_keys=("value_semantics",),
-            semantics_keys=("value_semantics",), document_keys=("source_document",))
+            status_keys=("source_status",), caveat_keys=("source_caveat",),
+            semantics_keys=("value_semantics",), unit_keys=("unit",), document_keys=("source_document",))
 
 for item in load("blood_biomarker_crosswalk_v1.csv").to_dict("records"):
     if text(item, "concept_id") == "blood_collection_metadata":

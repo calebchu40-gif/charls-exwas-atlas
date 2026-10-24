@@ -16634,7 +16634,7 @@
               "value_labels": "",
               "value_semantics": "记录值并保留测量侧别qj003。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "记录值并保留测量侧别qj003。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             }
           ]
         },
@@ -16714,7 +16714,7 @@
               "value_labels": "",
               "value_semantics": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             }
           ]
         },
@@ -16754,7 +16754,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             },
             {
               "code": "qe003",
@@ -16764,7 +16764,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             },
             {
               "code": "qe004",
@@ -16774,7 +16774,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             }
           ]
         },
@@ -17274,7 +17274,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             },
             {
               "code": "qd003",
@@ -17284,7 +17284,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             },
             {
               "code": "qd004",
@@ -17294,7 +17294,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             }
           ]
         },
@@ -17314,7 +17314,7 @@
               "value_labels": "",
               "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             },
             {
               "code": "qb003",
@@ -17324,7 +17324,7 @@
               "value_labels": "",
               "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             },
             {
               "code": "qb004",
@@ -17334,7 +17334,7 @@
               "value_labels": "",
               "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             }
           ]
         },
@@ -17454,7 +17454,7 @@
               "value_labels": "",
               "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             },
             {
               "code": "qf003",
@@ -17464,7 +17464,7 @@
               "value_labels": "",
               "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             },
             {
               "code": "qf004",
@@ -17474,7 +17474,7 @@
               "value_labels": "",
               "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             }
           ]
         },
@@ -17675,7 +17675,7 @@
               "value_labels": "",
               "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             },
             {
               "code": "qc004",
@@ -17685,7 +17685,7 @@
               "value_labels": "",
               "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             },
             {
               "code": "qc005",
@@ -17695,7 +17695,7 @@
               "value_labels": "",
               "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             },
             {
               "code": "qc006",
@@ -17705,7 +17705,7 @@
               "value_labels": "",
               "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             }
           ]
         },
@@ -17721,31 +17721,31 @@
               "code": "qa003",
               "label": "qa003",
               "module": "Physical Examination Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated systolic readings; questionnaire explicitly records mmHg. Preserve each reading and the 993/999 non-completion status codes.",
+              "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2011 questionnaire measures this construct under LI* identifiers; the release Codebook has candidate QA* fields. The semantic mapping is plausible but LI-to-QA one-to-one field identity remains unverified, so retain as a candidate. Blood pressure unit is explicitly mmHg."
             },
             {
               "code": "qa007",
               "label": "qa007",
               "module": "Physical Examination Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated systolic readings; questionnaire explicitly records mmHg. Preserve each reading and the 993/999 non-completion status codes.",
+              "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2011 questionnaire measures this construct under LI* identifiers; the release Codebook has candidate QA* fields. The semantic mapping is plausible but LI-to-QA one-to-one field identity remains unverified, so retain as a candidate. Blood pressure unit is explicitly mmHg."
             },
             {
               "code": "qa011",
               "label": "qa011",
               "module": "Physical Examination Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated systolic readings; questionnaire explicitly records mmHg. Preserve each reading and the 993/999 non-completion status codes.",
+              "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2011 questionnaire measures this construct under LI* identifiers; the release Codebook has candidate QA* fields. The semantic mapping is plausible but LI-to-QA one-to-one field identity remains unverified, so retain as a candidate. Blood pressure unit is explicitly mmHg."
             }
           ]
         },
@@ -18543,9 +18543,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+              "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
+              "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2011 questionnaire measures this construct under LI* identifiers; the release Codebook has candidate QA* fields. The semantic mapping is plausible but LI-to-QA one-to-one field identity remains unverified, so retain as a candidate. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
             },
             {
               "code": "qa009",
@@ -18553,9 +18553,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+              "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
+              "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2011 questionnaire measures this construct under LI* identifiers; the release Codebook has candidate QA* fields. The semantic mapping is plausible but LI-to-QA one-to-one field identity remains unverified, so retain as a candidate. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
             },
             {
               "code": "qa013",
@@ -18563,9 +18563,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+              "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
+              "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2011 questionnaire measures this construct under LI* identifiers; the release Codebook has candidate QA* fields. The semantic mapping is plausible but LI-to-QA one-to-one field identity remains unverified, so retain as a candidate. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
             }
           ]
         },
@@ -18585,7 +18585,7 @@
               "value_labels": "",
               "value_semantics": "注意厚重衣物、测量完成状态及波次问卷的路由。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "注意厚重衣物、测量完成状态及波次问卷的路由。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             },
             {
               "code": "qm002",
@@ -18615,7 +18615,7 @@
               "value_labels": "",
               "value_semantics": "记录值并保留测量侧别/腿别qk003。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "记录值并保留测量侧别/腿别qk003。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             }
           ]
         },
@@ -20681,31 +20681,31 @@
               "code": "qa004",
               "label": "qa004",
               "module": "Physical Examination Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated diastolic readings; questionnaire explicitly records mmHg. Preserve each reading separately; do not impute from a systolic status code.",
+              "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2011 questionnaire measures this construct under LI* identifiers; the release Codebook has candidate QA* fields. The semantic mapping is plausible but LI-to-QA one-to-one field identity remains unverified, so retain as a candidate. Blood pressure unit is explicitly mmHg."
             },
             {
               "code": "qa008",
               "label": "qa008",
               "module": "Physical Examination Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated diastolic readings; questionnaire explicitly records mmHg. Preserve each reading separately; do not impute from a systolic status code.",
+              "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2011 questionnaire measures this construct under LI* identifiers; the release Codebook has candidate QA* fields. The semantic mapping is plausible but LI-to-QA one-to-one field identity remains unverified, so retain as a candidate. Blood pressure unit is explicitly mmHg."
             },
             {
               "code": "qa012",
               "label": "qa012",
               "module": "Physical Examination Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated diastolic readings; questionnaire explicitly records mmHg. Preserve each reading separately; do not impute from a systolic status code.",
+              "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2011 questionnaire measures this construct under LI* identifiers; the release Codebook has candidate QA* fields. The semantic mapping is plausible but LI-to-QA one-to-one field identity remains unverified, so retain as a candidate. Blood pressure unit is explicitly mmHg."
             }
           ]
         },
@@ -20805,7 +20805,7 @@
               "value_labels": "",
               "value_semantics": "通常步速下的2.5米步行路线，两次原始计时均以秒记录；问卷定义993=尝试但无法完成、999=选择不做，二者不是秒数。保留试次，不把计时直接称为速度，也不自行换算/汇总。",
               "mapping_status": "2011官方问卷/手册与Codebook已逐项核对：2.5米通常步速路线、两次计时、秒单位、60岁及以上年龄筛选及步行安全/场地路线已记录；这是候选表型字段审查，不含参与者记录、频数或有效值分布。2011手册LI题号与Codebook/发布字段命名不同，不能仅凭相似题意视为同一字段。",
-              "caveat": "通常步速下的2.5米步行路线，两次原始计时均以秒记录；问卷定义993=尝试但无法完成、999=选择不做，二者不是秒数。保留试次，不把计时直接称为速度，也不自行换算/汇总。"
+              "caveat": "qg002/qg003保留为两次独立原始计时但属于同一候选表型；993=尝试但无法完成、999=选择不做，须作为状态码保留而非秒数。这些状态码不是 elapsed seconds (not elapsed seconds)。不得把结构性未测记为0；从2.5米和计时推导速度或汇总两次试验前，需核验授权发布文件、特殊值、测量资格和预设算法。2011问卷手册使用LI题号，Codebook使用QG发布变量名；题意相近不证明LI与QG字段逐项等同，具体字段身份仍待发行版映射验证；不代表LI*与QA*/QB*/QC*代码一一对应。"
             },
             {
               "code": "qg003",
@@ -20815,7 +20815,7 @@
               "value_labels": "",
               "value_semantics": "通常步速下的2.5米步行路线，两次原始计时均以秒记录；问卷定义993=尝试但无法完成、999=选择不做，二者不是秒数。保留试次，不把计时直接称为速度，也不自行换算/汇总。",
               "mapping_status": "2011官方问卷/手册与Codebook已逐项核对：2.5米通常步速路线、两次计时、秒单位、60岁及以上年龄筛选及步行安全/场地路线已记录；这是候选表型字段审查，不含参与者记录、频数或有效值分布。2011手册LI题号与Codebook/发布字段命名不同，不能仅凭相似题意视为同一字段。",
-              "caveat": "通常步速下的2.5米步行路线，两次原始计时均以秒记录；问卷定义993=尝试但无法完成、999=选择不做，二者不是秒数。保留试次，不把计时直接称为速度，也不自行换算/汇总。"
+              "caveat": "qg002/qg003保留为两次独立原始计时但属于同一候选表型；993=尝试但无法完成、999=选择不做，须作为状态码保留而非秒数。这些状态码不是 elapsed seconds (not elapsed seconds)。不得把结构性未测记为0；从2.5米和计时推导速度或汇总两次试验前，需核验授权发布文件、特殊值、测量资格和预设算法。2011问卷手册使用LI题号，Codebook使用QG发布变量名；题意相近不证明LI与QG字段逐项等同，具体字段身份仍待发行版映射验证；不代表LI*与QA*/QB*/QC*代码一一对应。"
             }
           ]
         },
@@ -21275,7 +21275,7 @@
               "value_labels": "",
               "value_semantics": "现场身高读数；与qh006等椅子测试字段区分。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "现场身高读数；与qh006等椅子测试字段区分。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             },
             {
               "code": "qi002",
@@ -21485,7 +21485,7 @@
               "value_labels": "",
               "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             },
             {
               "code": "qh003",
@@ -21495,7 +21495,7 @@
               "value_labels": "",
               "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             },
             {
               "code": "qh004",
@@ -21505,7 +21505,7 @@
               "value_labels": "",
               "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             },
             {
               "code": "qh005",
@@ -21515,7 +21515,7 @@
               "value_labels": "",
               "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
               "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
             }
           ]
         },
@@ -38778,7 +38778,7 @@
               "value_labels": "",
               "value_semantics": "记录值并保留测量侧别qj003。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "记录值并保留测量侧别qj003。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -38858,7 +38858,7 @@
               "value_labels": "",
               "value_semantics": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -38918,7 +38918,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qe003",
@@ -38928,7 +38928,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qe004",
@@ -38938,7 +38938,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -39888,7 +39888,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qd003",
@@ -39898,7 +39898,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qd004",
@@ -39908,7 +39908,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -39928,7 +39928,7 @@
               "value_labels": "",
               "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qb003",
@@ -39938,7 +39938,7 @@
               "value_labels": "",
               "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qb004",
@@ -39948,7 +39948,7 @@
               "value_labels": "",
               "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -40008,7 +40008,7 @@
               "value_labels": "",
               "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qf003",
@@ -40018,7 +40018,7 @@
               "value_labels": "",
               "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qf004",
@@ -40028,7 +40028,7 @@
               "value_labels": "",
               "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -40209,7 +40209,7 @@
               "value_labels": "",
               "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qc004",
@@ -40219,7 +40219,7 @@
               "value_labels": "",
               "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qc005",
@@ -40229,7 +40229,7 @@
               "value_labels": "",
               "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qc006",
@@ -40239,7 +40239,7 @@
               "value_labels": "",
               "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -40255,31 +40255,31 @@
               "code": "qa003",
               "label": "qa003",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated systolic readings; questionnaire explicitly records mmHg. Preserve each reading and the 993/999 non-completion status codes.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. Blood pressure unit is explicitly mmHg."
             },
             {
               "code": "qa007",
               "label": "qa007",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated systolic readings; questionnaire explicitly records mmHg. Preserve each reading and the 993/999 non-completion status codes.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. Blood pressure unit is explicitly mmHg."
             },
             {
               "code": "qa011",
               "label": "qa011",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated systolic readings; questionnaire explicitly records mmHg. Preserve each reading and the 993/999 non-completion status codes.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. Blood pressure unit is explicitly mmHg."
             }
           ]
         },
@@ -40868,9 +40868,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+              "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
             },
             {
               "code": "qa009",
@@ -40878,9 +40878,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+              "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
             },
             {
               "code": "qa013",
@@ -40888,9 +40888,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+              "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
             }
           ]
         },
@@ -40920,7 +40920,7 @@
               "value_labels": "",
               "value_semantics": "注意厚重衣物、测量完成状态及波次问卷的路由。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "注意厚重衣物、测量完成状态及波次问卷的路由。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -40940,7 +40940,7 @@
               "value_labels": "",
               "value_semantics": "记录值并保留测量侧别/腿别qk003。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "记录值并保留测量侧别/腿别qk003。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -43696,31 +43696,31 @@
               "code": "qa004",
               "label": "qa004",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated diastolic readings; questionnaire explicitly records mmHg. Preserve each reading separately; do not impute from a systolic status code.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. Blood pressure unit is explicitly mmHg."
             },
             {
               "code": "qa008",
               "label": "qa008",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated diastolic readings; questionnaire explicitly records mmHg. Preserve each reading separately; do not impute from a systolic status code.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. Blood pressure unit is explicitly mmHg."
             },
             {
               "code": "qa012",
               "label": "qa012",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated diastolic readings; questionnaire explicitly records mmHg. Preserve each reading separately; do not impute from a systolic status code.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. Blood pressure unit is explicitly mmHg."
             }
           ]
         },
@@ -43740,7 +43740,7 @@
               "value_labels": "",
               "value_semantics": "通常步速下的2.5米步行路线，两次原始计时均以秒记录；问卷定义993=尝试但无法完成、999=选择不做，二者不是秒数。保留试次，不把计时直接称为速度，也不自行换算/汇总。",
               "mapping_status": "2013官方问卷/手册与Codebook已逐项核对：2.5米通常步速路线、两次计时、秒单位、60岁及以上年龄筛选及步行安全/场地路线已记录；这是候选表型字段审查，不含参与者记录、频数或有效值分布。",
-              "caveat": "通常步速下的2.5米步行路线，两次原始计时均以秒记录；问卷定义993=尝试但无法完成、999=选择不做，二者不是秒数。保留试次，不把计时直接称为速度，也不自行换算/汇总。"
+              "caveat": "qg002/qg003保留为两次独立原始计时但属于同一候选表型；993=尝试但无法完成、999=选择不做，须作为状态码保留而非秒数。这些状态码不是 elapsed seconds (not elapsed seconds)。不得把结构性未测记为0；从2.5米和计时推导速度或汇总两次试验前，需核验授权发布文件、特殊值、测量资格和预设算法。跨波协议相似不自动证明样本、设备、路由、存储和数值范围可直接合并。"
             },
             {
               "code": "qg003",
@@ -43750,7 +43750,7 @@
               "value_labels": "",
               "value_semantics": "通常步速下的2.5米步行路线，两次原始计时均以秒记录；问卷定义993=尝试但无法完成、999=选择不做，二者不是秒数。保留试次，不把计时直接称为速度，也不自行换算/汇总。",
               "mapping_status": "2013官方问卷/手册与Codebook已逐项核对：2.5米通常步速路线、两次计时、秒单位、60岁及以上年龄筛选及步行安全/场地路线已记录；这是候选表型字段审查，不含参与者记录、频数或有效值分布。",
-              "caveat": "通常步速下的2.5米步行路线，两次原始计时均以秒记录；问卷定义993=尝试但无法完成、999=选择不做，二者不是秒数。保留试次，不把计时直接称为速度，也不自行换算/汇总。"
+              "caveat": "qg002/qg003保留为两次独立原始计时但属于同一候选表型；993=尝试但无法完成、999=选择不做，须作为状态码保留而非秒数。这些状态码不是 elapsed seconds (not elapsed seconds)。不得把结构性未测记为0；从2.5米和计时推导速度或汇总两次试验前，需核验授权发布文件、特殊值、测量资格和预设算法。跨波协议相似不自动证明样本、设备、路由、存储和数值范围可直接合并。"
             }
           ]
         },
@@ -44440,7 +44440,7 @@
               "value_labels": "",
               "value_semantics": "现场身高读数；与qh006等椅子测试字段区分。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "现场身高读数；与qh006等椅子测试字段区分。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -44520,7 +44520,7 @@
               "value_labels": "",
               "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qh003",
@@ -44530,7 +44530,7 @@
               "value_labels": "",
               "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qh004",
@@ -44540,7 +44540,7 @@
               "value_labels": "",
               "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qh005",
@@ -44550,7 +44550,7 @@
               "value_labels": "",
               "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
               "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -62834,7 +62834,7 @@
               "value_labels": "",
               "value_semantics": "记录值并保留测量侧别qj003。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "记录值并保留测量侧别qj003。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -62934,7 +62934,7 @@
               "value_labels": "",
               "value_semantics": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "部分波次含测量资格、鞋履/地面等质量字段；原始读数与质量标记分开。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -62974,7 +62974,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qe003",
@@ -62984,7 +62984,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qe004",
@@ -62994,7 +62994,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；按问卷资格解释缺失。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -63944,7 +63944,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qd003",
@@ -63954,7 +63954,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qd004",
@@ -63964,7 +63964,7 @@
               "value_labels": "",
               "value_semantics": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "完成状态、持续时间、代偿动作；不能把未完成路由一律编码为0秒。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -63984,7 +63984,7 @@
               "value_labels": "",
               "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qb003",
@@ -63994,7 +63994,7 @@
               "value_labels": "",
               "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qb004",
@@ -64004,7 +64004,7 @@
               "value_labels": "",
               "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -64204,7 +64204,7 @@
               "value_labels": "",
               "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qf003",
@@ -64214,7 +64214,7 @@
               "value_labels": "",
               "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qf004",
@@ -64224,7 +64224,7 @@
               "value_labels": "",
               "value_semantics": "是否坚持满10秒、持续时间、代偿动作；分别保留。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "是否坚持满10秒、持续时间、代偿动作；分别保留。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -64425,7 +64425,7 @@
               "value_labels": "",
               "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qc004",
@@ -64435,7 +64435,7 @@
               "value_labels": "",
               "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qc005",
@@ -64445,7 +64445,7 @@
               "value_labels": "",
               "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qc006",
@@ -64455,7 +64455,7 @@
               "value_labels": "",
               "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -64471,31 +64471,31 @@
               "code": "qa003",
               "label": "qa003",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated systolic readings; questionnaire explicitly records mmHg. Preserve each reading and the 993/999 non-completion status codes.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. Blood pressure unit is explicitly mmHg."
             },
             {
               "code": "qa007",
               "label": "qa007",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated systolic readings; questionnaire explicitly records mmHg. Preserve each reading and the 993/999 non-completion status codes.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. Blood pressure unit is explicitly mmHg."
             },
             {
               "code": "qa011",
               "label": "qa011",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated systolic readings; questionnaire explicitly records mmHg. Preserve each reading and the 993/999 non-completion status codes.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. Blood pressure unit is explicitly mmHg."
             }
           ]
         },
@@ -65153,9 +65153,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+              "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
             },
             {
               "code": "qa009",
@@ -65163,9 +65163,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+              "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
             },
             {
               "code": "qa013",
@@ -65173,9 +65173,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "伴随血压测量的重复读数；确认单位/异常值规则。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "伴随血压测量的重复读数；确认单位/异常值规则。"
+              "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
             }
           ]
         },
@@ -65205,7 +65205,7 @@
               "value_labels": "",
               "value_semantics": "注意厚重衣物、测量完成状态及波次问卷的路由。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "注意厚重衣物、测量完成状态及波次问卷的路由。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -65225,7 +65225,7 @@
               "value_labels": "",
               "value_semantics": "记录值并保留测量侧别/腿别qk003。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "记录值并保留测量侧别/腿别qk003。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -67961,31 +67961,31 @@
               "code": "qa004",
               "label": "qa004",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated diastolic readings; questionnaire explicitly records mmHg. Preserve each reading separately; do not impute from a systolic status code.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. Blood pressure unit is explicitly mmHg."
             },
             {
               "code": "qa008",
               "label": "qa008",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated diastolic readings; questionnaire explicitly records mmHg. Preserve each reading separately; do not impute from a systolic status code.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. Blood pressure unit is explicitly mmHg."
             },
             {
               "code": "qa012",
               "label": "qa012",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "mmHg",
               "value_labels": "",
-              "value_semantics": "三次读数；保留原始读数并按分析方案定义均值。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "三次读数；保留原始读数并按分析方案定义均值。"
+              "value_semantics": "Three repeated diastolic readings; questionnaire explicitly records mmHg. Preserve each reading separately; do not impute from a systolic status code.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. Blood pressure unit is explicitly mmHg."
             }
           ]
         },
@@ -68085,7 +68085,7 @@
               "value_labels": "",
               "value_semantics": "通常步速下的2.5米步行路线，两次原始计时均以秒记录；问卷定义993=尝试但无法完成、999=选择不做，二者不是秒数。保留试次，不把计时直接称为速度，也不自行换算/汇总。",
               "mapping_status": "2015官方问卷/手册与Codebook已逐项核对：2.5米通常步速路线、两次计时、秒单位、60岁及以上年龄筛选及步行安全/场地路线已记录；这是候选表型字段审查，不含参与者记录、频数或有效值分布。",
-              "caveat": "通常步速下的2.5米步行路线，两次原始计时均以秒记录；问卷定义993=尝试但无法完成、999=选择不做，二者不是秒数。保留试次，不把计时直接称为速度，也不自行换算/汇总。"
+              "caveat": "qg002/qg003保留为两次独立原始计时但属于同一候选表型；993=尝试但无法完成、999=选择不做，须作为状态码保留而非秒数。这些状态码不是 elapsed seconds (not elapsed seconds)。不得把结构性未测记为0；从2.5米和计时推导速度或汇总两次试验前，需核验授权发布文件、特殊值、测量资格和预设算法。跨波协议相似不自动证明样本、设备、路由、存储和数值范围可直接合并。"
             },
             {
               "code": "qg003",
@@ -68095,7 +68095,7 @@
               "value_labels": "",
               "value_semantics": "通常步速下的2.5米步行路线，两次原始计时均以秒记录；问卷定义993=尝试但无法完成、999=选择不做，二者不是秒数。保留试次，不把计时直接称为速度，也不自行换算/汇总。",
               "mapping_status": "2015官方问卷/手册与Codebook已逐项核对：2.5米通常步速路线、两次计时、秒单位、60岁及以上年龄筛选及步行安全/场地路线已记录；这是候选表型字段审查，不含参与者记录、频数或有效值分布。",
-              "caveat": "通常步速下的2.5米步行路线，两次原始计时均以秒记录；问卷定义993=尝试但无法完成、999=选择不做，二者不是秒数。保留试次，不把计时直接称为速度，也不自行换算/汇总。"
+              "caveat": "qg002/qg003保留为两次独立原始计时但属于同一候选表型；993=尝试但无法完成、999=选择不做，须作为状态码保留而非秒数。这些状态码不是 elapsed seconds (not elapsed seconds)。不得把结构性未测记为0；从2.5米和计时推导速度或汇总两次试验前，需核验授权发布文件、特殊值、测量资格和预设算法。跨波协议相似不自动证明样本、设备、路由、存储和数值范围可直接合并。"
             }
           ]
         },
@@ -68595,7 +68595,7 @@
               "value_labels": "",
               "value_semantics": "现场身高读数；与qh006等椅子测试字段区分。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "现场身高读数；与qh006等椅子测试字段区分。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
@@ -68675,7 +68675,7 @@
               "value_labels": "",
               "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qh003",
@@ -68685,7 +68685,7 @@
               "value_labels": "",
               "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qh004",
@@ -68695,7 +68695,7 @@
               "value_labels": "",
               "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             },
             {
               "code": "qh005",
@@ -68705,7 +68705,7 @@
               "value_labels": "",
               "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
               "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。"
+              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
             }
           ]
         },
