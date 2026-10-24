@@ -106,6 +106,10 @@ map_direct("health_symptom_variable_mapping_v1.csv", "p",
            statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
            modules=("module",), caveats=("note",), value_labels=("value_labels",),
            documents=("value_label_source",), archives=("source_archive",))
+map_direct("relationship_satisfaction_crosswalk_v1.csv", "p",
+           statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
+           modules=("module",), caveats=("caveat",), value_labels=("value_labels",),
+           documents=("value_label_source",), archives=("source_archive",))
 map_direct("biomarker_measurement_gate_crosswalk_v1.csv", "c",
            statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
            modules=("module",), caveats=("caveat",), semantics=("value_semantics",),

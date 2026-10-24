@@ -419,7 +419,13 @@ def main() -> None:
                     "Review.Flag": "role/category is a search aid, not analytic inclusion",
                 })
                 matched = True
-        if CONFOUNDERS.search(f"{label} {var}") and re.search(r"demographic|health_status|health status|family|housing", module, re.I):
+        reviewed_relationship_outcome = (
+            row.wave in {"2015", "2018"}
+            and var.lower() == "dc043_w3"
+        )
+        if (not reviewed_relationship_outcome
+                and CONFOUNDERS.search(f"{label} {var}")
+                and re.search(r"demographic|health_status|health status|family|housing", module, re.I)):
             outputs.append({
                 "Variable.Name": var,
                 "Variable.Description": label,
@@ -554,6 +560,8 @@ def main() -> None:
                              "social determinants", "marital status and partner context", "caveat")
     append_audited_crosswalk("healthcare_access_crosswalk_v1.csv", "wave", "code", "module", "source_label",
                              "healthcare access", "insurance, outpatient and inpatient utilization", "caveat", "e,p", "catalog_role")
+    append_audited_crosswalk("relationship_satisfaction_crosswalk_v1.csv", "wave", "code", "module", "source_label",
+                             "social wellbeing", "marital relationship satisfaction", "caveat", "p")
     append_audited_crosswalk("food_environment_crosswalk_v1.csv", "wave", "code", "module", "source_label",
                              "food and household environment", "diet, food security, housing and utilities", "caveat")
 

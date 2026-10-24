@@ -1,5 +1,5 @@
 ﻿epcf,category,subcategory,source_field_wave_rows,distinct_source_codes,wave_count
-c,automated covariate search hit,keyword discovery only; not a reviewed covariate or adjustment recommendation,416,263,5
+c,automated covariate search hit,keyword discovery only; not a reviewed covariate or adjustment recommendation,415,262,5
 c,covariate candidate,birth-date source and age derivation metadata,5,5,2
 c,measurement metadata,2011 proxy interview and Section E assistance context,3,3,1
 c,measurement metadata,2018 employer pension contribution amount/share unit selector,1,1,1
@@ -236,3 +236,4 @@ p,physical function,reported disability history / physical,2,1,2
 p,physical function,reported disability history / speech,10,4,4
 p,physical function,reported disability history / vision,10,4,4
 p,physical function,"strength, mobility, lung function, and performance",198,66,5
+p,social wellbeing,marital relationship satisfaction,2,1,2

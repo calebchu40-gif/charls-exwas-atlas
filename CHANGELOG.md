@@ -2,6 +2,7 @@
 
 ## 2026-10-24
 
+- Added a questionnaire- and Codebook-reviewed marital relationship satisfaction phenotype candidate for 2015 and 2018. The catalogue preserves the BE001=1/2 routed population, keeps “No spouse now” outside the 1–5 ordinal scale, and does not claim validated cross-wave comparability or any association result; no respondent records or Codebook frequencies were used.
 - Source-reviewed 62 pending 2013 money-management helper relationship option fields against the official questionnaire and Codebook. Kept them as C source-detail rows for the two-helper loop, documented why blanks cannot be read as “no helper,” and synchronized the series-level catalogue so 64 option slots are not presented as separate association constructs. No frequencies or respondent records were used.
 - Corrected alcohol-frequency harmonization across waves: 2011–2018 fields are beverage-specific and routed by selected beverage, while 2020 DA052 is overall frequency. Added official questionnaire line references, field-level notes, site payload updates, and regression coverage; matching 1–8 response labels no longer imply direct equivalence. No participant records or codebook frequencies were used.
 - Updated the base behavior crosswalk generator so both its overall concept caveat and wave-specific field notes stay accurate when rebuilt before enrichment; the 2020 overall-frequency distinction is now checked on the concept card as well as field rows.

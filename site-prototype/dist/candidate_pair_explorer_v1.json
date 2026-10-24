@@ -44858,8 +44858,8 @@
     },
     "2015": {
       "exposure_count": 563,
-      "phenotype_count": 232,
-      "candidate_pair_count": 130608,
+      "phenotype_count": 233,
+      "candidate_pair_count": 131171,
       "exposures": [
         {
           "concept_id": "pension_2015_urban_residents_personal_supplementary_repayment_amount",
@@ -64309,6 +64309,26 @@
           ]
         },
         {
+          "concept_id": "marital_relationship_satisfaction",
+          "label": "婚姻关系满意度",
+          "domain": "社会关系与主观幸福感",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "dc043_w3",
+              "label": "How Satisfied Are You with Your Marriage (Relationship with Spouse)?",
+              "module": "health_status_and_functioning",
+              "unit": "",
+              "value_labels": "1=Completely satisfied; 2=Very satisfied; 3=Somewhat satisfied; 4=Not very satisfied; 5=Not at all satisfied; 6=No spouse now (separate non-ordinal status)",
+              "value_semantics": "",
+              "mapping_status": "2015 questionnaire and Codebook reviewed; item-level phenotype candidate; analysis eligibility, missing-value handling, and wave harmonization remain unvalidated",
+              "caveat": "问卷规定仅 BE001=1 或 2 时提问；第 6 类“目前没有配偶”是状态类别，不属于 1–5 满意度有序等级。2015 BE001=7 同居者不在该题明示路由内。"
+            }
+          ]
+        },
+        {
           "concept_id": "mood_hopeful",
           "label": "对未来有希望",
           "domain": "",
@@ -69073,8 +69093,8 @@
     },
     "2018": {
       "exposure_count": 494,
-      "phenotype_count": 206,
-      "candidate_pair_count": 101757,
+      "phenotype_count": 207,
+      "candidate_pair_count": 102251,
       "exposures": [
         {
           "concept_id": "pension_expected_receipt_age_2018_plan_loop",
@@ -89558,6 +89578,26 @@
               "value_semantics": "",
               "mapping_status": "按波次模块及官方问卷题意映射；需检查值标签/路由",
               "caveat": "问卷语义映射候选；2018扩展认知模块独有的省市、乡镇、楼层及地址/个人信息题；须按年龄适用规则处理。"
+            }
+          ]
+        },
+        {
+          "concept_id": "marital_relationship_satisfaction",
+          "label": "婚姻关系满意度",
+          "domain": "社会关系与主观幸福感",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "dc043_w3",
+              "label": "Marriage Satisfication",
+              "module": "cognition",
+              "unit": "",
+              "value_labels": "1=Completely satisfied; 2=Very satisfied; 3=Somewhat satisfied; 4=Not very satisfied; 5=Not at all satisfied; 6=No spouse now (separate non-ordinal status)",
+              "value_semantics": "",
+              "mapping_status": "2018 questionnaire and Codebook reviewed; item-level phenotype candidate; analysis eligibility, missing-value handling, and wave harmonization remain unvalidated",
+              "caveat": "问卷规定仅 BE001=1 或 2 时提问；第 6 类“目前没有配偶”是状态类别，不属于 1–5 满意度有序等级。原始归档目录将该字段置于 Cognition 文件，按发布目录保留，不据此改变题目含义。"
             }
           ]
         },
