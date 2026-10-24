@@ -116,6 +116,31 @@ class CatalogReviewStatusTests(unittest.TestCase):
         app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
         self.assertIn("它是连续/开放回答或未列离散类别，不虚构答案标签", app)
 
+    def test_workplace_location_review_is_wave_specific_and_excludes_2020_fd004(self):
+        concept = next(row for row in self.work if row.get("concept_id") == "current_workplace_location_relative_to_residence_2011_2018")
+        fields = {field["wave"]: field for field in concept["source_fields"]}
+        self.assertEqual(set(fields), {"2011", "2013", "2015", "2018"})
+        for wave, field in fields.items():
+            self.assertIn("official wave-specific questionnaire/Codebook", field["mapping_status"])
+            self.assertIn("not commute distance", field["caveat"])
+            self.assertIn("frequencies omitted", field["value_label_status"])
+            self.assertTrue(field["value_labels"])
+        self.assertIn("FD002=6/7", fields["2013"]["note"])
+        self.assertIn("FD002=6/7", fields["2015"]["note"])
+        fd004_2020 = [row for row in self.work if row.get("concept_id") == "nonfarm_self_employment_business_workforce_size"]
+        self.assertTrue(any(any(f.get("wave") == "2020" and f.get("code", "").lower() == "fd004" for f in row.get("source_fields", [])) for row in fd004_2020))
+
+    def test_selfemployment_location_review_keeps_address_text_private_and_categories_wave_specific(self):
+        concept = next(row for row in self.work if row.get("concept_id") == "nonfarm_self_employment_business_location_2011_2020")
+        fields = {field["wave"]: field for field in concept["source_fields"]}
+        self.assertEqual(set(fields), {"2011", "2013", "2015", "2018", "2020"})
+        for wave, field in fields.items():
+            self.assertIn("official wave-specific questionnaire/Codebook", field["mapping_status"])
+            self.assertIn("place names/address text", field["caveat"])
+            self.assertIn("frequencies omitted", field["value_label_status"])
+        self.assertIn("999=Refuse to answer", fields["2020"]["value_labels"])
+        self.assertIn("no fixed address", fields["2011"]["note"])
+
     def test_work_capi_formulas_and_source_conflicts_reach_main_catalog(self):
         examples = {
             ("2020", "xworking"): (

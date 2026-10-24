@@ -608,7 +608,7 @@
     "concept_id": "current_workplace_location_relative_to_residence_2011_2018",
     "label": "Current workplace location relative to residence (2011-2018)",
     "domain": "Workplace context",
-    "caveat": "FD004 records the current workplace location in the employed-work module. 2011 categories are same village/community, other village/community in county/city, another county/city in province, and another province; 2013-2018 use wave-specific categories relative to permanent/current residence and include an abroad option in some waves. Treat as a coarse self-reported geographic context, not commute distance, air pollution, or neighborhood exposure. Preserve the original categories and eligible current-employed denominator; the identically named 2020 FD004 is number of employees and is explicitly excluded.",
+    "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release. 2020 FD004 is a different employee-count item and is not included.",
     "source_fields": [
       {
         "wave": "2011",
@@ -617,11 +617,12 @@
         "source_label": "Location of Workplace",
         "unit": "wave-specific ordinal workplace location category relative to residence; not a distance measure",
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-        "note": "official 2011/2013/2015/2018 FD004 questionnaires and codebooks reviewed. Asked in the current employed-work module; category anchors and geographic resolution vary by wave. Preserve raw categories and current-employed route. The 2020 FD004 is number of employees and is not part of this mapping; location is not a measured commute distance or environmental concentration.",
+        "mapping_status": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md",
+        "note": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md",
         "value_labels": "1=This village/community; 2=Other village/community in this county/city; 3=Another county/city in this province; 4=Another province",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+        "value_label_status": "Official wave-specific questionnaire/Codebook labels reviewed; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release."
       },
       {
         "wave": "2013",
@@ -630,11 +631,12 @@
         "source_label": "Location of Workplace",
         "unit": "wave-specific ordinal workplace location category relative to residence; not a distance measure",
         "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-        "note": "official 2011/2013/2015/2018 FD004 questionnaires and codebooks reviewed. Asked in the current employed-work module; category anchors and geographic resolution vary by wave. Preserve raw categories and current-employed route. The 2020 FD004 is number of employees and is not part of this mapping; location is not a measured commute distance or environmental concentration.",
+        "mapping_status": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md",
+        "note": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md 2013/2015 FD002=6/7 respondents skip to FD011.",
         "value_labels": "1=The Same as Permanent Address; 2=Another Village in Permanent Address's County; 3=Other; 4=Abroad",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+        "value_label_status": "Official wave-specific questionnaire/Codebook labels reviewed; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release."
       },
       {
         "wave": "2015",
@@ -643,11 +645,12 @@
         "source_label": "Location of Workplace",
         "unit": "wave-specific ordinal workplace location category relative to residence; not a distance measure",
         "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-        "note": "official 2011/2013/2015/2018 FD004 questionnaires and codebooks reviewed. Asked in the current employed-work module; category anchors and geographic resolution vary by wave. Preserve raw categories and current-employed route. The 2020 FD004 is number of employees and is not part of this mapping; location is not a measured commute distance or environmental concentration.",
+        "mapping_status": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md",
+        "note": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md 2013/2015 FD002=6/7 respondents skip to FD011.",
         "value_labels": "1=The Same as Permanent Address; 2=Another Village in Permanent Address's County; 3=Other; 4=Abroad",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+        "value_label_status": "Official wave-specific questionnaire/Codebook labels reviewed; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release."
       },
       {
         "wave": "2018",
@@ -656,11 +659,12 @@
         "source_label": "Location of the Workplace",
         "unit": "wave-specific ordinal workplace location category relative to residence; not a distance measure",
         "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-        "note": "official 2011/2013/2015/2018 FD004 questionnaires and codebooks reviewed. Asked in the current employed-work module; category anchors and geographic resolution vary by wave. Preserve raw categories and current-employed route. The 2020 FD004 is number of employees and is not part of this mapping; location is not a measured commute distance or environmental concentration.",
-        "value_labels": "1=Same as the Residence; 2=Another Neighborhood but Same Province-city as the; 3=Other Domestic Location; 4=Abroad",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+        "mapping_status": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md",
+        "note": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md",
+        "value_labels": "1=Same as the Residence; 2=Other village/community in the permanent address's county/city/district; 3=Other domestic location; 4=Abroad",
+        "value_label_status": "Official wave-specific questionnaire/Codebook labels reviewed; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release."
       }
     ]
   },
@@ -4355,7 +4359,7 @@
     "concept_id": "nonfarm_self_employment_business_location_2011_2020",
     "label": "Location category of non-farm self-employment business (2011-2020)",
     "domain": "Workplace context",
-    "caveat": "FH006 in 2011-2018 and FD002 in 2020 locate a self-employment business. Preserve wave-specific location categories and work route; this coarse report is not commute distance, geocoded location, or measured pollution.",
+    "caveat": "Self-reported broad geographic category for the respondent's non-farm self-employment business. This is not a commute distance, measured pollution, or a geocoded exposure. Keep wave-specific categories and eligible business route; do not harmonize by code number alone. Questionnaire subfields may contain place names/address text and are deliberately excluded from the public atlas. Confirm authorized-release special values, eligibility, missingness and person linkage before analysis.",
     "source_fields": [
       {
         "wave": "2011",
@@ -4364,11 +4368,12 @@
         "source_label": "Location of Your Company or Workplace",
         "unit": "",
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-        "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
+        "mapping_status": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
+        "note": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md 2011 interviewer code 0 for no fixed address requires release-level validation.",
         "value_labels": "1=This village/community; 2=Other village/community in this county/city; 3=Another county/city in this province; 4=Another province",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+        "value_label_status": "Official questionnaire/Codebook categories reviewed; address text and frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "caveat": "Self-reported broad geographic category for the respondent's non-farm self-employment business. This is not a commute distance, measured pollution, or a geocoded exposure. Keep wave-specific categories and eligible business route; do not harmonize by code number alone. Questionnaire subfields may contain place names/address text and are deliberately excluded from the public atlas. Confirm authorized-release special values, eligibility, missingness and person linkage before analysis."
       },
       {
         "wave": "2013",
@@ -4377,11 +4382,12 @@
         "source_label": "Location of Your Company",
         "unit": "",
         "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-        "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "1=The Same as Permanent Address; 2=Another Village in Permanent Address's County; 3=Other; 4=Abroad",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+        "mapping_status": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
+        "note": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
+        "value_labels": "1=Same as permanent address; 2=Another village/neighborhood in permanent address's county/city/district; 3=Other domestic location; 4=Abroad",
+        "value_label_status": "Official questionnaire/Codebook categories reviewed; address text and frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "caveat": "Self-reported broad geographic category for the respondent's non-farm self-employment business. This is not a commute distance, measured pollution, or a geocoded exposure. Keep wave-specific categories and eligible business route; do not harmonize by code number alone. Questionnaire subfields may contain place names/address text and are deliberately excluded from the public atlas. Confirm authorized-release special values, eligibility, missingness and person linkage before analysis."
       },
       {
         "wave": "2015",
@@ -4390,11 +4396,12 @@
         "source_label": "Location of Your Company",
         "unit": "",
         "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-        "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "1=The Same as Permanent Address; 2=Another Village in Permanent Address's County; 3=Other; 4=Abroad",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
+        "mapping_status": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
+        "note": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
+        "value_labels": "1=Same as permanent address; 2=Another village/neighborhood in permanent address's county/city/district; 3=Other domestic location; 4=Abroad",
+        "value_label_status": "Official questionnaire/Codebook categories reviewed; address text and frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "caveat": "Self-reported broad geographic category for the respondent's non-farm self-employment business. This is not a commute distance, measured pollution, or a geocoded exposure. Keep wave-specific categories and eligible business route; do not harmonize by code number alone. Questionnaire subfields may contain place names/address text and are deliberately excluded from the public atlas. Confirm authorized-release special values, eligibility, missingness and person linkage before analysis."
       },
       {
         "wave": "2018",
@@ -4403,11 +4410,12 @@
         "source_label": "Location of the Self Employment Business",
         "unit": "",
         "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-        "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "1=Same as the Residence; 2=Another Neighborhood but Same Province-city as the; 3=Other Domestic Location; 4=Abroad",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
+        "mapping_status": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
+        "note": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
+        "value_labels": "1=Same as permanent address; 2=Other village/community in the permanent address's county/city/district; 3=Other domestic location; 4=Abroad",
+        "value_label_status": "Official questionnaire/Codebook categories reviewed; address text and frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "caveat": "Self-reported broad geographic category for the respondent's non-farm self-employment business. This is not a commute distance, measured pollution, or a geocoded exposure. Keep wave-specific categories and eligible business route; do not harmonize by code number alone. Questionnaire subfields may contain place names/address text and are deliberately excluded from the public atlas. Confirm authorized-release special values, eligibility, missingness and person linkage before analysis."
       },
       {
         "wave": "2020",
@@ -4416,11 +4424,12 @@
         "source_label": "Location of the Self Employment Business",
         "unit": "nominal type of current employer/work unit; preserve wave-specific response categories",
         "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
-        "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-        "note": "official questionnaire FB001-FB010 and wave codebook located; route retained; source page review recorded in audit/work_history_lifecourse_mapping_review_v1.md",
-        "value_labels": "1=Same as the Residence; 2=Another Neighborhood but Same County as the Residence; 3=Other Domestic Location; 4=Abroad; 999=Refuse to Answer",
-        "value_label_status": "official codebook response labels; frequencies omitted",
-        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
+        "mapping_status": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
+        "note": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md 2020 includes refusal code 999.",
+        "value_labels": "1=Same village/community as current residence; 2=Other village/community in same county/district; 3=Other county/district; 4=Hong Kong, Macao, Taiwan, or abroad; 999=Refuse to answer",
+        "value_label_status": "Official questionnaire/Codebook categories reviewed; address text and frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "caveat": "Self-reported broad geographic category for the respondent's non-farm self-employment business. This is not a commute distance, measured pollution, or a geocoded exposure. Keep wave-specific categories and eligible business route; do not harmonize by code number alone. Questionnaire subfields may contain place names/address text and are deliberately excluded from the public atlas. Confirm authorized-release special values, eligibility, missingness and person linkage before analysis."
       }
     ]
   },

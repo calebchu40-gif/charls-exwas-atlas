@@ -1,0 +1,7 @@
+# Non-farm self-employment business location review — 2026-10-25
+
+Reviewed the official questionnaire and Codebook fields `FH006` (2011–2018) and `FD002` (2020) for location of the non-farm self-employment business. The item is a broad self-reported location category and remains wave-specific. The 2011 questionnaire directs interviewers to enter `0` if there is no fixed address; do not assume that this is a standard location category until checked in the authorized release. The 2020 item includes a distinct `999` refusal option and wording for Hong Kong, Macao, Taiwan or abroad. Response code numbers are not harmonized across waves.
+
+The instrument also contains conditional place-name/address text fields. They are not included in the public catalogue, should not be copied into public outputs, and must not be geocoded without an additional privacy and data-use review. The candidate is not a commute-distance measure or a measured pollution exposure. Analysis requires confirming the non-farm self-employment route, respondent-level field identity, eligible denominator, special values and linkage in the approved release. No respondent records or Codebook frequencies were used.
+
+Reproduce the metadata update with `python scripts/apply_selfemployment_business_location_review.py`. The script checks official field presence and critical 2011/2020 source options, then updates the work crosswalk, E/P source index and website JSON.
