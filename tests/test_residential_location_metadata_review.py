@@ -12,7 +12,7 @@ class ResidentialLocationMetadataReviewTests(unittest.TestCase):
     def test_exact_reviewed_fields_are_context_metadata(self):
         with AUDIT.open(encoding="utf-8-sig", newline="") as stream:
             audit = list(csv.DictReader(stream))
-        self.assertEqual(len(audit), 13)
+        self.assertEqual(len(audit), 17)
         with (ROOT / "site-prototype/dist/catalog_c.json").open(encoding="utf-8") as stream:
             catalog = json.load(stream)
         by_key = {(r["Source.Wave"], r["Variable.Name"].lower()): r for r in catalog}

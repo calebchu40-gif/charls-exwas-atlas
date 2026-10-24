@@ -9,15 +9,15 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 TARGETS = {
-    ("2011", "bb001_1"), ("2011", "bb001_3"),
-    ("2011", "bc005_1"), ("2011", "bc005_3"),
-    ("2011", "bb012_1"), ("2011", "bb011"),
+    ("2011", "bb001_1"), ("2011", "bb001_3"), ("2011", "bb001_4"),
+    ("2011", "bc005_1"), ("2011", "bc005_3"), ("2011", "bc005_4"),
+    ("2011", "bb012_1"), ("2011", "bb012_3"), ("2011", "bb012_4"), ("2011", "bb011"),
     ("2013", "bc005_2"), ("2013", "bb000_w2_1_1"), ("2013", "bb011"),
     ("2013", "bb012"), ("2013", "bb013_w2_1"), ("2013", "bb012_1"),
     ("2015", "bb000_w3_2"),
 }
 QUESTIONNAIRES = {
-    "2011": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt",
+    "2011": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
     "2013": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
     "2015": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
 }
