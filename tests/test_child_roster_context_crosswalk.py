@@ -52,11 +52,32 @@ class ChildRosterContextCrosswalkTests(unittest.TestCase):
     def test_both_build_pipelines_run_child_mapping_before_catalog(self):
         for pipeline in (FULL_PIPELINE_SCRIPTS, FINALIZATION_PIPELINE_SCRIPTS):
             self.assertIn("build_child_roster_context_crosswalk.py", pipeline)
+            self.assertIn("build_child_hukou_lifecourse_crosswalk.py", pipeline)
             self.assertIn("build_child_phenotype_crosswalk.py", pipeline)
             self.assertLess(
-                pipeline.index("build_child_phenotype_crosswalk.py"),
+                pipeline.index("build_child_hukou_lifecourse_crosswalk.py"),
                 pipeline.index("build_charls_atlas_catalog.py"),
             )
+
+    def test_child_hukou_history_candidates_keep_wave_menus_and_linkage_limits(self):
+        mappings = rows(ROOT / "audit/child_hukou_lifecourse_crosswalk_v1.csv")
+        raw = rows(ROOT / "audit/raw_variable_catalog_v1.csv")
+        raw_keys = {(r["wave"], r["variable"].lower(), r["module"].lower()) for r in raw}
+        self.assertEqual(len(mappings), 13)
+        self.assertEqual(len({r["concept_id"] for r in mappings}), 10)
+        self.assertTrue(all((r["wave"], r["code"].lower(), "child") in raw_keys for r in mappings))
+        self.assertIn("exact record-field crosswalk", mappings[0]["mapping_status"])
+        current_location = [r for r in mappings if r["concept_id"] == "offspring_current_hukou_location"]
+        self.assertEqual(len(current_location), 2)
+        self.assertNotEqual(current_location[0]["value_labels"], current_location[1]["value_labels"])
+        self.assertTrue(all("frequenc" not in r["value_labels"].lower() for r in mappings))
+        self.assertTrue(all("childID" in r["caveat"] and "clustered within respondents" in r["caveat"] for r in mappings))
+        catalog = json.loads((ROOT / "site-prototype/dist/catalog_e.json").read_text(encoding="utf-8"))
+        fields = {(r["Source.Wave"], r["Variable.Name"].lower()): r for r in catalog}
+        for row in mappings:
+            field = fields[(row["wave"], row["code"].lower())]
+            self.assertIn("same-stem questionnaire/Codebook item candidate", field["Concept.Mapping.Status"])
+            self.assertIn("one-to-one", field["Concept.Mapping.Caveat"])
 
     def test_child_records_are_searchable_with_their_linkage_warning(self):
         catalog = json.loads((ROOT / "site-prototype/dist/catalog_e.json").read_text(encoding="utf-8"))

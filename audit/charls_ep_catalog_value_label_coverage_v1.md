@@ -2,8 +2,8 @@
 
 更新：2026-10-25。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
-- 最终E/P目录行：6,904；不同波次—字段码：6,697。一个字段可对应多个候选类别/角色。
-- 有非空标签文本的E/P目录行：3,667；不同波次—字段码：3,586。连续测量、计数值及测量流程字段可已审但不需要离散标签。
+- 最终E/P目录行：6,917；不同波次—字段码：6,710。一个字段可对应多个候选类别/角色。
+- 有非空标签文本的E/P目录行：3,678；不同波次—字段码：3,597。连续测量、计数值及测量流程字段可已审但不需要离散标签。
 - 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：0。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -17,7 +17,7 @@
 |e|community context|270|270|74|1|
 |e|early-life and family socioeconomic context|4|4|4|2|
 |e|environmental perception|1|1|1|1|
-|e|family and intergenerational context|25|22|23|2|
+|e|family and intergenerational context|38|35|34|3|
 |e|food and household environment|161|161|104|1|
 |e|healthcare access|109|109|51|1|
 |e|housing and built environment|480|480|248|2|
@@ -42,7 +42,7 @@
 
 |审核状态|最终E/P目录行|
 |---|---:|
-|officially reviewed|2,653|
+|officially reviewed|2,664|
 |official codebook field located; continuous/count or no categorical labels|726|
 |numeric/time unit metadata available; no discrete labels assigned; see concept crosswalk|508|
 |codebook field located; continuous/open response or no categorical labels|371|
@@ -164,6 +164,7 @@
 |official questionnaire response categories reviewed; frequencies omitted|2|
 |continuous/date component; no discrete labels|2|
 |continuous measure; official questionnaire unit and route reviewed; special-value storage requires authorized-data QA|2|
+|continuous year item reviewed in questionnaire/Codebook context; special-value and storage validation required|2|
 |official 2013 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|
 |official 2018 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|
 |official 2015 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|
