@@ -1,5 +1,11 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-24 continuation: expand community land, agriculture, food, and energy context
+
+Reviewed the 2011 official Community questionnaire and Codebook and added six community-level candidate concepts across 26 exact source-field mappings: land-use profile, terrain, agricultural mechanization, fertilizer/seed inputs, local food prices, and household-energy prices. Kept units and periods distinct, retained conditional routes, and explicitly prevented community prices/land context from being interpreted as an individual's diet, dose, or landholding. JA012 remains excluded because the questionnaire and Codebook headings conflict (paddy-field area versus irrigatable area); no label was guessed. The public catalogue identifies these as 2011 community metadata candidates, not formal associations.
+
+Added source-phrase and routing assertions plus regression tests. Full metadata finalization completed with E=4,778, P=2,127, C=980 field-wave rows; 1,455 unique E/P concepts and 6,705 E/P source mappings. The 2011 candidate-pair metadata count is 124,598; it is only metadata co-availability, not an analytic sample size. One generic C pending source-identity row remains (FLDA081_1); formal association models and actual pairwise Ns remain 0. The first test run found an outdated E-row total in the current value-label snapshot; that count has been reconciled before rerunning the suite. No participant records or Codebook frequencies were used.
+
 ## 2026-10-24 continuation: review elevator and home-accessibility context
 
 Official questionnaire/Codebook review completed for five-wave elevator availability and household accessibility-facility fields. Elevator is I009 in 2011–2018 behind the I008 > 1 route, and I007 in 2020; structural skips remain distinct from No. Accessibility is I010 (2011–2015), I010_W4 (2018), and I009 (2020); the 2018/2020 “Do not need” option remains a distinct third category. The catalogue and audit record preserve household context, wave-specific routing, and the interviewer-in-home instruction; no Codebook frequencies or respondent records were used. Script is registered before and after catalog builds in finalize-only and full pipelines.

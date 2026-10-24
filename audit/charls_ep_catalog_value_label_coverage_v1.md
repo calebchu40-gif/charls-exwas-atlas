@@ -2,8 +2,8 @@
 
 更新：2026-10-24。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
-- 最终E/P目录行：6,879；不同波次—字段码：6,604。一个字段可对应多个候选类别/角色。
-- 有非空标签文本的E/P目录行：3,639；不同波次—字段码：3,562。连续测量、计数值及测量流程字段可已审但不需要离散标签。
+- 最终E/P目录行：6,905；不同波次—字段码：6,630。一个字段可对应多个候选类别/角色。
+- 有非空标签文本的E/P目录行：3,641；不同波次—字段码：3,564。连续测量、计数值及测量流程字段可已审但不需要离散标签。
 - 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：1。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -14,7 +14,7 @@
 |---|---|---:|---:|---:|---:|
 |e|behavior|267|267|189|5|
 |e|behavioral exposures|2|2|0|1|
-|e|community context|198|198|69|1|
+|e|community context|224|224|71|1|
 |e|early-life and family socioeconomic context|4|4|4|2|
 |e|environmental perception|1|1|1|1|
 |e|family and intergenerational context|6|3|6|1|
@@ -42,15 +42,15 @@
 
 |审核状态|最终E/P目录行|
 |---|---:|
-|officially reviewed|2,627|
+|officially reviewed|2,629|
 |official codebook field located; continuous/count or no categorical labels|726|
 |numeric/time unit metadata available; no discrete labels assigned; see concept crosswalk|508|
 |codebook field located; continuous/open response or no categorical labels|371|
 |continuous measure metadata available|257|
 |official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred|224|
+|official Codebook numeric/count response located; no discrete answer labels|153|
 |numeric/time unit metadata available; no discrete labels assigned|151|
 |audited measurement component; derive concept per crosswalk|138|
-|official Codebook numeric/count response located; no discrete answer labels|129|
 |Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding|96|
 |连续值/字段结构；代码本未提供离散值标签|93|
 |official 2011 questionnaire identifies Yuan amount period and household-member roster slot; continuous amount with no discrete response categories; authorized-release storage scale and special values remain unverified|80|

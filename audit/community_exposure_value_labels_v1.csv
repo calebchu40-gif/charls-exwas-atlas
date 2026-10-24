@@ -61,6 +61,32 @@
 2011,jh017,community_primary_school_change,How Many Primary Schools Before that,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,ji001,community_disaster_history,Any Serious Natural Disasters in the Past 5 Years,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jb015,community_sanitation_reconstructed,Reconstructed the Toilet and Sewer System,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,ja003_1,community_land_use_profile,Square of Kilometers,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,ja003_2,community_land_use_profile,Mu,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,ja011,community_land_use_profile,Mu of Arable Land,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,ja013,community_land_use_profile,How Many Arable Land at the End of 2007,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,ja014,community_land_use_profile,How Many Construction Land at the End of 2010,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,ja029,community_land_use_profile,Num. of New Arable Land,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,ja032,community_land_use_profile,Decreased Construction Land,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,ja033,community_land_use_profile,Percentage of Rental Land,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,ja034,community_land_use_profile,Rental Price/Mu,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,ja050,community_land_use_profile,Average Area of House Site Per Person,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,ja038,community_main_terrain,Type of Main Landscape of Your V/C,1=Plain; 2=Hill; 3=Mountainous Region; 4=Plateau; 5=Basin,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj002,community_agricultural_mechanization,Percentage of Mechanical Harvesting,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj003,community_agricultural_mechanization,Rent Big Machines,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj004,community_agricultural_mechanization,Rental Price,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj006,community_fertilizer_seed_inputs,Name of Most Use Fertilizer,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj007,community_fertilizer_seed_inputs,Price of That Fertilizer,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj008,community_fertilizer_seed_inputs,Price of Rice Seed,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj009,community_fertilizer_seed_inputs,Price of Rice Seedling,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj010,community_fertilizer_seed_inputs,Price of Wheat Seed,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj017,community_food_prices,Average Price of the LIJI Part of Pork,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj018,community_food_prices,Average Price of Chicken Eggs,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj019,community_food_prices,Average Price of Rice,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj020,community_food_prices,Average Price of Wheat,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj021,community_household_energy_prices,Average Price of Natural Gas,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj022,community_household_energy_prices,Average Price of Liquefied Petroleum Gas,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj025,community_household_energy_prices,Average Price of Coal,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jb028_1_1_,community_kindergarten_count,Num. of this Facility,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jb028_2_1_,community_kindergarten_distance,Distance,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jb028_1_2_,community_primary_school_count,Num. of this Facility,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt

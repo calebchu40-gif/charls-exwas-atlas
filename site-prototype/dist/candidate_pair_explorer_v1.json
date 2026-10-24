@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 579,
+      "exposure_count": 585,
       "phenotype_count": 213,
-      "candidate_pair_count": 123320,
+      "candidate_pair_count": 124598,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -820,6 +820,46 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_agricultural_mechanization",
+          "label": "Community agricultural mechanization context",
+          "domain": "Community context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jj002",
+              "label": "Percentage of Mechanical Harvesting",
+              "module": "community",
+              "unit": "percent",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Reported percentage of community agricultural products using agricultural machinery; community production context, not respondent occupational contact or air-pollution dose."
+            },
+            {
+              "code": "jj003",
+              "label": "Rent Big Machines",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Whether the community rents large agricultural machinery; No routes past the machine-rental price item. Keep the route and do not treat missing JJ004 as zero."
+            },
+            {
+              "code": "jj004",
+              "label": "Rental Price",
+              "module": "community",
+              "unit": "Yuan/day",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Daily rental price for large agricultural machinery, asked only after JJ003=Yes; community-level production price, not an individual cost or exposure."
             }
           ]
         },
@@ -2584,6 +2624,136 @@
           ]
         },
         {
+          "concept_id": "community_land_use_profile",
+          "label": "Community land area and agricultural land-use profile",
+          "domain": "Community environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "ja003_1",
+              "label": "Square of Kilometers",
+              "module": "community",
+              "unit": "km²",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community boundary area in the unit-specific field; the questionnaire provides separate km² and mu blanks. Keep the source fields distinct until the authorized release confirms how the unit choice is stored; do not sum or double count. This is community area, not household plot size."
+            },
+            {
+              "code": "ja003_2",
+              "label": "Mu",
+              "module": "community",
+              "unit": "mu",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community boundary area in the unit-specific field; the questionnaire provides separate km² and mu blanks. Keep the source fields distinct until the authorized release confirms how the unit choice is stored; do not sum or double count. This is community area, not household plot size."
+            },
+            {
+              "code": "ja011",
+              "label": "Mu of Arable Land",
+              "module": "community",
+              "unit": "mu",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village arable-land area at end of 2010, including paddy and dry land; V-only item. Community aggregate, not respondent landholding."
+            },
+            {
+              "code": "ja013",
+              "label": "How Many Arable Land at the End of 2007",
+              "module": "community",
+              "unit": "mu",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village arable-land area at end of 2007; preserve this earlier reference year separately from the 2010 JA011 measure. V-only community aggregate."
+            },
+            {
+              "code": "ja014",
+              "label": "How Many Construction Land at the End of 2010",
+              "module": "community",
+              "unit": "mu",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village rural construction-land area at end of 2010; V-only. Do not combine with JA003 total community area or infer individual housing density."
+            },
+            {
+              "code": "ja029",
+              "label": "Num. of New Arable Land",
+              "module": "community",
+              "unit": "mu",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "New arable-land area added through land development/consolidation since 2005; conditional on the preceding land-development Yes route. Preserve structural skips."
+            },
+            {
+              "code": "ja032",
+              "label": "Decreased Construction Land",
+              "module": "community",
+              "unit": "mu",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Construction-land area reduced through village consolidation since 2005; conditional on the preceding village-consolidation Yes route. Preserve structural skips."
+            },
+            {
+              "code": "ja033",
+              "label": "Percentage of Rental Land",
+              "module": "community",
+              "unit": "percent",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Informant's approximate percentage of village arable land subcontracted or leased out; preserve as a community land-use context measure, not an individual tenancy status."
+            },
+            {
+              "code": "ja034",
+              "label": "Rental Price/Mu",
+              "module": "community",
+              "unit": "Yuan/mu/year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Reported annual land rental price per mu in the village; community market context, not a respondent's land rent or income."
+            },
+            {
+              "code": "ja050",
+              "label": "Average Area of House Site Per Person",
+              "module": "community",
+              "unit": "mu/person",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Reported 2010 average rural house-site area per person in the village; community aggregate, not the sampled respondent's lot size."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_main_terrain",
+          "label": "Community main terrain/topography",
+          "domain": "Community environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "ja038",
+              "label": "Type of Main Landscape of Your V/C",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community's main terrain category; nominal, unordered labels. Do not infer elevation, slope, or individual geographic exposure from the category alone."
+            }
+          ]
+        },
+        {
           "concept_id": "community_other_natural_disaster_history_5y",
           "label": "Community other natural disaster history (past five years)",
           "domain": "Community environment",
@@ -2990,6 +3160,156 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "2011 community-reported current average water unit price in RMB yuan per ton; community context, not an individual's household bill."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_fertilizer_seed_inputs",
+          "label": "Community-reported fertilizer and seed input context",
+          "domain": "Community environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jj006",
+              "label": "Name of Most Use Fertilizer",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Open-text name of one commonly used fertilizer in local agricultural production. It is not a standardized chemical name or measure of application amount; do not infer pesticide or fertilizer exposure from the string alone."
+            },
+            {
+              "code": "jj007",
+              "label": "Price of That Fertilizer",
+              "module": "community",
+              "unit": "Yuan/jin",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported price per jin for the source-specific fertilizer/seed/seedling item; a local agricultural input price, not an individual purchase, use, or absorbed dose."
+            },
+            {
+              "code": "jj008",
+              "label": "Price of Rice Seed",
+              "module": "community",
+              "unit": "Yuan/jin",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported price per jin for the source-specific fertilizer/seed/seedling item; a local agricultural input price, not an individual purchase, use, or absorbed dose."
+            },
+            {
+              "code": "jj009",
+              "label": "Price of Rice Seedling",
+              "module": "community",
+              "unit": "Yuan/jin",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported price per jin for the source-specific fertilizer/seed/seedling item; a local agricultural input price, not an individual purchase, use, or absorbed dose."
+            },
+            {
+              "code": "jj010",
+              "label": "Price of Wheat Seed",
+              "module": "community",
+              "unit": "Yuan/jin",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported price per jin for the source-specific fertilizer/seed/seedling item; a local agricultural input price, not an individual purchase, use, or absorbed dose."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_food_prices",
+          "label": "Community-reported food commodity prices",
+          "domain": "Community food environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jj017",
+              "label": "Average Price of the LIJI Part of Pork",
+              "module": "community",
+              "unit": "Yuan/jin",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Current community-reported commodity price per jin; local food-market context, not respondent purchasing, dietary intake, or nutrient exposure."
+            },
+            {
+              "code": "jj018",
+              "label": "Average Price of Chicken Eggs",
+              "module": "community",
+              "unit": "Yuan/jin",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Current community-reported commodity price per jin; local food-market context, not respondent purchasing, dietary intake, or nutrient exposure."
+            },
+            {
+              "code": "jj019",
+              "label": "Average Price of Rice",
+              "module": "community",
+              "unit": "Yuan/jin",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Current community-reported commodity price per jin; local food-market context, not respondent purchasing, dietary intake, or nutrient exposure."
+            },
+            {
+              "code": "jj020",
+              "label": "Average Price of Wheat",
+              "module": "community",
+              "unit": "Yuan/jin",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Current community-reported commodity price per jin; local food-market context, not respondent purchasing, dietary intake, or nutrient exposure."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_household_energy_prices",
+          "label": "Community-reported household energy prices",
+          "domain": "Community environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jj021",
+              "label": "Average Price of Natural Gas",
+              "module": "community",
+              "unit": "Yuan/m³",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Current community-reported natural-gas price per cubic metre; not evidence of household connection, use, or combustion exposure."
+            },
+            {
+              "code": "jj022",
+              "label": "Average Price of Liquefied Petroleum Gas",
+              "module": "community",
+              "unit": "Yuan/bottle",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Current community-reported bottled LPG price per bottle; bottle size is not specified in this item. Not evidence of household use or combustion exposure."
+            },
+            {
+              "code": "jj025",
+              "label": "Average Price of Coal",
+              "module": "community",
+              "unit": "Yuan/jin",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Current community-reported coal price per jin; not evidence of household coal use, combustion, or personal pollutant dose."
             }
           ]
         },

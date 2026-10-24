@@ -966,6 +966,392 @@
     ]
   },
   {
+    "concept_id": "community_land_use_profile",
+    "label": "Community land area and agricultural land-use profile",
+    "domain": "Community environment",
+    "caveat": "2011 village-level land area, arable/construction land, land-development and land-lease context. Preserve the distinct reference years, units, V-only eligibility and conditional routes; do not calculate density or percentages without compatible denominators. JA012 is excluded from this concept because its official questionnaire and Codebook descriptions conflict (paddy field versus irrigatable land). These are not an individual's landholding or chemical exposure.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ja003_1",
+        "module": "community",
+        "source_label": "Square of Kilometers",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.2–6 (PDF pp.5–9); V-only land area/use items, reference periods and conditional land-development routes checked against the Codebook. JA012 wording discrepancy is documented separately and is not mapped here.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "km²",
+        "caveat": "Community boundary area in the unit-specific field; the questionnaire provides separate km² and mu blanks. Keep the source fields distinct until the authorized release confirms how the unit choice is stored; do not sum or double count. This is community area, not household plot size.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "ja003_2",
+        "module": "community",
+        "source_label": "Mu",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.2–6 (PDF pp.5–9); V-only land area/use items, reference periods and conditional land-development routes checked against the Codebook. JA012 wording discrepancy is documented separately and is not mapped here.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "mu",
+        "caveat": "Community boundary area in the unit-specific field; the questionnaire provides separate km² and mu blanks. Keep the source fields distinct until the authorized release confirms how the unit choice is stored; do not sum or double count. This is community area, not household plot size.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "ja011",
+        "module": "community",
+        "source_label": "Mu of Arable Land",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.2–6 (PDF pp.5–9); V-only land area/use items, reference periods and conditional land-development routes checked against the Codebook. JA012 wording discrepancy is documented separately and is not mapped here.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "mu",
+        "caveat": "Village arable-land area at end of 2010, including paddy and dry land; V-only item. Community aggregate, not respondent landholding.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "ja013",
+        "module": "community",
+        "source_label": "How Many Arable Land at the End of 2007",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.2–6 (PDF pp.5–9); V-only land area/use items, reference periods and conditional land-development routes checked against the Codebook. JA012 wording discrepancy is documented separately and is not mapped here.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "mu",
+        "caveat": "Village arable-land area at end of 2007; preserve this earlier reference year separately from the 2010 JA011 measure. V-only community aggregate.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "ja014",
+        "module": "community",
+        "source_label": "How Many Construction Land at the End of 2010",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.2–6 (PDF pp.5–9); V-only land area/use items, reference periods and conditional land-development routes checked against the Codebook. JA012 wording discrepancy is documented separately and is not mapped here.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "mu",
+        "caveat": "Village rural construction-land area at end of 2010; V-only. Do not combine with JA003 total community area or infer individual housing density.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "ja029",
+        "module": "community",
+        "source_label": "Num. of New Arable Land",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.2–6 (PDF pp.5–9); V-only land area/use items, reference periods and conditional land-development routes checked against the Codebook. JA012 wording discrepancy is documented separately and is not mapped here.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "mu",
+        "caveat": "New arable-land area added through land development/consolidation since 2005; conditional on the preceding land-development Yes route. Preserve structural skips.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "ja032",
+        "module": "community",
+        "source_label": "Decreased Construction Land",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.2–6 (PDF pp.5–9); V-only land area/use items, reference periods and conditional land-development routes checked against the Codebook. JA012 wording discrepancy is documented separately and is not mapped here.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "mu",
+        "caveat": "Construction-land area reduced through village consolidation since 2005; conditional on the preceding village-consolidation Yes route. Preserve structural skips.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "ja033",
+        "module": "community",
+        "source_label": "Percentage of Rental Land",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.2–6 (PDF pp.5–9); V-only land area/use items, reference periods and conditional land-development routes checked against the Codebook. JA012 wording discrepancy is documented separately and is not mapped here.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "percent",
+        "caveat": "Informant's approximate percentage of village arable land subcontracted or leased out; preserve as a community land-use context measure, not an individual tenancy status.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "ja034",
+        "module": "community",
+        "source_label": "Rental Price/Mu",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.2–6 (PDF pp.5–9); V-only land area/use items, reference periods and conditional land-development routes checked against the Codebook. JA012 wording discrepancy is documented separately and is not mapped here.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/mu/year",
+        "caveat": "Reported annual land rental price per mu in the village; community market context, not a respondent's land rent or income.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "ja050",
+        "module": "community",
+        "source_label": "Average Area of House Site Per Person",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.2–6 (PDF pp.5–9); V-only land area/use items, reference periods and conditional land-development routes checked against the Codebook. JA012 wording discrepancy is documented separately and is not mapped here.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "mu/person",
+        "caveat": "Reported 2010 average rural house-site area per person in the village; community aggregate, not the sampled respondent's lot size.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_main_terrain",
+    "label": "Community main terrain/topography",
+    "domain": "Community environment",
+    "caveat": "2011 community-reported nominal terrain category (plain, hill, mountainous region, plateau or basin). A coarse area-level descriptor, not a personal exposure dose; do not treat codes as an ordinal scale.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ja038",
+        "module": "community",
+        "source_label": "Type of Main Landscape of Your V/C",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A p.7 (PDF p.10), JA038; nominal answer labels checked against the official Codebook; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Community's main terrain category; nominal, unordered labels. Do not infer elevation, slope, or individual geographic exposure from the category alone.",
+        "value_labels": "1=Plain; 2=Hill; 3=Mountainous Region; 4=Plateau; 5=Basin",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_agricultural_mechanization",
+    "label": "Community agricultural mechanization context",
+    "domain": "Community context",
+    "caveat": "2011 community-reported agricultural mechanization share and large-machine rental context. JJ003/004 are conditional; these are not individual occupation, machinery contact, pesticide application or inhaled exposure.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jj002",
+        "module": "community",
+        "source_label": "Percentage of Mechanical Harvesting",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J, JJ002–JJ010; V-only agricultural production items, branch and stated units checked against official Codebook labels.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "percent",
+        "caveat": "Reported percentage of community agricultural products using agricultural machinery; community production context, not respondent occupational contact or air-pollution dose.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj003",
+        "module": "community",
+        "source_label": "Rent Big Machines",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J, JJ002–JJ010; V-only agricultural production items, branch and stated units checked against official Codebook labels.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Whether the community rents large agricultural machinery; No routes past the machine-rental price item. Keep the route and do not treat missing JJ004 as zero.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj004",
+        "module": "community",
+        "source_label": "Rental Price",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J, JJ002–JJ010; V-only agricultural production items, branch and stated units checked against official Codebook labels.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/day",
+        "caveat": "Daily rental price for large agricultural machinery, asked only after JJ003=Yes; community-level production price, not an individual cost or exposure.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_fertilizer_seed_inputs",
+    "label": "Community-reported fertilizer and seed input context",
+    "domain": "Community environment",
+    "caveat": "2011 community informant reports the most commonly used fertilizer name and community-level fertilizer/seed prices. The fertilizer name is open text and does not identify chemical composition or quantify use; prices do not establish individual purchase, handling or exposure.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jj006",
+        "module": "community",
+        "source_label": "Name of Most Use Fertilizer",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J, JJ002–JJ010; V-only agricultural production items, branch and stated units checked against official Codebook labels.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Open-text name of one commonly used fertilizer in local agricultural production. It is not a standardized chemical name or measure of application amount; do not infer pesticide or fertilizer exposure from the string alone.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj007",
+        "module": "community",
+        "source_label": "Price of That Fertilizer",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J, JJ002–JJ010; V-only agricultural production items, branch and stated units checked against official Codebook labels.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/jin",
+        "caveat": "Community-reported price per jin for the source-specific fertilizer/seed/seedling item; a local agricultural input price, not an individual purchase, use, or absorbed dose.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj008",
+        "module": "community",
+        "source_label": "Price of Rice Seed",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J, JJ002–JJ010; V-only agricultural production items, branch and stated units checked against official Codebook labels.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/jin",
+        "caveat": "Community-reported price per jin for the source-specific fertilizer/seed/seedling item; a local agricultural input price, not an individual purchase, use, or absorbed dose.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj009",
+        "module": "community",
+        "source_label": "Price of Rice Seedling",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J, JJ002–JJ010; V-only agricultural production items, branch and stated units checked against official Codebook labels.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/jin",
+        "caveat": "Community-reported price per jin for the source-specific fertilizer/seed/seedling item; a local agricultural input price, not an individual purchase, use, or absorbed dose.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj010",
+        "module": "community",
+        "source_label": "Price of Wheat Seed",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J, JJ002–JJ010; V-only agricultural production items, branch and stated units checked against official Codebook labels.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/jin",
+        "caveat": "Community-reported price per jin for the source-specific fertilizer/seed/seedling item; a local agricultural input price, not an individual purchase, use, or absorbed dose.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_food_prices",
+    "label": "Community-reported food commodity prices",
+    "domain": "Community food environment",
+    "caveat": "2011 informant-reported current local prices for pork tenderloin, eggs, rice and wheat/flour. These indicate community price context, not what a participant bought, ate, or received nutritionally; retain commodity-specific source fields and units.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jj017",
+        "module": "community",
+        "source_label": "Average Price of the LIJI Part of Pork",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.38–39 (PDF pp.41–42), commodity-specific current-price prompts and units checked against the official Codebook; no numeric summaries copied.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/jin",
+        "caveat": "Current community-reported commodity price per jin; local food-market context, not respondent purchasing, dietary intake, or nutrient exposure.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj018",
+        "module": "community",
+        "source_label": "Average Price of Chicken Eggs",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.38–39 (PDF pp.41–42), commodity-specific current-price prompts and units checked against the official Codebook; no numeric summaries copied.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/jin",
+        "caveat": "Current community-reported commodity price per jin; local food-market context, not respondent purchasing, dietary intake, or nutrient exposure.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj019",
+        "module": "community",
+        "source_label": "Average Price of Rice",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.38–39 (PDF pp.41–42), commodity-specific current-price prompts and units checked against the official Codebook; no numeric summaries copied.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/jin",
+        "caveat": "Current community-reported commodity price per jin; local food-market context, not respondent purchasing, dietary intake, or nutrient exposure.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj020",
+        "module": "community",
+        "source_label": "Average Price of Wheat",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.38–39 (PDF pp.41–42), commodity-specific current-price prompts and units checked against the official Codebook; no numeric summaries copied.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/jin",
+        "caveat": "Current community-reported commodity price per jin; local food-market context, not respondent purchasing, dietary intake, or nutrient exposure.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_household_energy_prices",
+    "label": "Community-reported household energy prices",
+    "domain": "Community environment",
+    "caveat": "2011 informant-reported current local prices for natural gas, bottled LPG and coal. Prices are community context, not household fuel use, fuel mix, combustion or personal pollutant dose; retain distinct units.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jj021",
+        "module": "community",
+        "source_label": "Average Price of Natural Gas",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.38–39 (PDF pp.41–42), commodity-specific current-price prompts and units checked against the official Codebook; no numeric summaries copied.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/m³",
+        "caveat": "Current community-reported natural-gas price per cubic metre; not evidence of household connection, use, or combustion exposure.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj022",
+        "module": "community",
+        "source_label": "Average Price of Liquefied Petroleum Gas",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.38–39 (PDF pp.41–42), commodity-specific current-price prompts and units checked against the official Codebook; no numeric summaries copied.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/bottle",
+        "caveat": "Current community-reported bottled LPG price per bottle; bottle size is not specified in this item. Not evidence of household use or combustion exposure.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj025",
+        "module": "community",
+        "source_label": "Average Price of Coal",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.38–39 (PDF pp.41–42), commodity-specific current-price prompts and units checked against the official Codebook; no numeric summaries copied.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/jin",
+        "caveat": "Current community-reported coal price per jin; not evidence of household coal use, combustion, or personal pollutant dose.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
     "concept_id": "community_kindergarten_count",
     "label": "Kindergartens in community (count)",
     "domain": "Community infrastructure",

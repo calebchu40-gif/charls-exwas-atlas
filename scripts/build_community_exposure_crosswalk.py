@@ -26,6 +26,12 @@ CONCEPTS={
  "community_primary_school_change":("Primary-school merger or relocation history","Community social context","2011 community-level report of primary-school merger/relocation and prior school count; historical service-access context, not individual schooling."),
  "community_disaster_history":("Recent serious natural-disaster occurrence","Community environment","2011 community-informant report of any serious natural disaster during the prior five years (JI001); No routes to JI003, so JI002 event details have a conditional denominator."),
  "community_sanitation_reconstructed":("Reconstructed community toilet/sewer indicator","Community environment","2011 village-only CAPI item asking whether the village restructured toilet/sewer systems; preserve village-only eligibility and do not infer original derivation from the Codebook variable label."),
+ "community_land_use_profile":("Community land area and agricultural land-use profile","Community environment","2011 village-level land area, arable/construction land, land-development and land-lease context. Preserve the distinct reference years, units, V-only eligibility and conditional routes; do not calculate density or percentages without compatible denominators. JA012 is excluded from this concept because its official questionnaire and Codebook descriptions conflict (paddy field versus irrigatable land). These are not an individual's landholding or chemical exposure."),
+ "community_main_terrain":("Community main terrain/topography","Community environment","2011 community-reported nominal terrain category (plain, hill, mountainous region, plateau or basin). A coarse area-level descriptor, not a personal exposure dose; do not treat codes as an ordinal scale."),
+ "community_agricultural_mechanization":("Community agricultural mechanization context","Community context","2011 community-reported agricultural mechanization share and large-machine rental context. JJ003/004 are conditional; these are not individual occupation, machinery contact, pesticide application or inhaled exposure."),
+ "community_fertilizer_seed_inputs":("Community-reported fertilizer and seed input context","Community environment","2011 community informant reports the most commonly used fertilizer name and community-level fertilizer/seed prices. The fertilizer name is open text and does not identify chemical composition or quantify use; prices do not establish individual purchase, handling or exposure."),
+ "community_food_prices":("Community-reported food commodity prices","Community food environment","2011 informant-reported current local prices for pork tenderloin, eggs, rice and wheat/flour. These indicate community price context, not what a participant bought, ate, or received nutritionally; retain commodity-specific source fields and units."),
+ "community_household_energy_prices":("Community-reported household energy prices","Community environment","2011 informant-reported current local prices for natural gas, bottled LPG and coal. Prices are community context, not household fuel use, fuel mix, combustion or personal pollutant dose; retain distinct units."),
 }
 MAP={
  "community_water_sources":["jb006_1","jb006_2","jb006_3","jb006_4","jb006_5","jb006_6","jb006_7","jb006_8"],
@@ -48,6 +54,12 @@ MAP={
  "community_primary_school_change":["jh015","jh017"],
  "community_disaster_history":["ji001"],
  "community_sanitation_reconstructed":["jb015"],
+ "community_land_use_profile":["ja003_1","ja003_2","ja011","ja013","ja014","ja029","ja032","ja033","ja034","ja050"],
+ "community_main_terrain":["ja038"],
+ "community_agricultural_mechanization":["jj002","jj003","jj004"],
+ "community_fertilizer_seed_inputs":["jj006","jj007","jj008","jj009","jj010"],
+ "community_food_prices":["jj017","jj018","jj019","jj020"],
+ "community_household_energy_prices":["jj021","jj022","jj025"],
 }
 
 # The 2011 Community Questionnaire pages 10, 21–22, and 32–33 explicitly
@@ -128,6 +140,8 @@ QUESTIONNAIRE_REVIEWED = {
  "community_road_cleanliness","community_observed_socioeconomic_status",
  "community_built_form_organization","community_observed_crowding",
  "community_accessibility_observation","community_disaster_history","community_sanitation_reconstructed",
+ "community_land_use_profile","community_main_terrain","community_agricultural_mechanization",
+ "community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices",
  *[cid for cid in CONCEPTS if cid.startswith("community_kindergarten_") or
     cid.startswith("community_primary_school_") or cid.startswith("community_junior_middle_school_") or
     cid.startswith("community_senior_high_school_") or cid.startswith("community_post_office_") or
@@ -145,7 +159,61 @@ QUESTIONNAIRE_REVIEWED = {
     cid.startswith("community_other_natural_disaster_history_")]
 }
 
+def validate_added_source_mappings():
+ qpath=ROOT/"sources_official"/"CHARLS_2011_Community_Questionnaire_official_extracted.txt"
+ cpath=ROOT/"sources_official"/"CHARLS_2011_Codebook_extracted.txt"
+ q=" ".join(qpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
+ cb=" ".join(cpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
+ codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices") for code in MAP[cid]}
+ for code in codes:
+  code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
+  q_norm="".join(ch for ch in q if ch.isalnum())
+  cb_norm="".join(ch for ch in cb if ch.isalnum())
+  if code_norm not in q_norm or code_norm not in cb_norm:
+   raise ValueError(f"Official 2011 community questionnaire/Codebook missing mapped field {code}")
+ required_q=(
+  "what is the physical area of this village/community",
+  "how many of the land is arable land at the end of the year 2010",
+  "how much of the land was arable land at the end of 2007",
+  "rural construction land at the end of",
+  "how much new arable land were added",
+  "how many construction land were reduced through village consolidation",
+  "percentage of arable land in your village",
+  "leased out?",
+  "what is the rental price for land each year in your village",
+  "what is the average area of house site per person",
+  "what is the main terrain/topography of your village /community",
+  "what is the percentage of agricultural products on which agricultural machines are used",
+  "do you rent big machines",
+  "skip to jj006",
+  "what is the rental price per day for these big machines",
+  "name of the most commonly used fertilizers",
+  "price of that fertilizer",
+  "price of rice seed",
+  "price of rice seedling",
+  "price of wheat seed",
+  "average unit price for the liji part of pork",
+  "average unit price for chicken eggs",
+  "average unit price for rice in this village/community",
+  "average unit price for flour in this village/community",
+  "average unit price for natural gas",
+  "average unit price for liquefied petroleum gas",
+  "average unit price for coal",
+ )
+ for phrase in required_q:
+  if phrase not in q:
+   raise ValueError(f"Official 2011 community questionnaire wording missing: {phrase}")
+ if "ja012" not in cb or "among arable land, how many is irrigatable" not in cb or "among arable land, how many is paddy field" not in q:
+  raise ValueError("JA012 questionnaire/Codebook wording conflict not found")
+ for label in ("1 plain","2 hill","3 mountainous region"):
+  label_norm="".join(ch for ch in label if ch.isalnum())
+  if label_norm not in "".join(ch for ch in q if ch.isalnum()) or label_norm not in "".join(ch for ch in cb if ch.isalnum()):
+   raise ValueError(f"JA038 terrain category missing from official source: {label}")
+ if "4" not in q or "高原" not in q or "4 plateau" not in cb or "5" not in q or "盆地" not in q or "5 basin" not in cb:
+  raise ValueError("JA038 code 4/5 terrain bilingual source anchor not found")
+
 def main():
+ validate_added_source_mappings()
  src=pd.read_csv(CAT,dtype=str,encoding="utf-8-sig").fillna(""); rows=[]
  for cid,codes in MAP.items():
   label,domain,caveat=CONCEPTS[cid]
@@ -163,6 +231,14 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part I pp.32–33 (PDF pp.35–36), JI001–JI002 route; corresponding codebook field label."
     elif cid == "community_education_profile":
      evidence="CHARLS 2011 Community Questionnaire, Part C p.16 (PDF p.19), JC019-JC024; exact percentage fields and conditional _1 bracket fields verified."
+    elif cid == "community_land_use_profile":
+     evidence="CHARLS 2011 Community Questionnaire, Part A pp.2–6 (PDF pp.5–9); V-only land area/use items, reference periods and conditional land-development routes checked against the Codebook. JA012 wording discrepancy is documented separately and is not mapped here."
+    elif cid == "community_main_terrain":
+     evidence="CHARLS 2011 Community Questionnaire, Part A p.7 (PDF p.10), JA038; nominal answer labels checked against the official Codebook; frequencies omitted."
+    elif cid in {"community_agricultural_mechanization","community_fertilizer_seed_inputs"}:
+     evidence="CHARLS 2011 Community Questionnaire, Part J, JJ002–JJ010; V-only agricultural production items, branch and stated units checked against official Codebook labels."
+    elif cid in {"community_food_prices","community_household_energy_prices"}:
+     evidence="CHARLS 2011 Community Questionnaire, Part J pp.38–39 (PDF pp.41–42), commodity-specific current-price prompts and units checked against the official Codebook; no numeric summaries copied."
     elif cid.startswith("community_observed_") or cid in {"community_built_form_organization", "community_accessibility_observation"}:
      evidence="CHARLS 2011 Community Questionnaire, Part K interviewer observations; item-specific 1–7 endpoint anchors verified."
     elif is_reviewed:
@@ -186,6 +262,60 @@ def main():
      caveat="Community-informant estimated count of rainy days in calendar year 2010. Not linked to a weather station; verify release-specific special values and plausible range before analysis."
     elif code_l == "ja041":
      caveat="Community-informant estimated count of snowy days in calendar year 2010. Not linked to a weather station; verify release-specific special values and plausible range before analysis."
+    elif code_l in {"ja003_1", "ja003_2"}:
+     unit="km²" if code_l == "ja003_1" else "mu"
+     caveat="Community boundary area in the unit-specific field; the questionnaire provides separate km² and mu blanks. Keep the source fields distinct until the authorized release confirms how the unit choice is stored; do not sum or double count. This is community area, not household plot size."
+    elif code_l == "ja011":
+     unit="mu"
+     caveat="Village arable-land area at end of 2010, including paddy and dry land; V-only item. Community aggregate, not respondent landholding."
+    elif code_l == "ja013":
+     unit="mu"
+     caveat="Village arable-land area at end of 2007; preserve this earlier reference year separately from the 2010 JA011 measure. V-only community aggregate."
+    elif code_l == "ja014":
+     unit="mu"
+     caveat="Village rural construction-land area at end of 2010; V-only. Do not combine with JA003 total community area or infer individual housing density."
+    elif code_l == "ja029":
+     unit="mu"
+     caveat="New arable-land area added through land development/consolidation since 2005; conditional on the preceding land-development Yes route. Preserve structural skips."
+    elif code_l == "ja032":
+     unit="mu"
+     caveat="Construction-land area reduced through village consolidation since 2005; conditional on the preceding village-consolidation Yes route. Preserve structural skips."
+    elif code_l == "ja033":
+     unit="percent"
+     caveat="Informant's approximate percentage of village arable land subcontracted or leased out; preserve as a community land-use context measure, not an individual tenancy status."
+    elif code_l == "ja034":
+     unit="Yuan/mu/year"
+     caveat="Reported annual land rental price per mu in the village; community market context, not a respondent's land rent or income."
+    elif code_l == "ja050":
+     unit="mu/person"
+     caveat="Reported 2010 average rural house-site area per person in the village; community aggregate, not the sampled respondent's lot size."
+    elif code_l == "ja038":
+     caveat="Community's main terrain category; nominal, unordered labels. Do not infer elevation, slope, or individual geographic exposure from the category alone."
+    elif code_l == "jj002":
+     unit="percent"
+     caveat="Reported percentage of community agricultural products using agricultural machinery; community production context, not respondent occupational contact or air-pollution dose."
+    elif code_l == "jj003":
+     caveat="Whether the community rents large agricultural machinery; No routes past the machine-rental price item. Keep the route and do not treat missing JJ004 as zero."
+    elif code_l == "jj004":
+     unit="Yuan/day"
+     caveat="Daily rental price for large agricultural machinery, asked only after JJ003=Yes; community-level production price, not an individual cost or exposure."
+    elif code_l == "jj006":
+     caveat="Open-text name of one commonly used fertilizer in local agricultural production. It is not a standardized chemical name or measure of application amount; do not infer pesticide or fertilizer exposure from the string alone."
+    elif code_l in {"jj007", "jj008", "jj009", "jj010"}:
+     unit="Yuan/jin"
+     caveat="Community-reported price per jin for the source-specific fertilizer/seed/seedling item; a local agricultural input price, not an individual purchase, use, or absorbed dose."
+    elif code_l in {"jj017", "jj018", "jj019", "jj020"}:
+     unit="Yuan/jin"
+     caveat="Current community-reported commodity price per jin; local food-market context, not respondent purchasing, dietary intake, or nutrient exposure."
+    elif code_l == "jj021":
+     unit="Yuan/m³"
+     caveat="Current community-reported natural-gas price per cubic metre; not evidence of household connection, use, or combustion exposure."
+    elif code_l == "jj022":
+     unit="Yuan/bottle"
+     caveat="Current community-reported bottled LPG price per bottle; bottle size is not specified in this item. Not evidence of household use or combustion exposure."
+    elif code_l == "jj025":
+     unit="Yuan/jin"
+     caveat="Current community-reported coal price per jin; not evidence of household coal use, combustion, or personal pollutant dose."
     if code_l.startswith(("jb006_", "jb007_")):
      unit="households"
     elif code_l.startswith("jb028_1_") or code_l.startswith("jf002_1_"):
@@ -220,6 +350,26 @@ def main():
      unit="degrees Celsius (°C)"
     elif code_l in {"ja040", "ja041"}:
      unit="days"
+    elif code_l == "ja003_1":
+     unit="km²"
+    elif code_l == "ja003_2":
+     unit="mu"
+    elif code_l in {"ja011", "ja013", "ja014", "ja029", "ja032"}:
+     unit="mu"
+    elif code_l == "ja033" or code_l == "jj002":
+     unit="percent"
+    elif code_l == "ja034":
+     unit="Yuan/mu/year"
+    elif code_l == "ja050":
+     unit="mu/person"
+    elif code_l == "jj004":
+     unit="Yuan/day"
+    elif code_l in {"jj007", "jj008", "jj009", "jj010", "jj017", "jj018", "jj019", "jj020", "jj025"}:
+     unit="Yuan/jin"
+    elif code_l == "jj021":
+     unit="Yuan/m³"
+    elif code_l == "jj022":
+     unit="Yuan/bottle"
     else:
      unit=""
     rows.append({"concept_id":cid,"concept_label":label,"domain":domain,"wave":2011,
