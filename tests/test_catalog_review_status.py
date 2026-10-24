@@ -183,6 +183,20 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertIn("wage-paying person", fields["2018"]["caveat"])
         self.assertIn("not a direct environmental exposure", fields["2020"]["caveat"])
 
+    def test_employed_work_intensity_keeps_units_and_wave_rules_separate(self):
+        days = next(row for row in self.work if row.get("concept_id") == "employed_days_per_week")
+        hours = next(row for row in self.work if row.get("concept_id") == "employed_hours_per_day")
+        day_fields = {field["wave"]: field for field in days["source_fields"]}
+        hour_fields = {field["wave"]: field for field in hours["source_fields"]}
+        self.assertEqual(set(day_fields), {"2011", "2013", "2015", "2018", "2020"})
+        self.assertEqual(set(hour_fields), set(day_fields))
+        self.assertTrue(all(field["unit"] == "days per week" for field in day_fields.values()))
+        self.assertTrue(all(field["unit"] == "hours per working day" for field in hour_fields.values()))
+        self.assertIn("may be derived from annual working days", day_fields["2018"]["caveat"])
+        self.assertIn("Weeks with paid vacations and fully paid sick leave are excluded", day_fields["2020"]["caveat"])
+        self.assertNotIn("2020", day_fields["2018"]["caveat"])
+        self.assertFalse(any(field["value_labels"] for field in hour_fields.values()))
+
     def test_work_capi_formulas_and_source_conflicts_reach_main_catalog(self):
         examples = {
             ("2020", "xworking"): (
