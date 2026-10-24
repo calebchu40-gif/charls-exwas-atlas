@@ -13,3 +13,5 @@ The current crosswalk contains 108 wave-field keys. The rebuild removed 36 autom
 ## Validation and interpretation
 
 The targeted candidate-role and objective-measurement tests pass (9 tests). The complete metadata finalization pipeline rebuilt the public shards and candidate-pair index. Public E/P/C catalogue shards contain 4,790 / 2,093 / 980 rows. Metadata co-availability counts and candidate roles are not respondent counts, analytic eligibility, statistical results, or approval to test an association. No respondent-level records were read or published. Formal association models and actual pairwise analytic sample sizes remain 0.
+
+The full Python test suite passes (373 tests); all 34 static JSON files parse, JavaScript syntax and Python compilation pass, all 92 `DO NOT ANALYZE` locks match the triage list, and `git diff --check` passes. Commit `53f40e5` was pushed to `main`; GitHub Pages Deploy run [40122389529](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40122389529) completed successfully. The public homepage returned HTTP 200 and live E/P/C shard counts matched the local build.
