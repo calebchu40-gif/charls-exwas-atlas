@@ -7,6 +7,7 @@ import numpy as np
 import polars as pl
 import svy
 from scipy.stats import t as student_t
+from svy.errors.singleton_errors import SingletonError
 
 
 EXPECTED_VERSION = "0.35.0"
@@ -30,6 +31,7 @@ def main() -> None:
                         "weight": 1.0 + (person % 3) * 0.15,
                         "outcome": stratum * 2 + psu + person * 0.25,
                         "exposure": stratum + psu + person % 3,
+                        "domain": psu == 0,
                     }
                 )
     data = pl.DataFrame(rows)
@@ -152,6 +154,40 @@ def main() -> None:
             "glm_exposure_df": exposure_term["df"],
             "n": mean["n"],
         }
+
+    # A domain that has observations in only one of two PSUs per stratum.
+    full_design = svy.Sample(
+        data=data,
+        design=svy.Design(stratum="stratum", psu="psu", wgt="weight", wr=True),
+    )
+    domain = svy.col("domain")
+    domain_model = full_design.glm.fit(
+        y="outcome", x=["exposure"], family="gaussian", where=domain
+    ).to_polars().to_dicts()
+    domain_exposure = next(row for row in domain_model if row["term"] == "exposure")
+    if full_design.domain_singletons(where=domain).height != 4:
+        raise AssertionError("The synthetic domain should have one in-domain PSU per stratum")
+    try:
+        filtered = data.filter(pl.col("domain"))
+        svy.Sample(
+            data=filtered,
+            design=svy.Design(
+                stratum="stratum", psu="psu", wgt="weight", wr=True
+            ),
+        ).glm.fit(y="outcome", x=["exposure"], family="gaussian")
+    except SingletonError:
+        filtered_domain_raises = True
+    else:
+        raise AssertionError("Filtering the domain should expose four singleton strata")
+    outputs["synthetic_domain_full_design"] = {
+        "domain_rows": int(data.filter(pl.col("domain")).height),
+        "full_design_rows_retained": full_design.data.height,
+        "domain_singleton_strata": full_design.domain_singletons(where=domain).height,
+        "glm_exposure_beta": domain_exposure["estimate"],
+        "glm_exposure_se": domain_exposure["std_err"],
+        "glm_df": domain_exposure["df"],
+        "prefiltering_raises_singleton_error": filtered_domain_raises,
+    }
 
     print(json.dumps({"svy_version": version, "synthetic_only": True, "outputs": outputs}, indent=2))
 
