@@ -507,3 +507,8 @@ CHARLS官方公开数据目录当前列出最新全国追访为2020；官方2023
 ## 2026-10-25续接：客观测量审计状态向主目录传播
 
 检查公开主P目录时发现，官方问卷/Codebook已审的血压、人体测量和体能测量字段虽然有详细crosswalk，但部分原始发现记录仍沿用“自动发现、待审”的Candidate.Status与通用Review.Flag，造成专题页与主目录状态不一致。修复 `build_charls_atlas_catalog.py`：按波次、字段码、P角色和审计类别/子类查找已有记录，把自动发现状态提升为“官方客观测量来源已审候选”，同时保留逐字段映射状态、2011字段身份不确定性及授权发行版资格限制；不把来源审阅等同模型资格。新增主目录回归测试。完整finalize-only构建成功，角色分片仍为E/P/C=4,824/2,127/980，E/P/C通用待审标签=0/0/0，正式锁92条与分流清单一致。相关测试及全套371项Python测试通过，34个JSON可解析，JS语法和 `git diff --check` 通过。正式关联模型数及实际逐对N仍为0。
+
+
+## 2026-10-25 continuation: live release identity and asset verification
+
+GitHub Pages deployment run `40138358655` and metadata validation run `40138358564` both succeeded for commit `495e2aa4ae184d0da18798619eccf57c10c9e25c`. Live `index.html`, `app.js?v=86`, E/P/C catalogues, alcohol-topic JSON and cognition-topic JSON returned HTTP 200 and matched the local static assets by SHA-256 after line-ending normalization. Online payload checks confirm the five-wave self-rated-memory field map and the distinct 2020 overall alcohol-frequency item plus its routing caveats. The current C-category display labels are present in the served JavaScript. This verifies publication only; no microdata or association estimates were published, and formal models and actual pairwise Ns remain 0. Details: `audit/public_release_verification_2026-10-25.md`.
