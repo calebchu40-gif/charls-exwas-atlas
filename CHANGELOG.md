@@ -2,6 +2,7 @@
 
 ## 2026-10-25
 
+- Improved metadata catalogue table readability: widened the desktop catalogue layout, gave the interpretation column room for caveats, and added a smaller horizontal-scroll layout for narrow screens.
 - Reviewed the 2020 current-employer location item (`FC004`) and corrected its inherited unit, which incorrectly described months worked. The catalog now identifies a nominal location category, retains refusal code 999, and excludes conditional place-name fields from public metadata.
 - Reviewed seven agricultural-work location fields across household farming (2011–2020) and paid farm work (2011/2013). Kept concepts and wave categories distinct, documented the 2011 no-fixed-address interviewer code and 2020 refusal code, and excluded place-name subfields from public metadata. No respondent records or Codebook frequencies were used.
 - Reviewed non-farm self-employment business location (`FH006`, 2011–2018; `FD002`, 2020) against official questionnaires and Codebooks. Kept categories wave-specific, documented 2011 no-fixed-address and 2020 refusal codes, and excluded address/place-name subfields from public metadata. No participant records or Codebook frequencies were used.
