@@ -1,5 +1,13 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-24 continuation: reconcile the diagnosis-age review and rebuild
+
+The finalize-only pipeline completed with the 33 source-checked 2013/2015 `ZDA009[i]` fields reclassified as prior-wave diagnosis-time preload metadata. Final role shards contain E=4,748, P=2,127, C=980; E/P have 0 generic pending value-label rows and C has 62 (down from 95). Candidate-pair summaries were regenerated from metadata co-availability only: 122,894 (2011), 133,944 (2013), 133,897 (2015), 104,649 (2018), and 13,906 (2020); these are not sample sizes or association tests. The audit crosswalk and updater are `audit/prior_wave_diagnosis_age_preload_crosswalk_v1.csv` and `scripts/apply_prior_wave_diagnosis_age_preload_review.py`, registered in both pipeline modes. All 311 Python tests pass, all 89 analysis locks match, static JSON and JavaScript syntax checks pass, and `git diff --check` is clean. No participant data were read, and no association models were run. Changes are ready to commit and publish.
+
+## 2026-10-24 continuation: source-review 2013/2015 preloaded diagnosis-age fields
+
+Reviewed 33 C keyword-search hits (`zda009_2*`) against 2013/2015 official questionnaires and Codebooks. The questionnaire places `ZDA009[i]` in prior-interview health preload context and the Codebooks label the matching age components `Age`; these are prior-wave diagnosis/known-time values, not current-wave age covariates or newly measured outcomes. The reproducible updater reclassifies all 33 rows as C `measurement metadata`, records wave-specific sources, leaves categorical labels blank, and excludes them from same-wave E/P pairing. It preserves 2013's 19 and 2015's 14 field slots separately; disease-slot linkage and authorized-release storage still require validation before longitudinal use. Audit: `audit/prior_wave_diagnosis_age_preload_review_2013_2015_2026-10-24.md`; regression test: `tests/test_prior_wave_diagnosis_age_preload_review.py`.
+
 ## 2026-10-24 continuation: reconcile the C value-label queue with live catalogue shards
 
 Recomputed the generated catalogue totals and exact generic `not yet reviewed` counts using `scripts/summarize_value_label_coverage.py`. Current shards contain E=4,748, P=2,127, C=980 rows; E/P have 0 generic pending rows and C has 95. The maintained queue file had stale totals (E/P/C=4,739/2,113/992 and C=109). All 95 C rows are automated covariate keyword-discovery leads, explicitly not reviewed covariates or adjustment recommendations. Corrected the queue snapshot; this reconciles metadata documentation only and does not approve any C field for a model.
