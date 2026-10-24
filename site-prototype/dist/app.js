@@ -161,6 +161,7 @@ const C_SUBCATEGORY_LABELS={
   "hukou life-course exposure overlap; estimand-specific context candidate":"户口生命历程暴露重叠；按估计目标判断的背景候选",
   "marital-history exposure overlap; estimand-specific context candidate":"婚姻史暴露重叠；按估计目标判断的背景候选",
   "marriage-history source availability and route metadata":"婚姻史字段发布状态与问卷路由元数据",
+  "adult-education duration exposure overlap; route-specific context candidate":"成人教育年限暴露重叠；保留波次路由的背景候选",
   "respondent gender source and derivation metadata":"受访者性别来源与派生元数据",
   "property-sale proceeds use-category selector slot":"房产出售所得用途类别选择槽位",
   "province-level pension-source work-unit location metadata":"省级养老金来源单位地点元数据",

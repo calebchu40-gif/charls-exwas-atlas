@@ -1,5 +1,11 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-24 continuation: review Wave-4 adult-education duration overlap
+
+Reviewed 2018 `BD008_W2_1` and `BD008_W4_1` against the official questionnaire and Codebook. Both are continuous years, but W2_1 asks total adult-education years while W4_1 asks years since `ZIWTime`; the preceding BD007 `None` route skips the duration item, so structural skips are not zero. Kept both as E candidates and documented C overlap with estimand-specific use; never adjust for a focal exposure itself. Added the route note to the reproducible crosswalk builder and C metadata updater. Audit: `audit/adult_education_duration_overlap_review_2018_2026-10-24.md`.
+
+The generated catalogue remains E=4,752, P=2,127, C=980; generic pending is E=0, P=0, C=23. All 321 Python tests pass; 34 static JSON files parse; the 89 analysis-lock validator, JavaScript syntax, Python compilation, and `git diff --check` pass. Push and deployment are pending. No respondent records or Codebook frequencies were used. Formal association models remain 0.
+
 ## 2026-10-24 continuation: map marriage-history event timing by wave
 
 Reviewed 2011 `BE007`/`BE008` and 2013 `BE009_1`/`BE009_2` against the wave-specific official questionnaires and Codebooks. Added four life-course E candidate mappings, keeping year and month precision, the 2011 spouse-death/divorce categories, and 2013 month `0=Do not remember`. Their conditional routing remains explicit. The overlapping C records are retained only as estimand-specific context candidates; a focal exposure must not be adjusted for itself. 2015 `BE009_1`/`BE009_2` remain C source-availability metadata because the official Codebook lists “No Observations”; actual authorized-release availability is unverified, so no 2015 E mapping is inferred. Audit: `audit/marital_history_event_date_review_2026-10-24.md`.

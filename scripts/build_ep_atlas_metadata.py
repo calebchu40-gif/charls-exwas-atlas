@@ -171,6 +171,7 @@ FULL_PIPELINE_SCRIPTS = (
     "apply_2015_marriage_date_no_observation_review.py",
     "apply_marital_history_c_overlap_review.py",
     "apply_marital_history_exposure_source_review.py",
+    "apply_2018_adult_education_c_overlap_review.py",
     # C metadata is propagated after the first shard build above; regenerate
     # role-specific browser payloads last so they match the final master file.
     "site_catalog_shards.py",
@@ -188,6 +189,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     # Restore the full wave-by-wave master catalog before review scripts run.
     # The prior successful build leaves the public site catalog compacted by
     # site_catalog_shards.py, while these review steps expect one row per wave.
+    "build_adult_education_training_crosswalk.py",
     "build_charls_atlas_catalog.py",
     "apply_2013_nrsp_participation_source_review.py",
     # Rebuild symptom outcomes and their official labels, then restore the
@@ -270,6 +272,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_2015_marriage_date_no_observation_review.py",
     "apply_marital_history_c_overlap_review.py",
     "apply_marital_history_exposure_source_review.py",
+    "apply_2018_adult_education_c_overlap_review.py",
     "site_catalog_shards.py",
     "summarize_value_label_coverage.py",
 )
