@@ -27,3 +27,7 @@ The topic payload checks confirmed the five-wave subjective-memory field map (`d
 ## Interpretation
 
 This verifies publication of the metadata-only release and that the public files match the reviewed local build. It does not indicate that any CHARLS microdata were published, that candidate variables passed analysis eligibility, or that an association model has run. The formal model count and actual pairwise analytic sample sizes remain zero.
+
+## 2026-10-25 continuation: separate self-rated-health response scales
+
+Commit `70a9993cdedfbdaeaf4d2be4569e8de2e7418e50` passed GitHub Validate run `40142235895` (workflow run #398) and Pages Deploy run `40142235907` (workflow run #195; 27 seconds). The deployed health-topic JSON returned HTTP 200 and contained 48 concepts, including `self_rated_health_excellent_poor`. Its content matched the local generated asset after normalizing GitHub Pages LF and local Windows CRLF line endings. No participant-level data or association estimates are served.
