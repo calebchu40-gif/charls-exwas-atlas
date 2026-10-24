@@ -5066,11 +5066,11 @@
               "code": "ge005",
               "label": "Meals Provided to Guests",
               "module": "household_income",
-              "unit": "household person-meals during the prior week",
+              "unit": "guest person-meals during the prior week",
               "value_labels": "",
-              "value_semantics": "last week; continuous count; CHARLS household respondent reports meals provided to guests",
-              "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Household-level social reciprocity/hosting measure, not an individual dietary intake or an environmental pollutant. Keep household level explicit when linking to a respondent; do not split by household member. The questionnaire soft-check threshold is not an analytic validity bound. No categorical value labels are defined."
+              "value_semantics": "last week; continuous count of guest meal occasions/person-times reported for the respondent's household",
+              "mapping_status": "official questionnaire wording and Codebook field label reviewed; count unit and prior-week recall identified; release routing/storage and cross-wave equivalence require validation",
+              "caveat": "Household-level hosting/social reciprocity proxy, not an individual dietary intake or an environmental pollutant. Keep the household measurement unit explicit when linking it to one or more sampled people; do not duplicate the household value across members as independent exposure observations. The questionnaire soft-check threshold is not an analytic validity bound. No categorical value labels are defined. The same broad question recurs across waves, but released-field identity, routing, storage and cross-wave measurement equivalence require authorized-file verification before pooling or deriving a harmonized exposure."
             }
           ]
         },
@@ -23929,11 +23929,11 @@
               "code": "ge005",
               "label": "Number of Meals to Guests",
               "module": "Household_Income",
-              "unit": "household person-meals during the prior week",
+              "unit": "guest person-meals during the prior week",
               "value_labels": "",
-              "value_semantics": "last week; continuous count; CHARLS household respondent reports meals provided to guests",
-              "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Household-level social reciprocity/hosting measure, not an individual dietary intake or an environmental pollutant. Keep household level explicit when linking to a respondent; do not split by household member. The questionnaire soft-check threshold is not an analytic validity bound. No categorical value labels are defined."
+              "value_semantics": "last week; continuous count of guest meal occasions/person-times reported for the respondent's household",
+              "mapping_status": "official questionnaire wording and Codebook field label reviewed; count unit and prior-week recall identified; release routing/storage and cross-wave equivalence require validation",
+              "caveat": "Household-level hosting/social reciprocity proxy, not an individual dietary intake or an environmental pollutant. Keep the household measurement unit explicit when linking it to one or more sampled people; do not duplicate the household value across members as independent exposure observations. The questionnaire soft-check threshold is not an analytic validity bound. No categorical value labels are defined. The same broad question recurs across waves, but released-field identity, routing, storage and cross-wave measurement equivalence require authorized-file verification before pooling or deriving a harmonized exposure."
             }
           ]
         },
@@ -47084,11 +47084,11 @@
               "code": "ge005",
               "label": "Number of Meals to Guests",
               "module": "Household_Income",
-              "unit": "household person-meals during the prior week",
+              "unit": "guest person-meals during the prior week",
               "value_labels": "",
-              "value_semantics": "last week; continuous count; CHARLS household respondent reports meals provided to guests",
-              "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Household-level social reciprocity/hosting measure, not an individual dietary intake or an environmental pollutant. Keep household level explicit when linking to a respondent; do not split by household member. The questionnaire soft-check threshold is not an analytic validity bound. No categorical value labels are defined."
+              "value_semantics": "last week; continuous count of guest meal occasions/person-times reported for the respondent's household",
+              "mapping_status": "official questionnaire wording and Codebook field label reviewed; count unit and prior-week recall identified; release routing/storage and cross-wave equivalence require validation",
+              "caveat": "Household-level hosting/social reciprocity proxy, not an individual dietary intake or an environmental pollutant. Keep the household measurement unit explicit when linking it to one or more sampled people; do not duplicate the household value across members as independent exposure observations. The questionnaire soft-check threshold is not an analytic validity bound. No categorical value labels are defined. The same broad question recurs across waves, but released-field identity, routing, storage and cross-wave measurement equivalence require authorized-file verification before pooling or deriving a harmonized exposure."
             }
           ]
         },
@@ -71599,11 +71599,11 @@
               "code": "ge005",
               "label": "Number of Meals Provided to Guests",
               "module": "Household_Income",
-              "unit": "household person-meals during the prior week",
+              "unit": "guest person-meals during the prior week",
               "value_labels": "",
-              "value_semantics": "last week; continuous count; CHARLS household respondent reports meals provided to guests",
-              "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Household-level social reciprocity/hosting measure, not an individual dietary intake or an environmental pollutant. Keep household level explicit when linking to a respondent; do not split by household member. The questionnaire soft-check threshold is not an analytic validity bound. No categorical value labels are defined."
+              "value_semantics": "last week; continuous count of guest meal occasions/person-times reported for the respondent's household",
+              "mapping_status": "official questionnaire wording and Codebook field label reviewed; count unit and prior-week recall identified; release routing/storage and cross-wave equivalence require validation",
+              "caveat": "Household-level hosting/social reciprocity proxy, not an individual dietary intake or an environmental pollutant. Keep the household measurement unit explicit when linking it to one or more sampled people; do not duplicate the household value across members as independent exposure observations. The questionnaire soft-check threshold is not an analytic validity bound. No categorical value labels are defined. The same broad question recurs across waves, but released-field identity, routing, storage and cross-wave measurement equivalence require authorized-file verification before pooling or deriving a harmonized exposure."
             }
           ]
         },
@@ -95822,11 +95822,11 @@
               "code": "gf005",
               "label": "Number of Meals Provided to Guests",
               "module": "Household_Income",
-              "unit": "household person-meals during the prior week",
+              "unit": "guest person-meals during the prior week",
               "value_labels": "",
-              "value_semantics": "last week; continuous count; CHARLS household respondent reports meals provided to guests",
-              "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Household-level social reciprocity/hosting measure, not an individual dietary intake or an environmental pollutant. Keep household level explicit when linking to a respondent; do not split by household member. The questionnaire soft-check threshold is not an analytic validity bound. No categorical value labels are defined."
+              "value_semantics": "last week; continuous count of guest meal occasions/person-times reported for the respondent's household",
+              "mapping_status": "official questionnaire wording and Codebook field label reviewed; count unit and prior-week recall identified; release routing/storage and cross-wave equivalence require validation",
+              "caveat": "Household-level hosting/social reciprocity proxy, not an individual dietary intake or an environmental pollutant. Keep the household measurement unit explicit when linking it to one or more sampled people; do not duplicate the household value across members as independent exposure observations. The questionnaire soft-check threshold is not an analytic validity bound. No categorical value labels are defined. The same broad question recurs across waves, but released-field identity, routing, storage and cross-wave measurement equivalence require authorized-file verification before pooling or deriving a harmonized exposure."
             }
           ]
         },

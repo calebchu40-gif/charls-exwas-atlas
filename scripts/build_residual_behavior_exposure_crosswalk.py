@@ -14,17 +14,17 @@ SPECS = {
     "household_meals_provided_to_guests": {
         "label": "Household meals provided to guests in the prior week",
         "module": "household_income",
-        "unit": "household person-meals during the prior week",
+        "unit": "guest person-meals during the prior week",
         "period": "last week",
-        "semantics": "continuous count; CHARLS household respondent reports meals provided to guests",
-        "caveat": "Household-level social reciprocity/hosting measure, not an individual dietary intake or an environmental pollutant. Keep household level explicit when linking to a respondent; do not split by household member. The questionnaire soft-check threshold is not an analytic validity bound. No categorical value labels are defined.",
+        "semantics": "continuous count of guest meal occasions/person-times reported for the respondent's household",
+        "caveat": "Household-level hosting/social reciprocity proxy, not an individual dietary intake or an environmental pollutant. Keep the household measurement unit explicit when linking it to one or more sampled people; do not duplicate the household value across members as independent exposure observations. The questionnaire soft-check threshold is not an analytic validity bound. No categorical value labels are defined. The same broad question recurs across waves, but released-field identity, routing, storage and cross-wave measurement equivalence require authorized-file verification before pooling or deriving a harmonized exposure.",
         "codes": {"2011": ["ge005"], "2013": ["ge005"], "2015": ["ge005"], "2018": ["ge005"], "2020": ["gf005"]},
         "docs": {
-            "2011": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
-            "2013": "sources_official/CHARLS_2013_Questionnaire_extracted.txt",
-            "2015": "sources_official/CHARLS_2015_Questionnaire_extracted.txt",
-            "2018": "sources_official/CHARLS_2018_Questionnaire_extracted.txt",
-            "2020": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+            "2011": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+            "2013": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+            "2015": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+            "2018": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
+            "2020": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
         },
     },
     "previous_day_sleep_schedule": {
@@ -39,6 +39,22 @@ SPECS = {
     },
 }
 
+GUEST_MEAL_SOURCE_CHECKS = {
+    "2011": ("sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt", "sources_official/CHARLS_2011_Codebook_extracted.txt", "ge005", "meals did you provide to guests", "按人次计算", "meals provided to guests"),
+    "2013": ("sources_official/CHARLS_2013_Questionnaire_extracted.txt", "sources_official/CHARLS_2013_Codebook_extracted.txt", "ge005", "meals did you provide to guests", "", "number of meals to guests"),
+    "2015": ("sources_official/CHARLS_2015_Questionnaire_extracted.txt", "sources_official/CHARLS_2015_Codebook_extracted.txt", "ge005", "meals did you provide to guests", "", "number of meals to guests"),
+    "2018": ("sources_official/CHARLS_2018_Questionnaire_extracted.txt", "sources_official/CHARLS_2018_Codebook_extracted.txt", "ge005", "meals did you provide to guests", "按人次计算", "number of meals provided to guests"),
+    "2020": ("sources_official/CHARLS_2020_Questionnaire_English_extracted.txt", "sources_official/CHARLS_2020_Codebook_extracted.txt", "gf005", "household provide to guests", "", "number of meals provided to guests"),
+}
+
+for wave, (questionnaire, codebook, code, phrase, person_time_phrase, label) in GUEST_MEAL_SOURCE_CHECKS.items():
+    qtext = (ROOT / questionnaire).read_text(encoding="utf-8", errors="ignore").casefold()
+    ctext = (ROOT / codebook).read_text(encoding="utf-8", errors="ignore").casefold()
+    if code not in qtext or phrase not in qtext or (person_time_phrase and person_time_phrase.casefold() not in qtext):
+        raise SystemExit(f"Official questionnaire source check failed for {wave}/{code}")
+    if code not in ctext or label not in ctext:
+        raise SystemExit(f"Official Codebook field-label source check failed for {wave}/{code}")
+
 rows = []
 for concept, spec in SPECS.items():
     for wave, codes in spec["codes"].items():
@@ -48,7 +64,10 @@ for concept, spec in SPECS.items():
                 raise SystemExit(f"Source field missing from raw catalog: {wave}/{code}")
             for rec in found.itertuples(index=False):
                 lower = code.lower()
-                if lower in {"wb03", "wb04"}:
+                if concept == "household_meals_provided_to_guests":
+                    labels = ""
+                    mapping_status = "official questionnaire wording and Codebook field label reviewed; count unit and prior-week recall identified; release routing/storage and cross-wave equivalence require validation"
+                elif lower in {"wb03", "wb04"}:
                     labels = "1=AM; 2=PM (official codebook response codes)"
                 elif lower.startswith(("wb03_", "wb04_")) and lower.endswith(("_1", "_2")):
                     labels = "AM-row component (official questionnaire layout; verify release storage)"
@@ -62,7 +81,7 @@ for concept, spec in SPECS.items():
                     "module": rec.module, "source_label": rec.variable_label,
                     "unit": spec["unit"], "value_labels": labels,
                     "value_semantics": f"{spec['period']}; {spec['semantics']}",
-                    "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
+                    "mapping_status": mapping_status if concept == "household_meals_provided_to_guests" else "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
                     "construct": spec["period"], "caveat": spec["caveat"],
                     "source_archive": f"{rec.source}; {spec['docs'][wave]}",
                 })

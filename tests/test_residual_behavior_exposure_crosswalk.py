@@ -17,6 +17,11 @@ class ResidualBehaviorExposureCrosswalkTests(unittest.TestCase):
             for row in cls.rows
             if row["concept_id"] == "previous_day_sleep_schedule"
         }
+        cls.guest_meals = {
+            row["wave"]: row
+            for row in cls.rows
+            if row["concept_id"] == "household_meals_provided_to_guests"
+        }
 
     def test_sleep_timing_is_limited_to_the_2013_previous_day_recall(self):
         self.assertEqual(len(self.sleep), 10)
@@ -61,6 +66,32 @@ class ResidualBehaviorExposureCrosswalkTests(unittest.TestCase):
         self.assertEqual(wave["candidate_pair_count"], wave["exposure_count"] * wave["phenotype_count"] - len(
             {x["concept_id"] for x in wave["exposures"]} & {x["concept_id"] for x in wave["phenotypes"]}
         ))
+
+    def test_household_guest_meals_are_source_reviewed_without_person_level_overclaim(self):
+        expected = {"2011": "ge005", "2013": "ge005", "2015": "ge005", "2018": "ge005", "2020": "gf005"}
+        self.assertEqual(set(self.guest_meals), set(expected))
+        for wave, code in expected.items():
+            row = self.guest_meals[wave]
+            self.assertEqual(row["code"].lower(), code)
+            self.assertEqual(row["unit"], "guest person-meals during the prior week")
+            self.assertEqual(row["value_labels"], "")
+            self.assertIn("official questionnaire wording and Codebook field label reviewed", row["mapping_status"])
+            self.assertIn("household-level", row["caveat"].lower())
+            self.assertIn("do not duplicate", row["caveat"].lower())
+            self.assertIn("cross-wave equivalence require validation", row["mapping_status"])
+            self.assertIn("Questionnaire", row["source_archive"])
+            self.assertIn("Codebook_extracted.txt", row["source_archive"])
+
+    def test_household_guest_meals_review_reaches_public_catalog_without_frequencies(self):
+        path = ROOT / "site-prototype" / "dist" / "catalog_e.json"
+        with path.open(encoding="utf-8") as stream:
+            public_rows = __import__("json").load(stream)
+        rows = [r for r in public_rows if "household_meals_provided_to_guests" in r.get("candidate_concept_ids", "")]
+        self.assertEqual({r["Source.Wave"]: r["Variable.Name"].lower() for r in rows},
+                         {"2011": "ge005", "2013": "ge005", "2015": "ge005", "2018": "ge005", "2020": "gf005"})
+        self.assertTrue(all("guest person-meals" in r["Concept.Unit.Candidates"] for r in rows))
+        self.assertTrue(all("household-level" in r["Harmonization.Status"].lower() for r in rows))
+        self.assertTrue(all(not r.get("Value.Labels") for r in rows))
 
 
 if __name__ == "__main__":
