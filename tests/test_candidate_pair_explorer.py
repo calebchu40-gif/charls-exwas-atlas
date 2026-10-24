@@ -66,6 +66,8 @@ class CandidatePairExplorerTests(unittest.TestCase):
         self.assertIn('id="candidatePairLongitudinalNote"', html)
         self.assertIn("未连接个人迁移史", html)
         self.assertIn("会尽量追访迁居者", html)
+        self.assertIn("https://charls.pku.edu.cn/en/data/Release2013.pdf", html)
+        self.assertIn("https://charls.pku.edu.cn/en/data/User2018.pdf", html)
         self.assertIn("data.baseline_community_to_followup", app)
 
     def test_page_exposes_candidate_pair_view_without_claiming_results(self):
