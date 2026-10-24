@@ -17,7 +17,7 @@ ci_upper,conditional,numeric,Upper 95% confidence limit.,Disclosure review
 p_value,conditional,numeric,Unadjusted p value.,Disclosure review
 q_value_by,conditional,numeric,Benjamini-Yekutieli adjusted q value within a predeclared family.,Disclosure review
 p_bonferroni,conditional,numeric,Bonferroni-adjusted p value within a predeclared family.,Disclosure review
-multiple_testing_family,yes,string,Predefined test family ID and number of tests K.,Public
+multiple_testing_family,yes,string,"Predefined family in `family_id;K=<positive integer>` form; the complete table must contain exactly K hypothesis rows, including inestimable rows.",Public
 n_interview,conditional,integer,Wave respondent count before analysis eligibility.,Aggregate after disclosure review
 n_eligible,conditional,integer,Eligible target sample count before pairwise completeness.,Aggregate after disclosure review
 n_exposure_valid,conditional,integer,Eligible participants with valid exposure.,Aggregate after disclosure review

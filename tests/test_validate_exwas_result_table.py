@@ -20,6 +20,7 @@ class ResultTableValidationTests(unittest.TestCase):
                 row[field] = "documented"
         row.update(
             analysis_id="synthetic-001",
+            multiple_testing_family="synthetic_main;K=1",
             fit_status="blocked_design_verification",
             weight_status="unresolved",
             psu_status="unresolved",
@@ -63,6 +64,8 @@ class ResultTableValidationTests(unittest.TestCase):
             ci_lower="0.002",
             ci_upper="0.198",
             p_value="0.04",
+            q_value_by="0.04",
+            p_bonferroni="0.04",
             n_interview="100",
             n_eligible="90",
             n_exposure_valid="85",
@@ -92,6 +95,49 @@ class ResultTableValidationTests(unittest.TestCase):
         errors = validate_rows([row], self.fields, self.required)
         self.assertTrue(any("requires an official release SHA256" in e for e in errors))
         self.assertTrue(any("requires a code commit" in e for e in errors))
+
+    def test_family_size_includes_unestimable_hypotheses_and_adjustments_are_checked(self):
+        success = self.base_row()
+        success.update(
+            analysis_id="synthetic-success",
+            multiple_testing_family="synthetic_full;K=2",
+            fit_status="success",
+            data_release="synthetic; SHA256=" + "a" * 64,
+            software_versions="commit=" + "b" * 40,
+            weight_status="verified_unweighted",
+            psu_status="not_released",
+            stratum_status="not_released",
+            variance_design="synthetic approximate variance with limitation",
+            estimate="0.1",
+            standard_error="0.05",
+            ci_lower="0.002",
+            ci_upper="0.198",
+            p_value="0.01",
+            q_value_by="0.03",
+            p_bonferroni="0.02",
+            n_model="70",
+        )
+        inestimable = self.base_row()
+        inestimable.update(
+            analysis_id="synthetic-inestimable",
+            multiple_testing_family="synthetic_full;K=2",
+            fit_status="inestimable",
+        )
+        self.assertEqual(validate_rows([success, inestimable], self.fields, self.required), [])
+
+        success["q_value_by"] = "0.02"
+        errors = validate_rows([success, inestimable], self.fields, self.required)
+        self.assertTrue(any("q_value_by does not match" in e for e in errors))
+
+    def test_family_row_count_must_match_declared_k(self):
+        first = self.base_row()
+        first["analysis_id"] = "synthetic-a"
+        first["multiple_testing_family"] = "synthetic_full;K=3"
+        second = self.base_row()
+        second["analysis_id"] = "synthetic-b"
+        second["multiple_testing_family"] = "synthetic_full;K=3"
+        errors = validate_rows([first, second], self.fields, self.required)
+        self.assertTrue(any("contains 2 rows but declares K=3" in e for e in errors))
 
 
 if __name__ == "__main__":

@@ -14,9 +14,12 @@ import re
 from pathlib import Path
 from typing import Any
 
+from adjust_exwas_pvalues import adjust_pvalues
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_PATH = ROOT / "audit" / "EXWAS_result_schema_v2.csv"
+FAMILY_RE = re.compile(r"^([A-Za-z0-9_.-]+);K=([1-9][0-9]*)$")
 FIT_STATUSES = {
     "planned",
     "blocked_design_verification",
@@ -171,7 +174,7 @@ def validate_rows(rows: list[dict[str, str]], schema_fields: list[str], required
 
         has_estimate = any(row.get(field, "").strip() for field in ESTIMATE_FIELDS)
         if fit_status == "success":
-            for field in ("estimate", "standard_error", "ci_lower", "ci_upper", "p_value", "n_model"):
+            for field in ("estimate", "standard_error", "ci_lower", "ci_upper", "p_value", "q_value_by", "p_bonferroni", "n_model"):
                 if not row.get(field, "").strip():
                     errors.append(f"row {row_no}: success requires {field}")
             if row.get("weight_status", "").strip() in {"unresolved", "unavailable_pending_authorized_file"}:
@@ -189,6 +192,52 @@ def validate_rows(rows: list[dict[str, str]], schema_fields: list[str], required
                 errors.append(f"row {row_no}: successful fit cannot claim an unverified variance design")
         elif has_estimate:
             errors.append(f"row {row_no}: estimate fields must be blank unless fit_status=success")
+
+    families: dict[str, list[tuple[int, dict[str, str]]]] = {}
+    for row_no, row in enumerate(rows, start=2):
+        family_value = row.get("multiple_testing_family", "").strip()
+        match = FAMILY_RE.fullmatch(family_value)
+        if not match:
+            errors.append(f"row {row_no}: multiple_testing_family must use family_id;K=<positive integer>")
+            continue
+        family_id, k_text = match.groups()
+        families.setdefault(family_id, []).append((int(k_text), row))
+
+    for family_id, members in families.items():
+        declared_sizes = {k for k, _ in members}
+        if len(declared_sizes) != 1:
+            errors.append(f"family {family_id}: inconsistent declared K values")
+            continue
+        family_size = next(iter(declared_sizes))
+        if len(members) != family_size:
+            errors.append(f"family {family_id}: contains {len(members)} rows but declares K={family_size}")
+            continue
+        p_values: list[float | None] = []
+        for _, row in members:
+            if row.get("fit_status", "").strip() == "success":
+                try:
+                    p_values.append(float(row["p_value"]))
+                except (KeyError, TypeError, ValueError):
+                    p_values.append(None)
+            else:
+                p_values.append(None)
+        try:
+            adjusted = adjust_pvalues(p_values)
+        except (TypeError, ValueError) as exc:
+            errors.append(f"family {family_id}: cannot compute adjustments: {exc}")
+            continue
+        for index, (_, row) in enumerate(members):
+            if row.get("fit_status", "").strip() != "success":
+                continue
+            expected_by = adjusted["q_value_by"][index]
+            expected_bonferroni = adjusted["p_bonferroni"][index]
+            for field, expected in (("q_value_by", expected_by), ("p_bonferroni", expected_bonferroni)):
+                try:
+                    observed = float(row[field])
+                except (KeyError, TypeError, ValueError):
+                    continue  # The row-level required-field check reports this.
+                if expected is None or not math.isclose(observed, expected, rel_tol=1e-9, abs_tol=1e-12):
+                    errors.append(f"family {family_id}: {field} does not match the predeclared K={family_size} family")
 
     return errors
 
