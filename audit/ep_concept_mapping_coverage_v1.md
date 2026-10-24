@@ -1,6 +1,6 @@
 # E/P 候选概念映射覆盖审计
 
-更新：2026-10-24。由 scripts/build_ep_concept_source_crosswalk.py 从字段级审计 crosswalk 组装；概念 ID 均为候选，来源状态原样保留，不能当作已冻结的统计检验变量。
+更新：2026-10-25。由 scripts/build_ep_concept_source_crosswalk.py 从字段级审计 crosswalk 组装；概念 ID 均为候选，来源状态原样保留，不能当作已冻结的统计检验变量。
 
 - E/P 目录：6,793 条字段—角色—类别行；4,251 条去重变量码—角色—类别序列。另有C类候选 980 条字段行/695 条变量码—角色—类别序列。
 - 候选概念 ID：E-only 1157、P-only 292、双角色 9；E 侧 1166、P 侧 301，去重 E/P 概念 ID 1458。

@@ -1,6 +1,6 @@
 # E/P值标签覆盖审计
 
-更新：2026-10-24。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
+更新：2026-10-25。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
 - 最终E/P目录行：6,951；不同波次—字段码：6,676。一个字段可对应多个候选类别/角色。
 - 有非空标签文本的E/P目录行：3,644；不同波次—字段码：3,567。连续测量、计数值及测量流程字段可已审但不需要离散标签。
@@ -8,7 +8,7 @@
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
 
-## 按角色和类别汇总（2026-10-24）
+## 按角色和类别汇总（2026-10-25）
 
 |角色|网站类别|字段—角色—类别行|不同波次—字段码|有非空标签文本行|子类别数|
 |---|---|---:|---:|---:|---:|
@@ -51,8 +51,8 @@
 |official Codebook numeric/count response located; no discrete answer labels|196|
 |numeric/time unit metadata available; no discrete labels assigned|151|
 |audited measurement component; derive concept per crosswalk|138|
-|Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding|96|
 |连续值/字段结构；代码本未提供离散值标签|93|
+|Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding|91|
 |official 2011 questionnaire identifies Yuan amount period and household-member roster slot; continuous amount with no discrete response categories; authorized-release storage scale and special values remain unverified|80|
 |代码本逐值标签已核|76|
 |official 2018 Codebook response categories transcribed; frequencies omitted; questionnaire route retained; respondent release coding and eligible denominator require validation|68|
@@ -194,8 +194,10 @@
 |official 2015 questionnaire and Codebook identify a numeric bedroom count; no discrete labels; Codebook extrema are not valid-range evidence; verify release-specific special values|1|
 |official 2015 questionnaire/Codebook review: numeric distance in meters, no discrete labels|1|
 |official 2015 questionnaire and Codebook identify a numeric toilet count; no discrete labels; Codebook extrema are not valid-range evidence; verify release-specific special values|1|
+|official 2013 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility|1|
 |official 2013 questionnaire/Codebook review: numeric distance in meters, no discrete labels|1|
 |official 2013 questionnaire and Codebook identify a numeric toilet count; no discrete labels; Codebook extrema are not valid-range evidence; verify release-specific special values|1|
+|official 2011 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility|1|
 |official 2011 questionnaire/Codebook review: numeric distance in meters, no discrete labels|1|
 |official 2011 questionnaire and Codebook identify a numeric toilet count; no discrete labels; Codebook extrema are not valid-range evidence; verify release-specific special values|1|
 |official 2020 questionnaire identifies primary food purchaser through wave-specific household roster/other-person selector; dynamic identity choices are not fixed value labels|1|
@@ -205,11 +207,14 @@
 |official 2015 questionnaire identifies primary food purchaser through wave-specific household roster/other-person selector; dynamic identity choices are not fixed value labels|1|
 |official 2015 questionnaire and Codebook identify respondent-as-primary-food-purchaser Yes/No; household-role item, not a dietary measure|1|
 |official 2013 questionnaire identifies primary food purchaser through wave-specific household roster/other-person selector; dynamic identity choices are not fixed value labels|1|
+|official 2015 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility|1|
 |official 2018 questionnaire and Codebook identify a numeric toilet count; no discrete labels; Codebook extrema are not valid-range evidence; verify release-specific special values|1|
 |official 2013 questionnaire and Codebook identify respondent-as-primary-food-purchaser Yes/No; household-role item, not a dietary measure|1|
+|official 2020 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility|1|
 |official 2020 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation|1|
 |official 2020 questionnaire/Codebook review: numeric distance in meters, no discrete labels|1|
 |official 2020 questionnaire and Codebook identify a numeric toilet count; no discrete labels; Codebook extrema are not valid-range evidence; verify release-specific special values|1|
+|official 2018 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility|1|
 |official 2018 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation|1|
 |official 2018 questionnaire/Codebook review: numeric distance in meters, no discrete labels|1|
 |official 2011 questionnaire identifies primary food purchaser through wave-specific household roster/other-person selector; dynamic identity choices are not fixed value labels|1|

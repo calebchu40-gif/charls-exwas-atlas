@@ -588,8 +588,8 @@
               "unit": "",
               "value_labels": "1=One-story building; 2=Multi-story building",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "These are separate categorical housing descriptors: one-/multi-storey class and independent/compound dwelling status. Preserve field-specific categories and wave-specific routes; do not combine them into a numeric floor or a single ordinal exposure. They are distinct from the respondent's current floor position and elevator availability. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             },
             {
               "code": "i007",
@@ -598,8 +598,8 @@
               "unit": "",
               "value_labels": "1=Independent story; 2=Compound",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "These are separate categorical housing descriptors: one-/multi-storey class and independent/compound dwelling status. Preserve field-specific categories and wave-specific routes; do not combine them into a numeric floor or a single ordinal exposure. They are distinct from the respondent's current floor position and elevator availability. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             },
             {
               "code": "i008",
@@ -608,8 +608,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire identifies a numeric building floor number; continuous/ordinal measure without discrete value labels",
+              "caveat": "Questionnaire asks which story the residence is on. Retain as an ordinal/numeric floor position; do not infer a harmonized height dose from Codebook extrema. Verify authorized-release special values, skip routes, residence/respondent linkage and missingness before modeling. Questionnaire hard/soft checks do not establish valid analytic ranges. Cross-wave measurement equivalence is unapproved."
             }
           ]
         },
@@ -628,8 +628,8 @@
               "unit": "",
               "value_labels": "1=Concrete and steel; 2=Bricks and wood; 3=Mixed structure; 4=Wood, bamboo, grass; 5=Woolen felt; 6=Sheet iron; 7=Cave dwelling; 8=Tent; 9=Adobe; 10=Other",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Nominal building category; preserve wave-specific value labels and do not assume ordinal levels. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "Building material/structure categories are nominal. Retain each wave's response categories; categories are collapsed or differ across waves and must not be assigned an ordinal score or harmonized by matching labels alone. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             }
           ]
         },
@@ -4458,8 +4458,8 @@
               "unit": "wave-specific ordinal workplace location category relative to residence; not a distance measure",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FD004 records the current workplace location in the employed-work module. 2011 categories are same village/community, other village/community in county/city, another county/city in province, and another province; 2013-2018 use wave-specific categories relative to permanent/current residence and include an abroad option in some waves. Treat as a coarse self-reported geographic context, not commute distance, air pollution, or neighborhood exposure. Preserve the original categories and eligible current-employed denominator; the identically named 2020 FD004 is number of employees and is explicitly excluded."
+              "mapping_status": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md",
+              "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release. 2011 uses village/community and county/province anchors; 2013/2015 refer to permanent address and include abroad; 2018 uses its own permanent/current-residence wording and location detail. 2013/2015 FD002=6/7 routes skip this field. The same code in 2020 means number of employees and is excluded."
             }
           ]
         },
@@ -4658,8 +4658,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Residence-level electricity availability; not household energy consumption or reliability. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire/Codebook wording, household referent and yes/no response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+              "caveat": "Household/residence-level electricity availability for the residence; this is not an individual dose or a measure of electricity reliability, duration, source, or indoor pollution. Preserve Yes/No and verify release-specific special values, missingness, eligible denominator, and linkage from household referent to the analytic person before use. Wave-specific target wording is retained; cross-wave equivalence and individual exposure assignment are not established."
             }
           ]
         },
@@ -4765,11 +4765,11 @@
               "code": "fe002",
               "label": "Days Per Week Worked in the Past Year",
               "module": "work_retirement_and_pension",
-              "unit": "",
+              "unit": "days per week",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Past-year average work days per week, asked within the wage-employment route. In 2020, weeks on paid vacation and fully paid sick leave are excluded; retain wave-specific denominators. A missing field can mean not routed or not eligible; do not recode it as zero."
+              "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
+              "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence."
             }
           ]
         },
@@ -4785,11 +4785,11 @@
               "code": "fe003",
               "label": "Hours Per Day Worked in the Past Year",
               "module": "work_retirement_and_pension",
-              "unit": "",
+              "unit": "hours per working day",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Past-year average hours per day excluding meal breaks and including paid/unpaid overtime in later questionnaires. Confirm 2011 wording and route before combining; retain source values and questionnaire range checks."
+              "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
+              "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence."
             }
           ]
         },
@@ -5957,10 +5957,10 @@
               "label": "In-House Shower or Bath Facility",
               "module": "housing_characteristics",
               "unit": "",
-              "value_labels": "1=Hot water provided; 2=Household water heater; 3=None",
+              "value_labels": "1=Hot water provided; 2=Water heater installed by the household; 3=No",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Nominal categories distinguish centralized hot water, household water heater, or none; retain source categories. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire/Codebook wording, household referent and nominal response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+              "caveat": "Residence-level in-house shower/bath facility type; the questionnaire lists hot water provided; household-installed water heater; no facility. Treat categories as nominal, not an ordinal comfort/quality scale; do not infer bathing frequency, water temperature, hygiene, or personal exposure. Preserve the wave-specific response wording, verify authorized-release storage, special values, missingness, and eligible denominator, and confirm household-person linkage. Cross-wave equivalence is unapproved."
             }
           ]
         },
@@ -6280,8 +6280,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FC012 is asked in the own-household agricultural-work module. Geographic anchors vary by wave; retain source categories and route. It is not an address, commute distance, or environmental concentration."
+              "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+              "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
             }
           ]
         },
@@ -6300,8 +6300,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FH006 in 2011-2018 and FD002 in 2020 locate a self-employment business. Preserve wave-specific location categories and work route; this coarse report is not commute distance, geocoded location, or measured pollution."
+              "mapping_status": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
+              "caveat": "Self-reported broad geographic category for the respondent's non-farm self-employment business. This is not a commute distance, measured pollution, or a geocoded exposure. Keep wave-specific categories and eligible business route; do not harmonize by code number alone. Questionnaire subfields may contain place names/address text and are deliberately excluded from the public atlas. Confirm authorized-release special values, eligibility, missingness and person linkage before analysis."
             }
           ]
         },
@@ -6320,8 +6320,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FC003 is asked in the paid agricultural-work route. Preserve its source location categories and work eligibility; it is a coarse self-reported context, not commute distance, geocoded location, or measured pollution."
+              "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+              "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
             }
           ]
         },
@@ -6357,11 +6357,11 @@
               "code": "fl004",
               "label": "Location of Job",
               "module": "work_retirement_and_pension",
-              "unit": "",
+              "unit": "wave-specific retrospective nominal location category",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FL004 is a retrospective location category for the last job. Preserve the wave-specific geographic anchor and nonworking/prior-job route; it is not a geocoded address, commute distance, or environmental concentration."
+              "mapping_status": "DO NOT ANALYZE; official questionnaire prints location categories and interviewer code 0 for no fixed address, but the 2011 Codebook does not resolve released-data coding; see audit/last_job_workplace_location_review_2026-10-25.md",
+              "caveat": "Retrospective self-reported location category for the most recent job. This is coarse historical geographic context, not commute distance, a geocoded address, measured pollution or personal dose. Keep wave-specific categories and prior-job eligibility routes separate; questionnaire place-name fields are excluded from public metadata. Confirm special values, field storage, prior-job route and eligible denominator in the authorized release. 2011 code 0 is an interviewer instruction for no fixed address, not an extra location category."
             }
           ]
         },
@@ -6377,11 +6377,11 @@
               "code": "fh013",
               "label": "Location of this Company or Workplace",
               "module": "work_retirement_and_pension",
-              "unit": "",
+              "unit": "wave-specific nominal location category; no address or distance measure",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FH013 records the location of the family business/workplace. Preserve wave-specific categories and the unpaid family-business route; this is not commute distance, geocoded location, or measured pollution."
+              "mapping_status": "official wave-specific questionnaire/Codebook categories and unpaid-family-business route reviewed; interviewer special code, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/unpaid_family_business_location_review_2026-10-25.md",
+              "caveat": "Self-reported broad location category for unpaid family-business work, a work-context candidate rather than an environmental dose or personal exposure. Keep wave-specific categories and the unpaid-family-work route separate. 2011 instructs interviewers to enter 0 for no fixed address; that instruction is not an additional location category and requires released-data coding verification. Later-wave re-interview branches may skip details when the same business carries forward. Fine-grained place-name/address fields are excluded from public metadata. Confirm eligible denominator, special values and person linkage before analysis."
             }
           ]
         },
@@ -7354,7 +7354,7 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official occupation/industry code field mapped; classification version and disclosure review required",
+              "mapping_status": "candidate only; 2011 FM055 classification edition and lookup unverified; DO NOT ANALYZE until verified",
               "caveat": "2011 only; preserve classification version and review detailed categories before public release."
             }
           ]
@@ -7374,7 +7374,7 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official occupation/industry code field mapped; classification version and disclosure review required",
+              "mapping_status": "candidate only; 2011 FM055 classification edition and lookup unverified; DO NOT ANALYZE until verified",
               "caveat": "2011 only; preserve classification version and review detailed code categories before public release."
             }
           ]
@@ -7394,7 +7394,7 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official occupation/industry code field mapped; classification version and disclosure review required",
+              "mapping_status": "candidate only; 2011 FM055 classification edition and lookup unverified; DO NOT ANALYZE until verified",
               "caveat": "2011 only; keep separate from GB classification and review detailed categories before public release."
             }
           ]
@@ -9154,8 +9154,8 @@
               "unit": "",
               "value_labels": "1=1-5 steps; 2=6-15 steps; 3=16-25 steps; 4=More than 25 steps",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Number/category of steps to entrance; may be top-coded or grouped and is not an individual stair-climbing performance test. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "Household-flat entrance access item; in 2011–2015 it is routed after I010=No, and in 2018 after I010_W4=No. The questionnaire says not to count steps when an elevator is available. Preserve structural skips as ineligible/not asked, not zero or No. Categories and zero-step handling vary by wave; this is not an individual stair-climbing test. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             }
           ]
         },
@@ -9442,10 +9442,10 @@
               "label": "Is the Toilet Flushable",
               "module": "housing_characteristics",
               "unit": "",
-              "value_labels": "1=Yes; 2=No (flushable).",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility",
+              "caveat": "Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
             }
           ]
         },
@@ -9511,11 +9511,11 @@
               "code": "fd002",
               "label": "Type of the Work Unit",
               "module": "work_retirement_and_pension",
-              "unit": "nominal type of current employer/work unit; preserve wave-specific response categories",
+              "unit": "nominal current-employer organization category; no inherent order",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Nominal type of the current employer/work unit. Categories and question routes vary by wave; preserve original response labels and do not collapse employer organization type with job arrangement or occupation."
+              "mapping_status": "official wave-specific questionnaire/Codebook category wording and employment route reviewed; released storage, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/current_employer_organization_type_review_2026-10-25.md",
+              "caveat": "Current employer/work-unit type, retained as a nominal work and socioeconomic context measure. Categories have no inherent order and are not an environmental dose. Questionnaire wording and coding vary slightly by wave. Re-interview routing can skip employer-detail questions when the same workplace is carried forward; distinguish valid preloaded values, structural skips and missingness in the authorized release. Confirm eligible current-worker denominator and person linkage before use; do not treat missing or skipped as “no.”"
             }
           ]
         },
@@ -10261,11 +10261,11 @@
               "code": "fd020",
               "label": "Receive a Labor Contract",
               "module": "work_retirement_and_pension",
-              "unit": "",
+              "unit": "binary self-report; written labor contract status (1=Yes, 2=No)",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Candidate employment-protection indicator. 2011 label says labor contract without ‘written’; 2013–2020 wording explicitly asks whether a written contract exists, so 2011 requires separate review."
+              "mapping_status": "official wave-specific questionnaire/Codebook item wording, Yes/No codes and applicable route reviewed; payor reference, release storage and eligible denominator require QA; see audit/written_labor_contract_review_2026-10-25.md",
+              "caveat": "Self-reported written labor-contract status in the current-work module; it is not a direct environmental exposure and does not measure contract duration, quality, labor rights or overall job security. In 2011–2015, the item refers to the current workplace or labor-dispatch company; the 2018 CAPI instruction assigns the referent to the dispatch company for dispatched workers and to the wage-paying person for workers hired by an individual. Preserve these route-specific referents. A No response skips contract-detail questions; do not treat those downstream structural skips as missing contract-status responses. Verify current-worker eligibility, special values and field storage in the authorized release. The 2011 questionnaire prints Yes/No without numeric display codes; numeric coding is taken from the Codebook and must be confirmed in the authorized release."
             }
           ]
         },
@@ -10294,8 +10294,8 @@
               "unit": "",
               "value_labels": "1=0-5 years; 2=5-10 years; 3=10-20 years; 4=20-30 years; 5=30-40 years; 6=Above 40 years",
               "value_semantics": "",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review",
-              "caveat": "2011–2018 fields concern the year the dwelling was built; exact-year and fallback interval responses are separate fields. Do not include 2020 move-in time or impute a single year without a prespecified rule. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization."
+              "mapping_status": "official 2011 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "Fallback interval for dwelling construction year when the exact year is unclear or missing; preserve separately from the exact-year field. Intervals are broad, overlapping at endpoints in source labels, and vary in final-category wording; do not convert to a point year or merge with move-in time. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             }
           ]
         },
@@ -10704,8 +10704,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "2020 i017含义变化为室内淋浴，故不映射",
-              "mapping_status": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review | measured",
-              "caveat": "Residence-level water access indicator; distinguish from water source, treatment, and drinking-water quality. For 2011, the correct baseline household questionnaire is included; verify item-specific wording, recall period, and eligibility before harmonization. | 2020 i017含义变化为室内淋浴，故不映射"
+              "mapping_status": "official 2011 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md | measured",
+              "caveat": "Residence-level running-water access, not water quality, source or treatment, a contaminant assay, microbial/chemical measurement, or individual water intake. The reviewed 2011–2018 questions ask whether the residence has running water; 2020 tap-water access is a distinct item and is not assumed equivalent. Verify household-person linkage, special values, eligible denominator, and missingness in the authorized release. | 2020 i017含义变化为室内淋浴，故不映射"
             }
           ]
         },
@@ -22901,8 +22901,8 @@
               "unit": "",
               "value_labels": "1=One-story building; 2=Multi-story building",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure."
+              "mapping_status": "official 2013 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "These are separate categorical housing descriptors: one-/multi-storey class and independent/compound dwelling status. Preserve field-specific categories and wave-specific routes; do not combine them into a numeric floor or a single ordinal exposure. They are distinct from the respondent's current floor position and elevator availability. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             },
             {
               "code": "i007",
@@ -22911,8 +22911,8 @@
               "unit": "",
               "value_labels": "1=Independent story; 2=Compound",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure."
+              "mapping_status": "official 2013 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "These are separate categorical housing descriptors: one-/multi-storey class and independent/compound dwelling status. Preserve field-specific categories and wave-specific routes; do not combine them into a numeric floor or a single ordinal exposure. They are distinct from the respondent's current floor position and elevator availability. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             },
             {
               "code": "i008",
@@ -22921,8 +22921,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure."
+              "mapping_status": "official 2013 questionnaire identifies a numeric building floor number; continuous/ordinal measure without discrete value labels",
+              "caveat": "Questionnaire asks which story the residence is on. Retain as an ordinal/numeric floor position; do not infer a harmonized height dose from Codebook extrema. Verify authorized-release special values, skip routes, residence/respondent linkage and missingness before modeling. Questionnaire hard/soft checks do not establish valid analytic ranges. Cross-wave measurement equivalence is unapproved."
             }
           ]
         },
@@ -22941,8 +22941,8 @@
               "unit": "",
               "value_labels": "1=Concrete and steel; 2=Bricks and wood; 3=Mixed structure; 4=Wood, bamboo, grass; 5=Woolen felt; 6=Sheet iron; 7=Cave dwelling; 9=Adobe; 10=Other",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Nominal building category; preserve wave-specific value labels and do not assume ordinal levels."
+              "mapping_status": "official 2013 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "Building material/structure categories are nominal. Retain each wave's response categories; categories are collapsed or differ across waves and must not be assigned an ordinal score or harmonized by matching labels alone. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             }
           ]
         },
@@ -23491,8 +23491,8 @@
               "unit": "wave-specific ordinal workplace location category relative to residence; not a distance measure",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FD004 records the current workplace location in the employed-work module. 2011 categories are same village/community, other village/community in county/city, another county/city in province, and another province; 2013-2018 use wave-specific categories relative to permanent/current residence and include an abroad option in some waves. Treat as a coarse self-reported geographic context, not commute distance, air pollution, or neighborhood exposure. Preserve the original categories and eligible current-employed denominator; the identically named 2020 FD004 is number of employees and is explicitly excluded."
+              "mapping_status": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md",
+              "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release. 2011 uses village/community and county/province anchors; 2013/2015 refer to permanent address and include abroad; 2018 uses its own permanent/current-residence wording and location detail. 2013/2015 FD002=6/7 routes skip this field. The same code in 2020 means number of employees and is excluded."
             }
           ]
         },
@@ -23611,8 +23611,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Residence-level electricity availability; not household energy consumption or reliability."
+              "mapping_status": "official 2013 questionnaire/Codebook wording, household referent and yes/no response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+              "caveat": "Household/residence-level electricity availability for the residence; this is not an individual dose or a measure of electricity reliability, duration, source, or indoor pollution. Preserve Yes/No and verify release-specific special values, missingness, eligible denominator, and linkage from household referent to the analytic person before use. Wave-specific target wording is retained; cross-wave equivalence and individual exposure assignment are not established."
             }
           ]
         },
@@ -23728,11 +23728,11 @@
               "code": "fe002",
               "label": "How Many Days Did You Work per Week",
               "module": "Work_Retirement_and_Pension",
-              "unit": "",
+              "unit": "days per week",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Past-year average work days per week, asked within the wage-employment route. In 2020, weeks on paid vacation and fully paid sick leave are excluded; retain wave-specific denominators. A missing field can mean not routed or not eligible; do not recode it as zero."
+              "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
+              "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence."
             }
           ]
         },
@@ -23748,11 +23748,11 @@
               "code": "fe003",
               "label": "How Many Hours Did You Work per Day",
               "module": "Work_Retirement_and_Pension",
-              "unit": "",
+              "unit": "hours per working day",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Past-year average hours per day excluding meal breaks and including paid/unpaid overtime in later questionnaires. Confirm 2011 wording and route before combining; retain source values and questionnaire range checks."
+              "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
+              "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence."
             }
           ]
         },
@@ -24880,10 +24880,10 @@
               "label": "Is there in-house shower or bath facility?",
               "module": "Housing_Characteristics",
               "unit": "",
-              "value_labels": "1=Hot water provided; 2=Household water heater; 3=None",
+              "value_labels": "1=Hot water provided; 2=Water heater installed by the household; 3=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Nominal categories distinguish centralized hot water, household water heater, or none; retain source categories."
+              "mapping_status": "official 2013 questionnaire/Codebook wording, household referent and nominal response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+              "caveat": "Residence-level in-house shower/bath facility type; the questionnaire lists hot water provided; household-installed water heater; no facility. Treat categories as nominal, not an ordinal comfort/quality scale; do not infer bathing frequency, water temperature, hygiene, or personal exposure. Preserve the wave-specific response wording, verify authorized-release storage, special values, missingness, and eligible denominator, and confirm household-person linkage. Cross-wave equivalence is unapproved."
             }
           ]
         },
@@ -25153,8 +25153,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FC012 is asked in the own-household agricultural-work module. Geographic anchors vary by wave; retain source categories and route. It is not an address, commute distance, or environmental concentration."
+              "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+              "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
             }
           ]
         },
@@ -25173,8 +25173,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FH006 in 2011-2018 and FD002 in 2020 locate a self-employment business. Preserve wave-specific location categories and work route; this coarse report is not commute distance, geocoded location, or measured pollution."
+              "mapping_status": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
+              "caveat": "Self-reported broad geographic category for the respondent's non-farm self-employment business. This is not a commute distance, measured pollution, or a geocoded exposure. Keep wave-specific categories and eligible business route; do not harmonize by code number alone. Questionnaire subfields may contain place names/address text and are deliberately excluded from the public atlas. Confirm authorized-release special values, eligibility, missingness and person linkage before analysis."
             }
           ]
         },
@@ -25193,8 +25193,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FC003 is asked in the paid agricultural-work route. Preserve its source location categories and work eligibility; it is a coarse self-reported context, not commute distance, geocoded location, or measured pollution."
+              "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+              "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
             }
           ]
         },
@@ -25230,11 +25230,11 @@
               "code": "fl004",
               "label": "Location",
               "module": "Work_Retirement_and_Pension",
-              "unit": "",
+              "unit": "wave-specific retrospective nominal location category",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FL004 is a retrospective location category for the last job. Preserve the wave-specific geographic anchor and nonworking/prior-job route; it is not a geocoded address, commute distance, or environmental concentration."
+              "mapping_status": "questionnaire/Codebook menu discrepancy: official questionnaire includes 4=Abroad but the Codebook category table omits it; candidate pending authorized-release code validation; see audit/last_job_workplace_location_review_2026-10-25.md",
+              "caveat": "Retrospective self-reported location category for the most recent job. This is coarse historical geographic context, not commute distance, a geocoded address, measured pollution or personal dose. Keep wave-specific categories and prior-job eligibility routes separate; questionnaire place-name fields are excluded from public metadata. Confirm special values, field storage, prior-job route and eligible denominator in the authorized release. Codebook omits the questionnaire Abroad option; retain the discrepancy until release-level validation."
             }
           ]
         },
@@ -25250,11 +25250,11 @@
               "code": "fh013",
               "label": "Location of This Company",
               "module": "Work_Retirement_and_Pension",
-              "unit": "",
+              "unit": "wave-specific nominal location category; no address or distance measure",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FH013 records the location of the family business/workplace. Preserve wave-specific categories and the unpaid family-business route; this is not commute distance, geocoded location, or measured pollution."
+              "mapping_status": "official wave-specific questionnaire/Codebook categories and unpaid-family-business route reviewed; interviewer special code, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/unpaid_family_business_location_review_2026-10-25.md",
+              "caveat": "Self-reported broad location category for unpaid family-business work, a work-context candidate rather than an environmental dose or personal exposure. Keep wave-specific categories and the unpaid-family-work route separate. 2011 instructs interviewers to enter 0 for no fixed address; that instruction is not an additional location category and requires released-data coding verification. Later-wave re-interview branches may skip details when the same business carries forward. Fine-grained place-name/address fields are excluded from public metadata. Confirm eligible denominator, special values and person linkage before analysis."
             }
           ]
         },
@@ -28247,8 +28247,8 @@
               "unit": "",
               "value_labels": "1=1-5 steps; 2=6-15 steps; 3=16-25 steps; 4=More than 25 steps",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Number/category of steps to entrance; may be top-coded or grouped and is not an individual stair-climbing performance test."
+              "mapping_status": "official 2013 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "Household-flat entrance access item; in 2011–2015 it is routed after I010=No, and in 2018 after I010_W4=No. The questionnaire says not to count steps when an elevator is available. Preserve structural skips as ineligible/not asked, not zero or No. Categories and zero-step handling vary by wave; this is not an individual stair-climbing test. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             }
           ]
         },
@@ -28565,10 +28565,10 @@
               "label": "Is the toilet flushable?",
               "module": "Housing_Characteristics",
               "unit": "",
-              "value_labels": "1=Yes; 2=No (flushable).",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
+              "mapping_status": "official 2013 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility",
+              "caveat": "Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
             }
           ]
         },
@@ -28694,11 +28694,11 @@
               "code": "fd002",
               "label": "Type of Employer",
               "module": "Work_Retirement_and_Pension",
-              "unit": "nominal type of current employer/work unit; preserve wave-specific response categories",
+              "unit": "nominal current-employer organization category; no inherent order",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Nominal type of the current employer/work unit. Categories and question routes vary by wave; preserve original response labels and do not collapse employer organization type with job arrangement or occupation."
+              "mapping_status": "official wave-specific questionnaire/Codebook category wording and employment route reviewed; released storage, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/current_employer_organization_type_review_2026-10-25.md",
+              "caveat": "Current employer/work-unit type, retained as a nominal work and socioeconomic context measure. Categories have no inherent order and are not an environmental dose. Questionnaire wording and coding vary slightly by wave. Re-interview routing can skip employer-detail questions when the same workplace is carried forward; distinguish valid preloaded values, structural skips and missingness in the authorized release. Confirm eligible current-worker denominator and person linkage before use; do not treat missing or skipped as “no.”"
             }
           ]
         },
@@ -29474,11 +29474,11 @@
               "code": "fd020",
               "label": "Any Labor Contract in Written with Current Employer",
               "module": "Work_Retirement_and_Pension",
-              "unit": "",
+              "unit": "binary self-report; written labor contract status (1=Yes, 2=No)",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Candidate employment-protection indicator. 2011 label says labor contract without ‘written’; 2013–2020 wording explicitly asks whether a written contract exists, so 2011 requires separate review."
+              "mapping_status": "official wave-specific questionnaire/Codebook item wording, Yes/No codes and applicable route reviewed; payor reference, release storage and eligible denominator require QA; see audit/written_labor_contract_review_2026-10-25.md",
+              "caveat": "Self-reported written labor-contract status in the current-work module; it is not a direct environmental exposure and does not measure contract duration, quality, labor rights or overall job security. In 2011–2015, the item refers to the current workplace or labor-dispatch company; the 2018 CAPI instruction assigns the referent to the dispatch company for dispatched workers and to the wage-paying person for workers hired by an individual. Preserve these route-specific referents. A No response skips contract-detail questions; do not treat those downstream structural skips as missing contract-status responses. Verify current-worker eligibility, special values and field storage in the authorized release."
             }
           ]
         },
@@ -29507,8 +29507,8 @@
               "unit": "",
               "value_labels": "1=0-5 years; 2=5-10 years; 3=10-20 years; 4=20-30 years; 5=30-40 years; 6=Above 40 years",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "2011–2018 fields concern the year the dwelling was built; exact-year and fallback interval responses are separate fields. Do not include 2020 move-in time or impute a single year without a prespecified rule."
+              "mapping_status": "official 2013 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "Fallback interval for dwelling construction year when the exact year is unclear or missing; preserve separately from the exact-year field. Intervals are broad, overlapping at endpoints in source labels, and vary in final-category wording; do not convert to a point year or merge with move-in time. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             }
           ]
         },
@@ -30487,8 +30487,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "2020 i017含义变化为室内淋浴，故不映射",
-              "mapping_status": "measured",
-              "caveat": "Residence-level water access indicator; distinguish from water source, treatment, and drinking-water quality. | 2020 i017含义变化为室内淋浴，故不映射"
+              "mapping_status": "official 2013 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md | measured",
+              "caveat": "Residence-level running-water access, not water quality, source or treatment, a contaminant assay, microbial/chemical measurement, or individual water intake. The reviewed 2011–2018 questions ask whether the residence has running water; 2020 tap-water access is a distinct item and is not assumed equivalent. Verify household-person linkage, special values, eligible denominator, and missingness in the authorized release. | 2020 i017含义变化为室内淋浴，故不映射"
             }
           ]
         },
@@ -46217,7 +46217,7 @@
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
               "mapping_status": "official 2015 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
-              "caveat": "2015-only candidate from the current catalog; availability/presence does not measure use, filtration performance, or ambient/personal PM exposure. | 2015 and 2018 ask whether the residence has an air cleaner (Yes/No); 2020 asks whether XFinancialResp's house has one (Yes/No). The 2020 questionnaire permits interviewer recording only when the interviewer is in the home and clearly knows the answer, otherwise asking the respondent. Presence does not establish use, filter condition, ventilation, pollutant concentration, or personal exposure. Preserve wave-specific household referents and confirm linkage before person-level assignment."
+              "caveat": "Catalog alias only: this is the same 2015 I027_W3 household air-cleaner-presence item mapped under air_cleaner_home. Do not count it as a distinct exposure or duplicate association. Presence does not establish use, filtration performance, pollutant concentration, or personal exposure. See audit/housing_context_source_review_2026-10-24.md. | 2015 and 2018 ask whether the residence has an air cleaner (Yes/No); 2020 asks whether XFinancialResp's house has one (Yes/No). The 2020 questionnaire permits interviewer recording only when the interviewer is in the home and clearly knows the answer, otherwise asking the respondent. Presence does not establish use, filter condition, ventilation, pollutant concentration, or personal exposure. Preserve wave-specific household referents and confirm linkage before person-level assignment."
             }
           ]
         },
@@ -46436,8 +46436,8 @@
               "unit": "",
               "value_labels": "1=One-story building; 2=Common multi-story building; 3=Self-contained multi-story building",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure."
+              "mapping_status": "official 2015 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "These are separate categorical housing descriptors: one-/multi-storey class and independent/compound dwelling status. Preserve field-specific categories and wave-specific routes; do not combine them into a numeric floor or a single ordinal exposure. They are distinct from the respondent's current floor position and elevator availability. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             },
             {
               "code": "i007",
@@ -46446,8 +46446,8 @@
               "unit": "",
               "value_labels": "1=Independent; 2=Compound",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure."
+              "mapping_status": "official 2015 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "These are separate categorical housing descriptors: one-/multi-storey class and independent/compound dwelling status. Preserve field-specific categories and wave-specific routes; do not combine them into a numeric floor or a single ordinal exposure. They are distinct from the respondent's current floor position and elevator availability. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             },
             {
               "code": "i008",
@@ -46456,8 +46456,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure."
+              "mapping_status": "official 2015 questionnaire identifies a numeric building floor number; continuous/ordinal measure without discrete value labels",
+              "caveat": "Questionnaire asks which story the residence is on. Retain as an ordinal/numeric floor position; do not infer a harmonized height dose from Codebook extrema. Verify authorized-release special values, skip routes, residence/respondent linkage and missingness before modeling. Questionnaire hard/soft checks do not establish valid analytic ranges. Cross-wave measurement equivalence is unapproved."
             }
           ]
         },
@@ -46476,8 +46476,8 @@
               "unit": "",
               "value_labels": "1=Concrete and steel/Bricks and wood; 2=Adobe; 3=Wood/Thatched; 4=Cave dwelling; 5=Mongolian yurt/Woolen felt/Tend (Codebook spelling); 6=Stone; 7=Other",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Nominal building category; preserve wave-specific value labels and do not assume ordinal levels."
+              "mapping_status": "official 2015 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "Building material/structure categories are nominal. Retain each wave's response categories; categories are collapsed or differ across waves and must not be assigned an ordinal score or harmonized by matching labels alone. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             }
           ]
         },
@@ -47036,8 +47036,8 @@
               "unit": "wave-specific ordinal workplace location category relative to residence; not a distance measure",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FD004 records the current workplace location in the employed-work module. 2011 categories are same village/community, other village/community in county/city, another county/city in province, and another province; 2013-2018 use wave-specific categories relative to permanent/current residence and include an abroad option in some waves. Treat as a coarse self-reported geographic context, not commute distance, air pollution, or neighborhood exposure. Preserve the original categories and eligible current-employed denominator; the identically named 2020 FD004 is number of employees and is explicitly excluded."
+              "mapping_status": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md",
+              "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release. 2011 uses village/community and county/province anchors; 2013/2015 refer to permanent address and include abroad; 2018 uses its own permanent/current-residence wording and location detail. 2013/2015 FD002=6/7 routes skip this field. The same code in 2020 means number of employees and is excluded."
             }
           ]
         },
@@ -47193,11 +47193,11 @@
               "code": "fe002",
               "label": "How Many Days Did You Work per Week",
               "module": "Work_Retirement_and_Pension",
-              "unit": "",
+              "unit": "days per week",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Past-year average work days per week, asked within the wage-employment route. In 2020, weeks on paid vacation and fully paid sick leave are excluded; retain wave-specific denominators. A missing field can mean not routed or not eligible; do not recode it as zero."
+              "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
+              "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence."
             }
           ]
         },
@@ -47213,11 +47213,11 @@
               "code": "fe003",
               "label": "How Many Hours Did You Work per Day",
               "module": "Work_Retirement_and_Pension",
-              "unit": "",
+              "unit": "hours per working day",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Past-year average hours per day excluding meal breaks and including paid/unpaid overtime in later questionnaires. Confirm 2011 wording and route before combining; retain source values and questionnaire range checks."
+              "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
+              "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence."
             }
           ]
         },
@@ -48055,10 +48055,10 @@
               "label": "Is There In-house Shower or Bath Facility?",
               "module": "Housing_Characteristics",
               "unit": "",
-              "value_labels": "1=Hot water provided; 2=Household water heater; 3=None",
+              "value_labels": "1=Hot water provided; 2=Water heater installed by the household; 3=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Nominal categories distinguish centralized hot water, household water heater, or none; retain source categories."
+              "mapping_status": "official 2015 questionnaire/Codebook wording, household referent and nominal response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+              "caveat": "Residence-level in-house shower/bath facility type; the questionnaire lists hot water provided; household-installed water heater; no facility. Treat categories as nominal, not an ordinal comfort/quality scale; do not infer bathing frequency, water temperature, hygiene, or personal exposure. Preserve the wave-specific response wording, verify authorized-release storage, special values, missingness, and eligible denominator, and confirm household-person linkage. Cross-wave equivalence is unapproved."
             }
           ]
         },
@@ -48348,8 +48348,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FC012 is asked in the own-household agricultural-work module. Geographic anchors vary by wave; retain source categories and route. It is not an address, commute distance, or environmental concentration."
+              "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+              "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
             }
           ]
         },
@@ -48368,8 +48368,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FH006 in 2011-2018 and FD002 in 2020 locate a self-employment business. Preserve wave-specific location categories and work route; this coarse report is not commute distance, geocoded location, or measured pollution."
+              "mapping_status": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
+              "caveat": "Self-reported broad geographic category for the respondent's non-farm self-employment business. This is not a commute distance, measured pollution, or a geocoded exposure. Keep wave-specific categories and eligible business route; do not harmonize by code number alone. Questionnaire subfields may contain place names/address text and are deliberately excluded from the public atlas. Confirm authorized-release special values, eligibility, missingness and person linkage before analysis."
             }
           ]
         },
@@ -48385,11 +48385,11 @@
               "code": "fl004",
               "label": "Location",
               "module": "Work_Retirement_and_Pension",
-              "unit": "",
+              "unit": "wave-specific retrospective nominal location category",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FL004 is a retrospective location category for the last job. Preserve the wave-specific geographic anchor and nonworking/prior-job route; it is not a geocoded address, commute distance, or environmental concentration."
+              "mapping_status": "official 2015 questionnaire and Codebook categories reviewed; release storage, prior-job eligibility and denominator still require QA; see audit/last_job_workplace_location_review_2026-10-25.md",
+              "caveat": "Retrospective self-reported location category for the most recent job. This is coarse historical geographic context, not commute distance, a geocoded address, measured pollution or personal dose. Keep wave-specific categories and prior-job eligibility routes separate; questionnaire place-name fields are excluded from public metadata. Confirm special values, field storage, prior-job route and eligible denominator in the authorized release. 2015 questionnaire and Codebook both list the Abroad category."
             }
           ]
         },
@@ -48405,11 +48405,11 @@
               "code": "fh013",
               "label": "Location of This Company",
               "module": "Work_Retirement_and_Pension",
-              "unit": "",
+              "unit": "wave-specific nominal location category; no address or distance measure",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FH013 records the location of the family business/workplace. Preserve wave-specific categories and the unpaid family-business route; this is not commute distance, geocoded location, or measured pollution."
+              "mapping_status": "official wave-specific questionnaire/Codebook categories and unpaid-family-business route reviewed; interviewer special code, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/unpaid_family_business_location_review_2026-10-25.md",
+              "caveat": "Self-reported broad location category for unpaid family-business work, a work-context candidate rather than an environmental dose or personal exposure. Keep wave-specific categories and the unpaid-family-work route separate. 2011 instructs interviewers to enter 0 for no fixed address; that instruction is not an additional location category and requires released-data coding verification. Later-wave re-interview branches may skip details when the same business carries forward. Fine-grained place-name/address fields are excluded from public metadata. Confirm eligible denominator, special values and person linkage before analysis."
             }
           ]
         },
@@ -51002,8 +51002,8 @@
               "unit": "",
               "value_labels": "1=0 steps; 2=1-5 steps; 3=6-15 steps; 4=16-25 steps; 5=More than 25 steps",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Number/category of steps to entrance; may be top-coded or grouped and is not an individual stair-climbing performance test."
+              "mapping_status": "official 2015 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "Household-flat entrance access item; in 2011–2015 it is routed after I010=No, and in 2018 after I010_W4=No. The questionnaire says not to count steps when an elevator is available. Preserve structural skips as ineligible/not asked, not zero or No. Categories and zero-step handling vary by wave; this is not an individual stair-climbing test. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             }
           ]
         },
@@ -51320,10 +51320,10 @@
               "label": "Is The Toilet Flushable?",
               "module": "Housing_Characteristics",
               "unit": "",
-              "value_labels": "1=Yes; 2=No (flushable).",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
+              "mapping_status": "official 2015 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility",
+              "caveat": "Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. In 2015 and 2018, the seated-toilet response routes past this item; preserve the wave-specific eligibility and do not treat a structural skip as No. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
             }
           ]
         },
@@ -51399,11 +51399,11 @@
               "code": "fd002",
               "label": "Type of Employer",
               "module": "Work_Retirement_and_Pension",
-              "unit": "nominal type of current employer/work unit; preserve wave-specific response categories",
+              "unit": "nominal current-employer organization category; no inherent order",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Nominal type of the current employer/work unit. Categories and question routes vary by wave; preserve original response labels and do not collapse employer organization type with job arrangement or occupation."
+              "mapping_status": "official wave-specific questionnaire/Codebook category wording and employment route reviewed; released storage, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/current_employer_organization_type_review_2026-10-25.md",
+              "caveat": "Current employer/work-unit type, retained as a nominal work and socioeconomic context measure. Categories have no inherent order and are not an environmental dose. Questionnaire wording and coding vary slightly by wave. Re-interview routing can skip employer-detail questions when the same workplace is carried forward; distinguish valid preloaded values, structural skips and missingness in the authorized release. Confirm eligible current-worker denominator and person linkage before use; do not treat missing or skipped as “no.”"
             }
           ]
         },
@@ -52310,11 +52310,11 @@
               "code": "fd020",
               "label": "Any Labor Contract in Written with Current Employer",
               "module": "Work_Retirement_and_Pension",
-              "unit": "",
+              "unit": "binary self-report; written labor contract status (1=Yes, 2=No)",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Candidate employment-protection indicator. 2011 label says labor contract without ‘written’; 2013–2020 wording explicitly asks whether a written contract exists, so 2011 requires separate review."
+              "mapping_status": "official wave-specific questionnaire/Codebook item wording, Yes/No codes and applicable route reviewed; payor reference, release storage and eligible denominator require QA; see audit/written_labor_contract_review_2026-10-25.md",
+              "caveat": "Self-reported written labor-contract status in the current-work module; it is not a direct environmental exposure and does not measure contract duration, quality, labor rights or overall job security. In 2011–2015, the item refers to the current workplace or labor-dispatch company; the 2018 CAPI instruction assigns the referent to the dispatch company for dispatched workers and to the wage-paying person for workers hired by an individual. Preserve these route-specific referents. A No response skips contract-detail questions; do not treat those downstream structural skips as missing contract-status responses. Verify current-worker eligibility, special values and field storage in the authorized release."
             }
           ]
         },
@@ -52343,8 +52343,8 @@
               "unit": "",
               "value_labels": "1=0-5 years; 2=5-10 years; 3=10-20 years; 4=20-30 years; 5=30-40 years; 6=Above 40 years",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "2011–2018 fields concern the year the dwelling was built; exact-year and fallback interval responses are separate fields. Do not include 2020 move-in time or impute a single year without a prespecified rule."
+              "mapping_status": "official 2015 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "Fallback interval for dwelling construction year when the exact year is unclear or missing; preserve separately from the exact-year field. Intervals are broad, overlapping at endpoints in source labels, and vary in final-category wording; do not convert to a point year or merge with move-in time. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             }
           ]
         },
@@ -53983,8 +53983,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "2020 i017含义变化为室内淋浴，故不映射",
-              "mapping_status": "measured",
-              "caveat": "Residence-level water access indicator; distinguish from water source, treatment, and drinking-water quality. | 2020 i017含义变化为室内淋浴，故不映射"
+              "mapping_status": "official 2015 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md | measured",
+              "caveat": "Residence-level running-water access, not water quality, source or treatment, a contaminant assay, microbial/chemical measurement, or individual water intake. The reviewed 2011–2018 questions ask whether the residence has running water; 2020 tap-water access is a distinct item and is not assumed equivalent. Verify household-person linkage, special values, eligible denominator, and missingness in the authorized release. | 2020 i017含义变化为室内淋浴，故不映射"
             }
           ]
         },
@@ -70851,8 +70851,8 @@
               "unit": "",
               "value_labels": "1=One-story building; 2=Common multi-story building; 3=Self-contained multi-story building",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure."
+              "mapping_status": "official 2018 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "These are separate categorical housing descriptors: one-/multi-storey class and independent/compound dwelling status. Preserve field-specific categories and wave-specific routes; do not combine them into a numeric floor or a single ordinal exposure. They are distinct from the respondent's current floor position and elevator availability. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             },
             {
               "code": "i007",
@@ -70861,8 +70861,8 @@
               "unit": "",
               "value_labels": "1=Independent storey; 2=Compound",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure."
+              "mapping_status": "official 2018 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "These are separate categorical housing descriptors: one-/multi-storey class and independent/compound dwelling status. Preserve field-specific categories and wave-specific routes; do not combine them into a numeric floor or a single ordinal exposure. They are distinct from the respondent's current floor position and elevator availability. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             },
             {
               "code": "i008",
@@ -70871,8 +70871,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure."
+              "mapping_status": "official 2018 questionnaire identifies a numeric building floor number; continuous/ordinal measure without discrete value labels",
+              "caveat": "Questionnaire asks which story the residence is on. Retain as an ordinal/numeric floor position; do not infer a harmonized height dose from Codebook extrema. Verify authorized-release special values, skip routes, residence/respondent linkage and missingness before modeling. Questionnaire hard/soft checks do not establish valid analytic ranges. Cross-wave measurement equivalence is unapproved."
             }
           ]
         },
@@ -70891,8 +70891,8 @@
               "unit": "",
               "value_labels": "1=Concrete and steel/Bricks and wood; 2=Adobe; 3=Wood/Thatched; 4=Cave dwelling; 5=Mongolian yurt/Woolen felt/Tent; 6=Stone; 7=Other",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Nominal building category; preserve wave-specific value labels and do not assume ordinal levels."
+              "mapping_status": "official 2018 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "Building material/structure categories are nominal. Retain each wave's response categories; categories are collapsed or differ across waves and must not be assigned an ordinal score or harmonized by matching labels alone. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             }
           ]
         },
@@ -71431,8 +71431,8 @@
               "unit": "wave-specific ordinal workplace location category relative to residence; not a distance measure",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FD004 records the current workplace location in the employed-work module. 2011 categories are same village/community, other village/community in county/city, another county/city in province, and another province; 2013-2018 use wave-specific categories relative to permanent/current residence and include an abroad option in some waves. Treat as a coarse self-reported geographic context, not commute distance, air pollution, or neighborhood exposure. Preserve the original categories and eligible current-employed denominator; the identically named 2020 FD004 is number of employees and is explicitly excluded."
+              "mapping_status": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md",
+              "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release. 2011 uses village/community and county/province anchors; 2013/2015 refer to permanent address and include abroad; 2018 uses its own permanent/current-residence wording and location detail. 2013/2015 FD002=6/7 routes skip this field. The same code in 2020 means number of employees and is excluded."
             }
           ]
         },
@@ -71691,8 +71691,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Area wording/variables vary by wave (construction area, house size, usable area); units and target residence must be verified before cross-wave use."
+              "mapping_status": "official 2018 questionnaire confirms usable floor area in square metres; non-ownership route; special values and eligible denominator require authorized-release QA",
+              "caveat": "2018 usable floor area in square metres, asked when the main respondent/spouse does not own property rights to the current home. Keep separate from i000_w4_12, which is asked on the ownership route and measures floor area. The routes select different respondents/households and the fields are not substitutes. Confirm authorized-release special values, missingness, and eligible denominator; cross-wave equivalence is unapproved."
             },
             {
               "code": "i000_w4_12",
@@ -71701,8 +71701,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Area wording/variables vary by wave (construction area, house size, usable area); units and target residence must be verified before cross-wave use."
+              "mapping_status": "official 2018 questionnaire confirms floor area in square metres; ownership route; special values and eligible denominator require authorized-release QA",
+              "caveat": "2018 floor area in square metres, asked when the main respondent/spouse owns property rights to the current home. Keep separate from i000_w4_11, which is usable floor area on the no-ownership route. The routes select different respondents/households and the fields are not substitutes. Confirm authorized-release special values, missingness, and eligible denominator; cross-wave equivalence is unapproved."
             }
           ]
         },
@@ -71721,8 +71721,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Residence-level electricity availability; not household energy consumption or reliability."
+              "mapping_status": "official 2018 questionnaire/Codebook wording, household referent and yes/no response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+              "caveat": "Household/residence-level electricity availability for the residence; this is not an individual dose or a measure of electricity reliability, duration, source, or indoor pollution. Preserve Yes/No and verify release-specific special values, missingness, eligible denominator, and linkage from household referent to the analytic person before use. Wave-specific target wording is retained; cross-wave equivalence and individual exposure assignment are not established."
             }
           ]
         },
@@ -71808,11 +71808,11 @@
               "code": "fe002",
               "label": "How Many Days Did You Work per Week",
               "module": "Work_Retirement",
-              "unit": "",
+              "unit": "days per week",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Past-year average work days per week, asked within the wage-employment route. In 2020, weeks on paid vacation and fully paid sick leave are excluded; retain wave-specific denominators. A missing field can mean not routed or not eligible; do not recode it as zero."
+              "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
+              "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence. Irregular weekly days may be derived from annual working days divided by working months and four; retain this stated derivation context."
             }
           ]
         },
@@ -71828,11 +71828,11 @@
               "code": "fe003",
               "label": "How Many Hours Did You Work per Day",
               "module": "Work_Retirement",
-              "unit": "",
+              "unit": "hours per working day",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Past-year average hours per day excluding meal breaks and including paid/unpaid overtime in later questionnaires. Confirm 2011 wording and route before combining; retain source values and questionnaire range checks."
+              "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
+              "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence."
             }
           ]
         },
@@ -72550,10 +72550,10 @@
               "label": "In-house Shower",
               "module": "Housing",
               "unit": "",
-              "value_labels": "1=Hot water provided; 2=Household water heater; 3=None",
+              "value_labels": "1=Hot water provided; 2=Water heater installed by the household; 3=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Nominal categories distinguish centralized hot water, household water heater, or none; retain source categories."
+              "mapping_status": "official 2018 questionnaire/Codebook wording, household referent and nominal response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+              "caveat": "Residence-level in-house shower/bath facility type; the questionnaire lists hot water provided; household-installed water heater; no facility. Treat categories as nominal, not an ordinal comfort/quality scale; do not infer bathing frequency, water temperature, hygiene, or personal exposure. Preserve the wave-specific response wording, verify authorized-release storage, special values, missingness, and eligible denominator, and confirm household-person linkage. Cross-wave equivalence is unapproved."
             }
           ]
         },
@@ -72973,8 +72973,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FC012 is asked in the own-household agricultural-work module. Geographic anchors vary by wave; retain source categories and route. It is not an address, commute distance, or environmental concentration."
+              "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+              "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
             }
           ]
         },
@@ -72993,8 +72993,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FH006 in 2011-2018 and FD002 in 2020 locate a self-employment business. Preserve wave-specific location categories and work route; this coarse report is not commute distance, geocoded location, or measured pollution."
+              "mapping_status": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
+              "caveat": "Self-reported broad geographic category for the respondent's non-farm self-employment business. This is not a commute distance, measured pollution, or a geocoded exposure. Keep wave-specific categories and eligible business route; do not harmonize by code number alone. Questionnaire subfields may contain place names/address text and are deliberately excluded from the public atlas. Confirm authorized-release special values, eligibility, missingness and person linkage before analysis."
             }
           ]
         },
@@ -73010,11 +73010,11 @@
               "code": "fl004",
               "label": "Location of the Last Job",
               "module": "Work_Retirement",
-              "unit": "",
+              "unit": "wave-specific retrospective nominal location category",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FL004 is a retrospective location category for the last job. Preserve the wave-specific geographic anchor and nonworking/prior-job route; it is not a geocoded address, commute distance, or environmental concentration."
+              "mapping_status": "questionnaire/Codebook menu discrepancy: official questionnaire includes 4=Abroad but the Codebook category table omits it; candidate pending authorized-release code validation; see audit/last_job_workplace_location_review_2026-10-25.md",
+              "caveat": "Retrospective self-reported location category for the most recent job. This is coarse historical geographic context, not commute distance, a geocoded address, measured pollution or personal dose. Keep wave-specific categories and prior-job eligibility routes separate; questionnaire place-name fields are excluded from public metadata. Confirm special values, field storage, prior-job route and eligible denominator in the authorized release. Codebook omits the questionnaire Abroad option; retain the discrepancy until release-level validation."
             }
           ]
         },
@@ -73030,11 +73030,11 @@
               "code": "fh013",
               "label": "Location of the Family Business",
               "module": "Work_Retirement",
-              "unit": "",
+              "unit": "wave-specific nominal location category; no address or distance measure",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FH013 records the location of the family business/workplace. Preserve wave-specific categories and the unpaid family-business route; this is not commute distance, geocoded location, or measured pollution."
+              "mapping_status": "official wave-specific questionnaire/Codebook categories and unpaid-family-business route reviewed; interviewer special code, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/unpaid_family_business_location_review_2026-10-25.md",
+              "caveat": "Self-reported broad location category for unpaid family-business work, a work-context candidate rather than an environmental dose or personal exposure. Keep wave-specific categories and the unpaid-family-work route separate. 2011 instructs interviewers to enter 0 for no fixed address; that instruction is not an additional location category and requires released-data coding verification. Later-wave re-interview branches may skip details when the same business carries forward. Fine-grained place-name/address fields are excluded from public metadata. Confirm eligible denominator, special values and person linkage before analysis."
             }
           ]
         },
@@ -75317,8 +75317,8 @@
               "unit": "",
               "value_labels": "1=0 step; 2=1-5 steps; 3=6-15 steps; 4=16-25 steps; 5=More than 25 steps",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Number/category of steps to entrance; may be top-coded or grouped and is not an individual stair-climbing performance test."
+              "mapping_status": "official 2018 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "Household-flat entrance access item; in 2011–2015 it is routed after I010=No, and in 2018 after I010_W4=No. The questionnaire says not to count steps when an elevator is available. Preserve structural skips as ineligible/not asked, not zero or No. Categories and zero-step handling vary by wave; this is not an individual stair-climbing test. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             }
           ]
         },
@@ -75545,10 +75545,10 @@
               "label": "Flushable Toilet",
               "module": "Housing",
               "unit": "",
-              "value_labels": "1=Yes; 2=No (flushable).",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
+              "mapping_status": "official 2018 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility",
+              "caveat": "Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. In 2015 and 2018, the seated-toilet response routes past this item; preserve the wave-specific eligibility and do not treat a structural skip as No. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
             }
           ]
         },
@@ -75944,11 +75944,11 @@
               "code": "fd002",
               "label": "Type of the Employer",
               "module": "Work_Retirement",
-              "unit": "nominal type of current employer/work unit; preserve wave-specific response categories",
+              "unit": "nominal current-employer organization category; no inherent order",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Nominal type of the current employer/work unit. Categories and question routes vary by wave; preserve original response labels and do not collapse employer organization type with job arrangement or occupation."
+              "mapping_status": "official wave-specific questionnaire/Codebook category wording and employment route reviewed; released storage, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/current_employer_organization_type_review_2026-10-25.md",
+              "caveat": "Current employer/work-unit type, retained as a nominal work and socioeconomic context measure. Categories have no inherent order and are not an environmental dose. Questionnaire wording and coding vary slightly by wave. Re-interview routing can skip employer-detail questions when the same workplace is carried forward; distinguish valid preloaded values, structural skips and missingness in the authorized release. Confirm eligible current-worker denominator and person linkage before use; do not treat missing or skipped as “no.”"
             }
           ]
         },
@@ -76634,11 +76634,11 @@
               "code": "fd020",
               "label": "Any Written Labor Contract with the Current Employer or Not",
               "module": "Work_Retirement",
-              "unit": "",
+              "unit": "binary self-report; written labor contract status (1=Yes, 2=No)",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Candidate employment-protection indicator. 2011 label says labor contract without ‘written’; 2013–2020 wording explicitly asks whether a written contract exists, so 2011 requires separate review."
+              "mapping_status": "official wave-specific questionnaire/Codebook item wording, Yes/No codes and applicable route reviewed; payor reference, release storage and eligible denominator require QA; see audit/written_labor_contract_review_2026-10-25.md",
+              "caveat": "Self-reported written labor-contract status in the current-work module; it is not a direct environmental exposure and does not measure contract duration, quality, labor rights or overall job security. In 2011–2015, the item refers to the current workplace or labor-dispatch company; the 2018 CAPI instruction assigns the referent to the dispatch company for dispatched workers and to the wage-paying person for workers hired by an individual. Preserve these route-specific referents. A No response skips contract-detail questions; do not treat those downstream structural skips as missing contract-status responses. Verify current-worker eligibility, special values and field storage in the authorized release."
             }
           ]
         },
@@ -76667,8 +76667,8 @@
               "unit": "",
               "value_labels": "1=0-5 years; 2=5-10 years; 3=10-20 years; 4=20-30 years; 5=30-40 years; 6=More than 40 years",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "2011–2018 fields concern the year the dwelling was built; exact-year and fallback interval responses are separate fields. Do not include 2020 move-in time or impute a single year without a prespecified rule."
+              "mapping_status": "official 2018 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "Fallback interval for dwelling construction year when the exact year is unclear or missing; preserve separately from the exact-year field. Intervals are broad, overlapping at endpoints in source labels, and vary in final-category wording; do not convert to a point year or merge with move-in time. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             }
           ]
         },
@@ -77587,8 +77587,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "2020 i017含义变化为室内淋浴，故不映射",
-              "mapping_status": "measured",
-              "caveat": "Residence-level water access indicator; distinguish from water source, treatment, and drinking-water quality. | 2020 i017含义变化为室内淋浴，故不映射"
+              "mapping_status": "official 2018 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md | measured",
+              "caveat": "Residence-level running-water access, not water quality, source or treatment, a contaminant assay, microbial/chemical measurement, or individual water intake. The reviewed 2011–2018 questions ask whether the residence has running water; 2020 tap-water access is a distinct item and is not assumed equivalent. Verify household-person linkage, special values, eligible denominator, and missingness in the authorized release. | 2020 i017含义变化为室内淋浴，故不映射"
             }
           ]
         },
@@ -95944,8 +95944,8 @@
               "unit": "",
               "value_labels": "1=One-storey building; 2=Common multi-storey building; 3=Self-contained multi-storey building",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure."
+              "mapping_status": "official 2020 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "These are separate categorical housing descriptors: one-/multi-storey class and independent/compound dwelling status. Preserve field-specific categories and wave-specific routes; do not combine them into a numeric floor or a single ordinal exposure. They are distinct from the respondent's current floor position and elevator availability. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             },
             {
               "code": "i005",
@@ -95954,8 +95954,8 @@
               "unit": "",
               "value_labels": "1=Independent storey; 2=Compound",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure."
+              "mapping_status": "official 2020 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "These are separate categorical housing descriptors: one-/multi-storey class and independent/compound dwelling status. Preserve field-specific categories and wave-specific routes; do not combine them into a numeric floor or a single ordinal exposure. They are distinct from the respondent's current floor position and elevator availability. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             },
             {
               "code": "i006",
@@ -95964,8 +95964,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure."
+              "mapping_status": "official 2020 questionnaire identifies a wave-specific categorical above-ground versus underground residence selector; preserve alongside routed count fields",
+              "caveat": "2020 records whether the residence is on the ground/above-ground route or underground; the numeric floor count is in the routed child field, so retain selector and count separately. Verify authorized-release special values, skip routes, residence/respondent linkage and missingness before modeling. Questionnaire hard/soft checks do not establish valid analytic ranges. Cross-wave measurement equivalence is unapproved."
             },
             {
               "code": "i006_1",
@@ -95974,8 +95974,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure."
+              "mapping_status": "official 2020 questionnaire identifies a numeric above-ground floor number; continuous/ordinal measure without discrete value labels",
+              "caveat": "2020 records the above-ground storey in a separate numeric field; keep distinct from underground floor count. Verify authorized-release special values, skip routes, residence/respondent linkage and missingness before modeling. Questionnaire hard/soft checks do not establish valid analytic ranges. Cross-wave measurement equivalence is unapproved."
             },
             {
               "code": "i006_2",
@@ -95984,8 +95984,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Contains categorical structure/level/current-floor fields; elevator and floor position are separate variables, not one ordered exposure."
+              "mapping_status": "official 2020 questionnaire identifies a numeric underground floor number; continuous/ordinal measure without discrete value labels",
+              "caveat": "2020 records the underground storey in a separate numeric field; retain its route and do not combine as a signed floor without an explicit rule. Verify authorized-release special values, skip routes, residence/respondent linkage and missingness before modeling. Questionnaire hard/soft checks do not establish valid analytic ranges. Cross-wave measurement equivalence is unapproved."
             }
           ]
         },
@@ -96004,8 +96004,8 @@
               "unit": "",
               "value_labels": "1=Concrete and steel/Bricks and wood; 2=Adobe; 3=Wood/Thatched; 4=Cave dwelling; 5=Mongolian yurt/Woolen felt/Tent; 6=Stone; 7=Other",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Nominal building category; preserve wave-specific value labels and do not assume ordinal levels."
+              "mapping_status": "official 2020 questionnaire/Codebook wording, labels and applicable routing reviewed; release-specific special values, denominator, and household-person linkage require QA; see audit/housing_structure_access_review_2026-10-25.md",
+              "caveat": "Building material/structure categories are nominal. Retain each wave's response categories; categories are collapsed or differ across waves and must not be assigned an ordinal score or harmonized by matching labels alone. Confirm special-value storage, missingness, eligible denominator, and household/person linkage in the authorized release. Cross-wave equivalence is not established."
             }
           ]
         },
@@ -96261,11 +96261,11 @@
               "code": "fc004",
               "label": "Location of the Workplace",
               "module": "Work_Retirement",
-              "unit": "months in past year; conditional on FC001=Yes",
+              "unit": "wave-specific nominal workplace location category; not a distance measure",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "2020 FC004 uses current-residence anchors and asks the employer's location, with conditional administrative place-name fields. The parent category is a coarse self-reported context, not commute distance or measured pollution; exclude address strings and do not geocode without approved privacy review."
+              "mapping_status": "official 2020 questionnaire/Codebook wording, response labels and current-employer route reviewed; release storage, eligible denominator and person linkage require QA; see audit/current_employer_location_2020_review_2026-10-25.md",
+              "caveat": "2020 FC004 asks where the current employer is located, among respondents routed to the employer module. This is coarse self-reported geographic context, not commute distance or measured pollution. The instrument has conditional place-name fields; they are excluded from public metadata and must not be geocoded without a separate privacy/data-use review. Preserve nominal response categories and 999 refusal separately; verify exact release storage, route, denominator and linkage before analysis."
             }
           ]
         },
@@ -96404,8 +96404,8 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Residence-level electricity availability; not household energy consumption or reliability."
+              "mapping_status": "official 2020 questionnaire/Codebook wording, household referent and yes/no response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+              "caveat": "Household/residence-level electricity availability for XFinancialResp's house; this is not an individual dose or a measure of electricity reliability, duration, source, or indoor pollution. Preserve Yes/No and verify release-specific special values, missingness, eligible denominator, and linkage from household referent to the analytic person before use. Wave-specific target wording is retained; cross-wave equivalence and individual exposure assignment are not established."
             }
           ]
         },
@@ -96441,11 +96441,11 @@
               "code": "fc026",
               "label": "Days of Working per Week",
               "module": "Work_Retirement",
-              "unit": "",
+              "unit": "days per week",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Past-year average work days per week, asked within the wage-employment route. In 2020, weeks on paid vacation and fully paid sick leave are excluded; retain wave-specific denominators. A missing field can mean not routed or not eligible; do not recode it as zero."
+              "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
+              "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence. Weeks with paid vacations and fully paid sick leave are excluded; when work is fewer than four days per month and the average is below one day per week, interviewers are instructed to enter 1."
             }
           ]
         },
@@ -96461,11 +96461,11 @@
               "code": "fc027",
               "label": "Hours of Working per Day",
               "module": "Work_Retirement",
-              "unit": "",
+              "unit": "hours per working day",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Past-year average hours per day excluding meal breaks and including paid/unpaid overtime in later questionnaires. Confirm 2011 wording and route before combining; retain source values and questionnaire range checks."
+              "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
+              "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence."
             }
           ]
         },
@@ -96733,10 +96733,10 @@
               "label": "In-house Shower",
               "module": "Household_Income",
               "unit": "",
-              "value_labels": "1=Unified hot water supply; 2=Water heater; 3=None",
+              "value_labels": "1=Unified hot water supply; 2=Water heater; 3=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Nominal categories distinguish centralized hot water, household water heater, or none; retain source categories."
+              "mapping_status": "official 2020 questionnaire/Codebook wording, household referent and nominal response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+              "caveat": "Residence-level in-house shower/bath facility type; the questionnaire lists unified hot-water supply; water heater; no facility. Treat categories as nominal, not an ordinal comfort/quality scale; do not infer bathing frequency, water temperature, hygiene, or personal exposure. Preserve the wave-specific response wording, verify authorized-release storage, special values, missingness, and eligible denominator, and confirm household-person linkage. Cross-wave equivalence is unapproved."
             }
           ]
         },
@@ -96845,8 +96845,8 @@
               "unit": "nominal type of current employer/work unit; preserve wave-specific response categories",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "FH006 in 2011-2018 and FD002 in 2020 locate a self-employment business. Preserve wave-specific location categories and work route; this coarse report is not commute distance, geocoded location, or measured pollution."
+              "mapping_status": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
+              "caveat": "Self-reported broad geographic category for the respondent's non-farm self-employment business. This is not a commute distance, measured pollution, or a geocoded exposure. Keep wave-specific categories and eligible business route; do not harmonize by code number alone. Questionnaire subfields may contain place names/address text and are deliberately excluded from the public atlas. Confirm authorized-release special values, eligibility, missingness and person linkage before analysis."
             }
           ]
         },
@@ -96865,8 +96865,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "2020 FB001 records the location of farm work within the agricultural-work module. Preserve the official categories and eligible route; do not geocode detailed place names or treat this as a measured environmental concentration."
+              "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
+              "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
             }
           ]
         },
@@ -97715,8 +97715,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Number/category of steps to entrance; may be top-coded or grouped and is not an individual stair-climbing performance test."
+              "mapping_status": "official 2020 questionnaire identifies a numeric steps to main entrance; continuous/ordinal measure without discrete value labels",
+              "caveat": "Counts steps to the household flat's main entrance; this is an access-barrier measure, not a respondent mobility test. Soft-check prompts are not cutoffs. Verify authorized-release special values, skip routes, residence/respondent linkage and missingness before modeling. Questionnaire hard/soft checks do not establish valid analytic ranges. Cross-wave measurement equivalence is unapproved."
             }
           ]
         },
@@ -97813,10 +97813,10 @@
               "label": "Flushable Toilet",
               "module": "Household_Income",
               "unit": "",
-              "value_labels": "1=Yes; 2=No (flushable).",
+              "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending",
-              "caveat": "Separate number/distance/type/flushability fields. Do not collapse into one ordinal sanitation score without a prespecified, validated rule."
+              "mapping_status": "official 2020 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility",
+              "caveat": "Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
             }
           ]
         },
@@ -97832,11 +97832,11 @@
               "code": "fc002",
               "label": "Type of the Employer",
               "module": "Work_Retirement",
-              "unit": "nominal type of employer organization; preserve 2020 categories",
+              "unit": "nominal current-employer organization category; no inherent order",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Nominal type of the current employer/work unit. Categories and question routes vary by wave; preserve original response labels and do not collapse employer organization type with job arrangement or occupation."
+              "mapping_status": "official wave-specific questionnaire/Codebook category wording and employment route reviewed; released storage, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/current_employer_organization_type_review_2026-10-25.md",
+              "caveat": "Current employer/work-unit type, retained as a nominal work and socioeconomic context measure. Categories have no inherent order and are not an environmental dose. Questionnaire wording and coding vary slightly by wave. Re-interview routing can skip employer-detail questions when the same workplace is carried forward; distinguish valid preloaded values, structural skips and missingness in the authorized release. Confirm eligible current-worker denominator and person linkage before use; do not treat missing or skipped as “no.”"
             }
           ]
         },
@@ -98032,11 +98032,11 @@
               "code": "fc016",
               "label": "Has Any Written Labor Contract with the Current Employer or Not",
               "module": "Work_Retirement",
-              "unit": "",
+              "unit": "binary self-report; written labor contract status (1=Yes, 2=No)",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
-              "caveat": "Candidate employment-protection indicator. 2011 label says labor contract without ‘written’; 2013–2020 wording explicitly asks whether a written contract exists, so 2011 requires separate review."
+              "mapping_status": "official wave-specific questionnaire/Codebook item wording, Yes/No codes and applicable route reviewed; payor reference, release storage and eligible denominator require QA; see audit/written_labor_contract_review_2026-10-25.md",
+              "caveat": "Self-reported written labor-contract status in the current-work module; it is not a direct environmental exposure and does not measure contract duration, quality, labor rights or overall job security. In 2011–2015, the item refers to the current workplace or labor-dispatch company; the 2018 CAPI instruction assigns the referent to the dispatch company for dispatched workers and to the wage-paying person for workers hired by an individual. Preserve these route-specific referents. A No response skips contract-detail questions; do not treat those downstream structural skips as missing contract-status responses. Verify current-worker eligibility, special values and field storage in the authorized release."
             }
           ]
         },

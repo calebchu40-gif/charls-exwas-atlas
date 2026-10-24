@@ -49,6 +49,11 @@ class SiteCatalogShardTests(unittest.TestCase):
         for pipeline in (FINALIZATION_PIPELINE_SCRIPTS, FULL_PIPELINE_SCRIPTS):
             self.assertEqual(pipeline[-2], "site_catalog_shards.py")
             self.assertEqual(pipeline[-1], "summarize_value_label_coverage.py")
+            self.assertLess(pipeline.index("apply_pastime_job_classification_review.py"), pipeline.index("validate_do_not_analyze_triage.py"))
+            self.assertGreater(
+                pipeline.index("site_catalog_shards.py", pipeline.index("validate_do_not_analyze_triage.py")),
+                pipeline.index("validate_do_not_analyze_triage.py"),
+            )
             self.assertLess(pipeline.index("build_housing_catalog.py"), pipeline.index("site_catalog_shards.py"))
             self.assertLess(
                 pipeline.index("apply_objective_measurement_protocol_review.py"),
