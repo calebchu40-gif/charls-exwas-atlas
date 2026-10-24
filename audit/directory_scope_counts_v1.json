@@ -1,10 +1,10 @@
 {
   "as_of": "2026-10-24",
   "crosswalk_files": 74,
-  "candidate_concept_ids": 1429,
+  "candidate_concept_ids": 1438,
   "exposure_concept_ids_including_dual": 1150,
-  "phenotype_concept_ids_including_dual": 288,
-  "wave_field_mapping_rows": 6643,
+  "phenotype_concept_ids_including_dual": 297,
+  "wave_field_mapping_rows": 6652,
   "includes": "all E/P candidate rows from ep_concept_source_crosswalk_v1.csv",
   "excludes": "C-only measurement eligibility rows; verified_code_examples_v1.csv is a separate multiwave lookup",
   "domains": [
@@ -120,8 +120,8 @@
     },
     {
       "file": "audit/health_symptom_variable_mapping_v1.csv",
-      "mapping_rows": 173,
-      "concept_ids": 39
+      "mapping_rows": 182,
+      "concept_ids": 48
     },
     {
       "file": "audit/health_work_absence_crosswalk_v1.csv",

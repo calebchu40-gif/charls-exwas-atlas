@@ -397,14 +397,14 @@
         "source_label": "Did You Feel Sad?",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "结局概念候选；2013年询问昨天的情绪状态，采用1–5程度等级；回忆窗为昨日，与过去一周CES-D条目及2011 WHO过去一个月情绪题不同，单独保留、不合成抑郁量表。",
+        "note": "结局概念候选；2013年“昨天的感受”条目之一，单项1–5程度评定；回忆窗为昨日，与过去一周CES-D条目及2011 WHO过去一个月情绪题不同，单独保留、不合成抑郁量表。与昨天睡眠时点同日回忆，没有明确时间先后；授权数据核验前不推断目标分母或缺失类别。",
         "value_labels": "1=Not at all; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very",
-        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_status": "official codebook response labels reviewed; official questionnaire 1–5 card matches; individual yesterday-recall item only; no composite mood score or frequency copied; routed denominator requires authorized-release review",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       }
     ],
     "status": "表型概念候选；未创建跨波分数",
-    "caveat": "2013年询问昨天的情绪状态，采用1–5程度等级；回忆窗为昨日，与过去一周CES-D条目及2011 WHO过去一个月情绪题不同，单独保留、不合成抑郁量表。"
+    "caveat": "2013年“昨天的感受”条目之一，单项1–5程度评定；回忆窗为昨日，与过去一周CES-D条目及2011 WHO过去一个月情绪题不同，单独保留、不合成抑郁量表。与昨天睡眠时点同日回忆，没有明确时间先后；授权数据核验前不推断目标分母或缺失类别。"
   },
   {
     "concept_id": "affect_lonely_yesterday",
@@ -417,14 +417,194 @@
         "source_label": "Did You Feel Lonely?",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "结局概念候选；2013年询问昨天的情绪状态，采用1–5程度等级；回忆窗为昨日，与过去一周CES-D孤独条目不同，单独保留、不合成抑郁量表。",
+        "note": "结局概念候选；2013年“昨天的感受”条目之一，单项1–5程度评定；回忆窗为昨日，与过去一周CES-D孤独条目不同，单独保留、不合成抑郁量表。与昨天睡眠时点同日回忆，没有明确时间先后；授权数据核验前不推断目标分母或缺失类别。",
         "value_labels": "1=Not at all; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very",
-        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_status": "official codebook response labels reviewed; official questionnaire 1–5 card matches; individual yesterday-recall item only; no composite mood score or frequency copied; routed denominator requires authorized-release review",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       }
     ],
     "status": "表型概念候选；未创建跨波分数",
-    "caveat": "2013年询问昨天的情绪状态，采用1–5程度等级；回忆窗为昨日，与过去一周CES-D孤独条目不同，单独保留、不合成抑郁量表。"
+    "caveat": "2013年“昨天的感受”条目之一，单项1–5程度评定；回忆窗为昨日，与过去一周CES-D孤独条目不同，单独保留、不合成抑郁量表。与昨天睡眠时点同日回忆，没有明确时间先后；授权数据核验前不推断目标分母或缺失类别。"
+  },
+  {
+    "concept_id": "affect_frustrated_yesterday",
+    "label": "昨日挫败感程度",
+    "domain": "短期情绪状态",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "wb05",
+        "source_label": "Did You Feel Frustrated?",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。",
+        "value_labels": "1=Not at all; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very",
+        "value_label_status": "official codebook response labels reviewed; official questionnaire 1–5 card matches; individual yesterday-recall item only; no composite mood score or frequency copied; routed denominator requires authorized-release review",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。"
+  },
+  {
+    "concept_id": "affect_enthusiastic_yesterday",
+    "label": "昨日热情程度",
+    "domain": "短期情绪状态",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "wb07",
+        "source_label": "Did You Feel Enthusiastic?",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。",
+        "value_labels": "1=Not at all; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very",
+        "value_label_status": "official codebook response labels reviewed; official questionnaire 1–5 card matches; individual yesterday-recall item only; no composite mood score or frequency copied; routed denominator requires authorized-release review",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。"
+  },
+  {
+    "concept_id": "affect_content_yesterday",
+    "label": "昨日满足感程度",
+    "domain": "短期情绪状态",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "wb09",
+        "source_label": "Did You Feel Content?",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。",
+        "value_labels": "1=Not at all; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very",
+        "value_label_status": "official codebook response labels reviewed; official questionnaire 1–5 card matches; individual yesterday-recall item only; no composite mood score or frequency copied; routed denominator requires authorized-release review",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。"
+  },
+  {
+    "concept_id": "affect_worried_yesterday",
+    "label": "昨日担忧程度",
+    "domain": "短期情绪状态",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "wb10",
+        "source_label": "Did You Feel Worried?",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。",
+        "value_labels": "1=Not at all; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very",
+        "value_label_status": "official codebook response labels reviewed; official questionnaire 1–5 card matches; individual yesterday-recall item only; no composite mood score or frequency copied; routed denominator requires authorized-release review",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。"
+  },
+  {
+    "concept_id": "affect_bored_yesterday",
+    "label": "昨日无聊程度",
+    "domain": "短期情绪状态",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "wb11",
+        "source_label": "Did You Feel Bored?",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。",
+        "value_labels": "1=Not at all; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very",
+        "value_label_status": "official codebook response labels reviewed; official questionnaire 1–5 card matches; individual yesterday-recall item only; no composite mood score or frequency copied; routed denominator requires authorized-release review",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。"
+  },
+  {
+    "concept_id": "affect_happy_yesterday",
+    "label": "昨日快乐程度",
+    "domain": "短期情绪状态",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "wb12",
+        "source_label": "Did You Feel Happy?",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。",
+        "value_labels": "1=Not at all; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very",
+        "value_label_status": "official codebook response labels reviewed; official questionnaire 1–5 card matches; individual yesterday-recall item only; no composite mood score or frequency copied; routed denominator requires authorized-release review",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。"
+  },
+  {
+    "concept_id": "affect_angry_yesterday",
+    "label": "昨日愤怒程度",
+    "domain": "短期情绪状态",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "wb13",
+        "source_label": "Did You Feel Angry?",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。",
+        "value_labels": "1=Not at all; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very",
+        "value_label_status": "official codebook response labels reviewed; official questionnaire 1–5 card matches; individual yesterday-recall item only; no composite mood score or frequency copied; routed denominator requires authorized-release review",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。"
+  },
+  {
+    "concept_id": "affect_tired_yesterday",
+    "label": "昨日疲惫程度",
+    "domain": "短期情绪状态",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "wb14",
+        "source_label": "Did You Feel Tired?",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。",
+        "value_labels": "1=Not at all; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very",
+        "value_label_status": "official codebook response labels reviewed; official questionnaire 1–5 card matches; individual yesterday-recall item only; no composite mood score or frequency copied; routed denominator requires authorized-release review",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。"
+  },
+  {
+    "concept_id": "affect_stressed_yesterday",
+    "label": "昨日压力感程度",
+    "domain": "短期情绪状态",
+    "source_fields": [
+      {
+        "wave": "2013",
+        "code": "wb15",
+        "source_label": "Did You Feel Stressed?",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。",
+        "value_labels": "1=Not at all; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very",
+        "value_label_status": "official codebook response labels reviewed; official questionnaire 1–5 card matches; individual yesterday-recall item only; no composite mood score or frequency copied; routed denominator requires authorized-release review",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      }
+    ],
+    "status": "表型概念候选；未创建跨波分数",
+    "caveat": "2013年“昨天的感受”条目之一，单项1–5程度评定；不是经验证的心理量表分数，不与其他项目合成。回忆窗与WB03/WB04同为昨天；关联没有明确时间先后。授权数据核验前不推断代理/本人路由、目标分母或缺失类别。"
   },
   {
     "concept_id": "chewing_difficulty_solid_foods",

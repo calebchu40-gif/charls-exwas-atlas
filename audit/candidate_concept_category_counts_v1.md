@@ -17,9 +17,9 @@
 |e|behavioral exposures|1|2|2|
 |e|environmental perception|1|1|1|
 |p|chronic disease ancillary|115|664|664|
+|p|health and symptoms|40|174|171|
 |p|physical function|38|266|260|
 |p|chronic disease|33|248|248|
-|p|health and symptoms|31|165|162|
 |p|cognition|24|338|338|
 |p|healthcare access|22|217|217|
 |p|biochemistry|16|32|32|
@@ -28,4 +28,4 @@
 |p|anthropometric|5|24|15|
 |p|blood pressure|3|54|27|
 
-总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1429个（E=1150、P=288，9个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。
+总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1438个（E=1150、P=297，9个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。

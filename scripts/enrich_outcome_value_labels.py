@@ -41,7 +41,7 @@ for row in health.to_dict('records'):
         lab='1=None; 2=Mild; 3=Moderate; 4=Severe; 5=Extreme'
     elif cid in {'who_bodily_pain_severity','who_sleep_difficulty_severity','who_mobility_problem_severity','who_concentration_memory_difficulty','who_breathlessness_severity','who_low_mood_severity'} and w=='2011' and code in {'de001','de002','de003','de004','de005','de006'}:
         lab='1=None; 2=Mild; 3=Moderate; 4=Severe; 5=Extreme'
-    elif cid in {'affect_sad_yesterday','affect_lonely_yesterday'} and w=='2013' and code in {'wb06','wb08'}:
+    elif cid.startswith('affect_') and w=='2013' and code in {f'wb{i:02d}' for i in range(5,16)}:
         lab='1=Not at all; 2=A little; 3=Somewhat; 4=Quite a bit; 5=Very'
     elif cid=='chewing_difficulty_solid_foods' and w=='2018' and code=='da040_w4_2':
         lab='1=Yes; 2=No; 3=Not Applicable'
@@ -83,6 +83,8 @@ for row in health.to_dict('records'):
         lab='1=Yes; 2=No'
     if lab:
         status='official codebook response labels reviewed; routing/special codes noted where documented'
+        if cid.startswith('affect_') and w=='2013' and code in {f'wb{i:02d}' for i in range(5,16)}:
+            status='official codebook response labels reviewed; official questionnaire 1–5 card matches; individual yesterday-recall item only; no composite mood score or frequency copied; routed denominator requires authorized-release review'
         if cid.startswith('codebook_only_sleep_severity_item_'): status='official codebook response labels reviewed; exact questionnaire item identity unresolved; DO NOT ANALYZE'
         if (w,code)==('2011','da079'): status='official questionnaire response scale verified; Codebook variable-title conflict retained; confirm released data dictionary before analysis'
         if cid=='pain_location' and w in {'2011','2013','2015'}: status+='; positive selected option only, nonselection storage code not inferred'

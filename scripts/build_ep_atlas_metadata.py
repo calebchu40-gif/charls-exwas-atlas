@@ -168,6 +168,11 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     # The prior successful build leaves the public site catalog compacted by
     # site_catalog_shards.py, while these review steps expect one row per wave.
     "build_charls_atlas_catalog.py",
+    # Rebuild symptom outcomes and their official labels, then restore the
+    # separately reviewed Wave-2 balance-test gate appended to that crosswalk.
+    "build_health_symptom_crosswalk.py",
+    "enrich_outcome_value_labels.py",
+    "build_balance_assessment_crosswalk.py",
     "apply_2011_household_member_amount_review.py",
     "apply_social_participation_source_status.py",
     "apply_parent_visit_codebook_labels.py",
