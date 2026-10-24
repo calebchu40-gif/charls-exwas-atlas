@@ -4,7 +4,11 @@
 
 Reviewed 2018 `BD008_W2_1` and `BD008_W4_1` against the official questionnaire and Codebook. Both are continuous years, but W2_1 asks total adult-education years while W4_1 asks years since `ZIWTime`; the preceding BD007 `None` route skips the duration item, so structural skips are not zero. Kept both as E candidates and documented C overlap with estimand-specific use; never adjust for a focal exposure itself. Added the route note to the reproducible crosswalk builder and C metadata updater. Audit: `audit/adult_education_duration_overlap_review_2018_2026-10-24.md`.
 
-The generated catalogue remains E=4,752, P=2,127, C=980; generic pending is E=0, P=0, C=23. All 321 Python tests pass; 34 static JSON files parse; the 89 analysis-lock validator, JavaScript syntax, Python compilation, and `git diff --check` pass. Push and deployment are pending. No respondent records or Codebook frequencies were used. Formal association models remain 0.
+The generated catalogue remains E=4,752, P=2,127, C=980; generic pending is E=0, P=0, C=19. Adult-education route review was pushed as `e38c07e` and deployed to Pages (app cache v76; E/P/C JSON payloads match local byte-for-byte). The next four age-at-event/onset records are documented locally pending deployment. All 323 Python tests pass; 34 static JSON files parse; JavaScript syntax, Python compilation, and `git diff --check` pass. No respondent records or Codebook frequencies were used. Formal association models remain 0.
+
+## 2026-10-24 continuation: classify condition/event age metadata
+
+Reviewed 2013/2015/2018 `DA007_W2_6_2` as the age component of the recent-heart-attack timing item, and 2015 `ZDA065_1` as the prior-wave smoking-history answer for age regular smoking began. These are condition/event timing metadata, not respondent current age, not phenotypes, and not automatic covariates. Added reproducible source checks, official-source audit rows, and a frontend Chinese label. Audit: `audit/condition_event_age_metadata_review_v1.csv`.
 
 ## 2026-10-24 continuation: map marriage-history event timing by wave
 
