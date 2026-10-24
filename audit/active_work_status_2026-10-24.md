@@ -2,7 +2,7 @@
 
 ## 2026-10-24 continuation: recheck community-key coverage for PSU mapping
 
-Re-ran the five-wave community-key coverage against the protected local `psu.dta` candidate. All observed nonmissing community IDs match the candidate map, consistent with the earlier aggregate report. The validator now accepts an explicitly private local map path and labels its result as key coverage only. The candidate's exact source archive identity is still unverified, and province/city/urban/rural/area fields are not accepted as a variance stratum. The official Wave 2 weights file is still absent, and no model-readiness gate was closed. Synthetic key-normalization and duplicate-key tests pass; 344 total tests pass and all 89 analysis locks remain exact. Audit: `audit/psu_key_coverage_recheck_2026-10-24.md`; latest commit forthcoming.
+Re-ran the five-wave community-key coverage against the protected local `psu.dta` candidate. All observed nonmissing community IDs match the candidate map, consistent with the earlier aggregate report. The validator now accepts an explicitly private local map path and labels its result as key coverage only. The candidate's exact source archive identity is still unverified, and province/city/urban/rural/area fields are not accepted as a variance stratum. The official Wave 2 weights file is still absent, and no model-readiness gate was closed. Synthetic key-normalization and duplicate-key tests pass; 344 total tests pass and all 89 analysis locks remain exact. Audit: `audit/psu_key_coverage_recheck_2026-10-24.md`; commit `9a640dc`.
 
 ## 2026-10-24 continuation: protected property-sale field storage review
 
