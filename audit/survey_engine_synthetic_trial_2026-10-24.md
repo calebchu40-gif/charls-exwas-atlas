@@ -15,23 +15,27 @@ It creates 4 strata, 2 PSUs per stratum, and 12 synthetic observations per PSU. 
 
 ## Result
 
-| Synthetic design declaration | Weighted mean | Mean SE | Mean df | Exposure beta | Exposure SE | GLM df |
-|---|---:|---:|---:|---:|---:|---:|
-| Known four strata + PSU + weight | 4.896739 | 0.250000 | 4 | 1.349993 | 0.038839 | 3 |
-| Stratum omitted; one unstratified PSU design + same weight | 4.896739 | 0.866025 | 7 | 1.349993 | 0.117514 | 6 |
+| Synthetic design declaration | Weighted mean | Engine mean SE | Manual mean SE | Mean df | Exposure beta | Engine exposure SE | Manual exposure SE | GLM df |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Known four strata + PSU + weight | 4.896739 | 0.250000 | 0.250000 | 4 | 1.349993 | 0.038839 | 0.038839 | 3 |
+| Stratum omitted; one unstratified PSU design + same weight | 4.896739 | 0.866025 | 0.866025 | 7 | 1.349993 | 0.117514 | 0.117514 | 6 |
 
-The point estimates match because the records and weights are unchanged. The standard errors and design degrees of freedom differ substantially in this constructed example. This is an illustration of sensitivity to the declared design, not a general theorem that omitting strata always increases uncertainty.
+For the mean, the engine's SE exactly matches an independently calculated one-stage with-replacement PSU Taylor variance in the script. Let `u_hi = sum_j w_hij (y_hij - ybar_w)` be the linearized total for PSU i in stratum h. The hand calculation is `Var(ybar_w) = sum_h [m_h/(m_h-1) * sum_i (u_hi - mean_h(u))^2] / (sum w)^2`; omitting strata treats all PSUs as one group in this formula.
+
+For this Gaussian identity-link model, the weighted least-squares coefficient and its PSU-score Taylor sandwich SE are also independently calculated in the script and match the engine to floating-point precision. The manual covariance is `B^-1 [sum_h m_h/(m_h-1) * sum_i (s_hi - mean_h(s)) (s_hi - mean_h(s))'] B^-1`, where `B = X'WX` and `s_hi = X_hi' W_hi e_hi`. This verifies the reported coefficient SE for this synthetic linear model only; it does not validate other families, finite-sample p-value or degrees-of-freedom conventions, or any CHARLS analysis.
+
+The point estimates match because the records and weights are unchanged. The standard errors and design degrees of freedom differ substantially in this constructed example. The example intentionally contains strong between-stratum differences; this is an illustration of sensitivity to the declared design, not a general theorem that omitting strata always increases uncertainty. The CRAN `survey` manual likewise treats stratification and cluster structure as explicit design inputs and documents the ultimate-cluster option for multistage variance estimation.
 
 ## Interpretation for CHARLS
 
 The installed `svy` API accepts stratum, PSU, weight, and with-replacement design components separately; the local probe confirms it will also calculate results when a stratum is omitted. That technical capability does not establish that omission is appropriate for CHARLS. Official CHARLS materials describe stratified multistage sampling and community PSUs. Until the exact released variance stratum, replicate-weight files, or an official variance recommendation is verified for the relevant wave and module, the unstratified output remains an explicitly approximate sensitivity candidate and is not a primary result. No unweighted/weighted regression on real CHARLS data is authorized by this probe.
 
-The package's publisher reports comparisons against R's `survey` package for equivalent design declarations. This machine has no R installation, so the current probe does not independently reproduce that cross-software comparison. The project should still validate any selected engine against an independent trusted implementation on synthetic designs before real model runs.
+The package's publisher reports comparisons against R's `survey` package for equivalent design declarations. This machine has no R installation, so the current probe does not independently reproduce that cross-software comparison. The hand calculations independently check this specific mean and Gaussian-model covariance formula; they do not replace broader cross-software and family-specific validation before any future real model run.
 
 ## Sources
 
 - `svy` design declaration and API: [official Getting Started documentation](https://svylab.com/docs/svy/getting_started.html).
 - `svy` model variance behavior: [official GLM tutorial](https://svylab.com/docs/svy/tutorials/glm.html) states that Taylor linearization is the default and replicate weights require an explicit method selection.
 - Package comparison claim (publisher-authored, not independently replicated here): [svy versus R `survey`](https://svylab.com/learn/notes/posts/svy-vs-r-comparison).
-- Reference implementation scope: [CRAN `survey` manual](https://cran.r-project.org/web/packages/survey/refman/survey.html) describes Taylor and replicate-weight variance estimation for multistage, stratified, cluster-sampled, unequally weighted designs.
+- Reference implementation scope: [CRAN `survey` manual](https://cran.r-project.org/web/packages/survey/refman/survey.html) describes Taylor and replicate-weight variance estimation for multistage, stratified, cluster-sampled, unequally weighted designs and identifies `one.stage=TRUE` as an ultimate-cluster variance estimator.
 - CHARLS sampling and PSU constraints remain in [`survey_design_weight_review_v1.md`](survey_design_weight_review_v1.md) and [`CHARLS_ExWAS分析规约_v0.1.md`](CHARLS_ExWAS%E5%88%86%E6%9E%90%E8%A7%84%E7%BA%A6_v0.1.md).
