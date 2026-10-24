@@ -112,7 +112,6 @@ FULL_PIPELINE_SCRIPTS = (
     "build_charls_atlas_catalog.py",
     "apply_wave5_core_demographic_review.py",
     "apply_wave5_digital_behavior_review.py",
-    "summarize_value_label_coverage.py",
     "validate_do_not_analyze_triage.py",
     "apply_housing_context_source_review.py",
     "build_ep_concept_source_crosswalk.py",
@@ -154,6 +153,7 @@ FULL_PIPELINE_SCRIPTS = (
     # C metadata is propagated after the first shard build above; regenerate
     # role-specific browser payloads last so they match the final master file.
     "site_catalog_shards.py",
+    "summarize_value_label_coverage.py",
 )
 
 # Use only when the upstream audit/crosswalk files are already current and a
@@ -188,7 +188,6 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "build_charls_atlas_catalog.py",
     "apply_wave5_core_demographic_review.py",
     "apply_wave5_digital_behavior_review.py",
-    "summarize_value_label_coverage.py",
     "validate_do_not_analyze_triage.py",
     "build_ep_concept_source_crosswalk.py",
     "apply_catalog_role_overrides.py",
@@ -227,6 +226,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "summarize_catalog_concept_categories.py",
     "refresh_candidate_series_review_status.py",
     "site_catalog_shards.py",
+    "summarize_value_label_coverage.py",
 )
 
 

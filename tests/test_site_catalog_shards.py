@@ -46,8 +46,9 @@ class SiteCatalogShardTests(unittest.TestCase):
                 self.assertEqual(row["value_labels"], row["Value.Labels"])
 
     def test_both_metadata_pipelines_rebuild_role_shards_after_all_catalog_edits(self):
-        self.assertEqual(FINALIZATION_PIPELINE_SCRIPTS[-1], "site_catalog_shards.py")
-        self.assertEqual(FULL_PIPELINE_SCRIPTS[-1], "site_catalog_shards.py")
+        for pipeline in (FINALIZATION_PIPELINE_SCRIPTS, FULL_PIPELINE_SCRIPTS):
+            self.assertEqual(pipeline[-2], "site_catalog_shards.py")
+            self.assertEqual(pipeline[-1], "summarize_value_label_coverage.py")
         for pipeline in (FINALIZATION_PIPELINE_SCRIPTS, FULL_PIPELINE_SCRIPTS):
             self.assertLess(pipeline.index("refresh_candidate_series_review_status.py"), len(pipeline) - 1)
 
