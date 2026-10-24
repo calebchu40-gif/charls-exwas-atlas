@@ -625,6 +625,59 @@ def main() -> None:
         "release_interpretation": "exposure term inestimable; do not release its finite iteration coefficient",
     }
 
+    # A sparse outcome can yield finite-looking results without an engine warning.
+    sparse_event_positions = {(0, 0), (1, 2)}
+    sparse_event_rows = []
+    for h in range(6):
+        for p in range(3):
+            for person in range(12):
+                psu_index = h * 3 + p
+                exposure_value = int(person in {0, 1, 4, 5, 8, 9})
+                sparse_event_rows.append(
+                    {
+                        "stratum": h,
+                        "psu": f"{h}-{p}",
+                        "exposure": exposure_value,
+                        "outcome": int((psu_index, person) in sparse_event_positions),
+                        "weight": 1.0,
+                    }
+                )
+    sparse_event_data = pl.DataFrame(sparse_event_rows)
+    sparse_event_sample = svy.Sample(
+        data=sparse_event_data,
+        design=svy.Design(stratum="stratum", psu="psu", wgt="weight", wr=True),
+    )
+    with warnings.catch_warnings(record=True) as caught:
+        warnings.simplefilter("always")
+        sparse_event_result = sparse_event_sample.glm.fit(
+            y="outcome", x=["exposure"], family="binomial", link="logit"
+        ).to_polars().to_dicts()
+    sparse_event_warnings = [str(item.message) for item in caught]
+    sparse_event_exposure = next(
+        row for row in sparse_event_result if row["term"] == "exposure"
+    )
+    sparse_event_count = int(sparse_event_data["outcome"].sum())
+    if (
+        sparse_event_count != 2
+        or sparse_event_warnings
+        or not np.isfinite(sparse_event_exposure["estimate"])
+        or not np.isfinite(sparse_event_exposure["std_err"])
+    ):
+        raise AssertionError(
+            "The sparse-event synthetic fixture should return finite output without an engine warning"
+        )
+    outputs["synthetic_sparse_events_no_warning"] = {
+        "n": sparse_event_data.height,
+        "event_count": sparse_event_count,
+        "warnings": sparse_event_warnings,
+        "finite_estimate": bool(np.isfinite(sparse_event_exposure["estimate"])),
+        "finite_standard_error": bool(np.isfinite(sparse_event_exposure["std_err"])),
+        "estimate": sparse_event_exposure["estimate"],
+        "standard_error": sparse_event_exposure["std_err"],
+        "p_value": sparse_event_exposure["p_value"],
+        "release_interpretation": "finite engine output is not a sparsity safeguard; assess support under prespecified rules",
+    }
+
     print(json.dumps({"svy_version": version, "synthetic_only": True, "outputs": outputs}, indent=2))
 
 
