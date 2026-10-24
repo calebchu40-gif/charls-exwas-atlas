@@ -2,6 +2,7 @@
 
 ## 2026-10-24
 
+- Added an audited coverage check between automated E/P candidate field-wave roles and the approved concept-source crosswalk. It records the only current discovery-role exception: 49 internal biomarker rows that remain phenotype-linked but are not approved exogenous exposure links; no respondent data or counts were used.
 - Clarified that CHARLS's 2021–2023 regular fifth-round fieldwork materials are not themselves a public data release. The current official data index lists the 2020 follow-up as the latest nationwide release reviewed for this project. Added a dated source audit and direct links from the objective-measurement catalogue; future waves remain excluded until their released datasets and documentation can be verified.
 
 ## 2026-10-24 (continued)
