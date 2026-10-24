@@ -177,12 +177,15 @@ def validate_rows(rows: list[dict[str, str]], schema_fields: list[str], required
             for field in ("estimate", "standard_error", "ci_lower", "ci_upper", "p_value", "q_value_by", "p_bonferroni", "n_model"):
                 if not row.get(field, "").strip():
                     errors.append(f"row {row_no}: success requires {field}")
-            if row.get("weight_status", "").strip() in {"unresolved", "unavailable_pending_authorized_file"}:
-                errors.append(f"row {row_no}: successful fit has unresolved/unavailable weight status")
-            if row.get("psu_status", "").strip() in {"unresolved", "unavailable_pending_authorized_file"}:
-                errors.append(f"row {row_no}: successful fit has unresolved/unavailable PSU status")
-            if row.get("stratum_status", "").strip() in {"unresolved", "unavailable_pending_authorized_file"}:
-                errors.append(f"row {row_no}: successful fit has unresolved/unavailable stratum status")
+            weight_status = row.get("weight_status", "").strip()
+            if weight_status not in {"verified_used", "verified_unweighted"}:
+                errors.append(f"row {row_no}: successful fit requires a verified weight choice or documented verified_unweighted status")
+            psu_status = row.get("psu_status", "").strip()
+            if psu_status != "verified_used":
+                errors.append(f"row {row_no}: successful CHARLS fit requires the verified PSU to be used")
+            stratum_status = row.get("stratum_status", "").strip()
+            if stratum_status not in {"verified_used", "not_released"}:
+                errors.append(f"row {row_no}: successful fit requires a verified stratum or documented not_released status")
             if not _has_sha256(row.get("data_release", "")):
                 errors.append(f"row {row_no}: successful fit requires an official release SHA256 in data_release")
             if not _has_git_commit(row.get("software_versions", "")):
@@ -190,6 +193,10 @@ def validate_rows(rows: list[dict[str, str]], schema_fields: list[str], required
             variance = row.get("variance_design", "").strip().lower()
             if "not fit-ready" in variance or "unresolved" in variance or "not verified" in variance:
                 errors.append(f"row {row_no}: successful fit cannot claim an unverified variance design")
+            if stratum_status == "not_released" and not any(
+                term in variance for term in ("approximation", "approximate", "近似")
+            ):
+                errors.append(f"row {row_no}: not_released stratum requires an explicitly labeled approximate variance method")
         elif has_estimate:
             errors.append(f"row {row_no}: estimate fields must be blank unless fit_status=success")
 
