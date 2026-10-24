@@ -28,6 +28,7 @@ def main() -> None:
                     {
                         "stratum": stratum,
                         "psu": f"{stratum}-{psu}",
+                        "person": person,
                         "weight": 1.0 + (person % 3) * 0.15,
                         "outcome": stratum * 2 + psu + person * 0.25,
                         "exposure": stratum + psu + person % 3,
@@ -156,8 +157,18 @@ def main() -> None:
         }
 
     # A domain that has observations in only one of two PSUs per stratum.
+    domain_data = data.with_columns(
+        pl.when(pl.col("domain"))
+        .then(pl.col("outcome"))
+        .otherwise(None)
+        .alias("outcome"),
+        pl.when(pl.col("domain"))
+        .then(pl.col("exposure"))
+        .otherwise(None)
+        .alias("exposure"),
+    )
     full_design = svy.Sample(
-        data=data,
+        data=domain_data,
         design=svy.Design(stratum="stratum", psu="psu", wgt="weight", wr=True),
     )
     domain = svy.col("domain")
@@ -228,6 +239,67 @@ def main() -> None:
         "domain_glm_matches_manual": True,
         "glm_df": domain_exposure["df"],
         "prefiltering_raises_singleton_error": filtered_domain_raises,
+    }
+
+    # One pairwise-complete loss inside the domain; keep full design rows.
+    missing_pair = (pl.col("psu") == "0-0") & (pl.col("person") == 0)
+    pair_data = domain_data.with_columns(
+        pl.when(missing_pair).then(None).otherwise(pl.col("outcome")).alias("outcome"),
+        pl.when(missing_pair).then(None).otherwise(pl.col("exposure")).alias("exposure"),
+    )
+    pair_sample = svy.Sample(
+        data=pair_data,
+        design=svy.Design(stratum="stratum", psu="psu", wgt="weight", wr=True),
+    )
+    pair_model = pair_sample.glm.fit(
+        y="outcome", x=["exposure"], family="gaussian", where=domain,
+        drop_nulls=True,
+    )
+    pair_exposure = next(
+        row for row in pair_model.to_polars().to_dicts()
+        if row["term"] == "exposure"
+    )
+    pair_complete_mask = ~np.asarray(
+        [stratum_value == 0 and psu_value == "0-0" and person == 0
+         for stratum_value, psu_value, person in zip(
+             stratum.tolist(), psu.tolist(), data["person"].to_list()
+         )],
+        dtype=bool,
+    )
+    pair_weight = domain_weight * pair_complete_mask
+    pair_bread = np.linalg.inv(
+        model_matrix.T @ (pair_weight[:, None] * model_matrix)
+    )
+    pair_beta = pair_bread @ (model_matrix.T @ (pair_weight * outcome))
+    pair_residual = outcome - model_matrix @ pair_beta
+    pair_meat = np.zeros((2, 2))
+    for h in sorted(set(stratum.tolist())):
+        stratum_scores = []
+        for p in sorted(set(psu[stratum == h].tolist())):
+            in_psu = (stratum == h) & (psu == p)
+            stratum_scores.append(
+                model_matrix[in_psu].T @ (pair_weight[in_psu] * pair_residual[in_psu])
+            )
+        scores = np.asarray(stratum_scores, dtype=float)
+        centered = scores - scores.mean(axis=0)
+        pair_meat += len(scores) / (len(scores) - 1) * centered.T @ centered
+    pair_covariance = pair_bread @ pair_meat @ pair_bread
+    pair_manual_beta = float(pair_beta[1])
+    pair_manual_se = float(np.sqrt(pair_covariance[1, 1]))
+    if pair_sample.data.height != data.height or pair_model.fitted.stats.n != 47:
+        raise AssertionError("Pairwise complete-case fitting must retain the design rows and count 47 cases")
+    if not np.isclose(pair_exposure["estimate"], pair_manual_beta, rtol=1e-12, atol=1e-12):
+        raise AssertionError("Pairwise complete-case coefficient differs from manual WLS")
+    if not np.isclose(pair_exposure["std_err"], pair_manual_se, rtol=1e-12, atol=1e-12):
+        raise AssertionError("Pairwise complete-case SE differs from full-design manual sandwich")
+    outputs["synthetic_pairwise_complete_case"] = {
+        "pair_complete_n": pair_model.fitted.stats.n,
+        "design_rows_retained": pair_sample.data.height,
+        "manual_glm_exposure_beta": pair_manual_beta,
+        "glm_exposure_beta": pair_exposure["estimate"],
+        "manual_glm_exposure_se": pair_manual_se,
+        "glm_exposure_se": pair_exposure["std_err"],
+        "pairwise_model_matches_full_design_manual": True,
     }
 
     print(json.dumps({"svy_version": version, "synthetic_only": True, "outputs": outputs}, indent=2))
