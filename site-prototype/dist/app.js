@@ -156,6 +156,7 @@ const C_SUBCATEGORY_LABELS={
   "prior-wave demographic record verification and response routing":"前一波次人口学记录核验与回答路径",
   "prior-wave diagnosis-time answer-history flags":"前一波次诊断时间回答历史标记",
   "prior-wave diagnosis-time preload values":"前一波次诊断时间预载年龄值（非当前波协变量）",
+  "prior-wave reproductive-history preload values":"前一波次生殖史预载年龄值（非当前波暴露/结局）",
   "property-sale proceeds use-category selector slot":"房产出售所得用途类别选择槽位",
   "province-level pension-source work-unit location metadata":"省级养老金来源单位地点元数据",
   "questionnaire inserted activity-type labels":"问卷新增活动类型标签",
@@ -195,7 +196,7 @@ function renderCatalog(all, role, prefix) {
     if (x.value_label_review?.startsWith('DO NOT ANALYZE; questionnaire:')) valueStatus='⚠ 问卷与Codebook编码冲突，已锁定不可分析；'+x.value_label_review;
     const relationStratified=x.concept_mapping_relationship?.startsWith('relationship_stratified_parent_record_measure:');
     const candidateStatus=x['Candidate.Status']||'C类来源/测量元数据';
-    const conceptDisplay=role==='c'?(candidateStatus==='automated discovery; questionnaire/codebook review required'?'自动发现纳入候选目录；逐字段核验状态见来源与值标签列':candidateStatus==='official questionnaire and Codebook reviewed; prior-wave diagnosis-time preload metadata'?'官方问卷与代码本已核；前波诊断时间预载元数据':candidateStatus):[x.candidate_concept_ids||'待归属稳定概念',x.candidate_concept_alias_ids?`别名：${x.candidate_concept_alias_ids}`:'',x.concept_mapping_collision&&!relationStratified?'⚠ 构念重叠待按关系审查':'',x['Review.Flag']?.includes('DO NOT ANALYZE')?'\u26a0 DO NOT ANALYZE':''].filter(Boolean).join('；');
+    const conceptDisplay=role==='c'?(candidateStatus==='automated discovery; questionnaire/codebook review required'?'自动发现纳入候选目录；逐字段核验状态见来源与值标签列':candidateStatus==='official questionnaire and Codebook reviewed; prior-wave diagnosis-time preload metadata'?'官方问卷与代码本已核；前波诊断时间预载元数据':candidateStatus==='official questionnaire and Codebook reviewed; prior-wave reproductive-history preload metadata'?'官方问卷与代码本已核；前波生殖史预载元数据':candidateStatus):[x.candidate_concept_ids||'待归属稳定概念',x.candidate_concept_alias_ids?`别名：${x.candidate_concept_alias_ids}`:'',x.concept_mapping_collision&&!relationStratified?'⚠ 构念重叠待按关系审查':'',x['Review.Flag']?.includes('DO NOT ANALYZE')?'\u26a0 DO NOT ANALYZE':''].filter(Boolean).join('；');
     const metadataNote=role==='c'?(x.concept_mapping_caveats||x['Review.Flag']||'请回查来源问卷/代码本'):'';
     const metadataReview=x.value_label_review?.startsWith('official selector code reviewed;')?valueStatus:x.value_label_review?.startsWith('official questionnaire and Codebook reviewed; continuous prior-wave diagnosis-age value')?'官方问卷与代码本已确认：前波诊断/知悉年龄数值；不是当前波结局或通用调整变量':x['Value.Label.Review']==='not yet reviewed'?'官方值标签/编码尚未逐项核验；连续变量可能没有离散类别标签':x['Value.Label.Review']==='officially reviewed'?'官方值标签已核验':x['Value.Label.Review'];
     const metadataSemantics=role==='c'?([x.value_labels,metadataReview].filter(Boolean).join('；')||'测量/设计元数据'):'';
