@@ -19,6 +19,7 @@ EXPECTED = {
     "community_major_crop_production": {
         **{f"jj001_{rank}{suffix}": unit for rank in range(1, 4) for suffix, unit in (("a", ""), ("b", "mu"), ("c", "jin/mu"), ("d", ""), ("e", "harvest seasons/year"), ("f", "harvest seasons/year (historical maximum)"))},
     },
+    "community_household_amenity_penetration": {code: "percent of village households" for code in ("jb023", "jb024", "jb025", "jb026")},
 }
 
 
@@ -42,7 +43,7 @@ class CommunityLandAgricultureMarketReviewTests(unittest.TestCase):
                 self.assertEqual(rows[code]["wave"], "2011")
                 self.assertIn("analysis eligibility pending", rows[code]["mapping_status"])
                 self.assertTrue(rows[code]["source_evidence"].startswith("CHARLS 2011 Community Questionnaire"))
-        self.assertEqual(sum(map(len, EXPECTED.values())), 44)
+        self.assertEqual(sum(map(len, EXPECTED.values())), 48)
 
     def test_ja012_conflict_is_excluded_and_documented(self):
         self.assertFalse(any(r["code"].lower() == "ja012" for r in self.rows))
@@ -77,6 +78,13 @@ class CommunityLandAgricultureMarketReviewTests(unittest.TestCase):
             self.assertIn("not individual machinery contact", by_code[f"jj001_{rank}d"]["caveat"])
             self.assertIn("historical maximum", by_code[f"jj001_{rank}f"]["unit"])
             self.assertIn("crop rank", by_code[f"jj001_{rank}b"]["caveat"])
+
+    def test_amenity_percentages_remain_community_level(self):
+        concept = self.by_id["community_household_amenity_penetration"]
+        self.assertIn("aggregate community percentages", concept["caveat"])
+        for field in concept["source_fields"]:
+            self.assertEqual(field["unit"], "percent of village households")
+            self.assertIn("not confirmed ownership or use", field["caveat"])
 
 
 if __name__ == "__main__":

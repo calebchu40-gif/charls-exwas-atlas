@@ -2,7 +2,7 @@
 
 ## Scope
 
-This review adds 44 source-field mappings across seven concepts to the 2011 Community-module candidate inventory. It uses the official community questionnaire and Codebook plus the project's raw field-name catalogue. All values are community-informant context, not participant-level measurements. The fields remain candidates pending authorized-release linkage, eligibility, special-value and analysis-design checks. No respondent records, Codebook frequencies or descriptive extrema are used.
+This review adds 48 source-field mappings across eight concepts to the 2011 Community-module candidate inventory. It uses the official community questionnaire and Codebook plus the project's raw field-name catalogue. All values are community-informant context, not participant-level measurements. The fields remain candidates pending authorized-release linkage, eligibility, special-value and analysis-design checks. No respondent records, Codebook frequencies or descriptive extrema are used.
 
 ## Added concepts and source fields
 
@@ -15,8 +15,9 @@ This review adds 44 source-field mappings across seven concepts to the 2011 Comm
 | Community food commodity prices | `JJ017`–`JJ020` | Current reported local prices for pork tenderloin, eggs, rice and wheat/flour, each per jin | Food-market context, not individual purchasing, dietary intake or nutrient exposure. Do not merge the four commodities into a score. |
 | Community household energy prices | `JJ021`, `JJ022`, `JJ025` | Current reported natural-gas price per m³, LPG per bottle and coal per jin | Local price context, not evidence of household connection/use, fuel mix or combustion exposure. LPG bottle size is not specified. |
 | Community major-crop production | `JJ001_1a`–`JJ001_3f` | Up to three ranked crops; each has open-text crop name, 2010 planted area (mu), yield (jin/mu), machinery use (Yes/No), current harvest seasons and historical maximum seasons | Keep crop rank and unlike units separate. Do not sum yields or derive production without release-level validation; these are community agricultural context, not an individual's occupation, diet or pesticide exposure. |
+| Community household communication/appliance penetration | `JB023`–`JB026` | Village estimates of household prevalence of fixed telephones, at least one cell phone, television and refrigerator, in percent | These are aggregate 0–100% context measures, not individual or sampled-household device ownership/use; retain the four amenities separately. |
 
-Questionnaire locations are Part A, printed pp. 2–7 (land and terrain), and Part J, printed p. 35 (ranked crop table) and pp. 35–39 (agricultural inputs and prices). The generator verifies the mapped field identifiers against both official source extracts, checks the question wording and route anchors, and separately checks the terrain response list. The value-label builder exposes only Codebook categories; it omits Codebook frequencies and numeric summaries.
+Questionnaire locations are Part A, printed pp. 2–7 (land and terrain), Part B, printed p. 11 (household amenity percentages), and Part J, printed p. 35 (ranked crop table) and pp. 35–39 (agricultural inputs and prices). The generator verifies the mapped field identifiers against both official source extracts, checks the question wording and route anchors, and separately checks the terrain response list. The value-label builder exposes only Codebook categories; it omits Codebook frequencies and numeric summaries.
 
 ## Unresolved source conflict: JA012
 

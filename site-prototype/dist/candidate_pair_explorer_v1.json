@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 586,
+      "exposure_count": 587,
       "phenotype_count": 213,
-      "candidate_pair_count": 124811,
+      "candidate_pair_count": 125024,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -2510,6 +2510,56 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_household_amenity_penetration",
+          "label": "Community household communication and appliance penetration",
+          "domain": "Community socioeconomic context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb023",
+              "label": "Percentage of Households with Telephone",
+              "module": "community",
+              "unit": "percent of village households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant estimate of the share of village households with this amenity (0–100%). Aggregate context, not confirmed ownership or use by the sampled household or individual."
+            },
+            {
+              "code": "jb024",
+              "label": "Percentage of Households with Cell Phone",
+              "module": "community",
+              "unit": "percent of village households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant estimate of the share of village households with this amenity (0–100%). Aggregate context, not confirmed ownership or use by the sampled household or individual."
+            },
+            {
+              "code": "jb025",
+              "label": "Percentage of Households with TV",
+              "module": "community",
+              "unit": "percent of village households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant estimate of the share of village households with this amenity (0–100%). Aggregate context, not confirmed ownership or use by the sampled household or individual."
+            },
+            {
+              "code": "jb026",
+              "label": "Percentage of Households with Refrigerator",
+              "module": "community",
+              "unit": "percent of village households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant estimate of the share of village households with this amenity (0–100%). Aggregate context, not confirmed ownership or use by the sampled household or individual."
             }
           ]
         },

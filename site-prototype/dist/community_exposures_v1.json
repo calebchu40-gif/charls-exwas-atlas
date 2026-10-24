@@ -1594,6 +1594,66 @@
     ]
   },
   {
+    "concept_id": "community_household_amenity_penetration",
+    "label": "Community household communication and appliance penetration",
+    "domain": "Community socioeconomic context",
+    "caveat": "2011 village-informant estimates of the share of households with fixed telephones, one or more cell phones, televisions, and refrigerators. These are aggregate community percentages, not the sampled household's ownership, use, or an individual's digital exposure; preserve each amenity separately.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb023",
+        "module": "community",
+        "source_label": "Percentage of Households with Telephone",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.11 (PDF p.14), JB023–JB026 V-only village household-penetration estimates; 0–100 percent scale checked against the official Codebook.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "percent of village households",
+        "caveat": "Community-informant estimate of the share of village households with this amenity (0–100%). Aggregate context, not confirmed ownership or use by the sampled household or individual.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb024",
+        "module": "community",
+        "source_label": "Percentage of Households with Cell Phone",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.11 (PDF p.14), JB023–JB026 V-only village household-penetration estimates; 0–100 percent scale checked against the official Codebook.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "percent of village households",
+        "caveat": "Community-informant estimate of the share of village households with this amenity (0–100%). Aggregate context, not confirmed ownership or use by the sampled household or individual.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb025",
+        "module": "community",
+        "source_label": "Percentage of Households with TV",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.11 (PDF p.14), JB023–JB026 V-only village household-penetration estimates; 0–100 percent scale checked against the official Codebook.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "percent of village households",
+        "caveat": "Community-informant estimate of the share of village households with this amenity (0–100%). Aggregate context, not confirmed ownership or use by the sampled household or individual.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb026",
+        "module": "community",
+        "source_label": "Percentage of Households with Refrigerator",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B p.11 (PDF p.14), JB023–JB026 V-only village household-penetration estimates; 0–100 percent scale checked against the official Codebook.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "percent of village households",
+        "caveat": "Community-informant estimate of the share of village households with this amenity (0–100%). Aggregate context, not confirmed ownership or use by the sampled household or individual.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
     "concept_id": "community_kindergarten_count",
     "label": "Kindergartens in community (count)",
     "domain": "Community infrastructure",

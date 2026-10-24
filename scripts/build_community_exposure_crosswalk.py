@@ -33,6 +33,7 @@ CONCEPTS={
  "community_food_prices":("Community-reported food commodity prices","Community food environment","2011 informant-reported current local prices for pork tenderloin, eggs, rice and wheat/flour. These indicate community price context, not what a participant bought, ate, or received nutritionally; retain commodity-specific source fields and units."),
  "community_household_energy_prices":("Community-reported household energy prices","Community environment","2011 informant-reported current local prices for natural gas, bottled LPG and coal. Prices are community context, not household fuel use, fuel mix, combustion or personal pollutant dose; retain distinct units."),
  "community_major_crop_production":("Community major-crop production profile","Community agricultural context","2011 village informant ranks up to three major crops and reports crop-specific planted area, yield per mu, mechanized production, current harvest seasons and historical maximum seasons. Keep crop ranks and unlike measurement units separate; do not sum yields or derive personal pesticide, occupation or dietary exposure."),
+ "community_household_amenity_penetration":("Community household communication and appliance penetration","Community socioeconomic context","2011 village-informant estimates of the share of households with fixed telephones, one or more cell phones, televisions, and refrigerators. These are aggregate community percentages, not the sampled household's ownership, use, or an individual's digital exposure; preserve each amenity separately."),
 }
 MAP={
  "community_water_sources":["jb006_1","jb006_2","jb006_3","jb006_4","jb006_5","jb006_6","jb006_7","jb006_8"],
@@ -62,6 +63,7 @@ MAP={
  "community_food_prices":["jj017","jj018","jj019","jj020"],
  "community_household_energy_prices":["jj021","jj022","jj025"],
  "community_major_crop_production":[*[f"jj001_{i}{suffix}" for i in range(1,4) for suffix in "abcdef"]],
+ "community_household_amenity_penetration":["jb023","jb024","jb025","jb026"],
 }
 
 # The 2011 Community Questionnaire pages 10, 21–22, and 32–33 explicitly
@@ -145,6 +147,7 @@ QUESTIONNAIRE_REVIEWED = {
  "community_land_use_profile","community_main_terrain","community_agricultural_mechanization",
  "community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices",
  "community_major_crop_production",
+ "community_household_amenity_penetration",
  *[cid for cid in CONCEPTS if cid.startswith("community_kindergarten_") or
     cid.startswith("community_primary_school_") or cid.startswith("community_junior_middle_school_") or
     cid.startswith("community_senior_high_school_") or cid.startswith("community_post_office_") or
@@ -167,7 +170,7 @@ def validate_added_source_mappings():
  cpath=ROOT/"sources_official"/"CHARLS_2011_Codebook_extracted.txt"
  q=" ".join(qpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
  cb=" ".join(cpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
- codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production") for code in MAP[cid]}
+ codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration") for code in MAP[cid]}
  for code in codes:
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
   q_norm="".join(ch for ch in q if ch.isalnum())
@@ -206,6 +209,10 @@ def validate_added_source_mappings():
   "what is the planting area in 2010",
   "what is the average output per mu",
   "how many seasons do you harvest this crop",
+  "what percentage of households in your village has telephone",
+  "what percentage of households in your village has one (or more) cell phones",
+  "what percentage of households in your village have a tv",
+  "what percentage of households in your village has a refrigerator",
  )
  for phrase in required_q:
   if phrase not in q:
@@ -248,6 +255,8 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part J pp.38–39 (PDF pp.41–42), commodity-specific current-price prompts and units checked against the official Codebook; no numeric summaries copied."
     elif cid == "community_major_crop_production":
      evidence="CHARLS 2011 Community Questionnaire, Part J p.35 (PDF p.38), JJ001 ranked three-crop table; crop name, 2010 planted area, yield per mu, mechanized-production response and crop-season fields checked against the official Codebook; frequencies omitted."
+    elif cid == "community_household_amenity_penetration":
+     evidence="CHARLS 2011 Community Questionnaire, Part B p.11 (PDF p.14), JB023–JB026 V-only village household-penetration estimates; 0–100 percent scale checked against the official Codebook."
     elif cid.startswith("community_observed_") or cid in {"community_built_form_organization", "community_accessibility_observation"}:
      evidence="CHARLS 2011 Community Questionnaire, Part K interviewer observations; item-specific 1–7 endpoint anchors verified."
     elif is_reviewed:
@@ -341,6 +350,9 @@ def main():
     elif code_l.startswith("jj001_") and code_l.endswith("f"):
      unit="harvest seasons/year (historical maximum)"
      caveat="Informant-reported historical maximum harvest seasons per year for this crop; not directly comparable to the current typical seasons field."
+    elif code_l in {"jb023","jb024","jb025","jb026"}:
+     unit="percent of village households"
+     caveat="Community-informant estimate of the share of village households with this amenity (0–100%). Aggregate context, not confirmed ownership or use by the sampled household or individual."
     if code_l.startswith(("jb006_", "jb007_")):
      unit="households"
     elif code_l.startswith("jb028_1_") or code_l.startswith("jf002_1_"):
@@ -403,6 +415,8 @@ def main():
      unit="harvest seasons/year"
     elif code_l.startswith("jj001_") and code_l.endswith("f"):
      unit="harvest seasons/year (historical maximum)"
+    elif code_l in {"jb023","jb024","jb025","jb026"}:
+     unit="percent of village households"
     else:
      unit=""
     rows.append({"concept_id":cid,"concept_label":label,"domain":domain,"wave":2011,

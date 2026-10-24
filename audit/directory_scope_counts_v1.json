@@ -1,10 +1,10 @@
 {
   "as_of": "2026-10-24",
   "crosswalk_files": 80,
-  "candidate_concept_ids": 1456,
-  "exposure_concept_ids_including_dual": 1164,
+  "candidate_concept_ids": 1457,
+  "exposure_concept_ids_including_dual": 1165,
   "phenotype_concept_ids_including_dual": 301,
-  "wave_field_mapping_rows": 6723,
+  "wave_field_mapping_rows": 6727,
   "includes": "all E/P candidate rows from ep_concept_source_crosswalk_v1.csv",
   "excludes": "C-only measurement eligibility rows; verified_code_examples_v1.csv is a separate multiwave lookup",
   "domains": [
@@ -75,8 +75,8 @@
     },
     {
       "file": "audit/community_exposure_crosswalk_v1.csv",
-      "mapping_rows": 242,
-      "concept_ids": 111
+      "mapping_rows": 246,
+      "concept_ids": 112
     },
     {
       "file": "audit/core_concept_coverage_v1.csv",

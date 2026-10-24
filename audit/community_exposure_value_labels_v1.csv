@@ -105,6 +105,10 @@
 2011,jj001_3d,community_major_crop_production,Mechanical Harvesting,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jj001_3e,community_major_crop_production,Current Number of Crop Maturity,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jj001_3f,community_major_crop_production,Highest Number of crop maturity,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jb023,community_household_amenity_penetration,Percentage of Households with Telephone,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jb024,community_household_amenity_penetration,Percentage of Households with Cell Phone,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jb025,community_household_amenity_penetration,Percentage of Households with TV,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jb026,community_household_amenity_penetration,Percentage of Households with Refrigerator,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jb028_1_1_,community_kindergarten_count,Num. of this Facility,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jb028_2_1_,community_kindergarten_distance,Distance,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jb028_1_2_,community_primary_school_count,Num. of this Facility,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
