@@ -110,7 +110,7 @@ class ObjectiveMeasurementCrosswalkTests(unittest.TestCase):
         self.assertIn("变量名不同也不能单独证明测量不存在", html)
         self.assertIn("官方Codebook字段标签", html)
         self.assertIn("source_field_labels", app)
-        self.assertIn("objective_measurements_v1.json?v=3", app)
+        self.assertIn("objective_measurements_v1.json?v=4", app)
 
 
 if __name__ == "__main__":

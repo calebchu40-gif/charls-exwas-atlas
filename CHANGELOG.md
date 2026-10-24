@@ -2,6 +2,8 @@
 
 ## 2026-10-24
 
+- Reviewed grip-strength and peak-flow protocols in the official 2011–2015 CHARLS questionnaires, baseline user guide and wave Codebooks. Added wave-aware candidate phenotype notes: grip readings remain separate by hand/trial with explicit kg; peak-flow unit remains blank; 30/890/993/999 are retained as protocol/status markers requiring release-specific valid-value review. The 2011 LI-to-QC/QB field identity remains unresolved, and 2013/2015 QC/QB instrument fields are documented without claiming released-data availability. Registered the review in both rebuild modes and added regression tests. No respondent-level data, Codebook frequencies, models or pairwise sample sizes are used; formal analysis locks remain at 89.
+
 - Made the full metadata rebuild reproducible for the pension and digital-behavior reviews. Pension Codebook fields with no discrete response menu now retain an explicit source-located/no-category status; the bracket-endpoint review runs after supplementary pension fields are added. The separately reviewed 23-row 2011–2018 internet/digital crosswalk is restored after the social builder, and DA056 review now distinguishes its 41 social-participation fields from 8 linked digital fields. Shared DA056 concepts are classified as related checklist options, not independent exposures.
 
 - Split alcohol-frequency and last-drink quantity concepts, removed the beer-unit selector from the E candidate mapping, and retained it as C measurement metadata. Added 2020 DA029 as a single-wave subjective life-expectancy phenotype with the official five-level response labels and XFAgePossibility interpretation note; it is not treated as survival or harmonized with earlier-wave prostate-illness DA029.

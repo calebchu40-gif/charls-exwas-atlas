@@ -17312,9 +17312,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Three peak-flow-meter pointer readings are recorded separately. The source does not state a measurement unit, so leave it unresolved; this is not full spirometry. Preserve 890 (past last tick mark), 993 (tried but unable), and 999 (chose not) as status/route codes, not measurements. The questionnaire says record 30 if less than age 60; treat this as an age-related protocol marker pending release-specific review.",
+              "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
+              "caveat": "2011 fields use LI807–LI809 and 2013/2015 use QB002–QB004. Preserve the documented 30 age-related marker and 890/993/999 status or route codes; do not treat them as flow measurements. Do not infer a unit or convert to spirometry. Age-specific eligibility, code behavior and release validity need additional verification. 2011 questionnaire uses LI* item identifiers while release Codebook fields are QC*/QB* candidates; exact one-to-one field identity is unresolved. Official questionnaire does not state a peak-flow unit; unit remains blank."
             },
             {
               "code": "qb003",
@@ -17322,9 +17322,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Three peak-flow-meter pointer readings are recorded separately. The source does not state a measurement unit, so leave it unresolved; this is not full spirometry. Preserve 890 (past last tick mark), 993 (tried but unable), and 999 (chose not) as status/route codes, not measurements. The questionnaire says record 30 if less than age 60; treat this as an age-related protocol marker pending release-specific review.",
+              "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
+              "caveat": "2011 fields use LI807–LI809 and 2013/2015 use QB002–QB004. Preserve the documented 30 age-related marker and 890/993/999 status or route codes; do not treat them as flow measurements. Do not infer a unit or convert to spirometry. Age-specific eligibility, code behavior and release validity need additional verification. 2011 questionnaire uses LI* item identifiers while release Codebook fields are QC*/QB* candidates; exact one-to-one field identity is unresolved. Official questionnaire does not state a peak-flow unit; unit remains blank."
             },
             {
               "code": "qb004",
@@ -17332,9 +17332,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Three peak-flow-meter pointer readings are recorded separately. The source does not state a measurement unit, so leave it unresolved; this is not full spirometry. Preserve 890 (past last tick mark), 993 (tried but unable), and 999 (chose not) as status/route codes, not measurements. The questionnaire says record 30 if less than age 60; treat this as an age-related protocol marker pending release-specific review.",
+              "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
+              "caveat": "2011 fields use LI807–LI809 and 2013/2015 use QB002–QB004. Preserve the documented 30 age-related marker and 890/993/999 status or route codes; do not treat them as flow measurements. Do not infer a unit or convert to spirometry. Age-specific eligibility, code behavior and release validity need additional verification. 2011 questionnaire uses LI* item identifiers while release Codebook fields are QC*/QB* candidates; exact one-to-one field identity is unresolved. Official questionnaire does not state a peak-flow unit; unit remains blank."
             }
           ]
         },
@@ -17671,41 +17671,41 @@
               "code": "qc003",
               "label": "qc003",
               "module": "Physical Examination Questionnaire",
-              "unit": "",
+              "unit": "kg",
               "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Dynamometer grip readings are recorded twice per hand in kg. Keep hand and trial distinct; the dominant-hand practice is not an outcome reading. Preserve 993 (tried but unable) and 999 (chose not) as status codes, not values.",
+              "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
+              "caveat": "Official protocol records two trials for each hand; effort, position and support are test-context fields. Do not collapse trials or choose a hand without a prespecified rule. Release-specific valid-value and analytic eligibility remain unverified. 2011 questionnaire uses LI* item identifiers while release Codebook fields are QC*/QB* candidates; exact one-to-one field identity is unresolved. Grip-strength unit is explicitly kg."
             },
             {
               "code": "qc004",
               "label": "qc004",
               "module": "Physical Examination Questionnaire",
-              "unit": "",
+              "unit": "kg",
               "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Dynamometer grip readings are recorded twice per hand in kg. Keep hand and trial distinct; the dominant-hand practice is not an outcome reading. Preserve 993 (tried but unable) and 999 (chose not) as status codes, not values.",
+              "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
+              "caveat": "Official protocol records two trials for each hand; effort, position and support are test-context fields. Do not collapse trials or choose a hand without a prespecified rule. Release-specific valid-value and analytic eligibility remain unverified. 2011 questionnaire uses LI* item identifiers while release Codebook fields are QC*/QB* candidates; exact one-to-one field identity is unresolved. Grip-strength unit is explicitly kg."
             },
             {
               "code": "qc005",
               "label": "qc005",
               "module": "Physical Examination Questionnaire",
-              "unit": "",
+              "unit": "kg",
               "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Dynamometer grip readings are recorded twice per hand in kg. Keep hand and trial distinct; the dominant-hand practice is not an outcome reading. Preserve 993 (tried but unable) and 999 (chose not) as status codes, not values.",
+              "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
+              "caveat": "Official protocol records two trials for each hand; effort, position and support are test-context fields. Do not collapse trials or choose a hand without a prespecified rule. Release-specific valid-value and analytic eligibility remain unverified. 2011 questionnaire uses LI* item identifiers while release Codebook fields are QC*/QB* candidates; exact one-to-one field identity is unresolved. Grip-strength unit is explicitly kg."
             },
             {
               "code": "qc006",
               "label": "qc006",
               "module": "Physical Examination Questionnaire",
-              "unit": "",
+              "unit": "kg",
               "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Dynamometer grip readings are recorded twice per hand in kg. Keep hand and trial distinct; the dominant-hand practice is not an outcome reading. Preserve 993 (tried but unable) and 999 (chose not) as status codes, not values.",
+              "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
+              "caveat": "Official protocol records two trials for each hand; effort, position and support are test-context fields. Do not collapse trials or choose a hand without a prespecified rule. Release-specific valid-value and analytic eligibility remain unverified. 2011 questionnaire uses LI* item identifiers while release Codebook fields are QC*/QB* candidates; exact one-to-one field identity is unresolved. Grip-strength unit is explicitly kg."
             }
           ]
         },
@@ -18545,7 +18545,7 @@
               "value_labels": "",
               "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
               "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
-              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2011 questionnaire measures this construct under LI* identifiers; the release Codebook has candidate QA* fields. The semantic mapping is plausible but LI-to-QA one-to-one field identity remains unverified, so retain as a candidate. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2011 questionnaire measures this construct under LI* identifiers; the release Codebook has candidate QA* fields. The semantic mapping is plausible but LI-to-QA one-to-one field identity remains unverified, so retain as a candidate. No explicit pulse unit was located in the questionnaire; unit remains blank. The questionnaire labels pulse only as ‘P’; no explicit pulse unit was located, so unit remains blank."
             },
             {
               "code": "qa009",
@@ -18555,7 +18555,7 @@
               "value_labels": "",
               "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
               "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
-              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2011 questionnaire measures this construct under LI* identifiers; the release Codebook has candidate QA* fields. The semantic mapping is plausible but LI-to-QA one-to-one field identity remains unverified, so retain as a candidate. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2011 questionnaire measures this construct under LI* identifiers; the release Codebook has candidate QA* fields. The semantic mapping is plausible but LI-to-QA one-to-one field identity remains unverified, so retain as a candidate. No explicit pulse unit was located in the questionnaire; unit remains blank. The questionnaire labels pulse only as ‘P’; no explicit pulse unit was located, so unit remains blank."
             },
             {
               "code": "qa013",
@@ -18565,7 +18565,7 @@
               "value_labels": "",
               "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
               "mapping_status": "official questionnaire, wave Codebook and repeated-measure protocol reviewed; candidate phenotype only; 2011 release-field identity remains unresolved",
-              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2011 questionnaire measures this construct under LI* identifiers; the release Codebook has candidate QA* fields. The semantic mapping is plausible but LI-to-QA one-to-one field identity remains unverified, so retain as a candidate. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2011 questionnaire measures this construct under LI* identifiers; the release Codebook has candidate QA* fields. The semantic mapping is plausible but LI-to-QA one-to-one field identity remains unverified, so retain as a candidate. No explicit pulse unit was located in the questionnaire; unit remains blank. The questionnaire labels pulse only as ‘P’; no explicit pulse unit was located, so unit remains blank."
             }
           ]
         },
@@ -39926,9 +39926,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Three peak-flow-meter pointer readings are recorded separately. The source does not state a measurement unit, so leave it unresolved; this is not full spirometry. Preserve 890 (past last tick mark), 993 (tried but unable), and 999 (chose not) as status/route codes, not measurements. The questionnaire says record 30 if less than age 60; treat this as an age-related protocol marker pending release-specific review.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "2011 fields use LI807–LI809 and 2013/2015 use QB002–QB004. Preserve the documented 30 age-related marker and 890/993/999 status or route codes; do not treat them as flow measurements. Do not infer a unit or convert to spirometry. Age-specific eligibility, code behavior and release validity need additional verification. 2013/2015 questionnaire and wave Codebook contain these exact QC*/QB* measurement fields; source identity does not establish participant-level release coverage or eligibility. Official questionnaire does not state a peak-flow unit; unit remains blank."
             },
             {
               "code": "qb003",
@@ -39936,9 +39936,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Three peak-flow-meter pointer readings are recorded separately. The source does not state a measurement unit, so leave it unresolved; this is not full spirometry. Preserve 890 (past last tick mark), 993 (tried but unable), and 999 (chose not) as status/route codes, not measurements. The questionnaire says record 30 if less than age 60; treat this as an age-related protocol marker pending release-specific review.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "2011 fields use LI807–LI809 and 2013/2015 use QB002–QB004. Preserve the documented 30 age-related marker and 890/993/999 status or route codes; do not treat them as flow measurements. Do not infer a unit or convert to spirometry. Age-specific eligibility, code behavior and release validity need additional verification. 2013/2015 questionnaire and wave Codebook contain these exact QC*/QB* measurement fields; source identity does not establish participant-level release coverage or eligibility. Official questionnaire does not state a peak-flow unit; unit remains blank."
             },
             {
               "code": "qb004",
@@ -39946,9 +39946,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Three peak-flow-meter pointer readings are recorded separately. The source does not state a measurement unit, so leave it unresolved; this is not full spirometry. Preserve 890 (past last tick mark), 993 (tried but unable), and 999 (chose not) as status/route codes, not measurements. The questionnaire says record 30 if less than age 60; treat this as an age-related protocol marker pending release-specific review.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "2011 fields use LI807–LI809 and 2013/2015 use QB002–QB004. Preserve the documented 30 age-related marker and 890/993/999 status or route codes; do not treat them as flow measurements. Do not infer a unit or convert to spirometry. Age-specific eligibility, code behavior and release validity need additional verification. 2013/2015 questionnaire and wave Codebook contain these exact QC*/QB* measurement fields; source identity does not establish participant-level release coverage or eligibility. Official questionnaire does not state a peak-flow unit; unit remains blank."
             }
           ]
         },
@@ -40205,41 +40205,41 @@
               "code": "qc003",
               "label": "qc003",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "kg",
               "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Dynamometer grip readings are recorded twice per hand in kg. Keep hand and trial distinct; the dominant-hand practice is not an outcome reading. Preserve 993 (tried but unable) and 999 (chose not) as status codes, not values.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "Official protocol records two trials for each hand; effort, position and support are test-context fields. Do not collapse trials or choose a hand without a prespecified rule. Release-specific valid-value and analytic eligibility remain unverified. 2013/2015 questionnaire and wave Codebook contain these exact QC*/QB* measurement fields; source identity does not establish participant-level release coverage or eligibility. Grip-strength unit is explicitly kg."
             },
             {
               "code": "qc004",
               "label": "qc004",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "kg",
               "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Dynamometer grip readings are recorded twice per hand in kg. Keep hand and trial distinct; the dominant-hand practice is not an outcome reading. Preserve 993 (tried but unable) and 999 (chose not) as status codes, not values.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "Official protocol records two trials for each hand; effort, position and support are test-context fields. Do not collapse trials or choose a hand without a prespecified rule. Release-specific valid-value and analytic eligibility remain unverified. 2013/2015 questionnaire and wave Codebook contain these exact QC*/QB* measurement fields; source identity does not establish participant-level release coverage or eligibility. Grip-strength unit is explicitly kg."
             },
             {
               "code": "qc005",
               "label": "qc005",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "kg",
               "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Dynamometer grip readings are recorded twice per hand in kg. Keep hand and trial distinct; the dominant-hand practice is not an outcome reading. Preserve 993 (tried but unable) and 999 (chose not) as status codes, not values.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "Official protocol records two trials for each hand; effort, position and support are test-context fields. Do not collapse trials or choose a hand without a prespecified rule. Release-specific valid-value and analytic eligibility remain unverified. 2013/2015 questionnaire and wave Codebook contain these exact QC*/QB* measurement fields; source identity does not establish participant-level release coverage or eligibility. Grip-strength unit is explicitly kg."
             },
             {
               "code": "qc006",
               "label": "qc006",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "kg",
               "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Dynamometer grip readings are recorded twice per hand in kg. Keep hand and trial distinct; the dominant-hand practice is not an outcome reading. Preserve 993 (tried but unable) and 999 (chose not) as status codes, not values.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "Official protocol records two trials for each hand; effort, position and support are test-context fields. Do not collapse trials or choose a hand without a prespecified rule. Release-specific valid-value and analytic eligibility remain unverified. 2013/2015 questionnaire and wave Codebook contain these exact QC*/QB* measurement fields; source identity does not establish participant-level release coverage or eligibility. Grip-strength unit is explicitly kg."
             }
           ]
         },
@@ -40870,7 +40870,7 @@
               "value_labels": "",
               "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
               "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
-              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. The questionnaire labels pulse only as ‘P’; no explicit pulse unit was located, so unit remains blank."
             },
             {
               "code": "qa009",
@@ -40880,7 +40880,7 @@
               "value_labels": "",
               "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
               "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
-              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. The questionnaire labels pulse only as ‘P’; no explicit pulse unit was located, so unit remains blank."
             },
             {
               "code": "qa013",
@@ -40890,7 +40890,7 @@
               "value_labels": "",
               "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
               "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
-              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. The questionnaire labels pulse only as ‘P’; no explicit pulse unit was located, so unit remains blank."
             }
           ]
         },
@@ -63982,9 +63982,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Three peak-flow-meter pointer readings are recorded separately. The source does not state a measurement unit, so leave it unresolved; this is not full spirometry. Preserve 890 (past last tick mark), 993 (tried but unable), and 999 (chose not) as status/route codes, not measurements. The questionnaire says record 30 if less than age 60; treat this as an age-related protocol marker pending release-specific review.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "2011 fields use LI807–LI809 and 2013/2015 use QB002–QB004. Preserve the documented 30 age-related marker and 890/993/999 status or route codes; do not treat them as flow measurements. Do not infer a unit or convert to spirometry. Age-specific eligibility, code behavior and release validity need additional verification. 2013/2015 questionnaire and wave Codebook contain these exact QC*/QB* measurement fields; source identity does not establish participant-level release coverage or eligibility. Official questionnaire does not state a peak-flow unit; unit remains blank."
             },
             {
               "code": "qb003",
@@ -63992,9 +63992,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Three peak-flow-meter pointer readings are recorded separately. The source does not state a measurement unit, so leave it unresolved; this is not full spirometry. Preserve 890 (past last tick mark), 993 (tried but unable), and 999 (chose not) as status/route codes, not measurements. The questionnaire says record 30 if less than age 60; treat this as an age-related protocol marker pending release-specific review.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "2011 fields use LI807–LI809 and 2013/2015 use QB002–QB004. Preserve the documented 30 age-related marker and 890/993/999 status or route codes; do not treat them as flow measurements. Do not infer a unit or convert to spirometry. Age-specific eligibility, code behavior and release validity need additional verification. 2013/2015 questionnaire and wave Codebook contain these exact QC*/QB* measurement fields; source identity does not establish participant-level release coverage or eligibility. Official questionnaire does not state a peak-flow unit; unit remains blank."
             },
             {
               "code": "qb004",
@@ -64002,9 +64002,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "最多三次测量，问卷以呼吸测量模块记录；不是完整肺量计肺功能。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Three peak-flow-meter pointer readings are recorded separately. The source does not state a measurement unit, so leave it unresolved; this is not full spirometry. Preserve 890 (past last tick mark), 993 (tried but unable), and 999 (chose not) as status/route codes, not measurements. The questionnaire says record 30 if less than age 60; treat this as an age-related protocol marker pending release-specific review.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "2011 fields use LI807–LI809 and 2013/2015 use QB002–QB004. Preserve the documented 30 age-related marker and 890/993/999 status or route codes; do not treat them as flow measurements. Do not infer a unit or convert to spirometry. Age-specific eligibility, code behavior and release validity need additional verification. 2013/2015 questionnaire and wave Codebook contain these exact QC*/QB* measurement fields; source identity does not establish participant-level release coverage or eligibility. Official questionnaire does not state a peak-flow unit; unit remains blank."
             }
           ]
         },
@@ -64421,41 +64421,41 @@
               "code": "qc003",
               "label": "qc003",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "kg",
               "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Dynamometer grip readings are recorded twice per hand in kg. Keep hand and trial distinct; the dominant-hand practice is not an outcome reading. Preserve 993 (tried but unable) and 999 (chose not) as status codes, not values.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "Official protocol records two trials for each hand; effort, position and support are test-context fields. Do not collapse trials or choose a hand without a prespecified rule. Release-specific valid-value and analytic eligibility remain unverified. 2013/2015 questionnaire and wave Codebook contain these exact QC*/QB* measurement fields; source identity does not establish participant-level release coverage or eligibility. Grip-strength unit is explicitly kg."
             },
             {
               "code": "qc004",
               "label": "qc004",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "kg",
               "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Dynamometer grip readings are recorded twice per hand in kg. Keep hand and trial distinct; the dominant-hand practice is not an outcome reading. Preserve 993 (tried but unable) and 999 (chose not) as status codes, not values.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "Official protocol records two trials for each hand; effort, position and support are test-context fields. Do not collapse trials or choose a hand without a prespecified rule. Release-specific valid-value and analytic eligibility remain unverified. 2013/2015 questionnaire and wave Codebook contain these exact QC*/QB* measurement fields; source identity does not establish participant-level release coverage or eligibility. Grip-strength unit is explicitly kg."
             },
             {
               "code": "qc005",
               "label": "qc005",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "kg",
               "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Dynamometer grip readings are recorded twice per hand in kg. Keep hand and trial distinct; the dominant-hand practice is not an outcome reading. Preserve 993 (tried but unable) and 999 (chose not) as status codes, not values.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "Official protocol records two trials for each hand; effort, position and support are test-context fields. Do not collapse trials or choose a hand without a prespecified rule. Release-specific valid-value and analytic eligibility remain unverified. 2013/2015 questionnaire and wave Codebook contain these exact QC*/QB* measurement fields; source identity does not establish participant-level release coverage or eligibility. Grip-strength unit is explicitly kg."
             },
             {
               "code": "qc006",
               "label": "qc006",
               "module": "Biomarker Questionnaire",
-              "unit": "",
+              "unit": "kg",
               "value_labels": "",
-              "value_semantics": "左右手各两次；保留原侧别和重复次序，汇总值需预先定义。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Dynamometer grip readings are recorded twice per hand in kg. Keep hand and trial distinct; the dominant-hand practice is not an outcome reading. Preserve 993 (tried but unable) and 999 (chose not) as status codes, not values.",
+              "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
+              "caveat": "Official protocol records two trials for each hand; effort, position and support are test-context fields. Do not collapse trials or choose a hand without a prespecified rule. Release-specific valid-value and analytic eligibility remain unverified. 2013/2015 questionnaire and wave Codebook contain these exact QC*/QB* measurement fields; source identity does not establish participant-level release coverage or eligibility. Grip-strength unit is explicitly kg."
             }
           ]
         },
@@ -65155,7 +65155,7 @@
               "value_labels": "",
               "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
               "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
-              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. The questionnaire labels pulse only as ‘P’; no explicit pulse unit was located, so unit remains blank."
             },
             {
               "code": "qa009",
@@ -65165,7 +65165,7 @@
               "value_labels": "",
               "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
               "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
-              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. The questionnaire labels pulse only as ‘P’; no explicit pulse unit was located, so unit remains blank."
             },
             {
               "code": "qa013",
@@ -65175,7 +65175,7 @@
               "value_labels": "",
               "value_semantics": "Three pulse readings are collected alongside the BP measurements. The questionnaire labels the unit only as ‘P’ and does not explicitly state a pulse unit; leave unit unresolved rather than infer beats/minute.",
               "mapping_status": "exact wave questionnaire field and Codebook label reviewed; candidate phenotype only; authorized-release and analysis eligibility remain unverified",
-              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. No explicit pulse unit was located in the questionnaire; unit remains blank."
+              "caveat": "The official questionnaire documents three readings using an Omron HEM-7200 monitor, with the respondent asked to remain seated, relaxed and quiet; the cuff/arm, test position, compliance and recent smoking/exercise/alcohol/food within 30 minutes are recorded separately as measurement context. 993 means tried but unable and 999 means chose not to complete, as defined for the systolic field; preserve these as status/route codes, never as measured values. Routed or unmeasured records are not zero. Keep the three readings separate until a release-specific valid-value and prespecified summary rule is approved. Protocol similarity does not by itself approve pooled cross-wave analysis. 2013/2015 Biomarker Questionnaire records these exact QA* fields and the matching wave Codebook labels; this confirms source meaning, not participant-level release availability or analysis eligibility. No explicit pulse unit was located in the questionnaire; unit remains blank. The questionnaire labels pulse only as ‘P’; no explicit pulse unit was located, so unit remains blank."
             }
           ]
         },
