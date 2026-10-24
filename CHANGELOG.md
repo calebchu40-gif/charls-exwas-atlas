@@ -2,6 +2,7 @@
 
 ## 2026-10-24 (continued)
 
+- Clarify the official Wave 2 distinction between cross-sectional, longitudinal, and cross-sectional biomarker weights, including the stated biomarker nonresponse adjustment and the absence of a longitudinal biomarker weight; link a source-specific review and keep 2013 design gates closed until authorized source files are verified.
 - Require a pair/contrast-level estimability review reference before any result row can be released as `success`; document support, separation, design-information and model-complexity review without inventing unvalidated numeric cutoffs. This release gate is metadata only and does not claim that any CHARLS fit passed review.
 - Record that finite output and no engine warning in a sparse synthetic logistic case do not establish adequate event support. Formal CHARLS fits remain blocked by unresolved source/design gates.
 - Add a blank, privacy-aware controlled review-record template for consistent pair-level estimability checks.

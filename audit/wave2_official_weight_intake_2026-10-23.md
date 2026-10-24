@@ -64,6 +64,8 @@ metadata and does not by itself establish a complete survey design.
 
 ## Evidence and status
 
+The official 2013 release note also distinguishes cross-sectional weights with/without nonresponse adjustment, a longitudinal weight based on baseline weights and second-wave participation (with deaths treated as responses in its construction), and a separate cross-sectional biomarker weight that applies a biomarker-response inverse-probability factor capped at its 99th percentile. It states that no longitudinal biomarker weight is offered. These are different target estimands and must not be substituted for one another. See [`wave2_weight_estimand_source_review_2026-10-24.md`](wave2_weight_estimand_source_review_2026-10-24.md). Restoring the two sample flags does not by itself decide which weight applies to a specific analysis or resolve the variance design.
+
 The CHARLS Wave 2 release note describes `Weights.dta` as providing
 cross-sectional and longitudinal sample identifiers. The project's local
 official-source review is `audit/prepared_private_weight_sample_coverage_2026-10-23.md`;
