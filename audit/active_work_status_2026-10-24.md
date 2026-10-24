@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-24 continuation: reconcile the C value-label queue with live catalogue shards
+
+Recomputed the generated catalogue totals and exact generic `not yet reviewed` counts using `scripts/summarize_value_label_coverage.py`. Current shards contain E=4,748, P=2,127, C=980 rows; E/P have 0 generic pending rows and C has 95. The maintained queue file had stale totals (E/P/C=4,739/2,113/992 and C=109). All 95 C rows are automated covariate keyword-discovery leads, explicitly not reviewed covariates or adjustment recommendations. Corrected the queue snapshot; this reconciles metadata documentation only and does not approve any C field for a model.
+
 ## 2026-10-24 continuation: distinguish discovery status from field review status in the C browser
 
 The C metadata browser previously rendered the generic `automated discovery; questionnaire/codebook review required` discovery provenance as if it were the current field-level review result. This could contradict the same row's reviewed value-label/source fields and make reviewed candidates appear wholly unaudited. The public row now says the candidate entered through automated discovery and directs readers to the source and value-label columns for the field-specific review state; the original provenance remains available in the hover explanation. This is a presentation correction only: no candidate, label, review flag, or analytic status changed. The app bundle cache key is bumped to v70. Regression coverage is added in `tests/test_c_metadata_subcategory_labels.py`.

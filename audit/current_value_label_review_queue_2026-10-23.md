@@ -1,14 +1,14 @@
-# Current value-label review queue (updated 2026-10-24)
+# Current value-label review queue (reconciled 2026-10-24)
 
 This snapshot reads only the public, generated metadata in `site-prototype/dist/catalog_{e,p,c}.json`. It contains no respondent records or response frequencies. “Not yet reviewed” is the catalog value-label review field; it does not mean every row should receive a discrete category label, and it is separate from E/P analysis eligibility.
 
 | Role | Catalog rows | Generic `not yet reviewed` rows |
 |---|---:|---:|
-| E exposure candidates | 4,739 | 0 |
-| P phenotype candidates | 2,113 | 0 |
-| C covariate/measurement metadata | 992 | 109 |
+| E exposure candidates | 4,748 | 0 |
+| P phenotype candidates | 2,127 | 0 |
+| C covariate/measurement metadata | 980 | 95 |
 
-2026-10-24 final-directory reconciliation: counts above now use the generated role shards after the full metadata pipeline. E/P have zero exact `not yet reviewed` rows; C has 109. This differs from the historical status distribution in `charls_ep_catalog_value_label_coverage_v1.md`, which had been generated from an earlier intermediate field list. That report and CSV now read the final E/P/C site shards and rebuild at the end of both metadata pipelines.
+2026-10-24 reconciliation against the current generated role shards: E/P have zero exact `not yet reviewed` rows; C has 95. All 95 C rows are classified as `automated covariate search hit` / `keyword discovery only; not a reviewed covariate or adjustment recommendation`. They are search leads, not a selected adjustment set. The prior values 4,739/2,113/992 and C=109 were stale and are superseded. `scripts/summarize_value_label_coverage.py` independently rebuilds `charls_ep_catalog_value_label_coverage_v1.csv` and `.md` from the same final shards.
 
 The current E and P queues contain no rows with a generic pending value-label status. The 62 newly reviewed 2013 money-management helper relationship option slots remain C source-detail metadata; they are not separate association constructs. See `audit/2013_money_helper_relationship_slot_review_2026-10-24.md`. The latest C reviews covered 11 2018 property-roster location slots, one continuous monthly mortgage-payment field, and BB004 residential-history fields in 2011–2018. The 2011 BB004 questionnaire/Codebook identity conflict remains locked with response labels withheld; 2013/2015/2018 labels and conditional year follow-ups are documented separately. The remaining 109 C rows require source or role review. Several reviewed E/P rows still retain specific unresolved source or route caveats and `DO NOT ANALYZE` locks. These are field rows, not independent concepts or tests.
 
