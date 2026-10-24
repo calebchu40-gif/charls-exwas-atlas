@@ -6,7 +6,7 @@ The 2026-10-24 private core-coverage refresh is recorded in [`core_coverage_gate
 
 Latest analysis-pipeline work: result rows can no longer be labeled `success` with `not_applicable` design fields. The validator now requires a verified weight choice and verified PSU use; when no official variance stratum is available, `variance_design` must include explicit `approximate method:` and `limitation:` labels (or Chinese equivalents). This is a release-state safeguard, not evidence that any wave is ready for modeling. Commits `733be9f`, `44218ad` and `cbf6a53` document the rule and handoff. Current local verification: 262 Python tests pass, all 89 formal analysis locks match the triage inventory, Python compilation and JS syntax checks pass. No association model was fitted.
 
-The C-catalogue display now translates all 83 unique metadata subcategories into Chinese while keeping the original English classification available on hover and searchable. This is a presentation-only update; catalogue source records, model eligibility and association counts are unchanged. Two new regression tests ensure every current C subcategory has a Chinese label and that the original source text remains accessible; the full suite now contains 262 tests.
+The C-catalogue display now translates all 83 unique metadata subcategories into Chinese while keeping the original English classification available on hover and searchable. This is a presentation-only update; catalogue source records, model eligibility and association counts are unchanged. Regression tests ensure every current C subcategory has a Chinese label, the original source text remains accessible, and the page references the bumped app script cache key; the full suite now contains 263 tests.
 
 ## Current deliverable
 

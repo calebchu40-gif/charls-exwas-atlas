@@ -7,6 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "site-prototype" / "dist" / "catalog_c.json"
 APP = ROOT / "site-prototype" / "dist" / "app.js"
+INDEX = ROOT / "site-prototype" / "dist" / "index.html"
 
 
 class CMetadataSubcategoryLabelTests(unittest.TestCase):
@@ -14,6 +15,7 @@ class CMetadataSubcategoryLabelTests(unittest.TestCase):
     def setUpClass(cls):
         cls.rows = json.loads(CATALOG.read_text(encoding="utf-8"))
         cls.app = APP.read_text(encoding="utf-8")
+        cls.index = INDEX.read_text(encoding="utf-8")
         match = re.search(r"const C_SUBCATEGORY_LABELS=(\{.*?\});", cls.app, re.DOTALL)
         if not match:
             raise AssertionError("C metadata subcategory label dictionary is missing")
@@ -29,6 +31,9 @@ class CMetadataSubcategoryLabelTests(unittest.TestCase):
     def test_table_uses_chinese_label_and_preserves_original_explanation(self):
         self.assertIn("C_SUBCATEGORY_LABELS[x.subcategory]", self.app)
         self.assertIn("原始分类说明：'+x.subcategory", self.app)
+
+    def test_page_references_the_cache_busted_script_version(self):
+        self.assertIn("app.js?v=63", self.index)
 
 
 if __name__ == "__main__":
