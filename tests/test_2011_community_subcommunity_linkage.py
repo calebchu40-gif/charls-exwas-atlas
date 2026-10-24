@@ -35,6 +35,7 @@ class CommunitySubcommunityLinkageTests(unittest.TestCase):
         self.assertEqual(result["linkage_status"], "blocked_duplicate_community_key")
         self.assertEqual(result["respondent_community_key_match_rate"], 1.0)
         self.assertEqual(result["community_duplicate_key_groups"], 1)
+        self.assertEqual(result["community_nonmissing_subcommunity_key_rows"], 2)
         self.assertEqual(result["distinct_subcommunity_keys_within_duplicate_groups"], 2)
         self.assertEqual(result["candidate_codes_found_in_community_file"], 2)
         self.assertEqual(result["candidate_fields_varying_within_duplicate_community_keys"], 2)
@@ -68,6 +69,16 @@ class CommunitySubcommunityLinkageTests(unittest.TestCase):
         self.assertEqual(result["candidate_codes_missing_from_community_file"], 1)
         serialized = str(result)
         self.assertNotIn("unmatched", serialized)
+
+    def test_blank_and_whitespace_subcommunity_keys_are_not_counted_as_observed(self):
+        community = pd.DataFrame({
+            "communityID": ["a", "b", "c"],
+            "sub_commuID": ["  ", "2", pd.NA],
+            "ja001": [1, 2, 3],
+        })
+        persons = pd.DataFrame({"communityID": ["a", "b", "c"]})
+        result = summarize_linkage(community, persons, ["ja001"])
+        self.assertEqual(result["community_nonmissing_subcommunity_key_rows"], 1)
 
 
 if __name__ == "__main__":

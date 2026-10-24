@@ -77,6 +77,7 @@ def summarize_linkage(
                 mismatched_fields.append(code)
 
     repeated_subcommunity_ids = 0
+    nonmissing_subcommunity_rows = int(_norm_key(community["sub_commuID"]).notna().sum())
     if repeated_keys:
         repeated = community.loc[comm_key.isin(repeated_keys)].copy()
         repeated["__normalized_key"] = comm_key.loc[repeated.index]
@@ -93,6 +94,7 @@ def summarize_linkage(
         "community_unique_key_count": int(comm_key.nunique(dropna=True)),
         "community_duplicate_key_groups": int(len(repeated_keys)),
         "community_rows_in_duplicate_key_groups": repeated_rows,
+        "community_nonmissing_subcommunity_key_rows": nonmissing_subcommunity_rows,
         "distinct_subcommunity_keys_within_duplicate_groups": repeated_subcommunity_ids,
         "respondent_rows": int(len(persons)),
         "respondent_community_key_missing_rows": int(person_key.isna().sum()),
