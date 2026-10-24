@@ -56,7 +56,7 @@ e,social protection,institution-pension receipt start-date component,2,2,0
 e,social protection,life-insurance payout amount already received,1,1,0
 e,social protection,old-age subsidy delivery and card/voucher use,10,10,10
 e,social protection,pension amount interval-bound field; unresolved response sequence,6,6,0
-e,social protection,"pension participation, receipt, and benefit details",1140,1140,333
+e,social protection,"pension participation, receipt, and benefit details",1140,1140,334
 e,social protection,pension-source work-unit employer type,2,2,2
 e,social protection,pension-source work-unit reference,2,2,2
 e,social protection,plan-specific coarse location relative to current residence,11,11,11

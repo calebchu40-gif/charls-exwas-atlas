@@ -35627,10 +35627,10 @@
               "label": "Do You Participate in The New Rural Socail Pension Insurance",
               "module": "Work_Retirement_and_Pension",
               "unit": "",
-              "value_labels": "",
-              "value_semantics": "current participation in New Rural Social Pension Insurance",
-              "mapping_status": "official questionnaire/codebook item; candidate mapping; route and analysis eligibility require review",
-              "caveat": "2013该题直接询问当前是否参加，Yes后跳至FN071；No后进入多选未参保原因。与居民养老计划类型及领取待遇区分；不将条件性原因槽位当作独立暴露。"
+              "value_labels": "1=Yes; 2=No",
+              "value_semantics": "current participation in New Rural Social Pension Insurance | 1=Yes; 2=No. Yes routes to FN071_W2; No routes to FN070_W2 non-participation reasons.",
+              "mapping_status": "official 2013 questionnaire and Codebook item wording, Yes/No response codes and route reviewed; candidate mapping",
+              "caveat": "2013 asks current participation in New Rural Social Pension Insurance. Yes routes to FN071_W2 for first-coverage month/year; No routes to FN070_W2 multi-select non-participation reasons. Preserve this gate and its eligible denominator; skipped reason slots are not negative responses. Keep separate from receiving a pension, the preloaded prior-wave pension-plan roster, contribution/payment amounts, benefit receipt/amount, and other pension schemes. A common concept ID with 2011 does not establish cross-wave measurement equivalence. Confirm authorized-release field identity, special/missing codes, and target population before analysis."
             }
           ]
         },

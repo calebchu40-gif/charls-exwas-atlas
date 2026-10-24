@@ -1016,6 +1016,10 @@ def main() -> None:
         "pension_exposure_variable_mapping_v1.csv", "wave", "code", "value_label_status", "value_label_source",
         re.compile(r"official codebook field located; continuous/count or no categorical labels|official response label not located or title match insufficient", re.I),
     )
+    add_reviewed_labels(
+        "pension_exposure_variable_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "official_source",
+        re.compile(r"official 2013 codebook yes/no response codes reviewed; frequencies omitted", re.I),
+    )
     add_reviewed_labels("health_symptom_variable_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official codebook response labels reviewed|official questionnaire response scale verified", re.I))
     add_reviewed_labels("functional_concept_variable_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official codebook response labels reviewed", re.I))
     add_reviewed_labels("health_work_limitation_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"matched to wave-specific official codebook", re.I))

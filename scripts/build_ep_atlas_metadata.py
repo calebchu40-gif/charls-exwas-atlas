@@ -17,6 +17,7 @@ FULL_PIPELINE_SCRIPTS = (
     "build_2011_psych_treatment_crosswalk.py",
     "build_pension_supplementary_crosswalk.py",
     "build_pension_codebook_value_labels.py",
+    "apply_2013_nrsp_participation_source_review.py",
     # The supplementary builder adds the bracket-endpoint source fields that
     # the review script validates and annotates; run review after the complete
     # pension family has been assembled.
@@ -181,6 +182,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     # The prior successful build leaves the public site catalog compacted by
     # site_catalog_shards.py, while these review steps expect one row per wave.
     "build_charls_atlas_catalog.py",
+    "apply_2013_nrsp_participation_source_review.py",
     # Rebuild symptom outcomes and their official labels, then restore the
     # separately reviewed Wave-2 balance-test gate appended to that crosswalk.
     "build_health_symptom_crosswalk.py",
