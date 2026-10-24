@@ -10,8 +10,8 @@
   "waves": {
     "2011": {
       "exposure_count": 575,
-      "phenotype_count": 212,
-      "candidate_pair_count": 121893,
+      "phenotype_count": 213,
+      "candidate_pair_count": 122468,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -16639,6 +16639,26 @@
           ]
         },
         {
+          "concept_id": "subjective_life_expectancy",
+          "label": "主观预期寿命可能性",
+          "domain": "主观健康预期",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "da081",
+              "label": "The Probability of Self Expected Age",
+              "module": "health_status_and_functioning",
+              "unit": "",
+              "value_labels": "1=Almost impossible; 2=Not very likely; 3=Maybe; 4=Very likely; 5=Almost certain",
+              "value_semantics": "",
+              "mapping_status": "Official questionnaire and Codebook response labels reviewed; single-item outcome candidate only; target-age assignment, eligible denominator, and cross-wave equivalence remain unresolved",
+              "caveat": "题目询问受访者达到问卷占位符 [...] 所示目标年龄的主观可能性，但已核问卷文本没有呈现实际目标年龄。必须先核实本波CAPI/卡片或年龄阈值派生规则；1–5是有序主观判断，不是百分比、实际生存结局或线性概率，不能假设与其他波目标年龄等价。2020 的 DA029 在早期波次表示前列腺疾病，禁止按代码名合并。"
+            }
+          ]
+        },
+        {
           "concept_id": "mobility_chair",
           "label": "久坐后起身/坐姿困难",
           "domain": "physical limitation",
@@ -21663,8 +21683,8 @@
     },
     "2013": {
       "exposure_count": 595,
-      "phenotype_count": 223,
-      "candidate_pair_count": 132677,
+      "phenotype_count": 224,
+      "candidate_pair_count": 133272,
       "exposures": [
         {
           "concept_id": "home_accessibility",
@@ -38823,6 +38843,26 @@
           ]
         },
         {
+          "concept_id": "subjective_life_expectancy",
+          "label": "主观预期寿命可能性",
+          "domain": "主观健康预期",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "da081",
+              "label": "5 Steps for Expectation Age",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "1=Almost impossible; 2=Not very likely; 3=Maybe; 4=Very likely; 5=Almost certain",
+              "value_semantics": "",
+              "mapping_status": "Official questionnaire and Codebook response labels reviewed; field label incomplete in the source inventory; target-age assignment, eligible denominator, and cross-wave equivalence remain unresolved",
+              "caveat": "题目询问达到问卷占位符 [...] 所示目标年龄的主观可能性；已核问卷文本未显示目标年龄，且该波字段标签在原始变量目录中为空。回查CAPI/卡片及授权发行版年龄阈值前，不解释具体年龄；五级回答不是百分比或实际生存结局，不与其他波自动等价。2020 的 DA029 在早期波次表示前列腺疾病，禁止按代码名合并。"
+            }
+          ]
+        },
+        {
           "concept_id": "mobility_chair",
           "label": "久坐后起身/坐姿困难",
           "domain": "physical limitation",
@@ -44898,8 +44938,8 @@
     },
     "2015": {
       "exposure_count": 563,
-      "phenotype_count": 236,
-      "candidate_pair_count": 132860,
+      "phenotype_count": 237,
+      "candidate_pair_count": 133423,
       "exposures": [
         {
           "concept_id": "pension_2015_urban_residents_personal_supplementary_repayment_amount",
@@ -63099,6 +63139,26 @@
           ]
         },
         {
+          "concept_id": "subjective_life_expectancy",
+          "label": "主观预期寿命可能性",
+          "domain": "主观健康预期",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "da081",
+              "label": "5 Steps for Expectation Age",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "1=Almost impossible; 2=Not very likely; 3=Maybe; 4=Very likely; 5=Almost certain",
+              "value_semantics": "",
+              "mapping_status": "Official questionnaire and Codebook response labels reviewed; single-item outcome candidate only; target-age assignment, eligible denominator, and cross-wave equivalence remain unresolved",
+              "caveat": "题目询问达到问卷占位符 [...] 所示目标年龄的主观可能性；已核问卷文本未显示目标年龄。必须核实本波CAPI/卡片或年龄阈值派生规则；五级回答不是百分比或实际生存结局，不与其他波自动等价。2020 的 DA029 在早期波次表示前列腺疾病，禁止按代码名合并。"
+            }
+          ]
+        },
+        {
           "concept_id": "mobility_chair",
           "label": "久坐后起身/坐姿困难",
           "domain": "physical limitation",
@@ -69193,8 +69253,8 @@
     },
     "2018": {
       "exposure_count": 494,
-      "phenotype_count": 210,
-      "candidate_pair_count": 103733,
+      "phenotype_count": 211,
+      "candidate_pair_count": 104227,
       "exposures": [
         {
           "concept_id": "pension_expected_receipt_age_2018_plan_loop",
@@ -88828,6 +88888,26 @@
               "value_semantics": "",
               "mapping_status": "field identified in official questionnaire/codebook; see wave-specific caveat",
               "caveat": "结局概念候选；返访/既往访谈比较题；不是同一时点总体健康等级，不能与自评总体健康合并。"
+            }
+          ]
+        },
+        {
+          "concept_id": "subjective_life_expectancy",
+          "label": "主观预期寿命可能性",
+          "domain": "主观健康预期",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "da081",
+              "label": "Life Expectancy",
+              "module": "Health_Status_and_Functioning",
+              "unit": "",
+              "value_labels": "1=Almost impossible; 2=Not very likely; 3=Maybe; 4=Very likely; 5=Almost certain; 997=Don't know",
+              "value_semantics": "",
+              "mapping_status": "Official questionnaire and Codebook response labels reviewed; single-item outcome candidate only; target-age assignment, eligible denominator, and cross-wave equivalence remain unresolved",
+              "caveat": "问卷将其描述为主观预期寿命，但目标年龄仍以 [...] 占位符显示。必须核实本波CAPI/卡片或年龄阈值派生规则；五级回答是有序主观判断，不是百分比或实际生存结局，不与其他波自动等价。2020 的 DA029 在早期波次表示前列腺疾病，禁止按代码名合并。"
             }
           ]
         },

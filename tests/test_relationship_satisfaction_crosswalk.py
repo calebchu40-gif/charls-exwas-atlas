@@ -56,7 +56,8 @@ class RelationshipSatisfactionCrosswalkTests(unittest.TestCase):
         self.assertIn("'life satisfaction':'总体生活满意度'", app)
         self.assertIn("'health satisfaction':'健康满意度'", app)
         self.assertIn("'relationship with children satisfaction':'与子女关系满意度'", app)
-        self.assertIn("app.js?v=67", index)
+        self.assertIn("'subjective life expectancy':'主观预期寿命可能性'", app)
+        self.assertIn("app.js?v=68", index)
 
 
 if __name__ == "__main__":

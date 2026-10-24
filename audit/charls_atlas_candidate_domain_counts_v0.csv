@@ -1,5 +1,5 @@
 ﻿epcf,category,subcategory,source_field_wave_rows,distinct_source_codes,wave_count
-c,automated covariate search hit,keyword discovery only; not a reviewed covariate or adjustment recommendation,415,262,5
+c,automated covariate search hit,keyword discovery only; not a reviewed covariate or adjustment recommendation,412,261,5
 c,covariate candidate,birth-date source and age derivation metadata,5,5,2
 c,measurement metadata,2011 proxy interview and Section E assistance context,3,3,1
 c,measurement metadata,2018 employer pension contribution amount/share unit selector,1,1,1
@@ -225,7 +225,7 @@ p,cognition,memory and cognitive performance,338,275,5
 p,health and symptoms,health-related work absence,6,3,4
 p,health and symptoms,"self-rated health, pain, and symptoms",111,70,5
 p,health and symptoms,"self-rated health, pain, symptoms, and test eligibility",53,31,5
-p,health and symptoms,subjective health expectancy,1,1,1
+p,health and symptoms,subjective life expectancy,5,2,5
 p,healthcare access,COVID-period delayed or unmet medical care,15,15,1
 p,healthcare access,"insurance, outpatient and inpatient utilization",93,54,4
 p,mental health,depressive symptoms and emotional wellbeing,50,17,5

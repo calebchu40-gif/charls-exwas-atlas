@@ -17,7 +17,7 @@
 |e|behavioral exposures|1|2|2|
 |e|environmental perception|1|1|1|
 |p|chronic disease ancillary|115|664|664|
-|p|health and symptoms|40|174|171|
+|p|health and symptoms|40|178|175|
 |p|physical function|38|266|260|
 |p|chronic disease|33|248|248|
 |p|cognition|24|338|338|

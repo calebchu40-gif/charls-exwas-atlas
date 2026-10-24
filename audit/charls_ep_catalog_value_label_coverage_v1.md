@@ -2,9 +2,9 @@
 
 更新：2026-10-24。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
-- 最终E/P目录行：6,862；不同波次—字段码：6,587。一个字段可对应多个候选类别/角色。
-- 有非空标签文本的E/P目录行：3,424；不同波次—字段码：3,347。连续测量、计数值及测量流程字段可已审但不需要离散标签。
-- 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：108。具体来源审查状态不等同于通用待审。
+- 最终E/P目录行：6,866；不同波次—字段码：6,591。一个字段可对应多个候选类别/角色。
+- 有非空标签文本的E/P目录行：3,428；不同波次—字段码：3,351。连续测量、计数值及测量流程字段可已审但不需要离散标签。
+- 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：105。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
 
@@ -30,7 +30,7 @@
 |p|chronic disease|248|248|240|1|
 |p|chronic disease ancillary|664|664|520|70|
 |p|cognition|338|338|305|1|
-|p|health and symptoms|171|171|165|4|
+|p|health and symptoms|175|175|169|4|
 |p|healthcare access|217|217|66|2|
 |p|internal biomarker|49|49|0|1|
 |p|mental health|50|50|50|1|
@@ -41,7 +41,7 @@
 
 |审核状态|最终E/P目录行|
 |---|---:|
-|officially reviewed|2,639|
+|officially reviewed|2,643|
 |official codebook field located; continuous/count or no categorical labels|727|
 |numeric/time unit metadata available; no discrete labels assigned; see concept crosswalk|508|
 |codebook field located; continuous/open response or no categorical labels|371|

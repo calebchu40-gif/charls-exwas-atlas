@@ -419,11 +419,11 @@ def main() -> None:
                     "Review.Flag": "role/category is a search aid, not analytic inclusion",
                 })
                 matched = True
-        reviewed_relationship_outcome = (
-            row.wave in {"2015", "2018"}
-            and var.lower() == "dc043_w3"
+        reviewed_phenotype_source = (
+            (row.wave in {"2015", "2018"} and var.lower() == "dc043_w3")
+            or (row.wave in {"2011", "2013", "2015", "2018"} and var.lower() == "da081")
         )
-        if (not reviewed_relationship_outcome
+        if (not reviewed_phenotype_source
                 and CONFOUNDERS.search(f"{label} {var}")
                 and re.search(r"demographic|health_status|health status|family|housing", module, re.I)):
             outputs.append({
@@ -570,6 +570,8 @@ def main() -> None:
                                  "children_relationship_satisfaction": "relationship with children satisfaction",
                              }.get(str(item.get("concept_id", "")), "subjective wellbeing satisfaction"),
                              "caveat", "p")
+    append_audited_crosswalk("subjective_life_expectancy_2011_2018_crosswalk_v1.csv", "wave", "code", "module", "source_label",
+                             "health and symptoms", "subjective life expectancy", "caveat", "p")
     append_audited_crosswalk("food_environment_crosswalk_v1.csv", "wave", "code", "module", "source_label",
                              "food and household environment", "diet, food security, housing and utilities", "caveat")
 
@@ -648,7 +650,7 @@ def main() -> None:
                              "health and symptoms", "health-related work absence", "p", "mapping_status", ("caveat", "value_semantics", "unit"))
     append_concept_crosswalk("health_symptom_variable_mapping_v1.csv", "wave", "code", "concept_id", "source_label", "module",
                              "health and symptoms",
-                             lambda concept, _item: "subjective health expectancy" if concept == "subjective_life_expectancy" else "self-rated health, pain, symptoms, and test eligibility",
+                             lambda concept, _item: "subjective life expectancy" if concept == "subjective_life_expectancy" else "self-rated health, pain, symptoms, and test eligibility",
                              "p", "mapping_status", ("note", "value_labels", "value_label_status", "value_label_source"))
     append_concept_crosswalk("biomarker_measurement_gate_crosswalk_v1.csv", "wave", "code", "concept_id", "source_label", "module",
                              "measurement metadata", "biomarker assessment agreement and completion", "c", "mapping_status", ("caveat", "value_semantics", "value_labels", "source_document"))
