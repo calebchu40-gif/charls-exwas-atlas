@@ -1,5 +1,6 @@
 """Guard discovery-role rows against being mistaken for approved E/P mappings."""
 import csv
+import json
 import unittest
 from pathlib import Path
 
@@ -78,6 +79,24 @@ class CandidateRoleLinkageCoverageTests(unittest.TestCase):
         self.assertIn("可选的内部生物标志物E及P候选", page)
         self.assertIn("不是外部环境化学暴露", page)
         self.assertIn("不代表模型纳入批准", page)
+
+    def test_blood_biomarkers_reach_both_pair_roles_without_self_pairs(self):
+        explorer = json.loads(
+            (ROOT / "site-prototype/dist/candidate_pair_explorer_v1.json").read_text(encoding="utf-8")
+        )
+        for wave in ("2011", "2015"):
+            data = explorer["waves"][wave]
+            exposure_ids = {item["concept_id"] for item in data["exposures"]}
+            phenotype_ids = {item["concept_id"] for item in data["phenotypes"]}
+            blood_ids = {row["concept_id"] for row in read_rows(ROOT / "audit/blood_biomarker_crosswalk_v1.csv")
+                         if row["wave"] == wave and row["concept_id"] != "blood_collection_metadata"}
+            self.assertEqual(len(blood_ids), 16)
+            self.assertTrue(blood_ids <= exposure_ids)
+            self.assertTrue(blood_ids <= phenotype_ids)
+            self.assertEqual(
+                data["candidate_pair_count"],
+                len(exposure_ids) * len(phenotype_ids) - len(exposure_ids & phenotype_ids),
+            )
 
 
 if __name__ == "__main__":
