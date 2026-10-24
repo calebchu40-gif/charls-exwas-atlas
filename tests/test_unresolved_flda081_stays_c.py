@@ -17,6 +17,8 @@ class UnresolvedFieldIdentityTests(unittest.TestCase):
         self.assertEqual(row.get("candidate_concept_ids", ""), "")
         note = (ROOT / "audit/pending_c_field_identity_review_2026-10-24.md").read_text(encoding="utf-8")
         self.assertIn("exact questionnaire identity", note)
+        self.assertIn("DA081", note)
+        self.assertIn("Do not treat the nearby questionnaire item as proof", note)
         self.assertIn("Do not rename it as life expectancy", note)
 
     def test_unresolved_field_is_absent_from_exposure_and_phenotype_shards(self):
