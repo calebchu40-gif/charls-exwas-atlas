@@ -42,3 +42,9 @@ class ReproductiveHistoryExposureReviewTests(unittest.TestCase):
         mapping = REVIEW.load_mapping()
         self.assertFalse(mapping.code.str.lower().str.startswith("zda").any())
         self.assertTrue(mapping.caveat.str.contains("cross-wave equivalence is established|cross-wave equivalence not approved", case=False, regex=True).all())
+
+    def test_compact_summary_is_rebuilt_downstream_instead_of_wave_updated(self):
+        source = SCRIPT.read_text(encoding="utf-8")
+        self.assertNotIn('(ROOT / "site-prototype/dist/catalog.json", False)', source)
+        pipeline = (ROOT / "scripts/build_ep_atlas_metadata.py").read_text(encoding="utf-8")
+        self.assertIn('"site_catalog_shards.py"', pipeline)

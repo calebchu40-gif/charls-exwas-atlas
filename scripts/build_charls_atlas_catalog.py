@@ -774,6 +774,10 @@ def main() -> None:
                              lambda concept, item: item.get("domain", "social determinants"),
                              lambda concept, item: item.get("subcategory", "historical and residential context"),
                              "e", "mapping_status", ("construct", "unit", "value_semantics", "value_labels", "caveat"))
+    append_concept_crosswalk("childhood_residential_context_crosswalk_v1.csv", "wave", "code", "concept_id", "concept_label", "module",
+                             lambda concept, item: item.get("domain", "early-life and family socioeconomic context"),
+                             lambda concept, item: item.get("subcategory", "childhood residential setting"),
+                             "e", "mapping_status", ("construct", "unit", "value_semantics", "value_labels", "caveat"))
     append_concept_crosswalk("hukou_lifecourse_exposure_crosswalk_v1.csv", "wave", "code", "concept_id", "source_label", "module",
                              "social determinants", "hukou history and transitions",
                              "e", "mapping_status", ("construct", "unit", "value_semantics", "value_labels", "caveat"))
@@ -1108,6 +1112,7 @@ def main() -> None:
     add_reviewed_labels("household_transfer_receipt_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire/Codebook option label reviewed; frequencies omitted", re.I))
     add_reviewed_labels("household_transfer_none_option_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire/Codebook option label reviewed; frequencies omitted", re.I))
     add_reviewed_labels("social_context_remainder_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire and codebook categories reviewed; frequency counts omitted", re.I))
+    add_reviewed_labels("childhood_residential_context_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official 2013 questionnaire and Codebook categories reviewed; frequencies omitted", re.I))
     add_reviewed_labels("stroke_timing_metadata_crosswalk_v1.csv", "wave", "code", "value_labels", "mapping_status", "source_document", re.compile(r"official codebook/questionnaire response-format field", re.I))
     add_reviewed_labels("cancer_site_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official (?:codebook (?:category verified|reports no observed categories|shows 0=No)|questionnaire confirms DA017 option)", re.I))
     add_reviewed_status_without_value_label("cancer_site_crosswalk_v1.csv", "wave", "code", "value_label_status", "value_label_source", re.compile(r"official questionnaire confirms DA017 option", re.I))

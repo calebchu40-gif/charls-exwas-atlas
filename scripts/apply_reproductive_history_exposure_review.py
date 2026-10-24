@@ -136,7 +136,8 @@ def main() -> None:
     for path, strip_aliases in (
         (FIELD_CSV, False),
         (AUDIT / "charls_atlas_candidate_fields_v0.json", True),
-        (ROOT / "site-prototype/dist/catalog.json", False),
+        # catalog.json is a compact concept summary without Source.Wave. It is
+        # rebuilt from the wave-specific field rows later in site_catalog_shards.py.
         (ROOT / "site-prototype/dist/catalog_e.json", False),
     ):
         if path.suffix == ".csv":

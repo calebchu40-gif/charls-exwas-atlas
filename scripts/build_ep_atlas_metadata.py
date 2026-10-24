@@ -62,6 +62,7 @@ FULL_PIPELINE_SCRIPTS = (
     "build_parent_marital_ethnicity_crosswalk.py",
     "build_sibling_record_context_crosswalk.py",
     "build_social_context_remainder_crosswalk.py",
+    "build_childhood_residential_context_crosswalk.py",
     "build_hukou_lifecourse_crosswalk.py",
     "build_hukou_recent_change_crosswalk.py",
     "build_residential_settlement_exposure_crosswalk.py",
@@ -147,6 +148,17 @@ FULL_PIPELINE_SCRIPTS = (
     "apply_residential_history_bb005_review.py",
     "apply_residential_history_bb003_review.py",
     "apply_residential_history_mobility_duration_review.py",
+    # Source-review scripts above can refine their domain crosswalk after the
+    # initial E/P index build. Regenerate the index from those final sources,
+    # then restore three housing reviews that intentionally add index-only
+    # detail beyond their source crosswalks.
+    "build_ep_concept_source_crosswalk.py",
+    "apply_2018_household_property_value_review.py",
+    "apply_2018_housing_roster_context_review.py",
+    "apply_housing_numeric_measure_review.py",
+    "build_candidate_pair_explorer.py",
+    "finalize_catalog_semantics.py",
+    "sync_domain_catalog_labels.py",
     "summarize_ep_pair_wave_coverage.py",
     "summarize_directory_scope.py",
     "summarize_catalog_concept_categories.py",
@@ -228,6 +240,16 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_residential_history_bb005_review.py",
     "apply_residential_history_bb003_review.py",
     "apply_residential_history_mobility_duration_review.py",
+    # The domain review scripts update their source crosswalks after the first
+    # concept-index build. Rebuild the index from those final sources and
+    # reapply housing-only index details that are not stored in the inputs.
+    "build_ep_concept_source_crosswalk.py",
+    "apply_2018_household_property_value_review.py",
+    "apply_2018_housing_roster_context_review.py",
+    "apply_housing_numeric_measure_review.py",
+    "build_candidate_pair_explorer.py",
+    "finalize_catalog_semantics.py",
+    "sync_domain_catalog_labels.py",
     "summarize_ep_pair_wave_coverage.py",
     "summarize_directory_scope.py",
     "summarize_catalog_concept_categories.py",

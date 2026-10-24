@@ -12,8 +12,8 @@
 |e|food and household environment|29|161|161|
 |e|internal biomarker|15|19|19|
 |e|healthcare access|7|109|109|
+|e|early-life and family socioeconomic context|6|6|4|
 |e|family and intergenerational context|6|6|3|
-|e|early-life and family socioeconomic context|5|5|3|
 |e|life-course and reproductive history|2|8|8|
 |e|behavioral exposures|1|2|2|
 |e|environmental perception|1|1|1|
@@ -30,4 +30,4 @@
 |p|social wellbeing|4|10|10|
 |p|blood pressure|3|54|27|
 
-总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1444个（E=1152、P=301，9个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。
+总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1445个（E=1153、P=301，9个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。

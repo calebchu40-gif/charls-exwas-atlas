@@ -341,6 +341,11 @@ map_direct("social_context_remainder_crosswalk_v1.csv", "e",
            modules=("module",), caveats=("caveat",), semantics=("value_semantics",),
            value_labels=("value_labels",), units=("unit",), archives=("source_archive",),
            documents=("value_label_source",))
+map_direct("childhood_residential_context_crosswalk_v1.csv", "e",
+           statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
+           modules=("module",), caveats=("caveat",), semantics=("value_semantics",),
+           value_labels=("value_labels",), units=("unit",), archives=("source_archive",),
+           documents=("value_label_source",))
 map_direct("hukou_lifecourse_exposure_crosswalk_v1.csv", "e",
            statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
            modules=("module",), caveats=("caveat",), semantics=("value_semantics",),
@@ -550,6 +555,11 @@ for _, group in master.groupby(link_keys, sort=False, dropna=False):
     for column in provenance_columns:
         values = [str(value).strip() for value in group[column] if str(value).strip()]
         values = list(dict.fromkeys(values))
+        # Do not let a generic discovery-stage status dilute a later, exact
+        # source review for the same concept/field (for example, housing
+        # mappings that also appear in the broader food/environment index).
+        if column == "Mapping.Status" and len(values) > 1:
+            values = [value for value in values if value != "catalog-label candidate; questionnaire review pending"] or values
         base[column] = " | ".join(values)
     collapsed.append(base)
 master = pd.DataFrame(collapsed).reset_index(drop=True)
@@ -770,7 +780,15 @@ field_catalog["Concept.Alias.IDs"] = ["; ".join(sorted({alias for x in xs for al
 field_catalog["Concept.Label.Candidates"] = ["; ".join(sorted({x[1] for x in xs})) for xs in mapped_fields]
 field_catalog["Concept.Mapping.Source"] = ["; ".join(sorted({x[2] for x in xs})) for xs in mapped_fields]
 field_catalog["Concept.Mapping.Status"] = [" | ".join(sorted({x[3] for x in xs})) for xs in mapped_fields]
-field_catalog["Concept.Unit.Candidates"] = ["; ".join(sorted({f"{x[0]}={x[4]}" for x in xs if x[4]})) for xs in mapped_fields]
+mapped_units = ["; ".join(sorted({f"{x[0]}={x[4]}" for x in xs if x[4]})) for xs in mapped_fields]
+# A source crosswalk can legitimately omit a unit even when a separate
+# questionnaire-based review has already established one in the field
+# catalogue. Preserve those reviewed units on rebuild instead of erasing
+# them merely because the concept link itself has no unit annotation.
+field_catalog["Concept.Unit.Candidates"] = [
+    mapped or str(existing).strip()
+    for mapped, existing in zip(mapped_units, field_catalog["Concept.Unit.Candidates"].fillna(""))
+]
 # Re-apply exact, reviewed E/P -> C-only overrides after joining specialist
 # concept maps. C-only selector/measurement fields may retain labels and
 # units for interpretation, but must not regain an E/P candidate concept ID.

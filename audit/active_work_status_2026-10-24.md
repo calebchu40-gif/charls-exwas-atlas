@@ -1,5 +1,11 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-24 continuation: early-life residential context and reproducible crosswalk refresh
+
+Added `childhood_residential_setting_before_16_2013` as a source-reviewed single-wave E candidate from 2013 `BB006`; labels are `1=Village`, `2=City/Town`, and the new-interview/returnee preload route is retained. The 2011 questionnaire gives those labels in the same order, but the 2011 Codebook reverses them; because this is an official source conflict, 2011 `bb006` is deliberately not mapped and no 2011–2013 harmonization is claimed. No frequencies or respondent records were used. Review: [`childhood_residential_setting_source_review_2026-10-24.md`](childhood_residential_setting_source_review_2026-10-24.md).
+
+The final directory contains 1,445 distinct E/P concepts (E=1,153; P=301 including 9 dual-role concepts), 6,675 E/P concept-source mappings, and 4,748 E / 2,127 P / 980 C field-shard rows. The pair explorer lists 598 2013 exposure concepts; pair availability remains metadata-only, actual complete-case Ns are not computed, and formal models remain 0. Added a final source-index rebuild after domain reviews so the concept-source index reflects the reviewed domain crosswalks; three housing-specific index annotations are reapplied afterward. All 89 `DO NOT ANALYZE` locks remain intact. The full suite now has 296 tests; no respondent-level data or official frequency counts were used.
+
 ## 2026-10-24 continuation: female reproductive timing exposure candidates
 
 Reviewed official 2011, 2013, 2015 and 2018 questionnaires and Codebooks; added `age_at_menarche` and `age_at_menopause` as two separate life-course exposure candidates, each with four exact `DA026_2` or `DA028_2` wave-field mappings. The catalog and pair browser preserve the women-only and wave-specific routes, the conditional DA027 menopause branch, the age-versus-year split, and 2018's separate never-menstruated response. Year components are not converted into ages; 2013 prior-wave `ZDA026_2`/`ZDA028_2` fields remain excluded pending release-level identity/value-format review. No routine covariate recommendation, cross-wave equivalence, respondent-level analysis or association result is implied. See [`reproductive_history_exposure_review_2026-10-24.md`](reproductive_history_exposure_review_2026-10-24.md).

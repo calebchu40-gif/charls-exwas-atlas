@@ -21722,10 +21722,30 @@
       ]
     },
     "2013": {
-      "exposure_count": 597,
+      "exposure_count": 598,
       "phenotype_count": 224,
-      "candidate_pair_count": 133720,
+      "candidate_pair_count": 133944,
       "exposures": [
+        {
+          "concept_id": "childhood_residential_setting_before_16_2013",
+          "label": "16岁前主要居住地城乡属性（2013）",
+          "domain": "early-life and family socioeconomic context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "bb006",
+              "label": "Where did You Live Before 16 Years Old",
+              "module": "Demographic_Background",
+              "unit": "respondent-reported childhood residential setting before age 16",
+              "value_labels": "1=Village; 2=City/Town",
+              "value_semantics": "categorical nominal response; the source asks village versus city/town; do not derive ambient pollution, exact residence, or duration",
+              "mapping_status": "single-wave candidate; 2013 questionnaire and Codebook agree on the item and category labels; cross-wave harmonization is not established",
+              "caveat": "The 2013 questionnaire and Codebook agree that 1=Village and 2=City/Town. The 2011 questionnaire gives the same labels, but the 2011 Codebook reverses them; the 2011 source conflict is documented separately and its field is deliberately not mapped here. In 2013, returning respondents skip the question when BB006 is already present in the prior wave, so the stored value may be carried forward rather than newly elicited in 2013. Treat this as a single-wave search candidate only; do not combine 2011/2013 codes or interpret categories as measured pollution."
+            }
+          ]
+        },
         {
           "concept_id": "home_accessibility",
           "label": "Accessibility facilities in residence/building",
@@ -26688,7 +26708,7 @@
               "value_labels": "1=AM; 2=PM (official codebook response codes)",
               "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB15 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb03_1",
@@ -26698,7 +26718,7 @@
               "value_labels": "AM-row component (official questionnaire layout; verify release storage)",
               "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB15 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb03_2",
@@ -26708,7 +26728,7 @@
               "value_labels": "AM-row component (official questionnaire layout; verify release storage)",
               "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB15 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb03_3",
@@ -26718,7 +26738,7 @@
               "value_labels": "PM-row component (official questionnaire layout; verify release storage)",
               "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB15 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb03_4",
@@ -26728,7 +26748,7 @@
               "value_labels": "PM-row component (official questionnaire layout; verify release storage)",
               "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB15 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb04",
@@ -26738,7 +26758,7 @@
               "value_labels": "1=AM; 2=PM (official codebook response codes)",
               "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB15 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb04_1",
@@ -26748,7 +26768,7 @@
               "value_labels": "AM-row component (official questionnaire layout; verify release storage)",
               "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB15 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb04_2",
@@ -26758,7 +26778,7 @@
               "value_labels": "AM-row component (official questionnaire layout; verify release storage)",
               "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB15 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb04_3",
@@ -26768,7 +26788,7 @@
               "value_labels": "PM-row component (official questionnaire layout; verify release storage)",
               "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB15 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             },
             {
               "code": "wb04_4",
@@ -26778,7 +26798,7 @@
               "value_labels": "PM-row component (official questionnaire layout; verify release storage)",
               "value_semantics": "yesterday / previous-day recall; 2013 single-day recall; wb03/wb04 code 1=AM, 2=PM; _1/_2 are AM-row hour/minute and _3/_4 are PM-row hour/minute on the printed questionnaire",
               "mapping_status": "candidate exposure mapping; official questionnaire/codebook field identified; route, denominator and derivation review required",
-              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB14 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
+              "caveat": "Single-wave candidate based on prior-day wake and bedtime questions. The 2013 questionnaire prints separate AM and PM response rows for each 12-hour clock item; the Codebook's paired time components map _1/_2 to the AM row and _3/_4 to the PM row. Preserve raw components and verify released-file storage/routing before constructing a clock time. Do not interpret the sparse PM wake row as a separate construct or use Codebook frequencies as project sample-size estimates. WB05-WB15 are asked in the same yesterday-recall block, so associations with those mood items have no established temporal direction. This is not usual sleep timing, sleep duration, or a multi-day average."
             }
           ]
         },
@@ -29617,7 +29637,7 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "2020 i017含义变化为室内淋浴，故不映射",
-              "mapping_status": "catalog-label candidate; questionnaire review pending | measured",
+              "mapping_status": "measured",
               "caveat": "Residence-level water access indicator; distinguish from water source, treatment, and drinking-water quality. | 2020 i017含义变化为室内淋浴，故不映射"
             }
           ]
@@ -45306,7 +45326,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "",
-              "mapping_status": "catalog-label candidate; questionnaire review pending | official 2015 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+              "mapping_status": "official 2015 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
               "caveat": "2015-only candidate from the current catalog; availability/presence does not measure use, filtration performance, or ambient/personal PM exposure. | 2015 and 2018 ask whether the residence has an air cleaner (Yes/No); 2020 asks whether XFinancialResp's house has one (Yes/No). The 2020 questionnaire permits interviewer recording only when the interviewer is in the home and clearly knows the answer, otherwise asking the respondent. Presence does not establish use, filter condition, ventilation, pollutant concentration, or personal exposure. Preserve wave-specific household referents and confirm linkage before person-level assignment."
             }
           ]
@@ -53073,7 +53093,7 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "2020 i017含义变化为室内淋浴，故不映射",
-              "mapping_status": "catalog-label candidate; questionnaire review pending | measured",
+              "mapping_status": "measured",
               "caveat": "Residence-level water access indicator; distinguish from water source, treatment, and drinking-water quality. | 2020 i017含义变化为室内淋浴，故不映射"
             }
           ]
@@ -76677,7 +76697,7 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "2020 i017含义变化为室内淋浴，故不映射",
-              "mapping_status": "catalog-label candidate; questionnaire review pending | measured",
+              "mapping_status": "measured",
               "caveat": "Residence-level water access indicator; distinguish from water source, treatment, and drinking-water quality. | 2020 i017含义变化为室内淋浴，故不映射"
             }
           ]
@@ -86786,7 +86806,7 @@
               "label": "Urban or Rural",
               "module": "Housing",
               "unit": "",
-              "value_labels": "",
+              "value_labels": "1=City/Town central area; 2=Rural-urban fringe; 3=Rural; 4=Special zone",
               "value_semantics": "main respondent's currently occupied residence context",
               "mapping_status": "official 2018 questionnaire and Codebook reviewed; response labels documented; cross-wave equivalence and analysis eligibility pending",
               "caveat": "2018 I000_W4_2 describes the rural/urban context of the main respondent's currently occupied house, selected at I000_W4 from the preloaded property list (or 99=None of the above). It is distinct from HA025_W4[i], which describes each separately listed property. The questionnaire and Codebook use slightly different English renderings of the same four categories; the displayed labels follow the Codebook. This is a single-wave residence-context candidate, not a direct pollutant measurement, community classification, or automatically selected adjustment variable. Preserve the residence-selection route and verify released missing/special codes and eligible denominator; cross-wave equivalence is not approved."
