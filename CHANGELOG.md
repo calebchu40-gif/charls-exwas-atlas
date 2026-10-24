@@ -32,6 +32,7 @@
 
 - Resolved the 2020 `DA035` 30-hours/30-minutes translation discrepancy using the official Chinese questionnaire and Chinese flowchart; the Chinese questionnaire and Codebook both say minutes, and the flowchart shows `DA034<2 hours → DA035`, `DA034≥2 hours → DA036`. Restored reviewed response labels in the metadata crosswalk and documented that authorized-release value-storage/special-code QA is still required before analysis. Kept activity intensity and conditional routing separate; no dose or weekly total is derived. Added the official Chinese source PDFs, checksums, source review and regression coverage. No respondent records or Codebook frequencies were used.
 - The full finalization run also refreshed 14 Wave 5 household-expenditure source references to cite the now-included Chinese questionnaire alongside the Codebook; no household responses were read.
+- Audited alcohol-history `DA069` across 2011/2013/2015/2018 and morning-drink `DA078` in 2011/2013. Preserved the three historical DA069 categories and prior-wave carry-forward/skip routes (including 2018 `ZDA069`), distinguished history from current intake, and marked DA078's eligible population as conditional on the DA069 route. Updated the source mapping, topic JSON and pair-browser caveats; added an idempotent updater registered in both metadata pipelines and regression tests. No respondent data or Codebook frequencies were used; no new concept counts were added.
 
 ## 2026-10-25
 

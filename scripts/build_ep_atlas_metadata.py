@@ -86,6 +86,7 @@ FULL_PIPELINE_SCRIPTS = (
     "build_work_exposure_value_labels.py",
     "build_behavior_exposure_crosswalk.py",
     "enrich_behavior_value_labels.py",
+    "apply_alcohol_history_source_review.py",
     "build_social_exposure_crosswalk.py",
     "apply_social_caregiver_metadata_review.py",
     "apply_internet_digital_exposure_review.py",
@@ -205,6 +206,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "build_child_phenotype_crosswalk.py",
     # Restore reviewed household route/category metadata before catalog propagation.
     "apply_housing_context_source_review.py",
+    "apply_alcohol_history_source_review.py",
     "build_charls_atlas_catalog.py",
     # Rebuild the housing lookup from the audited owner-label maps before the
     # later housing measurement scripts enrich its units and route notes.

@@ -15049,9 +15049,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "1=Never had a drink; 2=Used to drink less than once a month; 3=Used to drink more than once a month",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；2018题目标签显示既往饮酒与频率信息合并，不能简单当作ever二分类；2020当前目录未检出同名的独立历史字段，不以空缺推断从未饮酒。"
+              "value_semantics": "Retrospective alcohol-use history/frequency category: never drank, used to drink less than monthly, or used to drink more than monthly. This is not current past-year drinking, quantity, or an exact monthly frequency. Preserve the DA069 route and historical reference. For re-interviews, DA069 may be skipped when the prior-wave history is already available; in 2018 the questionnaire explicitly uses ZDA069 for this carry-forward. A skipped or absent DA069 is not a No response and must not be pooled as one without release-specific validation.",
+              "mapping_status": "official questionnaire and Codebook response categories reviewed; historic construct retained; re-interview carry-forward and eligible denominator must be respected",
+              "caveat": "DA069 asks past drinking history/frequency, not current intake or dose. Labels match the Codebook. Preserve the wave-specific route; 2013/2015/2018 re-interviews can skip the item when prior history is already recorded (2018 ZDA069). Do not infer No from a skipped field."
             }
           ]
         },
@@ -15529,9 +15529,9 @@
               "module": "health_status_and_functioning",
               "unit": "",
               "value_labels": "1=Yes; 2=No",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；代码本将其标为过去一年内是否清晨第一件事饮酒；作为独立行为指标候选，不等同于饮酒频率或酒精摄入量。仅2011/2013目录明确出现该字段。"
+              "value_semantics": "Past-year morning-drink behavior: first drink in the morning to steady nerves or relieve a hangover. The questionnaire routes respondents with DA069=never or <monthly past drinking past the DA070–DA078 sequence; this item therefore does not have a population-wide denominator. Preserve route and eligible sample; structural skips are not No. This is a candidate dependence-related behavior marker, not alcohol quantity or a diagnosis.",
+              "mapping_status": "official questionnaire and Codebook item/Yes-No labels reviewed; conditional DA069 route and eligible denominator retained",
+              "caveat": "Asked about the past year and conditionally reached through the DA069 history route; not a population-wide Yes/No prevalence field. Do not recode structural skips as No."
             }
           ]
         },
@@ -37450,9 +37450,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=Never had a drink; 2=Used to drink less than once a month; 3=Used to drink more than once a month",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；2018题目标签显示既往饮酒与频率信息合并，不能简单当作ever二分类；2020当前目录未检出同名的独立历史字段，不以空缺推断从未饮酒。"
+              "value_semantics": "Retrospective alcohol-use history/frequency category: never drank, used to drink less than monthly, or used to drink more than monthly. This is not current past-year drinking, quantity, or an exact monthly frequency. Preserve the DA069 route and historical reference. For re-interviews, DA069 may be skipped when the prior-wave history is already available; in 2018 the questionnaire explicitly uses ZDA069 for this carry-forward. A skipped or absent DA069 is not a No response and must not be pooled as one without release-specific validation.",
+              "mapping_status": "official questionnaire and Codebook response categories reviewed; historic construct retained; re-interview carry-forward and eligible denominator must be respected",
+              "caveat": "DA069 asks past drinking history/frequency, not current intake or dose. Labels match the Codebook. Preserve the wave-specific route; 2013/2015/2018 re-interviews can skip the item when prior history is already recorded (2018 ZDA069). Do not infer No from a skipped field."
             }
           ]
         },
@@ -37870,9 +37870,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=Yes; 2=No",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；代码本将其标为过去一年内是否清晨第一件事饮酒；作为独立行为指标候选，不等同于饮酒频率或酒精摄入量。仅2011/2013目录明确出现该字段。"
+              "value_semantics": "Past-year morning-drink behavior: first drink in the morning to steady nerves or relieve a hangover. The questionnaire routes respondents with DA069=never or <monthly past drinking past the DA070–DA078 sequence; this item therefore does not have a population-wide denominator. Preserve route and eligible sample; structural skips are not No. This is a candidate dependence-related behavior marker, not alcohol quantity or a diagnosis.",
+              "mapping_status": "official questionnaire and Codebook item/Yes-No labels reviewed; conditional DA069 route and eligible denominator retained",
+              "caveat": "Asked about the past year and conditionally reached through the DA069 history route; not a population-wide Yes/No prevalence field. Do not recode structural skips as No."
             }
           ]
         },
@@ -61890,9 +61890,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=Never had a drink; 2=Used to drink less than once a month; 3=Used to drink more than once a month",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；2018题目标签显示既往饮酒与频率信息合并，不能简单当作ever二分类；2020当前目录未检出同名的独立历史字段，不以空缺推断从未饮酒。"
+              "value_semantics": "Retrospective alcohol-use history/frequency category: never drank, used to drink less than monthly, or used to drink more than monthly. This is not current past-year drinking, quantity, or an exact monthly frequency. Preserve the DA069 route and historical reference. For re-interviews, DA069 may be skipped when the prior-wave history is already available; in 2018 the questionnaire explicitly uses ZDA069 for this carry-forward. A skipped or absent DA069 is not a No response and must not be pooled as one without release-specific validation.",
+              "mapping_status": "official questionnaire and Codebook response categories reviewed; historic construct retained; re-interview carry-forward and eligible denominator must be respected",
+              "caveat": "DA069 asks past drinking history/frequency, not current intake or dose. Labels match the Codebook. Preserve the wave-specific route; 2013/2015/2018 re-interviews can skip the item when prior history is already recorded (2018 ZDA069). Do not infer No from a skipped field."
             }
           ]
         },
@@ -88491,9 +88491,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=Never had a drink; 2=Used to drink less than once a month; 3=Used to drink more than once a month",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；2018题目标签显示既往饮酒与频率信息合并，不能简单当作ever二分类；2020当前目录未检出同名的独立历史字段，不以空缺推断从未饮酒。"
+              "value_semantics": "Retrospective alcohol-use history/frequency category: never drank, used to drink less than monthly, or used to drink more than monthly. This is not current past-year drinking, quantity, or an exact monthly frequency. Preserve the DA069 route and historical reference. For re-interviews, DA069 may be skipped when the prior-wave history is already available; in 2018 the questionnaire explicitly uses ZDA069 for this carry-forward. A skipped or absent DA069 is not a No response and must not be pooled as one without release-specific validation.",
+              "mapping_status": "official questionnaire and Codebook response categories reviewed; historic construct retained; re-interview carry-forward and eligible denominator must be respected",
+              "caveat": "DA069 asks past drinking history/frequency, not current intake or dose. Labels match the Codebook. Preserve the wave-specific route; 2013/2015/2018 re-interviews can skip the item when prior history is already recorded (2018 ZDA069). Do not infer No from a skipped field."
             }
           ]
         },

@@ -918,12 +918,12 @@
         "source_label": "Did You Drink Alcoholic Beverages Ever",
         "module": "health_status_and_functioning",
         "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "自动概念目录中的逐波字段候选；2018题目标签显示既往饮酒与频率信息合并，不能简单当作ever二分类；2020当前目录未检出同名的独立历史字段，不以空缺推断从未饮酒。",
+        "note": "DA069 asks past drinking history/frequency, not current intake or dose. Labels match the Codebook. Preserve the wave-specific route; 2013/2015/2018 re-interviews can skip the item when prior history is already recorded (2018 ZDA069). Do not infer No from a skipped field.",
         "value_labels": "1=Never had a drink; 2=Used to drink less than once a month; 3=Used to drink more than once a month",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_label_status": "official questionnaire and Codebook response labels reviewed; prior-wave carry-forward and routed denominator retained; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt; response labels only",
+        "value_semantics": "Retrospective alcohol-use history/frequency category: never drank, used to drink less than monthly, or used to drink more than monthly. This is not current past-year drinking, quantity, or an exact monthly frequency. Preserve the DA069 route and historical reference. For re-interviews, DA069 may be skipped when the prior-wave history is already available; in 2018 the questionnaire explicitly uses ZDA069 for this carry-forward. A skipped or absent DA069 is not a No response and must not be pooled as one without release-specific validation.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt:L2607; DA069 and its skip route"
       },
       {
         "wave": "2013",
@@ -931,12 +931,12 @@
         "source_label": "Ever Drink Alcoholic Beverages",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "自动概念目录中的逐波字段候选；2018题目标签显示既往饮酒与频率信息合并，不能简单当作ever二分类；2020当前目录未检出同名的独立历史字段，不以空缺推断从未饮酒。",
+        "note": "DA069 asks past drinking history/frequency, not current intake or dose. Labels match the Codebook. Preserve the wave-specific route; 2013/2015/2018 re-interviews can skip the item when prior history is already recorded (2018 ZDA069). Do not infer No from a skipped field.",
         "value_labels": "1=Never had a drink; 2=Used to drink less than once a month; 3=Used to drink more than once a month",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
-        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_label_status": "official questionnaire and Codebook response labels reviewed; prior-wave carry-forward and routed denominator retained; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; response labels only",
+        "value_semantics": "Retrospective alcohol-use history/frequency category: never drank, used to drink less than monthly, or used to drink more than monthly. This is not current past-year drinking, quantity, or an exact monthly frequency. Preserve the DA069 route and historical reference. For re-interviews, DA069 may be skipped when the prior-wave history is already available; in 2018 the questionnaire explicitly uses ZDA069 for this carry-forward. A skipped or absent DA069 is not a No response and must not be pooled as one without release-specific validation.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3248; DA069 and its skip route"
       },
       {
         "wave": "2015",
@@ -944,12 +944,12 @@
         "source_label": "Ever Drink Alcoholic Beverages",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2015r.zip",
-        "note": "自动概念目录中的逐波字段候选；2018题目标签显示既往饮酒与频率信息合并，不能简单当作ever二分类；2020当前目录未检出同名的独立历史字段，不以空缺推断从未饮酒。",
+        "note": "DA069 asks past drinking history/frequency, not current intake or dose. Labels match the Codebook. Preserve the wave-specific route; 2013/2015/2018 re-interviews can skip the item when prior history is already recorded (2018 ZDA069). Do not infer No from a skipped field.",
         "value_labels": "1=Never had a drink; 2=Used to drink less than once a month; 3=Used to drink more than once a month",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
-        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_label_status": "official questionnaire and Codebook response labels reviewed; prior-wave carry-forward and routed denominator retained; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt; response labels only",
+        "value_semantics": "Retrospective alcohol-use history/frequency category: never drank, used to drink less than monthly, or used to drink more than monthly. This is not current past-year drinking, quantity, or an exact monthly frequency. Preserve the DA069 route and historical reference. For re-interviews, DA069 may be skipped when the prior-wave history is already available; in 2018 the questionnaire explicitly uses ZDA069 for this carry-forward. A skipped or absent DA069 is not a No response and must not be pooled as one without release-specific validation.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L2651; DA069 and its skip route"
       },
       {
         "wave": "2018",
@@ -957,12 +957,12 @@
         "source_label": "Whether Drank Alcoholic Beverages in the Past and Frequency",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2018r.zip",
-        "note": "自动概念目录中的逐波字段候选；2018题目标签显示既往饮酒与频率信息合并，不能简单当作ever二分类；2020当前目录未检出同名的独立历史字段，不以空缺推断从未饮酒。",
+        "note": "DA069 asks past drinking history/frequency, not current intake or dose. Labels match the Codebook. Preserve the wave-specific route; 2013/2015/2018 re-interviews can skip the item when prior history is already recorded (2018 ZDA069). Do not infer No from a skipped field.",
         "value_labels": "1=Never had a drink; 2=Used to drink less than once a month; 3=Used to drink more than once a month",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
-        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_label_status": "official questionnaire and Codebook response labels reviewed; prior-wave carry-forward and routed denominator retained; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt; response labels only",
+        "value_semantics": "Retrospective alcohol-use history/frequency category: never drank, used to drink less than monthly, or used to drink more than monthly. This is not current past-year drinking, quantity, or an exact monthly frequency. Preserve the DA069 route and historical reference. For re-interviews, DA069 may be skipped when the prior-wave history is already available; in 2018 the questionnaire explicitly uses ZDA069 for this carry-forward. A skipped or absent DA069 is not a No response and must not be pooled as one without release-specific validation.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3124; DA069 and its skip route"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
@@ -979,12 +979,12 @@
         "source_label": "Taking A Drink First Thing In the Morning Ever LY",
         "module": "health_status_and_functioning",
         "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "自动概念目录中的逐波字段候选；代码本将其标为过去一年内是否清晨第一件事饮酒；作为独立行为指标候选，不等同于饮酒频率或酒精摄入量。仅2011/2013目录明确出现该字段。",
+        "note": "Asked about the past year and conditionally reached through the DA069 history route; not a population-wide Yes/No prevalence field. Do not recode structural skips as No.",
         "value_labels": "1=Yes; 2=No",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_label_status": "official questionnaire and Codebook Yes/No labels reviewed; conditional DA069 route and eligible denominator retained; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt; response labels only",
+        "value_semantics": "Past-year morning-drink behavior: first drink in the morning to steady nerves or relieve a hangover. The questionnaire routes respondents with DA069=never or <monthly past drinking past the DA070–DA078 sequence; this item therefore does not have a population-wide denominator. Preserve route and eligible sample; structural skips are not No. This is a candidate dependence-related behavior marker, not alcohol quantity or a diagnosis.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt:L2666; past-year morning-drink item"
       },
       {
         "wave": "2013",
@@ -992,12 +992,12 @@
         "source_label": "Taking A Drink First Thing in The Morning",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "自动概念目录中的逐波字段候选；代码本将其标为过去一年内是否清晨第一件事饮酒；作为独立行为指标候选，不等同于饮酒频率或酒精摄入量。仅2011/2013目录明确出现该字段。",
+        "note": "Asked about the past year and conditionally reached through the DA069 history route; not a population-wide Yes/No prevalence field. Do not recode structural skips as No.",
         "value_labels": "1=Yes; 2=No",
-        "value_label_status": "official codebook response labels reviewed; routing/measurement definition retained separately",
-        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_semantics": "",
-        "questionnaire_source": ""
+        "value_label_status": "official questionnaire and Codebook Yes/No labels reviewed; conditional DA069 route and eligible denominator retained; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt; response labels only",
+        "value_semantics": "Past-year morning-drink behavior: first drink in the morning to steady nerves or relieve a hangover. The questionnaire routes respondents with DA069=never or <monthly past drinking past the DA070–DA078 sequence; this item therefore does not have a population-wide denominator. Preserve route and eligible sample; structural skips are not No. This is a candidate dependence-related behavior marker, not alcohol quantity or a diagnosis.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3314; past-year morning-drink item"
       }
     ],
     "status": "暴露概念候选，未进行跨波剂量统一",
