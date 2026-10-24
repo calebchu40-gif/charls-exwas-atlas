@@ -2,6 +2,7 @@
 
 ## 2026-10-25
 
+- Reviewed current employer organization type in all five waves (`FD002`, 2011–2018; `FC002`, 2020). Preserved the nominal response menus and 2020 “Do not know” code 997, and documented re-interview carry-forward/structural-skip limits so missingness is not misread as no employer.
 - Improved metadata catalogue table readability: widened the desktop catalogue layout, gave the interpretation column room for caveats, and added a smaller horizontal-scroll layout for narrow screens.
 - Reviewed the 2020 current-employer location item (`FC004`) and corrected its inherited unit, which incorrectly described months worked. The catalog now identifies a nominal location category, retains refusal code 999, and excludes conditional place-name fields from public metadata.
 - Reviewed seven agricultural-work location fields across household farming (2011–2020) and paid farm work (2011/2013). Kept concepts and wave categories distinct, documented the 2011 no-fixed-address interviewer code and 2020 refusal code, and excluded place-name subfields from public metadata. No respondent records or Codebook frequencies were used.

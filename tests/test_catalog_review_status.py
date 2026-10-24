@@ -165,6 +165,15 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertIn("999=Refuse to answer", field["value_labels"])
         self.assertIn("place-name fields", field["caveat"])
 
+    def test_employer_organization_type_is_nominal_across_all_five_waves(self):
+        concept = next(row for row in self.work if row.get("concept_id") == "current_employer_organization_type")
+        fields = {field["wave"]: field for field in concept["source_fields"]}
+        self.assertEqual(set(fields), {"2011", "2013", "2015", "2018", "2020"})
+        self.assertTrue(all(field["unit"] == "nominal current-employer organization category; no inherent order" for field in fields.values()))
+        self.assertTrue(all("nominal" in field["caveat"] and "not an environmental dose" in field["caveat"] for field in fields.values()))
+        self.assertIn("997=Do not know", fields["2020"]["value_labels"])
+        self.assertIn("structural skips", fields["2013"]["caveat"])
+
     def test_work_capi_formulas_and_source_conflicts_reach_main_catalog(self):
         examples = {
             ("2020", "xworking"): (
