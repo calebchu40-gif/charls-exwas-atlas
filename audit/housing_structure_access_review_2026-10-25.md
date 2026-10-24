@@ -1,0 +1,13 @@
+# Building structure, storeys, entrance steps, and construction-year intervals
+
+Reviewed official wave questionnaires and Codebooks for 22 mapped housing fields. This review only validates source wording, response labels, and documented questionnaire routes. It uses no respondent records, observed values, descriptive frequencies, or association results.
+
+Building-structure items (`I004`, 2011–2018; `I001`, 2020) have nominal construction-material categories. Available categories are not identical across waves: for example, the 2011 instrument distinguishes concrete/steel, bricks/wood, mixed structure, and other materials more finely than later versions. Do not turn codes into an ordinal scale or harmonize categories by matching text alone.
+
+Building/storey descriptors remain separate fields. In 2011–2018, `I006` classifies one-storey versus multi-storey (with wave-specific categories in 2015/2018), while `I007` identifies an independent versus compound dwelling on the applicable questionnaire path. In 2020, the corresponding items are `I004` and `I005`, referring to the Household Financial Respondent's house. These do not equal current-floor position, elevator availability, or an individual mobility outcome. Structural skips must not be recoded as a response.
+
+Entrance-step fields (`I011`, 2011–2018) are only asked after a No response to the wave-specific accessibility-facility question (`I010` or `I010_W4`). Interviewer instructions say not to count steps if an elevator is available. The response bins differ by wave, including whether zero steps has an explicit category. Keep routed absence distinct from zero, preserve wave-specific bins, and treat the field as a household access characteristic rather than a stair-climbing test.
+
+Construction-year fallback intervals (`I005_1`) are supported by the official questionnaires for 2011, 2013, 2015, and 2018 when the exact construction year is unclear or missing. In the 2011 questionnaire, the choices are printed under parent item `I005` rather than a separately numbered `I005_1` prompt; the Codebook stores this interval response in its own field. Preserve the interval as a separate categorical measure; do not impute a point year, collapse it into the exact-year variable, or confuse it with move-in time. The final interval wording also varies by wave, so retain each label.
+
+The reviewed mappings now agree across the food/housing source crosswalk, final concept-source index, and public JSON. Twenty-three stale pending statuses were resolved after confirming the 2011 parent-item wording and Codebook field identity. Reproduce with `python scripts/apply_housing_structure_access_review.py`; regression coverage is in `tests/test_housing_structure_access_review.py`.
