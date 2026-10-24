@@ -121,7 +121,7 @@ SPECS = [
         "2011": [r"da053_[123]_", r"da054_[123]_", r"da055_[123]_"], "2013": [r"da053_[123]_", r"da054_[123]_", r"da055_[123]_"],
         "2015": [r"da053_[123]_", r"da054_[123]_", r"da055_[123]_"], "2018": [r"da053_[123]_", r"da054_[123]_", r"da055_[123]_"],
         "2020": [r"da034_[123]_", r"da035_[123]_", r"da036_[123]_"]},
-     "变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"),
+     "时长档位与活动强度按波次区分，尚未统一为跨波活动剂量；不直接套用IPAQ派生公式。"),
     ("physical_activity_purpose", "体力活动：活动目的", "体力活动", {
         "2015": [r"da051_[123]_[123]_"], "2018": [r"da051_[123]_[123]_"], "2020": [r"da037_[123]_"]},
      "工作、交通或休闲等目的题可能存在类别变更；可作描述变量，不应混入活动剂量。"),
@@ -153,6 +153,12 @@ def main() -> None:
                     else:
                         beverage = {"da072": "烈酒", "da074": "啤酒", "da076": "葡萄酒/米酒"}.get(rec.variable.lower(), "所选酒类")
                         field_note = f"{wave}年{rec.variable.upper()}仅在受访者选择{beverage}后询问该酒类过去一年内的饮用频率；这是酒类单项频率，不是总体饮酒频率。需保留酒类范围及路由。"
+                if cid == "physical_activity_duration" and wave == "2020":
+                    field_note = (f"2020年{rec.variable.upper()}为强度特异的活动日时长分档组成字段；DA034/DA035/DA036的问卷文本未给出可核实的相互跳题条件，"
+                                  "不可视为三个独立活动剂量或直接相加。DA035问卷与Codebook的30小时/30分钟阈值冲突，保留为DO NOT ANALYZE，等待获准发行版和完整路由核验。"
+                                  "不按IPAQ公式构造分钟数、每周总量或等级。")
+                elif cid == "physical_activity_duration":
+                    field_note = "活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
                 field = {"wave": wave, "code": rec.variable, "source_label": rec.variable_label,
                          "module": rec.module, "source_archive": rec.source,
                          "note": f"自动概念目录中的逐波字段候选；{field_note}"}

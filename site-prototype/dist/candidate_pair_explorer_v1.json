@@ -9915,7 +9915,7 @@
               "value_labels": "1=<2 hours; 2=≥2 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da053_2_",
@@ -9925,7 +9925,7 @@
               "value_labels": "1=<2 hours; 2=≥2 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da053_3_",
@@ -9935,7 +9935,7 @@
               "value_labels": "1=<2 hours; 2=≥2 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da054_1_",
@@ -9945,7 +9945,7 @@
               "value_labels": "1=<30 minutes; 2=≥30 minutes",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da054_2_",
@@ -9955,7 +9955,7 @@
               "value_labels": "1=<30 minutes; 2=≥30 minutes",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da054_3_",
@@ -9965,7 +9965,7 @@
               "value_labels": "1=<30 minutes; 2=≥30 minutes",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da055_1_",
@@ -9975,7 +9975,7 @@
               "value_labels": "1=<4 hours; 2=≥4 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da055_2_",
@@ -9985,7 +9985,7 @@
               "value_labels": "1=<4 hours; 2=≥4 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da055_3_",
@@ -9995,7 +9995,7 @@
               "value_labels": "1=<4 hours; 2=≥4 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             }
           ]
         },
@@ -29658,7 +29658,7 @@
               "value_labels": "1=<2 hours; 2=≥2 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da053_2_",
@@ -29668,7 +29668,7 @@
               "value_labels": "1=<2 hours; 2=≥2 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da053_3_",
@@ -29678,7 +29678,7 @@
               "value_labels": "1=<2 hours; 2=≥2 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da054_1_",
@@ -29688,7 +29688,7 @@
               "value_labels": "1=<30 minutes; 2=≥30 minutes",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da054_2_",
@@ -29698,7 +29698,7 @@
               "value_labels": "1=<30 minutes; 2=≥30 minutes",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da054_3_",
@@ -29708,7 +29708,7 @@
               "value_labels": "1=<30 minutes; 2=≥30 minutes",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da055_1_",
@@ -29718,7 +29718,7 @@
               "value_labels": "1=<4 hours; 2=≥4 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da055_2_",
@@ -29728,7 +29728,7 @@
               "value_labels": "1=<4 hours; 2=≥4 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da055_3_",
@@ -29738,7 +29738,7 @@
               "value_labels": "1=<4 hours; 2=≥4 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             }
           ]
         },
@@ -53114,7 +53114,7 @@
               "value_labels": "1=<2 hours; 2=≥2 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da053_2_",
@@ -53124,7 +53124,7 @@
               "value_labels": "1=<2 hours; 2=≥2 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da053_3_",
@@ -53134,7 +53134,7 @@
               "value_labels": "1=<2 hours; 2=≥2 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da054_1_",
@@ -53144,7 +53144,7 @@
               "value_labels": "1=<30 minutes; 2=≥30 minutes",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da054_2_",
@@ -53154,7 +53154,7 @@
               "value_labels": "1=<30 minutes; 2=≥30 minutes",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da054_3_",
@@ -53164,7 +53164,7 @@
               "value_labels": "1=<30 minutes; 2=≥30 minutes",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da055_1_",
@@ -53174,7 +53174,7 @@
               "value_labels": "1=<4 hours; 2=≥4 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da055_2_",
@@ -53184,7 +53184,7 @@
               "value_labels": "1=<4 hours; 2=≥4 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da055_3_",
@@ -53194,7 +53194,7 @@
               "value_labels": "1=<4 hours; 2=≥4 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             }
           ]
         },
@@ -76718,7 +76718,7 @@
               "value_labels": "1=<2 hours; 2=≥2 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da053_2_",
@@ -76728,7 +76728,7 @@
               "value_labels": "1=<2 hours; 2=≥2 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da053_3_",
@@ -76738,7 +76738,7 @@
               "value_labels": "1=<2 hours; 2=≥2 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da054_1_",
@@ -76748,7 +76748,7 @@
               "value_labels": "1=<30 minutes; 2=≥30 minutes",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da054_2_",
@@ -76758,7 +76758,7 @@
               "value_labels": "1=<30 minutes; 2=≥30 minutes",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da054_3_",
@@ -76768,7 +76768,7 @@
               "value_labels": "1=<30 minutes; 2=≥30 minutes",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da055_1_",
@@ -76778,7 +76778,7 @@
               "value_labels": "1=<4 hours; 2=≥4 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da055_2_",
@@ -76788,7 +76788,7 @@
               "value_labels": "1=<4 hours; 2=≥4 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             },
             {
               "code": "da055_3_",
@@ -76798,7 +76798,7 @@
               "value_labels": "1=<4 hours; 2=≥4 hours",
               "value_semantics": "",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "caveat": "自动概念目录中的逐波字段候选；活动日/每周时长字段为波次特异的分档组成项；保留原强度和单位，未统一成跨波剂量，不按IPAQ公式推算总量。"
             }
           ]
         },
@@ -97594,9 +97594,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=<2 hours; 2=≥2 hours",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "value_semantics": "Intensity-specific activity-day duration category. The printed questionnaire does not establish the skip conditions among DA034/DA035/DA036; preserve these as routed components, not independent activity doses. Do not derive weekly minutes or an IPAQ score.",
+              "mapping_status": "official questionnaire/Codebook labels reviewed; nested duration routing and release-variable structure still require verification",
+              "caveat": "2020 physical-activity duration components are not independent measures; preserve intensity and source-field identity. Printed questionnaire does not show the exact skips."
             },
             {
               "code": "da034_2_",
@@ -97604,9 +97604,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=<2 hours; 2=≥2 hours",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "value_semantics": "Intensity-specific activity-day duration category. The printed questionnaire does not establish the skip conditions among DA034/DA035/DA036; preserve these as routed components, not independent activity doses. Do not derive weekly minutes or an IPAQ score.",
+              "mapping_status": "official questionnaire/Codebook labels reviewed; nested duration routing and release-variable structure still require verification",
+              "caveat": "2020 physical-activity duration components are not independent measures; preserve intensity and source-field identity. Printed questionnaire does not show the exact skips."
             },
             {
               "code": "da034_3_",
@@ -97614,39 +97614,39 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=<2 hours; 2=≥2 hours",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "value_semantics": "Intensity-specific activity-day duration category. The printed questionnaire does not establish the skip conditions among DA034/DA035/DA036; preserve these as routed components, not independent activity doses. Do not derive weekly minutes or an IPAQ score.",
+              "mapping_status": "official questionnaire/Codebook labels reviewed; nested duration routing and release-variable structure still require verification",
+              "caveat": "2020 physical-activity duration components are not independent measures; preserve intensity and source-field identity. Printed questionnaire does not show the exact skips."
             },
             {
               "code": "da035_1_",
               "label": "Time with Intensive Physical Activity",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=<30 minutes; 2=≥30 minutes",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "value_labels": "",
+              "value_semantics": "Unresolved official source conflict: questionnaire threshold is 30 hours; Codebook response labels say 30 minutes. Preserve both readings; do not infer which is correct, recode the field, or derive activity dose. The routing relationship to DA034 and DA036 is also not shown in the printed questionnaire.",
+              "mapping_status": "DO NOT ANALYZE; 2020 Questionnaire and Codebook conflict on DA035 threshold units; release-level identity/routing verification required",
+              "caveat": "Questionnaire: <30 hours/≥30 hours; Codebook: <30 minutes/≥30 minutes. Unresolved conflict; do not use the category labels for analysis."
             },
             {
               "code": "da035_2_",
               "label": "Time with Moderate Physical Activity",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=<30 minutes; 2=≥30 minutes",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "value_labels": "",
+              "value_semantics": "Unresolved official source conflict: questionnaire threshold is 30 hours; Codebook response labels say 30 minutes. Preserve both readings; do not infer which is correct, recode the field, or derive activity dose. The routing relationship to DA034 and DA036 is also not shown in the printed questionnaire.",
+              "mapping_status": "DO NOT ANALYZE; 2020 Questionnaire and Codebook conflict on DA035 threshold units; release-level identity/routing verification required",
+              "caveat": "Questionnaire: <30 hours/≥30 hours; Codebook: <30 minutes/≥30 minutes. Unresolved conflict; do not use the category labels for analysis."
             },
             {
               "code": "da035_3_",
               "label": "Time with Light Physical Activity",
               "module": "Health_Status_and_Functioning",
               "unit": "",
-              "value_labels": "1=<30 minutes; 2=≥30 minutes",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "value_labels": "",
+              "value_semantics": "Unresolved official source conflict: questionnaire threshold is 30 hours; Codebook response labels say 30 minutes. Preserve both readings; do not infer which is correct, recode the field, or derive activity dose. The routing relationship to DA034 and DA036 is also not shown in the printed questionnaire.",
+              "mapping_status": "DO NOT ANALYZE; 2020 Questionnaire and Codebook conflict on DA035 threshold units; release-level identity/routing verification required",
+              "caveat": "Questionnaire: <30 hours/≥30 hours; Codebook: <30 minutes/≥30 minutes. Unresolved conflict; do not use the category labels for analysis."
             },
             {
               "code": "da036_1_",
@@ -97654,9 +97654,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=<4 hours; 2=≥4 hours",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "value_semantics": "Intensity-specific activity-day duration category. The printed questionnaire does not establish the skip conditions among DA034/DA035/DA036; preserve these as routed components, not independent activity doses. Do not derive weekly minutes or an IPAQ score.",
+              "mapping_status": "official questionnaire/Codebook labels reviewed; nested duration routing and release-variable structure still require verification",
+              "caveat": "2020 physical-activity duration components are not independent measures; preserve intensity and source-field identity. Printed questionnaire does not show the exact skips."
             },
             {
               "code": "da036_2_",
@@ -97664,9 +97664,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=<4 hours; 2=≥4 hours",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "value_semantics": "Intensity-specific activity-day duration category. The printed questionnaire does not establish the skip conditions among DA034/DA035/DA036; preserve these as routed components, not independent activity doses. Do not derive weekly minutes or an IPAQ score.",
+              "mapping_status": "official questionnaire/Codebook labels reviewed; nested duration routing and release-variable structure still require verification",
+              "caveat": "2020 physical-activity duration components are not independent measures; preserve intensity and source-field identity. Printed questionnaire does not show the exact skips."
             },
             {
               "code": "da036_3_",
@@ -97674,9 +97674,9 @@
               "module": "Health_Status_and_Functioning",
               "unit": "",
               "value_labels": "1=<4 hours; 2=≥4 hours",
-              "value_semantics": "",
-              "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
-              "caveat": "自动概念目录中的逐波字段候选；变量标签中的时长分档/时间单位存在波次差异；应基于问卷完整选项与代码本先复核，不直接套用IPAQ派生公式。"
+              "value_semantics": "Intensity-specific activity-day duration category. The printed questionnaire does not establish the skip conditions among DA034/DA035/DA036; preserve these as routed components, not independent activity doses. Do not derive weekly minutes or an IPAQ score.",
+              "mapping_status": "official questionnaire/Codebook labels reviewed; nested duration routing and release-variable structure still require verification",
+              "caveat": "2020 physical-activity duration components are not independent measures; preserve intensity and source-field identity. Printed questionnaire does not show the exact skips."
             }
           ]
         },

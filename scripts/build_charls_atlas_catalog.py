@@ -1007,6 +1007,10 @@ def main() -> None:
 
     official_review = re.compile(r"official codebook (?:item )?response labels reviewed", re.I)
     add_reviewed_labels("behavior_exposure_variable_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official codebook response labels reviewed|official selector code reviewed;", re.I))
+    add_reviewed_status_without_value_label(
+        "behavior_exposure_variable_mapping_v1.csv", "wave", "code", "value_label_status", "value_label_source",
+        re.compile(r"^DO NOT ANALYZE; official 2020 questionnaire and Codebook conflict on DA035 threshold units$", re.I),
+    )
     add_reviewed_labels("personal_income_exposure_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire/codebook response labels reviewed|official questionnaire response categories transcribed|official questionnaire response categories; frequencies omitted|official Codebook response labels reviewed; frequencies omitted|official questionnaire and Codebook response labels reviewed; frequencies omitted; COVID period and route retained|official questionnaire and Codebook response labels reviewed; frequencies omitted; COVID period and route retained", re.I))
     add_reviewed_status_without_value_label(
         "personal_income_exposure_mapping_v1.csv", "wave", "code", "value_label_status", "value_label_source",

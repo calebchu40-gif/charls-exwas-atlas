@@ -198,7 +198,7 @@ GitHub 官方说明：GitHub Free 个人仓库需要公开仓库才能使用 Pag
 行为暴露共享题关系补审：DA067（2020 DA051）过去一年饮酒原始频率三分类与“是否饮酒”二元概念现明确标为派生关系；1/2派生Yes、3派生No，未把它们当作独立暴露，也保留缺失/路由状态。复核细节见 `audit/concept_overlap_resolution_2026-10-22.md`。
 
 
-体力活动共享字段审计：官方问卷将不同强度的发生题分别记录；`physical_activity_occurrence`是分组上位概念，没有独立的总体活动响应。现将10个共享链接标为`umbrella_group_not_independent_measure`，任何“至少一类活动”变量须按预设规则从符合资格的强度题派生；2011随机半数家庭施测限制保留。见`audit/concept_overlap_resolution_2026-10-22.md`。
+体力活动共享字段审计：官方问卷将不同强度的发生题分别记录；`physical_activity_occurrence`是分组上位概念，没有独立的总体活动响应。现将10个共享链接标为`umbrella_group_not_independent_measure`，任何“至少一类活动”变量须按预设规则从符合资格的强度题派生；2011随机半数家庭施测限制保留。另经2020原始问卷PDF与官方Codebook核对，DA035的30小时/30分钟标签冲突仍未解决，网站撤下争议类别标签并标记DO NOT ANALYZE；DA034/DA036保留已一致标签，但全部时长题不推算成活动剂量或IPAQ总分。见[`audit/concept_overlap_resolution_2026-10-22.md`](audit/concept_overlap_resolution_2026-10-22.md)和[`audit/physical_activity_duration_2020_source_review_2026-10-24.md`](audit/physical_activity_duration_2020_source_review_2026-10-24.md)。
 
 2011、2013、2015、2018四波慢病治疗选项目录分别补入53、52、52、68个字段的官方Codebook类别文字。频数不进入网站；2011–2015字段的未选存储未核、暂不可分析，2018字段仍需验证发行版编码和适用分母。标签目录不代表这些字段已进入模型。详见[audit/chronic_disease_ancillary_label_ingestion_2026-10-22.md](audit/chronic_disease_ancillary_label_ingestion_2026-10-22.md)。
 
