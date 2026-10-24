@@ -2,6 +2,7 @@
 
 ## 2026-10-24
 
+- Removed deprecated in-place `DataFrame.drop` calls from the guarded 2013 official-weight merge. The current pandas 3.1 test environment had flagged these calls; merge behavior, row-order checks and conflict safeguards are unchanged.
 - Localized all 83 distinct C-catalogue subcategory descriptions in the public table, while preserving each original source-category phrase in the cell hover text and search index. Bumped the app script cache key and added regression checks for full translation coverage, source-text retention and cache-key synchronization; no catalogue records or CHARLS data changed.
 - Verified the public Pages homepage references `app.js?v=63`; the live app bundle and C catalogue are HTTP 200, and all 83 live C subcategories have Chinese display labels. Deployment evidence: `audit/public_site_deployment_verification_2026-10-24.md`.
 - Tightened the result-table success gate for CHARLS survey models: a successful row now requires a verified weight choice (used or explicitly verified unweighted), the verified PSU to be used, and either a verified variance stratum or a clearly labeled approximate variance method when the stratum is not released. `not_applicable` and other incomplete design statuses can no longer pass as successful CHARLS results. Added synthetic regression tests and documented the release rule; no CHARLS models or respondent data were used.

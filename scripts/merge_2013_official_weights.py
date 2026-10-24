@@ -100,14 +100,14 @@ def merge_official_weights(prepared: pd.DataFrame, weights: pd.DataFrame,
         official_by_id = inc.set_index("ID")[col]
         base_ids = base["ID"]
         base[col] = base[col].where(base[col].notna(), official_by_id.reindex(base_ids).to_numpy())
-        inc.drop(columns=col, inplace=True)
+        inc = inc.drop(columns=col)
 
     merged = base.merge(inc, on="ID", how="left", validate="one_to_one",
                         suffixes=("", "__official"), indicator="_merge_status",
                         sort=False)
     if len(merged) != len(base) or not merged["_merge_status"].eq("both").all():
         raise ValueError("Not all prepared respondents matched; no output written")
-    merged.drop(columns="_merge_status", inplace=True)
+    merged = merged.drop(columns="_merge_status")
     if any(c.endswith("__official") for c in merged.columns):
         raise ValueError("Unexpected duplicate official columns; no output written")
     if merged["ID"].tolist() != base["ID"].tolist():
