@@ -13,6 +13,7 @@
 - 新增条件字段 `estimability_review_id`。仅 `reviewed_pass` 可以附引用；成功结果必须同时有 `reviewed_pass` 和审查编号。
 - `scripts/validate_exwas_result_table.py` 强制执行上述约束。验证器只核查审查状态和引用是否齐全，不会自行判断模型是否足够稳定。
 - 中文分析规约要求逐对/逐对比留存受控审查：规则版本、类别支持情况、分离和拟合诊断、权重与设计自由度/有效样本量、模型复杂度及审查结论。
+- Added the blank controlled-record checklist [`estimability_review_record_template_v1.md`](estimability_review_record_template_v1.md); only a sanitized status/reference may enter public result metadata.
 - 不制定没有预先方法依据或外部验证的通用事件数/样本量硬阈值。公开结果不得通过审查编号暴露小单元或可回推的支持细节；审查明细需留在受控本地环境。
 
 ## 验证
