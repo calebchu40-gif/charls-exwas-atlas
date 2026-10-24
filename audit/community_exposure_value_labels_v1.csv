@@ -87,6 +87,24 @@
 2011,jj021,community_household_energy_prices,Average Price of Natural Gas,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jj022,community_household_energy_prices,Average Price of Liquefied Petroleum Gas,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jj025,community_household_energy_prices,Average Price of Coal,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_1a,community_major_crop_production,First Crop,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_1b,community_major_crop_production,Mu,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_1c,community_major_crop_production,Jin,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_1d,community_major_crop_production,Mechanical Harvesting,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_1e,community_major_crop_production,Current Number of Crop Maturity,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_1f,community_major_crop_production,Highest Number of crop maturity,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_2a,community_major_crop_production,Second Crop,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_2b,community_major_crop_production,Mu,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_2c,community_major_crop_production,Jin,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_2d,community_major_crop_production,Mechanical Harvesting,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_2e,community_major_crop_production,Current Number of Crop Maturity,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_2f,community_major_crop_production,Highest Number of crop maturity,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_3a,community_major_crop_production,Second Crop,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_3b,community_major_crop_production,Mu,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_3c,community_major_crop_production,Jin,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_3d,community_major_crop_production,Mechanical Harvesting,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_3e,community_major_crop_production,Current Number of Crop Maturity,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jj001_3f,community_major_crop_production,Highest Number of crop maturity,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jb028_1_1_,community_kindergarten_count,Num. of this Facility,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jb028_2_1_,community_kindergarten_distance,Distance,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jb028_1_2_,community_primary_school_count,Num. of this Facility,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt

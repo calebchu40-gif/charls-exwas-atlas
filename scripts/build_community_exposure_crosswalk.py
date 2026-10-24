@@ -32,6 +32,7 @@ CONCEPTS={
  "community_fertilizer_seed_inputs":("Community-reported fertilizer and seed input context","Community environment","2011 community informant reports the most commonly used fertilizer name and community-level fertilizer/seed prices. The fertilizer name is open text and does not identify chemical composition or quantify use; prices do not establish individual purchase, handling or exposure."),
  "community_food_prices":("Community-reported food commodity prices","Community food environment","2011 informant-reported current local prices for pork tenderloin, eggs, rice and wheat/flour. These indicate community price context, not what a participant bought, ate, or received nutritionally; retain commodity-specific source fields and units."),
  "community_household_energy_prices":("Community-reported household energy prices","Community environment","2011 informant-reported current local prices for natural gas, bottled LPG and coal. Prices are community context, not household fuel use, fuel mix, combustion or personal pollutant dose; retain distinct units."),
+ "community_major_crop_production":("Community major-crop production profile","Community agricultural context","2011 village informant ranks up to three major crops and reports crop-specific planted area, yield per mu, mechanized production, current harvest seasons and historical maximum seasons. Keep crop ranks and unlike measurement units separate; do not sum yields or derive personal pesticide, occupation or dietary exposure."),
 }
 MAP={
  "community_water_sources":["jb006_1","jb006_2","jb006_3","jb006_4","jb006_5","jb006_6","jb006_7","jb006_8"],
@@ -60,6 +61,7 @@ MAP={
  "community_fertilizer_seed_inputs":["jj006","jj007","jj008","jj009","jj010"],
  "community_food_prices":["jj017","jj018","jj019","jj020"],
  "community_household_energy_prices":["jj021","jj022","jj025"],
+ "community_major_crop_production":[*[f"jj001_{i}{suffix}" for i in range(1,4) for suffix in "abcdef"]],
 }
 
 # The 2011 Community Questionnaire pages 10, 21–22, and 32–33 explicitly
@@ -142,6 +144,7 @@ QUESTIONNAIRE_REVIEWED = {
  "community_accessibility_observation","community_disaster_history","community_sanitation_reconstructed",
  "community_land_use_profile","community_main_terrain","community_agricultural_mechanization",
  "community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices",
+ "community_major_crop_production",
  *[cid for cid in CONCEPTS if cid.startswith("community_kindergarten_") or
     cid.startswith("community_primary_school_") or cid.startswith("community_junior_middle_school_") or
     cid.startswith("community_senior_high_school_") or cid.startswith("community_post_office_") or
@@ -164,7 +167,7 @@ def validate_added_source_mappings():
  cpath=ROOT/"sources_official"/"CHARLS_2011_Codebook_extracted.txt"
  q=" ".join(qpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
  cb=" ".join(cpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
- codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices") for code in MAP[cid]}
+ codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production") for code in MAP[cid]}
  for code in codes:
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
   q_norm="".join(ch for ch in q if ch.isalnum())
@@ -199,6 +202,10 @@ def validate_added_source_mappings():
   "average unit price for natural gas",
   "average unit price for liquefied petroleum gas",
   "average unit price for coal",
+  "please tell me about the three major agricultural products in your village",
+  "what is the planting area in 2010",
+  "what is the average output per mu",
+  "how many seasons do you harvest this crop",
  )
  for phrase in required_q:
   if phrase not in q:
@@ -239,6 +246,8 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part J, JJ002–JJ010; V-only agricultural production items, branch and stated units checked against official Codebook labels."
     elif cid in {"community_food_prices","community_household_energy_prices"}:
      evidence="CHARLS 2011 Community Questionnaire, Part J pp.38–39 (PDF pp.41–42), commodity-specific current-price prompts and units checked against the official Codebook; no numeric summaries copied."
+    elif cid == "community_major_crop_production":
+     evidence="CHARLS 2011 Community Questionnaire, Part J p.35 (PDF p.38), JJ001 ranked three-crop table; crop name, 2010 planted area, yield per mu, mechanized-production response and crop-season fields checked against the official Codebook; frequencies omitted."
     elif cid.startswith("community_observed_") or cid in {"community_built_form_organization", "community_accessibility_observation"}:
      evidence="CHARLS 2011 Community Questionnaire, Part K interviewer observations; item-specific 1–7 endpoint anchors verified."
     elif is_reviewed:
@@ -316,6 +325,22 @@ def main():
     elif code_l == "jj025":
      unit="Yuan/jin"
      caveat="Current community-reported coal price per jin; not evidence of household coal use, combustion, or personal pollutant dose."
+    elif code_l.startswith("jj001_") and code_l.endswith("a"):
+     caveat="Open-text name of the crop in this ranked slot; preserve source rank and do not treat this string as a standardized crop code."
+    elif code_l.startswith("jj001_") and code_l.endswith("b"):
+     unit="mu"
+     caveat="2010 planted area for the crop in this ranked slot; keep crop ranks separate and do not sum until authorized-release coding and overlap are validated."
+    elif code_l.startswith("jj001_") and code_l.endswith("c"):
+     unit="jin/mu"
+     caveat="Informant-reported average yield per mu for the crop in this ranked slot; retain rank and do not combine with planted area to derive production without validation."
+    elif code_l.startswith("jj001_") and code_l.endswith("d"):
+     caveat="Whether machinery is used for the crop in this ranked slot; nominal Yes/No response, not individual machinery contact or pollution dose."
+    elif code_l.startswith("jj001_") and code_l.endswith("e"):
+     unit="harvest seasons/year"
+     caveat="Current typical number of harvest seasons per year for this crop; keep distinct from its historical maximum and other crop ranks."
+    elif code_l.startswith("jj001_") and code_l.endswith("f"):
+     unit="harvest seasons/year (historical maximum)"
+     caveat="Informant-reported historical maximum harvest seasons per year for this crop; not directly comparable to the current typical seasons field."
     if code_l.startswith(("jb006_", "jb007_")):
      unit="households"
     elif code_l.startswith("jb028_1_") or code_l.startswith("jf002_1_"):
@@ -370,6 +395,14 @@ def main():
      unit="Yuan/m³"
     elif code_l == "jj022":
      unit="Yuan/bottle"
+    elif code_l.startswith("jj001_") and code_l.endswith("b"):
+     unit="mu"
+    elif code_l.startswith("jj001_") and code_l.endswith("c"):
+     unit="jin/mu"
+    elif code_l.startswith("jj001_") and code_l.endswith("e"):
+     unit="harvest seasons/year"
+    elif code_l.startswith("jj001_") and code_l.endswith("f"):
+     unit="harvest seasons/year (historical maximum)"
     else:
      unit=""
     rows.append({"concept_id":cid,"concept_label":label,"domain":domain,"wave":2011,

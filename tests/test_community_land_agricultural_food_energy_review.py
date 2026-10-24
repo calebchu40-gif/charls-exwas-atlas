@@ -16,6 +16,9 @@ EXPECTED = {
     "community_fertilizer_seed_inputs": {"jj006": "", "jj007": "Yuan/jin", "jj008": "Yuan/jin", "jj009": "Yuan/jin", "jj010": "Yuan/jin"},
     "community_food_prices": {"jj017": "Yuan/jin", "jj018": "Yuan/jin", "jj019": "Yuan/jin", "jj020": "Yuan/jin"},
     "community_household_energy_prices": {"jj021": "Yuan/m³", "jj022": "Yuan/bottle", "jj025": "Yuan/jin"},
+    "community_major_crop_production": {
+        **{f"jj001_{rank}{suffix}": unit for rank in range(1, 4) for suffix, unit in (("a", ""), ("b", "mu"), ("c", "jin/mu"), ("d", ""), ("e", "harvest seasons/year"), ("f", "harvest seasons/year (historical maximum)"))},
+    },
 }
 
 
@@ -39,7 +42,7 @@ class CommunityLandAgricultureMarketReviewTests(unittest.TestCase):
                 self.assertEqual(rows[code]["wave"], "2011")
                 self.assertIn("analysis eligibility pending", rows[code]["mapping_status"])
                 self.assertTrue(rows[code]["source_evidence"].startswith("CHARLS 2011 Community Questionnaire"))
-        self.assertEqual(sum(map(len, EXPECTED.values())), 26)
+        self.assertEqual(sum(map(len, EXPECTED.values())), 44)
 
     def test_ja012_conflict_is_excluded_and_documented(self):
         self.assertFalse(any(r["code"].lower() == "ja012" for r in self.rows))
@@ -64,6 +67,16 @@ class CommunityLandAgricultureMarketReviewTests(unittest.TestCase):
             self.assertTrue(any(term in concept["caveat"].lower() for term in ("not", "does not")))
         all_rows = [r for r in self.rows if r["concept_id"] in EXPECTED]
         self.assertTrue(all("Freq." not in r["source_evidence"] for r in all_rows))
+
+    def test_crop_ranks_units_and_measurement_types_remain_distinct(self):
+        concept = self.by_id["community_major_crop_production"]
+        self.assertIn("up to three major crops", concept["caveat"])
+        by_code = {f["code"].lower(): f for f in concept["source_fields"]}
+        for rank in range(1, 4):
+            self.assertEqual(by_code[f"jj001_{rank}d"]["value_labels"], "1=Yes; 2=No")
+            self.assertIn("not individual machinery contact", by_code[f"jj001_{rank}d"]["caveat"])
+            self.assertIn("historical maximum", by_code[f"jj001_{rank}f"]["unit"])
+            self.assertIn("crop rank", by_code[f"jj001_{rank}b"]["caveat"])
 
 
 if __name__ == "__main__":
