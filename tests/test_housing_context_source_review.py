@@ -42,6 +42,7 @@ class HousingContextSourceReviewTests(unittest.TestCase):
             ("2020", "waterworks_treatment", "i029"),
             ("2020", "air_cleaner_home", "i024"),
             ("2015", "air_cleaner_home", "i027_w3"),
+            ("2015", "air_cleaner", "i027_w3"),
             ("2018", "air_cleaner_home", "i027_w3"),
             ("2020", "floor_condition", "i027"),
             ("2020", "residence_move_in_time", "i002"),

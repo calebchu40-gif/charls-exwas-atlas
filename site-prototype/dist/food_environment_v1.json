@@ -879,9 +879,11 @@
         "module": "Housing_Characteristics",
         "source_label": "Does Your Residence Have An Air Cleaner in Your Home",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending",
+        "note": "Official questionnaire/Codebook reviewed: duplicate alias of air_cleaner_home, same 2015 I027_W3 source item (1=Yes/2=No). Do not count as a distinct exposure. See audit/housing_context_source_review_2026-10-24.md.",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding"
+        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
+        "mapping_status": "official 2015 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
+        "caveat": "Catalog alias only: this is the same 2015 I027_W3 household air-cleaner-presence item mapped under air_cleaner_home. Do not count it as a distinct exposure or duplicate association. Presence does not establish use, filtration performance, pollutant concentration, or personal exposure. See audit/housing_context_source_review_2026-10-24.md."
       }
     ]
   },
@@ -1187,7 +1189,10 @@
         "module": "Housing",
         "source_label": "Usable House Size",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official 2018 questionnaire confirms usable floor area (square metres) on the no-ownership route (I000_W4_4 not 1/9); preserve separately from I000_W4_12 on the ownership route. Special values and eligibility require authorized-release QA. See audit/housing_context_source_review_2026-10-24.md.",
+        "mapping_status": "official 2018 questionnaire confirms usable floor area in square metres; non-ownership route; special values and eligible denominator require authorized-release QA",
+        "caveat": "2018 usable floor area in square metres, asked when the main respondent/spouse does not own property rights to the current home. Keep separate from i000_w4_12, which is asked on the ownership route and measures floor area. The routes select different respondents/households and the fields are not substitutes. Confirm authorized-release special values, missingness, and eligible denominator; cross-wave equivalence is unapproved.",
+        "unit": "square metres"
       },
       {
         "wave": "2018",
@@ -1195,7 +1200,10 @@
         "module": "Housing",
         "source_label": "House Size",
         "value_labels": "",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "Official 2018 questionnaire confirms floor area (square metres) on the ownership route (I000_W4_4=1/9); preserve separately from I000_W4_11 on the no-ownership route. Special values and eligibility require authorized-release QA. See audit/housing_context_source_review_2026-10-24.md.",
+        "mapping_status": "official 2018 questionnaire confirms floor area in square metres; ownership route; special values and eligible denominator require authorized-release QA",
+        "caveat": "2018 floor area in square metres, asked when the main respondent/spouse owns property rights to the current home. Keep separate from i000_w4_11, which is usable floor area on the no-ownership route. The routes select different respondents/households and the fields are not substitutes. Confirm authorized-release special values, missingness, and eligible denominator; cross-wave equivalence is unapproved.",
+        "unit": "square metres"
       },
       {
         "wave": "2020",
@@ -1795,7 +1803,7 @@
     "concept_id": "electricity_access",
     "label": "Electricity in residence",
     "domain": "Housing environment/basic services",
-    "caveat": "Residence-level electricity availability; not household energy consumption or reliability.",
+    "caveat": "Household/residence-level electricity availability for XFinancialResp's house; this is not an individual dose or a measure of electricity reliability, duration, source, or indoor pollution. Preserve Yes/No and verify release-specific special values, missingness, eligible denominator, and linkage from household referent to the analytic person before use. Wave-specific target wording is retained; cross-wave equivalence and individual exposure assignment are not established. Household/residence-level electricity availability for the residence; this is not an individual dose or a measure of electricity reliability, duration, source, or indoor pollution. Preserve Yes/No and verify release-specific special values, missingness, eligible denominator, and linkage from household referent to the analytic person before use. Wave-specific target wording is retained; cross-wave equivalence and individual exposure assignment are not established.",
     "source_fields": [
       {
         "wave": "2011",
@@ -1803,7 +1811,11 @@
         "module": "housing_characteristics",
         "source_label": "Residence Has Electricity",
         "value_labels": "1=Yes; 2=No",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+        "note": "official 2011 questionnaire/Codebook wording, household referent and yes/no response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "mapping_status": "official 2011 questionnaire/Codebook wording, household referent and yes/no response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "caveat": "Household/residence-level electricity availability for the residence; this is not an individual dose or a measure of electricity reliability, duration, source, or indoor pollution. Preserve Yes/No and verify release-specific special values, missingness, eligible denominator, and linkage from household referent to the analytic person before use. Wave-specific target wording is retained; cross-wave equivalence and individual exposure assignment are not established.",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "value_label_status": "Official questionnaire and Codebook response categories reviewed; do not infer frequencies."
       },
       {
         "wave": "2013",
@@ -1811,7 +1823,11 @@
         "module": "Housing_Characteristics",
         "source_label": "Does your residence have electricity?",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "official 2013 questionnaire/Codebook wording, household referent and yes/no response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "mapping_status": "official 2013 questionnaire/Codebook wording, household referent and yes/no response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "caveat": "Household/residence-level electricity availability for the residence; this is not an individual dose or a measure of electricity reliability, duration, source, or indoor pollution. Preserve Yes/No and verify release-specific special values, missingness, eligible denominator, and linkage from household referent to the analytic person before use. Wave-specific target wording is retained; cross-wave equivalence and individual exposure assignment are not established.",
+        "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "value_label_status": "Official questionnaire and Codebook response categories reviewed; do not infer frequencies."
       },
       {
         "wave": "2018",
@@ -1819,7 +1835,11 @@
         "module": "Housing",
         "source_label": "Electricity",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "official 2018 questionnaire/Codebook wording, household referent and yes/no response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "mapping_status": "official 2018 questionnaire/Codebook wording, household referent and yes/no response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "caveat": "Household/residence-level electricity availability for the residence; this is not an individual dose or a measure of electricity reliability, duration, source, or indoor pollution. Preserve Yes/No and verify release-specific special values, missingness, eligible denominator, and linkage from household referent to the analytic person before use. Wave-specific target wording is retained; cross-wave equivalence and individual exposure assignment are not established.",
+        "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "value_label_status": "Official questionnaire and Codebook response categories reviewed; do not infer frequencies."
       },
       {
         "wave": "2020",
@@ -1827,7 +1847,11 @@
         "module": "Household_Income",
         "source_label": "Electricity",
         "value_labels": "1=Yes; 2=No",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "note": "official 2020 questionnaire/Codebook wording, household referent and yes/no response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "mapping_status": "official 2020 questionnaire/Codebook wording, household referent and yes/no response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "caveat": "Household/residence-level electricity availability for XFinancialResp's house; this is not an individual dose or a measure of electricity reliability, duration, source, or indoor pollution. Preserve Yes/No and verify release-specific special values, missingness, eligible denominator, and linkage from household referent to the analytic person before use. Wave-specific target wording is retained; cross-wave equivalence and individual exposure assignment are not established.",
+        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_label_status": "Official questionnaire and Codebook response categories reviewed; do not infer frequencies."
       }
     ]
   },
@@ -1835,47 +1859,67 @@
     "concept_id": "bathing_facility",
     "label": "In-house shower/bathing facility",
     "domain": "Housing environment/basic services",
-    "caveat": "Nominal categories distinguish centralized hot water, household water heater, or none; retain source categories.",
+    "caveat": "Residence-level in-house shower/bath facility type; the questionnaire lists unified hot-water supply; water heater; no facility. Treat categories as nominal, not an ordinal comfort/quality scale; do not infer bathing frequency, water temperature, hygiene, or personal exposure. Preserve the wave-specific response wording, verify authorized-release storage, special values, missingness, and eligible denominator, and confirm household-person linkage. Cross-wave equivalence is unapproved. Residence-level in-house shower/bath facility type; the questionnaire lists hot water provided; household-installed water heater; no facility. Treat categories as nominal, not an ordinal comfort/quality scale; do not infer bathing frequency, water temperature, hygiene, or personal exposure. Preserve the wave-specific response wording, verify authorized-release storage, special values, missingness, and eligible denominator, and confirm household-person linkage. Cross-wave equivalence is unapproved.",
     "source_fields": [
       {
         "wave": "2011",
         "code": "i018",
         "module": "housing_characteristics",
         "source_label": "In-House Shower or Bath Facility",
-        "value_labels": "1=Hot water provided; 2=Household water heater; 3=None",
-        "note": "2011 codebook/catalog candidate; correct baseline questionnaire is available; field-specific route and units remain under review"
+        "value_labels": "1=Hot water provided; 2=Water heater installed by the household; 3=No",
+        "note": "official 2011 questionnaire/Codebook wording, household referent and nominal response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "mapping_status": "official 2011 questionnaire/Codebook wording, household referent and nominal response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "caveat": "Residence-level in-house shower/bath facility type; the questionnaire lists hot water provided; household-installed water heater; no facility. Treat categories as nominal, not an ordinal comfort/quality scale; do not infer bathing frequency, water temperature, hygiene, or personal exposure. Preserve the wave-specific response wording, verify authorized-release storage, special values, missingness, and eligible denominator, and confirm household-person linkage. Cross-wave equivalence is unapproved.",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "value_label_status": "Official questionnaire and Codebook response categories reviewed; do not infer frequencies."
       },
       {
         "wave": "2013",
         "code": "i018",
         "module": "Housing_Characteristics",
         "source_label": "Is there in-house shower or bath facility?",
-        "value_labels": "1=Hot water provided; 2=Household water heater; 3=None",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "1=Hot water provided; 2=Water heater installed by the household; 3=No",
+        "note": "official 2013 questionnaire/Codebook wording, household referent and nominal response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "mapping_status": "official 2013 questionnaire/Codebook wording, household referent and nominal response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "caveat": "Residence-level in-house shower/bath facility type; the questionnaire lists hot water provided; household-installed water heater; no facility. Treat categories as nominal, not an ordinal comfort/quality scale; do not infer bathing frequency, water temperature, hygiene, or personal exposure. Preserve the wave-specific response wording, verify authorized-release storage, special values, missingness, and eligible denominator, and confirm household-person linkage. Cross-wave equivalence is unapproved.",
+        "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "value_label_status": "Official questionnaire and Codebook response categories reviewed; do not infer frequencies."
       },
       {
         "wave": "2015",
         "code": "i018",
         "module": "Housing_Characteristics",
         "source_label": "Is There In-house Shower or Bath Facility?",
-        "value_labels": "1=Hot water provided; 2=Household water heater; 3=None",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "1=Hot water provided; 2=Water heater installed by the household; 3=No",
+        "note": "official 2015 questionnaire/Codebook wording, household referent and nominal response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "mapping_status": "official 2015 questionnaire/Codebook wording, household referent and nominal response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "caveat": "Residence-level in-house shower/bath facility type; the questionnaire lists hot water provided; household-installed water heater; no facility. Treat categories as nominal, not an ordinal comfort/quality scale; do not infer bathing frequency, water temperature, hygiene, or personal exposure. Preserve the wave-specific response wording, verify authorized-release storage, special values, missingness, and eligible denominator, and confirm household-person linkage. Cross-wave equivalence is unapproved.",
+        "value_label_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "value_label_status": "Official questionnaire and Codebook response categories reviewed; do not infer frequencies."
       },
       {
         "wave": "2018",
         "code": "i018",
         "module": "Housing",
         "source_label": "In-house Shower",
-        "value_labels": "1=Hot water provided; 2=Household water heater; 3=None",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "1=Hot water provided; 2=Water heater installed by the household; 3=No",
+        "note": "official 2018 questionnaire/Codebook wording, household referent and nominal response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "mapping_status": "official 2018 questionnaire/Codebook wording, household referent and nominal response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "caveat": "Residence-level in-house shower/bath facility type; the questionnaire lists hot water provided; household-installed water heater; no facility. Treat categories as nominal, not an ordinal comfort/quality scale; do not infer bathing frequency, water temperature, hygiene, or personal exposure. Preserve the wave-specific response wording, verify authorized-release storage, special values, missingness, and eligible denominator, and confirm household-person linkage. Cross-wave equivalence is unapproved.",
+        "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "value_label_status": "Official questionnaire and Codebook response categories reviewed; do not infer frequencies."
       },
       {
         "wave": "2020",
         "code": "i017",
         "module": "Household_Income",
         "source_label": "In-house Shower",
-        "value_labels": "1=Unified hot water supply; 2=Water heater; 3=None",
-        "note": "catalog-label candidate; questionnaire review pending"
+        "value_labels": "1=Unified hot water supply; 2=Water heater; 3=No",
+        "note": "official 2020 questionnaire/Codebook wording, household referent and nominal response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "mapping_status": "official 2020 questionnaire/Codebook wording, household referent and nominal response categories reviewed; release storage, eligible denominator and person-household linkage require QA; see audit/electricity_bathing_source_review_2026-10-25.md",
+        "caveat": "Residence-level in-house shower/bath facility type; the questionnaire lists unified hot-water supply; water heater; no facility. Treat categories as nominal, not an ordinal comfort/quality scale; do not infer bathing frequency, water temperature, hygiene, or personal exposure. Preserve the wave-specific response wording, verify authorized-release storage, special values, missingness, and eligible denominator, and confirm household-person linkage. Cross-wave equivalence is unapproved.",
+        "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "value_label_status": "Official questionnaire and Codebook response categories reviewed; do not infer frequencies."
       }
     ]
   },
