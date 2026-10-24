@@ -157,6 +157,8 @@ const C_SUBCATEGORY_LABELS={
   "prior-wave diagnosis-time answer-history flags":"前一波次诊断时间回答历史标记",
   "prior-wave diagnosis-time preload values":"前一波次诊断时间预载年龄值（非当前波协变量）",
   "prior-wave reproductive-history preload values":"前一波次生殖史预载年龄值（非当前波暴露/结局）",
+  "prior-wave gender route flag":"前一波次性别信息路由标记",
+  "respondent gender source and derivation metadata":"受访者性别来源与派生元数据",
   "property-sale proceeds use-category selector slot":"房产出售所得用途类别选择槽位",
   "province-level pension-source work-unit location metadata":"省级养老金来源单位地点元数据",
   "questionnaire inserted activity-type labels":"问卷新增活动类型标签",

@@ -1,5 +1,11 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-24 continuation: audit Wave 1–4 gender sources and module identity
+
+Reviewed nine module-qualified respondent-gender rows against official wave questionnaires/Codebooks and the harmonized documentation QA guidance. Distinguished released gender candidates from interviewer-recorded inputs and the 2018 prior-wave route flag; retained the 2018 duplicate `xrgender` module rows as source records, not independent measures. Category labels are shown without frequencies. The harmonized `RAGENDER/RAFGENDR` algorithm remains a third-party QA reference and is not presented as a CHARLS raw field. Updates are idempotent and registered in both metadata pipelines. These C entries remain source candidates, not automatic covariate recommendations. Source audit: `audit/respondent_gender_source_derivation_review_2011_2018_2026-10-24.md`.
+
+The full finalize-only rebuild completed. The generated C shard remains 980 rows; its generic pending count is now 51 (down from 60), while E=4,748 and P=2,127 remain unchanged with no generic pending value-label rows. Same-wave metadata co-availability counts did not change. All 317 Python tests pass, all 34 static JSON files parse, JavaScript syntax and `git diff --check` pass, and all 89 formal analysis locks match. Browser cache key is v73. No participant data or codebook frequencies were used.
+
 ## 2026-10-24 continuation: classify reproductive-history preload fields
 
 Reviewed 2013 `ZDA026_2` and `ZDA028_2` against the official questionnaire and Codebook. The questionnaire identifies both as prior-interview reproductive-history context; the Codebook identifies the `_2` components as age and records `ZDA026_2` as string. Reclassified the two keyword hits as C measurement metadata with no categories, no same-wave E/P pairing, and an explicit authorized-release validation gate for identity, parsing, linkage, and special values. This does not modify the separate direct `DA026_2`/`DA028_2` life-course exposure candidates. Added an idempotent updater to both pipeline modes, a two-row audit crosswalk, Chinese UI labels, and regression tests. No respondent data or Codebook frequencies were used.
