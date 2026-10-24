@@ -223,3 +223,7 @@ JA039_1/JA039_2显示°C，JA040/JA041显示days，参照2010日历年并标注�
 ### 2026-10-24续：2013官方权重文件版本闸门
 
 官方Wave 2数据页确认2015-11-18版`Weights.dta`的发布SHA1为`22c4fc89df2e55fa8faf051e88830eebe0e035c0`。私有合并脚本现会在读取DTA前比对该官方SHA1，文件不符即停止；汇总QA同时留存官方SHA1与本地SHA-256。README和隔离目录交接说明已同步。新增合成文件哈希通过/拒绝测试；本机隔离`incoming_2013_weights`目录仍为空，因此没有读取或合并任何新个人数据，2013样本资格与权重门槛仍开放。全套255项Python测试通过；GitHub Validate #217（run `40053376860`）成功。该提交只改本地入库脚本和说明，不含Pages静态资产。
+
+## 2026-10-24 最新续接：Wave 2 权重方法说明已发布
+
+最新提交 `87f6be0`。Validate #263（https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40061030823）与 Pages Deploy #118（https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40061030880）成功；公开首页 HTTP 200，确认 `app.js?v=64`、Wave 2 权重差异说明和官方来源审计链接均已上线。最近完整测试套件为269项通过（含14项结果schema门槛测试）；页面改动另有回归检查。Wave 2 Release Note确认横截面、纵向、横截面生物标志物权重对应不同估计目标，且不提供纵向生物标志物权重；准备表当前仍缺2013官方`crosssection`/`longitudinal`标记，方差层标识也未核实。不得以地域字段拼造strata。正式CHARLS模型与实际配对N仍为0。
