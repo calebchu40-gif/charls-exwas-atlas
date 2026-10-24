@@ -21483,9 +21483,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Five-times sit-to-stand test: preserve completion/status, route-specific duration fields, completed stand count (0–5), and trunk/arm use separately. The questionnaire preamble says fastest pace, while the outcome prompt says usual pace; retain this source wording discrepancy rather than harmonizing it away.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-QH field identity and release eligibility remain unverified",
+              "caveat": "993 means tried but unable and 999 means chose not to complete; preserve as statuses, not times/counts. Duration fields QH003/QH004 (2011 LI004/LI005) belong to different completion routes; do not merge or substitute one for the other. QH006 chair height and QH006_1 other-chair height are protocol metadata, not respondent height. Do not derive a summary score without release-specific validation and a prespecified rule. 2011 instrument uses LI003–LI008 while release candidates use QH002–QH006; exact LI-to-QH field identity remains unverified."
             },
             {
               "code": "qh003",
@@ -21493,9 +21493,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Five-times sit-to-stand test: preserve completion/status, route-specific duration fields, completed stand count (0–5), and trunk/arm use separately. The questionnaire preamble says fastest pace, while the outcome prompt says usual pace; retain this source wording discrepancy rather than harmonizing it away.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-QH field identity and release eligibility remain unverified",
+              "caveat": "993 means tried but unable and 999 means chose not to complete; preserve as statuses, not times/counts. Duration fields QH003/QH004 (2011 LI004/LI005) belong to different completion routes; do not merge or substitute one for the other. QH006 chair height and QH006_1 other-chair height are protocol metadata, not respondent height. Do not derive a summary score without release-specific validation and a prespecified rule. 2011 instrument uses LI003–LI008 while release candidates use QH002–QH006; exact LI-to-QH field identity remains unverified."
             },
             {
               "code": "qh004",
@@ -21503,9 +21503,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Five-times sit-to-stand test: preserve completion/status, route-specific duration fields, completed stand count (0–5), and trunk/arm use separately. The questionnaire preamble says fastest pace, while the outcome prompt says usual pace; retain this source wording discrepancy rather than harmonizing it away.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-QH field identity and release eligibility remain unverified",
+              "caveat": "993 means tried but unable and 999 means chose not to complete; preserve as statuses, not times/counts. Duration fields QH003/QH004 (2011 LI004/LI005) belong to different completion routes; do not merge or substitute one for the other. QH006 chair height and QH006_1 other-chair height are protocol metadata, not respondent height. Do not derive a summary score without release-specific validation and a prespecified rule. 2011 instrument uses LI003–LI008 while release candidates use QH002–QH006; exact LI-to-QH field identity remains unverified."
             },
             {
               "code": "qh005",
@@ -21513,9 +21513,9 @@
               "module": "Physical Examination Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "官方体检手册、Codebook及基线用户指南已定位；候选QA/QB/QC字段代码均可在2011 Codebook中检出。手册LI题号与Codebook/发布字段命名不能仅凭相似题意视为同一字段，题意、路由及单位仍须逐项核验",
-              "caveat": "2011手册题号与发布字段名属于不同来源标识；当前映射是候选，不代表LI*与QA*/QB*/QC*代码一一对应。"
+              "value_semantics": "Five-times sit-to-stand test: preserve completion/status, route-specific duration fields, completed stand count (0–5), and trunk/arm use separately. The questionnaire preamble says fastest pace, while the outcome prompt says usual pace; retain this source wording discrepancy rather than harmonizing it away.",
+              "mapping_status": "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-QH field identity and release eligibility remain unverified",
+              "caveat": "993 means tried but unable and 999 means chose not to complete; preserve as statuses, not times/counts. Duration fields QH003/QH004 (2011 LI004/LI005) belong to different completion routes; do not merge or substitute one for the other. QH006 chair height and QH006_1 other-chair height are protocol metadata, not respondent height. Do not derive a summary score without release-specific validation and a prespecified rule. 2011 instrument uses LI003–LI008 while release candidates use QH002–QH006; exact LI-to-QH field identity remains unverified."
             }
           ]
         },
@@ -44518,9 +44518,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Five-times sit-to-stand test: preserve completion/status, route-specific duration fields, completed stand count (0–5), and trunk/arm use separately. The questionnaire preamble says fastest pace, while the outcome prompt says usual pace; retain this source wording discrepancy rather than harmonizing it away.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "993 means tried but unable and 999 means chose not to complete; preserve as statuses, not times/counts. Duration fields QH003/QH004 (2011 LI004/LI005) belong to different completion routes; do not merge or substitute one for the other. QH006 chair height and QH006_1 other-chair height are protocol metadata, not respondent height. Do not derive a summary score without release-specific validation and a prespecified rule. 2013 questionnaire and Codebook document the exact QH002–QH006 fields; this does not establish participant-level release availability or analytic eligibility."
             },
             {
               "code": "qh003",
@@ -44528,9 +44528,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Five-times sit-to-stand test: preserve completion/status, route-specific duration fields, completed stand count (0–5), and trunk/arm use separately. The questionnaire preamble says fastest pace, while the outcome prompt says usual pace; retain this source wording discrepancy rather than harmonizing it away.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "993 means tried but unable and 999 means chose not to complete; preserve as statuses, not times/counts. Duration fields QH003/QH004 (2011 LI004/LI005) belong to different completion routes; do not merge or substitute one for the other. QH006 chair height and QH006_1 other-chair height are protocol metadata, not respondent height. Do not derive a summary score without release-specific validation and a prespecified rule. 2013 questionnaire and Codebook document the exact QH002–QH006 fields; this does not establish participant-level release availability or analytic eligibility."
             },
             {
               "code": "qh004",
@@ -44538,9 +44538,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Five-times sit-to-stand test: preserve completion/status, route-specific duration fields, completed stand count (0–5), and trunk/arm use separately. The questionnaire preamble says fastest pace, while the outcome prompt says usual pace; retain this source wording discrepancy rather than harmonizing it away.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "993 means tried but unable and 999 means chose not to complete; preserve as statuses, not times/counts. Duration fields QH003/QH004 (2011 LI004/LI005) belong to different completion routes; do not merge or substitute one for the other. QH006 chair height and QH006_1 other-chair height are protocol metadata, not respondent height. Do not derive a summary score without release-specific validation and a prespecified rule. 2013 questionnaire and Codebook document the exact QH002–QH006 fields; this does not establish participant-level release availability or analytic eligibility."
             },
             {
               "code": "qh005",
@@ -44548,9 +44548,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "2013体检问卷、Codebook及Wave 2发布说明已定位；以下所有候选字段代码均可在2013 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Five-times sit-to-stand test: preserve completion/status, route-specific duration fields, completed stand count (0–5), and trunk/arm use separately. The questionnaire preamble says fastest pace, while the outcome prompt says usual pace; retain this source wording discrepancy rather than harmonizing it away.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "993 means tried but unable and 999 means chose not to complete; preserve as statuses, not times/counts. Duration fields QH003/QH004 (2011 LI004/LI005) belong to different completion routes; do not merge or substitute one for the other. QH006 chair height and QH006_1 other-chair height are protocol metadata, not respondent height. Do not derive a summary score without release-specific validation and a prespecified rule. 2013 questionnaire and Codebook document the exact QH002–QH006 fields; this does not establish participant-level release availability or analytic eligibility."
             }
           ]
         },
@@ -68673,9 +68673,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Five-times sit-to-stand test: preserve completion/status, route-specific duration fields, completed stand count (0–5), and trunk/arm use separately. The questionnaire preamble says fastest pace, while the outcome prompt says usual pace; retain this source wording discrepancy rather than harmonizing it away.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "993 means tried but unable and 999 means chose not to complete; preserve as statuses, not times/counts. Duration fields QH003/QH004 (2011 LI004/LI005) belong to different completion routes; do not merge or substitute one for the other. QH006 chair height and QH006_1 other-chair height are protocol metadata, not respondent height. Do not derive a summary score without release-specific validation and a prespecified rule. 2015 questionnaire and Codebook document the exact QH002–QH006 fields; this does not establish participant-level release availability or analytic eligibility."
             },
             {
               "code": "qh003",
@@ -68683,9 +68683,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Five-times sit-to-stand test: preserve completion/status, route-specific duration fields, completed stand count (0–5), and trunk/arm use separately. The questionnaire preamble says fastest pace, while the outcome prompt says usual pace; retain this source wording discrepancy rather than harmonizing it away.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "993 means tried but unable and 999 means chose not to complete; preserve as statuses, not times/counts. Duration fields QH003/QH004 (2011 LI004/LI005) belong to different completion routes; do not merge or substitute one for the other. QH006 chair height and QH006_1 other-chair height are protocol metadata, not respondent height. Do not derive a summary score without release-specific validation and a prespecified rule. 2015 questionnaire and Codebook document the exact QH002–QH006 fields; this does not establish participant-level release availability or analytic eligibility."
             },
             {
               "code": "qh004",
@@ -68693,9 +68693,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Five-times sit-to-stand test: preserve completion/status, route-specific duration fields, completed stand count (0–5), and trunk/arm use separately. The questionnaire preamble says fastest pace, while the outcome prompt says usual pace; retain this source wording discrepancy rather than harmonizing it away.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "993 means tried but unable and 999 means chose not to complete; preserve as statuses, not times/counts. Duration fields QH003/QH004 (2011 LI004/LI005) belong to different completion routes; do not merge or substitute one for the other. QH006 chair height and QH006_1 other-chair height are protocol metadata, not respondent height. Do not derive a summary score without release-specific validation and a prespecified rule. 2015 questionnaire and Codebook document the exact QH002–QH006 fields; this does not establish participant-level release availability or analytic eligibility."
             },
             {
               "code": "qh005",
@@ -68703,9 +68703,9 @@
               "module": "Biomarker Questionnaire",
               "unit": "",
               "value_labels": "",
-              "value_semantics": "站立能力、重复测时/间隔及次数依问卷定义；2015 qh006为座椅信息而非身高。",
-              "mapping_status": "2015体检问卷、Codebook及血液数据发布说明已定位；以下所有候选字段代码均可在2015 Codebook中检出，题意、路由、记录单位和有效值规则仍须逐字段核验",
-              "caveat": "候选变量名不等同于已确认的个体级发布字段；不得据此推断未测量、结构性缺失或跨波可比性。"
+              "value_semantics": "Five-times sit-to-stand test: preserve completion/status, route-specific duration fields, completed stand count (0–5), and trunk/arm use separately. The questionnaire preamble says fastest pace, while the outcome prompt says usual pace; retain this source wording discrepancy rather than harmonizing it away.",
+              "mapping_status": "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified",
+              "caveat": "993 means tried but unable and 999 means chose not to complete; preserve as statuses, not times/counts. Duration fields QH003/QH004 (2011 LI004/LI005) belong to different completion routes; do not merge or substitute one for the other. QH006 chair height and QH006_1 other-chair height are protocol metadata, not respondent height. Do not derive a summary score without release-specific validation and a prespecified rule. 2015 questionnaire and Codebook document the exact QH002–QH006 fields; this does not establish participant-level release availability or analytic eligibility."
             }
           ]
         },
