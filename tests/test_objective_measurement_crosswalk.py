@@ -88,6 +88,20 @@ class ObjectiveMeasurementCrosswalkTests(unittest.TestCase):
                        "diastolic_bp" if code in {"qa004", "qa008", "qa012"} else "pulse_rate")
             self.assertEqual(row["Concept.ID.Candidates"], concept, (wave, code))
 
+    def test_reviewed_objective_fields_do_not_revert_to_automated_discovery(self):
+        with (ROOT / "audit/objective_measurement_crosswalk_v1.csv").open(encoding="utf-8-sig", newline="") as handle:
+            crosswalk = list(csv.DictReader(handle))
+        fields = {(row["wave"], code.strip().lower()) for row in crosswalk for code in row["variables"].split(";") if code.strip()}
+        p_rows = json.loads((ROOT / "site-prototype/dist/catalog_p.json").read_text(encoding="utf-8"))
+        relevant = [row for row in p_rows
+                    if (row.get("Source.Wave"), row.get("Variable.Name", "").lower()) in fields
+                    and row.get("category") in {"blood pressure", "anthropometric", "physical function"}]
+        self.assertTrue(relevant)
+        for row in relevant:
+            self.assertFalse(row.get("Candidate.Status", "").lower().startswith("automated discovery"), row)
+            self.assertFalse(row.get("Candidate.Status", "").lower().startswith("automated keyword discovery"), row)
+            self.assertNotEqual(row.get("Review.Flag"), "role/category is a search aid, not analytic inclusion", row)
+
     def test_wave_specific_codebook_labels_are_preserved_without_summary_statistics(self):
         rows = builder.build_rows()
         bp_2011 = next(r for r in rows if r["concept_id"] == "systolic_bp" and r["wave"] == "2011")

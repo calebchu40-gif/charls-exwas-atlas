@@ -884,6 +884,23 @@ def main() -> None:
                 if not code:
                     continue
                 key = (wave, code.lower(), "p", category, subcategory)
+                # The automated source inventory can already contain this exact
+                # wave/field/category under a broader module name. Propagate the
+                # curated audit state to those rows before deciding whether an
+                # additional source-module row is needed; otherwise the main
+                # catalogue keeps showing a reviewed measure as an unreviewed hit.
+                matching_rows = [
+                    row for row in outputs
+                    if str(row.get("Source.Wave", "")) == wave
+                    and str(row.get("Variable.Name", "")).lower() == code.lower()
+                    and "p" in str(row.get("epcf", "")).lower().split(",")
+                    and str(row.get("category", "")) == category
+                    and str(row.get("subcategory", "")) == subcategory
+                ]
+                for prior in matching_rows:
+                    if str(prior.get("Candidate.Status", "")).lower().startswith("automated discovery") or str(prior.get("Candidate.Status", "")).lower().startswith("automated keyword discovery"):
+                        prior["Candidate.Status"] = "officially audited objective measurement crosswalk candidate"
+                        prior["Review.Flag"] = "official measurement source reviewed; candidate phenotype only; preserve component, wave-specific eligibility and source-linkage caveats"
                 if key in existing_keys:
                     continue
                 raw = source[(source.wave == wave) & (source.variable.str.lower() == code.lower())]
