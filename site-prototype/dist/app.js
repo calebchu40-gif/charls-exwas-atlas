@@ -93,7 +93,7 @@ function renderAssociations() {
 }
 
 function addOptions(select, values) {
-  for (const value of values) {const option=document.createElement('option');option.value=value;option.textContent=select.id==='cCategory'?({'automated covariate search hit':'自动关键词检索线索（未核验协变量）','covariate candidate':'协变量备选字段（未选入模型）','measurement metadata':'测量/调查设计元数据','source-detail metadata':'来源字段细节'}[value]||value):value;select.append(option)}
+  for (const value of values) {const option=document.createElement('option');option.value=value;option.textContent=select.id==='cCategory'?({'automated covariate search hit':'自动关键词命中（协变量未选定）','covariate candidate':'协变量备选字段（未选入模型）','measurement metadata':'测量/调查设计元数据','source-detail metadata':'来源字段细节'}[value]||value):value;select.append(option)}
 }
 const C_SUBCATEGORY_LABELS={
   "child education questionnaire/Codebook source conflict":"子女教育问卷与代码本来源冲突",
@@ -145,7 +145,7 @@ const C_SUBCATEGORY_LABELS={
   "interview assistance / proxy response context":"访谈协助/代理回答情况",
   "interview language":"访谈语言",
   "invalid extra disability slot with no Yes category":"无“Yes”类别的无效额外残障槽位",
-  "keyword discovery only; not a reviewed covariate or adjustment recommendation":"仅为关键词发现线索；未经核验，不是协变量或调整建议",
+  "keyword discovery only; not a reviewed covariate or adjustment recommendation":"关键词命中线索；字段定义/协变量资格需分别审核，不是调整建议",
   "knee-height measurement agreement and instruction comprehension":"膝高测量同意与说明理解情况",
   "land-requisition pension expected-benefit amount-format selector":"被征地农民养老金预计待遇金额格式选择器",
   "life-course timing unit selectors":"生命历程时间单位选择器",
@@ -221,7 +221,7 @@ function renderCatalog(all, role, prefix) {
     const metadataSemantics=role==='c'?([x.value_labels,metadataReview].filter(Boolean).join('；')||'测量/设计元数据'):'';
     const harmonizationNote=x.harmonization_status?.startsWith('continuous internal biomarker/clinical or physical measure')?'内部生理/临床测量，属于表型候选，不是外源环境暴露；跨波尚未统一':'';
     const labelDisplay=role==='c'?metadataSemantics:[x.value_labels||valueStatus,x.value_labels&&valueStatus!=='官方值标签已核验'?valueStatus:'',harmonizationNote].filter(Boolean).join('；');
-    const categoryDisplay=role==='c'?({'automated covariate search hit':'自动关键词检索线索（未核验协变量）','covariate candidate':'协变量备选字段（未选入模型）','measurement metadata':'测量/调查设计元数据'}[x.category]||x.category):({'social wellbeing':'社会关系与主观幸福感','health and symptoms':'健康与症状'}[x.category]||x.category);
+    const categoryDisplay=role==='c'?({'automated covariate search hit':'自动关键词命中（协变量未选定）','covariate candidate':'协变量备选字段（未选入模型）','measurement metadata':'测量/调查设计元数据'}[x.category]||x.category):({'social wellbeing':'社会关系与主观幸福感','health and symptoms':'健康与症状'}[x.category]||x.category);
     const subcategoryDisplay=role==='c'?(C_SUBCATEGORY_LABELS[x.subcategory]||x.subcategory):({'marital relationship satisfaction':'婚姻关系满意度','life satisfaction':'总体生活满意度','health satisfaction':'健康满意度','relationship with children satisfaction':'与子女关系满意度','subjective life expectancy':'主观预期寿命可能性'}[x.subcategory]||x.subcategory);
     const displayValues=[x['Variable.Name'],conceptDisplay,categoryDisplay+' · '+subcategoryDisplay,x['Variable.Description'],x.waves,x.source_modules,role==='c'?metadataNote:(x.candidate_concept_units||'未登记单位/分类构成'),labelDisplay];
     for(const [i,value] of displayValues.entries()){
