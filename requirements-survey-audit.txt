@@ -1,0 +1,8 @@
+msgspec==0.22.0
+numpy==2.5.4
+polars==2.0.0
+pyarrow==26.0.0
+scipy==1.18.1
+svy==0.35.0
+svy-io==0.7.1
+svy_rs==0.19.1

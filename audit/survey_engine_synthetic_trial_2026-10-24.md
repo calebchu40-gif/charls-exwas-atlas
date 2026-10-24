@@ -5,11 +5,13 @@ Purpose: check a possible analysis-engine candidate and illustrate why a PSU-and
 
 ## Setup and reproduction
 
-The isolated local environment under `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\survey_engine_trial` contains `svy` 0.35.0, Polars 2.0.0, NumPy 2.5.4, SciPy 1.18.1, and `svy-io` 0.7.1. The probe script is [`survey_engine_synthetic_trial.py`](survey_engine_synthetic_trial.py). Run it only with that environment, or install the pinned package version in a disposable test environment:
+The isolated local environment under `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\survey_engine_trial` contains `svy` 0.35.0, Polars 2.0.0, NumPy 2.5.4, SciPy 1.18.1, and `svy-io` 0.7.1. The probe script is [`survey_engine_synthetic_trial.py`](survey_engine_synthetic_trial.py). Run it only with that environment, or install the pinned package set in a disposable test environment:
 
 ```powershell
 & "$env:LOCALAPPDATA\CHARLS_ExWAS_Atlas\survey_engine_trial\Scripts\python.exe" audit/survey_engine_synthetic_trial.py
 ```
+
+The exact audit dependencies are listed in [`requirements-survey-audit.txt`](../requirements-survey-audit.txt). GitHub Actions installs this file in a separate Python 3.12 job and executes the probe on every push and pull request; the job uses generated synthetic observations only.
 
 It creates 4 strata, 2 PSUs per stratum, and 12 synthetic observations per PSU. The same outcomes, weights, PSUs, and with-replacement setting are passed to two design specifications: one with the synthetic stratum field, and one with the stratum omitted. A weighted mean and Gaussian survey GLM are fitted only to this generated data.
 
