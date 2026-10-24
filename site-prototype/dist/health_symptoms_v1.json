@@ -1,27 +1,16 @@
 [
   {
-    "concept_id": "self_rated_health",
-    "label": "自评总体健康",
+    "concept_id": "self_rated_health_very_good_very_poor",
+    "label": "自评总体健康（Very good至Very poor题型）",
     "domain": "自评健康",
     "source_fields": [
-      {
-        "wave": "2011",
-        "code": "da001",
-        "source_label": "Self Comment of Your Health",
-        "module": "health_status_and_functioning",
-        "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
-        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
-        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
-      },
       {
         "wave": "2011",
         "code": "da002",
         "source_label": "Self Comment of Your Health",
         "module": "health_status_and_functioning",
         "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "note": "结局概念候选；按响应尺度映射：1=Very good、5=Very poor。2011–2015问卷在健康模块开头随机安排DA001/DA002顺序，并在末尾再次询问两种量表；DA002/DA079同属本响应尺度，但问卷位置/路由不同。2011 DA079问卷题干及选项与此尺度相符，Codebook标题含By Comparing With Others；保留冲突并待获批数据字典核实。不可把重复问答位置当作独立结局，也不能仅按概念名合并。",
         "value_labels": "1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor",
         "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -32,29 +21,18 @@
         "source_label": "Self Comment of Your Health By Comparing With Others",
         "module": "health_status_and_functioning",
         "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "note": "结局概念候选；按响应尺度映射：1=Very good、5=Very poor。2011–2015问卷在健康模块开头随机安排DA001/DA002顺序，并在末尾再次询问两种量表；DA002/DA079同属本响应尺度，但问卷位置/路由不同。2011 DA079问卷题干及选项与此尺度相符，Codebook标题含By Comparing With Others；保留冲突并待获批数据字典核实。不可把重复问答位置当作独立结局，也不能仅按概念名合并。",
         "value_labels": "1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor",
         "value_label_status": "official questionnaire response scale verified; Codebook variable-title conflict retained; confirm released data dictionary before analysis",
         "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
-        "code": "da001",
-        "source_label": "Self Assessed Health Status (Excellent)",
-        "module": "Health_Status_and_Functioning",
-        "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
-        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
-        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
-        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
-      },
-      {
-        "wave": "2013",
         "code": "da002",
         "source_label": "Self Assessed Health Status (Very Good)",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "note": "结局概念候选；按响应尺度映射：1=Very good、5=Very poor。2011–2015问卷在健康模块开头随机安排DA001/DA002顺序，并在末尾再次询问两种量表；DA002/DA079同属本响应尺度，但问卷位置/路由不同。2011 DA079问卷题干及选项与此尺度相符，Codebook标题含By Comparing With Others；保留冲突并待获批数据字典核实。不可把重复问答位置当作独立结局，也不能仅按概念名合并。",
         "value_labels": "1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor",
         "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
@@ -65,21 +43,10 @@
         "source_label": "Health Status(Self)",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "note": "结局概念候选；按响应尺度映射：1=Very good、5=Very poor。2011–2015问卷在健康模块开头随机安排DA001/DA002顺序，并在末尾再次询问两种量表；DA002/DA079同属本响应尺度，但问卷位置/路由不同。2011 DA079问卷题干及选项与此尺度相符，Codebook标题含By Comparing With Others；保留冲突并待获批数据字典核实。不可把重复问答位置当作独立结局，也不能仅按概念名合并。",
         "value_labels": "1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor",
         "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
-      },
-      {
-        "wave": "2015",
-        "code": "da001",
-        "source_label": "Self Assessed Health Status (Excellent)",
-        "module": "Health_Status_and_Functioning",
-        "source_archive": "CHARLS2015r.zip",
-        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
-        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
-        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
-        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
@@ -87,7 +54,7 @@
         "source_label": "Self Assessed Health Status (Very Good)",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2015r.zip",
-        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "note": "结局概念候选；按响应尺度映射：1=Very good、5=Very poor。2011–2015问卷在健康模块开头随机安排DA001/DA002顺序，并在末尾再次询问两种量表；DA002/DA079同属本响应尺度，但问卷位置/路由不同。2011 DA079问卷题干及选项与此尺度相符，Codebook标题含By Comparing With Others；保留冲突并待获批数据字典核实。不可把重复问答位置当作独立结局，也不能仅按概念名合并。",
         "value_labels": "1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor",
         "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
@@ -98,7 +65,7 @@
         "source_label": "Health Status(Self)",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2015r.zip",
-        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "note": "结局概念候选；按响应尺度映射：1=Very good、5=Very poor。2011–2015问卷在健康模块开头随机安排DA001/DA002顺序，并在末尾再次询问两种量表；DA002/DA079同属本响应尺度，但问卷位置/路由不同。2011 DA079问卷题干及选项与此尺度相符，Codebook标题含By Comparing With Others；保留冲突并待获批数据字典核实。不可把重复问答位置当作独立结局，也不能仅按概念名合并。",
         "value_labels": "1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor",
         "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
@@ -109,7 +76,7 @@
         "source_label": "Self-Reported Health Status",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2018r.zip",
-        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "note": "结局概念候选；按响应尺度映射：1=Very good、5=Very poor。2011–2015问卷在健康模块开头随机安排DA001/DA002顺序，并在末尾再次询问两种量表；DA002/DA079同属本响应尺度，但问卷位置/路由不同。2011 DA079问卷题干及选项与此尺度相符，Codebook标题含By Comparing With Others；保留冲突并待获批数据字典核实。不可把重复问答位置当作独立结局，也不能仅按概念名合并。",
         "value_labels": "1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor",
         "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
         "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt"
@@ -120,30 +87,52 @@
         "source_label": "Self-Reported Health Status",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2020r.zip",
-        "note": "结局概念候选；2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。",
+        "note": "结局概念候选；按响应尺度映射：1=Very good、5=Very poor。2011–2015问卷在健康模块开头随机安排DA001/DA002顺序，并在末尾再次询问两种量表；DA002/DA079同属本响应尺度，但问卷位置/路由不同。2011 DA079问卷题干及选项与此尺度相符，Codebook标题含By Comparing With Others；保留冲突并待获批数据字典核实。不可把重复问答位置当作独立结局，也不能仅按概念名合并。",
         "value_labels": "1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor; 997=Don’t know",
         "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
         "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt"
       }
     ],
     "status": "表型概念候选；未创建跨波分数",
-    "caveat": "2011–2015部分代码是相邻响应选项段字段，2018/2020题号也不同；须按原问卷及值标签重建单个序数变量，不能把字段数当结局数。2011 DA079问卷题干及1–5选项与后续波次自评总体健康相符，但代码本变量标题称“与他人比较”，与问卷标题不一致；保留该源标签并在该字段映射备注中标明冲突，分析前核对获批数据字典。"
+    "caveat": "按响应尺度映射：1=Very good、5=Very poor。2011–2015问卷在健康模块开头随机安排DA001/DA002顺序，并在末尾再次询问两种量表；DA002/DA079同属本响应尺度，但问卷位置/路由不同。2011 DA079问卷题干及选项与此尺度相符，Codebook标题含By Comparing With Others；保留冲突并待获批数据字典核实。不可把重复问答位置当作独立结局，也不能仅按概念名合并。"
   },
   {
-    "concept_id": "self_rated_health_alt_scale",
+    "concept_id": "self_rated_health_excellent_poor",
     "label": "自评总体健康（Excellent至Poor题型）",
     "domain": "自评健康",
     "source_fields": [
+      {
+        "wave": "2011",
+        "code": "da001",
+        "source_label": "Self Comment of Your Health",
+        "module": "health_status_and_functioning",
+        "source_archive": "household_and_community_questionnaire_data.rar",
+        "note": "结局概念候选；按响应尺度映射：1=Excellent、5=Poor。2011–2015问卷在健康模块开头随机安排DA001/DA002顺序，并在末尾再次询问两种量表；DA001/DA080同属本响应尺度，但问卷位置/路由不同。不得把两次问答当作独立结局，或将两套不同五级选项直接合并；字段路由及缺失机制须按发布数据字典核实。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
       {
         "wave": "2011",
         "code": "da080",
         "source_label": "Self Comment of Your Health",
         "module": "health_status_and_functioning",
         "source_archive": "household_and_community_questionnaire_data.rar",
-        "note": "结局概念候选；DA080使用1=Excellent、2=Very good、3=Good、4=Fair、5=Poor，与DA079的1=Very good至5=Very poor题型不同；官方问卷要求本人回答、不得代理。保留题型和波次，调查分配/非应答路由未完全厘清，不与其他自评健康版本直接合并。",
+        "note": "结局概念候选；按响应尺度映射：1=Excellent、5=Poor。2011–2015问卷在健康模块开头随机安排DA001/DA002顺序，并在末尾再次询问两种量表；DA001/DA080同属本响应尺度，但问卷位置/路由不同。不得把两次问答当作独立结局，或将两套不同五级选项直接合并；字段路由及缺失机制须按发布数据字典核实。",
         "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
         "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2013",
+        "code": "da001",
+        "source_label": "Self Assessed Health Status (Excellent)",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2013_Dataset.zip",
+        "note": "结局概念候选；按响应尺度映射：1=Excellent、5=Poor。2011–2015问卷在健康模块开头随机安排DA001/DA002顺序，并在末尾再次询问两种量表；DA001/DA080同属本响应尺度，但问卷位置/路由不同。不得把两次问答当作独立结局，或将两套不同五级选项直接合并；字段路由及缺失机制须按发布数据字典核实。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -151,10 +140,21 @@
         "source_label": "Self Comment of Your Health",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2013_Dataset.zip",
-        "note": "结局概念候选；DA080使用1=Excellent、2=Very good、3=Good、4=Fair、5=Poor，与DA079的1=Very good至5=Very poor题型不同；官方问卷要求本人回答、不得代理。保留题型和波次，调查分配/非应答路由未完全厘清，不与其他自评健康版本直接合并。",
+        "note": "结局概念候选；按响应尺度映射：1=Excellent、5=Poor。2011–2015问卷在健康模块开头随机安排DA001/DA002顺序，并在末尾再次询问两种量表；DA001/DA080同属本响应尺度，但问卷位置/路由不同。不得把两次问答当作独立结局，或将两套不同五级选项直接合并；字段路由及缺失机制须按发布数据字典核实。",
         "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
         "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
         "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2015",
+        "code": "da001",
+        "source_label": "Self Assessed Health Status (Excellent)",
+        "module": "Health_Status_and_Functioning",
+        "source_archive": "CHARLS2015r.zip",
+        "note": "结局概念候选；按响应尺度映射：1=Excellent、5=Poor。2011–2015问卷在健康模块开头随机安排DA001/DA002顺序，并在末尾再次询问两种量表；DA001/DA080同属本响应尺度，但问卷位置/路由不同。不得把两次问答当作独立结局，或将两套不同五级选项直接合并；字段路由及缺失机制须按发布数据字典核实。",
+        "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
+        "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
         "wave": "2015",
@@ -162,14 +162,14 @@
         "source_label": "Self Comment of Your Health",
         "module": "Health_Status_and_Functioning",
         "source_archive": "CHARLS2015r.zip",
-        "note": "结局概念候选；DA080使用1=Excellent、2=Very good、3=Good、4=Fair、5=Poor，与DA079的1=Very good至5=Very poor题型不同；官方问卷要求本人回答、不得代理。保留题型和波次，调查分配/非应答路由未完全厘清，不与其他自评健康版本直接合并。",
+        "note": "结局概念候选；按响应尺度映射：1=Excellent、5=Poor。2011–2015问卷在健康模块开头随机安排DA001/DA002顺序，并在末尾再次询问两种量表；DA001/DA080同属本响应尺度，但问卷位置/路由不同。不得把两次问答当作独立结局，或将两套不同五级选项直接合并；字段路由及缺失机制须按发布数据字典核实。",
         "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
         "value_label_status": "official codebook response labels reviewed; routing/special codes noted where documented",
         "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt"
       }
     ],
     "status": "表型概念候选；未创建跨波分数",
-    "caveat": "DA080使用1=Excellent、2=Very good、3=Good、4=Fair、5=Poor，与DA079的1=Very good至5=Very poor题型不同；官方问卷要求本人回答、不得代理。保留题型和波次，调查分配/非应答路由未完全厘清，不与其他自评健康版本直接合并。"
+    "caveat": "按响应尺度映射：1=Excellent、5=Poor。2011–2015问卷在健康模块开头随机安排DA001/DA002顺序，并在末尾再次询问两种量表；DA001/DA080同属本响应尺度，但问卷位置/路由不同。不得把两次问答当作独立结局，或将两套不同五级选项直接合并；字段路由及缺失机制须按发布数据字典核实。"
   },
   {
     "concept_id": "health_change",

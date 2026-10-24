@@ -306,6 +306,7 @@ map_direct("household_agricultural_production_crosswalk_v1.csv", "e",
 map_direct("housing_exposure_variable_mapping_v1.csv", "e",
            statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
            modules=("module",), caveats=("caveat",), semantics=("construct",),
+           units=("unit",),
            archives=("source_archive",), documents=("source_archive",))
 map_direct("demographic_social_exposure_mapping_v1.csv", "e",
            statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
@@ -817,7 +818,27 @@ field_catalog["Concept.Alias.IDs"] = ["; ".join(sorted({alias for x in xs for al
 field_catalog["Concept.Label.Candidates"] = ["; ".join(sorted({x[1] for x in xs})) for xs in mapped_fields]
 field_catalog["Concept.Mapping.Source"] = ["; ".join(sorted({x[2] for x in xs})) for xs in mapped_fields]
 field_catalog["Concept.Mapping.Status"] = [" | ".join(sorted({x[3] for x in xs})) for xs in mapped_fields]
-mapped_units = ["; ".join(sorted({f"{x[0]}={x[4]}" for x in xs if x[4]})) for xs in mapped_fields]
+def unit_candidates_for(xs):
+    by_unit = {}
+    for concept_id, _label, _source, _status, unit, _aliases in xs:
+        if unit:
+            by_unit.setdefault(unit, set()).add(concept_id)
+    # The housing crosswalk already assigns each source field to an explicit
+    # construct and the unit column is presented as ordinary measurement
+    # metadata (for example, Yuan/month). Keep those labels readable; retain
+    # concept-qualified values for general multi-concept source candidates.
+    housing_units = {"current_home_owner_share", "current_home_rent_paid"}
+    concept_ids = {concept_id for _, _, _, _, unit, _ in xs if unit}
+    if len(by_unit) == 1 and concept_ids and concept_ids <= housing_units:
+        return next(iter(by_unit))
+    return "; ".join(
+        f"{concept_id}={unit}"
+        for unit, concept_ids in sorted(by_unit.items())
+        for concept_id in sorted(concept_ids)
+    )
+
+
+mapped_units = [unit_candidates_for(xs) for xs in mapped_fields]
 # A source crosswalk can legitimately omit a unit even when a separate
 # questionnaire-based review has already established one in the field
 # catalogue. Preserve those reviewed units on rebuild instead of erasing

@@ -371,10 +371,10 @@
         "note": "official 2011 questionnaire/Codebook review: numeric distance in meters, no discrete labels Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2011 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
         "value_label_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "unit": "meters",
         "mapping_status": "official 2011 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
-        "caveat": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
+        "caveat": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       },
       {
         "wave": "2011",
@@ -385,10 +385,10 @@
         "note": "official 2011 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2011 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
         "value_label_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "unit": "",
         "mapping_status": "official 2011 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
-        "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
+        "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       },
       {
         "wave": "2011",
@@ -399,10 +399,10 @@
         "note": "official 2011 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2011 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
         "value_label_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "unit": "",
         "mapping_status": "official 2011 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
-        "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
+        "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       },
       {
         "wave": "2011",
@@ -413,10 +413,10 @@
         "note": "official 2011 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2011 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility",
         "value_label_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
         "unit": "",
         "mapping_status": "official 2011 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility",
-        "caveat": "Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
+        "caveat": "Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       },
       {
         "wave": "2013",
@@ -439,10 +439,10 @@
         "note": "official 2013 questionnaire/Codebook review: numeric distance in meters, no discrete labels Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2013 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
         "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
         "unit": "meters",
         "mapping_status": "official 2013 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
-        "caveat": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"
+        "caveat": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       },
       {
         "wave": "2013",
@@ -453,10 +453,10 @@
         "note": "official 2013 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2013 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
         "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
         "unit": "",
         "mapping_status": "official 2013 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
-        "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"
+        "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       },
       {
         "wave": "2013",
@@ -467,10 +467,10 @@
         "note": "official 2013 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2013 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
         "value_label_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
         "unit": "",
         "mapping_status": "official 2013 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
-        "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"
+        "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       },
       {
         "wave": "2013",
@@ -481,10 +481,10 @@
         "note": "official 2013 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2013 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility",
         "value_label_source": "sources_official/CHARLS_2013_2015_housing_questionnaire_pages_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2013_2015_housing_questionnaire_pages_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt",
         "unit": "",
         "mapping_status": "official 2013 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility",
-        "caveat": "Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2013_2015_housing_questionnaire_pages_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"
+        "caveat": "Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       },
       {
         "wave": "2015",
@@ -507,10 +507,10 @@
         "note": "official 2015 questionnaire/Codebook review: numeric distance in meters, no discrete labels Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2015 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
         "value_label_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
         "unit": "meters",
         "mapping_status": "official 2015 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
-        "caveat": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"
+        "caveat": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       },
       {
         "wave": "2015",
@@ -521,10 +521,10 @@
         "note": "official 2015 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2015 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
         "value_label_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
         "unit": "",
         "mapping_status": "official 2015 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
-        "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"
+        "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       },
       {
         "wave": "2015",
@@ -535,10 +535,10 @@
         "note": "official 2015 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2015 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
         "value_label_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
         "unit": "",
         "mapping_status": "official 2015 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
-        "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"
+        "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       },
       {
         "wave": "2015",
@@ -549,10 +549,10 @@
         "note": "official 2015 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. In 2015 and 2018, the seated-toilet response routes past this item; preserve the wave-specific eligibility and do not treat a structural skip as No. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2015 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility",
         "value_label_source": "sources_official/CHARLS_2013_2015_housing_questionnaire_pages_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2013_2015_housing_questionnaire_pages_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt",
         "unit": "",
         "mapping_status": "official 2015 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility",
-        "caveat": "Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. In 2015 and 2018, the seated-toilet response routes past this item; preserve the wave-specific eligibility and do not treat a structural skip as No. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2013_2015_housing_questionnaire_pages_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"
+        "caveat": "Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. In 2015 and 2018, the seated-toilet response routes past this item; preserve the wave-specific eligibility and do not treat a structural skip as No. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       },
       {
         "wave": "2018",
@@ -575,10 +575,10 @@
         "note": "official 2018 questionnaire/Codebook review: numeric distance in meters, no discrete labels Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2018 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
         "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
         "unit": "meters",
         "mapping_status": "official 2018 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
-        "caveat": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"
+        "caveat": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       },
       {
         "wave": "2018",
@@ -589,10 +589,10 @@
         "note": "official 2018 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2018 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
         "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
         "unit": "",
         "mapping_status": "official 2018 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
-        "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"
+        "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       },
       {
         "wave": "2018",
@@ -603,10 +603,10 @@
         "note": "official 2018 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. In 2015 and 2018, the seated-toilet response routes past this item; preserve the wave-specific eligibility and do not treat a structural skip as No. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2018 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility",
         "value_label_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt",
         "unit": "",
         "mapping_status": "official 2018 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility",
-        "caveat": "Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. In 2015 and 2018, the seated-toilet response routes past this item; preserve the wave-specific eligibility and do not treat a structural skip as No. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"
+        "caveat": "Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. In 2015 and 2018, the seated-toilet response routes past this item; preserve the wave-specific eligibility and do not treat a structural skip as No. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       },
       {
         "wave": "2020",
@@ -629,10 +629,10 @@
         "note": "official 2020 questionnaire/Codebook review: numeric distance in meters, no discrete labels Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2020 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
         "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
         "unit": "meters",
         "mapping_status": "official 2020 questionnaire/Codebook review: numeric distance in meters, no discrete labels",
-        "caveat": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
+        "caveat": "Nearest toilet distance is a numeric measure in meters. Questionnaire soft checks are interviewer prompts, not valid-range cutoffs; Codebook extrema, including implausible extremes, are not analytic thresholds. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       },
       {
         "wave": "2020",
@@ -643,10 +643,10 @@
         "note": "official 2020 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2020 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
         "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
         "unit": "",
         "mapping_status": "official 2020 questionnaire/Codebook category wording reviewed; preserve wave-specific storage representation",
-        "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
+        "caveat": "Toilet type is a household sanitation/access characteristic, not a pollutant dose. In 2011–2015 the Codebook represents the response as separate option-specific fields; the questionnaire presents a single type question. Do not infer that a missing/zero option-specific field means the alternative category without authorized-release storage validation. 2018/2020 use a single categorical item; 2018 explicitly instructs selecting the seated toilet if both are present. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       },
       {
         "wave": "2020",
@@ -657,10 +657,10 @@
         "note": "official 2020 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
         "value_label_status": "official 2020 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility",
         "value_label_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
+        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt",
         "unit": "",
         "mapping_status": "official 2020 questionnaire/Codebook Yes/No response reviewed; preserve wave-specific toilet route and eligibility",
-        "caveat": "Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established.",
-        "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
+        "caveat": "Household toilet flushability is a sanitation/access characteristic, not a pollutant dose. Preserve the Yes/No categories and verify release-specific storage and denominator. Verify release-specific special values, routes, measurement object, and missingness before modeling; cross-wave equivalence is not established."
       }
     ]
   },
@@ -1663,8 +1663,6 @@
         "source_label": "Does It Has Elevator",
         "value_labels": "1=Yes; 2=No",
         "note": "Official questionnaire/Codebook reviewed: elevator availability is asked on the multi-storey residence route (I008 > 1 to I009); preserve 1=Yes/2=No and do not code a structural skip as No. See audit/housing_context_source_review_2026-10-24.md.",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
@@ -1674,8 +1672,6 @@
         "source_label": "Does it has elevator£¿",
         "value_labels": "1=Yes; 2=No",
         "note": "Official questionnaire/Codebook reviewed: elevator availability is asked on the multi-storey residence route (I008 > 1 to I009); preserve 1=Yes/2=No and do not code a structural skip as No. See audit/housing_context_source_review_2026-10-24.md.",
-        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
         "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
@@ -1685,8 +1681,6 @@
         "source_label": "Does It Has Elevatorï¼Ÿ",
         "value_labels": "1=Yes; 2=No",
         "note": "Official questionnaire/Codebook reviewed: elevator availability is asked on the multi-storey residence route (I008 > 1 to I009); preserve 1=Yes/2=No and do not code a structural skip as No. See audit/housing_context_source_review_2026-10-24.md.",
-        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
         "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
@@ -1696,8 +1690,6 @@
         "source_label": "Elevator",
         "value_labels": "1=Yes; 2=No",
         "note": "Official questionnaire/Codebook reviewed: elevator availability is asked on the multi-storey residence route (I008 > 1 to I009); preserve 1=Yes/2=No and do not code a structural skip as No. See audit/housing_context_source_review_2026-10-24.md.",
-        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
         "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
@@ -1707,8 +1699,6 @@
         "source_label": "Elevator",
         "value_labels": "1=Yes; 2=No",
         "note": "Official questionnaire/Codebook reviewed: I007 asks whether the respondent's housing has an elevator (1=Yes/2=No); interviewer records only when in the home and clearly certain, otherwise asks the respondent. Unlike earlier waves, this item is not shown behind the I008 > 1 route. See audit/housing_context_source_review_2026-10-24.md.",
-        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
         "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
       }
     ]
@@ -1726,8 +1716,6 @@
         "source_label": "Are There Any Handicapped Facilities",
         "value_labels": "1=Yes; 2=No",
         "note": "Official questionnaire/Codebook reviewed: I010 asks whether the residence has accessibility facilities such as a non-stair ramp; preserve 1=Yes/2=No. If No, the questionnaire routes to the entrance-step item. See audit/housing_context_source_review_2026-10-24.md.",
-        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
         "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
@@ -1737,8 +1725,6 @@
         "source_label": "Are there any handicapped facilities?",
         "value_labels": "1=Yes; 2=No",
         "note": "Official questionnaire/Codebook reviewed: I010 asks whether the residence has accessibility facilities such as a non-stair ramp; preserve 1=Yes/2=No. If No, the questionnaire routes to the entrance-step item. See audit/housing_context_source_review_2026-10-24.md.",
-        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
         "source_document": "sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt"
       },
       {
@@ -1748,8 +1734,6 @@
         "source_label": "Are There Any Handicapped Facilities?",
         "value_labels": "1=Yes; 2=No",
         "note": "Official questionnaire/Codebook reviewed: I010 asks whether the residence has accessibility facilities such as a non-stair ramp; preserve 1=Yes/2=No. If No, the questionnaire routes to the entrance-step item. See audit/housing_context_source_review_2026-10-24.md.",
-        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
         "source_document": "sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt"
       },
       {
@@ -1759,8 +1743,6 @@
         "source_label": "Handicapped Facilities",
         "value_labels": "1=Yes; 2=No; 3=Do not need",
         "note": "Official questionnaire/Codebook reviewed: I010_W4 lists 1=Yes, 2=No, and 3=No steps on level ground/no need. Preserve category 3 separately; only category 2 routes to the entrance-step item. See audit/housing_context_source_review_2026-10-24.md.",
-        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
         "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {
@@ -1770,8 +1752,6 @@
         "source_label": "Handicapped Facilities",
         "value_labels": "1=Yes; 2=No; 3=Do not need",
         "note": "Official questionnaire/Codebook reviewed: I009 lists 1=Yes, 2=No, and 3=No steps on flat ground/do not need. Preserve category 3 separately. Interviewer records only when in the respondent's housing and clearly certain, otherwise asks the respondent. See audit/housing_context_source_review_2026-10-24.md.",
-        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
-        "value_label_status": "Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding",
         "source_document": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt; sources_official/CHARLS_2020_Codebook_extracted.txt"
       }
     ]

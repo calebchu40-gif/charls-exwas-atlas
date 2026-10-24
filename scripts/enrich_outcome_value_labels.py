@@ -8,16 +8,13 @@ ROOT=Path(__file__).resolve().parents[1]
 CODEBOOK=lambda w:f'CHARLS_{w}_Codebook_extracted.txt'
 
 def labels_self_health(w,code):
-    if w=='2011' and code=='da001': return '1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor'
-    if w=='2011' and code in {'da002','da079'}: return '1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor'
-    if w in {'2013','2015'} and code=='da001': return '1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor'
-    if w in {'2013','2015'} and code in {'da002','da079'}: return '1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor'
+    if w in {'2011','2013','2015'} and code in {'da002','da079'}: return '1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor'
     if w=='2018' and code=='da002': return '1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor'
     if w=='2020' and code=='da001': return '1=Very good; 2=Good; 3=Fair; 4=Poor; 5=Very poor; 997=Don’t know'
     return ''
 
-def labels_self_health_alt(w,code):
-    if w in {'2011','2013','2015'} and code=='da080':
+def labels_self_health_excellent(w,code):
+    if w in {'2011','2013','2015'} and code in {'da001','da080'}:
         return '1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor'
     return ''
 
@@ -26,11 +23,11 @@ hjson=ROOT/'site-prototype/dist/health_symptoms_v1.json'; hdata=json.loads(hjson
 health_rules=[]
 for row in health.to_dict('records'):
     cid,w,code=row['concept_id'],row['wave'],row['code']; lab=''; status='not yet reviewed against full response value labels'
-    if cid=='self_rated_health':
+    if cid=='self_rated_health_very_good_very_poor':
         lab=labels_self_health(w,code)
         if w=='2011' and code=='da079': status='response scale verified in official questionnaire; Codebook variable-title conflict retained for review' 
-    elif cid=='self_rated_health_alt_scale':
-        lab=labels_self_health_alt(w,code)
+    elif cid=='self_rated_health_excellent_poor':
+        lab=labels_self_health_excellent(w,code)
     elif cid=='subjective_life_expectancy' and w=='2020' and code=='da029':
         lab='1=Almost Impossible; 2=Not Very Likely; 3=Maybe; 4=Very Likely; 5=Almost Certain; 997=Don’t Know'
     elif cid=='health_change' and (w,code) in {('2013','da002_w2_1'),('2015','da002_w2_1'),('2018','da002_w2_1')}:

@@ -12,7 +12,6 @@ MAPPING = ROOT / "audit/cognition_item_variable_mapping_v1.csv"
 TOPIC = ROOT / "site-prototype/dist/cognition_items_v1.json"
 CATALOG_CSV = ROOT / "audit/charls_atlas_candidate_fields_v0.csv"
 CATALOG_JSON = ROOT / "audit/charls_atlas_candidate_fields_v0.json"
-MASTER = ROOT / "site-prototype/dist/catalog.json"
 
 TARGETS = {
     "2011": ("dc004", "CHARLS_2011_Baseline_Questionnaire_official_extracted.txt", 4680, "CHARLS_2011_Codebook_extracted.txt", 63551),
@@ -93,7 +92,11 @@ def update() -> None:
         raise ValueError(f"Expected to update exactly five phenotype catalog rows; found {count}")
     csv_data.to_csv(CATALOG_CSV, index=False, encoding="utf-8-sig")
 
-    for path in (CATALOG_JSON, MASTER):
+    # The compact public catalogue merges same-named fields across waves and
+    # has no wave-specific source key. For dc004 this would mix self-rated
+    # memory (2011–2018) with the unrelated 2020 checking-day field. Keep this
+    # review on the wave-resolved source catalogues only.
+    for path in (CATALOG_JSON,):
         records = json.loads(path.read_text(encoding="utf-8"))
         matched = 0
         for row in records:
