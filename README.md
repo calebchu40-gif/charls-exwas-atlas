@@ -5,7 +5,7 @@
 
 本地最新目录重建（2026-10-24）含 E=4,752、P=2,127、C=980 条字段—波次记录；E/P 来源交叉表覆盖 1,449 个候选概念（E=1,157、P=301，含 9 个双角色概念）及 6,679 条概念—来源映射。2011、2013、2015、2018、2020 各波次分别有 123,320、134,392、133,897、104,649、13,906 个同波字段元数据可共同出现的非自配 E/P 概念组合；这些不是人数、有效样本量、已运行检验或关联结果。2013 年 WB05–WB15 为 11 项独立表型候选；2013/2015 `da051_random` 仅作为 C 类设计元数据展示，代码含义未核实，不用于界定活动模块资格。C 类通用待审字段为 1 条。正式关联模型和逐对完整样本量目前均为 0；2013 官方 `crosssection`/`longitudinal` 标记仍待从官方 Weights 文件恢复，方差设计适用字段也须逐波确认。完整项目快照、限制和后续工作见 [`audit/active_work_status_2026-10-24.md`](audit/active_work_status_2026-10-24.md)。
 
-**公开查询站点：**[CHARLS ExWAS Atlas](https://calebchu40-gif.github.io/charls-exwas-atlas/)。当前提供候选字段目录、来源波次和元数据配对浏览；正式模型和逐对完整样本量尚未发布。C 类目录中的“协变量候选”只是检索分类，不能当作固定调整集；例如2011/2013 `BA004`只在出生日期未知或拒答时补问，不能单独代表全样本年龄。户口、婚姻史、Wave 4 成人教育年限路由、四条疾病/事件年龄字段、17 条居住地/迁居元数据及 2015 护士/护工工资路由审核均已发布（最新提交 `352cc39`，Pages 资源版本 `v80`）。相关记录见[`audit/adult_education_duration_overlap_review_2018_2026-10-24.md`](audit/adult_education_duration_overlap_review_2018_2026-10-24.md)、[`audit/condition_event_age_metadata_review_v1.csv`](audit/condition_event_age_metadata_review_v1.csv)和[`audit/residential_location_metadata_review_v1.csv`](audit/residential_location_metadata_review_v1.csv)和[`audit/nurse_wage_metadata_review_2015_v1.csv`](audit/nurse_wage_metadata_review_2015_v1.csv)。
+**公开查询站点：**[CHARLS ExWAS Atlas](https://calebchu40-gif.github.io/charls-exwas-atlas/)。Pages 当前资源版本为 `v81`；许可说明已上线，`1e687c5` 最新验证工作流成功。户口、婚姻史、Wave 4 成人教育年限路由、疾病/事件年龄、居住地/迁居和护理工资来源审核均已记录。详情见 [`audit/active_work_status_2026-10-24.md`](audit/active_work_status_2026-10-24.md)、[`audit/charls_data_access_license_review_2026-10-24.md`](audit/charls_data_access_license_review_2026-10-24.md) 和相关专项审计。C 类剩余通用待核为2011 `FLDA081_1`，与 `DA081` 的关系尚无官方精确映射证据。
 
 尚未解决的 2011 `FLDA081_1` 来源身份见[`audit/pending_c_field_identity_review_2026-10-24.md`](audit/pending_c_field_identity_review_2026-10-24.md)。
 
@@ -16,11 +16,11 @@
 
 2026-10-24修正了2011 Codebook文本提取把下划线字段码拆成空格的问题（如`fd005 indc`与`fd005_indc`），并对所有波次的字段码做一致化匹配。工作暴露交叉表中带有非空类别标签的映射从420条增至422条；数值/日期字段标为已定位但无离散菜单，职业/行业代码单列为分类编码，不能作为连续数值使用。Codebook频数不进入目录。见[`audit/work_codebook_identifier_normalization_2026-10-24.md`](audit/work_codebook_identifier_normalization_2026-10-24.md)。
 
-## 最新工作：补齐2011–2018数字行为跨波次目录
+## 近期工作记录：补齐2011–2018数字行为跨波次目录
 
 2026-10-24依据2011、2013、2015、2018年官方问卷与Codebook，复核DA056过去一个月活动清单中的互联网选项、上网设备，以及2018年的上网活动、手机支付、微信和朋友圈字段，共23条波次—字段映射。旧版DA056活动清单与2020年DA040专门互联网筛查题保持不同概念；2018年字段按官方路由和类别标签记录，2011/2013/2015未能从Codebook确认受访者层面的未选项存储，因此不推断“No”。已把旧有字段原位重分类到“行为—互联网与数字技术使用”，并删除重复目录路径。详情见[`audit/cross_wave_digital_behavior_review_2026-10-24.md`](audit/cross_wave_digital_behavior_review_2026-10-24.md)。
 
-2026-10-24依据CHARLS 2020英文问卷和Codebook，将过去一个月互联网使用、5类上网设备、6类互联网活动、手机支付、微信使用和朋友圈发布共15个字段纳入E候选目录；补入DA029“达到年龄阈值的主观可能性”为单波次P候选。DA029须结合XFAgePossibility目标年龄解释，不能当作实际生存结局，也不能与早期波次同名的前列腺疾病DA029合并。目录现有E 4,738、P 2,068、C 978条字段波次记录；正式关联模型仍为0，候选配对仅表示元数据同波次可用，不是分析样本量或统计结果。详见[`audit/wave5_digital_behavior_and_life_expectancy_review_2026-10-24.md`](audit/wave5_digital_behavior_and_life_expectancy_review_2026-10-24.md)。
+2026-10-24依据CHARLS 2020英文问卷和Codebook，将过去一个月互联网使用、5类上网设备、6类互联网活动、手机支付、微信使用和朋友圈发布共15个字段纳入E候选目录；补入DA029“达到年龄阈值的主观可能性”为单波次P候选。DA029须结合XFAgePossibility目标年龄解释，不能当作实际生存结局，也不能与早期波次同名的前列腺疾病DA029合并。该批修改完成时记录数为E 4,738、P 2,068、C 978；当前目录计数以本文开头的快照为准；正式关联模型仍为0，候选配对仅表示元数据同波次可用，不是分析样本量或统计结果。详见[`audit/wave5_digital_behavior_and_life_expectancy_review_2026-10-24.md`](audit/wave5_digital_behavior_and_life_expectancy_review_2026-10-24.md)。
 
 ## 前期工作：核实Wave 5年龄与性别官方派生公式
 
@@ -55,7 +55,7 @@
 GitHub 官方说明：GitHub Free 个人仓库需要公开仓库才能使用 Pages；Pro/Team 等计划也支持私有源仓库发布 Pages。GitHub Pages 网站内容默认可被互联网公开访问，因此发布包必须保持为静态目录范围。见[Pages 发布源说明](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)。
 
 
-> **最新目录状态（2026-10-24）：**网站角色分片目录7,784行（E 4,738、P 2,068、C 978；双角色E/P在E、P分片各计一次）；候选概念1,426个（暴露侧1,147、表型侧288，含双角色概念），E/P来源字段映射6,614行。全来源crosswalk 6,828行，其中6,809匹配目录、19条未匹配。2011/2013/2015/2018/2020目录概念对共现为120,263/126,514/130,376/101,757/13,906；**仅表示字段元数据层面的潜在共现，不是人数、配对样本量或分析资格**。2018 HCAP及跨波拒答/施测/工具使用共15个字段列为C类；连续减法和动物流畅性计数维持原始数值候选并标明Codebook范围限制。E/P目录中有3,330行带非空值标签（3,304个波次—字段码），204行E目录角色仍显示`not yet reviewed`；另有170条工作/就业字段从通用待核状态改为有官方代码本来源的连续/开放回答或无离散类别状态，未添加虚构标签；5个2020问卷CAPI公式和2个问卷/代码本身份冲突字段也已同步到目录，后两者维持路由待核或DO NOT ANALYZE；另有33条2011工作字段在已提取代码本中未找到类别标签，网站明确展示“未定位”且不等同于“无类别”；22个连续残疾发生年份字段已注明calendar year，且11个2013–2018慢病自知字段的完整问卷选项已录入，频数未复制。另对2018当前住房产权关系9个字段核对代码本：1个字段显示完整0/1标签，8个字段明确标为Codebook摘录类别不完整，未推断缺失类别、未复制频数；5个当前住宅产权份额字段已按官方问卷确认为连续百分比，补入单位和路由/特殊值限制，不将代码本摘要极值当作有效范围；15个五波卧室/起居室/厕所字段已注明计数单位、住宅对象和软性检查限制；另审核10个五波家庭食品及外出就餐支出字段，记录元/周、家户层口径、自产食品与宴席排除差异；15个主购买者身份/名册选择器/共餐人数变量也已逐波记录测量层级和问卷路由；另将2011–2020楼层位置与2020入口台阶数按住宅层级及波次特异路线说明；厕所距离按米记录，并保留早期拆分选项与后期单题编码差异；2011/2013自报每日进餐次数的六档标签也已加入；2011–2018厨房及阳台数量作为家户住宅计数保留；四波I002宅基地面积以平方米记录，并注明农村宅基地定义及0值可能表示不适用；2018房产计数与七个出租状态槽位按问卷路线和拒答编码说明；实际租金与市场租金以元/月、按房产序号分开记录。已审来源与发行版待核状态分开显示；精确`conflict`标签计数为0，但2011 `FB010`问卷与Codebook编码差异已确认并单独标记`DO NOT ANALYZE`；FL020 16个多选选项含义已补录，但数值存储尚未验证，保持锁定；2011 `fn024`已纠正为未办理退休者当前参保类型，与2013既往参保题分开。2013 `fn056_w2_5`问卷选项/CodeBook类别表覆盖差异已裁定为非标签冲突；2018戒烟年龄/年份两个子字段存在问卷与Codebook标签直接冲突，均留在目录但锁定DO NOT ANALYZE；相关DA062选择器归C类；2011 DA062S1/DA062S2和DA065S1/DA065S2固定“Age/Year”代码本标记均归C类，真实时间回答仍由DA062_1/DA062_2表达。总分析锁定数更新为89。未拟合关联模型。
+> 这段旧版目录计数已移除，避免与本文开头的当前快照冲突。历史字段审核详见各专题审计和 `audit/active_work_status_2026-10-24.md`。
 
 **私有派生数据 QA（2026-10-23）：**2015/2018/2020 的个体横截面权重覆盖与官方`crosssection=1`计数一致。现存2013派生表缺少`crosssection`和`longitudinal`标记，验证状态为`CHECK`；该波必须恢复官方权重来源并重建后，才能判断缺权重记录的资格。五波ID完整性检查通过，但这一检查不代表可运行正式模型。逐波汇总见[`audit/survey_design_weight_review_v1.md`](audit/survey_design_weight_review_v1.md)。
 
