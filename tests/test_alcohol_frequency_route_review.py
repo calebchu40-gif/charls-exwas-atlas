@@ -57,7 +57,7 @@ class AlcoholFrequencyRouteReviewTests(unittest.TestCase):
         wave1 = next(x for x in frequency["source_fields"] if x["wave"] == "2011" and x["code"].lower() == "da072")
         self.assertIn("does not explicitly require", wave1["value_semantics"])
         pair = next(x for x in self.pairs["waves"]["2020"]["exposures"] if x["concept_id"] == "alcohol_frequency")
-        self.assertTrue(any("earlier waves use beverage-specific fields" in f["caveat"] for f in pair["source_fields"]))
+        self.assertTrue(any("unlike earlier beverage-specific fields" in f["caveat"] for f in pair["source_fields"]))
         self.assertIn("overall-vs-earlier beverage-specific distinction", self.audit)
 
 

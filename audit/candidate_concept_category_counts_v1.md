@@ -13,16 +13,16 @@
 |e|food and household environment|29|161|161|
 |e|internal biomarker|16|32|32|
 |e|healthcare access|7|109|109|
-|e|early-life and family socioeconomic context|6|6|4|
+|e|early-life and family socioeconomic context|2|2|2|
 |e|life-course and reproductive history|2|8|8|
 |e|behavioral exposures|1|2|2|
 |e|environmental perception|1|1|1|
-|p|chronic disease ancillary|115|664|664|
+|p|chronic disease ancillary|115|662|662|
 |p|health and symptoms|42|180|177|
 |p|physical function|38|266|260|
-|p|chronic disease|33|248|248|
-|p|cognition|24|338|338|
+|p|chronic disease|30|241|241|
 |p|healthcare access|22|217|217|
+|p|cognition|19|333|333|
 |p|biochemistry|16|32|32|
 |p|mental health|11|52|52|
 |p|anthropometric|5|24|15|

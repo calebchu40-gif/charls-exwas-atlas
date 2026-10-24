@@ -35,6 +35,21 @@ def summarize_review_status(values: list[str]) -> str:
     return "not yet reviewed"
 
 
+def find_source_rows(series_row: dict[str, str], fields: list[dict[str, str]], indexed: dict) -> list[dict[str, str]]:
+    key = (series_row.get("epcf", ""), series_row.get("category", ""),
+           series_row.get("subcategory", ""), series_row.get("Variable.Name", "").lower())
+    exact = indexed.get(key, [])
+    if exact:
+        return exact
+    # Some legacy C-series labels predate the field-level subcategory review.
+    # Fall back only on the same role, raw field code, and source module.
+    modules = {part.strip().casefold() for part in series_row.get("source_modules", "").split(",") if part.strip()}
+    return [field for field in fields
+            if field.get("epcf", "") == series_row.get("epcf", "")
+            and field.get("Variable.Name", "").lower() == series_row.get("Variable.Name", "").lower()
+            and field.get("Data.File.Name", "").casefold() in modules]
+
+
 def main() -> None:
     fields_path = AUDIT / "charls_atlas_candidate_fields_v0.csv"
     series_csv = AUDIT / "charls_atlas_candidate_series_v0.csv"
@@ -52,7 +67,7 @@ def main() -> None:
     for row in series:
         key = (row.get("epcf", ""), row.get("category", ""), row.get("subcategory", ""),
                row.get("Variable.Name", "").lower())
-        source_rows = indexed.get(key, [])
+        source_rows = find_source_rows(row, fields, indexed)
         if not source_rows:
             raise SystemExit(f"series row has no source fields: {key}")
         status = summarize_review_status([item.get("Value.Label.Review", "") for item in source_rows])

@@ -22,6 +22,8 @@
 
 ## 2026-10-25
 
+- Reviewed the five-wave subjective current-memory item: 2011–2018 `dc004` and 2020 `dc006` share five ordered categories; 2020 additionally lists `997=Don't Know`. Updated the topic and phenotype metadata while retaining release-level missing-code, eligibility, and pooled-analysis gates. Removed 16 fully identical catalog rows with a reproducible exact-row deduplication step; no unique field mapping or result was removed.
+
 - Reviewed past-year alcohol-frequency routing across all five waves. Preserved 2011–2018 beverage-specific frequency fields and the distinct 2020 overall-frequency measure; kept the Wave 1 liquor-frequency denominator unresolved pending authorized-release QA. Propagated reviewed labels and caveats to the field catalog and pair explorer, versioned the behavior asset cache, and added regression coverage. No respondent records or Codebook frequency summaries were used.
 
 - 将2011 `flda081_1` 从自动关键词协变量搜索提示改为C类主观预期年龄题目上下文元数据；根据官方CodeBook显示75–115岁年龄档，不展示频数。问卷`DA081`目标年龄在提取文本中仍为占位符，故两字段直接链接继续标为未证实，`flda081_1`不进入E/P或模型。

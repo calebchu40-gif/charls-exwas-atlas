@@ -11,8 +11,11 @@
         "module": "health_status_and_functioning",
         "note": "问卷语义映射候选；自评记忆题；应按各波响应选项统一方向后再比较。",
         "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
-        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md",
-        "value_label_status": "official response categories transcribed; special/missing-code completeness pending"
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt:L63551",
+        "value_label_status": "official Codebook response categories checked against questionnaire; 2020 includes 997=Don't Know; other special/missing codes require authorized-release dictionary QA",
+        "mapping_status": "official questionnaire wording and 1–5 ordinal direction reviewed; retain wave-specific field; sample eligibility and special/missing-code completeness require release-level QA",
+        "value_semantics": "Single-item subjective rating of current memory, not an objective memory-test score or dementia diagnosis. Codes 1–5 run from excellent to poor in all five waves; 2020 also lists 997=Don't Know. Keep wave-specific fields and missing codes. Do not derive or pool a score until sample eligibility, administration, and release-level missing-code handling are validated.",
+        "questionnaire_source": "sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt:L4680"
       },
       {
         "wave": "2013",
@@ -21,8 +24,11 @@
         "module": "Health_Status_and_Functioning",
         "note": "问卷语义映射候选；自评记忆题；应按各波响应选项统一方向后再比较。",
         "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
-        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md",
-        "value_label_status": "official response categories transcribed; special/missing-code completeness pending"
+        "value_label_source": "sources_official/CHARLS_2013_Codebook_extracted.txt:L20243",
+        "value_label_status": "official Codebook response categories checked against questionnaire; 2020 includes 997=Don't Know; other special/missing codes require authorized-release dictionary QA",
+        "mapping_status": "official questionnaire wording and 1–5 ordinal direction reviewed; retain wave-specific field; sample eligibility and special/missing-code completeness require release-level QA",
+        "value_semantics": "Single-item subjective rating of current memory, not an objective memory-test score or dementia diagnosis. Codes 1–5 run from excellent to poor in all five waves; 2020 also lists 997=Don't Know. Keep wave-specific fields and missing codes. Do not derive or pool a score until sample eligibility, administration, and release-level missing-code handling are validated.",
+        "questionnaire_source": "sources_official/CHARLS_2013_Questionnaire_extracted.txt:L3904"
       },
       {
         "wave": "2015",
@@ -31,8 +37,11 @@
         "module": "Health_Status_and_Functioning",
         "note": "问卷语义映射候选；自评记忆题；应按各波响应选项统一方向后再比较。",
         "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
-        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md",
-        "value_label_status": "official response categories transcribed; special/missing-code completeness pending"
+        "value_label_source": "sources_official/CHARLS_2015_Codebook_extracted.txt:L18798",
+        "value_label_status": "official Codebook response categories checked against questionnaire; 2020 includes 997=Don't Know; other special/missing codes require authorized-release dictionary QA",
+        "mapping_status": "official questionnaire wording and 1–5 ordinal direction reviewed; retain wave-specific field; sample eligibility and special/missing-code completeness require release-level QA",
+        "value_semantics": "Single-item subjective rating of current memory, not an objective memory-test score or dementia diagnosis. Codes 1–5 run from excellent to poor in all five waves; 2020 also lists 997=Don't Know. Keep wave-specific fields and missing codes. Do not derive or pool a score until sample eligibility, administration, and release-level missing-code handling are validated.",
+        "questionnaire_source": "sources_official/CHARLS_2015_Questionnaire_extracted.txt:L3372"
       },
       {
         "wave": "2018",
@@ -41,8 +50,11 @@
         "module": "Cognition",
         "note": "问卷语义映射候选；自评记忆题；应按各波响应选项统一方向后再比较。",
         "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
-        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md",
-        "value_label_status": "official response categories transcribed; special/missing-code completeness pending"
+        "value_label_source": "sources_official/CHARLS_2018_Codebook_extracted.txt:L49298",
+        "value_label_status": "official Codebook response categories checked against questionnaire; 2020 includes 997=Don't Know; other special/missing codes require authorized-release dictionary QA",
+        "mapping_status": "official questionnaire wording and 1–5 ordinal direction reviewed; retain wave-specific field; sample eligibility and special/missing-code completeness require release-level QA",
+        "value_semantics": "Single-item subjective rating of current memory, not an objective memory-test score or dementia diagnosis. Codes 1–5 run from excellent to poor in all five waves; 2020 also lists 997=Don't Know. Keep wave-specific fields and missing codes. Do not derive or pool a score until sample eligibility, administration, and release-level missing-code handling are validated.",
+        "questionnaire_source": "sources_official/CHARLS_2018_Questionnaire_extracted.txt:L3753"
       },
       {
         "wave": "2020",
@@ -51,12 +63,15 @@
         "module": "Health_Status_and_Functioning",
         "note": "问卷语义映射候选；自评记忆题；应按各波响应选项统一方向后再比较。",
         "value_labels": "1=Excellent; 2=Very Good; 3=Good; 4=Fair; 5=Poor; 997=Don't Know (codebook category)",
-        "value_label_source": "Official CHARLS wave codebook; see audit/cognition_value_label_review_v1.md",
-        "value_label_status": "official response categories transcribed; special/missing-code completeness pending"
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt:L6881",
+        "value_label_status": "official Codebook response categories checked against questionnaire; 2020 includes 997=Don't Know; other special/missing codes require authorized-release dictionary QA",
+        "mapping_status": "official questionnaire wording and 1–5 ordinal direction reviewed; retain wave-specific field; sample eligibility and special/missing-code completeness require release-level QA",
+        "value_semantics": "Single-item subjective rating of current memory, not an objective memory-test score or dementia diagnosis. Codes 1–5 run from excellent to poor in all five waves; 2020 also lists 997=Don't Know. Keep wave-specific fields and missing codes. Do not derive or pool a score until sample eligibility, administration, and release-level missing-code handling are validated.",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_Chinese_extracted.txt:L1731"
       }
     ],
-    "status": "问卷题意候选映射；未派生分数",
-    "caveat": "自评记忆题；应按各波响应选项统一方向后再比较。 Official CHARLS HCAP guidance: 2018 HCAP was intended for respondents aged 60+. Literacy, Mandarin/dialect familiarity, vision, and hearing can affect test performance. Inspect nonnumeric responses and distinguish cannot-answer, don't-know, refusal, non-assessment, and other missingness; do not infer a cognitive error from missingness. Sensitivity restrictions by literacy/language/sensory impairment may change the target population or induce bias, so define the estimand before restricting the sample."
+    "status": "official questionnaire wording and ordered response direction reviewed across five waves; candidate outcome; analysis readiness not established",
+    "caveat": "Single-item subjective rating of current memory, not an objective memory-test score or dementia diagnosis. Codes 1–5 run from excellent to poor in all five waves; 2020 also lists 997=Don't Know. Keep wave-specific fields and missing codes. Do not derive or pool a score until sample eligibility, administration, and release-level missing-code handling are validated."
   },
   {
     "concept_id": "cog_orientation_time",

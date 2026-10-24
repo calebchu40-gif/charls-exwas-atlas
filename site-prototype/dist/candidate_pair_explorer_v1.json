@@ -16711,7 +16711,7 @@
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
               "value_semantics": "Past-year monthly frequency category for liquor, a beverage-specific component. Wave 1 text says ask DA072 when DA067=1 but does not explicitly require the DA068 liquor selection; retain the liquor-specific item meaning and verify its exact released-file route before analysis. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
               "mapping_status": "official questionnaire item and unit reviewed; DA067=1 route documented; beverage-selection denominator unresolved pending authorized-release QA",
-              "caveat": "Wave 1 text says ask DA072 when DA067=1 but does not explicitly require the DA068 liquor selection; retain the liquor-specific item meaning and verify its exact released-file route before analysis. Structural skips are not zero; keep wave and beverage scope separate."
+              "caveat": "Wave 1 text says ask DA072 when DA067=1 but does not explicitly require the DA068 liquor selection; retain the liquor-specific item meaning and verify its exact released-file route before analysis. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate."
             },
             {
               "code": "da074",
@@ -16721,7 +16721,7 @@
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
               "value_semantics": "Past-year monthly frequency category for beer, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
               "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
-              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Structural skips are not zero; keep wave and beverage scope separate."
+              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate."
             },
             {
               "code": "da076",
@@ -16731,7 +16731,7 @@
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
               "value_semantics": "Past-year monthly frequency category for wine or rice wine, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
               "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
-              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Structural skips are not zero; keep wave and beverage scope separate."
+              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate."
             }
           ]
         },
@@ -21901,8 +21901,8 @@
               "unit": "",
               "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
               "value_semantics": "",
-              "mapping_status": "按波次模块及官方问卷题意映射；需检查值标签/路由",
-              "caveat": "问卷语义映射候选；自评记忆题；应按各波响应选项统一方向后再比较。"
+              "mapping_status": "official questionnaire wording and 1–5 ordinal direction reviewed; retain wave-specific field; sample eligibility and special/missing-code completeness require release-level QA",
+              "caveat": "Single-item subjective rating of current memory, not an objective memory-test score or dementia diagnosis. Codes 1–5 run from excellent to poor in all five waves; 2020 also lists 997=Don't Know. Keep wave-specific fields and missing codes. Do not derive or pool a score until sample eligibility, administration, and release-level missing-code handling are validated."
             }
           ]
         },
@@ -39402,7 +39402,7 @@
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
               "value_semantics": "Past-year monthly frequency category for liquor, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
               "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
-              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Structural skips are not zero; keep wave and beverage scope separate."
+              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate."
             },
             {
               "code": "da074",
@@ -39412,7 +39412,7 @@
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
               "value_semantics": "Past-year monthly frequency category for beer, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
               "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
-              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Structural skips are not zero; keep wave and beverage scope separate."
+              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate."
             },
             {
               "code": "da076",
@@ -39422,7 +39422,7 @@
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
               "value_semantics": "Past-year monthly frequency category for wine or rice wine, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
               "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
-              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Structural skips are not zero; keep wave and beverage scope separate."
+              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate."
             }
           ]
         },
@@ -45681,8 +45681,8 @@
               "unit": "",
               "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
               "value_semantics": "",
-              "mapping_status": "按波次模块及官方问卷题意映射；需检查值标签/路由",
-              "caveat": "问卷语义映射候选；自评记忆题；应按各波响应选项统一方向后再比较。"
+              "mapping_status": "official questionnaire wording and 1–5 ordinal direction reviewed; retain wave-specific field; sample eligibility and special/missing-code completeness require release-level QA",
+              "caveat": "Single-item subjective rating of current memory, not an objective memory-test score or dementia diagnosis. Codes 1–5 run from excellent to poor in all five waves; 2020 also lists 997=Don't Know. Keep wave-specific fields and missing codes. Do not derive or pool a score until sample eligibility, administration, and release-level missing-code handling are validated."
             }
           ]
         },
@@ -64172,7 +64172,7 @@
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
               "value_semantics": "Past-year monthly frequency category for liquor, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
               "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
-              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Structural skips are not zero; keep wave and beverage scope separate."
+              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate."
             },
             {
               "code": "da074",
@@ -64182,7 +64182,7 @@
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
               "value_semantics": "Past-year monthly frequency category for beer, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
               "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
-              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Structural skips are not zero; keep wave and beverage scope separate."
+              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate."
             },
             {
               "code": "da076",
@@ -64192,7 +64192,7 @@
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
               "value_semantics": "Past-year monthly frequency category for wine or rice wine, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
               "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
-              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Structural skips are not zero; keep wave and beverage scope separate."
+              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate."
             }
           ]
         },
@@ -70753,8 +70753,8 @@
               "unit": "",
               "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
               "value_semantics": "",
-              "mapping_status": "按波次模块及官方问卷题意映射；需检查值标签/路由",
-              "caveat": "问卷语义映射候选；自评记忆题；应按各波响应选项统一方向后再比较。"
+              "mapping_status": "official questionnaire wording and 1–5 ordinal direction reviewed; retain wave-specific field; sample eligibility and special/missing-code completeness require release-level QA",
+              "caveat": "Single-item subjective rating of current memory, not an objective memory-test score or dementia diagnosis. Codes 1–5 run from excellent to poor in all five waves; 2020 also lists 997=Don't Know. Keep wave-specific fields and missing codes. Do not derive or pool a score until sample eligibility, administration, and release-level missing-code handling are validated."
             }
           ]
         },
@@ -90213,7 +90213,7 @@
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
               "value_semantics": "Past-year monthly frequency category for liquor, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
               "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
-              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Structural skips are not zero; keep wave and beverage scope separate."
+              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate."
             },
             {
               "code": "da074",
@@ -90223,7 +90223,7 @@
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
               "value_semantics": "Past-year monthly frequency category for beer, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
               "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
-              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Structural skips are not zero; keep wave and beverage scope separate."
+              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate."
             },
             {
               "code": "da076",
@@ -90233,7 +90233,7 @@
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
               "value_semantics": "Past-year monthly frequency category for wine or rice wine, a beverage-specific component. The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Not an overall alcohol-frequency measure or dose; do not sum across beverage types.",
               "mapping_status": "official questionnaire and Codebook response categories reviewed; selected-beverage route retained; frequencies omitted",
-              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. Structural skips are not zero; keep wave and beverage scope separate."
+              "caveat": "The questionnaire routes this frequency item by the selected DA068 beverage type; preserve this beverage-specific denominator. 不应与其他酒类字段直接求和。Structural skips are not zero; keep wave and beverage scope separate."
             }
           ]
         }
@@ -96011,8 +96011,8 @@
               "unit": "",
               "value_labels": "1=Excellent; 2=Very good; 3=Good; 4=Fair; 5=Poor",
               "value_semantics": "",
-              "mapping_status": "按波次模块及官方问卷题意映射；需检查值标签/路由",
-              "caveat": "问卷语义映射候选；自评记忆题；应按各波响应选项统一方向后再比较。"
+              "mapping_status": "official questionnaire wording and 1–5 ordinal direction reviewed; retain wave-specific field; sample eligibility and special/missing-code completeness require release-level QA",
+              "caveat": "Single-item subjective rating of current memory, not an objective memory-test score or dementia diagnosis. Codes 1–5 run from excellent to poor in all five waves; 2020 also lists 997=Don't Know. Keep wave-specific fields and missing codes. Do not derive or pool a score until sample eligibility, administration, and release-level missing-code handling are validated."
             }
           ]
         },
@@ -101720,8 +101720,8 @@
               "unit": "",
               "value_labels": "1=Once a month; 2=2–3 times a month; 3=Once a week; 4=2–3 times a week; 5=4–6 times a week; 6=Once a day; 7=Twice a day; 8=More than twice a day",
               "value_semantics": "Overall past-year monthly frequency of any alcoholic beverage. The Chinese Wave 5 flowchart routes DA051=1 to DA052 and DA051=2/3 to the end. This is not beverage-specific and is not directly interchangeable with 2011-2018 DA072/DA074/DA076, even though response categories match. Structural skips are not zero.",
-              "mapping_status": "official Chinese questionnaire and flowchart reviewed; overall any-beverage measure conditional on DA051=1; not directly pooled with earlier beverage-specific items",
-              "caveat": "2020 overall monthly frequency among DA051=1; earlier waves use beverage-specific fields. Do not infer zero from structural skip or pool without a prespecified harmonization rule."
+              "mapping_status": "official Chinese questionnaire and flowchart reviewed; overall any-beverage measure conditional on DA051=1; do not pool directly with earlier beverage-specific items",
+              "caveat": "2020 overall monthly frequency among DA051=1; it is not split by beverage type, unlike earlier beverage-specific fields. Do not infer zero from structural skip or pool without a prespecified harmonization rule."
             }
           ]
         }
@@ -103274,8 +103274,8 @@
               "unit": "",
               "value_labels": "1=Excellent; 2=Very Good; 3=Good; 4=Fair; 5=Poor; 997=Don't Know (codebook category)",
               "value_semantics": "",
-              "mapping_status": "按波次模块及官方问卷题意映射；需检查值标签/路由",
-              "caveat": "问卷语义映射候选；自评记忆题；应按各波响应选项统一方向后再比较。"
+              "mapping_status": "official questionnaire wording and 1–5 ordinal direction reviewed; retain wave-specific field; sample eligibility and special/missing-code completeness require release-level QA",
+              "caveat": "Single-item subjective rating of current memory, not an objective memory-test score or dementia diagnosis. Codes 1–5 run from excellent to poor in all five waves; 2020 also lists 997=Don't Know. Keep wave-specific fields and missing codes. Do not derive or pool a score until sample eligibility, administration, and release-level missing-code handling are validated."
             }
           ]
         },

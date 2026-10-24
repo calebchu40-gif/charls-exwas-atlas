@@ -118,6 +118,7 @@ FULL_PIPELINE_SCRIPTS = (
     "apply_anthropometric_source_review.py",
     "apply_repeated_chair_stand_source_review.py",
     "build_charls_atlas_catalog.py",
+    "apply_cognition_self_rated_memory_review.py",
     "apply_wave5_core_demographic_review.py",
     "apply_wave5_digital_behavior_review.py",
     "apply_reproductive_history_exposure_review.py",
@@ -186,6 +187,7 @@ FULL_PIPELINE_SCRIPTS = (
     "propagate_ep_crosswalk_status.py",
     # C metadata is propagated after the first shard build above; regenerate
     # role-specific browser payloads last so they match the final master file.
+    "deduplicate_exact_catalog_rows.py",
     "site_catalog_shards.py",
     "summarize_value_label_coverage.py",
 )
@@ -275,6 +277,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_residential_history_bb005_review.py",
     "apply_residential_history_bb003_review.py",
     "apply_residential_history_mobility_duration_review.py",
+    "apply_cognition_self_rated_memory_review.py",
     # The domain review scripts update their source crosswalks after the first
     # concept-index build. Rebuild the index from those final sources and
     # reapply housing-only index details that are not stored in the inputs.
@@ -304,6 +307,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "propagate_alcohol_metadata_to_catalog.py",
     "validate_do_not_analyze_triage.py",
     "propagate_ep_crosswalk_status.py",
+    "deduplicate_exact_catalog_rows.py",
     "site_catalog_shards.py",
     "summarize_value_label_coverage.py",
 )
