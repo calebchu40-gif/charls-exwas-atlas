@@ -7,6 +7,7 @@
 - Record that finite output and no engine warning in a sparse synthetic logistic case do not establish adequate event support. Formal CHARLS fits remain blocked by unresolved source/design gates.
 - Add a blank, privacy-aware controlled review-record template for consistent pair-level estimability checks.
 - Tighten result-state consistency: a `reviewed_pass` requires its protected review reference, and an `inestimable` fit cannot claim that the contrast passed estimability review.
+- Update the public methods panel with the official Wave 2 distinction between cross-sectional, longitudinal and biomarker weights; link the source audit and bump the page script cache key.
 
 ## 2026-10-24
 
