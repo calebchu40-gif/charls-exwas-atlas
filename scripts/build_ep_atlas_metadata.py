@@ -45,6 +45,7 @@ FULL_PIPELINE_SCRIPTS = (
     "build_land_rental_income_crosswalk.py",
     "build_household_covid_economic_crosswalk.py",
     "build_covid_prevention_context_crosswalk.py",
+    "build_covid_module_coverage_audit.py",
     "build_personal_wage_deductions_2020_crosswalk.py",
     "build_household_agricultural_production_crosswalk.py",
     "build_household_asset_exposure_crosswalk.py",
@@ -271,6 +272,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_alcohol_history_source_review.py",
     "apply_alcohol_frequency_route_review.py",
     "build_covid_prevention_context_crosswalk.py",
+    "build_covid_module_coverage_audit.py",
     "build_charls_atlas_catalog.py",
     "apply_alcohol_frequency_route_review.py",
     # Rebuild the housing lookup from the audited owner-label maps before the

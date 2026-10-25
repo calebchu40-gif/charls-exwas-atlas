@@ -1,3 +1,10 @@
+# 2026-10-25 Complete COVID module field coverage and add omitted candidates (v124 prepared)
+
+- Audited all 100 fields in the official 2020 `COVID_Module` inventory against the E/P crosswalk. Added `audit/covid_module_field_coverage_2020_v1.csv` and a fail-closed builder/test: 77 unique fields map to reviewed E/P candidate metadata; the remaining 23 fields each have a reasoned non-E/P disposition.
+- Added the official derived `XQuarantined` any-quarantine E candidate, separate VA001 exclusive no-awareness and VA006 none-response candidates, and three VB002 relationship-specific social-network outcome candidates. VB002 is conditional on the confirmed/suspected-case screen and does not establish respondent illness or cause of death. Irregular Codebook labels remain source-faithful and flagged for authorized-release validation.
+- Full metadata finalization completed in 10.4 minutes. Local E/P/C catalog rows: 4,977/2,107/982; E/P concepts: 1,548 (1,245 exposure and 328 phenotype, including 25 dual-role); E/P concept-source mappings: 6,978. E/P records/wave-fields/explicit labels: 7,084/6,871/3,731; generic pending label status remains zero. The 2020 metadata co-availability count is 21,006, not an analytic sample size or result.
+- Exact 92 analysis locks remain unchanged; models, analytic Ns, and participant-level findings remain 0. No participant data or Codebook frequencies were used. Local site cache key advanced to v124; publication is pending final local validation and GitHub CI.
+
 # 2026-10-25 Add COVID testing utilization outcome and complete module pass (v123 prepared)
 
 - Added 2020 `VB012` as one P candidate for “ever tested for coronavirus by interview,” classified as healthcare utilization rather than infection or positive diagnosis. The exact Codebook labels are `1=Yes; 2=No`; conditional last-test year/month remain timing metadata.

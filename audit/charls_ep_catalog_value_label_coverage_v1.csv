@@ -19,7 +19,7 @@ e,housing and built environment,dwelling conditions and household property,477,4
 e,housing and built environment,residential setting,3,3,3
 e,internal biomarker,internal biomarker exposure candidate; not an exogenous environmental chemical,32,32,0
 e,life-course and reproductive history,reproductive timing,8,8,0
-e,pandemic and public-health context,"COVID prevention, contact, quarantine, and community restriction context",48,48,40
+e,pandemic and public-health context,"COVID prevention, contact, quarantine, and community restriction context",52,52,44
 e,social determinants,adult education and lifelong learning,13,13,10
 e,social determinants,annual wage/salary amount reported for household-member roster slots,22,22,0
 e,social determinants,early-life family socioeconomic context,4,4,4
@@ -153,7 +153,7 @@ p,health and symptoms,subjective life expectancy,5,5,5
 p,healthcare access,COVID-period delayed or unmet medical care,15,15,15
 p,healthcare access,"insurance, outpatient and inpatient utilization",202,202,51
 p,mental health,depressive symptoms and emotional wellbeing,52,52,52
-p,pandemic-related outcomes,"COVID-period infection, behavior, functioning, and emotional response",22,22,19
+p,pandemic-related outcomes,"COVID-period infection, behavior, functioning, and emotional response",25,25,22
 p,physical function,assistive-device use in ADL/IADL support,26,26,26
 p,physical function,reported disability history / brain_intellectual,10,10,5
 p,physical function,reported disability history / hearing,10,10,5

@@ -92,11 +92,14 @@ def add(role: str, codes: list[str], concept: str, label: str, domain: str,
 
 
 PREVENTION = "VA001"
-add("e", [f"va001_s{i}" for i in range(1, 8)], "covid_prevention_measure_awareness_2020",
+add("e", [f"va001_s{i}" for i in range(1, 9)], "covid_prevention_measure_awareness_2020",
     "新冠预防措施认知（2020）", "Pandemic prevention and information context",
-    PREVENTION, "2020 respondent-level awareness checklist for seven specified prevention measures",
-    "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Preserve the questionnaire's exclusive/conflicting options separately; do not infer an unselected state from a blank without release-specific storage validation.",
-    value_labels="Questionnaire options 1–7: handwashing; alcohol/disinfectants; avoid handshaking; masks/gloves; avoid travel; avoid gatherings; social distancing. Field-specific response codes require release QA.")
+    PREVENTION, "2020 respondent-level awareness checklist for specified preventive measures and other measures",
+    "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Option 8 is an other-measure response with a separate description; the release dictionary has no separate field for questionnaire option 10. Do not infer an unselected state from a blank without release-specific storage validation.",
+    value_labels="Questionnaire options 1–7: handwashing; alcohol/disinfectants; avoid handshaking; masks/gloves; avoid travel; avoid gatherings; social distancing; option 8=Other (description not included in this field). Field-specific response codes require release QA.")
+add("e", ["va001_s9"], "covid_no_awareness_prevention_2020", "不了解新冠疫情或预防措施（2020）",
+    "Pandemic prevention and information context", "VA001", "Exclusive response indicating the respondent did not know about the pandemic or preventive measures",
+    "This is an explicit exclusive lack-of-awareness response, not a preventive action. Keep it separate from the checklist of known measures; verify its exclusive routing and release storage.")
 add("e", [f"va002_s{i}" for i in range(1, 11)], "covid_prevention_information_sources_2020",
     "新冠防护信息来源（2020）", "Pandemic prevention and information context",
     "VA002", "2020 respondent-level multiple-response sources for prevention information",
@@ -122,6 +125,9 @@ add("e", ["va006_s1", "va006_s2"], "covid_preventive_stockpiling_2020", "疫情�
     "Pandemic prevention and information context", "VA006", "Multiple-response purchases above usual during the three days after Wuhan closure",
     "Short, explicitly dated self-reported stockpiling behavior; do not infer an individual exposure dose or treat the exclusive none option as an independent exposure.",
     value_labels="1=Food/cooking oil/vegetables; 2=Masks/hand sanitizer/disinfectant; field-specific response codes require release QA")
+add("e", ["va006_s3"], "covid_no_preventive_stockpiling_2020", "疫情初期未额外储备物资（2020）",
+    "Pandemic prevention and information context", "VA006", "Exclusive none-of-the-above response to the dated stockpiling checklist",
+    "This is an explicit exclusive response, not a missing value and not interchangeable with unselected positive checklist items. Confirm release storage and conflicts before analysis.")
 add("e", ["va007"], "covid_government_response_perception_2020", "对政府疫情防控措施严格程度的评价（2020）",
     "Pandemic prevention and information context", "VA007", "Respondent rating of whether government containment measures were too strict, appropriate, or insufficiently strict",
     "A single-item perception of the policy context, not an objective policy stringency measure or validated attitude scale. Questionnaire and Codebook use nonidentical wording for response 2; preserve the source discrepancy and do not harmonize it silently.",
@@ -143,6 +149,14 @@ add("e", ["vb001_s4"], "covid_confirmed_or_suspected_acquaintance_contact_2020",
 add("p", ["vb001_s1"], "covid_confirmed_or_suspected_respondent_2020", "受访者新冠疑似/确诊报告（2020）",
     "Pandemic-related health outcomes", "VB001", "Respondent self identified as confirmed or suspected case",
     "The item combines confirmed and suspected status in the questionnaire wording; do not relabel as laboratory-confirmed infection. Preserve exclusive none/refusal routes and validate released-data coding.")
+for code, relation, label in [
+    ("vb002_s1", "household", "同住家庭成员新冠病例康复/死亡报告（2020）"),
+    ("vb002_s2", "nonhousehold_relative", "非同住亲属新冠病例康复/死亡报告（2020）"),
+    ("vb002_s3", "acquaintance", "熟人新冠病例康复/死亡报告（2020）"),
+]:
+    add("p", [code], f"covid_contact_recovery_or_death_{relation}_2020", label,
+        "Pandemic-related social-network outcomes", "VB002", f"Respondent reports recovery status or death among a confirmed/suspected case in the {relation.replace('_', ' ')} relationship group",
+        "A conditional, respondent-reported social-network outcome following the VB001 confirmed/suspected-case screen; it is not the respondent's health outcome and does not establish cause of death. Preserve relation group, survey skip, exclusive none and refusal semantics.")
 add("p", ["vb004"], "covid_hospitalization_days_2020", "新冠治疗住院天数（2020）",
     "Pandemic-related health outcomes", "VB004", "Self-reported hospital stay for coronavirus treatment",
     "Questionnaire instructs 0 if not hospitalized and -1 if unable to answer; retain conditional eligibility, special values, and the distinction between no hospitalization and missing.",
@@ -154,6 +168,10 @@ add("e", ["vb005_s1", "vb005_s2", "vb005_s3", "vb005_s4"], "covid_quarantine_exp
     "Pandemic infection and quarantine context", "VB005", "Select-all quarantine/medical-observation reasons excluding hospitalization in the question stem",
     "Travel, close contact, residential-building closure and hospital-related quarantine are distinct contexts. Positive-test and exclusive no-quarantine options are not included in this exposure concept; preserve unknown/refusal options outside the candidate matrix.",
     value_labels="Questionnaire options 1–4: travel; close contact; apartment/building closed; hospital-related quarantine. Field-specific response codes require release QA")
+add("e", ["xquarantined"], "covid_any_quarantine_derived_2020", "是否有新冠隔离经历（官方派生指标，2020）",
+    "Pandemic infection and quarantine context", "XQuarantined", "Official auxiliary indicator derived from selection of any VB005 reason 1–5",
+    "Derived from VB005 options 1–5 according to the official questionnaire auxiliary-variable definition; overlaps the reason-specific candidate fields and should not be entered in the same model with them without a prespecified estimand. Verify the released derivation and coding before use.",
+    value_labels="0=No; 1=Yes")
 add("p", ["vb005_s5"], "covid_positive_test_quarantine_reason_2020", "因核酸检测阳性隔离（2020）",
     "Pandemic-related health outcomes", "VB005", "Positive nucleic-acid test as a quarantine reason",
     "This checklist flag is a self-reported positive-test reason, not a complete infection history; do not equate a blank with a negative test.")

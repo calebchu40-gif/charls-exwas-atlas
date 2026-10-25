@@ -98209,9 +98209,9 @@
       ]
     },
     "2020": {
-      "exposure_count": 205,
-      "phenotype_count": 98,
-      "candidate_pair_count": 20088,
+      "exposure_count": 208,
+      "phenotype_count": 101,
+      "candidate_pair_count": 21006,
       "exposures": [
         {
           "concept_id": "household_monthly_total_expenditure_2020",
@@ -100425,6 +100425,26 @@
           ]
         },
         {
+          "concept_id": "covid_no_awareness_prevention_2020",
+          "label": "不了解新冠疫情或预防措施（2020）",
+          "domain": "Pandemic prevention and information context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "va001_s9",
+              "label": "Do not Know About the Pandemic or Preventive Measures",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 9=Yes",
+              "value_semantics": "Exclusive response indicating the respondent did not know about the pandemic or preventive measures",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "This is an explicit exclusive lack-of-awareness response, not a preventive action. Keep it separate from the checklist of known measures; verify its exclusive routing and release storage."
+            }
+          ]
+        },
+        {
           "concept_id": "personal_wage_deduction_total_percentage",
           "label": "个人工资扣款总额（工资百分比，2020）",
           "domain": "personal income and economic resources",
@@ -102239,9 +102259,9 @@
               "module": "COVID_Module",
               "unit": "",
               "value_labels": "0=No; 1=Yes",
-              "value_semantics": "2020 respondent-level awareness checklist for seven specified prevention measures",
+              "value_semantics": "2020 respondent-level awareness checklist for specified preventive measures and other measures",
               "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
-              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Preserve the questionnaire's exclusive/conflicting options separately; do not infer an unselected state from a blank without release-specific storage validation."
+              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Option 8 is an other-measure response with a separate description; the release dictionary has no separate field for questionnaire option 10. Do not infer an unselected state from a blank without release-specific storage validation."
             },
             {
               "code": "va001_s2",
@@ -102249,9 +102269,9 @@
               "module": "COVID_Module",
               "unit": "",
               "value_labels": "0=No; 2=Yes",
-              "value_semantics": "2020 respondent-level awareness checklist for seven specified prevention measures",
+              "value_semantics": "2020 respondent-level awareness checklist for specified preventive measures and other measures",
               "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
-              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Preserve the questionnaire's exclusive/conflicting options separately; do not infer an unselected state from a blank without release-specific storage validation."
+              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Option 8 is an other-measure response with a separate description; the release dictionary has no separate field for questionnaire option 10. Do not infer an unselected state from a blank without release-specific storage validation."
             },
             {
               "code": "va001_s3",
@@ -102259,9 +102279,9 @@
               "module": "COVID_Module",
               "unit": "",
               "value_labels": "0=No; 3=Yes",
-              "value_semantics": "2020 respondent-level awareness checklist for seven specified prevention measures",
+              "value_semantics": "2020 respondent-level awareness checklist for specified preventive measures and other measures",
               "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
-              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Preserve the questionnaire's exclusive/conflicting options separately; do not infer an unselected state from a blank without release-specific storage validation."
+              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Option 8 is an other-measure response with a separate description; the release dictionary has no separate field for questionnaire option 10. Do not infer an unselected state from a blank without release-specific storage validation."
             },
             {
               "code": "va001_s4",
@@ -102269,9 +102289,9 @@
               "module": "COVID_Module",
               "unit": "",
               "value_labels": "0=No; 4=Yes",
-              "value_semantics": "2020 respondent-level awareness checklist for seven specified prevention measures",
+              "value_semantics": "2020 respondent-level awareness checklist for specified preventive measures and other measures",
               "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
-              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Preserve the questionnaire's exclusive/conflicting options separately; do not infer an unselected state from a blank without release-specific storage validation."
+              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Option 8 is an other-measure response with a separate description; the release dictionary has no separate field for questionnaire option 10. Do not infer an unselected state from a blank without release-specific storage validation."
             },
             {
               "code": "va001_s5",
@@ -102279,9 +102299,9 @@
               "module": "COVID_Module",
               "unit": "",
               "value_labels": "0=No; 5=Yes",
-              "value_semantics": "2020 respondent-level awareness checklist for seven specified prevention measures",
+              "value_semantics": "2020 respondent-level awareness checklist for specified preventive measures and other measures",
               "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
-              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Preserve the questionnaire's exclusive/conflicting options separately; do not infer an unselected state from a blank without release-specific storage validation."
+              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Option 8 is an other-measure response with a separate description; the release dictionary has no separate field for questionnaire option 10. Do not infer an unselected state from a blank without release-specific storage validation."
             },
             {
               "code": "va001_s6",
@@ -102289,9 +102309,9 @@
               "module": "COVID_Module",
               "unit": "",
               "value_labels": "0=No; 6=Yes",
-              "value_semantics": "2020 respondent-level awareness checklist for seven specified prevention measures",
+              "value_semantics": "2020 respondent-level awareness checklist for specified preventive measures and other measures",
               "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
-              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Preserve the questionnaire's exclusive/conflicting options separately; do not infer an unselected state from a blank without release-specific storage validation."
+              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Option 8 is an other-measure response with a separate description; the release dictionary has no separate field for questionnaire option 10. Do not infer an unselected state from a blank without release-specific storage validation."
             },
             {
               "code": "va001_s7",
@@ -102299,9 +102319,19 @@
               "module": "COVID_Module",
               "unit": "",
               "value_labels": "0=No; 7=Yes",
-              "value_semantics": "2020 respondent-level awareness checklist for seven specified prevention measures",
+              "value_semantics": "2020 respondent-level awareness checklist for specified preventive measures and other measures",
               "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
-              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Preserve the questionnaire's exclusive/conflicting options separately; do not infer an unselected state from a blank without release-specific storage validation."
+              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Option 8 is an other-measure response with a separate description; the release dictionary has no separate field for questionnaire option 10. Do not infer an unselected state from a blank without release-specific storage validation."
+            },
+            {
+              "code": "va001_s8",
+              "label": "Others",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 8=Yes",
+              "value_semantics": "2020 respondent-level awareness checklist for specified preventive measures and other measures",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Option 8 is an other-measure response with a separate description; the release dictionary has no separate field for questionnaire option 10. Do not infer an unselected state from a blank without release-specific storage validation."
             }
           ]
         },
@@ -102386,6 +102416,26 @@
           ]
         },
         {
+          "concept_id": "covid_any_quarantine_derived_2020",
+          "label": "是否有新冠隔离经历（官方派生指标，2020）",
+          "domain": "Pandemic infection and quarantine context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "xquarantined",
+              "label": "Ever Quarantined",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 1=Yes",
+              "value_semantics": "Official auxiliary indicator derived from selection of any VB005 reason 1–5",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Derived from VB005 options 1–5 according to the official questionnaire auxiliary-variable definition; overlaps the reason-specific candidate fields and should not be entered in the same model with them without a prespecified estimand. Verify the released derivation and coding before use."
+            }
+          ]
+        },
+        {
           "concept_id": "smoking_last_interview_status",
           "label": "最近一次访谈吸烟状态预载",
           "domain": "烟草使用史（滞后/预载）",
@@ -102452,6 +102502,26 @@
               "value_semantics": "Acquaintance reported as confirmed or suspected case",
               "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
               "caveat": "Social contact context only; not respondent infection status. Preserve the select-all route and source-specific storage."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_no_preventive_stockpiling_2020",
+          "label": "疫情初期未额外储备物资（2020）",
+          "domain": "Pandemic prevention and information context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "va006_s3",
+              "label": "va006_s3",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 3=Yes",
+              "value_semantics": "Exclusive none-of-the-above response to the dated stockpiling checklist",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "This is an explicit exclusive response, not a missing value and not interchangeable with unselected positive checklist items. Confirm release storage and conflicts before analysis."
             }
           ]
         },
@@ -104159,6 +104229,26 @@
           ]
         },
         {
+          "concept_id": "covid_contact_recovery_or_death_household_2020",
+          "label": "同住家庭成员新冠病例康复/死亡报告（2020）",
+          "domain": "Pandemic-related social-network outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vb002_s1",
+              "label": "Cohabitant",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=Yes",
+              "value_semantics": "Respondent reports recovery status or death among a confirmed/suspected case in the household relationship group",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "A conditional, respondent-reported social-network outcome following the VB001 confirmed/suspected-case screen; it is not the respondent's health outcome and does not establish cause of death. Preserve relation group, survey skip, exclusive none and refusal semantics."
+            }
+          ]
+        },
+        {
           "concept_id": "housework_capacity_health_limitation",
           "label": "因健康/残疾导致的家务能力受限",
           "domain": "work-related functional limitation",
@@ -104456,6 +104546,26 @@
               "value_semantics": "Whether the respondent had ever been tested for coronavirus by the 2020 interview",
               "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
               "caveat": "A pandemic-specific healthcare-utilization outcome, not infection status or a positive-test result. The conditional last-test year/month are timing metadata and are not treated as separate outcomes."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_contact_recovery_or_death_acquaintance_2020",
+          "label": "熟人新冠病例康复/死亡报告（2020）",
+          "domain": "Pandemic-related social-network outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vb002_s3",
+              "label": "Acquaintance",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 3=Yes",
+              "value_semantics": "Respondent reports recovery status or death among a confirmed/suspected case in the acquaintance relationship group",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "A conditional, respondent-reported social-network outcome following the VB001 confirmed/suspected-case screen; it is not the respondent's health outcome and does not establish cause of death. Preserve relation group, survey skip, exclusive none and refusal semantics."
             }
           ]
         },
@@ -106166,6 +106276,26 @@
               "value_semantics": "",
               "mapping_status": "按CHARLS原字段标签匹配；量表计分未定义",
               "caveat": "2020条目编码改为dc016–dc025序列；不可套用2011–2018题号。条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。"
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_contact_recovery_or_death_nonhousehold_relative_2020",
+          "label": "非同住亲属新冠病例康复/死亡报告（2020）",
+          "domain": "Pandemic-related social-network outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vb002_s2",
+              "label": "Other Relatives",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 2=Yes",
+              "value_semantics": "Respondent reports recovery status or death among a confirmed/suspected case in the nonhousehold relative relationship group",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "A conditional, respondent-reported social-network outcome following the VB001 confirmed/suspected-case screen; it is not the respondent's health outcome and does not establish cause of death. Preserve relation group, survey skip, exclusive none and refusal semantics."
             }
           ]
         }
@@ -111645,8 +111775,8 @@
       "baseline_wave": "2011",
       "followup_wave": "2020",
       "exposure_count": 125,
-      "phenotype_count": 98,
-      "candidate_pair_count": 12250,
+      "phenotype_count": 101,
+      "candidate_pair_count": 12625,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -111683,6 +111813,7 @@
         "memory_related_disease_diagnosis",
         "hypertension_diagnosis",
         "covid_confirmed_or_suspected_respondent_2020",
+        "covid_contact_recovery_or_death_household_2020",
         "housework_capacity_health_limitation",
         "work_capacity_health_limitation",
         "mood_bothered",
@@ -111696,6 +111827,7 @@
         "covid_hospitalization_days_2020",
         "cog_orientation_time",
         "covid_testing_utilization_2020",
+        "covid_contact_recovery_or_death_acquaintance_2020",
         "covid_square_dancing_cancellation_days_2020",
         "covid_period_moderate_activity_change_2020",
         "covid_period_internet_contact_change_2020",
@@ -111745,7 +111877,8 @@
         "pain_location",
         "pain_presence",
         "cog_serial7",
-        "mood_concentration"
+        "mood_concentration",
+        "covid_contact_recovery_or_death_nonhousehold_relative_2020"
       ],
       "linkage_basis": [
         "CHARLS 2018 Users Guide, IDs section: ID, householdID and communityID can be matched with counterparts in previous waves.",
