@@ -47,6 +47,8 @@ EXPECTED = {
     # against the exact Codebook field and its questionnaire item/route below.
     ("2011", "da005_2_", "health_status_and_functioning"),
     ("2011", "da006_2_", "health_status_and_functioning"),
+    ("2013", "da005_2_", "health_status_and_functioning"),
+    ("2015", "da005_2_", "health_status_and_functioning"),
     ("2015", "da019_w2_2_2", "health_status_and_functioning"),
     ("2018", "da005_2_", "health_status_and_functioning"),
     ("2018", "da006_2_", "health_status_and_functioning"),
@@ -76,6 +78,8 @@ def _contains_code(path: str, code: str) -> bool:
 QUESTIONNAIRE_EVIDENCE = {
     ("2011", "da005_2_"): ("(2) Brain damage/mental retardation",),
     ("2011", "da006_2_"): ("DA006. In what year did you become disabled?", "[preload DA005 answer]"),
+    ("2013", "da005_2_"): ("DA005 Do you have one of the following disabilities?", "2. Brain damage/mental retardation"),
+    ("2015", "da005_2_"): ("DA005 Do you have one of the following disabilities?", "2. Brain damage/mental retardation"),
     ("2015", "da019_w2_2_2"): ("DA019_W2_2 When was your most recent stroke?", "Year", "Age"),
     ("2018", "da005_2_"): ("DA005[2]", "Brain damage/intellectual disability"),
     ("2018", "da006_2_"): ("DA006[i]", "DA005[i] = 1", "become disabled"),

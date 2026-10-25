@@ -1,5 +1,28 @@
 # CHARLS ExWAS Atlas active work status (2026-10-25)
 
+> Status refresh, 2026-10-25: v107 now adds two source-verified current-wave disability-option links in 2013/2015 after correcting a prior Codebook-reading error. The 49 exact C/E/P overlap links pass all 446 tests and local safety validators. GitHub validation and Pages publication are pending. Commit `3019413` also passed GitHub Validate #454. The current gate is source/version and survey-design readiness, not site hosting. The dated entries below record historical milestones; use this refresh for the current state.
+
+## Current state after the prepared-table header audit
+
+- The public GitHub Pages site remains a metadata-only prototype. The latest deployed site is v106; commit `3019413` updated private QA tooling and documentation without changing public assets, so it did not require another Pages deployment.
+- The current catalogue snapshot is 1,486 deduplicated E/P concepts (1,208 exposure candidates, 303 phenotype candidates, 25 dual-role concepts), 6,821 concept-to-source-field metadata links, and five waves (2011–2020). None of these counts is an analytic N or association result.
+- A new private audit compares wave/role/code keys against only the column names in the five already-prepared local Stata tables. It does not read respondent values or write outputs into this repository. It confirms 2011 community fields are intentionally excluded from person-level tables, relationship rosters and 2015 blood data require separate module handling, and the local 2013 table lacks official `crosssection`/`longitudinal` flags.
+- Local synthetic regression coverage is 446 Python tests after adding two header-audit tests. The repository payload validator, analysis-lock validator, syntax checks, and whitespace checks also pass; GitHub Validate #454 succeeded.
+- No formal association model or complete per-pair analytic N exists. No respondent-level file, protected QA output, or unreviewed association estimate is published.
+
+## Official sampling-design interpretation and remaining gate
+
+CHARLS guides describe implicit/explicit stratification and a multistage PPS design, with villages/urban neighborhoods serving as PSUs. The public sample description and Wave 4/5 user guides therefore support treating `communityID` as a PSU *candidate* that must be validated against the exact released PSU mapping and target wave. They do not provide a license to manufacture an analysis stratum from province, region, urban/rural category, county, or community ID. The available prepared-table header audit also finds no explicit released stratum or replicate-weight field. Until CHARLS confirms a valid variance-estimation route for the released files, weighted point-estimate preparation and full design-adjusted inference must remain separate gates.
+
+Wave 4 and Wave 5 user guides recommend weights for population inference, provide distinct cross-sectional household/individual weights with and without nonresponse correction, and state that panel weights depend on the panel/risk set selected by the analyst. Biomarker weights are separate. Weight selection must therefore follow the exact estimand and module eligibility; no single weight is a site-wide default. For 2013, the official sample flags and checksummed `Weights.dta` are still missing from the controlled intake folder, so the existing table cannot be assigned a verified cross-sectional or longitudinal target using weight missingness alone.
+
+## Next work sequence
+
+1. Continue batch review of residual C-role keyword hits and source-backed measurement metadata; prioritize by multi-wave reuse so one audited concept can clean up several wave rows at once.
+2. Complete a wave/module readiness matrix from official guides and header-only local audit, keeping public catalogue coverage distinct from private analytic availability.
+3. Preserve the official 2013 weight intake gate and resolve the CHARLS variance-design question from official release artifacts/support documentation. Do not use guessed strata or publish inferential statistics while this is unresolved.
+4. Once a wave/module passes those gates, freeze the first model family, missing/special-code handling, covariate rationale, multiple-testing method, and protected aggregate output rules before fitting any pair.
+
 ## Delivered and live
 
 - Public metadata atlas and candidate-pair explorer: <https://calebchu40-gif.github.io/charls-exwas-atlas/>.

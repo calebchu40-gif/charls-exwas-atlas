@@ -1,8 +1,10 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-25）
 
-**最新公开发布：**v106（提交 `dc7ef06`）已通过 Validate [#452](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40168479043) 与 Pages Deploy [#227](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40168479027)。线上首页、app、E/P/C目录、配对索引和社会暴露目录均与本地构建逐项匹配。该版本在 v105 的40条 C/E/P元数据链接基础上，新增7条经问卷明确题目/答案槽和精确Codebook字段核实的 C/P链接；两条2013/2015 `da005_2_`因Codebook仅有上一波`zda005_2_`字段而继续排除。目录仍为E/P/C=4,845/2,082/982；444项Python测试、公开负载校验和92条分析锁核验通过。当前尚有2条关键词候选未能确认同波次字段身份。审计细节见[`audit/keyword_epc_overlap_review_2026-10-25.md`](audit/keyword_epc_overlap_review_2026-10-25.md)。
+**最新公开网站：**v106（提交 `dc7ef06`）已通过 Validate [#452](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40168479043) 与 Pages Deploy [#227](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40168479027)。当前本地待发布 v107 修正了一个旧的 Codebook 读取错误：2013、2015 Codebook 均同时列出当前波次`da005_2_`和前波`zda005_2_`，问卷与唯一同波次表型映射也相符，因此新增两个有来源依据的C/P目录链接，同时保留前波预载与路由注意事项。v107已有446项测试和本地发布安全检查通过，GitHub校验及Pages发布待触发。网站仍是变量元数据查询原型，没有真实关联结果。
 
-**后续工作：**继续按官方来源审核剩余关键词候选与测量元数据，区分字段目录完整度和可分析性；正式关联模型、实际配对样本量和默认协变量集均未生成。
+**最新项目代码：**提交 `3019413`（2026-10-25）增加本机受控准备表的表头级字段覆盖审计，GitHub Validate [#454](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40168842247) 已成功。该审计仅检查本机 Stata 文件列名，不读取个人取值或计算样本量，并将结果写入仓库外的本机 QA 目录。结果确认了2011社区层链接限制、关系名册独立存储、2015独立血液数据字段缺失，以及2013准备表缺少官方样本标记。详见[`audit/data_preparation_plan_and_controls.md`](audit/data_preparation_plan_and_controls.md)和[`scripts/audit_prepared_catalog_field_availability.py`](scripts/audit_prepared_catalog_field_availability.py)。本轮对 2013/2015 DA005 字段的核验记录见[`audit/keyword_epc_overlap_review_2026-10-25.md`](audit/keyword_epc_overlap_review_2026-10-25.md)。
+
+**后续工作：**继续按官方资料审核剩余C类通用检索字段、测量资格与波次可比性，并把准备表来源版本与抽样设计核验纳入每波分析闸门。当前目录有1,486个E/P候选概念和6,821条概念—源字段映射，覆盖五波；这些是目录元数据，不是有效样本量。正式关联模型、实际配对样本量和默认协变量集均未生成。只有在目标人群、官方权重、PSU/方差方法和变量处理规则均可追溯时，才进入真实关联计算。
 
 **最新构建验证（2026-10-25）：**2011年32个DA010治疗选项字段的官方类别索引和本地汇总代码核对已同步至网站；未选中/空白编码与路由分母仍待核验。保留原有字段提示，正式锁清单仍为92条。元数据提交`71c6214`和快速刷新/审计JSON提交`9874960`均通过GitHub Validate与Pages部署（Validate `40152950706`；Deploy `40152949965`），线上配对目录返回HTTP 200；Python全套417项测试通过。可用`python scripts/finalize_2011_chronic_treatment_review.py`快速刷新这项专题的网页派生文件；上游目录有变更时仍运行标准完整构建。详情见[`audit/2011_chronic_treatment_selected_storage_status_sync_2026-10-25.md`](audit/2011_chronic_treatment_selected_storage_status_sync_2026-10-25.md)。
 
