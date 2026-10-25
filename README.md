@@ -1,10 +1,10 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-25）
 
-**最新公开网站：**v115（提交待记）更新加入4个2011社区环境政策背景字段和JG021官方类别标签；E/P/C目录为4,849/2,082/982行。网站继续展示候选目录与元数据共现，不含真实关联结果。2015独立血检文件和2013官方权重文件仍待本人通过CHARLS账号取得；分别有官方SHA1锁定、只读表头验证脚本，详见[`audit/blood_2015_intake_gate_2026-10-25.md`](audit/blood_2015_intake_gate_2026-10-25.md)与[`audit/wave2_weights_metadata_intake_gate_2026-10-25.md`](audit/wave2_weights_metadata_intake_gate_2026-10-25.md)。
+**最新公开网站：**v115（提交`dba4685`，2026-10-25已核验上线）加入4个2011社区环境政策背景字段和JG021官方类别标签；E/P/C目录为4,849/2,082/982行。主页返回HTTP 200，公开页面已包含v115统计说明和政策候选目录引用。网站继续展示候选目录与元数据共现，不含真实关联结果。2015独立血检文件和2013官方权重文件仍待本人通过CHARLS账号取得；分别有官方SHA1锁定、只读表头验证脚本，详见[`audit/blood_2015_intake_gate_2026-10-25.md`](audit/blood_2015_intake_gate_2026-10-25.md)与[`audit/wave2_weights_metadata_intake_gate_2026-10-25.md`](audit/wave2_weights_metadata_intake_gate_2026-10-25.md)。
 
 **数据接收提速：**新增`python scripts/run_available_charls_intake_gates.py`，可一次检查受控目录中已到位的2013官方权重和2015独立血检文件；只跑官方哈希与DTA表头闸门，缺文件会跳过，QA仅写入本机受保护目录。详见[`audit/combined_intake_gate_runner_2026-10-25.md`](audit/combined_intake_gate_runner_2026-10-25.md)。
 
-**最新目录状态：**全套测试即将按v115目录重跑；分析锁仍为92条。正式关联模型数和实际配对分析样本量仍为0；候选配对展示的是目录层面的波次共存，不是拟合结果。年龄/居住史C标签审计见[`audit/residential_history_search_label_review_2026-10-25.md`](audit/residential_history_search_label_review_2026-10-25.md)。
+**最新目录状态：**v115目录全套测试已通过（460项）；分析锁仍为92条。正式关联模型数和实际配对分析样本量仍为0；候选配对展示的是目录层面的波次共存，不是拟合结果。年龄/居住史C标签审计见[`audit/residential_history_search_label_review_2026-10-25.md`](audit/residential_history_search_label_review_2026-10-25.md)。
 
 **波次与模块准备度：**已整理2011、2013、2015、2018、2020五波的访谈/体测、血液检测、关系与社区模块、权重及年龄域门槛，并扩展本地表头审计输出为逐波×角色×源模块摘要。该审计只读变量名，不读取个人答案或计算样本数；还记录了NIA Biomarker Network对2018/2020血样采集的说法与CHARLS官方发布文件目录之间的待核差异。详见[`audit/wave_module_readiness_matrix_2026-10-25.md`](audit/wave_module_readiness_matrix_2026-10-25.md)。
 
