@@ -331,6 +331,69 @@
     ]
   },
   {
+    "concept_id": "community_sewer_system_start_year",
+    "label": "Community sewer-system start year",
+    "domain": "Community environment",
+    "caveat": "2011 community-informant report of the calendar year the sewer system began operating. Conditional on the presence/route for JB010; retain as community historical service context, not the sampled household's sewer connection.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb011",
+        "module": "community",
+        "source_label": "Year",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "calendar year",
+        "caveat": "Community-informant year when the sewer system began operating; preserve the JB010 route and do not interpret the year as the respondent household's connection date.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_sanitation_reconstruction_year",
+    "label": "Community toilet/sewer reconstruction year",
+    "domain": "Community environment",
+    "caveat": "2011 village-only report of the year the toilet/sewer reconstruction project occurred, conditional on the project route. Keep separate from the sewer-system start year and household sanitation measures.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb016",
+        "module": "community",
+        "source_label": "Year",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "calendar year",
+        "caveat": "Village-only community-informant year of toilet/sewer reconstruction; conditional on JB015 and distinct from original sewer-system start.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_electricity_first_available_year",
+    "label": "Community electricity first-availability year",
+    "domain": "Community environment",
+    "caveat": "2011 village-only report of the year electricity first became available in the village. This is a community infrastructure timing measure, not a respondent-specific electricity start date.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb022",
+        "module": "community",
+        "source_label": "Year",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A pp.7–8 / Part B pp.10–12; official codebook field label.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "calendar year",
+        "caveat": "Village-only community-informant year when electricity first became available; not the respondent household's connection year.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
     "concept_id": "community_industrial_pollution",
     "label": "Community industrial pollution indicators",
     "domain": "Community environment",
@@ -1067,6 +1130,48 @@
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "households",
         "caveat": "Community-informant aggregate: households in all other minority groups. JC014/JC016 minority names are open text and excluded from E/P; JC013=No routes to JC019, so downstream blanks are structural rather than No. Do not sum household counts or infer individual ethnicity.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_total_deaths_3y",
+    "label": "Community deaths reported in the past three years",
+    "domain": "Community health burden",
+    "caveat": "2011 community-informant aggregate count of deaths in the village/community since 2008. It is not a CHARLS participant death endpoint, has no population denominator here, and must not be interpreted as an individual mortality rate.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jf017_1",
+        "module": "community",
+        "source_label": "Num. of Deaths In the Past 3 Years",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part F p.23 (PDF p.26), JF017; three-year period since 2008, community/village aggregate wording and person-count units checked against official Codebook field labels. No population denominator is supplied; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "persons",
+        "caveat": "Community-informant count of deaths since 2008; no population denominator is supplied, so do not calculate a rate or interpret this as CHARLS cohort deaths.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_suicide_deaths_3y",
+    "label": "Community suicide deaths reported in the past three years",
+    "domain": "Community health burden",
+    "caveat": "2011 community-informant aggregate count of suicide deaths in the village/community since 2008. It is not an individual CHARLS outcome or respondent exposure; no population denominator is supplied. Keep as a provisional community-context candidate and do not publish any response counts.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jf017_2",
+        "module": "community",
+        "source_label": "Num. of People Who are Died of Suicide in the Past 3 Years",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part F p.23 (PDF p.26), JF017; three-year period since 2008, community/village aggregate wording and person-count units checked against official Codebook field labels. No population denominator is supplied; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "persons",
+        "caveat": "Community-informant count of suicide deaths since 2008; no population denominator is supplied. This is not a CHARLS participant-level outcome; protect small-community counts and verify source coding before analysis.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -3614,7 +3719,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG013–JG016; No-skip route, 2010 recipient-household count and monthly standard checked against official Codebook labels; frequencies omitted.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "households",
-        "caveat": "Number of households reported to have received the single-child-parent reward in 2010; not a linked sampled-household receipt status.",
+        "caveat": "Year the community single-child-parent reward began; asked on the JG013 Yes route. Preserve the route and validate special values in the authorized release.",
         "value_labels": "",
         "value_label_status": "official questionnaire identifies a continuous household count; no discrete categories; Codebook frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -4866,6 +4971,664 @@
         "value_labels": "1=This county/city; 2=Another county/city in this province; 3=Another province",
         "value_label_status": "official questionnaire response categories; frequencies omitted",
         "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_basketball_court_context",
+    "label": "Community activity facility: Basketball court",
+    "domain": "Community social infrastructure",
+    "caveat": "2011 community-informant report of facility/organization presence and, conditionally, who initiated and primarily funded it. Initiator and funder are nominal context categories; follow-up blanks after No are structural, not absence. This is not a sampled participant's use or access.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb029_1_1_",
+        "module": "community",
+        "source_label": "Does this V/C Have this Type of Activity",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_2_1_",
+        "module": "community",
+        "source_label": "Who Initiated This",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_3_1_",
+        "module": "community",
+        "source_label": "Main Investor",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_swimming_pool_context",
+    "label": "Community activity facility: Swimming pool",
+    "domain": "Community social infrastructure",
+    "caveat": "2011 community-informant report of facility/organization presence and, conditionally, who initiated and primarily funded it. Initiator and funder are nominal context categories; follow-up blanks after No are structural, not absence. This is not a sampled participant's use or access.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb029_1_2_",
+        "module": "community",
+        "source_label": "Does this V/C Have this Type of Activity",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_2_2_",
+        "module": "community",
+        "source_label": "Who Initiated This",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_3_2_",
+        "module": "community",
+        "source_label": "Main Investor",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_outdoor_exercise_facilities_context",
+    "label": "Community activity facility: Outdoor exercise facilities",
+    "domain": "Community social infrastructure",
+    "caveat": "2011 community-informant report of facility/organization presence and, conditionally, who initiated and primarily funded it. Initiator and funder are nominal context categories; follow-up blanks after No are structural, not absence. This is not a sampled participant's use or access.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb029_1_3_",
+        "module": "community",
+        "source_label": "Does this V/C Have this Type of Activity",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_2_3_",
+        "module": "community",
+        "source_label": "Who Initiated This",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_3_3_",
+        "module": "community",
+        "source_label": "Main Investor",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_table_tennis_table_context",
+    "label": "Community activity facility: Table-tennis table",
+    "domain": "Community social infrastructure",
+    "caveat": "2011 community-informant report of facility/organization presence and, conditionally, who initiated and primarily funded it. Initiator and funder are nominal context categories; follow-up blanks after No are structural, not absence. This is not a sampled participant's use or access.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb029_1_4_",
+        "module": "community",
+        "source_label": "Does this V/C Have this Type of Activity",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_2_4_",
+        "module": "community",
+        "source_label": "Who Initiated This",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_3_4_",
+        "module": "community",
+        "source_label": "Main Investor",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_cards_chess_room_context",
+    "label": "Community activity facility: Room for card and chess games",
+    "domain": "Community social infrastructure",
+    "caveat": "2011 community-informant report of facility/organization presence and, conditionally, who initiated and primarily funded it. Initiator and funder are nominal context categories; follow-up blanks after No are structural, not absence. This is not a sampled participant's use or access.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb029_1_5_",
+        "module": "community",
+        "source_label": "Does this V/C Have this Type of Activity",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_2_5_",
+        "module": "community",
+        "source_label": "Who Initiated This",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_3_5_",
+        "module": "community",
+        "source_label": "Main Investor",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_table_tennis_room_context",
+    "label": "Community activity facility: Table-tennis room",
+    "domain": "Community social infrastructure",
+    "caveat": "2011 community-informant report of facility/organization presence and, conditionally, who initiated and primarily funded it. Initiator and funder are nominal context categories; follow-up blanks after No are structural, not absence. This is not a sampled participant's use or access.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb029_1_6_",
+        "module": "community",
+        "source_label": "Does this V/C Have this Type of Activity",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_2_6_",
+        "module": "community",
+        "source_label": "Who Initiated This",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_3_6_",
+        "module": "community",
+        "source_label": "Main Investor",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_calligraphy_painting_association_context",
+    "label": "Community activity facility: Calligraphy and painting association",
+    "domain": "Community social infrastructure",
+    "caveat": "2011 community-informant report of facility/organization presence and, conditionally, who initiated and primarily funded it. Initiator and funder are nominal context categories; follow-up blanks after No are structural, not absence. This is not a sampled participant's use or access.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb029_1_7_",
+        "module": "community",
+        "source_label": "Does this V/C Have this Type of Activity",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_2_7_",
+        "module": "community",
+        "source_label": "Who Initiated This",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_3_7_",
+        "module": "community",
+        "source_label": "Main Investor",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_dance_exercise_organization_context",
+    "label": "Community activity facility: Dance or other exercise organization",
+    "domain": "Community social infrastructure",
+    "caveat": "2011 community-informant report of facility/organization presence and, conditionally, who initiated and primarily funded it. Initiator and funder are nominal context categories; follow-up blanks after No are structural, not absence. This is not a sampled participant's use or access.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb029_1_8_",
+        "module": "community",
+        "source_label": "Does this V/C Have this Type of Activity",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_2_8_",
+        "module": "community",
+        "source_label": "Who Initiated This",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_3_8_",
+        "module": "community",
+        "source_label": "Main Investor",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_elderly_disability_support_organization_context",
+    "label": "Community activity facility: Organization helping older or disabled residents",
+    "domain": "Community social infrastructure",
+    "caveat": "2011 community-informant report of facility/organization presence and, conditionally, who initiated and primarily funded it. Initiator and funder are nominal context categories; follow-up blanks after No are structural, not absence. This is not a sampled participant's use or access.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb029_1_9_",
+        "module": "community",
+        "source_label": "Does this V/C Have this Type of Activity",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_2_9_",
+        "module": "community",
+        "source_label": "Who Initiated This",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_3_9_",
+        "module": "community",
+        "source_label": "Main Investor",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_employment_service_center_context",
+    "label": "Community activity facility: Employment service center",
+    "domain": "Community social infrastructure",
+    "caveat": "2011 community-informant report of facility/organization presence and, conditionally, who initiated and primarily funded it. Initiator and funder are nominal context categories; follow-up blanks after No are structural, not absence. This is not a sampled participant's use or access.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb029_1_10_",
+        "module": "community",
+        "source_label": "Does this V/C Have this Type of Activity",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_2_10_",
+        "module": "community",
+        "source_label": "Who Initiated This",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_3_10_",
+        "module": "community",
+        "source_label": "Main Investor",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_elderly_activity_center_context",
+    "label": "Community activity facility: Elderly activity center",
+    "domain": "Community social infrastructure",
+    "caveat": "2011 community-informant report of facility/organization presence and, conditionally, who initiated and primarily funded it. Initiator and funder are nominal context categories; follow-up blanks after No are structural, not absence. This is not a sampled participant's use or access.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb029_1_11_",
+        "module": "community",
+        "source_label": "Does this V/C Have this Type of Activity",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_2_11_",
+        "module": "community",
+        "source_label": "Who Initiated This",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_3_11_",
+        "module": "community",
+        "source_label": "Main Investor",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_elderly_association_context",
+    "label": "Community activity facility: Elderly association",
+    "domain": "Community social infrastructure",
+    "caveat": "2011 community-informant report of facility/organization presence and, conditionally, who initiated and primarily funded it. Initiator and funder are nominal context categories; follow-up blanks after No are structural, not absence. This is not a sampled participant's use or access.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb029_1_12_",
+        "module": "community",
+        "source_label": "Does this V/C Have this Type of Activity",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_2_12_",
+        "module": "community",
+        "source_label": "Who Initiated This",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_3_12_",
+        "module": "community",
+        "source_label": "Main Investor",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_nursing_home_context",
+    "label": "Community activity facility: Nursing home",
+    "domain": "Community social infrastructure",
+    "caveat": "2011 community-informant report of facility/organization presence and, conditionally, who initiated and primarily funded it. Initiator and funder are nominal context categories; follow-up blanks after No are structural, not absence. This is not a sampled participant's use or access.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb029_1_13_",
+        "module": "community",
+        "source_label": "Does this V/C Have this Type of Activity",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_2_13_",
+        "module": "community",
+        "source_label": "Who Initiated This",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_3_13_",
+        "module": "community",
+        "source_label": "Main Investor",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_other_entertainment_facilities_context",
+    "label": "Community activity facility: Other entertainment facilities",
+    "domain": "Community social infrastructure",
+    "caveat": "2011 community-informant report of facility/organization presence and, conditionally, who initiated and primarily funded it. Initiator and funder are nominal context categories; follow-up blanks after No are structural, not absence. This is not a sampled participant's use or access.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb029_1_14_",
+        "module": "community",
+        "source_label": "Does this V/C Have this Type of Activity",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_2_14_",
+        "module": "community",
+        "source_label": "Who Initiated This",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb029_3_14_",
+        "module": "community",
+        "source_label": "Main Investor",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.10–12 (PDF pp.13–15), JB029 activity-facility table; presence route, initiator/funder categories and official Codebook field labels reviewed; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access.",
+        "value_labels": "1=Upper-level government; 2=U/C government; 3=U/C residents; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
       }
     ]
   },

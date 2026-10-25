@@ -1,3 +1,9 @@
+# 2026-10-26 Review 2011 Community Questionnaire Part B infrastructure and activity facilities (local update)
+
+- Reconciled all 127 raw JB-prefixed inventory fields against the official questionnaire, Codebook labels, and metadata-only inventory. Mapped 42 JB029 presence/initiator/funder fields across 14 community facility/organization types and added distinct years for sewer start, sanitation reconstruction, and village electricity availability.
+- Classified four unstructured other-specify text fields and JB040 informant role as C-only; direct identifier prompts JB039/JB041 are excluded. No respondent text, respondent records, frequencies, or descriptive extrema were used.
+- Full 159-step finalization completed in 7.6 minutes. Local E/P/C shards=6,175/2,116/1,001; 1,601 E/P concepts; 8,185 E/P concept-source mappings; 2011 metadata co-availability=141,835 (not analytic N). Full suite: 501 tests pass; public-payload, 92-lock, JS syntax, and diff checks pass. Current public app remains v129; local cache is v132 pending publication.
+
 # 2026-10-26 Review Community Questionnaire Part A leadership profile (local update)
 
 - Reviewed JA042 against the official questionnaire and Codebook field labels. Added 12 community-context candidate mappings across four role-specific education concepts and separate age/tenure profiles. Preserved community-only versus village-only CAPI scope and role-specific slots.
@@ -727,3 +733,8 @@ This file records project-level changes that affect reproducibility, methods, da
 - 保留个人索引槽位、钱/实物、定期/非定期、时间间隔及分档上下界；不汇总、不跨波重编码。2011问卷与Codebook字段号/子项描述差异保留为分析前核验警告。
 - 全量目录重建后 E/P/C 为6,008/2,107/982 行，候选概念1,554，E/P概念—来源映射8,009条；仍无正式关联模型。
 - 新增四项交叉表测试；本机475项完整回归通过，GitHub Validate #497 单测步骤失败，原因未定位；Pages Deploy #246 已成功。
+# 2026-10-26 Review 2011 Community Questionnaire Part F mortality-context fields (local update)
+
+- Added two provisional community-context candidate mappings for JF017_1 (total community deaths since 2008) and JF017_2 (community suicide deaths). They are aggregate counts without a population denominator, not individual mortality outcomes or rates.
+- Kept JF018 open-text disease names/counts and JF020 informant identity as C-only metadata; excluded direct identifiers. Added source audit and regression coverage without publishing respondent text, records, or Codebook frequencies.
+- Part B coverage review then mapped 42 JB029 facility/organization fields and three infrastructure-year fields, and classified four other-specify text fields plus JB040 as C-only; all 127 raw JB fields now have a disposition. Full 159-step finalization completed in 7.6 minutes. Local E/P/C shards=6,175/2,116/1,001; 1,601 E/P concepts; 8,185 E/P source mappings; 2011 metadata co-availability=141,835 (not analytic N). Full suite (501 tests), public-payload validation, 92-lock validation, JS syntax, and diff checks pass. Current public app remains v129; local cache is v132.

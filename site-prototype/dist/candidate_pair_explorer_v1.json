@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 647,
+      "exposure_count": 666,
       "phenotype_count": 213,
-      "candidate_pair_count": 137788,
+      "candidate_pair_count": 141835,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -740,6 +740,566 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
               "caveat": "FB004 reports the location of the respondent's first workplace. 2011 and 2013 use different category anchors (local community/county/province versus permanent-address reference and an abroad category); retain wave-specific nominal menus. This is a retrospective location category, not geocoded residence or measured environmental exposure."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_basketball_court_context",
+          "label": "Community activity facility: Basketball court",
+          "domain": "Community social infrastructure",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb029_1_1_",
+              "label": "Does this V/C Have this Type of Activity",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_2_1_",
+              "label": "Who Initiated This",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_3_1_",
+              "label": "Main Investor",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_calligraphy_painting_association_context",
+          "label": "Community activity facility: Calligraphy and painting association",
+          "domain": "Community social infrastructure",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb029_1_7_",
+              "label": "Does this V/C Have this Type of Activity",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_2_7_",
+              "label": "Who Initiated This",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_3_7_",
+              "label": "Main Investor",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_dance_exercise_organization_context",
+          "label": "Community activity facility: Dance or other exercise organization",
+          "domain": "Community social infrastructure",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb029_1_8_",
+              "label": "Does this V/C Have this Type of Activity",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_2_8_",
+              "label": "Who Initiated This",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_3_8_",
+              "label": "Main Investor",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_elderly_activity_center_context",
+          "label": "Community activity facility: Elderly activity center",
+          "domain": "Community social infrastructure",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb029_1_11_",
+              "label": "Does this V/C Have this Type of Activity",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_2_11_",
+              "label": "Who Initiated This",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_3_11_",
+              "label": "Main Investor",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_elderly_association_context",
+          "label": "Community activity facility: Elderly association",
+          "domain": "Community social infrastructure",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb029_1_12_",
+              "label": "Does this V/C Have this Type of Activity",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_2_12_",
+              "label": "Who Initiated This",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_3_12_",
+              "label": "Main Investor",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_employment_service_center_context",
+          "label": "Community activity facility: Employment service center",
+          "domain": "Community social infrastructure",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb029_1_10_",
+              "label": "Does this V/C Have this Type of Activity",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_2_10_",
+              "label": "Who Initiated This",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_3_10_",
+              "label": "Main Investor",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_nursing_home_context",
+          "label": "Community activity facility: Nursing home",
+          "domain": "Community social infrastructure",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb029_1_13_",
+              "label": "Does this V/C Have this Type of Activity",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_2_13_",
+              "label": "Who Initiated This",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_3_13_",
+              "label": "Main Investor",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_elderly_disability_support_organization_context",
+          "label": "Community activity facility: Organization helping older or disabled residents",
+          "domain": "Community social infrastructure",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb029_1_9_",
+              "label": "Does this V/C Have this Type of Activity",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_2_9_",
+              "label": "Who Initiated This",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_3_9_",
+              "label": "Main Investor",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_other_entertainment_facilities_context",
+          "label": "Community activity facility: Other entertainment facilities",
+          "domain": "Community social infrastructure",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb029_1_14_",
+              "label": "Does this V/C Have this Type of Activity",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_2_14_",
+              "label": "Who Initiated This",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_3_14_",
+              "label": "Main Investor",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_outdoor_exercise_facilities_context",
+          "label": "Community activity facility: Outdoor exercise facilities",
+          "domain": "Community social infrastructure",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb029_1_3_",
+              "label": "Does this V/C Have this Type of Activity",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_2_3_",
+              "label": "Who Initiated This",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_3_3_",
+              "label": "Main Investor",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_cards_chess_room_context",
+          "label": "Community activity facility: Room for card and chess games",
+          "domain": "Community social infrastructure",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb029_1_5_",
+              "label": "Does this V/C Have this Type of Activity",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_2_5_",
+              "label": "Who Initiated This",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_3_5_",
+              "label": "Main Investor",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_swimming_pool_context",
+          "label": "Community activity facility: Swimming pool",
+          "domain": "Community social infrastructure",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb029_1_2_",
+              "label": "Does this V/C Have this Type of Activity",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_2_2_",
+              "label": "Who Initiated This",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_3_2_",
+              "label": "Main Investor",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_table_tennis_room_context",
+          "label": "Community activity facility: Table-tennis room",
+          "domain": "Community social infrastructure",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb029_1_6_",
+              "label": "Does this V/C Have this Type of Activity",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_2_6_",
+              "label": "Who Initiated This",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_3_6_",
+              "label": "Main Investor",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_table_tennis_table_context",
+          "label": "Community activity facility: Table-tennis table",
+          "domain": "Community social infrastructure",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb029_1_4_",
+              "label": "Does this V/C Have this Type of Activity",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_2_4_",
+              "label": "Who Initiated This",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+            },
+            {
+              "code": "jb029_3_4_",
+              "label": "Main Investor",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
             }
           ]
         },
@@ -2364,6 +2924,26 @@
           ]
         },
         {
+          "concept_id": "community_total_deaths_3y",
+          "label": "Community deaths reported in the past three years",
+          "domain": "Community health burden",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jf017_1",
+              "label": "Num. of Deaths In the Past 3 Years",
+              "module": "community",
+              "unit": "persons",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant count of deaths since 2008; no population denominator is supplied, so do not calculate a rate or interpret this as CHARLS cohort deaths."
+            }
+          ]
+        },
+        {
           "concept_id": "community_director_education_profile",
           "label": "Community director education level",
           "domain": "Community governance context",
@@ -2700,6 +3280,26 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "Household electricity penetration and annual supply availability/duration; village-level reported metrics."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_electricity_first_available_year",
+          "label": "Community electricity first-availability year",
+          "domain": "Community environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb022",
+              "label": "Year",
+              "module": "community",
+              "unit": "calendar year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only community-informant year when electricity first became available; not the respondent household's connection year."
             }
           ]
         },
@@ -4684,6 +5284,26 @@
           ]
         },
         {
+          "concept_id": "community_sewer_system_start_year",
+          "label": "Community sewer-system start year",
+          "domain": "Community environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb011",
+              "label": "Year",
+              "module": "community",
+              "unit": "calendar year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant year when the sewer system began operating; preserve the JB010 route and do not interpret the year as the respondent household's connection date."
+            }
+          ]
+        },
+        {
           "concept_id": "community_short_term_migrant_population",
           "label": "Community short-term migrant population",
           "domain": "Community migration context",
@@ -4739,7 +5359,7 @@
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "Number of households reported to have received the single-child-parent reward in 2010; not a linked sampled-household receipt status."
+              "caveat": "Year the community single-child-parent reward began; asked on the JG013 Yes route. Preserve the route and validate special values in the authorized release."
             },
             {
               "code": "jg016",
@@ -4860,6 +5480,46 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "Community-reported average monthly over-80 subsidy standard; not an individual's benefit amount."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_suicide_deaths_3y",
+          "label": "Community suicide deaths reported in the past three years",
+          "domain": "Community health burden",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jf017_2",
+              "label": "Num. of People Who are Died of Suicide in the Past 3 Years",
+              "module": "community",
+              "unit": "persons",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant count of suicide deaths since 2008; no population denominator is supplied. This is not a CHARLS participant-level outcome; protect small-community counts and verify source coding before analysis."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_sanitation_reconstruction_year",
+          "label": "Community toilet/sewer reconstruction year",
+          "domain": "Community environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jb016",
+              "label": "Year",
+              "module": "community",
+              "unit": "calendar year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only community-informant year of toilet/sewer reconstruction; conditional on JB015 and distinct from original sewer-system start."
             }
           ]
         },
@@ -118494,6 +119154,566 @@
       ]
     },
     {
+      "concept_id": "community_basketball_court_context",
+      "label": "Community activity facility: Basketball court",
+      "domain": "Community social infrastructure",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jb029_1_1_",
+          "label": "Does this V/C Have this Type of Activity",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_2_1_",
+          "label": "Who Initiated This",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_3_1_",
+          "label": "Main Investor",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_calligraphy_painting_association_context",
+      "label": "Community activity facility: Calligraphy and painting association",
+      "domain": "Community social infrastructure",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jb029_1_7_",
+          "label": "Does this V/C Have this Type of Activity",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_2_7_",
+          "label": "Who Initiated This",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_3_7_",
+          "label": "Main Investor",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_dance_exercise_organization_context",
+      "label": "Community activity facility: Dance or other exercise organization",
+      "domain": "Community social infrastructure",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jb029_1_8_",
+          "label": "Does this V/C Have this Type of Activity",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_2_8_",
+          "label": "Who Initiated This",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_3_8_",
+          "label": "Main Investor",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_elderly_activity_center_context",
+      "label": "Community activity facility: Elderly activity center",
+      "domain": "Community social infrastructure",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jb029_1_11_",
+          "label": "Does this V/C Have this Type of Activity",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_2_11_",
+          "label": "Who Initiated This",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_3_11_",
+          "label": "Main Investor",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_elderly_association_context",
+      "label": "Community activity facility: Elderly association",
+      "domain": "Community social infrastructure",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jb029_1_12_",
+          "label": "Does this V/C Have this Type of Activity",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_2_12_",
+          "label": "Who Initiated This",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_3_12_",
+          "label": "Main Investor",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_employment_service_center_context",
+      "label": "Community activity facility: Employment service center",
+      "domain": "Community social infrastructure",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jb029_1_10_",
+          "label": "Does this V/C Have this Type of Activity",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_2_10_",
+          "label": "Who Initiated This",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_3_10_",
+          "label": "Main Investor",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_nursing_home_context",
+      "label": "Community activity facility: Nursing home",
+      "domain": "Community social infrastructure",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jb029_1_13_",
+          "label": "Does this V/C Have this Type of Activity",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_2_13_",
+          "label": "Who Initiated This",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_3_13_",
+          "label": "Main Investor",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_elderly_disability_support_organization_context",
+      "label": "Community activity facility: Organization helping older or disabled residents",
+      "domain": "Community social infrastructure",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jb029_1_9_",
+          "label": "Does this V/C Have this Type of Activity",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_2_9_",
+          "label": "Who Initiated This",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_3_9_",
+          "label": "Main Investor",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_other_entertainment_facilities_context",
+      "label": "Community activity facility: Other entertainment facilities",
+      "domain": "Community social infrastructure",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jb029_1_14_",
+          "label": "Does this V/C Have this Type of Activity",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_2_14_",
+          "label": "Who Initiated This",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_3_14_",
+          "label": "Main Investor",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_outdoor_exercise_facilities_context",
+      "label": "Community activity facility: Outdoor exercise facilities",
+      "domain": "Community social infrastructure",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jb029_1_3_",
+          "label": "Does this V/C Have this Type of Activity",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_2_3_",
+          "label": "Who Initiated This",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_3_3_",
+          "label": "Main Investor",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_cards_chess_room_context",
+      "label": "Community activity facility: Room for card and chess games",
+      "domain": "Community social infrastructure",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jb029_1_5_",
+          "label": "Does this V/C Have this Type of Activity",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_2_5_",
+          "label": "Who Initiated This",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_3_5_",
+          "label": "Main Investor",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_swimming_pool_context",
+      "label": "Community activity facility: Swimming pool",
+      "domain": "Community social infrastructure",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jb029_1_2_",
+          "label": "Does this V/C Have this Type of Activity",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_2_2_",
+          "label": "Who Initiated This",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_3_2_",
+          "label": "Main Investor",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_table_tennis_room_context",
+      "label": "Community activity facility: Table-tennis room",
+      "domain": "Community social infrastructure",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jb029_1_6_",
+          "label": "Does this V/C Have this Type of Activity",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_2_6_",
+          "label": "Who Initiated This",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_3_6_",
+          "label": "Main Investor",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_table_tennis_table_context",
+      "label": "Community activity facility: Table-tennis table",
+      "domain": "Community social infrastructure",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jb029_1_4_",
+          "label": "Does this V/C Have this Type of Activity",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_2_4_",
+          "label": "Who Initiated This",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        },
+        {
+          "code": "jb029_3_4_",
+          "label": "Main Investor",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community/village report. Initiator and primary-funder responses are nominal categories asked only when the facility is present; preserve the Yes/No route and structural skips. Not participant use or access."
+        }
+      ]
+    },
+    {
       "concept_id": "community_education_profile",
       "label": "Community adult education composition",
       "domain": "Community social context",
@@ -120114,6 +121334,26 @@
       ]
     },
     {
+      "concept_id": "community_total_deaths_3y",
+      "label": "Community deaths reported in the past three years",
+      "domain": "Community health burden",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jf017_1",
+          "label": "Num. of Deaths In the Past 3 Years",
+          "module": "community",
+          "unit": "persons",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant count of deaths since 2008; no population denominator is supplied, so do not calculate a rate or interpret this as CHARLS cohort deaths."
+        }
+      ]
+    },
+    {
       "concept_id": "community_director_education_profile",
       "label": "Community director education level",
       "domain": "Community governance context",
@@ -120450,6 +121690,26 @@
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
           "caveat": "Household electricity penetration and annual supply availability/duration; village-level reported metrics."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_electricity_first_available_year",
+      "label": "Community electricity first-availability year",
+      "domain": "Community environment",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jb022",
+          "label": "Year",
+          "module": "community",
+          "unit": "calendar year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only community-informant year when electricity first became available; not the respondent household's connection year."
         }
       ]
     },
@@ -122434,6 +123694,26 @@
       ]
     },
     {
+      "concept_id": "community_sewer_system_start_year",
+      "label": "Community sewer-system start year",
+      "domain": "Community environment",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jb011",
+          "label": "Year",
+          "module": "community",
+          "unit": "calendar year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant year when the sewer system began operating; preserve the JB010 route and do not interpret the year as the respondent household's connection date."
+        }
+      ]
+    },
+    {
       "concept_id": "community_short_term_migrant_population",
       "label": "Community short-term migrant population",
       "domain": "Community migration context",
@@ -122489,7 +123769,7 @@
           "value_labels": "",
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-          "caveat": "Number of households reported to have received the single-child-parent reward in 2010; not a linked sampled-household receipt status."
+          "caveat": "Year the community single-child-parent reward began; asked on the JG013 Yes route. Preserve the route and validate special values in the authorized release."
         },
         {
           "code": "jg016",
@@ -122610,6 +123890,46 @@
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
           "caveat": "Community-reported average monthly over-80 subsidy standard; not an individual's benefit amount."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_suicide_deaths_3y",
+      "label": "Community suicide deaths reported in the past three years",
+      "domain": "Community health burden",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jf017_2",
+          "label": "Num. of People Who are Died of Suicide in the Past 3 Years",
+          "module": "community",
+          "unit": "persons",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant count of suicide deaths since 2008; no population denominator is supplied. This is not a CHARLS participant-level outcome; protect small-community counts and verify source coding before analysis."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_sanitation_reconstruction_year",
+      "label": "Community toilet/sewer reconstruction year",
+      "domain": "Community environment",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jb016",
+          "label": "Year",
+          "module": "community",
+          "unit": "calendar year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only community-informant year of toilet/sewer reconstruction; conditional on JB015 and distinct from original sewer-system start."
         }
       ]
     },
@@ -124608,9 +125928,9 @@
     "2013": {
       "baseline_wave": "2011",
       "followup_wave": "2013",
-      "exposure_count": 150,
+      "exposure_count": 169,
       "phenotype_count": 226,
-      "candidate_pair_count": 33900,
+      "candidate_pair_count": 38194,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -124848,9 +126168,9 @@
     "2015": {
       "baseline_wave": "2011",
       "followup_wave": "2015",
-      "exposure_count": 150,
+      "exposure_count": 169,
       "phenotype_count": 239,
-      "candidate_pair_count": 35850,
+      "candidate_pair_count": 40391,
       "phenotype_concept_ids": [
         "offspring_health_status_2015",
         "offspring_self_care_ability_2015",
@@ -125101,9 +126421,9 @@
     "2018": {
       "baseline_wave": "2011",
       "followup_wave": "2018",
-      "exposure_count": 150,
+      "exposure_count": 169,
       "phenotype_count": 211,
-      "candidate_pair_count": 31650,
+      "candidate_pair_count": 35659,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -125326,9 +126646,9 @@
     "2020": {
       "baseline_wave": "2011",
       "followup_wave": "2020",
-      "exposure_count": 150,
+      "exposure_count": 169,
       "phenotype_count": 104,
-      "candidate_pair_count": 15600,
+      "candidate_pair_count": 17576,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
