@@ -4,7 +4,7 @@
 
 **最新目录状态：**449项本地测试及发布负载、92条分析锁和语法检查通过。正式关联模型数和实际配对分析样本量仍为0；候选配对展示的是目录层面的波次共存，不是拟合结果。年龄/居住史C标签审计见[`audit/residential_history_search_label_review_2026-10-25.md`](audit/residential_history_search_label_review_2026-10-25.md)。
 
-**波次与模块准备度：**已整理2011、2013、2015、2018、2020五波的访谈/体测、血液检测、关系与社区模块、权重及年龄域门槛，并扩展本地表头审计输出为逐波×角色×源模块摘要。该审计只读变量名，不读取个人答案或计算样本数；模块矩阵和解释见[`audit/wave_module_readiness_matrix_2026-10-25.md`](audit/wave_module_readiness_matrix_2026-10-25.md)。
+**波次与模块准备度：**已整理2011、2013、2015、2018、2020五波的访谈/体测、血液检测、关系与社区模块、权重及年龄域门槛，并扩展本地表头审计输出为逐波×角色×源模块摘要。该审计只读变量名，不读取个人答案或计算样本数；还记录了NIA Biomarker Network对2018/2020血样采集的说法与CHARLS官方发布文件目录之间的待核差异。详见[`audit/wave_module_readiness_matrix_2026-10-25.md`](audit/wave_module_readiness_matrix_2026-10-25.md)。
 
 **最新项目代码：**提交 `3019413`（2026-10-25）增加本机受控准备表的表头级字段覆盖审计，GitHub Validate [#454](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40168842247) 已成功。该审计仅检查本机 Stata 文件列名，不读取个人取值或计算样本量，并将结果写入仓库外的本机 QA 目录。结果确认了2011社区层链接限制、关系名册独立存储、2015独立血液数据字段缺失，以及2013准备表缺少官方样本标记。详见[`audit/data_preparation_plan_and_controls.md`](audit/data_preparation_plan_and_controls.md)和[`scripts/audit_prepared_catalog_field_availability.py`](scripts/audit_prepared_catalog_field_availability.py)。本轮对 2013/2015 DA005 字段的核验记录见[`audit/keyword_epc_overlap_review_2026-10-25.md`](audit/keyword_epc_overlap_review_2026-10-25.md)。
 

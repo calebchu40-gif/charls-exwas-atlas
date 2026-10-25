@@ -1,3 +1,7 @@
+## 2026-10-25 Clarify unresolved later-wave blood-collection source discrepancy
+
+- Reconciled the Wave 4 User Guide and official 2018/2020 file inventories with a conflicting NIA Biomarker Network summary that reports 2018/2020 blood collection. The public catalogue remains limited to CHARLS-published, field-addressable assay files (2011/2015); the discrepancy is explicitly documented as unresolved pending an official release file, variable dictionary, and weight guidance.
+
 ## 2026-10-25 Add wave/module readiness matrix and private module-level header audit
 
 - Added an evidence-linked five-wave matrix distinguishing catalogue coverage, exact column-name presence in the private prepared tables, and actual model readiness. The matrix documents the 2011/2015-only blood assay schedule, activity subsample caveats, separate roster/community modules, the missing 2013 official sample flags, and the Wave 5 age-domain limit.
