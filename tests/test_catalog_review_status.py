@@ -95,7 +95,10 @@ class CatalogReviewStatusTests(unittest.TestCase):
                 if row.get("Source.Wave") == wave and row.get("Variable.Name", "").lower() == code
             ]
             self.assertTrue(rows, (wave, code))
-            self.assertTrue(all(row.get("Value.Label.Review", "").startswith("official codebook field located; continuous/count or no categorical labels") for row in rows), (wave, code))
+            if wave in {"2013", "2018"}:
+                self.assertTrue(all("questionnaire/Codebook" in row.get("Value.Label.Review", "") or row.get("Value.Label.Review", "").startswith("DO NOT ANALYZE") for row in rows), (wave, code))
+            else:
+                self.assertTrue(all(row.get("Value.Label.Review", "").startswith("official codebook field located; continuous/count or no categorical labels") for row in rows), (wave, code))
             self.assertTrue(all(not row.get("Value.Labels", "") for row in rows), (wave, code))
         app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
 

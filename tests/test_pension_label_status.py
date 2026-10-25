@@ -24,7 +24,7 @@ class PensionLabelStatusTests(unittest.TestCase):
         self.assertTrue(updated.loc[changed, "value_labels"].ne("").all())
         self.assertTrue(updated.loc[changed, "mapping_status"].str.contains("analysis eligibility remain to be validated").all())
         self.assertEqual(original_locked, int(updated.mapping_status.str.contains("DO NOT ANALYZE").sum()))
-        self.assertEqual(462, int(updated.mapping_status.eq(MODULE.STALE_STATUS).sum()))
+        self.assertEqual(426, int(updated.mapping_status.eq(MODULE.STALE_STATUS).sum()))
 
     def test_status_application_is_idempotent(self):
         mapping = pd.read_csv(ROOT / "audit/pension_exposure_variable_mapping_v1.csv", dtype=str).fillna("")

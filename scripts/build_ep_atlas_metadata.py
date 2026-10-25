@@ -208,6 +208,8 @@ FULL_PIPELINE_SCRIPTS = (
     "propagate_alcohol_metadata_to_catalog.py",
     "validate_do_not_analyze_triage.py",
     "propagate_ep_crosswalk_status.py",
+    "apply_marital_history_exposure_source_review.py",
+    "apply_pension_receipt_date_source_review.py",
     # Final crosswalk-status propagation can merge concept-level metadata
     # back into a field row. Reapply field-specific source reviews afterward,
     # then create the public shards from the corrected wave-level rows.
@@ -389,6 +391,9 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_2018_household_property_value_review.py",
     "apply_housing_numeric_measure_review.py",
     "apply_final_housing_catalog_sync.py",
+    "apply_marital_history_exposure_source_review.py",
+    "apply_pension_receipt_date_source_review.py",
+    "build_candidate_pair_explorer.py",
     "deduplicate_exact_catalog_rows.py",
     "site_catalog_shards.py",
     "summarize_value_label_coverage.py",

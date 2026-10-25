@@ -42,7 +42,7 @@
 |审核状态|最终E/P目录行|
 |---|---:|
 |officially reviewed|2,668|
-|official codebook field located; continuous/count or no categorical labels|766|
+|official codebook field located; continuous/count or no categorical labels|730|
 |numeric/time unit metadata available; no discrete labels assigned; see concept crosswalk|468|
 |codebook field located; continuous/open response or no categorical labels|371|
 |official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred|224|
@@ -63,6 +63,7 @@
 |字段标签已核；代码本呈现多选类别频数，未能从摘录确认未选/否的底层存储码|42|
 |official selected-option label; checkbox slot, absence is not a negative response|42|
 |official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned|41|
+|official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending|33|
 |continuous component, not a categorical code; component unit reviewed against wave-specific official codebook|32|
 |continuous measure metadata available; see description/crosswalk|32|
 |official questionnaire and Codebook option identity reviewed; participant-level No/unselected storage and denominator unresolved; no response-value labels assigned|30|
@@ -159,6 +160,7 @@
 |local string endpoint pairs checked; Codebook extreme upper value present; route/unit and sentinel semantics unresolved|2|
 |occupation classification code; Codebook frequency distribution omitted; classification definitions are not response labels; unpaid family-business route retained|2|
 |official questionnaire/Codebook identify a conditional bracket endpoint; Codebook provides numeric summaries but no discrete response categories|2|
+|DO NOT ANALYZE: 2013 Codebook labels this field No Observations; verify exact authorized release and field presence first.|2|
 |official questionnaire/Codebook identify a conditional bracket endpoint; Codebook explicitly says string; no discrete response categories|2|
 |official questionnaire response categories reviewed; frequencies omitted|2|
 |continuous/date component; no discrete labels|2|
@@ -256,6 +258,7 @@
 |numbered official questionnaire categories; released-data value coding and no-fixed-address storage unverified; DO NOT ANALYZE pending reconciliation|1|
 |official questionnaire answer wording; released numeric value codes not verified; DO NOT ANALYZE until reconciled to authorized release|1|
 |official questionnaire categories; frequencies omitted; conditional agricultural-wage/other-job temporary-absence route|1|
+|DO NOT ANALYZE: questionnaire extraction repeats the year subfield identifier for the month; Codebook identifies _2 as month; reconcile exact release questionnaire before using.|1|
 |official questionnaire confirms DA017 option 2=Oral cavity; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics|1|
 |official questionnaire confirms DA017 option 13=Prostate; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics|1|
 |official questionnaire confirms DA017 option 21=Non-Hodgkin lymphoma; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics|1|

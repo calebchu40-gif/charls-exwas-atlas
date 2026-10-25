@@ -30,7 +30,7 @@ def propagate() -> None:
                 df.loc[mask, "subcategory"] = "marital history and marriage transfers"
                 df.loc[mask, "Candidate.Status"] = item["mapping_status"]
                 df.loc[mask, "Harmonization.Status"] = item["value_semantics"] + " " + item["caveat"]
-                df.loc[mask, "Review.Flag"] = item["caveat"]
+                df.loc[mask, "Review.Flag"] = item["caveat"] + "; documented source mapping is a candidate only; not an approved test variable"
                 df.loc[mask, "Value.Labels"] = item["value_labels"]
                 df.loc[mask, "Value.Label.Source"] = item["value_label_source"]
                 df.loc[mask, "Value.Label.Review"] = item["value_label_status"]
@@ -43,7 +43,7 @@ def propagate() -> None:
                 key = (str(row.get("Source.Wave", "")), str(row.get("Variable.Name", "")).lower(), str(row.get("Data.File.Name", "")))
                 if key not in targets or str(row.get("epcf", "")).lower() != "e": continue
                 item = targets[key]
-                row.update({"category": "social determinants", "subcategory": "marital history and marriage transfers", "Candidate.Status": item["mapping_status"], "Harmonization.Status": item["value_semantics"] + " " + item["caveat"], "Review.Flag": item["caveat"], "Value.Labels": item["value_labels"], "Value.Label.Source": item["value_label_source"], "Value.Label.Review": item["value_label_status"]})
+                row.update({"category": "social determinants", "subcategory": "marital history and marriage transfers", "Candidate.Status": item["mapping_status"], "Harmonization.Status": item["value_semantics"] + " " + item["caveat"], "Review.Flag": item["caveat"] + "; documented source mapping is a candidate only; not an approved test variable", "Value.Labels": item["value_labels"], "Value.Label.Source": item["value_label_source"], "Value.Label.Review": item["value_label_status"]})
                 count += 1
             if count != 4: raise SystemExit(f"Expected four E mappings in {rel}; updated {count}")
             path.write_text(json.dumps(rows, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-25 continuation: audit pension receipt start-date components in Waves 2 and 4
+
+Reviewed 36 existing 2013/2018 pension start-date component mappings against public questionnaires and Codebooks; preserved year/month components and plan-specific slots. Locked 2013 `fn081_w2_2` because extracted questionnaire text repeats the year identifier for its month while the Codebook calls `_2` month; locked both 2013 `fn095_w2` components because the Codebook says `No Observations`. The current 2018 `FN003` crosswalk has year slots only; although the questionnaire displays year and month, no month fields were guessed or added without an exact release crosswalk. No participant records or Codebook frequencies were used. Added an idempotent review script to both build paths and a regression test, updated the E/P source crosswalk and rebuilt public shards/pair browser. Audit: `audit/pension_receipt_start_dates_2013_2018_source_review_2026-10-25.md`. Formal models and actual pairwise Ns remain 0.
+
 ## 2026-10-25 continuation: split self-rated health by official response scale
 
 Rechecked the 2011, 2013, and 2015 official questionnaires: they describe two self-rated-health scales, asked at the beginning and end of the health section with randomized order. Corrected a concept-level mismatch by grouping `DA001`/`DA080` under the `Excellent → Poor` response scale and `DA002`/`DA079` under `Very good → Very poor`; 2018 `DA002` and 2020 `DA001` remain mapped to the latter scale. Exact respondent-level routing/skip semantics are still gated on the authorized release dictionary; no response distributions or participant data were inspected. The site catalogue is rebuilt from wave-specific fields, and the codebook wording conflict for 2011 `DA079` remains visible. Audit and regression test: `audit/self_rated_health_scale_harmonization_review_2026-10-25.md`, `tests/test_self_rated_health_scale_mapping.py`.
