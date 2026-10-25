@@ -11,7 +11,7 @@ class DirectoryScopeKpiTests(unittest.TestCase):
     def test_homepage_reports_exposure_and_phenotype_counts_separately(self):
         scope = json.loads((ROOT / "audit/directory_scope_counts_v1.json").read_text(encoding="utf-8"))
         html = (ROOT / "site-prototype/dist/index.html").read_text(encoding="utf-8")
-        self.assertEqual(html.count('<p class="stats-note">去重后共有'), 1)
+        self.assertEqual(html.count('<p class="stats-note">五轮常规主调查去重后共有'), 1)
         match = re.search(r'<div class="stats"[^>]*>(.*?)</div>\s*<p class="stats-note">(.*?)</p>', html, re.S)
         self.assertIsNotNone(match)
         cards = re.findall(r'<div class="stat"><b>([^<]+)</b><span>([^<]+)</span></div>', match.group(1))
@@ -30,6 +30,10 @@ class DirectoryScopeKpiTests(unittest.TestCase):
         self.assertIn(f"{dual} 个同时承担暴露与表型角色", match.group(2))
         self.assertIn(f"{scope['wave_field_mapping_rows']:,} 条概念—源字段映射", match.group(2))
         self.assertIn("不是样本量或关联结果", match.group(2))
+        self.assertIn("2014生命历程特殊调查单独展示", match.group(2))
+        self.assertIn("2014 生命历程回顾性调查", html)
+        self.assertIn("471条概念—字段映射", html)
+        self.assertIn("不计入上述五波统计", match.group(2))
 
     def test_readme_snapshot_matches_generated_catalog_and_pair_index(self):
         scope = json.loads((ROOT / "audit/directory_scope_counts_v1.json").read_text(encoding="utf-8"))

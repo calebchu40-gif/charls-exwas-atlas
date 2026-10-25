@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas active work status (2026-10-25)
 
-> Status refresh, 2026-10-25: v110 is live and verified. Commit `9053334` passed GitHub Validate #461 and Pages Deploy #231; the homepage loads `app.js?v=110`, contains five wave cards, and links the NIA source directly. Commit `1dff7fe` passed Validate #458; the 982-row live C shard remains byte-identical to local. All 449 tests and local safety checks pass. The current gate is source/version and survey-design readiness, not site hosting. v108 applied reviewed age/residential-history metadata labels; v107 corrected two source-verified disability-option links. The dated entries below record historical milestones; use this refresh for the current state.
+> Status refresh, 2026-10-25: v110 remains the latest verified public release (commit `9053334`, Validate #461, Pages Deploy #231). v111 is being prepared locally: the home page now surfaces the separate 2014 Life History directory (18 concepts, 471 field mappings) and explicitly excludes it from regular five-wave counts and weighted analyses because the official release note provides no weight. The v111 change still needs validation, commit, and Pages deployment. The 982-row live C shard remains byte-identical to local; all 449 tests and safety checks passed before this isolated HTML/CSS change. The current gate remains source/version and survey-design readiness, not site hosting.
 
 ## Current state after the prepared-table header audit
 

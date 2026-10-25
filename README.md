@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-25）
 
-**最新公开网站：**v110（提交 `9053334`）已通过 Validate #461 和 Pages Deploy #231；[GitHub Actions 工作流记录](https://github.com/calebchu40-gif/charls-exwas-atlas/actions)。线上首页加载`app.js?v=110`，展示五波测量安排、官方来源、NIA二手资料的直接链接和血检目录入口。E/P/C目录为4,845/2,082/982行；线上C目录与本地逐字节一致，候选配对文件的字段和值结构相同。v108把18条已完成官方来源审核的年龄/居住史C记录改为字段特异标签；网站仍是变量元数据查询原型，没有真实关联结果。
+**最新网站变更（待部署）：**v111 在首页增加独立的2014生命历程回顾性调查入口，列出18个概念组、471条字段映射（466 E、5 P），并说明它不属于2011–2020五轮常规主调查、没有官方权重，因此不并入常规波次共现数或加权关联模型。此前公开的v110（提交 `9053334`）已通过 Validate #461 和 Pages Deploy #231；[GitHub Actions 工作流记录](https://github.com/calebchu40-gif/charls-exwas-atlas/actions)。E/P/C目录为4,845/2,082/982行；网站是变量元数据查询原型，没有真实关联结果。
 
 **最新目录状态：**449项本地测试及发布负载、92条分析锁和语法检查通过。正式关联模型数和实际配对分析样本量仍为0；候选配对展示的是目录层面的波次共存，不是拟合结果。年龄/居住史C标签审计见[`audit/residential_history_search_label_review_2026-10-25.md`](audit/residential_history_search_label_review_2026-10-25.md)。
 

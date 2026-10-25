@@ -1,3 +1,8 @@
+## 2026-10-25 Surface the separate 2014 Life History directory on the landing page (v111 candidate)
+
+- Added a home-page entry for the special 2014 retrospective Life History catalogue: 18 concept groups and 471 source-field mappings (466 E, 5 P). The card states that this survey is separate from the five regular waves, has no official weight, and is excluded from regular-wave co-availability counts and weighted association models.
+- Clarified the five-wave headline counts to prevent visitors from assuming that the special survey is included. Updated the app cache key to v111. Pending public validation and Pages deployment.
+
 ## 2026-10-25 Link and publish the five-wave measurement schedule (v110 deployed)
 
 - Added a direct link to the NIA Biomarker Network page where the 2018/2020 blood-collection claim appears, so visitors can inspect the source of the discrepancy. Updated the browser bundle cache key to v110. Commit `9053334` passed Validate #461 and Pages Deploy #231; the live index loads `app.js?v=110` and includes the NIA link.
