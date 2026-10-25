@@ -98209,9 +98209,9 @@
       ]
     },
     "2020": {
-      "exposure_count": 203,
+      "exposure_count": 205,
       "phenotype_count": 97,
-      "candidate_pair_count": 19689,
+      "candidate_pair_count": 19883,
       "exposures": [
         {
           "concept_id": "household_monthly_total_expenditure_2020",
@@ -101615,6 +101615,26 @@
           ]
         },
         {
+          "concept_id": "covid_government_response_perception_2020",
+          "label": "对政府疫情防控措施严格程度的评价（2020）",
+          "domain": "Pandemic prevention and information context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "va007",
+              "label": "Attitude Towards Government Interventions",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Too strict; 2=Appropriate; 3=Not strict enough",
+              "value_semantics": "Respondent rating of whether government containment measures were too strict, appropriate, or insufficiently strict",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "A single-item perception of the policy context, not an objective policy stringency measure or validated attitude scale. Questionnaire and Codebook use nonidentical wording for response 2; preserve the source discrepancy and do not harmonize it silently."
+            }
+          ]
+        },
+        {
           "concept_id": "residential_settlement_type",
           "label": "居住地址城乡/聚落类别",
           "domain": "social determinants",
@@ -102112,6 +102132,56 @@
               "value_semantics": "Select-all quarantine/medical-observation reasons excluding hospitalization in the question stem",
               "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
               "caveat": "Travel, close contact, residential-building closure and hospital-related quarantine are distinct contexts. Positive-test and exclusive no-quarantine options are not included in this exposure concept; preserve unknown/refusal options outside the candidate matrix."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_quarantine_location_2020",
+          "label": "新冠隔离地点（2020）",
+          "domain": "Pandemic infection and quarantine context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "vb009_s1",
+              "label": "Hospital",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 1=Yes",
+              "value_semantics": "Conditional multiple-response location checklist among respondents with a quarantine experience",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Location choices (hospital, centralized observation site, own residence, other) are a conditional context candidate, not a dose or validated facility-quality measure. Do not infer nonselection from blanks or generalize beyond the routed quarantine group."
+            },
+            {
+              "code": "vb009_s2",
+              "label": "Hotel",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 2=Yes",
+              "value_semantics": "Conditional multiple-response location checklist among respondents with a quarantine experience",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Location choices (hospital, centralized observation site, own residence, other) are a conditional context candidate, not a dose or validated facility-quality measure. Do not infer nonselection from blanks or generalize beyond the routed quarantine group."
+            },
+            {
+              "code": "vb009_s3",
+              "label": "Own Residence",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 3=Yes",
+              "value_semantics": "Conditional multiple-response location checklist among respondents with a quarantine experience",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Location choices (hospital, centralized observation site, own residence, other) are a conditional context candidate, not a dose or validated facility-quality measure. Do not infer nonselection from blanks or generalize beyond the routed quarantine group."
+            },
+            {
+              "code": "vb009_s4",
+              "label": "Others",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 4=Yes",
+              "value_semantics": "Conditional multiple-response location checklist among respondents with a quarantine experience",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Location choices (hospital, centralized observation site, own residence, other) are a conditional context candidate, not a dose or validated facility-quality measure. Do not infer nonselection from blanks or generalize beyond the routed quarantine group."
             }
           ]
         },

@@ -1,4 +1,12 @@
-# 2026-10-25 Add CHARLS 2020 COVID prevention/context candidates (v121 prepared)
+# 2026-10-25 Complete 2020 pandemic-context candidate coverage (v122 prepared)
+
+- Completeness review identified two additional E concepts within the CHARLS 2020 COVID module: subjective evaluation of government containment strictness (VA007) and conditional quarantine location (VB009). The E crosswalk now contains 48 fields across 22 concepts; the P crosswalk remains 21 fields across 21 concepts.
+- Preserved the VA007 questionnaire/Codebook wording difference for response 2 (“Appropriate” vs “Satisfied”) in the field review status. VB009's four location flags use only their exact Codebook yes/no codes and remain conditional on quarantine; blank values are not interpreted as nonselection.
+- Final catalogue E/P/C rows: 4,973/2,103/982. Candidate concepts: 1,541 (1,242 E, 324 P, with 25 dual-role); E/P concept-source mappings: 6,970; E/P catalogue records/wave-fields/explicitly labelled rows: 7,076/6,863/3,723. Generic pending label states are zero for E/P/C. The 2020 candidate metadata-pair index contains 19,883 pairs; these are not sample sizes or fitted associations.
+- Full metadata finalization completed in 9.6 minutes; exact 92 analysis locks remained unchanged. No participant-level data, Codebook frequencies, or association models/results were generated. Audit: `audit/pandemic_context_candidate_review_2020.md`.
+- Local app asset cache key is v122; the prior v121 public page and validation status are recorded below. Pages and CI runs for this follow-up commit will be recorded after push.
+
+## 2026-10-25 Add CHARLS 2020 COVID prevention/context candidates (v121 prepared)
 
 - Added 43 E-side source-field mappings across 20 prevention, information, contact, quarantine, self-isolation, and residential-restriction concepts, plus 21 P-side mappings across infection-report, behavior/function change, emotional-response, and recreation-cancellation concepts. All mappings are tied to exact 2020 questionnaire and Codebook fields.
 - Transcribed only field-specific category labels: numeric checkbox codes from the exact Codebook section, ordinal codes from the Questionnaire with Codebook wording checked, and no invented labels for continuous measures. The parser now stops at the next variable heading; frequency counts, percentages, extrema, participant values, and analysis Ns are excluded.

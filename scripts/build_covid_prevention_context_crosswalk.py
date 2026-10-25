@@ -122,6 +122,14 @@ add("e", ["va006_s1", "va006_s2"], "covid_preventive_stockpiling_2020", "疫情�
     "Pandemic prevention and information context", "VA006", "Multiple-response purchases above usual during the three days after Wuhan closure",
     "Short, explicitly dated self-reported stockpiling behavior; do not infer an individual exposure dose or treat the exclusive none option as an independent exposure.",
     value_labels="1=Food/cooking oil/vegetables; 2=Masks/hand sanitizer/disinfectant; field-specific response codes require release QA")
+add("e", ["va007"], "covid_government_response_perception_2020", "对政府疫情防控措施严格程度的评价（2020）",
+    "Pandemic prevention and information context", "VA007", "Respondent rating of whether government containment measures were too strict, appropriate, or insufficiently strict",
+    "A single-item perception of the policy context, not an objective policy stringency measure or validated attitude scale. Questionnaire and Codebook use nonidentical wording for response 2; preserve the source discrepancy and do not harmonize it silently.",
+    value_labels="1=Too strict; 2=Appropriate; 3=Not strict enough")
+next(row for row in E_ROWS if row["code"] == "va007")["value_label_status"] = (
+    "Questionnaire response options transcribed; Codebook wording differs for response 2 (Satisfied vs Appropriate); "
+    "source discrepancy retained; frequencies omitted; release coding requires authorized-release QA"
+)
 
 add("e", ["vb001_s2"], "covid_confirmed_or_suspected_household_contact_2020", "家庭成员新冠疑似/确诊接触（2020）",
     "Pandemic infection and quarantine context", "VB001", "Household member reported as confirmed or suspected case",
@@ -150,6 +158,9 @@ add("e", ["vb008"], "covid_total_quarantine_days_2020", "新冠隔离总天数�
     "Pandemic infection and quarantine context", "VB008", "Total duration across multiple quarantine experiences",
     "Questionnaire asks for summed days across episodes and uses -1 for unable to answer; distinguish conditional nonparticipation from zero and retain the official questionnaire's handling of repeated episodes.",
     unit="Days")
+add("e", [f"vb009_s{i}" for i in range(1, 5)], "covid_quarantine_location_2020", "新冠隔离地点（2020）",
+    "Pandemic infection and quarantine context", "VB009", "Conditional multiple-response location checklist among respondents with a quarantine experience",
+    "Location choices (hospital, centralized observation site, own residence, other) are a conditional context candidate, not a dose or validated facility-quality measure. Do not infer nonselection from blanks or generalize beyond the routed quarantine group.")
 add("e", ["vb010"], "covid_quarantine_out_of_pocket_cost_2020", "新冠隔离期间个人支付费用（2020）",
     "Pandemic economic and social context", "VB010", "Self-reported quarantine accommodation and food cost",
     "Conditional on quarantine experience; household/individual payer scope and currency-unit storage must be verified in the authorized release. Do not turn skips into zero.",
