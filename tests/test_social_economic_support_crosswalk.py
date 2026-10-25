@@ -51,6 +51,11 @@ class SocialEconomicSupportCrosswalkTests(unittest.TestCase):
         self.assertTrue(baseline)
         self.assertTrue(all("discrep" in r["caveat"].lower() for r in baseline))
 
+    def test_field_caveats_do_not_accumulate_across_roster_slots(self):
+        for row in self.support:
+            self.assertLess(len(row["caveat"]), 2_000)
+            self.assertLessEqual(row["caveat"].count("2011 field-label/sub-item numbering discrepancies"), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

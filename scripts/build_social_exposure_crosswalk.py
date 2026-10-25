@@ -76,9 +76,10 @@ def value_labels(cid,wave):
   return '1=Yes; 2=No'
  return ''
 
-for cid,label,domain,caveat in concepts:
+for cid,label,domain,base_caveat in concepts:
  for _,r in src.iterrows():
   if rules[cid](r.wave,r.variable):
+   row_caveat=base_caveat
    if cid=='informal_help_household_chores' and r.wave in {'2013','2015'}:
     status='Official questionnaire/codebook yes-no response categories reviewed; questionnaire item wording conflicts with codebook variable label; candidate mapping only; DO NOT ANALYZE until source version/field alias is reconciled'
    elif cid=='formal_caregiver_current' and r.wave=='2011':
@@ -101,25 +102,25 @@ for cid,label,domain,caveat in concepts:
    if cid=='social_activity_frequency' and r.wave=='2011':
     questionnaire_source='sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt'
     value_label_source='sources_official/CHARLS_2011_Codebook_extracted.txt'
-    caveat += ' Questionnaire category 3 is “Not regularly” while the Codebook says “Less often”; retain wording discrepancy pending release/version confirmation. Official Questionnaire extracts differ on whether the DA056 loop covers options 1–11 or 1–10; do not infer the eligible denominator.'
+    row_caveat += ' Questionnaire category 3 is “Not regularly” while the Codebook says “Less often”; retain wording discrepancy pending release/version confirmation. Official Questionnaire extracts differ on whether the DA056 loop covers options 1–11 or 1–10; do not infer the eligible denominator.'
    if cid.startswith('economic_support_'):
     questionnaire_source=f'sources_official/CHARLS_{r.wave}_Questionnaire_extracted.txt; {r.variable.upper()}'
     value_label_source=f'sources_official/CHARLS_{r.wave}_Codebook_extracted.txt'
     if r.wave=='2011':
      questionnaire_source='sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt'
      value_label_source='sources_official/CHARLS_2011_Codebook_extracted.txt'
-     caveat += ' 2011 field-label/sub-item numbering discrepancies exist between the official Baseline Questionnaire and Codebook; retain as a candidate mapping and reconcile exact release storage before analysis.'
+     row_caveat += ' 2011 field-label/sub-item numbering discrepancies exist between the official Baseline Questionnaire and Codebook; retain as a candidate mapping and reconcile exact release storage before analysis.'
     if r.wave=='2015' and cid in {'economic_support_received_parents','economic_support_provided_parents'}:
-     caveat += ' 2015 fields are person-indexed by the parent roster; the audited field family does not expose a separate parents-in-law prefix, so no in-law-specific equivalence is inferred.'
+     row_caveat += ' 2015 fields are person-indexed by the parent roster; the audited field family does not expose a separate parents-in-law prefix, so no in-law-specific equivalence is inferred.'
     if r.wave=='2018' and cid in {'economic_support_received_parents','economic_support_provided_parents'}:
-     caveat += ' 2018 fields use XConParName roster slots; do not assume a distinct parent-in-law identity without an explicit linked roster field.'
-   rows.append(dict(concept_id=cid,concept_label=label,domain=domain,wave=r.wave,code=r.variable,module=r.module,source_label=r.variable_label,mapping_status=status,value_labels=value_labels(cid,r.wave),value_semantics=value_note(cid,r.wave),questionnaire_source=questionnaire_source,value_label_source=value_label_source,caveat=caveat))
+     row_caveat += ' 2018 fields use XConParName roster slots; do not assume a distinct parent-in-law identity without an explicit linked roster field.'
+   rows.append(dict(concept_id=cid,concept_label=label,domain=domain,wave=r.wave,code=r.variable,module=r.module,source_label=r.variable_label,mapping_status=status,value_labels=value_labels(cid,r.wave),value_semantics=value_note(cid,r.wave),questionnaire_source=questionnaire_source,value_label_source=value_label_source,caveat=row_caveat))
 out=pd.DataFrame(rows).drop_duplicates()
 out.to_csv(ROOT/'audit/social_exposure_crosswalk_v1.csv',index=False,encoding='utf-8-sig')
 items=[]
-for cid,label,domain,caveat in concepts:
+for cid,label,domain,base_caveat in concepts:
  fields=out[out.concept_id.eq(cid)]
- items.append(dict(concept_id=cid,label=label,domain=domain,caveat=caveat,source_fields=[dict(wave=str(x.wave),code=x.code,module=x.module,source_label=x.source_label,note=x.mapping_status,value_labels=x.value_labels,value_semantics=x.value_semantics,questionnaire_source=x.questionnaire_source,value_label_source=x.value_label_source) for x in fields.itertuples()]))
+ items.append(dict(concept_id=cid,label=label,domain=domain,caveat=base_caveat,source_fields=[dict(wave=str(x.wave),code=x.code,module=x.module,source_label=x.source_label,note=x.mapping_status,value_labels=x.value_labels,value_semantics=x.value_semantics,questionnaire_source=x.questionnaire_source,value_label_source=x.value_label_source) for x in fields.itertuples()]))
 (ROOT/'site-prototype/dist/social_exposures_v1.json').write_text(json.dumps(items,ensure_ascii=False,indent=2),encoding='utf-8')
 print(f'concepts={len(items)} field mappings={len(out)} by concept={out.groupby("concept_id").size().to_dict()} by wave={out.groupby("wave").size().to_dict()}')
 

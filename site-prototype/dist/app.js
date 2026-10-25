@@ -31,7 +31,7 @@ const healthSymptomsLoaded=deferJson('./health_symptoms_v1.json?v=3','healthSymp
 const foodEnvironmentLoaded=deferJson('./food_environment_v1.json?v=4','foodEnvironment');
 const workExposuresLoaded=deferJson('./work_exposures_v1.json?v=3','workExposures');
 const communityExposuresLoaded=deferJson('./community_exposures_v1.json?v=4','communityExposures');
-const socialExposuresLoaded=deferJson('./social_exposures_v1.json?v=3','socialExposures');
+const socialExposuresLoaded=deferJson('./social_exposures_v1.json?v=4','socialExposures');
 const healthcareAccessLoaded=deferJson('./healthcare_access_v1.json?v=3','healthcareAccess');
 const bloodBiomarkersLoaded=deferJson('./blood_biomarkers_v1.json?v=3','bloodBiomarkers');
 let candidatePairExplorerLoaded;
@@ -82,7 +82,7 @@ function renderCandidatePairExplorer(data){
 function loadCandidatePairExplorer(){
  if(candidatePairExplorerLoaded)return candidatePairExplorerLoaded;
  byId('candidatePairStatus').textContent='正在载入候选配对索引…';
- candidatePairExplorerLoaded=fetch('./candidate_pair_explorer_v1.json?v=3',{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`candidate pair explorer HTTP ${r.status}`);return r.json()}).then(data=>{renderCandidatePairExplorer(data);['candidatePairDesign','candidatePairWave','candidateExposure','candidatePhenotype'].forEach(id=>byId(id).addEventListener(id==='candidateExposure'||id==='candidatePhenotype'?'input':'change',()=>{if(byId('candidatePairDesign').value==='baseline-community'&&byId('candidatePairWave').value==='2011')byId('candidatePairWave').value='2013';renderCandidatePairExplorer(data)}));return data}).catch(err=>{byId('candidatePairStatus').textContent=`候选配对目录载入失败：${err.message}`;return null});
+ candidatePairExplorerLoaded=fetch('./candidate_pair_explorer_v1.json?v=4',{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error(`candidate pair explorer HTTP ${r.status}`);return r.json()}).then(data=>{renderCandidatePairExplorer(data);['candidatePairDesign','candidatePairWave','candidateExposure','candidatePhenotype'].forEach(id=>byId(id).addEventListener(id==='candidateExposure'||id==='candidatePhenotype'?'input':'change',()=>{if(byId('candidatePairDesign').value==='baseline-community'&&byId('candidatePairWave').value==='2011')byId('candidatePairWave').value='2013';renderCandidatePairExplorer(data)}));return data}).catch(err=>{byId('candidatePairStatus').textContent=`候选配对目录载入失败：${err.message}`;return null});
  return candidatePairExplorerLoaded;
 }
 

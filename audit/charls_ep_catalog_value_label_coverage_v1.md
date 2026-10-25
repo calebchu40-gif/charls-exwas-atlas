@@ -3,7 +3,7 @@
 更新：2026-10-25。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
 - 最终E/P目录行：8,115；不同波次—字段码：7,902。一个字段可对应多个候选类别/角色。
-- 有非空标签文本的E/P目录行：3,731；不同波次—字段码：3,650。连续测量、计数值及测量流程字段可已审但不需要离散标签。
+- 有非空标签文本的E/P目录行：3,763；不同波次—字段码：3,682。连续测量、计数值及测量流程字段可已审但不需要离散标签。
 - 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：0。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -30,7 +30,7 @@
 |p|biochemistry|32|32|0|1|
 |p|blood pressure|54|27|0|1|
 |p|chronic disease|248|248|240|1|
-|p|chronic disease ancillary|664|664|488|70|
+|p|chronic disease ancillary|664|664|520|70|
 |p|cognition|338|338|305|1|
 |p|health and symptoms|177|177|171|5|
 |p|healthcare access|217|217|66|2|

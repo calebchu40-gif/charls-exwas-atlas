@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-25）
 
-**最新部署状态更正：**v125（提交 `515b472`）已由 GitHub Pages Deploy [#246](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40205557507) 成功发布，线上首页为 `app.js?v=125`，家庭经济支持六个新概念已在公开 JSON 目录中核验。GitHub Validate [#497](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40205557514) 的单测步骤失败；本机 Python 3.12 的475项测试全部通过，远端差异仍待定位。下方提到的 v124 部署状态仅作历史记录。
+**部署状态：**公开站点仍为 v125（Deploy #246）；本地 v126 已完成完整目录终审与静态资产重建，家庭经济支持说明重复累积问题已修复，页面资源缓存键已更新。v126 发布待当前提交的 GitHub Validate 与 Pages 部署完成后补记。
 
 **历史快照（v124；当前已更新至v125）：**v124 已部署；GitHub Pages Deploy [#245](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40202625659) 成功，首页已加载 `app.js?v=124`。GitHub Validate [#495](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40202625608) 的单测步骤失败；本机 Python 3.12 重跑 471 项全部通过，待后续提交触发远端复验。新增疫情模块逐字段覆盖台账，并纳入官方派生隔离指标 `XQuarantined` 与三类 VB002 社会网络结局候选。E/P/C 目录行数分别为 4,977/2,107/982（E=4,977、P=2,107、C=982）；1,548 个 E/P 概念（暴露 1,245、表型 328，含 25 个双角色），6,978 条概念—来源映射；E/P 目录记录 7,084 条、波次—字段 6,871 个、明确标签 3,731 条，通用待审核状态为 0。2020 候选配对 21,006 对是目录共现，不是分析样本量或效应结果。疫情模块 100 个官方字典字段现有逐项去向：77 个候选 E/P 字段、23 个明确记录为联结键/路由选项/时间或访谈元数据。92 条分析锁未变，正式关联模型仍为 0。上一公开版本为 v123。当前范围与剩余工期说明见[`audit/project_scope_and_completion_estimate_2026-10-25.md`](audit/project_scope_and_completion_estimate_2026-10-25.md)。
 
@@ -8,7 +8,7 @@
 
 **数据接收提速：**新增`python scripts/run_available_charls_intake_gates.py`，可一次检查受控目录中已到位的2013官方权重和2015独立血检文件；只跑官方哈希与DTA表头闸门，缺文件会跳过，QA仅写入本机受保护目录。详见[`audit/combined_intake_gate_runner_2026-10-25.md`](audit/combined_intake_gate_runner_2026-10-25.md)。
 
-**最新目录状态：**v125 已完成全量终审并部署；本机475项测试、公开包校验、精确92条分析锁复核、前端语法及差异空白检查通过。GitHub Validate #497 的远端单测步骤失败，尚待定位。分析锁仍为92条。正式关联模型数和实际配对分析样本量仍为0；候选配对展示的是目录层面的波次共现，不是拟合结果。2020 COVID模块字段级覆盖审计新增100字段清单（77个E/P、23个有理由的非E/P去向）。年龄/居住史C标签审计见[`audit/residential_history_search_label_review_2026-10-25.md`](audit/residential_history_search_label_review_2026-10-25.md)。
+**最新目录状态：**本地 v126 全量终审完成；E/P/C 目录行 6,008/2,107/982，1,554 个候选概念、8,009 条 E/P 概念—来源映射，明确标签 3,763 条。476 项本机测试、公开包校验、精确 92 条分析锁、前端语法与延迟加载检查通过；GitHub Validate #499（前一个提交）通过，本轮变更等待下一次远端复验。正式关联模型和实际配对样本量仍为0；候选配对只是目录共现。
 
 **波次与模块准备度：**已整理2011、2013、2015、2018、2020五波的访谈/体测、血液检测、关系与社区模块、权重及年龄域门槛，并扩展本地表头审计输出为逐波×角色×源模块摘要。该审计只读变量名，不读取个人答案或计算样本数；还记录了NIA Biomarker Network对2018/2020血样采集的说法与CHARLS官方发布文件目录之间的待核差异。详见[`audit/wave_module_readiness_matrix_2026-10-25.md`](audit/wave_module_readiness_matrix_2026-10-25.md)。
 

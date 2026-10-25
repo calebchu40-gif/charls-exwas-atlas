@@ -1,3 +1,11 @@
+# 2026-10-25 Fix social-transfer caveat expansion and remove a build dependency (v126 prepared)
+
+- Fixed mutable concept caveats accumulating once per source-field row in `build_social_exposure_crosswalk.py`. The longest affected field caveat fell from about 28 KB to 515 characters; six transfer concepts remain separate and exact source-field mappings are unchanged.
+- Rebuilt all 157 metadata-finalization steps (6.3 minutes). E/P/C remain 6,008/2,107/982; E/P concepts remain 1,554; E/P concept-source links remain 8,009; explicitly labelled rows are 3,763; the 92 analysis locks and metadata-only pair counts remain unchanged.
+- The regenerated social crosswalk shrank by 19.5 MB, the candidate-pair explorer by 19.4 MB, and the E shard by 39.1 MB versus the prior v125 checkout. No participant data or Codebook frequencies were used.
+- Replaced pandas `to_markdown()` in the pair-coverage report with a small built-in Markdown renderer, removing the undeclared `tabulate` build dependency that interrupted the first full rebuild.
+- Updated public-site cache keys to v126 / v4. All 476 Python tests, public-payload validation, exact 92-lock validation, JavaScript syntax, deferred-loader check, and whitespace checks pass locally. GitHub Validate #499 passed on the preceding clean-CI fix; v126 validation and Pages deployment are pending.
+
 # 2026-10-25 Complete COVID module field coverage and add omitted candidates (v124 prepared)
 
 - Audited all 100 fields in the official 2020 `COVID_Module` inventory against the E/P crosswalk. Added `audit/covid_module_field_coverage_2020_v1.csv` and a fail-closed builder/test: 77 unique fields map to reviewed E/P candidate metadata; the remaining 23 fields each have a reasoned non-E/P disposition.

@@ -1,6 +1,14 @@
 # CHARLS ExWAS Atlas active work status (2026-10-25)
 
+> **Current status correction (2026-10-25):** The live site is v125. Local v126 has completed all 157 metadata-finalization steps after correcting repeated caveat accumulation in the social/family transfer crosswalk. Current E/P/C catalogue rows are 6,008/2,107/982; 1,554 E/P concepts; 8,009 E/P concept-source links; 3,763 explicitly labelled rows; formal models remain 0. Python tests: 476 passed locally and in a clean tracked-files-only checkout; GitHub Validate #499 passed. Current v126 awaits its remote validation/deployment. The historical v113 snapshot below is retained for provenance; use the README and project-scope audit for current status.
+
+## Historical snapshot (v113; retained for provenance)
+
 > Status refresh, 2026-10-25: v113 is live and verified (commit `16d8674`, Validate #468, Pages Deploy #234; later documentation updates passed Validate #470). The homepage loads `app.js?v=113`, surfaces the 2014 Life History directory and its sample/no-weight limits, and includes the 2011 baseline PSU split-community caveat. Local SHA1 checks match the official 2014 Life History and 2015 Blood Release Note PDFs. A fail-closed metadata-only 2015 blood intake validator and protected intake folder are ready; the licensed file is still absent pending download from the user account. The latest local test suite has 451 passing tests; the current gate remains official source/version and survey-design readiness.
+
+
+
+
 
 ## Current state after the prepared-table header audit
 
