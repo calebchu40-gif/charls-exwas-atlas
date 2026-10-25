@@ -1,8 +1,8 @@
-﻿## 2026-10-25 Add four community pension-policy context concepts (v118 candidate)
+﻿## 2026-10-25 Add four community pension-policy context concepts (v118 deployed)
 
 - Added official 2011 community-level metadata for the over-65 subsidy (JG025–JG028), over-80 subsidy (JG029–JG032), New Rural Pension System (JG033–JG036), and Old Rural Pension System (JG037–JG040). Preserved V-only restrictions, recipient units, year/month units and the questionnaire's routes. The unusual JG033 No→JG036 route is called out as an applicability ambiguity; none of these fields establishes individual enrollment or receipt.
 - E/P/C catalog rows are 4,880/2,082/982; E/P concepts are 1,495 (1,217 exposure and 303 phenotype, including 25 dual-role concepts); E/P source mappings are 6,856. Baseline community candidates are 122 concepts and 305 fields. The 2011 candidate metadata pair count is 130,546, a co-availability count only. Formal models, analytic Ns and association estimates remain 0; the exact 92 DO NOT ANALYZE locks remain unchanged.
-- Rebuilt the complete metadata pipeline. All 466 tests passed; public-payload validation and the exact 92-lock check passed before publishing. GitHub Actions and public Pages verification are pending. Audit: `audit/community_pension_policy_context_review_2026-10-25.md`.
+- Rebuilt the complete metadata pipeline. All 466 tests passed; public-payload validation and the exact 92-lock check passed. GitHub Pages Deploy [#239 / `40178721943`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40178721943) succeeded. The public homepage loads `app.js?v=118`, and the live 2011 pair index and community catalogue report 130,546 metadata pairs, 122 concepts and all four pension-policy concepts. Audit: `audit/community_pension_policy_context_review_2026-10-25.md`.
 
 ## 2026-10-25 Add community social-protection policy context (v117 candidate)
 

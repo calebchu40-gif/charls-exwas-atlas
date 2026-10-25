@@ -18,3 +18,7 @@ These measures describe community programs and reported uptake. They do not iden
 - `sources_official/CHARLS_2011_Codebook_extracted.txt`, JG025–JG040 entries.
 
 Only public questionnaire wording, source-field labels, and response-category metadata were used. No participant records, Codebook frequencies, or fitted associations were used. Public site pair counts remain metadata co-availability counts, not analytic Ns or estimates.
+
+## Deployment verification
+
+Commit `62fec07` was published as GitHub Pages deployment #239 (`40178721943`, success). The public homepage returns HTTP 200 and loads `app.js?v=118`; public metadata endpoints report 122 community concepts, all four pension-policy concepts, and 130,546 2011 candidate metadata pairs. These remain metadata counts, not participants, analytic Ns, or association results.
