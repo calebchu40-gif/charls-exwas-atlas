@@ -1,3 +1,12 @@
+# 2026-10-26 Expand 2011 community history catalog and close Part K coverage
+
+- Reviewed all 75 Part H community-history source fields against the official Questionnaire, Codebook and metadata-only inventory. Added 58 mappings across eight new provisional community-history E concepts; added the conditional primary-school merger year to the existing concept. Excluded 15 elicitation/informant/open-text fields from cohort E/P concepts with explicit reasons.
+- Preserved the older-informant retrospective route, village-only restrictions, units, year/period slots, conditional policy routes, and community-level interpretation. JH026_1 is a reviewed continuous year field, not a response category. No Codebook frequencies or participant values were used.
+- Audited all seven Part K items: JK001–JK006 remain mapped as community-context candidates; JK007 is excluded from cohort E/P concepts because it describes the community-questionnaire informant and no participant-level identity link is established.
+- Full 230-step metadata build and 159-step finalization completed. Local E/P/C shards: 6,092/2,116/984; 1,571 E/P concepts; 8,102 E/P concept-source mappings; 3,754 labelled rows; zero generic pending E/P/C labels. 2011 metadata co-availability is 135,445 (not analytic N). Formal models remain 0; 92 analysis locks unchanged.
+- Final complete test run: 487 tests passed. Public payload validation, do-not-analyze triage validation, JavaScript syntax, and diff checks pass. Current public site does not yet contain this Part H addition.
+- Corrected project status estimate: the interactive candidate catalogue/site is approximately 85–90% complete (2–4 focused days remain); the complete result-producing association atlas is approximately 50–55% complete (3–6 focused weeks after analysis-design/access inputs are ready). The earlier multi-month figure conflated these separate scopes. Remaining work will be batched by whole source module to reduce repeated full builds.
+
 # 2026-10-26 Review old-age financial support source and repair metadata propagation
 
 - Reviewed official 2013, 2015, and 2018 FN097 questionnaires and codebooks. Added the five questionnaire response labels to each wave and recorded the construct as an expected/hypothetical old-age resource, not realized pension receipt or income. Preserved the distinct 2018 wording, pension screening route, and conditional child-roster follow-up; Codebook frequency summaries remain excluded.

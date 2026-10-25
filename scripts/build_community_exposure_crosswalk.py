@@ -23,7 +23,15 @@ CONCEPTS={
  "community_built_form_organization":("Community built-form organization","Community environment","2011 interviewer observation on a 1–7 ordinal scale anchored from very disorganized to very organized. This is a subjective community-level built-environment proxy, not a standardized urban-form assessment."),
  "community_observed_crowding":("Observed community crowding/sparsity","Community environment","2011 interviewer observation on a 1–7 ordinal scale anchored from very crowded to very sparse; higher values indicate less perceived crowding. This is not a measured population density."),
  "community_accessibility_observation":("Observed community accessibility for people with disabilities","Community environment","2011 interviewer observation on a 1–7 ordinal scale anchored from no handicapped access to very convenient. Higher values indicate better perceived access; this is not an audited accessibility standard."),
- "community_primary_school_change":("Primary-school merger or relocation history","Community social context","2011 community-level report of primary-school merger/relocation and prior school count; historical service-access context, not individual schooling."),
+ "community_primary_school_change":("Primary-school merger or relocation history","Community social context","2011 community-level report of primary-school merger/relocation, reported year and prior school count; historical service-access context, not an individual's schooling history."),
+ "community_land_institutional_transition_history":("Community land-institutional transition history","Community social and policy context","2011 retrospective report by 2–3 older community-history informants of village-level institutional dates and land-allocation/subcontracting policy transitions. Retain each event and year separately; V-only routing and recall limitations apply. Not an individual's land tenure or household landholding."),
+ "community_sent_down_youth_migration_history":("Sent-down youth migration to the community","Community migration history","2011 retrospective community-history informant report of counts, timing and origin of rusticated youth; multiple older informants were asked to recall village history. This is not the respondent's own migration or cohort-member exposure; preserve counts, years and origin as distinct components."),
+ "community_barefoot_doctor_capacity_history":("Historical barefoot-doctor availability","Community healthcare history","Community-history informants' retrospective estimate of the number of barefoot doctors in the village during the 1970s. This is a recalled community workforce count, not individual care use or current service availability."),
+ "community_military_service_history":("Community military-service counts by historical period","Community social history","Community-history informants report counts of residents who joined the army across questionnaire-defined years/periods. Counts have no population denominator and are not individual military service histories."),
+ "community_university_admission_history":("Community university-admission counts by historical period","Community social history","Community-history informants report counts of residents admitted to university across questionnaire-defined years/periods. Counts have no population denominator and are not individual educational attainment."),
+ "community_family_planning_policy_history":("Community family-planning policy history","Community policy context","Retrospective community-history report of policy start, Han/minority policy categories, policy changes and the 1970s 'late, sparse, few' policy. Preserve historical and current-policy items separately; this is not an individual's fertility, reproductive history, or policy exposure duration."),
+ "community_unplanned_birth_penalty_policy_history":("Community unplanned-birth penalty policy history","Community policy context","Retrospective report of whether/when a village-level penalty policy existed and reported initial/subsequent penalty amounts. Preserve conditional routes and year/amount slots; this is not an individual's fine or reproductive history."),
+ "community_identity_card_rollout_history":("Community identity-card rollout timing","Community modernization context","Community-history informants' recalled years when residents began receiving first- and second-generation national identity cards. This is a community-level administrative modernization marker, not an individual's verified identity-document history."),
  "community_disaster_history":("Recent serious natural-disaster occurrence","Community environment","2011 community-informant report of any serious natural disaster during the prior five years (JI001); No routes to JI003, so JI002 event details have a conditional denominator."),
  "community_sanitation_reconstructed":("Reconstructed community toilet/sewer indicator","Community environment","2011 village-only CAPI item asking whether the village restructured toilet/sewer systems; preserve village-only eligibility and do not infer original derivation from the Codebook variable label."),
  "community_land_use_profile":("Community land area and agricultural land-use profile","Community environment","2011 village-level land area, arable/construction land, land-development and land-lease context. Preserve the distinct reference years, units, V-only eligibility and conditional routes; do not calculate density or percentages without compatible denominators. JA012 is excluded from this concept because its official questionnaire and Codebook descriptions conflict (paddy field versus irrigatable land). These are not an individual's landholding or chemical exposure."),
@@ -72,7 +80,15 @@ MAP={
  "community_built_form_organization":["jk004"],
  "community_observed_crowding":["jk005"],
  "community_accessibility_observation":["jk006"],
- "community_primary_school_change":["jh015","jh017"],
+ "community_primary_school_change":["jh015","jh016","jh017"],
+ "community_land_institutional_transition_history":["jh003","jh004","jh005","jh006","jh007","jh008","jh008_1"],
+ "community_sent_down_youth_migration_history":["jh009","jh010","jh011","jh012","jh013","jh013_1","jh013_2"],
+ "community_barefoot_doctor_capacity_history":["jh014"],
+ "community_military_service_history":[*[f"jh018_1_{i}_" for i in range(1,12)]],
+ "community_university_admission_history":[*[f"jh018_2_{i}_" for i in range(1,12)]],
+ "community_family_planning_policy_history":["jh019","jh020","jh021","jh022","jh023","jh024","jh025","jh030"],
+ "community_unplanned_birth_penalty_policy_history":["jh026","jh026_1","jh027","jh028",*[f"jh029a_{i}_" for i in range(1,4)],*[f"jh029b_{i}_" for i in range(1,4)]],
+ "community_identity_card_rollout_history":["jh032","jh033"],
  "community_disaster_history":["ji001"],
  "community_sanitation_reconstructed":["jb015"],
  "community_land_use_profile":["ja003_1","ja003_2","ja011","ja013","ja014","ja029","ja032","ja033","ja034","ja050"],
@@ -182,6 +198,11 @@ QUESTIONNAIRE_REVIEWED = {
  "community_road_cleanliness","community_observed_socioeconomic_status",
  "community_built_form_organization","community_observed_crowding",
  "community_accessibility_observation","community_disaster_history","community_sanitation_reconstructed",
+ "community_primary_school_change","community_land_institutional_transition_history",
+ "community_sent_down_youth_migration_history","community_barefoot_doctor_capacity_history",
+ "community_military_service_history","community_university_admission_history",
+ "community_family_planning_policy_history","community_unplanned_birth_penalty_policy_history",
+ "community_identity_card_rollout_history",
  "community_land_use_profile","community_main_terrain","community_agricultural_mechanization",
  "community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices",
  "community_major_crop_production",
@@ -223,7 +244,7 @@ def validate_added_source_mappings():
  cb=" ".join(cpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
  other_subsidy_codes=set(MAP["community_other_subsidy_program_roster"])
  insurance_codes=set(MAP["community_urban_resident_medical_insurance_context"]+MAP["community_rural_cooperative_medical_insurance_context"])
- codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program","community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program","community_eldercare_center_context","community_home_eldercare_context","community_economic_activity_and_fiscal_context","community_housing_market_context","community_formal_credit_access","community_agricultural_machinery_supply_origin") for code in MAP[cid]}
+ codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program","community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program","community_eldercare_center_context","community_home_eldercare_context","community_economic_activity_and_fiscal_context","community_housing_market_context","community_formal_credit_access","community_agricultural_machinery_supply_origin","community_primary_school_change","community_land_institutional_transition_history","community_sent_down_youth_migration_history","community_barefoot_doctor_capacity_history","community_military_service_history","community_university_admission_history","community_family_planning_policy_history","community_unplanned_birth_penalty_policy_history","community_identity_card_rollout_history") for code in MAP[cid]}
  for code in codes:
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
   q_norm="".join(ch for ch in q if ch.isalnum())
@@ -360,6 +381,8 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part B pp.13–14 (PDF pp.16–17), JB030–JB038; community-only versus village-only routing, JB030 No-skip, listed services and units checked against official Codebook; frequencies omitted."
     elif cid in {"community_economic_activity_and_fiscal_context","community_housing_market_context","community_formal_credit_access"}:
      evidence="CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted."
+    elif cid in {"community_primary_school_change","community_land_institutional_transition_history","community_sent_down_youth_migration_history","community_barefoot_doctor_capacity_history","community_military_service_history","community_university_admission_history","community_family_planning_policy_history","community_unplanned_birth_penalty_policy_history","community_identity_card_rollout_history"}:
+     evidence="CHARLS 2011 Community Questionnaire, Part H pp.28–34 (PDF pp.31–37); retrospective community-history informant route, item-specific V-only scope, year bands, count units and skip logic reviewed against official Codebook field labels; frequencies and descriptive summaries omitted."
     elif cid == "community_agricultural_machinery_supply_origin":
      evidence="CHARLS 2011 Community Questionnaire, Part J p.35 (PDF p.38), JJ003–JJ005; village-only rented-machinery route, local/provincial origin categories, and conditional county/province text fields checked against official Codebook; frequencies omitted."
     elif code_l.startswith("jf"):
@@ -617,11 +640,21 @@ def main():
      caveat="Informant-reported historical maximum harvest seasons per year for this crop; not directly comparable to the current typical seasons field."
     elif code_l in {"jb023","jb024","jb025","jb026"}:
      unit="percent of village households"
-     caveat="Community-informant estimate of the share of village households with this amenity (0–100%). Aggregate context, not confirmed ownership or use by the sampled household or individual."
+     caveat="2011 village-informant estimate of the share of households with fixed telephones, one or more cell phones, televisions, and refrigerators. These are aggregate community percentages, not confirmed ownership or use by the sampled household or individual; preserve each amenity separately."
+    elif code_l in {"jh003","jh004","jh005","jh007","jh008","jh008_1","jh010","jh012","jh016","jh019","jh023","jh026_1","jh032","jh033"} or code_l.startswith("jh029a_"):
+     unit="year"
+    elif code_l in {"jh009","jh011","jh014"} or code_l.startswith("jh018_"):
+     unit="people"
+    elif code_l == "jh027" or code_l.startswith("jh029b_"):
+     unit="Yuan"
     elif code_l.startswith("ji003_"):
      suffix=code_l[-1]
      unit={"b":"year","c":"month","d":"year","e":"month","f":"people","g":"percent of community population","h":"percent of grain output decline"}.get(suffix,"")
      caveat="Retrospective record for one of the three most severe natural disasters/epidemics reported since 1945; retain event rank, date components and impact fields separately. Community-level long-recall measure, not an individual's verified direct exposure."
+    if code_l.startswith(("jh018_1_","jh018_2_")):
+     period_index=int(code_l.split("_")[2])
+     period_labels={1:"2010",2:"2009",3:"2008",4:"2007",5:"2006",6:"2000–2005",7:"1996–2000",8:"1990–1995",9:"1986–1990",10:"1981–1985",11:"1977–1980"}
+     caveat += f" Source slot {period_index} corresponds to questionnaire period {period_labels.get(period_index, 'unresolved')}; do not pool periods or divide by an unverified population denominator."
     if code_l.startswith(("jb006_", "jb007_")):
      unit="households"
     elif code_l == "jg023":

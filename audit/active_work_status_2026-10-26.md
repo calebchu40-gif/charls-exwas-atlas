@@ -1,6 +1,23 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
-## Latest verified source-review state (2026-10-26)
+## Latest local state (2026-10-26, pending push)
+
+The Part H/J/K source review batch is complete locally. The 230-step full build and 159-step finalization both completed. Final shards are E/P/C=6,092/2,116/984; 1,571 E/P concepts; 8,102 E/P concept-source mappings; 3,754 labelled E/P rows; generic pending E/P/C labels=0. The candidate-pair index has 135,445 / 141,920 / 143,137 / 105,493 / 21,630 metadata co-availability pairs for 2011/2013/2015/2018/2020; these are not analytic N. Formal models and pairwise-complete N remain 0; exact 92 analysis locks unchanged.
+
+Part H has 75 inventory fields: 60 mapped across eight new community-history concepts plus the pre-existing primary-school concept (including the newly added JH016 year), and 15 explicitly excluded as interview logistics, informant attributes, or open-text history. Part K JK001–JK006 are mapped; JK007 is excluded from cohort E/P because it measures the community-questionnaire informant's Mandarin fluency without a verified CHARLS participant link. See [`community_part_h_source_coverage_review_2026-10-26.md`](community_part_h_source_coverage_review_2026-10-26.md) and [`community_part_k_source_coverage_review_2026-10-26.md`](community_part_k_source_coverage_review_2026-10-26.md).
+
+Verification after the latest builder correction: all 487 tests pass. Public payload validation, do-not-analyze triage validation, JavaScript syntax, and `git diff --check` pass. No new analysis results or respondent data are included. This metadata/site update is not yet committed or deployed.
+
+## Whole-project progress and revised remaining time (2026-10-26)
+
+The earlier multi-month estimate incorrectly treated source-catalogue completion and the downstream result-producing ExWAS as one undifferentiated task. Progress should be reported in two scopes:
+
+- **Interactive candidate catalogue/site:** approximately 85–90% complete. The live site, query/navigation, source-linked E/P/C catalogue, candidate-pair index, licensing limits, and automated validation already exist. This local Part H/K source batch passes 487 tests but still needs commit, deployment, and live verification. Remaining work is a bounded final coverage sweep, presentation/wording review, and handoff update; estimate 2–4 focused days, assuming no newly discovered major source family or CI/deployment failure.
+- **Full NHANES-style association atlas (the whole scientific computing deliverable, without manuscript writing):** approximately 50–55% complete. Metadata discovery, harmonization and the website shell account for substantial completed work; participant-level association models and result integration remain at zero. Remaining work is to close the source inventory, freeze estimands/covariate and survey-design rules, resolve wave-specific weight/PSU/strata and blood-sample eligibility, execute/review the prespecified models and multiplicity control, then integrate approved summary results and verify the public site. Estimate 3–6 focused weeks after all required access and design inputs are available; official response or access delays are additional and cannot be estimated from repository work.
+
+These are milestone-based subjective estimates, not percentages of variable counts. The short remaining time for the catalogue is not the same thing as time to produce a true association atlas. The immediate schedule improvement is to batch source audits by whole questionnaire module, run one full build after each coherent batch, and use targeted checks for documentation/UI-only changes; this avoids serial one-field turns and repeated full builds.
+
+## Previous verified source-review state (2026-10-26)
 
 Commit `62c1fa7` is pushed to `main`; GitHub Pages Deploy #252 succeeded and published the FN097 and metadata-propagation update. Validate #509 was still in progress at the last status check. This entry is now historical relative to the Part K audit in commit pending after it.
 
