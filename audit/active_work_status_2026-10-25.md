@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas active work status (2026-10-25)
 
-> **Current status correction (2026-10-25):** The live site is v125. Local v126 has completed all 157 metadata-finalization steps after correcting repeated caveat accumulation in the social/family transfer crosswalk. Current E/P/C catalogue rows are 6,008/2,107/982; 1,554 E/P concepts; 8,009 E/P concept-source links; 3,763 explicitly labelled rows; formal models remain 0. Python tests: 476 passed locally and in a clean tracked-files-only checkout; GitHub Validate #499 passed. Current v126 awaits its remote validation/deployment. The historical v113 snapshot below is retained for provenance; use the README and project-scope audit for current status.
+> **Current status correction (2026-10-25):** The live site is v126 (commit `fb72630`; GitHub Validate #500 and Pages Deploy #247 passed). All 157 metadata-finalization steps completed after fixing caveat accumulation in the social/family transfer crosswalk. Current E/P/C catalogue rows are 6,008/2,107/982; 1,554 E/P concepts; 8,009 E/P concept-source links; 3,763 explicitly labelled rows; formal models remain 0. Python tests: 476 passed locally and in a clean tracked-files-only checkout. Live homepage and v4 source/pair assets were verified. The historical v113 snapshot below is retained for provenance; use the README and project-scope audit for current status.
 
 ## Historical snapshot (v113; retained for provenance)
 

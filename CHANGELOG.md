@@ -4,7 +4,7 @@
 - Rebuilt all 157 metadata-finalization steps (6.3 minutes). E/P/C remain 6,008/2,107/982; E/P concepts remain 1,554; E/P concept-source links remain 8,009; explicitly labelled rows are 3,763; the 92 analysis locks and metadata-only pair counts remain unchanged.
 - The regenerated social crosswalk shrank by 19.5 MB, the candidate-pair explorer by 19.4 MB, and the E shard by 39.1 MB versus the prior v125 checkout. No participant data or Codebook frequencies were used.
 - Replaced pandas `to_markdown()` in the pair-coverage report with a small built-in Markdown renderer, removing the undeclared `tabulate` build dependency that interrupted the first full rebuild.
-- Updated public-site cache keys to v126 / v4. All 476 Python tests, public-payload validation, exact 92-lock validation, JavaScript syntax, deferred-loader check, and whitespace checks pass locally. GitHub Validate #499 passed on the preceding clean-CI fix; v126 validation and Pages deployment are pending.
+- Updated public-site cache keys to v126 / v4. All 476 Python tests, public-payload validation, exact 92-lock validation, JavaScript syntax, deferred-loader check, and whitespace checks pass locally. GitHub Validate #500 and Pages Deploy #247 both succeeded. The live homepage/app and cache-busted social/pair JSON assets were verified; the Pages artifact is 2.07 MB.
 
 # 2026-10-25 Complete COVID module field coverage and add omitted candidates (v124 prepared)
 
