@@ -8,7 +8,7 @@
 
 ## 当前公开交付
 
-截至 2026-10-25，公开版本 v123 已部署到 GitHub Pages：<https://calebchu40-gif.github.io/charls-exwas-atlas/>。本地 v124 构建正在复核，尚未发布。本次全量终审重算了完整本地资产。
+截至 2026-10-25，公开版本 v124 已部署到 GitHub Pages：<https://calebchu40-gif.github.io/charls-exwas-atlas/>（Deploy #245 成功）。GitHub Validate #495 的单测步骤失败；本机 Python 3.12 重跑 471 项通过，后续提交将触发远端复验。本次全量终审重算了完整资产。
 
 - 本地 E/P/C 目录行：4,977 / 2,107 / 982。
 - 本地 E/P 候选概念：1,548（E 1,245、P 328，含 25 个双角色概念）；概念—来源映射 6,978 条。
