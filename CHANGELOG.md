@@ -1,3 +1,9 @@
+## 2026-10-25 Add community reforestation policy context (v115 candidate)
+
+- Added 2011 village-level JG021–JG024 as a community environmental-policy context candidate: program presence, start year, 2010 recipient-household count, and subsidy standard. The catalogue distinguishes this policy context from forest cover, ecological outcomes, household receipt, or individual pollutant dose.
+- Fixed the community value-label parser's omitted `jg` prefix, allowing the official JG021 Yes/No categories to be extracted while discarding Codebook frequencies. Rebuilt the E/P crosswalk and site assets: E/P/C rows=4,849/2,082/982; 1,487 E/P concept IDs; 6,825 E/P concept-source rows. Actual models and pairwise analytic Ns remain 0.
+- Full validation: 460 unit tests pass, public payload validation passes, `node --check` and `git diff --check` pass. Deployment remains pending after push. Audit: `audit/community_reforestation_subsidy_policy_review_2026-10-25.md`.
+
 ## 2026-10-25 Add a single entry point for available CHARLS intake gates
 
 - Added `scripts/run_available_charls_intake_gates.py` to check the protected intake locations for the 2013 official weights and 2015 standalone Blood Data, then run only the existing checksum/header gates when each full input set exists. It never downloads, unpacks, reads respondent values, merges records, or writes QA into the repository.

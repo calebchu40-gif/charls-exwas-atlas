@@ -39,7 +39,7 @@ new=[
     ' '*(indent+2)+'<div class="stat"><b>5</b><span>调查波次：2011–2020</span></div>',
     ' '*(indent+2)+'<div class="stat"><b>0</b><span>正式关联模型</span></div>',
     ' '*indent+'</div>',
-    ' '*indent+f'<p class="stats-note">去重后共有 {len(concept_ids):,} 个 E/P 候选概念，其中 {len(e_ids & p_ids)} 个同时承担暴露与表型角色；{rows:,} 条概念—源字段映射是目录对应关系，不是样本量或关联结果。E 是广义解释变量候选，涵盖社区/住房、饮食与行为、社会经济/工作/保障，也包含内部血液生物标志物；1,208 不代表环境化学物数量。</p>',
+    ' '*indent+f'<p class="stats-note">五轮常规主调查去重后共有 {len(concept_ids):,} 个 E/P 候选概念，其中 {len(e_ids & p_ids)} 个同时承担暴露与表型角色；{rows:,} 条概念—源字段映射是目录对应关系，不是样本量或关联结果。2014生命历程特殊调查单独展示，不计入上述五波统计。E 是广义解释变量候选，涵盖社区/住房、饮食与行为、社会经济/工作/保障，也包含内部血液生物标志物；{len(e_ids):,} 不代表环境化学物数量。</p>',
 ]
 lines=lines[:start]+new+lines[end+1:]
 html.write_text('\n'.join(lines)+'\n',encoding='utf-8')

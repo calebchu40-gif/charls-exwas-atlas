@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 604,
+      "exposure_count": 605,
       "phenotype_count": 213,
-      "candidate_pair_count": 128629,
+      "candidate_pair_count": 128842,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -3300,6 +3300,56 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_reforestation_subsidy_program",
+          "label": "Community reforestation subsidy program context",
+          "domain": "Community environmental-policy context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jg021",
+              "label": "Does Your V/C Have Subsidies for Reforestation",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only Yes/No report of a reforestation-subsidy program. A No response routes past JG022–JG024; it does not identify ecological conditions or prove that the sampled household received support."
+            },
+            {
+              "code": "jg022",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Year the village began the reforestation-subsidy program, asked only after JG021=Yes. Preserve the route and validate special values in the authorized release."
+            },
+            {
+              "code": "jg023",
+              "label": "Num. of Households Received Subsidies for Reforestation",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Number of village households reported to have received reforestation subsidies in 2010, conditional on the village program route. This is not the sampled household's receipt status or a population-standardized rate."
+            },
+            {
+              "code": "jg024",
+              "label": "Average Subsidy Standard",
+              "module": "community",
+              "unit": "Yuan/mu",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported average reforestation-subsidy standard, conditional on JG021=Yes. The questionnaire states Yuan per mu; do not treat it as an individual's payment or evidence of achieved forest restoration."
             }
           ]
         },
@@ -106764,6 +106814,56 @@
       ]
     },
     {
+      "concept_id": "community_reforestation_subsidy_program",
+      "label": "Community reforestation subsidy program context",
+      "domain": "Community environmental-policy context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jg021",
+          "label": "Does Your V/C Have Subsidies for Reforestation",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only Yes/No report of a reforestation-subsidy program. A No response routes past JG022–JG024; it does not identify ecological conditions or prove that the sampled household received support."
+        },
+        {
+          "code": "jg022",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Year the village began the reforestation-subsidy program, asked only after JG021=Yes. Preserve the route and validate special values in the authorized release."
+        },
+        {
+          "code": "jg023",
+          "label": "Num. of Households Received Subsidies for Reforestation",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Number of village households reported to have received reforestation subsidies in 2010, conditional on the village program route. This is not the sampled household's receipt status or a population-standardized rate."
+        },
+        {
+          "code": "jg024",
+          "label": "Average Subsidy Standard",
+          "module": "community",
+          "unit": "Yuan/mu",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported average reforestation-subsidy standard, conditional on JG021=Yes. The questionnaire states Yuan per mu; do not treat it as an individual's payment or evidence of achieved forest restoration."
+        }
+      ]
+    },
+    {
       "concept_id": "community_transport_road",
       "label": "Community road and transport access",
       "domain": "Community context",
@@ -107948,9 +108048,9 @@
     "2013": {
       "baseline_wave": "2011",
       "followup_wave": "2013",
-      "exposure_count": 113,
+      "exposure_count": 114,
       "phenotype_count": 224,
-      "candidate_pair_count": 25312,
+      "candidate_pair_count": 25536,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -108186,9 +108286,9 @@
     "2015": {
       "baseline_wave": "2011",
       "followup_wave": "2015",
-      "exposure_count": 113,
+      "exposure_count": 114,
       "phenotype_count": 239,
-      "candidate_pair_count": 27007,
+      "candidate_pair_count": 27246,
       "phenotype_concept_ids": [
         "offspring_health_status_2015",
         "offspring_self_care_ability_2015",
@@ -108439,9 +108539,9 @@
     "2018": {
       "baseline_wave": "2011",
       "followup_wave": "2018",
-      "exposure_count": 113,
+      "exposure_count": 114,
       "phenotype_count": 211,
-      "candidate_pair_count": 23843,
+      "candidate_pair_count": 24054,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -108664,9 +108764,9 @@
     "2020": {
       "baseline_wave": "2011",
       "followup_wave": "2020",
-      "exposure_count": 113,
+      "exposure_count": 114,
       "phenotype_count": 76,
-      "candidate_pair_count": 8588,
+      "candidate_pair_count": 8664,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",

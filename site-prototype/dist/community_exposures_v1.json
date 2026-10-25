@@ -1974,6 +1974,66 @@
     ]
   },
   {
+    "concept_id": "community_reforestation_subsidy_program",
+    "label": "Community reforestation subsidy program context",
+    "domain": "Community environmental-policy context",
+    "caveat": "2011 village-only report of whether reforestation subsidies were implemented, their start year, the number of village households receiving them in 2010, and the average subsidy standard. These describe a local policy/program and uptake, not forest cover, greenness, ecological restoration success, household receipt linkage, or a personal environmental exposure.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jg021",
+        "module": "community",
+        "source_label": "Does Your V/C Have Subsidies for Reforestation",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, village-only JG021–JG024; program route, 2010 household uptake count and stated subsidy unit checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Village-only Yes/No report of a reforestation-subsidy program. A No response routes past JG022–JG024; it does not identify ecological conditions or prove that the sampled household received support.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg022",
+        "module": "community",
+        "source_label": "Year",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, village-only JG021–JG024; program route, 2010 household uptake count and stated subsidy unit checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "year",
+        "caveat": "Year the village began the reforestation-subsidy program, asked only after JG021=Yes. Preserve the route and validate special values in the authorized release.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg023",
+        "module": "community",
+        "source_label": "Num. of Households Received Subsidies for Reforestation",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, village-only JG021–JG024; program route, 2010 household uptake count and stated subsidy unit checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "households",
+        "caveat": "Number of village households reported to have received reforestation subsidies in 2010, conditional on the village program route. This is not the sampled household's receipt status or a population-standardized rate.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg024",
+        "module": "community",
+        "source_label": "Average Subsidy Standard",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, village-only JG021–JG024; program route, 2010 household uptake count and stated subsidy unit checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/mu",
+        "caveat": "Community-reported average reforestation-subsidy standard, conditional on JG021=Yes. The questionnaire states Yuan per mu; do not treat it as an individual's payment or evidence of achieved forest restoration.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
     "concept_id": "community_kindergarten_count",
     "label": "Kindergartens in community (count)",
     "domain": "Community infrastructure",

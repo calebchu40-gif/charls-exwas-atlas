@@ -133,6 +133,10 @@
 2011,ji003_3f,community_historical_disaster_epidemic_severity,Num. of People Injured or Dead,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,ji003_3g,community_historical_disaster_epidemic_severity,Percentage of People Injured or Dead,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,ji003_3h,community_historical_disaster_epidemic_severity,Percentage of Drop in Grain Production,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg021,community_reforestation_subsidy_program,Does Your V/C Have Subsidies for Reforestation,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg022,community_reforestation_subsidy_program,Year,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg023,community_reforestation_subsidy_program,Num. of Households Received Subsidies for Reforestation,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg024,community_reforestation_subsidy_program,Average Subsidy Standard,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jb028_1_1_,community_kindergarten_count,Num. of this Facility,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jb028_2_1_,community_kindergarten_distance,Distance,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jb028_1_2_,community_primary_school_count,Num. of this Facility,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
