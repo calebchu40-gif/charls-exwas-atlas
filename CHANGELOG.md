@@ -1,3 +1,10 @@
+## 2026-10-25 Link household-electricity C/E metadata to official source review
+
+- Linked the exact 2011/2013/2018 `I016` C catalogue rows to the existing wave-specific `electricity_access` candidate and official questionnaire/Codebook metadata.
+- Preserved its household/residence-level meaning; personal dose, respondent-household linkage, eligible denominator, release special values, and cross-wave comparability remain unresolved. It is not a default covariate and cannot adjust for itself. 2015 and 2020 fields were not included because they are outside this exact E/C overlap set.
+- Added a deterministic updater to both build paths, row-level audit, focused regression coverage, and a Chinese C-subcategory label. Final directory remains E/P/C=4,845/2,082/982.
+- Validation: clean finalization, all 431 Python tests, public payload validation, exact 92-lock reconciliation, JavaScript syntax, and Python compilation pass. No participant data or codebook frequencies were read; formal association models and pairwise Ns remain 0.
+
 ## 2026-10-25 Link formal-schooling C/E overlaps to reviewed source fields
 
 - Linked nine exact-wave C rows for age at starting/stopping school, a wave-specific schooling-years update, and educated-youth follow-up items to their already reviewed formal-schooling E candidates and official questionnaire/Codebook sources.

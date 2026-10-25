@@ -1,3 +1,7 @@
+## Follow-up deployment — partner-context C/E source links (2026-10-25)
+
+Commit `ef09207` passed Pages deploy [#218 / `40160837604`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40160837604) and validation [#437 / `40160837599`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40160837599); both validation jobs succeeded. Cache-busted public requests confirmed HTTP 200 for the v97 homepage, app bundle and E/P/C catalogues plus candidate-pair JSON. App/index matched after line-ending normalization; E/P and pair-index matched byte-for-byte; the C catalogue had 982 rows with all six reviewed partner-context overlaps and no extra/missing wave-field keys. No participant records, outcome distributions, or fitted models are served.
+
 # Public-site deployment verification — 2026-10-24
 
 ## Follow-up deployment — formal-schooling C/E source links (2026-10-25)
