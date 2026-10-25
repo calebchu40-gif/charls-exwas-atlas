@@ -1,5 +1,7 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-25）
 
+**2026-10-25交叉表状态一致性复核：**将224条住房所有者关系、83条慢病辅助表型和23条养老金记录的“已有官方答案类别核对”状态同步到公开查询目录；对应发布版本、路由/分母、特殊编码和分析资格仍按字段保留待核条件。112条慢病字段及462条养老金字段缺少逐项答案标签证据，继续标作待核；禁分析标记未解除。仅另有1条住房记录的状态保留“标签已记录、跨波可比性仍待核”。完整构建与405项测试通过，线上三个静态目录文件已验证更新。复核记录：[`audit/housing_owner_relation_status_sync_2026-10-25.md`](audit/housing_owner_relation_status_sync_2026-10-25.md)、[`audit/chronic_ancillary_label_status_sync_2026-10-25.md`](audit/chronic_ancillary_label_status_sync_2026-10-25.md)、[`audit/pension_label_status_sync_2026-10-25.md`](audit/pension_label_status_sync_2026-10-25.md)。
+
 **2026-10-25住房目录更新：**住房/家庭环境交叉表中通用“待审核/审核中”条目已从35条逐项清零；重点审核了住宅用水、厕所冲水、住宅面积、住宅结构/楼层、入口台阶、电力和洗浴设施，并保留各波不同标签、家庭层级对象和问卷跳转。2011建成年份区间在问卷中列于I005不清楚年份分支、Codebook另编码为I005_1，已按两种来源记录对应关系。完整记录见[`audit/housing_review_status_sync_2026-10-24.md`](audit/housing_review_status_sync_2026-10-24.md)及三份2026-10-25专项审核。此次只更新公开元数据；住房字段的授权发行版特殊值、分析分母、家庭—个人链接及跨波可比性仍需后续核验，正式关联模型和实际配对N仍为0。
 
 **最新质控进展：**已在受控本机派生表上完成 2013/2015 房产出售款用途字段的字段级汇总检查。金额储存与出售路由一致，但选项与百分比并非总是同时出现；这批 54 个候选字段继续锁定，不进入模型。原始数据和 QA 输出没有上传；方法与限制见[audit/household_sale_proceeds_storage_review_2026-10-24.md](audit/household_sale_proceeds_storage_review_2026-10-24.md)。
