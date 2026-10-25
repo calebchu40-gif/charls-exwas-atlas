@@ -27,3 +27,8 @@ The 2011–2018 `BB004` residential-history rows were rechecked against the wave
 ## 2026-10-25 follow-up: alcohol routing metadata statuses
 
 Propagated the existing questionnaire/Codebook review of past-year drinking thresholds (`DA067`/2020 `DA051`), beverage-type selectors (`DA068`), retrospective drinking-history categories (`DA069`), and 2018 prior-wave carry-forward (`ZDA069`) to their exact-wave C directory rows. The statuses retain conditional routes and explicitly avoid treating skips as No/zero or these context fields as default covariates. The updated C directory still has 197 generic automated-discovery Candidate.Status rows (95 field codes) and 219 keyword-discovery subcategory rows (104 field codes), among 982 C rows. The two counts describe separate metadata fields; they are not analysis-ready covariate counts. No participant-level values were inspected.
+
+
+## 2026-10-25 follow-up: chronic-disease diagnosis-age duplicate roles
+
+The 56 exact-wave C rows duplicating four-wave self-reported age-at-first-diagnosis/knowledge phenotype candidates have now been linked to the existing chronic-disease crosswalk and official Codebook source paths. The site describes them as outcome-timing metadata, separates reported diagnosis/knowledge age from biological onset, and warns against adjusting for the same outcome's age field. This is not an adjustment set. The 982-row C directory now has 141 generic automated-discovery Candidate.Status rows (81 codes) and 163 keyword-discovery subcategory rows (90 codes). No participant-level values or Codebook frequencies were used.

@@ -1,3 +1,8 @@
+## 2026-10-25 Clarify chronic-disease diagnosis-age metadata roles
+
+- Linked 56 exact-wave C rows for reported diagnosis/knowledge age to the existing chronic-disease phenotype crosswalk and official Codebook source metadata.
+- Clarified that recalled diagnosis/knowledge age differs from biological onset and must not adjust for the same outcome; added public-directory regression coverage and a Chinese filter label. No participant records or Codebook frequencies were used.
+
 ## 2026-10-25 Sync alcohol route reviews to the C metadata directory
 
 - Propagated the existing official questionnaire/Codebook review for past-year drinking thresholds, beverage-type selectors, retrospective alcohol history, and 2018 prior-wave carry-forward to the exact-wave C catalogue rows. Structural skips remain distinct from No/zero, and the metadata is not a covariate recommendation.

@@ -93,7 +93,7 @@ function renderAssociations() {
 }
 
 function addOptions(select, values) {
-  for (const value of values) {const option=document.createElement('option');option.value=value;option.textContent=select.id==='cCategory'?({'automated covariate search hit':'自动关键词命中（协变量未选定）','covariate candidate':'协变量备选字段（未选入模型）','measurement metadata':'测量/调查设计元数据','source-detail metadata':'来源字段细节'}[value]||value):value;select.append(option)}
+  for (const value of values) {const option=document.createElement('option');option.value=value;option.textContent=select.id==='cCategory'?({'automated covariate search hit':'自动关键词命中（协变量未选定）','covariate candidate':'协变量备选字段（未选入模型）','measurement metadata':'测量/调查设计元数据','source-detail metadata':'来源字段细节','source-reviewed chronic-disease timing metadata':'已审阅的慢性病时间元数据'}[value]||value):value;select.append(option)}
 }
 const C_SUBCATEGORY_LABELS={
   "child education questionnaire/Codebook source conflict":"子女教育问卷与代码本来源冲突",
@@ -192,6 +192,7 @@ const C_SUBCATEGORY_LABELS={
   "retrospective alcohol history and route":"既往饮酒史与问卷路径",
   "prior-wave alcohol history carry-forward metadata":"前一波饮酒史沿用元数据",
   "alcohol beverage-type selector":"饮酒类型选择元数据",
+  "reported diagnosis/knowledge age metadata":"自报诊断/知悉年龄元数据",
   "province-level pension-source work-unit location metadata":"省级养老金来源单位地点元数据",
   "questionnaire inserted activity-type labels":"问卷新增活动类型标签",
   "resident-pension supplementary repayment currency selector":"城乡居民养老金补缴金额币种选择器",
