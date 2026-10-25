@@ -14,7 +14,7 @@ def read_csv(path):
 class CommunityPartEMigrationReviewTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.raw = read_csv(Path("audit/raw_variable_catalog_v1.csv"))
+        cls.raw = read_csv(Path("audit/community_field_inventory_2011_v1.csv"))
         cls.crosswalk = read_csv(Path("audit/community_exposure_crosswalk_v1.csv"))
         cls.labels = read_csv(Path("audit/community_exposure_value_labels_v1.csv"))
         cls.overrides = read_csv(Path("audit/catalog_role_override_review_v1.csv"))

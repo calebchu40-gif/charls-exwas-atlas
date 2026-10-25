@@ -8,7 +8,7 @@ ROOT=Path(__file__).resolve().parents[1]
 class CommunityLeadershipSourceReviewTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        with (ROOT/"audit/raw_variable_catalog_v1.csv").open(encoding="utf-8-sig",newline="") as f:
+        with (ROOT/"audit/community_field_inventory_2011_v1.csv").open(encoding="utf-8-sig",newline="") as f:
             cls.raw=list(csv.DictReader(f))
         with (ROOT/"audit/community_exposure_crosswalk_v1.csv").open(encoding="utf-8-sig",newline="") as f:
             cls.crosswalk=list(csv.DictReader(f))

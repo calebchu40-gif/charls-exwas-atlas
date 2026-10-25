@@ -1,0 +1,720 @@
+﻿wave,module,variable,variable_label
+2011,community,communityID,Community ID
+2011,community,sub_commuID,Sub Community ID
+2011,community,ja001,Community or Village
+2011,community,ja002,Year
+2011,community,ja003,Square of Kilometers or Mu
+2011,community,ja003_1,Square of Kilometers
+2011,community,ja003_2,Mu
+2011,community,ja004,Has the Boundary of this V/C Even Changed
+2011,community,ja005,Year
+2011,community,ja006,Square of Kilometers or Mu
+2011,community,ja006_1,Square of Kilometers
+2011,community,ja006_2,Mu
+2011,community,ja007,Was Changed to Community from Village
+2011,community,ja008,Year
+2011,community,ja009,Has Your Village Been Designated into the City Planning Area
+2011,community,ja010,Year
+2011,community,ja011,Mu of Arable Land
+2011,community,ja012,"Among Arable Land, How Many is Irrigatable"
+2011,community,ja013,How Many Arable Land at the End of 2007
+2011,community,ja014,How Many Construction Land at the End of 2010
+2011,community,ja015,Carried Out Property Rights Delineation and Land Titling in the Recent 5 Years
+2011,community,ja016,Year
+2011,community,ja017,Receiving Contract
+2011,community,ja018,Year
+2011,community,ja019,Receiving Contract
+2011,community,ja020,Year
+2011,community,ja021,Certificate for Housing Ownership
+2011,community,ja022,Year
+2011,community,ja023,Forest Rights Certificate
+2011,community,ja024,Year
+2011,community,ja025,Certificate for Collective Assets
+2011,community,ja026,Year
+2011,community,ja027,Land Reallocation Since 2005
+2011,community,ja028,Year
+2011,community,ja029,Num. of New Arable Land
+2011,community,ja030,Construction Land Reallocation since 2005
+2011,community,ja031,Year
+2011,community,ja032,Decreased Construction Land
+2011,community,ja033,Percentage of Rental Land
+2011,community,ja034,Rental Price/Mu
+2011,community,ja035,Land Procurement
+2011,community,ja036,Year
+2011,community,ja037,Compensation Amount/Mu
+2011,community,ja038,Type of Main Landscape of Your V/C
+2011,community,ja039_1,Minimum Temperature
+2011,community,ja039_2,Maximum Temperature
+2011,community,ja040,How Many Rainy Days in the Past Year
+2011,community,ja041,How Many Snowy Days
+2011,community,ja042_1_1_,Education Level
+2011,community,ja042_1_2_,Education Level
+2011,community,ja042_1_3_,Education Level
+2011,community,ja042_1_4_,Education Level
+2011,community,ja042_2_1_,Age
+2011,community,ja042_2_2_,Age
+2011,community,ja042_2_3_,Age
+2011,community,ja042_2_4_,Age
+2011,community,ja042_2_5_,Age
+2011,community,ja042_3_1_,How Long did He/She Hold this Position
+2011,community,ja042_3_2_,How Long did He/She Hold this Position
+2011,community,ja042_3_3_,How Long did He/She Hold this Position
+2011,community,ja042_3_4_,How Long did He/She Hold this Position
+2011,community,ja042_3_5_,How Long did He/She Hold this Position
+2011,community,ja043,Does Your Village has Large Surnames
+2011,community,ja044,How Many Large Surnames
+2011,community,ja045_1,The 1st Largest Surname
+2011,community,ja045_2,The 2nd Largest Surname
+2011,community,ja045_3,The 3rd Largest Surname
+2011,community,ja046_1,Num. of Households with 1st Largest Surname
+2011,community,ja046_2,Num. of Households with 2nd Largest Surname
+2011,community,ja046_3,Num. of Households with 3rd Largest Surname
+2011,community,ja048,Respondent Identity for Part A
+2011,community,ja050,Average Area of House Site Per Person
+2011,community,ja051s1,The Condition that the Household May Get New House Site
+2011,community,ja051s2,The Condition that the Household May Get New House Site
+2011,community,ja051s3,The Condition that the Household May Get New House Site
+2011,community,ja051s4,The Condition that the Household May Get New House Site
+2011,community,ja051s5,The Condition that the Household May Get New House Site
+2011,community,ja051s6,The Condition that the Household May Get New House Site
+2011,community,ja052,Source of House Site
+2011,community,ja052_1,Other Source
+2011,community,ja053,Have the Rules of House Site Allocation Been Changed Since 2000
+2011,community,ja054,Year
+2011,community,jb001,Main Type of Roads
+2011,community,jb002,How Many Days Were the Roads Not Passable Last Year
+2011,community,jb003,How Many Bus Lines Run through this V/C
+2011,community,jb004,How Far from the V/C Office to the Most Commonly Used Bus Stop
+2011,community,jb005,How Far from the V/C Office to the Most Commonly Used Train Station
+2011,community,jb006_1,Tap Water
+2011,community,jb006_2,Well Water
+2011,community,jb006_3,Pool Water
+2011,community,jb006_4,"River, Lakes and Brooks Water"
+2011,community,jb006_5,Rain or Snow Water
+2011,community,jb006_6,Cellar Water
+2011,community,jb006_7,Spring
+2011,community,jb006_8,Other
+2011,community,jb007_1,Hay
+2011,community,jb007_2,Coal
+2011,community,jb007_3,Marsh Gas
+2011,community,jb007_4,Natural Gas
+2011,community,jb007_5,Liquefied Petroleum Gas
+2011,community,jb007_6,Other
+2011,community,jb008,Does Your V/C Have Heating System for Winter
+2011,community,jb009_1,other
+2011,community,jb009s1,Which Kind of Heating System
+2011,community,jb009s2,Which Kind of Heating System
+2011,community,jb009s3,Which Kind of Heating System
+2011,community,jb009s4,Which Kind of Heating System
+2011,community,jb010,Any Sewer System in this V/C
+2011,community,jb011,Year
+2011,community,jb012,How is the Waste Being Managed
+2011,community,jb013,Main Type of Toilet
+2011,community,jb013_1,Others
+2011,community,jb014,Have Public Restroom
+2011,community,jb015,Reconstructed the Toilet and Sewer System
+2011,community,jb016,Year
+2011,community,jb017,Percentage of Households Use Electricity
+2011,community,jb018,Degree of Industrial Pollution
+2011,community,jb019,Degree of Nearby Industrial Pollution
+2011,community,jb020,Num. of Days with Electricity Supply One Year
+2011,community,jb021,Num. of Hours with Electricity Supply Per Day
+2011,community,jb022,Year
+2011,community,jb023,Percentage of Households with Telephone
+2011,community,jb024,Percentage of Households with Cell Phone
+2011,community,jb025,Percentage of Households with TV
+2011,community,jb026,Percentage of Households with Refrigerator
+2011,community,jb027,How Far is the Nearest Industrial Pollution Site
+2011,community,jb028_1_1_,Num. of this Facility
+2011,community,jb028_1_2_,Num. of this Facility
+2011,community,jb028_1_3_,Num. of this Facility
+2011,community,jb028_1_4_,Num. of this Facility
+2011,community,jb028_1_5_,Num. of this Facility
+2011,community,jb028_1_6_,Num. of this Facility
+2011,community,jb028_1_7_,Num. of this Facility
+2011,community,jb028_1_8_,Num. of this Facility
+2011,community,jb028_1_9_,Num. of this Facility
+2011,community,jb028_1_10_,Num. of this Facility
+2011,community,jb028_1_11_,Num. of this Facility
+2011,community,jb028_1_12_,Num. of this Facility
+2011,community,jb028_1_13_,Num. of this Facility
+2011,community,jb028_2_1_,Distance
+2011,community,jb028_2_2_,Distance
+2011,community,jb028_2_3_,Distance
+2011,community,jb028_2_4_,Distance
+2011,community,jb028_2_5_,Distance
+2011,community,jb028_2_6_,Distance
+2011,community,jb028_2_7_,Distance
+2011,community,jb028_2_8_,Distance
+2011,community,jb028_2_9_,Distance
+2011,community,jb028_2_10_,Distance
+2011,community,jb028_2_11_,Distance
+2011,community,jb028_2_12_,Distance
+2011,community,jb028_2_13_,Distance
+2011,community,jb029_1_1_,Does this V/C Have this Type of Activity
+2011,community,jb029_1_2_,Does this V/C Have this Type of Activity
+2011,community,jb029_1_3_,Does this V/C Have this Type of Activity
+2011,community,jb029_1_4_,Does this V/C Have this Type of Activity
+2011,community,jb029_1_5_,Does this V/C Have this Type of Activity
+2011,community,jb029_1_6_,Does this V/C Have this Type of Activity
+2011,community,jb029_1_7_,Does this V/C Have this Type of Activity
+2011,community,jb029_1_8_,Does this V/C Have this Type of Activity
+2011,community,jb029_1_9_,Does this V/C Have this Type of Activity
+2011,community,jb029_1_10_,Does this V/C Have this Type of Activity
+2011,community,jb029_1_11_,Does this V/C Have this Type of Activity
+2011,community,jb029_1_12_,Does this V/C Have this Type of Activity
+2011,community,jb029_1_13_,Does this V/C Have this Type of Activity
+2011,community,jb029_1_14_,Does this V/C Have this Type of Activity
+2011,community,jb029_2_1_,Who Initiated This
+2011,community,jb029_2_2_,Who Initiated This
+2011,community,jb029_2_3_,Who Initiated This
+2011,community,jb029_2_4_,Who Initiated This
+2011,community,jb029_2_5_,Who Initiated This
+2011,community,jb029_2_6_,Who Initiated This
+2011,community,jb029_2_7_,Who Initiated This
+2011,community,jb029_2_8_,Who Initiated This
+2011,community,jb029_2_9_,Who Initiated This
+2011,community,jb029_2_10_,Who Initiated This
+2011,community,jb029_2_11_,Who Initiated This
+2011,community,jb029_2_12_,Who Initiated This
+2011,community,jb029_2_13_,Who Initiated This
+2011,community,jb029_2_14_,Who Initiated This
+2011,community,jb029_3_1_,Main Investor
+2011,community,jb029_3_2_,Main Investor
+2011,community,jb029_3_3_,Main Investor
+2011,community,jb029_3_4_,Main Investor
+2011,community,jb029_3_5_,Main Investor
+2011,community,jb029_3_6_,Main Investor
+2011,community,jb029_3_7_,Main Investor
+2011,community,jb029_3_8_,Main Investor
+2011,community,jb029_3_9_,Main Investor
+2011,community,jb029_3_10_,Main Investor
+2011,community,jb029_3_11_,Main Investor
+2011,community,jb029_3_12_,Main Investor
+2011,community,jb029_3_13_,Main Investor
+2011,community,jb029_3_14_,Main Investor
+2011,community,jb030,Have Community-Based Elderly Care Center
+2011,community,jb031,How Large is the Elderly Care Center
+2011,community,jb032,Num. of Elderly Using the Elderly Care Center
+2011,community,jb033_1,Others
+2011,community,jb033s1,Which Type of Service
+2011,community,jb033s2,Which Type of Service
+2011,community,jb033s3,Which Type of Service
+2011,community,jb033s4,Which Type of Service
+2011,community,jb034,How Much Each Elderly Need to Pay
+2011,community,jb035,Who Provides the Funds
+2011,community,jb035_1,Others
+2011,community,jb036,Percentage of Households with Nanny
+2011,community,jb037,Family-Based Elder-Care Center
+2011,community,jb038,Num. of People Served
+2011,community,jb040,Respondent Identity for Part B
+2011,community,jc001,Population
+2011,community,jc002,How Many of Them Have Non-Agriculture Hukou
+2011,community,jc003,How Many of Them Have Hukou in Your V/C
+2011,community,jc003_1,Num. of Households
+2011,community,jc004,How Many of Them Don't Have Hukou in Your V/C
+2011,community,jc004_1,Num. of Households
+2011,community,jc005,Num. of Peoples with Hukou in Your V/C but Not Living Here
+2011,community,jc005_1,Num. of Households
+2011,community,jc006,Migrant
+2011,community,jc007,Population in the Year before Last
+2011,community,jc008,How Many of Them Have Hukou in Your V/C
+2011,community,jc009,Total Number of Adult Population
+2011,community,jc009_1,How Many Males
+2011,community,jc010,Total Number of Population Aged 65 and Over
+2011,community,jc010_1,How Many Males
+2011,community,jc011,Total Number of Population Aged 80 and Over
+2011,community,jc011_1,How Many Males
+2011,community,jc012,Num. of Bachelors Aged Above 40 Who Have Never Been Married
+2011,community,jc012_1,How Many Males
+2011,community,jc013,Does Your V/C Have Minorities
+2011,community,jc013_1,How Many
+2011,community,jc014,Which Minority Has the Largest Population
+2011,community,jc015,How Many Households Belong to this Minority
+2011,community,jc016,Which Minority Has the Second Largest Population
+2011,community,jc017,How Many Households Belong to this Minority
+2011,community,jc018,How Many Households Belong to other Minorities
+2011,community,jc019,Percentage of the Adult Population That are Illiterate/Semi-Illiterate
+2011,community,jc019_1,Percentage Category
+2011,community,jc020,Percentage of the Adult Population Have Completed Only Up to Primary Schools
+2011,community,jc020_1,Percentage Category
+2011,community,jc021,Percentage of the Adult Population Have Completed Only Up to Junior High Schools
+2011,community,jc021_1,Percentage Category
+2011,community,jc022,Percentage of the Adult Population Have Completed Only Up to Senior High School
+2011,community,jc022_1,Percentage Category
+2011,community,jc023,Percentage of the Adult Population Have Completed Only Up to College
+2011,community,jc023_1,Percentage Category
+2011,community,jc024,Percentage of the Adult Population Have Completed Up to Graduate Schools and Abo
+2011,community,jc024_1,Percentage Category
+2011,community,jc026,Respondent Identity for Part C
+2011,community,jd001,How Many Households Were Engaged in Non-Agricultural Work
+2011,community,jd002,How Many GETIHU
+2011,community,jd003,How Many Enterprises
+2011,community,jd004s1,Major Products
+2011,community,jd004s2,Major Products
+2011,community,jd004s3,Major Products
+2011,community,jd004s4,Major Products
+2011,community,jd005,How Many Employees Worked for the Local Firms
+2011,community,jd006,How Many Males
+2011,community,jd007_1,Daily Salary of Males
+2011,community,jd007_2,Monthly Salary of Males
+2011,community,jd008_1,Daily Salary of Females
+2011,community,jd008_2,Monthly Salary of Females
+2011,community,jd009,Average Monthly Salary
+2011,community,jd010,Average Daily Wage for Manual Male Labor
+2011,community,jd011,Average Daily Wage for Manual Female Labor
+2011,community,jd012,Monthly Salary for Nannies in Addition to Living and Meal
+2011,community,jd014,Respondent Identity for Part D
+2011,community,je001,Total Labor Working Outside More Than 3 Months
+2011,community,je002,Percentage of Female
+2011,community,je003,Percentage of Them Works at Other V/C in this County
+2011,community,je004,Percentage of Them Works at Other Counties in this City
+2011,community,je005,Percentage of Them Works at Other Cities in this Province
+2011,community,je006,Percentage of Them Works at Other Provinces
+2011,community,je007s1,Which Province
+2011,community,je007s2,Which Province
+2011,community,je007s3,Which Province
+2011,community,je007s4,Which Province
+2011,community,je007s5,Which Province
+2011,community,je007s6,Which Province
+2011,community,je007s7,Which Province
+2011,community,je007s8,Which Province
+2011,community,je007s9,Which Province
+2011,community,je007s10,Which Province
+2011,community,je007s11,Which Province
+2011,community,je007s12,Which Province
+2011,community,je007s13,Which Province
+2011,community,je007s14,Which Province
+2011,community,je007s15,Which Province
+2011,community,je007s16,Which Province
+2011,community,je007s17,Which Province
+2011,community,je007s18,Which Province
+2011,community,je007s19,Which Province
+2011,community,je007s20,Which Province
+2011,community,je007s21,Which Province
+2011,community,je007s22,Which Province
+2011,community,je007s23,Which Province
+2011,community,je007s24,Which Province
+2011,community,je007s25,Which Province
+2011,community,je007s26,Which Province
+2011,community,je007s27,Which Province
+2011,community,je007s28,Which Province
+2011,community,je007s29,Which Province
+2011,community,je007s30,Which Province
+2011,community,je007s31,Which Province
+2011,community,je007s32,Which Province
+2011,community,je007s33,Which Province
+2011,community,je008,Main Jobs That Male Seek
+2011,community,je009,Average Monthly Wage for These Male Migrants
+2011,community,je010,Main Jobs That Female Seek
+2011,community,je011,Average Monthly Wage for These Female Migrants
+2011,community,je012,Num. of Households Has Permanently Moved Outside
+2011,community,je014,Respondent Identity for Part D
+2011,community,je016,Num. of Households Moved in Since 2000
+2011,community,jf001s1,Choose Which Types of Medical Facilities
+2011,community,jf001s2,Choose Which Types of Medical Facilities
+2011,community,jf001s3,Choose Which Types of Medical Facilities
+2011,community,jf001s4,Choose Which Types of Medical Facilities
+2011,community,jf001s5,Choose Which Types of Medical Facilities
+2011,community,jf001s6,Choose Which Types of Medical Facilities
+2011,community,jf001s7,Choose Which Types of Medical Facilities
+2011,community,jf001s8,Choose Which Types of Medical Facilities
+2011,community,jf002_1_,Does Your V/C Have
+2011,community,jf002_1_1_,How Many
+2011,community,jf002_1_2_,How Many
+2011,community,jf002_1_3_,How Many
+2011,community,jf002_1_4_,How Many
+2011,community,jf002_1_5_,How Many
+2011,community,jf002_1_6_,How Many
+2011,community,jf002_1_7_,How Many
+2011,community,jf002_1_8_,How Many
+2011,community,jf002_2_,Does Your V/C Have
+2011,community,jf002_3_,Does Your V/C Have
+2011,community,jf002_4_,Does Your V/C Have
+2011,community,jf002_5_,Does Your V/C Have
+2011,community,jf002_6_,Does Your V/C Have
+2011,community,jf002_7_,Does Your V/C Have
+2011,community,jf002_8_,Does Your V/C Have
+2011,community,jf003_1_1_,Province
+2011,community,jf003_1_2_,Province
+2011,community,jf003_1_3_,Province
+2011,community,jf003_1_4_,Province
+2011,community,jf003_1_5_,Province
+2011,community,jf003_1_6_,Province
+2011,community,jf003_1_7_,Province
+2011,community,jf003_1_8_,Province
+2011,community,jf003_2_1_,City/County
+2011,community,jf003_2_2_,City/County
+2011,community,jf003_2_3_,City/County
+2011,community,jf003_2_4_,City/County
+2011,community,jf003_2_5_,City/County
+2011,community,jf003_2_6_,City/County
+2011,community,jf003_2_7_,City/County
+2011,community,jf003_2_8_,City/County
+2011,community,jf003_3_1_,Township/District
+2011,community,jf003_3_2_,Township/District
+2011,community,jf003_3_3_,Township/District
+2011,community,jf003_3_4_,Township/District
+2011,community,jf003_3_5_,Township/District
+2011,community,jf003_3_6_,Township/District
+2011,community,jf003_3_7_,Township/District
+2011,community,jf003_3_8_,Township/District
+2011,community,jf003_4_1_,Village/Street
+2011,community,jf003_4_2_,Village/Street
+2011,community,jf003_4_3_,Village/Street
+2011,community,jf003_4_4_,Village/Street
+2011,community,jf003_4_5_,Village/Street
+2011,community,jf003_4_6_,Village/Street
+2011,community,jf003_4_7_,Village/Street
+2011,community,jf003_4_8_,Village/Street
+2011,community,jf004_1_,Is This Facility Public or Private
+2011,community,jf004_2_,Is This Facility Public or Private
+2011,community,jf004_3_,Is This Facility Public or Private
+2011,community,jf004_4_,Is This Facility Public or Private
+2011,community,jf004_5_,Is This Facility Public or Private
+2011,community,jf004_6_,Is This Facility Public or Private
+2011,community,jf004_7_,Is This Facility Public or Private
+2011,community,jf004_8_,Is This Facility Public or Private
+2011,community,jf005_1_,The Level of This Facility
+2011,community,jf005_2_,The Level of This Facility
+2011,community,jf005_3_,The Level of This Facility
+2011,community,jf006_1_,Distance from The Facility to The V/C Office
+2011,community,jf006_2_,Distance from The Facility to The V/C Office
+2011,community,jf006_3_,Distance from The Facility to The V/C Office
+2011,community,jf006_4_,Distance from The Facility to The V/C Office
+2011,community,jf006_5_,Distance from The Facility to The V/C Office
+2011,community,jf006_6_,Distance from The Facility to The V/C Office
+2011,community,jf006_7_,Distance from The Facility to The V/C Office
+2011,community,jf006_8_,Distance from The Facility to The V/C Office
+2011,community,jf007_1_,Main Means of Transportation
+2011,community,jf007_2_,Main Means of Transportation
+2011,community,jf007_3_,Main Means of Transportation
+2011,community,jf007_4_,Main Means of Transportation
+2011,community,jf007_5_,Main Means of Transportation
+2011,community,jf007_6_,Main Means of Transportation
+2011,community,jf007_7_,Main Means of Transportation
+2011,community,jf007_8_,Main Means of Transportation
+2011,community,jf008_1_1_,Hours
+2011,community,jf008_1_2_,Hours
+2011,community,jf008_1_3_,Hours
+2011,community,jf008_1_4_,Hours
+2011,community,jf008_1_5_,Hours
+2011,community,jf008_1_6_,Hours
+2011,community,jf008_1_7_,Hours
+2011,community,jf008_1_8_,Hours
+2011,community,jf008_2_1_,Minutes
+2011,community,jf008_2_2_,Minutes
+2011,community,jf008_2_3_,Minutes
+2011,community,jf008_2_4_,Minutes
+2011,community,jf008_2_5_,Minutes
+2011,community,jf008_2_6_,Minutes
+2011,community,jf008_2_7_,Minutes
+2011,community,jf008_2_8_,Minutes
+2011,community,jf009_1_,Total Transportation Cost
+2011,community,jf009_2_,Total Transportation Cost
+2011,community,jf009_3_,Total Transportation Cost
+2011,community,jf009_4_,Total Transportation Cost
+2011,community,jf009_5_,Total Transportation Cost
+2011,community,jf009_6_,Total Transportation Cost
+2011,community,jf009_7_,Total Transportation Cost
+2011,community,jf009_8_,Total Transportation Cost
+2011,community,jf010s1,Insurances are Implemented through V/C Committee
+2011,community,jf010s2,Insurances are Implemented through V/C Committee
+2011,community,jf011,When Did Your V/C Start The Urban Resident Medical Insurance
+2011,community,jf012_1,Num. of Households Participated Urban Resident Medical Insurance Up to 2010
+2011,community,jf012_2,Num. of Households Participated Urban Resident Medical Insurance Up to 2009
+2011,community,jf012_3,Num. of Households Participated Urban Resident Medical Insurance Up to 2008
+2011,community,jf012_4,Num. of Households Participated Urban Resident Medical Insurance Up to 2007
+2011,community,jf012_5,Num. of Households Participated Urban Resident Medical Insurance Up to 2006
+2011,community,jf012_6,Num. of Households Participated Urban Resident Medical Insurance Up to 2005
+2011,community,jf013,Premium for Participants in Urban Resident Medical Insurance
+2011,community,jf014,When Did Your V/C Start The RCMI
+2011,community,jf015_1,Num. of Households Participated The RCMI Up to 2010
+2011,community,jf015_2,Num. of Households Participated The RCMI Up to 2009
+2011,community,jf015_3,Num. of Households Participated The RCMI Up to 2008
+2011,community,jf015_4,Num. of Households Participated The RCMI Up to 2007
+2011,community,jf015_5,Num. of Households Participated The RCMI Up to 2006
+2011,community,jf015_6,Num. of Households Participated The RCMI Up to 2005
+2011,community,jf015_7,Num. of Households Participated The RCMI Up to 2004
+2011,community,jf015_8,Num. of Households Participated The RCMI Up to 2003
+2011,community,jf016,How Much do Villagers Pay for the RCMI Each Year
+2011,community,jf017_1,Num. of Deaths In the Past 3 Years
+2011,community,jf017_2,Num. of People Who are Died of Suicide in the Past 3 Years
+2011,community,jf018_1_1_,Disease
+2011,community,jf018_1_2_,Disease
+2011,community,jf018_1_3_,Disease
+2011,community,jf018_2_1_,Num. of Deaths
+2011,community,jf018_2_2_,Num. of Deaths
+2011,community,jf018_2_3_,Num. of Deaths
+2011,community,jf020,Respondent Identity for Part D
+2011,community,jg001,Does Your V/C Have Unemployement Subsidies
+2011,community,jg002,Year
+2011,community,jg003,Num. of People Received Unemployment Subsidies in 2010
+2011,community,jg004,Average Subsidies Per Month
+2011,community,jg005,Does Your V/C Have Minimum Living Allowance
+2011,community,jg006,Year
+2011,community,jg007,Num. of People Received Minimum Living Allowance in 2010
+2011,community,jg008,Average Subsidies Per Month
+2011,community,jg009_1_,Does Your V/C Have Other Subsidies
+2011,community,jg009_1_1_,Name of Subsidy Program
+2011,community,jg009_1_2_,Name of Subsidy Program
+2011,community,jg009_1_3_,Name of Subsidy Program
+2011,community,jg009_1_4_,Name of Subsidy Program
+2011,community,jg009_1_5_,Name of Subsidy Program
+2011,community,jg009_2_,Does Your V/C Have Other Subsidies
+2011,community,jg009_3_,Does Your V/C Have Other Subsidies
+2011,community,jg009_4_,Does Your V/C Have Other Subsidies
+2011,community,jg009_5_,Does Your V/C Have Other Subsidies
+2011,community,jg010_1_,When Did this Subsidy Start
+2011,community,jg010_2_,When Did this Subsidy Start
+2011,community,jg010_3_,When Did this Subsidy Start
+2011,community,jg010_4_,When Did this Subsidy Start
+2011,community,jg010_5_,When Did this Subsidy Start
+2011,community,jg011_1_,How Many Households Received This Subsidy
+2011,community,jg011_2_,How Many Households Received This Subsidy
+2011,community,jg011_3_,How Many Households Received This Subsidy
+2011,community,jg011_4_,How Many Households Received This Subsidy
+2011,community,jg011_5_,How Many Households Received This Subsidy
+2011,community,jg012_1_,Average Subsidy Standard of this Subsidy Program
+2011,community,jg012_2_,Average Subsidy Standard of this Subsidy Program
+2011,community,jg012_3_,Average Subsidy Standard of this Subsidy Program
+2011,community,jg012_4_,Average Subsidy Standard of this Subsidy Program
+2011,community,jg012_5_,Average Subsidy Standard of this Subsidy Program
+2011,community,jg013,Does Your V/C Have Subsidies for Being Parents of Single Child
+2011,community,jg014,Year
+2011,community,jg015,Num. of Households Received Subsidies for Being Parents of Single Child
+2011,community,jg016,Average Subsidy Standard
+2011,community,jg017,Does Your V/C Have Farm Subsidies
+2011,community,jg018,Year
+2011,community,jg019,Num. of Households Received Farm Subsidies
+2011,community,jg020,Average Subsidy Standard
+2011,community,jg021,Does Your V/C Have Subsidies for Reforestation
+2011,community,jg022,Year
+2011,community,jg023,Num. of Households Received Subsidies for Reforestation
+2011,community,jg024,Average Subsidy Standard
+2011,community,jg025,Does Your V/C Issue Pension to Persons Older than 65
+2011,community,jg026,Year
+2011,community,jg027,Num. of Persons Received
+2011,community,jg028,Average Subsidy standard
+2011,community,jg029,Does Your V/C Have Subsidy for Persons Older than 80
+2011,community,jg030,Year
+2011,community,jg031,Num. of Persons Received
+2011,community,jg032,Average Subsidy Standard
+2011,community,jg033,Does Your V/C Have NRPS
+2011,community,jg034,Year
+2011,community,jg035,Num. of Persons Received NRPS
+2011,community,jg036,Average Subsidy Standard
+2011,community,jg037,Does Your V/C Have the ORPS
+2011,community,jg038,Year
+2011,community,jg039,Num. of Persons Received ORPS
+2011,community,jg040,Average Subsidy Standard
+2011,community,jg042,Respondent Identity for Part D
+2011,community,jh001_1,Year
+2011,community,jh001_2,Month
+2011,community,jh001_3,Day
+2011,community,jh001_4,Time
+2011,community,jh001_5,Number
+2011,community,jh002_1_1_,Education
+2011,community,jh002_1_2_,Education
+2011,community,jh002_1_3_,Education
+2011,community,jh002_2_1_,Gender
+2011,community,jh002_2_2_,Gender
+2011,community,jh002_2_3_,Gender
+2011,community,jh002_3_1_,Age
+2011,community,jh002_3_2_,Age
+2011,community,jh002_3_3_,Age
+2011,community,jh003,When did Your Village Found the People's Commune
+2011,community,jh004,When did the People's Commune Disintegrate
+2011,community,jh005,When did the Household Contract Responsibility System Operate
+2011,community,jh006,Has Your village Reallocated Land Since the HCRS Operated
+2011,community,jh007,Year
+2011,community,jh008,"Year that Residents First Allowed to Subcontract, Rend Land to Family Member"
+2011,community,jh008_1,"Year that Residents First Allowed to Subcontract, Rend Land to Non Family Member"
+2011,community,jh009,How Many Rusticated Youth did Your Village Accept During 1960s and 1970s
+2011,community,jh010,Year
+2011,community,jh011,How Many Rusticated Youth Settled Down instead of Going Back to Town
+2011,community,jh012,Year
+2011,community,jh013,Where Are the Youth Rusticated to Your Village Mostly from
+2011,community,jh013_1,Province
+2011,community,jh013_2,Where Are the Youth Rusticated to Your Village Mostly from
+2011,community,jh014,Num. of Barefoot Doctors During 1970s
+2011,community,jh015,Was Any of Primary Schools Merged or Revocated
+2011,community,jh016,Year
+2011,community,jh017,How Many Primary Schools Before that
+2011,community,jh018_1_1_,Num. of People Join the Army
+2011,community,jh018_1_2_,Num. of People Join the Army
+2011,community,jh018_1_3_,Num. of People Join the Army
+2011,community,jh018_1_4_,Num. of People Join the Army
+2011,community,jh018_1_5_,Num. of People Join the Army
+2011,community,jh018_1_6_,Num. of People Join the Army
+2011,community,jh018_1_7_,Num. of People Join the Army
+2011,community,jh018_1_8_,Num. of People Join the Army
+2011,community,jh018_1_9_,Num. of People Join the Army
+2011,community,jh018_1_10_,Num. of People Join the Army
+2011,community,jh018_1_11_,Num. of People Join the Army
+2011,community,jh018_2_1_,Num. of People Admitted to the University
+2011,community,jh018_2_2_,Num. of People Admitted to the University
+2011,community,jh018_2_3_,Num. of People Admitted to the University
+2011,community,jh018_2_4_,Num. of People Admitted to the University
+2011,community,jh018_2_5_,Num. of People Admitted to the University
+2011,community,jh018_2_6_,Num. of People Admitted to the University
+2011,community,jh018_2_7_,Num. of People Admitted to the University
+2011,community,jh018_2_8_,Num. of People Admitted to the University
+2011,community,jh018_2_9_,Num. of People Admitted to the University
+2011,community,jh018_2_10_,Num. of People Admitted to the University
+2011,community,jh018_2_11_,Num. of People Admitted to the University
+2011,community,jh019,When Did Your V/C Start to Execute the Family Planning Policy
+2011,community,jh020,The Specific Policy for Ethnic Han
+2011,community,jh021,Was There Any Change on the Fmaily Planning Policy
+2011,community,jh022,Changed to What
+2011,community,jh023,Year
+2011,community,jh024,The Current Family Planning Policy for Ethnic Han
+2011,community,jh025,Family Planning Policy for Ethnic Minorities
+2011,community,jh026,Is There Penalty for Unplanned Birth
+2011,community,jh026_1,
+2011,community,jh027,What Was the Initial Penalty Amount
+2011,community,jh028,Any Change on the Penalty Policy
+2011,community,jh029a_1_,When
+2011,community,jh029a_2_,When
+2011,community,jh029a_3_,When
+2011,community,jh029b_1_,Amount
+2011,community,jh029b_2_,Amount
+2011,community,jh029b_3_,Amount
+2011,community,jh030,"In the Early 1970s, Any 'Late, Scarcy, Few' Policy"
+2011,community,jh031,"Describe the 'Late, Scarcy, Few' Policy"
+2011,community,jh032,When did the Residents Start to Get National Identiciation Cards
+2011,community,jh033,When did the Residents Start to Get the Second-Generation National Identificatio
+2011,community,ji001,Any Serious Natural Disasters in the Past 5 Years
+2011,community,ji002_a_1_,Were This Natural Disaster in Your V/C
+2011,community,ji002_a_2_,Were This Natural Disaster in Your V/C
+2011,community,ji002_a_3_,Were This Natural Disaster in Your V/C
+2011,community,ji002_a_4_,Were This Natural Disaster in Your V/C
+2011,community,ji002_a_5_,Were This Natural Disaster in Your V/C
+2011,community,ji002_a_6_,Were This Natural Disaster in Your V/C
+2011,community,ji002_a_7_,Were This Natural Disaster in Your V/C
+2011,community,ji002_b_1_,Times Occurred
+2011,community,ji002_b_2_,Times Occurred
+2011,community,ji002_b_3_,Times Occurred
+2011,community,ji002_b_4_,Times Occurred
+2011,community,ji002_b_5_,Times Occurred
+2011,community,ji002_b_6_,Times Occurred
+2011,community,ji002_b_7_,Times Occurred
+2011,community,ji002_c_1_,Year
+2011,community,ji002_c_2_,Year
+2011,community,ji002_c_3_,Year
+2011,community,ji002_c_4_,Year
+2011,community,ji002_c_5_,Year
+2011,community,ji002_c_6_,Year
+2011,community,ji002_c_7_,Year
+2011,community,ji002_d_1_,Month
+2011,community,ji002_d_2_,Month
+2011,community,ji002_d_3_,Month
+2011,community,ji002_d_4_,Month
+2011,community,ji002_d_5_,Month
+2011,community,ji002_d_6_,Month
+2011,community,ji002_d_7_,Month
+2011,community,ji002_e_1_,Num. of People Injured or Dead
+2011,community,ji002_e_2_,Num. of People Injured or Dead
+2011,community,ji002_e_3_,Num. of People Injured or Dead
+2011,community,ji002_e_4_,Num. of People Injured or Dead
+2011,community,ji002_e_5_,Num. of People Injured or Dead
+2011,community,ji002_e_6_,Num. of People Injured or Dead
+2011,community,ji002_e_7_,Num. of People Injured or Dead
+2011,community,ji002_other,Other Disaster
+2011,community,ji003_1a,The Most Serve One
+2011,community,ji003_1b,Year
+2011,community,ji003_1c,Month
+2011,community,ji003_1d,Year
+2011,community,ji003_1e,Month
+2011,community,ji003_1f,Num. of People Injured or Dead
+2011,community,ji003_1g,Percentage of People Injured or Dead
+2011,community,ji003_1h,Percentage of Drop in Grain Production
+2011,community,ji003_2a,The Second Serve One
+2011,community,ji003_2b,Year
+2011,community,ji003_2c,Month
+2011,community,ji003_2d,Year
+2011,community,ji003_2e,Month
+2011,community,ji003_2f,Num. of People Injured or Dead
+2011,community,ji003_2g,Percentage of People Injured or Dead
+2011,community,ji003_2h,Percentage of Drop in Grain Production
+2011,community,ji003_3a,The Third Serve One
+2011,community,ji003_3b,Year
+2011,community,ji003_3c,Month
+2011,community,ji003_3d,Year
+2011,community,ji003_3e,Month
+2011,community,ji003_3f,Num. of People Injured or Dead
+2011,community,ji003_3g,Percentage of People Injured or Dead
+2011,community,ji003_3h,Percentage of Drop in Grain Production
+2011,community,jj001_1a,First Crop
+2011,community,jj001_1b,Mu
+2011,community,jj001_1c,Jin
+2011,community,jj001_1d,Mechanical Harvesting
+2011,community,jj001_1e,Current Number of Crop Maturity
+2011,community,jj001_1f,Highest Number of crop maturity
+2011,community,jj001_2a,Second Crop
+2011,community,jj001_2b,Mu
+2011,community,jj001_2c,Jin
+2011,community,jj001_2d,Mechanical Harvesting
+2011,community,jj001_2e,Current Number of Crop Maturity
+2011,community,jj001_2f,Highest Number of crop maturity
+2011,community,jj001_3a,Second Crop
+2011,community,jj001_3b,Mu
+2011,community,jj001_3c,Jin
+2011,community,jj001_3d,Mechanical Harvesting
+2011,community,jj001_3e,Current Number of Crop Maturity
+2011,community,jj001_3f,Highest Number of crop maturity
+2011,community,jj002,Percentage of Mechanical Harvesting
+2011,community,jj003,Rent Big Machines
+2011,community,jj004,Rental Price
+2011,community,jj005,Where are These Big Machines Coming from
+2011,community,jj006,Name of Most Use Fertilizer
+2011,community,jj007,Price of That Fertilizer
+2011,community,jj008,Price of Rice Seed
+2011,community,jj009,Price of Rice Seedling
+2011,community,jj010,Price of Wheat Seed
+2011,community,jj011,total Agricultural Revenue in 2010
+2011,community,jj012,Total Industrial Revenue in 2010
+2011,community,jj013,Total V/C Public Expenditure in 2010
+2011,community,jj014,Total V/C Income in 2010
+2011,community,jj015,Total V/C Net Investment in 2010
+2011,community,jj016,Per-Capita Net Income of Your V/C
+2011,community,jj017,Average Price of the LIJI Part of Pork
+2011,community,jj018,Average Price of Chicken Eggs
+2011,community,jj019,Average Price of Rice
+2011,community,jj020,Average Price of Wheat
+2011,community,jj021,Average Price of Natural Gas
+2011,community,jj022,Average Price of Liquefied Petroleum Gas
+2011,community,jj023,Average Price of Water
+2011,community,jj024,Average Price of Electricity
+2011,community,jj025,Average Price of Coal
+2011,community,jj026,Average Price of New Apartment
+2011,community,jj027,Average Price of Used Apartment
+2011,community,jj028,Average Rental Price of 2-Bedroom Apartment
+2011,community,jj029,Rental Percentage
+2011,community,jj030,Percentage of Households Living in Commercial Housing
+2011,community,jj031,Percentage of Households that Loan from Financial Institutions
+2011,community,jj032,Degree of Difficulty in Loaning
+2011,community,jj034,Respondent Identity for Part J
+2011,community,jj036,Maximum Loan
+2011,community,jj037s1,Pawn
+2011,community,jj037s2,Pawn
+2011,community,jj037s3,Pawn
+2011,community,jj037s4,Pawn
+2011,community,jj037s5,Pawn
+2011,community,jj038_1,Percentage
+2011,community,jj038_2,Percentage
+2011,community,jj038_3,Percentage
+2011,community,jj038_4,Percentage
+2011,community,jj038_5,Percentage
+2011,community,jj038s1,Lending Channel
+2011,community,jj038s2,Lending Channel
+2011,community,jj038s3,Lending Channel
+2011,community,jj038s4,Lending Channel
+2011,community,jj038s5,Lending Channel
+2011,community,jk001,This V/C Has Roads Passing through
+2011,community,jk002,Social Economic Status of This V/C
+2011,community,jk003,The Degree of Tidiness of the Road in this V/C
+2011,community,jk004,Construction Structure of this V/C
+2011,community,jk005,The Degree of Crowdness of this V/C
+2011,community,jk006,The Degree of Handicapped Access
+2011,community,jk007,The Degree of Mandarin Fluency

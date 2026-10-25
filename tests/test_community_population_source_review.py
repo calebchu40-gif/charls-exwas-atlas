@@ -21,7 +21,7 @@ class CommunityPopulationSourceReviewTests(unittest.TestCase):
         def read(path):
             with (ROOT / path).open(encoding="utf-8-sig", newline="") as stream:
                 return list(csv.DictReader(stream))
-        cls.raw = read("audit/raw_variable_catalog_v1.csv")
+        cls.raw = read("audit/community_field_inventory_2011_v1.csv")
         cls.crosswalk = read("audit/community_exposure_crosswalk_v1.csv")
         cls.overrides = read("audit/catalog_role_override_review_v1.csv")
         cls.fields = read("audit/charls_atlas_candidate_fields_v0.csv")

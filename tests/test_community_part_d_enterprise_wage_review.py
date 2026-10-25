@@ -11,7 +11,7 @@ class CommunityPartDEnterpriseWageReviewTests(unittest.TestCase):
         def read_csv(path):
             with (ROOT/path).open(encoding="utf-8-sig",newline="") as f:
                 return list(csv.DictReader(f))
-        cls.raw=read_csv(Path("audit/raw_variable_catalog_v1.csv"))
+        cls.raw=read_csv(Path("audit/community_field_inventory_2011_v1.csv"))
         cls.crosswalk=read_csv(Path("audit/community_exposure_crosswalk_v1.csv"))
         cls.overrides=read_csv(Path("audit/catalog_role_override_review_v1.csv"))
         cls.questionnaire=(ROOT/"sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt").read_text(encoding="utf-8")

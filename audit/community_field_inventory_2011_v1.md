@@ -1,0 +1,5 @@
+# 2011 CHARLS community field-name inventory for source-coverage tests
+
+`community_field_inventory_2011_v1.csv` is a reproducible, metadata-only extract of the 2011 community module inventory used to verify module-level field disposition. It contains only `wave`, `module`, CHARLS variable name, and the official field label (719 rows). It deliberately omits module row counts, file/archive names, respondent values, response frequencies, and all other measurement output. Community questionnaire items explicitly asking for names or telephone numbers are not added as answer fields when they are absent from the source inventory.
+
+The full local `raw_variable_catalog_v1.csv` remains a machine-local QA artifact and is not needed by public CI. The sanitized extract is used by community source-review tests so a clean GitHub checkout can reproduce the field-coverage checks without publishing local row-count metadata or controlled files. Source-review documentation and official questionnaire/Codebook evidence remain the authority for candidate versus C-only disposition; this inventory is a field-name reconciliation aid, not analysis data.

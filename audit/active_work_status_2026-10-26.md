@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
+## Clean-checkout CI repair (2026-10-26)
+
+GitHub Validate #520 failed because seven community source-review tests opened the ignored local-only `audit/raw_variable_catalog_v1.csv`; the artifact is intentionally excluded because it includes module row counts and local source archive names. Do not add that file to Git. Replaced test inputs with `audit/community_field_inventory_2011_v1.csv`, a 719-row sanitized 2011 community inventory containing only wave/module, CHARLS variable code and field label. Added a test asserting its four-column schema and absence of count/frequency fields. All 508 local tests, payload validation, exact 92-lock check, JavaScript/deferred-loader validation and diff checks now pass. The corrective commit is awaiting remote Validate confirmation. Part E site content was separately published in successful Deploy #258 (app v132).
+
 ## Newer local update: Community Part E migration review (2026-10-26)
 
 Part E reconciles all 46 JE-prefixed fields in the metadata-only 2011 inventory: 44 questionnaire-anchored fields are mapped across eight community-context E concepts; JE014 informant identity and Codebook-only JE016 remain C-only. JE016 conflicts with the official questionnaire (Part E ends at JE015) and its direction/meaning is unresolved. JE013/JE015 name and telephone prompts are excluded. Added questionnaire-defined five-bin labels for JE003–JE006, Codebook response labels for 32 province slots and the two occupation fields (frequencies omitted), and explicit unresolved status for JE007S33 (“No Observations”). The Codebook-label builder previously omitted the `JE` prefix; this is fixed.
