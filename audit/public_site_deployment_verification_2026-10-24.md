@@ -1,3 +1,7 @@
+## Follow-up deployment — residential-settlement C/E source links (2026-10-25)
+
+Commit `3eeacfd` passed metadata validation [#439 / `40161982644`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40161982644) and Pages deploy [#220 / `40161982719`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40161982719). Cache-busted public assets returned HTTP 200; the homepage references `app.js?v=99`, the app bundle and E/P shards and pair index matched the local commit, and the C shard contains both exact settlement-context rows. Wave-specific categories and the no-numeric-pooling caveat are public.
+
 ## Follow-up deployment — household-electricity C/E source links (2026-10-25)
 
 Commit `52a8439` passed metadata validation [#438 / `40161450433`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40161450433) and Pages deploy [#219 / `40161450411`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40161450411). The v98 site now references `app.js?v=98`; cache-busted requests confirmed HTTP 200 for homepage, app, E/P/C catalogues and candidate-pair explorer. E/P, C key coverage, and pair explorer match the committed build; all three exact-wave electricity-overlap rows are present with household-scope cautions. No participant data or association results are published.

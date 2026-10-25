@@ -48,7 +48,10 @@ for wave, code, concept, label, source_label, labels, caveat, domain, _subcatego
     if found.empty:
         raise SystemExit(f"Missing official source field: {wave}/{code}")
     rec = found.iloc[0]
-    questionnaire = f"sources_official/CHARLS_{wave}_Questionnaire" + ("_English" if wave == "2020" else "") + "_extracted.txt"
+    if wave == "2011":
+        questionnaire = "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
+    else:
+        questionnaire = f"sources_official/CHARLS_{wave}_Questionnaire" + ("_English" if wave == "2020" else "") + "_extracted.txt"
     codebook = f"sources_official/CHARLS_{wave}_Codebook_extracted.txt"
     rows.append({
         "wave": wave, "code": code, "concept_id": concept, "concept_label": label,

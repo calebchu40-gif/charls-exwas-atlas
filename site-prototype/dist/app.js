@@ -123,6 +123,7 @@ const C_SUBCATEGORY_LABELS={
   "formal-schooling history exposure overlap":"正规教育经历暴露重叠字段",
   "household electricity access exposure overlap":"住宅电力可及性暴露重叠字段",
   "residential settlement context exposure overlap":"居住地聚落环境暴露重叠字段",
+  "historical hukou/location context exposure overlap":"历史户籍/居住地语境暴露重叠字段",
   "partner/social context exposure overlap":"伴侣与社会背景暴露重叠字段",
   "expected formal-retirement benefit amount/percentage selector":"预计正式退休待遇金额/比例选择器",
   "expected pension benefit amount format selector":"预计养老金待遇金额格式选择器",

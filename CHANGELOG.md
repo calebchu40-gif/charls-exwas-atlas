@@ -1,3 +1,10 @@
+## 2026-10-25 Link historical hukou/location C/E metadata and correct the 2011 source path
+
+- Linked seven exact-wave C records for last/first hukou location relations, reason for location difference, and prior-interview hukou type to the existing source-reviewed E crosswalk. Conditional interview routes and wave-specific categories remain explicit; this is not current hukou, measured pollution, or a default adjustment recommendation.
+- Corrected the social-context crosswalk builder to cite the real official `CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`; the previous generic 2011 filename did not exist. The updater now checks exact Questionnaire/Codebook files before propagation.
+- Added a reproducible updater to both metadata-build paths, a field-level audit, and regression tests. E/P/C remains 4,845/2,082/982.
+- Validation: clean finalization, all 435 Python tests, public payload, exact 92 analysis locks, JavaScript syntax, Python compilation, and diff checks pass. No participant data or Codebook frequencies were read; formal models and pairwise Ns remain 0.
+
 ## 2026-10-25 Link residential-settlement C/E metadata to reviewed sources
 
 - Linked two exact-wave C rows (2015 `BB001_W3_2`, 2020 `BA008`) to the reviewed residential-settlement exposure concept and official questionnaire/Codebook sources.
