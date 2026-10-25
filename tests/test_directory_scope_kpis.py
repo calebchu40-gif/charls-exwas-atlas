@@ -34,6 +34,8 @@ class DirectoryScopeKpiTests(unittest.TestCase):
         self.assertIn("2014 生命历程回顾性调查", html)
         self.assertIn("471条概念—字段映射", html)
         self.assertIn("不计入上述五波统计", match.group(2))
+        self.assertIn("30个大型社区曾按地理子区拆分抽样", html)
+        self.assertIn("communityID 仅是 PSU 候选", html)
 
     def test_readme_snapshot_matches_generated_catalog_and_pair_index(self):
         scope = json.loads((ROOT / "audit/directory_scope_counts_v1.json").read_text(encoding="utf-8"))
