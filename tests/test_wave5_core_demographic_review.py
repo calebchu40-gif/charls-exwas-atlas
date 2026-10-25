@@ -26,6 +26,18 @@ class Wave5CoreDemographicReviewTests(unittest.TestCase):
         self.assertEqual(review.FIELDS["xfagepossibility"]["category"], "measurement metadata")
         self.assertEqual(review.FIELDS["xfagepossibility"]["unit"], "years")
         self.assertIn("not the respondent’s native language", review.FIELDS["dc030"]["note"])
+        self.assertIn("not respondent age", review.FIELDS["xfagepossibility"]["review_flag"])
+        self.assertIn("not respondent native language", review.FIELDS["dc030"]["review_flag"])
+        self.assertNotIn("age/gender definition", review.FIELDS["dc030"]["review_flag"])
+        self.assertEqual(review.FIELDS["xfagepossibility"]["subcategory"], "subjective life-expectancy target age")
+        self.assertEqual(review.FIELDS["dc030"]["subcategory"], "interview language")
+
+    def test_wave5_catalog_status_is_field_specific_and_does_not_promote_intermediates(self):
+        self.assertIn("age derivation reviewed", review.FIELDS["xrage"]["candidate_status"])
+        self.assertIn("conditional gender reconfirmation", review.FIELDS["ba002"]["candidate_status"])
+        self.assertIn("intermediate gender recode", review.FIELDS["xr20gender"]["candidate_status"])
+        self.assertIn("not observed survival", review.FIELDS["xfagepossibility"]["candidate_status"])
+        self.assertEqual(review.FIELDS["xrage"]["subcategory"], "respondent age derivation")
 
     def test_json_update_is_wave_and_role_scoped(self):
         rows = [
