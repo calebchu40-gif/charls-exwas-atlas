@@ -77,3 +77,7 @@ Commit `40539e9` passed GitHub Validate [#435 / `40159198184`](https://github.co
 ## Follow-up deployment — recent hukou-change C/E metadata (2026-10-25)
 
 Commit `42c89fd` passed GitHub Validate [#446 / `40164627044`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40164627044) and Pages Deploy [#224 / `40164627071`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40164627071). The deployed homepage uses the v103 app bundle. Cache-busted requests to the homepage, `app.js`, E/P/C catalogues and candidate-pair index matched the committed public build after newline normalization where applicable. The C catalogue exposes 11 exact source-reviewed recent hukou-change overlaps and their routing cautions. No respondent data, association estimates or pairwise Ns were published.
+
+## Follow-up deployment — exact source-verified E/P overlaps in C metadata (2026-10-25)
+
+Commit `10b2969` passed GitHub Validate [#448 / `40165651978`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40165651978) and Pages Deploy [#225 / `40165652042`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40165652042). The homepage references `app.js?v=104`; cache-busted requests for homepage, app bundle, E/P/C catalogues and candidate-pair index matched the committed v104 files. The public C catalogue contains the 35 source-verified exact overlaps; the Chinese UI labels render for both E and P overlap subcategories. No respondent data, association estimates, or pairwise complete-case Ns were published.
