@@ -1,3 +1,8 @@
+## 2026-10-25 Recheck published-wave boundary (v114 pending deployment)
+
+- Rechecked CHARLS's current public catalog and official releases. It still lists the 2020 national follow-up as the latest downloadable regular-wave dataset, while 2021–2023 recruitment materials describe a fifth regular survey without a corresponding data package in that catalog. Kept the survey implementations separate by actual release documentation rather than merging on wave title.
+- Refreshed the official-source audit and the objective-measurement page's as-of date/cache key. No candidate mappings or analysis eligibility changed; deployment verification is pending.
+
 ## 2026-10-25 Add a metadata-only intake gate for CHARLS Wave 2 weights
 
 - Added `scripts/audit_2013_weights_intake.py` to validate the official CHARLS 2015-11-18 `Weights.dta` SHA1 before parsing its Stata header. The gate confirms `ID`, `crosssection`, `longitudinal`, and weight-field presence with metadata-only access; it does not read values, IDs, flag counts, or merge records.
