@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-25）
 
-**最新发布与本地构建：**v99的住宅聚落类型元数据更新已通过 Validate #439 和 Pages Deploy #220，两条 E/C 重叠已上线核对。当前工作区完成 v100：将七条户籍历史/居住关系 C/E 重叠链接到波次特征的来源交叉表，并纠正 2011 问卷文件路径。E/P/C=4,845/2,082/982，435项 Python 测试、公开负载校验、92条分析锁核验通过；v100待推送。本批未读取参与者数据或估计关联模型。详见[`audit/hukou_history_c_overlap_review_2026-10-25.md`](audit/hukou_history_c_overlap_review_2026-10-25.md)。
+**最新发布：**v100（提交 `4b358a3`）已通过 Validate #440 与 Pages Deploy #221，线上首页、应用脚本及 E/P/C/候选配对目录已与本地构建核对；7条历史户籍/居住关系 C/E 重叠已上线。更正了交叉表生成器所引用的 2011 基线家庭问卷文件路径，并增加官方问卷与 Codebook 文件存在性检查。E/P/C=4,845/2,082/982；435项 Python 测试、公开负载校验和92条分析锁核验通过。本批未读取参与者记录或拟合关联模型。详见[`audit/hukou_history_c_overlap_review_2026-10-25.md`](audit/hukou_history_c_overlap_review_2026-10-25.md)。
 
 **最新构建验证（2026-10-25）：**2011年32个DA010治疗选项字段的官方类别索引和本地汇总代码核对已同步至网站；未选中/空白编码与路由分母仍待核验。保留原有字段提示，正式锁清单仍为92条。元数据提交`71c6214`和快速刷新/审计JSON提交`9874960`均通过GitHub Validate与Pages部署（Validate `40152950706`；Deploy `40152949965`），线上配对目录返回HTTP 200；Python全套417项测试通过。可用`python scripts/finalize_2011_chronic_treatment_review.py`快速刷新这项专题的网页派生文件；上游目录有变更时仍运行标准完整构建。详情见[`audit/2011_chronic_treatment_selected_storage_status_sync_2026-10-25.md`](audit/2011_chronic_treatment_selected_storage_status_sync_2026-10-25.md)。
 

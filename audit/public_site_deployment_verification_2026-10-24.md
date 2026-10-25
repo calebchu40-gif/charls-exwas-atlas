@@ -1,3 +1,7 @@
+## Follow-up deployment — historical hukou/location C/E links (v100; 2026-10-25)
+
+Commit `4b358a3` passed metadata validation [#440 / `40162584659`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40162584659) and Pages deploy [#221 / `40162584678`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40162584678). The cache-busted public homepage references `app.js?v=100`; app, E/P/C catalogues match the committed build byte-for-byte, while homepage and candidate-pair JSON match after line-ending normalization. The public C catalogue contains all seven exact wave+field historical hukou/location overlap rows. No respondent-level records, descriptive frequencies, association estimates, or pairwise complete-case Ns are published.
+
 ## Follow-up deployment — residential-settlement C/E source links (2026-10-25)
 
 Commit `3eeacfd` passed metadata validation [#439 / `40161982644`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40161982644) and Pages deploy [#220 / `40161982719`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40161982719). Cache-busted public assets returned HTTP 200; the homepage references `app.js?v=99`, the app bundle and E/P shards and pair index matched the local commit, and the C shard contains both exact settlement-context rows. Wave-specific categories and the no-numeric-pooling caveat are public.
