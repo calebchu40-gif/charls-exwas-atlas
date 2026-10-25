@@ -42,3 +42,8 @@ The existing adult-education exposure crosswalk identifies another 33 exact-wave
 ## 2026-10-25 rebuild reconciliation
 
 After the clean catalog/shard regeneration and final alcohol-route status replay, the 982-row C directory has 108 generic automated-discovery status rows (60 codes) and 126 keyword-only subcategory rows (69 codes). The earlier section counts above describe each incremental review snapshot; the final subcategory count is lower because the alcohol-route source review replaces the generic keyword-only label on those exact-wave rows. Both are metadata-review dimensions, not covariate readiness measures.
+
+
+## 2026-10-25 follow-up: formal-schooling C/E source mapping
+
+Nine exact-wave C rows already mapped as formal-schooling E candidates now link to their official sources and wave-specific route caveats. They remain C lookup/context records and do not recommend adjusting for the focal exposure. The 982-row C directory now has 99 generic automated-discovery status rows (55 codes) and 117 keyword-only subcategory rows (64 codes); see udit/formal_schooling_c_overlap_review_2026-10-25.md.

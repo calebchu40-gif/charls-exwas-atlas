@@ -120,6 +120,7 @@ const C_SUBCATEGORY_LABELS={
   "detailed hukou/residential geography components":"户口/居住地详细地理信息组成项",
   "detailed respondent residential address fields":"受访者详细居住地址字段",
   "early-exit pension reduction amount/percentage selector":"提前领取养老金扣减金额/比例选择器",
+  "formal-schooling history exposure overlap":"正规教育经历暴露重叠字段",
   "expected formal-retirement benefit amount/percentage selector":"预计正式退休待遇金额/比例选择器",
   "expected pension benefit amount format selector":"预计养老金待遇金额格式选择器",
   "expected pension benefit amount-unit selector":"预计养老金待遇金额单位选择器",

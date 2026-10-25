@@ -1,3 +1,9 @@
+## 2026-10-25 Link formal-schooling C/E overlaps to reviewed source fields
+
+- Linked nine exact-wave C rows for age at starting/stopping school, a wave-specific schooling-years update, and educated-youth follow-up items to their already reviewed formal-schooling E candidates and official questionnaire/Codebook sources.
+- Preserved the C role for lookup, wave-specific routes, and response wording; explicitly states that an E/C overlap is not an adjustment recommendation and must not adjust for itself.
+- Added the review to both full and finalize-only builds and a Chinese C-subcategory label. The 982-row C directory now has 99 generic automated-discovery status rows (55 codes) and 117 keyword-only subcategory rows (64 codes). Formal models and actual pairwise Ns remain 0.
+
 ## 2026-10-25 Link adult-education C metadata to mapped candidates
 
 - Linked 33 exact-wave participation-option and credential C rows to the existing adult-education candidate crosswalk and official questionnaire/Codebook sources. Route, denominator, and release coding remain pending; these fields are not default covariates or separate option-level exposures.
