@@ -47,6 +47,8 @@ CONCEPTS={
  "community_other_subsidy_program_roster":("Other community subsidy program roster","Community social-policy context","2011 community-informant roster of other poverty-related subsidy programs, with up to five emitted response/name/start/count/standard slots. Field suffixes and nested name fields are preserved exactly; the flattened questionnaire/Codebook do not fully document slot-to-name linkage, so verify field pairing and repeat behavior in the authorized release before analysis. Open-text program names are not standardized policy categories. These are community reports, not household receipt or individual income."),
  "community_urban_resident_medical_insurance_context":("Community urban-resident medical insurance program context","Community healthcare policy","2011 community-reported availability, start year, cumulative annual household participation counts (2005–2010), and annual premium for urban resident medical insurance handled through the community. The questionnaire conditions follow-ups on JF010 option 1; preserve the selection route and source year for each cumulative count. These are community aggregates, not sampled-household enrollment or individual premium/coverage."),
  "community_rural_cooperative_medical_insurance_context":("Community rural cooperative medical insurance program context","Community healthcare policy","2011 community-reported availability, start year, cumulative annual household participation counts (2003–2010), and annual premium for the New Rural Cooperative Medical Insurance program. The questionnaire conditions follow-ups on JF010 option 2; preserve the selection route and source year for each cumulative count. These are community aggregates, not sampled-household enrollment or individual premium/coverage."),
+ "community_eldercare_center_context":("Community-based elderly care center context","Community healthcare and social-care access","2011 community-informant report of community-based elderly care center availability (CAPI community-only), area, number of older users, listed services, annual user fee and funding source. JB030 No routes past the center details; preserve that denominator. These are community-level service context measures, not participant-level service use or quality."),
+ "community_home_eldercare_context":("Village/home-based elder-care context","Community healthcare and social-care access","2011 community/village-level elder-care context: share of households employing a live-in caregiver for an older person (JB036), and village-only home-based elder-care service station availability and number served (JB037–JB038). Keep the community and village routes distinct; these are contextual reports, not individual caregiving exposure or service receipt."),
 }
 MAP={
  "community_water_sources":["jb006_1","jb006_2","jb006_3","jb006_4","jb006_5","jb006_6","jb006_7","jb006_8"],
@@ -90,6 +92,8 @@ MAP={
  "community_other_subsidy_program_roster":[*[f"jg009_{i}_" for i in range(1,6)],*[f"jg009_1_{i}_" for i in range(1,6)],*[f"jg010_{i}_" for i in range(1,6)],*[f"jg011_{i}_" for i in range(1,6)],*[f"jg012_{i}_" for i in range(1,6)]],
  "community_urban_resident_medical_insurance_context":["jf010s1","jf011",*[f"jf012_{i}" for i in range(1,7)],"jf013"],
  "community_rural_cooperative_medical_insurance_context":["jf010s2","jf014",*[f"jf015_{i}" for i in range(1,9)],"jf016"],
+ "community_eldercare_center_context":["jb030","jb031","jb032","jb033s1","jb033s2","jb033s3","jb033s4","jb034","jb035"],
+ "community_home_eldercare_context":["jb036","jb037","jb038"],
 }
 
 # The 2011 Community Questionnaire pages 10, 21–22, and 32–33 explicitly
@@ -184,6 +188,7 @@ QUESTIONNAIRE_REVIEWED = {
  "community_nrps_program","community_orps_program",
  "community_other_subsidy_program_roster",
  "community_urban_resident_medical_insurance_context","community_rural_cooperative_medical_insurance_context",
+ "community_eldercare_center_context","community_home_eldercare_context",
  *[cid for cid in CONCEPTS if cid.startswith("community_kindergarten_") or
     cid.startswith("community_primary_school_") or cid.startswith("community_junior_middle_school_") or
     cid.startswith("community_senior_high_school_") or cid.startswith("community_post_office_") or
@@ -208,12 +213,14 @@ def validate_added_source_mappings():
  cb=" ".join(cpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
  other_subsidy_codes=set(MAP["community_other_subsidy_program_roster"])
  insurance_codes=set(MAP["community_urban_resident_medical_insurance_context"]+MAP["community_rural_cooperative_medical_insurance_context"])
- codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program","community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program") for code in MAP[cid]}
+ codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program","community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program","community_eldercare_center_context","community_home_eldercare_context") for code in MAP[cid]}
  for code in codes:
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
   q_norm="".join(ch for ch in q if ch.isalnum())
   cb_norm="".join(ch for ch in cb if ch.isalnum())
-  if code_norm not in q_norm or code_norm not in cb_norm:
+  questionnaire_code = code.split("s", 1)[0] if code.lower().startswith("jb033s") else code
+  questionnaire_code_norm="".join(ch for ch in questionnaire_code.casefold() if ch.isalnum())
+  if questionnaire_code_norm not in q_norm or code_norm not in cb_norm:
    raise ValueError(f"Official 2011 community questionnaire/Codebook missing mapped field {code}")
  for code in other_subsidy_codes:
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
@@ -232,6 +239,16 @@ def validate_added_source_mappings():
      or "how many households in your village/community participated in urban resident medical insurance" not in q
      or "how many households in your village/community participated in rural cooperative medical insurance" not in q):
   raise ValueError("Official questionnaire's community health-insurance routes or participation items missing")
+ q_alnum="".join(ch for ch in q if ch.isalnum())
+ if any(phrase not in q_alnum for phrase in (
+     "doesyourcommunityhavecommunitybasedelderlycarecenter",
+     "skiptojb036",
+     "whatservicesareprovidedcircleallthatapply",
+     "howmucheachelderneedtopayforit",
+     "percentageofhouseholdsthathirenanny",
+     "doesyourvillagehaveafamilybasedeldercarecenter",
+     "howmanypersonsareserved")):
+  raise ValueError("Official questionnaire's elder-care items/routes missing")
  required_q=(
   "what is the physical area of this village/community",
   "how many of the land is arable land at the end of the year 2010",
@@ -294,6 +311,10 @@ def validate_added_source_mappings():
   "skip to jg036",
   "2010",
   "yuan/month",
+  "square meters",
+  "persons",
+  "yuan/year",
+  "percentage of households",
  )
  for phrase in required_q:
   phrase_norm="".join(ch for ch in phrase if ch.isalnum())
@@ -320,10 +341,13 @@ def main():
    for r in hit.drop_duplicates(["module","variable","variable_label"]).itertuples():
     is_reviewed = cid in QUESTIONNAIRE_REVIEWED
     code_l = code.lower()
+    unit = ""
     if code_l.startswith("jb028_"):
      evidence="CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label."
     elif cid in {"community_urban_resident_medical_insurance_context","community_rural_cooperative_medical_insurance_context"}:
      evidence="CHARLS 2011 Community Questionnaire, Part F, JF010 multiple-selection routes and program-specific JF011–JF016 follow-ups; start year, year-indexed cumulative household counts, and annual premium checked against official Codebook labels; frequencies omitted."
+    elif cid in {"community_eldercare_center_context","community_home_eldercare_context"}:
+     evidence="CHARLS 2011 Community Questionnaire, Part B pp.13–14 (PDF pp.16–17), JB030–JB038; community-only versus village-only routing, JB030 No-skip, listed services and units checked against official Codebook; frequencies omitted."
     elif code_l.startswith("jf"):
      evidence="CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label."
     elif code_l.startswith("ji002_"):
@@ -650,6 +674,24 @@ def main():
      unit="RMB yuan/ton"
     elif code_l == "jj024":
      unit="RMB yuan/kWh"
+    elif code_l == "jb031":
+     unit="square meters"
+    elif code_l in {"jb032", "jb038"}:
+     unit="persons"
+    elif code_l == "jb034":
+     unit="Yuan/year"
+    elif code_l == "jb036":
+     unit="percent of community households"
+    if cid == "community_eldercare_center_context":
+     if code_l == "jb030": caveat="Community-only CAPI item reporting whether a community-based elderly care center exists. No routes to JB036, skipping JB031–JB035; structural absence is not zero or a negative response. Community aggregate, not individual service use."
+     elif code_l in {"jb031", "jb032"}: caveat=f"Conditional community-level {('center area in square meters' if code_l == 'jb031' else 'number of older people using the center')}, asked only after JB030=Yes; preserve the route and validate special values in the authorized release."
+     elif code_l.startswith("jb033s"): caveat="Separate multiple-response service slot for a community-based elderly care center (health care, entertainment activities, exercise equipment, or other). Slots are distinct; do not treat their numeric suffixes as an ordinal score. Conditional on JB030=Yes."
+     elif code_l == "jb034": caveat="Annual fee per older user of the community-based center, in Yuan/year; the questionnaire explicitly instructs 0 when services are free. Conditional on JB030=Yes; validate special values in the authorized release."
+     elif code_l == "jb035": caveat="Reported funding source(s) for establishing/running the community center. Preserve official nominal categories and conditional JB030=Yes route; this is not a participant's benefit or household expenditure."
+    elif cid == "community_home_eldercare_context":
+     if code_l == "jb036": caveat="Community-informant estimate of the percentage of households employing a live-in nanny to care for an older person; aggregate context, not respondent household status. Verify scale and special values in the authorized release."
+     elif code_l == "jb037": caveat="Village-only Yes/No report of a family-based elder-care service station. No routes to JB039; village/community service availability, not individual receipt."
+     elif code_l == "jb038": caveat="Number of older people served by the village family-based elder-care station, conditional on JB037=Yes; preserve route and validate special values in the authorized release."
     elif code_l == "jb027":
      unit="km"
     elif code_l in {"ja039_1", "ja039_2"}:
@@ -688,8 +730,6 @@ def main():
      unit="percent of village households"
     elif code_l.startswith("ji003_"):
      unit={"b":"year","c":"month","d":"year","e":"month","f":"people","g":"percent of community population","h":"percent of grain output decline"}.get(code_l[-1],"")
-    else:
-     unit=""
     rows.append({"concept_id":cid,"concept_label":label,"domain":domain,"wave":2011,
      "code":code,"module":r.module,"source_label":r.variable_label,
      "source_evidence":evidence,

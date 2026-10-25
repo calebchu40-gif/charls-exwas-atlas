@@ -84,7 +84,7 @@ c,measurement metadata,unresolved release-field identity/data-type discrepancy,1
 c,measurement metadata,unstructured other-specify response text,7,7,2
 c,measurement metadata,unstructured other-use response text,4,3,2
 c,measurement metadata,unsupported prior-wave disease-awareness slots,15,15,1
-c,mortality and end-of-life outcomes,去世日期历法,2,1,2
+c,mortality and end-of-life outcomes,mortality date calendar interpretation,2,1,2
 c,source-reviewed chronic-disease timing metadata,reported diagnosis/knowledge age metadata,56,14,4
 c,source-reviewed context metadata,alcohol beverage-type selector,3,3,1
 c,source-reviewed context metadata,past-year alcohol threshold and route,3,2,3
@@ -103,7 +103,7 @@ e,behavior,physical activity,84,36,5
 e,behavior,sleep,25,16,5
 e,behavior,smoking and tobacco,51,26,5
 e,behavioral exposures,smoking cessation timing component; questionnaire/Codebook identity conflict,2,2,1
-e,community context,"environment, infrastructure, and services",350,350,1
+e,community context,"environment, infrastructure, and services",362,362,1
 e,early-life and family socioeconomic context,childhood residential setting,1,1,1
 e,early-life and family socioeconomic context,parent marital and ethnic context,3,3,2
 e,environmental perception,self-reported air-quality satisfaction,1,1,1
@@ -251,9 +251,9 @@ p,health and symptoms,subjective life expectancy,5,2,5
 p,healthcare access,COVID-period delayed or unmet medical care,15,15,1
 p,healthcare access,"insurance, outpatient and inpatient utilization",93,54,4
 p,mental health,depressive symptoms and emotional wellbeing,52,19,5
-p,mortality and end-of-life outcomes,去世日期组成部分,5,3,2
-p,mortality and end-of-life outcomes,末次疾病至死亡间隔,2,2,1
-p,mortality and end-of-life outcomes,死亡是否预期,2,2,2
+p,mortality and end-of-life outcomes,date of death components,5,3,2
+p,mortality and end-of-life outcomes,final illness-to-death interval,2,2,1
+p,mortality and end-of-life outcomes,proxy-reported death expectedness,2,2,2
 p,pandemic-related outcomes,"COVID-period infection, behavior, functioning, and emotional response",25,25,1
 p,physical function,assistive-device use in ADL/IADL support,26,12,3
 p,physical function,reported disability history / brain_intellectual,10,4,4

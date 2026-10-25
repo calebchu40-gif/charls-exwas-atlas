@@ -427,6 +427,9 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_keyword_epc_overlap_review.py",
     "apply_residential_history_search_label_review.py",
     "apply_community_value_label_status.py",
+    # Reapply field-specific mortality review after the main catalog rebuild;
+    # otherwise the default value-label status overwrites reviewed source states.
+    "apply_mortality_endpoint_catalog_review.py",
     "build_candidate_pair_explorer.py",
     "deduplicate_exact_catalog_rows.py",
     "site_catalog_shards.py",

@@ -3110,6 +3110,178 @@
     ]
   },
   {
+    "concept_id": "community_eldercare_center_context",
+    "label": "Community-based elderly care center context",
+    "domain": "Community healthcare and social-care access",
+    "caveat": "2011 community-informant report of community-based elderly care center availability (CAPI community-only), area, number of older users, listed services, annual user fee and funding source. JB030 No routes past the center details; preserve that denominator. These are community-level service context measures, not participant-level service use or quality.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb030",
+        "module": "community",
+        "source_label": "Have Community-Based Elderly Care Center",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.13–14 (PDF pp.16–17), JB030–JB038; community-only versus village-only routing, JB030 No-skip, listed services and units checked against official Codebook; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Community-only CAPI item reporting whether a community-based elderly care center exists. No routes to JB036, skipping JB031–JB035; structural absence is not zero or a negative response. Community aggregate, not individual service use.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb031",
+        "module": "community",
+        "source_label": "How Large is the Elderly Care Center",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.13–14 (PDF pp.16–17), JB030–JB038; community-only versus village-only routing, JB030 No-skip, listed services and units checked against official Codebook; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "square meters",
+        "caveat": "Conditional community-level center area in square meters, asked only after JB030=Yes; preserve the route and validate special values in the authorized release.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb032",
+        "module": "community",
+        "source_label": "Num. of Elderly Using the Elderly Care Center",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.13–14 (PDF pp.16–17), JB030–JB038; community-only versus village-only routing, JB030 No-skip, listed services and units checked against official Codebook; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "persons",
+        "caveat": "Conditional community-level number of older people using the center, asked only after JB030=Yes; preserve the route and validate special values in the authorized release.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb033s1",
+        "module": "community",
+        "source_label": "Which Type of Service",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.13–14 (PDF pp.16–17), JB030–JB038; community-only versus village-only routing, JB030 No-skip, listed services and units checked against official Codebook; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Separate multiple-response service slot for a community-based elderly care center (health care, entertainment activities, exercise equipment, or other). Slots are distinct; do not treat their numeric suffixes as an ordinal score. Conditional on JB030=Yes.",
+        "value_labels": "1=Health care",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb033s2",
+        "module": "community",
+        "source_label": "Which Type of Service",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.13–14 (PDF pp.16–17), JB030–JB038; community-only versus village-only routing, JB030 No-skip, listed services and units checked against official Codebook; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Separate multiple-response service slot for a community-based elderly care center (health care, entertainment activities, exercise equipment, or other). Slots are distinct; do not treat their numeric suffixes as an ordinal score. Conditional on JB030=Yes.",
+        "value_labels": "2=Entertain activities",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb033s3",
+        "module": "community",
+        "source_label": "Which Type of Service",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.13–14 (PDF pp.16–17), JB030–JB038; community-only versus village-only routing, JB030 No-skip, listed services and units checked against official Codebook; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Separate multiple-response service slot for a community-based elderly care center (health care, entertainment activities, exercise equipment, or other). Slots are distinct; do not treat their numeric suffixes as an ordinal score. Conditional on JB030=Yes.",
+        "value_labels": "3=Exercise equipments",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb033s4",
+        "module": "community",
+        "source_label": "Which Type of Service",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.13–14 (PDF pp.16–17), JB030–JB038; community-only versus village-only routing, JB030 No-skip, listed services and units checked against official Codebook; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Separate multiple-response service slot for a community-based elderly care center (health care, entertainment activities, exercise equipment, or other). Slots are distinct; do not treat their numeric suffixes as an ordinal score. Conditional on JB030=Yes.",
+        "value_labels": "4=Other, please specify:",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb034",
+        "module": "community",
+        "source_label": "How Much Each Elderly Need to Pay",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.13–14 (PDF pp.16–17), JB030–JB038; community-only versus village-only routing, JB030 No-skip, listed services and units checked against official Codebook; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/year",
+        "caveat": "Annual fee per older user of the community-based center, in Yuan/year; the questionnaire explicitly instructs 0 when services are free. Conditional on JB030=Yes; validate special values in the authorized release.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb035",
+        "module": "community",
+        "source_label": "Who Provides the Funds",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.13–14 (PDF pp.16–17), JB030–JB038; community-only versus village-only routing, JB030 No-skip, listed services and units checked against official Codebook; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Reported funding source(s) for establishing/running the community center. Preserve official nominal categories and conditional JB030=Yes route; this is not a participant's benefit or household expenditure.",
+        "value_labels": "1=Community; 2=Country finance; 3=Both; 4=Others",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_home_eldercare_context",
+    "label": "Village/home-based elder-care context",
+    "domain": "Community healthcare and social-care access",
+    "caveat": "2011 community/village-level elder-care context: share of households employing a live-in caregiver for an older person (JB036), and village-only home-based elder-care service station availability and number served (JB037–JB038). Keep the community and village routes distinct; these are contextual reports, not individual caregiving exposure or service receipt.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jb036",
+        "module": "community",
+        "source_label": "Percentage of Households with Nanny",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.13–14 (PDF pp.16–17), JB030–JB038; community-only versus village-only routing, JB030 No-skip, listed services and units checked against official Codebook; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "percent of community households",
+        "caveat": "Community-informant estimate of the percentage of households employing a live-in nanny to care for an older person; aggregate context, not respondent household status. Verify scale and special values in the authorized release.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb037",
+        "module": "community",
+        "source_label": "Family-Based Elder-Care Center",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.13–14 (PDF pp.16–17), JB030–JB038; community-only versus village-only routing, JB030 No-skip, listed services and units checked against official Codebook; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Village-only Yes/No report of a family-based elder-care service station. No routes to JB039; village/community service availability, not individual receipt.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jb038",
+        "module": "community",
+        "source_label": "Num. of People Served",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part B pp.13–14 (PDF pp.16–17), JB030–JB038; community-only versus village-only routing, JB030 No-skip, listed services and units checked against official Codebook; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "persons",
+        "caveat": "Number of older people served by the village family-based elder-care station, conditional on JB037=Yes; preserve route and validate special values in the authorized release.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
     "concept_id": "community_kindergarten_count",
     "label": "Kindergartens in community (count)",
     "domain": "Community infrastructure",
