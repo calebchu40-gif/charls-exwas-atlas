@@ -1,3 +1,8 @@
+## 2026-10-25 Prepare a checksum-locked 2015 blood intake gate
+
+- Added `scripts/audit_2015_blood_intake.py` to verify the official 2019-06-20 Blood Data download SHA1 and inspect only the Stata header. It checks the 13,420-row release count and ID, `Blood_weight`, 16 analytes, fasting and triglyceride top-code fields. It never merges or reads respondent values; aggregate QA stays under protected local storage.
+- Added synthetic regression tests, documented the user-account download route and created the private `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\incoming_2015_blood` folder. The official file remains absent; no restricted portal access or credentials were used.
+
 ## 2026-10-25 Show 2014 Life History sample and source details (v113 deployed)
 
 > Status refresh, 2026-10-25: v112 is live and verified (commit `fe3787e`, Validate #467, Pages Deploy #233). The homepage loads `app.js?v=112` and includes the 2011 baseline PSU split-community caveat. v111 separately surfaced the 2014 Life History directory (18 concepts, 471 field mappings; 466 E, 5 P), excluded from regular-wave counts and weighted analyses. The official 2014 release-note, questionnaire, and codebook PDFs have locally verified SHA1 matches to CHARLS posted checksums. v113 is being prepared to show the official 2014 sample and no-weight boundaries directly on the card. The current gate remains source/version and survey-design readiness, not site hosting.
