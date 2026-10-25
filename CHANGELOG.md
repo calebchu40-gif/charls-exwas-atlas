@@ -451,3 +451,9 @@ This file records project-level changes that affect reproducibility, methods, da
 
 - 将2020年龄、性别及公式输入字段的C目录状态改为逐字段来源描述；明确年龄派生和性别输入/预载的角色差异，并将主观预期寿命题目标年龄、访员观察访谈语言保留为测量上下文，避免把它们统称为age/gender协变量。
 - 更新8条来源含义已审阅字段的子类别及中文显示标签。波次/角色限定回归测试、C子类别标签测试及完整422项Python测试均通过；公开负载、92项分析锁、JS语法检查通过。不改变任何调整模型决定，不读取个人数据。
+## 2026-10-25 Link partner-context C/E overlaps to reviewed sources
+
+- Linked six exact-wave C rows for partner highest education and respondent marital status to their reviewed candidate exposure concepts and official questionnaire/Codebook sources.
+- Preserved respondent versus partner distinction, original category codes, and route-specific denominator caveats; an E/C overlap is not a default adjustment recommendation and cannot adjust for itself.
+- Added the updater to both build paths, a row-level audit, a public C-directory regression test, and a Chinese subcategory label. The three cohabitation rows remain outside this update because their cross-wave route definitions are not fully resolved. The C directory remains 982 rows; keyword-only subcategory rows decreased to 111 across 61 source codes.
+- Validation: clean finalization, all 429 Python tests, public payload validation, exact 92-lock reconciliation, JavaScript syntax, and Python compilation passed. No participant data or frequencies were read; association models and actual pairwise Ns remain 0.

@@ -1,5 +1,9 @@
 # Public-site deployment verification — 2026-10-24
 
+## Follow-up deployment — formal-schooling C/E source links (2026-10-25)
+
+Commit `67ee4a0` passed Pages deploy [#217 / `40160109124`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40160109124) and metadata validation [#436 / `40160109096`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40160109096). The live site served v96 and the public C catalogue included the nine formal-schooling overlap rows with role-specific route caveats. The subsequent partner-context C/E overlap update is local v97 and is not part of this release.
+
 Repository: `calebchu40-gif/charls-exwas-atlas`  
 Commit: `a5a42e4` (`Rebuild CHARLS digital and phenotype metadata consistently`)  
 Public site: https://calebchu40-gif.github.io/charls-exwas-atlas/
