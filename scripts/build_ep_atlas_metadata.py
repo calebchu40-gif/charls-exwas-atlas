@@ -123,6 +123,7 @@ FULL_PIPELINE_SCRIPTS = (
     "apply_wave5_digital_behavior_review.py",
     "apply_reproductive_history_exposure_review.py",
     "apply_housing_context_source_review.py",
+    "apply_housing_owner_relation_label_status.py",
     "build_ep_concept_source_crosswalk.py",
     "apply_catalog_role_overrides.py",
     "apply_walking_speed_source_review.py",
@@ -130,6 +131,7 @@ FULL_PIPELINE_SCRIPTS = (
     "apply_2018_current_home_measurement_review.py",
     "apply_housing_room_count_review.py",
     "apply_housing_area_year_review.py",
+    "apply_housing_owner_relation_label_status.py",
     "apply_weekly_household_food_expenditure_review.py",
     "apply_household_food_role_review.py",
     "apply_building_floor_access_measure_review.py",
@@ -174,6 +176,7 @@ FULL_PIPELINE_SCRIPTS = (
     # initial E/P index build. Regenerate the index from those final sources,
     # then restore three housing reviews that intentionally add index-only
     # detail beyond their source crosswalks.
+    "apply_housing_owner_relation_label_status.py",
     "build_ep_concept_source_crosswalk.py",
     "apply_2018_household_property_value_review.py",
     "apply_2018_housing_roster_context_review.py",
@@ -280,6 +283,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_wave5_core_demographic_review.py",
     "apply_wave5_digital_behavior_review.py",
     "apply_reproductive_history_exposure_review.py",
+    "apply_housing_owner_relation_label_status.py",
     "build_ep_concept_source_crosswalk.py",
     "apply_catalog_role_overrides.py",
     "apply_walking_speed_source_review.py",
@@ -287,6 +291,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_2018_current_home_measurement_review.py",
     "apply_housing_room_count_review.py",
     "apply_housing_area_year_review.py",
+    "apply_housing_owner_relation_label_status.py",
     "apply_weekly_household_food_expenditure_review.py",
     "apply_household_food_role_review.py",
     "apply_building_floor_access_measure_review.py",
@@ -327,6 +332,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_housing_context_source_review.py",
     "apply_housing_area_year_review.py",
     "apply_cognition_self_rated_memory_review.py",
+    "apply_housing_owner_relation_label_status.py",
     # The domain review scripts update their source crosswalks after the first
     # concept-index build. Rebuild the index from those final sources and
     # reapply housing-only index details that are not stored in the inputs.
