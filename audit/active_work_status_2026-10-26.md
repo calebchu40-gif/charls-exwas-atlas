@@ -1,12 +1,12 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
-## Latest local state (2026-10-26; not yet pushed)
+## Latest state (2026-10-26; commit 4b257aa pushed to main)
 
 The 2011 Community Questionnaire Part C population-source review added 24 mappings across five provisional community-context E concepts; JC014/JC016 open-text group names and JC026 community-informant role remain C-only metadata. Together with the existing adult-education fields, the 39 JC fields now have explicit dispositions. No respondent text, respondent records, Codebook frequencies, or association results were used. Details: [`community_part_c_population_source_coverage_review_2026-10-26.md`](community_part_c_population_source_coverage_review_2026-10-26.md).
 
 Full metadata finalization completed 159/159 steps in 7.4 minutes. Current shards: E/P/C=6,116/2,116/987; E/P concepts=1,576 (E=1,270, P=331, including dual-role concepts); E/P concept-source mappings=8,126; C catalog rows=987. Metadata co-availability pairs are 136,510 / 141,920 / 143,137 / 105,493 / 21,630 for 2011/2013/2015/2018/2020. They are not analytic sample sizes. Formal association models and pairwise-complete analytic N remain 0; the exact 92 analysis locks are unchanged.
 
-After synchronizing the current snapshot, all 490 tests pass. Public-payload validation, exact 92-lock validation, JavaScript syntax, and `git diff --check` pass. This local batch is not yet committed, pushed, deployed, or live-verified.
+After synchronizing the current snapshot, all 490 tests pass. Public-payload validation, exact 92-lock validation, JavaScript syntax, and `git diff --check` pass. Commit `4b257aa` is pushed to `main`. GitHub Actions and live Pages deployment remain unverified: the public Actions API currently returns HTTP 403 rate-limit exceeded, so do not report a deployment as complete until the workflow and served assets are confirmed.
 
 ## Whole-project progress and remaining work
 
