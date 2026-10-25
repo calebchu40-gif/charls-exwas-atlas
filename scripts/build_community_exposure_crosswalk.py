@@ -36,6 +36,7 @@ CONCEPTS={
  "community_household_amenity_penetration":("Community household communication and appliance penetration","Community socioeconomic context","2011 village-informant estimates of the share of households with fixed telephones, one or more cell phones, televisions, and refrigerators. These are aggregate community percentages, not the sampled household's ownership, use, or an individual's digital exposure; preserve each amenity separately."),
  "community_historical_disaster_epidemic_severity":("Community history of severe disasters and epidemics","Community environment","2011 community informant retrospectively identifies up to three most severe listed natural disasters or epidemics since 1945, with event start/end month and year, deaths/injuries, affected population share, and grain-output decline. Preserve event ranks, dates, event types and impact measures separately; long recall and community-level reporting do not establish a sampled person's direct exposure."),
  "community_reforestation_subsidy_program":("Community reforestation subsidy program context","Community environmental-policy context","2011 village-only report of whether reforestation subsidies were implemented, their start year, the number of village households receiving them in 2010, and the average subsidy standard. These describe a local policy/program and uptake, not forest cover, greenness, ecological restoration success, household receipt linkage, or a personal environmental exposure."),
+ "community_farm_subsidy_program":("Community agricultural subsidy program context","Community agricultural-policy context","2011 village-only report of whether agricultural subsidies were implemented, their start year, the number of village households receiving subsidies in 2010, and the average standard per mu. The questionnaire names grain direct payments, improved-seed subsidies, farm-machinery purchase subsidies and comprehensive agricultural-input subsidies as examples. This is broad local policy context, not a specific pesticide/fertilizer measure, household receipt linkage or individual exposure."),
 }
 MAP={
  "community_water_sources":["jb006_1","jb006_2","jb006_3","jb006_4","jb006_5","jb006_6","jb006_7","jb006_8"],
@@ -68,6 +69,7 @@ MAP={
  "community_household_amenity_penetration":["jb023","jb024","jb025","jb026"],
  "community_historical_disaster_epidemic_severity":[f"ji003_{i}{suffix}" for i in range(1,4) for suffix in "abcdefgh"],
  "community_reforestation_subsidy_program":["jg021","jg022","jg023","jg024"],
+ "community_farm_subsidy_program":["jg017","jg018","jg019","jg020"],
 }
 
 # The 2011 Community Questionnaire pages 10, 21–22, and 32–33 explicitly
@@ -154,6 +156,7 @@ QUESTIONNAIRE_REVIEWED = {
  "community_household_amenity_penetration",
  "community_historical_disaster_epidemic_severity",
  "community_reforestation_subsidy_program",
+ "community_farm_subsidy_program",
  *[cid for cid in CONCEPTS if cid.startswith("community_kindergarten_") or
     cid.startswith("community_primary_school_") or cid.startswith("community_junior_middle_school_") or
     cid.startswith("community_senior_high_school_") or cid.startswith("community_post_office_") or
@@ -176,7 +179,7 @@ def validate_added_source_mappings():
  cpath=ROOT/"sources_official"/"CHARLS_2011_Codebook_extracted.txt"
  q=" ".join(qpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
  cb=" ".join(cpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
- codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program") for code in MAP[cid]}
+ codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program") for code in MAP[cid]}
  for code in codes:
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
   q_norm="".join(ch for ch in q if ch.isalnum())
@@ -229,6 +232,9 @@ def validate_added_source_mappings():
   "when did subsidies for reforestation start to be implemented in this village",
   "how many households in this village received subsidies for reforestation in year 2010",
   "what is the average subsidies standard",
+  "does your village have farm subsidies",
+  "when did farm subsidies start to be implemented in this village",
+  "how many households in this village received farm subsidies in year 2010",
  )
  for phrase in required_q:
   if phrase not in q:
@@ -277,6 +283,8 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part I pp.34–35 (PDF pp.37–38), JI003 retrospective three-event table since 1945; listed disasters/epidemics, event dates and community impact fields checked against the official Codebook."
     elif cid == "community_reforestation_subsidy_program":
      evidence="CHARLS 2011 Community Questionnaire, Part G, village-only JG021–JG024; program route, 2010 household uptake count and stated subsidy unit checked against official Codebook labels; frequencies omitted."
+    elif cid == "community_farm_subsidy_program":
+     evidence="CHARLS 2011 Community Questionnaire, Part G, village-only JG017–JG020; subsidy examples, No-skip route, 2010 household uptake count and stated per-mu unit checked against official Codebook labels; frequencies omitted."
     elif cid.startswith("community_observed_") or cid in {"community_built_form_organization", "community_accessibility_observation"}:
      evidence="CHARLS 2011 Community Questionnaire, Part K interviewer observations; item-specific 1–7 endpoint anchors verified."
     elif is_reviewed:
@@ -310,6 +318,18 @@ def main():
      caveat="Number of village households reported to have received reforestation subsidies in 2010, conditional on the village program route. This is not the sampled household's receipt status or a population-standardized rate."
     elif code_l == "jg024":
      unit="Yuan/mu"
+     caveat="Community-reported average reforestation-subsidy standard, conditional on JG021=Yes. The questionnaire states Yuan per mu; do not treat it as an individual's payment or evidence of achieved forest restoration."
+    elif code_l == "jg017":
+     caveat="Village-only Yes/No report of an agricultural-subsidy program, with examples including grain direct payments, improved seeds, machinery purchases and agricultural inputs. A No response skips JG018–JG020. This broad policy report does not establish a specific subsidy, household receipt, fertilizer/pesticide use or individual exposure."
+    elif code_l == "jg018":
+     unit="year"
+     caveat="Year the village agricultural-subsidy program began, asked only after JG017=Yes. Preserve the route and validate special values in the authorized release."
+    elif code_l == "jg019":
+     unit="households"
+     caveat="Number of village households reported to have received agricultural subsidies in 2010, conditional on JG017=Yes. Not the sampled household's receipt status or a population-standardized rate."
+    elif code_l == "jg020":
+     unit="Yuan/mu"
+     caveat="Community-reported average agricultural-subsidy standard per mu, conditional on JG017=Yes. Do not treat it as an individual's payment or a chemical-use/exposure measure."
      caveat="Community-reported average reforestation-subsidy standard, conditional on JG021=Yes. The questionnaire states Yuan per mu; do not treat it as an individual's payment or evidence of achieved forest restoration."
     elif code_l in {"ja003_1", "ja003_2"}:
      unit="km²" if code_l == "ja003_1" else "mu"
@@ -395,6 +415,12 @@ def main():
     elif code_l == "jg022":
      unit="year"
     elif code_l == "jg024":
+     unit="Yuan/mu"
+    elif code_l == "jg018":
+     unit="year"
+    elif code_l == "jg019":
+     unit="households"
+    elif code_l == "jg020":
      unit="Yuan/mu"
     elif code_l.startswith("jb028_1_") or code_l.startswith("jf002_1_"):
      unit="facilities"

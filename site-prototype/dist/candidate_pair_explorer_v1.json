@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 605,
+      "exposure_count": 606,
       "phenotype_count": 213,
-      "candidate_pair_count": 128842,
+      "candidate_pair_count": 129055,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -860,6 +860,56 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "Daily rental price for large agricultural machinery, asked only after JJ003=Yes; community-level production price, not an individual cost or exposure."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_farm_subsidy_program",
+          "label": "Community agricultural subsidy program context",
+          "domain": "Community agricultural-policy context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jg017",
+              "label": "Does Your V/C Have Farm Subsidies",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only Yes/No report of an agricultural-subsidy program, with examples including grain direct payments, improved seeds, machinery purchases and agricultural inputs. A No response skips JG018–JG020. This broad policy report does not establish a specific subsidy, household receipt, fertilizer/pesticide use or individual exposure."
+            },
+            {
+              "code": "jg018",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only Yes/No report of an agricultural-subsidy program, with examples including grain direct payments, improved seeds, machinery purchases and agricultural inputs. A No response skips JG018–JG020. This broad policy report does not establish a specific subsidy, household receipt, fertilizer/pesticide use or individual exposure."
+            },
+            {
+              "code": "jg019",
+              "label": "Num. of Households Received Farm Subsidies",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only Yes/No report of an agricultural-subsidy program, with examples including grain direct payments, improved seeds, machinery purchases and agricultural inputs. A No response skips JG018–JG020. This broad policy report does not establish a specific subsidy, household receipt, fertilizer/pesticide use or individual exposure."
+            },
+            {
+              "code": "jg020",
+              "label": "Average Subsidy Standard",
+              "module": "community",
+              "unit": "Yuan/mu",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported average reforestation-subsidy standard, conditional on JG021=Yes. The questionnaire states Yuan per mu; do not treat it as an individual's payment or evidence of achieved forest restoration."
             }
           ]
         },
@@ -3349,7 +3399,7 @@
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "Community-reported average reforestation-subsidy standard, conditional on JG021=Yes. The questionnaire states Yuan per mu; do not treat it as an individual's payment or evidence of achieved forest restoration."
+              "caveat": "Number of village households reported to have received reforestation subsidies in 2010, conditional on the village program route. This is not the sampled household's receipt status or a population-standardized rate."
             }
           ]
         },
@@ -104374,6 +104424,56 @@
       ]
     },
     {
+      "concept_id": "community_farm_subsidy_program",
+      "label": "Community agricultural subsidy program context",
+      "domain": "Community agricultural-policy context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jg017",
+          "label": "Does Your V/C Have Farm Subsidies",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only Yes/No report of an agricultural-subsidy program, with examples including grain direct payments, improved seeds, machinery purchases and agricultural inputs. A No response skips JG018–JG020. This broad policy report does not establish a specific subsidy, household receipt, fertilizer/pesticide use or individual exposure."
+        },
+        {
+          "code": "jg018",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only Yes/No report of an agricultural-subsidy program, with examples including grain direct payments, improved seeds, machinery purchases and agricultural inputs. A No response skips JG018–JG020. This broad policy report does not establish a specific subsidy, household receipt, fertilizer/pesticide use or individual exposure."
+        },
+        {
+          "code": "jg019",
+          "label": "Num. of Households Received Farm Subsidies",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only Yes/No report of an agricultural-subsidy program, with examples including grain direct payments, improved seeds, machinery purchases and agricultural inputs. A No response skips JG018–JG020. This broad policy report does not establish a specific subsidy, household receipt, fertilizer/pesticide use or individual exposure."
+        },
+        {
+          "code": "jg020",
+          "label": "Average Subsidy Standard",
+          "module": "community",
+          "unit": "Yuan/mu",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported average reforestation-subsidy standard, conditional on JG021=Yes. The questionnaire states Yuan per mu; do not treat it as an individual's payment or evidence of achieved forest restoration."
+        }
+      ]
+    },
+    {
       "concept_id": "community_chinese_medicine_hospital_availability_and_count",
       "label": "Community availability/count: Chinese medicine hospital",
       "domain": "Community healthcare access",
@@ -106859,7 +106959,7 @@
           "value_labels": "",
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-          "caveat": "Community-reported average reforestation-subsidy standard, conditional on JG021=Yes. The questionnaire states Yuan per mu; do not treat it as an individual's payment or evidence of achieved forest restoration."
+          "caveat": "Number of village households reported to have received reforestation subsidies in 2010, conditional on the village program route. This is not the sampled household's receipt status or a population-standardized rate."
         }
       ]
     },
@@ -108048,9 +108148,9 @@
     "2013": {
       "baseline_wave": "2011",
       "followup_wave": "2013",
-      "exposure_count": 114,
+      "exposure_count": 115,
       "phenotype_count": 224,
-      "candidate_pair_count": 25536,
+      "candidate_pair_count": 25760,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -108286,9 +108386,9 @@
     "2015": {
       "baseline_wave": "2011",
       "followup_wave": "2015",
-      "exposure_count": 114,
+      "exposure_count": 115,
       "phenotype_count": 239,
-      "candidate_pair_count": 27246,
+      "candidate_pair_count": 27485,
       "phenotype_concept_ids": [
         "offspring_health_status_2015",
         "offspring_self_care_ability_2015",
@@ -108539,9 +108639,9 @@
     "2018": {
       "baseline_wave": "2011",
       "followup_wave": "2018",
-      "exposure_count": 114,
+      "exposure_count": 115,
       "phenotype_count": 211,
-      "candidate_pair_count": 24054,
+      "candidate_pair_count": 24265,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -108764,9 +108864,9 @@
     "2020": {
       "baseline_wave": "2011",
       "followup_wave": "2020",
-      "exposure_count": 114,
+      "exposure_count": 115,
       "phenotype_count": 76,
-      "candidate_pair_count": 8664,
+      "candidate_pair_count": 8740,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",

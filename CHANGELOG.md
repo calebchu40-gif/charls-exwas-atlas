@@ -1,3 +1,9 @@
+## 2026-10-25 Add community agricultural subsidy context (v116 candidate)
+
+- Added the 2011 village-level JG017–JG020 agricultural subsidy program as a separate policy-context candidate: program presence, start year, 2010 recipient-household count, and average Yuan/mu standard. Preserved the V-only route and No-skip logic. The concept explicitly does not represent household receipt, a specific fertilizer/pesticide measure, or individual exposure.
+- Regenerated public catalogue assets and metadata pair explorer: E/P/C rows=4,853/2,082/982; E/P concepts=1,488 (1,210 exposure, 303 phenotype, including 25 dual-role concepts); E/P concept-source mappings=6,829. The 2011 metadata co-availability count is 129,055. These are catalogue counts, not analytic sample sizes or results. Formal models and pairwise analytic Ns remain 0.
+- Full validation: 463 unit tests pass; public payload, exact 92-lock triage, JavaScript syntax, and diff checks pass. Deployment will run on push because public site assets changed. Audit: `audit/community_farm_subsidy_policy_review_2026-10-25.md`.
+
 ## 2026-10-25 Add community reforestation policy context (v115 candidate)
 
 - Added 2011 village-level JG021–JG024 as a community environmental-policy context candidate: program presence, start year, 2010 recipient-household count, and subsidy standard. The catalogue distinguishes this policy context from forest cover, ecological outcomes, household receipt, or individual pollutant dose.

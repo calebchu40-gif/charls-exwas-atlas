@@ -2034,6 +2034,66 @@
     ]
   },
   {
+    "concept_id": "community_farm_subsidy_program",
+    "label": "Community agricultural subsidy program context",
+    "domain": "Community agricultural-policy context",
+    "caveat": "2011 village-only report of whether agricultural subsidies were implemented, their start year, the number of village households receiving subsidies in 2010, and the average standard per mu. The questionnaire names grain direct payments, improved-seed subsidies, farm-machinery purchase subsidies and comprehensive agricultural-input subsidies as examples. This is broad local policy context, not a specific pesticide/fertilizer measure, household receipt linkage or individual exposure.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jg017",
+        "module": "community",
+        "source_label": "Does Your V/C Have Farm Subsidies",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, village-only JG017–JG020; subsidy examples, No-skip route, 2010 household uptake count and stated per-mu unit checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Village-only Yes/No report of an agricultural-subsidy program, with examples including grain direct payments, improved seeds, machinery purchases and agricultural inputs. A No response skips JG018–JG020. This broad policy report does not establish a specific subsidy, household receipt, fertilizer/pesticide use or individual exposure.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg018",
+        "module": "community",
+        "source_label": "Year",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, village-only JG017–JG020; subsidy examples, No-skip route, 2010 household uptake count and stated per-mu unit checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "year",
+        "caveat": "Year the village agricultural-subsidy program began, asked only after JG017=Yes. Preserve the route and validate special values in the authorized release.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg019",
+        "module": "community",
+        "source_label": "Num. of Households Received Farm Subsidies",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, village-only JG017–JG020; subsidy examples, No-skip route, 2010 household uptake count and stated per-mu unit checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "households",
+        "caveat": "Number of village households reported to have received agricultural subsidies in 2010, conditional on JG017=Yes. Not the sampled household's receipt status or a population-standardized rate.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg020",
+        "module": "community",
+        "source_label": "Average Subsidy Standard",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, village-only JG017–JG020; subsidy examples, No-skip route, 2010 household uptake count and stated per-mu unit checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/mu",
+        "caveat": "Community-reported average reforestation-subsidy standard, conditional on JG021=Yes. The questionnaire states Yuan per mu; do not treat it as an individual's payment or evidence of achieved forest restoration.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
     "concept_id": "community_kindergarten_count",
     "label": "Kindergartens in community (count)",
     "domain": "Community infrastructure",
