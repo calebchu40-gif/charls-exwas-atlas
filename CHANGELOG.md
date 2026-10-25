@@ -1,7 +1,11 @@
-## 2026-10-25 Add a five-wave measurement schedule to the landing page (v109 candidate)
+## 2026-10-25 Link and publish the five-wave measurement schedule (v110 candidate)
+
+- Added a direct link to the NIA Biomarker Network page where the 2018/2020 blood-collection claim appears, so visitors can inspect the source of the discrepancy. Updated the browser bundle cache key to v110. Local HTML/CSS/payload checks pass; deployment pending.
+
+## 2026-10-25 Add a five-wave measurement schedule to the landing page (v109 deployed)
 
 - Added a responsive five-wave overview so visitors can see at a glance that measures do not appear in every wave. It distinguishes 2011/2015 blood assay releases from 2013 physical measurements, the age-limited 2018 HCAP, and the absence of separate Biomarker/Blood Data files in the current Wave 5 official inventory.
-- Added direct CHARLS source links and a note that the NIA Biomarker Network's 2018/2020 blood-collection statement conflicts with the current official release inventory. Linked the panel to the detailed blood-marker catalogue. Local HTML/CSS/payload checks pending deployment.
+- Added direct CHARLS source links and a note that the NIA Biomarker Network's 2018/2020 blood-collection statement conflicts with the current official release inventory. Linked the panel to the detailed blood-marker catalogue. Commit `87c5d24` passed Validate #460 and Pages Deploy #230; live index loads `app.js?v=109` and contains all five wave cards.
 
 ## 2026-10-25 Clarify unresolved later-wave blood-collection source discrepancy
 
