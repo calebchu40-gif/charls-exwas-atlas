@@ -4,7 +4,7 @@
 - Transcribed only field-specific category labels: numeric checkbox codes from the exact Codebook section, ordinal codes from the Questionnaire with Codebook wording checked, and no invented labels for continuous measures. The parser now stops at the next variable heading; frequency counts, percentages, extrema, participant values, and analysis Ns are excluded.
 - Full metadata finalization completed in 9.6 minutes. E/P/C site catalogues contain 4,968/2,103/982 rows. The E/P metadata index contains 1,539 candidate concepts (1,240 E, 324 P, including 25 dual-role concepts); the 2020 candidate-pair index reports 19,689 metadata co-availability pairs, not fitted associations or sample sizes. Explicit label coverage is 3,718 of 7,071 E/P catalogue records; generic pending label status is 0 for E/P and C.
 - The exact 92 `DO NOT ANALYZE` locks were validated unchanged. No association models or participant-level results were generated. Audit: `audit/pandemic_context_candidate_review_2020.md`.
-- GitHub Pages deployment is pending this commit; versioned app asset is set to v121. CI/deployment status will be recorded after the remote workflow runs.
+- GitHub Pages Deploy #242 succeeded and the public page now serves v121. The first Validate run #489 exposed two stale documentation snapshots after the catalogue row-count update; the E/P/C totals and README snapshot have now been corrected. All 468 unit tests pass locally after this correction; a follow-up CI run is pending the documentation-fix commit.
 
 ## 2026-10-25 Add community medical-insurance policy context (v120 deployed)
 
