@@ -1622,6 +1622,21 @@ def main() -> None:
             out.loc[selected, "Value.Labels"] = item.get("value_labels", "")
             out.loc[selected, "Value.Label.Review"] = item.get("value_label_status", "")
             out.loc[selected, "Value.Label.Source"] = item.get("value_label_source", "")
+    # The classification fields have no response-label menu. Keep the
+    # official coding context and exact-lookup limitation visible, including
+    # the three Wave 1 pastime-work child fields.
+    if fl020_status_path.exists():
+        work_labels = pd.read_csv(fl020_status_path, dtype=str, encoding="utf-8-sig").fillna("")
+        classification_codes = {"fm055_gb", "fm055_isco", "fm055_indc"}
+        for item in work_labels.to_dict(orient="records"):
+            code = str(item.get("code", "")).lower()
+            if str(item.get("wave", "")) != "2011" or code not in classification_codes:
+                continue
+            selected = out["Source.Wave"].astype(str).eq("2011") & out["Variable.Name"].str.lower().eq(code)
+            out.loc[selected, "Value.Labels"] = ""
+            out.loc[selected, "Value.Label.Review"] = item.get("value_label_status", "classification lookup unresolved; no categories inferred")
+            out.loc[selected, "Value.Label.Source"] = item.get("value_label_source", "")
+
     covid_status_path = root / "audit" / "household_covid_economic_crosswalk_v1.csv"
     if covid_status_path.exists():
         covid_status = pd.read_csv(covid_status_path, dtype=str, encoding="utf-8-sig").fillna("")

@@ -7375,7 +7375,7 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "candidate only; 2011 FM055 classification edition and lookup unverified; DO NOT ANALYZE until verified",
+              "mapping_status": "candidate only; 2011 User Guide documents labor-module coding context, but exact FM055 child-field mapping and versioned lookup remain unverified; DO NOT ANALYZE",
               "caveat": "2011 only; preserve classification version and review detailed categories before public release."
             }
           ]
@@ -7395,8 +7395,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "candidate only; 2011 FM055 classification edition and lookup unverified; DO NOT ANALYZE until verified",
-              "caveat": "2011 only; preserve classification version and review detailed code categories before public release."
+              "mapping_status": "candidate only; 2011 User Guide documents labor-module coding context, but exact FM055 child-field mapping and versioned lookup remain unverified; DO NOT ANALYZE",
+              "caveat": "The 2011 User Guide reports six-digit GB occupation coding with added categories for the labor module; exact FM055 field mapping and lookup remain unverified. Keep separate from ISCO and do not interpret numerically."
             }
           ]
         },
@@ -7415,8 +7415,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "candidate only; 2011 FM055 classification edition and lookup unverified; DO NOT ANALYZE until verified",
-              "caveat": "2011 only; keep separate from GB classification and review detailed categories before public release."
+              "mapping_status": "candidate only; 2011 User Guide documents labor-module coding context, but exact FM055 child-field mapping and versioned lookup remain unverified; DO NOT ANALYZE",
+              "caveat": "The 2011 Codebook names an ISCO child field, but the 2011 User Guide does not explain this FM055 field or provide an ISCO lookup/version. Keep separate from GB and do not interpret numerically."
             }
           ]
         },

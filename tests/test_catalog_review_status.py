@@ -268,7 +268,12 @@ class CatalogReviewStatusTests(unittest.TestCase):
         self.assertIn("已检索的官方代码本中未找到该字段的类别标签；这不代表没有类别", app)
 
     def test_pastime_job_codes_remain_unverified_in_catalog_and_public_payload(self):
-        expected_status = "candidate only; 2011 FM055 classification edition and lookup unverified; DO NOT ANALYZE until verified"
+        expected_status = "candidate only; 2011 User Guide documents labor-module coding context, but exact FM055 child-field mapping and versioned lookup remain unverified; DO NOT ANALYZE"
+        expected_label_status = {
+            "fm055_gb": "2011 User Guide section 5 documents GB six-digit occupation coding for the labor module; exact FM055 lookup/version unresolved; no numeric interpretation or categories inferred; Codebook frequencies omitted",
+            "fm055_isco": "2011 Codebook identifies an ISCO occupation child field; 2011 User Guide does not specify its FM055 coding version/lookup; no numeric interpretation or categories inferred; Codebook frequencies omitted",
+            "fm055_indc": "2011 User Guide section 5 documents two-digit industry coding for the labor module; exact FM055 lookup/categories unresolved; no numeric interpretation or categories inferred; Codebook frequencies omitted",
+        }
         expected_codes = {"fm055_gb", "fm055_isco", "fm055_indc"}
         rows = [
             row for row in self.catalog
@@ -277,11 +282,16 @@ class CatalogReviewStatusTests(unittest.TestCase):
         ]
         self.assertEqual({row["Variable.Name"].lower() for row in rows}, expected_codes)
         self.assertTrue(all(row.get("Concept.Mapping.Status") == expected_status for row in rows))
+        self.assertTrue(all(row.get("Review.Flag", "").startswith("DO NOT ANALYZE") for row in rows))
+        self.assertTrue(all(row.get("Value.Label.Review") == expected_label_status[row["Variable.Name"].lower()] for row in rows))
+        self.assertTrue(all("CHARLS_2011_National_Baseline_Users_Guide_extracted.txt" in row.get("Value.Label.Source", "") for row in rows))
+        self.assertTrue(all(not row.get("Value.Labels", "") for row in rows))
         payload = json.loads((ROOT / "site-prototype/dist/work_exposures_v1.json").read_text(encoding="utf-8"))
         by_id = {item["concept_id"]: item for item in payload}
         for concept_id in ("pastime_work_occupation_code_gb", "pastime_work_occupation_code_isco", "pastime_work_industry_code"):
             item = by_id[concept_id]
-            self.assertIn("FM055 is not among the listed items", item["source_fields"][0]["note"])
+            self.assertIn("2011 National Baseline User Guide section 5", item["source_fields"][0]["note"])
+            self.assertIn("Wave 4 guide covers a different specified question list", item["source_fields"][0]["note"])
             self.assertIn("DO NOT ANALYZE", item["source_fields"][0]["mapping_status"])
 
     def test_income_codebook_numeric_summaries_are_not_generic_pending_labels(self):

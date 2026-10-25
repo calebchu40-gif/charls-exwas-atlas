@@ -90,7 +90,6 @@
 |candidate; questionnaire and Codebook labels reviewed; validate routes and eligible denominator in approved data|13|
 |official 2020 questionnaire and Codebook identify continuous household expenditure; no discrete response categories|13|
 |official questionnaire/Codebook identify a pension bracket endpoint; no discrete response categories|12|
-|occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted|12|
 |continuous timed measurement; seconds and non-completion status codes reviewed from official instruments; no categorical response labels or Codebook summaries copied|12|
 |official questionnaire checkbox menu and codebook slot coding; frequencies omitted; absence is not a negative response outside the routed checklist|11|
 |official Codebook identifies affirmative caregiver-option code; unselected coding and eligible denominator unresolved; no response-value labels assigned|11|
@@ -99,6 +98,7 @@
 |official Codebook identifies affirmative inheritance-source option; unselected storage and denominator unresolved; no response-value labels assigned|10|
 |Official questionnaire identifies a numeric monetary amount; continuous monetary amount; questionnaire reporting unit 1,000 Yuan/square metre; no discrete category labels assigned; release storage and special codes remain unverified.|10|
 |official questionnaire/Codebook field reviewed; continuous amount/count, no categorical response labels; preserve unit and route|9|
+|occupation/industry classification code; not a numeric scale or response menu; use the matching official classification lookup; Codebook frequencies omitted|9|
 |official codebook response labels; prior-wave self-awareness/preload route retained; frequencies excluded|9|
 |official Codebook extraction exposes only a partial response-code set; only the correct category is listed; do not infer unlisted codes|9|
 |连续计数；条件提问；极值待核|8|
@@ -256,6 +256,9 @@
 |official questionnaire identifies caregiver option; Codebook reports no observations; unselected coding and eligible denominator unresolved; no response-value labels assigned|1|
 |continuous amount; Codebook range available; inspect zero and special values|1|
 |all observed codes verified against official Codebook; unobserved commercial-insurance option left unmapped|1|
+|2011 Codebook identifies an ISCO occupation child field; 2011 User Guide does not specify its FM055 coding version/lookup; no numeric interpretation or categories inferred; Codebook frequencies omitted|1|
+|2011 User Guide section 5 documents two-digit industry coding for the labor module; exact FM055 lookup/categories unresolved; no numeric interpretation or categories inferred; Codebook frequencies omitted|1|
+|2011 User Guide section 5 documents GB six-digit occupation coding for the labor module; exact FM055 lookup/version unresolved; no numeric interpretation or categories inferred; Codebook frequencies omitted|1|
 |numbered official questionnaire categories; released-data value coding and no-fixed-address storage unverified; DO NOT ANALYZE pending reconciliation|1|
 |official questionnaire answer wording; released numeric value codes not verified; DO NOT ANALYZE until reconciled to authorized release|1|
 |official questionnaire categories; frequencies omitted; conditional agricultural-wage/other-job temporary-absence route|1|

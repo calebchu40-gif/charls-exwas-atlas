@@ -89,6 +89,18 @@ def main():
             "use the matching official classification lookup; Codebook frequencies omitted"
         )
         out.at[idx, "value_label_source"] = str(BOOKS[wave].relative_to(ROOT)).replace("\\", "/")
+    fm055_classification = out["wave"].astype(str).eq("2011") & out["code"].str.lower().isin(
+        {"fm055_gb", "fm055_isco", "fm055_indc"}
+    )
+    fm055_context = {
+        "fm055_gb": "2011 User Guide section 5 documents GB six-digit occupation coding for the labor module; exact FM055 lookup/version unresolved",
+        "fm055_isco": "2011 Codebook identifies an ISCO occupation child field; 2011 User Guide does not specify its FM055 coding version/lookup",
+        "fm055_indc": "2011 User Guide section 5 documents two-digit industry coding for the labor module; exact FM055 lookup/categories unresolved",
+    }
+    for idx in out.index[fm055_classification]:
+        code = str(out.at[idx, "code"]).lower()
+        out.at[idx, "value_label_status"] = f"{fm055_context[code]}; no numeric interpretation or categories inferred; Codebook frequencies omitted"
+        out.at[idx, "value_label_source"] += "; sources_official/CHARLS_2011_National_Baseline_Users_Guide_extracted.txt"
     # The codebook prints observed response categories with frequencies; FL016's
     # questionnaire defines the full 1-10 menu, including options not observed
     # in a given release. Keep the full official menu and do not carry counts.

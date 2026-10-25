@@ -27,7 +27,7 @@ def main():
             raise SystemExit(f"{name}: expected 3 exact wave-field rows, found {int(mask.sum())}")
         df.loc[mask, "Concept.Mapping.Status"] = df.loc[mask, "Variable.Name"].str.lower().map(status_by_code)
         df.loc[mask, "Concept.Mapping.Caveat"] = df.loc[mask, "Variable.Name"].str.lower().map(caveat_by_code)
-        df.loc[mask, "Review.Flag"] = "DO NOT ANALYZE until the 2011 FM055 occupation/industry coding edition and official category lookup are verified"
+        df.loc[mask, "Review.Flag"] = "DO NOT ANALYZE until exact 2011 FM055 child-field mapping and versioned lookup are verified; User Guide coding context alone is insufficient"
         df.to_csv(path, index=False, encoding="utf-8-sig")
 
     targets = [
@@ -44,7 +44,7 @@ def main():
                 continue
             row["Concept.Mapping.Status"] = status_by_code[code]
             row["Concept.Mapping.Caveat"] = caveat_by_code[code]
-            row["Review.Flag"] = "DO NOT ANALYZE until the 2011 FM055 occupation/industry coding edition and official category lookup are verified"
+            row["Review.Flag"] = "DO NOT ANALYZE until exact 2011 FM055 child-field mapping and versioned lookup are verified; User Guide coding context alone is insufficient"
             for field, value in (("concept_mapping_statuses", status_by_code[code]), ("concept_mapping_caveats", caveat_by_code[code])):
                 if field in row:
                     row[field] = value

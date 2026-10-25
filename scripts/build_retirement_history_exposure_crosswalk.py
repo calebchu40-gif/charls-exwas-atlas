@@ -56,8 +56,8 @@ CONCEPTS={
  'work_in_last_two_years_after_retirement':('Work during the last two years after retirement','Post-retirement work','Distinct recall period from ever working after retirement; keep as its own wave-specific item.'),
  'time_to_resume_work_after_retirement':('Time from retirement to resuming work','Post-retirement work','2018 questionnaire specifies years; earlier-wave wording/units require review. Keep raw source units.'),
  'paid_pastime_work_current':('Current paid pastime work after retirement','Post-retirement work','Questionnaire distinguishes paid pastime/recreational work from unpaid volunteering; wave-specific route.'),
- 'pastime_work_occupation_code_gb':('Pastime job occupation code (GB)','Post-retirement work','2011 only; preserve classification version and review detailed code categories before public release.'),
- 'pastime_work_occupation_code_isco':('Pastime job occupation code (ISCO)','Post-retirement work','2011 only; keep separate from GB classification and review detailed categories before public release.'),
+ 'pastime_work_occupation_code_gb':('Pastime job occupation code (GB)','Post-retirement work','The 2011 User Guide reports six-digit GB occupation coding with added categories for the labor module; exact FM055 field mapping and lookup remain unverified. Keep separate from ISCO and do not interpret numerically.'),
+ 'pastime_work_occupation_code_isco':('Pastime job occupation code (ISCO)','Post-retirement work','The 2011 Codebook names an ISCO child field, but the 2011 User Guide does not explain this FM055 field or provide an ISCO lookup/version. Keep separate from GB and do not interpret numerically.'),
  'pastime_work_industry_code':('Pastime job industry code','Post-retirement work','2011 only; preserve classification version and review detailed categories before public release.'),
  'pastime_work_start_timing':('Start timing of current pastime work','Post-retirement work','Year/month components describe a reported job start; month 0 may indicate not recalled.'),
  'pastime_work_days_per_week':('Days per week in pastime work','Post-retirement work','Questionnaire specifies an average weekly count; value range and eligible route require review.'),
@@ -79,7 +79,7 @@ MAP={
 # Unfolding brackets are stored as intervals and stay attached to the amount concept.
 BRACKET_PARENT={'fm007':'pre_receding_monthly_salary','fm009':'severance_compensation_amount','fm016':'pre_retirement_salary','fm017':'pre_retirement_salary','fm020':'pension_benefit_amount_at_retirement','fm022':'current_pension_monthly_amount','fm027':'pre_internal_retirement_salary','fm028':'internal_retirement_wage','fm029':'internal_retirement_wage','fm059':'pastime_work_monthly_income'}
 DOCS={
- '2011':'sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt',
+ '2011':'sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt; sources_official/CHARLS_2011_National_Baseline_Users_Guide_extracted.txt',
  '2013':'sources_official/CHARLS_2013_Questionnaire_extracted.txt; sources_official/CHARLS_2013_Codebook_extracted.txt',
  '2015':'sources_official/CHARLS_2015_Questionnaire_extracted.txt; sources_official/CHARLS_2015_Codebook_extracted.txt',
  '2018':'sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt',
@@ -136,8 +136,8 @@ def main():
   if code.startswith('fm004_'): continue
   if code in SPECIAL_STATUS: continue
   if code in {'fm055_gb','fm055_isco','fm055_indc'}:
-   note='2011 questionnaire FM055 asks the respondent to describe the specific paid pastime job in open text; the public index excludes the free-text response. The 2011 Codebook lists separate GB occupation, ISCO occupation, and industry child fields, but does not identify the coding-standard edition or provide a verified category lookup here. CHARLS Wave 4 User Guide describes GB six-digit occupation and two-digit industry coding for a specified set of work-module items and says Wave 4 continued Wave 3 procedures; FM055 is not among the listed items, so those procedures cannot be assumed for this field. Keep the three coded fields separate; classification version, category lookup, and small-cell disclosure review are unresolved. Codebook frequencies are not published.'
-   status='candidate only; 2011 FM055 classification edition and lookup unverified; DO NOT ANALYZE until verified'
+   note='2011 questionnaire FM055 is asked only after FM054=Yes and requests open-text description of a current paid pastime job; the public index excludes that free text. The 2011 Codebook separately names fm055_gb (GB occupation), fm055_isco (ISCO occupation), and fm055_indc (industry). The 2011 National Baseline User Guide section 5 describes labor-module open-text occupation/industry coding by three independent coders and a manager; it states standard Chinese GB six-digit occupation coding (with added categories) and two-digit industry coding. It also mentions a Chinese occupation/SITC code correspondence, but does not provide a versioned lookup or explicitly map these three FM055 child fields to that correspondence. The Wave 4 guide covers a different specified question list that excludes FM055, so it does not resolve this Wave 1 field mapping. Keep GB, ISCO, and industry separate; exact field-to-classification mapping, lookup, and small-cell disclosure review remain unresolved. Codebook frequencies are not published.'
+   status='candidate only; 2011 User Guide documents labor-module coding context, but exact FM055 child-field mapping and versioned lookup remain unverified; DO NOT ANALYZE'
   unit=UNITS.get(code,'')
   if re.search(r'bracket|min|max',code): unit+='; unfolding interval component' if unit else 'unfolding interval component'
   rows.append({'concept_id':cid,'concept_label':label,'domain':domain,'wave':wave,'code':code,'module':rec.module,'source_label':rec.variable_label,'unit':unit,'source_document':DOCS[wave],'mapping_status':status,'questionnaire_review':note,'caveat':caveat})
@@ -154,7 +154,7 @@ def main():
   source=out[(out.wave.eq('2011')) & out.code.str.lower().eq(code)]
   target=(merged.wave.eq('2011')) & merged.code.str.lower().eq(code)
   if len(source)==1 and target.sum()==1:
-   for column in ['mapping_status','questionnaire_review','caveat','unit']:
+   for column in ['mapping_status','questionnaire_review','caveat','unit','source_document']:
     merged.loc[target,column]=source.iloc[0][column]
  merged.to_csv(AUDIT/'work_exposure_crosswalk_v1.csv',index=False,encoding='utf-8-sig')
  items=[]
