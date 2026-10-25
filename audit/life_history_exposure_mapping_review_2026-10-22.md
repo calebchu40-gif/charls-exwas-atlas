@@ -41,3 +41,7 @@
 - 原型视图：导航“2014生命历程候选”
 
 构建命令：`python scripts/build_life_history_exposure_crosswalk.py`（在项目根目录）。
+
+## 2026-10-25 本地官方PDF校验
+
+CHARLS官方2014生命历程数据页列出发布说明、问卷和代码本的SHA1。对本项目 `sources_official/` 下三份PDF重新计算SHA1后，均与官方页面一致：Release Note `47936617c574b8fbd9ba93a32c9aca1b94106efd`，Questionnaire `2fe7fc6e5b7bf4c4a473757497e2c8c4ce05c7e0`，Codebook `67ae5ff38c6de332dc90ae4cfe7407b23a11c86f`。这确认了映射所依赖的三份说明文件版本；不等于确认本地个体数据发行文件身份，也不改变无权重及独立目标人群限制。官方页同时确认样本包含前两波存活纵向样本、基线刷新样本并尝试补访未应答者；可能包括45岁以下个体，2014生命历程不能默认代表常规45岁以上横截面总体。

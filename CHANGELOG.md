@@ -1,7 +1,11 @@
-## 2026-10-25 Publish the baseline PSU mapping caveat (v112 candidate)
+## 2026-10-25 Show 2014 Life History sample and source details (v113 candidate)
+
+> Status refresh, 2026-10-25: v112 is live and verified (commit `fe3787e`, Validate #467, Pages Deploy #233). The homepage loads `app.js?v=112` and includes the 2011 baseline PSU split-community caveat. v111 separately surfaced the 2014 Life History directory (18 concepts, 471 field mappings; 466 E, 5 P), excluded from regular-wave counts and weighted analyses. The official 2014 release-note, questionnaire, and codebook PDFs have locally verified SHA1 matches to CHARLS posted checksums. v113 is being prepared to show the official 2014 sample and no-weight boundaries directly on the card. The current gate remains source/version and survey-design readiness, not site hosting.
+- Recomputed local SHA1 values for the official release note, questionnaire, and codebook; all match CHARLS posted hashes. This verifies documentation versions only, not the identity of local microdata. Pending validation and Pages deployment.
+## 2026-10-25 Publish the baseline PSU mapping caveat (v112 deployed)
 
 - Updated the public survey-design note to explain that CHARLS reports 30 large baseline communities split into geographic subareas. `communityID` is therefore only a PSU candidate pending release-specific mapping; geographic fields are not used to invent variance strata. Linked interpretation remains consistent with the official design documentation and project audit.
-- Updated the site cache key to v112 and added a regression check for this caution. Pending GitHub validation and Pages deployment.
+- Updated the site cache key to v112 and added a regression check for this caution. Commit `fe3787e` passed Validate #467 and Pages Deploy #233; the live page loads `app.js?v=112`.
 ## 2026-10-25 Record metadata-only PSU file inspection
 
 - Confirmed the official 2011 data page lists PSU and Weight files separately. A local authorized `psu.dta` header contains `communityID`, province/city and urban/type fields, but no explicit variance stratum, subcommunity mapping, or replicate weights. Protected aggregate joins cover the prepared-table community keys; release identity is still unverified, so this is not variance-design validation.
