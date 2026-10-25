@@ -8,6 +8,7 @@
 - The current catalogue snapshot is 1,486 deduplicated E/P concepts (1,208 exposure candidates, 303 phenotype candidates, 25 dual-role concepts), 6,821 concept-to-source-field metadata links, and five waves (2011–2020). None of these counts is an analytic N or association result.
 - The 982-row local C catalogue now has zero rows with generic automated-keyword status and zero rows with the generic “keyword discovery only” subcategory. Eighteen age/residential-history rows whose sources had already been reviewed now have specific labels; two separate 2011 field-identity holds remain unchanged.
 - A new private audit compares wave/role/code keys against only the column names in the five already-prepared local Stata tables. It does not read respondent values or write outputs into this repository. It confirms 2011 community fields are intentionally excluded from person-level tables, relationship rosters and 2015 blood data require separate module handling, and the local 2013 table lacks official `crosssection`/`longitudinal` flags.
+- A wave/module readiness matrix now separates public metadata coverage, header-name presence and model eligibility for all five released waves. The header-only audit additionally writes a wave × role × module summary to protected local QA storage; it does not publish that private output or calculate record counts.
 - Local synthetic regression coverage is 449 Python tests. The repository payload validator, analysis-lock validator, syntax checks, and whitespace checks pass; GitHub Validate #456 and Pages Deploy #229 succeeded for v108.
 - No formal association model or complete per-pair analytic N exists. No respondent-level file, protected QA output, or unreviewed association estimate is published.
 
@@ -19,8 +20,8 @@ Wave 4 and Wave 5 user guides recommend weights for population inference, provid
 
 ## Next work sequence
 
-1. Continue batch review of residual C-role keyword hits and source-backed measurement metadata; prioritize by multi-wave reuse so one audited concept can clean up several wave rows at once.
-2. Complete a wave/module readiness matrix from official guides and header-only local audit, keeping public catalogue coverage distinct from private analytic availability.
+1. Continue batch review of residual C-role discovery hits and source-backed measurement metadata; prioritize multi-wave reuse so one audited concept can improve several wave rows at once.
+2. Restore the exact official 2013 `Weights.dta` source through the authorized intake route, then rebuild and verify the missing sample flags; do not infer eligibility from weight missingness.
 3. Preserve the official 2013 weight intake gate and resolve the CHARLS variance-design question from official release artifacts/support documentation. Do not use guessed strata or publish inferential statistics while this is unresolved.
 4. Once a wave/module passes those gates, freeze the first model family, missing/special-code handling, covariate rationale, multiple-testing method, and protected aggregate output rules before fitting any pair.
 
@@ -29,6 +30,7 @@ Wave 4 and Wave 5 user guides recommend weights for population inference, provid
 - Public metadata atlas and candidate-pair explorer: <https://calebchu40-gif.github.io/charls-exwas-atlas/>.
 - Current generated catalogue: 1,486 deduplicated E/P concepts (1,208 exposure, 303 phenotype, 25 dual-role), 6,821 E/P concept-to-source-field links, and five survey waves (2011–2020). These are metadata counts, not measured association counts or analytic sample sizes.
 - No formal association model or actual pairwise analytic N has been produced. The public site contains metadata only.
+- The five-wave module and design gate overview is [`wave_module_readiness_matrix_2026-10-25.md`](wave_module_readiness_matrix_2026-10-25.md); local module-level header availability remains in protected QA storage.
 - The current 92 `DO NOT ANALYZE` locks remain aligned with the triage inventory. Generic pending value-label status is zero across E/P/C; source-specific route, release-version, and design caveats still apply.
 
 ## Latest work

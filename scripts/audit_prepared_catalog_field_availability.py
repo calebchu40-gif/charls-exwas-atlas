@@ -41,7 +41,7 @@ def missing_reason(wave: str, module: str) -> str:
     return "no exact source-code column name; inspect module merge, rename, and source release"
 
 
-def inspect_catalog(catalog_path: Path, data_dir: Path) -> tuple[list[dict], list[dict], dict]:
+def inspect_catalog(catalog_path: Path, data_dir: Path) -> tuple[list[dict], list[dict], list[dict], dict]:
     catalog = pd.read_csv(catalog_path, dtype=str, encoding="utf-8-sig").fillna("")
     missing_columns = [name for name in KEY_COLUMNS if name not in catalog.columns]
     if missing_columns:
@@ -49,6 +49,7 @@ def inspect_catalog(catalog_path: Path, data_dir: Path) -> tuple[list[dict], lis
 
     summaries: list[dict] = []
     missing_rows: list[dict] = []
+    module_summaries: list[dict] = []
     design: dict[str, dict] = {}
     for wave in WAVES:
         path = data_dir / f"CHARLS_wave{wave}_person_analytic.dta"
@@ -91,6 +92,20 @@ def inspect_catalog(catalog_path: Path, data_dir: Path) -> tuple[list[dict], lis
                     "reason": missing_reason(wave, module),
                 })
 
+        # More actionable than wave-wide totals: keep exact module and role
+        # distinctions so a missing name can be routed to the right source
+        # module. The comparison still uses only header names.
+        for (role, module), module_rows in keys.groupby(["_role", "_module"], dropna=False):
+            codes = set(module_rows["_code"])
+            present = codes & columns
+            module_summaries.append({
+                "wave": wave, "role": str(role).upper(), "module": str(module),
+                "distinct_source_codes": len(codes),
+                "source_codes_present_by_name": len(present),
+                "source_codes_absent_by_name": len(codes - present),
+                "status": "header-name screening only; module identity and eligibility not established",
+            })
+
         available_weights = [name for name in WEIGHT_NAMES if name in columns]
         design[wave] = {
             "prepared_table": path.name,
@@ -110,7 +125,7 @@ def inspect_catalog(catalog_path: Path, data_dir: Path) -> tuple[list[dict], lis
             "All output is aggregate/catalog metadata and is written to protected local QA storage."
         ),
     }
-    return summaries, missing_rows, report
+    return summaries, missing_rows, module_summaries, report
 
 
 def main() -> None:
@@ -122,12 +137,16 @@ def main() -> None:
     args = parser.parse_args()
     data_dir = require_private_path(args.data_dir)
     output_dir = require_private_path(args.output_dir)
-    summaries, missing_rows, report = inspect_catalog(args.catalog, data_dir)
+    summaries, missing_rows, module_summaries, report = inspect_catalog(args.catalog, data_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(summaries).to_csv(output_dir / "prepared_catalog_field_availability_v1.csv",
                                    index=False, encoding="utf-8-sig")
     pd.DataFrame(missing_rows, columns=["wave", "role", "module", "source_code", "reason"]).to_csv(
         output_dir / "prepared_catalog_fields_missing_by_name_v1.csv", index=False, encoding="utf-8-sig")
+    pd.DataFrame(module_summaries, columns=["wave", "role", "module", "distinct_source_codes",
+                                            "source_codes_present_by_name", "source_codes_absent_by_name",
+                                            "status"]).to_csv(
+        output_dir / "prepared_catalog_module_availability_v1.csv", index=False, encoding="utf-8-sig")
     (output_dir / "prepared_catalog_field_availability_v1.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Wrote header-only catalogue availability summary for {len(WAVES)} waves to protected QA output.")

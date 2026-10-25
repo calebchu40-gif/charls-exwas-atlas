@@ -1,3 +1,8 @@
+## 2026-10-25 Add wave/module readiness matrix and private module-level header audit
+
+- Added an evidence-linked five-wave matrix distinguishing catalogue coverage, exact column-name presence in the private prepared tables, and actual model readiness. The matrix documents the 2011/2015-only blood assay schedule, activity subsample caveats, separate roster/community modules, the missing 2013 official sample flags, and the Wave 5 age-domain limit.
+- Extended the header-only audit to write a wave × role × source-module field-name summary in protected local QA storage; it never reads respondent values. Two focused tests pass. No public site assets, participant data, pairwise Ns, or association results were added.
+
 ## 2026-10-25 Replace stale residential-history keyword labels (v108 deployed)
 
 - Reclassified 18 already source-reviewed 2011–2015 age and residential-mobility C rows from generic keyword-discovery labels to field-specific metadata labels. The label update preserves separate year/month duration fields and the distinct BB007/BB009 questionnaire branches. The two 2011 BB003/BB005 field-identity holds remain unchanged and locked.
