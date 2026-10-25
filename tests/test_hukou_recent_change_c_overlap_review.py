@@ -43,5 +43,36 @@ class HukouRecentChangeOverlapTests(unittest.TestCase):
         self.assertIn("BC005_W2_1=1", caveats[("2013", "bc005_w2_2")])
 
 
+class KeywordEPCOverlapReviewTests(unittest.TestCase):
+    def test_exact_source_reviewed_overlap_sync_runs_before_sharding(self):
+        for pipeline in (FULL_PIPELINE_SCRIPTS, FINALIZATION_PIPELINE_SCRIPTS):
+            self.assertLess(pipeline.index("apply_hukou_recent_change_c_overlap_review.py"), pipeline.index("apply_keyword_epc_overlap_review.py"))
+            last_shard = max(i for i, name in enumerate(pipeline) if name == "site_catalog_shards.py")
+            self.assertLess(pipeline.index("apply_keyword_epc_overlap_review.py"), last_shard)
+
+    def test_only_thirty_five_exact_questionnaire_codebook_ep_overlaps_are_linked(self):
+        with (ROOT / "audit/keyword_epc_overlap_review_v1.csv").open(encoding="utf-8-sig", newline="") as f:
+            audit = list(csv.DictReader(f))
+        self.assertEqual(len(audit), 35)
+        self.assertTrue(all(r["official_questionnaire"].startswith("sources_official/") for r in audit))
+        self.assertTrue(all(r["official_codebook"].startswith("sources_official/") for r in audit))
+        rows = json.loads((ROOT / "site-prototype/dist/catalog_c.json").read_text(encoding="utf-8"))
+        keys = {(r["wave"], r["code"].lower(), r["module"].lower()) for r in audit}
+        found = [r for r in rows if (r["Source.Wave"], r["Variable.Name"].lower(), r["Data.File.Name"].lower()) in keys]
+        self.assertEqual(len(found), 35)
+        self.assertTrue(all("its own focal association" in r["Review.Flag"] for r in found))
+        self.assertTrue(all("not a default adjustment set" in r["Review.Flag"] for r in found))
+        self.assertFalse(any(r["Candidate.Status"].startswith("automated keyword discovery only") for r in found))
+
+    def test_unverified_and_route_sensitive_keyword_hits_are_not_auto_linked(self):
+        with (ROOT / "audit/keyword_epc_overlap_review_v1.csv").open(encoding="utf-8-sig", newline="") as f:
+            audit = list(csv.DictReader(f))
+        keys = {(r["wave"], r["code"].lower()) for r in audit}
+        self.assertNotIn(("2011", "da057_8_"), keys)
+        self.assertNotIn(("2011", "da005_2_"), keys)
+        self.assertNotIn(("2011", "da006_2_"), keys)
+        self.assertNotIn(("2018", "da006_w4_1_2_"), keys)
+
+
 if __name__ == "__main__":
     unittest.main()

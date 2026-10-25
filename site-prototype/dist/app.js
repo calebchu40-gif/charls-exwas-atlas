@@ -126,6 +126,8 @@ const C_SUBCATEGORY_LABELS={
   "historical hukou/location context exposure overlap":"历史户籍/居住地语境暴露重叠字段",
   "social participation/care exposure overlap":"社会参与/照护暴露重叠字段",
   "recent hukou change exposure overlap; conditional context candidate":"近期户籍变更暴露重叠；条件性背景候选",
+  "exact C/E field overlap; metadata only":"精确 C/E 同字段重叠；仅目录元数据",
+  "exact C/P field overlap; metadata only":"精确 C/P 同字段重叠；仅目录元数据",
   "partner/social context exposure overlap":"伴侣与社会背景暴露重叠字段",
   "expected formal-retirement benefit amount/percentage selector":"预计正式退休待遇金额/比例选择器",
   "expected pension benefit amount format selector":"预计养老金待遇金额格式选择器",

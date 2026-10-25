@@ -1,3 +1,7 @@
+## 2026-10-25 Link exact source-verified E/P overlaps in C keyword hits (v104 candidate)
+
+- Replaced generic keyword-discovery status for 35 exact same-wave C/E or C/P field overlaps only after confirming each field code in both the official Questionnaire and Codebook and finding one exact E/P concept mapping. Kept existing response-label, unit, route, and mapping review untouched; the C row now identifies a metadata overlap and explicitly does not confer covariate eligibility. Fifteen other keyword hits remain unlinked where dual-source identity or unique mapping was not confirmed. Added a reusable updater to both build paths, a frozen key set, audit CSV/Markdown, and regression checks. E/P/C=4,845/2,082/982; all 444 Python tests, public payload validation, exact 92-lock check, JS/Python syntax and diff checks pass. No participant data, Codebook frequencies, models or analytic Ns were used. GitHub validation and Pages deployment pending.
+
 ## 2026-10-25 Link recent hukou-change C/E metadata with routed categories (v103 deployed)
 
 - Linked 11 exact 2013/2015/2018 C rows for recent hukou-status/location changes and their conditional reasons to existing exposure concepts. Exact fields are present in each wave’s public Questionnaire and Codebook.

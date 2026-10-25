@@ -62818,7 +62818,7 @@
               "value_labels": "1=Hukou type changed; 2=Hukou location changed; 3=Both changed; 4=None changed",
               "value_semantics": "categorical self-report; preserve original categories and wave-specific codes",
               "mapping_status": "candidate wave-specific exposure; exact source item and routing reviewed",
-              "caveat": "Use the wave-specific nominal categories; the 2013 item is only a yes/no status-change question. Do not interpret raw codes as a common ordered scale."
+              "caveat": "Conditional on a usable prior-interview comparison. The questionnaire routes ZBC001 nonresponse directly to BC002_W3_1 and BC002_W3_4, skipping this change item; do not code that structural route as unchanged. Preserve the [ZIWTime] reference. The 2013 item is yes/no; do not pool raw categories or treat them as ordered."
             }
           ]
         },

@@ -46,6 +46,10 @@ Reviewed and propagated source-specific C metadata for 2011–2018 `BB004` resid
 
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-25 continuation: source-verified C/E/P keyword overlaps (v104 candidate)
+
+Linked 35 exact same-wave C/E or C/P field overlaps after confirming each field code in both the official wave Questionnaire and Codebook and requiring one exact E/P concept-source mapping. This replaces generic keyword-only metadata for those C rows, preserves existing labels/units/routes, and explicitly leaves covariate eligibility to a defined estimand. Fifteen other keyword hits remain unlinked because dual-source exact-field evidence or unique mapping is missing. E/P/C=4,845/2,082/982; the 444-test suite, public payload validator, exact 92-lock reconciliation, JS/Python syntax and diff checks pass. No respondent-level data or frequencies were used; models and actual analytic Ns remain 0. Audit: `audit/keyword_epc_overlap_review_2026-10-25.md`.
+
 ## 2026-10-25 continuation: recent hukou-change C/E links deployed (v103)
 
 Commit `42c89fd` links 11 exact 2013/2015/2018 recent hukou-change and conditional reason fields to reviewed E concepts. GitHub Validate [#446 / `40164627044`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40164627044) and Pages Deploy [#224 / `40164627071`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40164627071) succeeded. Cache-busted homepage, app bundle, E/P/C catalogues and pair index match the committed files. The 2015 ZBC001 nonresponse skip, 2018 reinterview route, conditional reason fields and wave-specific category differences remain explicit. E/P/C=4,845/2,082/982; 441 tests pass; models and actual analytic Ns remain 0. Audit: `audit/hukou_recent_change_c_overlap_review_2026-10-25.md`.
