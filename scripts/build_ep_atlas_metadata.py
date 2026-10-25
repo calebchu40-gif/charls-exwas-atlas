@@ -3,6 +3,7 @@ from pathlib import Path
 import argparse
 import subprocess
 import sys
+import time
 
 ROOT = Path(__file__).resolve().parents[1]
 FULL_PIPELINE_SCRIPTS = (
@@ -434,9 +435,35 @@ def main() -> int:
     )
     args = parser.parse_args()
     scripts = FINALIZATION_PIPELINE_SCRIPTS if args.finalize_only else FULL_PIPELINE_SCRIPTS
-    for script in scripts:
-        print(f"Running {script}", flush=True)
-        subprocess.run([sys.executable, str(ROOT / "scripts" / script)], cwd=ROOT, check=True)
+    total = len(scripts)
+    next_report = 5
+    started = time.perf_counter()
+    durations: list[tuple[float, str]] = []
+    try:
+        for index, script in enumerate(scripts, start=1):
+            print(f"Running {script}", flush=True)
+            step_started = time.perf_counter()
+            subprocess.run([sys.executable, str(ROOT / "scripts" / script)], cwd=ROOT, check=True)
+            step_elapsed = time.perf_counter() - step_started
+            durations.append((step_elapsed, script))
+            percent = index * 100 // total
+            if percent >= next_report:
+                elapsed = time.perf_counter() - started
+                remaining = elapsed / index * (total - index)
+                print(
+                    f"Progress: {percent}% ({index}/{total}); "
+                    f"elapsed {elapsed / 60:.1f} min; estimated remaining {remaining / 60:.1f} min",
+                    flush=True,
+                )
+                while next_report <= percent:
+                    next_report += 5
+    finally:
+        elapsed = time.perf_counter() - started
+        slowest = sorted(durations, reverse=True)[:10]
+        print(f"Pipeline elapsed before exit: {elapsed / 60:.1f} min", flush=True)
+        print("Slowest completed steps:", flush=True)
+        for step_elapsed, script in slowest:
+            print(f"  {step_elapsed:.1f} s  {script}", flush=True)
     print("E/P field catalog, concept crosswalk, summaries, and domain JSON are current.")
     return 0
 
