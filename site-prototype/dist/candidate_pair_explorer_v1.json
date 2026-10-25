@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 641,
+      "exposure_count": 647,
       "phenotype_count": 213,
-      "candidate_pair_count": 136510,
+      "candidate_pair_count": 137788,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -260,6 +260,56 @@
               "value_semantics": "",
               "mapping_status": "official 2011 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
               "caveat": "Household/building-level presence of accessibility facilities such as a non-stair ramp; not a measure of the respondent's disability, mobility, or accessibility standard. Waves 2011–2015 list Yes/No; 2018 and 2020 add a distinct 'no steps on flat ground/do not need' category. Preserve that category rather than collapsing it into No. The 2011–2018 I010=No route asks the entrance-step item; 2020 wording and interviewer instructions differ. Confirm household/person linkage and release-specific storage before use."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_local_leader_age_profile",
+          "label": "Age of named community/village leaders",
+          "domain": "Community governance context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "ja042_2_1_",
+              "label": "Age",
+              "module": "community",
+              "unit": "years of age",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Reported age of the named JA042 community/village leader. Preserve the position and CAPI scope; this is not participant age."
+            },
+            {
+              "code": "ja042_2_2_",
+              "label": "Age",
+              "module": "community",
+              "unit": "years of age",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Reported age of the named JA042 community/village leader. Preserve the position and CAPI scope; this is not participant age."
+            },
+            {
+              "code": "ja042_2_3_",
+              "label": "Age",
+              "module": "community",
+              "unit": "years of age",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Reported age of the named JA042 community/village leader. Preserve the position and CAPI scope; this is not participant age."
+            },
+            {
+              "code": "ja042_2_4_",
+              "label": "Age",
+              "module": "community",
+              "unit": "years of age",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Reported age of the named JA042 community/village leader. Preserve the position and CAPI scope; this is not participant age."
             }
           ]
         },
@@ -2310,6 +2360,26 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "Community-informant count for the questionnaire's never-married population aged over 40 and a separate male count, as labelled in the official source. This aggregate item does not establish any sampled participant's marital status; verify release coding and denominator before analysis."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_director_education_profile",
+          "label": "Community director education level",
+          "domain": "Community governance context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "ja042_1_1_",
+              "label": "Education Level",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Education category for the named JA042 community/village leadership position; preserve the role and CAPI scope. Questionnaire options are categories, not an assumed numeric education score; not participant education or a default confounder."
             }
           ]
         },
@@ -14641,6 +14711,56 @@
           ]
         },
         {
+          "concept_id": "community_local_leader_tenure_profile",
+          "label": "Tenure of named community/village leaders",
+          "domain": "Community governance context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "ja042_3_1_",
+              "label": "How Long did He/She Hold this Position",
+              "module": "community",
+              "unit": "years in position",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Reported time the named JA042 community/village leader has held the position. Preserve the position and CAPI scope; this is not sampled-participant employment tenure."
+            },
+            {
+              "code": "ja042_3_2_",
+              "label": "How Long did He/She Hold this Position",
+              "module": "community",
+              "unit": "years in position",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Reported time the named JA042 community/village leader has held the position. Preserve the position and CAPI scope; this is not sampled-participant employment tenure."
+            },
+            {
+              "code": "ja042_3_3_",
+              "label": "How Long did He/She Hold this Position",
+              "module": "community",
+              "unit": "years in position",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Reported time the named JA042 community/village leader has held the position. Preserve the position and CAPI scope; this is not sampled-participant employment tenure."
+            },
+            {
+              "code": "ja042_3_4_",
+              "label": "How Long did He/She Hold this Position",
+              "module": "community",
+              "unit": "years in position",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Reported time the named JA042 community/village leader has held the position. Preserve the position and CAPI scope; this is not sampled-participant employment tenure."
+            }
+          ]
+        },
+        {
           "concept_id": "community_theatre_count",
           "label": "Theatres in community (count)",
           "domain": "Community infrastructure",
@@ -15037,6 +15157,66 @@
               "value_semantics": "largest single inheritance value at receipt",
               "mapping_status": "official questionnaire wording reviewed; response special codes pending respondent-data validation",
               "caveat": "Respondent-level income item; preserve source wave, reference period, unit, nonresponse/special codes and interview routing. This is not household total income. Asked conditionally after inheritance report; amount in nominal yuan at event time, not current asset value or total lifetime inheritance. HD011 bracket prompts are separate fallback responses. Inflation adjustment is needed before pooling."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_village_accountant_education_profile",
+          "label": "Village accountant education level",
+          "domain": "Community governance context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "ja042_1_4_",
+              "label": "Education Level",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Education category for the named JA042 community/village leadership position; preserve the role and CAPI scope. Questionnaire options are categories, not an assumed numeric education score; not participant education or a default confounder."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_village_head_education_profile",
+          "label": "Village head education level",
+          "domain": "Community governance context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "ja042_1_2_",
+              "label": "Education Level",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Education category for the named JA042 community/village leadership position; preserve the role and CAPI scope. Questionnaire options are categories, not an assumed numeric education score; not participant education or a default confounder."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_village_secretary_education_profile",
+          "label": "Village secretary education level",
+          "domain": "Community governance context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "ja042_1_3_",
+              "label": "Education Level",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Education category for the named JA042 community/village leadership position; preserve the role and CAPI scope. Questionnaire options are categories, not an assumed numeric education score; not participant education or a default confounder."
             }
           ]
         },
@@ -118224,6 +118404,56 @@
   },
   "baseline_community_exposures": [
     {
+      "concept_id": "community_local_leader_age_profile",
+      "label": "Age of named community/village leaders",
+      "domain": "Community governance context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "ja042_2_1_",
+          "label": "Age",
+          "module": "community",
+          "unit": "years of age",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Reported age of the named JA042 community/village leader. Preserve the position and CAPI scope; this is not participant age."
+        },
+        {
+          "code": "ja042_2_2_",
+          "label": "Age",
+          "module": "community",
+          "unit": "years of age",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Reported age of the named JA042 community/village leader. Preserve the position and CAPI scope; this is not participant age."
+        },
+        {
+          "code": "ja042_2_3_",
+          "label": "Age",
+          "module": "community",
+          "unit": "years of age",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Reported age of the named JA042 community/village leader. Preserve the position and CAPI scope; this is not participant age."
+        },
+        {
+          "code": "ja042_2_4_",
+          "label": "Age",
+          "module": "community",
+          "unit": "years of age",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Reported age of the named JA042 community/village leader. Preserve the position and CAPI scope; this is not participant age."
+        }
+      ]
+    },
+    {
       "concept_id": "community_bank_count",
       "label": "Banks in community (count)",
       "domain": "Community infrastructure",
@@ -119880,6 +120110,26 @@
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
           "caveat": "Community-informant count for the questionnaire's never-married population aged over 40 and a separate male count, as labelled in the official source. This aggregate item does not establish any sampled participant's marital status; verify release coding and denominator before analysis."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_director_education_profile",
+      "label": "Community director education level",
+      "domain": "Community governance context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "ja042_1_1_",
+          "label": "Education Level",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Education category for the named JA042 community/village leadership position; preserve the role and CAPI scope. Questionnaire options are categories, not an assumed numeric education score; not participant education or a default confounder."
         }
       ]
     },
@@ -124164,6 +124414,56 @@
       ]
     },
     {
+      "concept_id": "community_local_leader_tenure_profile",
+      "label": "Tenure of named community/village leaders",
+      "domain": "Community governance context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "ja042_3_1_",
+          "label": "How Long did He/She Hold this Position",
+          "module": "community",
+          "unit": "years in position",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Reported time the named JA042 community/village leader has held the position. Preserve the position and CAPI scope; this is not sampled-participant employment tenure."
+        },
+        {
+          "code": "ja042_3_2_",
+          "label": "How Long did He/She Hold this Position",
+          "module": "community",
+          "unit": "years in position",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Reported time the named JA042 community/village leader has held the position. Preserve the position and CAPI scope; this is not sampled-participant employment tenure."
+        },
+        {
+          "code": "ja042_3_3_",
+          "label": "How Long did He/She Hold this Position",
+          "module": "community",
+          "unit": "years in position",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Reported time the named JA042 community/village leader has held the position. Preserve the position and CAPI scope; this is not sampled-participant employment tenure."
+        },
+        {
+          "code": "ja042_3_4_",
+          "label": "How Long did He/She Hold this Position",
+          "module": "community",
+          "unit": "years in position",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Reported time the named JA042 community/village leader has held the position. Preserve the position and CAPI scope; this is not sampled-participant employment tenure."
+        }
+      ]
+    },
+    {
       "concept_id": "community_theatre_count",
       "label": "Theatres in community (count)",
       "domain": "Community infrastructure",
@@ -124200,6 +124500,66 @@
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
           "caveat": "2011 distance from the village/community office to the most commonly used facility of this type; the questionnaire records 0 when the facility is in the community. Not distance from a respondent's home."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_village_accountant_education_profile",
+      "label": "Village accountant education level",
+      "domain": "Community governance context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "ja042_1_4_",
+          "label": "Education Level",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Education category for the named JA042 community/village leadership position; preserve the role and CAPI scope. Questionnaire options are categories, not an assumed numeric education score; not participant education or a default confounder."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_village_head_education_profile",
+      "label": "Village head education level",
+      "domain": "Community governance context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "ja042_1_2_",
+          "label": "Education Level",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Education category for the named JA042 community/village leadership position; preserve the role and CAPI scope. Questionnaire options are categories, not an assumed numeric education score; not participant education or a default confounder."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_village_secretary_education_profile",
+      "label": "Village secretary education level",
+      "domain": "Community governance context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "ja042_1_3_",
+          "label": "Education Level",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Education category for the named JA042 community/village leadership position; preserve the role and CAPI scope. Questionnaire options are categories, not an assumed numeric education score; not participant education or a default confounder."
         }
       ]
     },
@@ -124248,9 +124608,9 @@
     "2013": {
       "baseline_wave": "2011",
       "followup_wave": "2013",
-      "exposure_count": 144,
+      "exposure_count": 150,
       "phenotype_count": 226,
-      "candidate_pair_count": 32544,
+      "candidate_pair_count": 33900,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -124488,9 +124848,9 @@
     "2015": {
       "baseline_wave": "2011",
       "followup_wave": "2015",
-      "exposure_count": 144,
+      "exposure_count": 150,
       "phenotype_count": 239,
-      "candidate_pair_count": 34416,
+      "candidate_pair_count": 35850,
       "phenotype_concept_ids": [
         "offspring_health_status_2015",
         "offspring_self_care_ability_2015",
@@ -124741,9 +125101,9 @@
     "2018": {
       "baseline_wave": "2011",
       "followup_wave": "2018",
-      "exposure_count": 144,
+      "exposure_count": 150,
       "phenotype_count": 211,
-      "candidate_pair_count": 30384,
+      "candidate_pair_count": 31650,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -124966,9 +125326,9 @@
     "2020": {
       "baseline_wave": "2011",
       "followup_wave": "2020",
-      "exposure_count": 144,
+      "exposure_count": 150,
       "phenotype_count": 104,
-      "candidate_pair_count": 14976,
+      "candidate_pair_count": 15600,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",

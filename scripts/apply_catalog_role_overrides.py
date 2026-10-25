@@ -117,6 +117,15 @@ for wave,code in metadata_keys:
         fields.loc[metadata_rows,"Candidate.Status"]="C metadata; respondent role for Community Questionnaire Part C; not a sampled-participant characteristic"
         fields.loc[metadata_rows,"Harmonization.Status"]="informant identity/role context only; not an exposure, phenotype, or adjustment covariate"
         fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; never use a community-informant role as a CHARLS participant covariate"
+    elif metadata_type == "community_leadership_undefined_slot":
+        fields.loc[metadata_rows,"category"]="measurement metadata"
+        fields.loc[metadata_rows,"subcategory"]="unresolved JA042 community leadership slot"
+        fields.loc[metadata_rows,"Value.Labels"]=""
+        fields.loc[metadata_rows,"Value.Label.Source"]="sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; audit/CHARLS_2011_Codebook_extracted.txt"
+        fields.loc[metadata_rows,"Value.Label.Review"]="Codebook field label located, but the questionnaire identifies only four named leadership rows; fifth age/tenure slot identity unresolved"
+        fields.loc[metadata_rows,"Candidate.Status"]="C source metadata; fifth JA042 age/tenure slot has no verified questionnaire position mapping"
+        fields.loc[metadata_rows,"Harmonization.Status"]="do not assign this field to a named leader, combine it with the four verified roles, or analyze it until the official source linkage is resolved"
+        fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; unresolved leadership-slot identity; do not infer a role from adjacent slots"
     elif metadata_type == "activity_random_subsample_marker_unresolved":
         fields.loc[metadata_rows,"category"]="measurement metadata"
         fields.loc[metadata_rows,"subcategory"]="physical-activity randomized-module assignment marker"

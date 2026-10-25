@@ -2,8 +2,8 @@
 
 更新：2026-10-26。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
-- 最终E/P目录行：8,232；不同波次—字段码：8,019。一个字段可对应多个候选类别/角色。
-- 有非空标签文本的E/P目录行：3,755；不同波次—字段码：3,674。连续测量、计数值及测量流程字段可已审但不需要离散标签。
+- 最终E/P目录行：8,244；不同波次—字段码：8,031。一个字段可对应多个候选类别/角色。
+- 有非空标签文本的E/P目录行：3,759；不同波次—字段码：3,678。连续测量、计数值及测量流程字段可已审但不需要离散标签。
 - 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：0。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -14,7 +14,7 @@
 |---|---|---:|---:|---:|---:|
 |e|behavior|267|267|192|5|
 |e|behavioral exposures|2|2|0|1|
-|e|community context|458|458|111|1|
+|e|community context|470|470|115|1|
 |e|early-life and family socioeconomic context|4|4|4|2|
 |e|environmental perception|1|1|1|1|
 |e|family and intergenerational context|42|39|35|4|
@@ -44,15 +44,16 @@
 
 |审核状态|最终E/P目录行|
 |---|---:|
-|officially reviewed|3,801|
+|officially reviewed|3,697|
 |official codebook field located; continuous/count or no categorical labels|730|
 |numeric/time unit metadata available; no discrete labels assigned; see concept crosswalk|469|
 |codebook field located; continuous/open response or no categorical labels|371|
-|official Codebook numeric/count response located; no discrete answer labels|331|
+|official Codebook numeric/count response located; no discrete answer labels|339|
 |official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred|224|
 |continuous measure metadata available|191|
 |numeric/time unit metadata available; no discrete labels assigned|151|
 |audited measurement component; derive concept per crosswalk|138|
+|official codebook response labels; frequencies omitted|97|
 |连续值/字段结构；代码本未提供离散值标签|93|
 |Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding|91|
 |official 2011 questionnaire identifies Yuan amount period and household-member roster slot; continuous amount with no discrete response categories; authorized-release storage scale and special values remain unverified|80|
@@ -133,6 +134,8 @@
 |full questionnaire menu transcribed without frequencies; 2011 codebook omits FL014 and later codebook menus may omit unobserved categories; not-currently-working prior-job route|4|
 |local paired endpoint storage and FM011=3 route checked; Codebook extreme upper value retained; do not derive amount|4|
 |official questionnaire option wording only; released numeric value codes not verified; DO NOT ANALYZE until reconciled to authorized release|4|
+|official questionnaire seven-point ordinal scale anchors reviewed; Codebook numeric categories only; frequencies omitted|4|
+|official questionnaire response categories reviewed; field-specific Codebook category sets are incomplete; frequencies omitted|4|
 |Official questionnaire identifies a numeric monetary amount; continuous monetary amount; questionnaire reporting unit Yuan; no discrete category labels assigned; release storage and special codes remain unverified.|3|
 |official 2015 questionnaire and Codebook identify continuous household expenditure; no discrete response categories|3|
 |official 2013 questionnaire and Codebook identify continuous household expenditure; no discrete response categories|3|
@@ -164,6 +167,7 @@
 |continuous date component; preserve year/month unit and conditional prior-status correction route; month -1 indicates unable to report; DO NOT ANALYZE pending route and released-data reconciliation|2|
 |official questionnaire/codebook categories; frequencies omitted; current employer benefit route|2|
 |wave-specific official questionnaire categories transcribed without frequencies; retrospective first-workplace location|2|
+|official questionnaire semantics reconciled with codebook response categories; frequencies omitted|2|
 |local string endpoint pairs checked; Codebook extreme upper value present; route/unit and sentinel semantics unresolved|2|
 |occupation classification code; Codebook frequency distribution omitted; classification definitions are not response labels; unpaid family-business route retained|2|
 |official questionnaire/Codebook identify a conditional bracket endpoint; Codebook provides numeric summaries but no discrete response categories|2|
@@ -261,6 +265,7 @@
 |future-helper route and category reviewed; unselected coding and eligible denominator unresolved; no response-value labels assigned|1|
 |Codebook summary reports one observation; continuous count, no categorical labels; days measure and route retained|1|
 |official questionnaire identifies caregiver option; Codebook reports no observations; unselected coding and eligible denominator unresolved; no response-value labels assigned|1|
+|official questionnaire seven-point ordinal scale anchors reviewed; CodeBook numeric categories only; frequencies omitted|1|
 |continuous amount; Codebook range available; inspect zero and special values|1|
 |all observed codes verified against official Codebook; unobserved commercial-insurance option left unmapped|1|
 |2011 Codebook identifies an ISCO occupation child field; 2011 User Guide does not specify its FM055 coding version/lookup; no numeric interpretation or categories inferred; Codebook frequencies omitted|1|

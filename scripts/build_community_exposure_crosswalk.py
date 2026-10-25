@@ -20,6 +20,12 @@ CONCEPTS={
  "community_age_sex_structure":("Community age and sex composition","Community social context","2011 community-informant counts of adults aged 16+, people aged 65+, and people aged 80+, with separate reported male counts. Preserve nested age thresholds and reference population; do not sum the 65+ and 80+ counts or derive individual age/sex values."),
  "community_never_married_over40_population":("Community count of never-married people aged over 40","Community social context","2011 community-informant count for the questionnaire's over-40 never-married group and a separate male count. The English/Chinese item wording and informant-reported aggregate do not identify any participant's marital status; preserve the published item definition pending release validation."),
  "community_ethnic_minority_household_profile":("Community ethnic-minority presence and household counts","Community social context","2011 community-informant report of whether minority groups are present, how many groups, and household counts for the largest, second-largest and remaining groups. The counts have no population denominator and must not be summed into a percentage without release-level validation. Minority names are open text and are excluded from E/P display."),
+ "community_director_education_profile":("Community director education level","Community governance context","2011 community-only report of the community director's education category. This is a community-level leadership descriptor, not the sampled participant's education or an established adjustment covariate."),
+ "community_village_head_education_profile":("Village head education level","Community governance context","2011 village-only report of the village head's education category. This is a community-level leadership descriptor, not the sampled participant's education or an established adjustment covariate."),
+ "community_village_secretary_education_profile":("Village secretary education level","Community governance context","2011 village-only report of the village secretary's education category. This is a community-level leadership descriptor, not the sampled participant's education or an established adjustment covariate."),
+ "community_village_accountant_education_profile":("Village accountant education level","Community governance context","2011 village-only report of the village accountant's education category. This is a community-level leadership descriptor, not the sampled participant's education or an established adjustment covariate."),
+ "community_local_leader_age_profile":("Age of named community/village leaders","Community governance context","2011 reported age for the community director, village head, village secretary and village accountant. Keep positions separate and respect community-only versus village-only routing; not participant age or a validated governance-quality measure."),
+ "community_local_leader_tenure_profile":("Tenure of named community/village leaders","Community governance context","2011 reported years in position for the community director, village head, village secretary and village accountant. Keep positions separate and respect community-only versus village-only routing; not participant employment tenure."),
  "community_water_price":("Community-reported average water price","Community environment","2011 community-reported current average water unit price in RMB yuan per ton; community context, not an individual's household bill."),
  "community_electricity_price":("Community-reported average electricity price","Community environment","2011 community-reported current average electricity unit price in RMB yuan per degree (kWh); community context, not an individual's household bill."),
  "community_road_presence":("Road access through the village/community","Community environment","2011 community-informant Yes/No report of roads passing through the village/community; single-wave context indicator."),
@@ -82,6 +88,12 @@ MAP={
  "community_age_sex_structure":["jc009","jc009_1","jc010","jc010_1","jc011","jc011_1"],
  "community_never_married_over40_population":["jc012","jc012_1"],
  "community_ethnic_minority_household_profile":["jc013","jc013_1","jc015","jc017","jc018"],
+ "community_director_education_profile":["ja042_1_1_"],
+ "community_village_head_education_profile":["ja042_1_2_"],
+ "community_village_secretary_education_profile":["ja042_1_3_"],
+ "community_village_accountant_education_profile":["ja042_1_4_"],
+ "community_local_leader_age_profile":[*[f"ja042_2_{i}_" for i in range(1,5)]],
+ "community_local_leader_tenure_profile":[*[f"ja042_3_{i}_" for i in range(1,5)]],
  "community_water_price":["jj023"],
  "community_electricity_price":["jj024"],
  "community_road_presence":["jk001"],
@@ -207,6 +219,9 @@ QUESTIONNAIRE_REVIEWED = {
  "community_water_price","community_electricity_price","community_road_presence",
  "community_population_hukou_profile","community_short_term_migrant_population","community_age_sex_structure",
  "community_never_married_over40_population","community_ethnic_minority_household_profile",
+ "community_director_education_profile","community_village_head_education_profile",
+ "community_village_secretary_education_profile","community_village_accountant_education_profile",
+ "community_local_leader_age_profile","community_local_leader_tenure_profile",
  "community_road_cleanliness","community_observed_socioeconomic_status",
  "community_built_form_organization","community_observed_crowding",
  "community_accessibility_observation","community_disaster_history","community_sanitation_reconstructed",
@@ -258,6 +273,7 @@ def validate_added_source_mappings():
  insurance_codes=set(MAP["community_urban_resident_medical_insurance_context"]+MAP["community_rural_cooperative_medical_insurance_context"])
  codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program","community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program","community_eldercare_center_context","community_home_eldercare_context","community_economic_activity_and_fiscal_context","community_housing_market_context","community_formal_credit_access","community_agricultural_machinery_supply_origin","community_primary_school_change","community_land_institutional_transition_history","community_sent_down_youth_migration_history","community_barefoot_doctor_capacity_history","community_military_service_history","community_university_admission_history","community_family_planning_policy_history","community_unplanned_birth_penalty_policy_history","community_identity_card_rollout_history") for code in MAP[cid]}
  codes.update(code for cid in ("community_population_hukou_profile","community_short_term_migrant_population","community_age_sex_structure","community_never_married_over40_population","community_ethnic_minority_household_profile") for code in MAP[cid])
+ codes.update(code for cid in ("community_director_education_profile","community_village_head_education_profile","community_village_secretary_education_profile","community_village_accountant_education_profile","community_local_leader_age_profile","community_local_leader_tenure_profile") for code in MAP[cid])
  for code in codes:
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
   q_norm="".join(ch for ch in q if ch.isalnum())
@@ -402,6 +418,8 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted."
     elif cid in {"community_population_hukou_profile","community_short_term_migrant_population","community_age_sex_structure","community_never_married_over40_population","community_ethnic_minority_household_profile"}:
      evidence="CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted."
+    elif cid in {"community_director_education_profile","community_village_head_education_profile","community_village_secretary_education_profile","community_village_accountant_education_profile","community_local_leader_age_profile","community_local_leader_tenure_profile"}:
+     evidence="CHARLS 2011 Community Questionnaire, Part A p.5 (PDF p.8), JA042 leadership table; positions, community-only versus village-only CAPI scope and education/age/tenure field slots checked against the official Codebook labels. Questionnaire does not identify a fifth age/tenure slot; those fields are held as metadata. Codebook frequencies omitted."
     elif cid in {"community_primary_school_change","community_land_institutional_transition_history","community_sent_down_youth_migration_history","community_barefoot_doctor_capacity_history","community_military_service_history","community_university_admission_history","community_family_planning_policy_history","community_unplanned_birth_penalty_policy_history","community_identity_card_rollout_history"}:
      evidence="CHARLS 2011 Community Questionnaire, Part H pp.28–34 (PDF pp.31–37); retrospective community-history informant route, item-specific V-only scope, year bands, count units and skip logic reviewed against official Codebook field labels; frequencies and descriptive summaries omitted."
     elif cid == "community_agricultural_machinery_supply_origin":
@@ -463,6 +481,14 @@ def main():
      caveat="Community-informant estimated count of rainy days in calendar year 2010. Not linked to a weather station; verify release-specific special values and plausible range before analysis."
     elif code_l == "ja041":
      caveat="Community-informant estimated count of snowy days in calendar year 2010. Not linked to a weather station; verify release-specific special values and plausible range before analysis."
+    elif code_l.startswith("ja042_1_"):
+     caveat="Education category for the named JA042 community/village leadership position; preserve the role and CAPI scope. Questionnaire options are categories, not an assumed numeric education score; not participant education or a default confounder."
+    elif code_l.startswith("ja042_2_"):
+     unit="years of age"
+     caveat="Reported age of the named JA042 community/village leader. Preserve the position and CAPI scope; this is not participant age."
+    elif code_l.startswith("ja042_3_"):
+     unit="years in position"
+     caveat="Reported time the named JA042 community/village leader has held the position. Preserve the position and CAPI scope; this is not sampled-participant employment tenure."
     elif code_l == "jg021":
      caveat="Village-only Yes/No report of a reforestation-subsidy program. A No response routes past JG022–JG024; it does not identify ecological conditions or prove that the sampled household received support."
     elif code_l == "jg022":

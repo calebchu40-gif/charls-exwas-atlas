@@ -1074,6 +1074,210 @@
     ]
   },
   {
+    "concept_id": "community_director_education_profile",
+    "label": "Community director education level",
+    "domain": "Community governance context",
+    "caveat": "2011 community-only report of the community director's education category. This is a community-level leadership descriptor, not the sampled participant's education or an established adjustment covariate.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ja042_1_1_",
+        "module": "community",
+        "source_label": "Education Level",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A p.5 (PDF p.8), JA042 leadership table; positions, community-only versus village-only CAPI scope and education/age/tenure field slots checked against the official Codebook labels. Questionnaire does not identify a fifth age/tenure slot; those fields are held as metadata. Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Education category for the named JA042 community/village leadership position; preserve the role and CAPI scope. Questionnaire options are categories, not an assumed numeric education score; not participant education or a default confounder.",
+        "value_labels": "1=Primary school; 2=Junior high school; 3=High school; 4=Middle professional school; 5=Advanced professional school; 6=University and above; 7=Illiterate",
+        "value_label_status": "official questionnaire response categories reviewed; field-specific Codebook category sets are incomplete; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_village_head_education_profile",
+    "label": "Village head education level",
+    "domain": "Community governance context",
+    "caveat": "2011 village-only report of the village head's education category. This is a community-level leadership descriptor, not the sampled participant's education or an established adjustment covariate.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ja042_1_2_",
+        "module": "community",
+        "source_label": "Education Level",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A p.5 (PDF p.8), JA042 leadership table; positions, community-only versus village-only CAPI scope and education/age/tenure field slots checked against the official Codebook labels. Questionnaire does not identify a fifth age/tenure slot; those fields are held as metadata. Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Education category for the named JA042 community/village leadership position; preserve the role and CAPI scope. Questionnaire options are categories, not an assumed numeric education score; not participant education or a default confounder.",
+        "value_labels": "1=Primary school; 2=Junior high school; 3=High school; 4=Middle professional school; 5=Advanced professional school; 6=University and above; 7=Illiterate",
+        "value_label_status": "official questionnaire response categories reviewed; field-specific Codebook category sets are incomplete; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_village_secretary_education_profile",
+    "label": "Village secretary education level",
+    "domain": "Community governance context",
+    "caveat": "2011 village-only report of the village secretary's education category. This is a community-level leadership descriptor, not the sampled participant's education or an established adjustment covariate.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ja042_1_3_",
+        "module": "community",
+        "source_label": "Education Level",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A p.5 (PDF p.8), JA042 leadership table; positions, community-only versus village-only CAPI scope and education/age/tenure field slots checked against the official Codebook labels. Questionnaire does not identify a fifth age/tenure slot; those fields are held as metadata. Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Education category for the named JA042 community/village leadership position; preserve the role and CAPI scope. Questionnaire options are categories, not an assumed numeric education score; not participant education or a default confounder.",
+        "value_labels": "1=Primary school; 2=Junior high school; 3=High school; 4=Middle professional school; 5=Advanced professional school; 6=University and above; 7=Illiterate",
+        "value_label_status": "official questionnaire response categories reviewed; field-specific Codebook category sets are incomplete; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_village_accountant_education_profile",
+    "label": "Village accountant education level",
+    "domain": "Community governance context",
+    "caveat": "2011 village-only report of the village accountant's education category. This is a community-level leadership descriptor, not the sampled participant's education or an established adjustment covariate.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ja042_1_4_",
+        "module": "community",
+        "source_label": "Education Level",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A p.5 (PDF p.8), JA042 leadership table; positions, community-only versus village-only CAPI scope and education/age/tenure field slots checked against the official Codebook labels. Questionnaire does not identify a fifth age/tenure slot; those fields are held as metadata. Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Education category for the named JA042 community/village leadership position; preserve the role and CAPI scope. Questionnaire options are categories, not an assumed numeric education score; not participant education or a default confounder.",
+        "value_labels": "1=Primary school; 2=Junior high school; 3=High school; 4=Middle professional school; 5=Advanced professional school; 6=University and above; 7=Illiterate",
+        "value_label_status": "official questionnaire response categories reviewed; field-specific Codebook category sets are incomplete; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_local_leader_age_profile",
+    "label": "Age of named community/village leaders",
+    "domain": "Community governance context",
+    "caveat": "2011 reported age for the community director, village head, village secretary and village accountant. Keep positions separate and respect community-only versus village-only routing; not participant age or a validated governance-quality measure.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ja042_2_1_",
+        "module": "community",
+        "source_label": "Age",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A p.5 (PDF p.8), JA042 leadership table; positions, community-only versus village-only CAPI scope and education/age/tenure field slots checked against the official Codebook labels. Questionnaire does not identify a fifth age/tenure slot; those fields are held as metadata. Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "years of age",
+        "caveat": "Reported age of the named JA042 community/village leader. Preserve the position and CAPI scope; this is not participant age.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "ja042_2_2_",
+        "module": "community",
+        "source_label": "Age",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A p.5 (PDF p.8), JA042 leadership table; positions, community-only versus village-only CAPI scope and education/age/tenure field slots checked against the official Codebook labels. Questionnaire does not identify a fifth age/tenure slot; those fields are held as metadata. Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "years of age",
+        "caveat": "Reported age of the named JA042 community/village leader. Preserve the position and CAPI scope; this is not participant age.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "ja042_2_3_",
+        "module": "community",
+        "source_label": "Age",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A p.5 (PDF p.8), JA042 leadership table; positions, community-only versus village-only CAPI scope and education/age/tenure field slots checked against the official Codebook labels. Questionnaire does not identify a fifth age/tenure slot; those fields are held as metadata. Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "years of age",
+        "caveat": "Reported age of the named JA042 community/village leader. Preserve the position and CAPI scope; this is not participant age.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "ja042_2_4_",
+        "module": "community",
+        "source_label": "Age",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A p.5 (PDF p.8), JA042 leadership table; positions, community-only versus village-only CAPI scope and education/age/tenure field slots checked against the official Codebook labels. Questionnaire does not identify a fifth age/tenure slot; those fields are held as metadata. Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "years of age",
+        "caveat": "Reported age of the named JA042 community/village leader. Preserve the position and CAPI scope; this is not participant age.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_local_leader_tenure_profile",
+    "label": "Tenure of named community/village leaders",
+    "domain": "Community governance context",
+    "caveat": "2011 reported years in position for the community director, village head, village secretary and village accountant. Keep positions separate and respect community-only versus village-only routing; not participant employment tenure.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "ja042_3_1_",
+        "module": "community",
+        "source_label": "How Long did He/She Hold this Position",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A p.5 (PDF p.8), JA042 leadership table; positions, community-only versus village-only CAPI scope and education/age/tenure field slots checked against the official Codebook labels. Questionnaire does not identify a fifth age/tenure slot; those fields are held as metadata. Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "years in position",
+        "caveat": "Reported time the named JA042 community/village leader has held the position. Preserve the position and CAPI scope; this is not sampled-participant employment tenure.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "ja042_3_2_",
+        "module": "community",
+        "source_label": "How Long did He/She Hold this Position",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A p.5 (PDF p.8), JA042 leadership table; positions, community-only versus village-only CAPI scope and education/age/tenure field slots checked against the official Codebook labels. Questionnaire does not identify a fifth age/tenure slot; those fields are held as metadata. Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "years in position",
+        "caveat": "Reported time the named JA042 community/village leader has held the position. Preserve the position and CAPI scope; this is not sampled-participant employment tenure.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "ja042_3_3_",
+        "module": "community",
+        "source_label": "How Long did He/She Hold this Position",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A p.5 (PDF p.8), JA042 leadership table; positions, community-only versus village-only CAPI scope and education/age/tenure field slots checked against the official Codebook labels. Questionnaire does not identify a fifth age/tenure slot; those fields are held as metadata. Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "years in position",
+        "caveat": "Reported time the named JA042 community/village leader has held the position. Preserve the position and CAPI scope; this is not sampled-participant employment tenure.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "ja042_3_4_",
+        "module": "community",
+        "source_label": "How Long did He/She Hold this Position",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part A p.5 (PDF p.8), JA042 leadership table; positions, community-only versus village-only CAPI scope and education/age/tenure field slots checked against the official Codebook labels. Questionnaire does not identify a fifth age/tenure slot; those fields are held as metadata. Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "years in position",
+        "caveat": "Reported time the named JA042 community/village leader has held the position. Preserve the position and CAPI scope; this is not sampled-participant employment tenure.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
     "concept_id": "community_water_price",
     "label": "Community-reported average water price",
     "domain": "Community environment",
