@@ -259,6 +259,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_alcohol_history_source_review.py",
     "apply_alcohol_frequency_route_review.py",
     "build_charls_atlas_catalog.py",
+    "apply_alcohol_frequency_route_review.py",
     # Rebuild the housing lookup from the audited owner-label maps before the
     # later housing measurement scripts enrich its units and route notes.
     "build_housing_catalog.py",
@@ -286,6 +287,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_anthropometric_source_review.py",
     "apply_repeated_chair_stand_source_review.py",
     "build_charls_atlas_catalog.py",
+    "apply_alcohol_frequency_route_review.py",
     "apply_housing_context_source_review.py",
     "apply_wave5_core_demographic_review.py",
     "apply_wave5_digital_behavior_review.py",

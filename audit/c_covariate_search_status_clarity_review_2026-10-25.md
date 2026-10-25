@@ -32,3 +32,13 @@ Propagated the existing questionnaire/Codebook review of past-year drinking thre
 ## 2026-10-25 follow-up: chronic-disease diagnosis-age duplicate roles
 
 The 56 exact-wave C rows duplicating four-wave self-reported age-at-first-diagnosis/knowledge phenotype candidates have now been linked to the existing chronic-disease crosswalk and official Codebook source paths. The site describes them as outcome-timing metadata, separates reported diagnosis/knowledge age from biological onset, and warns against adjusting for the same outcome's age field. This is not an adjustment set. The 982-row C directory now has 141 generic automated-discovery Candidate.Status rows (81 codes) and 163 keyword-discovery subcategory rows (90 codes). No participant-level values or Codebook frequencies were used.
+
+
+## 2026-10-25 follow-up: adult-education candidate context rows
+
+The existing adult-education exposure crosswalk identifies another 33 exact-wave C rows for participation-option and credential fields. They are now labeled as source-mapped candidate context, with the official questionnaire/Codebook files linked, while route, denominator, and release coding review remains explicitly pending. These C rows do not become an adjustment recommendation or separate exposure concepts. The C directory now has 108 generic automated-discovery Candidate.Status rows (60 codes) and 130 keyword-only subcategory rows (69 codes), out of 982. No respondent records or Codebook frequencies were used.
+
+
+## 2026-10-25 rebuild reconciliation
+
+After the clean catalog/shard regeneration and final alcohol-route status replay, the 982-row C directory has 108 generic automated-discovery status rows (60 codes) and 126 keyword-only subcategory rows (69 codes). The earlier section counts above describe each incremental review snapshot; the final subcategory count is lower because the alcohol-route source review replaces the generic keyword-only label on those exact-wave rows. Both are metadata-review dimensions, not covariate readiness measures.

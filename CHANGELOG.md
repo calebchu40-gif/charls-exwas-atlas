@@ -1,3 +1,11 @@
+## 2026-10-25 Link adult-education C metadata to mapped candidates
+
+- Linked 33 exact-wave participation-option and credential C rows to the existing adult-education candidate crosswalk and official questionnaire/Codebook sources. Route, denominator, and release coding remain pending; these fields are not default covariates or separate option-level exposures.
+- Made the existing Wave 4 duration overlap updater idempotent and expanded regression coverage.
+- Made the finalization-only build reapply alcohol route statuses after each master-catalog rebuild, so reviewed questionnaire metadata is not erased by downstream catalog propagation.
+- Reconciled chronic-disease timing and adult-education C metadata after a clean catalog/shard rebuild. The 982-row C directory now has 108 generic automated-discovery status rows (60 codes) and 126 keyword-only subcategory rows (69 codes); these are independent review fields, not adjustment-ready counts.
+- Validation: 425 Python tests pass; public payload validation, exact 92-row analysis-lock reconciliation, JavaScript syntax, and whitespace checks pass. Formal association models and actual pairwise Ns remain 0.
+
 ## 2026-10-25 Clarify chronic-disease diagnosis-age metadata roles
 
 - Linked 56 exact-wave C rows for reported diagnosis/knowledge age to the existing chronic-disease phenotype crosswalk and official Codebook source metadata.

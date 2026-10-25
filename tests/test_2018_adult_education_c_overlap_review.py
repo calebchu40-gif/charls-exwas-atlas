@@ -23,5 +23,18 @@ class AdultEducationCovariateOverlapTests(unittest.TestCase):
         self.assertIn("total years", by_code["bd008_w2_1"]["Review.Flag"])
         self.assertIn("since ZIWTime", by_code["bd008_w4_1"]["Review.Flag"])
 
+    def test_other_source_mapped_adult_education_c_rows_keep_pending_qa_visible(self):
+        with (ROOT / "audit/adult_education_training_exposure_crosswalk_v1.csv").open(encoding="utf-8-sig", newline="") as f:
+            crosswalk = list(csv.DictReader(f))
+        keys = {(r["wave"], r["code"].lower(), r["module"].lower()) for r in crosswalk}
+        catalog = json.loads((ROOT / "site-prototype/dist/catalog_c.json").read_text(encoding="utf-8"))
+        rows = [r for r in catalog if r.get("epcf", "").lower() == "c" and
+                (r["Source.Wave"], r["Variable.Name"].lower(), r["Data.File.Name"].lower()) in keys and
+                r.get("Candidate.Status", "").startswith("C metadata; source-mapped to adult_education_")]
+        self.assertEqual(len(rows), 33)
+        self.assertTrue(all("route, denominator and release coding review remain pending" in r["Candidate.Status"] for r in rows))
+        self.assertTrue(all("not a default covariate" in r["Candidate.Status"] for r in rows))
+        self.assertTrue(all("sources_official/" in r["Value.Label.Source"] for r in rows))
+
 
 if __name__ == "__main__": unittest.main()

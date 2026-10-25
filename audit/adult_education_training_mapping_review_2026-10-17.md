@@ -38,3 +38,6 @@ python scripts/build_adult_education_training_crosswalk.py
 python scripts/build_ep_atlas_metadata.py
 ```
 
+
+
+The public C directory now links 33 exact-wave option/credential context rows to this candidate crosswalk. Their status still states that routed denominators and release coding must be reviewed before analysis; the existing eight exposure concepts and wave-specific routes are preserved.

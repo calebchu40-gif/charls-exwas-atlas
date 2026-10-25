@@ -62,6 +62,7 @@ def sync_diagnosis_age_c_metadata() -> int:
     for path in paths:
         if not path.exists():
             continue
+        path_count = 0
         if path.suffix == ".csv":
             with path.open(encoding="utf-8-sig", newline="") as stream:
                 rows = list(csv.DictReader(stream)); fields = list(rows[0]) if rows else []
@@ -79,7 +80,7 @@ def sync_diagnosis_age_c_metadata() -> int:
                     "Value.Label.Review": "official question/Codebook field and continuous age unit mapped; no discrete labels or frequencies",
                     "Unit": "age in years",
                 })
-                total += 1
+                path_count += 1
             with path.open("w", encoding="utf-8-sig", newline="") as stream:
                 writer = csv.DictWriter(stream, fieldnames=fields); writer.writeheader(); writer.writerows(rows)
         else:
@@ -98,10 +99,16 @@ def sync_diagnosis_age_c_metadata() -> int:
                     "Value.Label.Review": "official question/Codebook field and continuous age unit mapped; no discrete labels or frequencies",
                     "Unit": "age in years",
                 })
-                total += 1
+                path_count += 1
             path.write_text(json.dumps(rows, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    if total != 224:
-        raise ValueError(f"Expected 56 C rows across four catalog representations; updated {total}")
+        total += path_count
+        if path.name in {"charls_atlas_candidate_fields_v0.csv", "charls_atlas_candidate_fields_v0.json"}:
+            if path_count != 56:
+                raise ValueError(f"Expected 56 C rows in primary candidate file {path}; updated {path_count}")
+        elif path_count not in (0, 56):
+            raise ValueError(f"Expected 0 (not yet generated) or 56 C rows in site shard {path}; updated {path_count}")
+    if total < 112 or total > 224:
+        raise ValueError(f"Expected two primary candidate files and optional site shards; updated {total}")
     return total
 
 
