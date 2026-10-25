@@ -12,6 +12,7 @@ EXPECTED = {f"da010_{disease}_s{option}" for disease in DISEASES for option in O
 MAPPING = ROOT / "audit/chronic_disease_ancillary_variable_mapping_v1.csv"
 SOURCE_INDEX = ROOT / "audit/ep_concept_source_crosswalk_v1.csv"
 CANDIDATE_FIELDS = ROOT / "audit/charls_atlas_candidate_fields_v0.csv"
+CANDIDATE_FIELDS_JSON = ROOT / "audit/charls_atlas_candidate_fields_v0.json"
 SITE_CATALOG = ROOT / "site-prototype/dist/catalog.json"
 QUESTIONNAIRE = ROOT / "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt"
 CODEBOOK = ROOT / "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -84,16 +85,20 @@ def update_csv(path: Path, wave_column: str, code_column: str, updates: dict[str
     return len(matches)
 
 
-def update_site_catalog(path: Path) -> int:
+def update_json(path: Path) -> int:
     rows = json.loads(path.read_text(encoding="utf-8"))
     matches = [row for row in rows if is_target(row.get("Source.Wave"), row.get("Variable.Name"))]
     observed = {str(row.get("Variable.Name", "")).strip().lower() for row in matches}
     if observed != EXPECTED:
-        raise ValueError(f"{path.name}: expected exactly 32 reviewed site rows, found {len(observed)}")
+        raise ValueError(f"{path.name}: expected exactly 32 reviewed rows, found {len(observed)}")
     for row in matches:
         apply_site_row(row)
     path.write_text(json.dumps(rows, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     return len(matches)
+
+
+def update_site_catalog(path: Path) -> int:
+    return update_json(path)
 
 
 def apply_site_row(row: dict[str, str]) -> None:
@@ -126,6 +131,7 @@ def main() -> None:
              "Concept.Mapping.Status": MAPPING_STATUS,
              "Concept.Mapping.Caveat": NOTE, "Review.Flag": ""},
         ),
+        "candidate_field_catalog_json": update_json(CANDIDATE_FIELDS_JSON),
         "site_catalog": update_site_catalog(SITE_CATALOG),
     }
     if set(counts.values()) != {32}:

@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-25）
 
-**最新构建验证（2026-10-25）：**2011年32个DA010治疗选项字段的官方类别索引和本地汇总代码核对已同步至网站；未选中/空白编码与路由分母仍待核验。保留原有字段提示，正式锁清单仍为92条。提交`71c6214`已通过GitHub Validate和Pages部署，线上配对目录返回HTTP 200；Python全套416项测试通过。详情见[`audit/2011_chronic_treatment_selected_storage_status_sync_2026-10-25.md`](audit/2011_chronic_treatment_selected_storage_status_sync_2026-10-25.md)。
+**最新构建验证（2026-10-25）：**2011年32个DA010治疗选项字段的官方类别索引和本地汇总代码核对已同步至网站；未选中/空白编码与路由分母仍待核验。保留原有字段提示，正式锁清单仍为92条。元数据提交`71c6214`已通过GitHub Validate和Pages部署，线上配对目录返回HTTP 200；当前目录状态和审计CSV/JSON已同步，Python全套417项测试通过。可用`python scripts/finalize_2011_chronic_treatment_review.py`快速刷新这项专题的网页派生文件；上游目录有变更时仍运行标准完整构建。详情见[`audit/2011_chronic_treatment_selected_storage_status_sync_2026-10-25.md`](audit/2011_chronic_treatment_selected_storage_status_sync_2026-10-25.md)。
 
 **2011慢性病治疗选项受控QA（2026-10-25）：**新增本机汇总检查，对照基线问卷及Codebook审核32个DA010选项字段。题项索引与已观察代码相符；7个病种组存在“以上皆无”与其他治疗项并存记录，且各病种均见 DA007 医生诊断回答为“否”但 DA010 有作答的记录。问卷路由同时涉及疾病索引和部分病种的DA008自知状态，当前字段不足以重建全部适用分母，因此8个“以上皆无”映射仍标记`DO NOT ANALYZE`。原始发布包及准备表来源链未核实；QA没有导出个人数据或频数。详情见[`audit/2011_disease_treatment_none_option_mapping_review_2026-10-21.md`](audit/2011_disease_treatment_none_option_mapping_review_2026-10-21.md)。
 

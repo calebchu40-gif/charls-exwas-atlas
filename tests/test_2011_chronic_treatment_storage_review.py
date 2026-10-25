@@ -31,6 +31,16 @@ class ChronicTreatmentStorageReviewTests(unittest.TestCase):
         self.assertEqual(row["Review.Flag"], "preserve existing review flag")
         self.assertIn(MODULE.NOTE, row["Concept.Mapping.Caveat"])
 
+    def test_field_json_review_uses_same_wave_specific_status(self):
+        row = {
+            "Review.Flag": "preserve this review flag",
+            "Concept.Mapping.Caveat": "existing route caveat",
+        }
+        MODULE.apply_site_row(row)
+        self.assertEqual(row["Review.Flag"], "preserve this review flag")
+        self.assertIn("unselected storage", row["Value.Label.Review"])
+        self.assertIn("DO NOT ANALYZE", row["Concept.Mapping.Status"])
+
 
 if __name__ == "__main__":
     unittest.main()
