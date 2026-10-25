@@ -1,3 +1,7 @@
+## 2026-10-25 Record metadata-only PSU file inspection
+
+- Confirmed the official 2011 data page lists PSU and Weight files separately. A local authorized `psu.dta` header contains `communityID`, province/city and urban/type fields, but no explicit variance stratum, subcommunity mapping, or replicate weights. Protected aggregate joins cover the prepared-table community keys; release identity is still unverified, so this is not variance-design validation.
+- No respondent values or private QA outputs were added to GitHub. See the dated sections in `audit/survey_design_weight_review_v1.md`.
 ## 2026-10-25 Clarify official baseline PSU mapping limits
 
 - Added CHARLS official baseline details that 30 large communities were split into geographic subareas and six sampled communities were replaced. This narrows the unresolved design gate: `communityID` stays a PSU candidate until the released PSU file's keys, labels, and subcommunity mapping are verified; geography is not used to invent variance strata.
