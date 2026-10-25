@@ -17,6 +17,7 @@ class AlcoholHistorySourceReviewTests(unittest.TestCase):
     def setUpClass(cls):
         cls.mapping = read_csv(ROOT / "audit/behavior_exposure_variable_mapping_v1.csv")
         cls.catalog = json.loads((ROOT / "site-prototype/dist/catalog_e.json").read_text(encoding="utf-8"))
+        cls.c_catalog = json.loads((ROOT / "site-prototype/dist/catalog_c.json").read_text(encoding="utf-8"))
         cls.topic = json.loads((ROOT / "site-prototype/dist/behavior_exposures_v1.json").read_text(encoding="utf-8"))
         cls.pairs = json.loads((ROOT / "site-prototype/dist/candidate_pair_explorer_v1.json").read_text(encoding="utf-8"))
         cls.review = (ROOT / "audit/alcohol_history_source_review_2026-10-25.md").read_text(encoding="utf-8")
@@ -87,6 +88,23 @@ class AlcoholHistorySourceReviewTests(unittest.TestCase):
         pair_morning = next(c for c in self.pairs["waves"]["2013"]["exposures"] if c["concept_id"] == "alcohol_morning_drink")
         self.assertTrue(all("not a population-wide Yes/No prevalence field" in f["caveat"] for f in pair_morning["source_fields"]))
         self.assertNotIn("Freq.", json.dumps([catalog_rows, pair_history, pair_morning], ensure_ascii=False))
+
+    def test_alcohol_c_metadata_has_source_reviewed_wave_specific_roles(self):
+        cases = {
+            ("2011", "da069"): "retrospective alcohol history and route",
+            ("2013", "da069"): "retrospective alcohol history and route",
+            ("2015", "da069"): "retrospective alcohol history and route",
+            ("2018", "da069"): "retrospective alcohol history and route",
+            ("2018", "zda069"): "prior-wave alcohol history carry-forward metadata",
+            ("2011", "da067"): "past-year alcohol threshold and route",
+            ("2018", "da068_s1"): "alcohol beverage-type selector",
+            ("2020", "da051"): "past-year alcohol threshold and route",
+        }
+        for (wave, code), subcategory in cases.items():
+            matches = [r for r in self.c_catalog if r["Source.Wave"] == wave and r["Variable.Name"].lower() == code]
+            self.assertTrue(matches, (wave, code))
+            self.assertTrue(all(r["subcategory"] == subcategory for r in matches))
+            self.assertTrue(all(r["Candidate.Status"].startswith("C metadata;") for r in matches))
 
 
 if __name__ == "__main__":

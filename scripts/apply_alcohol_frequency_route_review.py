@@ -1,6 +1,7 @@
 """Propagate questionnaire-backed alcohol frequency and routing caveats."""
 from pathlib import Path
 import json
+import csv
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -38,6 +39,65 @@ def set_rows(data: pd.DataFrame, concept: str, wave: str, code: str, **values: s
         raise ValueError(f"Expected one row for {concept}/{wave}/{code}, got {int(mask.sum())}")
     for key, value in values.items():
         data.loc[mask, key] = value
+
+
+def sync_c_metadata_statuses() -> int:
+    """Propagate source-reviewed alcohol meaning to exact-wave C metadata rows."""
+    rules = {
+        (wave, "da067"): ("past-year alcohol threshold and route", "C metadata; questionnaire threshold and route source-reviewed; structural skips are not No/zero; not a dose or adjustment recommendation")
+        for wave in ("2011", "2013", "2015", "2018")
+    }
+    rules[("2020", "da051")] = ("past-year alcohol threshold and route", "C metadata; Wave 5 threshold and flowchart route source-reviewed; DA052 is conditional; not a dose or adjustment recommendation")
+    rules.update({
+        (wave, "da069"): ("retrospective alcohol history and route", "C metadata; retrospective drinking-history categories and re-interview route source-reviewed; skipped/carry-forward is not No; not an adjustment recommendation")
+        for wave in ("2011", "2013", "2015", "2018")
+    })
+    rules[("2018", "zda069")] = ("prior-wave alcohol history carry-forward metadata", "C metadata; prior-wave alcohol-history route/carry-forward field source-reviewed; not an independent exposure or adjustment recommendation")
+    for wave in ("2011", "2013", "2015", "2018"):
+        for code in ("da068s1", "da068s2", "da068s3", "da068_s1", "da068_s2", "da068_s3"):
+            rules[(wave, code)] = ("alcohol beverage-type selector", "C metadata; beverage-type selection source-reviewed; selected beverage does not encode amount or population-wide eligibility")
+
+    files = [
+        ROOT / "audit/charls_atlas_candidate_fields_v0.csv",
+        ROOT / "audit/charls_atlas_candidate_fields_v0.json",
+        ROOT / "site-prototype/dist/catalog.json",
+        ROOT / "site-prototype/dist/catalog_c.json",
+    ]
+    updated = 0
+    for path in files:
+        if not path.exists():
+            continue
+        if path.suffix == ".csv":
+            with path.open(encoding="utf-8-sig", newline="") as stream:
+                rows = list(csv.DictReader(stream))
+                fieldnames = list(rows[0]) if rows else []
+            wave_key, code_key, role_key = "Source.Wave", "Variable.Name", "epcf"
+            for row in rows:
+                key = (str(row.get(wave_key, "")), str(row.get(code_key, "")).lower())
+                if key in rules and str(row.get(role_key, "")).lower() == "c":
+                    subcategory, status = rules[key]
+                    row.update({"category": "source-reviewed context metadata", "subcategory": subcategory,
+                                "Candidate.Status": status,
+                                "Harmonization.Status": "source definition and route reviewed; not a default covariate; preserve wave-specific eligibility and structural missingness"})
+                    updated += 1
+            with path.open("w", encoding="utf-8-sig", newline="") as stream:
+                writer = csv.DictWriter(stream, fieldnames=fieldnames)
+                writer.writeheader()
+                writer.writerows(rows)
+        else:
+            records = json.loads(path.read_text(encoding="utf-8"))
+            if not isinstance(records, list):
+                continue
+            for row in records:
+                key = (str(row.get("Source.Wave", "")), str(row.get("Variable.Name", "")).lower())
+                if key in rules and str(row.get("epcf", "")).lower() == "c":
+                    subcategory, status = rules[key]
+                    row.update({"category": "source-reviewed context metadata", "subcategory": subcategory,
+                                "Candidate.Status": status,
+                                "Harmonization.Status": "source definition and route reviewed; not a default covariate; preserve wave-specific eligibility and structural missingness"})
+                    updated += 1
+            path.write_text(json.dumps(records, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    return updated
 
 
 def main() -> None:
@@ -108,7 +168,8 @@ def main() -> None:
                     field[key] = getattr(row, key)
     data.to_csv(MAP, index=False, encoding="utf-8-sig")
     TOPIC.write_text(json.dumps(topic, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"Updated five past-year threshold fields, eleven beverage-frequency fields, and Wave 5 overall frequency. No respondent records or Codebook frequency summaries used.")
+    c_status_rows = sync_c_metadata_statuses()
+    print(f"Updated five past-year threshold fields, eleven beverage-frequency fields, Wave 5 overall frequency, and {c_status_rows} alcohol C metadata rows. No respondent records or Codebook frequency summaries used.")
 
 
 if __name__ == "__main__":

@@ -1,3 +1,8 @@
+## 2026-10-25 Sync alcohol route reviews to the C metadata directory
+
+- Propagated the existing official questionnaire/Codebook review for past-year drinking thresholds, beverage-type selectors, retrospective alcohol history, and 2018 prior-wave carry-forward to the exact-wave C catalogue rows. Structural skips remain distinct from No/zero, and the metadata is not a covariate recommendation.
+- Added Chinese labels and a regression check for the public C directory. No participant-level values were inspected.
+
 ## 2026-10-25 Wave-specific residential and housing C metadata status review
 
 - Updated source-review states for 2011–2018 `BB004` residential-history fields; retained the unresolved 2011 identity conflict as a hold, and marked later waves as wave-specific residential-history context.
