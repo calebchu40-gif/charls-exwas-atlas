@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 636,
+      "exposure_count": 641,
       "phenotype_count": 213,
-      "candidate_pair_count": 135445,
+      "candidate_pair_count": 136510,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -820,6 +820,76 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_age_sex_structure",
+          "label": "Community age and sex composition",
+          "domain": "Community social context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jc009",
+              "label": "Total Number of Adult Population",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate count: people aged 16 and over. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data."
+            },
+            {
+              "code": "jc009_1",
+              "label": "How Many Males",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate count: male count within the JC009 adult population. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data."
+            },
+            {
+              "code": "jc010",
+              "label": "Total Number of Population Aged 65 and Over",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate count: people aged 65 and over. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data."
+            },
+            {
+              "code": "jc010_1",
+              "label": "How Many Males",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate count: male count within the JC010 65+ population. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data."
+            },
+            {
+              "code": "jc011",
+              "label": "Total Number of Population Aged 80 and Over",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate count: people aged 80 and over. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data."
+            },
+            {
+              "code": "jc011_1",
+              "label": "How Many Males",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate count: male count within the JC011 80+ population. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data."
             }
           ]
         },
@@ -2214,6 +2284,36 @@
           ]
         },
         {
+          "concept_id": "community_never_married_over40_population",
+          "label": "Community count of never-married people aged over 40",
+          "domain": "Community social context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jc012",
+              "label": "Num. of Bachelors Aged Above 40 Who Have Never Been Married",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant count for the questionnaire's never-married population aged over 40 and a separate male count, as labelled in the official source. This aggregate item does not establish any sampled participant's marital status; verify release coding and denominator before analysis."
+            },
+            {
+              "code": "jc012_1",
+              "label": "How Many Males",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant count for the questionnaire's never-married population aged over 40 and a separate male count, as labelled in the official source. This aggregate item does not establish any sampled participant's marital status; verify release coding and denominator before analysis."
+            }
+          ]
+        },
+        {
           "concept_id": "community_water_sources",
           "label": "Community drinking-water source profile",
           "domain": "Community environment",
@@ -2530,6 +2630,66 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "Household electricity penetration and annual supply availability/duration; village-level reported metrics."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_ethnic_minority_household_profile",
+          "label": "Community ethnic-minority presence and household counts",
+          "domain": "Community social context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jc013",
+              "label": "Does Your V/C Have Minorities",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate: whether any ethnic-minority groups are reported in the community. JC014/JC016 minority names are open text and excluded from E/P; JC013=No routes to JC019, so downstream blanks are structural rather than No. Do not sum household counts or infer individual ethnicity."
+            },
+            {
+              "code": "jc013_1",
+              "label": "How Many",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate: number of different minority groups, asked after a Yes response. JC014/JC016 minority names are open text and excluded from E/P; JC013=No routes to JC019, so downstream blanks are structural rather than No. Do not sum household counts or infer individual ethnicity."
+            },
+            {
+              "code": "jc015",
+              "label": "How Many Households Belong to this Minority",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate: households in the largest minority group. JC014/JC016 minority names are open text and excluded from E/P; JC013=No routes to JC019, so downstream blanks are structural rather than No. Do not sum household counts or infer individual ethnicity."
+            },
+            {
+              "code": "jc017",
+              "label": "How Many Households Belong to this Minority",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate: households in the second-largest minority group. JC014/JC016 minority names are open text and excluded from E/P; JC013=No routes to JC019, so downstream blanks are structural rather than No. Do not sum household counts or infer individual ethnicity."
+            },
+            {
+              "code": "jc018",
+              "label": "How Many Households Belong to other Minorities",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate: households in all other minority groups. JC014/JC016 minority names are open text and excluded from E/P; JC013=No routes to JC019, so downstream blanks are structural rather than No. Do not sum household counts or infer individual ethnicity."
             }
           ]
         },
@@ -4044,6 +4204,116 @@
           ]
         },
         {
+          "concept_id": "community_population_hukou_profile",
+          "label": "Community population and household-registration profile",
+          "domain": "Community social context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jc001",
+              "label": "Population",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate count: 2010 year-end usual residents living in the community for more than half a year. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+            },
+            {
+              "code": "jc002",
+              "label": "How Many of Them Have Non-Agriculture Hukou",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate count: people among JC001 with non-agricultural household registration. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+            },
+            {
+              "code": "jc003",
+              "label": "How Many of Them Have Hukou in Your V/C",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate count: 2010 usual residents with local household registration. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+            },
+            {
+              "code": "jc003_1",
+              "label": "Num. of Households",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate count: households associated with the JC003 local-hukou count. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+            },
+            {
+              "code": "jc004",
+              "label": "How Many of Them Don't Have Hukou in Your V/C",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate count: 2010 usual residents without local household registration. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+            },
+            {
+              "code": "jc004_1",
+              "label": "Num. of Households",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate count: households associated with the JC004 nonlocal-hukou count. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+            },
+            {
+              "code": "jc005",
+              "label": "Num. of Peoples with Hukou in Your V/C but Not Living Here",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate count: 2010 people with local household registration who did not live locally for more than half a year. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+            },
+            {
+              "code": "jc005_1",
+              "label": "Num. of Households",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate count: households associated with the JC005 nonresident local-hukou count. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+            },
+            {
+              "code": "jc007",
+              "label": "Population in the Year before Last",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate count: 2009 year-end usual residents living locally for more than half a year. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+            },
+            {
+              "code": "jc008",
+              "label": "How Many of Them Have Hukou in Your V/C",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate count: people among JC007 with local household registration. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+            }
+          ]
+        },
+        {
           "concept_id": "community_reforestation_subsidy_program",
           "label": "Community reforestation subsidy program context",
           "domain": "Community environmental-policy context",
@@ -4340,6 +4610,26 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "Sewerage, waste management, toilet infrastructure and public restroom indicators. Community representative report; do not conflate with household toilet fields."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_short_term_migrant_population",
+          "label": "Community short-term migrant population",
+          "domain": "Community migration context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jc006",
+              "label": "Migrant",
+              "module": "community",
+              "unit": "people",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant count of people living locally for less than half a year at 2010 year-end. This is distinct from JC001's more-than-half-year resident population and is not a sampled participant's migration history; do not combine counts without validation."
             }
           ]
         },
@@ -118104,6 +118394,76 @@
       ]
     },
     {
+      "concept_id": "community_age_sex_structure",
+      "label": "Community age and sex composition",
+      "domain": "Community social context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jc009",
+          "label": "Total Number of Adult Population",
+          "module": "community",
+          "unit": "people",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate count: people aged 16 and over. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data."
+        },
+        {
+          "code": "jc009_1",
+          "label": "How Many Males",
+          "module": "community",
+          "unit": "people",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate count: male count within the JC009 adult population. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data."
+        },
+        {
+          "code": "jc010",
+          "label": "Total Number of Population Aged 65 and Over",
+          "module": "community",
+          "unit": "people",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate count: people aged 65 and over. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data."
+        },
+        {
+          "code": "jc010_1",
+          "label": "How Many Males",
+          "module": "community",
+          "unit": "people",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate count: male count within the JC010 65+ population. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data."
+        },
+        {
+          "code": "jc011",
+          "label": "Total Number of Population Aged 80 and Over",
+          "module": "community",
+          "unit": "people",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate count: people aged 80 and over. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data."
+        },
+        {
+          "code": "jc011_1",
+          "label": "How Many Males",
+          "module": "community",
+          "unit": "people",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate count: male count within the JC011 80+ population. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data."
+        }
+      ]
+    },
+    {
       "concept_id": "community_agricultural_machinery_supply_origin",
       "label": "Community agricultural machinery supply origin",
       "domain": "Community agricultural context",
@@ -119494,6 +119854,36 @@
       ]
     },
     {
+      "concept_id": "community_never_married_over40_population",
+      "label": "Community count of never-married people aged over 40",
+      "domain": "Community social context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jc012",
+          "label": "Num. of Bachelors Aged Above 40 Who Have Never Been Married",
+          "module": "community",
+          "unit": "people",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant count for the questionnaire's never-married population aged over 40 and a separate male count, as labelled in the official source. This aggregate item does not establish any sampled participant's marital status; verify release coding and denominator before analysis."
+        },
+        {
+          "code": "jc012_1",
+          "label": "How Many Males",
+          "module": "community",
+          "unit": "people",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant count for the questionnaire's never-married population aged over 40 and a separate male count, as labelled in the official source. This aggregate item does not establish any sampled participant's marital status; verify release coding and denominator before analysis."
+        }
+      ]
+    },
+    {
       "concept_id": "community_water_sources",
       "label": "Community drinking-water source profile",
       "domain": "Community environment",
@@ -119810,6 +120200,66 @@
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
           "caveat": "Household electricity penetration and annual supply availability/duration; village-level reported metrics."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_ethnic_minority_household_profile",
+      "label": "Community ethnic-minority presence and household counts",
+      "domain": "Community social context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jc013",
+          "label": "Does Your V/C Have Minorities",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate: whether any ethnic-minority groups are reported in the community. JC014/JC016 minority names are open text and excluded from E/P; JC013=No routes to JC019, so downstream blanks are structural rather than No. Do not sum household counts or infer individual ethnicity."
+        },
+        {
+          "code": "jc013_1",
+          "label": "How Many",
+          "module": "community",
+          "unit": "people",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate: number of different minority groups, asked after a Yes response. JC014/JC016 minority names are open text and excluded from E/P; JC013=No routes to JC019, so downstream blanks are structural rather than No. Do not sum household counts or infer individual ethnicity."
+        },
+        {
+          "code": "jc015",
+          "label": "How Many Households Belong to this Minority",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate: households in the largest minority group. JC014/JC016 minority names are open text and excluded from E/P; JC013=No routes to JC019, so downstream blanks are structural rather than No. Do not sum household counts or infer individual ethnicity."
+        },
+        {
+          "code": "jc017",
+          "label": "How Many Households Belong to this Minority",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate: households in the second-largest minority group. JC014/JC016 minority names are open text and excluded from E/P; JC013=No routes to JC019, so downstream blanks are structural rather than No. Do not sum household counts or infer individual ethnicity."
+        },
+        {
+          "code": "jc018",
+          "label": "How Many Households Belong to other Minorities",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate: households in all other minority groups. JC014/JC016 minority names are open text and excluded from E/P; JC013=No routes to JC019, so downstream blanks are structural rather than No. Do not sum household counts or infer individual ethnicity."
         }
       ]
     },
@@ -121324,6 +121774,116 @@
       ]
     },
     {
+      "concept_id": "community_population_hukou_profile",
+      "label": "Community population and household-registration profile",
+      "domain": "Community social context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jc001",
+          "label": "Population",
+          "module": "community",
+          "unit": "people",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate count: 2010 year-end usual residents living in the community for more than half a year. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+        },
+        {
+          "code": "jc002",
+          "label": "How Many of Them Have Non-Agriculture Hukou",
+          "module": "community",
+          "unit": "people",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate count: people among JC001 with non-agricultural household registration. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+        },
+        {
+          "code": "jc003",
+          "label": "How Many of Them Have Hukou in Your V/C",
+          "module": "community",
+          "unit": "people",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate count: 2010 usual residents with local household registration. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+        },
+        {
+          "code": "jc003_1",
+          "label": "Num. of Households",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate count: households associated with the JC003 local-hukou count. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+        },
+        {
+          "code": "jc004",
+          "label": "How Many of Them Don't Have Hukou in Your V/C",
+          "module": "community",
+          "unit": "people",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate count: 2010 usual residents without local household registration. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+        },
+        {
+          "code": "jc004_1",
+          "label": "Num. of Households",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate count: households associated with the JC004 nonlocal-hukou count. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+        },
+        {
+          "code": "jc005",
+          "label": "Num. of Peoples with Hukou in Your V/C but Not Living Here",
+          "module": "community",
+          "unit": "people",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate count: 2010 people with local household registration who did not live locally for more than half a year. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+        },
+        {
+          "code": "jc005_1",
+          "label": "Num. of Households",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate count: households associated with the JC005 nonresident local-hukou count. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+        },
+        {
+          "code": "jc007",
+          "label": "Population in the Year before Last",
+          "module": "community",
+          "unit": "people",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate count: 2009 year-end usual residents living locally for more than half a year. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+        },
+        {
+          "code": "jc008",
+          "label": "How Many of Them Have Hukou in Your V/C",
+          "module": "community",
+          "unit": "people",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate count: people among JC007 with local household registration. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+        }
+      ]
+    },
+    {
       "concept_id": "community_reforestation_subsidy_program",
       "label": "Community reforestation subsidy program context",
       "domain": "Community environmental-policy context",
@@ -121620,6 +122180,26 @@
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
           "caveat": "Sewerage, waste management, toilet infrastructure and public restroom indicators. Community representative report; do not conflate with household toilet fields."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_short_term_migrant_population",
+      "label": "Community short-term migrant population",
+      "domain": "Community migration context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jc006",
+          "label": "Migrant",
+          "module": "community",
+          "unit": "people",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant count of people living locally for less than half a year at 2010 year-end. This is distinct from JC001's more-than-half-year resident population and is not a sampled participant's migration history; do not combine counts without validation."
         }
       ]
     },
@@ -123668,9 +124248,9 @@
     "2013": {
       "baseline_wave": "2011",
       "followup_wave": "2013",
-      "exposure_count": 139,
+      "exposure_count": 144,
       "phenotype_count": 226,
-      "candidate_pair_count": 31414,
+      "candidate_pair_count": 32544,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -123908,9 +124488,9 @@
     "2015": {
       "baseline_wave": "2011",
       "followup_wave": "2015",
-      "exposure_count": 139,
+      "exposure_count": 144,
       "phenotype_count": 239,
-      "candidate_pair_count": 33221,
+      "candidate_pair_count": 34416,
       "phenotype_concept_ids": [
         "offspring_health_status_2015",
         "offspring_self_care_ability_2015",
@@ -124161,9 +124741,9 @@
     "2018": {
       "baseline_wave": "2011",
       "followup_wave": "2018",
-      "exposure_count": 139,
+      "exposure_count": 144,
       "phenotype_count": 211,
-      "candidate_pair_count": 29329,
+      "candidate_pair_count": 30384,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -124386,9 +124966,9 @@
     "2020": {
       "baseline_wave": "2011",
       "followup_wave": "2020",
-      "exposure_count": 139,
+      "exposure_count": 144,
       "phenotype_count": 104,
-      "candidate_pair_count": 14456,
+      "candidate_pair_count": 14976,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",

@@ -108,7 +108,16 @@ for wave,code in metadata_keys:
         fields=fields.loc[~redundant].copy()
     metadata_rows=(fields["Source.Wave"].str.lower().eq(wave) & fields["Variable.Name"].str.lower().eq(code) & fields["epcf"].str.lower().eq("c"))
     metadata_type = str(override.get("metadata_type", "")).strip().lower()
-    if metadata_type == "activity_random_subsample_marker_unresolved":
+    if metadata_type == "community_informant_role":
+        fields.loc[metadata_rows,"category"]="measurement metadata"
+        fields.loc[metadata_rows,"subcategory"]="community-questionnaire informant role"
+        fields.loc[metadata_rows,"Value.Labels"]=""
+        fields.loc[metadata_rows,"Value.Label.Source"]="sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; audit/CHARLS_2011_Codebook_extracted.txt"
+        fields.loc[metadata_rows,"Value.Label.Review"]="official field identifies the community-questionnaire informant role; response categories omitted because this is not participant metadata"
+        fields.loc[metadata_rows,"Candidate.Status"]="C metadata; respondent role for Community Questionnaire Part C; not a sampled-participant characteristic"
+        fields.loc[metadata_rows,"Harmonization.Status"]="informant identity/role context only; not an exposure, phenotype, or adjustment covariate"
+        fields.loc[metadata_rows,"Review.Flag"]="exclude from E/P association matrix; never use a community-informant role as a CHARLS participant covariate"
+    elif metadata_type == "activity_random_subsample_marker_unresolved":
         fields.loc[metadata_rows,"category"]="measurement metadata"
         fields.loc[metadata_rows,"subcategory"]="physical-activity randomized-module assignment marker"
         fields.loc[metadata_rows,"Value.Labels"]=""

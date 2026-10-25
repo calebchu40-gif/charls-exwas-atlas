@@ -4,7 +4,7 @@
 
 | wave | exposure_concepts_with_source_fields | phenotype_concepts_with_source_fields | distinct_concept_pairs_with_both_roles | actual_pairwise_complete_n | status |
 | --- | --- | --- | --- | --- | --- |
-| 2011 | 636 | 213 | 135445 | not computed | metadata co-availability only; not a sample-size or analysis-eligibility count |
+| 2011 | 641 | 213 | 136510 | not computed | metadata co-availability only; not a sample-size or analysis-eligibility count |
 | 2013 | 628 | 226 | 141920 | not computed | metadata co-availability only; not a sample-size or analysis-eligibility count |
 | 2015 | 599 | 239 | 143137 | not computed | metadata co-availability only; not a sample-size or analysis-eligibility count |
 | 2018 | 500 | 211 | 105493 | not computed | metadata co-availability only; not a sample-size or analysis-eligibility count |

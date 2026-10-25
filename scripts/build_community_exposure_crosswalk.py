@@ -15,6 +15,11 @@ CONCEPTS={
  "community_transport_road":("Community road and transport access","Community context","Road type/outage days and distance/count of transport links/stations. Infrastructure/access indicators, not pollutant exposure."),
  "community_electricity":("Community electricity access and reliability","Community environment","Household electricity penetration and annual supply availability/duration; village-level reported metrics."),
  "community_education_profile":("Community adult education composition","Community social context","2011 community-informant estimates of adult education percentages. Each exact-percentage item has a separate category field asked only when the informant does not know the exact number; keep exact and fallback fields distinct and do not combine them until release coding and missingness are validated. Aggregate community context, not an individual's education."),
+ "community_population_hukou_profile":("Community population and household-registration profile","Community social context","Community-informant aggregate counts from 2009–2010. Preserve each residence-duration, local/nonlocal hukou, person/household count and reference year separately; source denominators are not interchangeable, so do not derive rates or totals without validating the official release. These are community context, not the sampled participant's residence or hukou."),
+ "community_short_term_migrant_population":("Community short-term migrant population","Community migration context","Community-informant count of people living in the village/community for less than half a year at the end of 2010. This is not a CHARLS respondent's migration history; do not combine with the more-than-half-year resident or hukou counts without confirming mutually exclusive definitions and denominators."),
+ "community_age_sex_structure":("Community age and sex composition","Community social context","2011 community-informant counts of adults aged 16+, people aged 65+, and people aged 80+, with separate reported male counts. Preserve nested age thresholds and reference population; do not sum the 65+ and 80+ counts or derive individual age/sex values."),
+ "community_never_married_over40_population":("Community count of never-married people aged over 40","Community social context","2011 community-informant count for the questionnaire's over-40 never-married group and a separate male count. The English/Chinese item wording and informant-reported aggregate do not identify any participant's marital status; preserve the published item definition pending release validation."),
+ "community_ethnic_minority_household_profile":("Community ethnic-minority presence and household counts","Community social context","2011 community-informant report of whether minority groups are present, how many groups, and household counts for the largest, second-largest and remaining groups. The counts have no population denominator and must not be summed into a percentage without release-level validation. Minority names are open text and are excluded from E/P display."),
  "community_water_price":("Community-reported average water price","Community environment","2011 community-reported current average water unit price in RMB yuan per ton; community context, not an individual's household bill."),
  "community_electricity_price":("Community-reported average electricity price","Community environment","2011 community-reported current average electricity unit price in RMB yuan per degree (kWh); community context, not an individual's household bill."),
  "community_road_presence":("Road access through the village/community","Community environment","2011 community-informant Yes/No report of roads passing through the village/community; single-wave context indicator."),
@@ -72,6 +77,11 @@ MAP={
  "community_transport_road":["jb001","jb002","jb003","jb004","jb005"],
  "community_electricity":["jb017","jb020","jb021"],
  "community_education_profile":["jc019","jc019_1","jc020","jc020_1","jc021","jc021_1","jc022","jc022_1","jc023","jc023_1","jc024","jc024_1"],
+ "community_population_hukou_profile":["jc001","jc002","jc003","jc003_1","jc004","jc004_1","jc005","jc005_1","jc007","jc008"],
+ "community_short_term_migrant_population":["jc006"],
+ "community_age_sex_structure":["jc009","jc009_1","jc010","jc010_1","jc011","jc011_1"],
+ "community_never_married_over40_population":["jc012","jc012_1"],
+ "community_ethnic_minority_household_profile":["jc013","jc013_1","jc015","jc017","jc018"],
  "community_water_price":["jj023"],
  "community_electricity_price":["jj024"],
  "community_road_presence":["jk001"],
@@ -195,6 +205,8 @@ QUESTIONNAIRE_REVIEWED = {
  "community_sanitation_services","community_industrial_pollution","community_weather",
  "community_transport_road","community_electricity","community_education_profile",
  "community_water_price","community_electricity_price","community_road_presence",
+ "community_population_hukou_profile","community_short_term_migrant_population","community_age_sex_structure",
+ "community_never_married_over40_population","community_ethnic_minority_household_profile",
  "community_road_cleanliness","community_observed_socioeconomic_status",
  "community_built_form_organization","community_observed_crowding",
  "community_accessibility_observation","community_disaster_history","community_sanitation_reconstructed",
@@ -245,6 +257,7 @@ def validate_added_source_mappings():
  other_subsidy_codes=set(MAP["community_other_subsidy_program_roster"])
  insurance_codes=set(MAP["community_urban_resident_medical_insurance_context"]+MAP["community_rural_cooperative_medical_insurance_context"])
  codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program","community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program","community_eldercare_center_context","community_home_eldercare_context","community_economic_activity_and_fiscal_context","community_housing_market_context","community_formal_credit_access","community_agricultural_machinery_supply_origin","community_primary_school_change","community_land_institutional_transition_history","community_sent_down_youth_migration_history","community_barefoot_doctor_capacity_history","community_military_service_history","community_university_admission_history","community_family_planning_policy_history","community_unplanned_birth_penalty_policy_history","community_identity_card_rollout_history") for code in MAP[cid]}
+ codes.update(code for cid in ("community_population_hukou_profile","community_short_term_migrant_population","community_age_sex_structure","community_never_married_over40_population","community_ethnic_minority_household_profile") for code in MAP[cid])
  for code in codes:
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
   q_norm="".join(ch for ch in q if ch.isalnum())
@@ -360,6 +373,12 @@ def validate_added_source_mappings():
    raise ValueError(f"JA038 terrain category missing from official source: {label}")
  if "4" not in q or "高原" not in q or "4 plateau" not in cb or "5" not in q or "盆地" not in q or "5 basin" not in cb:
   raise ValueError("JA038 code 4/5 terrain bilingual source anchor not found")
+ q_alnum="".join(ch for ch in q if ch.isalnum())
+ if any(term not in q_alnum for term in ("whatwasthetotalpopulationwholiveinyourvillagecommunityformorethanhalfayear",
+      "howmanyofthemhavenonagriculturehukou","totalmigrantpopulationwholivelessthanhalfayear",
+      "totalnumberofpopulationaged65andover","bachelorsagedabove40whohaveneverbeenmarried",
+      "doesyourvillagecommunityhaveminorities","whichminorityhasthelargestpopulation")):
+  raise ValueError("Official community population/hukou/minority questionnaire prompts missing")
 
 def main():
  validate_added_source_mappings()
@@ -381,6 +400,8 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part B pp.13–14 (PDF pp.16–17), JB030–JB038; community-only versus village-only routing, JB030 No-skip, listed services and units checked against official Codebook; frequencies omitted."
     elif cid in {"community_economic_activity_and_fiscal_context","community_housing_market_context","community_formal_credit_access"}:
      evidence="CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted."
+    elif cid in {"community_population_hukou_profile","community_short_term_migrant_population","community_age_sex_structure","community_never_married_over40_population","community_ethnic_minority_household_profile"}:
+     evidence="CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted."
     elif cid in {"community_primary_school_change","community_land_institutional_transition_history","community_sent_down_youth_migration_history","community_barefoot_doctor_capacity_history","community_military_service_history","community_university_admission_history","community_family_planning_policy_history","community_unplanned_birth_penalty_policy_history","community_identity_card_rollout_history"}:
      evidence="CHARLS 2011 Community Questionnaire, Part H pp.28–34 (PDF pp.31–37); retrospective community-history informant route, item-specific V-only scope, year bands, count units and skip logic reviewed against official Codebook field labels; frequencies and descriptive summaries omitted."
     elif cid == "community_agricultural_machinery_supply_origin":
@@ -713,6 +734,10 @@ def main():
      unit="month"
     elif code_l.startswith("ji002_e_"):
      unit="people injured or dead"
+    elif code_l in {"jc001","jc002","jc003","jc004","jc005","jc006","jc007","jc008","jc009","jc009_1","jc010","jc010_1","jc011","jc011_1","jc012","jc012_1","jc013_1"}:
+     unit="people"
+    elif code_l in {"jc003_1","jc004_1","jc005_1","jc015","jc017","jc018"}:
+     unit="households"
     elif code_l in {"jc019","jc020","jc021","jc022","jc023","jc024"}:
      unit="percent of community adults"
     elif code_l in {"jc019_1","jc020_1","jc021_1","jc022_1","jc023_1","jc024_1"}:
@@ -737,7 +762,31 @@ def main():
      unit="Yuan/month"
     elif code_l in {"jj029","jj030","jj031"}:
      unit="percent"
-    if cid == "community_eldercare_center_context":
+    if cid == "community_population_hukou_profile":
+     details={
+      "jc001":"2010 year-end usual residents living in the community for more than half a year",
+      "jc002":"people among JC001 with non-agricultural household registration",
+      "jc003":"2010 usual residents with local household registration",
+      "jc003_1":"households associated with the JC003 local-hukou count",
+      "jc004":"2010 usual residents without local household registration",
+      "jc004_1":"households associated with the JC004 nonlocal-hukou count",
+      "jc005":"2010 people with local household registration who did not live locally for more than half a year",
+      "jc005_1":"households associated with the JC005 nonresident local-hukou count",
+      "jc007":"2009 year-end usual residents living locally for more than half a year",
+      "jc008":"people among JC007 with local household registration",
+     }
+     caveat=f"Community-informant aggregate count: {details[code_l]}. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values."
+    elif cid == "community_short_term_migrant_population":
+     caveat="Community-informant count of people living locally for less than half a year at 2010 year-end. This is distinct from JC001's more-than-half-year resident population and is not a sampled participant's migration history; do not combine counts without validation."
+    elif cid == "community_age_sex_structure":
+     details={"jc009":"people aged 16 and over","jc009_1":"male count within the JC009 adult population","jc010":"people aged 65 and over","jc010_1":"male count within the JC010 65+ population","jc011":"people aged 80 and over","jc011_1":"male count within the JC011 80+ population"}
+     caveat=f"Community-informant aggregate count: {details[code_l]}. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data."
+    elif cid == "community_never_married_over40_population":
+     caveat="Community-informant count for the questionnaire's never-married population aged over 40 and a separate male count, as labelled in the official source. This aggregate item does not establish any sampled participant's marital status; verify release coding and denominator before analysis."
+    elif cid == "community_ethnic_minority_household_profile":
+     details={"jc013":"whether any ethnic-minority groups are reported in the community","jc013_1":"number of different minority groups, asked after a Yes response","jc015":"households in the largest minority group","jc017":"households in the second-largest minority group","jc018":"households in all other minority groups"}
+     caveat=f"Community-informant aggregate: {details[code_l]}. JC014/JC016 minority names are open text and excluded from E/P; JC013=No routes to JC019, so downstream blanks are structural rather than No. Do not sum household counts or infer individual ethnicity."
+    elif cid == "community_eldercare_center_context":
      if code_l == "jb030": caveat="Community-only CAPI item reporting whether a community-based elderly care center exists. No routes to JB036, skipping JB031–JB035; structural absence is not zero or a negative response. Community aggregate, not individual service use."
      elif code_l in {"jb031", "jb032"}: caveat=f"Conditional community-level {('center area in square meters' if code_l == 'jb031' else 'number of older people using the center')}, asked only after JB030=Yes; preserve the route and validate special values in the authorized release."
      elif code_l.startswith("jb033s"): caveat="Separate multiple-response service slot for a community-based elderly care center (health care, entertainment activities, exercise equipment, or other). Slots are distinct; do not treat their numeric suffixes as an ordinal score. Conditional on JB030=Yes."

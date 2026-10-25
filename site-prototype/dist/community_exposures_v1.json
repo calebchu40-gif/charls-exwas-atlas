@@ -722,6 +722,358 @@
     ]
   },
   {
+    "concept_id": "community_population_hukou_profile",
+    "label": "Community population and household-registration profile",
+    "domain": "Community social context",
+    "caveat": "Community-informant aggregate counts from 2009–2010. Preserve each residence-duration, local/nonlocal hukou, person/household count and reference year separately; source denominators are not interchangeable, so do not derive rates or totals without validating the official release. These are community context, not the sampled participant's residence or hukou.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jc001",
+        "module": "community",
+        "source_label": "Population",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "people",
+        "caveat": "Community-informant aggregate count: 2010 year-end usual residents living in the community for more than half a year. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc002",
+        "module": "community",
+        "source_label": "How Many of Them Have Non-Agriculture Hukou",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "people",
+        "caveat": "Community-informant aggregate count: people among JC001 with non-agricultural household registration. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc003",
+        "module": "community",
+        "source_label": "How Many of Them Have Hukou in Your V/C",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "people",
+        "caveat": "Community-informant aggregate count: 2010 usual residents with local household registration. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc003_1",
+        "module": "community",
+        "source_label": "Num. of Households",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "households",
+        "caveat": "Community-informant aggregate count: households associated with the JC003 local-hukou count. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc004",
+        "module": "community",
+        "source_label": "How Many of Them Don't Have Hukou in Your V/C",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "people",
+        "caveat": "Community-informant aggregate count: 2010 usual residents without local household registration. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc004_1",
+        "module": "community",
+        "source_label": "Num. of Households",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "households",
+        "caveat": "Community-informant aggregate count: households associated with the JC004 nonlocal-hukou count. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc005",
+        "module": "community",
+        "source_label": "Num. of Peoples with Hukou in Your V/C but Not Living Here",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "people",
+        "caveat": "Community-informant aggregate count: 2010 people with local household registration who did not live locally for more than half a year. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc005_1",
+        "module": "community",
+        "source_label": "Num. of Households",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "households",
+        "caveat": "Community-informant aggregate count: households associated with the JC005 nonresident local-hukou count. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc007",
+        "module": "community",
+        "source_label": "Population in the Year before Last",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "people",
+        "caveat": "Community-informant aggregate count: 2009 year-end usual residents living locally for more than half a year. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc008",
+        "module": "community",
+        "source_label": "How Many of Them Have Hukou in Your V/C",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "people",
+        "caveat": "Community-informant aggregate count: people among JC007 with local household registration. Reference year and residence/hukou definition are field-specific. Person and household counts are not interchangeable; do not infer respondent hukou or derive rates without validating denominator consistency and authorized-release special values.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_short_term_migrant_population",
+    "label": "Community short-term migrant population",
+    "domain": "Community migration context",
+    "caveat": "Community-informant count of people living in the village/community for less than half a year at the end of 2010. This is not a CHARLS respondent's migration history; do not combine with the more-than-half-year resident or hukou counts without confirming mutually exclusive definitions and denominators.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jc006",
+        "module": "community",
+        "source_label": "Migrant",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "people",
+        "caveat": "Community-informant count of people living locally for less than half a year at 2010 year-end. This is distinct from JC001's more-than-half-year resident population and is not a sampled participant's migration history; do not combine counts without validation.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_age_sex_structure",
+    "label": "Community age and sex composition",
+    "domain": "Community social context",
+    "caveat": "2011 community-informant counts of adults aged 16+, people aged 65+, and people aged 80+, with separate reported male counts. Preserve nested age thresholds and reference population; do not sum the 65+ and 80+ counts or derive individual age/sex values.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jc009",
+        "module": "community",
+        "source_label": "Total Number of Adult Population",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "people",
+        "caveat": "Community-informant aggregate count: people aged 16 and over. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc009_1",
+        "module": "community",
+        "source_label": "How Many Males",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "people",
+        "caveat": "Community-informant aggregate count: male count within the JC009 adult population. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc010",
+        "module": "community",
+        "source_label": "Total Number of Population Aged 65 and Over",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "people",
+        "caveat": "Community-informant aggregate count: people aged 65 and over. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc010_1",
+        "module": "community",
+        "source_label": "How Many Males",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "people",
+        "caveat": "Community-informant aggregate count: male count within the JC010 65+ population. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc011",
+        "module": "community",
+        "source_label": "Total Number of Population Aged 80 and Over",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "people",
+        "caveat": "Community-informant aggregate count: people aged 80 and over. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc011_1",
+        "module": "community",
+        "source_label": "How Many Males",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "people",
+        "caveat": "Community-informant aggregate count: male count within the JC011 80+ population. Preserve the nested age threshold and separate sex count; do not sum 65+ and 80+ groups or interpret as participant-level demographic data.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_never_married_over40_population",
+    "label": "Community count of never-married people aged over 40",
+    "domain": "Community social context",
+    "caveat": "2011 community-informant count for the questionnaire's over-40 never-married group and a separate male count. The English/Chinese item wording and informant-reported aggregate do not identify any participant's marital status; preserve the published item definition pending release validation.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jc012",
+        "module": "community",
+        "source_label": "Num. of Bachelors Aged Above 40 Who Have Never Been Married",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "people",
+        "caveat": "Community-informant count for the questionnaire's never-married population aged over 40 and a separate male count, as labelled in the official source. This aggregate item does not establish any sampled participant's marital status; verify release coding and denominator before analysis.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc012_1",
+        "module": "community",
+        "source_label": "How Many Males",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "people",
+        "caveat": "Community-informant count for the questionnaire's never-married population aged over 40 and a separate male count, as labelled in the official source. This aggregate item does not establish any sampled participant's marital status; verify release coding and denominator before analysis.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_ethnic_minority_household_profile",
+    "label": "Community ethnic-minority presence and household counts",
+    "domain": "Community social context",
+    "caveat": "2011 community-informant report of whether minority groups are present, how many groups, and household counts for the largest, second-largest and remaining groups. The counts have no population denominator and must not be summed into a percentage without release-level validation. Minority names are open text and are excluded from E/P display.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jc013",
+        "module": "community",
+        "source_label": "Does Your V/C Have Minorities",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Community-informant aggregate: whether any ethnic-minority groups are reported in the community. JC014/JC016 minority names are open text and excluded from E/P; JC013=No routes to JC019, so downstream blanks are structural rather than No. Do not sum household counts or infer individual ethnicity.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc013_1",
+        "module": "community",
+        "source_label": "How Many",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "people",
+        "caveat": "Community-informant aggregate: number of different minority groups, asked after a Yes response. JC014/JC016 minority names are open text and excluded from E/P; JC013=No routes to JC019, so downstream blanks are structural rather than No. Do not sum household counts or infer individual ethnicity.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc015",
+        "module": "community",
+        "source_label": "How Many Households Belong to this Minority",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "households",
+        "caveat": "Community-informant aggregate: households in the largest minority group. JC014/JC016 minority names are open text and excluded from E/P; JC013=No routes to JC019, so downstream blanks are structural rather than No. Do not sum household counts or infer individual ethnicity.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc017",
+        "module": "community",
+        "source_label": "How Many Households Belong to this Minority",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "households",
+        "caveat": "Community-informant aggregate: households in the second-largest minority group. JC014/JC016 minority names are open text and excluded from E/P; JC013=No routes to JC019, so downstream blanks are structural rather than No. Do not sum household counts or infer individual ethnicity.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jc018",
+        "module": "community",
+        "source_label": "How Many Households Belong to other Minorities",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "households",
+        "caveat": "Community-informant aggregate: households in all other minority groups. JC014/JC016 minority names are open text and excluded from E/P; JC013=No routes to JC019, so downstream blanks are structural rather than No. Do not sum household counts or infer individual ethnicity.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
     "concept_id": "community_water_price",
     "label": "Community-reported average water price",
     "domain": "Community environment",

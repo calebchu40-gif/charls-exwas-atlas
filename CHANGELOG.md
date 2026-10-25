@@ -1,3 +1,9 @@
+# 2026-10-26 Review Community Questionnaire Part C population and hukou fields (local update)
+
+- Mapped 24 official JC fields to five provisional community-context exposure concepts; kept JC014/JC016 open-text ethnicity names and JC026 informant role as C-only metadata.
+- Added source coverage audit and regression tests. Full 159-step metadata finalization completed; local E/P/C shards are 6,116/2,116/987, with 1,576 E/P concepts and 8,126 E/P concept-source mappings.
+- 2011 candidate-pair co-availability is 136,510 metadata pairs, not analytic N. No respondent data or association estimates are included. Local update pending commit/deployment.
+
 # 2026-10-26 Expand 2011 community history catalog and close Part K coverage
 
 - Reviewed all 75 Part H community-history source fields against the official Questionnaire, Codebook and metadata-only inventory. Added 58 mappings across eight new provisional community-history E concepts; added the conditional primary-school merger year to the existing concept. Excluded 15 elicitation/informant/open-text fields from cohort E/P concepts with explicit reasons.
