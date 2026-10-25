@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas active work status (2026-10-25)
 
-> Status refresh, 2026-10-25: v112 is live and verified (commit `fe3787e`, Validate #467, Pages Deploy #233). The homepage loads `app.js?v=112` and includes the 2011 baseline PSU split-community caveat. v111 separately surfaced the 2014 Life History directory (18 concepts, 471 field mappings; 466 E, 5 P), excluded from regular-wave counts and weighted analyses. The official 2014 release-note, questionnaire, and codebook PDFs have locally verified SHA1 matches to CHARLS posted checksums. v113 is being prepared to show the official 2014 sample and no-weight boundaries directly on the card. The current gate remains source/version and survey-design readiness, not site hosting.
+> Status refresh, 2026-10-25: v113 is live and verified (commit `16d8674`, Validate #468, Pages Deploy #234; docs-only status commit `5a709fc` passed Validate #469). The homepage loads `app.js?v=113`. It separately surfaces the 2014 Life History directory (18 concepts, 471 mappings; 466 E, 5 P), its under-45 sample possibility, no-weight limitation, Wave 1 ID adjustment caveat, and CHARLS official data-page link. The release-note, questionnaire, and codebook PDFs match CHARLS posted SHA1 values. v112 also added the baseline PSU split-community caveat. The current gate remains source/version and survey-design readiness, not hosting.
 
 ## Current state after the prepared-table header audit
 

@@ -1,7 +1,7 @@
-## 2026-10-25 Show 2014 Life History sample and source details (v113 candidate)
+## 2026-10-25 Show 2014 Life History sample and source details (v113 deployed)
 
 > Status refresh, 2026-10-25: v112 is live and verified (commit `fe3787e`, Validate #467, Pages Deploy #233). The homepage loads `app.js?v=112` and includes the 2011 baseline PSU split-community caveat. v111 separately surfaced the 2014 Life History directory (18 concepts, 471 field mappings; 466 E, 5 P), excluded from regular-wave counts and weighted analyses. The official 2014 release-note, questionnaire, and codebook PDFs have locally verified SHA1 matches to CHARLS posted checksums. v113 is being prepared to show the official 2014 sample and no-weight boundaries directly on the card. The current gate remains source/version and survey-design readiness, not site hosting.
-- Recomputed local SHA1 values for the official release note, questionnaire, and codebook; all match CHARLS posted hashes. This verifies documentation versions only, not the identity of local microdata. Pending validation and Pages deployment.
+- Recomputed local SHA1 values for the official release note, questionnaire, and codebook; all match CHARLS posted hashes. This verifies documentation versions only, not the identity of local microdata. Commit `16d8674` passed Validate #468 and Pages Deploy #234; the live page loads `app.js?v=113`.
 ## 2026-10-25 Publish the baseline PSU mapping caveat (v112 deployed)
 
 - Updated the public survey-design note to explain that CHARLS reports 30 large baseline communities split into geographic subareas. `communityID` is therefore only a PSU candidate pending release-specific mapping; geographic fields are not used to invent variance strata. Linked interpretation remains consistent with the official design documentation and project audit.
