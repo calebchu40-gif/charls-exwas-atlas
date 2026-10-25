@@ -22,6 +22,11 @@ def norm(x):
     return re.sub(r"[^a-z0-9]+", " ", str(x).lower()).strip()
 
 
+def codebook_field_key(code):
+    """Normalize CHARLS field identifiers across PDF underscore/space layout."""
+    return re.sub(r"[^a-z0-9]", "", str(code).lower())
+
+
 def apply_codebook_review_status(fields, reviewed):
     """Carry the full codebook audit disposition back, including no-menu fields."""
     key = lambda wave, code: (str(wave), str(code).lower())
@@ -51,8 +56,11 @@ def main():
         similarity = SequenceMatcher(None, target, norm(entry[0])).ratio() if entry else 0
         if entry is None or similarity < 0.48:
             labels = ""
-            codebook_text = BOOKS.get(str(r.wave), Path()).read_text(encoding="utf-8", errors="replace") if str(r.wave) in BOOKS else ""
-            if re.search(rf"(?<![A-Za-z0-9]){re.escape(str(r.code))}(?![A-Za-z0-9])", codebook_text, flags=re.I):
+            # The 2011 PDF extraction renders underscores in field identifiers
+            # as spaces (e.g. fn003_1 -> fn003 1). Use the parser's exact,
+            # normalized heading index so a continuous component is not
+            # mislabeled as absent merely because of PDF typography.
+            if codebook_field_key(r.code) in books.get(str(r.wave), {}):
                 status = "official codebook field located; continuous/count or no categorical labels"
                 source = BOOKS[str(r.wave)].relative_to(ROOT).as_posix()
             else:

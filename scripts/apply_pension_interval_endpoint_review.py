@@ -8,6 +8,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 MAPPING = ROOT / "audit/pension_exposure_variable_mapping_v1.csv"
+LABEL_AUDIT = ROOT / "audit/pension_codebook_value_labels_v1.csv"
 TARGETS = {
     "2011": {"fn005_a", "fn005_b", "fn008_a", "fn008_b", "fn014_a", "fn014_b", "fn019_a", "fn019_b", "fn023_a", "fn023_b", "fn037_a", "fn037_b"},
     "2013": {"fn035_w2_bracketbracket_min", "fn035_w2_bracketbracket_max"},
@@ -82,6 +83,17 @@ def main() -> None:
         frame.loc[idx, row.index] = row
         updates.append(row.to_dict())
     frame.to_csv(MAPPING, index=False, encoding="utf-8-sig")
+    # Keep the derived label audit synchronized with the more specific source
+    # review so rebuilding the codebook audit does not erase endpoint status.
+    labels = pd.read_csv(LABEL_AUDIT, dtype=str, encoding="utf-8-sig").fillna("")
+    for row in frame.loc[selected_mask].itertuples(index=False):
+        mask = labels.wave.astype(str).eq(str(row.wave)) & labels.code.astype(str).str.lower().eq(str(row.code).lower())
+        if int(mask.sum()) != 1:
+            raise SystemExit(f"Expected one codebook audit row for {row.wave}/{row.code}; found {int(mask.sum())}")
+        labels.loc[mask, "value_label_status"] = row.value_label_status
+        labels.loc[mask, "value_label_source"] = row.value_label_source
+        labels.loc[mask, "value_labels"] = ""
+    labels.to_csv(LABEL_AUDIT, index=False, encoding="utf-8-sig")
     print("Reviewed 16 pension bracket endpoints in 2011/2013/2015; pair, route, and string/numeric-source caveats retained; no summary extrema copied.")
 
 

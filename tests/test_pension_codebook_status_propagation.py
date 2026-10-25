@@ -19,11 +19,19 @@ class PensionCodebookStatusPropagationTests(unittest.TestCase):
         reviewed = pd.read_csv(ROOT / "audit/pension_codebook_value_labels_v1.csv", dtype=str).fillna("")
         result = MODULE.apply_codebook_review_status(fields, reviewed)
         self.assertEqual(len(result), 1159)
-        self.assertEqual(int(result.value_label_status.eq("official codebook field located; continuous/count or no categorical labels").sum()), 1051)
-        self.assertEqual(int(result.value_label_status.eq("official response label not located or title match insufficient").sum()), 52)
+        self.assertEqual(int(result.value_label_status.eq("official codebook field located; continuous/count or no categorical labels").sum()), 1086)
+        self.assertEqual(int(result.value_label_status.eq("official response label not located or title match insufficient").sum()), 0)
         self.assertEqual(int(result.value_label_status.eq("official codebook response labels reviewed; frequencies omitted").sum()), 19)
         self.assertEqual(int(result.value_label_status.str.contains("checkbox slot", case=False).sum()), 17)
         self.assertTrue(result.loc[result.value_labels.eq("") & result.value_label_status.str.startswith("official codebook field located;"), "value_label_source"].ne("").all())
+
+    def test_2011_pdf_space_rendered_subfields_are_exactly_located(self):
+        reviewed = pd.read_csv(ROOT / "audit/pension_codebook_value_labels_v1.csv", dtype=str).fillna("")
+        fields = reviewed[reviewed.wave.eq("2011") & reviewed.code.isin(["fn003_1", "fn003_2", "fn061_2", "fn036_2"])]
+        self.assertEqual(len(fields), 4)
+        self.assertTrue(fields.value_labels.eq("").all())
+        self.assertTrue(fields.value_label_status.str.startswith("official codebook field located;").all())
+        self.assertTrue(fields.value_label_source.str.contains("CHARLS_2011_Codebook_extracted.txt").all())
 
     def test_status_propagation_preserves_mapping_status_caveat_and_label_text(self):
         fields = pd.DataFrame([{

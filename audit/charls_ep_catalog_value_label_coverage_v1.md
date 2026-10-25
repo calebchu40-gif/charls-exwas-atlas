@@ -42,7 +42,7 @@
 |审核状态|最终E/P目录行|
 |---|---:|
 |officially reviewed|2,668|
-|official codebook field located; continuous/count or no categorical labels|726|
+|official codebook field located; continuous/count or no categorical labels|766|
 |numeric/time unit metadata available; no discrete labels assigned; see concept crosswalk|468|
 |codebook field located; continuous/open response or no categorical labels|371|
 |official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred|224|
@@ -63,7 +63,6 @@
 |字段标签已核；代码本呈现多选类别频数，未能从摘录确认未选/否的底层存储码|42|
 |official selected-option label; checkbox slot, absence is not a negative response|42|
 |official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned|41|
-|official response label not located or title match insufficient|40|
 |continuous component, not a categorical code; component unit reviewed against wave-specific official codebook|32|
 |continuous measure metadata available; see description/crosswalk|32|
 |official questionnaire and Codebook option identity reviewed; participant-level No/unselected storage and denominator unresolved; no response-value labels assigned|30|

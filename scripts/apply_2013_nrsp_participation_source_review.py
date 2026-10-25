@@ -113,9 +113,22 @@ def update_participation_crosswalk() -> int:
     return 1
 
 
+def update_codebook_label_audit() -> int:
+    path = AUDIT / "pension_codebook_value_labels_v1.csv"
+    df = pd.read_csv(path, dtype=str, encoding="utf-8-sig").fillna("")
+    mask = df.wave.astype(str).eq(WAVE) & df.code.astype(str).str.lower().eq(CODE)
+    if int(mask.sum()) != 1:
+        raise ValueError(f"Expected one codebook label-audit row for {WAVE}/{CODE}; found {int(mask.sum())}")
+    df.loc[mask, "value_label_status"] = "official 2013 Codebook Yes/No response codes reviewed; frequencies omitted"
+    df.loc[mask, "value_labels"] = LABELS
+    df.loc[mask, "value_label_source"] = OFFICIAL_SOURCE
+    df.to_csv(path, index=False, encoding="utf-8-sig")
+    return int(mask.sum())
+
+
 def main() -> None:
     validate_sources()
-    updated = update_pension_exposure() + update_participation_crosswalk()
+    updated = update_pension_exposure() + update_participation_crosswalk() + update_codebook_label_audit()
     print(f"Reviewed 2013 {CODE.upper()} current NRSP participation route and Yes/No labels; updated {updated} metadata mappings; no frequencies or respondent records used.")
 
 
