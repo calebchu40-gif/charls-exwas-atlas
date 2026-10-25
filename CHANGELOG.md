@@ -1,3 +1,8 @@
+## 2026-10-25 Add a metadata-only intake gate for CHARLS Wave 2 weights
+
+- Added `scripts/audit_2013_weights_intake.py` to validate the official CHARLS 2015-11-18 `Weights.dta` SHA1 before parsing its Stata header. The gate confirms `ID`, `crosssection`, `longitudinal`, and weight-field presence with metadata-only access; it does not read values, IDs, flag counts, or merge records.
+- Added synthetic pass/fail tests and a bilingual handoff audit. The official file remains absent locally; existing protected merge and survey-design gates remain in force. No public website asset changed.
+
 ## 2026-10-25 Prepare a checksum-locked 2015 blood intake gate
 
 - Added `scripts/audit_2015_blood_intake.py` to verify the official 2019-06-20 Blood Data download SHA1 and inspect only the Stata header. It checks the 13,420-row release count and ID, `Blood_weight`, 16 analytes, fasting and triglyceride top-code fields. It never merges or reads respondent values; aggregate QA stays under protected local storage.
