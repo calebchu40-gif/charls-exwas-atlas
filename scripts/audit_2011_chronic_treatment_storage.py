@@ -43,6 +43,8 @@ def summarize_group(frame: pd.DataFrame, disease: str) -> dict[str, object]:
     mismatches = present & numeric.ne(expected)
     none_selected = present[columns[-1]]
     any_other_selected = present[columns[:-1]].any(axis=1)
+    diagnosis = pd.to_numeric(frame[f"da007_{disease}_"], errors="coerce")
+    any_treatment_answer = present.any(axis=1)
     return {
         "wave": "2011",
         "disease_index": disease,
@@ -51,6 +53,9 @@ def summarize_group(frame: pd.DataFrame, disease: str) -> dict[str, object]:
         "all_nonmissing_values_match_option_index": not bool(mismatches.any().any()),
         "none_option_never_cooccurs_with_treatment_option": not bool(
             (none_selected & any_other_selected).any()
+        ),
+        "treatment_observed_when_doctor_diagnosis_response_is_no": bool(
+            (any_treatment_answer & diagnosis.eq(2)).any()
         ),
         "interpretation": (
             "aggregate storage-pattern check on local prepared table only; "
@@ -62,9 +67,10 @@ def summarize_group(frame: pd.DataFrame, disease: str) -> dict[str, object]:
 
 def audit_frame(frame: pd.DataFrame) -> list[dict[str, object]]:
     expected = expected_columns()
-    missing = sorted(set(expected) - {name.lower() for name in frame.columns})
+    route_columns = [f"da007_{disease}_" for disease in DISEASES]
+    missing = sorted((set(expected) | set(route_columns)) - {name.lower() for name in frame.columns})
     if missing:
-        raise ValueError(f"Wave 1 prepared table is missing {len(missing)} treatment option fields")
+        raise ValueError(f"Wave 1 prepared table is missing {len(missing)} audit fields")
     normalized = {name.lower(): name for name in frame.columns}
     normalized_frame = frame.rename(columns={value: key for key, value in normalized.items()})
     return [summarize_group(normalized_frame, disease) for disease in DISEASES]
@@ -79,8 +85,9 @@ def run(data_dir: Path = WAVE_DATA_DIR, output_dir: Path = QA_OUTPUT_DIR) -> Pat
     missing = sorted(set(expected_columns()) - set(by_lower))
     if missing:
         raise ValueError(f"Wave 1 prepared table is missing {len(missing)} treatment option fields")
+    route_columns = [f"da007_{disease}_" for disease in DISEASES]
     frame, _ = pyreadstat.read_dta(
-        str(table_path), usecols=[by_lower[name] for name in expected_columns()]
+        str(table_path), usecols=[by_lower[name] for name in expected_columns() + route_columns]
     )
     rows = audit_frame(frame)
     output_dir.mkdir(parents=True, exist_ok=True)

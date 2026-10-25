@@ -19,6 +19,6 @@
 
 字段—病种身份及选项索引来自`sources_official/CHARLS_2011_Codebook_extracted.txt`。之后补入的`sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`显示DA010是按DA007已报告病种询问的当前治疗多选题，并列出中医、西医、其他治疗和“以上皆无”。Codebook频数没有用作变量标签或分析N。
 
-受保护的本地准备表中，8个病种组的DA010选项字段均有值与题项索引相符；但7组存在“以上皆无”与至少一个治疗选项同时非缺失的少量记录。此汇总 QA 只在本机执行，输出不含ID、逐人值或频数；具体结果留在本机 `%LOCALAPPDATA%\\CHARLS_ExWAS_Atlas\\qa_outputs\\chronic_treatment_storage_2011_aggregate_qa.csv`。由于该重叠与问卷选项结构不一致，且本地准备表的原始发布包身份、字段合并来源、缺失/跳题编码及DA007适用分母尚未完成逐项回溯，不能判断是原始记录、准备过程还是特殊存储导致，也不能解除`DO NOT ANALYZE`。不得把空白直接解释为No，不得把“以上皆无”解释为无疾病或未治疗。
+受保护的本地准备表中，8个病种组的DA010选项字段均有值与题项索引相符；7组出现“以上皆无”与至少一个治疗选项同时非缺失的少量记录，另有少量 DA010 回答出现在同病种 `DA007` 医生诊断回答为“否”的记录中。不能据此判定数据错误：2011问卷的DA010题干为多选题，路由说明同时引用DA007病种索引及DA008自知疾病索引，而DA008只对部分病种提问，现有可见字段不足以单独重建所有病种的实际适用人群。此汇总 QA 只在本机执行，输出不含ID、逐人值或频数；结果留在本机 `%LOCALAPPDATA%\\CHARLS_ExWAS_Atlas\\qa_outputs\\chronic_treatment_storage_2011_aggregate_qa.csv`。本地准备表的原始发布包哈希/字段合并来源、空白与跳题编码、以及DA010适用分母仍未逐项核实，故不能解除`DO NOT ANALYZE`。不得把空白直接解释为No，也不得把“以上皆无”单独推导成无疾病或未治疗。
 
 映射修订脚本：`scripts/build_chronic_disease_ancillary_crosswalk.py`。本轮本地汇总审计脚本：`scripts/audit_2011_chronic_treatment_storage.py`；它只读取DA010的32个选项字段并写入私有汇总QA目录。生成位置：`audit/chronic_disease_ancillary_variable_mapping_v1.csv`及网站领域元数据；此批是8条映射、0个新概念，状态仍锁定。

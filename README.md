@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-25）
 
-**2011慢性病治疗选项受控QA（2026-10-25）：**新增本机汇总检查，对照基线问卷及Codebook审核32个DA010选项字段。题项索引与已观察代码相符；7个病种组发现“以上皆无”与其他治疗选项并存的少量记录，原因待核，因此8个“以上皆无”映射仍为`DO NOT ANALYZE`。原始发布包不在当前受控数据目录，准备表来源链和跳题分母未核实；QA没有导出个人数据或频数。详情见[`audit/2011_disease_treatment_none_option_mapping_review_2026-10-21.md`](audit/2011_disease_treatment_none_option_mapping_review_2026-10-21.md)。
+**2011慢性病治疗选项受控QA（2026-10-25）：**新增本机汇总检查，对照基线问卷及Codebook审核32个DA010选项字段。题项索引与已观察代码相符；7个病种组存在“以上皆无”与其他治疗项并存记录，且各病种均见 DA007 医生诊断回答为“否”但 DA010 有作答的记录。问卷路由同时涉及疾病索引和部分病种的DA008自知状态，当前字段不足以重建全部适用分母，因此8个“以上皆无”映射仍标记`DO NOT ANALYZE`。原始发布包及准备表来源链未核实；QA没有导出个人数据或频数。详情见[`audit/2011_disease_treatment_none_option_mapping_review_2026-10-21.md`](audit/2011_disease_treatment_none_option_mapping_review_2026-10-21.md)。
 
 **养老金字段来源审核（2026-10-25）：**对照公开问卷与 Codebook 核对 2013/2018 年36个起始领取年月字段，并同步到网站检索目录。2013 `FN081` 月份字段的问卷抽取标识与 Codebook 不一致，2013 `FN095` 年/月字段被 Codebook 标注为 `No Observations`，均保留“暂不可分析”提示；2018 `FN003` 的现有字段目录只有年份槽位，未猜测月份代码。来源审核不等于发行版数据验证或模型纳入许可。详见 [`audit/pension_receipt_start_dates_2013_2018_source_review_2026-10-25.md`](audit/pension_receipt_start_dates_2013_2018_source_review_2026-10-25.md)。
 
