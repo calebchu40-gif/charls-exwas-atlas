@@ -4,7 +4,12 @@
 - Added `audit/old_age_financial_support_source_review_2026-10-26.md` and regression checks. Fixed the pension label builder so questionnaire-derived categories survive a clean upstream rebuild.
 - Repaired final propagation order for community continuous household-count metadata and reviewed alcohol C context fields. The final E/P/C shards now have zero generic `not yet reviewed` label statuses; continuous counts still have no fabricated discrete categories.
 - Full metadata rebuild completed in 8.1 minutes (230 steps). E/P/C rows: 6,034/2,116/984; E/P concepts: 1,563; concept-source mappings: 8,044; explicit E/P label rows: 3,774. Metadata co-availability is not analytic N; formal association models remain 0; 92 analysis locks unchanged.
-- Local verification: 483 unittest tests pass; public payload validation, exact 92-lock validation, and JavaScript syntax validation pass. This update is local and awaits GitHub validation/deployment.
+- Local verification: 483 unittest tests pass; public payload validation, exact 92-lock validation, and JavaScript syntax validation pass. Commit `62c1fa7` was pushed; GitHub Pages Deploy #252 succeeded and published this metadata update. The Validate #509 run was still in progress at the last check.
+
+# 2026-10-26 Review CHARLS Community Questionnaire Part K coverage
+
+- Audited all seven 2011 Part K items against the official questionnaire, Codebook and metadata-only raw-field inventory. JK001–JK006 already map as separate community-context candidates; JK007 measures the community-questionnaire informant's Mandarin fluency and is explicitly excluded from cohort E/P concepts absent a verified person-level link.
+- Added a coverage audit and regression test so the item is not silently omitted or misrepresented as an individual-level measure. No response values or Codebook frequencies were used.
 
 # 2026-10-26 Add Part J agricultural machinery-supply origin (local update)
 

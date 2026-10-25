@@ -44,6 +44,16 @@ class CommunityInterviewerObservationReviewTests(unittest.TestCase):
             self.assertEqual(item["source_fields"][0]["wave"], "2011")
             self.assertIn("interviewer observation", item["caveat"])
 
+    def test_part_k_seventh_item_has_explicit_non_ep_disposition(self):
+        audit = (ROOT / "audit/community_part_k_source_coverage_review_2026-10-26.md").read_text(encoding="utf-8")
+        codes = {row["code"].lower() for row in self.crosswalk}
+        for code in ("jk001", "jk002", "jk003", "jk004", "jk005", "jk006"):
+            self.assertIn(code, codes)
+        self.assertNotIn("jk007", codes)
+        self.assertIn("JK007", audit)
+        self.assertIn("informant", audit.lower())
+        self.assertIn("Excluded from E/P candidate concepts", audit)
+
 
 if __name__ == "__main__":
     unittest.main()

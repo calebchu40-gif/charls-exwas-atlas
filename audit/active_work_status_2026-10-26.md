@@ -1,10 +1,16 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
-## Latest local state (not yet pushed)
+## Latest verified source-review state (2026-10-26)
 
-The public site is still app v127 (the last completed public deployment). A new local full rebuild completed all 230 steps in 8.1 minutes. The final local catalogue is E/P/C=6,034/2,116/984 rows, 1,563 E/P candidate concepts, 8,044 E/P concept-source mappings, 3,774 explicitly labelled E/P rows, and zero generic `not yet reviewed` E/P/C value-label statuses. Metadata co-availability remains a catalogue index only, not analytic N; formal models and pairwise-complete N remain 0. The exact 92 analysis locks are unchanged.
+Commit `62c1fa7` is pushed to `main`; GitHub Pages Deploy #252 succeeded and published the FN097 and metadata-propagation update. Validate #509 was still in progress at the last status check. This entry is now historical relative to the Part K audit in commit pending after it.
 
-This batch source-reviewed the 2013/2015/2018 `fn097_w2` old-age financial support item and fixed its questionnaire-derived response labels so they persist after a full rebuild. It also repaired propagation of 15 continuous 2011 community household-count fields and post-rebuild alcohol C metadata. Full local unittest suite: 483 passed; public payload validation, exact 92-lock validation, and JS syntax validation passed. Detailed FN097 evidence: [`old_age_financial_support_source_review_2026-10-26.md`](old_age_financial_support_source_review_2026-10-26.md). The source update is local and still needs GitHub validation and Pages deployment.
+The full local rebuild completed all 230 steps in 8.1 minutes. The catalogue is E/P/C=6,034/2,116/984 rows, with 1,563 E/P candidate concepts, 8,044 E/P concept-source mappings, 3,774 explicitly labelled E/P rows, and zero generic `not yet reviewed` E/P/C value-label statuses. Metadata co-availability is a catalogue index, not analytic N; formal models and pairwise-complete N remain 0. The exact 92 analysis locks are unchanged.
+
+This batch source-reviewed the 2013/2015/2018 `fn097_w2` old-age financial support item and fixed its questionnaire-derived response labels so they persist after a full rebuild. It also repaired propagation of 15 continuous 2011 community household-count fields and post-rebuild alcohol C metadata. Full local unittest suite: 483 passed; public payload validation, exact 92-lock validation, and JS syntax validation passed. Detailed FN097 evidence: [`old_age_financial_support_source_review_2026-10-26.md`](old_age_financial_support_source_review_2026-10-26.md). The update is in commit `62c1fa7`; Pages Deploy #252 succeeded.
+
+## Community Part K coverage update
+
+Audited all seven substantive items in the 2011 Community Questionnaire Part K against the official questionnaire, Codebook and metadata-only inventory. JK001–JK006 remain separately represented as one-wave community-context E candidates. JK007 measures the Mandarin fluency of the community-questionnaire informant/respondent, not an established CHARLS cohort member; it is therefore excluded from E/P concepts unless authorized person-level linkage and target identity are independently verified. Details and tests: [`community_part_k_source_coverage_review_2026-10-26.md`](community_part_k_source_coverage_review_2026-10-26.md), `tests/test_community_interviewer_observation_review.py`.
 
 ## Current public state: app v127; Pages Deploy #250 includes the economic/housing/credit batch; JJ005 local update pending
 
