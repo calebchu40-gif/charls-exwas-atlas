@@ -19,4 +19,4 @@ The concepts remain candidate metadata with analysis eligibility pending. This u
 
 ## Build status
 
-Candidate crosswalk: 125 community concepts and 350 source-field mappings. The 2011 E/P metadata co-availability count is 131,185; this is not an analytic sample size. Models and analytic Ns remain zero. Public deployment is pending release verification.
+Candidate crosswalk: 125 community concepts and 350 source-field mappings. The 2011 E/P metadata co-availability count is 131,185; this is not an analytic sample size. Models and analytic Ns remain zero. GitHub Pages Deploy #241 (`40194622511`) succeeded on commit `c88e13b`. The live homepage returns HTTP 200 and loads `app.js?v=120`; live JSON contains 125 community concepts, the two concepts with 9/11 fields, and 131,185 2011 metadata pairs.

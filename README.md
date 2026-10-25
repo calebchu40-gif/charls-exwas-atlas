@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-25）
 
-**最新公开网站：**本地版本v120已通过全套测试和发布包校验，尚待推送并核验GitHub Pages。该版本拟新增2011社区问卷中的两类医保政策背景（城镇居民医保、新型农村合作医疗），共20个官方字段。公开社区目录目前为125个概念、350条来源字段映射；2011年E/P目录级非自配组合为131,185。E/P/C目录为4,925/2,082/982行，E/P来源交叉表为1,498个候选概念和6,901条映射。正式关联模型数及实际配对分析样本量仍为0。2013官方权重和2015独立血检文件仍待本人经CHARLS账号取得，安全接收闸门分别见[`audit/wave2_weights_metadata_intake_gate_2026-10-25.md`](audit/wave2_weights_metadata_intake_gate_2026-10-25.md)与[`audit/blood_2015_intake_gate_2026-10-25.md`](audit/blood_2015_intake_gate_2026-10-25.md)。
+**最新公开网站：**v120（提交`c88e13b`，GitHub Pages部署[#241 / `40194622511`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40194622511)成功，2026-10-25已线上核验）。首页返回HTTP 200并加载`app.js?v=120`。本版新增2011社区问卷中的两类医保政策背景（城镇居民医保、新型农村合作医疗），共20个官方字段。公开社区目录目前为125个概念、350条来源字段映射；2011年E/P目录级非自配组合为131,185。E/P/C目录为4,925/2,082/982行，E/P来源交叉表为1,498个候选概念和6,901条映射。正式关联模型数及实际配对分析样本量仍为0。2013官方权重和2015独立血检文件仍待本人经CHARLS账号取得，安全接收闸门分别见[`audit/wave2_weights_metadata_intake_gate_2026-10-25.md`](audit/wave2_weights_metadata_intake_gate_2026-10-25.md)与[`audit/blood_2015_intake_gate_2026-10-25.md`](audit/blood_2015_intake_gate_2026-10-25.md)。
 
 **数据接收提速：**新增`python scripts/run_available_charls_intake_gates.py`，可一次检查受控目录中已到位的2013官方权重和2015独立血检文件；只跑官方哈希与DTA表头闸门，缺文件会跳过，QA仅写入本机受保护目录。详见[`audit/combined_intake_gate_runner_2026-10-25.md`](audit/combined_intake_gate_runner_2026-10-25.md)。
 
