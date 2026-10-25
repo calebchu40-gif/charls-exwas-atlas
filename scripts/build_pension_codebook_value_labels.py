@@ -22,6 +22,23 @@ def norm(x):
     return re.sub(r"[^a-z0-9]+", " ", str(x).lower()).strip()
 
 
+def apply_codebook_review_status(fields, reviewed):
+    """Carry the full codebook audit disposition back, including no-menu fields."""
+    key = lambda wave, code: (str(wave), str(code).lower())
+    field_keys = [key(w, c) for w, c in zip(fields["wave"], fields["code"])]
+    review_keys = [key(w, c) for w, c in zip(reviewed["wave"], reviewed["code"])]
+    if len(field_keys) != len(set(field_keys)) or len(review_keys) != len(set(review_keys)) or set(field_keys) != set(review_keys):
+        raise ValueError(
+            f"pension Codebook review key mismatch: source={len(field_keys)} unique={len(set(field_keys))}; "
+            f"review={len(review_keys)} unique={len(set(review_keys))}"
+        )
+    lookup = {k: row for k, row in zip(review_keys, reviewed.to_dict(orient="records"))}
+    result = fields.copy()
+    result["value_label_status"] = [lookup[k]["value_label_status"] for k in field_keys]
+    result["value_label_source"] = [lookup[k]["value_label_source"] for k in field_keys]
+    return result
+
+
 def main():
     fields = pd.read_csv(AUDIT / "pension_exposure_variable_mapping_v1.csv", dtype=str, encoding="utf-8-sig").fillna("")
     books = {w: read_codebook(p) for w, p in BOOKS.items() if p.exists()}
@@ -95,8 +112,7 @@ def main():
         if r.value_labels:
             label_by_key[(str(r.wave), str(r.code).lower())] = r
     fields["value_labels"] = [getattr(label_by_key.get((str(r.wave), str(r.code).lower())), "value_labels", "") for r in fields.itertuples(index=False)]
-    fields["value_label_status"] = [getattr(label_by_key.get((str(r.wave), str(r.code).lower())), "value_label_status", "official response label not located; review required") for r in fields.itertuples(index=False)]
-    fields["value_label_source"] = [getattr(label_by_key.get((str(r.wave), str(r.code).lower())), "value_label_source", "") for r in fields.itertuples(index=False)]
+    fields = apply_codebook_review_status(fields, reviewed)
     fn011_2011 = fields.wave.astype(str).eq("2011") & fields.code.astype(str).str.lower().isin({f"fn011_{i}" for i in range(1, 7)})
     fields.loc[fn011_2011, "value_label_status"] = "official 2011 questionnaire/Codebook field identity, route and amount period reviewed; continuous amount; special missing codes not reviewed"
     fields.loc[fn011_2011, "value_label_source"] = "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"

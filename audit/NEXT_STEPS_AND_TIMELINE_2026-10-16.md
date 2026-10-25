@@ -14,7 +14,7 @@
 4. 冻结首版 E/P 概念、逐波字段定义、特殊码、路由、测量层级、可比性和估计目标；用合成数据验证分析引擎和错误处理。先解决设计与数据门槛，再运行任何正式关联模型。
 5. 在模型通过加权、设计方差、敏感性和披露审查后，才将非识别汇总结果接入网站。不得公开原始 CHARLS 微观记录或可反推个人的统计单元。
 
-2026-10-25 页面可读性修订：测量与设计元数据表现已为说明列分配宽度并固定字段码列，见 `audit/metadata_table_usability_review_2026-10-25.md`。随后完成E/P跨表标签状态一致性复核：224条住房所有者关系字段、83条慢病辅助表型字段和23条养老金字段的官方答案标签审核状态同步到概念—字段crosswalk和对应网站分片。112条慢病字段、462条养老金字段仍缺少逐项标签证据，保持待核；现存DO NOT ANALYZE锁定不变。当前全套405项测试通过，34个静态JSON可解析，公开Pages已确认住房、P及E分片均包含最新状态。详细记录见 `audit/housing_owner_relation_status_sync_2026-10-25.md`、`audit/chronic_ancillary_label_status_sync_2026-10-25.md` 和 `audit/pension_label_status_sync_2026-10-25.md`。正式关联模型仍为0。
+2026-10-25 页面可读性修订：测量与设计元数据表现已为说明列分配宽度并固定字段码列，见 `audit/metadata_table_usability_review_2026-10-25.md`。随后完成E/P跨表标签状态一致性复核：224条住房所有者关系字段、83条慢病辅助表型字段和23条养老金字段的官方答案标签审核状态同步到概念—字段crosswalk和对应网站分片。养老金Codebook解析状态已完整回写1,159个逐波字段键；其中无离散类别字段与标题匹配不足字段得到区分，17项由更具体的逐域审核覆盖。112条慢病字段仍无逐项标签证据；现存DO NOT ANALYZE锁定不变。当前全套407项测试通过，34个静态JSON可解析，公开Pages已确认住房、P及E分片均包含最新状态。详细记录见 `audit/housing_owner_relation_status_sync_2026-10-25.md`、`audit/chronic_ancillary_label_status_sync_2026-10-25.md`、`audit/pension_label_status_sync_2026-10-25.md` 和 `audit/pension_codebook_empty_label_status_reconciliation_2026-10-25.md`。正式关联模型仍为0。
 
 ## 最新推进状态（2026-10-16）
 
