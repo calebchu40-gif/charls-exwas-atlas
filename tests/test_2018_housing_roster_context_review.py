@@ -24,11 +24,17 @@ class Wave4HousingRosterContextReviewTests(unittest.TestCase):
         rows = {code: self.by_code[code] for code in expected}
         for row in rows.values():
             self.assertEqual(row["epcf"], "c")
+            self.assertEqual(row["category"], "source-reviewed context metadata")
+            self.assertIn("property-roster location", row["subcategory"])
+            self.assertIn("field-level meaning reviewed", row["Candidate.Status"])
+            self.assertNotIn("automated keyword discovery only", row["Candidate.Status"])
             self.assertIn("4=Special regions", row["Value.Labels"])
             self.assertIn("property roster position", row["Harmonization.Status"])
             self.assertIn("not automatically the respondent's current residence", row["Harmonization.Status"])
             self.assertNotRegex(row["Value.Labels"], r"\b\d{1,3},\d{3}\b|\b\d{2,}\.\d{1,2}\b")
             self.assertEqual(self.series_by_code[row["Variable.Name"].lower()]["value_labels"], row["Value.Labels"])
+            self.assertEqual(self.series_by_code[row["Variable.Name"].lower()]["category"], row["category"])
+            self.assertEqual(self.series_by_code[row["Variable.Name"].lower()]["subcategory"], row["subcategory"])
 
     def test_mortgage_payment_is_continuous_household_measure(self):
         row = self.by_code["ha057_w3"]

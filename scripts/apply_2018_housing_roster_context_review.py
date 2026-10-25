@@ -23,6 +23,14 @@ ROSTER_REVIEW = (
     "official 2018 questionnaire response menu reviewed; roster-slot response labels; "
     "Codebook summary frequencies omitted; confirm release-specific special values"
 )
+ROSTER_CATEGORY = "source-reviewed context metadata"
+ROSTER_SUBCATEGORY = (
+    "property-roster location; field meaning reviewed; not respondent residence or an adjustment recommendation"
+)
+ROSTER_CANDIDATE_STATUS = (
+    "C metadata; separately indexed property-location response; field-level meaning reviewed; "
+    "not an individual-level covariate"
+)
 ROSTER_NOTE = (
     "2018 HA025_W4[i] records whether each separately listed house property is in a "
     "city/town central area, town/semi-rural area, rural area, or special region. The [i] "
@@ -96,6 +104,9 @@ def update(row: dict) -> None:
     row["Value.Label.Source"] = SOURCE
     row["value_label_source"] = SOURCE
     if code in ROSTER_CODES:
+        row["category"] = ROSTER_CATEGORY
+        row["subcategory"] = ROSTER_SUBCATEGORY
+        row["Candidate.Status"] = ROSTER_CANDIDATE_STATUS
         row["Value.Labels"] = ROSTER_LABELS
         row["value_labels"] = ROSTER_LABELS
         row["Value.Label.Review"] = ROSTER_REVIEW
@@ -153,7 +164,7 @@ def main() -> None:
     for idx in table.index[mask]:
         row = table.loc[idx].to_dict()
         update(row)
-        for key in ("Value.Labels", "Value.Label.Review", "Value.Label.Source", "Concept.Unit.Candidates", "Harmonization.Status", "Review.Flag"):
+        for key in ("category", "subcategory", "Candidate.Status", "Value.Labels", "Value.Label.Review", "Value.Label.Source", "Concept.Unit.Candidates", "Harmonization.Status", "Review.Flag"):
             table.at[idx, key] = row[key]
     table.to_csv(csv_path, index=False, encoding="utf-8-sig")
 
@@ -214,6 +225,8 @@ def main() -> None:
     for idx in series.index[selected]:
         row = series.loc[idx].to_dict()
         update(row)
+        for key in ("category", "subcategory"):
+            series.at[idx, key] = row[key]
         series.at[idx, "value_labels"] = row["Value.Labels"]
         series.at[idx, "value_label_source"] = row["Value.Label.Source"]
         series.at[idx, "value_label_review"] = row["Value.Label.Review"]

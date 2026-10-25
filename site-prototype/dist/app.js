@@ -176,6 +176,7 @@ const C_SUBCATEGORY_LABELS={
   "adult-education duration exposure overlap; route-specific context candidate":"成人教育年限暴露重叠；保留波次路由的背景候选",
   "respondent gender source and derivation metadata":"受访者性别来源与派生元数据",
   "property-sale proceeds use-category selector slot":"房产出售所得用途类别选择槽位",
+  "property-roster location; field meaning reviewed; not respondent residence or an adjustment recommendation":"已核验的房产名册位置；字段含义已审；不是受访者住所或协变量调整建议",
   "province-level pension-source work-unit location metadata":"省级养老金来源单位地点元数据",
   "questionnaire inserted activity-type labels":"问卷新增活动类型标签",
   "resident-pension supplementary repayment currency selector":"城乡居民养老金补缴金额币种选择器",
