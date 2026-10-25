@@ -1,10 +1,10 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-25）
 
-**最新公开网站：**v116（提交`b0fb6c7`，已上线；主页与配对目录已核验）增加4个JG017–JG020村级农业补贴背景字段。当前本地v117候选新增失业补助、最低生活保障和独生子女奖励3类社区政策背景，JG008金额来源冲突单独标注；本地E/P/C目录为4,864/2,082/982行。网站始终只展示候选目录和元数据共现，不含关联结果或CHARLS微观数据。2015独立血检文件和2013官方权重文件仍待本人经CHARLS账号取得；相关校验闸门见下列审计说明。
+**最新公开网站：**v117（提交`89ba8cf`，2026-10-25已上线）。公开主页返回HTTP 200并加载`app.js?v=117`；线上配对目录已确认三类社区社会政策候选和129,694个2011年元数据共现组合。E/P/C目录为4,864/2,082/982行；正式关联模型数及实际配对分析样本量仍为0。2013官方权重和2015独立血检文件仍待本人经CHARLS账号取得，安全接收闸门分别见[`audit/wave2_weights_metadata_intake_gate_2026-10-25.md`](audit/wave2_weights_metadata_intake_gate_2026-10-25.md)与[`audit/blood_2015_intake_gate_2026-10-25.md`](audit/blood_2015_intake_gate_2026-10-25.md)。
 
 **数据接收提速：**新增`python scripts/run_available_charls_intake_gates.py`，可一次检查受控目录中已到位的2013官方权重和2015独立血检文件；只跑官方哈希与DTA表头闸门，缺文件会跳过，QA仅写入本机受保护目录。详见[`audit/combined_intake_gate_runner_2026-10-25.md`](audit/combined_intake_gate_runner_2026-10-25.md)。
 
-**最新目录状态：**v117本地候选全套回归通过（466项）；分析锁仍为92条。正式关联模型数和实际配对分析样本量仍为0；候选配对展示的是目录层面的波次共现，不是拟合结果。年龄/居住史C标签审计见[`audit/residential_history_search_label_review_2026-10-25.md`](audit/residential_history_search_label_review_2026-10-25.md)。
+**最新目录状态：**v117全套回归通过（466项）；分析锁仍为92条。正式关联模型数和实际配对分析样本量仍为0；候选配对展示的是目录层面的波次共现，不是拟合结果。年龄/居住史C标签审计见[`audit/residential_history_search_label_review_2026-10-25.md`](audit/residential_history_search_label_review_2026-10-25.md)。
 
 **波次与模块准备度：**已整理2011、2013、2015、2018、2020五波的访谈/体测、血液检测、关系与社区模块、权重及年龄域门槛，并扩展本地表头审计输出为逐波×角色×源模块摘要。该审计只读变量名，不读取个人答案或计算样本数；还记录了NIA Biomarker Network对2018/2020血样采集的说法与CHARLS官方发布文件目录之间的待核差异。详见[`audit/wave_module_readiness_matrix_2026-10-25.md`](audit/wave_module_readiness_matrix_2026-10-25.md)。
 
