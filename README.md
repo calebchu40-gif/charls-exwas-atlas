@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-25）
 
-**最新网站变更（待部署）：**v111 在首页增加独立的2014生命历程回顾性调查入口，列出18个概念组、471条字段映射（466 E、5 P），并说明它不属于2011–2020五轮常规主调查、没有官方权重，因此不并入常规波次共现数或加权关联模型。此前公开的v110（提交 `9053334`）已通过 Validate #461 和 Pages Deploy #231；[GitHub Actions 工作流记录](https://github.com/calebchu40-gif/charls-exwas-atlas/actions)。E/P/C目录为4,845/2,082/982行；网站是变量元数据查询原型，没有真实关联结果。
+**最新公开网站：**v111（提交 `2d1d2ee`）已通过 Validate #463 和 Pages Deploy #232；[GitHub Actions 工作流记录](https://github.com/calebchu40-gif/charls-exwas-atlas/actions)。首页单独展示2014生命历程回顾性调查目录，共18个概念组、471条字段映射（466 E、5 P），并明确其不属于五轮常规主调查、未提供官方权重，故不并入常规波次共现数或加权关联模型。E/P/C目录为4,845/2,082/982行；网站仍是变量元数据查询原型，没有真实关联结果。
 
 **最新目录状态：**449项本地测试及发布负载、92条分析锁和语法检查通过。正式关联模型数和实际配对分析样本量仍为0；候选配对展示的是目录层面的波次共存，不是拟合结果。年龄/居住史C标签审计见[`audit/residential_history_search_label_review_2026-10-25.md`](audit/residential_history_search_label_review_2026-10-25.md)。
 

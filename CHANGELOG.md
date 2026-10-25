@@ -1,7 +1,7 @@
-## 2026-10-25 Surface the separate 2014 Life History directory on the landing page (v111 candidate)
+## 2026-10-25 Surface the separate 2014 Life History directory on the landing page (v111 deployed)
 
 - Added a home-page entry for the special 2014 retrospective Life History catalogue: 18 concept groups and 471 source-field mappings (466 E, 5 P). The card states that this survey is separate from the five regular waves, has no official weight, and is excluded from regular-wave co-availability counts and weighted association models.
-- Clarified the five-wave headline counts to prevent visitors from assuming that the special survey is included. Updated the app cache key to v111. Pending public validation and Pages deployment.
+- Clarified the five-wave headline counts to prevent visitors from assuming that the special survey is included. Updated the app cache key to v111. The CSV contains exactly 471 mappings across 18 concept groups (466 E, 5 P); independent recount confirmed the figures. Commit `2d1d2ee` passed Validate #463 and Pages Deploy #232; the live page loads `app.js?v=111`.
 
 ## 2026-10-25 Link and publish the five-wave measurement schedule (v110 deployed)
 

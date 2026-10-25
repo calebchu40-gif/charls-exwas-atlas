@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas active work status (2026-10-25)
 
-> Status refresh, 2026-10-25: v110 remains the latest verified public release (commit `9053334`, Validate #461, Pages Deploy #231). v111 is being prepared locally: the home page now surfaces the separate 2014 Life History directory (18 concepts, 471 field mappings) and explicitly excludes it from regular five-wave counts and weighted analyses because the official release note provides no weight. The v111 change still needs validation, commit, and Pages deployment. The 982-row live C shard remains byte-identical to local; all 449 tests and safety checks passed before this isolated HTML/CSS change. The current gate remains source/version and survey-design readiness, not site hosting.
+> Status refresh, 2026-10-25: v111 is live and verified (commit `2d1d2ee`, Validate #463, Pages Deploy #232). The homepage loads `app.js?v=111` and surfaces the separate 2014 Life History directory: 18 concepts, 471 field mappings (466 E, 5 P). Independent recount of `audit/life_history_exposure_crosswalk_v1.csv` confirmed those totals. The card explicitly excludes the special survey from regular five-wave counts and weighted analyses because the official release note provides no weight. The 982-row live C shard remains byte-identical to local; all 449 tests and safety checks pass. The current gate remains source/version and survey-design readiness, not site hosting.
 
 ## Current state after the prepared-table header audit
 
