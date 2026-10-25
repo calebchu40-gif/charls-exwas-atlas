@@ -123,6 +123,7 @@ FULL_PIPELINE_SCRIPTS = (
     "apply_wave5_digital_behavior_review.py",
     "apply_reproductive_history_exposure_review.py",
     "apply_housing_context_source_review.py",
+    "apply_pension_label_status.py",
     "apply_chronic_ancillary_label_status.py",
     "apply_housing_owner_relation_label_status.py",
     "build_ep_concept_source_crosswalk.py",
@@ -177,6 +178,7 @@ FULL_PIPELINE_SCRIPTS = (
     # initial E/P index build. Regenerate the index from those final sources,
     # then restore three housing reviews that intentionally add index-only
     # detail beyond their source crosswalks.
+    "apply_pension_label_status.py",
     "apply_chronic_ancillary_label_status.py",
     "apply_housing_owner_relation_label_status.py",
     "build_ep_concept_source_crosswalk.py",
@@ -285,6 +287,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_wave5_core_demographic_review.py",
     "apply_wave5_digital_behavior_review.py",
     "apply_reproductive_history_exposure_review.py",
+    "apply_pension_label_status.py",
     "apply_chronic_ancillary_label_status.py",
     "apply_housing_owner_relation_label_status.py",
     "build_ep_concept_source_crosswalk.py",
@@ -335,6 +338,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_housing_context_source_review.py",
     "apply_housing_area_year_review.py",
     "apply_cognition_self_rated_memory_review.py",
+    "apply_pension_label_status.py",
     "apply_chronic_ancillary_label_status.py",
     "apply_housing_owner_relation_label_status.py",
     # The domain review scripts update their source crosswalks after the first

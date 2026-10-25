@@ -11056,7 +11056,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "pension participation duration threshold",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             }
           ]
@@ -11136,7 +11136,7 @@
               "unit": "",
               "value_labels": "1=Supplemental pension insurance of the firm [selected option only; unselected storage is not inferred]",
               "value_semantics": "pension scheme type (categorical/multi-select)",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
@@ -11146,7 +11146,7 @@
               "unit": "",
               "value_labels": "2=Commercial pension [selected option only; unselected storage is not inferred]",
               "value_semantics": "pension scheme type (categorical/multi-select)",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
@@ -11156,7 +11156,7 @@
               "unit": "",
               "value_labels": "3=Rural pension [selected option only; unselected storage is not inferred]",
               "value_semantics": "pension scheme type (categorical/multi-select)",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
@@ -11166,7 +11166,7 @@
               "unit": "",
               "value_labels": "4=Residents pension [selected option only; unselected storage is not inferred]",
               "value_semantics": "pension scheme type (categorical/multi-select)",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
@@ -11176,7 +11176,7 @@
               "unit": "",
               "value_labels": "5=Urban residents pension [selected option only; unselected storage is not inferred]",
               "value_semantics": "pension scheme type (categorical/multi-select)",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
@@ -11186,7 +11186,7 @@
               "unit": "",
               "value_labels": "6=Pension subsidy to the oldest old [selected option only; unselected storage is not inferred]",
               "value_semantics": "pension scheme type (categorical/multi-select)",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
@@ -11196,7 +11196,7 @@
               "unit": "",
               "value_labels": "7=Other [selected option only; unselected storage is not inferred]",
               "value_semantics": "pension scheme type (categorical/multi-select)",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             }
           ]
@@ -11646,7 +11646,7 @@
               "unit": "",
               "value_labels": "1=Annual payment; 2=Lump sum amount; 3=I don’t need to pay myself",
               "value_semantics": "pension contribution method",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             }
           ]
@@ -14498,7 +14498,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "current pension participation/receipt status",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             }
           ]
@@ -14910,7 +14910,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "reported pension benefit commencement status",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             }
           ]
@@ -14950,7 +14950,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "pension contribution history",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             }
           ]
@@ -15110,7 +15110,7 @@
               "unit": "",
               "value_labels": "1=The New Rural Social Pension has not been introduced in my local area. [selected option only; unselected storage is not inferred]",
               "value_semantics": "reported reason for nonparticipation",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures. Asked only after FN071=No; the denominator is nonparticipants. An unasked/blank option is not evidence that the reason is absent."
             },
             {
@@ -15120,7 +15120,7 @@
               "unit": "",
               "value_labels": "2=I lack money. [selected option only; unselected storage is not inferred]",
               "value_semantics": "reported reason for nonparticipation",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures. Asked only after FN071=No; the denominator is nonparticipants. An unasked/blank option is not evidence that the reason is absent."
             },
             {
@@ -15130,7 +15130,7 @@
               "unit": "",
               "value_labels": "3=I am not satisfied with the benefits because it isnt cost-effective. [selected option only; unselected storage is not inferred]",
               "value_semantics": "reported reason for nonparticipation",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures. Asked only after FN071=No; the denominator is nonparticipants. An unasked/blank option is not evidence that the reason is absent."
             },
             {
@@ -15140,7 +15140,7 @@
               "unit": "",
               "value_labels": "4=The benefits are poor, and mean nothing to my life. [selected option only; unselected storage is not inferred]",
               "value_semantics": "reported reason for nonparticipation",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures. Asked only after FN071=No; the denominator is nonparticipants. An unasked/blank option is not evidence that the reason is absent."
             },
             {
@@ -15150,7 +15150,7 @@
               "unit": "",
               "value_labels": "5=Application and payment arrangements make it inconvenient to participate. [selected option only; unselected storage is not inferred]",
               "value_semantics": "reported reason for nonparticipation",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures. Asked only after FN071=No; the denominator is nonparticipants. An unasked/blank option is not evidence that the reason is absent."
             },
             {
@@ -15160,7 +15160,7 @@
               "unit": "",
               "value_labels": "6=The mechanism for making contributions is not justifiable. [selected option only; unselected storage is not inferred]",
               "value_semantics": "reported reason for nonparticipation",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures. Asked only after FN071=No; the denominator is nonparticipants. An unasked/blank option is not evidence that the reason is absent."
             },
             {
@@ -15170,7 +15170,7 @@
               "unit": "",
               "value_labels": "7=I do not have a local Hukou. [selected option only; unselected storage is not inferred]",
               "value_semantics": "reported reason for nonparticipation",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures. Asked only after FN071=No; the denominator is nonparticipants. An unasked/blank option is not evidence that the reason is absent."
             },
             {
@@ -15180,7 +15180,7 @@
               "unit": "",
               "value_labels": "8=I am already covered by other social pension insurance. [selected option only; unselected storage is not inferred]",
               "value_semantics": "reported reason for nonparticipation",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures. Asked only after FN071=No; the denominator is nonparticipants. An unasked/blank option is not evidence that the reason is absent."
             },
             {
@@ -15190,7 +15190,7 @@
               "unit": "",
               "value_labels": "9=Other . [selected option only; unselected storage is not inferred]",
               "value_semantics": "reported reason for nonparticipation",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures. Asked only after FN071=No; the denominator is nonparticipants. An unasked/blank option is not evidence that the reason is absent."
             }
           ]
@@ -15936,7 +15936,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "self-reported eligibility-duration assessment",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             }
           ]
@@ -55827,7 +55827,7 @@
               "unit": "",
               "value_labels": "1=Myself [selected option only; unselected storage is not inferred]",
               "value_semantics": "reported pension contribution payer/source",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "mapping_status": "official response labels reviewed; preserve source-specific response/option semantics; route, authorized-release coding and analysis eligibility remain to be validated",
               "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
