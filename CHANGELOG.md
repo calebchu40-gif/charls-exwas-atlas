@@ -1,3 +1,11 @@
+# 2026-10-25 Add COVID testing utilization outcome and complete module pass (v123 prepared)
+
+- Added 2020 `VB012` as one P candidate for “ever tested for coronavirus by interview,” classified as healthcare utilization rather than infection or positive diagnosis. The exact Codebook labels are `1=Yes; 2=No`; conditional last-test year/month remain timing metadata.
+- Final 2020 pandemic module crosswalks contain 48 E fields/22 concepts and 22 P fields/22 concepts. Candidate field rows are 70 total; source coverage and exclusions are recorded in `audit/pandemic_context_candidate_review_2020.md`.
+- Full metadata finalization completed in 9.2 minutes. E/P/C catalogue rows: 4,973/2,104/982; E/P concepts: 1,542 (1,242 E, 325 P, 25 dual-role); concept-source mapping rows: 6,971. E/P catalogue records/wave-fields/explicit labels: 7,077/6,864/3,724; generic pending label status is 0 for E/P/C.
+- 2020 metadata co-availability is 20,088 candidate pairs, not analytic sample size or fitted results. Exact 92 analysis locks remain unchanged; formal models and participant-level results remain 0. No participant values, frequencies or distributions were published.
+- Website asset cache key is v123; CI and Pages deployment will be verified after commit.
+
 # 2026-10-25 Complete 2020 pandemic-context candidate coverage (v122 prepared)
 
 - Completeness review identified two additional E concepts within the CHARLS 2020 COVID module: subjective evaluation of government containment strictness (VA007) and conditional quarantine location (VB009). The E crosswalk now contains 48 fields across 22 concepts; the P crosswalk remains 21 fields across 21 concepts.

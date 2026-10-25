@@ -98210,8 +98210,8 @@
     },
     "2020": {
       "exposure_count": 205,
-      "phenotype_count": 97,
-      "candidate_pair_count": 19883,
+      "phenotype_count": 98,
+      "candidate_pair_count": 20088,
       "exposures": [
         {
           "concept_id": "household_monthly_total_expenditure_2020",
@@ -104436,6 +104436,26 @@
               "value_semantics": "",
               "mapping_status": "按波次模块及官方问卷题意映射；需检查值标签/路由",
               "caveat": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。"
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_testing_utilization_2020",
+          "label": "是否接受过新冠检测（2020）",
+          "domain": "Pandemic-related healthcare utilization",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vb012",
+              "label": "COVID Tested",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Yes; 2=No",
+              "value_semantics": "Whether the respondent had ever been tested for coronavirus by the 2020 interview",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "A pandemic-specific healthcare-utilization outcome, not infection status or a positive-test result. The conditional last-test year/month are timing metadata and are not treated as separate outcomes."
             }
           ]
         },
@@ -111625,8 +111645,8 @@
       "baseline_wave": "2011",
       "followup_wave": "2020",
       "exposure_count": 125,
-      "phenotype_count": 97,
-      "candidate_pair_count": 12125,
+      "phenotype_count": 98,
+      "candidate_pair_count": 12250,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -111675,6 +111695,7 @@
         "mood_could_not_get_going",
         "covid_hospitalization_days_2020",
         "cog_orientation_time",
+        "covid_testing_utilization_2020",
         "covid_square_dancing_cancellation_days_2020",
         "covid_period_moderate_activity_change_2020",
         "covid_period_internet_contact_change_2020",

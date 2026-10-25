@@ -147,6 +147,9 @@ add("p", ["vb004"], "covid_hospitalization_days_2020", "新冠治疗住院天数
     "Pandemic-related health outcomes", "VB004", "Self-reported hospital stay for coronavirus treatment",
     "Questionnaire instructs 0 if not hospitalized and -1 if unable to answer; retain conditional eligibility, special values, and the distinction between no hospitalization and missing.",
     unit="Days")
+add("p", ["vb012"], "covid_testing_utilization_2020", "是否接受过新冠检测（2020）",
+    "Pandemic-related healthcare utilization", "VB012", "Whether the respondent had ever been tested for coronavirus by the 2020 interview",
+    "A pandemic-specific healthcare-utilization outcome, not infection status or a positive-test result. The conditional last-test year/month are timing metadata and are not treated as separate outcomes.")
 add("e", ["vb005_s1", "vb005_s2", "vb005_s3", "vb005_s4"], "covid_quarantine_exposure_reason_2020", "新冠隔离/医学观察经历原因（2020）",
     "Pandemic infection and quarantine context", "VB005", "Select-all quarantine/medical-observation reasons excluding hospitalization in the question stem",
     "Travel, close contact, residential-building closure and hospital-related quarantine are distinct contexts. Positive-test and exclusive no-quarantine options are not included in this exposure concept; preserve unknown/refusal options outside the candidate matrix.",

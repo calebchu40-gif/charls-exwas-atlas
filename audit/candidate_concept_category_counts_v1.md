@@ -24,11 +24,11 @@
 |p|chronic disease|33|248|248|
 |p|cognition|24|338|338|
 |p|healthcare access|22|217|217|
-|p|pandemic-related outcomes|21|21|21|
+|p|pandemic-related outcomes|22|22|22|
 |p|biochemistry|16|32|32|
 |p|mental health|11|52|52|
 |p|anthropometric|5|24|15|
 |p|social wellbeing|4|10|10|
 |p|blood pressure|3|54|27|
 
-总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1541个（E=1242、P=324，25个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。
+总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1542个（E=1242、P=325，25个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。
