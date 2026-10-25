@@ -2,7 +2,7 @@
 
 - Reviewed JA042 against the official questionnaire and Codebook field labels. Added 12 community-context candidate mappings across four role-specific education concepts and separate age/tenure profiles. Preserved community-only versus village-only CAPI scope and role-specific slots.
 - The Codebook includes fifth age and tenure fields, but the questionnaire table names only four roles; those two fields are C-only metadata pending source identity resolution. Education categories were synchronized from the questionnaire across all four roles because some Codebook slot summaries omit an option. No respondent values or Codebook frequencies were used.
-- Full 159-step finalization completed in 7.6 minutes. Local shards E/P/C=6,128/2,116/989; 1,582 E/P concepts; 8,138 E/P concept-source mappings; 2011 metadata co-availability=137,788 (not analytic N). Formal models remain 0. Local suite passes: 493 tests; public-payload and 92-lock validations pass; JavaScript syntax passes. The JA042 batch is ready for commit and deployment.
+- Full 159-step finalization completed in 7.6 minutes. Local shards E/P/C=6,128/2,116/989; 1,582 E/P concepts; 8,138 E/P concept-source mappings; 2011 metadata co-availability=137,788 (not analytic N). Formal models remain 0. Local suite passes: 493 tests; public-payload and 92-lock validations pass; JavaScript syntax passes. Commit `cdecd92` is pushed and live at app v129; published JSON was directly checked for the 6,128-row E shard, the JA042 field, and all seven questionnaire education labels.
 
 # 2026-10-26 Review Community Questionnaire Part C population and hukou fields (local update)
 

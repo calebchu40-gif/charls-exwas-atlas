@@ -1,8 +1,8 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-26）
 
-**最新已核验部署：**app v128（提交 `4b257aa`）已发布；线上首页加载 `app.js?v=128`，社区目录包含 Part C 人口/户籍概念。Part A JA042 更新已在本地完成和验证，待提交与部署；正式模型数仍为 0。
+**最新已核验部署：**app v129（提交 `cdecd92`）已发布；线上首页加载 `app.js?v=129`，E 目录含 6,128 行，JA042 教育字段含问卷七项标签，社区 JSON 包含领导岗位候选概念。正式关联模型仍为 0。
 
-**部署历史：**此前 v127 与 v128 之间的更新记录见下方部署日志。当前公开站仅含 v128；未把本地 JA042 更新描述为线上功能。
+**部署历史：**v128 的 Part C 更新及此前部署记录见下方。v129 已发布并直接核验。
 
 **历史快照（v124；当前已更新至v126）：**v124 已部署；GitHub Pages Deploy [#245](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40202625659) 成功，首页已加载 `app.js?v=124`。GitHub Validate [#495](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40202625608) 的单测步骤失败；本机 Python 3.12 重跑 471 项全部通过，待后续提交触发远端复验。新增疫情模块逐字段覆盖台账，并纳入官方派生隔离指标 `XQuarantined` 与三类 VB002 社会网络结局候选。E/P/C 目录行数分别为 4,977/2,107/982（E=4,977、P=2,107、C=982）；1,548 个 E/P 概念（暴露 1,245、表型 328，含 25 个双角色），6,978 条概念—来源映射；E/P 目录记录 7,084 条、波次—字段 6,871 个、明确标签 3,731 条，通用待审核状态为 0。2020 候选配对 21,006 对是目录共现，不是分析样本量或效应结果。疫情模块 100 个官方字典字段现有逐项去向：77 个候选 E/P 字段、23 个明确记录为联结键/路由选项/时间或访谈元数据。92 条分析锁未变，正式关联模型仍为 0。上一公开版本为 v123。当前范围与剩余工期说明见[`audit/project_scope_and_completion_estimate_2026-10-25.md`](audit/project_scope_and_completion_estimate_2026-10-25.md)。
 
@@ -10,7 +10,7 @@
 
 **数据接收提速：**新增`python scripts/run_available_charls_intake_gates.py`，可一次检查受控目录中已到位的2013官方权重和2015独立血检文件；只跑官方哈希与DTA表头闸门，缺文件会跳过，QA仅写入本机受保护目录。详见[`audit/combined_intake_gate_runner_2026-10-25.md`](audit/combined_intake_gate_runner_2026-10-25.md)。
 
-**Current public/local snapshot (2026-10-26):** Public app v128 includes the Part C review; the current Part A JA042 update is local and pending deployment. The local build now includes the Part C population-source review (24 fields across five provisional community-context E concepts; JC014/JC016/JC026 remain C-only), plus Part A JA042 (12 candidate field mappings across six governance-context concepts; the fifth age/tenure slots remain C-only because their role is not named in the questionnaire). Local shards: E/P/C=6,128/2,116/989; 1,582 E/P concepts; 8,138 E/P concept-source mappings; 2011 metadata co-availability=137,788. These are catalog metadata counts, not analytic N or association results; formal models remain 0. Part C is committed as `4b257aa` and live at app v128. The current Part A update is local and pending verification/push; its generated payload is not yet deployed. See the Part C/H/J/K audits below.
+**Current public/local snapshot (2026-10-26):** app v129 is live and includes Part C and the JA042 leadership-profile review. The local build now includes the Part C population-source review (24 fields across five provisional community-context E concepts; JC014/JC016/JC026 remain C-only), plus Part A JA042 (12 candidate field mappings across six governance-context concepts; the fifth age/tenure slots remain C-only because their role is not named in the questionnaire). Local shards: E/P/C=6,128/2,116/989; 1,582 E/P concepts; 8,138 E/P concept-source mappings; 2011 metadata co-availability=137,788. These are catalog metadata counts, not analytic N or association results; formal models remain 0. Part C is live at app v128; the Part A JA042 update is live at app v129 (commit `cdecd92`) and verified in the served JSON payload. See the Part C/H/J/K audits below.
 
 **波次与模块准备度：**已整理2011、2013、2015、2018、2020五波的访谈/体测、血液检测、关系与社区模块、权重及年龄域门槛，并扩展本地表头审计输出为逐波×角色×源模块摘要。该审计只读变量名，不读取个人答案或计算样本数；还记录了NIA Biomarker Network对2018/2020血样采集的说法与CHARLS官方发布文件目录之间的待核差异。详见[`audit/wave_module_readiness_matrix_2026-10-25.md`](audit/wave_module_readiness_matrix_2026-10-25.md)。
 
