@@ -2,6 +2,8 @@
 
 **最新公开发布：**v105（提交 `298b07d`）已通过 Validate [#450](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40167636492) 与 Pages Deploy [#226](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40167636393)。线上首页、app、E/P/C目录、配对索引和社会暴露目录均与本地构建逐项匹配。该版本将40条经官方问卷和Codebook双重核对的 C/E/P 同字段候选链接到目录，并修正2011年`da057_8_`字段因PDF文本抽取丢失下划线而被误判缺失的问题；问卷与Codebook类别措辞、问卷环节范围差异均保留，不推断协变量资格、默认调整集或分母。E/P/C目录为4,845/2,082/982；444项Python测试、公开负载校验和92条分析锁核验通过。另9条关键词命中仍未链接，因尚缺双来源字段确认。详见[`audit/keyword_epc_overlap_review_2026-10-25.md`](audit/keyword_epc_overlap_review_2026-10-25.md)和[`audit/social_exposure_c_overlap_review_2026-10-25.md`](audit/social_exposure_c_overlap_review_2026-10-25.md)。
 
+**当前本地候选构建：**v106，将7条残疾/中风 C/P 同字段关系按精确 Codebook 字段和问卷父题/答案槽核实后加入元数据目录；2013与2015两条只有上一波 `zda005_2_` Codebook 记录的当前波次 `da005_2_` 仍被排除。测试和部署待验证。
+
 **最新构建验证（2026-10-25）：**2011年32个DA010治疗选项字段的官方类别索引和本地汇总代码核对已同步至网站；未选中/空白编码与路由分母仍待核验。保留原有字段提示，正式锁清单仍为92条。元数据提交`71c6214`和快速刷新/审计JSON提交`9874960`均通过GitHub Validate与Pages部署（Validate `40152950706`；Deploy `40152949965`），线上配对目录返回HTTP 200；Python全套417项测试通过。可用`python scripts/finalize_2011_chronic_treatment_review.py`快速刷新这项专题的网页派生文件；上游目录有变更时仍运行标准完整构建。详情见[`audit/2011_chronic_treatment_selected_storage_status_sync_2026-10-25.md`](audit/2011_chronic_treatment_selected_storage_status_sync_2026-10-25.md)。
 
 **2011慢性病治疗选项受控QA（2026-10-25）：**新增本机汇总检查，对照基线问卷及Codebook审核32个DA010选项字段。题项索引与已观察代码相符；7个病种组存在“以上皆无”与其他治疗项并存记录，且各病种均见 DA007 医生诊断回答为“否”但 DA010 有作答的记录。问卷路由同时涉及疾病索引和部分病种的DA008自知状态，当前字段不足以重建全部适用分母，因此8个“以上皆无”映射仍标记`DO NOT ANALYZE`。原始发布包及准备表来源链未核实；QA没有导出个人数据或频数。详情见[`audit/2011_disease_treatment_none_option_mapping_review_2026-10-21.md`](audit/2011_disease_treatment_none_option_mapping_review_2026-10-21.md)。

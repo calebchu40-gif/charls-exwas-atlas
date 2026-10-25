@@ -42,6 +42,16 @@ EXPECTED = {
     ("2015", "da071_2", "health_status_and_functioning"), ("2015", "da070_2", "health_status_and_functioning"),
     ("2015", "da030_2", "health_status_and_functioning"), ("2015", "da065_1", "health_status_and_functioning"),
     ("2015", "da062_1", "health_status_and_functioning"),
+    # Clinical C/P overlaps whose questionnaire uses a numbered loop/answer slot
+    # rather than the flattened release variable name. Each alias is verified
+    # against the exact Codebook field and its questionnaire item/route below.
+    ("2011", "da005_2_", "health_status_and_functioning"),
+    ("2011", "da006_2_", "health_status_and_functioning"),
+    ("2015", "da019_w2_2_2", "health_status_and_functioning"),
+    ("2018", "da005_2_", "health_status_and_functioning"),
+    ("2018", "da006_2_", "health_status_and_functioning"),
+    ("2018", "da006_w4_1_2_", "health_status_and_functioning"),
+    ("2018", "da006_w4_2_", "health_status_and_functioning"),
 }
 
 
@@ -61,6 +71,27 @@ def _contains_code(path: str, code: str) -> bool:
         line.lstrip().startswith("•") and ":" in line and normalize(line.split(":", 1)[0]) == expected
         for line in text.splitlines()
     )
+
+
+QUESTIONNAIRE_EVIDENCE = {
+    ("2011", "da005_2_"): ("(2) Brain damage/mental retardation",),
+    ("2011", "da006_2_"): ("DA006. In what year did you become disabled?", "[preload DA005 answer]"),
+    ("2015", "da019_w2_2_2"): ("DA019_W2_2 When was your most recent stroke?", "Year", "Age"),
+    ("2018", "da005_2_"): ("DA005[2]", "Brain damage/intellectual disability"),
+    ("2018", "da006_2_"): ("DA006[i]", "DA005[i] = 1", "become disabled"),
+    ("2018", "da006_w4_1_2_"): ("DA006_W4_1", "Year", "Zdisability[i]"),
+    ("2018", "da006_w4_2_"): ("DA006_W4", "last interview", "Zdisability[i]"),
+}
+
+
+def _questionnaire_supports_alias(path: str, key: tuple[str, str, str], text: str) -> bool:
+    # Direct field identifiers are preferred; only a frozen set of exact
+    # questionnaire item/slot anchors is accepted for flattened loop fields.
+    if _contains_code(path, key[1]):
+        return True
+    required = QUESTIONNAIRE_EVIDENCE.get((key[0], key[1]))
+    normalized = re.sub(r"\s+", " ", text.lower())
+    return bool(required) and all(re.sub(r"\s+", " ", token.lower()) in normalized for token in required)
 
 
 def load_items() -> list[dict[str, str]]:
@@ -83,8 +114,11 @@ def load_items() -> list[dict[str, str]]:
         questionnaire = QUESTIONNAIRE[wave]
         codebook = f"sources_official/CHARLS_{wave}_Codebook_extracted.txt"
         for path in (questionnaire, codebook):
-            if not (ROOT / path).is_file() or not _contains_code(path, code):
-                raise SystemExit(f"Exact {code} field not confirmed in official Questionnaire + Codebook: {path}")
+            if not (ROOT / path).is_file():
+                raise SystemExit(f"Missing official source for {key}: {path}")
+        questionnaire_text = (ROOT / questionnaire).read_text(encoding="utf-8", errors="replace").replace("\x00", "")
+        if not _questionnaire_supports_alias(questionnaire, key, questionnaire_text) or not _contains_code(codebook, code):
+            raise SystemExit(f"Exact field or frozen questionnaire item/slot plus Codebook field not confirmed for {key}")
         roles = set(candidates[(candidates["Source.Wave"].eq(wave)) & (candidates["Variable.Name"].str.lower().eq(code.lower())) &
                                (candidates["Component"].str.lower().eq(module.lower()))]["epcf"].str.lower())
         if "c" not in roles or ep["Role"].lower() not in roles:
@@ -176,7 +210,7 @@ def propagate() -> None:
             path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     with OUTPUT.open("w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=list(items[0])); writer.writeheader(); writer.writerows(items)
-    print(f"Linked {len(items)} exact Questionnaire+Codebook-verified generic C rows to same-wave E/P metadata; no covariate eligibility or response recoding inferred.")
+    print(f"Linked {len(items)} exact Codebook fields with verified Questionnaire field or item/slot anchors to same-wave E/P metadata; no covariate eligibility or response recoding inferred.")
 
 
 if __name__ == "__main__":
