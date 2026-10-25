@@ -45,13 +45,18 @@ class PensionReceiptDateReviewTests(unittest.TestCase):
         self.assertTrue(all("DO NOT ANALYZE" in r["value_label_status"] for r in rows))
         self.assertTrue(all("%" not in r["value_labels"] for r in rows))
 
-    def test_2018_fn003_month_is_questionnaire_only_in_current_public_inventory(self):
+    def test_2018_fn003_month_is_questionnaire_only_in_public_crosswalk(self):
         questionnaire = (ROOT / "sources_official/CHARLS_2018_Questionnaire_extracted.txt").read_text(encoding="utf-8", errors="replace")
         codebook = (ROOT / "sources_official/CHARLS_2018_Codebook_extracted.txt").read_text(encoding="utf-8", errors="replace")
-        raw = read_csv(ROOT / "audit/raw_variable_catalog_v1.csv")
         self.assertIn("FN003_W2_2", questionnaire)
         self.assertNotIn("fn003_w2_2", codebook.lower())
-        fields = {r["variable"].lower() for r in raw if r["wave"] == "2018" and "fn003_w2" in r["variable"].lower()}
+        fields = {
+            r["code"].lower()
+            for r in self.mapping
+            if r["wave"] == "2018"
+            and r["concept_id"] == "pension_benefit_start_date_components"
+            and "fn003_w2" in r["code"].lower()
+        }
         self.assertEqual(fields, {f"fn003_w2_1_{i}_" for i in range(1, 5)})
 
 

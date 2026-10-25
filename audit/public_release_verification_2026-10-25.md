@@ -1,5 +1,9 @@
 # GitHub Pages release verification — 2026-10-25
 
+## 2026-10-25 continuation: pension receipt-date source review
+
+Commit `1954680` passed metadata validation run [#413](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40149693230) and Pages deployment run [#205](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40149693284). The live `catalog_e.json` returned HTTP 200 with 4,845 rows and included the three 2013 pension source-review locks (`fn081_w2_2`, `fn095_w2_1`, and `fn095_w2_2`). The deployed metadata contains no respondent records or association estimates. The later documentation-only commit `454bf44` exposed a portability issue in a new test: it read a private, gitignored raw-variable inventory. The test now relies on the public questionnaire, Codebook, and tracked concept crosswalk; the full local suite passes (412 tests). GitHub validation of this fix is pending.
+
 ## Release identity
 
 - Repository: `calebchu40-gif/charls-exwas-atlas`
