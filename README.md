@@ -1,6 +1,8 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-25）
 
-**最新公开网站：**v106（提交 `dc7ef06`）已通过 Validate [#452](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40168479043) 与 Pages Deploy [#227](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40168479027)。当前本地待发布 v107 修正了一个旧的 Codebook 读取错误：2013、2015 Codebook 均同时列出当前波次`da005_2_`和前波`zda005_2_`，问卷与唯一同波次表型映射也相符，因此新增两个有来源依据的C/P目录链接，同时保留前波预载与路由注意事项。v107已有446项测试和本地发布安全检查通过，GitHub校验及Pages发布待触发。网站仍是变量元数据查询原型，没有真实关联结果。
+**最新公开网站：**v107（提交 `77b0da2`）已通过 Validate [#455](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40169985196) 与 Pages Deploy [#228](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40169985229)。线上首页加载v107；E/P/C目录为4,845/2,082/982行，其中线上C、E、P文件与本地逐字节一致，候选配对文件的字段和值结构相同。v107更正了旧Codebook读取错误：2013、2015 Codebook均列出当前波次`da005_2_`和前波`zda005_2_`，问卷与唯一同波次表型映射相符，因此新增两个有来源依据的C/P目录链接，同时保留前波预载与路由注意事项。网站仍是变量元数据查询原型，没有真实关联结果。
+
+**本地待发布 v108：**将18条已完成官方来源审核但仍显示泛化“关键词发现”的年龄/居住史C记录，改为字段特异的中英文元数据标签；BB007/BB009分支、年/月分量及两个2011字段身份锁均保留。更新器已接入完整与finalize-only流水线。449项测试、公开负载校验、92条分析锁、语法和差异检查通过；GitHub校验及Pages部署待提交触发。审计见[`audit/residential_history_search_label_review_2026-10-25.md`](audit/residential_history_search_label_review_2026-10-25.md)。
 
 **最新项目代码：**提交 `3019413`（2026-10-25）增加本机受控准备表的表头级字段覆盖审计，GitHub Validate [#454](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40168842247) 已成功。该审计仅检查本机 Stata 文件列名，不读取个人取值或计算样本量，并将结果写入仓库外的本机 QA 目录。结果确认了2011社区层链接限制、关系名册独立存储、2015独立血液数据字段缺失，以及2013准备表缺少官方样本标记。详见[`audit/data_preparation_plan_and_controls.md`](audit/data_preparation_plan_and_controls.md)和[`scripts/audit_prepared_catalog_field_availability.py`](scripts/audit_prepared_catalog_field_availability.py)。本轮对 2013/2015 DA005 字段的核验记录见[`audit/keyword_epc_overlap_review_2026-10-25.md`](audit/keyword_epc_overlap_review_2026-10-25.md)。
 

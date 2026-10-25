@@ -1,3 +1,8 @@
+## 2026-10-25 Replace stale residential-history keyword labels (v108 candidate)
+
+- Reclassified 18 already source-reviewed 2011–2015 age and residential-mobility C rows from generic keyword-discovery labels to field-specific metadata labels. The label update preserves separate year/month duration fields and the distinct BB007/BB009 questionnaire branches. The two 2011 BB003/BB005 field-identity holds remain unchanged and locked.
+- Added a fail-closed allowlist updater to both full and finalize-only builds, Chinese UI translations, and regression coverage. The C shard remains 982 rows; generic keyword-only C status and subcategory counts are now both zero. All 449 tests, public-payload validation, exact 92-lock validation, JavaScript/Python syntax checks and `git diff --check` pass. GitHub Actions and Pages publication pending.
+
 ## 2026-10-25 Correct exact current-wave DA005 option links (v107 candidate)
 
 - Rechecked the 2013 and 2015 official questionnaires and Codebooks after the prior review had misread the `da005_2_` entries. Both Codebooks contain exact current-wave `da005_2_` fields as well as distinct `zda005_2_` prior-wave fields; the questionnaires identify DA005 option 2 as brain damage/mental retardation, and the source crosswalk contains one exact same-wave phenotype mapping. Added the two C/P metadata links while retaining prior-wave preload, conditional route, and analysis-eligibility caveats.

@@ -1,13 +1,14 @@
 # CHARLS ExWAS Atlas active work status (2026-10-25)
 
-> Status refresh, 2026-10-25: v107 now adds two source-verified current-wave disability-option links in 2013/2015 after correcting a prior Codebook-reading error. The 49 exact C/E/P overlap links pass all 446 tests and local safety validators. GitHub validation and Pages publication are pending. Commit `3019413` also passed GitHub Validate #454. The current gate is source/version and survey-design readiness, not site hosting. The dated entries below record historical milestones; use this refresh for the current state.
+> Status refresh, 2026-10-25: v107 is live and verified. Local v108 updates labels for 18 already source-reviewed age/residential-history C rows; all 449 tests and local safety checks pass, with GitHub validation and Pages publication pending. v107 corrected two source-verified 2013/2015 disability-option links. Commit `3019413` passed GitHub Validate #454. The current gate is source/version and survey-design readiness, not site hosting. The dated entries below record historical milestones; use this refresh for the current state.
 
 ## Current state after the prepared-table header audit
 
-- The public GitHub Pages site remains a metadata-only prototype. The latest deployed site is v106; commit `3019413` updated private QA tooling and documentation without changing public assets, so it did not require another Pages deployment.
+- The public GitHub Pages site remains a metadata-only prototype. The latest deployed site is v107; local v108 is ready for validation and publication. Commit `3019413` updated private QA tooling and documentation without changing public assets, so it did not require a Pages deployment.
 - The current catalogue snapshot is 1,486 deduplicated E/P concepts (1,208 exposure candidates, 303 phenotype candidates, 25 dual-role concepts), 6,821 concept-to-source-field metadata links, and five waves (2011–2020). None of these counts is an analytic N or association result.
+- The 982-row local C catalogue now has zero rows with generic automated-keyword status and zero rows with the generic “keyword discovery only” subcategory. Eighteen age/residential-history rows whose sources had already been reviewed now have specific labels; two separate 2011 field-identity holds remain unchanged.
 - A new private audit compares wave/role/code keys against only the column names in the five already-prepared local Stata tables. It does not read respondent values or write outputs into this repository. It confirms 2011 community fields are intentionally excluded from person-level tables, relationship rosters and 2015 blood data require separate module handling, and the local 2013 table lacks official `crosssection`/`longitudinal` flags.
-- Local synthetic regression coverage is 446 Python tests after adding two header-audit tests. The repository payload validator, analysis-lock validator, syntax checks, and whitespace checks also pass; GitHub Validate #454 succeeded.
+- Local synthetic regression coverage is 449 Python tests. The repository payload validator, analysis-lock validator, syntax checks, and whitespace checks pass; GitHub Validate #454 succeeded for the previous metadata-only audit commit, and v107's site workflows also succeeded.
 - No formal association model or complete per-pair analytic N exists. No respondent-level file, protected QA output, or unreviewed association estimate is published.
 
 ## Official sampling-design interpretation and remaining gate

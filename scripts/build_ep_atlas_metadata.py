@@ -239,6 +239,7 @@ FULL_PIPELINE_SCRIPTS = (
     "apply_hukou_lifecourse_c_overlap_review.py",
     "apply_hukou_recent_change_c_overlap_review.py",
     "apply_keyword_epc_overlap_review.py",
+    "apply_residential_history_search_label_review.py",
     # C metadata is propagated after the first shard build above; regenerate
     # role-specific browser payloads last so they match the final master file.
     "deduplicate_exact_catalog_rows.py",
@@ -415,6 +416,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_hukou_lifecourse_c_overlap_review.py",
     "apply_hukou_recent_change_c_overlap_review.py",
     "apply_keyword_epc_overlap_review.py",
+    "apply_residential_history_search_label_review.py",
     "build_candidate_pair_explorer.py",
     "deduplicate_exact_catalog_rows.py",
     "site_catalog_shards.py",

@@ -221,6 +221,17 @@ const C_SUBCATEGORY_LABELS={
   "unresolved release-field identity/data-type discrepancy":"发行字段身份/数据类型差异，尚未解决",
   "unstructured other-specify response text":"未结构化的“其他，请说明”回答文本",
   "unstructured other-use response text":"未结构化的“其他用途”回答文本",
+  "respondent age field; source definition and derivation context":"受访者年龄字段；来源定义与推算背景",
+  "ever lived outside permanent county/city for over six months; wave-specific branch":"曾在现居县/市以外居住超过六个月；波次分支不同",
+  "ever lived outside permanent county/city/district for over six months; wave-specific branch":"曾在现居县/市/区以外居住超过六个月；波次分支不同",
+  "cumulative years outside permanent county/city after BB007 yes; keep separate from months":"BB007回答是后的累计离县/市年数；与月数分开",
+  "cumulative months outside permanent county/city after BB007 yes; keep separate from years":"BB007回答是后的累计离县/市月数；与年数分开",
+  "ever lived outside permanent county/city for over six months; alternate BB001 branch":"曾在现居县/市以外居住超过六个月；BB001另一问卷分支",
+  "ever lived outside permanent county/city/district for over six months; alternate BB001 branch":"曾在现居县/市/区以外居住超过六个月；BB001另一问卷分支",
+  "cumulative years outside permanent area after BB009 yes; keep separate from months":"BB009回答是后的累计离开居住地年数；与月数分开",
+  "cumulative months outside permanent area after BB009 yes; keep separate from years":"BB009回答是后的累计离开居住地月数；与年数分开",
+  "calendar year first lived in permanent county/city/district; distinct from village entry":"首次在常住县/市/区居住年份；与村/社区年份区分",
+  "calendar year first lived in village/community; distinct from county entry":"首次在村/社区居住年份；与县/市/区年份区分",
   "unsupported prior-wave disease-awareness slots":"前一波次疾病知晓情况槽位，当前不支持"
 };
 function renderCatalog(all, role, prefix) {
