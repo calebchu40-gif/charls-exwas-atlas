@@ -1,3 +1,8 @@
+## 2026-10-25 Add a single entry point for available CHARLS intake gates
+
+- Added `scripts/run_available_charls_intake_gates.py` to check the protected intake locations for the 2013 official weights and 2015 standalone Blood Data, then run only the existing checksum/header gates when each full input set exists. It never downloads, unpacks, reads respondent values, merges records, or writes QA into the repository.
+- Added synthetic tests for absent inputs, an incomplete blood-file pair, and sync-folder rejection. Instructions: `audit/combined_intake_gate_runner_2026-10-25.md`.
+
 ## 2026-10-25 Recheck published-wave boundary (v114 live)
 
 - Rechecked CHARLS's current public catalog and official releases. It still lists the 2020 national follow-up as the latest downloadable regular-wave dataset, while 2021–2023 recruitment materials describe a fifth regular survey without a corresponding data package in that catalog. Kept the survey implementations separate by actual release documentation rather than merging on wave title.
