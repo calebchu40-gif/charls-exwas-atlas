@@ -651,9 +651,9 @@ This file records project-level changes that affect reproducibility, methods, da
 - Validation: clean finalization, all 429 Python tests, public payload validation, exact 92-lock reconciliation, JavaScript syntax, and Python compilation passed. No participant data or frequencies were read; association models and actual pairwise Ns remain 0.
 
 
-## 2026-10-25 — 家庭经济支持目录扩展（本地待发布）
+## 2026-10-25 — 家庭经济支持目录扩展（v125已部署；CI待修复）
 
 - 新增非同住父母、岳父母、子女之间的家庭经济支持收/支六类候选概念，覆盖原始目录中对应的2011、2013、2015、2018字段。
 - 保留个人索引槽位、钱/实物、定期/非定期、时间间隔及分档上下界；不汇总、不跨波重编码。2011问卷与Codebook字段号/子项描述差异保留为分析前核验警告。
 - 全量目录重建后 E/P/C 为6,008/2,107/982 行，候选概念1,554，E/P概念—来源映射8,009条；仍无正式关联模型。
-- 新增四项交叉表测试；完整回归测试及CI待确认后发布。
+- 新增四项交叉表测试；本机475项完整回归通过，GitHub Validate #497 单测步骤失败，原因未定位；Pages Deploy #246 已成功。
