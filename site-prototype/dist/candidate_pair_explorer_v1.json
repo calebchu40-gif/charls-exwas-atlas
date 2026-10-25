@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 666,
+      "exposure_count": 667,
       "phenotype_count": 213,
-      "candidate_pair_count": 141835,
+      "candidate_pair_count": 142048,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -4710,6 +4710,186 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "Community-reported average monthly subsidy standard. The questionnaire routes JG033=No directly here, so item applicability is ambiguous; preserve separately and do not assume it measures NRPS recipients only."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_nonagricultural_employment",
+          "label": "Community non-agricultural employment and enterprise profile",
+          "domain": "Community economic context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jd001",
+              "label": "How Many Households Were Engaged in Non-Agricultural Work",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate/estimate: 2010 household count for households with at least one member engaged in local non-agricultural work (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+            },
+            {
+              "code": "jd002",
+              "label": "How Many GETIHU",
+              "module": "community",
+              "unit": "firms",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate/estimate: number of self-employed household businesses (getihu) at end-2010. Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+            },
+            {
+              "code": "jd003",
+              "label": "How Many Enterprises",
+              "module": "community",
+              "unit": "firms",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate/estimate: number of local enterprises at end-2010; the questionnaire defines an enterprise as having at least eight employees. Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+            },
+            {
+              "code": "jd004s1",
+              "label": "Major Products",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate/estimate: multi-response enterprise-product category: handicraft processing. Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+            },
+            {
+              "code": "jd004s2",
+              "label": "Major Products",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate/estimate: multi-response enterprise-product category: mineral extraction/processing. Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+            },
+            {
+              "code": "jd004s3",
+              "label": "Major Products",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate/estimate: multi-response enterprise-product category: light-industry products. Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+            },
+            {
+              "code": "jd004s4",
+              "label": "Major Products",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate/estimate: multi-response enterprise-product category: industrial-parts manufacturing. Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+            },
+            {
+              "code": "jd005",
+              "label": "How Many Employees Worked for the Local Firms",
+              "module": "community",
+              "unit": "persons",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate/estimate: number of workers in non-getihu enterprises at end-2010. Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+            },
+            {
+              "code": "jd006",
+              "label": "How Many Males",
+              "module": "community",
+              "unit": "persons",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate/estimate: male-worker count among the JD005 workforce (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+            },
+            {
+              "code": "jd007_1",
+              "label": "Daily Salary of Males",
+              "module": "community",
+              "unit": "Yuan/day",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate/estimate: average male local-firm daily salary in Yuan/day (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+            },
+            {
+              "code": "jd007_2",
+              "label": "Monthly Salary of Males",
+              "module": "community",
+              "unit": "Yuan/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate/estimate: average male local-firm monthly salary in Yuan/month (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+            },
+            {
+              "code": "jd008_1",
+              "label": "Daily Salary of Females",
+              "module": "community",
+              "unit": "Yuan/day",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate/estimate: average female local-firm daily salary in Yuan/day (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+            },
+            {
+              "code": "jd008_2",
+              "label": "Monthly Salary of Females",
+              "module": "community",
+              "unit": "Yuan/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate/estimate: average female local-firm monthly salary in Yuan/month (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+            },
+            {
+              "code": "jd009",
+              "label": "Average Monthly Salary",
+              "module": "community",
+              "unit": "days/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate/estimate: average workdays per month among local-firm employees in 2010 (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+            },
+            {
+              "code": "jd010",
+              "label": "Average Daily Wage for Manual Male Labor",
+              "module": "community",
+              "unit": "Yuan/day",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate/estimate: 2010 average daily wage for manual male labor in the village, Yuan/day (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+            },
+            {
+              "code": "jd011",
+              "label": "Average Daily Wage for Manual Female Labor",
+              "module": "community",
+              "unit": "Yuan/day",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate/estimate: 2010 average daily wage for manual female labor in the village, Yuan/day (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+            },
+            {
+              "code": "jd012",
+              "label": "Monthly Salary for Nannies in Addition to Living and Meal",
+              "module": "community",
+              "unit": "Yuan/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate/estimate: monthly nanny salary excluding meals and lodging, Yuan/month. Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
             }
           ]
         },
@@ -123124,6 +123304,186 @@
       ]
     },
     {
+      "concept_id": "community_nonagricultural_employment",
+      "label": "Community non-agricultural employment and enterprise profile",
+      "domain": "Community economic context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jd001",
+          "label": "How Many Households Were Engaged in Non-Agricultural Work",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate/estimate: 2010 household count for households with at least one member engaged in local non-agricultural work (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+        },
+        {
+          "code": "jd002",
+          "label": "How Many GETIHU",
+          "module": "community",
+          "unit": "firms",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate/estimate: number of self-employed household businesses (getihu) at end-2010. Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+        },
+        {
+          "code": "jd003",
+          "label": "How Many Enterprises",
+          "module": "community",
+          "unit": "firms",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate/estimate: number of local enterprises at end-2010; the questionnaire defines an enterprise as having at least eight employees. Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+        },
+        {
+          "code": "jd004s1",
+          "label": "Major Products",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate/estimate: multi-response enterprise-product category: handicraft processing. Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+        },
+        {
+          "code": "jd004s2",
+          "label": "Major Products",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate/estimate: multi-response enterprise-product category: mineral extraction/processing. Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+        },
+        {
+          "code": "jd004s3",
+          "label": "Major Products",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate/estimate: multi-response enterprise-product category: light-industry products. Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+        },
+        {
+          "code": "jd004s4",
+          "label": "Major Products",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate/estimate: multi-response enterprise-product category: industrial-parts manufacturing. Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+        },
+        {
+          "code": "jd005",
+          "label": "How Many Employees Worked for the Local Firms",
+          "module": "community",
+          "unit": "persons",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate/estimate: number of workers in non-getihu enterprises at end-2010. Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+        },
+        {
+          "code": "jd006",
+          "label": "How Many Males",
+          "module": "community",
+          "unit": "persons",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate/estimate: male-worker count among the JD005 workforce (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+        },
+        {
+          "code": "jd007_1",
+          "label": "Daily Salary of Males",
+          "module": "community",
+          "unit": "Yuan/day",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate/estimate: average male local-firm daily salary in Yuan/day (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+        },
+        {
+          "code": "jd007_2",
+          "label": "Monthly Salary of Males",
+          "module": "community",
+          "unit": "Yuan/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate/estimate: average male local-firm monthly salary in Yuan/month (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+        },
+        {
+          "code": "jd008_1",
+          "label": "Daily Salary of Females",
+          "module": "community",
+          "unit": "Yuan/day",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate/estimate: average female local-firm daily salary in Yuan/day (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+        },
+        {
+          "code": "jd008_2",
+          "label": "Monthly Salary of Females",
+          "module": "community",
+          "unit": "Yuan/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate/estimate: average female local-firm monthly salary in Yuan/month (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+        },
+        {
+          "code": "jd009",
+          "label": "Average Monthly Salary",
+          "module": "community",
+          "unit": "days/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate/estimate: average workdays per month among local-firm employees in 2010 (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+        },
+        {
+          "code": "jd010",
+          "label": "Average Daily Wage for Manual Male Labor",
+          "module": "community",
+          "unit": "Yuan/day",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate/estimate: 2010 average daily wage for manual male labor in the village, Yuan/day (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+        },
+        {
+          "code": "jd011",
+          "label": "Average Daily Wage for Manual Female Labor",
+          "module": "community",
+          "unit": "Yuan/day",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate/estimate: 2010 average daily wage for manual female labor in the village, Yuan/day (village-only). Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+        },
+        {
+          "code": "jd012",
+          "label": "Monthly Salary for Nannies in Addition to Living and Meal",
+          "module": "community",
+          "unit": "Yuan/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate/estimate: monthly nanny salary excluding meals and lodging, Yuan/month. Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
+        }
+      ]
+    },
+    {
       "concept_id": "community_orps_program",
       "label": "Community Old Rural Pension System context",
       "domain": "Community social-policy context",
@@ -125928,9 +126288,9 @@
     "2013": {
       "baseline_wave": "2011",
       "followup_wave": "2013",
-      "exposure_count": 169,
+      "exposure_count": 170,
       "phenotype_count": 226,
-      "candidate_pair_count": 38194,
+      "candidate_pair_count": 38420,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -126168,9 +126528,9 @@
     "2015": {
       "baseline_wave": "2011",
       "followup_wave": "2015",
-      "exposure_count": 169,
+      "exposure_count": 170,
       "phenotype_count": 239,
-      "candidate_pair_count": 40391,
+      "candidate_pair_count": 40630,
       "phenotype_concept_ids": [
         "offspring_health_status_2015",
         "offspring_self_care_ability_2015",
@@ -126421,9 +126781,9 @@
     "2018": {
       "baseline_wave": "2011",
       "followup_wave": "2018",
-      "exposure_count": 169,
+      "exposure_count": 170,
       "phenotype_count": 211,
-      "candidate_pair_count": 35659,
+      "candidate_pair_count": 35870,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -126646,9 +127006,9 @@
     "2020": {
       "baseline_wave": "2011",
       "followup_wave": "2020",
-      "exposure_count": 169,
+      "exposure_count": 170,
       "phenotype_count": 104,
-      "candidate_pair_count": 17576,
+      "candidate_pair_count": 17680,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",

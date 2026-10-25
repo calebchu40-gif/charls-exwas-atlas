@@ -5,16 +5,16 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / "audit"
-STATUS_PREFIX = "official questionnaire identifies a continuous household count;"
+REVIEWED_MEASUREMENT_PREFIX = "official questionnaire identifies"
 
 
 def main():
     labels = pd.read_csv(AUDIT / "community_exposure_value_labels_v1.csv", dtype=str, encoding="utf-8-sig").fillna("")
     category_labels = labels[labels["value_labels"].str.strip().ne("")]
-    continuous_labels = labels[labels["value_label_status"].str.startswith(STATUS_PREFIX)]
-    if category_labels.empty and continuous_labels.empty:
-        raise SystemExit("No reviewed community continuous-count labels found")
-    updates = {(str(r.wave), str(r.code).lower()): r for r in continuous_labels.itertuples(index=False)}
+    reviewed_measurements = labels[labels["value_label_status"].str.startswith(REVIEWED_MEASUREMENT_PREFIX)]
+    if category_labels.empty and reviewed_measurements.empty:
+        raise SystemExit("No reviewed community labels or measurement semantics found")
+    updates = {(str(r.wave), str(r.code).lower()): r for r in reviewed_measurements.itertuples(index=False)}
     category_updates = {(str(r.wave), str(r.code).lower()): r for r in category_labels.itertuples(index=False)}
     updated = 0
     for path in (AUDIT / "charls_atlas_candidate_fields_v0.csv", ROOT / "site-prototype/dist/catalog.json"):

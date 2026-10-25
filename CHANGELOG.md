@@ -1,3 +1,9 @@
+# 2026-10-26 Review Community Questionnaire Part D enterprise, employment, and wage fields (local update)
+
+- Reconciled all 18 raw JD-prefixed metadata-inventory fields: mapped 17 substantive fields to a community-context candidate concept and kept JD014 informant position as C-only metadata. Questionnaire name/phone prompts are excluded from the public catalog.
+- Preserved the 2010 reference period, household/person/firm units, enterprise definition (at least eight employees), village-only routes, sex-specific daily/monthly wages, and separate manual-labor/nanny wage concepts. JD004 suffix-slot encoding is explicitly unresolved pending authorized-release QA; no categories or participant data were inferred.
+- Updated value-label propagation to carry reviewed measurement semantics rather than leaving numeric community measures in a generic pending state. Full 159-step finalization completed in 7.7 minutes. Local shards E/P/C=6,192/2,116/1,002; E/P concepts=1,602; E/P source mappings=8,202; community crosswalk=170 concepts/534 mappings. Metadata pair co-availability for 2011 is 142,048, not analytic N. Formal models remain 0. All 504 local tests, public-payload validation, exact 92-lock check, JavaScript syntax check, and diff check pass. Pending GitHub push/CI and Pages publication.
+
 # 2026-10-26 Review 2011 Community Questionnaire Part B infrastructure and activity facilities (local update)
 
 - Reconciled all 127 raw JB-prefixed inventory fields against the official questionnaire, Codebook labels, and metadata-only inventory. Mapped 42 JB029 presence/initiator/funder fields across 14 community facility/organization types and added distinct years for sewer start, sanitation reconstruction, and village electricity availability.
