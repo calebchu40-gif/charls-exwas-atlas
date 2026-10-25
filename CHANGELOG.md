@@ -1,3 +1,8 @@
+## 2026-10-25 Add a five-wave measurement schedule to the landing page (v109 candidate)
+
+- Added a responsive five-wave overview so visitors can see at a glance that measures do not appear in every wave. It distinguishes 2011/2015 blood assay releases from 2013 physical measurements, the age-limited 2018 HCAP, and the absence of separate Biomarker/Blood Data files in the current Wave 5 official inventory.
+- Added direct CHARLS source links and a note that the NIA Biomarker Network's 2018/2020 blood-collection statement conflicts with the current official release inventory. Linked the panel to the detailed blood-marker catalogue. Local HTML/CSS/payload checks pending deployment.
+
 ## 2026-10-25 Clarify unresolved later-wave blood-collection source discrepancy
 
 - Reconciled the Wave 4 User Guide and official 2018/2020 file inventories with a conflicting NIA Biomarker Network summary that reports 2018/2020 blood collection. The public catalogue remains limited to CHARLS-published, field-addressable assay files (2011/2015); the discrepancy is explicitly documented as unresolved pending an official release file, variable dictionary, and weight guidance.
