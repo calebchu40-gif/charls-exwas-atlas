@@ -19981,8 +19981,8 @@
               "unit": "",
               "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_13_s2",
@@ -19991,8 +19991,8 @@
               "unit": "",
               "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_13_s3",
@@ -20001,8 +20001,8 @@
               "unit": "",
               "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_13_s4",
@@ -20011,8 +20011,8 @@
               "unit": "",
               "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             }
           ]
         },
@@ -20031,8 +20031,8 @@
               "unit": "",
               "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_7_s2",
@@ -20041,8 +20041,8 @@
               "unit": "",
               "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_7_s3",
@@ -20051,8 +20051,8 @@
               "unit": "",
               "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_7_s4",
@@ -20061,8 +20061,8 @@
               "unit": "",
               "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             }
           ]
         },
@@ -20131,8 +20131,8 @@
               "unit": "",
               "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_5_s2",
@@ -20141,8 +20141,8 @@
               "unit": "",
               "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_5_s3",
@@ -20151,8 +20151,8 @@
               "unit": "",
               "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_5_s4",
@@ -20161,8 +20161,8 @@
               "unit": "",
               "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             }
           ]
         },
@@ -20911,8 +20911,8 @@
               "unit": "",
               "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_6_s2",
@@ -20921,8 +20921,8 @@
               "unit": "",
               "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_6_s3",
@@ -20931,8 +20931,8 @@
               "unit": "",
               "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_6_s4",
@@ -20941,8 +20941,8 @@
               "unit": "",
               "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             }
           ]
         },
@@ -20961,8 +20961,8 @@
               "unit": "",
               "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_9_s2",
@@ -20971,8 +20971,8 @@
               "unit": "",
               "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_9_s3",
@@ -20981,8 +20981,8 @@
               "unit": "",
               "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_9_s4",
@@ -20991,8 +20991,8 @@
               "unit": "",
               "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             }
           ]
         },
@@ -21011,8 +21011,8 @@
               "unit": "",
               "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_10_s2",
@@ -21021,8 +21021,8 @@
               "unit": "",
               "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_10_s3",
@@ -21031,8 +21031,8 @@
               "unit": "",
               "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_10_s4",
@@ -21041,8 +21041,8 @@
               "unit": "",
               "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             }
           ]
         },
@@ -21061,8 +21061,8 @@
               "unit": "",
               "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_2_s2",
@@ -21071,8 +21071,8 @@
               "unit": "",
               "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_2_s3",
@@ -21081,8 +21081,8 @@
               "unit": "",
               "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_2_s4",
@@ -21091,8 +21091,8 @@
               "unit": "",
               "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             }
           ]
         },
@@ -21111,8 +21111,8 @@
               "unit": "",
               "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_12_s2",
@@ -21121,8 +21121,8 @@
               "unit": "",
               "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_12_s3",
@@ -21131,8 +21131,8 @@
               "unit": "",
               "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             },
             {
               "code": "da010_12_s4",
@@ -21141,8 +21141,8 @@
               "unit": "",
               "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
+              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
             }
           ]
         },

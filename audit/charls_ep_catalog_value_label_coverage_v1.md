@@ -3,7 +3,7 @@
 更新：2026-10-25。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
 - 最终E/P目录行：6,927；不同波次—字段码：6,714。一个字段可对应多个候选类别/角色。
-- 有非空标签文本的E/P目录行：3,682；不同波次—字段码：3,601。连续测量、计数值及测量流程字段可已审但不需要离散标签。
+- 有非空标签文本的E/P目录行：3,650；不同波次—字段码：3,569。连续测量、计数值及测量流程字段可已审但不需要离散标签。
 - 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：0。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -29,7 +29,7 @@
 |p|biochemistry|32|32|0|1|
 |p|blood pressure|54|27|0|1|
 |p|chronic disease|248|248|240|1|
-|p|chronic disease ancillary|664|664|520|70|
+|p|chronic disease ancillary|664|664|488|70|
 |p|cognition|338|338|305|1|
 |p|health and symptoms|177|177|171|5|
 |p|healthcare access|217|217|66|2|
@@ -56,7 +56,6 @@
 |代码本逐值标签已核|76|
 |official 2018 Codebook response categories transcribed; frequencies omitted; questionnaire route retained; respondent release coding and eligible denominator require validation|68|
 |连续计数；参照期/机构槽位依波次；极值待核|58|
-|official 2011 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|55|
 |official Codebook lists numeric summary; no categorical response menu in this entry|52|
 |official 2013 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|52|
 |official 2015 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|52|
@@ -66,6 +65,7 @@
 |official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending|33|
 |continuous component, not a categorical code; component unit reviewed against wave-specific official codebook|32|
 |continuous measure metadata available; see description/crosswalk|32|
+|official 2011 Codebook selected-option category transcribed; local aggregate-only QA corroborates selected code; unselected storage and blank semantics, plus routed denominator, unresolved; DO NOT ANALYZE|32|
 |official questionnaire and Codebook option identity reviewed; participant-level No/unselected storage and denominator unresolved; no response-value labels assigned|30|
 |official wave-specific Codebook response categories transcribed without frequencies; complete listed 1-10 set; ordered frequency categories are not equally spaced; preserve parent/spouse route and indexed roster; special missing and nonresponse semantics remain release-specific|27|
 |Official questionnaire identifies a numeric monetary amount; continuous monetary amount; questionnaire reporting unit 10,000 Yuan; no discrete category labels assigned; release storage and special codes remain unverified.|27|
@@ -73,6 +73,7 @@
 |continuous raw subtraction response; Codebook extreme maxima occur; valid range and scoring require authorized raw-data QA|25|
 |代码本逐字段值标签已核|24|
 |official 2013 questionnaire identifies Yuan amount period and household-member roster slot; continuous amount with no discrete response categories; authorized-release storage scale and special values remain unverified|24|
+|official 2011 Codebook selected-option category transcribed; frequencies omitted; unselected storage and routed denominator unverified; DO NOT ANALYZE|23|
 |official 2015 questionnaire identifies Yuan amount period and household-member roster slot; continuous amount with no discrete response categories; authorized-release storage scale and special values remain unverified|20|
 |official questionnaire/Codebook response categories reviewed; frequencies omitted; option-specific Yes code verified|20|
 |official 2020 questionnaire/Codebook response labels reviewed; prior-wave route retained; frequencies excluded|18|

@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-25 continuation: synchronize 2011 chronic-treatment selected-storage review
+
+Propagated the aggregate-only local DA010 storage QA to the 32 exact 2011 treatment-option fields in the source map, concept crosswalk, candidate-field catalog, and public site catalog. The selected Codebook category index is corroborated against nonmissing local codes, while blank/unselected storage and route eligibility remain unresolved. Explanatory caveats are kept separate from formal lock flags; the `DO NOT ANALYZE` triage inventory remains 92. The finalization-only metadata build completed, all 416 Python tests pass, and no participant data or frequencies were published. Details: `audit/2011_chronic_treatment_selected_storage_status_sync_2026-10-25.md`. Formal models and actual pairwise Ns remain 0.
+
 ## 2026-10-25 latest continuation: verify pension source review release and repair CI
 
 The 2013/2018 pension receipt start-date source review was deployed in commit `1954680`; GitHub Pages #205 and metadata validation #413 passed. The public `catalog_e.json` returned HTTP 200 with 4,845 rows and retained the three 2013 review locks. The follow-up documentation commit `454bf44` exposed one nonportable test that read the local-only, gitignored `audit/raw_variable_catalog_v1.csv`; fixed the regression to rely on tracked official questionnaire, Codebook, and crosswalk evidence. Commit `36e4ffc` passed GitHub Validate #415 (including the synthetic survey-engine probe); commit `cccaed3` updated this verification record and passed Validate #416. No respondent-level data or model results were sent to GitHub. The public Pages deployment is unchanged by these documentation/test-only commits. Full local Python suite: 412 tests pass.

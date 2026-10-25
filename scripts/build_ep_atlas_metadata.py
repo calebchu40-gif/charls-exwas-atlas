@@ -208,6 +208,7 @@ FULL_PIPELINE_SCRIPTS = (
     "propagate_alcohol_metadata_to_catalog.py",
     "validate_do_not_analyze_triage.py",
     "propagate_ep_crosswalk_status.py",
+    "apply_2011_chronic_treatment_storage_review.py",
     "apply_marital_history_exposure_source_review.py",
     "apply_pension_receipt_date_source_review.py",
     # Final crosswalk-status propagation can merge concept-level metadata
@@ -373,6 +374,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "propagate_alcohol_metadata_to_catalog.py",
     "validate_do_not_analyze_triage.py",
     "propagate_ep_crosswalk_status.py",
+    "apply_2011_chronic_treatment_storage_review.py",
     # Keep this terminal source-review pass after crosswalk propagation so
     # field-specific units, routes, and official labels survive in the shards.
     "apply_work_intensity_metadata_review.py",
