@@ -67,7 +67,7 @@ c,measurement metadata,pension child-roster payer selection slots,6,6,1
 c,measurement metadata,personal wage deduction scope and response-unit selectors,15,6,3
 c,measurement metadata,personal wage-deduction response unit and applicability selector,1,1,1
 c,measurement metadata,physical-activity randomized-module assignment marker,2,1,2
-c,measurement metadata,prior-interview response-history routing flags,46,35,4
+c,measurement metadata,prior-interview response-history routing flags,48,37,5
 c,measurement metadata,prior-wave demographic preload and correction route,5,5,2
 c,measurement metadata,prior-wave demographic record verification and response routing,4,4,3
 c,measurement metadata,prior-wave diagnosis-time answer-history flags,14,14,1
@@ -109,7 +109,7 @@ e,behavior,physical activity,84,36,5
 e,behavior,sleep,25,16,5
 e,behavior,smoking and tobacco,51,26,5
 e,behavioral exposures,smoking cessation timing component; questionnaire/Codebook identity conflict,2,2,1
-e,community context,"environment, infrastructure, and services",534,534,1
+e,community context,"environment, infrastructure, and services",578,578,1
 e,early-life and family socioeconomic context,childhood residential setting,1,1,1
 e,early-life and family socioeconomic context,parent marital and ethnic context,3,3,2
 e,environmental perception,self-reported air-quality satisfaction,1,1,1

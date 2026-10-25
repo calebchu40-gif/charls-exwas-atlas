@@ -2,8 +2,8 @@
 
 更新：2026-10-26。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
-- 最终E/P目录行：8,308；不同波次—字段码：8,095。一个字段可对应多个候选类别/角色。
-- 有非空标签文本的E/P目录行：3,801；不同波次—字段码：3,720。连续测量、计数值及测量流程字段可已审但不需要离散标签。
+- 最终E/P目录行：8,352；不同波次—字段码：8,139。一个字段可对应多个候选类别/角色。
+- 有非空标签文本的E/P目录行：3,839；不同波次—字段码：3,758。连续测量、计数值及测量流程字段可已审但不需要离散标签。
 - 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：0。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -14,7 +14,7 @@
 |---|---|---:|---:|---:|---:|
 |e|behavior|267|267|192|5|
 |e|behavioral exposures|2|2|0|1|
-|e|community context|534|534|157|1|
+|e|community context|578|578|195|1|
 |e|early-life and family socioeconomic context|4|4|4|2|
 |e|environmental perception|1|1|1|1|
 |e|family and intergenerational context|42|39|35|4|
@@ -48,11 +48,11 @@
 |official codebook field located; continuous/count or no categorical labels|730|
 |numeric/time unit metadata available; no discrete labels assigned; see concept crosswalk|477|
 |codebook field located; continuous/open response or no categorical labels|371|
-|official Codebook numeric/count response located; no discrete answer labels|344|
+|official Codebook numeric/count response located; no discrete answer labels|349|
 |official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred|224|
 |continuous measure metadata available|191|
+|official codebook response labels; frequencies omitted|173|
 |numeric/time unit metadata available; no discrete labels assigned|151|
-|official codebook response labels; frequencies omitted|139|
 |audited measurement component; derive concept per crosswalk|138|
 |连续值/字段结构；代码本未提供离散值标签|93|
 |Official Codebook response categories reviewed; frequencies and percentages omitted; preserve wave-specific coding|91|
@@ -137,6 +137,7 @@
 |official questionnaire seven-point ordinal scale anchors reviewed; Codebook numeric categories only; frequencies omitted|4|
 |official questionnaire response categories reviewed; field-specific Codebook category sets are incomplete; frequencies omitted|4|
 |official questionnaire identifies JD004 as a multi-response product-list item; emitted field slot/value coding unresolved pending authorized-release QA; no category labels inferred and Codebook frequencies omitted|4|
+|official questionnaire ordinal percentage bands reviewed; frequencies omitted|4|
 |Official questionnaire identifies a numeric monetary amount; continuous monetary amount; questionnaire reporting unit Yuan; no discrete category labels assigned; release storage and special codes remain unverified.|3|
 |official 2015 questionnaire and Codebook identify continuous household expenditure; no discrete response categories|3|
 |official 2013 questionnaire and Codebook identify continuous household expenditure; no discrete response categories|3|
@@ -283,6 +284,7 @@
 |official questionnaire identifies a continuous enterprise count; no categorical response labels; Codebook frequencies omitted|1|
 |official questionnaire identifies a continuous firm count; no categorical response labels; Codebook frequencies omitted|1|
 |official questionnaire identifies a continuous household count; no categorical response labels; Codebook frequencies omitted|1|
+|official questionnaire identifies JE007 as multiple-response destination; Codebook marks JE007S33 No Observations and supplies no province label; slot remains unresolved|1|
 |official questionnaire confirms DA017 option 2=Oral cavity; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics|1|
 |official questionnaire confirms DA017 option 13=Prostate; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics|1|
 |official questionnaire confirms DA017 option 21=Non-Hodgkin lymphoma; codebook reports no observed categories; no response value label assigned; unselected/storage codes remain unknown; preserve wave-specific selected-slot/missing semantics|1|

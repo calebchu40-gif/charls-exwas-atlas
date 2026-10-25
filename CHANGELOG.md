@@ -1,3 +1,9 @@
+# 2026-10-26 Review Community Questionnaire Part E migration fields (local update)
+
+- Reconciled all 46 JE-prefixed raw inventory fields against the official 2011 Part E questionnaire and Codebook. Mapped 44 source-anchored fields across eight provisional community-context concepts; kept JE014 informant position and Codebook-only JE016 as C-only metadata. Direct name/phone prompts are excluded.
+- Preserved the 2010 migration-work period, village-only route, nominal province/occupation categories, five ordinal geographic-share bands, Yuan/month wage units, and the separate since-2000 household-registration-transfer count. JE007S33 remains explicitly unresolved because its Codebook entry says “No Observations”; JE016 remains unresolved because no corresponding questionnaire item exists. No frequencies or participant data were used.
+- Fixed the community value-label builder to include JE fields and added source-review tests. The 159-step build completed in 6.7 minutes. Local E/P/C=6,236/2,116/1,004; 1,610 E/P concepts; 8,246 source mappings; 2011 metadata co-availability=143,752 (not analytic N). Generic pending labels=0; formal association models=0. All 507 local tests and payload/lock/JS checks pass. Pending GitHub push/CI and Pages publication.
+
 # 2026-10-26 Review Community Questionnaire Part D enterprise, employment, and wage fields (local update)
 
 - Reconciled all 18 raw JD-prefixed metadata-inventory fields: mapped 17 substantive fields to a community-context candidate concept and kept JD014 informant position as C-only metadata. Questionnaire name/phone prompts are excluded from the public catalog.

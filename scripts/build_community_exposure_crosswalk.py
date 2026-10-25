@@ -78,6 +78,14 @@ CONCEPTS={
  "community_formal_credit_access":("Community formal-credit access context","Community socioeconomic context","2010 village-level share of farmers obtaining formal-institution loans and an ordinal community report of household borrowing difficulty relative to three years earlier. Keep percentage and ordinal response separate; these do not establish an individual household's credit access or debt."),
  "community_agricultural_machinery_supply_origin":("Community agricultural machinery supply origin","Community agricultural context","2011 village-only informant report of where rented large agricultural machinery is sourced: locally, elsewhere in the province, or another province. Asked only on the rented-machinery route; this is a contextual service-supply indicator, not personal machinery use, pesticide exposure, or ambient pollution."),
  "community_nonagricultural_employment":("Community non-agricultural employment and enterprise profile","Community economic context","2011 community-informant counts and wage estimates for local non-agricultural work and enterprises, generally referencing calendar year 2010. Preserve household/person/firm units, sex-specific wage measures, village-only routes and enterprise eligibility definitions; these aggregates are not the sampled participant's employment or wage."),
+ "community_outmigration_workforce_profile":("Community out-migration workforce profile","Community migration context","2011 village-only informant report of the number of people working outside the village for more than three months in 2010 and the female share among them. These are aggregate community estimates, not a sampled participant's migration or employment history."),
+ "community_outmigration_geographic_distribution":("Geographic distribution of community out-migration","Community migration context","2011 village-only informant's categorical estimates of where community members working outside the village went in 2010. Keep county, prefecture/city, within-province and other-province shares as distinct ordinal bands; category codes are not exact percentages and the measures are not respondent-specific."),
+ "community_outmigration_destination_provinces":("Main provincial destinations of community out-migration","Community migration context","2011 village-only multiple-response report of provinces where people from the community mainly worked outside the village. Keep the 33 emitted province fields as nominal selections; do not infer an exhaustive destination roster or an individual's migration history."),
+ "community_male_migrant_occupation_profile":("Main occupations of male community migrants","Community migration context","2011 village-only report of the main occupation sought by male workers leaving the village. Occupation is a nominal community-level category, not an individual's job or a pollutant exposure."),
+ "community_male_migrant_average_wage":("Average monthly wage of male community migrants","Community economic context","2011 village-only informant estimate of the average monthly wage for male workers leaving the village. Preserve the source's nominal Yuan/month unit; it is not a sampled participant's wage or household income."),
+ "community_female_migrant_occupation_profile":("Main occupations of female community migrants","Community migration context","2011 village-only report of the main occupation sought by female workers leaving the village. Occupation is a nominal community-level category, not an individual's job or a pollutant exposure."),
+ "community_female_migrant_average_wage":("Average monthly wage of female community migrants","Community economic context","2011 village-only informant estimate of the average monthly wage for female workers leaving the village. Preserve the source's nominal Yuan/month unit; it is not a sampled participant's wage or household income."),
+ "community_permanent_household_outmigration":("Households permanently moved out of the community","Community migration context","2011 community-informant count of households reported to have permanently moved out since 2000, defined by household-registration transfer in the questionnaire. This is not a sampled participant's migration status; retain the retrospective reference period and verify denominator and release coding."),
 }
 MAP={
  "community_water_sources":["jb006_1","jb006_2","jb006_3","jb006_4","jb006_5","jb006_6","jb006_7","jb006_8"],
@@ -152,6 +160,14 @@ MAP={
  "community_formal_credit_access":["jj031","jj032"],
  "community_agricultural_machinery_supply_origin":["jj005"],
  "community_nonagricultural_employment":["jd001","jd002","jd003","jd004s1","jd004s2","jd004s3","jd004s4","jd005","jd006","jd007_1","jd007_2","jd008_1","jd008_2","jd009","jd010","jd011","jd012"],
+ "community_outmigration_workforce_profile":["je001","je002"],
+ "community_outmigration_geographic_distribution":["je003","je004","je005","je006"],
+ "community_outmigration_destination_provinces":[*[f"je007s{i}" for i in range(1,34)]],
+ "community_male_migrant_occupation_profile":["je008"],
+ "community_male_migrant_average_wage":["je009"],
+ "community_female_migrant_occupation_profile":["je010"],
+ "community_female_migrant_average_wage":["je011"],
+ "community_permanent_household_outmigration":["je012"],
 }
 ACTIVITY_FACILITIES = [
  (1,"basketball_court","Basketball court"), (2,"swimming_pool","Swimming pool"),
@@ -261,6 +277,10 @@ QUESTIONNAIRE_REVIEWED = {
  "community_military_service_history","community_university_admission_history",
  "community_family_planning_policy_history","community_unplanned_birth_penalty_policy_history",
  "community_identity_card_rollout_history",
+ "community_outmigration_workforce_profile","community_outmigration_geographic_distribution",
+ "community_outmigration_destination_provinces","community_male_migrant_occupation_profile",
+ "community_male_migrant_average_wage","community_female_migrant_occupation_profile",
+ "community_female_migrant_average_wage","community_permanent_household_outmigration",
  "community_land_use_profile","community_main_terrain","community_agricultural_mechanization",
  "community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices",
  "community_major_crop_production",
@@ -306,11 +326,12 @@ def validate_added_source_mappings():
  codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program","community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program","community_eldercare_center_context","community_home_eldercare_context","community_economic_activity_and_fiscal_context","community_housing_market_context","community_formal_credit_access","community_agricultural_machinery_supply_origin","community_nonagricultural_employment","community_primary_school_change","community_land_institutional_transition_history","community_sent_down_youth_migration_history","community_barefoot_doctor_capacity_history","community_military_service_history","community_university_admission_history","community_family_planning_policy_history","community_unplanned_birth_penalty_policy_history","community_identity_card_rollout_history") for code in MAP[cid]}
  codes.update(code for cid in ("community_population_hukou_profile","community_short_term_migrant_population","community_age_sex_structure","community_never_married_over40_population","community_ethnic_minority_household_profile") for code in MAP[cid])
  codes.update(code for cid in ("community_director_education_profile","community_village_head_education_profile","community_village_secretary_education_profile","community_village_accountant_education_profile","community_local_leader_age_profile","community_local_leader_tenure_profile","community_total_deaths_3y","community_suicide_deaths_3y") for code in MAP[cid])
+ codes.update(code for cid in ("community_outmigration_workforce_profile","community_outmigration_geographic_distribution","community_outmigration_destination_provinces","community_male_migrant_occupation_profile","community_male_migrant_average_wage","community_female_migrant_occupation_profile","community_female_migrant_average_wage","community_permanent_household_outmigration") for code in MAP[cid])
  for code in codes:
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
   q_norm="".join(ch for ch in q if ch.isalnum())
   cb_norm="".join(ch for ch in cb if ch.isalnum())
-  questionnaire_code = code.split("s", 1)[0] if code.lower().startswith(("jb033s","jd004s")) else code
+  questionnaire_code = code.split("s", 1)[0] if code.lower().startswith(("jb033s","jd004s","je007s")) else code
   questionnaire_code_norm="".join(ch for ch in questionnaire_code.casefold() if ch.isalnum())
   if questionnaire_code_norm not in q_norm or code_norm not in cb_norm:
    raise ValueError(f"Official 2011 community questionnaire/Codebook missing mapped field {code}")
@@ -464,6 +485,8 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted."
     elif cid == "community_nonagricultural_employment":
      evidence="CHARLS 2011 Community Questionnaire, Part D pp.17–18 (PDF pp.20–21), JD001–JD012; 2010 reference periods, household/person/firm units, enterprise definition (at least eight employees), village-only routes, sex-specific wage measures and official Codebook labels reviewed; frequencies and extrema omitted."
+    elif cid.startswith("community_outmigration_") or cid.startswith("community_male_migrant_") or cid.startswith("community_female_migrant_") or cid == "community_permanent_household_outmigration":
+     evidence="CHARLS 2011 Community Questionnaire, Part E pp.19–20 (PDF pp.22–23), JE001–JE012; 2010 migration-work reference period, village-only routes, reported units, destination/occupation response categories and Codebook field labels reviewed; frequencies and extrema omitted."
     elif cid in {"community_population_hukou_profile","community_short_term_migrant_population","community_age_sex_structure","community_never_married_over40_population","community_ethnic_minority_household_profile"}:
      evidence="CHARLS 2011 Community Questionnaire, Part C pp.14–15 (PDF pp.17–18), JC001–JC018; community population/employment informant route, 2009/2010 reference periods, person-versus-household counts, age thresholds, hukou/residence definitions, minority skip route and official Codebook field labels reviewed; Codebook frequencies omitted."
     elif cid in {"community_director_education_profile","community_village_head_education_profile","community_village_secretary_education_profile","community_village_accountant_education_profile","community_local_leader_age_profile","community_local_leader_tenure_profile"}:
@@ -913,6 +936,25 @@ def main():
      details={"jd001":"2010 household count for households with at least one member engaged in local non-agricultural work (village-only)","jd002":"number of self-employed household businesses (getihu) at end-2010","jd003":"number of local enterprises at end-2010; the questionnaire defines an enterprise as having at least eight employees","jd004s1":"multi-response enterprise-product category: handicraft processing","jd004s2":"multi-response enterprise-product category: mineral extraction/processing","jd004s3":"multi-response enterprise-product category: light-industry products","jd004s4":"multi-response enterprise-product category: industrial-parts manufacturing","jd005":"number of workers in non-getihu enterprises at end-2010","jd006":"male-worker count among the JD005 workforce (village-only)","jd007_1":"average male local-firm daily salary in Yuan/day (village-only)","jd007_2":"average male local-firm monthly salary in Yuan/month (village-only)","jd008_1":"average female local-firm daily salary in Yuan/day (village-only)","jd008_2":"average female local-firm monthly salary in Yuan/month (village-only)","jd009":"average workdays per month among local-firm employees in 2010 (village-only)","jd010":"2010 average daily wage for manual male labor in the village, Yuan/day (village-only)","jd011":"2010 average daily wage for manual female labor in the village, Yuan/day (village-only)","jd012":"monthly nanny salary excluding meals and lodging, Yuan/month"}
      caveat=f"Community-informant aggregate/estimate: {details[code_l]}. Preserve the field-specific population, reference period and unit. JD004 is a multi-response product-list item; its four emitted source fields are retained separately because the questionnaire/Codebook do not establish the authorized-release slot/value encoding here. Do not assume each field is a binary indicator, rank, or distinct product type. Do not derive sex wage gaps, annualize wages, or interpret these as participant-level employment/income. Validate special values and release-specific field storage before analysis."
      unit={"jd001":"households","jd002":"firms","jd003":"firms","jd005":"persons","jd006":"persons","jd007_1":"Yuan/day","jd007_2":"Yuan/month","jd008_1":"Yuan/day","jd008_2":"Yuan/month","jd009":"days/month","jd010":"Yuan/day","jd011":"Yuan/day","jd012":"Yuan/month"}.get(code_l,"")
+    elif cid == "community_outmigration_workforce_profile":
+     detail={"je001":"number of people working outside the village for more than three months in 2010","je002":"female percentage among those workers"}[code_l]
+     caveat=f"Village-only community-informant estimate: {detail}. JE001 is a person count and JE002 a reported percentage; preserve the denominator and verify release-specific scale/special values. This is not an individual migration or employment measure."
+     unit="persons" if code_l == "je001" else "percent"
+    elif cid == "community_outmigration_geographic_distribution":
+     bands={"je003":"other towns/townships in the same county","je004":"other counties in the same city/prefecture","je005":"other cities/prefectures in the same province","je006":"other provinces"}
+     caveat=f"Village-only categorical estimate of the 2010 out-migrant share working in {bands[code_l]}. The five codes are percentage bands (0–20 through 80–100), not exact percentages; retain the geographic levels separately and do not treat the codes as a continuous exposure or individual destination."
+    elif cid == "community_outmigration_destination_provinces":
+     caveat="Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+    elif cid in {"community_male_migrant_occupation_profile","community_female_migrant_occupation_profile"}:
+     sex="male" if code_l == "je008" else "female"
+     caveat=f"Village-only community-level nominal occupation category reported as the main job sought by {sex} migrants. Codebook response labels are retained without frequencies; numeric category codes are not ordinal and do not identify a participant's occupation."
+    elif cid in {"community_male_migrant_average_wage","community_female_migrant_average_wage"}:
+     sex="male" if code_l == "je009" else "female"
+     caveat=f"Village-only estimate of average monthly wage for {sex} workers migrating outside the village; preserve the questionnaire unit and 2010 work-migration context. It is not an individual's wage, household income, or a basis for deriving a sex wage gap."
+     unit="Yuan/month"
+    elif cid == "community_permanent_household_outmigration":
+     caveat="Community-informant count of households reported to have permanently moved out since 2000, with permanent movement defined in the questionnaire by household-registration transfer. Historical community aggregate, not a CHARLS participant's migration status; verify denominator and special values before analysis."
+     unit="households"
     elif code_l == "jb027":
      unit="km"
     elif code_l in {"ja039_1", "ja039_2"}:

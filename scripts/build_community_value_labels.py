@@ -25,7 +25,7 @@ def main():
     for i, h in enumerate(hits):
         prefix = h.group(1).strip()
         code = norm_code(prefix)
-        if not code.startswith(("ja", "jb", "jc", "jf", "jg", "jh", "ji", "jj", "jk")):
+        if not code.startswith(("ja", "jb", "jc", "je", "jf", "jg", "jh", "ji", "jj", "jk")):
             continue
         block = text[h.end():hits[i + 1].start() if i + 1 < len(hits) else len(text)]
         vals = []

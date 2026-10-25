@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 667,
+      "exposure_count": 675,
       "phenotype_count": 213,
-      "candidate_pair_count": 142048,
+      "candidate_pair_count": 143752,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -540,6 +540,46 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire/codebook field located; candidate; route and analysis eligibility require review",
               "caveat": "Conditional on farm-employed work; average yuan per working month in the past year, not annual earnings. Preserve nominal amounts and the working-month denominator; verify release-specific special values before analysis."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_female_migrant_average_wage",
+          "label": "Average monthly wage of female community migrants",
+          "domain": "Community economic context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "je011",
+              "label": "Average Monthly Wage for These Female Migrants",
+              "module": "community",
+              "unit": "Yuan/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only estimate of average monthly wage for female workers migrating outside the village; preserve the questionnaire unit and 2010 work-migration context. It is not an individual's wage, household income, or a basis for deriving a sex wage gap."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_male_migrant_average_wage",
+          "label": "Average monthly wage of male community migrants",
+          "domain": "Community economic context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "je009",
+              "label": "Average Monthly Wage for These Male Migrants",
+              "module": "community",
+              "unit": "Yuan/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only estimate of average monthly wage for male workers migrating outside the village; preserve the questionnaire unit and 2010 work-migration context. It is not an individual's wage, household income, or a basis for deriving a sex wage gap."
             }
           ]
         },
@@ -5000,6 +5040,36 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_outmigration_workforce_profile",
+          "label": "Community out-migration workforce profile",
+          "domain": "Community migration context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "je001",
+              "label": "Total Labor Working Outside More Than 3 Months",
+              "module": "community",
+              "unit": "persons",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only community-informant estimate: number of people working outside the village for more than three months in 2010. JE001 is a person count and JE002 a reported percentage; preserve the denominator and verify release-specific scale/special values. This is not an individual migration or employment measure."
+            },
+            {
+              "code": "je002",
+              "label": "Percentage of Female",
+              "module": "community",
+              "unit": "percent",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only community-informant estimate: female percentage among those workers. JE001 is a person count and JE002 a reported percentage; preserve the denominator and verify release-specific scale/special values. This is not an individual migration or employment measure."
             }
           ]
         },
@@ -11475,6 +11545,56 @@
           ]
         },
         {
+          "concept_id": "community_outmigration_geographic_distribution",
+          "label": "Geographic distribution of community out-migration",
+          "domain": "Community migration context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "je003",
+              "label": "Percentage of Them Works at Other V/C in this County",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only categorical estimate of the 2010 out-migrant share working in other towns/townships in the same county. The five codes are percentage bands (0–20 through 80–100), not exact percentages; retain the geographic levels separately and do not treat the codes as a continuous exposure or individual destination."
+            },
+            {
+              "code": "je004",
+              "label": "Percentage of Them Works at Other Counties in this City",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only categorical estimate of the 2010 out-migrant share working in other counties in the same city/prefecture. The five codes are percentage bands (0–20 through 80–100), not exact percentages; retain the geographic levels separately and do not treat the codes as a continuous exposure or individual destination."
+            },
+            {
+              "code": "je005",
+              "label": "Percentage of Them Works at Other Cities in this Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only categorical estimate of the 2010 out-migrant share working in other cities/prefectures in the same province. The five codes are percentage bands (0–20 through 80–100), not exact percentages; retain the geographic levels separately and do not treat the codes as a continuous exposure or individual destination."
+            },
+            {
+              "code": "je006",
+              "label": "Percentage of Them Works at Other Provinces",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only categorical estimate of the 2010 out-migrant share working in other provinces. The five codes are percentage bands (0–20 through 80–100), not exact percentages; retain the geographic levels separately and do not treat the codes as a continuous exposure or individual destination."
+            }
+          ]
+        },
+        {
           "concept_id": "health_insurance_type_status",
           "label": "Health insurance type/status (wave-specific)",
           "domain": "Healthcare access / socioeconomic context",
@@ -11902,6 +12022,26 @@
               "value_semantics": "conditional household-level transfer/compensation amount",
               "mapping_status": "2011/2013/2015 candidate; official questionnaire and Codebook identify the amount field; source route and special values must be verified in authorized data",
               "caveat": "household donation value in past year; household-level; conditional on source selection; do not treat in-kind valuation as cash receipts. Do not interpret skipped or structurally absent amounts as zero; no individual-level attribution."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_permanent_household_outmigration",
+          "label": "Households permanently moved out of the community",
+          "domain": "Community migration context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "je012",
+              "label": "Num. of Households Has Permanently Moved Outside",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant count of households reported to have permanently moved out since 2000, with permanent movement defined in the questionnaire by household-registration transfer. Historical community aggregate, not a CHARLS participant's migration status; verify denominator and special values before analysis."
             }
           ]
         },
@@ -12423,6 +12563,386 @@
               "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire and Codebook reviewed; wording, response categories, and routes verified; see audit/housing_fuel_source_review_2026-10-24.md",
               "caveat": "Nominal household heating-source proxy, not measured energy use or pollution dose. In 2011–2018, the source item is routed after the heating-availability question; 2020 instead includes an explicit no-heating response in the source item. Preserve these different denominators and the 2020 household referent (XFinancialResp's house). See audit/housing_fuel_source_review_2026-10-24.md."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_female_migrant_occupation_profile",
+          "label": "Main occupations of female community migrants",
+          "domain": "Community migration context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "je010",
+              "label": "Main Jobs That Female Seek",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only community-level nominal occupation category reported as the main job sought by female migrants. Codebook response labels are retained without frequencies; numeric category codes are not ordinal and do not identify a participant's occupation."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_male_migrant_occupation_profile",
+          "label": "Main occupations of male community migrants",
+          "domain": "Community migration context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "je008",
+              "label": "Main Jobs That Male Seek",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only community-level nominal occupation category reported as the main job sought by male migrants. Codebook response labels are retained without frequencies; numeric category codes are not ordinal and do not identify a participant's occupation."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_outmigration_destination_provinces",
+          "label": "Main provincial destinations of community out-migration",
+          "domain": "Community migration context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "je007s1",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s10",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s11",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s12",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s13",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s14",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s15",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s16",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s17",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s18",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s19",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s2",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s20",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s21",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s22",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s23",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s24",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s25",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s26",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s27",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s28",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s29",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s3",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s30",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s31",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s32",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s33",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s4",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s5",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s6",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s7",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s8",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+            },
+            {
+              "code": "je007s9",
+              "label": "Which Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
             }
           ]
         },
@@ -119294,6 +119814,46 @@
       ]
     },
     {
+      "concept_id": "community_female_migrant_average_wage",
+      "label": "Average monthly wage of female community migrants",
+      "domain": "Community economic context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "je011",
+          "label": "Average Monthly Wage for These Female Migrants",
+          "module": "community",
+          "unit": "Yuan/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only estimate of average monthly wage for female workers migrating outside the village; preserve the questionnaire unit and 2010 work-migration context. It is not an individual's wage, household income, or a basis for deriving a sex wage gap."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_male_migrant_average_wage",
+      "label": "Average monthly wage of male community migrants",
+      "domain": "Community economic context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "je009",
+          "label": "Average Monthly Wage for These Male Migrants",
+          "module": "community",
+          "unit": "Yuan/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only estimate of average monthly wage for male workers migrating outside the village; preserve the questionnaire unit and 2010 work-migration context. It is not an individual's wage, household income, or a basis for deriving a sex wage gap."
+        }
+      ]
+    },
+    {
       "concept_id": "community_bank_count",
       "label": "Banks in community (count)",
       "domain": "Community infrastructure",
@@ -123594,6 +124154,36 @@
       ]
     },
     {
+      "concept_id": "community_outmigration_workforce_profile",
+      "label": "Community out-migration workforce profile",
+      "domain": "Community migration context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "je001",
+          "label": "Total Labor Working Outside More Than 3 Months",
+          "module": "community",
+          "unit": "persons",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only community-informant estimate: number of people working outside the village for more than three months in 2010. JE001 is a person count and JE002 a reported percentage; preserve the denominator and verify release-specific scale/special values. This is not an individual migration or employment measure."
+        },
+        {
+          "code": "je002",
+          "label": "Percentage of Female",
+          "module": "community",
+          "unit": "percent",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only community-informant estimate: female percentage among those workers. JE001 is a person count and JE002 a reported percentage; preserve the denominator and verify release-specific scale/special values. This is not an individual migration or employment measure."
+        }
+      ]
+    },
+    {
       "concept_id": "community_pension_65plus_program",
       "label": "Community pension subsidy for adults over 65 context",
       "domain": "Community social-policy context",
@@ -125214,6 +125804,56 @@
       ]
     },
     {
+      "concept_id": "community_outmigration_geographic_distribution",
+      "label": "Geographic distribution of community out-migration",
+      "domain": "Community migration context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "je003",
+          "label": "Percentage of Them Works at Other V/C in this County",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only categorical estimate of the 2010 out-migrant share working in other towns/townships in the same county. The five codes are percentage bands (0–20 through 80–100), not exact percentages; retain the geographic levels separately and do not treat the codes as a continuous exposure or individual destination."
+        },
+        {
+          "code": "je004",
+          "label": "Percentage of Them Works at Other Counties in this City",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only categorical estimate of the 2010 out-migrant share working in other counties in the same city/prefecture. The five codes are percentage bands (0–20 through 80–100), not exact percentages; retain the geographic levels separately and do not treat the codes as a continuous exposure or individual destination."
+        },
+        {
+          "code": "je005",
+          "label": "Percentage of Them Works at Other Cities in this Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only categorical estimate of the 2010 out-migrant share working in other cities/prefectures in the same province. The five codes are percentage bands (0–20 through 80–100), not exact percentages; retain the geographic levels separately and do not treat the codes as a continuous exposure or individual destination."
+        },
+        {
+          "code": "je006",
+          "label": "Percentage of Them Works at Other Provinces",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only categorical estimate of the 2010 out-migrant share working in other provinces. The five codes are percentage bands (0–20 through 80–100), not exact percentages; retain the geographic levels separately and do not treat the codes as a continuous exposure or individual destination."
+        }
+      ]
+    },
+    {
       "concept_id": "community_barefoot_doctor_capacity_history",
       "label": "Historical barefoot-doctor availability",
       "domain": "Community healthcare history",
@@ -125230,6 +125870,26 @@
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
           "caveat": "Community-history informants' retrospective estimate of the number of barefoot doctors in the village during the 1970s. This is a recalled community workforce count, not individual care use or current service availability."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_permanent_household_outmigration",
+      "label": "Households permanently moved out of the community",
+      "domain": "Community migration context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "je012",
+          "label": "Num. of Households Has Permanently Moved Outside",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant count of households reported to have permanently moved out since 2000, with permanent movement defined in the questionnaire by household-registration transfer. Historical community aggregate, not a CHARLS participant's migration status; verify denominator and special values before analysis."
         }
       ]
     },
@@ -125350,6 +126010,386 @@
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
           "caveat": "2011 distance from the village/community office to the most commonly used facility of this type; the questionnaire records 0 when the facility is in the community. Not distance from a respondent's home."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_female_migrant_occupation_profile",
+      "label": "Main occupations of female community migrants",
+      "domain": "Community migration context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "je010",
+          "label": "Main Jobs That Female Seek",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only community-level nominal occupation category reported as the main job sought by female migrants. Codebook response labels are retained without frequencies; numeric category codes are not ordinal and do not identify a participant's occupation."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_male_migrant_occupation_profile",
+      "label": "Main occupations of male community migrants",
+      "domain": "Community migration context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "je008",
+          "label": "Main Jobs That Male Seek",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only community-level nominal occupation category reported as the main job sought by male migrants. Codebook response labels are retained without frequencies; numeric category codes are not ordinal and do not identify a participant's occupation."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_outmigration_destination_provinces",
+      "label": "Main provincial destinations of community out-migration",
+      "domain": "Community migration context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "je007s1",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s10",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s11",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s12",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s13",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s14",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s15",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s16",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s17",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s18",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s19",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s2",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s20",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s21",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s22",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s23",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s24",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s25",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s26",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s27",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s28",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s29",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s3",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s30",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s31",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s32",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s33",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s4",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s5",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s6",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s7",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s8",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
+        },
+        {
+          "code": "je007s9",
+          "label": "Which Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only multiple-response province selection for the main destinations of community members working outside the village. Preserve each nominal source slot and validate emitted binary/category storage; an unselected field must not be interpreted without release-specific coding evidence. No individual migration history is represented."
         }
       ]
     },
@@ -126288,9 +127328,9 @@
     "2013": {
       "baseline_wave": "2011",
       "followup_wave": "2013",
-      "exposure_count": 170,
+      "exposure_count": 178,
       "phenotype_count": 226,
-      "candidate_pair_count": 38420,
+      "candidate_pair_count": 40228,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -126528,9 +127568,9 @@
     "2015": {
       "baseline_wave": "2011",
       "followup_wave": "2015",
-      "exposure_count": 170,
+      "exposure_count": 178,
       "phenotype_count": 239,
-      "candidate_pair_count": 40630,
+      "candidate_pair_count": 42542,
       "phenotype_concept_ids": [
         "offspring_health_status_2015",
         "offspring_self_care_ability_2015",
@@ -126781,9 +127821,9 @@
     "2018": {
       "baseline_wave": "2011",
       "followup_wave": "2018",
-      "exposure_count": 170,
+      "exposure_count": 178,
       "phenotype_count": 211,
-      "candidate_pair_count": 35870,
+      "candidate_pair_count": 37558,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -127006,9 +128046,9 @@
     "2020": {
       "baseline_wave": "2011",
       "followup_wave": "2020",
-      "exposure_count": 170,
+      "exposure_count": 178,
       "phenotype_count": 104,
-      "candidate_pair_count": 17680,
+      "candidate_pair_count": 18512,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
