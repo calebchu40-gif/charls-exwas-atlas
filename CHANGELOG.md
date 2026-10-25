@@ -1,12 +1,12 @@
-## 2026-10-25 Replace stale residential-history keyword labels (v108 candidate)
+## 2026-10-25 Replace stale residential-history keyword labels (v108 deployed)
 
 - Reclassified 18 already source-reviewed 2011–2015 age and residential-mobility C rows from generic keyword-discovery labels to field-specific metadata labels. The label update preserves separate year/month duration fields and the distinct BB007/BB009 questionnaire branches. The two 2011 BB003/BB005 field-identity holds remain unchanged and locked.
-- Added a fail-closed allowlist updater to both full and finalize-only builds, Chinese UI translations, and regression coverage. The C shard remains 982 rows; generic keyword-only C status and subcategory counts are now both zero. All 449 tests, public-payload validation, exact 92-lock validation, JavaScript/Python syntax checks and `git diff --check` pass. GitHub Actions and Pages publication pending.
+- Added a fail-closed allowlist updater to both full and finalize-only builds, Chinese UI translations, and regression coverage. The C shard remains 982 rows; generic keyword-only C status and subcategory counts are now both zero. All 449 tests, public-payload validation, exact 92-lock validation, JavaScript/Python syntax checks and `git diff --check` pass. Commit `2a082f2` passed Validate #456 and Pages Deploy #229; the live homepage loads `app.js?v=108`, and the live C catalogue matches the local file byte-for-byte.
 
-## 2026-10-25 Correct exact current-wave DA005 option links (v107 candidate)
+## 2026-10-25 Correct exact current-wave DA005 option links (v107 deployed)
 
 - Rechecked the 2013 and 2015 official questionnaires and Codebooks after the prior review had misread the `da005_2_` entries. Both Codebooks contain exact current-wave `da005_2_` fields as well as distinct `zda005_2_` prior-wave fields; the questionnaires identify DA005 option 2 as brain damage/mental retardation, and the source crosswalk contains one exact same-wave phenotype mapping. Added the two C/P metadata links while retaining prior-wave preload, conditional route, and analysis-eligibility caveats.
-- Refreshed the full metadata finalization pipeline; E/P/C field rows remain 4,845/2,082/982, concepts 1,208/303 with 25 dual-role concepts, and 6,821 E/P concept-to-source links. Metadata-only pair counts remain explicitly labeled as not computed analytic Ns. All 446 unittest cases, public payload validation, exact 92-lock validation, JS/Python syntax checks, and `git diff --check` pass. No respondent values, codebook frequencies, or model results used. GitHub Actions and Pages publication pending.
+- Refreshed the full metadata finalization pipeline; E/P/C field rows remain 4,845/2,082/982, concepts 1,208/303 with 25 dual-role concepts, and 6,821 E/P concept-to-source links. Metadata-only pair counts remain explicitly labeled as not computed analytic Ns. All 446 unittest cases, public payload validation, exact 92-lock validation, JS/Python syntax checks, and `git diff --check` pass. No respondent values, codebook frequencies, or model results used. Commit `77b0da2` passed Validate #455 and Pages Deploy #228.
 
 ## 2026-10-25 Add private header-only prepared-field availability audit
 
