@@ -3282,6 +3282,199 @@
     ]
   },
   {
+    "concept_id": "community_economic_activity_and_fiscal_context",
+    "label": "Community economic activity and fiscal context",
+    "domain": "Community socioeconomic context",
+    "caveat": "2010 community/village-informant reports of agricultural and industrial revenue, village public expenditure, total village income, net investment, and per-capita net income. Preserve the distinct constructs, reporting units, reference year, and village-only routes; these are aggregate contextual candidates, not household income or audited accounts.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jj011",
+        "module": "community",
+        "source_label": "total Agricultural Revenue in 2010",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "10,000 Yuan",
+        "caveat": "Community-informant aggregate: 2010 village-only total agricultural revenue, in ten-thousand Yuan. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj012",
+        "module": "community",
+        "source_label": "Total Industrial Revenue in 2010",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "10,000 Yuan",
+        "caveat": "Community-informant aggregate: 2010 village/community total industrial revenue, in ten-thousand Yuan. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj013",
+        "module": "community",
+        "source_label": "Total V/C Public Expenditure in 2010",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan",
+        "caveat": "Community-informant aggregate: 2010 village-only public expenditure, including public facilities and welfare, in Yuan. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj014",
+        "module": "community",
+        "source_label": "Total V/C Income in 2010",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan",
+        "caveat": "Community-informant aggregate: 2010 village-only total village income, including government fiscal transfers, village-run enterprise income and raised funds; explicitly excludes residents' household income. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj015",
+        "module": "community",
+        "source_label": "Total V/C Net Investment in 2010",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan",
+        "caveat": "Community-informant aggregate: 2010 village-only total net investment, in Yuan. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj016",
+        "module": "community",
+        "source_label": "Per-Capita Net Income of Your V/C",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan",
+        "caveat": "Community-informant aggregate: 2010 village/community per-capita net income, in Yuan. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_housing_market_context",
+    "label": "Community housing-market context",
+    "domain": "Community socioeconomic context",
+    "caveat": "2011 informant estimates of new/used apartment price, two-bedroom monthly rent, share of households renting out a home, and share living in market-purchased commercial housing. These are community-level contextual measures, not the sampled household's property value, rent, or housing tenure; preserve distinct units and validate special values.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jj026",
+        "module": "community",
+        "source_label": "Average Price of New Apartment",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/m²",
+        "caveat": "Community-informant housing-market estimate: local average new-apartment price per square metre. This is not the sampled household's property value, rent, purchase or tenure; preserve the item unit and verify scale/special values in the authorized release.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj027",
+        "module": "community",
+        "source_label": "Average Price of Used Apartment",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/m²",
+        "caveat": "Community-informant housing-market estimate: local average used-apartment price per square metre. This is not the sampled household's property value, rent, purchase or tenure; preserve the item unit and verify scale/special values in the authorized release.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj028",
+        "module": "community",
+        "source_label": "Average Rental Price of 2-Bedroom Apartment",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/month",
+        "caveat": "Community-informant housing-market estimate: local average monthly rent for a two-bedroom apartment. This is not the sampled household's property value, rent, purchase or tenure; preserve the item unit and verify scale/special values in the authorized release.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj029",
+        "module": "community",
+        "source_label": "Rental Percentage",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "percent",
+        "caveat": "Community-informant housing-market estimate: estimated share of households that rent out their home. This is not the sampled household's property value, rent, purchase or tenure; preserve the item unit and verify scale/special values in the authorized release.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj030",
+        "module": "community",
+        "source_label": "Percentage of Households Living in Commercial Housing",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "percent",
+        "caveat": "Community-informant housing-market estimate: estimated share living in commercial housing bought through the market. This is not the sampled household's property value, rent, purchase or tenure; preserve the item unit and verify scale/special values in the authorized release.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_formal_credit_access",
+    "label": "Community formal-credit access context",
+    "domain": "Community socioeconomic context",
+    "caveat": "2010 village-level share of farmers obtaining formal-institution loans and an ordinal community report of household borrowing difficulty relative to three years earlier. Keep percentage and ordinal response separate; these do not establish an individual household's credit access or debt.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jj031",
+        "module": "community",
+        "source_label": "Percentage of Households that Loan from Financial Institutions",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "percent",
+        "caveat": "Village-only informant report; JJ031 is the 2010 proportion of farmers receiving formal-institution loans, while JJ032 is an ordinal comparison of household loan access with three years earlier. The questionnaire's English lender wording and Chinese credit-cooperative wording differ; retain both and verify release-specific interpretation. Neither measures the sampled household's loan or debt.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jj032",
+        "module": "community",
+        "source_label": "Degree of Difficulty in Loaning",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Village-only informant report; JJ031 is the 2010 proportion of farmers receiving formal-institution loans, while JJ032 is an ordinal comparison of household loan access with three years earlier. The questionnaire's English lender wording and Chinese credit-cooperative wording differ; retain both and verify release-specific interpretation. Neither measures the sampled household's loan or debt.",
+        "value_labels": "1=Very difficult; 2=Somewhat difficult; 3=The same; 4=Somewhat easy; 5=Easily",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
     "concept_id": "community_kindergarten_count",
     "label": "Kindergartens in community (count)",
     "domain": "Community infrastructure",

@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 624,
+      "exposure_count": 627,
       "phenotype_count": 213,
-      "candidate_pair_count": 132889,
+      "candidate_pair_count": 133528,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -2404,6 +2404,76 @@
           ]
         },
         {
+          "concept_id": "community_economic_activity_and_fiscal_context",
+          "label": "Community economic activity and fiscal context",
+          "domain": "Community socioeconomic context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jj011",
+              "label": "total Agricultural Revenue in 2010",
+              "module": "community",
+              "unit": "10,000 Yuan",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate: 2010 village-only total agricultural revenue, in ten-thousand Yuan. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth."
+            },
+            {
+              "code": "jj012",
+              "label": "Total Industrial Revenue in 2010",
+              "module": "community",
+              "unit": "10,000 Yuan",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate: 2010 village/community total industrial revenue, in ten-thousand Yuan. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth."
+            },
+            {
+              "code": "jj013",
+              "label": "Total V/C Public Expenditure in 2010",
+              "module": "community",
+              "unit": "Yuan",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate: 2010 village-only public expenditure, including public facilities and welfare, in Yuan. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth."
+            },
+            {
+              "code": "jj014",
+              "label": "Total V/C Income in 2010",
+              "module": "community",
+              "unit": "Yuan",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate: 2010 village-only total village income, including government fiscal transfers, village-run enterprise income and raised funds; explicitly excludes residents' household income. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth."
+            },
+            {
+              "code": "jj015",
+              "label": "Total V/C Net Investment in 2010",
+              "module": "community",
+              "unit": "Yuan",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate: 2010 village-only total net investment, in Yuan. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth."
+            },
+            {
+              "code": "jj016",
+              "label": "Per-Capita Net Income of Your V/C",
+              "module": "community",
+              "unit": "Yuan",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant aggregate: 2010 village/community per-capita net income, in Yuan. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth."
+            }
+          ]
+        },
+        {
           "concept_id": "community_electricity",
           "label": "Community electricity access and reliability",
           "domain": "Community environment",
@@ -2560,6 +2630,36 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_formal_credit_access",
+          "label": "Community formal-credit access context",
+          "domain": "Community socioeconomic context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jj031",
+              "label": "Percentage of Households that Loan from Financial Institutions",
+              "module": "community",
+              "unit": "percent",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only informant report; JJ031 is the 2010 proportion of farmers receiving formal-institution loans, while JJ032 is an ordinal comparison of household loan access with three years earlier. The questionnaire's English lender wording and Chinese credit-cooperative wording differ; retain both and verify release-specific interpretation. Neither measures the sampled household's loan or debt."
+            },
+            {
+              "code": "jj032",
+              "label": "Degree of Difficulty in Loaning",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only informant report; JJ031 is the 2010 proportion of farmers receiving formal-institution loans, while JJ032 is an ordinal comparison of household loan access with three years earlier. The questionnaire's English lender wording and Chinese credit-cooperative wording differ; retain both and verify release-specific interpretation. Neither measures the sampled household's loan or debt."
             }
           ]
         },
@@ -2930,6 +3030,66 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each fuel source. Categories may overlap; the questionnaire gives no total-household denominator here. Not a person-level fuel dose; single-wave only."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_housing_market_context",
+          "label": "Community housing-market context",
+          "domain": "Community socioeconomic context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jj026",
+              "label": "Average Price of New Apartment",
+              "module": "community",
+              "unit": "Yuan/m²",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant housing-market estimate: local average new-apartment price per square metre. This is not the sampled household's property value, rent, purchase or tenure; preserve the item unit and verify scale/special values in the authorized release."
+            },
+            {
+              "code": "jj027",
+              "label": "Average Price of Used Apartment",
+              "module": "community",
+              "unit": "Yuan/m²",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant housing-market estimate: local average used-apartment price per square metre. This is not the sampled household's property value, rent, purchase or tenure; preserve the item unit and verify scale/special values in the authorized release."
+            },
+            {
+              "code": "jj028",
+              "label": "Average Rental Price of 2-Bedroom Apartment",
+              "module": "community",
+              "unit": "Yuan/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant housing-market estimate: local average monthly rent for a two-bedroom apartment. This is not the sampled household's property value, rent, purchase or tenure; preserve the item unit and verify scale/special values in the authorized release."
+            },
+            {
+              "code": "jj029",
+              "label": "Rental Percentage",
+              "module": "community",
+              "unit": "percent",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant housing-market estimate: estimated share of households that rent out their home. This is not the sampled household's property value, rent, purchase or tenure; preserve the item unit and verify scale/special values in the authorized release."
+            },
+            {
+              "code": "jj030",
+              "label": "Percentage of Households Living in Commercial Housing",
+              "module": "community",
+              "unit": "percent",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-informant housing-market estimate: estimated share living in commercial housing bought through the market. This is not the sampled household's property value, rent, purchase or tenure; preserve the item unit and verify scale/special values in the authorized release."
             }
           ]
         },
@@ -118844,6 +119004,76 @@
       ]
     },
     {
+      "concept_id": "community_economic_activity_and_fiscal_context",
+      "label": "Community economic activity and fiscal context",
+      "domain": "Community socioeconomic context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jj011",
+          "label": "total Agricultural Revenue in 2010",
+          "module": "community",
+          "unit": "10,000 Yuan",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate: 2010 village-only total agricultural revenue, in ten-thousand Yuan. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth."
+        },
+        {
+          "code": "jj012",
+          "label": "Total Industrial Revenue in 2010",
+          "module": "community",
+          "unit": "10,000 Yuan",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate: 2010 village/community total industrial revenue, in ten-thousand Yuan. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth."
+        },
+        {
+          "code": "jj013",
+          "label": "Total V/C Public Expenditure in 2010",
+          "module": "community",
+          "unit": "Yuan",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate: 2010 village-only public expenditure, including public facilities and welfare, in Yuan. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth."
+        },
+        {
+          "code": "jj014",
+          "label": "Total V/C Income in 2010",
+          "module": "community",
+          "unit": "Yuan",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate: 2010 village-only total village income, including government fiscal transfers, village-run enterprise income and raised funds; explicitly excludes residents' household income. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth."
+        },
+        {
+          "code": "jj015",
+          "label": "Total V/C Net Investment in 2010",
+          "module": "community",
+          "unit": "Yuan",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate: 2010 village-only total net investment, in Yuan. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth."
+        },
+        {
+          "code": "jj016",
+          "label": "Per-Capita Net Income of Your V/C",
+          "module": "community",
+          "unit": "Yuan",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant aggregate: 2010 village/community per-capita net income, in Yuan. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth."
+        }
+      ]
+    },
+    {
       "concept_id": "community_electricity",
       "label": "Community electricity access and reliability",
       "domain": "Community environment",
@@ -119000,6 +119230,36 @@
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
           "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_formal_credit_access",
+      "label": "Community formal-credit access context",
+      "domain": "Community socioeconomic context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jj031",
+          "label": "Percentage of Households that Loan from Financial Institutions",
+          "module": "community",
+          "unit": "percent",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only informant report; JJ031 is the 2010 proportion of farmers receiving formal-institution loans, while JJ032 is an ordinal comparison of household loan access with three years earlier. The questionnaire's English lender wording and Chinese credit-cooperative wording differ; retain both and verify release-specific interpretation. Neither measures the sampled household's loan or debt."
+        },
+        {
+          "code": "jj032",
+          "label": "Degree of Difficulty in Loaning",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only informant report; JJ031 is the 2010 proportion of farmers receiving formal-institution loans, while JJ032 is an ordinal comparison of household loan access with three years earlier. The questionnaire's English lender wording and Chinese credit-cooperative wording differ; retain both and verify release-specific interpretation. Neither measures the sampled household's loan or debt."
         }
       ]
     },
@@ -119370,6 +119630,66 @@
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
           "caveat": "At the end of calendar year 2010, a community informant reported counts of households using each fuel source. Categories may overlap; the questionnaire gives no total-household denominator here. Not a person-level fuel dose; single-wave only."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_housing_market_context",
+      "label": "Community housing-market context",
+      "domain": "Community socioeconomic context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jj026",
+          "label": "Average Price of New Apartment",
+          "module": "community",
+          "unit": "Yuan/m²",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant housing-market estimate: local average new-apartment price per square metre. This is not the sampled household's property value, rent, purchase or tenure; preserve the item unit and verify scale/special values in the authorized release."
+        },
+        {
+          "code": "jj027",
+          "label": "Average Price of Used Apartment",
+          "module": "community",
+          "unit": "Yuan/m²",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant housing-market estimate: local average used-apartment price per square metre. This is not the sampled household's property value, rent, purchase or tenure; preserve the item unit and verify scale/special values in the authorized release."
+        },
+        {
+          "code": "jj028",
+          "label": "Average Rental Price of 2-Bedroom Apartment",
+          "module": "community",
+          "unit": "Yuan/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant housing-market estimate: local average monthly rent for a two-bedroom apartment. This is not the sampled household's property value, rent, purchase or tenure; preserve the item unit and verify scale/special values in the authorized release."
+        },
+        {
+          "code": "jj029",
+          "label": "Rental Percentage",
+          "module": "community",
+          "unit": "percent",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant housing-market estimate: estimated share of households that rent out their home. This is not the sampled household's property value, rent, purchase or tenure; preserve the item unit and verify scale/special values in the authorized release."
+        },
+        {
+          "code": "jj030",
+          "label": "Percentage of Households Living in Commercial Housing",
+          "module": "community",
+          "unit": "percent",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-informant housing-market estimate: estimated share living in commercial housing bought through the market. This is not the sampled household's property value, rent, purchase or tenure; preserve the item unit and verify scale/special values in the authorized release."
         }
       ]
     },
@@ -121988,9 +122308,9 @@
     "2013": {
       "baseline_wave": "2011",
       "followup_wave": "2013",
-      "exposure_count": 127,
+      "exposure_count": 130,
       "phenotype_count": 226,
-      "candidate_pair_count": 28702,
+      "candidate_pair_count": 29380,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -122228,9 +122548,9 @@
     "2015": {
       "baseline_wave": "2011",
       "followup_wave": "2015",
-      "exposure_count": 127,
+      "exposure_count": 130,
       "phenotype_count": 239,
-      "candidate_pair_count": 30353,
+      "candidate_pair_count": 31070,
       "phenotype_concept_ids": [
         "offspring_health_status_2015",
         "offspring_self_care_ability_2015",
@@ -122481,9 +122801,9 @@
     "2018": {
       "baseline_wave": "2011",
       "followup_wave": "2018",
-      "exposure_count": 127,
+      "exposure_count": 130,
       "phenotype_count": 211,
-      "candidate_pair_count": 26797,
+      "candidate_pair_count": 27430,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -122706,9 +123026,9 @@
     "2020": {
       "baseline_wave": "2011",
       "followup_wave": "2020",
-      "exposure_count": 127,
+      "exposure_count": 130,
       "phenotype_count": 104,
-      "candidate_pair_count": 13208,
+      "candidate_pair_count": 13520,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",

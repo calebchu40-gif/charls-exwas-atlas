@@ -56,7 +56,7 @@ class CandidatePairExplorerTests(unittest.TestCase):
             ))
             followup_ids = {item["concept_id"] for item in self.data["waves"][wave]["phenotypes"]}
             self.assertTrue(set(entry["phenotype_concept_ids"]).issubset(followup_ids))
-        self.assertEqual(len(baseline_ids), 127)
+        self.assertEqual(len(baseline_ids), 130)
         self.assertTrue(any("not matched participants" in note for note in self.data["limitations"]))
 
     def test_page_explains_cross_wave_linkage_limits(self):

@@ -1,3 +1,10 @@
+# 2026-10-26 Add community economic, housing-market, and credit-context candidates (local update)
+
+- Reviewed 2011 Community Questionnaire Part J and official Codebook; added three provisional E concepts with 13 fields: village/community economic and fiscal measures (JJ011-JJ016), housing-market context (JJ026-JJ030), and formal-credit access (JJ031-JJ032).
+- Preserved reference periods and units (10,000 Yuan, Yuan, Yuan/m2, Yuan/month and percentages), village-only CAPI routes, JJ014's explicit distinction from household income, and the English/Chinese lender wording discrepancy for JJ032. These are one-wave community-level contextual candidates, not respondents' own income, housing, loans or debt. No Codebook frequencies/extrema or respondent data were used.
+- Full 158-step finalization completed in 6.3 minutes. Local E/P/C rows are 6,033/2,116/984; 1,562 E/P concepts; 8,043 concept-source mappings; 3,741 explicitly labelled E/P rows. The 2011 pair count is 133,528 metadata co-availability pairs, not analytic N. Formal models remain 0.
+- Targeted review tests and the 480-test unittest suite pass; public-payload, exact 92-lock, JavaScript/deferred-loader and diff checks pass. This batch remains local pending push/deployment; the current public site contains the elder-care update.
+
 # 2026-10-26 Add 2011 community elder-care context candidates (local update)
 
 - Reviewed the official 2011 Community Questionnaire and Codebook for JB030–JB038 and added two provisional community-level E concepts covering elder-care service centers and family-based/home elder-care context (12 source fields). Community-only and village-only CAPI routes, skip patterns, units, free-service zero, and multi-response slots remain explicit; these are community context candidates, not participant service use or approved covariates.

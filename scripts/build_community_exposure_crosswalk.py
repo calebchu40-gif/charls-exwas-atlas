@@ -49,6 +49,9 @@ CONCEPTS={
  "community_rural_cooperative_medical_insurance_context":("Community rural cooperative medical insurance program context","Community healthcare policy","2011 community-reported availability, start year, cumulative annual household participation counts (2003–2010), and annual premium for the New Rural Cooperative Medical Insurance program. The questionnaire conditions follow-ups on JF010 option 2; preserve the selection route and source year for each cumulative count. These are community aggregates, not sampled-household enrollment or individual premium/coverage."),
  "community_eldercare_center_context":("Community-based elderly care center context","Community healthcare and social-care access","2011 community-informant report of community-based elderly care center availability (CAPI community-only), area, number of older users, listed services, annual user fee and funding source. JB030 No routes past the center details; preserve that denominator. These are community-level service context measures, not participant-level service use or quality."),
  "community_home_eldercare_context":("Village/home-based elder-care context","Community healthcare and social-care access","2011 community/village-level elder-care context: share of households employing a live-in caregiver for an older person (JB036), and village-only home-based elder-care service station availability and number served (JB037–JB038). Keep the community and village routes distinct; these are contextual reports, not individual caregiving exposure or service receipt."),
+ "community_economic_activity_and_fiscal_context":("Community economic activity and fiscal context","Community socioeconomic context","2010 community/village-informant reports of agricultural and industrial revenue, village public expenditure, total village income, net investment, and per-capita net income. Preserve the distinct constructs, reporting units, reference year, and village-only routes; these are aggregate contextual candidates, not household income or audited accounts."),
+ "community_housing_market_context":("Community housing-market context","Community socioeconomic context","2011 informant estimates of new/used apartment price, two-bedroom monthly rent, share of households renting out a home, and share living in market-purchased commercial housing. These are community-level contextual measures, not the sampled household's property value, rent, or housing tenure; preserve distinct units and validate special values."),
+ "community_formal_credit_access":("Community formal-credit access context","Community socioeconomic context","2010 village-level share of farmers obtaining formal-institution loans and an ordinal community report of household borrowing difficulty relative to three years earlier. Keep percentage and ordinal response separate; these do not establish an individual household's credit access or debt."),
 }
 MAP={
  "community_water_sources":["jb006_1","jb006_2","jb006_3","jb006_4","jb006_5","jb006_6","jb006_7","jb006_8"],
@@ -94,6 +97,9 @@ MAP={
  "community_rural_cooperative_medical_insurance_context":["jf010s2","jf014",*[f"jf015_{i}" for i in range(1,9)],"jf016"],
  "community_eldercare_center_context":["jb030","jb031","jb032","jb033s1","jb033s2","jb033s3","jb033s4","jb034","jb035"],
  "community_home_eldercare_context":["jb036","jb037","jb038"],
+ "community_economic_activity_and_fiscal_context":["jj011","jj012","jj013","jj014","jj015","jj016"],
+ "community_housing_market_context":["jj026","jj027","jj028","jj029","jj030"],
+ "community_formal_credit_access":["jj031","jj032"],
 }
 
 # The 2011 Community Questionnaire pages 10, 21–22, and 32–33 explicitly
@@ -189,6 +195,7 @@ QUESTIONNAIRE_REVIEWED = {
  "community_other_subsidy_program_roster",
  "community_urban_resident_medical_insurance_context","community_rural_cooperative_medical_insurance_context",
  "community_eldercare_center_context","community_home_eldercare_context",
+ "community_economic_activity_and_fiscal_context","community_housing_market_context","community_formal_credit_access",
  *[cid for cid in CONCEPTS if cid.startswith("community_kindergarten_") or
     cid.startswith("community_primary_school_") or cid.startswith("community_junior_middle_school_") or
     cid.startswith("community_senior_high_school_") or cid.startswith("community_post_office_") or
@@ -213,7 +220,7 @@ def validate_added_source_mappings():
  cb=" ".join(cpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
  other_subsidy_codes=set(MAP["community_other_subsidy_program_roster"])
  insurance_codes=set(MAP["community_urban_resident_medical_insurance_context"]+MAP["community_rural_cooperative_medical_insurance_context"])
- codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program","community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program","community_eldercare_center_context","community_home_eldercare_context") for code in MAP[cid]}
+ codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program","community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program","community_eldercare_center_context","community_home_eldercare_context","community_economic_activity_and_fiscal_context","community_housing_market_context","community_formal_credit_access") for code in MAP[cid]}
  for code in codes:
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
   q_norm="".join(ch for ch in q if ch.isalnum())
@@ -348,6 +355,8 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part F, JF010 multiple-selection routes and program-specific JF011–JF016 follow-ups; start year, year-indexed cumulative household counts, and annual premium checked against official Codebook labels; frequencies omitted."
     elif cid in {"community_eldercare_center_context","community_home_eldercare_context"}:
      evidence="CHARLS 2011 Community Questionnaire, Part B pp.13–14 (PDF pp.16–17), JB030–JB038; community-only versus village-only routing, JB030 No-skip, listed services and units checked against official Codebook; frequencies omitted."
+    elif cid in {"community_economic_activity_and_fiscal_context","community_housing_market_context","community_formal_credit_access"}:
+     evidence="CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted."
     elif code_l.startswith("jf"):
      evidence="CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label."
     elif code_l.startswith("ji002_"):
@@ -682,6 +691,14 @@ def main():
      unit="Yuan/year"
     elif code_l == "jb036":
      unit="percent of community households"
+    elif code_l in {"jj011","jj012"}:
+     unit="10,000 Yuan"
+    elif code_l in {"jj013","jj014","jj015","jj016","jj026","jj027"}:
+     unit="Yuan" if code_l in {"jj013","jj014","jj015","jj016"} else "Yuan/m²"
+    elif code_l == "jj028":
+     unit="Yuan/month"
+    elif code_l in {"jj029","jj030","jj031"}:
+     unit="percent"
     if cid == "community_eldercare_center_context":
      if code_l == "jb030": caveat="Community-only CAPI item reporting whether a community-based elderly care center exists. No routes to JB036, skipping JB031–JB035; structural absence is not zero or a negative response. Community aggregate, not individual service use."
      elif code_l in {"jb031", "jb032"}: caveat=f"Conditional community-level {('center area in square meters' if code_l == 'jb031' else 'number of older people using the center')}, asked only after JB030=Yes; preserve the route and validate special values in the authorized release."
@@ -692,6 +709,27 @@ def main():
      if code_l == "jb036": caveat="Community-informant estimate of the percentage of households employing a live-in nanny to care for an older person; aggregate context, not respondent household status. Verify scale and special values in the authorized release."
      elif code_l == "jb037": caveat="Village-only Yes/No report of a family-based elder-care service station. No routes to JB039; village/community service availability, not individual receipt."
      elif code_l == "jb038": caveat="Number of older people served by the village family-based elder-care station, conditional on JB037=Yes; preserve route and validate special values in the authorized release."
+    elif cid == "community_economic_activity_and_fiscal_context":
+     economic_notes={
+      "jj011":"2010 village-only total agricultural revenue, in ten-thousand Yuan",
+      "jj012":"2010 village/community total industrial revenue, in ten-thousand Yuan",
+      "jj013":"2010 village-only public expenditure, including public facilities and welfare, in Yuan",
+      "jj014":"2010 village-only total village income, including government fiscal transfers, village-run enterprise income and raised funds; explicitly excludes residents' household income",
+      "jj015":"2010 village-only total net investment, in Yuan",
+      "jj016":"2010 village/community per-capita net income, in Yuan",
+     }
+     caveat=f"Community-informant aggregate: {economic_notes[code_l]}. Retain the distinct construct and confirm scale/special values in the authorized release; do not interpret as the respondent's or household's own income/wealth."
+    elif cid == "community_housing_market_context":
+     housing_notes={
+      "jj026":"local average new-apartment price per square metre",
+      "jj027":"local average used-apartment price per square metre",
+      "jj028":"local average monthly rent for a two-bedroom apartment",
+      "jj029":"estimated share of households that rent out their home",
+      "jj030":"estimated share living in commercial housing bought through the market",
+     }
+     caveat=f"Community-informant housing-market estimate: {housing_notes[code_l]}. This is not the sampled household's property value, rent, purchase or tenure; preserve the item unit and verify scale/special values in the authorized release."
+    elif cid == "community_formal_credit_access":
+     caveat="Village-only informant report; JJ031 is the 2010 proportion of farmers receiving formal-institution loans, while JJ032 is an ordinal comparison of household loan access with three years earlier. The questionnaire's English lender wording and Chinese credit-cooperative wording differ; retain both and verify release-specific interpretation. Neither measures the sampled household's loan or debt."
     elif code_l == "jb027":
      unit="km"
     elif code_l in {"ja039_1", "ja039_2"}:
