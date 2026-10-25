@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 606,
+      "exposure_count": 609,
       "phenotype_count": 213,
-      "candidate_pair_count": 129055,
+      "candidate_pair_count": 129694,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -889,7 +889,7 @@
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "Village-only Yes/No report of an agricultural-subsidy program, with examples including grain direct payments, improved seeds, machinery purchases and agricultural inputs. A No response skips JG018–JG020. This broad policy report does not establish a specific subsidy, household receipt, fertilizer/pesticide use or individual exposure."
+              "caveat": "Year the village agricultural-subsidy program began, asked only after JG017=Yes. Preserve the route and validate special values in the authorized release."
             },
             {
               "code": "jg019",
@@ -899,7 +899,7 @@
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "Village-only Yes/No report of an agricultural-subsidy program, with examples including grain direct payments, improved seeds, machinery purchases and agricultural inputs. A No response skips JG018–JG020. This broad policy report does not establish a specific subsidy, household receipt, fertilizer/pesticide use or individual exposure."
+              "caveat": "Number of village households reported to have received agricultural subsidies in 2010, conditional on JG017=Yes. Not the sampled household's receipt status or a population-standardized rate."
             },
             {
               "code": "jg020",
@@ -3294,6 +3294,46 @@
           ]
         },
         {
+          "concept_id": "community_minimum_living_allowance_program",
+          "label": "Community minimum living allowance context",
+          "domain": "Community social-policy context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jg005",
+              "label": "Does Your V/C Have Minimum Living Allowance",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-level Yes/No report of a minimum living allowance program. The official questionnaire says No skips to JG008; preserve this route rather than imputing JG006–JG007."
+            },
+            {
+              "code": "jg006",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Year the community minimum living allowance began; conditional route must be checked against the official JG005 response and authorized release."
+            },
+            {
+              "code": "jg007",
+              "label": "Num. of People Received Minimum Living Allowance in 2010",
+              "module": "community",
+              "unit": "persons",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Number of community members reported to have received minimum living allowance in 2010; not a linked sampled-person receipt status."
+            }
+          ]
+        },
+        {
           "concept_id": "community_other_natural_disaster_history_5y",
           "label": "Community other natural disaster history (past five years)",
           "domain": "Community environment",
@@ -3399,7 +3439,7 @@
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "Number of village households reported to have received reforestation subsidies in 2010, conditional on the village program route. This is not the sampled household's receipt status or a population-standardized rate."
+              "caveat": "Community-reported average reforestation-subsidy standard, conditional on JG021=Yes. The questionnaire states Yuan per mu; do not treat it as an individual's payment or evidence of achieved forest restoration."
             }
           ]
         },
@@ -3534,6 +3574,56 @@
           ]
         },
         {
+          "concept_id": "community_single_child_reward_program",
+          "label": "Community single-child family reward program context",
+          "domain": "Community social-policy context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jg013",
+              "label": "Does Your V/C Have Subsidies for Being Parents of Single Child",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-level Yes/No report of rewards for parents of a single child. A No response skips to JG017; this is not an individual's fertility history or household receipt measure."
+            },
+            {
+              "code": "jg014",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Year the community single-child-parent reward began; asked on the JG013 Yes route. Preserve the route and validate special values in the authorized release."
+            },
+            {
+              "code": "jg015",
+              "label": "Num. of Households Received Subsidies for Being Parents of Single Child",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Number of households reported to have received the single-child-parent reward in 2010; not a linked sampled-household receipt status."
+            },
+            {
+              "code": "jg016",
+              "label": "Average Subsidy Standard",
+              "module": "community",
+              "unit": "Yuan/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported average monthly single-child-parent reward standard; not the sampled household's actual benefit."
+            }
+          ]
+        },
+        {
           "concept_id": "community_snow_storm_history_5y",
           "label": "Community snow storm history (past five years)",
           "domain": "Community environment",
@@ -3650,6 +3740,56 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_unemployment_subsidy_program",
+          "label": "Community unemployment subsidy program context",
+          "domain": "Community social-policy context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jg001",
+              "label": "Does Your V/C Have Unemployement Subsidies",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-level Yes/No report of unemployment subsidies. Following items record program start, 2010 recipient count and monthly standard; do not infer a personal benefit or income from the community response."
+            },
+            {
+              "code": "jg002",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Year community unemployment subsidies began; preserve source routing and validate special values in the authorized release."
+            },
+            {
+              "code": "jg003",
+              "label": "Num. of People Received Unemployment Subsidies in 2010",
+              "module": "community",
+              "unit": "persons",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Number of people in the community reported to have received unemployment subsidies in 2010; this is not a count of sampled respondents or a linked individual receipt measure."
+            },
+            {
+              "code": "jg004",
+              "label": "Average Subsidies Per Month",
+              "module": "community",
+              "unit": "Yuan/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported average monthly unemployment-subsidy standard; not a sampled respondent's income or benefit amount."
             }
           ]
         },
@@ -104449,7 +104589,7 @@
           "value_labels": "",
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-          "caveat": "Village-only Yes/No report of an agricultural-subsidy program, with examples including grain direct payments, improved seeds, machinery purchases and agricultural inputs. A No response skips JG018–JG020. This broad policy report does not establish a specific subsidy, household receipt, fertilizer/pesticide use or individual exposure."
+          "caveat": "Year the village agricultural-subsidy program began, asked only after JG017=Yes. Preserve the route and validate special values in the authorized release."
         },
         {
           "code": "jg019",
@@ -104459,7 +104599,7 @@
           "value_labels": "",
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-          "caveat": "Village-only Yes/No report of an agricultural-subsidy program, with examples including grain direct payments, improved seeds, machinery purchases and agricultural inputs. A No response skips JG018–JG020. This broad policy report does not establish a specific subsidy, household receipt, fertilizer/pesticide use or individual exposure."
+          "caveat": "Number of village households reported to have received agricultural subsidies in 2010, conditional on JG017=Yes. Not the sampled household's receipt status or a population-standardized rate."
         },
         {
           "code": "jg020",
@@ -106854,6 +106994,46 @@
       ]
     },
     {
+      "concept_id": "community_minimum_living_allowance_program",
+      "label": "Community minimum living allowance context",
+      "domain": "Community social-policy context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jg005",
+          "label": "Does Your V/C Have Minimum Living Allowance",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-level Yes/No report of a minimum living allowance program. The official questionnaire says No skips to JG008; preserve this route rather than imputing JG006–JG007."
+        },
+        {
+          "code": "jg006",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Year the community minimum living allowance began; conditional route must be checked against the official JG005 response and authorized release."
+        },
+        {
+          "code": "jg007",
+          "label": "Num. of People Received Minimum Living Allowance in 2010",
+          "module": "community",
+          "unit": "persons",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Number of community members reported to have received minimum living allowance in 2010; not a linked sampled-person receipt status."
+        }
+      ]
+    },
+    {
       "concept_id": "community_other_natural_disaster_history_5y",
       "label": "Community other natural disaster history (past five years)",
       "domain": "Community environment",
@@ -106959,7 +107139,7 @@
           "value_labels": "",
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-          "caveat": "Number of village households reported to have received reforestation subsidies in 2010, conditional on the village program route. This is not the sampled household's receipt status or a population-standardized rate."
+          "caveat": "Community-reported average reforestation-subsidy standard, conditional on JG021=Yes. The questionnaire states Yuan per mu; do not treat it as an individual's payment or evidence of achieved forest restoration."
         }
       ]
     },
@@ -107094,6 +107274,56 @@
       ]
     },
     {
+      "concept_id": "community_single_child_reward_program",
+      "label": "Community single-child family reward program context",
+      "domain": "Community social-policy context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jg013",
+          "label": "Does Your V/C Have Subsidies for Being Parents of Single Child",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-level Yes/No report of rewards for parents of a single child. A No response skips to JG017; this is not an individual's fertility history or household receipt measure."
+        },
+        {
+          "code": "jg014",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Year the community single-child-parent reward began; asked on the JG013 Yes route. Preserve the route and validate special values in the authorized release."
+        },
+        {
+          "code": "jg015",
+          "label": "Num. of Households Received Subsidies for Being Parents of Single Child",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Number of households reported to have received the single-child-parent reward in 2010; not a linked sampled-household receipt status."
+        },
+        {
+          "code": "jg016",
+          "label": "Average Subsidy Standard",
+          "module": "community",
+          "unit": "Yuan/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported average monthly single-child-parent reward standard; not the sampled household's actual benefit."
+        }
+      ]
+    },
+    {
       "concept_id": "community_snow_storm_history_5y",
       "label": "Community snow storm history (past five years)",
       "domain": "Community environment",
@@ -107210,6 +107440,56 @@
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
           "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_unemployment_subsidy_program",
+      "label": "Community unemployment subsidy program context",
+      "domain": "Community social-policy context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jg001",
+          "label": "Does Your V/C Have Unemployement Subsidies",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-level Yes/No report of unemployment subsidies. Following items record program start, 2010 recipient count and monthly standard; do not infer a personal benefit or income from the community response."
+        },
+        {
+          "code": "jg002",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Year community unemployment subsidies began; preserve source routing and validate special values in the authorized release."
+        },
+        {
+          "code": "jg003",
+          "label": "Num. of People Received Unemployment Subsidies in 2010",
+          "module": "community",
+          "unit": "persons",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Number of people in the community reported to have received unemployment subsidies in 2010; this is not a count of sampled respondents or a linked individual receipt measure."
+        },
+        {
+          "code": "jg004",
+          "label": "Average Subsidies Per Month",
+          "module": "community",
+          "unit": "Yuan/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported average monthly unemployment-subsidy standard; not a sampled respondent's income or benefit amount."
         }
       ]
     },
@@ -108148,9 +108428,9 @@
     "2013": {
       "baseline_wave": "2011",
       "followup_wave": "2013",
-      "exposure_count": 115,
+      "exposure_count": 118,
       "phenotype_count": 224,
-      "candidate_pair_count": 25760,
+      "candidate_pair_count": 26432,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -108386,9 +108666,9 @@
     "2015": {
       "baseline_wave": "2011",
       "followup_wave": "2015",
-      "exposure_count": 115,
+      "exposure_count": 118,
       "phenotype_count": 239,
-      "candidate_pair_count": 27485,
+      "candidate_pair_count": 28202,
       "phenotype_concept_ids": [
         "offspring_health_status_2015",
         "offspring_self_care_ability_2015",
@@ -108639,9 +108919,9 @@
     "2018": {
       "baseline_wave": "2011",
       "followup_wave": "2018",
-      "exposure_count": 115,
+      "exposure_count": 118,
       "phenotype_count": 211,
-      "candidate_pair_count": 24265,
+      "candidate_pair_count": 24898,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -108864,9 +109144,9 @@
     "2020": {
       "baseline_wave": "2011",
       "followup_wave": "2020",
-      "exposure_count": 115,
+      "exposure_count": 118,
       "phenotype_count": 76,
-      "candidate_pair_count": 8740,
+      "candidate_pair_count": 8968,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",

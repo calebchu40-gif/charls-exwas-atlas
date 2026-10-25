@@ -37,6 +37,9 @@ CONCEPTS={
  "community_historical_disaster_epidemic_severity":("Community history of severe disasters and epidemics","Community environment","2011 community informant retrospectively identifies up to three most severe listed natural disasters or epidemics since 1945, with event start/end month and year, deaths/injuries, affected population share, and grain-output decline. Preserve event ranks, dates, event types and impact measures separately; long recall and community-level reporting do not establish a sampled person's direct exposure."),
  "community_reforestation_subsidy_program":("Community reforestation subsidy program context","Community environmental-policy context","2011 village-only report of whether reforestation subsidies were implemented, their start year, the number of village households receiving them in 2010, and the average subsidy standard. These describe a local policy/program and uptake, not forest cover, greenness, ecological restoration success, household receipt linkage, or a personal environmental exposure."),
  "community_farm_subsidy_program":("Community agricultural subsidy program context","Community agricultural-policy context","2011 village-only report of whether agricultural subsidies were implemented, their start year, the number of village households receiving subsidies in 2010, and the average standard per mu. The questionnaire names grain direct payments, improved-seed subsidies, farm-machinery purchase subsidies and comprehensive agricultural-input subsidies as examples. This is broad local policy context, not a specific pesticide/fertilizer measure, household receipt linkage or individual exposure."),
+ "community_unemployment_subsidy_program":("Community unemployment subsidy program context","Community social-policy context","2011 community-informant report of whether unemployment subsidies existed, when they began, the number of people receiving them in 2010, and the average monthly standard. These are community-level program and uptake measures; they do not establish sampled-household receipt or individual income."),
+ "community_minimum_living_allowance_program":("Community minimum living allowance context","Community social-policy context","2011 community-informant report of whether minimum living allowance existed, its start year, and the number of people receiving it in 2010. The JG008 amount prompt appears to carry an unemployment-subsidy wording conflict and is excluded from this concept pending source resolution. These fields describe local social protection coverage, not sampled-household eligibility, receipt, or individual income."),
+ "community_single_child_reward_program":("Community single-child family reward program context","Community social-policy context","2011 community-informant report of whether the community provided rewards to parents of a single child, the start year, number of recipient households in 2010, and monthly standard. This does not establish sampled-household eligibility or receipt, nor individual fertility history."),
 }
 MAP={
  "community_water_sources":["jb006_1","jb006_2","jb006_3","jb006_4","jb006_5","jb006_6","jb006_7","jb006_8"],
@@ -70,6 +73,9 @@ MAP={
  "community_historical_disaster_epidemic_severity":[f"ji003_{i}{suffix}" for i in range(1,4) for suffix in "abcdefgh"],
  "community_reforestation_subsidy_program":["jg021","jg022","jg023","jg024"],
  "community_farm_subsidy_program":["jg017","jg018","jg019","jg020"],
+ "community_unemployment_subsidy_program":["jg001","jg002","jg003","jg004"],
+ "community_minimum_living_allowance_program":["jg005","jg006","jg007"],
+ "community_single_child_reward_program":["jg013","jg014","jg015","jg016"],
 }
 
 # The 2011 Community Questionnaire pages 10, 21–22, and 32–33 explicitly
@@ -157,6 +163,9 @@ QUESTIONNAIRE_REVIEWED = {
  "community_historical_disaster_epidemic_severity",
  "community_reforestation_subsidy_program",
  "community_farm_subsidy_program",
+ "community_unemployment_subsidy_program",
+ "community_minimum_living_allowance_program",
+ "community_single_child_reward_program",
  *[cid for cid in CONCEPTS if cid.startswith("community_kindergarten_") or
     cid.startswith("community_primary_school_") or cid.startswith("community_junior_middle_school_") or
     cid.startswith("community_senior_high_school_") or cid.startswith("community_post_office_") or
@@ -179,7 +188,7 @@ def validate_added_source_mappings():
  cpath=ROOT/"sources_official"/"CHARLS_2011_Codebook_extracted.txt"
  q=" ".join(qpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
  cb=" ".join(cpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
- codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program") for code in MAP[cid]}
+ codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program") for code in MAP[cid]}
  for code in codes:
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
   q_norm="".join(ch for ch in q if ch.isalnum())
@@ -235,6 +244,10 @@ def validate_added_source_mappings():
   "does your village have farm subsidies",
   "when did farm subsidies start to be implemented in this village",
   "how many households in this village received farm subsidies in year 2010",
+  "does your village/community have unemployment subsidies",
+  "how many people in this village/community re ceived unemployment subsidies in year 2010",
+  "does your village/community have minimum living allowance",
+  "does your village/community have subsidies for being parents of single child",
  )
  for phrase in required_q:
   if phrase not in q:
@@ -285,6 +298,12 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part G, village-only JG021–JG024; program route, 2010 household uptake count and stated subsidy unit checked against official Codebook labels; frequencies omitted."
     elif cid == "community_farm_subsidy_program":
      evidence="CHARLS 2011 Community Questionnaire, Part G, village-only JG017–JG020; subsidy examples, No-skip route, 2010 household uptake count and stated per-mu unit checked against official Codebook labels; frequencies omitted."
+    elif cid == "community_unemployment_subsidy_program":
+     evidence="CHARLS 2011 Community Questionnaire, Part G, JG001–JG004; community-program prompt, 2010 person count and monthly subsidy unit checked against official Codebook labels; frequencies omitted."
+    elif cid == "community_minimum_living_allowance_program":
+     evidence="CHARLS 2011 Community Questionnaire, Part G, JG005–JG007; No-skip destination and 2010 person count checked against official Codebook labels. JG008's amount identity conflict is excluded; frequencies omitted."
+    elif cid == "community_single_child_reward_program":
+     evidence="CHARLS 2011 Community Questionnaire, Part G, JG013–JG016; No-skip route, 2010 recipient-household count and monthly standard checked against official Codebook labels; frequencies omitted."
     elif cid.startswith("community_observed_") or cid in {"community_built_form_organization", "community_accessibility_observation"}:
      evidence="CHARLS 2011 Community Questionnaire, Part K interviewer observations; item-specific 1–7 endpoint anchors verified."
     elif is_reviewed:
@@ -319,6 +338,38 @@ def main():
     elif code_l == "jg024":
      unit="Yuan/mu"
      caveat="Community-reported average reforestation-subsidy standard, conditional on JG021=Yes. The questionnaire states Yuan per mu; do not treat it as an individual's payment or evidence of achieved forest restoration."
+    elif code_l == "jg001":
+     caveat="Community-level Yes/No report of unemployment subsidies. Following items record program start, 2010 recipient count and monthly standard; do not infer a personal benefit or income from the community response."
+    elif code_l == "jg002":
+     unit="year"
+     caveat="Year community unemployment subsidies began; preserve source routing and validate special values in the authorized release."
+    elif code_l == "jg003":
+     unit="persons"
+     caveat="Number of people in the community reported to have received unemployment subsidies in 2010; this is not a count of sampled respondents or a linked individual receipt measure."
+    elif code_l == "jg004":
+     unit="Yuan/month"
+     caveat="Community-reported average monthly unemployment-subsidy standard; not a sampled respondent's income or benefit amount."
+    elif code_l == "jg005":
+     caveat="Community-level Yes/No report of a minimum living allowance program. The official questionnaire says No skips to JG008; preserve this route rather than imputing JG006–JG007."
+    elif code_l == "jg006":
+     unit="year"
+     caveat="Year the community minimum living allowance began; conditional route must be checked against the official JG005 response and authorized release."
+    elif code_l == "jg007":
+     unit="persons"
+     caveat="Number of community members reported to have received minimum living allowance in 2010; not a linked sampled-person receipt status."
+    elif code_l == "jg008":
+     unit="Yuan/month"
+    elif code_l == "jg013":
+     caveat="Community-level Yes/No report of rewards for parents of a single child. A No response skips to JG017; this is not an individual's fertility history or household receipt measure."
+    elif code_l == "jg014":
+     unit="year"
+     caveat="Year the community single-child-parent reward began; asked on the JG013 Yes route. Preserve the route and validate special values in the authorized release."
+    elif code_l == "jg015":
+     unit="households"
+     caveat="Number of households reported to have received the single-child-parent reward in 2010; not a linked sampled-household receipt status."
+    elif code_l == "jg016":
+     unit="Yuan/month"
+     caveat="Community-reported average monthly single-child-parent reward standard; not the sampled household's actual benefit."
     elif code_l == "jg017":
      caveat="Village-only Yes/No report of an agricultural-subsidy program, with examples including grain direct payments, improved seeds, machinery purchases and agricultural inputs. A No response skips JG018–JG020. This broad policy report does not establish a specific subsidy, household receipt, fertilizer/pesticide use or individual exposure."
     elif code_l == "jg018":
@@ -422,6 +473,14 @@ def main():
      unit="households"
     elif code_l == "jg020":
      unit="Yuan/mu"
+    elif code_l in {"jg002", "jg006", "jg014"}:
+     unit="year"
+    elif code_l in {"jg003", "jg007"}:
+     unit="persons"
+    elif code_l in {"jg004", "jg008", "jg016"}:
+     unit="Yuan/month"
+    elif code_l == "jg015":
+     unit="households"
     elif code_l.startswith("jb028_1_") or code_l.startswith("jf002_1_"):
      unit="facilities"
     elif code_l.startswith(("jb028_2_","jf006_")):

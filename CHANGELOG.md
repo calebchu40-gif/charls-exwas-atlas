@@ -1,3 +1,10 @@
+## 2026-10-25 Add community social-protection policy context (v117 candidate)
+
+- Added 11 source-mapped 2011 Community Questionnaire fields in three candidate concepts: unemployment subsidies (JG001–JG004), minimum living allowance (JG005–JG007), and single-child-parent rewards (JG013–JG016). Preserved field-specific recipient units, monetary units, and skip logic. These are community policy/coverage reports, not household receipt, personal income or fertility history.
+- Excluded JG008 from candidate mapping because its minimum-living-allowance location conflicts with the question prompt's unemployment-subsidy wording. Recorded the source conflict and preserved the JG005 No-skip to JG008. JG015 is marked as a continuous household count, with no category labels or Codebook frequencies.
+- Local catalogue: E/P/C rows=4,864/2,082/982; 1,491 E/P concepts (1,213 exposure, 303 phenotype, 25 dual-role); 6,840 E/P concept-source mappings; 2011 metadata co-availability pairs=129,694. These are metadata counts, not participants, analytic Ns or association results. Formal models and pairwise Ns remain 0.
+- Full validation: 466 unit tests pass; public payload, exact 92-lock triage, JavaScript syntax, and diff checks pass. Local site cache key is v117; deployment will occur on push. Audit: `audit/community_social_policy_context_review_2026-10-25.md`.
+
 ## 2026-10-25 Add community agricultural subsidy context (v116 candidate)
 
 - Added the 2011 village-level JG017–JG020 agricultural subsidy program as a separate policy-context candidate: program presence, start year, 2010 recipient-household count, and average Yuan/mu standard. Preserved the V-only route and No-skip logic. The concept explicitly does not represent household receipt, a specific fertilizer/pesticide measure, or individual exposure.

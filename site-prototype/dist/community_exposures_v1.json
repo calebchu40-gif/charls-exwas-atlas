@@ -2094,6 +2094,173 @@
     ]
   },
   {
+    "concept_id": "community_unemployment_subsidy_program",
+    "label": "Community unemployment subsidy program context",
+    "domain": "Community social-policy context",
+    "caveat": "2011 community-informant report of whether unemployment subsidies existed, when they began, the number of people receiving them in 2010, and the average monthly standard. These are community-level program and uptake measures; they do not establish sampled-household receipt or individual income.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jg001",
+        "module": "community",
+        "source_label": "Does Your V/C Have Unemployement Subsidies",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG001–JG004; community-program prompt, 2010 person count and monthly subsidy unit checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Community-level Yes/No report of unemployment subsidies. Following items record program start, 2010 recipient count and monthly standard; do not infer a personal benefit or income from the community response.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg002",
+        "module": "community",
+        "source_label": "Year",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG001–JG004; community-program prompt, 2010 person count and monthly subsidy unit checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "year",
+        "caveat": "Year community unemployment subsidies began; preserve source routing and validate special values in the authorized release.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg003",
+        "module": "community",
+        "source_label": "Num. of People Received Unemployment Subsidies in 2010",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG001–JG004; community-program prompt, 2010 person count and monthly subsidy unit checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "persons",
+        "caveat": "Number of people in the community reported to have received unemployment subsidies in 2010; this is not a count of sampled respondents or a linked individual receipt measure.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg004",
+        "module": "community",
+        "source_label": "Average Subsidies Per Month",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG001–JG004; community-program prompt, 2010 person count and monthly subsidy unit checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/month",
+        "caveat": "Community-reported average monthly unemployment-subsidy standard; not a sampled respondent's income or benefit amount.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_minimum_living_allowance_program",
+    "label": "Community minimum living allowance context",
+    "domain": "Community social-policy context",
+    "caveat": "2011 community-informant report of whether minimum living allowance existed, its start year, and the number of people receiving it in 2010. The JG008 amount prompt appears to carry an unemployment-subsidy wording conflict and is excluded from this concept pending source resolution. These fields describe local social protection coverage, not sampled-household eligibility, receipt, or individual income.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jg005",
+        "module": "community",
+        "source_label": "Does Your V/C Have Minimum Living Allowance",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG005–JG007; No-skip destination and 2010 person count checked against official Codebook labels. JG008's amount identity conflict is excluded; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Community-level Yes/No report of a minimum living allowance program. The official questionnaire says No skips to JG008; preserve this route rather than imputing JG006–JG007.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg006",
+        "module": "community",
+        "source_label": "Year",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG005–JG007; No-skip destination and 2010 person count checked against official Codebook labels. JG008's amount identity conflict is excluded; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "year",
+        "caveat": "Year the community minimum living allowance began; conditional route must be checked against the official JG005 response and authorized release.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg007",
+        "module": "community",
+        "source_label": "Num. of People Received Minimum Living Allowance in 2010",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG005–JG007; No-skip destination and 2010 person count checked against official Codebook labels. JG008's amount identity conflict is excluded; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "persons",
+        "caveat": "Number of community members reported to have received minimum living allowance in 2010; not a linked sampled-person receipt status.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_single_child_reward_program",
+    "label": "Community single-child family reward program context",
+    "domain": "Community social-policy context",
+    "caveat": "2011 community-informant report of whether the community provided rewards to parents of a single child, the start year, number of recipient households in 2010, and monthly standard. This does not establish sampled-household eligibility or receipt, nor individual fertility history.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jg013",
+        "module": "community",
+        "source_label": "Does Your V/C Have Subsidies for Being Parents of Single Child",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG013–JG016; No-skip route, 2010 recipient-household count and monthly standard checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Community-level Yes/No report of rewards for parents of a single child. A No response skips to JG017; this is not an individual's fertility history or household receipt measure.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg014",
+        "module": "community",
+        "source_label": "Year",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG013–JG016; No-skip route, 2010 recipient-household count and monthly standard checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "year",
+        "caveat": "Year the community single-child-parent reward began; asked on the JG013 Yes route. Preserve the route and validate special values in the authorized release.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg015",
+        "module": "community",
+        "source_label": "Num. of Households Received Subsidies for Being Parents of Single Child",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG013–JG016; No-skip route, 2010 recipient-household count and monthly standard checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "households",
+        "caveat": "Number of households reported to have received the single-child-parent reward in 2010; not a linked sampled-household receipt status.",
+        "value_labels": "",
+        "value_label_status": "official questionnaire identifies a continuous household count; no discrete categories; Codebook frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg016",
+        "module": "community",
+        "source_label": "Average Subsidy Standard",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG013–JG016; No-skip route, 2010 recipient-household count and monthly standard checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/month",
+        "caveat": "Community-reported average monthly single-child-parent reward standard; not the sampled household's actual benefit.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
     "concept_id": "community_kindergarten_count",
     "label": "Kindergartens in community (count)",
     "domain": "Community infrastructure",

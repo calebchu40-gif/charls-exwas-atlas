@@ -417,6 +417,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_hukou_recent_change_c_overlap_review.py",
     "apply_keyword_epc_overlap_review.py",
     "apply_residential_history_search_label_review.py",
+    "apply_community_value_label_status.py",
     "build_candidate_pair_explorer.py",
     "deduplicate_exact_catalog_rows.py",
     "site_catalog_shards.py",
