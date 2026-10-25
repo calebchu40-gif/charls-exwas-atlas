@@ -2,8 +2,8 @@
 
 更新：2026-10-25。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
-- 最终E/P目录行：6,987；不同波次—字段码：6,774。一个字段可对应多个候选类别/角色。
-- 有非空标签文本的E/P目录行：3,663；不同波次—字段码：3,582。连续测量、计数值及测量流程字段可已审但不需要离散标签。
+- 最终E/P目录行：7,007；不同波次—字段码：6,794。一个字段可对应多个候选类别/角色。
+- 有非空标签文本的E/P目录行：3,665；不同波次—字段码：3,584。连续测量、计数值及测量流程字段可已审但不需要离散标签。
 - 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：0。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -14,7 +14,7 @@
 |---|---|---:|---:|---:|---:|
 |e|behavior|267|267|192|5|
 |e|behavioral exposures|2|2|0|1|
-|e|community context|330|330|87|1|
+|e|community context|350|350|89|1|
 |e|early-life and family socioeconomic context|4|4|4|2|
 |e|environmental perception|1|1|1|1|
 |e|family and intergenerational context|42|39|35|4|
@@ -41,11 +41,11 @@
 
 |审核状态|最终E/P目录行|
 |---|---:|
-|officially reviewed|2,681|
+|officially reviewed|2,683|
 |official codebook field located; continuous/count or no categorical labels|730|
 |numeric/time unit metadata available; no discrete labels assigned; see concept crosswalk|468|
 |codebook field located; continuous/open response or no categorical labels|371|
-|official Codebook numeric/count response located; no discrete answer labels|242|
+|official Codebook numeric/count response located; no discrete answer labels|246|
 |official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred|224|
 |continuous measure metadata available|191|
 |numeric/time unit metadata available; no discrete labels assigned|151|
@@ -83,6 +83,7 @@
 |2020 official questionnaire and Codebook wording/response categories reviewed; frequencies excluded; routed missingness retained|15|
 |continuous conditional component; unit and route reviewed; no response-category labels; codebook frequencies omitted|14|
 |official 2011 questionnaire and Codebook identify continuous household expenditure; no discrete response categories|14|
+|official questionnaire identifies a continuous household count; year-indexed source item retained; no categorical answer labels; frequencies omitted|14|
 |2020代码本逐字段多选标签已核；条件分母|14|
 |official 2013 Codebook response categories transcribed; frequencies omitted; prior-interview recall route retained; release coding and eligible denominator require validation|14|
 |official 2018 Codebook response categories transcribed; frequencies omitted; prior-interview recall route retained; release coding and eligible denominator require validation|14|

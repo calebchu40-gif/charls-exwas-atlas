@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 614,
+      "exposure_count": 616,
       "phenotype_count": 213,
-      "candidate_pair_count": 130759,
+      "candidate_pair_count": 131185,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -3674,6 +3674,126 @@
           ]
         },
         {
+          "concept_id": "community_rural_cooperative_medical_insurance_context",
+          "label": "Community rural cooperative medical insurance program context",
+          "domain": "Community healthcare policy",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jf010s2",
+              "label": "Insurances are Implemented through V/C Committee",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-level multiple-selection insurance channel. Urban-resident insurance follow-ups JF011–JF013 apply only to option 1; rural cooperative insurance follow-ups JF014–JF016 apply only to option 2. Preserve selected-option storage and do not infer household or individual enrollment."
+            },
+            {
+              "code": "jf014",
+              "label": "When Did Your V/C Start The RCMI",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Year the community began New Rural Cooperative Medical Insurance, asked only when JF010 option 2 is selected. Community policy timing, not an individual's enrollment start."
+            },
+            {
+              "code": "jf015_1",
+              "label": "Num. of Households Participated The RCMI Up to 2010",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported cumulative household participation count in rural cooperative medical insurance for the year named by the source suffix (2003–2010). Conditional on JF010 option 2; preserve each year separately and do not treat as sampled-household enrollment."
+            },
+            {
+              "code": "jf015_2",
+              "label": "Num. of Households Participated The RCMI Up to 2009",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported cumulative household participation count in rural cooperative medical insurance for the year named by the source suffix (2003–2010). Conditional on JF010 option 2; preserve each year separately and do not treat as sampled-household enrollment."
+            },
+            {
+              "code": "jf015_3",
+              "label": "Num. of Households Participated The RCMI Up to 2008",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported cumulative household participation count in rural cooperative medical insurance for the year named by the source suffix (2003–2010). Conditional on JF010 option 2; preserve each year separately and do not treat as sampled-household enrollment."
+            },
+            {
+              "code": "jf015_4",
+              "label": "Num. of Households Participated The RCMI Up to 2007",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported cumulative household participation count in rural cooperative medical insurance for the year named by the source suffix (2003–2010). Conditional on JF010 option 2; preserve each year separately and do not treat as sampled-household enrollment."
+            },
+            {
+              "code": "jf015_5",
+              "label": "Num. of Households Participated The RCMI Up to 2006",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported cumulative household participation count in rural cooperative medical insurance for the year named by the source suffix (2003–2010). Conditional on JF010 option 2; preserve each year separately and do not treat as sampled-household enrollment."
+            },
+            {
+              "code": "jf015_6",
+              "label": "Num. of Households Participated The RCMI Up to 2005",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported cumulative household participation count in rural cooperative medical insurance for the year named by the source suffix (2003–2010). Conditional on JF010 option 2; preserve each year separately and do not treat as sampled-household enrollment."
+            },
+            {
+              "code": "jf015_7",
+              "label": "Num. of Households Participated The RCMI Up to 2004",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported cumulative household participation count in rural cooperative medical insurance for the year named by the source suffix (2003–2010). Conditional on JF010 option 2; preserve each year separately and do not treat as sampled-household enrollment."
+            },
+            {
+              "code": "jf015_8",
+              "label": "Num. of Households Participated The RCMI Up to 2003",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported cumulative household participation count in rural cooperative medical insurance for the year named by the source suffix (2003–2010). Conditional on JF010 option 2; preserve each year separately and do not treat as sampled-household enrollment."
+            },
+            {
+              "code": "jf016",
+              "label": "How Much do Villagers Pay for the RCMI Each Year",
+              "module": "community",
+              "unit": "Yuan/year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported annual rural cooperative medical-insurance premium, conditional on JF010 option 2. Not the sampled participant's premium or benefit."
+            }
+          ]
+        },
+        {
           "concept_id": "community_sanitation_services",
           "label": "Community sanitation and waste services",
           "domain": "Community environment",
@@ -3990,6 +4110,106 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "Community-reported average monthly unemployment-subsidy standard; not a sampled respondent's income or benefit amount."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_urban_resident_medical_insurance_context",
+          "label": "Community urban-resident medical insurance program context",
+          "domain": "Community healthcare policy",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jf010s1",
+              "label": "Insurances are Implemented through V/C Committee",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-level multiple-selection insurance channel. Urban-resident insurance follow-ups JF011–JF013 apply only to option 1; rural cooperative insurance follow-ups JF014–JF016 apply only to option 2. Preserve selected-option storage and do not infer household or individual enrollment."
+            },
+            {
+              "code": "jf011",
+              "label": "When Did Your V/C Start The Urban Resident Medical Insurance",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Year the community began providing urban resident medical insurance, asked only when JF010 option 1 is selected. Community policy timing, not an individual's enrollment start."
+            },
+            {
+              "code": "jf012_1",
+              "label": "Num. of Households Participated Urban Resident Medical Insurance Up to 2010",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported cumulative household participation count in urban resident medical insurance for the year named by the source suffix (2005–2010). Conditional on JF010 option 1; preserve each year separately and do not treat as sampled-household enrollment."
+            },
+            {
+              "code": "jf012_2",
+              "label": "Num. of Households Participated Urban Resident Medical Insurance Up to 2009",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported cumulative household participation count in urban resident medical insurance for the year named by the source suffix (2005–2010). Conditional on JF010 option 1; preserve each year separately and do not treat as sampled-household enrollment."
+            },
+            {
+              "code": "jf012_3",
+              "label": "Num. of Households Participated Urban Resident Medical Insurance Up to 2008",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported cumulative household participation count in urban resident medical insurance for the year named by the source suffix (2005–2010). Conditional on JF010 option 1; preserve each year separately and do not treat as sampled-household enrollment."
+            },
+            {
+              "code": "jf012_4",
+              "label": "Num. of Households Participated Urban Resident Medical Insurance Up to 2007",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported cumulative household participation count in urban resident medical insurance for the year named by the source suffix (2005–2010). Conditional on JF010 option 1; preserve each year separately and do not treat as sampled-household enrollment."
+            },
+            {
+              "code": "jf012_5",
+              "label": "Num. of Households Participated Urban Resident Medical Insurance Up to 2006",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported cumulative household participation count in urban resident medical insurance for the year named by the source suffix (2005–2010). Conditional on JF010 option 1; preserve each year separately and do not treat as sampled-household enrollment."
+            },
+            {
+              "code": "jf012_6",
+              "label": "Num. of Households Participated Urban Resident Medical Insurance Up to 2005",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported cumulative household participation count in urban resident medical insurance for the year named by the source suffix (2005–2010). Conditional on JF010 option 1; preserve each year separately and do not treat as sampled-household enrollment."
+            },
+            {
+              "code": "jf013",
+              "label": "Premium for Participants in Urban Resident Medical Insurance",
+              "module": "community",
+              "unit": "Yuan/year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported annual urban resident medical-insurance premium, conditional on JF010 option 1. Not the sampled participant's premium or benefit."
             }
           ]
         },
@@ -107834,6 +108054,126 @@
       ]
     },
     {
+      "concept_id": "community_rural_cooperative_medical_insurance_context",
+      "label": "Community rural cooperative medical insurance program context",
+      "domain": "Community healthcare policy",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jf010s2",
+          "label": "Insurances are Implemented through V/C Committee",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-level multiple-selection insurance channel. Urban-resident insurance follow-ups JF011–JF013 apply only to option 1; rural cooperative insurance follow-ups JF014–JF016 apply only to option 2. Preserve selected-option storage and do not infer household or individual enrollment."
+        },
+        {
+          "code": "jf014",
+          "label": "When Did Your V/C Start The RCMI",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Year the community began New Rural Cooperative Medical Insurance, asked only when JF010 option 2 is selected. Community policy timing, not an individual's enrollment start."
+        },
+        {
+          "code": "jf015_1",
+          "label": "Num. of Households Participated The RCMI Up to 2010",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported cumulative household participation count in rural cooperative medical insurance for the year named by the source suffix (2003–2010). Conditional on JF010 option 2; preserve each year separately and do not treat as sampled-household enrollment."
+        },
+        {
+          "code": "jf015_2",
+          "label": "Num. of Households Participated The RCMI Up to 2009",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported cumulative household participation count in rural cooperative medical insurance for the year named by the source suffix (2003–2010). Conditional on JF010 option 2; preserve each year separately and do not treat as sampled-household enrollment."
+        },
+        {
+          "code": "jf015_3",
+          "label": "Num. of Households Participated The RCMI Up to 2008",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported cumulative household participation count in rural cooperative medical insurance for the year named by the source suffix (2003–2010). Conditional on JF010 option 2; preserve each year separately and do not treat as sampled-household enrollment."
+        },
+        {
+          "code": "jf015_4",
+          "label": "Num. of Households Participated The RCMI Up to 2007",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported cumulative household participation count in rural cooperative medical insurance for the year named by the source suffix (2003–2010). Conditional on JF010 option 2; preserve each year separately and do not treat as sampled-household enrollment."
+        },
+        {
+          "code": "jf015_5",
+          "label": "Num. of Households Participated The RCMI Up to 2006",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported cumulative household participation count in rural cooperative medical insurance for the year named by the source suffix (2003–2010). Conditional on JF010 option 2; preserve each year separately and do not treat as sampled-household enrollment."
+        },
+        {
+          "code": "jf015_6",
+          "label": "Num. of Households Participated The RCMI Up to 2005",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported cumulative household participation count in rural cooperative medical insurance for the year named by the source suffix (2003–2010). Conditional on JF010 option 2; preserve each year separately and do not treat as sampled-household enrollment."
+        },
+        {
+          "code": "jf015_7",
+          "label": "Num. of Households Participated The RCMI Up to 2004",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported cumulative household participation count in rural cooperative medical insurance for the year named by the source suffix (2003–2010). Conditional on JF010 option 2; preserve each year separately and do not treat as sampled-household enrollment."
+        },
+        {
+          "code": "jf015_8",
+          "label": "Num. of Households Participated The RCMI Up to 2003",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported cumulative household participation count in rural cooperative medical insurance for the year named by the source suffix (2003–2010). Conditional on JF010 option 2; preserve each year separately and do not treat as sampled-household enrollment."
+        },
+        {
+          "code": "jf016",
+          "label": "How Much do Villagers Pay for the RCMI Each Year",
+          "module": "community",
+          "unit": "Yuan/year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported annual rural cooperative medical-insurance premium, conditional on JF010 option 2. Not the sampled participant's premium or benefit."
+        }
+      ]
+    },
+    {
       "concept_id": "community_sanitation_services",
       "label": "Community sanitation and waste services",
       "domain": "Community environment",
@@ -108150,6 +108490,106 @@
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
           "caveat": "Community-reported average monthly unemployment-subsidy standard; not a sampled respondent's income or benefit amount."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_urban_resident_medical_insurance_context",
+      "label": "Community urban-resident medical insurance program context",
+      "domain": "Community healthcare policy",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jf010s1",
+          "label": "Insurances are Implemented through V/C Committee",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-level multiple-selection insurance channel. Urban-resident insurance follow-ups JF011–JF013 apply only to option 1; rural cooperative insurance follow-ups JF014–JF016 apply only to option 2. Preserve selected-option storage and do not infer household or individual enrollment."
+        },
+        {
+          "code": "jf011",
+          "label": "When Did Your V/C Start The Urban Resident Medical Insurance",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Year the community began providing urban resident medical insurance, asked only when JF010 option 1 is selected. Community policy timing, not an individual's enrollment start."
+        },
+        {
+          "code": "jf012_1",
+          "label": "Num. of Households Participated Urban Resident Medical Insurance Up to 2010",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported cumulative household participation count in urban resident medical insurance for the year named by the source suffix (2005–2010). Conditional on JF010 option 1; preserve each year separately and do not treat as sampled-household enrollment."
+        },
+        {
+          "code": "jf012_2",
+          "label": "Num. of Households Participated Urban Resident Medical Insurance Up to 2009",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported cumulative household participation count in urban resident medical insurance for the year named by the source suffix (2005–2010). Conditional on JF010 option 1; preserve each year separately and do not treat as sampled-household enrollment."
+        },
+        {
+          "code": "jf012_3",
+          "label": "Num. of Households Participated Urban Resident Medical Insurance Up to 2008",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported cumulative household participation count in urban resident medical insurance for the year named by the source suffix (2005–2010). Conditional on JF010 option 1; preserve each year separately and do not treat as sampled-household enrollment."
+        },
+        {
+          "code": "jf012_4",
+          "label": "Num. of Households Participated Urban Resident Medical Insurance Up to 2007",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported cumulative household participation count in urban resident medical insurance for the year named by the source suffix (2005–2010). Conditional on JF010 option 1; preserve each year separately and do not treat as sampled-household enrollment."
+        },
+        {
+          "code": "jf012_5",
+          "label": "Num. of Households Participated Urban Resident Medical Insurance Up to 2006",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported cumulative household participation count in urban resident medical insurance for the year named by the source suffix (2005–2010). Conditional on JF010 option 1; preserve each year separately and do not treat as sampled-household enrollment."
+        },
+        {
+          "code": "jf012_6",
+          "label": "Num. of Households Participated Urban Resident Medical Insurance Up to 2005",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported cumulative household participation count in urban resident medical insurance for the year named by the source suffix (2005–2010). Conditional on JF010 option 1; preserve each year separately and do not treat as sampled-household enrollment."
+        },
+        {
+          "code": "jf013",
+          "label": "Premium for Participants in Urban Resident Medical Insurance",
+          "module": "community",
+          "unit": "Yuan/year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported annual urban resident medical-insurance premium, conditional on JF010 option 1. Not the sampled participant's premium or benefit."
         }
       ]
     },
@@ -109348,9 +109788,9 @@
     "2013": {
       "baseline_wave": "2011",
       "followup_wave": "2013",
-      "exposure_count": 123,
+      "exposure_count": 125,
       "phenotype_count": 224,
-      "candidate_pair_count": 27552,
+      "candidate_pair_count": 28000,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -109586,9 +110026,9 @@
     "2015": {
       "baseline_wave": "2011",
       "followup_wave": "2015",
-      "exposure_count": 123,
+      "exposure_count": 125,
       "phenotype_count": 239,
-      "candidate_pair_count": 29397,
+      "candidate_pair_count": 29875,
       "phenotype_concept_ids": [
         "offspring_health_status_2015",
         "offspring_self_care_ability_2015",
@@ -109839,9 +110279,9 @@
     "2018": {
       "baseline_wave": "2011",
       "followup_wave": "2018",
-      "exposure_count": 123,
+      "exposure_count": 125,
       "phenotype_count": 211,
-      "candidate_pair_count": 25953,
+      "candidate_pair_count": 26375,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -110064,9 +110504,9 @@
     "2020": {
       "baseline_wave": "2011",
       "followup_wave": "2020",
-      "exposure_count": 123,
+      "exposure_count": 125,
       "phenotype_count": 76,
-      "candidate_pair_count": 9348,
+      "candidate_pair_count": 9500,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",

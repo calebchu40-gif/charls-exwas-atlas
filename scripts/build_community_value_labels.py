@@ -48,15 +48,25 @@ def main():
         entry = ranked[0] if ranked else None
         score = SequenceMatcher(None, target, re.sub(r"[^a-z0-9]+", " ", entry[0].lower()).strip()).ratio() if entry else 0
         labels = "; ".join(f"{v}={label}" for v, label in entry[1]) if entry and score >= 0.48 else ""
-        if labels:
+        if str(r.code).lower().startswith(("jf012_", "jf015_")):
+            # The questionnaire explicitly asks for year-indexed household
+            # participation counts. These are numeric measures, not answer
+            # categories; retain each source year and omit Codebook summaries.
+            labels = ""
+            status = "official questionnaire identifies a continuous household count; year-indexed source item retained; no categorical answer labels; frequencies omitted"
+            source = "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
+        elif labels:
             status = "official codebook response labels; frequencies omitted"
+            source = "sources_official/CHARLS_2011_Codebook_extracted.txt"
         elif entry and score >= 0.48:
             status = "official codebook field located; continuous/count response, no category labels"
+            source = "sources_official/CHARLS_2011_Codebook_extracted.txt"
         else:
             status = "official category labels not located or field-title match insufficient"
+            source = ""
         rows.append({"wave": r.wave, "code": r.code, "concept_id": r.concept_id,
                      "source_label": r.source_label, "value_labels": labels,
-                     "value_label_status": status, "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt" if entry and score >= 0.48 else ""})
+                     "value_label_status": status, "value_label_source": source})
     out = pd.DataFrame(rows).drop_duplicates(["wave", "code", "concept_id"])
     override_path = AUDIT / "community_questionnaire_label_overrides_v1.csv"
     if override_path.exists():

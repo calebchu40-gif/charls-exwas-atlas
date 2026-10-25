@@ -45,6 +45,8 @@ CONCEPTS={
  "community_nrps_program":("Community New Rural Pension System context","Community social-policy context","2011 village-only report of whether the New Rural Pension System (NRPS) was implemented, its start year, 2010 recipient count and monthly standard. Keep distinct from the Old Rural Pension System; do not infer individual enrollment, contribution or receipt."),
  "community_orps_program":("Community Old Rural Pension System context","Community social-policy context","2011 village-only report of whether the Old Rural Pension System (ORPS) was implemented, its start year, 2010 recipient count and monthly standard. Keep distinct from NRPS and age-targeted subsidy programs; do not infer individual enrollment, contribution or receipt."),
  "community_other_subsidy_program_roster":("Other community subsidy program roster","Community social-policy context","2011 community-informant roster of other poverty-related subsidy programs, with up to five emitted response/name/start/count/standard slots. Field suffixes and nested name fields are preserved exactly; the flattened questionnaire/Codebook do not fully document slot-to-name linkage, so verify field pairing and repeat behavior in the authorized release before analysis. Open-text program names are not standardized policy categories. These are community reports, not household receipt or individual income."),
+ "community_urban_resident_medical_insurance_context":("Community urban-resident medical insurance program context","Community healthcare policy","2011 community-reported availability, start year, cumulative annual household participation counts (2005–2010), and annual premium for urban resident medical insurance handled through the community. The questionnaire conditions follow-ups on JF010 option 1; preserve the selection route and source year for each cumulative count. These are community aggregates, not sampled-household enrollment or individual premium/coverage."),
+ "community_rural_cooperative_medical_insurance_context":("Community rural cooperative medical insurance program context","Community healthcare policy","2011 community-reported availability, start year, cumulative annual household participation counts (2003–2010), and annual premium for the New Rural Cooperative Medical Insurance program. The questionnaire conditions follow-ups on JF010 option 2; preserve the selection route and source year for each cumulative count. These are community aggregates, not sampled-household enrollment or individual premium/coverage."),
 }
 MAP={
  "community_water_sources":["jb006_1","jb006_2","jb006_3","jb006_4","jb006_5","jb006_6","jb006_7","jb006_8"],
@@ -86,6 +88,8 @@ MAP={
  "community_nrps_program":["jg033","jg034","jg035","jg036"],
  "community_orps_program":["jg037","jg038","jg039","jg040"],
  "community_other_subsidy_program_roster":[*[f"jg009_{i}_" for i in range(1,6)],*[f"jg009_1_{i}_" for i in range(1,6)],*[f"jg010_{i}_" for i in range(1,6)],*[f"jg011_{i}_" for i in range(1,6)],*[f"jg012_{i}_" for i in range(1,6)]],
+ "community_urban_resident_medical_insurance_context":["jf010s1","jf011",*[f"jf012_{i}" for i in range(1,7)],"jf013"],
+ "community_rural_cooperative_medical_insurance_context":["jf010s2","jf014",*[f"jf015_{i}" for i in range(1,9)],"jf016"],
 }
 
 # The 2011 Community Questionnaire pages 10, 21–22, and 32–33 explicitly
@@ -179,6 +183,7 @@ QUESTIONNAIRE_REVIEWED = {
  "community_pension_65plus_program","community_pension_80plus_subsidy_program",
  "community_nrps_program","community_orps_program",
  "community_other_subsidy_program_roster",
+ "community_urban_resident_medical_insurance_context","community_rural_cooperative_medical_insurance_context",
  *[cid for cid in CONCEPTS if cid.startswith("community_kindergarten_") or
     cid.startswith("community_primary_school_") or cid.startswith("community_junior_middle_school_") or
     cid.startswith("community_senior_high_school_") or cid.startswith("community_post_office_") or
@@ -202,6 +207,7 @@ def validate_added_source_mappings():
  q=" ".join(qpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
  cb=" ".join(cpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
  other_subsidy_codes=set(MAP["community_other_subsidy_program_roster"])
+ insurance_codes=set(MAP["community_urban_resident_medical_insurance_context"]+MAP["community_rural_cooperative_medical_insurance_context"])
  codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program","community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program") for code in MAP[cid]}
  for code in codes:
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
@@ -214,8 +220,18 @@ def validate_added_source_mappings():
   cb_norm="".join(ch for ch in cb if ch.isalnum())
   if code_norm not in cb_norm:
    raise ValueError(f"Official 2011 Codebook missing slot-indexed other-subsidy field {code}")
+ cb_norm="".join(ch for ch in cb if ch.isalnum())
+ for code in insurance_codes:
+  code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
+  if code_norm not in cb_norm:
+   raise ValueError(f"Official 2011 Codebook missing community insurance field {code}")
  if "does your village/community have other subsidies" not in q or "for every answer in jg009_1" not in q:
   raise ValueError("Official questionnaire's other-subsidy prompt/repeat instruction missing")
+ if ("which of the following types of insurance are provided through the community" not in q
+     or "if chosen, answer jf011 - jf013" not in q or "if chosen, answer jf014 - jf016" not in q
+     or "how many households in your village/community participated in urban resident medical insurance" not in q
+     or "how many households in your village/community participated in rural cooperative medical insurance" not in q):
+  raise ValueError("Official questionnaire's community health-insurance routes or participation items missing")
  required_q=(
   "what is the physical area of this village/community",
   "how many of the land is arable land at the end of the year 2010",
@@ -306,6 +322,8 @@ def main():
     code_l = code.lower()
     if code_l.startswith("jb028_"):
      evidence="CHARLS 2011 Community Questionnaire, Part B p.10 (PDF p.13), JB028 facility table; corresponding codebook field label."
+    elif cid in {"community_urban_resident_medical_insurance_context","community_rural_cooperative_medical_insurance_context"}:
+     evidence="CHARLS 2011 Community Questionnaire, Part F, JF010 multiple-selection routes and program-specific JF011–JF016 follow-ups; start year, year-indexed cumulative household counts, and annual premium checked against official Codebook labels; frequencies omitted."
     elif code_l.startswith("jf"):
      evidence="CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label."
     elif code_l.startswith("ji002_"):
@@ -469,6 +487,26 @@ def main():
      caveat="Slot-indexed count of households reported to have received an other community subsidy in 2010. Verify which name/program slot it pairs with; not linked to sampled households."
     elif code_l.startswith("jg012_"):
      caveat="Slot-indexed average monthly standard for an other community subsidy. Verify which open-text name/program slot it pairs with; not an individual's benefit amount."
+    elif code_l in {"jf010s1", "jf010s2"}:
+     caveat="Community-level multiple-selection insurance channel. Urban-resident insurance follow-ups JF011–JF013 apply only to option 1; rural cooperative insurance follow-ups JF014–JF016 apply only to option 2. Preserve selected-option storage and do not infer household or individual enrollment."
+    elif code_l == "jf011":
+     unit="year"
+     caveat="Year the community began providing urban resident medical insurance, asked only when JF010 option 1 is selected. Community policy timing, not an individual's enrollment start."
+    elif code_l.startswith("jf012_"):
+     unit="households"
+     caveat="Community-reported cumulative household participation count in urban resident medical insurance for the year named by the source suffix (2005–2010). Conditional on JF010 option 1; preserve each year separately and do not treat as sampled-household enrollment."
+    elif code_l == "jf013":
+     unit="Yuan/year"
+     caveat="Community-reported annual urban resident medical-insurance premium, conditional on JF010 option 1. Not the sampled participant's premium or benefit."
+    elif code_l == "jf014":
+     unit="year"
+     caveat="Year the community began New Rural Cooperative Medical Insurance, asked only when JF010 option 2 is selected. Community policy timing, not an individual's enrollment start."
+    elif code_l.startswith("jf015_"):
+     unit="households"
+     caveat="Community-reported cumulative household participation count in rural cooperative medical insurance for the year named by the source suffix (2003–2010). Conditional on JF010 option 2; preserve each year separately and do not treat as sampled-household enrollment."
+    elif code_l == "jf016":
+     unit="Yuan/year"
+     caveat="Community-reported annual rural cooperative medical-insurance premium, conditional on JF010 option 2. Not the sampled participant's premium or benefit."
     elif code_l in {"ja003_1", "ja003_2"}:
      unit="km²" if code_l == "ja003_1" else "mu"
      caveat="Community boundary area in the unit-specific field; the questionnaire provides separate km² and mu blanks. Keep the source fields distinct until the authorized release confirms how the unit choice is stored; do not sum or double count. This is community area, not household plot size."
@@ -566,6 +604,12 @@ def main():
      unit="households"
     elif code_l.startswith("jg012_"):
      unit="Yuan/month"
+    elif code_l in {"jf011", "jf014"}:
+     unit="year"
+    elif code_l.startswith(("jf012_", "jf015_")):
+     unit="households"
+    elif code_l in {"jf013", "jf016"}:
+     unit="Yuan/year"
     elif code_l in {"jg026", "jg030", "jg034", "jg038"}:
      unit="year"
     elif code_l in {"jg027", "jg031", "jg035", "jg039"}:

@@ -48,6 +48,25 @@ def main() -> int:
     # lower-case search fields. Refresh review text from the audited wave-level
     # CSV so cross-wave aggregation cannot flatten distinct labels/caveats.
     records = json.loads(master_path.read_text(encoding="utf-8"))
+    existing_keys = {
+        (str(item.get("Source.Wave", "")), str(item.get("Variable.Name", "")).lower(),
+         str(item.get("epcf", "")), str(item.get("category", "")), str(item.get("subcategory", "")))
+        for item in records
+    }
+    # Some reviewed crosswalks add wave-specific candidate fields after the
+    # aggregate master catalog was last generated. Carry those audited rows
+    # into the public shards instead of silently dropping them.
+    appended = 0
+    for row in audited:
+        roles = {part.strip().lower() for part in row.get("epcf", "").split(",")}
+        if not roles.intersection({"e", "p"}):
+            continue
+        key = (row.get("Source.Wave", ""), row.get("Variable.Name", "").lower(),
+               row.get("epcf", ""), row.get("category", ""), row.get("subcategory", ""))
+        if key not in existing_keys:
+            records.append(dict(row))
+            existing_keys.add(key)
+            appended += 1
     for item in records:
         key = (str(item.get("Source.Wave", "")), str(item.get("Variable.Name", "")).lower(),
                str(item.get("epcf", "")), str(item.get("category", "")), str(item.get("subcategory", "")))
@@ -67,6 +86,9 @@ def main() -> int:
             if source in row and row[source] != "":
                 item[source] = row[source]
     paths = write_role_catalogs(records, master_path.parent)
+    if appended:
+        master_path.write_text(json.dumps(records, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    print(f"audited source rows appended to master catalog: {appended}")
     for role, path in paths.items():
         print(f"catalog_{role}: rows={len(rows_for_role(records, role))}; bytes={path.stat().st_size}")
     return 0

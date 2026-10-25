@@ -1,4 +1,10 @@
-﻿## 2026-10-25 Add the slot-indexed other community subsidy roster (v119 deployed)
+## 2026-10-25 Add community medical-insurance policy context (v120 candidate)
+
+- Added 20 official 2011 Community Questionnaire fields in two separate concepts: urban-resident medical insurance (JF010 option 1; JF011–JF013; six year-indexed household counts for 2005–2010) and New Rural Cooperative Medical Insurance (JF010 option 2; JF014–JF016; eight year-indexed household counts for 2003–2010). The multiple-select routes, community aggregate level, year suffixes, and annual premium units are retained. These are not sampled-person enrollment or individual premiums.
+- Continuous household-count items have explicit no-category-label review status; no response records or Codebook frequencies were used. Concepts remain candidate metadata with analysis eligibility pending. Models and analytic Ns remain zero; the exact 92 analysis locks are unchanged.
+- Hardened `site_catalog_shards.py` to append newly audited E/P source rows that are missing from the existing master catalog before building role-specific payloads. This v120 payload was reconciled from the last verified catalogue plus the 20 audited fields; the full upstream metadata pipeline remains a separate follow-up because its repeated finalization path is not idempotent. All 468 tests and release checks pass.
+- Audit: `audit/community_health_insurance_policy_context_review_2026-10-25.md`.
+## 2026-10-25 Add the slot-indexed other community subsidy roster (v119 deployed)
 
 - Added 25 official 2011 community fields for the other poverty-subsidy roster: five repeat response slots, five nested open-text program-name fields, and five indexed fields each for start year, recipient-household count, and monthly standard. The questionnaire/Codebook do not fully establish the flattened slot-to-name pairing, so the public metadata calls for authorized-release validation; free-text names are not treated as standardized subsidy categories.
 - E/P/C catalogue rows are 4,905/2,082/982; E/P concepts are 1,496 (1,218 exposure and 303 phenotype, including 25 dual-role concepts); E/P source mappings are 6,881. Baseline community candidates are 123 concepts and 330 fields. The 2011 metadata co-availability count is 130,759; models, analytic Ns and association estimates remain 0, with the exact 92 analysis locks preserved.
