@@ -1,10 +1,10 @@
 {
-  "as_of": "2026-10-25",
-  "crosswalk_files": 86,
-  "candidate_concept_ids": 1554,
+  "as_of": "2026-10-26",
+  "crosswalk_files": 87,
+  "candidate_concept_ids": 1557,
   "exposure_concept_ids_including_dual": 1251,
-  "phenotype_concept_ids_including_dual": 328,
-  "wave_field_mapping_rows": 8009,
+  "phenotype_concept_ids_including_dual": 331,
+  "wave_field_mapping_rows": 8018,
   "includes": "all E/P candidate rows from ep_concept_source_crosswalk_v1.csv",
   "excludes": "C-only measurement eligibility rows; verified_code_examples_v1.csv is a separate multiwave lookup",
   "domains": [
@@ -292,6 +292,11 @@
       "file": "audit/mood_item_variable_mapping_v1.csv | audit/core_concept_coverage_v1.csv",
       "mapping_rows": 5,
       "concept_ids": 1
+    },
+    {
+      "file": "audit/mortality_endpoint_crosswalk_v1.csv",
+      "mapping_rows": 9,
+      "concept_ids": 3
     },
     {
       "file": "audit/objective_measurement_crosswalk_v1.csv",

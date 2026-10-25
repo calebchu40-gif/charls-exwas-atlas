@@ -141,7 +141,7 @@ p,chronic disease ancillary,reported disease treatment / antidepressant medicati
 p,chronic disease ancillary,reported disease treatment / doctor-diagnosed recurrent stroke,3,3,3
 p,chronic disease ancillary,reported disease treatment / month of most recent stroke,1,1,0
 p,chronic disease ancillary,reported disease treatment / none-of-the-above treatment option,1,1,1
-p,chronic disease ancillary,reported disease treatment / wave-specific treatment response,261,261,261
+p,chronic disease ancillary,reported disease treatment / wave-specific treatment response,261,261,229
 p,chronic disease ancillary,reported disease treatment / wave-specific treatment response; option index only,10,10,10
 p,chronic disease ancillary,reported disease treatment / year of most recent stroke,3,3,0
 p,cognition,memory and cognitive performance,338,338,305
@@ -153,6 +153,9 @@ p,health and symptoms,subjective life expectancy,5,5,5
 p,healthcare access,COVID-period delayed or unmet medical care,15,15,15
 p,healthcare access,"insurance, outpatient and inpatient utilization",202,202,51
 p,mental health,depressive symptoms and emotional wellbeing,52,52,52
+p,mortality and end-of-life outcomes,date of death components,5,5,0
+p,mortality and end-of-life outcomes,final illness-to-death interval,2,2,1
+p,mortality and end-of-life outcomes,proxy-reported death expectedness,2,2,1
 p,pandemic-related outcomes,"COVID-period infection, behavior, functioning, and emotional response",25,25,22
 p,physical function,assistive-device use in ADL/IADL support,26,26,26
 p,physical function,reported disability history / brain_intellectual,10,10,5

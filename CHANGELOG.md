@@ -1,3 +1,10 @@
+# 2026-10-26 Add source-reviewed mortality endpoint candidates (v127 prepared)
+
+- Added 11 official-wave field mappings for 2013 Exit Interview and 2020 Exit Module: death-date components, calendar basis as C metadata, reported death expectedness, and the conditional final-illness-to-death interval. Added explicit proxy/decedent-only caveats and a catalog synchronizer so the reviewed status survives finalization. 2015 was not imputed from neighboring waves; 2018 cover-screen status was kept distinct from exit-module outcomes.
+- Rebuilt all 157 metadata-finalization steps. Final site shards contain E/P/C=6,008/2,116/984 rows; 1,557 candidate concepts; 8,018 E/P concept-source mappings; 3,733 explicitly labelled E/P rows; and zero generic pending value-label statuses across E/P/C. Metadata co-availability pairs: 2013 141,920; 2020 21,630. These counts are not analytic sample sizes or association results.
+- The 2013 and 2020 death-date components differ (year/month versus year/month/day) and the solar/lunar selector must be resolved before date pooling. Exit-module reports alone do not establish non-deaths, risk denominators, or follow-up/censoring. Formal association models remain 0.
+- Full 157-step pipeline passed. Local verification: 480 Python tests and 90 subtests passed; public payload validation, exact 92-lock validation, and JavaScript syntax passed. GitHub validation and Pages deployment remain pending until this prepared update is pushed. Site cache prepared as app v127 and candidate-pair data v5.
+
 # 2026-10-25 Fix social-transfer caveat expansion and remove a build dependency (v126 prepared)
 
 - Fixed mutable concept caveats accumulating once per source-field row in `build_social_exposure_crosswalk.py`. The longest affected field caveat fell from about 28 KB to 515 characters; six transfer concepts remain separate and exact source-field mappings are unchanged.

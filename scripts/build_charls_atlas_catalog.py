@@ -516,6 +516,7 @@ def main() -> None:
             module = canonical_module(wave, code, str(item.get(module_col, "")).strip() or "official crosswalk")
             if module is None:
                 continue
+            mapped_role = (str(item.get(role_col, "")).strip() or role) if role_col else role
             cat = category(item) if callable(category) else category
             sub = subcategory(item) if callable(subcategory) else subcategory
             concept = str(item.get("concept_id", "")).strip()
@@ -527,7 +528,7 @@ def main() -> None:
                               if str(row.get("Source.Wave", "")) == wave
                               and str(row.get("Variable.Name", "")).lower() == code.lower()
                               and str(row.get("Data.File.Name", "")).strip().lower() == module.lower()
-                              and role in str(row.get("epcf", "")).split(",")), None)
+                              and mapped_role in str(row.get("epcf", "")).split(",")), None)
                 if prior is not None:
                     prior.update({
                         "Variable.Description": str(item.get(label_col, "")).strip() or code,
@@ -545,8 +546,8 @@ def main() -> None:
                         "Harmonization.Status": str(item.get("value_semantics", item.get(note_col, "") if note_col else "")).strip(),
                     })
                     continue
-            key = (wave, code.lower(), module.lower(), role, cat, sub)
-            broad_key = (wave, code.lower(), module.lower(), role, cat)
+            key = (wave, code.lower(), module.lower(), mapped_role, cat, sub)
+            broad_key = (wave, code.lower(), module.lower(), mapped_role, cat)
             if key in existing_keys or broad_key in existing_wave_role_category:
                 continue
             description = str(item.get(label_col, "")).strip() or code
@@ -557,7 +558,7 @@ def main() -> None:
                 "Data.File.Name": module, "Data.File.Description": module.replace("_", " "),
                 "Begin.Year": wave, "EndYear": wave, "Component": module,
                 "Use.Constraints": "CHARLS applicant data; access and publication governed by official agreement",
-                "epcf": (str(item.get(role_col, "")).strip() or role) if role_col else role,
+                "epcf": mapped_role,
                 "category": cat, "subcategory": sub,
                 "Source.Wave": wave, "Source.Archive": archive,
                 "Candidate.Status": f"audited domain crosswalk candidate; see audit/{file}",
@@ -607,6 +608,10 @@ def main() -> None:
                              "health and symptoms", "subjective life expectancy", "caveat", "p")
     append_audited_crosswalk("food_environment_crosswalk_v1.csv", "wave", "code", "module", "source_label",
                              "food and household environment", "diet, food security, housing and utilities", "caveat")
+    append_audited_crosswalk("mortality_endpoint_crosswalk_v1.csv", "wave", "code", "module", "source_label",
+                             "mortality and end-of-life outcomes",
+                             lambda item: str(item.get("subcategory", "mortality endpoint")),
+                             "caveat", "p", "role")
 
     # Many curated crosswalk rows match fields already present in the broad
     # catalogue. Index those row references once so each match does not rescan

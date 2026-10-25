@@ -30,5 +30,6 @@
 |p|anthropometric|5|24|15|
 |p|social wellbeing|4|10|10|
 |p|blood pressure|3|54|27|
+|p|mortality and end-of-life outcomes|3|9|9|
 
-总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1554个（E=1251、P=328，25个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。
+总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1557个（E=1251、P=331，25个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。

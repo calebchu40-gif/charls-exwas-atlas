@@ -27095,8 +27095,8 @@
     },
     "2013": {
       "exposure_count": 628,
-      "phenotype_count": 224,
-      "candidate_pair_count": 140664,
+      "phenotype_count": 226,
+      "candidate_pair_count": 141920,
       "exposures": [
         {
           "concept_id": "childhood_residential_setting_before_16_2013",
@@ -47105,6 +47105,36 @@
           ]
         },
         {
+          "concept_id": "mortality_event_date_component",
+          "label": "去世日期组成部分",
+          "domain": "mortality endpoint",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "exb001_1",
+              "label": "The Date on Which R Died (Year)",
+              "module": "Exit_Interview",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "Reported year component of the decedent's death date",
+              "mapping_status": "candidate mapping; official field label reviewed",
+              "caveat": "Decedent/proxy exit-interview record only. Not an all-cohort death indicator or survival-time denominator. Verify date calendar and respondent linkage before constructing a mortality endpoint"
+            },
+            {
+              "code": "exb001_2",
+              "label": "The Date on Which R Died (Month)",
+              "module": "Exit_Interview",
+              "unit": "month",
+              "value_labels": "",
+              "value_semantics": "Reported month component of the decedent's death date",
+              "mapping_status": "candidate mapping; official field label reviewed",
+              "caveat": "Decedent/proxy exit-interview record only. Not an all-cohort death indicator or survival-time denominator. Verify date calendar and respondent linkage before constructing a mortality endpoint"
+            }
+          ]
+        },
+        {
           "concept_id": "peak_flow",
           "label": "呼气峰流速",
           "domain": "肺功能",
@@ -47853,6 +47883,26 @@
               "value_semantics": "",
               "mapping_status": "字段标签候选映射；已抽查逐波官方问卷措辞",
               "caveat": "变量目录标签有拼写错误‘Walkinf’；2013官方问卷原题确认是步行1公里困难。 不据此生成ADL/IADL总分；2020题号重排，需按题意对照。"
+            }
+          ]
+        },
+        {
+          "concept_id": "mortality_expectedness",
+          "label": "死亡是否预期",
+          "domain": "mortality circumstance",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "exb009",
+              "label": "Death Was Expected",
+              "module": "Exit_Interview",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "Proxy-reported expectedness of death",
+              "mapping_status": "candidate mapping; official field label reviewed",
+              "caveat": "Asked only in the decedent/proxy exit-interview pathway; not a population health outcome or cause of death"
             }
           ]
         },
@@ -108720,8 +108770,8 @@
     },
     "2020": {
       "exposure_count": 208,
-      "phenotype_count": 101,
-      "candidate_pair_count": 21006,
+      "phenotype_count": 104,
+      "candidate_pair_count": 21630,
       "exposures": [
         {
           "concept_id": "household_monthly_total_expenditure_2020",
@@ -114719,6 +114769,46 @@
           ]
         },
         {
+          "concept_id": "mortality_event_date_component",
+          "label": "去世日期组成部分",
+          "domain": "mortality endpoint",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "exb001_1",
+              "label": "Year of Death",
+              "module": "Exit_Module",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "Reported year component of the decedent's death date",
+              "mapping_status": "candidate mapping; official questionnaire wording reviewed",
+              "caveat": "Decedent/proxy exit-module record only. Not an all-cohort death indicator or survival-time denominator. Verify respondent linkage and follow-up/censoring design before survival analysis"
+            },
+            {
+              "code": "exb001_2",
+              "label": "Month of Death",
+              "module": "Exit_Module",
+              "unit": "month",
+              "value_labels": "",
+              "value_semantics": "Reported month component of the decedent's death date",
+              "mapping_status": "candidate mapping; official questionnaire wording reviewed",
+              "caveat": "Decedent/proxy exit-module record only. Not an all-cohort death indicator or survival-time denominator. Verify respondent linkage and follow-up/censoring design before survival analysis"
+            },
+            {
+              "code": "exb001_3",
+              "label": "Day of Death",
+              "module": "Exit_Module",
+              "unit": "day",
+              "value_labels": "",
+              "value_semantics": "Reported day component of the decedent's death date",
+              "mapping_status": "candidate mapping; official questionnaire wording reviewed",
+              "caveat": "Decedent/proxy exit-module record only. Not an all-cohort death indicator or survival-time denominator. Verify respondent linkage and follow-up/censoring design before survival analysis"
+            }
+          ]
+        },
+        {
           "concept_id": "covid_confirmed_or_suspected_respondent_2020",
           "label": "受访者新冠疑似/确诊报告（2020）",
           "domain": "Pandemic-related health outcomes",
@@ -115056,6 +115146,56 @@
               "value_semantics": "Whether the respondent had ever been tested for coronavirus by the 2020 interview",
               "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
               "caveat": "A pandemic-specific healthcare-utilization outcome, not infection status or a positive-test result. The conditional last-test year/month are timing metadata and are not treated as separate outcomes."
+            }
+          ]
+        },
+        {
+          "concept_id": "mortality_final_illness_to_death_interval",
+          "label": "末次疾病至死亡间隔",
+          "domain": "mortality circumstance",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "exb008",
+              "label": "How Long Is the Time Between the Start of the Final Illness and Death?",
+              "module": "Exit_Module",
+              "unit": "",
+              "value_labels": "1=One or two hours (or no warning); 2=Less than a day; 3=Less than a week; 4=Less than a month; 5=Less than a year; 6=More than a year",
+              "value_semantics": "Proxy-reported categorical interval from start of final illness to death",
+              "mapping_status": "candidate mapping; official questionnaire wording reviewed",
+              "caveat": "Decedent/proxy report; categories are not a continuous duration. The greater-than-one-year branch has a separate year field and must retain its route"
+            },
+            {
+              "code": "exb008_1",
+              "label": "Year",
+              "module": "Exit_Module",
+              "unit": "years",
+              "value_labels": "",
+              "value_semantics": "Years reported only when exb008 indicates more than one year",
+              "mapping_status": "candidate mapping; official questionnaire wording reviewed",
+              "caveat": "Decedent/proxy reported conditional detail for exb008 only; do not treat routed missing values as zero or pool with interval categories without a prespecified rule"
+            }
+          ]
+        },
+        {
+          "concept_id": "mortality_expectedness",
+          "label": "死亡是否预期",
+          "domain": "mortality circumstance",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "exb007",
+              "label": "Was the Death Expected at About the Time It Occurred?",
+              "module": "Exit_Module",
+              "unit": "",
+              "value_labels": "1=Expected; 2=Unexpected; 3=Other/specify",
+              "value_semantics": "Proxy-reported expectedness of death",
+              "mapping_status": "candidate mapping; official questionnaire wording reviewed",
+              "caveat": "Asked only in the decedent/proxy exit-module pathway; not a population health outcome or cause of death"
             }
           ]
         },
@@ -121569,8 +121709,8 @@
       "baseline_wave": "2011",
       "followup_wave": "2013",
       "exposure_count": 125,
-      "phenotype_count": 224,
-      "candidate_pair_count": 28000,
+      "phenotype_count": 226,
+      "candidate_pair_count": 28250,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -121629,6 +121769,7 @@
         "memory_related_disease_diagnosis",
         "hypertension_diagnosis",
         "balance_semi_tandem",
+        "mortality_event_date_component",
         "peak_flow",
         "mood_bothered",
         "mood_hopeful",
@@ -121660,6 +121801,7 @@
         "other_important_medical_condition",
         "mobility_walk_100m",
         "mobility_walk_1km",
+        "mortality_expectedness",
         "mobility_stairs",
         "pain_intensity",
         "pain_management_measures",
@@ -122285,8 +122427,8 @@
       "baseline_wave": "2011",
       "followup_wave": "2020",
       "exposure_count": 125,
-      "phenotype_count": 101,
-      "candidate_pair_count": 12625,
+      "phenotype_count": 104,
+      "candidate_pair_count": 13000,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -122322,6 +122464,7 @@
         "dyslipidemia_diagnosis",
         "memory_related_disease_diagnosis",
         "hypertension_diagnosis",
+        "mortality_event_date_component",
         "covid_confirmed_or_suspected_respondent_2020",
         "covid_contact_recovery_or_death_household_2020",
         "housework_capacity_health_limitation",
@@ -122337,6 +122480,8 @@
         "covid_hospitalization_days_2020",
         "cog_orientation_time",
         "covid_testing_utilization_2020",
+        "mortality_final_illness_to_death_interval",
+        "mortality_expectedness",
         "covid_contact_recovery_or_death_acquaintance_2020",
         "covid_square_dancing_cancellation_days_2020",
         "covid_period_moderate_activity_change_2020",

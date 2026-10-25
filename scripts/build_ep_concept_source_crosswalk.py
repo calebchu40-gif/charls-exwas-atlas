@@ -98,6 +98,18 @@ for item in behavior.loc[behavior_selectors].to_dict("records"):
 map_direct("functional_concept_variable_mapping_v1.csv", "p",
            statuses=("mapping_status",), caveats=("harmonization_note", "note"),
            archives=(), documents=("value_label_source",))
+for mortality_item in load("mortality_endpoint_crosswalk_v1.csv").to_dict("records"):
+    # The calendar selector explains date interpretation; it is metadata (C),
+    # while death-date components and proxy-reported circumstances are P
+    # candidates. These mappings remain decedent-only and are not event flags.
+    mortality_role = "c" if text(mortality_item, "concept_id") == "mortality_date_calendar" else "p"
+    add(mortality_item, role=mortality_role, file="mortality_endpoint_crosswalk_v1.csv",
+        wave_key="wave", code_key="code", concept_key="concept_id",
+        label_keys=("concept_label",), domain_keys=("domain",), module_keys=("module",),
+        status_keys=("mapping_status",), caveat_keys=("caveat",),
+        semantics_keys=("value_semantics",), value_label_keys=("value_labels",),
+        unit_keys=("unit",),
+        archive_keys=("source_archive",), document_keys=("source_document",))
 map_direct("health_work_limitation_crosswalk_v1.csv", "p",
            statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
            value_labels=("value_labels",), modules=("module",), caveats=("note",),

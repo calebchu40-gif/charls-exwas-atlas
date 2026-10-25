@@ -1,14 +1,14 @@
 # E/P值标签覆盖审计
 
-更新：2026-10-25。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
+更新：2026-10-26。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
-- 最终E/P目录行：8,115；不同波次—字段码：7,902。一个字段可对应多个候选类别/角色。
-- 有非空标签文本的E/P目录行：3,763；不同波次—字段码：3,682。连续测量、计数值及测量流程字段可已审但不需要离散标签。
+- 最终E/P目录行：8,124；不同波次—字段码：7,911。一个字段可对应多个候选类别/角色。
+- 有非空标签文本的E/P目录行：3,733；不同波次—字段码：3,652。连续测量、计数值及测量流程字段可已审但不需要离散标签。
 - 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：0。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
 
-## 按角色和类别汇总（2026-10-25）
+## 按角色和类别汇总（2026-10-26）
 
 |角色|网站类别|字段—角色—类别行|不同波次—字段码|有非空标签文本行|子类别数|
 |---|---|---:|---:|---:|---:|
@@ -30,11 +30,12 @@
 |p|biochemistry|32|32|0|1|
 |p|blood pressure|54|27|0|1|
 |p|chronic disease|248|248|240|1|
-|p|chronic disease ancillary|664|664|520|70|
+|p|chronic disease ancillary|664|664|488|70|
 |p|cognition|338|338|305|1|
 |p|health and symptoms|177|177|171|5|
 |p|healthcare access|217|217|66|2|
 |p|mental health|52|52|52|1|
+|p|mortality and end-of-life outcomes|9|9|2|3|
 |p|pandemic-related outcomes|25|25|22|1|
 |p|physical function|266|260|169|7|
 |p|social wellbeing|10|10|10|4|
@@ -120,6 +121,7 @@
 |official 2020 questionnaire CAPI formula manually transcribed; descriptive codebook frequencies omitted; generated-field interpretation requires route validation|6|
 |official questionnaire categories; frequencies omitted; FC020 multiple-job main-work route or FC021 single nonfarm-job route|6|
 |official questionnaire numbered fallback categories; Codebook category labels checked and frequencies omitted; asked only when exact percentage is unknown; preserve separately from paired continuous percentage and verify released-data routing|6|
+|numeric/time unit metadata available; no discrete labels assigned; special values and date conversion remain to be checked|6|
 |official 2018 questionnaire confirms continuous percentage share; no discrete labels; Codebook summary extrema are not valid-range evidence; verify route and special values|5|
 |official 2018 questionnaire and Codebook identify unit-area property value; continuous amount in 1,000 Yuan/square metre; no discrete labels|5|
 |official Codebook response categories transcribed; frequencies omitted; cross-wave question scope and release coding pending|5|
@@ -174,6 +176,7 @@
 |official 2013 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|
 |official 2018 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|
 |official 2015 Codebook response categories transcribed; frequencies omitted; disease-specific route retained; release coding and eligible denominator require validation|2|
+|official questionnaire response categories reviewed; release-specific special values pending|2|
 |official 2020 questionnaire identifies a numeric underground floor number; continuous/ordinal measure without discrete value labels|1|
 |official 2020 questionnaire identifies a numeric above-ground floor number; continuous/ordinal measure without discrete value labels|1|
 |official 2020 questionnaire identifies a wave-specific categorical above-ground versus underground residence selector; preserve alongside routed count fields|1|
@@ -274,5 +277,6 @@
 |2020代码本逐值标签已核；疫情期特异|1|
 |questionnaire response scale verified; Codebook title conflict retained|1|
 |2020 official questionnaire and Codebook ordinal categories reviewed; frequencies excluded; interpretation depends on the respondent-specific target age|1|
+|official field label reviewed; response-code labels not rechecked in this pass|1|
 
 覆盖CSV与本报告均按最终网站角色分片重算；各类别可非互斥，不能将行数或类别数解释为独立测量指标、分析资格、样本量或关联结果。

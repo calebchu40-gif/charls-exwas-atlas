@@ -45,3 +45,8 @@
 ## 2026-10-25 后续审计修复
 
 家庭经济支持的字段级 caveat 曾在逐字段循环中累积到约 28 KB；改为每字段从概念级基础说明独立生成后，单行最大 515 字符。重建后 E/P/C 目录数、概念数与配对共现总数保持不变，明确标签增加至3,763；交叉表、候选配对 JSON 和 E 分片分别减少约19.5 MB、19.4 MB 和39.1 MB。另修正 Markdown 摘要器对未声明 `tabulate` 的隐式依赖。测试新增 caveat 防膨胀断言；完整终审 157 步、476 项本地测试均已通过。v126 已由 GitHub Validate #500 和 Pages Deploy #247 验证并发布。
+
+
+## Current state update (2026-10-26, v127 prepared)
+
+The 157-step metadata finalization now includes 11 exit-module mortality field mappings (2013 and 2020 only) and an explicit catalog synchronizer for their source-specific value-label state. Final local shards are E/P/C=6,008/2,116/984; the concept mapping audit reports 1,557 E/P candidate concepts and 8,018 E/P concept-source mappings. Mortality calendar metadata is C, the other fields are P candidates, and all remain decedent/proxy-reported with no formal model or survival denominator. Metadata pair availability is not analytic N. The website update is prepared locally as app v127; publish/deploy verification remains pending.
