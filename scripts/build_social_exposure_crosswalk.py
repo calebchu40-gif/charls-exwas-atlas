@@ -17,6 +17,12 @@ concepts=[
  ('informal_help_meal_preparation','Informal help preparing hot meals','Care support','2013/2015/2018 yes/no item follows difficulty preparing hot meals; 2013/2018 questionnaires also route nursing-home residents away from the follow-up. Not population-wide meal support; preserve functional-difficulty and residence eligibility, and do not infer no help from a skip. No 2020 equivalent mapped.'),
  ('formal_caregiver_days','Days helped by volunteer/facility caregiver in prior month','Care support','2011 only: DB023_38_ records days in the last month for the volunteer helper category, conditional on the respondent having a listed helper. The 2011 codebook summary has one observed record; treat as a lookup candidate, not evidence of adequate analytic coverage. Preserve the original count and skip/missing codes; no cross-wave equivalence established.'),
  ('formal_care_expected_future','Expected volunteer/facility help in future','Perceived future care support','2011/2013 future-helper roster category. This is an expectation about potential future help, not current receipt or guaranteed service access; preserve wave-specific wording and response coding.'),
+ ('economic_support_received_parents','Economic support received from non-co-resident parent roster','Family economic resources','Past-year money and in-kind transfers received by the respondent or spouse from non-co-resident parents. The source instrument changes from relationship-level totals to person-indexed fields across waves; preserve wave and roster slot. Do not aggregate indexed relatives without validating the release and denominator.'),
+ ('economic_support_received_parents_in_law','Economic support received from non-co-resident parents-in-law','Family economic resources','Past-year money and in-kind transfers received by the respondent or spouse from non-co-resident parents-in-law. Explicit separate fields are present in 2011/2013 only; later parent-roster fields are not assumed equivalent.'),
+ ('economic_support_received_children','Economic support received from non-co-resident children','Family economic resources','Past-year money and in-kind transfers received by the respondent or spouse from non-co-resident children. Child-indexed fields and eligible child rosters vary by wave; preserve child slot and do not sum across slots without authorized-release validation.'),
+ ('economic_support_provided_parents','Economic support provided to non-co-resident parent roster','Family economic resources','Past-year money and in-kind transfers provided by the respondent or spouse to non-co-resident parents. The source instrument changes from relationship-level totals to person-indexed fields across waves; preserve wave and roster slot. Do not aggregate indexed relatives without validating the release and denominator.'),
+ ('economic_support_provided_parents_in_law','Economic support provided to non-co-resident parents-in-law','Family economic resources','Past-year money and in-kind transfers provided by the respondent or spouse to non-co-resident parents-in-law. Explicit separate fields are present in 2011/2013 only; later parent-roster fields are not assumed equivalent.'),
+ ('economic_support_provided_children','Economic support provided to non-co-resident children','Family economic resources','Past-year money and in-kind transfers provided by the respondent or spouse to non-co-resident children. Child-indexed fields and eligible child rosters vary by wave; preserve child slot and do not sum across slots without authorized-release validation.'),
 ]
 rules={
  'social_participation':lambda w,v: (w in ['2011','2013','2015','2018'] and v.lower().startswith('da056')) or (w=='2020' and v.lower().startswith('xsoctype_')),
@@ -27,12 +33,22 @@ rules={
  'formal_caregiver_current':lambda w,v: (w=='2011' and v.lower()=='db022s38') or (w=='2013' and v.lower().startswith('db022_w2_') and v.lower().endswith('_s64')),
  'formal_caregiver_days':lambda w,v: w=='2011' and v.lower()=='db023_38_',
  'formal_care_expected_future':lambda w,v: w in ['2011','2013'] and v.lower()=='db031s37',
+ 'economic_support_received_parents':lambda w,v: w in ['2011','2013','2015','2018'] and v.lower().startswith('ce002_'),
+ 'economic_support_received_parents_in_law':lambda w,v: w in ['2011','2013'] and v.lower().startswith('ce005_'),
+ 'economic_support_received_children':lambda w,v: w in ['2011','2013','2015','2018'] and v.lower().startswith('ce009_'),
+ 'economic_support_provided_parents':lambda w,v: w in ['2011','2013','2015','2018'] and v.lower().startswith('ce022_'),
+ 'economic_support_provided_parents_in_law':lambda w,v: w in ['2011','2013'] and v.lower().startswith('ce025_'),
+ 'economic_support_provided_children':lambda w,v: w in ['2011','2013','2015','2018'] and v.lower().startswith('ce029_'),
  'informal_help_eating':lambda w,v: w in ['2013','2015','2018'] and v.lower()=='db012_w2',
  'informal_help_household_chores':lambda w,v: w in ['2013','2015','2018'] and v.lower()=='db016_w2',
  'informal_help_meal_preparation':lambda w,v: w in ['2013','2015','2018'] and v.lower()=='db017_w2',
 }
 rows=[]
 def value_note(cid,wave):
+ if cid.startswith('economic_support_'):
+  note='Past-year transfer amount fields are in yuan where the questionnaire provides an amount; regular/non-regular and money/in-kind items remain distinct source fields. Bracket min/max follow-ups are ranges, not exact amounts; interval fields describe regularity. Preserve the source field and roster slot; no totals or cross-wave harmonization are computed.'
+  if wave=='2011': note += ' Baseline Questionnaire and Codebook field descriptions/sub-item numbering show discrepancies; confirm against the authorized release before interpreting an individual field.'
+  return note
  if cid=='social_participation':
   if wave=='2018': return '官方代码本：0=No；正值表示对应活动项目（如 da056_s1：1=Interacted With Friends）。具体答案槽及特殊缺失仍需按代码本解析。'
   if wave=='2020': return '官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。'
@@ -71,6 +87,8 @@ for cid,label,domain,caveat in concepts:
     status='2011 baseline questionnaire helper-roster route and 1–31 days unit reviewed; Codebook summary reports one observation; candidate only'
    elif cid=='formal_care_expected_future' and r.wave=='2011':
     status='2011 baseline questionnaire future-helper route and category reviewed; candidate only'
+   elif cid.startswith('economic_support_'):
+    status='Official questionnaire family-transfer item and wave-specific codebook/catalog labels reviewed; metadata candidate only; preserve roster, wave, unit, recall, routing, and bracket fields; no cross-wave aggregation authorized'
    elif cid in {'informal_help_eating','informal_help_meal_preparation','informal_help_household_chores'}:
     status='Official questionnaire/codebook yes-no response categories reviewed; conditional care-support candidate; preserve route and eligible denominator'
    else:
@@ -84,6 +102,17 @@ for cid,label,domain,caveat in concepts:
     questionnaire_source='sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt'
     value_label_source='sources_official/CHARLS_2011_Codebook_extracted.txt'
     caveat += ' Questionnaire category 3 is “Not regularly” while the Codebook says “Less often”; retain wording discrepancy pending release/version confirmation. Official Questionnaire extracts differ on whether the DA056 loop covers options 1–11 or 1–10; do not infer the eligible denominator.'
+   if cid.startswith('economic_support_'):
+    questionnaire_source=f'sources_official/CHARLS_{r.wave}_Questionnaire_extracted.txt; {r.variable.upper()}'
+    value_label_source=f'sources_official/CHARLS_{r.wave}_Codebook_extracted.txt'
+    if r.wave=='2011':
+     questionnaire_source='sources_official/CHARLS_2011_Baseline_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt'
+     value_label_source='sources_official/CHARLS_2011_Codebook_extracted.txt'
+     caveat += ' 2011 field-label/sub-item numbering discrepancies exist between the official Baseline Questionnaire and Codebook; retain as a candidate mapping and reconcile exact release storage before analysis.'
+    if r.wave=='2015' and cid in {'economic_support_received_parents','economic_support_provided_parents'}:
+     caveat += ' 2015 fields are person-indexed by the parent roster; the audited field family does not expose a separate parents-in-law prefix, so no in-law-specific equivalence is inferred.'
+    if r.wave=='2018' and cid in {'economic_support_received_parents','economic_support_provided_parents'}:
+     caveat += ' 2018 fields use XConParName roster slots; do not assume a distinct parent-in-law identity without an explicit linked roster field.'
    rows.append(dict(concept_id=cid,concept_label=label,domain=domain,wave=r.wave,code=r.variable,module=r.module,source_label=r.variable_label,mapping_status=status,value_labels=value_labels(cid,r.wave),value_semantics=value_note(cid,r.wave),questionnaire_source=questionnaire_source,value_label_source=value_label_source,caveat=caveat))
 out=pd.DataFrame(rows).drop_duplicates()
 out.to_csv(ROOT/'audit/social_exposure_crosswalk_v1.csv',index=False,encoding='utf-8-sig')

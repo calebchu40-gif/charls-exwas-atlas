@@ -1,10 +1,10 @@
 {
   "as_of": "2026-10-25",
   "crosswalk_files": 86,
-  "candidate_concept_ids": 1548,
-  "exposure_concept_ids_including_dual": 1245,
+  "candidate_concept_ids": 1554,
+  "exposure_concept_ids_including_dual": 1251,
   "phenotype_concept_ids_including_dual": 328,
-  "wave_field_mapping_rows": 6978,
+  "wave_field_mapping_rows": 8009,
   "includes": "all E/P candidate rows from ep_concept_source_crosswalk_v1.csv",
   "excludes": "C-only measurement eligibility rows; verified_code_examples_v1.csv is a separate multiwave lookup",
   "domains": [
@@ -425,8 +425,8 @@
     },
     {
       "file": "audit/social_exposure_crosswalk_v1.csv",
-      "mapping_rows": 304,
-      "concept_ids": 26
+      "mapping_rows": 1335,
+      "concept_ids": 32
     },
     {
       "file": "audit/subjective_life_expectancy_2011_2018_crosswalk_v1.csv",

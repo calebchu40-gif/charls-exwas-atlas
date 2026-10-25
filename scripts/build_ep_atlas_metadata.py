@@ -274,6 +274,9 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "build_covid_prevention_context_crosswalk.py",
     "build_covid_module_coverage_audit.py",
     "build_charls_atlas_catalog.py",
+    # Restore the field-specific caregiver routes/value-label state after the
+    # master catalog rebuild and before concept-source/catalog regeneration.
+    "apply_social_caregiver_metadata_review.py",
     "apply_alcohol_frequency_route_review.py",
     # Rebuild the housing lookup from the audited owner-label maps before the
     # later housing measurement scripts enrich its units and route notes.

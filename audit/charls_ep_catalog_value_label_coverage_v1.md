@@ -2,7 +2,7 @@
 
 更新：2026-10-25。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
-- 最终E/P目录行：7,084；不同波次—字段码：6,871。一个字段可对应多个候选类别/角色。
+- 最终E/P目录行：8,115；不同波次—字段码：7,902。一个字段可对应多个候选类别/角色。
 - 有非空标签文本的E/P目录行：3,731；不同波次—字段码：3,650。连续测量、计数值及测量流程字段可已审但不需要离散标签。
 - 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：0。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
@@ -24,7 +24,7 @@
 |e|internal biomarker|32|32|0|1|
 |e|life-course and reproductive history|8|8|0|1|
 |e|pandemic and public-health context|52|52|44|1|
-|e|social determinants|2,138|2,138|1,013|20|
+|e|social determinants|3,169|3,169|1,013|20|
 |e|social protection|1,331|1,331|427|30|
 |p|anthropometric|24|15|0|1|
 |p|biochemistry|32|32|0|1|
@@ -43,7 +43,7 @@
 
 |审核状态|最终E/P目录行|
 |---|---:|
-|officially reviewed|2,749|
+|officially reviewed|3,780|
 |official codebook field located; continuous/count or no categorical labels|730|
 |numeric/time unit metadata available; no discrete labels assigned; see concept crosswalk|468|
 |codebook field located; continuous/open response or no categorical labels|371|

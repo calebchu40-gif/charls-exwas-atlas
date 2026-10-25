@@ -4,7 +4,7 @@ This snapshot reads only the public, generated metadata in `site-prototype/dist/
 
 | Role | Catalog rows | Generic `not yet reviewed` rows |
 |---|---:|---:|
-| E exposure candidates | 4,977 | 0 |
+| E exposure candidates | 6,008 | 0 |
 | P phenotype candidates | 2,107 | 0 |
 | C covariate/measurement metadata | 982 | 0 |
 
