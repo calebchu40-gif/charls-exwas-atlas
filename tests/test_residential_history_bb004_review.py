@@ -16,6 +16,8 @@ class ResidentialHistoryBB004ReviewTests(unittest.TestCase):
         self.assertEqual(row["Value.Labels"], "")
         self.assertIn("identity conflict", row["Value.Label.Review"])
         self.assertIn("HOLD FOR SOURCE VALIDATION", row["Review.Flag"])
+        self.assertIn("HOLD FOR SOURCE VALIDATION", row["Candidate.Status"])
+        self.assertEqual(row["subcategory"], "residential-history field identity conflict")
         self.assertIn("same county/city", row["Harmonization.Status"])
         self.assertNotIn("DO NOT ANALYZE", row["Harmonization.Status"])
 
@@ -25,6 +27,8 @@ class ResidentialHistoryBB004ReviewTests(unittest.TestCase):
             self.assertEqual(row["Value.Labels"], "1=Yes; 2=No")
             self.assertIn("conditional", row["Harmonization.Status"])
             self.assertIn("not current neighborhood quality", row["Harmonization.Status"])
+            self.assertIn("question reviewed", row["Candidate.Status"])
+            self.assertEqual(row["subcategory"], "residential-history context")
             self.assertNotIn("Freq.", row["Harmonization.Status"])
 
 

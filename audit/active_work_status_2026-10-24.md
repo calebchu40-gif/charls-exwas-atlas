@@ -1,3 +1,7 @@
+## 2026-10-25 continuation: residential/housing C metadata review
+
+Reviewed and propagated source-specific C metadata for 2011–2018 `BB004` residential-history fields and 2018 property roster, current residence, and household mortgage-payment fields. The 2011 `BB004` source identity conflict remains on hold; later waves retain wave-specific context and route caveats. Current C directory has 982 rows; 208 rows/104 codes remain in the generic automated-discovery Candidate.Status and 230 rows/111 codes retain the keyword-discovery subcategory. No participant values were inspected. Focused regression tests passed; full suite and deployment validation are pending.
+
 # CHARLS ExWAS Atlas current work status
 
 ## 2026-10-25 continuation: synchronize 2011 chronic-treatment selected-storage review

@@ -42,11 +42,17 @@ def update(row: dict, wave: str) -> None:
     row["value_label_source"] = row["Value.Label.Source"]
     if wave == "2011":
         review = "questionnaire/Codebook field-identity conflict; response labels withheld; HOLD FOR SOURCE VALIDATION"
+        row["category"] = "source-reviewed metadata with field-identity hold"
+        row["subcategory"] = "residential-history field identity conflict"
+        row["Candidate.Status"] = "HOLD FOR SOURCE VALIDATION; 2011 questionnaire and Codebook give different geographic reference units"
         row["Value.Labels"] = ""
         row["value_labels"] = ""
         row["Review.Flag"] = "HOLD FOR SOURCE VALIDATION: 2011 BB004 questionnaire and Codebook describe different geographic reference units"
     else:
         review = COMMON_REVIEW + "; 1=Yes/2=No; conditional year follow-up retained"
+        row["category"] = "source-reviewed residential-history metadata"
+        row["subcategory"] = "residential-history context"
+        row["Candidate.Status"] = "C metadata; residential-history question reviewed; preserve wave-specific reference and route; not an adjustment recommendation"
         row["Value.Labels"] = LABELS
         row["value_labels"] = LABELS
         row["Review.Flag"] = "C residential-history metadata; not a current neighborhood exposure or selected adjustment covariate"
@@ -84,7 +90,7 @@ def main() -> None:
         wave = fields.at[idx, "Source.Wave"]
         row = fields.loc[idx].to_dict()
         update(row, wave)
-        for key in ("Value.Labels", "Value.Label.Review", "Value.Label.Source", "Harmonization.Status", "Review.Flag"):
+        for key in ("category", "subcategory", "Candidate.Status", "Value.Labels", "Value.Label.Review", "Value.Label.Source", "Harmonization.Status", "Review.Flag"):
             fields.at[idx, key] = row[key]
     fields.to_csv(codes_path, index=False, encoding="utf-8-sig")
 
@@ -108,6 +114,8 @@ def main() -> None:
     series.loc[series_mask, "value_label_review"] = summary_review
     series.loc[series_mask, "value_label_source"] = "; ".join(sorted({p for docs in DOCS.values() for p in docs}))
     series.loc[series_mask, "harmonization_status"] = summary_note
+    series.loc[series_mask, "category"] = "source-reviewed residential-history metadata"
+    series.loc[series_mask, "subcategory"] = "residential-history context"
     series.to_csv(series_path, index=False, encoding="utf-8-sig")
     (ROOT / "audit/charls_atlas_candidate_series_v0.json").write_text(json.dumps(series.to_dict(orient="records"), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 

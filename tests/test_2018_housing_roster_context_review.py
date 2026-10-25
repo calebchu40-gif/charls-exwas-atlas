@@ -42,6 +42,8 @@ class Wave4HousingRosterContextReviewTests(unittest.TestCase):
         self.assertEqual(row["Concept.Unit.Candidates"], "10,000 Yuan/month")
         self.assertIn("excludes properties whose mortgage is paid off", row["Harmonization.Status"])
         self.assertIn("not an individual income", row["Harmonization.Status"])
+        self.assertIn("household mortgage payment source reviewed", row["Candidate.Status"])
+        self.assertEqual(row["subcategory"], "household mortgage payment measure")
 
     def test_current_residence_is_distinct_from_property_roster_location(self):
         rows = [r for r in self.main_catalog if r["Source.Wave"] == "2018" and r["Variable.Name"].lower() == "i000_w4_2"]
@@ -51,6 +53,9 @@ class Wave4HousingRosterContextReviewTests(unittest.TestCase):
             self.assertIn("distinct from HA025_W4[i]", row["Harmonization.Status"])
             self.assertIn("4=Special zone", row["Value.Labels"])
         exposure = next(r for r in rows if r["epcf"] == "e")
+        context = next(r for r in rows if r["epcf"] == "c")
+        self.assertIn("current-residence context source reviewed", context["Candidate.Status"])
+        self.assertEqual(context["subcategory"], "current-residence context")
         self.assertEqual(exposure["Concept.Mapping.Status"].startswith("official 2018 questionnaire and Codebook reviewed"), True)
         housing = next(r for r in self.housing_map if r["wave"] == "2018" and r["code"] == "i000_w4_2")
         self.assertIn("currently occupied residence", housing["construct"])

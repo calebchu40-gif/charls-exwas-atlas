@@ -31,6 +31,14 @@ ROSTER_CANDIDATE_STATUS = (
     "C metadata; separately indexed property-location response; field-level meaning reviewed; "
     "not an individual-level covariate"
 )
+RESIDENCE_CANDIDATE_STATUS = (
+    "C metadata; current-residence context source reviewed; release route and special values pending; "
+    "not an adjustment recommendation"
+)
+MORTGAGE_CANDIDATE_STATUS = (
+    "C metadata; household mortgage payment source reviewed; route, aggregation and release special values pending; "
+    "not a default covariate"
+)
 ROSTER_NOTE = (
     "2018 HA025_W4[i] records whether each separately listed house property is in a "
     "city/town central area, town/semi-rural area, rural area, or special region. The [i] "
@@ -92,6 +100,10 @@ def update(row: dict) -> None:
             if role == "c" else
             "preserve source item and mapping status; context candidate, not an approved test variable"
         )
+        if role == "c":
+            row["category"] = "source-reviewed context metadata"
+            row["subcategory"] = "current-residence context"
+            row["Candidate.Status"] = RESIDENCE_CANDIDATE_STATUS
         if role == "e":
             row["Concept.Mapping.Status"] = (
                 "official 2018 questionnaire and Codebook reviewed; main respondent's current residence "
@@ -126,6 +138,9 @@ def update(row: dict) -> None:
         row["Harmonization.Status"] = MORTGAGE_NOTE
         row["harmonization_status"] = MORTGAGE_NOTE
         row["Review.Flag"] = "C metadata; continuous household mortgage payment; not a selected model covariate"
+        row["category"] = "source-reviewed context metadata"
+        row["subcategory"] = "household mortgage payment measure"
+        row["Candidate.Status"] = MORTGAGE_CANDIDATE_STATUS
     else:
         raise ValueError(f"Unexpected field: {code}")
 
@@ -174,7 +189,7 @@ def main() -> None:
     for idx in residence_csv.index:
         row = table.loc[idx].to_dict()
         update(row)
-        for key in ("Value.Labels", "Value.Label.Review", "Value.Label.Source", "Harmonization.Status", "Review.Flag", "Concept.Mapping.Status", "Concept.Mapping.Caveat"):
+        for key in ("category", "subcategory", "Candidate.Status", "Value.Labels", "Value.Label.Review", "Value.Label.Source", "Harmonization.Status", "Review.Flag", "Concept.Mapping.Status", "Concept.Mapping.Caveat"):
             if key in table.columns:
                 table.at[idx, key] = row.get(key, "")
     table.to_csv(csv_path, index=False, encoding="utf-8-sig")

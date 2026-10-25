@@ -1,3 +1,9 @@
+## 2026-10-25 Wave-specific residential and housing C metadata status review
+
+- Updated source-review states for 2011–2018 `BB004` residential-history fields; retained the unresolved 2011 identity conflict as a hold, and marked later waves as wave-specific residential-history context.
+- Updated 2018 current-residence context, property-roster positions, and household mortgage-payment metadata with explicit remaining route/aggregation/release-value caveats. None is a default adjustment recommendation.
+- Added regression assertions and Chinese category labels. No participant records or values were inspected. Audit: `audit/c_covariate_search_status_clarity_review_2026-10-25.md`.
+
 ## 2026-10-25 补充2013官方权重文件的替代来源与接收边界
 
 - 核实北大开放研究数据平台也列有2013 Wave 2 `Weights.tab`，页面提供19字段、19,679行和MD5元数据，但文件页注明需要登录/获准访问并展示CHARLS学术用途条款。将其与CHARLS发布页的SHA-1固定版`Weights.dta`区分；现有DTA合并入口不会接受或改名替代TAB文件，避免来源与字段定义未核实时误恢复样本资格。
