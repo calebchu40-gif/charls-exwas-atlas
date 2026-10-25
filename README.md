@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-25）
 
-**最新公开网站：**v118（提交`62fec07`，GitHub Pages部署#239成功，2026-10-25已验证）。本地v119候选版增加“其他社区补助”重复名册，并保留槽位配对待核提示；重建后E/P/C为4,905/2,082/982行，2011年目录级非自配组合为130,759。v119发布与线上核验待完成。正式关联模型数及实际配对分析样本量仍为0。2013官方权重和2015独立血检文件仍待本人经CHARLS账号取得，安全接收闸门分别见[`audit/wave2_weights_metadata_intake_gate_2026-10-25.md`](audit/wave2_weights_metadata_intake_gate_2026-10-25.md)与[`audit/blood_2015_intake_gate_2026-10-25.md`](audit/blood_2015_intake_gate_2026-10-25.md)。
+**最新公开网站：**v119（提交`36dd613`，GitHub Pages部署#240成功，2026-10-25已验证）。主页返回HTTP 200并加载`app.js?v=119`；线上社区目录有123个概念，含25字段的“其他补助”名册候选，2011年目录级非自配组合为130,759。E/P/C目录为4,905/2,082/982行。正式关联模型数及实际配对分析样本量仍为0。2013官方权重和2015独立血检文件仍待本人经CHARLS账号取得，安全接收闸门分别见[`audit/wave2_weights_metadata_intake_gate_2026-10-25.md`](audit/wave2_weights_metadata_intake_gate_2026-10-25.md)与[`audit/blood_2015_intake_gate_2026-10-25.md`](audit/blood_2015_intake_gate_2026-10-25.md)。
 
 **数据接收提速：**新增`python scripts/run_available_charls_intake_gates.py`，可一次检查受控目录中已到位的2013官方权重和2015独立血检文件；只跑官方哈希与DTA表头闸门，缺文件会跳过，QA仅写入本机受保护目录。详见[`audit/combined_intake_gate_runner_2026-10-25.md`](audit/combined_intake_gate_runner_2026-10-25.md)。
 

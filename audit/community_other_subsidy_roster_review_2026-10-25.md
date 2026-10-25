@@ -14,3 +14,7 @@ The source mapping adds 25 community field metadata rows and one concept. It use
 
 - `sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt`, Part G, JG009–JG012, including the JG009 repeat instruction and No-skip to JG013.
 - `sources_official/CHARLS_2011_Codebook_extracted.txt`, JG009–JG012 slot-indexed entries.
+
+## Deployment verification
+
+Commit `36dd613` was published as GitHub Pages Deploy #240 (`40179595161`, success). The public homepage returns HTTP 200 and loads `app.js?v=119`; online metadata reports 123 community concepts and 130,759 2011 candidate metadata pairs. The roster retains all 25 indexed fields and the slot-linkage caveat.

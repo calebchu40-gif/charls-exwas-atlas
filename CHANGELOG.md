@@ -1,8 +1,8 @@
-﻿## 2026-10-25 Add the slot-indexed other community subsidy roster (v119 candidate)
+﻿## 2026-10-25 Add the slot-indexed other community subsidy roster (v119 deployed)
 
 - Added 25 official 2011 community fields for the other poverty-subsidy roster: five repeat response slots, five nested open-text program-name fields, and five indexed fields each for start year, recipient-household count, and monthly standard. The questionnaire/Codebook do not fully establish the flattened slot-to-name pairing, so the public metadata calls for authorized-release validation; free-text names are not treated as standardized subsidy categories.
 - E/P/C catalogue rows are 4,905/2,082/982; E/P concepts are 1,496 (1,218 exposure and 303 phenotype, including 25 dual-role concepts); E/P source mappings are 6,881. Baseline community candidates are 123 concepts and 330 fields. The 2011 metadata co-availability count is 130,759; models, analytic Ns and association estimates remain 0, with the exact 92 analysis locks preserved.
-- The complete metadata rebuild and all 466 tests passed. Public-payload validation, exact 92-lock reconciliation, JavaScript syntax and whitespace checks passed. GitHub Pages deployment and live verification are pending. Audit: `audit/community_other_subsidy_roster_review_2026-10-25.md`.
+- The complete metadata rebuild and all 466 tests passed. Public-payload validation, exact 92-lock reconciliation, JavaScript syntax and whitespace checks passed. GitHub Pages Deploy [#240 / `40179595161`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40179595161) succeeded. The public homepage returns HTTP 200 with `app.js?v=119`; live metadata reports 123 community concepts, the 25-field roster, and 130,759 2011 metadata pairs. Audit: `audit/community_other_subsidy_roster_review_2026-10-25.md`.
 
 ## 2026-10-25 Add four community pension-policy context concepts (v118 deployed)
 
