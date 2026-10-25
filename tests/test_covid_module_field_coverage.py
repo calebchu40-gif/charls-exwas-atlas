@@ -29,6 +29,9 @@ class CovidModuleFieldCoverageTests(unittest.TestCase):
         self.assertEqual(sum(row["coverage_status"] == "mapped candidate" for row in self.rows), 77)
         self.assertEqual(sum(row["coverage_status"] == "reviewed non-E/P field" for row in self.rows), 23)
         self.assertTrue(all(row["review_rationale"].strip() for row in self.rows))
+        self.assertTrue(all("CHARLS_2020_Codebook_extracted.txt" in row["source_inventory"] for row in self.rows))
+        self.assertEqual(self.by_code["xvcnotinquarantine"]["official_label"],
+                         "String constant: During the Pandemic but Excluding Quarantine Time")
 
     def test_derived_quarantine_and_network_outcomes_are_mapped(self):
         self.assertEqual(self.by_code["xquarantined"]["role"], "E")

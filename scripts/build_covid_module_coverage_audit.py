@@ -6,11 +6,13 @@ open respondent records or copy Codebook distributions.
 from __future__ import annotations
 
 import csv
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / "audit"
-RAW = AUDIT / "raw_variable_catalog_v1.csv"
+CODEBOOK = ROOT / "sources_official" / "CHARLS_2020_Codebook_extracted.txt"
+MODULE_FIELD_PATTERN = re.compile(r"(?m)^([A-Za-z][A-Za-z0-9_]*):[ \t]*(.*)$")
 EXPOSURES = AUDIT / "pandemic_context_exposure_crosswalk_2020_v1.csv"
 PHENOTYPES = AUDIT / "pandemic_context_phenotype_crosswalk_2020_v1.csv"
 OUTPUT = AUDIT / "covid_module_field_coverage_2020_v1.csv"
@@ -48,20 +50,42 @@ def read_csv(path: Path) -> list[dict[str, str]]:
 
 
 def main() -> None:
-    raw = [r for r in read_csv(RAW) if r["wave"] == "2020" and r["module"] == "COVID_Module"]
+    # Use the tracked official Codebook's COVID-module section as the field
+    # inventory. The ignored local raw-variable inventory also contains module
+    # row counts derived from licensed files and must not be required by CI or
+    # copied into the public repository.
+    codebook = CODEBOOK.read_text(encoding="utf-8")
+    module_start = codebook.index("COVID Module", codebook.index("MODULE V"))
+    start = module_start - len("MODULE V\n")
+    end = codebook.index("MODULE EX", module_start)
+    module_text = codebook[start:end]
+    fields = [
+        {"variable": field, "variable_label": label.split("\\n", 1)[0].strip(),
+         "wave": "2020", "module": "COVID_Module"}
+        for field, label in MODULE_FIELD_PATTERN.findall(module_text)
+        if field.lower() != "obs"
+    ]
+    # The extracted Codebook inserts a page-break marker inside this label.
+    for field in fields:
+        if field["variable"].lower() == "xvcnotinquarantine":
+            field["variable_label"] = (
+                "String constant: During the Pandemic but Excluding Quarantine Time"
+            )
     role_rows = [("E", r) for r in read_csv(EXPOSURES)] + [("P", r) for r in read_csv(PHENOTYPES)]
     mapped: dict[str, list[tuple[str, dict[str, str]]]] = {}
     for role, row in role_rows:
         mapped.setdefault(row["code"].lower(), []).append((role, row))
-    raw_codes = [r["variable"].lower() for r in raw]
-    if len(raw_codes) != len(set(raw_codes)):
-        raise SystemExit("Duplicate raw field codes in COVID module inventory")
-    if set(raw_codes) != set(mapped) | set(EXCLUSIONS):
-        missing = sorted(set(raw_codes) - set(mapped) - set(EXCLUSIONS))
-        stale = sorted((set(mapped) | set(EXCLUSIONS)) - set(raw_codes))
+    field_codes = [r["variable"].lower() for r in fields]
+    if len(field_codes) != len(set(field_codes)):
+        raise SystemExit("Duplicate field headings in official COVID module Codebook section")
+    if len(fields) != 100:
+        raise SystemExit(f"Expected 100 official COVID module fields; found {len(fields)}")
+    if set(field_codes) != set(mapped) | set(EXCLUSIONS):
+        missing = sorted(set(field_codes) - set(mapped) - set(EXCLUSIONS))
+        stale = sorted((set(mapped) | set(EXCLUSIONS)) - set(field_codes))
         raise SystemExit(f"Coverage ledger mismatch; unclassified={missing}; stale={stale}")
     output: list[dict[str, str]] = []
-    for field in raw:
+    for field in fields:
         code = field["variable"].lower()
         entries = mapped.get(code, [])
         if entries:
@@ -80,14 +104,14 @@ def main() -> None:
             "official_label": field["variable_label"], "role": roles, "coverage_status": status,
             "disposition": kind, "candidate_concept_ids": concepts, "candidate_concept_labels": labels,
             "review_rationale": rationale,
-            "source_inventory": "audit/raw_variable_catalog_v1.csv",
+            "source_inventory": "sources_official/CHARLS_2020_Codebook_extracted.txt (MODULE V / COVID Module)",
             "candidate_sources": ";".join(row["source_document"] for _, row in entries),
         })
     with OUTPUT.open("w", encoding="utf-8-sig", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=list(output[0]))
         writer.writeheader()
         writer.writerows(output)
-    print(f"Wrote {OUTPUT.relative_to(ROOT)}: {len(raw)} raw fields; {sum(r['coverage_status']=='mapped candidate' for r in output)} mapped E/P fields; {sum(r['coverage_status']=='reviewed non-E/P field' for r in output)} explicitly reviewed non-E/P fields; no respondent data or frequencies")
+    print(f"Wrote {OUTPUT.relative_to(ROOT)}: {len(fields)} official Codebook fields; {sum(r['coverage_status']=='mapped candidate' for r in output)} mapped E/P fields; {sum(r['coverage_status']=='reviewed non-E/P field' for r in output)} explicitly reviewed non-E/P fields; no respondent data or frequencies")
 
 
 if __name__ == "__main__":

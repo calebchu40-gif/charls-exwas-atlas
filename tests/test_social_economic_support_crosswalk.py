@@ -10,8 +10,6 @@ class SocialEconomicSupportCrosswalkTests(unittest.TestCase):
     def setUpClass(cls):
         with (ROOT / "audit/social_exposure_crosswalk_v1.csv").open(encoding="utf-8-sig", newline="") as handle:
             cls.rows = list(csv.DictReader(handle))
-        with (ROOT / "audit/raw_variable_catalog_v1.csv").open(encoding="utf-8-sig", newline="") as handle:
-            cls.raw = {(r["wave"], r["variable"].lower(), r["module"].lower()) for r in csv.DictReader(handle)}
         cls.support = [r for r in cls.rows if r["concept_id"].startswith("economic_support_")]
 
     def test_six_distinct_transfer_directions_and_relationship_groups_are_kept(self):
@@ -25,11 +23,21 @@ class SocialEconomicSupportCrosswalkTests(unittest.TestCase):
             "economic_support_provided_children",
         })
 
-    def test_every_mapped_field_exists_in_wave_specific_raw_catalog(self):
+    def test_each_mapped_field_has_wave_specific_official_source_files(self):
+        expected_prefix = {
+            "economic_support_received_parents": "ce002",
+            "economic_support_received_parents_in_law": "ce005",
+            "economic_support_received_children": "ce009",
+            "economic_support_provided_parents": "ce022",
+            "economic_support_provided_parents_in_law": "ce025",
+            "economic_support_provided_children": "ce029",
+        }
         for row in self.support:
-            self.assertIn((row["wave"], row["code"].lower(), row["module"].lower()), self.raw)
-            self.assertIn("Questionnaire_extracted.txt", row["questionnaire_source"])
-            self.assertIn("Codebook_extracted.txt", row["value_label_source"])
+            self.assertTrue(row["code"].lower().startswith(expected_prefix[row["concept_id"]]))
+            for source in (row["questionnaire_source"] + ";" + row["value_label_source"]).split(";"):
+                source = source.strip()
+                if source.startswith("sources_official/"):
+                    self.assertTrue((ROOT / source).is_file(), source)
 
     def test_no_later_wave_inlaw_equivalence_is_inferred(self):
         for row in self.support:

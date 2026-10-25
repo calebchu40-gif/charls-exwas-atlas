@@ -4,7 +4,7 @@
 
 ## Source basis and handling
 
-- Primary field dictionary: `audit/raw_variable_catalog_v1.csv`, restricted to the 2020 `COVID_Module` rows.
+- Primary field inventory: the `MODULE V / COVID Module` section of `sources_official/CHARLS_2020_Codebook_extracted.txt`. The coverage builder reads field headings and labels only; it does not use the local raw-variable inventory, module row counts, or Codebook response distributions.
 - Official sources: `sources_official/CHARLS_2020_Questionnaire_English_extracted.txt` (COVID module, questionnaire pages 96–104) and `sources_official/CHARLS_2020_Codebook_extracted.txt` (COVID module). The builder verifies each mapped source code against the dictionary, exact questionnaire question anchor, and Codebook text before writing the crosswalks.
 - The Codebook contains descriptive frequency tables; this project does **not** copy any counts, percentages, means, extrema, or response distributions into the crosswalk or public site.
 - Crosswalk builder: `scripts/build_covid_prevention_context_crosswalk.py`. Outputs: `audit/pandemic_context_exposure_crosswalk_2020_v1.csv` and `audit/pandemic_context_phenotype_crosswalk_2020_v1.csv`.
@@ -17,7 +17,7 @@ The P table contains 25 unique wave-field rows / 25 concepts. It covers the resp
 
 ### Full module coverage ledger
 
-`audit/covid_module_field_coverage_2020_v1.csv` provides one reviewed disposition for every field in the 2020 `COVID_Module` section of `audit/raw_variable_catalog_v1.csv`: 100 official dictionary fields, 77 unique E/P candidate fields, and 23 fields documented as linkage keys, exclusive/nonresponse options, conditional test-date components, questionnaire wording constants, interview timing/mode, or release metadata. This is a field-level coverage record, not a claim that the E/P candidates are all independent constructs or analysis-ready. The builder is `scripts/build_covid_module_coverage_audit.py`; it fails if a source field has no disposition or if the inventory changes without review. Tests verify full coverage and key mappings.
+`audit/covid_module_field_coverage_2020_v1.csv` provides one reviewed disposition for every field in the official 2020 COVID-module Codebook section: 100 official dictionary fields, 77 unique E/P candidate fields, and 23 fields documented as linkage keys, exclusive/nonresponse options, conditional test-date components, questionnaire wording constants, interview timing/mode, or release metadata. This is a field-level coverage record, not a claim that the E/P candidates are all independent constructs or analysis-ready. The builder is `scripts/build_covid_module_coverage_audit.py`; it fails if a source field has no disposition or if the inventory changes without review. Tests verify full coverage and key mappings.
 
 The audit surfaced and corrected two meaningful omissions. `XQuarantined` is an official derived binary defined from VB005 selections 1–5; it is now an E candidate, with explicit redundancy warning against the reason-specific VB005 fields. VB002 relationship indicators are now separate social-network outcome candidates after the VB001 confirmed/suspected-contact screen. They do not describe the respondent's own health and do not establish cause of death. The exclusive VB002 none/refusal options remain route/nonresponse dispositions, not standalone phenotypes.
 
