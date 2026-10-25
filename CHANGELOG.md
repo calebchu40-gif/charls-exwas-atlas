@@ -4,7 +4,7 @@
 - Final 2020 pandemic module crosswalks contain 48 E fields/22 concepts and 22 P fields/22 concepts. Candidate field rows are 70 total; source coverage and exclusions are recorded in `audit/pandemic_context_candidate_review_2020.md`.
 - Full metadata finalization completed in 9.2 minutes. E/P/C catalogue rows: 4,973/2,104/982; E/P concepts: 1,542 (1,242 E, 325 P, 25 dual-role); concept-source mapping rows: 6,971. E/P catalogue records/wave-fields/explicit labels: 7,077/6,864/3,724; generic pending label status is 0 for E/P/C.
 - 2020 metadata co-availability is 20,088 candidate pairs, not analytic sample size or fitted results. Exact 92 analysis locks remain unchanged; formal models and participant-level results remain 0. No participant values, frequencies or distributions were published.
-- Website asset cache key is v123; CI and Pages deployment will be verified after commit.
+- Website asset cache key is v123. GitHub Validate #493 and Pages Deploy #244 succeeded; live homepage serves v123 and the P catalogue contains `covid_testing_utilization_2020`. Scope/timeline correction is recorded in `audit/project_scope_and_completion_estimate_2026-10-25.md`.
 
 # 2026-10-25 Complete 2020 pandemic-context candidate coverage (v122 prepared)
 
