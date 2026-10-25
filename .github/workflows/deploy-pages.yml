@@ -28,21 +28,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Validate static site payload
-        shell: bash
-        run: |
-          test -s site-prototype/dist/index.html
-          test -s site-prototype/dist/app.js
-          if find site-prototype/dist -type f \( -name '*.dta' -o -name '*.sav' -o -name '*.rds' -o -name '*.parquet' -o -name '*.sqlite' -o -name '*.zip' -o -name '*.7z' -o -name '*.rar' -o -name '*.csv' \) | grep -q .; then
-            echo "Unexpected respondent-data or archive file in site payload" >&2
-            exit 1
-          fi
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          root = Path("site-prototype/dist")
-          for path in root.glob("*.json"):
-              json.loads(path.read_text(encoding="utf-8"))
-          PY
+        run: python scripts/validate_public_site_payload.py site-prototype/dist
 
       - name: Package only browser-facing site assets
         shell: bash

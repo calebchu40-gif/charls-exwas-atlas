@@ -391,3 +391,7 @@ This file records project-level changes that affect reproducibility, methods, da
 - Verified the public Pages release for `495e2aa`: deployment and metadata-validation workflows succeeded, and the live homepage, app, E/P/C catalogues, behavior payload, and cognition payload matched the reviewed local assets. The deployed memory and alcohol metadata were checked for expected wave-specific fields and caveats; no respondent data or association results are present. Audit: `audit/public_release_verification_2026-10-25.md`.
 
 - 更新项目进度估算，核实线上首页/分类显示与现版本一致，并复查CHARLS官方2013权重资料页的文件版本和SHA1；官方权重二进制仍缺失，保持分析阻断。见 `audit/project_progress_estimate_2026-10-23.md` 与 `audit/wave2_weight_estimand_source_review_2026-10-24.md`。
+# 2026-10-25
+
+- Hardened GitHub Pages publishing with a reusable fail-closed browser-asset allowlist. The deploy now rejects statistical data, archive, and unknown file types and validates JSON recursively before upload.
+- Added focused tests and an audit note for the public payload guard.
