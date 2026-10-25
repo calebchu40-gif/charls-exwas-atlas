@@ -3,7 +3,7 @@
 - Reviewed the official 2011 Community Questionnaire and Codebook for JB030–JB038 and added two provisional community-level E concepts covering elder-care service centers and family-based/home elder-care context (12 source fields). Community-only and village-only CAPI routes, skip patterns, units, free-service zero, and multi-response slots remain explicit; these are community context candidates, not participant service use or approved covariates.
 - Added a source audit and a fail-closed test validating every mapped field against the official inventory, source wording, categories, units, and route notes.
 - Rebuilt all 158 metadata-finalization steps. Local E/P/C rows are 6,020/2,116/984; 1,559 E/P concepts; 8,030 E/P concept-source mappings; and 3,740 explicitly labeled rows. 2011 metadata co-availability is 132,889, not analytic N. Formal models remain 0.
-- This local update has not yet been published; public site remains v127.
+- Pages Deploy [#249](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40217511361) published the updated catalogue. The CI check initially exposed a test dependency on the ignored local raw inventory; the test now checks the committed official Codebook instead. GitHub Validate [#505](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40217765152) passed on the follow-up commit. App and data cache identifiers remain v127/v5 because application logic did not change.
 
 # 2026-10-26 Add source-reviewed mortality endpoint candidates (v127 prepared)
 

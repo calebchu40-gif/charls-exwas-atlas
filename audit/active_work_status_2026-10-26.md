@@ -18,15 +18,15 @@ Audit source: [`mortality_endpoint_mapping_review_2026-10-25.md`](mortality_endp
 
 The previous public v127 build completed all 157 metadata-finalization steps. The current local rebuild completed 158 steps and contains E/P/C=6,020/2,116/984 rows; 1,559 E/P candidate concepts, 8,030 E/P concept-source mappings, and 3,740 explicitly labeled E/P rows. Generic `not yet reviewed` value-label rows are 0 for E/P and C. The analysis lock gate remains exactly 92 locks. Two provisional 2011 community elder-care context concepts and 12 source fields were added; see [`community_eldercare_context_source_review_2026-10-26.md`](community_eldercare_context_source_review_2026-10-26.md).
 
-The current local pair index contains 132,889 / 141,920 / 143,137 / 105,493 / 21,630 metadata co-availability pairs for 2011/2013/2015/2018/2020. These are not participant counts, eligible analytic N, or association results. Formal association models and actual pairwise-complete N remain 0. The public site remains v127 until this local update is committed and deployed.
+The current pair index contains 132,889 / 141,920 / 143,137 / 105,493 / 21,630 metadata co-availability pairs for 2011/2013/2015/2018/2020. These are not participant counts, eligible analytic N, or association results. Formal association models and actual pairwise-complete N remain 0. The updated directory is live from Pages Deploy [#249](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40217511361); application cache identifiers remain v127/v5 because application code did not change. The follow-up CI test fix passed Validate [#505](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40217765152).
 
 ## Verification
 
 - Current rebuild: all 158 finalization steps completed. Full local suite: 482 passed, 90 subtests passed in 15.09 seconds.
 - Public-site payload validator passed.
 - `validate_do_not_analyze_triage.py` passed: all 92 catalog locks match the triage inventory.
-- JavaScript syntax check passed; candidate pair cache key advanced to v5 and page entry point to app v127.
-- GitHub Validate and Pages Deploy succeeded for commit `7b00491`; live homepage, P/C shards, and pair-index were checked over HTTPS.
+- JavaScript syntax and deferred-loader checks passed; candidate pair cache key remains v5 and page entry point remains app v127.
+- GitHub Pages Deploy #249 published the updated directory; GitHub Validate #505 passed after a CI-only source-test correction. The live homepage reports the new counts over HTTPS.
 
 ## Next work
 

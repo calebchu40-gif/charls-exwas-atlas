@@ -8,7 +8,7 @@
 
 **数据接收提速：**新增`python scripts/run_available_charls_intake_gates.py`，可一次检查受控目录中已到位的2013官方权重和2015独立血检文件；只跑官方哈希与DTA表头闸门，缺文件会跳过，QA仅写入本机受保护目录。详见[`audit/combined_intake_gate_runner_2026-10-25.md`](audit/combined_intake_gate_runner_2026-10-25.md)。
 
-**最新本地目录状态：**E=6,020、P=2,116、C=984；1,559 个 E/P 候选概念（暴露 1,253、表型 331，含双角色），8,030 条 E/P 概念—来源映射；明确标签 3,740 条，三类通用待审核值标签均为 0。新增 2011 社区老年照护服务背景候选 2 个概念、12 个字段；2011 元数据配对索引为 132,889（仅目录共现）。详细审核见[`audit/community_eldercare_context_source_review_2026-10-26.md`](audit/community_eldercare_context_source_review_2026-10-26.md)。当前为本地待发布改动；公开网站仍是 v127。正式关联模型和实际配对样本量仍为 0。
+**最新目录状态（应用缓存标识 v127）：**E=6,020、P=2,116、C=984；1,559 个 E/P 候选概念（暴露 1,253、表型 331，含双角色），8,030 条 E/P 概念—来源映射；明确标签 3,740 条，三类通用待审核值标签均为 0。新增 2011 社区老年照护服务背景候选 2 个概念、12 个字段；2011 元数据配对索引为 132,889（仅目录共现）。该目录已随提交 [`9d97eef`](https://github.com/calebchu40-gif/charls-exwas-atlas/commit/9d97eef18c92134a7d79a61d483c68dd15bac4ac) 部署，Pages Deploy [#249](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40217511361) 成功；后续 CI 测试修复提交 [`2eb7ab1`](https://github.com/calebchu40-gif/charls-exwas-atlas/commit/2eb7ab1a63ae3e11a9e003a5bf57ee04d2ebc1f2) 的 Validate [#505](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40217765152) 成功。详细审核见[`audit/community_eldercare_context_source_review_2026-10-26.md`](audit/community_eldercare_context_source_review_2026-10-26.md)。正式关联模型和实际配对样本量仍为 0。
 
 **波次与模块准备度：**已整理2011、2013、2015、2018、2020五波的访谈/体测、血液检测、关系与社区模块、权重及年龄域门槛，并扩展本地表头审计输出为逐波×角色×源模块摘要。该审计只读变量名，不读取个人答案或计算样本数；还记录了NIA Biomarker Network对2018/2020血样采集的说法与CHARLS官方发布文件目录之间的待核差异。详见[`audit/wave_module_readiness_matrix_2026-10-25.md`](audit/wave_module_readiness_matrix_2026-10-25.md)。
 
