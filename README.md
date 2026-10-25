@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-25）
 
-**最新公开发布：**v101（提交 `7a9709f`）已通过 Validate #442 与 Pages Deploy #222，线上资源已核对。**当前本地候选构建：**v102，链接16条2011/2013户籍生命历程 C/E 同字段记录；E/P/C=4,845/2,082/982，439项 Python 测试、公开负载校验和92条分析锁核验通过。户籍历史仅作为波次特异的搜索候选，保留问卷路线、条件分母和不同波次编码，不视为污染剂量或自动协变量。详见[`audit/hukou_lifecourse_c_overlap_review_2026-10-25.md`](audit/hukou_lifecourse_c_overlap_review_2026-10-25.md)。详情见[`audit/social_exposure_c_overlap_review_2026-10-25.md`](audit/social_exposure_c_overlap_review_2026-10-25.md)。
+**最新公开发布：**v102（提交 `c449721`）已通过 Validate #444 与 Pages Deploy #223，线上首页及 E/P/C/配对资源与本地构建核对一致。新增16条2011/2013户籍生命历程 C/E 同字段记录；E/P/C=4,845/2,082/982，439项 Python 测试、公开负载校验和92条分析锁核验通过。户籍历史仅作为波次特异的搜索候选，保留问卷路线、条件分母和不同波次编码，不视为污染剂量或自动协变量。详见[`audit/hukou_lifecourse_c_overlap_review_2026-10-25.md`](audit/hukou_lifecourse_c_overlap_review_2026-10-25.md)。详情见[`audit/social_exposure_c_overlap_review_2026-10-25.md`](audit/social_exposure_c_overlap_review_2026-10-25.md)。
 
 **最新构建验证（2026-10-25）：**2011年32个DA010治疗选项字段的官方类别索引和本地汇总代码核对已同步至网站；未选中/空白编码与路由分母仍待核验。保留原有字段提示，正式锁清单仍为92条。元数据提交`71c6214`和快速刷新/审计JSON提交`9874960`均通过GitHub Validate与Pages部署（Validate `40152950706`；Deploy `40152949965`），线上配对目录返回HTTP 200；Python全套417项测试通过。可用`python scripts/finalize_2011_chronic_treatment_review.py`快速刷新这项专题的网页派生文件；上游目录有变更时仍运行标准完整构建。详情见[`audit/2011_chronic_treatment_selected_storage_status_sync_2026-10-25.md`](audit/2011_chronic_treatment_selected_storage_status_sync_2026-10-25.md)。
 
