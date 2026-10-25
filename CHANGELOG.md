@@ -1,6 +1,6 @@
-## 2026-10-25 Link and publish the five-wave measurement schedule (v110 candidate)
+## 2026-10-25 Link and publish the five-wave measurement schedule (v110 deployed)
 
-- Added a direct link to the NIA Biomarker Network page where the 2018/2020 blood-collection claim appears, so visitors can inspect the source of the discrepancy. Updated the browser bundle cache key to v110. Local HTML/CSS/payload checks pass; deployment pending.
+- Added a direct link to the NIA Biomarker Network page where the 2018/2020 blood-collection claim appears, so visitors can inspect the source of the discrepancy. Updated the browser bundle cache key to v110. Commit `9053334` passed Validate #461 and Pages Deploy #231; the live index loads `app.js?v=110` and includes the NIA link.
 
 ## 2026-10-25 Add a five-wave measurement schedule to the landing page (v109 deployed)
 
