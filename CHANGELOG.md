@@ -1,9 +1,16 @@
-# 2026-10-26 Add community economic, housing-market, and credit-context candidates (local update)
+# 2026-10-26 Add Part J agricultural machinery-supply origin (local update)
+
+- Reviewed the full 2011 Community Questionnaire Part J inventory. Added JJ005 as a nominal community agricultural-service-supply context candidate, conditional on JJ003=Yes; retained county/province categories and withheld interpretation of conditional locality text as standardized geography.
+- Documented Part J coverage and exclusion of respondent identity/name/phone fields JJ033-JJ035. No respondent values or Codebook frequency summaries used.
+- Full 158-step rebuild completed; local E/P/C rows 6,034/2,116/984, 1,563 candidate E/P concepts, 8,044 concept-source mappings, 3,742 explicitly labeled E/P rows; 2011 metadata co-availability 133,741, not analytic N. Formal models remain 0.
+- The label propagation test exposed and fixed a generic pending label for the questionnaire-coded JJ005 category. Full pytest suite passed (485 tests and 90 subtests); public-payload and 92-lock checks pass. This JJ005 update is ready for commit and deployment.
+
+# 2026-10-26 Add community economic, housing-market, and credit-context candidates (deployed in #250)
 
 - Reviewed 2011 Community Questionnaire Part J and official Codebook; added three provisional E concepts with 13 fields: village/community economic and fiscal measures (JJ011-JJ016), housing-market context (JJ026-JJ030), and formal-credit access (JJ031-JJ032).
 - Preserved reference periods and units (10,000 Yuan, Yuan, Yuan/m2, Yuan/month and percentages), village-only CAPI routes, JJ014's explicit distinction from household income, and the English/Chinese lender wording discrepancy for JJ032. These are one-wave community-level contextual candidates, not respondents' own income, housing, loans or debt. No Codebook frequencies/extrema or respondent data were used.
 - Full 158-step finalization completed in 6.3 minutes. Local E/P/C rows are 6,033/2,116/984; 1,562 E/P concepts; 8,043 concept-source mappings; 3,741 explicitly labelled E/P rows. The 2011 pair count is 133,528 metadata co-availability pairs, not analytic N. Formal models remain 0.
-- Targeted review tests and the 480-test unittest suite pass; public-payload, exact 92-lock, JavaScript/deferred-loader and diff checks pass. This batch remains local pending push/deployment; the current public site contains the elder-care update.
+- Targeted review tests and the 480-test unittest suite pass; public-payload, exact 92-lock, JavaScript/deferred-loader and diff checks pass. This batch was published by Pages Deploy #250 after validation. The live public JSON includes all three concepts; app code and its v127 cache identifier did not change.
 
 # 2026-10-26 Add 2011 community elder-care context candidates (local update)
 

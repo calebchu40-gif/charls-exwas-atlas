@@ -2084,7 +2084,10 @@ def main() -> None:
         fallback_labels = community_values.loc[
             community_values["value_label_status"].str.startswith("official questionnaire numbered fallback categories")
         ]
-        for item in fallback_labels.itertuples(index=False):
+        questionnaire_labels = community_values.loc[
+            community_values["value_label_status"].str.startswith("official questionnaire response categories")
+        ]
+        for item in pd.concat([fallback_labels, questionnaire_labels]).drop_duplicates(["wave", "code"]).itertuples(index=False):
             selected = (
                 out["Source.Wave"].astype(str).eq(str(item.wave))
                 & out["Variable.Name"].str.lower().eq(str(item.code).lower())

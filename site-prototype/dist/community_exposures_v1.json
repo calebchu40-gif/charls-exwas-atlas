@@ -3475,6 +3475,27 @@
     ]
   },
   {
+    "concept_id": "community_agricultural_machinery_supply_origin",
+    "label": "Community agricultural machinery supply origin",
+    "domain": "Community agricultural context",
+    "caveat": "2011 village-only informant report of where rented large agricultural machinery is sourced: locally, elsewhere in the province, or another province. Asked only on the rented-machinery route; this is a contextual service-supply indicator, not personal machinery use, pesticide exposure, or ambient pollution.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jj005",
+        "module": "community",
+        "source_label": "Where are These Big Machines Coming from",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part J p.35 (PDF p.38), JJ003–JJ005; village-only rented-machinery route, local/provincial origin categories, and conditional county/province text fields checked against official Codebook; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Village-only report, conditional on JJ003=Yes (large machinery is rented); JJ005 distinguishes machinery sourced within the county/city, elsewhere in the province, or from another province. JJ005_1/JJ005_2 are route-specific open text/locality details, not standardized geography codes; preserve the source category and verify release linkage. This is community service-supply context, not individual use or chemical exposure.",
+        "value_labels": "1=This county/city; 2=Another county/city in this province; 3=Another province",
+        "value_label_status": "official questionnaire response categories; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
     "concept_id": "community_kindergarten_count",
     "label": "Kindergartens in community (count)",
     "domain": "Community infrastructure",

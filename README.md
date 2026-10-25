@@ -8,7 +8,7 @@
 
 **数据接收提速：**新增`python scripts/run_available_charls_intake_gates.py`，可一次检查受控目录中已到位的2013官方权重和2015独立血检文件；只跑官方哈希与DTA表头闸门，缺文件会跳过，QA仅写入本机受保护目录。详见[`audit/combined_intake_gate_runner_2026-10-25.md`](audit/combined_intake_gate_runner_2026-10-25.md)。
 
-**当前部署与本地快照：**公开网站目前包含v127及已部署的2011社区老年照护批次（E/P/C=6,020/2,116/984；1,559个E/P概念；8,030条E/P概念—来源映射；2011目录共现配对132,889）。本地已完成下一批2011社区经济/财政、住房市场和正式信贷可及性字段审核及158步重建：E/P/C=6,033/2,116/984；1,562个E/P概念；8,043条映射；明确标签3,741条；2011目录共现配对133,528。该批次尚待提交和部署。目录共现不是样本量或关联结果；正式关联模型仍为0。详见[`audit/community_economic_housing_credit_source_review_2026-10-26.md`](audit/community_economic_housing_credit_source_review_2026-10-26.md)。
+**Current public/local snapshot:** Public app v127 and Pages Deploy #250 include the reviewed 2011 elder-care and economic/housing/credit context batches. The local update adds JJ005 machinery-origin context and a [Part J coverage audit](audit/community_part_j_source_coverage_review_2026-10-26.md); it is pending commit and deployment. Local counts: E/P/C=6,034/2,116/984; 1,563 E/P concepts; 8,044 E/P concept-source mappings; 3,742 explicitly labeled E/P rows; 2011 metadata co-availability pairs=133,741. These are directory metadata counts, not analytic N or association results; formal models remain 0. See audit/community_part_j_source_coverage_review_2026-10-26.md.
 
 **波次与模块准备度：**已整理2011、2013、2015、2018、2020五波的访谈/体测、血液检测、关系与社区模块、权重及年龄域门槛，并扩展本地表头审计输出为逐波×角色×源模块摘要。该审计只读变量名，不读取个人答案或计算样本数；还记录了NIA Biomarker Network对2018/2020血样采集的说法与CHARLS官方发布文件目录之间的待核差异。详见[`audit/wave_module_readiness_matrix_2026-10-25.md`](audit/wave_module_readiness_matrix_2026-10-25.md)。
 
@@ -32,7 +32,7 @@
 
 ## 当前快照（2026-10-25）
 
-本地最新生成目录（2026-10-26）含 E=6,033、P=2,116、C=984 条目录行；E/P 来源交叉表覆盖 1,562 个候选概念（暴露1,256、表型331，含双角色概念）及 8,043 条E/P概念—来源映射（本地未部署）。目录行已去除16条完全重复的元数据记录，无唯一波次—字段映射被删除。五波共现配对数统计为2011 133,528、2013 141,920、2015 143,137、2018 105,493、2020 21,630，均为元数据共现，不是人数、分析N或结果。子女记录候选包括36个 E 类波次—字段映射、26个家庭/代际概念，其中13项户口/居住史映射的槽位—记录字段一对一对应及编码仍待获批发行版核验。
+本地最新生成目录（2026-10-26）含 E=6,034、P=2,116、C=984 条目录行；E/P 来源交叉表覆盖 1,563 个候选概念（暴露1,257、表型331，含双角色概念）及 8,044 条E/P概念—来源映射（本地未部署）。目录行已去除16条完全重复的元数据记录，无唯一波次—字段映射被删除。五波共现配对数统计为2011 133,741、2013 141,920、2015 143,137、2018 105,493、2020 21,630，均为元数据共现，不是人数、分析N或结果。子女记录候选包括36个 E 类波次—字段映射、26个家庭/代际概念，其中13项户口/居住史映射的槽位—记录字段一对一对应及编码仍待获批发行版核验。
 
 **社区层链接限制：**官方2011基线指南将`communityID`列为社区—家庭—个人模块的通用链接键，并说明部分大型社区按地理子区抽样；当前本机文件的重复`communityID`和`sub_commuID`需结合准确发行版核对，个人准备表没有对应`sub_commuID`，因此暂不能把`communityID`当作唯一的一对一/多对一键或任意去重、平均。已加入安全的聚合核查脚本和网站提示，详见[`audit/community_2011_subcommunity_linkage_review_2026-10-25.md`](audit/community_2011_subcommunity_linkage_review_2026-10-25.md)。\n\n**公开查询站点：**[CHARLS ExWAS Atlas](https://calebchu40-gif.github.io/charls-exwas-atlas/)。线上 v125 已部署并核验；许可说明已上线；GitHub Validate 工作流会在代码更新时检查项目。户口、婚姻史、Wave 4 成人教育年限路由、疾病/事件年龄、居住地/迁居、护理工资来源和体测/人体测量目录状态传播审核均已记录。详情见 [`audit/active_work_status_2026-10-24.md`](audit/active_work_status_2026-10-24.md)、[`audit/charls_data_access_license_review_2026-10-24.md`](audit/charls_data_access_license_review_2026-10-24.md) 和相关专项审计。2011 `flda081_1` 已按官方 CodeBook 转为目标年龄上下文元数据并从自动协变量线索中移除；其与问卷 `DA081` 的直接字段链接仍未获官方一对一说明，故保留 C 类且不进入模型。详见[`audit/pending_c_field_identity_review_2026-10-24.md`](audit/pending_c_field_identity_review_2026-10-24.md)。 2018住房所有者关系字段现逐项保留Codebook列出的原始关系码（包括字段特异非二元码），不再误写成0/1；见[`audit/housing_owner_relation_codebook_label_review_2026-10-24.md`](audit/housing_owner_relation_codebook_label_review_2026-10-24.md)。
 
@@ -297,4 +297,4 @@ DA056选项编码边界更新（2026-10-23）：41个2011/2013/2015活动与设�
 **2026-10-26 v127 准备更新：**为退出访谈/死亡模块补充 2013 与 2020 的 11 条字段级候选映射：去世日期组成项、日期历法元数据、死亡预期性和末次疾病至死亡间隔。字段目录、概念交叉表与网站分片已联通；死亡信息明确限定于去世者/代理人路径，不作为全样本死亡标记。2018 封面筛查状态未混并，2015 对应字段未凭相邻波次推定。候选配对索引现为 2013 141,920、2020 21,630（均为元数据共现，不是分析样本量）。全量 157 步元数据收尾通过；本机480项测试、公开包校验、92锁校验通过，GitHub Validate与Pages Deploy均成功。详见[`audit/mortality_endpoint_mapping_review_2026-10-26.md`](audit/mortality_endpoint_mapping_review_2026-10-26.md)。
 
 
-当前本地目录快照核对项（尚未部署）：E=6,033、P=2,116、C=984；1,562 个候选概念（暴露 1,256，表型 331）；8,043 条概念—来源映射。波次目录共现配对：2011 133,528；2013 141,920；2015 143,137；2018 105,493；2020 21,630。
+当前本地目录快照核对项（尚未部署）：E=6,034、P=2,116、C=984；1,563 个候选概念（暴露 1,257，表型 331）；8,044 条概念—来源映射。波次目录共现配对：2011 133,741；2013 141,920；2015 143,137；2018 105,493；2020 21,630。

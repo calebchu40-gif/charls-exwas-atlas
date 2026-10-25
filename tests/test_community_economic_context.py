@@ -1,5 +1,6 @@
 import csv
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -25,6 +26,7 @@ class CommunityEconomicContextTests(unittest.TestCase):
             "community_economic_activity_and_fiscal_context": {"jj011", "jj012", "jj013", "jj014", "jj015", "jj016"},
             "community_housing_market_context": {"jj026", "jj027", "jj028", "jj029", "jj030"},
             "community_formal_credit_access": {"jj031", "jj032"},
+            "community_agricultural_machinery_supply_origin": {"jj005"},
         }
         for concept, codes in expected.items():
             rows = [r for r in self.rows if r["concept_id"] == concept]
@@ -51,6 +53,25 @@ class CommunityEconomicContextTests(unittest.TestCase):
         self.assertIn("village-only", rows["jj031"]["caveat"].lower())
         self.assertIn("2010", rows["jj031"]["caveat"].lower())
         self.assertIn("three years earlier", rows["jj032"]["caveat"].lower())
+        self.assertIn("conditional on jj003=yes", rows["jj005"]["caveat"].lower())
+        self.assertIn("1=this county/city", self.labels["jj005"]["value_labels"].lower())
+        self.assertIn("3=another province", self.labels["jj005"]["value_labels"].lower())
+
+    def test_part_j_substantive_fields_are_mapped_and_identifying_items_excluded(self):
+        expected = {f"jj001_{rank}{slot}" for rank in range(1, 4) for slot in "abcdef"}
+        expected.update(f"jj{number:03d}" for number in range(2, 33))
+        community_codes = {
+            r["code"].lower() for r in self.rows
+            if r["wave"] == "2011" and r["module"].lower() == "community"
+            and r["code"].lower().startswith("jj")
+        }
+        self.assertEqual(len(expected), 49)
+        self.assertTrue(expected.issubset(community_codes))
+        self.assertFalse({"jj033", "jj034", "jj035"} & community_codes)
+        codebook_identifiers = re.sub(r"[^a-z0-9]+", "", self.codebook)
+        for code in expected:
+            self.assertIn(code, self.questionnaire)
+            self.assertIn(re.sub(r"[^a-z0-9]+", "", code), codebook_identifiers)
 
 
 if __name__ == "__main__":

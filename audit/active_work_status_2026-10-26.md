@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
-## Current public state: v127; local metadata update prepared
+## Current public state: app v127; Pages Deploy #250 includes the economic/housing/credit batch; JJ005 local update pending
 
 v127 (commit `7b00491`) is deployed. GitHub Validate run [`40213942542`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40213942542) and Pages Deploy run [`40213942548`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40213942548) completed successfully. The public site is verified at app v127 and pair-index v5. It contains source-reviewed 2013/2020 death and end-of-life candidate metadata, no participant-level records or computed associations.
 
@@ -16,18 +16,18 @@ Audit source: [`mortality_endpoint_mapping_review_2026-10-25.md`](mortality_endp
 
 ## Rebuild and current counts
 
-The previous public v127 build completed 157 metadata-finalization steps. The current local rebuild completed 158 steps and contains E/P/C=6,033/2,116/984 rows; 1,562 E/P candidate concepts, 8,043 E/P concept-source mappings, and 3,741 explicitly labeled E/P rows. Generic `not yet reviewed` value-label rows are 0 for E/P and C. The analysis lock gate remains exactly 92 locks. The 2011 community reviews added five provisional concepts and 25 source fields across elder-care service context, local economic/fiscal context, housing-market context, and formal-credit access; see [`community_eldercare_context_source_review_2026-10-26.md`](community_eldercare_context_source_review_2026-10-26.md) and [`community_economic_housing_credit_source_review_2026-10-26.md`](community_economic_housing_credit_source_review_2026-10-26.md).
+The previous public v127 build completed 157 metadata-finalization steps. The current local rebuild completed 158 steps and contains E/P/C=6,034/2,116/984 rows; 1,563 E/P candidate concepts, 8,044 E/P concept-source mappings, and 3,742 explicitly labeled E/P rows. Generic `not yet reviewed` value-label rows are 0 for E/P and C. The analysis lock gate remains exactly 92 locks. The 2011 community reviews added six provisional concepts and 26 source fields across elder-care service context, local economic/fiscal context, housing-market context, and formal-credit access; see [`community_eldercare_context_source_review_2026-10-26.md`](community_eldercare_context_source_review_2026-10-26.md) and [`community_economic_housing_credit_source_review_2026-10-26.md`](community_economic_housing_credit_source_review_2026-10-26.md).
 
-The current local pair index contains 133,528 / 141,920 / 143,137 / 105,493 / 21,630 metadata co-availability pairs for 2011/2013/2015/2018/2020. These are not participant counts, eligible analytic N, or association results. Formal association models and actual pairwise-complete N remain 0. The elder-care update is live from Pages Deploy [#249](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40217511361); the expanded economic/housing/credit update remains local pending validation and deployment. Application cache identifiers remain v127/v5 because application code did not change. The follow-up CI test fix passed Validate [#505](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40217765152).
+The current local pair index contains 133,741 / 141,920 / 143,137 / 105,493 / 21,630 metadata co-availability pairs for 2011/2013/2015/2018/2020. These are not participant counts, eligible analytic N, or association results. Formal association models and actual pairwise-complete N remain 0. The economic/housing/credit batch is live from Pages Deploy [#250](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40219607092); the newly mapped JJ005 machinery-origin concept and Part J inventory audit remain local pending another deployment. The earlier elder-care update was live from Pages Deploy [#249](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40217511361); the expanded economic/housing/credit update remains local pending validation and deployment. Application cache identifiers remain v127/v5 because application code did not change. The follow-up CI test fix passed Validate [#505](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40217765152).
 
 ## Verification
 
-- Current rebuild: all 158 finalization steps completed. Full local pytest suite: 484 passed, 90 subtests passed in 14.53 seconds.
+- Current rebuild: all 158 finalization steps completed. Full local pytest suite: 485 passed, 90 subtests passed; public payload and exact 92-lock checks pass.
 - Public-site payload validator passed.
 - `validate_do_not_analyze_triage.py` passed: all 92 catalog locks match the triage inventory.
 - JavaScript syntax and deferred-loader checks passed; candidate pair cache key remains v5 and page entry point remains app v127.
-- GitHub Pages Deploy #249 published the updated directory; GitHub Validate #505 passed after a CI-only source-test correction. The live homepage reports the new counts over HTTPS.
+- GitHub Pages Deploy #250 published the prior economic/housing/credit update; Validate #507 and Deploy #250 succeeded. The JJ005 update has not yet been pushed.
 
 ## Next work
 
-Commit and publish the locally verified economic/housing/credit batch after this review; then continue systematic source-variable family coverage, retaining explicit dispositions for mapped, excluded, and unresolved fields. In parallel, maintain separate readiness gates for official weights, special values, linkage, and survey design; catalog availability does not imply analysis eligibility. Before mortality models, resolve source-version special values, date calendar conversion, respondent linkage, follow-up/censoring, weights and survey variance design. No mortality or other associations have been estimated.
+Commit and publish the source-reviewed JJ005 machinery-supply-origin mapping and Part J coverage audit after full-suite validation; then continue systematic source-variable family coverage, retaining explicit mapped/excluded/unresolved dispositions. Maintain separate readiness gates for official weights, special values, linkage, and survey design; catalog availability does not imply analysis eligibility.

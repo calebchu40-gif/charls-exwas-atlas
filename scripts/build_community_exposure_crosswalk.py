@@ -52,6 +52,7 @@ CONCEPTS={
  "community_economic_activity_and_fiscal_context":("Community economic activity and fiscal context","Community socioeconomic context","2010 community/village-informant reports of agricultural and industrial revenue, village public expenditure, total village income, net investment, and per-capita net income. Preserve the distinct constructs, reporting units, reference year, and village-only routes; these are aggregate contextual candidates, not household income or audited accounts."),
  "community_housing_market_context":("Community housing-market context","Community socioeconomic context","2011 informant estimates of new/used apartment price, two-bedroom monthly rent, share of households renting out a home, and share living in market-purchased commercial housing. These are community-level contextual measures, not the sampled household's property value, rent, or housing tenure; preserve distinct units and validate special values."),
  "community_formal_credit_access":("Community formal-credit access context","Community socioeconomic context","2010 village-level share of farmers obtaining formal-institution loans and an ordinal community report of household borrowing difficulty relative to three years earlier. Keep percentage and ordinal response separate; these do not establish an individual household's credit access or debt."),
+ "community_agricultural_machinery_supply_origin":("Community agricultural machinery supply origin","Community agricultural context","2011 village-only informant report of where rented large agricultural machinery is sourced: locally, elsewhere in the province, or another province. Asked only on the rented-machinery route; this is a contextual service-supply indicator, not personal machinery use, pesticide exposure, or ambient pollution."),
 }
 MAP={
  "community_water_sources":["jb006_1","jb006_2","jb006_3","jb006_4","jb006_5","jb006_6","jb006_7","jb006_8"],
@@ -100,6 +101,7 @@ MAP={
  "community_economic_activity_and_fiscal_context":["jj011","jj012","jj013","jj014","jj015","jj016"],
  "community_housing_market_context":["jj026","jj027","jj028","jj029","jj030"],
  "community_formal_credit_access":["jj031","jj032"],
+ "community_agricultural_machinery_supply_origin":["jj005"],
 }
 
 # The 2011 Community Questionnaire pages 10, 21–22, and 32–33 explicitly
@@ -196,6 +198,7 @@ QUESTIONNAIRE_REVIEWED = {
  "community_urban_resident_medical_insurance_context","community_rural_cooperative_medical_insurance_context",
  "community_eldercare_center_context","community_home_eldercare_context",
  "community_economic_activity_and_fiscal_context","community_housing_market_context","community_formal_credit_access",
+ "community_agricultural_machinery_supply_origin",
  *[cid for cid in CONCEPTS if cid.startswith("community_kindergarten_") or
     cid.startswith("community_primary_school_") or cid.startswith("community_junior_middle_school_") or
     cid.startswith("community_senior_high_school_") or cid.startswith("community_post_office_") or
@@ -220,7 +223,7 @@ def validate_added_source_mappings():
  cb=" ".join(cpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
  other_subsidy_codes=set(MAP["community_other_subsidy_program_roster"])
  insurance_codes=set(MAP["community_urban_resident_medical_insurance_context"]+MAP["community_rural_cooperative_medical_insurance_context"])
- codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program","community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program","community_eldercare_center_context","community_home_eldercare_context","community_economic_activity_and_fiscal_context","community_housing_market_context","community_formal_credit_access") for code in MAP[cid]}
+ codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program","community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program","community_eldercare_center_context","community_home_eldercare_context","community_economic_activity_and_fiscal_context","community_housing_market_context","community_formal_credit_access","community_agricultural_machinery_supply_origin") for code in MAP[cid]}
  for code in codes:
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
   q_norm="".join(ch for ch in q if ch.isalnum())
@@ -357,6 +360,8 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part B pp.13–14 (PDF pp.16–17), JB030–JB038; community-only versus village-only routing, JB030 No-skip, listed services and units checked against official Codebook; frequencies omitted."
     elif cid in {"community_economic_activity_and_fiscal_context","community_housing_market_context","community_formal_credit_access"}:
      evidence="CHARLS 2011 Community Questionnaire, Part J pp.35–37 (PDF pp.38–40), JJ011–JJ032; reference year, village-only routes, aggregate units, and ordinal loan-difficulty wording checked against official Codebook; descriptive frequencies and extrema omitted."
+    elif cid == "community_agricultural_machinery_supply_origin":
+     evidence="CHARLS 2011 Community Questionnaire, Part J p.35 (PDF p.38), JJ003–JJ005; village-only rented-machinery route, local/provincial origin categories, and conditional county/province text fields checked against official Codebook; frequencies omitted."
     elif code_l.startswith("jf"):
      evidence="CHARLS 2011 Community Questionnaire, Part F pp.21–22 (PDF pp.24–25), JF001–JF009 route; corresponding codebook field label."
     elif code_l.startswith("ji002_"):
@@ -730,6 +735,8 @@ def main():
      caveat=f"Community-informant housing-market estimate: {housing_notes[code_l]}. This is not the sampled household's property value, rent, purchase or tenure; preserve the item unit and verify scale/special values in the authorized release."
     elif cid == "community_formal_credit_access":
      caveat="Village-only informant report; JJ031 is the 2010 proportion of farmers receiving formal-institution loans, while JJ032 is an ordinal comparison of household loan access with three years earlier. The questionnaire's English lender wording and Chinese credit-cooperative wording differ; retain both and verify release-specific interpretation. Neither measures the sampled household's loan or debt."
+    elif cid == "community_agricultural_machinery_supply_origin":
+     caveat="Village-only report, conditional on JJ003=Yes (large machinery is rented); JJ005 distinguishes machinery sourced within the county/city, elsewhere in the province, or from another province. JJ005_1/JJ005_2 are route-specific open text/locality details, not standardized geography codes; preserve the source category and verify release linkage. This is community service-supply context, not individual use or chemical exposure."
     elif code_l == "jb027":
      unit="km"
     elif code_l in {"ja039_1", "ja039_2"}:
