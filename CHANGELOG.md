@@ -1,3 +1,9 @@
+## 2026-10-25 Link source-reviewed hukou life-course C/E metadata (v102 candidate)
+
+- Linked 16 exact 2011/2013 C rows (`BC002`, `BC007`–`BC010`, `BC012`, `BC015`, `BC017`) to existing wave-specific E candidates after checking each field in its official Questionnaire and Codebook.
+- Kept historical status/location and conditional history-item routes, wave-specific answer labels, and pending release/denominator QA. These records are search metadata only; no pollutant dose or default adjustment recommendation is implied, and a focal E must not adjust for itself.
+- Added an idempotent source-checking updater and tests to both metadata build paths. Rebuilt the public field-wave shards from the existing source-checked catalog; E/P roles and pair index are unchanged. All 439 Python tests, public payload validation, exact 92-lock reconciliation, JavaScript syntax, Python compilation, and diff checks pass. No participant data or Codebook frequencies used. GitHub validation and Pages deployment pending.
+
 ## 2026-10-25 Link social participation/care C/E metadata with source caveats
 
 - Linked four exact wave-field C rows (2011 `DA056S8`, 2020 `xsoctype_7_`, and two 2013 money-management helper fields) to existing social-exposure candidates. The 2011 unselected-state storage remains unresolved; 2020 `XSocType[7]` remains a source-defined string field and is not recoded to 0/1.
