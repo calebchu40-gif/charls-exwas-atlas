@@ -803,6 +803,12 @@ def main() -> None:
     append_concept_crosswalk("household_covid_economic_crosswalk_v1.csv", "wave", "code", "concept_id", "source_label", "module",
                              "social determinants", "household income, financial strain, and COVID-period coping",
                              "e", "mapping_status", ("unit", "value_labels", "caveat"))
+    append_concept_crosswalk("pandemic_context_exposure_crosswalk_2020_v1.csv", "wave", "code", "concept_id", "concept_label", "module",
+                             "pandemic and public-health context", "COVID prevention, contact, quarantine, and community restriction context",
+                             "e", "mapping_status", ("construct", "unit", "value_labels", "caveat"))
+    append_concept_crosswalk("pandemic_context_phenotype_crosswalk_2020_v1.csv", "wave", "code", "concept_id", "concept_label", "module",
+                             "pandemic-related outcomes", "COVID-period infection, behavior, functioning, and emotional response",
+                             "p", "mapping_status", ("construct", "unit", "value_labels", "caveat"))
     append_concept_crosswalk("personal_wage_deductions_2020_crosswalk_v1.csv", "wave", "code", "concept_id", "source_label", "module",
                              "social determinants", "personal income, wage, and deductions",
                              "e", "mapping_status", ("unit", "value_labels", "caveat"))
@@ -1112,6 +1118,26 @@ def main() -> None:
             reviewed_status_without_value_label[(wave, code)] = (status, source_ref)
 
     official_review = re.compile(r"official codebook (?:item )?response labels reviewed", re.I)
+    add_reviewed_labels(
+        "pandemic_context_exposure_crosswalk_2020_v1.csv", "wave", "code",
+        "value_labels", "value_label_status", "value_label_source",
+        re.compile(r"Questionnaire response options transcribed|Official 2020 Codebook explicitly coded checkbox labels transcribed", re.I),
+    )
+    add_reviewed_labels(
+        "pandemic_context_phenotype_crosswalk_2020_v1.csv", "wave", "code",
+        "value_labels", "value_label_status", "value_label_source",
+        re.compile(r"Questionnaire response options transcribed|Official 2020 Codebook explicitly coded checkbox labels transcribed", re.I),
+    )
+    add_reviewed_status_without_value_label(
+        "pandemic_context_exposure_crosswalk_2020_v1.csv", "wave", "code",
+        "value_label_status", "value_label_source",
+        re.compile(r"no extractable categorical labels for this field; no categories inferred", re.I),
+    )
+    add_reviewed_status_without_value_label(
+        "pandemic_context_phenotype_crosswalk_2020_v1.csv", "wave", "code",
+        "value_label_status", "value_label_source",
+        re.compile(r"no extractable categorical labels for this field; no categories inferred", re.I),
+    )
     add_reviewed_labels("behavior_exposure_variable_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official codebook response labels reviewed|official selector code reviewed;", re.I))
     add_reviewed_labels("personal_income_exposure_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire/codebook response labels reviewed|official questionnaire response categories transcribed|official questionnaire response categories; frequencies omitted|official Codebook response labels reviewed; frequencies omitted|official questionnaire and Codebook response labels reviewed; frequencies omitted; COVID period and route retained|official questionnaire and Codebook response labels reviewed; frequencies omitted; COVID period and route retained", re.I))
     add_reviewed_status_without_value_label(

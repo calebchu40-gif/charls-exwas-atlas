@@ -289,6 +289,14 @@ map_direct("household_covid_economic_crosswalk_v1.csv", "e",
            modules=("module",), caveats=("caveat",), semantics=("construct",),
            units=("unit",), value_labels=("value_labels",), archives=("source_archive",),
            documents=("source_document",))
+map_direct("pandemic_context_exposure_crosswalk_2020_v1.csv", "e",
+           statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
+           modules=("module",), caveats=("caveat",), semantics=("construct",),
+           units=("unit",), value_labels=("value_labels",), documents=("source_document",))
+map_direct("pandemic_context_phenotype_crosswalk_2020_v1.csv", "p",
+           statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
+           modules=("module",), caveats=("caveat",), semantics=("construct",),
+           units=("unit",), value_labels=("value_labels",), documents=("source_document",))
 map_direct("personal_wage_deductions_2020_crosswalk_v1.csv", "e",
            statuses=("mapping_status",), labels=("concept_label",), domains=("domain",),
            modules=("module",), caveats=("caveat",), semantics=("construct",),

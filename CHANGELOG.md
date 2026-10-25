@@ -1,3 +1,11 @@
+# 2026-10-25 Add CHARLS 2020 COVID prevention/context candidates (v121 prepared)
+
+- Added 43 E-side source-field mappings across 20 prevention, information, contact, quarantine, self-isolation, and residential-restriction concepts, plus 21 P-side mappings across infection-report, behavior/function change, emotional-response, and recreation-cancellation concepts. All mappings are tied to exact 2020 questionnaire and Codebook fields.
+- Transcribed only field-specific category labels: numeric checkbox codes from the exact Codebook section, ordinal codes from the Questionnaire with Codebook wording checked, and no invented labels for continuous measures. The parser now stops at the next variable heading; frequency counts, percentages, extrema, participant values, and analysis Ns are excluded.
+- Full metadata finalization completed in 9.6 minutes. E/P/C site catalogues contain 4,968/2,103/982 rows. The E/P metadata index contains 1,539 candidate concepts (1,240 E, 324 P, including 25 dual-role concepts); the 2020 candidate-pair index reports 19,689 metadata co-availability pairs, not fitted associations or sample sizes. Explicit label coverage is 3,718 of 7,071 E/P catalogue records; generic pending label status is 0 for E/P and C.
+- The exact 92 `DO NOT ANALYZE` locks were validated unchanged. No association models or participant-level results were generated. Audit: `audit/pandemic_context_candidate_review_2020.md`.
+- GitHub Pages deployment is pending this commit; versioned app asset is set to v121. CI/deployment status will be recorded after the remote workflow runs.
+
 ## 2026-10-25 Add community medical-insurance policy context (v120 deployed)
 
 - Added 20 official 2011 Community Questionnaire fields in two separate concepts: urban-resident medical insurance (JF010 option 1; JF011–JF013; six year-indexed household counts for 2005–2010) and New Rural Cooperative Medical Insurance (JF010 option 2; JF014–JF016; eight year-indexed household counts for 2003–2010). The multiple-select routes, community aggregate level, year suffixes, and annual premium units are retained. These are not sampled-person enrollment or individual premiums.

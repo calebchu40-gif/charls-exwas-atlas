@@ -98209,9 +98209,9 @@
       ]
     },
     "2020": {
-      "exposure_count": 183,
-      "phenotype_count": 76,
-      "candidate_pair_count": 13906,
+      "exposure_count": 203,
+      "phenotype_count": 97,
+      "candidate_pair_count": 19689,
       "exposures": [
         {
           "concept_id": "household_monthly_total_expenditure_2020",
@@ -101075,6 +101075,26 @@
           ]
         },
         {
+          "concept_id": "covid_mask_nonuse_duration_2020",
+          "label": "停止佩戴口罩时长（2020）",
+          "domain": "Pandemic prevention and information context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "va005_1",
+              "label": "For How Long",
+              "module": "COVID_Module",
+              "unit": "Months; conditional on VA005 option 2",
+              "value_labels": "",
+              "value_semantics": "Conditional elapsed months since stopping mask use",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Conditional on VA005 stopped-use route; preserve -1 and month-response handling under the official release. Not a general duration for all respondents."
+            }
+          ]
+        },
+        {
           "concept_id": "daytime_nap",
           "label": "午睡时长/午睡题",
           "domain": "睡眠",
@@ -101211,6 +101231,26 @@
               "value_semantics": "household-level income amount",
               "mapping_status": "candidate; official 2020 questionnaire/Codebook item located; eligible route and denominator require validation in approved data",
               "caveat": "GE014_1 follows the household rental-income question about trees, fixed capital, durables or livestock, excluding housing and land. The amount stem does not explicitly state a reference period; preserve it as wave-specific and do not label annual or impute zero outside the route."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_confirmed_or_suspected_household_contact_2020",
+          "label": "家庭成员新冠疑似/确诊接触（2020）",
+          "domain": "Pandemic infection and quarantine context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "vb001_s2",
+              "label": "Cohabitant",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=Yes",
+              "value_semantics": "Household member reported as confirmed or suspected case",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Household-contact context, not a respondent diagnosis; keep household and non-cohabiting contacts separate. Questionnaire item is select-all-that-apply."
             }
           ]
         },
@@ -101615,6 +101655,46 @@
           ]
         },
         {
+          "concept_id": "covid_current_masking_status_2020",
+          "label": "当前佩戴口罩状态（2020）",
+          "domain": "Pandemic prevention and information context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "va005",
+              "label": "Masking Nowadays",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Still wears when going out; 2=Wore during pandemic but not now; 3=Never wears a mask; 4=Has not gone out since the pandemic",
+              "value_semantics": "Current mask status and transition from prior mask use",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Questionnaire includes continued use, stopped-use, never-use and no-outing routes; preserve all categories and do not combine with VA004 as duplicate observations."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_current_outdoor_masking_2020",
+          "label": "当前外出与佩戴口罩情况（2020）",
+          "domain": "Pandemic prevention and information context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "va004",
+              "label": "Masking Nowadays",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Wears a mask when going out; 2=Does not wear a mask when going out; 3=Does not go out at all",
+              "value_semantics": "Current going-out and masking status",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Keep the no-outing category separate from not wearing a mask; current status is a 2020 interview-time measure, not pandemic-period behavior."
+            }
+          ]
+        },
+        {
           "concept_id": "marital_status_current",
           "label": "当前婚姻状态",
           "domain": "sociodemographic and social context",
@@ -101876,6 +101956,286 @@
           ]
         },
         {
+          "concept_id": "covid_prevention_information_sources_2020",
+          "label": "新冠防护信息来源（2020）",
+          "domain": "Pandemic prevention and information context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "va002_s1",
+              "label": "Televisions",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 1=Yes",
+              "value_semantics": "2020 respondent-level multiple-response sources for prevention information",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Information access is a social-context candidate; the final option is exclusive. Do not treat the set as a validated information-literacy score or infer non-selection from missing fields."
+            },
+            {
+              "code": "va002_s10",
+              "label": "No External Sources",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 10=Yes",
+              "value_semantics": "2020 respondent-level multiple-response sources for prevention information",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Information access is a social-context candidate; the final option is exclusive. Do not treat the set as a validated information-literacy score or infer non-selection from missing fields."
+            },
+            {
+              "code": "va002_s2",
+              "label": "Newspaper",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 2=Yes",
+              "value_semantics": "2020 respondent-level multiple-response sources for prevention information",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Information access is a social-context candidate; the final option is exclusive. Do not treat the set as a validated information-literacy score or infer non-selection from missing fields."
+            },
+            {
+              "code": "va002_s3",
+              "label": "Internet",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 3=Yes",
+              "value_semantics": "2020 respondent-level multiple-response sources for prevention information",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Information access is a social-context candidate; the final option is exclusive. Do not treat the set as a validated information-literacy score or infer non-selection from missing fields."
+            },
+            {
+              "code": "va002_s4",
+              "label": "Radio",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 4=Yes",
+              "value_semantics": "2020 respondent-level multiple-response sources for prevention information",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Information access is a social-context candidate; the final option is exclusive. Do not treat the set as a validated information-literacy score or infer non-selection from missing fields."
+            },
+            {
+              "code": "va002_s5",
+              "label": "Friends, Colleagues, Community",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 5=Yes",
+              "value_semantics": "2020 respondent-level multiple-response sources for prevention information",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Information access is a social-context candidate; the final option is exclusive. Do not treat the set as a validated information-literacy score or infer non-selection from missing fields."
+            },
+            {
+              "code": "va002_s6",
+              "label": "Medical practitioners",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 6=Yes",
+              "value_semantics": "2020 respondent-level multiple-response sources for prevention information",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Information access is a social-context candidate; the final option is exclusive. Do not treat the set as a validated information-literacy score or infer non-selection from missing fields."
+            },
+            {
+              "code": "va002_s7",
+              "label": "Village broadcasts",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 7=Yes",
+              "value_semantics": "2020 respondent-level multiple-response sources for prevention information",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Information access is a social-context candidate; the final option is exclusive. Do not treat the set as a validated information-literacy score or infer non-selection from missing fields."
+            },
+            {
+              "code": "va002_s8",
+              "label": "Posters",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 8=Yes",
+              "value_semantics": "2020 respondent-level multiple-response sources for prevention information",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Information access is a social-context candidate; the final option is exclusive. Do not treat the set as a validated information-literacy score or infer non-selection from missing fields."
+            },
+            {
+              "code": "va002_s9",
+              "label": "Others",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 9=Yes",
+              "value_semantics": "2020 respondent-level multiple-response sources for prevention information",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Information access is a social-context candidate; the final option is exclusive. Do not treat the set as a validated information-literacy score or infer non-selection from missing fields."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_quarantine_exposure_reason_2020",
+          "label": "新冠隔离/医学观察经历原因（2020）",
+          "domain": "Pandemic infection and quarantine context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "vb005_s1",
+              "label": "Travels",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 1=Yes",
+              "value_semantics": "Select-all quarantine/medical-observation reasons excluding hospitalization in the question stem",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Travel, close contact, residential-building closure and hospital-related quarantine are distinct contexts. Positive-test and exclusive no-quarantine options are not included in this exposure concept; preserve unknown/refusal options outside the candidate matrix."
+            },
+            {
+              "code": "vb005_s2",
+              "label": "Close contact of COVID cases",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 2=Yes",
+              "value_semantics": "Select-all quarantine/medical-observation reasons excluding hospitalization in the question stem",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Travel, close contact, residential-building closure and hospital-related quarantine are distinct contexts. Positive-test and exclusive no-quarantine options are not included in this exposure concept; preserve unknown/refusal options outside the candidate matrix."
+            },
+            {
+              "code": "vb005_s3",
+              "label": "Building Lockdown",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 3=Yes",
+              "value_semantics": "Select-all quarantine/medical-observation reasons excluding hospitalization in the question stem",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Travel, close contact, residential-building closure and hospital-related quarantine are distinct contexts. Positive-test and exclusive no-quarantine options are not included in this exposure concept; preserve unknown/refusal options outside the candidate matrix."
+            },
+            {
+              "code": "vb005_s4",
+              "label": "After Going to Hospital",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 4=Yes",
+              "value_semantics": "Select-all quarantine/medical-observation reasons excluding hospitalization in the question stem",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Travel, close contact, residential-building closure and hospital-related quarantine are distinct contexts. Positive-test and exclusive no-quarantine options are not included in this exposure concept; preserve unknown/refusal options outside the candidate matrix."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_total_quarantine_days_2020",
+          "label": "新冠隔离总天数（2020）",
+          "domain": "Pandemic infection and quarantine context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "vb008",
+              "label": "Days of Quarantine",
+              "module": "COVID_Module",
+              "unit": "Days",
+              "value_labels": "",
+              "value_semantics": "Total duration across multiple quarantine experiences",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Questionnaire asks for summed days across episodes and uses -1 for unable to answer; distinguish conditional nonparticipation from zero and retain the official questionnaire's handling of repeated episodes."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_quarantine_out_of_pocket_cost_2020",
+          "label": "新冠隔离期间个人支付费用（2020）",
+          "domain": "Pandemic economic and social context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "vb010",
+              "label": "Payment of Quarantine",
+              "module": "COVID_Module",
+              "unit": "Yuan",
+              "value_labels": "",
+              "value_semantics": "Self-reported quarantine accommodation and food cost",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Conditional on quarantine experience; household/individual payer scope and currency-unit storage must be verified in the authorized release. Do not turn skips into zero."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_prevention_measure_awareness_2020",
+          "label": "新冠预防措施认知（2020）",
+          "domain": "Pandemic prevention and information context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "va001_s1",
+              "label": "Washing Hands",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 1=Yes",
+              "value_semantics": "2020 respondent-level awareness checklist for seven specified prevention measures",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Preserve the questionnaire's exclusive/conflicting options separately; do not infer an unselected state from a blank without release-specific storage validation."
+            },
+            {
+              "code": "va001_s2",
+              "label": "Using Disinfectant",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 2=Yes",
+              "value_semantics": "2020 respondent-level awareness checklist for seven specified prevention measures",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Preserve the questionnaire's exclusive/conflicting options separately; do not infer an unselected state from a blank without release-specific storage validation."
+            },
+            {
+              "code": "va001_s3",
+              "label": "Avoid Handshaking",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 3=Yes",
+              "value_semantics": "2020 respondent-level awareness checklist for seven specified prevention measures",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Preserve the questionnaire's exclusive/conflicting options separately; do not infer an unselected state from a blank without release-specific storage validation."
+            },
+            {
+              "code": "va001_s4",
+              "label": "Masking",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 4=Yes",
+              "value_semantics": "2020 respondent-level awareness checklist for seven specified prevention measures",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Preserve the questionnaire's exclusive/conflicting options separately; do not infer an unselected state from a blank without release-specific storage validation."
+            },
+            {
+              "code": "va001_s5",
+              "label": "Avoid Travels",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 5=Yes",
+              "value_semantics": "2020 respondent-level awareness checklist for seven specified prevention measures",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Preserve the questionnaire's exclusive/conflicting options separately; do not infer an unselected state from a blank without release-specific storage validation."
+            },
+            {
+              "code": "va001_s6",
+              "label": "Avoid Gatherings",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 6=Yes",
+              "value_semantics": "2020 respondent-level awareness checklist for seven specified prevention measures",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Preserve the questionnaire's exclusive/conflicting options separately; do not infer an unselected state from a blank without release-specific storage validation."
+            },
+            {
+              "code": "va001_s7",
+              "label": "Social Distancing",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 7=Yes",
+              "value_semantics": "2020 respondent-level awareness checklist for seven specified prevention measures",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Checklist item fields represent awareness/selection, not observed adherence or individual infection dose. Preserve the questionnaire's exclusive/conflicting options separately; do not infer an unselected state from a blank without release-specific storage validation."
+            }
+          ]
+        },
+        {
           "concept_id": "still_smoking_among_ever_smokers",
           "label": "既往吸烟者当前是否仍吸烟",
           "domain": "吸烟行为",
@@ -101892,6 +102252,26 @@
               "value_semantics": "需按问卷跳题解释；非吸烟者结构性空缺",
               "mapping_status": "measured",
               "caveat": "需按问卷跳题解释；非吸烟者结构性空缺"
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_residence_during_lunar_new_year_outbreak_2020",
+          "label": "春节疫情暴发期间居住地（2020）",
+          "domain": "Pandemic infection and quarantine context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "vc001",
+              "label": "Residence During the Lunar New Year Outbreak",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Same village/community; 2=Other village/community in same county; 3=Other county/district; 4=Other area (Hong Kong, Macao, Taiwan or abroad); 999=Refuse",
+              "value_semantics": "Self-reported residence location during the defined outbreak period",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "One-wave historical residence context, not a geocoded exposure or measured community transmission rate; retain location-category and free-text routing separately."
             }
           ]
         },
@@ -101982,6 +102362,56 @@
               "value_semantics": "daily cigarette count; inspect raw special/missing codes before analysis",
               "mapping_status": "变量标签/编码目录匹配；需回查问卷题干、值标签和路由",
               "caveat": "自动概念目录中的逐波字段候选；2020分别记录目前和戒烟前卷烟量；应按是否吸烟及题目路由解释，勿把戒烟前数值当当前剂量。"
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_confirmed_or_suspected_acquaintance_contact_2020",
+          "label": "熟人新冠疑似/确诊接触（2020）",
+          "domain": "Pandemic infection and quarantine context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "vb001_s4",
+              "label": "Acquaintance",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 4=Yes",
+              "value_semantics": "Acquaintance reported as confirmed or suspected case",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Social contact context only; not respondent infection status. Preserve the select-all route and source-specific storage."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_preventive_stockpiling_2020",
+          "label": "疫情初期防护与生活物资储备（2020）",
+          "domain": "Pandemic prevention and information context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "va006_s1",
+              "label": "Food",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 1=Yes",
+              "value_semantics": "Multiple-response purchases above usual during the three days after Wuhan closure",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Short, explicitly dated self-reported stockpiling behavior; do not infer an individual exposure dose or treat the exclusive none option as an independent exposure."
+            },
+            {
+              "code": "va006_s2",
+              "label": "Masks and disinfectants",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 2=Yes",
+              "value_semantics": "Multiple-response purchases above usual during the three days after Wuhan closure",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Short, explicitly dated self-reported stockpiling behavior; do not infer an individual exposure dose or treat the exclusive none option as an independent exposure."
             }
           ]
         },
@@ -102206,6 +102636,46 @@
           ]
         },
         {
+          "concept_id": "covid_fear_related_self_isolation_days_2020",
+          "label": "疫情期间因担心感染居家隔离最长天数（2020）",
+          "domain": "Pandemic infection and quarantine context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "vc000",
+              "label": "Days of Longest Self-Isolation During the Pandemic",
+              "module": "COVID_Module",
+              "unit": "Days",
+              "value_labels": "",
+              "value_semantics": "Longest self-isolation period attributed to infection fear outside quarantine",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "The questionnaire explicitly excludes quarantine through a routing phrase and defines 0 for no such episode or going out every day; preserve -1 unable-to-answer and avoid double-counting formal quarantine."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_mask_use_during_pandemic_2020",
+          "label": "疫情期间外出佩戴口罩（2020）",
+          "domain": "Pandemic prevention and information context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "va003",
+              "label": "Masking During the Pandemic",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Always; 2=Sometimes; 3=Never; 4=Did not go out during the pandemic",
+              "value_semantics": "Ordinal self-report of masking when going out during the pandemic",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Four questionnaire categories include did not go out; retain this as a distinct response, not as never wearing a mask. One-wave retrospective self-report; no causal interpretation."
+            }
+          ]
+        },
+        {
           "concept_id": "covid_agricultural_income_decreased_amount_2020",
           "label": "疫情期间家庭农业净收入减少金额（2020）",
           "domain": "Household COVID-period economic conditions",
@@ -102426,6 +102896,126 @@
           ]
         },
         {
+          "concept_id": "covid_residential_restriction_strictest_2020",
+          "label": "疫情期间社区管控：严格封闭社区（2020）",
+          "domain": "Pandemic-related community environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "vd001_1",
+              "label": "Days of Isolation at This Level",
+              "module": "COVID_Module",
+              "unit": "Indicator: field-specific selection code; duration: days",
+              "value_labels": "",
+              "value_semantics": "Wave-5 community/residential-area restriction type and corresponding duration",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "The questionnaire states periods for restriction types should not overlap and totals should be within the interview-month window; types are ordered by strictness. Retain type and duration as linked but separate source fields, preserve -1 and route/response semantics, and do not sum durations without checking non-overlap and release coding."
+            },
+            {
+              "code": "vd001_s1",
+              "label": "Residential Area Completely Shut Down",
+              "module": "COVID_Module",
+              "unit": "Indicator: field-specific selection code; duration: days",
+              "value_labels": "0=No; 1=Yes",
+              "value_semantics": "Wave-5 community/residential-area restriction type and corresponding duration",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "The questionnaire states periods for restriction types should not overlap and totals should be within the interview-month window; types are ordered by strictness. Retain type and duration as linked but separate source fields, preserve -1 and route/response semantics, and do not sum durations without checking non-overlap and release coding."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_residential_restriction_resident_entry_exit_2020",
+          "label": "疫情期间社区管控：居民出入受限（2020）",
+          "domain": "Pandemic-related community environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "vd001_2",
+              "label": "Days of Isolation at This Level",
+              "module": "COVID_Module",
+              "unit": "Indicator: field-specific selection code; duration: days",
+              "value_labels": "",
+              "value_semantics": "Wave-5 community/residential-area restriction type and corresponding duration",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "The questionnaire states periods for restriction types should not overlap and totals should be within the interview-month window; types are ordered by strictness. Retain type and duration as linked but separate source fields, preserve -1 and route/response semantics, and do not sum durations without checking non-overlap and release coding."
+            },
+            {
+              "code": "vd001_s2",
+              "label": "Restricted Entry or Exit for Residents",
+              "module": "COVID_Module",
+              "unit": "Indicator: field-specific selection code; duration: days",
+              "value_labels": "0=No; 2=Yes",
+              "value_semantics": "Wave-5 community/residential-area restriction type and corresponding duration",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "The questionnaire states periods for restriction types should not overlap and totals should be within the interview-month window; types are ordered by strictness. Retain type and duration as linked but separate source fields, preserve -1 and route/response semantics, and do not sum durations without checking non-overlap and release coding."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_residential_restriction_conditional_visitor_access_2020",
+          "label": "疫情期间社区管控：访客有条件进入（2020）",
+          "domain": "Pandemic-related community environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "vd001_4",
+              "label": "Days of Isolation at This Level",
+              "module": "COVID_Module",
+              "unit": "Indicator: field-specific selection code; duration: days",
+              "value_labels": "",
+              "value_semantics": "Wave-5 community/residential-area restriction type and corresponding duration",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "The questionnaire states periods for restriction types should not overlap and totals should be within the interview-month window; types are ordered by strictness. Retain type and duration as linked but separate source fields, preserve -1 and route/response semantics, and do not sum durations without checking non-overlap and release coding."
+            },
+            {
+              "code": "vd001_s4",
+              "label": "Restricted Entry for Non-Residents",
+              "module": "COVID_Module",
+              "unit": "Indicator: field-specific selection code; duration: days",
+              "value_labels": "0=No; 4=Yes",
+              "value_semantics": "Wave-5 community/residential-area restriction type and corresponding duration",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "The questionnaire states periods for restriction types should not overlap and totals should be within the interview-month window; types are ordered by strictness. Retain type and duration as linked but separate source fields, preserve -1 and route/response semantics, and do not sum durations without checking non-overlap and release coding."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_residential_restriction_visitor_exclusion_2020",
+          "label": "疫情期间社区管控：限制非居民进入（2020）",
+          "domain": "Pandemic-related community environment",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "vd001_3",
+              "label": "Days of Isolation at This Level",
+              "module": "COVID_Module",
+              "unit": "Indicator: field-specific selection code; duration: days",
+              "value_labels": "",
+              "value_semantics": "Wave-5 community/residential-area restriction type and corresponding duration",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "The questionnaire states periods for restriction types should not overlap and totals should be within the interview-month window; types are ordered by strictness. Retain type and duration as linked but separate source fields, preserve -1 and route/response semantics, and do not sum durations without checking non-overlap and release coding."
+            },
+            {
+              "code": "vd001_s3",
+              "label": "No Entry Into Residential Area for Non-Residents",
+              "module": "COVID_Module",
+              "unit": "Indicator: field-specific selection code; duration: days",
+              "value_labels": "0=No; 3=Yes",
+              "value_semantics": "Wave-5 community/residential-area restriction type and corresponding duration",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "The questionnaire states periods for restriction types should not overlap and totals should be within the interview-month window; types are ordered by strictness. Retain type and duration as linked but separate source fields, preserve -1 and route/response semantics, and do not sum durations without checking non-overlap and release coding."
+            }
+          ]
+        },
+        {
           "concept_id": "covid_household_income_coping_strategy_3_2020",
           "label": "疫情期间通过出售资产应对收入不足（2020）",
           "domain": "Household COVID-period economic conditions",
@@ -102622,6 +103212,46 @@
               "value_semantics": "2013/2015活动模块仅随机抽中约一半家庭；缺失可能为设计性子样本",
               "mapping_status": "measured",
               "caveat": "2013/2015活动模块仅随机抽中约一半家庭；缺失可能为设计性子样本"
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_quarantine_social_contact_2020",
+          "label": "隔离期间可见/交谈的同场人员（2020）",
+          "domain": "Pandemic infection and quarantine context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "vb011",
+              "label": "Quarantined with Someone Else in Same Place",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Yes; 2=No",
+              "value_semantics": "Social contact availability at quarantine site",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Conditional on quarantine experience; distinguish yes/no from don't know/refusal, and do not imply a measured social-support scale."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_confirmed_or_suspected_nonhousehold_relative_contact_2020",
+          "label": "非同住亲属新冠疑似/确诊接触（2020）",
+          "domain": "Pandemic infection and quarantine context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "vb001_s3",
+              "label": "Other Relatives",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No",
+              "value_semantics": "Non-cohabiting relative reported as confirmed or suspected case",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Social contact context only; not respondent infection status. Preserve the select-all route and source-specific storage."
             }
           ]
         },
@@ -103439,6 +104069,26 @@
           ]
         },
         {
+          "concept_id": "covid_confirmed_or_suspected_respondent_2020",
+          "label": "受访者新冠疑似/确诊报告（2020）",
+          "domain": "Pandemic-related health outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vb001_s1",
+              "label": "Self",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=No; 1=Yes",
+              "value_semantics": "Respondent self identified as confirmed or suspected case",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "The item combines confirmed and suspected status in the questionnaire wording; do not relabel as laboratory-confirmed infection. Preserve exclusive none/refusal routes and validate released-data coding."
+            }
+          ]
+        },
+        {
           "concept_id": "housework_capacity_health_limitation",
           "label": "因健康/残疾导致的家务能力受限",
           "domain": "work-related functional limitation",
@@ -103495,6 +104145,26 @@
               "value_semantics": "",
               "mapping_status": "按CHARLS原字段标签匹配；量表计分未定义",
               "caveat": "2020条目编码改为dc016–dc025序列；不可套用2011–2018题号。条目级候选映射；响应选项、参照期、反向计分和跳题仍需逐波核验。"
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_positive_test_quarantine_reason_2020",
+          "label": "因核酸检测阳性隔离（2020）",
+          "domain": "Pandemic-related health outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vb005_s5",
+              "label": "Tested Positive",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "0=Yes",
+              "value_semantics": "Positive nucleic-acid test as a quarantine reason",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "This checklist flag is a self-reported positive-test reason, not a complete infection history; do not equate a blank with a negative test."
             }
           ]
         },
@@ -103620,6 +104290,26 @@
           ]
         },
         {
+          "concept_id": "covid_hospitalization_days_2020",
+          "label": "新冠治疗住院天数（2020）",
+          "domain": "Pandemic-related health outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vb004",
+              "label": "Days of Hospital Stay for COVID treatment",
+              "module": "COVID_Module",
+              "unit": "Days",
+              "value_labels": "",
+              "value_semantics": "Self-reported hospital stay for coronavirus treatment",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Questionnaire instructs 0 if not hospitalized and -1 if unable to answer; retain conditional eligibility, special values, and the distinction between no hospitalization and missing."
+            }
+          ]
+        },
+        {
           "concept_id": "cog_orientation_time",
           "label": "时间定向",
           "domain": "定向能力",
@@ -103676,6 +104366,366 @@
               "value_semantics": "",
               "mapping_status": "按波次模块及官方问卷题意映射；需检查值标签/路由",
               "caveat": "问卷语义映射候选；按问卷分别记录年/月/日/星期/季节的题目；各波覆盖项目不同，勿直接汇总为相同总分。"
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_square_dancing_cancellation_days_2020",
+          "label": "疫情期間广场舞活动取消天数（2020）",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vd002",
+              "label": "Days of Outdoor Dancing Cancellation",
+              "module": "COVID_Module",
+              "unit": "Days",
+              "value_labels": "",
+              "value_semantics": "Days of outdoor dancing cancellation",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "One-wave self-reported duration of cancelled public recreation; do not treat as measured activity dose or sum with household restriction durations."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_period_moderate_activity_change_2020",
+          "label": "疫情期间中等强度活动时长变化",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vc005",
+              "label": "Moderate Activities During the Lunar New Year Outbreak",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Increased a lot; 2=Increased a little; 3=Unchanged; 4=Decreased a little; 5=Decreased a lot",
+              "value_semantics": "Retrospective ordinal comparison with a hypothetical no-pandemic situation during the specified outbreak period",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "This is a self-reported change relative to a hypothetical counterfactual, not absolute activity, intake or exposure. Preserve the one-wave time window, response direction and item-specific never/no-device routes; do not combine items into an unvalidated score."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_period_internet_contact_change_2020",
+          "label": "疫情期间互联网社交联系频率变化",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vc011",
+              "label": "Making Internet Contact During the Lunar New Year Outbreak",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Increased a lot; 2=Increased a little; 3=Unchanged; 4=Decreased a little; 5=Decreased a lot; 6=No such devices in then-residence; 7=Never done this",
+              "value_semantics": "Retrospective ordinal comparison with a hypothetical no-pandemic situation during the specified outbreak period",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "This is a self-reported change relative to a hypothetical counterfactual, not absolute activity, intake or exposure. Preserve the one-wave time window, response direction and item-specific never/no-device routes; do not combine items into an unvalidated score."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_period_vigorous_activity_change_2020",
+          "label": "疫情期间剧烈活动时长变化",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vc004",
+              "label": "Intense Activities During the Lunar New Year Outbreak",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Increased a lot; 2=Increased a little; 3=Unchanged; 4=Decreased a little; 5=Decreased a lot",
+              "value_semantics": "Retrospective ordinal comparison with a hypothetical no-pandemic situation during the specified outbreak period",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "This is a self-reported change relative to a hypothetical counterfactual, not absolute activity, intake or exposure. Preserve the one-wave time window, response direction and item-specific never/no-device routes; do not combine items into an unvalidated score."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_period_smoking_change_2020",
+          "label": "疫情期间吸烟量变化",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vc014",
+              "label": "Smoking During the Lunar New Year Outbreak",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Increased a lot; 2=Increased a little; 3=Unchanged; 4=Decreased a little; 5=Decreased a lot",
+              "value_semantics": "Retrospective ordinal comparison with a hypothetical no-pandemic situation during the specified outbreak period",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "This is a self-reported change relative to a hypothetical counterfactual, not absolute activity, intake or exposure. Preserve the one-wave time window, response direction and item-specific never/no-device routes; do not combine items into an unvalidated score."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_period_square_dancing_change_2020",
+          "label": "疫情期间广场舞频率变化",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vc009",
+              "label": "Dancing Outdoors During the Lunar New Year Outbreak",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Increased a lot; 2=Increased a little; 3=Unchanged; 4=Decreased a little; 5=Decreased a lot; 6=Never done this",
+              "value_semantics": "Retrospective ordinal comparison with a hypothetical no-pandemic situation during the specified outbreak period",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "This is a self-reported change relative to a hypothetical counterfactual, not absolute activity, intake or exposure. Preserve the one-wave time window, response direction and item-specific never/no-device routes; do not combine items into an unvalidated score."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_period_neighbor_visits_change_2020",
+          "label": "疫情期间探访邻居频率变化",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vc007",
+              "label": "Visiting Others During the Lunar New Year Outbreak",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Increased a lot; 2=Increased a little; 3=Unchanged; 4=Decreased a little; 5=Decreased a lot; 6=Never done this",
+              "value_semantics": "Retrospective ordinal comparison with a hypothetical no-pandemic situation during the specified outbreak period",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "This is a self-reported change relative to a hypothetical counterfactual, not absolute activity, intake or exposure. Preserve the one-wave time window, response direction and item-specific never/no-device routes; do not combine items into an unvalidated score."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_mahjong_cancellation_days_2020",
+          "label": "疫情期间棋牌公共活动取消天数（2020）",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vd003",
+              "label": "Days of Cancellation of Public Recreation Playing Mahjong and Cards",
+              "module": "COVID_Module",
+              "unit": "Days",
+              "value_labels": "",
+              "value_semantics": "Days of cancellation of public mahjong/card recreation",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "One-wave self-reported duration of cancelled public recreation; do not treat as individual activity dose or combine with VD002 without an estimand."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_period_mahjong_cards_change_2020",
+          "label": "疫情期间棋牌活动频率变化",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vc008",
+              "label": "Playing Mahjong and Cards During the Lunar New Year Outbreak",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Increased a lot; 2=Increased a little; 3=Unchanged; 4=Decreased a little; 5=Decreased a lot; 6=Never done this",
+              "value_semantics": "Retrospective ordinal comparison with a hypothetical no-pandemic situation during the specified outbreak period",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "This is a self-reported change relative to a hypothetical counterfactual, not absolute activity, intake or exposure. Preserve the one-wave time window, response direction and item-specific never/no-device routes; do not combine items into an unvalidated score."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_period_outdoor_frequency_change_2020",
+          "label": "疫情期间每日外出频率变化",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vc002",
+              "label": "Times of Going Outdoors During the Lunar New Year Outbreak",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Increased a lot; 2=Increased a little; 3=Unchanged; 4=Decreased a little; 5=Decreased a lot",
+              "value_semantics": "Retrospective ordinal comparison with a hypothetical no-pandemic situation during the specified outbreak period",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "This is a self-reported change relative to a hypothetical counterfactual, not absolute activity, intake or exposure. Preserve the one-wave time window, response direction and item-specific never/no-device routes; do not combine items into an unvalidated score."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_period_outdoor_time_change_2020",
+          "label": "疫情期间每日户外时长变化",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vc003",
+              "label": "Time Spent Outdoors During the Lunar New Year Outbreak",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Increased a lot; 2=Increased a little; 3=Unchanged; 4=Decreased a little; 5=Decreased a lot",
+              "value_semantics": "Retrospective ordinal comparison with a hypothetical no-pandemic situation during the specified outbreak period",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "This is a self-reported change relative to a hypothetical counterfactual, not absolute activity, intake or exposure. Preserve the one-wave time window, response direction and item-specific never/no-device routes; do not combine items into an unvalidated score."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_period_food_intake_change_2020",
+          "label": "疫情期间每日进食量变化",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vc017",
+              "label": "Eating During the Lunar New Year Outbreak",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Increased a lot; 2=Increased a little; 3=Unchanged; 4=Decreased a little; 5=Decreased a lot",
+              "value_semantics": "Retrospective ordinal comparison with a hypothetical no-pandemic situation during the specified outbreak period",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "This is a self-reported change relative to a hypothetical counterfactual, not absolute activity, intake or exposure. Preserve the one-wave time window, response direction and item-specific never/no-device routes; do not combine items into an unvalidated score."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_period_phone_contact_change_2020",
+          "label": "疫情期间电话/短信联系频率变化",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vc010",
+              "label": "Calling and Messaging During the Lunar New Year Outbreak",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Increased a lot; 2=Increased a little; 3=Unchanged; 4=Decreased a little; 5=Decreased a lot; 6=No such devices in then-residence; 7=Never done this",
+              "value_semantics": "Retrospective ordinal comparison with a hypothetical no-pandemic situation during the specified outbreak period",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "This is a self-reported change relative to a hypothetical counterfactual, not absolute activity, intake or exposure. Preserve the one-wave time window, response direction and item-specific never/no-device routes; do not combine items into an unvalidated score."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_period_sleep_change_2020",
+          "label": "疫情期间睡眠时长变化",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vc016",
+              "label": "Sleeping During the Lunar New Year Outbreak",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Increased a lot; 2=Increased a little; 3=Unchanged; 4=Decreased a little; 5=Decreased a lot",
+              "value_semantics": "Retrospective ordinal comparison with a hypothetical no-pandemic situation during the specified outbreak period",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "This is a self-reported change relative to a hypothetical counterfactual, not absolute activity, intake or exposure. Preserve the one-wave time window, response direction and item-specific never/no-device routes; do not combine items into an unvalidated score."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_period_light_activity_change_2020",
+          "label": "疫情期间轻体力活动时长变化",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vc006",
+              "label": "Light Activities During the Lunar New Year Outbreak",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Increased a lot; 2=Increased a little; 3=Unchanged; 4=Decreased a little; 5=Decreased a lot",
+              "value_semantics": "Retrospective ordinal comparison with a hypothetical no-pandemic situation during the specified outbreak period",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "This is a self-reported change relative to a hypothetical counterfactual, not absolute activity, intake or exposure. Preserve the one-wave time window, response direction and item-specific never/no-device routes; do not combine items into an unvalidated score."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_period_alcohol_change_2020",
+          "label": "疫情期间饮酒量变化",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vc015",
+              "label": "Drinking During the Lunar New Year Outbreak",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Increased a lot; 2=Increased a little; 3=Unchanged; 4=Decreased a little; 5=Decreased a lot",
+              "value_semantics": "Retrospective ordinal comparison with a hypothetical no-pandemic situation during the specified outbreak period",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "This is a self-reported change relative to a hypothetical counterfactual, not absolute activity, intake or exposure. Preserve the one-wave time window, response direction and item-specific never/no-device routes; do not combine items into an unvalidated score."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_anxiety_symptom_2020",
+          "label": "疫情相关压力/焦虑感（2020）",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vc013",
+              "label": "Feeling Anxiety During the Lunar New Year Outbreak",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Rarely or not at all; 2=Not much; 3=Sometimes or half of the time; 4=Most of the time; 997=Don't know; 999=Refuse",
+              "value_semantics": "Self-reported frequency of pandemic-related fear or stress/anxiety during the defined outbreak period",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Single-item, pandemic-specific emotional response; not a validated general depression/anxiety scale. Preserve the four ordered responses, don't-know/refusal codes and time frame."
+            }
+          ]
+        },
+        {
+          "concept_id": "covid_fear_symptom_2020",
+          "label": "疫情相关恐惧感（2020）",
+          "domain": "Pandemic-related behavioral and functioning outcomes",
+          "roles": [
+            "p"
+          ],
+          "source_fields": [
+            {
+              "code": "vc012",
+              "label": "Feeling Fears During the Lunar New Year Outbreak",
+              "module": "COVID_Module",
+              "unit": "",
+              "value_labels": "1=Rarely or not at all; 2=Not much; 3=Sometimes or half of the time; 4=Most of the time; 997=Don't know; 999=Refuse",
+              "value_semantics": "Self-reported frequency of pandemic-related fear or stress/anxiety during the defined outbreak period",
+              "mapping_status": "2020 official Questionnaire and Codebook field identity checked; candidate metadata only; verify authorized-release coding, route, eligibility and sample design before analysis",
+              "caveat": "Single-item, pandemic-specific emotional response; not a validated general depression/anxiety scale. Preserve the four ordered responses, don't-know/refusal codes and time frame."
             }
           ]
         },
@@ -110505,8 +111555,8 @@
       "baseline_wave": "2011",
       "followup_wave": "2020",
       "exposure_count": 125,
-      "phenotype_count": 76,
-      "candidate_pair_count": 9500,
+      "phenotype_count": 97,
+      "candidate_pair_count": 12125,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -110542,16 +111592,37 @@
         "dyslipidemia_diagnosis",
         "memory_related_disease_diagnosis",
         "hypertension_diagnosis",
+        "covid_confirmed_or_suspected_respondent_2020",
         "housework_capacity_health_limitation",
         "work_capacity_health_limitation",
         "mood_bothered",
+        "covid_positive_test_quarantine_reason_2020",
         "mood_hopeful",
         "mood_depressed",
         "mood_lonely",
         "mood_fearful",
         "mood_happy",
         "mood_could_not_get_going",
+        "covid_hospitalization_days_2020",
         "cog_orientation_time",
+        "covid_square_dancing_cancellation_days_2020",
+        "covid_period_moderate_activity_change_2020",
+        "covid_period_internet_contact_change_2020",
+        "covid_period_vigorous_activity_change_2020",
+        "covid_period_smoking_change_2020",
+        "covid_period_square_dancing_change_2020",
+        "covid_period_neighbor_visits_change_2020",
+        "covid_mahjong_cancellation_days_2020",
+        "covid_period_mahjong_cards_change_2020",
+        "covid_period_outdoor_frequency_change_2020",
+        "covid_period_outdoor_time_change_2020",
+        "covid_period_food_intake_change_2020",
+        "covid_period_phone_contact_change_2020",
+        "covid_period_sleep_change_2020",
+        "covid_period_light_activity_change_2020",
+        "covid_period_alcohol_change_2020",
+        "covid_anxiety_symptom_2020",
+        "covid_fear_symptom_2020",
         "pain_intensity",
         "cog_figure_copy",
         "mood_restless_sleep",

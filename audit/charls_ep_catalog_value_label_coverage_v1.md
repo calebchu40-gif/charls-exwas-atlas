@@ -2,8 +2,8 @@
 
 更新：2026-10-25。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
-- 最终E/P目录行：7,007；不同波次—字段码：6,794。一个字段可对应多个候选类别/角色。
-- 有非空标签文本的E/P目录行：3,665；不同波次—字段码：3,584。连续测量、计数值及测量流程字段可已审但不需要离散标签。
+- 最终E/P目录行：7,071；不同波次—字段码：6,858。一个字段可对应多个候选类别/角色。
+- 有非空标签文本的E/P目录行：3,718；不同波次—字段码：3,637。连续测量、计数值及测量流程字段可已审但不需要离散标签。
 - 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：0。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -23,6 +23,7 @@
 |e|housing and built environment|480|480|248|2|
 |e|internal biomarker|32|32|0|1|
 |e|life-course and reproductive history|8|8|0|1|
+|e|pandemic and public-health context|43|43|35|1|
 |e|social determinants|2,138|2,138|1,013|20|
 |e|social protection|1,331|1,331|427|30|
 |p|anthropometric|24|15|0|1|
@@ -34,6 +35,7 @@
 |p|health and symptoms|177|177|171|5|
 |p|healthcare access|217|217|66|2|
 |p|mental health|52|52|52|1|
+|p|pandemic-related outcomes|21|21|18|1|
 |p|physical function|266|260|169|7|
 |p|social wellbeing|10|10|10|4|
 
@@ -41,7 +43,7 @@
 
 |审核状态|最终E/P目录行|
 |---|---:|
-|officially reviewed|2,683|
+|officially reviewed|2,736|
 |official codebook field located; continuous/count or no categorical labels|730|
 |numeric/time unit metadata available; no discrete labels assigned; see concept crosswalk|468|
 |codebook field located; continuous/open response or no categorical labels|371|
@@ -95,6 +97,7 @@
 |official questionnaire checkbox menu and codebook slot coding; frequencies omitted; absence is not a negative response outside the routed checklist|11|
 |official Codebook identifies affirmative caregiver-option code; unselected coding and eligible denominator unresolved; no response-value labels assigned|11|
 |questionnaire options verified; all offered categories shown, including categories with no Codebook observations; frequencies omitted|11|
+|Official 2020 Questionnaire and Codebook field identity reviewed; no extractable categorical labels for this field; no categories inferred; unit, special values, route and release storage require authorized-release QA|11|
 |official questionnaire confirms response options; frequencies omitted; self-awareness route retained; release coding and eligible denominator require validation|11|
 |official Codebook identifies affirmative inheritance-source option; unselected storage and denominator unresolved; no response-value labels assigned|10|
 |Official questionnaire identifies a numeric monetary amount; continuous monetary amount; questionnaire reporting unit 1,000 Yuan/square metre; no discrete category labels assigned; release storage and special codes remain unverified.|10|

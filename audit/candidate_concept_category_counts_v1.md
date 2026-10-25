@@ -6,11 +6,12 @@
 |---|---|---:|---:|---:|
 |e|social determinants|607|2142|2138|
 |e|social protection|314|1331|1331|
-|e|community context|123|330|330|
+|e|community context|125|350|350|
 |e|behavior|47|315|267|
 |e|housing and built environment|40|480|480|
 |e|family and intergenerational context|32|42|39|
 |e|food and household environment|29|161|161|
+|e|pandemic and public-health context|20|43|43|
 |e|internal biomarker|16|32|32|
 |e|healthcare access|7|109|109|
 |e|early-life and family socioeconomic context|6|6|4|
@@ -23,10 +24,11 @@
 |p|chronic disease|33|248|248|
 |p|cognition|24|338|338|
 |p|healthcare access|22|217|217|
+|p|pandemic-related outcomes|21|21|21|
 |p|biochemistry|16|32|32|
 |p|mental health|11|52|52|
 |p|anthropometric|5|24|15|
 |p|social wellbeing|4|10|10|
 |p|blood pressure|3|54|27|
 
-总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1496个（E=1218、P=303，25个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。
+总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1539个（E=1240、P=324，25个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。
