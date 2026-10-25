@@ -1,3 +1,7 @@
+## 2026-10-25 Clarify official baseline PSU mapping limits
+
+- Added CHARLS official baseline details that 30 large communities were split into geographic subareas and six sampled communities were replaced. This narrows the unresolved design gate: `communityID` stays a PSU candidate until the released PSU file's keys, labels, and subcommunity mapping are verified; geography is not used to invent variance strata.
+- Updated the five-wave readiness matrix and active status. This is a documentation-only methods clarification; no data or model outputs were added.
 ## 2026-10-25 Surface the separate 2014 Life History directory on the landing page (v111 deployed)
 
 - Added a home-page entry for the special 2014 retrospective Life History catalogue: 18 concept groups and 471 source-field mappings (466 E, 5 P). The card states that this survey is separate from the five regular waves, has no official weight, and is excluded from regular-wave co-availability counts and weighted association models.
