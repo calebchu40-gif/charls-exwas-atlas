@@ -1,8 +1,8 @@
-## 2026-10-25 Link recent hukou-change C/E metadata with routed categories (v103 candidate)
+## 2026-10-25 Link recent hukou-change C/E metadata with routed categories (v103 deployed)
 
 - Linked 11 exact 2013/2015/2018 C rows for recent hukou-status/location changes and their conditional reasons to existing exposure concepts. Exact fields are present in each wave’s public Questionnaire and Codebook.
 - Preserved the 2013 no-change categories inside reason items, the 2015 `ZBC001` nonresponse route that skips `BC002_W3`, the 2018 reinterview-only route, and the five-versus-six category difference in 2015/2018 location reasons. Raw codes are not pooled across waves; no self-adjustment or default covariate recommendation is made.
-- Added a source-checking updater to both metadata pipelines, exact-row audit, UI subcategory label, and regression tests. E/P/C=4,845/2,082/982. All 441 Python tests, public payload validation, exact 92-lock reconciliation, JS/Python syntax and diff checks pass. No participant records, Codebook frequencies, models, or sample Ns were used. GitHub validation and deployment pending.
+- Added a source-checking updater to both metadata pipelines, exact-row audit, UI subcategory label, and regression tests. E/P/C=4,845/2,082/982. All 441 Python tests, public payload validation, exact 92-lock reconciliation, JS/Python syntax and diff checks pass. No participant records, Codebook frequencies, models, or sample Ns were used. GitHub Validate [#446 / `40164627044`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40164627044) and Pages Deploy [#224 / `40164627071`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40164627071) succeeded. Cache-busted homepage, app, E/P/C catalogues, and candidate-pair index match the local v103 build.
 
 ## 2026-10-25 Link source-reviewed hukou life-course C/E metadata (v102 candidate)
 

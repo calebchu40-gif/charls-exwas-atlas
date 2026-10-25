@@ -46,6 +46,10 @@ Reviewed and propagated source-specific C metadata for 2011–2018 `BB004` resid
 
 # CHARLS ExWAS Atlas current work status
 
+## 2026-10-25 continuation: recent hukou-change C/E links deployed (v103)
+
+Commit `42c89fd` links 11 exact 2013/2015/2018 recent hukou-change and conditional reason fields to reviewed E concepts. GitHub Validate [#446 / `40164627044`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40164627044) and Pages Deploy [#224 / `40164627071`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40164627071) succeeded. Cache-busted homepage, app bundle, E/P/C catalogues and pair index match the committed files. The 2015 ZBC001 nonresponse skip, 2018 reinterview route, conditional reason fields and wave-specific category differences remain explicit. E/P/C=4,845/2,082/982; 441 tests pass; models and actual analytic Ns remain 0. Audit: `audit/hukou_recent_change_c_overlap_review_2026-10-25.md`.
+
 ## 2026-10-25 continuation: synchronize 2011 chronic-treatment selected-storage review
 
 Propagated the aggregate-only local DA010 storage QA to the 32 exact 2011 treatment-option fields in the source map, concept crosswalk, candidate-field CSV/JSON, and public site catalog. The selected Codebook category index is corroborated against nonmissing local codes, while blank/unselected storage and route eligibility remain unresolved. Explanatory caveats are kept separate from formal lock flags; the `DO NOT ANALYZE` triage inventory remains 92. The finalization-only metadata build and topic-specific fast refresh completed; all 417 Python tests pass, and no participant data or frequencies were published. Commits `71c6214` and `9874960` passed Validate `40152950706` and Pages Deploy `40152949965`; the public pair-browser JSON returned HTTP 200. Details: `audit/2011_chronic_treatment_selected_storage_status_sync_2026-10-25.md`. Formal models and actual pairwise Ns remain 0.
