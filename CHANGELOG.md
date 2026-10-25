@@ -1,7 +1,7 @@
-## 2026-10-25 Recheck published-wave boundary (v114 pending deployment)
+## 2026-10-25 Recheck published-wave boundary (v114 live)
 
 - Rechecked CHARLS's current public catalog and official releases. It still lists the 2020 national follow-up as the latest downloadable regular-wave dataset, while 2021–2023 recruitment materials describe a fifth regular survey without a corresponding data package in that catalog. Kept the survey implementations separate by actual release documentation rather than merging on wave title.
-- Refreshed the official-source audit and the objective-measurement page's as-of date/cache key. No candidate mappings or analysis eligibility changed; deployment verification is pending.
+- Refreshed the official-source audit and the objective-measurement page's as-of date/cache key. Public homepage returns HTTP 200, loads `app.js?v=114`, and includes the new release-boundary wording. GitHub Validate #474 and Pages Deploy #235 still show in progress on their public run pages, so workflow completion is not recorded as confirmed. No candidate mappings or analysis eligibility changed.
 
 ## 2026-10-25 Add a metadata-only intake gate for CHARLS Wave 2 weights
 

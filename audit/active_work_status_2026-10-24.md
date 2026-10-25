@@ -616,3 +616,10 @@ Rechecked five 2011 E/P codebook fields that appeared absent under literal match
 ## 2026-10-25 continuation: metadata-only Wave 2 weights intake gate
 
 Added a pre-merge gate for the official 2013 Wave 2 `Weights.dta`. It checks CHARLS's published 2015-11-18 SHA1 before parsing the Stata header and uses metadata-only access to require `ID`, `crosssection`, `longitudinal`, and at least one weight field. Synthetic fixtures cover the valid hash/schema and rejection paths. The official file is still absent from the protected intake directory, so no actual flag values, IDs, weights, merges, or sample counts were inspected; the 2013 analysis gate remains open. Documentation: `audit/wave2_weights_metadata_intake_gate_2026-10-25.md`. The 2015 blood-file intake gate remains separate. No public site asset changed.
+
+
+## 2026-10-25 continuation: v114 release-boundary publication and next gates
+
+The official release-boundary update (commit `80b123b`) is live: the public homepage returns HTTP 200, loads `app.js?v=114`, and includes the 2026-10-25 catalog review. Public GitHub Actions pages still report Validate #474 and Pages Deploy #235 as in progress, so their completion is not asserted here. This metadata-only site change does not alter candidate links or analysis eligibility.
+
+To reduce repeated manual work, continue with reusable batch audits over official question/codebook tables and catalog records; prioritize tasks that either resolve many wave-variable identities at once or close a formal-analysis gate. Current external gates are the user's CHARLS-account download of official 2013 `Weights.dta` and 2015 standalone `Blood Data`, plus release-version confirmation for the local prepared tables. Scripts now verify approved checksums and inspect only file headers before any controlled analysis. Until those gates are satisfied, the public site must continue to show candidate metadata only: formal association models and pairwise analytic Ns remain 0.
