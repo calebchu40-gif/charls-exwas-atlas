@@ -152,6 +152,22 @@
 2011,jg014,community_single_child_reward_program,Year,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jg015,community_single_child_reward_program,Num. of Households Received Subsidies for Being Parents of Single Child,,official questionnaire identifies a continuous household count; no discrete categories; Codebook frequencies omitted,sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jg016,community_single_child_reward_program,Average Subsidy Standard,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg025,community_pension_65plus_program,Does Your V/C Issue Pension to Persons Older than 65,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg026,community_pension_65plus_program,Year,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg027,community_pension_65plus_program,Num. of Persons Received,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg028,community_pension_65plus_program,Average Subsidy standard,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg029,community_pension_80plus_subsidy_program,Does Your V/C Have Subsidy for Persons Older than 80,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg030,community_pension_80plus_subsidy_program,Year,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg031,community_pension_80plus_subsidy_program,Num. of Persons Received,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg032,community_pension_80plus_subsidy_program,Average Subsidy Standard,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg033,community_nrps_program,Does Your V/C Have NRPS,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg034,community_nrps_program,Year,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg035,community_nrps_program,Num. of Persons Received NRPS,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg036,community_nrps_program,Average Subsidy Standard,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg037,community_orps_program,Does Your V/C Have the ORPS,1=Yes; 2=No,official codebook response labels; frequencies omitted,sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg038,community_orps_program,Year,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg039,community_orps_program,Num. of Persons Received ORPS,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
+2011,jg040,community_orps_program,Average Subsidy Standard,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jb028_1_1_,community_kindergarten_count,Num. of this Facility,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jb028_2_1_,community_kindergarten_distance,Distance,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt
 2011,jb028_1_2_,community_primary_school_count,Num. of this Facility,,"official codebook field located; continuous/count response, no category labels",sources_official/CHARLS_2011_Codebook_extracted.txt

@@ -2086,7 +2086,7 @@
         "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, village-only JG017–JG020; subsidy examples, No-skip route, 2010 household uptake count and stated per-mu unit checked against official Codebook labels; frequencies omitted.",
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "Yuan/mu",
-        "caveat": "Community-reported average reforestation-subsidy standard, conditional on JG021=Yes. The questionnaire states Yuan per mu; do not treat it as an individual's payment or evidence of achieved forest restoration.",
+        "caveat": "Community-reported average agricultural-subsidy standard per mu, conditional on JG017=Yes. Do not treat it as an individual's payment or a chemical-use/exposure measure.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
@@ -2254,6 +2254,246 @@
         "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
         "unit": "Yuan/month",
         "caveat": "Community-reported average monthly single-child-parent reward standard; not the sampled household's actual benefit.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_pension_65plus_program",
+    "label": "Community pension subsidy for adults over 65 context",
+    "domain": "Community social-policy context",
+    "caveat": "2011 community-informant report of the over-65 pension subsidy program, its start year, 2010 recipient count and monthly standard. It is distinct from the over-80 subsidy and named rural pension systems; it does not establish sampled-person eligibility or receipt.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jg025",
+        "module": "community",
+        "source_label": "Does Your V/C Issue Pension to Persons Older than 65",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Community-level Yes/No report of a pension subsidy for persons older than 65. No routes to JG029; this is not an individual's age eligibility or receipt status.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg026",
+        "module": "community",
+        "source_label": "Year",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "year",
+        "caveat": "Year the community began the over-65 pension subsidy policy, conditional on JG025=Yes. Preserve the route and validate release-specific special values.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg027",
+        "module": "community",
+        "source_label": "Num. of Persons Received",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "persons",
+        "caveat": "Number of persons older than 65 reported to have received this community pension subsidy in 2010; not linked to sampled respondents.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg028",
+        "module": "community",
+        "source_label": "Average Subsidy standard",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/month",
+        "caveat": "Community-reported average monthly over-65 pension subsidy standard; not an individual's benefit amount.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_pension_80plus_subsidy_program",
+    "label": "Community subsidy for adults over 80 context",
+    "domain": "Community social-policy context",
+    "caveat": "2011 community-informant report of the over-80 subsidy program, its start year, 2010 recipient count and monthly standard. Preserve the age-specific program as separate from the over-65 pension and named rural pension systems; it is not an individual's receipt status.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jg029",
+        "module": "community",
+        "source_label": "Does Your V/C Have Subsidy for Persons Older than 80",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Community-level Yes/No report of a subsidy for persons older than 80. No routes to JG033; keep distinct from the over-65 pension and rural pension systems.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg030",
+        "module": "community",
+        "source_label": "Year",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "year",
+        "caveat": "Year the community began the over-80 subsidy, conditional on JG029=Yes. Preserve the route and validate release-specific special values.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg031",
+        "module": "community",
+        "source_label": "Num. of Persons Received",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "persons",
+        "caveat": "Number of persons older than 80 reported to have received this subsidy in 2010; not linked to sampled respondents.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg032",
+        "module": "community",
+        "source_label": "Average Subsidy Standard",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/month",
+        "caveat": "Community-reported average monthly over-80 subsidy standard; not an individual's benefit amount.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_nrps_program",
+    "label": "Community New Rural Pension System context",
+    "domain": "Community social-policy context",
+    "caveat": "2011 village-only report of whether the New Rural Pension System (NRPS) was implemented, its start year, 2010 recipient count and monthly standard. Keep distinct from the Old Rural Pension System; do not infer individual enrollment, contribution or receipt.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jg033",
+        "module": "community",
+        "source_label": "Does Your V/C Have NRPS",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Village-only Yes/No report of New Rural Pension System implementation. The questionnaire routes No to JG036, which skips JG034–JG035; preserve this unusual route and do not interpret the later standard as proof of NRPS enrollment or receipt.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg034",
+        "module": "community",
+        "source_label": "Year",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "year",
+        "caveat": "Year the village began the New Rural Pension System, asked on the JG033=Yes route. Village-only; verify the route in the authorized release.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg035",
+        "module": "community",
+        "source_label": "Num. of Persons Received NRPS",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "persons",
+        "caveat": "Number of persons reported to have received pension through NRPS in 2010, conditional on village program route; not linked to sampled respondents.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg036",
+        "module": "community",
+        "source_label": "Average Subsidy Standard",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/month",
+        "caveat": "Community-reported average monthly subsidy standard. The questionnaire routes JG033=No directly here, so item applicability is ambiguous; preserve separately and do not assume it measures NRPS recipients only.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      }
+    ]
+  },
+  {
+    "concept_id": "community_orps_program",
+    "label": "Community Old Rural Pension System context",
+    "domain": "Community social-policy context",
+    "caveat": "2011 village-only report of whether the Old Rural Pension System (ORPS) was implemented, its start year, 2010 recipient count and monthly standard. Keep distinct from NRPS and age-targeted subsidy programs; do not infer individual enrollment, contribution or receipt.",
+    "source_fields": [
+      {
+        "wave": "2011",
+        "code": "jg037",
+        "module": "community",
+        "source_label": "Does Your V/C Have the ORPS",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "",
+        "caveat": "Village-only Yes/No report of Old Rural Pension System implementation. Keep distinct from NRPS and age-targeted subsidy programs; it does not establish individual enrollment or receipt.",
+        "value_labels": "1=Yes; 2=No",
+        "value_label_status": "official codebook response labels; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg038",
+        "module": "community",
+        "source_label": "Year",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "year",
+        "caveat": "Year the village began the Old Rural Pension System, conditional on JG037=Yes. Village-only; verify the route in the authorized release.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg039",
+        "module": "community",
+        "source_label": "Num. of Persons Received ORPS",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "persons",
+        "caveat": "Number of persons reported to have received pension through ORPS in 2010, conditional on village program route; not linked to sampled respondents.",
+        "value_labels": "",
+        "value_label_status": "official codebook field located; continuous/count response, no category labels",
+        "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"
+      },
+      {
+        "wave": "2011",
+        "code": "jg040",
+        "module": "community",
+        "source_label": "Average Subsidy Standard",
+        "source_evidence": "CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted.",
+        "note": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+        "unit": "Yuan/month",
+        "caveat": "Community-reported average monthly ORPS subsidy standard, conditional on village program route; not an individual's benefit amount.",
         "value_labels": "",
         "value_label_status": "official codebook field located; continuous/count response, no category labels",
         "value_label_source": "sources_official/CHARLS_2011_Codebook_extracted.txt"

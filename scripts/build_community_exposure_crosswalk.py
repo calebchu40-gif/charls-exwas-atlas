@@ -40,6 +40,10 @@ CONCEPTS={
  "community_unemployment_subsidy_program":("Community unemployment subsidy program context","Community social-policy context","2011 community-informant report of whether unemployment subsidies existed, when they began, the number of people receiving them in 2010, and the average monthly standard. These are community-level program and uptake measures; they do not establish sampled-household receipt or individual income."),
  "community_minimum_living_allowance_program":("Community minimum living allowance context","Community social-policy context","2011 community-informant report of whether minimum living allowance existed, its start year, and the number of people receiving it in 2010. The JG008 amount prompt appears to carry an unemployment-subsidy wording conflict and is excluded from this concept pending source resolution. These fields describe local social protection coverage, not sampled-household eligibility, receipt, or individual income."),
  "community_single_child_reward_program":("Community single-child family reward program context","Community social-policy context","2011 community-informant report of whether the community provided rewards to parents of a single child, the start year, number of recipient households in 2010, and monthly standard. This does not establish sampled-household eligibility or receipt, nor individual fertility history."),
+ "community_pension_65plus_program":("Community pension subsidy for adults over 65 context","Community social-policy context","2011 community-informant report of the over-65 pension subsidy program, its start year, 2010 recipient count and monthly standard. It is distinct from the over-80 subsidy and named rural pension systems; it does not establish sampled-person eligibility or receipt."),
+ "community_pension_80plus_subsidy_program":("Community subsidy for adults over 80 context","Community social-policy context","2011 community-informant report of the over-80 subsidy program, its start year, 2010 recipient count and monthly standard. Preserve the age-specific program as separate from the over-65 pension and named rural pension systems; it is not an individual's receipt status."),
+ "community_nrps_program":("Community New Rural Pension System context","Community social-policy context","2011 village-only report of whether the New Rural Pension System (NRPS) was implemented, its start year, 2010 recipient count and monthly standard. Keep distinct from the Old Rural Pension System; do not infer individual enrollment, contribution or receipt."),
+ "community_orps_program":("Community Old Rural Pension System context","Community social-policy context","2011 village-only report of whether the Old Rural Pension System (ORPS) was implemented, its start year, 2010 recipient count and monthly standard. Keep distinct from NRPS and age-targeted subsidy programs; do not infer individual enrollment, contribution or receipt."),
 }
 MAP={
  "community_water_sources":["jb006_1","jb006_2","jb006_3","jb006_4","jb006_5","jb006_6","jb006_7","jb006_8"],
@@ -76,6 +80,10 @@ MAP={
  "community_unemployment_subsidy_program":["jg001","jg002","jg003","jg004"],
  "community_minimum_living_allowance_program":["jg005","jg006","jg007"],
  "community_single_child_reward_program":["jg013","jg014","jg015","jg016"],
+ "community_pension_65plus_program":["jg025","jg026","jg027","jg028"],
+ "community_pension_80plus_subsidy_program":["jg029","jg030","jg031","jg032"],
+ "community_nrps_program":["jg033","jg034","jg035","jg036"],
+ "community_orps_program":["jg037","jg038","jg039","jg040"],
 }
 
 # The 2011 Community Questionnaire pages 10, 21–22, and 32–33 explicitly
@@ -166,6 +174,8 @@ QUESTIONNAIRE_REVIEWED = {
  "community_unemployment_subsidy_program",
  "community_minimum_living_allowance_program",
  "community_single_child_reward_program",
+ "community_pension_65plus_program","community_pension_80plus_subsidy_program",
+ "community_nrps_program","community_orps_program",
  *[cid for cid in CONCEPTS if cid.startswith("community_kindergarten_") or
     cid.startswith("community_primary_school_") or cid.startswith("community_junior_middle_school_") or
     cid.startswith("community_senior_high_school_") or cid.startswith("community_post_office_") or
@@ -188,7 +198,7 @@ def validate_added_source_mappings():
  cpath=ROOT/"sources_official"/"CHARLS_2011_Codebook_extracted.txt"
  q=" ".join(qpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
  cb=" ".join(cpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
- codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program") for code in MAP[cid]}
+ codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program","community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program") for code in MAP[cid]}
  for code in codes:
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
   q_norm="".join(ch for ch in q if ch.isalnum())
@@ -248,9 +258,20 @@ def validate_added_source_mappings():
   "how many people in this village/community re ceived unemployment subsidies in year 2010",
   "does your village/community have minimum living allowance",
   "does your village/community have subsidies for being parents of single child",
+  "does your village/community issue pension to persons older than 65",
+  "does your village/community have subsidy for persons older than 80",
+  "does your village have the new rural pension system",
+  "does your village have the old rural pension system",
+  "skip to jg029",
+  "skip to jg033",
+  "skip to jg036",
+  "2010",
+  "yuan/month",
  )
  for phrase in required_q:
-  if phrase not in q:
+  phrase_norm="".join(ch for ch in phrase if ch.isalnum())
+  q_norm="".join(ch for ch in q if ch.isalnum())
+  if phrase_norm not in q_norm:
    raise ValueError(f"Official 2011 community questionnaire wording missing: {phrase}")
  if "ja012" not in cb or "among arable land, how many is irrigatable" not in cb or "among arable land, how many is paddy field" not in q:
   raise ValueError("JA012 questionnaire/Codebook wording conflict not found")
@@ -304,6 +325,8 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part G, JG005–JG007; No-skip destination and 2010 person count checked against official Codebook labels. JG008's amount identity conflict is excluded; frequencies omitted."
     elif cid == "community_single_child_reward_program":
      evidence="CHARLS 2011 Community Questionnaire, Part G, JG013–JG016; No-skip route, 2010 recipient-household count and monthly standard checked against official Codebook labels; frequencies omitted."
+    elif cid in {"community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program"}:
+     evidence="CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted."
     elif cid.startswith("community_observed_") or cid in {"community_built_form_organization", "community_accessibility_observation"}:
      evidence="CHARLS 2011 Community Questionnaire, Part K interviewer observations; item-specific 1–7 endpoint anchors verified."
     elif is_reviewed:
@@ -381,7 +404,50 @@ def main():
     elif code_l == "jg020":
      unit="Yuan/mu"
      caveat="Community-reported average agricultural-subsidy standard per mu, conditional on JG017=Yes. Do not treat it as an individual's payment or a chemical-use/exposure measure."
-     caveat="Community-reported average reforestation-subsidy standard, conditional on JG021=Yes. The questionnaire states Yuan per mu; do not treat it as an individual's payment or evidence of achieved forest restoration."
+    elif code_l == "jg025":
+     caveat="Community-level Yes/No report of a pension subsidy for persons older than 65. No routes to JG029; this is not an individual's age eligibility or receipt status."
+    elif code_l == "jg026":
+     unit="year"
+     caveat="Year the community began the over-65 pension subsidy policy, conditional on JG025=Yes. Preserve the route and validate release-specific special values."
+    elif code_l == "jg027":
+     unit="persons"
+     caveat="Number of persons older than 65 reported to have received this community pension subsidy in 2010; not linked to sampled respondents."
+    elif code_l == "jg028":
+     unit="Yuan/month"
+     caveat="Community-reported average monthly over-65 pension subsidy standard; not an individual's benefit amount."
+    elif code_l == "jg029":
+     caveat="Community-level Yes/No report of a subsidy for persons older than 80. No routes to JG033; keep distinct from the over-65 pension and rural pension systems."
+    elif code_l == "jg030":
+     unit="year"
+     caveat="Year the community began the over-80 subsidy, conditional on JG029=Yes. Preserve the route and validate release-specific special values."
+    elif code_l == "jg031":
+     unit="persons"
+     caveat="Number of persons older than 80 reported to have received this subsidy in 2010; not linked to sampled respondents."
+    elif code_l == "jg032":
+     unit="Yuan/month"
+     caveat="Community-reported average monthly over-80 subsidy standard; not an individual's benefit amount."
+    elif code_l == "jg033":
+     caveat="Village-only Yes/No report of New Rural Pension System implementation. The questionnaire routes No to JG036, which skips JG034–JG035; preserve this unusual route and do not interpret the later standard as proof of NRPS enrollment or receipt."
+    elif code_l == "jg034":
+     unit="year"
+     caveat="Year the village began the New Rural Pension System, asked on the JG033=Yes route. Village-only; verify the route in the authorized release."
+    elif code_l == "jg035":
+     unit="persons"
+     caveat="Number of persons reported to have received pension through NRPS in 2010, conditional on village program route; not linked to sampled respondents."
+    elif code_l == "jg036":
+     unit="Yuan/month"
+     caveat="Community-reported average monthly subsidy standard. The questionnaire routes JG033=No directly here, so item applicability is ambiguous; preserve separately and do not assume it measures NRPS recipients only."
+    elif code_l == "jg037":
+     caveat="Village-only Yes/No report of Old Rural Pension System implementation. Keep distinct from NRPS and age-targeted subsidy programs; it does not establish individual enrollment or receipt."
+    elif code_l == "jg038":
+     unit="year"
+     caveat="Year the village began the Old Rural Pension System, conditional on JG037=Yes. Village-only; verify the route in the authorized release."
+    elif code_l == "jg039":
+     unit="persons"
+     caveat="Number of persons reported to have received pension through ORPS in 2010, conditional on village program route; not linked to sampled respondents."
+    elif code_l == "jg040":
+     unit="Yuan/month"
+     caveat="Community-reported average monthly ORPS subsidy standard, conditional on village program route; not an individual's benefit amount."
     elif code_l in {"ja003_1", "ja003_2"}:
      unit="km²" if code_l == "ja003_1" else "mu"
      caveat="Community boundary area in the unit-specific field; the questionnaire provides separate km² and mu blanks. Keep the source fields distinct until the authorized release confirms how the unit choice is stored; do not sum or double count. This is community area, not household plot size."
@@ -473,6 +539,12 @@ def main():
      unit="households"
     elif code_l == "jg020":
      unit="Yuan/mu"
+    elif code_l in {"jg026", "jg030", "jg034", "jg038"}:
+     unit="year"
+    elif code_l in {"jg027", "jg031", "jg035", "jg039"}:
+     unit="persons"
+    elif code_l in {"jg028", "jg032", "jg036", "jg040"}:
+     unit="Yuan/month"
     elif code_l in {"jg002", "jg006", "jg014"}:
      unit="year"
     elif code_l in {"jg003", "jg007"}:

@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 609,
+      "exposure_count": 613,
       "phenotype_count": 213,
-      "candidate_pair_count": 129694,
+      "candidate_pair_count": 130546,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -909,7 +909,7 @@
               "value_labels": "",
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-              "caveat": "Community-reported average reforestation-subsidy standard, conditional on JG021=Yes. The questionnaire states Yuan per mu; do not treat it as an individual's payment or evidence of achieved forest restoration."
+              "caveat": "Community-reported average agricultural-subsidy standard per mu, conditional on JG017=Yes. Do not treat it as an individual's payment or a chemical-use/exposure measure."
             }
           ]
         },
@@ -3334,6 +3334,106 @@
           ]
         },
         {
+          "concept_id": "community_nrps_program",
+          "label": "Community New Rural Pension System context",
+          "domain": "Community social-policy context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jg033",
+              "label": "Does Your V/C Have NRPS",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only Yes/No report of New Rural Pension System implementation. The questionnaire routes No to JG036, which skips JG034–JG035; preserve this unusual route and do not interpret the later standard as proof of NRPS enrollment or receipt."
+            },
+            {
+              "code": "jg034",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Year the village began the New Rural Pension System, asked on the JG033=Yes route. Village-only; verify the route in the authorized release."
+            },
+            {
+              "code": "jg035",
+              "label": "Num. of Persons Received NRPS",
+              "module": "community",
+              "unit": "persons",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Number of persons reported to have received pension through NRPS in 2010, conditional on village program route; not linked to sampled respondents."
+            },
+            {
+              "code": "jg036",
+              "label": "Average Subsidy Standard",
+              "module": "community",
+              "unit": "Yuan/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported average monthly subsidy standard. The questionnaire routes JG033=No directly here, so item applicability is ambiguous; preserve separately and do not assume it measures NRPS recipients only."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_orps_program",
+          "label": "Community Old Rural Pension System context",
+          "domain": "Community social-policy context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jg037",
+              "label": "Does Your V/C Have the ORPS",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only Yes/No report of Old Rural Pension System implementation. Keep distinct from NRPS and age-targeted subsidy programs; it does not establish individual enrollment or receipt."
+            },
+            {
+              "code": "jg038",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Year the village began the Old Rural Pension System, conditional on JG037=Yes. Village-only; verify the route in the authorized release."
+            },
+            {
+              "code": "jg039",
+              "label": "Num. of Persons Received ORPS",
+              "module": "community",
+              "unit": "persons",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Number of persons reported to have received pension through ORPS in 2010, conditional on village program route; not linked to sampled respondents."
+            },
+            {
+              "code": "jg040",
+              "label": "Average Subsidy Standard",
+              "module": "community",
+              "unit": "Yuan/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported average monthly ORPS subsidy standard, conditional on village program route; not an individual's benefit amount."
+            }
+          ]
+        },
+        {
           "concept_id": "community_other_natural_disaster_history_5y",
           "label": "Community other natural disaster history (past five years)",
           "domain": "Community environment",
@@ -3390,6 +3490,56 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_pension_65plus_program",
+          "label": "Community pension subsidy for adults over 65 context",
+          "domain": "Community social-policy context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jg025",
+              "label": "Does Your V/C Issue Pension to Persons Older than 65",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-level Yes/No report of a pension subsidy for persons older than 65. No routes to JG029; this is not an individual's age eligibility or receipt status."
+            },
+            {
+              "code": "jg026",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Year the community began the over-65 pension subsidy policy, conditional on JG025=Yes. Preserve the route and validate release-specific special values."
+            },
+            {
+              "code": "jg027",
+              "label": "Num. of Persons Received",
+              "module": "community",
+              "unit": "persons",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Number of persons older than 65 reported to have received this community pension subsidy in 2010; not linked to sampled respondents."
+            },
+            {
+              "code": "jg028",
+              "label": "Average Subsidy standard",
+              "module": "community",
+              "unit": "Yuan/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported average monthly over-65 pension subsidy standard; not an individual's benefit amount."
             }
           ]
         },
@@ -3680,6 +3830,56 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_pension_80plus_subsidy_program",
+          "label": "Community subsidy for adults over 80 context",
+          "domain": "Community social-policy context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jg029",
+              "label": "Does Your V/C Have Subsidy for Persons Older than 80",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-level Yes/No report of a subsidy for persons older than 80. No routes to JG033; keep distinct from the over-65 pension and rural pension systems."
+            },
+            {
+              "code": "jg030",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Year the community began the over-80 subsidy, conditional on JG029=Yes. Preserve the route and validate release-specific special values."
+            },
+            {
+              "code": "jg031",
+              "label": "Num. of Persons Received",
+              "module": "community",
+              "unit": "persons",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Number of persons older than 80 reported to have received this subsidy in 2010; not linked to sampled respondents."
+            },
+            {
+              "code": "jg032",
+              "label": "Average Subsidy Standard",
+              "module": "community",
+              "unit": "Yuan/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-reported average monthly over-80 subsidy standard; not an individual's benefit amount."
             }
           ]
         },
@@ -104609,7 +104809,7 @@
           "value_labels": "",
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
-          "caveat": "Community-reported average reforestation-subsidy standard, conditional on JG021=Yes. The questionnaire states Yuan per mu; do not treat it as an individual's payment or evidence of achieved forest restoration."
+          "caveat": "Community-reported average agricultural-subsidy standard per mu, conditional on JG017=Yes. Do not treat it as an individual's payment or a chemical-use/exposure measure."
         }
       ]
     },
@@ -107034,6 +107234,106 @@
       ]
     },
     {
+      "concept_id": "community_nrps_program",
+      "label": "Community New Rural Pension System context",
+      "domain": "Community social-policy context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jg033",
+          "label": "Does Your V/C Have NRPS",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only Yes/No report of New Rural Pension System implementation. The questionnaire routes No to JG036, which skips JG034–JG035; preserve this unusual route and do not interpret the later standard as proof of NRPS enrollment or receipt."
+        },
+        {
+          "code": "jg034",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Year the village began the New Rural Pension System, asked on the JG033=Yes route. Village-only; verify the route in the authorized release."
+        },
+        {
+          "code": "jg035",
+          "label": "Num. of Persons Received NRPS",
+          "module": "community",
+          "unit": "persons",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Number of persons reported to have received pension through NRPS in 2010, conditional on village program route; not linked to sampled respondents."
+        },
+        {
+          "code": "jg036",
+          "label": "Average Subsidy Standard",
+          "module": "community",
+          "unit": "Yuan/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported average monthly subsidy standard. The questionnaire routes JG033=No directly here, so item applicability is ambiguous; preserve separately and do not assume it measures NRPS recipients only."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_orps_program",
+      "label": "Community Old Rural Pension System context",
+      "domain": "Community social-policy context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jg037",
+          "label": "Does Your V/C Have the ORPS",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only Yes/No report of Old Rural Pension System implementation. Keep distinct from NRPS and age-targeted subsidy programs; it does not establish individual enrollment or receipt."
+        },
+        {
+          "code": "jg038",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Year the village began the Old Rural Pension System, conditional on JG037=Yes. Village-only; verify the route in the authorized release."
+        },
+        {
+          "code": "jg039",
+          "label": "Num. of Persons Received ORPS",
+          "module": "community",
+          "unit": "persons",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Number of persons reported to have received pension through ORPS in 2010, conditional on village program route; not linked to sampled respondents."
+        },
+        {
+          "code": "jg040",
+          "label": "Average Subsidy Standard",
+          "module": "community",
+          "unit": "Yuan/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported average monthly ORPS subsidy standard, conditional on village program route; not an individual's benefit amount."
+        }
+      ]
+    },
+    {
       "concept_id": "community_other_natural_disaster_history_5y",
       "label": "Community other natural disaster history (past five years)",
       "domain": "Community environment",
@@ -107090,6 +107390,56 @@
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
           "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_pension_65plus_program",
+      "label": "Community pension subsidy for adults over 65 context",
+      "domain": "Community social-policy context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jg025",
+          "label": "Does Your V/C Issue Pension to Persons Older than 65",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-level Yes/No report of a pension subsidy for persons older than 65. No routes to JG029; this is not an individual's age eligibility or receipt status."
+        },
+        {
+          "code": "jg026",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Year the community began the over-65 pension subsidy policy, conditional on JG025=Yes. Preserve the route and validate release-specific special values."
+        },
+        {
+          "code": "jg027",
+          "label": "Num. of Persons Received",
+          "module": "community",
+          "unit": "persons",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Number of persons older than 65 reported to have received this community pension subsidy in 2010; not linked to sampled respondents."
+        },
+        {
+          "code": "jg028",
+          "label": "Average Subsidy standard",
+          "module": "community",
+          "unit": "Yuan/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported average monthly over-65 pension subsidy standard; not an individual's benefit amount."
         }
       ]
     },
@@ -107380,6 +107730,56 @@
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
           "caveat": "2011 community-informant report: occurrence, number of times, year/month of the most severe event, and people injured or dead in that event. Asked after the JI001 serious-disaster route; keep components and denominator distinct. Open-text description of 'other' is not included."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_pension_80plus_subsidy_program",
+      "label": "Community subsidy for adults over 80 context",
+      "domain": "Community social-policy context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jg029",
+          "label": "Does Your V/C Have Subsidy for Persons Older than 80",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-level Yes/No report of a subsidy for persons older than 80. No routes to JG033; keep distinct from the over-65 pension and rural pension systems."
+        },
+        {
+          "code": "jg030",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Year the community began the over-80 subsidy, conditional on JG029=Yes. Preserve the route and validate release-specific special values."
+        },
+        {
+          "code": "jg031",
+          "label": "Num. of Persons Received",
+          "module": "community",
+          "unit": "persons",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Number of persons older than 80 reported to have received this subsidy in 2010; not linked to sampled respondents."
+        },
+        {
+          "code": "jg032",
+          "label": "Average Subsidy Standard",
+          "module": "community",
+          "unit": "Yuan/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-reported average monthly over-80 subsidy standard; not an individual's benefit amount."
         }
       ]
     },
@@ -108428,9 +108828,9 @@
     "2013": {
       "baseline_wave": "2011",
       "followup_wave": "2013",
-      "exposure_count": 118,
+      "exposure_count": 122,
       "phenotype_count": 224,
-      "candidate_pair_count": 26432,
+      "candidate_pair_count": 27328,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -108666,9 +109066,9 @@
     "2015": {
       "baseline_wave": "2011",
       "followup_wave": "2015",
-      "exposure_count": 118,
+      "exposure_count": 122,
       "phenotype_count": 239,
-      "candidate_pair_count": 28202,
+      "candidate_pair_count": 29158,
       "phenotype_concept_ids": [
         "offspring_health_status_2015",
         "offspring_self_care_ability_2015",
@@ -108919,9 +109319,9 @@
     "2018": {
       "baseline_wave": "2011",
       "followup_wave": "2018",
-      "exposure_count": 118,
+      "exposure_count": 122,
       "phenotype_count": 211,
-      "candidate_pair_count": 24898,
+      "candidate_pair_count": 25742,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -109144,9 +109544,9 @@
     "2020": {
       "baseline_wave": "2011",
       "followup_wave": "2020",
-      "exposure_count": 118,
+      "exposure_count": 122,
       "phenotype_count": 76,
-      "candidate_pair_count": 8968,
+      "candidate_pair_count": 9272,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
