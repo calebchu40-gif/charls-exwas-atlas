@@ -407,3 +407,7 @@ This file records project-level changes that affect reproducibility, methods, da
 
 - Hardened GitHub Pages publishing with a reusable fail-closed browser-asset allowlist. The deploy now rejects statistical data, archive, and unknown file types and validates JSON recursively before upload.
 - Added focused tests and an audit note for the public payload guard.
+## 2026-10-25 同步2011 FM055分类背景与禁分析清单
+
+- 更新总禁分析清单，纳入2011 National Baseline User Guide第5节提供的劳动模块分类背景，同时明确该指南仍未确定FM055三个子字段的逐字段分类对应关系、GB版本或官方查找表，ISCO字段也未解释；三个字段继续锁定。
+- 移除FM055审核同步脚本内已过时的固定状态常量，并增加回归断言，防止专题审计与总清单再次不一致。验证：45项目录状态测试及92条禁分析清单核对通过。

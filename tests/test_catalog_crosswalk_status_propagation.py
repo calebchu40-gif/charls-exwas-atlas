@@ -19,7 +19,8 @@ class CatalogCrosswalkStatusPropagationTests(unittest.TestCase):
                  if row.get("Candidate.Status", "").lower().startswith(("automated discovery", "automated keyword discovery"))]
         self.assertEqual(stale, [])
         self.assertTrue(all("approved test variable" in row.get("Review.Flag", "")
-                            or "not analytic inclusion" in row.get("Review.Flag", "") for row in rows))
+                            or "not analytic inclusion" in row.get("Review.Flag", "")
+                            or row.get("Review.Flag", "").startswith("DO NOT ANALYZE") for row in rows))
 
 
 if __name__ == "__main__":

@@ -7,10 +7,6 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / "audit"
 CODES = {"fm055_gb", "fm055_isco", "fm055_indc"}
-STATUS = "candidate only; 2011 FM055 classification edition and lookup unverified; DO NOT ANALYZE until verified"
-CAVEAT = "2011 FM055 coded child field only; keep GB occupation, ISCO occupation, and industry separate. Coding edition and official category lookup remain unverified; do not analyze or publish category frequencies until verified."
-
-
 def main():
     crosswalk = pd.read_csv(AUDIT / "work_exposure_crosswalk_v1.csv", dtype=str, encoding="utf-8-sig").fillna("")
     reviewed = crosswalk[(crosswalk.wave == "2011") & crosswalk.code.str.lower().isin(CODES)]

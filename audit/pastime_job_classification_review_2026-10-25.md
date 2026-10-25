@@ -12,7 +12,7 @@ The 2011 National Baseline User Guide (section 5) directly describes labor-modul
 
 - Retain the three coded child fields as separate metadata candidates so users can discover their existence.
 - Exclude FM055 free text from the public index and do not expose code frequencies.
-- Mark all three coded candidates `DO NOT ANALYZE` until the 2011 coding edition and official category lookup are verified.
+- Mark all three coded candidates `DO NOT ANALYZE` until exact FM055 field-to-classification identity and a versioned official lookup are verified.
 - Do not treat numeric codes as a quantitative scale, convert GB to ISCO, or create an occupational exposure score from these codes.
 - Before any grouped category counts are published, review small-cell disclosure risk under the relevant CHARLS release terms.
 

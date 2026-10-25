@@ -70,11 +70,11 @@ Unit is years by the official Codebook title and both plan routes match the loca
 
 2015 `ha065_1_18_`
 
-### 3条：DO NOT ANALYZE until the 2011 FM055 occupation/industry coding edition and official category lookup are verified
+### 3条：DO NOT ANALYZE until exact 2011 FM055 field-to-classification mapping and versioned lookup are verified
 
 2011 `fm055_gb`, 2011 `fm055_isco`, 2011 `fm055_indc`
 
-The official questionnaire asks for open-text work content; the Codebook lists three distinct coded child fields but does not identify the coding edition or provide a verified lookup in the sources reviewed. Wave 3/4 coding guidance lists other work-module items, not FM055. See [`pastime_job_classification_review_2026-10-25.md`](pastime_job_classification_review_2026-10-25.md).
+The official questionnaire asks FM055 only after FM054=Yes for open-text description of current paid pastime work. The Codebook names three distinct coded child fields. The 2011 National Baseline User Guide section 5 documents labor-module coding context (GB six-digit occupation coding with added categories and two-digit industry coding), but does not date the GB edition, provide the lookup, or explicitly map the three FM055 child fields; it does not explain the Codebook's ISCO field. Thus the guide narrows the source gap without resolving exact field identity or category interpretation. Keep all three locks. See [`pastime_job_classification_review_2026-10-25.md`](pastime_job_classification_review_2026-10-25.md).
 
 ### 2条：DO NOT ANALYZE pending official clarification of the 2018 smoking-cessation age/year component identity
 

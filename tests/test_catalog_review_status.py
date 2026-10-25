@@ -293,6 +293,9 @@ class CatalogReviewStatusTests(unittest.TestCase):
             self.assertIn("2011 National Baseline User Guide section 5", item["source_fields"][0]["note"])
             self.assertIn("Wave 4 guide covers a different specified question list", item["source_fields"][0]["note"])
             self.assertIn("DO NOT ANALYZE", item["source_fields"][0]["mapping_status"])
+        triage = (ROOT / "audit/do_not_analyze_triage_2026-10-22.md").read_text(encoding="utf-8")
+        self.assertIn("The 2011 National Baseline User Guide section 5 documents labor-module coding context", triage)
+        self.assertIn("does not explain the Codebook's ISCO field", triage)
 
     def test_income_codebook_numeric_summaries_are_not_generic_pending_labels(self):
         examples = [
