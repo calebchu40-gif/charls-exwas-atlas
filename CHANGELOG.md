@@ -1,3 +1,9 @@
+## 2026-10-25 Link social participation/care C/E metadata with source caveats
+
+- Linked four exact wave-field C rows (2011 `DA056S8`, 2020 `xsoctype_7_`, and two 2013 money-management helper fields) to existing social-exposure candidates. The 2011 unselected-state storage remains unresolved; 2020 `XSocType[7]` remains a source-defined string field and is not recoded to 0/1.
+- For the two 2013 helper fields, retained the questionnaire's helper category 15 versus the Codebook field suffix `s64`, which is only a field identifier, and the Codebook's exact-field “No Observations” note. They remain conditional lookup candidates; no frequency or response coding is inferred. The 2011 `DA057_8_` C/E hit remains unmapped because the exact field is absent from the 2011 Codebook.
+- Added a reproducible updater to both metadata pipelines, source-path checks, audit rows, and regression tests. Current local E/P/C counts are 4,845/2,082/982. All 437 Python tests, public payload checks, the exact 92-lock reconciliation, JS syntax, Python compilation, and diff checks pass. No participant data, frequencies, or association models were used. GitHub validation and deployment are pending.
+
 ## 2026-10-25 Link historical hukou/location C/E metadata and correct the 2011 source path
 
 - Linked seven exact-wave C records for last/first hukou location relations, reason for location difference, and prior-interview hukou type to the existing source-reviewed E crosswalk. Conditional interview routes and wave-specific categories remain explicit; this is not current hukou, measured pollution, or a default adjustment recommendation.

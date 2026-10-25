@@ -845,11 +845,11 @@
         "code": "xsoctype_7_",
         "module": "Health_Status_and_Functioning",
         "source_label": "Attended an Educational or Training Course",
-        "note": "Official codebook response labels reviewed; preserve original category and routing",
+        "note": "Official questionnaire identifies activity 7 as attending an educational or training course; Codebook labels xsoctype_7_ as a string field. Preserve original storage and route; do not assume a 0/1 indicator.",
         "value_labels": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
         "value_semantics": "官方代码本将 xsoctype_* 标为字符串变量；保留字符串答案，不能假定为数值0/1。",
-        "questionnaire_source": "",
-        "value_label_source": "audit/social_exposure_crosswalk_v1.csv",
+        "questionnaire_source": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
+        "value_label_source": "sources_official/CHARLS_2020_Codebook_extracted.txt",
         "value_label_status": "officially reviewed"
       },
       {
