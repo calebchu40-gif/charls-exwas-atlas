@@ -233,6 +233,7 @@ FULL_PIPELINE_SCRIPTS = (
     "apply_formal_schooling_c_overlap_review.py",
     "apply_partner_context_c_overlap_review.py",
     "apply_electricity_c_overlap_review.py",
+    "apply_residential_settlement_c_overlap_review.py",
     # C metadata is propagated after the first shard build above; regenerate
     # role-specific browser payloads last so they match the final master file.
     "deduplicate_exact_catalog_rows.py",
@@ -403,6 +404,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_formal_schooling_c_overlap_review.py",
     "apply_partner_context_c_overlap_review.py",
     "apply_electricity_c_overlap_review.py",
+    "apply_residential_settlement_c_overlap_review.py",
     "build_candidate_pair_explorer.py",
     "deduplicate_exact_catalog_rows.py",
     "site_catalog_shards.py",

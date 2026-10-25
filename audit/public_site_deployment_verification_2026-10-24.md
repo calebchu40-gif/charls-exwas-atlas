@@ -1,3 +1,7 @@
+## Follow-up deployment — household-electricity C/E source links (2026-10-25)
+
+Commit `52a8439` passed metadata validation [#438 / `40161450433`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40161450433) and Pages deploy [#219 / `40161450411`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40161450411). The v98 site now references `app.js?v=98`; cache-busted requests confirmed HTTP 200 for homepage, app, E/P/C catalogues and candidate-pair explorer. E/P, C key coverage, and pair explorer match the committed build; all three exact-wave electricity-overlap rows are present with household-scope cautions. No participant data or association results are published.
+
 ## Follow-up deployment — partner-context C/E source links (2026-10-25)
 
 Commit `ef09207` passed Pages deploy [#218 / `40160837604`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40160837604) and validation [#437 / `40160837599`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40160837599); both validation jobs succeeded. Cache-busted public requests confirmed HTTP 200 for the v97 homepage, app bundle and E/P/C catalogues plus candidate-pair JSON. App/index matched after line-ending normalization; E/P and pair-index matched byte-for-byte; the C catalogue had 982 rows with all six reviewed partner-context overlaps and no extra/missing wave-field keys. No participant records, outcome distributions, or fitted models are served.

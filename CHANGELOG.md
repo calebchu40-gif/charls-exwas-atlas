@@ -1,3 +1,10 @@
+## 2026-10-25 Link residential-settlement C/E metadata to reviewed sources
+
+- Linked two exact-wave C rows (2015 `BB001_W3_2`, 2020 `BA008`) to the reviewed residential-settlement exposure concept and official questionnaire/Codebook sources.
+- Kept seven 2015 versus four 2020 response categories and address/time-frame caveats; numeric codes must not be pooled. This is residence context, not hukou type or a measured pollutant, and C is not an automatic adjustment recommendation.
+- Added an idempotent updater to full and finalize-only pipelines, row-level audit, regression checks and a Chinese category label. E/P/C directory counts remain 4,845/2,082/982.
+- Validation: finalization, all 433 Python tests, public payload, exact 92 analysis locks, JavaScript syntax, Python compilation, and diff checks pass. No respondent data or Codebook frequencies were read; association models and pairwise Ns remain 0.
+
 ## 2026-10-25 Link household-electricity C/E metadata to official source review
 
 - Linked the exact 2011/2013/2018 `I016` C catalogue rows to the existing wave-specific `electricity_access` candidate and official questionnaire/Codebook metadata.
