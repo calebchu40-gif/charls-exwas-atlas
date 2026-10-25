@@ -25,6 +25,17 @@ rejected until its official source/version is reviewed and the pinned checksum
 is deliberately updated. The post-merge QA also records the official SHA1 and
 a local SHA-256 digest.
 
+The Peking University Open Research Data Platform also lists a Wave 2
+`Weights.tab` file (Version 1.1; 19 variables; 19,679 observations; page-reported
+MD5 `fe914ea9ba15da968c756217587e5d4b`). Its file page states that access
+requires a signed-in account/request and presents CHARLS academic-use terms.
+This is a separate tab-delimited artifact, not the hash-pinned CHARLS portal
+`Weights.dta`; do not rename it or feed it to the current DTA intake script.
+If an authorized account obtains this alternate file, preserve it separately
+and first compare its metadata, field names, sample-flag definitions, version,
+and provenance against the official Wave 2 Release Note. Any new intake path
+must be reviewed and tested before it is allowed to supply analysis flags.
+
 Do not place the file in OneDrive, the project folder, GitHub, Pages, or a
 shared server folder. The user must use their own authorized CHARLS account;
 the project does not automate or bypass data access.
@@ -73,4 +84,7 @@ the official release-note URL recorded there is
 <https://charls.pku.edu.cn/en/data/Release2013.pdf>. At last local validation,
 the original prepared table had no sample flags and no official `Weights.dta`
 was found in the private data tree. The new merge utility has synthetic tests;
-it has not yet been run on an official file.
+it has not yet been run on an official file. The alternate Dataverse file record
+is <https://opendata.pku.edu.cn/file.xhtml?datasetVersionId=95&fileId=198>;
+its access gate and distinct format/MD5 are recorded above. No portal access was
+requested and no restricted file was fetched.
