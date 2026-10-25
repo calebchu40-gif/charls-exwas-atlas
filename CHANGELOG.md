@@ -1,4 +1,10 @@
-﻿## 2026-10-25 Add four community pension-policy context concepts (v118 deployed)
+﻿## 2026-10-25 Add the slot-indexed other community subsidy roster (v119 candidate)
+
+- Added 25 official 2011 community fields for the other poverty-subsidy roster: five repeat response slots, five nested open-text program-name fields, and five indexed fields each for start year, recipient-household count, and monthly standard. The questionnaire/Codebook do not fully establish the flattened slot-to-name pairing, so the public metadata calls for authorized-release validation; free-text names are not treated as standardized subsidy categories.
+- E/P/C catalogue rows are 4,905/2,082/982; E/P concepts are 1,496 (1,218 exposure and 303 phenotype, including 25 dual-role concepts); E/P source mappings are 6,881. Baseline community candidates are 123 concepts and 330 fields. The 2011 metadata co-availability count is 130,759; models, analytic Ns and association estimates remain 0, with the exact 92 analysis locks preserved.
+- The complete metadata rebuild and all 466 tests passed. Public-payload validation, exact 92-lock reconciliation, JavaScript syntax and whitespace checks passed. GitHub Pages deployment and live verification are pending. Audit: `audit/community_other_subsidy_roster_review_2026-10-25.md`.
+
+## 2026-10-25 Add four community pension-policy context concepts (v118 deployed)
 
 - Added official 2011 community-level metadata for the over-65 subsidy (JG025–JG028), over-80 subsidy (JG029–JG032), New Rural Pension System (JG033–JG036), and Old Rural Pension System (JG037–JG040). Preserved V-only restrictions, recipient units, year/month units and the questionnaire's routes. The unusual JG033 No→JG036 route is called out as an applicability ambiguity; none of these fields establishes individual enrollment or receipt.
 - E/P/C catalog rows are 4,880/2,082/982; E/P concepts are 1,495 (1,217 exposure and 303 phenotype, including 25 dual-role concepts); E/P source mappings are 6,856. Baseline community candidates are 122 concepts and 305 fields. The 2011 candidate metadata pair count is 130,546, a co-availability count only. Formal models, analytic Ns and association estimates remain 0; the exact 92 DO NOT ANALYZE locks remain unchanged.

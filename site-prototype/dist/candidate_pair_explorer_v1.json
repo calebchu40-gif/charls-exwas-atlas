@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 613,
+      "exposure_count": 614,
       "phenotype_count": 213,
-      "candidate_pair_count": 130546,
+      "candidate_pair_count": 130759,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -7575,6 +7575,266 @@
               "value_semantics": "",
               "mapping_status": "official variable metadata mapped; questionnaire item family located; conditional route and analysis denominator require review",
               "caveat": "Historical category present only in early waves; preserve exact wave scope."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_other_subsidy_program_roster",
+          "label": "Other community subsidy program roster",
+          "domain": "Community social-policy context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jg009_1_",
+              "label": "Does Your V/C Have Other Subsidies",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+            },
+            {
+              "code": "jg009_1_1_",
+              "label": "Name of Subsidy Program",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+            },
+            {
+              "code": "jg009_1_2_",
+              "label": "Name of Subsidy Program",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+            },
+            {
+              "code": "jg009_1_3_",
+              "label": "Name of Subsidy Program",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+            },
+            {
+              "code": "jg009_1_4_",
+              "label": "Name of Subsidy Program",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+            },
+            {
+              "code": "jg009_1_5_",
+              "label": "Name of Subsidy Program",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+            },
+            {
+              "code": "jg009_2_",
+              "label": "Does Your V/C Have Other Subsidies",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+            },
+            {
+              "code": "jg009_3_",
+              "label": "Does Your V/C Have Other Subsidies",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+            },
+            {
+              "code": "jg009_4_",
+              "label": "Does Your V/C Have Other Subsidies",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+            },
+            {
+              "code": "jg009_5_",
+              "label": "Does Your V/C Have Other Subsidies",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+            },
+            {
+              "code": "jg010_1_",
+              "label": "When Did this Subsidy Start",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed start year for a community-reported other subsidy. The flattened source does not establish which open-text name slot it pairs with; verify repeat linkage and route in the authorized release."
+            },
+            {
+              "code": "jg010_2_",
+              "label": "When Did this Subsidy Start",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed start year for a community-reported other subsidy. The flattened source does not establish which open-text name slot it pairs with; verify repeat linkage and route in the authorized release."
+            },
+            {
+              "code": "jg010_3_",
+              "label": "When Did this Subsidy Start",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed start year for a community-reported other subsidy. The flattened source does not establish which open-text name slot it pairs with; verify repeat linkage and route in the authorized release."
+            },
+            {
+              "code": "jg010_4_",
+              "label": "When Did this Subsidy Start",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed start year for a community-reported other subsidy. The flattened source does not establish which open-text name slot it pairs with; verify repeat linkage and route in the authorized release."
+            },
+            {
+              "code": "jg010_5_",
+              "label": "When Did this Subsidy Start",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed start year for a community-reported other subsidy. The flattened source does not establish which open-text name slot it pairs with; verify repeat linkage and route in the authorized release."
+            },
+            {
+              "code": "jg011_1_",
+              "label": "How Many Households Received This Subsidy",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed count of households reported to have received an other community subsidy in 2010. Verify which name/program slot it pairs with; not linked to sampled households."
+            },
+            {
+              "code": "jg011_2_",
+              "label": "How Many Households Received This Subsidy",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed count of households reported to have received an other community subsidy in 2010. Verify which name/program slot it pairs with; not linked to sampled households."
+            },
+            {
+              "code": "jg011_3_",
+              "label": "How Many Households Received This Subsidy",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed count of households reported to have received an other community subsidy in 2010. Verify which name/program slot it pairs with; not linked to sampled households."
+            },
+            {
+              "code": "jg011_4_",
+              "label": "How Many Households Received This Subsidy",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed count of households reported to have received an other community subsidy in 2010. Verify which name/program slot it pairs with; not linked to sampled households."
+            },
+            {
+              "code": "jg011_5_",
+              "label": "How Many Households Received This Subsidy",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed count of households reported to have received an other community subsidy in 2010. Verify which name/program slot it pairs with; not linked to sampled households."
+            },
+            {
+              "code": "jg012_1_",
+              "label": "Average Subsidy Standard of this Subsidy Program",
+              "module": "community",
+              "unit": "Yuan/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed average monthly standard for an other community subsidy. Verify which open-text name/program slot it pairs with; not an individual's benefit amount."
+            },
+            {
+              "code": "jg012_2_",
+              "label": "Average Subsidy Standard of this Subsidy Program",
+              "module": "community",
+              "unit": "Yuan/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed average monthly standard for an other community subsidy. Verify which open-text name/program slot it pairs with; not an individual's benefit amount."
+            },
+            {
+              "code": "jg012_3_",
+              "label": "Average Subsidy Standard of this Subsidy Program",
+              "module": "community",
+              "unit": "Yuan/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed average monthly standard for an other community subsidy. Verify which open-text name/program slot it pairs with; not an individual's benefit amount."
+            },
+            {
+              "code": "jg012_4_",
+              "label": "Average Subsidy Standard of this Subsidy Program",
+              "module": "community",
+              "unit": "Yuan/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed average monthly standard for an other community subsidy. Verify which open-text name/program slot it pairs with; not an individual's benefit amount."
+            },
+            {
+              "code": "jg012_5_",
+              "label": "Average Subsidy Standard of this Subsidy Program",
+              "module": "community",
+              "unit": "Yuan/month",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Slot-indexed average monthly standard for an other community subsidy. Verify which open-text name/program slot it pairs with; not an individual's benefit amount."
             }
           ]
         },
@@ -108494,6 +108754,266 @@
       ]
     },
     {
+      "concept_id": "community_other_subsidy_program_roster",
+      "label": "Other community subsidy program roster",
+      "domain": "Community social-policy context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jg009_1_",
+          "label": "Does Your V/C Have Other Subsidies",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+        },
+        {
+          "code": "jg009_1_1_",
+          "label": "Name of Subsidy Program",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+        },
+        {
+          "code": "jg009_1_2_",
+          "label": "Name of Subsidy Program",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+        },
+        {
+          "code": "jg009_1_3_",
+          "label": "Name of Subsidy Program",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+        },
+        {
+          "code": "jg009_1_4_",
+          "label": "Name of Subsidy Program",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+        },
+        {
+          "code": "jg009_1_5_",
+          "label": "Name of Subsidy Program",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+        },
+        {
+          "code": "jg009_2_",
+          "label": "Does Your V/C Have Other Subsidies",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+        },
+        {
+          "code": "jg009_3_",
+          "label": "Does Your V/C Have Other Subsidies",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+        },
+        {
+          "code": "jg009_4_",
+          "label": "Does Your V/C Have Other Subsidies",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+        },
+        {
+          "code": "jg009_5_",
+          "label": "Does Your V/C Have Other Subsidies",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+        },
+        {
+          "code": "jg010_1_",
+          "label": "When Did this Subsidy Start",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed start year for a community-reported other subsidy. The flattened source does not establish which open-text name slot it pairs with; verify repeat linkage and route in the authorized release."
+        },
+        {
+          "code": "jg010_2_",
+          "label": "When Did this Subsidy Start",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed start year for a community-reported other subsidy. The flattened source does not establish which open-text name slot it pairs with; verify repeat linkage and route in the authorized release."
+        },
+        {
+          "code": "jg010_3_",
+          "label": "When Did this Subsidy Start",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed start year for a community-reported other subsidy. The flattened source does not establish which open-text name slot it pairs with; verify repeat linkage and route in the authorized release."
+        },
+        {
+          "code": "jg010_4_",
+          "label": "When Did this Subsidy Start",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed start year for a community-reported other subsidy. The flattened source does not establish which open-text name slot it pairs with; verify repeat linkage and route in the authorized release."
+        },
+        {
+          "code": "jg010_5_",
+          "label": "When Did this Subsidy Start",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed start year for a community-reported other subsidy. The flattened source does not establish which open-text name slot it pairs with; verify repeat linkage and route in the authorized release."
+        },
+        {
+          "code": "jg011_1_",
+          "label": "How Many Households Received This Subsidy",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed count of households reported to have received an other community subsidy in 2010. Verify which name/program slot it pairs with; not linked to sampled households."
+        },
+        {
+          "code": "jg011_2_",
+          "label": "How Many Households Received This Subsidy",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed count of households reported to have received an other community subsidy in 2010. Verify which name/program slot it pairs with; not linked to sampled households."
+        },
+        {
+          "code": "jg011_3_",
+          "label": "How Many Households Received This Subsidy",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed count of households reported to have received an other community subsidy in 2010. Verify which name/program slot it pairs with; not linked to sampled households."
+        },
+        {
+          "code": "jg011_4_",
+          "label": "How Many Households Received This Subsidy",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed count of households reported to have received an other community subsidy in 2010. Verify which name/program slot it pairs with; not linked to sampled households."
+        },
+        {
+          "code": "jg011_5_",
+          "label": "How Many Households Received This Subsidy",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed count of households reported to have received an other community subsidy in 2010. Verify which name/program slot it pairs with; not linked to sampled households."
+        },
+        {
+          "code": "jg012_1_",
+          "label": "Average Subsidy Standard of this Subsidy Program",
+          "module": "community",
+          "unit": "Yuan/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed average monthly standard for an other community subsidy. Verify which open-text name/program slot it pairs with; not an individual's benefit amount."
+        },
+        {
+          "code": "jg012_2_",
+          "label": "Average Subsidy Standard of this Subsidy Program",
+          "module": "community",
+          "unit": "Yuan/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed average monthly standard for an other community subsidy. Verify which open-text name/program slot it pairs with; not an individual's benefit amount."
+        },
+        {
+          "code": "jg012_3_",
+          "label": "Average Subsidy Standard of this Subsidy Program",
+          "module": "community",
+          "unit": "Yuan/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed average monthly standard for an other community subsidy. Verify which open-text name/program slot it pairs with; not an individual's benefit amount."
+        },
+        {
+          "code": "jg012_4_",
+          "label": "Average Subsidy Standard of this Subsidy Program",
+          "module": "community",
+          "unit": "Yuan/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed average monthly standard for an other community subsidy. Verify which open-text name/program slot it pairs with; not an individual's benefit amount."
+        },
+        {
+          "code": "jg012_5_",
+          "label": "Average Subsidy Standard of this Subsidy Program",
+          "module": "community",
+          "unit": "Yuan/month",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Slot-indexed average monthly standard for an other community subsidy. Verify which open-text name/program slot it pairs with; not an individual's benefit amount."
+        }
+      ]
+    },
+    {
       "concept_id": "community_police_station_count",
       "label": "Police stations in community (count)",
       "domain": "Community infrastructure",
@@ -108828,9 +109348,9 @@
     "2013": {
       "baseline_wave": "2011",
       "followup_wave": "2013",
-      "exposure_count": 122,
+      "exposure_count": 123,
       "phenotype_count": 224,
-      "candidate_pair_count": 27328,
+      "candidate_pair_count": 27552,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -109066,9 +109586,9 @@
     "2015": {
       "baseline_wave": "2011",
       "followup_wave": "2015",
-      "exposure_count": 122,
+      "exposure_count": 123,
       "phenotype_count": 239,
-      "candidate_pair_count": 29158,
+      "candidate_pair_count": 29397,
       "phenotype_concept_ids": [
         "offspring_health_status_2015",
         "offspring_self_care_ability_2015",
@@ -109319,9 +109839,9 @@
     "2018": {
       "baseline_wave": "2011",
       "followup_wave": "2018",
-      "exposure_count": 122,
+      "exposure_count": 123,
       "phenotype_count": 211,
-      "candidate_pair_count": 25742,
+      "candidate_pair_count": 25953,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -109544,9 +110064,9 @@
     "2020": {
       "baseline_wave": "2011",
       "followup_wave": "2020",
-      "exposure_count": 122,
+      "exposure_count": 123,
       "phenotype_count": 76,
-      "candidate_pair_count": 9272,
+      "candidate_pair_count": 9348,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",

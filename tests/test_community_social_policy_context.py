@@ -25,6 +25,7 @@ class CommunitySocialPolicyContextTests(unittest.TestCase):
             "community_pension_80plus_subsidy_program": {"jg029", "jg030", "jg031", "jg032"},
             "community_nrps_program": {"jg033", "jg034", "jg035", "jg036"},
             "community_orps_program": {"jg037", "jg038", "jg039", "jg040"},
+            "community_other_subsidy_program_roster": {f"jg009_{i}_" for i in range(1, 6)} | {f"jg009_1_{i}_" for i in range(1, 6)} | {f"jg010_{i}_" for i in range(1, 6)} | {f"jg011_{i}_" for i in range(1, 6)} | {f"jg012_{i}_" for i in range(1, 6)},
         }
         for cid, codes in expected.items():
             rows = {r["code"].casefold(): r for r in self.rows if r["concept_id"] == cid}
@@ -54,6 +55,9 @@ class CommunitySocialPolicyContextTests(unittest.TestCase):
         self.assertEqual(units["jg038"], "year")
         self.assertEqual(units["jg039"], "persons")
         self.assertEqual(units["jg040"], "Yuan/month")
+        self.assertEqual(units["jg010_1_"], "year")
+        self.assertEqual(units["jg011_1_"], "households")
+        self.assertEqual(units["jg012_1_"], "Yuan/month")
         count_status = next(r for r in self.label_rows if r["code"].casefold() == "jg015")
         self.assertIn("continuous household count", count_status["value_label_status"])
 
@@ -70,16 +74,26 @@ class CommunitySocialPolicyContextTests(unittest.TestCase):
         nrps = {x["code"].casefold(): x for x in self.concepts["community_nrps_program"]["source_fields"]}
         self.assertIn("routes No to JG036", nrps["jg033"]["caveat"])
         self.assertIn("applicability is ambiguous", nrps["jg036"]["caveat"])
+        roster = self.concepts["community_other_subsidy_program_roster"]
+        self.assertIn("slot-to-name linkage", roster["caveat"])
 
     def test_official_source_presence_and_frequencies_omitted(self):
         q = (ROOT / "sources_official/CHARLS_2011_Community_Questionnaire_official_extracted.txt").read_text(encoding="utf-8").casefold()
         cb = (ROOT / "sources_official/CHARLS_2011_Codebook_extracted.txt").read_text(encoding="utf-8").casefold()
+        roster_codes = [f"jg009_{i}_" for i in range(1, 6)] + [f"jg009_1_{i}_" for i in range(1, 6)] + [f"jg010_{i}_" for i in range(1, 6)] + [f"jg011_{i}_" for i in range(1, 6)] + [f"jg012_{i}_" for i in range(1, 6)]
         for code in ("jg001", "jg002", "jg003", "jg004", "jg005", "jg006", "jg007", "jg008", "jg013", "jg014", "jg015", "jg016", *[f"jg{i:03d}" for i in range(25, 41)]):
             with self.subTest(code=code):
                 self.assertIn(code, q)
                 self.assertIn(code, cb)
+        q_alnum = "".join(ch for ch in q if ch.isalnum())
+        cb_alnum = "".join(ch for ch in cb if ch.isalnum())
+        self.assertIn("doesyourvillagecommunityhaveothersubsidies", q_alnum)
+        self.assertIn("foreveryanswerinjg0091", q_alnum)
+        for code in roster_codes:
+            with self.subTest(slot_code=code):
+                self.assertIn("".join(ch for ch in code if ch.isalnum()), cb_alnum)
         for row in self.rows:
-            if row["concept_id"].startswith("community_") and row["code"].casefold().startswith(("jg001", "jg002", "jg003", "jg004", "jg005", "jg006", "jg007", "jg013", "jg014", "jg015", "jg016", *[f"jg{i:03d}" for i in range(25, 41)])):
+            if row["concept_id"].startswith("community_") and row["code"].casefold().startswith(("jg001", "jg002", "jg003", "jg004", "jg005", "jg006", "jg007", "jg013", "jg014", "jg015", "jg016", *[f"jg{i:03d}" for i in range(25, 41)], "jg009", "jg010", "jg011", "jg012")):
                 self.assertNotIn("Freq.", row["source_evidence"])
                 self.assertNotIn("Mean", row["source_evidence"])
 

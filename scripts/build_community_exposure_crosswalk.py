@@ -44,6 +44,7 @@ CONCEPTS={
  "community_pension_80plus_subsidy_program":("Community subsidy for adults over 80 context","Community social-policy context","2011 community-informant report of the over-80 subsidy program, its start year, 2010 recipient count and monthly standard. Preserve the age-specific program as separate from the over-65 pension and named rural pension systems; it is not an individual's receipt status."),
  "community_nrps_program":("Community New Rural Pension System context","Community social-policy context","2011 village-only report of whether the New Rural Pension System (NRPS) was implemented, its start year, 2010 recipient count and monthly standard. Keep distinct from the Old Rural Pension System; do not infer individual enrollment, contribution or receipt."),
  "community_orps_program":("Community Old Rural Pension System context","Community social-policy context","2011 village-only report of whether the Old Rural Pension System (ORPS) was implemented, its start year, 2010 recipient count and monthly standard. Keep distinct from NRPS and age-targeted subsidy programs; do not infer individual enrollment, contribution or receipt."),
+ "community_other_subsidy_program_roster":("Other community subsidy program roster","Community social-policy context","2011 community-informant roster of other poverty-related subsidy programs, with up to five emitted response/name/start/count/standard slots. Field suffixes and nested name fields are preserved exactly; the flattened questionnaire/Codebook do not fully document slot-to-name linkage, so verify field pairing and repeat behavior in the authorized release before analysis. Open-text program names are not standardized policy categories. These are community reports, not household receipt or individual income."),
 }
 MAP={
  "community_water_sources":["jb006_1","jb006_2","jb006_3","jb006_4","jb006_5","jb006_6","jb006_7","jb006_8"],
@@ -84,6 +85,7 @@ MAP={
  "community_pension_80plus_subsidy_program":["jg029","jg030","jg031","jg032"],
  "community_nrps_program":["jg033","jg034","jg035","jg036"],
  "community_orps_program":["jg037","jg038","jg039","jg040"],
+ "community_other_subsidy_program_roster":[*[f"jg009_{i}_" for i in range(1,6)],*[f"jg009_1_{i}_" for i in range(1,6)],*[f"jg010_{i}_" for i in range(1,6)],*[f"jg011_{i}_" for i in range(1,6)],*[f"jg012_{i}_" for i in range(1,6)]],
 }
 
 # The 2011 Community Questionnaire pages 10, 21–22, and 32–33 explicitly
@@ -176,6 +178,7 @@ QUESTIONNAIRE_REVIEWED = {
  "community_single_child_reward_program",
  "community_pension_65plus_program","community_pension_80plus_subsidy_program",
  "community_nrps_program","community_orps_program",
+ "community_other_subsidy_program_roster",
  *[cid for cid in CONCEPTS if cid.startswith("community_kindergarten_") or
     cid.startswith("community_primary_school_") or cid.startswith("community_junior_middle_school_") or
     cid.startswith("community_senior_high_school_") or cid.startswith("community_post_office_") or
@@ -198,6 +201,7 @@ def validate_added_source_mappings():
  cpath=ROOT/"sources_official"/"CHARLS_2011_Codebook_extracted.txt"
  q=" ".join(qpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
  cb=" ".join(cpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
+ other_subsidy_codes=set(MAP["community_other_subsidy_program_roster"])
  codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program","community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program") for code in MAP[cid]}
  for code in codes:
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
@@ -205,6 +209,13 @@ def validate_added_source_mappings():
   cb_norm="".join(ch for ch in cb if ch.isalnum())
   if code_norm not in q_norm or code_norm not in cb_norm:
    raise ValueError(f"Official 2011 community questionnaire/Codebook missing mapped field {code}")
+ for code in other_subsidy_codes:
+  code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
+  cb_norm="".join(ch for ch in cb if ch.isalnum())
+  if code_norm not in cb_norm:
+   raise ValueError(f"Official 2011 Codebook missing slot-indexed other-subsidy field {code}")
+ if "does your village/community have other subsidies" not in q or "for every answer in jg009_1" not in q:
+  raise ValueError("Official questionnaire's other-subsidy prompt/repeat instruction missing")
  required_q=(
   "what is the physical area of this village/community",
   "how many of the land is arable land at the end of the year 2010",
@@ -327,6 +338,8 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part G, JG013–JG016; No-skip route, 2010 recipient-household count and monthly standard checked against official Codebook labels; frequencies omitted."
     elif cid in {"community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program"}:
      evidence="CHARLS 2011 Community Questionnaire, Part G, JG025–JG040; age-specific subsidy and named rural-pension program routes, 2010 recipient counts, monthly units, and V-only flags checked against official Codebook labels; frequencies omitted."
+    elif cid == "community_other_subsidy_program_roster":
+     evidence="CHARLS 2011 Community Questionnaire, Part G, JG009–JG012 repeat instruction and slot-indexed Codebook fields; open-text names and emitted indices retained as written, 2010 recipient unit and monthly standard checked; slot linkage requires authorized-release validation; frequencies omitted."
     elif cid.startswith("community_observed_") or cid in {"community_built_form_organization", "community_accessibility_observation"}:
      evidence="CHARLS 2011 Community Questionnaire, Part K interviewer observations; item-specific 1–7 endpoint anchors verified."
     elif is_reviewed:
@@ -448,6 +461,14 @@ def main():
     elif code_l == "jg040":
      unit="Yuan/month"
      caveat="Community-reported average monthly ORPS subsidy standard, conditional on village program route; not an individual's benefit amount."
+    elif code_l.startswith("jg009_"):
+     caveat="Slot-indexed response or open-text name field in the 2011 other community poverty-subsidy roster. The questionnaire says No routes to JG013; preserve the exact suffix and verify repeat/name-field linkage against the authorized release. Do not infer a standardized program type."
+    elif code_l.startswith("jg010_"):
+     caveat="Slot-indexed start year for a community-reported other subsidy. The flattened source does not establish which open-text name slot it pairs with; verify repeat linkage and route in the authorized release."
+    elif code_l.startswith("jg011_"):
+     caveat="Slot-indexed count of households reported to have received an other community subsidy in 2010. Verify which name/program slot it pairs with; not linked to sampled households."
+    elif code_l.startswith("jg012_"):
+     caveat="Slot-indexed average monthly standard for an other community subsidy. Verify which open-text name/program slot it pairs with; not an individual's benefit amount."
     elif code_l in {"ja003_1", "ja003_2"}:
      unit="km²" if code_l == "ja003_1" else "mu"
      caveat="Community boundary area in the unit-specific field; the questionnaire provides separate km² and mu blanks. Keep the source fields distinct until the authorized release confirms how the unit choice is stored; do not sum or double count. This is community area, not household plot size."
@@ -539,6 +560,12 @@ def main():
      unit="households"
     elif code_l == "jg020":
      unit="Yuan/mu"
+    elif code_l.startswith("jg010_"):
+     unit="year"
+    elif code_l.startswith("jg011_"):
+     unit="households"
+    elif code_l.startswith("jg012_"):
+     unit="Yuan/month"
     elif code_l in {"jg026", "jg030", "jg034", "jg038"}:
      unit="year"
     elif code_l in {"jg027", "jg031", "jg035", "jg039"}:
