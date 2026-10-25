@@ -1,3 +1,11 @@
+# 2026-10-26 Review old-age financial support source and repair metadata propagation
+
+- Reviewed official 2013, 2015, and 2018 FN097 questionnaires and codebooks. Added the five questionnaire response labels to each wave and recorded the construct as an expected/hypothetical old-age resource, not realized pension receipt or income. Preserved the distinct 2018 wording, pension screening route, and conditional child-roster follow-up; Codebook frequency summaries remain excluded.
+- Added `audit/old_age_financial_support_source_review_2026-10-26.md` and regression checks. Fixed the pension label builder so questionnaire-derived categories survive a clean upstream rebuild.
+- Repaired final propagation order for community continuous household-count metadata and reviewed alcohol C context fields. The final E/P/C shards now have zero generic `not yet reviewed` label statuses; continuous counts still have no fabricated discrete categories.
+- Full metadata rebuild completed in 8.1 minutes (230 steps). E/P/C rows: 6,034/2,116/984; E/P concepts: 1,563; concept-source mappings: 8,044; explicit E/P label rows: 3,774. Metadata co-availability is not analytic N; formal association models remain 0; 92 analysis locks unchanged.
+- Local verification: 483 unittest tests pass; public payload validation, exact 92-lock validation, and JavaScript syntax validation pass. This update is local and awaits GitHub validation/deployment.
+
 # 2026-10-26 Add Part J agricultural machinery-supply origin (local update)
 
 - Reviewed the full 2011 Community Questionnaire Part J inventory. Added JJ005 as a nominal community agricultural-service-supply context candidate, conditional on JJ003=Yes; retained county/province categories and withheld interpretation of conditional locality text as standardized geography.

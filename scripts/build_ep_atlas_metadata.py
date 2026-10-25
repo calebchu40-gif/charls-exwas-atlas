@@ -243,6 +243,8 @@ FULL_PIPELINE_SCRIPTS = (
     "apply_hukou_recent_change_c_overlap_review.py",
     "apply_keyword_epc_overlap_review.py",
     "apply_residential_history_search_label_review.py",
+    "apply_community_value_label_status.py",
+    "apply_alcohol_frequency_route_review.py",
     "apply_mortality_endpoint_catalog_review.py",
     # C metadata is propagated after the first shard build above; regenerate
     # role-specific browser payloads last so they match the final master file.
@@ -427,6 +429,7 @@ FINALIZATION_PIPELINE_SCRIPTS = (
     "apply_keyword_epc_overlap_review.py",
     "apply_residential_history_search_label_review.py",
     "apply_community_value_label_status.py",
+    "apply_alcohol_frequency_route_review.py",
     # Reapply field-specific mortality review after the main catalog rebuild;
     # otherwise the default value-label status overwrites reviewed source states.
     "apply_mortality_endpoint_catalog_review.py",

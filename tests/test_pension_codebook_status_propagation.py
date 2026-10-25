@@ -19,7 +19,9 @@ class PensionCodebookStatusPropagationTests(unittest.TestCase):
         reviewed = pd.read_csv(ROOT / "audit/pension_codebook_value_labels_v1.csv", dtype=str).fillna("")
         result = MODULE.apply_codebook_review_status(fields, reviewed)
         self.assertEqual(len(result), 1159)
-        self.assertEqual(int(result.value_label_status.eq("official codebook field located; continuous/count or no categorical labels").sum()), 1050)
+        # Three FN097 wave rows now carry questionnaire-verified categorical
+        # labels and therefore leave the continuous/no-menu disposition.
+        self.assertEqual(int(result.value_label_status.eq("official codebook field located; continuous/count or no categorical labels").sum()), 1047)
         self.assertEqual(int(result.value_label_status.str.contains("questionnaire/Codebook field and item identity reviewed|DO NOT ANALYZE", regex=True).sum()), 36)
         self.assertEqual(int(result.value_label_status.eq("official response label not located or title match insufficient").sum()), 0)
         self.assertEqual(int(result.value_label_status.eq("official codebook response labels reviewed; frequencies omitted").sum()), 19)

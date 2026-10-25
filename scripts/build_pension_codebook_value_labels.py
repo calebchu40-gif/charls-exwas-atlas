@@ -113,6 +113,17 @@ def main():
             reviewed.at[idx, "value_labels"] = repairs[key][0]
             reviewed.at[idx, "value_label_status"] = repairs[key][1]
             reviewed.at[idx, "value_label_source"] = (bracket_label_source if key[0] == "2011" else "sources_official/CHARLS_2015_Codebook_extracted.txt; sources_official/CHARLS_2015_Questionnaire_extracted.txt")
+    # FN097's codebook layout is not reliably parsed as a code/category table.
+    # Transcribe the five questionnaire response choices instead; never use
+    # Codebook frequency summaries as labels or analytic evidence.
+    fn097_labels = "1=Children; 2=Savings; 3=Pension or Retirement Salary; 4=Commercial Pension Insurance; 5=Other"
+    fn097_keys = {(wave, "fn097_w2") for wave in ("2013", "2015", "2018")}
+    for idx, r in reviewed.iterrows():
+        key = (str(r["wave"]), str(r["code"]).lower())
+        if key in fn097_keys:
+            reviewed.at[idx, "value_labels"] = fn097_labels
+            reviewed.at[idx, "value_label_status"] = "official questionnaire response categories and conditional route reviewed; Codebook frequencies omitted"
+            reviewed.at[idx, "value_label_source"] = f"sources_official/CHARLS_{key[0]}_Questionnaire_extracted.txt; sources_official/CHARLS_{key[0]}_Codebook_extracted.txt"
     reviewed.to_csv(AUDIT / "pension_codebook_value_labels_v1.csv", index=False, encoding="utf-8-sig")
 
     label_by_key = {}

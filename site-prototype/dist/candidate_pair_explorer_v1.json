@@ -5396,10 +5396,10 @@
               "label": "Location of Workplace",
               "module": "work_retirement_and_pension",
               "unit": "wave-specific ordinal workplace location category relative to residence; not a distance measure",
-              "value_labels": "1=This village/community; 2=Other village/community in this county/city; 3=Another county/city in this province; 4=Another province",
-              "value_semantics": "official questionnaire/Codebook response categories; frequencies omitted",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md",
-              "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release. Preserve wave-specific response labels."
+              "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release. 2011 uses village/community and county/province anchors; 2013/2015 refer to permanent address and include abroad; 2018 uses its own permanent/current-residence wording and location detail. 2013/2015 FD002=6/7 routes skip this field. The same code in 2020 means number of employees and is excluded."
             }
           ]
         },
@@ -8978,7 +8978,7 @@
               "module": "work_retirement_and_pension",
               "unit": "days per week",
               "value_labels": "",
-              "value_semantics": "continuous numeric response; units and special survey rules reviewed; no categories inferred",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
               "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence."
             }
@@ -8998,7 +8998,7 @@
               "module": "work_retirement_and_pension",
               "unit": "hours per working day",
               "value_labels": "",
-              "value_semantics": "continuous numeric response; units and special survey rules reviewed; no categories inferred",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
               "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence."
             }
@@ -10489,8 +10489,8 @@
               "label": "Location of Workplace",
               "module": "work_retirement_and_pension",
               "unit": "",
-              "value_labels": "1=This village/community; 2=Other village/community in this county/city; 3=Another county/city in this province; 4=Another province",
-              "value_semantics": "official questionnaire/Codebook categories; frequencies and address text omitted",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
               "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
             }
@@ -10509,8 +10509,8 @@
               "label": "Location of Your Company or Workplace",
               "module": "work_retirement_and_pension",
               "unit": "",
-              "value_labels": "1=This village/community; 2=Other village/community in this county/city; 3=Another county/city in this province; 4=Another province",
-              "value_semantics": "official questionnaire/Codebook categories; no address text or frequencies",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
               "caveat": "Self-reported broad geographic category for the respondent's non-farm self-employment business. This is not a commute distance, measured pollution, or a geocoded exposure. Keep wave-specific categories and eligible business route; do not harmonize by code number alone. Questionnaire subfields may contain place names/address text and are deliberately excluded from the public atlas. Confirm authorized-release special values, eligibility, missingness and person linkage before analysis."
             }
@@ -10529,8 +10529,8 @@
               "label": "Workplace for Most Time",
               "module": "work_retirement_and_pension",
               "unit": "",
-              "value_labels": "1=This village/community; 2=Other village/community in this county/city; 3=Another county/city in this province; 4=Another province",
-              "value_semantics": "official questionnaire/Codebook categories; frequencies and address text omitted",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
               "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
             }
@@ -10569,10 +10569,10 @@
               "label": "Location of Job",
               "module": "work_retirement_and_pension",
               "unit": "wave-specific retrospective nominal location category",
-              "value_labels": "1=This village/community; 2=Other village/community in this county/city; 3=Another county/city in this province; 4=Another province",
-              "value_semantics": "official questionnaire menu; wave-specific Codebook completeness and released coding noted in Mapping.Status",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "DO NOT ANALYZE; official questionnaire prints location categories and interviewer code 0 for no fixed address, but the 2011 Codebook does not resolve released-data coding; see audit/last_job_workplace_location_review_2026-10-25.md",
-              "caveat": "Retrospective self-reported location category for the most recent job. This is coarse historical geographic context, not commute distance, a geocoded address, measured pollution or personal dose. Keep wave-specific categories and prior-job eligibility routes separate; questionnaire place-name fields are excluded from public metadata. Confirm special values, field storage, prior-job route and eligible denominator in the authorized release. 2011 numeric coding and no-fixed-address code 0 remain unresolved."
+              "caveat": "Retrospective self-reported location category for the most recent job. This is coarse historical geographic context, not commute distance, a geocoded address, measured pollution or personal dose. Keep wave-specific categories and prior-job eligibility routes separate; questionnaire place-name fields are excluded from public metadata. Confirm special values, field storage, prior-job route and eligible denominator in the authorized release. 2011 code 0 is an interviewer instruction for no fixed address, not an extra location category."
             }
           ]
         },
@@ -10589,8 +10589,8 @@
               "label": "Location of this Company or Workplace",
               "module": "work_retirement_and_pension",
               "unit": "wave-specific nominal location category; no address or distance measure",
-              "value_labels": "1=This village/community; 2=Other village/community in this county/city; 3=Another county/city in this province; 4=Another province",
-              "value_semantics": "official location categories; no address text or frequencies",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook categories and unpaid-family-business route reviewed; interviewer special code, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/unpaid_family_business_location_review_2026-10-25.md",
               "caveat": "Self-reported broad location category for unpaid family-business work, a work-context candidate rather than an environmental dose or personal exposure. Keep wave-specific categories and the unpaid-family-work route separate. 2011 instructs interviewers to enter 0 for no fixed address; that instruction is not an additional location category and requires released-data coding verification. Later-wave re-interview branches may skip details when the same business carries forward. Fine-grained place-name/address fields are excluded from public metadata. Confirm eligible denominator, special values and person linkage before analysis."
             }
@@ -13983,8 +13983,8 @@
               "label": "Type of the Work Unit",
               "module": "work_retirement_and_pension",
               "unit": "nominal current-employer organization category; no inherent order",
-              "value_labels": "1=Government department; 2=Public institution; 3=NGO; 4=Firm; 5=Individual firm; 6=Farmer; 7=Individual household; 8=Other",
-              "value_semantics": "official nominal response categories; 2020 code 997 means do not know; frequencies omitted",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook category wording and employment route reviewed; released storage, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/current_employer_organization_type_review_2026-10-25.md",
               "caveat": "Current employer/work-unit type, retained as a nominal work and socioeconomic context measure. Categories have no inherent order and are not an environmental dose. Questionnaire wording and coding vary slightly by wave. Re-interview routing can skip employer-detail questions when the same workplace is carried forward; distinguish valid preloaded values, structural skips and missingness in the authorized release. Confirm eligible current-worker denominator and person linkage before use; do not treat missing or skipped as “no.”"
             }
@@ -14773,10 +14773,10 @@
               "label": "Receive a Labor Contract",
               "module": "work_retirement_and_pension",
               "unit": "binary self-report; written labor contract status (1=Yes, 2=No)",
-              "value_labels": "1=Yes; 2=No",
-              "value_semantics": "binary Yes/No response; wave-specific contract referent retained",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook item wording, Yes/No codes and applicable route reviewed; payor reference, release storage and eligible denominator require QA; see audit/written_labor_contract_review_2026-10-25.md",
-              "caveat": "Self-reported written labor-contract status in the current-work module; it is not a direct environmental exposure and does not measure contract duration, quality, labor rights or overall job security. In 2011–2015, the item refers to the current workplace or labor-dispatch company; the 2018 CAPI instruction assigns the referent to the dispatch company for dispatched workers and to the wage-paying person for workers hired by an individual. Preserve these route-specific referents. A No response skips contract-detail questions; do not treat those downstream structural skips as missing contract-status responses. Verify current-worker eligibility, special values and field storage in the authorized release."
+              "caveat": "Self-reported written labor-contract status in the current-work module; it is not a direct environmental exposure and does not measure contract duration, quality, labor rights or overall job security. In 2011–2015, the item refers to the current workplace or labor-dispatch company; the 2018 CAPI instruction assigns the referent to the dispatch company for dispatched workers and to the wage-paying person for workers hired by an individual. Preserve these route-specific referents. A No response skips contract-detail questions; do not treat those downstream structural skips as missing contract-status responses. Verify current-worker eligibility, special values and field storage in the authorized release. The 2011 questionnaire prints Yes/No without numeric display codes; numeric coding is taken from the Codebook and must be confirmed in the authorized release."
             }
           ]
         },
@@ -15236,8 +15236,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "2020 i017含义变化为室内淋浴，故不映射",
-              "mapping_status": "official 2011 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
-              "caveat": "Residence-level running-water access, not water quality, source or treatment, a contaminant assay, microbial/chemical measurement, or individual water intake. The reviewed 2011–2018 questions ask whether the residence has running water; 2020 tap-water access is a distinct item and is not assumed equivalent. Verify household-person linkage, special values, eligible denominator, and missingness in the authorized release."
+              "mapping_status": "official 2011 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md | measured",
+              "caveat": "Residence-level running-water access, not water quality, source or treatment, a contaminant assay, microbial/chemical measurement, or individual water intake. The reviewed 2011–2018 questions ask whether the residence has running water; 2020 tap-water access is a distinct item and is not assumed equivalent. Verify household-person linkage, special values, eligible denominator, and missingness in the authorized release. | 2020 i017含义变化为室内淋浴，故不映射"
             }
           ]
         },
@@ -24471,8 +24471,8 @@
               "unit": "",
               "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_13_s2",
@@ -24481,8 +24481,8 @@
               "unit": "",
               "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_13_s3",
@@ -24491,8 +24491,8 @@
               "unit": "",
               "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_13_s4",
@@ -24501,8 +24501,8 @@
               "unit": "",
               "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
             }
           ]
         },
@@ -24521,8 +24521,8 @@
               "unit": "",
               "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_7_s2",
@@ -24531,8 +24531,8 @@
               "unit": "",
               "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_7_s3",
@@ -24541,8 +24541,8 @@
               "unit": "",
               "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_7_s4",
@@ -24551,8 +24551,8 @@
               "unit": "",
               "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
             }
           ]
         },
@@ -24621,8 +24621,8 @@
               "unit": "",
               "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_5_s2",
@@ -24631,8 +24631,8 @@
               "unit": "",
               "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_5_s3",
@@ -24641,8 +24641,8 @@
               "unit": "",
               "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_5_s4",
@@ -24651,8 +24651,8 @@
               "unit": "",
               "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
             }
           ]
         },
@@ -25401,8 +25401,8 @@
               "unit": "",
               "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_6_s2",
@@ -25411,8 +25411,8 @@
               "unit": "",
               "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_6_s3",
@@ -25421,8 +25421,8 @@
               "unit": "",
               "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_6_s4",
@@ -25431,8 +25431,8 @@
               "unit": "",
               "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
             }
           ]
         },
@@ -25451,8 +25451,8 @@
               "unit": "",
               "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_9_s2",
@@ -25461,8 +25461,8 @@
               "unit": "",
               "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_9_s3",
@@ -25471,8 +25471,8 @@
               "unit": "",
               "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_9_s4",
@@ -25481,8 +25481,8 @@
               "unit": "",
               "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
             }
           ]
         },
@@ -25501,8 +25501,8 @@
               "unit": "",
               "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_10_s2",
@@ -25511,8 +25511,8 @@
               "unit": "",
               "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_10_s3",
@@ -25521,8 +25521,8 @@
               "unit": "",
               "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_10_s4",
@@ -25531,8 +25531,8 @@
               "unit": "",
               "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
             }
           ]
         },
@@ -25551,8 +25551,8 @@
               "unit": "",
               "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_2_s2",
@@ -25561,8 +25561,8 @@
               "unit": "",
               "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_2_s3",
@@ -25571,8 +25571,8 @@
               "unit": "",
               "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_2_s4",
@@ -25581,8 +25581,8 @@
               "unit": "",
               "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
             }
           ]
         },
@@ -25601,8 +25601,8 @@
               "unit": "",
               "value_labels": "1=Taking Chinese traditional medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_12_s2",
@@ -25611,8 +25611,8 @@
               "unit": "",
               "value_labels": "2=taking Western morden medicine",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_12_s3",
@@ -25621,8 +25621,8 @@
               "unit": "",
               "value_labels": "3=Other treatments",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook selected-option identity mapped; unselected response storage and routed denominator unverified; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized."
             },
             {
               "code": "da010_12_s4",
@@ -25631,8 +25631,8 @@
               "unit": "",
               "value_labels": "4=None of the above",
               "value_semantics": "wave-specific treatment response",
-              "mapping_status": "official 2011 Codebook item/option identity and selected code corroborated by local aggregate-only QA; response/route denominator unresolved; DO NOT ANALYZE",
-              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated.; Local aggregate-only QA checks nonmissing response codes against the official Codebook option index. It does not establish whether blank means unselected or skipped, define the routed denominator, or approve analysis. Do not infer No from an empty slot."
+              "mapping_status": "official 2011 Codebook item/option identity mapped; response storage and eligible denominator pending validation; DO NOT ANALYZE",
+              "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Treatment items are disease-specific, multi-select in some waves, and route-limited; response options are not assumed harmonized. This is the 2011 disease-specific 'none of the above' option (official Codebook option index 4); retain as a response-option field within the existing treatment concept, not as a separate outcome. The selected/unselected storage and eligible denominator remain unverified without permitted respondent-data checks; DO NOT ANALYZE until validated."
             }
           ]
         },
@@ -28331,10 +28331,10 @@
               "label": "Location of Workplace",
               "module": "Work_Retirement_and_Pension",
               "unit": "wave-specific ordinal workplace location category relative to residence; not a distance measure",
-              "value_labels": "1=The Same as Permanent Address; 2=Another Village in Permanent Address's County; 3=Other; 4=Abroad",
-              "value_semantics": "official questionnaire/Codebook response categories; frequencies omitted",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md",
-              "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release. Preserve wave-specific response labels."
+              "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release. 2011 uses village/community and county/province anchors; 2013/2015 refer to permanent address and include abroad; 2018 uses its own permanent/current-residence wording and location detail. 2013/2015 FD002=6/7 routes skip this field. The same code in 2020 means number of employees and is excluded."
             }
           ]
         },
@@ -29752,7 +29752,7 @@
               "module": "Work_Retirement_and_Pension",
               "unit": "days per week",
               "value_labels": "",
-              "value_semantics": "continuous numeric response; units and special survey rules reviewed; no categories inferred",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
               "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence."
             }
@@ -29772,7 +29772,7 @@
               "module": "Work_Retirement_and_Pension",
               "unit": "hours per working day",
               "value_labels": "",
-              "value_semantics": "continuous numeric response; units and special survey rules reviewed; no categories inferred",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
               "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence."
             }
@@ -31173,8 +31173,8 @@
               "label": "Location of Most Frequent Wokrplace",
               "module": "Work_Retirement_and_Pension",
               "unit": "",
-              "value_labels": "1=Same as permanent address; 2=Another village/neighborhood in permanent address's county/city/district; 3=Other; 4=Abroad",
-              "value_semantics": "official questionnaire/Codebook categories; frequencies and address text omitted",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
               "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
             }
@@ -31193,8 +31193,8 @@
               "label": "Location of Your Company",
               "module": "Work_Retirement_and_Pension",
               "unit": "",
-              "value_labels": "1=Same as permanent address; 2=Another village/neighborhood in permanent address's county/city/district; 3=Other domestic location; 4=Abroad",
-              "value_semantics": "official questionnaire/Codebook categories; no address text or frequencies",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
               "caveat": "Self-reported broad geographic category for the respondent's non-farm self-employment business. This is not a commute distance, measured pollution, or a geocoded exposure. Keep wave-specific categories and eligible business route; do not harmonize by code number alone. Questionnaire subfields may contain place names/address text and are deliberately excluded from the public atlas. Confirm authorized-release special values, eligibility, missingness and person linkage before analysis."
             }
@@ -31213,8 +31213,8 @@
               "label": "Location of Most Frequent Wokrplace",
               "module": "Work_Retirement_and_Pension",
               "unit": "",
-              "value_labels": "1=Same as permanent address; 2=Another village/neighborhood in permanent address's county/city/district; 3=Other",
-              "value_semantics": "official questionnaire/Codebook categories; frequencies and address text omitted",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
               "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
             }
@@ -31253,10 +31253,10 @@
               "label": "Location",
               "module": "Work_Retirement_and_Pension",
               "unit": "wave-specific retrospective nominal location category",
-              "value_labels": "1=Same as permanent address; 2=Another village/neighborhood in permanent address's county/city/district; 3=Other; 4=Abroad",
-              "value_semantics": "official questionnaire menu; wave-specific Codebook completeness and released coding noted in Mapping.Status",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "questionnaire/Codebook menu discrepancy: official questionnaire includes 4=Abroad but the Codebook category table omits it; candidate pending authorized-release code validation; see audit/last_job_workplace_location_review_2026-10-25.md",
-              "caveat": "Retrospective self-reported location category for the most recent job. This is coarse historical geographic context, not commute distance, a geocoded address, measured pollution or personal dose. Keep wave-specific categories and prior-job eligibility routes separate; questionnaire place-name fields are excluded from public metadata. Confirm special values, field storage, prior-job route and eligible denominator in the authorized release. Codebook omits questionnaire option 4=Abroad; verify released coding."
+              "caveat": "Retrospective self-reported location category for the most recent job. This is coarse historical geographic context, not commute distance, a geocoded address, measured pollution or personal dose. Keep wave-specific categories and prior-job eligibility routes separate; questionnaire place-name fields are excluded from public metadata. Confirm special values, field storage, prior-job route and eligible denominator in the authorized release. Codebook omits the questionnaire Abroad option; retain the discrepancy until release-level validation."
             }
           ]
         },
@@ -31273,8 +31273,8 @@
               "label": "Location of This Company",
               "module": "Work_Retirement_and_Pension",
               "unit": "wave-specific nominal location category; no address or distance measure",
-              "value_labels": "1=Same as permanent address; 2=Another village/neighborhood in permanent address's county/city/district; 3=Other; 4=Abroad",
-              "value_semantics": "official location categories; no address text or frequencies",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook categories and unpaid-family-business route reviewed; interviewer special code, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/unpaid_family_business_location_review_2026-10-25.md",
               "caveat": "Self-reported broad location category for unpaid family-business work, a work-context candidate rather than an environmental dose or personal exposure. Keep wave-specific categories and the unpaid-family-work route separate. 2011 instructs interviewers to enter 0 for no fixed address; that instruction is not an additional location category and requires released-data coding verification. Later-wave re-interview branches may skip details when the same business carries forward. Fine-grained place-name/address fields are excluded from public metadata. Confirm eligible denominator, special values and person linkage before analysis."
             }
@@ -34717,8 +34717,8 @@
               "label": "Type of Employer",
               "module": "Work_Retirement_and_Pension",
               "unit": "nominal current-employer organization category; no inherent order",
-              "value_labels": "1=Government; 2=Institution; 3=NGO; 4=Firm; 5=Individual firm; 6=Farmer; 7=Individual household; 8=Other",
-              "value_semantics": "official nominal response categories; 2020 code 997 means do not know; frequencies omitted",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook category wording and employment route reviewed; released storage, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/current_employer_organization_type_review_2026-10-25.md",
               "caveat": "Current employer/work-unit type, retained as a nominal work and socioeconomic context measure. Categories have no inherent order and are not an environmental dose. Questionnaire wording and coding vary slightly by wave. Re-interview routing can skip employer-detail questions when the same workplace is carried forward; distinguish valid preloaded values, structural skips and missingness in the authorized release. Confirm eligible current-worker denominator and person linkage before use; do not treat missing or skipped as “no.”"
             }
@@ -35497,8 +35497,8 @@
               "label": "Any Labor Contract in Written with Current Employer",
               "module": "Work_Retirement_and_Pension",
               "unit": "binary self-report; written labor contract status (1=Yes, 2=No)",
-              "value_labels": "1=Yes; 2=No",
-              "value_semantics": "binary Yes/No response; wave-specific contract referent retained",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook item wording, Yes/No codes and applicable route reviewed; payor reference, release storage and eligible denominator require QA; see audit/written_labor_contract_review_2026-10-25.md",
               "caveat": "Self-reported written labor-contract status in the current-work module; it is not a direct environmental exposure and does not measure contract duration, quality, labor rights or overall job security. In 2011–2015, the item refers to the current workplace or labor-dispatch company; the 2018 CAPI instruction assigns the referent to the dispatch company for dispatched workers and to the wage-paying person for workers hired by an individual. Preserve these route-specific referents. A No response skips contract-detail questions; do not treat those downstream structural skips as missing contract-status responses. Verify current-worker eligibility, special values and field storage in the authorized release."
             }
@@ -36509,8 +36509,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "2020 i017含义变化为室内淋浴，故不映射",
-              "mapping_status": "official 2013 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
-              "caveat": "Residence-level running-water access, not water quality, source or treatment, a contaminant assay, microbial/chemical measurement, or individual water intake. The reviewed 2011–2018 questions ask whether the residence has running water; 2020 tap-water access is a distinct item and is not assumed equivalent. Verify household-person linkage, special values, eligible denominator, and missingness in the authorized release."
+              "mapping_status": "official 2013 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md | measured",
+              "caveat": "Residence-level running-water access, not water quality, source or treatment, a contaminant assay, microbial/chemical measurement, or individual water intake. The reviewed 2011–2018 questions ask whether the residence has running water; 2020 tap-water access is a distinct item and is not assumed equivalent. Verify household-person linkage, special values, eligible denominator, and missingness in the authorized release. | 2020 i017含义变化为室内淋浴，故不映射"
             }
           ]
         },
@@ -40846,221 +40846,221 @@
               "code": "fn003_w2_1_1_",
               "label": "When Did You Start Receiving Pension Benefits(Year) Corresponding to FN002_w2 Op",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension receipt start year/month component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn003_w2_1_2_",
               "label": "When Did You Start Receiving Pension Benefits(Year) Corresponding to FN002_w2 Op",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension receipt start year/month component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn003_w2_1_3_",
               "label": "When Did You Start Receiving Pension Benefits(Year) Corresponding to FN002_w2 Op",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension receipt start year/month component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn003_w2_2_1_",
               "label": "When Did You Start Receiving Pension Benefits(Month) Corresponding to FN002_w2 O",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension receipt start year/month component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn003_w2_2_2_",
               "label": "When Did You Start Receiving Pension Benefits(Month) Corresponding to FN002_w2 O",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar month component; questionnaire notes 0 may mean month not remembered",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension receipt start year/month component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn003_w2_2_3_",
               "label": "When Did You Start Receiving Pension Benefits(Month) Corresponding to FN002_w2 O",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar month component; questionnaire notes 0 may mean month not remembered",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension receipt start year/month component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn041_w2_1",
               "label": "When Did You Start to Receive Pension Benefits(Year)",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn041_w2_2",
               "label": "When Did You Start to Receive Pension Benefits(Month)",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar month component; questionnaire notes 0 may mean month not remembered",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn055_w2_1",
               "label": "When Did You Start to Receive Benefits(Year)",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension receipt start year/month component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn055_w2_2",
               "label": "When Did You Start to Receive Benefits(Month)",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar month component; questionnaire notes 0 may mean month not remembered",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension receipt start year/month component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn067_w2_1_1_",
               "label": "When Did You Start to Receive This Pension Benefits(Year)(Rural Pension)",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn067_w2_1_2_",
               "label": "When Did You Start to Receive This Pension Benefits(Year)(Residents' Pension)",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn067_w2_1_3_",
               "label": "When Did You Start to Receive This Pension Benefits(Year)(Urban Residents' Pensi",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn067_w2_2_1_",
               "label": "When Did You Start to Receive This Pension Benefits(Month)(Rural Pension)",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn067_w2_2_2_",
               "label": "When Did You Start to Receive This Pension Benefits(Month)(Residents' Pension)",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar month component; questionnaire notes 0 may mean month not remembered",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn067_w2_2_3_",
               "label": "When Did You Start to Receive This Pension Benefits(Month)(Urban Residents' Pens",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar month component; questionnaire notes 0 may mean month not remembered",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn076_w2_1",
               "label": "When Did You Start to Receive Pension Benefits(Year)",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn076_w2_2",
               "label": "When Did You Start to Receive Pension Benefits(Month)",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar month component; questionnaire notes 0 may mean month not remembered",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn081_w2_1",
               "label": "When Did You Start to Receive The Benefits(Year)",
               "module": "Work_Retirement_and_Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension receipt start year/month component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn081_w2_2",
               "label": "When Did You Start to Receive The Benefits(Month)",
               "module": "Work_Retirement_and_Pension",
-              "unit": "unresolved; do not analyze",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "2013 FN081 month subfield identity conflicts between questionnaire extraction and Codebook; retain as unresolved and do not relabel from inference.",
-              "mapping_status": "DO NOT ANALYZE: questionnaire extraction repeats the year subfield identifier for the month; Codebook identifies _2 as month; reconcile exact release questionnaire before using.",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; 2013 FN081 month subfield identity conflicts between questionnaire extraction and Codebook; retain as unresolved and do not relabel from inference."
+              "value_semantics": "reported pension receipt start year/month component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn095_w2_1",
               "label": "When Did You Start to Receive This Pension Benefits(Year)",
               "module": "Work_Retirement_and_Pension",
-              "unit": "unresolved; do not analyze",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "2013 Codebook marks FN095 year as No Observations; candidate metadata only, not an observed analytic measure.",
-              "mapping_status": "DO NOT ANALYZE: 2013 Codebook labels this field No Observations; verify exact authorized release and field presence first.",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; 2013 Codebook marks FN095 year as No Observations; candidate metadata only, not an observed analytic measure."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn095_w2_2",
               "label": "When Did You Start to Receive This Pension Benefits(Month)",
               "module": "Work_Retirement_and_Pension",
-              "unit": "unresolved; do not analyze",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "2013 Codebook marks FN095 month as No Observations; candidate metadata only, not an observed analytic measure.",
-              "mapping_status": "DO NOT ANALYZE: 2013 Codebook labels this field No Observations; verify exact authorized release and field presence first.",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; 2013 Codebook marks FN095 month as No Observations; candidate metadata only, not an observed analytic measure."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             }
           ]
         },
@@ -44278,11 +44278,11 @@
               "code": "fn097_w2",
               "label": "Whom Do You Think You Can Rely on Financially for Old-age Support",
               "module": "Work_Retirement_and_Pension",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "reported financial old-age support source",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
+              "unit": "categorical; one primary response",
+              "value_labels": "1=Children; 2=Savings; 3=Pension or Retirement Salary; 4=Commercial Pension Insurance; 5=Other",
+              "value_semantics": "respondent-reported expected financial resource for old age (single categorical response)",
+              "mapping_status": "2013 questionnaire wording, five response categories, and child follow-up route verified; candidate only",
+              "caveat": "Subjective anticipated financial support source for old age, not actual support received, current pension coverage, or income. Response 1=Children routes to FN098_w2 (choose all applicable children); other responses do not enter that child roster. Preserve this categorical item separately from the child roster and income/benefit measures."
             }
           ]
         },
@@ -53546,10 +53546,10 @@
               "label": "Location of Workplace",
               "module": "Work_Retirement_and_Pension",
               "unit": "wave-specific ordinal workplace location category relative to residence; not a distance measure",
-              "value_labels": "1=The Same as Permanent Address; 2=Another Village in Permanent Address's County; 3=Other; 4=Abroad",
-              "value_semantics": "official questionnaire/Codebook response categories; frequencies omitted",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md",
-              "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release. Preserve wave-specific response labels."
+              "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release. 2011 uses village/community and county/province anchors; 2013/2015 refer to permanent address and include abroad; 2018 uses its own permanent/current-residence wording and location detail. 2013/2015 FD002=6/7 routes skip this field. The same code in 2020 means number of employees and is excluded."
             }
           ]
         },
@@ -55688,7 +55688,7 @@
               "module": "Work_Retirement_and_Pension",
               "unit": "days per week",
               "value_labels": "",
-              "value_semantics": "continuous numeric response; units and special survey rules reviewed; no categories inferred",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
               "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence."
             }
@@ -55708,7 +55708,7 @@
               "module": "Work_Retirement_and_Pension",
               "unit": "hours per working day",
               "value_labels": "",
-              "value_semantics": "continuous numeric response; units and special survey rules reviewed; no categories inferred",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
               "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence."
             }
@@ -56839,8 +56839,8 @@
               "label": "Location of Most Frequent Wokrplace",
               "module": "Work_Retirement_and_Pension",
               "unit": "",
-              "value_labels": "1=Same as permanent address; 2=Another village/neighborhood in permanent address's county/city/district; 3=Other; 4=Abroad",
-              "value_semantics": "official questionnaire/Codebook categories; frequencies and address text omitted",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
               "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
             }
@@ -56859,8 +56859,8 @@
               "label": "Location of Your Company",
               "module": "Work_Retirement_and_Pension",
               "unit": "",
-              "value_labels": "1=Same as permanent address; 2=Another village/neighborhood in permanent address's county/city/district; 3=Other domestic location; 4=Abroad",
-              "value_semantics": "official questionnaire/Codebook categories; no address text or frequencies",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
               "caveat": "Self-reported broad geographic category for the respondent's non-farm self-employment business. This is not a commute distance, measured pollution, or a geocoded exposure. Keep wave-specific categories and eligible business route; do not harmonize by code number alone. Questionnaire subfields may contain place names/address text and are deliberately excluded from the public atlas. Confirm authorized-release special values, eligibility, missingness and person linkage before analysis."
             }
@@ -56879,10 +56879,10 @@
               "label": "Location",
               "module": "Work_Retirement_and_Pension",
               "unit": "wave-specific retrospective nominal location category",
-              "value_labels": "1=Same as permanent address; 2=Another village/neighborhood in permanent address's county/city/district; 3=Other; 4=Abroad",
-              "value_semantics": "official questionnaire menu; wave-specific Codebook completeness and released coding noted in Mapping.Status",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official 2015 questionnaire and Codebook categories reviewed; release storage, prior-job eligibility and denominator still require QA; see audit/last_job_workplace_location_review_2026-10-25.md",
-              "caveat": "Retrospective self-reported location category for the most recent job. This is coarse historical geographic context, not commute distance, a geocoded address, measured pollution or personal dose. Keep wave-specific categories and prior-job eligibility routes separate; questionnaire place-name fields are excluded from public metadata. Confirm special values, field storage, prior-job route and eligible denominator in the authorized release. 2015 question and Codebook menus agree."
+              "caveat": "Retrospective self-reported location category for the most recent job. This is coarse historical geographic context, not commute distance, a geocoded address, measured pollution or personal dose. Keep wave-specific categories and prior-job eligibility routes separate; questionnaire place-name fields are excluded from public metadata. Confirm special values, field storage, prior-job route and eligible denominator in the authorized release. 2015 questionnaire and Codebook both list the Abroad category."
             }
           ]
         },
@@ -56899,8 +56899,8 @@
               "label": "Location of This Company",
               "module": "Work_Retirement_and_Pension",
               "unit": "wave-specific nominal location category; no address or distance measure",
-              "value_labels": "1=Same as permanent address; 2=Another village/neighborhood in permanent address's county/city/district; 3=Other; 4=Abroad",
-              "value_semantics": "official location categories; no address text or frequencies",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook categories and unpaid-family-business route reviewed; interviewer special code, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/unpaid_family_business_location_review_2026-10-25.md",
               "caveat": "Self-reported broad location category for unpaid family-business work, a work-context candidate rather than an environmental dose or personal exposure. Keep wave-specific categories and the unpaid-family-work route separate. 2011 instructs interviewers to enter 0 for no fixed address; that instruction is not an additional location category and requires released-data coding verification. Later-wave re-interview branches may skip details when the same business carries forward. Fine-grained place-name/address fields are excluded from public metadata. Confirm eligible denominator, special values and person linkage before analysis."
             }
@@ -59893,8 +59893,8 @@
               "label": "Type of Employer",
               "module": "Work_Retirement_and_Pension",
               "unit": "nominal current-employer organization category; no inherent order",
-              "value_labels": "1=Government; 2=Institution; 3=NGO; 4=Firm; 5=Individual firm; 6=Farmer; 7=Individual household; 8=Other",
-              "value_semantics": "official nominal response categories; 2020 code 997 means do not know; frequencies omitted",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook category wording and employment route reviewed; released storage, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/current_employer_organization_type_review_2026-10-25.md",
               "caveat": "Current employer/work-unit type, retained as a nominal work and socioeconomic context measure. Categories have no inherent order and are not an environmental dose. Questionnaire wording and coding vary slightly by wave. Re-interview routing can skip employer-detail questions when the same workplace is carried forward; distinguish valid preloaded values, structural skips and missingness in the authorized release. Confirm eligible current-worker denominator and person linkage before use; do not treat missing or skipped as “no.”"
             }
@@ -60804,8 +60804,8 @@
               "label": "Any Labor Contract in Written with Current Employer",
               "module": "Work_Retirement_and_Pension",
               "unit": "binary self-report; written labor contract status (1=Yes, 2=No)",
-              "value_labels": "1=Yes; 2=No",
-              "value_semantics": "binary Yes/No response; wave-specific contract referent retained",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook item wording, Yes/No codes and applicable route reviewed; payor reference, release storage and eligible denominator require QA; see audit/written_labor_contract_review_2026-10-25.md",
               "caveat": "Self-reported written labor-contract status in the current-work module; it is not a direct environmental exposure and does not measure contract duration, quality, labor rights or overall job security. In 2011–2015, the item refers to the current workplace or labor-dispatch company; the 2018 CAPI instruction assigns the referent to the dispatch company for dispatched workers and to the wage-paying person for workers hired by an individual. Preserve these route-specific referents. A No response skips contract-detail questions; do not treat those downstream structural skips as missing contract-status responses. Verify current-worker eligibility, special values and field storage in the authorized release."
             }
@@ -62497,8 +62497,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "2020 i017含义变化为室内淋浴，故不映射",
-              "mapping_status": "official 2015 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
-              "caveat": "Residence-level running-water access, not water quality, source or treatment, a contaminant assay, microbial/chemical measurement, or individual water intake. The reviewed 2011–2018 questions ask whether the residence has running water; 2020 tap-water access is a distinct item and is not assumed equivalent. Verify household-person linkage, special values, eligible denominator, and missingness in the authorized release."
+              "mapping_status": "official 2015 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md | measured",
+              "caveat": "Residence-level running-water access, not water quality, source or treatment, a contaminant assay, microbial/chemical measurement, or individual water intake. The reviewed 2011–2018 questions ask whether the residence has running water; 2020 tap-water access is a distinct item and is not assumed equivalent. Verify household-person linkage, special values, eligible denominator, and missingness in the authorized release. | 2020 i017含义变化为室内淋浴，故不映射"
             }
           ]
         },
@@ -70664,11 +70664,11 @@
               "code": "fn097_w2",
               "label": "Whom Do You Think You Can Rely on Financially for Old-age Support",
               "module": "Work_Retirement_and_Pension",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "reported financial old-age support source",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
+              "unit": "categorical; one primary response",
+              "value_labels": "1=Children; 2=Savings; 3=Pension or Retirement Salary; 4=Commercial Pension Insurance; 5=Other",
+              "value_semantics": "respondent-reported expected financial resource for old age (single categorical response)",
+              "mapping_status": "2015 questionnaire wording, five response categories, and child follow-up route verified; candidate only",
+              "caveat": "Subjective anticipated financial support source for old age, not actual support received, current pension coverage, or income. Response 1=Children routes to FN098_w2 (choose all applicable children); other responses do not enter that child roster. Preserve this categorical item separately from the child roster and income/benefit measures."
             }
           ]
         },
@@ -80573,10 +80573,10 @@
               "label": "Location of the Workplace",
               "module": "Work_Retirement",
               "unit": "wave-specific ordinal workplace location category relative to residence; not a distance measure",
-              "value_labels": "1=Same as the Residence; 2=Other village/community in the permanent address's county/city/district; 3=Other domestic location; 4=Abroad",
-              "value_semantics": "official questionnaire/Codebook response categories; frequencies omitted",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook wording, response labels and applicable route reviewed; release storage, eligible denominator and person linkage require QA; see audit/workplace_location_context_review_2026-10-25.md",
-              "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release. Preserve wave-specific response labels."
+              "caveat": "Current workplace geographic-context item among respondents routed to the employed-work module. This is a coarse self-reported location category, not commute distance, air pollution, or a measured environmental dose. Keep wave-specific categories and eligible current-work denominator; do not pool categories across waves without a separate equivalence review. Verify released-file special values, item availability and person linkage in the authorized release. 2011 uses village/community and county/province anchors; 2013/2015 refer to permanent address and include abroad; 2018 uses its own permanent/current-residence wording and location detail. 2013/2015 FD002=6/7 routes skip this field. The same code in 2020 means number of employees and is excluded."
             }
           ]
         },
@@ -85074,7 +85074,7 @@
               "module": "Work_Retirement",
               "unit": "days per week",
               "value_labels": "",
-              "value_semantics": "continuous numeric response; units and special survey rules reviewed; no categories inferred",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
               "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence. Irregular weekly days may be derived from annual working days divided by working months and four; retain this stated derivation context."
             }
@@ -85094,7 +85094,7 @@
               "module": "Work_Retirement",
               "unit": "hours per working day",
               "value_labels": "",
-              "value_semantics": "continuous numeric response; units and special survey rules reviewed; no categories inferred",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
               "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence."
             }
@@ -86235,8 +86235,8 @@
               "label": "Location of the Most Frequent Workplace",
               "module": "Work_Retirement",
               "unit": "",
-              "value_labels": "1=Same as permanent address; 2=Other village/community in the permanent address's county/city/district; 3=Other domestic location",
-              "value_semantics": "official questionnaire/Codebook categories; frequencies and address text omitted",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
               "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
             }
@@ -86255,8 +86255,8 @@
               "label": "Location of the Self Employment Business",
               "module": "Work_Retirement",
               "unit": "",
-              "value_labels": "1=Same as permanent address; 2=Other village/community in the permanent address's county/city/district; 3=Other domestic location; 4=Abroad",
-              "value_semantics": "official questionnaire/Codebook categories; no address text or frequencies",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
               "caveat": "Self-reported broad geographic category for the respondent's non-farm self-employment business. This is not a commute distance, measured pollution, or a geocoded exposure. Keep wave-specific categories and eligible business route; do not harmonize by code number alone. Questionnaire subfields may contain place names/address text and are deliberately excluded from the public atlas. Confirm authorized-release special values, eligibility, missingness and person linkage before analysis."
             }
@@ -86275,10 +86275,10 @@
               "label": "Location of the Last Job",
               "module": "Work_Retirement",
               "unit": "wave-specific retrospective nominal location category",
-              "value_labels": "1=Same as permanent address; 2=Other village/community in the permanent address's county/city/district; 3=Other domestic location; 4=Abroad",
-              "value_semantics": "official questionnaire menu; wave-specific Codebook completeness and released coding noted in Mapping.Status",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "questionnaire/Codebook menu discrepancy: official questionnaire includes 4=Abroad but the Codebook category table omits it; candidate pending authorized-release code validation; see audit/last_job_workplace_location_review_2026-10-25.md",
-              "caveat": "Retrospective self-reported location category for the most recent job. This is coarse historical geographic context, not commute distance, a geocoded address, measured pollution or personal dose. Keep wave-specific categories and prior-job eligibility routes separate; questionnaire place-name fields are excluded from public metadata. Confirm special values, field storage, prior-job route and eligible denominator in the authorized release. Codebook omits questionnaire option 4=Abroad; verify released coding."
+              "caveat": "Retrospective self-reported location category for the most recent job. This is coarse historical geographic context, not commute distance, a geocoded address, measured pollution or personal dose. Keep wave-specific categories and prior-job eligibility routes separate; questionnaire place-name fields are excluded from public metadata. Confirm special values, field storage, prior-job route and eligible denominator in the authorized release. Codebook omits the questionnaire Abroad option; retain the discrepancy until release-level validation."
             }
           ]
         },
@@ -86295,8 +86295,8 @@
               "label": "Location of the Family Business",
               "module": "Work_Retirement",
               "unit": "wave-specific nominal location category; no address or distance measure",
-              "value_labels": "1=Same as permanent address; 2=Other village/community in the permanent address's county/city/district; 3=Other domestic location; 4=Abroad",
-              "value_semantics": "official location categories; no address text or frequencies",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook categories and unpaid-family-business route reviewed; interviewer special code, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/unpaid_family_business_location_review_2026-10-25.md",
               "caveat": "Self-reported broad location category for unpaid family-business work, a work-context candidate rather than an environmental dose or personal exposure. Keep wave-specific categories and the unpaid-family-work route separate. 2011 instructs interviewers to enter 0 for no fixed address; that instruction is not an additional location category and requires released-data coding verification. Later-wave re-interview branches may skip details when the same business carries forward. Fine-grained place-name/address fields are excluded from public metadata. Confirm eligible denominator, special values and person linkage before analysis."
             }
@@ -89209,8 +89209,8 @@
               "label": "Type of the Employer",
               "module": "Work_Retirement",
               "unit": "nominal current-employer organization category; no inherent order",
-              "value_labels": "1=Government; 2=Public institution; 3=NGO; 4=Firm; 5=Individual firm; 6=Farmer; 7=Individual household; 8=Other",
-              "value_semantics": "official nominal response categories; 2020 code 997 means do not know; frequencies omitted",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook category wording and employment route reviewed; released storage, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/current_employer_organization_type_review_2026-10-25.md",
               "caveat": "Current employer/work-unit type, retained as a nominal work and socioeconomic context measure. Categories have no inherent order and are not an environmental dose. Questionnaire wording and coding vary slightly by wave. Re-interview routing can skip employer-detail questions when the same workplace is carried forward; distinguish valid preloaded values, structural skips and missingness in the authorized release. Confirm eligible current-worker denominator and person linkage before use; do not treat missing or skipped as “no.”"
             }
@@ -89899,8 +89899,8 @@
               "label": "Any Written Labor Contract with the Current Employer or Not",
               "module": "Work_Retirement",
               "unit": "binary self-report; written labor contract status (1=Yes, 2=No)",
-              "value_labels": "1=Yes; 2=No",
-              "value_semantics": "binary Yes/No response; wave-specific contract referent retained",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook item wording, Yes/No codes and applicable route reviewed; payor reference, release storage and eligible denominator require QA; see audit/written_labor_contract_review_2026-10-25.md",
               "caveat": "Self-reported written labor-contract status in the current-work module; it is not a direct environmental exposure and does not measure contract duration, quality, labor rights or overall job security. In 2011–2015, the item refers to the current workplace or labor-dispatch company; the 2018 CAPI instruction assigns the referent to the dispatch company for dispatched workers and to the wage-paying person for workers hired by an individual. Preserve these route-specific referents. A No response skips contract-detail questions; do not treat those downstream structural skips as missing contract-status responses. Verify current-worker eligibility, special values and field storage in the authorized release."
             }
@@ -90851,8 +90851,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "2020 i017含义变化为室内淋浴，故不映射",
-              "mapping_status": "official 2018 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
-              "caveat": "Residence-level running-water access, not water quality, source or treatment, a contaminant assay, microbial/chemical measurement, or individual water intake. The reviewed 2011–2018 questions ask whether the residence has running water; 2020 tap-water access is a distinct item and is not assumed equivalent. Verify household-person linkage, special values, eligible denominator, and missingness in the authorized release."
+              "mapping_status": "official 2018 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md | measured",
+              "caveat": "Residence-level running-water access, not water quality, source or treatment, a contaminant assay, microbial/chemical measurement, or individual water intake. The reviewed 2011–2018 questions ask whether the residence has running water; 2020 tap-water access is a distinct item and is not assumed equivalent. Verify household-person linkage, special values, eligible denominator, and missingness in the authorized release. | 2020 i017含义变化为室内淋浴，故不映射"
             }
           ]
         },
@@ -98648,141 +98648,141 @@
               "code": "fn003_w2_1_1_",
               "label": "Year of Receive Government Pension",
               "module": "Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn003_w2_1_2_",
               "label": "Year of Receive Institutions Pension",
               "module": "Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn003_w2_1_3_",
               "label": "Year of Receive Firm Pension",
               "module": "Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn003_w2_1_4_",
               "label": "Year of Receive Government/Institutions/Firm Pension",
               "module": "Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn041_w2_1",
               "label": "Year of Receive Pension",
               "module": "Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn041_w2_2",
               "label": "Month of Receive Pension",
               "module": "Pension",
-              "unit": "calendar month component; questionnaire notes 0 may mean month not remembered",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension receipt start year/month component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn055_w2_1",
               "label": "The Year of You Started to Receive Pension",
               "module": "Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension receipt start year/month component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn055_w2_2",
               "label": "The Month of You Started to Receive Pension",
               "module": "Pension",
-              "unit": "calendar month component; questionnaire notes 0 may mean month not remembered",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension receipt start year/month component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn067_w2_1",
               "label": "Year of Receive Pension",
               "module": "Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn067_w2_2",
               "label": "Month of Receive Pension",
               "module": "Pension",
-              "unit": "calendar month component; questionnaire notes 0 may mean month not remembered",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension receipt start year/month component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn077_w4_1",
               "label": "Year of Receive Pension",
               "module": "Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn077_w4_2",
               "label": "Month of Receive Pension",
               "module": "Pension",
-              "unit": "calendar month component; questionnaire notes 0 may mean month not remembered",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension receipt start year/month component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn095_w2_1",
               "label": "The Year of Receive Pension",
               "module": "Pension",
-              "unit": "calendar year component",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date year component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension benefit receipt start date component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             },
             {
               "code": "fn095_w2_2",
               "label": "The Month of Receive Pension",
               "module": "Pension",
-              "unit": "calendar month component; questionnaire notes 0 may mean month not remembered",
+              "unit": "",
               "value_labels": "",
-              "value_semantics": "Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis.",
-              "mapping_status": "official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures.; Pension-receipt start-date month component. Keep paired with its wave-, plan-, and route-specific counterpart; this is a recalled calendar component, not a duration or an independently validated exposure. Questionnaire/codebook source review only; confirm release storage, special missing values, denominator, and route before analysis."
+              "value_semantics": "reported pension receipt start year/month component",
+              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
+              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
             }
           ]
         },
@@ -101329,11 +101329,11 @@
               "code": "fn097_w2",
               "label": "What You Can Rely on Financially for Old-Age Support",
               "module": "Pension",
-              "unit": "",
-              "value_labels": "",
-              "value_semantics": "reported financial old-age support source",
-              "mapping_status": "candidate from official variable metadata; questionnaire wording/value codes and route review pending",
-              "caveat": "Pension variables are plan-, wave-, and route-specific. Do not treat preloads, bracket endpoints, family-level amounts, or different receipt/contribution questions as interchangeable measures."
+              "unit": "categorical; one primary response",
+              "value_labels": "1=Children; 2=Savings; 3=Pension or Retirement Salary; 4=Commercial Pension Insurance; 5=Other",
+              "value_semantics": "respondent-reported expected financial resource for old age (single categorical response)",
+              "mapping_status": "2018 questionnaire wording, five response categories, and conditional route verified; candidate only",
+              "caveat": "Hypothetical resource if the respondent becomes too old to work, not actual support received, current pension coverage, or income. The questionnaire defines commercial pension insurance as directly purchased life insurance with regular premiums and recurring benefits from the contracted age. Response 1=Children routes to FN098_W2 (choose all applicable children); responses 2–5 end the pension section. FN097_W2 is reached through wave-specific pension screening/skip logic, so do not assume its denominator is identical to 2013/2015. Keep wave wording, route, and denominator distinct; do not assert full cross-wave equivalence."
             }
           ]
         },
@@ -109526,8 +109526,8 @@
               "label": "Location of the Workplace",
               "module": "Work_Retirement",
               "unit": "wave-specific nominal workplace location category; not a distance measure",
-              "value_labels": "1=Same village/community as current residence; 2=Other village/community in same county/district; 3=Other county/district; 4=Hong Kong, Macao, Taiwan, or abroad; 999=Refuse to answer",
-              "value_semantics": "official 2020 response categories; 999 refusal retained; frequencies omitted",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official 2020 questionnaire/Codebook wording, response labels and current-employer route reviewed; release storage, eligible denominator and person linkage require QA; see audit/current_employer_location_2020_review_2026-10-25.md",
               "caveat": "2020 FC004 asks where the current employer is located, among respondents routed to the employer module. This is coarse self-reported geographic context, not commute distance or measured pollution. The instrument has conditional place-name fields; they are excluded from public metadata and must not be geocoded without a separate privacy/data-use review. Preserve nominal response categories and 999 refusal separately; verify exact release storage, route, denominator and linkage before analysis."
             }
@@ -109707,7 +109707,7 @@
               "module": "Work_Retirement",
               "unit": "days per week",
               "value_labels": "",
-              "value_semantics": "continuous numeric response; units and special survey rules reviewed; no categories inferred",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
               "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence. Weeks with paid vacations and fully paid sick leave are excluded; when work is fewer than four days per month and the average is below one day per week, interviewers are instructed to enter 1."
             }
@@ -109727,7 +109727,7 @@
               "module": "Work_Retirement",
               "unit": "hours per working day",
               "value_labels": "",
-              "value_semantics": "continuous numeric response; units and special survey rules reviewed; no categories inferred",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook numeric measure, unit and applicable work rule reviewed; authorized-release storage and eligible denominator require QA; see audit/employed_work_intensity_review_2026-10-25.md",
               "caveat": "Past-year average for wage-employment work, not a direct environmental exposure or validated measure of physical workload. Keep days/week separate from hours/working day; these marginal averages do not identify daily schedules, intensity, unpaid work or occupation. The item belongs to the wage-employment workplace route; dispatch and payor references may vary. Confirm current/last-year employment eligibility, special values and person linkage in the authorized release. Cross-wave equality of units does not establish measurement equivalence."
             }
@@ -110107,8 +110107,8 @@
               "label": "Location of the Self Employment Business",
               "module": "Work_Retirement",
               "unit": "nominal type of current employer/work unit; preserve wave-specific response categories",
-              "value_labels": "1=Same village/community as current residence; 2=Other village/community in same county/district; 3=Other county/district; 4=Hong Kong, Macao, Taiwan, or abroad; 999=Refuse to answer",
-              "value_semantics": "official questionnaire/Codebook categories; no address text or frequencies",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook category wording and self-employment route reviewed; release special values, denominator and person linkage require QA; see audit/selfemployment_business_location_review_2026-10-25.md",
               "caveat": "Self-reported broad geographic category for the respondent's non-farm self-employment business. This is not a commute distance, measured pollution, or a geocoded exposure. Keep wave-specific categories and eligible business route; do not harmonize by code number alone. Questionnaire subfields may contain place names/address text and are deliberately excluded from the public atlas. Confirm authorized-release special values, eligibility, missingness and person linkage before analysis."
             }
@@ -110127,8 +110127,8 @@
               "label": "Location of farm work",
               "module": "Work_Retirement",
               "unit": "",
-              "value_labels": "1=Same village/community as current residence; 2=Other village/community in same county/district; 3=Other county/district; 4=Hong Kong, Macao, Taiwan, or abroad; 999=Refuse to answer",
-              "value_semantics": "official questionnaire/Codebook categories; frequencies and address text omitted",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook categories and work route reviewed; release storage, eligible denominator and person linkage require QA; see audit/agricultural_workplace_context_review_2026-10-25.md",
               "caveat": "Coarse self-reported location of household agricultural work or paid work for another farm, according to the distinct concept and route shown for each field. Not a measured environmental concentration, personal dose, commute distance, or validated geocode. Keep household-farm, paid-farm and wave-specific categories separate. The questionnaire may contain place-name text fields; they are excluded from public metadata. Confirm route, eligible denominator, special values, release identity and person linkage before analysis."
             }
@@ -111019,8 +111019,8 @@
               "unit": "",
               "value_labels": "",
               "value_semantics": "",
-              "mapping_status": "official 2020 questionnaire/Codebook wording, target and response categories reviewed; see audit/housing_context_source_review_2026-10-24.md",
-              "caveat": "2020 I002/I003 refer to when the Household Financial Respondent moved into current housing, not when the building was constructed. I002 is a calendar year with questionnaire range 1900–2020 and -1 when the respondent cannot answer; I003 is a separate fallback elapsed-time bracket for unclear year. Preserve the two response formats and household-person referent; validate special-value storage and routing in the authorized release before analysis."
+              "mapping_status": "official 2020 questionnaire identifies respondent move-in calendar year; no discrete labels; questionnaire -1 unknown code requires authorized-release validation; see audit/housing_context_source_review_2026-10-24.md",
+              "caveat": "2020 year the Household Financial Respondent moved into current housing, not the building construction year. The questionnaire specifies 1900–2020 and instructs interviewers to enter -1 when the respondent cannot answer; validate release-specific storage and special values before analysis. Do not infer eligible sample or valid range from Codebook summaries; verify authorized release metadata before modeling."
             },
             {
               "code": "i003",
@@ -111097,8 +111097,8 @@
               "label": "Type of the Employer",
               "module": "Work_Retirement",
               "unit": "nominal current-employer organization category; no inherent order",
-              "value_labels": "1=Government; 2=Public institution; 3=NGO; 4=Firm; 5=Individual firm; 6=Farmer; 7=Individual household; 8=Other; 997=Do not know",
-              "value_semantics": "official nominal response categories; 2020 code 997 means do not know; frequencies omitted",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook category wording and employment route reviewed; released storage, re-interview carry-forward, eligible denominator and person linkage require QA; see audit/current_employer_organization_type_review_2026-10-25.md",
               "caveat": "Current employer/work-unit type, retained as a nominal work and socioeconomic context measure. Categories have no inherent order and are not an environmental dose. Questionnaire wording and coding vary slightly by wave. Re-interview routing can skip employer-detail questions when the same workplace is carried forward; distinguish valid preloaded values, structural skips and missingness in the authorized release. Confirm eligible current-worker denominator and person linkage before use; do not treat missing or skipped as “no.”"
             }
@@ -111297,8 +111297,8 @@
               "label": "Has Any Written Labor Contract with the Current Employer or Not",
               "module": "Work_Retirement",
               "unit": "binary self-report; written labor contract status (1=Yes, 2=No)",
-              "value_labels": "1=Yes; 2=No",
-              "value_semantics": "binary Yes/No response; wave-specific contract referent retained",
+              "value_labels": "",
+              "value_semantics": "",
               "mapping_status": "official wave-specific questionnaire/Codebook item wording, Yes/No codes and applicable route reviewed; payor reference, release storage and eligible denominator require QA; see audit/written_labor_contract_review_2026-10-25.md",
               "caveat": "Self-reported written labor-contract status in the current-work module; it is not a direct environmental exposure and does not measure contract duration, quality, labor rights or overall job security. In 2011–2015, the item refers to the current workplace or labor-dispatch company; the 2018 CAPI instruction assigns the referent to the dispatch company for dispatched workers and to the wage-paying person for workers hired by an individual. Preserve these route-specific referents. A No response skips contract-detail questions; do not treat those downstream structural skips as missing contract-status responses. Verify current-worker eligibility, special values and field storage in the authorized release."
             }

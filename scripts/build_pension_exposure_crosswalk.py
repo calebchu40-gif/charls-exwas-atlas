@@ -1343,6 +1343,48 @@ for rec in raw.itertuples(index=False):
         "source_archive": rec.source,
     })
     rows.append(inherited)
+
+# FN097 is a categorical expectation about future/old-age financial resources,
+# not a measure of pension receipt, enrollment, or income. Its core categories
+# recur in 2013/2015/2018, but the 2018 question wording and skip denominator
+# differ; preserve wave-specific caveats instead of implying full equivalence.
+old_age_support_specs = {
+    "2013": {
+        "source_item": "2013 Work, Retirement and Pension questionnaire FN097_w2; FN098_w2 child follow-up",
+        "mapping_status": "2013 questionnaire wording, five response categories, and child follow-up route verified; candidate only",
+        "caveat": "Subjective anticipated financial support source for old age, not actual support received, current pension coverage, or income. Response 1=Children routes to FN098_w2 (choose all applicable children); other responses do not enter that child roster. Preserve this categorical item separately from the child roster and income/benefit measures.",
+    },
+    "2015": {
+        "source_item": "2015 Wave 3 Work, Retirement and Pension questionnaire FN097_w2; FN098_w2 child follow-up",
+        "mapping_status": "2015 questionnaire wording, five response categories, and child follow-up route verified; candidate only",
+        "caveat": "Subjective anticipated financial support source for old age, not actual support received, current pension coverage, or income. Response 1=Children routes to FN098_w2 (choose all applicable children); other responses do not enter that child roster. Preserve this categorical item separately from the child roster and income/benefit measures.",
+    },
+    "2018": {
+        "source_item": "2018 Wave 4 Pension questionnaire FN097_W2; FN098_W2 child follow-up",
+        "mapping_status": "2018 questionnaire wording, five response categories, and conditional route verified; candidate only",
+        "caveat": "Hypothetical resource if the respondent becomes too old to work, not actual support received, current pension coverage, or income. The questionnaire defines commercial pension insurance as directly purchased life insurance with regular premiums and recurring benefits from the contracted age. Response 1=Children routes to FN098_W2 (choose all applicable children); responses 2–5 end the pension section. FN097_W2 is reached through wave-specific pension screening/skip logic, so do not assume its denominator is identical to 2013/2015. Keep wave wording, route, and denominator distinct; do not assert full cross-wave equivalence.",
+    },
+}
+old_age_support_labels = (
+    "1=Children; 2=Savings; 3=Pension or retirement salary; "
+    "4=Commercial pension insurance; 5=Other"
+)
+for row in rows:
+    spec = old_age_support_specs.get(str(row.get("wave", "")))
+    if spec and str(row.get("code", "")).lower() == "fn097_w2" and row.get("concept_id") == "old_age_financial_support_source":
+        row.update(spec)
+        row.update({
+            "mapping_status": spec["mapping_status"],
+            "construct": "respondent-reported expected financial resource for old age (single categorical response)",
+            "caveat": spec["caveat"],
+            "unit": "categorical; one primary response",
+            "value_label_status": "official questionnaire response categories and route reviewed; Codebook frequencies omitted",
+            "value_label_source": f"sources_official/CHARLS_{row['wave']}_Questionnaire_extracted.txt; sources_official/CHARLS_{row['wave']}_Codebook_extracted.txt",
+            "value_labels": old_age_support_labels,
+            "value_semantics": "single categorical expected old-age resource; child roster is a separate conditional follow-up",
+            "official_source": f"CHARLS {row['wave']} Questionnaire and Codebook",
+        })
+
 out = pd.DataFrame(rows).drop_duplicates(["wave", "code", "concept_id"])
 out.to_csv(AUDIT / "pension_exposure_variable_mapping_v1.csv", index=False, encoding="utf-8-sig")
 summary = (out.groupby(["construct", "concept_id", "concept_label"], dropna=False)
