@@ -21,6 +21,9 @@ QUESTIONNAIRE = {
     "2020": "sources_official/CHARLS_2020_Questionnaire_English_extracted.txt",
 }
 EXPECTED = {
+    ("2011", "da030_2", "health_status_and_functioning"), ("2011", "da049", "health_status_and_functioning"),
+    ("2011", "da062_1", "health_status_and_functioning"), ("2011", "da065_1", "health_status_and_functioning"),
+    ("2011", "da070_2", "health_status_and_functioning"), ("2011", "da071_2", "health_status_and_functioning"),
     ("2020", "da030", "health_status_and_functioning"), ("2020", "da049_1", "health_status_and_functioning"),
     ("2020", "ba010", "demographic_background"), ("2020", "ba009", "demographic_background"),
     ("2013", "da030_2", "health_status_and_functioning"), ("2013", "da062_1", "health_status_and_functioning"),
@@ -44,7 +47,20 @@ EXPECTED = {
 
 def _contains_code(path: str, code: str) -> bool:
     text = (ROOT / path).read_text(encoding="utf-8", errors="replace").replace("\x00", "")
-    return bool(re.search(rf"(?<![A-Za-z0-9_]){re.escape(code)}(?![A-Za-z0-9_])", text, re.I))
+    if re.search(rf"(?<![A-Za-z0-9_]){re.escape(code)}(?![A-Za-z0-9_])", text, re.I):
+        return True
+    if "Codebook" not in path:
+        return False
+    # The 2011 PDF text extraction replaces underscores between a field base
+    # and its numeric suffix with spaces (for example, `da070_2` -> `da070 2`).
+    # Compare only the exact bullet-heading identifier, never a substring of a
+    # nearby variable or a response label.
+    normalize = lambda value: re.sub(r"[^a-z0-9]", "", value.lower())
+    expected = normalize(code)
+    return any(
+        line.lstrip().startswith("•") and ":" in line and normalize(line.split(":", 1)[0]) == expected
+        for line in text.splitlines()
+    )
 
 
 def load_items() -> list[dict[str, str]]:
@@ -102,9 +118,15 @@ def update(row: dict[str, object], item: dict[str, str]) -> None:
     def append_sentence(field: str, value: str) -> str:
         existing = str(row.get(field, "") or "")
         return existing if value in existing else (f"{existing} {value}".strip())
+    existing_category = str(row.get("category", "") or "")
+    existing_subcategory = str(row.get("subcategory", "") or "")
+    existing_status = str(row.get("Candidate.Status", "") or "")
+    generic = existing_category == "automated covariate search hit"
+    linked_status = f"C metadata linked to exact wave-specific {item['role']} concept {item['concept_id']}; covariate eligibility not inferred"
     row.update({
-        "category": "source-mapped candidate context", "subcategory": f"exact C/{item['role']} field overlap; metadata only",
-        "Candidate.Status": f"C metadata linked to exact wave-specific {item['role']} concept {item['concept_id']}; covariate eligibility not inferred",
+        "category": "source-mapped candidate context" if generic or not existing_category else existing_category,
+        "subcategory": f"exact C/{item['role']} field overlap; metadata only" if generic or not existing_subcategory else existing_subcategory,
+        "Candidate.Status": (f"C metadata; {linked_status}" if not existing_status.startswith("C metadata") else append_sentence("Candidate.Status", linked_status)),
         "Harmonization.Status": append_sentence("Harmonization.Status", note),
         "Review.Flag": append_sentence("Review.Flag", restriction),
         "Value.Label.Source": append_unique("Value.Label.Source", sources),

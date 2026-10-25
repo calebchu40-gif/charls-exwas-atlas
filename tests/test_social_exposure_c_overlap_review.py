@@ -15,12 +15,12 @@ class SocialExposureOverlapReviewTests(unittest.TestCase):
             last_shard = max(i for i, name in enumerate(pipeline) if name == "site_catalog_shards.py")
             self.assertLess(pipeline.index("apply_social_exposure_c_overlap_review.py"), last_shard)
 
-    def test_four_exact_social_links_preserve_storage_and_route_limits(self):
+    def test_five_exact_social_links_preserve_storage_and_route_limits(self):
         with (ROOT / "audit/social_exposure_c_overlap_review_v1.csv").open(encoding="utf-8-sig", newline="") as f:
             reviewed = list(csv.DictReader(f))
-        self.assertEqual(len(reviewed), 4)
+        self.assertEqual(len(reviewed), 5)
         self.assertEqual({(r["wave"], r["code"].lower()) for r in reviewed}, {
-            ("2011", "da056s8"), ("2020", "xsoctype_7_"),
+            ("2011", "da056s8"), ("2011", "da057_8_"), ("2020", "xsoctype_7_"),
             ("2013", "db022_w2_9_1_s64"), ("2013", "db022_w2_9_2_s64"),
         })
         self.assertTrue(all("sources_official/" in r["official_sources"] for r in reviewed))
@@ -32,7 +32,7 @@ class SocialExposureOverlapReviewTests(unittest.TestCase):
         rows = json.loads((ROOT / "site-prototype/dist/catalog_c.json").read_text(encoding="utf-8"))
         keys = {(r["wave"], r["code"].lower(), r["module"].lower()) for r in reviewed}
         catalog = [r for r in rows if (r["Source.Wave"], r["Variable.Name"].lower(), r["Data.File.Name"].lower()) in keys]
-        self.assertEqual(len(catalog), 4)
+        self.assertEqual(len(catalog), 5)
         self.assertTrue(all(r["epcf"].lower() == "c" for r in catalog))
         self.assertTrue(all(r["subcategory"] == "social participation/care exposure overlap" for r in catalog))
         self.assertTrue(all("must not adjust for itself" in r["Review.Flag"] for r in catalog))
@@ -45,6 +45,13 @@ class SocialExposureOverlapReviewTests(unittest.TestCase):
                 self.assertIn("suffix is a field identifier", row["Review.Flag"].lower())
             if row["Variable.Name"].lower() == "da056s8":
                 self.assertIn("do not infer no from absence", row["Review.Flag"].lower())
+            if row["Variable.Name"].lower() == "da057_8_":
+                self.assertIn("da057 8", row["Review.Flag"].lower())
+                self.assertIn("training course", row["Review.Flag"].lower())
+                self.assertIn("1–11", row["Review.Flag"])
+                self.assertIn("1–10", row["Review.Flag"])
+                self.assertIn("Not regularly", row["Review.Flag"])
+                self.assertIn("Less often", row["Review.Flag"])
 
 
 if __name__ == "__main__":

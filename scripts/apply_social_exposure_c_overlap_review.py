@@ -19,6 +19,7 @@ QUESTIONNAIRES = {
 }
 EXPECTED = {
     ("2011", "da056s8", "health_status_and_functioning"),
+    ("2011", "da057_8_", "health_status_and_functioning"),
     ("2013", "db022_w2_9_1_s64", "health_status_and_functioning"),
     ("2013", "db022_w2_9_2_s64", "health_status_and_functioning"),
     ("2020", "xsoctype_7_", "health_status_and_functioning"),
@@ -72,6 +73,23 @@ def load_items() -> list[dict[str, str]]:
                 "The exact Codebook field reports No Observations. Do not equate category codes or infer a respondent-level "
                 "negative, frequency, or structural skip; reconcile against the authorized release first."
             )
+        if key == ("2011", "da057_8_", "health_status_and_functioning"):
+            codebook_lines = (ROOT / codebook).read_text(encoding="utf-8", errors="replace").splitlines()
+            normalize = lambda value: re.sub(r"[^a-z0-9]", "", value.lower())
+            exact_headings = [line for line in codebook_lines if line.lstrip().startswith("•") and ":" in line and
+                              normalize(line.split(":", 1)[0]) == normalize("da057_8_")]
+            if len(exact_headings) != 1:
+                raise SystemExit(f"Expected exact normalized 2011 Codebook field heading for {key}")
+            questionnaire_text = re.sub(r"\s+", " ", (ROOT / questionnaire).read_text(encoding="utf-8", errors="replace").lower())
+            if ("attended an educational or training course" not in questionnaire_text or
+                not re.search(r"da057\W+frequency of activity in the last month", questionnaire_text) or
+                "if cnt in da056" not in questionnaire_text or "1-11" not in questionnaire_text):
+                raise SystemExit(f"2011 questionnaire's activity mapping or route note is missing for {key}")
+            source_note = (
+                "The 2011 Codebook PDF text extraction prints the exact field heading as `da057 8`; this is the same field identifier with the underscore lost by extraction. The baseline Questionnaire maps activity option 8 to attending an educational/training course and presents DA057 as the follow-up frequency item. Its extracted procedure says selected DA056 options 1–11, while a separate household-questionnaire extraction says 1–10; preserve that source-version discrepancy and verify the authorized release-specific route before defining an eligible denominator. No response frequency or sample count is copied here. The Questionnaire labels response category 3 `Not regularly`, while the Codebook labels it `Less often`; preserve both source wordings until the authorized release/version is confirmed."
+            )
+            if source_note not in caveat:
+                caveat = f"{caveat} {source_note}".strip()
         items.append({
             "wave": key[0], "code": str(row["code"]), "module": str(row["module"]),
             "concept_id": str(row["concept_id"]), "concept_label": str(row["concept_label"]),
@@ -95,17 +113,20 @@ def update(row: dict[str, object], item: dict[str, str]) -> None:
         "Candidate.Status": f"C metadata; exact wave and source field link to the social-exposure candidate {item['concept_id']}; retain item and route; not an adjustment recommendation or analysis-ready indicator",
         "Harmonization.Status": note,
         "Review.Flag": f"Social activity/care candidate; the same field is an E candidate and must not adjust for itself. Preserve source wave, response storage, task/activity slot, and eligible route. {item['value_semantics']} {caveat}",
-        "Value.Labels": item["value_labels"], "Value.Label.Source": item["official_sources"],
-        "Value.Label.Review": status,
+        "Value.Label.Source": item["official_sources"],
         "Concept.ID.Candidates": item["concept_id"],
         "Concept.Mapping.Source": "audit/social_exposure_crosswalk_v1.csv",
         "Concept.Mapping.Status": status, "Concept.Mapping.Caveat": caveat,
-        "value_labels": item["value_labels"], "value_label_source": item["official_sources"],
-        "value_label_review": status, "harmonization_status": note,
+        "value_label_source": item["official_sources"], "harmonization_status": note,
         "candidate_concept_ids": item["concept_id"],
         "concept_mapping_sources": "audit/social_exposure_crosswalk_v1.csv",
         "concept_mapping_statuses": status, "concept_mapping_caveats": caveat,
     })
+    if item["value_labels"]:
+        row["Value.Labels"] = item["value_labels"]
+        row["value_labels"] = item["value_labels"]
+    row["Value.Label.Review"] = status
+    row["value_label_review"] = status
 
 
 def propagate() -> None:
@@ -148,7 +169,7 @@ def propagate() -> None:
         writer = csv.DictWriter(stream, fieldnames=list(items[0]))
         writer.writeheader()
         writer.writerows(items)
-    print("Reviewed four exact-wave social participation/care C/E links; unresolved storage, routing, and analysis limits remain explicit.")
+    print("Reviewed five exact-wave social participation/care C/E links; unresolved storage, routing, and analysis limits remain explicit.")
 
 
 if __name__ == "__main__":

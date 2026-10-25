@@ -80,6 +80,10 @@ for cid,label,domain,caveat in concepts:
    if cid=='social_participation' and r.wave=='2020':
     questionnaire_source='sources_official/CHARLS_2020_Questionnaire_English_extracted.txt'
     value_label_source='sources_official/CHARLS_2020_Codebook_extracted.txt'
+   if cid=='social_activity_frequency' and r.wave=='2011':
+    questionnaire_source='sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt'
+    value_label_source='sources_official/CHARLS_2011_Codebook_extracted.txt'
+    caveat += ' Questionnaire category 3 is “Not regularly” while the Codebook says “Less often”; retain wording discrepancy pending release/version confirmation. Official Questionnaire extracts differ on whether the DA056 loop covers options 1–11 or 1–10; do not infer the eligible denominator.'
    rows.append(dict(concept_id=cid,concept_label=label,domain=domain,wave=r.wave,code=r.variable,module=r.module,source_label=r.variable_label,mapping_status=status,value_labels=value_labels(cid,r.wave),value_semantics=value_note(cid,r.wave),questionnaire_source=questionnaire_source,value_label_source=value_label_source,caveat=caveat))
 out=pd.DataFrame(rows).drop_duplicates()
 out.to_csv(ROOT/'audit/social_exposure_crosswalk_v1.csv',index=False,encoding='utf-8-sig')

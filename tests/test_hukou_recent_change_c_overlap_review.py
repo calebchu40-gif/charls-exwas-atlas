@@ -50,16 +50,18 @@ class KeywordEPCOverlapReviewTests(unittest.TestCase):
             last_shard = max(i for i, name in enumerate(pipeline) if name == "site_catalog_shards.py")
             self.assertLess(pipeline.index("apply_keyword_epc_overlap_review.py"), last_shard)
 
-    def test_only_thirty_five_exact_questionnaire_codebook_ep_overlaps_are_linked(self):
+    def test_only_forty_exact_questionnaire_codebook_ep_overlaps_are_linked(self):
         with (ROOT / "audit/keyword_epc_overlap_review_v1.csv").open(encoding="utf-8-sig", newline="") as f:
             audit = list(csv.DictReader(f))
-        self.assertEqual(len(audit), 35)
+        self.assertEqual(len(audit), 40)
+        self.assertTrue({("2011", code) for code in ("da030_2", "da049", "da062_1", "da065_1", "da070_2", "da071_2")} <=
+                        {(r["wave"], r["code"].lower()) for r in audit})
         self.assertTrue(all(r["official_questionnaire"].startswith("sources_official/") for r in audit))
         self.assertTrue(all(r["official_codebook"].startswith("sources_official/") for r in audit))
         rows = json.loads((ROOT / "site-prototype/dist/catalog_c.json").read_text(encoding="utf-8"))
         keys = {(r["wave"], r["code"].lower(), r["module"].lower()) for r in audit}
         found = [r for r in rows if (r["Source.Wave"], r["Variable.Name"].lower(), r["Data.File.Name"].lower()) in keys]
-        self.assertEqual(len(found), 35)
+        self.assertEqual(len(found), 40)
         self.assertTrue(all("its own focal association" in r["Review.Flag"] for r in found))
         self.assertTrue(all("not a default adjustment set" in r["Review.Flag"] for r in found))
         self.assertFalse(any(r["Candidate.Status"].startswith("automated keyword discovery only") for r in found))
