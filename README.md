@@ -1,5 +1,7 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-25）
 
+**2011慢性病治疗选项受控QA（2026-10-25）：**新增本机汇总检查，对照基线问卷及Codebook审核32个DA010选项字段。题项索引与已观察代码相符；7个病种组发现“以上皆无”与其他治疗选项并存的少量记录，原因待核，因此8个“以上皆无”映射仍为`DO NOT ANALYZE`。原始发布包不在当前受控数据目录，准备表来源链和跳题分母未核实；QA没有导出个人数据或频数。详情见[`audit/2011_disease_treatment_none_option_mapping_review_2026-10-21.md`](audit/2011_disease_treatment_none_option_mapping_review_2026-10-21.md)。
+
 **养老金字段来源审核（2026-10-25）：**对照公开问卷与 Codebook 核对 2013/2018 年36个起始领取年月字段，并同步到网站检索目录。2013 `FN081` 月份字段的问卷抽取标识与 Codebook 不一致，2013 `FN095` 年/月字段被 Codebook 标注为 `No Observations`，均保留“暂不可分析”提示；2018 `FN003` 的现有字段目录只有年份槽位，未猜测月份代码。来源审核不等于发行版数据验证或模型纳入许可。详见 [`audit/pension_receipt_start_dates_2013_2018_source_review_2026-10-25.md`](audit/pension_receipt_start_dates_2013_2018_source_review_2026-10-25.md)。
 
 **2026-10-25交叉表状态一致性复核：**将224条住房所有者关系、83条慢病辅助表型和23条养老金记录的“已有官方答案类别核对”状态同步到公开查询目录；对应发布版本、路由/分母、特殊编码和分析资格仍按字段保留待核条件。另修复养老金状态回写：官方 Codebook 的2011年PDF文本将复合字段下划线抽取为空格，导致40个已存在字段曾被误标为未定位；现按标准化字段名修正，标签审计显示1,086项通用“已定位但无类别”、0项标题匹配不足及17项更具体来源审核状态。112条慢病字段确无逐项标签证据，禁分析标记未解除。仅另有1条住房记录的状态保留“标签已记录、跨波可比性仍待核”。各项审核记录：[`audit/housing_owner_relation_status_sync_2026-10-25.md`](audit/housing_owner_relation_status_sync_2026-10-25.md)、[`audit/chronic_ancillary_label_status_sync_2026-10-25.md`](audit/chronic_ancillary_label_status_sync_2026-10-25.md)、[`audit/pension_label_status_sync_2026-10-25.md`](audit/pension_label_status_sync_2026-10-25.md)、[`audit/pension_codebook_empty_label_status_reconciliation_2026-10-25.md`](audit/pension_codebook_empty_label_status_reconciliation_2026-10-25.md)。
