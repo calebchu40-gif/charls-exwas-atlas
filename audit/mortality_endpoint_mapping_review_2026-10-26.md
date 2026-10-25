@@ -18,3 +18,8 @@ This review adds field-level candidate metadata for death-date components and se
 Exit-module information is collected through a decedent/proxy pathway. Its existence cannot define non-deaths as zero, provide the at-risk denominator, or alone establish complete follow-up. A survival analysis would require respondent-level linkage, a verified regular-wave follow-up/censoring definition, official survey design/weights for the target population, and release-specific missing/special-value validation. The 2013 fields provide year/month while the 2020 questionnaire includes a day component; solar/lunar basis further prevents naive date pooling. The 2020 final-illness interval is categorical, and `exb008_1` is conditional detail, not an unconditional continuous duration.
 
 These mappings are discoverable metadata candidates only. They do not authorize mortality modeling or assert that all fields have comparable wave coverage.
+
+
+## Release record
+
+The v127 catalog was published at commit `7b00491`. GitHub Validate run `40213942542` and GitHub Pages Deploy run `40213942548` succeeded. The live site returned app v127 and pair index v5, with nine mortality P source rows and two C calendar rows.

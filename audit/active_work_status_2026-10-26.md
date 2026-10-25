@@ -2,7 +2,7 @@
 
 ## Current local state: v127 prepared
 
-The last publicly deployed site remains v126 until this update is pushed and its Pages workflow succeeds. Local v127 adds source-reviewed 2013/2020 death and end-of-life candidate metadata and updates the wave-specific pair index. It does not contain participant-level records or computed associations.
+v127 (commit `7b00491`) is deployed. GitHub Validate run [`40213942542`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40213942542) and Pages Deploy run [`40213942548`](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40213942548) completed successfully. The public site is verified at app v127 and pair-index v5. It contains source-reviewed 2013/2020 death and end-of-life candidate metadata, no participant-level records or computed associations.
 
 ## Mortality field review
 
@@ -26,7 +26,7 @@ The pair index contains 132,463 / 141,920 / 143,137 / 105,493 / 21,630 metadata 
 - Public-site payload validator passed.
 - `validate_do_not_analyze_triage.py` passed: all 92 catalog locks match the triage inventory.
 - JavaScript syntax check passed; candidate pair cache key advanced to v5 and page entry point to app v127.
-- GitHub validation and Pages deployment are pending until commit/push.
+- GitHub Validate and Pages Deploy succeeded for commit `7b00491`; live homepage, P/C shards, and pair-index were checked over HTTPS.
 
 ## Next work
 
