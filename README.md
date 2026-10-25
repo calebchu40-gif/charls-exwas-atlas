@@ -1,8 +1,8 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-25）
 
-**最新公开发布：**v105（提交 `298b07d`）已通过 Validate [#450](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40167636492) 与 Pages Deploy [#226](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40167636393)。线上首页、app、E/P/C目录、配对索引和社会暴露目录均与本地构建逐项匹配。该版本将40条经官方问卷和Codebook双重核对的 C/E/P 同字段候选链接到目录，并修正2011年`da057_8_`字段因PDF文本抽取丢失下划线而被误判缺失的问题；问卷与Codebook类别措辞、问卷环节范围差异均保留，不推断协变量资格、默认调整集或分母。E/P/C目录为4,845/2,082/982；444项Python测试、公开负载校验和92条分析锁核验通过。另9条关键词命中仍未链接，因尚缺双来源字段确认。详见[`audit/keyword_epc_overlap_review_2026-10-25.md`](audit/keyword_epc_overlap_review_2026-10-25.md)和[`audit/social_exposure_c_overlap_review_2026-10-25.md`](audit/social_exposure_c_overlap_review_2026-10-25.md)。
+**最新公开发布：**v106（提交 `dc7ef06`）已通过 Validate [#452](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40168479043) 与 Pages Deploy [#227](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40168479027)。线上首页、app、E/P/C目录、配对索引和社会暴露目录均与本地构建逐项匹配。该版本在 v105 的40条 C/E/P元数据链接基础上，新增7条经问卷明确题目/答案槽和精确Codebook字段核实的 C/P链接；两条2013/2015 `da005_2_`因Codebook仅有上一波`zda005_2_`字段而继续排除。目录仍为E/P/C=4,845/2,082/982；444项Python测试、公开负载校验和92条分析锁核验通过。当前尚有2条关键词候选未能确认同波次字段身份。审计细节见[`audit/keyword_epc_overlap_review_2026-10-25.md`](audit/keyword_epc_overlap_review_2026-10-25.md)。
 
-**当前本地候选构建：**v106，将7条残疾/中风 C/P 同字段关系按精确 Codebook 字段和问卷父题/答案槽核实后加入元数据目录；2013与2015两条只有上一波 `zda005_2_` Codebook 记录的当前波次 `da005_2_` 仍被排除。测试和部署待验证。
+**后续工作：**继续按官方来源审核剩余关键词候选与测量元数据，区分字段目录完整度和可分析性；正式关联模型、实际配对样本量和默认协变量集均未生成。
 
 **最新构建验证（2026-10-25）：**2011年32个DA010治疗选项字段的官方类别索引和本地汇总代码核对已同步至网站；未选中/空白编码与路由分母仍待核验。保留原有字段提示，正式锁清单仍为92条。元数据提交`71c6214`和快速刷新/审计JSON提交`9874960`均通过GitHub Validate与Pages部署（Validate `40152950706`；Deploy `40152949965`），线上配对目录返回HTTP 200；Python全套417项测试通过。可用`python scripts/finalize_2011_chronic_treatment_review.py`快速刷新这项专题的网页派生文件；上游目录有变更时仍运行标准完整构建。详情见[`audit/2011_chronic_treatment_selected_storage_status_sync_2026-10-25.md`](audit/2011_chronic_treatment_selected_storage_status_sync_2026-10-25.md)。
 
