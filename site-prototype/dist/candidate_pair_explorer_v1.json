@@ -21761,7 +21761,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
             }
           ]
@@ -21781,7 +21781,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
             }
           ]
@@ -21801,7 +21801,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
             }
           ]
@@ -43001,7 +43001,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -43041,7 +43041,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -43061,7 +43061,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -43081,7 +43081,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -43101,7 +43101,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -43121,7 +43121,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -43141,7 +43141,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -43161,7 +43161,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -43181,7 +43181,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -43201,7 +43201,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -43221,7 +43221,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -43241,7 +43241,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -43261,7 +43261,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -43281,7 +43281,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -44341,7 +44341,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "current control",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Asked only for specified conditions; not an objective biomarker or a diagnosis indicator."
             }
           ]
@@ -45221,7 +45221,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "current control",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Asked only for specified conditions; not an objective biomarker or a diagnosis indicator."
             }
           ]
@@ -45321,7 +45321,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
             },
             {
@@ -45361,7 +45361,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
             },
             {
@@ -45441,7 +45441,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
             },
             {
@@ -45511,7 +45511,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
             },
             {
@@ -45561,7 +45561,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
             },
             {
@@ -68093,7 +68093,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -68133,7 +68133,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -68153,7 +68153,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -68173,7 +68173,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -68193,7 +68193,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -68213,7 +68213,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -68233,7 +68233,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -68253,7 +68253,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -68273,7 +68273,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -68293,7 +68293,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -68313,7 +68313,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -68333,7 +68333,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -68353,7 +68353,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -68373,7 +68373,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -69433,7 +69433,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "current control",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Asked only for specified conditions; not an objective biomarker or a diagnosis indicator."
             }
           ]
@@ -70313,7 +70313,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No",
               "value_semantics": "current control",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Asked only for specified conditions; not an objective biomarker or a diagnosis indicator."
             }
           ]
@@ -70413,7 +70413,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
             },
             {
@@ -70453,7 +70453,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
             },
             {
@@ -70633,7 +70633,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
             },
             {
@@ -93121,7 +93121,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -93161,7 +93161,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -93181,7 +93181,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -93201,7 +93201,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -93221,7 +93221,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -93241,7 +93241,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -93261,7 +93261,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -93281,7 +93281,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -93301,7 +93301,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -93321,7 +93321,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -93341,7 +93341,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -93361,7 +93361,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -93381,7 +93381,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -93401,7 +93401,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=Same; 99=Never Had the Disease",
               "value_semantics": "self-rated interval change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Longitudinal recall item; do not interpret as same-wave disease status."
             }
           ]
@@ -94621,7 +94621,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't Know; 99=Never Had the Disease",
               "value_semantics": "current control",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Asked only for specified conditions; not an objective biomarker or a diagnosis indicator."
             }
           ]
@@ -95561,7 +95561,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't Know; 99=Never Had the Disease",
               "value_semantics": "current control",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Asked only for specified conditions; not an objective biomarker or a diagnosis indicator."
             }
           ]
@@ -95711,7 +95711,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
             },
             {
@@ -95751,7 +95751,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
             },
             {
@@ -95931,7 +95931,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't know",
               "value_semantics": "self-known disease",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
             },
             {
@@ -102834,7 +102834,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -102854,7 +102854,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -102874,7 +102874,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -102894,7 +102894,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -102914,7 +102914,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -102934,7 +102934,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -102954,7 +102954,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -102974,7 +102974,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -102994,7 +102994,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -103014,7 +103014,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -103034,7 +103034,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -103054,7 +103054,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -103074,7 +103074,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -103094,7 +103094,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -103114,7 +103114,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -103134,7 +103134,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -103154,7 +103154,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -103174,7 +103174,7 @@
               "unit": "",
               "value_labels": "1=Better; 2=Worse; 3=About the same; 99=Did not have this disease at the prior interview",
               "value_semantics": "self-rated longitudinal change",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. 2020 DA002 compares with the prior interview; it is not same-wave disease prevalence. Code 99 means the disease was not present at the prior interview and must not be recoded as improvement, worsening, or no disease."
             }
           ]
@@ -103194,7 +103194,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't Know",
               "value_semantics": "self-known disease",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
             }
           ]
@@ -103214,7 +103214,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't Know",
               "value_semantics": "self-known disease",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
             }
           ]
@@ -103234,7 +103234,7 @@
               "unit": "",
               "value_labels": "1=Yes; 2=No; 3=Don't Know",
               "value_semantics": "self-known disease",
-              "mapping_status": "official variable metadata mapped; item-level value labels/routing review pending",
+              "mapping_status": "official response categories reviewed/transcribed from wave-specific questionnaire/Codebook; retain source-specific route and time frame; release coding, routed denominator and analysis eligibility require QA",
               "caveat": "Wave-specific source item; preserve route, special missing codes, and interview eligibility. This is not the physician-diagnosis indicator. Awareness/self-knowledge is distinct from a doctor diagnosis; only diseases actually asked in that wave are represented. DA008_W2_1 records how the respondent knew about the indexed disease; it is not disease status. Disease index follows the wave-specific DA007 item index."
             }
           ]
