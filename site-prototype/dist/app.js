@@ -1,6 +1,7 @@
 // Association rows are loaded only from the disclosure-reviewed public aggregate payload.
 
 const byId = id => document.getElementById(id);
+let associationRows=[];
 const deferredViewLoaders = new Map();
 function deferJson(url, viewId) {
   let resolveData, rejectData;
@@ -86,9 +87,38 @@ function loadCandidatePairExplorer(){
  return candidatePairExplorerLoaded;
 }
 
+function renderAssociationRows() {
+  const selected={
+    exposure:byId('associationExposure').value,
+    phenotype:byId('associationPhenotype').value,
+    wave:byId('associationWave').value,
+    model:byId('associationModel').value,
+  };
+  const rows=associationRows.filter(row=>(!selected.exposure||row.exposure_concept_id===selected.exposure)
+    &&(!selected.phenotype||row.phenotype_concept_id===selected.phenotype)
+    &&(!selected.wave||row.wave===selected.wave)
+    &&(!selected.model||row.model_id===selected.model));
+  const body=byId('rows'),empty=byId('empty');body.replaceChildren();
+  byId('count').textContent=`显示 ${rows.length.toLocaleString()} / ${associationRows.length.toLocaleString()} 条经统计与披露审查的关联记录`;
+  empty.hidden=rows.length>0;
+  if(associationRows.length&&rows.length===0)empty.textContent='当前筛选条件下没有结果。';
+  for(const item of rows){
+    const tr=document.createElement('tr');
+    const effect=item.fit_status==='success'
+      ?`${item.estimate} (${item.standard_error}); 95% CI ${item.ci_lower}–${item.ci_upper}`:'—';
+    const cells=[`${item.exposure_concept_id} · ${item.exposure_variable}`,`${item.phenotype_concept_id} · ${item.phenotype_variable}`,
+      item.wave,item.model_id,effect,item.n_model,item.fit_status==='success'?'统计和披露审查通过':item.fit_status];
+    for(let index=0;index<cells.length;index++){
+      const td=document.createElement('td');td.textContent=String(cells[index]??'—');
+      if(index===4)td.title=[item.estimate_type,item.contrast,item.variance_design].filter(Boolean).join(' · ');
+      tr.append(td);
+    }
+    body.append(tr);
+  }
+}
+
 async function renderAssociations() {
-  const body=byId('rows'),empty=byId('empty');
-  body.replaceChildren();empty.hidden=false;
+  const empty=byId('empty');empty.hidden=false;
   byId('count').textContent='0 条已审查的真实关联结果';
   try {
     const response=await fetch('./association_results_v1.json?v=1',{cache:'no-cache'});
@@ -96,22 +126,31 @@ async function renderAssociations() {
     if(!response.ok)throw new Error(`HTTP ${response.status}`);
     const payload=await response.json();
     if(payload.schema_version!==1||payload.release_status!=='disclosure_reviewed'||!Array.isArray(payload.families))throw new Error('invalid release schema');
-    const rows=[];
+    associationRows=[];
     for(const family of payload.families){
       if(!Array.isArray(family.rows)||family.family_size!==family.rows.length)throw new Error('incomplete hypothesis family');
-      rows.push(...family.rows);
+      associationRows.push(...family.rows);
     }
-    byId('count').textContent=`${rows.length.toLocaleString()} 条已完成统计与披露审查的关联记录`;
-    empty.hidden=rows.length>0;
-    for(const item of rows){
-      if(item.disclosure_status!=='approved_public_aggregate')throw new Error('unreviewed row in public payload');
-      const tr=document.createElement('tr');
-      const cells=[item.exposure_concept_id,item.phenotype_concept_id,item.wave,item.model_id,
-        [item.estimate,item.standard_error,item.ci_lower,item.ci_upper].filter(x=>x!==''&&x!==null&&x!==undefined).join(' / '),item.n_model,
-        item.fit_status==='success'?'审查通过':(item.fit_status||'状态未提供')];
-      for(const value of cells){const td=document.createElement('td');td.textContent=String(value??'—');tr.append(td)}
-      body.append(tr);
+    if(associationRows.some(row=>row.disclosure_status!=='approved_public_aggregate'))throw new Error('unreviewed row in public payload');
+    const filters=[
+      ['associationExposure','exposure_concept_id','exposure_variable'],
+      ['associationPhenotype','phenotype_concept_id','phenotype_variable'],
+      ['associationWave','wave','wave'],['associationModel','model_id','model_id'],
+    ];
+    for(const [id,key,labelKey] of filters){
+      const select=byId(id),current=select.value,values=[...new Set(associationRows.map(row=>row[key]).filter(Boolean))].sort();
+      select.replaceChildren(new Option('全部',''));
+      for(const value of values){
+        const label=(key==='exposure_concept_id'||key==='phenotype_concept_id')
+          ?`${value} · ${[...new Set(associationRows.filter(row=>row[key]===value).map(row=>row[labelKey]).filter(Boolean))].join(', ')}`:value;
+        select.append(new Option(label,value));
+      }
+      if(values.includes(current))select.value=current;
+      if(!select.dataset.bound){select.addEventListener('change',renderAssociationRows);select.dataset.bound='true'}
     }
+    byId('associationFilters').hidden=associationRows.length===0;
+    empty.textContent='尚无可展示的真实关联结果。';
+    renderAssociationRows();
   } catch(error) {
     byId('count').textContent='关联结果暂不可用';
     empty.textContent='没有已发布的完整披露审查结果家族，或结果载入失败。候选变量目录仍可正常查询。';

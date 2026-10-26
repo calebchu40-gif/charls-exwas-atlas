@@ -1,14 +1,20 @@
 from __future__ import annotations
 
+import csv
+import hashlib
 import sys
+import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+import build_public_association_release as release_builder  # noqa: E402
 from build_public_association_release import PUBLIC_ROW_FIELDS, build_payload  # noqa: E402
-from validate_public_site_payload import validate_association_payload  # noqa: E402
+from validate_exwas_result_table import read_schema  # noqa: E402
+from validate_public_site_payload import validate_association_payload, validate_payload  # noqa: E402
 
 
 class PublicAssociationReleaseTests(unittest.TestCase):
@@ -75,6 +81,66 @@ class PublicAssociationReleaseTests(unittest.TestCase):
         payload["families"][0]["rows"].pop()
         errors = validate_association_payload(payload)
         self.assertTrue(any("complete declared K" in error for error in errors))
+
+    def test_end_to_end_synthetic_result_review_and_site_payload(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            temp_root = Path(tmp)
+            private = temp_root / "private"
+            output_root = temp_root / "repo"
+            site = output_root / "site-prototype" / "dist"
+            private.mkdir()
+            site.mkdir(parents=True)
+            (site / "index.html").write_text("<main>synthetic</main>", encoding="utf-8")
+            (site / "app.js").write_text("// synthetic", encoding="utf-8")
+
+            fields, required = read_schema()
+            row = {field: ("documented" if required[field] == "yes" else "") for field in fields}
+            row.update(
+                analysis_id="synthetic-e2e-001",
+                data_release="synthetic fixture only",
+                wave="2011",
+                exposure_concept_id="synthetic-exposure",
+                phenotype_concept_id="synthetic-phenotype",
+                fit_status="blocked_design_verification",
+                estimability_review_status="pending",
+                source_hash_status="unresolved",
+                source_identity_status="unresolved",
+                source_manifest_id="",
+                weight_status="unresolved",
+                psu_status="unresolved",
+                stratum_status="unresolved",
+                weight_id="",
+                psu_id="",
+                stratum_id="",
+                multiple_testing_family="synthetic_e2e;K=1",
+                variance_design="not fit-ready; synthetic end-to-end fixture",
+            )
+            results_path = private / "synthetic_results.csv"
+            with results_path.open("w", newline="", encoding="utf-8-sig") as stream:
+                writer = csv.DictWriter(stream, fieldnames=fields)
+                writer.writeheader()
+                writer.writerow(row)
+            digest = hashlib.sha256(results_path.read_bytes()).hexdigest()
+            review_path = private / "synthetic_review.csv"
+            with review_path.open("w", newline="", encoding="utf-8") as stream:
+                writer = csv.DictWriter(stream, fieldnames=sorted(release_builder.REVIEW_FIELDS))
+                writer.writeheader()
+                writer.writerow({
+                    "analysis_id": row["analysis_id"],
+                    "decision": "approved_public_aggregate",
+                    "review_record_id": "synthetic-review-v1",
+                    "reviewer_reference": "synthetic-reviewer-v1",
+                    "reviewed_at": "2026-10-27T10:00:00+08:00",
+                    "reviewed_result_sha256": digest,
+                })
+            output = site / "association_results_v1.json"
+            with patch.object(release_builder, "PRIVATE", private), patch.object(release_builder, "ROOT", output_root):
+                payload = release_builder.write_release(results_path, review_path, output)
+            self.assertEqual(payload["release_status"], "disclosure_reviewed")
+            self.assertEqual(validate_payload(site), [])
+            public_text = output.read_text(encoding="utf-8")
+            self.assertNotIn(digest, public_text)
+            self.assertNotIn(str(private), public_text)
 
 
 if __name__ == "__main__":

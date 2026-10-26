@@ -157,14 +157,14 @@ def write_release(results_path: Path, review_path: Path, output_path: Path = DEF
         raise ValueError("result and disclosure-review files must stay under the protected local CHARLS workspace")
     if not _inside(output_path, ROOT / "site-prototype" / "dist"):
         raise ValueError("public output must stay in site-prototype/dist")
+    result_sha256 = hashlib.sha256(results_path.read_bytes()).hexdigest()
     errors = validate_csv(results_path)
     if errors:
         raise ValueError("result table failed validation: " + "; ".join(errors[:8]))
-    result_sha256 = hashlib.sha256(results_path.read_bytes()).hexdigest()
     with results_path.open(newline="", encoding="utf-8-sig") as stream:
         rows = list(csv.DictReader(stream))
     if result_sha256 != hashlib.sha256(results_path.read_bytes()).hexdigest():
-        raise ValueError("result CSV changed while building the public release")
+        raise ValueError("result CSV changed during validation/export; disclosure review must be repeated")
     payload = build_payload(rows, _read_reviews(review_path), result_sha256)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

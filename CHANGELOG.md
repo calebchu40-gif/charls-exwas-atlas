@@ -1,3 +1,11 @@
+# 2026-10-27 Add filters to reviewed association results
+
+- The optional reviewed-results table now supports filtering by exposure concept, phenotype concept, survey wave, and model. Rows are constructed with DOM text nodes to avoid interpreting public payload text as markup; the page still shows no results when the reviewed JSON is absent.
+- Hardened release generation against a result CSV changing between validation and export; such a change now requires disclosure review to be repeated.
+- Added an end-to-end synthetic release test (v3 result validation → exact-file-hash disclosure approval → allowlisted JSON → Pages validator) and a Node browser test for loading/filtering a complete approved family. CI runs the browser test.
+- Validation: 560 Python tests passed; browser filter test, deferred loader test, JavaScript syntax check, public payload validator, and `git diff --check` passed. Tests use synthetic fixtures only. No CHARLS source data were loaded and formal association results remain 0.
+- Local app asset is v194. Deployment status will be recorded after live verification.
+
 # 2026-10-27 Verify published disclosure-gated result browser
 
 - After commit `b5856c0`, the live GitHub Pages homepage returned HTTP 200 and loads app v193; the live app.js asset returned HTTP 200 and contains the reviewed-results loader.

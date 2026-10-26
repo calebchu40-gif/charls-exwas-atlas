@@ -1,3 +1,7 @@
+# 2026-10-27 continuation — reviewed-result filters and synthetic release test
+
+Added exposure, phenotype, wave and model filters to the optional reviewed-association results table (local app v194). The release exporter now detects a result CSV changing during validation/export and requires a fresh disclosure review. Added synthetic end-to-end coverage of v3 result validation, exact-hash approval, public allowlist export and Pages validation, plus browser-level loading/filter tests wired into CI. The full suite passed (560 tests); both Node tests, JS syntax, public payload validation and diff checks passed. This used synthetic fixtures only. Formal association results remain 0; the 2011 official source gate remains not passed because required Wave 1 files are absent. Deployment has not yet been verified at the time of this entry.
+
 # 2026-10-27 continuation — verified live result-browser deployment
 
 Commit `b5856c0` deployed successfully: the public homepage returned HTTP 200 and serves app v193; the app asset returned HTTP 200 with the reviewed-results loader. The optional public association JSON endpoint returns HTTP 404 because there is no approved family. Full repository unit suite: 559 passed; local site payload validator and JavaScript syntax checks passed. Formal association results remain 0.
