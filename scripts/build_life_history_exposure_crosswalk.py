@@ -1382,6 +1382,19 @@ GROUPS = [
         "caveat": "Do not interpret E011a as modern home-schooling; its Chinese questionnaire label is 私塾. Counts do not measure duration, quality, enrollment continuity or geographic setting. Keep the four institution types distinct.",
     },
     {
+        "concept_id": "life_history_status_at_age_16",
+        "label": "Reported work, schooling and other status at age 16",
+        "role": "e",
+        "modules": ["WORKHISTORY"],
+        "domain": "adolescent and life-course socioeconomic context",
+        "patterns": [r"f001s(?:[1-9]|1[0-3])"],
+        "question": "F001",
+        "unit": "13 select-all-that-apply status-option fields",
+        "values": "The questionnaire options cover work, job seeking, not seeking work, illness, childbirth, child/elder/family care, leisure/travel, training, prison, schooling and other status.",
+        "status": "official Life History Questionnaire and Codebook item identity reviewed; option storage and authorized-release coding require QA",
+        "caveat": "Retrospective status at age 16, not a contemporaneous record or a complete time-use measure. F001 is select-all-that-apply; do not treat unselected or missing slots as No without validating release coding and denominator. The questionnaire's separate job definition and routing must be retained for job-history fields.",
+    },
+    {
         "concept_id": "life_history_education_episode_timing",
         "label": "Reported start and end periods across repeated education episodes",
         "role": "e",
@@ -1899,6 +1912,37 @@ def build_education_history_coverage(rows: list[dict]) -> list[dict]:
     return ledger
 
 
+def build_work_history_coverage(rows: list[dict]) -> list[dict]:
+    """Map F001 and explicitly defer other 2014 Work History fields pending item review."""
+    mapped = {row["code"]: row for row in rows if row["module"] == "WORKHISTORY"}
+    fields = read_codebook_fields()
+    ledger = []
+    linkage = {"id", "householdid", "communityid"}
+    for (module, code), label in sorted(fields.items()):
+        if module != "WORKHISTORY":
+            continue
+        row = mapped.get(code)
+        if row:
+            disposition, concept_id, rationale = "mapped_candidate", row["concept_id"], row["caveat"]
+        elif code in linkage:
+            disposition, concept_id = "excluded_linkage_key", ""
+            rationale = "Person/household/community linkage key. Never publish key values; use only in authorized controlled joins when required."
+        elif code == "versionid":
+            disposition, concept_id = "excluded_release_metadata", ""
+            rationale = "Release/version bookkeeping metadata, not an E/P measure."
+        else:
+            disposition, concept_id = "deferred_source_review", ""
+            rationale = "2014 Work History questionnaire/codebook family not yet reviewed field-by-field for job-type referent, repeated episode slot, route, timing, measurement identity, free text and location privacy. Do not publish as a candidate or use in analysis until reviewed."
+        ledger.append({"module": module, "code": code, "codebook_label": label,
+                       "disposition": disposition, "concept_id": concept_id, "rationale": rationale,
+                       "questionnaire_source": "sources_official/CHARLS_Life_History_Questionnaire.pdf",
+                       "codebook_source": "sources_official/CHARLS_Life_History_codebook.pdf"})
+    codes = [row["code"] for row in ledger]
+    if len(ledger) != 2024 or len(codes) != len(set(codes)):
+        raise ValueError(f"WORKHISTORY coverage not exhaustive/unique: rows={len(ledger)}, unique={len(set(codes))}")
+    return ledger
+
+
 def main() -> None:
     rows, concepts = build()
     sibling_coverage = build_sibling_module_coverage(rows)
@@ -1915,6 +1959,7 @@ def main() -> None:
     health_history_coverage = build_health_history_module_coverage(rows)
     sample_information_coverage = build_sample_information_coverage(rows)
     education_history_coverage = build_education_history_coverage(rows)
+    work_history_coverage = build_work_history_coverage(rows)
     AUDIT.mkdir(parents=True, exist_ok=True)
     DIST.mkdir(parents=True, exist_ok=True)
     csv_path = AUDIT / "life_history_exposure_crosswalk_v1.csv"
@@ -1994,6 +2039,11 @@ def main() -> None:
         writer = csv.DictWriter(f, fieldnames=list(education_history_coverage[0]), extrasaction="ignore")
         writer.writeheader()
         writer.writerows(education_history_coverage)
+    work_history_path = AUDIT / "life_history_work_history_coverage_2014_v1.csv"
+    with work_history_path.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=list(work_history_coverage[0]), extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(work_history_coverage)
     print(json.dumps({"concepts": len(concepts), "field_rows": len(rows),
                       "by_role": {role: sum(x["role"] == role for x in rows) for role in ("e", "p")},
                       "by_module": {module: sum(x["module"] == module for x in rows)
@@ -2012,6 +2062,7 @@ def main() -> None:
                       "health_history_fields_dispositioned": len(health_history_coverage),
                       "sample_information_fields_dispositioned": len(sample_information_coverage),
                       "education_history_fields_dispositioned": len(education_history_coverage),
+                      "work_history_fields_dispositioned": len(work_history_coverage),
                       "csv": str(csv_path), "json": str(json_path),
                       "sibling_coverage": str(coverage_path),
                       "parent_coverage": str(parent_coverage_path),
@@ -2026,7 +2077,8 @@ def main() -> None:
                       "wealth_history_coverage": str(wealth_history_path),
                       "health_history_coverage": str(health_history_path),
                       "sample_information_coverage": str(sample_information_path),
-                      "education_history_coverage": str(education_history_path)}, ensure_ascii=False))
+                      "education_history_coverage": str(education_history_path),
+                      "work_history_coverage": str(work_history_path)}, ensure_ascii=False))
 
 
 if __name__ == "__main__":
