@@ -653,6 +653,227 @@ GROUPS = [
         "status": "official questionnaire and Codebook field identity reviewed",
         "caveat": "These are retrospective early-life health history items, not current-wave clinical measures. They remain separate P candidates and are not automatically paired with 2014 exposures.",
     },
+    {
+        "concept_id": "life_history_menarche_timing",
+        "label": "Age at first menstrual period",
+        "role": "p",
+        "modules": ["HEALTHHISTORY"],
+        "domain": "reproductive development history",
+        "patterns": [r"hs048"],
+        "question": "HS048",
+        "unit": "five-category recalled age band",
+        "values": "1=<11 years; 2=11–12; 3=13–15; 4=16–18; 5=>18. Asked only of female respondents per the questionnaire procedure.",
+        "status": "official age eligibility and response bands reviewed; authorized-release coding requires QA",
+        "caveat": "Retrospective, female-only reproductive-development phenotype candidate; not a direct environmental exposure or exact age. Preserve the questionnaire's broad bands and sex-specific route; do not infer age from band midpoints.",
+    },
+    {
+        "concept_id": "life_history_adult_injury_disability",
+        "label": "Adult physical injury with lasting disability or activity limitation",
+        "role": "p",
+        "modules": ["HEALTHHISTORY"],
+        "domain": "adult injury and disability history",
+        "patterns": [r"hs051", r"hs052a", r"hs053", r"hs053a", r"hs053a_1"],
+        "question": "HS051–HS053a_1",
+        "unit": "injury-history gate, work-related status, first injury year, disability certificate and conditional disability category",
+        "values": "HS051 asks about physical injury resulting in permanent handicap/disability or daily-life limitation. HS052a asks whether the most serious injury was work related; HS053 records first injury year if multiple events; HS053a asks about a disability certificate and HS053a_1 records level/type.",
+        "status": "official route and item referents reviewed; authorized-release category coding and special values require QA",
+        "caveat": "Phenotype history, not an exposure dose. HS052 narrative injury type/body part is questionnaire free text and is not ingested. HS052a/HS053/HS053a follow HS051=Yes; HS053a_1 is conditional on certification. Do not interpret blank follow-ups as No or imply causation from work-related status.",
+    },
+    {
+        "concept_id": "life_history_ill_health_work_consequences",
+        "label": "Workplace consequences attributed to ill health after age 16",
+        "role": "p",
+        "modules": ["HEALTHHISTORY"],
+        "domain": "health-related occupational functioning",
+        "patterns": [r"hs060s[1-6]", r"hs060s96"],
+        "question": "HS060",
+        "unit": "seven multi-select outcome slots, including a none option",
+        "values": "Questionnaire options: denied promotion; reduced work responsibilities; work below qualifications; harassment by boss/colleagues; pay cut; dismissal; none of these. Respondent attributes the experience to ill health after age 16.",
+        "status": "official multi-select menu and age/attribution scope reviewed; checkbox storage requires authorized-release QA",
+        "caveat": "Retrospective self-attributed occupational consequence, not an objective employment record or disease diagnosis. Treat options as components of one reported outcome family; none is mutually exclusive in meaning and unselected slots are not automatically No. Do not expose response counts.",
+    },
+    {
+        "concept_id": "life_history_adult_health_burden",
+        "label": "Adult illness-related confinement, hospitalization and work absence",
+        "role": "p",
+        "modules": ["HEALTHHISTORY"],
+        "domain": "adult health and functional limitation history",
+        "patterns": [r"hs06[1-4]"],
+        "question": "HS061–HS064",
+        "unit": "four binary retrospective indicators after age 16",
+        "values": "One-month-or-longer bed/home confinement; one-month-or-longer hospitalization; more than three hospitalizations within a 12-month period; and leaving a job for at least one month because of a health condition.",
+        "status": "official age thresholds and item wording reviewed; authorized-release special values require QA",
+        "caveat": "Separate retrospective health/function outcomes, not current clinical measurements. Preserve the distinct thresholds and work-absence referent; do not collapse into an unvalidated severity score or infer No from skipped responses.",
+    },
+    {
+        "concept_id": "life_history_childhood_vaccination",
+        "label": "Any vaccination before age 16",
+        "role": "e",
+        "modules": ["HEALTHHISTORY"],
+        "domain": "early-life preventive healthcare access",
+        "patterns": [r"hc001"],
+        "question": "HC001",
+        "unit": "binary retrospective report",
+        "values": "Any vaccination before age 15 inclusive; questionnaire examples include smallpox vaccination and oral polio-prevention pills.",
+        "status": "official age boundary and examples reviewed; authorized-release coding requires QA",
+        "caveat": "Candidate early-life preventive-care marker, not a vaccine-specific exposure or complete immunization record. The questionnaire examples are not exhaustive; do not infer type, timing, dose or disease protection.",
+    },
+    {
+        "concept_id": "life_history_usual_source_of_care",
+        "label": "Usual source of care and periods without convenient care",
+        "role": "e",
+        "modules": ["HEALTHHISTORY"],
+        "domain": "life-course healthcare access",
+        "patterns": [r"hc002", r"hc004a", r"hc004s[1-7]"],
+        "question": "HC002/HC004/HC004a",
+        "unit": "usual-source status, first-doctor type, and age-band-specific years without a usual source",
+        "values": "HC002 defines usual source as a particular person/place for illness or advice within two hours. If No, HC004 records age periods and approximate years without such a source; HC004a asks the type of doctor seen the first time the respondent remembers seeing a doctor, with a separate never-seen option.",
+        "status": "official routing, two-hour definition and age-band labels reviewed; duration slots and doctor categories require authorized-release QA",
+        "caveat": "Retrospective access context. HC004 fields follow HC002=No; their durations are approximate and age bands differ in width. HC004a is a separate first-doctor referent, not automatically the usual source. The English questionnaire labels HC004a as first remembered doctor; check the Chinese instrument and authorized release before comparing categories. Do not sum durations across unequal age bands without a prespecified denominator.",
+    },
+    {
+        "concept_id": "life_history_adult_blood_pressure_screening",
+        "label": "Blood pressure screening after age 16",
+        "role": "e",
+        "modules": ["HEALTHHISTORY"],
+        "domain": "adult preventive healthcare utilization",
+        "patterns": [r"hc005", r"hc005_1"],
+        "question": "HC005/HC005_1",
+        "unit": "ever-screened status and first screening year",
+        "values": "Questionnaire asks whether blood pressure was checked after age 16 and, if yes, the first calendar year.",
+        "status": "official route and date referent reviewed; authorized-release year coding requires QA",
+        "caveat": "Screening/utilization history, not measured blood pressure or hypertension status. HC005_1 follows Yes; preserve the first-year referent and do not treat the year as screening frequency or quality.",
+    },
+    {
+        "concept_id": "life_history_adult_blood_test",
+        "label": "Blood testing after age 16",
+        "role": "e",
+        "modules": ["HEALTHHISTORY"],
+        "domain": "adult preventive healthcare utilization",
+        "patterns": [r"hc008", r"hc008_1"],
+        "question": "HC008/HC008_1",
+        "unit": "ever-tested status and first blood-test year",
+        "values": "Questionnaire asks about blood testing after age 16 (e.g., cholesterol or blood sugar), excluding blood tests performed in previous CHARLS visits; HC008_1 records the first year after age 16.",
+        "status": "official wording and exclusion of prior CHARLS visits reviewed; authorized-release coding requires QA",
+        "caveat": "Healthcare utilization history, not a cholesterol/glucose result or diagnosis. Preserve the exclusion of previous CHARLS study visits and conditional year route; do not infer which analyte was tested from a Yes response.",
+    },
+    {
+        "concept_id": "life_history_breast_screening",
+        "label": "Breast examination after age 16",
+        "role": "e",
+        "modules": ["HEALTHHISTORY"],
+        "domain": "sex-specific preventive healthcare utilization",
+        "patterns": [r"hc011a", r"hc011a_1"],
+        "question": "HC011a/HC011a_1",
+        "unit": "ever-examined status and first examination year",
+        "values": "Questionnaire routes to this item for female respondents and records whether breast examination occurred after age 16 and the first year if Yes.",
+        "status": "official sex-specific skip and year route reviewed; authorized-release coding requires QA",
+        "caveat": "Sex-specific healthcare utilization, not a cancer diagnosis or proof of guideline-concordant screening. Keep separate from prostate testing; year follows Yes and must not be imputed from a skipped male route.",
+    },
+    {
+        "concept_id": "life_history_prostate_screening",
+        "label": "Prostate cancer testing after age 16",
+        "role": "e",
+        "modules": ["HEALTHHISTORY"],
+        "domain": "sex-specific preventive healthcare utilization",
+        "patterns": [r"hc014", r"hc014_1"],
+        "question": "HC014/HC014_1",
+        "unit": "ever-tested status and first test year",
+        "values": "Questionnaire defines testing examples including digital rectal exam, PSA and transrectal ultrasound-guided biopsy; the male/female route is specified in the questionnaire.",
+        "status": "official screening definition, sex-specific route and year condition reviewed; authorized-release coding requires QA",
+        "caveat": "Sex-specific healthcare utilization, not prostate cancer diagnosis; the question combines heterogeneous test types and does not establish indication or screening quality. Keep test year conditional and separate from breast examination.",
+    },
+    {
+        "concept_id": "life_history_vision_screening",
+        "label": "Vision testing after age 16",
+        "role": "e",
+        "modules": ["HEALTHHISTORY"],
+        "domain": "adult preventive healthcare utilization",
+        "patterns": [r"hc017", r"hc017_1"],
+        "question": "HC017/HC017_1",
+        "unit": "ever-tested status and first test year",
+        "values": "Questionnaire asks whether the respondent had a vision test after age 16 and, if Yes, the first calendar year.",
+        "status": "official question and conditional date route reviewed; authorized-release coding requires QA",
+        "caveat": "Healthcare utilization history, not visual acuity or an eye-disease phenotype. Preserve first-year and conditional response semantics.",
+    },
+    {
+        "concept_id": "life_history_dental_screening",
+        "label": "Dental examination after age 16",
+        "role": "e",
+        "modules": ["HEALTHHISTORY"],
+        "domain": "adult preventive healthcare utilization",
+        "patterns": [r"hc017a", r"hc017a_1"],
+        "question": "HC017a/HC017a_1",
+        "unit": "ever-examined status and first examination year",
+        "values": "Questionnaire asks whether the respondent had dental examinations after age 16 and, if Yes, the first calendar year.",
+        "status": "official question and conditional date route reviewed; authorized-release coding requires QA",
+        "caveat": "Healthcare utilization history, not oral-health status or examination quality. Preserve conditional year route; do not interpret no reported examination as a dental diagnosis.",
+    },
+    {
+        "concept_id": "life_history_physical_activity_increase_periods",
+        "label": "Life periods when physical activity was increased for at least a year",
+        "role": "e",
+        "modules": ["HEALTHHISTORY"],
+        "domain": "life-course health behavior change",
+        "patterns": [r"hc023s1", r"hc024_1_s[1-7]"],
+        "question": "HC023/HC024 physical activity option",
+        "unit": "ever-change selector and seven age-period selectors",
+        "values": "HC023 qualifies changes maintained for at least one year; HC024 age periods are 0–15, 16–25, 26–40, 41–55, 56–65, 66–75 and >75 years.",
+        "status": "official duration threshold, behavior referent and age-band labels reviewed; multi-select release coding requires QA",
+        "caveat": "Reports periods of increased activity, not activity level, type, intensity or duration beyond the one-year eligibility threshold. HC024 is routed for selected HC023 behaviors; period slots are not independent exposures and an unselected band is not No.",
+    },
+    {
+        "concept_id": "life_history_diet_change_periods",
+        "label": "Life periods when diet was changed for at least a year",
+        "role": "e",
+        "modules": ["HEALTHHISTORY"],
+        "domain": "life-course health behavior change",
+        "patterns": [r"hc023s2", r"hc024_2_s[1-7]"],
+        "question": "HC023/HC024 diet-change option",
+        "unit": "ever-change selector and seven age-period selectors",
+        "values": "HC023 qualifies changes maintained for at least one year; HC024 age periods are 0–15, 16–25, 26–40, 41–55, 56–65, 66–75 and >75 years.",
+        "status": "official duration threshold, behavior referent and age-band labels reviewed; multi-select release coding requires QA",
+        "caveat": "The questionnaire says 'changed your diet'; it does not establish improvement, diet quality or a particular dietary pattern. Period selectors are conditional and not independent exposures; blank/unchecked slots are not No.",
+    },
+    {
+        "concept_id": "life_history_smoking_cessation_periods",
+        "label": "Life periods when smoking was stopped for at least a year",
+        "role": "e",
+        "modules": ["HEALTHHISTORY"],
+        "domain": "life-course health behavior change",
+        "patterns": [r"hc023s3", r"hc024_3_s[1-7]"],
+        "question": "HC023/HC024 smoking-cessation option",
+        "unit": "ever-cessation selector and seven age-period selectors",
+        "values": "HC023 qualifies changes maintained for at least one year; HC024 age periods are 0–15, 16–25, 26–40, 41–55, 56–65, 66–75 and >75 years.",
+        "status": "official duration threshold, behavior referent and age-band labels reviewed; multi-select release coding requires QA",
+        "caveat": "Captures reported smoking cessation, not smoking initiation, cumulative smoking, duration or relapse. Period selectors are conditional and not independent exposures; blank/unchecked slots are not No.",
+    },
+    {
+        "concept_id": "life_history_alcohol_reduction_periods",
+        "label": "Life periods when alcohol consumption was reduced for at least a year",
+        "role": "e",
+        "modules": ["HEALTHHISTORY"],
+        "domain": "life-course health behavior change",
+        "patterns": [r"hc023s4", r"hc024_4_s[1-7]"],
+        "question": "HC023/HC024 alcohol-reduction option",
+        "unit": "ever-reduction selector and seven age-period selectors",
+        "values": "HC023 qualifies changes maintained for at least one year; HC024 age periods are 0–15, 16–25, 26–40, 41–55, 56–65, 66–75 and >75 years.",
+        "status": "official duration threshold, behavior referent and age-band labels reviewed; multi-select release coding requires QA",
+        "caveat": "Captures reported reduction, not alcohol exposure level, baseline use, amount or abstinence. Period selectors are conditional and not independent exposures; blank/unchecked slots are not No.",
+    },
+    {
+        "concept_id": "life_history_medical_insurance_history",
+        "label": "Medical insurance status and first coverage year after age 16",
+        "role": "e",
+        "modules": ["HEALTHHISTORY"],
+        "domain": "life-course healthcare access and socioeconomic context",
+        "patterns": [r"hc025", r"hc025_1"],
+        "question": "HC025/HC025_1",
+        "unit": "insurance status and first post-16 coverage year",
+        "values": "Questionnaire examples include urban employee/resident basic insurance, new rural cooperative medical insurance, free medical care and commercial insurance; HC025_1 asks first year after age 16 if insured.",
+        "status": "official insurance examples and conditional year route reviewed; current-versus-ever wording and release coding require QA",
+        "caveat": "The English stem asks 'Do you have' insurance while its negative response says never had insurance; preserve that wording inconsistency and do not infer continuous coverage or insurance type. HC025_1 follows Yes; year is not duration.",
+    },
 ]
 
 
@@ -1042,6 +1263,43 @@ def build_wealth_history_module_coverage(rows: list[dict]) -> list[dict]:
     return ledger
 
 
+def build_health_history_module_coverage(rows: list[dict]) -> list[dict]:
+    """Disposition all 86 Codebook health-history fields, including existing childhood outcomes."""
+    mapped = {row["code"]: row for row in rows if row["module"] == "HEALTHHISTORY"}
+    fields = read_codebook_fields()
+    ledger = []
+    linkage = {"id", "householdid", "communityid"}
+    interview = {"hc061", "hc062", "hc063"}
+    for (module, code), label in sorted(fields.items()):
+        if module != "HEALTHHISTORY":
+            continue
+        row = mapped.get(code)
+        if row:
+            disposition, concept_id, rationale = "mapped_candidate", row["concept_id"], row["caveat"]
+        elif code in linkage:
+            disposition, concept_id = "excluded_linkage_key", ""
+            rationale = "Person/household/community linkage key. Never publish values; use only in authorized controlled joins when required."
+        elif code in interview:
+            disposition, concept_id = "excluded_interview_proxy_metadata", ""
+            rationale = "Section respondent/proxy identity or relationship metadata, not an E/P measure."
+        elif code == "versionid":
+            disposition, concept_id = "excluded_release_metadata", ""
+            rationale = "Release/version bookkeeping metadata, not an E/P measure."
+        elif code == "hc023s96":
+            disposition, concept_id = "excluded_none_option_metadata", ""
+            rationale = "Shared 'none of the above' option for the HC023 health-behavior-change checklist; it is not an independent exposure. The four specific HC023 behavior selectors remain mapped with their HC024 age-period fields."
+        else:
+            raise ValueError(f"HEALTHHISTORY Codebook field has no explicit disposition: {code}")
+        ledger.append({"module": module, "code": code, "codebook_label": label,
+                       "disposition": disposition, "concept_id": concept_id, "rationale": rationale,
+                       "questionnaire_source": "sources_official/CHARLS_Life_History_Questionnaire.pdf",
+                       "codebook_source": "sources_official/CHARLS_Life_History_codebook.pdf"})
+    codes = [row["code"] for row in ledger]
+    if len(ledger) != 86 or len(codes) != len(set(codes)):
+        raise ValueError(f"HEALTHHISTORY coverage not exhaustive/unique: rows={len(ledger)}, unique={len(set(codes))}")
+    return ledger
+
+
 def main() -> None:
     rows, concepts = build()
     sibling_coverage = build_sibling_module_coverage(rows)
@@ -1055,6 +1313,7 @@ def main() -> None:
     gap_migration_coverage = build_gap_migration_reason_coverage(rows)
     residence_module_coverage = build_residence_module_coverage(rows)
     wealth_history_coverage = build_wealth_history_module_coverage(rows)
+    health_history_coverage = build_health_history_module_coverage(rows)
     AUDIT.mkdir(parents=True, exist_ok=True)
     DIST.mkdir(parents=True, exist_ok=True)
     csv_path = AUDIT / "life_history_exposure_crosswalk_v1.csv"
@@ -1119,6 +1378,11 @@ def main() -> None:
         writer = csv.DictWriter(f, fieldnames=list(wealth_history_coverage[0]), extrasaction="ignore")
         writer.writeheader()
         writer.writerows(wealth_history_coverage)
+    health_history_path = AUDIT / "life_history_health_history_full_coverage_2014_v1.csv"
+    with health_history_path.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=list(health_history_coverage[0]), extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(health_history_coverage)
     print(json.dumps({"concepts": len(concepts), "field_rows": len(rows),
                       "by_role": {role: sum(x["role"] == role for x in rows) for role in ("e", "p")},
                       "by_module": {module: sum(x["module"] == module for x in rows)
@@ -1134,6 +1398,7 @@ def main() -> None:
                       "between_residence_migration_fields_mapped": len(gap_migration_coverage),
                       "residence_module_fields_dispositioned": len(residence_module_coverage),
                       "wealth_history_fields_dispositioned": len(wealth_history_coverage),
+                      "health_history_fields_dispositioned": len(health_history_coverage),
                       "csv": str(csv_path), "json": str(json_path),
                       "sibling_coverage": str(coverage_path),
                       "parent_coverage": str(parent_coverage_path),
@@ -1145,7 +1410,8 @@ def main() -> None:
                       "residence_timing_coverage": str(residence_transition_path),
                       "gap_migration_coverage": str(gap_migration_path),
                       "residence_module_coverage": str(residence_module_path),
-                      "wealth_history_coverage": str(wealth_history_path)}, ensure_ascii=False))
+                      "wealth_history_coverage": str(wealth_history_path),
+                      "health_history_coverage": str(health_history_path)}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

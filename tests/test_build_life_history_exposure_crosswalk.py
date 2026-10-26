@@ -26,8 +26,8 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (50, 1695))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 1667, "p": 28})
+        self.assertEqual((len(groups), len(rows)), (67, 1768))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 1723, "p": 45})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
@@ -79,6 +79,30 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(len(by_concept["life_history_land_expropriation_history"]), 93)
         self.assertEqual(len(by_concept["life_history_home_demolition_history"]), 58)
         self.assertFalse(any("OBS:" in " ".join(row.values()) for key in ("life_history_inheritance_history", "life_history_land_expropriation_history", "life_history_home_demolition_history") for row in by_concept[key]))
+        health_counts = {
+            "life_history_menarche_timing": 1,
+            "life_history_adult_injury_disability": 5,
+            "life_history_ill_health_work_consequences": 7,
+            "life_history_adult_health_burden": 4,
+            "life_history_childhood_vaccination": 1,
+            "life_history_usual_source_of_care": 9,
+            "life_history_adult_blood_pressure_screening": 2,
+            "life_history_adult_blood_test": 2,
+            "life_history_breast_screening": 2,
+            "life_history_prostate_screening": 2,
+            "life_history_vision_screening": 2,
+            "life_history_dental_screening": 2,
+            "life_history_physical_activity_increase_periods": 8,
+            "life_history_diet_change_periods": 8,
+            "life_history_smoking_cessation_periods": 8,
+            "life_history_alcohol_reduction_periods": 8,
+            "life_history_medical_insurance_history": 2,
+        }
+        for concept, count in health_counts.items():
+            self.assertEqual(len(by_concept[concept]), count, concept)
+        self.assertTrue(all("at least a year" in " ".join(r.values()) for concept in (
+            "life_history_physical_activity_increase_periods", "life_history_diet_change_periods",
+            "life_history_smoking_cessation_periods", "life_history_alcohol_reduction_periods") for r in by_concept[concept]))
         self.assertEqual(len(by_concept["life_history_historical_family_class_background"]), 189)
         self.assertEqual({row["module"] for row in by_concept["life_history_historical_family_class_background"]}, {"WEALTHHISTORY"})
         self.assertTrue(all(row["code"] != "c5" for row in by_concept["life_history_historical_family_class_background"]))
@@ -194,6 +218,22 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(counts["excluded_release_metadata"], 1)
         fs012s = next(row for row in ledger if row["code"] == "fs012s")
         self.assertEqual(fs012s["disposition"], "excluded_household_route_metadata")
+
+    def test_full_health_history_module_has_exact_dispositions_and_none_option_is_not_exposure(self):
+        from collections import Counter
+        rows, _ = builder.build()
+        ledger = builder.build_health_history_module_coverage(rows)
+        self.assertEqual(len(ledger), 86)
+        self.assertEqual(len({row["code"] for row in ledger}), 86)
+        counts = Counter(row["disposition"] for row in ledger)
+        self.assertEqual(counts["mapped_candidate"], 78)
+        self.assertEqual(counts["excluded_none_option_metadata"], 1)
+        self.assertEqual(counts["excluded_linkage_key"], 3)
+        self.assertEqual(counts["excluded_interview_proxy_metadata"], 3)
+        self.assertEqual(counts["excluded_release_metadata"], 1)
+        none_row = next(row for row in ledger if row["code"] == "hc023s96")
+        self.assertEqual(none_row["disposition"], "excluded_none_option_metadata")
+        self.assertFalse(any(row["code"] == "hc023s96" for row in rows))
 
 
 if __name__ == "__main__":
