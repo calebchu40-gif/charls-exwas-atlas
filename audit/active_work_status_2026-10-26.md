@@ -1,6 +1,6 @@
 ## 2014 EDUCATIONHISTORY graduate pathway review (local pending publication)
 
-Reviewed E074–E099b routes and Codebook identities. Added 66 fields across master's/PhD education pathways and stage-specific interruptions. Education History now has 330 mapped / 1,105 fields (771 substantive fields deferred; three linkage keys and one version field excluded). Overall rebuild: 90 concepts / 2,071 mappings (E 2,025, P 46). Degree types, formal/nonformal routes, conditional diploma paths and interruption reasons remain distinct. Audit appended to [life_history_education_history_continuation_review_2026-10-26.md](life_history_education_history_continuation_review_2026-10-26.md). Local app v152 / JSON v19; deployment pending.
+Reviewed E074–E099b routes and Codebook identities. Added 66 fields across master's/PhD education pathways and stage-specific interruptions. Education History now has 302 mapped / 1,105 fields (799 substantive fields deferred; three linkage keys and one version field excluded). Overall rebuild: 90 concepts / 2,071 mappings (E 2,025, P 46). Degree types, formal/nonformal routes, conditional diploma paths and interruption reasons remain distinct. Audit appended to [life_history_education_history_continuation_review_2026-10-26.md](life_history_education_history_continuation_review_2026-10-26.md). Local app v152 / JSON v19; deployment pending.
 
 ## 2014 EDUCATIONHISTORY college pathway review (local pending publication)
 

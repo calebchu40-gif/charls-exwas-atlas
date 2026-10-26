@@ -70,4 +70,4 @@ Compared official questionnaire routes and Codebook identities. Added 66 fields 
 
 Interruptions follow stage-specific E005 selection and include the semester count plus 13 reason selectors. Diploma route, study duration and program count are not treated as proof of a standardized credential. Institution names/locations and open-text details remain excluded. The Codebook's descriptive frequencies were not used.
 
-Education History now has 330 mapped fields of 1,105, 771 substantive fields still deferred, three linkage keys and one version field excluded. Overall Life History catalog: 90 concepts / 2,071 mappings (E 2,025, P 46). No individual values or modeled associations are published.
+Education History now has 302 mapped fields of 1,105, 799 substantive fields still deferred, three linkage keys and one version field excluded. Overall Life History catalog: 90 concepts / 2,071 mappings (E 2,025, P 46). No individual values or modeled associations are published.
