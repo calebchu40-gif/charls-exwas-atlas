@@ -394,6 +394,19 @@ GROUPS = [
         "caveat": "These are adult caregiver/parent background measures, not the respondent's education. A4 identifies who raised the respondent before age 17; do not assume every listed adoptive/step parent was the primary caregiver or impute skipped categories.",
     },
     {
+        "concept_id": "life_history_primary_parental_caregiver_before17",
+        "label": "Mother and father caregiver relationship before age 17",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "early-life family structure and caregiving context",
+        "patterns": [r"a4[ab]"],
+        "question": "A4a/A4b",
+        "unit": "reported relationship category for the main female and male caregiver before age 17",
+        "values": "Mother item: biological, adopted, or stepmother; no such mother figure and another person raised respondent (open-text follow-up not included); or no female guardian. Father item uses the corresponding biological, adopted, and stepfather categories, no such father figure with open-text follow-up, or no male guardian.",
+        "status": "official questionnaire categories, age-17 reference, sex-specific branches, and Codebook fields reviewed; open-text referent is not in the structured catalog",
+        "caveat": "This is a childhood caregiving/family-structure context candidate, not a measure of caregiver identity or behavior beyond the reported relationship category. Keep A4a and A4b separate; preserve routes to parent education and later sections. Do not infer an unlisted caregiver type from the omitted open-text item or treat skipped branches as No. The 2014 special Life History module has no released survey weight and is outside regular-wave weighted pair scans.",
+    },
+    {
         "concept_id": "life_history_sibling_death_before_age6",
         "label": "Sibling deaths before age six and family relationship context",
         "role": "e",
@@ -2422,9 +2435,6 @@ def build_parent_module_coverage(rows: list[dict]) -> list[dict]:
         row = mapped.get(code)
         if row:
             disposition, concept_id, rationale = "mapped_candidate", row["concept_id"], row["caveat"]
-        elif code in {"a4a", "a4b"}:
-            disposition, concept_id = "deferred_caregiver_identity", ""
-            rationale = "Caregiver identity is a route-defining relationship category, not an E/P measure; retain only as metadata until a target estimand needs it."
         elif re.fullmatch(r"a5[abcdef]", code, re.I):
             disposition, concept_id = "deferred_parent_birth_year", ""
             rationale = "Parent birth year is background/timing metadata, not a stand-alone exposure; event-age derivation requires approved linkage and validation."
@@ -2554,9 +2564,6 @@ def build_family_information_module_coverage(rows: list[dict]) -> list[dict]:
         elif code == "versionid":
             disposition, concept_id = "excluded_release_metadata", ""
             rationale = "Release/version bookkeeping metadata, not a respondent exposure or phenotype."
-        elif code in {"a4a", "a4b"}:
-            disposition, concept_id = "deferred_caregiver_identity", ""
-            rationale = "Caregiver identity is a route-defining relationship category, not a stand-alone E/P measure."
         elif re.fullmatch(r"a5[abcdef]", code, re.I):
             disposition, concept_id = "deferred_parent_birth_year", ""
             rationale = "Parent birth year is timing/background metadata; event-age derivation requires an explicit estimand and authorized linkage."

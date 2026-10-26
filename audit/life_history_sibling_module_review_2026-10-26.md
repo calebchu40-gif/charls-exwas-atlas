@@ -30,7 +30,7 @@ The questionnaire also asks for sibling names (`B4_1`) and open-text causes of d
 
 ## Catalog state and regeneration
 
-The independent 2014 Life History directory now contains 33 candidate concepts and 785 source-field mappings (757 E-role, 28 P-role). These counts include routed fields and repeated sibling components and must not be read as independent measures. The public view remains separate from the five regular-wave pair matrix because the official 2014 release provides no survey weight and has a distinct sample composition.
+The independent 2014 Life History directory now contains 34 candidate concepts and 787 source-field mappings (759 E-role, 28 P-role). These counts include routed fields and repeated sibling components and must not be read as independent measures. The public view remains separate from the five regular-wave pair matrix because the official 2014 release provides no survey weight and has a distinct sample composition.
 
 Regenerate the crosswalk, special-survey JSON and 271-field B-module coverage ledger with:
 

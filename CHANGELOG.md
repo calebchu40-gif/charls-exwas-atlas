@@ -1,3 +1,10 @@
+# 2026-10-26 Add childhood caregiver relationship context
+
+- Re-reviewed official Life History A4a/A4b. The two structured fields ask who spent the most time raising the respondent before age 17 and are now mapped to one early-life caregiving/family-structure candidate.
+- Preserved sex-specific categories, route skips, and the boundary that open-text other-caregiver descriptions are not included. Six parent birth-year fields remain deferred pending validated derived estimands.
+- Rebuilt catalog: 179 concepts / 5,858 mappings (E 5,812, P 46); app v182 / JSON v49. Formal association models remain 0.
+- Audit: `audit/life_history_parent_module_review_2026-10-26.md`.
+
 # 2026-10-26 Add sibling education context candidate
 
 - Re-reviewed official 2014 Life History B4_5 and mapped 15 sibling education slots to one family-of-origin socioeconomic-context candidate; retained explicit limits on timing, sibling-slot dependence, roster identity and the no-weight special module.

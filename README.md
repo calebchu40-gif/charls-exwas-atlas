@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-26）
 
-**最新已上线更新：**app v181 / Life History JSON v48 的原型含178个Life History概念、5,856条映射（E 5,810、P 46）。新增15个兄弟姐妹最高学历字段，作为家庭社会经济背景候选；没有年龄/年份，故不推断其先于受访者童年发生，也不将各兄弟姐妹槽位视为独立暴露。兄弟姐妹健在状态的15个字段仍明确暂缓。2014 Life History的 EDUCATIONHISTORY 1,105个字段和 DEMOGRAPHICBACKGROUNDS 1,920个字段均已逐项分配去向。正式关联模型仍为0。部署后首页、专题JSON返回HTTP 200，远端JSON与本地SHA-256一致。详见[`audit/life_history_sibling_module_review_2026-10-26.md`](audit/life_history_sibling_module_review_2026-10-26.md)。
+**本地待发布更新：**app v182 / Life History JSON v49 的原型含179个Life History概念、5,858条映射（E 5,812、P 46）。继新增兄弟姐妹最高学历家庭背景候选后，本地新增A4a/A4b两个字段构成的“17岁前主要母亲/父亲照护关系”候选；保留性别分支和问卷跳转，不纳入非结构化照护人描述。六个父母出生年份字段仍待确定经验证的派生估计对象。正式关联模型仍为0。此前 v181 / JSON v48 已部署核验；本批待部署。详见[`audit/life_history_parent_module_review_2026-10-26.md`](audit/life_history_parent_module_review_2026-10-26.md)。
 
 **当前线上版本：**CHARLS ExWAS Atlas已公开部署：[网站入口](https://calebchu40-gif.github.io/charls-exwas-atlas/)。线上 app v181 / Life History JSON v48 已核验；远端JSON SHA-256 与本地相同。正式关联模型仍为0；目录共现不等于样本量或关联结果。
 

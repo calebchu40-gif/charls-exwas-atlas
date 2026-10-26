@@ -26,8 +26,8 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (178, 5856))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 5810, "p": 46})
+        self.assertEqual((len(groups), len(rows)), (179, 5858))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 5812, "p": 46})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
@@ -49,6 +49,7 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(len(by_concept["life_history_sibling_death_before_age6"]), 61)
         self.assertEqual(len(by_concept["life_history_sibling_family_structure"]), 72)
         self.assertEqual(len(by_concept["life_history_sibling_educational_attainment_context"]), 15)
+        self.assertEqual(len(by_concept["life_history_primary_parental_caregiver_before17"]), 2)
         self.assertEqual(len(by_concept["life_history_sibling_party_membership"]), 26)
         self.assertEqual(len(by_concept["life_history_sibling_ethnic_context"]), 41)
         self.assertEqual(len(by_concept["life_history_sibling_sent_down_experience"]), 26)
@@ -223,8 +224,8 @@ CHARLSCodeBook 1 RESIDENCE
         rows, _ = builder.build()
         coverage = builder.build_parent_module_coverage(rows)
         self.assertEqual(len(coverage), 47)
-        self.assertEqual(sum(row["disposition"] == "mapped_candidate" for row in coverage), 39)
-        self.assertEqual(sum(row["disposition"] != "mapped_candidate" for row in coverage), 8)
+        self.assertEqual(sum(row["disposition"] == "mapped_candidate" for row in coverage), 41)
+        self.assertEqual(sum(row["disposition"] != "mapped_candidate" for row in coverage), 6)
 
     def test_work_history_lifetime_work_items_and_route_checks_are_separated(self):
         rows, _ = builder.build()
@@ -326,10 +327,8 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(len({row["code"] for row in ledger}), 473)
         from collections import Counter
         counts = Counter(row["disposition"] for row in ledger)
-        self.assertEqual(counts["mapped_candidate"], 431)
+        self.assertEqual(counts["mapped_candidate"], 448)
         self.assertEqual(counts["deferred_relative_status"], 15)
-        self.assertEqual(counts["deferred_relative_attainment"], 15)
-        self.assertEqual(counts["deferred_caregiver_identity"], 2)
         self.assertEqual(counts["deferred_parent_birth_year"], 6)
         self.assertEqual(counts["excluded_linkage_key"], 3)
         self.assertEqual(counts["excluded_release_metadata"], 1)
