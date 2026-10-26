@@ -39,6 +39,45 @@ GROUPS = [
         "caveat": "This records spouse/partner education, not respondent education. It is a broad household/relationship socioeconomic context candidate; do not treat four roster slots as four independent exposures or assume every spouse record has an education response. The roster identity fields are not included. This retrospective 2014 module is not a regular-wave exposure measure.",
     },
     {
+        "concept_id": "life_history_pregnancy_outcome_history",
+        "label": "History and type of pregnancy loss before, between, or after live births",
+        "role": "e",
+        "modules": ["DEMOGRAPHICBACKGROUNDS"],
+        "domain": "reproductive and life-course health context",
+        "patterns": [r"c025a_\d+_", r"c028_\d+_", r"c030a_\d+_"],
+        "question": "C025a/C028/C030a",
+        "unit": "retrospective pregnancy-history interval or event; yes/no history, reported outcome type, or additional-event screen",
+        "values": "C025a/C030a: Yes or No for reported induced abortion, miscarriage/natural abortion, or stillbirth. C028: induced abortion, miscarriage/natural abortion, or stillbirth.",
+        "status": "official questionnaire wording, female-only route, birth-interval structure, and Codebook field identities reviewed; no respondent values or frequencies used",
+        "caveat": "Sensitive retrospective reproductive-health metadata. C025a refers to intervals before the first biological child, between biological-child births, and after the last; C030a is a repeated screen for additional events. C026-C029 follow only a Yes route. A blank is not No; do not infer event counts, event dates, or pregnancy incidence from interval slots without licensed-release validation. The 2014 Life History release has no weight, so these fields are not part of regular-wave weighted pair analyses.",
+    },
+    {
+        "concept_id": "life_history_pregnancy_termination_timing_duration",
+        "label": "Reported year and duration of pregnancy ending in loss",
+        "role": "e",
+        "modules": ["DEMOGRAPHICBACKGROUNDS"],
+        "domain": "reproductive and life-course health context",
+        "patterns": [r"c026_\d+_", r"c027_\d+_"],
+        "question": "C026/C027",
+        "unit": "event-level calendar year and recalled gestational duration in months",
+        "values": "C026 records year pregnancy ended; C027 records pregnancy duration in months, with interviewer instruction to enter 1 for less than one month.",
+        "status": "official questionnaire definitions, conditional route, and Codebook event-slot identities reviewed; response values and frequencies not used",
+        "caveat": "Sensitive reproductive-health metadata. Asked only after C025a/C030a indicates an event; event slots are conditional, retrospective and potentially date-identifying in combination. Do not expose participant-level dates or derive gestational age beyond the recorded month field. The 2014 Life History release has no weight, so no regular-wave weighted inference is implied.",
+    },
+    {
+        "concept_id": "life_history_induced_abortion_reported_reason",
+        "label": "Reported reasons for induced abortion",
+        "role": "e",
+        "modules": ["DEMOGRAPHICBACKGROUNDS"],
+        "domain": "reproductive, policy, and social context",
+        "patterns": [r"c029_\d+_s\d+"],
+        "question": "C029",
+        "unit": "multi-select reason options for a reported induced-abortion event",
+        "values": "Questionnaire options include family-planning policy; not wanting a child; sex preference relative to ultrasound result; ultrasound indication that the fetus was unhealthy; and other.",
+        "status": "official questionnaire option wording, conditional route, and Codebook event/option identities reviewed; no responses or frequencies used",
+        "caveat": "Highly sensitive retrospective reproductive-health metadata. Asked only after C028 identifies induced abortion; multiple reasons may be selected. Preserve event and option slots; do not infer sex selection, policy exposure, fetal diagnosis, or counts from unselected/blank fields. No participant-level values or frequencies are published. The 2014 Life History release has no weight; analysis requires separate ethics, privacy, disclosure, target-population, and design review.",
+    },
+    {
         "concept_id": "life_history_marital_union_history",
         "label": "Marriage, co-residence and dissolution history with spouses",
         "role": "e",
@@ -2716,6 +2755,9 @@ def build_demographic_backgrounds_coverage(rows: list[dict]) -> list[dict]:
         elif code.casefold() == "rgender":
             disposition, concept_id = "c_only_redundant_respondent_metadata", ""
             rationale = "Respondent gender roster/source metadata; not a new historical E/P construct and should not duplicate the regular-wave sex concept."
+        elif re.fullmatch(r"c024a_1_\d+_", code, re.I):
+            disposition, concept_id = "excluded_child_roster_order_key", ""
+            rationale = "Maps a child roster entry to biological-child birth order for the pregnancy-history loop. It is a referent/linkage key, not an independent exposure; do not publish child names, order-level records, or participant values."
         elif relative_birth_date.match(code):
             disposition, concept_id = "excluded_relative_birth_date", ""
             rationale = "Spouse/partner date-of-birth components identify a relative and are not needed for the candidate E/P catalogue; do not expose date values or derive relative age without a separate estimand."

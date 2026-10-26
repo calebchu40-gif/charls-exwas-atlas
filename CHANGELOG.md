@@ -1,3 +1,10 @@
+# 2026-10-26 Map 2014 Life History pregnancy history
+
+- Reviewed the female-only pregnancy-history section against the official questionnaire and Codebook; added 109 source fields across pregnancy outcome history (31), termination timing/duration (24), and induced-abortion reported reasons (54).
+- Preserved pre-first-birth, between-birth, post-last-birth and additional-event routes. Excluded 12 child-order fields as roster/linkage keys. Marked pregnancy fields as sensitive retrospective metadata and excluded participant values, frequencies, dates, derived event counts, and association results.
+- The full 1,920-field `DEMOGRAPHICBACKGROUNDS` ledger remains exhaustive; 2014 Life History stays outside regular-wave weighted pair analysis because its release note states no weight is provided.
+- Local Life History catalog is now 168 concepts / 5,032 field mappings (E 4,986, P 46); app v176 / JSON v43. Not yet verified on GitHub Pages.
+
 # 2026-10-26 Map 2014 Life History spouse/partner context
 
 - Reviewed the official spouse/partner questionnaire section and mapped 114 Codebook fields into six E-candidate concepts for marital history, non-marital cohabitation, hukou transitions, coarse relationship-linked residential transitions, and spouse/partner education.
