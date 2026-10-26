@@ -2,7 +2,7 @@
 
 ## 2026-10-26 guardian-context local extension
 
-官方2014问卷Section H来源审计新增4个童年抚养人背景概念和48条字段行，独立Life History目录当前本地为26组/529行（E 516、P 13）。女性/男性抚养人按A4a/A4b题意定义，不默认是生母/生父；条件跳题、勾选存储和男女H16罪名选项集差异均保留。此增补尚待全量测试、部署和线上核验；详见[`life_history_guardian_health_context_review_2026-10-26.md`](life_history_guardian_health_context_review_2026-10-26.md)。
+官方2014问卷Section H来源审计新增4个童年抚养人背景概念和48条字段行，独立Life History目录现为26组/529行（E 516、P 13）。提交 `c433529` 已推送，线上首页和专题JSON核验26概念/529字段。女性/男性抚养人按A4a/A4b题意定义，不默认是生母/生父；条件跳题、勾选存储和男女H16罪名选项集差异均保留。详见[`life_history_guardian_health_context_review_2026-10-26.md`](life_history_guardian_health_context_review_2026-10-26.md)。
 
 ## 2026-10-26 本地增补记录
 

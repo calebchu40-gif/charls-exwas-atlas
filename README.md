@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-26）
 
-**本地待发布扩展：**在已上线的2014饥荒题组增补基础上，按官方Section H新增童年女性/男性抚养人精神健康、物质使用、行为/司法经历及长期疾病/残疾4个候选概念组、48条字段映射。该专题目录本地现为26组、529字段行（E 516、P 13）；全部是候选元数据，路由及授权发行版存储仍待核验，未使用Codebook频数。审计见[`audit/life_history_guardian_health_context_review_2026-10-26.md`](audit/life_history_guardian_health_context_review_2026-10-26.md)。本次页面/数据增补正在进行全量校验，尚未部署。
+**最新2014 Life History更新（提交 `c433529`，已在线核验）：**在饥荒序列扩展基础上，按官方Section H新增童年女性/男性抚养人精神健康、物质使用、行为/司法经历及长期疾病/残疾4个候选概念组、48条字段映射。专题目录现为26组、529字段行（E 516、P 13）。线上JSON返回26概念、529字段；首页、`app.js?v=136`与JSON缓存版本`v=3`均已核验。角色仍是候选元数据，路由与授权发行版存储需进一步核验；没有使用Codebook频数。审计见[`audit/life_history_guardian_health_context_review_2026-10-26.md`](audit/life_history_guardian_health_context_review_2026-10-26.md)。
 
 **最新2014 Life History更新（提交 `1f21885`，已在线核验）：**按官方问卷C4–C8饥荒序列新增4个概念组、10条字段映射；独立目录现为22概念组、481字段行（E 468、P 13）。线上专题JSON核验返回22概念、481字段，首页、`app.js?v=135`和JSON缓存版本`v=2`均已确认更新。C8选项5中英文冲突、选项槽编码及条件路由保留待核；没有使用Codebook频数。详情见[`audit/life_history_famine_sequence_review_2026-10-26.md`](audit/life_history_famine_sequence_review_2026-10-26.md)。
 
