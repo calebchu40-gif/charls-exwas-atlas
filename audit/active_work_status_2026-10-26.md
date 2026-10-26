@@ -1,3 +1,7 @@
+## 2014 EDUCATIONHISTORY episode timing and module disposition (local, not yet published)
+
+Reviewed repeated school timing fields and remaining module coverage. Added 240 alternative-precision start/end components across repeated episodes, four early-schooling episode counts, and two previously missed attainment/exam fields (E024, E046a). The complete 1,105-field ledger now has 1,072 mapped candidates, 22 sensitive school-address exclusions, five certificate-year fields deferred until certificate identity can be validated, three linkage keys and one release version excluded, plus one internal quality flag and one no-observations field excluded. Rebuild: 107 concepts / 2,841 mappings (E 2,795, P 46). Local app prepared as v155 / JSON v22; deployment and live verification pending.
+
 ## 2014 EDUCATIONHISTORY repeated school-gap context (local pending publication)
 
 Reviewed E011–E065 repeated-school gap routes. Added 262 fields across 242 activity selectors and 20 no-other-education-in-gap indicators; distinguished these >7-month within-stage gaps from E004/E005 school interruption-and-return. Education History now 826 / 1,105 fields mapped (275 substantive fields still deferred; three linkage keys and one version field excluded). Overall catalog: 105 concepts / 2,595 mappings (E 2,549, P 46). Audit appended to [life_history_education_history_continuation_review_2026-10-26.md](life_history_education_history_continuation_review_2026-10-26.md). Local app v154 / JSON v21; deployment pending.

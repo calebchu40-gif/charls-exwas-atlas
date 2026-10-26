@@ -26,8 +26,8 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (105, 2595))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 2549, "p": 46})
+        self.assertEqual((len(groups), len(rows)), (107, 2841))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 2795, "p": 46})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
@@ -111,11 +111,11 @@ CHARLSCodeBook 1 RESIDENCE
             "life_history_school_dormitory_experience": 4,
             "life_history_primary_school_attainment": 5,
             "life_history_primary_school_interruption_detail": 14,
-            "life_history_middle_school_attainment": 7,
+            "life_history_middle_school_attainment": 8,
             "life_history_middle_school_interruption_detail": 14,
             "life_history_high_school_attendance_intensity": 3,
             "life_history_high_school_interruption_detail": 14,
-            "life_history_high_school_completion_and_exam_pathway": 7,
+            "life_history_high_school_completion_and_exam_pathway": 8,
             "life_history_vocational_education_pathway": 34,
             "life_history_vocational_school_interruption_detail": 14,
             "life_history_three_year_college_pathway": 40,
@@ -141,6 +141,8 @@ CHARLSCodeBook 1 RESIDENCE
             "life_history_skill_certificate_indicator": 1,
             "life_history_education_gap_activity_context": 242,
             "life_history_education_gap_without_other_schooling": 20,
+            "life_history_early_education_episode_counts": 4,
+            "life_history_education_episode_timing": 240,
         }
         for concept, count in education_counts.items():
             self.assertEqual(len(by_concept[concept]), count, concept)
@@ -300,8 +302,12 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(len(ledger), 1105)
         self.assertEqual(len({row["code"] for row in ledger}), 1105)
         counts = Counter(row["disposition"] for row in ledger)
-        self.assertEqual(counts["mapped_candidate"], 33)
-        self.assertEqual(counts["deferred_source_review"], 1068)
+        self.assertEqual(counts["mapped_candidate"], 1072)
+        self.assertEqual(counts["excluded_sensitive_geography"], 22)
+        self.assertEqual(counts["deferred_certificate_identity_linkage"], 5)
+        self.assertEqual(counts["excluded_data_quality_flag"], 1)
+        self.assertEqual(counts["excluded_no_observations"], 1)
+        self.assertEqual(counts["deferred_source_review"], 0)
         self.assertEqual(counts["excluded_linkage_key"], 3)
         self.assertEqual(counts["excluded_release_metadata"], 1)
         self.assertTrue(all("not yet reviewed" in row["rationale"] for row in ledger if row["disposition"] == "deferred_source_review"))

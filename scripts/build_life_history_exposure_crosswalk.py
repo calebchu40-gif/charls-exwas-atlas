@@ -984,10 +984,10 @@ GROUPS = [
         "role": "e",
         "modules": ["EDUCATIONHISTORY"],
         "domain": "educational attainment and historical schooling context",
-        "patterns": [r"e024a", r"e031", r"e032", r"e033", r"e034[abc]"],
-        "question": "E024a/E031–E034c",
+        "patterns": [r"e024a", r"e024", r"e031", r"e032", r"e033", r"e034[abc]"],
+        "question": "E024/E024a/E031–E034c",
         "unit": "middle-school attendance count, graduation, highest completed grade, peer progression category and high-school entrance examination pathway",
-        "values": "E024a counts middle schools attended; E031–E032 capture graduation and completed grade; E033 is the recalled share entering high/vocational school; E034a–c ask whether an exam was required, taken and passed the cutoff.",
+        "values": "E024 records the Codebook's TheHighestGrade field; E024a counts middle schools attended; E031–E032 capture graduation and completed grade; E033 is the recalled share entering high/vocational school; E034a–c ask whether an exam was required, taken and passed the cutoff.",
         "status": "official routes and Codebook identities reviewed; examination pathway remains conditional and response coding requires QA",
         "caveat": "The entrance-exam questions describe historical schooling context, not a standardized academic-performance test. Preserve E031–E032 skip logic and E034a/b conditional routing; E033 is recalled peer context, not individual attainment.",
     },
@@ -1036,7 +1036,7 @@ GROUPS = [
         "role": "e",
         "modules": ["EDUCATIONHISTORY"],
         "domain": "educational attainment and historical schooling context",
-        "patterns": [r"e04[2-8]"],
+        "patterns": [r"e04[2-8]", r"e046a"],
         "question": "E042–E048",
         "unit": "graduation, completed grade, entrance-exam participation and count/year/track/cutoff, and recalled peer progression",
         "values": "E042/E043 record graduation and highest grade; E044–E047 describe college entrance examination history and cutoff category; E048 is the recalled share of high-school classmates entering three-/four-year college.",
@@ -1367,6 +1367,32 @@ GROUPS = [
         "values": "Question asks whether the respondent left education during an unreported gap between the former episode's end and the next episode's start. Asked only for intervals meeting the questionnaire's greater-than-seven-month rule.",
         "status": "official gap routing and Codebook field identities reviewed; yes/no storage and stage-specific routes require QA",
         "caveat": "This is a retrospective gap-status indicator, not school dropout as defined by E004/E005 and not proof of no informal learning. Preserve episode/stage context; do not treat skipped gap checks as No.",
+    },
+    {
+        "concept_id": "life_history_early_education_episode_counts",
+        "label": "Counts of private traditional schooling, kindergarten, preschool and primary-school episodes",
+        "role": "e",
+        "modules": ["EDUCATIONHISTORY"],
+        "domain": "early-life educational context",
+        "patterns": [r"e011a", r"e011e", r"e011i", r"e012a"],
+        "question": "E011a/E011e/E011i/E012a",
+        "unit": "reported counts of private traditional-school, kindergarten, preschool and primary-school episodes",
+        "values": "The questionnaire identifies E011a as 私塾 (private traditional schooling), E011e as kindergarten, E011i as preschool and E012a as primary school; each asks the number attended before looping through the episode history.",
+        "status": "official questionnaire labels and Codebook field identities reviewed; count coding requires authorized-release QA",
+        "caveat": "Do not interpret E011a as modern home-schooling; its Chinese questionnaire label is 私塾. Counts do not measure duration, quality, enrollment continuity or geographic setting. Keep the four institution types distinct.",
+    },
+    {
+        "concept_id": "life_history_education_episode_timing",
+        "label": "Reported start and end periods across repeated education episodes",
+        "role": "e",
+        "modules": ["EDUCATIONHISTORY"],
+        "domain": "educational life-course chronology",
+        "patterns": [r"e011b_[1-8]_[1-4]_", r"e011f_[1-8]_[1-3]_", r"e011j_[1-8]_[1-2]_", r"e012b_[1-8]_[1-6]_", r"e024b_[1-8]_[1-4]_", r"e035b_[1-8]_[1-3]_", r"e050b_[1-8]_[1-3]_", r"e057b_[1-8]_[1-2]_", r"e065b_[1-8]_[1-3]_"],
+        "question": "E011b/E011f/E011j/E012b/E024b/E035b/E050b/E057b/E065b",
+        "unit": "240 start/end period components across 30 repeated episode slots and nine schooling stages",
+        "values": "Each school record asks start and end time using year and one of month, season or half-year. Interviewers are instructed to ask for a range when exact year is not recalled and enter a midpoint.",
+        "status": "official episode structure, approximate-recall instruction and Codebook timing identities reviewed; alternative precision and episode linkage require QA",
+        "caveat": "This is recalled schooling chronology, not exact dates, education duration or environmental dose. Month/season/half-year fields represent alternative precision rather than additive components; repeated records are nested. Do not derive total years or age at exposure without validated date reconciliation. School names and addresses remain excluded.",
     },
 ]
 
@@ -1848,6 +1874,18 @@ def build_education_history_coverage(rows: list[dict]) -> list[dict]:
         elif code == "versionid":
             disposition, concept_id = "excluded_release_metadata", ""
             rationale = "Release/version bookkeeping metadata, not an E/P measure."
+        elif re.search(r"address", label, re.I):
+            disposition, concept_id = "excluded_sensitive_geography", ""
+            rationale = "School address is sensitive location information and is not needed for an E/P catalogue; no school-level geographic linkage is performed."
+        elif code == "errore000":
+            disposition, concept_id = "excluded_data_quality_flag", ""
+            rationale = "Internal interview/data-quality flag, not a respondent exposure or phenotype."
+        elif re.search(r"noobservations", label, re.I):
+            disposition, concept_id = "excluded_no_observations", ""
+            rationale = "Release bookkeeping field indicating no observations, not a measured exposure or phenotype."
+        elif re.fullmatch(r"e134_2_[1-5]_", code, re.I):
+            disposition, concept_id = "deferred_certificate_identity_linkage", ""
+            rationale = "Certificate-year slot cannot be interpreted as a specific certificate without validated linkage to the corresponding open-text certificate identity; retain for source review."
         else:
             disposition, concept_id = "deferred_source_review", ""
             rationale = "Education History questionnaire/codebook family not yet reviewed field-by-field for routing, referent, free text, address/privacy, repeated episode structure and authorized-release storage. Do not publish as a candidate or use in analysis until reviewed."

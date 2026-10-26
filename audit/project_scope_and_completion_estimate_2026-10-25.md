@@ -79,8 +79,8 @@
 
 | 范围 | 当前完成度 | 预计剩余 |
 |---|---:|---:|
-| 候选变量元数据图谱、官方来源映射、查询网站和交接资料 | 约 85–90% | 约 2–4 个专注工作日 |
-| 完整结果型关联图谱（含调查设计、模型、复核和网站结果接入，不含论文写作） | 约 50–55% | 约 3–6 个专注工作周，前提是分析所需数据和设计输入到位；外部等待另计 |
+| 候选变量元数据图谱、官方来源映射、查询网站和交接资料 | 约 80–90% | 约 3–7 个专注工作日 |
+| 完整结果型关联图谱（含调查设计、模型、复核和网站结果接入，不含论文写作） | 约 45–55% | 约 2–4 个专注工作周，前提是分析所需数据和设计输入到位；外部等待另计 |
 
 当前目录目标剩余工作主要是发布并核验 Part H/K 更新、完成最后的来源覆盖核对、复核跨波映射与页面呈现、补齐版本与交接记录。目录站点进度与真实关联模型进度分开报告，避免再次混为一个工期。若覆盖审计发现新主题或原数据字典冲突，估时应相应调整。已完成的公开目录和网站不需要从头重做。
 
@@ -128,3 +128,10 @@ Current local rebuild: 158/158 steps; E/P/C=6,034/2,116/984; 1,563 E/P candidate
 ## 2026-10-26 FN097 and full-rebuild propagation update
 
 Reviewed official FN097 source wording, categories and routing for 2013/2015/2018. The five response labels now persist through the codebook-label builder; 2018 wording and pension-screen denominator are kept distinct. Also fixed final propagation for continuous community household counts and alcohol C context metadata. Full rebuild: 230 steps in 8.1 minutes; E/P/C=6,034/2,116/984; 1,563 concepts; 8,044 concept-source mappings; 3,774 explicitly labeled E/P rows; generic pending E/P/C labels=0. Local unittest suite: 483 passed; public payload and exact 92-lock checks passed. This update has not yet been pushed. The completion estimate for the current metadata website delivery remains approximately 80% / 3–7 focused days (1–2 calendar weeks); the full result-producing ExWAS remains a separate downstream scope gated by survey design inputs.
+
+
+## 2026-10-26 scope correction
+
+The former estimate conflated the metadata/query-site endpoint with a full result-producing ExWAS atlas. The currently agreed candidate-catalogue/site deliverable is estimated at 80–90% complete, with 3–7 focused workdays remaining. A full NHANES-style inferential atlas is a distinct endpoint: formal association models are still zero, so its overall completion is estimated at 45–55%, with 2–4 focused workweeks after the required analytic files and survey-design inputs are available. This is not a promise of calendar completion; external access/design blockers can add waiting time.
+
+The planning correction is to stop treating exhaustive review of every optional Life History field as a prerequisite for starting analysis. Finish the source batch already in progress, freeze a versioned candidate catalog, resolve the minimum survey-design/data inputs, run and audit an eligible-pair pilot, then scale to the validated universe of pairs and integrate aggregate results. Keep catalogue co-availability separate from analytic sample size and fitted associations. Do not claim months of remaining work unless the scope or a documented external blocker changes.

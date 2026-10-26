@@ -91,3 +91,14 @@ Reviewed the repeated school-gap fields across preschool, primary school, middle
 The official questionnaire asks these only for intervals exceeding seven months between the end of one episode and start of another in the same school stage. Activity options include work, doing nothing, illness, childbirth, family care, leisure/travel, training, incarceration and other. These are distinct from E004/E005 interruption-and-return questions: ordinary transitions between stages are excluded from E004 by its definition, while these items concern gaps between repeated episodes within the same stage. Repeated slots remain nested by stage/episode and are not independent observations. Do not interpret unasked gap checks as No or “no other education” as no informal learning.
 
 Education History now has 826 mapped fields / 1,105; 275 substantive fields remain deferred, with three linkage keys and one release-version field excluded. Overall Life History catalog: 105 concepts / 2,595 mappings (E 2,549, P 46). Candidate metadata only.
+
+
+## Repeated education episodes, early-school counts and full disposition: E011–E065 / E134
+
+Reviewed the Codebook identities for repeated start/end periods across private traditional schooling, kindergarten, preschool, primary, middle, high school, vocational school, three-year college and four-year college. Added 240 timing components in one chronology concept. The questionnaire instructs interviewers to ask for a year range when the exact year is not recalled and enter its midpoint; within each episode, year and month/season/half-year fields are alternative precision, not additive measures. These retrospective reports are not exact dates, duration or environmental dose. School names and addresses are not published.
+
+Added four institution-count fields (private traditional schooling, kindergarten, preschool and primary school), the E024 middle-school highest-grade/duration item, and E046a high-school entrance examination track. The official Chinese questionnaire identifies E011a as 私塾; it must not be described as modern homeschooling.
+
+The exhaustive 1,105-field ledger now assigns 1,072 fields to reviewed candidate concepts; excludes 22 school address fields for location privacy, three linkage keys, one release version field, one internal quality flag and one no-observations bookkeeping field; and defers five E134 certificate-year slots pending verified identity linkage to the corresponding open-text certificate records. No participant values or Codebook distributions are used.
+
+After rebuild, the Life History catalog contains 107 concepts / 2,841 field mappings (E 2,795; P 46). These are candidate metadata only. This local update is prepared as app v155 / JSON v22; publication and live-page hash verification remain outstanding.
