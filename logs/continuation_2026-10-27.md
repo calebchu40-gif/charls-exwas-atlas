@@ -83,3 +83,9 @@ GitHub Validate：`cb6f8e2`（scale-up门禁）已成功；`8002a0c`（公开程
 - 针对在线搜索易返回的2013 follow-up问卷与2011 baseline混淆，读取项目已存的官方2011基线家户问卷审计，并直接从CHARLS官方URL重新下载同一公开问卷文件做字节校验。
 - 官方来源URL返回2,224,128字节，SHA-1与本地DOC完全一致（`18efb28804fdbc975e3d334c845a179493bb6221`）；本次重新计算的SHA-256为`689a7365fa93ae7996f2c352df53d4b4254edad29efe936f0f343d834828bbb1`。该哈希仅是本地文件身份记录，不是CHARLS公布的官方校验值。
 - 核对边界：这增强了2011题目文字/跳转审计的来源把握；不证明受限数据发行版、Codebook与题目字段逐版吻合，也不改变当前数据门禁未通过的结论。详情已写入`SOURCES.md`与`wave1_household_exposure_questionnaire_review_2026-10-27.md`。
+
+## 2011最终PSU/方差设计来源补核
+
+- 重新打开CHARLS官方Sample页面并逐段核对基线抽样说明：县级单位按地区、城乡县区类型及人均GDP排序后系统PPS抽取；每县级单位抽3个社区PSU；30个大型社区可再拆子社区作为PSU；6个样本社区被替换，6个县级抽样点跨县界，最终覆盖156个县级单位。
+- 因此`communityID`覆盖完整不等于最终PSU映射已认证；也不能从原始150县级抽样点、province/city或城乡代理变量推导出官方方差层。官方公开页面未提供最终拆分映射、方差层变量、复制权重或具体方差估计器。Wave 1设计门禁继续为未通过，不运行全设计关联模型。
+- 已将该具体证据和解释加入`audit/survey_design_weight_review_v1.md`。来源为[CHARLS官方Sample页面](https://charls.pku.edu.cn/en/About/Sample.htm)。
