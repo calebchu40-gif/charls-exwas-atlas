@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas 项目范围与剩余工期（2026-10-25修订）
 
+## 2026-10-26 guardian-context local extension
+
+官方2014问卷Section H来源审计新增4个童年抚养人背景概念和48条字段行，独立Life History目录当前本地为26组/529行（E 516、P 13）。女性/男性抚养人按A4a/A4b题意定义，不默认是生母/生父；条件跳题、勾选存储和男女H16罪名选项集差异均保留。此增补尚待全量测试、部署和线上核验；详见[`life_history_guardian_health_context_review_2026-10-26.md`](life_history_guardian_health_context_review_2026-10-26.md)。
+
 ## 2026-10-26 本地增补记录
 
 官方2014 Life History C4–C8饥荒序列来源审计新增4概念组、10字段行，独立目录由18组/471行增加至22组/481行（E 468、P 13）。提交 `1f21885` 已推送，线上首页和专题JSON已实时核验。C8选项5的双语冲突和C5–C8发布文件路由/存储验证仍开放；家庭层结局不等同个体临床表型。详见[`life_history_famine_sequence_review_2026-10-26.md`](life_history_famine_sequence_review_2026-10-26.md)。
