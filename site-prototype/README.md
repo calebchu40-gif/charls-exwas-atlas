@@ -19,6 +19,6 @@
 
 2014 `FAMILYINFORMATION` Codebook 473字段的全量唯一去向台账见 `audit/life_history_family_information_full_coverage_2014_v1.csv`；其中包括明确暂缓与排除字段，不把所有代码本字段都强行转为E/P。构建器和专项测试保证未分类字段不会静默漏过。
 
-本地待发布的RESIDENCE模块扩展将专题更新为44概念、1,452字段（E 1,424、P 28），新增T001迁入/迁出时间与T003e跨县迁移间隙停止原因。935条RESIDENCE字段均有唯一去向；县区和位置代码不公开映射或地理联结。完整台账和依据见 `audit/life_history_residence_full_coverage_2014_v1.csv`、`audit/life_history_residence_full_review_2026-10-26.md`。待全量验证与发布。
+提交 `607d28a` 的RESIDENCE模块扩展已上线（app v143 / JSON v10），专题现有44概念、1,452字段（E 1,424、P 28），新增T001迁入/迁出时间与T003e跨县迁移间隙停止原因。935条RESIDENCE字段均有唯一去向；县区和位置代码不公开映射或地理联结。完整台账和依据见 `audit/life_history_residence_full_coverage_2014_v1.csv`、`audit/life_history_residence_full_review_2026-10-26.md`。535项全量测试与公开包检查通过。
 
 首页已调整为组会演示入口：先说明项目范围，再进入暴露/表型目录或关联状态；其余专题页收纳在更多专题目录。当前关联页明确显示0条已审查真实结果，目录字段数与潜在配对数均不是分析结果。

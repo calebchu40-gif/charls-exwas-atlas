@@ -2,7 +2,7 @@
 
 ## 2026-10-26 RESIDENCE module full-field review (local)
 
-对官方2014 Residence模块935条Codebook字段逐项赋予唯一去向。新增T001a/b居住段迁入/迁出时间250字段与T003e跨区县迁移间隙原因169字段两个E候选概念；T003e与T003c逐处住所迁出原因区分。95个县区/位置字段排除公开映射，不做地理或PSU联结，也不发布个人日期。模块台账及来源审计见[`life_history_residence_full_coverage_2014_v1.csv`](life_history_residence_full_coverage_2014_v1.csv)及[`life_history_residence_full_review_2026-10-26.md`](life_history_residence_full_review_2026-10-26.md)。本地Life History目录现44概念、1,452字段（E 1,424、P 28），专项测试通过，待全套验证与部署。
+对官方2014 Residence模块935条Codebook字段逐项赋予唯一去向。新增T001a/b居住段迁入/迁出时间250字段与T003e跨区县迁移间隙原因169字段两个E候选概念；T003e与T003c逐处住所迁出原因区分。95个县区/位置字段排除公开映射，不做地理或PSU联结，也不发布个人日期。模块台账及来源审计见[`life_history_residence_full_coverage_2014_v1.csv`](life_history_residence_full_coverage_2014_v1.csv)及[`life_history_residence_full_review_2026-10-26.md`](life_history_residence_full_review_2026-10-26.md)。提交`607d28a`已上线并核验；本地及线上专题44概念、1,452字段（E 1,424、P 28），535项测试通过。
 
 ## 2026-10-26 FAMILYINFORMATION full-field disposition closure (local)
 
