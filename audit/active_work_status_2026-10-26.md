@@ -1,12 +1,12 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
-## Part A community source coverage (2026-10-26; local, pending publication)
+## Part A community source coverage (2026-10-26; deployed)
 
 The 2011 community Part A review reconciles all 80 JA-prefixed inventory fields against the official questionnaire and Codebook: 69 are mapped to candidate concepts and 11 have explicit C-only/measurement-metadata/unresolved dispositions. It adds administrative establishment, boundary-change, urban-transition, land-rights certification, land development/consolidation, expropriation, homestead allocation policy and surname-concentration context. JA012 remains unresolved because the questionnaire says paddy-field area but the Codebook says irrigatable area. JA045 surname strings and JA052_1 open text are excluded; JA001/JA003/JA006 selectors, JA048 informant identity and unidentified JA042 fifth slots remain metadata. Full audit: [`community_part_a_exposome_context_review_2026-10-26.md`](community_part_a_exposome_context_review_2026-10-26.md).
 
-The 159-step finalization completed in 6.9 minutes. Local shards E/P/C=6,278/2,116/1,013; E/P concepts=1,618 (E=1,312; P=331, dual-role included); E/P concept-source mappings=8,288. Metadata co-availability pairs are 145,456/141,920/143,137/105,493/21,630 for 2011/2013/2015/2018/2020; these are not analytic N or results. Generic pending label state=0 across roles; exact 92 analysis locks remain; formal association models=0. The complete local test suite passes (513 tests), including the 186 community baseline concept list; public payload, 92-lock, JS and deferred-loader checks pass.
+The 159-step finalization completed in 6.7 minutes. Local shards E/P/C=6,278/2,116/1,013; E/P concepts=1,618 (E=1,312; P=331, dual-role included); E/P concept-source mappings=8,288. Metadata co-availability pairs are 145,456/141,920/143,137/105,493/21,630 for 2011/2013/2015/2018/2020; these are not analytic N or results. Generic pending label state=0 across roles; exact 92 analysis locks remain; formal association models=0. The complete local test suite passes (513 tests), including the 186 community baseline concept list; public payload, 92-lock, JS and deferred-loader checks pass. GitHub Validate #522 and Pages Deploy #259 both succeeded for commit `e4ab297`; the updated catalogue is live.
 
-The clean-checkout CI fix is committed as `e490a81`; public Actions shows Validate #521 running. The Part A batch is local and not yet committed or deployed.
+The clean-checkout CI fix is committed as `e490a81`; Validate #521 succeeded. The Part A batch is committed as `e4ab297` and deployed by Pages Deploy #259.
 
 ## Clean-checkout CI repair (2026-10-26)
 
