@@ -1,4 +1,4 @@
-// The catalog contains public variable metadata. No CHARLS association results have been fitted.
+// The public catalog contains metadata only; no formal, review-approved CHARLS association results are published.
 
 const byId = id => document.getElementById(id);
 const deferredViewLoaders = new Map();

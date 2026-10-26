@@ -1,3 +1,8 @@
+# 2026-10-26 Clarify public association-result status text
+
+- Corrected the public app's maintenance comment from the inaccurate claim that no CHARLS associations had ever been fitted to the precise status that no formal, review-approved associations are published.
+- Bumped the static app cache tag to v192. No catalog data, displayed results, or analysis status changed.
+
 # 2026-10-26 Clarify Wave 1 weighting versus variance design
 
 - Re-read the complete official 2011 National Baseline User Guide's sampling and weight-construction sections and documented the specific page-level design facts in `audit/survey_design_weight_review_v1.md`.

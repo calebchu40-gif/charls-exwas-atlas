@@ -1,3 +1,5 @@
+2026-10-26：app v192 文案维护修正：将脚本注释中“从未拟合关联”改为“尚无正式且通过审查的关联结果已发布”，准确区分本地私有探索性试点与公开正式结果。目录数据与用户页面状态未改变。
+
 2026-10-26已部署并核验 app v191 / Life History JSON v57：官方问卷P022–P024区分出的受访者本人5条敏感社会背景字段进入3个元数据候选概念；配偶/伴侣及子女敏感字段继续暂缓。专题目录为195概念、6,103字段映射（E 6,042、P 61），DEMOGRAPHICBACKGROUNDS模块1,251条映射、199条敏感亲属字段暂缓。Deploy #323、Validate #645成功；线上首页和JSON已核实。逐项审计见`audit/life_history_respondent_sensitive_context_review_2026-10-26.md`。
 
 上一版（2026-10-26）线上app v190 / Life History JSON v56（192个候选概念、6,098条映射，E 6,037、P 61），Deploy #322与Validate #643成功，首页与JSON均HTTP 200核验；新增参军/下乡类别字段53个，精确年份区间排除。A5c–A5f继/养亲出生年份按官方A4a/A4b跳题映射为一个背景概念。提交`41ace8b`的首页和JSON均HTTP 200已核验。家庭信息模块469/473字段映射。修正旧计数断言后，代码提交`d5f8efa`的 GitHub Validate #634 成功。数据载荷只含官方问卷/Codebook元数据，不含个体值、频数、姓名、具体地点或关联结果。详见`audit/life_history_parent_module_review_2026-10-26.md`。
