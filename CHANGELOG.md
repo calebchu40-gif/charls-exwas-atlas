@@ -4,6 +4,12 @@
 - Revalidated the official CHARLS source pages and recorded the current gate plus the locked post-pilot path: complete the 105-coefficient pilot only after source/design readiness; if valid and reproducible, proceed to the predeclared K=150 household-environment family and separately adjusted K=90 heating-route subdomain; expand to later waves only after wave-specific design and measurement review; publish only disclosure-reviewed aggregate families.
 - Reaffirmed that statistical significance does not define pilot success, and no geography field may be invented as a variance stratum. No site payload or restricted data changed. See `audit/execution_checkpoint_2026-10-27.md`.
 
+# 2026-10-27 Reconcile staged corrections with atlas-wide multiplicity
+
+- Reviewed the Nature Medicine article’s reported full computable association family (123,774 tests; Bonferroni and Benjamini–Yekutieli) against the project’s staged K=105/K=150/K=90 batches. Recorded that batch q-values are provisional and cannot stand in for final atlas-wide correction.
+- Defined a CHARLS-specific final family over all predeclared, estimable, primary wave-specific hypotheses; M0/M2 remain descriptive/sensitivity unless separately declared co-primary. Kept repeated CHARLS waves wave-specific and prohibited NHANES independent-cycle pooling formulas. The staged heating subdomain remains a distinct estimand but also belongs in the atlas-wide superfamily when making atlas-wide discovery claims.
+- Clarified that the existing water/fuel sequence is exploratory because some extension choices followed initial pilot inspection. The NHANES full adjustment model also differs from CHARLS's age/sex-only M1; the primary CHARLS adjustment set requires estimand/DAG review before the next fit. This changes interpretation/release, not the current closed source/design/readiness gates. Details: `audit/multiplicity_primary_family_reconciliation_2026-10-27.md`.
+
 # 2026-10-27 Distinguish published Wave 1 denominators
 
 - Cross-checked the CHARLS 2011 National Baseline User Guide, Blood Data User Guide and Codebook: they report 17,708 interview/blood-target members, 17,705 observations for the Codebook person `ID` field, and 17,708 observations for individual-weight fields. These file/field-specific counts must not be collapsed into one expected prepared-table size.
