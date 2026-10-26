@@ -192,7 +192,8 @@ def main() -> None:
     manifest = {
         "run_utc": stamp,
         "analysis": "Exploratory 2011 running-water and cooking-fuel proxies × 15 blood analytes",
-        "target": "CHARLS 2011 baseline household-resident age-45+ domain, valid exposure and positive bloodweight",
+        "provisional_analysis_domain": "CHARLS 2011 prepared-table records with candidate age >=45, valid exposure, and positive bloodweight; not a validated national estimand",
+        "target_population_gate": "Open: official blood guide targets main respondents and spouses; verify age-domain and bloodweight applicability before population-representative claims.",
         "exposures": {
             "running_water": "i017 1=Yes vs 2=No",
             "cooking_fuel_main": "i022 valid 1-7; 6 indicators compared with electricity(code 5); categories retained exactly",

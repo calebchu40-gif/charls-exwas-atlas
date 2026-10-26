@@ -304,7 +304,8 @@ def main() -> None:
     manifest = {
         "run_utc": stamp,
         "analysis": "Exploratory 2011 cross-sectional water-access proxy × 15 blood analytes",
-        "target_population": "2011 CHARLS baseline household-resident adults aged 45+ with valid water response and positive official blood-response weight",
+        "provisional_analysis_domain": "2011 prepared-table records with candidate age >=45, valid water response, and positive bloodweight; this is not yet a validated national estimand",
+        "target_population_gate": "Open: the official blood guide defines the blood target sample as main respondents and spouses; confirm age-domain and bloodweight applicability before making a population-representative claim.",
         "exposure": "i017, 1=Yes, 2=No; official household questionnaire wording; contrast Yes vs No",
         "phenotypes": [r["concept_id"] for r in analytes],
         "excluded_phenotype": "blood_cystatin_c: age-stratified assay subsample and selection-weight applicability unresolved",
