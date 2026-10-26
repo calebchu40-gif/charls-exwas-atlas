@@ -160,3 +160,9 @@ GitHub Validate：`cb6f8e2`（scale-up门禁）已成功；`8002a0c`（公开程
 - 一手依据：[CHARLS Blood Sample Users' Guide](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf)，第13–15页；[CHARLS 2011 Wave 1官方资料页](https://charls.pku.edu.cn/en/Data/a2011_CHARLS_Wave1__Baseline_.htm)列出“All data”、PSU、Weight与Blood为不同下载项。
 - GitHub `main`上的`validate.yml`已可见新加的公开payload校验步骤；但Actions工作流列表当前缓存/摘要仍停在旧运行（#730），无法从页面核实`7a032e5`对应的CI运行是否启动/完成。因此只报告代码已推送和本地validator通过，不宣称远端CI通过。
 - 当前受控入库目录`incoming_2011_official`只有入库清单和说明，没有Wave 1四项源文件；正式模型仍不运行，结果JSON仍未生成。
+
+## 候选目录计数解释纠偏（2026-10-27）
+
+- 复核站点当前计数与`audit/charls_catalog_count_interpretation_v0.md`后发现，文档将2026-10-22的E=1,131/P=277旧候选规模标作“当前目录规模”，与2026-10-27生成口径不一致。
+- 已将文档标题及旧计数明确标记为历史快照，并在开头链接当前机器生成源：截至2026-10-27为1,625个去重候选概念（E=1,319、P=332，含26个双角色），8,341条跨波E/P源字段映射。同步改写与NHANES的比较段，明确CHARLS候选数不是最终harmonized变量或可检验假设数。
+- 当前源由`audit/directory_scope_counts_v1.json`和`audit/ep_concept_mapping_coverage_v1.md`支撑；没有改动站点的分析结果数据，也没有把候选数解释为实际配对或统计结果。
