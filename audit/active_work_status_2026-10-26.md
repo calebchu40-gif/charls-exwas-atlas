@@ -1,3 +1,7 @@
+## 2014 EDUCATIONHISTORY continuation review (local pending publication)
+
+Reviewed official E012–E034c questionnaire routes and matching Codebook identities. Added four candidate groups (primary/middle attainment and interruption details), 40 mappings; education ledger now has 73 mapped fields out of 1,105, with 1,028 unique candidate mappings overall, 73 still deferred and four linkage/version exclusions. The 2014 Life History catalog rebuild reports 77 concepts / 1,842 mappings (E 1,796, P 46). No Codebook frequencies, free-text answers, school names/addresses, or participant values are published. New audit: [`life_history_education_history_continuation_review_2026-10-26.md`](life_history_education_history_continuation_review_2026-10-26.md). Local website displays app v148 / JSON v15; validation and publication are pending.
+
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
 ## 2014 EDUCATIONHISTORY initial review (commit `ce4488f`, live verified)

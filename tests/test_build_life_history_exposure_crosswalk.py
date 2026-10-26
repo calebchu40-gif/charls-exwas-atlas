@@ -26,8 +26,8 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (73, 1802))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 1756, "p": 46})
+        self.assertEqual((len(groups), len(rows)), (77, 1842))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 1796, "p": 46})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
@@ -109,6 +109,10 @@ CHARLSCodeBook 1 RESIDENCE
             "life_history_cultural_revolution_school_disruption": 7,
             "life_history_schooling_interruption": 9,
             "life_history_school_dormitory_experience": 4,
+            "life_history_primary_school_attainment": 5,
+            "life_history_primary_school_interruption_detail": 14,
+            "life_history_middle_school_attainment": 7,
+            "life_history_middle_school_interruption_detail": 14,
         }
         for concept, count in education_counts.items():
             self.assertEqual(len(by_concept[concept]), count, concept)
