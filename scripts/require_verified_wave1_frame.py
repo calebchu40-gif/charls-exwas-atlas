@@ -19,6 +19,8 @@ from audit_2011_pilot_intake_metadata import (
 from project_paths import PRIVATE_ROOT, require_private_path
 from prepare_charls_wave_tables import sha256_file
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
 
 ROLE_SOURCE_KEYS = {
     "wave1_all_data": "all_data_archive",
@@ -68,7 +70,7 @@ def analysis_plan_fingerprint(plan_key: str) -> str:
         raise ValueError(f"Unknown Wave 1 analysis plan {plan_key!r}")
     entries = []
     for relative in plan["plan_files"]:
-        path = ROOT / relative
+        path = PROJECT_ROOT / relative
         if not path.is_file():
             raise ValueError(f"Wave 1 analysis plan source is missing: {relative}")
         entries.append(f"{relative}\0{sha256_file(path)}")
