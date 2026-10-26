@@ -26,8 +26,8 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (44, 1452))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 1424, "p": 28})
+        self.assertEqual((len(groups), len(rows)), (50, 1695))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 1667, "p": 28})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
@@ -72,6 +72,13 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(len(by_concept["life_history_residential_episode_timing"]), 250)
         self.assertEqual(len(by_concept["life_history_between_residence_migration_reasons"]), 169)
         self.assertTrue(all("not T003c reasons" in row["caveat"] for row in by_concept["life_history_between_residence_migration_reasons"]))
+        self.assertEqual(len(by_concept["life_history_inheritance_history"]), 72)
+        self.assertEqual(len(by_concept["life_history_family_political_death_context"]), 9)
+        self.assertEqual(len(by_concept["life_history_family_rightist_label_context"]), 10)
+        self.assertEqual(len(by_concept["life_history_red_guard_participation"]), 1)
+        self.assertEqual(len(by_concept["life_history_land_expropriation_history"]), 93)
+        self.assertEqual(len(by_concept["life_history_home_demolition_history"]), 58)
+        self.assertFalse(any("OBS:" in " ".join(row.values()) for key in ("life_history_inheritance_history", "life_history_land_expropriation_history", "life_history_home_demolition_history") for row in by_concept[key]))
         self.assertEqual(len(by_concept["life_history_historical_family_class_background"]), 189)
         self.assertEqual({row["module"] for row in by_concept["life_history_historical_family_class_background"]}, {"WEALTHHISTORY"})
         self.assertTrue(all(row["code"] != "c5" for row in by_concept["life_history_historical_family_class_background"]))
@@ -172,6 +179,21 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(counts["excluded_linkage_key"], 3)
         self.assertEqual(counts["excluded_interview_proxy_metadata"], 3)
         self.assertEqual(counts["excluded_release_metadata"], 1)
+
+    def test_full_wealth_history_module_has_exact_dispositions_and_excludes_route_metadata(self):
+        from collections import Counter
+        rows, _ = builder.build()
+        ledger = builder.build_wealth_history_module_coverage(rows)
+        self.assertEqual(len(ledger), 440)
+        self.assertEqual(len({row["code"] for row in ledger}), 440)
+        counts = Counter(row["disposition"] for row in ledger)
+        self.assertEqual(counts["mapped_candidate"], 432)
+        self.assertEqual(counts["excluded_linkage_key"], 3)
+        self.assertEqual(counts["excluded_interview_proxy_metadata"], 3)
+        self.assertEqual(counts["excluded_household_route_metadata"], 1)
+        self.assertEqual(counts["excluded_release_metadata"], 1)
+        fs012s = next(row for row in ledger if row["code"] == "fs012s")
+        self.assertEqual(fs012s["disposition"], "excluded_household_route_metadata")
 
 
 if __name__ == "__main__":

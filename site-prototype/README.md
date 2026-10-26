@@ -11,7 +11,7 @@
 只有在目标人群和资格、变量比较性、官方权重与方差设计、缺失处理、多重检验方案均落实，并获得相应数据许可后，才能接入通过披露审查的聚合关联结果。不得把代码本频数或字段共现数解释为个体分析结果。
 
 
-2026-10-26更新：2014 Life History候选视图现有40个概念组、1,029条字段映射（E 1,001、P 28），包括饥荒序列、亲代/抚养人、兄弟姐妹家庭史、亲代历史社会背景和80岁以上受访者的历史家庭背景。抚养人不必然等于生物学父母；家庭层历史报告不是受访者临床表型。C8选项5及C1_g3选项8存在中英文问卷表述不一致，页面明示。官方发布说明明确该特殊调查无权重，因此仍单列，不计入常规波次E/P配对覆盖，不代表分析资格。字段映射行数不等于独立概念数、分析样本量或关联结果。审计见 `audit/life_history_famine_sequence_review_2026-10-26.md`、`audit/life_history_guardian_health_context_review_2026-10-26.md`、`audit/life_history_sibling_module_review_2026-10-26.md`、`audit/life_history_parent_module_review_2026-10-26.md`、`audit/life_history_historical_family_class_review_2026-10-26.md` 和 `audit/life_history_parent_social_context_review_2026-10-26.md`。提交 `d277385` 已上线；530项测试、公开包、92条分析锁和前端语法检查通过。
+2026-10-26更新：本地2014 Life History候选视图现有50个概念组、1,695条字段映射（E 1,667、P 28），新增遗产继承、亲属政治历史、土地征用和住房拆迁家庭史。536项测试、公开包校验、92条分析锁回归、JS语法和延迟加载检查通过；本次更新已准备提交和部署，线上版本仍为 app v143 / JSON v10。专题汇总及各批次覆盖见 `audit/active_work_status_2026-10-26.md`。
 
 提交 `60360b1` 的 C1/C2 抚养人就业元数据复核已上线（app v141 / JSON v8）：覆盖8个结构化字段，细化了既有概念中的条件路由和缺失语义；自由文本职业详情排除。审计见 `audit/life_history_parent_employment_review_2026-10-26.md` 和 `audit/life_history_parent_employment_coverage_2014_v1.csv`。全套531项测试及公开包/分析锁检查已通过。
 
@@ -19,6 +19,6 @@
 
 2014 `FAMILYINFORMATION` Codebook 473字段的全量唯一去向台账见 `audit/life_history_family_information_full_coverage_2014_v1.csv`；其中包括明确暂缓与排除字段，不把所有代码本字段都强行转为E/P。构建器和专项测试保证未分类字段不会静默漏过。
 
-提交 `607d28a` 的RESIDENCE模块扩展已上线（app v143 / JSON v10），专题现有44概念、1,452字段（E 1,424、P 28），新增T001迁入/迁出时间与T003e跨县迁移间隙停止原因。935条RESIDENCE字段均有唯一去向；县区和位置代码不公开映射或地理联结。完整台账和依据见 `audit/life_history_residence_full_coverage_2014_v1.csv`、`audit/life_history_residence_full_review_2026-10-26.md`。535项全量测试与公开包检查通过。
+提交 `607d28a` 的RESIDENCE模块扩展已上线（app v143 / JSON v10），专题线上版本当时为44概念、1,452字段（E 1,424、P 28），新增T001迁入/迁出时间与T003e跨县迁移间隙停止原因。935条RESIDENCE字段均有唯一去向；县区和位置代码不公开映射或地理联结。完整台账和依据见 `audit/life_history_residence_full_coverage_2014_v1.csv`、`audit/life_history_residence_full_review_2026-10-26.md`。535项全量测试与公开包检查通过。
 
 首页已调整为组会演示入口：先说明项目范围，再进入暴露/表型目录或关联状态；其余专题页收纳在更多专题目录。当前关联页明确显示0条已审查真实结果，目录字段数与潜在配对数均不是分析结果。

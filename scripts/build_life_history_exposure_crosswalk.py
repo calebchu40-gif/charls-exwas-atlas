@@ -328,6 +328,84 @@ GROUPS = [
         "caveat": "Only respondents aged 80 and over (born before December 1934 according to the questionnaire) are asked the respondent C5 item. Parent/grandparent and foster-parent follow-ups have conditional routes. These are historical family social/political classifications, not current household wealth, individual income, or a measured environmental dose. Questionnaire-only write-in text is not ingested; blanks are not interpreted as No.",
     },
     {
+        "concept_id": "life_history_inheritance_history",
+        "label": "Inheritance receipt, source, asset/debt type, timing and reported value",
+        "role": "e",
+        "modules": ["WEALTHHISTORY"],
+        "domain": "life-course socioeconomic and wealth context",
+        "patterns": [r"fs012", r"fs013", r"fs013_2_\d+_", r"fs013_3_\d+_s\d+", r"fs013_4_\d+_s\d+", r"fs013_5_\d+_"],
+        "question": "FS012/FS013",
+        "unit": "ever-inherited status plus up to five event year, source, asset/debt-type and nominal-value records",
+        "values": "Inheritance may include housing, land, financial assets, financial debt, durable assets and other categories. FS013_3 and FS013_4 are multiple-response source/type slots; FS013_5 records reported value at the time, with inherited debt treated as negative in the questionnaire.",
+        "status": "official questionnaire definitions and second-respondent route reviewed; release slot storage, amounts, missing codes and event alignment require authorized-release QA",
+        "caveat": "Sensitive personal financial-history metadata. A household second respondent may be asked only about pre-marriage inheritance depending on the first respondent's FS012s status; FS012s is route metadata and excluded from this concept. Do not publish participant values, inheritances, or Codebook frequencies; no inflation adjustment or net-wealth score is derived. Blank repeated slots are not No.",
+    },
+    {
+        "concept_id": "life_history_family_political_death_context",
+        "label": "Relatives reported to have died for political reasons, 1950s–1970s",
+        "role": "e",
+        "modules": ["WEALTHHISTORY"],
+        "domain": "historical family adversity and political context",
+        "patterns": [r"c6s\d+"],
+        "question": "C6",
+        "unit": "relative-specific selection slots plus a none option",
+        "values": "C6 is a multi-response relative list covering biological/foster parents, grandparents, siblings and children; the questionnaire describes deaths during 1950s–1970s political campaigns, based on the respondent's subjective judgement.",
+        "status": "official interviewer note, questionnaire relative list and Codebook fields reviewed; selector coding requires authorized-release QA",
+        "caveat": "Highly sensitive retrospective family political adversity. Preserve respondent-subjective attribution; do not imply independently verified cause of death. No relative identities, participant data or frequencies are published; blanks are not No and selections are not independent participant records.",
+    },
+    {
+        "concept_id": "life_history_family_rightist_label_context",
+        "label": "Family member or respondent labelled a rightist in the 1950s",
+        "role": "e",
+        "modules": ["WEALTHHISTORY"],
+        "domain": "historical political and family adversity",
+        "patterns": [r"c7s\d+"],
+        "question": "C7",
+        "unit": "relative-specific selection slots including respondent and a none option",
+        "values": "C7 asks which listed family members, including the respondent, were labelled a 'rightist' during the 1950s Anti-rightist movement.",
+        "status": "official questionnaire categories and Codebook selector family reviewed; multi-select storage requires authorized-release QA",
+        "caveat": "Sensitive historical political-label information, not a verified legal finding or current political status. Metadata only; no participant-level answers, relative identities or Codebook frequencies are published. Blank selectors are not No.",
+    },
+    {
+        "concept_id": "life_history_red_guard_participation",
+        "label": "Respondent-reported Red Guard participation during the Cultural Revolution",
+        "role": "e",
+        "modules": ["WEALTHHISTORY"],
+        "domain": "historical political and social context",
+        "patterns": [r"c8"],
+        "question": "C8 (Wealth History module)",
+        "unit": "binary retrospective report",
+        "values": "The questionnaire asks whether the respondent was a Red Guard during the Cultural Revolution; preserve the official response categories and verify release coding.",
+        "status": "official questionnaire and Codebook field identity reviewed; authorized-release values and eligibility require QA",
+        "caveat": "Sensitive retrospective political/social-history metadata. This is the WEALTHHISTORY:c8 field and is distinct from similarly named codes in other modules; catalog identity is determined by module plus code. No participant responses or frequencies are published.",
+    },
+    {
+        "concept_id": "life_history_land_expropriation_history",
+        "label": "Household land expropriation, timing, area and compensation since 1978",
+        "role": "e",
+        "modules": ["WEALTHHISTORY"],
+        "domain": "household property and policy-related socioeconomic context",
+        "patterns": [r"hf00[12]", r"hf003_[12]_\d+_", r"hf004_\d+_s\d+", r"hf004_[1-4]_\d+_"],
+        "question": "HF001–HF004",
+        "unit": "ever/number of land expropriations; repeated year, mu area and compensation-category/amount fields",
+        "values": "HF001 gates land acquisition history; HF002 counts events; repeated HF003 records year and mu area; HF004 records compensation types and conditional amounts/areas, including money, land, work, pension insurance, urban hukou, other, or none.",
+        "status": "official questionnaire, Codebook event loops and units reviewed; proxy response, route, release special values and monetary fields require QA",
+        "caveat": "The questionnaire says this is the respondent's current-household history since that house was established, answered by the person who knows household information best. Not necessarily respondent-owned land or a personal exposure. Preserve HF001 No/not-applicable skips and HF002 loop structure; do not infer skipped events as No, sum compensation, or inflation-adjust values without a defined estimand and validation.",
+    },
+    {
+        "concept_id": "life_history_home_demolition_history",
+        "label": "Household home demolition, timing, area and compensation since 1978",
+        "role": "e",
+        "modules": ["WEALTHHISTORY"],
+        "domain": "household housing disruption and property context",
+        "patterns": [r"hf005", r"hf006", r"hf007_\d+_", r"hf008_[12]_\d+_", r"hf009_\d+_s\d+", r"hf009_[1-5]_\d+_"],
+        "question": "HF005–HF009",
+        "unit": "ever/count of demolitions; repeated year, house/patio area and compensation-category/amount fields",
+        "values": "HF005/HF006 gate and count demolitions; repeated HF007 records year, HF008 house and patio area, and HF009 compensation type and conditional amounts/areas, including money, replacement house, homestead, urban hukou, other or none.",
+        "status": "official questionnaire, Codebook loop structure and units reviewed; proxy response, route, special values and compensation coding require QA",
+        "caveat": "Current-household property history since the current house was established, answered by a knowledgeable household respondent; not necessarily the participant's individually owned home. Keep distinct from land expropriation and T003c relocation reason. No participant amounts, years, areas or frequencies are published; do not impute No from blank loops or aggregate compensation without an explicit estimand.",
+    },
+    {
         "concept_id": "life_history_childhood_food_insecurity",
         "label": "Childhood household food insecurity",
         "role": "e",
@@ -927,6 +1005,43 @@ def build_residence_module_coverage(rows: list[dict]) -> list[dict]:
     return ledger
 
 
+def build_wealth_history_module_coverage(rows: list[dict]) -> list[dict]:
+    """Give all 440 Wealth History Codebook fields exactly one mapped or metadata-only disposition."""
+    mapped = {row["code"]: row for row in rows if row["module"] == "WEALTHHISTORY"}
+    fields = read_codebook_fields()
+    ledger = []
+    linkage = {"id", "householdid", "communityid"}
+    interview = {"hs001", "hs002", "hs003"}
+    for (module, code), label in sorted(fields.items()):
+        if module != "WEALTHHISTORY":
+            continue
+        row = mapped.get(code)
+        if row:
+            disposition, concept_id, rationale = "mapped_candidate", row["concept_id"], row["caveat"]
+        elif code in linkage:
+            disposition, concept_id = "excluded_linkage_key", ""
+            rationale = "Person/household/community linkage key. Never publish values; use only in authorized controlled joins when required."
+        elif code in interview:
+            disposition, concept_id = "excluded_interview_proxy_metadata", ""
+            rationale = "Module respondent/facilitator/proxy identity and relationship metadata, not an E/P measure."
+        elif code == "fs012s":
+            disposition, concept_id = "excluded_household_route_metadata", ""
+            rationale = "First household respondent's inheritance status controls the second respondent's pre-marriage route; it is routing metadata, not the second respondent's own inheritance outcome."
+        elif code == "versionid":
+            disposition, concept_id = "excluded_release_metadata", ""
+            rationale = "Release/version bookkeeping metadata, not an E/P measure."
+        else:
+            raise ValueError(f"WEALTHHISTORY Codebook field has no explicit disposition: {code}")
+        ledger.append({"module": module, "code": code, "codebook_label": label,
+                       "disposition": disposition, "concept_id": concept_id, "rationale": rationale,
+                       "questionnaire_source": "sources_official/CHARLS_Life_History_Questionnaire.pdf",
+                       "codebook_source": "sources_official/CHARLS_Life_History_codebook.pdf"})
+    codes = [row["code"] for row in ledger]
+    if len(ledger) != 440 or len(codes) != len(set(codes)):
+        raise ValueError(f"WEALTHHISTORY coverage not exhaustive/unique: rows={len(ledger)}, unique={len(set(codes))}")
+    return ledger
+
+
 def main() -> None:
     rows, concepts = build()
     sibling_coverage = build_sibling_module_coverage(rows)
@@ -939,6 +1054,7 @@ def main() -> None:
     residence_transition_coverage = build_residence_transition_coverage(rows)
     gap_migration_coverage = build_gap_migration_reason_coverage(rows)
     residence_module_coverage = build_residence_module_coverage(rows)
+    wealth_history_coverage = build_wealth_history_module_coverage(rows)
     AUDIT.mkdir(parents=True, exist_ok=True)
     DIST.mkdir(parents=True, exist_ok=True)
     csv_path = AUDIT / "life_history_exposure_crosswalk_v1.csv"
@@ -998,6 +1114,11 @@ def main() -> None:
         writer = csv.DictWriter(f, fieldnames=list(residence_module_coverage[0]), extrasaction="ignore")
         writer.writeheader()
         writer.writerows(residence_module_coverage)
+    wealth_history_path = AUDIT / "life_history_wealth_history_full_coverage_2014_v1.csv"
+    with wealth_history_path.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=list(wealth_history_coverage[0]), extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(wealth_history_coverage)
     print(json.dumps({"concepts": len(concepts), "field_rows": len(rows),
                       "by_role": {role: sum(x["role"] == role for x in rows) for role in ("e", "p")},
                       "by_module": {module: sum(x["module"] == module for x in rows)
@@ -1012,6 +1133,7 @@ def main() -> None:
                       "residence_timing_fields_mapped": len(residence_transition_coverage),
                       "between_residence_migration_fields_mapped": len(gap_migration_coverage),
                       "residence_module_fields_dispositioned": len(residence_module_coverage),
+                      "wealth_history_fields_dispositioned": len(wealth_history_coverage),
                       "csv": str(csv_path), "json": str(json_path),
                       "sibling_coverage": str(coverage_path),
                       "parent_coverage": str(parent_coverage_path),
@@ -1022,7 +1144,8 @@ def main() -> None:
                       "family_information_coverage": str(family_information_coverage_path),
                       "residence_timing_coverage": str(residence_transition_path),
                       "gap_migration_coverage": str(gap_migration_path),
-                      "residence_module_coverage": str(residence_module_path)}, ensure_ascii=False))
+                      "residence_module_coverage": str(residence_module_path),
+                      "wealth_history_coverage": str(wealth_history_path)}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

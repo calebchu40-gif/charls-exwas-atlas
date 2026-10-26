@@ -36,7 +36,7 @@ const healthcareAccessLoaded=deferJson('./healthcare_access_v1.json?v=3','health
 const bloodBiomarkersLoaded=deferJson('./blood_biomarkers_v1.json?v=3','bloodBiomarkers');
 let candidatePairExplorerLoaded;
 const objectiveMeasurementsLoaded=deferJson('./objective_measurements_v1.json?v=4','objectiveMeasures');
-const lifeHistoryLoaded=deferJson('./life_history_exposures_v1.json?v=10','lifeHistoryExposures');
+const lifeHistoryLoaded=deferJson('./life_history_exposures_v1.json?v=11','lifeHistoryExposures');
 const catalogLoaded = {};
 
 function showView(id) {
