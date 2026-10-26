@@ -40,7 +40,7 @@
 - Gateway to Global Aging Data，[Harmonized CHARLS Documentation Version D（CHARLS网站托管PDF）](https://charls.pku.edu.cn/en/team/Codebook.pdf)，Section A “Demographics and Identifiers”，年龄pp.48–53、性别pp.54–56；文档封面标注Version D (2011–2018), June 2021，前言说明Harmonized CHARLS由USC Gateway团队制作。访问日期：2026-10-23。
 - Gateway to Global Aging Data，[Harmonized CHARLS Creation Code说明](https://g2aging.org/harmonized-charls/creation-code)，说明Version D.2需要Wave 1–4及2014 Life History文件，并使用CHARLS GitHub上的`lunar2solar.mmat`。
 - CHARLS，[2020 Wave 5官方英文问卷PDF](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2020-charls-wave5/application/CHARLS_2020_Questionnaire_English.pdf)，`Auxiliary Variable Definition`中的`XRGender`、`XR20Gender`、`XR18Gender`与`XRAge`算法；`BA001/BA002/BA003_1`问卷题及官方编码。访问日期：2026-10-24。
-- CHARLS团队维护的[Chinese lunar to solar date transformation代码库](https://github.com/charls-data/lunar2solar)，说明Stata安装文件包含`.ado`、`.mmat`、`.sthlp`。当前项目尚未复制或调用该程序；应先固定版本/校验和，再用于逐人日期转换。
+- CHARLS团队维护的[Chinese lunar to solar date transformation代码库](https://github.com/charls-data/lunar2solar)，说明Stata安装文件包含`.ado`、`.mmat`、`.sthlp`。已固定到2026-10-27核验的提交`2284ccffdd74f057c234a446585ec32034b2d50d`，并记录三件套SHA-256、MIT许可、闰月调用要求及本机无Stata执行环境的限制；详见[`charls_lunar2solar_pinned_reference_2026-10-27.md`](charls_lunar2solar_pinned_reference_2026-10-27.md)。固定代码版本不等于已执行验证，也不替代逐波原始出生日期字段/路由核验。
 - Harmonized CHARLS Codebook要求在使用其数据或Codebook信息的书面分析中致谢Gateway团队；若后续论文实际使用Harmonized CHARLS数据或其信息，应按原文添加致谢并遵循其当前说明。项目当前只是方法和QA参照，没有自动向外发送邮件。
 - 项目本地逐波问卷与Codebook仍是原始字段、问卷路由和值编码的优先证据；上述Harmonized Codebook负责说明其汇总变量的构造，而不是替代每波问卷。
 
