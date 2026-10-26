@@ -420,6 +420,19 @@ GROUPS = [
         "caveat": "These fields are calendar birth years, not direct measures of parental age at respondent birth. Deriving age requires a valid respondent birth-year source, authorized linkage, consistent calendar-year definitions, and a separate missing/special-code review. Do not publish participant dates or infer exact ages from public metadata. Birth years of adoptive/step parents are excluded from this candidate because they need not correspond to the respondent's birth or caregiving start. The 2014 special Life History module has no released survey weight and is outside regular-wave weighted pair scans.",
     },
     {
+        "concept_id": "life_history_nonbiological_parent_birth_year_context",
+        "label": "Adoptive and step-parent birth-year background",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "family-of-origin demographic context",
+        "patterns": [r"a5[c-f]"],
+        "question": "A5c-A5f",
+        "unit": "calendar birth year of adoptive mother, stepmother, adoptive father, or stepfather",
+        "values": "A5c-A5f record calendar birth years for the adoptive mother, stepmother, adoptive father, and stepfather, respectively. No category labels are applicable.",
+        "status": "official questionnaire routes and matching Codebook field identities reviewed; relationship-specific fields retained as contextual metadata",
+        "caveat": "A4a/A4b route these items only when the corresponding adoptive/step-parent relationship is selected as the main caregiver before age 17. Birth year alone does not identify age at respondent birth or the start/duration of caregiving; do not derive those quantities or treat the four relationship fields as four independent exposures. Do not publish participant dates. The 2014 special Life History module has no released survey weight and is outside regular-wave weighted pair scans.",
+    },
+    {
         "concept_id": "life_history_sibling_death_before_age6",
         "label": "Sibling deaths before age six and family relationship context",
         "role": "e",
@@ -2445,8 +2458,7 @@ def build_parent_module_coverage(rows: list[dict]) -> list[dict]:
         if row:
             disposition, concept_id, rationale = "mapped_candidate", row["concept_id"], row["caveat"]
         elif re.fullmatch(r"a5[c-f]", code, re.I):
-            disposition, concept_id = "deferred_parent_birth_year", ""
-            rationale = "Parent birth year is background/timing metadata, not a stand-alone exposure; event-age derivation requires approved linkage and validation."
+            raise ValueError(f"Adoptive/step-parent birth-year field must be mapped: {code}")
         else:
             raise ValueError(f"Unmapped parent/family-background Codebook field has no disposition: {code}")
         ledger.append({"module": module, "code": code, "codebook_label": label,
@@ -2574,8 +2586,7 @@ def build_family_information_module_coverage(rows: list[dict]) -> list[dict]:
             disposition, concept_id = "excluded_release_metadata", ""
             rationale = "Release/version bookkeeping metadata, not a respondent exposure or phenotype."
         elif re.fullmatch(r"a5[c-f]", code, re.I):
-            disposition, concept_id = "deferred_parent_birth_year", ""
-            rationale = "Parent birth year is timing/background metadata; event-age derivation requires an explicit estimand and authorized linkage."
+            raise ValueError(f"Adoptive/step-parent birth-year field must be mapped: {code}")
         else:
             raise ValueError(f"FAMILYINFORMATION Codebook field has no explicit disposition: {code}")
         ledger.append({"module": module, "code": code, "codebook_label": label,

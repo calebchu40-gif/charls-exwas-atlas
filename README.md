@@ -1,8 +1,8 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-26）
 
-**本地待发布更新：**app v185 / Life History JSON v51 的原型含180个Life History概念、5,875条映射（E 5,814、P 61）；首页专题卡已同步当前统计：教育史1,077/1,105、工作史1,968/2,024、家庭信息465/473字段映射。此前A5a/A5b仅作为可能派生父母年龄的年份输入，A5c-A5f继续暂缓。v184/JSON v51 已在线核验；本批首页统计修正待部署。正式关联模型仍为0。详见[`audit/life_history_parent_module_review_2026-10-26.md`](audit/life_history_parent_module_review_2026-10-26.md)。
+**当前目录规模：**常规五波E/P候选目录已建立 1,625 个去重概念ID、8,341 条概念—源字段映射；每条E/P字段目录行均有关联的候选概念ID。2014 Life History 单独目录含181个概念组、5,879条映射（E 5,818、P 61）。这些是候选目录计数，不代表最终可分析变量、实际样本量或统计结果。
 
-**当前线上版本：**CHARLS ExWAS Atlas已公开部署：[网站入口](https://calebchu40-gif.github.io/charls-exwas-atlas/)。线上 app v184 / Life History JSON v51 已核验；远端JSON SHA-256 与本地相同。正式关联模型仍为0；目录共现不等于样本量或关联结果。
+**当前线上版本：**CHARLS ExWAS Atlas已公开部署：[网站入口](https://calebchu40-gif.github.io/charls-exwas-atlas/)。提交 `81884ce` 对应 app v185 已通过公开首页 HTTP 200 核验，首页显示180个概念组、5,875条生命历程映射；最新亲代字段批次仍在本地构建中。正式关联模型仍为0；目录共现不等于样本量或关联结果。
 
 **最新线上扩展（提交 `3d6a0a4`，app v139）：**官方2014问卷C5–C5f家庭成分题核对到WEALTHHISTORY模块，新增1个年龄受限的历史家庭背景候选概念、189条选项字段映射；七种本人/亲属问卷形式均保留，受访者题仅问80岁及以上人群。`FAMILYINFORMATION:c5`是另一条饥荒逃荒题，按模块+字段码区分。Life History专题现为36组、993条字段（E 965、P 28）；线上JSON已核验。字段覆盖表和审计见[`audit/life_history_historical_family_class_coverage_2014_v1.csv`](audit/life_history_historical_family_class_coverage_2014_v1.csv)、[`audit/life_history_historical_family_class_review_2026-10-26.md`](audit/life_history_historical_family_class_review_2026-10-26.md)。529项测试、公开包、92条分析锁、前端语法与差异检查均通过。
 
@@ -22,7 +22,7 @@
 
 **最新已发布 Life History 首批教育史审计（提交 `ce4488f`，app v147 / JSON v14）：**官方 E000–E011 问卷核对新增5个教育/生命历程背景候选概念、33个来源字段；1,105字段的全模块台账将其余1,068个实质字段明确标为待来源复核，而非已审核候选。专题规模73概念、1,802条映射（E 1,756、P 46）；539项测试和站点检查通过，线上73条JSON记录与本地SHA-256一致。查看[`audit/life_history_education_history_initial_review_2026-10-26.md`](audit/life_history_education_history_initial_review_2026-10-26.md)及[`audit/life_history_education_history_coverage_2014_v1.csv`](audit/life_history_education_history_coverage_2014_v1.csv)。
 
-**本地全模块审计闭环：**官方 `FAMILYINFORMATION` Codebook 的473条字段均已获得唯一去向：431条候选映射、30条兄弟姐妹字段暂缓、8条抚养人身份/亲代出生年元数据暂缓、4条联结键/版本字段排除。覆盖表及规则见[`audit/life_history_family_information_full_coverage_2014_v1.csv`](audit/life_history_family_information_full_coverage_2014_v1.csv)和[`audit/life_history_family_information_full_review_2026-10-26.md`](audit/life_history_family_information_full_review_2026-10-26.md)。生成器遇到新增或未分类字段会报错。专项测试通过，当前仅本地文档/审计改动。
+**本地全模块审计闭环：**官方 `FAMILYINFORMATION` Codebook 的473条字段均已获得唯一去向：469条候选映射、3条联结键和1条版本字段排除，无实质字段待核。A5c–A5f作为继/养亲代出生年份背景候选映射，不据此派生年龄或公开个人日期。覆盖表及规则见[`audit/life_history_family_information_full_coverage_2014_v1.csv`](audit/life_history_family_information_full_coverage_2014_v1.csv)和[`audit/life_history_family_information_full_review_2026-10-26.md`](audit/life_history_family_information_full_review_2026-10-26.md)。
 
 **最新2014 Life History更新（提交 `a69a602`，已在线核验）：**官方亲代/抚养人模块新增3个候选概念组、34条字段映射。A模块47个结构化Codebook字段全部有映射或明确暂缓去向（8条为抚养人身份/父母出生年元数据）。专题目录现为35组、804条字段（E 776、P 28）；线上JSON已核实返回35概念、804字段，首页 `app.js?v=138` 与专题JSON `v=5` 已核验。字段级覆盖见[`audit/life_history_parent_module_coverage_2014_v1.csv`](audit/life_history_parent_module_coverage_2014_v1.csv)，来源审计见[`audit/life_history_parent_module_review_2026-10-26.md`](audit/life_history_parent_module_review_2026-10-26.md)。
 

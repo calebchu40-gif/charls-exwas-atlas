@@ -26,7 +26,7 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (180, 5875))
+        self.assertEqual((len(groups), len(rows)), (181, 5879))
         self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 5814, "p": 61})
         by_concept = {}
         for row in rows:
@@ -51,6 +51,8 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(len(by_concept["life_history_sibling_educational_attainment_context"]), 15)
         self.assertEqual(len(by_concept["life_history_primary_parental_caregiver_before17"]), 2)
         self.assertEqual(len(by_concept["life_history_biological_parent_birth_year_inputs"]), 2)
+        self.assertEqual(len(by_concept["life_history_nonbiological_parent_birth_year_context"]), 4)
+        self.assertTrue(all("A4a/A4b route these items" in row["caveat"] for row in by_concept["life_history_nonbiological_parent_birth_year_context"]))
         self.assertEqual(len(by_concept["life_history_sibling_party_membership"]), 26)
         self.assertEqual(len(by_concept["life_history_sibling_ethnic_context"]), 41)
         self.assertEqual(len(by_concept["life_history_sibling_sent_down_experience"]), 26)
@@ -328,8 +330,8 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(len({row["code"] for row in ledger}), 473)
         from collections import Counter
         counts = Counter(row["disposition"] for row in ledger)
-        self.assertEqual(counts["mapped_candidate"], 465)
-        self.assertEqual(counts["deferred_parent_birth_year"], 4)
+        self.assertEqual(counts["mapped_candidate"], 469)
+        self.assertEqual(counts["deferred_parent_birth_year"], 0)
         self.assertEqual(counts["excluded_linkage_key"], 3)
         self.assertEqual(counts["excluded_release_metadata"], 1)
 

@@ -8,16 +8,12 @@ The official 2014 Life History Codebook contains 473 structured fields in `FAMIL
 
 | Disposition | Fields | Meaning |
 |---|---:|---|
-| Mapped E/P candidate metadata | 431 | Mapped to the 2014 Life History crosswalk with concept ID, questionnaire item, and caveat |
-| Deferred sibling living-status fields | 15 | Relative roster status without a defined event-time estimand |
-| Deferred sibling education fields | 15 | Sibling attainment timing does not define a respondent phenotype |
-| Deferred caregiver identity | 2 | Route-defining relationship metadata |
-| Deferred parent birth year | 6 | Background/timing fields; event-age derivation not yet specified |
+| Mapped E/P candidate metadata | 469 | Mapped to the 2014 Life History crosswalk with concept ID, questionnaire item, and caveat |
 | Excluded person/household/community linkage keys | 3 | Join keys, never participant values for the public site |
 | Excluded release version metadata | 1 | Not an E/P measure |
 | **Total** | **473** | **Every Codebook field dispositioned once** |
 
-The 431 mapped fields correspond to 42 concepts (1,005 E-role fields and 28 P-role fields) across the full separate Life History crosswalk; this FAMILYINFORMATION module contributes 431 of those source-field mappings. Concept and field counts are catalog metadata, not sample sizes or association results.
+The 469 mapped fields contribute to the full separate Life History crosswalk. Adoptive/step-parent birth years A5c-A5f are included as relationship-specific context after checking their A4a/A4b routes; they are not converted to event ages. All 473 fields are now either mapped or excluded as a linkage/release key (zero substantive deferred fields). Concept and field counts are catalog metadata, not sample sizes or association results.
 
 ## Reproducibility and safeguards
 

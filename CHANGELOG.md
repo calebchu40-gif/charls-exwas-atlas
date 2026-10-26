@@ -1,8 +1,15 @@
+# 2026-10-26 Map adoptive/step-parent birth-year context
+
+- Reviewed official A4a/A4b routes and A5c-A5f field identities. Added one relationship-specific background candidate for four calendar birth-year fields; these are not measures of age at respondent birth or caregiving duration.
+- Updated complete FAMILYINFORMATION disposition: 469 mapped fields, 3 linkage keys and 1 release-version field excluded, zero substantive fields deferred.
+- Rebuilt local Life History catalog: 181 concepts / 5,879 mappings (E 5,818, P 61), app v186 / JSON v52. Pending publish and CI validation.
+- Audit: `audit/life_history_parent_module_review_2026-10-26.md` and `audit/life_history_family_information_full_review_2026-10-26.md`.
+
 # 2026-10-26 Refresh Life History homepage counts and CI expectations
 
 - Updated the static Life History overview to the generated directory totals: 180 concepts / 5,875 source mappings (E 5,814, P 61), plus current Education History, Work History and Family Information coverage.
 - Corrected stale existing unit-test expectations for the three-year college pathway and Education History's 1,077 mapped fields; the homepage KPI check now reads the generated JSON instead of a hard-coded obsolete count.
-- Local homepage app cache is v185; Life History JSON remains v51. v184 / JSON v51 is online and was HTTP/hash verified; this homepage correction is pending deployment.
+- Homepage app cache is v185; Life History JSON remains v51. Commit `81884ce` is live: public homepage returned HTTP 200 and contains the current 180 / 5,875 count. GitHub Actions validation state was not independently confirmed because the anonymous API is rate limited.
 
 # 2026-10-26 Map biological-parent birth-year derivation inputs
 
