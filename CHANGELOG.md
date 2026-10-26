@@ -1,3 +1,8 @@
+# 2026-10-27 Fix and revalidate the analysis-plan fingerprint gate
+
+- GitHub Actions for `211f219` exposed a `NameError` because the new fingerprint helper referenced `ROOT`, which is not defined in that module. Bound document hashing to the module-derived repository root in `f56d44d`.
+- GitHub Actions run [#710](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40372408996) then reported both `validate` and `synthetic-survey-engine` jobs succeeded. No participant data were read and no model was run.
+
 # 2026-10-27 Review Wave 1 household exposure wording and routes
 
 - Audited the official baseline household questionnaire and the locally archived 2011 codebook text for `i016`, `i017`, `i019`, `i020`, `i021`, and `i022` to prepare the K=150 household block and separately routed K=90 heating block.
