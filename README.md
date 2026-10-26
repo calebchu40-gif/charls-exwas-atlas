@@ -4,6 +4,8 @@
 
 **当前线上版本：**CHARLS ExWAS Atlas已公开部署：[网站入口](https://calebchu40-gif.github.io/charls-exwas-atlas/)。当前线上为 app v191 / Life History JSON v57（195组、6,103条；E 6,042、P 61）。Deploy #323 和 Validate #645 成功，首页和 JSON 已实时核验。最近三批增加子女婚姻背景126字段、领养来源4字段、参军/下乡类别53字段；对应精确年份区间继续排除。正式关联模型仍为0。
 
+**目录交付核验：**本项目候选目录、字段级来源追溯、查询原型、CHARLS许可边界和已知分析闸门汇总见[`audit/atlas_catalog_delivery_audit_2026-10-26.md`](audit/atlas_catalog_delivery_audit_2026-10-26.md)。目录可检索不代表统计关联已完成或变量已获准进入模型。
+
 **最新线上扩展（提交 `3d6a0a4`，app v139）：**官方2014问卷C5–C5f家庭成分题核对到WEALTHHISTORY模块，新增1个年龄受限的历史家庭背景候选概念、189条选项字段映射；七种本人/亲属问卷形式均保留，受访者题仅问80岁及以上人群。`FAMILYINFORMATION:c5`是另一条饥荒逃荒题，按模块+字段码区分。Life History专题现为36组、993条字段（E 965、P 28）；线上JSON已核验。字段覆盖表和审计见[`audit/life_history_historical_family_class_coverage_2014_v1.csv`](audit/life_history_historical_family_class_coverage_2014_v1.csv)、[`audit/life_history_historical_family_class_review_2026-10-26.md`](audit/life_history_historical_family_class_review_2026-10-26.md)。529项测试、公开包、92条分析锁、前端语法与差异检查均通过。
 
 **最新线上扩展（提交 `d277385`，app v140）：**2014 Life History C1_g1–g3新增4个家族历史背景候选概念、36条字段映射（父母/抚养人的党员身份、少数民族身份、民族类别、宗教信仰）。专题现为40组、1,029条字段（E 1,001、P 28）；Pages JSON已核验。C1_g3中英文对选项8所指抚养人的文字冲突已保留为字段级提示，所有相对槽位均须在获准发行版中核验，不能把空字段当作否。专项审计与覆盖表：[`audit/life_history_parent_social_context_review_2026-10-26.md`](audit/life_history_parent_social_context_review_2026-10-26.md)、[`audit/life_history_parent_social_context_coverage_2014_v1.csv`](audit/life_history_parent_social_context_coverage_2014_v1.csv)。本地全套530项测试、公开包、92条分析锁、前端语法及差异检查均通过。
