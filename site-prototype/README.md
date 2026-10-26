@@ -11,7 +11,7 @@
 只有在目标人群和资格、变量比较性、官方权重与方差设计、缺失处理、多重检验方案均落实，并获得相应数据许可后，才能接入通过披露审查的聚合关联结果。不得把代码本频数或字段共现数解释为个体分析结果。
 
 
-2026-10-26更新：最新线上2014 Life History专题有67个概念组、1,768条字段映射（E 1,723、P 45），提交`581d6ba`对应 app v145 / JSON v12。新的Sample_Infor本地复核发现官方特殊样本含存活纵向样本、Wave 1刷新样本及尝试补访的未应答者，可能包含45岁以下个体且无权重；死亡状态仅作为候选P元数据。此批新增1概念1字段，完整覆盖8字段台账；538项测试及站点校验通过，app v146 / JSON v13待部署。详情见 `audit/life_history_sample_information_review_2026-10-26.md`。
+2026-10-26更新：线上2014 Life History专题有68个概念组、1,769条字段映射（E 1,723、P 46），Sample_Infor新增的死亡状态只作为特殊样本候选P元数据。提交`921949a`及审计附件提交`e722800`已发布为 app v146 / JSON v13。Sample_Infor八个字段均有唯一去向；538项测试、公开包、92条分析锁、JS语法和延迟加载检查通过。线上JSON返回68条记录并与本地SHA-256一致。详情见 `audit/life_history_sample_information_review_2026-10-26.md`。
 
 提交 `60360b1` 的 C1/C2 抚养人就业元数据复核已上线（app v141 / JSON v8）：覆盖8个结构化字段，细化了既有概念中的条件路由和缺失语义；自由文本职业详情排除。审计见 `audit/life_history_parent_employment_review_2026-10-26.md` 和 `audit/life_history_parent_employment_coverage_2014_v1.csv`。全套531项测试及公开包/分析锁检查已通过。
 
