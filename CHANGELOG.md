@@ -1,3 +1,10 @@
+# 2026-10-26 Clarify CHARLS Wave 1 age-domain and variance gates
+
+- Re-read the official 2011 National Baseline User Guide and Blood Data User Guide. The blood target is all main respondents and spouses, with `bloodweight` built from individual weights and a blood-response correction estimated on both groups.
+- Specify the intended age-45+ estimand as a survey domain within the full blood-target frame. The current pilot keeps the full table in the survey object and applies `age >= 45` through `where`; this is methodologically appropriate in principle, pending verification of official age/relationship/weight fields.
+- The public guides do not specify a variance estimator, replicate weights or an explicit variance-stratum field. Final PSU mapping (especially the 30 split communities) and variance method remain unresolved; no geography-based substitute is allowed.
+- Analysis notes updated in `audit/pilot_2011_water_biomarker_plan_and_gates_2026-10-26.md`, `audit/pilot_followup_execution_plan_2026-10-26.md`, and `audit/wave1_pilot_official_intake_runbook_2026-10-26.md`.
+
 # 2026-10-26 Add Wave 1 pilot source-intake preflight
 
 - Added a local-only preflight for the official 2011 all-data archive, PSU, Weight, and Blood files. It records local file hashes, ZIP member names, and Stata header fields without extracting the archive or reading respondent values.
