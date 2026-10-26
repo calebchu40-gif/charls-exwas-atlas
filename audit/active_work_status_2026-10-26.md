@@ -1,5 +1,11 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
+## Local update — Wave 1 CA009 review-state persistence (not yet published)
+
+The full metadata finalization completed 159/159 steps in 7.8 minutes. Local E/P/C shards are 6,331/2,133/1,048, with 1,625 E/P candidate concepts and 8,341 E/P concept-source mappings. Wave-specific metadata co-availability pairs are 146,780/142,774/143,854/106,204/21,630 for 2011/2013/2015/2018/2020; these are not sample sizes or association results. Generic pending E/P and C label states are both zero; formal association models remain 0.
+
+This rebuild also fixed a persistence-order bug: the master catalogue had been written before the Wave 1 CA009 review override. The four 2011 parent-slot education rows now retain the exact caveat that questionnaire response categories were transcribed, but Codebook field identity and release coding were not independently verified; frequencies were omitted. The slot-to-relative mapping remains unresolved, so these are discovery candidates only and not eligible for respondent-level analysis. Verified the four rows match between the candidate CSV and website E shard. `git diff --check` passes. This local build has not yet been committed or deployed; current live site remains v134.
+
 ## Latest full build and healthcare-access mapping (app v134 live; verified 2026-10-26)
 
 The full source-mapping pipeline completed 230/230 steps in 8.4 minutes. Current local E/P/C shards are 6,327/2,133/1,048; the atlas contains 1,624 E/P candidate concepts (E=1,318, P=332 including 26 dual-role concepts), 8,337 E/P concept-source mappings, and 223 C metadata mappings in the complete concept-source index. The candidate-pair index reports 146,566/142,774/143,854/106,204/21,630 wave-level metadata co-availability pairs for 2011/2013/2015/2018/2020. These counts are catalogue metadata only, not analytic Ns or results. Generic pending value-label rows are zero; the exact 92 analysis locks remain unchanged; formal association models remain 0.

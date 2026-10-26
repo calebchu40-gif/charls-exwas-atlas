@@ -1,5 +1,5 @@
 ﻿epcf,category,subcategory,source_field_wave_rows,distinct_source_codes,wave_count
-c,automated covariate search hit,keyword discovery only; not a reviewed covariate or adjustment recommendation,339,238,5
+c,automated covariate search hit,keyword discovery only; not a reviewed covariate or adjustment recommendation,328,231,5
 c,covariate candidate,birth-date source and age derivation metadata,5,5,2
 c,measurement metadata,2011 proxy interview and Section E assistance context,3,3,1
 c,measurement metadata,2018 employer pension contribution amount/share unit selector,1,1,1
@@ -101,6 +101,10 @@ c,measurement metadata,unstructured other-use response text,4,3,2
 c,measurement metadata,unsupported prior-wave disease-awareness slots,15,15,1
 c,mortality and end-of-life outcomes,mortality date calendar interpretation,2,1,2
 c,source-reviewed chronic-disease timing metadata,reported diagnosis/knowledge age metadata,56,14,4
+c,source-reviewed context metadata,alcohol beverage-type selector,3,3,1
+c,source-reviewed context metadata,past-year alcohol threshold and route,3,2,3
+c,source-reviewed context metadata,prior-wave alcohol history carry-forward metadata,1,1,1
+c,source-reviewed context metadata,retrospective alcohol history and route,4,1,4
 c,source-reviewed demographic metadata,conditional gender reconfirmation input,1,1,1
 c,source-reviewed demographic metadata,confirmed gender derivation,1,1,1
 c,source-reviewed demographic metadata,interviewer gender recode,1,1,1
@@ -130,7 +134,7 @@ e,life-course and reproductive history,reproductive timing,8,2,4
 e,pandemic and public-health context,"COVID prevention, contact, quarantine, and community restriction context",52,52,1
 e,social determinants,adult education and lifelong learning,13,12,3
 e,social determinants,annual wage/salary amount reported for household-member roster slots,22,12,2
-e,social determinants,early-life family socioeconomic context,4,2,2
+e,social determinants,early-life family socioeconomic context,8,4,3
 e,social determinants,education and social position,89,54,5
 e,social determinants,"employment, occupation, and work organization",602,320,5
 e,social determinants,formal schooling history and timing,17,10,4

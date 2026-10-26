@@ -1245,7 +1245,7 @@ def main() -> None:
     add_reviewed_labels("social_exposure_crosswalk_v1.csv", "wave", "code", "value_labels", "mapping_status", "value_label_source", re.compile(r"Official questionnaire/codebook yes-no response categories reviewed", re.I))
     add_reviewed_labels("measurement_protocol_crosswalk_v1.csv", "wave", "code", "value_labels", "mapping_status", "source_document", re.compile(r"official questionnaire and codebook mapping|2018 questionnaire/codebook verified; C metadata only|2018 questionnaire date-component protocol verified; C metadata", re.I))
     add_reviewed_labels("demographic_social_exposure_mapping_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire and codebook response labels reviewed", re.I))
-    add_reviewed_labels("parent_education_exposure_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official wave questionnaire and codebook response categories reviewed", re.I))
+    add_reviewed_labels("parent_education_exposure_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official wave questionnaire and codebook response categories reviewed|2011 baseline questionnaire response categories transcribed; Codebook field identity and release coding not independently verified; frequencies omitted", re.I))
     add_reviewed_labels("parent_roster_education_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official wave questionnaire and Codebook response categories reviewed; frequency counts omitted", re.I))
     add_reviewed_labels("sibling_record_context_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire/codebook categories reviewed; codebook frequencies omitted", re.I))
     add_reviewed_labels("child_roster_context_crosswalk_v1.csv", "wave", "code", "value_labels", "value_label_status", "value_label_source", re.compile(r"official questionnaire/Codebook response categories reviewed; frequencies omitted|official questionnaire response categories reviewed; Codebook contains unlabeled code 24 for 2015 activity slots; do not infer it; frequencies omitted", re.I))
@@ -2213,7 +2213,6 @@ def main() -> None:
     if prior_catalog_path.exists():
         order_reference_path.write_bytes(prior_catalog_path.read_bytes())
     out = preserve_existing_catalog_order(out, prior_catalog_path)
-    out.to_csv(prior_catalog_path, index=False, encoding="utf-8-sig")
 
     def summarize_label_review(values: pd.Series) -> str:
         raw_reviews = [str(value).strip() if pd.notna(value) else "" for value in values]
@@ -2238,6 +2237,23 @@ def main() -> None:
         if unique_reviews:
             return "wave-specific review states: " + " | ".join(unique_reviews)
         return "not yet reviewed"
+
+    # Keep the narrower Wave 1 evidence boundary visible: the questionnaire
+    # supplies CA009 response categories, while Codebook field identity,
+    # release coding and suffix-to-relative linkage remain unresolved.
+    parent_education_path = root / "audit" / "parent_education_exposure_crosswalk_v1.csv"
+    if parent_education_path.exists():
+        parent_education = pd.read_csv(parent_education_path, dtype=str, encoding="utf-8-sig").fillna("")
+        for item in parent_education.to_dict(orient="records"):
+            if str(item.get("wave", "")) != "2011" or not str(item.get("code", "")).lower().startswith("ca009_"):
+                continue
+            selected = out["Source.Wave"].astype(str).eq("2011") & out["Variable.Name"].str.lower().eq(str(item["code"]).lower())
+            out.loc[selected, "Value.Label.Review"] = str(item.get("value_label_status", ""))
+            out.loc[selected, "Value.Label.Source"] = str(item.get("value_label_source", ""))
+
+    # Persist only after all field-specific review overrides have been applied.
+    # Writing earlier silently discarded the Wave 1 CA009 uncertainty status.
+    out.to_csv(prior_catalog_path, index=False, encoding="utf-8-sig")
 
     out["_code_key"] = out["Variable.Name"].str.lower()
     series = (out.groupby(["epcf", "category", "subcategory", "_code_key"], dropna=False)

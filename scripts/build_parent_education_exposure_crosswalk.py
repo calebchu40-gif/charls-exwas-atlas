@@ -28,7 +28,38 @@ FIELDS = [
      "The 2015 parent module routes questions according to whether the biological parent is alive and whether prior information is available; structural skips and missing prior knowledge are not low education."),
 ]
 
+# The 2011 baseline questionnaire asks the respondent about a father, then
+# instructs the interviewer to repeat the parent section for the respondent's
+# mother and both in-laws. The metadata-only field inventory contains four
+# repeated CA009 slots, but the suffix-to-relative linkage is not documented in
+# the public questionnaire. Keep these as a generic parent-slot candidate and
+# do not label them as biological father/mother until the authorized release's
+# slot linkage is verified.
+PARENT_SLOT_2011 = [f"ca009_{i}_" for i in range(1, 5)]
+
 rows = []
+for code in PARENT_SLOT_2011:
+    found = RAW[(RAW.wave == "2011") & RAW.module.str.lower().eq("family_information") & RAW.variable.str.lower().eq(code)]
+    if found.empty:
+        raise SystemExit(f"Missing 2011 parent education source field: 2011/{code}")
+    rec = found.iloc[0]
+    rows.append({
+        "wave": "2011", "code": code,
+        "concept_id": "parent_slot_education_2011",
+        "concept_label": "亲属记录最高受教育程度（2011；关系槽位待核）",
+        "domain": "early-life and family socioeconomic context",
+        "module": rec.module, "source_label": rec.variable_label,
+        "mapping_status": "discovery candidate only; questionnaire item reviewed; repeated parent-slot suffix-to-relative linkage unresolved; not approved for respondent-level analysis",
+        "unit": "repeated parent/in-law slot; relation and respondent linkage must be verified",
+        "value_labels": LABELS,
+        "value_label_status": "2011 baseline questionnaire response categories transcribed; Codebook field identity and release coding not independently verified; frequencies omitted",
+        "value_label_source": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt",
+        "construct": "Reported education attainment in a repeated family parent slot; do not interpret as the respondent's own education or as a specific biological parent's education.",
+        "value_semantics": "categorical parent-slot education; retain all four source slots separately and do not aggregate or harmonize until slot-to-relative linkage and release coding are verified",
+        "caveat": "The 2011 questionnaire defines CA009 as the father's highest education and instructs the interviewer to repeat the parent section for the respondent's mother and father-in-law/mother-in-law. The public questionnaire does not tie data suffixes 1–4 to those four relatives. Therefore this discovery mapping retains a generic slot identity; it must not be used as a respondent-level exposure or assigned to father/mother/in-laws until authorized-release metadata and routing establish the slot correspondence. The four slots are repeated measures/records, not four independent exposures. Do not infer skipped parent items as no schooling.",
+        "source_archive": "2011 metadata-only source-field inventory (not included); official baseline household questionnaire",
+    })
+
 for wave, code, concept, label, source_label, construct, caveat in FIELDS:
     found = RAW[(RAW.wave == wave) & RAW.variable.str.lower().eq(code.lower())]
     if found.empty:

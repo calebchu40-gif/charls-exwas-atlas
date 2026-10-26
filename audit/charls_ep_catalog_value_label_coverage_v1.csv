@@ -22,7 +22,7 @@ e,life-course and reproductive history,reproductive timing,8,8,0
 e,pandemic and public-health context,"COVID prevention, contact, quarantine, and community restriction context",52,52,44
 e,social determinants,adult education and lifelong learning,13,13,10
 e,social determinants,annual wage/salary amount reported for household-member roster slots,22,22,0
-e,social determinants,early-life family socioeconomic context,4,4,4
+e,social determinants,early-life family socioeconomic context,8,8,8
 e,social determinants,education and social position,89,89,84
 e,social determinants,"employment, occupation, and work organization",602,602,339
 e,social determinants,formal schooling history and timing,17,17,17
@@ -141,7 +141,7 @@ p,chronic disease ancillary,reported disease treatment / antidepressant medicati
 p,chronic disease ancillary,reported disease treatment / doctor-diagnosed recurrent stroke,3,3,3
 p,chronic disease ancillary,reported disease treatment / month of most recent stroke,1,1,0
 p,chronic disease ancillary,reported disease treatment / none-of-the-above treatment option,1,1,1
-p,chronic disease ancillary,reported disease treatment / wave-specific treatment response,261,261,261
+p,chronic disease ancillary,reported disease treatment / wave-specific treatment response,261,261,229
 p,chronic disease ancillary,reported disease treatment / wave-specific treatment response; option index only,10,10,10
 p,chronic disease ancillary,reported disease treatment / year of most recent stroke,3,3,0
 p,cognition,memory and cognitive performance,338,338,305
