@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas 项目范围与剩余工期（2026-10-25修订）
 
+## 2026-10-26 2014 parental social-context extension (local)
+
+官方问卷C1_g1–g3与Codebook字段核对新增4个E候选概念、36条映射，涵盖父母/抚养人党员身份、少数民族身份、被选中亲属的民族类别及宗教信仰。所有相对索引字段保留家庭背景定位，不推断个人身份；C1_g3中英文选项8的抚养人指代冲突记录在字段说明和审计。2014 Life History本地目录现为40概念组、1,029字段（E 1,001、P 28）；覆盖台账与来源审计见[`life_history_parent_social_context_coverage_2014_v1.csv`](life_history_parent_social_context_coverage_2014_v1.csv)和[`life_history_parent_social_context_review_2026-10-26.md`](life_history_parent_social_context_review_2026-10-26.md)。530项测试与公共包/锁校验已通过，待部署。
+
 ## 2026-10-26 age-restricted historical family-class item
 
 对照官方2014 Life History问卷和Codebook，将C5–C5f七种亲属形式的189个WEALTHHISTORY选项字段映射到1个E候选概念。受访者C5只问80岁及以上；亲属分支保留各自条件路由。与FAMILYINFORMATION模块中代码相似的饥荒逃荒c5严格区分。Life History目录本地增至36概念组、993字段行（E 965、P 28）；覆盖台账及解释见[`life_history_historical_family_class_coverage_2014_v1.csv`](life_history_historical_family_class_coverage_2014_v1.csv)和[`life_history_historical_family_class_review_2026-10-26.md`](life_history_historical_family_class_review_2026-10-26.md)。本批待全套验证和部署。

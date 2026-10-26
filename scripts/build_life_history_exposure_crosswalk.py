@@ -201,6 +201,58 @@ GROUPS = [
         "caveat": "This is sibling/family composition, not the respondent's ethnicity. B9 applies to siblings selected in B8; selector positions must be reconciled to the B4 roster, and no unselected sibling is coded as a non-minority individual without verified storage.",
     },
     {
+        "concept_id": "life_history_parental_party_membership_context",
+        "label": "Parent and caregiver party-membership context",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "family sociohistorical context",
+        "patterns": [r"c1_g1s\d+"],
+        "question": "C1_g1",
+        "unit": "parent/caregiver-index selector fields plus a none option",
+        "values": "C1_g1 asks which biological, adoptive, step-parent or listed caregiver was a Communist Party member. The nine fields are response slots/options, not nine independent exposures.",
+        "status": "official questionnaire and Codebook field family reviewed; response-slot storage and parent-roster alignment require authorized-release QA",
+        "caveat": "Historical family context during childhood, not the respondent's own party membership. Preserve the none option and parent/caregiver selector meaning; do not infer a negative response from blanks or collapse relatives without release-file verification.",
+    },
+    {
+        "concept_id": "life_history_parental_minority_ethnicity_context",
+        "label": "Parent and caregiver minority-ethnicity status",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "family sociohistorical context",
+        "patterns": [r"c1_g2s\d+"],
+        "question": "C1_g2",
+        "unit": "parent/caregiver-index selector fields plus a none option",
+        "values": "C1_g2 selects which biological, adoptive, step-parent or listed caregiver belongs to an ethnic minority; the nine fields are response slots/options, not independent people.",
+        "status": "official questionnaire and Codebook route reviewed; selector storage and parent-roster alignment require authorized-release QA",
+        "caveat": "This is family-of-origin ethnicity context, not the respondent's own ethnicity. Keep it separate from C1_g2_1 ethnicity-group fields; do not infer No from blank selectors or assume every relative slot represents an observed person.",
+    },
+    {
+        "concept_id": "life_history_parental_minority_group_context",
+        "label": "Ethnic groups of selected parents and caregivers",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "family sociohistorical context",
+        "patterns": [r"c1_g2_1_\d+_"],
+        "question": "C1_g2_1",
+        "unit": "conditional repeated ethnicity-category fields",
+        "values": "C1_g2_1 records an ethnic-group category for each parent/caregiver selected in C1_g2; the questionnaire lists Hui, Zhuang, Uyghur, Manchu, Yi, Tibetan, Miao, Mongol, Dai, Tujia and Other.",
+        "status": "official questionnaire loop and Codebook family reviewed; exact response-slot-to-relative linkage requires authorized-release QA",
+        "caveat": "Asked only for relatives selected in C1_g2. Do not assign categories to unselected relatives, impute missing group fields, or treat repeated slots as independent observations; this is family context, not respondent ethnicity.",
+    },
+    {
+        "concept_id": "life_history_parental_religious_context",
+        "label": "Parent and caregiver religious-belief context",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "family sociohistorical context",
+        "patterns": [r"c1_g3s\d+"],
+        "question": "C1_g3",
+        "unit": "parent/caregiver-index selector fields plus a none option",
+        "values": "C1_g3 asks which biological, adoptive, step-parent or listed caregiver had a religious belief; nine fields correspond to selector options, not nine independent exposures.",
+        "status": "official questionnaire and Codebook family reviewed; Chinese questionnaire repeats A4a for option 8 where English says male caregiver; retain wording discrepancy and verify release coding",
+        "caveat": "Historical family religious context, not the respondent's own belief. The English source identifies option 8 as the male-caregiver slot while Chinese repeats A4a; do not resolve this discrepancy by assumption. Preserve the none option and verify selector coding before analysis.",
+    },
+    {
         "concept_id": "life_history_sibling_sent_down_experience",
         "label": "Sibling sent-down movement experience",
         "role": "e",
@@ -618,11 +670,41 @@ def build_historical_family_class_coverage(rows: list[dict]) -> list[dict]:
     return ledger
 
 
+def build_parent_social_context_coverage(rows: list[dict]) -> list[dict]:
+    """Track all parent/caregiver selector and ethnicity-category slots in C1_g1-g3."""
+    pattern = re.compile(r"c1_g[13]s\d+|c1_g2s\d+|c1_g2_1_\d+_", re.I)
+    target_ids = {
+        "life_history_parental_party_membership_context",
+        "life_history_parental_minority_ethnicity_context",
+        "life_history_parental_minority_group_context",
+        "life_history_parental_religious_context",
+    }
+    mapped = {row["code"]: row for row in rows
+              if row["module"] == "FAMILYINFORMATION" and row["concept_id"] in target_ids}
+    fields = read_codebook_fields()
+    ledger: list[dict] = []
+    for (module, code), label in sorted(fields.items()):
+        if module != "FAMILYINFORMATION" or not pattern.fullmatch(code):
+            continue
+        row = mapped.get(code)
+        if row is None:
+            raise ValueError(f"C1 parent/caregiver social-context field lacks disposition: {code}")
+        ledger.append({"module": module, "code": code, "codebook_label": label,
+                       "disposition": "mapped_candidate", "concept_id": row["concept_id"],
+                       "questionnaire_item": row["questionnaire_item"], "rationale": row["caveat"],
+                       "questionnaire_source": row["questionnaire_source"],
+                       "codebook_source": row["codebook_source"]})
+    if len(ledger) != 36:
+        raise ValueError(f"Expected 36 C1 parent/caregiver social-context fields; found {len(ledger)}")
+    return ledger
+
+
 def main() -> None:
     rows, concepts = build()
     sibling_coverage = build_sibling_module_coverage(rows)
     parent_coverage = build_parent_module_coverage(rows)
     family_class_coverage = build_historical_family_class_coverage(rows)
+    parent_social_coverage = build_parent_social_context_coverage(rows)
     AUDIT.mkdir(parents=True, exist_ok=True)
     DIST.mkdir(parents=True, exist_ok=True)
     csv_path = AUDIT / "life_history_exposure_crosswalk_v1.csv"
@@ -647,6 +729,11 @@ def main() -> None:
         writer = csv.DictWriter(f, fieldnames=list(family_class_coverage[0]), extrasaction="ignore")
         writer.writeheader()
         writer.writerows(family_class_coverage)
+    parent_social_coverage_path = AUDIT / "life_history_parent_social_context_coverage_2014_v1.csv"
+    with parent_social_coverage_path.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=list(parent_social_coverage[0]), extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(parent_social_coverage)
     print(json.dumps({"concepts": len(concepts), "field_rows": len(rows),
                       "by_role": {role: sum(x["role"] == role for x in rows) for role in ("e", "p")},
                       "by_module": {module: sum(x["module"] == module for x in rows)
@@ -654,10 +741,12 @@ def main() -> None:
                       "sibling_module_fields_dispositioned": len(sibling_coverage),
                       "parent_module_fields_dispositioned": len(parent_coverage),
                       "historical_family_class_fields_mapped": len(family_class_coverage),
+                      "parent_social_context_fields_mapped": len(parent_social_coverage),
                       "csv": str(csv_path), "json": str(json_path),
                       "sibling_coverage": str(coverage_path),
                       "parent_coverage": str(parent_coverage_path),
-                      "family_class_coverage": str(family_class_coverage_path)}, ensure_ascii=False))
+                      "family_class_coverage": str(family_class_coverage_path),
+                      "parent_social_context_coverage": str(parent_social_coverage_path)}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

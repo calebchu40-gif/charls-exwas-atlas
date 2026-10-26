@@ -26,8 +26,8 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (36, 993))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 965, "p": 28})
+        self.assertEqual((len(groups), len(rows)), (40, 1029))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 1001, "p": 28})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
@@ -55,6 +55,11 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(len(by_concept["life_history_parental_loss"]), 6)
         self.assertEqual(len(by_concept["life_history_parental_remarriage_stepfamily"]), 24)
         self.assertEqual(len(by_concept["life_history_nonbiological_parent_education"]), 4)
+        self.assertEqual(len(by_concept["life_history_parental_party_membership_context"]), 9)
+        self.assertEqual(len(by_concept["life_history_parental_minority_ethnicity_context"]), 9)
+        self.assertEqual(len(by_concept["life_history_parental_minority_group_context"]), 9)
+        self.assertEqual(len(by_concept["life_history_parental_religious_context"]), 9)
+        self.assertTrue(all("Chinese repeats A4a" in row["caveat"] for row in by_concept["life_history_parental_religious_context"]))
         self.assertEqual(len(by_concept["life_history_historical_family_class_background"]), 189)
         self.assertEqual({row["module"] for row in by_concept["life_history_historical_family_class_background"]}, {"WEALTHHISTORY"})
         self.assertTrue(all(row["code"] != "c5" for row in by_concept["life_history_historical_family_class_background"]))
@@ -85,6 +90,16 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(len(coverage), 189)
         self.assertTrue(all(row["disposition"] == "mapped_candidate" for row in coverage))
         self.assertEqual(len({row["code"] for row in coverage}), 189)
+
+    def test_parent_social_context_inventory_maps_all_selector_fields_and_retains_translation_caveat(self):
+        rows, _ = builder.build()
+        coverage = builder.build_parent_social_context_coverage(rows)
+        self.assertEqual(len(coverage), 36)
+        self.assertEqual({row["disposition"] for row in coverage}, {"mapped_candidate"})
+        self.assertEqual(len({row["code"] for row in coverage}), 36)
+        religion = [row for row in coverage if row["concept_id"] == "life_history_parental_religious_context"]
+        self.assertEqual(len(religion), 9)
+        self.assertTrue(all("Chinese repeats A4a" in row["rationale"] for row in religion))
 
 
 if __name__ == "__main__":
