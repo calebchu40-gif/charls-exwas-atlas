@@ -13,11 +13,15 @@ The questionnaire DOC is identified in `SOURCES.md` as the August 2011 baseline 
 | `i016` | Whether the residence has electricity | Yes/No; codebook labels Yes=1, No=2 | Household residence item; person-level linkage and eligible denominator still require release review | One binary coefficient in K=150, reference fixed in the frozen plan |
 | `i017` | Whether the residence has running water | Yes/No; codebook labels Yes=1, No=2 | Same denominator/linkage review; existing K=105 runner already treats 1 vs 2 as the water contrast | One binary coefficient in K=150 |
 | `i019` | Whether the residence has a coal-gas or natural-gas supply | Yes/No; codebook labels Yes=1, No=2 | Wording is a household supply/access proxy; do not relabel it as individual fuel use or exposure dose | One binary coefficient in K=150 |
-| `i020` | Whether the residence has heating | Yes/No; questionnaire wording includes heating facilities and air-conditioning heating | The questionnaire routes Yes directly to `i022`; No continues to `i021` | One binary coefficient in K=150, subject to confirmed code and valid denominator |
+| `i020` | Whether the residence has heating | Yes/No; codebook text labels Yes=1, No=2 | The available 2011 baseline DOC extraction confirms Yes routes to `i022` and No continues to `i021`, but its Chinese wording is corrupted in the extracted text. The precise operational scope of “heating” is therefore unresolved. | One binary coefficient in K=150 only after exact 2011 wording and release coding are confirmed |
 | `i021` | Main heating energy source | Solar, coal, natural gas, LPG, electric, crop residue/wood, other; codebook labels 1–7 | Asked only after `i020=No` in the baseline questionnaire. It is a routed subdomain, not an all-household exposure | Six contrasts vs electric within the eligible routed domain; K=90 with 15 blood outcomes |
 | `i022` | Main source of cooking fuel | Coal, natural gas, marsh gas, LPG, electric, crop residue/wood, other; codebook labels 1–7 | Main household cooking-fuel category. Questionnaire routing and valid response handling must be confirmed from the released data | Six contrasts vs electric in K=150; K=105 pilot already covers it |
 
-The predeclared scale-up arithmetic remains: K=150 = 10 exposure coefficients × 15 blood phenotypes (water 1 + cooking fuel 6 + electricity 1 + gas-supply 1 + heating availability 1). Separately, K=90 = six `i021` contrasts × 15 blood phenotypes in the `i020=No` route. Do not turn the routed `i021` values into missing-as-reference or claim population-wide heating-fuel associations.
+The predeclared scale-up arithmetic remains: K=150 = 10 exposure coefficients × 15 blood phenotypes (water 1 + cooking fuel 6 + electricity 1 + gas-supply 1 + heating indicator 1), contingent on validating the 2011 `i020` item. Separately, K=90 = six `i021` contrasts × 15 blood phenotypes in the `i020=No` route. Do not turn the routed `i021` values into missing-as-reference or claim population-wide heating-fuel associations.
+
+## Item-version caution for `i020`
+
+The official CHARLS-hosted PDF at `https://charls.pku.edu.cn/wenjian/jiahuwenjuan.pdf` is titled **Followup Questionnaire 2013** on its cover, despite search results surfacing its housing section alongside the 2011 item names. It is not valid evidence for exact 2011 baseline wording. The locally archived 2011 baseline household-questionnaire DOC is the correct source family per `sources_official/SOURCES.md`; however, the adjacent extracted text corrupts the Chinese parenthetical attached to `I020`. Until the original 2011 DOC is rendered/read in a way that preserves that text and is matched to the released data/codebook, do not claim whether the question includes or excludes earth heating or heating-capable air conditioning. The route itself is legible and retained as a confirmed planning constraint, while the item interpretation remains pending.
 
 ## Required work before writing production contrast code
 
@@ -31,6 +35,7 @@ The predeclared scale-up arithmetic remains: K=150 = 10 exposure coefficients ×
 ## Source locations
 
 - `sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc` and adjacent `_extracted.txt` search copy; provenance details in `sources_official/SOURCES.md`.
+- [`CHARLS Questionnaire PDF`](https://charls.pku.edu.cn/wenjian/jiahuwenjuan.pdf) was checked to assess a wording conflict; its cover identifies it as the 2013 follow-up questionnaire, so it is expressly excluded as evidence of 2011 baseline wording.
 - `sources_official/CHARLS_2011_Codebook_extracted.txt`, housing-characteristics section (near extracted lines 97,715–97,827). The source bundle notes that the corresponding 2011 codebook PDF is not available locally; therefore the extracted text is a provisional aid pending release-matched confirmation.
 - Existing route decision and scale-up gate: `audit/wave1_scaleup_runner_gap_2026-10-27.md` and `audit/pilot_success_criteria_and_scale_up_2026-10-26.md`.
 

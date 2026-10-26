@@ -6,7 +6,7 @@
 # 2026-10-27 Review Wave 1 household exposure wording and routes
 
 - Audited the official baseline household questionnaire and the locally archived 2011 codebook text for `i016`, `i017`, `i019`, `i020`, `i021`, and `i022` to prepare the K=150 household block and separately routed K=90 heating block.
-- Recorded the `i020` to `i021` routing, exact household-proxy interpretation, category labels, and the remaining release-specific checks before coding. The locally available codebook is extracted text without its PDF, so its labels remain provisional until verified against the authenticated release.
+- Recorded the `i020` to `i021` routing and provisional category labels. A source-version check found the easily found CHARLS PDF is the 2013 follow-up, not the 2011 baseline; the baseline DOC text extraction corrupts the Chinese `i020` parenthetical. The heating item's exact operational scope is now marked unresolved pending the original source/release review.
 - No respondent-level data were read, no model was run, and no result/site payload changed. See `audit/wave1_household_exposure_questionnaire_review_2026-10-27.md`.
 
 # 2026-10-27 Record autonomous execution checkpoint
