@@ -1,3 +1,10 @@
+# 2026-10-26 Map sibling survival gate with conditional death year
+
+- Matched the B4_4 alive/deceased gate to the questionnaire route for B11 sibling death year; mapped all 30 repeated fields to one family-level survival/death history P candidate.
+- The 2014 Life History B module now has explicit mappings for all 271 structured Codebook fields; sibling outcomes remain distinct from respondent mortality, and special-wave fields stay outside weighted regular-wave scans.
+- Rebuilt catalog: 179 concepts / 5,873 mappings (E 5,812, P 61); app v183 / JSON v50. Deployment pending.
+- Audit: `audit/life_history_sibling_module_review_2026-10-26.md`.
+
 # 2026-10-26 Add childhood caregiver relationship context
 
 - Re-reviewed official Life History A4a/A4b. The two structured fields ask who spent the most time raising the respondent before age 17 and are now mapped to one early-life caregiving/family-structure candidate.

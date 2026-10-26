@@ -538,16 +538,16 @@ GROUPS = [
     },
     {
         "concept_id": "life_history_sibling_death_after_age6",
-        "label": "Death years of siblings who survived to age six",
+        "label": "Survival status and death timing of siblings who survived to age six",
         "role": "p",
         "modules": ["FAMILYINFORMATION"],
         "domain": "family-level historical mortality outcome",
-        "patterns": [r"b11_\d+_"],
+        "patterns": [r"b4_4_\d+_", r"b11_\d+_"],
         "question": "B11/B4_4",
-        "unit": "conditional sibling death-year fields",
-        "values": "B11 asks the death year for siblings identified as deceased in B4_4; cause-of-death free text is not part of this catalog.",
-        "status": "official B4_4-to-B11 route reviewed; authorized-release field order and coding require QA",
-        "caveat": "Family-level sibling mortality history, not respondent mortality. Timing relative to the respondent's age requires approved linkage to respondent birth year and validation of the sibling loop order; do not treat these as individual events or derive a mortality rate.",
+        "unit": "repeated sibling alive/deceased gate and conditional death-year fields",
+        "values": "B4_4 records whether each sibling is alive; B11 asks the death year only for siblings reported as deceased in B4_4. Cause-of-death free text is not part of this catalog.",
+        "status": "official B4_4 response categories and B4_4-to-B11 route reviewed; authorized-release field order and coding require QA",
+        "caveat": "Family-level sibling survival/death history, not respondent mortality. B11 is conditional on a deceased status in B4_4. Timing relative to respondent age requires approved linkage to respondent birth year and validation of the sibling loop order; do not treat sibling slots as independent respondent outcomes or derive a mortality rate.",
     },
     {
         "concept_id": "life_history_childhood_family_finances",
@@ -2410,10 +2410,6 @@ def build_sibling_module_coverage(rows: list[dict]) -> list[dict]:
             disposition = "mapped_candidate"
             concept_id = row["concept_id"]
             rationale = row["caveat"]
-        elif re.fullmatch(r"b4_4_\d+_", code, re.I):
-            disposition = "deferred_relative_status"
-            concept_id = ""
-            rationale = "Roster status for a sibling; questionnaire provides no event date in this field. Keep out of E/P pending a defined family-context estimand."
         else:
             raise ValueError(f"Unmapped sibling Codebook field has no disposition: {code}")
         ledger.append({"module": module, "code": code, "codebook_label": label,
@@ -2567,9 +2563,6 @@ def build_family_information_module_coverage(rows: list[dict]) -> list[dict]:
         elif re.fullmatch(r"a5[abcdef]", code, re.I):
             disposition, concept_id = "deferred_parent_birth_year", ""
             rationale = "Parent birth year is timing/background metadata; event-age derivation requires an explicit estimand and authorized linkage."
-        elif re.fullmatch(r"b4_4_\d+_", code, re.I):
-            disposition, concept_id = "deferred_relative_status", ""
-            rationale = "Sibling roster status; no timing/event definition in the item. Keep out of E/P pending a justified family-context estimand."
         else:
             raise ValueError(f"FAMILYINFORMATION Codebook field has no explicit disposition: {code}")
         ledger.append({"module": module, "code": code, "codebook_label": label,

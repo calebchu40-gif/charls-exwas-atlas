@@ -21,5 +21,5 @@ The official questionnaire distinguishes remarriage after divorce (A11) from rem
 
 ## Reproducibility and current directory
 
-The source-specific builder writes the crosswalk, website JSON, parent coverage ledger, and sibling coverage ledger from official Codebook field identities and reviewed mapping definitions. The independent 2014 Life History catalog now contains 34 concepts and 787 source-field rows (759 E-role, 28 P-role). These are metadata mapping rows, not independent measures or analysis-ready associations. The special survey remains separate from regular-wave weighted analysis because the official release provides no survey weight.
+The source-specific builder writes the crosswalk, website JSON, parent coverage ledger, and sibling coverage ledger from official Codebook field identities and reviewed mapping definitions. The full 2014 Life History catalog now contains 179 concepts and 5,873 source-field rows (5,812 E-role, 61 P-role). These are metadata mapping rows, not independent measures or analysis-ready associations. The special survey remains separate from regular-wave weighted analysis because the official release provides no survey weight.
 
