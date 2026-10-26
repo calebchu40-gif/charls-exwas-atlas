@@ -1,3 +1,9 @@
+## 2014 WORKHISTORY F101b workpoints / F110_a1 position-transition year (local build v173 pending publication)
+
+Mapped 14 F101b/F101b_a agricultural workpoint count/value fields, retaining separate components and beginning/middle timing (middle period is in the ≥20-year route). Also mapped seven F110_a1 years when middle-period position began, conditional on F110 vs F110_a differing. See [`life_history_work_history_workpoint_position_year_review_2026-10-26.md`](life_history_work_history_workpoint_position_year_review_2026-10-26.md).
+
+Local catalogue: 147 concepts / 4,743 mappings (E 4,697, P 46); WORKHISTORY 1,902 mapped, 85 substantive fields deferred. App v173 / JSON v40 pending publication; formal models remain 0.
+
 ## 2014 WORKHISTORY F116/F117 income, rank and progression review (app v172 / JSON v39 live-verified)
 
 Mapped 49 fields across four concepts: F116 self-employment net monthly income (21), military monthly income (12), military rank at beginning/middle periods (12), and conditional year of rank change (4). F116 is limited to F_3=4; military items to F_3=6. Job slots and timing remain distinct; conditional missingness is not zero/no promotion. See [`life_history_work_history_self_military_income_review_2026-10-26.md`](life_history_work_history_self_military_income_review_2026-10-26.md).
