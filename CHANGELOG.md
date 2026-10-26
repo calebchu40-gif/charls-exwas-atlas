@@ -1,3 +1,8 @@
+# 2026-10-27 Specify Wave 3 blood-weight target before future modeling
+
+- Rechecked the official 2015 Blood Data Release Note and Wave 3 data page. The release distinguishes the full Wave 3 interview frame from its cross-sectional sample and blood responders, releases a cross-sectional `Blood_weight`, and says panel weights depend on the analysis purpose.
+- Added a wave-specific plan requiring separate cross-sectional eligibility, official weight/source checks, and frame/linkage reconciliation before any 2015 blood association. Recorded official SHA-1 values for the All Data ZIP, Blood Data artifact, and release note; no files were downloaded and no model was run.
+
 # 2026-10-27 Record derived-table output and build provenance
 
 - The private wave-table builder now records each output's byte size/SHA-256 and the build timestamp, Python/pandas/pyreadstat versions, builder-script SHA-256, and Git revision/clean-tree status in `prepared_data_manifest.json`.
