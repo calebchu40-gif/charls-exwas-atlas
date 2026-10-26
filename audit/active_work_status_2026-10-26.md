@@ -1,10 +1,10 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
-## Local update — Wave 1 CA009 source-metadata refinement (159-step rebuild complete; pending commit)
+## Wave 1 CA009 refinement — commit `0d064f1`, live payload verified
 
 The full metadata finalization completed 159/159 steps in 7.3 minutes. Local E/P/C shards are 6,331/2,133/1,048, with 1,625 E/P candidate concepts and 8,341 E/P concept-source mappings. Wave-specific metadata co-availability pairs are 146,780/142,774/143,854/106,204/21,630 for 2011/2013/2015/2018/2020; these are not sample sizes or association results. There are 3,927 explicitly labeled E/P rows; generic pending E/P and C label states are both zero. Formal association models remain 0.
 
-The source review identified a previous persistence-order bug and, on deeper Codebook review, refined the evidence: four generic CA009 parent-education slots are listed, but suffix-to-relative mapping is not provided; the questionnaire has 11 response options, while Codebook categories have not been reconciled to authorized-release coding. The public source-metadata crosswalk now cites both official documents, does not assume codes 10/11 are valid, and does not use or reproduce frequencies. All four rows match across candidate CSV, candidate JSON, master catalog and website E shard. The website JSON currently live from `db021cd` has the earlier wording; this refined version is local and awaiting commit/deployment. The application code cache identifier remains v134 because only data and metadata changed.
+The source review identified a previous persistence-order bug and, on deeper Codebook review, refined the evidence: four generic CA009 parent-education slots are listed, but suffix-to-relative mapping is not provided; the questionnaire has 11 response options, while Codebook categories have not been reconciled to authorized-release coding. The public source-metadata crosswalk now cites both official documents, does not assume codes 10/11 are valid, and does not use or reproduce frequencies. All four rows match across candidate CSV, candidate JSON, master catalog and website E shard. Commit `0d064f1` is live; the published JSON was refetched and all four rows retain the revised caveat. GitHub Actions API rate-limited remote validation status; local suite passed 526 tests, public-payload, 92-lock, JS syntax and diff checks passed. Cache identifier remains v134 because only data/metadata changed.
 
 ## Latest full build and healthcare-access mapping (app v134 live; verified 2026-10-26)
 
