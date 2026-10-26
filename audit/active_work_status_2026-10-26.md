@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
+## 2014 Life History famine-sequence extension (local, pending verification/deployment)
+
+Reviewed the official questionnaire and Codebook C4–C8 sequence. Added four metadata-only concept groups and ten fields: family displacement (C5), reported local permission to flee (C6), family starvation deaths/count (C7/C7_1), and family reproductive consequences (C8 options). The independent special-survey directory now has 22 concept groups / 481 source-field mappings (468 E-role, 13 P-role). Roles describe discovery candidates: C7/C8 are family-level historical endpoints, not established respondent phenotypes. The questionnaire does not give a separate explicit skip instruction for every C5–C8 item; conditional routing remains unverified. C8 option 5 conflicts across Chinese (“abandoning an infant”) and English (“artificial abortion”) questionnaire text. No Codebook frequencies or participant records were used. Source review: [`life_history_famine_sequence_review_2026-10-26.md`](life_history_famine_sequence_review_2026-10-26.md). Local targeted builder tests pass; full-project validation and deployment remain outstanding.
+
 ## Wave 1 CA009 refinement — commit `0d064f1`, live payload verified
 
 The full metadata finalization completed 159/159 steps in 7.3 minutes. Local E/P/C shards are 6,331/2,133/1,048, with 1,625 E/P candidate concepts and 8,341 E/P concept-source mappings. Wave-specific metadata co-availability pairs are 146,780/142,774/143,854/106,204/21,630 for 2011/2013/2015/2018/2020; these are not sample sizes or association results. There are 3,927 explicitly labeled E/P rows; generic pending E/P and C label states are both zero. Formal association models remain 0.

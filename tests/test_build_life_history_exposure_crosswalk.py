@@ -26,14 +26,20 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (18, 471))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 466, "p": 5})
+        self.assertEqual((len(groups), len(rows)), (22, 481))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 468, "p": 13})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
         self.assertEqual(len(by_concept["life_history_residential_transition_reasons"]), 325)
         self.assertEqual(len(by_concept["life_history_residential_urbanicity"]), 25)
         self.assertEqual(len(by_concept["life_history_parental_divorce"]), 3)
+        self.assertEqual(len(by_concept["life_history_famine_displacement"]), 1)
+        self.assertEqual(len(by_concept["life_history_famine_flight_policy"]), 1)
+        self.assertEqual(len(by_concept["life_history_famine_family_mortality"]), 2)
+        self.assertEqual(len(by_concept["life_history_famine_family_reproductive_consequences"]), 6)
+        option5 = next(row for row in by_concept["life_history_famine_family_reproductive_consequences"] if row["code"] == "c8s5")
+        self.assertIn("Chinese says 'abandoning an infant'", option5["caveat"])
         self.assertEqual(len({(row["module"], row["code"]) for row in rows}), len(rows))
         self.assertFalse(any("OBS:" in " ".join(row.values()) for row in rows))
 

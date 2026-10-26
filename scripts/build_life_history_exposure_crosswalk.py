@@ -146,6 +146,56 @@ GROUPS = [
         "caveat": "Question asks about respondent and extended family experience during 1958-1962. Age at exposure varies by birth cohort; not an individual famine-dose measure. Keep separate from C3_a childhood food insecurity.",
     },
     {
+        "concept_id": "life_history_famine_displacement",
+        "label": "Family displacement from famine-stricken area",
+        "role": "e",
+        "domain": "historical environmental and social context",
+        "patterns": [r"c5"],
+        "question": "C5 (1958-1962 famine sequence)",
+        "unit": "family-level retrospective yes/no report",
+        "values": "1=yes; 2=no, as printed in the official questionnaire.",
+        "status": "official questionnaire and Codebook field identity reviewed; conditional routing and release coding require licensed-data QA",
+        "caveat": "Asks whether the respondent or family moved away from a famine-stricken area during the 1958-1962 period. This is family-reported historical displacement, not a geocoded place or individual dose. Treat as conditional on the famine sequence; do not infer an unasked response as No.",
+    },
+    {
+        "concept_id": "life_history_famine_flight_policy",
+        "label": "Reported local-government permission to flee famine",
+        "role": "e",
+        "domain": "historical policy and social context",
+        "patterns": [r"c6"],
+        "question": "C6 (1958-1962 famine sequence)",
+        "unit": "retrospective yes/no report of local policy",
+        "values": "1=yes; 2=no, as printed in the official questionnaire.",
+        "status": "official questionnaire and Codebook field identity reviewed; conditional route and release coding require licensed-data QA",
+        "caveat": "A respondent-reported historical policy context, not an independently verified policy record or a location-specific linkage. Retain as a provisional broad E candidate and do not infer an unasked response as No.",
+    },
+    {
+        "concept_id": "life_history_famine_family_mortality",
+        "label": "Family deaths attributed to famine starvation",
+        "role": "p",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "family-level historical mortality outcome",
+        "patterns": [r"c7", r"c7_1"],
+        "question": "C7/C7_1 (1958-1962 famine sequence)",
+        "unit": "family-level yes/no report and conditional count",
+        "values": "C7: 1=yes; 2=no. C7_1: count of affected relatives when applicable; value range and special codes require licensed-release review.",
+        "status": "official questionnaire and Codebook field identities reviewed; count scale, conditional routing and authorized-release coding require QA",
+        "caveat": "This is reported mortality among relatives, not the respondent's own mortality or a validated household rate. C7_1 is conditional on C7 and must not be used as a population mortality count or rate without a defined family denominator.",
+    },
+    {
+        "concept_id": "life_history_famine_family_reproductive_consequences",
+        "label": "Family reproductive consequences attributed to famine food shortage",
+        "role": "p",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "family-level historical reproductive consequences",
+        "patterns": [r"c8s[1-6]"],
+        "question": "C8 (1958-1962 famine sequence)",
+        "unit": "six option-specific response fields",
+        "values": "Questionnaire options include delayed marriage, delayed or prevented childbirth, abortion, infant abandonment, and none. Option 5 is inconsistent across the official Chinese and English questionnaire text; preserve as unresolved pending authorized-release verification.",
+        "status": "official questionnaire and Codebook fields identified; option 5 translation conflict and checkbox/none storage require review",
+        "caveat": "Family-reported consequences, not necessarily the respondent's own reproductive history or clinical phenotype. Checkbox blanks do not establish No; the none-of-these option must be checked against release coding. The English questionnaire repeats 'artificial abortion' for option 5, while Chinese says 'abandoning an infant'.",
+    },
+    {
         "concept_id": "life_history_parental_guardian_education",
         "label": "Biological parents' education",
         "role": "e",
@@ -268,13 +318,13 @@ def build() -> tuple[list[dict], list[dict]]:
     expected = {"RESIDENCE": set(), "FAMILYINFORMATION": set(), "HEALTHHISTORY": set()}
     for group in GROUPS:
         role = group["role"]
-        modules = {"e": {"RESIDENCE", "FAMILYINFORMATION"}, "p": {"HEALTHHISTORY"}}[role]
+        modules = set(group.get("modules", {"e": {"RESIDENCE", "FAMILYINFORMATION"}, "p": {"HEALTHHISTORY"}}[role]))
         patterns = [re.compile(pat, re.I) for pat in group["patterns"]]
         matches = [(module, code, label) for (module, code), label in fields.items()
                    if module in modules and any(p.fullmatch(code) for p in patterns)]
         if not matches:
             raise ValueError(f"No official Codebook variables found for {group['concept_id']}")
-        summary.append({**group, "source_fields": []})
+        summary.append({**{key: value for key, value in group.items() if key != "modules"}, "source_fields": []})
         for module, code, codebook_label in sorted(matches):
             row = {
                 "concept_id": group["concept_id"],
