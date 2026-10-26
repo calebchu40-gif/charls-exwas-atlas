@@ -23,6 +23,7 @@ from pathlib import Path
 import pandas as pd
 import pyreadstat
 from project_paths import PRIVATE_ROOT, require_private_path
+from audit_2011_pilot_intake_metadata import evaluate_source_manifest
 
 WAVES = {
     "2011": ("rar", "household_and_community_questionnaire_data.rar"),
@@ -61,6 +62,43 @@ def sha256_file(path: Path) -> str:
         for block in iter(lambda: source.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def validate_wave1_source_review(source_inputs: dict, manifest_path: Path) -> dict:
+    """Fail closed unless all four Wave 1 releases match the reviewed intake manifest.
+
+    Local hashes establish byte identity only. The human-entered source review
+    records that the files were obtained from the official CHARLS release.
+    Neither check establishes eligibility or survey-design validity.
+    """
+    manifest_path = protected_data_path(manifest_path)
+    if not manifest_path.is_file():
+        raise ValueError("Wave 1 requires the private reviewed intake_manifest.json")
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ValueError("Wave 1 intake manifest is unreadable or invalid JSON") from exc
+    role_map = {
+        "wave1_all_data": "all_data_archive",
+        "psu": "psu",
+        "weight": "weight",
+        "blood": "blood",
+    }
+    role_results = {}
+    for role, input_key in role_map.items():
+        item = source_inputs.get(input_key)
+        if not isinstance(item, dict) or not item.get("filename") or not item.get("sha256"):
+            raise ValueError(f"Wave 1 requires all four official source inputs; missing {role}")
+        role_results[role] = {
+            "status": "metadata_read",
+            "file_name": item["filename"],
+            "local_sha256": item["sha256"],
+        }
+    review = evaluate_source_manifest(manifest, role_results)
+    if review["source_identity_status"] != "verified_official_source":
+        details = "; ".join(review.get("source_identity_review_errors", []))
+        raise ValueError(f"Wave 1 source review gate not passed: {details}")
+    return review
 
 
 def git_build_provenance(root: Path) -> dict[str, object]:
@@ -263,6 +301,9 @@ def main():
                     help="Explicit authorized 2011 Weight Stata file")
     ap.add_argument("--wave1-blood", type=Path,
                     help="Explicit authorized 2011 Blood Stata file")
+    ap.add_argument("--wave1-intake-manifest", type=Path,
+                    default=PRIVATE_ROOT / "incoming_2011_official" / "intake_manifest.json",
+                    help="Private human-reviewed source identity manifest required for Wave 1")
     args = ap.parse_args()
     input_root = (protected_data_path(args.input_root) / "原始数据+问卷2011~2020"
                   if args.input_root is not None else None)
@@ -307,6 +348,36 @@ def main():
         source_archive = {"filename": archive.name, "bytes": archive.stat().st_size,
                           "sha256": sha256_file(archive)}
         source_inputs = {"all_data_archive": source_archive}
+        source_review = None
+        wave1_role_paths = {}
+        if wave == "2011":
+            legacy_blood = (
+                input_root / wave / "Blood_20140429.dta"
+                if input_root is not None and (input_root / wave / "Blood_20140429.dta").is_file()
+                else None
+            )
+            wave1_role_paths = {
+                "psu": args.wave1_psu,
+                "weight": args.wave1_weight,
+                "blood": args.wave1_blood or legacy_blood,
+            }
+            # Check all required source files and the reviewed manifest before
+            # opening/extracting any participant-level archive members.
+            for role, source_path in wave1_role_paths.items():
+                if source_path is None:
+                    raise ValueError(f"Wave 1 requires an explicit official {role} file")
+                source_path = protected_data_path(source_path)
+                if not source_path.is_file():
+                    raise FileNotFoundError(f"Explicit Wave 1 {role} file is missing: {source_path}")
+                source_inputs[role] = {
+                    "filename": source_path.name,
+                    "bytes": source_path.stat().st_size,
+                    "sha256": sha256_file(source_path),
+                }
+            source_review = validate_wave1_source_review(
+                source_inputs, args.wave1_intake_manifest
+            )
+
         qa, maps, frames = [], [], []
         for file in dta_members(archive, kind):
             module = file.stem
@@ -351,27 +422,13 @@ def main():
             frames.append((module, key, frame, meta))
 
         if wave == "2011":
-            legacy_blood = (
-                input_root / wave / "Blood_20140429.dta"
-                if input_root is not None and (input_root / wave / "Blood_20140429.dta").is_file()
-                else None
-            )
             role_inputs = (
-                ("psu", args.wave1_psu, "PSU"),
-                ("weight", args.wave1_weight, "Weights"),
-                ("blood", args.wave1_blood or legacy_blood, "Blood_Assays"),
+                ("psu", wave1_role_paths["psu"], "PSU"),
+                ("weight", wave1_role_paths["weight"], "Weights"),
+                ("blood", wave1_role_paths["blood"], "Blood_Assays"),
             )
             for role, source_path, module_name in role_inputs:
-                if source_path is None:
-                    continue
                 source_path = protected_data_path(source_path)
-                if not source_path.is_file():
-                    raise FileNotFoundError(f"Explicit Wave 1 {role} file is missing: {source_path}")
-                source_inputs[role] = {
-                    "filename": source_path.name,
-                    "bytes": source_path.stat().st_size,
-                    "sha256": sha256_file(source_path),
-                }
                 incoming, incoming_meta = pyreadstat.read_dta(str(source_path))
                 if role == "weight":
                     weight_parts = split_weights(incoming, wave, qa)
@@ -444,7 +501,8 @@ def main():
                                    "duplicate_ID": int(base["ID"].dropna().duplicated().sum()),
                                    "output": outfile.name,
                                    "source_archive": source_archive,
-                                   "source_inputs": source_inputs})
+                                   "source_inputs": source_inputs,
+                                   **({"source_review": source_review} if wave == "2011" else {})})
         print(f"wave={wave} rows={len(base)} cols={len(base.columns)} unique_ID={base['ID'].nunique(dropna=True)}")
         pd.DataFrame(qa).to_csv(outdir / f"merge_qa_{wave}.csv", index=False, encoding="utf-8-sig")
         pd.DataFrame(maps).to_csv(outdir / f"variable_collision_map_{wave}.csv", index=False, encoding="utf-8-sig")

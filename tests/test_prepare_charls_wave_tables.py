@@ -1,4 +1,6 @@
 import sys
+import json
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -7,7 +9,11 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from prepare_charls_wave_tables import split_weights  # noqa: E402
+from prepare_charls_wave_tables import (  # noqa: E402
+    split_weights, validate_wave1_source_review,
+)
+from audit_2011_pilot_intake_metadata import ROLE_DOCUMENTS, ROLE_URLS  # noqa: E402
+from project_paths import PRIVATE_ROOT  # noqa: E402
 from validate_prepared_wave_tables import get_match_rate_0_to_1  # noqa: E402
 
 
@@ -86,6 +92,65 @@ class SplitWeightsTests(unittest.TestCase):
 
         self.assertEqual(person["ID"].tolist(), ["001", "002"])
         self.assertEqual(person["crosssection"].tolist(), [1, 0])
+
+
+class Wave1SourceGateTests(unittest.TestCase):
+    def test_wave1_source_table_requires_reviewed_manifest_and_all_four_files(self):
+        PRIVATE_ROOT.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(prefix="wave1_gate_test_", dir=PRIVATE_ROOT) as temp:
+            manifest_path = Path(temp) / "intake_manifest.json"
+            manifest_path.write_text("{}", encoding="utf-8")
+            source_inputs = {
+                "all_data_archive": {"filename": "all_data.zip", "sha256": "a" * 64},
+                "psu": {"filename": "PSU.dta", "sha256": "b" * 64},
+                "weight": {"filename": "Weight.dta", "sha256": "c" * 64},
+            }
+            with self.assertRaisesRegex(ValueError, "missing blood"):
+                validate_wave1_source_review(source_inputs, manifest_path)
+
+    def test_wave1_source_gate_rejects_unreviewed_or_hash_mismatched_files(self):
+        PRIVATE_ROOT.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(prefix="wave1_gate_test_", dir=PRIVATE_ROOT) as temp:
+            manifest_path = Path(temp) / "intake_manifest.json"
+            roles = list(ROLE_URLS)
+            source_inputs = {}
+            required_files = []
+            for i, role in enumerate(roles):
+                filename = "all_data.zip" if role == "wave1_all_data" else f"{role}.dta"
+                digest = str(i + 1) * 64
+                source_inputs["all_data_archive" if role == "wave1_all_data" else role] = {
+                    "filename": filename, "sha256": digest,
+                }
+                required_files.append({
+                    "role": role,
+                    "official_document": ROLE_DOCUMENTS[role],
+                    "source_page": ROLE_URLS[role],
+                    "original_filename": filename,
+                    "official_title": f"Synthetic {role}",
+                    "downloaded_at": "2026-10-27",
+                    "identity_review_status": "verified_official_source",
+                    "reviewed_local_sha256": digest,
+                })
+            manifest_path.write_text(json.dumps({
+                "source_manifest_id": "charls2011-synthetic-test",
+                "source_identity_review": {
+                    "status": "unresolved", "reviewed_at": None, "reviewer_note": None,
+                },
+                "required_files": required_files,
+            }), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "source review gate not passed"):
+                validate_wave1_source_review(source_inputs, manifest_path)
+
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            manifest["source_identity_review"] = {
+                "status": "verified_official_source",
+                "reviewed_at": "2026-10-27",
+                "reviewer_note": "Synthetic test fixture only.",
+            }
+            manifest["required_files"][0]["reviewed_local_sha256"] = "f" * 64
+            manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "SHA-256 does not match"):
+                validate_wave1_source_review(source_inputs, manifest_path)
 
 
 if __name__ == "__main__":
