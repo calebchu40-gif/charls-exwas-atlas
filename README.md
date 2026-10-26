@@ -1,5 +1,7 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-26）
 
+**本地待发布扩展：**官方2014 Life History Section B兄弟姐妹模块已完成字段级审计，新增6个概念组、241条映射；271个B模块Codebook字段全部已有映射或明确暂缓理由（30条待定）。专题目录本地现为32组、770条字段（E 742、P 28）。姓名/开放式死因不入库；家庭层指标不自动解释为受访者表型。源字段覆盖表见[`audit/life_history_sibling_module_coverage_2014_v1.csv`](audit/life_history_sibling_module_coverage_2014_v1.csv)，审计见[`audit/life_history_sibling_module_review_2026-10-26.md`](audit/life_history_sibling_module_review_2026-10-26.md)。正在做全量校验，尚未发布。
+
 **最新2014 Life History更新（提交 `c433529`，已在线核验）：**在饥荒序列扩展基础上，按官方Section H新增童年女性/男性抚养人精神健康、物质使用、行为/司法经历及长期疾病/残疾4个候选概念组、48条字段映射。专题目录现为26组、529字段行（E 516、P 13）。线上JSON返回26概念、529字段；首页、`app.js?v=136`与JSON缓存版本`v=3`均已核验。角色仍是候选元数据，路由与授权发行版存储需进一步核验；没有使用Codebook频数。审计见[`audit/life_history_guardian_health_context_review_2026-10-26.md`](audit/life_history_guardian_health_context_review_2026-10-26.md)。
 
 **最新2014 Life History更新（提交 `1f21885`，已在线核验）：**按官方问卷C4–C8饥荒序列新增4个概念组、10条字段映射；独立目录现为22概念组、481字段行（E 468、P 13）。线上专题JSON核验返回22概念、481字段，首页、`app.js?v=135`和JSON缓存版本`v=2`均已确认更新。C8选项5中英文冲突、选项槽编码及条件路由保留待核；没有使用Codebook频数。详情见[`audit/life_history_famine_sequence_review_2026-10-26.md`](audit/life_history_famine_sequence_review_2026-10-26.md)。

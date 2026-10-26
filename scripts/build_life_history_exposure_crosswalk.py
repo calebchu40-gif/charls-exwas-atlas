@@ -110,6 +110,84 @@ GROUPS = [
         "caveat": "A10/A10_1 are conditional on A7=yes; A10_1 is asked when exact age is unknown/refused. Do not count the two age fields as independent exposures or treat skip/missing as no divorce. Questionnaire notes that long emotional separations may count, remarriage after divorce does not undo it, and bereavement is not classified as divorce.",
     },
     {
+        "concept_id": "life_history_sibling_death_before_age6",
+        "label": "Sibling deaths before age six and family relationship context",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "early-life family adversity",
+        "patterns": [r"b1", r"b2_1_\d+_", r"b2_2_\d+_", r"b2_3_\d+_", r"b2_5_\d+_"],
+        "question": "B1/B2_1-B2_3/B2_5",
+        "unit": "count plus repeated sibling relationship, age-at-death, age-gap and parentage fields",
+        "values": "B1 counts siblings who died before age six. Repeated B2 fields identify the sibling relationship, age at death, age gap, and same/different parentage; free-text cause of death is not included.",
+        "status": "official questionnaire loops, fields and B1=0 route reviewed; authorized-release slot storage requires QA",
+        "caveat": "B2 loops over deaths before age six and is conditional on B1>0; B1/B2 describe sibling/family adversity, not respondent death or a sibling mortality rate. Do not use open-text cause-of-death responses, infer No from absent loop slots, or treat repeated sibling slots as independent exposures.",
+    },
+    {
+        "concept_id": "life_history_sibling_family_structure",
+        "label": "Sibling composition and half-sibling family structure",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "family-of-origin social context",
+        "patterns": [r"b3", r"b4_2_\d+_", r"b4_3_\d+_", r"b5s\d+", r"b6_\d+_"],
+        "question": "B3/B4_2-B4_3/B5/B6",
+        "unit": "sibling count and repeated sibling gender, birth-year, parentage-selector and conditional relationship fields",
+        "values": "B3 counts siblings who survived to age six. B4 records sibling gender and birth year. B5 selects siblings with a different parent; B6 records the corresponding parentage relationship. B5 includes a none option.",
+        "status": "official questionnaire loop alignment and conditional B5-to-B6 route reviewed; identifier-free catalog only",
+        "caveat": "B4_1 sibling names are excluded. B5 selectors align to siblings in B4, and B6 is asked only for selected siblings; do not treat selector slots as separate exposure indicators or blank as No. Sibling birth year and composition are family context, not measured respondent dose; no sibling records are published.",
+    },
+    {
+        "concept_id": "life_history_sibling_party_membership",
+        "label": "Sibling party-membership context",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "family sociohistorical context",
+        "patterns": [r"b7s\d+"],
+        "question": "B7",
+        "unit": "sibling-index selector fields plus a none option",
+        "values": "B7 asks which sibling(s) are party members; fields represent sibling-list selections, not 26 independent yes/no exposures. Exact release storage remains unverified.",
+        "status": "official sibling-list routing reviewed; checkbox/selector encoding requires authorized-release QA",
+        "caveat": "Family-reported context about siblings. Align selector positions to the B4 sibling roster only after release-file verification; do not treat blank slots as No or infer the respondent's own political membership.",
+    },
+    {
+        "concept_id": "life_history_sibling_ethnic_context",
+        "label": "Sibling ethnic-composition context",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "family sociohistorical context",
+        "patterns": [r"b8s\d+", r"b9_\d+_"],
+        "question": "B8/B9",
+        "unit": "sibling-index selectors and conditional ethnicity categories",
+        "values": "B8 selects minority siblings; B9 records an ethnicity category for selected siblings. Keep list-selector and sibling-specific category fields distinct.",
+        "status": "official B8-to-B9 sibling route and category definitions reviewed; storage/linkage require authorized-release QA",
+        "caveat": "This is sibling/family composition, not the respondent's ethnicity. B9 applies to siblings selected in B8; selector positions must be reconciled to the B4 roster, and no unselected sibling is coded as a non-minority individual without verified storage.",
+    },
+    {
+        "concept_id": "life_history_sibling_sent_down_experience",
+        "label": "Sibling sent-down movement experience",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "family sociohistorical and migration context",
+        "patterns": [r"b10s\d+"],
+        "question": "B10",
+        "unit": "sibling-index selector fields plus a none option",
+        "values": "B10 asks which sibling(s) experienced the sent-down-to-countryside movement; fields are sibling-list selections, not independent exposure indicators.",
+        "status": "official sibling-list route reviewed; selector storage and sibling roster alignment require authorized-release QA",
+        "caveat": "This records a sibling's historical experience, not necessarily the respondent's own exposure or residence. Preserve family-level context and do not infer No from blank selector slots.",
+    },
+    {
+        "concept_id": "life_history_sibling_death_after_age6",
+        "label": "Death years of siblings who survived to age six",
+        "role": "p",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "family-level historical mortality outcome",
+        "patterns": [r"b11_\d+_"],
+        "question": "B11/B4_4",
+        "unit": "conditional sibling death-year fields",
+        "values": "B11 asks the death year for siblings identified as deceased in B4_4; cause-of-death free text is not part of this catalog.",
+        "status": "official B4_4-to-B11 route reviewed; authorized-release field order and coding require QA",
+        "caveat": "Family-level sibling mortality history, not respondent mortality. Timing relative to the respondent's age requires approved linkage to respondent birth year and validation of the sibling loop order; do not treat these as individual events or derive a mortality rate.",
+    },
+    {
         "concept_id": "life_history_childhood_family_finances",
         "label": "Childhood family financial standing relative to community",
         "role": "e",
@@ -410,8 +488,40 @@ def build() -> tuple[list[dict], list[dict]]:
     return rows, summary
 
 
+def build_sibling_module_coverage(rows: list[dict]) -> list[dict]:
+    """Give every Codebook B-family field a mapped or explicit non-E/P disposition."""
+    mapped = {row["code"]: row for row in rows if row["module"] == "FAMILYINFORMATION"}
+    fields = read_codebook_fields()
+    ledger: list[dict] = []
+    for (module, code), label in sorted(fields.items()):
+        if module != "FAMILYINFORMATION" or not re.fullmatch(r"b\d+.*", code, re.I):
+            continue
+        row = mapped.get(code)
+        if row:
+            disposition = "mapped_candidate"
+            concept_id = row["concept_id"]
+            rationale = row["caveat"]
+        elif re.fullmatch(r"b4_4_\d+_", code, re.I):
+            disposition = "deferred_relative_status"
+            concept_id = ""
+            rationale = "Roster status for a sibling; questionnaire provides no event date in this field. Keep out of E/P pending a defined family-context estimand."
+        elif re.fullmatch(r"b4_5_\d+_", code, re.I):
+            disposition = "deferred_relative_attainment"
+            concept_id = ""
+            rationale = "Sibling's highest completed education has no timing relative to respondent childhood and is not the respondent's phenotype; assess only under a justified family-context estimand."
+        else:
+            raise ValueError(f"Unmapped sibling Codebook field has no disposition: {code}")
+        ledger.append({"module": module, "code": code, "codebook_label": label,
+                       "disposition": disposition, "concept_id": concept_id,
+                       "rationale": rationale,
+                       "questionnaire_source": "sources_official/CHARLS_Life_History_Questionnaire.pdf",
+                       "codebook_source": "sources_official/CHARLS_Life_History_codebook.pdf"})
+    return ledger
+
+
 def main() -> None:
     rows, concepts = build()
+    sibling_coverage = build_sibling_module_coverage(rows)
     AUDIT.mkdir(parents=True, exist_ok=True)
     DIST.mkdir(parents=True, exist_ok=True)
     csv_path = AUDIT / "life_history_exposure_crosswalk_v1.csv"
@@ -421,11 +531,18 @@ def main() -> None:
         writer.writerows(rows)
     json_path = DIST / "life_history_exposures_v1.json"
     json_path.write_text(json.dumps(concepts, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    coverage_path = AUDIT / "life_history_sibling_module_coverage_2014_v1.csv"
+    with coverage_path.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=list(sibling_coverage[0]), extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(sibling_coverage)
     print(json.dumps({"concepts": len(concepts), "field_rows": len(rows),
                       "by_role": {role: sum(x["role"] == role for x in rows) for role in ("e", "p")},
                       "by_module": {module: sum(x["module"] == module for x in rows)
                                     for module in sorted({x["module"] for x in rows})},
-                      "csv": str(csv_path), "json": str(json_path)}, ensure_ascii=False))
+                      "sibling_module_fields_dispositioned": len(sibling_coverage),
+                      "csv": str(csv_path), "json": str(json_path),
+                      "sibling_coverage": str(coverage_path)}, ensure_ascii=False))
 
 
 if __name__ == "__main__":
