@@ -1,8 +1,8 @@
-## 2014 WORKHISTORY F123a/F123b recent agricultural income (local build v171 pending publication)
+## 2014 WORKHISTORY F123a/F123b recent agricultural income (app v171 / JSON v38 live-verified)
 
 Reviewed 32 official fields for agricultural jobs lasting at least five years. Added separate current/last-year income-mode (13), conditional Yuan amount (13) and workpoint components (6) concepts. Agricultural net income subtracts input costs and includes imputed value of farm products consumed at home; it is not pesticide exposure. Existing F123c work-intensity fields remain separate. See [`life_history_work_history_agricultural_recent_income_review_2026-10-26.md`](life_history_work_history_agricultural_recent_income_review_2026-10-26.md).
 
-Local catalogue: 141 concepts / 4,673 mappings (E 4,627, P 46); WORKHISTORY 1,832 mapped, 155 substantive fields deferred. App v171 / JSON v38 pending publication; formal models remain 0.
+Local and live catalogue: 141 concepts / 4,673 mappings (E 4,627, P 46); WORKHISTORY 1,832 mapped, 155 substantive fields deferred. Homepage references app v171; app loader references JSON v38; the live JSON has 141 concepts and its raw-byte SHA-256 matches local (`67766aa4a732f775fd03c4cb64dbfa4bfaddf9dff8bdf7fe0fee60b74dbc44bf`). Formal models remain 0.
 
 ## 2014 WORKHISTORY F126 current/last-year income (local build v170 pending publication)
 
