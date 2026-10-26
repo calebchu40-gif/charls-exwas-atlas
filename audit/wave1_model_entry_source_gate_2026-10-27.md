@@ -27,3 +27,7 @@ The local Wave 1 prepared manifest is legacy and lacks provenance. The current i
 ## Privacy
 
 Only the validator code, synthetic tests, and this method note are stored in Git. Microdata, hashes, sample counts, and model estimates remain under protected local storage.
+
+## Synthetic code-path check added (2026-10-27)
+
+A fully synthetic fixture now exercises the positive metadata-validation path: it creates a test ZIP, three synthetic Stata headers, a synthetic intake manifest, and a synthetic prepared-table hash. The validator accepts this only as provenance-structure validation and returns `survey_design_status=still_requires_independent_review`. The test does not authenticate any real CHARLS source and contains no CHARLS participant data.
