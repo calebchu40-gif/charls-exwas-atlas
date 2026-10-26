@@ -1,3 +1,9 @@
+## 2014 WORKHISTORY F112 income-mode audit (local build v168 pending publication)
+
+Reviewed the official F112/F112_a routes and mapped 76 fields into separate payment-mode (24), conditional monthly Yuan income (24), and workpoint count/value components (28) concepts. Beginning and middle job phases and repeated episode slots remain distinct. Workpoints are not converted to income; monetary amounts remain nominal and not inflation-harmonized. See [`life_history_work_history_income_mode_review_2026-10-26.md`](life_history_work_history_income_mode_review_2026-10-26.md).
+
+Local rebuild now has 131 concepts / 4,546 mappings (E 4,500, P 46); WORKHISTORY 1,705 mapped, 282 substantive fields deferred, with exclusions retained. Local app v168 / JSON v35 pending publication verification. Formal models remain 0.
+
 ## 2014 WORKHISTORY F_5/F_6 and F120 slot-15 audit (local build v167 pending publication)
 
 The official questionnaire/codebook review distinguishes F_5 interviewer completeness checks from F_6 respondent-reported statuses during confirmed no-work gaps. All 12 repeated F_5 fields are excluded as route/quality metadata; 144 structured F_6 select-all fields are mapped to a separate inter-job nonwork-status candidate, retaining interval suffixes and conditional routing. F120's former pattern omitted slot 15; all 17 slot-15 reason fields are now included, for 255 structured nonmilitary F120 fields total. Military F120a remains separate. The new audit is [`life_history_work_history_gap_status_review_2026-10-26.md`](life_history_work_history_gap_status_review_2026-10-26.md).
