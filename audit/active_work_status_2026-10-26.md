@@ -1,3 +1,7 @@
+# 2026-10-27 continuation — current-main CI and privacy boundary recheck
+
+Verified local `main` and `origin/main` both point to `0b3a14185882c08199db0fa6bc9c6cf20cf69352`; working tree was clean before this log update. Ran the repository's exact `scripts/run_ci_unit_tests.py` command: 571 tests passed. The deferred JSON loader and reviewed-result browser tests passed; `node --check site-prototype/dist/app.js`, `scripts/validate_public_site_payload.py`, Python compilation of the new Wave 3 merge runner, and `git diff --check` passed. A tracked-file scan found no microdata file types in the project (one CSV hit was the disclosure-review template). GitHub Actions page/API has not yet surfaced the 2026-10-27 commit; REST calls are rate-limited and the unauthenticated HTML view is still showing the prior day's run, so remote CI remains unverified. No site assets changed and no deployment was triggered.
+
 # 2026-10-27 continuation — Wave 3 blood merge readiness and pilot decision
 
 Added and pushed commit `274fa1f` (`Prepare provenance-gated Wave 3 blood merge`) to `main`. The protected Wave 3 merge runner requires the exact official 2015 All Data and Blood artifact SHA-1s, a passing metadata-only Blood header gate, and manifest hashes binding the prepared table to that same archive/output. It performs a one-to-one ID-keyed left merge, retains the full frame and `crosssection` flag, and marks Blood_weight as cross-sectional only. Five synthetic tests plus the full 571-test suite pass; no CHARLS participant values were used for implementation tests.
