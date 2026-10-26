@@ -502,6 +502,32 @@ GROUPS = [
         "caveat": "Sensitive retrospective family-history constructs. Route depends on availability of female/male guardians. Metadata only; no respondent narratives or small-cell results are published.",
     },
     {
+        "concept_id": "life_history_childhood_romantic_relationship",
+        "label": "Romantic relationship experience before age 17 and perceived influence",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "childhood psychosocial context",
+        "patterns": [r"e7", r"e8"],
+        "question": "E7/E8",
+        "unit": "binary relationship-history item and conditional three-category influence item",
+        "values": "E7 asks whether the respondent had a romantic partner before age 17; E8 records mostly positive, mostly negative or neutral perceived influence for the most important relationship.",
+        "status": "official questionnaire route and Codebook item identities reviewed; E8 eligibility and release special values require QA",
+        "caveat": "Sensitive retrospective relationship history. E8 follows E7=Yes; blank E8 is not No. Metadata only: no participant-level relationship details or response frequencies are published, and this is not a validated psychosocial scale.",
+    },
+    {
+        "concept_id": "life_history_childhood_police_custody_and_charge",
+        "label": "Police arrest/custody before age 17 and reported charge category",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "childhood adversity and justice-system contact",
+        "patterns": [r"g1", r"g2"],
+        "question": "G1/G2",
+        "unit": "binary police arrest/custody history and conditional charge-category item",
+        "values": "G1 asks about being arrested or taken into police custody before age 17; G2 records the charge category for an affirmative case, asking about the last event if there were multiple events.",
+        "status": "official questionnaire route and Codebook field identities reviewed; exact authorized-release coding and privacy review required before any analysis",
+        "caveat": "Highly sensitive retrospective justice-system information. An arrest/custody report is not proof of conviction or guilt. G2 follows G1=Yes and is conditional; blank is not No. This public catalog exposes metadata only, never participant values or counts; use in analysis requires a separate ethical, privacy, and disclosure review.",
+    },
+    {
         "concept_id": "life_history_young_adult_mentoring",
         "label": "Young-adult financial and non-financial mentoring",
         "role": "e",
@@ -728,6 +754,27 @@ def build_parent_employment_coverage(rows: list[dict]) -> list[dict]:
     return ledger
 
 
+def build_sensitive_history_coverage(rows: list[dict]) -> list[dict]:
+    """Track E7/E8 and G1/G2 without ever importing Codebook frequencies or participant values."""
+    ids = {"life_history_childhood_romantic_relationship",
+           "life_history_childhood_police_custody_and_charge"}
+    mapped = {row["code"]: row for row in rows
+              if row["module"] == "FAMILYINFORMATION" and row["concept_id"] in ids}
+    fields = read_codebook_fields()
+    ledger = []
+    for code in ("e7", "e8", "g1", "g2"):
+        label = fields.get(("FAMILYINFORMATION", code))
+        row = mapped.get(code)
+        if not label or row is None:
+            raise ValueError(f"Sensitive childhood-history Codebook field lacks disposition: {code}")
+        ledger.append({"module": "FAMILYINFORMATION", "code": code, "codebook_label": label,
+                       "disposition": "mapped_metadata_only", "concept_id": row["concept_id"],
+                       "questionnaire_item": row["questionnaire_item"], "rationale": row["caveat"],
+                       "questionnaire_source": row["questionnaire_source"],
+                       "codebook_source": row["codebook_source"]})
+    return ledger
+
+
 def main() -> None:
     rows, concepts = build()
     sibling_coverage = build_sibling_module_coverage(rows)
@@ -735,6 +782,7 @@ def main() -> None:
     family_class_coverage = build_historical_family_class_coverage(rows)
     parent_social_coverage = build_parent_social_context_coverage(rows)
     parent_employment_coverage = build_parent_employment_coverage(rows)
+    sensitive_history_coverage = build_sensitive_history_coverage(rows)
     AUDIT.mkdir(parents=True, exist_ok=True)
     DIST.mkdir(parents=True, exist_ok=True)
     csv_path = AUDIT / "life_history_exposure_crosswalk_v1.csv"
@@ -769,6 +817,11 @@ def main() -> None:
         writer = csv.DictWriter(f, fieldnames=list(parent_employment_coverage[0]), extrasaction="ignore")
         writer.writeheader()
         writer.writerows(parent_employment_coverage)
+    sensitive_history_coverage_path = AUDIT / "life_history_sensitive_history_coverage_2014_v1.csv"
+    with sensitive_history_coverage_path.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=list(sensitive_history_coverage[0]), extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(sensitive_history_coverage)
     print(json.dumps({"concepts": len(concepts), "field_rows": len(rows),
                       "by_role": {role: sum(x["role"] == role for x in rows) for role in ("e", "p")},
                       "by_module": {module: sum(x["module"] == module for x in rows)
@@ -778,12 +831,14 @@ def main() -> None:
                       "historical_family_class_fields_mapped": len(family_class_coverage),
                       "parent_social_context_fields_mapped": len(parent_social_coverage),
                       "parent_employment_fields_mapped": len(parent_employment_coverage),
+                      "sensitive_history_metadata_fields": len(sensitive_history_coverage),
                       "csv": str(csv_path), "json": str(json_path),
                       "sibling_coverage": str(coverage_path),
                       "parent_coverage": str(parent_coverage_path),
                       "family_class_coverage": str(family_class_coverage_path),
                       "parent_social_context_coverage": str(parent_social_coverage_path),
-                      "parent_employment_coverage": str(parent_employment_coverage_path)}, ensure_ascii=False))
+                      "parent_employment_coverage": str(parent_employment_coverage_path),
+                      "sensitive_history_coverage": str(sensitive_history_coverage_path)}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

@@ -26,8 +26,8 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (40, 1029))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 1001, "p": 28})
+        self.assertEqual((len(groups), len(rows)), (42, 1033))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 1005, "p": 28})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
@@ -64,6 +64,11 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(len([row for row in by_concept["life_history_guardian_employment_context"] if row["code"].startswith("c2_")]), 4)
         self.assertEqual(len(by_concept["life_history_childhood_guardian_occupation"]), 2)
         self.assertTrue(all("blank is not No" in row["caveat"] for row in by_concept["life_history_guardian_employment_context"]))
+        self.assertEqual(len(by_concept["life_history_childhood_romantic_relationship"]), 2)
+        self.assertEqual(len(by_concept["life_history_childhood_police_custody_and_charge"]), 2)
+        justice = by_concept["life_history_childhood_police_custody_and_charge"]
+        self.assertTrue(all("not proof of conviction or guilt" in row["caveat"] for row in justice))
+        self.assertFalse(any("OBS:" in " ".join(row.values()) for row in justice))
         self.assertEqual(len(by_concept["life_history_historical_family_class_background"]), 189)
         self.assertEqual({row["module"] for row in by_concept["life_history_historical_family_class_background"]}, {"WEALTHHISTORY"})
         self.assertTrue(all(row["code"] != "c5" for row in by_concept["life_history_historical_family_class_background"]))
@@ -116,6 +121,15 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertNotIn("c1_b2_1", codes)
         unemployment = [row for row in coverage if row["code"].startswith("c2_")]
         self.assertEqual({row["code"] for row in unemployment}, {"c2_a", "c2_a_1", "c2_b", "c2_b_1"})
+
+    def test_sensitive_history_inventory_is_metadata_only_and_preserves_skip_routes(self):
+        rows, _ = builder.build()
+        coverage = builder.build_sensitive_history_coverage(rows)
+        self.assertEqual({row["code"] for row in coverage}, {"e7", "e8", "g1", "g2"})
+        self.assertEqual({row["disposition"] for row in coverage}, {"mapped_metadata_only"})
+        self.assertIn("blank E8 is not No", next(row["rationale"] for row in coverage if row["code"] == "e7"))
+        self.assertIn("blank is not No", next(row["rationale"] for row in coverage if row["code"] == "g1"))
+        self.assertTrue(any("privacy" in row["rationale"] for row in coverage if row["code"] == "g1"))
 
 
 if __name__ == "__main__":

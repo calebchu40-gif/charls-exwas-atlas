@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas 项目范围与剩余工期（2026-10-25修订）
 
+## 2026-10-26 sensitive childhood-history metadata (local)
+
+官方问卷E7–E8与G1–G2新增2个E候选概念、4条元数据字段。亲密关系影响与警方拘留/指控均保留条件路由；逮捕/拘留不称为定罪。后者明确高度敏感，只展示通用字段元数据，不发布参与者值、频数或叙述，任何分析须另做伦理、隐私及披露审查。逐字段台账与审计见[`life_history_sensitive_history_coverage_2014_v1.csv`](life_history_sensitive_history_coverage_2014_v1.csv)及[`life_history_sensitive_history_review_2026-10-26.md`](life_history_sensitive_history_review_2026-10-26.md)。专题本地现为42概念组、1,033字段（E 1,005、P 28），待全套校验与部署。
+
 ## 2026-10-26 caregiver employment re-review (local)
 
 复核2014 C1/C2结构化字段后，对已有的童年抚养人就业/职业概念补充跳题和缺失语义，没有重复建概念。8个字段含工作时长、务农/非农类别、失业及条件性频次；职业部门/岗位/职责的自由文本不纳入公开元数据。字段覆盖表和审计见[`life_history_parent_employment_coverage_2014_v1.csv`](life_history_parent_employment_coverage_2014_v1.csv)和[`life_history_parent_employment_review_2026-10-26.md`](life_history_parent_employment_review_2026-10-26.md)。专项测试通过，等待全套验证及发布。
