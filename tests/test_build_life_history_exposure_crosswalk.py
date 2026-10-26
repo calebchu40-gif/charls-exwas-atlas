@@ -26,8 +26,8 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (90, 2071))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 2025, "p": 46})
+        self.assertEqual((len(groups), len(rows)), (103, 2333))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 2287, "p": 46})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
@@ -126,6 +126,19 @@ CHARLSCodeBook 1 RESIDENCE
             "life_history_masters_education_interruption_detail": 14,
             "life_history_phd_education_pathway": 18,
             "life_history_phd_education_interruption_detail": 14,
+            "life_history_primary_education_continuation_barriers": 13,
+            "life_history_middle_education_continuation_barriers": 13,
+            "life_history_high_education_continuation_barriers": 13,
+            "life_history_adult_education_types": 9,
+            "life_history_adult_literacy_class": 4,
+            "life_history_adult_evening_class": 16,
+            "life_history_career_training_history": 121,
+            "life_history_accelerated_education_course": 4,
+            "life_history_radio_television_university": 11,
+            "life_history_correspondence_education": 16,
+            "life_history_self_study_examination": 16,
+            "life_history_other_adult_education": 25,
+            "life_history_skill_certificate_indicator": 1,
         }
         for concept, count in education_counts.items():
             self.assertEqual(len(by_concept[concept]), count, concept)

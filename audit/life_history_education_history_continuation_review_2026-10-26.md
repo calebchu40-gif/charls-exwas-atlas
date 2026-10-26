@@ -71,3 +71,15 @@ Compared official questionnaire routes and Codebook identities. Added 66 fields 
 Interruptions follow stage-specific E005 selection and include the semester count plus 13 reason selectors. Diploma route, study duration and program count are not treated as proof of a standardized credential. Institution names/locations and open-text details remain excluded. The Codebook's descriptive frequencies were not used.
 
 Education History now has 302 mapped fields of 1,105, 799 substantive fields still deferred, three linkage keys and one version field excluded. Overall Life History catalog: 90 concepts / 2,071 mappings (E 2,025, P 46). No individual values or modeled associations are published.
+
+## Education-continuation barriers and early adult education: E100a–E109
+
+Compared E100a–c and E102–E109 to official questionnaire routes and Codebook identities. Added 193 fields in eight concepts: continuation barriers after primary, middle and high school (13 each); adult-education type checklist (9); adult literacy class timing/duration (4); evening-class attendance/diploma history (16); career training (121); accelerated-course count/duration (4).
+
+The three barrier items are conditional on the highest reported education stage and remain separate because their populations and response denominators differ. E102 is a multi-select checklist including a distinct none selector; E102 defines career training as at least 10 days and excludes apprenticeships. Career training records up to 24 repetitions with year, duration components and payer. Night-school records up to three episodes; diploma follow-ups are conditional. No Codebook frequencies or free-text answers are exposed.
+
+## Additional adult-education routes: E110–E134
+
+Added 69 fields in five concepts: radio/TV university (11), correspondence education (16), self-study examination (16), other adult education (25) and any vocational skill certificate (1). Each named route remains distinct, retains its own repeated slots and diploma skips. “Other education” course names are open text, so duration/diploma fields are not treated as a standardized course type. Skill-certificate dates are deferred because the structured year fields cannot be reliably linked to certificate identity without validating open-text records.
+
+The Education History ledger now has 564 mapped fields out of 1,105; 537 substantive fields remain `deferred_source_review`, three linkage keys and one release version field are excluded. Overall Life History catalog: 103 concepts / 2,333 mappings (E 2,287, P 46). Candidate metadata only; no participant data or association results.

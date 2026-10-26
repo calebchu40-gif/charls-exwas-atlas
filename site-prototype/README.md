@@ -1,3 +1,5 @@
+2026-10-26本地待发布：完成继续教育障碍、成人教育类别、夜校/培训/电大/函授/自考等继续教育及证书指示变量，新增262条字段映射。Education History累计审查564/1,105字段，537个实质字段待核。总目录103概念、2,333映射（E 2,287、P 46）。成人教育路径和条件文凭分开，重复培训与自由文本限制见审计 udit/life_history_education_history_continuation_review_2026-10-26.md。本地app v153 / JSON v20，部署待验证。
+
 2026-10-26本地待发布：新增硕士、博士学位路径及阶段中断66条字段映射；保留学位类型、学习方式、文凭支路及路由差异。Education History累计审查302/1,105字段，799个实质字段待核。总目录90概念、2,071映射（E 2,025、P 46）。审计见 udit/life_history_education_history_continuation_review_2026-10-26.md。本地app v152 / JSON v19，部署待验证。
 
 2026-10-26本地待发布：大学专科、本科路径新增119条字段映射，分别保留就读方式、专业类别、毕业/文凭、双学位槽位、1971–1977年工农兵学员限定路由和中断原因。Education History累计映射264/1,105字段，837个实质字段待核。总目录86概念、2,005映射（E 1,959、P 46）。审计见 `audit/life_history_education_history_continuation_review_2026-10-26.md`。提交 `645b04a` 已上线为 app v151 / JSON v18；线上86条JSON记录且SHA-256与本地一致。
