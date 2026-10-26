@@ -25,3 +25,8 @@ The 2014 Life History release has no survey weight and is not part of the regula
 ## Rebuild evidence
 
 The metadata generator assigned all 1,920 `DEMOGRAPHICBACKGROUNDS` Codebook fields a unique disposition. After this review, the ledger has 1,251 mapped candidates, 199 deferred sensitive-relative fields, and the remaining categories unchanged. The local Life History JSON contains 195 concepts and 6,103 field mappings (E=6,042; P=61). These are catalog counts, not analytic sample sizes or association results. Builder output and generated ledger were inspected; the full automated test suite was not run in this turn.
+
+
+## Publication verification
+
+Commit `6539868` was published as app v191 / Life History JSON v57. GitHub Validate #645 and Pages Deploy #323 succeeded. Live homepage and JSON both returned HTTP 200; the served JSON had 195 concepts / 6,103 field rows (E=6,042, P=61) and contained all five respondent-specific fields.
