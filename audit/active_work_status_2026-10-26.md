@@ -1,5 +1,7 @@
 # 2026-10-27 continuation — clarify Wave 1 published denominators
 
+Remote verification follow-up: GitHub Actions Validate run [#700](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40363636348) for commit `f109217` completed successfully (validate and synthetic-survey-engine jobs). This supersedes the earlier note that the run had not yet surfaced.
+
 Official 2011 sources do not use a single interchangeable denominator: the National Baseline and Blood User Guides report 17,708 interviewed/blood-target members; the Codebook reports 17,705 observations for the person `ID` field and 17,708 for individual-weight fields. The official 2011 page lists Codebook, All Data, PSU, Weight and Blood separately. A difference between these counts must be reconciled by source file and respondent key, not called a data error or passed by simple row-count equality.
 
 Updated `scripts/audit_2011_pilot_design_frame.py`: it now records published counts and makes `frame_denominator_reconciled` remain false until authorized source files are joined/reconciled. The pinned-environment aggregate preflight was rerun; its diagnostic comparisons are saved only under the protected root. Formal model gate remains `not_passed`. No participant-level values, IDs, or estimates were published. Full 571-test suite, JS syntax, public payload validation, Python compilation, and diff checks passed. Audit: `audit/wave1_published_denominator_reconciliation_2026-10-27.md`.
