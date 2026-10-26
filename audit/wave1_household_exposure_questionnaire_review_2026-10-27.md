@@ -32,7 +32,7 @@ The source of the exact 2011 wording is the official August 2011 Baseline Househ
 3. Define each item’s valid response, special/missing codes, and routed denominator from the actual release metadata. Keep structural skips separate from refusals, don't-knows, and ordinary missingness.
 4. Reconcile the K=150 items to the blood-analysis frame and weight eligibility. For `i021`, additionally reconcile the `i020=No` route and blood-weight support; report its target domain precisely.
 5. Freeze contrast reference levels, primary adjustment set, missingness rules, and the complete K=150/K=90 registers before inspecting association results. Preserve all planned hypotheses, marking non-estimable pairs with reasons.
-6. Only after pilot validity/reproducibility, source/frame, and design gates pass, implement a separate protected K=150/K=90 runner. Do not repurpose the existing K=105 runner or interpret its batch q-values as final atlas-wide correction.
+6. A separate protected K=150/K=90 runner is implemented at `scripts/run_2011_household_environment_scaleup.py`; keep it distinct from the existing K=105 runner. Before execution, pass pilot validity/reproducibility, exact release source/frame/design, exposure-code/route/weight, and independently reviewed model-configuration gates. Do not interpret batch q-values as final atlas-wide correction.
 
 ## Source locations
 

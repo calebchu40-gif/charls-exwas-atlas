@@ -393,18 +393,34 @@ def _fit_exposure_group(data: Any, config: dict[str, Any], analyte: dict[str, st
         result = by_term.get(term)
         if result is None:
             continue
+        estimate = _finite(result.get("estimate"))
+        standard_error = _finite(result.get("std_err"))
+        ci_lower = _finite(result.get("conf_low"))
+        ci_upper = _finite(result.get("conf_high"))
+        engine_p_value = _finite(result.get("p_value"))
+        design_df = _finite(result.get("df"))
+        inference_complete = (
+            estimate is not None
+            and standard_error is not None and standard_error > 0
+            and ci_lower is not None and ci_upper is not None and ci_lower <= ci_upper
+            and engine_p_value is not None and 0 <= engine_p_value <= 1
+            and design_df is not None and design_df > 0
+        )
         estimates[row["contrast_id"]] = {
-            "estimate": _finite(result.get("estimate")),
-            "standard_error": _finite(result.get("std_err")),
-            "ci_lower": _finite(result.get("conf_low")),
-            "ci_upper": _finite(result.get("conf_high")),
-            "p_value": _finite(result.get("p_value")),
-            "design_df": _finite(result.get("df")),
+            "estimate": estimate,
+            "standard_error": standard_error,
+            "ci_lower": ci_lower,
+            "ci_upper": ci_upper,
+            # Only complete design-based inference enters multiplicity
+            # adjustment. Preserve an engine p-value privately for diagnosis.
+            "p_value": engine_p_value if inference_complete else None,
+            "engine_p_value_private": engine_p_value,
+            "design_df": design_df,
             "weighted_outcome_sd": sd,
             "estimate_scale": "standard_deviation_of_transformed_outcome",
-            "estimate_transformed_unit_scale": _finite(result.get("estimate")) * sd if _finite(result.get("estimate")) is not None else None,
-            "se_transformed_unit_scale": _finite(result.get("std_err")) * sd if _finite(result.get("std_err")) is not None else None,
-            "fit_status": "estimated" if _finite(result.get("p_value")) is not None else "numerically_unavailable",
+            "estimate_transformed_unit_scale": estimate * sd if estimate is not None else None,
+            "se_transformed_unit_scale": standard_error * sd if standard_error is not None else None,
+            "fit_status": "estimated" if inference_complete else "incomplete_inference",
             "n_complete_private": pair.height,
             "n_psu_private": n_psu,
             "support_by_exposure_private": json.dumps(support, separators=(",", ":")),
@@ -493,7 +509,8 @@ def run_scaleup() -> dict[str, Any]:
                         **(estimate or {
                             "estimate": None, "standard_error": None, "ci_lower": None,
                             "ci_upper": None, "p_value": None, "q_value_by_batch": None,
-                            "p_bonferroni_batch": None, "fit_status": qa.get("status", "not_estimable"),
+                            "p_bonferroni_batch": None,
+                            "fit_status": "term_not_returned_by_engine" if qa.get("status") == "fit_complete" else qa.get("status", "not_estimable"),
                             "n_complete_private": qa.get("n_complete"),
                             "n_psu_private": qa.get("n_psu"),
                         }),
