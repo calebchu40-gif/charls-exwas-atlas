@@ -56,4 +56,4 @@ The remaining F-series includes repeated job and episode details, including job 
 
 ## Reproducibility
 
-`build_life_history_exposure_crosswalk.py` generates the candidate map, Life History JSON and exhaustive module ledger. The local build reports 127 concepts / 4,309 mappings overall (E 4,263, P 46), with 1,468 mapped WORKHISTORY source rows. F120/F120a was published as app v165 / JSON v32 (commit `876d576`), with live versions and remote/local JSON hash verified. The F118/F123c/F126a/F126b/F127b follow-up batch is prepared locally as app v166 / JSON v33; deployment is pending.
+`build_life_history_exposure_crosswalk.py` generates the candidate map, Life History JSON and exhaustive module ledger. The local build reports 127 concepts / 4,309 mappings overall (E 4,263, P 46), with 1,468 mapped WORKHISTORY source rows. F120/F120a was published as app v165 / JSON v32 (commit `876d576`), with live versions and remote/local JSON hash verified. The F118/F123c/F126a/F126b/F127b follow-up batch is published as app v166 / JSON v33 in commit `663eccd`; live homepage and loader tags, last-year fields, and remote/local JSON SHA-256 were verified.

@@ -1,6 +1,6 @@
-## 2014 WORKHISTORY current-status, last-year intensity and benefits batch (local pending publication)
+## 2014 WORKHISTORY current-status, last-year intensity and benefits batch (app v166 verified)
 
-Added F118 current-status for 15 recorded job slots and extended reviewed concepts with 120 F123c/F126b/F127b last-year intensity fields plus 217 F126a last-year employer-benefit, value and childcare fields. Starting/middle/current-last-year phases remain distinct in metadata; routes by F_3 and duration are retained. Local totals: 127 concepts / 4,309 mappings (E 4,263, P 46), 1,468 WORKHISTORY fields mapped, 531 substantive fields deferred. Prepared app v166 / JSON v33; local public-payload and JavaScript checks pass; public remains v165 / JSON v32.
+Added F118 current-status for 15 recorded job slots and extended reviewed concepts with 120 F123c/F126b/F127b last-year intensity fields plus 217 F126a last-year employer-benefit, value and childcare fields. Starting/middle/current-last-year phases remain distinct in metadata; routes by F_3 and duration are retained. Local totals: 127 concepts / 4,309 mappings (E 4,263, P 46), 1,468 WORKHISTORY fields mapped, 531 substantive fields deferred. Published app v166 / JSON v33 in commit `663eccd`; live homepage/app/JSON versions, new last-year fields and remote/local JSON SHA-256 verified.
 
 ## 2014 WORKHISTORY F120/F120a job-cessation batch (app v165 verified)
 
