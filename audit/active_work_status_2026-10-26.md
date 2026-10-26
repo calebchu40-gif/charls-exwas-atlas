@@ -1,8 +1,8 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
-## 2014 parental social-context batch (local, validated; pending publication)
+## 2014 parental social-context batch (commit `d277385`, live verified)
 
-Official C1_g1–g3 questionnaire/Codebook review adds four E-role candidate concepts and 36 family-context fields: parent/caregiver party membership, minority status, selected-relative ethnicity group, and religious belief. C1_g3 option 8's English/Chinese caregiver reference conflict remains explicit in metadata and audit. New coverage ledger: [`life_history_parent_social_context_coverage_2014_v1.csv`](life_history_parent_social_context_coverage_2014_v1.csv); review: [`life_history_parent_social_context_review_2026-10-26.md`](life_history_parent_social_context_review_2026-10-26.md). The local Life History directory is 40 concepts / 1,029 source fields (E 1,001, P 28). All 530 tests, public payload validation, exact 92 analysis-lock check, JS syntax and diff check pass; this batch has not yet been pushed or deployed.
+Official C1_g1–g3 questionnaire/Codebook review adds four E-role candidate concepts and 36 family-context fields: parent/caregiver party membership, minority status, selected-relative ethnicity group, and religious belief. C1_g3 option 8's English/Chinese caregiver reference conflict remains explicit in metadata and audit. New coverage ledger: [`life_history_parent_social_context_coverage_2014_v1.csv`](life_history_parent_social_context_coverage_2014_v1.csv); review: [`life_history_parent_social_context_review_2026-10-26.md`](life_history_parent_social_context_review_2026-10-26.md). The local Life History directory is 40 concepts / 1,029 source fields (E 1,001, P 28). All 530 tests, public payload validation, exact 92 analysis-lock check, JS syntax and diff check pass. Commit `d277385` is pushed; Pages live checks return HTTP 200, `app.js?v=140`, and 40 concepts / 1,029 fields including the parental religious-context concept.
 
 ## 2014 historical family-class items (commit `3d6a0a4`, live verified)
 
