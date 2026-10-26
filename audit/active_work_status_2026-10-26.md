@@ -1,10 +1,10 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
-## Local update — Wave 1 CA009 review-state persistence (not yet published)
+## Local update — Wave 1 CA009 review-state persistence (published in commit `db021cd` and verified live)
 
 The full metadata finalization completed 159/159 steps in 7.8 minutes. Local E/P/C shards are 6,331/2,133/1,048, with 1,625 E/P candidate concepts and 8,341 E/P concept-source mappings. Wave-specific metadata co-availability pairs are 146,780/142,774/143,854/106,204/21,630 for 2011/2013/2015/2018/2020; these are not sample sizes or association results. Generic pending E/P and C label states are both zero; formal association models remain 0.
 
-This rebuild also fixed a persistence-order bug: the master catalogue had been written before the Wave 1 CA009 review override. The four 2011 parent-slot education rows now retain the exact caveat that questionnaire response categories were transcribed, but Codebook field identity and release coding were not independently verified; frequencies were omitted. The slot-to-relative mapping remains unresolved, so these are discovery candidates only and not eligible for respondent-level analysis. Verified the four rows match between the candidate CSV and website E shard. `git diff --check` passes. This local build has not yet been committed or deployed; current live site remains v134.
+This rebuild also fixed a persistence-order bug: the master catalogue had been written before the Wave 1 CA009 review override. The four 2011 parent-slot education rows now retain the exact caveat that questionnaire response categories were transcribed, but Codebook field identity and release coding were not independently verified; frequencies were omitted. The slot-to-relative mapping remains unresolved, so these are discovery candidates only and not eligible for respondent-level analysis. Verified the four rows match between the candidate CSV and website E shard. `git diff --check` passes. Commit `db021cd` is deployed; the live JSON has been checked to contain all four rows with the retained caveat. The application code cache identifier remains v134 because only data and metadata changed.
 
 ## Latest full build and healthcare-access mapping (app v134 live; verified 2026-10-26)
 
