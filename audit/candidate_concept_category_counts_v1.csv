@@ -8,7 +8,7 @@ e,family and intergenerational context,32,42,39,True
 e,food and household environment,29,161,161,True
 e,pandemic and public-health context,25,52,52,True
 e,internal biomarker,16,32,32,True
-e,healthcare access,7,109,109,True
+e,healthcare access,8,126,126,True
 e,early-life and family socioeconomic context,6,6,4,True
 e,life-course and reproductive history,2,8,8,True
 e,behavioral exposures,1,2,2,True
@@ -19,7 +19,7 @@ p,physical function,38,266,260,True
 p,chronic disease,33,248,248,True
 p,pandemic-related outcomes,25,25,25,True
 p,cognition,24,338,338,True
-p,healthcare access,22,217,217,True
+p,healthcare access,23,234,234,True
 p,biochemistry,16,32,32,True
 p,mental health,11,52,52,True
 p,anthropometric,5,24,15,True

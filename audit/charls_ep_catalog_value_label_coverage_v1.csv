@@ -14,7 +14,7 @@ e,family and intergenerational context,child hukou and location history,13,13,11
 e,family and intergenerational context,"offspring residential, social, and socioeconomic context",19,19,17
 e,family and intergenerational context,sibling record context,6,3,6
 e,food and household environment,"diet, food security, housing and utilities",161,161,104
-e,healthcare access,"insurance, outpatient and inpatient utilization",109,109,51
+e,healthcare access,"insurance, outpatient and inpatient utilization",126,126,68
 e,housing and built environment,dwelling conditions and household property,477,477,245
 e,housing and built environment,residential setting,3,3,3
 e,internal biomarker,internal biomarker exposure candidate; not an exogenous environmental chemical,32,32,0
@@ -141,7 +141,7 @@ p,chronic disease ancillary,reported disease treatment / antidepressant medicati
 p,chronic disease ancillary,reported disease treatment / doctor-diagnosed recurrent stroke,3,3,3
 p,chronic disease ancillary,reported disease treatment / month of most recent stroke,1,1,0
 p,chronic disease ancillary,reported disease treatment / none-of-the-above treatment option,1,1,1
-p,chronic disease ancillary,reported disease treatment / wave-specific treatment response,261,261,229
+p,chronic disease ancillary,reported disease treatment / wave-specific treatment response,261,261,261
 p,chronic disease ancillary,reported disease treatment / wave-specific treatment response; option index only,10,10,10
 p,chronic disease ancillary,reported disease treatment / year of most recent stroke,3,3,0
 p,cognition,memory and cognitive performance,338,338,305
@@ -151,7 +151,7 @@ p,health and symptoms,"self-rated health, pain, and symptoms",111,111,111
 p,health and symptoms,"self-rated health, pain, symptoms, and test eligibility",53,53,53
 p,health and symptoms,subjective life expectancy,5,5,5
 p,healthcare access,COVID-period delayed or unmet medical care,15,15,15
-p,healthcare access,"insurance, outpatient and inpatient utilization",202,202,51
+p,healthcare access,"insurance, outpatient and inpatient utilization",219,219,68
 p,mental health,depressive symptoms and emotional wellbeing,52,52,52
 p,mortality and end-of-life outcomes,date of death components,5,5,0
 p,mortality and end-of-life outcomes,final illness-to-death interval,2,2,1

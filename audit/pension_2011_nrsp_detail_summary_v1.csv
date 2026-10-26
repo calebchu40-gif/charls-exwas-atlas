@@ -1,7 +1,7 @@
 ﻿concept_id,concept_label,fields,source_codes,meaning
 pension_annual_contribution_amount,自报年度养老金缴费金额,2,fn074_1;fn074_3,NRSP annual contribution amount under annual-payment option
 pension_benefit_start_date_components,开始领取养老金待遇时间组成字段,2,fn078_1;fn078_2,Calendar year when NRSP benefit receipt began
-pension_contribution_payer_new_rural_social_program_or_current,养老金缴费承担来源：新型农村社会养老保险（当前/该计划）,1,fn076,Who pays for NRSP participation
+pension_contribution_payer_new_rural_social_program_or_current,新农保缴费承担者,1,fn076,Who pays for NRSP participation
 pension_lump_sum_contribution_amount,自报一次性养老金缴费金额,1,fn074_2,NRSP lump-sum contribution amount
 pension_new_rural_participation_start_date_components,新农保首次参保年月,2,fn073_1;fn073_2,Calendar year of first NRSP coverage
 pension_required_contribution_years,养老金计划要求缴费年限,1,fn075,Years of contribution required to receive NRSP benefits

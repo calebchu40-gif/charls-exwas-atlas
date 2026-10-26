@@ -1,10 +1,18 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
+## Latest full build and healthcare-access mapping (local app v134; publication pending)
+
+The full source-mapping pipeline completed 230/230 steps in 8.4 minutes. Current local E/P/C shards are 6,327/2,133/1,048; the atlas contains 1,624 E/P candidate concepts (E=1,318, P=332 including 26 dual-role concepts), 8,337 E/P concept-source mappings, and 223 C metadata mappings in the complete concept-source index. The candidate-pair index reports 146,566/142,774/143,854/106,204/21,630 wave-level metadata co-availability pairs for 2011/2013/2015/2018/2020. These counts are catalogue metadata only, not analytic Ns or results. Generic pending value-label rows are zero; the exact 92 analysis locks remain unchanged; formal association models remain 0.
+
+Added the plan-conditional supplemental-health-insurance candidate concept to the healthcare access catalogue: 17 exact source fields across 2011, 2013 and 2018, with the 2011/2013 repeated plan slots, the 2018 skips for plan types 7/8, and 1=Yes/2=No labels retained. No 2015 main-interview equivalent was inferred, and the 2020 exit-interview field was excluded. The source audit and build/test rules are in [`healthcare_access_definition_review_v1.md`](healthcare_access_definition_review_v1.md), `scripts/build_healthcare_access_crosswalk.py`, `scripts/enrich_healthcare_access_labels.py`, and `tests/test_health_insurance_supplemental_mapping.py`.
+
+Verification after synchronization: all 526 Python tests pass; public-payload validation, exact 92-lock validation, JavaScript syntax and `git diff --check` pass. The refreshed README and value-label queue now match the generated counts. GitHub Pages is still verified only through app v132; v134 remains local and awaits commit, remote checks, deployment and live payload verification. No participant records or frequency summaries were used.
+
 ## Full 2011 community inventory and JF003 expansion (local app v134; pending publication)
 
 Reconciled all 719 unique fields in the sanitized 2011 community inventory: 652 map to questionnaire-anchored community-context E candidates, 65 are explicit C-only source/measurement metadata, and `communityID`/`sub_commuid` are excluded linkage keys. Added 32 JF003 facility-location hierarchy fields as a separate community healthcare-access concept; category labels preserve facility slots and four conditional geography levels and contain no frequencies. C-only additions include Part H meeting/informant fields and open text, Part J informant and Codebook-only credit fields, and Part K interviewer observation. The full coverage matrix and caveats are in [`community_2011_full_inventory_coverage_review_2026-10-26.md`](community_2011_full_inventory_coverage_review_2026-10-26.md).
 
-The 159-step build completed in 7.7 minutes. Current local shards are E/P/C=6,310/2,116/1,048; E/P concepts=1,623 (E=1,317, P=331, including dual-role); E/P concept-source mappings=8,320; 2011–2020 candidate-pair metadata co-availability=145,669/141,920/143,854/105,493/21,630. These co-availability counts are not analytic Ns or results. The 92 exact analysis locks remain unchanged; formal association models remain 0. Source crosswalk and C metadata are built, and 719-field coverage assertions pass. The prior full test run exposed four expected synchronization updates (Chinese C subcategory labels, baseline community concept count, directory KPI snapshots); those fixes are in progress before final validation and push.
+The 159-step community-focused build snapshot that preceded the full 230-step rebuild is historical; the latest counts and verification state are recorded above.
 
 ## Community Parts G/I source coverage (local build v133; pending publication)
 

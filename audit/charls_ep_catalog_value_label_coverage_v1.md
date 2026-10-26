@@ -2,8 +2,8 @@
 
 更新：2026-10-26。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
-- 最终E/P目录行：8,426；不同波次—字段码：8,213。一个字段可对应多个候选类别/角色。
-- 有非空标签文本的E/P目录行：3,893；不同波次—字段码：3,812。连续测量、计数值及测量流程字段可已审但不需要离散标签。
+- 最终E/P目录行：8,460；不同波次—字段码：8,230。一个字段可对应多个候选类别/角色。
+- 有非空标签文本的E/P目录行：3,959；不同波次—字段码：3,861。连续测量、计数值及测量流程字段可已审但不需要离散标签。
 - 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：0。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -19,7 +19,7 @@
 |e|environmental perception|1|1|1|1|
 |e|family and intergenerational context|42|39|35|4|
 |e|food and household environment|161|161|104|1|
-|e|healthcare access|109|109|51|1|
+|e|healthcare access|126|126|68|1|
 |e|housing and built environment|480|480|248|2|
 |e|internal biomarker|32|32|0|1|
 |e|life-course and reproductive history|8|8|0|1|
@@ -30,10 +30,10 @@
 |p|biochemistry|32|32|0|1|
 |p|blood pressure|54|27|0|1|
 |p|chronic disease|248|248|240|1|
-|p|chronic disease ancillary|664|664|488|70|
+|p|chronic disease ancillary|664|664|520|70|
 |p|cognition|338|338|305|1|
 |p|health and symptoms|177|177|171|5|
-|p|healthcare access|217|217|66|2|
+|p|healthcare access|234|234|83|2|
 |p|mental health|52|52|52|1|
 |p|mortality and end-of-life outcomes|9|9|2|3|
 |p|pandemic-related outcomes|25|25|22|1|
@@ -66,6 +66,7 @@
 |字段标签已核；代码本呈现多选类别频数，未能从摘录确认未选/否的底层存储码|42|
 |official selected-option label; checkbox slot, absence is not a negative response|42|
 |official Codebook identifies selected activity/device option; respondent-level storage is unresolved; unselected state and eligible denominator are unresolved; no response-value labels assigned|41|
+|官方代码本逐值类别标签已核；按选中保险计划条件提问|34|
 |official questionnaire/Codebook field and item identity reviewed; continuous date component; release coding and analysis eligibility pending|33|
 |continuous component, not a categorical code; component unit reviewed against wave-specific official codebook|32|
 |continuous measure metadata available; see description/crosswalk|32|

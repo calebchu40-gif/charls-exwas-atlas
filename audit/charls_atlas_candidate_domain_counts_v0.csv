@@ -1,5 +1,5 @@
 ﻿epcf,category,subcategory,source_field_wave_rows,distinct_source_codes,wave_count
-c,automated covariate search hit,keyword discovery only; not a reviewed covariate or adjustment recommendation,328,231,5
+c,automated covariate search hit,keyword discovery only; not a reviewed covariate or adjustment recommendation,339,238,5
 c,covariate candidate,birth-date source and age derivation metadata,5,5,2
 c,measurement metadata,2011 proxy interview and Section E assistance context,3,3,1
 c,measurement metadata,2018 employer pension contribution amount/share unit selector,1,1,1
@@ -101,10 +101,6 @@ c,measurement metadata,unstructured other-use response text,4,3,2
 c,measurement metadata,unsupported prior-wave disease-awareness slots,15,15,1
 c,mortality and end-of-life outcomes,mortality date calendar interpretation,2,1,2
 c,source-reviewed chronic-disease timing metadata,reported diagnosis/knowledge age metadata,56,14,4
-c,source-reviewed context metadata,alcohol beverage-type selector,3,3,1
-c,source-reviewed context metadata,past-year alcohol threshold and route,3,2,3
-c,source-reviewed context metadata,prior-wave alcohol history carry-forward metadata,1,1,1
-c,source-reviewed context metadata,retrospective alcohol history and route,4,1,4
 c,source-reviewed demographic metadata,conditional gender reconfirmation input,1,1,1
 c,source-reviewed demographic metadata,confirmed gender derivation,1,1,1
 c,source-reviewed demographic metadata,interviewer gender recode,1,1,1
@@ -182,7 +178,7 @@ e,social protection,social-pension family participation/expected receipt/current
 e,social protection,string-coded years since firm-pension transfer,2,2,1
 e,social protection,threshold-specific pension expected-benefit bracket response sequence,8,8,1
 e,social protection,years enrolled in the named pension plan,1,1,1
-"e,p",healthcare access,"insurance, outpatient and inpatient utilization",109,66,5
+"e,p",healthcare access,"insurance, outpatient and inpatient utilization",126,77,5
 p,anthropometric,body size and anthropometry,24,5,3
 p,biochemistry,blood and urine laboratory measures,32,32,2
 p,blood pressure,blood pressure and pulse,54,9,3

@@ -48,6 +48,10 @@ def enrich(row):
             mapping_status = "Field label verified; underlying unselected storage code not confirmed"
             if "Codebook lists category-specific selected responses" not in semantics:
                 semantics += " Codebook lists category-specific selected responses but does not establish a safe common numeric No code in this text extract; preserve raw selection fields and verify release formats before recoding."
+    elif cid == "health_insurance_supplemental_coverage":
+        labels = "1=Yes; 2=No"
+        status = "官方代码本逐值类别标签已核；按选中保险计划条件提问"
+        mapping_status = "Official wave questionnaire/codebook labels checked; plan-slot routing and structural missingness retained"
     elif cid == "insurance_history_2015":
         labels = "1=Yes; 2=No"
         status = "代码本逐值标签已核"
@@ -82,7 +86,7 @@ def enrich(row):
         elif cid == "pandemic_delayed_care_reason":
             semantics = "2020 English Questionnaire DA012: select-all reasons for delay/not obtaining care, asked only after DA009=Yes. For each item, 0=No and the matching option number=Yes."
 
-    if labels and w != "2020":
+    if labels and w != "2020" and cid != "health_insurance_supplemental_coverage":
         mapping_status = "Official value labels transcribed; wave-specific wording/routing and harmonization still require review"
         if semantics.startswith("See source label;"):
             semantics = "Official codebook categories are listed in value_labels; question wording, routing and cross-wave comparability remain wave-specific."

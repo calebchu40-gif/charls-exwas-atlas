@@ -13,7 +13,7 @@
 |e|food and household environment|29|161|161|
 |e|pandemic and public-health context|25|52|52|
 |e|internal biomarker|16|32|32|
-|e|healthcare access|7|109|109|
+|e|healthcare access|8|126|126|
 |e|early-life and family socioeconomic context|6|6|4|
 |e|life-course and reproductive history|2|8|8|
 |e|behavioral exposures|1|2|2|
@@ -24,7 +24,7 @@
 |p|chronic disease|33|248|248|
 |p|pandemic-related outcomes|25|25|25|
 |p|cognition|24|338|338|
-|p|healthcare access|22|217|217|
+|p|healthcare access|23|234|234|
 |p|biochemistry|16|32|32|
 |p|mental health|11|52|52|
 |p|anthropometric|5|24|15|
@@ -32,4 +32,4 @@
 |p|blood pressure|3|54|27|
 |p|mortality and end-of-life outcomes|3|9|9|
 
-总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1623个（E=1317、P=331，25个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。
+总量（去重）以 `audit/directory_scope_counts_v1.json` 为准：E/P候选概念共1624个（E=1318、P=332，26个兼具角色）。本表为检索分类浏览，不是正式分析变量冻结表。

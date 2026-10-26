@@ -7,6 +7,7 @@ ROOT=Path(__file__).resolve().parents[1]
 src=pd.read_csv(ROOT/'audit/raw_variable_catalog_v1.csv',dtype=str).fillna('')
 concepts=[
  ('health_insurance_type_status','Health insurance type/status (wave-specific)','Healthcare access / socioeconomic context','Insurance instrument and coding change by wave. 2015 ea001_w3_2_* only indicates continued coverage for plans reported in the previous wave; it is not a complete current-plan inventory. 2020 ba017 is one categorical type field. Do not sum overlapping plan types without checking coding.'),
+ ('health_insurance_supplemental_coverage','Supplemental health insurance coverage (plan-conditional)','Healthcare access / socioeconomic context','Supplemental coverage is asked conditionally for eligible selected plans, and availability differs by wave: 2011/2013 repeat the item by plan slot and 2018 uses one follow-up item with plan-specific skip rules. Treat as a separate, wave-specific candidate; do not infer No for unasked plans or treat the 2020 deceased-respondent Exit_Module field as the respondent’s own coverage.'),
  ('insurance_history_2015','Validation and between-wave insurance history (2015)','Healthcare access / socioeconomic context','2015-only follow-up fields for prior-wave insurance: verify the previous-wave record and whether the respondent held the preloaded insurance at any time between interviews. The between-wave item is not current-at-interview coverage.'),
  ('outpatient_use','Outpatient care use (recent recall)','Healthcare utilization','Recent-use measure wording/recall varies: hospital last month, past four weeks, and 2018 accept outpatient care. 2020 main respondent module lacks a directly matched routine outpatient-use field in the current catalog; exit interviews describe deceased respondents and are excluded from this living-respondent series.'),
  ('outpatient_visits_by_facility','Outpatient visits by facility type','Healthcare utilization','Counts are facility-specific slots conditional on selected/visited provider types. Facility categories and recall windows may differ by wave. Do not treat blank slots as zero without routing rules.'),
@@ -25,6 +26,9 @@ def keep(cid,w,v):
           (w=='2015' and v.startswith('ea001_w3_2_')) or
           (w=='2018' and v.startswith('ea001_w4_s')) or
           (w=='2020' and v=='ba017'))
+ if cid=='health_insurance_supplemental_coverage':
+  return ((w in ['2011','2013'] and __import__('re').fullmatch(r'ea002_\d+_',v) is not None) or
+          (w=='2018' and v=='ea002'))
  if cid=='insurance_history_2015': return w=='2015' and (v.startswith('ea001_w3_1_') or v.startswith('ea001_w3_3_'))
  if cid=='outpatient_use': return w in ['2011','2013','2015','2018'] and v=='ed001'
  if cid=='outpatient_visits_by_facility': return w in ['2011','2013','2015','2018'] and __import__('re').fullmatch(r'ed005_\d+_',v) is not None
@@ -39,12 +43,16 @@ def keep(cid,w,v):
 def semantics(cid,w):
  if w=='2011':
   refs={'health_insurance_type_status':'EA001 is a multi-select current health-insurance policy-holder/primary-beneficiary list; keep selected plan indicators separate.',
+        'health_insurance_supplemental_coverage':'EA002 asks whether the selected insurance plan has supplemental insurance; preserve the plan-slot suffix and the conditional route.',
         'outpatient_use':'ED001 asks about outpatient care during the last month, including facility visits and home visits by a health worker/doctor; ED002 adds a separate recent-illness route.',
         'outpatient_visits_by_facility':'ED004 selects facility types visited for outpatient treatment in the last 4 weeks; ED005 asks visit counts in the last month for each selected facility. ED006 is conditional on total ED005 >1.',
         'inpatient_use_past_year':'EE003 asks whether inpatient care was received in the past year; No skips to EF001.',
         'inpatient_count_past_year':'EE004 asks the number of inpatient-care episodes in the past year; one episode skips to EE007.',
         'hospital_nights_last_stay':'EE016 asks nights hospitalized for the most recent stay; it is not annual inpatient nights.'}
   return refs.get(cid,'2011 codebook/catalog candidate; check the baseline questionnaire route before analysis.')
+ if cid=='health_insurance_supplemental_coverage' and w=='2011': return 'EA002 is asked by selected insurance-plan slot; codebook response labels are 1=Yes and 2=No. The field is conditional on the plan slot and is not a person-level all-plans binary.'
+ if cid=='health_insurance_supplemental_coverage' and w=='2013': return 'EA002 is asked for insurance selected in EA001; codebook response labels are 1=Yes and 2=No. Preserve each plan slot; missingness for unselected plans is structural, not No.'
+ if cid=='health_insurance_supplemental_coverage' and w=='2018': return 'EA002 asks about supplemental insurance (e.g., critical illness insurance) for eligible selected plans; questionnaire routes selected plan types 7 and 8 past EA002. Codebook response labels are 1=Yes and 2=No. This is conditional plan-level metadata, not a complete person-level coverage indicator.'
  if cid=='health_insurance_type_status' and w=='2011': return '2011 EA001 is a multi-select plan list; no-insurance cannot be selected with another plan. Retain original plan indicators.'
  if cid=='health_insurance_type_status' and w=='2013': return '2013 EA001 is a multi-select primary-beneficiary plan list; no-insurance cannot be selected with a specific plan. Keep plan categories separate.'
  if cid=='health_insurance_type_status' and w=='2015': return 'EA001_W3_2_* only asks whether the respondent still held each plan preloaded from the prior wave; it does not enumerate all current plans.'
@@ -62,13 +70,14 @@ def semantics(cid,w):
  return 'See source label; verify exact wave wording, recall interval, value labels and routing in official questionnaire/codebook.'
 def question_ref(cid,w):
  if w=='2011':
-  pages={'health_insurance_type_status':'Word p.97, EA001', 'outpatient_use':'Word p.100, ED001–ED002',
+  pages={'health_insurance_type_status':'Word p.97, EA001', 'health_insurance_supplemental_coverage':'Word p.97, EA002 by selected plan slot', 'outpatient_use':'Word p.100, ED001–ED002',
          'outpatient_visits_by_facility':'Word p.100, ED004–ED006',
          'inpatient_use_past_year':'Word p.105, EE003', 'inpatient_count_past_year':'Word p.105, EE004',
          'hospital_nights_last_stay':'Word p.107, EE016'}
   return 'sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; '+pages.get(cid,'see question ID in the official baseline questionnaire')
  if w=='2013':
   if cid=='health_insurance_type_status': return '2013 Questionnaire, p.110 (Part I Medical Insurance; primary beneficiary, select all that apply).'
+  if cid=='health_insurance_supplemental_coverage': return '2013 Questionnaire, p.110 (EA002 follow-up to selected EA001 insurance plan slots).'
   if cid=='outpatient_use' or cid=='outpatient_visits_by_facility': return '2013 Questionnaire, pp.116–118 (outpatient recent-month use and provider-specific counts).'
   if cid=='inpatient_use_past_year' or cid=='inpatient_count_past_year': return '2013 Questionnaire, pp.121–122 (past-year inpatient occurrence and episode count); Part II excludes proxy responses.'
   return '2013 Questionnaire, pp.122–124 (last-stay details including nights); Part II excludes proxy responses.'
@@ -79,6 +88,7 @@ def question_ref(cid,w):
   return '2015 Questionnaire, pp.110–112 (last-stay details including nights); Part II excludes proxy responses.'
  if w=='2018':
   if cid=='health_insurance_type_status': return '2018 Questionnaire, pp.150–152 (current insurance, select all that apply).'
+  if cid=='health_insurance_supplemental_coverage': return '2018 Questionnaire, p.151 (EA002; selected-plan route and explicit skips for plan types 7 and 8).'
   if cid=='outpatient_use' or cid=='outpatient_visits_by_facility': return '2018 Questionnaire, pp.154–156 (last-month outpatient use, excludes physical examinations; facility categories reference last 4 weeks).'
   if cid=='inpatient_use_past_year' or cid=='inpatient_count_past_year': return '2018 Questionnaire, pp.156–157 (past-year inpatient occurrence and episode count); Part II excludes proxy responses.'
   return '2018 Questionnaire, pp.157–158 (last-stay details including nights); Part II excludes proxy responses.'
