@@ -58,7 +58,7 @@
 ## 后续自动执行准备：官方年龄转换工具固定版本
 
 - 只读检查 CHARLS 团队公开的 `charls-data/lunar2solar` 仓库，固定到 `2284ccffdd74f057c234a446585ec32034b2d50d`；核对 README、Stata help、实现文件和 MIT license，并记录三件套 SHA-256 及农历闰月显式参数要求，详见 `audit/charls_lunar2solar_pinned_reference_2026-10-27.md`。
-- 未将程序复制/安装到项目，未对任何 CHARLS 个体记录执行转换。当前机器无 Stata 命令行，因此不能把工具运行验证冒充为已完成。
+- 后续已把该精确版本的README、MIT license及三件套源码复制到`references/charls_lunar2solar/`以便协作者/服务器复现，复制后SHA-256与上游提交一致。未安装到Stata，也未对任何CHARLS个体记录执行转换；当前机器无Stata命令行，因此不能把工具运行验证冒充为已完成。
 - 下一次官方数据到位时的顺序明确为：先确认原始波次文件/字段来源，再合成日期用例验证工具，之后依逐波路由重建年龄，最后仅输出聚合覆盖/差异QA；受保护年龄与出生日期不出本机授权目录。
 - 仍未运行关联模型。Wave 1官方来源/设计门槛不通过，K=150/K=90扩展runner也尚未实现；此前文档中的240条是假设登记，不是可估配对或结果。
 - 检查到K=150/K=90 readiness template此前没有接入`require_verified_wave1_frame.py`，会让后续审批路由缺少专属绑定。已新增独立`household_environment_scaleup`计划入口，将来源/设计计划、DAG、假设登记表、扩展缺口审计和空白审批模板共同纳入计划指纹；它仍要求额外的pilot success/reproducibility gate，不会接受K=105审批代替。专属K=150/K=90 runner及正式模型冻结仍未完成，当前不会放行模型拟合。

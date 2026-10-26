@@ -16,7 +16,7 @@ Date checked: 2026-10-27
 | `src/lunar2solar.mmat` | `EBEC9FE5109295A347894EC6173AA3750ADBB270329F0BA357D2778636D20AA2` |
 | `src/lunar2solar.sthlp` | `4719F19274784EE217F49270B01976A799F88269996761516808FB002C431320` |
 
-The source was cloned to a temporary local reference directory to inspect its README, help, implementation, and license. It was not copied into the project repository, installed in Stata, or run against CHARLS values. The current Windows environment has no `stata`, `stata-se`, or `stata-mp` executable on PATH, so no execution test is claimed.
+After the initial source review, the exact upstream README, MIT license, and three `src` files were copied into [`references/charls_lunar2solar/`](../references/charls_lunar2solar/) for collaborator/server reproducibility. Their SHA-256 values match the pinned upstream commit above. The files were not installed in Stata or run against CHARLS values. The current Windows environment has no `stata`, `stata-se`, or `stata-mp` executable on PATH, so no execution test is claimed.
 
 ## Age derivation implication
 
