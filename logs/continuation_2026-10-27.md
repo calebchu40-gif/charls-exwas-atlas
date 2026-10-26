@@ -194,3 +194,10 @@ GitHub Validate：`cb6f8e2`（scale-up门禁）已成功；`8002a0c`（公开程
 - 在通用协变量策略首页补充边界说明，消除早期“通用M0/M1/M2”与当前家庭环境DAG之间的规格歧义：105项历史试点复现仅按冻结M1/M2还原；K=150/K=90必须使用独立、未冻结的家户设施/燃料DAG配置；其它暴露领域需各自审定DAG。该文档说明没有开放任何真实数据拟合权限。
 - 输入门禁复查仍为Wave 1四项官方源缺失，Wave 2权重、Wave 3血检缺失；metadata-only门禁`not_passed`/`skipped_missing_input`。正式结果payload缺失。
 - GitHub Actions对应`cd9c0b1`的Validate #752和Pages Deploy #331均成功。线上首页HTTP 200，历史内部标签同步报告和正式关联结果JSON均HTTP 404；部署后没有公开分析结果。
+
+## 官方数据使用条款转为Git仓库文件门禁（2026-10-27）
+
+- 复核CHARLS官方用户条款与FAQ后，将“学术用途、不得商业使用、不得发布或向他人提供微观数据、分析结果不得关联到受访者、每位用户应自行注册签署并获批”的要点写入许可审计。手册/问卷/字段级目录不等于可共享的受限数据，也不等于对逐人答案或研究结果的自动发布许可。
+- 新增仓库级Git索引文件类型门禁，拒绝常见Stata/SPSS/SAS等数据文件、数据库和压缩包后缀及符号链接；接入Validate工作流。此类型检查不读取内容，不覆盖CSV/文本等伪装风险，仍须遵循单独的来源和披露审查。
+- 本地仓库扫描通过（1,252条Git索引路径），Pages精确静态资产白名单通过（36文件），公开payload校验通过，`git diff --check`通过。没有读取任何CHARLS受访者级回答，没有在本轮进行模型分析。
+- 官方来源：[CHARLS中文用户条款](https://charls.charlsdata.com/users/sign_up/agreement/zh-cn.html)；[CHARLS FAQ](https://charls.pku.edu.cn/en/Faq/Frequently_Asked_Questions.htm)。

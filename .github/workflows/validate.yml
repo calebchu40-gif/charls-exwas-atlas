@@ -21,6 +21,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Reject respondent-level data formats in the repository
+        run: python scripts/validate_repository_data_boundary.py
+
       - name: Set up Node.js
         uses: actions/setup-node@v5
         with:
