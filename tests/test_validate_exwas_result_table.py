@@ -26,6 +26,9 @@ class ResultTableValidationTests(unittest.TestCase):
             weight_status="unresolved",
             psu_status="unresolved",
             stratum_status="unresolved",
+            source_hash_status="private_local_sha256_recorded",
+            source_identity_status="verified_official_source",
+            source_manifest_id="synthetic-manifest-v1",
             variance_design="not fit-ready; synthetic validation fixture",
         )
         return row
@@ -67,7 +70,7 @@ class ResultTableValidationTests(unittest.TestCase):
             fit_status="success",
             estimability_review_status="reviewed_pass",
             estimability_review_id="synthetic-review-v1",
-            data_release="CHARLS synthetic release; sha256=" + "a" * 64,
+            data_release="CHARLS synthetic release; release_id=synthetic-v1",
             software_versions="python=synthetic; commit=" + "b" * 40,
             weight_status="verified_used",
             weight_id="synthetic_weight",
@@ -91,14 +94,20 @@ class ResultTableValidationTests(unittest.TestCase):
             n_model="70",
         )
         self.assertEqual(validate_rows([row], self.fields, self.required), [])
+        row["source_identity_status"] = "unresolved"
+        errors = validate_rows([row], self.fields, self.required)
+        self.assertTrue(any("independently verified official source identity" in e for e in errors))
 
-    def test_success_requires_source_checksum_and_code_commit(self):
+    def test_success_requires_private_source_hash_evidence_and_code_commit(self):
         row = self.base_row()
         row.update(
             fit_status="success",
             estimability_review_status="reviewed_pass",
             estimability_review_id="synthetic-review-v1",
-            data_release="CHARLS synthetic release; checksum unavailable",
+            data_release="CHARLS synthetic release; release_id=synthetic-v1",
+            source_hash_status="unavailable_pending_authorized_file",
+            source_identity_status="unresolved",
+            source_manifest_id="",
             software_versions="python=synthetic",
             weight_status="verified_unweighted",
             psu_status="verified_used",
@@ -113,8 +122,29 @@ class ResultTableValidationTests(unittest.TestCase):
             n_model="70",
         )
         errors = validate_rows([row], self.fields, self.required)
-        self.assertTrue(any("requires an official release SHA256" in e for e in errors))
+        self.assertTrue(any("source hash verification recorded" in e for e in errors))
+        self.assertTrue(any("independently verified official source identity" in e for e in errors))
+        self.assertTrue(any("source_manifest_id" in e for e in errors))
         self.assertTrue(any("requires a code commit" in e for e in errors))
+
+    def test_success_rejects_a_path_instead_of_an_opaque_manifest_id(self):
+        row = self.base_row()
+        row.update(
+            fit_status="success",
+            estimability_review_status="reviewed_pass",
+            estimability_review_id="synthetic-review-v1",
+            source_manifest_id="C:\\private\\manifest.json",
+            software_versions="python=synthetic; commit=" + "b" * 40,
+            weight_status="verified_unweighted",
+            psu_status="verified_used",
+            psu_id="synthetic_psu",
+            stratum_status="not_released",
+            variance_design="approximate method: synthetic Taylor; limitation: synthetic strata only",
+            estimate="0.1", standard_error="0.05", ci_lower="0.002", ci_upper="0.198",
+            p_value="0.04", q_value_by="0.04", p_bonferroni="0.04", n_model="70",
+        )
+        errors = validate_rows([row], self.fields, self.required)
+        self.assertTrue(any("opaque source_manifest_id" in e for e in errors))
 
     def test_success_rejects_unverified_or_not_applicable_design_choices(self):
         row = self.base_row()
@@ -122,7 +152,7 @@ class ResultTableValidationTests(unittest.TestCase):
             fit_status="success",
             estimability_review_status="reviewed_pass",
             estimability_review_id="synthetic-review-v1",
-            data_release="synthetic; SHA256=" + "a" * 64,
+            data_release="synthetic; release_id=synthetic-v1",
             software_versions="commit=" + "b" * 40,
             weight_status="not_applicable",
             psu_status="not_applicable",
@@ -148,7 +178,7 @@ class ResultTableValidationTests(unittest.TestCase):
             fit_status="success",
             estimability_review_status="reviewed_pass",
             estimability_review_id="synthetic-review-v1",
-            data_release="synthetic; SHA256=" + "a" * 64,
+            data_release="synthetic; release_id=synthetic-v1",
             software_versions="commit=" + "b" * 40,
             weight_status="verified_unweighted",
             psu_status="verified_used",
@@ -174,7 +204,7 @@ class ResultTableValidationTests(unittest.TestCase):
             fit_status="success",
             estimability_review_status="reviewed_pass",
             estimability_review_id="synthetic-review-v1",
-            data_release="synthetic; SHA256=" + "a" * 64,
+            data_release="synthetic; release_id=synthetic-v1",
             software_versions="commit=" + "b" * 40,
             weight_status="verified_unweighted",
             psu_status="verified_used",
@@ -199,7 +229,7 @@ class ResultTableValidationTests(unittest.TestCase):
             fit_status="success",
             estimability_review_status="reviewed_pass",
             estimability_review_id="synthetic-review-v1",
-            data_release="synthetic; SHA256=" + "a" * 64,
+            data_release="synthetic; release_id=synthetic-v1",
             software_versions="commit=" + "b" * 40,
             weight_status="verified_unweighted",
             psu_status="verified_used",
@@ -225,7 +255,7 @@ class ResultTableValidationTests(unittest.TestCase):
             fit_status="success",
             estimability_review_status="reviewed_pass",
             estimability_review_id="synthetic-review-v1",
-            data_release="synthetic; SHA256=" + "a" * 64,
+            data_release="synthetic; release_id=synthetic-v1",
             software_versions="commit=" + "b" * 40,
             weight_status="verified_unweighted",
             psu_status="verified_used",
@@ -267,7 +297,7 @@ class ResultTableValidationTests(unittest.TestCase):
         row = self.base_row()
         row.update(
             fit_status="success",
-            data_release="synthetic; SHA256=" + "a" * 64,
+            data_release="synthetic; release_id=synthetic-v1",
             software_versions="commit=" + "b" * 40,
             weight_status="verified_unweighted",
             psu_status="verified_used",

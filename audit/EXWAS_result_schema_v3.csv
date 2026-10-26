@@ -1,0 +1,46 @@
+﻿field,required,type,definition,release_rule
+analysis_id,yes,string,"Stable result ID tied to release, code commit, wave, and model specification.",Public metadata after review
+data_release,yes,string,Official CHARLS release name/version and version-specific source identity; do not publish private microdata file hashes.,Public metadata after review
+source_identity_status,yes,category,"verified_official_source, unavailable_pending_authorized_file, or unresolved. A successful fit requires independently verified official release identity; a local file hash alone does not satisfy this gate.",Public status only after review
+source_hash_status,yes,category,"official_checksum_recorded, private_local_sha256_recorded, unavailable_pending_authorized_file, or unresolved. A successful fit requires one of the first two; the private manifest must actually contain the corresponding verification evidence.",Public status only after review; never expose private hash
+source_manifest_id,conditional,string,Opaque identifier for the protected run manifest containing acquisition provenance and byte-level file hashes; required for successful fits. Do not store local paths or raw hashes in this public result table.,Public metadata after disclosure review
+wave,yes,category,One CHARLS wave; stacked waves must retain wave-specific design and harmonization status.,Public
+target_population,yes,string,"Explicit population/domain, age range, respondent type, and cross-sectional or panel estimand.",Public
+exposure_concept_id,yes,string,Harmonized exposure concept identifier.,Public metadata
+exposure_variable,yes,string,Wave-specific released field or derived-variable identifier.,Public metadata if permitted
+phenotype_concept_id,yes,string,Harmonized phenotype concept identifier.,Public metadata
+phenotype_variable,yes,string,Wave-specific released field or derived-variable identifier.,Public metadata if permitted
+eligibility_rule,yes,string,"Module participation, route, age, sample flag, and other pre-specified inclusion criteria.",Public specification
+model_id,yes,category,Named model and versioned covariate set; covariates require substantive justification.,Public
+estimate_type,yes,category,"Model family, contrast, scale, and link function.",Public
+estimate,conditional,numeric,Association estimate on stated scale.,Disclosure review
+standard_error,conditional,numeric,Design-based SE or explicitly labeled approximation; method must be documented.,Disclosure review
+ci_lower,conditional,numeric,Lower 95% confidence limit.,Disclosure review
+ci_upper,conditional,numeric,Upper 95% confidence limit.,Disclosure review
+p_value,conditional,numeric,Unadjusted p value.,Disclosure review
+q_value_by,conditional,numeric,Benjamini-Yekutieli adjusted q value within a predeclared family.,Disclosure review
+p_bonferroni,conditional,numeric,Bonferroni-adjusted p value within a predeclared family.,Disclosure review
+multiple_testing_family,yes,string,"Predefined family in `family_id;K=<positive integer>` form; the complete table must contain exactly K hypothesis rows, including inestimable rows.",Public
+n_interview,conditional,integer,Wave respondent count before analysis eligibility.,Aggregate after disclosure review
+n_eligible,conditional,integer,Eligible target sample count before pairwise completeness.,Aggregate after disclosure review
+n_exposure_valid,conditional,integer,Eligible participants with valid exposure.,Aggregate after disclosure review
+n_phenotype_valid,conditional,integer,Eligible participants with valid phenotype.,Aggregate after disclosure review
+n_pair_complete,conditional,integer,Participants with both valid measures.,Aggregate after disclosure review
+n_model,conditional,integer,Records used by fitted model after missingness and covariate rules.,Aggregate after disclosure review
+weight_status,yes,category,"verified_used, verified_unweighted, not_applicable, unavailable_pending_authorized_file, or unresolved. A successful CHARLS fit requires verified_used or a documented verified_unweighted choice.",Public metadata
+weight_id,conditional,string,Official wave/module-specific weight actually used; blank unless weight_status=verified_used.,Public metadata
+weight_source,yes,string,"Official guide/release file and version supporting weight choice, or reason unavailable.",Public metadata
+psu_status,yes,category,"verified_used, not_released, unavailable_pending_authorized_file, not_applicable, or unresolved. A successful CHARLS fit requires the verified PSU to be used.",Public metadata
+psu_id,conditional,string,Official PSU field actually used; blank until verified.,Public metadata
+stratum_status,yes,category,"verified_used, not_released, unavailable_pending_authorized_file, not_applicable, or unresolved. not_released is allowed for success only when variance_design includes approximate method: and limitation: labels, or the Chinese labels 近似方法： and 局限：.",Public metadata
+stratum_id,conditional,string,Official stratum field actually used; never infer from geography.,Public metadata
+variance_design,yes,string,Documented variance method and status; state limitations or that model is not fit-ready.,Public metadata
+exposure_transform,yes,string,"Transformation, units, category coding, and reference level.",Public
+phenotype_transform,yes,string,"Transformation, units, category coding, and reference level.",Public
+missingness_rule,yes,string,"Treatment of structural skips, ineligible modules, refusal, dont-know, and other missing.",Public
+comparability_grade,yes,category,Wave-specific comparability status and rationale.,Public metadata
+estimability_review_status,yes,category,"pending, reviewed_pass, blocked_support, blocked_separation, blocked_design, or unresolved. A successful result requires a documented pair/contrast-level review; absence of software warnings is not sufficient.",Public metadata
+estimability_review_id,conditional,string,"Reference to the protected, versioned pair-level review record and rule set; required for success. Do not place respondent rows, small-cell counts, or disclosure-sensitive support details here.",Public metadata after disclosure review
+fit_status,yes,category,"planned, blocked_design_verification, blocked_data_access, success, nonconvergence, inestimable, or code_error.",Public
+fit_message,conditional,string,Sanitized diagnostic without row-level or sensitive details.,Disclosure review
+software_versions,yes,string,"Runtime, package versions, and code commit; successful rows require commit:<7-40 hex>.",Public

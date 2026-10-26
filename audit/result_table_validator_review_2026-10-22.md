@@ -1,5 +1,7 @@
 # 结果表结构与发布状态校验器（2026-10-22）
 
+**当前版本提示（2026-10-26）：**结果schema已升级为 `audit/EXWAS_result_schema_v3.csv`。v2中要求把官方文件 SHA-256 放入公开 `data_release` 字段的规则已被撤销：CHARLS并不保证每个发行文件都提供官方校验和，且本地哈希不得冒充官方认证。当前成功行必须记录独立核实过的官方发布身份、官方发布版本、受控来源哈希状态、无路径的 `source_manifest_id` 和代码提交；实际 SHA-256 保存在授权本机的私有运行清单内。详见[`result_provenance_schema_revision_2026-10-26.md`](result_provenance_schema_revision_2026-10-26.md)。
+
 按`audit/CHARLS_ExWAS分析规约_v0.1.md`中“结果层”和“下一步可执行项”的要求，新增标准库结果表校验器`scripts/validate_exwas_result_table.py`。它只读取结果CSV和公开结果schema，不读取CHARLS个体记录，也不拟合模型。
 
 校验器检查schema必需列、必填值、数值/概率范围、重复`analysis_id`、逐对样本流的单调关系、置信区间顺序、权重/PSU/分层字段与其验证状态是否一致；若`fit_status`不是`success`，所有效应估计和检验字段必须留空。标为`success`的 CHARLS 行必须有估计、标准误、区间、p值和模型样本量；权重选择须为核实后使用官方权重或核实后未加权，PSU须核实且实际用于方差估计，分层码须核实，或在官方未发布时明确标出近似方差方法和局限。数据发布SHA-256、产生结果的Git提交，以及逐对可估计性审查状态和受控审查编号，都是成功状态的硬性来源追溯/方法门槛。具体规则见[`result_table_design_success_gate_review_2026-10-24.md`](result_table_design_success_gate_review_2026-10-24.md)和[`estimability_release_gate_review_2026-10-24.md`](estimability_release_gate_review_2026-10-24.md)；填写内容的空白模板见[`estimability_review_record_template_v1.md`](estimability_review_record_template_v1.md)。

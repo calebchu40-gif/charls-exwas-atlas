@@ -1,3 +1,9 @@
+# 2026-10-26 Separate source identity from private file checksums
+
+- Replaced the v2 success requirement for a public official SHA-256 token with the versioned v3 result schema.
+- Successful rows now require independently verified official release identity, a documented hash-evidence status, and an opaque protected-manifest ID; private file hashes and paths stay local.
+- Updated the validator, analysis protocol, handoff, and audit notes. Fifteen focused synthetic validator tests pass; no CHARLS records or models were used.
+
 # 2026-10-26 Verify published catalog KPIs against current payload
 
 - Rechecked the live Pages homepage (HTTP 200): 1,319 exposure-candidate concepts, 332 phenotype-candidate concepts, five regular survey waves, and zero formal association models.

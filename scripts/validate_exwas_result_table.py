@@ -18,8 +18,9 @@ from adjust_exwas_pvalues import adjust_pvalues
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA_PATH = ROOT / "audit" / "EXWAS_result_schema_v2.csv"
+SCHEMA_PATH = ROOT / "audit" / "EXWAS_result_schema_v3.csv"
 FAMILY_RE = re.compile(r"^([A-Za-z0-9_.-]+);K=([1-9][0-9]*)$")
+MANIFEST_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{2,63}$")
 FIT_STATUSES = {
     "planned",
     "blocked_design_verification",
@@ -41,6 +42,17 @@ DESIGN_STATUSES = {
     "not_released",
     "unavailable_pending_authorized_file",
     "not_applicable",
+    "unresolved",
+}
+SOURCE_HASH_STATUSES = {
+    "official_checksum_recorded",
+    "private_local_sha256_recorded",
+    "unavailable_pending_authorized_file",
+    "unresolved",
+}
+SOURCE_IDENTITY_STATUSES = {
+    "verified_official_source",
+    "unavailable_pending_authorized_file",
     "unresolved",
 }
 ESTIMABILITY_STATUSES = {
@@ -95,10 +107,6 @@ def _number(value: str, field: str, errors: list[str], row_no: int) -> float | N
     return parsed
 
 
-def _has_sha256(value: str) -> bool:
-    return re.search(r"(?i)\bsha256\s*[:=]\s*[0-9a-f]{64}\b", value) is not None
-
-
 def _has_git_commit(value: str) -> bool:
     return re.search(r"(?i)\bcommit\s*[:=]\s*[0-9a-f]{7,40}\b", value) is not None
 
@@ -142,6 +150,8 @@ def validate_rows(rows: list[dict[str, str]], schema_fields: list[str], required
             ("weight_status", WEIGHT_STATUSES),
             ("psu_status", DESIGN_STATUSES),
             ("stratum_status", DESIGN_STATUSES),
+            ("source_hash_status", SOURCE_HASH_STATUSES),
+            ("source_identity_status", SOURCE_IDENTITY_STATUSES),
         ):
             value = row.get(field, "").strip()
             if value and value not in allowed:
@@ -210,8 +220,23 @@ def validate_rows(rows: list[dict[str, str]], schema_fields: list[str], required
             stratum_status = row.get("stratum_status", "").strip()
             if stratum_status not in {"verified_used", "not_released"}:
                 errors.append(f"row {row_no}: successful fit requires a verified stratum or documented not_released status")
-            if not _has_sha256(row.get("data_release", "")):
-                errors.append(f"row {row_no}: successful fit requires an official release SHA256 in data_release")
+            if row.get("source_hash_status", "").strip() not in {
+                "official_checksum_recorded", "private_local_sha256_recorded"
+            }:
+                errors.append(
+                    f"row {row_no}: successful fit requires source hash verification recorded "
+                    "in the protected run manifest"
+                )
+            if row.get("source_identity_status", "").strip() != "verified_official_source":
+                errors.append(
+                    f"row {row_no}: successful fit requires independently verified official source identity"
+                )
+            manifest_id = row.get("source_manifest_id", "").strip()
+            if not MANIFEST_ID_RE.fullmatch(manifest_id):
+                errors.append(
+                    f"row {row_no}: successful fit requires an opaque source_manifest_id "
+                    "(3-64 letters, digits, periods, underscores, or hyphens; no path)"
+                )
             if not _has_git_commit(row.get("software_versions", "")):
                 errors.append(f"row {row_no}: successful fit requires a code commit in software_versions")
             variance = row.get("variance_design", "").strip().lower()
@@ -296,7 +321,7 @@ def validate_csv(path: Path, schema_path: Path = SCHEMA_PATH) -> list[str]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("csv_path", type=Path, help="Result CSV using EXWAS_result_schema_v2.csv")
+    parser.add_argument("csv_path", type=Path, help="Result CSV using EXWAS_result_schema_v3.csv")
     parser.add_argument("--schema", type=Path, default=SCHEMA_PATH, help="Schema CSV path")
     args = parser.parse_args()
     try:
