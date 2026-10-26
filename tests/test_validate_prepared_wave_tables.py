@@ -1,6 +1,10 @@
 import unittest
 
-from scripts.validate_prepared_wave_tables import missing_required_sample_flags, source_record_status
+from scripts.validate_prepared_wave_tables import (
+    missing_required_sample_flags,
+    prepared_output_status,
+    source_record_status,
+)
 
 
 class PreparedWaveValidationTests(unittest.TestCase):
@@ -39,6 +43,16 @@ class PreparedWaveValidationTests(unittest.TestCase):
         archive = {"filename": "wave3.zip", "bytes": 100, "sha256": "not-a-hash"}
         record = {"source_archive": archive, "source_inputs": {"all_data_archive": archive}}
         self.assertEqual(source_record_status("2015", record), "invalid_all_data_archive_source_record")
+
+    def test_prepared_output_hash_is_checked_separately(self):
+        digest = "c" * 64
+        record = {"prepared_output": {"filename": "prepared.dta", "bytes": 100, "sha256": digest}}
+        self.assertEqual(prepared_output_status(record, "prepared.dta", 100, digest), "prepared_output_hash_match")
+        self.assertEqual(prepared_output_status(record, "prepared.dta", 101, digest), "prepared_output_hash_mismatch")
+
+    def test_missing_prepared_output_hash_is_not_treated_as_verified(self):
+        self.assertEqual(prepared_output_status({"output": "prepared.dta"}, "prepared.dta", 100, "c" * 64),
+                         "prepared_output_record_missing")
 
 
 if __name__ == "__main__":

@@ -57,6 +57,25 @@ def source_record_status(wave: str, record: dict | None) -> str:
     return "local_source_hashes_recorded_official_identity_unverified"
 
 
+def prepared_output_status(record: dict | None, filename: str, size: int, digest: str) -> str:
+    """Compare the current derived file with its private manifest digest."""
+    if not isinstance(record, dict) or not isinstance(record.get("prepared_output"), dict):
+        return "prepared_output_record_missing"
+    output = record["prepared_output"]
+    if output.get("filename") != filename:
+        return "prepared_output_filename_mismatch"
+    try:
+        recorded_size = int(output.get("bytes", 0))
+    except (TypeError, ValueError):
+        return "prepared_output_record_invalid"
+    recorded_digest = str(output.get("sha256", "")).lower()
+    if recorded_size <= 0 or not re.fullmatch(r"[0-9a-f]{64}", recorded_digest):
+        return "prepared_output_record_invalid"
+    if recorded_size != size or recorded_digest != digest.lower():
+        return "prepared_output_hash_mismatch"
+    return "prepared_output_hash_match"
+
+
 def get_match_rate_0_to_1(record):
     """Read the current field name or legacy misnamed proportion field."""
     value = record.get("match_rate_0_to_1")
@@ -94,14 +113,20 @@ def main():
         wave_vals = sorted(data.wave.dropna().unique().tolist())
         required_sample_flags = {"crosssection", "longitudinal"} if wave == "2013" else set()
         missing_sample_flags = missing_required_sample_flags(wave, meta.column_names)
-        provenance_status = source_record_status(wave, manifest_waves.get(wave))
+        manifest_record = manifest_waves.get(wave)
+        provenance_status = source_record_status(wave, manifest_record)
+        output_sha256 = sha256(f)
+        output_status = prepared_output_status(
+            manifest_record, f.name, f.stat().st_size, output_sha256
+        )
         row = {"wave": wave, "rows": len(data), "columns": meta.number_columns,
                "ID_missing_rows": id_missing, "duplicate_ID_rows": id_duplicate,
                "wave_values": ",".join(map(str, wave_vals)), "file_bytes": f.stat().st_size,
-               "sha256": sha256(f),
+               "sha256": output_sha256,
                "required_sample_flags": ";".join(sorted(required_sample_flags)),
                "missing_required_sample_flags": ";".join(missing_sample_flags),
                "source_record_status": provenance_status,
+               "prepared_output_status": output_status,
                "readback": "PASS"}
         if id_missing or id_duplicate or wave_vals != [float(wave)] or missing_sample_flags:
             row["readback"] = "CHECK"
@@ -124,6 +149,10 @@ def main():
         json.dumps({"tables": rows, "all_readback_pass": all(r["readback"] == "PASS" for r in rows),
                     "local_source_hash_records_complete": all(
                         r["source_record_status"] == "local_source_hashes_recorded_official_identity_unverified"
+                        for r in rows
+                    ),
+                    "prepared_output_hashes_match": all(
+                        r["prepared_output_status"] == "prepared_output_hash_match"
                         for r in rows
                     ),
                     "official_source_identity_verified_by_this_script": False,

@@ -8,12 +8,14 @@ from __future__ import annotations
 
 import argparse
 import csv
+from datetime import datetime, timezone
 import hashlib
 import json
 import os
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 import zipfile
 from pathlib import Path
@@ -59,6 +61,22 @@ def sha256_file(path: Path) -> str:
         for block in iter(lambda: source.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def git_build_provenance(root: Path) -> dict[str, object]:
+    """Record revision only when the working tree is clean; never infer it."""
+    try:
+        revision = subprocess.run(
+            ["git", "rev-parse", "HEAD"], cwd=root, capture_output=True,
+            text=True, check=True,
+        ).stdout.strip()
+        dirty = bool(subprocess.run(
+            ["git", "status", "--porcelain"], cwd=root, capture_output=True,
+            text=True, check=True,
+        ).stdout.strip())
+        return {"git_commit": revision, "working_tree_clean": not dirty}
+    except (OSError, subprocess.CalledProcessError):
+        return {"git_commit": None, "working_tree_clean": False}
 
 
 def dta_members(archive: Path, kind: str):
@@ -250,6 +268,17 @@ def main():
                   if args.input_root is not None else None)
     outdir = protected_data_path(args.out_dir)
     outdir.mkdir(parents=True, exist_ok=True)
+    build_time = datetime.now(timezone.utc).isoformat()
+    script_path = Path(__file__).resolve()
+    git_provenance = git_build_provenance(script_path.parents[1])
+    build_metadata = {
+        "built_at_utc": build_time,
+        "python_version": sys.version.split()[0],
+        "pandas_version": pd.__version__,
+        "pyreadstat_version": getattr(pyreadstat, "__version__", "unknown"),
+        "builder_script_sha256": sha256_file(script_path),
+        **git_provenance,
+    }
     all_qa, all_maps, all_wave_summaries = [], [], []
 
     selected_waves = [w.strip() for w in args.waves.split(",") if w.strip()]
@@ -423,6 +452,12 @@ def main():
         if check.number_rows != len(base) or check.number_columns != len(base.columns):
             raise RuntimeError(f"Read-back shape mismatch for wave {wave}")
         os.replace(temp_outfile, outfile)
+        all_wave_summaries[-1]["prepared_output"] = {
+            "filename": outfile.name,
+            "bytes": outfile.stat().st_size,
+            "sha256": sha256_file(outfile),
+        }
+        all_wave_summaries[-1]["build_metadata"] = build_metadata.copy()
 
     manifest_path = outdir / "prepared_data_manifest.json"
     prior = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {"waves": []}

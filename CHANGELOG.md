@@ -1,3 +1,9 @@
+# 2026-10-27 Record derived-table output and build provenance
+
+- The private wave-table builder now records each output's byte size/SHA-256 and the build timestamp, Python/pandas/pyreadstat versions, builder-script SHA-256, and Git revision/clean-tree status in `prepared_data_manifest.json`.
+- The private validator compares the current derived table to its recorded output hash separately from source-input completeness. Missing/changed outputs remain explicitly unverified; source hashes still do not authenticate CHARLS identity.
+- Added two synthetic output-hash checks. Full Python suite: 566 tests passed; Python compilation and `git diff --check` passed. No CHARLS table was rebuilt or read in this change.
+
 # 2026-10-27 Surface prepared-table source-record completeness
 
 - The private prepared-wave validator now reports whether each wave's manifest records the source archive name, byte size and local SHA-256. Wave 1 additionally requires separate PSU, Weight and Blood source records. It explicitly states that local hashes do not verify official release identity.
