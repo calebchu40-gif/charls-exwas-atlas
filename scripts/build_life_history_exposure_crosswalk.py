@@ -420,6 +420,19 @@ GROUPS = [
         "caveat": "B4_1 sibling names are excluded. B5 selectors align to siblings in B4, and B6 is asked only for selected siblings; do not treat selector slots as separate exposure indicators or blank as No. Sibling birth year and composition are family context, not measured respondent dose; no sibling records are published.",
     },
     {
+        "concept_id": "life_history_sibling_educational_attainment_context",
+        "label": "Highest completed education of siblings",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "family-of-origin socioeconomic context",
+        "patterns": [r"b4_5_\d+_"],
+        "question": "B4_5",
+        "unit": "highest completed education category for up to 15 sibling roster slots",
+        "values": "1=no formal education; 2=did not finish primary school but can read/write; 3=sishu/home school; 4=elementary school; 5=middle school; 6=high school; 7=vocational school; 8=two/three-year college; 9=four-year college; 10=master's degree; 11=doctoral degree.",
+        "status": "official questionnaire category list, sibling-loop routing and matching Codebook fields reviewed; exact slot storage requires authorized-release QA",
+        "caveat": "Family-context candidate about siblings, not the respondent's education. The item gives highest completed attainment but no date or age; do not infer that attainment preceded the respondent's childhood or use roster slots as 15 independent exposures. B4_1 names are excluded; blank/conditional slots are not No. The 2014 special Life History module has no released survey weight and is outside regular-wave weighted pair scans.",
+    },
+    {
         "concept_id": "life_history_sibling_party_membership",
         "label": "Sibling party-membership context",
         "role": "e",
@@ -2388,10 +2401,6 @@ def build_sibling_module_coverage(rows: list[dict]) -> list[dict]:
             disposition = "deferred_relative_status"
             concept_id = ""
             rationale = "Roster status for a sibling; questionnaire provides no event date in this field. Keep out of E/P pending a defined family-context estimand."
-        elif re.fullmatch(r"b4_5_\d+_", code, re.I):
-            disposition = "deferred_relative_attainment"
-            concept_id = ""
-            rationale = "Sibling's highest completed education has no timing relative to respondent childhood and is not the respondent's phenotype; assess only under a justified family-context estimand."
         else:
             raise ValueError(f"Unmapped sibling Codebook field has no disposition: {code}")
         ledger.append({"module": module, "code": code, "codebook_label": label,
@@ -2554,9 +2563,6 @@ def build_family_information_module_coverage(rows: list[dict]) -> list[dict]:
         elif re.fullmatch(r"b4_4_\d+_", code, re.I):
             disposition, concept_id = "deferred_relative_status", ""
             rationale = "Sibling roster status; no timing/event definition in the item. Keep out of E/P pending a justified family-context estimand."
-        elif re.fullmatch(r"b4_5_\d+_", code, re.I):
-            disposition, concept_id = "deferred_relative_attainment", ""
-            rationale = "Sibling educational attainment has no timing relative to respondent childhood and is not respondent phenotype; retain only if a family-context estimand justifies it."
         else:
             raise ValueError(f"FAMILYINFORMATION Codebook field has no explicit disposition: {code}")
         ledger.append({"module": module, "code": code, "codebook_label": label,

@@ -26,8 +26,8 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (177, 5841))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 5795, "p": 46})
+        self.assertEqual((len(groups), len(rows)), (178, 5856))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 5810, "p": 46})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
@@ -48,6 +48,7 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertTrue(all("option sets differ" in row["value_labels"] for row in h16))
         self.assertEqual(len(by_concept["life_history_sibling_death_before_age6"]), 61)
         self.assertEqual(len(by_concept["life_history_sibling_family_structure"]), 72)
+        self.assertEqual(len(by_concept["life_history_sibling_educational_attainment_context"]), 15)
         self.assertEqual(len(by_concept["life_history_sibling_party_membership"]), 26)
         self.assertEqual(len(by_concept["life_history_sibling_ethnic_context"]), 41)
         self.assertEqual(len(by_concept["life_history_sibling_sent_down_experience"]), 26)
@@ -213,10 +214,10 @@ CHARLSCodeBook 1 RESIDENCE
         rows, _ = builder.build()
         coverage = builder.build_sibling_module_coverage(rows)
         self.assertEqual(len(coverage), 271)
-        self.assertEqual(sum(row["disposition"] == "mapped_candidate" for row in coverage), 241)
-        self.assertEqual(sum(row["disposition"] != "mapped_candidate" for row in coverage), 30)
+        self.assertEqual(sum(row["disposition"] == "mapped_candidate" for row in coverage), 256)
+        self.assertEqual(sum(row["disposition"] != "mapped_candidate" for row in coverage), 15)
         self.assertEqual({row["disposition"] for row in coverage if row["code"].startswith("b4_4_")}, {"deferred_relative_status"})
-        self.assertEqual({row["disposition"] for row in coverage if row["code"].startswith("b4_5_")}, {"deferred_relative_attainment"})
+        self.assertEqual({row["disposition"] for row in coverage if row["code"].startswith("b4_5_")}, {"mapped_candidate"})
 
     def test_parent_module_inventory_has_explicit_disposition_for_every_codebook_field(self):
         rows, _ = builder.build()
