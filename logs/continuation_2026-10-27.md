@@ -35,4 +35,10 @@
 
 ## 最新受控入库门禁复核
 
-再次只运行 Wave 1 源档案预检及可用波次入库元数据门禁。结果仍为：2011 All Data/PSU/Weight/Blood 均为 `missing_or_ambiguous`，Wave 1 release gate 为 `not_passed`；2013 官方 Weights、2015 官方 Blood 均为 `skipped_missing_input`。报告只写在本机 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\qa_outputs`，没有读取参与者值。由于正式源包缺失，本轮不启动复核拟合或扩展模型。
+再次只运行 Wave 1 源档案预检及可用波次入库元数据门禁。结果仍为：2011 All Data/PSU/Weight/Blood 均为 `missing_or_ambiguous`，Wave 1 release gate 为 
+ot_passed`；2013 官方 Weights、2015 官方 Blood 均为 `skipped_missing_input`。报告只写在本机 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\qa_outputs`，没有读取参与者值。由于正式源包缺失，本轮不启动复核拟合或扩展模型。
+
+## 模型审批指纹静态审查
+
+静态检查发现 Wave 1 分析准备审批的 `analysis_plan_sha256` 此前没有绑定 2026-10-27 执行路线和家户环境协变量DAG，存在方法文件更新后审阅仍可能沿用旧指纹的风险。已把执行路线加入试点及家户扩展计划指纹，并把协变量DAG加入家户扩展指纹。另明确105项历史试点复现必须保留其原冻结M1/M2定义，K=150/K=90则另按领域DAG冻结模型，避免以新方案改写历史复现。未运行测试或读取参与者数据。
+
