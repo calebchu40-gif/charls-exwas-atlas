@@ -1,8 +1,8 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
-## 2014 sibling module coverage and candidate expansion (local, pending full validation/deployment)
+## 2014 sibling module coverage and candidate expansion (commit `5cd3c3b`, live verified)
 
-Reviewed all 271 Codebook fields in FAMILYINFORMATION Section B and created an exhaustive field-level coverage ledger. Mapped 241 fields into six provisional concepts (five family-context E groups, one family-level P group); explicitly deferred 30 undated sibling alive-status and sibling education fields. Questionnaire-only sibling names and free-text causes of death are excluded. Local special-survey totals are now 32 concepts / 770 field mappings (742 E-role, 28 P-role). Coverage ledger: [`life_history_sibling_module_coverage_2014_v1.csv`](life_history_sibling_module_coverage_2014_v1.csv); source review: [`life_history_sibling_module_review_2026-10-26.md`](life_history_sibling_module_review_2026-10-26.md). Builder outputs local only and full validation/deployment are outstanding.
+Reviewed all 271 Codebook fields in FAMILYINFORMATION Section B and created an exhaustive field-level coverage ledger. Mapped 241 fields into six provisional concepts (five family-context E groups, one family-level P group); explicitly deferred 30 undated sibling alive-status and sibling education fields. Questionnaire-only sibling names and free-text causes of death are excluded. Special-survey totals are now 32 concepts / 770 field mappings (742 E-role, 28 P-role). Coverage ledger: [`life_history_sibling_module_coverage_2014_v1.csv`](life_history_sibling_module_coverage_2014_v1.csv); source review: [`life_history_sibling_module_review_2026-10-26.md`](life_history_sibling_module_review_2026-10-26.md). All 527 local tests, public-payload checks, exact 92-lock check and JS validation pass. Commit `5cd3c3b` is pushed; live JSON independently returns 32 concepts and 770 field mappings, with homepage cache v137 and JSON loader v4.
 
 ## Childhood guardian-context expansion (commit `c433529`, live verified)
 

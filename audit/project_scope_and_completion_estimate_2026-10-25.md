@@ -2,7 +2,7 @@
 
 ## 2026-10-26 sibling module expansion (local)
 
-对照官方2014 Life History问卷和Codebook完成Section B字段审计：271个B模块Codebook字段均有明确去向，241条进入6个候选概念组，30条兄弟姐妹生存状态/最高学历字段暂缓。姓名和开放式死因不进入目录。本地Life History专题现为32概念组、770条字段映射（E 742、P 28）；完整性台账和解释见[`life_history_sibling_module_review_2026-10-26.md`](life_history_sibling_module_review_2026-10-26.md)及[`life_history_sibling_module_coverage_2014_v1.csv`](life_history_sibling_module_coverage_2014_v1.csv)。本批待全套校验和Pages部署。
+对照官方2014 Life History问卷和Codebook完成Section B字段审计：271个B模块Codebook字段均有明确去向，241条进入6个候选概念组，30条兄弟姐妹生存状态/最高学历字段暂缓。姓名和开放式死因不进入目录。Life History专题现为32概念组、770条字段映射（E 742、P 28）；Pages线上JSON已核验更新。完整性台账和解释见[`life_history_sibling_module_review_2026-10-26.md`](life_history_sibling_module_review_2026-10-26.md)及[`life_history_sibling_module_coverage_2014_v1.csv`](life_history_sibling_module_coverage_2014_v1.csv)。
 
 ## 2026-10-26 guardian-context local extension
 
