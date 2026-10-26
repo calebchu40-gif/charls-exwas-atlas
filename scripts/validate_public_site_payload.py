@@ -19,7 +19,7 @@ RESULT_ROW_FIELDS = {
     "analysis_id", "data_release", "wave", "exposure_concept_id", "exposure_variable",
     "phenotype_concept_id", "phenotype_variable", "target_population", "model_id",
     "estimate_type", "contrast", "estimate", "standard_error", "ci_lower", "ci_upper",
-    "p_value", "q_value_by", "p_bonferroni", "n_model", "fit_status", "fit_message",
+    "p_value", "q_value_by", "p_bonferroni", "n_model", "fit_status",
     "variance_design", "comparability_grade", "disclosure_status",
 }
 

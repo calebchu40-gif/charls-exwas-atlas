@@ -21,7 +21,7 @@ Use `audit/templates/disclosure_review_template.csv` as the header. Keep the fil
 - `reviewed_at`: ISO-8601 timestamp including time zone.
 - `reviewed_result_sha256`: SHA-256 of the exact complete private result CSV reviewed. This hash remains private.
 
-The reviewer should assess the proposed table as a whole, including estimates, intervals, multiplicity values, sample counts, fit messages, population labels, and whether cross-row or external-data linkage could identify respondents. A technical pass from the exporter does not itself establish that the substantive disclosure decision was correct.
+The reviewer should assess the proposed table as a whole, including estimates, intervals, multiplicity values, sample counts, private fit messages, population labels, and whether cross-row or external-data linkage could identify respondents. Free-text `fit_message` is retained only in the protected result table for review and is deliberately excluded from the browser payload; the website uses the controlled `fit_status` category instead. A technical pass from the exporter does not itself establish that the substantive disclosure decision was correct.
 
 ## Export procedure
 

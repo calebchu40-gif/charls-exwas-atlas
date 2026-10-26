@@ -42,5 +42,5 @@ comparability_grade,yes,category,Wave-specific comparability status and rational
 estimability_review_status,yes,category,"pending, reviewed_pass, blocked_support, blocked_separation, blocked_design, or unresolved. A successful result requires a documented pair/contrast-level review; absence of software warnings is not sufficient.",Public metadata
 estimability_review_id,conditional,string,"Reference to the protected, versioned pair-level review record and rule set; required for success. Do not place respondent rows, small-cell counts, or disclosure-sensitive support details here.",Public metadata after disclosure review
 fit_status,yes,category,"planned, blocked_design_verification, blocked_data_access, success, nonconvergence, inestimable, or code_error.",Public
-fit_message,conditional,string,Sanitized diagnostic without row-level or sensitive details.,Disclosure review
+fit_message,conditional,string,Private diagnostic for controlled methods/disclosure review; never export this free-text field to the public browser payload.,Private only; excluded from public payload
 software_versions,yes,string,"Runtime, package versions, and code commit; successful rows require commit:<7-40 hex>.",Public

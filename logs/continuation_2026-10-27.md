@@ -225,3 +225,9 @@ GitHub Validate：`cb6f8e2`（scale-up门禁）已成功；`8002a0c`（公开程
 - 阅读CHARLS 2015血检设计论文及一篇2024 HRS/CHARLS研究正文，新增`audit/blood_crosswave_calibration_method_review_2026-10-27.md`：区分实验室/协议桥接校准与“将2015边际分布调到2011”的研究特定假设；后者刻意去除总体分布变化，不能无辨析地用作横断面ExWAS默认转换。
 - 本次未取得2024论文DOCX补充材料，公式尚未核验；未执行任何转换、个体级分布检查或模型。README已链接该文献复核。
 - 本轮受保护Wave 1四项入库仍缺、Wave 2权重和Wave 3血检仍缺；没有使用受限数据。来源：[CHARLS 2015血检论文](https://pmc.ncbi.nlm.nih.gov/articles/PMC6825825/)、[Wu et al. 2024](https://doi.org/10.1093/gerona/glae116)。
+
+## 公开关联payload自由文本最小化（2026-10-27）
+
+- 代码审查发现导出器将私有结果表的自由文本`fit_message`复制到公开JSON；该字段即使预期已清理，仍可能意外带出本地路径、调试细节或稀有支持描述。前端只读取受控`fit_status`类别，不依赖该文本。
+- 从发布构建器及公开payload schema白名单中移除`fit_message`；私有结果仍保留诊断供审查。结果schema和披露合同已明确自由文本不得发布到浏览器。现有结果JSON仍不存在，本次没有部署网站。
+- 本次代码/文档修订未打开CHARLS参与者记录，未拟合关联模型；提交后执行公开payload静态校验并观察CI。
