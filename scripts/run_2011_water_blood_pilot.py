@@ -5,11 +5,11 @@ Reads only selected fields from the locally prepared 2011 respondent table and
 the protected provisional age file. All participant-level inputs and outputs
 stay under LOCALAPPDATA/CHARLS_ExWAS_Atlas. No files are written to the repo.
 
-The released PSU/variance-stratum mapping has not been authenticated for this
-prepared-table version. Therefore estimates are explicitly exploratory and
-use the documented blood-response weight plus candidate community PSU in an
-unstratified with-replacement Taylor approximation. They are not public or
-release-ready results.
+The local PSU key mapping is checked against the protected Wave 1 psu.dta
+file, but exact release provenance, blood-weight source identity, and
+variance-stratum/split-community interpretation are not authenticated.
+Estimates remain exploratory and use an unstratified with-replacement PSU
+Taylor approximation. They are not public or release-ready results.
 """
 from __future__ import annotations
 
@@ -32,6 +32,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PRIVATE = Path(os.environ.get("LOCALAPPDATA", Path.home())) / "CHARLS_ExWAS_Atlas"
 DATA = PRIVATE / "derived_wave_tables" / "CHARLS_wave2011_person_analytic.dta"
 AGE = PRIVATE / "age_candidates" / "age_candidate_2011.dta"
+PSU_MAP = PRIVATE / "raw_extract_2011_community" / "psu.dta"
 OUT = PRIVATE / "pilot_2011_water_blood"
 CROSSWALK = ROOT / "audit" / "blood_biomarker_crosswalk_v1.csv"
 EXPECTED_SVY = "0.35.0"
@@ -78,8 +79,8 @@ def read_analytes() -> list[dict[str, str]]:
 
 
 def read_input(analytes: list[dict[str, str]]) -> pl.DataFrame:
-    if not DATA.is_file() or not AGE.is_file():
-        raise FileNotFoundError("Protected 2011 prepared table or age candidate is missing")
+    if not DATA.is_file() or not AGE.is_file() or not PSU_MAP.is_file():
+        raise FileNotFoundError("Protected 2011 prepared table, age candidate, or PSU map is missing")
     fields = ["ID", EXPOSURE_FIELD, WEIGHT_FIELD, PSU_FIELD, SEX_FIELD,
               EDUCATION_FIELD, URBAN_FIELD]
     fields.extend(r["variable"] for r in analytes)
@@ -87,6 +88,16 @@ def read_input(analytes: list[dict[str, str]]) -> pl.DataFrame:
     person, meta = pyreadstat.read_dta(str(DATA), usecols=fields, output_format="polars")
     if person.height != 17705 or person["ID"].null_count() or person["ID"].n_unique() != person.height:
         raise ValueError("Prepared Wave 1 table row/ID integrity check failed")
+    psu_map, _ = pyreadstat.read_dta(
+        str(PSU_MAP), usecols=[PSU_FIELD], output_format="polars"
+    )
+    if (psu_map.height != 450 or psu_map[PSU_FIELD].null_count()
+            or psu_map[PSU_FIELD].n_unique() != psu_map.height):
+        raise ValueError("Protected Wave 1 PSU map integrity check failed")
+    if person.join(
+        psu_map.select(PSU_FIELD).unique(), on=PSU_FIELD, how="anti"
+    ).height:
+        raise ValueError("Prepared respondent table has a community key absent from the PSU map")
     age, _ = pyreadstat.read_dta(
         str(AGE), usecols=["ID", AGE_FIELD], output_format="polars"
     )
@@ -284,6 +295,7 @@ def main() -> None:
 
     input_hash = sha256(DATA)
     age_hash = sha256(AGE)
+    psu_hash = sha256(PSU_MAP)
     stamp = datetime.now(timezone.utc).isoformat()
     manifest = {
         "run_utc": stamp,
@@ -293,7 +305,7 @@ def main() -> None:
         "phenotypes": [r["concept_id"] for r in analytes],
         "excluded_phenotype": "blood_cystatin_c: age-stratified assay subsample and selection-weight applicability unresolved",
         "weight": "bloodweight; baseline blood-response weight candidate, pending independent source-archive identity/hash confirmation",
-        "psu": "communityID candidate linked to CHARLS community/PSU mapping; exact baseline release provenance and 30 split-community handling not authenticated",
+        "psu": "communityID validated as a unique key in the local 450-row psu.dta mapping and all prepared Wave 1 respondent keys map to it; source archive identity/checksum and split-community interpretation remain unauthenticated",
         "variance": "unstratified with-replacement PSU Taylor approximation; exploratory only; official implicit stratification not represented",
         "outcome_scale": "Primary estimates use each pair/model's bloodweight-weighted outcome SD; raw-unit estimates are retained alongside them.",
         "education": "2011 official bd001 grouped for sensitivity: 1=no formal education; 2-4=below/mid-primary and sishu; 5=middle school; 6-11=high school/vocational/tertiary.",
@@ -308,6 +320,7 @@ def main() -> None:
         "multiplicity": "M1 family fixed before fitting at K=15; report BY-FDR and Bonferroni; M0 is descriptive only.",
         "data_sha256": input_hash,
         "age_candidate_sha256": age_hash,
+        "psu_map_sha256": psu_hash,
         "code_commit": subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.strip(),
         "runtime": sys.version,
         "svy_version": getattr(svy, "__version__", "unknown"),
