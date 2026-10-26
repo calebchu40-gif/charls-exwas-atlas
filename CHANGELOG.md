@@ -1,3 +1,10 @@
+# 2026-10-26 Recheck protected pilot gates and live site
+
+- Re-ran the private pilot output-integrity audit. It passed the table-integrity and independent multiplicity-recalculation checks; source provenance and survey-design validity remain unassessed.
+- Re-ran the metadata-only Wave 1 intake gate. The official all-data archive, PSU, Weight, and Blood files are still absent, so no formal refit or scale-up was run.
+- Verified the live GitHub Pages homepage returns HTTP 200 and loads `app.js?v=192`; the published text says no formal, review-approved associations are published.
+- Updated the README's current live app version and recorded the no-go gate and next execution order. No participant data, pilot estimates, pair counts, or private QA outputs were added to GitHub.
+
 # 2026-10-26 Clarify public association-result status text
 
 - Corrected the public app's maintenance comment from the inaccurate claim that no CHARLS associations had ever been fitted to the precise status that no formal, review-approved associations are published.
