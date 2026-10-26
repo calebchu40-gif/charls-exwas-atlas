@@ -26,8 +26,8 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (67, 1768))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 1723, "p": 45})
+        self.assertEqual((len(groups), len(rows)), (68, 1769))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 1723, "p": 46})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
@@ -100,6 +100,9 @@ CHARLSCodeBook 1 RESIDENCE
         }
         for concept, count in health_counts.items():
             self.assertEqual(len(by_concept[concept]), count, concept)
+        self.assertEqual(len(by_concept["life_history_sample_vital_status"]), 1)
+        self.assertEqual(by_concept["life_history_sample_vital_status"][0]["code"], "died")
+        self.assertIn("population mortality rate", by_concept["life_history_sample_vital_status"][0]["caveat"])
         self.assertTrue(all("at least a year" in " ".join(r.values()) for concept in (
             "life_history_physical_activity_increase_periods", "life_history_diet_change_periods",
             "life_history_smoking_cessation_periods", "life_history_alcohol_reduction_periods") for r in by_concept[concept]))
@@ -234,6 +237,20 @@ CHARLSCodeBook 1 RESIDENCE
         none_row = next(row for row in ledger if row["code"] == "hc023s96")
         self.assertEqual(none_row["disposition"], "excluded_none_option_metadata")
         self.assertFalse(any(row["code"] == "hc023s96" for row in rows))
+
+    def test_sample_information_has_one_mortality_candidate_and_design_metadata_dispositions(self):
+        from collections import Counter
+        rows, _ = builder.build()
+        ledger = builder.build_sample_information_coverage(rows)
+        self.assertEqual(len(ledger), 8)
+        self.assertEqual(len({row["code"] for row in ledger}), 8)
+        counts = Counter(row["disposition"] for row in ledger)
+        self.assertEqual(counts["mapped_candidate"], 1)
+        self.assertEqual(counts["excluded_linkage_key"], 3)
+        self.assertEqual(counts["excluded_sample_design_metadata"], 1)
+        self.assertEqual(counts["excluded_interview_timing_metadata"], 2)
+        self.assertEqual(counts["excluded_release_metadata"], 1)
+        self.assertFalse(any("OBS:" in " ".join(row.values()) for row in rows if row["module"] == "SAMPLEINFORMATION"))
 
 
 if __name__ == "__main__":

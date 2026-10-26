@@ -874,6 +874,19 @@ GROUPS = [
         "status": "official insurance examples and conditional year route reviewed; current-versus-ever wording and release coding require QA",
         "caveat": "The English stem asks 'Do you have' insurance while its negative response says never had insurance; preserve that wording inconsistency and do not infer continuous coverage or insurance type. HC025_1 follows Yes; year is not duration.",
     },
+    {
+        "concept_id": "life_history_sample_vital_status",
+        "label": "Life History sample vital status (alive/deceased indicator)",
+        "role": "p",
+        "modules": ["SAMPLEINFORMATION"],
+        "domain": "sample follow-up and mortality status",
+        "patterns": [r"died"],
+        "question": "Sample_Infor.dta: died",
+        "unit": "binary release vital-status indicator",
+        "values": "The official release note states that responded Life History samples are released and deceased persons can be identified in Sample_Infor.dta. No death date or cause is provided by this field.",
+        "status": "official Life History release note and Codebook identity reviewed; authorized-release coding and observation window require QA",
+        "caveat": "Metadata-only mortality endpoint candidate. This field also defines selection/survival status in the special survey and must not be interpreted as a population mortality rate, event time, cause of death, or a nationally representative outcome; no Life History sampling weight is provided. Do not publish participant vital status or Codebook distributions.",
+    },
 ]
 
 
@@ -1300,6 +1313,42 @@ def build_health_history_module_coverage(rows: list[dict]) -> list[dict]:
     return ledger
 
 
+def build_sample_information_coverage(rows: list[dict]) -> list[dict]:
+    """Disposition the eight Sample_Infor fields without leaking Codebook distributions."""
+    mapped = {row["code"]: row for row in rows if row["module"] == "SAMPLEINFORMATION"}
+    fields = read_codebook_fields()
+    ledger = []
+    linkage = {"id", "householdid", "communityid"}
+    for (module, code), label in sorted(fields.items()):
+        if module != "SAMPLEINFORMATION":
+            continue
+        row = mapped.get(code)
+        if row:
+            disposition, concept_id, rationale = "mapped_candidate", row["concept_id"], row["caveat"]
+        elif code in linkage:
+            disposition, concept_id = "excluded_linkage_key", ""
+            rationale = "Person/household/community linkage key. Never publish values; ID adjustment for Wave 1 must follow the official release note."
+        elif code == "longitudinal":
+            disposition, concept_id = "excluded_sample_design_metadata", ""
+            rationale = "Longitudinal-sample membership is a design/selection field, not an exposure or phenotype; preserve only in controlled analytic design metadata."
+        elif code in {"iyear", "imonth"}:
+            disposition, concept_id = "excluded_interview_timing_metadata", ""
+            rationale = "Interview year/month describes data collection timing, not a phenotype or environmental exposure."
+        elif code == "versionid":
+            disposition, concept_id = "excluded_release_metadata", ""
+            rationale = "Release/version bookkeeping metadata, not an E/P measure."
+        else:
+            raise ValueError(f"SAMPLEINFORMATION Codebook field has no explicit disposition: {code}")
+        ledger.append({"module": module, "code": code, "codebook_label": label,
+                       "disposition": disposition, "concept_id": concept_id, "rationale": rationale,
+                       "release_note_source": "sources_official/CHARLS_Life_History_Release_note.pdf",
+                       "codebook_source": "sources_official/CHARLS_Life_History_codebook.pdf"})
+    codes = [row["code"] for row in ledger]
+    if len(ledger) != 8 or len(codes) != len(set(codes)):
+        raise ValueError(f"SAMPLEINFORMATION coverage not exhaustive/unique: rows={len(ledger)}, unique={len(set(codes))}")
+    return ledger
+
+
 def main() -> None:
     rows, concepts = build()
     sibling_coverage = build_sibling_module_coverage(rows)
@@ -1314,6 +1363,7 @@ def main() -> None:
     residence_module_coverage = build_residence_module_coverage(rows)
     wealth_history_coverage = build_wealth_history_module_coverage(rows)
     health_history_coverage = build_health_history_module_coverage(rows)
+    sample_information_coverage = build_sample_information_coverage(rows)
     AUDIT.mkdir(parents=True, exist_ok=True)
     DIST.mkdir(parents=True, exist_ok=True)
     csv_path = AUDIT / "life_history_exposure_crosswalk_v1.csv"
@@ -1383,6 +1433,11 @@ def main() -> None:
         writer = csv.DictWriter(f, fieldnames=list(health_history_coverage[0]), extrasaction="ignore")
         writer.writeheader()
         writer.writerows(health_history_coverage)
+    sample_information_path = AUDIT / "life_history_sample_information_coverage_2014_v1.csv"
+    with sample_information_path.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=list(sample_information_coverage[0]), extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(sample_information_coverage)
     print(json.dumps({"concepts": len(concepts), "field_rows": len(rows),
                       "by_role": {role: sum(x["role"] == role for x in rows) for role in ("e", "p")},
                       "by_module": {module: sum(x["module"] == module for x in rows)
@@ -1399,6 +1454,7 @@ def main() -> None:
                       "residence_module_fields_dispositioned": len(residence_module_coverage),
                       "wealth_history_fields_dispositioned": len(wealth_history_coverage),
                       "health_history_fields_dispositioned": len(health_history_coverage),
+                      "sample_information_fields_dispositioned": len(sample_information_coverage),
                       "csv": str(csv_path), "json": str(json_path),
                       "sibling_coverage": str(coverage_path),
                       "parent_coverage": str(parent_coverage_path),
@@ -1411,7 +1467,8 @@ def main() -> None:
                       "gap_migration_coverage": str(gap_migration_path),
                       "residence_module_coverage": str(residence_module_path),
                       "wealth_history_coverage": str(wealth_history_path),
-                      "health_history_coverage": str(health_history_path)}, ensure_ascii=False))
+                      "health_history_coverage": str(health_history_path),
+                      "sample_information_coverage": str(sample_information_path)}, ensure_ascii=False))
 
 
 if __name__ == "__main__":
