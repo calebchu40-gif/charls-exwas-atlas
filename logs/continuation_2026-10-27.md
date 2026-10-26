@@ -152,3 +152,11 @@ GitHub Validate：`cb6f8e2`（scale-up门禁）已成功；`8002a0c`（公开程
 - 发现`validate.yml`虽然解析网站JSON目录、核对概念映射，但没有在每次push/PR校验中运行与Pages部署相同的`validate_public_site_payload.py`；部署流程本身已有该门禁。
 - 在常规Validate工作流加入公开站点payload验证，使PR/提交阶段也会拒绝不符合schema、家族完整性、多重校正值复算或状态约束的结果payload；Pages部署前保留原有独立二次校验。
 - 本地运行`python scripts/validate_public_site_payload.py site-prototype/dist`通过，`git diff --check`通过。站点仍没有`association_results_v1.json`，本次未生成或发布关联数据。
+
+## 官方血检权重机制复核与远端CI观察（2026-10-27）
+
+- 再次逐段核对 CHARLS 官方2011 Blood User Guide：血检目标是基线全部17,708名主受访者及其配偶，完成采血11,847人（约67%）。指南说明`bloodweight`由主调查个体权重出发，并乘以血检参与逆概率校正；参与模型使用社区虚拟变量、年龄、性别、年龄×性别及教育，逆概率因子截于第99百分位。官方同时明确该校正依赖可观测选择假设。
+- 对本项目的解释：可在官方发行版字段和来源通过核验后，将`bloodweight`用于相应血检参与非响应调整；不能额外把它解释为方差分层/复制权重，也不能由此推断30个拆分社区的最终PSU设计已解决。胱抑素C的年龄分层子样本选择仍需单独处理。
+- 一手依据：[CHARLS Blood Sample Users' Guide](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf)，第13–15页；[CHARLS 2011 Wave 1官方资料页](https://charls.pku.edu.cn/en/Data/a2011_CHARLS_Wave1__Baseline_.htm)列出“All data”、PSU、Weight与Blood为不同下载项。
+- GitHub `main`上的`validate.yml`已可见新加的公开payload校验步骤；但Actions工作流列表当前缓存/摘要仍停在旧运行（#730），无法从页面核实`7a032e5`对应的CI运行是否启动/完成。因此只报告代码已推送和本地validator通过，不宣称远端CI通过。
+- 当前受控入库目录`incoming_2011_official`只有入库清单和说明，没有Wave 1四项源文件；正式模型仍不运行，结果JSON仍未生成。
