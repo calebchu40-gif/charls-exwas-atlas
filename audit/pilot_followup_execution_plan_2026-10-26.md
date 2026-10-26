@@ -48,10 +48,13 @@
 
 ## 当前唯一外部依赖
 
-如果当前受控目录里没有精确官方 Wave 1/Blood/Weight/PSU 下载包，下一步需要在 CHARLS 获准账号下取得官方包；下载后仍先运行 metadata-only 来源/结构闸门。在线官方资料页确认 2011 基线、血样指南及独立 PSU/Weight 数据项存在，但该页不是下载数据版本的校验凭证：<https://charls.pku.edu.cn/en/Data/a2011_CHARLS_Wave1__Baseline_.htm>。抽样设计依据：<https://charls.pku.edu.cn/en/About/Sample.htm>；血样权重说明：<https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf>。
+受保护目录目前有派生个人表、年龄候选、`psu.dta` 和本地运行记录，但没有完整的 Wave 1 原始发行包。官方 Wave 1 页面列出独立的 PSU、Weight、Blood data 下载项；对应的下载路由分别是[PSU（文档117）](https://charls.charlsdata.com/documents/117/download/en.html)、[Weight（文档118）](https://charls.charlsdata.com/documents/118/download/en.html)和[Blood data（文档201）](https://charls.charlsdata.com/documents/201/download/en.html)。本次打开三条官方链接均重定向到 CHARLS 登录页面；[官方发布新闻](https://charls.pku.edu.cn/en/info/1110/1286.htm)也说明注册用户登录后下载。因此下一步需要在获准账号下取回这些文件，下载后先运行 metadata-only 来源/结构闸门。本地 SHA-256 只能标识收到的文件，不能冒充官方校验值；若官方没有公布对应包的校验值，应在来源记录中如实写明。
+
+官方资料目录：[2011 Wave 1 页面](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)；[抽样设计](https://charls.pku.edu.cn/en/About/Sample.htm)；[血样权重说明](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf)。官方页面确认资料项存在，但不是下载文件版本的校验凭证。
 
 ## 执行记录
 
 - 2026-10-26：固定水源与烹饪燃料试点的 105 假设家族已在受保护本机重跑；输出不进入仓库。代码与方案更新到 `301d92d`，远端 Validate #650 成功。
 - 2026-10-26：已核对官方 Wave 1 页面仍将 PSU、Weight 与 Blood data 分列；当前本机 PSU 文件的键映射虽通过，但官方来源版本/校验和及拆分社区对应仍未解决。
+- 2026-10-26：受保护目录文件名清点未发现 Wave 1 原始发行压缩包；对 PSU/Weight/Blood 官方下载路由的在线访问均跳转至 CHARLS 登录页，确认需要获准账号会话才能取回。
 - 下一记录点：Wave 1 官方源包元数据闸门和目标人群/年龄来源审计。阶段 1 未通过前，不产生新的正式关联模型。
