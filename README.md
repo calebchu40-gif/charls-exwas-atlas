@@ -1,8 +1,8 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-26）
 
-**本地待发布更新：**app v178 / Life History JSON v45 的原型含174个Life History概念、5,566条映射（E 5,520、P 46）；在已发布的配偶/伴侣、妊娠史和子女照护批次上，新增C007/C009/C017五个“额外于既有名单”的生育/收养筛查计数字段；不将它们合并解释为终身子女总数。全部1,920个DEMOGRAPHICBACKGROUNDS字段均有唯一去向台账。只含官方元数据，不含个体值或频数。本批待提交与Pages核验；审计见[`audit/life_history_offspring_count_review_2026-10-26.md`](audit/life_history_offspring_count_review_2026-10-26.md)。
+**本地待发布更新：**app v179 / Life History JSON v46 的原型含176个Life History概念、5,836条映射（E 5,790、P 46）；新增HK001–HK006受访者户口史270字段、2个生命历程候选概念。保留不同事件槽位数量，不推算变更次数或地理暴露。全部1,920个DEMOGRAPHICBACKGROUNDS字段均有唯一去向；仅含官方元数据。本批待提交与Pages核验；审计见[`audit/life_history_hukou_section_review_2026-10-26.md`](audit/life_history_hukou_section_review_2026-10-26.md)。
 
-**当前线上版本：**CHARLS ExWAS Atlas已公开部署：[网站入口](https://calebchu40-gif.github.io/charls-exwas-atlas/)。提交`b046be6`的妊娠史批次已公网核验为app v176 / JSON v43，含168个Life History概念、5,032条字段映射（E 4,986、P 46）；远端JSON SHA-256与本地完全一致（`8355e2a5cd150a3193e1b3dc2d7ada59591421fd98be67d68f1f7ba764791500`）。目前最新本地批次为v177 / v44，待部署。已发布较早版本中的WORKHISTORY 2,024字段全覆盖等状态见下方历史记录；全项目正式关联模型仍为0，目录共现不等于样本量或关联结果。
+**当前线上版本：**CHARLS ExWAS Atlas已公开部署：[网站入口](https://calebchu40-gif.github.io/charls-exwas-atlas/)。当前公网已核验到 app v178 / Life History JSON v45，包含174个Life History概念、5,566条映射（E 5,520、P 46）；其中已发布配偶/伴侣、妊娠史、子女早期照护/幼托和额外子女计数字段。最新本地户口史批次为app v179 / JSON v46，待部署。本项目尚无正式关联模型；目录共现不等于样本量或关联结果。
 
 **最新线上扩展（提交 `3d6a0a4`，app v139）：**官方2014问卷C5–C5f家庭成分题核对到WEALTHHISTORY模块，新增1个年龄受限的历史家庭背景候选概念、189条选项字段映射；七种本人/亲属问卷形式均保留，受访者题仅问80岁及以上人群。`FAMILYINFORMATION:c5`是另一条饥荒逃荒题，按模块+字段码区分。Life History专题现为36组、993条字段（E 965、P 28）；线上JSON已核验。字段覆盖表和审计见[`audit/life_history_historical_family_class_coverage_2014_v1.csv`](audit/life_history_historical_family_class_coverage_2014_v1.csv)、[`audit/life_history_historical_family_class_review_2026-10-26.md`](audit/life_history_historical_family_class_review_2026-10-26.md)。529项测试、公开包、92条分析锁、前端语法与差异检查均通过。
 

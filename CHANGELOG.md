@@ -1,3 +1,10 @@
+# 2026-10-26 Map 2014 Life History hukou section
+
+- Mapped all 270 official HK001–HK006 fields into respondent initial hukou context (2) and repeated hukou change/reason history (268). Preserved route and event-slot differences, including Codebook capacities 11/10/6/10/10; did not assume suffix alignment.
+- Location fields remain coarse metadata only; no participant geography, values, frequencies, derived change count/duration, or association results are published. The unweighted special-wave design remains separate from regular-wave weighted analysis.
+- Local Life History catalog is now 176 concepts / 5,836 mappings (E 5,790, P 46); app v179 / JSON v46. Deployment pending.
+- Audit: `audit/life_history_hukou_section_review_2026-10-26.md`.
+
 # 2026-10-26 Map additional offspring count fields
 
 - Mapped C007/C009/C017 (five Codebook fields) as an additional biological/adopted child screen/count candidate. Labels state that these are additional to a preloaded roster, not total lifetime parity; the builder does not derive totals.
