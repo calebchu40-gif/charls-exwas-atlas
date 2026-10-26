@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -71,11 +72,13 @@ def audit(data_path: Path = DATA, age_path: Path = AGE,
     blood_frame_n = int(output.height)
     result: dict[str, Any] = {
         "wave": "2011 baseline",
+        "audit_utc": datetime.now(timezone.utc).isoformat(),
         "audit_type": "aggregate-only protected design-frame preflight",
         "respondent_level_rows_written": False,
         "associations_estimated": False,
         "official_release_authenticated": False,
         "official_blood_target_n_from_user_guide": OFFICIAL_BLOOD_TARGET_N,
+        "official_target_source": "https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf",
         "local_prepared_frame_n": blood_frame_n,
         "difference_from_guide_target_n": blood_frame_n - OFFICIAL_BLOOD_TARGET_N,
         "person_id_unique_complete": bool(person_ids_ok),

@@ -1,6 +1,7 @@
 # 2026-10-26 Add protected aggregate design-frame preflight
 
 - Added `scripts/audit_2011_pilot_design_frame.py` to check local prepared-frame denominator, age-domain availability, candidate bloodweight coverage, and PSU-key mapping while emitting aggregate diagnostics only under protected local storage.
+- The private report records its UTC audit time and the official Blood User Guide source for its denominator reference.
 - The current local derived frame does not reconcile to the official Blood User Guide target count; candidate age/weight and source/design authentication remain unresolved. The detailed counts remain in a private report and are not published.
 - Created a dedicated local analysis environment under the protected data root using the pinned requirements. No participant-level data or environment artifacts entered GitHub; no association model was rerun and the public site payload is unchanged.
 - Added an explicit pilot success/scale-up decision framework. Progression is based on source, frame, survey-design, reproducibility, and disclosure gates—not on whether early p-values are significant.
