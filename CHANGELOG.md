@@ -4,6 +4,7 @@
 - Specify the intended age-45+ estimand as a survey domain within the full blood-target frame. The current pilot keeps the full table in the survey object and applies `age >= 45` through `where`; this is methodologically appropriate in principle, pending verification of official age/relationship/weight fields.
 - The public guides do not specify a variance estimator, replicate weights or an explicit variance-stratum field. Final PSU mapping (especially the 30 split communities) and variance method remain unresolved; no geography-based substitute is allowed.
 - Analysis notes updated in `audit/pilot_2011_water_biomarker_plan_and_gates_2026-10-26.md`, `audit/pilot_followup_execution_plan_2026-10-26.md`, and `audit/wave1_pilot_official_intake_runbook_2026-10-26.md`.
+- Updated both 2011 pilot scripts so future private run manifests record the domain-estimation method and keep exact source/variance checks open. Existing protected pilot outputs were not rerun or promoted.
 
 # 2026-10-26 Add Wave 1 pilot source-intake preflight
 

@@ -304,8 +304,9 @@ def main() -> None:
     manifest = {
         "run_utc": stamp,
         "analysis": "Exploratory 2011 cross-sectional water-access proxy × 15 blood analytes",
-        "provisional_analysis_domain": "2011 prepared-table records with candidate age >=45, valid water response, and positive bloodweight; this is not yet a validated national estimand",
-        "target_population_gate": "Open: the official blood guide defines the blood target sample as main respondents and spouses; confirm age-domain and bloodweight applicability before making a population-representative claim.",
+        "provisional_analysis_domain": "age >=45 subpopulation within the full 2011 main-respondent/spouse blood-target frame, with valid water response and positive bloodweight; not a validated national estimand until exact source fields and design are verified",
+        "age_domain_method": "official-guide-based direction: create the survey design on the complete blood-target frame, then apply age >=45 through the estimator domain/where condition; do not prefilter younger spouses before design creation",
+        "target_population_gate": "Open for source validation: official guides support a 45+ domain within the main-respondent/spouse blood frame, but exact age/relationship eligibility, released bloodweight coverage, and final PSU/variance design must be verified against the authorized release.",
         "exposure": "i017, 1=Yes, 2=No; official household questionnaire wording; contrast Yes vs No",
         "phenotypes": [r["concept_id"] for r in analytes],
         "excluded_phenotype": "blood_cystatin_c: age-stratified assay subsample and selection-weight applicability unresolved",
