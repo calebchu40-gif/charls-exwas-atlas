@@ -22,7 +22,13 @@ DATA = PRIVATE_ROOT / "derived_wave_tables" / "CHARLS_wave2011_person_analytic.d
 AGE = PRIVATE_ROOT / "age_candidates" / "age_candidate_2011.dta"
 PSU_MAP = PRIVATE_ROOT / "raw_extract_2011_community" / "psu.dta"
 DEFAULT_REPORT = QA_OUTPUT_DIR / "charls_2011_pilot_design_frame_aggregate.json"
-OFFICIAL_BLOOD_TARGET_N = 17_708  # Blood User Guide target-sample count.
+# These are different documented quantities. The National Baseline and Blood
+# guides report 17,708 interviews/target blood sample, while the official
+# Codebook lists 17,705 observations for the person ID field and 17,708 for
+# individual-weight fields. Do not collapse these into one expected table size.
+OFFICIAL_BLOOD_TARGET_N = 17_708
+OFFICIAL_CODEBOOK_PERSON_ID_OBS = 17_705
+OFFICIAL_CODEBOOK_INDIVIDUAL_WEIGHT_OBS = 17_708
 
 
 def private_path(path: Path) -> Path:
@@ -77,10 +83,28 @@ def audit(data_path: Path = DATA, age_path: Path = AGE,
         "respondent_level_rows_written": False,
         "associations_estimated": False,
         "official_release_authenticated": False,
-        "official_blood_target_n_from_user_guide": OFFICIAL_BLOOD_TARGET_N,
+        "published_denominator_references": {
+            "national_baseline_interviews": {
+                "observations": OFFICIAL_BLOOD_TARGET_N,
+                "source": "CHARLS National Baseline User Guide",
+            },
+            "blood_collection_target": {
+                "observations": OFFICIAL_BLOOD_TARGET_N,
+                "source": "CHARLS 2011 Blood Data User Guide, Sampling and Sample Weights",
+            },
+            "codebook_person_id_field": {
+                "observations": OFFICIAL_CODEBOOK_PERSON_ID_OBS,
+                "source": "CHARLS 2011 Codebook, Demographic Background: ID OBS",
+            },
+            "codebook_individual_weight_fields": {
+                "observations": OFFICIAL_CODEBOOK_INDIVIDUAL_WEIGHT_OBS,
+                "source": "CHARLS 2011 Codebook, Weight: ind weight ad2 OBS",
+            },
+        },
         "official_target_source": "https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf",
         "local_prepared_frame_n": blood_frame_n,
-        "difference_from_guide_target_n": blood_frame_n - OFFICIAL_BLOOD_TARGET_N,
+        "difference_from_blood_guide_target_n": blood_frame_n - OFFICIAL_BLOOD_TARGET_N,
+        "difference_from_codebook_person_id_obs_n": blood_frame_n - OFFICIAL_CODEBOOK_PERSON_ID_OBS,
         "person_id_unique_complete": bool(person_ids_ok),
         "age_candidate_id_unique_complete": bool(age_ids_ok),
         "age_candidate_rows": int(age.height),
@@ -108,15 +132,19 @@ def audit(data_path: Path = DATA, age_path: Path = AGE,
             "variance_stratum_status": "unresolved; do not infer from geography/context fields",
         },
         "gates": {
-            "frame_denominator_reconciled": blood_frame_n == OFFICIAL_BLOOD_TARGET_N,
+            # A count comparison alone is not a reconciliation. This script
+            # reads a legacy derived frame, not the authorized source files
+            # needed to explain the published file-specific counts.
+            "frame_denominator_reconciled": False,
             "age_domain_source_verified": False,
             "bloodweight_source_and_eligibility_verified": False,
             "final_psu_and_variance_design_verified": False,
             "formal_model_gate": "not_passed",
         },
         "limitations": [
-            "The 17,708 comparison uses the target count described in the official Blood User Guide; the local prepared table is derived and not release-authenticated.",
-            "Aggregate counts cannot explain omitted rows; reconcile against the official release and eligibility fields before analysis.",
+            "Official documentation reports different file/field denominators: 17,708 interviews and blood-target members, 17,705 Codebook observations for person ID, and 17,708 observations for individual-weight fields.",
+            "Comparisons between the local prepared table and published counts are diagnostics only; the derived table is not release-authenticated and this aggregate audit cannot reconcile source records or missing keys.",
+            "Reconcile person, weight, PSU, and blood files by documented IDs and eligibility using the authorized release before analysis.",
             "Age candidate, bloodweight, and PSU source identity/coverage remain unverified against the authorized release.",
         ],
     }
@@ -136,7 +164,8 @@ def main() -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"prepared rows: {result['local_prepared_frame_n']}")
-    print(f"difference from guide target: {result['difference_from_guide_target_n']}")
+    print(f"difference from Blood Guide target (diagnostic only): {result['difference_from_blood_guide_target_n']}")
+    print(f"difference from Codebook person-ID observations (diagnostic only): {result['difference_from_codebook_person_id_obs_n']}")
     print(f"age 45+ domain rows: {result['age_domain']['age_45_plus_n']}")
     print(f"positive bloodweight rows: {result['bloodweight']['positive_finite_n']}")
     print(f"respondent PSU rows unmatched: {result['psu']['respondent_rows_unmatched_to_map_n']}")

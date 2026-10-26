@@ -1,3 +1,9 @@
+# 2026-10-27 Distinguish published Wave 1 denominators
+
+- Cross-checked the CHARLS 2011 National Baseline User Guide, Blood Data User Guide and Codebook: they report 17,708 interview/blood-target members, 17,705 observations for the Codebook person `ID` field, and 17,708 observations for individual-weight fields. These file/field-specific counts must not be collapsed into one expected prepared-table size.
+- Updated the protected 2011 aggregate preflight to report denominator references separately and treat row-count differences as diagnostic only. A count match no longer claims frame reconciliation; that gate stays false until authorized person, Weight, PSU and Blood files are authenticated and joined by documented IDs/eligibility.
+- Refreshed preflight in the pinned local analysis environment. Formal model gate remains `not_passed`; no association was fit. Full 571-test CI suite, JS syntax, public payload validation, Python compilation and diff checks passed. Public sources: CHARLS [2011 wave page](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html), [National Baseline User Guide](https://charls.pku.edu.cn/en/data/User2011.pdf), [Blood Data User Guide](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf).
+
 # 2026-10-27 Prepare a provenance-gated Wave 3 blood merge
 
 - Added `scripts/merge_2015_official_blood.py`, a protected-local preparation step that requires both exact official SHA-1s (2015 All Data ZIP and separate Blood Data artifact), the metadata-only Blood intake gate, and manifest hashes tying the prepared Wave 3 table to that exact archive and output.
