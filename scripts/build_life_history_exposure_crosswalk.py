@@ -775,6 +775,47 @@ def build_sensitive_history_coverage(rows: list[dict]) -> list[dict]:
     return ledger
 
 
+def build_family_information_module_coverage(rows: list[dict]) -> list[dict]:
+    """Require one explicit catalog or non-E/P disposition for every Family Information Codebook field."""
+    mapped = {row["code"]: row for row in rows if row["module"] == "FAMILYINFORMATION"}
+    fields = read_codebook_fields()
+    ledger = []
+    for (module, code), label in sorted(fields.items()):
+        if module != "FAMILYINFORMATION":
+            continue
+        row = mapped.get(code)
+        if row:
+            disposition, concept_id, rationale = "mapped_candidate", row["concept_id"], row["caveat"]
+        elif code in {"id", "householdid", "communityid"}:
+            disposition, concept_id = "excluded_linkage_key", ""
+            rationale = "Person, household, or community linkage key. Never publish key values; retain only in controlled analysis joins when authorized and required."
+        elif code == "versionid":
+            disposition, concept_id = "excluded_release_metadata", ""
+            rationale = "Release/version bookkeeping metadata, not a respondent exposure or phenotype."
+        elif code in {"a4a", "a4b"}:
+            disposition, concept_id = "deferred_caregiver_identity", ""
+            rationale = "Caregiver identity is a route-defining relationship category, not a stand-alone E/P measure."
+        elif re.fullmatch(r"a5[abcdef]", code, re.I):
+            disposition, concept_id = "deferred_parent_birth_year", ""
+            rationale = "Parent birth year is timing/background metadata; event-age derivation requires an explicit estimand and authorized linkage."
+        elif re.fullmatch(r"b4_4_\d+_", code, re.I):
+            disposition, concept_id = "deferred_relative_status", ""
+            rationale = "Sibling roster status; no timing/event definition in the item. Keep out of E/P pending a justified family-context estimand."
+        elif re.fullmatch(r"b4_5_\d+_", code, re.I):
+            disposition, concept_id = "deferred_relative_attainment", ""
+            rationale = "Sibling educational attainment has no timing relative to respondent childhood and is not respondent phenotype; retain only if a family-context estimand justifies it."
+        else:
+            raise ValueError(f"FAMILYINFORMATION Codebook field has no explicit disposition: {code}")
+        ledger.append({"module": module, "code": code, "codebook_label": label,
+                       "disposition": disposition, "concept_id": concept_id, "rationale": rationale,
+                       "questionnaire_source": "sources_official/CHARLS_Life_History_Questionnaire.pdf",
+                       "codebook_source": "sources_official/CHARLS_Life_History_codebook.pdf"})
+    codes = [row["code"] for row in ledger]
+    if len(ledger) != 473 or len(codes) != len(set(codes)):
+        raise ValueError(f"FAMILYINFORMATION coverage not exhaustive/unique: rows={len(ledger)}, unique={len(set(codes))}")
+    return ledger
+
+
 def main() -> None:
     rows, concepts = build()
     sibling_coverage = build_sibling_module_coverage(rows)
@@ -783,6 +824,7 @@ def main() -> None:
     parent_social_coverage = build_parent_social_context_coverage(rows)
     parent_employment_coverage = build_parent_employment_coverage(rows)
     sensitive_history_coverage = build_sensitive_history_coverage(rows)
+    family_information_coverage = build_family_information_module_coverage(rows)
     AUDIT.mkdir(parents=True, exist_ok=True)
     DIST.mkdir(parents=True, exist_ok=True)
     csv_path = AUDIT / "life_history_exposure_crosswalk_v1.csv"
@@ -822,6 +864,11 @@ def main() -> None:
         writer = csv.DictWriter(f, fieldnames=list(sensitive_history_coverage[0]), extrasaction="ignore")
         writer.writeheader()
         writer.writerows(sensitive_history_coverage)
+    family_information_coverage_path = AUDIT / "life_history_family_information_full_coverage_2014_v1.csv"
+    with family_information_coverage_path.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=list(family_information_coverage[0]), extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(family_information_coverage)
     print(json.dumps({"concepts": len(concepts), "field_rows": len(rows),
                       "by_role": {role: sum(x["role"] == role for x in rows) for role in ("e", "p")},
                       "by_module": {module: sum(x["module"] == module for x in rows)
@@ -832,13 +879,15 @@ def main() -> None:
                       "parent_social_context_fields_mapped": len(parent_social_coverage),
                       "parent_employment_fields_mapped": len(parent_employment_coverage),
                       "sensitive_history_metadata_fields": len(sensitive_history_coverage),
+                      "family_information_fields_dispositioned": len(family_information_coverage),
                       "csv": str(csv_path), "json": str(json_path),
                       "sibling_coverage": str(coverage_path),
                       "parent_coverage": str(parent_coverage_path),
                       "family_class_coverage": str(family_class_coverage_path),
                       "parent_social_context_coverage": str(parent_social_coverage_path),
                       "parent_employment_coverage": str(parent_employment_coverage_path),
-                      "sensitive_history_coverage": str(sensitive_history_coverage_path)}, ensure_ascii=False))
+                      "sensitive_history_coverage": str(sensitive_history_coverage_path),
+                      "family_information_coverage": str(family_information_coverage_path)}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

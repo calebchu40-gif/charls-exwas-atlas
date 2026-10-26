@@ -131,6 +131,21 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertIn("blank is not No", next(row["rationale"] for row in coverage if row["code"] == "g1"))
         self.assertTrue(any("privacy" in row["rationale"] for row in coverage if row["code"] == "g1"))
 
+    def test_full_family_information_module_has_exactly_one_disposition_per_codebook_field(self):
+        rows, _ = builder.build()
+        ledger = builder.build_family_information_module_coverage(rows)
+        self.assertEqual(len(ledger), 473)
+        self.assertEqual(len({row["code"] for row in ledger}), 473)
+        from collections import Counter
+        counts = Counter(row["disposition"] for row in ledger)
+        self.assertEqual(counts["mapped_candidate"], 431)
+        self.assertEqual(counts["deferred_relative_status"], 15)
+        self.assertEqual(counts["deferred_relative_attainment"], 15)
+        self.assertEqual(counts["deferred_caregiver_identity"], 2)
+        self.assertEqual(counts["deferred_parent_birth_year"], 6)
+        self.assertEqual(counts["excluded_linkage_key"], 3)
+        self.assertEqual(counts["excluded_release_metadata"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()

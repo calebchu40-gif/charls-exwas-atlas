@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
+## Full 2014 FAMILYINFORMATION inventory (local audit closure)
+
+Exhaustive module-level audit now dispositions all 473 official Codebook fields exactly once: 431 mapped E/P metadata fields, 30 deferred sibling roster/attainment fields, 8 deferred caregiver-identity/parent-birth-year fields, and 4 linkage/version metadata fields. Ledger: [`life_history_family_information_full_coverage_2014_v1.csv`](life_history_family_information_full_coverage_2014_v1.csv); summary: [`life_history_family_information_full_review_2026-10-26.md`](life_history_family_information_full_review_2026-10-26.md). The builder fails closed on an unclassified or duplicate module field. Targeted tests pass; this is a local audit/documentation change with no public payload change.
+
 ## 2014 sensitive childhood-history items (commit `17d0c5c`, live verified)
 
 Official E7–E8 and G1–G2 questionnaire/Codebook review adds two E-role metadata concepts and four fields: romantic relationship before age 17/conditional influence, and police arrest/custody/conditional charge category. The latter is described as sensitive justice-system contact, not conviction or guilt; no response frequencies, participant values, or narratives are included. Any future analysis requires separate ethics, privacy, and disclosure review. Exact field coverage: [`life_history_sensitive_history_coverage_2014_v1.csv`](life_history_sensitive_history_coverage_2014_v1.csv); source audit: [`life_history_sensitive_history_review_2026-10-26.md`](life_history_sensitive_history_review_2026-10-26.md). All 532 tests, public payload, exact 92-lock, JS syntax and diff checks pass. Commit `17d0c5c` is pushed; Pages live verification returns HTTP 200, app v142, and 42 concepts / 1,033 fields including both new concepts.

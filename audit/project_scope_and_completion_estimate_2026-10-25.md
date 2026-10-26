@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas 项目范围与剩余工期（2026-10-25修订）
 
+## 2026-10-26 FAMILYINFORMATION full-field disposition closure (local)
+
+对2014 Life History `FAMILYINFORMATION` Codebook 473条字段建立全模块唯一去向台账：431条候选映射，30条兄弟姐妹状态/教育暂缓，8条亲代/抚养人身份与出生年元数据暂缓，4条联结键或版本字段排除。生成器对未分类或重复字段失败关闭；专项测试验证确切行数与类别数。台账与方法记录见[`life_history_family_information_full_coverage_2014_v1.csv`](life_history_family_information_full_coverage_2014_v1.csv)和[`life_history_family_information_full_review_2026-10-26.md`](life_history_family_information_full_review_2026-10-26.md)。未改变线上目录数据。
+
 ## 2026-10-26 sensitive childhood-history metadata (local)
 
 官方问卷E7–E8与G1–G2新增2个E候选概念、4条元数据字段。亲密关系影响与警方拘留/指控均保留条件路由；逮捕/拘留不称为定罪。后者明确高度敏感，只展示通用字段元数据，不发布参与者值、频数或叙述，任何分析须另做伦理、隐私及披露审查。逐字段台账与审计见[`life_history_sensitive_history_coverage_2014_v1.csv`](life_history_sensitive_history_coverage_2014_v1.csv)及[`life_history_sensitive_history_review_2026-10-26.md`](life_history_sensitive_history_review_2026-10-26.md)。提交`17d0c5c`已上线并核验；专题42概念组、1,033字段（E 1,005、P 28），532项测试通过。
