@@ -30,6 +30,9 @@ jobs:
       - name: Validate static site payload
         run: python scripts/validate_public_site_payload.py site-prototype/dist
 
+      - name: Reject tabular data and archives from the public site bundle
+        run: python scripts/validate_public_site_file_boundary.py site-prototype/dist
+
       - name: Package only browser-facing site assets
         shell: bash
         run: |

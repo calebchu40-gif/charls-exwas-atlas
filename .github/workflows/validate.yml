@@ -38,6 +38,9 @@ jobs:
       - name: Validate public website payload
         run: python scripts/validate_public_site_payload.py site-prototype/dist
 
+      - name: Reject tabular data and archives from the public site bundle
+        run: python scripts/validate_public_site_file_boundary.py site-prototype/dist
+
       - name: Audit planned Wave 1 scale-up hypothesis registry
         run: python scripts/audit_wave1_scaleup_hypothesis_registry.py
 
