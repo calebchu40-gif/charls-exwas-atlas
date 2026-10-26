@@ -1,8 +1,8 @@
-## 2014 WORKHISTORY F116/F117 income, rank and progression review (local build v172 pending publication)
+## 2014 WORKHISTORY F116/F117 income, rank and progression review (app v172 / JSON v39 live-verified)
 
 Mapped 49 fields across four concepts: F116 self-employment net monthly income (21), military monthly income (12), military rank at beginning/middle periods (12), and conditional year of rank change (4). F116 is limited to F_3=4; military items to F_3=6. Job slots and timing remain distinct; conditional missingness is not zero/no promotion. See [`life_history_work_history_self_military_income_review_2026-10-26.md`](life_history_work_history_self_military_income_review_2026-10-26.md).
 
-Local catalogue: 145 concepts / 4,722 mappings (E 4,676, P 46); WORKHISTORY 1,881 mapped, 106 substantive fields deferred. App v172 / JSON v39 pending publication; formal models remain 0.
+Local and live catalogue: 145 concepts / 4,722 mappings (E 4,676, P 46); WORKHISTORY 1,881 mapped, 106 substantive fields deferred. Homepage references app v172; loader references JSON v39; the live JSON has 145 concepts, contains the F116/F117 additions, and its raw-byte SHA-256 matches local (`016f25def534b89980a28bf33337bccee6ef536be9af43b49552766585abcf8b`). Formal models remain 0.
 
 ## 2014 WORKHISTORY F123a/F123b recent agricultural income (app v171 / JSON v38 live-verified)
 
