@@ -1,3 +1,9 @@
+## 2014 WORKHISTORY F_5/F_6 and F120 slot-15 audit (local build v167 pending publication)
+
+The official questionnaire/codebook review distinguishes F_5 interviewer completeness checks from F_6 respondent-reported statuses during confirmed no-work gaps. All 12 repeated F_5 fields are excluded as route/quality metadata; 144 structured F_6 select-all fields are mapped to a separate inter-job nonwork-status candidate, retaining interval suffixes and conditional routing. F120's former pattern omitted slot 15; all 17 slot-15 reason fields are now included, for 255 structured nonmilitary F120 fields total. Military F120a remains separate. The new audit is [`life_history_work_history_gap_status_review_2026-10-26.md`](life_history_work_history_gap_status_review_2026-10-26.md).
+
+Rebuild now yields 128 concepts / 4,470 field mappings (E 4,424, P 46). WORKHISTORY disposition: 1,629 mapped, 358 substantive fields deferred, 19 sensitive workplace locations excluded, 14 route/quality fields excluded, 3 linkage keys and 1 release-version field excluded. Local app v167 / JSON v34 is not yet publicly verified. These are metadata counts only; formal association models remain 0.
+
 ## 2014 WORKHISTORY current-status, last-year intensity and benefits batch (app v166 verified)
 
 Added F118 current-status for 15 recorded job slots and extended reviewed concepts with 120 F123c/F126b/F127b last-year intensity fields plus 217 F126a last-year employer-benefit, value and childcare fields. Starting/middle/current-last-year phases remain distinct in metadata; routes by F_3 and duration are retained. Local totals: 127 concepts / 4,309 mappings (E 4,263, P 46), 1,468 WORKHISTORY fields mapped, 531 substantive fields deferred. Published app v166 / JSON v33 in commit `663eccd`; live homepage/app/JSON versions, new last-year fields and remote/local JSON SHA-256 verified.

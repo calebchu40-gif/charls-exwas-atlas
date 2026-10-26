@@ -1621,7 +1621,7 @@ GROUPS = [
         "role": "e",
         "modules": ["WORKHISTORY"],
         "domain": "life-course employment transitions and socioeconomic context",
-        "patterns": [r"f120_(?:[0-9]|1[0-4])_s(?:[1-9]|1[0-7])"],
+        "patterns": [r"f120_(?:[0-9]|1[0-5])_s(?:[1-9]|1[0-7])"],
         "question": "F120",
         "unit": "select-all reason indicators by ended job slot",
         "values": "Includes business closure, job elimination, layoff, dismissal, land taking, education, migration abroad, health/family reasons, transfer, family move, military service, retirement, return from sent-down youth, factory recruitment, voluntary quitting and other.",
@@ -1640,6 +1640,19 @@ GROUPS = [
         "values": "Compulsory-service retirement, family/health/age transfer, no longer wanting military service, or other.",
         "status": "official questionnaire categories, military-job route and Codebook episode identities reviewed; authorized-release coding requires QA",
         "caveat": "Asked only for a military-service episode (F_3=6) after F118 indicates the respondent no longer does that work. Preserve the job suffix; the ‘other’ write-in is not mapped. Do not combine with the multi-select F120 nonmilitary reasons or interpret as environmental exposure.",
+    },
+    {
+        "concept_id": "life_history_between_job_nonwork_status",
+        "label": "Reported life status during intervals with no work between job episodes",
+        "role": "e",
+        "modules": ["WORKHISTORY"],
+        "domain": "life-course work transitions and socioeconomic context",
+        "patterns": [r"f_6_(?:[2-9]|1[0-2]|14)_s(?:[1-9]|1[0-2])"],
+        "question": "F_6",
+        "unit": "select-all status indicators by inter-job interval",
+        "values": "Unemployment seeking/not seeking work, illness, childbirth, care of children/grandchildren/elderly/other family, leisure/travel, training, prison, schooling, or other.",
+        "status": "official questionnaire gap detection and response routes, multi-select categories and Codebook interval identities reviewed; authorized-release checkbox coding requires QA",
+        "caveat": "F_6 is asked for a gap after F_5 confirms no work during the interval; if F_5 indicates work, the interviewer returns to F_2 to add the omitted job. Preserve the interval suffix and multi-select design. F_5 is an interviewer completeness check, not a respondent exposure, and is excluded from E/P. ‘Other’ write-in is unmapped; blank/skip does not mean no status. These are interval-level life-course contexts, not environmental exposure or disease diagnoses.",
     },
     {
         "concept_id": "life_history_education_episode_timing",
@@ -2180,6 +2193,9 @@ def build_work_history_coverage(rows: list[dict]) -> list[dict]:
         elif code in {"f_1_0", "f_1_1"}:
             disposition, concept_id = "excluded_route_quality_metadata", ""
             rationale = "Prior-survey consistency check / interviewer confirmation that routes back to correct F_1 lifetime-work status; use only to resolve the final F_1 response, not as an independent E/P measure."
+        elif re.fullmatch(r"f_5_(?:[2-9]|1[0-2]|14)_", code, re.I):
+            disposition, concept_id = "excluded_route_quality_metadata", ""
+            rationale = "Interviewer completeness check for an omitted job between recorded episodes; a Yes routes back to add the omitted job at F_2. Use only to resolve the job-history record, not as an independent E/P status."
         elif re.fullmatch(r"f_2_add_(?:[0-9]|1[0-8])_", code, re.I):
             disposition, concept_id = "excluded_sensitive_workplace_location", ""
             rationale = "Repeated main-workplace location/text field may reveal a specific worksite or locality; excluded from the public candidate catalogue and no geographic linkage is performed."
