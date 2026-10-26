@@ -3,7 +3,7 @@
 更新：2026-10-26。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
 - 最终E/P目录行：8,464；不同波次—字段码：8,234。一个字段可对应多个候选类别/角色。
-- 有非空标签文本的E/P目录行：3,931；不同波次—字段码：3,833。连续测量、计数值及测量流程字段可已审但不需要离散标签。
+- 有非空标签文本的E/P目录行：3,927；不同波次—字段码：3,829。连续测量、计数值及测量流程字段可已审但不需要离散标签。
 - 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：0。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -24,7 +24,7 @@
 |e|internal biomarker|32|32|0|1|
 |e|life-course and reproductive history|8|8|0|1|
 |e|pandemic and public-health context|52|52|44|1|
-|e|social determinants|3,173|3,173|1,017|20|
+|e|social determinants|3,173|3,173|1,013|20|
 |e|social protection|1,331|1,331|427|30|
 |p|anthropometric|24|15|0|1|
 |p|biochemistry|32|32|0|1|
@@ -139,7 +139,7 @@
 |official questionnaire response categories reviewed; field-specific Codebook category sets are incomplete; frequencies omitted|4|
 |official questionnaire identifies JD004 as a multi-response product-list item; emitted field slot/value coding unresolved pending authorized-release QA; no category labels inferred and Codebook frequencies omitted|4|
 |official questionnaire ordinal percentage bands reviewed; frequencies omitted|4|
-|2011 baseline questionnaire response categories transcribed; Codebook field identity and release coding not independently verified; frequencies omitted|4|
+|2011 questionnaire lists 11 response options; Codebook lists four generic CA009 parent-education slots but does not map suffixes to relatives; Codebook categories and authorized-release coding not reconciled; frequencies omitted|4|
 |Official questionnaire identifies a numeric monetary amount; continuous monetary amount; questionnaire reporting unit Yuan; no discrete category labels assigned; release storage and special codes remain unverified.|3|
 |official 2015 questionnaire and Codebook identify continuous household expenditure; no discrete response categories|3|
 |official 2013 questionnaire and Codebook identify continuous household expenditure; no discrete response categories|3|
