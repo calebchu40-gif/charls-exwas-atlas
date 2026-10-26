@@ -1,3 +1,9 @@
+# 2026-10-27 Surface prepared-table source-record completeness
+
+- The private prepared-wave validator now reports whether each wave's manifest records the source archive name, byte size and local SHA-256. Wave 1 additionally requires separate PSU, Weight and Blood source records. It explicitly states that local hashes do not verify official release identity.
+- Current protected manifest metadata records no source archives for any of the five prepared wave tables. Added four synthetic tests for absent, incomplete, invalid and locally hashed-but-not-official provenance.
+- Full Python suite: 564 tests passed. The new check reads only the local manifest when assessing provenance; it does not read participant records. No source identity or analysis gate is promoted.
+
 # 2026-10-27 Add filters to reviewed association results
 
 - The optional reviewed-results table now supports filtering by exposure concept, phenotype concept, survey wave, and model. Rows are constructed with DOM text nodes to avoid interpreting public payload text as markup; the page still shows no results when the reviewed JSON is absent.
