@@ -1,3 +1,9 @@
+# 2026-10-26 Clarify Wave 1 weighting versus variance design
+
+- Re-read the complete official 2011 National Baseline User Guide's sampling and weight-construction sections and documented the specific page-level design facts in `audit/survey_design_weight_review_v1.md`.
+- Clarified that community indicators used as predictors in the blood-response weighting model do not constitute released variance strata; county-level PPS/sorting and 30 split communities also prevent inferring a design stratum from the county/community hierarchy alone.
+- No design variance method was added or inferred; official source and variance gates remain open, and no pilot estimates were promoted.
+
 # 2026-10-26 Add protected pilot-output integrity audit
 
 - Added `scripts/audit_private_pilot_output_integrity.py` to check protected exploratory result-table structure, duplicate analysis keys, required finite estimates/uncertainty, warning counts, and family completeness without opening respondent microdata.
