@@ -106,3 +106,12 @@ GitHub Validate：`cb6f8e2`（scale-up门禁）已成功；`8002a0c`（公开程
 - 新增`audit_wave1_scaleup_metadata_readiness.py`：将240条K=150/K=90规划行的16个对比与2011官方Codebook文本核对；将15项表型的候选字段/单位与血液crosswalk核对；核对`i021`仅属于`i020=No`路由；强制模型和发布状态继续未批准。审计输出为`passed_metadata_crosswalk_only`，明确声明无参与者数据读取、无模型批准、无关联结果。
 - 将此审计加入GitHub Validate工作流，并更新规模扩展缺口记录和README状态入口。该改变提高正式数据到位前的编码/目录一致性把关；不替代精确发行版、目标样本框、权重、PSU/方差和模型冻结审核。
 - 当前扩展真实关联分析仍不得运行；下一项可放行条件仍是 Wave 1 四项获准官方输入进入本机保护目录，随后按既定source/frame/design gates逐一核验。
+
+## 自动续接：当前入库状态与试点后执行方案对照（2026-10-27）
+
+- 重新运行 Wave 1 官方输入 metadata-only 预检：All Data、PSU、Weight、Blood 仍全部为 `missing_or_ambiguous`，release gate 为 `not_passed`；Wave 2 Weights 与 Wave 3 Blood 为 `skipped_missing_input`。报告写入本机受保护 QA 目录；未解压归档或读取参与者值。
+- 重跑公开规划表结构与目录交叉核验：K=150/K=90 共240条计划假设，结构状态 `passed_structural_checks_only`；公开元数据核验 `passed_metadata_crosswalk_only`。两份报告均明确 `model_approved=false`、`association_results_created=false`，不代表统计模型有效或拟合完成。
+- 对 scale-up runner 做静态语法检查与 `--help` CLI检查；没有调用真实数据路径或 `--run`。执行器要求明确 `--run` 且先通过来源、设计、试点成功/复现和哈希绑定的人工审批闸门。
+- 修正2011入库交接手册的一处过期描述：K=150/K=90 runner、空白配置模板与专用准入门现已实现，但数据来源/模型/设计仍未获准；K=105 runner 不可替代扩展执行器。
+- 试点后顺序以 `audit/pilot_autonomous_execution_decision_2026-10-27.md` 为准：认证源档案→重建与分母→目标框和复杂抽样设计审查→冻结原K=105规格并复现→独立方法评议→通过后运行K=150、再按`i020=No`路由运行K=90→跨波次分别审查→全局多重检验→独立统计与CHARLS披露审查→白名单聚合结果发布。是否扩展不依据显著性；不合并不同波次设计权重或把规划配对当作结果。
+- 仍无官方微观数据可用于正式试点；本轮未创建关联结果、未更改网页数据、未上传任何微观数据。未来只有在受控入库目录发现获准输入时才可从源身份与设计门禁继续；当前继续做公开元数据、流程文件一致性和无数据依赖准备。
