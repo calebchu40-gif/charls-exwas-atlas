@@ -1,3 +1,9 @@
+## 2014 WORKHISTORY F116/F117 income, rank and progression review (local build v172 pending publication)
+
+Mapped 49 fields across four concepts: F116 self-employment net monthly income (21), military monthly income (12), military rank at beginning/middle periods (12), and conditional year of rank change (4). F116 is limited to F_3=4; military items to F_3=6. Job slots and timing remain distinct; conditional missingness is not zero/no promotion. See [`life_history_work_history_self_military_income_review_2026-10-26.md`](life_history_work_history_self_military_income_review_2026-10-26.md).
+
+Local catalogue: 145 concepts / 4,722 mappings (E 4,676, P 46); WORKHISTORY 1,881 mapped, 106 substantive fields deferred. App v172 / JSON v39 pending publication; formal models remain 0.
+
 ## 2014 WORKHISTORY F123a/F123b recent agricultural income (app v171 / JSON v38 live-verified)
 
 Reviewed 32 official fields for agricultural jobs lasting at least five years. Added separate current/last-year income-mode (13), conditional Yuan amount (13) and workpoint components (6) concepts. Agricultural net income subtracts input costs and includes imputed value of farm products consumed at home; it is not pesticide exposure. Existing F123c work-intensity fields remain separate. See [`life_history_work_history_agricultural_recent_income_review_2026-10-26.md`](life_history_work_history_agricultural_recent_income_review_2026-10-26.md).

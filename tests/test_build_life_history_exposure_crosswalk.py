@@ -26,8 +26,8 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (141, 4673))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 4627, "p": 46})
+        self.assertEqual((len(groups), len(rows)), (145, 4722))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 4676, "p": 46})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
@@ -177,6 +177,10 @@ CHARLSCodeBook 1 RESIDENCE
             "life_history_repeated_agricultural_current_last_year_income_mode": 13,
             "life_history_repeated_agricultural_current_last_year_currency_income": 13,
             "life_history_repeated_agricultural_current_last_year_workpoint_components": 6,
+            "life_history_repeated_self_employment_monthly_net_income": 21,
+            "life_history_repeated_military_monthly_net_income": 12,
+            "life_history_repeated_military_rank_progression": 12,
+            "life_history_repeated_military_rank_change_year": 4,
         }
         for concept, count in education_counts.items():
             self.assertEqual(len(by_concept[concept]), count, concept)
@@ -215,8 +219,8 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(by_code["f_1_2"]["concept_id"], "life_history_lifetime_nonwork_reason")
         self.assertEqual(by_code["f_1_0"]["disposition"], "excluded_route_quality_metadata")
         self.assertEqual(by_code["f_1_1"]["disposition"], "excluded_route_quality_metadata")
-        self.assertEqual(sum(row["disposition"] == "mapped_candidate" for row in ledger), 1832)
-        self.assertEqual(sum(row["disposition"] == "deferred_source_review" for row in ledger), 155)
+        self.assertEqual(sum(row["disposition"] == "mapped_candidate" for row in ledger), 1881)
+        self.assertEqual(sum(row["disposition"] == "deferred_source_review" for row in ledger), 106)
         self.assertEqual(sum(row["disposition"] == "excluded_route_quality_metadata" for row in ledger), 14)
         self.assertEqual(sum(row["concept_id"] == "life_history_repeated_employer_type" for row in ledger), 19)
         self.assertEqual(sum(row["concept_id"] == "life_history_repeated_firm_ownership" for row in ledger), 15)
@@ -247,6 +251,10 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(sum(row["concept_id"] == "life_history_repeated_agricultural_current_last_year_income_mode" for row in ledger), 13)
         self.assertEqual(sum(row["concept_id"] == "life_history_repeated_agricultural_current_last_year_currency_income" for row in ledger), 13)
         self.assertEqual(sum(row["concept_id"] == "life_history_repeated_agricultural_current_last_year_workpoint_components" for row in ledger), 6)
+        self.assertEqual(sum(row["concept_id"] == "life_history_repeated_self_employment_monthly_net_income" for row in ledger), 21)
+        self.assertEqual(sum(row["concept_id"] == "life_history_repeated_military_monthly_net_income" for row in ledger), 12)
+        self.assertEqual(sum(row["concept_id"] == "life_history_repeated_military_rank_progression" for row in ledger), 12)
+        self.assertEqual(sum(row["concept_id"] == "life_history_repeated_military_rank_change_year" for row in ledger), 4)
 
     def test_historical_family_class_fields_map_exhaustively_without_frequencies(self):
         rows, _ = builder.build()
