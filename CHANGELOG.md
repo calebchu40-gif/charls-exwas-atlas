@@ -1,7 +1,7 @@
 # 2026-10-26 Add offspring military-service and sent-down category context
 
 - Reviewed official Life History C040/C041 child-slot menus and questionnaire routes. Added 26 military-service and 27 sent-down/not-applicable option fields as two family-level historical-context candidates; exact start/end year fields (72) remain excluded. C041's agricultural-hukou not-applicable category remains distinct from none.
-- Local catalog now has 192 concepts / 6,098 mappings (E 6,037, P 61), including 1,246 mapped DEMOGRAPHICBACKGROUNDS fields. Local assets app v190 / JSON v56 await publication.
+- Local catalog now has 192 concepts / 6,098 mappings (E 6,037, P 61), including 1,246 mapped DEMOGRAPHICBACKGROUNDS fields. Deployed as app v190 / JSON v56; Deploy #322 and Validate #643 succeeded and both public endpoints returned HTTP 200.
 - Audit: `audit/life_history_offspring_historical_experience_review_2026-10-26.md`.
 
 # 2026-10-26 Add adopted-child source-context candidate
