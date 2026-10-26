@@ -146,3 +146,9 @@ GitHub Validate：`cb6f8e2`（scale-up门禁）已成功；`8002a0c`（公开程
 - 检查部署工作流：正式Pages发布会先执行`validate_public_site_payload.py`，随后仅打包`site-prototype/dist`并排除`catalog.json`；验证工作流包含登记表与元数据交叉审计。没有发现需要绕过或放松的安全门禁。
 - GitHub Validate #744对应`8848374`。公开Actions摘要页仍标记`In progress`，页面错误而无法加载job细节；因此不能确认远端验证已结束。该状态不影响本地校验结果，但需后续核查Actions运行状态。
 - 下一项真实CHARLS关联模型尚不能启动：缺少四类获准Wave 1官方输入且来源/设计闸门未通过。收到授权文件后，自动路径仍按既定顺序：来源身份→样本框/分母→权重与PSU/方差/年龄域→冻结K=105复现→独立审查→有效后K=150再K=90→波次独立审查→全局多重校正→方法与披露审查→仅发布获准聚合结果。无数据时继续推进元数据与软件发布准备，不会用候选行数或旧派生结果冒充发现。
+
+## CI发布前校验前移（2026-10-27）
+
+- 发现`validate.yml`虽然解析网站JSON目录、核对概念映射，但没有在每次push/PR校验中运行与Pages部署相同的`validate_public_site_payload.py`；部署流程本身已有该门禁。
+- 在常规Validate工作流加入公开站点payload验证，使PR/提交阶段也会拒绝不符合schema、家族完整性、多重校正值复算或状态约束的结果payload；Pages部署前保留原有独立二次校验。
+- 本地运行`python scripts/validate_public_site_payload.py site-prototype/dist`通过，`git diff --check`通过。站点仍没有`association_results_v1.json`，本次未生成或发布关联数据。

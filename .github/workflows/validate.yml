@@ -35,6 +35,9 @@ jobs:
       - name: Parse website JSON catalogs
         run: python -c "import json,pathlib; files=list(pathlib.Path('site-prototype/dist').glob('*.json')); data=[json.loads(p.read_text(encoding='utf-8')) for p in files]; print(f'Parsed {len(files)} JSON catalogs'); rows=json.loads(pathlib.Path('site-prototype/dist/catalog.json').read_text(encoding='utf-8')); blank=[r for r in rows if r.get('epcf','').lower() in {'e','p'} and not (r.get('candidate_concept_ids') or r.get('Concept.ID.Candidates') or '').strip()]; assert not blank, f'{len(blank)} E/P catalog rows have no concept link'"
 
+      - name: Validate public website payload
+        run: python scripts/validate_public_site_payload.py site-prototype/dist
+
       - name: Audit planned Wave 1 scale-up hypothesis registry
         run: python scripts/audit_wave1_scaleup_hypothesis_registry.py
 
