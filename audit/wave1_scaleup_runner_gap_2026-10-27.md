@@ -9,7 +9,7 @@ The approved scale-up route in `audit/pilot_followup_execution_plan_2026-10-26.m
 - **K=150 primary block:** 10 coefficients (running water `i017`: 1; main cooking fuel `i022`: 6; electricity availability `i016`: 1; gas supply `i019`: 1; heating availability `i020`: 1) × 15 blood phenotypes.
 - **K=90 routed heating subdomain:** 6 `i021` fuel contrasts × 15 phenotypes among respondents routed to that item after `i020=No`; this is a separate target domain.
 
-The three additional household fields `i016`, `i019`, and `i020` are not present in the existing K=105 runner. The current readiness template therefore does not approve or define the K=150/K=90 work. The new `wave1_household_environment_scaleup_readiness.template.json` is an empty planning template only; it is not accepted by a runner and is not an approval.
+The three additional household fields `i016`, `i019`, and `i020` are not present in the existing K=105 runner. The readiness template is an empty planning template only and is not an approval.
 
 ## Required implementation before scale-up
 
@@ -22,4 +22,4 @@ The three additional household fields `i016`, `i019`, and `i020` are not present
 
 ## Current status
 
-No new data were read, no K=150/K=90 model was run, and no script was presented as a completed scale-up. With the official inputs still missing, the correct next local work is limited to source-free planning and implementation of generic mechanics; release-specific coding, denominators, and any actual fitting must wait for the authorized Wave 1 files and passed gates.
+No new data were read, no K=150/K=90 model was run, and no script was presented as a completed scale-up. The protected Wave 1 readiness validator now recognizes `household_environment_scaleup` as a distinct plan and binds approval to the scale-up template, DAG, 240-row hypothesis register, scale-up gap record, source/design plans, and multiplicity decisions. This closes the approval-routing gap only; there is still no K=150/K=90 runner, no approved analysis model, and no scale-up approval record. With official inputs still missing, release-specific coding, denominators, and actual fitting must wait for the authorized Wave 1 files and passed gates.

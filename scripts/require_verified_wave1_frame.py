@@ -63,6 +63,22 @@ ANALYSIS_PLANS = {
         ),
         "additional_gates": ("pilot_success_and_reproducibility_review",),
     },
+    "household_environment_scaleup": {
+        "filename": "wave1_household_environment_scaleup_K150_K90.json",
+        "plan_id": "charls_2011_household_environment_scaleup_v1_K150_K90",
+        "plan_files": (
+            "audit/pilot_2011_water_biomarker_plan_and_gates_2026-10-26.md",
+            "audit/pilot_followup_execution_plan_2026-10-26.md",
+            "audit/pilot_success_criteria_and_scale_up_2026-10-26.md",
+            "audit/multiplicity_primary_family_reconciliation_2026-10-27.md",
+            "audit/pilot_autonomous_execution_decision_2026-10-27.md",
+            "audit/wave1_household_environment_covariate_dag_review_2026-10-27.md",
+            "audit/wave1_household_environment_hypothesis_register_v0.csv",
+            "audit/wave1_scaleup_runner_gap_2026-10-27.md",
+            "audit/templates/wave1_household_environment_scaleup_readiness.template.json",
+        ),
+        "additional_gates": ("pilot_success_and_reproducibility_review",),
+    },
 }
 
 
@@ -186,7 +202,7 @@ def require_wave1_analysis_readiness(
     source_provenance: dict[str, str],
     analysis_plan: str,
 ) -> dict[str, str]:
-    """Require a review record bound to the exact frame before pilot fitting.
+    """Require a review record bound to the exact frame before analysis fitting.
 
     This gate approves only an internal exploratory pilot. Public release is
     always controlled by the separate disclosure-review workflow.
@@ -206,10 +222,10 @@ def require_wave1_analysis_readiness(
     if review.get("prepared_output_sha256") != source_provenance.get("prepared_output_sha256"):
         raise ValueError("Wave 1 readiness gate: prepared-frame hash binding does not match current frame")
     if review.get("analysis_plan_id") != plan["plan_id"]:
-        raise ValueError("Wave 1 readiness gate: approval is not bound to the frozen pilot plan")
+        raise ValueError("Wave 1 readiness gate: approval is not bound to the registered analysis plan")
     expected_plan_hash = analysis_plan_fingerprint(analysis_plan)
     if str(review.get("analysis_plan_sha256", "")).lower() != expected_plan_hash:
-        raise ValueError("Wave 1 readiness gate: approval is not bound to the exact frozen plan documents")
+        raise ValueError("Wave 1 readiness gate: approval is not bound to the exact registered plan documents")
     if review.get("public_release_status") != "not_approved":
         raise ValueError("Wave 1 readiness gate: pilot approval cannot authorize public release")
     if not str(review.get("reviewer", "")).strip() or not str(review.get("reviewed_at", "")).strip():
