@@ -55,3 +55,11 @@ Compared the vocational-school questionnaire routes with Codebook identities. Ad
 The questionnaire explicitly branches follow-up by study mode: formal school receives institution-type, part-time, curriculum-duration and completion questions; evening/self-study/correspondence/radio-TV/other routes receive a distinct major/duration/diploma sequence. These pathways remain separate in metadata. Repeated institution names, dates, locations, and free-text fields are not included. Multi-select reasons and E005 routing remain explicit.
 
 Updated module coverage is 145 mapped of 1,105, 956 substantive fields still deferred, three linkage keys and one release-version field excluded. Overall Life History catalog is 82 concepts / 1,914 metadata mappings (E 1,868, P 46). These candidate rows are not association results.
+
+## Three-year and four-year college review: E057a–E073b
+
+Questionnaire and Codebook identity review adds 119 fields in four concepts: three-year-college pathway (40), three-year interruption (14), four-year-college pathway (51), and four-year interruption (14). The three-year module permits up to two listed schools; the four-year college module permits three records and explicitly instructs respondents with double/multiple degrees to record two separately. These repeated slots stay grouped under their stage-specific concept rather than being treated as independent exposures.
+
+Study mode, institution type, major category, nominal curriculum duration, graduation and diplomas are kept route-specific. E057e/E065e worker-peasant-soldier items are conditional on schooling years 1971–1977. Alternative-mode diploma questions do not share the exact formal-school follow-up; open-text alternate-route major responses are excluded. Interruption reasons follow the corresponding E005 stage and are multi-select.
+
+Education History now has 264 mapped fields of 1,105; 837 substantive fields remain deferred, with three linkage keys and one version field excluded. Overall Life History catalog: 86 concepts / 2,005 metadata mappings (E 1,959, P 46). No participant-level data or statistical association estimates are included.
