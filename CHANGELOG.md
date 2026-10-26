@@ -1,3 +1,10 @@
+# 2026-10-26 Map 2014 Life History spouse/partner context
+
+- Reviewed the official spouse/partner questionnaire section and mapped 114 Codebook fields into six E-candidate concepts for marital history, non-marital cohabitation, hukou transitions, coarse relationship-linked residential transitions, and spouse/partner education.
+- The full DEMOGRAPHICBACKGROUNDS coverage ledger now accounts for all 1,920 official Codebook fields: 114 mapped, 1,420 demographic/child-family fields deferred, 270 hukou fields deferred, 90 sensitive relative-identity fields held pending privacy review, and the remaining 26 fields explicitly marked as linkage, date-of-birth, interview/proxy, partner-loop, redundant-gender, or release metadata.
+- Preserved conditional routes and repeated slots. Documented questionnaire P012c follow-up with no corresponding Codebook field; did not invent a stored variable. Excluded relative birth dates, open-text death causes, names and direct identifiers; no responses or Codebook frequencies were used.
+- Updated the local Life History catalog to 165 concepts / 4,923 source mappings (E 4,877, P 46). The module remains a separate unweighted 2014 special-wave catalog, not part of regular-wave pair co-availability. Site build output is local; this change has not been published to GitHub Pages.
+
 # 2026-10-26 Inventory 2014 Life History DemographicBackgrounds
 
 - Confirmed a major unmapped Life History module: official Codebook `DEMOGRAPHICBACKGROUNDS` contains 1,920 unique field identifiers and currently has no rows in the Life History E/P crosswalk.

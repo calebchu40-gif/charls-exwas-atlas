@@ -1,5 +1,7 @@
 # 2014 Life History DEMOGRAPHICBACKGROUNDS: official-field inventory checkpoint (2026-10-26)
 
+> **Updated checkpoint:** This file records the initial inventory state. The spouse/partner source review has since mapped 114 fields and the full module ledger now has explicit dispositions for all 1,920 Codebook fields. See [`life_history_demographic_backgrounds_spouse_partner_review_2026-10-26.md`](life_history_demographic_backgrounds_spouse_partner_review_2026-10-26.md) and `life_history_demographic_backgrounds_full_coverage_2014_v1.csv` for the current state.
+
 ## Scope and evidence
 
 The inventory parser reads only field identifier and field-title lines from the official Life History Codebook's `2 DEMOGRAPHICBACKGROUNDS` section and stops at `3 FAMILYINFORMATION`. It does not copy or parse the Codebook frequency tables, extrema, or respondent values. Questionnaire section headings were inspected to establish the module's broad organization; the questions and routes still require item-by-item review before mapping.

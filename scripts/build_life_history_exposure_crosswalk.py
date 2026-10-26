@@ -26,6 +26,84 @@ COMMON = (
 
 GROUPS = [
     {
+        "concept_id": "life_history_spouse_partner_education",
+        "label": "Highest education of spouse or partner in the Life History roster",
+        "role": "e",
+        "modules": ["DEMOGRAPHICBACKGROUNDS"],
+        "domain": "life-course relationship and household socioeconomic context",
+        "patterns": [r"p006c_[1-4]_"],
+        "question": "P006c",
+        "unit": "highest completed education category for up to four spouse/partner records",
+        "values": "1=no formal education; 2=did not finish primary school but can read/write; 3=sishu/home school; 4=elementary; 5=middle school; 6=high school; 7=vocational; 8=two/three-year college; 9=four-year college; 10=master's; 11=doctoral degree.",
+        "status": "official questionnaire categories and Codebook spouse-slot labels reviewed; relative referent and repeated roster slots preserved",
+        "caveat": "This records spouse/partner education, not respondent education. It is a broad household/relationship socioeconomic context candidate; do not treat four roster slots as four independent exposures or assume every spouse record has an education response. The roster identity fields are not included. This retrospective 2014 module is not a regular-wave exposure measure.",
+    },
+    {
+        "concept_id": "life_history_marital_union_history",
+        "label": "Marriage, co-residence and dissolution history with spouses",
+        "role": "e",
+        "modules": ["DEMOGRAPHICBACKGROUNDS"],
+        "domain": "life-course relationship and psychosocial context",
+        "patterns": [r"p001a", r"p002a_[1-5]_", r"p002_[1-5]_", r"p005a_[1-5]_", r"p007_[1-5]_", r"p010_[1-4]_", r"p008_[1-4]_", r"p009_[1-3]_", r"p011_[1-4]_", r"p012_[1-4]_"],
+        "question": "P001a/P002a/P002/P005a/P007/P008-P012",
+        "unit": "respondent-level relationship history with repeated spouse slots; status, year and event-category components",
+        "values": "P001a/P002a/P005a/P007/P011 use questionnaire-specific Yes/No categories; P008 distinguishes relationship breakdown/divorce, widowhood/partner death, and other reason; year fields record marriage, separation, death or divorce year.",
+        "status": "official questionnaire routes and Codebook slot-specific field identities reviewed; event years and reasons remain separate components",
+        "caveat": "P001a is an ever-had-spouse/partner screening item; spouse-slot fields distinguish legal marriage from cohabiting partnership. P007 excludes temporary separations for work, care or health; P008/P009 and P011/P012 follow different routes. Preserve event types and episode slots; no relationship duration or count is derived. Death reason P009a is open text and excluded. No respondent/spouse names are included.",
+    },
+    {
+        "concept_id": "life_history_marital_residential_transitions",
+        "label": "Residence changes associated with marriage and marital dissolution",
+        "role": "e",
+        "modules": ["DEMOGRAPHICBACKGROUNDS"],
+        "domain": "life-course residential and relationship context",
+        "patterns": [r"p005b_[1-5]_", r"p005c_[1-3]_", r"p011a_[1-4]_", r"p011b_[1-3]_"],
+        "question": "P005b/P005c/P011a/P011b",
+        "unit": "residential arrangement/locality category by marriage or relationship-end episode",
+        "values": "P005b: remained in premarital home, moved to spouse's house, or moved to a new house together. P005c and P011b distinguish same community, another community in the same county/district, and another county/district. P011a records whether respondent moved out after relationship breakdown.",
+        "status": "official questionnaire routes and Codebook episode-field identities reviewed; locality remains coarse and non-geocodable",
+        "caveat": "P005c is asked only after moving to the spouse's or a new home; P011b follows P011a=Yes. These are retrospective relationship-linked housing transitions, not exact address, distance, or pollution exposure. Do not combine marriage and breakup routes or infer a move from a skipped field.",
+    },
+    {
+        "concept_id": "life_history_marital_hukou_transitions",
+        "label": "Hukou location and type changes associated with marriage or divorce",
+        "role": "e",
+        "modules": ["DEMOGRAPHICBACKGROUNDS"],
+        "domain": "life-course hukou and relationship context",
+        "patterns": [r"p005d_[1-5]_", r"p005e_[1-5]_", r"p005f_[1-3]_", r"p012a_[1-4]_", r"p012b_[1-4]_"],
+        "question": "P005d/P005e/P005f/P012a/P012b",
+        "unit": "marriage/divorce-specific hukou-location or hukou-type transition response",
+        "values": "P005d distinguishes moved to spouse's hukou village/community, did not move, or same village/community before marriage. P005e/P012b record whether hukou type changed; P005f records new type as agricultural, non-agricultural, or unified residence hukou. P012a asks whether hukou location changed at divorce.",
+        "status": "official question wording, response categories, routes and Codebook field identities reviewed; questionnaire/Codebook omission recorded",
+        "caveat": "These are event-specific retrospective hukou transitions, not current hukou, address, or an environmental dose. P005f follows P005e=Yes. The questionnaire routes P012b=Yes to P012c (new type), but no P012c variable is present in the official Codebook field inventory; do not invent a field or infer its storage. Keep marriage and divorce events separate.",
+    },
+    {
+        "concept_id": "life_history_nonmarital_cohabitation_history",
+        "label": "Cohabitation and relationship history with non-marital partners",
+        "role": "e",
+        "modules": ["DEMOGRAPHICBACKGROUNDS"],
+        "domain": "life-course relationship and psychosocial context",
+        "patterns": [r"p013a_[1-4]_", r"p013b_[1-4]_", r"p013c_[1-3]_", r"p016_[1-4]_", r"p017_[1-4]_", r"p020_[1-3]_", r"p018_[1-3]_", r"p019_[1-3]_"],
+        "question": "P013a-P013c/P016-P020",
+        "unit": "non-marital partner episode: cohabitation start, residence arrangement, current co-residence, ending reason and year",
+        "values": "P013b distinguishes staying in the former home, moving to partner's home, or moving together. P016 and P018 use distinct questionnaire reason categories; P017 is current co-residence, and P013a/P020/P019 are year components.",
+        "status": "official questionnaire partner definition, conditional routes and Codebook partner-slot identities reviewed",
+        "caveat": "The questionnaire defines a partner as a long-term co-resident without a marriage ceremony or registration; do not combine these records with legal spouse episodes. P013c follows a move; P019 is asked only when P018 indicates partner death. P019a death reason is open text and excluded. No relationship duration or outcome is derived from incomplete years.",
+    },
+    {
+        "concept_id": "life_history_nonmarital_partner_residential_transitions",
+        "label": "Residence change after non-marital partnership dissolution",
+        "role": "e",
+        "modules": ["DEMOGRAPHICBACKGROUNDS"],
+        "domain": "life-course residential and relationship context",
+        "patterns": [r"p018a_[1-3]_", r"p018b_[1-3]_"],
+        "question": "P018a/P018b",
+        "unit": "whether respondent moved out and subsequent coarse locality category by partner episode",
+        "values": "P018a records Yes/No move-out. P018b distinguishes another house in the original community, another community in the original county/district, or another county/district.",
+        "status": "official questionnaire route and Codebook partner-slot identities reviewed",
+        "caveat": "P018b is asked only when P018a=Yes. This concerns a non-marital partnership and remains distinct from spouse/divorce relocation. It is coarse retrospective locality context, not a precise location or environmental exposure; routed blank is not No.",
+    },
+    {
         "concept_id": "life_history_residential_architecture",
         "label": "Residential building type over the life course",
         "role": "e",
@@ -2618,6 +2696,60 @@ def build_work_history_coverage(rows: list[dict]) -> list[dict]:
     return ledger
 
 
+def build_demographic_backgrounds_coverage(rows: list[dict]) -> list[dict]:
+    """Disposition every 2014 DemographicBackgrounds Codebook field exactly once."""
+    mapped = {row["code"].casefold(): row for row in rows if row["module"] == "DEMOGRAPHICBACKGROUNDS"}
+    fields = read_codebook_fields()
+    ledger = []
+    linkage = {"id", "householdid", "communityid"}
+    sensitive_roster = re.compile(r"p0(?:22s\d+|23s\d+|23_1_\d+_|24s\d+|24_1_\d+_)", re.I)
+    relative_birth_date = re.compile(r"p006a_", re.I)
+    for (module, code), label in sorted(fields.items()):
+        if module != "DEMOGRAPHICBACKGROUNDS":
+            continue
+        row = mapped.get(code.casefold())
+        if row:
+            disposition, concept_id, rationale = "mapped_candidate", row["concept_id"], row["caveat"]
+        elif code.casefold() in linkage:
+            disposition, concept_id = "excluded_linkage_key", ""
+            rationale = "Person, household, or community join key. Never publish key values; use only in an authorized controlled join when necessary."
+        elif code.casefold() == "rgender":
+            disposition, concept_id = "c_only_redundant_respondent_metadata", ""
+            rationale = "Respondent gender roster/source metadata; not a new historical E/P construct and should not duplicate the regular-wave sex concept."
+        elif relative_birth_date.match(code):
+            disposition, concept_id = "excluded_relative_birth_date", ""
+            rationale = "Spouse/partner date-of-birth components identify a relative and are not needed for the candidate E/P catalogue; do not expose date values or derive relative age without a separate estimand."
+        elif sensitive_roster.fullmatch(code):
+            disposition, concept_id = "deferred_sensitive_relative_identity", ""
+            rationale = "Party affiliation, minority identity or religion selections identify sensitive characteristics of the respondent and/or repeated relatives. Keep out of public E/P mapping pending separate data-minimization, release and disclosure review. No values or frequencies are published."
+        elif code.casefold() in {"p025", "pc001", "pc002", "pc003"}:
+            disposition, concept_id = "c_only_interview_process_metadata", ""
+            rationale = "Interview-room presence, proxy status, or responder relationship is survey-process metadata, not a respondent exposure or phenotype."
+        elif re.fullmatch(r"p020a_[1-5]_", code, re.I):
+            disposition, concept_id = "c_only_partner_loop_metadata", ""
+            rationale = "Whether another spouse/partner remains to be entered; a roster-loop continuation check, not an independent relationship exposure."
+        elif code.casefold() == "versionid":
+            disposition, concept_id = "excluded_release_metadata", ""
+            rationale = "Release/version bookkeeping metadata, not a measured construct."
+        elif re.match(r"[pc]\d", code, re.I):
+            disposition, concept_id = "deferred_demographic_section_review", ""
+            rationale = "DemographicBackgrounds spouse/partner or child-family section is not yet reviewed field-by-field for item referent, route, repeated slots, sensitivity, and candidate role. Do not publish as an E/P candidate or use in analysis until reviewed."
+        elif re.match(r"(?:hk\d|hukou)", code, re.I):
+            disposition, concept_id = "deferred_hukou_section_review", ""
+            rationale = "Hukou or other DemographicBackgrounds section is not yet reviewed field-by-field against questionnaire routes and exact Codebook identity. Do not publish as an E/P candidate or use in analysis until reviewed."
+        else:
+            disposition, concept_id = "deferred_demographic_section_review", ""
+            rationale = "DemographicBackgrounds child/family or remaining questionnaire section is not yet reviewed field-by-field for referent, route, repeated roster, sensitivity, and candidate role. Do not publish as an E/P candidate or use in analysis until reviewed."
+        ledger.append({"module": module, "code": code, "codebook_label": label,
+                       "disposition": disposition, "concept_id": concept_id, "rationale": rationale,
+                       "questionnaire_source": "sources_official/CHARLS_Life_History_Questionnaire.pdf",
+                       "codebook_source": "sources_official/CHARLS_Life_History_codebook.pdf"})
+    codes = [item["code"].casefold() for item in ledger]
+    if len(ledger) != 1920 or len(codes) != len(set(codes)):
+        raise ValueError(f"DEMOGRAPHICBACKGROUNDS coverage not exhaustive/unique: rows={len(ledger)}, unique={len(set(codes))}")
+    return ledger
+
+
 def main() -> None:
     rows, concepts = build()
     sibling_coverage = build_sibling_module_coverage(rows)
@@ -2635,6 +2767,7 @@ def main() -> None:
     sample_information_coverage = build_sample_information_coverage(rows)
     education_history_coverage = build_education_history_coverage(rows)
     work_history_coverage = build_work_history_coverage(rows)
+    demographic_backgrounds_coverage = build_demographic_backgrounds_coverage(rows)
     AUDIT.mkdir(parents=True, exist_ok=True)
     DIST.mkdir(parents=True, exist_ok=True)
     csv_path = AUDIT / "life_history_exposure_crosswalk_v1.csv"
@@ -2719,6 +2852,11 @@ def main() -> None:
         writer = csv.DictWriter(f, fieldnames=list(work_history_coverage[0]), extrasaction="ignore")
         writer.writeheader()
         writer.writerows(work_history_coverage)
+    demographic_backgrounds_path = AUDIT / "life_history_demographic_backgrounds_full_coverage_2014_v1.csv"
+    with demographic_backgrounds_path.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=list(demographic_backgrounds_coverage[0]), extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(demographic_backgrounds_coverage)
     print(json.dumps({"concepts": len(concepts), "field_rows": len(rows),
                       "by_role": {role: sum(x["role"] == role for x in rows) for role in ("e", "p")},
                       "by_module": {module: sum(x["module"] == module for x in rows)
@@ -2738,6 +2876,7 @@ def main() -> None:
                       "sample_information_fields_dispositioned": len(sample_information_coverage),
                       "education_history_fields_dispositioned": len(education_history_coverage),
                       "work_history_fields_dispositioned": len(work_history_coverage),
+                      "demographic_backgrounds_fields_dispositioned": len(demographic_backgrounds_coverage),
                       "csv": str(csv_path), "json": str(json_path),
                       "sibling_coverage": str(coverage_path),
                       "parent_coverage": str(parent_coverage_path),
@@ -2753,7 +2892,8 @@ def main() -> None:
                       "health_history_coverage": str(health_history_path),
                       "sample_information_coverage": str(sample_information_path),
                       "education_history_coverage": str(education_history_path),
-                      "work_history_coverage": str(work_history_path)}, ensure_ascii=False))
+                      "work_history_coverage": str(work_history_path),
+                      "demographic_backgrounds_coverage": str(demographic_backgrounds_path)}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

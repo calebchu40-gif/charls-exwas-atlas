@@ -1,3 +1,7 @@
+# Local pending-publication checkpoint (2026-10-26)
+
+The Life History builder now produces 165 concepts / 4,923 mappings (E=4,877, P=46). The first `DEMOGRAPHICBACKGROUNDS` source batch mapped 114 spouse/partner fields across six E-candidate concepts and writes an exhaustive 1,920-field module ledger. The full audit is `life_history_demographic_backgrounds_spouse_partner_review_2026-10-26.md`; the generated ledger is `life_history_demographic_backgrounds_full_coverage_2014_v1.csv`. Local UI cache tags are app v175 and Life History JSON v42. This checkpoint has not yet been published to GitHub Pages; the live version documented below is still app v174 / JSON v41. Formal association models remain 0.
+
 ## 2014 WORKHISTORY remaining-field closure (app v174 / JSON v41 live-verified)
 
 Mapped 66 remaining F124/F124a position, F128 self-employment income, F129 military income/rank/change-year, F131 short-duration work and F150–F153 retirement/pension fields. Excluded 19 F_7 fields as interviewer job-history completeness checks because Yes routes back to F_2 to add another >6-month job. The 2,024-field WORKHISTORY ledger is now fully dispositioned: 1,968 mapped, 19 sensitive locations excluded, 33 route/quality checks excluded, 3 linkage keys excluded, 1 release-version field excluded and zero substantive deferred. Full review: [`life_history_work_history_final_fields_review_2026-10-26.md`](life_history_work_history_final_fields_review_2026-10-26.md).
