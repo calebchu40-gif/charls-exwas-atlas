@@ -32,3 +32,8 @@
 ## 方案口径协调
 
 发现通用分析草案的M1（年龄/性别）与家户基础设施DAG候选核心集（另含教育、社区NBS城乡）命名容易造成误读。已更新试点路线：历史M1/M2仅作既往软件规格；针对家户设施暴露，以年龄/性别层作参考、年龄/性别+经核验教育与社区背景作候选调整模型，尚未正式冻结；SES和其他可能的中介/共暴露变量仅作有DAG依据的敏感性层。最终需在解盲和拟合前冻结模型角色、估计量、来源和表哈希。
+
+## 最新受控入库门禁复核
+
+再次只运行Wave 1源档案预检及可用波次入库元数据门禁。结果仍为：2011 All Data/PSU/Weight/Blood均missing_or_ambiguous，Wave 1 release gate 
+ot_passed；2013官方Weights、2015官方Blood均skipped_missing_input。报告只写在本机 %LOCALAPPDATA%\\CHARLS_ExWAS_Atlas\\qa_outputs，没有读取参与者值。由于正式源包缺失，本轮不启动复核拟合或扩展模型。
