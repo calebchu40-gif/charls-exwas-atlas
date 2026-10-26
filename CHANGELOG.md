@@ -1,3 +1,9 @@
+# 2026-10-27 Add disclosure-gated public association results path
+
+- Added a private review-manifest gate bound to the exact result CSV SHA-256. Every analysis row needs an explicit disclosure decision; if any hypothesis is withheld, its entire predeclared multiplicity family is withheld.
+- Added an allowlisted public JSON exporter, strict Pages payload validation for complete approved families, and a browser loader for the optional reviewed result asset. No result asset was generated because no family has an approved review.
+- Added seven release-builder tests plus stricter public payload tests. Targeted release/result tests passed (29); JavaScript syntax and site-payload validation passed. CHARLS source/design intake remains closed and formal results remain 0.
+
 # 2026-10-26 Reaudit public release boundary after pilot CLI fix
 
 - Scanned tracked repository paths for protected pilot outputs, intake manifests, and common microdata file extensions; none were present. The public site payload validator passed.

@@ -1,3 +1,7 @@
+# 2026-10-27 continuation — disclosure-gated result publication path
+
+Closed the gap between the existing result validator and the website: a private disclosure-review CSV is now bound to the exact complete result CSV hash, each hypothesis needs a decision, and any withheld hypothesis suppresses its entire predeclared family. The exporter emits only a fixed aggregate allowlist to `association_results_v1.json`; it rejects inputs outside the protected local root and requires explicit `--publish`. The Pages validator rejects incomplete families and non-allowlisted/private fields; the site loader displays only reviewed payload rows. No result payload was generated or committed. Targeted release/result tests passed (29), JS syntax and payload validation passed. Official source/design gates and formal association count remain unchanged.
+
 # 2026-10-26 continuation — public release-boundary recheck
 
 Rechecked tracked repository paths for protected outputs/manifests and common microdata extensions: none found. `validate_public_site_payload.py` passed; live Pages returned HTTP 200 and app v192. No site files changed in this turn. The GitHub Checks API was rate-limited, so the latest remote CI state remains unverified.

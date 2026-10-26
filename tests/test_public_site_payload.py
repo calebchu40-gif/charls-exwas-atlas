@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.validate_public_site_payload import validate_payload
+from scripts.validate_public_site_payload import RESULT_ROW_FIELDS, validate_payload
 
 
 class PublicSitePayloadTests(unittest.TestCase):
@@ -41,6 +41,56 @@ class PublicSitePayloadTests(unittest.TestCase):
         (self.root / "index.html").unlink()
         errors = validate_payload(self.root)
         self.assertTrue(any("Required site file" in error and "index.html" in error for error in errors))
+
+    def test_accepts_complete_reviewed_association_family(self):
+        row = {field: "" for field in RESULT_ROW_FIELDS}
+        row.update(
+            analysis_id="synthetic-001", wave="2011", exposure_concept_id="e1",
+            phenotype_concept_id="p1", model_id="M1", fit_status="inestimable",
+            disclosure_status="approved_public_aggregate",
+        )
+        payload = {
+            "schema_version": 1,
+            "release_status": "disclosure_reviewed",
+            "generated_at": "2026-10-27T10:00:00+08:00",
+            "families": [{"family_id": "synthetic_main", "family_size": 1, "rows": [row]}],
+        }
+        (self.root / "association_results_v1.json").write_text(json.dumps(payload), encoding="utf-8")
+        self.assertEqual(validate_payload(self.root), [])
+
+    def test_rejects_private_fields_in_association_family(self):
+        row = {field: "" for field in RESULT_ROW_FIELDS}
+        row.update(
+            analysis_id="synthetic-001", wave="2011", exposure_concept_id="e1",
+            phenotype_concept_id="p1", model_id="M1", fit_status="inestimable",
+            disclosure_status="approved_public_aggregate", private_file_path="C:/private/data.dta",
+        )
+        payload = {
+            "schema_version": 1,
+            "release_status": "disclosure_reviewed",
+            "generated_at": "2026-10-27T10:00:00+08:00",
+            "families": [{"family_id": "synthetic_main", "family_size": 1, "rows": [row]}],
+        }
+        (self.root / "association_results_v1.json").write_text(json.dumps(payload), encoding="utf-8")
+        errors = validate_payload(self.root)
+        self.assertTrue(any("non-allowlisted fields" in error for error in errors))
+
+    def test_rejects_incomplete_association_family(self):
+        row = {field: "" for field in RESULT_ROW_FIELDS}
+        row.update(
+            analysis_id="synthetic-001", wave="2011", exposure_concept_id="e1",
+            phenotype_concept_id="p1", model_id="M1", fit_status="inestimable",
+            disclosure_status="approved_public_aggregate",
+        )
+        payload = {
+            "schema_version": 1,
+            "release_status": "disclosure_reviewed",
+            "generated_at": "2026-10-27T10:00:00+08:00",
+            "families": [{"family_id": "synthetic_main", "family_size": 2, "rows": [row]}],
+        }
+        (self.root / "association_results_v1.json").write_text(json.dumps(payload), encoding="utf-8")
+        errors = validate_payload(self.root)
+        self.assertTrue(any("complete declared K" in error for error in errors))
 
 
 if __name__ == "__main__":
