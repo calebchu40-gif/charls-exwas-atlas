@@ -1,3 +1,9 @@
+## 2014 WORKHISTORY remaining-field closure (local build v174 pending publication)
+
+Mapped 66 remaining F124/F124a position, F128 self-employment income, F129 military income/rank/change-year, F131 short-duration work and F150–F153 retirement/pension fields. Excluded 19 F_7 fields as interviewer job-history completeness checks because Yes routes back to F_2 to add another >6-month job. The 2,024-field WORKHISTORY ledger is now fully dispositioned: 1,968 mapped, 19 sensitive locations excluded, 33 route/quality checks excluded, 3 linkage keys excluded, 1 release-version field excluded and zero substantive deferred. Full review: [`life_history_work_history_final_fields_review_2026-10-26.md`](life_history_work_history_final_fields_review_2026-10-26.md).
+
+Local rebuild: 159 concepts / 4,809 mappings (E 4,763, P 46); WORKHISTORY 1,968 mapped. Local app v174 / JSON v41 pending publication. Formal association models remain zero.
+
 ## 2014 WORKHISTORY F101b workpoints / F110_a1 position-transition year (local build v173 pending publication)
 
 Mapped 14 F101b/F101b_a agricultural workpoint count/value fields, retaining separate components and beginning/middle timing (middle period is in the ≥20-year route). Also mapped seven F110_a1 years when middle-period position began, conditional on F110 vs F110_a differing. See [`life_history_work_history_workpoint_position_year_review_2026-10-26.md`](life_history_work_history_workpoint_position_year_review_2026-10-26.md).
