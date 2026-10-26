@@ -1,3 +1,9 @@
+# 2026-10-26 Inventory 2014 Life History DemographicBackgrounds
+
+- Confirmed a major unmapped Life History module: official Codebook `DEMOGRAPHICBACKGROUNDS` contains 1,920 unique field identifiers and currently has no rows in the Life History E/P crosswalk.
+- Added a metadata-only inventory generator and source-review checkpoint. It records 1,917 fields pending questionnaire-level review and excludes the three individual/household/community linkage keys. Codebook frequencies, extrema and respondent values are not copied or parsed.
+- The next mapping batches will follow spouse/partner, child and hukou questionnaire sections, preserving respondent/relative referents, repeated episode slots, conditional routes and sensitive data boundaries. This supplementary 2014 module remains separate from the regular-wave weighted pair matrix.
+
 # 2026-10-26 Environment-to-phenotype metadata readiness inventory
 
 - Added `scripts/summarize_environment_phenotype_readiness.py` and its generated audit to distinguish the CHARLS environment/housing proxy domain from NHANES-style measured chemical exposures.
