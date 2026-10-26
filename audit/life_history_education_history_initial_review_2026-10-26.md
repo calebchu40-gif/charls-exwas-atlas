@@ -2,7 +2,7 @@
 
 ## Scope
 
-Compared the first EDUCATION HISTORY section of the official questionnaire (items E000–E011) with matching Codebook fields. The module has 1,105 Codebook fields. This initial batch reviews 33 fields in five concepts. It does **not** claim full review of the 1,105-field module: the remaining 1,068 substantive fields are explicitly marked `deferred_source_review` in `life_history_education_history_coverage_2014_v1.csv` and are excluded from the public candidate directory until reviewed.
+The initial source review compared the official questionnaire's E000–E011 items with matching Codebook fields and mapped 33 fields in five concepts. Subsequent batches reviewed the remaining module, including five E134 acquisition-year fields, and the current ledger now gives each of the 1,105 fields an explicit mapping or non-E/P disposition. The five E134 fields are mapped only as certificate-acquisition year components; certificate names are open text absent from the Codebook inventory and no credential identity is inferred. See the current coverage ledger `life_history_education_history_coverage_2014_v1.csv` and `life_history_skill_certificate_year_review_2026-10-26.md`.
 
 ## Candidate concepts
 
@@ -18,17 +18,20 @@ These are retrospective, self-reported educational/social context candidates. Th
 
 ## Module inventory status
 
-The 1,105-row ledger gives every field a single status:
+The current 1,105-row ledger gives every field a single status. The earlier 33-field E000–E011 snapshot above is only the first source-review batch, not the current module total:
 
 | Disposition | Fields | Meaning |
 |---|---:|---|
-| Mapped candidate | 33 | Source-checked E000–E011 concepts above |
-| Deferred source review | 1,068 | Not yet checked field-by-field against the questionnaire for routing, referent, free text, privacy and repeated-episode structure; excluded from candidate catalog and analysis |
+| Mapped candidate | 1,077 | Source-reviewed candidate fields across the full Education History module |
+| Sensitive geography excluded | 22 | Location-specific fields withheld from the public candidate mapping |
 | Linkage keys | 3 | Controlled joins only when authorized and needed |
+| No-observation field | 1 | Codebook has no respondent observations for this field |
+| Data-quality field | 1 | Interview/check metadata, not an E/P measure |
 | Version metadata | 1 | Release bookkeeping |
+| Deferred source review | 0 | No substantive Codebook field remains generically unreviewed |
 | **Total** | **1,105** | **One explicit disposition for each Codebook field** |
 
 ## Reproducibility and privacy
 
-`scripts/build_life_history_exposure_crosswalk.py` produces the 1,105-row inventory and only puts the 33 reviewed fields in the public JSON. Institutional names, addresses, participant records and Codebook frequency tables are not included. This is an initial Education History batch, not module completion.
+`scripts/build_life_history_exposure_crosswalk.py` produces the 1,105-row inventory and includes source-reviewed fields in the public JSON. Institutional names, addresses, participant records and Codebook frequency tables are not included. The 33-field E000–E011 map remains identifiable as the initial batch; the current ledger reflects later module-level review.
 

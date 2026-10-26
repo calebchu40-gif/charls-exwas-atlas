@@ -27,7 +27,7 @@ CHARLSCodeBook 1 RESIDENCE
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
         self.assertEqual((len(groups), len(rows)), (181, 5879))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 5814, "p": 61})
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 5818, "p": 61})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
@@ -413,7 +413,7 @@ CHARLSCodeBook 1 RESIDENCE
         counts = Counter(row["disposition"] for row in ledger)
         self.assertEqual(counts["mapped_candidate"], 1077)
         self.assertEqual(counts["excluded_sensitive_geography"], 22)
-        self.assertEqual(counts["deferred_certificate_identity_linkage"], 5)
+        self.assertEqual(counts["deferred_certificate_identity_linkage"], 0)
         self.assertEqual(counts["excluded_data_quality_flag"], 1)
         self.assertEqual(counts["excluded_no_observations"], 1)
         self.assertEqual(counts["deferred_source_review"], 0)
