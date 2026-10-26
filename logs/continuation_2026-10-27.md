@@ -35,5 +35,4 @@
 
 ## 最新受控入库门禁复核
 
-再次只运行Wave 1源档案预检及可用波次入库元数据门禁。结果仍为：2011 All Data/PSU/Weight/Blood均missing_or_ambiguous，Wave 1 release gate 
-ot_passed；2013官方Weights、2015官方Blood均skipped_missing_input。报告只写在本机 %LOCALAPPDATA%\\CHARLS_ExWAS_Atlas\\qa_outputs，没有读取参与者值。由于正式源包缺失，本轮不启动复核拟合或扩展模型。
+再次只运行 Wave 1 源档案预检及可用波次入库元数据门禁。结果仍为：2011 All Data/PSU/Weight/Blood 均为 `missing_or_ambiguous`，Wave 1 release gate 为 `not_passed`；2013 官方 Weights、2015 官方 Blood 均为 `skipped_missing_input`。报告只写在本机 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\qa_outputs`，没有读取参与者值。由于正式源包缺失，本轮不启动复核拟合或扩展模型。
