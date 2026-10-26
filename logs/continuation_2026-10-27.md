@@ -89,3 +89,11 @@ GitHub Validate：`cb6f8e2`（scale-up门禁）已成功；`8002a0c`（公开程
 - 重新打开CHARLS官方Sample页面并逐段核对基线抽样说明：县级单位按地区、城乡县区类型及人均GDP排序后系统PPS抽取；每县级单位抽3个社区PSU；30个大型社区可再拆子社区作为PSU；6个样本社区被替换，6个县级抽样点跨县界，最终覆盖156个县级单位。
 - 因此`communityID`覆盖完整不等于最终PSU映射已认证；也不能从原始150县级抽样点、province/city或城乡代理变量推导出官方方差层。官方公开页面未提供最终拆分映射、方差层变量、复制权重或具体方差估计器。Wave 1设计门禁继续为未通过，不运行全设计关联模型。
 - 已将该具体证据和解释加入`audit/survey_design_weight_review_v1.md`。来源为[CHARLS官方Sample页面](https://charls.pku.edu.cn/en/About/Sample.htm)。
+
+## 新一轮续接：扩展候选元数据闭环（2026-10-27）
+
+- 重新运行受保护 Wave 1 与可用波次入库门禁：Wave 1 All Data、PSU、Weight、Blood仍全部`missing_or_ambiguous`；Wave 2 Weights与Wave 3 Blood仍为`skipped_missing_input`。没有读取参与者数据或启动模型。
+- 只读复核服务器专用项目目录：目录存在，未发现 CHARLS 数据档案；本机公开仓库跟踪文件清单中未发现 `.dta`、`.sav`、`.sas7bdat`、`.rdata`、`.rds` 或 CHARLS 压缩数据包。
+- 新增`audit_wave1_scaleup_metadata_readiness.py`：将240条K=150/K=90规划行的16个对比与2011官方Codebook文本核对；将15项表型的候选字段/单位与血液crosswalk核对；核对`i021`仅属于`i020=No`路由；强制模型和发布状态继续未批准。审计输出为`passed_metadata_crosswalk_only`，明确声明无参与者数据读取、无模型批准、无关联结果。
+- 将此审计加入GitHub Validate工作流，并更新规模扩展缺口记录和README状态入口。该改变提高正式数据到位前的编码/目录一致性把关；不替代精确发行版、目标样本框、权重、PSU/方差和模型冻结审核。
+- 当前扩展真实关联分析仍不得运行；下一项可放行条件仍是 Wave 1 四项获准官方输入进入本机保护目录，随后按既定source/frame/design gates逐一核验。

@@ -23,3 +23,7 @@ The three additional household fields `i016`, `i019`, and `i020` are not present
 ## Current status
 
 No new data were read, no K=150/K=90 model was run, and no script was presented as a completed scale-up. The protected Wave 1 readiness validator now recognizes `household_environment_scaleup` as a distinct plan and binds approval to the scale-up template, DAG, 240-row hypothesis register, scale-up gap record, source/design plans, and multiplicity decisions. This closes the approval-routing gap only; there is still no K=150/K=90 runner, no approved analysis model, and no scale-up approval record. With official inputs still missing, release-specific coding, denominators, and actual fitting must wait for the authorized Wave 1 files and passed gates.
+
+## Metadata-only implementation progress (2026-10-27)
+
+Added `scripts/audit_wave1_scaleup_metadata_readiness.py` and wired it into the repository validation workflow. It cross-checks all planned K=150/K=90 exposure-code/label contrasts against the tracked 2011 Codebook extraction, all 15 outcome field/unit candidates against the biomarker crosswalk, and the `i020=No` route restriction against the reviewed questionnaire-routing note. It also enforces that the model and every planned hypothesis remain unapproved. This closes a metadata consistency check before any future implementation; it does **not** authenticate an exact authorized release, validate respondent-level household linkage, freeze a model, estimate associations, or satisfy source/design gates. The script uses public/tracked metadata only.

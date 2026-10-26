@@ -38,6 +38,9 @@ jobs:
       - name: Audit planned Wave 1 scale-up hypothesis registry
         run: python scripts/audit_wave1_scaleup_hypothesis_registry.py
 
+      - name: Cross-check Wave 1 scale-up against reviewed public metadata
+        run: python scripts/audit_wave1_scaleup_metadata_readiness.py
+
       - name: Check website JavaScript syntax
         run: node --check site-prototype/dist/app.js
 
