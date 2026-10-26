@@ -407,6 +407,19 @@ GROUPS = [
         "caveat": "This is a childhood caregiving/family-structure context candidate, not a measure of caregiver identity or behavior beyond the reported relationship category. Keep A4a and A4b separate; preserve routes to parent education and later sections. Do not infer an unlisted caregiver type from the omitted open-text item or treat skipped branches as No. The 2014 special Life History module has no released survey weight and is outside regular-wave weighted pair scans.",
     },
     {
+        "concept_id": "life_history_biological_parent_birth_year_inputs",
+        "label": "Biological parents' birth years for potential age-at-birth derivation",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "family-of-origin demographic context",
+        "patterns": [r"a5[ab]"],
+        "question": "A5a/A5b",
+        "unit": "calendar birth year of biological mother and father",
+        "values": "A5a records biological mother's birth year; A5b records biological father's birth year. No category labels are applicable.",
+        "status": "official questionnaire referents and matching Codebook field identities reviewed; use as derivation inputs only after respondent birth-year linkage and release validation",
+        "caveat": "These fields are calendar birth years, not direct measures of parental age at respondent birth. Deriving age requires a valid respondent birth-year source, authorized linkage, consistent calendar-year definitions, and a separate missing/special-code review. Do not publish participant dates or infer exact ages from public metadata. Birth years of adoptive/step parents are excluded from this candidate because they need not correspond to the respondent's birth or caregiving start. The 2014 special Life History module has no released survey weight and is outside regular-wave weighted pair scans.",
+    },
+    {
         "concept_id": "life_history_sibling_death_before_age6",
         "label": "Sibling deaths before age six and family relationship context",
         "role": "e",
@@ -2431,7 +2444,7 @@ def build_parent_module_coverage(rows: list[dict]) -> list[dict]:
         row = mapped.get(code)
         if row:
             disposition, concept_id, rationale = "mapped_candidate", row["concept_id"], row["caveat"]
-        elif re.fullmatch(r"a5[abcdef]", code, re.I):
+        elif re.fullmatch(r"a5[c-f]", code, re.I):
             disposition, concept_id = "deferred_parent_birth_year", ""
             rationale = "Parent birth year is background/timing metadata, not a stand-alone exposure; event-age derivation requires approved linkage and validation."
         else:
@@ -2560,7 +2573,7 @@ def build_family_information_module_coverage(rows: list[dict]) -> list[dict]:
         elif code == "versionid":
             disposition, concept_id = "excluded_release_metadata", ""
             rationale = "Release/version bookkeeping metadata, not a respondent exposure or phenotype."
-        elif re.fullmatch(r"a5[abcdef]", code, re.I):
+        elif re.fullmatch(r"a5[c-f]", code, re.I):
             disposition, concept_id = "deferred_parent_birth_year", ""
             rationale = "Parent birth year is timing/background metadata; event-age derivation requires an explicit estimand and authorized linkage."
         else:

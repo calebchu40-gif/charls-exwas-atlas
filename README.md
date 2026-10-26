@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-26）
 
-**最新已上线更新：**app v183 / Life History JSON v50 的原型含179个Life History概念、5,873条映射（E 5,812、P 61）。B4_4健在状态被纳入B11死亡年份条件题组，合并为家族层面的生存/死亡史结局候选；该字段组不代表受访者死亡或个体死亡率。2014 Life History B模块271个结构化Codebook字段现在均有明确候选映射。部署 #315 成功；首页和专题JSON均返回HTTP 200，远端JSON与本地SHA-256一致。正式关联模型仍为0。详见[`audit/life_history_sibling_module_review_2026-10-26.md`](audit/life_history_sibling_module_review_2026-10-26.md)。
+**本地待发布更新：**app v184 / Life History JSON v51 的原型含180个Life History概念、5,875条映射（E 5,814、P 61）。最新把A5a/A5b生母/生父出生年份作为潜在“受访者出生时父母年龄”派生输入候选；原字段仍只是日历年份，派生需经授权的受访者出生年份联结和特殊值核验。A5c-A5f养/继父母出生年份继续暂缓。此前v183/v50已在线核验；本批待部署。正式关联模型仍为0。详见[`audit/life_history_parent_module_review_2026-10-26.md`](audit/life_history_parent_module_review_2026-10-26.md)。
 
 **当前线上版本：**CHARLS ExWAS Atlas已公开部署：[网站入口](https://calebchu40-gif.github.io/charls-exwas-atlas/)。线上 app v183 / Life History JSON v50 已核验；远端JSON SHA-256 与本地相同。正式关联模型仍为0；目录共现不等于样本量或关联结果。
 

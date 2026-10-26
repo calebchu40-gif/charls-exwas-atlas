@@ -1,3 +1,10 @@
+# 2026-10-26 Map biological-parent birth-year derivation inputs
+
+- Mapped A5a/A5b biological mother/father birth-year fields as inputs to a potential parental-age-at-respondent-birth estimand; the catalog explicitly says these are calendar years, not ages.
+- Kept A5c-A5f adoptive/step-parent birth years deferred, since they do not define age at respondent birth or caregiving start by themselves.
+- Rebuilt catalog: 180 concepts / 5,875 mappings (E 5,814, P 61); app v184 / JSON v51. Formal association models remain 0.
+- Audit: `audit/life_history_parent_module_review_2026-10-26.md`.
+
 # 2026-10-26 Map sibling survival gate with conditional death year
 
 - Matched the B4_4 alive/deceased gate to the questionnaire route for B11 sibling death year; mapped all 30 repeated fields to one family-level survival/death history P candidate.

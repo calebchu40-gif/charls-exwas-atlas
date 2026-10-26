@@ -26,7 +26,7 @@ The questionnaire also asks for sibling names (`B4_1`) and open-text causes of d
 
 ## Catalog state and regeneration
 
-The full 2014 Life History directory now contains 179 candidate concepts and 5,873 source-field mappings (5,812 E-role, 61 P-role). These counts include routed fields and repeated relative components and must not be read as independent measures. The 2014 special-wave fields remain separate from the five regular-wave pair matrix because the official release provides no survey weight and has a distinct sample composition.
+The full 2014 Life History directory now contains 180 candidate concepts and 5,875 source-field mappings (5,814 E-role, 61 P-role). These counts include routed fields and repeated relative components and must not be read as independent measures. The 2014 special-wave fields remain separate from the five regular-wave pair matrix because the official release provides no survey weight and has a distinct sample composition.
 
 Regenerate the crosswalk, special-survey JSON and 271-field B-module coverage ledger with:
 
