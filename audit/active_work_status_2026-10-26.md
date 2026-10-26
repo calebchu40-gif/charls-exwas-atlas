@@ -1,3 +1,7 @@
+## 2014 WORKHISTORY F120/F120a job-cessation batch (local pending publication)
+
+Mapped 238 F120 multi-select nonmilitary job-cessation reason fields across 14 episodes and eight F120a military-service cessation reason fields. The questionnaire routes F120 only after F118 says a job has ended and applies F_3=1–5; military F_3=6 uses separate F120a. Local totals: 126 concepts / 3,957 mappings (E 3,911, P 46); WORKHISTORY 1,116 mapped, 883 substantive fields still deferred. Prepared app v165 / JSON v32; local payload and JS syntax checks pass. Public remains v164 / JSON v31 pending deployment.
+
 ## 2014 WORKHISTORY employer-benefit batch (app v164 verified)
 
 Reviewed all 357 F112a Codebook fields using explicit, mutually exclusive patterns: 264 select-all employer benefit type fields (beginning/middle phase), 21 monthly benefit-value fields, and 72 affiliated nursery/kindergarten fields. The categories preserve episode and phase; the monetary value is not salary and is not inflation-harmonized. `None`/`Neither` and their skip routes are not treated as blank No. Local totals are 124 concepts / 3,711 mappings (E 3,665, P 46); WORKHISTORY has 870 mapped and 1,129 substantive source-review fields deferred. Published as app v164 / JSON v31 in commit `3843e8f`; homepage/app/JSON versions, all three F112a concepts, and remote/local JSON SHA-256 were verified.
