@@ -38,6 +38,7 @@ CROSSWALK = ROOT / "audit" / "blood_biomarker_crosswalk_v1.csv"
 EXPECTED_SVY = "0.35.0"
 EXPOSURE = "running_water_at_residence"
 EXPOSURE_FIELD = "i017"
+COOKING_FIELD = "i022"
 WEIGHT_FIELD = "bloodweight"
 PSU_FIELD = "communityID"
 SEX_FIELD = "rgender"
@@ -81,7 +82,7 @@ def read_analytes() -> list[dict[str, str]]:
 def read_input(analytes: list[dict[str, str]]) -> pl.DataFrame:
     if not DATA.is_file() or not AGE.is_file() or not PSU_MAP.is_file():
         raise FileNotFoundError("Protected 2011 prepared table, age candidate, or PSU map is missing")
-    fields = ["ID", EXPOSURE_FIELD, WEIGHT_FIELD, PSU_FIELD, SEX_FIELD,
+    fields = ["ID", EXPOSURE_FIELD, COOKING_FIELD, WEIGHT_FIELD, PSU_FIELD, SEX_FIELD,
               EDUCATION_FIELD, URBAN_FIELD]
     fields.extend(r["variable"] for r in analytes)
     fields = list(dict.fromkeys(fields))
@@ -112,7 +113,7 @@ def read_input(analytes: list[dict[str, str]]) -> pl.DataFrame:
         return pl.when(value.is_finite()).then(value).otherwise(None).alias(name)
 
     joined = joined.with_columns(
-        numeric(EXPOSURE_FIELD), numeric(WEIGHT_FIELD), numeric(SEX_FIELD),
+        numeric(EXPOSURE_FIELD), numeric(COOKING_FIELD), numeric(WEIGHT_FIELD), numeric(SEX_FIELD),
         numeric(EDUCATION_FIELD), numeric(URBAN_FIELD),
         numeric(AGE_FIELD), *(numeric(r["variable"]) for r in analytes),
     )
@@ -121,6 +122,9 @@ def read_input(analytes: list[dict[str, str]]) -> pl.DataFrame:
         pl.when(water == 1).then(1.0)
         .when(water == 2).then(0.0)
         .otherwise(None).alias("water_yes"),
+        pl.when(pl.col(COOKING_FIELD).is_between(1, 7, closed="both"))
+        .then(pl.col(COOKING_FIELD).cast(pl.Int8)).otherwise(None)
+        .alias("cooking_fuel_code"),
         pl.when(pl.col(WEIGHT_FIELD).is_not_null() & (pl.col(WEIGHT_FIELD) > 0))
         .then(pl.col(WEIGHT_FIELD)).otherwise(0.0).alias("analysis_weight"),
         pl.when(pl.col(SEX_FIELD) == 2).then(1.0)
@@ -140,7 +144,7 @@ def read_input(analytes: list[dict[str, str]]) -> pl.DataFrame:
     )
     # Drop the participant key before handing the analysis frame to the engine.
     return joined.drop(["ID", EXPOSURE_FIELD, WEIGHT_FIELD, SEX_FIELD,
-                        EDUCATION_FIELD, URBAN_FIELD, PSU_FIELD])
+                        EDUCATION_FIELD, URBAN_FIELD, PSU_FIELD, COOKING_FIELD])
 
 
 def as_num(value: object) -> float | None:
