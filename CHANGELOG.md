@@ -1,3 +1,9 @@
+# 2026-10-26 Map additional offspring count fields
+
+- Mapped C007/C009/C017 (five Codebook fields) as an additional biological/adopted child screen/count candidate. Labels state that these are additional to a preloaded roster, not total lifetime parity; the builder does not derive totals.
+- Added source audit `audit/life_history_offspring_count_review_2026-10-26.md`; no child names, participant values or frequencies are published.
+- Local Life History catalog is now 174 concepts / 5,566 mappings (E 5,520, P 46); app v178 / JSON v45. Deployment pending.
+
 # 2026-10-26 Map 2014 Life History offspring care context
 
 - Reviewed C034a1–C034g2 and mapped 529 official fields across maternal employment/leave at childbirth, early-childhood service availability, offspring preschool access, and offspring residence/caregiving before age two and at ages three to five.
