@@ -91,6 +91,32 @@ GROUPS = [
         "caveat": "Reports whether an eligible offspring had ever married; the questionnaire asks C034 only for children born before December 12, 1998, deceased children who died after age 12, or children with missing birth date. C034_1 marriage-year fields are excluded. This is family context, not respondent marital status or a direct environmental measure; preserve child-slot and eligibility routes, do not infer from routed blanks, and do not publish child identities or values. The 2014 Life History release has no survey weight and is outside regular-wave weighted pair scans.",
     },
     {
+        "concept_id": "life_history_offspring_military_service_context",
+        "label": "Offspring military-service history context",
+        "role": "e",
+        "modules": ["DEMOGRAPHICBACKGROUNDS"],
+        "domain": "intergenerational and historical social context",
+        "patterns": [r"c040s(?:[1-9]|1[0-9]|2[0-6])"],
+        "question": "C040",
+        "unit": "selected child-slot category indicating reported military-service history, or explicit none option",
+        "values": "Selected child roster slots 1–25; none.",
+        "status": "official questionnaire category menu, child-slot route, Codebook selected-option fields, and separate year-range fields reviewed; no response frequencies used",
+        "caveat": "Asked as a family-history question about children, not the respondent's own military service or a direct environmental measurement. The 26 fields represent child-slot options plus an explicit none option, not 26 independent variables or people; preserve the roster route and do not infer from blanks. Exact start/end years are excluded. Do not publish child identities, values, counts, or frequencies. The 2014 Life History release has no survey weight and is outside regular-wave weighted pair scans.",
+    },
+    {
+        "concept_id": "life_history_offspring_sent_down_context",
+        "label": "Offspring sent-down-to-countryside history context",
+        "role": "e",
+        "modules": ["DEMOGRAPHICBACKGROUNDS"],
+        "domain": "intergenerational and historical social context",
+        "patterns": [r"c041s(?:[1-9]|1[0-9]|2[0-7])"],
+        "question": "C041",
+        "unit": "selected child-slot category indicating reported sent-down history, explicit none, or not-applicable option",
+        "values": "Selected child roster slots 1–25; none; not applicable because of agricultural hukou at that time.",
+        "status": "official questionnaire category menu, agricultural-hukou not-applicable distinction, child-slot route, and Codebook fields reviewed; no response frequencies used",
+        "caveat": "Asked about children sent down to the countryside during or before the Cultural Revolution, not about the respondent's own exposure or current residence. The 27 fields are repeated child-slot options plus separate none and not-applicable choices; preserve these categories and the child roster route. Do not collapse not-applicable into no, infer from blanks, aggregate slots, or publish child identities or values. Exact year ranges are excluded. The 2014 Life History release has no survey weight and is outside regular-wave weighted pair scans.",
+    },
+    {
         "concept_id": "life_history_offspring_spouse_age_difference_context",
         "label": "Offspring spouse age difference at first marriage context",
         "role": "e",
@@ -3022,9 +3048,9 @@ def build_demographic_backgrounds_coverage(rows: list[dict]) -> list[dict]:
         elif re.fullmatch(r"(?:c037s\d+|c038_1_\d+_|c038s\d+|c039_1_\d+_|c039s\d+)", code, re.I):
             disposition, concept_id = "deferred_sensitive_relative_identity", ""
             rationale = "Child-specific political affiliation, ethnicity/minority status, or religious belief. These sensitive relative attributes are held out of the public E/P map pending separate data-minimization, ethics, release and disclosure review; no values or frequencies are published."
-        elif re.fullmatch(r"(?:c001a_\d+_|c001a_[12]_\d+_|c003_\d+_|c010_[12]_\d+_|c010_\d+_|c014_[12]_\d+_|c014_\d+_|c014a_1_\d+_|c019_\d+_|c021_[12]_\d+_|c021_\d+_|c023_[12]_\d+_|c023_\d+_|c034_1_\d+_|c035_1_\d+_|c038a1_1_\d+_|child(?:year|month)_\d+_)", code, re.I):
+        elif re.fullmatch(r"(?:c001a_\d+_|c001a_[12]_\d+_|c003_\d+_|c010_[12]_\d+_|c010_\d+_|c014_[12]_\d+_|c014_\d+_|c014a_1_\d+_|c019_\d+_|c021_[12]_\d+_|c021_\d+_|c023_[12]_\d+_|c023_\d+_|c034_1_\d+_|c035_1_\d+_|c038a1_1_\d+_|c040_[12]_\d+_|c041_[12]_\d+_|child(?:year|month)_\d+_)", code, re.I):
             disposition, concept_id = "excluded_child_date_component", ""
-            rationale = "Child birth/death/adoption or offspring-marriage timeline year/month component. Exact relative-level dates are not required for a respondent E/P metadata catalog and may increase disclosure risk; do not publish participant dates or derive child age/event chronology."
+            rationale = "Child birth/death/adoption, marriage, or offspring historical-event year/range component. Exact relative-level dates are not required for a respondent E/P metadata catalog and may increase disclosure risk; do not publish participant dates or derive child age/event chronology."
         elif re.fullmatch(r"(?:child(?:alive|cat|gender|finished|finisheds)_\d+_|c012_\d+_|c020_\d+_|c014as\d+)", code, re.I):
             disposition, concept_id = "c_only_offspring_roster_and_adoption_status", ""
             rationale = "Child roster category, sex, alive/route status, or adoption-out roster indicator. This is offspring/roster metadata rather than a respondent phenotype; no child-slot identity, responses or counts are published or derived."

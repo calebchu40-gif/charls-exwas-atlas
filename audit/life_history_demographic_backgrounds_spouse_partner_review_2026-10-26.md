@@ -32,10 +32,10 @@ The generated ledger assigns exactly one disposition to all 1,920 unique Codeboo
 
 | Disposition | Fields |
 | --- | ---: |
-| Mapped E candidate metadata | 1,193 |
-| C-only interview, roster, and family-context metadata | 256 |
+| Mapped E candidate metadata | 1,246 |
+| C-only interview, roster, and family-context metadata | 131 |
 | Deferred sensitive relative-identity fields | 204 |
-| Excluded child date components | 221 |
+| Excluded child date components | 293 |
 | Excluded child-parent linkage fields | 18 |
 | Excluded child roster-order keys | 12 |
 | Excluded relative birth-date fields | 12 |
@@ -43,7 +43,7 @@ The generated ledger assigns exactly one disposition to all 1,920 unique Codeboo
 | Excluded release metadata | 1 |
 | **Total** | **1,920** |
 
-The catalog contains five offspring first-marriage context candidates (126 fields); 54 exact relative timeline fields remain excluded. A separate adopted-child source candidate adds four C019a fields; see `life_history_adopted_child_source_review_2026-10-26.md`. Full routing decisions are in `life_history_offspring_marital_context_review_2026-10-26.md`.
+The catalog contains five offspring first-marriage context candidates (126 fields); 54 exact relative timeline fields remain excluded. A separate adopted-child source candidate adds four C019a fields; see `life_history_adopted_child_source_review_2026-10-26.md`. Two C040/C041 family-history category concepts add 53 fields; their 72 exact year-range fields remain excluded. Full routing decisions are in `life_history_offspring_marital_context_review_2026-10-26.md`.
 
 The three offspring-context candidates cover 36 official fields: C012a/C020a completed education; C012c/C020c current schooling grade; and C013/C020b work/school/neither/reported-deceased status. They are family-context constructs, not the respondent's own education/employment or participant-level child outcomes. Item routes and separate biological/adopted-child families are preserved; no roster values, names, dates, frequencies, or derived child counts are published. See the current generated ledger `life_history_demographic_backgrounds_full_coverage_2014_v1.csv`.
 
