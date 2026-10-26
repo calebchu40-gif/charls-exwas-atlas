@@ -1421,6 +1421,32 @@ GROUPS = [
         "caveat": "Retrospective job chronology, not exact dates or measured duration. The questionnaire instructs interviewers to ask for a year range and enter its midpoint when exact year is not recalled. Month/season/half-year are alternative precision, not additive components. Retain the 0–18 episode index; do not derive duration until release coding and contradictory/partial dates are reconciled. Main workplace text/location fields are excluded from the public catalogue.",
     },
     {
+        "concept_id": "life_history_lifetime_work_participation",
+        "label": "Reported lifetime history of paid or livelihood work",
+        "role": "e",
+        "modules": ["WORKHISTORY"],
+        "domain": "life-course employment and socioeconomic context",
+        "patterns": [r"f_1"],
+        "question": "F_1",
+        "unit": "single yes/no lifetime work-history response",
+        "values": "The questionnaire defines work broadly to include livelihood labor other than housework, such as farming, paid jobs, self-employment, unpaid household-business help and army service.",
+        "status": "official questionnaire definition and Codebook item reviewed; correction loop and authorized-release coding require QA",
+        "caveat": "Retrospective ever-worked status, not current employment, duration or occupation. If a prior-wave response is contradicted or the respondent confirms never having worked, the questionnaire routes back to F_1 for correction; use only the final corrected item and do not treat F_1_0/F_1_1 as separate exposures. Preserve the broad six-month job definition for subsequent episodes.",
+    },
+    {
+        "concept_id": "life_history_lifetime_nonwork_reason",
+        "label": "Main reported reason for never having worked",
+        "role": "e",
+        "modules": ["WORKHISTORY"],
+        "domain": "life-course socioeconomic and household context",
+        "patterns": [r"f_1_2"],
+        "question": "F_1_2",
+        "unit": "single conditional categorical response among respondents confirming never worked",
+        "values": "The questionnaire options are disability, managing household affairs, family wealth/no need to work, sibling care and other.",
+        "status": "official questionnaire route and Codebook item reviewed; conditional denominator and authorized-release coding require QA",
+        "caveat": "Asked only after the corrected F_1 response indicates never worked; it is a routed reason, not an independently observed disability or caregiving phenotype. Do not pool with F_1 employment history as an unordered category or assume skipped responses mean No. Other is free text and is not mapped.",
+    },
+    {
         "concept_id": "life_history_education_episode_timing",
         "label": "Reported start and end periods across repeated education episodes",
         "role": "e",
@@ -1956,6 +1982,9 @@ def build_work_history_coverage(rows: list[dict]) -> list[dict]:
         elif code == "versionid":
             disposition, concept_id = "excluded_release_metadata", ""
             rationale = "Release/version bookkeeping metadata, not an E/P measure."
+        elif code in {"f_1_0", "f_1_1"}:
+            disposition, concept_id = "excluded_route_quality_metadata", ""
+            rationale = "Prior-survey consistency check / interviewer confirmation that routes back to correct F_1 lifetime-work status; use only to resolve the final F_1 response, not as an independent E/P measure."
         elif re.fullmatch(r"f_2_add_(?:[0-9]|1[0-8])_", code, re.I):
             disposition, concept_id = "excluded_sensitive_workplace_location", ""
             rationale = "Repeated main-workplace location/text field may reveal a specific worksite or locality; excluded from the public candidate catalogue and no geographic linkage is performed."

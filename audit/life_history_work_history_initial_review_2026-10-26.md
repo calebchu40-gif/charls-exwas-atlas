@@ -18,12 +18,18 @@ Mapped the 19 repeated Codebook fields `f_3_0_` through `f_3_18_` to `life_histo
 
 Mapped 171 year/month/season/half-year/end-status components across 19 repeated job records. The questionnaire permits a recalled year range and instructs interviewers to record its midpoint when the exact year is unknown. The month, season and half-year fields are alternative precision. These fields establish reported chronology, not exact duration; do not subtract dates until precision, special values, ongoing jobs and episode linkage are validated. The 19 `f_2_add_*` main-workplace fields are excluded because they can identify worksites/localities; no geocoding or linkage is performed.
 
+## F_1: lifetime work status and routed never-work reason (follow-up review)
+
+The official questionnaire and Codebook define `F_1` as lifetime ever-worked status. Its work construct follows the questionnaire's livelihood-work definition and is distinct from current employment, exact duration or occupation. `F_1_0` and `F_1_1` are prior-wave consistency/interviewer confirmation items that route the interviewer back to correct `F_1`; they are excluded as independent E/P variables. The candidate map therefore uses only the final corrected `F_1` response.
+
+`F_1_2` asks the main reason among respondents whose corrected `F_1` indicates they never worked. It is retained as a separate conditional candidate, not as a disability/caregiving diagnosis or a category interchangeable with work history. The `other` response's open text is not in the Codebook mapping and is not published. Skip/missing values must not be interpreted as No; the denominator and value coding require authorized-release QA.
+
 ## Exhaustive field disposition
 
-The Codebook lists 2,024 WORKHISTORY fields. The generated ledger assigns 203 fields to reviewed F001, F_3 and F_2 candidate concepts; excludes 19 repeated main-workplace location/text fields for privacy; excludes three person/household/community keys and one release-version field; and assigns the remaining 1,798 substantive fields to `deferred_source_review`. Those fields are not published as candidates and are not approved for analysis. Follow-up review must inspect each job family and repeated episode slot against questionnaire routing, reference period, respondent role, open-text identity, geographic/privacy sensitivity, monetary/workpoint units and measurement semantics before mapping.
+The Codebook lists 2,024 WORKHISTORY fields. The generated ledger assigns 205 fields to reviewed F001, F_3, F_2, F_1 and F_1_2 candidate concepts; excludes 19 repeated main-workplace location/text fields for privacy, two route/quality fields, three person/household/community keys and one release-version field; and assigns the remaining 1,794 substantive fields to `deferred_source_review`. Those fields are not published as candidates and are not approved for analysis. Follow-up review must inspect each job family and repeated episode slot against questionnaire routing, reference period, respondent role, open-text identity, geographic/privacy sensitivity, monetary/workpoint units and measurement semantics before mapping.
 
 The remaining F-series includes repeated job types and episode details, including employer/industry/occupation, work intensity, income/benefits, job transitions and reasons for stopping. These are not automatically environmental exposures; work history may support life-course context only when the exact construct and referent are verified.
 
 ## Reproducibility
 
-`build_life_history_exposure_crosswalk.py` generates the candidate map, Life History JSON and exhaustive module ledger. The local build reports 108 concepts / 2,854 mappings overall (E 2,808, P 46), with 32 mapped WORKHISTORY source rows. Validation and deployment are pending for this local batch.
+`build_life_history_exposure_crosswalk.py` generates the candidate map, Life History JSON and exhaustive module ledger. The F_1 follow-up local build reports 112 concepts / 3,046 mappings overall (E 3,000, P 46), with 205 mapped WORKHISTORY source rows. The public site remains at app v159 / JSON v26 until this batch is reviewed and deployed.

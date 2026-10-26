@@ -1,3 +1,7 @@
+## 2014 WORKHISTORY F_1 follow-up batch (local pending publication)
+
+Reviewed F_1, F_1_0, F_1_1 and F_1_2 questionnaire routing and Codebook identities. Added two candidate concepts for final corrected lifetime work status and the conditional reason for never having worked. The two prior-wave consistency/interviewer route fields are excluded from E/P. WORKHISTORY totals are now 205 mapped, 19 privacy-excluded workplace locations, two route/quality exclusions, three linkage keys, one release version and 1,794 source-review deferrals. Local catalog is 112 concepts / 3,046 mappings (E 3,000, P 46), prepared as app v160 / JSON v27. Local validation is pending; public remains v159 / JSON v26. The complete WORKHISTORY ledger is `life_history_work_history_coverage_2014_v1.csv`.
+
 ## 2014 WORKHISTORY F001/F_3/F_2 batch (app v159 verified)
 
 Added 13 F001 age-16 status options, 19 repeated F_3 job-type fields, and 171 F_2 timing components across 19 six-month-or-longer job episodes. Excluded 19 potentially identifying main-workplace location fields. The exhaustive 2,024-field ledger now has 203 mapped fields, 19 location exclusions, three linkage keys and one release-version exclusion, plus 1,798 substantive fields deferred for field-by-field review. Job type is not occupational/environmental dose; F_2 is recalled chronology and not exact duration. Local rebuild: 110 concepts / 3,044 mappings (E 2,998, P 46). Commit `c2bde2a` is live as app v159 / JSON v26; all 171 timing fields, 110 concepts and remote/local JSON SHA-256 match are verified.

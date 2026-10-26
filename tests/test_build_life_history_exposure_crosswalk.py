@@ -26,8 +26,8 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (110, 3044))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 2998, "p": 46})
+        self.assertEqual((len(groups), len(rows)), (112, 3046))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 3000, "p": 46})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
@@ -146,6 +146,8 @@ CHARLSCodeBook 1 RESIDENCE
             "life_history_status_at_age_16": 13,
             "life_history_repeated_job_type": 19,
             "life_history_repeated_job_timing": 171,
+            "life_history_lifetime_work_participation": 1,
+            "life_history_lifetime_nonwork_reason": 1,
         }
         for concept, count in education_counts.items():
             self.assertEqual(len(by_concept[concept]), count, concept)
@@ -175,6 +177,17 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(len(coverage), 47)
         self.assertEqual(sum(row["disposition"] == "mapped_candidate" for row in coverage), 39)
         self.assertEqual(sum(row["disposition"] != "mapped_candidate" for row in coverage), 8)
+
+    def test_work_history_lifetime_work_items_and_route_checks_are_separated(self):
+        rows, _ = builder.build()
+        ledger = builder.build_work_history_coverage(rows)
+        by_code = {row["code"]: row for row in ledger}
+        self.assertEqual(by_code["f_1"]["concept_id"], "life_history_lifetime_work_participation")
+        self.assertEqual(by_code["f_1_2"]["concept_id"], "life_history_lifetime_nonwork_reason")
+        self.assertEqual(by_code["f_1_0"]["disposition"], "excluded_route_quality_metadata")
+        self.assertEqual(by_code["f_1_1"]["disposition"], "excluded_route_quality_metadata")
+        self.assertEqual(sum(row["disposition"] == "mapped_candidate" for row in ledger), 205)
+        self.assertEqual(sum(row["disposition"] == "deferred_source_review" for row in ledger), 1794)
 
     def test_historical_family_class_fields_map_exhaustively_without_frequencies(self):
         rows, _ = builder.build()
