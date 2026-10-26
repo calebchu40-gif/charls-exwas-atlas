@@ -2,7 +2,7 @@
 
 - Rechecked the CHARLS official sample-design page and recorded the described first-stage county sorting/PPS, within-county community PSU selection, and 30 split communities in the survey-design review.
 - The page clarifies sampling operations but does not provide a released variance-stratum field, replicate weights, or a recommended variance estimator. No design variable was inferred from the sorting descriptors.
-- Recorded the official contact page and current listed email in the existing design-support inquiry reference; no email was sent.
+- Expanded the unsent support-inquiry draft to ask how county/community selection and the split communities enter variance estimation. The official contact page currently lists `charls@whu.edu.cn` but is dated 2019; the sender must reconfirm it before use. No email was sent.
 
 # 2026-10-26 Recheck protected pilot gates and live site
 
