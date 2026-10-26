@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas 项目范围与剩余工期（2026-10-25修订）
 
+## 2026-10-26 caregiver employment re-review (local)
+
+复核2014 C1/C2结构化字段后，对已有的童年抚养人就业/职业概念补充跳题和缺失语义，没有重复建概念。8个字段含工作时长、务农/非农类别、失业及条件性频次；职业部门/岗位/职责的自由文本不纳入公开元数据。字段覆盖表和审计见[`life_history_parent_employment_coverage_2014_v1.csv`](life_history_parent_employment_coverage_2014_v1.csv)和[`life_history_parent_employment_review_2026-10-26.md`](life_history_parent_employment_review_2026-10-26.md)。专项测试通过，等待全套验证及发布。
+
 ## 2026-10-26 2014 parental social-context extension (local)
 
 官方问卷C1_g1–g3与Codebook字段核对新增4个E候选概念、36条映射，涵盖父母/抚养人党员身份、少数民族身份、被选中亲属的民族类别及宗教信仰。所有相对索引字段保留家庭背景定位，不推断个人身份；C1_g3中英文选项8的抚养人指代冲突记录在字段说明和审计。2014 Life History本地目录现为40概念组、1,029字段（E 1,001、P 28）；覆盖台账与来源审计见[`life_history_parent_social_context_coverage_2014_v1.csv`](life_history_parent_social_context_coverage_2014_v1.csv)和[`life_history_parent_social_context_review_2026-10-26.md`](life_history_parent_social_context_review_2026-10-26.md)。530项测试与公共包/锁校验已通过，待部署。

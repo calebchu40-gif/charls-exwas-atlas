@@ -448,10 +448,10 @@ GROUPS = [
         "domain": "childhood socioeconomic context",
         "patterns": [r"c1_[ab]1", r"c2_[ab](?:_1)?"],
         "question": "C1a1/C1b1/C2a/C2b",
-        "unit": "work participation and unemployment experience/frequency",
+        "unit": "separate female/male caregiver work status and conditional unemployment experience/frequency",
         "values": "C1 work duration: 1=all childhood; 2=part; 3=none. C2: 1=yes, 2=no; frequency: 1=not very often, 2=a few times, 3=many times.",
-        "status": "official questionnaire categories and guardian-specific routes reviewed",
-        "caveat": "Questions refer to female/male guardian before age 17 and have skip conditions. The Codebook labels these fields 'dependents'; retain questionnaire meaning and do not assume biological parents.",
+        "status": "official questionnaire and Codebook fields reviewed; authorized-release special values and conditional routes require QA",
+        "caveat": "Questions refer to the A4a/A4b female/male caregiver before age 17, not necessarily biological parents. C2 frequency fields follow Yes only and occupation-dependent skips; blank is not No. Keep caregiver-specific routes, do not convert childhood categories to years, and verify release values before analysis.",
     },
     {
         "concept_id": "life_history_childhood_guardian_occupation",
@@ -460,10 +460,10 @@ GROUPS = [
         "domain": "childhood socioeconomic context",
         "patterns": [r"c1_[ab]2(?:_\d+)?"],
         "question": "C1a2/C1b2",
-        "unit": "agricultural/non-agricultural occupation; open-text detail fields",
-        "values": "1=farming; 2=non-agricultural; additional department, position and job-content fields are open text.",
-        "status": "official questionnaire item and route reviewed; open-text response values are not ingested",
-        "caveat": "Metadata only. Do not expose or publish personal occupation strings from respondent data. Guardian role and age-under-17 recall apply.",
+        "unit": "categorical agricultural/non-agricultural usual occupation; questionnaire also requests free-text detail",
+        "values": "Structured category: 1=farming; 2=non-agricultural. Questionnaire requests department, position and job-content text, which is excluded from the public atlas.",
+        "status": "official questionnaire and Codebook structured categories reviewed; open-text responses are not ingested",
+        "caveat": "Caregiver occupation context, not respondent occupation or household income. Do not expose personal occupation strings; preserve A4a/A4b caregiver routes, do not infer skipped fields, and verify release values before analysis.",
     },
     {
         "concept_id": "life_history_childhood_neighborhood_quality",
@@ -699,12 +699,42 @@ def build_parent_social_context_coverage(rows: list[dict]) -> list[dict]:
     return ledger
 
 
+def build_parent_employment_coverage(rows: list[dict]) -> list[dict]:
+    """Check all structured C1/C2 caregiver work fields and exclude write-in occupation text."""
+    patterns = [re.compile(x, re.I) for x in (r"c1_[ab][12]", r"c2_[ab](?:_1)?")]
+    concept_ids = {
+        "life_history_guardian_employment_context",
+        "life_history_childhood_guardian_occupation",
+    }
+    mapped = {row["code"]: row for row in rows
+              if row["module"] == "FAMILYINFORMATION" and row["concept_id"] in concept_ids}
+    fields = read_codebook_fields()
+    ledger = []
+    for (module, code), label in sorted(fields.items()):
+        if module != "FAMILYINFORMATION" or not any(p.fullmatch(code) for p in patterns):
+            continue
+        row = mapped.get(code)
+        if row is None:
+            raise ValueError(f"C1/C2 structured caregiver work field lacks disposition: {code}")
+        ledger.append({"module": module, "code": code, "codebook_label": label,
+                       "disposition": "mapped_candidate", "concept_id": row["concept_id"],
+                       "questionnaire_item": row["questionnaire_item"], "rationale": row["caveat"],
+                       "questionnaire_source": row["questionnaire_source"],
+                       "codebook_source": row["codebook_source"]})
+    if len(ledger) != 8:
+        raise ValueError(f"Expected 8 structured C1/C2 caregiver work fields; found {len(ledger)}")
+    if any(re.match(r"c1_[ab]2_\d", row["code"], re.I) for row in ledger):
+        raise ValueError("Occupation free-text detail fields must not enter the structured catalog")
+    return ledger
+
+
 def main() -> None:
     rows, concepts = build()
     sibling_coverage = build_sibling_module_coverage(rows)
     parent_coverage = build_parent_module_coverage(rows)
     family_class_coverage = build_historical_family_class_coverage(rows)
     parent_social_coverage = build_parent_social_context_coverage(rows)
+    parent_employment_coverage = build_parent_employment_coverage(rows)
     AUDIT.mkdir(parents=True, exist_ok=True)
     DIST.mkdir(parents=True, exist_ok=True)
     csv_path = AUDIT / "life_history_exposure_crosswalk_v1.csv"
@@ -734,6 +764,11 @@ def main() -> None:
         writer = csv.DictWriter(f, fieldnames=list(parent_social_coverage[0]), extrasaction="ignore")
         writer.writeheader()
         writer.writerows(parent_social_coverage)
+    parent_employment_coverage_path = AUDIT / "life_history_parent_employment_coverage_2014_v1.csv"
+    with parent_employment_coverage_path.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=list(parent_employment_coverage[0]), extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(parent_employment_coverage)
     print(json.dumps({"concepts": len(concepts), "field_rows": len(rows),
                       "by_role": {role: sum(x["role"] == role for x in rows) for role in ("e", "p")},
                       "by_module": {module: sum(x["module"] == module for x in rows)
@@ -742,11 +777,13 @@ def main() -> None:
                       "parent_module_fields_dispositioned": len(parent_coverage),
                       "historical_family_class_fields_mapped": len(family_class_coverage),
                       "parent_social_context_fields_mapped": len(parent_social_coverage),
+                      "parent_employment_fields_mapped": len(parent_employment_coverage),
                       "csv": str(csv_path), "json": str(json_path),
                       "sibling_coverage": str(coverage_path),
                       "parent_coverage": str(parent_coverage_path),
                       "family_class_coverage": str(family_class_coverage_path),
-                      "parent_social_context_coverage": str(parent_social_coverage_path)}, ensure_ascii=False))
+                      "parent_social_context_coverage": str(parent_social_coverage_path),
+                      "parent_employment_coverage": str(parent_employment_coverage_path)}, ensure_ascii=False))
 
 
 if __name__ == "__main__":
