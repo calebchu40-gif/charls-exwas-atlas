@@ -9,7 +9,6 @@ from __future__ import annotations
 
 import argparse
 import csv
-import hashlib
 import json
 import math
 import re
@@ -21,7 +20,7 @@ from pathlib import Path
 from typing import Any
 
 from project_paths import PRIVATE_ROOT, require_private_path
-from run_2011_water_blood_pilot import AGE, DATA, PRIVATE, ROOT, read_analytes, sha256
+from run_2011_water_blood_pilot import AGE, DATA, PRIVATE, ROOT, read_analytes
 from require_verified_wave1_frame import (
     analysis_plan_fingerprint,
     require_verified_wave1_frame,
@@ -37,14 +36,6 @@ REGISTER = ROOT / "audit" / "wave1_household_environment_hypothesis_register_v0.
 OUTPUT_DIR = PRIVATE / "scaleup_2011_household_environment"
 ID_FIELD = "ID"
 OUTCOME_TERMS = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
-
-
-def _sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as stream:
-        for block in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest()
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -72,7 +63,9 @@ def _numeric_code(value: object, label: str) -> float:
     return result
 
 
-def _validate_configuration(config: dict[str, Any], analytes: list[dict[str, str]]) -> None:
+def _validate_configuration(
+    config: dict[str, Any], analytes: list[dict[str, str]], registry: list[dict[str, str]]
+) -> None:
     if config.get("status") != "frozen":
         raise ValueError("Scale-up configuration is not frozen")
     for section in ("target", "frame", "design", "exposure_field_mapping", "model", "outcome_transformations"):
@@ -88,6 +81,11 @@ def _validate_configuration(config: dict[str, Any], analytes: list[dict[str, str
         raise ValueError("Frozen frame specification must list eligible_values")
     if not str(frame.get("age_field", "")).strip() or frame.get("minimum_age") is None:
         raise ValueError("Frozen frame specification lacks age field/domain")
+    minimum_age = _numeric_code(frame["minimum_age"], "frame.minimum_age")
+    if minimum_age < 0:
+        raise ValueError("Frozen minimum age cannot be negative")
+    for value in frame["eligible_values"]:
+        _numeric_code(value, "frame.eligible_values")
     if not str(frame.get("full_design_frame_definition", "")).strip():
         raise ValueError("Frozen frame specification lacks full_design_frame_definition")
 
@@ -116,6 +114,8 @@ def _validate_configuration(config: dict[str, Any], analytes: list[dict[str, str
     required_exposures = {"i016", "i017", "i019", "i020", "i021", "i022"}
     if set(exposure_map) != required_exposures or any(not str(v).strip() for v in exposure_map.values()):
         raise ValueError("Frozen exposure_field_mapping must map each planned 2011 item i016-i022 exactly once")
+    if len(set(exposure_map.values())) != len(exposure_map):
+        raise ValueError("Each planned household questionnaire item must map to a distinct prepared-table field")
     model = config["model"]
     if model.get("family") != "gaussian" or not str(model.get("primary_model_id", "")).strip():
         raise ValueError("Frozen model must declare a primary_model_id and Gaussian family")
@@ -150,18 +150,32 @@ def _validate_configuration(config: dict[str, Any], analytes: list[dict[str, str
             raise ValueError("Unsupported continuous covariate transform")
         if item.get("transform") != "identity" and item.get("center") is None:
             raise ValueError("Centered covariate terms must declare a center")
+        if item.get("center") is not None:
+            _numeric_code(item["center"], "continuous covariate center")
     for item in model["binary_covariates"]:
         if not isinstance(item, dict):
             raise ValueError("Binary covariates must use explicit field/code objects")
         require_term(item.get("field"), "binary covariate")
         if item.get("positive_value") is None or item.get("reference_value") is None:
             raise ValueError("Binary covariates must specify positive_value and reference_value")
+        if _numeric_code(item["positive_value"], "binary positive code") == _numeric_code(
+            item["reference_value"], "binary reference code"
+        ):
+            raise ValueError("Binary covariate positive and reference codes must differ")
     for label, item in model["categorical_covariates"].items():
         require_term(item.get("field"), f"categorical covariate {label}")
         if not isinstance(item.get("levels"), list) or len(item["levels"]) < 2:
             raise ValueError(f"Categorical covariate {label} must list at least two levels")
         if item.get("reference") not in item["levels"]:
             raise ValueError(f"Categorical covariate {label} reference must be one of its declared levels")
+        levels = [_numeric_code(value, f"categorical level {label}") for value in item["levels"]]
+        if len(set(levels)) != len(levels):
+            raise ValueError(f"Categorical covariate {label} has duplicate numeric levels")
+        _numeric_code(item["reference"], f"categorical reference {label}")
+
+    for row in registry:
+        _numeric_code(row["exposure_code_candidate"], "registered exposure code")
+        _numeric_code(row["reference_code_candidate"], "registered reference code")
 
 
 def _selected_fields(config: dict[str, Any], analytes: list[dict[str, str]], registry: list[dict[str, str]]) -> tuple[list[str], list[str]]:
@@ -181,6 +195,10 @@ def _selected_fields(config: dict[str, Any], analytes: list[dict[str, str]], reg
     if any(not OUTCOME_TERMS.fullmatch(str(field)) for field in fields):
         raise ValueError("Configuration contains an invalid prepared-table field name")
     age_field = str(frame["age_field"])
+    if not OUTCOME_TERMS.fullmatch(age_field) or age_field == ID_FIELD:
+        raise ValueError("Frozen age field must be a valid non-key prepared-table field")
+    if ID_FIELD in config["exposure_field_mapping"].values():
+        raise ValueError("A participant key cannot be used as an exposure field")
     registry_fields = {row["exposure_field_candidate"] for row in registry}
     if not registry_fields.issubset(set(config["exposure_field_mapping"])):
         raise ValueError("Frozen exposure mapping does not cover all registry source fields")
@@ -418,8 +436,8 @@ def run_scaleup() -> dict[str, Any]:
     readiness = require_wave1_analysis_readiness(PRIVATE, provenance, PLAN_KEY)
     config = _load_json(CONFIG_PATH)
     analytes = read_analytes()
-    _validate_configuration(config, analytes)
     registry = _load_registry()
+    _validate_configuration(config, analytes, registry)
 
     # Data-access dependencies are imported only after the source and review gates.
     import numpy as np
