@@ -26,8 +26,8 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (68, 1769))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 1723, "p": 46})
+        self.assertEqual((len(groups), len(rows)), (73, 1802))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 1756, "p": 46})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
@@ -103,6 +103,15 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(len(by_concept["life_history_sample_vital_status"]), 1)
         self.assertEqual(by_concept["life_history_sample_vital_status"][0]["code"], "died")
         self.assertIn("population mortality rate", by_concept["life_history_sample_vital_status"][0]["caveat"])
+        education_counts = {
+            "life_history_education_level_history": 12,
+            "life_history_literacy": 1,
+            "life_history_cultural_revolution_school_disruption": 7,
+            "life_history_schooling_interruption": 9,
+            "life_history_school_dormitory_experience": 4,
+        }
+        for concept, count in education_counts.items():
+            self.assertEqual(len(by_concept[concept]), count, concept)
         self.assertTrue(all("at least a year" in " ".join(r.values()) for concept in (
             "life_history_physical_activity_increase_periods", "life_history_diet_change_periods",
             "life_history_smoking_cessation_periods", "life_history_alcohol_reduction_periods") for r in by_concept[concept]))
@@ -251,6 +260,19 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(counts["excluded_interview_timing_metadata"], 2)
         self.assertEqual(counts["excluded_release_metadata"], 1)
         self.assertFalse(any("OBS:" in " ".join(row.values()) for row in rows if row["module"] == "SAMPLEINFORMATION"))
+
+    def test_education_history_inventory_maps_only_reviewed_fields_and_defers_remainder(self):
+        from collections import Counter
+        rows, _ = builder.build()
+        ledger = builder.build_education_history_coverage(rows)
+        self.assertEqual(len(ledger), 1105)
+        self.assertEqual(len({row["code"] for row in ledger}), 1105)
+        counts = Counter(row["disposition"] for row in ledger)
+        self.assertEqual(counts["mapped_candidate"], 33)
+        self.assertEqual(counts["deferred_source_review"], 1068)
+        self.assertEqual(counts["excluded_linkage_key"], 3)
+        self.assertEqual(counts["excluded_release_metadata"], 1)
+        self.assertTrue(all("not yet reviewed" in row["rationale"] for row in ledger if row["disposition"] == "deferred_source_review"))
 
 
 if __name__ == "__main__":

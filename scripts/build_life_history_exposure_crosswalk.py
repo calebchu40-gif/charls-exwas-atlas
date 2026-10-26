@@ -887,6 +887,71 @@ GROUPS = [
         "status": "official Life History release note and Codebook identity reviewed; authorized-release coding and observation window require QA",
         "caveat": "Metadata-only mortality endpoint candidate. This field also defines selection/survival status in the special survey and must not be interpreted as a population mortality rate, event time, cause of death, or a nationally representative outcome; no Life History sampling weight is provided. Do not publish participant vital status or Codebook distributions.",
     },
+    {
+        "concept_id": "life_history_education_level_history",
+        "label": "Educational stages ever attended",
+        "role": "e",
+        "modules": ["EDUCATIONHISTORY"],
+        "domain": "early-life socioeconomic and educational context",
+        "patterns": [r"e000s(?:[1-9]|1[0-2])"],
+        "question": "E000",
+        "unit": "12 multi-select education-stage indicators including a none option",
+        "values": "Questionnaire options span home school, kindergarten, preschool, primary, middle, high, vocational, three-year college, four-year college, master's, PhD and none. Treat the stage checklist as one educational-history family; option 12 is a none-of-these marker, not an attainment level.",
+        "status": "official questionnaire categories reviewed; multi-select authorized-release coding requires QA",
+        "caveat": "Retrospective education history; does not by itself establish credential completion, duration, quality or age at attendance. Preserve the ErrorE000 consistency check and authorized-release routes; do not treat each selector slot as an independent exposure.",
+    },
+    {
+        "concept_id": "life_history_literacy",
+        "label": "Self-reported ability to read or write",
+        "role": "e",
+        "modules": ["EDUCATIONHISTORY"],
+        "domain": "educational and socioeconomic context",
+        "patterns": [r"e001"],
+        "question": "E001",
+        "unit": "binary self-report",
+        "values": "Questionnaire asks whether the respondent can read or write.",
+        "status": "official question and eligibility route reviewed; authorized-release coding requires QA",
+        "caveat": "Literacy is educational/social context, not a validated cognitive phenotype. The item is routed by E000 education selections, including the none category; retain the official denominator and missingness.",
+    },
+    {
+        "concept_id": "life_history_cultural_revolution_school_disruption",
+        "label": "School attendance and interruption during the Cultural Revolution",
+        "role": "e",
+        "modules": ["EDUCATIONHISTORY"],
+        "domain": "historical educational and political context",
+        "patterns": [r"e002", r"e003(?:_[1-4])?", r"e003a"],
+        "question": "E002–E003a",
+        "unit": "cohort-restricted school attendance, closure longer than one month, conditional dates and reason for not attending",
+        "values": "E002–E003a apply to respondents born 1946–1961 inclusive. E002 asks whether in school when the Cultural Revolution started in fall 1966; E003 records school closure lasting over one month and start/end year/month; E003a asks why the respondent was not in school at that time.",
+        "status": "official birth-cohort eligibility and conditional routes reviewed; date/reason release coding requires QA",
+        "caveat": "Cohort- and period-specific recalled school disruption, not a general political exposure. E003 date fields are conditional; E003a is skipped when E002=Yes. Preserve birth-cohort eligibility and do not interpret skipped fields as No.",
+    },
+    {
+        "concept_id": "life_history_schooling_interruption",
+        "label": "Interruption and return during a school stage",
+        "role": "e",
+        "modules": ["EDUCATIONHISTORY"],
+        "domain": "educational continuity and life-course context",
+        "patterns": [r"e004", r"e005s(?:[1-8])"],
+        "question": "E004/E005",
+        "unit": "interruption gate and eight stage-specific multi-select indicators",
+        "values": "E004 defines interruption as leaving school for at least one semester and later returning; ordinary gaps between school stages are explicitly excluded. E005 records stages affected: primary, middle, high, vocational, three-year college, four-year college, master's or PhD.",
+        "status": "official interruption definition and follow-up route reviewed; checkbox storage requires QA",
+        "caveat": "Retrospective education-continuity context; E005 follows E004=Yes. Do not conflate stage-transition gaps with interruptions or count stage slots as independent events; blank slots are not No.",
+    },
+    {
+        "concept_id": "life_history_school_dormitory_experience",
+        "label": "School-dormitory residence during primary through high school",
+        "role": "e",
+        "modules": ["EDUCATIONHISTORY"],
+        "domain": "childhood residential and schooling context",
+        "patterns": [r"e010", r"e011s[1-3]"],
+        "question": "E010/E011",
+        "unit": "ever-lived-in-dormitory gate and three school-stage selectors",
+        "values": "E010 asks whether the respondent lived in a school dormitory from primary through high school; the questionnaire includes residence with nearby relatives/friends in its description. E011 selects primary, middle and/or high school stages.",
+        "status": "official housing definition and follow-up route reviewed; multi-select release coding requires QA",
+        "caveat": "Retrospective schooling/residential-context proxy, not measured crowding, indoor air or a geographic exposure. E011 follows E010=Yes; retain the broad questionnaire definition and do not infer duration or living conditions.",
+    },
 ]
 
 
@@ -1349,6 +1414,37 @@ def build_sample_information_coverage(rows: list[dict]) -> list[dict]:
     return ledger
 
 
+def build_education_history_coverage(rows: list[dict]) -> list[dict]:
+    """Map reviewed early Education History fields and explicitly defer the unreviewed remainder."""
+    mapped = {row["code"]: row for row in rows if row["module"] == "EDUCATIONHISTORY"}
+    fields = read_codebook_fields()
+    ledger = []
+    linkage = {"id", "householdid", "communityid"}
+    for (module, code), label in sorted(fields.items()):
+        if module != "EDUCATIONHISTORY":
+            continue
+        row = mapped.get(code)
+        if row:
+            disposition, concept_id, rationale = "mapped_candidate", row["concept_id"], row["caveat"]
+        elif code in linkage:
+            disposition, concept_id = "excluded_linkage_key", ""
+            rationale = "Person/household/community linkage key. Never publish values; use only authorized controlled joins when required."
+        elif code == "versionid":
+            disposition, concept_id = "excluded_release_metadata", ""
+            rationale = "Release/version bookkeeping metadata, not an E/P measure."
+        else:
+            disposition, concept_id = "deferred_source_review", ""
+            rationale = "Education History questionnaire/codebook family not yet reviewed field-by-field for routing, referent, free text, address/privacy, repeated episode structure and authorized-release storage. Do not publish as a candidate or use in analysis until reviewed."
+        ledger.append({"module": module, "code": code, "codebook_label": label,
+                       "disposition": disposition, "concept_id": concept_id, "rationale": rationale,
+                       "questionnaire_source": "sources_official/CHARLS_Life_History_Questionnaire.pdf",
+                       "codebook_source": "sources_official/CHARLS_Life_History_codebook.pdf"})
+    codes = [row["code"] for row in ledger]
+    if len(ledger) != 1105 or len(codes) != len(set(codes)):
+        raise ValueError(f"EDUCATIONHISTORY coverage not exhaustive/unique: rows={len(ledger)}, unique={len(set(codes))}")
+    return ledger
+
+
 def main() -> None:
     rows, concepts = build()
     sibling_coverage = build_sibling_module_coverage(rows)
@@ -1364,6 +1460,7 @@ def main() -> None:
     wealth_history_coverage = build_wealth_history_module_coverage(rows)
     health_history_coverage = build_health_history_module_coverage(rows)
     sample_information_coverage = build_sample_information_coverage(rows)
+    education_history_coverage = build_education_history_coverage(rows)
     AUDIT.mkdir(parents=True, exist_ok=True)
     DIST.mkdir(parents=True, exist_ok=True)
     csv_path = AUDIT / "life_history_exposure_crosswalk_v1.csv"
@@ -1438,6 +1535,11 @@ def main() -> None:
         writer = csv.DictWriter(f, fieldnames=list(sample_information_coverage[0]), extrasaction="ignore")
         writer.writeheader()
         writer.writerows(sample_information_coverage)
+    education_history_path = AUDIT / "life_history_education_history_coverage_2014_v1.csv"
+    with education_history_path.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=list(education_history_coverage[0]), extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(education_history_coverage)
     print(json.dumps({"concepts": len(concepts), "field_rows": len(rows),
                       "by_role": {role: sum(x["role"] == role for x in rows) for role in ("e", "p")},
                       "by_module": {module: sum(x["module"] == module for x in rows)
@@ -1455,6 +1557,7 @@ def main() -> None:
                       "wealth_history_fields_dispositioned": len(wealth_history_coverage),
                       "health_history_fields_dispositioned": len(health_history_coverage),
                       "sample_information_fields_dispositioned": len(sample_information_coverage),
+                      "education_history_fields_dispositioned": len(education_history_coverage),
                       "csv": str(csv_path), "json": str(json_path),
                       "sibling_coverage": str(coverage_path),
                       "parent_coverage": str(parent_coverage_path),
@@ -1468,7 +1571,8 @@ def main() -> None:
                       "residence_module_coverage": str(residence_module_path),
                       "wealth_history_coverage": str(wealth_history_path),
                       "health_history_coverage": str(health_history_path),
-                      "sample_information_coverage": str(sample_information_path)}, ensure_ascii=False))
+                      "sample_information_coverage": str(sample_information_path),
+                      "education_history_coverage": str(education_history_path)}, ensure_ascii=False))
 
 
 if __name__ == "__main__":
