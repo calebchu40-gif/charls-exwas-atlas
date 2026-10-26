@@ -15,6 +15,7 @@
     "final_psu_mapping": {"status": "not_reviewed", "evidence": ""},
     "variance_method_review": {"status": "not_reviewed", "evidence": "", "method": "", "limitations": ""},
     "frozen_analysis_plan": {"status": "not_reviewed", "evidence": ""},
-    "pilot_success_and_reproducibility_review": {"status": "not_reviewed", "evidence": ""}
+    "pilot_success_and_reproducibility_review": {"status": "not_reviewed", "evidence": ""},
+    "frozen_scaleup_configuration": {"status": "not_reviewed", "evidence": "", "sha256": ""}
   }
 }

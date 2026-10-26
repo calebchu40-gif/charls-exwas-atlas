@@ -1,0 +1,66 @@
+{
+  "status": "not_frozen",
+  "plan_id": "charls_2011_household_environment_scaleup_v1_K150_K90",
+  "analysis_plan_sha256": "",
+  "source_manifest_id": "",
+  "prepared_output_sha256": "",
+  "reviewer": "",
+  "reviewed_at": "",
+  "target": {
+    "estimand": "",
+    "population_description": "",
+    "age_domain_method": ""
+  },
+  "frame": {
+    "eligibility_field": "",
+    "eligible_values": [],
+    "age_field": "",
+    "minimum_age": null,
+    "full_design_frame_definition": ""
+  },
+  "design": {
+    "weight_field": "",
+    "psu_field": "",
+    "stratum_fields": [],
+    "replicate_weight_fields": [],
+    "with_replacement": null,
+    "variance_method": "",
+    "variance_limitations": "",
+    "singleton_psu_method": ""
+  },
+  "exposure_field_mapping": {
+    "i016": "",
+    "i017": "",
+    "i019": "",
+    "i020": "",
+    "i021": "",
+    "i022": ""
+  },
+  "model": {
+    "family": "gaussian",
+    "primary_model_id": "",
+    "continuous_covariates": [],
+    "binary_covariates": [],
+    "categorical_covariates": {},
+    "missing_data_rule": "",
+    "outcome_scale_rule": ""
+  },
+  "outcome_transformations": {
+    "blood_wbc": "not_frozen",
+    "blood_hemoglobin": "not_frozen",
+    "blood_hematocrit": "not_frozen",
+    "blood_mcv": "not_frozen",
+    "blood_platelets": "not_frozen",
+    "blood_total_cholesterol": "not_frozen",
+    "blood_hdl": "not_frozen",
+    "blood_ldl": "not_frozen",
+    "blood_triglycerides": "not_frozen",
+    "blood_glucose": "not_frozen",
+    "blood_hba1c": "not_frozen",
+    "blood_crp": "not_frozen",
+    "blood_bun": "not_frozen",
+    "blood_creatinine": "not_frozen",
+    "blood_uric_acid": "not_frozen"
+  },
+  "review_note": "Complete only after official release fields, target frame, design, and outcome handling have been reviewed. Never copy this template into the approval directory as if it were frozen."
+}
