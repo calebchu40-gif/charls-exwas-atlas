@@ -208,3 +208,8 @@ GitHub Validate：`cb6f8e2`（scale-up门禁）已成功；`8002a0c`（公开程
 - 本地36项公开资产白名单、公开结果payload校验及`git diff --check`通过。本次仅改公开静态说明，没有改动目录或结果数据。
 - 本轮入库复核：Wave 1 All Data/PSU/Weight/Blood均缺，Wave 2权重和Wave 3 Blood缺；metadata-only门禁`not_passed`/`skipped_missing_input`。线上原站首页正常，正式结果payload仍为404。
 - 远端确认：`38a9782`的Validate #755及Pages Deploy #332均成功；线上首页已返回新版模型说明，`association_results_v1.json`仍为404。
+
+## CSV/TSV路径清单门禁（2026-10-27）
+
+- 在已有数据格式门禁上补充严格CSV/TSV路径allowlist，当前收录187个已审阅的元数据/交叉表路径。新增和删除此类路径若未同步审阅清单，CI将失败；门禁仅检查路径集合，不读取CSV内容，内容层仍需人工披露审查。
+- 本机仓库扫描通过（1,253个Git跟踪路径；187个CSV/TSV路径均与清单一致）。受保护Wave 1四项官方源、Wave 2权重、Wave 3血检输入仍缺失；正式模型和网站结果仍为0。
