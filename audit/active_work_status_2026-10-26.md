@@ -1,8 +1,8 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
-## 2014 sensitive childhood-history items (local, pending full validation/deployment)
+## 2014 sensitive childhood-history items (commit `17d0c5c`, live verified)
 
-Official E7–E8 and G1–G2 questionnaire/Codebook review adds two E-role metadata concepts and four fields: romantic relationship before age 17/conditional influence, and police arrest/custody/conditional charge category. The latter is described as sensitive justice-system contact, not conviction or guilt; no response frequencies, participant values, or narratives are included. Any future analysis requires separate ethics, privacy, and disclosure review. Exact field coverage: [`life_history_sensitive_history_coverage_2014_v1.csv`](life_history_sensitive_history_coverage_2014_v1.csv); source audit: [`life_history_sensitive_history_review_2026-10-26.md`](life_history_sensitive_history_review_2026-10-26.md). Local Life History directory: 42 concepts / 1,033 fields (E 1,005, P 28); targeted tests pass; full validation and deployment pending.
+Official E7–E8 and G1–G2 questionnaire/Codebook review adds two E-role metadata concepts and four fields: romantic relationship before age 17/conditional influence, and police arrest/custody/conditional charge category. The latter is described as sensitive justice-system contact, not conviction or guilt; no response frequencies, participant values, or narratives are included. Any future analysis requires separate ethics, privacy, and disclosure review. Exact field coverage: [`life_history_sensitive_history_coverage_2014_v1.csv`](life_history_sensitive_history_coverage_2014_v1.csv); source audit: [`life_history_sensitive_history_review_2026-10-26.md`](life_history_sensitive_history_review_2026-10-26.md). All 532 tests, public payload, exact 92-lock, JS syntax and diff checks pass. Commit `17d0c5c` is pushed; Pages live verification returns HTTP 200, app v142, and 42 concepts / 1,033 fields including both new concepts.
 
 ## 2014 caregiver work/occupation metadata refinement (commit `60360b1`, live verified)
 
