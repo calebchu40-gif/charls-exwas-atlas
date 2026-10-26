@@ -123,3 +123,10 @@ GitHub Validate：`cb6f8e2`（scale-up门禁）已成功；`8002a0c`（公开程
 - 执行器源文件受计划SHA-256绑定，因此本次代码修改会使先前依据旧指纹准备的扩展审批失效；正式数据运行前须重新计算指纹、冻结配置并独立审查，不能沿用旧批准。
 - 将试点成功标准、自治执行路线和暴露题目审核中的扩展步骤更新为“runner已实现、运行仍须门禁”；明确 K=105 和 K=150/K=90 执行器各自的范围。旧日志中的“runner尚未实现”已注明为当时状态。
 - 本轮没有读取参与者数据、运行CHARLS模型或部署结果；官方 Wave 1 四项数据门禁仍未通过。代码只做静态语法/命令行与公开元数据检查，统计有效性须待正式源文件和设计审核。
+
+## 自动续接：公开结果导出链原子性加固（2026-10-27）
+
+- 检查公开结果发布器、结果表schema validator及Pages payload validator。确认现阶段`site-prototype/dist/association_results_v1.json`不存在，网站仍没有关联结果payload。
+- 加固`build_public_association_release.py`：在写入公开目录前，先用站点实际payload validator复核刚生成的白名单JSON；输出先写入目标目录内的临时文件、flush/fsync后通过`os.replace`原子替换，若失败则清理临时文件，避免中断造成半写入公开JSON。
+- 本机Python静态编译通过，现有网站dist payload validator通过，`git diff --check`通过。没有构造或发布结果、没有读取任何CHARLS参与者记录。
+- 最新 intake 门禁复核仍为Wave 1四项官方输入缺失，Wave 2权重和Wave 3血检缺失。真实分析与网站关联发布仍由授权数据来源、调查设计、模型审查和逐行披露决策门禁控制。

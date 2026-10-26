@@ -15,10 +15,12 @@ import hashlib
 import json
 import os
 import re
+import tempfile
 from pathlib import Path
 from typing import Any
 
 from validate_exwas_result_table import validate_csv
+from validate_public_site_payload import validate_association_payload
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -166,8 +168,28 @@ def write_release(results_path: Path, review_path: Path, output_path: Path = DEF
     if result_sha256 != hashlib.sha256(results_path.read_bytes()).hexdigest():
         raise ValueError("result CSV changed during validation/export; disclosure review must be repeated")
     payload = build_payload(rows, _read_reviews(review_path), result_sha256)
+    payload_errors = validate_association_payload(payload)
+    if payload_errors:
+        raise ValueError("generated public payload failed site validation: " + "; ".join(payload_errors[:8]))
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    serialized = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
+    temporary_path: Path | None = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w", encoding="utf-8", newline="\n", delete=False,
+            dir=output_path.parent, prefix=f".{output_path.name}.", suffix=".tmp",
+        ) as temporary:
+            temporary.write(serialized)
+            temporary.flush()
+            os.fsync(temporary.fileno())
+            temporary_path = Path(temporary.name)
+        # The temp file lives in the same directory so replacement is atomic
+        # on the target filesystem; readers never see a partially written JSON.
+        os.replace(temporary_path, output_path)
+        temporary_path = None
+    finally:
+        if temporary_path is not None:
+            temporary_path.unlink(missing_ok=True)
     return payload
 
 
