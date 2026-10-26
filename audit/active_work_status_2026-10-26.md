@@ -1,3 +1,7 @@
+# 2026-10-26 continuation — public release-boundary recheck
+
+Rechecked tracked repository paths for protected outputs/manifests and common microdata extensions: none found. `validate_public_site_payload.py` passed; live Pages returned HTTP 200 and app v192. No site files changed in this turn. The GitHub Checks API was rate-limited, so the latest remote CI state remains unverified.
+
 # 2026-10-26 continuation — explicit opt-in guard for local analysis runners
 
 A help query revealed that the 2011 water pilot runner silently ignored CLI arguments and executed the existing local exploratory analysis. The repeat run remained in the protected local output folder and reported itself as not release-ready; no result or participant data was published. Both the 15-analyte pilot and 105-coefficient environment extension now parse `--help` before loading analysis dependencies and require explicit `--run` to access data. Synthetic CLI tests cover help and default invocations. The full unit suite passed (549 tests), safe CLI checks and syntax checks passed. No further analysis was run.

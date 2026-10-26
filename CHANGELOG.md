@@ -1,3 +1,8 @@
+# 2026-10-26 Reaudit public release boundary after pilot CLI fix
+
+- Scanned tracked repository paths for protected pilot outputs, intake manifests, and common microdata file extensions; none were present. The public site payload validator passed.
+- The live GitHub Pages site returned HTTP 200 and serves app v192; this documentation/script-only commit did not alter the deployed site. GitHub Checks API requests were rate-limited, so no remote result is claimed for the newest commit.
+
 # 2026-10-26 Require explicit opt-in before protected pilot execution
 
 - Both Wave 1 pilot runners now parse `--help` before loading analytical dependencies and require an explicit `--run` flag before touching local data. This prevents an informational/default CLI invocation from unexpectedly refitting a private exploratory analysis.
