@@ -1,3 +1,9 @@
+# 2026-10-26 Require explicit opt-in before protected pilot execution
+
+- Both Wave 1 pilot runners now parse `--help` before loading analytical dependencies and require an explicit `--run` flag before touching local data. This prevents an informational/default CLI invocation from unexpectedly refitting a private exploratory analysis.
+- A `--help` query exposed the old pilot runner's ignored arguments and triggered a repeat 15-analyte exploratory run; its outputs remained in the protected local directory and the run itself explicitly reported non-release-ready status. No result or participant data entered GitHub or the public site.
+- Added CLI guard tests for both pilot runners. The full CI unit suite passed (549 tests), both runners passed safe `--help` checks in the analysis environment, syntax checks and `git diff --check` passed; no further analytical run was made.
+
 # 2026-10-26 Connect official-source review with private intake hashes
 
 - The Wave 1 metadata preflight now reads the protected intake manifest and reports source identity separately from local hash evidence. It only accepts a reviewed source identity when official document/page, title, filename, download record, reviewer record, and reviewed local SHA-256 all match the received files.

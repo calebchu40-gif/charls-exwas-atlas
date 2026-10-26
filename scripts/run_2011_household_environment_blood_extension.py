@@ -9,6 +9,7 @@ results stay under LOCALAPPDATA/CHARLS_ExWAS_Atlas.
 from __future__ import annotations
 
 import csv
+import argparse
 import json
 import os
 import subprocess
@@ -16,15 +17,12 @@ import sys
 import warnings
 from datetime import datetime, timezone
 
-import numpy as np
-import polars as pl
-import svy
-
 from run_2011_water_blood_pilot import (
     AGE, DATA, OUT, PRIVATE, PSU_MAP, ROOT, WEIGHT_FIELD, AGE_FIELD,
     EDUCATION_FIELD, SEX_FIELD, URBAN_FIELD, as_num, private_path,
     read_analytes, read_input, sha256,
 )
+import run_2011_water_blood_pilot as pilot_module
 
 EXPECTED_SVY = "0.35.0"
 FUEL_CATEGORIES = {
@@ -152,7 +150,27 @@ def model_rows(data: pl.DataFrame, analyte: dict[str, str], exposure: str,
     return rows, {"n_complete": pair_domain.height}
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(
+        description="Run the protected, exploratory CHARLS 2011 household-environment × blood extension."
+    )
+    parser.add_argument(
+        "--run", action="store_true", required=True,
+        help="explicitly authorize execution of this exploratory local-data analysis",
+    )
+    parser.parse_args(argv)
+
+    # Keep help/default CLI paths free of analysis dependencies and data access.
+    global np, pl, pyreadstat, svy
+    import numpy as np
+    import polars as pl
+    import pyreadstat
+    import svy
+    # `read_input` is defined in the shared pilot module, so initialize the
+    # deferred file-reader dependencies in that module after the explicit opt-in.
+    pilot_module.pl = pl
+    pilot_module.pyreadstat = pyreadstat
+
     if getattr(svy, "__version__", None) != EXPECTED_SVY:
         raise RuntimeError(f"Expected svy {EXPECTED_SVY}, found {getattr(svy, '__version__', 'unknown')}")
     analytes = read_analytes()

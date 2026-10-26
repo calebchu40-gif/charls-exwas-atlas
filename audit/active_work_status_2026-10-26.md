@@ -1,3 +1,7 @@
+# 2026-10-26 continuation — explicit opt-in guard for local analysis runners
+
+A help query revealed that the 2011 water pilot runner silently ignored CLI arguments and executed the existing local exploratory analysis. The repeat run remained in the protected local output folder and reported itself as not release-ready; no result or participant data was published. Both the 15-analyte pilot and 105-coefficient environment extension now parse `--help` before loading analysis dependencies and require explicit `--run` to access data. Synthetic CLI tests cover help and default invocations. The full unit suite passed (549 tests), safe CLI checks and syntax checks passed. No further analysis was run.
+
 # 2026-10-26 continuation — connect source identity evidence to intake preflight
 
 Added source-manifest checks to the private Wave 1 metadata preflight. Reviewed official source identity and local file hash evidence are distinct; a changed input hash reopens review and rotates the opaque manifest identifier. Six synthetic tests cover missing files, incomplete identity evidence, mismatches, and source changes. Focused validator + source-manifest tests: 21 passed; diff check passed. Live preflight remains closed because the four required Wave 1 inputs are absent. No respondent data or association models were used.

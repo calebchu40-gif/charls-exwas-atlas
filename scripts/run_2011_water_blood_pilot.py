@@ -14,6 +14,7 @@ Taylor approximation. They are not public or release-ready results.
 from __future__ import annotations
 
 import csv
+import argparse
 import hashlib
 import json
 import os
@@ -23,10 +24,6 @@ import warnings
 from datetime import datetime, timezone
 from pathlib import Path
 
-import numpy as np
-import polars as pl
-import pyreadstat
-import svy
 
 ROOT = Path(__file__).resolve().parents[1]
 PRIVATE = Path(os.environ.get("LOCALAPPDATA", Path.home())) / "CHARLS_ExWAS_Atlas"
@@ -261,7 +258,24 @@ def model_rows(data: pl.DataFrame, analyte: dict[str, str], model_id: str) -> tu
     return rows, {"n_eligible": data.filter(domain).height}
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(
+        description="Run the protected, exploratory CHARLS 2011 water-access × blood-analyte pilot."
+    )
+    parser.add_argument(
+        "--run", action="store_true", required=True,
+        help="explicitly authorize execution of this exploratory local-data analysis",
+    )
+    parser.parse_args(argv)
+
+    # Load analysis-only dependencies after parsing so --help works in a clean
+    # environment and ordinary invocation never touches participant data.
+    global np, pl, pyreadstat, svy
+    import numpy as np
+    import polars as pl
+    import pyreadstat
+    import svy
+
     if getattr(svy, "__version__", None) != EXPECTED_SVY:
         raise RuntimeError(f"Expected svy {EXPECTED_SVY}, found {getattr(svy, '__version__', 'unknown')}")
     if not PRIVATE.is_dir():
