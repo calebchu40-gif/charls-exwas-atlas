@@ -35,7 +35,17 @@ CHARLS 官方 Wave 1 页面把资料分成独立下载项：[Wave 1 官方目录
 1. **来源清点**：逐个核对文件名、文件大小、归档列表和本地 SHA-256；将官方未提供校验码写为“未提供”，不做猜测。拒绝内容不符、来源不明或部分下载文件。
 2. **仅元数据预检**：运行 `python scripts/audit_2011_pilot_intake_metadata.py`。脚本从 Stata 文件头读取行列数和字段名，从 ZIP 读取文件清单，不解压、不读取具体受访者答案；报告仅保存在受控目录。脚本完成不等于来源身份已由代码证明，需人工保留官方下载来源证据并核验文件/模块清单。失败时停止，不作关联分析。
 3. **设计与估计对象审计**：公开指南已支持把研究目标表述为全血样设计框架中的 age≥45 子总体，并在创建完整 survey design 后用 domain/`where` 估计；禁止先从框架中删掉年轻配偶。取得源文件后仍需核对精确年龄、主受访者/配偶关系、血样资格和 `bloodweight` 覆盖。再从精确版指南、PSU、Sample Info 核实社区拆分与最终 PSU/方差层。不得用省份、城乡或地区类型替代官方方差层。
-4. **私有重建**：只在受控目录从官方输入重新生成分析表；审查唯一键、合并覆盖、字段来源和一致性。个体 ID、记录差异和逐对 N 只在本地处理；输出到仓库的 QA 限于预先审查过的聚合来源状态，不含受访者级数据或可识别小单元。
+4. **私有重建**：只在受控目录从官方输入重新生成分析表；审查唯一键、合并覆盖、字段来源和一致性。建表脚本现支持显式传入 Wave 1 ZIP/RAR 及独立 PSU、Weight、Blood 文件；授权文件到位且来源预检通过后，调用形式如下（将占位文件名替换成收到的原文件名）：
+
+   ```powershell
+   python scripts\prepare_charls_wave_tables.py --waves 2011 `
+     --wave1-all-data "$env:LOCALAPPDATA\CHARLS_ExWAS_Atlas\incoming_2011_official\wave1_all_data.zip" `
+     --wave1-psu "$env:LOCALAPPDATA\CHARLS_ExWAS_Atlas\incoming_2011_official\PSU.dta" `
+     --wave1-weight "$env:LOCALAPPDATA\CHARLS_ExWAS_Atlas\incoming_2011_official\Weight.dta" `
+     --wave1-blood "$env:LOCALAPPDATA\CHARLS_ExWAS_Atlas\incoming_2011_official\Blood.dta"
+   ```
+
+   输入和输出参数必须位于 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas` 受保护目录。脚本临时解包也限制在该目录下的 `tmp`，并在程序完成后清除；每个独立官方源文件的本地 SHA-256 写入本机派生表 manifest，该哈希仅作本地文件身份标识。个体 ID、记录差异和逐对 N 只在本地处理；输出到仓库的 QA 限于预先审查过的聚合来源状态，不含受访者级数据或可识别小单元。
 5. **阶段 1 Go/No-Go**：若来源无法独立确认、年龄域与权重不匹配、或最终 PSU/方差设计无法解释，则暂停全国代表性推断；保留为软件演示，不继续扫描结果。若所有门槛有官方依据并闭环，再冻结试点方案。
 6. **受控复核试点**：按已冻结的完整 105 系数家族重跑水源/烹饪燃料 × 15 个血液结局；检查权重分布与有效样本、PSU 支持、标准误/自由度、缺失与分布、影响 PSU、预设 M1/M2 稳健性和 BY-FDR/Bonferroni 全家族校正。全部假设（包括不可估计项）均保留。需要独立方法学复核后才能晋级。
 7. **有条件扩展**：通过复核后先运行预先规定的 Wave 1 家庭环境批次（主家族 K=150；取暖条件子域 K=90 单独建族），然后按波次分别建模并核对权重/样本设计，不套用 NHANES 周期合并公式。网站仅在统计和 CHARLS 披露审查通过后增加聚合结果。
@@ -53,6 +63,8 @@ CHARLS 官方 Wave 1 页面把资料分成独立下载项：[Wave 1 官方目录
 - 2026-10-26：新增并运行 `scripts/audit_2011_pilot_design_frame.py`。它仅在本机读取受保护的派生个人表并输出汇总计数到 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\qa_outputs`，不写出个人记录、不估计关联。预检发现本地派生框架分母尚未与官方血样指南目标人数闭合，候选年龄和权重也存在未覆盖记录；完整计数仅保存在本机受控 JSON 中。正式模型闸门保持未通过。
 - 2026-10-26：预检汇总确认本地候选 PSU 映射中的所有派生个人表社区键均可匹配，但这不认证来源发行版、最终 PSU 编码或方差层。年龄候选中存在缺失值，因此后续必须基于官方 Wave 1 字段核实/重建资格与年龄域。
 - 2026-10-26：为避免修改系统 Python，在 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\analysis_env` 建立了项目隔离环境，并按 `requirements-survey-audit.txt` 安装固定依赖；环境和分析数据均未进入仓库或同步目录。
+- 2026-10-26：检查发现通用 Wave 表建表脚本原先将 2011 归档路径固定为旧 RAR 文件名，无法直接使用当前 intake 清单中的全量 ZIP 和独立 PSU/Weight/Blood。已扩展 CLI 显式接收这些授权文件、记录各源文件本地 SHA-256，并保留旧路径兼容；由于官方包尚未到位，本轮不执行解压或合并。
+- 2026-10-26：为避免授权数据落入系统临时目录，建表脚本现要求输入、输出及临时解包均留在 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas`；旧的同步盘路径会继续被拒绝。
 - 2026-10-26：公开站点 HTTP 200；线上 app asset 为 `app.js?v=191`；CHARLS 致谢、基线指南链接及无正式关联结果提示均已出现。
 - 2026-10-26：提交 `998cf4e` 的部署 #324 和 Validate #658 均成功；此处为上一版公开站点证据，与后续新增的本地入库手册/预检脚本无关。
 - 2026-10-26：新增 `scripts/audit_2011_pilot_intake_metadata.py`，供官方文件到位后执行目录/哈希/Stata头部预检；脚本明确将来源凭证和抽样设计审查留作人工闸门，不把存在文件或本地哈希误当作官方认证。预检已运行；因四类输入缺失而正确保持未通过。

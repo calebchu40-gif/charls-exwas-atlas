@@ -6,6 +6,8 @@
 - Created a dedicated local analysis environment under the protected data root using the pinned requirements. No participant-level data or environment artifacts entered GitHub; no association model was rerun and the public site payload is unchanged.
 - Added an explicit pilot success/scale-up decision framework. Progression is based on source, frame, survey-design, reproducibility, and disclosure gates—not on whether early p-values are significant.
 - Re-checked the current CHARLS user agreement and documented the restriction against publishing microdata or granting another person access; only disclosure-reviewed, non-identifying aggregate results may be considered for the public site.
+- Updated the protected Wave 1 table builder to accept explicit 2011 all-data ZIP/RAR, PSU, Weight, and Blood paths, preserve source hashes, and retain legacy input support; no source archive was available for a merge run.
+- Constrained Wave table builder input/output and temporary extraction to the protected local data root so licensed source data do not spill into a generic temp or synchronized folder.
 
 # 2026-10-26 Clarify CHARLS Wave 1 age-domain and variance gates
 

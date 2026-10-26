@@ -20,7 +20,7 @@ from pathlib import Path
 
 import pandas as pd
 import pyreadstat
-from project_paths import require_private_path
+from project_paths import PRIVATE_ROOT, require_private_path
 
 WAVES = {
     "2011": ("rar", "household_and_community_questionnaire_data.rar"),
@@ -35,6 +35,13 @@ EXCLUDE_MODULES = {
     "exit_module",
 }
 KEYS = ("ID", "householdID", "communityID")
+
+
+def protected_data_path(path: Path) -> Path:
+    resolved = require_private_path(path)
+    if not resolved.is_relative_to(PRIVATE_ROOT.resolve()):
+        raise ValueError(f"CHARLS inputs and outputs must stay under protected storage: {resolved}")
+    return resolved
 
 
 def normalize_key(series: pd.Series) -> pd.Series:
@@ -55,20 +62,26 @@ def sha256_file(path: Path) -> str:
 
 
 def dta_members(archive: Path, kind: str):
+    scratch_root = protected_data_path(PRIVATE_ROOT / "tmp")
+    scratch_root.mkdir(parents=True, exist_ok=True)
     if kind == "zip":
         with zipfile.ZipFile(archive) as zf:
             bad = zf.testzip()
             if bad:
                 raise RuntimeError(f"ZIP integrity failure: {archive.name}:{bad}")
             members = [n for n in zf.namelist() if n.lower().endswith(".dta")]
-            with tempfile.TemporaryDirectory(prefix="charls_prep_") as td:
+            with tempfile.TemporaryDirectory(prefix="charls_prep_", dir=scratch_root) as td:
                 root = Path(td)
                 for member in members:
-                    target = root / Path(member).name
+                    relative = Path(member)
+                    if relative.is_absolute() or ".." in relative.parts:
+                        raise RuntimeError(f"Unsafe archive member path: {member}")
+                    target = root / relative
+                    target.parent.mkdir(parents=True, exist_ok=True)
                     target.write_bytes(zf.read(member))
                     yield target
     else:
-        with tempfile.TemporaryDirectory(prefix="charls_prep_2011_") as td:
+        with tempfile.TemporaryDirectory(prefix="charls_prep_2011_", dir=scratch_root) as td:
             result = subprocess.run(["tar", "-xf", str(archive), "-C", td],
                                     capture_output=True, text=True)
             if result.returncode:
@@ -217,16 +230,25 @@ def merge_source(base: pd.DataFrame, incoming: pd.DataFrame, key: str,
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--input-root", required=True, type=Path,
-                    help="Directory containing 原始数据+问卷2011~2020")
+    ap.add_argument("--input-root", type=Path,
+                    help="Directory containing 原始数据+问卷2011~2020 (used for legacy/default wave paths)")
     ap.add_argument("--out-dir", type=Path,
                     default=Path(os.environ.get("LOCALAPPDATA", tempfile.gettempdir())) /
                     "CHARLS_ExWAS_Atlas" / "derived_wave_tables")
     ap.add_argument("--waves", default=",".join(WAVES),
                     help="Comma-separated waves to prepare, e.g. 2013 or 2013,2015")
+    ap.add_argument("--wave1-all-data", type=Path,
+                    help="Explicit authorized 2011 all-data ZIP or legacy RAR; stays outside the repository")
+    ap.add_argument("--wave1-psu", type=Path,
+                    help="Explicit authorized 2011 PSU Stata file")
+    ap.add_argument("--wave1-weight", type=Path,
+                    help="Explicit authorized 2011 Weight Stata file")
+    ap.add_argument("--wave1-blood", type=Path,
+                    help="Explicit authorized 2011 Blood Stata file")
     args = ap.parse_args()
-    input_root = require_private_path(args.input_root) / "原始数据+问卷2011~2020"
-    outdir = require_private_path(args.out_dir)
+    input_root = (protected_data_path(args.input_root) / "原始数据+问卷2011~2020"
+                  if args.input_root is not None else None)
+    outdir = protected_data_path(args.out_dir)
     outdir.mkdir(parents=True, exist_ok=True)
     all_qa, all_maps, all_wave_summaries = [], [], []
 
@@ -236,18 +258,38 @@ def main():
         raise ValueError(f"Unknown waves: {unknown}")
     for wave in selected_waves:
         kind, filename = WAVES[wave]
-        archives = sorted((input_root / wave).glob(filename))
-        if len(archives) != 1:
-            raise FileNotFoundError(
-                f"Expected exactly one official archive named {filename} under {input_root / wave}; found {len(archives)}"
-            )
-        archive = archives[0]
+        if wave == "2011" and args.wave1_all_data is not None:
+            archive = protected_data_path(args.wave1_all_data)
+            if not archive.is_file():
+                raise FileNotFoundError(f"Explicit Wave 1 archive is missing: {archive}")
+            suffix = archive.suffix.casefold()
+            if suffix not in {".zip", ".rar"}:
+                raise ValueError("Wave 1 all-data archive must be an official ZIP or legacy RAR")
+            kind = "zip" if suffix == ".zip" else "rar"
+        else:
+            if input_root is None:
+                raise ValueError(f"--input-root is required when no explicit archive is provided for wave {wave}")
+            archives = sorted((input_root / wave).glob(filename))
+            if len(archives) != 1:
+                raise FileNotFoundError(
+                    f"Expected exactly one archive named {filename} under {input_root / wave}; found {len(archives)}"
+                )
+            archive = archives[0]
         source_archive = {"filename": archive.name, "bytes": archive.stat().st_size,
                           "sha256": sha256_file(archive)}
+        source_inputs = {"all_data_archive": source_archive}
         qa, maps, frames = [], [], []
         for file in dta_members(archive, kind):
             module = file.stem
             mkey = module.lower()
+            if wave == "2011" and (
+                (args.wave1_psu is not None and mkey == "psu")
+                or (args.wave1_weight is not None and mkey in {"weight", "weights"})
+                or (args.wave1_blood is not None and (mkey == "blood" or mkey.startswith("blood_")))
+            ):
+                # Explicit standalone official release files take precedence
+                # over same-named modules that may also be bundled in the ZIP.
+                continue
             if mkey in EXCLUDE_MODULES:
                 qa.append({"wave": wave, "module": module, "merge_key": "SKIP",
                            "source_rows": None, "source_unique_key_n": None,
@@ -280,11 +322,42 @@ def main():
             frames.append((module, key, frame, meta))
 
         if wave == "2011":
-            separate_blood = input_root / wave / "Blood_20140429.dta"
-            if separate_blood.exists():
-                blood_frame, blood_meta = pyreadstat.read_dta(str(separate_blood))
-                if "ID" in blood_frame.columns:
-                    frames.append(("Blood_Assays", "ID", blood_frame, blood_meta))
+            legacy_blood = (
+                input_root / wave / "Blood_20140429.dta"
+                if input_root is not None and (input_root / wave / "Blood_20140429.dta").is_file()
+                else None
+            )
+            role_inputs = (
+                ("psu", args.wave1_psu, "PSU"),
+                ("weight", args.wave1_weight, "Weights"),
+                ("blood", args.wave1_blood or legacy_blood, "Blood_Assays"),
+            )
+            for role, source_path, module_name in role_inputs:
+                if source_path is None:
+                    continue
+                source_path = protected_data_path(source_path)
+                if not source_path.is_file():
+                    raise FileNotFoundError(f"Explicit Wave 1 {role} file is missing: {source_path}")
+                source_inputs[role] = {
+                    "filename": source_path.name,
+                    "bytes": source_path.stat().st_size,
+                    "sha256": sha256_file(source_path),
+                }
+                incoming, incoming_meta = pyreadstat.read_dta(str(source_path))
+                if role == "weight":
+                    weight_parts = split_weights(incoming, wave, qa)
+                    if not any(part[0] == "Weights_person" for part in weight_parts):
+                        raise ValueError("Explicit Wave 1 Weight file did not yield a unique person-weight table")
+                    frames.extend(weight_parts)
+                    continue
+                merge_key = key_for(module_name, incoming.columns.tolist())
+                if role == "blood" and "ID" not in incoming.columns:
+                    raise ValueError("Explicit Wave 1 Blood file must contain respondent ID for linkage")
+                if merge_key is None:
+                    raise ValueError(f"Explicit Wave 1 {role} file has no recognized merge key")
+                if incoming[merge_key].dropna().duplicated().any():
+                    raise ValueError(f"Explicit Wave 1 {role} file has duplicate nonmissing {merge_key} keys")
+                frames.append((module_name, merge_key, incoming, incoming_meta))
 
         # Prefer respondent-level Demographic_Background as the analysis spine.
         spine_i = next((i for i, (m, k, _, _) in enumerate(frames)
@@ -341,7 +414,8 @@ def main():
                                    "unique_ID": int(base["ID"].nunique(dropna=True)),
                                    "duplicate_ID": int(base["ID"].dropna().duplicated().sum()),
                                    "output": outfile.name,
-                                   "source_archive": source_archive})
+                                   "source_archive": source_archive,
+                                   "source_inputs": source_inputs})
         print(f"wave={wave} rows={len(base)} cols={len(base.columns)} unique_ID={base['ID'].nunique(dropna=True)}")
         pd.DataFrame(qa).to_csv(outdir / f"merge_qa_{wave}.csv", index=False, encoding="utf-8-sig")
         pd.DataFrame(maps).to_csv(outdir / f"variable_collision_map_{wave}.csv", index=False, encoding="utf-8-sig")
@@ -357,6 +431,8 @@ def main():
     prior.update({"waves": [known[w] for w in sorted(known)],
                   "source_archives": {w: known[w].get("source_archive") for w in sorted(known)
                                       if known[w].get("source_archive")},
+                  "source_inputs_by_wave": {w: known[w].get("source_inputs") for w in sorted(known)
+                                            if known[w].get("source_inputs")},
                   "notes": ["person-level data; keep in private authorized storage",
                             "source archives not modified", "do not publish microdata",
                             "no row expansion by duplicate community/household keys"]})
