@@ -1,3 +1,10 @@
+# 2026-10-26 Verify published catalog KPIs against current payload
+
+- Rechecked the live Pages homepage (HTTP 200): 1,319 exposure-candidate concepts, 332 phenotype-candidate concepts, five regular survey waves, and zero formal association models.
+- Confirmed the local source page carries the same KPI values and its 1,625 unique concepts account for 26 concepts with both E and P roles.
+- Confirmed the deployed `app.js?v=192` contains the accurate no-formal-reviewed-results note and the E/P, candidate-pair, and Life History JSON endpoints respond successfully.
+- Clarified the distinction between unique concept count and role-specific homepage counts in README. No site data or association result was changed.
+
 # 2026-10-26 Remove personal workstation paths from public audit notes
 
 - Confirmed the local collaborator handoff manual is ignored by Git and is not in the public repository; its server path is therefore not published.
