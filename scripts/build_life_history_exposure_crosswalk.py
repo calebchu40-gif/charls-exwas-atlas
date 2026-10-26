@@ -1043,6 +1043,32 @@ GROUPS = [
         "status": "official conditional skip paths and Codebook field identities reviewed; category coding and historical comparability require QA",
         "caveat": "Examination pathway is historical context, not a standardized academic score. E043 follows non-graduation; E045–E047 follow E044=Yes. E048 is peer context, not the respondent's educational transition. Preserve each route and denominator.",
     },
+    {
+        "concept_id": "life_history_vocational_education_pathway",
+        "label": "Vocational education mode, field and completion history",
+        "role": "e",
+        "modules": ["EDUCATIONHISTORY"],
+        "domain": "educational attainment and historical training context",
+        "patterns": [r"e050a", r"e050b_type_[1-3]_", r"e050e_[1-3]_", r"e050f_[1-3]_", r"e050_[1-3]_", r"e051_[1-3]_", r"e054_[1-3]_", r"e055_[1-3]_", r"e056b_[2-5]_[1-3]_"],
+        "question": "E050a/E050b type/E050e–E051/E054–E056b_5",
+        "unit": "up to three listed vocational-school pathways, study mode, type/major, part-time status, program duration, graduation and diploma outcomes",
+        "values": "The questionnaire distinguishes evening classes, self-study examination, correspondence, radio/TV university, formal school and other routes. Institution type and part-time status follow formal schooling; alternative routes have a separate major/duration/diploma sequence. Up to three vocational schools are represented in the structured fields.",
+        "status": "official route logic and Codebook field identities reviewed; repeated-school sequence and authorized-release coding require QA",
+        "caveat": "Do not collapse distinct study modes or treat a diploma as equivalent across routes without review. Fields are repeated by school slot; E050e/E050f/E051/E054/E055 follow formal-school route, while E056b fields follow specified nonformal routes. Free-text majors, school names and addresses are excluded.",
+    },
+    {
+        "concept_id": "life_history_vocational_school_interruption_detail",
+        "label": "Vocational-school interruption duration and reported reasons",
+        "role": "e",
+        "modules": ["EDUCATIONHISTORY"],
+        "domain": "educational continuity and socioeconomic context",
+        "patterns": [r"e052", r"e053s(?:[1-9]|1[0-3])"],
+        "question": "E052–E053",
+        "unit": "interrupted semester count and 13 reason selectors",
+        "values": "Reason options include health, tuition affordability, labor, care, interest/family preference, school closure, moving, political reasons, military service, incarceration, famine and other.",
+        "status": "official E005 vocational-stage route and Codebook identities reviewed; multi-select storage requires QA",
+        "caveat": "Asked only when E005 identifies a vocational-school interruption. Retrospective multi-select reasons are not causal estimates; blank options are not No. Do not publish free-text details or Codebook frequencies.",
+    },
 ]
 
 

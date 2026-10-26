@@ -44,3 +44,14 @@ A further comparison of official questionnaire E035a–E048 with Codebook identi
 The school name, start/end episode dates and addresses in repeated E035b records remain deferred until their repeated-record structure, location sensitivity and usable date precision have been separately documented. No completion/performance score is inferred from entrance-exam categories. Reasons are retrospective and multi-select; peer progression is not an individual outcome.
 
 After this batch, EDUCATIONHISTORY has 97 mapped fields of 1,105; 1,004 substantive fields remain deferred, alongside three excluded linkage keys and one excluded version field. The overall Life History candidate directory contains 80 concepts / 1,866 mappings (E 1,820, P 46). These remain metadata candidates, not analyzed results.
+
+## Vocational education pathway review: E050a–E056b
+
+Compared the vocational-school questionnaire routes with Codebook identities. Added two candidate groups (48 fields):
+
+- 34 structured fields for up to three vocational-school records: number attended, study mode, formal-school type and part-time status, major category, nominal duration, graduation/completed grade, and alternative-route duration/diploma details.
+- 14 fields for vocational-stage interruption duration and reasons, routed by E005.
+
+The questionnaire explicitly branches follow-up by study mode: formal school receives institution-type, part-time, curriculum-duration and completion questions; evening/self-study/correspondence/radio-TV/other routes receive a distinct major/duration/diploma sequence. These pathways remain separate in metadata. Repeated institution names, dates, locations, and free-text fields are not included. Multi-select reasons and E005 routing remain explicit.
+
+Updated module coverage is 145 mapped of 1,105, 956 substantive fields still deferred, three linkage keys and one release-version field excluded. Overall Life History catalog is 82 concepts / 1,914 metadata mappings (E 1,868, P 46). These candidate rows are not association results.
