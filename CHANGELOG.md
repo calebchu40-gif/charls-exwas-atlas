@@ -1,3 +1,9 @@
+# 2026-10-26 Close 2014 DemographicBackgrounds field dispositions
+
+- Source-reviewed and assigned an explicit unique disposition to every 1,920 `DEMOGRAPHICBACKGROUNDS` Codebook field. The ledger now has zero generic deferred fields: 1,027 candidate mappings plus reviewed sensitive, C-only, exclusion, linkage and survey-process categories.
+- Added fail-closed builder rules for offspring referents, child dates, sensitive identities, child marriage/education/history, roster links and adoption metadata. No questionnaire-only C032 field is invented; no participant values/frequencies or association results are included.
+- Added `audit/life_history_demographic_backgrounds_children_disposition_review_2026-10-26.md`. This is source/audit metadata only; the catalog counts and website payload remain unchanged at 176 concepts / 5,836 mappings (E 5,790, P 46; local app v179 / JSON v46).
+
 # 2026-10-26 Map 2014 Life History hukou section
 
 - Mapped all 270 official HK001–HK006 fields into respondent initial hukou context (2) and repeated hukou change/reason history (268). Preserved route and event-slot differences, including Codebook capacities 11/10/6/10/10; did not assume suffix alignment.

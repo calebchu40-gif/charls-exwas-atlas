@@ -2862,6 +2862,30 @@ def build_demographic_backgrounds_coverage(rows: list[dict]) -> list[dict]:
         elif re.fullmatch(r"c024a_1_\d+_", code, re.I):
             disposition, concept_id = "excluded_child_roster_order_key", ""
             rationale = "Maps a child roster entry to biological-child birth order for the pregnancy-history loop. It is a referent/linkage key, not an independent exposure; do not publish child names, order-level records, or participant values."
+        elif re.fullmatch(r"(?:c037s\d+|c038_1_\d+_|c038s\d+|c039_1_\d+_|c039s\d+)", code, re.I):
+            disposition, concept_id = "deferred_sensitive_relative_identity", ""
+            rationale = "Child-specific political affiliation, ethnicity/minority status, or religious belief. These sensitive relative attributes are held out of the public E/P map pending separate data-minimization, ethics, release and disclosure review; no values or frequencies are published."
+        elif re.fullmatch(r"(?:c001a_\d+_|c001a_[12]_\d+_|c003_\d+_|c010_[12]_\d+_|c010_\d+_|c014_[12]_\d+_|c014_\d+_|c014a_1_\d+_|c019_\d+_|c021_[12]_\d+_|c021_\d+_|c023_[12]_\d+_|c023_\d+_|child(?:year|month)_\d+_)", code, re.I):
+            disposition, concept_id = "excluded_child_date_component", ""
+            rationale = "Child birth/death or adoption year/month component. These relative-level dates are not required for a respondent E/P metadata catalog and may increase disclosure risk; do not publish participant dates or derive child age/event chronology."
+        elif re.fullmatch(r"(?:child(?:alive|cat|gender|finished|finisheds)_\d+_|c012_\d+_|c020_\d+_|c014as\d+)", code, re.I):
+            disposition, concept_id = "c_only_offspring_roster_and_adoption_status", ""
+            rationale = "Child roster category, sex, alive/route status, or adoption-out roster indicator. This is offspring/roster metadata rather than a respondent phenotype; no child-slot identity, responses or counts are published or derived."
+        elif re.fullmatch(r"(?:c012a_\d+_|c012c_\d+_|c013_\d+_|c020a_\d+_|c020b_\d+_|c020c_\d+_)", code, re.I):
+            disposition, concept_id = "c_only_offspring_education_and_status", ""
+            rationale = "Offspring education, current schooling grade, or work/school status. These are child characteristics, not the CHARLS respondent's phenotype or education exposure; retain as non-E/P provenance only."
+        elif re.fullmatch(r"(?:c034_\d+_|c034_1_\d+_|c035(?:_\d+){1,2}_|c036_\d+_|c037a1_\d+_|c038a1_(?:1_)?\d+_)", code, re.I):
+            disposition, concept_id = "c_only_offspring_marital_context", ""
+            rationale = "Offspring's marriage and spouse age/education/hukou or relationship-continuity history. The referent is the respondent's child/child's spouse, not the respondent; preserve as non-E/P source metadata pending a defined family-context estimand."
+        elif re.fullmatch(r"(?:c040(?:_[12]_\d+_|s\d+)|c041(?:_[12]_\d+_|s\d+))", code, re.I):
+            disposition, concept_id = "c_only_offspring_historical_experience", ""
+            rationale = "Military-service or sent-down-to-countryside history of the respondent's child. This is a relative's historical experience, not the respondent's own exposure; no participant values, dates or counts are included."
+        elif re.fullmatch(r"c031_\d+_", code, re.I):
+            disposition, concept_id = "excluded_child_parent_linkage", ""
+            rationale = "Links a biological child to a spouse/partner identity in the survey roster. This is a relative-linkage key, not an exposure or phenotype; do not publish names, slot-level links or values."
+        elif re.fullmatch(r"c019a_\d+_", code, re.I):
+            disposition, concept_id = "c_only_offspring_adoption_source", ""
+            rationale = "Reported source category for an adopted child (e.g., institution, relative or friend). The referent is the child/adoption episode, not a respondent phenotype; no slot-level responses or frequencies are published."
         elif relative_birth_date.match(code):
             disposition, concept_id = "excluded_relative_birth_date", ""
             rationale = "Spouse/partner date-of-birth components identify a relative and are not needed for the candidate E/P catalogue; do not expose date values or derive relative age without a separate estimand."
@@ -2877,15 +2901,12 @@ def build_demographic_backgrounds_coverage(rows: list[dict]) -> list[dict]:
         elif code.casefold() == "versionid":
             disposition, concept_id = "excluded_release_metadata", ""
             rationale = "Release/version bookkeeping metadata, not a measured construct."
-        elif re.match(r"[pc]\d", code, re.I):
-            disposition, concept_id = "deferred_demographic_section_review", ""
-            rationale = "DemographicBackgrounds spouse/partner or child-family section is not yet reviewed field-by-field for item referent, route, repeated slots, sensitivity, and candidate role. Do not publish as an E/P candidate or use in analysis until reviewed."
+        elif re.match(r"[pc]\d|child", code, re.I):
+            raise ValueError(f"Unreviewed DEMOGRAPHICBACKGROUNDS field requires an explicit disposition: {code} ({label})")
         elif re.match(r"(?:hk\d|hukou)", code, re.I):
-            disposition, concept_id = "deferred_hukou_section_review", ""
-            rationale = "Hukou or other DemographicBackgrounds section is not yet reviewed field-by-field against questionnaire routes and exact Codebook identity. Do not publish as an E/P candidate or use in analysis until reviewed."
+            raise ValueError(f"Unreviewed hukou field requires an explicit disposition: {code} ({label})")
         else:
-            disposition, concept_id = "deferred_demographic_section_review", ""
-            rationale = "DemographicBackgrounds child/family or remaining questionnaire section is not yet reviewed field-by-field for referent, route, repeated roster, sensitivity, and candidate role. Do not publish as an E/P candidate or use in analysis until reviewed."
+            raise ValueError(f"No DEMOGRAPHICBACKGROUNDS disposition rule for official field: {code} ({label})")
         ledger.append({"module": module, "code": code, "codebook_label": label,
                        "disposition": disposition, "concept_id": concept_id, "rationale": rationale,
                        "questionnaire_source": "sources_official/CHARLS_Life_History_Questionnaire.pdf",
