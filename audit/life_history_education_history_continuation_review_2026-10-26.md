@@ -63,3 +63,11 @@ Questionnaire and Codebook identity review adds 119 fields in four concepts: thr
 Study mode, institution type, major category, nominal curriculum duration, graduation and diplomas are kept route-specific. E057e/E065e worker-peasant-soldier items are conditional on schooling years 1971–1977. Alternative-mode diploma questions do not share the exact formal-school follow-up; open-text alternate-route major responses are excluded. Interruption reasons follow the corresponding E005 stage and are multi-select.
 
 Education History now has 264 mapped fields of 1,105; 837 substantive fields remain deferred, with three linkage keys and one version field excluded. Overall Life History catalog: 86 concepts / 2,005 metadata mappings (E 1,959, P 46). No participant-level data or statistical association estimates are included.
+
+## Master's and PhD pathway review: E074–E099b
+
+Compared official questionnaire routes and Codebook identities. Added 66 fields in four concepts: master's pathway (20), master's interruption detail (14), PhD pathway (18), and PhD interruption detail (14). The master questionnaire separates academic/professional/MBA-EMBA degree types; doctoral and master's programs each distinguish formal education from alternative study modes and have route-specific diploma questions. These are not merged with vocational, three-year or four-year college constructs.
+
+Interruptions follow stage-specific E005 selection and include the semester count plus 13 reason selectors. Diploma route, study duration and program count are not treated as proof of a standardized credential. Institution names/locations and open-text details remain excluded. The Codebook's descriptive frequencies were not used.
+
+Education History now has 330 mapped fields of 1,105, 771 substantive fields still deferred, three linkage keys and one version field excluded. Overall Life History catalog: 90 concepts / 2,071 mappings (E 2,025, P 46). No individual values or modeled associations are published.

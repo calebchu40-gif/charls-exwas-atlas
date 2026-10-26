@@ -1,3 +1,5 @@
+2026-10-26本地待发布：新增硕士、博士学位路径及阶段中断66条字段映射；保留学位类型、学习方式、文凭支路及路由差异。Education History累计审查330/1,105字段，771个实质字段待核。总目录90概念、2,071映射（E 2,025、P 46）。审计见 udit/life_history_education_history_continuation_review_2026-10-26.md。本地app v152 / JSON v19，部署待验证。
+
 2026-10-26本地待发布：大学专科、本科路径新增119条字段映射，分别保留就读方式、专业类别、毕业/文凭、双学位槽位、1971–1977年工农兵学员限定路由和中断原因。Education History累计映射264/1,105字段，837个实质字段待核。总目录86概念、2,005映射（E 1,959、P 46）。审计见 `audit/life_history_education_history_continuation_review_2026-10-26.md`。提交 `645b04a` 已上线为 app v151 / JSON v18；线上86条JSON记录且SHA-256与本地一致。
 
 2026-10-26本地待发布：追加职业教育官方路径复核，纳入结构化就读方式、专业类别、毕业/文凭与中断字段48条；Life History目录82概念、1,914条字段映射（E 1,868、P 46）。Education History累计审查145/1,105字段，956个实质字段待核。学习方式分支各自保留；重复学校名称/地址和自由文本不纳入。详情见 `audit/life_history_education_history_continuation_review_2026-10-26.md`。提交 `eea2539` 已上线为 app v150 / JSON v17；线上82条JSON记录且SHA-256与本地一致。
