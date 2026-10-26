@@ -1,3 +1,7 @@
+# 2026-10-27 continuation — verified live result-browser deployment
+
+Commit `b5856c0` deployed successfully: the public homepage returned HTTP 200 and serves app v193; the app asset returned HTTP 200 with the reviewed-results loader. The optional public association JSON endpoint returns HTTP 404 because there is no approved family. Full repository unit suite: 559 passed; local site payload validator and JavaScript syntax checks passed. Formal association results remain 0.
+
 # 2026-10-27 continuation — disclosure-gated result publication path
 
 Closed the gap between the existing result validator and the website: a private disclosure-review CSV is now bound to the exact complete result CSV hash, each hypothesis needs a decision, and any withheld hypothesis suppresses its entire predeclared family. The exporter emits only a fixed aggregate allowlist to `association_results_v1.json`; it rejects inputs outside the protected local root and requires explicit `--publish`. The Pages validator rejects incomplete families and non-allowlisted/private fields; the site loader displays only reviewed payload rows. No result payload was generated or committed. Targeted release/result tests passed (29), JS syntax and payload validation passed. Official source/design gates and formal association count remain unchanged.

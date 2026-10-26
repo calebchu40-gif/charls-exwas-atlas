@@ -1,3 +1,9 @@
+# 2026-10-27 Verify published disclosure-gated result browser
+
+- After commit `b5856c0`, the live GitHub Pages homepage returned HTTP 200 and loads app v193; the live app.js asset returned HTTP 200 and contains the reviewed-results loader.
+- The optional `association_results_v1.json` endpoint returns HTTP 404, as expected because no association family has source/design approval and disclosure review. No estimates or CHARLS microdata were published.
+- The full repository CI unit suite passed (559 tests); `node --check` and the public payload validator passed before push.
+
 # 2026-10-27 Add disclosure-gated public association results path
 
 - Added a private review-manifest gate bound to the exact result CSV SHA-256. Every analysis row needs an explicit disclosure decision; if any hypothesis is withheld, its entire predeclared multiplicity family is withheld.
