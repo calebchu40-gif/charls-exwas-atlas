@@ -137,3 +137,12 @@ GitHub Validate：`cb6f8e2`（scale-up门禁）已成功；`8002a0c`（公开程
 - 已增强结果表validator：成功估计要求严格正的标准误。增强公开payload validator：按每个完整家族的所有行（包含不可估计项）重新计算BY/Bonferroni，并逐个与公开数值对照；成功结果必须具有正标准误。
 - Python静态编译通过，当前站点dist通过payload validator；目前无`association_results_v1.json`，没有公开关联数据。
 - GitHub前一提交`8c84d04`的Validate #743仍在检查中；本轮新修改尚未提交，待本地检查完成后再推送。
+
+## 自动续接复核：下一阶段门禁与结果发布验证（2026-10-27）
+
+- 从干净的`main`（`8848374`）续接；公开站点payload validator通过，`association_results_v1.json`仍不存在，站点未发布正式关联结果。
+- 重新运行计划登记表结构审计和官方Codebook/表型目录交叉核验：K=150/K=90合计240条候选计划记录，状态分别为`passed_structural_checks_only`与`passed_metadata_crosswalk_only`；仍为`model_approved=false`、`association_results_created=false`。
+- 重新运行可用波次入库门禁：2013 Weights、2015 Blood仍为`skipped_missing_input`；2011官方All Data/PSU/Weight/Blood受保护QA报告仍全部`missing_or_ambiguous`、release gate `not_passed`。本轮只读取聚合门禁报告和公开元数据，没有读取/解压参与者数据。
+- 检查部署工作流：正式Pages发布会先执行`validate_public_site_payload.py`，随后仅打包`site-prototype/dist`并排除`catalog.json`；验证工作流包含登记表与元数据交叉审计。没有发现需要绕过或放松的安全门禁。
+- GitHub Validate #744对应`8848374`。公开Actions摘要页仍标记`In progress`，页面错误而无法加载job细节；因此不能确认远端验证已结束。该状态不影响本地校验结果，但需后续核查Actions运行状态。
+- 下一项真实CHARLS关联模型尚不能启动：缺少四类获准Wave 1官方输入且来源/设计闸门未通过。收到授权文件后，自动路径仍按既定顺序：来源身份→样本框/分母→权重与PSU/方差/年龄域→冻结K=105复现→独立审查→有效后K=150再K=90→波次独立审查→全局多重校正→方法与披露审查→仅发布获准聚合结果。无数据时继续推进元数据与软件发布准备，不会用候选行数或旧派生结果冒充发现。
