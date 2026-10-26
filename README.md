@@ -4,6 +4,8 @@
 
 **当前线上版本：**CHARLS ExWAS Atlas已公开部署：[网站入口](https://calebchu40-gif.github.io/charls-exwas-atlas/)。2026-10-27直接核验首页 HTTP 200，当前加载 app v194；Life History JSON v57（195组、6,103条；E 6,042、P 61）。最近三批增加子女婚姻背景126字段、领养来源4字段、参军/下乡类别53字段；对应精确年份区间继续排除。关联结果页现支持按暴露概念、表型概念、调查波次和模型筛选；无批准发布结果时保持空结果提示。正式、经审查的关联模型仍为0。
 
+**2026-10-27试点Go/No-Go复核：**上一轮105项探索模型只证明软件链可运行，尚不能判定科学试点有效；当前Wave 1官方All Data/PSU/Weight/Blood均未进入受控入库目录，Wave 2权重和Wave 3血检文件也缺失。本轮只复查元数据门禁和受控目录，未读取个人回答、未拟合模型、未发布结果。下一步固定为官方源身份→重建与分母调和→目标/年龄域/权重/PSU与方差审核→冻结105项试点复核→独立方法审查→K=150住宅环境主块→K=90供暖路由子域。试点成败按设计有效性、可复现性及诊断判定，不按显著性；详细条件、协变量方案及文件到位后的自动执行顺序见[`audit/pilot_autonomous_execution_decision_2026-10-27.md`](audit/pilot_autonomous_execution_decision_2026-10-27.md)。
+
 **关联结果发布门槛：**结果浏览器仅读取独立披露审查通过的公开聚合JSON；公开构建器要求逐项审查绑定到精确结果文件SHA-256，整族完整放行，任一假设未批准则整族不发布。审查模板、导出流程与网站字段白名单见[`audit/public_association_release_contract_v1.md`](audit/public_association_release_contract_v1.md)。目前没有正式关联结果文件。
 
 **目录交付核验：**本项目候选目录、字段级来源追溯、查询原型、CHARLS许可边界和已知分析闸门汇总见[`audit/atlas_catalog_delivery_audit_2026-10-26.md`](audit/atlas_catalog_delivery_audit_2026-10-26.md)。目录可检索不代表统计关联已完成或变量已获准进入模型。
