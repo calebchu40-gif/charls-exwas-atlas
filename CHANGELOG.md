@@ -1,3 +1,9 @@
+# 2026-10-27 Record autonomous execution checkpoint
+
+- Re-ran the metadata-only Wave 1 intake preflight; all four required official inputs are still missing/ambiguous. The report remains in protected local storage. No participant values were read and no model was fit.
+- Revalidated the official CHARLS source pages and recorded the current gate plus the locked post-pilot path: complete the 105-coefficient pilot only after source/design readiness; if valid and reproducible, proceed to the predeclared K=150 household-environment family and separately adjusted K=90 heating-route subdomain; expand to later waves only after wave-specific design and measurement review; publish only disclosure-reviewed aggregate families.
+- Reaffirmed that statistical significance does not define pilot success, and no geography field may be invented as a variance stratum. No site payload or restricted data changed. See `audit/execution_checkpoint_2026-10-27.md`.
+
 # 2026-10-27 Distinguish published Wave 1 denominators
 
 - Cross-checked the CHARLS 2011 National Baseline User Guide, Blood Data User Guide and Codebook: they report 17,708 interview/blood-target members, 17,705 observations for the Codebook person `ID` field, and 17,708 observations for individual-weight fields. These file/field-specific counts must not be collapsed into one expected prepared-table size.
