@@ -30,3 +30,17 @@ This adds 40 field mappings to the prior 33, yielding 73 mapped fields / 9 candi
 - Updated complete source ledger: `audit/life_history_education_history_coverage_2014_v1.csv`.
 - Source questionnaire: `sources_official/CHARLS_Life_History_Questionnaire.pdf`, pp. 71–75; Codebook: `sources_official/CHARLS_Life_History_codebook.pdf`, EDUCATIONHISTORY section (field identities and summaries only; summary frequencies not used).
 - The expanded candidate list is metadata only; no participant-level data or association estimates are included.
+
+## Additional reviewed items: high-school stage E035–E048
+
+A further comparison of official questionnaire E035a–E048 with Codebook identities adds 24 fields in three groups:
+
+| Concept | Fields | Interpretation / route |
+|---|---:|---|
+| High-school attendance intensity | 3 | Number of high schools attended; full-/part-time status and nominal duration at the last school. |
+| High-school interruption detail | 14 | Interrupted semesters and 13 reason selectors; follow-up only when E005 indicates a high-school interruption. |
+| High-school completion and exam pathway | 7 | Graduation, completed grade, college entrance exam participation, number/year/track, cutoff category and peer progression. E043 and E045–E047 are conditional. |
+
+The school name, start/end episode dates and addresses in repeated E035b records remain deferred until their repeated-record structure, location sensitivity and usable date precision have been separately documented. No completion/performance score is inferred from entrance-exam categories. Reasons are retrospective and multi-select; peer progression is not an individual outcome.
+
+After this batch, EDUCATIONHISTORY has 97 mapped fields of 1,105; 1,004 substantive fields remain deferred, alongside three excluded linkage keys and one excluded version field. The overall Life History candidate directory contains 80 concepts / 1,866 mappings (E 1,820, P 46). These remain metadata candidates, not analyzed results.
