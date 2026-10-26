@@ -6,6 +6,6 @@
 | --- | --- | --- | --- | --- | --- |
 | 2011 | 683 | 213 | 145456 | not computed | metadata co-availability only; not a sample-size or analysis-eligibility count |
 | 2013 | 628 | 226 | 141920 | not computed | metadata co-availability only; not a sample-size or analysis-eligibility count |
-| 2015 | 599 | 239 | 143137 | not computed | metadata co-availability only; not a sample-size or analysis-eligibility count |
+| 2015 | 602 | 239 | 143854 | not computed | metadata co-availability only; not a sample-size or analysis-eligibility count |
 | 2018 | 500 | 211 | 105493 | not computed | metadata co-availability only; not a sample-size or analysis-eligibility count |
 | 2020 | 208 | 104 | 21630 | not computed | metadata co-availability only; not a sample-size or analysis-eligibility count |

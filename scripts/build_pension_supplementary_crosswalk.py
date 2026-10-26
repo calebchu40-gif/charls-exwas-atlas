@@ -454,6 +454,11 @@ base.loc[mask,"caveat"]="2018问卷FN012_W2提供1=Yes、2=No，并规定Yes才�
 
 # Link 2011 unfolding-bracket interval bounds to the existing amount concepts.
 # These are only asked after refusal/no recall; retain lower/upper-bound semantics and route.
+add("2011", "fn079", "pension_monthly_benefit_amount", "养老金月待遇金额",
+    "current monthly benefit amount after starting New Rural Social Pension receipt",
+    unit="CNY/month",
+    value_source="sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt",
+    caveat="仅在FN077=Yes、已开始领取新农保待遇者中询问；这是计划特异的当前月待遇金额，不代表所有参保者或未领取者。保留官方特殊缺失码，不将未问/缺失替换为零；发行版数值编码和分析分母仍需数据级核验。")
 for code in ("fn005_a", "fn005_b", "fn008_a", "fn008_b", "fn014_a", "fn014_b", "fn019_a", "fn019_b", "fn023_a", "fn023_b"):
     bound = "lower bound" if code.endswith("_a") else "upper bound"
     add("2011", code, "pension_monthly_benefit_amount", "养老金月待遇金额",

@@ -1,8 +1,8 @@
 {
   "as_of": "2026-10-26",
   "crosswalk_files": 87,
-  "candidate_concept_ids": 1618,
-  "exposure_concept_ids_including_dual": 1312,
+  "candidate_concept_ids": 1622,
+  "exposure_concept_ids_including_dual": 1316,
   "phenotype_concept_ids_including_dual": 331,
   "wave_field_mapping_rows": 8288,
   "includes": "all E/P candidate rows from ep_concept_source_crosswalk_v1.csv",
@@ -361,7 +361,7 @@
     {
       "file": "audit/pension_exposure_variable_mapping_v1.csv",
       "mapping_rows": 1158,
-      "concept_ids": 291
+      "concept_ids": 294
     },
     {
       "file": "audit/pension_exposure_variable_mapping_v1.csv | audit/pension_participation_crosswalk_v1.csv",

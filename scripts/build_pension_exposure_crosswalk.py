@@ -610,6 +610,24 @@ for rec in raw.itertuples(index=False):
         concept = f"pension_benefit_source_{scheme}"
         display = f"养老金待遇来源：{SCHEME_ZH[scheme]}"
         kind = "reported pension benefit source/provider"
+    elif wave == "2015" and re.fullmatch(r"fn074_w3_pay_([123])_fn074_w3s28", code):
+        scheme = {"1": "new_rural_social", "2": "residents", "3": "urban_residents"}[re.fullmatch(r"fn074_w3_pay_([123])_fn074_w3s28", code).group(1)]
+        concept = f"pension_2015_fn074_supplementary_payer_other_person_option_{scheme}"
+        display = f"补充缴费承担者其他人员选项：{SCHEME_ZH[scheme]}（2015）"
+        kind = "other-person response option for a 2015 supplementary-pension payment payer item"
+        mapping_status = "2015 questionnaire printed page 178 and codebook option-slot label reviewed; candidate only"
+        caveat += " This is the Codebook field for option 28 (Other People), not the separate free-text write-in. The questionnaire places it in the FN072_W3 supplementary-payment follow-up; retain this item context and plan route. The separate FN074_W3_1 write-in text is not imported. Do not treat an unselected option as an explicit No."
+        extra = {"value_label_status": "official questionnaire item context and codebook option slot reviewed; frequencies omitted",
+                 "value_label_source": "sources_official/CHARLS_2015_Questionnaire.pdf (printed page 178); sources_official/CHARLS_2015_Codebook_extracted.txt"}
+    elif wave == "2015" and re.fullmatch(r"fn076_w3_([123])_s\d+", code):
+        scheme = {"1": "new_rural_social", "2": "residents", "3": "urban_residents"}[re.fullmatch(r"fn076_w3_([123])_s\d+", code).group(1)]
+        concept = f"pension_2015_fn076_contribution_payer_{scheme}"
+        display = f"FN076所列缴费承担者：{SCHEME_ZH[scheme]}（2015）"
+        kind = "payer option slot for the 2015 FN076 pension-contribution item"
+        mapping_status = "2015 questionnaire printed page 181 and codebook option-slot labels reviewed; candidate only"
+        caveat += " Preserve as a distinct FN076 item family and selected pension-plan route; do not pool with FN074 option 28, FN075_W3_5 annual-contribution payer, prior-year FN072_W3_5 payer, or generic payer constructs from other waves. Child-name slots are roster-position options, not public identities; unselected options are not assumed to be explicit No."
+        extra = {"value_label_status": "official questionnaire item context and codebook option slots reviewed; frequencies omitted",
+                 "value_label_source": "sources_official/CHARLS_2015_Questionnaire.pdf (printed page 181); sources_official/CHARLS_2015_Codebook_extracted.txt"}
     elif (re.search(r"who pay for|who paid for", label, re.I)
           and not re.fullmatch(r"fn072_w3_5_[123]_s\d+", code)):
         scheme = scheme_of(label)
@@ -741,11 +759,11 @@ for rec in raw.itertuples(index=False):
                  "value_label_source": "sources_official/CHARLS_2015_Questionnaire.pdf (printed page 180); sources_official/CHARLS_2015_Codebook_extracted.txt"}
     elif re.fullmatch(r"fn075_w3_5_([123])_", code):
         scheme = {"1": "new_rural_social", "2": "residents", "3": "urban_residents"}[re.fullmatch(r"fn075_w3_5_([123])_", code).group(1)]
-        concept = f"pension_contribution_payer_{scheme}_supplementary"
-        display = f"养老金补缴费用承担者：{SCHEME_ZH[scheme]}"
-        kind = "reported supplementary pension contribution payer"
-        mapping_status = "2015 questionnaire page 181 identifies a multiple-response payer question; plan-specific codebook field verified; candidate only"
-        caveat += " Multiple-response payer field for supplementary contributions, separate by pension plan. Child-slot choices and other-family/other-person responses must retain their released storage semantics; unselected options are not assumed to be explicit No."
+        concept = f"pension_annual_contribution_payer_{scheme}_2015"
+        display = f"补缴后继续按年缴费的承担者：{SCHEME_ZH[scheme]}（2015）"
+        kind = "reported payer for continued annual pension contributions after supplementary repayment"
+        mapping_status = "2015 questionnaire printed page 181 distinguishes this annual-contribution payer item from the preceding supplementary repayment; plan-specific codebook field verified; candidate only"
+        caveat += " This is the payer of annual contributions continued after the supplementary repayment, not the payer of the earlier supplementary amount. Preserve plan route and released multiple-response semantics; unselected options are not assumed to be explicit No. Do not merge with FN074/FN076 supplementary-payment payer items or FN072_W3_5 prior-year payer."
         extra = {"value_label_status": "official 2015 questionnaire/codebook labels reviewed; frequencies omitted",
                  "value_label_source": "sources_official/CHARLS_2015_Questionnaire.pdf (printed page 181); sources_official/CHARLS_2015_Codebook_extracted.txt"}
     elif code == "fn072_w3" and wave == "2018":

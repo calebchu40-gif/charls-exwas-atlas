@@ -19,13 +19,13 @@ def apply_status(mapping: pd.DataFrame) -> tuple[pd.DataFrame, int]:
         regex=True,
     )
     evidence = stale & reviewed & mapping["value_labels"].ne("")
-    count = int(evidence.sum())
     target = evidence | mapping["mapping_status"].eq(REVIEWED_STATUS)
-    if count not in (0, 23) or int(target.sum()) != 23:
-        raise ValueError(f"Expected 23 stale pension rows with explicit labels; found {count} (total target {int(target.sum())})")
+    count = int(target.sum())
+    if int((target & mapping["value_labels"].eq("")).sum()) or int((target & mapping["mapping_status"].str.contains("DO NOT ANALYZE", case=False)).sum()):
+        raise ValueError("Pension status propagation selected a row without explicit labels or selected an analysis-locked row")
     result = mapping.copy()
     result.loc[target, "mapping_status"] = REVIEWED_STATUS
-    return result, 23
+    return result, count
 
 
 def main() -> None:
