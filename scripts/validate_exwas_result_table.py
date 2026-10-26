@@ -181,6 +181,8 @@ def validate_rows(rows: list[dict[str, str]], schema_fields: list[str], required
                 errors.append(f"row {row_no}: {field} must be between 0 and 1")
         if numeric_values.get("standard_error") is not None and numeric_values["standard_error"] < 0:
             errors.append(f"row {row_no}: standard_error cannot be negative")
+        if fit_status == "success" and numeric_values.get("standard_error") is not None and numeric_values["standard_error"] <= 0:
+            errors.append(f"row {row_no}: successful fit requires a strictly positive standard_error")
 
         counts: dict[str, int] = {}
         for field in COUNT_FIELDS:

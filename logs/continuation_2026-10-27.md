@@ -130,3 +130,10 @@ GitHub Validate：`cb6f8e2`（scale-up门禁）已成功；`8002a0c`（公开程
 - 加固`build_public_association_release.py`：在写入公开目录前，先用站点实际payload validator复核刚生成的白名单JSON；输出先写入目标目录内的临时文件、flush/fsync后通过`os.replace`原子替换，若失败则清理临时文件，避免中断造成半写入公开JSON。
 - 本机Python静态编译通过，现有网站dist payload validator通过，`git diff --check`通过。没有构造或发布结果、没有读取任何CHARLS参与者记录。
 - 最新 intake 门禁复核仍为Wave 1四项官方输入缺失，Wave 2权重和Wave 3血检缺失。真实分析与网站关联发布仍由授权数据来源、调查设计、模型审查和逐行披露决策门禁控制。
+
+## 自动续接：公开结果统计值一致性门禁（2026-10-27）
+
+- 进一步检查公开JSON的CI校验：此前只验证BY q值和Bonferroni值在0–1范围内，没有在成品payload层按完整K重新计算；成功结果的标准误也允许为0。
+- 已增强结果表validator：成功估计要求严格正的标准误。增强公开payload validator：按每个完整家族的所有行（包含不可估计项）重新计算BY/Bonferroni，并逐个与公开数值对照；成功结果必须具有正标准误。
+- Python静态编译通过，当前站点dist通过payload validator；目前无`association_results_v1.json`，没有公开关联数据。
+- GitHub前一提交`8c84d04`的Validate #743仍在检查中；本轮新修改尚未提交，待本地检查完成后再推送。

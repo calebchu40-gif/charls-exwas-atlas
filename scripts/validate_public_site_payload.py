@@ -8,6 +8,8 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+from adjust_exwas_pvalues import adjust_pvalues
+
 
 ALLOWED_SUFFIXES = {".css", ".gif", ".html", ".ico", ".jpeg", ".jpg", ".js", ".json", ".png", ".svg", ".webp", ".woff", ".woff2"}
 ALLOWED_DOTFILES = {".nojekyll"}
@@ -60,6 +62,7 @@ def validate_association_payload(payload: object) -> list[str]:
             errors.append(f"Association family {family_id} must publish its complete declared K")
             continue
         seen_ids: set[str] = set()
+        family_p_values: list[float | None] = []
         for row in rows:
             if not isinstance(row, dict) or set(row) != RESULT_ROW_FIELDS:
                 errors.append(f"Association family {family_id} contains a row with non-allowlisted fields")
@@ -90,15 +93,37 @@ def validate_association_payload(payload: object) -> list[str]:
                         errors.append(f"Association row {analysis_id} has out-of-range {field}")
                 if "standard_error" in numeric and numeric["standard_error"] < 0:
                     errors.append(f"Association row {analysis_id} has negative standard_error")
+                if "standard_error" in numeric and numeric["standard_error"] <= 0:
+                    errors.append(f"Successful association row {analysis_id} requires positive standard_error")
                 if "n_model" in numeric and (numeric["n_model"] < 0 or not numeric["n_model"].is_integer()):
                     errors.append(f"Association row {analysis_id} has invalid n_model")
                 if ("ci_lower" in numeric and "ci_upper" in numeric
                         and numeric["ci_lower"] > numeric["ci_upper"]):
                     errors.append(f"Association row {analysis_id} has reversed confidence limits")
+                family_p_values.append(numeric.get("p_value"))
             else:
                 for field in ("estimate", "standard_error", "ci_lower", "ci_upper", "p_value", "q_value_by", "p_bonferroni", "n_model"):
                     if row.get(field) not in ("", None):
                         errors.append(f"Non-success association row {analysis_id} must not expose {field}")
+                family_p_values.append(None)
+        try:
+            adjusted = adjust_pvalues(family_p_values)
+        except (TypeError, ValueError) as exc:
+            errors.append(f"Association family {family_id} has invalid p-values: {exc}")
+            continue
+        for index, row in enumerate(rows):
+            if row.get("fit_status") != "success":
+                continue
+            for field, expected in (
+                ("q_value_by", adjusted["q_value_by"][index]),
+                ("p_bonferroni", adjusted["p_bonferroni"][index]),
+            ):
+                try:
+                    observed = float(row.get(field))
+                except (TypeError, ValueError):
+                    continue  # The row-level numeric check reports this.
+                if expected is None or not math.isclose(observed, expected, rel_tol=1e-9, abs_tol=1e-12):
+                    errors.append(f"Association family {family_id} row {row.get('analysis_id')} has inconsistent {field}")
     return errors
 
 
