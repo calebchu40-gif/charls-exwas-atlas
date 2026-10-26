@@ -2,7 +2,7 @@
 
 专题页面与E/P主目录展示重复的CHARLS波次字段。此前主目录已有官方审核的类别文字时，部分专题JSON仍为空，导致用户在专题筛选中看不到已核标签。
 
-新增 `scripts/sync_domain_catalog_labels.py`，在 `build_ep_concept_source_crosswalk.py` 生成最终主目录之后运行。脚本只按准确波次和标准化CHARLS字段码匹配，并要求匹配到的标签、出处、审核状态组合唯一；只填空白值，不覆盖专题原有标签，也不复制题意、分析状态或协变量角色。无法匹配、无标签或存在冲突的字段保持原样。报告写入 `site-prototype/dist/domain_label_sync_report.json`。
+新增 `scripts/sync_domain_catalog_labels.py`，在 `build_ep_concept_source_crosswalk.py` 生成最终主目录之后运行。脚本只按准确波次和标准化CHARLS字段码匹配，并要求匹配到的标签、出处、审核状态组合唯一；只填空白值，不覆盖专题原有标签，也不复制题意、分析状态或协变量角色。无法匹配、无标签或存在冲突的字段保持原样。报告写入审计目录 `audit/domain_catalog_label_sync_report_v1.json`，不进入Pages网站包。
 
 本次补齐饮食/环境目录35条、社交/家庭联系目录184条，共219条。另有55条及88条字段仍无可唯一对应的已审标签，保持空白/待核。重建流水线再次运行后，35条和184条均稳定进入专题JSON；歧义计数为0。
 

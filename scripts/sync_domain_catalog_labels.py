@@ -17,6 +17,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site-prototype" / "dist"
+AUDIT = ROOT / "audit"
 DOMAIN_FILES = ("food_environment_v1.json", "social_exposures_v1.json")
 
 
@@ -84,9 +85,9 @@ def main() -> int:
     report = {"source": "catalog.json Value.Labels / Value.Label.Source / Value.Label.Review",
               "matching": "exact wave + normalized CHARLS variable code; unique provenance tuple only",
               "files": summary}
-    (SITE / "domain_label_sync_report.json").write_text(
+    (AUDIT / "domain_catalog_label_sync_report_v1.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Wrote domain_label_sync_report.json: {summary}", flush=True)
+    print(f"Wrote audit/domain_catalog_label_sync_report_v1.json: {summary}", flush=True)
     return 0
 
 
