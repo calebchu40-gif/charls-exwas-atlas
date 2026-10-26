@@ -1,3 +1,9 @@
+# 2026-10-26 Connect official-source review with private intake hashes
+
+- The Wave 1 metadata preflight now reads the protected intake manifest and reports source identity separately from local hash evidence. It only accepts a reviewed source identity when official document/page, title, filename, download record, reviewer record, and reviewed local SHA-256 all match the received files.
+- A byte change rotates the opaque source-manifest ID and reopens identity review. Missing/ambiguous inputs remain `unavailable_pending_authorized_file`; the gate stays closed.
+- Added six synthetic source-manifest tests. All 21 focused source-manifest/result-schema tests passed; `git diff --check` passed. The metadata-only preflight still finds all four Wave 1 inputs missing. No participant data or models were used.
+
 # 2026-10-26 Separate source identity from private file checksums
 
 - Replaced the v2 success requirement for a public official SHA-256 token with the versioned v3 result schema.
