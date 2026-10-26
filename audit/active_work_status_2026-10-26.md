@@ -1,24 +1,24 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
-## Latest full build and healthcare-access mapping (local app v134; publication pending)
+## Latest full build and healthcare-access mapping (app v134 live; verified 2026-10-26)
 
 The full source-mapping pipeline completed 230/230 steps in 8.4 minutes. Current local E/P/C shards are 6,327/2,133/1,048; the atlas contains 1,624 E/P candidate concepts (E=1,318, P=332 including 26 dual-role concepts), 8,337 E/P concept-source mappings, and 223 C metadata mappings in the complete concept-source index. The candidate-pair index reports 146,566/142,774/143,854/106,204/21,630 wave-level metadata co-availability pairs for 2011/2013/2015/2018/2020. These counts are catalogue metadata only, not analytic Ns or results. Generic pending value-label rows are zero; the exact 92 analysis locks remain unchanged; formal association models remain 0.
 
 Added the plan-conditional supplemental-health-insurance candidate concept to the healthcare access catalogue: 17 exact source fields across 2011, 2013 and 2018, with the 2011/2013 repeated plan slots, the 2018 skips for plan types 7/8, and 1=Yes/2=No labels retained. No 2015 main-interview equivalent was inferred, and the 2020 exit-interview field was excluded. The source audit and build/test rules are in [`healthcare_access_definition_review_v1.md`](healthcare_access_definition_review_v1.md), `scripts/build_healthcare_access_crosswalk.py`, `scripts/enrich_healthcare_access_labels.py`, and `tests/test_health_insurance_supplemental_mapping.py`.
 
-Verification after synchronization: all 526 Python tests pass; public-payload validation, exact 92-lock validation, JavaScript syntax and `git diff --check` pass. The refreshed README and value-label queue now match the generated counts. GitHub Pages is still verified only through app v132; v134 remains local and awaits commit, remote checks, deployment and live payload verification. No participant records or frequency summaries were used.
+Verification after synchronization: all 526 Python tests pass; public-payload validation, exact 92-lock validation, JavaScript syntax and `git diff --check` pass. GitHub Pages serves `app.js?v=134`; the homepage and healthcare-access payload return HTTP 200, and the live payload contains the 17 reviewed supplemental-insurance fields with 1=Yes/2=No. Remote Validate status was not independently confirmed in this check. No participant records or frequency summaries were used.
 
-## Full 2011 community inventory and JF003 expansion (local app v134; pending publication)
+## Full 2011 community inventory and JF003 expansion (included in live app v134)
 
 Reconciled all 719 unique fields in the sanitized 2011 community inventory: 652 map to questionnaire-anchored community-context E candidates, 65 are explicit C-only source/measurement metadata, and `communityID`/`sub_commuid` are excluded linkage keys. Added 32 JF003 facility-location hierarchy fields as a separate community healthcare-access concept; category labels preserve facility slots and four conditional geography levels and contain no frequencies. C-only additions include Part H meeting/informant fields and open text, Part J informant and Codebook-only credit fields, and Part K interviewer observation. The full coverage matrix and caveats are in [`community_2011_full_inventory_coverage_review_2026-10-26.md`](community_2011_full_inventory_coverage_review_2026-10-26.md).
 
 The 159-step community-focused build snapshot that preceded the full 230-step rebuild is historical; the latest counts and verification state are recorded above.
 
-## Community Parts G/I source coverage (local build v133; pending publication)
+## Community Parts G/I source coverage (historical build v133; superseded by live v134)
 
 Reviewed all 123 JG/JI fields in the sanitized 2011 community field inventory against the official Community Questionnaire and Codebook. 120 have community-context candidate mappings; the remaining three have explicit dispositions: JG008 is C-only because its Chinese unemployment-subsidy amount wording conflicts with its minimum-living-allowance section and route; JG042 is C-only informant identity with a Part G/Part D questionnaire-Codebook label conflict; JI002_other is unstructured open text, already C-only. Added source-backed audit and automated coverage tests, then propagated JG008 and JG042 into C metadata without categories or values. They are absent from E/P crosswalks and E/P candidate pairs. Full details: [`community_parts_g_i_source_coverage_review_2026-10-26.md`](community_parts_g_i_source_coverage_review_2026-10-26.md).
 
-The 159-step metadata finalization completed in 7.6 minutes. Current local shards are E/P/C=6,278/2,116/1,015; 1,622 E/P concepts (E=1,316; P=331 including dual-role); 8,288 E/P concept-source mappings; generic pending labels=0; exact analysis locks=92. Metadata co-availability pairs remain 145,456/141,920/143,854/105,493/21,630 (not analytic N/results). The new 3 focused source-coverage tests and complete 520-test suite pass; public-payload validation, exact 92-lock validation, JS syntax and `git diff --check` pass. The generated app script is bumped to v133. This update is local and awaits publication; formal association models remain 0.
+At that historical v133 stage, the 159-step metadata finalization completed in 7.6 minutes. Its then-current shards were E/P/C=6,278/2,116/1,015; 1,622 E/P concepts and 8,288 E/P concept-source mappings. Those counts were superseded by the full v134 build documented above. Formal association models remain 0.
 
 ## 2015 pension payer context audit (deployed 2026-10-26)
 
@@ -108,8 +108,8 @@ The earlier JJ005/Part J next-step note is historical; that work is included in 
 
 Keep the following separate gates visible in the atlas and handoff notes: official release/file identity; exact wave-field correspondence; route and special-value handling; target-population and module eligibility; weight/PSU/variance design; and cross-wave measurement comparability. Catalogue availability does not imply analysis eligibility. Formal models and participant-level association results remain 0.
 
-## Latest local state (2026-10-26; after v134)
+## Earlier v134 preparation snapshot (2026-10-26; superseded by the live supplemental-insurance build above)
 
 Commit `255c6fb` completed the full 2011 community inventory coverage audit and is pushed to `main`. The 2011 community inventory contains 719 metadata fields: 652 have questionnaire-anchored candidate mappings, 65 are explicitly C-only metadata/source-conflict entries, and 2 linkage keys are excluded. v134 local finalization completed 159/159 steps; E/P/C=6,310/2,116/1,048; 1,623 E/P concepts (E=1,317, P=331, including dual-role concepts); 8,320 concept-source mappings; generic pending labels=0; exact analysis locks=92. The wave-specific metadata co-availability counts are 145,669 / 141,920 / 143,854 / 105,493 / 21,630 for 2011/2013/2015/2018/2020 and are not analytic sample sizes or results. Formal models and actual pairwise-complete N remain 0.
 
-Local verification for v134: 523 tests passed; public-payload validation, exact 92-lock validation, JavaScript syntax, and `git diff --check` passed. The public site is still verified only through app v132; v134 is pending remote validation/deployment verification. The 2011 blood-analyte and 2011/2013/2015 objective-measurement crosswalks were inspected as existing completed candidate inventories; these checks do not close unresolved 2011 field identity or data-release eligibility. Do not repeat those inventories as unreviewed work.
+At that earlier preparation snapshot, 523 tests passed and the public site was verified only through v132. This was superseded by the later live-v134 verification at the top of this file. The 2011 blood-analyte and 2011/2013/2015 objective-measurement crosswalks were inspected as existing completed candidate inventories; these checks do not close unresolved 2011 field identity or data-release eligibility. Do not repeat those inventories as unreviewed work.
