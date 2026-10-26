@@ -110,6 +110,45 @@ GROUPS = [
         "caveat": "A10/A10_1 are conditional on A7=yes; A10_1 is asked when exact age is unknown/refused. Do not count the two age fields as independent exposures or treat skip/missing as no divorce. Questionnaire notes that long emotional separations may count, remarriage after divorce does not undo it, and bereavement is not classified as divorce.",
     },
     {
+        "concept_id": "life_history_parental_loss",
+        "label": "Biological-parent death and loss context",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "early-life family adversity",
+        "patterns": [r"a1[ab]", r"a2[ab]_[12]"],
+        "question": "A1/A2",
+        "unit": "parent-specific alive status and conditional death year or age",
+        "values": "A1 reports whether each biological parent is alive. If deceased, A2 records death year or age at death; preserve the year and age fields as alternative measures.",
+        "status": "official parent-specific skip route reviewed; event timing and release coding require QA",
+        "caveat": "Parent death is family adversity, not respondent mortality. Death fields are conditional on the parent being reported deceased; age at respondent event and temporal ordering require approved linkage to respondent birth year. Do not interpret skipped death fields as missing death or No.",
+    },
+    {
+        "concept_id": "life_history_parental_remarriage_stepfamily",
+        "label": "Parental remarriage and stepfamily transitions",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "early-life family structure and psychosocial context",
+        "patterns": [r"a11[ab](?:_1|_2|_3|_4_[12])?", r"a12[ab](?:_1|_2|_3|_4_[12])?"],
+        "question": "A11a/A11b/A12a/A12b",
+        "unit": "parent-specific remarriage report, respondent age, step-parent status and conditional death timing",
+        "values": "A11 covers remarriage after parental divorce; A12 covers remarriage after a biological parent's death. Exact age and age band are alternatives; step-parent alive status gates death timing.",
+        "status": "official divorce/death branches, conditional age ranges and step-parent routes reviewed; release coding requires QA",
+        "caveat": "Keep remarriage after divorce distinct from remarriage after bereavement and preserve maternal/paternal branches. Exact age and age band are not separate events. Step-parent death year/age are conditional. The questionnaire treats long-term cohabitation as marriage; no skipped field is recoded as No.",
+    },
+    {
+        "concept_id": "life_history_nonbiological_parent_education",
+        "label": "Adoptive and step-parent education",
+        "role": "e",
+        "modules": ["FAMILYINFORMATION"],
+        "domain": "family-of-origin socioeconomic context",
+        "patterns": [r"a6[c-f]"],
+        "question": "A6c-A6f",
+        "unit": "highest completed education category for adoptive/step parents",
+        "values": "Separate adoptive mother, stepmother, adoptive father and stepfather fields; do not combine these with biological-parent education.",
+        "status": "official source identities and questionnaire categories reviewed; relationship-specific routes require release QA",
+        "caveat": "These are adult caregiver/parent background measures, not the respondent's education. A4 identifies who raised the respondent before age 17; do not assume every listed adoptive/step parent was the primary caregiver or impute skipped categories.",
+    },
+    {
         "concept_id": "life_history_sibling_death_before_age6",
         "label": "Sibling deaths before age six and family relationship context",
         "role": "e",
@@ -519,9 +558,37 @@ def build_sibling_module_coverage(rows: list[dict]) -> list[dict]:
     return ledger
 
 
+def build_parent_module_coverage(rows: list[dict]) -> list[dict]:
+    """Disposition every structured A-section parent/family-background Codebook field."""
+    mapped = {row["code"]: row for row in rows if row["module"] == "FAMILYINFORMATION"}
+    fields = read_codebook_fields()
+    ledger: list[dict] = []
+    for (module, code), label in sorted(fields.items()):
+        if module != "FAMILYINFORMATION" or not re.match(r"a\d", code, re.I):
+            continue
+        row = mapped.get(code)
+        if row:
+            disposition, concept_id, rationale = "mapped_candidate", row["concept_id"], row["caveat"]
+        elif code in {"a4a", "a4b"}:
+            disposition, concept_id = "deferred_caregiver_identity", ""
+            rationale = "Caregiver identity is a route-defining relationship category, not an E/P measure; retain only as metadata until a target estimand needs it."
+        elif re.fullmatch(r"a5[abcdef]", code, re.I):
+            disposition, concept_id = "deferred_parent_birth_year", ""
+            rationale = "Parent birth year is background/timing metadata, not a stand-alone exposure; event-age derivation requires approved linkage and validation."
+        else:
+            raise ValueError(f"Unmapped parent/family-background Codebook field has no disposition: {code}")
+        ledger.append({"module": module, "code": code, "codebook_label": label,
+                       "disposition": disposition, "concept_id": concept_id,
+                       "rationale": rationale,
+                       "questionnaire_source": "sources_official/CHARLS_Life_History_Questionnaire.pdf",
+                       "codebook_source": "sources_official/CHARLS_Life_History_codebook.pdf"})
+    return ledger
+
+
 def main() -> None:
     rows, concepts = build()
     sibling_coverage = build_sibling_module_coverage(rows)
+    parent_coverage = build_parent_module_coverage(rows)
     AUDIT.mkdir(parents=True, exist_ok=True)
     DIST.mkdir(parents=True, exist_ok=True)
     csv_path = AUDIT / "life_history_exposure_crosswalk_v1.csv"
@@ -536,13 +603,20 @@ def main() -> None:
         writer = csv.DictWriter(f, fieldnames=list(sibling_coverage[0]), extrasaction="ignore")
         writer.writeheader()
         writer.writerows(sibling_coverage)
+    parent_coverage_path = AUDIT / "life_history_parent_module_coverage_2014_v1.csv"
+    with parent_coverage_path.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=list(parent_coverage[0]), extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(parent_coverage)
     print(json.dumps({"concepts": len(concepts), "field_rows": len(rows),
                       "by_role": {role: sum(x["role"] == role for x in rows) for role in ("e", "p")},
                       "by_module": {module: sum(x["module"] == module for x in rows)
                                     for module in sorted({x["module"] for x in rows})},
                       "sibling_module_fields_dispositioned": len(sibling_coverage),
+                      "parent_module_fields_dispositioned": len(parent_coverage),
                       "csv": str(csv_path), "json": str(json_path),
-                      "sibling_coverage": str(coverage_path)}, ensure_ascii=False))
+                      "sibling_coverage": str(coverage_path),
+                      "parent_coverage": str(parent_coverage_path)}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

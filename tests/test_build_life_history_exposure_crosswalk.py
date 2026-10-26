@@ -26,8 +26,8 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (32, 770))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 742, "p": 28})
+        self.assertEqual((len(groups), len(rows)), (35, 804))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 776, "p": 28})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
@@ -52,6 +52,9 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(len(by_concept["life_history_sibling_ethnic_context"]), 41)
         self.assertEqual(len(by_concept["life_history_sibling_sent_down_experience"]), 26)
         self.assertEqual(len(by_concept["life_history_sibling_death_after_age6"]), 15)
+        self.assertEqual(len(by_concept["life_history_parental_loss"]), 6)
+        self.assertEqual(len(by_concept["life_history_parental_remarriage_stepfamily"]), 24)
+        self.assertEqual(len(by_concept["life_history_nonbiological_parent_education"]), 4)
         self.assertNotIn("b4_1_1_", {row["code"] for row in rows})
         self.assertFalse(any(row["code"].startswith("b2_4") for row in rows))
         self.assertEqual(len({(row["module"], row["code"]) for row in rows}), len(rows))
@@ -65,6 +68,13 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(sum(row["disposition"] != "mapped_candidate" for row in coverage), 30)
         self.assertEqual({row["disposition"] for row in coverage if row["code"].startswith("b4_4_")}, {"deferred_relative_status"})
         self.assertEqual({row["disposition"] for row in coverage if row["code"].startswith("b4_5_")}, {"deferred_relative_attainment"})
+
+    def test_parent_module_inventory_has_explicit_disposition_for_every_codebook_field(self):
+        rows, _ = builder.build()
+        coverage = builder.build_parent_module_coverage(rows)
+        self.assertEqual(len(coverage), 47)
+        self.assertEqual(sum(row["disposition"] == "mapped_candidate" for row in coverage), 39)
+        self.assertEqual(sum(row["disposition"] != "mapped_candidate" for row in coverage), 8)
 
 
 if __name__ == "__main__":

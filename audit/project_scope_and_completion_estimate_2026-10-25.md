@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas 项目范围与剩余工期（2026-10-25修订）
 
+## 2026-10-26 parent/caregiver module extension (local)
+
+官方2014问卷A模块复核新增3个亲代/抚养人概念和34条字段映射；47个结构化Codebook字段全部有候选映射或明确暂缓去向（8条身份/出生年字段暂缓）。Life History目录本地现为35概念组、804字段行（E 776、P 28）。亲代死亡、离婚后再婚与丧偶后再婚分别保留；字段级台账及解释见[`life_history_parent_module_coverage_2014_v1.csv`](life_history_parent_module_coverage_2014_v1.csv)和[`life_history_parent_module_review_2026-10-26.md`](life_history_parent_module_review_2026-10-26.md)。待全量测试和部署。
+
 ## 2026-10-26 sibling module expansion (local)
 
 对照官方2014 Life History问卷和Codebook完成Section B字段审计：271个B模块Codebook字段均有明确去向，241条进入6个候选概念组，30条兄弟姐妹生存状态/最高学历字段暂缓。姓名和开放式死因不进入目录。Life History专题现为32概念组、770条字段映射（E 742、P 28）；Pages线上JSON已核验更新。完整性台账和解释见[`life_history_sibling_module_review_2026-10-26.md`](life_history_sibling_module_review_2026-10-26.md)及[`life_history_sibling_module_coverage_2014_v1.csv`](life_history_sibling_module_coverage_2014_v1.csv)。
