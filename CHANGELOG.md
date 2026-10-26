@@ -1,3 +1,9 @@
+# 2026-10-26 Refresh Life History homepage counts and CI expectations
+
+- Updated the static Life History overview to the generated directory totals: 180 concepts / 5,875 source mappings (E 5,814, P 61), plus current Education History, Work History and Family Information coverage.
+- Corrected stale existing unit-test expectations for the three-year college pathway and Education History's 1,077 mapped fields; the homepage KPI check now reads the generated JSON instead of a hard-coded obsolete count.
+- Local homepage app cache is v185; Life History JSON remains v51. v184 / JSON v51 is online and was HTTP/hash verified; this homepage correction is pending deployment.
+
 # 2026-10-26 Map biological-parent birth-year derivation inputs
 
 - Mapped A5a/A5b biological mother/father birth-year fields as inputs to a potential parental-age-at-respondent-birth estimand; the catalog explicitly says these are calendar years, not ages.

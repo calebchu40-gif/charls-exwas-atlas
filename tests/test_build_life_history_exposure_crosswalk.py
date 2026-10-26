@@ -121,7 +121,7 @@ CHARLSCodeBook 1 RESIDENCE
             "life_history_high_school_completion_and_exam_pathway": 8,
             "life_history_vocational_education_pathway": 34,
             "life_history_vocational_school_interruption_detail": 14,
-            "life_history_three_year_college_pathway": 40,
+            "life_history_three_year_college_pathway": 26,
             "life_history_three_year_college_interruption_detail": 14,
             "life_history_four_year_college_pathway": 51,
             "life_history_four_year_college_interruption_detail": 14,
@@ -409,7 +409,7 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(len(ledger), 1105)
         self.assertEqual(len({row["code"] for row in ledger}), 1105)
         counts = Counter(row["disposition"] for row in ledger)
-        self.assertEqual(counts["mapped_candidate"], 1072)
+        self.assertEqual(counts["mapped_candidate"], 1077)
         self.assertEqual(counts["excluded_sensitive_geography"], 22)
         self.assertEqual(counts["deferred_certificate_identity_linkage"], 5)
         self.assertEqual(counts["excluded_data_quality_flag"], 1)
