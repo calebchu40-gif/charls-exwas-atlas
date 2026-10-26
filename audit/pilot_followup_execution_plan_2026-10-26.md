@@ -52,6 +52,8 @@
 
 受保护目录目前有派生个人表、年龄候选、`psu.dta` 和本地运行记录，但没有完整的 Wave 1 原始发行包。官方 Wave 1 页面列出独立的 PSU、Weight、Blood data 下载项；对应的下载路由分别是[PSU（文档117）](https://charls.charlsdata.com/documents/117/download/en.html)、[Weight（文档118）](https://charls.charlsdata.com/documents/118/download/en.html)和[Blood data（文档201）](https://charls.charlsdata.com/documents/201/download/en.html)。本次打开三条官方链接均重定向到 CHARLS 登录页面；[官方发布新闻](https://charls.pku.edu.cn/en/info/1110/1286.htm)也说明注册用户登录后下载。因此下一步需要在获准账号下取回这些文件，下载后先运行 metadata-only 来源/结构闸门。本地 SHA-256 只能标识收到的文件，不能冒充官方校验值；若官方没有公布对应包的校验值，应在来源记录中如实写明。
 
+**官方数据申请方式核对（2026-10-27）：**CHARLS 官方[常见问题](https://charls.pku.edu.cn/Faq/cjwt.htm)说明，申请者需在网站注册、签署用户数据使用协议、提供真实个人信息并确认邮箱；随后可分别申请已公开发布的各期数据，申请通常在3个工作日内得到审核回复。因此“公开发布/免费申请”不等同于匿名直链下载或无需审批的开放许可。Wave 1 英文[官方数据页](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)确实列出 All data ZIP、PSU、Weight、Blood data 及各自发行/更新日期；本机门槛要求这四项版本逐一对应并留存来源凭证。当前 intake 目录只见空缺状态清单，未见四个源文件，所以不开展正式关联拟合。
+
 官方资料目录：[2011 Wave 1 页面](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)；[抽样设计](https://charls.pku.edu.cn/en/About/Sample.htm)；[血样权重说明](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf)。官方页面确认资料项存在，但不是下载文件版本的校验凭证。
 
 ### 追加的年龄域/血样资格核查（2026-10-26）
