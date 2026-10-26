@@ -1,3 +1,9 @@
+## 2014 WORKHISTORY F101a agricultural income (local build v169 pending publication)
+
+Reviewed all 49 official F101a/F101a_a Codebook fields. Four concepts distinguish beginning/middle payment mode from conditional Yuan amounts; the latter period is only asked for agricultural jobs lasting at least 20 years. Net income subtracts agricultural inputs and includes the market value of consumed farm products. These are retrospective economic variables, not chemical or pesticide exposure measures; nominal values are not inflation-harmonized. See [`life_history_work_history_agricultural_income_review_2026-10-26.md`](life_history_work_history_agricultural_income_review_2026-10-26.md).
+
+Local rebuild now has 135 concepts / 4,595 mappings (E 4,549, P 46); WORKHISTORY 1,754 mapped, 233 substantive fields deferred. App v169 / JSON v36 pending publication. Formal models remain 0.
+
 ## 2014 WORKHISTORY F112 income-mode audit (local build v168 pending publication)
 
 Reviewed the official F112/F112_a routes and mapped 76 fields into separate payment-mode (24), conditional monthly Yuan income (24), and workpoint count/value components (28) concepts. Beginning and middle job phases and repeated episode slots remain distinct. Workpoints are not converted to income; monetary amounts remain nominal and not inflation-harmonized. See [`life_history_work_history_income_mode_review_2026-10-26.md`](life_history_work_history_income_mode_review_2026-10-26.md).
