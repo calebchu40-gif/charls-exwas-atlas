@@ -1,8 +1,8 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
-## 2014 EDUCATIONHISTORY initial review (local, pending validation/publication)
+## 2014 EDUCATIONHISTORY initial review (commit `ce4488f`, live verified)
 
-Reviewed official E000–E011 questionnaire items and matched 33 Codebook fields into five provisional education/life-course context concepts. The complete 1,105-field module ledger assigns the other 1,068 substantive fields `deferred_source_review`; they are not presented as reviewed or included in the candidate directory. Three linkage keys and one version field are excluded. Audit and complete ledger: [`life_history_education_history_initial_review_2026-10-26.md`](life_history_education_history_initial_review_2026-10-26.md), [`life_history_education_history_coverage_2014_v1.csv`](life_history_education_history_coverage_2014_v1.csv). Local rebuild reports 73 concepts / 1,802 mappings (E 1,756, P 46). All 539 tests, public payload, 92 analysis-lock regression, JS syntax, deferred-loading and diff checks pass. Target app/JSON cache versions are v147/v14; publication is pending.
+Reviewed official E000–E011 questionnaire items and matched 33 Codebook fields into five provisional education/life-course context concepts. The complete 1,105-field module ledger assigns the other 1,068 substantive fields `deferred_source_review`; they are not presented as reviewed or included in the candidate directory. Three linkage keys and one version field are excluded. Audit and complete ledger: [`life_history_education_history_initial_review_2026-10-26.md`](life_history_education_history_initial_review_2026-10-26.md), [`life_history_education_history_coverage_2014_v1.csv`](life_history_education_history_coverage_2014_v1.csv). Local rebuild reports 73 concepts / 1,802 mappings (E 1,756, P 46). All 539 tests, public payload, 92 analysis-lock regression, JS syntax, deferred-loading and diff checks pass. Commit `ce4488f` is published as app v147 / JSON v14; the live JSON returns 73 records and has the same SHA-256 as the local payload.
 
 ## 2014 SAMPLEINFORMATION source review (commits `921949a`/`e722800`, live verified)
 
