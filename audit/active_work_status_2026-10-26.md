@@ -1,6 +1,6 @@
-## 2014 WORKHISTORY employer-benefit batch (local pending publication)
+## 2014 WORKHISTORY employer-benefit batch (app v164 verified)
 
-Reviewed all 357 F112a Codebook fields using explicit, mutually exclusive patterns: 264 select-all employer benefit type fields (beginning/middle phase), 21 monthly benefit-value fields, and 72 affiliated nursery/kindergarten fields. The categories preserve episode and phase; the monetary value is not salary and is not inflation-harmonized. `None`/`Neither` and their skip routes are not treated as blank No. Local totals are 124 concepts / 3,711 mappings (E 3,665, P 46); WORKHISTORY has 870 mapped and 1,129 substantive source-review fields deferred. Prepared as app v164 / JSON v31; local payload validator and JS syntax check pass; public remains app v163 / JSON v30 pending deployment.
+Reviewed all 357 F112a Codebook fields using explicit, mutually exclusive patterns: 264 select-all employer benefit type fields (beginning/middle phase), 21 monthly benefit-value fields, and 72 affiliated nursery/kindergarten fields. The categories preserve episode and phase; the monetary value is not salary and is not inflation-harmonized. `None`/`Neither` and their skip routes are not treated as blank No. Local totals are 124 concepts / 3,711 mappings (E 3,665, P 46); WORKHISTORY has 870 mapped and 1,129 substantive source-review fields deferred. Published as app v164 / JSON v31 in commit `3843e8f`; homepage/app/JSON versions, all three F112a concepts, and remote/local JSON SHA-256 were verified.
 
 ## 2014 WORKHISTORY F_1/F104/F105/F105a/work-intensity/position/benefit batches (app v163 verified)
 
