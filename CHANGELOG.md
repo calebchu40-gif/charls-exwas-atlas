@@ -1,7 +1,7 @@
 # 2026-10-26 Add adopted-child source-context candidate
 
 - Reviewed the official Life History C019a categories and adopted-child C017/C018 routing. Added one family-context candidate with four repeated adopted-child source fields; retained five official response categories without response frequencies. Exact adoption-year items and child identifiers remain excluded.
-- Local catalog now has 190 concepts / 6,045 mappings (E 5,984, P 61), including 1,193 mapped DEMOGRAPHICBACKGROUNDS fields. Local static assets app v189 / JSON v55 await publication.
+- Local catalog now has 190 concepts / 6,045 mappings (E 5,984, P 61), including 1,193 mapped DEMOGRAPHICBACKGROUNDS fields. Deployed as app v189 / JSON v55; Deploy #321 and Validate #640 succeeded, and homepage/JSON returned HTTP 200.
 - Audit: `audit/life_history_adopted_child_source_review_2026-10-26.md`.
 
 # 2026-10-26 Add offspring first-marriage family-context candidates
