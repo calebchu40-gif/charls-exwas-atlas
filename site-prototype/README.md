@@ -13,6 +13,6 @@
 
 2026-10-26更新：2014 Life History候选视图现有40个概念组、1,029条字段映射（E 1,001、P 28），包括饥荒序列、亲代/抚养人、兄弟姐妹家庭史、亲代历史社会背景和80岁以上受访者的历史家庭背景。抚养人不必然等于生物学父母；家庭层历史报告不是受访者临床表型。C8选项5及C1_g3选项8存在中英文问卷表述不一致，页面明示。官方发布说明明确该特殊调查无权重，因此仍单列，不计入常规波次E/P配对覆盖，不代表分析资格。字段映射行数不等于独立概念数、分析样本量或关联结果。审计见 `audit/life_history_famine_sequence_review_2026-10-26.md`、`audit/life_history_guardian_health_context_review_2026-10-26.md`、`audit/life_history_sibling_module_review_2026-10-26.md`、`audit/life_history_parent_module_review_2026-10-26.md`、`audit/life_history_historical_family_class_review_2026-10-26.md` 和 `audit/life_history_parent_social_context_review_2026-10-26.md`。提交 `d277385` 已上线；530项测试、公开包、92条分析锁和前端语法检查通过。
 
-本地待发布的 C1/C2 抚养人就业元数据复核覆盖8个结构化字段，细化了既有概念中的条件路由和缺失语义；自由文本职业详情排除。审计见 `audit/life_history_parent_employment_review_2026-10-26.md` 和 `audit/life_history_parent_employment_coverage_2014_v1.csv`。当前本地候选JSON正在准备 v8，尚未全套验证或发布。
+提交 `60360b1` 的 C1/C2 抚养人就业元数据复核已上线（app v141 / JSON v8）：覆盖8个结构化字段，细化了既有概念中的条件路由和缺失语义；自由文本职业详情排除。审计见 `audit/life_history_parent_employment_review_2026-10-26.md` 和 `audit/life_history_parent_employment_coverage_2014_v1.csv`。全套531项测试及公开包/分析锁检查已通过。
 
 首页已调整为组会演示入口：先说明项目范围，再进入暴露/表型目录或关联状态；其余专题页收纳在更多专题目录。当前关联页明确显示0条已审查真实结果，目录字段数与潜在配对数均不是分析结果。
