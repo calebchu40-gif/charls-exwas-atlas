@@ -22,6 +22,7 @@ c,measurement metadata,commercial-pension expected claim timing format selector,
 c,measurement metadata,"community Part A selector, informant, or excluded open-text field",8,8,1
 c,measurement metadata,community Part B questionnaire informant role,1,1,1
 c,measurement metadata,community Part B unstructured other-specify text,4,4,1
+c,measurement metadata,community Part G informant identity; source label conflict,1,1,1
 c,measurement metadata,community mortality and unstandardized cause-of-death metadata,6,6,1
 c,measurement metadata,community-questionnaire informant role,2,2,1
 c,measurement metadata,current home market-value response unit selector,2,1,2
@@ -87,6 +88,7 @@ c,measurement metadata,subjective life-expectancy target-age metadata,1,1,1
 c,measurement metadata,unlisted chronic-disease index placeholder,5,5,1
 c,measurement metadata,unresolved JA042 community leadership slot,2,2,1
 c,measurement metadata,unresolved Part A questionnaire/Codebook source conflict,1,1,1
+c,measurement metadata,unresolved community Part G subsidy-amount source conflict,1,1,1
 c,measurement metadata,unresolved questionnaire and Codebook field identity conflict,1,1,1
 c,measurement metadata,unresolved release-field identity/data-type discrepancy,1,1,1
 c,measurement metadata,unstructured other-specify response text,9,9,2
