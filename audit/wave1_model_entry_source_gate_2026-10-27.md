@@ -1,0 +1,29 @@
+# Wave 1 model-entry provenance gate (2026-10-27)
+
+## Finding
+
+The protected local workspace still contains legacy prepared wave tables. Its 2011 entry in `prepared_data_manifest.json` has only row/column metadata and no source-review object or prepared-output hash. Before this change, both exploratory association scripts required `--run` but did not check source provenance, so an old derived frame could still enter a fresh model run.
+
+## Change
+
+Added a metadata-only analysis gate shared by the water/blood pilot and household-environment extension. Before either script reads respondent values, it now requires:
+
+- a prepared Wave 1 manifest carrying a verified source-review status;
+- the same source-manifest ID in the current intake manifest;
+- all four currently staged official release files, with exact names and SHA-256 values matching the prepared record and human-reviewed intake manifest;
+- the official source identifiers/pages and reviewed source identity to pass the existing intake validator; and
+- the prepared respondent table filename and SHA-256 to match its preparation manifest.
+
+The validator reads JSON, Stata headers, ZIP inventories, and file bytes only. It does not read respondent-level values. It returns source provenance for the private run manifest but explicitly leaves survey-design review unresolved; source authentication is not an analysis approval.
+
+## Validation
+
+Synthetic tests verify that a legacy Wave 1 manifest without provenance is rejected and that a workspace outside protected storage is rejected. Existing `--help` and default-invocation guard tests still pass. No participant values were read and no model was run in this validation.
+
+## Current state and next action
+
+The local Wave 1 prepared manifest is legacy and lacks provenance. The current intake directory has the manifest and README only; all four official release files are missing. Therefore both model scripts now fail closed before reading respondent rows. When authorized official files are staged, run the metadata-only preflight, review source identity, rebuild Wave 1 using the gated builder, then continue the denominator/eligibility/weight/PSU/variance gates before any pilot refit. Only after design review can the frozen pilot be used as the scale-up decision point.
+
+## Privacy
+
+Only the validator code, synthetic tests, and this method note are stored in Git. Microdata, hashes, sample counts, and model estimates remain under protected local storage.

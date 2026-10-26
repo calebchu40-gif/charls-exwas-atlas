@@ -17,16 +17,16 @@ import csv
 import argparse
 import hashlib
 import json
-import os
 import subprocess
 import sys
 import warnings
 from datetime import datetime, timezone
 from pathlib import Path
+from project_paths import PRIVATE_ROOT
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PRIVATE = Path(os.environ.get("LOCALAPPDATA", Path.home())) / "CHARLS_ExWAS_Atlas"
+PRIVATE = PRIVATE_ROOT
 DATA = PRIVATE / "derived_wave_tables" / "CHARLS_wave2011_person_analytic.dta"
 AGE = PRIVATE / "age_candidates" / "age_candidate_2011.dta"
 PSU_MAP = PRIVATE / "raw_extract_2011_community" / "psu.dta"
@@ -280,6 +280,8 @@ def main(argv: list[str] | None = None) -> None:
         raise RuntimeError(f"Expected svy {EXPECTED_SVY}, found {getattr(svy, '__version__', 'unknown')}")
     if not PRIVATE.is_dir():
         raise FileNotFoundError("Protected local CHARLS workspace not found")
+    from require_verified_wave1_frame import require_verified_wave1_frame
+    source_provenance = require_verified_wave1_frame(PRIVATE, DATA)
     OUT.mkdir(parents=True, exist_ok=True)
     analytes = read_analytes()
     data = read_input(analytes)
@@ -342,6 +344,7 @@ def main(argv: list[str] | None = None) -> None:
         "age_covariate_source": AGE_SOURCE,
         "multiplicity": "M1 family fixed before fitting at K=15; report BY-FDR and Bonferroni; M0 is descriptive only.",
         "data_sha256": input_hash,
+        "verified_source_provenance": source_provenance,
         "age_candidate_sha256": age_hash,
         "psu_map_sha256": psu_hash,
         "code_commit": subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.strip(),

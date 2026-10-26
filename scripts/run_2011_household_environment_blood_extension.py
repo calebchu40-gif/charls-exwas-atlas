@@ -173,6 +173,8 @@ def main(argv: list[str] | None = None) -> None:
 
     if getattr(svy, "__version__", None) != EXPECTED_SVY:
         raise RuntimeError(f"Expected svy {EXPECTED_SVY}, found {getattr(svy, '__version__', 'unknown')}")
+    from require_verified_wave1_frame import require_verified_wave1_frame
+    source_provenance = require_verified_wave1_frame(PRIVATE, DATA)
     analytes = read_analytes()
     data = add_fuel_terms(read_input(analytes))
     # The exact 2011 Codebook categories are preserved; invalid/special codes
@@ -235,6 +237,7 @@ def main(argv: list[str] | None = None) -> None:
         "sequential_screening": "Exploratory extension follows the first water pilot; multiplicity correction covers this declared 105-coefficient family but does not erase sequential screening",
         "participant_data_release": False,
         "source_sha256": {"prepared_person_table": sha256(DATA), "age_candidate": sha256(AGE), "psu_map": sha256(PSU_MAP)},
+        "verified_source_provenance": source_provenance,
         "code_commit": subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.strip(),
         "python": sys.version,
         "svy_version": getattr(svy, "__version__", "unknown"),
