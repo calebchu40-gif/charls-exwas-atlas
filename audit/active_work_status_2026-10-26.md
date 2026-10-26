@@ -1,5 +1,13 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
+## Part A community source coverage (2026-10-26; local, pending publication)
+
+The 2011 community Part A review reconciles all 80 JA-prefixed inventory fields against the official questionnaire and Codebook: 69 are mapped to candidate concepts and 11 have explicit C-only/measurement-metadata/unresolved dispositions. It adds administrative establishment, boundary-change, urban-transition, land-rights certification, land development/consolidation, expropriation, homestead allocation policy and surname-concentration context. JA012 remains unresolved because the questionnaire says paddy-field area but the Codebook says irrigatable area. JA045 surname strings and JA052_1 open text are excluded; JA001/JA003/JA006 selectors, JA048 informant identity and unidentified JA042 fifth slots remain metadata. Full audit: [`community_part_a_exposome_context_review_2026-10-26.md`](community_part_a_exposome_context_review_2026-10-26.md).
+
+The 159-step finalization completed in 6.9 minutes. Local shards E/P/C=6,278/2,116/1,013; E/P concepts=1,618 (E=1,312; P=331, dual-role included); E/P concept-source mappings=8,288. Metadata co-availability pairs are 145,456/141,920/143,137/105,493/21,630 for 2011/2013/2015/2018/2020; these are not analytic N or results. Generic pending label state=0 across roles; exact 92 analysis locks remain; formal association models=0. The complete local test suite passes (513 tests), including the 186 community baseline concept list; public payload, 92-lock, JS and deferred-loader checks pass.
+
+The clean-checkout CI fix is committed as `e490a81`; public Actions shows Validate #521 running. The Part A batch is local and not yet committed or deployed.
+
 ## Clean-checkout CI repair (2026-10-26)
 
 GitHub Validate #520 failed because seven community source-review tests opened the ignored local-only `audit/raw_variable_catalog_v1.csv`; the artifact is intentionally excluded because it includes module row counts and local source archive names. Do not add that file to Git. Replaced test inputs with `audit/community_field_inventory_2011_v1.csv`, a 719-row sanitized 2011 community inventory containing only wave/module, CHARLS variable code and field label. Added a test asserting its four-column schema and absence of count/frequency fields. All 508 local tests, payload validation, exact 92-lock check, JavaScript/deferred-loader validation and diff checks now pass. The corrective commit is awaiting remote Validate confirmation. Part E site content was separately published in successful Deploy #258 (app v132).

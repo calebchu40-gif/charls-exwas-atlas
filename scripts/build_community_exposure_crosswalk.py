@@ -52,6 +52,14 @@ CONCEPTS={
  "community_sanitation_reconstructed":("Reconstructed community toilet/sewer indicator","Community environment","2011 village-only CAPI item asking whether the village restructured toilet/sewer systems; preserve village-only eligibility and do not infer original derivation from the Codebook variable label."),
  "community_land_use_profile":("Community land area and agricultural land-use profile","Community environment","2011 village-level land area, arable/construction land, land-development and land-lease context. Preserve the distinct reference years, units, V-only eligibility and conditional routes; do not calculate density or percentages without compatible denominators. JA012 is excluded from this concept because its official questionnaire and Codebook descriptions conflict (paddy field versus irrigatable land). These are not an individual's landholding or chemical exposure."),
  "community_main_terrain":("Community main terrain/topography","Community environment","2011 community-reported nominal terrain category (plain, hill, mountainous region, plateau or basin). A coarse area-level descriptor, not a personal exposure dose; do not treat codes as an ordinal scale."),
+ "community_boundary_change_history":("Community boundary-change history","Community administrative context","2011 community-informant report of whether boundaries changed, the most recent year, and pre-change area. Preserve the Yes-route denominator and JA006 unit-selection fields; the changing administrative geography can disrupt cross-wave linkage, so do not treat this as stable location or personal exposure."),
+ "community_office_establishment_year":("Community/village office establishment year","Community administrative context","2011 community-informant year when the village/community office was established. Treat as administrative-history context only; verify release-specific special values and do not infer sampled-participant residence duration."),
+ "community_urban_transition_history":("Community urban-administrative transition history","Community administrative context","2011 community/village reports of community-office conversion from a village office or village inclusion in a city-planning area. Keep community-only and village-only questions separate; preserve conditional years and do not infer actual urban residence, service access, or participant-level migration."),
+ "community_land_rights_certification":("Community land and property rights certification context","Community land-policy context","2011 village-only informant reports of recent land-rights delimitation and residents' receipt/year of farmland, housing-land, housing-ownership, forest-rights, and collective-asset certificates. Keep certificate types and years distinct; forest absence is an explicit category and all follow-up years are route-conditional. These are community aggregates, not sampled-household ownership."),
+ "community_land_development_history":("Community land development and consolidation history","Community land-policy context","2011 village-only reports of land development/agricultural consolidation and village construction-land consolidation since 2005, with most recent year where asked. Keep the two programs distinct; area fields remain in the land-use profile and are not added or interpreted as personal land holdings."),
+ "community_land_expropriation_history":("Community land expropriation history","Community land-policy context","2011 community/village informant reports of any land expropriation since 2000, most recent year and compensation per mu. Preserve the conditional Yes route, reference period and compensation unit; this does not identify which sampled household or participant was affected."),
+ "community_homestead_allocation_policy":("Community homestead allocation policy context","Community land-policy context","2011 village-only reports of conditions for allocating another homestead, stated land-source categories and whether allocation rules changed since 2000 and when. Multi-response conditions and source categories must retain their original coding; JA052_1 is open text and excluded. Not a household's eligibility or land receipt."),
+ "community_surname_concentration_context":("Community surname concentration context","Community social context","2011 village-informant report of whether large surnames are present, how many, and household counts for the largest named surname groups. Exclude the surname strings themselves; keep the group counts separate, avoid deriving proportions without a validated denominator, and suppress small cells if ever publicly summarized."),
  "community_agricultural_mechanization":("Community agricultural mechanization context","Community context","2011 community-reported agricultural mechanization share and large-machine rental context. JJ003/004 are conditional; these are not individual occupation, machinery contact, pesticide application or inhaled exposure."),
  "community_fertilizer_seed_inputs":("Community-reported fertilizer and seed input context","Community environment","2011 community informant reports the most commonly used fertilizer name and community-level fertilizer/seed prices. The fertilizer name is open text and does not identify chemical composition or quantify use; prices do not establish individual purchase, handling or exposure."),
  "community_food_prices":("Community-reported food commodity prices","Community food environment","2011 informant-reported current local prices for pork tenderloin, eggs, rice and wheat/flour. These indicate community price context, not what a participant bought, ate, or received nutritionally; retain commodity-specific source fields and units."),
@@ -134,6 +142,14 @@ MAP={
  "community_sanitation_reconstructed":["jb015"],
  "community_land_use_profile":["ja003_1","ja003_2","ja011","ja013","ja014","ja029","ja032","ja033","ja034","ja050"],
  "community_main_terrain":["ja038"],
+ "community_office_establishment_year":["ja002"],
+ "community_boundary_change_history":["ja004","ja005","ja006_1","ja006_2"],
+ "community_urban_transition_history":["ja007","ja008","ja009","ja010"],
+ "community_land_rights_certification":["ja015","ja016","ja017","ja018","ja019","ja020","ja021","ja022","ja023","ja024","ja025","ja026"],
+ "community_land_development_history":["ja027","ja028","ja030","ja031"],
+ "community_land_expropriation_history":["ja035","ja036","ja037"],
+ "community_homestead_allocation_policy":[*[f"ja051s{i}" for i in range(1,7)],"ja052","ja053","ja054"],
+ "community_surname_concentration_context":["ja043","ja044","ja046_1","ja046_2","ja046_3"],
  "community_agricultural_mechanization":["jj002","jj003","jj004"],
  "community_fertilizer_seed_inputs":["jj006","jj007","jj008","jj009","jj010"],
  "community_food_prices":["jj017","jj018","jj019","jj020"],
@@ -281,7 +297,10 @@ QUESTIONNAIRE_REVIEWED = {
  "community_outmigration_destination_provinces","community_male_migrant_occupation_profile",
  "community_male_migrant_average_wage","community_female_migrant_occupation_profile",
  "community_female_migrant_average_wage","community_permanent_household_outmigration",
- "community_land_use_profile","community_main_terrain","community_agricultural_mechanization",
+ "community_land_use_profile","community_main_terrain","community_office_establishment_year","community_boundary_change_history",
+ "community_urban_transition_history","community_land_rights_certification",
+ "community_land_development_history","community_land_expropriation_history",
+ "community_homestead_allocation_policy","community_surname_concentration_context","community_agricultural_mechanization",
  "community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices",
  "community_major_crop_production",
  "community_household_amenity_penetration",
@@ -323,7 +342,7 @@ def validate_added_source_mappings():
  cb=" ".join(cpath.read_text(encoding="utf-8",errors="ignore").casefold().split())
  other_subsidy_codes=set(MAP["community_other_subsidy_program_roster"])
  insurance_codes=set(MAP["community_urban_resident_medical_insurance_context"]+MAP["community_rural_cooperative_medical_insurance_context"])
- codes={code for cid in ("community_land_use_profile","community_main_terrain","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program","community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program","community_eldercare_center_context","community_home_eldercare_context","community_economic_activity_and_fiscal_context","community_housing_market_context","community_formal_credit_access","community_agricultural_machinery_supply_origin","community_nonagricultural_employment","community_primary_school_change","community_land_institutional_transition_history","community_sent_down_youth_migration_history","community_barefoot_doctor_capacity_history","community_military_service_history","community_university_admission_history","community_family_planning_policy_history","community_unplanned_birth_penalty_policy_history","community_identity_card_rollout_history") for code in MAP[cid]}
+ codes={code for cid in ("community_land_use_profile","community_main_terrain","community_office_establishment_year","community_boundary_change_history","community_urban_transition_history","community_land_rights_certification","community_land_development_history","community_land_expropriation_history","community_homestead_allocation_policy","community_surname_concentration_context","community_agricultural_mechanization","community_fertilizer_seed_inputs","community_food_prices","community_household_energy_prices","community_major_crop_production","community_household_amenity_penetration","community_historical_disaster_epidemic_severity","community_reforestation_subsidy_program","community_farm_subsidy_program","community_unemployment_subsidy_program","community_minimum_living_allowance_program","community_single_child_reward_program","community_pension_65plus_program","community_pension_80plus_subsidy_program","community_nrps_program","community_orps_program","community_eldercare_center_context","community_home_eldercare_context","community_economic_activity_and_fiscal_context","community_housing_market_context","community_formal_credit_access","community_agricultural_machinery_supply_origin","community_nonagricultural_employment","community_primary_school_change","community_land_institutional_transition_history","community_sent_down_youth_migration_history","community_barefoot_doctor_capacity_history","community_military_service_history","community_university_admission_history","community_family_planning_policy_history","community_unplanned_birth_penalty_policy_history","community_identity_card_rollout_history") for code in MAP[cid]}
  codes.update(code for cid in ("community_population_hukou_profile","community_short_term_migrant_population","community_age_sex_structure","community_never_married_over40_population","community_ethnic_minority_household_profile") for code in MAP[cid])
  codes.update(code for cid in ("community_director_education_profile","community_village_head_education_profile","community_village_secretary_education_profile","community_village_accountant_education_profile","community_local_leader_age_profile","community_local_leader_tenure_profile","community_total_deaths_3y","community_suicide_deaths_3y") for code in MAP[cid])
  codes.update(code for cid in ("community_outmigration_workforce_profile","community_outmigration_geographic_distribution","community_outmigration_destination_provinces","community_male_migrant_occupation_profile","community_male_migrant_average_wage","community_female_migrant_occupation_profile","community_female_migrant_average_wage","community_permanent_household_outmigration") for code in MAP[cid])
@@ -331,7 +350,12 @@ def validate_added_source_mappings():
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
   q_norm="".join(ch for ch in q if ch.isalnum())
   cb_norm="".join(ch for ch in cb if ch.isalnum())
-  questionnaire_code = code.split("s", 1)[0] if code.lower().startswith(("jb033s","jd004s","je007s")) else code
+  if code.lower().startswith(("jb033s","jd004s","je007s","ja051s")):
+   questionnaire_code=code.split("s",1)[0]
+  elif code.lower().startswith("ja006_"):
+   questionnaire_code="ja006"
+  else:
+   questionnaire_code=code
   questionnaire_code_norm="".join(ch for ch in questionnaire_code.casefold() if ch.isalnum())
   if questionnaire_code_norm not in q_norm or code_norm not in cb_norm:
    raise ValueError(f"Official 2011 community questionnaire/Codebook missing mapped field {code}")
@@ -505,6 +529,8 @@ def main():
      evidence="CHARLS 2011 Community Questionnaire, Part C p.16 (PDF p.19), JC019-JC024; exact percentage fields and conditional _1 bracket fields verified."
     elif cid == "community_land_use_profile":
      evidence="CHARLS 2011 Community Questionnaire, Part A pp.2–6 (PDF pp.5–9); V-only land area/use items, reference periods and conditional land-development routes checked against the Codebook. JA012 wording discrepancy is documented separately and is not mapped here."
+    elif cid in {"community_boundary_change_history","community_office_establishment_year","community_urban_transition_history","community_land_rights_certification","community_land_development_history","community_land_expropriation_history","community_homestead_allocation_policy","community_surname_concentration_context"}:
+     evidence="CHARLS 2011 Community Questionnaire, Part A pp.2–7 (PDF pp.5–10), item-level CAPI scope, route and reference periods checked against the official Codebook field labels; descriptive frequencies omitted. JA052_1 open text is excluded."
     elif cid == "community_main_terrain":
      evidence="CHARLS 2011 Community Questionnaire, Part A p.7 (PDF p.10), JA038; nominal answer labels checked against the official Codebook; frequencies omitted."
     elif cid in {"community_agricultural_mechanization","community_fertilizer_seed_inputs"}:
@@ -705,6 +731,30 @@ def main():
     elif code_l in {"ja003_1", "ja003_2"}:
      unit="km²" if code_l == "ja003_1" else "mu"
      caveat="Community boundary area in the unit-specific field; the questionnaire provides separate km² and mu blanks. Keep the source fields distinct until the authorized release confirms how the unit choice is stored; do not sum or double count. This is community area, not household plot size."
+    elif code_l in {"ja004","ja005","ja006","ja006_1","ja006_2"}:
+     unit="year" if code_l=="ja005" else ("km²" if code_l=="ja006_1" else ("mu" if code_l=="ja006_2" else ""))
+     caveat="Most recent community/village boundary-change context. JA005 and pre-change area are conditional on JA004=Yes; preserve JA006 unit choice and do not sum the separate unit-specific fields. Administrative-boundary change may invalidate cross-wave geography/linkage assumptions."
+    elif code_l == "ja002":
+     unit="year"
+     caveat="Reported year this village/community office was established; administrative-history context, not an individual's residence duration. Check release-specific impossible/special values before analysis."
+    elif code_l in {"ja007","ja008","ja009","ja010"}:
+     unit="year" if code_l in {"ja008","ja010"} else ""
+     caveat=("Community-only report of whether the community office was converted from a village office and, conditionally, when; not the sampled person's hukou, residence or urban status." if code_l in {"ja007","ja008"} else "Village-only report of designation into city-planning area and, conditionally, year; not proof of urban residence or individual migration.")
+    elif code_l in {"ja015","ja016","ja017","ja018","ja019","ja020","ja021","ja022","ja023","ja024","ja025","ja026"}:
+     unit="year" if code_l in {"ja016","ja018","ja020","ja022","ja024","ja026"} else ""
+     caveat="Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+    elif code_l in {"ja027","ja028","ja030","ja031"}:
+     unit="year" if code_l in {"ja028","ja031"} else ""
+     caveat="Village-only land-development or construction-land consolidation since 2005. Preserve the two program routes; year is conditional on the corresponding Yes response. Area outcomes JA029/JA032 remain separately mapped in the land-use profile."
+    elif code_l in {"ja035","ja036","ja037"}:
+     unit="year" if code_l=="ja036" else ("Yuan/mu" if code_l=="ja037" else "")
+     caveat="Community/village report of land expropriation since 2000; most recent year and per-mu compensation are conditional on JA035=Yes. Aggregate context does not identify participant or household-level exposure or compensation."
+    elif code_l.startswith("ja051s") or code_l in {"ja052","ja053","ja054"}:
+     unit="year" if code_l=="ja054" else ""
+     caveat="Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+    elif code_l in {"ja043","ja044","ja046_1","ja046_2","ja046_3"}:
+     unit="households" if code_l.startswith("ja046_") else ""
+     caveat="Village-only report of large-surname group structure. The raw JA045 surname strings are excluded; keep the number of groups and household counts separate, do not derive proportions without a validated total-household denominator, and suppress small cells if summarized. Not a participant's surname or lineage."
     elif code_l == "ja011":
      unit="mu"
      caveat="Village arable-land area at end of 2010, including paddy and dry land; V-only item. Community aggregate, not respondent landholding."

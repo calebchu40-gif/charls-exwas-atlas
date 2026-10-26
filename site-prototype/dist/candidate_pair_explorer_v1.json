@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 675,
+      "exposure_count": 683,
       "phenotype_count": 213,
-      "candidate_pair_count": 143752,
+      "candidate_pair_count": 145456,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -1974,6 +1974,56 @@
           ]
         },
         {
+          "concept_id": "community_boundary_change_history",
+          "label": "Community boundary-change history",
+          "domain": "Community administrative context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "ja004",
+              "label": "Has the Boundary of this V/C Even Changed",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Most recent community/village boundary-change context. JA005 and pre-change area are conditional on JA004=Yes; preserve JA006 unit choice and do not sum the separate unit-specific fields. Administrative-boundary change may invalidate cross-wave geography/linkage assumptions."
+            },
+            {
+              "code": "ja005",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Most recent community/village boundary-change context. JA005 and pre-change area are conditional on JA004=Yes; preserve JA006 unit choice and do not sum the separate unit-specific fields. Administrative-boundary change may invalidate cross-wave geography/linkage assumptions."
+            },
+            {
+              "code": "ja006_1",
+              "label": "Square of Kilometers",
+              "module": "community",
+              "unit": "km²",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Most recent community/village boundary-change context. JA005 and pre-change area are conditional on JA004=Yes; preserve JA006 unit choice and do not sum the separate unit-specific fields. Administrative-boundary change may invalidate cross-wave geography/linkage assumptions."
+            },
+            {
+              "code": "ja006_2",
+              "label": "Mu",
+              "module": "community",
+              "unit": "mu",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Most recent community/village boundary-change context. JA005 and pre-change area are conditional on JA004=Yes; preserve JA006 unit choice and do not sum the separate unit-specific fields. Administrative-boundary change may invalidate cross-wave geography/linkage assumptions."
+            }
+          ]
+        },
+        {
           "concept_id": "community_built_form_organization",
           "label": "Community built-form organization",
           "domain": "Community environment",
@@ -3894,6 +3944,106 @@
           ]
         },
         {
+          "concept_id": "community_homestead_allocation_policy",
+          "label": "Community homestead allocation policy context",
+          "domain": "Community land-policy context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "ja051s1",
+              "label": "The Condition that the Household May Get New House Site",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+            },
+            {
+              "code": "ja051s2",
+              "label": "The Condition that the Household May Get New House Site",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+            },
+            {
+              "code": "ja051s3",
+              "label": "The Condition that the Household May Get New House Site",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+            },
+            {
+              "code": "ja051s4",
+              "label": "The Condition that the Household May Get New House Site",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+            },
+            {
+              "code": "ja051s5",
+              "label": "The Condition that the Household May Get New House Site",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+            },
+            {
+              "code": "ja051s6",
+              "label": "The Condition that the Household May Get New House Site",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+            },
+            {
+              "code": "ja052",
+              "label": "Source of House Site",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+            },
+            {
+              "code": "ja053",
+              "label": "Have the Rules of House Site Allocation Been Changed Since 2000",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+            },
+            {
+              "code": "ja054",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+            }
+          ]
+        },
+        {
           "concept_id": "community_household_amenity_penetration",
           "label": "Community household communication and appliance penetration",
           "domain": "Community socioeconomic context",
@@ -4144,6 +4294,136 @@
           ]
         },
         {
+          "concept_id": "community_land_rights_certification",
+          "label": "Community land and property rights certification context",
+          "domain": "Community land-policy context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "ja015",
+              "label": "Carried Out Property Rights Delineation and Land Titling in the Recent 5 Years",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+            },
+            {
+              "code": "ja016",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+            },
+            {
+              "code": "ja017",
+              "label": "Receiving Contract",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+            },
+            {
+              "code": "ja018",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+            },
+            {
+              "code": "ja019",
+              "label": "Receiving Contract",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+            },
+            {
+              "code": "ja020",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+            },
+            {
+              "code": "ja021",
+              "label": "Certificate for Housing Ownership",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+            },
+            {
+              "code": "ja022",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+            },
+            {
+              "code": "ja023",
+              "label": "Forest Rights Certificate",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+            },
+            {
+              "code": "ja024",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+            },
+            {
+              "code": "ja025",
+              "label": "Certificate for Collective Assets",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+            },
+            {
+              "code": "ja026",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+            }
+          ]
+        },
+        {
           "concept_id": "community_land_use_profile",
           "label": "Community land area and agricultural land-use profile",
           "domain": "Community environment",
@@ -4250,6 +4530,96 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "Reported 2010 average rural house-site area per person in the village; community aggregate, not the sampled respondent's lot size."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_land_development_history",
+          "label": "Community land development and consolidation history",
+          "domain": "Community land-policy context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "ja027",
+              "label": "Land Reallocation Since 2005",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only land-development or construction-land consolidation since 2005. Preserve the two program routes; year is conditional on the corresponding Yes response. Area outcomes JA029/JA032 remain separately mapped in the land-use profile."
+            },
+            {
+              "code": "ja028",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only land-development or construction-land consolidation since 2005. Preserve the two program routes; year is conditional on the corresponding Yes response. Area outcomes JA029/JA032 remain separately mapped in the land-use profile."
+            },
+            {
+              "code": "ja030",
+              "label": "Construction Land Reallocation since 2005",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only land-development or construction-land consolidation since 2005. Preserve the two program routes; year is conditional on the corresponding Yes response. Area outcomes JA029/JA032 remain separately mapped in the land-use profile."
+            },
+            {
+              "code": "ja031",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only land-development or construction-land consolidation since 2005. Preserve the two program routes; year is conditional on the corresponding Yes response. Area outcomes JA029/JA032 remain separately mapped in the land-use profile."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_land_expropriation_history",
+          "label": "Community land expropriation history",
+          "domain": "Community land-policy context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "ja035",
+              "label": "Land Procurement",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community/village report of land expropriation since 2000; most recent year and per-mu compensation are conditional on JA035=Yes. Aggregate context does not identify participant or household-level exposure or compensation."
+            },
+            {
+              "code": "ja036",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community/village report of land expropriation since 2000; most recent year and per-mu compensation are conditional on JA035=Yes. Aggregate context does not identify participant or household-level exposure or compensation."
+            },
+            {
+              "code": "ja037",
+              "label": "Compensation Amount/Mu",
+              "module": "community",
+              "unit": "Yuan/mu",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community/village report of land expropriation since 2000; most recent year and per-mu compensation are conditional on JA035=Yes. Aggregate context does not identify participant or household-level exposure or compensation."
             }
           ]
         },
@@ -5754,6 +6124,66 @@
           ]
         },
         {
+          "concept_id": "community_surname_concentration_context",
+          "label": "Community surname concentration context",
+          "domain": "Community social context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "ja043",
+              "label": "Does Your Village has Large Surnames",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only report of large-surname group structure. The raw JA045 surname strings are excluded; keep the number of groups and household counts separate, do not derive proportions without a validated total-household denominator, and suppress small cells if summarized. Not a participant's surname or lineage."
+            },
+            {
+              "code": "ja044",
+              "label": "How Many Large Surnames",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only report of large-surname group structure. The raw JA045 surname strings are excluded; keep the number of groups and household counts separate, do not derive proportions without a validated total-household denominator, and suppress small cells if summarized. Not a participant's surname or lineage."
+            },
+            {
+              "code": "ja046_1",
+              "label": "Num. of Households with 1st Largest Surname",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only report of large-surname group structure. The raw JA045 surname strings are excluded; keep the number of groups and household counts separate, do not derive proportions without a validated total-household denominator, and suppress small cells if summarized. Not a participant's surname or lineage."
+            },
+            {
+              "code": "ja046_2",
+              "label": "Num. of Households with 2nd Largest Surname",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only report of large-surname group structure. The raw JA045 surname strings are excluded; keep the number of groups and household counts separate, do not derive proportions without a validated total-household denominator, and suppress small cells if summarized. Not a participant's surname or lineage."
+            },
+            {
+              "code": "ja046_3",
+              "label": "Num. of Households with 3rd Largest Surname",
+              "module": "community",
+              "unit": "households",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only report of large-surname group structure. The raw JA045 surname strings are excluded; keep the number of groups and household counts separate, do not derive proportions without a validated total-household denominator, and suppress small cells if summarized. Not a participant's surname or lineage."
+            }
+          ]
+        },
+        {
           "concept_id": "community_sanitation_reconstruction_year",
           "label": "Community toilet/sewer reconstruction year",
           "domain": "Community environment",
@@ -6110,6 +6540,56 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "Retrospective report of whether/when a village-level penalty policy existed and reported initial/subsequent penalty amounts. Preserve conditional routes and year/amount slots; this is not an individual's fine or reproductive history."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_urban_transition_history",
+          "label": "Community urban-administrative transition history",
+          "domain": "Community administrative context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "ja007",
+              "label": "Was Changed to Community from Village",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-only report of whether the community office was converted from a village office and, conditionally, when; not the sampled person's hukou, residence or urban status."
+            },
+            {
+              "code": "ja008",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Community-only report of whether the community office was converted from a village office and, conditionally, when; not the sampled person's hukou, residence or urban status."
+            },
+            {
+              "code": "ja009",
+              "label": "Has Your Village Been Designated into the City Planning Area",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only report of designation into city-planning area and, conditionally, year; not proof of urban residence or individual migration."
+            },
+            {
+              "code": "ja010",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Village-only report of designation into city-planning area and, conditionally, year; not proof of urban residence or individual migration."
             }
           ]
         },
@@ -6610,6 +7090,26 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "Community-informant estimated count of snowy days in calendar year 2010. Not linked to a weather station; verify release-specific special values and plausible range before analysis."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_office_establishment_year",
+          "label": "Community/village office establishment year",
+          "domain": "Community administrative context",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "ja002",
+              "label": "Year",
+              "module": "community",
+              "unit": "year",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "Reported year this village/community office was established; administrative-history context, not an individual's residence duration. Check release-specific impossible/special values before analysis."
             }
           ]
         },
@@ -121084,6 +121584,56 @@
       ]
     },
     {
+      "concept_id": "community_boundary_change_history",
+      "label": "Community boundary-change history",
+      "domain": "Community administrative context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "ja004",
+          "label": "Has the Boundary of this V/C Even Changed",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Most recent community/village boundary-change context. JA005 and pre-change area are conditional on JA004=Yes; preserve JA006 unit choice and do not sum the separate unit-specific fields. Administrative-boundary change may invalidate cross-wave geography/linkage assumptions."
+        },
+        {
+          "code": "ja005",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Most recent community/village boundary-change context. JA005 and pre-change area are conditional on JA004=Yes; preserve JA006 unit choice and do not sum the separate unit-specific fields. Administrative-boundary change may invalidate cross-wave geography/linkage assumptions."
+        },
+        {
+          "code": "ja006_1",
+          "label": "Square of Kilometers",
+          "module": "community",
+          "unit": "km²",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Most recent community/village boundary-change context. JA005 and pre-change area are conditional on JA004=Yes; preserve JA006 unit choice and do not sum the separate unit-specific fields. Administrative-boundary change may invalidate cross-wave geography/linkage assumptions."
+        },
+        {
+          "code": "ja006_2",
+          "label": "Mu",
+          "module": "community",
+          "unit": "mu",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Most recent community/village boundary-change context. JA005 and pre-change area are conditional on JA004=Yes; preserve JA006 unit choice and do not sum the separate unit-specific fields. Administrative-boundary change may invalidate cross-wave geography/linkage assumptions."
+        }
+      ]
+    },
+    {
       "concept_id": "community_built_form_organization",
       "label": "Community built-form organization",
       "domain": "Community environment",
@@ -123004,6 +123554,106 @@
       ]
     },
     {
+      "concept_id": "community_homestead_allocation_policy",
+      "label": "Community homestead allocation policy context",
+      "domain": "Community land-policy context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "ja051s1",
+          "label": "The Condition that the Household May Get New House Site",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+        },
+        {
+          "code": "ja051s2",
+          "label": "The Condition that the Household May Get New House Site",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+        },
+        {
+          "code": "ja051s3",
+          "label": "The Condition that the Household May Get New House Site",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+        },
+        {
+          "code": "ja051s4",
+          "label": "The Condition that the Household May Get New House Site",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+        },
+        {
+          "code": "ja051s5",
+          "label": "The Condition that the Household May Get New House Site",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+        },
+        {
+          "code": "ja051s6",
+          "label": "The Condition that the Household May Get New House Site",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+        },
+        {
+          "code": "ja052",
+          "label": "Source of House Site",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+        },
+        {
+          "code": "ja053",
+          "label": "Have the Rules of House Site Allocation Been Changed Since 2000",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+        },
+        {
+          "code": "ja054",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only homestead allocation policy context. JA051 response slots are multiple-selection conditions; JA052 retains official source categories; JA053/JA054 rule-change year is conditional on Yes. Does not identify sampled household eligibility or land receipt."
+        }
+      ]
+    },
+    {
       "concept_id": "community_household_amenity_penetration",
       "label": "Community household communication and appliance penetration",
       "domain": "Community socioeconomic context",
@@ -123254,6 +123904,136 @@
       ]
     },
     {
+      "concept_id": "community_land_rights_certification",
+      "label": "Community land and property rights certification context",
+      "domain": "Community land-policy context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "ja015",
+          "label": "Carried Out Property Rights Delineation and Land Titling in the Recent 5 Years",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+        },
+        {
+          "code": "ja016",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+        },
+        {
+          "code": "ja017",
+          "label": "Receiving Contract",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+        },
+        {
+          "code": "ja018",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+        },
+        {
+          "code": "ja019",
+          "label": "Receiving Contract",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+        },
+        {
+          "code": "ja020",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+        },
+        {
+          "code": "ja021",
+          "label": "Certificate for Housing Ownership",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+        },
+        {
+          "code": "ja022",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+        },
+        {
+          "code": "ja023",
+          "label": "Forest Rights Certificate",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+        },
+        {
+          "code": "ja024",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+        },
+        {
+          "code": "ja025",
+          "label": "Certificate for Collective Assets",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+        },
+        {
+          "code": "ja026",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-level report of land/property/collective-rights certificate status or issuance year. Keep farmland contract, housing-land use, house ownership, forest rights and collective-asset share certificates distinct; year fields are conditional on their respective Yes response. JA023 includes a distinct not-applicable-no-forest category. Not sampled-household ownership."
+        }
+      ]
+    },
+    {
       "concept_id": "community_land_use_profile",
       "label": "Community land area and agricultural land-use profile",
       "domain": "Community environment",
@@ -123360,6 +124140,96 @@
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
           "caveat": "Reported 2010 average rural house-site area per person in the village; community aggregate, not the sampled respondent's lot size."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_land_development_history",
+      "label": "Community land development and consolidation history",
+      "domain": "Community land-policy context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "ja027",
+          "label": "Land Reallocation Since 2005",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only land-development or construction-land consolidation since 2005. Preserve the two program routes; year is conditional on the corresponding Yes response. Area outcomes JA029/JA032 remain separately mapped in the land-use profile."
+        },
+        {
+          "code": "ja028",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only land-development or construction-land consolidation since 2005. Preserve the two program routes; year is conditional on the corresponding Yes response. Area outcomes JA029/JA032 remain separately mapped in the land-use profile."
+        },
+        {
+          "code": "ja030",
+          "label": "Construction Land Reallocation since 2005",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only land-development or construction-land consolidation since 2005. Preserve the two program routes; year is conditional on the corresponding Yes response. Area outcomes JA029/JA032 remain separately mapped in the land-use profile."
+        },
+        {
+          "code": "ja031",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only land-development or construction-land consolidation since 2005. Preserve the two program routes; year is conditional on the corresponding Yes response. Area outcomes JA029/JA032 remain separately mapped in the land-use profile."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_land_expropriation_history",
+      "label": "Community land expropriation history",
+      "domain": "Community land-policy context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "ja035",
+          "label": "Land Procurement",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community/village report of land expropriation since 2000; most recent year and per-mu compensation are conditional on JA035=Yes. Aggregate context does not identify participant or household-level exposure or compensation."
+        },
+        {
+          "code": "ja036",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community/village report of land expropriation since 2000; most recent year and per-mu compensation are conditional on JA035=Yes. Aggregate context does not identify participant or household-level exposure or compensation."
+        },
+        {
+          "code": "ja037",
+          "label": "Compensation Amount/Mu",
+          "module": "community",
+          "unit": "Yuan/mu",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community/village report of land expropriation since 2000; most recent year and per-mu compensation are conditional on JA035=Yes. Aggregate context does not identify participant or household-level exposure or compensation."
         }
       ]
     },
@@ -124864,6 +125734,66 @@
       ]
     },
     {
+      "concept_id": "community_surname_concentration_context",
+      "label": "Community surname concentration context",
+      "domain": "Community social context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "ja043",
+          "label": "Does Your Village has Large Surnames",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only report of large-surname group structure. The raw JA045 surname strings are excluded; keep the number of groups and household counts separate, do not derive proportions without a validated total-household denominator, and suppress small cells if summarized. Not a participant's surname or lineage."
+        },
+        {
+          "code": "ja044",
+          "label": "How Many Large Surnames",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only report of large-surname group structure. The raw JA045 surname strings are excluded; keep the number of groups and household counts separate, do not derive proportions without a validated total-household denominator, and suppress small cells if summarized. Not a participant's surname or lineage."
+        },
+        {
+          "code": "ja046_1",
+          "label": "Num. of Households with 1st Largest Surname",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only report of large-surname group structure. The raw JA045 surname strings are excluded; keep the number of groups and household counts separate, do not derive proportions without a validated total-household denominator, and suppress small cells if summarized. Not a participant's surname or lineage."
+        },
+        {
+          "code": "ja046_2",
+          "label": "Num. of Households with 2nd Largest Surname",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only report of large-surname group structure. The raw JA045 surname strings are excluded; keep the number of groups and household counts separate, do not derive proportions without a validated total-household denominator, and suppress small cells if summarized. Not a participant's surname or lineage."
+        },
+        {
+          "code": "ja046_3",
+          "label": "Num. of Households with 3rd Largest Surname",
+          "module": "community",
+          "unit": "households",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only report of large-surname group structure. The raw JA045 surname strings are excluded; keep the number of groups and household counts separate, do not derive proportions without a validated total-household denominator, and suppress small cells if summarized. Not a participant's surname or lineage."
+        }
+      ]
+    },
+    {
       "concept_id": "community_sanitation_reconstruction_year",
       "label": "Community toilet/sewer reconstruction year",
       "domain": "Community environment",
@@ -125220,6 +126150,56 @@
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
           "caveat": "Retrospective report of whether/when a village-level penalty policy existed and reported initial/subsequent penalty amounts. Preserve conditional routes and year/amount slots; this is not an individual's fine or reproductive history."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_urban_transition_history",
+      "label": "Community urban-administrative transition history",
+      "domain": "Community administrative context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "ja007",
+          "label": "Was Changed to Community from Village",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-only report of whether the community office was converted from a village office and, conditionally, when; not the sampled person's hukou, residence or urban status."
+        },
+        {
+          "code": "ja008",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Community-only report of whether the community office was converted from a village office and, conditionally, when; not the sampled person's hukou, residence or urban status."
+        },
+        {
+          "code": "ja009",
+          "label": "Has Your Village Been Designated into the City Planning Area",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only report of designation into city-planning area and, conditionally, year; not proof of urban residence or individual migration."
+        },
+        {
+          "code": "ja010",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Village-only report of designation into city-planning area and, conditionally, year; not proof of urban residence or individual migration."
         }
       ]
     },
@@ -125720,6 +126700,26 @@
           "value_semantics": "",
           "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
           "caveat": "Community-informant estimated count of snowy days in calendar year 2010. Not linked to a weather station; verify release-specific special values and plausible range before analysis."
+        }
+      ]
+    },
+    {
+      "concept_id": "community_office_establishment_year",
+      "label": "Community/village office establishment year",
+      "domain": "Community administrative context",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "ja002",
+          "label": "Year",
+          "module": "community",
+          "unit": "year",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "Reported year this village/community office was established; administrative-history context, not an individual's residence duration. Check release-specific impossible/special values before analysis."
         }
       ]
     },
@@ -127328,9 +128328,9 @@
     "2013": {
       "baseline_wave": "2011",
       "followup_wave": "2013",
-      "exposure_count": 178,
+      "exposure_count": 186,
       "phenotype_count": 226,
-      "candidate_pair_count": 40228,
+      "candidate_pair_count": 42036,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -127568,9 +128568,9 @@
     "2015": {
       "baseline_wave": "2011",
       "followup_wave": "2015",
-      "exposure_count": 178,
+      "exposure_count": 186,
       "phenotype_count": 239,
-      "candidate_pair_count": 42542,
+      "candidate_pair_count": 44454,
       "phenotype_concept_ids": [
         "offspring_health_status_2015",
         "offspring_self_care_ability_2015",
@@ -127821,9 +128821,9 @@
     "2018": {
       "baseline_wave": "2011",
       "followup_wave": "2018",
-      "exposure_count": 178,
+      "exposure_count": 186,
       "phenotype_count": 211,
-      "candidate_pair_count": 37558,
+      "candidate_pair_count": 39246,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -128046,9 +129046,9 @@
     "2020": {
       "baseline_wave": "2011",
       "followup_wave": "2020",
-      "exposure_count": 178,
+      "exposure_count": 186,
       "phenotype_count": 104,
-      "candidate_pair_count": 18512,
+      "candidate_pair_count": 19344,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",

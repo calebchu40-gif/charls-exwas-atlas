@@ -750,6 +750,13 @@ This file records project-level changes that affect reproducibility, methods, da
 - Added two provisional community-context candidate mappings for JF017_1 (total community deaths since 2008) and JF017_2 (community suicide deaths). They are aggregate counts without a population denominator, not individual mortality outcomes or rates.
 - Kept JF018 open-text disease names/counts and JF020 informant identity as C-only metadata; excluded direct identifiers. Added source audit and regression coverage without publishing respondent text, records, or Codebook frequencies.
 - Part B coverage review then mapped 42 JB029 facility/organization fields and three infrastructure-year fields, and classified four other-specify text fields plus JB040 as C-only; all 127 raw JB fields now have a disposition. Full 159-step finalization completed in 7.6 minutes. Local E/P/C shards=6,175/2,116/1,001; 1,601 E/P concepts; 8,185 E/P source mappings; 2011 metadata co-availability=141,835 (not analytic N). Full suite (501 tests), public-payload validation, 92-lock validation, JS syntax, and diff checks pass. Current public app remains v129; local cache is v132.
+# 2026-10-26 Audit all 2011 community Part A fields
+
+- Reconciled all 80 JA-prefixed fields against the official questionnaire and Codebook: 69 candidate mappings and 11 explicit metadata/unresolved dispositions. Added eight contextual candidate concepts covering office establishment, administrative boundary and urban transition, land-rights certification, land development, expropriation, homestead allocation and surname concentration.
+- Preserved CAPI scope and routed-year denominators; retained JA012 as C-only because questionnaire wording (paddy field) conflicts with Codebook wording (irrigatable). Excluded open-text surname and homestead-source values; no Codebook frequencies or respondent data were used.
+- Full 159-step finalization completed in 6.9 minutes. Local E/P/C=6,278/2,116/1,013; 1,618 E/P concepts; 8,288 E/P source mappings; 2011 metadata co-availability=145,456 (not analytic N). Generic pending labels=0; formal association models=0; exact 92 locks unchanged.
+- Full local suite: 513 tests pass. Public payload, exact 92-lock, JS syntax, deferred-loader and diff checks pass. Part A content remains local pending commit/deployment.
+
 # 2026-10-26 Make community source-review tests reproducible in clean CI
 
 - GitHub Validate #520 exposed that seven source-review tests depended on the ignored local `audit/raw_variable_catalog_v1.csv`. That file contains local module row counts and source archive names and remains untracked.
