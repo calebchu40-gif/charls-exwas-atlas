@@ -101,4 +101,4 @@ Added four institution-count fields (private traditional schooling, kindergarten
 
 The exhaustive 1,105-field ledger now assigns 1,072 fields to reviewed candidate concepts; excludes 22 school address fields for location privacy, three linkage keys, one release version field, one internal quality flag and one no-observations bookkeeping field; and defers five E134 certificate-year slots pending verified identity linkage to the corresponding open-text certificate records. No participant values or Codebook distributions are used.
 
-After rebuild, the Life History catalog contains 107 concepts / 2,841 field mappings (E 2,795; P 46). These are candidate metadata only. This local update is prepared as app v155 / JSON v22; publication and live-page hash verification remain outstanding.
+After rebuild, the Life History catalog contains 107 concepts / 2,841 field mappings (E 2,795; P 46). These are candidate metadata only. Published in commit `34d6d14` as app v155 / JSON v22; the live page contains all 107 concepts and the live JSON SHA-256 matches the local payload.
