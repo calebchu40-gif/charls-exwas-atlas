@@ -6,7 +6,7 @@
 
 ## 官方目录中需要的资料
 
-CHARLS 官方 Wave 1 页面把资料分成独立下载项：[Wave 1 官方目录](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)。本试点的最小完整源包为：
+CHARLS 官方 Wave 1 页面把资料分成独立下载项：[Wave 1 官方目录](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)。官方[用户数据协议](https://charls.charlsdata.com/users/sign_up/agreement/zh-cn.html)规定数据仅限学术研究，不得以任何形式发布原始微观数据，分析结果不得泄露受访者个人信息，也不得向他人开放数据访问。本项目代码与基于公开资料的元数据可公开；微观数据/受限派生结果只留在授权用户的受控环境，网站仅能考虑经披露审查批准的非识别性聚合结果。本试点的最小完整源包为：
 
 1. **Wave 1 全部数据 ZIP（文档123）**：用于从官方家户/社区模块重建住宅环境候选及协变量来源。官方页面标题为“All dataset in one zipfile including whole household questionnaire and community questionnaire data”，页面标注更新日期2013-03-13。
 2. **PSU（文档117）**：用于核实最终抽样单元和当前本地 `communityID` 映射。

@@ -2,6 +2,8 @@
 
 **Purpose.** Decide whether the Wave 1 pilot is ready to scale based on source integrity, survey-design validity, reproducibility, and disclosure review. Statistical significance is not a criterion for calling the pilot successful.
 
+**CHARLS use boundary.** The official [data-use agreement](https://charls.charlsdata.com/users/sign_up/agreement/en.html) restricts the data to academic research, prohibits publishing original microdata, and requires analytical results not to identify individual respondents. It also prohibits granting other people access to the data. Therefore, code and documentation may be public, but participant-level source/derived data and restricted outputs must stay within the authorized user's protected workspace; only approved non-identifying aggregate results may be considered for release.
+
 ## Current position
 
 - The local 2011 pilot scripts run on an existing derived table, but their outputs remain exploratory and private.
