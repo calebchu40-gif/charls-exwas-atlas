@@ -179,3 +179,5 @@ GitHub Validate：`cb6f8e2`（scale-up门禁）已成功；`8002a0c`（公开程
 - 远端Pages首页HTTP 200；`association_results_v1.json`返回404，与本地不存在该结果payload一致。该次仅改工作流/脚本/日志，不改网站内容。
 - 代码复核发现如果`site-prototype/dist`目录根本身是符号链接，先调用`resolve()`再检查会漏掉根链接。扫描器现先检查输入根路径是否为symlink，再解析/遍历。当前本地文件边界扫描和payload validator均通过；这项边界修复需由下一次CI验证。
 - 本次未读取CHARLS个体回答、未生成/发布任何关联结果；受保护源输入门禁状态未改变。
+
+- 后续远端验证：根目录符号链接修复提交`4291ed4`的GitHub Validate #750（运行ID `40397919694`）成功；因此脚本当前版本的常规CI已覆盖并通过。本地与服务器镜像均更新到该版本，工作区与`origin/main`同步。
