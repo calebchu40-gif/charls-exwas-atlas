@@ -227,8 +227,8 @@ CHARLSCodeBook 1 RESIDENCE
         rows, _ = builder.build()
         coverage = builder.build_parent_module_coverage(rows)
         self.assertEqual(len(coverage), 47)
-        self.assertEqual(sum(row["disposition"] == "mapped_candidate" for row in coverage), 43)
-        self.assertEqual(sum(row["disposition"] != "mapped_candidate" for row in coverage), 4)
+        self.assertEqual(sum(row["disposition"] == "mapped_candidate" for row in coverage), 47)
+        self.assertEqual(sum(row["disposition"] != "mapped_candidate" for row in coverage), 0)
 
     def test_work_history_lifetime_work_items_and_route_checks_are_separated(self):
         rows, _ = builder.build()
