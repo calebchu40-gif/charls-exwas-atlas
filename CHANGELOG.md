@@ -6,6 +6,10 @@
 - Validation: 560 Python tests passed; browser filter test, deferred loader test, JavaScript syntax check, public payload validator, and `git diff --check` passed. Tests use synthetic fixtures only. No CHARLS source data were loaded and formal association results remain 0.
 - Local app asset is v194. Deployment status will be recorded after live verification.
 
+# 2026-10-27 Verify reviewed-result filters are live
+
+- Commit `9e81ef7` was pushed to `main`. Direct cache-busted requests returned HTTP 200 for the homepage and `app.js?v=194`; the deployed script contains the new result filters. `association_results_v1.json` returns HTTP 404, as expected because no real result family has passed official source/design and disclosure review.
+
 # 2026-10-27 Verify published disclosure-gated result browser
 
 - After commit `b5856c0`, the live GitHub Pages homepage returned HTTP 200 and loads app v193; the live app.js asset returned HTTP 200 and contains the reviewed-results loader.

@@ -1,3 +1,7 @@
+# 2026-10-27 continuation — verified reviewed-result filters are live
+
+Pushed commit `9e81ef7` to `main`. Cache-busted live checks confirmed homepage HTTP 200 loading app v194, app JS HTTP 200 containing the result filters, and `association_results_v1.json` HTTP 404 (expected: no real result family is approved). The optional results table can now filter approved aggregate records by exposure, phenotype, wave and model. Formal association models remain 0; no CHARLS microdata were used.
+
 # 2026-10-27 continuation — reviewed-result filters and synthetic release test
 
 Added exposure, phenotype, wave and model filters to the optional reviewed-association results table (local app v194). The release exporter now detects a result CSV changing during validation/export and requires a fresh disclosure review. Added synthetic end-to-end coverage of v3 result validation, exact-hash approval, public allowlist export and Pages validation, plus browser-level loading/filter tests wired into CI. The full suite passed (560 tests); both Node tests, JS syntax, public payload validation and diff checks passed. This used synthetic fixtures only. Formal association results remain 0; the 2011 official source gate remains not passed because required Wave 1 files are absent. Deployment has not yet been verified at the time of this entry.
