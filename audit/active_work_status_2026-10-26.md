@@ -1,3 +1,9 @@
+## 2014 WORKHISTORY F126 current/last-year income (local build v170 pending publication)
+
+Mapped 46 F126 fields into income mode (15), conditional Yuan amount (15), and separate workpoint components (16). The source asks F_3=2/3 episodes and phrases timing as “now/the last year”; no common reference date is assumed. Nominal amounts are not harmonized. See [`life_history_work_history_recent_income_review_2026-10-26.md`](life_history_work_history_recent_income_review_2026-10-26.md).
+
+Local catalogue: 138 concepts / 4,641 field mappings (E 4,595, P 46); WORKHISTORY 1,800 mapped, 187 substantive fields deferred. App v170 / JSON v37 pending publication; formal models remain 0.
+
 ## 2014 WORKHISTORY F101a agricultural income (local build v169 pending publication)
 
 Reviewed all 49 official F101a/F101a_a Codebook fields. Four concepts distinguish beginning/middle payment mode from conditional Yuan amounts; the latter period is only asked for agricultural jobs lasting at least 20 years. Net income subtracts agricultural inputs and includes the market value of consumed farm products. These are retrospective economic variables, not chemical or pesticide exposure measures; nominal values are not inflation-harmonized. See [`life_history_work_history_agricultural_income_review_2026-10-26.md`](life_history_work_history_agricultural_income_review_2026-10-26.md).
