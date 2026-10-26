@@ -17,6 +17,7 @@ from prepare_charls_wave_tables import sha256_file  # noqa: E402
 from require_verified_wave1_frame import (  # noqa: E402
     ANALYSIS_PLANS,
     REQUIRED_ANALYSIS_GATES,
+    analysis_plan_fingerprint,
     require_verified_wave1_frame,
     require_wave1_analysis_readiness,
 )
@@ -41,6 +42,7 @@ class Wave1AnalysisSourceGateTests(unittest.TestCase):
             "source_manifest_id": "charls2011-synthetic-gate",
             "prepared_output_sha256": "d" * 64,
             "analysis_plan_id": plan["plan_id"],
+            "analysis_plan_sha256": analysis_plan_fingerprint(plan_key),
             "reviewer": "Synthetic reviewer",
             "reviewed_at": "2026-10-27",
             "public_release_status": "not_approved",

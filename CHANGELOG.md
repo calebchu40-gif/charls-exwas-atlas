@@ -4,6 +4,16 @@
 - Revalidated the official CHARLS source pages and recorded the current gate plus the locked post-pilot path: complete the 105-coefficient pilot only after source/design readiness; if valid and reproducible, proceed to the predeclared K=150 household-environment family and separately adjusted K=90 heating-route subdomain; expand to later waves only after wave-specific design and measurement review; publish only disclosure-reviewed aggregate families.
 - Reaffirmed that statistical significance does not define pilot success, and no geography field may be invented as a variance stratum. No site payload or restricted data changed. See `audit/execution_checkpoint_2026-10-27.md`.
 
+# 2026-10-27 Separate current K=105 runner from planned K=150/K=90 scale-up
+
+- Code inspection found the current household-environment runner and readiness plan cover only the exploratory water/cooking-fuel K=105 family; they do not implement the documented K=150 household block or K=90 routed heating block. Corrected the runbook and scale-up criteria and added an explicit implementation-gap audit plus an empty future scale-up readiness template.
+- The future scale-up remains gated on authenticated release-specific coding/routing, a dedicated protected runner, a distinct analysis-plan gate and a reproducibility-reviewed pilot. No participant data were read and no K=150/K=90 models were run.
+
+# 2026-10-27 Bind pilot approval to exact analysis-plan content
+
+- Strengthened both Wave 1 model readiness checks: approvals now include a SHA-256 fingerprint over the exact pilot, success criteria, scale-up, and multiplicity protocol documents. Editing a plan document invalidates the approval even if its human-readable plan ID is unchanged; the verified fingerprint is recorded in the private run manifest.
+- Updated the two protected-readiness templates and the existing synthetic fixture shape. This is a fail-closed provenance improvement and does not authorize analysis or publication. No model was run; no participant data was read.
+
 # 2026-10-27 Reconcile staged corrections with atlas-wide multiplicity
 
 - Reviewed the Nature Medicine article’s reported full computable association family (123,774 tests; Bonferroni and Benjamini–Yekutieli) against the project’s staged K=105/K=150/K=90 batches. Recorded that batch q-values are provisional and cannot stand in for final atlas-wide correction.

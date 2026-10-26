@@ -39,7 +39,7 @@ All of these gates must pass before expanding beyond the predeclared Wave 1 pilo
 ## Scale-up sequence after a valid pilot
 
 1. Freeze a tagged, reproducible Wave 1 release with the complete primary 105-coefficient pilot family and independent method-review sign-off.
-2. Run the already predeclared Wave 1 household-environment expansion (primary family K=150; heating-condition subdomain K=90 separately adjusted), preserving all planned contrasts and failures.
+2. Implement and run the predeclared Wave 1 household-environment scale-up (primary block K=150; heating-condition subdomain K=90), preserving all planned contrasts and failures. The existing `run_2011_household_environment_blood_extension.py` is only the earlier exploratory K=105 water/fuel block; it does not implement this scale-up. Authenticate the additional fields and route-specific eligibility before coding their production contrasts. See [`wave1_scaleup_runner_gap_2026-10-27.md`](wave1_scaleup_runner_gap_2026-10-27.md).
 3. Expand to other waves only after establishing each wave’s own outcome availability, exposure wording/units, weights, PSU/variance design, and estimand. Start with wave-specific models; pool waves only with an explicit, justified harmonization and design strategy.
 4. Generate disclosure-reviewed aggregate result files and metadata for the website. Keep catalog availability, analyzed pairs, reviewed results, and publicly released results as distinct statuses.
 

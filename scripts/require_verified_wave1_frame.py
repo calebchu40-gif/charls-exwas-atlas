@@ -6,6 +6,7 @@ It does not certify survey-design or estimand validity.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 from typing import Any
@@ -38,14 +39,40 @@ ANALYSIS_PLANS = {
     "water_biomarker_pilot": {
         "filename": "wave1_water_biomarker_pilot.json",
         "plan_id": "pilot_2011_water_biomarker_plan_and_gates_2026-10-26",
+        "plan_files": (
+            "audit/pilot_2011_water_biomarker_plan_and_gates_2026-10-26.md",
+            "audit/pilot_followup_execution_plan_2026-10-26.md",
+            "audit/pilot_success_criteria_and_scale_up_2026-10-26.md",
+            "audit/multiplicity_primary_family_reconciliation_2026-10-27.md",
+        ),
         "additional_gates": (),
     },
     "household_environment_extension": {
         "filename": "wave1_household_environment_extension.json",
         "plan_id": "pilot_2011_water_biomarker_plan_and_gates_2026-10-26#household-environment-K105",
+        "plan_files": (
+            "audit/pilot_2011_water_biomarker_plan_and_gates_2026-10-26.md",
+            "audit/pilot_followup_execution_plan_2026-10-26.md",
+            "audit/pilot_success_criteria_and_scale_up_2026-10-26.md",
+            "audit/multiplicity_primary_family_reconciliation_2026-10-27.md",
+        ),
         "additional_gates": ("pilot_success_and_reproducibility_review",),
     },
 }
+
+
+def analysis_plan_fingerprint(plan_key: str) -> str:
+    """Hash the exact set and bytes of the tracked documents defining a plan."""
+    plan = ANALYSIS_PLANS.get(plan_key)
+    if plan is None:
+        raise ValueError(f"Unknown Wave 1 analysis plan {plan_key!r}")
+    entries = []
+    for relative in plan["plan_files"]:
+        path = ROOT / relative
+        if not path.is_file():
+            raise ValueError(f"Wave 1 analysis plan source is missing: {relative}")
+        entries.append(f"{relative}\0{sha256_file(path)}")
+    return hashlib.sha256("\n".join(entries).encode("utf-8")).hexdigest()
 
 
 def _load_json(path: Path, label: str) -> dict[str, Any]:
@@ -175,6 +202,9 @@ def require_wave1_analysis_readiness(
         raise ValueError("Wave 1 readiness gate: prepared-frame hash binding does not match current frame")
     if review.get("analysis_plan_id") != plan["plan_id"]:
         raise ValueError("Wave 1 readiness gate: approval is not bound to the frozen pilot plan")
+    expected_plan_hash = analysis_plan_fingerprint(analysis_plan)
+    if str(review.get("analysis_plan_sha256", "")).lower() != expected_plan_hash:
+        raise ValueError("Wave 1 readiness gate: approval is not bound to the exact frozen plan documents")
     if review.get("public_release_status") != "not_approved":
         raise ValueError("Wave 1 readiness gate: pilot approval cannot authorize public release")
     if not str(review.get("reviewer", "")).strip() or not str(review.get("reviewed_at", "")).strip():
@@ -196,5 +226,6 @@ def require_wave1_analysis_readiness(
         "reviewer": review["reviewer"],
         "reviewed_at": review["reviewed_at"],
         "analysis_plan_id": review["analysis_plan_id"],
+        "analysis_plan_sha256": expected_plan_hash,
         "public_release_status": "not_approved",
     }
