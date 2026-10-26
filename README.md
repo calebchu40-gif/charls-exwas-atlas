@@ -1,8 +1,8 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-26）
 
-**本地待发布更新：**app v179 / Life History JSON v46 的原型含176个Life History概念、5,836条映射（E 5,790、P 46）；新增HK001–HK006受访者户口史270字段、2个生命历程候选概念。2014 DEMOGRAPHICBACKGROUNDS的1,920个Codebook字段已全量审计并有唯一去向：1,027候选映射，893个亲属敏感、C-only、日期/联结键或访谈/版本元数据类别，通用待审为0。保留户口变更事件槽位，不推算次数或地理暴露。页面仍只含官方元数据。户口审计见[`audit/life_history_hukou_section_review_2026-10-26.md`](audit/life_history_hukou_section_review_2026-10-26.md)，模块完整 disposition 见[`audit/life_history_demographic_backgrounds_children_disposition_review_2026-10-26.md`](audit/life_history_demographic_backgrounds_children_disposition_review_2026-10-26.md)。
+**本地待发布更新：**app v180 / Life History JSON v47 的原型含177个Life History概念、5,841条映射（E 5,795、P 46）；在已上线户口史批次后新增E134技能证书取得年份5字段，证书名称在Codebook中缺失，因此不推断证书类别。Life History EDUCATIONHISTORY的1,105个Codebook字段均有唯一 disposition（1,077候选映射、28个明确排除/元数据去向、通用待审为0）。DEMOGRAPHICBACKGROUNDS的1,920字段也已全部审计。详见[`audit/life_history_skill_certificate_year_review_2026-10-26.md`](audit/life_history_skill_certificate_year_review_2026-10-26.md)。
 
-**当前线上版本：**CHARLS ExWAS Atlas已公开部署：[网站入口](https://calebchu40-gif.github.io/charls-exwas-atlas/)。公网已核验 app v179 / Life History JSON v46，176个Life History概念、5,836条字段映射（E 5,790、P 46），本地/远端JSON SHA-256一致。新纳入HK001–HK006户口史270字段；配偶/伴侣、妊娠史、子女早期照护/幼托和额外子女计数批次也已发布。DEMOGRAPHICBACKGROUNDS全量字段 disposition 审计随后在提交`4f9d949`基础上完成；它只改审计台账/生成器，不改网站数据。正式关联模型仍为0；目录共现不等于样本量或关联结果。
+**当前线上版本：**CHARLS ExWAS Atlas已公开部署：[网站入口](https://calebchu40-gif.github.io/charls-exwas-atlas/)。最近已核验线上app v179 / Life History JSON v46，176个Life History概念、5,836条字段映射；本地v180 / v47待部署。正式关联模型仍为0；目录共现不等于样本量或关联结果。
 
 **最新线上扩展（提交 `3d6a0a4`，app v139）：**官方2014问卷C5–C5f家庭成分题核对到WEALTHHISTORY模块，新增1个年龄受限的历史家庭背景候选概念、189条选项字段映射；七种本人/亲属问卷形式均保留，受访者题仅问80岁及以上人群。`FAMILYINFORMATION:c5`是另一条饥荒逃荒题，按模块+字段码区分。Life History专题现为36组、993条字段（E 965、P 28）；线上JSON已核验。字段覆盖表和审计见[`audit/life_history_historical_family_class_coverage_2014_v1.csv`](audit/life_history_historical_family_class_coverage_2014_v1.csv)、[`audit/life_history_historical_family_class_review_2026-10-26.md`](audit/life_history_historical_family_class_review_2026-10-26.md)。529项测试、公开包、92条分析锁、前端语法与差异检查均通过。
 

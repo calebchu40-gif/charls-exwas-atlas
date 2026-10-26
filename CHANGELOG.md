@@ -1,3 +1,10 @@
+# 2026-10-26 Map Life History skill-certificate acquisition years
+
+- Reviewed E133–E134 against the official Questionnaire and Codebook. Mapped the five E134 year slots to a separate unspecified skill-certificate acquisition-year E candidate; the Codebook has no certificate-name field, so no credential type or name is inferred.
+- Education History now has explicit disposition for all 1,105 Codebook fields: 1,077 mapped and 28 source/linkage/release/quality exclusions; generic deferred fields are zero.
+- Local Life History catalog is now 177 concepts / 5,841 mappings (E 5,795, P 46); app v180 / JSON v47. Deployment pending.
+- Audit: `audit/life_history_skill_certificate_year_review_2026-10-26.md`.
+
 # 2026-10-26 Close 2014 DemographicBackgrounds field dispositions
 
 - Source-reviewed and assigned an explicit unique disposition to every 1,920 `DEMOGRAPHICBACKGROUNDS` Codebook field. The ledger now has zero generic deferred fields: 1,027 candidate mappings plus reviewed sensitive, C-only, exclusion, linkage and survey-process categories.

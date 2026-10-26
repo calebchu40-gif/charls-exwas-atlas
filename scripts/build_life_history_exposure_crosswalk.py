@@ -1561,7 +1561,20 @@ GROUPS = [
         "unit": "binary ever-received indicator",
         "values": "Question asks whether the respondent has ever received any skill certificate.",
         "status": "official item and yes/no skip route reviewed; certificate identity/year linkage requires separate QA",
-        "caveat": "This is a self-reported ever indicator, not a particular certificate, standardized competence or current license. Certificate names are open text; E134 year slots are not mapped until certificate-to-year identity can be validated.",
+        "caveat": "This is a self-reported ever indicator, not a particular certificate, standardized competence or current license. The questionnaire asks E134 for certificate names and years, but the official Codebook inventory contains only year slots; no title or credential type is inferred from these fields.",
+    },
+    {
+        "concept_id": "life_history_skill_certificate_acquisition_years",
+        "label": "Reported years of up to five vocational skill-certificate acquisitions",
+        "role": "e",
+        "modules": ["EDUCATIONHISTORY"],
+        "domain": "occupational training and qualification context",
+        "patterns": [r"e134_2_[1-5]_"],
+        "question": "E134_2",
+        "unit": "five repeated calendar-year slots for reported skill-certificate acquisitions",
+        "values": "The questionnaire asks what types of skill certificates were received and in which years. The Codebook exposes five year fields; no certificate-name field is present in the inspected Codebook inventory.",
+        "status": "official questionnaire pairing of certificate name/year and five Codebook year-slot identities reviewed; no responses or frequencies used",
+        "caveat": "Only the acquisition-year fields are mapped; certificate names are open text in the questionnaire and absent from the Codebook inventory. Do not infer credential type, level, field, a specific E133 response, current license, count of certificates, or year-order semantics without authorized-release validation. Keep five slots as components. Retrospective 2014 special-wave candidate only; no survey weight is provided.",
     },
     {
         "concept_id": "life_history_education_gap_activity_context",
@@ -2780,9 +2793,6 @@ def build_education_history_coverage(rows: list[dict]) -> list[dict]:
         elif re.search(r"noobservations", label, re.I):
             disposition, concept_id = "excluded_no_observations", ""
             rationale = "Release bookkeeping field indicating no observations, not a measured exposure or phenotype."
-        elif re.fullmatch(r"e134_2_[1-5]_", code, re.I):
-            disposition, concept_id = "deferred_certificate_identity_linkage", ""
-            rationale = "Certificate-year slot cannot be interpreted as a specific certificate without validated linkage to the corresponding open-text certificate identity; retain for source review."
         else:
             disposition, concept_id = "deferred_source_review", ""
             rationale = "Education History questionnaire/codebook family not yet reviewed field-by-field for routing, referent, free text, address/privacy, repeated episode structure and authorized-release storage. Do not publish as a candidate or use in analysis until reviewed."
