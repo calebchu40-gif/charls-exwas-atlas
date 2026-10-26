@@ -103,12 +103,14 @@ def _validate_configuration(config: dict[str, Any], analytes: list[dict[str, str
         raise ValueError("Frozen design specification must provide stratum_fields, including an explicit empty list if none apply")
     if design.get("replicate_weight_fields"):
         raise ValueError("Replicate-weight designs are not supported by this Taylor-only runner; use an approved implementation")
-    if not str(design.get("singleton_psu_method", "")).strip():
-        raise ValueError("Frozen design specification must state the singleton PSU handling rule")
-    if design["singleton_psu_method"] not in {
+    if design.get("singleton_psu_method") not in {
         "center", "scale", "skip", "self_representing", "collapse", "pool"
     }:
         raise ValueError("Singleton PSU method is not supported by the pinned svy engine")
+    if design.get("domain_singleton_method") not in {"standard", "apply"}:
+        raise ValueError("Frozen design must explicitly choose standard or apply domain-singleton handling")
+    if design.get("on_domain_singletons") not in {"error", "warn", "ignore"}:
+        raise ValueError("Frozen design must explicitly set the domain-singleton diagnostic policy")
 
     exposure_map = config["exposure_field_mapping"]
     required_exposures = {"i016", "i017", "i019", "i020", "i021", "i022"}
@@ -344,18 +346,23 @@ def _fit_exposure_group(data: Any, config: dict[str, Any], analyte: dict[str, st
         "psu": "__design_psu",
         "wgt": "__design_weight",
         "wr": design["with_replacement"],
-        "singleton": design["singleton_psu_method"],
+        "singleton": svy.Singleton(
+            design["singleton_psu_method"],
+            domains=design["domain_singleton_method"],
+            on_domain_singletons=design["on_domain_singletons"],
+        ),
     }
     if stratum_fields:
         kwargs["stratum"] = stratum_fields[0] if len(stratum_fields) == 1 else stratum_fields
     fit_columns = ["__design_psu", "__design_weight", "__outcome_z", "__model_domain", *xvars, *stratum_fields]
     fit_data = model_data.select(list(dict.fromkeys(fit_columns)))
     survey = svy.Sample(data=fit_data, design=svy.Design(**kwargs))
+    domain_singleton_count = survey.domain_singletons(where=pl.col("__model_domain")).height
     with warnings.catch_warnings(record=True) as caught:
         warnings.simplefilter("always")
         fit = survey.glm.fit(
             y="__outcome_z", x=xvars, family="gaussian", where=pl.col("__model_domain"),
-            drop_nulls=True, alpha=0.05,
+            method="taylor", drop_nulls=True, alpha=0.05,
         ).to_polars()
     by_term = {str(item.get("term")): item for item in fit.to_dicts()}
     support = pair.group_by(field).agg(
@@ -385,7 +392,11 @@ def _fit_exposure_group(data: Any, config: dict[str, Any], analyte: dict[str, st
             "support_by_exposure_private": json.dumps(support, separators=(",", ":")),
             "engine_warnings_private": warning_text,
         }
-    return estimates, {"n_complete": pair.height, "n_psu": n_psu, "status": "fit_complete"}
+    return estimates, {
+        "n_complete": pair.height, "n_psu": n_psu,
+        "domain_singleton_strata_private": domain_singleton_count,
+        "status": "fit_complete",
+    }
 
 
 def _finite(value: object) -> float | None:

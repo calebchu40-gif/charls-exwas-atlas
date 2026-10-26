@@ -279,7 +279,10 @@ def require_wave1_analysis_readiness(
             if not isinstance(config.get(section), dict) or not config[section]:
                 raise ValueError(f"Wave 1 readiness gate: frozen scale-up configuration section {section!r} is missing")
         design = config["design"]
-        for field in ("weight_field", "psu_field", "variance_method", "variance_limitations"):
+        for field in (
+            "weight_field", "psu_field", "variance_method", "variance_limitations",
+            "singleton_psu_method", "domain_singleton_method", "on_domain_singletons",
+        ):
             if not str(design.get(field, "")).strip():
                 raise ValueError(f"Wave 1 readiness gate: frozen scale-up design lacks {field}")
         strata = design.get("stratum_fields")

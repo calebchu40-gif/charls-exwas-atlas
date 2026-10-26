@@ -26,7 +26,9 @@
     "with_replacement": null,
     "variance_method": "",
     "variance_limitations": "",
-    "singleton_psu_method": ""
+    "singleton_psu_method": "",
+    "domain_singleton_method": "",
+    "on_domain_singletons": ""
   },
   "exposure_field_mapping": {
     "i016": "",
