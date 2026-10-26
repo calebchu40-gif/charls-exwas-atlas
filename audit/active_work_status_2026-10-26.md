@@ -1,6 +1,7 @@
-## 2014 WORKHISTORY initial source coverage (app v158 verified)
+## 2014 WORKHISTORY F001/F_3/F_2 batch (local; pending publication)
 
-Inspected the official Life History Work History section and identified F001 as a multi-select retrospective status item at age 16. Added its 13 option fields as one provisional life-course E concept and F_3 repeated job type across 19 episode slots as a second concept. Created an exhaustive 2,024-field Work History ledger: 32 mapped, three linkage keys and one release-version field excluded, and 1,988 substantive fields explicitly deferred for field-by-field review of episode type, route, time, construct and privacy. The questionnaire defines a job as livelihood labor lasting at least half a year and distinguishes six job types. Do not treat this initial map as complete Work History coverage. Commit `d9a3442` is live as app v158 / JSON v25; the 109-concept count, 19 F_3 episode fields and remote/local SHA-256 match are verified.
+Added 13 F001 age-16 status options, 19 repeated F_3 job-type fields, and 171 F_2 timing components across 19 six-month-or-longer job episodes. Excluded 19 potentially identifying main-workplace location fields. The exhaustive 2,024-field ledger now has 203 mapped fields, 19 location exclusions, three linkage keys and one release-version exclusion, plus 1,798 substantive fields deferred for field-by-field review. Job type is not occupational/environmental dose; F_2 is recalled chronology and not exact duration. Local rebuild: 110 concepts / 3,044 mappings (E 2,998, P 46), prepared as app v159 / JSON v26; publication pending.
+
 
 ## 2014 EDUCATIONHISTORY episode timing and module disposition (app v156 verified)
 

@@ -1408,6 +1408,19 @@ GROUPS = [
         "caveat": "Each record is a job episode lasting at least six months and defined as livelihood work; do not infer employment duration or lifetime job count from skipped/blank repeated slots. Retain the 0–18 episode index. Job type is not occupation, industry or measured environmental exposure; do not infer pesticide, dust or chemical dose from an agricultural/job label.",
     },
     {
+        "concept_id": "life_history_repeated_job_timing",
+        "label": "Reported start and end periods across repeated job episodes",
+        "role": "e",
+        "modules": ["WORKHISTORY"],
+        "domain": "life-course employment chronology",
+        "patterns": [r"f_2_[1-8]_(?:[0-9]|1[0-8])_", r"f_2_sel_(?:[0-9]|1[0-8])_"],
+        "question": "F_2",
+        "unit": "171 start/end alternative-precision components across 19 repeated job episodes",
+        "values": "Each episode records start and end year plus month, season or half-year precision; a separate selector indicates ending versus continuing.",
+        "status": "official questionnaire timing structure, range-midpoint instruction and Codebook episode identities reviewed; alternative precision, date coding and episode linkage require QA",
+        "caveat": "Retrospective job chronology, not exact dates or measured duration. The questionnaire instructs interviewers to ask for a year range and enter its midpoint when exact year is not recalled. Month/season/half-year are alternative precision, not additive components. Retain the 0–18 episode index; do not derive duration until release coding and contradictory/partial dates are reconciled. Main workplace text/location fields are excluded from the public catalogue.",
+    },
+    {
         "concept_id": "life_history_education_episode_timing",
         "label": "Reported start and end periods across repeated education episodes",
         "role": "e",
@@ -1943,6 +1956,9 @@ def build_work_history_coverage(rows: list[dict]) -> list[dict]:
         elif code == "versionid":
             disposition, concept_id = "excluded_release_metadata", ""
             rationale = "Release/version bookkeeping metadata, not an E/P measure."
+        elif re.fullmatch(r"f_2_add_(?:[0-9]|1[0-8])_", code, re.I):
+            disposition, concept_id = "excluded_sensitive_workplace_location", ""
+            rationale = "Repeated main-workplace location/text field may reveal a specific worksite or locality; excluded from the public candidate catalogue and no geographic linkage is performed."
         else:
             disposition, concept_id = "deferred_source_review", ""
             rationale = "2014 Work History questionnaire/codebook family not yet reviewed field-by-field for job-type referent, repeated episode slot, route, timing, measurement identity, free text and location privacy. Do not publish as a candidate or use in analysis until reviewed."
