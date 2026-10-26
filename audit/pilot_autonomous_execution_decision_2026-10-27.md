@@ -65,3 +65,7 @@
 已按本文件中的两组预先拟定问题，建立 `audit/wave1_household_environment_hypothesis_register_v0.csv`。共240条规划记录：K=150主块含10个暴露系数×15项2011血液表型；K=90含6个取暖来源对比×15项表型。登记表可用于以后逐项追踪“计划—资格审核—可估/不可估—方法审核—披露审查”状态；240是预定假设行数，绝非实际分析N、已估计配对数或发现数。
 
 每条记录均标记`planned_not_approved`，并标记精确发行版字段、问卷路由、家户—个人链接、权重/设计、结局变换、主要模型和公开状态仍待核验。当前候选编码仅来自字段级问卷/Codebook审核；不会据此读取或重编码CHARLS记录。`i021`保留`i020=No`路由条件；不得将结构性跳题作参考类别或推广至全体。primary model保持`not_frozen`，须先完成DAG和可用协变量审定；主要家族最终多重校正依全Atlas预设检验集合统一重算，不能把这两批局部K值当最终全局FDR控制。
+
+### 登记表角色校正（2026-10-27）
+
+复核全局多重检验决策后，将登记表中的家族角色由易被理解为确认性/primary discovery的`primary_block`修正为`post_pilot_exploratory_scaleup_block`与`post_pilot_exploratory_conditional_subdomain`。K=150中供水和主烹饪燃料的105条记录与已运行过的探索性K=105假设重叠；其余K=150条目和K=90也处于同一试点后探索阶段。表内新增`prior_pilot_overlap`及`multiplicity_scope_candidate`字段。K批次校正只能作临时诊断，最终若站点作全Atlas发现声明，应将所有预设、可估的波次—假设纳入全局BY/Bonferroni家族；此处不产生任何新的关联估计。
