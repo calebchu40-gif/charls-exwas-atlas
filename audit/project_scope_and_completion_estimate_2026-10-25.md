@@ -2,7 +2,7 @@
 
 ## 2026-10-26 parent/caregiver module extension (local)
 
-官方2014问卷A模块复核新增3个亲代/抚养人概念和34条字段映射；47个结构化Codebook字段全部有候选映射或明确暂缓去向（8条身份/出生年字段暂缓）。Life History目录本地现为35概念组、804字段行（E 776、P 28）。亲代死亡、离婚后再婚与丧偶后再婚分别保留；字段级台账及解释见[`life_history_parent_module_coverage_2014_v1.csv`](life_history_parent_module_coverage_2014_v1.csv)和[`life_history_parent_module_review_2026-10-26.md`](life_history_parent_module_review_2026-10-26.md)。待全量测试和部署。
+官方2014问卷A模块复核新增3个亲代/抚养人概念和34条字段映射；47个结构化Codebook字段全部有候选映射或明确暂缓去向（8条身份/出生年字段暂缓）。Life History目录现为35概念组、804字段行（E 776、P 28），Pages线上JSON已核验。亲代死亡、离婚后再婚与丧偶后再婚分别保留；字段级台账及解释见[`life_history_parent_module_coverage_2014_v1.csv`](life_history_parent_module_coverage_2014_v1.csv)和[`life_history_parent_module_review_2026-10-26.md`](life_history_parent_module_review_2026-10-26.md)。
 
 ## 2026-10-26 sibling module expansion (local)
 

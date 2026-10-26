@@ -1,8 +1,8 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
-## 2014 parent/caregiver module (local, pending full validation/deployment)
+## 2014 parent/caregiver module (commit `a69a602`, live verified)
 
-Official questionnaire/Codebook review added three E-role concepts and 34 fields: biological-parent loss (6), divorce/bereavement-specific remarriage and stepfamily transitions (24), and adoptive/step-parent education (4). All 47 structured A-family Codebook fields are dispositioned; 39 map to E/P candidates and eight caregiver identity/parent birth-year fields are deferred. Exact-age/age-band substitutions and conditional parent/step-parent routes remain explicit. Coverage ledger: [`life_history_parent_module_coverage_2014_v1.csv`](life_history_parent_module_coverage_2014_v1.csv); source review: [`life_history_parent_module_review_2026-10-26.md`](life_history_parent_module_review_2026-10-26.md). Local catalog is 35 concepts / 804 fields (776 E, 28 P); full-project validation and live deployment are pending.
+Official questionnaire/Codebook review added three E-role concepts and 34 fields: biological-parent loss (6), divorce/bereavement-specific remarriage and stepfamily transitions (24), and adoptive/step-parent education (4). All 47 structured A-family Codebook fields are dispositioned; 39 map to E/P candidates and eight caregiver identity/parent-birth-year fields are deferred. Exact-age/age-band substitutions and conditional parent/step-parent routes remain explicit. Coverage ledger: [`life_history_parent_module_coverage_2014_v1.csv`](life_history_parent_module_coverage_2014_v1.csv); source review: [`life_history_parent_module_review_2026-10-26.md`](life_history_parent_module_review_2026-10-26.md). All 528 tests, public-payload checks and exact 92-lock check pass. Commit `a69a602` is pushed; live JSON returns 35 concepts/804 fields and homepage/loader cache versions 138/5.
 
 ## 2014 sibling module coverage and candidate expansion (commit `5cd3c3b`, live verified)
 

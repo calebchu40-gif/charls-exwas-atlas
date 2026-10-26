@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-26）
 
-**本地待发布扩展：**官方2014 Life History亲代/抚养人模块复核新增3个候选概念组、34条字段映射。A模块47个结构化Codebook字段全部有映射或明确暂缓去向（8条为抚养人身份/父母出生年元数据）。专题目录本地现为35组、804条字段（E 776、P 28）；全量测试与部署尚待完成。字段级覆盖见[`audit/life_history_parent_module_coverage_2014_v1.csv`](audit/life_history_parent_module_coverage_2014_v1.csv)，来源审计见[`audit/life_history_parent_module_review_2026-10-26.md`](audit/life_history_parent_module_review_2026-10-26.md)。
+**最新2014 Life History更新（提交 `a69a602`，已在线核验）：**官方亲代/抚养人模块新增3个候选概念组、34条字段映射。A模块47个结构化Codebook字段全部有映射或明确暂缓去向（8条为抚养人身份/父母出生年元数据）。专题目录现为35组、804条字段（E 776、P 28）；线上JSON已核实返回35概念、804字段，首页 `app.js?v=138` 与专题JSON `v=5` 已核验。字段级覆盖见[`audit/life_history_parent_module_coverage_2014_v1.csv`](audit/life_history_parent_module_coverage_2014_v1.csv)，来源审计见[`audit/life_history_parent_module_review_2026-10-26.md`](audit/life_history_parent_module_review_2026-10-26.md)。
 
 **最新2014 Life History更新（提交 `5cd3c3b`，已在线核验）：**官方Section B兄弟姐妹模块新增6个概念组、241条映射；271个B模块Codebook字段全部有映射或明确暂缓理由（30条暂缓）。专题目录现有32组、770条字段（E 742、P 28）。姓名/开放式死因不入库；家庭层指标不自动解释为受访者表型。源字段覆盖表见[`audit/life_history_sibling_module_coverage_2014_v1.csv`](audit/life_history_sibling_module_coverage_2014_v1.csv)，审计见[`audit/life_history_sibling_module_review_2026-10-26.md`](audit/life_history_sibling_module_review_2026-10-26.md)。Pages线上专题JSON已实时返回32概念、770字段。
 
