@@ -125,7 +125,7 @@ CHARLSCodeBook 1 RESIDENCE
             "life_history_vocational_school_interruption_detail": 14,
             "life_history_three_year_college_pathway": 26,
             "life_history_three_year_college_interruption_detail": 14,
-            "life_history_four_year_college_pathway": 51,
+            "life_history_four_year_college_pathway": 37,
             "life_history_four_year_college_interruption_detail": 14,
             "life_history_masters_education_pathway": 20,
             "life_history_masters_education_interruption_detail": 14,
