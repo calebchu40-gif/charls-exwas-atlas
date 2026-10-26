@@ -15,6 +15,10 @@
 - Rebuilt the audited catalogue and public static metadata with the documented `--finalize-only` pipeline. The site now links the 2011 heating record to the original DOC and preserves the item wording; public payload validation passed and all 92 analysis locks still match their triage register. Candidate-pair counts remain metadata co-availability only (2011: 146,780; 2013: 142,774; 2015: 143,854; 2018: 106,204; 2020: 21,630), not sample-size or model results.
 - No respondent-level data were read, no model was run, and no association results were added; the formal association result count remains zero.
 
+# 2026-10-27 Bump the housing metadata cache key
+
+- Increased the cache-busting query version for `food_environment_v1.json` so browsers fetch the newly reviewed 2011 heating-source text instead of retaining the prior cached payload.
+
 # 2026-10-27 Record autonomous execution checkpoint
 
 - Re-ran the metadata-only Wave 1 intake preflight; all four required official inputs are still missing/ambiguous. The report remains in protected local storage. No participant values were read and no model was fit.

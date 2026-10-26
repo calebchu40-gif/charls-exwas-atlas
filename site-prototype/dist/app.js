@@ -29,7 +29,7 @@ const moodItemsLoaded=deferJson('./mood_items_v1.json?v=2','moodConcepts');
 const cognitionItemsLoaded=deferJson('./cognition_items_v1.json?v=2','cognitionConcepts');
 const behaviorExposuresLoaded=deferJson('./behavior_exposures_v1.json?v=4','behaviorExposures');
 const healthSymptomsLoaded=deferJson('./health_symptoms_v1.json?v=3','healthSymptoms');
-const foodEnvironmentLoaded=deferJson('./food_environment_v1.json?v=4','foodEnvironment');
+const foodEnvironmentLoaded=deferJson('./food_environment_v1.json?v=5','foodEnvironment');
 const workExposuresLoaded=deferJson('./work_exposures_v1.json?v=3','workExposures');
 const communityExposuresLoaded=deferJson('./community_exposures_v1.json?v=4','communityExposures');
 const socialExposuresLoaded=deferJson('./social_exposures_v1.json?v=4','socialExposures');
