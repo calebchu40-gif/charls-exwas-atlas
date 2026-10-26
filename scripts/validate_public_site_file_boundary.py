@@ -41,8 +41,11 @@ BLOCKED_SUFFIXES = {
 
 
 def main() -> int:
-    site_dir = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_SITE_DIR
-    site_dir = site_dir.resolve()
+    requested_site_dir = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_SITE_DIR
+    if requested_site_dir.is_symlink():
+        print("Public site directory must not be a symbolic link.", file=sys.stderr)
+        return 1
+    site_dir = requested_site_dir.resolve()
     if not site_dir.is_dir():
         print(f"Public site directory does not exist: {site_dir}", file=sys.stderr)
         return 2
