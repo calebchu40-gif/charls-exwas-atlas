@@ -4,7 +4,7 @@ This audit records questionnaire wording, response structure and target level fo
 
 ## Heating and gas availability
 
-The 2011–2020 housing catalogue source-reviews residential heating availability and coal/natural-gas supply wave by wave. Heating-source response routes differ by wave. The 2018 questionnaire and Codebook differ in their heating-source label for code 8. In 2020, the questionnaire asks whether XFinancialResp's house has heating, while the Codebook label for I019 is “Centralized Heating”; both source representations are retained. These are household/residence context measures, not fuel use or pollutant dose.
+The 2011–2020 housing catalogue source-reviews residential heating availability and coal/natural-gas supply wave by wave. The official August 2011 baseline household questionnaire (read from a read-only Word rendering of the original DOC, printed p. 182) and the 2018 questionnaire both define the availability item as heating facilities excluding earth-heating systems (土暖气) and heating-capable air conditioners. For 2011–2018, heating-source response routes differ by wave: an affirmative heating-availability response skips the source item, while a negative response routes to it. The 2018 questionnaire and Codebook differ in their heating-source label for code 8. In 2020, the questionnaire asks whether XFinancialResp's house has heating, while the Codebook label for I019 is “Centralized Heating”; both source representations are retained. These are household/residence context measures, not fuel use or pollutant dose.
 
 ## Water and air-cleaner items
 
@@ -38,4 +38,4 @@ The public catalogue displays response labels and route caveats only. Questionna
 
 ## Source files
 
-Wave-specific English questionnaire and Codebook extracts are in `sources_official/`. The 2011 discrepancy is checked against both `CHARLS_2011_Baseline_Questionnaire_official_extracted.txt` and `CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt`, plus `CHARLS_2011_Codebook_extracted.txt`. The incremental propagation script is `scripts/apply_housing_context_source_review.py`.
+Wave-specific English questionnaire and Codebook extracts are in `sources_official/`. The exact 2011 I020 Chinese parenthetical is verified against a read-only Word rendering of `CHARLS_2011_Baseline_Household_Questionnaire.doc` because its text extraction corrupts Chinese; the 2013 follow-up PDF is excluded as 2011 evidence. Other wave distinctions are checked against their wave-specific questionnaires and Codebooks. The incremental propagation script is `scripts/apply_housing_context_source_review.py`.

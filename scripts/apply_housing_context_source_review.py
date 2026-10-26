@@ -63,7 +63,7 @@ CONCEPT_CAVEATS = {
     ),
     "residential_heating": (
         "Residence-level heating-availability candidate. Preserve questionnaire-specific wording and "
-        "routes: 2011/2018 explicitly exclude self-made heating and heating-capable AC, and 2011–2018 "
+        "routes: 2011/2018 explicitly exclude earth-heating systems (土暖气) and heating-capable AC, and 2011–2018 "
         "heating-source routing differs from the 2020 item structure. The 2020 Codebook calls i019 "
         "Centralized Heating, while its questionnaire asks whether XFinancialResp's house has heating; "
         "retain both source label and question wording. Not a heating-energy or pollution-dose measure. "
@@ -141,8 +141,10 @@ FIELD_NOTES = {
         "2020": "Official questionnaire/Codebook reviewed: asks whether XFinancialResp's house has coal-gas or natural-gas supply; preserve 1=Yes/2=No. Availability is not actual fuel use."
     },
     "residential_heating": {
-        wave: "Official questionnaire/Codebook reviewed. The availability item and heating-source routes vary by wave; see the source audit and retain the distinct source fields."
-        for wave in ("2011", "2013", "2015", "2018")
+        "2011": "Official August 2011 baseline household questionnaire (read-only Word rendering, printed p. 182) and Codebook reviewed: asks whether the residence has heating facilities, excluding earth-heating systems and heating-capable air conditioners; Yes skips to I022 and No proceeds to I021. This is facility availability, not individual heating use or dose.",
+        "2013": "Official questionnaire/Codebook reviewed. The availability item and heating-source routes vary by wave; see the source audit and retain the distinct source fields.",
+        "2015": "Official questionnaire/Codebook reviewed. The availability item and heating-source routes vary by wave; see the source audit and retain the distinct source fields.",
+        "2018": "Official questionnaire/Codebook reviewed: asks whether the residence has heating, excluding earth-heating systems and heating-capable air conditioners; Yes skips to I022_W4 and No proceeds to I021_W4. This is facility availability, not individual heating use or dose.",
     } | {
         "2020": "Official questionnaire/Codebook reviewed: questionnaire asks whether XFinancialResp's house has heating; Codebook label says Centralized Heating. Preserve this wording discrepancy; do not silently narrow the questionnaire meaning."
     },
@@ -208,6 +210,12 @@ FIELD_VALUE_LABELS = {
 
 
 def source_paths(wave: str, concept_id: str = "") -> str:
+    if concept_id == "residential_heating" and wave == "2011":
+        return (
+            "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; "
+            "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; "
+            f"sources_official/{CODEBOOKS[wave]}"
+        )
     questionnaire = QUESTIONNAIRES[wave]
     if concept_id == "running_water" and wave in {"2013", "2015"}:
         questionnaire = "CHARLS_2013_2015_housing_questionnaire_pages_extracted.txt"

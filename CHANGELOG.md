@@ -9,6 +9,12 @@
 - Recorded the `i020` to `i021` routing and provisional category labels. A read-only Word rendering of the official August 2011 baseline household questionnaire (printed pp. 182–183) confirms `i020` is a heating-facility indicator that excludes earth-heating systems and heating-capable air conditioners; the extracted-text copy corrupts this Chinese wording. The easily found CHARLS-hosted PDF is the 2013 follow-up and is excluded as 2011 evidence. Released-file coding, linkage, and denominator checks remain pending.
 - No respondent-level data were read, no model was run, and no result/site payload changed. See `audit/wave1_household_exposure_questionnaire_review_2026-10-27.md`.
 
+# 2026-10-27 Refine cross-wave heating metadata from the 2011 source document
+
+- Updated the public housing metadata wording from “self-made heating” to the questionnaire's exact scope, “earth-heating systems (土暖气),” for 2011/2018 and retained their distinct heating-source routes. Added the read-only Word-rendered 2011 source page to the audit trail; the 2013 follow-up PDF remains excluded as baseline evidence.
+- Rebuilt the audited catalogue and public static metadata with the documented `--finalize-only` pipeline. The site now links the 2011 heating record to the original DOC and preserves the item wording; public payload validation passed and all 92 analysis locks still match their triage register. Candidate-pair counts remain metadata co-availability only (2011: 146,780; 2013: 142,774; 2015: 143,854; 2018: 106,204; 2020: 21,630), not sample-size or model results.
+- No respondent-level data were read, no model was run, and no association results were added; the formal association result count remains zero.
+
 # 2026-10-27 Record autonomous execution checkpoint
 
 - Re-ran the metadata-only Wave 1 intake preflight; all four required official inputs are still missing/ambiguous. The report remains in protected local storage. No participant values were read and no model was fit.

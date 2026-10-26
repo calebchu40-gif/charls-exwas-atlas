@@ -712,7 +712,7 @@
     "concept_id": "residential_heating",
     "label": "Residential heating availability",
     "domain": "Housing environment",
-    "caveat": "Residence-level heating-availability candidate. Preserve questionnaire-specific wording and routes: 2011/2018 explicitly exclude self-made heating and heating-capable AC, and 2011–2018 heating-source routing differs from the 2020 item structure. The 2020 Codebook calls i019 Centralized Heating, while its questionnaire asks whether XFinancialResp's house has heating; retain both source label and question wording. Not a heating-energy or pollution-dose measure. See audit/housing_context_source_review_2026-10-24.md and audit/housing_fuel_source_review_2026-10-24.md.",
+    "caveat": "Residence-level heating-availability candidate. Preserve questionnaire-specific wording and routes: 2011/2018 explicitly exclude earth-heating systems (土暖气) and heating-capable AC, and 2011–2018 heating-source routing differs from the 2020 item structure. The 2020 Codebook calls i019 Centralized Heating, while its questionnaire asks whether XFinancialResp's house has heating; retain both source label and question wording. Not a heating-energy or pollution-dose measure. See audit/housing_context_source_review_2026-10-24.md and audit/housing_fuel_source_review_2026-10-24.md.",
     "source_fields": [
       {
         "wave": "2011",
@@ -720,8 +720,8 @@
         "module": "housing_characteristics",
         "source_label": "Residence Has Heating",
         "value_labels": "1=Yes; 2=No",
-        "note": "Official questionnaire/Codebook reviewed. The availability item and heating-source routes vary by wave; see the source audit and retain the distinct source fields. See audit/housing_context_source_review_2026-10-24.md.",
-        "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
+        "note": "Official August 2011 baseline household questionnaire (read-only Word rendering, printed p. 182) and Codebook reviewed: asks whether the residence has heating facilities, excluding earth-heating systems and heating-capable air conditioners; Yes skips to I022 and No proceeds to I021. This is facility availability, not individual heating use or dose. See audit/housing_context_source_review_2026-10-24.md.",
+        "source_document": "sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc; sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt; sources_official/CHARLS_2011_Codebook_extracted.txt"
       },
       {
         "wave": "2013",
@@ -747,7 +747,7 @@
         "module": "Housing",
         "source_label": "Heating",
         "value_labels": "1=Yes; 2=No",
-        "note": "Official questionnaire/Codebook reviewed. The availability item and heating-source routes vary by wave; see the source audit and retain the distinct source fields. See audit/housing_context_source_review_2026-10-24.md.",
+        "note": "Official questionnaire/Codebook reviewed: asks whether the residence has heating, excluding earth-heating systems and heating-capable air conditioners; Yes skips to I022_W4 and No proceeds to I021_W4. This is facility availability, not individual heating use or dose. See audit/housing_context_source_review_2026-10-24.md.",
         "source_document": "sources_official/CHARLS_2018_Questionnaire_extracted.txt; sources_official/CHARLS_2018_Codebook_extracted.txt"
       },
       {

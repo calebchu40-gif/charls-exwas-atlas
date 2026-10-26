@@ -6,7 +6,7 @@ Reviewed 2026-10-24 against each wave's official questionnaire and Codebook. Thi
 
 | Wave | Heating availability/source | Main cooking fuel | Source-backed distinctions |
 |---|---|---|---|
-| 2011 | `i020` / `i021` | `i022` | The baseline household questionnaire routes a Yes answer to heating availability (`i020`) past the heating-source item to `i022`; No proceeds to `i021`. The cooking-fuel categories are in the Codebook; the questionnaire does not provide a separate no-cooking response category. |
+| 2011 | `i020` / `i021` | `i022` | The baseline household questionnaire defines `i020` as heating facilities excluding earth-heating systems and heating-capable air conditioners. Yes skips the heating-source item to `i022`; No proceeds to `i021`. The cooking-fuel categories are in the Codebook; the questionnaire does not provide a separate no-cooking response category. |
 | 2013 | `i020` / `i021` | `i022` | The questionnaire repeats the heating route: Yes skips to cooking fuel, No asks the heating source. The 1–7 source categories match the documented earlier-wave categories. No explicit no-cooking category appears for cooking fuel. |
 | 2015 | `i020` / `i021` | `i022` | Same heating route and 1–7 categories. “Other, please specify” has a separate write-in field for heating and cooking; the write-in text is not a standardized exposure category. No explicit no-cooking option is listed. |
 | 2018 | `i020` / `i021_w4` | `i022_w4` | Heating availability Yes skips to cooking fuel; No asks the source. The questionnaire labels heating code 8 “Concentration heating,” while the Codebook labels it “Heating Provided”; retain this source-label discrepancy. Cooking explicitly includes code 8 “Do not cook.” |
@@ -24,7 +24,7 @@ The official Codebooks list the heating-source categories for Waves 1–3 as 1 S
 
 ## Official sources
 
-- `sources_official/CHARLS_2011_Baseline_Household_Questionnaire_extracted.txt` and `sources_official/CHARLS_2011_Codebook_extracted.txt` (Housing, `I020`–`I022`).
+- `sources_official/CHARLS_2011_Baseline_Household_Questionnaire.doc` (read-only Word rendering, printed pp. 182–183), its text search copy, and `sources_official/CHARLS_2011_Codebook_extracted.txt` (Housing, `I020`–`I022`). The text search copy corrupts the Chinese I020 parenthetical; use the original DOC rendering for its exact wording.
 - `sources_official/CHARLS_2013_Questionnaire_extracted.txt` and `sources_official/CHARLS_2013_Codebook_extracted.txt` (Housing Characteristics, `I020`–`I022`).
 - `sources_official/CHARLS_2015_Questionnaire_extracted.txt` and `sources_official/CHARLS_2015_Codebook_extracted.txt` (Housing Characteristics, `I020`–`I022`, including separate other-write-in fields).
 - `sources_official/CHARLS_2018_Questionnaire_extracted.txt` and `sources_official/CHARLS_2018_Codebook_extracted.txt` (`I020`, `I021_W4`, `I022_W4`). The questionnaire/Codebook wording difference for heating code 8 is preserved, not resolved by assumption.
