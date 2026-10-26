@@ -1,8 +1,8 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-26）
 
-**当前目录规模：**常规五波E/P候选目录已建立 1,625 个去重概念ID、8,341 条概念—源字段映射；每条E/P字段目录行均有关联的候选概念ID。2014 Life History 已部署目录含192个概念组、6,098条映射（E 6,037、P 61）。这些是候选目录计数，不代表最终可分析变量、实际样本量或统计结果。
+**当前目录规模：**常规五波E/P候选目录已建立 1,625 个去重概念ID、8,341 条概念—源字段映射；每条E/P字段目录行均有关联的候选概念ID。2014 Life History 本地目录含195个概念组、6,103条映射（E 6,042、P 61）；最近一次公开部署仍为 app v190 / JSON v56，新增5条本人敏感背景字段待发布。这些是候选目录计数，不代表最终可分析变量、实际样本量或统计结果。
 
-**当前线上版本：**CHARLS ExWAS Atlas已公开部署：[网站入口](https://calebchu40-gif.github.io/charls-exwas-atlas/)。当前线上为 app v190 / Life History JSON v56，含192个概念组、6,098条映射；Deploy #322 成功且首页、JSON均HTTP 200，GitHub Validate #643通过。最近三批增加子女婚姻背景126字段、领养来源4字段、参军/下乡类别53字段；对应精确年份区间继续排除。正式关联模型仍为0。
+**当前线上版本：**CHARLS ExWAS Atlas已公开部署：[网站入口](https://calebchu40-gif.github.io/charls-exwas-atlas/)。当前线上仍为 app v190 / Life History JSON v56（192组、6,098条）；本地待发布版本已增至195组、6,103条（E 6,042、P 61），包含5条本人敏感背景字段。Deploy #322 与 Validate #643 是上一公开版本的验证记录。最近三批增加子女婚姻背景126字段、领养来源4字段、参军/下乡类别53字段；对应精确年份区间继续排除。正式关联模型仍为0。
 
 **最新线上扩展（提交 `3d6a0a4`，app v139）：**官方2014问卷C5–C5f家庭成分题核对到WEALTHHISTORY模块，新增1个年龄受限的历史家庭背景候选概念、189条选项字段映射；七种本人/亲属问卷形式均保留，受访者题仅问80岁及以上人群。`FAMILYINFORMATION:c5`是另一条饥荒逃荒题，按模块+字段码区分。Life History专题现为36组、993条字段（E 965、P 28）；线上JSON已核验。字段覆盖表和审计见[`audit/life_history_historical_family_class_coverage_2014_v1.csv`](audit/life_history_historical_family_class_coverage_2014_v1.csv)、[`audit/life_history_historical_family_class_review_2026-10-26.md`](audit/life_history_historical_family_class_review_2026-10-26.md)。529项测试、公开包、92条分析锁、前端语法与差异检查均通过。
 

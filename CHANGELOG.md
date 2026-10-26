@@ -1,3 +1,10 @@
+# 2026-10-26 Add respondent-specific sensitive social-context metadata (local, pending publication)
+
+- Official P022–P024 questionnaire routes and Codebook identities distinguish five respondent-specific fields from spouse/partner slots. Added three metadata candidate concepts for respondent party membership, minority status/ethnicity, and religious affiliation.
+- Spouse/partner and child sensitive-identity fields remain deferred. The 2014 Life History wave has no survey weight; these fields are metadata candidates only, with no individual values or frequencies published.
+- Local catalog rebuild: 195 concepts / 6,103 mappings (E 6,042, P 61); 1,251 mapped DEMOGRAPHICBACKGROUNDS fields and 199 deferred sensitive-relative fields. Public app v190 / JSON v56 is unchanged pending review and deployment.
+- Audit: `audit/life_history_respondent_sensitive_context_review_2026-10-26.md`.
+
 # 2026-10-26 Add offspring military-service and sent-down category context
 
 - Reviewed official Life History C040/C041 child-slot menus and questionnaire routes. Added 26 military-service and 27 sent-down/not-applicable option fields as two family-level historical-context candidates; exact start/end year fields (72) remain excluded. C041's agricultural-hukou not-applicable category remains distinct from none.
