@@ -26,8 +26,8 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (184, 5915))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 5854, "p": 61})
+        self.assertEqual((len(groups), len(rows)), (189, 6041))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 5980, "p": 61})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)

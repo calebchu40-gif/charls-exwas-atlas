@@ -65,6 +65,71 @@ GROUPS = [
         "caveat": "This is the respondent's report about offspring, not respondent employment, a child mortality endpoint, or a population mortality measure. Work/school/deceased categories route to different follow-up items; do not treat structural blanks as No, combine child slots as independent observations, infer a death date, or publish relative identities or values. The 2014 Life History release has no survey weight and is outside regular-wave weighted pair scans.",
     },
     {
+        "concept_id": "life_history_offspring_marital_history_context",
+        "label": "Offspring ever-married status context",
+        "role": "e",
+        "modules": ["DEMOGRAPHICBACKGROUNDS"],
+        "domain": "intergenerational and family social context",
+        "patterns": [r"c034_(?:[1-9]|1[0-8])_"],
+        "question": "C034",
+        "unit": "reported ever-married status for repeated child slots",
+        "values": "Yes; no.",
+        "status": "official questionnaire age/eligibility and marriage-year follow-up route, and Codebook child-slot fields reviewed; year fields excluded",
+        "caveat": "Reports whether an eligible offspring had ever married; the questionnaire asks C034 only for children born before December 12, 1998, deceased children who died after age 12, or children with missing birth date. C034_1 marriage-year fields are excluded. This is family context, not respondent marital status or a direct environmental measure; preserve child-slot and eligibility routes, do not infer from routed blanks, and do not publish child identities or values. The 2014 Life History release has no survey weight and is outside regular-wave weighted pair scans.",
+    },
+    {
+        "concept_id": "life_history_offspring_spouse_age_difference_context",
+        "label": "Offspring spouse age difference at first marriage context",
+        "role": "e",
+        "modules": ["DEMOGRAPHICBACKGROUNDS"],
+        "domain": "intergenerational and family social context",
+        "patterns": [r"c035_(?:[1-9]|1[0-8])_", r"c035_[23]_(?:[1-9]|1[0-8])_"],
+        "question": "C035",
+        "unit": "reported years older/younger or same-age category for child spouse at first marriage",
+        "values": "Reported spouse birth-year category; years older than the child; years younger than the child; same age. Exact spouse birth-year values are excluded.",
+        "status": "official questionnaire conditional route and Codebook response-component fields reviewed; exact birth-year fields excluded",
+        "caveat": "Asked only after C034 indicates the child has married. The source has separate older/younger/same-age components and an exact spouse birth-year component; only the relative-age components are mapped, without deriving a single age or age gap. This is offspring-spouse context, not respondent age or a direct environmental measure; retain conditional missingness and child slots, and do not publish identities or values. The 2014 Life History release has no survey weight and is outside regular-wave weighted pair scans.",
+    },
+    {
+        "concept_id": "life_history_offspring_spouse_education_context",
+        "label": "Offspring spouse education at first marriage context",
+        "role": "e",
+        "modules": ["DEMOGRAPHICBACKGROUNDS"],
+        "domain": "intergenerational and family socioeconomic context",
+        "patterns": [r"c036_(?:[1-9]|1[0-8])_"],
+        "question": "C036",
+        "unit": "highest completed education category of child spouse at the child's first marriage",
+        "values": "No formal education; literacy without primary completion; sishu/home school; elementary; middle; high; vocational; two/three-year college; four-year college; master's; doctoral degree.",
+        "status": "official questionnaire conditional marriage route, category labels, and Codebook repeated child-slot fields reviewed",
+        "caveat": "Asked only after the child is reported ever married and concerns the spouse at the child's first marriage, not the respondent or the respondent's own spouse. Preserve the child-slot and conditional route; do not aggregate spouse slots or treat routed missingness as a category. No relative identities or values are published. The 2014 Life History release has no survey weight and is outside regular-wave weighted pair scans.",
+    },
+    {
+        "concept_id": "life_history_offspring_spouse_hukou_context",
+        "label": "Offspring spouse hukou at first marriage context",
+        "role": "e",
+        "modules": ["DEMOGRAPHICBACKGROUNDS"],
+        "domain": "intergenerational and family socioeconomic context",
+        "patterns": [r"c037a1_(?:[1-9]|1[0-8])_"],
+        "question": "C037a1",
+        "unit": "reported hukou category of child spouse at the child's first marriage",
+        "values": "Agricultural hukou; non-agricultural hukou; unified residence hukou.",
+        "status": "official questionnaire conditional marriage route, three category labels, and Codebook repeated child-slot fields reviewed",
+        "caveat": "Asked only for children in the specified marriage-history route and refers to their spouse at first marriage. This is coarse family/social context, not a residential location or environmental exposure. Preserve conditional missingness and child slots; do not geocode, infer current hukou, or publish identities or values. The 2014 Life History release has no survey weight and is outside regular-wave weighted pair scans.",
+    },
+    {
+        "concept_id": "life_history_offspring_first_marriage_continuity_context",
+        "label": "Offspring first-marriage relationship continuity context",
+        "role": "e",
+        "modules": ["DEMOGRAPHICBACKGROUNDS"],
+        "domain": "intergenerational and family social context",
+        "patterns": [r"c038a1_(?:[1-9]|1[0-8])_"],
+        "question": "C038a1",
+        "unit": "reported whether child remains with the spouse from the child's first marriage",
+        "values": "Yes; no (relationship breakdown/divorce year follow-up).",
+        "status": "official questionnaire distinction between temporary separation and relationship breakdown, conditional route, and Codebook child-slot fields reviewed; year fields excluded",
+        "caveat": "Asked only after the child is reported ever married; the questionnaire says temporary separation for work, study, or caregiving does not count as a breakup. C038a1_1 relationship-breakdown/divorce-year fields are excluded. This is a family-context report, not a respondent outcome or divorce-date measure; preserve routing, do not infer from blanks, and do not publish relative identities or values. The 2014 Life History release has no survey weight and is outside regular-wave weighted pair scans.",
+    },
+    {
         "concept_id": "life_history_spouse_partner_education",
         "label": "Highest education of spouse or partner in the Life History roster",
         "role": "e",
@@ -2944,9 +3009,9 @@ def build_demographic_backgrounds_coverage(rows: list[dict]) -> list[dict]:
         elif re.fullmatch(r"(?:c037s\d+|c038_1_\d+_|c038s\d+|c039_1_\d+_|c039s\d+)", code, re.I):
             disposition, concept_id = "deferred_sensitive_relative_identity", ""
             rationale = "Child-specific political affiliation, ethnicity/minority status, or religious belief. These sensitive relative attributes are held out of the public E/P map pending separate data-minimization, ethics, release and disclosure review; no values or frequencies are published."
-        elif re.fullmatch(r"(?:c001a_\d+_|c001a_[12]_\d+_|c003_\d+_|c010_[12]_\d+_|c010_\d+_|c014_[12]_\d+_|c014_\d+_|c014a_1_\d+_|c019_\d+_|c021_[12]_\d+_|c021_\d+_|c023_[12]_\d+_|c023_\d+_|child(?:year|month)_\d+_)", code, re.I):
+        elif re.fullmatch(r"(?:c001a_\d+_|c001a_[12]_\d+_|c003_\d+_|c010_[12]_\d+_|c010_\d+_|c014_[12]_\d+_|c014_\d+_|c014a_1_\d+_|c019_\d+_|c021_[12]_\d+_|c021_\d+_|c023_[12]_\d+_|c023_\d+_|c034_1_\d+_|c035_1_\d+_|c038a1_1_\d+_|child(?:year|month)_\d+_)", code, re.I):
             disposition, concept_id = "excluded_child_date_component", ""
-            rationale = "Child birth/death or adoption year/month component. These relative-level dates are not required for a respondent E/P metadata catalog and may increase disclosure risk; do not publish participant dates or derive child age/event chronology."
+            rationale = "Child birth/death/adoption or offspring-marriage timeline year/month component. Exact relative-level dates are not required for a respondent E/P metadata catalog and may increase disclosure risk; do not publish participant dates or derive child age/event chronology."
         elif re.fullmatch(r"(?:child(?:alive|cat|gender|finished|finisheds)_\d+_|c012_\d+_|c020_\d+_|c014as\d+)", code, re.I):
             disposition, concept_id = "c_only_offspring_roster_and_adoption_status", ""
             rationale = "Child roster category, sex, alive/route status, or adoption-out roster indicator. This is offspring/roster metadata rather than a respondent phenotype; no child-slot identity, responses or counts are published or derived."
@@ -2955,7 +3020,7 @@ def build_demographic_backgrounds_coverage(rows: list[dict]) -> list[dict]:
             rationale = "Offspring education, current schooling grade, or work/school status. These are child characteristics, not the CHARLS respondent's phenotype or education exposure; retain as non-E/P provenance only."
         elif re.fullmatch(r"(?:c034_\d+_|c034_1_\d+_|c035(?:_\d+){1,2}_|c036_\d+_|c037a1_\d+_|c038a1_(?:1_)?\d+_)", code, re.I):
             disposition, concept_id = "c_only_offspring_marital_context", ""
-            rationale = "Offspring's marriage and spouse age/education/hukou or relationship-continuity history. The referent is the respondent's child/child's spouse, not the respondent; preserve as non-E/P source metadata pending a defined family-context estimand."
+            rationale = "Offspring's marriage/spouse information outside the specifically mapped status and context items. The referent is the respondent's child/child's spouse, not the respondent; keep as non-E/P source metadata unless a separate family-context estimand is justified."
         elif re.fullmatch(r"(?:c040(?:_[12]_\d+_|s\d+)|c041(?:_[12]_\d+_|s\d+))", code, re.I):
             disposition, concept_id = "c_only_offspring_historical_experience", ""
             rationale = "Military-service or sent-down-to-countryside history of the respondent's child. This is a relative's historical experience, not the respondent's own exposure; no participant values, dates or counts are included."

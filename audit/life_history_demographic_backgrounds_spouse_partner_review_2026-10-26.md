@@ -32,16 +32,18 @@ The generated ledger assigns exactly one disposition to all 1,920 unique Codeboo
 
 | Disposition | Fields |
 | --- | ---: |
-| Mapped E candidate metadata | 1,063 |
-| C-only interview, roster, and family-context metadata | 440 |
+| Mapped E candidate metadata | 1,189 |
+| C-only interview, roster, and family-context metadata | 260 |
 | Deferred sensitive relative-identity fields | 204 |
-| Excluded child date components | 167 |
+| Excluded child date components | 221 |
 | Excluded child-parent linkage fields | 18 |
 | Excluded child roster-order keys | 12 |
 | Excluded relative birth-date fields | 12 |
 | Excluded linkage keys | 3 |
 | Excluded release metadata | 1 |
 | **Total** | **1,920** |
+
+The current local catalog also contains five offspring first-marriage context candidates (126 fields); 54 exact relative timeline fields remain excluded. Full routing decisions are in `life_history_offspring_marital_context_review_2026-10-26.md`.
 
 The three offspring-context candidates cover 36 official fields: C012a/C020a completed education; C012c/C020c current schooling grade; and C013/C020b work/school/neither/reported-deceased status. They are family-context constructs, not the respondent's own education/employment or participant-level child outcomes. Item routes and separate biological/adopted-child families are preserved; no roster values, names, dates, frequencies, or derived child counts are published. See the current generated ledger `life_history_demographic_backgrounds_full_coverage_2014_v1.csv`.
 

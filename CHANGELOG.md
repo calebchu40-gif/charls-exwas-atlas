@@ -1,3 +1,10 @@
+# 2026-10-26 Add offspring first-marriage family-context candidates
+
+- Reviewed official Life History questionnaire pages 23–25 and Codebook field identities for C034–C038a1. Added five family-context concepts (126 fields): offspring ever-married status; spouse relative-age response at first marriage; spouse education and hukou at first marriage; and continuity with the first spouse.
+- Excluded 54 exact relative timeline fields: marriage year, spouse birth year, and relationship-breakdown/divorce year. Eligibility, conditional routes, child referents, and routed missingness are documented; no individual values, frequencies, names, or linkage keys are published.
+- Local Life History catalog is now 189 concepts / 6,041 mappings (E 5,980, P 61), with 1,189/1,920 DEMOGRAPHICBACKGROUNDS fields mapped. Local assets app v188 / JSON v54 await publication.
+- Source and interpretation audit: `audit/life_history_offspring_marital_context_review_2026-10-26.md`.
+
 # 2026-10-26 Add offspring schooling and work-status family-context candidates
 
 - Mapped official 2014 Life History C012a/C012c/C013 and adopted-child C020a/C020c/C020b item families as three separate intergenerational family-context candidates (36 source fields). They are not respondent education/employment or clinical outcomes; repeated child slots are preserved, routed blanks are not interpreted as No, and no individual responses, counts, or identities are published.
