@@ -26,8 +26,8 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (35, 804))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 776, "p": 28})
+        self.assertEqual((len(groups), len(rows)), (36, 993))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 965, "p": 28})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
@@ -55,6 +55,9 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(len(by_concept["life_history_parental_loss"]), 6)
         self.assertEqual(len(by_concept["life_history_parental_remarriage_stepfamily"]), 24)
         self.assertEqual(len(by_concept["life_history_nonbiological_parent_education"]), 4)
+        self.assertEqual(len(by_concept["life_history_historical_family_class_background"]), 189)
+        self.assertEqual({row["module"] for row in by_concept["life_history_historical_family_class_background"]}, {"WEALTHHISTORY"})
+        self.assertTrue(all(row["code"] != "c5" for row in by_concept["life_history_historical_family_class_background"]))
         self.assertNotIn("b4_1_1_", {row["code"] for row in rows})
         self.assertFalse(any(row["code"].startswith("b2_4") for row in rows))
         self.assertEqual(len({(row["module"], row["code"]) for row in rows}), len(rows))
@@ -75,6 +78,13 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(len(coverage), 47)
         self.assertEqual(sum(row["disposition"] == "mapped_candidate" for row in coverage), 39)
         self.assertEqual(sum(row["disposition"] != "mapped_candidate" for row in coverage), 8)
+
+    def test_historical_family_class_fields_map_exhaustively_without_frequencies(self):
+        rows, _ = builder.build()
+        coverage = builder.build_historical_family_class_coverage(rows)
+        self.assertEqual(len(coverage), 189)
+        self.assertTrue(all(row["disposition"] == "mapped_candidate" for row in coverage))
+        self.assertEqual(len({row["code"] for row in coverage}), 189)
 
 
 if __name__ == "__main__":

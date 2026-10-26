@@ -239,6 +239,19 @@ GROUPS = [
         "caveat": "Asked for the household in which the respondent lived the longest before age 17 when family circumstances differed. Not a numeric income or wealth measure.",
     },
     {
+        "concept_id": "life_history_historical_family_class_background",
+        "label": "Family class background in the 1950s-1970s",
+        "role": "e",
+        "modules": ["WEALTHHISTORY"],
+        "domain": "historical family socioeconomic and political context",
+        "patterns": [r"c5(?:[a-f])?s\d+"],
+        "question": "C5/C5a-C5f",
+        "unit": "27 option-specific fields for respondent, parents, grandparents and foster parents",
+        "values": "The questionnaire lists historical family-background categories and a none option. Each field is an option slot within a multi-select question; preserve respondent/relative forms separately and do not treat option slots as separate exposures.",
+        "status": "official questionnaire age and relative-specific routes reviewed; multi-select storage and authorized-release codes require QA",
+        "caveat": "Only respondents aged 80 and over (born before December 1934 according to the questionnaire) are asked the respondent C5 item. Parent/grandparent and foster-parent follow-ups have conditional routes. These are historical family social/political classifications, not current household wealth, individual income, or a measured environmental dose. Questionnaire-only write-in text is not ingested; blanks are not interpreted as No.",
+    },
+    {
         "concept_id": "life_history_childhood_food_insecurity",
         "label": "Childhood household food insecurity",
         "role": "e",
@@ -517,7 +530,7 @@ def build() -> tuple[list[dict], list[dict]]:
             }
             rows.append(row)
             summary[-1]["source_fields"].append(row)
-            expected[module].add(code)
+            expected.setdefault(module, set()).add(code)
 
     codes = [(x["module"], x["code"]) for x in rows]
     if len(codes) != len(set(codes)):
@@ -585,10 +598,31 @@ def build_parent_module_coverage(rows: list[dict]) -> list[dict]:
     return ledger
 
 
+def build_historical_family_class_coverage(rows: list[dict]) -> list[dict]:
+    """Confirm every structured 2014 C5 family-class option field maps exactly once."""
+    pattern = re.compile(r"c5(?:[a-f])?s\d+", re.I)
+    mapped = {row["code"]: row for row in rows if row["module"] == "WEALTHHISTORY"}
+    fields = read_codebook_fields()
+    ledger: list[dict] = []
+    for (module, code), label in sorted(fields.items()):
+        if module != "WEALTHHISTORY" or not pattern.fullmatch(code):
+            continue
+        row = mapped.get(code)
+        if not row or row["concept_id"] != "life_history_historical_family_class_background":
+            raise ValueError(f"Historical family-class Codebook field is not mapped: {code}")
+        ledger.append({"module": module, "code": code, "codebook_label": label,
+                       "disposition": "mapped_candidate", "concept_id": row["concept_id"],
+                       "questionnaire_item": row["questionnaire_item"],
+                       "questionnaire_source": row["questionnaire_source"],
+                       "codebook_source": row["codebook_source"]})
+    return ledger
+
+
 def main() -> None:
     rows, concepts = build()
     sibling_coverage = build_sibling_module_coverage(rows)
     parent_coverage = build_parent_module_coverage(rows)
+    family_class_coverage = build_historical_family_class_coverage(rows)
     AUDIT.mkdir(parents=True, exist_ok=True)
     DIST.mkdir(parents=True, exist_ok=True)
     csv_path = AUDIT / "life_history_exposure_crosswalk_v1.csv"
@@ -608,15 +642,22 @@ def main() -> None:
         writer = csv.DictWriter(f, fieldnames=list(parent_coverage[0]), extrasaction="ignore")
         writer.writeheader()
         writer.writerows(parent_coverage)
+    family_class_coverage_path = AUDIT / "life_history_historical_family_class_coverage_2014_v1.csv"
+    with family_class_coverage_path.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=list(family_class_coverage[0]), extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(family_class_coverage)
     print(json.dumps({"concepts": len(concepts), "field_rows": len(rows),
                       "by_role": {role: sum(x["role"] == role for x in rows) for role in ("e", "p")},
                       "by_module": {module: sum(x["module"] == module for x in rows)
                                     for module in sorted({x["module"] for x in rows})},
                       "sibling_module_fields_dispositioned": len(sibling_coverage),
                       "parent_module_fields_dispositioned": len(parent_coverage),
+                      "historical_family_class_fields_mapped": len(family_class_coverage),
                       "csv": str(csv_path), "json": str(json_path),
                       "sibling_coverage": str(coverage_path),
-                      "parent_coverage": str(parent_coverage_path)}, ensure_ascii=False))
+                      "parent_coverage": str(parent_coverage_path),
+                      "family_class_coverage": str(family_class_coverage_path)}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas 项目范围与剩余工期（2026-10-25修订）
 
+## 2026-10-26 age-restricted historical family-class item
+
+对照官方2014 Life History问卷和Codebook，将C5–C5f七种亲属形式的189个WEALTHHISTORY选项字段映射到1个E候选概念。受访者C5只问80岁及以上；亲属分支保留各自条件路由。与FAMILYINFORMATION模块中代码相似的饥荒逃荒c5严格区分。Life History目录本地增至36概念组、993字段行（E 965、P 28）；覆盖台账及解释见[`life_history_historical_family_class_coverage_2014_v1.csv`](life_history_historical_family_class_coverage_2014_v1.csv)和[`life_history_historical_family_class_review_2026-10-26.md`](life_history_historical_family_class_review_2026-10-26.md)。本批待全套验证和部署。
+
 ## 2026-10-26 parent/caregiver module extension (local)
 
 官方2014问卷A模块复核新增3个亲代/抚养人概念和34条字段映射；47个结构化Codebook字段全部有候选映射或明确暂缓去向（8条身份/出生年字段暂缓）。Life History目录现为35概念组、804字段行（E 776、P 28），Pages线上JSON已核验。亲代死亡、离婚后再婚与丧偶后再婚分别保留；字段级台账及解释见[`life_history_parent_module_coverage_2014_v1.csv`](life_history_parent_module_coverage_2014_v1.csv)和[`life_history_parent_module_review_2026-10-26.md`](life_history_parent_module_review_2026-10-26.md)。
