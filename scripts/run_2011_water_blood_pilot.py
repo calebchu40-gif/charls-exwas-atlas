@@ -280,8 +280,14 @@ def main(argv: list[str] | None = None) -> None:
         raise RuntimeError(f"Expected svy {EXPECTED_SVY}, found {getattr(svy, '__version__', 'unknown')}")
     if not PRIVATE.is_dir():
         raise FileNotFoundError("Protected local CHARLS workspace not found")
-    from require_verified_wave1_frame import require_verified_wave1_frame
+    from require_verified_wave1_frame import (
+        require_verified_wave1_frame,
+        require_wave1_analysis_readiness,
+    )
     source_provenance = require_verified_wave1_frame(PRIVATE, DATA)
+    analysis_readiness = require_wave1_analysis_readiness(
+        PRIVATE, source_provenance, "water_biomarker_pilot"
+    )
     OUT.mkdir(parents=True, exist_ok=True)
     analytes = read_analytes()
     data = read_input(analytes)
@@ -345,6 +351,7 @@ def main(argv: list[str] | None = None) -> None:
         "multiplicity": "M1 family fixed before fitting at K=15; report BY-FDR and Bonferroni; M0 is descriptive only.",
         "data_sha256": input_hash,
         "verified_source_provenance": source_provenance,
+        "analysis_readiness": analysis_readiness,
         "age_candidate_sha256": age_hash,
         "psu_map_sha256": psu_hash,
         "code_commit": subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.strip(),

@@ -1,0 +1,41 @@
+{
+  "status": "not_reviewed",
+  "source_manifest_id": "",
+  "prepared_output_sha256": "",
+  "analysis_plan_id": "pilot_2011_water_biomarker_plan_and_gates_2026-10-26",
+  "reviewer": "",
+  "reviewed_at": "",
+  "public_release_status": "not_approved",
+  "gates": {
+    "official_source_identity": {
+      "status": "not_reviewed",
+      "evidence": ""
+    },
+    "sample_frame_and_denominators": {
+      "status": "not_reviewed",
+      "evidence": ""
+    },
+    "target_population_age_domain": {
+      "status": "not_reviewed",
+      "evidence": ""
+    },
+    "weight_and_nonresponse_eligibility": {
+      "status": "not_reviewed",
+      "evidence": ""
+    },
+    "final_psu_mapping": {
+      "status": "not_reviewed",
+      "evidence": ""
+    },
+    "variance_method_review": {
+      "status": "not_reviewed",
+      "evidence": "",
+      "method": "",
+      "limitations": ""
+    },
+    "frozen_analysis_plan": {
+      "status": "not_reviewed",
+      "evidence": ""
+    }
+  }
+}

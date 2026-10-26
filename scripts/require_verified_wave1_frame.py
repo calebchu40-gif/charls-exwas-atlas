@@ -25,6 +25,27 @@ ROLE_SOURCE_KEYS = {
     "weight": "weight",
     "blood": "blood",
 }
+REQUIRED_ANALYSIS_GATES = (
+    "official_source_identity",
+    "sample_frame_and_denominators",
+    "target_population_age_domain",
+    "weight_and_nonresponse_eligibility",
+    "final_psu_mapping",
+    "variance_method_review",
+    "frozen_analysis_plan",
+)
+ANALYSIS_PLANS = {
+    "water_biomarker_pilot": {
+        "filename": "wave1_water_biomarker_pilot.json",
+        "plan_id": "pilot_2011_water_biomarker_plan_and_gates_2026-10-26",
+        "additional_gates": (),
+    },
+    "household_environment_extension": {
+        "filename": "wave1_household_environment_extension.json",
+        "plan_id": "pilot_2011_water_biomarker_plan_and_gates_2026-10-26#household-environment-K105",
+        "additional_gates": ("pilot_success_and_reproducibility_review",),
+    },
+}
 
 
 def _load_json(path: Path, label: str) -> dict[str, Any]:
@@ -125,4 +146,55 @@ def require_verified_wave1_frame(
         "source_identity_status": current_review["source_identity_status"],
         "prepared_output_sha256": str(output["sha256"]),
         "survey_design_status": "still_requires_independent_review",
+    }
+
+
+def require_wave1_analysis_readiness(
+    private_root: Path,
+    source_provenance: dict[str, str],
+    analysis_plan: str,
+) -> dict[str, str]:
+    """Require a review record bound to the exact frame before pilot fitting.
+
+    This gate approves only an internal exploratory pilot. Public release is
+    always controlled by the separate disclosure-review workflow.
+    """
+    root = require_private_path(private_root)
+    if not root.is_relative_to(PRIVATE_ROOT.resolve()):
+        raise ValueError("Wave 1 readiness gate: root is outside protected storage")
+    plan = ANALYSIS_PLANS.get(analysis_plan)
+    if plan is None:
+        raise ValueError(f"Wave 1 readiness gate: unknown analysis plan {analysis_plan!r}")
+    path = root / "analysis_review" / plan["filename"]
+    review = _load_json(path, "Wave 1 analysis readiness review")
+    if review.get("status") != "approved_for_exploratory_pilot":
+        raise ValueError("Wave 1 readiness gate: no approval for internal exploratory pilot")
+    if review.get("source_manifest_id") != source_provenance.get("source_manifest_id"):
+        raise ValueError("Wave 1 readiness gate: source manifest binding does not match current frame")
+    if review.get("prepared_output_sha256") != source_provenance.get("prepared_output_sha256"):
+        raise ValueError("Wave 1 readiness gate: prepared-frame hash binding does not match current frame")
+    if review.get("analysis_plan_id") != plan["plan_id"]:
+        raise ValueError("Wave 1 readiness gate: approval is not bound to the frozen pilot plan")
+    if review.get("public_release_status") != "not_approved":
+        raise ValueError("Wave 1 readiness gate: pilot approval cannot authorize public release")
+    if not str(review.get("reviewer", "")).strip() or not str(review.get("reviewed_at", "")).strip():
+        raise ValueError("Wave 1 readiness gate: reviewer and review date are required")
+    gates = review.get("gates")
+    if not isinstance(gates, dict):
+        raise ValueError("Wave 1 readiness gate: required gate decisions are missing")
+    for gate in (*REQUIRED_ANALYSIS_GATES, *plan["additional_gates"]):
+        decision = gates.get(gate)
+        if not isinstance(decision, dict) or decision.get("status") != "passed":
+            raise ValueError(f"Wave 1 readiness gate: {gate} has not passed")
+        if not str(decision.get("evidence", "")).strip():
+            raise ValueError(f"Wave 1 readiness gate: {gate} has no evidence citation")
+    variance = gates["variance_method_review"]
+    if not str(variance.get("method", "")).strip() or not str(variance.get("limitations", "")).strip():
+        raise ValueError("Wave 1 readiness gate: variance method and limitations must be explicit")
+    return {
+        "status": review["status"],
+        "reviewer": review["reviewer"],
+        "reviewed_at": review["reviewed_at"],
+        "analysis_plan_id": review["analysis_plan_id"],
+        "public_release_status": "not_approved",
     }

@@ -16,6 +16,12 @@ Added a metadata-only analysis gate shared by the water/blood pilot and househol
 
 The validator reads JSON, Stata headers, ZIP inventories, and file bytes only. It does not read respondent-level values. It returns source provenance for the private run manifest but explicitly leaves survey-design review unresolved; source authentication is not an analysis approval.
 
+## Separate analysis-readiness approval
+
+Both model entry points now also require a reviewer-completed readiness file under the protected `analysis_review` directory. The water/blood pilot record must bind to the current source-manifest ID and prepared-table SHA-256, identify the frozen pilot plan, and show evidence for source identity, frame/denominators, age/target, weights/nonresponse, final PSU, variance method/limitations, and the frozen analysis plan. Approval only means permission to run the internal exploratory pilot; it must keep `public_release_status` at `not_approved`.
+
+The household-environment extension uses its own review file and additionally requires a documented pilot success/reproducibility review. It cannot be launched merely because the pilot's source/design checks passed; the prior pilot must first be reviewed as valid and reproducible. Empty templates are under `audit/templates/`; they are not approvals and should only be copied to protected storage after the evidence is assembled.
+
 ## Validation
 
 Synthetic tests verify that a legacy Wave 1 manifest without provenance is rejected and that a workspace outside protected storage is rejected. Existing `--help` and default-invocation guard tests still pass. No participant values were read and no model was run in this validation.
@@ -30,4 +36,4 @@ Only the validator code, synthetic tests, and this method note are stored in Git
 
 ## Synthetic code-path check added (2026-10-27)
 
-A fully synthetic fixture now exercises the positive metadata-validation path: it creates a test ZIP, three synthetic Stata headers, a synthetic intake manifest, and a synthetic prepared-table hash. The validator accepts this only as provenance-structure validation and returns `survey_design_status=still_requires_independent_review`. The test does not authenticate any real CHARLS source and contains no CHARLS participant data.
+A fully synthetic fixture exercises the positive provenance path: it creates a test ZIP, three synthetic Stata headers, a synthetic intake manifest, and a synthetic prepared-table hash. The validator accepts this only as provenance-structure validation and returns `survey_design_status=still_requires_independent_review`. Synthetic readiness tests check hash binding, unresolved variance review, and the extension-stage pilot review. None authenticates a real CHARLS source or contains CHARLS participant data.

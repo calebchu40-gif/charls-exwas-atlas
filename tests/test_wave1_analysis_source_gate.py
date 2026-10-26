@@ -14,10 +14,97 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from audit_2011_pilot_intake_metadata import ROLE_DOCUMENTS, ROLE_URLS  # noqa: E402
 from project_paths import PRIVATE_ROOT  # noqa: E402
 from prepare_charls_wave_tables import sha256_file  # noqa: E402
-from require_verified_wave1_frame import require_verified_wave1_frame  # noqa: E402
+from require_verified_wave1_frame import (  # noqa: E402
+    ANALYSIS_PLANS,
+    REQUIRED_ANALYSIS_GATES,
+    require_verified_wave1_frame,
+    require_wave1_analysis_readiness,
+)
 
 
 class Wave1AnalysisSourceGateTests(unittest.TestCase):
+    @staticmethod
+    def readiness_fixture(plan_key: str = "water_biomarker_pilot") -> dict:
+        gates = {
+            gate: {"status": "passed", "evidence": "Synthetic fixture only."}
+            for gate in REQUIRED_ANALYSIS_GATES
+        }
+        plan = ANALYSIS_PLANS[plan_key]
+        for gate in plan["additional_gates"]:
+            gates[gate] = {"status": "passed", "evidence": "Synthetic prior-pilot review."}
+        gates["variance_method_review"].update({
+            "method": "Synthetic PSU-only approximation",
+            "limitations": "Synthetic test; not an analysis recommendation.",
+        })
+        return {
+            "status": "approved_for_exploratory_pilot",
+            "source_manifest_id": "charls2011-synthetic-gate",
+            "prepared_output_sha256": "d" * 64,
+            "analysis_plan_id": plan["plan_id"],
+            "reviewer": "Synthetic reviewer",
+            "reviewed_at": "2026-10-27",
+            "public_release_status": "not_approved",
+            "gates": gates,
+        }
+
+    def test_analysis_readiness_is_bound_to_frame_and_never_approves_publication(self):
+        PRIVATE_ROOT.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(prefix="wave1_readiness_test_", dir=PRIVATE_ROOT) as temp:
+            root = Path(temp)
+            review_dir = root / "analysis_review"
+            review_dir.mkdir()
+            review = self.readiness_fixture()
+            review_path = review_dir / ANALYSIS_PLANS["water_biomarker_pilot"]["filename"]
+            review_path.write_text(json.dumps(review), encoding="utf-8")
+            provenance = {
+                "source_manifest_id": review["source_manifest_id"],
+                "prepared_output_sha256": review["prepared_output_sha256"],
+            }
+
+            passed = require_wave1_analysis_readiness(root, provenance, "water_biomarker_pilot")
+            self.assertEqual(passed["status"], "approved_for_exploratory_pilot")
+            self.assertEqual(passed["public_release_status"], "not_approved")
+
+            review["prepared_output_sha256"] = "e" * 64
+            review_path.write_text(json.dumps(review), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "prepared-frame hash binding"):
+                require_wave1_analysis_readiness(root, provenance, "water_biomarker_pilot")
+
+    def test_analysis_readiness_rejects_unreviewed_design_gate(self):
+        PRIVATE_ROOT.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(prefix="wave1_readiness_test_", dir=PRIVATE_ROOT) as temp:
+            root = Path(temp)
+            review_dir = root / "analysis_review"
+            review_dir.mkdir()
+            review = self.readiness_fixture()
+            review["gates"]["variance_method_review"]["status"] = "pending"
+            path = review_dir / ANALYSIS_PLANS["water_biomarker_pilot"]["filename"]
+            path.write_text(json.dumps(review), encoding="utf-8")
+            provenance = {
+                "source_manifest_id": review["source_manifest_id"],
+                "prepared_output_sha256": review["prepared_output_sha256"],
+            }
+            with self.assertRaisesRegex(ValueError, "variance_method_review has not passed"):
+                require_wave1_analysis_readiness(root, provenance, "water_biomarker_pilot")
+
+    def test_environment_extension_requires_separate_pilot_success_review(self):
+        PRIVATE_ROOT.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(prefix="wave1_readiness_test_", dir=PRIVATE_ROOT) as temp:
+            root = Path(temp)
+            review_dir = root / "analysis_review"
+            review_dir.mkdir()
+            review = self.readiness_fixture("household_environment_extension")
+            review["gates"].pop("pilot_success_and_reproducibility_review")
+            (review_dir / ANALYSIS_PLANS["household_environment_extension"]["filename"]).write_text(
+                json.dumps(review), encoding="utf-8"
+            )
+            provenance = {
+                "source_manifest_id": review["source_manifest_id"],
+                "prepared_output_sha256": review["prepared_output_sha256"],
+            }
+            with self.assertRaisesRegex(ValueError, "pilot_success_and_reproducibility_review has not passed"):
+                require_wave1_analysis_readiness(root, provenance, "household_environment_extension")
+
     def test_synthetic_fully_reviewed_frame_passes_provenance_only(self):
         PRIVATE_ROOT.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(prefix="wave1_analysis_gate_", dir=PRIVATE_ROOT) as temp:
