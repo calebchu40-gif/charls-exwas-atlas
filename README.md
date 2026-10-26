@@ -2,7 +2,7 @@
 
 **当前目录规模：**常规五波E/P候选目录已建立 1,625 个去重概念ID、8,341 条概念—源字段映射；每条E/P字段目录行均有关联的候选概念ID。2014 Life History 单独目录含181个概念组、5,879条映射（E 5,818、P 61）。这些是候选目录计数，不代表最终可分析变量、实际样本量或统计结果。
 
-**当前线上版本：**CHARLS ExWAS Atlas已公开部署：[网站入口](https://calebchu40-gif.github.io/charls-exwas-atlas/)。提交 `81884ce` 对应 app v185 已通过公开首页 HTTP 200 核验，首页显示180个概念组、5,875条生命历程映射；最新亲代字段批次仍在本地构建中。正式关联模型仍为0；目录共现不等于样本量或关联结果。
+**当前线上版本：**CHARLS ExWAS Atlas已公开部署：[网站入口](https://calebchu40-gif.github.io/charls-exwas-atlas/)。提交 `41ace8b` 对应 app v186 / Life History JSON v52 已通过公开HTTP 200核验，专题含181个概念组、5,879条映射，包含A5c–A5f新映射。CI随后发现并已修正亲代模块覆盖测试的旧计数；新验证运行中。正式关联模型仍为0；目录共现不等于样本量或关联结果。
 
 **最新线上扩展（提交 `3d6a0a4`，app v139）：**官方2014问卷C5–C5f家庭成分题核对到WEALTHHISTORY模块，新增1个年龄受限的历史家庭背景候选概念、189条选项字段映射；七种本人/亲属问卷形式均保留，受访者题仅问80岁及以上人群。`FAMILYINFORMATION:c5`是另一条饥荒逃荒题，按模块+字段码区分。Life History专题现为36组、993条字段（E 965、P 28）；线上JSON已核验。字段覆盖表和审计见[`audit/life_history_historical_family_class_coverage_2014_v1.csv`](audit/life_history_historical_family_class_coverage_2014_v1.csv)、[`audit/life_history_historical_family_class_review_2026-10-26.md`](audit/life_history_historical_family_class_review_2026-10-26.md)。529项测试、公开包、92条分析锁、前端语法与差异检查均通过。
 

@@ -2,7 +2,7 @@
 
 - Reviewed official A4a/A4b routes and A5c-A5f field identities. Added one relationship-specific background candidate for four calendar birth-year fields; these are not measures of age at respondent birth or caregiving duration.
 - Updated complete FAMILYINFORMATION disposition: 469 mapped fields, 3 linkage keys and 1 release-version field excluded, zero substantive fields deferred.
-- Rebuilt local Life History catalog: 181 concepts / 5,879 mappings (E 5,818, P 61), app v186 / JSON v52. Pending publish and CI validation.
+- Rebuilt and deployed Life History catalog: 181 concepts / 5,879 mappings (E 5,818, P 61), app v186 / JSON v52. Deploy #318 succeeded and public homepage/JSON returned HTTP 200. Validate #630 exposed one stale parent-module test expectation; corrected from 43/4 to 47/0 in `a7cc4c2`, with the rerun pending.
 - Audit: `audit/life_history_parent_module_review_2026-10-26.md` and `audit/life_history_family_information_full_review_2026-10-26.md`.
 
 # 2026-10-26 Refresh Life History homepage counts and CI expectations
