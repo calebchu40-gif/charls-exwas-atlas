@@ -10,12 +10,16 @@ The questionnaire defines a job as livelihood-oriented work lasting at least six
 
 Mapped the 13 Codebook option fields `f001s1`–`f001s13` to `life_history_status_at_age_16`: work; unemployment while seeking work; unemployment without seeking; illness; childbirth; care of children, elderly people or other family; leisure/travel; training; prison; schooling; and other. The questionnaire marks this as select-all-that-apply. It is a retrospective adolescent life-course context item, not a contemporaneous record or complete time-use measure. An unselected/missing option must not be treated as No until authorized-release storage and denominator semantics are verified.
 
+## F_3: type of each repeated job
+
+Mapped the 19 repeated Codebook fields `f_3_0_` through `f_3_18_` to `life_history_repeated_job_type`. Each asks which of six job categories applies to that episode: own agricultural production/business, agricultural employment, non-agricultural employment, non-agricultural self-employment, unpaid household-business help, or army service. The 0–18 slot index is retained. The questionnaire's job definition (livelihood work for at least six months) applies; this category does not identify occupation, industry, pesticide use, dust exposure or chemical dose. Blank/skipped slots do not establish a negative job history or complete lifetime count.
+
 ## Exhaustive field disposition
 
-The Codebook lists 2,024 WORKHISTORY fields. The generated ledger assigns 13 to the reviewed F001 candidate concept, three person/household/community keys to linkage exclusions, one version field to release-metadata exclusion, and the remaining 2,007 substantive fields to `deferred_source_review`. Those fields are not published as candidates and are not approved for analysis. Follow-up review must inspect each job family and repeated episode slot against questionnaire routing, reference period, respondent role, open-text identity, geographic/privacy sensitivity, monetary/workpoint units and measurement semantics before mapping.
+The Codebook lists 2,024 WORKHISTORY fields. The generated ledger assigns 32 fields to reviewed F001 and F_3 candidate concepts, three person/household/community keys to linkage exclusions, one version field to release-metadata exclusion, and the remaining 1,988 substantive fields to `deferred_source_review`. Those fields are not published as candidates and are not approved for analysis. Follow-up review must inspect each job family and repeated episode slot against questionnaire routing, reference period, respondent role, open-text identity, geographic/privacy sensitivity, monetary/workpoint units and measurement semantics before mapping.
 
 The remaining F-series includes repeated job types and episode details, including employer/industry/occupation, work intensity, income/benefits, job transitions and reasons for stopping. These are not automatically environmental exposures; work history may support life-course context only when the exact construct and referent are verified.
 
 ## Reproducibility
 
-`build_life_history_exposure_crosswalk.py` generates the candidate map, Life History JSON and exhaustive module ledger. The local build reports 108 concepts / 2,854 mappings overall (E 2,808, P 46), with 13 mapped WORKHISTORY source rows. Validation and deployment are pending for this local batch.
+`build_life_history_exposure_crosswalk.py` generates the candidate map, Life History JSON and exhaustive module ledger. The local build reports 108 concepts / 2,854 mappings overall (E 2,808, P 46), with 32 mapped WORKHISTORY source rows. Validation and deployment are pending for this local batch.
