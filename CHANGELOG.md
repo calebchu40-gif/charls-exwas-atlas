@@ -1,3 +1,10 @@
+# 2026-10-26 Map 2014 Life History offspring care context
+
+- Reviewed C034a1–C034g2 and mapped 529 official fields across maternal employment/leave at childbirth, early-childhood service availability, offspring preschool access, and offspring residence/caregiving before age two and at ages three to five.
+- Preserved child referents, repeated slots, multi-select caregiver options, age/death eligibility and conditional locality routes. These are family/offspring-context E candidates, not the respondent's own childhood exposures or child phenotypes; no participant values or frequencies are published.
+- Local Life History catalog is now 173 concepts / 5,561 mappings (E 5,515, P 46); app v177 / JSON v44. Deployment pending.
+- Audit: `audit/life_history_child_early_care_context_review_2026-10-26.md`.
+
 # 2026-10-26 Map 2014 Life History pregnancy history
 
 - Reviewed the female-only pregnancy-history section against the official questionnaire and Codebook; added 109 source fields across pregnancy outcome history (31), termination timing/duration (24), and induced-abortion reported reasons (54).
