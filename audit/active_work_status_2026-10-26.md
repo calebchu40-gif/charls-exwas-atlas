@@ -1,4 +1,4 @@
-## 2014 EDUCATIONHISTORY episode timing and module disposition (local, not yet published)
+## 2014 EDUCATIONHISTORY episode timing and module disposition (published and verified)
 
 Reviewed repeated school timing fields and remaining module coverage. Added 240 alternative-precision start/end components across repeated episodes, four early-schooling episode counts, and two previously missed attainment/exam fields (E024, E046a). The complete 1,105-field ledger now has 1,072 mapped candidates, 22 sensitive school-address exclusions, five certificate-year fields deferred until certificate identity can be validated, three linkage keys and one release version excluded, plus one internal quality flag and one no-observations field excluded. Rebuild: 107 concepts / 2,841 mappings (E 2,795, P 46). Published in commit `34d6d14` as app v155 / JSON v22. The live page returns 107 concepts, both new education concepts are present, and the live JSON SHA-256 matches the local payload.
 
