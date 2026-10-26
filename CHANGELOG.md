@@ -1,3 +1,10 @@
+# 2026-10-26 Add Wave 1 pilot source-intake preflight
+
+- Added a local-only preflight for the official 2011 all-data archive, PSU, Weight, and Blood files. It records local file hashes, ZIP member names, and Stata header fields without extracting the archive or reading respondent values.
+- Created the protected intake folder and source manifest template. Current gate is not passed because the four official inputs are absent; source provenance, age-domain eligibility, and survey-design review remain separate required gates.
+- Added the operational sequence and limitations in `audit/wave1_pilot_official_intake_runbook_2026-10-26.md`; code is in `scripts/audit_2011_pilot_intake_metadata.py`.
+- Repository commit `858d658`; no site payload changed. GitHub Actions status has not yet been independently confirmed for this commit.
+
 # 2026-10-26 Add respondent-specific sensitive social-context metadata (published and verified)
 
 - Official P022–P024 questionnaire routes and Codebook identities distinguish five respondent-specific fields from spouse/partner slots. Added three metadata candidate concepts for respondent party membership, minority status/ethnicity, and religious affiliation.
