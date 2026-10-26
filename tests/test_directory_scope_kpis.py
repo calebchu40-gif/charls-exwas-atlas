@@ -32,7 +32,7 @@ class DirectoryScopeKpiTests(unittest.TestCase):
         self.assertIn("不是样本量或关联结果", match.group(2))
         self.assertIn("2014生命历程特殊调查单独展示", match.group(2))
         self.assertIn("2014 生命历程回顾性调查", html)
-        self.assertIn("1033条概念—字段映射", html)
+        self.assertIn("1452条概念—字段映射", html)
         self.assertIn("不计入上述五波统计", match.group(2))
         self.assertIn("30个大型社区曾按地理子区拆分抽样", html)
         self.assertIn("communityID 仅是 PSU 候选", html)

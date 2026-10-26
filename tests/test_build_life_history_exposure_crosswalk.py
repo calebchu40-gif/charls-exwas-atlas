@@ -26,8 +26,8 @@ CHARLSCodeBook 1 RESIDENCE
 
     def test_official_mapping_counts_and_repeated_episode_grouping(self):
         rows, groups = builder.build()
-        self.assertEqual((len(groups), len(rows)), (42, 1033))
-        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 1005, "p": 28})
+        self.assertEqual((len(groups), len(rows)), (44, 1452))
+        self.assertEqual({role: sum(row["role"] == role for row in rows) for role in ("e", "p")}, {"e": 1424, "p": 28})
         by_concept = {}
         for row in rows:
             by_concept.setdefault(row["concept_id"], []).append(row)
@@ -69,6 +69,9 @@ CHARLSCodeBook 1 RESIDENCE
         justice = by_concept["life_history_childhood_police_custody_and_charge"]
         self.assertTrue(all("not proof of conviction or guilt" in row["caveat"] for row in justice))
         self.assertFalse(any("OBS:" in " ".join(row.values()) for row in justice))
+        self.assertEqual(len(by_concept["life_history_residential_episode_timing"]), 250)
+        self.assertEqual(len(by_concept["life_history_between_residence_migration_reasons"]), 169)
+        self.assertTrue(all("not T003c reasons" in row["caveat"] for row in by_concept["life_history_between_residence_migration_reasons"]))
         self.assertEqual(len(by_concept["life_history_historical_family_class_background"]), 189)
         self.assertEqual({row["module"] for row in by_concept["life_history_historical_family_class_background"]}, {"WEALTHHISTORY"})
         self.assertTrue(all(row["code"] != "c5" for row in by_concept["life_history_historical_family_class_background"]))
@@ -144,6 +147,30 @@ CHARLSCodeBook 1 RESIDENCE
         self.assertEqual(counts["deferred_caregiver_identity"], 2)
         self.assertEqual(counts["deferred_parent_birth_year"], 6)
         self.assertEqual(counts["excluded_linkage_key"], 3)
+        self.assertEqual(counts["excluded_release_metadata"], 1)
+
+    def test_residence_timing_and_gap_migration_fields_are_complete_and_distinct(self):
+        rows, _ = builder.build()
+        timing = builder.build_residence_transition_coverage(rows)
+        gaps = builder.build_gap_migration_reason_coverage(rows)
+        self.assertEqual(len(timing), 250)
+        self.assertEqual(len({row["code"] for row in timing}), 250)
+        self.assertEqual(len(gaps), 169)
+        self.assertEqual(len({row["code"] for row in gaps}), 169)
+        self.assertTrue(all(row["concept_id"] != "life_history_residential_transition_reasons" for row in gaps))
+
+    def test_full_residence_module_is_uniquely_dispositioned_without_location_values(self):
+        from collections import Counter
+        rows, _ = builder.build()
+        ledger = builder.build_residence_module_coverage(rows)
+        self.assertEqual(len(ledger), 935)
+        self.assertEqual(len({row["code"] for row in ledger}), 935)
+        counts = Counter(row["disposition"] for row in ledger)
+        self.assertEqual(counts["mapped_candidate"], 827)
+        self.assertEqual(counts["excluded_geographic_location_metadata"], 95)
+        self.assertEqual(counts["deferred_respondent_demographic"], 6)
+        self.assertEqual(counts["excluded_linkage_key"], 3)
+        self.assertEqual(counts["excluded_interview_proxy_metadata"], 3)
         self.assertEqual(counts["excluded_release_metadata"], 1)
 
 

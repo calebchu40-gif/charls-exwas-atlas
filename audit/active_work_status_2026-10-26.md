@@ -1,5 +1,9 @@
 # CHARLS ExWAS Atlas active work status — 2026-10-26
 
+## 2014 RESIDENCE module full-field review (local, pending validation/deployment)
+
+Mapped T001a/T001b entry/exit timing (250 fields) and T003e reasons for stopping between-county mobility during questionnaire-defined gaps (169 fields) as two distinct life-course residential-context candidates. The former is timing metadata, not pollutant dose; actual participant dates are never published. T003e remains separate from T003c residence-exit reasons. All 935 RESIDENCE Codebook fields now have one explicit disposition: 827 E/P candidate metadata rows, 95 geographic/location rows excluded from public mapping, six respondent demographic/ID-verification rows deferred, three linkage keys, three proxy/interview metadata rows and one version field excluded. Full ledger: [`life_history_residence_full_coverage_2014_v1.csv`](life_history_residence_full_coverage_2014_v1.csv); summary: [`life_history_residence_full_review_2026-10-26.md`](life_history_residence_full_review_2026-10-26.md). Local Life History total is 44 concepts / 1,452 fields (E 1,424, P 28); targeted tests pass, full validation/deployment pending.
+
 ## Full 2014 FAMILYINFORMATION inventory (local audit closure)
 
 Exhaustive module-level audit now dispositions all 473 official Codebook fields exactly once: 431 mapped E/P metadata fields, 30 deferred sibling roster/attainment fields, 8 deferred caregiver-identity/parent-birth-year fields, and 4 linkage/version metadata fields. Ledger: [`life_history_family_information_full_coverage_2014_v1.csv`](life_history_family_information_full_coverage_2014_v1.csv); summary: [`life_history_family_information_full_review_2026-10-26.md`](life_history_family_information_full_review_2026-10-26.md). The builder fails closed on an unclassified or duplicate module field. Targeted tests pass; this is a local audit/documentation change with no public payload change.

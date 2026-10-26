@@ -62,6 +62,30 @@ GROUPS = [
         "caveat": "Retrospective reasons reported for a residence transition, not a physical pollutant exposure. The Codebook exposes 13 option-specific fields per episode; do not count slots as separate exposures or infer No from an unselected/blank option. Excludes address and geographic identifiers.",
     },
     {
+        "concept_id": "life_history_residential_episode_timing",
+        "label": "Residential episode entry/exit timing and duration context",
+        "role": "e",
+        "domain": "life-course residential mobility and environmental context",
+        "patterns": [r"t001a_\d+_", r"t001a_[1-4]_\d+_", r"t001b_\d+_", r"t001b_[1-4]_\d+_"],
+        "question": "T001a/T001b",
+        "unit": "episode-specific timing relation, year, month, season, or half-year fields (up to 25 residences)",
+        "values": "T001a records whether entry coincided with birth/previous residence exit or gives a nonmatching date; T001b records whether/when the respondent first left that residence, including a still-resident option. Date components may be year, month, season, or half-year.",
+        "status": "official questionnaire loop and Codebook field families reviewed; actual date coding, episode ordering, and missing values require authorized-release QA",
+        "caveat": "Retrospective timeline metadata for residential mobility, not an environmental dose or geocoded exposure. Entry and exit dates are interdependent across episodes; the first entry may anchor to birth and later entries to the prior exit. Do not count the 250 fields as separate exposures, derive duration from incomplete dates, or publish participant dates. Geographic linkage is excluded; official release notes warn that t002_psu fields are not comparable to PSU.dta.",
+    },
+    {
+        "concept_id": "life_history_between_residence_migration_reasons",
+        "label": "Reasons for stopping cross-county mobility during residence-history gaps",
+        "role": "e",
+        "domain": "life-course migration and social context",
+        "patterns": [r"t003e_\d+_s\d+"],
+        "question": "T002e/T003e",
+        "unit": "conditional option slots for up to 13 between-residence mobility-gap episodes",
+        "values": "T003e uses the questionnaire's migration-stop reason categories; options parallel T003c, while other write-in response text is excluded.",
+        "status": "official questionnaire gap eligibility and Codebook option fields reviewed; checkbox storage and episode alignment require authorized-release QA",
+        "caveat": "Asked for gaps exceeding six months between listed residences, before the first residence, or after the final residence according to the questionnaire's T002e procedure. These are reasons for a period of cross-county mobility, not T003c reasons for leaving a listed residence; keep concepts separate. Do not treat blank options as No or use T002e region/location fields as environmental linkage.",
+    },
+    {
         "concept_id": "life_history_cooking_fuel",
         "label": "Household cooking fuel used since birth",
         "role": "e",
@@ -816,6 +840,93 @@ def build_family_information_module_coverage(rows: list[dict]) -> list[dict]:
     return ledger
 
 
+def build_residence_transition_coverage(rows: list[dict]) -> list[dict]:
+    """Audit T001 entry/exit timing slots for up to 25 linked residence episodes."""
+    patterns = [re.compile(x, re.I) for x in
+                (r"t001a_\d+_", r"t001a_[1-4]_\d+_", r"t001b_\d+_", r"t001b_[1-4]_\d+_")]
+    mapped = {row["code"]: row for row in rows if row["module"] == "RESIDENCE"
+              and row["concept_id"] == "life_history_residential_episode_timing"}
+    fields = read_codebook_fields()
+    ledger = []
+    for (module, code), label in sorted(fields.items()):
+        if module != "RESIDENCE" or not any(p.fullmatch(code) for p in patterns):
+            continue
+        row = mapped.get(code)
+        if row is None:
+            raise ValueError(f"T001 residence timing Codebook field lacks mapping: {code}")
+        ledger.append({"module": module, "code": code, "codebook_label": label,
+                       "disposition": "mapped_candidate", "concept_id": row["concept_id"],
+                       "questionnaire_item": row["questionnaire_item"], "rationale": row["caveat"],
+                       "questionnaire_source": row["questionnaire_source"],
+                       "codebook_source": row["codebook_source"]})
+    if len(ledger) != 250:
+        raise ValueError(f"Expected 250 T001 timing fields; found {len(ledger)}")
+    return ledger
+
+
+def build_gap_migration_reason_coverage(rows: list[dict]) -> list[dict]:
+    """Audit all T003e reason-option fields separately from T003c residence-exit reasons."""
+    mapped = {row["code"]: row for row in rows if row["module"] == "RESIDENCE"
+              and row["concept_id"] == "life_history_between_residence_migration_reasons"}
+    fields = read_codebook_fields()
+    ledger = []
+    for (module, code), label in sorted(fields.items()):
+        if module != "RESIDENCE" or not re.fullmatch(r"t003e_\d+_s\d+", code, re.I):
+            continue
+        row = mapped.get(code)
+        if row is None:
+            raise ValueError(f"T003e gap migration reason Codebook field lacks mapping: {code}")
+        ledger.append({"module": module, "code": code, "codebook_label": label,
+                       "disposition": "mapped_candidate", "concept_id": row["concept_id"],
+                       "questionnaire_item": row["questionnaire_item"], "rationale": row["caveat"],
+                       "questionnaire_source": row["questionnaire_source"],
+                       "codebook_source": row["codebook_source"]})
+    if len(ledger) != 169:
+        raise ValueError(f"Expected 169 T003e reason fields; found {len(ledger)}")
+    return ledger
+
+
+def build_residence_module_coverage(rows: list[dict]) -> list[dict]:
+    """Give all 935 Residence Codebook fields exactly one mapped, deferred, or excluded disposition."""
+    mapped = {row["code"]: row for row in rows if row["module"] == "RESIDENCE"}
+    fields = read_codebook_fields()
+    ledger = []
+    demographic = {"rbirthyear", "rbirthmonth", "rbirthid", "rbirthid_1", "rbirthid_2", "rgender"}
+    linkage = {"id", "householdid", "communityid"}
+    proxy = {"ac040", "ac041", "ac042"}
+    for (module, code), label in sorted(fields.items()):
+        if module != "RESIDENCE":
+            continue
+        row = mapped.get(code)
+        if row:
+            disposition, concept_id, rationale = "mapped_candidate", row["concept_id"], row["caveat"]
+        elif code in linkage:
+            disposition, concept_id = "excluded_linkage_key", ""
+            rationale = "Person/household/community linkage key. Never publish key values; use only in controlled authorized joins when required."
+        elif code == "versionid":
+            disposition, concept_id = "excluded_release_metadata", ""
+            rationale = "Release/version bookkeeping metadata, not an E/P measure."
+        elif code in demographic:
+            disposition, concept_id = "deferred_respondent_demographic", ""
+            rationale = "Respondent birth/gender or ID-card verification data are demographic/linkage metadata, not standalone E/P measures; protect values and use only for a justified estimand."
+        elif code in proxy:
+            disposition, concept_id = "excluded_interview_proxy_metadata", ""
+            rationale = "Module respondent/proxy identity and relationship metadata, not an E/P measure."
+        elif re.fullmatch(r"t002_\d+_|t002_psu_\d+_|t002e(?:_\d+){1,2}_", code, re.I):
+            disposition, concept_id = "excluded_geographic_location_metadata", ""
+            rationale = "Residence county/location or between-county region code. Location values are excluded from the public site; the official release note warns t002_psu codes cannot be compared directly with PSU.dta. No geographic linkage is performed."
+        else:
+            raise ValueError(f"RESIDENCE Codebook field has no explicit disposition: {code}")
+        ledger.append({"module": module, "code": code, "codebook_label": label,
+                       "disposition": disposition, "concept_id": concept_id, "rationale": rationale,
+                       "questionnaire_source": "sources_official/CHARLS_Life_History_Questionnaire.pdf",
+                       "codebook_source": "sources_official/CHARLS_Life_History_codebook.pdf"})
+    codes = [row["code"] for row in ledger]
+    if len(ledger) != 935 or len(codes) != len(set(codes)):
+        raise ValueError(f"RESIDENCE coverage not exhaustive/unique: rows={len(ledger)}, unique={len(set(codes))}")
+    return ledger
+
+
 def main() -> None:
     rows, concepts = build()
     sibling_coverage = build_sibling_module_coverage(rows)
@@ -825,6 +936,9 @@ def main() -> None:
     parent_employment_coverage = build_parent_employment_coverage(rows)
     sensitive_history_coverage = build_sensitive_history_coverage(rows)
     family_information_coverage = build_family_information_module_coverage(rows)
+    residence_transition_coverage = build_residence_transition_coverage(rows)
+    gap_migration_coverage = build_gap_migration_reason_coverage(rows)
+    residence_module_coverage = build_residence_module_coverage(rows)
     AUDIT.mkdir(parents=True, exist_ok=True)
     DIST.mkdir(parents=True, exist_ok=True)
     csv_path = AUDIT / "life_history_exposure_crosswalk_v1.csv"
@@ -869,6 +983,21 @@ def main() -> None:
         writer = csv.DictWriter(f, fieldnames=list(family_information_coverage[0]), extrasaction="ignore")
         writer.writeheader()
         writer.writerows(family_information_coverage)
+    residence_transition_path = AUDIT / "life_history_residential_timing_coverage_2014_v1.csv"
+    with residence_transition_path.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=list(residence_transition_coverage[0]), extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(residence_transition_coverage)
+    gap_migration_path = AUDIT / "life_history_gap_migration_reason_coverage_2014_v1.csv"
+    with gap_migration_path.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=list(gap_migration_coverage[0]), extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(gap_migration_coverage)
+    residence_module_path = AUDIT / "life_history_residence_full_coverage_2014_v1.csv"
+    with residence_module_path.open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=list(residence_module_coverage[0]), extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(residence_module_coverage)
     print(json.dumps({"concepts": len(concepts), "field_rows": len(rows),
                       "by_role": {role: sum(x["role"] == role for x in rows) for role in ("e", "p")},
                       "by_module": {module: sum(x["module"] == module for x in rows)
@@ -880,6 +1009,9 @@ def main() -> None:
                       "parent_employment_fields_mapped": len(parent_employment_coverage),
                       "sensitive_history_metadata_fields": len(sensitive_history_coverage),
                       "family_information_fields_dispositioned": len(family_information_coverage),
+                      "residence_timing_fields_mapped": len(residence_transition_coverage),
+                      "between_residence_migration_fields_mapped": len(gap_migration_coverage),
+                      "residence_module_fields_dispositioned": len(residence_module_coverage),
                       "csv": str(csv_path), "json": str(json_path),
                       "sibling_coverage": str(coverage_path),
                       "parent_coverage": str(parent_coverage_path),
@@ -887,7 +1019,10 @@ def main() -> None:
                       "parent_social_context_coverage": str(parent_social_coverage_path),
                       "parent_employment_coverage": str(parent_employment_coverage_path),
                       "sensitive_history_coverage": str(sensitive_history_coverage_path),
-                      "family_information_coverage": str(family_information_coverage_path)}, ensure_ascii=False))
+                      "family_information_coverage": str(family_information_coverage_path),
+                      "residence_timing_coverage": str(residence_transition_path),
+                      "gap_migration_coverage": str(gap_migration_path),
+                      "residence_module_coverage": str(residence_module_path)}, ensure_ascii=False))
 
 
 if __name__ == "__main__":
