@@ -64,3 +64,9 @@
 - 检查到K=150/K=90 readiness template此前没有接入`require_verified_wave1_frame.py`，会让后续审批路由缺少专属绑定。已新增独立`household_environment_scaleup`计划入口，将来源/设计计划、DAG、假设登记表、扩展缺口审计和空白审批模板共同纳入计划指纹；它仍要求额外的pilot success/reproducibility gate，不会接受K=105审批代替。专属K=150/K=90 runner及正式模型冻结仍未完成，当前不会放行模型拟合。
 - 本轮重新执行两个 metadata-only 入库入口：Wave 1 All Data/PSU/Weight/Blood 仍为 `missing_or_ambiguous`，release gate `not_passed`；Wave 2 Weights 与 Wave 3 Blood 仍为 `skipped_missing_input`。报告只写本机 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\qa_outputs`，未读取或解压参与者记录。
 - 年龄转换参考说明已随代码提交 `23d7062` 推送至 GitHub；仓库工作区干净。未启动真实模型，因为官方来源及调查设计门槛仍不通过。
+
+## 服务器项目副本同步（2026-10-27）
+
+服务器专用项目目录不是Git克隆，而是精选的文档/脚本副本；因此将本轮更新的年龄转换审计、scale-up审批门禁审计、门禁脚本、续接日志及CHARLS公开转换程序单独同步到对应子目录。逐文件核对 SHA-256 与本地工作区一致；项目根README也与当前仓库版本对齐。未上传CHARLS原始/派生微观数据、个体级结果或私人QA。服务器副本中的分析输入门禁仍需正式数据到位后运行。
+
+GitHub Validate：`cb6f8e2`（scale-up门禁）已成功；`8002a0c`（公开程序参考文件）核验时仍在运行，见Actions。此次服务器同步不改变数据门禁判定。
