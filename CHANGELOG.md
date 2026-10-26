@@ -1,3 +1,10 @@
+# 2026-10-26 Add protected pilot-output integrity audit
+
+- Added `scripts/audit_private_pilot_output_integrity.py` to check protected exploratory result-table structure, duplicate analysis keys, required finite estimates/uncertainty, warning counts, and family completeness without opening respondent microdata.
+- The utility independently recomputes the declared Benjamini–Yekutieli and Bonferroni adjustments and writes only an aggregate QA report under the protected local CHARLS root.
+- Ran the audit on the existing private 15-outcome pilot and 105-coefficient extension: technical integrity checks passed, with no engine warnings; formal source/design validity remains explicitly unassessed and not passed. M0 is descriptive and is not expected to have multiplicity-adjusted values.
+- No estimates, p-values, pair support, microdata, or private QA files were added to the repository or site.
+
 # 2026-10-26 Add protected aggregate design-frame preflight
 
 - Added `scripts/audit_2011_pilot_design_frame.py` to check local prepared-frame denominator, age-domain availability, candidate bloodweight coverage, and PSU-key mapping while emitting aggregate diagnostics only under protected local storage.
