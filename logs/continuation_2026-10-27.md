@@ -61,3 +61,5 @@
 - 未将程序复制/安装到项目，未对任何 CHARLS 个体记录执行转换。当前机器无 Stata 命令行，因此不能把工具运行验证冒充为已完成。
 - 下一次官方数据到位时的顺序明确为：先确认原始波次文件/字段来源，再合成日期用例验证工具，之后依逐波路由重建年龄，最后仅输出聚合覆盖/差异QA；受保护年龄与出生日期不出本机授权目录。
 - 仍未运行关联模型。Wave 1官方来源/设计门槛不通过，K=150/K=90扩展runner也尚未实现；此前文档中的240条是假设登记，不是可估配对或结果。
+- 本轮重新执行两个 metadata-only 入库入口：Wave 1 All Data/PSU/Weight/Blood 仍为 `missing_or_ambiguous`，release gate `not_passed`；Wave 2 Weights 与 Wave 3 Blood 仍为 `skipped_missing_input`。报告只写本机 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\qa_outputs`，未读取或解压参与者记录。
+- 年龄转换参考说明已随代码提交 `23d7062` 推送至 GitHub；仓库工作区干净。未启动真实模型，因为官方来源及调查设计门槛仍不通过。
