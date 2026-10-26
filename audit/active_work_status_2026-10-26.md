@@ -1,6 +1,6 @@
-## 2014 WORKHISTORY F001/F_3/F_2 batch (local; pending publication)
+## 2014 WORKHISTORY F001/F_3/F_2 batch (app v159 verified)
 
-Added 13 F001 age-16 status options, 19 repeated F_3 job-type fields, and 171 F_2 timing components across 19 six-month-or-longer job episodes. Excluded 19 potentially identifying main-workplace location fields. The exhaustive 2,024-field ledger now has 203 mapped fields, 19 location exclusions, three linkage keys and one release-version exclusion, plus 1,798 substantive fields deferred for field-by-field review. Job type is not occupational/environmental dose; F_2 is recalled chronology and not exact duration. Local rebuild: 110 concepts / 3,044 mappings (E 2,998, P 46), prepared as app v159 / JSON v26; publication pending.
+Added 13 F001 age-16 status options, 19 repeated F_3 job-type fields, and 171 F_2 timing components across 19 six-month-or-longer job episodes. Excluded 19 potentially identifying main-workplace location fields. The exhaustive 2,024-field ledger now has 203 mapped fields, 19 location exclusions, three linkage keys and one release-version exclusion, plus 1,798 substantive fields deferred for field-by-field review. Job type is not occupational/environmental dose; F_2 is recalled chronology and not exact duration. Local rebuild: 110 concepts / 3,044 mappings (E 2,998, P 46). Commit `c2bde2a` is live as app v159 / JSON v26; all 171 timing fields, 110 concepts and remote/local JSON SHA-256 match are verified.
 
 
 ## 2014 EDUCATIONHISTORY episode timing and module disposition (app v156 verified)
