@@ -1,3 +1,9 @@
+# 2026-10-26 Add offspring schooling and work-status family-context candidates
+
+- Mapped official 2014 Life History C012a/C012c/C013 and adopted-child C020a/C020c/C020b item families as three separate intergenerational family-context candidates (36 source fields). They are not respondent education/employment or clinical outcomes; repeated child slots are preserved, routed blanks are not interpreted as No, and no individual responses, counts, or identities are published.
+- Rebuilt local catalog to 184 concepts / 5,915 mappings (E 5,854, P 61), including 1,063 mapped DEMOGRAPHICBACKGROUNDS fields. Local static assets are app v187 / JSON v53; public deployment remains v186 / JSON v52 pending review and release.
+- Official 2014 questionnaire and Codebook routes/categories were reviewed; see `audit/life_history_demographic_backgrounds_full_coverage_2014_v1.csv` and the active-work checkpoint.
+
 # 2026-10-26 Map adoptive/step-parent birth-year context
 
 - Reviewed official A4a/A4b routes and A5c-A5f field identities. Added one relationship-specific background candidate for four calendar birth-year fields; these are not measures of age at respondent birth or caregiving duration.
