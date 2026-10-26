@@ -207,3 +207,4 @@ GitHub Validate：`cb6f8e2`（scale-up门禁）已成功；`8002a0c`（公开程
 - 将首页“协变量与模型层次”说明改为与当前冻结边界一致：105项历史试点只能按原M1/M2定义复现；K=150/K=90家庭环境扩展及其他暴露领域需各自DAG并单独冻结模型。明确所有真实模型仍未获准入、正式结果为0，并将用户导向对应方法审阅文档。
 - 本地36项公开资产白名单、公开结果payload校验及`git diff --check`通过。本次仅改公开静态说明，没有改动目录或结果数据。
 - 本轮入库复核：Wave 1 All Data/PSU/Weight/Blood均缺，Wave 2权重和Wave 3 Blood缺；metadata-only门禁`not_passed`/`skipped_missing_input`。线上原站首页正常，正式结果payload仍为404。
+- 远端确认：`38a9782`的Validate #755及Pages Deploy #332均成功；线上首页已返回新版模型说明，`association_results_v1.json`仍为404。
