@@ -70,3 +70,10 @@
 服务器专用项目目录不是Git克隆，而是精选的文档/脚本副本；因此将本轮更新的年龄转换审计、scale-up审批门禁审计、门禁脚本、续接日志及CHARLS公开转换程序单独同步到对应子目录。逐文件核对 SHA-256 与本地工作区一致；项目根README也与当前仓库版本对齐。未上传CHARLS原始/派生微观数据、个体级结果或私人QA。服务器副本中的分析输入门禁仍需正式数据到位后运行。
 
 GitHub Validate：`cb6f8e2`（scale-up门禁）已成功；`8002a0c`（公开程序参考文件）核验时仍在运行，见Actions。此次服务器同步不改变数据门禁判定。
+
+## 自动续接：入库门禁与试点后登记表审计
+
+- 重新运行`audit_2011_pilot_intake_metadata.py`与`run_available_charls_intake_gates.py`：Wave 1 All Data/PSU/Weight/Blood均为`missing_or_ambiguous`，2011来源闸门`not_passed`；2013 Weights与2015 Blood均为`skipped_missing_input`。报告仅写在本机受保护QA目录。
+- 因官方来源缺失，按已批准的Go/No-Go路线未读取既有个人级派生表、未运行真实CHARLS关联模型，也未用旧试点P/q值决定扩展。
+- 新增`audit_wave1_scaleup_hypothesis_registry.py`，仅检查公开规划登记表的家族规模、交叉单元完整性、候选暴露对比、路由标记及“未批准/不可公开”状态。检查结果：K=150为10个对比×15表型，K=90为6个路由对比×15表型；两者共用15项表型，240条计划行无重复/缺失，全部仍未批准。审计明确声明不读取参与者数据、不验证源文件候选编码、不批准模型、不产生估计。
+- 将该结构审计接入`.github/workflows/validate.yml`，使后续代码更新自动检查预设家族结构；更新README状态入口。下一阶段依赖官方四项Wave 1数据获准入库，随后按来源和设计门禁→复核试点→独立方法审查→K=150/K=90推进。不得跳过审核。
