@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-26）
 
-**本地待发布扩展：**官方2014问卷C5–C5f家庭成分题核对到WEALTHHISTORY模块，新增1个年龄受限的历史家庭背景候选概念、189条选项字段映射；七种本人/亲属问卷形式均保留，受访者题仅问80岁及以上人群。`FAMILYINFORMATION:c5`是另一条饥荒逃荒题，按模块+字段码区分。Life History专题本地现为36组、993条字段（E 965、P 28）。字段覆盖表和审计见[`audit/life_history_historical_family_class_coverage_2014_v1.csv`](audit/life_history_historical_family_class_coverage_2014_v1.csv)、[`audit/life_history_historical_family_class_review_2026-10-26.md`](audit/life_history_historical_family_class_review_2026-10-26.md)。529项测试、公开包、92条分析锁、前端语法与差异检查均通过；待发布并核实线上版本。
+**最新线上扩展（提交 `3d6a0a4`，app v139）：**官方2014问卷C5–C5f家庭成分题核对到WEALTHHISTORY模块，新增1个年龄受限的历史家庭背景候选概念、189条选项字段映射；七种本人/亲属问卷形式均保留，受访者题仅问80岁及以上人群。`FAMILYINFORMATION:c5`是另一条饥荒逃荒题，按模块+字段码区分。Life History专题现为36组、993条字段（E 965、P 28）；线上JSON已核验。字段覆盖表和审计见[`audit/life_history_historical_family_class_coverage_2014_v1.csv`](audit/life_history_historical_family_class_coverage_2014_v1.csv)、[`audit/life_history_historical_family_class_review_2026-10-26.md`](audit/life_history_historical_family_class_review_2026-10-26.md)。529项测试、公开包、92条分析锁、前端语法与差异检查均通过。
 
 **最新2014 Life History更新（提交 `a69a602`，已在线核验）：**官方亲代/抚养人模块新增3个候选概念组、34条字段映射。A模块47个结构化Codebook字段全部有映射或明确暂缓去向（8条为抚养人身份/父母出生年元数据）。专题目录现为35组、804条字段（E 776、P 28）；线上JSON已核实返回35概念、804字段，首页 `app.js?v=138` 与专题JSON `v=5` 已核验。字段级覆盖见[`audit/life_history_parent_module_coverage_2014_v1.csv`](audit/life_history_parent_module_coverage_2014_v1.csv)，来源审计见[`audit/life_history_parent_module_review_2026-10-26.md`](audit/life_history_parent_module_review_2026-10-26.md)。
 
