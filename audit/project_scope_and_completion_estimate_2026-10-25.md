@@ -150,3 +150,8 @@ The estimate above separated the regular-wave catalogue/site endpoint from a res
 ## 2026-10-26 WORKHISTORY benefit continuation (local pending deployment)
 
 Reviewed all 357 official F112a Codebook fields and routed questionnaire items: 264 repeated employer-benefit checkbox indicators, 21 monetary-value fields, and 72 nursery/kindergarten availability fields, preserving job slots and beginning/middle phase. These are employer socioeconomic/family-context items, not environmental agent exposure. The generated catalog is now 124 concepts / 3,711 mappings (E 3,665, P 46); WORKHISTORY has 870 mapped source fields and 1,129 substantive fields deferred for source review. Published app v164 / JSON v31 in commit `3843e8f`; homepage/data-loader tags, all three concepts and remote/local JSON SHA-256 were verified.
+
+
+## 2026-10-26 WORKHISTORY current/last-year measurement continuation (local pending deployment)
+
+Following live verification of the F120/F120a batch (app v165 / JSON v32; commit `876d576`), reviewed F118 current status and F123c/F126a/F126b/F127b end-of-job measures. Added 15 F118 status fields; extended three existing work-intensity concepts by 120 last-year duration/intensity fields; and extended three existing employer-benefit concepts by 217 last-year options/value/facility fields. Local catalog: 127 concepts / 4,309 mappings (E 4,263, P 46); WORKHISTORY 1,468 mapped, 531 substantive fields deferred. Prepared app v166 / JSON v33 passes local payload validation and JS syntax checks. Deployment has not yet been verified.

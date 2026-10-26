@@ -1,6 +1,10 @@
-## 2014 WORKHISTORY F120/F120a job-cessation batch (local pending publication)
+## 2014 WORKHISTORY current-status, last-year intensity and benefits batch (local pending publication)
 
-Mapped 238 F120 multi-select nonmilitary job-cessation reason fields across 14 episodes and eight F120a military-service cessation reason fields. The questionnaire routes F120 only after F118 says a job has ended and applies F_3=1–5; military F_3=6 uses separate F120a. Local totals: 126 concepts / 3,957 mappings (E 3,911, P 46); WORKHISTORY 1,116 mapped, 883 substantive fields still deferred. Prepared app v165 / JSON v32; local payload and JS syntax checks pass. Public remains v164 / JSON v31 pending deployment.
+Added F118 current-status for 15 recorded job slots and extended reviewed concepts with 120 F123c/F126b/F127b last-year intensity fields plus 217 F126a last-year employer-benefit, value and childcare fields. Starting/middle/current-last-year phases remain distinct in metadata; routes by F_3 and duration are retained. Local totals: 127 concepts / 4,309 mappings (E 4,263, P 46), 1,468 WORKHISTORY fields mapped, 531 substantive fields deferred. Prepared app v166 / JSON v33; local public-payload and JavaScript checks pass; public remains v165 / JSON v32.
+
+## 2014 WORKHISTORY F120/F120a job-cessation batch (app v165 verified)
+
+Mapped 238 F120 multi-select nonmilitary job-cessation reason fields across 14 episodes and eight F120a military-service cessation reason fields. The questionnaire routes F120 only after F118 says a job has ended and applies F_3=1–5; military F_3=6 uses separate F120a. Published app v165 / JSON v32 in commit `876d576`; live homepage/loader versions, both cessation-reason concepts, and remote/local JSON SHA-256 were verified. Totals: 126 concepts / 3,957 mappings (E 3,911, P 46); WORKHISTORY 1,116 mapped, 883 substantive fields still deferred.
 
 ## 2014 WORKHISTORY employer-benefit batch (app v164 verified)
 
