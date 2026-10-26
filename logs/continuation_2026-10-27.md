@@ -219,3 +219,9 @@ GitHub Validate：`cb6f8e2`（scale-up门禁）已成功；`8002a0c`（公开程
 - 核对既有CHARLS抽样/权重审计、试点后续路线和核心概念统一说明后，新增`audit/cross_wave_pooling_and_estimand_protocol_v1.md`。规约将“逐波定义目标总体、先报告波次估计、严格可比后才汇总”设为默认；明确重复受访者不能作为独立波次堆叠，家户/社区暴露关联到个人时须处理共同暴露单位相关性，测量/样本/权重/方差差异未解决时保持分波结果。
 - README已链接该规约。它是未经统计审阅的治理文档，不构成真实数据拟合许可或跨波模型冻结；没有读取参与者记录、运行关联模型或生成公开结果。
 - 本轮复核：Wave 1四个官方源仍缺（`not_passed`）；Wave 2权重、Wave 3血检缺失（`skipped_missing_input`）。线上首页HTTP 200，正式结果JSON HTTP 404。
+
+## 血液指标跨波校准方法复核（2026-10-27）
+
+- 阅读CHARLS 2015血检设计论文及一篇2024 HRS/CHARLS研究正文，新增`audit/blood_crosswave_calibration_method_review_2026-10-27.md`：区分实验室/协议桥接校准与“将2015边际分布调到2011”的研究特定假设；后者刻意去除总体分布变化，不能无辨析地用作横断面ExWAS默认转换。
+- 本次未取得2024论文DOCX补充材料，公式尚未核验；未执行任何转换、个体级分布检查或模型。README已链接该文献复核。
+- 本轮受保护Wave 1四项入库仍缺、Wave 2权重和Wave 3血检仍缺；没有使用受限数据。来源：[CHARLS 2015血检论文](https://pmc.ncbi.nlm.nih.gov/articles/PMC6825825/)、[Wu et al. 2024](https://doi.org/10.1093/gerona/glae116)。
