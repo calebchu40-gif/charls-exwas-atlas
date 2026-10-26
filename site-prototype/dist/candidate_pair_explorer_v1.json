@@ -9,9 +9,9 @@
   ],
   "waves": {
     "2011": {
-      "exposure_count": 683,
+      "exposure_count": 684,
       "phenotype_count": 213,
-      "candidate_pair_count": 145456,
+      "candidate_pair_count": 145669,
       "exposures": [
         {
           "concept_id": "pension_2011_commercial_premium_start_year",
@@ -3690,6 +3690,336 @@
               "value_semantics": "",
               "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
               "caveat": "Village-only informant report; JJ031 is the 2010 proportion of farmers receiving formal-institution loans, while JJ032 is an ordinal comparison of household loan access with three years earlier. The questionnaire's English lender wording and Chinese credit-cooperative wording differ; retain both and verify release-specific interpretation. Neither measures the sampled household's loan or debt."
+            }
+          ]
+        },
+        {
+          "concept_id": "community_health_facility_geographic_scope",
+          "label": "Community healthcare-facility geographic scope",
+          "domain": "Community healthcare access",
+          "roles": [
+            "e"
+          ],
+          "source_fields": [
+            {
+              "code": "jf003_1_1_",
+              "label": "Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_1_2_",
+              "label": "Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_1_3_",
+              "label": "Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_1_4_",
+              "label": "Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_1_5_",
+              "label": "Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_1_6_",
+              "label": "Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_1_7_",
+              "label": "Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_1_8_",
+              "label": "Province",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_2_1_",
+              "label": "City/County",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_2_2_",
+              "label": "City/County",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_2_3_",
+              "label": "City/County",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_2_4_",
+              "label": "City/County",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_2_5_",
+              "label": "City/County",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_2_6_",
+              "label": "City/County",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_2_7_",
+              "label": "City/County",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_2_8_",
+              "label": "City/County",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_3_1_",
+              "label": "Township/District",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_3_2_",
+              "label": "Township/District",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_3_3_",
+              "label": "Township/District",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_3_4_",
+              "label": "Township/District",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_3_5_",
+              "label": "Township/District",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_3_6_",
+              "label": "Township/District",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_3_7_",
+              "label": "Township/District",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_3_8_",
+              "label": "Township/District",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_4_1_",
+              "label": "Village/Street",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_4_2_",
+              "label": "Village/Street",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_4_3_",
+              "label": "Village/Street",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_4_4_",
+              "label": "Village/Street",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_4_5_",
+              "label": "Village/Street",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_4_6_",
+              "label": "Village/Street",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_4_7_",
+              "label": "Village/Street",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+            },
+            {
+              "code": "jf003_4_8_",
+              "label": "Village/Street",
+              "module": "community",
+              "unit": "",
+              "value_labels": "",
+              "value_semantics": "",
+              "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+              "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
             }
           ]
         },
@@ -123334,6 +123664,336 @@
       ]
     },
     {
+      "concept_id": "community_health_facility_geographic_scope",
+      "label": "Community healthcare-facility geographic scope",
+      "domain": "Community healthcare access",
+      "roles": [
+        "e"
+      ],
+      "source_fields": [
+        {
+          "code": "jf003_1_1_",
+          "label": "Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_1_2_",
+          "label": "Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_1_3_",
+          "label": "Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_1_4_",
+          "label": "Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_1_5_",
+          "label": "Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_1_6_",
+          "label": "Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_1_7_",
+          "label": "Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_1_8_",
+          "label": "Province",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_2_1_",
+          "label": "City/County",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_2_2_",
+          "label": "City/County",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_2_3_",
+          "label": "City/County",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_2_4_",
+          "label": "City/County",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_2_5_",
+          "label": "City/County",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_2_6_",
+          "label": "City/County",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_2_7_",
+          "label": "City/County",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_2_8_",
+          "label": "City/County",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_3_1_",
+          "label": "Township/District",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_3_2_",
+          "label": "Township/District",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_3_3_",
+          "label": "Township/District",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_3_4_",
+          "label": "Township/District",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_3_5_",
+          "label": "Township/District",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_3_6_",
+          "label": "Township/District",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_3_7_",
+          "label": "Township/District",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_3_8_",
+          "label": "Township/District",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_4_1_",
+          "label": "Village/Street",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_4_2_",
+          "label": "Village/Street",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_4_3_",
+          "label": "Village/Street",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_4_4_",
+          "label": "Village/Street",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_4_5_",
+          "label": "Village/Street",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_4_6_",
+          "label": "Village/Street",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_4_7_",
+          "label": "Village/Street",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        },
+        {
+          "code": "jf003_4_8_",
+          "label": "Village/Street",
+          "module": "community",
+          "unit": "",
+          "value_labels": "",
+          "value_semantics": "",
+          "mapping_status": "official questionnaire slot/route and codebook label reviewed; candidate, analysis eligibility pending",
+          "caveat": "2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."
+        }
+      ]
+    },
+    {
       "concept_id": "community_historical_disaster_epidemic_severity",
       "label": "Community history of severe disasters and epidemics",
       "domain": "Community environment",
@@ -128358,9 +129018,9 @@
     "2013": {
       "baseline_wave": "2011",
       "followup_wave": "2013",
-      "exposure_count": 186,
+      "exposure_count": 187,
       "phenotype_count": 226,
-      "candidate_pair_count": 42036,
+      "candidate_pair_count": 42262,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -128598,9 +129258,9 @@
     "2015": {
       "baseline_wave": "2011",
       "followup_wave": "2015",
-      "exposure_count": 186,
+      "exposure_count": 187,
       "phenotype_count": 239,
-      "candidate_pair_count": 44454,
+      "candidate_pair_count": 44693,
       "phenotype_concept_ids": [
         "offspring_health_status_2015",
         "offspring_self_care_ability_2015",
@@ -128851,9 +129511,9 @@
     "2018": {
       "baseline_wave": "2011",
       "followup_wave": "2018",
-      "exposure_count": 186,
+      "exposure_count": 187,
       "phenotype_count": 211,
-      "candidate_pair_count": 39246,
+      "candidate_pair_count": 39457,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",
@@ -129076,9 +129736,9 @@
     "2020": {
       "baseline_wave": "2011",
       "followup_wave": "2020",
-      "exposure_count": 186,
+      "exposure_count": 187,
       "phenotype_count": 104,
-      "candidate_pair_count": 19344,
+      "candidate_pair_count": 19448,
       "phenotype_concept_ids": [
         "adl_bed",
         "adl_continence",

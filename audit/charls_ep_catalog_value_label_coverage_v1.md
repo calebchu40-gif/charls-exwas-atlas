@@ -2,8 +2,8 @@
 
 更新：2026-10-26。由`scripts/summarize_value_label_coverage.py`读取最终网站角色分片`catalog_e.json`、`catalog_p.json`和`catalog_c.json`生成；不读取早期中间字段表。
 
-- 最终E/P目录行：8,394；不同波次—字段码：8,181。一个字段可对应多个候选类别/角色。
-- 有非空标签文本的E/P目录行：3,861；不同波次—字段码：3,780。连续测量、计数值及测量流程字段可已审但不需要离散标签。
+- 最终E/P目录行：8,426；不同波次—字段码：8,213。一个字段可对应多个候选类别/角色。
+- 有非空标签文本的E/P目录行：3,893；不同波次—字段码：3,812。连续测量、计数值及测量流程字段可已审但不需要离散标签。
 - 最终E/P中精确状态为`not yet reviewed`的目录行：0；C目录对应行：0。具体来源审查状态不等同于通用待审。
 - 明确标为`conflict`的E/P字段码：0；问卷/Codebook差异仍锁定`DO NOT ANALYZE`的字段：2011 `fb010`。
 - 值标签仅说明回答编码，不代表分析资格。题干、跳题、分母、特殊缺失、单位、跨波可比性、权重与方差设计仍须逐项审核。未使用代码本频数或个人记录。
@@ -14,7 +14,7 @@
 |---|---|---:|---:|---:|---:|
 |e|behavior|267|267|192|5|
 |e|behavioral exposures|2|2|0|1|
-|e|community context|620|620|217|1|
+|e|community context|652|652|249|1|
 |e|early-life and family socioeconomic context|4|4|4|2|
 |e|environmental perception|1|1|1|1|
 |e|family and intergenerational context|42|39|35|4|
@@ -49,8 +49,8 @@
 |numeric/time unit metadata available; no discrete labels assigned; see concept crosswalk|477|
 |codebook field located; continuous/open response or no categorical labels|371|
 |official Codebook numeric/count response located; no discrete answer labels|369|
+|official codebook response labels; frequencies omitted|227|
 |official Codebook listed ownership labels transcribed; frequencies omitted; unlisted categories not inferred|224|
-|official codebook response labels; frequencies omitted|195|
 |continuous measure metadata available|191|
 |numeric/time unit metadata available; no discrete labels assigned|151|
 |audited measurement component; derive concept per crosswalk|138|

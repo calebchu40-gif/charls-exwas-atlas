@@ -84,6 +84,7 @@ CONCEPTS={
  "community_economic_activity_and_fiscal_context":("Community economic activity and fiscal context","Community socioeconomic context","2010 community/village-informant reports of agricultural and industrial revenue, village public expenditure, total village income, net investment, and per-capita net income. Preserve the distinct constructs, reporting units, reference year, and village-only routes; these are aggregate contextual candidates, not household income or audited accounts."),
  "community_housing_market_context":("Community housing-market context","Community socioeconomic context","2011 informant estimates of new/used apartment price, two-bedroom monthly rent, share of households renting out a home, and share living in market-purchased commercial housing. These are community-level contextual measures, not the sampled household's property value, rent, or housing tenure; preserve distinct units and validate special values."),
  "community_formal_credit_access":("Community formal-credit access context","Community socioeconomic context","2010 village-level share of farmers obtaining formal-institution loans and an ordinal community report of household borrowing difficulty relative to three years earlier. Keep percentage and ordinal response separate; these do not establish an individual household's credit access or debt."),
+ "community_health_facility_geographic_scope":("Community healthcare-facility geographic scope","Community healthcare access","2011 community-informant report of the administrative-jurisdiction level of each commonly used health facility selected in JF001. Retain province, county/city, township/district and village/street fields and facility slots separately; later levels are conditionally routed. These relative location categories are community context, not participant utilization, travel distance, exact address, or geocodable location. Do not publish response values or derive a single ordinal score without release-level route validation."),
  "community_agricultural_machinery_supply_origin":("Community agricultural machinery supply origin","Community agricultural context","2011 village-only informant report of where rented large agricultural machinery is sourced: locally, elsewhere in the province, or another province. Asked only on the rented-machinery route; this is a contextual service-supply indicator, not personal machinery use, pesticide exposure, or ambient pollution."),
  "community_nonagricultural_employment":("Community non-agricultural employment and enterprise profile","Community economic context","2011 community-informant counts and wage estimates for local non-agricultural work and enterprises, generally referencing calendar year 2010. Preserve household/person/firm units, sex-specific wage measures, village-only routes and enterprise eligibility definitions; these aggregates are not the sampled participant's employment or wage."),
  "community_outmigration_workforce_profile":("Community out-migration workforce profile","Community migration context","2011 village-only informant report of the number of people working outside the village for more than three months in 2010 and the female share among them. These are aggregate community estimates, not a sampled participant's migration or employment history."),
@@ -174,6 +175,7 @@ MAP={
  "community_economic_activity_and_fiscal_context":["jj011","jj012","jj013","jj014","jj015","jj016"],
  "community_housing_market_context":["jj026","jj027","jj028","jj029","jj030"],
  "community_formal_credit_access":["jj031","jj032"],
+ "community_health_facility_geographic_scope":[f"jf003_{level}_{facility}_" for facility in range(1,9) for level in range(1,5)],
  "community_agricultural_machinery_supply_origin":["jj005"],
  "community_nonagricultural_employment":["jd001","jd002","jd003","jd004s1","jd004s2","jd004s3","jd004s4","jd005","jd006","jd007_1","jd007_2","jd008_1","jd008_2","jd009","jd010","jd011","jd012"],
  "community_outmigration_workforce_profile":["je001","je002"],
@@ -316,6 +318,7 @@ QUESTIONNAIRE_REVIEWED = {
  "community_urban_resident_medical_insurance_context","community_rural_cooperative_medical_insurance_context",
  "community_eldercare_center_context","community_home_eldercare_context",
  "community_economic_activity_and_fiscal_context","community_housing_market_context","community_formal_credit_access",
+ "community_health_facility_geographic_scope",
  "community_agricultural_machinery_supply_origin","community_nonagricultural_employment",
  *[f"community_{slug}_context" for _,slug,_ in ACTIVITY_FACILITIES],
  *[cid for cid in CONCEPTS if cid.startswith("community_kindergarten_") or
@@ -346,12 +349,15 @@ def validate_added_source_mappings():
  codes.update(code for cid in ("community_population_hukou_profile","community_short_term_migrant_population","community_age_sex_structure","community_never_married_over40_population","community_ethnic_minority_household_profile") for code in MAP[cid])
  codes.update(code for cid in ("community_director_education_profile","community_village_head_education_profile","community_village_secretary_education_profile","community_village_accountant_education_profile","community_local_leader_age_profile","community_local_leader_tenure_profile","community_total_deaths_3y","community_suicide_deaths_3y") for code in MAP[cid])
  codes.update(code for cid in ("community_outmigration_workforce_profile","community_outmigration_geographic_distribution","community_outmigration_destination_provinces","community_male_migrant_occupation_profile","community_male_migrant_average_wage","community_female_migrant_occupation_profile","community_female_migrant_average_wage","community_permanent_household_outmigration") for code in MAP[cid])
+ codes.update(MAP["community_health_facility_geographic_scope"])
  for code in codes:
   code_norm="".join(ch for ch in code.casefold() if ch.isalnum())
   q_norm="".join(ch for ch in q if ch.isalnum())
   cb_norm="".join(ch for ch in cb if ch.isalnum())
   if code.lower().startswith(("jb033s","jd004s","je007s","ja051s")):
    questionnaire_code=code.split("s",1)[0]
+  elif code.lower().startswith("jf003_"):
+   questionnaire_code="jf003"
   elif code.lower().startswith("ja006_"):
    questionnaire_code="ja006"
   else:
