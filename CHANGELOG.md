@@ -1,3 +1,10 @@
+# 2026-10-26 Environment-to-phenotype metadata readiness inventory
+
+- Added `scripts/summarize_environment_phenotype_readiness.py` and its generated audit to distinguish the CHARLS environment/housing proxy domain from NHANES-style measured chemical exposures.
+- Current sanitized catalog metadata identifies 94 distinct environmental/housing candidate concepts across waves, with 21–63 E candidates per wave. Their metadata-only co-occurrence with P concepts ranges from 2,184 to 13,482 candidate pairs by wave; these are not sample sizes, eligible analysis pairs, or association results.
+- Source rows preserve household/community/respondent measurement levels. The inventory explicitly keeps the 2018 subjective air-quality perception separate from monitored concentration and states that CHARLS 2011/2015 blood analytes are internal biomarkers/outcomes, not environmental exposure measures.
+- No participant-level data, Codebook frequencies, or unverified associations were used. The report is reproducible from the sanitized concept-source crosswalk and does not change the public site payload.
+
 # 2026-10-26 Review Community Questionnaire Part E migration fields (local update)
 
 - Reconciled all 46 JE-prefixed raw inventory fields against the official 2011 Part E questionnaire and Codebook. Mapped 44 source-anchored fields across eight provisional community-context concepts; kept JE014 informant position and Codebook-only JE016 as C-only metadata. Direct name/phone prompts are excluded.
