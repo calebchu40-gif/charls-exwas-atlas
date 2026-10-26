@@ -1,3 +1,9 @@
+# 2026-10-26 Remove personal workstation paths from public audit notes
+
+- Confirmed the local collaborator handoff manual is ignored by Git and is not in the public repository; its server path is therefore not published.
+- Removed the author's Windows profile/workspace path from tracked historical notes and marked the old uploaded-data inventory as superseded by the current protected intake checks.
+- No server address, login information, microdata, or analysis result was added to GitHub.
+
 # 2026-10-26 Recheck wave-specific official intake availability
 
 - Ran the existing metadata-only available-intake gate for Wave 2 weights and Wave 3 blood data. Both expected authorized inputs are absent from their protected intake locations; the private report records `skipped_missing_input` for each.
