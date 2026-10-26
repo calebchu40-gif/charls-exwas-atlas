@@ -1,4 +1,4 @@
-2026-10-26本地待发布：追加职业教育官方路径复核，纳入结构化就读方式、专业类别、毕业/文凭与中断字段48条；Life History目录82概念、1,914条字段映射（E 1,868、P 46）。Education History累计审查145/1,105字段，956个实质字段待核。学习方式分支各自保留；重复学校名称/地址和自由文本不纳入。详情见 `audit/life_history_education_history_continuation_review_2026-10-26.md`。本地app v150 / JSON v17，部署待验证。
+2026-10-26本地待发布：追加职业教育官方路径复核，纳入结构化就读方式、专业类别、毕业/文凭与中断字段48条；Life History目录82概念、1,914条字段映射（E 1,868、P 46）。Education History累计审查145/1,105字段，956个实质字段待核。学习方式分支各自保留；重复学校名称/地址和自由文本不纳入。详情见 `audit/life_history_education_history_continuation_review_2026-10-26.md`。提交 `eea2539` 已上线为 app v150 / JSON v17；线上82条JSON记录且SHA-256与本地一致。
 
 2026-10-26本地待发布：Education History 续审新增高中教育经历、阶段中断细节和升学考试路径24条字段映射；该模块累计审查97/1,105字段，1,004个实质字段待核。Life History目录为80概念、1,866字段映射（E 1,820、P 46）。高中重复学校名称、起止时间和地址暂缓，待审查重复记录结构和隐私边界。来源审计：`audit/life_history_education_history_continuation_review_2026-10-26.md`。提交 `400085e` 已上线为 app v149 / JSON v16；线上80条JSON记录且SHA-256与本地一致。
 
