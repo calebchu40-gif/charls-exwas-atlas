@@ -1,6 +1,6 @@
-## 2014 WORKHISTORY F_1 follow-up batch (local pending publication)
+## 2014 WORKHISTORY F_1/F104/F105/F105a batch (local pending publication)
 
-Reviewed F_1, F_1_0, F_1_1 and F_1_2 questionnaire routing and Codebook identities. Added two candidate concepts for final corrected lifetime work status and the conditional reason for never having worked. The two prior-wave consistency/interviewer route fields are excluded from E/P. WORKHISTORY totals are now 205 mapped, 19 privacy-excluded workplace locations, two route/quality exclusions, three linkage keys, one release version and 1,794 source-review deferrals. Local catalog is 112 concepts / 3,046 mappings (E 3,000, P 46), prepared as app v160 / JSON v27. Local validation is pending; public remains v159 / JSON v26. The complete WORKHISTORY ledger is `life_history_work_history_coverage_2014_v1.csv`.
+Reviewed F_1 lifetime work status and conditional never-work reason; F_1_0/F_1_1 are excluded route-check items. A follow-up review of the official WORK HISTORY questionnaire and Codebook also mapped 19 repeated employer-type, 15 firm-ownership and 13 official-staff status fields to three separate socioeconomic-context candidates. The concepts preserve job slots and conditional routing; these are not direct environmental exposures and blank routed fields are not No. WORKHISTORY totals: 252 mapped, 19 privacy-excluded workplace locations, two route/quality exclusions, three linkage keys, one release version, and 1,747 deferred substantive fields. Local catalog is 115 concepts / 3,093 mappings (E 3,047, P 46), prepared as app v161 / JSON v28; public remains v159 / JSON v26 until deployment.
 
 ## 2014 WORKHISTORY F001/F_3/F_2 batch (app v159 verified)
 
