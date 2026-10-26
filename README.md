@@ -8,6 +8,8 @@
 
 **2026-10-27试点Go/No-Go复核：**上一轮105项探索模型只证明软件链可运行，尚不能判定科学试点有效；当前Wave 1官方All Data/PSU/Weight/Blood均未进入受控入库目录，Wave 2权重和Wave 3血检文件也缺失。本轮只复查元数据门禁和受控目录，未读取个人回答、未拟合模型、未发布结果。下一步固定为官方源身份→重建与分母调和→目标/年龄域/权重/PSU与方差审核→冻结105项试点复核→独立方法审查→K=150住宅环境主块→K=90供暖路由子域。试点成败按设计有效性、可复现性及诊断判定，不按显著性；已登记240条待核假设（K=150/90），均属试点后探索；K=150其中105条与先前K=105探索重叠，批次校正不作最终全Atlas发现控制。它们不是分析样本或结果，主要模型与精确发行版编码仍未冻结。详细条件与文件到位后的自动执行顺序见[`audit/pilot_autonomous_execution_decision_2026-10-27.md`](audit/pilot_autonomous_execution_decision_2026-10-27.md)；家庭环境暴露—血液表型的候选协变量DAG首轮审阅见[`audit/wave1_household_environment_covariate_dag_review_2026-10-27.md`](audit/wave1_household_environment_covariate_dag_review_2026-10-27.md)。
 
+**跨波分析规约（2026-10-27）：**新增[`audit/cross_wave_pooling_and_estimand_protocol_v1.md`](audit/cross_wave_pooling_and_estimand_protocol_v1.md)，明确CHARLS默认逐波定义目标总体、使用适用的波次/子样本权重和方差设计；只有构念、单位/协议、样本框、估计量及设计均可比时才考虑跨波汇总。重复受访者不能当独立横断面堆叠，结构性跳题/未测量不能改作零或普通缺失。此为未审阅方法规约，不改变当前数据或授权状态。
+
 **本轮自动续接（2026-10-27）：**重新运行受保护的Wave 1及可用波次元数据门禁，结果仍为2011 All Data/PSU/Weight/Blood缺失、2013 Weights与2015 Blood缺失；没有CHARLS参与者数据被读取，模型保持未运行。K=150/K=90假设登记表结构审计确认240条规划记录覆盖10个主块暴露系数×15项表型、6个`i020=No`供暖路由对比×15项表型，两个家族使用同一15项表型，全部保持未批准状态。另新增公开元数据交叉核对：将16个暴露对比的代码/标签与2011 Codebook抽取文本对照、将15个血检表型字段与单位同血检crosswalk对照，并校验`i021`仅限`i020=No`问卷路由。该审计不读取参与者数据、不验证发行版实际编码、不冻结模型或产生关联结果，已接入GitHub元数据验证工作流。真实分析仍需四项Wave 1官方输入及源/分母/权重/PSU方差审查通过后方可触发。
 
 **关联结果发布门槛：**结果浏览器仅读取独立披露审查通过的公开聚合JSON；公开构建器要求逐项审查绑定到精确结果文件SHA-256，整族完整放行，任一假设未批准则整族不发布。审查模板、导出流程与网站字段白名单见[`audit/public_association_release_contract_v1.md`](audit/public_association_release_contract_v1.md)。目前没有正式关联结果文件。
