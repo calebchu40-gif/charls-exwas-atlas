@@ -9,6 +9,7 @@
 - Updated the protected Wave 1 table builder to accept explicit 2011 all-data ZIP/RAR, PSU, Weight, and Blood paths, preserve source hashes, and retain legacy input support; no source archive was available for a merge run.
 - Constrained Wave table builder input/output and temporary extraction to the protected local data root so licensed source data do not spill into a generic temp or synchronized folder.
 - Added the pinned pandas dependency required by the Wave table builder to the protected survey-audit environment.
+- Removed historical hard-coded prepared-row/PSU-map sizes from the 2011 pilot input checks; manifests now record observed frame dimensions while the official denominator remains a separate unresolved reconciliation gate.
 
 # 2026-10-26 Clarify CHARLS Wave 1 age-domain and variance gates
 

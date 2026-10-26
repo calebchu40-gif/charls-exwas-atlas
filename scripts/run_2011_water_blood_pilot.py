@@ -87,14 +87,14 @@ def read_input(analytes: list[dict[str, str]]) -> pl.DataFrame:
     fields.extend(r["variable"] for r in analytes)
     fields = list(dict.fromkeys(fields))
     person, meta = pyreadstat.read_dta(str(DATA), usecols=fields, output_format="polars")
-    if person.height != 17705 or person["ID"].null_count() or person["ID"].n_unique() != person.height:
-        raise ValueError("Prepared Wave 1 table row/ID integrity check failed")
+    if person.height == 0 or person["ID"].null_count() or person["ID"].n_unique() != person.height:
+        raise ValueError("Prepared Wave 1 table must be nonempty with unique, nonmissing respondent IDs")
     psu_map, _ = pyreadstat.read_dta(
         str(PSU_MAP), usecols=[PSU_FIELD], output_format="polars"
     )
-    if (psu_map.height != 450 or psu_map[PSU_FIELD].null_count()
+    if (psu_map.height == 0 or psu_map[PSU_FIELD].null_count()
             or psu_map[PSU_FIELD].n_unique() != psu_map.height):
-        raise ValueError("Protected Wave 1 PSU map integrity check failed")
+        raise ValueError("Protected Wave 1 PSU map must have unique, nonmissing community keys")
     if person.join(
         psu_map.select(PSU_FIELD).unique(), on=PSU_FIELD, how="anti"
     ).height:
@@ -304,6 +304,9 @@ def main() -> None:
     manifest = {
         "run_utc": stamp,
         "analysis": "Exploratory 2011 cross-sectional water-access proxy × 15 blood analytes",
+        "prepared_frame_rows": int(data.height),
+        "prepared_frame_unique_psu_keys": int(data["psu"].n_unique()),
+        "official_frame_denominator_reconciled": False,
         "provisional_analysis_domain": "age >=45 subpopulation within the full 2011 main-respondent/spouse blood-target frame, with valid water response and positive bloodweight; not a validated national estimand until exact source fields and design are verified",
         "age_domain_method": "official-guide-based direction: create the survey design on the complete blood-target frame, then apply age >=45 through the estimator domain/where condition; do not prefilter younger spouses before design creation",
         "target_population_gate": "Open for source validation: official guides support a 45+ domain within the main-respondent/spouse blood frame, but exact age/relationship eligibility, released bloodweight coverage, and final PSU/variance design must be verified against the authorized release.",

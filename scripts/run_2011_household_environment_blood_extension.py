@@ -192,6 +192,9 @@ def main() -> None:
     manifest = {
         "run_utc": stamp,
         "analysis": "Exploratory 2011 running-water and cooking-fuel proxies × 15 blood analytes",
+        "prepared_frame_rows": int(data.height),
+        "prepared_frame_unique_psu_keys": int(data["psu"].n_unique()),
+        "official_frame_denominator_reconciled": False,
         "provisional_analysis_domain": "age >=45 subpopulation within the full 2011 main-respondent/spouse blood-target frame, with valid exposure and positive bloodweight; not a validated national estimand until exact source fields and design are verified",
         "age_domain_method": "official-guide-based direction: create the survey design on the complete blood-target frame, then apply age >=45 through the estimator domain/where condition; do not prefilter younger spouses before design creation",
         "target_population_gate": "Open for source validation: official guides support a 45+ domain within the main-respondent/spouse blood frame, but exact age/relationship eligibility, released bloodweight coverage, and final PSU/variance design must be verified against the authorized release.",
