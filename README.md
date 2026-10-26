@@ -1,8 +1,8 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-26）
 
-**本地待发布更新：**app v181 / Life History JSON v48 的原型含178个Life History概念、5,856条映射（E 5,810、P 46）。最新新增15个兄弟姐妹最高学历字段，作为家庭社会经济背景候选；没有年龄/年份，故不推断其先于受访者童年发生，也不将各兄弟姐妹槽位视为独立暴露。兄弟姐妹健在状态的15个字段仍明确暂缓。2014 Life History的 EDUCATIONHISTORY 1,105个字段和 DEMOGRAPHICBACKGROUNDS 1,920个字段均已逐项分配去向。正式关联模型仍为0。详见[`audit/life_history_sibling_module_review_2026-10-26.md`](audit/life_history_sibling_module_review_2026-10-26.md)。
+**最新已上线更新：**app v181 / Life History JSON v48 的原型含178个Life History概念、5,856条映射（E 5,810、P 46）。新增15个兄弟姐妹最高学历字段，作为家庭社会经济背景候选；没有年龄/年份，故不推断其先于受访者童年发生，也不将各兄弟姐妹槽位视为独立暴露。兄弟姐妹健在状态的15个字段仍明确暂缓。2014 Life History的 EDUCATIONHISTORY 1,105个字段和 DEMOGRAPHICBACKGROUNDS 1,920个字段均已逐项分配去向。正式关联模型仍为0。部署后首页、专题JSON返回HTTP 200，远端JSON与本地SHA-256一致。详见[`audit/life_history_sibling_module_review_2026-10-26.md`](audit/life_history_sibling_module_review_2026-10-26.md)。
 
-**当前线上版本：**CHARLS ExWAS Atlas已公开部署：[网站入口](https://calebchu40-gif.github.io/charls-exwas-atlas/)。线上 v180 / Life History JSON v47 已核验；本地 v181 / JSON v48 待部署。正式关联模型仍为0；目录共现不等于样本量或关联结果。
+**当前线上版本：**CHARLS ExWAS Atlas已公开部署：[网站入口](https://calebchu40-gif.github.io/charls-exwas-atlas/)。线上 app v181 / Life History JSON v48 已核验；远端JSON SHA-256 与本地相同。正式关联模型仍为0；目录共现不等于样本量或关联结果。
 
 **最新线上扩展（提交 `3d6a0a4`，app v139）：**官方2014问卷C5–C5f家庭成分题核对到WEALTHHISTORY模块，新增1个年龄受限的历史家庭背景候选概念、189条选项字段映射；七种本人/亲属问卷形式均保留，受访者题仅问80岁及以上人群。`FAMILYINFORMATION:c5`是另一条饥荒逃荒题，按模块+字段码区分。Life History专题现为36组、993条字段（E 965、P 28）；线上JSON已核验。字段覆盖表和审计见[`audit/life_history_historical_family_class_coverage_2014_v1.csv`](audit/life_history_historical_family_class_coverage_2014_v1.csv)、[`audit/life_history_historical_family_class_review_2026-10-26.md`](audit/life_history_historical_family_class_review_2026-10-26.md)。529项测试、公开包、92条分析锁、前端语法与差异检查均通过。
 

@@ -2,7 +2,7 @@
 
 - Re-reviewed official 2014 Life History B4_5 and mapped 15 sibling education slots to one family-of-origin socioeconomic-context candidate; retained explicit limits on timing, sibling-slot dependence, roster identity and the no-weight special module.
 - Kept 15 sibling living-status fields deferred because they describe relatives at an undated interview-time state and do not establish a respondent-level exposure or phenotype.
-- Rebuilt the Life History catalog: 178 concepts / 5,856 mappings (E 5,810, P 46); app v181 / JSON v48. Formal association models remain 0.
+- Rebuilt the Life History catalog: 178 concepts / 5,856 mappings (E 5,810, P 46); app v181 / JSON v48. Deployment verified: homepage and JSON HTTP 200, remote JSON SHA-256 matches local. Formal association models remain 0.
 - Audit: `audit/life_history_sibling_module_review_2026-10-26.md`.
 
 # 2026-10-26 Map Life History skill-certificate acquisition years
