@@ -10,6 +10,8 @@
 
 **本轮续接核验（2026-10-26）：**重跑受保护的结果表完整性审计后，试点表结构、有限数值和预设多重校正复算通过；该结论仅表示技术完整，不表示估计有效。Wave 1官方来源预检仍因全量包、PSU、Weight、Blood文件缺失而未通过，因此不重拟合、不扩展K=150/K=90，也不据现有P/q值判断效果。正式统计的下一动作是将获准官方文件放入本机受控入库目录，随后按来源→样本框/年龄域→权重→PSU与方差→冻结105系数复核的顺序放行。公开站点仅更正了状态说明并已核验加载v192；没有关联结果或个人数据发布。完整Go/No-Go与试点通过后的固定扩展顺序见[`audit/pilot_success_criteria_and_scale_up_2026-10-26.md`](audit/pilot_success_criteria_and_scale_up_2026-10-26.md)和[`audit/pilot_followup_execution_plan_2026-10-26.md`](audit/pilot_followup_execution_plan_2026-10-26.md)。
 
+**跨波官方输入门槛（2026-10-26）：**受保护目录内Wave 1官方全量包、PSU、Weight、Blood均缺失；Wave 2官方`Weights.dta`和Wave 3（2015）官方Blood artifact/`.dta`也未入库。2013/2015预检均为`skipped_missing_input`。仓库虽有候选字段和波次派生表，但在相应官方发行文件、权重/样本资格与设计结构完成版本核验前，不运行或发布这些波次的正式关联模型。聚合状态报告仅保存在 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\qa_outputs`。
+
 **试点后续路线（2026-10-26）：**试点通过了“本地软件链可运行”检查，但没有通过升级为正式关联结果的来源/抽样设计门槛。后续按“Wave 1官方源文件与年龄/权重/PSU认证 → 冻结方案复核试点 → 分批扩展2011环境代理 × 表型 → 再评估其他波次 → 披露审查后发布”推进；不会按显著性筛掉假设，也不会把环境代理包装成化学剂量。详细执行闸门见[`audit/pilot_followup_execution_plan_2026-10-26.md`](audit/pilot_followup_execution_plan_2026-10-26.md)。2026-10-26的后续提交 `1517c1c`、`7391fd6` 已将年龄域/配偶资格与PSU拆分社区问题纳入闸门；GitHub校验不等于微观分析复现或方法学批准。
 
 **最新线上扩展（提交 `3d6a0a4`，app v139）：**官方2014问卷C5–C5f家庭成分题核对到WEALTHHISTORY模块，新增1个年龄受限的历史家庭背景候选概念、189条选项字段映射；七种本人/亲属问卷形式均保留，受访者题仅问80岁及以上人群。`FAMILYINFORMATION:c5`是另一条饥荒逃荒题，按模块+字段码区分。Life History专题现为36组、993条字段（E 965、P 28）；线上JSON已核验。字段覆盖表和审计见[`audit/life_history_historical_family_class_coverage_2014_v1.csv`](audit/life_history_historical_family_class_coverage_2014_v1.csv)、[`audit/life_history_historical_family_class_review_2026-10-26.md`](audit/life_history_historical_family_class_review_2026-10-26.md)。529项测试、公开包、92条分析锁、前端语法与差异检查均通过。

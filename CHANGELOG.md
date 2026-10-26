@@ -1,3 +1,9 @@
+# 2026-10-26 Recheck wave-specific official intake availability
+
+- Ran the existing metadata-only available-intake gate for Wave 2 weights and Wave 3 blood data. Both expected authorized inputs are absent from their protected intake locations; the private report records `skipped_missing_input` for each.
+- Together with the Wave 1 preflight, all three current official-source intake gates remain open. This does not imply other waves' source files were searched outside their protected project locations.
+- Updated the README to distinguish existing wave-derived candidate tables from source-authenticated official releases. No participant values were read and no analysis was fitted.
+
 # 2026-10-26 Refine official sampling-design evidence
 
 - Rechecked the CHARLS official sample-design page and recorded the described first-stage county sorting/PPS, within-county community PSU selection, and 30 split communities in the survey-design review.
