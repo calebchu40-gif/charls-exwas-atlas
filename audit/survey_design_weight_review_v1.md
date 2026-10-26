@@ -2,6 +2,8 @@
 
 日期：初稿2026-10-10；官方资料复核更新2026-10-22。范围：CHARLS 2011、2013、2015、2018、2020官方用户手册/发布说明和本地已整理个人表中可见的权重、样本标记与设计标识。个人级权重值只在 `%LOCALAPPDATA%` 的本地表中读取；项目内仅记录聚合人数、变量名和标签。
 
+2026-10-26 在线复核 CHARLS 官方抽样介绍页后，补充了抽样阶段描述：县级单位先按 NBS 地区、城乡县区类型及人均 GDP 排序/分层，再系统 PPS 抽取；每个县级单位抽取 3 个村/城市社区作为指南所称 PSU；30 个大型社区另拆子社区。该页面仍未给出可直接用于发布数据方差估计的分层字段、复制权重或推荐方差估计器。咨询草稿列出需 CHARLS 确认的问题；官方联系页当前列出 `charls@whu.edu.cn`，发送前仍应由研究者复核联系人和咨询内容。
+
 2026-10-24 对 Wave 2 官方发布说明补充了估计目标级权重解释：区分 `crosssection`/`longitudinal` 样本资格、含/不含非应答调整的横截面权重、纵向响应概率权重，以及独立横截面生物标志物权重；该波没有纵向生物标志物权重。执行限制和官方原文依据见[`wave2_weight_estimand_source_review_2026-10-24.md`](wave2_weight_estimand_source_review_2026-10-24.md)。
 
 ## 官方说明确认的使用边界
@@ -23,6 +25,7 @@
 - [CHARLS Wave 4 (2018) User's Guide，权重章节及数据集说明](https://charls.pku.edu.cn/en/data/User2018.pdf)
 - [CHARLS 2020 Wave 5中文用户手册](https://charls.charlsdata.com/pages/Data/2020-charls-wave5/zh-CN.html)
 - [CHARLS官方抽样介绍](https://charls.pku.edu.cn/en/About/Sample.htm)
+- [CHARLS官方联系页](https://charls.pku.edu.cn/en/Contactus/Contactus.htm)（页面当前列出的联系邮箱：`charls@whu.edu.cn`；本项目尚未代研究者发送邮件）
 
 ## 本地已整理表的实际覆盖
 
