@@ -1342,6 +1342,32 @@ GROUPS = [
         "status": "official item and yes/no skip route reviewed; certificate identity/year linkage requires separate QA",
         "caveat": "This is a self-reported ever indicator, not a particular certificate, standardized competence or current license. Certificate names are open text; E134 year slots are not mapped until certificate-to-year identity can be validated.",
     },
+    {
+        "concept_id": "life_history_education_gap_activity_context",
+        "label": "Activities reported during gaps between repeated education episodes",
+        "role": "e",
+        "modules": ["EDUCATIONHISTORY"],
+        "domain": "educational continuity and life-course context",
+        "patterns": [r"e011d_[1-3]_s(?:[1-9]|1[01])", r"e011h_[1-2]_s(?:[1-9]|1[01])", r"e011l_[1-2]_s(?:[1-9]|1[01])", r"e012d_[1-5]_s(?:[1-9]|1[01])", r"e024d_[1-3]_s(?:[1-9]|1[01])", r"e035d_[1-2]_s(?:[1-9]|1[01])", r"e050d_[1-2]_s(?:[1-9]|1[01])", r"e057d_1_s(?:[1-9]|1[01])", r"e065d_[1-2]_s(?:[1-9]|1[01])"],
+        "question": "E011d/E011h/E011l/E012d/E024d/E035d/E050d/E057d/E065d",
+        "unit": "242 repeated multi-select activity slots across preschool, primary, middle, high, vocational and college episode gaps",
+        "values": "Questionnaire activity options cover work, inactivity, illness, childbirth, family care, leisure/travel, training, incarceration and other. The gap questions are routed when the interval between repeated same-stage education episodes exceeds seven months.",
+        "status": "official questionnaire gap definitions and Codebook repeated-slot identities reviewed; category storage and route-specific missingness require QA",
+        "caveat": "These describe activities during recalled gaps between same-stage education episodes, not general life history or independent causal exposures. Repeated episode slots are nested and not independent; preserve stage and route. Other is not interpreted; open-text details and Codebook frequencies are excluded.",
+    },
+    {
+        "concept_id": "life_history_education_gap_without_other_schooling",
+        "label": "Reported absence of other education during long gaps between same-stage episodes",
+        "role": "e",
+        "modules": ["EDUCATIONHISTORY"],
+        "domain": "educational continuity and life-course context",
+        "patterns": [r"e011[ck]_[1-3]_", r"e012c_[1-5]_", r"e024c_[1-3]_", r"e035c_[1-2]_", r"e050c_[1-2]_", r"e057c_1_", r"e065c_[1-2]_"],
+        "question": "E011c/E011k/E012c/E024c/E035c/E050c/E057c/E065c",
+        "unit": "20 routed yes/no gap questions across education stages",
+        "values": "Question asks whether the respondent left education during an unreported gap between the former episode's end and the next episode's start. Asked only for intervals meeting the questionnaire's greater-than-seven-month rule.",
+        "status": "official gap routing and Codebook field identities reviewed; yes/no storage and stage-specific routes require QA",
+        "caveat": "This is a retrospective gap-status indicator, not school dropout as defined by E004/E005 and not proof of no informal learning. Preserve episode/stage context; do not treat skipped gap checks as No.",
+    },
 ]
 
 

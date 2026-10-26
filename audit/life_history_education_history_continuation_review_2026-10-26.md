@@ -83,3 +83,11 @@ The three barrier items are conditional on the highest reported education stage 
 Added 69 fields in five concepts: radio/TV university (11), correspondence education (16), self-study examination (16), other adult education (25) and any vocational skill certificate (1). Each named route remains distinct, retains its own repeated slots and diploma skips. “Other education” course names are open text, so duration/diploma fields are not treated as a standardized course type. Skill-certificate dates are deferred because the structured year fields cannot be reliably linked to certificate identity without validating open-text records.
 
 The Education History ledger now has 564 mapped fields out of 1,105; 537 substantive fields remain `deferred_source_review`, three linkage keys and one release version field are excluded. Overall Life History catalog: 103 concepts / 2,333 mappings (E 2,287, P 46). Candidate metadata only; no participant data or association results.
+
+## Repeated-school-gap review: E011–E065
+
+Reviewed the repeated school-gap fields across preschool, primary school, middle school, high school, vocational school, three-year college and four-year college episodes. Added 262 mappings in two concepts: 242 multi-select activity slots and 20 indicators asking whether there was no other education during a long gap.
+
+The official questionnaire asks these only for intervals exceeding seven months between the end of one episode and start of another in the same school stage. Activity options include work, doing nothing, illness, childbirth, family care, leisure/travel, training, incarceration and other. These are distinct from E004/E005 interruption-and-return questions: ordinary transitions between stages are excluded from E004 by its definition, while these items concern gaps between repeated episodes within the same stage. Repeated slots remain nested by stage/episode and are not independent observations. Do not interpret unasked gap checks as No or “no other education” as no informal learning.
+
+Education History now has 826 mapped fields / 1,105; 275 substantive fields remain deferred, with three linkage keys and one release-version field excluded. Overall Life History catalog: 105 concepts / 2,595 mappings (E 2,549, P 46). Candidate metadata only.
