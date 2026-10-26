@@ -1,3 +1,9 @@
+# 2026-10-26 Add protected aggregate design-frame preflight
+
+- Added `scripts/audit_2011_pilot_design_frame.py` to check local prepared-frame denominator, age-domain availability, candidate bloodweight coverage, and PSU-key mapping while emitting aggregate diagnostics only under protected local storage.
+- The current local derived frame does not reconcile to the official Blood User Guide target count; candidate age/weight and source/design authentication remain unresolved. The detailed counts remain in a private report and are not published.
+- Created a dedicated local analysis environment under the protected data root using the pinned requirements. No participant-level data or environment artifacts entered GitHub; no association model was rerun and the public site payload is unchanged.
+
 # 2026-10-26 Clarify CHARLS Wave 1 age-domain and variance gates
 
 - Re-read the official 2011 National Baseline User Guide and Blood Data User Guide. The blood target is all main respondents and spouses, with `bloodweight` built from individual weights and a blood-response correction estimated on both groups.
