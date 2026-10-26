@@ -1,3 +1,10 @@
+# 2026-10-27 Prepare a provenance-gated Wave 3 blood merge
+
+- Added `scripts/merge_2015_official_blood.py`, a protected-local preparation step that requires both exact official SHA-1s (2015 All Data ZIP and separate Blood Data artifact), the metadata-only Blood intake gate, and manifest hashes tying the prepared Wave 3 table to that exact archive and output.
+- The merge is an ID-keyed one-to-one left join, preserves the prepared respondent frame/order and `crosssection` field, leaves nonresponders' lab values missing, and records that `Blood_weight` is cross-sectional only. It does not select an analysis sample or fit models. Outputs and QA must stay outside cloud-sync/public repository paths.
+- Added five synthetic regression tests. Full Python suite: 571 tests passed; Python compilation, CLI help, and `git diff --check` passed. Tests used synthetic fixtures only.
+- Protected intake inventory still contains only the 2015 Blood directory README; official Blood artifact/Stata file and the official 2015 All Data ZIP are absent. The old prepared wave table is not authenticated against the current source/output manifest, so no merge or formal model was run and formal association count remains 0.
+
 # 2026-10-27 Specify Wave 3 blood-weight target before future modeling
 
 - Rechecked the official 2015 Blood Data Release Note and Wave 3 data page. The release distinguishes the full Wave 3 interview frame from its cross-sectional sample and blood responders, releases a cross-sectional `Blood_weight`, and says panel weights depend on the analysis purpose.
