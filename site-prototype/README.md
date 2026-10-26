@@ -1,4 +1,4 @@
-2026-10-26本地待发布：Education History 续审对照官方问卷E012–E034c和Codebook字段身份，新增小学/初中教育完成情况及阶段中断原因4个概念、40条映射。目录本地重建为77个概念、1,842条映射（E 1,796、P 46）；教育史字段台账累计审查73/1,105，尚余1,028个实质字段待核。保留路由、回忆误差和无权重特殊调查限制；不发布Codebook频数、自由文本、学校名称地址或个体值。审计见 `audit/life_history_education_history_continuation_review_2026-10-26.md`。部署尚未验证。
+2026-10-26本地待发布：Education History 续审对照官方问卷E012–E034c和Codebook字段身份，新增小学/初中教育完成情况及阶段中断原因4个概念、40条映射。目录重建为77个概念、1,842条映射（E 1,796、P 46）；教育史字段台账累计审查73/1,105，尚余1,028个实质字段待核。保留路由、回忆误差和无权重特殊调查限制；不发布Codebook频数、自由文本、学校名称地址或个体值。审计见 `audit/life_history_education_history_continuation_review_2026-10-26.md`。提交 `b70546e` 已上线为 app v148 / JSON v15；线上77条JSON记录且SHA-256与本地一致。
 
 # CHARLS ExWAS Atlas 原型
 
