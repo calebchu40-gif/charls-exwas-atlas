@@ -373,7 +373,49 @@ def _term_for(row: dict[str, str]) -> str:
     return f"exp_{row['exposure_concept_id']}_{row['contrast_id']}"
 
 
-def _fit_exposure_group(data: Any, config: dict[str, Any], analyte: dict[str, str], rows: list[dict[str, str]], family_id: str, terms: list[str], term_map: dict[str, list[str]], pl: Any, np: Any, svy: Any) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
+def _outcome_expression(config: dict[str, Any], analyte: dict[str, str], pl: Any) -> Any:
+    validity = config["outcome_validity_rules"][analyte["concept_id"]]
+    raw_outcome = pl.col(analyte["variable"])
+    valid_outcome = raw_outcome.is_finite()
+    if validity["valid_min"] is not None:
+        valid_outcome &= raw_outcome >= float(validity["valid_min"])
+    if validity["valid_max"] is not None:
+        valid_outcome &= raw_outcome <= float(validity["valid_max"])
+    if validity["invalid_codes"]:
+        invalid_codes = [_numeric_code(value, f"{analyte['concept_id']}.invalid_codes") for value in validity["invalid_codes"]]
+        valid_outcome &= ~raw_outcome.is_in(invalid_codes)
+    if config["outcome_transformations"][analyte["concept_id"]] == "identity":
+        return pl.when(valid_outcome & (raw_outcome >= 0)).then(raw_outcome).otherwise(None)
+    return pl.when(valid_outcome & (raw_outcome > 0)).then(raw_outcome.log()).otherwise(None)
+
+
+def _reference_outcome_scale(data: Any, config: dict[str, Any], analyte: dict[str, str], pl: Any, np: Any) -> dict[str, Any]:
+    """Compute one wave/phenotype scale before applying exposure/covariate complete-case rules."""
+    frame = config["frame"]
+    age_field = frame["age_field"]
+    domain = pl.col(age_field).is_not_null() & (pl.col(age_field) >= float(frame["minimum_age"]))
+    fasting = config["outcome_validity_rules"][analyte["concept_id"]]["fasting_rule"]
+    if fasting["mode"] == "restrict":
+        allowed_fasting = [_numeric_code(value, f"{analyte['concept_id']}.fasting eligible code") for value in fasting["eligible_codes"]]
+        domain &= pl.col(fasting["field"]).is_in(allowed_fasting)
+    outcome = "__reference_outcome"
+    reference = data.with_columns(_outcome_expression(config, analyte, pl).alias(outcome)).filter(
+        domain & pl.col(outcome).is_not_null()
+    )
+    if reference.height == 0:
+        return {"status": "no_valid_reference_outcome", "n_reference_private": 0}
+    weights = np.asarray(reference["__design_weight"].to_list(), dtype=float)
+    values = np.asarray(reference[outcome].to_list(), dtype=float)
+    if not np.isfinite(weights).all() or (weights <= 0).any() or not np.isfinite(values).all():
+        raise ValueError(f"Invalid reference-scale values or weights for {analyte['concept_id']}")
+    mean = float(np.average(values, weights=weights))
+    sd = float(np.sqrt(np.average(np.square(values - mean), weights=weights)))
+    if not math.isfinite(sd) or sd <= 0:
+        return {"status": "zero_or_invalid_reference_sd", "n_reference_private": reference.height}
+    return {"status": "ready", "mean": mean, "sd": sd, "n_reference_private": reference.height}
+
+
+def _fit_exposure_group(data: Any, config: dict[str, Any], analyte: dict[str, str], rows: list[dict[str, str]], family_id: str, terms: list[str], term_map: dict[str, list[str]], reference_scale: dict[str, Any], pl: Any, np: Any, svy: Any) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
     field_candidate = rows[0]["exposure_field_candidate"]
     field = config["exposure_field_mapping"][field_candidate]
     valid_codes = sorted({_numeric_code(row["exposure_code_candidate"], "exposure code") for row in rows}
@@ -390,22 +432,11 @@ def _fit_exposure_group(data: Any, config: dict[str, Any], analyte: dict[str, st
         heating_field = config["exposure_field_mapping"]["i020"]
         domain &= pl.col(heating_field) == 2
 
-    analyte_field = analyte["variable"]
-    transform = config["outcome_transformations"][analyte["concept_id"]]
     outcome_term = "__outcome_transformed"
-    raw_outcome = pl.col(analyte_field)
-    valid_outcome = raw_outcome.is_finite()
-    if validity["valid_min"] is not None:
-        valid_outcome &= raw_outcome >= float(validity["valid_min"])
-    if validity["valid_max"] is not None:
-        valid_outcome &= raw_outcome <= float(validity["valid_max"])
-    if validity["invalid_codes"]:
-        invalid_codes = [_numeric_code(value, f"{analyte['concept_id']}.invalid_codes") for value in validity["invalid_codes"]]
-        valid_outcome &= ~raw_outcome.is_in(invalid_codes)
-    if transform == "identity":
-        outcome_expr = pl.when(valid_outcome & (raw_outcome >= 0)).then(raw_outcome).otherwise(None)
-    else:
-        outcome_expr = pl.when(valid_outcome & (raw_outcome > 0)).then(raw_outcome.log()).otherwise(None)
+    if reference_scale["status"] != "ready":
+        return {}, {"n_complete": 0, "n_reference_private": reference_scale.get("n_reference_private", 0),
+                    "status": reference_scale["status"]}
+    outcome_expr = _outcome_expression(config, analyte, pl)
     model_data = data.with_columns(outcome_expr.alias(outcome_term))
 
     covariates = term_map["continuous"] + term_map["binary"] + term_map["categorical"]
@@ -417,9 +448,8 @@ def _fit_exposure_group(data: Any, config: dict[str, Any], analyte: dict[str, st
     if pair.height == 0:
         return {}, {"n_complete": 0, "status": "no_complete_cases"}
     weights = np.asarray(pair["__design_weight"].to_list(), dtype=float)
-    values = np.asarray(pair[outcome_term].to_list(), dtype=float)
-    mean = float(np.average(values, weights=weights))
-    sd = float(np.sqrt(np.average(np.square(values - mean), weights=weights)))
+    mean = float(reference_scale["mean"])
+    sd = float(reference_scale["sd"])
     if not math.isfinite(sd) or sd <= 0:
         return {}, {"n_complete": pair.height, "status": "zero_or_invalid_weighted_sd"}
     model_data = model_data.with_columns(
@@ -486,7 +516,7 @@ def _fit_exposure_group(data: Any, config: dict[str, Any], analyte: dict[str, st
             "engine_p_value_private": engine_p_value,
             "design_df": design_df,
             "weighted_outcome_sd": sd,
-            "estimate_scale": "standard_deviation_of_transformed_outcome",
+            "estimate_scale": "wave_phenotype_target_domain_standard_deviation",
             "estimate_transformed_unit_scale": estimate * sd if estimate is not None else None,
             "se_transformed_unit_scale": standard_error * sd if standard_error is not None else None,
             "fit_status": "estimated" if inference_complete else "incomplete_inference",
@@ -532,6 +562,10 @@ def run_scaleup() -> dict[str, Any]:
     if getattr(svy, "__version__", None) != EXPECTED_SVY:
         raise RuntimeError(f"Expected svy {EXPECTED_SVY}, found {getattr(svy, '__version__', 'unknown')}")
     data, term_map = _read_protected_frame(config, analytes, registry, pyreadstat, pl)
+    reference_scales = {
+        analyte["concept_id"]: _reference_outcome_scale(data, config, analyte, pl, np)
+        for analyte in analytes
+    }
 
     from adjust_exwas_pvalues import adjust_pvalues
     family_ids = ("wave1_household_environment_K150", "wave1_heating_route_K90")
@@ -548,7 +582,8 @@ def run_scaleup() -> dict[str, Any]:
             for analyte in analytes:
                 expected_rows = [row for row in exposure_rows if row["phenotype_concept_id"] == analyte["concept_id"]]
                 estimates, qa = _fit_exposure_group(
-                    data, config, analyte, contrast_rows, family_id, terms, term_map, pl, np, svy
+                    data, config, analyte, contrast_rows, family_id, terms, term_map,
+                    reference_scales[analyte["concept_id"]], pl, np, svy
                 )
                 pair_qa.append({
                     "family_id": family_id, "exposure_concept_id": concept,
