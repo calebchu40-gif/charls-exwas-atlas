@@ -64,5 +64,277 @@
     "blood_creatinine": "not_frozen",
     "blood_uric_acid": "not_frozen"
   },
-  "review_note": "Complete only after official release fields, target frame, design, and outcome handling have been reviewed. Never copy this template into the approval directory as if it were frozen."
+  "review_note": "Complete only after official release fields, target frame, design, and outcome handling have been reviewed. Never copy this template into the approval directory as if it were frozen.",
+  "outcome_validity_rules": {
+    "blood_wbc": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_hemoglobin": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_hematocrit": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_mcv": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_platelets": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_total_cholesterol": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_hdl": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_ldl": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_triglycerides": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_glucose": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_hba1c": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_crp": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_bun": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_creatinine": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_uric_acid": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    }
+  }
 }

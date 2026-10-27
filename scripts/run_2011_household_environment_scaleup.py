@@ -68,7 +68,7 @@ def _validate_configuration(
 ) -> None:
     if config.get("status") != "frozen":
         raise ValueError("Scale-up configuration is not frozen")
-    for section in ("target", "frame", "design", "exposure_field_mapping", "model", "outcome_transformations"):
+    for section in ("target", "frame", "design", "exposure_field_mapping", "model", "outcome_transformations", "outcome_validity_rules"):
         if not isinstance(config.get(section), dict):
             raise ValueError(f"Scale-up configuration lacks {section}")
     for key in ("estimand", "population_description", "age_domain_method"):
@@ -134,6 +134,59 @@ def _validate_configuration(
         raise ValueError("Frozen transformations must cover exactly the 15 registered blood phenotypes")
     if any(not isinstance(value, str) or value not in {"identity", "log"} for value in transforms.values()):
         raise ValueError("Each blood outcome transformation must be frozen as identity or log")
+    validity = config["outcome_validity_rules"]
+    if set(validity) != expected_outcomes:
+        raise ValueError("Frozen validity rules must cover exactly the 15 registered blood phenotypes")
+    required_validity_fields = (
+        "review_status", "reviewer", "reviewed_at", "source_anchor", "unit",
+        "valid_domain_rule", "valid_min", "valid_max", "invalid_codes",
+        "lod_censoring_rule", "topcode_rule", "fasting_rule",
+    )
+    for analyte in analytes:
+        concept = analyte["concept_id"]
+        rule = validity[concept]
+        if not isinstance(rule, dict) or any(key not in rule for key in required_validity_fields):
+            raise ValueError(f"Frozen validity rule for {concept} is incomplete")
+        if rule["review_status"] != "approved":
+            raise ValueError(f"Frozen validity rule for {concept} has not been independently approved")
+        for key in ("reviewer", "reviewed_at", "source_anchor", "valid_domain_rule"):
+            if not isinstance(rule.get(key), str) or not rule[key].strip():
+                raise ValueError(f"Frozen validity rule for {concept} lacks {key}")
+        if rule["lod_censoring_rule"] not in {"none_reported", "handled_by_invalid_codes_or_bounds"}:
+            raise ValueError(f"Frozen validity rule for {concept} uses unsupported LOD handling")
+        if rule["topcode_rule"] not in {"none_reported", "handled_by_invalid_codes_or_bounds"}:
+            raise ValueError(f"Frozen validity rule for {concept} uses unsupported top-code handling")
+        fasting = rule["fasting_rule"]
+        if not isinstance(fasting, dict) or fasting.get("mode") not in {"not_applicable", "retain_all", "restrict"}:
+            raise ValueError(f"Frozen validity rule for {concept} has unsupported fasting handling")
+        if fasting["mode"] == "restrict":
+            if not isinstance(fasting.get("field"), str) or not OUTCOME_TERMS.fullmatch(fasting["field"]):
+                raise ValueError(f"Frozen validity rule for {concept} fasting restriction lacks a valid field")
+            if not isinstance(fasting.get("eligible_codes"), list) or not fasting["eligible_codes"]:
+                raise ValueError(f"Frozen validity rule for {concept} fasting restriction lacks eligible codes")
+            for value in fasting["eligible_codes"]:
+                _numeric_code(value, f"{concept}.fasting eligible code")
+        elif fasting.get("field") not in (None, "") or fasting.get("eligible_codes", []) not in (None, []):
+            raise ValueError(f"Frozen validity rule for {concept} must not specify fasting codes unless mode=restrict")
+        if rule["unit"] != analyte["unit"]:
+            raise ValueError(f"Frozen validity rule for {concept} has a unit inconsistent with the reviewed crosswalk")
+        if not isinstance(rule["invalid_codes"], list):
+            raise ValueError(f"Frozen validity rule for {concept} must provide invalid_codes as a list")
+        invalid_codes = [_numeric_code(value, f"{concept}.invalid_codes") for value in rule["invalid_codes"]]
+        for key in ("valid_min", "valid_max"):
+            value = rule[key]
+            if value is not None:
+                _numeric_code(value, f"{concept}.{key}")
+        lower, upper = rule["valid_min"], rule["valid_max"]
+        if lower is not None and upper is not None and float(lower) > float(upper):
+            raise ValueError(f"Frozen validity rule for {concept} has reversed valid_min/valid_max")
+        if (
+            rule["lod_censoring_rule"] == "handled_by_invalid_codes_or_bounds"
+            or rule["topcode_rule"] == "handled_by_invalid_codes_or_bounds"
+        ) and not invalid_codes and lower is None and upper is None:
+            raise ValueError(f"Frozen validity rule for {concept} claims handled censoring without executable codes/bounds")
+        if len(invalid_codes) != len(set(invalid_codes)):
+            raise ValueError(f"Frozen validity rule for {concept} contains duplicate invalid_codes")
 
     # Validate model terms before touching the prepared participant table.
     def require_term(name: object, context: str) -> str:
@@ -192,6 +245,9 @@ def _selected_fields(config: dict[str, Any], analytes: list[dict[str, str]], reg
         fields.add(item["field"])
     for analyte in analytes:
         fields.add(analyte["variable"])
+        fasting = config["outcome_validity_rules"][analyte["concept_id"]]["fasting_rule"]
+        if fasting["mode"] == "restrict":
+            fields.add(fasting["field"])
     if any(not OUTCOME_TERMS.fullmatch(str(field)) for field in fields):
         raise ValueError("Configuration contains an invalid prepared-table field name")
     age_field = str(frame["age_field"])
@@ -325,6 +381,11 @@ def _fit_exposure_group(data: Any, config: dict[str, Any], analyte: dict[str, st
     age_field = config["frame"]["age_field"]
     domain = pl.col(age_field).is_not_null() & (pl.col(age_field) >= float(config["frame"]["minimum_age"]))
     domain &= pl.col(field).is_in(valid_codes)
+    validity = config["outcome_validity_rules"][analyte["concept_id"]]
+    fasting = validity["fasting_rule"]
+    if fasting["mode"] == "restrict":
+        allowed_fasting = [_numeric_code(value, f"{analyte['concept_id']}.fasting eligible code") for value in fasting["eligible_codes"]]
+        domain &= pl.col(fasting["field"]).is_in(allowed_fasting)
     if family_id == "wave1_heating_route_K90":
         heating_field = config["exposure_field_mapping"]["i020"]
         domain &= pl.col(heating_field) == 2
@@ -333,10 +394,18 @@ def _fit_exposure_group(data: Any, config: dict[str, Any], analyte: dict[str, st
     transform = config["outcome_transformations"][analyte["concept_id"]]
     outcome_term = "__outcome_transformed"
     raw_outcome = pl.col(analyte_field)
+    valid_outcome = raw_outcome.is_finite()
+    if validity["valid_min"] is not None:
+        valid_outcome &= raw_outcome >= float(validity["valid_min"])
+    if validity["valid_max"] is not None:
+        valid_outcome &= raw_outcome <= float(validity["valid_max"])
+    if validity["invalid_codes"]:
+        invalid_codes = [_numeric_code(value, f"{analyte['concept_id']}.invalid_codes") for value in validity["invalid_codes"]]
+        valid_outcome &= ~raw_outcome.is_in(invalid_codes)
     if transform == "identity":
-        outcome_expr = pl.when(raw_outcome >= 0).then(raw_outcome).otherwise(None)
+        outcome_expr = pl.when(valid_outcome & (raw_outcome >= 0)).then(raw_outcome).otherwise(None)
     else:
-        outcome_expr = pl.when(raw_outcome > 0).then(raw_outcome.log()).otherwise(None)
+        outcome_expr = pl.when(valid_outcome & (raw_outcome > 0)).then(raw_outcome.log()).otherwise(None)
     model_data = data.with_columns(outcome_expr.alias(outcome_term))
 
     covariates = term_map["continuous"] + term_map["binary"] + term_map["categorical"]

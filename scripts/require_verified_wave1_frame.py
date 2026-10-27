@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 from pathlib import Path
 from typing import Any
 
@@ -275,7 +276,7 @@ def require_wave1_analysis_readiness(
             raise ValueError("Wave 1 readiness gate: scale-up model configuration is not frozen")
         if not str(config.get("reviewer", "")).strip() or not str(config.get("reviewed_at", "")).strip():
             raise ValueError("Wave 1 readiness gate: frozen scale-up configuration lacks reviewer/date")
-        for section in ("target", "frame", "design", "model", "outcome_transformations"):
+        for section in ("target", "frame", "design", "model", "outcome_transformations", "outcome_validity_rules"):
             if not isinstance(config.get(section), dict) or not config[section]:
                 raise ValueError(f"Wave 1 readiness gate: frozen scale-up configuration section {section!r} is missing")
         design = config["design"]
@@ -300,5 +301,50 @@ def require_wave1_analysis_readiness(
             for value in transforms.values()
         ):
             raise ValueError("Wave 1 readiness gate: all 15 outcome transformations must be frozen as identity or log")
+        validity = config["outcome_validity_rules"]
+        if set(validity) != set(transforms):
+            raise ValueError("Wave 1 readiness gate: all 15 outcomes need an approved source-bound validity rule")
+        required_validity_fields = (
+            "review_status", "reviewer", "reviewed_at", "source_anchor", "unit",
+            "valid_domain_rule", "valid_min", "valid_max", "invalid_codes",
+            "lod_censoring_rule", "topcode_rule", "fasting_rule",
+        )
+        for concept, rule in validity.items():
+            if not isinstance(rule, dict) or any(key not in rule for key in required_validity_fields):
+                raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} is incomplete")
+            if rule.get("review_status") != "approved":
+                raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} is not approved")
+            for key in ("reviewer", "reviewed_at", "source_anchor", "unit", "valid_domain_rule"):
+                if not str(rule.get(key, "")).strip():
+                    raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} lacks {key}")
+            if rule.get("lod_censoring_rule") not in {"none_reported", "handled_by_invalid_codes_or_bounds"}:
+                raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} has unsupported LOD handling")
+            if rule.get("topcode_rule") not in {"none_reported", "handled_by_invalid_codes_or_bounds"}:
+                raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} has unsupported top-code handling")
+            fasting = rule.get("fasting_rule")
+            if not isinstance(fasting, dict) or fasting.get("mode") not in {"not_applicable", "retain_all", "restrict"}:
+                raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} has unsupported fasting handling")
+            if fasting["mode"] == "restrict":
+                if not str(fasting.get("field", "")).strip() or not isinstance(fasting.get("eligible_codes"), list) or not fasting["eligible_codes"]:
+                    raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} has incomplete fasting restriction")
+            elif fasting.get("field") not in (None, "") or fasting.get("eligible_codes", []) not in (None, []):
+                raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} has unsupported fasting fields")
+            if not isinstance(rule.get("invalid_codes"), list):
+                raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} must list invalid_codes")
+            for code in rule["invalid_codes"]:
+                if isinstance(code, bool) or not isinstance(code, (int, float)) or not math.isfinite(float(code)):
+                    raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} has invalid special codes")
+            lower, upper = rule.get("valid_min"), rule.get("valid_max")
+            if lower is not None and (isinstance(lower, bool) or not isinstance(lower, (int, float)) or not math.isfinite(float(lower))):
+                raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} has invalid valid_min")
+            if upper is not None and (isinstance(upper, bool) or not isinstance(upper, (int, float)) or not math.isfinite(float(upper))):
+                raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} has invalid valid_max")
+            if lower is not None and upper is not None and lower > upper:
+                raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} has reversed bounds")
+            if (
+                rule["lod_censoring_rule"] == "handled_by_invalid_codes_or_bounds"
+                or rule["topcode_rule"] == "handled_by_invalid_codes_or_bounds"
+            ) and not rule["invalid_codes"] and lower is None and upper is None:
+                raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} claims handled censoring without executable codes/bounds")
         result["frozen_scaleup_configuration_sha256"] = config_digest
     return result
