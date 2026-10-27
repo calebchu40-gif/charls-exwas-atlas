@@ -47,7 +47,7 @@ class PublicSitePayloadTests(unittest.TestCase):
         row.update(
             analysis_id="synthetic-001", wave="2011", exposure_concept_id="e1",
             phenotype_concept_id="p1", model_id="M1", fit_status="inestimable",
-            disclosure_status="approved_public_aggregate",
+            disclosure_status="approved_public_aggregate", variance_design="Design not fit-ready",
         )
         payload = {
             "schema_version": 1,
