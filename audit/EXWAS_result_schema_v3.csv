@@ -34,7 +34,7 @@ psu_status,yes,category,"verified_used, not_released, unavailable_pending_author
 psu_id,conditional,string,Official PSU field actually used; blank until verified.,Public metadata
 stratum_status,yes,category,"verified_used, not_released, unavailable_pending_authorized_file, not_applicable, or unresolved. not_released is allowed for success only when variance_design includes approximate method: and limitation: labels, or the Chinese labels 近似方法： and 局限：.",Public metadata
 stratum_id,conditional,string,Official stratum field actually used; never infer from geography.,Public metadata
-variance_design,yes,string,Documented variance method and status; state limitations or that model is not fit-ready.,Public metadata
+variance_design,yes,string,"Private result table stores the full documented variance method and limitations; publisher maps it to one of three fixed public labels.",Private full text; controlled summary after disclosure review
 exposure_transform,yes,string,"Transformation, units, category coding, and reference level.",Public
 phenotype_transform,yes,string,"Transformation, units, category coding, and reference level.",Public
 missingness_rule,yes,string,"Treatment of structural skips, ineligible modules, refusal, dont-know, and other missing.",Public

@@ -15,6 +15,11 @@ ALLOWED_SUFFIXES = {".css", ".gif", ".html", ".ico", ".jpeg", ".jpg", ".js", ".j
 ALLOWED_DOTFILES = {".nojekyll"}
 RESULT_TOP_FIELDS = {"schema_version", "release_status", "generated_at", "families"}
 RESULT_FAMILY_FIELDS = {"family_id", "family_size", "rows"}
+PUBLIC_VARIANCE_LABELS = {
+    "Survey design verified",
+    "Approximate variance; official stratum unavailable",
+    "Design not fit-ready",
+}
 RESULT_ROW_FIELDS = {
     "analysis_id", "data_release", "wave", "exposure_concept_id", "exposure_variable",
     "phenotype_concept_id", "phenotype_variable", "target_population", "model_id",
@@ -73,6 +78,8 @@ def validate_association_payload(payload: object) -> list[str]:
             seen_ids.add(str(analysis_id))
             if row.get("disclosure_status") != "approved_public_aggregate":
                 errors.append(f"Association family {family_id} includes a row without disclosure approval")
+            if row.get("variance_design") not in PUBLIC_VARIANCE_LABELS:
+                errors.append(f"Association row {analysis_id} has an unsupported public variance-design label")
             if row.get("fit_status") not in {"success", "nonconvergence", "inestimable", "blocked_design_verification", "blocked_data_access", "code_error"}:
                 errors.append(f"Association row {analysis_id} has unsupported fit_status")
             if row.get("fit_status") == "success":

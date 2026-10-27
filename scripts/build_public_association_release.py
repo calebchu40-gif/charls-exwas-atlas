@@ -40,6 +40,20 @@ PUBLIC_ROW_FIELDS = (
     "p_value", "q_value_by", "p_bonferroni", "n_model", "fit_status",
     "variance_design", "comparability_grade",
 )
+PUBLIC_VARIANCE_LABELS = {
+    "verified": "Survey design verified",
+    "approximate": "Approximate variance; official stratum unavailable",
+    "not_fit_ready": "Design not fit-ready",
+}
+
+
+def _public_variance_label(row: dict[str, str]) -> str:
+    """Return a controlled public label instead of arbitrary private design text."""
+    if row.get("fit_status") != "success":
+        return PUBLIC_VARIANCE_LABELS["not_fit_ready"]
+    if row.get("stratum_status") == "not_released":
+        return PUBLIC_VARIANCE_LABELS["approximate"]
+    return PUBLIC_VARIANCE_LABELS["verified"]
 
 
 def _inside(path: Path, root: Path) -> bool:
@@ -133,6 +147,7 @@ def build_payload(rows: list[dict[str, str]], reviews: dict[str, dict[str, str]]
         public_rows = []
         for row in members:
             public_row = {key: row.get(key, "") for key in PUBLIC_ROW_FIELDS}
+            public_row["variance_design"] = _public_variance_label(row)
             public_row["disclosure_status"] = "approved_public_aggregate"
             if row.get("fit_status") != "success":
                 for field in ("estimate", "standard_error", "ci_lower", "ci_upper",
