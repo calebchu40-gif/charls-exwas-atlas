@@ -7,9 +7,9 @@ const html = fs.readFileSync('site-prototype/dist/index.html', 'utf8');
 for (const id of ['associationFilters', 'associationExposure', 'associationPhenotype', 'associationWave', 'associationModel']) {
   assert.ok(html.includes(`id="${id}"`), `results browser needs ${id}`);
 }
-const start = source.indexOf('function renderAssociationRows() {');
+const start = source.indexOf('let heatmapRows=[];');
 const end = source.indexOf('\nfunction addOptions(', start);
-assert.notEqual(start, -1, 'association row renderer should exist');
+assert.notEqual(start, -1, 'association heatmap and row renderer should exist');
 assert.notEqual(end, -1, 'association loader boundary should exist');
 
 class Element {
@@ -44,7 +44,8 @@ const context = {
     }),
   }),
 };
-vm.runInNewContext(`${source.slice(start, end)}\nglobalThis.renderRows = renderAssociationRows; globalThis.loadResults = renderAssociations;`, context);
+vm.runInNewContext(`${source.slice(start, end)}\nglobalThis.renderRows = renderAssociationRows; globalThis.loadResults = renderAssociations;`
+  + '\nglobalThis.heatmapFormat = heatmapFormat; globalThis.heatmapColor = heatmapColor; globalThis.heatmapScale = heatmapScale;', context);
 
 async function main() {
 context.renderRows();
@@ -65,6 +66,18 @@ assert.equal(elements.get('rows').children.length, 2, 'loader should render the 
 assert.equal(elements.get('associationFilters').hidden, false);
 assert.ok(elements.get('associationExposure').children.some(option => option.value === 'water'));
 assert.match(elements.get('count').textContent, /2 \/ 2/);
+
+// Heatmap helpers are pure and must stay deterministic for the reviewed payload.
+assert.equal(context.heatmapFormat('0.1234'), '0.12');
+assert.equal(context.heatmapFormat(''), '—');
+assert.equal(context.heatmapFormat('12.34'), '12.3');
+assert.equal(context.heatmapScale(fixtureRows), 0.3);
+const positive = context.heatmapColor('estimate', { fit_status: 'success', estimate: '0.2', estimate_type: 'beta' }, 0.3);
+const negative = context.heatmapColor('estimate', { fit_status: 'success', estimate: '-0.2', estimate_type: 'beta' }, 0.3);
+assert.match(positive, /rgba\(32,110,190/);
+assert.match(negative, /rgba\(190,70,60/);
+assert.match(context.heatmapColor('estimate', { fit_status: 'inestimable', estimate: '' }, 0.3), /#f2f2f2/);
+assert.match(context.heatmapColor('q', { fit_status: 'success', estimate: '0.2', q_value_by: '0.001' }, 0.3), /rgba\(31,119,180/);
 console.log('PASS: reviewed association browser loads approved payloads and filters aggregate rows safely');
 }
 

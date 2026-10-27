@@ -179,6 +179,7 @@ audit/social_exposure_crosswalk_v1.csv
 audit/stroke_timing_metadata_crosswalk_v1.csv
 audit/subjective_life_expectancy_2011_2018_crosswalk_v1.csv
 audit/templates/disclosure_review_template.csv
+audit/templates/exwas_variable_registry.template.csv
 audit/unmapped_phenotype_review_v1.csv
 audit/verified_code_examples_v1.csv
 audit/wave1_household_environment_hypothesis_register_v0.csv
