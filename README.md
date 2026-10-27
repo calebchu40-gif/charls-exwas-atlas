@@ -1,5 +1,7 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-27）
 
+**等待期基础设施（2026-10-27）：**9 项官方数据申请已提交并在审核中；审核期内在服务器完成正式分析环境（`env/venv`，`svy 0.35.0` / `pandas 2.3.3` / `pyreadstat 1.3.1` 精确锁定）、**通用 ExWAS 扫描引擎**（[`scripts/exwas_engine.py`](scripts/exwas_engine.py) + [`scripts/run_exwas_scan.py`](scripts/run_exwas_scan.py)，注册表与设计规格外部化、缺权重/PSU 即拒绝、族内 BY/Bonferroni、不可估计假设保留）以及网站**暴露×表型热图**（着色/详情/CSV 下载，仍只读经披露审查的 `association_results_v1.json`）。14 项合成测试与本地 staging 夹具（105 条私有 pilot 行、生产校验器 0 错误、热图 15×7 渲染）通过；本地全套 593 项测试通过。未读取任何 CHARLS 个体记录、未拟合任何真实模型、未发布任何结果；详见[`audit/waiting_period_infrastructure_2026-10-27.md`](audit/waiting_period_infrastructure_2026-10-27.md)。
+
 **K=150/K=90执行器准备（2026-10-27）：**新增受保护本地运行器[`scripts/run_2011_household_environment_scaleup.py`](scripts/run_2011_household_environment_scaleup.py)及私有冻结配置模板。运行器在任何读取参与者表前要求来源身份、派生表哈希、方案指纹、试点复现/成功审查、完整抽样设计、估计目标和模型配置均通过受控审批，并仅支持已固定的`svy==0.35.0`Taylor路径；不接受未审核的复制权重。整样本singleton PSU方法、子总体domain-singleton处理及诊断策略都必须在冻结配置中明确记录，不用引擎默认值替代审阅。K=150主块和K=90条件路由块都保留完整预设假设；批次校正明确只是诊断，不能代表最终Atlas全家族校正。已完成元数据/API静态核对，尚未读取参与者数据或实际运行关联模型；Wave 1官方All Data/PSU/Weight/Blood仍缺失，正式关联模型和公开结果仍为0。
 
 **当前目录规模：**常规五波E/P候选目录已建立 1,625 个去重概念ID、8,341 条概念—源字段映射；每条E/P字段目录行均有关联的候选概念ID。首页当前KPI显示 E 候选概念1,319、P候选概念332、常规波次5、正式关联模型0；E/P角色数相加会重复计算26个双角色概念。2014 Life History 线上目录含195个概念组、6,103条映射（E 6,042、P 61），其中新增5条受访者本人敏感背景元数据字段；亲属敏感字段仍暂缓。这些是候选目录计数，不代表最终可分析变量、实际样本量或统计结果。

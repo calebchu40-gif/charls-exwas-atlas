@@ -1,0 +1,15 @@
+{
+  "_comment": "Template only. Every value must be replaced by a frozen, reviewed design before a real scan. 'weight' and 'psu' are mandatory; use the official release fields, never a geography proxy.",
+  "wave": "2011",
+  "weight": "bloodweight",
+  "psu": "communityID",
+  "strata": null,
+  "age_field": "age",
+  "age_min": 45,
+  "scale_outcome": true,
+  "covariate_sets": {
+    "M0": [],
+    "M1": ["age_c", "age_c2", "female"],
+    "M2": ["age_c", "age_c2", "female", "education_2", "education_3", "education_4", "urban"]
+  }
+}

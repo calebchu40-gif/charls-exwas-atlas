@@ -87,6 +87,244 @@ function loadCandidatePairExplorer(){
  return candidatePairExplorerLoaded;
 }
 
+// ---------------------------------------------------------------------------
+// Heatmap explorer for the disclosure-reviewed association payload.
+// Renders one exposure x phenotype matrix per (wave, model) group, colours by
+// signed effect / -log10 p / BY q-value, and shows a detail panel on click.
+// No row is ever loaded from anywhere except association_results_v1.json.
+// ---------------------------------------------------------------------------
+let heatmapRows=[];
+let heatmapSelection=null;
+
+function heatmapNumber(value){
+  if(value===''||value===null||value===undefined)return null;
+  const number=Number(value);
+  return Number.isFinite(number)?number:null;
+}
+
+function heatmapFormat(value){
+  const number=heatmapNumber(value);
+  if(number===null)return '—';
+  const magnitude=Math.abs(number);
+  if(magnitude>=10000||(magnitude>0&&magnitude<0.001))return number.toExponential(1);
+  if(magnitude>=100)return number.toFixed(0);
+  if(magnitude>=10)return number.toFixed(1);
+  return number.toFixed(2);
+}
+
+function heatmapEffectSign(row){
+  const estimate=heatmapNumber(row.estimate);
+  if(estimate===null)return null;
+  if(row.estimate_type==='odds_ratio')return estimate>1?1:(estimate<1?-1:0);
+  return Math.sign(estimate);
+}
+
+function heatmapColor(metric,row,scale){
+  if(row.fit_status!=='success'||heatmapNumber(row.estimate)===null)return 'background:#f2f2f2;color:#999';
+  if(metric==='q'){
+    const q=heatmapNumber(row.q_value_by);
+    if(q===null)return 'background:#f2f2f2;color:#999';
+    const strength=Math.min(1,Math.max(0,-Math.log10(Math.max(q,1e-12)))/3);
+    return `background:rgba(31,119,180,${(0.08+0.82*strength).toFixed(3)});color:${strength>0.55?'#fff':'#111'}`;
+  }
+  if(metric==='neglog10p'){
+    const p=heatmapNumber(row.p_value);
+    if(p===null)return 'background:#f2f2f2;color:#999';
+    const strength=Math.min(1,Math.max(0,-Math.log10(Math.max(p,1e-12)))/4);
+    return `background:rgba(200,60,55,${(0.08+0.82*strength).toFixed(3)});color:${strength>0.55?'#fff':'#111'}`;
+  }
+  const sign=heatmapEffectSign(row);
+  const estimate=heatmapNumber(row.estimate);
+  const magnitude=row.estimate_type==='odds_ratio'?Math.abs(Math.log(estimate)):Math.abs(estimate);
+  const strength=scale>0?Math.min(1,magnitude/scale):0;
+  const alpha=(0.10+0.85*strength).toFixed(3);
+  if(sign===null)return 'background:#f2f2f2;color:#999';
+  if(sign===0)return `background:rgba(150,150,150,${alpha});color:#111`;
+  const rgb=sign>0?'32,110,190':'190,70,60';
+  return `background:rgba(${rgb},${alpha});color:${strength>0.55?'#fff':'#111'}`;
+}
+
+function heatmapScale(rows){
+  let max=0;
+  for(const row of rows){
+    const estimate=heatmapNumber(row.estimate);
+    if(estimate===null)continue;
+    const magnitude=row.estimate_type==='odds_ratio'?Math.abs(Math.log(estimate)):Math.abs(estimate);
+    if(Number.isFinite(magnitude))max=Math.max(max,magnitude);
+  }
+  return max;
+}
+
+function showHeatmapDetail(row){
+  heatmapSelection=row?row.analysis_id:null;
+  const box=byId('heatmapDetail');
+  if(!box)return;
+  if(!row){box.innerHTML='<p class="muted">点击任意格子查看该关联的完整信息。</p>';return}
+  const fields=[
+    ['暴露',`${row.exposure_concept_id} · ${row.exposure_variable}`],
+    ['表型',`${row.phenotype_concept_id} · ${row.phenotype_variable}`],
+    ['波次 / 模型',`${row.wave} · ${row.model_id}`],
+    ['对照',row.contrast||'—'],
+    ['效应尺度',row.estimate_type||'—'],
+    ['效应估计',row.fit_status==='success'?`${heatmapFormat(row.estimate)}（SE ${heatmapFormat(row.standard_error)}）`:'—'],
+    ['95% 置信区间',row.fit_status==='success'?`${heatmapFormat(row.ci_lower)} – ${heatmapFormat(row.ci_upper)}`:'—'],
+    ['P 值',heatmapFormat(row.p_value)],
+    ['BY q 值',heatmapFormat(row.q_value_by)],
+    ['Bonferroni P',heatmapFormat(row.p_bonferroni)],
+    ['模型样本量',row.n_model||'—'],
+    ['方差方法',row.variance_design||'—'],
+    ['可比性等级',row.comparability_grade||'—'],
+    ['拟合状态',row.fit_status],
+    ['披露状态',row.disclosure_status],
+    ['目标人群',row.target_population||'—'],
+  ];
+  box.replaceChildren();
+  const title=document.createElement('div');
+  title.className='heatmap-detail-title';
+  title.textContent=`${row.exposure_concept_id} × ${row.phenotype_concept_id}（${row.wave} · ${row.model_id}）`;
+  box.append(title);
+  const list=document.createElement('dl');
+  for(const [label,value] of fields){
+    const item=document.createElement('div');
+    item.className='heatmap-detail-item';
+    const dt=document.createElement('dt');dt.textContent=label;
+    const dd=document.createElement('dd');dd.textContent=value===undefined||value===null||value===''?'—':String(value);
+    item.append(dt,dd);
+    list.append(item);
+  }
+  box.append(list);
+}
+
+function renderAssociationHeatmap(rows){
+  const panel=byId('associationHeatmap');
+  if(!panel)return;
+  if(!rows.length){panel.hidden=true;return}
+  panel.hidden=false;
+  const host=byId('heatmapBlocks');
+  host.replaceChildren();
+  const metric=byId('heatmapMetric').value;
+  const groups=new Map();
+  for(const row of rows){
+    const key=`${row.wave}|${row.model_id}`;
+    if(!groups.has(key))groups.set(key,[]);
+    groups.get(key).push(row);
+  }
+  let firstRow=null;
+  for(const [key,members] of [...groups.entries()].sort()){
+    const [wave,model]=key.split('|');
+    const block=document.createElement('section');
+    block.className='heatmap-block';
+    const heading=document.createElement('h3');
+    heading.textContent=`${wave} · 模型 ${model} · ${members.length} 条关联`;
+    block.append(heading);
+    const columns=[...new Set(members.map(row=>`${row.exposure_concept_id}\u0000${row.contrast||''}`))].sort();
+    const rowsIndex=[...new Set(members.map(row=>row.phenotype_concept_id))].sort();
+    const conceptCounts=new Map();
+    for(const row of members)conceptCounts.set(row.exposure_concept_id,(conceptCounts.get(row.exposure_concept_id)||0)+1);
+    const cellMap=new Map();
+    for(const row of members){
+      const cellKey=`${row.exposure_concept_id}\u0000${row.contrast||''}|${row.phenotype_concept_id}`;
+      if(!cellMap.has(cellKey))cellMap.set(cellKey,row);
+    }
+    const columnLabel=(key)=>{
+      const [concept,contrast]=key.split('\u0000');
+      if(!contrast)return concept;
+      const short=contrast.split(' vs ')[0].trim();
+      return short&&short!==concept?`${concept} · ${short}`:concept;
+    };
+    const scale=heatmapScale(members);
+    const table=document.createElement('table');
+    table.className='heatmap-table';
+    const thead=document.createElement('thead');
+    const headRow=document.createElement('tr');
+    const corner=document.createElement('th');
+    corner.textContent='表型 ＼ 暴露';
+    headRow.append(corner);
+    for(const column of columns){
+      const th=document.createElement('th');
+      th.scope='col';th.textContent=columnLabel(column);th.title=column.split('\u0000').join(' · ');
+      headRow.append(th);
+    }
+    thead.append(headRow);table.append(thead);
+    const tbody=document.createElement('tbody');
+    for(const phenotype of rowsIndex){
+      const tr=document.createElement('tr');
+      const th=document.createElement('th');
+      th.scope='row';
+      const example=members.find(row=>row.phenotype_concept_id===phenotype);
+      th.textContent=`${phenotype} · ${(example&&example.phenotype_variable)||''}`;
+      th.title=th.textContent;
+      tr.append(th);
+      for(const exposure of columns){
+        const td=document.createElement('td');
+        const row=cellMap.get(`${exposure}|${phenotype}`);
+        if(!row||row.fit_status!=='success'){
+          td.textContent='—';
+          td.className='blocked';
+          if(row)td.title=`${exposure.split('\u0000').join(' · ')} × ${phenotype}：${row.fit_status}`;
+        } else {
+          const value=metric==='q'?row.q_value_by:(metric==='neglog10p'?row.p_value:row.estimate);
+          td.textContent=heatmapFormat(value);
+          td.setAttribute('style',heatmapColor(metric,row,scale));
+          td.title=`${row.exposure_concept_id} × ${phenotype}\n${row.contrast||''}`
+            +`\n效应 ${heatmapFormat(row.estimate)} (${heatmapFormat(row.ci_lower)}–${heatmapFormat(row.ci_upper)})`
+            +`\nP ${heatmapFormat(row.p_value)} · q ${heatmapFormat(row.q_value_by)} · n ${row.n_model}`
+            +`\n${row.variance_design||''}`;
+          td.addEventListener('click',()=>{
+            for(const other of table.querySelectorAll('td.selected'))other.classList.remove('selected');
+            td.classList.add('selected');
+            showHeatmapDetail(row);
+          });
+          if(!firstRow)firstRow=row;
+        }
+        tr.append(td);
+      }
+      tbody.append(tr);
+    }
+    table.append(tbody);
+    const scroll=document.createElement('div');
+    scroll.className='heatmap-scroll';
+    scroll.append(table);
+    block.append(scroll);
+    host.append(block);
+  }
+  const legend=byId('heatmapLegend');
+  if(legend){
+    if(metric==='estimate'){
+      legend.innerHTML='<span><i class="swatch" style="background:rgba(190,70,60,.85)"></i>负向</span>'
+        +'<span><i class="swatch" style="background:rgba(32,110,190,.85)"></i>正向</span>'
+        +'<span>颜色越深＝效应越大（OR 按 log 尺度）</span>';
+    } else if(metric==='neglog10p'){
+      legend.innerHTML='<span><i class="swatch" style="background:rgba(200,60,55,.85)"></i>P 越小越深</span><span>最大到 −log10(P)=4</span>';
+    } else {
+      legend.innerHTML='<span><i class="swatch" style="background:rgba(31,119,180,.85)"></i>q 越小越深</span><span>BY 校正，最大到 −log10(q)=3</span>';
+    }
+  }
+  if(firstRow&&!heatmapSelection)showHeatmapDetail(firstRow);
+}
+
+function downloadAssociationCsv(rows){
+  if(!rows.length)return;
+  const columns=['wave','model_id','exposure_concept_id','exposure_variable','phenotype_concept_id','phenotype_variable',
+    'estimate_type','contrast','estimate','standard_error','ci_lower','ci_upper','p_value','q_value_by','p_bonferroni',
+    'n_model','fit_status','variance_design','comparability_grade'];
+  const escape=(value)=>{
+    const text=value===undefined||value===null?'':String(value);
+    return /[",\n]/.test(text)?`"${text.replace(/"/g,'""')}"`:text;
+  };
+  const lines=[columns.join(',')];
+  for(const row of rows)lines.push(columns.map(column=>escape(row[column])).join(','));
+  const blob=new Blob(['\ufeff'+lines.join('\n')],{type:'text/csv;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const link=document.createElement('a');
+  link.href=url;
+  link.download=`charls_exwas_associations_${new Date().toISOString().slice(0,10)}.csv`;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),2000);
+}
+
 function renderAssociationRows() {
   const selected={
     exposure:byId('associationExposure').value,
@@ -115,6 +353,8 @@ function renderAssociationRows() {
     }
     body.append(tr);
   }
+  heatmapRows=rows;
+  renderAssociationHeatmap(rows);
 }
 
 async function renderAssociations() {
@@ -150,6 +390,16 @@ async function renderAssociations() {
     }
     byId('associationFilters').hidden=associationRows.length===0;
     empty.textContent='尚无可展示的真实关联结果。';
+    const metricSelect=byId('heatmapMetric');
+    if(metricSelect&&!metricSelect.dataset.bound){
+      metricSelect.addEventListener('change',()=>renderAssociationHeatmap(heatmapRows));
+      metricSelect.dataset.bound='true';
+    }
+    const downloadButton=byId('heatmapDownload');
+    if(downloadButton&&!downloadButton.dataset.bound){
+      downloadButton.addEventListener('click',()=>downloadAssociationCsv(heatmapRows));
+      downloadButton.dataset.bound='true';
+    }
     renderAssociationRows();
   } catch(error) {
     byId('count').textContent='关联结果暂不可用';

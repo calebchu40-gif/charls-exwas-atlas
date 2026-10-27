@@ -1,0 +1,5 @@
+concept_id,role,label,wave,variable,kind,unit,transform,valid_min,valid_max,levels,reference,family
+water_at_residence,E,Residence has running water,2011,i017,binary,,,,,,,
+cooking_fuel_primary,E,Primary cooking fuel,2011,i020,categorical,,,,1|2|3|4|5|6|7,1,
+blood_wbc,P,White blood cell count,2011,blood_wbc,continuous,1000 cells/uL,,,,,,gaussian
+depression_score,P,CES-D 10 item score,2011,cesd10,continuous,points,,,,,,gaussian
