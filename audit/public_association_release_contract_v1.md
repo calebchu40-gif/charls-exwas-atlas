@@ -10,6 +10,8 @@ No numeric small-cell cutoff is invented here. The reviewer must apply the contr
 
 The disclosure file must have exactly one decision for every `analysis_id` in the validated result table, with no extras. A decision is either `approved_public_aggregate` or `withheld`. If any one hypothesis in a declared `multiple_testing_family` is withheld, the whole family is omitted. A family can be exported only if the complete declared K rows are present and every row is approved. This preserves the frozen testing family and avoids a selectively published subset.
 
+For a release presented as atlas-wide discovery results, the family must be the complete, frozen set of estimable **primary exposure–phenotype–wave hypotheses** across the declared release scope, with non-estimable hypotheses retained as rows. Recompute BY-FDR and Bonferroni over that entire primary family after all planned batches are assembled. Batch-local q values are exploratory only and cannot be released under atlas-wide discovery language. The current exporter validates the declared family it receives but does not determine whether the research scope is complete; that completeness needs a versioned protected finalization manifest/review. See `multiplicity_primary_family_reconciliation_2026-10-27.md`.
+
 ## Protected review record
 
 Use `audit/templates/disclosure_review_template.csv` as the header. Keep the filled CSV under the authorized local `%LOCALAPPDATA%/CHARLS_ExWAS_Atlas` directory and outside Git/synchronized folders.
@@ -25,7 +27,7 @@ The reviewer should assess the proposed table as a whole, including estimates, i
 
 ## Export procedure
 
-1. Confirm the private result CSV passes `scripts/validate_exwas_result_table.py`, including official-source/design and pair-review requirements for successful fits.
+1. Confirm the private result CSV passes `scripts/validate_exwas_result_table.py`, including official-source/design and pair-review requirements for successful fits, and confirm its primary multiplicity family is the complete frozen atlas-wide scope rather than a staged block.
 2. Complete the private review CSV against that exact result CSV. If a file changes afterward, recalculate the hash and repeat disclosure review.
 3. From the project root, run `python scripts/build_public_association_release.py --results <protected-result.csv> --review <protected-review.csv> --publish` using paths under the protected local workspace.
 4. Inspect `site-prototype/dist/association_results_v1.json`; then run `python scripts/validate_public_site_payload.py site-prototype/dist`. The Pages workflow independently runs the same strict payload validator.
