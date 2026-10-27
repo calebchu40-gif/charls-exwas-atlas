@@ -1,7 +1,7 @@
 # CHARLS ExWAS Atlas 项目总记录与交接说明
 
 **记录日期：2026-10-27**  
-**当前 Git 提交：`d0c16f4`**  
+**内容核对基线：`d0c16f4`；本记录随后随独立提交入库**  
 **公开网站：<https://calebchu40-gif.github.io/charls-exwas-atlas/>**  
 **代码仓库：<https://github.com/calebchu40-gif/charls-exwas-atlas>**
 
