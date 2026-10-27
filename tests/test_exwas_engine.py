@@ -1,22 +1,30 @@
-"""Synthetic tests for the generic ExWAS scan engine.
+﻿"""Synthetic tests for the generic ExWAS scan engine.
 
 Every fixture here is fabricated. No CHARLS microdata is read, and the tests
 only assert that the engine recovers *known* effects from a fake frame and
 fail-closes on malformed registries/designs.
+
+The engine depends on the pinned survey stack (``svy`` / ``polars`` / ``numpy``).
+The default CI unit-test job installs only ``requirements-test.txt``, so this
+module skips cleanly there and runs for real in the ``synthetic-survey-engine``
+job, which installs ``requirements-survey-audit.txt``.
 """
+import importlib.util
 import json
 import sys
 import tempfile
 import unittest
 from pathlib import Path
 
-import polars as pl
+SURVEY_STACK = all(importlib.util.find_spec(name) for name in ("numpy", "polars", "svy"))
+SKIP_REASON = "survey analysis stack (svy/polars/numpy) is not installed in this job"
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-import exwas_engine as engine  # noqa: E402
-import run_exwas_scan as cli  # noqa: E402
+if SURVEY_STACK:
+    import exwas_engine as engine  # noqa: E402
+    import run_exwas_scan as cli  # noqa: E402
 
 
 def _rows(rows, exposure, phenotype, model_id="M0"):
@@ -26,6 +34,7 @@ def _rows(rows, exposure, phenotype, model_id="M0"):
             and r["model_id"] == model_id]
 
 
+@unittest.skipUnless(SURVEY_STACK, SKIP_REASON)
 class RegistryValidationTests(unittest.TestCase):
     def _write(self, content: str) -> Path:
         handle = tempfile.NamedTemporaryFile("w", suffix=".csv", delete=False, encoding="utf-8")
@@ -60,6 +69,7 @@ class RegistryValidationTests(unittest.TestCase):
         self.assertEqual({s.role for s in specs}, {"E", "P"})
 
 
+@unittest.skipUnless(SURVEY_STACK, SKIP_REASON)
 class DesignValidationTests(unittest.TestCase):
     def test_design_requires_weight_and_psu(self):
         with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False, encoding="utf-8") as handle:
@@ -76,6 +86,7 @@ class DesignValidationTests(unittest.TestCase):
             engine.prepare_frame(broken, design, cli.synthetic_registry())
 
 
+@unittest.skipUnless(SURVEY_STACK, SKIP_REASON)
 class SyntheticScanTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -117,6 +128,7 @@ class SyntheticScanTests(unittest.TestCase):
         self.assertEqual(len(pairs), 3 * 2)
 
 
+@unittest.skipUnless(SURVEY_STACK, SKIP_REASON)
 class FailClosedTests(unittest.TestCase):
     def test_empty_domain_is_reported_not_fitted(self):
         frame = cli.synthetic_frame(n=400)
