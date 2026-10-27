@@ -1,0 +1,7 @@
+{
+  "review_record_id": "REPLACE_WITH_OPAQUE_REVIEW_RECORD_ID",
+  "decision": "REPLACE_WITH_approved_frozen_primary_scope_AFTER_REVIEW",
+  "reviewer_reference": "REPLACE_WITH_NONIDENTIFYING_REVIEWER_REFERENCE",
+  "reviewed_at": "YYYY-MM-DDThh:mm:ss+00:00",
+  "manifest_sha256": "REPLACE_WITH_SHA256_OF_EXACT_FROZEN_MANIFEST"
+}

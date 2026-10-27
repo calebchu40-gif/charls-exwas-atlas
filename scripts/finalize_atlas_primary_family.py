@@ -32,6 +32,13 @@ MANIFEST_FIELDS = {
     "primary_model_id",
     "expected_primary_analysis_ids",
 }
+SCOPE_REVIEW_FIELDS = {
+    "review_record_id",
+    "decision",
+    "reviewer_reference",
+    "reviewed_at",
+    "manifest_sha256",
+}
 
 
 def inside(path: Path, root: Path) -> bool:
@@ -69,7 +76,29 @@ def read_manifest(path: Path) -> dict[str, object]:
     return raw
 
 
-def finalize(manifest_path: Path, batch_paths: list[Path], output_path: Path) -> dict[str, object]:
+def read_scope_review(path: Path, manifest_path: Path) -> dict[str, str]:
+    if not inside(path, PRIVATE):
+        raise ValueError("the scope-review record must be under the protected local CHARLS workspace")
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(raw, dict) or set(raw) != SCOPE_REVIEW_FIELDS:
+        raise ValueError("scope-review record must contain exactly: " + ", ".join(sorted(SCOPE_REVIEW_FIELDS)))
+    if raw["decision"] != "approved_frozen_primary_scope":
+        raise ValueError("scope review must approve the frozen primary hypothesis scope")
+    for key in ("review_record_id", "reviewer_reference"):
+        if not isinstance(raw[key], str) or not ID_RE.fullmatch(raw[key]):
+            raise ValueError(f"scope-review {key} must be an opaque nonblank identifier")
+    try:
+        reviewed_at = datetime.fromisoformat(str(raw["reviewed_at"]).replace("Z", "+00:00"))
+    except (TypeError, ValueError) as exc:
+        raise ValueError("scope-review reviewed_at must be ISO-8601") from exc
+    if reviewed_at.tzinfo is None:
+        raise ValueError("scope-review reviewed_at must include a timezone")
+    if not isinstance(raw["manifest_sha256"], str) or raw["manifest_sha256"].lower() != sha256(manifest_path):
+        raise ValueError("scope-review record must bind to the exact frozen manifest SHA-256")
+    return {key: str(value) for key, value in raw.items()}
+
+
+def finalize(manifest_path: Path, scope_review_path: Path, batch_paths: list[Path], output_path: Path) -> dict[str, object]:
     if not batch_paths:
         raise ValueError("supply every validated batch CSV in the frozen atlas scope")
     if not inside(output_path, PRIVATE):
@@ -84,6 +113,7 @@ def finalize(manifest_path: Path, batch_paths: list[Path], output_path: Path) ->
             raise ValueError(f"batch failed result-schema validation ({path.name}): " + "; ".join(errors[:5]))
 
     manifest = read_manifest(manifest_path)
+    scope_review = read_scope_review(scope_review_path, manifest_path)
     schema_fields, _ = read_schema()
     selected: dict[str, dict[str, str]] = {}
     source_hashes: list[dict[str, str]] = []
@@ -158,6 +188,8 @@ def finalize(manifest_path: Path, batch_paths: list[Path], output_path: Path) ->
                 "\n".join(expected_ids).encode("utf-8")
             ).hexdigest(),
             "manifest_sha256": manifest_digest,
+            "scope_review_record_id": scope_review["review_record_id"],
+            "scope_review_sha256": sha256(scope_review_path),
             "input_result_sha256": source_hashes,
             "output_result_sha256": sha256(temp_csv),
             "adjustment": "Benjamini-Yekutieli and Bonferroni over all frozen primary hypotheses; non-estimable rows count toward K",
@@ -188,11 +220,12 @@ def finalize(manifest_path: Path, batch_paths: list[Path], output_path: Path) ->
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", required=True, type=Path, help="Frozen primary-family manifest under protected storage")
+    parser.add_argument("--scope-review", required=True, type=Path, help="Independent scope-review record bound to the exact manifest hash")
     parser.add_argument("--batches", required=True, nargs="+", type=Path, help="All validated batch result CSVs under protected storage")
     parser.add_argument("--output", required=True, type=Path, help="New private final-family CSV path; existing files are never overwritten")
     args = parser.parse_args()
     try:
-        record = finalize(args.manifest, args.batches, args.output)
+        record = finalize(args.manifest, args.scope_review, args.batches, args.output)
     except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
         parser.exit(2, f"FAIL: {exc}\n")
     print(
