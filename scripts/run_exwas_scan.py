@@ -17,6 +17,7 @@ to write anywhere else.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 import sys
@@ -29,6 +30,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import exwas_engine as engine  # noqa: E402
 from project_paths import PRIVATE_ROOT, require_private_path  # noqa: E402
+from require_verified_wave1_frame import (  # noqa: E402
+    require_verified_wave1_frame,
+    require_wave1_analysis_readiness,
+)
 
 
 # --------------------------------------------------------------------------
@@ -137,6 +142,53 @@ def summarise(rows: list[dict[str, object]], pairs: int) -> dict[str, object]:
     }
 
 
+def require_generic_scan_authorization(
+    *, private_root: Path, frame_path: Path, registry_path: Path,
+    design_path: Path, wave: str, analysis_plan: str,
+) -> dict[str, str]:
+    """Require the normal source/design gates and an exact scan-lock review.
+
+    The generic engine is currently authorized only for Wave 1. Its separate
+    authorization binds the registry and design bytes because the standard
+    readiness record binds the source frame and analysis plan, not CLI inputs.
+    """
+    if wave != "2011":
+        raise ValueError("real generic scans are currently enabled only for reviewed Wave 1")
+    provenance = require_verified_wave1_frame(private_root, frame_path)
+    readiness = require_wave1_analysis_readiness(private_root, provenance, analysis_plan)
+    authorization_path = private_root / "analysis_review" / "generic_exwas_scan_authorization.json"
+    try:
+        authorization = json.loads(authorization_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ValueError("generic scan authorization is missing or unreadable") from exc
+    if not isinstance(authorization, dict):
+        raise ValueError("generic scan authorization must be a JSON object")
+    expected = {
+        "status": "approved_for_internal_exploratory_scan",
+        "wave": wave,
+        "analysis_plan": analysis_plan,
+        "source_manifest_id": provenance["source_manifest_id"],
+        "prepared_output_sha256": provenance["prepared_output_sha256"],
+        "registry_sha256": _sha256_file(registry_path),
+        "design_sha256": _sha256_file(design_path),
+        "public_release_status": "not_approved",
+    }
+    for key, value in expected.items():
+        if authorization.get(key) != value:
+            raise ValueError(f"generic scan authorization binding failed: {key}")
+    if not str(authorization.get("reviewer", "")).strip() or not str(authorization.get("reviewed_at", "")).strip():
+        raise ValueError("generic scan authorization requires reviewer and review date")
+    return {**readiness, "scan_authorization_status": expected["status"]}
+
+
+def _sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with Path(path).open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -148,6 +200,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--models", default="M0,M1", help="comma-separated model ids")
     parser.add_argument("--out", type=Path, required=True, help="result CSV (must be inside the private workspace)")
     parser.add_argument("--family-prefix", default="charls_exwas")
+    parser.add_argument(
+        "--analysis-plan",
+        choices=("water_biomarker_pilot", "household_environment_extension", "household_environment_scaleup"),
+        help="reviewed Wave 1 plan bound to source/design gates",
+    )
     args = parser.parse_args(argv)
 
     out = require_private_path(args.out)
@@ -162,6 +219,19 @@ def main(argv: list[str] | None = None) -> int:
     else:
         if not (args.frame and args.registry and args.design):
             parser.error("real mode requires --frame, --registry and --design")
+        if not args.analysis_plan:
+            parser.error("real mode requires --analysis-plan and a matching protected scan authorization")
+        try:
+            require_generic_scan_authorization(
+                private_root=PRIVATE_ROOT,
+                frame_path=args.frame,
+                registry_path=args.registry,
+                design_path=args.design,
+                wave=args.wave,
+                analysis_plan=args.analysis_plan,
+            )
+        except (OSError, ValueError) as exc:
+            parser.error(f"real scan blocked by source/design authorization gate: {exc}")
         registry = engine.load_registry(args.registry)
         design = engine.load_design(args.design)
         wave = args.wave

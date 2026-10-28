@@ -1,3 +1,7 @@
+# 2026-10-28 Harden generic real-data scan entry
+
+- The generic ExWAS CLI now requires Wave 1 source/readiness gates and a protected authorization record bound to the exact registry and design file hashes. Other waves remain blocked pending wave-specific gates. No CHARLS records were read and no associations were fitted.
+
 # 2026-10-27 Fix and revalidate the analysis-plan fingerprint gate
 
 - GitHub Actions for `211f219` exposed a `NameError` because the new fingerprint helper referenced `ROOT`, which is not defined in that module. Bound document hashing to the module-derived repository root in `f56d44d`.
