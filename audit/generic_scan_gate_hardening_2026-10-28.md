@@ -15,4 +15,4 @@
 
 ## 状态与验证
 
-本轮只做代码静态编译和 whitespace diff 检查；当前工作环境未安装 `polars`，因此 CLI `--help` 无法启动。没有运行测试套件，没有读取 CHARLS 个体记录或拟合模型。受保护入库仍缺 Wave 1 All Data/PSU/Weight/Blood，故正式关联模型仍为 0。完成后需在锁定分析环境运行仓库验证工作流，并核查该执行器的合成路径仍可用。
+本轮本机 `py_compile` 和 `git diff --check` 通过；当前 Windows 环境未安装 `polars`，因此本机 CLI `--help` 无法启动。GitHub Validate 对提交 `b505e16` 已完成且成功（[run 40623368833](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40623368833)）；该验证通过不代表 CHARLS 来源/设计或科学分析准入。没有读取 CHARLS 个体记录或拟合模型。受保护入库仍缺 Wave 1 All Data/PSU/Weight/Blood，故正式关联模型仍为 0。合成执行路径尚待锁定分析环境核验。

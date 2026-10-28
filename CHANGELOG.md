@@ -1,6 +1,7 @@
 # 2026-10-28 Harden generic real-data scan entry
 
 - The generic ExWAS CLI now requires Wave 1 source/readiness gates and a protected authorization record bound to the exact registry and design file hashes. Other waves remain blocked pending wave-specific gates. No CHARLS records were read and no associations were fitted.
+- GitHub Validate for `b505e16` succeeded ([run 40623368833](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40623368833)); this validates repository checks only, not CHARLS analysis eligibility. The Pages assets did not change.
 
 # 2026-10-27 Fix and revalidate the analysis-plan fingerprint gate
 
