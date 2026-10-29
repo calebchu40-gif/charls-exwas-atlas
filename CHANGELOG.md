@@ -1324,3 +1324,9 @@ This file records project-level changes that affect reproducibility, methods, da
 - Rechecked the CHARLS official sample-design page and added its age-selection route: household screening selects an eligible member aged over 40; selected persons aged 45+ become main respondents with spouses interviewed, while selected persons aged 40–44 enter the refresher-reserve route.
 - Clarified that this screening description alone does not define the blood-analysis weight denominator. The denominator must still be reconciled to the official Blood Guide/Weight release and person-level frame before freezing eligibility. The page describes county sorting by region, urban/rural category and GDP before PPS, but does not provide a released per-county variance-stratum key.
 - Updated the Wave 1 estimand/design memos and active plan. No participant values or models were accessed/run.
+
+## 2026-10-29 — Trace residual Wave 1 weight IDs across official modules
+
+- Added a protected aggregate-only audit that verifies the current source-bound frame, temporarily extracts the official All Data RAR only beneath the private root, and reads only module `ID` columns plus `Weight.ID`/`ind_weight_ad2`.
+- Found that all residual positive-weight IDs absent from the Demographic_Background spine occur in at least one other official module. This rules out a simple Weight-only-key explanation but does not establish interview completion, age, blood eligibility, or denominator inclusion. Exact small-cell counts and keys remain private.
+- Temporary extraction was automatically removed. Added `scripts/audit_2011_weight_ids_across_modules.py`; only Python bytecode compilation was used for a static syntax check, with no tests or models run.
