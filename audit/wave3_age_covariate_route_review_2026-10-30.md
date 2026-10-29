@@ -2,7 +2,7 @@
 
 ## Scope
 
-This is a source-based preparation note for the CHARLS 2015 Sample_Infor/Blood frame. It does not derive respondent ages, select an analytic domain, inspect participant birth dates, or authorize an association model.
+This is a preparation and restricted aggregate-QA note for the CHARLS 2015 Sample_Infor/Blood frame. The protected audit processed only the birth-route/date fields needed for aggregate completeness flags; it emitted no IDs or exact dates, derived no respondent ages, selected no analytic domain, and authorized no association model.
 
 ## Official field map
 
@@ -11,8 +11,8 @@ The 2015 Codebook describes the Sample Information module as the released sample
 The Codebook's Demographic Background section lists:
 
 - `ba004_w3` and components `ba004_w3_1`–`ba004_w3_3`: birth date on the respondent's ID card or household registration (year/month/day).
-- `ba002` and components `ba002_1`–`ba002_3`: reported birth date route; `ba002` distinguishes a date matching the civil document from a separately reported date.
-- `ba003`: whether the separately reported date uses the solar or lunar calendar.
+- `ba002` and components `ba002_1`–`ba002_3`: the questionnaire asks whether actual birth date is the same as the civil-document date (`1`) or a separate reported date (`2`); only route 2 supplies the separate date components.
+- `ba003`: whether the respondent's `ba002` answer is based on the solar (`1`) or lunar (`2`) calendar; the questionnaire skips this item when `ba002` is `.d` or `.r`.
 
 These fields are in a different module from Sample_Infor. Therefore the frame-first preparation may retain a sampled person whose demographic row is absent; the age inputs for that person must remain missing. Do not infer eligibility, spouse status, or age from household rosters, adjacent waves, interview status, or ID patterns.
 
@@ -25,13 +25,14 @@ These fields are in a different module from Sample_Infor. Therefore the frame-fi
 5. Because the interview source has year/month but no day, calculate a conservative age interval from the valid birth-date route rather than a falsely exact age. Keep unresolved, incomplete, or contradictory records unclassified. Any threshold/domain assignment must be stable across the interval or remain unresolved.
 6. Freeze the target population and age-domain rule with the blood-response weight, cross-sectional flag, and survey design before building complete-case models. Define covariate adjustment from the estimand/DAG, not from whichever columns happen to be present. Report module-specific missingness in private QA and retain missingness rather than imputing from other modules.
 
+The questionnaire instructs interviewers to record month/day as `0` when unknown and gives 1900–2015 as the birth-year range. The private audit therefore treats zero month/day as unknown, never as January or the first day.
 ## Current gate
 
-The Wave 3 frame-to-Blood join has passed protected ID-only linkage and weight-domain checks. This note maps the age-source fields from the official Codebook but does not claim that age inputs, route validity, age eligibility, or covariate completeness have passed on the analytic records. Age, weight target, PSU/variance, estimand freeze, and independent methods review remain open. Formal association models remain zero.
+The Wave 3 frame-to-Blood join has passed protected ID-only linkage and weight-domain checks. A separate hash-bound private aggregate audit confirms the required age-source fields and interview timing are present, while flagging unresolved BA002 route responses, missing/unrecognized BA003 calendar values on known routes, and zero month/day inputs (explicitly treated as unknown). It found missing birth-year/month/day inputs, but no nonmissing date components outside the questionnaire basic numeric ranges and no incomplete interview year/month fields. This does not establish valid ages or an analytic domain; exact counts remain in owner-only QA at `private/qa_outputs/wave3_age_route_private_qa.json`. Age intervals/lunar conversion, covariate completeness, blood-weight target, PSU/variance, estimand freeze, and independent methods review remain open. Formal association models remain zero.
 
 ## Sources
 
 - `sources_official/CHARLS_2015_Codebook.pdf` and its locally extracted text, sections “Demographic Background” and “Sample Information”.
-- `sources_official/CHARLS_2015_Questionnaire.pdf` for routing and date-source rules; the exact route remains to be checked against the applicable pages before coding.
+- `sources_official/CHARLS_2015_Questionnaire.pdf` and the extracted pages around BA004_W3/BA002/BA003 for routing and date-source rules.
 - `audit/charls_lunar2solar_pinned_reference_2026-10-27.md` and `audit/lunar_official_stata_parity_workflow_2026-10-30.md` for the pinned conversion source and parity limitation.
 - [CHARLS 2015 data page](https://charls.charlsdata.com/pages/Data/2015-charls-wave4/en.html).
