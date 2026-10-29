@@ -76,11 +76,13 @@ def source_note(wave: str, concept_id: str) -> tuple[str, str, str, str]:
     else:
         semantics = "Waist circumference reading in cm; preserve consent/completion and clothing/context fields separately. Do not derive a health classification here."
         context = "The questionnaire records bulky-clothing context (2013/2015 QM005) and special noncompletion codes 993/999; 2011 route and clothing wording remain wave-specific."
+    if wave == "2013":
+        context += " The Wave 2 Biomarker Questionnaire explicitly defines 993 as tried but unable to measure and 999 as chose not to measure; these are nonmeasurement statuses, not numeric values. Preserve item-specific context: QI003 compliance; QJ003 arm side/QJ004 compliance; QK003 leg side/QK004 compliance; QL003 floor surface/QL004 footwear/QL005 compliance; QM003 measurement difficulty/QM005 bulky clothing. The body-weight route PL001 marks eligibility only below 150 kg. The QI001 stem says 'breathing test' within the standing-height section, so do not use that stem alone to define the height denominator."
     caveat = context + " Valid ranges, release-specific missing-code implementation, and cross-wave comparability require separate verification. " + identity
     status = (
         "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-Q-field identity and release eligibility remain unverified"
         if wave == "2011" else
-        "Official Wave 2 All Data bundle checksum and Biomarker.dta header verified in protected storage; exact questionnaire/Codebook field documented, but analytic eligibility and valid-value rules remain unverified"
+        "Official Wave 2 All Data bundle checksum and Biomarker.dta header verified in protected storage; field-specific nonmeasurement-code and route/context semantics documented, but pair eligibility, numeric-validity rules and analysis approval remain unverified"
         if wave == "2013" else
         "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified"
     )

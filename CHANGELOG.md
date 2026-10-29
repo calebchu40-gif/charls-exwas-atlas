@@ -1,3 +1,9 @@
+# 2026-10-29 Document Wave 2 anthropometry route and sentinel codes
+
+- Rechecked the official Wave 2 Biomarker Questionnaire against the Codebook and protected bundle headers. Documented 993/999 as nonmeasurement statuses and kept QI/QJ/QK/QL/QM measurement context and the <150 kg weight eligibility route separate from the outcome values.
+- Flagged the inconsistent QI001 “breathing test” stem within the standing-height section; it must not define the height denominator alone. Updated the public-safe metadata crosswalk and static JSON without exposing private counts or participant data.
+- Final numeric validity, pair eligibility, age construction, design variance and methods review remain open; no association models were fitted.
+
 # 2026-10-29 Rebuild the protected Wave 2 respondent frame
 
 - Rebuilt the Wave 2 respondent-level preparation table from the checksum-verified official All Data bundle on the protected server. Unique-ID, source module joins, sample-flag/weight presence and anthropometry coverage QA were written only to protected storage; no person-level data or QA counts were added to the repository.
