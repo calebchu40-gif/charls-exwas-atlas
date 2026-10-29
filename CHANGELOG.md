@@ -5,6 +5,7 @@
 - Clarified the README and active plan so present input/site status is distinct from earlier dated records. The Wave 1 age and survey-design gates remain open; no participant values, association models, or tests were run.
 - Diagnosed the repository-boundary CI failure: a public metadata-only wave/module gate crosswalk was missing from the reviewed CSV/TSV path allowlist. Reviewed its schema and metadata-only generator, added that exact path, and confirmed the boundary guard now passes locally (1,292 tracked paths; 189 reviewed delimited-text files). No respondent-level content was inspected or added.
 - The next CI stage exposed stale synthetic fixtures/expectations after the age-source readiness gate and 2013 source review were strengthened. Updated the synthetic age-gate fixture to include the required source/derivation evidence fields and adjusted existing anthropometry expectations to recognize the added official 2013 release-note anchor and the still-unapproved analytic status. No test suite was run locally.
+- CI then identified that the K150 registry audit incorrectly required one route string for an entire family. The predeclared cooking-fuel rows carry a distinct missingness/eligibility caution, and K90 carries an explicit I020-to-I021 route. Updated the metadata-only audit to validate the route rule by registered source field and report route-rule coverage; the local registry audit now passes structurally, with every hypothesis still marked unapproved.
 
 # 2026-10-29 Document Wave 1 age input sources
 

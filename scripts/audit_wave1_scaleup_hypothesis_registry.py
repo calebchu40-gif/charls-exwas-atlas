@@ -32,7 +32,16 @@ EXPECTED = {
             ("piped_gas_access", "i019", "yes_vs_no"),
             ("residential_heating", "i020", "yes_vs_no"),
         },
-        "route": "all eligible valid respondents",
+        "routes": {
+            "i017": "all eligible valid respondents",
+            "i022": (
+                "Main cooking-fuel item; 2011 has no explicit no-cooking response. "
+                "Do not infer a category from blank; verify release eligibility and missingness."
+            ),
+            "i016": "all eligible valid respondents",
+            "i019": "all eligible valid respondents",
+            "i020": "all eligible valid respondents",
+        },
     },
     "wave1_heating_route_K90": {
         "size": 90,
@@ -41,7 +50,12 @@ EXPECTED = {
             ("heating_energy", "i021", f"code_{code}_vs_5")
             for code in (1, 2, 3, 4, 6, 7)
         },
-        "route": "i020 == 2 (No); routed heating-energy item",
+        "routes": {
+            "i021": (
+                "I020=2 (No) routes to I021; I020=1 (Yes) skips to I022; "
+                "K90 is limited to the routed No domain."
+            ),
+        },
     },
 }
 
@@ -100,8 +114,11 @@ def audit_registry(path: Path = REGISTER) -> dict[str, object]:
             errors.append(f"{family_id}: contrast-by-phenotype cells are duplicated or incomplete")
         if any(row.get("family_role") != spec["role"] for row in family_rows):
             errors.append(f"{family_id}: family role label changed")
-        if any(row.get("route_candidate") != spec["route"] for row in family_rows):
-            errors.append(f"{family_id}: route label changed")
+        for row in family_rows:
+            field = row.get("exposure_field_candidate", "")
+            expected_route = spec["routes"].get(field)
+            if expected_route is None or row.get("route_candidate") != expected_route:
+                errors.append(f"{family_id}: route label changed for exposure field {field!r}")
         if any(row.get("analysis_status") != "planned_not_approved" for row in family_rows):
             errors.append(f"{family_id}: planned hypotheses must remain unapproved")
         if any(row.get("public_release_status") != "not_approved" for row in family_rows):
@@ -110,8 +127,12 @@ def audit_registry(path: Path = REGISTER) -> dict[str, object]:
             "planned_rows": len(family_rows),
             "distinct_contrasts": len(contrasts),
             "distinct_phenotypes": len(phenotypes),
+            "distinct_route_rules": len({row.get("route_candidate", "") for row in family_rows}),
             "role": spec["role"],
-            "route": spec["route"],
+            "route_rules_match_registered_fields": all(
+                row.get("route_candidate") == spec["routes"].get(row.get("exposure_field_candidate", ""))
+                for row in family_rows
+            ),
             "all_not_approved": all(
                 row.get("analysis_status") == "planned_not_approved"
                 and row.get("public_release_status") == "not_approved"
