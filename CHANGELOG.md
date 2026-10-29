@@ -1120,3 +1120,15 @@ This file records project-level changes that affect reproducibility, methods, da
 - Promoted the current task and ordered next steps to the top of the public active-plan page and linked it from the repository landing page.
 - Recorded the metadata-only Wave 1 field-name scan: `community.dta` contains `sub_commuID` and `communityID`; 13 other readable modules did not expose a subcommunity field; one module header scan failed for memory allocation and remains unresolved. No respondent values were read.
 - The PSU/variance gate remains open, formal association models remain at zero, and no participant data or restricted outputs were added to GitHub.
+
+# 2026-10-29 Complete Wave 1 sub-PSU header search
+
+- Finished a metadata-only header scan of all 15 official All Data modules. The community module alone contains `sub_commuID`; the other 14 modules do not. The module that failed in pyreadstat was inspected through pandas' header-only reader, without reading observations.
+- Confirmed from official PSU, Weight, and Blood file headers that the PSU file has community/geographic descriptors but no respondent sub-PSU crosswalk, explicit variance stratum, or replicate weight; the Blood file contains `bloodweight`.
+- The protected read-only readiness check passed source and prepared-frame provenance/hash verification, then blocked model fitting because the bound analysis-review record is missing. No real association model was run.
+
+# 2026-10-29 Prepare Wave 1 independent methods review packet
+
+- Added a public-safe reviewer packet with the confirmed PSU/weight/source-header evidence, the 105-coefficient family definition, and explicit unresolved design decisions. It contains no participant-level information or private analysis outputs.
+- Official Blood User Guide review confirmed fasting was requested but non-fasting participants were still sampled; the guide notes non-fasting glucose can be higher. The existing pilot runner omits the fasting field for glucose/triglyceride handling, so this is now a pre-analysis specification item and blocks model execution until frozen.
+- Source and prepared-frame checks pass, but the independent analysis-readiness record is absent. Real association models remain at zero.

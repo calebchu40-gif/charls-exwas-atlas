@@ -1,6 +1,7 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-29）
 
-> **当前执行计划与实时进度：**[打开“现在正在执行什么、下一步是什么”](audit/ACTIVE_WORK_PLAN_2026-10-29.md#现在正在执行什么2026-10-29-1734)。当前在核查 Wave 1 社区子 PSU 与方差设计；正式关联模型仍为 0。此页是项目当前状态入口。
+> **当前执行计划与实时进度：**[打开“现在正在执行什么、下一步是什么”](audit/ACTIVE_WORK_PLAN_2026-10-29.md#现在正在执行什么2026-10-29-1805)。当前在复核 Wave 1 社区子 PSU/方差设计和105项试点冻结方案；正式关联模型仍为 0。此页是项目当前状态入口。
+> **数据状态更正：**Wave 1 官方 All Data、PSU、Weight、Blood 已入库并通过来源身份/准备表来源核验；下方较早的“等待数据申请/输入缺失”记录为历史状态，当前阻断项是抽样设计审阅，不是缺数据。
 
 **等待期基础设施（2026-10-27）：**9 项官方数据申请已提交并在审核中；审核期内在服务器完成正式分析环境（`env/venv`，`svy 0.35.0` / `pandas 2.3.3` / `pyreadstat 1.3.1` 精确锁定）、**通用 ExWAS 扫描引擎**（[`scripts/exwas_engine.py`](scripts/exwas_engine.py) + [`scripts/run_exwas_scan.py`](scripts/run_exwas_scan.py)，注册表与设计规格外部化、缺权重/PSU 即拒绝、族内 BY/Bonferroni、不可估计假设保留）以及网站**暴露×表型热图**（着色/详情/CSV 下载，仍只读经披露审查的 `association_results_v1.json`）。14 项合成测试与本地 staging 夹具（105 条私有 pilot 行、生产校验器 0 错误、热图 15×7 渲染）通过；本地全套 593 项测试通过。未读取任何 CHARLS 个体记录、未拟合任何真实模型、未发布任何结果；详见[`audit/waiting_period_infrastructure_2026-10-27.md`](audit/waiting_period_infrastructure_2026-10-27.md)。
 

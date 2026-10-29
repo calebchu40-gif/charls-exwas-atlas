@@ -40,7 +40,17 @@ CHARLS 官方抽样说明将村/城市社区列为通常的 PSU，并说明大�
 4. 若公开资料和发行包仍不能关闭拆分 PSU/方差层问题，形成一个明确标为近似的候选方案（社区 PSU 聚类、无伪造层），并在拟合前作独立方法审查。若近似不获接受，需由研究者经本人获准的 CHARLS 支持渠道询问正式建议；本项目不会代发联系信息。
 5. 设计门关闭之后，再冻结完整105项试点的权重、估计总体、实验室有效值、协变量DAG、诊断和多重检验家族，然后复核与运行。
 
-## 5. 官方依据
+## 5. 获准发行包的表头复核（2026-10-29）
+
+### 2026-10-29 元数据核查结果
+
+对受保护服务器中 All Data 压缩包的15个 Stata 模块逐一检查表头元数据，未读取观测值。`community.dta` 是唯一包含 `sub_commuID` 的模块，且同时有 `communityID`；其余14个模块没有 `sub_commuID`。其中 `health_care_and_insurance.dta` 无法由 pyreadstat/ReadStat 读取元数据，随后使用 pandas Stata reader 的 header-only 路径取得表头（Stata 113，480个变量）；未读取参与者记录。
+
+官方 `PSU.dta` 表头包含 `communityID`、省/市、NBS城乡、地区类型和版本标识；没有子 PSU、方差层或复制权重字段。`Weight.dta` 表头有社区、家庭、个人键及多种访谈/生物标志物权重；Blood 文件有 `bloodweight`。字段名与标签不证明年龄域或方差设计已适用。
+
+受保护目录的只读准入检查确认来源身份及准备表 provenance/hash 门通过；随后 `require_wave1_analysis_readiness` 因缺少与当前来源和分析计划绑定的审阅记录而拒绝模型执行。来源核验已通过，但样本框、年龄域、PSU/方差和真实模型门仍未通过。
+
+## 6. 官方依据
 
 - [CHARLS 官方抽样介绍](https://charls.pku.edu.cn/en/About/Sample.htm)：基线抽样框、社区 PSU、超大型社区子区拆分及样本形成。
 - [CHARLS 2011–2012 National Baseline Users' Guide](https://charls.pku.edu.cn/wenjian/jixiandiaochashujuyonghushiyongshouce2013-04-07.pdf)：主要受访者年龄筛选、配偶纳入、抽样权重构造。
