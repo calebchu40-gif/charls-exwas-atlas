@@ -17,6 +17,8 @@ CHARLS 2018 Wave 4 User's Guide 把 Sample_Info.dta 描述为回应状态、横�
 
 ## 对当前设计门的影响
 
+2026-10-29 对照 CHARLS 官方样本页再次细化抽样/年龄路由：入户筛查后，先从年龄超过40岁的成员随机选一人；若其年龄≥45则作为主要受访者并访问配偶，40–44则进入 refresher 预留路径。该叙述不单独确定血检分析权重分母，因此血检纳入仍按 Wave 1 Blood Guide/Weight 及逐人来源对账冻结。官方页面还把县级单位按地区、城乡类别、人均 GDP 排序后进行 PPS；这是抽样时的分层/排序说明，不等于公开 PSU 文件中存在可直接用于方差估计的 stratum ID。来源：[CHARLS 官方 Sample 页面](https://charls.pku.edu.cn/en/About/Sample.htm)。
+
 1. 官方 Wave 1 下载页列出的 PSU 数据与当前核验的 PSU.dta 表头一致：可以把其社区键视为 PSU 候选标识，但目前没有证据显示它含可连接到个人/家庭记录的拆分子 PSU 键或显式方差层。
 2. Wave 1 Community data 中存在 `sub_commuID`，但个体问卷模块及 PSU 文件没有该个人级字段。进一步的受保护键结构 QA 将空格形式的空值规范化后发现：非空子区记录只涉及拆分父社区，个体记录仅有父 `communityID`；对同一父社区存在多个子区的情形，仍不能确定某名受访者属于哪个被抽中的子区。精确 QA 计数与 ID 留在服务器受保护区。
 3. 暂未发现官方 Wave 1 replicate weights/variance stratum 文件，也未找到官方指定的近似方差估计方案。不能用地理字段拼造分层，也不能仅因权重存在就假设方差估计已解决。

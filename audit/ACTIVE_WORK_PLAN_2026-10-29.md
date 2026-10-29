@@ -6,6 +6,8 @@
 
 **2026-10-29 农历年龄实现复核补充：**已逐行审阅 CHARLS 官方 `lunar2solar` 的 `.ado/.sthlp` 及 `.mmat` 文件头。该 Stata 程序用官方二进制 Mata 查找表分别处理普通农历日和闰月；当前本机与服务器 PATH 均未发现 Stata 可执行程序。实现细节、不可直接用 Python ad hoc 解析 `.mmat` 的原因及受保护年龄派生的下一步见 [`charls_official_lunar_conversion_implementation_review_2026-10-29.md`](charls_official_lunar_conversion_implementation_review_2026-10-29.md)。年龄构造仍未获准/冻结，未读取受访者生日、未运行转换或关联模型。
 
+**2026-10-29 官方样本设计页补核：**基线筛查随机选取年龄>40的成员，≥45岁者成为主访者并纳入其配偶，40–44岁者进入 refresher 预留路径；故需将抽样资格路由与血检分析权重分母分别对账。官方页明确记录县级单位按地区、城乡类别、人均GDP排序后 PPS 抽样，但不提供公开 PSU 字段可直接使用的逐县方差 strata ID。细节及来源已补入 Wave 1 estimand/方差审查备忘录。
+
 本文件是本项目当前执行计划的单一状态页。每次完成阶段或遇到新阻塞时更新。GitHub 只存代码与本计划，不存 CHARLS 个体数据或受限分析输出。
 
 ## 现在正在执行什么（2026-10-29）

@@ -1318,3 +1318,9 @@ This file records project-level changes that affect reproducibility, methods, da
 - Inspected the pinned CHARLS-maintained Stata `.ado`, help file, MIT license, and binary Mata lookup-table header. Documented its ordinary/lunar-leap lookup behavior, supported string-date interface, provenance requirements, and why a production Python port cannot be assumed equivalent without validation.
 - Confirmed no Stata executable is available on the current local or private server PATH. No participant DOB values were read, no conversion/age derivation or association models were run, and no tests were run.
 - Added `audit/charls_official_lunar_conversion_implementation_review_2026-10-29.md` and updated the active plan. Next: establish an authorized Stata execution path or validate an independent implementation against the pinned official lookup using synthetic dates before deriving any participant age.
+
+## 2026-10-29 — Clarify baseline age-screening and target-frame interpretation
+
+- Rechecked the CHARLS official sample-design page and added its age-selection route: household screening selects an eligible member aged over 40; selected persons aged 45+ become main respondents with spouses interviewed, while selected persons aged 40–44 enter the refresher-reserve route.
+- Clarified that this screening description alone does not define the blood-analysis weight denominator. The denominator must still be reconciled to the official Blood Guide/Weight release and person-level frame before freezing eligibility. The page describes county sorting by region, urban/rural category and GDP before PPS, but does not provide a released per-county variance-stratum key.
+- Updated the Wave 1 estimand/design memos and active plan. No participant values or models were accessed/run.
