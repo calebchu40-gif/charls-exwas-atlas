@@ -1151,3 +1151,9 @@ This file records project-level changes that affect reproducibility, methods, da
 - Official Blood User Guide review confirmed fasting was requested but non-fasting participants were still sampled; the guide notes non-fasting glucose can be higher. The existing pilot runner omits the fasting field for glucose/triglyceride handling, so this is now a pre-analysis specification item and blocks model execution until frozen.
 - The `qc1_va003` Stata header has no value-label set, and the local Wave 1 Codebook/Blood User Guide do not specify its numeric coding. The coding must be sourced before any fasting subgroup or adjustment is implemented.
 - Source and prepared-frame checks pass, but the independent analysis-readiness record is absent. Real association models remain at zero.
+
+# 2026-10-29
+
+- Added a Wave 1 survey-variance decision matrix for the documented PSU hierarchy, incomplete split-community respondent mapping, candidate parent-community clustering approximation, and independent reviewer decisions required before real association models.
+- Corrected the community-key quick summary: blank `sub_commuID` values are stored as whitespace. After normalization, split-community respondents still cannot be assigned to a final sub-PSU from the released keys. Protected QA details and identifiers remain outside the repository.
+- Updated the active work plan and Wave 1 file-inventory audit; no real-data model was run and no result payload was published.

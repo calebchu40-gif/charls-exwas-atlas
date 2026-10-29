@@ -1,14 +1,19 @@
 # CHARLS ExWAS Atlas：执行计划与当前进度
 
-**更新时间：2026-10-29 18:30（Asia/Shanghai）**
+**更新时间：2026-10-29 18:41（Asia/Shanghai）**
 **项目目标状态：进行中**  
 **当前阶段：Wave 1 调查设计准入复核；通过现行准入的正式模型仍为 0**
 
 本文件是本项目当前执行计划的单一状态页。每次完成阶段或遇到新阻塞时更新。GitHub 只存代码与本计划，不存 CHARLS 个体数据或受限分析输出。
 
-## 现在正在执行什么（2026-10-29 18:30）
+## 现在正在执行什么（2026-10-29 18:41）
 
-**正在执行：对照审计当前登记的K150/K90假设范围与运行器实现，并冻结后续模型及校正边界。**本轮已确认历史105项探索家族与当前K150/K90扩展是不同范围，且运行器暂不支持空腹调整和M1/M2双配置；这些差异已单独记录，真实模型仍不放行。
+**正在执行：Wave 1 子 PSU 映射与候选方差估计决策矩阵，准备独立复杂抽样方法审阅。**
+
+- 新增 [`wave1_variance_estimator_decision_matrix_2026-10-29.md`](wave1_variance_estimator_decision_matrix_2026-10-29.md)：比较完整设计、父社区聚类近似、任意分配、删除拆分社区及普通回归标准误的适用边界；父社区聚类仅是待独立审阅的 fallback，不是已批准模型。
+- **本轮更正发现**：社区表 `sub_commuID` 空值以空格存储。第一次快速汇总把空格误计为有效值；清洗后仍无法确定拆分父社区内每名受访者所属的最终子 PSU。精确键计数和 ID 只留在服务器受保护 QA，不写入 GitHub。
+- **服务器复核**：Wave 1 四类官方来源文件仍在 `private/incoming_2011_official/`；`private/analysis_review/` 为空；无项目关联分析进程。Wave 2 权重和 Wave 3 血检本机入库目录未见新数据。公开 Pages 的 `association_results_v1.json` 仍为 HTTP 404。
+- 下一动作：把本决策矩阵与官方章节逐项绑定，形成独立审阅人可签署的准入问题表；审阅未完成前不拟合正式真实关联模型。
 
 - **官方抽样文件清单补查**：CHARLS Wave 1 官方公开数据页列有 All Data、PSU、Weight、Community、Blood 等，但未列独立 Sample Information、复制权重或方差层文件；2018 User's Guide 所述 Sample_Info 是回应/横截面/死亡/访谈日期元数据，不能外推成Wave 1子PSU映射。详细证据及限定见 [`wave1_official_design_file_inventory_review_2026-10-29.md`](wave1_official_design_file_inventory_review_2026-10-29.md)。当前调查设计门仍未通过。
 
@@ -45,6 +50,7 @@
 - **当前结论**：常规血液结局使用专用 `bloodweight`；45+ 目标应作为 survey domain/subpopulation；基线配偶可低于45岁。胱抑素 C 有额外随机检测子样本，暂不纳入同一主族。
 - **仍阻断**：官方说明有30个大型社区按子社区抽样，但已核对的发布字段未提供明确受访者—子 PSU 对应；显式方差层/复制权重或官方方差估计建议也尚未找到。不得用地理变量拼造分层，或把 `communityID` 近似称作完整设计。
 - **放行标准**：获得可追溯子 PSU/方差方法证据，或由独立方法审查批准并清楚标记的近似估计方案；之后才冻结并运行正式105项试点。
+- **当前候选方差审查材料**：[`wave1_variance_estimator_decision_matrix_2026-10-29.md`](wave1_variance_estimator_decision_matrix_2026-10-29.md)。社区子区空白键已按空格清洗重新核对；拆分社区的 respondent-to-final-PSU 归属仍无法从现有已审键识别。
 - **安全边界**：个人级文件只留服务器受保护目录，不进入 GitHub、OneDrive 或 Pages。
 
 ## 阶段路线、产出与估时
@@ -100,3 +106,5 @@
 核查 Wave 1 官方材料/发行文件中是否存在最终子 PSU 映射、方差层或复制权重。若没有，则整理仅以 `communityID` 聚类、明确标记为近似的候选方案并完成独立方法审阅；在审阅决定前不拟合正式关联模型。审查依据及45+ domain、血检专用权重和胱抑素 C 子样本决定见 [`wave1_estimand_weight_psu_variance_gate_2026-10-29.md`](wave1_estimand_weight_psu_variance_gate_2026-10-29.md)。
 
 - 2026-10-29（设计审查更新）：首轮审查确认血液化验需按官方血检目标与 `bloodweight` 处理；45+ 估计应使用 survey domain 保持完整设计；基线配偶不限年龄。胱抑素 C 的随机二阶段检测尚未找到对应权重说明。官方说明存在30个拆分社区，已核对字段未提供子 PSU 对应键；显式方差层/复制权重也未确认，因此调查设计门继续阻断，正式关联模型仍为0。
+
+- 2026-10-29（方差设计键复核更正）：`sub_commuID` 的空格空值已规范化后重算；拆分父社区内的 respondent-to-final-PSU 归属仍不可从已审发行键恢复。新增候选方差估计决策矩阵，供独立复杂抽样审阅；未拟合真实模型。

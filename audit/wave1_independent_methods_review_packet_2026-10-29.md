@@ -8,6 +8,7 @@
 
 - 用户确认 Wave 1 All Data、PSU、Weight、Blood 来自其获准 CHARLS 账号，对应官方数据项 123、117、118、201。服务器只读来源检查和准备表 provenance/hash 检查通过；该检查核对来源文件清单、Stata 表头和文件哈希，不读取受访者答案。
 - 受保护发行包中15个 All Data 模块的字段名已经逐一检查。`sub_commuID` 只见于社区模块；其余14个模块均没有此字段。社区模块同时含 `communityID`。
+- **键结构更正**：受保护复核发现社区模块的空白 `sub_commuID` 以空格存储。按空白规范化后，子区编号仅见于拆分父社区的多行记录；个体表只有父 `communityID`，不能据此分配这些父社区内的具体子 PSU。此前未处理空白的快速汇总会把空格误作有效值，已更正。完整候选处理矩阵见 [`wave1_variance_estimator_decision_matrix_2026-10-29.md`](wave1_variance_estimator_decision_matrix_2026-10-29.md)。
 - 独立 PSU 文件的表头提供 `communityID`、省/市、NBS城乡、地区类型和版本字段；未见子 PSU 映射键、显式方差层或复制权重。社区字段存在不等于能确定个人所在子 PSU。
 - Weight 文件含家庭/个人键及多类权重；Blood 文件含 `bloodweight`、空腹标记和15个常规血液分析物字段，另有 cystatin C。官方手册支持常规血液结局优先评估血检专用权重；cystatin C 因有年龄分层随机检测而暂不并入普通血检分析族。
 - 受保护只读 `require_verified_wave1_frame` 检查通过；`require_wave1_analysis_readiness` 因没有绑定当前来源和方案的审阅记录而阻断模型执行。
