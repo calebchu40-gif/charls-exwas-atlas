@@ -4,6 +4,8 @@
 
 The site may publish an association family only after the private result table passes `EXWAS_result_schema_v3.csv` validation and a separate private disclosure-review CSV explicitly approves every hypothesis in the family. This is an additional release gate, not a substitute for CHARLS authorization, official-source verification, survey-design review, pair-level estimability review, or the user's institutional/legal disclosure obligations. CHARLS microdata, respondent rows, private hashes, local paths, and the review file itself must never be copied into GitHub or Pages.
 
+The browser-payload validator also enforces status consistency: successful fits may use a verified or explicitly approximate variance label, while every non-success row must use `Design not fit-ready` and contain no numeric result fields. This is a schema consistency guard; it does not independently approve a survey design or make an approximate variance suitable for a particular estimand.
+
 No numeric small-cell cutoff is invented here. The reviewer must apply the controlling CHARLS terms and applicable research/ethics policy to the exact proposed aggregate payload. A review applies only to the exact result CSV bytes recorded by SHA-256 in each review row; changing the result CSV invalidates the review.
 
 ## All-or-nothing family rule

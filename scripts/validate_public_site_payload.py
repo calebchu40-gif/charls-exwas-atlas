@@ -82,6 +82,12 @@ def validate_association_payload(payload: object) -> list[str]:
                 errors.append(f"Association row {analysis_id} has an unsupported public variance-design label")
             if row.get("fit_status") not in {"success", "nonconvergence", "inestimable", "blocked_design_verification", "blocked_data_access", "code_error"}:
                 errors.append(f"Association row {analysis_id} has unsupported fit_status")
+            fit_status = row.get("fit_status")
+            variance_design = row.get("variance_design")
+            if fit_status == "success" and variance_design == "Design not fit-ready":
+                errors.append(f"Successful association row {analysis_id} cannot be labeled Design not fit-ready")
+            elif fit_status != "success" and variance_design != "Design not fit-ready":
+                errors.append(f"Non-success association row {analysis_id} must be labeled Design not fit-ready")
             if row.get("fit_status") == "success":
                 numeric: dict[str, float] = {}
                 for field in ("estimate", "standard_error", "ci_lower", "ci_upper", "p_value", "q_value_by", "p_bonferroni", "n_model"):

@@ -1461,3 +1461,7 @@ This file records project-level changes that affect reproducibility, methods, da
 # 2026-10-30 Refresh independent review packet with confirmed bloodweight linkage
 
 - Updated the reviewer packet to distinguish the blood-specific `bloodweight` used for the primary biomarker estimand from the separate `ind_weight_ad2` mismatch. The released Blood rows and positive biomarker weights link to the prepared person spine, and the released count agrees with the official Blood Guide. The remaining review focuses on full target denominator, exposure-module nonresponse, age-domain, and complex-survey variance. No participant-level data or small-cell counts were added.
+# 2026-10-30 Enforce association and variance status consistency
+
+- Hardened the public result-payload validator so successful fits cannot be labeled `Design not fit-ready`, and non-success rows must carry that label. This prevents internally contradictory public records while preserving the separate requirement for independent survey-design review.
+- No participant-level data or association results were read or changed. Validation was reviewed statically; no test suite or synthetic fit was run.
