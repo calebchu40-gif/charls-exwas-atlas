@@ -6,6 +6,10 @@
 
 - Rechecked the live official Wave 1 documentation directory and Blood Users' Guide. The fasting-status variable is documented but its 2011 numeric mapping remains unpublished in the reviewed official materials; a third-party `1=Yes, 2=No` label remains a lead only. The glucose/triglyceride routing gate stays closed.
 
+# 2026-10-30 Map variance candidate to current runner
+
+- Statically confirmed the Wave 1 runner can represent the proposed county-prefix cluster, blood-specific weight, explicitly empty strata, and with-replacement Taylor approximation, with an explicit limitation label. This removes an implementation uncertainty only; survey-design approval and all model gates remain open.
+
 # 2026-10-30 Reconcile current Wave 1 methods review packet
 
 - Corrected the independent review packet so its current 105-hypothesis candidate uses the full official blood target and `bloodweight`, with age 45+ only as a secondary survey domain. The outdated age-45+ primary target, Harmonized CHARLS age, and community-only variance fit are explicitly historical and cannot be used to populate a current readiness record.

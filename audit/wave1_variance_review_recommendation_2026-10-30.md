@@ -35,6 +35,10 @@ Wave 1发行ID的县级前缀审计在受保护区显示，它形成的分组结
 - 禁止把省、市、城乡、地区或GDP类别临时拼作正式strata；禁止按社区行序平均分配拆分子社区；禁止删除拆分社区来“解决”键缺失；禁止用普通回归标准误或随意生成复制权重替代调查设计。
 - 真实拟合前，独立审阅人须裁决：县前缀是否足以作原抽样县候选、无strata最高层Taylor近似的目标总体/自由度是否可接受、配对完整案例权重解释、45+ domain、singleton规则，以及结果是否可公开。
 
+## 2026-10-30 执行器静态映射核对
+
+当前 `scripts/exwas_engine.py` 的 `DesignSpec` 已能表达一个 PSU、一个权重、可选显式 strata、with-replacement Taylor 近似；当不提供 strata 时，结果说明会标为“unstratified with-replacement Taylor approximation; not full design variance”。`scripts/run_2011_household_environment_scaleup.py` 的冻结配置也要求明确写出 `psu_field`、`weight_field`、`with_replacement`、`stratum_fields`（无适用层时显式空列表）、方差限制和 singleton 规则，并拒绝未批准设计或复制权重冒充 Taylor 设计。因此，若独立方法审查认可上述**近似**，技术上可配置为本地派生的县级前缀簇 + `bloodweight` + 空 strata + WR Taylor，不需要先改估计核心；公开标签需保留“县级候选簇近似、未重建 CHARLS 系统PPS隐式分层”。这是静态代码路径审查，不是准入批准或合成/真实数据验证。县前缀的原始抽样单位身份、目标/自由度解释、权重适用性和独立裁决依旧未解决，正式模型仍关闭。
+
 ## 仍然独立阻断模型的门
 
 即使方差近似获批，也不代表模型规格已冻结。还须完成官方农历转换逐格验证及BA002/BA003/BA004年龄路由审查、血液结局单位/有效码和空腹子样本核查、协变量DAG、105项试点的估计目标/多重检验家族冻结、软件执行器适配及独立复现。胱抑素C不得自动并入常规血液结局族，其特殊抽样仍需专用权重来源。
