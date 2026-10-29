@@ -1,16 +1,15 @@
 # CHARLS 数据状态、个人设备迁移与复现步骤
 
-更新日期：2026-10-27
+更新日期：2026-10-30
 
-## 先看当前数据状态
+## 当前数据状态（2026-10-30；覆盖下方较早的盘点快照）
 
-- 项目服务器的 CHARLS 专属工作目录已进行只读清点：目录存在，但没有 `.dta`、`.zip`、`.rar` 等 CHARLS 数据文件。
-- 当前电脑的非同步私有目录保留了五个按波次分开的个人级分析表（2011、2013、2015、2018、2020），以及年龄候选、慢病状态、教育/户籍、性别/婚姻派生表和 2011 社区/PSU 文件。个人设备迁移 ZIP 中包含这些私有材料。
-- 2026-10-27 仅按受控目录内文件名/扩展名复核：可见27个 `.dta`、2个 `.zip`、0个 `.rar`。`.dta`均属于既有波次派生表/候选协变量或2011社区和PSU候选映射；2个ZIP位于NHANES方法参考仓库。Wave 1官方源包入库目录当前只有 `intake_manifest.json` 和 `README.txt`，没有官方All Data、Weight、Blood输入；本机PSU候选文件尚未通过精确官方发行包身份审核。2013官方Weights和2015官方Blood同样未入库。上述仅是文件级盘点，不读取参与者回答；正式门禁仍为Wave 1 `not_passed`、Wave 2/3 `skipped_missing_input`。服务器CHARLS专属目录也没有CHARLS微观数据。
-- 当前私有目录没有原始五波官方 ZIP/RAR，也没有 Harmonized CHARLS D 原文件。因此旧分析表可直接支持继续做候选变量审计、方法/权重设计和管线开发，但无法从官方源档案重新生成原始变量目录或完整准备表；需要源级重建时，按下文自行申请并下载。
-- 2026-10-22再次按已记录的输入目录核查，`%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\raw_archives`、`D:\CHARLS_Source`和桌面`CHARLS_Source`均不存在；不能据此推断其他未登记位置没有数据。当前源级重建仍待从官方端取得发行档案。
-- 项目此前的数据清点记录曾指出 2015 独立 Blood Data 和 2014 Life History 为缺项。即使后来重新下载五波主包，也应单独核对这两项是否需要及是否已获准。
-
+- 用户已通过本人获准的 CHARLS 账号申请/下载官方发布文件，并明确授权在其个人受控计算环境中继续分析。当前官方源文件和个人级衍生数据仅保存在受控本机目录及个人服务器项目的 owner-only `private/` 子目录；该目录不向其他账号开放。CHARLS 微观数据不得进入 OneDrive/GitHub/Pages、协作者包或公开目录，也不得向其他研究者转交。
+- Wave 1 All Data、PSU、Weight、Blood 四件套已进入本机受控 `incoming_2011_official` 并通过来源身份/元数据预检；完整 Wave 1 重建及血检权重链接已做受保护的 ID/权重聚合核对，但总体分母仍有未决差异，PSU/方差、年龄/结局规则和独立方法审查尚未通过。
+- Wave 2 官方 All Data、PSU、Weights 和样本标记已在受控服务器中准备；Wave 3 官方 All Data、Sample_Infor、Weights、Blood 均已通过来源/表头或哈希门。Wave 3 当前 person spine 使用官方 `Sample_Infor`，保留 `crosssection`；受保护 ID-only 样本框/权重域核验通过，并已完成 Blood 一对一准备合并。各波的权重目标、年龄/协变量资格和 PSU/方差仍须逐波审核。
+- Wave 4/5 官方权重与 Sample_Infor 已通过来源/表头预检；这不代表对应波次分析准入通过。
+- 目前正式/可发布真实关联模型数为 0。不得在来源、年龄域、权重适用性、PSU/方差、预注册/冻结方案和独立审查等门禁未关闭前拟合或发布真实关联。
+- 下面较早的日期记录是当时的历史快照；出现与本节冲突时，以本节及 [`audit/ACTIVE_WORK_PLAN_2026-10-29.md`](ACTIVE_WORK_PLAN_2026-10-29.md) 的较新状态为准。
 ## 私有输出路径
 
 五波个人级准备表、派生协变量/结局表和由它们计算的QA汇总默认均位于 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas`：个人表放在各自的 `derived_*` 子目录，派生覆盖/路由/配对计数写入 `qa_outputs`。这些报告也留在本机受控目录，不进入同步项目目录。若需指定目录，使用 `CHARLS_EXWAS_PRIVATE_ROOT`、`CHARLS_EXWAS_DATA_DIR` 和 `CHARLS_EXWAS_QA_DIR`；脚本会拒绝把个人数据或数据派生输出写进 OneDrive、Dropbox、Google Drive 或 iCloud 路径。仅 `site-prototype/dist/` 的字段级公开目录可随 GitHub 提交。
