@@ -11,6 +11,11 @@
 - Documented runner gaps: only one primary model configuration is currently implemented; fasting adjustment is unsupported; batch-adjusted p-values are not final atlas-wide correction. No CHARLS records/results were opened or fitted.
 - Added `audit/wave1_family_runner_scope_review_2026-10-29.md`; updated the active plan.
 
+# 2026-10-29 Check official Wave 1 design-file inventory
+
+- Reviewed the official Wave 1 baseline data/document page: it lists PSU, Weight, Community and Blood products but no separate baseline Sample Information, replicate-weight or variance-stratum file. Reviewed the later Wave 4 guide's definition of Sample_Info to avoid assuming that a later-wave status/date file is a baseline PSU crosswalk.
+- Recorded scope limits and implications in `audit/wave1_official_design_file_inventory_review_2026-10-29.md`. The PSU/variance gate remains unresolved; no model was run.
+
 # 2026-10-29 Review Wave 1 blood estimand and unresolved PSU variance design
 
 - Added an official-source review of the Wave 1 blood target, dedicated `bloodweight`, 45+ domain estimation, unrestricted-age spouse enrollment, and the separate Cystatin C assay subsample. Non-blood phenotypes still require their own module-specific eligibility and weight review.
