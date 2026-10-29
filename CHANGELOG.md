@@ -14,6 +14,12 @@
 - Added a deterministic metadata-only builder and 60-row wave/module crosswalk connecting candidate E/P/C source fields to wave-level sample-marker and weight starting points, plus explicit module-level review gates.
 - Documented that catalog field counts are not participant N, complete-case pairs or model counts, and that repeated candidate weights do not establish module applicability. No CHARLS microdata, private outputs, association models or tests were accessed/run.
 
+# 2026-10-29 Reconcile Wave 1 candidate sources and questionnaire routes
+
+- Reconciled the 240 planned K150/K90 registry rows with the user-confirmed protected source-identity review, official Wave 1 questionnaire/Codebook and metadata-only prepared/Blood headers. Corrected source statuses to distinguish authenticated archive and header key presence from unreviewed response values, linkage, validity and eligibility.
+- Clarified the `i020` heating route: Yes skips `i021`, No routes to it; K90 is restricted to that routed subdomain. Preserved the absence of an explicit 2011 no-cooking code for `i022`.
+- All rows remain `planned_not_approved`. No participant values, models, tests or private results were accessed.
+
 # 2026-10-29 Extend official Wave 1 fasting-code source review
 
 - Searched the archived official physical-examination questionnaire text and the complete 2011 Blood Guide text layer for `qc1_va003` and fasting response codes. The questionnaire provides no numeric field mapping; the guide describes fasting status and non-fasting measurement risk without code definitions.

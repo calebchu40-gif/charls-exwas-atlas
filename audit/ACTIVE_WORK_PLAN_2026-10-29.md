@@ -8,8 +8,11 @@
 
 ## 现在正在执行什么（2026-10-29）
 
-**刚完成：建立波次 × 来源模块的候选字段—估计目标—权重—准入门禁交叉表。**
+**刚完成：核实 Wave 1 K150/K90 的官方来源身份、字段键和问卷路由，并更正候选登记表。**
 
+- [`wave1_hypothesis_registry_source_reconciliation_2026-10-29.md`](wave1_hypothesis_registry_source_reconciliation_2026-10-29.md) 记录元数据审查依据：All Data 与 Blood 来源身份已通过用户授权来源清单核对；六个候选环境字段键出现在受保护准备表表头，15个候选血液结局键出现在受保护 Blood 表头。仅查表头，没有读回答值。
+- 已更正 Wave 1 假设登记表的240行来源状态；所有行仍为 `planned_not_approved`。同时将 K90 明确标成 `i020=2 (No)` 后路由至 `i021` 的受限子域；2011问卷中 `i020=1 (Yes)` 跳过 `i021`，烹饪燃料 `i022` 没有显式“无烹饪”响应。来源键确认不等于样本资格、权重或设计准入。
+- 前序波次 × 模块交叉表见 [`wave_module_source_estimand_weight_gate_crosswalk_v1.md`](wave_module_source_estimand_weight_gate_crosswalk_v1.md) 和 CSV；该目录汇总仍然是候选字段元数据，不是可分析配对或样本量。
 - 交叉表见 [`wave_module_source_estimand_weight_gate_crosswalk_v1.md`](wave_module_source_estimand_weight_gate_crosswalk_v1.md) 和 [`wave_module_source_estimand_weight_gate_crosswalk_v1.csv`](wave_module_source_estimand_weight_gate_crosswalk_v1.csv)，由 [`build_wave_module_gate_crosswalk.py`](../scripts/build_wave_module_gate_crosswalk.py) 从仓库候选字段元数据生成。60行覆盖五波目录中的来源模块；E/P/C数是唯一候选字段名数量，不是样本量、完整配对数或可估模型数。逐波权重重复列为模块审核起点，不表示适用性已经确认。
 - 兼容性审计见 [`multwave_runner_configuration_compatibility_review_2026-10-29.md`](multwave_runner_configuration_compatibility_review_2026-10-29.md)：当前只有 Wave 1 探索性水源—血检 runner 和 K150/K90 受门禁保护的扩展 runner；Wave 2–5 尚无关联 runner/冻结配置。通用 design 样例也不是扩展 runner 的获批配置。
 - Wave 1 历史 runner 硬编码 `bloodweight`、`communityID` 与协变量，并使用未分层方差近似；扩展 runner 则 fail-closed 要求冻结的完整样本框、目标、设计、结局有效值规则与审查记录。逐波矩阵不授权直接运行。
@@ -27,7 +30,7 @@
 - **县级键拓扑受控 QA**：只使用受保护 Wave 1 `PSU.dta` 的省、市与社区键汇总结构，未读取个人分析表。省/市文本标签不是官方县级抽样单元的一对一键，不能据此构造县级 strata 或 first-stage PSU。准确聚合数和方法注记只存于本机受控 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\qa_outputs\`；GitHub 文档仅记录不含计数和地名的审慎结论。
 - **官方 Codebook 字段清单交叉核验**：2011 Codebook PSU 节（印刷页1340–1341）列明 `communityID`、`province`、`city`、`urban_nbs`、`areatype`，没有县级 sample-unit ID/strata；与实际 `PSU.dta` 表头相符（版本字段仅作发布元数据）。详细来源核对已加入 [`wave1_official_design_file_inventory_review_2026-10-29.md`](wave1_official_design_file_inventory_review_2026-10-29.md)。
 - **状态更正（2026-10-29 19:39）**：本机受保护入库现有 Wave 1 四件套、Wave 2 PSU/权重（官方文档319/318）、Wave 3 样本信息/权重/血检（1151/1152/2088）、Wave 4 权重/样本信息（2106/2107）和 Wave 5 权重/样本信息（2210/2209）。Wave 2 PSU表头及新增五个 Wave 3–5 设计包先与服务器私有清单中的 SHA-256 比对，服务器清单显示其已通过官方 SHA-1 校验，然后仅做 Stata metadata-only 表头审核。机器可读报告和原始包均仅存受控本机/服务器目录。官方逐波权重解释见 [`multwave_official_weights_blood_source_review_2026-10-29.md`](multwave_official_weights_blood_source_review_2026-10-29.md) 和 [`multwave_weight_estimand_matrix_v1.md`](multwave_weight_estimand_matrix_v1.md)。独立方法审阅目录仍空；正式关联模型未获准。Pages 首页 HTTP 200，`association_results_v1.json` HTTP 404。
-- 下一动作：逐模块核对官方问卷路由、结局量表/检测资格与编码，先确定可来源审查的优先 E/P 区块；同步收敛 Wave 1 县级/分层/最终子 PSU 方差裁决及空腹字段来源审查。任何真实模型仍须先通过逐波设计方法独立审查、冻结方案与 disclosure gate。
+- 下一动作：在不读参与者答案的前提下，完成 Wave 1 15项血液表型的有效值/尺度候选规则逐项来源审查，并区分官方检测范围、分析阈值与特殊缺失码；同步收敛县级/分层/最终子 PSU 方差裁决及空腹字段来源审查。任何真实模型仍须先通过逐波设计方法独立审查、冻结方案与 disclosure gate。
 
 - **官方抽样文件清单补查**：CHARLS Wave 1 官方公开数据页列有 All Data、PSU、Weight、Community、Blood 等，但未列独立 Sample Information、复制权重或方差层文件；2018 User's Guide 所述 Sample_Info 是回应/横截面/死亡/访谈日期元数据，不能外推成Wave 1子PSU映射。详细证据及限定见 [`wave1_official_design_file_inventory_review_2026-10-29.md`](wave1_official_design_file_inventory_review_2026-10-29.md)。当前调查设计门仍未通过。
 
