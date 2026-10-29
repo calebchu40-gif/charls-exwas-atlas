@@ -47,6 +47,17 @@ def protected_data_path(path: Path) -> Path:
     return resolved
 
 
+def restrict_private_permissions(path: Path, *, directory: bool = False) -> None:
+    """Use owner-only permissions for private outputs on POSIX servers.
+
+    Windows does not implement POSIX mode bits consistently, so retain its
+    existing ACL behavior there. The parent path is separately constrained to
+    the configured private root by ``protected_data_path``.
+    """
+    if os.name == "posix":
+        os.chmod(path, 0o700 if directory else 0o600)
+
+
 def normalize_key(series: pd.Series) -> pd.Series:
     # IDs are join keys, not numeric measurements. String normalization avoids
     # accidental int/float mismatches while preserving zero padding if present.
@@ -120,6 +131,7 @@ def git_build_provenance(root: Path) -> dict[str, object]:
 def dta_members(archive: Path, kind: str):
     scratch_root = protected_data_path(PRIVATE_ROOT / "tmp")
     scratch_root.mkdir(parents=True, exist_ok=True)
+    restrict_private_permissions(scratch_root, directory=True)
     if kind == "zip":
         with zipfile.ZipFile(archive) as zf:
             bad = zf.testzip()
@@ -328,6 +340,7 @@ def main():
                   if args.input_root is not None else None)
     outdir = protected_data_path(args.out_dir)
     outdir.mkdir(parents=True, exist_ok=True)
+    restrict_private_permissions(outdir, directory=True)
     build_time = datetime.now(timezone.utc).isoformat()
     script_path = Path(__file__).resolve()
     git_provenance = git_build_provenance(script_path.parents[1])
@@ -536,10 +549,14 @@ def main():
         print(f"wave={wave} rows={len(base)} cols={len(base.columns)} unique_ID={base['ID'].nunique(dropna=True)}")
         pd.DataFrame(qa).to_csv(outdir / f"merge_qa_{wave}.csv", index=False, encoding="utf-8-sig")
         pd.DataFrame(maps).to_csv(outdir / f"variable_collision_map_{wave}.csv", index=False, encoding="utf-8-sig")
+        restrict_private_permissions(outdir / f"merge_qa_{wave}.csv")
+        restrict_private_permissions(outdir / f"variable_collision_map_{wave}.csv")
         _, check = pyreadstat.read_dta(str(temp_outfile), metadataonly=True)
         if check.number_rows != len(base) or check.number_columns != len(base.columns):
             raise RuntimeError(f"Read-back shape mismatch for wave {wave}")
+        restrict_private_permissions(temp_outfile)
         os.replace(temp_outfile, outfile)
+        restrict_private_permissions(outfile)
         all_wave_summaries[-1]["prepared_output"] = {
             "filename": outfile.name,
             "bytes": outfile.stat().st_size,
@@ -560,6 +577,7 @@ def main():
                             "source archives not modified", "do not publish microdata",
                             "no row expansion by duplicate community/household keys"]})
     manifest_path.write_text(json.dumps(prior, ensure_ascii=False, indent=2), encoding="utf-8")
+    restrict_private_permissions(manifest_path)
     print(f"out_dir={outdir}")
 
 
