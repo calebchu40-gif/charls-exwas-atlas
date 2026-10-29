@@ -1487,3 +1487,8 @@ This file records project-level changes that affect reproducibility, methods, da
 
 - Added a provenance-bound aggregate-only Wave 3 age-route audit. It checks the official 2015 archive/Blood hashes and merged-table manifest before reading only `crosssection`, interview timing, and BA002/BA003/BA004_W3 route/date fields. It does not read IDs or Blood/exposure outcomes; exact QA counts are written only under owner-only private storage.
 - The restricted audit surfaced unresolved birth-route responses, missing/unrecognized calendar codes on known routes, and unknown month/day entries; no out-of-range observed date components or incomplete interview year/month were flagged. These are not age estimates or sample counts for publication. Age intervals/lunar parity, covariates, survey design, and methods review remain open; formal models remain 0.
+
+# 2026-10-30 Clarify the Wave 3 Blood weight target
+
+- Reviewed the official 2015 Blood Release Note and Codebook. The released `Blood_weight` targets the cross-sectional blood-response sample; it is built from the cross-sectional individual weight with logistic blood-response adjustment and 99th-percentile capping. CHARLS does not provide a ready-made Wave 3 panel blood weight.
+- Clarified the initial Wave 3 association frame: Sample_Infor, cross-sectional domain, blood-module participation and the applicable positive Blood_weight, followed by pair-specific complete-data eligibility. This closes the weight-scope documentation question, not the final estimand or variance gate. No panel interpretation, substitution with general Biomarker/individual weights, or association result is authorized.
