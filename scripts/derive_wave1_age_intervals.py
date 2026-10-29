@@ -252,9 +252,16 @@ def derive() -> dict[str, Any]:
         elif year is not None and 1900 <= year <= interview_year:
             lower, upper = max(0, interview_year - year - 1), interview_year - year
             route = "calendar_or_date_route_unresolved_year_interval"
-        elif reported_age is not None and 1 <= reported_age <= 120:
+        elif (
+            reported_age is not None
+            and 1 <= reported_age <= 120
+            and year is None
+            and month is None
+            and day is None
+            and calendar_code is None
+        ):
             lower = upper = reported_age
-            route = "conditional_self_reported_age"
+            route = "conditional_self_reported_age_all_ba002_components_missing"
         else:
             route = "no_valid_birth_year_or_conditional_age"
 

@@ -131,6 +131,9 @@ def run(data_path: Path, intake: Path, output: Path) -> dict[str, Any]:
         age[["_id", "age_at_interview_lower", "age_at_interview_upper", "age45_domain_status_candidate"]],
         on="_id", how="left", validate="1:1", indicator="_age_merge",
     )
+    if (joined["_age_merge"] != "both").any():
+        raise ValueError("Some official Blood-file IDs do not link to the age candidate")
+    joined = joined.drop(columns="_age_merge")
     if len(age) != int(age_qa.get("row_count", -1)):
         raise ValueError("Age candidate row count does not match its private QA record")
     joined["age_interval_available"] = (
