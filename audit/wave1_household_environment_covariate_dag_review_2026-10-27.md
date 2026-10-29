@@ -61,4 +61,4 @@
 
 ## 依据与待补证据
 
-项目内部证据：`audit/covariate_modeling_strategy_v1.md`、`audit/household_ses_candidate_review_v1.md`、`audit/survey_design_weight_review_v1.md`、`audit/pilot_2011_water_biomarker_plan_and_gates_2026-10-26.md`及本机`covariate_candidate_availability_v1.csv`。正式模型前仍须对照获准Wave 1精确发行包、基线用户指南、Blood User Guide、PSU/Weight文件和问卷/Codebook版本；当前受保护入库门禁未通过。
+项目内部证据：`audit/covariate_modeling_strategy_v1.md`、`audit/household_ses_candidate_review_v1.md`、`audit/survey_design_weight_review_v1.md`、`audit/pilot_2011_water_biomarker_plan_and_gates_2026-10-26.md`及受保护目录中的`covariate_candidate_availability_v1.csv`。Wave 1官方来源身份已确认，官方输入与准备表已在受保护目录；因此旧版“数据尚未到位”的前置状态不再适用。正式模型前仍须完成样本框/目标域、年龄来源与算法、血检权重适用性、PSU/方差、字段级缺失与有效值规则核对，并由独立方法审阅确认。本DAG仍只是变量角色候选，既未冻结也未开放模型门禁。

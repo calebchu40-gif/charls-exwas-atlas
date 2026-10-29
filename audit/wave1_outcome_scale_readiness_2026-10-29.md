@@ -40,3 +40,9 @@
 - 本轮只使用公开手册和公开 catalog 元数据整理量纲/测定范围，未读取参与者答案、未生成任何分布/计数，也未拟合 CHARLS 关联。
 - 目前正式模型仍为0。来源门通过不等于设计或分析放行。最终准入仍被 respondent-to-final-PSU 映射/方差方法、结局有效值和特殊码、空腹代码、冻结配置及独立方法审阅阻断。
 - 变量键及字段单位来源见 [`blood_biomarker_crosswalk_v1.csv`](blood_biomarker_crosswalk_v1.csv)；实验室方法资料见 [`blood_assay_method_metadata_2011_2015_2026-10-22.md`](blood_assay_method_metadata_2011_2015_2026-10-22.md) 和 [CHARLS Blood Sample Users' Guide](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf)。官方Wave 1页面列明该数据与文档产品：[CHARLS 2011 Wave 1 data page](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)。
+
+## 空腹记录与结局测量解释（2026-10-30 补充）
+
+CHARLS 2011 Blood Sample Users' Guide 说明采血前要求隔夜空腹，但没有空腹者仍接受采血，且空腹状态记录在数据中；指南报告血样参与者中超过92%为空腹（指南印刷页约8–9，PDF页14–15）。这支持把空腹作为采样/测量条件审核，而不支持把非空腹样本自动判为无效，也不支持在未核实字段编码前构造“空腹”筛选条件。当前受控文件元数据确认 `qc1_va003` 字段存在，但该字段没有值标签，所审官方材料也没有给出数值编码映射；因此在官方编码依据确认前，不解码、不按该字段筛样、不把它当成已验证协变量。对血糖和甘油三酯，空腹状态的估计目标及敏感性方案仍须在查看结果前冻结。
+
+同一指南描述的偏态/近似正态是指南作者对其分析样本的分布观察，不构成 CHARLS 的通用转换或异常值剔除规则。指南为图示而省略少数极端值，也不能转化为本项目的过滤线。葡萄糖、甘油三酯、HbA1c的采样/运输注意事项应作为解释限制与预先设定的敏感性方案输入；不得依据本项目观察到的分布选择变换、截尾点或样本。指南指出胱抑素C仅在血样参与者中的70岁以上人群及70岁以下随机子样本测量，故它仍需单独解决分析物抽样资格与权重，不进入15项共同结局族。

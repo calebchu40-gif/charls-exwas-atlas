@@ -1,3 +1,7 @@
+# 2026-10-30 Clarify Wave 1 blood outcome measurement rules
+
+- Record that the official guide includes non-fasted blood samples and says fasting status is recorded, while reviewed sources do not decode 2011 `qc1_va003` values. Do not infer fasting exclusions, transformations, or extreme-value filters from guide distribution summaries. Keep Cystatin C eligibility separate. No respondent values or association results were used.
+
 # 2026-10-30 Refine Wave 1 variance review candidate
 
 - Reconciled the county-prefix key evidence with the official four-stage, systematic-PPS sample description and documented the strongest remaining national-inference approximation for independent review: county-prefix as a top-level cluster with no invented strata/FPC, using the blood-specific weight only for its defined target.
