@@ -10,6 +10,8 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import tempfile
+import zipfile
 from pathlib import Path
 
 import pyreadstat
@@ -42,8 +44,8 @@ REQUIRED_FIELDS = (
     "bl_top_coding_tg",
 )
 DEFAULT_INTAKE = PRIVATE_ROOT / "incoming_2015_blood"
-DEFAULT_ARTIFACT = DEFAULT_INTAKE / "Blood_Data_2015_download"
-DEFAULT_STATA = DEFAULT_INTAKE / "Blood_Data_2015.dta"
+DEFAULT_ARTIFACT = DEFAULT_INTAKE / "2015_2088_Blood.zip"
+DEFAULT_STATA = DEFAULT_INTAKE / "Blood_Data_2015.dta"  # legacy explicit-file caller
 DEFAULT_QA = QA_OUTPUT_DIR / "blood_2015_intake_metadata.json"
 
 
@@ -124,17 +126,49 @@ def audit_intake(artifact: Path, stata_file: Path, expected_rows: int | None = E
     return metadata
 
 
+def audit_archive_header(artifact: Path) -> dict[str, object]:
+    """Verify the official ZIP and inspect its unique Blood.dta member header."""
+    artifact = require_private_path(artifact)
+    artifact_sha1 = verify_official_artifact_sha1(artifact)
+    with zipfile.ZipFile(artifact) as zf:
+        members = [
+            item.filename for item in zf.infolist()
+            if Path(item.filename.replace("\\", "/")).name.casefold() == "blood.dta"
+            and not item.is_dir()
+        ]
+        if len(members) != 1:
+            raise ValueError(f"Official blood archive must contain one Blood.dta; found {len(members)}")
+        member = members[0]
+        normalized = member.replace("\\", "/")
+        if normalized.startswith("/") or ".." in Path(normalized).parts:
+            raise ValueError("Unsafe Blood.dta archive member path")
+    temp_root = require_private_path(PRIVATE_ROOT / "tmp")
+    temp_root.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="wave3_blood_header_", dir=temp_root) as temp:
+        staged = Path(temp) / "Blood.dta"
+        with zipfile.ZipFile(artifact) as zf, zf.open(member) as source, staged.open("wb") as dest:
+            while block := source.read(1024 * 1024):
+                dest.write(block)
+        result = audit_intake(artifact, staged)
+        result.update({
+            "archive_member": member,
+            "official_sha1_scope": "download ZIP archive",
+            "archive_sha256": sha256_file(artifact),
+            "stata_member_sha256": sha256_file(staged),
+        })
+    result["official_artifact_sha1"] = artifact_sha1
+    return result
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--artifact", type=Path, default=DEFAULT_ARTIFACT,
                         help="Exact CHARLS download artifact whose SHA1 is posted on the official page")
-    parser.add_argument("--stata-file", type=Path, default=DEFAULT_STATA,
-                        help="Extracted/received Stata Blood Data file to inspect by header only")
     parser.add_argument("--output", type=Path, default=DEFAULT_QA,
                         help="Aggregate-only JSON destination under protected local storage")
     args = parser.parse_args()
 
-    qa = audit_intake(args.artifact, args.stata_file)
+    qa = audit_archive_header(args.artifact)
     output = require_private_path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(qa, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

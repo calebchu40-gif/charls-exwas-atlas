@@ -1,5 +1,7 @@
 # CHARLS 2013 official sample flags and weight intake
 
+> **Current correction (2026-10-29):** The official SHA-1 listed by CHARLS is for the downloaded `2013_318_Weights.zip`, not the extracted `Weights.dta`. The older instructions below incorrectly treated it as a DTA checksum and described the official file as unavailable. The archive is now present in the protected local intake and passes the official ZIP checksum plus metadata-only inspection of its unique `Weights.dta` member. The extraction is temporary and protected; no merge was performed in this update. Use `audit/wave2_weights_metadata_intake_gate_2026-10-25.md` for the corrected command and current status. `merge_2013_official_weights.py` now requires both `--weights` and `--weights-archive`, then confirms the supplied DTA bytes match the checked ZIP member before reading values.
+
 ## Why this is a blocking item
 
 The prepared local 2013 respondent table has 18,605 rows and contains several

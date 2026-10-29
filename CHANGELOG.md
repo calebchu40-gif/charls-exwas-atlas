@@ -1362,3 +1362,9 @@ This file records project-level changes that affect reproducibility, methods, da
 
 - Downloaded the PyPI lunardate 0.1.5 source archive into protected local reference storage and confirmed it against the PyPI-published SHA-256. Static inspection found GPLv3 metadata, a supported 1900–2049 range, and explicit leap-month input. No source archive was added to GitHub.
 - CHARLS's official help cites this project but does not name a release; 0.1.5 postdates the help's June 2014 version, and PyPI reports no build provenance. It remains a candidate reference rather than an exact reproduction of the official Stata `.mmat` table. No examples or participant dates were run in this step.
+
+## 2026-10-29 — Correct Wave 2 checksum scope and advance source preflight
+
+- Fixed Wave 2 provenance handling: the CHARLS-published SHA-1 applies to the downloaded ZIP, not its extracted `Weights.dta`. The metadata gate now verifies the ZIP and inspects its unique DTA member header in protected temporary storage. The merge command also verifies that the supplied DTA is byte-identical to that member.
+- Rechecked the official Wave 2 weights and Wave 3 blood archives. Both source hashes and required Stata header schemas passed. Outputs remain in the protected local QA directory. No participant values or IDs, flag/weight distributions, merges, or association models were read or run.
+- Updated the active plan, outdated intake instructions and handoff status; design/age/weight applicability, variance, independent review and formal analysis gates remain open.

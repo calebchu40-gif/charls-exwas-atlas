@@ -1,5 +1,7 @@
 # CHARLS 2013 Wave 2 权重文件表头入库闸门（2026-10-25）
 
+> **2026-10-29 现行更正：**本页下方“尚未入库”、命令行参数和“合成测试/无真实表头QA”均为历史状态。CHARLS 页面发布的 SHA-1 `22c4fc89df2e55fa8faf051e88830eebe0e035c0` 对应下载的 `2013_318_Weights.zip`，不是解压后的 `Weights.dta`。旧审计和合并实现误把 ZIP 哈希用于 DTA，现已更正：先验证官方 ZIP，再只将其中唯一的 `Weights.dta` 暂存于受保护临时目录做 header-only 检查；合并入口同时要求官方 ZIP 与其成员 SHA-256 一致。当前本机已通过官方归档来源及表头检查（19,679 个头部记录、19列，含 `ID`、`crosssection`、`longitudinal` 和8个权重字段）；未读取值、样本旗标频数或ID，未合并。
+
 ## 目的与官方来源
 
 Wave 2 官方发布说明将 `Weights.dta` 列为独立文件，并说明其中含横截面与纵向样本资格标记。CHARLS Wave 2 官方下载清单仍列出 2015-11-18 版本，SHA1 为 `22c4fc89df2e55fa8faf051e88830eebe0e035c0`。该权重文件目前仍未进入本机受保护接收目录。
@@ -10,14 +12,14 @@ Wave 2 官方发布说明将 `Weights.dta` 列为独立文件，并说明其中�
 
 ## 运行方法
 
-将经本人获准CHARLS账户下载的官方 `Weights.dta` 放在本地隔离目录：
+将经本人获准 CHARLS 账号下载的官方 Wave 2 权重 ZIP 放在本机受控目录：
 
 ```powershell
 python scripts/audit_2013_weights_intake.py `
-  --weights "$env:LOCALAPPDATA\\CHARLS_ExWAS_Atlas\\incoming_2013_weights\\Weights.dta"
+  --archive "$env:LOCALAPPDATA\\CHARLS_ExWAS_Atlas\\incoming_2013_weights\\2013_318_Weights.zip"
 ```
 
-只有该闸门成功后，才按原接收手册执行 `scripts/merge_2013_official_weights.py`。禁止把来源不明的替代文件、原始文件、合并后的个体表或本机QA输出放入OneDrive、项目目录、GitHub或Pages。
+只有来源闸门成功并且下游框架/设计条件合适后，才能按原接收手册执行 `scripts/merge_2013_official_weights.py`，并必须同时传入 `--weights`（该 ZIP 内提取出的 DTA）和 `--weights-archive`（经 SHA-1 核验的官方 ZIP）。禁止把原始/合并个体表放入OneDrive、项目目录、GitHub或Pages。
 
 ## 验证范围
 

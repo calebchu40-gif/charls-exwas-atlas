@@ -10,36 +10,36 @@ import argparse
 import hashlib
 import json
 import os
+import zipfile
 from pathlib import Path
 
 import pandas as pd
 import pyreadstat
 
 from prepare_charls_wave_tables import normalize_key
+from audit_2013_weights_intake import verify_official_weights_archive
 from project_paths import PRIVATE_ROOT, QA_OUTPUT_DIR, WAVE_DATA_DIR, require_private_path
 
 
 REQUIRED_FLAGS = ("crosssection", "longitudinal")
-EXPECTED_OFFICIAL_WEIGHTS_SHA1 = "22c4fc89df2e55fa8faf051e88830eebe0e035c0"
 
 
-def sha1_file(path: Path) -> str:
-    digest = hashlib.sha1()
-    with path.open("rb") as source:
-        for block in iter(lambda: source.read(1024 * 1024), b""):
+def verify_official_weights_source(archive: Path, dta_path: Path) -> str:
+    """Verify the published ZIP hash and prove the supplied DTA is its member."""
+    archive_sha1, member = verify_official_weights_archive(archive)
+    import hashlib
+
+    with zipfile.ZipFile(archive) as zf, zf.open(member) as archived:
+        digest = hashlib.sha256()
+        for block in iter(lambda: archived.read(1024 * 1024), b""):
             digest.update(block)
-    return digest.hexdigest()
-
-
-def verify_official_weights_sha1(path: Path, expected: str = EXPECTED_OFFICIAL_WEIGHTS_SHA1) -> str:
-    """Fail closed unless the intake matches the official Wave 2 release listing."""
-    actual = sha1_file(path)
-    if actual.lower() != expected.lower():
+        archive_member_sha256 = digest.hexdigest()
+    if sha256_file(dta_path).lower() != archive_member_sha256.lower():
         raise ValueError(
-            "Weights.dta SHA1 does not match the official CHARLS Wave 2 listing; "
-            f"expected {expected.lower()}, got {actual.lower()}. No merge performed."
+            "Weights.dta does not match the member in the SHA-1-verified official ZIP; "
+            "no merge performed."
         )
-    return actual
+    return archive_sha1
 
 
 def sha256_file(path: Path) -> str:
@@ -140,7 +140,9 @@ def merge_official_weights(prepared: pd.DataFrame, weights: pd.DataFrame,
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--weights", required=True, type=Path,
-                    help="Official 2013 Weights.dta stored in private local storage")
+                    help="Extracted Weights.dta from the verified official ZIP, in private storage")
+    ap.add_argument("--weights-archive", required=True, type=Path,
+                    help="Exact official CHARLS Wave 2 weights ZIP whose SHA-1 is published")
     ap.add_argument("--prepared", type=Path,
                     default=WAVE_DATA_DIR / "CHARLS_wave2013_person_analytic.dta")
     ap.add_argument("--output", type=Path,
@@ -150,7 +152,7 @@ def main():
     ap.add_argument("--replace-prepared", action="store_true",
                     help="After successful checks, atomically replace prepared input (backup retained)")
     args = ap.parse_args()
-    for name in ("weights", "prepared", "output", "qa_output"):
+    for name in ("weights", "weights_archive", "prepared", "output", "qa_output"):
         setattr(args, name, require_private_path(getattr(args, name)))
     if args.weights.resolve() == args.prepared.resolve():
         raise ValueError("Weights source and prepared input must be different files")
@@ -162,7 +164,7 @@ def main():
     if args.output.resolve() == args.prepared.resolve():
         raise ValueError("Output cannot overwrite prepared input; use --replace-prepared")
 
-    official_sha1 = verify_official_weights_sha1(args.weights)
+    official_sha1 = verify_official_weights_source(args.weights_archive, args.weights)
     source, source_meta = pyreadstat.read_dta(str(args.weights))
     prepared, prepared_meta = pyreadstat.read_dta(str(args.prepared))
     labels, weight_labels = {}, {}
@@ -189,6 +191,8 @@ def main():
         raise RuntimeError("Read-back respondent order check failed")
     os.replace(temp, args.output)
     qa.update({"source_file": args.weights.name, "source_sha256": sha256_file(args.weights),
+               "source_archive": args.weights_archive.name,
+               "source_archive_sha256": sha256_file(args.weights_archive),
                "official_release_sha1": official_sha1,
                "output_file": args.output.name, "output_sha256": sha256_file(args.output),
                "prepared_source_sha256": sha256_file(args.prepared)})

@@ -1,8 +1,9 @@
 """Run metadata-only CHARLS intake checks for official files already present.
 
-This convenience entry point never downloads, extracts, merges, or reads
-respondent values. Missing inputs are reported as skipped; present inputs must
-pass the existing release-hash and header checks before aggregate QA is saved.
+This convenience entry point never downloads, bulk-extracts, merges, or reads
+respondent values. It stages only required DTA members in protected temporary
+storage for header inspection. Missing inputs are reported as skipped; present
+inputs must pass the release-hash and header checks before aggregate QA is saved.
 """
 from __future__ import annotations
 
@@ -10,24 +11,30 @@ import argparse
 import json
 from pathlib import Path
 
-from audit_2013_weights_intake import DEFAULT_SOURCE as WEIGHTS_SOURCE, audit_weights_header
+from audit_2013_weights_intake import (
+    DEFAULT_ARCHIVE as WEIGHTS_ARCHIVE,
+    audit_weights_header,
+    audit_weights_archive_header,
+)
 from audit_2015_blood_intake import (
     DEFAULT_ARTIFACT as BLOOD_ARTIFACT,
     DEFAULT_STATA as BLOOD_STATA,
     audit_intake as audit_blood_intake,
+    audit_archive_header as audit_blood_archive_header,
 )
 from project_paths import QA_OUTPUT_DIR, require_private_path
 
 
 def run_available_gates(
-    weights_source: Path = WEIGHTS_SOURCE,
+    weights_source: Path = WEIGHTS_ARCHIVE,
     blood_artifact: Path = BLOOD_ARTIFACT,
-    blood_stata: Path = BLOOD_STATA,
+    blood_stata: Path | None = None,
 ) -> dict[str, object]:
-    """Run each gate only when its complete expected input set is present."""
+    """Check official ZIPs directly, with an optional legacy extracted-DTA pair."""
     weights_source = require_private_path(weights_source)
     blood_artifact = require_private_path(blood_artifact)
-    blood_stata = require_private_path(blood_stata)
+    if blood_stata is not None:
+        blood_stata = require_private_path(blood_stata)
     result: dict[str, object] = {
         "metadata_only": True,
         "respondent_values_read": False,
@@ -36,22 +43,26 @@ def run_available_gates(
     }
 
     if weights_source.is_file():
-        result["wave_2013_weights"] = {
-            "status": "passed",
-            **audit_weights_header(weights_source),
-        }
+        audit = (
+            audit_weights_archive_header(weights_source)
+            if weights_source.suffix.casefold() == ".zip"
+            else audit_weights_header(weights_source)
+        )
+        result["wave_2013_weights"] = {"status": "passed", **audit}
 
-    if blood_artifact.is_file() and blood_stata.is_file():
+    if blood_artifact.is_file() and blood_stata is not None and blood_stata.is_file():
         result["wave_2015_blood"] = {
             "status": "passed",
             **audit_blood_intake(blood_artifact, blood_stata),
         }
-    elif blood_artifact.is_file() or blood_stata.is_file():
+    elif blood_artifact.is_file() and blood_stata is not None:
         result["wave_2015_blood"] = {
             "status": "skipped_incomplete_input_set",
-            "download_artifact_present": blood_artifact.is_file(),
-            "stata_file_present": blood_stata.is_file(),
+            "download_artifact_present": True,
+            "stata_file_present": False,
         }
+    elif blood_artifact.is_file():
+        result["wave_2015_blood"] = {"status": "passed", **audit_blood_archive_header(blood_artifact)}
     return result
 
 
