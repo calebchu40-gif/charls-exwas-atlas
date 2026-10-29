@@ -15,7 +15,7 @@
 | Wave 1 K150/K90 | `wave1_household_environment_scaleup_model_config.template.json` 是 `not_frozen` 空白模板；需要独立填入目标、完整样本框、年龄域、权重/PSU/层、singleton 规则、暴露映射、15项结局变换及有效值/空腹规则、审核人和哈希。 | 只覆盖 2011 家庭环境主块与供暖路由子域，不覆盖其他波次。 | 当前冻结配置与 readiness 审核记录尚未通过。执行器在读取分析数据前先要求官方元数据审计、来源/准备表 provenance、readiness 和冻结配置全部通过。 |
 | 通用 `exwas_design.template.json` | 样例字段为 `weight=bloodweight`、`psu=communityID`、`strata=null`、`age_field=age`。 | 与 Wave 1 探索性血检场景近似。 | 不是 Wave 1 K150/K90 runner 的冻结配置格式；字段 `age` 也不等同于项目中的候选年龄变量。不得把该模板当作获批设计或直接交给扩展 runner。 |
 | Wave 2 (2013) | 没有逐波关联 runner/冻结配置。 | 矩阵分别记有 `crosssection`/`longitudinal` 样本标记、个体权重及横截面 biomarker 权重；基线到 Wave 2 还需按官方说明转换 ID。 | 每个结局模块仍需判定目标与权重适用性、核实转换后的链接键，并完成设计方差审查。Wave 2 无静脉血，不能构造 Wave 1/3 同类血检配对。 |
-| Wave 3 (2015) | 没有逐波关联 runner/冻结配置。 | 矩阵区分一般个体权重与横截面 `Blood_weight`，并保留本波空腹与甘油三酯测量说明。 | 血检是可单独规划的波次，但目标标记、样本链接、方差设计和字段级有效值规则尚未绑定配置；不得用它推断 Wave 1 空腹码。 |
+| Wave 3 (2015) | 没有逐波关联 runner/冻结配置。 | 矩阵区分一般个体权重与横截面 `Blood_weight`，并保留本波空腹与甘油三酯测量说明。官方血检归档已存在于受保护本机入库并完成 metadata-only 预检；公开交叉目录中的旧“本地缺失”文字已更正。 | 血检是可单独规划的波次，但目标标记、样本链接、方差设计和字段级有效值规则尚未绑定配置；不得用它推断 Wave 1 空腹码。 |
 | Wave 4 (2018) 与 Wave 5 (2020) | 没有逐波关联 runner/冻结配置。 | 矩阵以各波 `Sample_Infor.crosssection` 与相应一般个体横截面权重为起点，并注明 HCAP/代理或部分访谈等模块限制。 | 应按模块分别建立目标、参与资格、年龄域及权重配置。两波均非静脉血实验室波；Wave 4 HCAP 另有年龄限制，不能套作常规 45+ 结局。 |
 
 ## 运行器现有边界

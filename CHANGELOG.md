@@ -4,6 +4,11 @@
 - Clarified that the historical Wave 1 pilot is hard-coded and exploratory, the scale-up runner is fail-closed behind a frozen design/readiness record, and generic template fields do not constitute an approved analysis configuration.
 - Updated the active plan and matrix cross-reference. No respondent records, private outputs, association models, or tests were read or run.
 
+# 2026-10-29 Correct the Wave 3 blood catalog intake status
+
+- The blood biomarker crosswalk still described the official 2015 blood archive as locally absent. Reconciled the catalog against the protected local intake and existing metadata-only preflight record, then corrected the status for its 18 Wave 3 analyte entries.
+- Clarified in the active plan and runner compatibility audit that the source archive is present while analysis eligibility, weight applicability, and survey-design gates remain open. No respondent values or private result files were read.
+
 # 2026-10-29 Extend official Wave 1 fasting-code source review
 
 - Searched the archived official physical-examination questionnaire text and the complete 2011 Blood Guide text layer for `qc1_va003` and fasting response codes. The questionnaire provides no numeric field mapping; the guide describes fasting status and non-fasting measurement risk without code definitions.

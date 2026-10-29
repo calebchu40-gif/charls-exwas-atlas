@@ -12,6 +12,7 @@
 
 - 兼容性审计见 [`multwave_runner_configuration_compatibility_review_2026-10-29.md`](multwave_runner_configuration_compatibility_review_2026-10-29.md)：当前只有 Wave 1 探索性水源—血检 runner 和 K150/K90 受门禁保护的扩展 runner；Wave 2–5 尚无关联 runner/冻结配置。通用 design 样例也不是扩展 runner 的获批配置。
 - Wave 1 历史 runner 硬编码 `bloodweight`、`communityID` 与协变量，并使用未分层方差近似；扩展 runner 则 fail-closed 要求冻结的完整样本框、目标、设计、结局有效值规则与审查记录。逐波矩阵不授权直接运行。
+- 交叉核对发现血液指标目录仍把 Wave 3/2015 独立血检包标为“本地缺失”；现已根据受保护入库中的官方归档及既有 metadata-only 预检记录更正18条目录状态。该修正只更新来源/目录元数据，没有读取或公开参与者记录。
 - **当前阶段：Wave 1 调查设计准入复核；通过现行准入的正式模型仍为 0。**本机 Wave 1–5 官方输入仍在受保护入库；服务器项目文档/日志已核对。真实数据关联分析仍被样本目标、设计方差、Wave 1 空腹来源和独立审查门禁阻断。
 
 - 已完成 [`wave1_variance_estimator_decision_matrix_2026-10-29.md`](wave1_variance_estimator_decision_matrix_2026-10-29.md)：比较完整设计、父社区聚类近似、任意分配、删除拆分社区及普通回归标准误的适用边界；父社区聚类仅是待独立审阅的 fallback，不是已批准模型。
@@ -25,7 +26,7 @@
 - **县级键拓扑受控 QA**：只使用受保护 Wave 1 `PSU.dta` 的省、市与社区键汇总结构，未读取个人分析表。省/市文本标签不是官方县级抽样单元的一对一键，不能据此构造县级 strata 或 first-stage PSU。准确聚合数和方法注记只存于本机受控 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\qa_outputs\`；GitHub 文档仅记录不含计数和地名的审慎结论。
 - **官方 Codebook 字段清单交叉核验**：2011 Codebook PSU 节（印刷页1340–1341）列明 `communityID`、`province`、`city`、`urban_nbs`、`areatype`，没有县级 sample-unit ID/strata；与实际 `PSU.dta` 表头相符（版本字段仅作发布元数据）。详细来源核对已加入 [`wave1_official_design_file_inventory_review_2026-10-29.md`](wave1_official_design_file_inventory_review_2026-10-29.md)。
 - **状态更正（2026-10-29 19:39）**：本机受保护入库现有 Wave 1 四件套、Wave 2 PSU/权重（官方文档319/318）、Wave 3 样本信息/权重/血检（1151/1152/2088）、Wave 4 权重/样本信息（2106/2107）和 Wave 5 权重/样本信息（2210/2209）。Wave 2 PSU表头及新增五个 Wave 3–5 设计包先与服务器私有清单中的 SHA-256 比对，服务器清单显示其已通过官方 SHA-1 校验，然后仅做 Stata metadata-only 表头审核。机器可读报告和原始包均仅存受控本机/服务器目录。官方逐波权重解释见 [`multwave_official_weights_blood_source_review_2026-10-29.md`](multwave_official_weights_blood_source_review_2026-10-29.md) 和 [`multwave_weight_estimand_matrix_v1.md`](multwave_weight_estimand_matrix_v1.md)。独立方法审阅目录仍空；正式关联模型未获准。Pages 首页 HTTP 200，`association_results_v1.json` HTTP 404。
-- 下一动作：为 Wave 1–5 各类已覆盖结局模块建立源字段、资格标记、目标估计量、权重适用性和可比性配置交叉表；逐波复用官方权重但不跨模块推断。并继续收敛 Wave 1 县级/分层/最终子 PSU 方差裁决及空腹字段来源审查。任何真实模型仍须先通过设计方法独立审查、冻结方案与 disclosure gate。
+- 下一动作：继续完善 Wave 1–5 各类结局模块的源字段、资格标记、目标估计量、权重适用性和可比性交叉表；逐波使用官方权重但不跨模块推断。并继续收敛 Wave 1 县级/分层/最终子 PSU 方差裁决及空腹字段来源审查。任何真实模型仍须先通过设计方法独立审查、冻结方案与 disclosure gate。
 
 - **官方抽样文件清单补查**：CHARLS Wave 1 官方公开数据页列有 All Data、PSU、Weight、Community、Blood 等，但未列独立 Sample Information、复制权重或方差层文件；2018 User's Guide 所述 Sample_Info 是回应/横截面/死亡/访谈日期元数据，不能外推成Wave 1子PSU映射。详细证据及限定见 [`wave1_official_design_file_inventory_review_2026-10-29.md`](wave1_official_design_file_inventory_review_2026-10-29.md)。当前调查设计门仍未通过。
 
