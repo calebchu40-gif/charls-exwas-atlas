@@ -159,3 +159,7 @@
 官方基线问卷对未知月份/日期使用 0，只询问公历或农历，未发现独立闰月回答字段。故不得擅自尝试公历、普通农历、闰月农历并择其“最合理”结果，也不得把 Harmonized CHARLS D 年龄作为正式年龄替代。CHARLS 官方 `lunar2solar` Stata 程序和矩阵已固定版本，但当前本机及服务器未发现可用 Stata。年龄输入联表现已完成；年龄算法及转换验证仍未通过。后续须先用合成日期验证兼容实现或找到获授权 Stata，再对受保护日期计算年龄并只保留聚合 QA，不向仓库或网站写入个体日期、转换明细或小单元 QA。
 
 该字段来源进展不改变年龄定义、45+ domain 或调查设计准入状态；最终年龄算法仍须方法审查，PSU/方差门也仍关闭，正式 CHARLS 关联模型数仍为 0。
+
+## 2026-10-29 — Clarify Python reference lineage for official lunar conversion
+
+The official CHARLS `lunar2solar.sthlp` explicitly cites `lidaobing/python-lunardate` as the basis of the Stata conversion. The upstream project page identifies GPL-3.0 licensing and example conversions; PyPI release history dates lunardate 0.1.5 to 2014-09-09, after the CHARLS help version dated June 2014. This is a promising synthetic-validation reference, but the upstream revision used by CHARLS is not specified and does not prove exact `.mmat` parity. A license-aware, pinned-source synthetic review is next; no participant DOB conversion or association model is authorized by this evidence alone.
