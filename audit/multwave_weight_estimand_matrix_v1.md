@@ -20,6 +20,8 @@ Weight values or positive/nonmissing weights do not establish sample eligibility
 
 ## Cross-wave decision
 
+现有 runner 与本矩阵的逐项映射、尚未实现的波次配置及执行顺序见 [`multwave_runner_configuration_compatibility_review_2026-10-29.md`](multwave_runner_configuration_compatibility_review_2026-10-29.md)。矩阵行是目标/权重的来源备忘，不构成已冻结模型配置。
+
 The primary estimand should be one wave-specific cross-sectional exposure–phenotype association at a time, with an explicit target (for example, the sampled 45+ respondent population for that wave) and the weight for that target and module. Wave 1 and Wave 3 blood associations are not directly interchangeable because blood sampling/response, laboratory handling, fasting metadata, and blood weights differ. Wave 2 does not have venous blood measurements; Wave 4 and Wave 5 are not blood-lab waves. The 2018 and 2020 user guides state their PSU information is the same as in prior waves; they do not supply the missing county-stage/stratum/final sub-PSU crosswalk. A pooled blood ExWAS over these five waves is therefore not the default analysis.
 
 Cross-wave summaries may be considered only after field-level concept/unit/route equivalence, target-population compatibility, common age domain, wave-specific weight applicability, variance support, and repeated-person dependence are reviewed. If these do not align, report wave-specific estimates and availability states. Never fill a wave with an absent measurement or reuse another wave's weight/code.

@@ -1,3 +1,9 @@
+# 2026-10-29 Map the wave weight matrix to the current runners
+
+- Added a static compatibility audit linking the wave-specific target/weight matrix to the actual Wave 1 pilot and K150/K90 runners, configuration templates, and the absent Wave 2–5 association runners.
+- Clarified that the historical Wave 1 pilot is hard-coded and exploratory, the scale-up runner is fail-closed behind a frozen design/readiness record, and generic template fields do not constitute an approved analysis configuration.
+- Updated the active plan and matrix cross-reference. No respondent records, private outputs, association models, or tests were read or run.
+
 # 2026-10-29 Extend official Wave 1 fasting-code source review
 
 - Searched the archived official physical-examination questionnaire text and the complete 2011 Blood Guide text layer for `qc1_va003` and fasting response codes. The questionnaire provides no numeric field mapping; the guide describes fasting status and non-fasting measurement risk without code definitions.
