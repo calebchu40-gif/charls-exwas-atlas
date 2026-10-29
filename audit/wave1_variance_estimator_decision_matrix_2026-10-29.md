@@ -110,3 +110,7 @@ The same official page distinguishes the age screening path: households with mem
 **Design consequence:** retain the first-stage county design gate as unresolved unless an official crosswalk/design file or written variance specification explains the realized unit mapping. Do not infer county strata from province, city, NBS region, urban/rural, or GDP ordering variables. A parent-community approximation remains a review candidate only, with its target and omitted first-stage variance stated explicitly.
 
 Sources: [CHARLS official Sample page](https://charls.pku.edu.cn/en/About/Sample.htm), [2011 Wave 1 User's Guide](https://charls.pku.edu.cn/en/data/User2011.pdf), [Blood Data User's Guide](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf).
+
+## 2026-10-29 补充：县前缀与最终地理县级数的差别
+
+官方 Sample 页面说明，Wave 1 原计划抽取150个县级单位；6个被抽社区因边界变化落入额外县且未替换，最终实际县级地理单元为156。受保护 ID 前缀审计得到150个前缀组、每组关联3个样本社区，这与“原始抽样框中的150个第一阶段单位”一致，但不能单凭结构匹配证明前缀就是原始第一阶段抽样单位。官方 ID 章节只说明其省/市/县编码可区分县，并没有说明遇到边界变化时前缀如何归属。故将“county-unit key recovered”收窄为“county-code grouping candidate identified; first-stage PSU identity unresolved”。在得到可追溯说明/独立裁决前，不把前缀直接用于正式方差模型。

@@ -1,10 +1,13 @@
 """Audit the Wave 1 county-unit prefix encoded in CHARLS identifiers.
 
 The official 2011 Users' Guide says the first six digits of the household ID
-distinguish county-level units and that the first seven digits identify the
+distinguish county-level codes and that the first seven digits identify the
 community. This script validates that published coding rule against the
-protected Wave 1 person, community, and PSU files. It writes aggregate-only QA
-to private storage and never prints or exports identifiers or row-level data.
+protected Wave 1 person and PSU files. The official sample page separately
+reports 150 selected county units but 156 final geographic county units after
+boundary changes, so the code prefix is not automatically the verified
+first-stage sampling PSU. It writes aggregate-only QA to private storage and
+never prints or exports identifiers or row-level data.
 
 Passing this key audit does not recover implicit strata, exact first-stage
 selection probabilities, or respondent-to-subcommunity PSU membership, and
@@ -109,6 +112,11 @@ def main() -> None:
         "respondent_community_keys_match_official_psu_map": person_communities == psu_communities,
         "psu_community_key_shape_valid_rows": int(psu["community_key"].notna().sum()),
         "county_prefix_candidate_count_private": int(psu_county.nunique(dropna=True)),
+        "nominal_selected_county_units_per_official_guide": 150,
+        "reported_final_geographic_county_units_per_official_sample_page": 156,
+        "prefix_count_matches_nominal_selected_count_private": int(psu_county.nunique(dropna=True)) == 150,
+        "prefix_count_matches_final_geographic_count_private": int(psu_county.nunique(dropna=True)) == 156,
+        "prefix_confirmed_as_first_stage_sampling_psu": False,
         "communities_per_county_min_private": int(county_sizes.min()) if len(county_sizes) else None,
         "communities_per_county_max_private": int(county_sizes.max()) if len(county_sizes) else None,
         "psu_rows_with_valid_community_key": int(psu["community_key"].notna().sum()),
@@ -118,7 +126,7 @@ def main() -> None:
         "association_models_authorized": False,
     }
     report["candidate_key_audit_status"] = (
-        "prefix_consistency_pass_needs_independent_design_review"
+        "prefix_structure_pass_sample_design_identity_unconfirmed"
         if all((report["person_household_county_prefix_match"],
                 report["person_community_county_prefix_match"],
                 report["respondent_community_keys_match_official_psu_map"]))

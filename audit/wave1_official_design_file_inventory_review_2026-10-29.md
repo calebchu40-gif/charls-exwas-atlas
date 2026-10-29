@@ -79,3 +79,7 @@ The official PSU community key also joins, but that does not provide the missing
 
 The reproducible code is [`scripts/audit_2011_official_frame_reconciliation.py`](../scripts/audit_2011_official_frame_reconciliation.py). It requires the reviewed prepared-table provenance, limits raw reads to `ID`, `communityID`, `ind_weight_ad2`, and `bloodweight`, enforces protected-root paths, and emits aggregate-only private JSON. No questionnaire, exposure, or outcome values are read; it does not estimate associations.
 
+
+### 2026-10-30 县级 ID 前缀与最终行政区口径补充
+
+官方 Sample 页面说明名义抽取150个县级单位，但六个样本社区因行政边界变化落入额外县，且未替换，最终实际地理县级单位数为156。受保护 ID 前缀审计只证明编码前缀在 respondent 与 PSU 键之间一致，观察到的150组×3社区结构与名义抽样框相符；它不能单独证明 ID 前缀就是第一阶段抽样 PSU 或映射到最终156个县级地理单位。此前将其表述为“恢复 county sampling unit”过宽，现更正为“县级编码分组候选；first-stage 身份待核”。来源：[CHARLS 官方抽样设计页面](https://charls.pku.edu.cn/en/About/Sample.htm)。
