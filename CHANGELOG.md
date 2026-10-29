@@ -1200,3 +1200,12 @@ This file records project-level changes that affect reproducibility, methods, da
 - Documented that Wave 2 has distinct cross-sectional and longitudinal weights plus a cross-sectional biomarker weight, but no longitudinal biomarker weight; documented official ID transformations for cross-wave linkage.
 - Documented that Wave 3 provides cross-sectional `Blood_weight` with blood-response adjustment; its `bl_fasting` labels apply only to Wave 3 and cannot be used to infer Wave 1 `qc1_va003` coding.
 - Added the detailed public-safe source review memo and corrected the active plan's later-wave intake status. No models or tests were run; design and independent-review gates remain closed.
+
+## 2026-10-29 — Add Wave 3–5 sample and weight files to protected intake
+
+- Verified the private server intake manifest marks official 2015 Sample_Infor, 2018 Weights/Sample_Infor, and 2020 Weights/Sample_Infor archives as official-SHA1 verified; copied them only into protected local intake and matched local SHA-256 to the private manifest.
+- Ran metadata-only Stata header review and recorded cross-sectional flags, death/interview metadata, and weight fields. No participant values or analysis rows were read, merged or published.
+- Read official Wave 4/5 guides and added a review-draft target/weight matrix covering Waves 1–5, including survey-domain handling, module-specific blood weights, Wave 2 ID transformation, panel-weight gaps, and the Wave 4 HCAP age-specific frame.
+- Corrected earlier statements that later-wave design inputs were absent and appended superseding status notes to historical review documents. No model/test was run; formal models remain blocked on sample/weight applicability and PSU/variance/method review.
+
+- Confirmed the official Wave 2 PSU archive (document 319) is byte-identical to the already SHA-1-verified PSU archive from baseline in the private manifest, copied it to protected local intake, and checked only the Stata header. The field set provides no county-stage unit or explicit stratum. Documented this result in the wave-specific source/weight review; no participant data or models were accessed.

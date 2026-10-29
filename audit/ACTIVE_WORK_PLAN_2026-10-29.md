@@ -1,14 +1,14 @@
 # CHARLS ExWAS Atlas：执行计划与当前进度
 
-**更新时间：2026-10-29 19:25（Asia/Shanghai）**
+**更新时间：2026-10-29 19:45（Asia/Shanghai）**
 **项目目标状态：进行中**  
 **当前阶段：Wave 1 调查设计准入复核；通过现行准入的正式模型仍为 0**
 
 本文件是本项目当前执行计划的单一状态页。每次完成阶段或遇到新阻塞时更新。GitHub 只存代码与本计划，不存 CHARLS 个体数据或受限分析输出。
 
-## 现在正在执行什么（2026-10-29 19:25）
+## 现在正在执行什么（2026-10-29 19:45）
 
-**正在执行：审查 Wave 1 官方多阶段抽样设计能否由已发行 PSU/社区键复原，并据此收敛独立方差方法审阅材料。**
+**正在执行：完成已获授权数据的逐波样本标记/权重元数据准入盘点，并将目标估计量与可用权重逐波绑定。**
 
 - 已完成 [`wave1_variance_estimator_decision_matrix_2026-10-29.md`](wave1_variance_estimator_decision_matrix_2026-10-29.md)：比较完整设计、父社区聚类近似、任意分配、删除拆分社区及普通回归标准误的适用边界；父社区聚类仅是待独立审阅的 fallback，不是已批准模型。
 - **本轮更正发现**：社区表 `sub_commuID` 空值以空格存储。第一次快速汇总把空格误计为有效值；清洗后仍无法确定拆分父社区内每名受访者所属的最终子 PSU。精确键计数和 ID 只留在服务器受保护 QA，不写入 GitHub。
@@ -20,8 +20,8 @@
 - **官方抽样说明补强**：重新核对 CHARLS 官方样本设计网页与 Wave 1 用户手册，确认 county 层按地区/城乡/GDP 排序分层并PPS抽取，社区层每县抽取3个PSU；大型社区可拆为子社区PSU，30个社区采用拆分；血检非应答有专用权重，子社区占父社区比例参与权重构造。权重不提供受访者的最终子 PSU 键，也不能补足方差设计变量。证据及推论边界已补进 [`wave1_variance_estimator_decision_matrix_2026-10-29.md`](wave1_variance_estimator_decision_matrix_2026-10-29.md) 和独立审阅包。
 - **县级键拓扑受控 QA**：只使用受保护 Wave 1 `PSU.dta` 的省、市与社区键汇总结构，未读取个人分析表。省/市文本标签不是官方县级抽样单元的一对一键，不能据此构造县级 strata 或 first-stage PSU。准确聚合数和方法注记只存于本机受控 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\qa_outputs\`；GitHub 文档仅记录不含计数和地名的审慎结论。
 - **官方 Codebook 字段清单交叉核验**：2011 Codebook PSU 节（印刷页1340–1341）列明 `communityID`、`province`、`city`、`urban_nbs`、`areatype`，没有县级 sample-unit ID/strata；与实际 `PSU.dta` 表头相符（版本字段仅作发布元数据）。详细来源核对已加入 [`wave1_official_design_file_inventory_review_2026-10-29.md`](wave1_official_design_file_inventory_review_2026-10-29.md)。
-- **状态更正（2026-10-29 之后续查）**：本机受保护入库现有 Wave 1 四件套，并新增 Wave 2 权重（官方文档318）、Wave 3 权重（1152）及 Wave 3 血检（2088）。三份新增压缩包只做了 Stata metadata-only 表头审核；机器可读报告只保存在本机受控 `qa_outputs/`。独立方法审阅目录仍空；真实关联模型未获准。官方波次权重/血检解释见 [`multwave_official_weights_blood_source_review_2026-10-29.md`](multwave_official_weights_blood_source_review_2026-10-29.md)。Pages 首页 HTTP 200，`association_results_v1.json` HTTP 404。
-- 下一动作：将官方四阶段流程、已确认缺失的县级/分层字段、最终子 PSU 映射缺口、权重目标和可选社区级近似收敛为逐项独立审阅表；请复杂抽样审阅者裁决该近似是否能支持指定 estimand，或要求仅做描述。任何方法裁决及获准实现都需绑定审批记录和冻结计划哈希。方差方案和空腹代码/处理规则审阅通过前不拟合真实模型。
+- **状态更正（2026-10-29 19:39）**：本机受保护入库现有 Wave 1 四件套、Wave 2 PSU/权重（官方文档319/318）、Wave 3 样本信息/权重/血检（1151/1152/2088）、Wave 4 权重/样本信息（2106/2107）和 Wave 5 权重/样本信息（2210/2209）。Wave 2 PSU表头及新增五个 Wave 3–5 设计包先与服务器私有清单中的 SHA-256 比对，服务器清单显示其已通过官方 SHA-1 校验，然后仅做 Stata metadata-only 表头审核。机器可读报告和原始包均仅存受控本机/服务器目录。官方逐波权重解释见 [`multwave_official_weights_blood_source_review_2026-10-29.md`](multwave_official_weights_blood_source_review_2026-10-29.md) 和 [`multwave_weight_estimand_matrix_v1.md`](multwave_weight_estimand_matrix_v1.md)。独立方法审阅目录仍空；正式关联模型未获准。Pages 首页 HTTP 200，`association_results_v1.json` HTTP 404。
+- 下一动作：将逐波矩阵绑定至当前冻结的试点/扩展配置，逐项标明尚未验证的权重字段与候选观测框；同步完成 Wave 1 县级/分层及最终子 PSU 方差决策材料。方法裁决和任何获准实现都须绑定审批记录、来源清单和冻结方案哈希。Wave 1 方差方案和空腹代码/处理规则审阅通过前不拟合正式模型。
 
 - **官方抽样文件清单补查**：CHARLS Wave 1 官方公开数据页列有 All Data、PSU、Weight、Community、Blood 等，但未列独立 Sample Information、复制权重或方差层文件；2018 User's Guide 所述 Sample_Info 是回应/横截面/死亡/访谈日期元数据，不能外推成Wave 1子PSU映射。详细证据及限定见 [`wave1_official_design_file_inventory_review_2026-10-29.md`](wave1_official_design_file_inventory_review_2026-10-29.md)。当前调查设计门仍未通过。
 
@@ -56,7 +56,7 @@
 - **已完成（服务器）**：私人目录内的 RAR 解包工具已就绪；All Data 的 15 个 Stata 成员 CRC 检查通过，四项文件哈希与本机审核 manifest 对应；服务器 metadata-only 预检完成。
 - **已完成**：Wave 1 受限准备表重建成功；来源 manifest、Stata header 和合并 QA 均在服务器受保护目录 `private/derived_wave_tables/`。输出文件权限为仅本人可读。
 - **修复记录**：首次写出因全缺失 object 列类型推断失败；写出器现将全缺失列编码为 Stata numeric missing，保留列名与变量标签，并拒绝空 respondent 表。修复脚本已在服务器运行成功。
-- **当前动作**：按官方资料已完成血检 estimand / 权重 / PSU / 方差方法首轮审查，并补充 Wave 2/3 的逐波权重目标、纵向权重缺口和 ID 变更说明；详细结论记录在 [`wave1_estimand_weight_psu_variance_gate_2026-10-29.md`](wave1_estimand_weight_psu_variance_gate_2026-10-29.md) 与 [`multwave_official_weights_blood_source_review_2026-10-29.md`](multwave_official_weights_blood_source_review_2026-10-29.md)。
+- **当前动作**：按官方资料已完成 Wave 1/2/3 权重首轮审查，并已从受控 Wave 3–5 样本信息/权重包读取表头；逐波目标、样本旗标、模块权重和面板权重缺口已整理成 [`multwave_weight_estimand_matrix_v1.md`](multwave_weight_estimand_matrix_v1.md)。详细血检/来源结论见 [`multwave_official_weights_blood_source_review_2026-10-29.md`](multwave_official_weights_blood_source_review_2026-10-29.md)。
 - **当前结论**：常规血液结局使用专用 `bloodweight`；45+ 目标应作为 survey domain/subpopulation；基线配偶可低于45岁。胱抑素 C 有额外随机检测子样本，暂不纳入同一主族。
 - **仍阻断**：官方说明有30个大型社区按子社区抽样，但已核对的发布字段未提供明确受访者—子 PSU 对应；显式方差层/复制权重或官方方差估计建议也尚未找到。不得用地理变量拼造分层，或把 `communityID` 近似称作完整设计。
 - **放行标准**：获得可追溯子 PSU/方差方法证据，或由独立方法审查批准并清楚标记的近似估计方案；之后才冻结并运行正式105项试点。
@@ -120,3 +120,5 @@
 - 2026-10-29（方差设计键复核更正）：`sub_commuID` 的空格空值已规范化后重算；拆分父社区内的 respondent-to-final-PSU 归属仍不可从已审发行键恢复。新增候选方差估计决策矩阵，供独立复杂抽样审阅；未拟合真实模型。
 
 - 2026-10-29（多波次入库与官方权重审查）：在本机受保护目录发现并核验 Wave 2 权重（文档318）、Wave 3 权重（1152）与 Wave 3 血检（2088）；仅进行压缩包成员与 Stata header 元数据检查。官方发布说明确认 Wave 2 有横断面/纵向权重及横断面 biomarker weight，但无纵向 biomarker weight；Wave 3 血检只发布横断面 `Blood_weight`，面板血检权重需按研究目的另行构造。2015 `bl_fasting` 标签为1=Yes、2=No，仅适用于该波，不能推断2011编码。详细审查已记录；模型门仍因样本设计、链接、冻结计划和独立审查未通过而关闭。
+
+- 2026-10-29（Wave 3–5样本信息和权重准入更新）：按服务器官方 intake manifest 的 `verified_official_sha1` 状态检查2015样本信息、2018权重/样本信息、2020权重/样本信息；逐个本地副本 SHA-256 与私有 manifest 匹配后，metadata-only读取 Stata 表头。公开用户指南确认Wave4/5提供横断面权重并由 `Sample_Infor.crosssection` 识别横断面样本，不提供通用面板权重；Wave4 HCAP属于特定年龄框，非全体45+常规表型。报告与输入只保存在本机受控目录。新增逐波目标/权重矩阵供审阅，正式分析仍未放行。

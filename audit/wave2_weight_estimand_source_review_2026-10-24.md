@@ -33,3 +33,7 @@ Wave 2 另提供横截面生物标志物权重：以个体横截面权重乘以�
 通过 CHARLS 官方 Wave 2 资料页再次核验：页面仍将 `Weights (updated on 18/11/2015)` 列为发行文件，SHA1仍为 `22c4fc89df2e55fa8faf051e88830eebe0e035c0`；页面同时显示 CHARLS 用户登录/注册入口。对应的官方 Release Note 仍标记 `VersionID: 20151118`，并确认样本旗标和三类不同权重口径（横截面含/不含非应答调整、纵向、横截面生物标志物）。这只是公开清单与文档的在线复核；本机仍未取得该二进制文件，不据此宣称完成数据下载或合并。
 
 来源：[CHARLS 2013 Wave 2 official release page](https://charls.pku.edu.cn/en/Data/a2013_CHARLS_Wave2.htm)；[Wave 2 Release Note](https://charls.pku.edu.cn/en/data/Release2013.pdf)。
+
+## 2026-10-29 intake update — official later-wave design files now available
+
+The initial review noted that the Wave 2 archive was absent and that later-wave blood/sample inputs were not yet available locally. This is superseded by the current protected intake: Wave 2 Weights (official document 318), Wave 3 Weights/Sample_Infor/Blood (1152/1151/2088), Wave 4 Weights/Sample_Infor (2106/2107), and Wave 5 Weights/Sample_Infor (2210/2209) are available. Wave 3–5 additions were checked against the server's SHA-1-verified intake manifest and metadata-only header reviewed after local-copy SHA-256 matching. The detailed wave-specific status is recorded in `multwave_official_weights_blood_source_review_2026-10-29.md` and `multwave_weight_estimand_matrix_v1.md`. This update does not itself authorize modeling; wave-specific eligibility and survey design remain under review.

@@ -63,3 +63,7 @@ This extension is exploratory because it follows inspection of the first water p
 - CHARLS official sample design: [Sampling](https://charls.pku.edu.cn/en/About/Sample.htm).
 - CHARLS 2011 blood collection and biomarker guidance: `sources_official/CHARLS_2011_Blood_User_Guide.pdf` in the project source inventory.
 - Project-specific boundaries: [`survey_design_weight_review_v1.md`](survey_design_weight_review_v1.md), [`blood_biomarker_definition_review_v1.md`](blood_biomarker_definition_review_v1.md), [`data_preparation_plan_and_controls.md`](data_preparation_plan_and_controls.md), and [`nhanes_to_charls_implementation_contract_v1.md`](nhanes_to_charls_implementation_contract_v1.md).
+
+## 2026-10-29 intake update — preserve the exploratory status
+
+The later-wave input statement in the original plan describes the state when that plan was written. Official Wave 2 Weights and Wave 3 Weights/Blood are now present in the protected server and local intake; Wave 3 Sample_Infor is also available. Official SHA-1 identity was verified in the private intake manifest, and local copies match its SHA-256. The old exploratory Wave 1 pilot outputs remain exploratory and are not reclassified by acquiring these files. Before any refit, recreate/validate the source-linked preparation table, freeze the wave-specific target and weight, resolve the PSU/variance method and fasting-code rule, and obtain independent methods review.
