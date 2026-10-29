@@ -4,7 +4,7 @@
 **项目目标状态：进行中**  
 **当前阶段：Wave 1 调查设计准入复核；通过现行准入的正式模型仍为 0**
 
-**2026-10-30 Wave 3 官方血检准备：**在服务器受控目录按 SHA-1 匹配的官方 2015 All Data 包构建了 Wave 3 个人底表，并完成官方 Blood 包的元数据预检。Blood 到 Demographic_Background 主表的 ID/样本框核对发现未决差异，故合并流程已在只读 ID 的门禁处停止，未加载实验室测量字段，也未写出合并表。具体键与 QA 仅保存在服务器私有目录，不进入 GitHub、OneDrive 或 Pages。Wave 3分析准入和全部正式关联模型仍未通过。流程与当前状态见 [`wave3_official_blood_merge_pipeline_2026-10-27.md`](wave3_official_blood_merge_pipeline_2026-10-27.md)。**
+**2026-10-30 Wave 3 官方血检准备：**复核官方 2015 Codebook 后，将 Wave 3 主表框架改为官方 `Sample_Infor`（保留 `crosssection`）；人口学模块缺失仍留空。受保护 ID-only 核验确认 Blood 文件 ID 均属于 Sample_Infor，正向 `Blood_weight` 均属于横断面域；随后基于该框架重建个人准备表并完成官方 Blood 一对一合并，未发生行扩张。源与输出指纹、精细 QA 仅保存在服务器私有目录，不进入 GitHub、OneDrive 或 Pages。Wave 3年龄/协变量、PSU/方差、冻结方案及独立方法审查仍未通过，正式关联模型仍为 0。流程与当前状态见 [`wave3_official_blood_merge_pipeline_2026-10-27.md`](wave3_official_blood_merge_pipeline_2026-10-27.md)。**
 
 **2026-10-30 Wave 1 受保护重建及键/分母复核：**按已核验的官方来源清单和本人授权账号来源记录，在本机受控 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas` 中重新重建 Wave 1 个人主表，并运行仅读取 ID、PSU 键及官方权重字段的聚合核对。按 CHARLS Blood Guide，主分析应使用 `bloodweight`；Blood 的全部已发布记录均链接到个人主表，正权重覆盖 Blood 记录，发布记录数与指南的完整血样人数一致，因此血检文件—权重—个人主表连接门通过。All Data 人口学个人主表仍较官方主样本口径少量记录；主问卷个人权重文件有相应未匹配项，ID-only模块审计发现部分标识也出现在其他个人模块，但不能由模块出现推断资格。该 `ind_weight_ad2` 差异是待澄清的附属问题，不应误当成血检模型使用的权重或用来否定已匹配的 `bloodweight`；主样本完整分母仍部分待核。PSU 社区键覆盖受访者社区键，但最终拆分 PSU/设计层仍未解析。没有读取暴露或结局值、没有估计关联模型、没有把逐人标识或模块小单元计数写入公开仓库。未发送的官方咨询稿已区分血检权重与个人主问卷权重。正式模型仍为 0，当前主要阻断是方差设计、年龄/结局规则及独立方法审查。**
 

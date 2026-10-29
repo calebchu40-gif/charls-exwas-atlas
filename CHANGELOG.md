@@ -1476,3 +1476,9 @@ This file records project-level changes that affect reproducibility, methods, da
 - Updated the Wave 3 pipeline review to distinguish the historical missing-file status from the current protected intake. The official 2015 All Data and Blood archives match their posted SHA-1 values, and a protected respondent base table has been built. A frame-linkage discrepancy remains under private review; no association model or public result was produced.
 - Hardened the merge runner so it validates prepared-frame membership using ID columns before loading any Blood measurement fields, and applies owner-only file permissions to private merged outputs and QA on POSIX systems. The current run correctly stopped at the ID-only gate and created no merged Blood table.
 - No respondent IDs, lab values, small-cell counts, or restricted QA were added to GitHub. No test suite was run.
+
+# 2026-10-30 Build Wave 3 from the official Sample_Infor frame
+
+- Reconciled the Wave 3 person-spine mismatch against the official 2015 Codebook. The public Codebook defines `Sample_Infor` as the sample-information module and `crosssection` as the cross-sectional flag; private ID-only checks showed the Blood module and positive `Blood_weight` target are supported by this frame.
+- Updated the wave-table builder to use `Sample_Infor` as the 2015 spine, record the selected spine in the prepared-data manifest, and keep missing demographic fields missing. The Blood merge now requires that manifest declaration. Rebuilt the protected Wave 3 frame and completed the one-to-one Blood merge without row expansion; participant-level files and detailed QA remain owner-only on the server.
+- No respondent identifiers, individual values, or exact QA counts were added to GitHub or Pages. Formal association models remain 0; no test suite was run.

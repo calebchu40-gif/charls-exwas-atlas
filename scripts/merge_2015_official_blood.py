@@ -186,6 +186,8 @@ def merge_official_blood(
     entries = [item for item in manifest.get("waves", []) if str(item.get("wave")) == "2015"]
     if len(entries) != 1:
         raise ValueError("prepared-data manifest must contain exactly one 2015 wave entry")
+    if entries[0].get("person_spine_module") != "sample_infor":
+        raise ValueError("Wave 3 Blood merge requires a base table built from the official Sample_Infor frame")
     validate_prepared_provenance(entries[0], paths["prepared"], paths["archive"])
 
     # Establish complete one-to-one frame membership from ID columns alone.

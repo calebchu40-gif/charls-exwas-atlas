@@ -17,7 +17,7 @@ This implementation prepares a verified local Wave 3 person table by joining the
 2. Requires the exact official 2015 All Data archive and Blood artifact SHA-1s.
 3. Requires the existing metadata-only intake audit to pass on the separate Blood file.
 4. Requires manifest SHA-256/size records to prove the prepared base table came from that exact archive and still matches its recorded output. Legacy derived tables without this provenance must be rebuilt from the official archive first.
-5. Checks complete unique respondent IDs and frame membership using ID columns only, before loading Blood measurement fields. If the frame gate passes, performs a one-to-one left join that preserves row count/order and the full base frame; nonresponders retain missing blood values.
+5. Checks complete unique respondent IDs and frame membership using ID columns only, before loading Blood measurement fields. For Wave 3 the base spine is official `Sample_Infor`, whose `crosssection` flag defines the cross-sectional sample. If the frame gate passes, performs a one-to-one left join that preserves row count/order and the full sample-information frame; nonresponders retain missing blood values.
 6. Writes the merged participant-level file, updated protected manifest, and aggregate QA only under the private local root. No participant-level file or result is added to the repository or Pages payload.
 
 ## Validation and current status
@@ -26,14 +26,14 @@ Five synthetic regression tests cover frame retention, the cross-sectional flag,
 
 The preceding missing-input statement was accurate when this review was written on 2026-10-27 and is now historical. The official Wave 3 All Data and Blood archives are present in the protected server intake and match the SHA-1 values on the CHARLS release page. The Wave 3 respondent base table has been rebuilt from the exact verified All Data archive, with its source and output hashes recorded in the protected manifest. The separate Blood archive passes the official metadata/header gate.
 
-The current Blood-to-person-frame merge remains blocked because ID-only reconciliation did not confirm complete membership in the prepared `Demographic_Background` respondent spine. With the revised runner, the merge now stops before loading laboratory measurement fields and writes no merged table. The key and detailed diagnostics remain in protected server QA; they are not copied into this repository. The mismatch must be reconciled against the official sample/frame definitions before any Wave 3 blood analysis. Formal association count remains zero.
+The initial join against `Demographic_Background` did not cover the complete official Wave 3 sample frame. The official 2015 Codebook identifies `Sample_Infor` as the sample-information module and documents `crosssection` as the cross-sectional sample flag. An ID-only reconciliation confirmed that all released Blood IDs occur in `Sample_Infor`, and positive `Blood_weight` records fall within its cross-sectional domain. The person-table builder now uses `Sample_Infor` as the Wave 3 spine and retains absent demographic fields as missing; it does not impute them. The protected base table was rebuilt with this spine, and the official Blood module then merged one-to-one with no row expansion. Source/output hashes and aggregate QA are bound in the protected manifest/QA folder. No identifiers or detailed QA were copied into this repository. This completes linkage and weight-domain checks only; age eligibility, survey PSU/variance, estimand, frozen analysis, and independent review remain open. Formal association count remains zero.
 
 ## Next sequence when files are available
 
-1. Reconcile the unresolved Blood ID against the official Wave 3 respondent/sample frame using only protected ID, sample-flag and weight fields; determine whether the person spine requires a justified expansion or the record is outside the analytic target.
-2. Only after the frame gate passes, merge the verified Blood measurements into the prepared table and reconcile the cross-sectional flag and `Blood_weight` against the release note; do not use the total blood row count as the analytic N.
-3. Review the pilot estimand, survey design/variance variables, missingness, weights, multiple testing family, and disclosure rules against CHARLS guidance before modeling.
-4. Run one predeclared 2015 cross-sectional pilot only after all gates pass. If stable and valid, expand to additional predeclared pair families and waves with wave-specific harmonization; run the public aggregate disclosure gate before adding any result to the site.
+1. Review Wave 3 age derivation and covariate completeness on the official `Sample_Infor` frame; absent demographic values remain missing and cannot be inferred from another module.
+2. Resolve PSU/strata and variance support, weight target, missingness, and the cross-sectional biomarker estimand against official CHARLS guidance.
+3. Freeze the Wave 3 analysis family and model rules, then complete independent methods review before fitting any association.
+4. Run the predeclared analysis only after all gates pass; expand to additional pair families and waves with wave-specific harmonization, apply multiplicity correction, and complete public aggregate disclosure review before publishing results.
 
 ## Official references
 

@@ -477,11 +477,16 @@ def main():
                     raise ValueError(f"Explicit Wave 1 {role} file has duplicate nonmissing {merge_key} keys")
                 frames.append((module_name, merge_key, incoming, incoming_meta))
 
-        # Prefer respondent-level Demographic_Background as the analysis spine.
+        # Wave 3 Sample_Infor is the official respondent/sample frame and carries
+        # the crosssection flag used with its released weights. Use it as the
+        # person spine so valid sampled respondents are not silently dropped
+        # when a demographic module row is absent. Keep missing demographics as
+        # missing; do not infer or impute values from another module.
+        spine_module = "sample_infor" if wave == "2015" else "demographic_background"
         spine_i = next((i for i, (m, k, _, _) in enumerate(frames)
-                        if m.lower() == "demographic_background" and k == "ID"), None)
+                        if m.casefold() == spine_module and k == "ID"), None)
         if spine_i is None:
-            raise RuntimeError(f"No unique respondent Demographic_Background spine in {wave}")
+            raise RuntimeError(f"No unique respondent {spine_module} spine in {wave}")
         module, key, base, base_meta = frames.pop(spine_i)
         base[key] = normalize_key(base[key])
         column_labels = {c: (lab or "") for c, lab in zip(base_meta.column_names,
@@ -538,7 +543,8 @@ def main():
                              version=15, file_label=f"CHARLS wave {wave} merged respondent modules")
         all_qa.extend(qa)
         all_maps.extend(maps)
-        all_wave_summaries.append({"wave": wave, "rows": len(base), "columns": len(base.columns),
+        all_wave_summaries.append({"wave": wave, "person_spine_module": spine_module,
+                                   "rows": len(base), "columns": len(base.columns),
                                    "unique_ID": int(base["ID"].nunique(dropna=True)),
                                    "duplicate_ID": int(base["ID"].dropna().duplicated().sum()),
                                    "all_missing_columns_encoded_numeric": all_missing_columns,
