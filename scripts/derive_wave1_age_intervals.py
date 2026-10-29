@@ -300,10 +300,12 @@ def derive() -> dict[str, Any]:
         ],
     )
     set_private_mode(output_path)
+    output_sha256 = sha256(output_path)
     report = {
         "scope": "provisional protected age-interval preparation only",
         "source_manifest_id": source_review["source_manifest_id"],
         "age_input_sha256": age_input_hash,
+        "person_level_output_sha256": output_sha256,
         "lunardate_014_source_sha256": lunar_source_hash,
         "row_count": int(len(result)),
         "route_counts_private": dict(sorted(routes.items())),
