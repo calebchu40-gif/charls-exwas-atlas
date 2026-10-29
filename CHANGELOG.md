@@ -3,6 +3,7 @@
 - Rechecked the protected Wave 1 local/server intake, server project plan, GitHub main, and deployed Pages. Server Wave 2 All Data/weights and Wave 3 sample-information/weights/blood inputs are present in private intake; this was a presence check only.
 - Confirmed the public home and candidate-pair index respond with HTTP 200, the deployed app is v194, and the approved association-results payload is still absent (HTTP 404). The site continues to show zero formal association models.
 - Clarified the README and active plan so present input/site status is distinct from earlier dated records. The Wave 1 age and survey-design gates remain open; no participant values, association models, or tests were run.
+- Diagnosed the repository-boundary CI failure: a public metadata-only wave/module gate crosswalk was missing from the reviewed CSV/TSV path allowlist. Reviewed its schema and metadata-only generator, added that exact path, and confirmed the boundary guard now passes locally (1,292 tracked paths; 189 reviewed delimited-text files). No respondent-level content was inspected or added.
 
 # 2026-10-29 Document Wave 1 age input sources
 
