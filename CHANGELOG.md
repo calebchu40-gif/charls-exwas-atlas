@@ -1,3 +1,8 @@
+# 2026-10-29 Review Wave 1 runner survey-design limits
+
+- Static review confirmed the scale-up runner takes one PSU field and supports Taylor linearization only; replicate-weight configurations fail closed. The current API path does not encode multistage PSU variance, stage-specific PPS, FPC, or phase variance decomposition.
+- Documented that the community-cluster fallback is not automatically approved by runner compatibility, and that a methods reviewer must define its estimand and variance interpretation or request an approved multistage implementation. No model or tests were run.
+
 # 2026-10-29 Complete Wave 1 biomarker outcome scale metadata inventory
 
 - Added a 15-outcome readiness table with Wave 1 fields, units, guide-reported assay ranges, and explicit distinction between assay range and approved analytical validity limits.
