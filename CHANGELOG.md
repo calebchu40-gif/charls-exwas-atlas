@@ -1338,3 +1338,9 @@ This file records project-level changes that affect reproducibility, methods, da
 - Re-read the official Wave 1 Users' Guide weight-construction section and recorded the staged selection probabilities, sub-neighborhood share for split communities, within-household respondent selection, and PSU-dummy nonresponse adjustments (including aggregation of non-estimable village dummies).
 - Clarified that these point-weight construction details do not provide the public PSU-dummy aggregation map, explicit variance strata, final sub-PSU respondent crosswalk, or a prescribed variance estimator. Also documented why module-specific response weights do not automatically resolve missingness in the other member of an E/P pair.
 - Updated the Wave 1 variance decision memo and active work plan. No participant data, analyses, or tests were used.
+
+## 2026-10-29 — Require official age derivation evidence before Wave 1 model readiness
+
+- Static review found the Wave 1 readiness schema required a review of age-domain eligibility but did not separately require that the age covariate itself be derived from official CHARLS fields/maintained algorithms with validation evidence. The historical water pilot uses a provisional Harmonized CHARLS D age candidate, which is not an official age derivation.
+- Added a required `official_age_source_and_derivation` gate to the Wave 1 readiness validator and templates. Approval now requires an official CHARLS source tier, field, method, source anchor and validation evidence. Added the readiness schema to the applicable analysis-plan fingerprints so stale approvals cannot carry forward.
+- Updated the family-runner review and active plan. The age gate remains unresolved; no participant values, models, or tests were used.

@@ -11,6 +11,7 @@
     "official_source_identity": {"status": "not_reviewed", "evidence": ""},
     "sample_frame_and_denominators": {"status": "not_reviewed", "evidence": ""},
     "target_population_age_domain": {"status": "not_reviewed", "evidence": ""},
+    "official_age_source_and_derivation": {"status": "not_reviewed", "evidence": "", "source_tier": "not_reviewed", "field": "", "derivation_method": "", "source_anchor": "", "validation_evidence": ""},
     "weight_and_nonresponse_eligibility": {"status": "not_reviewed", "evidence": ""},
     "final_psu_mapping": {"status": "not_reviewed", "evidence": ""},
     "variance_method_review": {"status": "not_reviewed", "evidence": "", "method": "", "limitations": ""},

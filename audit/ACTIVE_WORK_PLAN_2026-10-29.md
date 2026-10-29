@@ -10,6 +10,8 @@
 
 **2026-10-29 权重构造与方差分离补核：**逐段重读2011 Users' Guide的抽样权重章节，确认点权重按县、村/社区、必要时子社区份额、家庭及家庭内个人抽选概率构造；非应答调整模型使用 PSU 虚拟变量，个别完全参与/不参与的村级虚拟变量会与邻近或同县单位合并。该信息解释了权重所覆盖的选择/应答步骤，但没有给出合并映射、公开分层ID、拆分社区 respondent-to-final-PSU crosswalk 或方差计算方案，故不能由权重构造推导完整方差设计。对跨模块 E/P 配对还要审查暴露模块非应答是否由结局专用权重覆盖。细节补入 [`wave1_variance_estimator_decision_matrix_2026-10-29.md`](wave1_variance_estimator_decision_matrix_2026-10-29.md)；正式模型门不变。
 
+**2026-10-29 Wave 1 年龄来源闸门加固：**发现旧 readiness 模板只要求“年龄域”审阅，没有独立要求证明年龄字段来自官方 CHARLS 来源及经验证的派生算法，而历史试点代码使用 Harmonized CHARLS D 临时年龄候选作调整项。已将 `official_age_source_and_derivation` 加入所有 Wave 1 readiness 的必过机检，要求记录官方字段、派生方法、来源锚点与验证证据；将模板纳入对应计划指纹，因此旧审阅不能自动沿用。该项目前未通过，年龄尚未正式派生，模型门仍关闭。审计见 [`wave1_family_runner_scope_review_2026-10-29.md`](wave1_family_runner_scope_review_2026-10-29.md)。
+
 本文件是本项目当前执行计划的单一状态页。每次完成阶段或遇到新阻塞时更新。GitHub 只存代码与本计划，不存 CHARLS 个体数据或受限分析输出。
 
 ## 现在正在执行什么（2026-10-29）

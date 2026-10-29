@@ -33,6 +33,7 @@ REQUIRED_ANALYSIS_GATES = (
     "official_source_identity",
     "sample_frame_and_denominators",
     "target_population_age_domain",
+    "official_age_source_and_derivation",
     "weight_and_nonresponse_eligibility",
     "final_psu_mapping",
     "variance_method_review",
@@ -48,6 +49,7 @@ ANALYSIS_PLANS = {
             "audit/pilot_success_criteria_and_scale_up_2026-10-26.md",
             "audit/multiplicity_primary_family_reconciliation_2026-10-27.md",
             "audit/pilot_autonomous_execution_decision_2026-10-27.md",
+            "audit/templates/wave1_analysis_readiness.template.json",
         ),
         "additional_gates": (),
     },
@@ -61,6 +63,7 @@ ANALYSIS_PLANS = {
             "audit/multiplicity_primary_family_reconciliation_2026-10-27.md",
             "audit/pilot_autonomous_execution_decision_2026-10-27.md",
             "audit/wave1_household_environment_covariate_dag_review_2026-10-27.md",
+            "audit/templates/wave1_analysis_readiness.template.json",
         ),
         "additional_gates": ("pilot_success_and_reproducibility_review",),
     },
@@ -255,6 +258,12 @@ def require_wave1_analysis_readiness(
             raise ValueError(f"Wave 1 readiness gate: {gate} has not passed")
         if not str(decision.get("evidence", "")).strip():
             raise ValueError(f"Wave 1 readiness gate: {gate} has no evidence citation")
+    age_gate = gates["official_age_source_and_derivation"]
+    for field in ("field", "derivation_method", "source_anchor", "validation_evidence"):
+        if not str(age_gate.get(field, "")).strip():
+            raise ValueError(f"Wave 1 readiness gate: official age source/derivation lacks {field}")
+    if age_gate.get("source_tier") != "official_charls":
+        raise ValueError("Wave 1 readiness gate: age must come from an official CHARLS release or maintained algorithm")
     variance = gates["variance_method_review"]
     if not str(variance.get("method", "")).strip() or not str(variance.get("limitations", "")).strip():
         raise ValueError("Wave 1 readiness gate: variance method and limitations must be explicit")
