@@ -1368,3 +1368,9 @@ This file records project-level changes that affect reproducibility, methods, da
 - Fixed Wave 2 provenance handling: the CHARLS-published SHA-1 applies to the downloaded ZIP, not its extracted `Weights.dta`. The metadata gate now verifies the ZIP and inspects its unique DTA member header in protected temporary storage. The merge command also verifies that the supplied DTA is byte-identical to that member.
 - Rechecked the official Wave 2 weights and Wave 3 blood archives. Both source hashes and required Stata header schemas passed. Outputs remain in the protected local QA directory. No participant values or IDs, flag/weight distributions, merges, or association models were read or run.
 - Updated the active plan, outdated intake instructions and handoff status; design/age/weight applicability, variance, independent review and formal analysis gates remain open.
+# 2026-10-29 Recheck protected server Wave 2/3 source packages
+
+- Reran the official Wave 2 weights and Wave 3 Blood archive/header audits directly in the private server environment (`pyreadstat 1.3.1`); both official archive hashes and required member headers passed. Aggregate metadata reports remain in owner-only `private/qa_outputs/` on the server.
+- Confirmed Wave 1 official inputs remain present and the active design gates are still age derivation and final PSU/variance review. No respondent values or IDs, joins, associations, or tests were processed. Formal model count remains zero.
+- Rechecked the public Pages home (HTTP 200) and formal results payload (HTTP 404), consistent with no reviewed results being published. Removed a duplicate paragraph from the server-only progress log and refreshed its current plan entry.
+
