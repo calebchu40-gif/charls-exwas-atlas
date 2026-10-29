@@ -10,6 +10,10 @@
 
 - Statically confirmed the Wave 1 runner can represent the proposed county-prefix cluster, blood-specific weight, explicitly empty strata, and with-replacement Taylor approximation, with an explicit limitation label. This removes an implementation uncertainty only; survey-design approval and all model gates remain open.
 
+# 2026-10-30 Align public disclosure with CHARLS terms
+
+- Recorded CHARLS academic/noncommercial, no-microdata-publication/transfer, disclosure, acknowledgment, and citation terms in a public-safe audit note. Updated the site footer to the required Wave 1/2 acknowledgment wording and current official Wave 1 data-directory link; no microdata or association outputs were added.
+
 # 2026-10-30 Reconcile current Wave 1 methods review packet
 
 - Corrected the independent review packet so its current 105-hypothesis candidate uses the full official blood target and `bloodweight`, with age 45+ only as a secondary survey domain. The outdated age-45+ primary target, Harmonized CHARLS age, and community-only variance fit are explicitly historical and cannot be used to populate a current readiness record.

@@ -4,6 +4,8 @@
 **项目目标状态：进行中**  
 **当前阶段：Wave 1 调查设计准入复核；通过现行准入的正式模型仍为 0**
 
+**2026-10-30 CHARLS公开发布条款核对：**重查北京大学开放数据平台列出的 CHARLS Terms of Access、官方用户条款入口与 FAQ。要求学术非商业用途、不得发布原始微观数据或转交数据，公开统计/分析结果不得泄露个人信息；2011/2013发表需用指定致谢和基线 Users' Guide 引用。跟踪文件清单未发现 Stata/归档微观数据文件，线上结果 JSON 仍为404。网站已有数据限制说明；现将页脚致谢改为官方要求的原文，并更新 Wave 1 官方数据目录链接。条款、证据及边界核查记录见 [`charls_data_use_and_public_release_requirements_2026-10-30.md`](charls_data_use_and_public_release_requirements_2026-10-30.md)。
+
 **2026-10-30 方差候选与执行器接口核对：**静态检查 `exwas_engine.DesignSpec` 和Wave 1 scale-up冻结配置后确认：现有代码能表达“单一县级候选簇 + `bloodweight` + 不虚构分层 + WR Taylor近似”，并会标注其不是完整设计方差；若方差候选获独立方法审查认可，无需先重写估计核心。此发现只解决执行器兼容性疑问，不验证县级前缀就是原始一级抽样单位，也不解决系统PPS隐式分层、配对权重/目标及自由度。所有准入仍待裁决，正式模型仍为0；本轮仅静态读代码，没有运行真实数据或测试。详见 [`wave1_variance_review_recommendation_2026-10-30.md`](wave1_variance_review_recommendation_2026-10-30.md)。
 
 **2026-10-30 空腹代码官方来源复核：**重新打开 CHARLS 官方 Wave 1 文档目录与 Blood Users' Guide。目录仍只列通用 Codebook 和 Blood Guide；Guide说明状态会被记录并指出非空腹血样的风险，但未提供 `qc1_va003` 数值映射。网上 `1=Yes, 2=No` 目前仅见于第三方变量索引，未作为本项目准入证据。故血糖、甘油三酯的空腹代码/域仍未闭环；其他结局也仍受共同的方差及独立方法审查阻断。本轮没有读取个体结局值或运行关联模型。详见 [`wave1_fasting_code_source_review_2026-10-29.md`](wave1_fasting_code_source_review_2026-10-29.md)。
