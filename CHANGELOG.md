@@ -1,3 +1,8 @@
+# 2026-10-29 Bound the CHARLS forum variance guidance
+
+- Added a source-qualified note on the CHARLS data-user forum administrator's historical response: it describes multistage PPS and says the clustering level depends on the research question, but does not specify Wave 1 strata/PSU variables or endorse the proposed code in that thread.
+- Kept the formal design gate closed; the forum post is contextual user-support guidance, not a complete variance specification or independent methods approval.
+
 # 2026-10-29 Correct public blood catalog intake wording
 
 - Updated the public blood catalog and its deterministic builder to reflect the verified protected-source intake and metadata-only preflight for 2011/2015, while keeping participant records, module weights, eligibility, valid values and transformations explicitly unreviewed.

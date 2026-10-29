@@ -75,3 +75,14 @@ CHARLS 2011 National Baseline Users' Guide 描述县级单位按地区、城乡�
 - [CHARLS 2011 Wave 1 官方数据与文档页](https://charls.pku.edu.cn/en/Data/a2011_CHARLS_Wave1__Baseline_.htm)。
 - [项目的 Wave 1 estimand/权重/PSU/方差门槛备忘录](wave1_estimand_weight_psu_variance_gate_2026-10-29.md)。
 
+
+
+## 官方用户论坛的抽样方差答复边界（补充检索：2026-10-29）
+
+在 [CHARLS 数据用户论坛历史问答](https://forum.charlsdata.com/viewtopic.php?t=22)中发现一则关于样本权重与 `svyset` 的讨论。提问者询问公开数据没有直接标明 PSU/strata 时该如何指定。CHARLS 论坛管理员的回复概括 CHARLS 为多阶段 PPS 聚类抽样，权重为家户/个人抽样概率倒数，并称实际处理时聚类到哪一层取决于研究需要。该回复**没有给出** Wave 1 应使用的 `strata()` 字段、`communityID` 的具体 Stata 声明、拆分社区个人映射、方差自由度或复制权重方法；提问者后续提出的 SAS 示例也没有在该帖子中获得管理员确认。
+
+因此，该论坛答复可作为“权重不自动定义方差、研究者需明确分析聚类层级”的项目组用户支持线索，但不能当作可操作的正式方差规格，更不能据此批准社区聚类、把 `communityID` 设为 strata，或推断完整设计已被还原。现行门槛不变：优先取得可追溯的正式技术规格/键映射；否则由独立复杂抽样审阅人明确裁决一个有限目标总体的社区层近似能否支持内部模型，以及它是否足以支撑 Atlas 发布。审阅记录需说明该方案没有还原官方县级分层/PPS阶段和拆分子社区最终 PSU 归属。
+
+该问答的网页目前可由搜索索引读取，但直接打开论坛时返回 502；因此只记录其索引可见的问答摘要，不将其作为唯一依据。核验的主要设计事实仍来自 CHARLS 官方样本设计页与 Wave 1 Users' Guide。
+
+
