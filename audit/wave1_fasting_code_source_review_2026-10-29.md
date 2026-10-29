@@ -13,6 +13,7 @@ Blood 数据中的 `qc1_va003` 表示采血时是否空腹。拟定的105项试�
 - 官方 Wave 1 Blood 文件表头含 `qc1_va003`，但字段未带 value-label set。
 - CHARLS 官方 2013 CodeBook 不含 `qc1_va003`；其内容是2013随访问卷模块，不能替代2011血液数据值标签。
 - 复查 CHARLS 官方 Wave 1 下载页后，页面列出的相关文档是通用 Wave 1 Codebook 与 Blood Data Users' Guide，没有另列 2011 Blood 专用 Codebook 或 Blood Release Note。官方 Blood ZIP 归档仅包含 Stata 数据文件，没有随包数据字典/README。见[官方 Wave 1 数据文档清单](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)。
+- 2026-10-29 再次打开 CHARLS 当前官方 Wave 1 页面核对文档清单：仍列通用 Codebook 与 Blood data users' guide，没有新增 `qc1_va003` 专用代码本；该页面将 Blood 数据发布日期列为 2014-04-29。此为在线文档清单核对，不构成字段代码的数值映射。
 - 本轮补查官方 Wave 1 [Physical Examination Questionnaire](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)（本地归档提取文本）及 Blood Guide 的全文文本层；体检问卷未出现 `qc1_va003`/空腹项目或其数字选项，Blood Guide 只说明记录空腹状态及非空腹风险，未定义字段代码。该协议文件不能替代数据字典或 released value labels。
 - CHARLS 官方 2015 CodeBook 对相近的 `bl_fasting` 字段列出 `1=Yes, 2=No`；这是Wave 3字段，不能单独证明2011 `qc1_va003` 的编码跨波一致。
 - 当前已查的官方 2011 文档/发行物没有给出 `qc1_va003` 的具体数值代码/特殊缺失码映射；它不是“编码已确认”，而是“官方公开材料仍未解决”。这不排除 CHARLS 账号内或其他正式更正文件存在额外说明。

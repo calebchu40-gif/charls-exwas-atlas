@@ -8,10 +8,11 @@
 
 ## 现在正在执行什么（2026-10-29）
 
-**刚完成：核实 Wave 1 K150/K90 的官方来源身份、字段键和问卷路由，并更正候选登记表。**
+**刚完成：对齐 Wave 1 家庭环境/血液目录与已确认的官方来源字段，并复核问卷路由。**
 
 - [`wave1_hypothesis_registry_source_reconciliation_2026-10-29.md`](wave1_hypothesis_registry_source_reconciliation_2026-10-29.md) 记录元数据审查依据：All Data 与 Blood 来源身份已通过用户授权来源清单核对；六个候选环境字段键出现在受保护准备表表头，15个候选血液结局键出现在受保护 Blood 表头。仅查表头，没有读回答值。
 - 已更正 Wave 1 假设登记表的240行来源状态；所有行仍为 `planned_not_approved`。同时将 K90 明确标成 `i020=2 (No)` 后路由至 `i021` 的受限子域；2011问卷中 `i020=1 (Yes)` 跳过 `i021`，烹饪燃料 `i022` 没有显式“无烹饪”响应。来源键确认不等于样本资格、权重或设计准入。
+- 进一步将公开血液 crosswalk 中17个 Wave 1 字段的来源状态与受保护 Blood 文件表头对齐；其中15项预设结局的有效值/特殊码/变换、cystatin C年龄抽样权重和 `qc1_va003` 空腹码仍待独立来源/方法审查。
 - 前序波次 × 模块交叉表见 [`wave_module_source_estimand_weight_gate_crosswalk_v1.md`](wave_module_source_estimand_weight_gate_crosswalk_v1.md) 和 CSV；该目录汇总仍然是候选字段元数据，不是可分析配对或样本量。
 - 交叉表见 [`wave_module_source_estimand_weight_gate_crosswalk_v1.md`](wave_module_source_estimand_weight_gate_crosswalk_v1.md) 和 [`wave_module_source_estimand_weight_gate_crosswalk_v1.csv`](wave_module_source_estimand_weight_gate_crosswalk_v1.csv)，由 [`build_wave_module_gate_crosswalk.py`](../scripts/build_wave_module_gate_crosswalk.py) 从仓库候选字段元数据生成。60行覆盖五波目录中的来源模块；E/P/C数是唯一候选字段名数量，不是样本量、完整配对数或可估模型数。逐波权重重复列为模块审核起点，不表示适用性已经确认。
 - 兼容性审计见 [`multwave_runner_configuration_compatibility_review_2026-10-29.md`](multwave_runner_configuration_compatibility_review_2026-10-29.md)：当前只有 Wave 1 探索性水源—血检 runner 和 K150/K90 受门禁保护的扩展 runner；Wave 2–5 尚无关联 runner/冻结配置。通用 design 样例也不是扩展 runner 的获批配置。

@@ -20,6 +20,12 @@
 - Clarified the `i020` heating route: Yes skips `i021`, No routes to it; K90 is restricted to that routed subdomain. Preserved the absence of an explicit 2011 no-cooking code for `i022`.
 - All rows remain `planned_not_approved`. No participant values, models, tests or private results were accessed.
 
+# 2026-10-29 Align the Wave 1 blood crosswalk with verified source metadata
+
+- Matched all 17 Wave 1 blood-crosswalk field keys to the protected official Blood-file header using metadata-only reads and updated the outdated source-status text.
+- Kept target/weight applicability, valid-value rules, special codes, transforms, age-stratified cystatin C selection and fasting-code interpretation explicitly unresolved. No respondent values were read.
+- Rechecked the current official Wave 1 documentation inventory; it still lists the general Codebook and Blood User Guide without a dedicated `qc1_va003` codebook. The fasting mapping remains unresolved.
+
 # 2026-10-29 Extend official Wave 1 fasting-code source review
 
 - Searched the archived official physical-examination questionnaire text and the complete 2011 Blood Guide text layer for `qc1_va003` and fasting response codes. The questionnaire provides no numeric field mapping; the guide describes fasting status and non-fasting measurement risk without code definitions.
