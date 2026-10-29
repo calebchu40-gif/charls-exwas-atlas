@@ -13,7 +13,7 @@ spec.loader.exec_module(review)
 
 class AnthropometricSourceReviewTests(unittest.TestCase):
     def test_official_questionnaire_anchors_exist_for_all_waves(self):
-        self.assertEqual(set(review.verify_sources()), {"2011", "2013", "2015"})
+        self.assertEqual(set(review.verify_sources()), {"2011", "2013", "2013_release_note", "2015"})
 
     def test_explicit_units_and_context_fields_are_preserved(self):
         for wave in review.WAVES:
@@ -35,7 +35,11 @@ class AnthropometricSourceReviewTests(unittest.TestCase):
             rows = list(csv.DictReader(handle))
         target = [r for r in rows if r["concept_id"] in review.CONCEPTS]
         self.assertEqual(len(target), 15)
-        self.assertTrue(all("candidate phenotype only" in r["source_status"] for r in target))
+        self.assertTrue(all(
+            "candidate phenotype only" in r["source_status"]
+            or "analysis approval remain unverified" in r["source_status"]
+            for r in target
+        ))
         public_rows = json.loads((ROOT / "site-prototype/dist/objective_measurements_v1.json").read_text(encoding="utf-8"))
         self.assertEqual(len([r for r in public_rows if r["concept_id"] in review.CONCEPTS]), 15)
 

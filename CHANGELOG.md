@@ -4,6 +4,7 @@
 - Confirmed the public home and candidate-pair index respond with HTTP 200, the deployed app is v194, and the approved association-results payload is still absent (HTTP 404). The site continues to show zero formal association models.
 - Clarified the README and active plan so present input/site status is distinct from earlier dated records. The Wave 1 age and survey-design gates remain open; no participant values, association models, or tests were run.
 - Diagnosed the repository-boundary CI failure: a public metadata-only wave/module gate crosswalk was missing from the reviewed CSV/TSV path allowlist. Reviewed its schema and metadata-only generator, added that exact path, and confirmed the boundary guard now passes locally (1,292 tracked paths; 189 reviewed delimited-text files). No respondent-level content was inspected or added.
+- The next CI stage exposed stale synthetic fixtures/expectations after the age-source readiness gate and 2013 source review were strengthened. Updated the synthetic age-gate fixture to include the required source/derivation evidence fields and adjusted existing anthropometry expectations to recognize the added official 2013 release-note anchor and the still-unapproved analytic status. No test suite was run locally.
 
 # 2026-10-29 Document Wave 1 age input sources
 

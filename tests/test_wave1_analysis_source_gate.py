@@ -33,6 +33,13 @@ class Wave1AnalysisSourceGateTests(unittest.TestCase):
         plan = ANALYSIS_PLANS[plan_key]
         for gate in plan["additional_gates"]:
             gates[gate] = {"status": "passed", "evidence": "Synthetic prior-pilot review."}
+        gates["official_age_source_and_derivation"].update({
+            "source_tier": "official_charls",
+            "field": "synthetic DOB/calendar/interview date fields",
+            "derivation_method": "synthetic fixture only",
+            "source_anchor": "Synthetic fixture; no participant source is read",
+            "validation_evidence": "Synthetic fixture metadata only",
+        })
         gates["variance_method_review"].update({
             "method": "Synthetic PSU-only approximation",
             "limitations": "Synthetic test; not an analysis recommendation.",
