@@ -41,6 +41,11 @@ OFFICIAL_DENOMINATORS = {
         "source": "CHARLS 2011 Codebook, Weight: individual weight fields",
         "url": "https://charls.pku.edu.cn/en/Data/a2011_CHARLS_Wave1__Baseline_.htm",
     },
+    "blood_complete_sample": {
+        "n": 11847,
+        "source": "CHARLS Blood Data Users' Guide, Table 2: Complete Sample",
+        "url": "https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf",
+    },
 }
 
 
@@ -82,6 +87,9 @@ def run(data: Path, intake: Path) -> dict[str, object]:
     weight_observed_ids = pd.Index(weight_frame.loc[weight_value.notna(), "_normalized_id"].dropna().unique())
     weight_valid_ids = pd.Index(weight_frame.loc[weight_value.gt(0), "_normalized_id"].dropna().unique())
     blood_weight_value = pd.to_numeric(blood_frame["bloodweight"], errors="coerce")
+    blood_weight_observed_ids = pd.Index(
+        blood_frame.loc[blood_weight_value.notna(), "_normalized_id"].dropna().unique()
+    )
     blood_weight_valid_ids = pd.Index(blood_frame.loc[blood_weight_value.gt(0), "_normalized_id"].dropna().unique())
 
     psu_frame, _ = pyreadstat.read_dta(str(psu_path), usecols=["communityID"])
@@ -115,7 +123,10 @@ def run(data: Path, intake: Path) -> dict[str, object]:
             "missing_id_rows": blood_missing,
             "ids_matching_person_frame": len(ids.intersection(blood_ids)),
             "blood_ids_not_in_person_frame": len(blood_ids.difference(ids)),
+            "bloodweight_nonmissing_ids": len(blood_weight_observed_ids),
             "bloodweight_positive_ids": len(blood_weight_valid_ids),
+            "bloodweight_nonmissing_ids_matching_blood_file": len(blood_ids.intersection(blood_weight_observed_ids)),
+            "positive_bloodweight_ids_matching_blood_file": len(blood_ids.intersection(blood_weight_valid_ids)),
             "positive_bloodweight_ids_matching_person_frame": len(ids.intersection(blood_weight_valid_ids)),
         },
         "official_psu_file": {
@@ -128,9 +139,16 @@ def run(data: Path, intake: Path) -> dict[str, object]:
         },
     }
     official_n = OFFICIAL_DENOMINATORS["baseline_interviews_and_blood_target"]["n"]
-    blood_target_weight_count_matches = len(weight_observed_ids) == official_n
+    individual_weight_count_matches = len(weight_observed_ids) == official_n
     positive_weight_ids_outside_frame = len(weight_valid_ids.difference(ids))
     blood_ids_all_match = len(blood_ids.difference(ids)) == 0
+    blood_complete_n = OFFICIAL_DENOMINATORS["blood_complete_sample"]["n"]
+    blood_response_count_matches = blood_rows == blood_complete_n
+    biomarker_weight_linkage_passes = (
+        blood_ids_all_match
+        and set(blood_weight_observed_ids) == set(blood_ids)
+        and set(blood_weight_valid_ids) == set(blood_ids)
+    )
     return {
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "audit_type": "protected identifier-key and denominator reconciliation",
@@ -147,15 +165,19 @@ def run(data: Path, intake: Path) -> dict[str, object]:
             "bloodweight": "Blood-specific weight adjusting household and individual survey non-response and blood non-participation (CHARLS Blood Data Users' Guide).",
         },
         "prepared_frame_minus_published_blood_target": frame_rows - official_n,
-        "ind_weight_ad2_nonmissing_ids_match_published_target_count": blood_target_weight_count_matches,
+        "ind_weight_ad2_nonmissing_ids_match_published_target_count": individual_weight_count_matches,
         "positive_bloodweight_ids_all_match_person_frame": blood_ids_all_match,
+        "bloodweight_records_match_blood_file_ids": set(blood_weight_observed_ids) == set(blood_ids),
+        "positive_bloodweight_ids_match_blood_file_ids": set(blood_weight_valid_ids) == set(blood_ids),
+        "blood_file_rows_match_published_complete_sample": blood_response_count_matches,
         "component_key_comparisons": comparisons,
         "gates": {
             "source_identity": "passed",
             "respondent_frame_unique_id": "passed" if frame_missing == 0 and len(ids) == frame_rows else "blocked",
-            "weight_and_blood_key_reconciliation": "partially_reconciled",
-            "official_target_denominator": "partially_reconciled" if blood_target_weight_count_matches else "unresolved",
-            "positive_weight_id_person_spine_linkage": "unresolved" if positive_weight_ids_outside_frame else "passed",
+            "biomarker_bloodweight_linkage": "passed" if biomarker_weight_linkage_passes else "unresolved",
+            "blood_complete_sample_count": "passed" if blood_response_count_matches else "unresolved",
+            "official_biomarker_target_denominator": "partially_reconciled" if frame_rows != official_n else "passed",
+            "ancillary_ind_weight_ad2_person_spine_linkage": "unresolved" if positive_weight_ids_outside_frame else "passed",
             "blood_file_id_person_spine_linkage": "passed" if blood_ids_all_match else "unresolved",
             "final_psu_strata_and_variance": "unresolved",
             "formal_model_gate": "not_passed",

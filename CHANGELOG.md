@@ -1453,3 +1453,7 @@ This file records project-level changes that affect reproducibility, methods, da
 # 2026-10-30 Locate unmatched Wave 1 weight IDs without exposing them
 
 - Added an aggregate-only protected audit that reads only `ID` columns from the official All Data RAR modules and the individual-weight file. Some unmatched IDs also occur in other personal questionnaire modules, so their absence from the demographic spine cannot be treated as proof of nonresponse or ineligibility. Module presence is not a denominator decision. Updated the unsent official inquiry accordingly; the QA JSON, identifiers, and module-level small counts remain only in the protected local directory. No respondent exposure/outcome values or models were read/run.
+
+# 2026-10-30 Separate biomarker-weight linkage from individual-weight mismatch
+
+- Corrected the Wave 1 aggregate reconciliation so it evaluates `bloodweight` against the actual Blood-file respondents and the official complete-sample denominator, separately from `ind_weight_ad2`. Re-run confirms the blood file, positive `bloodweight`, and prepared person spine are fully linked and the released blood-record count matches the official guide. The full baseline target denominator remains partly reconciled; the ancillary individual-weight mismatch is retained for follow-up but no longer mislabeled as the blood-model weight failure. Final PSU/strata variance and independent methods review remain unresolved; formal models remain zero.
