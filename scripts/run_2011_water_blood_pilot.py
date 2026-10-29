@@ -5,11 +5,13 @@ Reads only selected fields from the locally prepared 2011 respondent table and
 the protected provisional age file. All participant-level inputs and outputs
 stay under LOCALAPPDATA/CHARLS_ExWAS_Atlas. No files are written to the repo.
 
-The local PSU key mapping is checked against the protected Wave 1 psu.dta
-file, but exact release provenance, blood-weight source identity, and
-variance-stratum/split-community interpretation are not authenticated.
-Estimates remain exploratory and use an unstratified with-replacement PSU
-Taylor approximation. They are not public or release-ready results.
+The active prepared-table directory can be selected through
+``CHARLS_EXWAS_DATA_DIR``; the source gate binds that table to the reviewed
+official Wave 1 files. This does not resolve target/age eligibility, pair
+weights, variance strata, split-community PSU assignment, or independent
+methods approval. Historical estimates remain exploratory and use an
+unstratified with-replacement PSU Taylor approximation. They are not public or
+release-ready results.
 """
 from __future__ import annotations
 
@@ -22,12 +24,12 @@ import sys
 import warnings
 from datetime import datetime, timezone
 from pathlib import Path
-from project_paths import PRIVATE_ROOT
+from project_paths import PRIVATE_ROOT, WAVE_DATA_DIR, require_private_path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 PRIVATE = PRIVATE_ROOT
-DATA = PRIVATE / "derived_wave_tables" / "CHARLS_wave2011_person_analytic.dta"
+DATA = require_private_path(WAVE_DATA_DIR / "CHARLS_wave2011_person_analytic.dta")
 AGE = PRIVATE / "age_candidates" / "age_candidate_2011.dta"
 PSU_MAP = PRIVATE / "raw_extract_2011_community" / "psu.dta"
 OUT = PRIVATE / "pilot_2011_water_blood"

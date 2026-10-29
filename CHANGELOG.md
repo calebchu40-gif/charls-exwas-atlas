@@ -1300,9 +1300,15 @@ This file records project-level changes that affect reproducibility, methods, da
 - Rebuilt Wave 1 from the verified All Data, PSU, Weight, and Blood releases into a new versioned folder under the protected local root. Preserved the prior prepared tables. The new respondent table has source-bound manifest provenance and passed the fail-closed provenance/hash gate.
 - Added a private aggregate reconciliation reading only respondent IDs, community keys, `ind_weight_ad2`, and `bloodweight`; no questionnaire, exposure, or outcome values were read. Official interview/blood-target and `ind_weight_ad2` denominator totals agree at aggregate level; all Blood IDs join to the person spine and the Blood Guide's complete-sample count aligns with positive `bloodweight`. A residual set of positive adjusted-weight IDs remains outside the Demographic_Background spine; exact key counts remain in protected QA. The denominator is only partially reconciled at the person-key level and the design frame is not certified.
 - Updated the provenance gate to read the prepared manifest alongside an explicitly supplied versioned frame, while enforcing that both remain inside the private root. This makes versioned rebuilds auditable without replacing the default legacy table.
+- Updated the Wave 1 pilot runner to honor `CHARLS_EXWAS_DATA_DIR`, so a versioned source-bound Wave 1 frame can be selected for a single run without changing the default multiwave directory. Its source gate still runs before any model; age, design, independent review, and analysis readiness gates remain in force.
 - Added `scripts/audit_2011_official_frame_reconciliation.py` and updated the Wave 1 design inventory, active plan, and changelog. Only AST/static parsing and `git diff --check` were used; no test suite or association model was run. Formal model count remains 0.
 
 ## 2026-10-29 — Reconcile Wave 1 blood target and source weight at aggregate level
 
 - The official baseline/blood target total now agrees with the Codebook nonmissing `ind_weight_ad2` total; all Blood-file IDs join to the source-bound person spine, and positive `bloodweight` records align with the official Blood Guide complete-sample denominator. A residual set of positive adjusted-weight IDs remains outside the Demographic_Background spine, so person-key reconciliation is still partial.
 - `bloodweight` is the source-grounded starting weight for blood-outcome pairs, pending pair-specific exposure response and age-domain checks. It does not resolve county strata, split-community final PSU mapping, or variance review; models remain blocked.
+
+## 2026-10-29 — Route Wave 1 runners to a source-bound frame
+
+- Updated the Wave 1 pilot's data path to honor `CHARLS_EXWAS_DATA_DIR` and documented the new source-bound metadata state. This allows a versioned protected Wave 1 rebuild to be selected without overwriting or globally changing the multiwave prepared-data directory.
+- The fail-closed provenance, survey-design, age, frozen-plan, independent-review, and disclosure gates are unchanged. No association model or test suite was run.
