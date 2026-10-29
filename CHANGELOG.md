@@ -1332,3 +1332,9 @@ This file records project-level changes that affect reproducibility, methods, da
 - A direct protected ID-only comparison also found none of those residual IDs in Blood.dta. Reconciled the official guide's 17,708 interview count with the 2011 Codebook's 17,705 Demographic_Background.ID observations: the public materials reviewed do not explain the difference, so the counts are now explicitly kept distinct in the design memo.
 - Read only the official Weight `mainr` value for the residual records: each has an interpretable main-respondent/spouse label. The missing Demographic rows still prevent age/sex verification, so this narrows but does not close the frame/age gate.
 - Temporary extraction was automatically removed. Added `scripts/audit_2011_weight_ids_across_modules.py`; only Python bytecode compilation was used for a static syntax check, with no tests or models run.
+
+## 2026-10-29 — Separate official weight construction from variance-design evidence
+
+- Re-read the official Wave 1 Users' Guide weight-construction section and recorded the staged selection probabilities, sub-neighborhood share for split communities, within-household respondent selection, and PSU-dummy nonresponse adjustments (including aggregation of non-estimable village dummies).
+- Clarified that these point-weight construction details do not provide the public PSU-dummy aggregation map, explicit variance strata, final sub-PSU respondent crosswalk, or a prescribed variance estimator. Also documented why module-specific response weights do not automatically resolve missingness in the other member of an E/P pair.
+- Updated the Wave 1 variance decision memo and active work plan. No participant data, analyses, or tests were used.
