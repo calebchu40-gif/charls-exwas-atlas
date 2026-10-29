@@ -10,6 +10,7 @@
 - Clarified that biomarker nonresponse weights support weight selection but do not supply respondent-to-final-PSU mapping or resolve design variance. Updated the independent review packet; no real-data associations were fitted.
 - Added the county-level PPS stage as a separate review item; the PSU file's released metadata has geographic names and area classifications but no clearly identified sampled-county or variance-stratum code. Reassessed whether a nested county/community approximation can be justified before using community-only clusters.
 - Protected PSU-key topology QA found province/city labels are not a one-to-one county sample-unit crosswalk. Exact aggregates remain only in the local restricted workspace; public methods docs record the non-identifying implication and reject deriving county strata from names.
+- Cross-checked the 2011 official Codebook PSU section: it lists communityID, province, city, NBS urban/rural and area type, with no county sample-unit ID or explicit variance-stratum field. Added the precise scope and page reference to the official-design inventory.
 
 # 2026-10-29 Review official fasting-code documentation for Wave 1 pilot
 

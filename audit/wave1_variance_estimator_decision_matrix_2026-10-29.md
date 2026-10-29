@@ -21,6 +21,8 @@ CHARLS 2011 National Baseline Users' Guide 描述县级单位按地区、城乡�
 
 受控 PSU 文件键拓扑 QA 进一步确认：省/市文本组合并非官方县级样本单位的一对一标识；不能用 `city` 名称单独重建县级层或 first-stage PSU。精确聚合值及 QA 说明只保存在本机 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\qa_outputs\`，不进入公开仓库。若需要完整或县/社区嵌套设计，仍须有官方 county-unit crosswalk/正式 strata 字段；否则由独立审阅人决定可接受的降阶近似。
 
+此结论现有公开官方 codebook 交叉验证：2011 Codebook 的 PSU 节（印刷页1340–1341）仅列 `communityID`、`province`、`city`、`urban_nbs` 与 `areatype`；没有县级抽样单位 ID 或显式方差层字段。Wave 1 `PSU.dta` 实际表头另有版本元数据，但也未显示县 ID/strata。官方页面列出的 PSU 产品见[CHARLS 2011 Wave 1 数据页](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)。
+
 ## 候选处理方案
 
 | 方案 | 做法 | 可支持的解释 | 主要风险/限制 | 当前状态 |

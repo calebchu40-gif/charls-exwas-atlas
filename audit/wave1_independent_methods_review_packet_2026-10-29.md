@@ -9,6 +9,7 @@
 - 官方设计页面/用户手册将 Wave 1 说明为分层多阶段 PPS：县级单位按地区、城乡和 GDP 组织/抽取，再在每个县抽取3个社区；超过2,000户的大社区可拆分子社区作为最终 PSU，约30个社区采用了这一做法。选中45+主受访者后会访问其配偶，因此设计框内存在低于45岁的配偶；分析45+目标域需在设计对象中作 domain/subpopulation，而不能先物理删行。
 - 官方用户手册说明 household/individual weights 来自各阶段抽样概率，并有非应答校正版本；血检另有校正血检非应答的 individual weight。对子社区抽样，权重还乘入子社区占父社区的份额。该权重支持目标点估计权重选择审阅，但不携带每位受访者所属最终子 PSU 的映射，不能单独解决方差估计。
 - 设计是嵌套多阶段，而非单一社区聚类：官方文本先抽县级单位，再在县内以 PPS 抽社区；大社区可能继续抽子社区。已核发行 PSU 文件表头有 `communityID`、省/市名称、NBS 城乡/地区类型和版本字段，但没有明确标为县级抽样单元编码或方差层编码的列。受控 PSU 键拓扑 QA 确认省/市标签不能作为官方县级样本单位的一对一 crosswalk；精确聚合数和类别仅存本机 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\qa_outputs\`，不公开。不得仅凭列名假定 county、strata 或 final PSU。
+- 官方 2011 Codebook 的 PSU 节（印刷页 1340–1341）列出的变量为 `communityID`、`province`、`city`、`urban_nbs`、`areatype`，未列 county sample-unit ID 或方差 strata。该公开字段清单与实际 PSU 表头核验相符；release/version 字段是版本元数据，不构成抽样层变量。
 
 - 用户确认 Wave 1 All Data、PSU、Weight、Blood 来自其获准 CHARLS 账号，对应官方数据项 123、117、118、201。服务器只读来源检查和准备表 provenance/hash 检查通过；该检查核对来源文件清单、Stata 表头和文件哈希，不读取受访者答案。
 - 受保护发行包中15个 All Data 模块的字段名已经逐一检查。`sub_commuID` 只见于社区模块；其余14个模块均没有此字段。社区模块同时含 `communityID`。
@@ -68,7 +69,7 @@ Wave 1 官方 Blood User Guide 说明采血前要求过夜空腹，但未空腹�
 ## 官方来源
 
 - [CHARLS 官方 Wave 1 样本设计说明](https://charls.pku.edu.cn/en/About/Sample.htm)
-- [CHARLS 官方抽样设计说明](https://charls.pku.edu.cn/en/About/Sample.htm)
+- [CHARLS 2011 Wave 1 Codebook 下载页](https://charls.charlsdata.com/documents/120/download/en.html)，PSU节印刷页1340–1341。
 - [CHARLS 2011–2012 National Baseline Users' Guide](https://charls.pku.edu.cn/wenjian/jixiandiaochashujuyonghushiyongshouce2013-04-07.pdf)
 - [CHARLS Blood Sample Users' Guide](https://charls.pku.edu.cn/wenjian/xuejianshujuyonghushiyongshouce.pdf)，尤其是过夜空腹、非空腹样本仍采集以及血糖差异的说明。
 - 项目内的 [试点方案与门禁](pilot_2011_water_biomarker_plan_and_gates_2026-10-26.md) 与 [生物标志物有效值/尺度门禁](wave1_biomarker_outcome_validity_and_scale_gate_2026-10-27.md)。
