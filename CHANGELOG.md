@@ -1,3 +1,9 @@
+# 2026-10-29 Complete Wave 1 biomarker outcome scale metadata inventory
+
+- Added a 15-outcome readiness table with Wave 1 fields, units, guide-reported assay ranges, and explicit distinction between assay range and approved analytical validity limits.
+- Corrected the stale 2026-10-27 intake statement via an addendum; all four official input roles are now present and source-confirmed, while survey-design and outcome-review gates remain unresolved.
+- Reviewed Blood Stata variable/value-label metadata only; requested assay and fasting fields have variable labels but no attached value-label sets. No respondent observations or association models were read/fitted.
+
 # 2026-10-29 Review official fasting-code documentation for Wave 1 pilot
 
 - The official Blood User Guide confirms that fasting status is recorded and that glucose can be higher in non-fasting samples, but the official source material reviewed does not map `qc1_va003` numeric codes. The released Stata field has no value-label set, and the searchable official 2013 CodeBook does not contain this Wave 1 blood field. The official 2015 CodeBook maps the analogous `bl_fasting` field to 1=Yes, 2=No; this adjacent-wave evidence is not assumed to establish 2011 coding.
@@ -1154,6 +1160,8 @@ This file records project-level changes that affect reproducibility, methods, da
 
 # 2026-10-29
 
+- Rechecked the official Wave 1 document index and protected Blood ZIP member list for the fasting-code gap. The public release lists a general Codebook and Blood Users' Guide; the Blood archive contains only the data file, while `qc1_va003` has no Stata value labels. No official Wave 1 numeric/special-missing mapping was found; adjacent-wave `bl_fasting` coding remains non-transferable.
+- Added a gate-by-gate status matrix to the independent methods review packet so source verification, unresolved design/measurement gates, internal pilot approval, and public release approval cannot be conflated.
 - Added a Wave 1 survey-variance decision matrix for the documented PSU hierarchy, incomplete split-community respondent mapping, candidate parent-community clustering approximation, and independent reviewer decisions required before real association models.
 - Corrected the community-key quick summary: blank `sub_commuID` values are stored as whitespace. After normalization, split-community respondents still cannot be assigned to a final sub-PSU from the released keys. Protected QA details and identifiers remain outside the repository.
 - Updated the active work plan and Wave 1 file-inventory audit; no real-data model was run and no result payload was published.
