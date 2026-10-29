@@ -1,3 +1,9 @@
+# 2026-10-29 Review official fasting-code documentation for Wave 1 pilot
+
+- The official Blood User Guide confirms that fasting status is recorded and that glucose can be higher in non-fasting samples, but the official source material reviewed does not map `qc1_va003` numeric codes. The released Stata field has no value-label set, and the searchable official 2013 CodeBook does not contain this Wave 1 blood field. The official 2015 CodeBook maps the analogous `bl_fasting` field to 1=Yes, 2=No; this adjacent-wave evidence is not assumed to establish 2011 coding.
+- A third-party variable index suggests `1=Yes, 2=No`; recorded only as an unverified search lead, not used to decode CHARLS records or authorize model fitting. The gate remains closed pending an official mapping and frozen glucose/triglyceride handling.
+- Added `audit/wave1_fasting_code_source_review_2026-10-29.md` and linked the finding from the active plan and independent review packet. No participant values were inspected; no association was fitted.
+
 # 2026-10-29 Review Wave 1 blood estimand and unresolved PSU variance design
 
 - Added an official-source review of the Wave 1 blood target, dedicated `bloodweight`, 45+ domain estimation, unrestricted-age spouse enrollment, and the separate Cystatin C assay subsample. Non-blood phenotypes still require their own module-specific eligibility and weight review.
