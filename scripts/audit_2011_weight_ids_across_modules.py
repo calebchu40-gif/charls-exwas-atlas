@@ -1,8 +1,8 @@
 """Check whether Wave 1 positive-weight IDs occur in any official All Data module.
 
 The archive is extracted only to a temporary directory under the protected
-CHARLS root. Analysis reads only `ID` from each module and `ID` plus
-`ind_weight_ad2` from Weight.dta and `ID` from Blood.dta. The JSON report contains aggregate counts
+CHARLS root. Analysis reads only `ID` from each module, `ID`/`ind_weight_ad2`/
+`mainr` from Weight.dta, and `ID` from Blood.dta. The JSON report contains aggregate counts
 only and must remain in protected storage. No IDs or questionnaire answers are
 written, printed, or sent to GitHub/server/public storage.
 """
@@ -60,11 +60,27 @@ def run(intake: Path, frame_path: Path, unrar: Path, output: Path) -> dict[str, 
 
     source = require_verified_wave1_frame(data_path=frame_path)
     frame_ids, _, _ = id_set(frame_path)
-    weight, _ = pyreadstat.read_dta(str(weight_path), usecols=["ID", "ind_weight_ad2"])
-    weight_ids = normalize_id(weight["ID"])
+    weight, _ = pyreadstat.read_dta(str(weight_path), usecols=["ID", "ind_weight_ad2", "mainr"])
+    weight["_normalized_id"] = normalize_id(weight["ID"])
     positive = pd.to_numeric(weight["ind_weight_ad2"], errors="coerce").gt(0)
-    target_ids = pd.Index(weight.loc[positive, "ID"].pipe(normalize_id).dropna().unique())
+    target_ids = pd.Index(weight.loc[positive, "_normalized_id"].dropna().unique())
     unmatched = target_ids.difference(frame_ids)
+    residual_roles = weight.loc[positive & weight["_normalized_id"].isin(unmatched), ["_normalized_id", "mainr"]]
+    role_per_id: dict[str, str] = {}
+    for identifier, group in residual_roles.groupby("_normalized_id", dropna=True):
+        role_values = pd.to_numeric(group["mainr"], errors="coerce").dropna().astype(int).unique().tolist()
+        if role_values == [0]:
+            role_per_id[str(identifier)] = "spouse"
+        elif role_values == [1]:
+            role_per_id[str(identifier)] = "main_respondent"
+        elif len(role_values) == 0:
+            role_per_id[str(identifier)] = "missing_or_unlabeled"
+        else:
+            role_per_id[str(identifier)] = "conflicting_or_unexpected"
+    residual_role_counts = {
+        role: sum(value == role for value in role_per_id.values())
+        for role in ("main_respondent", "spouse", "missing_or_unlabeled", "conflicting_or_unexpected")
+    }
     blood, _ = pyreadstat.read_dta(str(blood_path), usecols=["ID"])
     blood_ids = pd.Index(normalize_id(blood["ID"]).dropna().unique())
 
@@ -111,9 +127,11 @@ def run(intake: Path, frame_path: Path, unrar: Path, output: Path) -> dict[str, 
         "source_manifest_id": source["source_manifest_id"],
         "individual_ids_processed_in_memory": True,
         "individual_ids_written_or_printed": False,
-        "respondent_values_read": False,
+        "substantive_questionnaire_values_read": False,
+        "respondent_role_metadata_values_read": True,
         "association_models_estimated": False,
         "positive_weight_ids_outside_demographic_frame": len(unmatched),
+        "residual_positive_weight_ids_by_official_mainr_role": residual_role_counts,
         "those_ids_present_in_any_other_all_data_module": len(found_any),
         "those_ids_absent_from_all_module_id_columns": len(unmatched.difference(found_any)),
         "those_ids_present_in_official_blood_file": len(unmatched.intersection(blood_ids)),
