@@ -4,6 +4,13 @@
 - A third-party variable index suggests `1=Yes, 2=No`; recorded only as an unverified search lead, not used to decode CHARLS records or authorize model fitting. The gate remains closed pending an official mapping and frozen glucose/triglyceride handling.
 - Added `audit/wave1_fasting_code_source_review_2026-10-29.md` and linked the finding from the active plan and independent review packet. No participant values were inspected; no association was fitted.
 
+# 2026-10-29 Reconcile pilot and scale-up hypothesis-family scope
+
+- Audited the public hypothesis register and runner: historical K=105 is the water plus cooking-fuel exploratory subset, while current registered scale-up consists of K=150 household environment and K=90 heating-route families (240 candidate hypotheses, not sample size).
+- Clarified that exploratory M0/M1/M2 runs are documented historically, while zero refers to models that have cleared current source/design/frozen-plan/method review and are eligible for formal or public use.
+- Documented runner gaps: only one primary model configuration is currently implemented; fasting adjustment is unsupported; batch-adjusted p-values are not final atlas-wide correction. No CHARLS records/results were opened or fitted.
+- Added `audit/wave1_family_runner_scope_review_2026-10-29.md`; updated the active plan.
+
 # 2026-10-29 Review Wave 1 blood estimand and unresolved PSU variance design
 
 - Added an official-source review of the Wave 1 blood target, dedicated `bloodweight`, 45+ domain estimation, unrestricted-age spouse enrollment, and the separate Cystatin C assay subsample. Non-blood phenotypes still require their own module-specific eligibility and weight review.
