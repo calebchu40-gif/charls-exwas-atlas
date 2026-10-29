@@ -1,4 +1,5 @@
-# Wave 1 biomarker variance candidate: county-prefix ultimate cluster
+# Historical Wave 1 candidate: county-prefix single-stage cluster
+> **Status update (2026-10-30):** This is a historical provisional candidate, no longer the project's preferred variance approach and not approved for fitting. The official CHARLS Sample page explicitly describes village/neighborhood units as PSUs after county-level stratified systematic-PPS selection, and documents split sub-neighborhood PSUs. The public release lacks the complete design mapping. See [`charls_wave3_psu_variance_release_review_2026-10-30.md`](charls_wave3_psu_variance_release_review_2026-10-30.md); no single-stage candidate is currently preferred.
 
 **Date:** 2026-10-30  
 **Status:** candidate for independent methods review; not an approved variance specification.  

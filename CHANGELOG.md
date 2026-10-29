@@ -1,3 +1,7 @@
+# 2026-10-30 Withdraw preferred single-stage variance candidate
+
+- Re-read the official CHARLS sample-design page and reconciled it with the 2015 release inventory. The design includes county-level stratified systematic PPS, community/neighborhood PSUs, and sampled sub-neighborhoods in split communities; public 2015 files reviewed here do not provide a complete respondent-level final-PSU/strata map.
+- Retracted the earlier preference for county-prefix-only Taylor variance. Neither county-prefix nor parent `communityID` is currently an approved single-stage design. Formal association models remain 0 pending complete design review and other source/eligibility/method gates. No microdata were read in this documentation review.
 # 2026-10-30 Refresh official methods inquiry draft
 
 - Marked the older support draft as historical because its Wave 2 weight-file request is obsolete. Added a current unsent draft focused on unresolved Wave 1 variance/PSU, bloodweight target, fasting-code and lunar-age definitions, plus later-wave design fields. It contains no microdata or account credentials and was not sent.
