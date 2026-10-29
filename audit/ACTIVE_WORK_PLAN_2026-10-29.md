@@ -1,6 +1,7 @@
 # CHARLS ExWAS Atlas：执行计划与当前进度
 
-**更新时间：2026-10-30（Asia/Shanghai；Wave 1年龄区间保守性复核）**
+**更新时间：2026-10-30（Asia/Shanghai；Wave 3农历生日不确定性方法审阅）**
+**2026-10-30 Wave 3 农历生日方法更新：**CHARLS维护的 `lunar2solar` 使用全变量级 `leap` 选项与分开的普通/闰月表；已审Wave 3生日路由记录农历/公历类型，但没有发现逐人闰月标记。不得对全部农历日期默认调用普通月表，也不得推断闰月。拟审候选方法是对同一有效农历日期保留普通表映射，并仅在官方闰月表存在同键时保留闰月映射，随后结合访谈年月缺少日的信息计算年龄区间；45岁domain只在区间稳定跨过阈值时分类。该法尚未做官方表格解析/运行时验证或独立年龄审查，当前年龄与真实模型门仍关闭。详见[`wave3_lunar_date_uncertainty_method_review_2026-10-30.md`](wave3_lunar_date_uncertainty_method_review_2026-10-30.md)。
 **项目目标状态：进行中**  
 **当前阶段：Wave 1 调查设计准入复核；通过现行准入的正式模型仍为 0**
 **2026-10-30 方差审阅更新：**重新核对 CHARLS 官方抽样页后，撤下县级 ID 前缀作为“优先单层簇”的定位。官方将村/社区称为 PSU，同时另有县级系统 PPS 与分层，以及 30 个大社区的子社区抽样；2015公开发行文件未见可重建原始分层及所有拆分子 PSU 的受访者映射。县级前缀和 parent `communityID` 均不作为已验证设计变量。当前无获批的单层近似；Wave 3正式模型仍为0。详见[`charls_wave3_psu_variance_release_review_2026-10-30.md`](charls_wave3_psu_variance_release_review_2026-10-30.md)。

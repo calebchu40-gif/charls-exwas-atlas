@@ -1,3 +1,7 @@
+# 2026-10-30 Clarify lunar DOB conversion uncertainty
+
+- Read the pinned CHARLS-maintained `lunar2solar` ado/help. Its `leap` switch selects a separate table for the whole invocation, while the reviewed Wave 3 DOB route records solar/lunar basis but no per-person leap-month marker. Documented a candidate-set age-interval approach and validation gates; it remains unapproved and no participant DOB was read or converted. No age-specific domain or formal association model was produced.
+
 # 2026-10-30 Withdraw preferred single-stage variance candidate
 
 - Re-read the official CHARLS sample-design page and reconciled it with the 2015 release inventory. The design includes county-level stratified systematic PPS, community/neighborhood PSUs, and sampled sub-neighborhoods in split communities; public 2015 files reviewed here do not provide a complete respondent-level final-PSU/strata map.
