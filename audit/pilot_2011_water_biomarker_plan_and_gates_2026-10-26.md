@@ -2,13 +2,19 @@
 
 Date: 2026-10-26. This file records the pilot specification and execution state. It contains no participant-level records, pairwise sample counts, coefficients, or p-values. The actual private outputs stay under `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\pilot_2011_water_blood` and are not copied into the repository, GitHub, or Pages.
 
+## Current status and supersession (2026-10-30)
+
+The previously executed pilot and 105-coefficient household-environment extension are **historical exploratory runs**. Their outputs remain private, and no estimates are approved for the Atlas. The specification below is retained to document what was run; it is not the current frozen analysis plan and must not be used to launch a formal refit. In particular, its age-45+ primary target, provisional Harmonized CHARLS age covariate, and outcome validity assumptions predate current source/design/outcome review.
+
+The current Wave 1 105-hypothesis family remains a **candidate for re-freezing**, not an approved plan: running water Yes vs No plus six cooking-fuel categories vs electricity, each crossed with the 15 regular 2011 blood analytes (excluding cystatin C). Current target proposal: full official blood target (main respondents and spouses) with `bloodweight` as the primary candidate; age 45+ as a secondary survey domain. Current model candidate: continuous outcomes in verified assay units, official-source age derivation and sex in M1; contextual education/urban terms only as a separately reviewed sensitivity. Outcome-specific valid-value/special-code rules, weight denominators, age construction, survey variance, final covariate roles, test-family treatment, and estimand wording still require review and freezing together. Do not launch a refit until the current readiness gate is approved and bound to the exact revised plan and data frame.
+
 ## Why this is a pilot
 
 The public atlas remains a metadata catalogue; catalogue co-availability is not an analysis N. This first model run is a protected local workflow pilot intended to check that CHARLS fields, the blood-response weight, a candidate PSU, covariate handling, survey-engine output, and multiplicity correction can be connected end to end. It is not a formal, release-ready atlas result and is not displayed on the public site.
 
 The pilot was chosen from the existing CHARLS field audits: Wave 1 has a baseline household running-water item (`i017`) and the separate blood-assay module, while the prepared Wave 1 table has a blood weight. Wave 3 blood assays are a separate official file that is not currently present locally; Wave 2 lacks its official sample flags in the prepared table. The 2011 pilot therefore avoids pooling waves or substituting a general interview weight for the blood-response weight.
 
-## Frozen primary pilot specification
+## Historical specification used in exploratory runs (not current / not approved for refit)
 
 - **Wave and target:** 2011 baseline household-resident respondents aged 45 or older, with a valid `i017` response and positive `bloodweight`. This is a single-wave cross-sectional target, not a longitudinal estimate.
 - **Age-domain specification:** the intended population is the household-resident age-45+ CHARLS baseline population. The official blood guide defines its blood target as main respondents and spouses, and says its blood-response correction was estimated using both groups. The baseline guide describes person-level inclusion probabilities for sampled eligible people and the additional main/spouse interview path. Therefore age 45+ should be treated as a survey domain inside the full blood-target design frame, not by deleting younger spouses before creating the survey design. The pilot code passes the complete prepared person table to `svy.Sample` and applies age/eligibility through `where=domain`, which is the correct domain-analysis structure in principle. This does not validate the age field, exact source weights, younger-spouse weight contribution, or national estimand; those still require exact-release/header and eligibility checks.
