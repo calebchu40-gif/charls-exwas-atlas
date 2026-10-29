@@ -3,6 +3,7 @@
 - Record that the official guide includes non-fasted blood samples and says fasting status is recorded, while reviewed sources do not decode 2011 `qc1_va003` values. Do not infer fasting exclusions, transformations, or extreme-value filters from guide distribution summaries. Keep continuous outcomes as the primary atlas candidates; guide clinical cutoffs are not default binary ExWAS outcomes. Keep Cystatin C eligibility separate. No respondent values or association results were used.
 - Reconcile the older Wave 1 estimand-gate memo so the superseded age-45+ primary candidate cannot be mistaken for the current review proposal: full official blood target (main respondents and spouses) with `bloodweight`, and age-45+ as a secondary domain. This remains pending independent review and is not frozen.
 - Mark the earlier 105-pair pilot specification and outputs as historical exploratory work; define the current 105-pair family and target only as a candidate for re-freezing after age, design, outcome-rule and independent-review gates pass.
+- Refresh the multi-wave readiness matrix and older Wave 2 intake notes: official 2013 sample flags/weights are now in the protected Wave 2 rebuild, and 2015 Blood/Weights/Sample_Infor plus 2018/2020 Weights/Sample_Infor have passed source/header intake. These inputs do not resolve wave-specific eligibility or variance design.
 
 # 2026-10-30 Refine Wave 1 variance review candidate
 

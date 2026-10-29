@@ -6,7 +6,7 @@
 
 ## 官方条款与存放原则
 
-CHARLS 注册条款将数据限定为学术研究，禁止以任何形式发布原始微观数据或向他人转交/提供数据；可发布的应是无法关联到受访者的统计或分析结果。当前输入目录和本项目均位于 OneDrive Desktop 路径下，因此分析级个人数据不写入该目录。派生数据放在本机 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\derived_wave_tables`。尚未向服务器复制微观或派生个人级数据。
+CHARLS 注册条款将数据限定为学术研究，禁止商业使用、发布原始微观数据或以其他方式向任何其他人提供受条款约束的数据；分析结果不得关联到个体受访者。代码仓库位于 OneDrive Desktop，但不得将原始或派生的个人级数据写入仓库、同步盘、GitHub 或 Pages。个体级数据和私有 QA 仅进入许可允许且只有数据获批用户本人可访问的受控分析存储；服务器或其他环境不得因其目录权限而自动视为获准，必须符合账户授权、机构批准和 CHARLS 条款。对外发布仍限于经过披露审查的聚合结果。
 
 官方依据：[CHARLS 用户协议](https://charls.charlsdata.com/users/sign_up/agreement/zh-cn.html)、[2020 Wave 5 用户手册及发布页](https://charls.charlsdata.com/pages/Data/2020-charls-wave5/zh.html)、[2015 Blood Data 发布说明和下载页](https://charls.charlsdata.com/pages/Data/2015-charls-wave4/zh-cn.html)。
 
@@ -27,7 +27,7 @@ CHARLS 注册条款将数据限定为学术研究，禁止以任何形式发布�
 
 新增 `scripts/audit_prepared_catalog_field_availability.py`。脚本只读取 Stata 文件的变量名头信息，不遍历受访者记录；将公开候选目录中的波次/角色/字段代码与本机五张波次个人表做名称级筛查，并把汇总表、未匹配字段代码和权重/样本标记字段清单写入 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\qa_outputs`。输出不含 ID、字段取值、非缺失记录数、配对样本量或关联结果，不进入项目仓库。名称命中不证明数据文件模块身份、字段可用分母或可分析性；这些仍需依据官方问卷、发布说明和批准使用的源文件逐项核实。
 
-本机头信息对照显示：2018和2020的目录代码均能在对应准备表找到同名字段；2011有270个社区模块暴露代码未在个人表中，社区表继续独立保留以避免 `communityID` 非唯一连接；2013有26个父母/子女关系模块代码未进入一人一行个人表；2015有26个父母/子女/兄弟姐妹关系模块代码和独立2015 Blood Data中的16个暴露及16个表型代码未进入个人表。这里报告的是候选字段代码数，不是受访者数量或实验室结果覆盖人数。2013表头目前仍无官方 `crosssection` 与 `longitudinal` 字段，因此仍不得推断该轮横断面样本资格或进行加权分析。逐字段 QA 仅保存在本机受控目录。
+本机头信息对照显示：2018和2020的目录代码均能在对应准备表找到同名字段；2011有270个社区模块暴露代码未在个人表中，社区表继续独立保留以避免 `communityID` 非唯一连接；2013有26个父母/子女关系模块代码未进入一人一行个人表；2015有26个父母/子女/兄弟姐妹关系模块代码和独立2015 Blood Data中的16个暴露及16个表型代码未进入普通个人表。这里报告的是候选字段代码数，不是受访者数量或实验室结果覆盖人数。状态已更新：2013官方 `crosssection`、`longitudinal`及权重已通过受保护官方 Wave 2 重建进入独立准备表；2015独立 Blood Data 及专用权重已入库并完成来源/表头预检，但仍须单独连接、核对ID、样本资格、单位/特殊值和权重适用性。逐字段 QA 仅保存在受控分析存储。
 
 ## 运行和验证
 
@@ -41,7 +41,7 @@ python scripts/prepare_charls_wave_tables.py --input-root "<含原始数据+问�
 
 ## 尚未纳入/需单独审计的来源
 
-- 2015独立 Blood Data 文件缺失；获得后依据 2015 Blood Data Release Note 的 ID 对齐、检测单位、样本筛选与专属 `Blood_weight`，作为独立 assay module 加入，不与当轮 Biomarker 体格测量模块混淆。
+- 2015独立 Blood Data 已进入受控 intake 并完成官方来源与表头预检；尚未作为独立 assay module 完成模型准入。下一步依据 2015 Blood Data Release Note 核对 ID 对齐、检测单位、样本筛选、`Blood_weight`及甘油三酯顶码标记，不与当轮 Biomarker 体格测量模块混淆。
 - 2014 Life History 文件缺失；当前基础表不含完整生命历程暴露。
 - 2011 `community.dta` 有454行、450个`communityID`和454个`communityID+sub_commuID`组合；2个PSU含多条社区模块记录（最多3条），而respondent表只有`communityID`、没有`sub_commuID`。聚合审计估计，按`communityID`直接左连接会额外复制182条respondent行，影响到91名受访者。详见`audit/community_2011_key_aggregate_qa_v1.csv`。该模块继续独立存放；在问卷确认变量单位并解决个人/家庭到子社区的归属前，不挑选、均值合并或复制子社区值进入个人ExWAS。
 - 退出模块和 verbal autopsy 应作为死亡/退出结局的独立数据源，通过官方 ID 规则与跟访状态资料审查后再整合。
