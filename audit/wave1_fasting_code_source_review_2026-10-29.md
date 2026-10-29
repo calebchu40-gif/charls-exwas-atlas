@@ -22,6 +22,10 @@ Blood 数据中的 `qc1_va003` 表示采血时是否空腹。拟定的105项试�
 
 检索到第三方 CHARLS 变量索引把该变量标为 `1=Yes, 2=No`。该页面不是CHARLS官方发布文件；只能作为后续查找官方原始codebook/发布值标签的线索，不能据此解码个体记录、冻结模型配置或放行分析。未从原始文件读取任何受访者值以验证此映射。
 
+### 2026-10-30 在线官方来源复核
+
+再次直接检索并打开 CHARLS 官方 Wave 1 数据目录和 Blood Sample Users' Guide：目录目前仍列通用 Wave 1 Codebook 与 Blood Guide；Guide确认空腹状态被记录、约8%的血样来自非空腹受访者，但未列 `qc1_va003` 的变量代码表。搜索结果中出现的 `1=Yes, 2=No` 来自第三方变量索引（其页面还展示合并数据的分布），不属于官方释义；没有将其升级为准入依据，也没有读取或计算本项目个体值分布。该搜索没有解除血糖/甘油三酯的空腹路由门。在线来源：[CHARLS Wave 1 data directory](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)、[2011 Blood Sample Users' Guide](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf)、[非官方索引（仅线索）](https://www.dbcodebook.cn/nodes/post/56/)。
+
 ## 当前决定与下一步
 
 1. 保持105项正式拟合门关闭。

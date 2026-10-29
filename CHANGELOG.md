@@ -2,6 +2,10 @@
 
 - Broadened provisional year-only age lower bounds for lunar or calendar-unresolved birth dates to account for a possible one-year lunar-to-Gregorian birth-year offset plus unknown interview day. Regenerated the protected candidate age intervals; no participant-level output was added to the repository. Method and survey-design gates remain open.
 
+# 2026-10-30 Recheck fasting-code source status
+
+- Rechecked the live official Wave 1 documentation directory and Blood Users' Guide. The fasting-status variable is documented but its 2011 numeric mapping remains unpublished in the reviewed official materials; a third-party `1=Yes, 2=No` label remains a lead only. The glucose/triglyceride routing gate stays closed.
+
 # 2026-10-30 Reconcile current Wave 1 methods review packet
 
 - Corrected the independent review packet so its current 105-hypothesis candidate uses the full official blood target and `bloodweight`, with age 45+ only as a secondary survey domain. The outdated age-45+ primary target, Harmonized CHARLS age, and community-only variance fit are explicitly historical and cannot be used to populate a current readiness record.
