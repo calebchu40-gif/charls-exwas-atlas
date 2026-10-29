@@ -1,3 +1,8 @@
+# 2026-10-29 Reconcile svy multistage and ultimate-cluster documentation
+
+- Reviewed official svy documentation for GLMs and multistage designs. The package can construct three-stage sample/weight chains; its documented variance approach uses first-stage PSU totals within strata (ultimate-cluster), while lower-stage stratification affects weights rather than variance strata. GLM replication is opt-in.
+- Clarified that this does not recover CHARLS county strata or split-community respondent linkage, and does not approve a community-level approximation. Updated the review matrix and active plan; no models or tests were run.
+
 # 2026-10-29 Corrected the svy package versus project GLM capability statement
 
 - Verified the protected local environment pins `svy==0.35.0`. Its `Design` schema exposes PSU/SSU, replicate-weight and two-stage population-size fields, and its GLM supports opt-in replication. This CHARLS runner still builds one PSU, hard-codes Taylor and rejects replicate weights. Static inspection shows the GLM Taylor backend receives a single stratum/PSU/FPC and the regression FPC path ignores SSU information. Official package docs confirm replication is opt-in and do not supply CHARLS design inputs.

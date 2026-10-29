@@ -1,12 +1,12 @@
 # CHARLS ExWAS Atlas：执行计划与当前进度
 
-**更新时间：2026-10-29 19:21（Asia/Shanghai）**
+**更新时间：2026-10-29 19:23（Asia/Shanghai）**
 **项目目标状态：进行中**  
 **当前阶段：Wave 1 调查设计准入复核；通过现行准入的正式模型仍为 0**
 
 本文件是本项目当前执行计划的单一状态页。每次完成阶段或遇到新阻塞时更新。GitHub 只存代码与本计划，不存 CHARLS 个体数据或受限分析输出。
 
-## 现在正在执行什么（2026-10-29 19:21）
+## 现在正在执行什么（2026-10-29 19:23）
 
 **正在执行：审查 Wave 1 官方多阶段抽样设计能否由已发行 PSU/社区键复原，并据此收敛独立方差方法审阅材料。**
 
@@ -24,7 +24,7 @@
 
 - **官方抽样文件清单补查**：CHARLS Wave 1 官方公开数据页列有 All Data、PSU、Weight、Community、Blood 等，但未列独立 Sample Information、复制权重或方差层文件；2018 User's Guide 所述 Sample_Info 是回应/横截面/死亡/访谈日期元数据，不能外推成Wave 1子PSU映射。详细证据及限定见 [`wave1_official_design_file_inventory_review_2026-10-29.md`](wave1_official_design_file_inventory_review_2026-10-29.md)。当前调查设计门仍未通过。
 
-- **执行器能力边界更正（静态复核，19:21）**：锁定环境为 `svy==0.35.0`。该包 `Design` schema 有 PSU/SSU、复制权重及两阶段 `PopSize` 参数；`GLM.fit` 也支持显式 `method="replication"`，官方文档说明复制权重不会自动启用。但项目 runner 仅组装单 PSU、将 GLM 固定为 Taylor，并拒绝复制权重配置。该版本 GLM Taylor 后端接收一个 strata、PSU 和 FPC；回归路径的 FPC 处理明确只应用 PSU 层因子并忽略 SSU 信息。故项目当前 GLM 路径未实现可直接用于 CHARLS 官方多阶段结构的方差估计，但不能表述成 `svy` 包完全不支持 PSU/SSU 或复制估计。CHARLS 已审发行包没有官方 replicate weights，不能以任意生成代替正式设计。方案 A 仍被缺失的 county/sub-PSU 映射与项目 GLM 配置/后端路径阻断；方案 B 仍须独立裁决。下一步按同版本 API 评估仅在取得官方 stage linkage/replicate design 或独立批准近似后所需的 runner 变更；未运行模型或测试。
+- **执行器能力边界与方法文档复核（19:23）**：锁定环境为 `svy==0.35.0`。包的 `Design` schema 有 PSU/SSU、复制权重及两阶段 `PopSize`；`GLM.fit` 支持显式 `method="replication"`。`svy` 官方文档也说明其抽样组件可构造三阶段链，Taylor方差按 strata 内首阶段 PSU 总量作 ultimate-cluster 估计，较低阶段分层进入权重但不作为方差分层。项目 runner 仍只组装一个 PSU、将 GLM 固定为 Taylor并拒绝复制权重，且回归 GLM 路径的 FPC 只取 PSU 层因子。故软件具备部分相关结构，但现有项目模型路径及 CHARLS 发布键不能直接表达已说明的完整设计。CHARLS 已审发行包未见官方复制权重，不能用任意生成替代设计证据。方案 A 受县级/strata/子 PSU 键缺口阻断；方案 B 的社区 ultimate-cluster 近似须独立判断目标总体、拆分社区处理与自由度。方法矩阵已加入[官方 GLM](https://svylab.com/docs/svy/tutorials/glm.html)和[多阶段](https://svylab.com/docs/svy/tutorials/multistage.html)依据。下一步针对 GLM 的 ultimate-cluster方差与多 strata/自由度映射收敛审阅问题；未运行模型或测试。
 
 - **范围和状态澄清**：历史105项是水源1个对比加烹饪燃料6个对比，共7×15个候选假设；当前登记的后续K150主块与K90供暖子域是不同扩展阶段，共240个登记候选行。它们都不是样本量。历史探索性模型曾经运行过；“正式模型=0”指当前没有通过来源、抽样设计、冻结方案和独立审查的正式/可发布模型。执行器仍需补充M1/M2关系与空腹调整配置支持，详见 [`wave1_family_runner_scope_review_2026-10-29.md`](wave1_family_runner_scope_review_2026-10-29.md)。
 

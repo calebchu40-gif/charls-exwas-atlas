@@ -37,7 +37,9 @@ CHARLS 2011 National Baseline Users' Guide 描述县级单位按地区、城乡�
 
 包内 `GLM.fit` 源码及其[官方 GLM 文档](https://svylab.com/docs/svy/tutorials/glm.html)说明 Taylor 为默认；复制权重须显式指定 `method="replication"`，不会自动使用。该文档确认的是软件功能，不构成 CHARLS 复制权重或设计规格的来源。
 
-因此，方案 A（官方完整多阶段设计）目前同时受数据键和项目 GLM 执行路径阻断；不能据此说 `svy` 包完全没有相应设计结构。方案 B 也不能仅靠把 `communityID` 填入 `psu_field` 自动获准；若审阅人认为单层社区聚类近似对预先定义的 estimand 可接受，需先冻结“近似设计”解释与敏感性计划，并确认该回归方差实现和自由度处理。否则应扩展 GLM 执行器以实现获批的阶段结构，或将输出限定为不作设计型总体推断的描述。不得使用普通模型标准误伪装设计方差。
+另对照 `svy` 官方[多阶段抽样文档](https://svylab.com/docs/svy/tutorials/multistage.html)：包支持按三阶段抽样链生成设计/权重；其文档描述的方差使用 ultimate-cluster approach，即按首阶段 PSU totals 在 strata 内估计，较低阶段分层进入权重但不作为方差分层。**能构造三阶段抽样权重不等于能恢复 CHARLS 实际抽样框、县级 strata 或最终子社区到个人的归属。**如以社区为 ultimate cluster，须把它表述为社区层估计目标/近似，并由审阅人判断对 CHARLS 目标总体及拆分社区是否成立。
+
+因此，方案 A（按 CHARLS 已说明的各抽样层级完整恢复设计）目前受县级/分层/最终子 PSU 数据键缺口阻断；是否需要扩展 GLM 执行器要依据审阅结论确定。方案 B 也不能仅靠把 `communityID` 填入 `psu_field` 自动获准；若审阅人认为单层社区 ultimate-cluster 近似对预先定义的 estimand 可接受，需先冻结近似设计解释、总体目标和敏感性计划，并确认拆分社区与设计自由度处理。不得使用普通模型标准误伪装设计方差。
 
 这项代码缺口属于实现能力判断，不是统计方法批准。当前正式分析仍关闭。
 
