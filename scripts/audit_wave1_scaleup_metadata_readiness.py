@@ -43,6 +43,20 @@ FAMILY_SIZES = {
     "wave1_heating_route_K90": 90,
 }
 ROUTED_FAMILY = "wave1_heating_route_K90"
+K90_ROUTE = (
+    "I020=2 (No) routes to I021; I020=1 (Yes) skips to I022; "
+    "K90 is limited to the routed No domain."
+)
+K150_ROUTE_BY_FIELD = {
+    "i017": "all eligible valid respondents",
+    "i022": (
+        "Main cooking-fuel item; 2011 has no explicit no-cooking response. "
+        "Do not infer a category from blank; verify release eligibility and missingness."
+    ),
+    "i016": "all eligible valid respondents",
+    "i019": "all eligible valid respondents",
+    "i020": "all eligible valid respondents",
+}
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -92,10 +106,14 @@ def audit() -> dict[str, object]:
             if row.get("analysis_status") != "planned_not_approved" or row.get("public_release_status") != "not_approved":
                 errors.append(f"{family}: hypothesis/release status must remain unapproved")
             route = row.get("route_candidate", "")
-            if family == ROUTED_FAMILY and route != "i020 == 2 (No); routed heating-energy item":
-                errors.append("K90 route must remain restricted to the i020=No questionnaire path")
-            if family != ROUTED_FAMILY and route != "all eligible valid respondents":
-                errors.append(f"{family}: unexpected route restriction")
+            expected_route = K90_ROUTE if family == ROUTED_FAMILY else K150_ROUTE_BY_FIELD.get(
+                row.get("exposure_field_candidate", "")
+            )
+            if route != expected_route:
+                errors.append(
+                    f"{family}: route rule does not match exposure field "
+                    f"{row.get('exposure_field_candidate', '')!r}"
+                )
 
     for code in ("i016", "i017", "i019", "i020", "i021", "i022"):
         if code not in codebook:
