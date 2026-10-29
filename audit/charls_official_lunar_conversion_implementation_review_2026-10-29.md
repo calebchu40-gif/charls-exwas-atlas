@@ -21,7 +21,7 @@ The `.mmat` file is a Stata Mata matrix serialization, not a plain text date tab
 
 ## Status and scope
 
-This review read only the pinned source code, help, license and binary file header. It did not install or execute the command, inspect participant date values, derive ages, or fit models. It resolves how the official code works, but does not resolve which date/calendar route applies to each Wave 1/2 respondent, the exact fallback hierarchy, interview-month source, or age-domain definition. Those remain frozen-method and review gates.
+The initial source-code review read only the pinned program, help, license and binary file header; at that stage it did not inspect participant dates, derive ages, or fit models. The later controlled age-input preparation is documented below. It resolves how the official code works, but does not resolve which date/calendar route applies to each Wave 1/2 respondent, the exact fallback hierarchy, interview-month source, or age-domain definition. Those remain frozen-method and review gates.
 
 ## Wave 1 date-input metadata check (2026-10-29)
 

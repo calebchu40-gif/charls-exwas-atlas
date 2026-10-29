@@ -163,3 +163,7 @@
 ## 2026-10-29 — Clarify Python reference lineage for official lunar conversion
 
 The official CHARLS `lunar2solar.sthlp` explicitly cites `lidaobing/python-lunardate` as the basis of the Stata conversion. The upstream project page identifies GPL-3.0 licensing and example conversions; PyPI release history dates lunardate 0.1.5 to 2014-09-09, after the CHARLS help version dated June 2014. This is a promising synthetic-validation reference, but the upstream revision used by CHARLS is not specified and does not prove exact `.mmat` parity. A license-aware, pinned-source synthetic review is next; no participant DOB conversion or association model is authorized by this evidence alone.
+
+## 2026-10-29 年龄算法参考源固定
+
+已将 PyPI `lunardate` 0.1.5 源码包下载到受控本机参考目录，并以 PyPI 页面所列 SHA-256 验证包身份；没有把源码包复制进 GitHub。源码元数据为 GPLv3，转换表覆盖农历年1900–2049，接口要求显式 `isLeapMonth`。CHARLS 官方 Stata 帮助文件确实引用该 Python 项目，但未说明版本，且 0.1.5 在官方帮助文件版本之后发布，PyPI 无构建来源证明。因此它只是固定版本候选，不能声称已经复现官方 `.mmat`。目前只静态阅读，未执行示例或处理受访者日期；后续需使用获授权 Stata 建立直接对照，或由独立方法审查明确接受其版本与闰月不确定性后再决定年龄算法。
