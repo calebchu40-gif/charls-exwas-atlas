@@ -151,6 +151,7 @@ def main() -> None:
         "scope": "protected preparation only; no age derivation or association analysis",
         "person_source_sha256": sha256(person_path),
         "weight_source_sha256": sha256(weight_path),
+        "age_input_sha256": sha256(out_path),
         "source_manifest_id": source_manifest.get("source_manifest_id"),
         "prepared_source_weight_sha256": wave_sources["weight"].get("sha256"),
         "person_rows": int(len(people)),

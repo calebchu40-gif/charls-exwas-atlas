@@ -31,3 +31,13 @@ Age remains unconstructed and the age-source/derivation gate remains closed. Bef
 ## Reproduction
 
 The comparison used the `LunarDate(year, month, day, isLeapMonth).toSolarDate()` API from the locally stored source files for releases 0.1.4 and 0.1.5. Inputs and outputs are listed above; no package was installed into the project runtime.
+
+## Exhaustive documented-domain audit (2026-10-29)
+
+The CHARLS-maintained [`lunar2solar` help](https://github.com/charls-data/lunar2solar/blob/main/src/lunar2solar.sthlp) explicitly says its conversion is based on `lidaobing/python-lunardate`; the official ado constructs lookup matrices with 49,949 ordinary-date rows and 1,521 leap-date rows over its documented numeric input range. A new metadata-only audit script, [`scripts/audit_lunardate_release_domain.py`](../scripts/audit_lunardate_release_domain.py), exhaustively enumerates valid synthetic dates in that range using the locally pinned source files for `python-lunardate` 0.1.4 and 0.1.5.
+
+Both releases produced 49,949 ordinary and 1,521 leap mappings (51,470 total), exactly matching the two official matrix dimensions. Their valid input-key coverage was identical and there were zero output mismatches across shared keys. Source SHA-256 values are recorded in the protected aggregate report at `%LOCALAPPDATA%\\CHARLS_ExWAS_Atlas\\qa_outputs\\lunardate_exhaustive_sweep_20261029.json`; the report contains no date mappings or CHARLS values.
+
+This materially strengthens the converter's lineage and domain evidence, but still is not a direct cell-by-cell comparison to `lunar2solar.mmat`, and both Python releases share a code lineage. The official CHARLS command defaults to the ordinary-month table unless the `leap` option is supplied. Wave 1 records calendar type but the questionnaire does not document a leap-month indicator, so the conversion route must preserve that uncertainty and must not infer a leap flag. No respondent date was converted in this audit; the age derivation and survey-design/model gates remain closed pending a frozen route and methods review.
+
+The reusable audit accepts caller-supplied source paths and emits only aggregate counts. It does not bundle, install, or redistribute the GPL-licensed package source.

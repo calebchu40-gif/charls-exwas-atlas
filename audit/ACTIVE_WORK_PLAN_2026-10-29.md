@@ -4,6 +4,10 @@
 **项目目标状态：进行中**  
 **当前阶段：Wave 1 调查设计准入复核；通过现行准入的正式模型仍为 0**
 
+**2026-10-29 年龄转换进展：**CHARLS 官方 `lunar2solar` 帮助明确说明转换基于 `python-lunardate`。新增可复用的纯合成域审计，穷举其文档范围并比较本机固定的 0.1.4/0.1.5 源码：普通历49,949项、闰月1,521项，合计51,470项；两版映射键完全一致、共享键输出差异0项，计数恰与官方 `.mmat` 两矩阵的行数相同。这是来源/范围一致性证据，不是对 `.mmat` 的逐值比较。Wave 1 问卷没有记录闰月的独立字段；参与者年龄尚未派生，年龄算法仍需冻结闰月/不完整日期路由并作方法审查。审计脚本 [`scripts/audit_lunardate_release_domain.py`](../scripts/audit_lunardate_release_domain.py)，汇总证据见 [`lunar_conversion_candidate_synthetic_crosscheck_2026-10-29.md`](lunar_conversion_candidate_synthetic_crosscheck_2026-10-29.md)。
+
+**Wave 1 年龄候选派生（2026-10-29）：**在复核官方来源 manifest、原始文件哈希、准备表哈希和年龄输入哈希后，受保护本机生成了临时年龄区间表。仅使用官方出生年/月/日、日历类型、条件自报年龄及官方访谈年/月；不读取暴露/结局。因没有访谈日或独立闰月标志，输出上下界而非假装精确的年龄：可按官方转换器默认路线处理的完整日期保留访谈日不确定区间；可能属于闰月及不完整日期使用更宽的出生年区间；条件年龄仅在出生年不可用时作为来源候选。对无法转换的日期保留缺失并标记原因。未因45岁候选状态筛除任何记录。该表仅供方法审查，不能进入冻结模型；仍需审阅年龄测量/误差敏感性和抽样设计，正式模型数保持0。私有输出位于本机 `%LOCALAPPDATA%\\CHARLS_ExWAS_Atlas\\age_inputs_2011\\` 和 `qa_outputs\\`，不在 GitHub/OneDrive/网站。
+
 **状态复核（2026-10-29 21:38，Asia/Shanghai）：**重新检查本机受保护入库、服务器项目目录/计划、GitHub主分支与线上 Pages。Wave 1四件套仍在本机受保护入库及服务器 `private/incoming_2011_official/`；服务器另有 Wave 2 All Data/权重和 Wave 3 样本信息/权重/血检官方文件。仅确认入库/目录状态，未重新读取参与者值或重跑分析。服务器 SSH 可用；服务器计划仍记载 Wave 1 设计准入未通过、正式模型为0。公开首页显示 `app.js?v=194`，首页与候选配对索引 HTTP 200，`association_results_v1.json` HTTP 404。年龄派生仍缺 Stata/官方转换对照，县级抽样层及拆分社区 respondent-to-sub-PSU 映射/方差方案仍未闭环；本次不改变模型准入状态。为避免早期“数据尚未入库”快照造成误读，仓库 README 顶部现明确当前输入与线上状态，并声明下文旧日期段落为历史记录。
 
 **2026-10-29 农历年龄实现复核补充：**已逐行审阅 CHARLS 官方 `lunar2solar` 的 `.ado/.sthlp` 及 `.mmat` 文件头。该 Stata 程序用官方二进制 Mata 查找表分别处理普通农历日和闰月；当前本机与服务器 PATH 均未发现 Stata 可执行程序。实现细节、不可直接用 Python ad hoc 解析 `.mmat` 的原因及受保护年龄派生的下一步见 [`charls_official_lunar_conversion_implementation_review_2026-10-29.md`](charls_official_lunar_conversion_implementation_review_2026-10-29.md)。年龄构造仍未获准/冻结，未读取受访者生日、未运行转换或关联模型。

@@ -1374,3 +1374,15 @@ This file records project-level changes that affect reproducibility, methods, da
 - Confirmed Wave 1 official inputs remain present and the active design gates are still age derivation and final PSU/variance review. No respondent values or IDs, joins, associations, or tests were processed. Formal model count remains zero.
 - Rechecked the public Pages home (HTTP 200) and formal results payload (HTTP 404), consistent with no reviewed results being published. Removed a duplicate paragraph from the server-only progress log and refreshed its current plan entry.
 
+# 2026-10-29 Exhaustively compare lunar-date converter releases
+
+- Added a reusable synthetic-only audit that enumerates valid lunar dates over CHARLS's documented converter domain and compares caller-supplied `python-lunardate` source releases without bundling the GPL implementation.
+- Pinned 0.1.4 and 0.1.5 had identical valid-date coverage and zero output differences: 49,949 ordinary and 1,521 leap mappings, matching the dimensions stated in CHARLS's official converter source. This supports source lineage but does not establish cell-by-cell equality to the official `.mmat` table.
+- No CHARLS participant dates were read or transformed. Calendar/leap-month and incomplete-date routing remain under review; the age/model/design gates remain closed.
+
+# 2026-10-29 Prepare a protected Wave 1 age-interval candidate
+
+- Added a reusable exhaustive synthetic comparison for the CHARLS-cited lunar-date source releases and documented that the exact official lookup dimensions match while cellwise `.mmat` parity remains unverified.
+- Strengthened age-input provenance with a hash of the protected age-input file, then added a source/hash-guarded derivation that stores only lower/upper completed-age bounds and source-route labels under the protected local root. It accounts for missing interview day and unmarked leap-month ambiguity, preserves unresolved dates, and never filters the frame by candidate age.
+- Generated and header-checked the private candidate table locally. It is not model-approved; Wave 1 variance and age-method review gates remain open, and no associations or public results were produced.
+
