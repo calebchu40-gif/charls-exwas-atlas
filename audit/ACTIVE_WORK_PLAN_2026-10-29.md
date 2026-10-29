@@ -193,3 +193,8 @@ The official CHARLS `lunar2solar.sthlp` explicitly cites `lidaobing/python-lunar
 重新完整阅读官方 Wave 1 Users' Guide 的 ID 章节后发现：9 位 household ID 的前六位依次标识省/市/县，第七位标识县内社区，个人 ID 在 household ID 基础上增加两位。新增 `scripts/audit_wave1_county_prefix_design.py`，以已审核的 prepared-table manifest 与官方 PSU 文件 SHA-256 为前置门，在受保护本机和私人服务器核验 person/household/community 前缀、社区键覆盖和县/社区拓扑；两端均通过，且结构符合官方指南的抽样框描述。该结果提供可重建的 county-prefix 候选键，修正此前只因 PSU 表没有单列 county ID 而认为县级键缺失的判断。它仍不能恢复隐式分层与县级系统 PPS 顺序/尺寸，也不能建立拆分社区到 respondent 的最终 sub-PSU 映射；方差准入仍未通过。
 
 另外，官方 `charls-data/lunar2solar` 仓库确实包含 `lunar2solar.mmat`。已将该文件下载到受保护参考目录，并核对当前仓库文件与项目已固定的上游 commit 文件字节相同。该文件为 Mata 二进制矩阵；本机和私人服务器均未找到 Stata 可执行程序，因此仍不能读取官方表并做逐项转换 parity。先前“官方 `.mmat` 未找到”的描述更正为“文件已找到，但缺少授权 Stata 读取能力”。未处理新增受访者日期，未加载暴露/结局，未拟合关联模型。
+
+## 2026-10-30 00:45（Asia/Shanghai）— 复核历史探索性试点输出并明确正式模型计数
+在受保护本机发现 2026-10-26 留存的探索性水源/家庭环境—血液表型分析输出。运行既有聚合完整性审计：结果表结构、拟合字段完整性、数值范围及声明的 BY/Bonferroni 校正算术均通过；审计未读 CHARLS 个体记录，QA 只保存在 `%LOCALAPPDATA%\\CHARLS_ExWAS_Atlas\\qa_outputs\\pilot_technical_integrity_aggregate.json`。原始运行清单明确标注该结果不可发布，年龄协变量来自 Harmonized CHARLS D 候选，PSU 用未分层 communityID Taylor 近似，源归属、总体分母和设计方差仍未验证。因此这些仅是私有历史探索输出，不能算正式或审查通过的 CHARLS 关联模型；正式可用模型数仍为0，公开站点结果 JSON 仍缺失。此前日志用“模型数0”概括状态时没有说明历史探索性拟合，现以此条补全区分；不删除或复制旧结果。
+
+进一步核对服务器的 R 环境：R 4.5.3 与 `survey` 4.5 已安装。官方 `svydesign` 文档说明，多阶段 id 可以表达各级抽样簇，但不提供 FPC 时只用第一阶段计算方差；只给部分阶段 FPC 时，后续未给阶段被视作完整抽样。因此不能通过改用 R 或添加 county/community 两个字段就声称二阶段方差已解决。新增 [`wave1_multistage_variance_software_review_2026-10-29.md`](wave1_multistage_variance_software_review_2026-10-29.md) 记录软件能力与设计信息缺口；仍待正式方法裁决。此轮未拟合任何真实模型。
