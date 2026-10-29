@@ -1,3 +1,9 @@
+# 2026-10-29 Verify the protected Wave 2 All Data bundle
+
+- Located official release item 321 (2013 Wave 2 All Data, release 2015-11-18) in the server's protected raw intake, verified it against the official release checksum recorded in the verified manifest, and staged a permission-restricted copy in a Wave 2-specific private intake folder.
+- Listed archive members and used metadata-only Stata header reads for the Biomarker, Weights, PSU and selected questionnaire modules. The Biomarker header contains the five documented anthropometry candidates; the bundled Weights header contains `crosssection`, `longitudinal` and `Biomarker_weight`. No participant values or IDs were read, no merge or association model was run.
+- Updated the Wave 2 source/weight gate memo, active plan, and anthropometry catalog builder/status. Pair coverage, route/value validity, age/frame eligibility, variance design and independent review remain open. Formal association models remain 0.
+
 # 2026-10-29 Verify Wave 2 anthropometry module and weight linkage
 
 - Extended the anthropometry source updater to verify that the official Wave 2 Release Note identifies `Biomarker.dta` as anthropometric measurements; updated Wave 2 source statuses to distinguish official module documentation from unverified local release-archive/header provenance.

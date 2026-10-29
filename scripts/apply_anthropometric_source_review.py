@@ -56,7 +56,7 @@ def source_note(wave: str, concept_id: str) -> tuple[str, str, str, str]:
         if wave == "2011" else
         (
             f"The official Wave 2 Release Note lists Biomarker.dta as anthropometric measurements, and the {wave} questionnaire/Codebook document the exact {CODE_FAMILIES[concept_id]}002 field. "
-            "The protected Wave 2 All Data archive/header is not currently source-verified; participant-level availability, sample eligibility and analysis authorization remain open."
+            "The official Wave 2 All Data bundle (release item 321) has been checksum-verified in protected storage and its Biomarker.dta header confirms this field. Participant-level availability, sample eligibility, valid-value rules and analysis authorization remain open."
             if wave == "2013" else
             f"The {wave} questionnaire and wave Codebook document the exact {CODE_FAMILIES[concept_id]}002 measurement field; this does not establish participant-level release availability or analytic eligibility."
         )
@@ -80,7 +80,7 @@ def source_note(wave: str, concept_id: str) -> tuple[str, str, str, str]:
     status = (
         "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-Q-field identity and release eligibility remain unverified"
         if wave == "2011" else
-        "Wave 2 Release Note lists Biomarker.dta as anthropometric measurements; exact questionnaire/Codebook field documented, but protected All Data archive/header provenance and analytic eligibility remain unverified"
+        "Official Wave 2 All Data bundle checksum and Biomarker.dta header verified in protected storage; exact questionnaire/Codebook field documented, but analytic eligibility and valid-value rules remain unverified"
         if wave == "2013" else
         "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified"
     )
