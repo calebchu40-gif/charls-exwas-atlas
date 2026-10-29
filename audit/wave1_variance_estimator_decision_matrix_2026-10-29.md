@@ -27,14 +27,15 @@ CHARLS 2011 National Baseline Users' Guide 描述县级单位按地区、城乡�
 
 ## 当前 runner 的设计表达能力（静态代码审阅，2026-10-29）
 
-对 `scripts/run_2011_household_environment_scaleup.py` 及其冻结设计配置做了静态检查，未运行模型。当前 runner：
+对 `scripts/run_2011_household_environment_scaleup.py`、冻结设计配置及受控本机锁定的 `svy==0.35.0` 实现做了静态检查，未运行模型。`svy.Design` 数据结构可声明多个 PSU/SSU 标识、复制权重和两阶段 `PopSize`；但本项目用于 GLM 的 runner 与该版本 GLM 执行路径有以下限制：
 
-- 接受一个 `psu_field`，将其转成单个 `__design_psu` 后传给 `svy.Design(psu=...)`；没有县→社区→子社区的多阶段 PSU 参数或阶段方差组合。
-- Taylor 线性化是唯一接受的方差方法；若配置 `replicate_weight_fields` 会直接拒绝。
-- 可传一个或多个 `stratum_fields`，但这只是一个 Design 的 strata 参数；代码没有实现县级 PPS、系统抽样隐式分层、阶段抽样比例/FPC 或多阶段方差分解。多个分层字段能否按预期解释仍须以所锁定的 `sidora` 版本文档/方法审阅核对，不能据此宣称完整设计支持。
+- 当前 runner 接受一个 `psu_field`，只组装 `__design_psu` 和 `__design_weight`，没有将社区及县级/子社区阶段字段接入设计对象。
+- runner 仅接受 Taylor，显式拒绝 `replicate_weight_fields`；尽管包的 `Design` API 存在 `rep_wgts`，当前工作流没有构造或传入复制权重。
+- 包的 `Design` schema 声明了 `ssu` 与两阶段总体规模 `PopSize`，但已锁定版本的 GLM Rust 执行调用只接收单一 strata、PSU 与 FPC 列；该回归路径的 FPC 处理注释明确说明只使用 PSU 层修正并忽略 SSU 信息。不能把 API 上存在字段等同于本项目 GLM 已实现完整多阶段估计。
+- runner 允许多个 `stratum_fields` 进入 `Design`，但本项目没有核实其组合语义，也没有实现县级 PPS、系统抽样隐式分层或 CHARLS 阶段抽样信息的映射。
 - 单 PSU 与 domain singleton 要求显式指定处理策略，但指定软件选项并不能弥补缺失的官方设计变量。
 
-因此，方案 A（官方完整多阶段设计）目前同时受数据键和执行器表达能力阻断。方案 B 也不能仅靠把 `communityID` 填入 `psu_field` 自动获准；若审阅人认为单层社区聚类近似对预先定义的 estimand 可接受，需先冻结“近似设计”解释与敏感性计划，并确认软件实现和自由度处理。否则应扩展执行器以实现经批准的多阶段设计，或将输出限定为不作设计型总体推断的描述。不得使用普通模型标准误伪装设计方差。
+因此，方案 A（官方完整多阶段设计）目前同时受数据键和项目 GLM 执行路径阻断；不能据此说 `svy` 包完全没有相应设计结构。方案 B 也不能仅靠把 `communityID` 填入 `psu_field` 自动获准；若审阅人认为单层社区聚类近似对预先定义的 estimand 可接受，需先冻结“近似设计”解释与敏感性计划，并确认该回归方差实现和自由度处理。否则应扩展 GLM 执行器以实现获批的阶段结构，或将输出限定为不作设计型总体推断的描述。不得使用普通模型标准误伪装设计方差。
 
 这项代码缺口属于实现能力判断，不是统计方法批准。当前正式分析仍关闭。
 

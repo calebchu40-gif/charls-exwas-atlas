@@ -1,12 +1,12 @@
 # CHARLS ExWAS Atlas：执行计划与当前进度
 
-**更新时间：2026-10-29 19:14（Asia/Shanghai）**
+**更新时间：2026-10-29 19:19（Asia/Shanghai）**
 **项目目标状态：进行中**  
 **当前阶段：Wave 1 调查设计准入复核；通过现行准入的正式模型仍为 0**
 
 本文件是本项目当前执行计划的单一状态页。每次完成阶段或遇到新阻塞时更新。GitHub 只存代码与本计划，不存 CHARLS 个体数据或受限分析输出。
 
-## 现在正在执行什么（2026-10-29 19:14）
+## 现在正在执行什么（2026-10-29 19:19）
 
 **正在执行：审查 Wave 1 官方多阶段抽样设计能否由已发行 PSU/社区键复原，并据此收敛独立方差方法审阅材料。**
 
@@ -24,7 +24,7 @@
 
 - **官方抽样文件清单补查**：CHARLS Wave 1 官方公开数据页列有 All Data、PSU、Weight、Community、Blood 等，但未列独立 Sample Information、复制权重或方差层文件；2018 User's Guide 所述 Sample_Info 是回应/横截面/死亡/访谈日期元数据，不能外推成Wave 1子PSU映射。详细证据及限定见 [`wave1_official_design_file_inventory_review_2026-10-29.md`](wave1_official_design_file_inventory_review_2026-10-29.md)。当前调查设计门仍未通过。
 
-- **执行器能力边界（静态复核，19:14）**：`run_2011_household_environment_scaleup.py` 只接收一个 PSU 字段，执行 Taylor 线性化；复制权重配置会被拒绝。虽然允许多个 strata 字段，但没有县→社区→子社区阶段 PSU、PPS 阶段方差、FPC/阶段抽样比例或多阶段方差分解实现。因此方案 A 目前不仅缺发行键，也缺执行器支持；方案 B 不能因 runner 可运行单层 `communityID` 就自动视为方法通过。已在 [`wave1_variance_estimator_decision_matrix_2026-10-29.md`](wave1_variance_estimator_decision_matrix_2026-10-29.md) 增补代码能力映射。下一步先从锁定的 `sidora` 版本文档确认多 strata 参数语义，并请独立复杂抽样方法审阅人对社区级近似的 estimand/方差/自由度给出书面裁决；若要求完整多阶段设计，再按获批规格扩展 runner。未运行测试或真实模型。
+- **执行器能力边界更正（静态复核，19:18）**：锁定环境为 `svy==0.35.0`。该包的 `Design` schema 有 PSU/SSU、复制权重及两阶段 `PopSize` 参数；但项目的 scale-up runner 只组装单 PSU，拒绝复制权重。更关键的是该版本 GLM Rust 调用实际只接收一个 strata、PSU 和 FPC，回归路径的 FPC 明确忽略 SSU 层。故项目当前 GLM 路径并未实现可直接用于 CHARLS 官方多阶段结构的方差估计，但不能表述成 `svy` 包完全不支持这些设计结构。方案 A 仍被缺失的 county/sub-PSU 映射与项目 GLM 路径阻断；方案 B 仍须独立裁决。具体 API/后端证据已写入 [`wave1_variance_estimator_decision_matrix_2026-10-29.md`](wave1_variance_estimator_decision_matrix_2026-10-29.md)。下一步核查同版本文档中 GLM 支持边界、degrees of freedom 与分层字段语义，再决定扩展 runner 的确切范围；未运行模型或测试。
 
 - **范围和状态澄清**：历史105项是水源1个对比加烹饪燃料6个对比，共7×15个候选假设；当前登记的后续K150主块与K90供暖子域是不同扩展阶段，共240个登记候选行。它们都不是样本量。历史探索性模型曾经运行过；“正式模型=0”指当前没有通过来源、抽样设计、冻结方案和独立审查的正式/可发布模型。执行器仍需补充M1/M2关系与空腹调整配置支持，详见 [`wave1_family_runner_scope_review_2026-10-29.md`](wave1_family_runner_scope_review_2026-10-29.md)。
 

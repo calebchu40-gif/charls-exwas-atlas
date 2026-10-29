@@ -1,3 +1,8 @@
+# 2026-10-29 Corrected the svy package versus project GLM capability statement
+
+- Verified the protected local environment pins `svy==0.35.0`. Its `Design` schema exposes PSU/SSU, replicate-weight and two-stage population-size fields, while this CHARLS runner only builds one PSU and rejects replicate weights. Static inspection of this version's GLM path shows the backend receives a single stratum/PSU/FPC and the regression FPC path ignores SSU information.
+- Corrected the earlier broad statement that the survey package itself lacks multistage structures. The remaining blocker is the released CHARLS design linkage plus this project's particular GLM path; no analytic model or test was run.
+
 # 2026-10-29 Review Wave 1 runner survey-design limits
 
 - Static review confirmed the scale-up runner takes one PSU field and supports Taylor linearization only; replicate-weight configurations fail closed. The current API path does not encode multistage PSU variance, stage-specific PPS, FPC, or phase variance decomposition.
