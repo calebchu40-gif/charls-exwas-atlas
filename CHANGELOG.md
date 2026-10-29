@@ -1,3 +1,9 @@
+# 2026-10-30 Refine Wave 1 variance review candidate
+
+- Reconciled the county-prefix key evidence with the official four-stage, systematic-PPS sample description and documented the strongest remaining national-inference approximation for independent review: county-prefix as a top-level cluster with no invented strata/FPC, using the blood-specific weight only for its defined target.
+- Added a separate selected-county conditional community-cluster sensitivity and stated its omitted first-stage variance. Both remain unapproved; the design gate remains closed, and no association model was run.
+- Added explicit limits on national/design claims, split-community handling, complete-case weighting and the required independent decisions.
+
 # 2026-10-30 Prepare direct synthetic parity audit for CHARLS lunar lookup
 
 - Added a Stata-only synthetic date-grid exporter that invokes the pinned official CHARLS `lunar2solar` ado/Mata lookup without opening participant data, plus an aggregate-only Python comparison mode that validates source hashes, key coverage and table dimensions.
