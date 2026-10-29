@@ -1193,3 +1193,10 @@ This file records project-level changes that affect reproducibility, methods, da
 - Added a Wave 1 survey-variance decision matrix for the documented PSU hierarchy, incomplete split-community respondent mapping, candidate parent-community clustering approximation, and independent reviewer decisions required before real association models.
 - Corrected the community-key quick summary: blank `sub_commuID` values are stored as whitespace. After normalization, split-community respondents still cannot be assigned to a final sub-PSU from the released keys. Protected QA details and identifiers remain outside the repository.
 - Updated the active work plan and Wave 1 file-inventory audit; no real-data model was run and no result payload was published.
+
+## 2026-10-29 — Review Wave 2/3 weights and blood release notes
+
+- Recorded protected intake and metadata-only header review for official Wave 2 weights, Wave 3 weights, and Wave 3 blood archives; no participant values or row-count-derived sample sizes were published.
+- Documented that Wave 2 has distinct cross-sectional and longitudinal weights plus a cross-sectional biomarker weight, but no longitudinal biomarker weight; documented official ID transformations for cross-wave linkage.
+- Documented that Wave 3 provides cross-sectional `Blood_weight` with blood-response adjustment; its `bl_fasting` labels apply only to Wave 3 and cannot be used to infer Wave 1 `qc1_va003` coding.
+- Added the detailed public-safe source review memo and corrected the active plan's later-wave intake status. No models or tests were run; design and independent-review gates remain closed.
