@@ -1,3 +1,9 @@
+# 2026-10-29 Reconcile current input and public-site status
+
+- Rechecked the protected Wave 1 local/server intake, server project plan, GitHub main, and deployed Pages. Server Wave 2 All Data/weights and Wave 3 sample-information/weights/blood inputs are present in private intake; this was a presence check only.
+- Confirmed the public home and candidate-pair index respond with HTTP 200, the deployed app is v194, and the approved association-results payload is still absent (HTTP 404). The site continues to show zero formal association models.
+- Clarified the README and active plan so present input/site status is distinct from earlier dated records. The Wave 1 age and survey-design gates remain open; no participant values, association models, or tests were run.
+
 # 2026-10-29 Document Wave 1 age input sources
 
 - Added a fail-closed protected preparation script that verifies reviewed source hashes and headers, checks respondent-key uniqueness, and joins only official Wave 1 birth-date/calendar/conditional-age fields with interview year/month. The person-level age-input file and exact QA remain in controlled private storage. Conversion and survey-design gates remain unresolved; no age or association model was fitted.

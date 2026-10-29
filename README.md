@@ -1,7 +1,10 @@
 # CHARLS ExWAS Atlas 当前状态（2026-10-29）
 
-> **当前执行计划与实时进度：**[打开“现在正在执行什么、下一步是什么”](audit/ACTIVE_WORK_PLAN_2026-10-29.md#现在正在执行什么2026-10-29-1810)。当前在复核 Wave 1 社区子 PSU/方差设计和105项试点冻结方案；正式关联模型仍为 0。此页是项目当前状态入口。
-> **数据状态更正：**Wave 1 官方 All Data、PSU、Weight、Blood 已入库并通过来源身份/准备表来源核验；下方较早的“等待数据申请/输入缺失”记录为历史状态，当前阻断项是抽样设计审阅，不是缺数据。
+> **当前执行计划与进度：**[打开“现在正在执行什么、下一步是什么”](audit/ACTIVE_WORK_PLAN_2026-10-29.md#现在正在执行什么2026-10-29-1810)。当前重点是 Wave 1 分母/年龄、最终 PSU 映射与方差设计准入；Wave 2 已完成受保护的源表重建与框架 QA。正式 CHARLS 关联模型仍为 0。
+> **数据状态：**Wave 1 官方 All Data、PSU、Weight、Blood 已在受保护目录完成来源身份核验和 Wave 1 准备表重建；Wave 2 官方 All Data/权重及 Wave 3 样本信息/权重/血检也已在受保护范围完成相应来源/元数据核验。数据不进入本仓库或公开网站。当前未通过的是分析准入，不是“尚未申请数据”。
+> **线上状态（2026-10-29 21:38，Asia/Shanghai）：**GitHub Pages 首页及候选配对索引均可访问（HTTP 200），当前 `app.js` 为 v194；正式关联结果 JSON 返回 HTTP 404，网站首页显示正式关联模型 0。目录候选数量只描述元数据组合，不代表有效样本或结果。
+
+下文的带日期进度条目保留为历史快照；如与上方当前状态或执行计划不一致，以当前状态和执行计划为准。
 
 **等待期基础设施（2026-10-27）：**9 项官方数据申请已提交并在审核中；审核期内在服务器完成正式分析环境（`env/venv`，`svy 0.35.0` / `pandas 2.3.3` / `pyreadstat 1.3.1` 精确锁定）、**通用 ExWAS 扫描引擎**（[`scripts/exwas_engine.py`](scripts/exwas_engine.py) + [`scripts/run_exwas_scan.py`](scripts/run_exwas_scan.py)，注册表与设计规格外部化、缺权重/PSU 即拒绝、族内 BY/Bonferroni、不可估计假设保留）以及网站**暴露×表型热图**（着色/详情/CSV 下载，仍只读经披露审查的 `association_results_v1.json`）。14 项合成测试与本地 staging 夹具（105 条私有 pilot 行、生产校验器 0 错误、热图 15×7 渲染）通过；本地全套 593 项测试通过。未读取任何 CHARLS 个体记录、未拟合任何真实模型、未发布任何结果；详见[`audit/waiting_period_infrastructure_2026-10-27.md`](audit/waiting_period_infrastructure_2026-10-27.md)。
 
