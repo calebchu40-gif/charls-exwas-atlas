@@ -1,8 +1,10 @@
 # CHARLS ExWAS Atlas：执行计划与当前进度
 
-**更新时间：2026-10-29（Asia/Shanghai；Wave 1来源绑定重建与框架键核对）**
+**更新时间：2026-10-30（Asia/Shanghai；Wave 1准入记录校正与子社区映射复核）**
 **项目目标状态：进行中**  
 **当前阶段：Wave 1 调查设计准入复核；通过现行准入的正式模型仍为 0**
+
+**2026-10-30 最新状态：**Wave 1官方来源身份已由用户确认；修正了入库清单中一条过期的“等待人工确认”备注。受保护的 `Community.sub_commuID` 汇总核对显示它不能充当 respondent-to-final-sub-PSU 跨表键。上轮对历史试点的“范围不匹配”结论也已更正：按暴露字段、表型字段及具体对比项核对后，登记与历史输出的键范围吻合，但仍不验证模型、权重、年龄域或方差有效性。正式模型数仍为 0。线上首页 HTTP 200，关联结果 JSON HTTP 404。下一阶段依次是冻结 Wave 1 年龄/目标域与方差方案、完成独立方法审查、再复核105项试点；随后才扩展 K=150/K=90 和其他波次。
 
 **2026-10-29 年龄转换进展：**CHARLS 官方 `lunar2solar` 帮助明确说明转换基于 `python-lunardate`。新增可复用的纯合成域审计，穷举其文档范围并比较本机固定的 0.1.4/0.1.5 源码：普通历49,949项、闰月1,521项，合计51,470项；两版映射键完全一致、共享键输出差异0项，计数恰与官方 `.mmat` 两矩阵的行数相同。这是来源/范围一致性证据，不是对 `.mmat` 的逐值比较。Wave 1 问卷没有记录闰月的独立字段；参与者年龄尚未派生，年龄算法仍需冻结闰月/不完整日期路由并作方法审查。审计脚本 [`scripts/audit_lunardate_release_domain.py`](../scripts/audit_lunardate_release_domain.py)，汇总证据见 [`lunar_conversion_candidate_synthetic_crosscheck_2026-10-29.md`](lunar_conversion_candidate_synthetic_crosscheck_2026-10-29.md)。
 
@@ -209,3 +211,7 @@ A metadata-only key audit compared the historical exploratory result files with 
 ## 2026-10-29 — Corrected contrast-level reconciliation
 
 The initial pair-scope audit keyed only on broad exposure concepts and phenotype concepts, which collapsed distinct questionnaire contrasts and produced a false mismatch. Reimplemented the audit at the registered exposure field × phenotype field × contrast level. The historical water pilot matches its registered water subset, and the extension matches the full registered 105-contrast scope. This confirms key-set coverage only; it does not assess estimates, model validity, design validity, or release approval. The earlier mismatch statement in the preceding progress entry is superseded by this correction. Formal approved model count remains zero.
+
+## 2026-10-29 — Reconcile Wave 1 source-review note and sub-community linkage
+
+Corrected a stale `agent_note` in the protected intake manifest that still said human source confirmation was pending, despite the manifest's verified source-review status and the account holder's recorded confirmation. This is a note-only correction; source fingerprints and the prepared-data manifest ID are unchanged. A restricted aggregate-only check of the official Community module's `communityID`/`sub_commuID` fields confirms that this sparse community-table field is not a respondent-level final sub-PSU crosswalk. The logged result is in the protected local QA directory. No geography labels or identifiers were emitted. The official guide's staged sub-neighborhood weight factor does not by itself resolve variance cluster membership; design admission remains closed.
