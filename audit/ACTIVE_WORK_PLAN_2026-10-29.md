@@ -4,6 +4,8 @@
 **项目目标状态：进行中**  
 **当前阶段：Wave 1 调查设计准入复核；通过现行准入的正式模型仍为 0**
 
+**2026-10-29 农历年龄实现复核补充：**已逐行审阅 CHARLS 官方 `lunar2solar` 的 `.ado/.sthlp` 及 `.mmat` 文件头。该 Stata 程序用官方二进制 Mata 查找表分别处理普通农历日和闰月；当前本机与服务器 PATH 均未发现 Stata 可执行程序。实现细节、不可直接用 Python ad hoc 解析 `.mmat` 的原因及受保护年龄派生的下一步见 [`charls_official_lunar_conversion_implementation_review_2026-10-29.md`](charls_official_lunar_conversion_implementation_review_2026-10-29.md)。年龄构造仍未获准/冻结，未读取受访者生日、未运行转换或关联模型。
+
 本文件是本项目当前执行计划的单一状态页。每次完成阶段或遇到新阻塞时更新。GitHub 只存代码与本计划，不存 CHARLS 个体数据或受限分析输出。
 
 ## 现在正在执行什么（2026-10-29）
@@ -40,7 +42,7 @@
 - **县级键拓扑受控 QA**：只使用受保护 Wave 1 `PSU.dta` 的省、市与社区键汇总结构，未读取个人分析表。省/市文本标签不是官方县级抽样单元的一对一键，不能据此构造县级 strata 或 first-stage PSU。准确聚合数和方法注记只存于本机受控 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\qa_outputs\`；GitHub 文档仅记录不含计数和地名的审慎结论。
 - **官方 Codebook 字段清单交叉核验**：2011 Codebook PSU 节（印刷页1340–1341）列明 `communityID`、`province`、`city`、`urban_nbs`、`areatype`，没有县级 sample-unit ID/strata；与实际 `PSU.dta` 表头相符（版本字段仅作发布元数据）。详细来源核对已加入 [`wave1_official_design_file_inventory_review_2026-10-29.md`](wave1_official_design_file_inventory_review_2026-10-29.md)。
 - **状态更正（2026-10-29 19:39）**：本机受保护入库现有 Wave 1 四件套、Wave 2 PSU/权重（官方文档319/318）、Wave 3 样本信息/权重/血检（1151/1152/2088）、Wave 4 权重/样本信息（2106/2107）和 Wave 5 权重/样本信息（2210/2209）。Wave 2 PSU表头及新增五个 Wave 3–5 设计包先与服务器私有清单中的 SHA-256 比对，服务器清单显示其已通过官方 SHA-1 校验，然后仅做 Stata metadata-only 表头审核。机器可读报告和原始包均仅存受控本机/服务器目录。官方逐波权重解释见 [`multwave_official_weights_blood_source_review_2026-10-29.md`](multwave_official_weights_blood_source_review_2026-10-29.md) 和 [`multwave_weight_estimand_matrix_v1.md`](multwave_weight_estimand_matrix_v1.md)。独立方法审阅目录仍空；正式关联模型未获准。Pages 首页 HTTP 200，`association_results_v1.json` HTTP 404。
-- 下一动作：在不读参与者答案的前提下，完成 Wave 1 15项血液表型的有效值/尺度候选规则逐项来源审查，并区分官方检测范围、分析阈值与特殊缺失码；同步收敛县级/分层/最终子 PSU 方差裁决及空腹字段来源审查。任何真实模型仍须先通过逐波设计方法独立审查、冻结方案与 disclosure gate。
+- 下一动作：并行推进两项未决方法门：①为生日历法转换取得受保护环境可用的 Stata 执行路径，或设计经官方查找表验证的实现；先用合成日期验证，再审核 CHARLS DOB 路由/日期优先级/年龄域；②收敛县级分层与最终子 PSU 方差裁决及空腹字段来源审查。任何真实模型仍须先通过逐波设计方法独立审查、冻结方案与 disclosure gate。
 
 - **官方抽样文件清单补查**：CHARLS Wave 1 官方公开数据页列有 All Data、PSU、Weight、Community、Blood 等，但未列独立 Sample Information、复制权重或方差层文件；2018 User's Guide 所述 Sample_Info 是回应/横截面/死亡/访谈日期元数据，不能外推成Wave 1子PSU映射。详细证据及限定见 [`wave1_official_design_file_inventory_review_2026-10-29.md`](wave1_official_design_file_inventory_review_2026-10-29.md)。当前调查设计门仍未通过。
 

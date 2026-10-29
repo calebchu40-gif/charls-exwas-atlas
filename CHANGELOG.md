@@ -1312,3 +1312,9 @@ This file records project-level changes that affect reproducibility, methods, da
 
 - Updated the Wave 1 pilot's data path to honor `CHARLS_EXWAS_DATA_DIR` and documented the new source-bound metadata state. This allows a versioned protected Wave 1 rebuild to be selected without overwriting or globally changing the multiwave prepared-data directory.
 - The fail-closed provenance, survey-design, age, frozen-plan, independent-review, and disclosure gates are unchanged. No association model or test suite was run.
+
+# 2026-10-29 — Review the official CHARLS lunar-to-solar implementation
+
+- Inspected the pinned CHARLS-maintained Stata `.ado`, help file, MIT license, and binary Mata lookup-table header. Documented its ordinary/lunar-leap lookup behavior, supported string-date interface, provenance requirements, and why a production Python port cannot be assumed equivalent without validation.
+- Confirmed no Stata executable is available on the current local or private server PATH. No participant DOB values were read, no conversion/age derivation or association models were run, and no tests were run.
+- Added `audit/charls_official_lunar_conversion_implementation_review_2026-10-29.md` and updated the active plan. Next: establish an authorized Stata execution path or validate an independent implementation against the pinned official lookup using synthetic dates before deriving any participant age.
