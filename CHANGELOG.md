@@ -1,3 +1,14 @@
+# 2026-10-29 Correct Wave 2/3 public wave overview
+
+- The public wave timeline incorrectly said Wave 2 collected no biomarkers and Wave 3 blood data were locally absent. It now distinguishes Wave 2 anthropometric Biomarker measurements from venous-blood laboratory testing and reflects the protected Wave 3 archive intake/preflight without implying analysis approval.
+- This is a documentation correction; no individual data or private intake identifiers were added.
+
+# 2026-10-29 Clarify Wave 2 anthropometric biomarker weight target
+
+- The official Wave 2 release note identifies `Biomarker.dta` as anthropometric measurements and describes a cross-sectional `Biomarker_weight` adjusted for biomarker response; it does not provide a longitudinal biomarker weight.
+- Updated the wave/estimand matrix, module-level crosswalk and deterministic metadata builder to show this as the document-supported candidate only for Wave 2 cross-sectional pairs involving a Biomarker-module field. Pair eligibility, exact field placement, sample/age domain and variance remain open.
+- No respondent values, merges, models or tests were run.
+
 # 2026-10-29 Bound the CHARLS forum variance guidance
 
 - Added a source-qualified note on the CHARLS data-user forum administrator's historical response: it describes multistage PPS and says the clustering level depends on the research question, but does not specify Wave 1 strata/PSU variables or endorse the proposed code in that thread.

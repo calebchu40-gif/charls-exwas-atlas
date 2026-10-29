@@ -27,8 +27,8 @@ WAVE_RULES = {
     "2013": {
         "sample_marker": "Weights archive crosssection/longitudinal indicators; module participation and any required baseline-ID transformation must also be checked",
         "estimand_start": "Wave-specific cross-sectional target by default; longitudinal estimand requires a separate risk set and attrition specification",
-        "weight_candidates": "INDV_weight_ad2 for eligible cross-sectional interview outcomes; Biomarker_weight only for modules whose release target matches",
-        "weight_gate": "Module-level target/applicability and transformed-ID join not independently approved",
+        "weight_candidates": "INDV_weight_ad2 for eligible cross-sectional interview outcomes; Biomarker_weight for cross-sectional pairs with a measure from the official Biomarker.dta target (verify crosssection and pair-level eligibility); no released longitudinal biomarker weight",
+        "weight_gate": "Official weight purpose is documented for the Biomarker module; exact pair eligibility, file linkage, sample flags, age domain, and survey variance remain unapproved",
         "runner": "No Wave 2 association runner or frozen configuration",
     },
     "2015": {
@@ -95,6 +95,17 @@ def main() -> None:
     for (wave, _), group in sorted(groups.items(), key=lambda item: (int(item[0][0]), item[0][1])):
         wave_rule = WAVE_RULES[wave]
         module = group["modules"].most_common(1)[0][0]
+        module_weight_candidates = wave_rule["weight_candidates"]
+        module_weight_gate = wave_rule["weight_gate"]
+        if wave == "2013" and "biomarker" in module.casefold():
+            module_weight_candidates = (
+                "Biomarker_weight for cross-sectional pairs using a measure from the official Biomarker.dta target; "
+                "verify crosssection and pair-level eligibility; no released longitudinal biomarker weight"
+            )
+            module_weight_gate = (
+                "Official source documents a cross-sectional response-adjusted biomarker weight; exact pair eligibility, "
+                "file linkage, age domain, and survey variance remain unapproved"
+            )
         output_rows.append({
             "wave": wave,
             "source_module": module,
@@ -105,8 +116,8 @@ def main() -> None:
             "candidate_field_count_note": "Unique catalog variable names by candidate role; not analyzed pairs, eligible records, or participant N",
             "sample_eligibility_marker_candidate": wave_rule["sample_marker"],
             "estimand_starting_point_candidate": wave_rule["estimand_start"],
-            "weight_field_candidates_not_approved": wave_rule["weight_candidates"],
-            "weight_applicability_status": wave_rule["weight_gate"],
+            "weight_field_candidates_not_approved": module_weight_candidates,
+            "weight_applicability_status": module_weight_gate,
             "survey_design_status": "Open: module-specific PSU/strata/variance and age-domain method require review",
             "runner_configuration_status": wave_rule["runner"],
         })

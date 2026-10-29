@@ -12,6 +12,7 @@ The companion CSV has one row for each wave and source module represented in `ch
 - Sample markers and weights are wave-level starting points taken from the official target/weight review. They are repeated by module to make unresolved module-level decisions visible; repetition does not confirm that a particular field is eligible for that weight.
 - Every module is marked as requiring module-specific weight and survey-design review. Wave 2–5 have no association runner in the repository. Wave 1's historical runner is exploratory, and the K150/K90 runner remains behind its frozen-configuration and readiness gates.
 - Candidate catalog roles and concept mappings still require field-level source wording, route, valid-code, missingness and harmonization review before a pair can enter a frozen analysis.
+- Wave 2 is now module-specific: for rows whose source module is Biomarker/Biomarker Questionnaire, the generated starting weight is `Biomarker_weight`, because the official Release Note identifies `Biomarker.dta` as anthropometric measurements and defines a cross-sectional response-adjusted biomarker weight. This does not authorize its use for every candidate row or any longitudinal pair; pair-level field placement, `crosssection`, age domain, and variance remain open.
 
 ## Rebuild
 
