@@ -49,3 +49,17 @@ CHARLS 2018 Wave 4 User's Guide 把 Sample_Info.dta 描述为回应状态、横�
 - [CHARLS 2018 Wave 4 User's Guide](https://charls.pku.edu.cn/en/data/User2018.pdf)：Sample_Info.dta 和 PSU 跨波说明；仅用于解释 Wave 4 文档列出的文件用途，不外推 Wave1变量。
 - [CHARLS 2015 Wave 3 数据页](https://charls.pku.edu.cn/en/Data/a2015_CHARLS_Wave_3.htm) 与 [2018 Wave 4 数据页](https://charls.pku.edu.cn/en/Data/a2018_CHARLS_Wave_4.htm)：证明这些后续波次分别发布自己的 Sample Information，不能替代基线字段。
 
+### Source-bound Wave 1 rebuild and component-key reconciliation (2026-10-29)
+
+The current protected intake was rechecked with the metadata-only preflight. The four user-confirmed official Wave 1 files still match the reviewed local SHA-256 fingerprints and official document/source-page entries. The status is `verified_official_source`; this establishes byte/source identity, not the statistical design.
+
+Using that manifest, the current repository preparation script rebuilt a fresh Wave 1 respondent table into a new versioned directory under the protected local CHARLS workspace. The previous prepared tables were left intact. The new table's manifest binds it to the reviewed four-file source set; the source-provenance gate accepts this versioned output. The aggregate-only reconciliation reads only IDs and community keys, writes no identifiers, and remains in the protected QA directory.
+
+The rebuilt person frame has a unique nonmissing respondent ID. The 2011 Codebook's reported nonmissing count for `ind_weight_ad2` matches the National Baseline/Blood Guide target count at the aggregate level. The protected audit further confirms that the Weight file has a residual set of positive adjusted-weight IDs outside the respondent spine; their person-record disposition remains unresolved. All IDs in the released Blood file join to the person frame, and the positive `bloodweight` records align with the Blood Guide's reported complete-sample count. Exact component counts and key differences remain in private QA. This reconciles the published denominator totals at aggregate level, but not every target-person-to-demographic-row link.
+
+The official Blood Data Users' Guide states that `bloodweight` adjusts for household and individual survey nonresponse plus nonparticipation in blood collection. Thus it is the source-supported starting weight for Wave 1 models with blood assay outcomes, subject to pair-specific exposure module completeness and age-domain review. It does not resolve the survey PSU/strata variance problem, nor does it justify applying this weight to every non-blood phenotype.
+
+The official PSU community key also joins, but that does not provide the missing county-stage stratum/selection-unit fields or each respondent's final subcommunity PSU assignment. Therefore `sample_frame_and_denominators`, pair-specific module eligibility, `final_psu_mapping`, and `variance_method_review` remain open; formal model readiness remains `not_passed`.
+
+The reproducible code is [`scripts/audit_2011_official_frame_reconciliation.py`](../scripts/audit_2011_official_frame_reconciliation.py). It requires the reviewed prepared-table provenance, limits raw reads to `ID`, `communityID`, `ind_weight_ad2`, and `bloodweight`, enforces protected-root paths, and emits aggregate-only private JSON. No questionnaire, exposure, or outcome values are read; it does not estimate associations.
+

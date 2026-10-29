@@ -1293,3 +1293,16 @@ This file records project-level changes that affect reproducibility, methods, da
 - Confirmed Wave 2 has preloaded `zba002_*` DOB fields and `ba001_w2_1` confirmation; when the respondent confirms the date, the questionnaire skips `ba002/ba003`. `ba003` therefore applies to the newly reported `ba002` date only and cannot automatically classify the preloaded date as solar/lunar.
 - Wave 1 `ba003` is only a candidate calendar source after exact cross-wave linkage, date agreement, and precedence review. Official lunar-conversion code is available, but conversion cannot be applied until the input date/calendar provenance is established.
 - Added `audit/wave2_age_preload_calendar_review_2026-10-29.md` and updated the active plan. Age construction remains unfrozen; no analysis or tests were run. Formal CHARLS association model count remains 0.
+
+## 2026-10-29 — Source-bound Wave 1 rebuild and frame-key reconciliation
+
+- Re-ran the protected Wave 1 metadata-only intake preflight. All four authorized official files still match the user-reviewed source manifest and stored local fingerprints; no respondent values were read at preflight.
+- Rebuilt Wave 1 from the verified All Data, PSU, Weight, and Blood releases into a new versioned folder under the protected local root. Preserved the prior prepared tables. The new respondent table has source-bound manifest provenance and passed the fail-closed provenance/hash gate.
+- Added a private aggregate reconciliation reading only respondent IDs, community keys, `ind_weight_ad2`, and `bloodweight`; no questionnaire, exposure, or outcome values were read. Official interview/blood-target and `ind_weight_ad2` denominator totals agree at aggregate level; all Blood IDs join to the person spine and the Blood Guide's complete-sample count aligns with positive `bloodweight`. A residual set of positive adjusted-weight IDs remains outside the Demographic_Background spine; exact key counts remain in protected QA. The denominator is only partially reconciled at the person-key level and the design frame is not certified.
+- Updated the provenance gate to read the prepared manifest alongside an explicitly supplied versioned frame, while enforcing that both remain inside the private root. This makes versioned rebuilds auditable without replacing the default legacy table.
+- Added `scripts/audit_2011_official_frame_reconciliation.py` and updated the Wave 1 design inventory, active plan, and changelog. Only AST/static parsing and `git diff --check` were used; no test suite or association model was run. Formal model count remains 0.
+
+## 2026-10-29 — Reconcile Wave 1 blood target and source weight at aggregate level
+
+- The official baseline/blood target total now agrees with the Codebook nonmissing `ind_weight_ad2` total; all Blood-file IDs join to the source-bound person spine, and positive `bloodweight` records align with the official Blood Guide complete-sample denominator. A residual set of positive adjusted-weight IDs remains outside the Demographic_Background spine, so person-key reconciliation is still partial.
+- `bloodweight` is the source-grounded starting weight for blood-outcome pairs, pending pair-specific exposure response and age-domain checks. It does not resolve county strata, split-community final PSU mapping, or variance review; models remain blocked.

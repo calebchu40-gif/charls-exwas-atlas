@@ -130,7 +130,16 @@ def require_verified_wave1_frame(
         raise ValueError(f"Wave 1 analysis gate: root is outside protected storage: {root}")
     intake_dir = root / "incoming_2011_official"
     intake_manifest = _load_json(intake_dir / "intake_manifest.json", "intake manifest")
-    prepared_dir = root / "derived_wave_tables"
+    # Bind provenance to the same immutable/versioned directory as an
+    # explicitly supplied prepared table. This allows a protected rebuild to
+    # be audited without replacing the legacy/default Wave 1 table.
+    prepared_dir = (
+        root / "derived_wave_tables"
+        if data_path is None
+        else require_private_path(data_path).parent
+    )
+    if not prepared_dir.is_relative_to(root):
+        raise ValueError("Wave 1 analysis gate: prepared manifest is outside protected storage")
     prepared_manifest = _load_json(prepared_dir / "prepared_data_manifest.json", "prepared-data manifest")
 
     wave = next((item for item in prepared_manifest.get("waves", [])

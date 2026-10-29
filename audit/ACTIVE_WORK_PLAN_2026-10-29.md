@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas：执行计划与当前进度
 
-**更新时间：2026-10-29（Asia/Shanghai；Wave 2年龄预载/历法路由复核）**
+**更新时间：2026-10-29（Asia/Shanghai；Wave 1来源绑定重建与框架键核对）**
 **项目目标状态：进行中**  
 **当前阶段：Wave 1 调查设计准入复核；通过现行准入的正式模型仍为 0**
 
@@ -11,6 +11,8 @@
 **本次更新：Wave 2 官方包已核验、重建 Wave 2 受访者表并完成受保护的框架 QA。** All Data 整包与官方发布校验值匹配；表头确认 Biomarker 字段与 `crosssection`/`longitudinal`/`Biomarker_weight` 已纳入。重建表、模块合并 QA、权重/标记与人体测量字段覆盖汇总均留在服务器私有目录，文件/目录均限制为所有者访问；没有读取后对外发布记录或统计数。新增年龄来源审查见 [`wave2_age_preload_calendar_review_2026-10-29.md`](wave2_age_preload_calendar_review_2026-10-29.md)：Wave 2 `zba002_*` 是预载出生日期，`ba001_w2_1`确认该日期；回答“是”时跳过 Wave 2 `ba002/ba003`，因此 Wave 2 `ba003` 仅标记新回答的 `ba002` 日期，不能泛化到预载日期。Wave 1 `ba003` 只能在精准跨波链接、出生日期一致性和来源优先级审核后作为候选历法来源。`ba004`仍是出生日期未知/拒答时的条件年龄，不能作为普遍年龄字段。CHARLS目标样本包含45岁以上受访者及其配偶，不能机械按当前年龄≥45筛除所有配偶。官方人体测量问卷还确认993/999是非测量状态，体重有单独的<150 kg资格路由，且QI001题干有“breathing test”文字错误；路由/上下文必须与测量值分开，最终数值有效规则仍待审查。配对资格、模块响应、有效值、年龄、方差和独立审查仍未通过。
 
 **最近完成：Wave 2 官方 All Data 来源/表头核验、Wave 2受保护表重建及框架 QA；Wave 1 家庭环境/血液来源及问卷路由核对；补正公开血液目录中滞后的2015入库状态。**
+
+**Wave 1本轮推进：** 重新运行官方入库的 metadata-only 检查，四件套仍与人工确认的官方来源清单及本地 SHA-256 一致；随后在受保护本机目录新建独立版本目录，从四件套重建 Wave 1 受访者表，旧准备表未覆盖。新表已通过 source-bound provenance gate。受保护的 ID/社区键与官方权重字段聚合核对表明：官方访谈/血检目标总数与 `ind_weight_ad2` 非缺失总数一致；Blood 文件中的全部受检者 ID 能连到新 respondent spine，`bloodweight` 样本数与官方 Blood Guide 一致。Weight 文件仍有少量带正权重的 ID 无法连入 Demographic_Background spine，精确键/数量仅在本机受保护 QA 中；故官方目标分母只算聚合层面部分对账，不能宣称逐人框架完全统一。`bloodweight` 是血检结局的首选权重来源，但不解决PSU/分层方差，也不自动适用于非血液表型或暴露模块非应答。新增 [`scripts/audit_2011_official_frame_reconciliation.py`](../scripts/audit_2011_official_frame_reconciliation.py) 与方法记录 [`wave1_official_design_file_inventory_review_2026-10-29.md`](wave1_official_design_file_inventory_review_2026-10-29.md)。真实关联模型依然为 0，正式执行闸门仍关闭。
 
 **并行多波次推进：Wave 2（2013）源包和受保护 Wave 2 个人表重建已完成。** 官方 Release Note 将 `Biomarker.dta` 定义为人体测量，并将 `Biomarker_weight` 定义为横断面且经生物标志物模块应答调整；它可作为该模块横断面配对的来源支持候选，但不是实验室血检权重，也没有纵向 biomarker 权重。Wave2表以官方 Demographic respondent spine 构建，模块键/行扩张审计和源哈希manifest存放在服务器私有区。年龄域审查确认 `ba004` 仅在不知/拒答出生日期时路由提问；Wave 2抽样目标还包含受访者配偶，不能统一强制年龄≥45。年龄协变量必须按官方出生日期/访谈时间、Wave1链接规则和农历转换审查；具体人体测量字段、权重及剩余门槛见 [`wave2_anthropometry_release_weight_gate_2026-10-29.md`](wave2_anthropometry_release_weight_gate_2026-10-29.md)。配对资格、字段有效值、年龄构造和方差仍需审查。
 - 随后将网站五波概览中两处过期/错误说明改正：Wave 2 确有 anthropometric `Biomarker.dta`（但无静脉血实验室检测），Wave 3/2015 官方血检档案已进入受控入库并完成元数据预检。没有对外暴露本地路径、个体数据或哈希。

@@ -20,6 +20,12 @@
 
 体格测量、血压、肺功能/体能等非血液表型需另按所属模块的资格和权重审核，不能沿用上述 `bloodweight` 决定全部表型的权重。
 
+### 2026-10-29 受保护官方框架/权重核对
+
+从官方 Wave 1 四件套重新构建的版本化受访者表已通过当前 source-manifest/hash gate。受保护聚合审计仅读取 ID、`communityID`、`ind_weight_ad2` 与 `bloodweight`，未读取问卷、暴露或结局取值。CHARLS National Baseline/Blood Users' Guides 报告的 interview/blood target 总数，与 Codebook 报告的 `ind_weight_ad2` 非缺失数一致；本地官方 Weight 文件对应的非缺失 ID 总数也与该公开目标数相符。与此同时，All Data 的 `Demographic_Background` spine 比目标分母少一小组记录，且 Weight 中有正调整权重的记录无法连接到该 spine；精确差异和键留在私有 QA，不能宣布逐人 ID 对账完成。
+
+官方 Blood 文件中的全部 ID 均可连到重建 person spine，`bloodweight` 有效记录总数与 Blood Guide 报告的 complete sample 一致。由此，血液结局分析的官方目标分母/血液完成样本在**聚合层面**得到一致性支持，`bloodweight` 仍是血液结局的首选权重来源；该判断不等于估计设计完整，也不解决年龄域、暴露模块缺失、拆分子 PSU、县级分层或方差方法。目标框门应记为 `partially_reconciled`，而不是 fully passed。模型仍关闭。
+
 ## 3. PSU 与方差估计
 
 CHARLS 官方抽样说明将村/城市社区列为通常的 PSU，并说明大于2,000户的一些大型社区可以将地理子区/原居委会作为 PSU；共30个社区以此方式拆分。官方指南还说明县级单位按地区、城乡类型和人均 GDP 排序后进行系统 PPS 抽样。
