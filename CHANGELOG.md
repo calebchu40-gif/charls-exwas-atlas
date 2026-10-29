@@ -1115,3 +1115,8 @@ This file records project-level changes that affect reproducibility, methods, da
 - GitHub Validate #520 exposed that seven source-review tests depended on the ignored local `audit/raw_variable_catalog_v1.csv`. That file contains local module row counts and source archive names and remains untracked.
 - Added a sanitized 719-field 2011 community inventory with only wave, module, variable code and official field label; updated tests to use it and added a schema/content guard. No respondent records, answer values, frequencies, module row counts or source archive names are included.
 - Local suite: 508 tests pass; public payload and exact 92-lock checks pass; JS syntax/deferred-loader checks and `git diff --check` pass. Remote Validate after the fix is pending. The Part E migration site update is live in Pages Deploy #258 (app v132).
+# 2026-10-29 Make the active execution plan visible
+
+- Promoted the current task and ordered next steps to the top of the public active-plan page and linked it from the repository landing page.
+- Recorded the metadata-only Wave 1 field-name scan: `community.dta` contains `sub_commuID` and `communityID`; 13 other readable modules did not expose a subcommunity field; one module header scan failed for memory allocation and remains unresolved. No respondent values were read.
+- The PSU/variance gate remains open, formal association models remain at zero, and no participant data or restricted outputs were added to GitHub.
