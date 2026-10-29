@@ -1,3 +1,8 @@
+# 2026-10-30 Reconcile current Wave 1 methods review packet
+
+- Corrected the independent review packet so its current 105-hypothesis candidate uses the full official blood target and `bloodweight`, with age 45+ only as a secondary survey domain. The outdated age-45+ primary target, Harmonized CHARLS age, and community-only variance fit are explicitly historical and cannot be used to populate a current readiness record.
+- Marked the 2026-10-26 follow-up plan as a historical snapshot and linked the active plan, because several old statements still said Wave 1 inputs were missing. No data or result files were read, copied, or changed; no association model was run.
+
 # 2026-10-30 Clarify Harmonized CHARLS survey-design wording
 
 - Rechecked the official Harmonized CHARLS Codebook statement that design-adjusted standard errors are supported “where provided by CHARLS.” The wording does not itself provide Wave 1 variance identifiers or an executable design declaration, so the Wave 1 variance gate remains pending independent review.
