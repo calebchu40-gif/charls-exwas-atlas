@@ -1,3 +1,9 @@
+# 2026-10-29 Rebuild the protected Wave 2 respondent frame
+
+- Rebuilt the Wave 2 respondent-level preparation table from the checksum-verified official All Data bundle on the protected server. Unique-ID, source module joins, sample-flag/weight presence and anthropometry coverage QA were written only to protected storage; no person-level data or QA counts were added to the repository.
+- Reviewed the official CHARLS sample description and Wave 2 questionnaire routing: the target includes 45+ selected respondents and their spouses, and Wave 2 adds the reserved 43–44-at-baseline refreshment respondents and partners. Do not apply a blanket current-age-45+ filter to all participants. `ba004` is asked only when birth date is unknown/refused and is not a universal age covariate.
+- Updated the Wave 2 gate memo and active plan. Age construction, pair eligibility, weight target, survey variance, independent review and model approval remain open; no association models were fitted.
+
 # 2026-10-29 Verify the protected Wave 2 All Data bundle
 
 - Located official release item 321 (2013 Wave 2 All Data, release 2015-11-18) in the server's protected raw intake, verified it against the official release checksum recorded in the verified manifest, and staged a permission-restricted copy in a Wave 2-specific private intake folder.
