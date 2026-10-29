@@ -201,3 +201,7 @@ The official CHARLS `lunar2solar.sthlp` explicitly cites `lidaobing/python-lunar
 
 ## 2026-10-29 23:47（Asia/Shanghai）— 限定县级前缀的抽样单元身份
 复核 CHARLS 官方 Sample 页面第55行后，发现必须将上一轮的县前缀结论限定：该页称150个县级单位最初入样，但6个样本社区因行政边界变化落入额外县且未被替换，最终实际地理县级单位数为156。当前 ID 前缀聚合结构为150组、每组对应3个样本社区，与最初入样单元数相符；但现有官方 ID 说明没有明确说该前缀代表“原始第一阶段入样县”还是“最终实际地理县”。因此前缀只能称县级编码/分组候选，不能在独立核实前标记为已确认 first-stage PSU。已更新审计脚本，报告该差异并继续只写私有聚合 QA；更新多阶段设计备忘录。county/community键形态核验仍通过，县级样本单元身份及方差估计仍未通过。没有拟合新模型。
+
+## 2026-10-29 — Private historical pilot scope reconciliation
+
+A metadata-only key audit compared the historical exploratory result files with the predeclared `prior_pilot_overlap` metadata. It found that the register's 105 tagged rows represent fewer unique exposure–phenotype pairs because one pair can have multiple planned contrasts. The historical pilot and extension files do not form an exact set match to the registered overlap: the extension contains pairs outside that registered overlap. Exact aggregate counts are recorded only in the protected local QA report `%LOCALAPPDATA%\\CHARLS_ExWAS_Atlas\\qa_outputs\\historical_pilot_pair_scope_private.json`; no pair IDs, estimates, p-values, or participant values were emitted. This audit does not validate the historical models and does not change the approved real-data model count, which remains zero. Review/freeze the pilot-to-register crosswalk before any attempt to reproduce historical associations.
