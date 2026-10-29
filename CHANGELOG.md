@@ -1286,3 +1286,10 @@ This file records project-level changes that affect reproducibility, methods, da
 - Corrected earlier statements that later-wave design inputs were absent and appended superseding status notes to historical review documents. No model/test was run; formal models remain blocked on sample/weight applicability and PSU/variance/method review.
 
 - Confirmed the official Wave 2 PSU archive (document 319) is byte-identical to the already SHA-1-verified PSU archive from baseline in the private manifest, copied it to protected local intake, and checked only the Stata header. The field set provides no county-stage unit or explicit stratum. Documented this result in the wave-specific source/weight review; no participant data or models were accessed.
+
+## 2026-10-29 — Wave 2 preloaded DOB calendar review
+
+- Compared the official Wave 2 questionnaire routes and Codebook with metadata-only labels in protected Wave 1 and Wave 2 prepared Stata schemas. No respondent values, IDs, or row-level records were read.
+- Confirmed Wave 2 has preloaded `zba002_*` DOB fields and `ba001_w2_1` confirmation; when the respondent confirms the date, the questionnaire skips `ba002/ba003`. `ba003` therefore applies to the newly reported `ba002` date only and cannot automatically classify the preloaded date as solar/lunar.
+- Wave 1 `ba003` is only a candidate calendar source after exact cross-wave linkage, date agreement, and precedence review. Official lunar-conversion code is available, but conversion cannot be applied until the input date/calendar provenance is established.
+- Added `audit/wave2_age_preload_calendar_review_2026-10-29.md` and updated the active plan. Age construction remains unfrozen; no analysis or tests were run. Formal CHARLS association model count remains 0.
