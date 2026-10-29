@@ -1,3 +1,6 @@
+# 2026-10-29 Document Wave 1 age input sources
+
+- Recorded the metadata-only source mapping for age derivation: official birth-date/calendar/self-reported-age fields are in the respondent spine, while interview year/month are in the separately verified Weight file and require a protected ID-validated join. The official questionnaire codes unknown month/day as 0 and has no documented leap-month response. Age conversion and the survey-design gates remain unresolved; no participant dates were processed and no association model was fitted.
 # 2026-10-29 Document Wave 2 anthropometry route and sentinel codes
 
 - Rechecked the official Wave 2 Biomarker Questionnaire against the Codebook and protected bundle headers. Documented 993/999 as nonmeasurement statuses and kept QI/QJ/QK/QL/QM measurement context and the <150 kg weight eligibility route separate from the outcome values.
