@@ -1,3 +1,9 @@
+# 2026-10-29 Review Wave 1 blood estimand and unresolved PSU variance design
+
+- Added an official-source review of the Wave 1 blood target, dedicated `bloodweight`, 45+ domain estimation, unrestricted-age spouse enrollment, and the separate Cystatin C assay subsample. Non-blood phenotypes still require their own module-specific eligibility and weight review.
+- Recorded that CHARLS documents 30 large communities sampled through sub-neighborhood PSUs, while the reviewed released fields do not identify respondent-to-sub-PSU mapping or an explicit variance stratum/replicate weight. The survey-design gate remains closed; no association model was fitted and no CHARLS-derived counts or output files were published.
+- Updated the execution plan with the next concrete action: search for documented sub-PSU/variance fields, then have a clearly labeled community-PSU approximation independently reviewed if official details are unavailable.
+
 # 2026-10-29 Make the active Wave 1 work visible and repair the protected rebuild
 
 - Updated the linked execution plan to show the actual current stage: the Wave 1 protected preparation table has been rebuilt, and sample-frame/survey-design review is now underway. It lists the next gates through the 105-model pilot, K=150/K=90 expansion, multiplicity review, disclosure review, and site release.
