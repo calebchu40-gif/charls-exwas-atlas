@@ -95,3 +95,15 @@ CHARLS 2011 National Baseline Users' Guide 描述县级单位按地区、城乡�
 因此，该论坛答复可作为“权重不自动定义方差、研究者需明确分析聚类层级”的项目组用户支持线索，但不能当作可操作的正式方差规格，更不能据此批准社区聚类、把 `communityID` 设为 strata，或推断完整设计已被还原。现行门槛不变：优先取得可追溯的正式技术规格/键映射；否则由独立复杂抽样审阅人明确裁决一个有限目标总体的社区层近似能否支持内部模型，以及它是否足以支撑 Atlas 发布。审阅记录需说明该方案没有还原官方县级分层/PPS阶段和拆分子社区最终 PSU 归属。
 
 该问答的网页目前可由搜索索引读取，但直接打开论坛时返回 502；因此只记录其索引可见的问答摘要，不将其作为唯一依据。核验的主要设计事实仍来自 CHARLS 官方样本设计页与 Wave 1 Users' Guide。
+
+## 2026-10-29 official sample-frame nuance: realized county units
+
+A fresh read of the current CHARLS official sample page adds a detail relevant to the first-stage design reconstruction: the planned sample selected 150 county-level units, but administrative boundary changes caused six communities to fall within two counties in six counties; those communities were retained, so the page reports 156 final county-level units. The page also states that six of the originally selected 450 communities were replaced for frame/eligibility reasons, following the stated selection procedure.
+
+This means a released `province`/`city` label cannot be presumed to identify the realized first-stage sampling unit, reproduce the original 150-unit PPS draw, or define the implicit sorting strata. Even a future geography-based county crosswalk would need to reconcile the 150 planned selection units, the 156 realized administrative units, six replacements, and boundary changes; administrative labels alone do not supply the sample-design history. The already observed absence of a county-unit key in the Wave 1 PSU release therefore remains a substantive design limitation, not merely a variable-name search issue.
+
+The same official page distinguishes the age screening path: households with members older than 40 could enter screening; a selected person aged 45+ became a main respondent and their spouse was interviewed, while a selected 40–44-year-old was reserved for a future refresher round. Blood User Guide defines the blood target as the full main-respondent-plus-spouse baseline group, so eligibility must follow the released respondent/blood target and not a mechanical `age >= 45` filter.
+
+**Design consequence:** retain the first-stage county design gate as unresolved unless an official crosswalk/design file or written variance specification explains the realized unit mapping. Do not infer county strata from province, city, NBS region, urban/rural, or GDP ordering variables. A parent-community approximation remains a review candidate only, with its target and omitted first-stage variance stated explicitly.
+
+Sources: [CHARLS official Sample page](https://charls.pku.edu.cn/en/About/Sample.htm), [2011 Wave 1 User's Guide](https://charls.pku.edu.cn/en/data/User2011.pdf), [Blood Data User's Guide](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf).
