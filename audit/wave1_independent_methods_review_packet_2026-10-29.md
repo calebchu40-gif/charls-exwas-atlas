@@ -6,6 +6,9 @@
 
 ## 当前可核实的证据
 
+- 官方设计页面/用户手册将 Wave 1 说明为分层多阶段 PPS：县级单位按地区、城乡和 GDP 组织/抽取，再在每个县抽取3个社区；超过2,000户的大社区可拆分子社区作为最终 PSU，约30个社区采用了这一做法。选中45+主受访者后会访问其配偶，因此设计框内存在低于45岁的配偶；分析45+目标域需在设计对象中作 domain/subpopulation，而不能先物理删行。
+- 官方用户手册说明 household/individual weights 来自各阶段抽样概率，并有非应答校正版本；血检另有校正血检非应答的 individual weight。对子社区抽样，权重还乘入子社区占父社区的份额。该权重支持目标点估计权重选择审阅，但不携带每位受访者所属最终子 PSU 的映射，不能单独解决方差估计。
+
 - 用户确认 Wave 1 All Data、PSU、Weight、Blood 来自其获准 CHARLS 账号，对应官方数据项 123、117、118、201。服务器只读来源检查和准备表 provenance/hash 检查通过；该检查核对来源文件清单、Stata 表头和文件哈希，不读取受访者答案。
 - 受保护发行包中15个 All Data 模块的字段名已经逐一检查。`sub_commuID` 只见于社区模块；其余14个模块均没有此字段。社区模块同时含 `communityID`。
 - **键结构更正**：受保护复核发现社区模块的空白 `sub_commuID` 以空格存储。按空白规范化后，子区编号仅见于拆分父社区的多行记录；个体表只有父 `communityID`，不能据此分配这些父社区内的具体子 PSU。此前未处理空白的快速汇总会把空格误作有效值，已更正。完整候选处理矩阵见 [`wave1_variance_estimator_decision_matrix_2026-10-29.md`](wave1_variance_estimator_decision_matrix_2026-10-29.md)。
@@ -62,6 +65,7 @@ Wave 1 官方 Blood User Guide 说明采血前要求过夜空腹，但未空腹�
 
 ## 官方来源
 
+- [CHARLS 官方 Wave 1 样本设计说明](https://charls.pku.edu.cn/en/About/Sample.htm)
 - [CHARLS 官方抽样设计说明](https://charls.pku.edu.cn/en/About/Sample.htm)
 - [CHARLS 2011–2012 National Baseline Users' Guide](https://charls.pku.edu.cn/wenjian/jixiandiaochashujuyonghushiyongshouce2013-04-07.pdf)
 - [CHARLS Blood Sample Users' Guide](https://charls.pku.edu.cn/wenjian/xuejianshujuyonghushiyongshouce.pdf)，尤其是过夜空腹、非空腹样本仍采集以及血糖差异的说明。

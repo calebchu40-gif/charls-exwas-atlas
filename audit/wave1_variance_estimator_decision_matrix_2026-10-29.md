@@ -7,6 +7,8 @@
 
 CHARLS 2011 National Baseline Users' Guide 描述县级单位按地区、城乡和人均 GDP 排序/分层后系统 PPS 抽取；每个县级单位抽取 3 个村/城市社区 PSU。对超过 2,000 户的大型社区，部分社区以地理子区（例如原居委会）作为 PSU，子区按估计人口抽取，子区占父社区的份额进入后续权重构造。指南称共有 30 个社区需要拆分。
 
+本轮再次逐段核对 CHARLS 官方 Sample 页面与 Wave 1 Users' Guide：县级单位的排序/分层变量为地区、城乡、GDP；村/社区以 PPS 抽取；大社区确有以子社区作为后续 PSU 的阶段。官方指南还说明权重由各阶段抽样概率连乘取倒数构成，并区分家庭/个人以及是否校正非应答的权重；血液样本另有校正血检非应答的个人权重。拆分子社区的份额参与点权重构造，但**权重不能替代最终分析 PSU 归属或设计方差变量**。因此，原计划中“不能从公开文件恢复全部正式设计字段”的结论仍成立，不过对官方抽样过程的描述现有更直接的官方文本依据。
+
 受保护服务器中的发行包键结构复核进一步表明：个体记录有 `communityID`，社区模块同时包含 `communityID` 与 `sub_commuID`，但后者只有少数非空子区记录；这些记录位于重复的父社区键下。对空格形式的空值作清洗后，不能把社区模块直接当成完整 respondent-to-sub-PSU crosswalk。个体记录没有 `sub_commuID`，PSU 文件也没有该字段。受保护 QA 中保存精确键覆盖摘要；此公开方法备忘录不复制参与者行数、ID、原始值或文件哈希。
 
 因此，当前证据支持普通村/社区层面的 `communityID` 键，但尚不能识别被拆分社区内每位受访者属于哪个最终抽样子 PSU。该发现修正了“社区表里有 `sub_commuID` 也许能直接映射”的初步猜想：空白值清洗前的快速汇总把空格误计成有效值；校正后仍是拆分父社区内的归属不明。
@@ -39,6 +41,7 @@ CHARLS 2011 National Baseline Users' Guide 描述县级单位按地区、城乡�
 
 ## 官方依据
 
+- [CHARLS 官方 2011 样本设计说明](https://charls.pku.edu.cn/en/About/Sample.htm)，县级排序/分层、PPS、30个拆分社区、45岁主样本及配偶入样规则。
 - [CHARLS 2011 National Baseline Users' Guide](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/CHARLS_nationalbaseline_users_guide.pdf)，抽样设计与权重章节。
 - [CHARLS 2011 Wave 1 官方数据与文档页](https://charls.pku.edu.cn/en/Data/a2011_CHARLS_Wave1__Baseline_.htm)。
 - [项目的 Wave 1 estimand/权重/PSU/方差门槛备忘录](wave1_estimand_weight_psu_variance_gate_2026-10-29.md)。

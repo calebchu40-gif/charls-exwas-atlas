@@ -4,6 +4,11 @@
 - Corrected the stale 2026-10-27 intake statement via an addendum; all four official input roles are now present and source-confirmed, while survey-design and outcome-review gates remain unresolved.
 - Reviewed Blood Stata variable/value-label metadata only; requested assay and fasting fields have variable labels but no attached value-label sets. No respondent observations or association models were read/fitted.
 
+# 2026-10-29 Reconcile official Wave 1 sampling stages and weight scope
+
+- Rechecked CHARLS's official sample-design page and Wave 1 User's Guide: confirmed county-level region/urban-rural/GDP sorting/stratification, PPS stages, 30 large communities split into sub-neighborhood PSUs, and the sub-neighborhood-share contribution to weights.
+- Clarified that biomarker nonresponse weights support weight selection but do not supply respondent-to-final-PSU mapping or resolve design variance. Updated the independent review packet; no real-data associations were fitted.
+
 # 2026-10-29 Review official fasting-code documentation for Wave 1 pilot
 
 - The official Blood User Guide confirms that fasting status is recorded and that glucose can be higher in non-fasting samples, but the official source material reviewed does not map `qc1_va003` numeric codes. The released Stata field has no value-label set, and the searchable official 2013 CodeBook does not contain this Wave 1 blood field. The official 2015 CodeBook maps the analogous `bl_fasting` field to 1=Yes, 2=No; this adjacent-wave evidence is not assumed to establish 2011 coding.
