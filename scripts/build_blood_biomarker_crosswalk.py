@@ -71,8 +71,8 @@ UNIT_SOURCE = {
 rows = []
 for concept, label, domain, v11, v15, unit, note in ANALYTES:
     for wave, variable, module, source_status in [
-        ("2011", v11, "Blood_Assays", "本地目录已核；需结合原始血检文件与 bloodweight"),
-        ("2015", v15, "Blood_Data_2015_Independent_Release", "Official release note confirms the file; local copy is currently absent"),
+        ("2011", v11, "Blood_Assays", "Official Blood source identity verified; field key is present in protected Blood-file header; target/weight applicability, valid-value limits, special codes, and any transformation remain under review"),
+        ("2015", v15, "Blood_Data_2015_Independent_Release", "Official archive is present in protected local intake; metadata-only preflight completed; participant records were not reviewed"),
     ]:
         assay = ASSAY_METADATA_2011.get(concept) if wave == "2011" else None
         assay_status = (
@@ -102,9 +102,9 @@ for concept, label, domain, v11, v15, unit, note in ANALYTES:
         })
 
 for wave, variable, label, desc, weight, status in [
-    ("2011", "qc1_va003", "是否空腹", "采血是否空腹；用于解释血糖/甘油三酯等，不是疾病表型。", "bloodweight", "本地目录已核"),
-    ("2015", "bl_fasting", "是否空腹", "采血是否空腹；用于解释血糖/甘油三酯等，不是疾病表型。", "Blood_weight", "官方发布说明确认；本地当前缺少独立血检文件"),
-    ("2015", "bl_top_coding_tg", "甘油三酯截顶标记", "指示原始甘油三酯超过500 mg/dL后是否按500截顶；质量/处理标记，不是独立表型。", "Blood_weight", "官方发布说明确认；本地当前缺少独立血检文件"),
+    ("2011", "qc1_va003", "是否空腹", "采血是否空腹；用于解释血糖/甘油三酯等，不是疾病表型。", "bloodweight", "Official Blood source identity verified; field key is present in protected Blood-file header; 2011 fasting response codes remain undocumented in reviewed official sources."),
+    ("2015", "bl_fasting", "是否空腹", "采血是否空腹；用于解释血糖/甘油三酯等，不是疾病表型。", "Blood_weight", "Official archive is present in protected local intake; metadata-only preflight completed; participant records were not reviewed"),
+    ("2015", "bl_top_coding_tg", "甘油三酯截顶标记", "指示原始甘油三酯超过500 mg/dL后是否按500截顶；质量/处理标记，不是独立表型。", "Blood_weight", "Official archive is present in protected local intake; metadata-only preflight completed; participant records were not reviewed"),
 ]:
     rows.append({"concept_id": "blood_collection_metadata", "concept_label": label, "domain": "采血/质量标记", "wave": wave,
                  "variable": variable, "module": "Blood_Assays" if wave == "2011" else "Blood_Data_2015_Independent_Release", "unit": "—",

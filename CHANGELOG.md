@@ -1,3 +1,8 @@
+# 2026-10-29 Correct public blood catalog intake wording
+
+- Updated the public blood catalog and its deterministic builder to reflect the verified protected-source intake and metadata-only preflight for 2011/2015, while keeping participant records, module weights, eligibility, valid values and transformations explicitly unreviewed.
+- Removed a stale site statement that the 2015 blood archive was absent. No private path/hash, participant values or association results were added to the public bundle.
+
 # 2026-10-29 Map the wave weight matrix to the current runners
 
 - Added a static compatibility audit linking the wave-specific target/weight matrix to the actual Wave 1 pilot and K150/K90 runners, configuration templates, and the absent Wave 2–5 association runners.
