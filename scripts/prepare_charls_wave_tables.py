@@ -138,11 +138,30 @@ def dta_members(archive: Path, kind: str):
                     yield target
     else:
         with tempfile.TemporaryDirectory(prefix="charls_prep_2011_", dir=scratch_root) as td:
-            result = subprocess.run(["tar", "-xf", str(archive), "-C", td],
-                                    capture_output=True, text=True)
-            if result.returncode:
-                raise RuntimeError(f"Cannot extract {archive.name}: {result.stderr}")
-            yield from sorted(Path(td).rglob("*.dta"))
+            tools = [os.environ.get("UNRAR_PATH", ""), "unrar", "unrar-free"]
+            last_error = "no RAR extractor found"
+            for tool in (item for item in tools if item):
+                name = Path(tool).name.casefold()
+                command = ([tool, "-x", str(archive), td] if "unrar-free" in name
+                           else [tool, "x", "-inul", str(archive), str(Path(td) / "")])
+                try:
+                    result = subprocess.run(command, capture_output=True, timeout=600)
+                except (OSError, subprocess.SubprocessError) as exc:
+                    last_error = str(exc)
+                    continue
+                if result.returncode == 0:
+                    break
+                stderr = result.stderr.decode("utf-8", errors="replace").strip()
+                stdout = result.stdout.decode("utf-8", errors="replace").strip()
+                last_error = stderr or stdout or f"exit {result.returncode}"
+            else:
+                raise RuntimeError(f"Cannot extract {archive.name}: {last_error}")
+            root = Path(td).resolve()
+            extracted = sorted(root.rglob("*.dta"))
+            for member in extracted:
+                if not member.resolve().is_relative_to(root):
+                    raise RuntimeError(f"RAR member escaped protected scratch directory: {member.name}")
+            yield from extracted
 
 
 def abbreviated(module: str) -> str:
@@ -482,6 +501,8 @@ def main():
                        "other_id_mismatch_counts": "unrecognized key retained separately"})
 
         base.insert(0, "wave", int(wave))
+        if base.empty:
+            raise RuntimeError(f"Refusing to write an empty respondent table for wave {wave}")
         # Some CHARLS string-coded fields contain numeric-looking values. Pandas
         # can infer mixed Python objects after joins; normalize those back to
         # strings before writing Stata, preserving missing values.
@@ -489,6 +510,14 @@ def main():
             if base[col].dtype == object:
                 nonmissing = base[col].notna()
                 base.loc[nonmissing, col] = base.loc[nonmissing, col].map(str)
+        # pyreadstat's Stata writer cannot infer a type from an object/StringDtype
+        # column when every row is missing (narwhals raises IndexError while
+        # sampling the first value). Preserve the field and its label, encoding
+        # this no-observation column as Stata numeric missing; no observed value
+        # or category is changed.
+        all_missing_columns = [col for col in base.columns if base[col].isna().all()]
+        for col in all_missing_columns:
+            base[col] = pd.Series(float("nan"), index=base.index, dtype="float64")
         outfile = outdir / f"CHARLS_wave{wave}_person_analytic.dta"
         var_labels = {c: label for c, label in column_labels.items() if c in base.columns}
         temp_outfile = outfile.with_name(outfile.stem + ".tmp.dta")
@@ -499,6 +528,7 @@ def main():
         all_wave_summaries.append({"wave": wave, "rows": len(base), "columns": len(base.columns),
                                    "unique_ID": int(base["ID"].nunique(dropna=True)),
                                    "duplicate_ID": int(base["ID"].dropna().duplicated().sum()),
+                                   "all_missing_columns_encoded_numeric": all_missing_columns,
                                    "output": outfile.name,
                                    "source_archive": source_archive,
                                    "source_inputs": source_inputs,

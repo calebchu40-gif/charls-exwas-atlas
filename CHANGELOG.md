@@ -1,3 +1,9 @@
+# 2026-10-29 Make the active Wave 1 work visible and repair the protected rebuild
+
+- Updated the linked execution plan to show the actual current stage: the Wave 1 protected preparation table has been rebuilt, and sample-frame/survey-design review is now underway. It lists the next gates through the 105-model pilot, K=150/K=90 expansion, multiplicity review, disclosure review, and site release.
+- Fixed Stata export for entirely missing fields by retaining the fields and labels as numeric missing values; added a guard against empty respondent tables. The script was run against the user-authorized source files only in protected server storage. No CHARLS data, participant-level outputs, or association results were added to GitHub or Pages.
+- Formal association models remain at zero until the survey design and analysis-plan gates pass.
+
 # 2026-10-28 Harden generic real-data scan entry
 
 - The generic ExWAS CLI now requires Wave 1 source/readiness gates and a protected authorization record bound to the exact registry and design file hashes. Other waves remain blocked pending wave-specific gates. No CHARLS records were read and no associations were fitted.

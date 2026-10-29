@@ -10,7 +10,9 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
+import subprocess
 import uuid
 import zipfile
 from pathlib import Path
@@ -32,6 +34,9 @@ ROLE_URLS = {
 ROLE_DOCUMENTS = {"wave1_all_data": 123, "psu": 117, "weight": 118, "blood": 201}
 SOURCE_MANIFEST_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{2,63}$")
 STATA_SUFFIXES = {".dta"}
+# The official Wave 1 "All Data" item is served as a .RAR archive; other
+# waves ship .zip. Accept both rather than silently failing discovery.
+ARCHIVE_SUFFIXES = {".zip", ".rar"}
 
 
 def private_input(path: Path) -> Path:
@@ -57,7 +62,11 @@ def discover_file(directory: Path, role: str, explicit: Path | None) -> Path | N
         return None
     candidates = [p for p in directory.iterdir() if p.is_file()]
     if role == "wave1_all_data":
-        matches = [p for p in candidates if p.suffix.casefold() == ".zip"]
+        matches = [
+            p for p in candidates
+            if p.suffix.casefold() in ARCHIVE_SUFFIXES
+            and not any(tag in p.stem.casefold() for tag in ("psu", "weight", "blood"))
+        ]
     else:
         matches = [
             p for p in candidates
@@ -67,19 +76,64 @@ def discover_file(directory: Path, role: str, explicit: Path | None) -> Path | N
     return private_input(matches[0]) if len(matches) == 1 else None
 
 
+def _rar_member_names(path: Path) -> list[str]:
+    """List RAR members without extracting, preferring a pure metadata parser."""
+    try:
+        import rarfile
+    except ImportError:
+        rarfile = None
+    if rarfile is not None:
+        try:
+            with rarfile.RarFile(path) as archive:
+                names = archive.namelist()
+            if names:
+                return [name.replace("\\", "/") for name in names]
+        except (OSError, rarfile.Error):
+            pass
+    candidates = [
+        os.environ.get("UNRAR_PATH", ""),
+        r"C:\Program Files\WinRAR\UnRAR.exe",
+        r"C:\Program Files (x86)\WinRAR\UnRAR.exe",
+        "unrar",
+        "tar",
+    ]
+    last_error = ""
+    for tool in candidates:
+        if not tool:
+            continue
+        command = [tool, "lb", str(path)] if Path(tool).name.casefold().startswith("unrar") or tool == "unrar" \
+            else [tool, "-tf", str(path)]
+        try:
+            result = subprocess.run(command, capture_output=True, text=True, timeout=120)
+        except (OSError, subprocess.SubprocessError) as exc:
+            last_error = str(exc)
+            continue
+        names = [line.strip() for line in result.stdout.splitlines() if line.strip()]
+        if result.returncode == 0 and names:
+            return [name.replace("\\", "/") for name in names]
+        last_error = result.stderr.strip() or last_error
+    raise RuntimeError(f"cannot list RAR members for {path.name}: {last_error}")
+
+
 def audit_archive(path: Path) -> dict[str, Any]:
-    with zipfile.ZipFile(path) as archive:
-        members = archive.infolist()
-        stata_members = [
-            item.filename for item in members
-            if Path(item.filename).suffix.casefold() in STATA_SUFFIXES
-        ]
+    if path.suffix.casefold() == ".rar":
+        member_names = _rar_member_names(path)
+        archive_format = "rar"
+    else:
+        with zipfile.ZipFile(path) as archive:
+            member_names = [item.filename for item in archive.infolist()]
+        archive_format = "zip"
+    stata_members = [
+        name for name in member_names
+        if Path(name).suffix.casefold() in STATA_SUFFIXES
+    ]
     return {
         "file_name": path.name,
         "file_bytes": path.stat().st_size,
         "local_sha256": sha256_file(path),
         "official_checksum": "not listed for this download item on the checked Wave 1 page",
-        "archive_member_count": len(members),
+        "archive_format": archive_format,
+        "archive_member_count": len(member_names),
         "stata_member_count": len(stata_members),
         "stata_member_names": stata_members,
         "archive_contents_extracted": False,
