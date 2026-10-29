@@ -1,3 +1,9 @@
+# 2026-10-30 Prepare direct synthetic parity audit for CHARLS lunar lookup
+
+- Added a Stata-only synthetic date-grid exporter that invokes the pinned official CHARLS `lunar2solar` ado/Mata lookup without opening participant data, plus an aggregate-only Python comparison mode that validates source hashes, key coverage and table dimensions.
+- Documented the execution boundary and protected-output handling. The workflow is prepared but not executed because a Stata runtime is not available on the checked workstation or private server; official matrix parity and the age-method gate remain unresolved.
+- No participant data, age derivation or association model was used. Formal approved association count remains zero.
+
 # 2026-10-29 Reconcile current input and public-site status
 
 - Rechecked the protected Wave 1 local/server intake, server project plan, GitHub main, and deployed Pages. Server Wave 2 All Data/weights and Wave 3 sample-information/weights/blood inputs are present in private intake; this was a presence check only.
