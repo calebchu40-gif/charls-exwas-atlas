@@ -1,3 +1,7 @@
+# 2026-10-30 Refresh official methods inquiry draft
+
+- Marked the older support draft as historical because its Wave 2 weight-file request is obsolete. Added a current unsent draft focused on unresolved Wave 1 variance/PSU, bloodweight target, fasting-code and lunar-age definitions, plus later-wave design fields. It contains no microdata or account credentials and was not sent.
+
 # 2026-10-30 Correct conservative Wave 1 age interval bounds
 
 - Broadened provisional year-only age lower bounds for lunar or calendar-unresolved birth dates to account for a possible one-year lunar-to-Gregorian birth-year offset plus unknown interview day. Regenerated the protected candidate age intervals; no participant-level output was added to the repository. Method and survey-design gates remain open.

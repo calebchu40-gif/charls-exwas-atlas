@@ -1,5 +1,7 @@
 # CHARLS 抽样设计与权重官方咨询稿（未发送）
 
+> 历史版本：Wave 2 `Weights.dta` 及多波次部分设计文件现已入库并完成来源/表头审核；本稿中“仍缺 Wave 2 Weights.dta”等内容已过期。当前可用问题请见 [`current_charls_official_inquiry_draft_2026-10-30.md`](current_charls_official_inquiry_draft_2026-10-30.md)。本稿从未发送。
+
 日期：2026-10-24  
 状态：供项目负责人使用其本人获准的 CHARLS 账号或官方支持渠道发送；本项目未代发邮件、未提交数据访问申请，也未附带任何受访者数据。
 
