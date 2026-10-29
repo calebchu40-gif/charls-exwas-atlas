@@ -1386,3 +1386,9 @@ This file records project-level changes that affect reproducibility, methods, da
 - Strengthened age-input provenance with a hash of the protected age-input file, then added a source/hash-guarded derivation that stores only lower/upper completed-age bounds and source-route labels under the protected local root. It accounts for missing interview day and unmarked leap-month ambiguity, preserves unresolved dates, and never filters the frame by candidate age.
 - Generated and header-checked the private candidate table locally. It is not model-approved; Wave 1 variance and age-method review gates remain open, and no associations or public results were produced.
 
+
+# 2026-10-29 Recover Wave 1 county-unit candidate from official ID coding
+
+- Added a protected aggregate audit for the official Wave 1 identifier rule: first six household-ID digits identify county-level units, the seventh identifies community, and person IDs extend the household ID. The audit binds to the verified prepared-data manifest and official PSU file hash; it prints no identifiers or row-level data.
+- Reproduced the key consistency audit locally and on the private server. This recovers a county-prefix candidate key and corrects the earlier assumption that no county-unit key was available. It does not recover implicit strata/PPS ordering or respondent-to-subcommunity membership, and it does not approve a variance estimator.
+- Retrieved the official CHARLS lunar2solar Mata matrix to protected reference storage. It matches the pinned upstream commit; exact matrix parity remains pending because no licensed Stata/Mata runtime is installed locally or on the private server.

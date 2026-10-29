@@ -28,9 +28,11 @@ CHARLS 2011 National Baseline Users' Guide 描述县级单位按地区、城乡�
 
 此前矩阵主要比较社区 PSU 的完整/近似方差处理。本轮把官方设计中的**县级抽样层**单独纳入：CHARLS 设计说明为县级单位按地区、城乡、GDP组织后抽取，再在县内抽取社区。已审 PSU 文件的表头包含 `communityID`、省/市名称、NBS 城乡/地区类型与版本，没有明显命名为 county sampling-unit ID 或 stratum ID 的变量。省/市名称字段不能未经唯一性与层级核验就当作县级抽样单元；地区/城乡等排序变量也不能直接当作实际方差层。
 
-如果能从已发布键中经官方代码本确认县级样本单位，可评价县/社区嵌套多阶段设计近似；但须同时评估县级 PPS、系统抽样/隐式分层、社区层 PPS、30个子社区 PSU 和最终 respondent linkage。当前证据不足以指定该近似或称其为完整设计。审阅人须明确各抽样阶段采用何种 PSU、strata、FPC/WR 近似与自由度。
+此前按 PSU 表字段审查时，没有发现单列 county sampling-unit ID。现已重新核对官方用户手册的 ID 编码章节：9 位 household ID 前六位编码省、市、县并区分县级单位，第七位编码县内村/社区；个人 ID 在 household ID 上增加两位。见[CHARLS 2011 National Baseline Users' Guide](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/CHARLS_nationalbaseline_users_guide.pdf)。
 
-受控 PSU 文件键拓扑 QA 进一步确认：省/市文本组合并非官方县级样本单位的一对一标识；不能用 `city` 名称单独重建县级层或 first-stage PSU。精确聚合值及 QA 说明只保存在本机 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\qa_outputs\`，不进入公开仓库。若需要完整或县/社区嵌套设计，仍须有官方 county-unit crosswalk/正式 strata 字段；否则由独立审阅人决定可接受的降阶近似。
+据此新增 `scripts/audit_wave1_county_prefix_design.py`，绑定已复核的 Wave 1 prepared manifest 与官方 PSU 文件哈希，只读取受保护 person ID、household ID、community ID 和 PSU community ID，核验编码前缀与 respondent-community 覆盖。受保护本机和服务器结果均通过前缀一致性核验；县级候选键及县内社区结构与官方手册描述的基线抽样结构一致。精确聚合计数只保存在 owner-only QA 中，不输出编码值或逐行记录。
+
+这修正了此前“缺少县级候选键”的结论：官方编码规则支持一个县级抽样单位候选键，且它可从 CHARLS ID 复现；它不是行政区县名 crosswalk。当前可评价“县级候选键—communityID”嵌套结构，但仍未恢复县级系统 PPS 的抽样顺序/尺寸和隐式分层，也没有拆分社区到 respondent 的最终 sub-PSU 映射。故仍不能声称完整恢复了 CHARLS 方差设计或放行关联模型；需明确近似与推断范围。
 
 此结论现有公开官方 codebook 交叉验证：2011 Codebook 的 PSU 节（印刷页1340–1341）仅列 `communityID`、`province`、`city`、`urban_nbs` 与 `areatype`；没有县级抽样单位 ID 或显式方差层字段。Wave 1 `PSU.dta` 实际表头另有版本元数据，但也未显示县 ID/strata。官方页面列出的 PSU 产品见[CHARLS 2011 Wave 1 数据页](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)。
 
@@ -50,13 +52,14 @@ CHARLS 2011 National Baseline Users' Guide 描述县级单位按地区、城乡�
 
 另对照 `svy` 官方[多阶段抽样文档](https://svylab.com/docs/svy/tutorials/multistage.html)：包支持按三阶段抽样链生成设计/权重；其文档描述的方差使用 ultimate-cluster approach，即按首阶段 PSU totals 在 strata 内估计，较低阶段分层进入权重但不作为方差分层。**能构造三阶段抽样权重不等于能恢复 CHARLS 实际抽样框、县级 strata 或最终子社区到个人的归属。**如以社区为 ultimate cluster，须把它表述为社区层估计目标/近似，并由审阅人判断对 CHARLS 目标总体及拆分社区是否成立。
 
-因此，方案 A（按 CHARLS 已说明的各抽样层级完整恢复设计）目前受县级/分层/最终子 PSU 数据键缺口阻断；是否需要扩展 GLM 执行器要依据审阅结论确定。方案 B 也不能仅靠把 `communityID` 填入 `psu_field` 自动获准；若审阅人认为单层社区 ultimate-cluster 近似对预先定义的 estimand 可接受，需先冻结近似设计解释、总体目标和敏感性计划，并确认拆分社区与设计自由度处理。不得使用普通模型标准误伪装设计方差。
+因此，方案 A（完整恢复全部官方设计阶段与方差所需信息）仍受县级隐式分层/系统 PPS 信息及最终子 PSU respondent 映射缺口阻断；但县级候选键已有官方编码规则和受保护键核验依据。是否扩展 GLM 执行器要依据审阅结论确定。方案 B 也不能仅靠把 `communityID` 填入单一 `psu_field` 自动获准；需评估 county-prefix 与 community 的嵌套表达、近似目标总体、方差自由度及拆分社区处理。不得使用普通模型标准误伪装设计方差。
 
 这项代码缺口属于实现能力判断，不是统计方法批准。当前正式分析仍关闭。
 
 | 方案 | 做法 | 可支持的解释 | 主要风险/限制 | 当前状态 |
 |---|---|---|---|---|
 | A. 官方完整设计 | 使用 CHARLS 对应 2011 受访者/家庭到最终子 PSU 的映射、正式分层及适用的抽样阶段信息；按官方建议指定方差 | 最接近目标抽样设计的设计型推断 | 当前公开发行包/已审材料未提供完整跨表映射、方差层或复制权重；不能从地理变量推造 | 首选；需可追溯官方证据 |
+| A1. 县级编码键—社区嵌套候选 | 用用户手册定义的 ID 前六位作县级候选键、用 `communityID` 作县内社区键；将其作为多阶段设计候选输入 | 保留官方文件可复现的县/社区层级；是否足以做设计型推断须裁决 | 未恢复隐式分层、系统 PPS 排序/尺寸及拆分社区内 respondent-to-sub-PSU 映射 | 键核验通过；设计未批准 |
 | B. 父社区聚类近似 | 对可识别的普通 PSU 使用 `communityID`；对拆分父社区不猜测子区归属，暂以父社区聚为一个 cluster；权重仍按结局/目标人群的官方定义 | 只能作为明确标记的近似加权关联；点估计和不确定性都须按该近似重新解释 | 将多个被抽子 PSU 合并会改变方差结构；缺少显式分层且隐式排序不能直接还原为正式 strata；FPC/阶段信息不足 | 仅供独立复杂抽样审阅，不自动放行 |
 | C. 按子区均分/任意分配 | 将父社区内 respondent 平均分到子 PSU，或按社区表顺序/城乡/地理变量分配 | 无 | 伪造抽样单元归属，改变 cluster 数及方差；无法由已发布键证明 | 禁止 |
 | D. 删除拆分父社区 | 删除无法归到子 PSU 的父社区记录后估计 | 变成被人为删减且需重新构造权重的样本 | 设计选择与应答权重不再对应；可能造成选择偏差和目标总体变化 | 不可作为默认处理 |
@@ -64,8 +67,8 @@ CHARLS 2011 National Baseline Users' Guide 描述县级单位按地区、城乡�
 
 ## 需独立审阅人回答的门槛问题
 
-1. 在缺少子 PSU 个体映射的情况下，方案 B 把拆分父社区合并成父社区 cluster，是否能作为内部探索性估计？若可以，目标总体、标准误、自由度和局限应如何表述？若不可以，应停止设计型推断还是仅报告无推断性描述？
-2. 官方县级 PPS 与县内社区 PPS 应如何进入多阶段方差估计？对发布数据中的省/市名称、NBS 区域字段，可否建立抽样 county unit、实际 strata 和系统抽样排序的可靠映射？若不能，哪一级近似可接受、哪些阶段须声明未建模？
+1. 已有官方编码支持的县级候选键及县/社区嵌套关系，但缺少抽样顺序/尺寸和显式 strata 时，哪种多阶段方差近似可支持预先定义的 estimand？目标总体、标准误、自由度与未建模阶段应如何表述？
+2. 县内三个社区及拆分社区子区的方差贡献如何处理？拆分社区到 respondent 的映射是否为最低准入条件；若取不到，哪些推断/发布范围必须受限？
 3. 县级抽样的“排序/分层”变量不等同于发布的方差层。没有确切分层标识时，无显式 strata 的 Taylor with-replacement 近似是否可接受？单 PSU/domain-empty 处理、自由度和有限总体修正如何规定？
 4. 权重中对子区相对父社区份额的调整，是否足以支持点估计；它对方差估计缺失的子 PSU 归属有何影响？权重不能被视为方差结构的替代。
 5. 对家庭暴露，同一家庭多名受访者以及社区暴露的 cluster-level 变异如何体现在 PSU 方差中？
@@ -73,7 +76,7 @@ CHARLS 2011 National Baseline Users' Guide 描述县级单位按地区、城乡�
 
 ## 建议的决定顺序
 
-1. 继续只接受有官方来源的 2011 子 PSU 映射、正式方差层/复制权重或 CHARLS 方差估计建议；不再将后续波次 Sample_Info 当成基线替代。
+1. 保留已验证的县级编码前缀和社区候选键，继续查找有官方来源的拆分子 PSU respondent 映射、正式方差层/复制权重或 CHARLS 方差估计建议；不将后续波次 Sample_Info 当成基线替代。
 2. 将方案 B 作为需要审阅的 fallback，而不是默认批准方案；审阅记录须绑定 Wave 1 来源清单、准备表、冻结的目标/权重方案与执行器版本。
 3. 独立复杂抽样审阅人明确批准的只是“方法可以进入内部试点”或“仅可作描述/探索”，不能默认批准公开发布。
 4. 方差审查通过后，再解决血糖/甘油三酯 `qc1_va003` 官方代码、空腹规则、105 项假设族及结局量纲，并完成方案冻结；随后才复核/拟合真实试点。

@@ -187,3 +187,9 @@ The official CHARLS `lunar2solar.sthlp` explicitly cites `lidaobing/python-lunar
 服务器已使用当前源绑定脚本，在版本化私有目录完成 Wave 1 respondent 表重建；本机与服务器重建表的行列规模一致，字段名集合一致，但 DTA 字节哈希不同，故不宣称文件字节一致。后续对受保护年龄候选表按 ID 排序、规范化有限候选列后计算内容摘要，本机与服务器摘要一致，表明年龄候选逻辑内容一致；摘要不包含可读 ID 或个体值。双方均保留各自在受控目录中的私有文件。
 
 本轮确认本机和服务器的受保护 Wave 1 四件套仍在位；服务器新重建目录和年龄输入/候选表均存在且私有目录权限为 owner-only。年龄候选仅是尚未审查的方法实现；尚未通过官方 `.mmat` 逐项对照、条件自报年龄可比性审查、45+ survey domain 审查，也未解决最终 PSU/方差设计。未加载暴露或结局，未运行任何正式关联模型，模型数仍为 0。下一步先将当前计划与方法审查记录同步到私人服务器，并继续依据官方样本设计材料审阅 PSU/方差候选；任何方法门未通过前不拟合真实关联。
+
+## 2026-10-29 23:39（Asia/Shanghai）— 纠正 Wave 1 县级键判断并补齐官方转换矩阵来源
+
+重新完整阅读官方 Wave 1 Users' Guide 的 ID 章节后发现：9 位 household ID 的前六位依次标识省/市/县，第七位标识县内社区，个人 ID 在 household ID 基础上增加两位。新增 `scripts/audit_wave1_county_prefix_design.py`，以已审核的 prepared-table manifest 与官方 PSU 文件 SHA-256 为前置门，在受保护本机和私人服务器核验 person/household/community 前缀、社区键覆盖和县/社区拓扑；两端均通过，且结构符合官方指南的抽样框描述。该结果提供可重建的 county-prefix 候选键，修正此前只因 PSU 表没有单列 county ID 而认为县级键缺失的判断。它仍不能恢复隐式分层与县级系统 PPS 顺序/尺寸，也不能建立拆分社区到 respondent 的最终 sub-PSU 映射；方差准入仍未通过。
+
+另外，官方 `charls-data/lunar2solar` 仓库确实包含 `lunar2solar.mmat`。已将该文件下载到受保护参考目录，并核对当前仓库文件与项目已固定的上游 commit 文件字节相同。该文件为 Mata 二进制矩阵；本机和私人服务器均未找到 Stata 可执行程序，因此仍不能读取官方表并做逐项转换 parity。先前“官方 `.mmat` 未找到”的描述更正为“文件已找到，但缺少授权 Stata 读取能力”。未处理新增受访者日期，未加载暴露/结局，未拟合关联模型。

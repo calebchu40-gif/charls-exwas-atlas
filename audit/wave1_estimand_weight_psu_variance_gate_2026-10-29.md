@@ -66,3 +66,7 @@ CHARLS 官方抽样说明将村/城市社区列为通常的 PSU，并说明大�
 - 项目已有源材料：`sources_official/CHARLS_2011_National_Baseline_Users_Guide_extracted.txt`、`sources_official/CHARLS_2011_Blood_User_Guide_extracted.txt`、`sources_official/CHARLS_2011_Codebook_extracted.txt`。
 
 本审查没有纳入参与者记录、个人级统计、匹配率、样本计数或分析结果。与重建文件有关的结构性核验明细留在服务器受保护 QA 区。
+
+## 2026-10-29 county-key correction
+
+The official Users' Guide states that the first six digits of Wave 1 household IDs encode province/city/county and distinguish county-level units; the seventh identifies the within-county community, with two additional respondent digits in person IDs. A source/hash-guarded protected audit matched these prefixes across the prepared respondent table and official PSU community map on both local and private-server copies. This supplies a county-unit candidate key and corrects the earlier statement that the public PSU fields plus identifiers left the county key unavailable. It does not supply explicit/implicit variance strata, county PPS selection order/size, or the missing respondent-to-subcommunity map. The survey-design gate remains closed pending method review.

@@ -30,3 +30,7 @@ The interval is a measurement-error representation, not a replacement for the ex
 - Protected official age-input preparation: [`scripts/prepare_wave1_official_age_inputs.py`](../scripts/prepare_wave1_official_age_inputs.py).
 - Protected provisional age-interval derivation: [`scripts/derive_wave1_age_intervals.py`](../scripts/derive_wave1_age_intervals.py).
 - Earlier source and calendar-route review: [`charls_official_lunar_conversion_implementation_review_2026-10-29.md`](charls_official_lunar_conversion_implementation_review_2026-10-29.md).
+
+## 2026-10-29 source availability correction
+
+The official `lunar2solar.mmat` is present in the CHARLS-maintained GitHub source repository. It was downloaded only to the protected local reference directory; the pinned project-reviewed commit and current upstream file are byte-identical. The file is Stata Mata binary serialization, not a text table. Neither the local workstation nor private server currently has a Stata executable, so no direct cellwise read/compare against the official mapping has been completed. The earlier status “official `.mmat` not found” is corrected to “official `.mmat` found; exact parity remains pending a licensed Mata reader.” The exhaustive Python-source-domain comparison remains supporting evidence only.
