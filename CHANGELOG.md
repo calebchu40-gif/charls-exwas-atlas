@@ -9,6 +9,11 @@
 - The blood biomarker crosswalk still described the official 2015 blood archive as locally absent. Reconciled the catalog against the protected local intake and existing metadata-only preflight record, then corrected the status for its 18 Wave 3 analyte entries.
 - Clarified in the active plan and runner compatibility audit that the source archive is present while analysis eligibility, weight applicability, and survey-design gates remain open. No respondent values or private result files were read.
 
+# 2026-10-29 Build the wave/module estimand and weight gate crosswalk
+
+- Added a deterministic metadata-only builder and 60-row wave/module crosswalk connecting candidate E/P/C source fields to wave-level sample-marker and weight starting points, plus explicit module-level review gates.
+- Documented that catalog field counts are not participant N, complete-case pairs or model counts, and that repeated candidate weights do not establish module applicability. No CHARLS microdata, private outputs, association models or tests were accessed/run.
+
 # 2026-10-29 Extend official Wave 1 fasting-code source review
 
 - Searched the archived official physical-examination questionnaire text and the complete 2011 Blood Guide text layer for `qc1_va003` and fasting response codes. The questionnaire provides no numeric field mapping; the guide describes fasting status and non-fasting measurement risk without code definitions.
