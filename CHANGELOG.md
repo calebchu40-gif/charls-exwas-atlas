@@ -1,3 +1,8 @@
+# 2026-10-30 Clarify Harmonized CHARLS survey-design wording
+
+- Rechecked the official Harmonized CHARLS Codebook statement that design-adjusted standard errors are supported “where provided by CHARLS.” The wording does not itself provide Wave 1 variance identifiers or an executable design declaration, so the Wave 1 variance gate remains pending independent review.
+- Re-ran metadata-only intake gates for the local Wave 1 source set, Wave 2 weights, and Wave 3 blood archive; source/header checks passed without reading respondent values. Public site remains catalogue/methods only, with no association-results payload.
+
 # 2026-10-30 Clarify Wave 1 blood outcome measurement rules
 
 - Record that the official guide includes non-fasted blood samples and says fasting status is recorded, while reviewed sources do not decode 2011 `qc1_va003` values. Do not infer fasting exclusions, transformations, or extreme-value filters from guide distribution summaries. Keep continuous outcomes as the primary atlas candidates; guide clinical cutoffs are not default binary ExWAS outcomes. Keep Cystatin C eligibility separate. No respondent values or association results were used.

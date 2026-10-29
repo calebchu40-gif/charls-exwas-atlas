@@ -3,6 +3,14 @@
 **状态：供独立复杂抽样方法审查；不是获准规格，不能据此拟合真实关联模型。**  
 **范围：2011家庭环境候选 × 血液生物标志物候选。**
 
+## 2026-10-30 官方 Harmonized CHARLS 文档补核
+
+CHARLS 的 Harmonized CHARLS Codebook Version D 在“Weighting and Accounting for Survey Design”中写明：Harmonized CHARLS 可支持加权估计及“CHARLS提供了设计信息时”的设计校正标准误；随后列出多类家户、个人及生物标志物权重，并概述分层、多阶段 PPS 抽样。该概括没有给出 Wave 1 可直接执行的方差层编码、最终子 PSU 个人映射、复制权重或可照抄的 `svyset` 规格。对该 828 页 Codebook 的可检索正文也未找到 `strata` 字段名或标准误操作说明。
+
+因此，不能把“存在 Harmonized CHARLS”或“其部分分析可做设计校正标准误”当作本项目已具备 Wave 1 方差设计输入。它可能是另一套已整理文件/特定场景可用信息的概括；若要借用，仍需获取具体文件与版本、核对其设计变量的来源及适用波次，并确认与当前原始 Wave 1 血检目标/权重一致。当前公开 Wave 1 Codebook 的 PSU 字段清单、受保护官方发行包表头与拆分社区链接审计仍支持：已核材料没有识别出完整方差变量集。方差候选因此仍待独立审阅，模型门保持关闭。
+
+**来源：**[CHARLS Harmonized CHARLS Codebook Version D](https://charls.pku.edu.cn/en/team/Codebook.pdf)，第 13–14 页（网页 PDF 页 13–14）；[Wave 1 官方资料页](https://charls.pku.edu.cn/en/Data/a2011_CHARLS_Wave1__Baseline_.htm)。本补核只审阅公开文档，没有读取任何微观记录。
+
 ## 官方抽样说明能确定什么
 
 CHARLS官方页面和Wave 1 Users' Guide描述了四阶段抽样：县级单位按地区、城乡和人均GDP排序后系统PPS抽取150个单位；每个县级单位再以系统PPS抽取3个村/社区；其后抽取住户和个人。大社区中有30个被拆成子社区/原居委会抽样；6个社区替换，另有6个社区因边界变化落入额外县，最后记录为156个地理县级单位。官方材料解释了点权重构造，但未提供适用于公开发行包的县级正式方差层、县抽样顺序/尺寸、复制权重，或所有拆分子社区到个人的映射。
