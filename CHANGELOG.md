@@ -1470,3 +1470,9 @@ This file records project-level changes that affect reproducibility, methods, da
 
 - Fixed the metadata-only Wave 1 intake report, which always emitted `source_provenance_verified_by_script: false` even when the user-reviewed manifest, official document IDs/URLs, filenames, and all four local hashes matched. It now derives the field from complete file presence and a clean source-identity review; the separate design-review-pending gate is unchanged.
 - No respondent values were read and no association model or test suite was run.
+
+# 2026-10-30 Gate Wave 3 Blood merge on ID-only frame review
+
+- Updated the Wave 3 pipeline review to distinguish the historical missing-file status from the current protected intake. The official 2015 All Data and Blood archives match their posted SHA-1 values, and a protected respondent base table has been built. A frame-linkage discrepancy remains under private review; no association model or public result was produced.
+- Hardened the merge runner so it validates prepared-frame membership using ID columns before loading any Blood measurement fields, and applies owner-only file permissions to private merged outputs and QA on POSIX systems. The current run correctly stopped at the ID-only gate and created no merged Blood table.
+- No respondent IDs, lab values, small-cell counts, or restricted QA were added to GitHub. No test suite was run.

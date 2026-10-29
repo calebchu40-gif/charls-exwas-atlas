@@ -92,6 +92,19 @@ def _column_map(frame: pd.DataFrame) -> dict[str, str]:
     return result
 
 
+def _validate_id_frame(prepared_ids: pd.Series, blood_ids: pd.Series) -> tuple[pd.Series, pd.Series]:
+    """Check respondent-frame linkage using ID columns only, before loading outcomes."""
+    prepared_key = normalize_key(prepared_ids)
+    blood_key = normalize_key(blood_ids)
+    if prepared_key.isna().any() or prepared_key.duplicated().any():
+        raise ValueError("prepared Wave 3 respondent ID key must be complete and unique")
+    if blood_key.isna().any() or blood_key.duplicated().any():
+        raise ValueError("official Blood Data respondent ID key must be complete and unique")
+    if not set(blood_key.tolist()).issubset(set(prepared_key.tolist())):
+        raise ValueError("official Blood Data IDs do not all map to the prepared Wave 3 respondent frame")
+    return prepared_key, blood_key
+
+
 def merge_blood_tables(prepared: pd.DataFrame, blood: pd.DataFrame) -> tuple[pd.DataFrame, dict[str, object]]:
     """Left-merge blood responders by unique CHARLS ID without row expansion."""
     prepared_cols = _column_map(prepared)
@@ -108,16 +121,9 @@ def merge_blood_tables(prepared: pd.DataFrame, blood: pd.DataFrame) -> tuple[pd.
     if collision:
         raise ValueError(f"Blood Data fields already exist in prepared table; rebuild from clean archive: {collision}")
 
-    prepared_key = normalize_key(prepared[prepared_cols["id"]])
-    blood_key = normalize_key(blood[blood_cols["id"]])
-    if prepared_key.isna().any() or prepared_key.duplicated().any():
-        raise ValueError("prepared Wave 3 respondent ID key must be complete and unique")
-    if blood_key.isna().any() or blood_key.duplicated().any():
-        raise ValueError("official Blood Data respondent ID key must be complete and unique")
-    prepared_ids = set(prepared_key.tolist())
-    blood_ids = set(blood_key.tolist())
-    if not blood_ids.issubset(prepared_ids):
-        raise ValueError("official Blood Data contains IDs absent from the prepared Wave 3 respondent frame")
+    prepared_key, blood_key = _validate_id_frame(
+        prepared[prepared_cols["id"]], blood[blood_cols["id"]]
+    )
 
     left = prepared.copy()
     left["_exwas_join_id"] = prepared_key.to_numpy()
@@ -152,6 +158,8 @@ def _atomic_json(path: Path, payload: dict[str, object]) -> None:
     temporary = path.with_name(path.name + ".tmp")
     temporary.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     os.replace(temporary, path)
+    if os.name == "posix":
+        path.chmod(0o600)
 
 
 def merge_official_blood(
@@ -180,6 +188,18 @@ def merge_official_blood(
         raise ValueError("prepared-data manifest must contain exactly one 2015 wave entry")
     validate_prepared_provenance(entries[0], paths["prepared"], paths["archive"])
 
+    # Establish complete one-to-one frame membership from ID columns alone.
+    # Do not load the laboratory measurements until this source/frame gate passes.
+    _, prepared_header = pyreadstat.read_dta(str(paths["prepared"]), metadataonly=True)
+    _, blood_header = pyreadstat.read_dta(str(paths["blood_stata"]), metadataonly=True)
+    prepared_id = next((name for name in prepared_header.column_names if name.casefold() == "id"), None)
+    blood_id = next((name for name in blood_header.column_names if name.casefold() == "id"), None)
+    if prepared_id is None or blood_id is None:
+        raise ValueError("prepared Wave 3 and official Blood files must both contain ID")
+    prepared_id_frame, _ = pyreadstat.read_dta(str(paths["prepared"]), usecols=[prepared_id])
+    blood_id_frame, _ = pyreadstat.read_dta(str(paths["blood_stata"]), usecols=[blood_id])
+    _validate_id_frame(prepared_id_frame[prepared_id], blood_id_frame[blood_id])
+
     prepared_data, prepared_meta = pyreadstat.read_dta(str(paths["prepared"]))
     blood_data, blood_meta = pyreadstat.read_dta(str(paths["blood_stata"]))
     merged, qa = merge_blood_tables(prepared_data, blood_data)
@@ -196,7 +216,11 @@ def merge_official_blood(
         _, output_meta = pyreadstat.read_dta(str(temporary), metadataonly=True)
         if output_meta.number_rows != len(prepared_data) or output_meta.number_columns != len(merged.columns):
             raise RuntimeError("Wave 3 blood merge output failed metadata readback")
+        if os.name == "posix":
+            temporary.chmod(0o600)
         os.replace(temporary, paths["output"])
+        if os.name == "posix":
+            paths["output"].chmod(0o600)
     finally:
         temporary.unlink(missing_ok=True)
 
