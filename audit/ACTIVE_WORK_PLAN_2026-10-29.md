@@ -1,14 +1,14 @@
 # CHARLS ExWAS Atlas：执行计划与当前进度
 
-**更新时间：2026-10-29 19:02（Asia/Shanghai）**
+**更新时间：2026-10-29 19:08（Asia/Shanghai）**
 **项目目标状态：进行中**  
 **当前阶段：Wave 1 调查设计准入复核；通过现行准入的正式模型仍为 0**
 
 本文件是本项目当前执行计划的单一状态页。每次完成阶段或遇到新阻塞时更新。GitHub 只存代码与本计划，不存 CHARLS 个体数据或受限分析输出。
 
-## 现在正在执行什么（2026-10-29 19:02）
+## 现在正在执行什么（2026-10-29 19:08）
 
-**正在执行：完成 Wave 1 15项血检结局的元数据/尺度审查，并把未决的设计与测量决策汇总到可逐项审阅的材料。**
+**正在执行：审查 Wave 1 官方多阶段抽样设计能否由已发行 PSU/社区键复原，并据此收敛独立方差方法审阅材料。**
 
 - 已完成 [`wave1_variance_estimator_decision_matrix_2026-10-29.md`](wave1_variance_estimator_decision_matrix_2026-10-29.md)：比较完整设计、父社区聚类近似、任意分配、删除拆分社区及普通回归标准误的适用边界；父社区聚类仅是待独立审阅的 fallback，不是已批准模型。
 - **本轮更正发现**：社区表 `sub_commuID` 空值以空格存储。第一次快速汇总把空格误计为有效值；清洗后仍无法确定拆分父社区内每名受访者所属的最终子 PSU。精确键计数和 ID 只留在服务器受保护 QA，不写入 GitHub。
@@ -17,8 +17,9 @@
 - **历史状态更正**：[`wave1_biomarker_outcome_validity_and_scale_gate_2026-10-27.md`](wave1_biomarker_outcome_validity_and_scale_gate_2026-10-27.md) 曾写 Wave 1 输入尚未入库；已保留原文并追加10月29日状态更正，注明四类输入现在已完成受控入库，但分析仍未放行。
 - **准入执行器复核**：静态检查冻结模板/runner：必须冻结配置、逐项声明15结局变换与有效值规则、填入审阅来源/审核人，并通过绑定准备表和方案哈希的私有 readiness record；设计项限定为当前实现支持的 Taylor 线性化和明确 singleton 策略。没有发现可绕过阻断门的空配置路径。空腹模型目前只支持保留全体/限制子域，不支持协变量调整；已经写入独立审阅包作为待裁决的软件需求，未擅自实现。
 - **官方抽样说明补强**：重新核对 CHARLS 官方样本设计网页与 Wave 1 用户手册，确认 county 层按地区/城乡/GDP 排序分层并PPS抽取，社区层每县抽取3个PSU；大型社区可拆为子社区PSU，30个社区采用拆分；血检非应答有专用权重，子社区占父社区比例参与权重构造。权重不提供受访者的最终子 PSU 键，也不能补足方差设计变量。证据及推论边界已补进 [`wave1_variance_estimator_decision_matrix_2026-10-29.md`](wave1_variance_estimator_decision_matrix_2026-10-29.md) 和独立审阅包。
+- **县级键拓扑受控 QA**：只使用受保护 Wave 1 `PSU.dta` 的省、市与社区键汇总结构，未读取个人分析表。省/市文本标签不是官方县级抽样单元的一对一键，不能据此构造县级 strata 或 first-stage PSU。准确聚合数和方法注记只存于本机受控 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\qa_outputs\`；GitHub 文档仅记录不含计数和地名的审慎结论。
 - **当前核验状态**：Wave 1 四类官方来源文件仍在服务器受保护目录；独立方法审阅目录为空；无项目关联分析进程。Wave 2 权重和 Wave 3 血检本机入库目录未见新数据。公开 Pages 首页 HTTP 200，`association_results_v1.json` HTTP 404。
-- 下一动作：将尺度目录、runner 支持矩阵、官方分层/PPS/权重流程、估计目标及缺失的最终 PSU/方差键收敛为一份有证据锚点的独立审阅表；任何方法裁决及获准实现都需绑定审批记录和冻结计划哈希。方差方案和空腹代码/处理规则审阅通过前不拟合真实模型。
+- 下一动作：将官方四阶段抽样流程、县级映射缺口、最终子 PSU 映射缺口、权重目标和可选社区级近似收敛为逐项独立审阅表；确认官方 Codebook 是否提供额外可用映射，未找到前不从名称/编码模式推造。任何方法裁决及获准实现都需绑定审批记录和冻结计划哈希。方差方案和空腹代码/处理规则审阅通过前不拟合真实模型。
 
 - **官方抽样文件清单补查**：CHARLS Wave 1 官方公开数据页列有 All Data、PSU、Weight、Community、Blood 等，但未列独立 Sample Information、复制权重或方差层文件；2018 User's Guide 所述 Sample_Info 是回应/横截面/死亡/访谈日期元数据，不能外推成Wave 1子PSU映射。详细证据及限定见 [`wave1_official_design_file_inventory_review_2026-10-29.md`](wave1_official_design_file_inventory_review_2026-10-29.md)。当前调查设计门仍未通过。
 
@@ -29,7 +30,7 @@
 - 服务器只读准入校验结果：官方来源身份及 Wave 1 准备表 provenance/hash 门 **passed**；真实分析就绪门 **blocked**，原因是缺少绑定当前来源和冻结方案的审阅记录。模型未运行。
 - **方法审阅材料**已整理在 [`wave1_independent_methods_review_packet_2026-10-29.md`](wave1_independent_methods_review_packet_2026-10-29.md)。105项构成和类别编码已核对；当前脚本遗漏血糖/甘油三酯的空腹条件处理。官方指南说明非空腹者也采血且非空腹血糖可能偏高；`qc1_va003` 在Stata文件中没有值标签，当前官方Codebook/Guide未给出具体代码。
 - **官方空腹代码检索结论**：CHARLS 官方 Blood Guide 证实未空腹者仍采血并记录状态，且非空腹血糖可能偏高；官方 Wave1 数据页只列通用 CodeBook 和 Blood Guide，Blood 压缩包也无辅助数据字典；Stata 字段无值标签。官方2015 CodeBook的相近字段 `bl_fasting` 为1=Yes、2=No，但不能证明2011编码一致；第三方索引仅作线索。详见 [`wave1_fasting_code_source_review_2026-10-29.md`](wave1_fasting_code_source_review_2026-10-29.md)。
-- **审阅材料状态**：逐项准入矩阵已并入 [`wave1_independent_methods_review_packet_2026-10-29.md`](wave1_independent_methods_review_packet_2026-10-29.md)；本轮新增 [`wave1_outcome_scale_readiness_2026-10-29.md`](wave1_outcome_scale_readiness_2026-10-29.md)，并完成 runner/冻结模板的静态 fail-closed 兼容审查。官方样本设计来源已确认：设计确含县级排序/分层、系统PPS与子社区抽样/权重比例调整；当前发行键仍缺最终子 PSU 到受访者的映射，发布文件中也未找到可直接使用的设计方差字段。官方公开来源目前没有2011 `qc1_va003` 数值/特殊缺失码；不得从2015或参与者值反推。设计与测量准入未通过前不拟合。
+- **审阅材料状态**：逐项准入矩阵已并入 [`wave1_independent_methods_review_packet_2026-10-29.md`](wave1_independent_methods_review_packet_2026-10-29.md)；本轮对 PSU 文件的地名键结构做了额外受控聚合 QA，确认它不足以直接重建 county sample-unit key。官方样本设计来源已确认：设计确含县级排序/分层、系统PPS与子社区抽样/权重比例调整；当前发行键仍缺最终子 PSU 到受访者的映射，发布文件中也未找到可直接使用的设计方差字段。官方公开来源目前没有2011 `qc1_va003` 数值/特殊缺失码；不得从2015或参与者值反推。设计与测量准入未通过前不拟合。
 - **本阶段不启动真实关联模型**，直至样本框、权重、PSU/方差方案和冻结分析计划全部获审。服务器当前没有关联分析进程；active 目标会在后续任务轮次继续，不代表常驻计算。
 
 ### 后续执行顺序
