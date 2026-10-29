@@ -217,7 +217,10 @@ def derive() -> dict[str, Any]:
                             lunar_module.LunarDate(year, month, day, False).toSolarDate()
                         except ValueError:
                             lunar_module.LunarDate(year, month, day, True).toSolarDate()
-                        lower, upper = max(0, interview_year - year - 1), interview_year - year
+                        # A lunar birth year can map to Gregorian year Y or Y+1.
+                        # With interview day unknown, the attained age can therefore
+                        # be two years below (interview year - lunar year).
+                        lower, upper = max(0, interview_year - year - 2), interview_year - year
                         route = "lunar_leap_month_ambiguous_year_interval"
                     else:
                         birth = lunar_module.LunarDate(year, month, day, False).toSolarDate()
@@ -247,10 +250,10 @@ def derive() -> dict[str, Any]:
                         lower, upper = max(0, base - 1), base
                         route = "solar_same_month_day_missing_interval"
                 else:
-                    lower, upper = max(0, base - 1), base
+                    lower, upper = max(0, base - 2), base
                     route = "partial_or_lunar_date_year_interval"
         elif year is not None and 1900 <= year <= interview_year:
-            lower, upper = max(0, interview_year - year - 1), interview_year - year
+            lower, upper = max(0, interview_year - year - 2), interview_year - year
             route = "calendar_or_date_route_unresolved_year_interval"
         elif (
             reported_age is not None
@@ -299,8 +302,8 @@ def derive() -> dict[str, Any]:
         result, str(output_path), version=14,
         column_labels=[
             "Protected CHARLS respondent ID; never publish",
-            "Candidate lower completed age at interview, not method approved",
-            "Candidate upper completed age at interview, not method approved",
+            "Conservative candidate lower completed age at interview; not method approved",
+            "Conservative candidate upper completed age at interview; not method approved",
             "Source/date route used; candidate only",
             "1 if lunar month could be an unflagged leap month",
             "Candidate 45+ interval classification; not analysis eligibility",
@@ -322,7 +325,7 @@ def derive() -> dict[str, Any]:
         "read_only_fields": list(EXPECTED_COLUMNS),
         "interview_day_available": False,
         "separate_leap_month_response_available": False,
-        "leap_ambiguous_dates_use_year_interval": True,
+        "lunar_or_calendar_unresolved_year_intervals_allow_gregorian_birth_year_offset_plus_one": True,
         "age_domain_is_not_used_to_filter_rows": True,
         "age_derivation_method_reviewed": False,
         "survey_design_approved": False,

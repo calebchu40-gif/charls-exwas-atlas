@@ -18,6 +18,10 @@ The protected derivation reads only the source-bound Wave 1 birth year/month/day
 - The conditional self-reported age is retained only as a source candidate when a valid birth year is unavailable.
 - Invalid or out-of-range dates remain unresolved. Candidate age bounds and 45+ status are not used to filter the respondent frame.
 
+## 2026-10-30 conservative-bound correction
+
+Static review found that the earlier year-only lower bound (`interview year - recorded birth year - 1`) could be too high for lunar or calendar-unresolved birth years. A lunar birth year can correspond to a Gregorian birth date in that year or the following Gregorian year; with only interview year/month and no interview day, attained age may therefore be as much as two years below the simple year difference. The protected candidate now uses `[max(0, interview year - recorded birth year - 2), interview year - recorded birth year]` for leap-month-ambiguous, partial lunar, and calendar-unresolved year-only routes. Known Gregorian birth months retain their narrower month-aware bounds. This is a conservative candidate envelope, not evidence that the official lunar mapping or analytic age model has been validated. The protected candidate was regenerated from the same source-bound inputs; row-level output and route counts remain private. The age-method and survey-design gates remain open, and no association was fitted.
+
 The row-level candidate table and detailed route counts are stored only in owner-controlled `%LOCALAPPDATA%\\CHARLS_ExWAS_Atlas\\age_inputs_2011\\` and `qa_outputs\\`. They are not in Git, OneDrive, the server, or the public site. The public repository contains the derivation code and method description, not the private output.
 
 ## What remains unresolved
