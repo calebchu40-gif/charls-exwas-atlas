@@ -2,7 +2,7 @@
 
 The archive is extracted only to a temporary directory under the protected
 CHARLS root. Analysis reads only `ID` from each module and `ID` plus
-`ind_weight_ad2` from Weight.dta. The JSON report contains aggregate counts
+`ind_weight_ad2` from Weight.dta and `ID` from Blood.dta. The JSON report contains aggregate counts
 only and must remain in protected storage. No IDs or questionnaire answers are
 written, printed, or sent to GitHub/server/public storage.
 """
@@ -52,9 +52,10 @@ def run(intake: Path, frame_path: Path, unrar: Path, output: Path) -> dict[str, 
     frame_path = private_path(frame_path)
     archive = private_path(intake / "household_and_community_questionnaire_data.rar")
     weight_path = private_path(intake / "weight.dta")
+    blood_path = private_path(intake / "Blood_20140429.dta")
     output = private_path(output)
     unrar = unrar.resolve()
-    if not archive.is_file() or not weight_path.is_file() or not frame_path.is_file() or not unrar.is_file():
+    if not archive.is_file() or not weight_path.is_file() or not blood_path.is_file() or not frame_path.is_file() or not unrar.is_file():
         raise FileNotFoundError("Required protected All Data/Weight/frame input or UnRAR executable is missing")
 
     source = require_verified_wave1_frame(data_path=frame_path)
@@ -64,6 +65,8 @@ def run(intake: Path, frame_path: Path, unrar: Path, output: Path) -> dict[str, 
     positive = pd.to_numeric(weight["ind_weight_ad2"], errors="coerce").gt(0)
     target_ids = pd.Index(weight.loc[positive, "ID"].pipe(normalize_id).dropna().unique())
     unmatched = target_ids.difference(frame_ids)
+    blood, _ = pyreadstat.read_dta(str(blood_path), usecols=["ID"])
+    blood_ids = pd.Index(normalize_id(blood["ID"]).dropna().unique())
 
     temp_root = private_path(PRIVATE_ROOT / "tmp")
     temp_root.mkdir(parents=True, exist_ok=True)
@@ -113,6 +116,7 @@ def run(intake: Path, frame_path: Path, unrar: Path, output: Path) -> dict[str, 
         "positive_weight_ids_outside_demographic_frame": len(unmatched),
         "those_ids_present_in_any_other_all_data_module": len(found_any),
         "those_ids_absent_from_all_module_id_columns": len(unmatched.difference(found_any)),
+        "those_ids_present_in_official_blood_file": len(unmatched.intersection(blood_ids)),
         "module_aggregate_comparisons": module_results,
         "interpretation_limit": "Module ID presence only locates linkage candidates; it does not establish respondent eligibility, interview completion, or blood-weight applicability.",
     }
