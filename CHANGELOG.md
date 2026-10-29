@@ -1,3 +1,8 @@
+# 2026-10-29 Extend official Wave 1 fasting-code source review
+
+- Searched the archived official physical-examination questionnaire text and the complete 2011 Blood Guide text layer for `qc1_va003` and fasting response codes. The questionnaire provides no numeric field mapping; the guide describes fasting status and non-fasting measurement risk without code definitions.
+- Updated the fasting-source memo and active plan. The code mapping remains unresolved; no participant records were consulted and no analysis was run.
+
 # 2026-10-29 Reconcile svy multistage and ultimate-cluster documentation
 
 - Reviewed official svy documentation for GLMs and multistage designs. The package can construct three-stage sample/weight chains; its documented variance approach uses first-stage PSU totals within strata (ultimate-cluster), while lower-stage stratification affects weights rather than variance strata. GLM replication is opt-in.

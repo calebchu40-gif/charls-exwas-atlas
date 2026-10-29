@@ -1,18 +1,19 @@
 # CHARLS ExWAS Atlas：执行计划与当前进度
 
-**更新时间：2026-10-29 19:23（Asia/Shanghai）**
+**更新时间：2026-10-29 19:25（Asia/Shanghai）**
 **项目目标状态：进行中**  
 **当前阶段：Wave 1 调查设计准入复核；通过现行准入的正式模型仍为 0**
 
 本文件是本项目当前执行计划的单一状态页。每次完成阶段或遇到新阻塞时更新。GitHub 只存代码与本计划，不存 CHARLS 个体数据或受限分析输出。
 
-## 现在正在执行什么（2026-10-29 19:23）
+## 现在正在执行什么（2026-10-29 19:25）
 
 **正在执行：审查 Wave 1 官方多阶段抽样设计能否由已发行 PSU/社区键复原，并据此收敛独立方差方法审阅材料。**
 
 - 已完成 [`wave1_variance_estimator_decision_matrix_2026-10-29.md`](wave1_variance_estimator_decision_matrix_2026-10-29.md)：比较完整设计、父社区聚类近似、任意分配、删除拆分社区及普通回归标准误的适用边界；父社区聚类仅是待独立审阅的 fallback，不是已批准模型。
 - **本轮更正发现**：社区表 `sub_commuID` 空值以空格存储。第一次快速汇总把空格误计为有效值；清洗后仍无法确定拆分父社区内每名受访者所属的最终子 PSU。精确键计数和 ID 只留在服务器受保护 QA，不写入 GitHub。
 - **空腹代码搜索已穷尽当前本地官方公开材料**：CHARLS 官方 Wave 1 页面只列通用 Codebook、Blood Users' Guide 等；Blood ZIP 内只有 Stata 文件；`qc1_va003` 无 value labels，官方公开资料没有2011数值/特殊缺失码映射。2015 相近字段的 1/2 编码仍不能外推。证据见 [`wave1_fasting_code_source_review_2026-10-29.md`](wave1_fasting_code_source_review_2026-10-29.md)。
+- **补查 Wave 1 官方体检问卷**：搜索官方归档的 Physical Examination Questionnaire 提取文本及 Blood Guide 完整文本层，未找到 `qc1_va003` 或空腹字段数字选项；体检问卷不能作为代码映射依据。该发现已记录在空腹代码来源备忘录。当前官方公开资料的搜索范围已包含通用 Codebook、Blood Guide、体检问卷、Blood 归档成员和 Stata value labels；若授权 CHARLS 账号后续有正式更正文件再纳入。
 - **本轮完成15项结局尺度目录**：新增 [`wave1_outcome_scale_readiness_2026-10-29.md`](wave1_outcome_scale_readiness_2026-10-29.md)，列出15项非 cystatin C 血检结局的 Wave 1 字段、原始单位和官方指南测定范围；明确测定能力范围不是分析有效值过滤线，也未据此冻结变换。仅核读受控 Blood 文件的变量标签和值标签元数据：检测字段标签提供测量名称/单位线索，15项结局字段及 `qc1_va003` 均无值标签集；未读参与者记录。
 - **历史状态更正**：[`wave1_biomarker_outcome_validity_and_scale_gate_2026-10-27.md`](wave1_biomarker_outcome_validity_and_scale_gate_2026-10-27.md) 曾写 Wave 1 输入尚未入库；已保留原文并追加10月29日状态更正，注明四类输入现在已完成受控入库，但分析仍未放行。
 - **准入执行器复核**：静态检查冻结模板/runner：必须冻结配置、逐项声明15结局变换与有效值规则、填入审阅来源/审核人，并通过绑定准备表和方案哈希的私有 readiness record；设计项限定为当前实现支持的 Taylor 线性化和明确 singleton 策略。没有发现可绕过阻断门的空配置路径。空腹模型目前只支持保留全体/限制子域，不支持协变量调整；已经写入独立审阅包作为待裁决的软件需求，未擅自实现。
