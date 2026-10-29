@@ -313,6 +313,11 @@ def run_preflight(intake: Path, explicit: dict[str, Path | None]) -> dict[str, A
         if manifest_changed or not manifest.get("last_preflight_local_sha256"):
             manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     report.update(evaluate_source_manifest(manifest, report["roles"]))
+    report["source_provenance_verified_by_script"] = (
+        not missing
+        and report.get("source_identity_status") == "verified_official_source"
+        and not report.get("source_identity_review_errors")
+    )
     report["source_manifest_rotated_after_file_change"] = manifest_changed
     if not missing:
         report["release_gate"] = "input_set_complete_source_and_design_review_pending"
@@ -349,6 +354,8 @@ def main() -> None:
             extra = f" file={result['file_name']} bytes={result['file_bytes']}"
         print(f"{role}: {result['status']}{extra}")
     print(f"2011 source gate: {report['release_gate']}")
+    print(f"2011 source identity: {report['source_identity_status']}")
+    print(f"2011 source provenance verified by script: {report['source_provenance_verified_by_script']}")
     print(f"Metadata report saved outside the repository: {output}")
     if report["missing_or_ambiguous_roles"]:
         raise SystemExit(2)

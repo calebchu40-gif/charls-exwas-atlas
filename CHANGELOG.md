@@ -1465,3 +1465,8 @@ This file records project-level changes that affect reproducibility, methods, da
 
 - Hardened the public result-payload validator so successful fits cannot be labeled `Design not fit-ready`, and non-success rows must carry that label. This prevents internally contradictory public records while preserving the separate requirement for independent survey-design review.
 - No participant-level data or association results were read or changed. Validation was reviewed statically; no test suite or synthetic fit was run.
+
+# 2026-10-30 Report verified Wave 1 source provenance accurately
+
+- Fixed the metadata-only Wave 1 intake report, which always emitted `source_provenance_verified_by_script: false` even when the user-reviewed manifest, official document IDs/URLs, filenames, and all four local hashes matched. It now derives the field from complete file presence and a clean source-identity review; the separate design-review-pending gate is unchanged.
+- No respondent values were read and no association model or test suite was run.
