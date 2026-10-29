@@ -1,3 +1,8 @@
+# 2026-10-29 Verify Wave 2 anthropometry module and weight linkage
+
+- Extended the anthropometry source updater to verify that the official Wave 2 Release Note identifies `Biomarker.dta` as anthropometric measurements; updated Wave 2 source statuses to distinguish official module documentation from unverified local release-archive/header provenance.
+- Added a gate memo for the five Wave 2 anthropometry candidates and the document-backed cross-sectional `Biomarker_weight` target. Pair-level missingness, sample/age domain and survey variance remain unresolved; no models were fitted.
+
 # 2026-10-29 Correct Wave 2/3 public wave overview
 
 - The public wave timeline incorrectly said Wave 2 collected no biomarkers and Wave 3 blood data were locally absent. It now distinguishes Wave 2 anthropometric Biomarker measurements from venous-blood laboratory testing and reflects the protected Wave 3 archive intake/preflight without implying analysis approval.

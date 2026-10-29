@@ -41,6 +41,11 @@ def verify_sources() -> dict[str, str]:
         if wave != "2011" and ("qj003" not in text or "qk003" not in text or "ql004" not in text or "qm005" not in text):
             raise ValueError(f"{wave} official questionnaire lacks measurement-context fields")
         texts[wave] = text
+    release_note_path = ROOT / "sources_official/CHARLS_2013_Wave2_Release_Note_extracted.txt"
+    release_note = release_note_path.read_text(encoding="utf-8", errors="replace").casefold()
+    if "biomarker.dta" not in release_note or "anthropometric measurements" not in release_note:
+        raise ValueError("2013 Wave 2 Release Note does not identify Biomarker.dta as anthropometric measurements")
+    texts["2013_release_note"] = release_note
     return texts
 
 
@@ -49,7 +54,12 @@ def source_note(wave: str, concept_id: str) -> tuple[str, str, str, str]:
     identity = (
         f"The 2011 instrument records this measure as {MANUAL_ITEMS[concept_id]}; the release Codebook candidate uses {CODE_FAMILIES[concept_id]}002. Exact one-to-one release-field identity remains unresolved."
         if wave == "2011" else
-        f"The {wave} questionnaire and wave Codebook document the exact {CODE_FAMILIES[concept_id]}002 measurement field; this does not establish participant-level release availability or analytic eligibility."
+        (
+            f"The official Wave 2 Release Note lists Biomarker.dta as anthropometric measurements, and the {wave} questionnaire/Codebook document the exact {CODE_FAMILIES[concept_id]}002 field. "
+            "The protected Wave 2 All Data archive/header is not currently source-verified; participant-level availability, sample eligibility and analysis authorization remain open."
+            if wave == "2013" else
+            f"The {wave} questionnaire and wave Codebook document the exact {CODE_FAMILIES[concept_id]}002 measurement field; this does not establish participant-level release availability or analytic eligibility."
+        )
     )
     if concept_id == "standing_height":
         semantics = "Single standing-height reading in cm; preserve consent/completion, positioning and compliance context separately. Do not derive BMI in this metadata catalog."
@@ -70,6 +80,8 @@ def source_note(wave: str, concept_id: str) -> tuple[str, str, str, str]:
     status = (
         "official questionnaire and baseline user guide reviewed; candidate phenotype only; LI-to-Q-field identity and release eligibility remain unverified"
         if wave == "2011" else
+        "Wave 2 Release Note lists Biomarker.dta as anthropometric measurements; exact questionnaire/Codebook field documented, but protected All Data archive/header provenance and analytic eligibility remain unverified"
+        if wave == "2013" else
         "exact wave questionnaire and Codebook reviewed; candidate phenotype only; authorized-release availability and analytic eligibility remain unverified"
     )
     return semantics, caveat, status, unit
@@ -98,7 +110,7 @@ def apply() -> int:
                 if wave == "2011" else
                 f"exact {family}002 measurement field and label are present in the wave questionnaire and Codebook; token presence does not establish release coverage or valid-value rules"
             ),
-            "source_document": f"{QUESTIONNAIRES[wave]}; sources_official/CHARLS_{wave}_Codebook_extracted.txt" + ("; sources_official/CHARLS_2011_National_Baseline_Users_Guide_extracted.txt" if wave == "2011" else ""),
+            "source_document": f"{QUESTIONNAIRES[wave]}; sources_official/CHARLS_{wave}_Codebook_extracted.txt" + ("; sources_official/CHARLS_2011_National_Baseline_Users_Guide_extracted.txt" if wave == "2011" else "; sources_official/CHARLS_2013_Wave2_Release_Note_extracted.txt" if wave == "2013" else ""),
         })
         updated += 1
     expected = {(cid, wave) for cid in CONCEPTS for wave in WAVES}
