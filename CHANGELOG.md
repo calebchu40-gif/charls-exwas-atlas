@@ -1,3 +1,8 @@
+# 2026-10-30 Add metadata-only Wave 1 Blood outcome header audit
+
+- Added a source-gated utility that reads only Stata header metadata for the 15 planned biomarkers plus `qc1_va003`, recording variable labels and attached value-label sets in private QA. It does not read or print participant outcomes and does not infer valid-value limits from assay metadata.
+- No participant data were included in this repository change. The audit is intended to establish whether the authorized release attaches any official value labels to these fields.
+
 # 2026-10-30 Complete protected Wave 1 pilot pair-availability QA
 
 - Ran the hash-bound audit on the authorized server for all 105 registered pilot coefficients across the complete blood target, lower-bound 45+ domain, and upper-bound 45+ sensitivity. The private report is mode 600 and contains only pair-level aggregates; no IDs or outcome values are written.
