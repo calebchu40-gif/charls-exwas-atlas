@@ -118,7 +118,13 @@ def audit(data_path: Path, manifest_path: Path, output_path: Path,
     interview_year = pd.to_numeric(frame["iyear"], errors="coerce")
     interview_month = pd.to_numeric(frame["imonth"], errors="coerce")
     route_unknown_n = count(domain & route_unknown)
-    calendar_required = domain & (actual_doc | actual_report)
+    # BA003 is observed for the separate actual-date route (BA002=2), not for
+    # the much larger same-as-document route (BA002=1). Requiring BA003 on
+    # BA002=1 incorrectly turns structurally unasked values into missingness.
+    # The official 2015 Codebook frequency table lists BA003 observations at
+    # roughly the size of the BA002=2 route, while BA002=1 is the dominant
+    # response. Keep this route assumption explicit for methods review.
+    calendar_required = domain & actual_report
     calendar_unknown_n = count(calendar_required & ~(calendar.eq(1) | calendar.eq(2)))
     birth_year_missing_n = count(domain & year.isna())
     birth_year_invalid_n = count(domain & year.notna() & ~year.between(1900, 2015))
@@ -135,7 +141,8 @@ def audit(data_path: Path, manifest_path: Path, output_path: Path,
         "official_archive_sha1_verified": True,
         "official_blood_artifact_sha1_verified": True,
         "manifest_spine": waves[0]["person_spine_module"],
-        "field_route_source": "CHARLS 2015 Codebook and Questionnaire; BA002 1=same as civil document, 2=separate actual date; BA003 1=solar, 2=lunar; .d/.r skip BA003",
+        "field_route_source": "CHARLS 2015 Codebook and Questionnaire; BA002 1=same as civil document (use BA004_W3 date), 2=separate actual date (use BA002 date); BA003 1=solar, 2=lunar is required for the separate actual-date route; questionnaire says .d/.r skip BA003",
+        "calendar_applicability_assumption": "BA003 required only when BA002=2; BA002=1 uses the civil-document date and BA003 is not applied. This is consistent with official Codebook observed-frequency counts but remains documented for methods review.",
         "read_fields_excluding_id": True,
         "participant_level_values_or_ids_emitted": False,
         "aggregate_counts_emitted": True,
