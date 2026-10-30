@@ -162,6 +162,7 @@ def audit(output_path: Path = DEFAULT_OUTPUT) -> dict[str, Any]:
         }
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    output_path.chmod(0o600)
     return result
 
 
