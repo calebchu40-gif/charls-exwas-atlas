@@ -139,3 +139,9 @@ Wave 1 执行器对测量协议未解决的结局返回 `blocked_by_unresolved_m
 对原始 Blood Users' Guide 的样本权重/测量页作视觉核查，明确 `bloodweight` 的血检不应答目标、IPW预测因子和99分位截尾；权重依赖选择可由观测变量解释的假设，但不含已证明的fasting-selection校正。Guide报告约8%血样非空腹、血糖测量状态可能影响水平；提出的全样本测量状态调整和条件性敏感性仍只是待审估计量。Guide将assay检测限、描述性观察范围和密度图省略少数极端值区分开，均不构成本项目的删除规则；cystatin C为特定年龄抽样。审计文档 `audit/wave1_blood_guide_weight_measurement_review_2026-10-30.md` 记录原页锚点和模型限制。无个体值访问、无关联拟合。
 
 - Added a server-private, source-bound comparison of Guide Table 4/5 published assay endpoints against the positive-`bloodweight` source frame alongside the all-finite comparison. Exact output remains owner-only; this diagnostic does not change outcome eligibility or model readiness.
+
+### 2026-10-31 continuation — refresh pair availability against current source
+
+- Regenerated the 105-coefficient pair-availability audit using the current source-bound person table (`9878ed...`) and official age candidate. It reports only private pair/domain availability and community-support aggregates; no IDs or outcome summaries were written, and no association was fitted.
+- Reconciled the audit labels with the current source record: `qc1_va003` mapping is 1=fasting, 2=not fasting; the glucose/TG measurement estimand, weight applicability, and independent handling review remain open. Updated the old search note as superseded rather than retaining contradictory current wording.
+- Model readiness remains closed; the refreshed counts are not analytic N and did not unlock real-data associations.

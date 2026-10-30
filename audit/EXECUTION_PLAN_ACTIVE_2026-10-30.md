@@ -149,3 +149,7 @@
 ### Next source-QA item
 
 The first private comparison of finite assay ranges against Guide Tables 4/5 did not match every published endpoint. Because guide ranges are descriptive references and the initial check used all finite records, a new owner-only QA command now also compares the same endpoints inside the positive-`bloodweight` frame. This is a source reconciliation only: it does not compute weighted statistics, infer special codes, set cutoffs, or authorize exclusions. Exact values remain private. No real association is fitted by this step.
+
+### 2026-10-31 continuation — current-hash pair availability
+
+The earlier 105-pair availability reports were bound to a superseded prepared-person hash. Refreshed the report against the current hash and official age candidate, retaining it in server `private/qa_outputs/` with mode 0600. It distinguishes the blood target, the provisional lower-bound 45+ domain, and the upper-bound 45+ sensitivity. It remains an availability audit only: no outcome-validity handling, design approval, model N, or associations. Corrected stale fasting-source wording in the audit code and marked the earlier search memo historical; the source-supported 1/2 mapping is distinct from the still-unresolved glucose/TG estimand and weight issue.

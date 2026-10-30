@@ -1,6 +1,8 @@
 # Wave 1 fasting-status source reconciliation
 
-**Status:** source review note; outcome handling remains subject to the hash-bound methods review.
+**Status:** Historical search result; its conclusion about the numeric mapping was superseded on 2026-10-30 by the official Fieldwork Plan + Wave 1 Blood header reconciliation in [`wave1_fasting_code_source_reconciliation_2026-10-30.md`](wave1_fasting_code_source_reconciliation_2026-10-30.md). Use that later source review for current mapping (1=fasting, 2=not fasting). Outcome handling remains subject to hash-bound independent methods review.
+
+> **Supersession notice:** The findings below accurately record what was known at the time of the initial search. They must not be read as the current source determination. The later official-source reconciliation identified the Fieldwork Plan Appendix 2 form and matched its fasting item to the Wave 1 `qc1_va003` header label. The mapping is now source-supported; fasting estimand and weight compatibility remain unresolved.
 
 ## CHARLS 2011 official documentation
 

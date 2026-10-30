@@ -1834,3 +1834,9 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Added a private-only Wave 1 check comparing the 15 registered biomarker endpoints with the official Blood Users' Guide Table 4/5 descriptive ranges, both across finite source values and within records with positive `bloodweight`.
 - The command is source-bound to the verified Wave 1 person-table gate, reads no identifiers, writes exact ranges/counts only below the private root with owner-only permissions, and emits status only. These comparisons are not weighted estimates, validity bounds, recoding rules, or exclusions.
 - No association model is run; existing assay/outcome, target-estimand, variance, model-freeze and independent-review gates remain in force.
+
+# 2026-10-31 Rebind pair-availability audit to current source and clarify fasting status
+
+- Refreshed the private 105-pair availability audit against the current source-bound Wave 1 person-table hash and current age candidate; it remains availability QA only, with no associations, validity rules, or approved model N.
+- Corrected the audit's stale status text: the Wave 1 fasting mapping is source-supported as 1=fasting and 2=not fasting; the glucose/TG estimand, bloodweight compatibility, and outcome handling remain unresolved.
+- Marked the earlier fasting-source search memo as historical and linked the later official-source reconciliation so its superseded conclusion is not mistaken for current evidence.
