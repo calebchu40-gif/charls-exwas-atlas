@@ -6,8 +6,9 @@ Design goals
 * One engine, many waves: the *variable registry* decides what is scanned,
   the *design specification* decides weights / PSU / domain / covariates.
   Nothing about 2011 water or cooking fuel is hard-coded.
-* Fail closed: a scan cannot start without an explicit weight and PSU column,
-  a positive-weight domain, and a registry that validates.
+* Fail closed: the supported real-data CLI requires a private approval record
+  bound to the exact frame, registry, design, wave, model IDs, and family.
+  This engine module should not be called directly for real CHARLS data.
 * Reproducible: every result row carries a deterministic ``analysis_id`` and
   the design note, so a later schema-v3 writer can map it without guesswork.
 * No microdata is written anywhere by this module. Callers decide where the
@@ -27,6 +28,7 @@ import csv
 import hashlib
 import json
 import math
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable, Sequence
@@ -149,11 +151,15 @@ def load_registry(path: Path) -> list[VariableSpec]:
                 raise RegistryError(f"registry row {line}: categorical variables need >=2 levels")
             if kind == "categorical" and (row.get("reference") or "").strip() not in levels:
                 raise RegistryError(f"registry row {line}: categorical reference must be one of levels")
+            valid_min = _to_float(row.get("valid_min"))
+            valid_max = _to_float(row.get("valid_max"))
+            if valid_min is not None and valid_max is not None and valid_min > valid_max:
+                raise RegistryError(f"registry row {line}: valid_min exceeds valid_max")
             specs.append(VariableSpec(
                 concept_id=concept, role=role, label=(row.get("label") or "").strip(),
                 wave=wave, variable=variable, kind=kind, unit=(row.get("unit") or "").strip(),
                 transform=(row.get("transform") or "").strip().lower(),
-                valid_min=_to_float(row.get("valid_min")), valid_max=_to_float(row.get("valid_max")),
+                valid_min=valid_min, valid_max=valid_max,
                 levels=levels, reference=(row.get("reference") or "").strip(), family=family,
             ))
     if not specs:
@@ -225,6 +231,11 @@ def prepare_frame(frame: pl.DataFrame, design: DesignSpec,
         frame = frame.with_columns(pl.col(design.strata).cast(pl.String).alias("_stratum"))
     if frame.filter(pl.col("_analysis_weight") > 0).height == 0:
         raise DesignError("no record has a positive analysis weight; refusing to fit")
+    positive_weight = pl.col("_analysis_weight") > 0
+    if frame.filter(positive_weight & pl.col("_psu").is_null()).height:
+        raise DesignError("positive-weight records have missing PSU values; refusing to fit")
+    if design.strata and frame.filter(positive_weight & pl.col("_stratum").is_null()).height:
+        raise DesignError("positive-weight records have missing stratum values; refusing to fit")
     return frame
 
 
@@ -321,6 +332,10 @@ def fit_pair(frame: pl.DataFrame, exposure: VariableSpec, phenotype: VariableSpe
     if pair.height == 0:
         return [_blocked_row(exposure, phenotype, design, model_id, terms, labels,
                              "no_eligible_records", "domain selects no complete cases")]
+    psus = pair["_psu"].n_unique()
+    if psus < 2:
+        return [_blocked_row(exposure, phenotype, design, model_id, terms, labels,
+                             "insufficient_psu", "fewer than two PSUs in the pair-specific domain")]
 
     outcome_values = pair[outcome].cast(pl.Float64, strict=False).to_numpy()
     weights = pair["_analysis_weight"].to_numpy()
@@ -395,7 +410,19 @@ def fit_pair(frame: pl.DataFrame, exposure: VariableSpec, phenotype: VariableSpe
         df = _to_float(str(record.get("df")))
         status = "success" if all(v is not None for v in (estimate, se, low, high, p_value, df)) else "numerically_unavailable"
         if family == "binomial" and status == "success":
-            estimate, se, low, high = (math.exp(estimate), math.exp(se), math.exp(low), math.exp(high))
+            # Coefficient and standard error are on the log-odds scale. Report
+            # OR-scale limits and a delta-method OR-scale standard error.
+            try:
+                odds_ratio = math.exp(estimate)
+                low_or, high_or = math.exp(low), math.exp(high)
+                if (not all(math.isfinite(v) for v in (odds_ratio, low_or, high_or))
+                        or odds_ratio <= 0 or low_or <= 0 or high_or <= 0):
+                    raise OverflowError("non-finite or underflowed odds-ratio scale")
+                estimate, se, low, high = (odds_ratio, odds_ratio * se, low_or, high_or)
+            except OverflowError:
+                status = "numerically_unavailable"
+                estimate = se = low = high = None
+                p_value = df = None
         rows.append({
             "analysis_id": _analysis_id(exposure.wave, model_id, exposure.concept_id,
                                         phenotype.concept_id, term, phenotype.variable),
@@ -483,9 +510,19 @@ def assign_families(rows: list[dict[str, Any]], family_prefix: str) -> None:
 def scan(frame: pl.DataFrame, registry: Sequence[VariableSpec], design: DesignSpec,
          wave: str, models: Sequence[str], family_prefix: str = "charls_exwas") -> list[dict[str, Any]]:
     """Run every registered pair for one wave and return the long result rows."""
+    if not models or len(set(models)) != len(models):
+        raise DesignError("models must be a nonempty list of unique model IDs")
+    if not re.fullmatch(r"[A-Za-z0-9_.-]+", family_prefix):
+        raise DesignError("family_prefix contains unsupported characters")
+    unknown_models = sorted(set(models) - set(design.covariate_sets))
+    if unknown_models:
+        raise DesignError("model IDs lack explicit covariate sets: " + ", ".join(unknown_models))
     frame = prepare_frame(frame, design, registry)
+    pairs = enumerate_pairs(registry, wave)
+    if not pairs:
+        raise DesignError("registry has no exposure-phenotype pairs for the requested wave")
     rows: list[dict[str, Any]] = []
-    for exposure, phenotype in enumerate_pairs(registry, wave):
+    for exposure, phenotype in pairs:
         for model_id in models:
             rows.extend(fit_pair(frame, exposure, phenotype, design, model_id))
     assign_families(rows, family_prefix)

@@ -1,3 +1,7 @@
+# 2026-10-30 Harden generic ExWAS scan engine
+
+- Corrected logistic odds-ratio standard-error scaling, blocked missing survey design keys and pair domains with fewer than two PSUs, and required explicit model covariate sets. Preserved the tracked Wave 1 CLI's source/readiness/plan authorization gate after review found an unguarded server draft. No real data were read or fitted; no tests were run. See the runner safety review.
+
 # 2026-10-30 Clarify lunar DOB conversion uncertainty
 
 - Read the pinned CHARLS-maintained `lunar2solar` ado/help. Its `leap` switch selects a separate table for the whole invocation, while the reviewed Wave 3 DOB route records solar/lunar basis but no per-person leap-month marker. Documented a candidate-set age-interval approach and validation gates; it remains unapproved and no participant DOB was read or converted. No age-specific domain or formal association model was produced.
