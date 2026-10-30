@@ -1586,3 +1586,7 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 # 2026-10-30 Align Wave 1 covariate DAG with the official blood target
 
 - Updated the candidate estimand in the Wave 1 household-environment DAG: use the complete baseline blood target of main respondents and spouses with `bloodweight`; do not impose a mechanical age-45 inclusion cutoff. Retained age 45+ only as a secondary survey-domain candidate. Independent methods review and the design/model gates remain pending.
+
+# 2026-10-30 Refresh active-plan next steps
+
+- Replaced the completed Wave 2 biomarker-weight review item in the active plan with the remaining pair-specific eligibility/design work, and restated the project-critical Wave 1 path to design/age/outcome review, independent review, and pilot re-freezing. No data or model status changed.
