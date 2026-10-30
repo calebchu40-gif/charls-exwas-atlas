@@ -1,7 +1,7 @@
 # Wave 1 fasting-domain estimand and weight compatibility review
 
-**Date:** 2026-10-30  
-**Status:** Source-based methods issue identified; no glucose/triglyceride model is approved.  
+**Date:** 2026-10-30
+**Status:** Source-based methods issue identified; no glucose/triglyceride model is approved.
 **Scope:** Distinguish the official fasting-code mapping from the population represented by a fasting-only analysis. No participant-level fasting values, outcome values, or counts were read for this memo.
 
 ## Official source evidence
