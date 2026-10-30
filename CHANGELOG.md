@@ -1595,3 +1595,6 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 
 - Reviewed a historical answer by a CHARLS forum administrator stating that CHARLS uses multistage PPS cluster sampling and that the clustering level should reflect the research question. Elevated the released `communityID` PSU field to the first practical candidate for independent review, while documenting that the post is general guidance and does not resolve the split-community mapping, implicit county stratification, or a Wave 1-specific variance specification.
 - Kept the candidate unapproved and the real-model gate closed; no microdata or association results were used or published.
+# 2026-10-30 Align Wave 1 variance review packet with gate semantics
+
+- Updated the independent-review packet to reflect the current review ordering: `communityID` single-stage WR Taylor is the first approximation candidate, while county-prefix clustering is secondary. Clarified that the code requires separate evidence for `final_psu_mapping` and `variance_method_review`; acceptance of a parent-community proxy must not be described as recovery of the official final subcommunity PSU. No readiness record was created, no gate was promoted, and no association model was fitted.

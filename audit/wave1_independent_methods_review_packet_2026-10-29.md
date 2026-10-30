@@ -4,7 +4,9 @@
 
 **状态：当前审阅候选待独立调查抽样/生物统计审阅；未获模型运行或结果发布批准。**
 
-**本材料的现行方案更正：**下方旧段落曾把 age≥45、Harmonized CHARLS D 年龄、`communityID` 单层聚类写作当前方案；这些属于历史探索运行或已被替代的候选，不能用于当前 readiness 文件。当前目标人群审阅候选为官方完整 Wave 1 血检目标（主访者及配偶）与 `bloodweight`，45+作为次级 survey domain；年龄来自官方 DOB/访谈时间，区间构造及上下界敏感性仍待审阅。**目前没有优先或已批准的方差方案。**county-prefix 顶层簇 Taylor 近似与县内 community 条件敏感性只作为未批准的审阅选项，不能视为当前推荐设计。当前准入证据与门槛见本页及 [`wave1_biomarker_estimand_age_recommendation_2026-10-30.md`](wave1_biomarker_estimand_age_recommendation_2026-10-30.md)、[`wave1_variance_review_recommendation_2026-10-30.md`](wave1_variance_review_recommendation_2026-10-30.md)。
+**2026-10-30 方差审阅候选更新：**CHARLS 数据论坛管理员曾答复，CHARLS 为多阶段 PPS 聚类抽样，分析时应按研究需要选择聚类层级（[论坛主题](https://forum.charlsdata.com/viewtopic.php?t=22)）。结合官方样本说明中社区/村为 PSU 及已发行 `communityID` 字段，当前把“`communityID` 作聚类、无来源不明的显式分层、WR Taylor 方差”列为**首要待审方案**；县级 ID 前缀聚类降为次级敏感性候选。论坛答复是一般指导，不是对本研究估计量的专门 `svyset` 规格；拆分社区最终 PSU 映射、县级排序/隐式分层仍未解决。故该候选依然未获批准，不能仅据此运行模型。
+
+**本材料的现行方案更正：**下方旧段落曾把 age≥45、Harmonized CHARLS D 年龄、`communityID` 单层聚类写作当前方案；这些属于历史探索运行或已被替代的候选，不能用于当前 readiness 文件。当前目标人群审阅候选为官方完整 Wave 1 血检目标（主访者及配偶）与 `bloodweight`，45+作为次级 survey domain；年龄来自官方 DOB/访谈时间，区间构造及上下界敏感性仍待审阅。**communityID 单层 WR Taylor 近似现为首要待审方案但未获批准。**county-prefix 顶层簇 Taylor 近似与县内 community 条件敏感性只作为次级未批准选项，不能视为当前已推荐或通过的设计。当前准入证据与门槛见本页及 [`wave1_biomarker_estimand_age_recommendation_2026-10-30.md`](wave1_biomarker_estimand_age_recommendation_2026-10-30.md)、[`wave1_variance_review_recommendation_2026-10-30.md`](wave1_variance_review_recommendation_2026-10-30.md)。
 
 本材料汇总当前可核实的方法信息及尚需决定的事项，供具备复杂抽样调查经验的审阅人评估。材料不含 CHARLS 参与者记录、样本计数、逐对结果或本地哈希。
 
@@ -33,7 +35,7 @@
 | 目标总体及年龄域 | 候选方案，未审阅批准 | 主分析候选为官方完整血检目标（主访者及配偶）；45+仅为次级 domain；仍需复核权重分母和完整案例目标 |
 | 权重与非应答 | 候选方案，未审阅批准 | 常规血检候选 `bloodweight`；它不能替代 PSU/方差，也不自动修正家庭暴露模块非应答 |
 | 最终 PSU 映射 | 未解决 | `communityID` 是父社区键；拆分社区内 respondent-to-final-sub-PSU 无可追溯链接。county-prefix 仅为候选，不是已确认原始抽样县 ID |
-| 方差方法 | 未批准 | county-prefix 顶层 with-replacement Taylor 近似和县内社区条件敏感性仅供审阅；不复现完整 CHARLS 设计，且不保证保守 |
+| 方差方法 | 候选待审、未批准 | `communityID` 单层、无显式分层 WR Taylor 近似列为首要待审方案；县级前缀顶层簇为次级敏感性候选。两者都不复现完整 CHARLS 设计，也不保证保守 |
 | 结局有效值与测量条件 | 部分阻断 | 15项常规血液分析物目录已对照；血糖/TG 的 `qc1_va003` 数值和特殊缺失码未由官方文件确认 |
 | 冻结模型与完整假设族 | 未批准 | K=105 关系已列明；M1/M2、空腹处理、结局量纲/变换、诊断及不可估计项规则须签定 |
 | 内部试点放行 | 未通过 | 仅在各项所需门通过且审核记录绑定来源、准备表、冻结计划后放行 |
@@ -49,7 +51,7 @@
 - 当前主要目标候选为完整官方血检目标（基线主访者及配偶），使用 `bloodweight`；不按个人年龄≥45机械筛选。45+仅作为完整设计框架中的次级 domain 候选。血检目标与暴露模块非应答共同决定的配对完整案例目标尚需审查。
 - M1 候选：暴露 + 官方来源年龄 + 年龄平方 + 性别；M2 候选：在 M1 上增加 NBS 城乡及分组教育作为预设敏感性模型；M0 仅描述。当前官方年龄候选是区间年龄而非精确访谈日年龄，使用区间中点并以上下界及无歧义 DOB 子集作敏感性仍待审阅；不再使用 Harmonized CHARLS D 年龄替代官方派生。协变量因果角色须与 [`core_covariate_readiness_2026-10-23.md`](core_covariate_readiness_2026-10-23.md) 的 DAG 审查共同冻结。
 - 若 M1/M2 获准，分别在完整 105 项中计算 BY-FDR 与 Bonferroni，所有不可估计假设保留在固定家族内。结果不能按显著性选配对；该多重校正也不能消除早期探索造成的选择性。
-- 方差没有首选方案。县级编码前缀顶层簇的 with-replacement Taylor 近似、县内社区聚类且条件于已抽中县的敏感性，都只是供独立审阅的未批准选项；两者都不等于 CHARLS 完整设计，未获独立审阅前不得进入配置。历史运行的 `communityID` 单层近似不能作为当前批准规格。
+- 方差候选已排序但没有批准方案：首要审阅 `communityID` 单层、无显式分层的 with-replacement Taylor 近似；县级编码前缀顶层簇与“县级条件下社区聚类”作为次级敏感性选项。各方案的抽样层级含义和遗漏阶段须在审阅记录中写明；均不能称为 CHARLS 完整设计。历史运行的 `communityID` 单层近似不能作为当前批准规格或真实分析先例。
 - 结局有效码、特殊码、单位/变换、LOD/顶码和 `qc1_va003` 空腹编码仍需逐项以官方材料审阅并在冻结前定版。指南测定范围不是默认清洗阈值；空腹编码未确认前，不据此筛血糖或甘油三酯样本。
 
 ## 新发现的测量条件问题：空腹状态
@@ -64,7 +66,7 @@ Wave 1 官方 Blood User Guide 说明采血前要求过夜空腹，但未空腹�
 
 1. 官方抽样说明提及30个大型社区以子社区作为 PSU；当个人/家庭文件没有 `sub_commuID`，PSU 文件也没有该字段时，是否有可接受且可追溯的方式将最终 PSU 映射到受访者？如果没有，现有公开数据可以支持哪种推断范围？
 2. 官方县级 PPS 与县内社区 PPS 应如何进入多阶段方差估计？对发布数据中的省/市名称、NBS 区域字段，可否建立抽样 county unit、实际 strata 和系统抽样排序的可靠映射？若不能，哪一级近似可接受、哪些阶段须声明未建模？
-3. 若最终只能使用 `communityID` 聚类、没有正式 strata 字段，父社区聚类且无显式 strata 的 with-replacement Taylor 近似是否可用于清楚标记的内部探索估计？其标准误、自由度和代表性限制应怎样表述？审阅人可要求停止模型拟合或改为仅作描述。
+3. 对首要候选——`communityID` 聚类、没有正式 strata 字段、with-replacement Taylor 近似——它所覆盖和遗漏的抽样阶段分别是什么？它是否足以用于本项目明确限定的探索性关联估计，还是应拒绝模型推断并改为仅作描述？若可接受，标准误、自由度和目标总体限制应怎样表述？
 4. 官方完整血检目标及 `bloodweight` 是否支持将主访者和配偶作为主估计总体、45+作为次级 survey domain？对 E/P 配对的暴露模块非应答及完整案例，`bloodweight` 应如何解释，有没有额外的配对权重/非应答调整？
 5. 对血糖/甘油三酯，官方发布文档中应以何种代码解释 `qc1_va003`？在此基础上建议采用何种预先声明的空腹状态调整和敏感性方案？
 6. 105项主族的具体有效值、量纲/变换、协变量、可估性标准、单 PSU/domain-singleton 处理、多重校正与结果复核是否足够完整？
