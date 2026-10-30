@@ -1,5 +1,7 @@
 # CHARLS ExWAS Atlas：执行计划与当前进度
 
+> **Current status pointer (2026-10-30):** For current authorization, controlling decisions, execution order and open gates, use [`EXECUTION_PLAN_ACTIVE_2026-10-30.md`](EXECUTION_PLAN_ACTIVE_2026-10-30.md) and [`EXECUTION_QUEUE_AUTHORIZED_WAVE1_2026-10-30.md`](EXECUTION_QUEUE_AUTHORIZED_WAVE1_2026-10-30.md). This file is a chronological work log; older dated entries are historical snapshots and may be superseded by later entries or the active plan. Do not use old status statements about missing files, a historical age-domain preference, or a prior variance recommendation as current instructions.
+
 > **当前执行基线（2026-10-30）**：用户重新确认 Wave 1 官方资料 123/117/118/201 的来源身份与使用授权；服务器受保护入库中的四件套已由干净代码副本通过 metadata-only 预检。用户已选择 `communityID` PSU、无 strata、WR Taylor 作为有明确局限的近似方差方案，所有个体级分析只在私有服务器执行。当前按用户最近的试点计划，将完整血检目标放入 survey design，并把 45+ 作为主 domain 候选；年龄区间下界规则为主、上界及完整血检框为敏感性，需冻结并审阅。Wave 1 关联模型仍须经过结局/暴露规则、近似方差、完整假设族及方法审阅门后才运行。详见[`EXECUTION_PLAN_ACTIVE_2026-10-30.md`](EXECUTION_PLAN_ACTIVE_2026-10-30.md)。
 
 **2026-10-30 服务器干净代码副本与方案 A 合成干跑：**保留服务器原有落后且含未提交改动的代码目录，另从最新公开 `main` 建立干净副本，避免覆盖旧工作。服务器 Python 环境为 Python 3.12.3、pandas 2.3.3、pyreadstat 1.3.1、svy 0.35.0；私有结果目录现已建立并限制为 owner-only。按 P2 用纯合成数据分别运行现有分层 smoke run 和用户选定的无分层 with-replacement Taylor 近似配置，各覆盖 6 个假暴露—假结局配对、3 个模型；两次均为24/24行成功、0行阻断。该结果仅说明当前软件接口能执行，不验证 CHARLS 来源/样本框/年龄/权重/方差、假设登记或科学试点有效性。没有读取任何 CHARLS 参与者数据，没有拟合真实关联；正式准入模型仍为0。具体方案审阅见[`wave1_pilot_plan_review_2026-10-30.md`](wave1_pilot_plan_review_2026-10-30.md)。

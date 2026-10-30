@@ -1,3 +1,9 @@
+# 2026-10-30 Authorize the next Wave 1 gated work block
+
+- Added a post-authorization execution queue with completed prerequisites, stop gates, privacy boundaries and dependency order. It records the user's confirmed official Wave 1 files and selected Option A approximation without equating those decisions with independent methods approval.
+- Added a protected-server-only diagnostic utility for the 15 prespecified Wave 1 biomarker columns. It reports aggregate missingness, finite-value counts, range and quantiles without reading identifiers or fitting associations. Its output is restricted to the private tree (mode 600); distributions cannot be used to infer valid-value cutoffs, special codes or fasting semantics.
+- The official outcome header review remains unchanged: no attached value labels were found. Wave 1 fasting coding, age/frame freeze and independent survey-design/method review remain gates. No association model was fitted in this code/documentation change.
+
 # 2026-10-30 Add metadata-only Wave 1 Blood outcome header audit
 
 - Added a source-gated utility that reads only Stata header metadata for the 15 planned biomarkers plus `qc1_va003`, recording variable labels and attached value-label sets in private QA. It does not read or print participant outcomes and does not infer valid-value limits from assay metadata.
