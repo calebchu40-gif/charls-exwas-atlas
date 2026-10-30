@@ -1,3 +1,9 @@
+# 2026-10-30 Allowlist reviewed Wave 3 outcome metadata
+
+- Investigated the repository-boundary CI failure on `8277fbc`. The only unreviewed delimited-text path was the Wave 3 blood outcome candidate catalog.
+- Reviewed the CSV rows against its source-review memo: it contains 16 public biomarker metadata/candidate-rule rows, not respondent records, IDs, measurements, weights, or restricted QA. Added its path to the explicit reviewed-text allowlist; no data file or analysis output was added.
+- The separate Wave 1 and Wave 3 analysis-readiness gates remain unchanged.
+
 # 2026-10-30 Reconcile Wave 1 status inventory and private review bindings
 
 - Corrected the outcome-rule inventory to reflect the verified file-138 review; it no longer describes the document as absent or unread.
