@@ -6,7 +6,7 @@
 
 The CHARLS 2011–2012 Blood Sample Users' Guide states that respondents were asked to fast overnight, blood was still collected from non-fasting respondents, and fasting status was recorded in the data. It reports that over 92% of respondents who provided blood reported fasting. The same guide warns that non-fasting glucose can be higher and notes that about 8% of respondents provided non-fasting blood samples. It describes the measured triglyceride assay and reports population summaries, but does not give the numeric coding for Wave 1 field `qc1_va003` in the reviewed text.
 
-The Wave 1 release header audit found no Stata value labels for `qc1_va003`. The 2011 user guide, official document index and reviewed questionnaire materials establish that fasting status is collected, but do not establish its numeric value mapping. Wave 3 `bl_fasting` labels cannot be transferred to Wave 1.
+The Wave 1 release header audit found no Stata value labels for `qc1_va003`. I also searched the text and PDF forms of the official 2011 Codebook (CHARLS item 120) and found no `qc1_va003`, fasting, or blood-sample entry. The 2011 user guide, official document index and reviewed questionnaire materials establish that fasting status is collected, but do not establish its numeric value mapping. Wave 3 `bl_fasting` labels cannot be transferred to Wave 1.
 
 ## Candidate handling by outcome
 
