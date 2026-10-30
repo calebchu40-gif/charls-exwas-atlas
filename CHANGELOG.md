@@ -1559,3 +1559,4 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 # 2026-10-30
 
 - Reviewed official 2018/2020 frame and weight guidance, updated the protected builder to retain the full Sample_Infor frame, and produced Wave 4/5 preparation tables. Aggregate frame/weight linkage QA passed; pair-specific analytic eligibility and survey variance remain unresolved. No associations were generated or published.
+- Added a header-only Wave 4/5 catalog coverage review and clarified that Wave 5 Exit_Module candidates are decedent/proxy mortality fields kept out of routine respondent-level pair tables pending a separate mortality estimand.

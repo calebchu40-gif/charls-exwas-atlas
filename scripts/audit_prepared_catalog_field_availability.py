@@ -32,6 +32,9 @@ WEIGHT_NAMES = (
 def missing_reason(wave: str, module: str) -> str:
     """Classify known structural absences without inferring record eligibility."""
     mod = module.casefold()
+    if mod in {"exit_module", "exit_interview"}:
+        return ("decedent/proxy exit-interview fields are intentionally kept outside the living/respondent spine; "
+                "review only in a separately specified mortality estimand")
     if wave == "2011" and mod == "community":
         return "community module kept separate because communityID is not a safe unique join key"
     if mod in {"child", "parent", "sibling", "spousal_sibling"}:
@@ -41,7 +44,8 @@ def missing_reason(wave: str, module: str) -> str:
     return "no exact source-code column name; inspect module merge, rename, and source release"
 
 
-def inspect_catalog(catalog_path: Path, data_dir: Path) -> tuple[list[dict], list[dict], list[dict], dict]:
+def inspect_catalog(catalog_path: Path, data_dir: Path,
+                    waves: tuple[str, ...] = WAVES) -> tuple[list[dict], list[dict], list[dict], dict]:
     catalog = pd.read_csv(catalog_path, dtype=str, encoding="utf-8-sig").fillna("")
     missing_columns = [name for name in KEY_COLUMNS if name not in catalog.columns]
     if missing_columns:
@@ -51,7 +55,7 @@ def inspect_catalog(catalog_path: Path, data_dir: Path) -> tuple[list[dict], lis
     missing_rows: list[dict] = []
     module_summaries: list[dict] = []
     design: dict[str, dict] = {}
-    for wave in WAVES:
+    for wave in waves:
         path = data_dir / f"CHARLS_wave{wave}_person_analytic.dta"
         if not path.is_file():
             design[wave] = {"prepared_table": path.name, "status": "missing"}
@@ -134,10 +138,16 @@ def main() -> None:
                         default=Path(__file__).resolve().parents[1] / "audit" / "charls_atlas_candidate_fields_v0.csv")
     parser.add_argument("--data-dir", type=Path, default=WAVE_DATA_DIR)
     parser.add_argument("--output-dir", type=Path, default=QA_OUTPUT_DIR)
+    parser.add_argument("--waves", default=",".join(WAVES),
+                        help="Comma-separated prepared waves to audit; defaults to all five national waves")
     args = parser.parse_args()
     data_dir = require_private_path(args.data_dir)
     output_dir = require_private_path(args.output_dir)
-    summaries, missing_rows, module_summaries, report = inspect_catalog(args.catalog, data_dir)
+    waves = tuple(dict.fromkeys(part.strip() for part in args.waves.split(",") if part.strip()))
+    unknown = sorted(set(waves) - set(WAVES))
+    if not waves or unknown:
+        raise ValueError(f"--waves must list one or more supported waves; unknown={unknown}")
+    summaries, missing_rows, module_summaries, report = inspect_catalog(args.catalog, data_dir, waves)
     output_dir.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(summaries).to_csv(output_dir / "prepared_catalog_field_availability_v1.csv",
                                    index=False, encoding="utf-8-sig")
@@ -149,7 +159,7 @@ def main() -> None:
         output_dir / "prepared_catalog_module_availability_v1.csv", index=False, encoding="utf-8-sig")
     (output_dir / "prepared_catalog_field_availability_v1.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"Wrote header-only catalogue availability summary for {len(WAVES)} waves to protected QA output.")
+    print(f"Wrote header-only catalogue availability summary for {len(waves)} selected waves to protected QA output.")
     print("No respondent values, IDs, non-missing counts, pairwise Ns, or associations were read or generated.")
 
 
