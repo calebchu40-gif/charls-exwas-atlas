@@ -1,5 +1,8 @@
 # 2026-10-30 Authorize the next Wave 1 gated work block
 
+- Completed a source-based review of the official Wave 1 Blood Guide and the distinct Wave 3 Blood release note. Wave 1 guidance documents that non-fasting samples were collected and fasting status recorded but does not map the `qc1_va003` codes in reviewed materials; Wave 3 `bl_fasting` and triglyceride top-coding metadata are not transferable to Wave 1.
+- Prepared a private 15-outcome handling-candidate file that distinguishes guide-reported assay ranges from analytic exclusion limits and proposes raw-finite, raw-unit handling for methods review. No outcome rule is approved; all association fitting remains gated.
+
 - Extended the metadata-only Wave 1 Blood header audit to record declared Stata tagged-missing metadata and reran it on the private server. The private report records header metadata only; absence of tagged-missing declarations does not rule out finite numeric sentinel codes or establish analytic validity. No respondent outcomes were read.
 
 - Visually reviewed the official Wave 1 Codebook and questionnaire pages for the candidate core covariates. The documented sex categories are 1/2; education response codes are 1–11; PSU `urban_nbs` labels are rural/urban context and are not design strata. Candidate modeling treats undocumented values as unclassified rather than inventing categories.

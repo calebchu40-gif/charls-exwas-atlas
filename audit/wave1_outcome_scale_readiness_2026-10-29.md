@@ -56,3 +56,10 @@ CHARLS 2011 Blood Sample Users' Guide 说明采血前要求隔夜空腹，但没
 - 因此，连续结局的数值有效性/特殊码规则仍未冻结；`qc1_va003` 映射仍未解决。15项的单位、Guide assay 方法范围、原始尺度候选和未决状态见上表；assay范围不自动成为过滤线。
 
 指南报告的临床高风险界值（例如血糖、血脂、CRP及血红蛋白界值）用于描述特定风险分类比例；它们不是本项目连续 ExWAS 结局的默认定义，也不构成 CHARLS 字段有效值范围。主图谱继续以经核实单位的连续化验值为候选；若未来希望展示阈值型结果，应逐项核对界值适用人群与来源，并在完整检验前预设为独立次要分析族，不能将二分结果与连续结局混成同一检验族或用观察结果挑阈值。官方指南的阈值表见印刷页16（PDF页21）。
+
+## 2026-10-30 官方结局来源逐项核查补充
+
+- 复核了 [CHARLS 2011 Wave 1 官方数据页](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)、[2011 Blood Data Users' Guide](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf)、2011问卷/Codebook，以及受控发行文件的header元数据。2011指南说明受访者被要求隔夜空腹，但非空腹仍采血且状态记入数据；已核材料没有给 `qc1_va003` 数字编码映射。文件头也没有附值标签或声明 Stata tagged-missing 元数据；有限数值型占位码仍不能因此排除。
+- [CHARLS 2015 Blood Data Release Note](https://charls.pku.edu.cn/en/data/Blood2015.pdf) 明确列出 Wave 3 的 `bl_fasting` 与甘油三酯顶码标志。它们是独立的 Wave 3 发布信息，**不能**据此推断 Wave 1 的 fasting 数字编码或 Wave 1 顶码规则。
+- 为缩小下一步审阅范围，已生成受保护的 `wave1_outcome_handling_candidate_20261030_private.json`：对15个预设表型逐项绑定源字段/单位、指南 assay 范围（仅作为检测元数据）、header 状态和候选处理。候选规则是保留原始单位的有限发布值、排除 Stata 缺失、不按指南范围或分布尾部过滤、不做结果驱动变换；这只是交给方法审阅的提案，尚未批准。血糖与甘油三酯仍登记但等待 Wave 1 fasting 映射及审阅，其他13项也须先审阅有限值规则后才可拟合。
+- 对105项固定试点假设，当前最多91项属于非空腹依赖结局的候选运行批次，14项对应的血糖/甘油三酯假设仍保留但阻断。该数是登记配对的计划分解，不是有效分析样本数、完成模型数或结果数。
