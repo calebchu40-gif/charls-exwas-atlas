@@ -162,6 +162,10 @@
 
 每完成一步，更新本文件和 `logs/progress_log.md`，记录日期、证据、下一动作和阻断。项目目标显示 active 代表目标仍进行中，不代表每个计算进程都持续运行。仓库首页已链接此状态页，可从 GitHub 的 `audit/ACTIVE_WORK_PLAN_2026-10-29.md` 查看。
 
+### 2026-10-30 Codebook 归档补充
+
+在 `C:\charls_raw` 暂存区发现官方 Wave 1 Codebook 归档，平台 MD5 核验通过；归档内 PDF 与受控参考区已有官方 PDF 的 SHA-256 一致。定向检索未发现 `qc1_va003` 代码定义，因此这项来源搜索现已完成但仍未解决 fasting 编码。归档和 PDF 只保存在 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\references\official_charls_codebook_2011\`；不进入代码仓库、OneDrive、服务器或网站。其余正式分析门不变。后续依次推进：取得新的正式字段释义（如用户从获准渠道获得的专门更正材料）、完成年龄/目标总体与方差设计的独立审阅、冻结分析计划并重审105项试点；在这些门通过前模型数保持0。
+
 ## 不可跳过的决策门
 
 1. 来源身份和文件版本；

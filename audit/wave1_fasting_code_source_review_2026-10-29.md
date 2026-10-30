@@ -14,7 +14,7 @@ Blood 数据中的 `qc1_va003` 表示采血时是否空腹。拟定的105项试�
 - CHARLS 官方 2013 CodeBook 不含 `qc1_va003`；其内容是2013随访问卷模块，不能替代2011血液数据值标签。
 - 复查 CHARLS 官方 Wave 1 下载页后，页面列出的相关文档是通用 Wave 1 Codebook 与 Blood Data Users' Guide，没有另列 2011 Blood 专用 Codebook 或 Blood Release Note。官方 Blood ZIP 归档仅包含 Stata 数据文件，没有随包数据字典/README。见[官方 Wave 1 数据文档清单](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)。
 - 2026-10-29 再次打开 CHARLS 当前官方 Wave 1 页面核对文档清单：仍列通用 Codebook 与 Blood data users' guide，没有新增 `qc1_va003` 专用代码本；该页面将 Blood 数据发布日期列为 2014-04-29。此为在线文档清单核对，不构成字段代码的数值映射。
-- **新增官方来源路径（2026-10-30）：**北京大学开放研究数据平台的 CHARLS 2011 baseline dataset（version 1.1）列有 `CHARLS_codebook.rar`，平台文件 ID 136、记录的 MD5 为 `293eb9789ee559fe0d7099086a2aaf40`，描述为“数据编码参考书”。该官方文件页显示需登录/申请文件访问；本项目尚未取得该压缩包，也未核验归档内容或其是否含 `qc1_va003` 标签。这个发现修正了“官方没有可追溯 Codebook 文件条目”的来源搜索范围，但不改变空腹编码未解决状态。只可通过用户本人已获准的账号/界面获取并核验文件，不从受限 API 绕过访问控制。
+- **官方归档核验（2026-10-30）：**在暂存的官方资料中找到 `2011_120_CHARLS_codebook.rar`，压缩包 MD5 为 `293eb9789ee559fe0d7099086a2aaf40`，与北京大学开放研究数据平台 CHARLS 2011 baseline dataset v1.1 的 `CHARLS_codebook.rar` 条目一致。归档成员清单只有 `CHARLS_codebook.pdf`；其 SHA-256 与项目已存档的官方 Wave 1 Codebook PDF 相同。对该官方 Codebook 可检索文本定向查找 `qc1_va003`、`va003`、`fasting` 和“空腹”，未找到对应字段或代码标签。因此，归档取得补全了来源身份链，但没有提供 `qc1_va003` 的数值映射，空腹编码门仍未通过。归档和文档只保存在本机受控参考目录，未复制到 GitHub、OneDrive、服务器或网站。
 - 本轮补查官方 Wave 1 [Physical Examination Questionnaire](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)（本地归档提取文本）及 Blood Guide 的全文文本层；体检问卷未出现 `qc1_va003`/空腹项目或其数字选项，Blood Guide 只说明记录空腹状态及非空腹风险，未定义字段代码。该协议文件不能替代数据字典或 released value labels。
 - CHARLS 官方 2015 CodeBook 对相近的 `bl_fasting` 字段列出 `1=Yes, 2=No`；这是Wave 3字段，不能单独证明2011 `qc1_va003` 的编码跨波一致。
 - 当前已查的官方 2011 文档/发行物没有给出 `qc1_va003` 的具体数值代码/特殊缺失码映射；它不是“编码已确认”，而是“官方公开材料仍未解决”。这不排除 CHARLS 账号内或其他正式更正文件存在额外说明。
@@ -30,7 +30,7 @@ Blood 数据中的 `qc1_va003` 表示采血时是否空腹。拟定的105项试�
 ## 当前决定与下一步
 
 1. 保持105项正式拟合门关闭。
-2. 已复查官方 Wave 1 Codebook 文本、Blood Guide、Physical Examination Questionnaire、Blood 发行包成员及 Stata value-label 元数据；目前均未给出数值代码映射。现已找到北大开放研究数据平台中的官方 Codebook 压缩包条目，但页面要求登录/申请访问，且归档内容尚未取得和审核。只有在用户获准账号可访问并完成来源/校验核验后，才能将其作为字段代码依据。
+2. 已复查官方 Wave 1 Codebook PDF、Blood Guide、Physical Examination Questionnaire、Blood 发行包成员及 Stata value-label 元数据；均未给出数值代码映射。官方 Codebook 归档现已按平台 MD5 核验并确认与已存档 PDF 相同，归档中未发现该字段。只有新的、正式且字段适用的 CHARLS 释义或数据更正材料，才能解除此门；不得用 2015 字段或受访者值推断。
 3. 如果当前官方公开发行没有该代码映射，后续只通过用户本人获准的 CHARLS 渠道核实并记录回复；项目不会代发联系。编码来源确认后，再冻结缺失处理、血糖/甘油三酯的主估计目标、空腹状态调整及空腹样本敏感性域；不得看关联结果后选择。
 4. 其他不受空腹状态直接影响的分析物仍受共同的 PSU/方差设计准入与独立方法审查阻断，不能因此提前开跑。
 
