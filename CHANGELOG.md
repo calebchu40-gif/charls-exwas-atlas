@@ -1,3 +1,9 @@
+# 2026-10-30 Reconcile Wave 1 status inventory and private review bindings
+
+- Corrected the outcome-rule inventory to reflect the verified file-138 review; it no longer describes the document as absent or unread.
+- Removed stale file-138 status text from the private reviewer packet and bound that packet to the current public plan and source-audit document hashes. The packet remains a draft, not a method approval.
+- The independent methods response remains outstanding, all 15 outcome rules are unfrozen, and no real-data association has been fitted.
+
 # 2026-10-30 Keep official questionnaire documentation outside the raw-data intake
 
 - Moved verified official file 138 from the raw intake folder to a separate server-private source-document area. This restores the raw data package inventory to 136 and keeps documentation from being mistaken for another participant data package; file mode remains `0600`.
