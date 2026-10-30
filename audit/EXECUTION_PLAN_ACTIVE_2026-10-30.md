@@ -157,3 +157,7 @@ The earlier 105-pair availability reports were bound to a superseded prepared-pe
 ### 2026-10-31 — separate weighted descriptors from unweighted table N
 
 A source review of Blood Users' Guide Tables 4/5 confirms that descriptive statistics are labelled weighted and the N column is explicitly unweighted. The private source-reconciliation script now compares each registered analyte's observed nonmissing count separately from its min/max endpoints against the guide table, both overall and among positive-bloodweight records. This resolves the summary-statistic basis question for N; any residual range discrepancy remains a release/version or summary-definition question, not grounds for trimming. Exact outputs stay private and no association is fitted.
+
+### 2026-10-31 — pair-level community support diagnostics
+
+The private pair-availability audit now includes, for each registered contrast and provisional age domain, community cluster coverage by contrast arm, communities supporting both arms, and single-record versus multi-record clusters under the nonmissing-outcome availability mask. These fields aid the user-selected communityID WR Taylor design review but do not validate the variance estimator or determine model readiness. Finite-code validity rules remain unapplied; exact counts remain private.

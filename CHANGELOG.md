@@ -1846,3 +1846,9 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Rechecked the original CHARLS Blood Users' Guide Table 4/5 text: descriptive statistics are weighted, while each table explicitly labels its N column as unweighted.
 - Extended the private source-bound audit to reconcile the 15 registered analyte-specific unweighted N values separately from the range endpoints, in both all-finite and positive-bloodweight frames.
 - Exact per-analyte counts and ranges remain mode-600 private QA; neither published ranges nor the comparison authorize exclusions or validity cutoffs. No associations fitted.
+
+# 2026-10-31 Add pair-level PSU support availability fields
+
+- Extended the protected 105-pair availability audit with community-cluster counts for each contrast arm, clusters containing both arms, and clusters with one or multiple nonmissing-outcome records, by provisional domain.
+- These are availability-only diagnostics under the current positive-weight/domain/nonmissing-outcome mask. They do not apply finite-code validity rules, establish estimability, or approve the user-selected WR Taylor approximation.
+- Exact pair-level counts remain private; no participant IDs or association estimates are written.

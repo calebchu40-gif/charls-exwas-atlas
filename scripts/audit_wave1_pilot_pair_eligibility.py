@@ -150,6 +150,16 @@ def run(data_path: Path, intake: Path, output: Path) -> dict[str, Any]:
         for domain_name, base in bases.items():
             mask = base & contrast
             complete = mask & nonmissing_outcome
+            # Availability-only PSU support under the provisional complete-case
+            # mask. These counts do not imply a valid outcome or variance model.
+            complete_communities = community.loc[complete].dropna()
+            complete_cluster_sizes = complete_communities.value_counts()
+            exposure_communities = set(
+                community.loc[complete & exposure.eq(spec["exposure_code"])].dropna().tolist()
+            )
+            reference_communities = set(
+                community.loc[complete & exposure.eq(spec["reference_code"])].dropna().tolist()
+            )
             rows.append({
                 "hypothesis_id": spec["hypothesis_id"],
                 "exposure_field": spec["exposure_field"],
@@ -165,6 +175,11 @@ def run(data_path: Path, intake: Path, output: Path) -> dict[str, Any]:
                 "outcome_missing_pair_records": int((mask & ~nonmissing_outcome).sum()),
                 "outcome_nonmissing_values_excluded_by_validity_rules": None,
                 "distinct_parent_community_keys_in_pair_domain": int(community.loc[complete].nunique(dropna=True)),
+                "complete_case_communities_with_exposure_arm_availability_only": len(exposure_communities),
+                "complete_case_communities_with_reference_arm_availability_only": len(reference_communities),
+                "complete_case_communities_with_both_contrast_arms_availability_only": len(exposure_communities & reference_communities),
+                "complete_case_communities_with_one_record_availability_only": int((complete_cluster_sizes == 1).sum()),
+                "complete_case_communities_with_multiple_records_availability_only": int((complete_cluster_sizes > 1).sum()),
                 "positive_weight_rows_missing_parent_community": int((complete & community.isna()).sum()),
                 "fasting_mapping_status": (
                     "source_mapping_verified_measurement_handling_unresolved" if analyte_fast_sensitive
@@ -200,6 +215,7 @@ def run(data_path: Path, intake: Path, output: Path) -> dict[str, Any]:
             "Pair counts describe data availability only; they are not final analytic N.",
             "Nonmissing outcome values are not assumed clinically valid; no distribution-derived rule or assay range was used as an exclusion cutoff.",
             "Positive bloodweight and released parent-community keys do not approve a variance estimator or resolve split sub-PSUs.",
+            "Contrast-arm and singleton-cluster counts are based on nonmissing outcome availability only; they are not based on frozen valid-value rules and do not approve WR Taylor variance.",
             "The age lower/upper domain masks use an unreviewed provisional candidate and are diagnostic only.",
             "Wave 1 fasting status mapping is source-supported as 1=fasting and 2=not fasting; glucose and triglycerides (14 registered coefficients) remain blocked pending estimand, bloodweight compatibility, finite-code handling, and independent methods review.",
         ],
