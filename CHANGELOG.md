@@ -1578,3 +1578,7 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 # 2026-10-30 Correct latest-wave link in the public site
 
 - Fixed the objective-measurement note's official-source link, which had pointed to the 2011 page despite describing the 2020 Wave 5 release. Updated its verification date to 2026-10-30. No catalog payload or association results changed; the GitHub Pages workflow checks the public bundle before deployment.
+
+# 2026-10-30 Reconcile Wave 2 Biomarker weight scope
+
+- Reviewed the official Wave 2 Release Note and CHARLS Codebook. Documented that the Wave 2 Biomarker module is anthropometric, its nonresponse-adjusted biomarker weight is cross-sectional (response-probability factor capped at the 99th percentile), and no longitudinal biomarker weight or Wave 2 blood file is released. Limited its use to cross-sectional pairs actually measured in that module. This records a source-based interpretation; it does not open model or variance gates.
