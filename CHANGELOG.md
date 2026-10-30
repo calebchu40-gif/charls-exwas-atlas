@@ -1,3 +1,10 @@
+# 2026-10-30 Resume gated Wave 1 execution and rebuild private eligibility QA
+
+- Rechecked the current execution plan, clean reviewed server checkout, private inputs, account resource limits, public repository head, and Pages/results endpoint. Wave 1 official inputs and the prepared table remain in the owner-only server workspace.
+- Rebuilt the official-source-bound age interval candidate in private storage after detecting that the prior candidate QA lacked an output hash binding. The regenerated candidate remains explicitly unreviewed and is not used to claim approved age eligibility.
+- Ran the protected aggregate-only Wave 1 blood-target/exposure coverage audit against the current prepared table and official Blood/age inputs. It reads planned exposure codes and weights, not blood outcome values, and writes its detailed report only to private server QA. No association model was fitted and no restricted output was synchronized or published.
+- The user's selected `communityID` unstratified WR Taylor method is recorded as an approximate project choice. The unresolved split-community/final-PSU and independent methods-review gates remain explicit; no full CHARLS design claim is made. Next execution items are pair-level outcome eligibility QA and a frozen, review-bound model/diagnostic specification.
+
 # 2026-10-30 Add published CHARLS PSU and biomarker-weight evidence
 
 - Reviewed the CHARLS Cohort Profile and the 2015 venous-biomarker design paper. The Cohort Profile explicitly identifies village/neighborhood units as PSUs and reports distinct household, individual, and biomarker weights; the biomarker paper documents the Wave 3 blood-weight nonresponse adjustment and inclusion of spouses regardless of age.
