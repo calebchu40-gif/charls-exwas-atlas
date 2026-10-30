@@ -1,5 +1,7 @@
 # CHARLS ExWAS Atlas：执行计划与当前进度
 
+**2026-10-30 Wave 4/5 respondent-spine implementation gate:** metadata-only headers show that 2018 and 2020 All Data releases contain `Sample_Infor` with the `crosssection` flag and separate `Weights` files; the current builder uses Sample_Infor as the spine only for 2015 and defaults to Demographic_Background for these later waves. Before preparing Wave 4/5 tables, review official guide semantics and freeze a frame-preserving, wave-specific spine/weight-join rule. Header row counts or positive weights alone cannot define eligibility. See [`multwave_frame_spine_build_gate_2026-10-30.md`](multwave_frame_spine_build_gate_2026-10-30.md). No association was fitted; formal models remain 0.
+
 **2026-10-30 多波次官方 All Data 入库与 metadata-only 预检：**将 Wave 2/2013、Wave 4/2018、Wave 5/2020 的 All Data ZIP 从本机下载暂存目录复制到受保护 CHARLS 工作区；复制前后均逐包校验 CHARLS 官方发布页 SHA-1。三包均匹配官方校验值，并按官方归档头部审计脚本完成 DTA 成员名、行列头信息和变量元数据预检；临时抽取文件已由脚本清理，报告仅写在受保护本机 QA 目录。Wave 2 归档含 Biomarker、PSU、Weights 模块；Wave 4/5 包含各自 Sample_Infor 与 Weights。此次只补齐多波次来源和结构证据，不代表样本框、测量资格、权重适用性、方差设计或模型已通过；正式关联仍为0。
 
 **2026-10-30 Wave 3 All Data 入库指纹复核：**在受保护本机 Wave 3 入库子目录发现用于既有准备表重建的 `CHARLS2015r.zip`。对压缩包只计算校验值并列出归档成员名；本地 SHA-1 与 CHARLS 官方 Wave 3 数据页所列 All Dataset SHA-1 完全一致，SHA-256/字节数也与已生成的受保护重建 manifest 相符。已在该本机入库子目录新增 provenance manifest；未读取归档内参与者值，未复制数据到仓库、OneDrive、服务器或网站。此项补齐本地入库记录，不改变 Wave 3 分析门状态；正式关联模型仍为0。

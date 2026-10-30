@@ -1556,3 +1556,6 @@ Added a metadata-only local intake manifest for `CHARLS2015r.zip` after verifyin
 # 2026-10-30 — Add official Wave 2, 4, and 5 archives to protected local intake
 
 Copied the authorized 2013, 2018, and 2020 All Data archives from local staging into the protected CHARLS workspace after matching each archive SHA-1 to its official release listing. Ran the existing metadata-only archive audit on all three; only archive-member and Stata-header metadata were inspected, temporary extracts were cleaned, and detailed reports remain in protected local QA. This expands source readiness for the planned mult wave catalog and future analyses; sample eligibility, module weights, variance design, and model review remain open. No microdata or results were published.
+# 2026-10-30
+
+- Added a metadata-only Wave 4/5 frame-spine review. The released Sample_Infor modules contain cross-section flags, but the current builder does not yet use them as the respondent spine for those waves. Official guide semantics and a frame-preserving weight join must be reviewed before preparation; no associations are approved.
