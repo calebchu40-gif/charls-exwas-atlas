@@ -126,6 +126,18 @@ def audit(data_path: Path, manifest_path: Path, output_path: Path,
     # response. Keep this route assumption explicit for methods review.
     calendar_required = domain & actual_report
     calendar_unknown_n = count(calendar_required & ~(calendar.eq(1) | calendar.eq(2)))
+    route_calendar_cross_tab = {}
+    for route_name, route_mask in (
+        ("same_as_document_ba002_1", domain & actual_doc),
+        ("separate_actual_date_ba002_2", domain & actual_report),
+        ("unknown_or_missing_ba002", domain & route_unknown),
+    ):
+        route_calendar_cross_tab[route_name] = {
+            "solar": count(route_mask & calendar.eq(1)),
+            "lunar": count(route_mask & calendar.eq(2)),
+            "missing_or_unrecognized": count(route_mask & ~(calendar.eq(1) | calendar.eq(2))),
+            "route_rows": count(route_mask),
+        }
     birth_year_missing_n = count(domain & year.isna())
     birth_year_invalid_n = count(domain & year.notna() & ~year.between(1900, 2015))
     birth_month_unknown_n = count(domain & (month.isna() | month.eq(0)))
@@ -172,8 +184,9 @@ def audit(data_path: Path, manifest_path: Path, output_path: Path,
             "solar": count(domain & calendar.eq(1)),
             "lunar": count(domain & calendar.eq(2)),
             "missing_or_unrecognized": count(domain & ~(calendar.eq(1) | calendar.eq(2))),
-            "not_applicable_when_ba002_unknown_or_missing": count(domain & route_unknown),
-            "missing_or_unrecognized_on_known_ba002_route": calendar_unknown_n,
+            "ba003_present_on_same_as_document_route": count(domain & actual_doc & (calendar.eq(1) | calendar.eq(2))),
+            "missing_or_unrecognized_on_separate_actual_date_route": calendar_unknown_n,
+            "by_ba002_route": route_calendar_cross_tab,
         },
         "interview_timing": {
             "year_present": count(domain & interview_year.notna()),
@@ -183,7 +196,7 @@ def audit(data_path: Path, manifest_path: Path, output_path: Path,
         },
         "gate_summary": {
             "unknown_birth_route_present": route_unknown_n > 0,
-            "unrecognized_or_missing_calendar_on_known_route_present": calendar_unknown_n > 0,
+            "unrecognized_or_missing_calendar_on_separate_actual_date_route_present": calendar_unknown_n > 0,
             "birth_year_outside_documented_range_present": birth_year_invalid_n > 0,
             "birth_year_missing_present": birth_year_missing_n > 0,
             "unknown_birth_month_or_day_present": birth_month_unknown_n > 0 or birth_day_unknown_n > 0,
