@@ -1786,3 +1786,8 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 
 - The private metadata-only configuration audit detected a stale fingerprint after registered-plan updates. Rebound the private draft config to the current registered pilot plan and refreshed its hash binding in the owner-only review packet.
 - Reran the audit: official source/provenance and plan fingerprint match, but the config remains draft, no frozen config/readiness record exists, and outcome rules still await independent review. Readiness remains closed; no participant outcome values or associations were read/fitted.
+
+# 2026-10-30 Reconcile the official Wave 1 source inventory
+
+- Updated `sources_official/SOURCES.md` to distinguish file 138 (which does not define fasting) from the separate official 2011 Fieldwork Plan Appendix 2 that documents 1=Yes/2=No; linked it to the Wave 1 Blood `qc1_va003` header label.
+- Recorded the official document identity hash and private-storage boundary. This resolves the code-source mapping only; the analysis estimand, weight applicability, outcome rules and independent methods review remain pending.
