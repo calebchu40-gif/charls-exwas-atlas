@@ -1904,3 +1904,9 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 
 - An independent AI document review compared all-blood-sample adjustment with a fasting-only primary. It recommended submitting the all-blood-sample target, `bloodweight`, and fasting-status main-effect adjustment as the primary candidate, while limiting fasting-only to conditional/descriptive sensitivity unless its weighting assumptions are independently established.
 - No exposure-by-fasting interaction is added to the K=240 primary family. All 14 coefficients remain blocked pending a signed, hash-bound independent review; this is not authorization to fit or release.
+
+# 2026-10-31 Harden K=240 availability audit after independent static review
+
+- Static review found that the initial diagnostic needed stricter validation of the 16 planned exposure contrasts and their mapping to all 15 public biomarker fields, and should separate missing/nonparseable outcomes from nonfinite values.
+- Updated the audit to fail closed on register/crosswalk mismatch and duplicate coefficient tuples, clarified valid-age-interval denominators, and split the availability categories. The previous private output is superseded; refresh it before reviewer use.
+- No association model or public result is authorized by these changes.
