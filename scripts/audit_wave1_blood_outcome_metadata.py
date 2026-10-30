@@ -53,6 +53,7 @@ def run(data_path: Path, blood_path: Path, output: Path) -> dict[str, Any]:
     value_labels = dict(meta.value_labels or {})
     storage_types = dict(getattr(meta, "readstat_variable_types", {}) or {})
     original_formats = dict(getattr(meta, "original_variable_types", {}) or {})
+    tagged_missing = dict(getattr(meta, "missing_user_values", {}) or {})
     fields: list[dict[str, Any]] = []
     for field in OUTCOME_FIELDS:
         label_set_name = variable_to_label.get(field)
@@ -65,6 +66,7 @@ def run(data_path: Path, blood_path: Path, output: Path) -> dict[str, Any]:
             "value_label_set_name": label_set_name,
             "value_label_entries": len(label_set),
             "value_labels_present": bool(label_set),
+            "tagged_missing_values_declared": list(tagged_missing.get(field, []) or []),
         })
     report = {
         "status": "metadata_only_blood_header_review",
@@ -76,7 +78,7 @@ def run(data_path: Path, blood_path: Path, output: Path) -> dict[str, Any]:
         "metadata_only": True,
         "respondent_values_read": False,
         "outcome_fields_reviewed": fields,
-        "interpretation": "Header variable labels, storage types, original formats, and value-label attachments only; no numeric outcome validity or special missing-value rules are inferred from this report.",
+        "interpretation": "Header variable labels, storage types, original formats, value-label attachments, and declared Stata tagged-missing metadata only; numeric sentinel codes and analytic validity are not inferred from this report.",
     }
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -97,6 +99,7 @@ def main() -> None:
         "status": report["status"],
         "planned_fields_reviewed": len(report["outcome_fields_reviewed"]),
         "value_label_fields": sum(item["value_labels_present"] for item in report["outcome_fields_reviewed"]),
+        "tagged_missing_metadata_fields": sum(bool(item["tagged_missing_values_declared"]) for item in report["outcome_fields_reviewed"]),
         "respondent_values_read": False,
         "private_output_written": True,
     }, ensure_ascii=False))
