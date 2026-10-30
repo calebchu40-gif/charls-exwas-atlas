@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import shutil
 import subprocess
 import tempfile
 from datetime import datetime, timezone
@@ -24,6 +25,7 @@ from prepare_charls_wave_tables import (
     sha256_file,
     validate_wave1_source_review,
 )
+from audit_2011_pilot_intake_metadata import _rar_member_names
 from project_paths import PRIVATE_ROOT, QA_OUTPUT_DIR, require_private_path
 
 
@@ -57,9 +59,7 @@ def protected_rar_modules(archive: Path):
     """Extract verified RAR members into a temporary protected directory."""
     scratch = private(PRIVATE_ROOT / "tmp")
     scratch.mkdir(parents=True, exist_ok=True)
-    listing = subprocess.run(
-        ["tar", "-tf", str(archive)], capture_output=True, text=True, timeout=120, check=True
-    ).stdout.splitlines()
+    listing = _rar_member_names(archive)
     members = [name for name in listing if name.casefold().endswith(".dta")]
     if not members:
         raise ValueError("Verified Wave 1 RAR contains no Stata modules")
@@ -67,10 +67,22 @@ def protected_rar_modules(archive: Path):
         member_path = PurePosixPath(name.replace("\\", "/"))
         if member_path.is_absolute() or ".." in member_path.parts:
             raise ValueError("Wave 1 RAR contains an unsafe member path")
+    extractor = (
+        os.environ.get("UNRAR_FREE_PATH", "")
+        or shutil.which("unrar-free")
+        or str(PRIVATE_ROOT / "tools" / "unrar-free" / "extracted" / "usr" / "bin" / "unrar-free")
+    )
+    extractor_path = Path(extractor)
+    if not extractor_path.is_file():
+        resolved_extractor = shutil.which(extractor)
+        if resolved_extractor:
+            extractor_path = Path(resolved_extractor)
+    if not extractor_path.is_file():
+        raise FileNotFoundError("A protected RAR extractor is required for the Wave 1 module-ID audit")
     with tempfile.TemporaryDirectory(prefix="wave1_module_ids_", dir=scratch) as directory:
         root = Path(directory).resolve()
         subprocess.run(
-            ["tar", "-xf", str(archive), "-C", str(root), *members],
+            [str(extractor_path), "-x", str(archive), *members, str(root)],
             capture_output=True, timeout=600, check=True,
         )
         extracted = sorted(root.rglob("*.dta"))

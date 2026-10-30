@@ -86,6 +86,7 @@ ANALYSIS_PLANS = {
             "scripts/derive_wave1_age_intervals.py",
             "scripts/verify_official_lunar_table_parity.py",
             "scripts/audit_2011_pilot_design_frame.py",
+            "scripts/audit_wave1_weight_only_module_presence_private.py",
             "scripts/require_verified_wave1_frame.py",
             "scripts/run_2011_household_environment_scaleup.py",
         ),
