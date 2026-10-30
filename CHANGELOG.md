@@ -1,3 +1,9 @@
+# 2026-10-30 Add published CHARLS PSU and biomarker-weight evidence
+
+- Reviewed the CHARLS Cohort Profile and the 2015 venous-biomarker design paper. The Cohort Profile explicitly identifies village/neighborhood units as PSUs and reports distinct household, individual, and biomarker weights; the biomarker paper documents the Wave 3 blood-weight nonresponse adjustment and inclusion of spouses regardless of age.
+- Updated the Wave 1 variance review questions so the released `communityID` is assessed as a source-supported candidate mapping to the published community PSU, while keeping the complete multistage variance, strata, split-community linkage, sample-frame and independent-review gates unresolved. This evidence does not authorize a model or establish full-design variance.
+- No participant data, model, or test was run. Formal approved association models remain 0. See `audit/published_CHARLS_design_practice_review_2026-10-30.md`.
+
 # 2026-10-30 Correct Wave 1 variance-candidate ranking
 
 - Retracted the previous elevation of `communityID`-only WR Taylor as the first candidate for review. The CHARLS forum response is general and does not endorse a PSU level for this estimand; the official design describes nested county/community stages and split communities, while the released materials reviewed here do not provide the full variance mapping. The current review packet now treats county-prefix and parent-community approximations as unselected options for parallel expert assessment. Analysis gates remain closed and formal association models remain 0.
