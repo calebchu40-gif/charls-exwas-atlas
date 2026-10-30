@@ -25,6 +25,7 @@ FIT_STATUSES = {
     "planned",
     "blocked_design_verification",
     "blocked_data_access",
+    "blocked_measurement_rule",
     "success",
     "nonconvergence",
     "inestimable",
@@ -143,6 +144,10 @@ def validate_rows(rows: list[dict[str, str]], schema_fields: list[str], required
                 errors.append(f"row {row_no}: successful fit requires estimability_review_id")
         if fit_status == "inestimable" and estimability_status == "reviewed_pass":
             errors.append(f"row {row_no}: inestimable fit cannot have estimability_review_status=reviewed_pass")
+        if fit_status == "blocked_measurement_rule" and estimability_status != "unresolved":
+            errors.append(f"row {row_no}: blocked_measurement_rule requires estimability_review_status=unresolved")
+        if fit_status == "blocked_measurement_rule" and review_id:
+            errors.append(f"row {row_no}: blocked_measurement_rule cannot have an estimability review ID")
         elif review_id and estimability_status != "reviewed_pass":
             errors.append(f"row {row_no}: estimability_review_id requires estimability_review_status=reviewed_pass")
 
@@ -259,6 +264,8 @@ def validate_rows(rows: list[dict[str, str]], schema_fields: list[str], required
                     errors.append(f"row {row_no}: not_released stratum requires a 'limitation:' or '局限：' label")
         elif has_estimate:
             errors.append(f"row {row_no}: estimate fields must be blank unless fit_status=success")
+        if fit_status == "blocked_measurement_rule" and row.get("n_model", "").strip():
+            errors.append(f"row {row_no}: blocked_measurement_rule cannot report a model sample size")
 
     families: dict[str, list[tuple[int, dict[str, str]]]] = {}
     for row_no, row in enumerate(rows, start=2):

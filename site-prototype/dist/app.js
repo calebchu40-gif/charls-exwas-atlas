@@ -174,7 +174,7 @@ function showHeatmapDetail(row){
     ['模型样本量',row.n_model||'—'],
     ['方差方法',row.variance_design||'—'],
     ['可比性等级',row.comparability_grade||'—'],
-    ['拟合状态',row.fit_status],
+    ['拟合状态',row.fit_status==='blocked_measurement_rule'?'测量规则待核实（暂不估计）':row.fit_status],
     ['披露状态',row.disclosure_status],
     ['目标人群',row.target_population||'—'],
   ];
@@ -261,7 +261,7 @@ function renderAssociationHeatmap(rows){
         if(!row||row.fit_status!=='success'){
           td.textContent='—';
           td.className='blocked';
-          if(row)td.title=`${exposure.split('\u0000').join(' · ')} × ${phenotype}：${row.fit_status}`;
+          if(row)td.title=`${exposure.split('\u0000').join(' · ')} × ${phenotype}：${row.fit_status==='blocked_measurement_rule'?'测量规则待核实（暂不估计）':row.fit_status}`;
         } else {
           const value=metric==='q'?row.q_value_by:(metric==='neglog10p'?row.p_value:row.estimate);
           td.textContent=heatmapFormat(value);
@@ -345,7 +345,7 @@ function renderAssociationRows() {
     const effect=item.fit_status==='success'
       ?`${item.estimate} (${item.standard_error}); 95% CI ${item.ci_lower}–${item.ci_upper}`:'—';
     const cells=[`${item.exposure_concept_id} · ${item.exposure_variable}`,`${item.phenotype_concept_id} · ${item.phenotype_variable}`,
-      item.wave,item.model_id,effect,item.n_model,item.fit_status==='success'?'统计和披露审查通过':item.fit_status];
+      item.wave,item.model_id,effect,item.n_model,item.fit_status==='success'?'统计和披露审查通过':(item.fit_status==='blocked_measurement_rule'?'测量规则待核实（暂不估计）':item.fit_status)];
     for(let index=0;index<cells.length;index++){
       const td=document.createElement('td');td.textContent=String(cells[index]??'—');
       if(index===4)td.title=[item.estimate_type,item.contrast,item.variance_design].filter(Boolean).join(' · ');

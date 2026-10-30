@@ -34,6 +34,8 @@ def adjust_pvalues(p_values: Sequence[float | None]) -> dict[str, list[float | N
         values.append(parsed)
 
     family_size = len(values)
+    # Missing/unestimable hypotheses stay in K. For ranking, treat them as
+    # p=1 (least favorable), but leave their own adjusted values blank.
     bonferroni = [min(1.0, value * family_size) if value is not None else None for value in values]
     harmonic = math.fsum(1.0 / rank for rank in range(1, family_size + 1))
     ordered = sorted(

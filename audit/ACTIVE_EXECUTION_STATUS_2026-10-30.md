@@ -54,3 +54,7 @@
 ## 2026-10-30 结果表批次约束复核
 
 进一步对照 schema-v3 validator 与 finalizer 明确：`pilot105` 的设计是嵌套执行批次，按计划不产生最终族校正；validator 则要求成功行的 BY/Bonferroni 值与当前表声明的完整 K 族严格一致，并要求表中恰有 K 行。因此不能把 105 行 pilot 伪装成最终结果表或送入 family finalizer。pilot 只保留为服务器私有运行与 QA。将来只有全部 240 个预声明系数完成审阅后，才把 full240 原始 p 值作为一个 K=240 族进行规范化，随后由 finalizer 对冻结清单再次核对并从原始 p 值最终化；不得将 pilot 或 K150/K90 分块调整值当全族输入。适配器还必须要求完整 pair-level estimability review，并绑定运行清单、冻结配置、结果/QA哈希。详见[批次与 schema 约束复核](wave1_result_pipeline_integration_review_2026-10-30.md)。
+
+## 2026-10-30 — 区分“测量规则待核实”与“不可估”
+
+Wave 1 执行器对测量协议未解决的结局返回 `blocked_by_unresolved_measurement_rule`。此前 schema-v3、私有 full240 标准化器和发布校验器没有相应的规范状态，容易把“尚未允许拟合”误记为“拟合后不可估”。现新增 `fit_status=blocked_measurement_rule`：它必须对应 `estimability_review_status=unresolved`、无逐对审查 ID，估计/标准误/区间/P/q/模型 N 均为空；标准化器还要求该状态与执行器原始阻断码一致。该行仍属于预声明 K=240 假设族。BY/Bonferroni 按完整 K 计算，无 p 值项按 p=1 参与保守排序，但本行自身 p/q 留空。网站使用“测量规则待核实（暂不估计）”状态标签。本次只修补结果状态契约并做静态检查，不运行 CHARLS 数据或模型；`qc1_va003` 仍未核实，模型数仍为 0。

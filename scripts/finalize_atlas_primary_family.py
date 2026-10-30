@@ -25,7 +25,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PRIVATE = Path(os.environ.get("LOCALAPPDATA", Path.home())) / "CHARLS_ExWAS_Atlas"
 ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{2,63}$")
 MODEL_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$")
-FINALIZABLE_STATUSES = {"success", "nonconvergence", "inestimable"}
+FINALIZABLE_STATUSES = {"success", "nonconvergence", "inestimable", "blocked_measurement_rule"}
 MANIFEST_FIELDS = {
     "analysis_plan_id",
     "atlas_family_id",

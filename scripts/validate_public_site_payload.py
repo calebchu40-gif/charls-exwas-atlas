@@ -80,7 +80,7 @@ def validate_association_payload(payload: object) -> list[str]:
                 errors.append(f"Association family {family_id} includes a row without disclosure approval")
             if row.get("variance_design") not in PUBLIC_VARIANCE_LABELS:
                 errors.append(f"Association row {analysis_id} has an unsupported public variance-design label")
-            if row.get("fit_status") not in {"success", "nonconvergence", "inestimable", "blocked_design_verification", "blocked_data_access", "code_error"}:
+            if row.get("fit_status") not in {"success", "nonconvergence", "inestimable", "blocked_design_verification", "blocked_data_access", "blocked_measurement_rule", "code_error"}:
                 errors.append(f"Association row {analysis_id} has unsupported fit_status")
             fit_status = row.get("fit_status")
             variance_design = row.get("variance_design")

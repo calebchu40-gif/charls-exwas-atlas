@@ -32,7 +32,7 @@ ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{2,63}$")
 SCOPE_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{2,63}$")
 HASH_RE = re.compile(r"^[0-9a-f]{64}$")
 COMMIT_RE = re.compile(r"^[0-9a-f]{7,40}$")
-FINAL_STATUSES = {"success", "nonconvergence", "inestimable"}
+FINAL_STATUSES = {"success", "nonconvergence", "inestimable", "blocked_measurement_rule"}
 REVIEW_DECISION_FIELDS = {
     "hypothesis_id", "fit_status", "estimability_review_status",
     "estimability_review_id", "fit_message",
@@ -293,6 +293,9 @@ def normalize(
                 raise ValueError("success requires reviewed_pass and an opaque estimability review ID")
         elif status == "reviewed_pass" or review_id:
             raise ValueError("non-success decisions cannot claim reviewed_pass")
+        if decision["fit_status"] == "blocked_measurement_rule":
+            if status != "unresolved" or review_id:
+                raise ValueError("blocked_measurement_rule requires unresolved status and no pair-review ID")
         decision_by_id[hypothesis_id] = decision
     if set(decision_by_id) != set(register_by_id):
         raise ValueError("pair-level review IDs do not exactly match all 240 registered hypotheses")
@@ -343,6 +346,8 @@ def normalize(
                for raw_field, register_field in raw_registry_bindings.items()):
             raise ValueError(f"raw result metadata does not match the frozen register for {hypothesis_id}")
         final_status = decision["fit_status"]
+        if final_status == "blocked_measurement_rule" and raw.get("fit_status") != "blocked_by_unresolved_measurement_rule":
+            raise ValueError("measurement-rule block must match the runner's unresolved measurement status")
         if final_status == "success" and raw.get("fit_status") != "success":
             raise ValueError("pair review cannot promote a runner failure to successful fit")
         if final_status == "success":
