@@ -54,14 +54,18 @@ def run(blood_path: Path, person_path: Path, output_path: Path) -> dict[str, Any
 
     fields: list[dict[str, Any]] = []
     for name in OUTCOMES:
-        values = pd.to_numeric(frame[name], errors="coerce")
+        raw = frame[name]
+        values = pd.to_numeric(raw, errors="coerce")
         array = values.to_numpy(dtype="float64", na_value=np.nan)
         finite = array[np.isfinite(array)]
+        source_present = raw.notna().to_numpy()
+        parsed_missing = values.isna().to_numpy()
         nonfinite_nonmissing = int((values.notna().to_numpy() & ~np.isfinite(array)).sum())
         summary: dict[str, Any] = {
             "field": name,
             "n_rows": int(len(array)),
-            "n_missing_or_stata_missing": int(values.isna().sum()),
+            "n_source_missing_or_stata_missing": int(raw.isna().sum()),
+            "n_numeric_parse_failures": int((source_present & parsed_missing).sum()),
             "n_nonfinite_nonmissing": nonfinite_nonmissing,
             "n_finite": int(finite.size),
             "n_negative": int((finite < 0).sum()),
