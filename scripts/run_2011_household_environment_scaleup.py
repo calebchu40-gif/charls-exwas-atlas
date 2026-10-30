@@ -378,18 +378,46 @@ def _read_protected_frame(config: dict[str, Any], analytes: list[dict[str, str]]
         term_map["binary"].append(term)
     for index, (label, item) in enumerate(config["model"]["categorical_covariates"].items()):
         field = item["field"]
-        levels = [_numeric_code(level, f"categorical level {label}") for level in item["levels"]]
-        reference = _numeric_code(item["reference"], f"categorical reference {label}")
-        if reference not in levels:
-            raise ValueError(f"Reference level for categorical covariate {label} is not declared")
-        for level_index, level in enumerate(level for level in levels if level != reference):
-            term = f"cov_cat_{index + 1}_{level_index + 1}"
-            cov_exprs.append(
-                pl.when(pl.col(field).is_in(levels))
-                .then((pl.col(field) == level).cast(pl.Float64))
-                .otherwise(None).alias(term)
-            )
-            term_map["categorical"].append(term)
+        if "groups" in item:
+            groups = item["groups"]
+            if not isinstance(groups, dict) or not groups:
+                raise ValueError(f"Grouped categorical covariate {label} must declare nonempty groups")
+            group_codes: dict[str, list[float]] = {}
+            code_owner: dict[float, str] = {}
+            for group_name, raw_codes in groups.items():
+                if not isinstance(group_name, str) or not group_name.strip() or not isinstance(raw_codes, list) or not raw_codes:
+                    raise ValueError(f"Grouped categorical covariate {label} has an invalid group definition")
+                parsed = [_numeric_code(code, f"categorical group {label}.{group_name}") for code in raw_codes]
+                for code in parsed:
+                    if code in code_owner:
+                        raise ValueError(f"Code {code} overlaps groups {code_owner[code]} and {group_name} for {label}")
+                    code_owner[code] = group_name
+                group_codes[group_name] = parsed
+            reference_group = item.get("reference_group")
+            if not isinstance(reference_group, str) or reference_group not in group_codes:
+                raise ValueError(f"Reference group for categorical covariate {label} is not declared")
+            declared_codes = list(code_owner)
+            for level_index, group_name in enumerate(name for name in group_codes if name != reference_group):
+                term = f"cov_cat_{index + 1}_{level_index + 1}"
+                cov_exprs.append(
+                    pl.when(pl.col(field).is_in(declared_codes))
+                    .then(pl.col(field).is_in(group_codes[group_name]).cast(pl.Float64))
+                    .otherwise(None).alias(term)
+                )
+                term_map["categorical"].append(term)
+        else:
+            levels = [_numeric_code(level, f"categorical level {label}") for level in item["levels"]]
+            reference = _numeric_code(item["reference"], f"categorical reference {label}")
+            if reference not in levels:
+                raise ValueError(f"Reference level for categorical covariate {label} is not declared")
+            for level_index, level in enumerate(level for level in levels if level != reference):
+                term = f"cov_cat_{index + 1}_{level_index + 1}"
+                cov_exprs.append(
+                    pl.when(pl.col(field).is_in(levels))
+                    .then((pl.col(field) == level).cast(pl.Float64))
+                    .otherwise(None).alias(term)
+                )
+                term_map["categorical"].append(term)
     if cov_exprs:
         data = data.with_columns(cov_exprs)
     data = data.drop([ID_FIELD])
