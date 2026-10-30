@@ -83,6 +83,10 @@ ANALYSIS_PLANS = {
             "scripts/audit_wave1_pilot_pair_eligibility.py",
             "audit/templates/wave1_household_environment_pilot_readiness.template.json",
             "audit/templates/wave1_household_environment_pilot_model_config.template.json",
+            "scripts/derive_wave1_age_intervals.py",
+            "scripts/verify_official_lunar_table_parity.py",
+            "scripts/audit_2011_pilot_design_frame.py",
+            "scripts/require_verified_wave1_frame.py",
             "scripts/run_2011_household_environment_scaleup.py",
         ),
         "additional_gates": ("frozen_pilot_configuration",),
@@ -145,6 +149,7 @@ def _load_json(path: Path, label: str) -> dict[str, Any]:
 def require_verified_wave1_frame(
     private_root: Path = PRIVATE_ROOT,
     data_path: Path | None = None,
+    age_path: Path | None = None,
 ) -> dict[str, str]:
     """Check current source identity, prepared-table provenance, and output hash.
 
@@ -232,12 +237,39 @@ def require_verified_wave1_frame(
     if table.name != output.get("filename") or sha256_file(table) != output.get("sha256"):
         raise ValueError("Wave 1 analysis gate: prepared respondent table differs from manifest hash")
 
-    return {
+    provenance = {
         "source_manifest_id": manifest_id,
         "source_identity_status": current_review["source_identity_status"],
         "prepared_output_sha256": str(output["sha256"]),
         "survey_design_status": "still_requires_independent_review",
     }
+    if age_path is not None:
+        age_table = require_private_path(age_path)
+        if not age_table.is_relative_to(root) or not age_table.is_file():
+            raise ValueError("Wave 1 analysis gate: official age-interval candidate is outside protected storage or missing")
+        age_input_qa_path = require_private_path(root / "qa_outputs" / "wave1_official_age_inputs_qa.json")
+        age_interval_qa_path = require_private_path(root / "qa_outputs" / "wave1_age_interval_candidate_qa.json")
+        age_input_path = require_private_path(root / "age_inputs_2011" / "wave1_official_age_inputs.dta")
+        age_input_qa = _load_json(age_input_qa_path, "official age-input provenance QA")
+        age_interval_qa = _load_json(age_interval_qa_path, "age-interval derivation QA")
+        age_digest = sha256_file(age_table)
+        age_input_digest = sha256_file(age_input_path)
+        if age_interval_qa.get("source_manifest_id") != manifest_id:
+            raise ValueError("Wave 1 analysis gate: age-interval candidate belongs to a different source manifest")
+        if age_interval_qa.get("person_level_output_sha256") != age_digest:
+            raise ValueError("Wave 1 analysis gate: age-interval candidate differs from its private derivation QA hash")
+        if age_input_qa.get("source_manifest_id") != manifest_id:
+            raise ValueError("Wave 1 analysis gate: official age-input QA belongs to a different source manifest")
+        if age_input_qa.get("age_input_sha256") != age_input_digest:
+            raise ValueError("Wave 1 analysis gate: official age-input file differs from its private QA hash")
+        if age_interval_qa.get("age_input_sha256") != age_input_digest:
+            raise ValueError("Wave 1 analysis gate: age-interval candidate is not bound to the current official age inputs")
+        if age_input_qa.get("person_source_sha256") != str(output["sha256"]):
+            raise ValueError("Wave 1 analysis gate: age-input derivation used a different prepared person table")
+        if age_input_qa.get("weight_source_sha256") != prepared_sources["weight"].get("sha256"):
+            raise ValueError("Wave 1 analysis gate: age-input derivation used a different Weight source")
+        provenance["age_candidate_sha256"] = age_digest
+    return provenance
 
 
 def require_wave1_analysis_readiness(
@@ -314,6 +346,9 @@ def require_wave1_analysis_readiness(
         }.items():
             if config.get(key) != expected:
                 raise ValueError(f"Wave 1 readiness gate: frozen scale-up configuration {key} binding differs")
+        if "age_candidate_sha256" in source_provenance:
+            if config.get("age_candidate_sha256") != source_provenance["age_candidate_sha256"]:
+                raise ValueError("Wave 1 readiness gate: frozen configuration is not bound to the reviewed age-interval candidate")
         if config.get("status") != "frozen":
             raise ValueError("Wave 1 readiness gate: model configuration is not frozen")
         if not str(config.get("reviewer", "")).strip() or not str(config.get("reviewed_at", "")).strip():

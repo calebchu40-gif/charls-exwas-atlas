@@ -22,7 +22,7 @@ from pathlib import Path
 from typing import Any
 
 from project_paths import PRIVATE_ROOT, require_private_path
-from run_2011_water_blood_pilot import AGE, DATA, PRIVATE, ROOT, read_analytes
+from run_2011_water_blood_pilot import PRIVATE, ROOT, read_analytes
 from require_verified_wave1_frame import (
     analysis_plan_fingerprint,
     require_verified_wave1_frame,
@@ -39,6 +39,10 @@ PILOT_CONFIG_PATH = PRIVATE / "analysis_review" / "wave1_household_environment_p
 REGISTER = ROOT / "audit" / "wave1_household_environment_hypothesis_register_v0.csv"
 OUTPUT_DIR = PRIVATE / "scaleup_2011_household_environment"
 PILOT_OUTPUT_DIR = PRIVATE / "pilot105_2011_household_environment"
+DATA = require_private_path(
+    PRIVATE / "derived_wave_tables_2011_official_rebuild_20261029" / "CHARLS_wave2011_person_analytic.dta"
+)
+AGE = require_private_path(PRIVATE / "age_inputs_2011" / "wave1_age_interval_candidate.dta")
 ID_FIELD = "ID"
 OUTCOME_TERMS = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
 PILOT_EXPOSURES = {"running_water_at_residence", "cooking_fuel_main"}
@@ -658,7 +662,7 @@ def run_scaleup(batch: str = "full240") -> dict[str, Any]:
     if metadata.get("status") != "passed_metadata_crosswalk_only":
         raise ValueError("Public-source K150/K90 metadata audit did not pass")
 
-    provenance = require_verified_wave1_frame(PRIVATE, DATA)
+    provenance = require_verified_wave1_frame(PRIVATE, DATA, age_path=AGE)
     readiness = require_wave1_analysis_readiness(PRIVATE, provenance, plan_key)
     config = _load_json(config_path)
     analytes = read_analytes()

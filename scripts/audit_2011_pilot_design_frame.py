@@ -18,9 +18,9 @@ import pyreadstat
 from project_paths import PRIVATE_ROOT, QA_OUTPUT_DIR, require_private_path
 
 
-DATA = PRIVATE_ROOT / "derived_wave_tables" / "CHARLS_wave2011_person_analytic.dta"
-AGE = PRIVATE_ROOT / "age_candidates" / "age_candidate_2011.dta"
-PSU_MAP = PRIVATE_ROOT / "raw_extract_2011_community" / "psu.dta"
+DATA = PRIVATE_ROOT / "derived_wave_tables_2011_official_rebuild_20261029" / "CHARLS_wave2011_person_analytic.dta"
+AGE = PRIVATE_ROOT / "age_inputs_2011" / "wave1_age_interval_candidate.dta"
+PSU_MAP = PRIVATE_ROOT / "incoming_2011_official" / "PSU.dta"
 DEFAULT_REPORT = QA_OUTPUT_DIR / "charls_2011_pilot_design_frame_aggregate.json"
 # These are different documented quantities. The National Baseline and Blood
 # guides report 17,708 interviews/target blood sample, while the official
@@ -52,7 +52,8 @@ def count(frame: pl.DataFrame, expression: pl.Expr) -> int:
 def audit(data_path: Path = DATA, age_path: Path = AGE,
           psu_path: Path = PSU_MAP) -> dict[str, Any]:
     person = read_table(data_path, ["ID", "communityID", "bloodweight", "i017"])
-    age = read_table(age_path, ["ID", "age_years_candidate"])
+    age = read_table(age_path, ["ID", "age_at_interview_lower", "age_at_interview_upper"])
+    age = age.with_columns(pl.lit(True).alias("_age_row_present"))
     psu = read_table(psu_path, ["communityID"])
 
     person_ids_ok = (person["ID"].null_count() == 0
@@ -60,21 +61,29 @@ def audit(data_path: Path = DATA, age_path: Path = AGE,
     age_ids_ok = (age["ID"].null_count() == 0
                   and age["ID"].n_unique() == age.height)
     joined = person.join(age, on="ID", how="left", validate="1:1")
+    unmatched_age_ids = age.join(person.select("ID"), on="ID", how="anti").height
     psu_ids_ok = (psu["communityID"].null_count() == 0
                   and psu["communityID"].n_unique() == psu.height)
     unmatched_psu = joined.join(
         psu.select("communityID").unique(), on="communityID", how="anti"
     ).height
 
-    age_value = pl.col("age_years_candidate").cast(pl.Float64, strict=False)
+    age_lower = pl.col("age_at_interview_lower").cast(pl.Float64, strict=False)
+    age_upper = pl.col("age_at_interview_upper").cast(pl.Float64, strict=False)
     weight = pl.col("bloodweight").cast(pl.Float64, strict=False)
     exposure = pl.col("i017").cast(pl.Float64, strict=False)
-    age_missing = age_value.is_null() | ~age_value.is_finite()
+    age_missing = (
+        age_lower.is_null() | ~age_lower.is_finite()
+        | age_upper.is_null() | ~age_upper.is_finite()
+    )
     weight_valid = weight.is_not_null() & weight.is_finite() & (weight > 0)
     output = joined.with_columns(
-        age_value.alias("_age"), weight.alias("_weight"), exposure.alias("_exposure")
+        age_lower.alias("_age_lower"), age_upper.alias("_age_upper"),
+        weight.alias("_weight"), exposure.alias("_exposure")
     )
-    domain45 = pl.col("_age") >= 45
+    lower_domain45 = pl.col("_age_lower") >= 45
+    upper_domain45 = pl.col("_age_upper") >= 45
+    crosses_45 = (pl.col("_age_lower") < 45) & (pl.col("_age_upper") >= 45)
     blood_frame_n = int(output.height)
     result: dict[str, Any] = {
         "wave": "2011 baseline",
@@ -108,13 +117,19 @@ def audit(data_path: Path = DATA, age_path: Path = AGE,
         "person_id_unique_complete": bool(person_ids_ok),
         "age_candidate_id_unique_complete": bool(age_ids_ok),
         "age_candidate_rows": int(age.height),
+        "person_rows_without_age_candidate_record_n": count(
+            joined, pl.col("_age_row_present").is_null()
+        ),
+        "age_candidate_rows_without_person_record_n": int(unmatched_age_ids),
         "age_domain": {
             "age_missing_or_nonfinite_n": count(output, age_missing),
-            "age_under_45_n": count(output, pl.col("_age").is_not_null() & (pl.col("_age") < 45)),
-            "age_45_plus_n": count(output, domain45),
-            "age_45_plus_with_positive_bloodweight_n": count(output, domain45 & weight_valid),
+            "lower_bound_age_45_plus_n": count(output, lower_domain45),
+            "lower_bound_age_45_plus_with_positive_bloodweight_n": count(output, lower_domain45 & weight_valid),
+            "upper_bound_age_45_plus_n": count(output, upper_domain45),
+            "upper_bound_age_45_plus_with_positive_bloodweight_n": count(output, upper_domain45 & weight_valid),
+            "age_interval_crossing_45_n": count(output, crosses_45),
             "age_45_plus_with_valid_water_code_n": count(
-                output, domain45 & pl.col("_exposure").is_in([1.0, 2.0])
+                output, lower_domain45 & pl.col("_exposure").is_in([1.0, 2.0])
             ),
         },
         "bloodweight": {
@@ -145,7 +160,8 @@ def audit(data_path: Path = DATA, age_path: Path = AGE,
             "Official documentation reports different file/field denominators: 17,708 interviews and blood-target members, 17,705 Codebook observations for person ID, and 17,708 observations for individual-weight fields.",
             "Comparisons between the local prepared table and published counts are diagnostics only; the derived table is not release-authenticated and this aggregate audit cannot reconcile source records or missing keys.",
             "Reconcile person, weight, PSU, and blood files by documented IDs and eligibility using the authorized release before analysis.",
-            "Age candidate, bloodweight, and PSU source identity/coverage remain unverified against the authorized release.",
+            "Age intervals are derived from the source-bound official Wave 1 birth/interview fields, but age-domain interpretation and estimate eligibility still require methods review.",
+            "The PSU source is verified; linkage coverage and whether communityID adequately represents final analytic PSUs remain under review.",
         ],
     }
     return result

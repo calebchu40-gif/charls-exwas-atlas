@@ -4,6 +4,7 @@
   "analysis_plan_sha256": "",
   "source_manifest_id": "",
   "prepared_output_sha256": "",
+  "age_candidate_sha256": "",
   "reviewer": "",
   "reviewed_at": "",
   "target": {
