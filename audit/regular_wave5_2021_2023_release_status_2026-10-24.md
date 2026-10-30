@@ -22,3 +22,11 @@
 据此，项目继续把已发布的2020文件版本纳入当前五个常规公开波次目录；对2021–2023只保留发布状态记录。只有官方数据目录出现该轮实际数据及匹配的Release Note、用户手册、问卷、Codebook和权重/样本/PSU资料后，才新增波次并开展字段映射。此次只复核官方公开目录与公告，没有登录账号、下载微观数据或根据招聘内容推断变量。
 
 来源：[CHARLS公开数据目录](https://charls.charlsdata.com/pages/data/111/zh-cn.html)、[2020 Wave 5数据发布公告](https://charls.pku.edu.cn/info/1131/1812.htm)、[2021–2023常规第五轮核查员招募公告](https://charls.pku.edu.cn/info/1131/1781.htm)、[2021–2022常规第五轮访员招募公告](https://charls.pku.edu.cn/info/1111/1733.htm)。
+
+## 2026-10-30当前状态复核
+
+本次重新打开 CHARLS 官方数据目录、2020 Wave 5 数据页、官方新闻总表与 2025/2024 年新闻归档。当前数据目录仍将 **2020 CHARLS Wave 5** 列为最新全国主波公开发行；该波官方发布公告日期为 2023-11-16。2025 年新闻页当前仅列 2025-10-11 论文征稿，2024 年新闻页仅列学术会议征稿与招聘，未列 2021–2023 常规调查数据发布。2023 年招募公告确实将 2021–2023 描述为常规第五轮实地调查，并提及访问、体检、生物样本和手环采集；这仍然只是调查执行信息，不等于可用微观数据、代码本、权重/PSU设计资料已公开。
+
+因此当前 atlas 的官方公开发行边界仍为 2011、2013、2015、2018、2020 五个全国主波；2021–2023不纳入数据包、波次覆盖指标或模型。由于 2020 已正式称作 Wave 5，而后续招募材料亦使用“第五轮”这一表述，项目在展示中应同时写明年份与官方发行版本，不能只写“Wave 5”以免混淆。只有官方数据目录出现可下载发行版且匹配 Release Note、User Guide、问卷、Codebook、Sample/Weight/PSU 文件后才重新评估扩波。
+
+来源：[当前CHARLS数据目录](https://charls.charlsdata.com/pages/Data/2020-charls-wave5/en.html)、[2020 Wave 5发布公告](https://charls.pku.edu.cn/en/info/1190/1331.htm)、[2025新闻归档](https://charls.pku.edu.cn/en/News/a2025.htm)、[2024新闻归档](https://charls.pku.edu.cn/en/News/a2024.htm)、[2021–2023常规调查招募公告](https://charls.pku.edu.cn/info/1131/1761.htm)。

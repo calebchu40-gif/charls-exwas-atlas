@@ -1570,3 +1570,7 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 # 2026-10-30 Document CHARLS sampling hierarchy and variance gate
 
 - Recorded official CHARLS descriptions of county-level stratification/PPS, community PSU selection and later sampling stages, and separated these design facts from the still-unresolved wave-specific released variance-variable mapping. The note explicitly rejects inferring full design variance from geography/community IDs or weights alone. No participant data or models used.
+
+# 2026-10-30 Recheck the latest public CHARLS data release boundary
+
+- Rechecked the live official data index and 2024–2025 news archive. The latest listed national-wave public release remains 2020 CHARLS Wave 5; 2021–2023 fieldwork/recruitment pages do not establish a public microdata release. Clarified the five-wave scope and the need to show survey year plus release version where “Wave 5” could be ambiguous. No participant data used.
