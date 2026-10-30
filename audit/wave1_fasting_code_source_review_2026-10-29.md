@@ -12,9 +12,9 @@ Blood 数据中的 `qc1_va003` 表示采血时是否空腹。拟定的105项试�
 - CHARLS《Blood Sample Users' Guide》说明受访者被要求过夜空腹；即使未空腹仍采血，并在数据中记录状态。指南同时指出非空腹样本的血糖可能偏高。见官方指南第8页（PDF第9页）及第16页（PDF第17页）。
 - 官方 Wave 1 Blood 文件表头含 `qc1_va003`，但字段未带 value-label set。
 - CHARLS 官方 2013 CodeBook 不含 `qc1_va003`；其内容是2013随访问卷模块，不能替代2011血液数据值标签。
-- 复查 CHARLS 官方 Wave 1 下载页后，页面列出的相关文档是通用 Wave 1 Codebook 与 Blood Data Users' Guide，没有另列 2011 Blood 专用 Codebook 或 Blood Release Note。官方 Blood ZIP 归档仅包含 Stata 数据文件，没有随包数据字典/README。见[官方 Wave 1 数据文档清单](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)。
+- 复查 CHARLS 官方 Wave 1 下载页后，页面列出的相关文档是通用 Wave 1 Codebook 与 Blood Data Users' Guide，没有另列 2011 Blood 专用 Codebook 或 Blood Release Note。现已在服务器私有入库核验平台列出的通用 Codebook RAR，但该文件不含 Blood fasting 字段映射。官方 Blood ZIP 归档仅包含 Stata 数据文件，没有随包数据字典/README。见[官方 Wave 1 数据文档清单](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)。
 - 2026-10-29 再次打开 CHARLS 当前官方 Wave 1 页面核对文档清单：仍列通用 Codebook 与 Blood data users' guide，没有新增 `qc1_va003` 专用代码本；该页面将 Blood 数据发布日期列为 2014-04-29。此为在线文档清单核对，不构成字段代码的数值映射。
-- **官方归档核验（2026-10-30）：**在暂存的官方资料中找到 `2011_120_CHARLS_codebook.rar`，压缩包 MD5 为 `293eb9789ee559fe0d7099086a2aaf40`，与北京大学开放研究数据平台 CHARLS 2011 baseline dataset v1.1 的 `CHARLS_codebook.rar` 条目一致。归档成员清单只有 `CHARLS_codebook.pdf`；其 SHA-256 与项目已存档的官方 Wave 1 Codebook PDF 相同。对该官方 Codebook 可检索文本定向查找 `qc1_va003`、`va003`、`fasting` 和“空腹”，未找到对应字段或代码标签。因此，归档取得补全了来源身份链，但没有提供 `qc1_va003` 的数值映射，空腹编码门仍未通过。归档和文档只保存在本机受控参考目录，未复制到 GitHub、OneDrive、服务器或网站。
+- **官方归档核验（2026-10-30）：**服务器受保护入库中的 `2011_120_CHARLS_codebook.rar` MD5 为 `293eb9789ee559fe0d7099086a2aaf40`，与北大开放研究数据平台 CHARLS 2011 baseline v1.1 的 `CHARLS_codebook.rar`（文件136）登记值一致。归档在服务器 private/ 内提取；提取 PDF SHA-256 为 `fa1cb4fe315c95a290ff1b5b7431d32c2707055364a5a3f6749c13ebc25ca722`，检索文本 SHA-256 为 `21bd1638f1a968d70d3b634b713d90c8f5942037f65ab5036bfe558564b76c35`。仅对文档做字段名检索，未发现 `qc1_va003`、`va003`、`newglu`、`newtg`、fasting 或“空腹”编码定义。该来源核验补齐了通用 Wave 1 Codebook 的身份链，但仍未提供 Blood 文件 `qc1_va003` 的数字映射；分析阻断继续有效。归档及提取件始终留在服务器 private/，未复制到 GitHub、OneDrive 或公开网站。
 - **服务器私有血液文件元数据复核（2026-10-30）：**在用户授权的受控目录，对 Wave 1 Blood `.dta` 仅调用 `pyreadstat.read_dta(..., metadataonly=True)`；未载入/检查受访者记录。文件元数据报告 11,847 行、19列，`qc1_va003` 的变量标签为 `Fasting`；该变量没有 `variable_to_label` 对应值标签集，整个文件也没有 value-label tables。其余13个候选结局的变量标签与单位标记可用于字段对应，但不提供有限特殊码说明。**没有值标签不等于证明个体字段不存在有限数值型特殊码**，更不能据此猜测 `qc1_va003` 的1/2含义；14项阻断保持不变。
 - 本轮补查官方 Wave 1 [Physical Examination Questionnaire](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)（本地归档提取文本）及 Blood Guide 的全文文本层；体检问卷未出现 `qc1_va003`/空腹项目或其数字选项，Blood Guide 只说明记录空腹状态及非空腹风险，未定义字段代码。该协议文件不能替代数据字典或 released value labels。
 - CHARLS 官方 2015 CodeBook 对相近的 `bl_fasting` 字段列出 `1=Yes, 2=No`；这是Wave 3字段，不能单独证明2011 `qc1_va003` 的编码跨波一致。
@@ -39,7 +39,7 @@ Blood 数据中的 `qc1_va003` 表示采血时是否空腹。拟定的105项试�
 
 - CHARLS 官方 [Blood Sample Users' Guide](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf)
 - CHARLS 官方 [2013 CodeBook](https://charls.pku.edu.cn/en/doc/Codebook2013.pdf)（本次核实不含 `qc1_va003`）
-- 官方 [PKU Open Research Data Platform 2011 baseline dataset, version 1.1](https://opendata.pku.edu.cn/dataset.xhtml?persistentId=doi%3A10.18170%2FDVN%2FIZU8OF&version=1.1)：列有 `CHARLS_codebook.rar`，但须经账号授权获取；文件内容目前未审阅。
+- 官方 [PKU Open Research Data Platform 2011 baseline dataset, version 1.1](https://opendata.pku.edu.cn/dataset.xhtml?persistentId=doi%3A10.18170%2FDVN%2FIZU8OF&version=1.1)：列有受限文件 `CHARLS_codebook.rar`（文件136）。已在用户授权的服务器私有入库核对平台 MD5，并检索文档内容；未发现 `qc1_va003` 的编码释义。
 - CHARLS 官方2015 CodeBook（本地官方来源归档）中的 `bl_fasting` 值标签，作为相邻波次比较；不可直接外推到2011。
 - 第三方线索：[CHARLS 常规血液检测变量索引](https://www.dbcodebook.cn/nodes/post/56/)（非官方，仅检索线索）
 

@@ -93,3 +93,8 @@ Wave 1 执行器对测量协议未解决的结局返回 `blocked_by_unresolved_m
 ## 2026-10-30 — Wave 1 runner 准入顺序静态复核
 
 静态检查 `scripts/run_2011_household_environment_scaleup.py` 与 `scripts/require_verified_wave1_frame.py` 的调用顺序：执行器先检查受保护路径、来源元数据和源绑定，再要求具名/日期/哈希绑定的 readiness review 与 frozen configuration；只有上述门禁成功后才读取准备表参与者字段并进入拟合循环。readiness 明确要求全部主门及 pilot 专属配置门通过，且计划/源/准备表/年龄候选哈希匹配。当前服务器仍没有 readiness 记录或 active frozen config，因此真实数据字段不会进入拟合步骤。此项仅为源码静态审阅，未运行数据或模型，也不能替代独立方法审阅。下一步继续把 15 项结局规则草案整理成逐项审阅决策，不伪造审阅签字。
+
+
+## 2026-10-30 — 核验遗漏的官方 2011 Codebook 归档
+
+在服务器 `private/intake_raw/files/` 找到官方 `2011_120_CHARLS_codebook.rar`，核对其 MD5=`293eb9789ee559fe0d7099086a2aaf40`，与北大开放研究数据平台 2011 baseline v1.1 文件136登记值一致。该归档只在服务器 private/ 内检查；受保护的 PDF 与文本权限均调整为 600，定向检索 `qc1_va003`、`newglu`、`newtg`、fasting 和“空腹”未找到代码定义。此前本地资料索引误记为未取得/未审阅，现已更正来源说明与方法记录。结果是来源身份链更完整，但并未补出 `qc1_va003` 映射，因此血糖/甘油三酯14项仍阻断；其他91项仍需结局规则及独立方法审阅。未读取结局观测值、未拟合关联。
