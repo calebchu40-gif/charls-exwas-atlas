@@ -550,6 +550,17 @@ def _fit_exposure_group(data: Any, config: dict[str, Any], analyte: dict[str, st
         pl.len().alias("n"), pl.col("__design_psu").n_unique().alias("psus")
     ).sort(field).to_dicts()
     n_psu = int(pair["__design_psu"].n_unique())
+    if stratum_fields:
+        psu_by_stratum = pair.group_by(stratum_fields).agg(
+            pl.col("__design_psu").n_unique().alias("__n_psu")
+        )
+        base_design_df = int(psu_by_stratum["__n_psu"].sum() - psu_by_stratum.height)
+    else:
+        base_design_df = n_psu - 1
+    # svy 0.35.0 clamps GLM residual design df to at least 1. Preserve the
+    # unclamped value so a zero/negative theoretical df cannot pass as valid
+    # merely because the engine returned its numerical floor.
+    unclamped_design_df = int(base_design_df - len(xvars))
     warning_text = " | ".join(str(item.message) for item in caught)
     estimates: dict[str, dict[str, Any]] = {}
     for row, term in zip(rows, terms, strict=True):
@@ -568,6 +579,7 @@ def _fit_exposure_group(data: Any, config: dict[str, Any], analyte: dict[str, st
             and ci_lower is not None and ci_upper is not None and ci_lower <= ci_upper
             and engine_p_value is not None and 0 <= engine_p_value <= 1
             and design_df is not None and design_df > 0
+            and unclamped_design_df > 0
         )
         estimates[row["contrast_id"]] = {
             "estimate": estimate,
@@ -579,11 +591,16 @@ def _fit_exposure_group(data: Any, config: dict[str, Any], analyte: dict[str, st
             "p_value": engine_p_value if inference_complete else None,
             "engine_p_value_private": engine_p_value,
             "design_df": design_df,
+            "unclamped_design_df_private": unclamped_design_df,
             "weighted_outcome_sd": sd,
             "estimate_scale": "wave_phenotype_target_domain_standard_deviation",
             "estimate_transformed_unit_scale": estimate * sd if estimate is not None else None,
             "se_transformed_unit_scale": standard_error * sd if standard_error is not None else None,
-            "fit_status": "success" if inference_complete else "incomplete_inference",
+            "fit_status": (
+                "success" if inference_complete
+                else "nonpositive_unclamped_design_df" if unclamped_design_df <= 0
+                else "incomplete_inference"
+            ),
             "n_complete_private": pair.height,
             "n_psu_private": n_psu,
             "support_by_exposure_private": json.dumps(support, separators=(",", ":")),
@@ -591,6 +608,7 @@ def _fit_exposure_group(data: Any, config: dict[str, Any], analyte: dict[str, st
         }
     return estimates, {
         "n_complete": pair.height, "n_psu": n_psu,
+        "unclamped_design_df_private": unclamped_design_df,
         "domain_singleton_strata_private": domain_singleton_count,
         "status": "fit_complete",
     }

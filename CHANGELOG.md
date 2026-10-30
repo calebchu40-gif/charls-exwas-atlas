@@ -4,6 +4,7 @@
 - Rechecked the protected server source gate using metadata/header/hash verification only: official source identity and the prepared-table hash binding pass; the gate still reports independent design review required. No participant outcomes or associations were read/fitted in this check.
 - Documented two implementation issues before the pilot: historical age-target text conflicts (full blood frame vs. 45+ domain), and the legacy 105-runner is not aligned to the current covariates/outcome rules while the current runner is for all 240 hypotheses. Neither runner was used for real-data fitting.
 - Reconciled older variance-review text with the user's explicit Option A decision: `communityID` unstratified WR Taylor is now the working choice, while the independent methods review remains pending and the approximation limitations remain explicit.
+- Audited the pinned server `svy 0.35.0` source: GLM residual design df subtracts fitted slopes and is clamped to at least 1. The protected runner now computes the unclamped df from complete-case-domain PSU/strata support and suppresses inference when it is nonpositive, so an engine floor cannot pass the model gate. No CHARLS associations were fitted.
 
 # 2026-10-30 Authorize the next Wave 1 gated work block
 
