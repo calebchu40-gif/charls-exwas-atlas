@@ -1735,3 +1735,7 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Added a 16-analyte Wave 3 rule-candidate table tied to the CHARLS 2015 Blood Release Note and existing field crosswalk. It records the released units, Stata-missing-only/no-assay-range-filter candidate, and unresolved finite sentinel handling.
 - Explicitly recorded Wave 3-only `bl_fasting` labels (1=Yes, 2=No), the 500 mg/dL triglyceride top-coding flag, and the need to decide whether the TG estimand is the released capped measure or a reviewed censored-data model. These labels do not resolve Wave 1 `qc1_va003`.
 - All candidates remain unfrozen; Wave 3 variance/PSU, target frame, weight applicability, assay subsampling and independent review gates remain open. No respondent values or associations were read/fitted.
+# 2026-10-30 Bind Wave 3 fasting and triglyceride handling to the official Codebook
+
+- Followed up the Wave 3 outcome candidates against the locally archived official 2015 Codebook, not only the Stata variable labels: it directly documents `bl_fasting` 1=Yes/2=No and `bl_top_coding_tg` 0=No/1=Yes. The Codebook is listed on the CHARLS Wave 3 page with its posted SHA-1.
+- Updated the Wave 3 candidate table and review note with the official code mappings. They remain Wave 3-only; no inference is carried to Wave 1 `qc1_va003`. The capped TG estimand decision, design gate, and independent review remain unresolved; no model was run.

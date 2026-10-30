@@ -8,7 +8,7 @@
 
 The official Wave 3 Blood Release Note lists 16 analytes and identifies two measurement fields that affect interpretation: `bl_fasting` and `bl_top_coding_tg`. The released `bl_tg` field is top-coded at 500 mg/dL when original triglycerides exceed 500, with `bl_top_coding_tg` marking that condition. Therefore, the released value is not the uncapped original TG for flagged records. Do not reconstruct original TG values from the flag, treat capped values as uncensored original measurements, or drop flagged observations after looking at results.
 
-The 2015 `bl_fasting` metadata labels are 1=Yes and 2=No. This mapping applies to Wave 3 only and must not be transferred to Wave 1 `qc1_va003`. A Wave 3 glucose analysis must retain and use the fasting-status field under a prespecified measurement plan; any full-sample adjustment or fasting-only domain must be chosen before inspecting associations.
+The official 2015 Codebook directly documents `bl_fasting` as 1=Yes and 2=No, and `bl_top_coding_tg` as 0=No and 1=Yes. This mapping applies to Wave 3 only and must not be transferred to Wave 1 `qc1_va003`. A Wave 3 glucose analysis must retain and use the fasting-status field under a prespecified measurement plan; any full-sample adjustment or fasting-only domain must be chosen before inspecting associations.
 
 The separate Wave 3 `Blood_weight` is a cross-sectional blood-response weight. It does not itself resolve additional assay subsampling (notably cystatin C), design variance, or pair-specific missingness. The exact supported target for each analyte still needs source and methods review.
 
@@ -28,6 +28,7 @@ All 16 rows remain candidate-only. Before any association fitting, freeze the cr
 
 - [2015 CHARLS Wave 3 data page](https://charls.charlsdata.com/pages/Data/2015-charls-wave4/en.html)
 - [2015 CHARLS Blood Data Release Note](https://charls.pku.edu.cn/en/data/Blood2015.pdf), especially sections 4–5 and Table 1.
+- Official 2015 Codebook, “Blood” and “Cross-Sectional Weights” sections (listed on the [Wave 3 data page](https://charls.charlsdata.com/pages/Data/2015-charls-wave4/en.html); SHA-1 `92E413C887C946A9D5C939CAB736FF96D05FC020`).
 - [`audit/blood_biomarker_crosswalk_v1.csv`](blood_biomarker_crosswalk_v1.csv)
 - [`audit/wave3_blood_weight_estimand_review_2026-10-30.md`](wave3_blood_weight_estimand_review_2026-10-30.md)
 - [`audit/charls_wave3_psu_variance_release_review_2026-10-30.md`](charls_wave3_psu_variance_release_review_2026-10-30.md)
