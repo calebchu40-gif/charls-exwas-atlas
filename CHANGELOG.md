@@ -1,3 +1,7 @@
+# 2026-10-30 Correct Wave 1 variance-candidate ranking
+
+- Retracted the previous elevation of `communityID`-only WR Taylor as the first candidate for review. The CHARLS forum response is general and does not endorse a PSU level for this estimand; the official design describes nested county/community stages and split communities, while the released materials reviewed here do not provide the full variance mapping. The current review packet now treats county-prefix and parent-community approximations as unselected options for parallel expert assessment. Analysis gates remain closed and formal association models remain 0.
+
 # 2026-10-30 Bind denominator reconciliation to explicit official counts
 
 - Added the official 17,587 Table 4 complete-demographic subset and its exclusion note to the protected Wave 1 reconciliation script; renamed an ambiguous `blood_target` difference field to `baseline_interview_total`. Reran only the protected ID/weight/PSU-key reconciliation, producing aggregate counts in the private QA directory. No participant answers were read, no model or tests were run, and no gate was promoted.
@@ -1593,8 +1597,7 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 
 # 2026-10-30 Add CHARLS forum guidance to Wave 1 variance review
 
-- Reviewed a historical answer by a CHARLS forum administrator stating that CHARLS uses multistage PPS cluster sampling and that the clustering level should reflect the research question. Elevated the released `communityID` PSU field to the first practical candidate for independent review, while documenting that the post is general guidance and does not resolve the split-community mapping, implicit county stratification, or a Wave 1-specific variance specification.
-- Kept the candidate unapproved and the real-model gate closed; no microdata or association results were used or published.
+- Historical record, subsequently corrected: this entry temporarily elevated `communityID` based on a general forum response. The next review found that response did not specify a PSU level for this estimand; current status has no selected or approved approximation. See the correction at the top of this changelog.
 # 2026-10-30 Align Wave 1 variance review packet with gate semantics
 
 - Updated the independent-review packet to reflect the current review ordering: `communityID` single-stage WR Taylor is the first approximation candidate, while county-prefix clustering is secondary. Clarified that the code requires separate evidence for `final_psu_mapping` and `variance_method_review`; acceptance of a parent-community proxy must not be described as recovery of the official final subcommunity PSU. No readiness record was created, no gate was promoted, and no association model was fitted.
