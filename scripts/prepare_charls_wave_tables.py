@@ -368,6 +368,8 @@ def main():
                     help="Private human-reviewed source identity manifest required for Wave 1")
     ap.add_argument("--wave1-weight-spine-candidate", action="store_true",
                     help="For Wave 1 only, use positive official ind_weight_ad2 IDs as a candidate respondent spine; keep missing demographics missing")
+    ap.add_argument("--wave2-weight-spine-candidate", action="store_true",
+                    help="For Wave 2 only, use every official Weights person ID as the unfiltered frame spine; retain crosssection and longitudinal flags")
     args = ap.parse_args()
     explicit_archives = {}
     for item in args.archive:
@@ -405,6 +407,8 @@ def main():
         raise ValueError(f"Unknown waves: {unknown}")
     if args.wave1_weight_spine_candidate and "2011" not in selected_waves:
         raise ValueError("--wave1-weight-spine-candidate requires 2011 in --waves")
+    if args.wave2_weight_spine_candidate and "2013" not in selected_waves:
+        raise ValueError("--wave2-weight-spine-candidate requires 2013 in --waves")
     for wave in selected_waves:
         kind, filename = WAVES[wave]
         if wave == "2011" and args.wave1_all_data is not None:
@@ -534,6 +538,8 @@ def main():
         # missing; do not infer or impute values from another module.
         if wave in {"2015", "2018", "2020"}:
             spine_module = "sample_infor"
+        elif wave == "2013" and args.wave2_weight_spine_candidate:
+            spine_module = "weights_person"
         elif wave == "2011" and args.wave1_weight_spine_candidate:
             spine_module = "weights_person"
         else:
@@ -553,6 +559,11 @@ def main():
                 raise RuntimeError("Wave 1 candidate weight spine has nonpositive nonmissing ind_weight_ad2 values")
             base = base.loc[eligible_weight].copy()
             spine_module = "weights_person_positive_ind_weight_ad2_candidate"
+        elif wave == "2013" and args.wave2_weight_spine_candidate:
+            required_flags = {"crosssection", "longitudinal"}
+            if not required_flags.issubset({c.casefold() for c in base.columns}):
+                raise RuntimeError("Wave 2 weight-spine candidate lacks official crosssection/longitudinal flags")
+            spine_module = "weights_person_crosssection_longitudinal_candidate"
         column_labels = ({c: (lab or "") for c, lab in zip(base_meta.column_names,
                                                             base_meta.column_labels or [])}
                          if base_meta is not None else {})
