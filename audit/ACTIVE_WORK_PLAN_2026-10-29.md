@@ -2,6 +2,7 @@
 
 **2026-10-30 新增进展——官方农历转换映射已逐项核验：**从 CHARLS 官方固定版 `lunar2solar.mmat` 直接读取普通历与闰月两张表，并与固定版 `python-lunardate` 0.1.4 的映射逐条比较：普通表 49,949 条、闰月表 1,521 条，均无无效映射、无差异。官方 `.mmat` SHA-256 与上游审阅 commit 一致。已新增不接触受访者数据的复核脚本；报告只存受控目录。该结果关闭“转换器映射是否一致”子门，不批准 Wave 1/3 年龄派生、45+ domain、方差设计或关联模型；问卷路由、缺少闰月标记、访谈日缺失、年龄区间规则和独立审查仍待处理。详见[`wave1_age_interval_candidate_review_2026-10-29.md`](wave1_age_interval_candidate_review_2026-10-29.md)。
 **2026-10-30 年龄派生保护加强：**Wave 1候选派生器现在在读取生日字段值之前，强制校验固定的官方 `.mmat` 哈希、固定 Python 源哈希及普通/闰月全表映射一致；表级审计摘要与其他私有 QA 一样只写入受控目录。它不改变现有年龄候选或分析门状态。
+**2026-10-30 Wave 1候选年龄重跑：**在上述转换表准入检查加入派生器后，使用来源清单绑定的官方出生日期、日历类型和访谈年月字段重跑了受保护的年龄区间候选表。运行成功，私有 QA确认普通历与闰月表映射均完整一致；逐人结果及路由计数继续仅存于受控本机目录。该次运行验证了准备路径，不代表年龄方法审查或调查设计准入；没有拟合关联模型，正式模型数仍为0。详见[`wave1_age_interval_candidate_review_2026-10-29.md`](wave1_age_interval_candidate_review_2026-10-29.md)。
 
 **更新时间：2026-10-30（Asia/Shanghai；Wave 3农历生日不确定性方法审阅）**
 **2026-10-30 通用设计模板校正：**发现通用 `exwas_design.template.json` 仍预填 `communityID`、`bloodweight`、未分层近似和 45+ 域，与当前官方抽样设计审阅及“45+仅作次级域”候选不一致。现已将权重/PSU/波次/年龄/协变量字段改为空的待审值，并标记不可直接运行；当前没有获批的单层方差方案。详见[`multwave_runner_configuration_compatibility_review_2026-10-29.md`](multwave_runner_configuration_compatibility_review_2026-10-29.md)。

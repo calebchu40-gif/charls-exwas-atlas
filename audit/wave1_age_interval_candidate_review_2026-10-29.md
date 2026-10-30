@@ -24,6 +24,8 @@ Static review found that the earlier year-only lower bound (`interview year - re
 
 The row-level candidate table and detailed route counts are stored only in owner-controlled `%LOCALAPPDATA%\\CHARLS_ExWAS_Atlas\\age_inputs_2011\\` and `qa_outputs\\`. They are not in Git, OneDrive, the server, or the public site. The public repository contains the derivation code and method description, not the private output.
 
+On 2026-10-30, the protected candidate derivation was rerun after the official-table parity check became a hard precondition. The current source-bound run completed and wrote its row-level table and route diagnostics only to protected local storage. This confirms the derivation path executes with the verified converter mapping; the age method remains provisional, and neither survey-design approval nor association-model authorization is implied. The private run summary records both gates as unapproved and confirms no associations were fitted.
+
 ## What remains unresolved
 
 The interval is a measurement-error representation, not a replacement for the exact interview date or an adjudicated age model. The mapping-table parity check closes only the calendar-conversion implementation subgate. A methods reviewer must still decide whether the intervals support an age adjustment (and what sensitivity analyses to use), whether and how to define any 45+ domain, and whether conditional self-reported ages are comparable. The main blood-sample estimand includes eligible main respondents and spouses; the candidate 45+ classification does not determine sample eligibility. The final Wave 1 PSU/variance design is separately unresolved. No association model was fitted and no result was prepared for release.

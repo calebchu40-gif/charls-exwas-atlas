@@ -1544,3 +1544,6 @@ This file records project-level changes that affect reproducibility, methods, da
 # 2026-10-30 Verify official CHARLS lunar-conversion tables
 
 - Added a source-only validator that parses the pinned CHARLS Mata lookup and compares every ordinary and leap conversion with pinned `python-lunardate` 0.1.4. All official rows matched. Updated Wave 1/Wave 3 age-method records and corrected the plan's prior Stata-runtime blocker. This verifies the converter table only; no respondent dates were used, and age routes, domains, independent review, survey variance and formal associations remain gated.
+# 2026-10-30 Rerun protected Wave 1 age candidate after official lunar parity gate
+
+Reran the source-bound Wave 1 age-interval candidate derivation with the newly enforced official lunar-table parity check. The protected run completed; person-level output and route diagnostics remain in owner-controlled local storage. This validates the preparation path only: age-method review and survey-design approval remain pending, and no association models were fitted.
