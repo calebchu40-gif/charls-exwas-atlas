@@ -1582,3 +1582,7 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 # 2026-10-30 Reconcile Wave 2 Biomarker weight scope
 
 - Reviewed the official Wave 2 Release Note and CHARLS Codebook. Documented that the Wave 2 Biomarker module is anthropometric, its nonresponse-adjusted biomarker weight is cross-sectional (response-probability factor capped at the 99th percentile), and no longitudinal biomarker weight or Wave 2 blood file is released. Limited its use to cross-sectional pairs actually measured in that module. This records a source-based interpretation; it does not open model or variance gates.
+
+# 2026-10-30 Align Wave 1 covariate DAG with the official blood target
+
+- Updated the candidate estimand in the Wave 1 household-environment DAG: use the complete baseline blood target of main respondents and spouses with `bloodweight`; do not impose a mechanical age-45 inclusion cutoff. Retained age 45+ only as a secondary survey-domain candidate. Independent methods review and the design/model gates remain pending.

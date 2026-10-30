@@ -1,13 +1,13 @@
 # Wave 1家庭环境暴露—血液表型协变量DAG首轮审阅（候选，未冻结）
 
-日期：2026-10-27  
+日期：2026-10-27（2026-10-30按官方血检目标口径更新）  
 状态：仅供正式数据到位前预注册讨论；不是获批分析计划，不开放模型门禁。
 
 ## 1. 研究问题与估计解释
 
 目标问题是：在CHARLS 2011基线官方血检目标框和可支持的调查设计下，个体所处家庭的供水、电力、燃气供应、供暖设施、烹饪/供暖燃料类别，与同轮血液表型有何加权关联？暴露多为**家户层的基础设施/燃料代理**，结局是个体实验室测量。除非另外定义时间顺序和因果假设，结果按横断面关联解释，不称为个人剂量、毒物暴露、因果效应或健康风险效应。
 
-目标样本、年龄域和血样非应答权重仍受官方资料资格门控；当前材料不足以在本文件确定全国45岁及以上总体或配偶的最终 estimand。目标人群与设计未确认前，以下只讨论变量角色。
+**当前目标总体候选已按官方血检指南收窄并明确：**Wave 1 主分析候选为基线血检目标中的主受访者及其配偶，使用官方 `bloodweight`；不对每个人机械应用年龄≥45 的纳入条件，也不将估计量表述为全国全体45岁及以上人群。官方抽样说明中主受访者的年龄筛选与配偶访谈是不同规则，血检指南把目标样本定义为主受访者和配偶。年龄仍作为待审的调整变量；45+只能作为次级 survey domain 候选，在完整设计样本框内估计。该口径与[`wave1_biomarker_estimand_age_recommendation_2026-10-30.md`](wave1_biomarker_estimand_age_recommendation_2026-10-30.md)一致，但仍是等待独立方法审阅的建议，未冻结目标或打开模型门。
 
 ## 2. 候选因果结构
 
@@ -29,7 +29,7 @@
 
 | 变量 | 对本问题的候选角色 | 预案 | 当前限制 |
 |---|---|---|---|
-| 年龄 | 血液表型强预测因子；也关联配偶/家庭结构和居住环境 | 以经官方原始出生/访谈信息重建的连续年龄建模，允许非线性；按完整血检设计框内的目标域估计 | 当前Harmonized CHARLS D年龄仅为第三方QA参照；年龄、配偶资格和目标总体尚未闭环 |
+| 年龄 | 血液表型强预测因子；也关联配偶/家庭结构和居住环境 | 以经官方原始出生/访谈信息重建的连续年龄建模，允许非线性；主模型候选不据年龄删人；45+仅作为次级domain候选 | 年龄区间中点/上下界敏感性和缺失年龄处理仍未获独立方法审查；当前Harmonized CHARLS D年龄仅作QA参照 |
 | 性别 | 血液表型和家庭内角色/居住差异的预测因子 | 作为核心调整候选；核对官方性别字段、确认/生成规则及冲突 | 释放字段、回答者结构仍待精确发行版复核 |
 | 教育 | 生命历程社会经济地位，可影响居住/家户资源及健康 | 作为核心社会混杂候选；在2011按官方有效类别并明确缺失/拒答状态 | `bd001`候选需匹配官方发行版、值标签及分析对象；不以稀疏字段/错误合并替代 |
 | NBS城乡背景 `urban_nbs` | 社区层情境，影响基础服务可及性及多种健康决定因素 | 作为家户基础设施模型的核心**情境协变量候选**；解释为抽样社区背景，不称个人当前居住地 | 仅当官方PSU链接核验后可用；绝不把它当抽样方差层或用来代造分层 |
@@ -61,4 +61,4 @@
 
 ## 依据与待补证据
 
-项目内部证据：`audit/covariate_modeling_strategy_v1.md`、`audit/household_ses_candidate_review_v1.md`、`audit/survey_design_weight_review_v1.md`、`audit/pilot_2011_water_biomarker_plan_and_gates_2026-10-26.md`及受保护目录中的`covariate_candidate_availability_v1.csv`。Wave 1官方来源身份已确认，官方输入与准备表已在受保护目录；因此旧版“数据尚未到位”的前置状态不再适用。正式模型前仍须完成样本框/目标域、年龄来源与算法、血检权重适用性、PSU/方差、字段级缺失与有效值规则核对，并由独立方法审阅确认。本DAG仍只是变量角色候选，既未冻结也未开放模型门禁。
+项目内部证据：`audit/covariate_modeling_strategy_v1.md`、`audit/household_ses_candidate_review_v1.md`、`audit/survey_design_weight_review_v1.md`、`audit/pilot_2011_water_biomarker_plan_and_gates_2026-10-26.md`及受保护目录中的`covariate_candidate_availability_v1.csv`。官方 Wave 1 血检目标与 `bloodweight` 用法已有来源支持；完整分析框、45+子域、年龄区间方法、方差设计、字段级缺失与有效值规则仍未全部审定。DAG仍是变量角色候选，既未冻结也未开放模型门禁。官方目标来源：[CHARLS 2011 Blood Sample Users' Guide](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf)；[CHARLS Sample design](https://charls.pku.edu.cn/en/About/Sample.htm)。
