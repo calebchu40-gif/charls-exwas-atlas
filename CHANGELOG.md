@@ -1,6 +1,6 @@
 # 2026-10-30 Check Harmonized CHARLS as a possible design source
 
-- Reviewed the CHARLS portal's Harmonized CHARLS D listing and the Gateway's current D.2 listing/creation page. D.2 is described as Waves 1–4 plus 2014 Life History, with source data released as of 2021, but the reviewed public page did not expose its versioned codebook or design-variable specification. A SAGE+ Wave 2 profile reports CHARLS cluster/strata fields unavailable in that project; this is historical supporting evidence only. The available evidence does not determine whether D.2 adds the missing Wave 3 design keys. Reopen after obtaining and checking the actual D.2 documentation; do not infer keys from weights, age or geography. Formal model count remains unchanged.
+- Reviewed the CHARLS portal's Harmonized CHARLS D listing and the Gateway's current D.2 listing/creation page. D.2 is described as Waves 1–4 plus 2014 Life History, with source data released as of 2021; the current listing has no D.2 codebook link, and the legacy codebook route returns a soft 404. A SAGE+ Wave 2 profile reports CHARLS cluster/strata fields unavailable in that project; this is historical supporting evidence only. The available evidence does not determine whether D.2 adds the missing Wave 3 design keys. Reopen after obtaining and checking the actual D.2 documentation; do not infer keys from weights, age or geography. Formal model count remains unchanged.
 
 # 2026-10-30 Remove unapproved defaults from generic design template
 
