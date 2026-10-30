@@ -1,3 +1,7 @@
+# 2026-10-30 Clarify Wave 1 denominator counts
+
+- Reconciled the official baseline guide's 17,708 interview total with its 17,587 Table 4 description subset; the guide says people lacking age, sex, or hukou were excluded from Table 4. Kept this 121-person published-table difference distinct from the protected ID-only 3-record Weight-to-demographic-spine link difference. This clarifies denominator semantics without treating module presence as eligibility; formal models remain blocked by design/method gates.
+
 # 2026-10-30 Verify official Wave 1 Codebook archive
 
 - Matched the locally staged official Codebook archive MD5 to the PKU Open Research Data Platform listing. Its only member is a PDF identical by SHA-256 to the already archived official Codebook. A targeted text review found no `qc1_va003` fasting-code mapping. Archive identity is verified, but the fasting-code gate remains unresolved; no participant values or associations were inspected or fitted. The archive remains in protected local reference storage.

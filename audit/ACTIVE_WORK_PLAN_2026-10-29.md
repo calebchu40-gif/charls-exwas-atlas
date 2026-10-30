@@ -166,6 +166,10 @@
 
 在 `C:\charls_raw` 暂存区发现官方 Wave 1 Codebook 归档，平台 MD5 核验通过；归档内 PDF 与受控参考区已有官方 PDF 的 SHA-256 一致。定向检索未发现 `qc1_va003` 代码定义，因此这项来源搜索现已完成但仍未解决 fasting 编码。归档和 PDF 只保存在 `%LOCALAPPDATA%\CHARLS_ExWAS_Atlas\references\official_charls_codebook_2011\`；不进入代码仓库、OneDrive、服务器或网站。其余正式分析门不变。后续依次推进：取得新的正式字段释义（如用户从获准渠道获得的专门更正材料）、完成年龄/目标总体与方差设计的独立审阅、冻结分析计划并重审105项试点；在这些门通过前模型数保持0。
 
+### 2026-10-30 Wave 1 官方计数口径
+
+基线指南的访谈总数为 17,708；Table 4 的 17,587 是排除缺年龄、性别或户籍者后的描述表子集，不能作为完整分析框。这个官方 121 人表格差额与受保护 ID-only 文件核对中 Weight 到人口学主表的 3 人链接差异分别记录；后者仍待解释，但三人不在 Blood 文件。详见 [`wave1_official_denominator_interpretation_2026-10-30.md`](wave1_official_denominator_interpretation_2026-10-30.md)。这只澄清分母语义，不解除目标年龄、PSU/方差和独立方法审查门。
+
 ## 不可跳过的决策门
 
 1. 来源身份和文件版本；
