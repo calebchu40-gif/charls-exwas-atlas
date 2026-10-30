@@ -18,7 +18,7 @@ import subprocess
 import sys
 import tempfile
 import zipfile
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 
 import pandas as pd
 import pyreadstat
@@ -150,6 +150,36 @@ def dta_members(archive: Path, kind: str):
                     yield target
     else:
         with tempfile.TemporaryDirectory(prefix="charls_prep_2011_", dir=scratch_root) as td:
+            try:
+                listing = subprocess.run(
+                    ["tar", "-tf", str(archive)], capture_output=True, text=True,
+                    timeout=120, check=True,
+                ).stdout.splitlines()
+                members = [name for name in listing if name.casefold().endswith(".dta")]
+                for name in members:
+                    relative = PurePosixPath(name.replace("\\", "/"))
+                    windows_relative = PureWindowsPath(name)
+                    if (relative.is_absolute() or windows_relative.is_absolute()
+                            or windows_relative.drive or ".." in relative.parts):
+                        raise RuntimeError(f"Unsafe RAR member path: {name}")
+                if not members:
+                    raise RuntimeError(f"No Stata modules found in {archive.name}")
+                subprocess.run(
+                    ["tar", "-xf", str(archive), "-C", td, "--", *members],
+                    capture_output=True, timeout=600, check=True,
+                )
+                root = Path(td).resolve()
+                extracted = sorted(root.rglob("*.dta"))
+                if len(extracted) != len(members) or any(
+                    not member.resolve().is_relative_to(root) for member in extracted
+                ):
+                    raise RuntimeError("RAR extraction did not match the validated Stata member list")
+                yield from extracted
+                return
+            except (OSError, subprocess.SubprocessError):
+                # Fall back to a separately installed RAR utility on systems
+                # whose tar implementation cannot read this official archive.
+                pass
             tools = [os.environ.get("UNRAR_PATH", ""), "unrar", "unrar-free"]
             last_error = "no RAR extractor found"
             for tool in (item for item in tools if item):
@@ -335,6 +365,8 @@ def main():
     ap.add_argument("--wave1-intake-manifest", type=Path,
                     default=PRIVATE_ROOT / "incoming_2011_official" / "intake_manifest.json",
                     help="Private human-reviewed source identity manifest required for Wave 1")
+    ap.add_argument("--wave1-weight-spine-candidate", action="store_true",
+                    help="For Wave 1 only, use positive official ind_weight_ad2 IDs as a candidate respondent spine; keep missing demographics missing")
     args = ap.parse_args()
     input_root = (protected_data_path(args.input_root) / "原始数据+问卷2011~2020"
                   if args.input_root is not None else None)
@@ -358,6 +390,8 @@ def main():
     unknown = sorted(set(selected_waves) - set(WAVES))
     if unknown:
         raise ValueError(f"Unknown waves: {unknown}")
+    if args.wave1_weight_spine_candidate and "2011" not in selected_waves:
+        raise ValueError("--wave1-weight-spine-candidate requires 2011 in --waves")
     for wave in selected_waves:
         kind, filename = WAVES[wave]
         if wave == "2011" and args.wave1_all_data is not None:
@@ -482,15 +516,30 @@ def main():
         # person spine so valid sampled respondents are not silently dropped
         # when a demographic module row is absent. Keep missing demographics as
         # missing; do not infer or impute values from another module.
-        spine_module = "sample_infor" if wave == "2015" else "demographic_background"
+        if wave == "2015":
+            spine_module = "sample_infor"
+        elif wave == "2011" and args.wave1_weight_spine_candidate:
+            spine_module = "weights_person"
+        else:
+            spine_module = "demographic_background"
         spine_i = next((i for i, (m, k, _, _) in enumerate(frames)
                         if m.casefold() == spine_module and k == "ID"), None)
         if spine_i is None:
             raise RuntimeError(f"No unique respondent {spine_module} spine in {wave}")
         module, key, base, base_meta = frames.pop(spine_i)
         base[key] = normalize_key(base[key])
-        column_labels = {c: (lab or "") for c, lab in zip(base_meta.column_names,
-                                                          base_meta.column_labels or [])}
+        if wave == "2011" and args.wave1_weight_spine_candidate:
+            weight_column = next((c for c in base.columns if c.casefold() == "ind_weight_ad2"), None)
+            if weight_column is None:
+                raise RuntimeError("Wave 1 weight-spine candidate lacks official ind_weight_ad2")
+            eligible_weight = pd.to_numeric(base[weight_column], errors="coerce").gt(0)
+            if eligible_weight.sum() != base[weight_column].notna().sum():
+                raise RuntimeError("Wave 1 candidate weight spine has nonpositive nonmissing ind_weight_ad2 values")
+            base = base.loc[eligible_weight].copy()
+            spine_module = "weights_person_positive_ind_weight_ad2_candidate"
+        column_labels = ({c: (lab or "") for c, lab in zip(base_meta.column_names,
+                                                            base_meta.column_labels or [])}
+                         if base_meta is not None else {})
         if base[key].dropna().duplicated().any():
             raise ValueError(f"Demographic spine is not unique in {wave}")
 
