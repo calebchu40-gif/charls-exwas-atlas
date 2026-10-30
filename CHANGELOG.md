@@ -1,3 +1,8 @@
+# 2026-10-31 Clarify why the public atlas has no association results
+
+- Updated the public status banner to distinguish completed source verification and protected Wave 1 table preparation from the still-open 45+ target-domain, approximate variance, and 15 outcome-rule decisions.
+- Stated that the independent survey-statistics/biomarker methods review is unsigned and the pre-registered 105-coefficient pilot has not run. The site continues to report zero calculated associations and publish no simulated or unreviewed results.
+- No participant records, restricted QA, or estimates were added.
 # 2026-10-31 Clarify all 15 Wave 1 blood-outcome candidates
 
 - Updated the field-level outcome table to mark the Wave 1 fasting code as source-verified for glucose and triglycerides, while keeping their estimand/weight questions open. Documented the common raw-finite, identity-scale handling as an unsigned review candidate and stated that no finite sentinel definition was found in the reviewed official sources; this is not proof that sentinels do not exist.
