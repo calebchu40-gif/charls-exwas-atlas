@@ -80,6 +80,7 @@
 ## 官方依据与项目边界
 
 - CHARLS 2011 Blood Sample Users' Guide：血检目标、`bloodweight` 和血样非应答说明，https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf
+- 权重语义复核：Blood 文件 `bloodweight` 与 Weight 文件 `bio_weight2` 是不同字段；本项目血检候选使用 Blood Guide 所述 `bloodweight`，不得以 `bio_weight2` 记录覆盖作为其替代或一致性门。详见 [`wave1_bloodweight_semantics_review_2026-10-30.md`](wave1_bloodweight_semantics_review_2026-10-30.md)。该来源选择仍需独立方法审阅其对年龄 domain 与配对完整案例估计目标的适用性。
 - CHARLS 2011–2012 National Baseline Users' Guide：多阶段抽样、县/社区抽样和基线框，https://charls.pku.edu.cn/en/data/User2011.pdf
 - CHARLS Wave 1 官方文档目录与数据项，https://charls.pku.edu.cn/en/Doc/a2011_CHARLS_Wave1__Baseline_.htm
 - CHARLS 抽样设计说明，https://charls.pku.edu.cn/en/About/Sample.htm
