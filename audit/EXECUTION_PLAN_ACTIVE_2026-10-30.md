@@ -185,3 +185,7 @@ An independent AI document review judged the all-blood-sample target more defens
 ### 2026-10-31 — K=240 availability audit code review and correction
 
 Independent static review of the new private availability audit found that the first version did not enforce the full registered exposure/outcome composition and combined missing with nonfinite outcomes in one field. The script has been corrected to validate all 16 expected exposure contrasts against the public 15-outcome crosswalk and to separate missing/nonparseable from nonfinite availability. The two age-domain labels now explicitly require a valid age interval. The earlier private output is superseded for review; rerun the corrected script and bind only its refreshed hash to the reviewer packet. This remains pre-analysis QA, not an association or readiness approval.
+
+### 2026-10-31 — K=240 可用性审计修正版复核完成
+
+依独立静态代码审阅意见，已增加16种预声明暴露对比、15项 crosswalk 结局映射和完整 K=240 组合的失败关闭校验，并分开记录缺失/不可解析与非有限结局可用性。两个年龄候选域明确限定为有效年龄区间。修正版已在受保护服务器重跑；结构核对通过，精确QA留在 mode-600 私有文件。先前结果已被修正版覆盖。所有数据仍只用于可用性标记，没有应用未冻结的有效值规则、没有评估模型可估性、没有拟合关联。审核通过仅指代码逻辑和输出结构，不是估计量/方差/方法批准。

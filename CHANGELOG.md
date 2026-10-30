@@ -1910,3 +1910,9 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Static review found that the initial diagnostic needed stricter validation of the 16 planned exposure contrasts and their mapping to all 15 public biomarker fields, and should separate missing/nonparseable outcomes from nonfinite values.
 - Updated the audit to fail closed on register/crosswalk mismatch and duplicate coefficient tuples, clarified valid-age-interval denominators, and split the availability categories. The previous private output is superseded; refresh it before reviewer use.
 - No association model or public result is authorized by these changes.
+
+# 2026-10-31 Re-run K=240 audit after static review
+
+- Applied independent code-review fixes to fail closed on the expected 16 exposure contrasts × 15 outcome crosswalk, duplicates and mapping changes; clarified interval-valid age domains and separated missing/nonparseable from nonfinite availability.
+- The corrected script was rerun in the protected server. Structural checks passed for all registered pairs/domains, no participant-ID fields, owner-only output mode 0600, and zero association fits. The earlier report is superseded by the refreshed private QA.
+- Static review and structural validation do not approve survey estimands, variance, outcome rules or model readiness.
