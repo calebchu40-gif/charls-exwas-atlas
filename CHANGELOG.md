@@ -1893,3 +1893,9 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 
 - Added a server-private aggregate audit for the full 150+90 Wave 1 hypothesis register. It preserves the registered K90 `i020=2` route and reports availability/community support only; it does not apply unresolved outcome validity rules or fit associations.
 - Exact counts are written only under the configured private root with owner-only permissions. The audit is not a model-readiness or disclosure approval.
+
+# 2026-10-31 Run protected K=240 pair availability audit
+
+- Completed a server-private aggregate availability audit for all 150 K150 and 90 K90 Wave 1 hypotheses across the provisional blood target, lower-age-bound 45+ domain, and upper-age-bound 45+ sensitivity domain. K90 applied the registered `i020=2` route.
+- The report contains aggregate counts only, has owner-only mode 0600, and was structurally checked for 240 unique hypotheses, three domains, no participant-ID fields, and no association estimates. Exact counts remain private.
+- Outcome validity rules, model estimability, variance approval, independent methods approval, and public disclosure were not inferred or approved.
