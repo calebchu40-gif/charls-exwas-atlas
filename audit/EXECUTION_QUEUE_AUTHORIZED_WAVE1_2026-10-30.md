@@ -33,6 +33,8 @@ For every outcome record source field, unit, storage type, Stata missing handlin
 
 Before freezing M1/M2, reconcile them to the covariate DAG. The current candidate primary adjustment set must evaluate age nonlinearity, sex, education, and verified community `urban_nbs`; the older draft that reserved education/urban context for M2 is not the freeze candidate. Verify education coding/routes, community linkage, and complete-case estimand before freezing. Keep SES, migration, smoking/diet, BMI, diagnosis and treatment out of the generic core unless a pair-specific, predeclared causal rationale supports them.
 
+A protected aggregate-only support audit has been added for the blood-weighted observed sample and the candidate lower-age-bound domain. It reads only `rgender`, `bd001`, `urban_nbs`, `communityID`, `bloodweight`, and age interval keys; it writes category/cluster counts only to the server's mode-600 QA path. It does not read biomarkers, write respondent rows, or estimate associations. Review its private output before selecting education categories or freezing complete-case rules.
+
 ### W3 — Freeze estimator and diagnostic rules
 
 Bind the observed finite-positive-`bloodweight` respondent sample, domain indicator, community PSU, no-strata WR Taylor approximation, coefficient IDs, M1 primary formula, M2 sensitivity formula, full prespecified multiplicity family, singleton-PSU rule, degrees-of-freedom handling, effect scales, and sensitivity analysis to source and prepared-table hashes. Record the 17,708 target population separately from the observed Blood sample. Add a clear caution that results are approximate and that the final subcommunity PSU map is unavailable.
