@@ -75,17 +75,27 @@ def _validate_configuration(
         if not str(config["target"].get(key, "")).strip():
             raise ValueError(f"Frozen target specification lacks {key}")
     frame = config["frame"]
-    if not str(frame.get("eligibility_field", "")).strip():
-        raise ValueError("Frozen frame specification lacks eligibility_field")
-    if not isinstance(frame.get("eligible_values"), list) or not frame["eligible_values"]:
-        raise ValueError("Frozen frame specification must list eligible_values")
-    if not str(frame.get("age_field", "")).strip() or frame.get("minimum_age") is None:
-        raise ValueError("Frozen frame specification lacks age field/domain")
-    minimum_age = _numeric_code(frame["minimum_age"], "frame.minimum_age")
-    if minimum_age < 0:
-        raise ValueError("Frozen minimum age cannot be negative")
-    for value in frame["eligible_values"]:
-        _numeric_code(value, "frame.eligible_values")
+    if frame.get("analysis_sample_rule") != "finite_positive_bloodweight_respondents":
+        raise ValueError("Wave 1 blood analyses require the observed positive-bloodweight respondent sample")
+    age_fields = (
+        frame.get("age_lower_field"), frame.get("age_upper_field"),
+        frame.get("age_covariate_field"),
+    )
+    if any(not isinstance(field, str) or not field.strip() for field in age_fields):
+        raise ValueError("Frozen frame specification must declare lower/upper age fields and an age covariate field")
+    age_domain_bound = frame.get("age_domain_bound")
+    if age_domain_bound not in {"lower", "upper", "full"}:
+        raise ValueError("Frozen frame specification lacks a supported age-domain rule")
+    if age_domain_bound != "full" and frame.get("minimum_age") is None:
+        raise ValueError("Age-restricted domain requires a minimum_age")
+    if any(not OUTCOME_TERMS.fullmatch(field) or field == ID_FIELD for field in age_fields):
+        raise ValueError("Frozen age fields must be valid non-key field names")
+    if len(set(age_fields)) != len(age_fields):
+        raise ValueError("Age lower bound, upper bound, and model midpoint fields must be distinct")
+    if frame.get("minimum_age") is not None:
+        minimum_age = _numeric_code(frame["minimum_age"], "frame.minimum_age")
+        if minimum_age < 0:
+            raise ValueError("Frozen minimum age cannot be negative")
     if not str(frame.get("full_design_frame_definition", "")).strip():
         raise ValueError("Frozen frame specification lacks full_design_frame_definition")
 
@@ -95,6 +105,8 @@ def _validate_configuration(
             raise ValueError(f"Frozen design specification lacks {key}")
     if design.get("variance_method") != "Taylor linearization":
         raise ValueError("This runner currently supports only an approved Taylor-linearization design")
+    if design.get("weight_field") != "bloodweight":
+        raise ValueError("Wave 1 blood outcomes require the official bloodweight field")
     if not isinstance(design.get("with_replacement"), bool):
         raise ValueError("Frozen design specification must state with_replacement as true/false")
     if not isinstance(design.get("stratum_fields"), list):
@@ -205,6 +217,12 @@ def _validate_configuration(
             raise ValueError("Centered covariate terms must declare a center")
         if item.get("center") is not None:
             _numeric_code(item["center"], "continuous covariate center")
+    age_covariate = frame["age_covariate_field"]
+    age_terms = [item for item in model["continuous_covariates"] if item.get("field") == age_covariate]
+    if len(age_terms) != 2 or {item.get("transform") for item in age_terms} != {"centered_linear", "centered_quadratic"}:
+        raise ValueError("The age midpoint must enter the primary model as centered linear and quadratic terms")
+    if len({str(item.get("center")) for item in age_terms}) != 1:
+        raise ValueError("Age midpoint linear and quadratic terms must use the same predeclared center")
     for item in model["binary_covariates"]:
         if not isinstance(item, dict):
             raise ValueError("Binary covariates must use explicit field/code objects")
@@ -233,16 +251,24 @@ def _validate_configuration(
 
 def _selected_fields(config: dict[str, Any], analytes: list[dict[str, str]], registry: list[dict[str, str]]) -> tuple[list[str], list[str]]:
     frame, design, model = config["frame"], config["design"], config["model"]
+    age_lower = str(frame["age_lower_field"])
+    age_upper = str(frame["age_upper_field"])
+    age_covariate = str(frame["age_covariate_field"])
+    age_file_fields = [age_lower, age_upper]
+    generated_age_fields = set(age_file_fields) | {age_covariate}
     fields = {
-        ID_FIELD, frame["eligibility_field"], design["weight_field"], design["psu_field"],
+        ID_FIELD, design["weight_field"], design["psu_field"],
         *design["stratum_fields"], *config["exposure_field_mapping"].values(),
     }
     for item in model["continuous_covariates"]:
-        fields.add(item["field"])
+        if item["field"] not in generated_age_fields:
+            fields.add(item["field"])
     for item in model["binary_covariates"]:
-        fields.add(item["field"])
+        if item["field"] not in generated_age_fields:
+            fields.add(item["field"])
     for item in model["categorical_covariates"].values():
-        fields.add(item["field"])
+        if item["field"] not in generated_age_fields:
+            fields.add(item["field"])
     for analyte in analytes:
         fields.add(analyte["variable"])
         fasting = config["outcome_validity_rules"][analyte["concept_id"]]["fasting_rule"]
@@ -250,15 +276,12 @@ def _selected_fields(config: dict[str, Any], analytes: list[dict[str, str]], reg
             fields.add(fasting["field"])
     if any(not OUTCOME_TERMS.fullmatch(str(field)) for field in fields):
         raise ValueError("Configuration contains an invalid prepared-table field name")
-    age_field = str(frame["age_field"])
-    if not OUTCOME_TERMS.fullmatch(age_field) or age_field == ID_FIELD:
-        raise ValueError("Frozen age field must be a valid non-key prepared-table field")
     if ID_FIELD in config["exposure_field_mapping"].values():
         raise ValueError("A participant key cannot be used as an exposure field")
     registry_fields = {row["exposure_field_candidate"] for row in registry}
     if not registry_fields.issubset(set(config["exposure_field_mapping"])):
         raise ValueError("Frozen exposure mapping does not cover all registry source fields")
-    return sorted(fields), [age_field]
+    return sorted(fields), age_file_fields
 
 
 def _read_protected_frame(config: dict[str, Any], analytes: list[dict[str, str]], registry: list[dict[str, str]], pyreadstat: Any, pl: Any) -> Any:
@@ -270,7 +293,7 @@ def _read_protected_frame(config: dict[str, Any], analytes: list[dict[str, str]]
         raise ValueError("Protected prepared frame is empty or lacks its join key")
     if person[ID_FIELD].null_count() or person[ID_FIELD].n_unique() != person.height:
         raise ValueError("Protected prepared-frame person key is missing or non-unique")
-    age, _ = pyreadstat.read_dta(str(AGE), usecols=[ID_FIELD, age_fields[0]], output_format="polars")
+    age, _ = pyreadstat.read_dta(str(AGE), usecols=[ID_FIELD, *age_fields], output_format="polars")
     if age[ID_FIELD].null_count() or age[ID_FIELD].n_unique() != age.height:
         raise ValueError("Protected age file person key is missing or non-unique")
     data = person.join(age, on=ID_FIELD, how="left", validate="1:1")
@@ -278,18 +301,22 @@ def _read_protected_frame(config: dict[str, Any], analytes: list[dict[str, str]]
         raise ValueError("Age join changed the prepared frame row count")
 
     numeric_fields = set(fields) - {ID_FIELD, config["design"]["psu_field"], *config["design"]["stratum_fields"]}
-    numeric_fields.add(age_fields[0])
+    numeric_fields.update(age_fields)
     numeric_exprs = []
     for field in numeric_fields:
         value = pl.col(field).cast(pl.Float64, strict=False)
         numeric_exprs.append(pl.when(value.is_finite()).then(value).otherwise(None).alias(field))
     data = data.with_columns(numeric_exprs)
+    age_lower, age_upper = (pl.col(field) for field in age_fields)
+    midpoint = pl.when(age_lower.is_not_null() & age_upper.is_not_null()) \
+        .then((age_lower + age_upper) / 2.0).otherwise(None)
+    data = data.with_columns(midpoint.alias(config["frame"]["age_covariate_field"]))
 
     frame = config["frame"]
-    eligible_codes = [_numeric_code(value, "frame.eligible_values") for value in frame["eligible_values"]]
-    data = data.filter(pl.col(frame["eligibility_field"]).is_in(eligible_codes))
+    weight = pl.col(config["design"]["weight_field"])
+    data = data.filter(weight.is_not_null() & weight.is_finite() & (weight > 0))
     if data.height == 0:
-        raise ValueError("Frozen eligibility rule selected no records in the protected design frame")
+        raise ValueError("Positive-bloodweight rule selected no observed blood respondents")
     design = config["design"]
     weight = pl.col(design["weight_field"])
     if data.filter(weight.is_null() | ~weight.is_finite() | (weight <= 0)).height:
@@ -389,11 +416,19 @@ def _outcome_expression(config: dict[str, Any], analyte: dict[str, str], pl: Any
     return pl.when(valid_outcome & (raw_outcome > 0)).then(raw_outcome.log()).otherwise(None)
 
 
+def _age_domain_expr(frame: dict[str, Any], pl: Any) -> Any:
+    bound = frame["age_domain_bound"]
+    if bound == "full":
+        return pl.lit(True)
+    field = frame[f"age_{bound}_field"]
+    age = pl.col(field)
+    return age.is_not_null() & (age >= float(frame["minimum_age"]))
+
+
 def _reference_outcome_scale(data: Any, config: dict[str, Any], analyte: dict[str, str], pl: Any, np: Any) -> dict[str, Any]:
     """Compute one wave/phenotype scale before applying exposure/covariate complete-case rules."""
     frame = config["frame"]
-    age_field = frame["age_field"]
-    domain = pl.col(age_field).is_not_null() & (pl.col(age_field) >= float(frame["minimum_age"]))
+    domain = _age_domain_expr(frame, pl)
     fasting = config["outcome_validity_rules"][analyte["concept_id"]]["fasting_rule"]
     if fasting["mode"] == "restrict":
         allowed_fasting = [_numeric_code(value, f"{analyte['concept_id']}.fasting eligible code") for value in fasting["eligible_codes"]]
@@ -420,8 +455,7 @@ def _fit_exposure_group(data: Any, config: dict[str, Any], analyte: dict[str, st
     field = config["exposure_field_mapping"][field_candidate]
     valid_codes = sorted({_numeric_code(row["exposure_code_candidate"], "exposure code") for row in rows}
                          | {_numeric_code(row["reference_code_candidate"], "reference code") for row in rows})
-    age_field = config["frame"]["age_field"]
-    domain = pl.col(age_field).is_not_null() & (pl.col(age_field) >= float(config["frame"]["minimum_age"]))
+    domain = _age_domain_expr(config["frame"], pl)
     domain &= pl.col(field).is_in(valid_codes)
     validity = config["outcome_validity_rules"][analyte["concept_id"]]
     fasting = validity["fasting_rule"]
@@ -519,7 +553,7 @@ def _fit_exposure_group(data: Any, config: dict[str, Any], analyte: dict[str, st
             "estimate_scale": "wave_phenotype_target_domain_standard_deviation",
             "estimate_transformed_unit_scale": estimate * sd if estimate is not None else None,
             "se_transformed_unit_scale": standard_error * sd if standard_error is not None else None,
-            "fit_status": "estimated" if inference_complete else "incomplete_inference",
+            "fit_status": "success" if inference_complete else "incomplete_inference",
             "n_complete_private": pair.height,
             "n_psu_private": n_psu,
             "support_by_exposure_private": json.dumps(support, separators=(",", ":")),

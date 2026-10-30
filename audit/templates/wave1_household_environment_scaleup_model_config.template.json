@@ -12,11 +12,13 @@
     "age_domain_method": ""
   },
   "frame": {
-    "eligibility_field": "",
-    "eligible_values": [],
-    "age_field": "",
+    "analysis_sample_rule": "finite_positive_bloodweight_respondents",
+    "age_lower_field": "age_at_interview_lower",
+    "age_upper_field": "age_at_interview_upper",
+    "age_covariate_field": "age_at_interview_midpoint",
+    "age_domain_bound": "",
     "minimum_age": null,
-    "full_design_frame_definition": ""
+    "full_design_frame_definition": "Observed official Wave 1 Blood-file respondents with finite positive bloodweight; target population is the 17,708 baseline main respondents and spouses described by the Blood Sample Users' Guide."
   },
   "design": {
     "weight_field": "",

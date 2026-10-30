@@ -145,10 +145,15 @@ def finalize(manifest_path: Path, scope_review_path: Path, batch_paths: list[Pat
     family_value = f"{manifest['atlas_family_id']};K={len(ordered_rows)}"
     for row in ordered_rows:
         row["multiple_testing_family"] = family_value
-    adjusted = adjust_pvalues([
-        float(row["p_value"]) if row["fit_status"] == "success" and row["p_value"] else None
-        for row in ordered_rows
-    ])
+    p_values = []
+    for row in ordered_rows:
+        raw_p = row["p_value"]
+        p_values.append(
+            float(raw_p)
+            if row["fit_status"] == "success" and raw_p is not None and str(raw_p).strip() != ""
+            else None
+        )
+    adjusted = adjust_pvalues(p_values)
     for row, q_value, bonferroni in zip(
         ordered_rows, adjusted["q_value_by"], adjusted["p_bonferroni"], strict=True
     ):

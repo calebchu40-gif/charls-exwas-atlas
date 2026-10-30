@@ -1,6 +1,7 @@
 """Apply family-wise Bonferroni and Benjamini–Yekutieli adjustments.
 
-Pass the complete, predeclared family of valid p-values for one model family.
+Pass one item per hypothesis in the complete, predeclared family for one
+model family; use None when a hypothesis has no estimable p-value.
 This function does not choose the family, fit models, read CHARLS data, or
 adjust across multiple families.
 """
