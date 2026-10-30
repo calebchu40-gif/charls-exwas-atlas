@@ -17,3 +17,11 @@
 - `sources_official/CHARLS_2015_Blood_Release_Note.pdf` 与提取文本，Table 1 发布字段和单位。
 - [CHARLS 2015 Wave 3 官方数据页](https://charls.pku.edu.cn/en/Data/a2015_CHARLS_Wave_3.htm)。
 - [CHARLS 2015 Blood Data Release Note](https://charls.pku.edu.cn/en/data/Blood2015.pdf)。
+
+## 2026-10-30 受保护服务器入库更新
+
+此前“本地受控目录没有 2015 血检文件”是 2026-10-24 的历史状态，不能代表后续状态。2026-10-30 在用户授权的服务器私有入库中，2015 官方 Blood ZIP 已通过项目的 SHA-1 校验及 metadata-only Stata 表头检查：表头为 13,420 行，预期的 20/20 个字段齐全。检查未读取个人记录值、ID、权重分布、合并覆盖或关联结果；原始包与 QA 均留在服务器 `private/`。
+
+官方 Release Note 区分 13,420 名任何血样采集对象与 13,013 名横断面样本；因此 Stata 文件总行数不得直接当作横断面目标样本、模型 N 或逐对完整案例 N。Release Note 将 `Blood_weight` 定义为由个人横断面权重与血检应答概率校正构造的横断面血检权重，并说明其概率因子在第99百分位截顶。该权重与 2011 `bloodweight` 的 wave-specific 来源分别管理，不得直接跨波拼接或比较权重数值。[官方 Wave 3 数据页](https://charls.charlsdata.com/pages/Data/2015-charls-wave4/en.html)；[官方 2015 Blood Data Release Note](https://charls.pku.edu.cn/en/data/Blood2015.pdf)。
+
+该入库只使 2015 血检来源及字段存在性可进入下一轮逐波设计审查；不证明 2015 暴露/PSU/权重连接、目标框或模型已准入。Wave 3 仍须单独完成样本框、横断面/追踪估计目标、官方 PSU 与方差资料、字段编码、非应答权重适用性和独立方法审阅。跨波关联仍按波次分别估计；不因概念或单位相同就合并血检结果。
