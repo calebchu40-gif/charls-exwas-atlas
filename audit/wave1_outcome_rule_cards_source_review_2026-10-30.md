@@ -33,6 +33,10 @@
 
 字段、单位和概念映射与本仓库 `blood_biomarker_crosswalk_v1.csv` 的 Wave 1 行对照。胱抑素 C 在 Wave 1 资料中为 `cystatinc`，作为年龄分层子样本指标排除于上述15项主假设族；如将来考虑纳入，须单独确认子抽样机制/权重并单独冻结假设族。
 
+## 官方描述性 N 对账（2026-10-30）
+
+使用服务器现有的受限、无标识符 `wave1_biomarker_value_profile_private.json`，将15个预设字段的有限数值记录数与 Blood Users' Guide 表4/表5明确标注的未加权 N 逐字段核对。15/15 与指南一致；校验只输出了整体匹配情况和不匹配字段名，没有读取/输出个人标识，也没有拟合关联。该对账支持变量映射、Stata缺失处理后的非缺失记录数与公开指南相符，但**不能证明有限数值特殊码不存在**、不能定义化验有效域、不能把assay检测范围变成排除线，也不能解码 `qc1_va003`。详细校验记录仅保留在服务器私有日志。
+
 ## 配置建议（仅候选）
 
 - 将官方文档没有规定的有限特殊码、有效数值界限、LOD 代入/截尾及顶码规则标为 `unresolved`；由独立审阅者依据原始发行说明和必要的受控质量审计逐项裁决。不得为通过代码门禁而把未知写成“无特殊码”。
@@ -44,6 +48,7 @@
 
 - CHARLS, *Blood Data Users' Guide*: 采血与空腹说明印刷页4；方法和检测限表印刷页6；结果/极端值、HbA1c 与胱抑素 C 子样本说明印刷页12–13。项目归档件：[`sources_official/CHARLS_2011_Blood_User_Guide.pdf`](../sources_official/CHARLS_2011_Blood_User_Guide.pdf)；可检索文本：[`sources_official/CHARLS_2011_Blood_User_Guide_extracted.txt`](../sources_official/CHARLS_2011_Blood_User_Guide_extracted.txt)。
 - Wave 1 原始变量名/单位的项目映射：[`blood_biomarker_crosswalk_v1.csv`](blood_biomarker_crosswalk_v1.csv)。这一映射本身不是有效值或模型准入批准。
+- 甘油三酯非空腹候选的外部临床实验室背景：EAS/EFLM joint consensus, [*Fasting is not routinely required for determination of a lipid profile*](https://eas-society.org/wp-content/uploads/2022/05/2016_Consensus-lipid-profile-fasting.pdf)。该共识支持一般临床 lipid profile 的非空腹测量，不替代 CHARLS Wave 1 变量映射、暴露研究的估计目标冻结或独立方法审阅。
 
 ## 审阅状态
 
