@@ -1562,3 +1562,7 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Added a header-only Wave 4/5 catalog coverage review and clarified that Wave 5 Exit_Module candidates are decedent/proxy mortality fields kept out of routine respondent-level pair tables pending a separate mortality estimand.
 - Added an opt-in unfiltered Wave 2 Weights-person spine to preserve distinct official crosssection and longitudinal flags for later frame reconciliation.
 - Corrected protected weight-module merge QA to count keys normalized to missing before those rows are excluded, not only Stata system-missing values.
+# 2026-10-30 Complete Wave 2 candidate-frame rebuild and metadata review
+
+- Rebuilt the Wave 2 Weights-person candidate spine from a clean revision after correcting normalized-missing-key QA. The protected ID/flag/weight audit confirms unique keys, preserves distinct cross-sectional and longitudinal memberships, and checks weight presence against each flag; exact aggregates and output hashes remain private.
+- Ran a header-only 2013 catalog comparison. Missing candidate names are from relationship-roster or Exit_Interview modules that require separate estimands/merge handling, not ordinary respondent-table omissions. Updated the Wave 2 review and active plan. No exposure/outcome response values or IDs were read in the catalog audit; no association was fitted and formal model count remains 0.
