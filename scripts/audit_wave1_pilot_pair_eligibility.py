@@ -60,7 +60,7 @@ def load_biomarkers() -> list[dict[str, str]]:
 def load_pilot_coefficients(biomarkers: list[dict[str, str]]) -> list[dict[str, Any]]:
     with REGISTER.open(newline="", encoding="utf-8-sig") as stream:
         rows = list(csv.DictReader(stream))
-    outcome_keys = {r["phenotype_field_candidate"] for r in biomarkers}
+    outcome_keys = {r["variable"] for r in biomarkers}
     selected = [
         r for r in rows
         if r["family_id"] == "wave1_household_environment_K150"
