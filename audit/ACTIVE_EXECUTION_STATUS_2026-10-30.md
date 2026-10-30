@@ -145,3 +145,5 @@ Wave 1 执行器对测量协议未解决的结局返回 `blocked_by_unresolved_m
 - Regenerated the 105-coefficient pair-availability audit using the current source-bound person table (`9878ed...`) and official age candidate. It reports only private pair/domain availability and community-support aggregates; no IDs or outcome summaries were written, and no association was fitted.
 - Reconciled the audit labels with the current source record: `qc1_va003` mapping is 1=fasting, 2=not fasting; the glucose/TG measurement estimand, weight applicability, and independent handling review remain open. Updated the old search note as superseded rather than retaining contradictory current wording.
 - Model readiness remains closed; the refreshed counts are not analytic N and did not unlock real-data associations.
+
+- Re-read the official Blood Users' Guide Table 4/5 headers: the descriptive statistics are weighted but the reported N column is unweighted. Extended the private range-reconciliation workflow to compare published per-analyte N separately from range endpoints; these remain diagnostics only.

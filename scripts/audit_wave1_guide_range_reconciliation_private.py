@@ -39,6 +39,15 @@ GUIDE_RANGES = {
     "newcrea": (0.18, 11.55), "newglu": (18.0, 722.7),
     "newua": (0.26, 13.31),
 }
+# The guide labels the Table 4/5 descriptive statistics as weighted while its
+# N column is explicitly unweighted. Reconcile the N column separately.
+GUIDE_UNWEIGHTED_N = {
+    "qc1_vb002": 11528, "qc1_vb004": 11530, "qc1_vb005": 11839,
+    "qc1_vb006": 11532, "qc1_vb009": 11531, "newcho": 11655,
+    "newhdl": 11663, "newldl": 11642, "newtg": 11656,
+    "newglu": 11636, "newhba1c": 11706, "newcrp": 11664,
+    "newbun": 11662, "newcrea": 11634, "newua": 11664,
+}
 DEFAULT_BLOOD = PRIVATE_ROOT / "incoming_2011_official" / "Blood_20140429.dta"
 DEFAULT_PERSON = PRIVATE_ROOT / "derived_wave_tables_2011_official_rebuild_20261029" / "CHARLS_wave2011_person_analytic.dta"
 DEFAULT_OUTPUT = PRIVATE_ROOT / "qa_outputs" / "wave1_guide_range_reconciliation_private.json"
@@ -81,6 +90,9 @@ def run(blood_path: Path, person_path: Path, output_path: Path) -> dict[str, Any
         positive_weight_range = rounded_range(weighted_frame_values)
         rows.append({
             "field": field,
+            "guide_table_unweighted_n": GUIDE_UNWEIGHTED_N[field],
+            "all_finite_n_matches_guide": int(all_values.size) == GUIDE_UNWEIGHTED_N[field],
+            "positive_bloodweight_finite_n_matches_guide": int(weighted_frame_values.size) == GUIDE_UNWEIGHTED_N[field],
             "guide_table_range": guide,
             "all_finite_range_unweighted": all_range,
             "positive_bloodweight_finite_range_unweighted": positive_weight_range,
@@ -102,6 +114,7 @@ def run(blood_path: Path, person_path: Path, output_path: Path) -> dict[str, Any
         "prepared_person_table_sha256": source["prepared_output_sha256"],
         "blood_source_sha256": sha256_file(blood_path),
         "guide_source": "CHARLS Blood Data Users' Guide Tables 4-5, printed pages 13-14",
+        "guide_table_note": "Tables label descriptive statistics as weighted and the N column as unweighted; the range comparison remains descriptive source reconciliation only.",
         "fields_read": list(OUTCOMES) + ["bloodweight"],
         "identifier_fields_read": False,
         "association_models_fitted": False,

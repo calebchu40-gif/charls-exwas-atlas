@@ -1840,3 +1840,9 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Refreshed the private 105-pair availability audit against the current source-bound Wave 1 person-table hash and current age candidate; it remains availability QA only, with no associations, validity rules, or approved model N.
 - Corrected the audit's stale status text: the Wave 1 fasting mapping is source-supported as 1=fasting and 2=not fasting; the glucose/TG estimand, bloodweight compatibility, and outcome handling remain unresolved.
 - Marked the earlier fasting-source search memo as historical and linked the later official-source reconciliation so its superseded conclusion is not mistaken for current evidence.
+
+# 2026-10-31 Distinguish weighted table statistics from unweighted N
+
+- Rechecked the original CHARLS Blood Users' Guide Table 4/5 text: descriptive statistics are weighted, while each table explicitly labels its N column as unweighted.
+- Extended the private source-bound audit to reconcile the 15 registered analyte-specific unweighted N values separately from the range endpoints, in both all-finite and positive-bloodweight frames.
+- Exact per-analyte counts and ranges remain mode-600 private QA; neither published ranges nor the comparison authorize exclusions or validity cutoffs. No associations fitted.

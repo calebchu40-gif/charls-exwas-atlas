@@ -153,3 +153,7 @@ The first private comparison of finite assay ranges against Guide Tables 4/5 did
 ### 2026-10-31 continuation — current-hash pair availability
 
 The earlier 105-pair availability reports were bound to a superseded prepared-person hash. Refreshed the report against the current hash and official age candidate, retaining it in server `private/qa_outputs/` with mode 0600. It distinguishes the blood target, the provisional lower-bound 45+ domain, and the upper-bound 45+ sensitivity. It remains an availability audit only: no outcome-validity handling, design approval, model N, or associations. Corrected stale fasting-source wording in the audit code and marked the earlier search memo historical; the source-supported 1/2 mapping is distinct from the still-unresolved glucose/TG estimand and weight issue.
+
+### 2026-10-31 — separate weighted descriptors from unweighted table N
+
+A source review of Blood Users' Guide Tables 4/5 confirms that descriptive statistics are labelled weighted and the N column is explicitly unweighted. The private source-reconciliation script now compares each registered analyte's observed nonmissing count separately from its min/max endpoints against the guide table, both overall and among positive-bloodweight records. This resolves the summary-statistic basis question for N; any residual range discrepancy remains a release/version or summary-definition question, not grounds for trimming. Exact outputs stay private and no association is fitted.
