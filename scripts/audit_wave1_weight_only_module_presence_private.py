@@ -81,10 +81,11 @@ def protected_rar_modules(archive: Path):
         raise FileNotFoundError("A protected RAR extractor is required for the Wave 1 module-ID audit")
     with tempfile.TemporaryDirectory(prefix="wave1_module_ids_", dir=scratch) as directory:
         root = Path(directory).resolve()
-        subprocess.run(
-            [str(extractor_path), "-x", str(archive), str(root)],
-            capture_output=True, timeout=600, check=True,
-        )
+        for member in members:
+            subprocess.run(
+                [str(extractor_path), "-x", str(archive), member, str(root)],
+                capture_output=True, timeout=600, check=True,
+            )
         extracted = sorted(root.rglob("*.dta"))
         if len(extracted) != len(members) or any(not path.resolve().is_relative_to(root) for path in extracted):
             raise ValueError("Wave 1 RAR module extraction did not match the verified member list")
