@@ -14,6 +14,7 @@ Blood 数据中的 `qc1_va003` 表示采血时是否空腹。拟定的105项试�
 - CHARLS 官方 2013 CodeBook 不含 `qc1_va003`；其内容是2013随访问卷模块，不能替代2011血液数据值标签。
 - 复查 CHARLS 官方 Wave 1 下载页后，页面列出的相关文档是通用 Wave 1 Codebook 与 Blood Data Users' Guide，没有另列 2011 Blood 专用 Codebook 或 Blood Release Note。官方 Blood ZIP 归档仅包含 Stata 数据文件，没有随包数据字典/README。见[官方 Wave 1 数据文档清单](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)。
 - 2026-10-29 再次打开 CHARLS 当前官方 Wave 1 页面核对文档清单：仍列通用 Codebook 与 Blood data users' guide，没有新增 `qc1_va003` 专用代码本；该页面将 Blood 数据发布日期列为 2014-04-29。此为在线文档清单核对，不构成字段代码的数值映射。
+- **新增官方来源路径（2026-10-30）：**北京大学开放研究数据平台的 CHARLS 2011 baseline dataset（version 1.1）列有 `CHARLS_codebook.rar`，平台文件 ID 136、记录的 MD5 为 `293eb9789ee559fe0d7099086a2aaf40`，描述为“数据编码参考书”。该官方文件页显示需登录/申请文件访问；本项目尚未取得该压缩包，也未核验归档内容或其是否含 `qc1_va003` 标签。这个发现修正了“官方没有可追溯 Codebook 文件条目”的来源搜索范围，但不改变空腹编码未解决状态。只可通过用户本人已获准的账号/界面获取并核验文件，不从受限 API 绕过访问控制。
 - 本轮补查官方 Wave 1 [Physical Examination Questionnaire](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)（本地归档提取文本）及 Blood Guide 的全文文本层；体检问卷未出现 `qc1_va003`/空腹项目或其数字选项，Blood Guide 只说明记录空腹状态及非空腹风险，未定义字段代码。该协议文件不能替代数据字典或 released value labels。
 - CHARLS 官方 2015 CodeBook 对相近的 `bl_fasting` 字段列出 `1=Yes, 2=No`；这是Wave 3字段，不能单独证明2011 `qc1_va003` 的编码跨波一致。
 - 当前已查的官方 2011 文档/发行物没有给出 `qc1_va003` 的具体数值代码/特殊缺失码映射；它不是“编码已确认”，而是“官方公开材料仍未解决”。这不排除 CHARLS 账号内或其他正式更正文件存在额外说明。
@@ -29,7 +30,7 @@ Blood 数据中的 `qc1_va003` 表示采血时是否空腹。拟定的105项试�
 ## 当前决定与下一步
 
 1. 保持105项正式拟合门关闭。
-2. 已复查官方 Wave 1 Codebook、Blood Guide、Physical Examination Questionnaire、Blood 发行包成员及 Stata value-label 元数据；目前均未给出数值代码映射。后续若 CHARLS 账号内出现正式更正/数据字典，只读取文档/字段元数据并记录版本与来源。
+2. 已复查官方 Wave 1 Codebook 文本、Blood Guide、Physical Examination Questionnaire、Blood 发行包成员及 Stata value-label 元数据；目前均未给出数值代码映射。现已找到北大开放研究数据平台中的官方 Codebook 压缩包条目，但页面要求登录/申请访问，且归档内容尚未取得和审核。只有在用户获准账号可访问并完成来源/校验核验后，才能将其作为字段代码依据。
 3. 如果当前官方公开发行没有该代码映射，后续只通过用户本人获准的 CHARLS 渠道核实并记录回复；项目不会代发联系。编码来源确认后，再冻结缺失处理、血糖/甘油三酯的主估计目标、空腹状态调整及空腹样本敏感性域；不得看关联结果后选择。
 4. 其他不受空腹状态直接影响的分析物仍受共同的 PSU/方差设计准入与独立方法审查阻断，不能因此提前开跑。
 
@@ -37,6 +38,7 @@ Blood 数据中的 `qc1_va003` 表示采血时是否空腹。拟定的105项试�
 
 - CHARLS 官方 [Blood Sample Users' Guide](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf)
 - CHARLS 官方 [2013 CodeBook](https://charls.pku.edu.cn/en/doc/Codebook2013.pdf)（本次核实不含 `qc1_va003`）
+- 官方 [PKU Open Research Data Platform 2011 baseline dataset, version 1.1](https://opendata.pku.edu.cn/dataset.xhtml?persistentId=doi%3A10.18170%2FDVN%2FIZU8OF&version=1.1)：列有 `CHARLS_codebook.rar`，但须经账号授权获取；文件内容目前未审阅。
 - CHARLS 官方2015 CodeBook（本地官方来源归档）中的 `bl_fasting` 值标签，作为相邻波次比较；不可直接外推到2011。
 - 第三方线索：[CHARLS 常规血液检测变量索引](https://www.dbcodebook.cn/nodes/post/56/)（非官方，仅检索线索）
 

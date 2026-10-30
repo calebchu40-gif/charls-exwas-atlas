@@ -1515,3 +1515,6 @@ This file records project-level changes that affect reproducibility, methods, da
 # 2026-10-30 Clarify Wave 1 variance review status
 
 - Aligned the independent-methods packet with the latest variance recommendation: there is no preferred single-stage variance scheme. County-prefix clustering and county-conditioned community clustering remain unapproved review options, not current recommendations or run configurations. No real association models were fitted.
+# 2026-10-30 Record official 2011 Codebook archive access route
+
+- Found the CHARLS 2011 baseline Codebook archive entry in the Peking University Open Research Data Platform (version 1.1; platform-reported MD5 recorded in the source review). The file page requires account access; the archive was not retrieved or inspected, and no fasting code was inferred. Updated the source inventory and Wave 1 fasting-code review; the measurement gate remains open.
