@@ -77,6 +77,29 @@ def _field_label_metadata(meta: Any, field: str) -> dict[str, Any]:
     }
 
 
+def _education_group(value: object) -> str | None:
+    if pd.isna(value):
+        return None
+    try:
+        numeric = float(value)
+    except (TypeError, ValueError, OverflowError):
+        return None
+    if not math.isfinite(numeric) or not numeric.is_integer():
+        return None
+    code = int(numeric)
+    if code in {1, 2, 3}:
+        return "low_or_incomplete_schooling"
+    if code == 4:
+        return "primary_school"
+    if code == 5:
+        return "middle_school"
+    if code in {6, 7}:
+        return "high_or_vocational"
+    if code in {8, 9, 10, 11}:
+        return "college_or_higher"
+    return None
+
+
 def run(output_path: Path = DEFAULT_OUTPUT) -> dict[str, Any]:
     output_path = private(output_path)
     for path in (PERSON, BLOOD, PSU, AGE, AGE_QA):
@@ -153,12 +176,56 @@ def run(output_path: Path = DEFAULT_OUTPUT) -> dict[str, Any]:
             "education_candidate": {"field": "bd001", **_field_label_metadata(person_meta, "bd001")},
             "community_context_candidate": {"field": "urban_nbs", **_field_label_metadata(psu_meta, "urban_nbs")},
         },
+        "education_grouping_candidate": {
+            "low_or_incomplete_schooling": "bd001 codes 1-3",
+            "primary_school": "bd001 code 4",
+            "middle_school": "bd001 code 5",
+            "high_or_vocational": "bd001 codes 6-7",
+            "college_or_higher": "bd001 codes 8-11",
+            "rationale": "Predeclared broad attainment stages to avoid fitting a separate coefficient for each sparse upper education level; require independent methods approval before use.",
+            "not_a_frozen_recoding": True,
+        },
+        "official_codebook_coding_rule": {
+            "sex": "Only CHARLS Codebook codes 1 (male) and 2 (female) are documented analytic categories; all other/missing values remain unclassified, not recoded to a sex category.",
+            "education": "Use documented integer response codes 1-11 only; do not infer a category from numeric values outside that documented set.",
+            "community_context": "Use only the PSU release's attached urban_nbs labels for 0/1; do not treat this as a design stratum.",
+            "source_review": "CHARLS Wave 1 official Codebook and questionnaire pages visually reviewed; exact participant frequencies remain private.",
+        },
         "domain_support": {},
     }
     for domain_name, frame in domains.items():
+        age_lower = pd.to_numeric(frame["age_at_interview_lower"], errors="coerce")
+        age_upper = pd.to_numeric(frame["age_at_interview_upper"], errors="coerce")
+        midpoint_present = age_lower.notna() & age_upper.notna()
+        sex = pd.to_numeric(frame["rgender"], errors="coerce")
+        education = pd.to_numeric(frame["bd001"], errors="coerce")
+        urban = pd.to_numeric(frame["urban_nbs"], errors="coerce")
+        grouped_education = education.map(_education_group)
+        core_complete = (
+            midpoint_present & sex.isin([1, 2]) & education.isin(range(1, 12))
+            & urban.isin([0, 1])
+        )
+        education_group_support: dict[str, Any] = {}
+        for group in (
+            "low_or_incomplete_schooling", "primary_school", "middle_school",
+            "high_or_vocational", "college_or_higher",
+        ):
+            mask = grouped_education.eq(group)
+            education_group_support[group] = {
+                "records_private": int(mask.sum()),
+                "community_clusters_private": int(frame.loc[mask, "_community_key"].nunique(dropna=True)),
+            }
         result["domain_support"][domain_name] = {
             "support_records_private": int(len(frame)),
             "community_clusters_private": int(frame["_community_key"].nunique(dropna=True)),
+            "candidate_core_covariate_complete_records_private": int(core_complete.sum()),
+            "candidate_core_covariate_missingness_private": {
+                "age_interval_missing": int((~midpoint_present).sum()),
+                "sex_not_in_official_codes_1_2": int((~sex.isin([1, 2])).sum()),
+                "education_not_in_official_codes_1_11": int((~education.isin(range(1, 12))).sum()),
+                "community_context_not_in_official_codes_0_1": int((~urban.isin([0, 1])).sum()),
+            },
+            "candidate_education_group_support_private": education_group_support,
             "covariate_categories_private": {
                 field: _category_counts(frame, field) for field in (*PERSON_FIELDS, COMMUNITY_FIELD)
             },

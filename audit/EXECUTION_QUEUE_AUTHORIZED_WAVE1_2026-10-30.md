@@ -35,6 +35,8 @@ Before freezing M1/M2, reconcile them to the covariate DAG. The current candidat
 
 A protected aggregate-only support audit has been added for the blood-weighted observed sample and the candidate lower-age-bound domain. It reads only `rgender`, `bd001`, `urban_nbs`, `communityID`, `bloodweight`, and age interval keys; it writes category/cluster counts only to the server's mode-600 QA path. It does not read biomarkers, write respondent rows, or estimate associations. Review its private output before selecting education categories or freezing complete-case rules.
 
+**Official covariate coding review (2026-10-30):** visual inspection of the relevant CHARLS Codebook/questionnaire pages confirms `rgender` documents codes 1 (male) and 2 (female), and the education item documents integer response codes 1–11. Treat values outside those documented mappings as unclassified/missing for candidate modeling; do not infer an additional sex category from a raw numeric value. The PSU release labels `urban_nbs` 0/1 as rural/urban; this is community context, not a variance stratum. A five-level education grouping is being evaluated only as a sparse-category support candidate: codes 1–3, 4, 5, 6–7, and 8–11. It is an analytic recoding, not an official CHARLS category and is not frozen. The private audit now reports joint age/sex/education/community-context completeness and group-level cluster support; inspect only the private report before deciding whether it is stable enough to present for independent review.
+
 ### W3 — Freeze estimator and diagnostic rules
 
 Bind the observed finite-positive-`bloodweight` respondent sample, domain indicator, community PSU, no-strata WR Taylor approximation, coefficient IDs, M1 primary formula, M2 sensitivity formula, full prespecified multiplicity family, singleton-PSU rule, degrees-of-freedom handling, effect scales, and sensitivity analysis to source and prepared-table hashes. Record the 17,708 target population separately from the observed Blood sample. Add a clear caution that results are approximate and that the final subcommunity PSU map is unavailable.
@@ -55,8 +57,8 @@ Prepare only disclosure-cleared aggregate outputs for the site. Confirm result f
 
 ## Immediate schedule
 
-- **Completed this work session:** W1, the authorized-work queue, and a private W4 review-packet draft; code and public-safe documentation are synced to GitHub. Append the local and private server logs before ending this session.
-- **Next execution block:** complete W2/W3 and assemble W4 review packet. These are the critical path; no batch fitting is allowed while review is pending.
+- **Completed in the current execution block:** visually reviewed official Codebook/questionnaire coding for sex and education; added a private, outcome-free audit of joint core-covariate completeness and candidate education-group cluster support; recorded the distinction between documented source codes and an unapproved analytic grouping.
+- **Next execution block:** run the updated audit in the protected server tree, summarize only whether categories and joint support meet predeclared minimums (no exact counts outside private storage), and update the draft model/complete-case estimand. Continue W2 source-based biomarker missingness/validity disposition and W3 design diagnostics. No association fitting while these gates or independent methods review remain pending.
 - **After review approval:** first model run and full QA; then K150/K90 expansion. Server compute time is not expected to dominate; official documentation gaps and review decisions are the uncertain calendar-time items.
 
 ## Progress reporting

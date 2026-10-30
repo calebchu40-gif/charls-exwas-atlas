@@ -1,5 +1,9 @@
 # 2026-10-30 Authorize the next Wave 1 gated work block
 
+- Visually reviewed the official Wave 1 Codebook and questionnaire pages for the candidate core covariates. The documented sex categories are 1/2; education response codes are 1–11; PSU `urban_nbs` labels are rural/urban context and are not design strata. Candidate modeling treats undocumented values as unclassified rather than inventing categories.
+- Extended the private covariate support audit to report joint core-covariate completeness and community-cluster support for a clearly labeled, not-frozen five-level education grouping. The grouping is an analytic candidate, not an official CHARLS coding. Exact participant-derived QA stays mode 600 under the server private root.
+- This is source/coding and support QA only. No outcomes were read, no associations were fit, and no analysis plan or covariate recoding was frozen.
+
 - Added a post-authorization execution queue with completed prerequisites, stop gates, privacy boundaries and dependency order. It records the user's confirmed official Wave 1 files and selected Option A approximation without equating those decisions with independent methods approval.
 - Added a protected-server-only diagnostic utility for the 15 prespecified Wave 1 biomarker columns. It reports aggregate missingness, finite-value counts, range and quantiles without reading identifiers or fitting associations. Its output is restricted to the private tree (mode 600); distributions cannot be used to infer valid-value cutoffs, special codes or fasting semantics.
 - The official outcome header review remains unchanged: no attached value labels were found. Wave 1 fasting coding, age/frame freeze and independent survey-design/method review remain gates. No association model was fitted in this code/documentation change.
