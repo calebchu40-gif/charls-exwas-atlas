@@ -794,20 +794,28 @@ def run_scaleup(batch: str = "full240") -> dict[str, Any]:
     if not output_dir.is_relative_to(PRIVATE_ROOT.resolve()):
         raise ValueError("Refusing analysis output outside protected local storage")
     output_dir.mkdir(parents=True, exist_ok=True)
+    # Keep the directory and every respondent-derived result/QA file owner-only
+    # even when the server's default umask is more permissive.
+    output_dir.chmod(0o700)
     output_stem = "wave1_household_environment_pilot105" if batch == "pilot105" else "wave1_household_environment_scaleup"
-    with (output_dir / f"{output_stem}_results_private.csv").open("w", newline="", encoding="utf-8-sig") as stream:
+    results_path = output_dir / f"{output_stem}_results_private.csv"
+    pair_qa_path = output_dir / f"{output_stem}_pair_qa_private.csv"
+    manifest_path = output_dir / f"{output_stem}_manifest_private.json"
+    with results_path.open("w", newline="", encoding="utf-8-sig") as stream:
         fields = sorted({key for row in results for key in row})
         writer = csv.DictWriter(stream, fieldnames=fields)
         writer.writeheader()
         writer.writerows(results)
-    with (output_dir / f"{output_stem}_pair_qa_private.csv").open("w", newline="", encoding="utf-8-sig") as stream:
+    with pair_qa_path.open("w", newline="", encoding="utf-8-sig") as stream:
         fields = sorted({key for row in pair_qa for key in row})
         writer = csv.DictWriter(stream, fieldnames=fields)
         writer.writeheader()
         writer.writerows(pair_qa)
-    (output_dir / f"{output_stem}_manifest_private.json").write_text(
+    manifest_path.write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
     )
+    for private_output in (results_path, pair_qa_path, manifest_path):
+        private_output.chmod(0o600)
     return {
         "run": "complete",
         "execution_batch": batch,

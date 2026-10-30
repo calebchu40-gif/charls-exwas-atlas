@@ -1,3 +1,7 @@
+# 2026-10-31 Enforce owner-only permissions on Wave 1 result artifacts
+
+- Hardened the gated K150/K90 and 105-pilot runner so its private output directory is 0700 and result, pair-QA, and manifest files are chmodded to 0600 after writing, regardless of server umask.
+- The runner remains behind source, plan, frozen configuration, and independent-review gates. This code change does not authorize execution and no CHARLS analysis was run.
 # 2026-10-31 Clarify why the public atlas has no association results
 
 - Updated the public status banner to distinguish completed source verification and protected Wave 1 table preparation from the still-open 45+ target-domain, approximate variance, and 15 outcome-rule decisions.
