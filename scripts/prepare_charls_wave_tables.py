@@ -348,6 +348,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--input-root", type=Path,
                     help="Directory containing 原始数据+问卷2011~2020 (used for legacy/default wave paths)")
+    ap.add_argument("--archive", action="append", default=[], metavar="WAVE=PATH",
+                    help="Explicit protected all-data archive for a wave other than 2011; repeat as needed")
     ap.add_argument("--out-dir", type=Path,
                     default=Path(os.environ.get("LOCALAPPDATA", tempfile.gettempdir())) /
                     "CHARLS_ExWAS_Atlas" / "derived_wave_tables")
@@ -367,6 +369,18 @@ def main():
     ap.add_argument("--wave1-weight-spine-candidate", action="store_true",
                     help="For Wave 1 only, use positive official ind_weight_ad2 IDs as a candidate respondent spine; keep missing demographics missing")
     args = ap.parse_args()
+    explicit_archives = {}
+    for item in args.archive:
+        wave, separator, raw_path = item.partition("=")
+        wave = wave.strip()
+        if not separator or wave not in WAVES or wave == "2011" or not raw_path.strip():
+            raise ValueError("--archive must be WAVE=PATH for a supported non-2011 wave")
+        if wave in explicit_archives:
+            raise ValueError(f"Only one explicit archive may be supplied for wave {wave}")
+        archive_path = protected_data_path(Path(raw_path.strip()))
+        if not archive_path.is_file() or archive_path.suffix.casefold() != ".zip":
+            raise ValueError(f"Wave {wave} requires an existing protected ZIP all-data archive")
+        explicit_archives[wave] = archive_path
     input_root = (protected_data_path(args.input_root) / "原始数据+问卷2011~2020"
                   if args.input_root is not None else None)
     outdir = protected_data_path(args.out_dir)
@@ -401,6 +415,9 @@ def main():
             if suffix not in {".zip", ".rar"}:
                 raise ValueError("Wave 1 all-data archive must be an official ZIP or legacy RAR")
             kind = "zip" if suffix == ".zip" else "rar"
+        elif wave in explicit_archives:
+            archive = explicit_archives[wave]
+            kind = "zip"
         else:
             if input_root is None:
                 raise ValueError(f"--input-root is required when no explicit archive is provided for wave {wave}")
@@ -515,7 +532,7 @@ def main():
         # person spine so valid sampled respondents are not silently dropped
         # when a demographic module row is absent. Keep missing demographics as
         # missing; do not infer or impute values from another module.
-        if wave == "2015":
+        if wave in {"2015", "2018", "2020"}:
             spine_module = "sample_infor"
         elif wave == "2011" and args.wave1_weight_spine_candidate:
             spine_module = "weights_person"

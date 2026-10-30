@@ -1559,3 +1559,4 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 # 2026-10-30
 
 - Added a metadata-only Wave 4/5 frame-spine review. The released Sample_Infor modules contain cross-section flags, but the current builder does not yet use them as the respondent spine for those waves. Official guide semantics and a frame-preserving weight join must be reviewed before preparation; no associations are approved.
+- Based on the official 2018/2020 guides, updated the protected table builder to retain the full Sample_Infor frame for those waves and accept explicit archives inside approved private storage. Build-time code does not filter by crosssection or weight; model eligibility remains a separate gated step.

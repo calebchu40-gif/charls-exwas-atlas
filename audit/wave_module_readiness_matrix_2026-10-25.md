@@ -14,7 +14,7 @@
 
 ## 对 ExWAS 设计的直接影响
 
-**2026-10-30 入库更新：**受保护本机的 Wave 2、Wave 4、Wave 5 All Data ZIP 已逐包核对 CHARLS 官方 SHA-1，并完成仅归档成员名/Stata 表头/标签的 metadata-only 预检。Wave 2含 Biomarker、PSU、Weights；Wave 4/5含 Sample_Infor 与 Weights。此为源文件结构准入，不表示相应波次分析框或复杂抽样设计已准入。当前准备脚本对2018/2020仍默认以 Demographic_Background 为个人主表，而官方归档还含 `Sample_Infor.crosssection`；必须先按官方指南厘清样本框与权重连接，不能直接构建或解释其分析分母。详见[`multwave_frame_spine_build_gate_2026-10-30.md`](multwave_frame_spine_build_gate_2026-10-30.md)。
+**2026-10-30 入库与样本框更新：**受保护本机的 Wave 2、Wave 4、Wave 5 All Data ZIP 已逐包核对 CHARLS 官方 SHA-1，并完成仅归档成员名/Stata表头/标签的 metadata-only 预检。Wave 2含 Biomarker、PSU、Weights；Wave 4/5含 Sample_Infor 与 Weights。官方 2018/2020 指南明确 `Sample_Infor.crosssection` 用于识别横断面样本，并说明横断面权重仅对应代表性样本（含 proxy/partial interview；其他被访非样本人员无权重）。准备器现采用完整 Sample_Infor 作为 2018/2020 人员主框，不在构建时先行筛选。此为来源与框架准备规则，不表示模块测量资格、实际权重适用性或复杂抽样设计已准入。详见[`multwave_frame_spine_build_gate_2026-10-30.md`](multwave_frame_spine_build_gate_2026-10-30.md)。
 
 1. CHARLS公开五个全国主波为2011、2013、2015、2018和2020，并非逐年连续调查。跨波配对目录只说明官方问卷/代码本中存在候选字段，不说明每个受访者都测量、在每波都采用相同问法，或同一人群/权重适用。
 2. CHARLS可支持广义的“暴露—表型”探索：生活环境与住房、职业/工作史、社会经济与家庭背景、行为习惯等候选暴露，及自报疾病、认知、心理、功能、体测和少数波次血检表型。它不等于 NHANES 中数百项环境化学物/营养生物标志物的实验室暴露组；站点应明确这是基于CHARLS现有字段的候选目录，而非宣称已有同等规模的化学暴露测定。
