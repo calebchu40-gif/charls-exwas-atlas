@@ -18,6 +18,10 @@
 
 - Downloaded the public Version D Codebook and verified its SHA1 (`AF828E94462F26F56CB0B2C188A9C3DAD5CFCAC0`) against the official CHARLS portal. Pages 13–14 describe seven weight types and say design-adjusted standard errors are possible where CHARLS supplies design information; targeted full-document review found no wave-specific executable variance specification or complete named strata/final-PSU field set. This is not enough to close the design gate. The D.2 product is generated from source waves but its version-specific public codebook remains unavailable. No participant data, models, or tests used.
 
+# 2026-10-30 Verify the Wave 2 official PSU header
+
+- Confirmed the local protected `2013_319_PSU.zip` SHA1 against the official CHARLS Wave 2 listing and read only the Stata header. It contains a community ID plus province/city, NBS urban/rural and area-type descriptors (450 rows, 8 variables). No county sampling-unit key, explicit variance stratum, or replicate-weight field appears in the file header. No field values, participant data, models, or tests were read. Wave 2 variance eligibility remains unresolved.
+
 # 2026-10-30 Remove unapproved defaults from generic design template
 
 - Cleared the generic design template's `communityID` PSU, `bloodweight`, unstratified variance, and age-45 defaults. Current CHARLS review has no approved single-stage variance design and the primary blood target is not age-restricted. The template now fails closed until a wave-specific design and gates are reviewed.

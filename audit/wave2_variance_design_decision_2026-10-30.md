@@ -7,6 +7,8 @@
 
 CHARLS 官方 Wave 2 Release Note（VersionID 20151118）将 `PSU.dta` 描述为包含省、市名称和地区类型；同一文件说明横断面标记 `crosssection`、纵向标记 `longitudinal` 及各自权重口径，但没有在发布说明中给出方差估计用的分层 ID、复制权重或方差软件设置。官方样本设计页描述的基线抽样则是县/区按地区、城乡和人均 GDP 排序分层，县/区内以 PPS 抽取村/社区作为 PSU；页面还记载有 30 个大社区被拆分抽样、部分社区因行政边界变化涉及两个县级单位。
 
+**受控本机官方 PSU 包表头核验（2026-10-30）：** `2013_319_PSU.zip` 的 SHA-1 为 `74c78392b668375937e78ce5da4f06f5ba83f0f9`，与 CHARLS 官方 Wave 2 数据页列出的 PSU 文件值一致；ZIP 仅含 `PSU.dta`。只读取 Stata 元数据可见 450 行、8 列：`communityID`、省/市名称（中英文）、`urban_nbs`、`areatype`、`versionID`。未见县级抽样单位 ID、显式方差层或复制权重字段。这里的 450×8 是文件表头结构核验；未读取字段值或受访者记录。
+
 以上信息说明“已发布 PSU 表”不等价于“已获得可直接用于复杂抽样方差估计的完整设计变量”。省、市、地区类型属于地理/设计背景字段，不能据此自行拼出官方 strata。Wave 2 Release Note 也没有说 Wave 2 的方差结构可直接照搬 Wave 1；必须针对 Wave 2 的样本和释放字段单独论证。
 
 ## 当前分析决定
@@ -31,6 +33,7 @@ CHARLS 官方 Wave 2 Release Note（VersionID 20151118）将 `PSU.dta` 描述为
 ## 来源
 
 - CHARLS [Wave 2 Release Note, VersionID 20151118](https://charls.pku.edu.cn/en/data/Release2013.pdf)，第 1–2 页：发布模块、`PSU.dta` 描述、横断面/纵向样本标记与权重、生物标志物权重。
+- CHARLS [Wave 2 official data page](https://charls.charlsdata.com/pages/Data/2013-charls-wave2/en.html)：PSU archive SHA-1 and release listing.
 - CHARLS [Sample design description](https://charls.pku.edu.cn/en/About/Sample.htm)：2011 基线多阶段 PPS 抽样、按地区/城乡/GDP 排序、社区作为 PSU、30 个社区拆分及县界变化说明。
 - 当前项目的 Wave 2 权重/目标估计量复核：[`wave2_weight_estimand_source_review_2026-10-24.md`](wave2_weight_estimand_source_review_2026-10-24.md)。
 - Wave 2 anthropometry/weight gate：[`wave2_anthropometry_release_weight_gate_2026-10-29.md`](wave2_anthropometry_release_weight_gate_2026-10-29.md)。
