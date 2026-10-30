@@ -1,3 +1,15 @@
+# 2026-10-30 Review the official Wave 1 Medical Questionnaire (file 138)
+
+- Found the document linked directly from CHARLS's official 2011 documentation page; downloaded it into server-private intake and verified its MD5 against the Peking University file-138 record.
+- Read it in read-only mode with macros disabled. The 32-page physical-measurement instrument does not contain `qc1_va003` or a blood-sample fasting-code mapping. Clarified that it is distinct from `Biomarker-manual-2011.doc`; LI875 belongs to the latter and refers to behavior before blood-pressure measurement.
+- Updated official source inventory, audit note, active plan, and private review packet. The 14 fasting-dependent coefficients remain blocked; no participant outcome values or associations were accessed.
+
+# 2026-10-30 Verify official file 138 and keep fasting-dependent outcomes blocked
+
+- Retrieved the 2011 physical-examination questionnaire from the direct public-document link on CHARLS's official Wave 1 page and verified its MD5 against Peking University's file-138 metadata.
+- Read the questionnaire text with macros disabled. It documents physical measurements but contains no `qc1_va003` or blood-sample fasting-code mapping; `LI875` is about recent behaviors before blood-pressure measurement.
+- Updated the source audit and active execution plan. The 14 glucose/triglyceride coefficients remain blocked; no participant outcomes or associations were analyzed.
+
 # 2026-10-30 Bind official file-138 gap into the active plan and private review packet
 
 - Updated the active Wave 1 execution plan to link the official file-138 source-status audit and explicitly preserve uncertainty about whether it defines `qc1_va003`.
