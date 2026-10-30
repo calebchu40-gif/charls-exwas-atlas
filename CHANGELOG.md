@@ -1561,3 +1561,4 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Reviewed official 2018/2020 frame and weight guidance, updated the protected builder to retain the full Sample_Infor frame, and produced Wave 4/5 preparation tables. Aggregate frame/weight linkage QA passed; pair-specific analytic eligibility and survey variance remain unresolved. No associations were generated or published.
 - Added a header-only Wave 4/5 catalog coverage review and clarified that Wave 5 Exit_Module candidates are decedent/proxy mortality fields kept out of routine respondent-level pair tables pending a separate mortality estimand.
 - Added an opt-in unfiltered Wave 2 Weights-person spine to preserve distinct official crosssection and longitudinal flags for later frame reconciliation.
+- Corrected protected weight-module merge QA to count keys normalized to missing, not only Stata system-missing values.

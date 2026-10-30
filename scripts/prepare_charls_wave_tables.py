@@ -274,7 +274,7 @@ def split_weights(frame: pd.DataFrame, wave: str, qa: list[dict]):
         bad = sum(variation.values())
         qa.append({"wave": wave, "module": label, "merge_key": key,
                    "source_rows": len(frame), "source_unique_key_n": x[key].nunique(),
-                   "source_missing_key_rows": int(frame[key].isna().sum()),
+                   "source_missing_key_rows": int(x[key].isna().sum()),
                    "base_rows_before": None, "base_missing_key_rows": None,
                    "matched_base_rows": None, "match_rate_0_to_1": None,
                    "other_id_mismatch_counts": json.dumps({"duplicate_rows": int(x[key].duplicated(keep=False).sum()),
