@@ -36,7 +36,7 @@ Bind the full frame, domain indicator, `bloodweight`, community PSU, no-strata W
 
 ### W4 — Review gate before association fitting
 
-Generate a concise private review packet with the source manifests, age and frame logic, exact analysis configuration, code commit, restricted QA references, and a checklist of unresolved points. Association fitting remains fail-closed until all computational gates pass and an independent methods review is recorded. This is a real gate; an internal code check is not represented as independent review.
+**Draft prepared** at `private/analysis_review/wave1_preanalysis_review_packet_20261030.md` (mode 600 on the server and stored in the local protected review directory). It summarizes decisions, evidence and open review items without participant values or exact QA counts. Complete it with final source/table/config hashes after W2/W3. Association fitting remains fail-closed until all computational gates pass and an independent methods review is recorded. An internal code check is not represented as independent review.
 
 ### W5 — Pilot and expansion
 
@@ -48,7 +48,7 @@ Prepare only disclosure-cleared aggregate outputs for the site. Confirm result f
 
 ## Immediate schedule
 
-- **Completed this work session:** W1 and the authorized-work queue; code and public-safe documentation are synced to GitHub. Append the local and private server logs before ending this session.
+- **Completed this work session:** W1, the authorized-work queue, and a private W4 review-packet draft; code and public-safe documentation are synced to GitHub. Append the local and private server logs before ending this session.
 - **Next execution block:** complete W2/W3 and assemble W4 review packet. These are the critical path; no batch fitting is allowed while review is pending.
 - **After review approval:** first model run and full QA; then K150/K90 expansion. Server compute time is not expected to dominate; official documentation gaps and review decisions are the uncertain calendar-time items.
 
