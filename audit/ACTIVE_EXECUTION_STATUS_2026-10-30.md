@@ -88,3 +88,8 @@ Wave 1 执行器对测量协议未解决的结局返回 `blocked_by_unresolved_m
 
 
 **执行队列二次一致性复核：**在完成上次规则统一后，定向搜索又发现队列的“官方来源复核”历史段落仍把甘油三酯写成全样本候选。现已改成清楚区分“旧建议”和“当前决定”：血糖、甘油三酯共14项均阻断；并已同步到服务器代码镜像。计划指纹所含 outcome-source note 未变，最新私有配置审计仍为 plan hash 匹配、draft 未冻结、readiness 关闭。该轮未重跑数据审计或模型。下一步继续核对其余结局的来源规则和独立审阅包，不以内部检查代替独立方法审阅。
+
+
+## 2026-10-30 — Wave 1 runner 准入顺序静态复核
+
+静态检查 `scripts/run_2011_household_environment_scaleup.py` 与 `scripts/require_verified_wave1_frame.py` 的调用顺序：执行器先检查受保护路径、来源元数据和源绑定，再要求具名/日期/哈希绑定的 readiness review 与 frozen configuration；只有上述门禁成功后才读取准备表参与者字段并进入拟合循环。readiness 明确要求全部主门及 pilot 专属配置门通过，且计划/源/准备表/年龄候选哈希匹配。当前服务器仍没有 readiness 记录或 active frozen config，因此真实数据字段不会进入拟合步骤。此项仅为源码静态审阅，未运行数据或模型，也不能替代独立方法审阅。下一步继续把 15 项结局规则草案整理成逐项审阅决策，不伪造审阅签字。
