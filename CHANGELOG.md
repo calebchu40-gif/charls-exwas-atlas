@@ -1566,3 +1566,7 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 
 - Rebuilt the Wave 2 Weights-person candidate spine from a clean revision after correcting normalized-missing-key QA. The protected ID/flag/weight audit confirms unique keys, preserves distinct cross-sectional and longitudinal memberships, and checks weight presence against each flag; exact aggregates and output hashes remain private.
 - Ran a header-only 2013 catalog comparison. Missing candidate names are from relationship-roster or Exit_Interview modules that require separate estimands/merge handling, not ordinary respondent-table omissions. Updated the Wave 2 review and active plan. No exposure/outcome response values or IDs were read in the catalog audit; no association was fitted and formal model count remains 0.
+
+# 2026-10-30 Document CHARLS sampling hierarchy and variance gate
+
+- Recorded official CHARLS descriptions of county-level stratification/PPS, community PSU selection and later sampling stages, and separated these design facts from the still-unresolved wave-specific released variance-variable mapping. The note explicitly rejects inferring full design variance from geography/community IDs or weights alone. No participant data or models used.
