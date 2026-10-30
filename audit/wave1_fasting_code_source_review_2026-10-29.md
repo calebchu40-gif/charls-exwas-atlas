@@ -43,3 +43,6 @@ Blood 数据中的 `qc1_va003` 表示采血时是否空腹。拟定的105项试�
 - CHARLS 官方2015 CodeBook（本地官方来源归档）中的 `bl_fasting` 值标签，作为相邻波次比较；不可直接外推到2011。
 - 第三方线索：[CHARLS 常规血液检测变量索引](https://www.dbcodebook.cn/nodes/post/56/)（非官方，仅检索线索）
 
+### 2026-10-30 official physical-examination questionnaire clarification
+
+The official CHARLS Wave 1 page links a separate `Physical examination questionnaire` (`https://charls.pku.edu.cn/en/doc/Physical2011.doc`). I retrieved and reviewed that source. It contains item `LI875`, asking whether the respondent smoked, exercised, consumed alcohol, or ate food within 30 minutes before the **blood-pressure test** (documented options 1=Yes, 5=No, 8=Don't Know). This is a pre-measurement behavior item for blood pressure, not the blood-collection fasting-status variable `qc1_va003`; its codes must not be transferred or used as a proxy for fasting status. The questionnaire contains no `qc1_va003` mapping. The source DOC is archived at `sources_official/CHARLS_2011_Physical_Examination_Questionnaire.doc` (SHA-256: `5D269E24409F0C2BCC1910BBC483498440FDDA26069AF03BFF2C5379181C71D2`). This adds an explicit guard against conflating short-term measurement context with blood fasting status and does not unlock any models.
