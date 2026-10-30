@@ -1,3 +1,9 @@
+# 2026-10-30 Complete protected Wave 1 pilot pair-availability QA
+
+- Ran the hash-bound audit on the authorized server for all 105 registered pilot coefficients across the complete blood target, lower-bound 45+ domain, and upper-bound 45+ sensitivity. The private report is mode 600 and contains only pair-level aggregates; no IDs or outcome values are written.
+- Confirmed the output has the expected registered-coefficient/domain structure and explicitly labels every row as availability-only. It applies no unverified clinical-validity cutoff; fasting-dependent glucose/triglyceride rows remain blocked. No associations were fit and no exact pair counts were published.
+- Updated the execution queue: pair-availability QA is complete; official outcome validity/special-code review, the frozen model specification, and independent survey-design/method review remain before fitting. See `audit/wave1_pilot_pair_eligibility_review_2026-10-30.md`.
+
 # 2026-10-30 Add protected Wave 1 pilot pair-availability audit
 
 - Added `scripts/audit_wave1_pilot_pair_eligibility.py` for the registered 105-coefficient pilot. It revalidates source provenance and the age-candidate hash, then writes exposure-group availability, outcome nonmissingness, three age-domain diagnostics, weight support and parent-community-key coverage only to protected QA storage.
