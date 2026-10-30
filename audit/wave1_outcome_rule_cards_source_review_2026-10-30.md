@@ -61,7 +61,7 @@ Blood Users' Guide 印刷第12页依据其加权密度图描述：总胆固醇�
 
 - CHARLS, *Blood Data Users' Guide*: 采血与空腹说明印刷页4；方法和检测限表印刷页6；结果/极端值、HbA1c 与胱抑素 C 子样本说明印刷页12–13。项目归档件：[`sources_official/CHARLS_2011_Blood_User_Guide.pdf`](../sources_official/CHARLS_2011_Blood_User_Guide.pdf)；可检索文本：[`sources_official/CHARLS_2011_Blood_User_Guide_extracted.txt`](../sources_official/CHARLS_2011_Blood_User_Guide_extracted.txt)。
 - Wave 1 原始变量名/单位的项目映射：[`blood_biomarker_crosswalk_v1.csv`](blood_biomarker_crosswalk_v1.csv)。这一映射本身不是有效值或模型准入批准。
-- 甘油三酯非空腹候选的外部临床实验室背景：EAS/EFLM joint consensus, [*Fasting is not routinely required for determination of a lipid profile*](https://eas-society.org/wp-content/uploads/2022/05/2016_Consensus-lipid-profile-fasting.pdf)。该共识支持一般临床 lipid profile 的非空腹测量，不替代 CHARLS Wave 1 变量映射、暴露研究的估计目标冻结或独立方法审阅。
+- 历史外部背景（不构成当前分析规则）：EAS/EFLM joint consensus, [*Fasting is not routinely required for determination of a lipid profile*](https://eas-society.org/wp-content/uploads/2022/05/2016_Consensus-lipid-profile-fasting.pdf)。此前曾引用该共识支持甘油三酯非空腹候选；该候选已被当前用户决定撤销。此一般临床共识不能替代 CHARLS Wave 1 `qc1_va003` 官方编码、研究估计目标或独立审阅，也不解锁甘油三酯模型。
 
 ## 审阅状态
 
