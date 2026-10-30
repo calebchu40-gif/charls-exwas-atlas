@@ -412,7 +412,9 @@ def _outcome_expression(config: dict[str, Any], analyte: dict[str, str], pl: Any
         invalid_codes = [_numeric_code(value, f"{analyte['concept_id']}.invalid_codes") for value in validity["invalid_codes"]]
         valid_outcome &= ~raw_outcome.is_in(invalid_codes)
     if config["outcome_transformations"][analyte["concept_id"]] == "identity":
-        return pl.when(valid_outcome & (raw_outcome >= 0)).then(raw_outcome).otherwise(None)
+        # Do not impose an implicit nonnegative range: any finite-value bounds
+        # must be source-reviewed and represented explicitly in the frozen rule.
+        return pl.when(valid_outcome).then(raw_outcome).otherwise(None)
     return pl.when(valid_outcome & (raw_outcome > 0)).then(raw_outcome.log()).otherwise(None)
 
 

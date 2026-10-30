@@ -38,7 +38,7 @@ K=150/K=90 runner 已要求为15个候选血液表型逐项选择 `identity` 或
 
 ## 对实现与准入的要求
 
-1. 该规范已落实到 `audit/templates/wave1_household_environment_scaleup_model_config.template.json`、`scripts/run_2011_household_environment_scaleup.py` 和 `scripts/require_verified_wave1_frame.py`：受保护配置必须逐一包含15项表型的来源锚点、单位、有效域/特殊码规则、检出限/顶码/空腹处理及人工审核字段；任一规则未标为 `approved` 或字段未填时，门禁在读取参与者表前拒绝拟合。运行器会对经核准的数值上下界和特殊码执行过滤，并支持在配置中用已审核字段/代码限制空腹子域。现阶段不支持依赖单独检测标记字段处理顶码或检出限；若官方规则要求此类处理，须先扩展执行器并单独审查，不能只在自由文本里描述后继续拟合。
+1. 该规范已落实到 `audit/templates/wave1_household_environment_scaleup_model_config.template.json`、`scripts/run_2011_household_environment_scaleup.py` 和 `scripts/require_verified_wave1_frame.py`：受保护配置必须逐一包含15项表型的来源锚点、单位、有效域/特殊码规则、检出限/顶码/空腹处理及人工审核字段；任一规则未标为 `approved` 或字段未填时，门禁在读取参与者表前拒绝拟合。运行器会对经核准的数值上下界和特殊码执行过滤，并支持在配置中用已审核字段/代码限制空腹子域。Identity 变换不再隐含施加 `outcome >= 0`；只有冻结配置中的明确、来源审阅过的边界/特殊码可过滤有限值。Log 变换仍要求正值。现阶段不支持依赖单独检测标记字段处理顶码或检出限；若官方规则要求此类处理，须先扩展执行器并单独审查，不能只在自由文本里描述后继续拟合。
 2. 规则审查应只读字段元数据和已授权数据的必要汇总；质量检查输出只写受控目录。具体值域阈值、频数、顶码计数及个人值不得写入 GitHub/Pages。
 3. 盲于E/P估计结果冻结分析物规则，再运行预设的完整假设家族；所有排除/不可估计假设保留在私有运行清单。不得按结果选择对数变换、上下限或样本子集。
 4. 此门与来源、样本框/年龄、权重、PSU/方差、协变量DAG及独立方法审查并列；通过本文件检查不等于正式模型或网站发布批准。

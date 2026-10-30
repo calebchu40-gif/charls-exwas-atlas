@@ -1,5 +1,7 @@
 # 2026-10-30 Authorize the next Wave 1 gated work block
 
+- Aligned the Wave 1 identity-outcome execution path with the reviewed validity-rule design: it no longer applies an implicit nonnegative cutoff. Only explicit, source-reviewed bounds/codes in the frozen configuration may remove finite values. Log outcomes retain the mathematical positive-value requirement. This is a pipeline rule correction; no CHARLS associations were fitted.
+
 - Completed a source-based review of the official Wave 1 Blood Guide and the distinct Wave 3 Blood release note. Wave 1 guidance documents that non-fasting samples were collected and fasting status recorded but does not map the `qc1_va003` codes in reviewed materials; Wave 3 `bl_fasting` and triglyceride top-coding metadata are not transferable to Wave 1.
 - Prepared a private 15-outcome handling-candidate file that distinguishes guide-reported assay ranges from analytic exclusion limits and proposes raw-finite, raw-unit handling for methods review. No outcome rule is approved; all association fitting remains gated.
 
