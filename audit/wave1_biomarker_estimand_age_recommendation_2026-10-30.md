@@ -6,11 +6,13 @@
 
 > **Status update (2026-10-30):** This memo records a pre-decision recommendation for using the full official blood target as the primary analysis population. The user later supplied a specific working plan that retains the complete observed blood sample as the survey design object, estimates the lower-bound age-45+ domain as primary, and prespecifies upper-bound age-45+ and the full observed sample as sensitivities. That user-selected plan controls current implementation pending independent review. The concern in this memo remains part of the review packet: the 45+ domain must be described as a domain of the blood-target population, not as the full blood target or all Chinese adults aged 45+.
 
-## Recommendation
+## Current user-selected primary estimand candidate
 
-Use the official Wave 1 blood-biomarker target sample—main respondents and their spouses—as the primary analysis population, with the official biomarker nonresponse weight `bloodweight`. Do not apply an automatic age-45 inclusion cutoff to each person in the primary analysis. The official blood guide defines its target as all baseline main respondents and spouses, while the sample description says the selected main respondent is age 45 or older and their spouse is also interviewed. These are different eligibility statements. Keeping the full blood target aligns the analysis denominator with the released biomarker-weight construction and avoids silently excluding younger spouses.
+The current project working plan, supplied after this memo's original recommendation, is to retain the complete observed Wave 1 blood-sample design object and estimate the **age domain whose official age-interval lower bound is at least 45 years** as the primary domain, using `bloodweight`. Prespecified sensitivity domains are the upper-bound ≥45 rule and the complete observed positive-`bloodweight` blood-sample frame. This is a survey-domain analysis: do not physically remove younger respondents/spouses before constructing the design object. The estimate pertains only to the defined domain within the official blood target and must not be described as all Chinese adults aged 45+.
 
-Describe the target precisely as the baseline interviewed main-respondent/spouse blood sample, drawn from household-living residents and excluding institutionalized people at baseline. Do not call it all Chinese adults or all Chinese people aged 45+ without a separately justified age-domain estimator. This is a cross-sectional weighted association, not a causal effect or personal chemical-dose estimate.
+The original recommendation below to make the complete blood target the primary population is superseded for current implementation. The domain target, interval-boundary classification, full design-frame construction and pair-specific complete-case set still require independent review; this memo does not freeze them or open the model gate. The official blood target comprises baseline main respondents and spouses, while main-respondent age eligibility and spouse eligibility differ. `bloodweight` handles the blood nonresponse weighting described by CHARLS but does not automatically correct exposure/covariate complete-case selection.
+
+Describe the target precisely as a domain within the baseline interviewed main-respondent/spouse blood target, drawn from household-living residents and excluding institutionalized people at baseline. This is a cross-sectional weighted association, not a causal effect or personal chemical-dose estimate.
 
 ## Age as an adjustment covariate
 
@@ -24,9 +26,9 @@ Age remains an important adjustment variable even when it is not an inclusion ru
 
 This interval treatment is a transparent approximation, not an exact reconstruction of age on the interview day. The pinned conversion implementation matches CHARLS's Mata lookup table cellwise across both official tables; the remaining uncertainty concerns the respondent's recorded calendar route, missing leap-month flag, unknown interview day, and choice of analytic age/domain rule.
 
-## Secondary age-45+ domain
+## Age-domain construction and prespecified sensitivities
 
-A 45+ analysis can be retained as a secondary estimand only if its target population and weight interpretation are explicitly reviewed. Implement it as a survey domain/subpopulation on the complete biomarker target design; do not delete younger spouses before constructing the design. Because age is interval-valued for some records, prespecify how ambiguous 45th-birthday cases are handled and report an interval-bound sensitivity. Do not use sample eligibility (main respondent selected at 45+) as a substitute for each respondent's age-domain status.
+Implement the primary lower-bound ≥45 domain and the upper-bound ≥45 and full observed blood-frame sensitivities as survey domains on the complete blood-sample design object; do not delete younger spouses before constructing the design. Because age is interval-valued for some records, the lower-bound rule is conservative for ambiguous birthdays; report the prespecified upper-bound alternative. Do not use sample eligibility (main respondent selected at 45+) as a substitute for each respondent's own age-domain status. Independent review must decide whether this domain estimand is supported by `bloodweight` and whether complete-case associations admit the intended interpretation.
 
 ## Weight and model boundary
 
@@ -34,9 +36,9 @@ A 45+ analysis can be retained as a secondary estimand only if its target popula
 
 ## Remaining gates before any real-data association
 
-1. Independent review accepts or revises the primary target and age-interval covariate strategy.
-2. A Wave 1 county/community variance approximation is explicitly approved for a stated estimand, or further official design information resolves the current PSU/strata gaps. The sparse Community-module `sub_commuID` does not provide respondent-to-final-sub-PSU linkage.
-3. Freeze the primary covariates, age missingness/sensitivity rules, blood outcome valid ranges/transforms, and the fasting interpretation for glucose/triglycerides.
+1. Independent review accepts or revises the user-selected lower-bound ≥45 primary domain, upper-bound/full-frame sensitivities, and age-interval covariate strategy.
+2. Independently review Option A (`communityID` cluster, no strata, WR Taylor approximation) and its stated limitations. The sparse Community-module `sub_commuID` does not provide respondent-to-final-sub-PSU linkage; if Option A is judged insufficient, association inference remains blocked.
+3. Freeze the primary covariates, age missingness/sensitivity rules, blood outcome valid ranges/transforms, and the authoritative fasting interpretation. Until Wave 1 `qc1_va003` mapping and review pass, all seven glucose and seven triglyceride hypotheses remain registered but blocked from estimation.
 4. Bind the frozen configuration to current source/prepared-data hashes and run the readiness gate. Only then reproduce the historical pilot as an exploratory/technical check; do not treat matching pair scope as scientific validation.
 
 ## Official sources
