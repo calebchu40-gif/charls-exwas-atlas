@@ -4,6 +4,8 @@
 **Status:** methods recommendation for review; not a frozen analysis specification and does not open the model gate.  
 **Scope:** CHARLS 2011 household environment × conventional blood-marker associations.
 
+> **Status update (2026-10-30):** This memo records a pre-decision recommendation for using the full official blood target as the primary analysis population. The user later supplied a specific working plan that retains the complete observed blood sample as the survey design object, estimates the lower-bound age-45+ domain as primary, and prespecifies upper-bound age-45+ and the full observed sample as sensitivities. That user-selected plan controls current implementation pending independent review. The concern in this memo remains part of the review packet: the 45+ domain must be described as a domain of the blood-target population, not as the full blood target or all Chinese adults aged 45+.
+
 ## Recommendation
 
 Use the official Wave 1 blood-biomarker target sample—main respondents and their spouses—as the primary analysis population, with the official biomarker nonresponse weight `bloodweight`. Do not apply an automatic age-45 inclusion cutoff to each person in the primary analysis. The official blood guide defines its target as all baseline main respondents and spouses, while the sample description says the selected main respondent is age 45 or older and their spouse is also interviewed. These are different eligibility statements. Keeping the full blood target aligns the analysis denominator with the released biomarker-weight construction and avoids silently excluding younger spouses.
