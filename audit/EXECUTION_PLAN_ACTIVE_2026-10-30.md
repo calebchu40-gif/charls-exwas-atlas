@@ -169,3 +169,7 @@ The pair audit now requires finite positive bloodweight and a finite, non-revers
 ### 2026-10-31 — outcome-rule candidate reviewed by AI
 
 Independent AI review of the public methods documents found that “treat Stata missing as missing; retain all other finite release values; never filter by assay ranges or observed distributions” is a transparent candidate for human methods review. It is not source proof that no finite sentinel exists, and it does not authorize fitting. Any frozen rule must state that uncertainty, preserve units, predeclare transformations, and reopen review if authoritative special-code evidence appears. The 15 outcome rules, fasting estimand/weight compatibility for glucose/TG, and independent readiness approval remain unresolved; the model gate stays closed.
+
+### 2026-10-31 — K=240 可用性审计入口
+
+新增独立的私有汇总审计脚本，读取 Wave 1 已核验的人员/血检/年龄输入，只输出 K150 与 K90 的配对可用性及 communityID 支持汇总到 `PRIVATE_ROOT/qa_outputs/`；K90 严格执行登记的 `i020=2` 跳题域。脚本显式不应用仍待审的有限特殊码/有效值规则，不评估模型可估性、不拟合关联，也不授权发布。下一步仅在执行前资源检查通过时运行，用于补齐扩展区块的方法审阅资料。

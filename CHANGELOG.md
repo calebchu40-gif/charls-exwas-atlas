@@ -1888,3 +1888,8 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 
 - An independent AI document review assessed the proposed default: Stata missing values are missing; retain other finite released values; do not filter by assay ranges or observed distributions. It found this can be submitted as a transparent candidate for methods review, while emphasizing that missing finite sentinels are not ruled out.
 - The note records the limits and required review conditions. It is not a human/credentialed approval, does not freeze the 15 outcomes, and does not open the real-model gate.
+
+# 2026-10-31 Add protected K=240 availability audit
+
+- Added a server-private aggregate audit for the full 150+90 Wave 1 hypothesis register. It preserves the registered K90 `i020=2` route and reports availability/community support only; it does not apply unresolved outcome validity rules or fit associations.
+- Exact counts are written only under the configured private root with owner-only permissions. The audit is not a model-readiness or disclosure approval.
