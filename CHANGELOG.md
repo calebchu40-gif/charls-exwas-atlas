@@ -1730,3 +1730,8 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Reconciled the protected server metadata-only intake log with the official 2015 Blood Release Note. The released file header contains 13,420 rows and all 20 expected fields; the official note distinguishes 13,420 total blood collection participants from 13,013 in the cross-sectional sample.
 - Documented that `Blood_weight` is a Wave 3-specific cross-sectional blood weight based on individual cross-sectional weights and a blood-response probability factor, capped at the 99th percentile. Do not treat file row count as analysis N or combine this weight mechanically with Wave 1 `bloodweight`.
 - Updated the older inventory note to mark its 2026-10-24 “file absent” statement as historical. Metadata admission is not analytic/design approval; no participant values or associations were read/fitted, and Wave 3 still needs separate source, target-frame, PSU/variance and methods review.
+# 2026-10-30 Draft Wave 3 blood outcome handling rules
+
+- Added a 16-analyte Wave 3 rule-candidate table tied to the CHARLS 2015 Blood Release Note and existing field crosswalk. It records the released units, Stata-missing-only/no-assay-range-filter candidate, and unresolved finite sentinel handling.
+- Explicitly recorded Wave 3-only `bl_fasting` labels (1=Yes, 2=No), the 500 mg/dL triglyceride top-coding flag, and the need to decide whether the TG estimand is the released capped measure or a reviewed censored-data model. These labels do not resolve Wave 1 `qc1_va003`.
+- All candidates remain unfrozen; Wave 3 variance/PSU, target frame, weight applicability, assay subsampling and independent review gates remain open. No respondent values or associations were read/fitted.
