@@ -29,6 +29,14 @@ OUTCOMES = (
     "newua", "newcrp", "newhba1c",
 )
 QUANTILES = (0.001, 0.01, 0.5, 0.99, 0.999)
+# Ranges transcribed from the CHARLS Blood Users' Guide assay-method table.
+# They describe assay method metadata only, never analytic validity cutoffs.
+GUIDE_ASSAY_RANGES = {
+    "newtg": (4.0, 1000.0), "newcrea": (0.1, 25.0), "newbun": (5.0, 100.0),
+    "newhdl": (3.0, 120.0), "newldl": (3.0, 400.0), "newcho": (3.0, 800.0),
+    "newglu": (2.0, 450.0), "newua": (None, 20.0), "newcrp": (0.1, 20.0),
+    "newhba1c": (0.0, 40.0),
+}
 DEFAULT_BLOOD = PRIVATE_ROOT / "incoming_2011_official" / "Blood_20140429.dta"
 DEFAULT_PERSON = PRIVATE_ROOT / "derived_wave_tables_2011_official_rebuild_20261029" / "CHARLS_wave2011_person_analytic.dta"
 DEFAULT_OUTPUT = PRIVATE_ROOT / "qa_outputs" / "wave1_biomarker_value_profile_private.json"
@@ -72,6 +80,7 @@ def run(blood_path: Path, person_path: Path, output_path: Path) -> dict[str, Any
             "n_zero": int((finite == 0).sum()),
             "n_positive": int((finite > 0).sum()),
             "quantiles_unweighted_diagnostic_only": {},
+            "outside_guide_assay_range_diagnostic_only": None,
         }
         if finite.size:
             quant = np.quantile(finite, QUANTILES)
@@ -80,6 +89,13 @@ def run(blood_path: Path, person_path: Path, output_path: Path) -> dict[str, Any
             summary["quantiles_unweighted_diagnostic_only"] = {
                 f"p{q * 100:g}": float(value) for q, value in zip(QUANTILES, quant, strict=True)
             }
+            bounds = GUIDE_ASSAY_RANGES.get(name)
+            if bounds is not None:
+                lower, upper = bounds
+                summary["outside_guide_assay_range_diagnostic_only"] = bool(
+                    (lower is not None and np.min(finite) < lower)
+                    or (upper is not None and np.max(finite) > upper)
+                )
         fields.append(summary)
 
     report = {
@@ -94,7 +110,7 @@ def run(blood_path: Path, person_path: Path, output_path: Path) -> dict[str, Any
         "association_models_fitted": False,
         "weights_used": False,
         "statistics_are_unweighted_diagnostics_only": True,
-        "rule": "Do not infer fasting codes, special missing codes, or validity cutoffs from these distributions. Any exclusions require authoritative source documentation and pre-model review.",
+        "rule": "Do not infer fasting codes, special missing codes, or validity cutoffs from these distributions. Guide assay-range comparisons are diagnostic only and never imply exclusion. Any exclusions require authoritative source documentation and pre-model review.",
         "outcomes": fields,
     }
     output_path.parent.mkdir(parents=True, exist_ok=True)
