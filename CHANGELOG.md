@@ -1553,3 +1553,7 @@ Marked the October 27–29 “Wave 1 files missing” entries as historical snap
 # 2026-10-30 — Bind protected Wave 3 All Data intake to the official checksum
 
 Added a metadata-only local intake manifest for `CHARLS2015r.zip` after verifying its SHA-1 against the official CHARLS release listing and matching its SHA-256/size to the protected rebuild manifest. This improves provenance traceability only; it does not approve Wave 3 eligibility, survey variance, or association models. No participant data or results were published.
+# 2026-10-30 — Add official Wave 2, 4, and 5 archives to protected local intake
+
+Copied the authorized 2013, 2018, and 2020 All Data archives from local staging into the protected CHARLS workspace after matching each archive SHA-1 to its official release listing. Ran the existing metadata-only archive audit on all three; only archive-member and Stata-header metadata were inspected, temporary extracts were cleaned, and detailed reports remain in protected local QA. This expands source readiness for the planned mult wave catalog and future analyses; sample eligibility, module weights, variance design, and model review remain open. No microdata or results were published.
+

@@ -1,5 +1,7 @@
 # CHARLS ExWAS Atlas：执行计划与当前进度
 
+**2026-10-30 多波次官方 All Data 入库与 metadata-only 预检：**将 Wave 2/2013、Wave 4/2018、Wave 5/2020 的 All Data ZIP 从本机下载暂存目录复制到受保护 CHARLS 工作区；复制前后均逐包校验 CHARLS 官方发布页 SHA-1。三包均匹配官方校验值，并按官方归档头部审计脚本完成 DTA 成员名、行列头信息和变量元数据预检；临时抽取文件已由脚本清理，报告仅写在受保护本机 QA 目录。Wave 2 归档含 Biomarker、PSU、Weights 模块；Wave 4/5 包含各自 Sample_Infor 与 Weights。此次只补齐多波次来源和结构证据，不代表样本框、测量资格、权重适用性、方差设计或模型已通过；正式关联仍为0。
+
 **2026-10-30 Wave 3 All Data 入库指纹复核：**在受保护本机 Wave 3 入库子目录发现用于既有准备表重建的 `CHARLS2015r.zip`。对压缩包只计算校验值并列出归档成员名；本地 SHA-1 与 CHARLS 官方 Wave 3 数据页所列 All Dataset SHA-1 完全一致，SHA-256/字节数也与已生成的受保护重建 manifest 相符。已在该本机入库子目录新增 provenance manifest；未读取归档内参与者值，未复制数据到仓库、OneDrive、服务器或网站。此项补齐本地入库记录，不改变 Wave 3 分析门状态；正式关联模型仍为0。
 
 **2026-10-30 Wave 1 runner 准入审计：**检查了 `scripts/run_2011_water_blood_pilot.py` 和 `scripts/require_verified_wave1_frame.py` 的实际调用顺序。Wave 1 试点必须先有受控 `analysis_review/wave1_water_biomarker_pilot.json`，其 source manifest ID、准备表 SHA-256、注册方案及方案文件指纹须与当前文件一致；并需对官方来源、样本框/分母、目标年龄域、年龄派生、权重/非应答、最终 PSU、方差方法和冻结计划逐项记录通过状态及证据。仅此还不够，扩展扫描另要求试点复现审查及冻结配置。当前受控本机根目录没有 `analysis_review` 审核记录，因此运行器在 `read_input()` 前会失败关闭；没有启动试点、没有读取关联字段或拟合模型。后续须先解决 Wave 1 目标/年龄、抽样方差、结局有效范围与空腹规则，并取得独立方法审核记录，不能用普通文件补出“通过”状态。正式模型数仍为0。
