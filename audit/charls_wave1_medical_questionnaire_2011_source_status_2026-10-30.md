@@ -11,7 +11,7 @@ The official CHARLS Wave 1 page separately lists the baseline Codebook and Blood
 
 ## Project intake and document review
 
-The protected server intake now contains 137 files, including file 138 downloaded from the direct `public_documents` link on CHARLS's official 2011 documentation page. The downloaded document's MD5 is `d1f9351dff8bdadb0d1f692ff58b75c6`, matching the Open Research Data Platform record; its SHA-256 is `42e71dd420d4fe12d2b94b3ccf5ddf047b0ef300d04468b7a89200800bb95074`. The copy is restricted to the server private intake (`0600`). No authentication or access control was bypassed.
+File 138 was downloaded from the direct `public_documents` link on CHARLS's official 2011 documentation page. Its MD5 is `d1f9351dff8bdadb0d1f692ff58b75c6`, matching the Open Research Data Platform record; its SHA-256 is `42e71dd420d4fe12d2b94b3ccf5ddf047b0ef300d04468b7a89200800bb95074`. It is stored separately from the raw data under `private/source_documents/` with file mode `0600`; the raw CHARLS data intake remains at 136 files. No authentication or access control was bypassed.
 
 The document was opened read-only with macros disabled and searched in full extracted text. Its title and contents identify a 32-page physical-measurement questionnaire (blood pressure, lung function, grip strength, balance, walking speed, anthropometry and related measurements). Searches found no `qc1_va003`, fasting/`空腹` definition, `LI875`, or blood-collection fasting item. `LI875` appears in the separately reviewed `Biomarker-manual-2011.doc` and concerns recent smoking/exercise/alcohol/food before blood-pressure measurement; it is not a blood-sample fasting code.
 

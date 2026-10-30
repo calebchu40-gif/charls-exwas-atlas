@@ -1,3 +1,9 @@
+# 2026-10-30 Keep official questionnaire documentation outside the raw-data intake
+
+- Moved verified official file 138 from the raw intake folder to a separate server-private source-document area. This restores the raw data package inventory to 136 and keeps documentation from being mistaken for another participant data package; file mode remains `0600`.
+- Updated the source inventory, file-138 audit, active plan and private reviewer packet to record that the questionnaire was obtained and reviewed but does not map `qc1_va003`.
+- The glucose/triglyceride block and independent-review gate remain closed; no respondent outcomes or associations were accessed.
+
 # 2026-10-30 Review the official Wave 1 Medical Questionnaire (file 138)
 
 - Found the document linked directly from CHARLS's official 2011 documentation page; downloaded it into server-private intake and verified its MD5 against the Peking University file-138 record.
