@@ -1512,3 +1512,6 @@ This file records project-level changes that affect reproducibility, methods, da
 
 - Reviewed the official 2015 Blood Release Note and Codebook. The released `Blood_weight` targets the cross-sectional blood-response sample; it is built from the cross-sectional individual weight with logistic blood-response adjustment and 99th-percentile capping. CHARLS does not provide a ready-made Wave 3 panel blood weight.
 - Clarified the initial Wave 3 association frame: Sample_Infor, cross-sectional domain, blood-module participation and the applicable positive Blood_weight, followed by pair-specific complete-data eligibility. This closes the weight-scope documentation question, not the final estimand or variance gate. No panel interpretation, substitution with general Biomarker/individual weights, or association result is authorized.
+# 2026-10-30 Clarify Wave 1 variance review status
+
+- Aligned the independent-methods packet with the latest variance recommendation: there is no preferred single-stage variance scheme. County-prefix clustering and county-conditioned community clustering remain unapproved review options, not current recommendations or run configurations. No real association models were fitted.
