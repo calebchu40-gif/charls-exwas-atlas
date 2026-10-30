@@ -6,6 +6,10 @@
 
 - Search-index review found a 2022 CHARLS data-user forum post asking whether `communityID` clustering without explicit strata is appropriate; the index lists no replies and direct access returned HTTP 502. Recorded it only as an unanswered user question, not CHARLS methodological guidance. No variance option was selected or approved.
 
+# 2026-10-30 Clarify ExWAS survey-engine design limits
+
+- Static inspection found the generic engine currently supports one PSU, one optional stratum, and fixed with-replacement Taylor variance; the K=150/K=90 runner accepts multiple stratum fields but only one PSU and no regression SSU/FPC inputs. Recorded that any multistage support should follow—not preempt—the independent design-method decision. No data, models, or tests were run.
+
 # 2026-10-30 Bind denominator reconciliation to explicit official counts
 
 - Added the official 17,587 Table 4 complete-demographic subset and its exclusion note to the protected Wave 1 reconciliation script; renamed an ambiguous `blood_target` difference field to `baseline_interview_total`. Reran only the protected ID/weight/PSU-key reconciliation, producing aggregate counts in the private QA directory. No participant answers were read, no model or tests were run, and no gate was promoted.
