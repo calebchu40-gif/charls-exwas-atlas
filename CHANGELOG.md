@@ -1550,3 +1550,6 @@ Reran the source-bound Wave 1 age-interval candidate derivation with the newly e
 # 2026-10-30 — Reconcile current README with completed Wave 1 intake
 
 Marked the October 27–29 “Wave 1 files missing” entries as historical snapshots and linked their status to the current execution plan. The official Wave 1 source set is now confirmed and the protected candidate respondent frame and Blood/`bloodweight` linkage have been rebuilt and checked. Formal association models remain 0 because target/frame and age methods, complete survey variance design, outcome/fasting rules, and independent methods review are still unresolved. No participant-level data or restricted outputs were changed or published.
+# 2026-10-30 — Bind protected Wave 3 All Data intake to the official checksum
+
+Added a metadata-only local intake manifest for `CHARLS2015r.zip` after verifying its SHA-1 against the official CHARLS release listing and matching its SHA-256/size to the protected rebuild manifest. This improves provenance traceability only; it does not approve Wave 3 eligibility, survey variance, or association models. No participant data or results were published.

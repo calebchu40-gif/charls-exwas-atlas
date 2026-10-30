@@ -1,5 +1,7 @@
 # CHARLS ExWAS Atlas：执行计划与当前进度
 
+**2026-10-30 Wave 3 All Data 入库指纹复核：**在受保护本机 Wave 3 入库子目录发现用于既有准备表重建的 `CHARLS2015r.zip`。对压缩包只计算校验值并列出归档成员名；本地 SHA-1 与 CHARLS 官方 Wave 3 数据页所列 All Dataset SHA-1 完全一致，SHA-256/字节数也与已生成的受保护重建 manifest 相符。已在该本机入库子目录新增 provenance manifest；未读取归档内参与者值，未复制数据到仓库、OneDrive、服务器或网站。此项补齐本地入库记录，不改变 Wave 3 分析门状态；正式关联模型仍为0。
+
 **2026-10-30 Wave 1 runner 准入审计：**检查了 `scripts/run_2011_water_blood_pilot.py` 和 `scripts/require_verified_wave1_frame.py` 的实际调用顺序。Wave 1 试点必须先有受控 `analysis_review/wave1_water_biomarker_pilot.json`，其 source manifest ID、准备表 SHA-256、注册方案及方案文件指纹须与当前文件一致；并需对官方来源、样本框/分母、目标年龄域、年龄派生、权重/非应答、最终 PSU、方差方法和冻结计划逐项记录通过状态及证据。仅此还不够，扩展扫描另要求试点复现审查及冻结配置。当前受控本机根目录没有 `analysis_review` 审核记录，因此运行器在 `read_input()` 前会失败关闭；没有启动试点、没有读取关联字段或拟合模型。后续须先解决 Wave 1 目标/年龄、抽样方差、结局有效范围与空腹规则，并取得独立方法审核记录，不能用普通文件补出“通过”状态。正式模型数仍为0。
 
 **2026-10-30 Wave 3 官方 Blood 本机来源绑定重建与年龄路由 QA：**已将 SHA-1 与 CHARLS 官方发行值匹配的 Wave 3 All Data 和 Blood 包保存在受控本机目录；在独立输出目录以官方 `Sample_Infor` 重建 Wave 3 样本框表，并按官方 Blood ID 做一对一左连接，保留完整样本框和 `crosssection`。随后运行来源哈希绑定的年龄路由聚合 QA：只把受访者 ID 用于受控内存中的模块连接，不输出 ID，且不读暴露或血液值、不派生年龄、不拟合模型。审查官方问卷与 Codebook 后，将 BA003 历法检查的候选适用路径限定为 BA002=2 的另报生日路径；私有交叉表发现 BA002=1 上也有少量 BA003 值、BA002=2 上有部分历法值缺失。另用官方 Demographic_Background ID 将样本框记录与模块记录区分，已确认重建表中的 BA002 与官方模块值一致；因此能把没有 Demographic_Background 记录与模块内 BA002 缺失分开，但原始数据读取未保留 `.d`/`.r` 与系统缺失区别。上述路由解释仍待独立方法复核，不能据此补推年龄。详细计数和所有个体级文件仅在受控本机目录。Wave 3 来源重建与 Blood 连接准备已完成；年龄域、适用权重/目标总体、PSU/方差、冻结方案和独立方法审查仍是前置门。正式模型数仍为0。
