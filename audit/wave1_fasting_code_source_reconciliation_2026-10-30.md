@@ -1,6 +1,6 @@
 # Wave 1 fasting-status source reconciliation
 
-**Checked:** 2026-10-30  
+**Checked:** 2026-10-30
 **Status:** Source-level field/code mapping resolved; analytic handling remains a draft for independent methods review. No participant outcome values or fasting-status values were read, and no association model was fitted.
 
 ## Source chain
