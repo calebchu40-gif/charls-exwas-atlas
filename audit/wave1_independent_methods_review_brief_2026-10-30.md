@@ -4,7 +4,7 @@
 
 ## 研究问题与预登记范围
 
-拟在 CHARLS 2011 基线血液样本中探索家庭供水、烹饪燃料与常规血液生物标志物的关联。第一批登记 105 个系数：供水 1 个预设对比、烹饪燃料 6 个类别对电力参照，各与 15 个常规血液结局配对。官方 Fieldwork Plan 附件2记录“是否空腹”1=是、2=否，且 Wave 1 Blood 表头将 `qc1_va003` 标为 “Fasting”；两者已形成来源支持的字段/编码映射。血糖和甘油三酯的14个系数因此可提出 fasting-only 主分析候选（`qc1_va003==1`），但仍须独立审阅估计目标、血液权重对空腹应答的适用性、有效值规则及全样本敏感性；当前仍不获准拟合。其余91项同样尚未获准拟合。
+拟在 CHARLS 2011 基线血液样本中探索家庭供水、烹饪燃料与常规血液生物标志物的关联。第一批登记 105 个系数：供水 1 个预设对比、烹饪燃料 6 个类别对电力参照，各与 15 个常规血液结局配对。官方 Fieldwork Plan 附件2记录“是否空腹”1=是、2=否，且 Wave 1 Blood 表头将 `qc1_va003` 标为 “Fasting”；两者已形成来源支持的字段/编码映射。此前曾将 `qc1_va003==1` fasted-only 作为主分析候选；在核对血液权重说明后撤销这一预设主次。`bloodweight` 明确校正血检参与非应答，但已核对来源未说明是否校正 fasting-status 选择。全血样本测量条件建模和 fasted-only 条件domain是需独立比较的备选估计量，当前均未批准拟合。其余91项同样尚未获准拟合。
 
 该 105 项批次嵌套在完整预设假设族：K=150 家庭环境主块及 K=90 供暖路由子域。若后续全部通过，计划对完整 K=240 族统一进行多重检验校正；不按显著性删减配对或决定扩展。
 
@@ -32,7 +32,7 @@ CHARLS 官方血液指南说明，血检目标为 17,708 名基线主受访者�
 
 1. 明确的目标总体、观察样本、`bloodweight` 适用性及45岁 domain 是否相互一致。
 2. Option A 的近似方差、聚类层级、自由度及 singleton/domain 处理是否足以支持所述推断；若不通过，指定描述性退路或所需的官方设计资料。
-3. 15项结局的有效值/特殊码/变换规则；审阅已来源核实的 `qc1_va003` 1=Yes/2=No 映射、fasting-only 主分析候选及其 estimand/权重限制。
+3. 15项结局的有效值/特殊码/变换规则；审阅已来源核实的 `qc1_va003` 1=Yes/2=No 映射、血液权重是否支持 fasting domain、全样本测量条件建模与fasted-only条件估计的目标总体及方差实现。
 4. 暴露编码、混杂变量/DAG、缺失和完整案例估计量、模型规格、敏感性及多重检验家族是否适当。
 5. 真实数据分析前 readiness 是否通过；对每一项给出 **pass / revise / block**、依据、审阅人身份、日期和所审草案哈希。
 
@@ -41,3 +41,8 @@ CHARLS 官方血液指南说明，血检目标为 17,708 名基线主受访者�
 ## 数据使用和发布边界
 
 CHARLS 条款限定学术用途，禁止公开原始微观数据或向他人转交；网站只可接收通过分析审阅及披露审查的聚合结果。不得公开个体记录、精确受限 QA、可识别地理/社区键或能够反推个体的单元格。[CHARLS 官方数据访问条款](https://opendata.pku.edu.cn/file.xhtml?datasetVersionId=97&fileId=138)。
+
+
+## New fasting-domain weight question (2026-10-30)
+
+The source-supported fasting code does not establish a valid fasting-domain weight. The CHARLS Blood Users’ Guide describes `bloodweight` as correcting household/individual nonresponse and nonparticipation in blood collection, but does not document an additional fasting-response adjustment. Compare a full blood-respondent estimand with fasting status as a measurement-condition covariate (and a separately frozen interaction only if justified) against a conditional fasted-domain estimand; do not treat `bloodweight` as correcting fasted selection absent authoritative evidence. A fasting domain must also be implemented within the full design for variance estimation, but that does not fix selection-weight validity. Detailed issue and primary references: [`wave1_fasting_estimand_weight_compatibility_2026-10-30.md`](wave1_fasting_estimand_weight_compatibility_2026-10-30.md).

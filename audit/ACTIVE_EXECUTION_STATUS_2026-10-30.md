@@ -10,6 +10,13 @@
 - 复跑仅检查配置/来源哈希的私有审计：官方来源和登记计划指纹均匹配；草案配置仍为 `draft_not_frozen`，无冻结配置、无 readiness 记录，15项结局规则均待来源/方法审阅，因此门禁仍关闭。审计报告仅留在服务器 private/，权限600。
 - 此次修正了草案配置因计划/目录更新产生的旧计划指纹，并将当前配置哈希写入服务器私有方法审阅包。未读取任何结局观测值，未拟合关联。
 
+### 空腹选择域与血液权重兼容性复核（2026-10-30）
+
+- 发现一个会改变分析方案的设计问题：CHARLS Blood Guide 说明 `bloodweight` 校正家户/个人非应答及未参与血检，但已核对来源没有说明还校正了进入 fasting 子集的选择。故撤回“fasting-only 为主分析”的默认排序；不假定用 `bloodweight` 加权空腹者就代表完整血检目标。
+- 将全血样本中按测量状态调整/预设交互，与 fasted-only 条件 domain 列为两种待审估计量；前者/后者均未获批准。已将服务器 draft 配置中血糖/TG的 fasting_rule 置为 blocked，直至目标总体、权重与方法得到独立裁定。
+- 依据 Stata 官方 domain estimation 手册，保留完整设计对象作子域方差估计；同时明确 domain 方差处理本身不会补偿子域选择权重。NHANES fasting subsample weight 仅作为方法对照，未移用于 CHARLS。详见 [`wave1_fasting_estimand_weight_compatibility_2026-10-30.md`](wave1_fasting_estimand_weight_compatibility_2026-10-30.md)。
+- 无个人空腹或结局取值被读取、无关联被拟合；总 readiness 仍关闭。
+
 ### 最新来源复核补充（2026-10-30）
 
 - Wave 1 空腹编码不再是未知：官方 Blood header 将 `qc1_va003` 标注为 “Fasting”；2011 Fieldwork Plan 附件2明确“是否空腹”1=是、2=否。证据链与待审分析候选见 [`wave1_fasting_code_source_reconciliation_2026-10-30.md`](wave1_fasting_code_source_reconciliation_2026-10-30.md)。

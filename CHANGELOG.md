@@ -1791,3 +1791,8 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 
 - Updated `sources_official/SOURCES.md` to distinguish file 138 (which does not define fasting) from the separate official 2011 Fieldwork Plan Appendix 2 that documents 1=Yes/2=No; linked it to the Wave 1 Blood `qc1_va003` header label.
 - Recorded the official document identity hash and private-storage boundary. This resolves the code-source mapping only; the analysis estimand, weight applicability, outcome rules and independent methods review remain pending.
+
+# 2026-10-30 Flag fasting-domain weight compatibility before model freeze
+
+- Compared CHARLS blood-weight documentation with official survey-domain and NHANES subsample-weight guidance. CHARLS documents `bloodweight` correction for blood-collection nonresponse but the reviewed source does not establish fasting-status selection adjustment. NHANES weighting is used only as a comparator, not transferred to CHARLS.
+- Withdrew the default ordering that treated fasting-only as the primary glucose/TG analysis. Full-sample measurement-condition modeling and fasting-domain estimates remain alternatives for independent review; `bloodweight` cannot be assumed to restore representativeness for a fasting-only subset. Updated the active plan and draft-review materials; no respondent values or association models were used.
