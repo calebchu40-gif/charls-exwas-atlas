@@ -1822,3 +1822,15 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Added a visually reviewed, source-bound audit of the CHARLS Blood Users' Guide pages on target/response, `bloodweight` construction, fasting status, assay limits, descriptive ranges, and cystatin C subsampling.
 - Refined the candidate estimand: `bloodweight` corrects household/individual nonresponse and blood-collection nonparticipation under a selection-on-observables assumption; it is not documented as correcting fasting-status selection or as a full variance specification.
 - Kept glucose/TG handling, age-domain interpretation, finite special-code handling, and approximate variance pending independent methods review; no CHARLS association was fitted.
+# 2026-10-30 Add private range reconciliation workflow
+
+- Added a protected aggregate-only QA script to compare CHARLS Blood Guide Table 4/5 descriptive endpoints against all finite Wave 1 Blood values and the positive-`bloodweight` subset.
+- The script reads no identifiers, binds the private report to the source-verified person table and Blood file hashes, and writes exact fields/ranges/counts only under the private root with mode 0600.
+- This is source consistency QA only. It cannot infer sentinels, define validity bounds, trim records, or fit associations.
+- GitHub CI remains the automatic code verification; the local data-boundary validator is also run before commit.
+
+### 2026-10-30 — Add source-bound published-range reconciliation QA
+
+- Added a private-only Wave 1 check comparing the 15 registered biomarker endpoints with the official Blood Users' Guide Table 4/5 descriptive ranges, both across finite source values and within records with positive `bloodweight`.
+- The command is source-bound to the verified Wave 1 person-table gate, reads no identifiers, writes exact ranges/counts only below the private root with owner-only permissions, and emits status only. These comparisons are not weighted estimates, validity bounds, recoding rules, or exclusions.
+- No association model is run; existing assay/outcome, target-estimand, variance, model-freeze and independent-review gates remain in force.

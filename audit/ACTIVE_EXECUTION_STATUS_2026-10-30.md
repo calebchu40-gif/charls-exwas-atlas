@@ -137,3 +137,5 @@ Wave 1 执行器对测量协议未解决的结局返回 `blocked_by_unresolved_m
 ## 2026-10-30 — Blood Guide 原文页面复核
 
 对原始 Blood Users' Guide 的样本权重/测量页作视觉核查，明确 `bloodweight` 的血检不应答目标、IPW预测因子和99分位截尾；权重依赖选择可由观测变量解释的假设，但不含已证明的fasting-selection校正。Guide报告约8%血样非空腹、血糖测量状态可能影响水平；提出的全样本测量状态调整和条件性敏感性仍只是待审估计量。Guide将assay检测限、描述性观察范围和密度图省略少数极端值区分开，均不构成本项目的删除规则；cystatin C为特定年龄抽样。审计文档 `audit/wave1_blood_guide_weight_measurement_review_2026-10-30.md` 记录原页锚点和模型限制。无个体值访问、无关联拟合。
+
+- Added a server-private, source-bound comparison of Guide Table 4/5 published assay endpoints against the positive-`bloodweight` source frame alongside the all-finite comparison. Exact output remains owner-only; this diagnostic does not change outcome eligibility or model readiness.
