@@ -66,3 +66,7 @@ Blood Users' Guide 印刷第12页依据其加权密度图描述：总胆固醇�
 ## 审阅状态
 
 本文件补齐来源定位与需裁决事项，并作为 Wave 1 pilot 计划指纹的一部分。它**不**批准 `communityID` 方差近似、目标 domain、结局有效值规则、模型协变量或任何真实关联运行。审阅人需结合受保护的 Wave 1 元数据/QA 和冻结配置，对每条规则决定通过、修订或阻断，并签署绑定哈希的记录。
+
+## 2026-10-30 candidate registry to official crosswalk alignment check
+
+A metadata-only consistency check compared the 15 private candidate outcome concepts against 2011 rows in `blood_biomarker_crosswalk_v1.csv`. All 15 matched on concept ID, source field, and unit; no missing mappings or field/unit discrepancies were found. The candidate file still marks all 15 outcome rules as not frozen, leaves finite numeric special-code handling unresolved, and keeps the two fasting-sensitive concepts blocked. This is a catalog/plan consistency check only: it does not validate participant values, choose a validity range, approve transformations, estimate model sample sizes, or fit associations. Reproducibility note: the candidate document and exact diagnostics remain in server-private review storage; no respondent-level data were read.
