@@ -17,11 +17,26 @@ import pandas as pd
 import pyreadstat
 
 from prepare_charls_wave_tables import normalize_key
-from audit_2013_weights_intake import verify_official_weights_archive
+from audit_2013_weights_intake import (
+    EXPECTED_OFFICIAL_WEIGHTS_SHA1,
+    sha1_file,
+    verify_official_weights_archive,
+)
 from project_paths import PRIVATE_ROOT, QA_OUTPUT_DIR, WAVE_DATA_DIR, require_private_path
 
 
 REQUIRED_FLAGS = ("crosssection", "longitudinal")
+
+
+def verify_official_weights_sha1(path: Path, expected_sha1: str = EXPECTED_OFFICIAL_WEIGHTS_SHA1) -> str:
+    """Verify the published SHA-1 for the official Wave 2 ZIP archive."""
+    actual = sha1_file(path).lower()
+    if actual != expected_sha1.lower():
+        raise ValueError(
+            "Official CHARLS Wave 2 Weights archive SHA1 does not match the expected release; "
+            f"expected {expected_sha1.lower()}, got {actual}. No merge performed."
+        )
+    return actual
 
 
 def verify_official_weights_source(archive: Path, dta_path: Path) -> str:

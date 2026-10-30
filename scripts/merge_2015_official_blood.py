@@ -101,7 +101,7 @@ def _validate_id_frame(prepared_ids: pd.Series, blood_ids: pd.Series) -> tuple[p
     if blood_key.isna().any() or blood_key.duplicated().any():
         raise ValueError("official Blood Data respondent ID key must be complete and unique")
     if not set(blood_key.tolist()).issubset(set(prepared_key.tolist())):
-        raise ValueError("official Blood Data IDs do not all map to the prepared Wave 3 respondent frame")
+        raise ValueError("IDs absent from the prepared Wave 3 respondent frame: official Blood Data IDs do not all map")
     return prepared_key, blood_key
 
 

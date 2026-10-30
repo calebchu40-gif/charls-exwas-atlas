@@ -1,3 +1,10 @@
+# 2026-10-30 Repair CI compatibility and clarify public methods disclosures
+
+- Restored the compatibility names expected by the existing Wave 2 official-weight merge interface, with SHA-1 verification scoped to the official archive.
+- Clarified the fail-closed Wave 3 blood-frame error without exposing respondent IDs.
+- Clarified public site language for age-domain interpretation, cross-sectional weights, wave-specific survey-design distinctions, community PSU limitations, and the fact that no association estimates are published.
+- GitHub Actions at `164d5ad` passed the repository data-boundary check but failed during unit tests. This commit addresses the surfaced code/API and disclosure mismatches; the resulting CI run remains the verification source.
+
 # 2026-10-30 Allowlist reviewed Wave 3 outcome metadata
 
 - Investigated the repository-boundary CI failure on `8277fbc`. The only unreviewed delimited-text path was the Wave 3 blood outcome candidate catalog.
