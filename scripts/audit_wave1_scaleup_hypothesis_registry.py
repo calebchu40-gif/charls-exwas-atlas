@@ -142,11 +142,54 @@ def audit_registry(path: Path = REGISTER) -> dict[str, object]:
     if phenotype_sets.get("wave1_household_environment_K150") != phenotype_sets.get("wave1_heating_route_K90"):
         errors.append("K150 and K90 do not use the same 15 phenotype concepts")
 
+    # The 105-row pilot is an execution tranche nested in K150, not another
+    # multiplicity family. Enforce that relationship directly in the tracked
+    # register so a future edit cannot silently count it twice or mark K90 as
+    # part of the pilot.
+    overlap_values = {row.get("prior_pilot_overlap", "").strip().lower() for row in rows}
+    if not overlap_values <= {"yes", "no"}:
+        errors.append("prior_pilot_overlap must be explicitly yes/no on every row")
+    pilot_rows = [row for row in rows if row.get("prior_pilot_overlap", "").strip().lower() == "yes"]
+    nonpilot_rows = [row for row in rows if row.get("prior_pilot_overlap", "").strip().lower() == "no"]
+    expected_pilot_contrasts = {
+        ("running_water_at_residence", "i017", "yes_vs_no"),
+        ("cooking_fuel_main", "i022", "code_1_vs_5"),
+        ("cooking_fuel_main", "i022", "code_2_vs_5"),
+        ("cooking_fuel_main", "i022", "code_3_vs_5"),
+        ("cooking_fuel_main", "i022", "code_4_vs_5"),
+        ("cooking_fuel_main", "i022", "code_6_vs_5"),
+        ("cooking_fuel_main", "i022", "code_7_vs_5"),
+    }
+    pilot_contrasts = {
+        (row.get("exposure_concept_id", ""), row.get("exposure_field_candidate", ""), row.get("contrast_id", ""))
+        for row in pilot_rows
+    }
+    if len(pilot_rows) != 105:
+        errors.append(f"expected 105 pilot-overlap rows, found {len(pilot_rows)}")
+    if pilot_contrasts != expected_pilot_contrasts:
+        errors.append("pilot-overlap contrast set differs from the prespecified 7 contrasts")
+    if any(row.get("family_id") != "wave1_household_environment_K150" for row in pilot_rows):
+        errors.append("pilot-overlap rows must be nested in K150")
+    if any(row.get("family_id") == "wave1_heating_route_K90" for row in pilot_rows):
+        errors.append("K90 rows cannot be marked as part of pilot105")
+    if len(nonpilot_rows) != 135:
+        errors.append(f"expected 135 non-pilot rows across K150/K90, found {len(nonpilot_rows)}")
+    if any(row.get("family_id") == "wave1_household_environment_K150"
+           and row.get("exposure_field_candidate") in {"i017", "i022"}
+           and row.get("prior_pilot_overlap", "").strip().lower() != "yes"
+           for row in rows):
+        errors.append("all i017/i022 K150 rows must be marked as pilot overlap")
+
     return {
         "audit_type": "metadata_only_hypothesis_registry_structure",
         "participant_data_read": False,
         "registry_path": path.relative_to(ROOT).as_posix(),
         "total_planned_rows": len(rows),
+        "pilot_overlap_rows": len(pilot_rows),
+        "nonpilot_scaleup_rows": len(nonpilot_rows),
+        "pilot_is_nested_in_K150": bool(pilot_rows) and all(
+            row.get("family_id") == "wave1_household_environment_K150" for row in pilot_rows
+        ),
         "families": family_summary,
         "status": "passed_structural_checks_only" if not errors else "failed",
         "model_approved": False,

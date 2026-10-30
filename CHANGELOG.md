@@ -1720,3 +1720,9 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - pilot105 模板/执行器现只强制血糖采用已验证空腹规则或显式阻断；甘油三酯可声明保留所有观察血样。该临床检验共识不替代 CHARLS 变量映射或本研究的方法审阅。没有拟合真实模型。
 - 更新配对可用性 QA 脚本中的 fasting 状态标签，分别识别“血糖编码未解而阻断”和“甘油三酯全样本候选、方法待审”。既有私有 QA 报告未重跑，不能把其中的旧 fasting 标签当作当前计划。
 - 在私人官方资料包中复核 CHARLS 2011 Codebook（资料项 120）的文本版和 PDF，未发现 `qc1_va003`、fasting 或 blood-sample 条目；这进一步确认现有官方材料不足以给出数值编码。
+# 2026-10-30 Enforce pilot nesting in the Wave 1 family registry
+
+- Extended the metadata-only K150/K90 registry audit to require exactly 105 `prior_pilot_overlap=yes` rows, all nested in K150 and matching the seven prespecified `i017`/`i022` contrasts across the 15 phenotypes; K90 rows must remain outside the pilot. The audit now also requires explicit yes/no overlap labels and accounts for the remaining 135 planned scale-up rows.
+- Re-ran the structural audit: 240 unique planned rows, 105 pilot-overlap rows, 135 non-pilot rows, pilot nested in K150, and K90 disjoint. All hypotheses remain unapproved; the script reports `model_approved=false` and `association_results_created=false`.
+- This is a registry-integrity check only. It reads no CHARLS participant data or private QA and does not satisfy the independent methods review or authorize real-data models.
+
