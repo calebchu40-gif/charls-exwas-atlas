@@ -137,3 +137,7 @@
 ### 2026-10-30 新增 Wave 1 空腹来源与权重兼容性审阅
 
 官方 Fieldwork Plan 附件2记录 `qc1_va003` 对应空腹 1=是、2=否，Wave 1 Blood header 标签为 “Fasting”。这只解决字段和编码来源。进一步核对显示 CHARLS Guide 将 `bloodweight` 说明为校正家户/个人非应答及未参与血检；已审阅材料未说明对 fasting-status 选择另有校正。因此撤销“fasting-only 是主分析”的默认排序。全血样本测量条件模型与 fasted-only 条件domain均为待审选项，不预设主次；14项仍阻断。详见 [`wave1_fasting_estimand_weight_compatibility_2026-10-30.md`](wave1_fasting_estimand_weight_compatibility_2026-10-30.md)。
+
+### 2026-10-30 — 2011 Codebook 与 Blood 化验字段适用范围
+
+官方 CHARLS Wave 1 页面和北大 Open Research Data Platform 将 National Baseline Codebook（file 120）与 Blood 文件（file 201）及 Blood Users' Guide 分开发布。2011 Codebook 的 Biomarkers 章节涵盖体检/问卷类项目并可见 `.D/.E/.R` 等扩展缺失类别，但文本不含本项目登记的15个 Blood 化验字段或 `bloodweight`。因此不得把问卷字段的负值/扩展缺失编码惯例外推到连续血检结果。针对 Blood 的有限数值特殊码和有效域，仍需 Blood 专属来源或具文档的独立审阅；不按 assay 检测信息、临床切点或样本分布擅自改码/筛除。详情见 [`wave1_blood_codebook_scope_2026-10-30.md`](wave1_blood_codebook_scope_2026-10-30.md)。这项来源范围核查不解锁任何结局或模型。

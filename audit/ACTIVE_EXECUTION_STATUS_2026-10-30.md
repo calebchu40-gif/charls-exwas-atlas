@@ -129,3 +129,7 @@ Wave 1 执行器对测量协议未解决的结局返回 `blocked_by_unresolved_m
 本轮更新了私有方法审阅包所引用的空腹估计目标备忘录 SHA-256，并在私有日志记录。当前 GitHub Pages 首页返回 HTTP 200，关联结果 payload 返回 HTTP 404；Wave 1 正式关联模型仍为 0。主要准入缺口仍是具名、哈希绑定的独立方法审阅，以及据审阅意见冻结年龄域/权重适用性、方差近似和结局处理规则。未读取新的参与者值，未运行 CHARLS 关联模型。
 
 随后检查了本次 GitHub Actions 状态，发现仓库数据边界步骤失败。定位到唯一未登记路径 `audit/wave3_blood_outcome_handling_candidates_2026-10-30.csv`；逐行复核其内容与配套来源审阅文件后确认它是公开来源元数据/候选规则，不含受访者记录、ID、检测值、权重或私有 QA。现已把该路径加入显式文本目录审核白名单并记入变更日志，再运行同一边界验证确认修复；未改变 Wave 1/Wave 3 模型准入状态。
+
+## 2026-10-30 — 官方 Codebook 对 Blood 结局编码的适用边界
+
+对官方 Wave 1 National Baseline Codebook 作目录/字段名定向复核：该 Codebook 的 Biomarkers 部分记录体检问卷项目（包括 Stata 扩展缺失类别），不包含本试点15个 Blood 化验字段或 bloodweight。官方 Wave 1 页面把 Codebook 与 Blood Users' Guide 分列；因此前者中问卷变量的缺失惯例不能替代 Blood 专属规则。新审计说明 `audit/wave1_blood_codebook_scope_2026-10-30.md` 记录来源边界与不作推断的规则。真实模型门禁仍关闭；未访问参与者化验值、未拟合关联。

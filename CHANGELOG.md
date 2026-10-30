@@ -1810,3 +1810,10 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 
 - Compared CHARLS blood-weight documentation with official survey-domain and NHANES subsample-weight guidance. CHARLS documents `bloodweight` correction for blood-collection nonresponse but the reviewed source does not establish fasting-status selection adjustment. NHANES weighting is used only as a comparator, not transferred to CHARLS.
 - Withdrew the default ordering that treated fasting-only as the primary glucose/TG analysis. Full-sample measurement-condition modeling and fasting-domain estimates remain alternatives for independent review; `bloodweight` cannot be assumed to restore representativeness for a fasting-only subset. Updated the active plan and draft-review materials; no respondent values or association models were used.
+# 2026-10-30 Clarify Wave 1 blood outcome coding source scope
+
+- Added an audit note distinguishing the National Baseline Codebook's questionnaire/physical-measurement missing-code conventions from the separate Wave 1 Blood release.
+- Recorded that questionnaire Stata extended missing categories cannot be assumed to define finite sentinel codes for continuous blood analytes; no assay values, limits, or distributions were used to infer recodes.
+- The 15 outcome rules and independent methods/readiness gates remain pending; no CHARLS associations were fitted.
+- Verified the repository file-boundary validator locally; this does not replace the automatic GitHub CI workflow.
+
