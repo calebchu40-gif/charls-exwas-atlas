@@ -47,3 +47,7 @@
 该近似能由当前引擎执行，但公开字段不能证明 `communityID` 就是 CHARLS 原始第一阶段抽样单元，也无法复原隐式分层、PPS 尺度或最终拆分社区映射。县级 ID 前缀分组仍是未验证敏感性候选，不能称为已恢复的官方 PSU 设计。若未来获准运行，方差与区间须标作近似，并披露未复原完整多阶段设计。精确私有支持指标及复核细节只记入服务器 `private/logs/run_20261030_option_a_review.md`。
 
 官方来源检索未发现 Wave 1 `qc1_va003` 的数值编码映射；搜索到的二手目录不作为编码依据，Wave 3 `bl_fasting` 也不移植至 Wave 1。因此葡萄糖 7 个系数继续登记但阻断，其他结局需逐项完成规则和独立方法审阅。无配置冻结或独立审阅记录，本轮没有拟合 CHARLS 关联；公开结果端点仍未发布。
+
+## 2026-10-30 结果表批次约束复核
+
+进一步对照 schema-v3 validator 与 finalizer 明确：`pilot105` 的设计是嵌套执行批次，按计划不产生最终族校正；validator 则要求成功行的 BY/Bonferroni 值与当前表声明的完整 K 族严格一致，并要求表中恰有 K 行。因此不能把 105 行 pilot 伪装成最终结果表或送入 family finalizer。pilot 只保留为服务器私有运行与 QA。将来只有全部 240 个预声明系数完成审阅后，才把 full240 原始 p 值作为一个 K=240 族进行规范化，随后由 finalizer 对冻结清单再次核对并从原始 p 值最终化；不得将 pilot 或 K150/K90 分块调整值当全族输入。适配器还必须要求完整 pair-level estimability review，并绑定运行清单、冻结配置、结果/QA哈希。详见[批次与 schema 约束复核](wave1_result_pipeline_integration_review_2026-10-30.md)。
