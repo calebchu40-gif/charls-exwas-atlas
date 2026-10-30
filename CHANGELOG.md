@@ -1,3 +1,9 @@
+# 2026-10-30 Bind official file-138 gap into the active plan and private review packet
+
+- Updated the active Wave 1 execution plan to link the official file-138 source-status audit and explicitly preserve uncertainty about whether it defines `qc1_va003`.
+- Added the same evidence and next-check instructions to the mode-600 server-private pre-analysis review packet so a methods reviewer can see the exact source gap.
+- No restricted file was retrieved, no participant data were read, and no model was fitted. Fasting-dependent outcomes remain blocked.
+
 # 2026-10-30 Clarify official Wave 1 physical-examination questionnaire source gap
 
 - Verified the official Peking University Open Research Data Platform listing for file 138, `Medical-questionnaire-2011.doc` (2011 baseline v1.1; physical-examination questionnaire; metadata MD5 `d1f9351dff8bdadb0d1f692ff58b75c6`). The protected server intake does not currently contain this document.
