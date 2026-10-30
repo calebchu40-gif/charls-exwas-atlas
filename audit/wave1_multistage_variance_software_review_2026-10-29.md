@@ -30,7 +30,7 @@ An earlier protected local run contains exploratory water-access-proxy × blood-
 ## Gate decision
 
 - County/community prefix-structure audit: passed locally and on the private server; the prefix's identity as the original 150 selected first-stage county units is unconfirmed because official materials distinguish 150 selected units from 156 final geographic counties.
-- Wave 1 age method: not approved; the official Mata matrix has been retrieved, but exact comparison still requires a licensed Stata/Mata runtime.
+- Wave 1 age method: not approved. The official Mata mapping has since been compared row-by-row with pinned Python 0.1.4 and matched; age-route and independent methods review remain open. This update does not affect the variance decision.
 - Full official sample design/variance: not approved; strata/order, stage-specific selection information, and split-community respondent linkage remain unresolved.
 - Historical exploratory tables: technical integrity passed; scientific/design validity not assessed and not approved.
 - Formal association models and public result payload: remain zero/absent.

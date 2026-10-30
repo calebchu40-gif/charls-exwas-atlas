@@ -1541,3 +1541,6 @@ This file records project-level changes that affect reproducibility, methods, da
 # 2026-10-30 Cross-wave survey-design source inventory
 
 - Added a public-safe audit of official Wave 1–5 PSU, Sample_Infor, Weights, and relevant Blood archive checksums and metadata headers. Wave 5 documentation says PSU information is unchanged from previous waves; no reviewed file header supplies the missing county-stage variance strata, replicate weights, or split-sub-PSU respondent map. This is source evidence only: no variance estimator or association model is approved.
+# 2026-10-30 Verify official CHARLS lunar-conversion tables
+
+- Added a source-only validator that parses the pinned CHARLS Mata lookup and compares every ordinary and leap conversion with pinned `python-lunardate` 0.1.4. All official rows matched. Updated Wave 1/Wave 3 age-method records and corrected the plan's prior Stata-runtime blocker. This verifies the converter table only; no respondent dates were used, and age routes, domains, independent review, survey variance and formal associations remain gated.

@@ -16,7 +16,7 @@ For a valid lunar DOB, an implementation can retain the ordinary-table mapping a
 
 Because CHARLS interview timing gives year and month but not interview day, calculate the completed-age minimum and maximum over every admissible birth-date candidate and every day in the recorded interview month. Unknown or partial DOB components require a separately specified broad candidate set; invalid and unrouted records remain unclassified. A threshold domain such as 45+ is assignable only when the entire resulting age interval lies on one side of the threshold. Otherwise retain an unresolved domain. This avoids false precision and does not infer eligibility from a midpoint.
 
-This is a candidate method, not an approved CHARLS age specification. Before use, it needs a reproducible table parser or a validated Stata runtime, synthetic comparisons to both official matrices (including month-boundary, leap-month, invalid-key, unknown-day and interview-month cases), source checksum/version review, and independent age-method review. The official utility's documented date domain, its merging behavior, and the exact response coding must be preserved. No participant-level age estimate or age-domain selection is permitted until those gates pass.
+This is a candidate method, not an approved CHARLS age specification. The official ordinary and leap lookup matrices have now been parsed from the hash-pinned `.mmat`, and every row matched pinned Python 0.1.4 with no mapping differences. This closes the converter-table parity subgate, including all valid month-boundary and leap-month keys. Remaining gates include invalid/partial respondent date handling, interview-month interval implementation, exact Wave 3 response routing, source checksum/version binding for any derived age table, and independent age-method review. Preserve the official utility's documented date domain, its merge behavior, and exact response coding. No participant-level age estimate or age-domain selection is authorized by this source-only validation.
 
 ## Current decision
 
@@ -26,4 +26,4 @@ Do not use a single default conversion for all lunar dates, do not infer a leap 
 
 - `references/charls_lunar2solar/src/lunar2solar.ado` and `.sthlp` (pinned CHARLS-maintained utility; its documented `leap` behavior and input range).
 - `audit/wave3_age_covariate_route_review_2026-10-30.md` (2015 Codebook/questionnaire BA002/BA003/BA004_W3 route).
-- `audit/lunar_conversion_candidate_synthetic_crosscheck_2026-10-29.md` (prior synthetic-only package lineage check; explicitly not direct Mata-table parity).
+- `scripts/verify_official_lunar_table_parity.py` and `audit/wave1_age_interval_candidate_review_2026-10-29.md` (direct source-only comparison against the official matrices; no participant dates used).

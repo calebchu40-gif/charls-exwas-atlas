@@ -3,6 +3,8 @@
 Reviewed: 2026-10-30  
 Pinned CHARLS source: `charls-data/lunar2solar` commit `2284ccffdd74f057c234a446585ec32034b2d50d`
 
+**Superseded status (2026-10-30):** a source-only parser now reads the pinned official `.mmat` matrices and compares every ordinary/leap mapping with pinned Python 0.1.4; the comparison completed with zero mismatches. A Stata runtime is therefore not required for this mapping-table parity subgate. The Stata workflow below is retained as an optional independent implementation cross-check, not as a prerequisite. See [`verify_official_lunar_table_parity.py`](../scripts/verify_official_lunar_table_parity.py) and [`wave1_age_interval_candidate_review_2026-10-29.md`](wave1_age_interval_candidate_review_2026-10-29.md).
+
 ## Purpose
 
 The Wave 1 age candidate uses the CHARLS-maintained `lunar2solar` program as its conversion reference. Before any age candidate can be considered for an analysis specification, the reference implementation needs a direct synthetic cellwise comparison against the pinned `.mmat` tables. The previous Python 0.1.4/0.1.5 comparison only established matching mapping dimensions and agreement between those two Python releases; it did not establish parity with the CHARLS Mata tables.

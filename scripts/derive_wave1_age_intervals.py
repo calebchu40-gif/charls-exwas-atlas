@@ -22,6 +22,7 @@ import pandas as pd
 import pyreadstat
 
 from project_paths import PRIVATE_ROOT, require_private_path
+from verify_official_lunar_table_parity import validate as validate_official_lunar_mapping
 
 
 LUNARDATE_014_SHA256 = "3b2eb1b90ec8107a7bd8a852a4efacd54ca4d3f5ce862145cfd5500e52ffed52"
@@ -159,6 +160,12 @@ def derive() -> dict[str, Any]:
     reference_root = private_path(root / "references", root)
     converter_path = private_path(
         reference_root / "lunardate_0.1.4" / "lunardate-0.1.4" / "lunardate.py", root
+    )
+    official_mmat_path = private_path(
+        reference_root / "charls_official_lunar2solar.mmat", root
+    )
+    lunar_mapping_parity = validate_official_lunar_mapping(
+        official_mmat_path, converter_path
     )
     lunar_module, lunar_source_hash = load_lunardate(converter_path)
     fields = list(EXPECTED_COLUMNS)
@@ -316,6 +323,7 @@ def derive() -> dict[str, Any]:
         "source_manifest_id": source_review["source_manifest_id"],
         "age_input_sha256": age_input_hash,
         "person_level_output_sha256": output_sha256,
+        "official_lunar_mapping_parity": lunar_mapping_parity,
         "lunardate_014_source_sha256": lunar_source_hash,
         "row_count": int(len(result)),
         "route_counts_private": dict(sorted(routes.items())),
