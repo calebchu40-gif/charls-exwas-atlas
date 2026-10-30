@@ -4,7 +4,7 @@
 
 # 2026-10-30 Clarify Wave 1 denominator counts
 
-- Reconciled the official baseline guide's 17,708 interview total with its 17,587 Table 4 description subset; the guide says people lacking age, sex, or hukou were excluded from Table 4. Kept this 121-person published-table difference distinct from the protected ID-only 3-record Weight-to-demographic-spine link difference. This clarifies denominator semantics without treating module presence as eligibility; formal models remain blocked by design/method gates.
+- Reconciled the official baseline guide's 17,708 interview total with its 17,587 Table 4 description subset; the guide says people lacking age, sex, or hukou were excluded from Table 4. Kept the published-table denominator difference distinct from unresolved protected file-linkage diagnostics, whose individual-derived small-cell details remain private. This clarifies denominator semantics without treating module presence as eligibility; formal models remain blocked by design/method gates.
 
 # 2026-10-30 Verify official Wave 1 Codebook archive
 
@@ -1422,9 +1422,9 @@ This file records project-level changes that affect reproducibility, methods, da
 ## 2026-10-29 — Trace residual Wave 1 weight IDs across official modules
 
 - Added a protected aggregate-only audit that verifies the current source-bound frame, temporarily extracts the official All Data RAR only beneath the private root, and reads only module `ID` columns plus `Weight.ID`/`ind_weight_ad2`.
-- Found that all residual positive-weight IDs absent from the Demographic_Background spine occur in at least one other official module. This rules out a simple Weight-only-key explanation but does not establish interview completion, age, blood eligibility, or denominator inclusion. Exact small-cell counts and keys remain private.
-- A direct protected ID-only comparison also found none of those residual IDs in Blood.dta. Reconciled the official guide's 17,708 interview count with the 2011 Codebook's 17,705 Demographic_Background.ID observations: the public materials reviewed do not explain the difference, so the counts are now explicitly kept distinct in the design memo.
-- Read only the official Weight `mainr` value for the residual records: each has an interpretable main-respondent/spouse label. The missing Demographic rows still prevent age/sex verification, so this narrows but does not close the frame/age gate.
+- Protected file-linkage diagnostics remain unresolved and are not reproduced here because their module-level findings are derived from individual records. They do not establish interview completion, age, blood eligibility, or denominator inclusion.
+- Reconciled the official guide's 17,708 interview count with the 2011 Codebook's 17,705 Demographic_Background.ID observations: the public materials reviewed do not explain the field-count difference, so the counts remain distinct in the design memo.
+- Individual-level eligibility remains unverified; the frame/age gate remains closed.
 - Temporary extraction was automatically removed. Added `scripts/audit_2011_weight_ids_across_modules.py`; only Python bytecode compilation was used for a static syntax check, with no tests or models run.
 
 ## 2026-10-29 — Separate official weight construction from variance-design evidence

@@ -67,7 +67,7 @@
 
 **Wave 1本轮推进：** 重新运行官方入库的 metadata-only 检查，四件套仍与人工确认的官方来源清单及本地 SHA-256 一致；随后在受保护本机目录新建独立版本目录，从四件套重建 Wave 1 受访者表，旧准备表未覆盖。新表已通过 source-bound provenance gate。受保护的 ID/社区键与官方权重字段聚合核对表明：官方访谈/血检目标总数与 `ind_weight_ad2` 非缺失总数一致；Blood 文件中的全部受检者 ID 能连到新 respondent spine，`bloodweight` 样本数与官方 Blood Guide 一致。Weight 文件仍有少量带正权重的 ID 无法连入 Demographic_Background spine，精确键/数量仅在本机受保护 QA 中；故官方目标分母只算聚合层面部分对账，不能宣称逐人框架完全统一。`bloodweight` 是血检结局的首选权重来源，但不解决PSU/分层方差，也不自动适用于非血液表型或暴露模块非应答。新增 [`scripts/audit_2011_official_frame_reconciliation.py`](../scripts/audit_2011_official_frame_reconciliation.py) 与方法记录 [`wave1_official_design_file_inventory_review_2026-10-29.md`](wave1_official_design_file_inventory_review_2026-10-29.md)。Wave 1 runner 现在支持通过 `CHARLS_EXWAS_DATA_DIR` 指向受保护版本目录；只应按单次 Wave 1 命令设置，不要全局覆盖多波次数据目录。真实关联模型依然为 0，正式执行闸门仍关闭。
 
-**Wave 1框架追查补充：** 对当前官方 All Data 15个模块进行受保护 ID-only扫描后，Weight 中无法连接到 `Demographic_Background` spine 的正权重 ID 均可在其他模块找到，但不在 Blood 文件中；官方 `mainr` 标签将这些记录识别为主访者/配偶，角色均可判定。年龄/性别仍因 Demographic 缺行而无法核对；精确数量/模块小单元留在本机私有 QA。官方指南报告访谈人数17,708，而2011 Codebook报告 `Demographic_Background.ID` 17,705条；公开材料未解释这三条记录的差异。故这两个分母必须分开标注。血液结局观测框从 Blood ID 与有效 `bloodweight` 开始，再按暴露完整性和冻结年龄域确定配对样本；这不代表更广的权重构造/总体分母已解释。新增 [`scripts/audit_2011_weight_ids_across_modules.py`](../scripts/audit_2011_weight_ids_across_modules.py)。
+**Wave 1框架追查补充：** 官方公开指南报告访谈总数17,708，2011 Codebook报告人口学个人 ID 字段17,705条；公开材料未解释字段计数差异，不能将其与受保护发行文件链接诊断混为一谈。逐文件链接和模块交叉细节仅保留在受控本机 QA，不写入公开仓库。血液结局观测框仍需从官方 Blood ID、适用权重、暴露完整性和冻结年龄域依序核验；这不代表更广的权重构造/总体分母已解释。新增 [`scripts/audit_2011_weight_ids_across_modules.py`](../scripts/audit_2011_weight_ids_across_modules.py)。
 
 **并行多波次推进：Wave 2（2013）源包和受保护 Wave 2 个人表重建已完成。** 官方 Release Note 将 `Biomarker.dta` 定义为人体测量，并将 `Biomarker_weight` 定义为横断面且经生物标志物模块应答调整；它可作为该模块横断面配对的来源支持候选，但不是实验室血检权重，也没有纵向 biomarker 权重。Wave2表以官方 Demographic respondent spine 构建，模块键/行扩张审计和源哈希manifest存放在服务器私有区。年龄域审查确认 `ba004` 仅在不知/拒答出生日期时路由提问；Wave 2抽样目标还包含受访者配偶，不能统一强制年龄≥45。年龄协变量必须按官方出生日期/访谈时间、Wave1链接规则和农历转换审查；具体人体测量字段、权重及剩余门槛见 [`wave2_anthropometry_release_weight_gate_2026-10-29.md`](wave2_anthropometry_release_weight_gate_2026-10-29.md)。配对资格、字段有效值、年龄构造和方差仍需审查。
 - 随后将网站五波概览中两处过期/错误说明改正：Wave 2 确有 anthropometric `Biomarker.dta`（但无静脉血实验室检测），Wave 3/2015 官方血检档案已进入受控入库并完成元数据预检。没有对外暴露本地路径、个体数据或哈希。
@@ -168,7 +168,7 @@
 
 ### 2026-10-30 Wave 1 官方计数口径
 
-基线指南的访谈总数为 17,708；Table 4 的 17,587 是排除缺年龄、性别或户籍者后的描述表子集，不能作为完整分析框。这个官方 121 人表格差额与受保护 ID-only 文件核对中 Weight 到人口学主表的 3 人链接差异分别记录；后者仍待解释，但三人不在 Blood 文件。已将 17,587 的表格子集及排除脚注加入受保护分母核对器，并用官方来源绑定的 ID/权重/PSU-only 审计重跑；私有报告现在将“完整访谈总数差额”作为明确字段名。详见 [`wave1_official_denominator_interpretation_2026-10-30.md`](wave1_official_denominator_interpretation_2026-10-30.md)。这只澄清分母语义，不解除目标年龄、PSU/方差和独立方法审查门。
+基线指南的访谈总数为 17,708；Table 4 的 17,587 是排除缺年龄、性别或户籍者后的描述表子集，不能作为完整分析框。该官方表格分母差额与受保护文件间链接诊断分别处理；后者的个体级派生细节不在公开记录中。已将官方子集及排除脚注加入受保护分母核对器，并用官方来源绑定的 ID/权重/PSU-only 审计重跑。详见 [`wave1_official_denominator_interpretation_2026-10-30.md`](wave1_official_denominator_interpretation_2026-10-30.md)。这只澄清分母语义，不解除目标年龄、PSU/方差和独立方法审查门。
 
 ## 不可跳过的决策门
 
