@@ -1,3 +1,9 @@
+# 2026-10-30 Clarify official Wave 1 physical-examination questionnaire source gap
+
+- Verified the official Peking University Open Research Data Platform listing for file 138, `Medical-questionnaire-2011.doc` (2011 baseline v1.1; physical-examination questionnaire; metadata MD5 `d1f9351dff8bdadb0d1f692ff58b75c6`). The protected server intake does not currently contain this document.
+- Added a source-status note distinguishing the existence of the official document from evidence that it defines `qc1_va003`; no restricted download was attempted and no access control was bypassed.
+- The fasting-code question therefore remains unresolved. Wave 1 glucose and triglycerides stay blocked, and no real-data association was fitted.
+
 # 2026-10-30 Record post-authorization execution plan and live gate audit
 
 - Added a staged Wave 1 execution plan with concrete exit criteria for estimand freeze, outcome rules, the 105-coefficient pilot, K=240 expansion, wave-by-wave review and release.
