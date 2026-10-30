@@ -331,11 +331,10 @@ def merge_source(base: pd.DataFrame, incoming: pd.DataFrame, key: str,
     matched = int((merged["_merge_tag"] == "both").sum())
     merged.drop(columns="_merge_tag", inplace=True)
     if b_missing:
-        missing_base = b.loc[~b_nonnull].copy()
-        for col in merged.columns:
-            if col not in missing_base.columns:
-                missing_base[col] = pd.NA
-        merged = pd.concat([merged, missing_base[merged.columns]], ignore_index=True)
+        # Reindex the whole block at once. Inserting thousands of missing
+        # columns one by one fragments wide CHARLS tables and is very slow.
+        missing_base = b.loc[~b_nonnull].reindex(columns=merged.columns)
+        merged = pd.concat([merged, missing_base], ignore_index=True)
     qa.append({"wave": wave, "module": module, "merge_key": key,
                "source_rows": len(incoming), "source_unique_key_n": int(i_nonnull.sum()),
                "source_missing_key_rows": i_missing, "base_rows_before": len(base),
@@ -567,7 +566,8 @@ def main():
                        "match_rate_0_to_1": None,
                        "other_id_mismatch_counts": "unrecognized key retained separately"})
 
-        base.insert(0, "wave", int(wave))
+        wave_series = pd.Series(int(wave), index=base.index, name="wave")
+        base = pd.concat([wave_series, base], axis=1)
         if base.empty:
             raise RuntimeError(f"Refusing to write an empty respondent table for wave {wave}")
         # Some CHARLS string-coded fields contain numeric-looking values. Pandas
