@@ -22,25 +22,29 @@
 
 据此，默认清洗规则仍为：遵守 Stata 系统缺失表示；保留其余可解析有限值作为待审候选；不因 detection limits、Table 5 observed ranges、临床风险阈值或密度图省略做逐人过滤。有限数值型 sentinel 是否存在仍待解决，故这条候选不能被写成“所有有限值均经官方验证”，也不能单凭此段关闭结局准入。来源：[CHARLS 2011 Blood Sample Users' Guide，第7、11、14–15页](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf)。
 
+### 15项共同处理候选及字段级状态
+
+已核的 Wave 1 Blood header 将15项结局列为数值型 float，未附 value-label set，也未声明 Stata tagged-missing 元数据。已核官方 Wave 1 Blood Guide、National Baseline Users' Guide 与 Codebook 未给这15项的有限数值型特殊缺失码表。此为已检索来源中的“未发现定义”，不是对其他未取得内部文档或有限 sentinel 不存在的证明。提交独立审阅的共同候选为：Stata 系统缺失按缺失处理；其他可解析有限值暂保留；identity scale；不按检测限、观察范围、临床阈值或分布删值。15项均为候选而非批准规则。血糖和甘油三酯的 `qc1_va003` 编码已由官方来源核实为1=空腹、2=非空腹；尚未决定其估计目标和 `bloodweight` 对条件性子域的适用性，故这两项仍阻断拟合。
+
 ## 15项目录和暂定报告尺度
 
 | 结局 | Wave 1 字段 | 原始单位（报告原始效果） | 指南测定范围（仅方法元数据） | 当前处理决定 |
 |---|---|---|---|---|
-| 白细胞计数 | `qc1_vb002` | 1000 cells/μL | 指南未列逐项范围 | 有效值/特殊码待官方依据；原单位效果候选 |
-| 血红蛋白 | `qc1_vb004` | g/dL | 指南未列逐项范围 | 有效值/特殊码待官方依据；原单位效果候选 |
-| 红细胞压积 | `qc1_vb005` | % | 指南未列逐项范围 | 有效值/特殊码待官方依据；原单位效果候选 |
-| 平均红细胞体积 | `qc1_vb006` | fL | 指南未列逐项范围 | 有效值/特殊码待官方依据；原单位效果候选 |
-| 血小板计数 | `qc1_vb009` | 10^9/L | 指南未列逐项范围 | 有效值/特殊码待官方依据；原单位效果候选 |
-| 甘油三酯 | `newtg` | mg/dL | 4–1000 mg/dL | 不将范围直接当过滤线；空腹编码/顶码规则未闭环 |
-| 肌酐 | `newcrea` | mg/dL | 0.1–25 mg/dL | 不将范围直接当过滤线；特殊码/有效域未闭环 |
-| 血尿素氮 | `newbun` | mg/dL | 5–100 mg/dL | 不将范围直接当过滤线；特殊码/有效域未闭环 |
-| 高密度脂蛋白胆固醇 | `newhdl` | mg/dL | 3–120 mg/dL | 不将范围直接当过滤线；特殊码/有效域未闭环 |
-| 低密度脂蛋白胆固醇 | `newldl` | mg/dL | 3–400 mg/dL | 不将范围直接当过滤线；特殊码/有效域未闭环 |
-| 总胆固醇 | `newcho` | mg/dL | 3–800 mg/dL | 不将范围直接当过滤线；特殊码/有效域未闭环 |
-| 血糖 | `newglu` | mg/dL | 2–450 mg/dL | 不将范围直接当过滤线；空腹编码/特殊码未闭环 |
-| 尿酸 | `newua` | mg/dL | 上限20 mg/dL（指南所列） | 不将范围直接当过滤线；特殊码/有效域未闭环 |
-| C反应蛋白 | `newcrp` | mg/L | 0.1–20 mg/L | 不将范围直接当过滤线；特殊码/有效域未闭环 |
-| 糖化血红蛋白 | `newhba1c` | % | 0–40% | 不将范围直接当过滤线；特殊码/有效域未闭环 |
+| 白细胞计数 | `qc1_vb002` | 1000 cells/μL | 指南未列逐项范围 | identity/raw-finite 处理为待审候选；有限 sentinel 未知；原单位效果候选 |
+| 血红蛋白 | `qc1_vb004` | g/dL | 指南未列逐项范围 | identity/raw-finite 处理为待审候选；有限 sentinel 未知；原单位效果候选 |
+| 红细胞压积 | `qc1_vb005` | % | 指南未列逐项范围 | identity/raw-finite 处理为待审候选；有限 sentinel 未知；原单位效果候选 |
+| 平均红细胞体积 | `qc1_vb006` | fL | 指南未列逐项范围 | identity/raw-finite 处理为待审候选；有限 sentinel 未知；原单位效果候选 |
+| 血小板计数 | `qc1_vb009` | 10^9/L | 指南未列逐项范围 | identity/raw-finite 处理为待审候选；有限 sentinel 未知；原单位效果候选 |
+| 甘油三酯 | `newtg` | mg/dL | 4–1000 mg/dL | `qc1_va003`编码1/2已核实；估计目标及权重适用性未决；有限 sentinel 未知，identity/raw-finite仍待审 |
+| 肌酐 | `newcrea` | mg/dL | 0.1–25 mg/dL | identity/raw-finite 处理为待审候选；有限 sentinel 未知；不按检测范围过滤 |
+| 血尿素氮 | `newbun` | mg/dL | 5–100 mg/dL | identity/raw-finite 处理为待审候选；有限 sentinel 未知；不按检测范围过滤 |
+| 高密度脂蛋白胆固醇 | `newhdl` | mg/dL | 3–120 mg/dL | identity/raw-finite 处理为待审候选；有限 sentinel 未知；不按检测范围过滤 |
+| 低密度脂蛋白胆固醇 | `newldl` | mg/dL | 3–400 mg/dL | identity/raw-finite 处理为待审候选；有限 sentinel 未知；不按检测范围过滤 |
+| 总胆固醇 | `newcho` | mg/dL | 3–800 mg/dL | identity/raw-finite 处理为待审候选；有限 sentinel 未知；不按检测范围过滤 |
+| 血糖 | `newglu` | mg/dL | 2–450 mg/dL | `qc1_va003`编码1/2已核实；估计目标及权重适用性未决；有限 sentinel 未知，identity/raw-finite仍待审 |
+| 尿酸 | `newua` | mg/dL | 上限20 mg/dL（指南所列） | identity/raw-finite 处理为待审候选；有限 sentinel 未知；不按检测范围过滤 |
+| C反应蛋白 | `newcrp` | mg/L | 0.1–20 mg/L | identity/raw-finite 处理为待审候选；有限 sentinel 未知；不按检测范围过滤 |
+| 糖化血红蛋白 | `newhba1c` | % | 0–40% | identity/raw-finite 处理为待审候选；有限 sentinel 未知；不按检测范围过滤 |
 
 ## 统一估计尺度建议（待独立审阅，不是模型批准）
 

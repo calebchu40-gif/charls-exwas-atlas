@@ -1,3 +1,7 @@
+# 2026-10-31 Clarify all 15 Wave 1 blood-outcome candidates
+
+- Updated the field-level outcome table to mark the Wave 1 fasting code as source-verified for glucose and triglycerides, while keeping their estimand/weight questions open. Documented the common raw-finite, identity-scale handling as an unsigned review candidate and stated that no finite sentinel definition was found in the reviewed official sources; this is not proof that sentinels do not exist.
+
 # 2026-10-31 Clarify Wave 1 assay-range interpretation
 
 - Clarified against the official Blood Users' Guide that assay detection limits, Table 5 observed ranges, and density-plot omission of a few extremes are distinct source statements; none is an individual-level exclusion rule. Finite numeric sentinel uncertainty remains unresolved. This documentation update did not filter or analyze CHARLS records.
