@@ -50,6 +50,7 @@ CHARLS 2011 Blood Sample Users' Guide 说明采血前要求隔夜空腹，但没
 ## 2026-10-30 受控字段元数据及值域 QA 补充
 
 - 对官方 Blood 文件做了 metadata-only 扩展审计：15项结局均存为 Stata `float`，显示格式为 `%9.0g`；`qc1_va003` 存为 `int8`、格式 `%8.0g`。这些是存储/显示元数据，不提供数值含义；16个审计字段仍无附属 value-label set。
+- 追加检查 Stata header 的 tagged-missing 元数据后，16个字段均未声明 `.a`–`.z` 用户缺失标签。这个结果不能排除有限数值型占位码，也不能代替 Wave 1 官方有效域/特殊码说明；有限值规则仍未冻结。
 - 随后在授权服务器仅读取15项预设结局列，输出受限、无标识符的汇总诊断至 `private/qa_outputs/wave1_biomarker_value_profile_private.json`（mode 600）。没有读取ID、没有使用权重、没有拟合关联，也未向公共仓库或网站复制报告。
 - 该汇总未发现负值、非有限值或数值解析失败；部分观测极值落在 Blood Guide 的 assay-method table 范围之外。具体字段/极值仅留在服务器受限 QA。它们只是需要源资料审查的信号；本项目没有据此判定无效、剔除记录或反推特殊码。
 - 因此，连续结局的数值有效性/特殊码规则仍未冻结；`qc1_va003` 映射仍未解决。15项的单位、Guide assay 方法范围、原始尺度候选和未决状态见上表；assay范围不自动成为过滤线。
