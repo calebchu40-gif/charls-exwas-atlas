@@ -6,6 +6,11 @@
 - GitHub Actions at `164d5ad` passed the repository data-boundary check but failed during unit tests. This commit addresses the surfaced code/API and disclosure mismatches; the resulting CI run remains the verification source.
 - Follow-up CI run `41080874750` narrowed the failures to a legacy expected error-message phrase and one missing PSU note inside the survey-design panel; both are corrected in the next commit.
 
+# 2026-10-31 Use the configured private root for public release staging
+
+- Updated the disclosure-cleared association release builder to use the project's `CHARLS_EXWAS_PRIVATE_ROOT` path resolver. This lets the approved server workflow read private results and review records from its owner-only private directory while keeping generated site payloads inside the repository's `site-prototype/dist` directory.
+- The builder still requires an explicit `--publish`, validates the complete reviewed family, and rejects private inputs outside the configured private root. No CHARLS result data was read or published in this change.
+
 # 2026-10-30 Allowlist reviewed Wave 3 outcome metadata
 
 - Investigated the repository-boundary CI failure on `8277fbc`. The only unreviewed delimited-text path was the Wave 3 blood outcome candidate catalog.

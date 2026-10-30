@@ -19,12 +19,13 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
+from project_paths import PRIVATE_ROOT
 from validate_exwas_result_table import validate_csv
 from validate_public_site_payload import validate_association_payload
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PRIVATE = Path(os.environ.get("LOCALAPPDATA", Path.home())) / "CHARLS_ExWAS_Atlas"
+PRIVATE = PRIVATE_ROOT
 DEFAULT_OUTPUT = ROOT / "site-prototype" / "dist" / "association_results_v1.json"
 FAMILY_RE = re.compile(r"^([A-Za-z0-9_.-]+);K=([1-9][0-9]*)$")
 OPAQUE_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.:-]{2,63}$")
