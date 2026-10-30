@@ -1730,4 +1730,3 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Reconciled the protected server metadata-only intake log with the official 2015 Blood Release Note. The released file header contains 13,420 rows and all 20 expected fields; the official note distinguishes 13,420 total blood collection participants from 13,013 in the cross-sectional sample.
 - Documented that `Blood_weight` is a Wave 3-specific cross-sectional blood weight based on individual cross-sectional weights and a blood-response probability factor, capped at the 99th percentile. Do not treat file row count as analysis N or combine this weight mechanically with Wave 1 `bloodweight`.
 - Updated the older inventory note to mark its 2026-10-24 “file absent” statement as historical. Metadata admission is not analytic/design approval; no participant values or associations were read/fitted, and Wave 3 still needs separate source, target-frame, PSU/variance and methods review.
-
