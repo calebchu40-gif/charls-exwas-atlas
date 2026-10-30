@@ -3,6 +3,7 @@
 - Added a staged Wave 1 execution plan with concrete exit criteria for estimand freeze, outcome rules, the 105-coefficient pilot, K=240 expansion, wave-by-wave review and release.
 - Rechecked the protected server source gate using metadata/header/hash verification only: official source identity and the prepared-table hash binding pass; the gate still reports independent design review required. No participant outcomes or associations were read/fitted in this check.
 - Documented two implementation issues before the pilot: historical age-target text conflicts (full blood frame vs. 45+ domain), and the legacy 105-runner is not aligned to the current covariates/outcome rules while the current runner is for all 240 hypotheses. Neither runner was used for real-data fitting.
+- Reconciled older variance-review text with the user's explicit Option A decision: `communityID` unstratified WR Taylor is now the working choice, while the independent methods review remains pending and the approximation limitations remain explicit.
 
 # 2026-10-30 Authorize the next Wave 1 gated work block
 

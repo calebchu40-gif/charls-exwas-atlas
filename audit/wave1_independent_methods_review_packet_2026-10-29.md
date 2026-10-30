@@ -4,6 +4,8 @@
 
 **状态：当前审阅候选待独立调查抽样/生物统计审阅；未获模型运行或结果发布批准。**
 
+**用户决策补记（2026-10-30）：**用户已选择方案 A，即 `communityID` PSU、未指定未发布 strata 的 with-replacement Taylor 近似。本文此前所述“方差方法尚无选定方案”是较早状态，现由用户决策更新为“已选工作规格、独立方法审阅未通过”。不再把县级 ID 前缀作为待选主方案。该选择不补齐 CHARLS 未发布的完整分层/最终子 PSU 映射，也不构成独立方法批准。当前执行计划把下界年龄区间≥45设为主 domain 候选、全血检观察样本及上界规则作预设敏感性；年龄估计目标仍需与完整血检权重目标及配对完整案例解释一起审阅后冻结。
+
 **2026-10-30 方差审阅状态更正：**此前曾把 `communityID` 单层 WR Taylor 近似列为首要待审方案；现撤回该候选排序。CHARLS 论坛管理员的答复只提供一般性意见，没有为本估计量指定聚类层级，也未认可父社区键作为最终 PSU 的替代。官方设计仍包含县级 PPS/排序分层、社区 PSU 和30个拆分社区的子 PSU；现有公开发布资料未提供完整最终 PSU 映射及方差分层。因此县级前缀与父社区 `communityID` 仅可并列交由独立方法审阅，均未被选定、批准或证明能复现完整设计。
 
 **本材料的现行方案更正：**下方旧段落曾把 age≥45、Harmonized CHARLS D 年龄和 `communityID` 单层聚类写作当前方案；这些属于历史探索运行或旧候选，不能用于当前 readiness 文件。当前目标人群审阅候选为官方完整 Wave 1 血检目标（主访者及配偶）与 `bloodweight`，45+作为次级 survey domain；年龄来自官方 DOB/访谈时间，区间构造及上下界敏感性仍待审阅。方差方法尚无选定/批准方案，县级前缀和父社区聚类均须并列评估并明确其未建模抽样阶段。当前准入证据与门槛见本页及 [`wave1_biomarker_estimand_age_recommendation_2026-10-30.md`](wave1_biomarker_estimand_age_recommendation_2026-10-30.md)、[`wave1_variance_review_recommendation_2026-10-30.md`](wave1_variance_review_recommendation_2026-10-30.md)。
