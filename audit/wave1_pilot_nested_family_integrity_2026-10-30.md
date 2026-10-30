@@ -1,6 +1,6 @@
 # Wave 1 pilot nesting and family integrity
 
-**Date:** 2026-10-30  
+**Date:** 2026-10-30
 **Scope:** Tracked hypothesis registry only; no CHARLS participant data or private QA were read.
 
 ## Result

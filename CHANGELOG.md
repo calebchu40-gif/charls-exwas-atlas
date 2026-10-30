@@ -1725,4 +1725,3 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Extended the metadata-only K150/K90 registry audit to require exactly 105 `prior_pilot_overlap=yes` rows, all nested in K150 and matching the seven prespecified `i017`/`i022` contrasts across the 15 phenotypes; K90 rows must remain outside the pilot. The audit now also requires explicit yes/no overlap labels and accounts for the remaining 135 planned scale-up rows.
 - Re-ran the structural audit: 240 unique planned rows, 105 pilot-overlap rows, 135 non-pilot rows, pilot nested in K150, and K90 disjoint. All hypotheses remain unapproved; the script reports `model_approved=false` and `association_results_created=false`.
 - This is a registry-integrity check only. It reads no CHARLS participant data or private QA and does not satisfy the independent methods review or authorize real-data models.
-
