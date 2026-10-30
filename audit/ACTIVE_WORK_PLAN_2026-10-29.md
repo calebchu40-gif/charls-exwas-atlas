@@ -168,7 +168,7 @@
 
 ### 2026-10-30 Wave 1 官方计数口径
 
-基线指南的访谈总数为 17,708；Table 4 的 17,587 是排除缺年龄、性别或户籍者后的描述表子集，不能作为完整分析框。这个官方 121 人表格差额与受保护 ID-only 文件核对中 Weight 到人口学主表的 3 人链接差异分别记录；后者仍待解释，但三人不在 Blood 文件。详见 [`wave1_official_denominator_interpretation_2026-10-30.md`](wave1_official_denominator_interpretation_2026-10-30.md)。这只澄清分母语义，不解除目标年龄、PSU/方差和独立方法审查门。
+基线指南的访谈总数为 17,708；Table 4 的 17,587 是排除缺年龄、性别或户籍者后的描述表子集，不能作为完整分析框。这个官方 121 人表格差额与受保护 ID-only 文件核对中 Weight 到人口学主表的 3 人链接差异分别记录；后者仍待解释，但三人不在 Blood 文件。已将 17,587 的表格子集及排除脚注加入受保护分母核对器，并用官方来源绑定的 ID/权重/PSU-only 审计重跑；私有报告现在将“完整访谈总数差额”作为明确字段名。详见 [`wave1_official_denominator_interpretation_2026-10-30.md`](wave1_official_denominator_interpretation_2026-10-30.md)。这只澄清分母语义，不解除目标年龄、PSU/方差和独立方法审查门。
 
 ## 不可跳过的决策门
 

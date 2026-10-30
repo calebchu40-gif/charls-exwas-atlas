@@ -1,3 +1,7 @@
+# 2026-10-30 Bind denominator reconciliation to explicit official counts
+
+- Added the official 17,587 Table 4 complete-demographic subset and its exclusion note to the protected Wave 1 reconciliation script; renamed an ambiguous `blood_target` difference field to `baseline_interview_total`. Reran only the protected ID/weight/PSU-key reconciliation, producing aggregate counts in the private QA directory. No participant answers were read, no model or tests were run, and no gate was promoted.
+
 # 2026-10-30 Clarify Wave 1 denominator counts
 
 - Reconciled the official baseline guide's 17,708 interview total with its 17,587 Table 4 description subset; the guide says people lacking age, sex, or hukou were excluded from Table 4. Kept this 121-person published-table difference distinct from the protected ID-only 3-record Weight-to-demographic-spine link difference. This clarifies denominator semantics without treating module presence as eligibility; formal models remain blocked by design/method gates.

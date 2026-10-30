@@ -31,6 +31,12 @@ OFFICIAL_DENOMINATORS = {
             "https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf",
         ],
     },
+    "baseline_table4_complete_age_sex_hukou_description": {
+        "n": 17587,
+        "source": "CHARLS 2011 National Baseline Users' Guide, Table 4 and exclusion note",
+        "exclusion_note": "Individuals without age, gender, or hukou information are excluded from Table 4; this is not the full interview frame.",
+        "url": "https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/CHARLS_nationalbaseline_users_guide.pdf",
+    },
     "codebook_person_id_observations": {
         "n": 17705,
         "source": "CHARLS 2011 Codebook, Demographic Background: ID",
@@ -164,7 +170,7 @@ def run(data: Path, intake: Path) -> dict[str, object]:
             "ind_weight_ad2": "Individual weight with household and individual non-response adjustment (CHARLS 2011 Codebook).",
             "bloodweight": "Blood-specific weight adjusting household and individual survey non-response and blood non-participation (CHARLS Blood Data Users' Guide).",
         },
-        "prepared_frame_minus_published_blood_target": frame_rows - official_n,
+        "prepared_frame_minus_published_baseline_interview_total": frame_rows - official_n,
         "ind_weight_ad2_nonmissing_ids_match_published_target_count": individual_weight_count_matches,
         "positive_bloodweight_ids_all_match_person_frame": blood_ids_all_match,
         "bloodweight_records_match_blood_file_ids": set(blood_weight_observed_ids) == set(blood_ids),
