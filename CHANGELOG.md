@@ -1,3 +1,9 @@
+# 2026-10-30 Add protected Wave 1 pilot pair-availability audit
+
+- Added `scripts/audit_wave1_pilot_pair_eligibility.py` for the registered 105-coefficient pilot. It revalidates source provenance and the age-candidate hash, then writes exposure-group availability, outcome nonmissingness, three age-domain diagnostics, weight support and parent-community-key coverage only to protected QA storage.
+- The audit explicitly does not apply unverified laboratory validity cutoffs, does not infer fasting codes, and does not estimate associations. It marks glucose/triglyceride pairs blocked pending official Wave 1 fasting-code resolution; nonmissing outcome counts are availability diagnostics, not analytic sample sizes.
+- No participant data were included in this repository change. The script will be executed on the authorized private server and its exact output will remain private.
+
 # 2026-10-30 Clarify pilot overlap with the Wave 1 atlas family
 
 - Audited the tracked registry structure without accessing participant data: it contains 240 unique planned coefficients (150 K150 + 90 K90). The 105-coefficient pilot (`i017` and six `i022` contrasts across 15 outcomes) is contained within K150.
