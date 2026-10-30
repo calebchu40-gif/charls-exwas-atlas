@@ -1,3 +1,9 @@
+# 2026-10-30 Record post-authorization execution plan and live gate audit
+
+- Added a staged Wave 1 execution plan with concrete exit criteria for estimand freeze, outcome rules, the 105-coefficient pilot, K=240 expansion, wave-by-wave review and release.
+- Rechecked the protected server source gate using metadata/header/hash verification only: official source identity and the prepared-table hash binding pass; the gate still reports independent design review required. No participant outcomes or associations were read/fitted in this check.
+- Documented two implementation issues before the pilot: historical age-target text conflicts (full blood frame vs. 45+ domain), and the legacy 105-runner is not aligned to the current covariates/outcome rules while the current runner is for all 240 hypotheses. Neither runner was used for real-data fitting.
+
 # 2026-10-30 Authorize the next Wave 1 gated work block
 
 - Extended the scale-up runner's categorical-covariate configuration to support explicit code groups and a declared reference group, while preserving exact-level configuration. It rejects overlapping codes and missing references. This supports the provisional education grouping without row-level recoding; no grouping is approved or frozen.
