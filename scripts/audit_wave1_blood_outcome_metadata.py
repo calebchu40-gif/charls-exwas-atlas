@@ -51,6 +51,8 @@ def run(data_path: Path, blood_path: Path, output: Path) -> dict[str, Any]:
     column_label_by_name = dict(zip(names, labels, strict=True))
     variable_to_label = dict(meta.variable_to_label or {})
     value_labels = dict(meta.value_labels or {})
+    storage_types = dict(getattr(meta, "readstat_variable_types", {}) or {})
+    original_formats = dict(getattr(meta, "original_variable_types", {}) or {})
     fields: list[dict[str, Any]] = []
     for field in OUTCOME_FIELDS:
         label_set_name = variable_to_label.get(field)
@@ -58,6 +60,8 @@ def run(data_path: Path, blood_path: Path, output: Path) -> dict[str, Any]:
         fields.append({
             "field": field,
             "variable_label": column_label_by_name.get(field, ""),
+            "storage_type": storage_types.get(field),
+            "original_format": original_formats.get(field),
             "value_label_set_name": label_set_name,
             "value_label_entries": len(label_set),
             "value_labels_present": bool(label_set),
@@ -72,7 +76,7 @@ def run(data_path: Path, blood_path: Path, output: Path) -> dict[str, Any]:
         "metadata_only": True,
         "respondent_values_read": False,
         "outcome_fields_reviewed": fields,
-        "interpretation": "Header labels and value-label attachments only; no numeric outcome validity or Stata extended-missing rules are inferred from this report.",
+        "interpretation": "Header variable labels, storage types, original formats, and value-label attachments only; no numeric outcome validity or special missing-value rules are inferred from this report.",
     }
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
