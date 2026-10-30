@@ -6,6 +6,7 @@
 **2026-10-30 Wave 3 农历生日方法更新：**CHARLS维护的 `lunar2solar` 使用全变量级 `leap` 选项与分开的普通/闰月表；已审Wave 3生日路由记录农历/公历类型，但没有发现逐人闰月标记。不得对全部农历日期默认调用普通月表，也不得推断闰月。拟审候选方法是对同一有效农历日期保留普通表映射，并仅在官方闰月表存在同键时保留闰月映射，随后结合访谈年月缺少日的信息计算年龄区间；45岁domain只在区间稳定跨过阈值时分类。该法尚未做官方表格解析/运行时验证或独立年龄审查，当前年龄与真实模型门仍关闭。详见[`wave3_lunar_date_uncertainty_method_review_2026-10-30.md`](wave3_lunar_date_uncertainty_method_review_2026-10-30.md)。
 **项目目标状态：进行中**  
 **当前阶段：Wave 1 调查设计准入复核；通过现行准入的正式模型仍为 0**
+**2026-10-30 五波官方设计文件表头横向复核：**对受保护入库中 Wave 1–5 的 PSU、Sample_Infor、Weights 及血检权重文件作来源校验和 Stata 表头核对；Wave 2–5已核产品哈希匹配官方各波数据页，Wave 1按本人确认的官方来源清单及本地指纹记录。Wave 2 PSU 仍只有社区键及地理/地区描述，Wave 3–5 的样本信息/权重也未见县级方差层、复制权重或拆分社区最终 PSU 映射；Wave 5 User Guide 说明 PSU 信息与前波相同。此结果补强跨波证据，但不批准任何近似方差模型。正式关联仍为 0。详见[crosswave_official_design_header_inventory_2026-10-30.md](crosswave_official_design_header_inventory_2026-10-30.md)。
 **2026-10-30 方差审阅更新：**重新核对 CHARLS 官方抽样页后，撤下县级 ID 前缀作为“优先单层簇”的定位。官方将村/社区称为 PSU，同时另有县级系统 PPS 与分层，以及 30 个大社区的子社区抽样；2015公开发行文件未见可重建原始分层及所有拆分子 PSU 的受访者映射。县级前缀和 parent `communityID` 均不作为已验证设计变量。当前无获批的单层近似；Wave 3正式模型仍为0。详见[`charls_wave3_psu_variance_release_review_2026-10-30.md`](charls_wave3_psu_variance_release_review_2026-10-30.md)。
 **2026-10-30 Harmonized CHARLS 设计信息排查：**Gateway 当前列表为 Harmonized CHARLS D.2（Wave 1–4及2014 Life History，所述数据截至2021），CHARLS 下载页仍列公开 D 版；Gateway D.2 行没有 Codebook 下载链接，旧 codebook 路径当前返回 soft 404。故 D.2 是否增加 Wave 3 PSU/分层字段仍未知，不能据旧 D 版、Harmonized 权重、年龄或地理字段推断。SAGE+ 文献只作为历史旁证。后续只有取得 D.2 实际版本化 Codebook/创建说明后才能重开这一设计来源审查；当前方差门及零模型状态不变。详见方差审阅 memo。
 

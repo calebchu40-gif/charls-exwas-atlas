@@ -1538,3 +1538,6 @@ This file records project-level changes that affect reproducibility, methods, da
 # 2026-10-30 Record official 2011 Codebook archive access route
 
 - Found the CHARLS 2011 baseline Codebook archive entry in the Peking University Open Research Data Platform (version 1.1; platform-reported MD5 recorded in the source review). The file page requires account access; the archive was not retrieved or inspected, and no fasting code was inferred. Updated the source inventory and Wave 1 fasting-code review; the measurement gate remains open.
+# 2026-10-30 Cross-wave survey-design source inventory
+
+- Added a public-safe audit of official Wave 1–5 PSU, Sample_Infor, Weights, and relevant Blood archive checksums and metadata headers. Wave 5 documentation says PSU information is unchanged from previous waves; no reviewed file header supplies the missing county-stage variance strata, replicate weights, or split-sub-PSU respondent map. This is source evidence only: no variance estimator or association model is approved.
