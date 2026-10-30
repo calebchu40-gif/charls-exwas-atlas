@@ -62,3 +62,10 @@
 ## 依据与待补证据
 
 项目内部证据：`audit/covariate_modeling_strategy_v1.md`、`audit/household_ses_candidate_review_v1.md`、`audit/survey_design_weight_review_v1.md`、`audit/pilot_2011_water_biomarker_plan_and_gates_2026-10-26.md`及受保护目录中的`covariate_candidate_availability_v1.csv`。官方 Wave 1 血检目标与 `bloodweight` 用法已有来源支持；完整分析框、45+子域、年龄区间方法、方差设计、字段级缺失与有效值规则仍未全部审定。DAG仍是变量角色候选，既未冻结也未开放模型门禁。官方目标来源：[CHARLS 2011 Blood Sample Users' Guide](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf)；[CHARLS Sample design](https://charls.pku.edu.cn/en/About/Sample.htm)。
+
+## 2026-10-30 执行口径补充（仍待审阅，不是冻结）
+
+- 分清目标总体和可观测样本：官方血检目标为基线主受访者与配偶；指南报告17,708人目标及11,847份血样。拟用于血液模型的 survey rows 是 Blood 发布中有限正 `bloodweight` 的实际受访者；不得把未提供血液结局的非应答者补成观测记录。`bloodweight` 的适用性和观察样本权重诊断仍须按配对审阅。
+- 本项目当前执行草案把年龄区间下界达到45岁的 domain 作为主分析候选，把年龄区间上界 domain 和全部观察血样受访者作为预设敏感性。它与本 DAG 第一版“45+仅作次级domain”的旧建议不同；旧建议不再自动支配执行计划。年龄 interval midpoint 只作为模型协变量候选，须与domain规则分开实现，并在冻结前说明区间跨45岁者的归属。
+- 模型调整集按本 DAG 重新对齐：年龄非线性项、性别、教育和经来源核验的 `urban_nbs` 是候选核心混杂/情境因素。此前“主模型只放年龄/性别、教育和城乡只作扩展敏感性”的执行草案没有充分反映该 DAG，现不作为冻结规格。教育路由/有效类别、城乡字段链接、完整案例目标仍需变量级核验。M2只增加有明确时间顺序和问题依据的预设候选；SES金额、迁移、吸烟饮食、BMI、疾病和治疗不自动进入通用调整集。
+- 本补充只校正目标总体/观察样本和模型候选之间的文件不一致；没有读取参与者结局、没有拟合关联，也没有把用户选择的 Option A 误称为 CHARLS 完整设计。年龄domain、协变量、方差及方法审阅仍未冻结。
