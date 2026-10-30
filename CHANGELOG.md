@@ -1574,3 +1574,7 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 # 2026-10-30 Recheck the latest public CHARLS data release boundary
 
 - Rechecked the live official data index and 2024–2025 news archive. The latest listed national-wave public release remains 2020 CHARLS Wave 5; 2021–2023 fieldwork/recruitment pages do not establish a public microdata release. Clarified the five-wave scope and the need to show survey year plus release version where “Wave 5” could be ambiguous. No participant data used.
+
+# 2026-10-30 Correct latest-wave link in the public site
+
+- Fixed the objective-measurement note's official-source link, which had pointed to the 2011 page despite describing the 2020 Wave 5 release. Updated its verification date to 2026-10-30. No catalog payload or association results changed; the GitHub Pages workflow checks the public bundle before deployment.
