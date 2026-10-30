@@ -161,3 +161,7 @@ A source review of Blood Users' Guide Tables 4/5 confirms that descriptive stati
 ### 2026-10-31 — pair-level community support diagnostics
 
 The private pair-availability audit now includes, for each registered contrast and provisional age domain, community cluster coverage by contrast arm, communities supporting both arms, and single-record versus multi-record clusters under the nonmissing-outcome availability mask. These fields aid the user-selected communityID WR Taylor design review but do not validate the variance estimator or determine model readiness. Finite-code validity rules remain unapplied; exact counts remain private.
+
+### 2026-10-31 — finite design masks and contrast-arm PSU diagnostics
+
+The pair audit now requires finite positive bloodweight and a finite, non-reversed age interval for domain inclusion, and finite outcome availability for complete-case support. It also reports community coverage separately for each contrast arm, communities with both arms, and single/multiple-record communities. A private aggregate view indicates that some rare exposure arms have appreciably fewer contributing communities than reference groups; the proposed cluster threshold has not been frozen and no hypothesis is automatically dropped. The independent reviewer must assess these support patterns under the explicitly approximate communityID WR Taylor design. All counts stay private; no coefficients were fitted.

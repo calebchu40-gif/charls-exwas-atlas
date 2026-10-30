@@ -16,6 +16,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+import numpy as np
 import pandas as pd
 import pyreadstat
 
@@ -134,19 +135,23 @@ def run(data_path: Path, intake: Path, output: Path) -> dict[str, Any]:
     weight = pd.to_numeric(joined["bloodweight"], errors="coerce")
     lower = pd.to_numeric(joined["age_at_interview_lower"], errors="coerce")
     upper = pd.to_numeric(joined["age_at_interview_upper"], errors="coerce")
+    weight_valid = weight.notna() & np.isfinite(weight) & weight.gt(0)
+    age_interval_valid = (
+        lower.notna() & np.isfinite(lower) & upper.notna() & np.isfinite(upper) & lower.le(upper)
+    )
     community = joined["communityID"].astype("string").str.strip().replace({"": pd.NA, "nan": pd.NA})
     bases = {
-        "blood_target": weight.gt(0),
-        "primary_age_lower_bound_45plus": weight.gt(0) & lower.ge(45),
-        "age_upper_bound_45plus_sensitivity": weight.gt(0) & upper.ge(45),
+        "blood_target": weight_valid,
+        "primary_age_lower_bound_45plus": weight_valid & age_interval_valid & lower.ge(45),
+        "age_upper_bound_45plus_sensitivity": weight_valid & age_interval_valid & upper.ge(45),
     }
     rows: list[dict[str, Any]] = []
     for spec in coefficients:
         exposure = pd.to_numeric(joined[spec["exposure_field"]], errors="coerce")
         outcome = pd.to_numeric(joined[spec["phenotype_field"]], errors="coerce")
         contrast = exposure.isin([spec["exposure_code"], spec["reference_code"]])
-        nonmissing_outcome = outcome.notna()
-        analyte_fast_sensitive = spec["phenotype_concept_id"] == "blood_glucose"
+        nonmissing_outcome = outcome.notna() & np.isfinite(outcome)
+        analyte_fast_sensitive = spec["phenotype_concept_id"] in {"blood_glucose", "blood_triglycerides"}
         for domain_name, base in bases.items():
             mask = base & contrast
             complete = mask & nonmissing_outcome
@@ -183,7 +188,6 @@ def run(data_path: Path, intake: Path, output: Path) -> dict[str, Any]:
                 "positive_weight_rows_missing_parent_community": int((complete & community.isna()).sum()),
                 "fasting_mapping_status": (
                     "source_mapping_verified_measurement_handling_unresolved" if analyte_fast_sensitive
-                    else "candidate_all_samples_pending_methods_review" if spec["phenotype_concept_id"] == "blood_triglycerides"
                     else "not_flagged_as_fasting_dependent_by_current_plan"
                 ),
                 "estimability_status": "availability_only_not_model_estimability",
@@ -213,6 +217,7 @@ def run(data_path: Path, intake: Path, output: Path) -> dict[str, Any]:
         "pair_rows_private": rows,
         "limitations": [
             "Pair counts describe data availability only; they are not final analytic N.",
+            "Domain masks require finite positive bloodweight and a finite non-reversed age interval; outcome availability requires a finite value but does not apply finite sentinel or validity rules.",
             "Nonmissing outcome values are not assumed clinically valid; no distribution-derived rule or assay range was used as an exclusion cutoff.",
             "Positive bloodweight and released parent-community keys do not approve a variance estimator or resolve split sub-PSUs.",
             "Contrast-arm and singleton-cluster counts are based on nonmissing outcome availability only; they are not based on frozen valid-value rules and do not approve WR Taylor variance.",

@@ -149,3 +149,5 @@ Wave 1 执行器对测量协议未解决的结局返回 `blocked_by_unresolved_m
 - Re-read the official Blood Users' Guide Table 4/5 headers: the descriptive statistics are weighted but the reported N column is unweighted. Extended the private range-reconciliation workflow to compare published per-analyte N separately from range endpoints; these remain diagnostics only.
 
 - Extended the private pilot pair audit with communityID availability support by contrast arm and single/multiple complete-case records per cluster, within each provisional domain. This adds diagnostics for the chosen approximate design without treating support counts as estimator approval or model N.
+
+- Hardened the private pair audit against nonfinite weights/outcomes and invalid age intervals, and added community-cluster support by contrast arm. Private diagnostics identify sparse exposure-arm support in some candidate contrasts; this is recorded for independent review without imposing an unapproved 30-PSU cutoff or dropping pairs.

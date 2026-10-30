@@ -1852,3 +1852,9 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Extended the protected 105-pair availability audit with community-cluster counts for each contrast arm, clusters containing both arms, and clusters with one or multiple nonmissing-outcome records, by provisional domain.
 - These are availability-only diagnostics under the current positive-weight/domain/nonmissing-outcome mask. They do not apply finite-code validity rules, establish estimability, or approve the user-selected WR Taylor approximation.
 - Exact pair-level counts remain private; no participant IDs or association estimates are written.
+
+# 2026-10-31 Tighten pair-availability masks and interpret cluster support
+
+- Defined blood eligibility as finite positive `bloodweight`; age domains now require a finite non-reversed interval; outcome availability requires finite observations. This prevents infinities or invalid intervals from being counted as available.
+- Added contrast-arm and singleton/multiple-community support metrics for each pair/domain. A private aggregate review shows that some rare exposure arms are supported by substantially fewer communities than the reference group; no 30-community cutoff is assumed, and no hypothesis is excluded from this diagnostic. The independent reviewer must assess whether the support is adequate for the planned WR Taylor approximation.
+- Corrected fasting status for both glucose and triglycerides to distinguish source-supported code mapping from unresolved estimand/handling. No associations fitted; finite sentinel rules remain unresolved.
