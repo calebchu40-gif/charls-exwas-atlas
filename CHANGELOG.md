@@ -10,6 +10,12 @@
 - Recorded the separate unresolved issue for community-module exposures: split communities contain repeated parent-community rows, and respondent records lack the sub-community key. A parent-key join cannot assign a unique sub-community exposure. Those pairs remain unresolved pending an official crosswalk or independently reviewed aggregation rule.
 - No participant answers, models, or tests were used in this documentation update. Formal approved association models remain 0.
 
+# 2026-10-30 Audit community-exposure consistency for split parents
+
+- Added a source-hash-bound, local-only aggregate audit for the Wave 1 Community module. It checks each catalogued community exposure field for consistency/nonmissingness across repeated parent-community records, without reading the respondent spine or blood file and without writing IDs or field values.
+- The protected QA partitions fields into value-consistency candidates versus unresolved conflicts/missingness. Exact field codes and counts remain only in the access-controlled local report; the public commit contains the audit code and method, not the protected report.
+- Equality is only a merge-ambiguity screen, not evidence that an item represents the whole parent community or is eligible for a model. No associations or tests were run; formal approved association models remain 0.
+
 # 2026-10-30 Correct Wave 1 variance-candidate ranking
 
 - Retracted the previous elevation of `communityID`-only WR Taylor as the first candidate for review. The CHARLS forum response is general and does not endorse a PSU level for this estimand; the official design describes nested county/community stages and split communities, while the released materials reviewed here do not provide the full variance mapping. The current review packet now treats county-prefix and parent-community approximations as unselected options for parallel expert assessment. Analysis gates remain closed and formal association models remain 0.
