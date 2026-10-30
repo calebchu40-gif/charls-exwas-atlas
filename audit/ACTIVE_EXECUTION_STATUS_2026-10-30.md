@@ -133,3 +133,7 @@ Wave 1 执行器对测量协议未解决的结局返回 `blocked_by_unresolved_m
 ## 2026-10-30 — 官方 Codebook 对 Blood 结局编码的适用边界
 
 对官方 Wave 1 National Baseline Codebook 作目录/字段名定向复核：该 Codebook 的 Biomarkers 部分记录体检问卷项目（包括 Stata 扩展缺失类别），不包含本试点15个 Blood 化验字段或 bloodweight。官方 Wave 1 页面把 Codebook 与 Blood Users' Guide 分列；因此前者中问卷变量的缺失惯例不能替代 Blood 专属规则。新审计说明 `audit/wave1_blood_codebook_scope_2026-10-30.md` 记录来源边界与不作推断的规则。真实模型门禁仍关闭；未访问参与者化验值、未拟合关联。
+
+## 2026-10-30 — Blood Guide 原文页面复核
+
+对原始 Blood Users' Guide 的样本权重/测量页作视觉核查，明确 `bloodweight` 的血检不应答目标、IPW预测因子和99分位截尾；权重依赖选择可由观测变量解释的假设，但不含已证明的fasting-selection校正。Guide报告约8%血样非空腹、血糖测量状态可能影响水平；提出的全样本测量状态调整和条件性敏感性仍只是待审估计量。Guide将assay检测限、描述性观察范围和密度图省略少数极端值区分开，均不构成本项目的删除规则；cystatin C为特定年龄抽样。审计文档 `audit/wave1_blood_guide_weight_measurement_review_2026-10-30.md` 记录原页锚点和模型限制。无个体值访问、无关联拟合。

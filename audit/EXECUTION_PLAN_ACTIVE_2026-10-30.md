@@ -141,3 +141,7 @@
 ### 2026-10-30 — 2011 Codebook 与 Blood 化验字段适用范围
 
 官方 CHARLS Wave 1 页面和北大 Open Research Data Platform 将 National Baseline Codebook（file 120）与 Blood 文件（file 201）及 Blood Users' Guide 分开发布。2011 Codebook 的 Biomarkers 章节涵盖体检/问卷类项目并可见 `.D/.E/.R` 等扩展缺失类别，但文本不含本项目登记的15个 Blood 化验字段或 `bloodweight`。因此不得把问卷字段的负值/扩展缺失编码惯例外推到连续血检结果。针对 Blood 的有限数值特殊码和有效域，仍需 Blood 专属来源或具文档的独立审阅；不按 assay 检测信息、临床切点或样本分布擅自改码/筛除。详情见 [`wave1_blood_codebook_scope_2026-10-30.md`](wave1_blood_codebook_scope_2026-10-30.md)。这项来源范围核查不解锁任何结局或模型。
+
+### 2026-10-30 — Blood Users' Guide 原页复核：权重和测量条件
+
+原始 Guide 第8–9页说明血检目标为基线主受访者及配偶，`bloodweight` 结合个人权重与预测血检参与概率的逆概率权重，模型含村级虚拟变量、年龄、性别及交互、教育，IPW在99分位截尾；作者明确指出需依赖较强的可观测选择假设。该证据支持将 `bloodweight` 作为血检结局候选权重，但不提供完整方差结构，也没有说明校正空腹状态选择。第11页称约8%样本非空腹且血糖可能偏高；因此全血样本测量条件调整与空腹条件敏感性可作为候选，后者不能仅凭 `bloodweight` 声称恢复代表性。Guide第6页的assay detection limits、Table 4/5观察范围及仅在密度图中省略少数极端值是不同概念；不把它们当删除阈值。第12页还确认cystatin C为年龄分层子样本。逐页来源及估计量限制见 [`wave1_blood_guide_weight_measurement_review_2026-10-30.md`](wave1_blood_guide_weight_measurement_review_2026-10-30.md)。所有候选仍待冻结/独立方法审阅，未读取个体值或运行模型。

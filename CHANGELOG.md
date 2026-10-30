@@ -1817,3 +1817,8 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - The 15 outcome rules and independent methods/readiness gates remain pending; no CHARLS associations were fitted.
 - Verified the repository file-boundary validator locally; this does not replace the automatic GitHub CI workflow.
 
+# 2026-10-30 Reconcile Wave 1 blood weights and assay guidance
+
+- Added a visually reviewed, source-bound audit of the CHARLS Blood Users' Guide pages on target/response, `bloodweight` construction, fasting status, assay limits, descriptive ranges, and cystatin C subsampling.
+- Refined the candidate estimand: `bloodweight` corrects household/individual nonresponse and blood-collection nonparticipation under a selection-on-observables assumption; it is not documented as correcting fasting-status selection or as a full variance specification.
+- Kept glucose/TG handling, age-domain interpretation, finite special-code handling, and approximate variance pending independent methods review; no CHARLS association was fitted.
