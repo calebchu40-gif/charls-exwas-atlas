@@ -123,6 +123,23 @@ def audit(intake: Path, prepared_data: Path, output: Path) -> dict[str, object]:
     if not weight_only_ids:
         raise ValueError("This reconciliation expected positive-weight IDs outside the prepared frame")
 
+    blood_cols = columns(blood)
+    if "id" not in blood_cols or "bloodweight" not in blood_cols:
+        raise ValueError("Official Blood file lacks ID or bloodweight")
+    blood_frame, _ = pyreadstat.read_dta(
+        str(blood), usecols=[blood_cols["id"], blood_cols["bloodweight"]]
+    )
+    blood_ids = normalize_key(blood_frame[blood_cols["id"]])
+    blood_weights = pd.to_numeric(blood_frame[blood_cols["bloodweight"]], errors="coerce")
+    if blood_ids.isna().any() or blood_ids.duplicated().any():
+        raise ValueError("Official Blood respondent IDs must be nonmissing and unique")
+    weight_only_in_blood = weight_only_ids & set(blood_ids.astype(str))
+    weight_only_with_positive_bloodweight = weight_only_ids & set(
+        blood_ids[blood_weights.gt(0)].astype(str)
+    )
+    weight_only_not_in_blood = weight_only_ids - set(blood_ids.astype(str))
+    weight_only_in_blood_without_positive_weight = weight_only_in_blood - weight_only_with_positive_bloodweight
+
     module_reports = []
     weight_only_ids_found_in_other_modules: set[str] = set()
     for module_path in protected_rar_modules(archive):
@@ -155,8 +172,12 @@ def audit(intake: Path, prepared_data: Path, output: Path) -> dict[str, object]:
         "prepared_data_sha256": sha256_file(prepared_data),
         "person_spine_module": "demographic_background",
         "positive_weight_only_id_count": len(weight_only_ids),
+        "weight_only_ids_present_in_blood_records": len(weight_only_in_blood),
+        "weight_only_ids_with_positive_bloodweight": len(weight_only_with_positive_bloodweight),
+        "weight_only_ids_not_in_blood_records": len(weight_only_not_in_blood),
+        "weight_only_ids_in_blood_without_positive_bloodweight": len(weight_only_in_blood_without_positive_weight),
         "weight_only_id_values_emitted": False,
-        "participant_fields_read": ["ID", "ind_weight_ad2"],
+        "participant_fields_read": ["ID", "ind_weight_ad2", "bloodweight"],
         "exposure_or_outcome_fields_read": False,
         "module_reports_private_only": True,
         "person_module_summaries": module_reports,
