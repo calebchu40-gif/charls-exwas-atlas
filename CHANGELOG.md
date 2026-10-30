@@ -1775,3 +1775,9 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 
 - Followed up the Wave 3 outcome candidates against the locally archived official 2015 Codebook, not only the Stata variable labels: it directly documents `bl_fasting` 1=Yes/2=No and `bl_top_coding_tg` 0=No/1=Yes. The Codebook is listed on the CHARLS Wave 3 page with its posted SHA-1.
 - Updated the Wave 3 candidate table and review note with the official code mappings. They remain Wave 3-only; no inference is carried to Wave 1 `qc1_va003`. The capped TG estimand decision, design gate, and independent review remain unresolved; no model was run.
+
+# 2026-10-30 Resolve the Wave 1 fasting status code source mapping
+
+- Linked the official CHARLS 2011 Fieldwork Plan Appendix 2 coding (1=Yes, 2=No) to the Wave 1 Blood header label for `qc1_va003` (`Fasting`); no participant values were read.
+- Updated the private glucose/triglyceride draft handling to a fasting-only primary candidate plus an all-observed-blood sensitivity with fasting covariate. This remains draft-only; target estimand, `bloodweight` applicability, finite outcome codes, model freeze and independent review remain unresolved, so all 14 coefficients remain blocked and no association was fitted.
+- Added a source reconciliation audit and corrected older execution-queue wording. The private review packet and logs remain owner-only on the server; no restricted results were published.

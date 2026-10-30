@@ -6,7 +6,7 @@
 
 ## 来源核对结论
 
-1. CHARLS 2011 Blood Users' Guide 的采血说明（印刷页4）写明调查要求过夜空腹，但非空腹样本仍会采集且空腹状态会记录；同一指南提示非空腹样本的血糖可能偏高。Wave 1 字段 `qc1_va003` 的数值编码仍未在已核对的官方 Codebook、用户指南或 Stata 表头中找到可追溯映射。因此不能构造葡萄糖空腹限制，也不能将 Wave 3 编码移植到 Wave 1。
+1. CHARLS 2011 Blood Users' Guide 的采血说明（印刷页4）写明调查要求过夜空腹，但非空腹样本仍会采集且空腹状态会记录；同一指南提示非空腹样本的血糖可能偏高。Guide/Codebook 本身没有给出 `qc1_va003` 数值码，但新增来源链已补齐映射：受控 Wave 1 Blood header 将 `qc1_va003` 标注为 “Fasting”，官方 2011 Fieldwork Plan 附件2把“是否空腹”编码为1=是、2=否。该映射经来源核对，不是 Wave 3 编码迁移。fasting-only 主分析候选尚未独立批准。
 2. 指南表1（印刷页6）把化学分析的数值列为**assay detection limits**；它不是个体观测的有效范围、排除阈值、截尾规则或临床诊断界值。指南第6节（印刷页12–13）还说明部分密度图省略了少数极端观测，但没有列出观测、算法或可复现删值规则。故不得把表1范围当作筛除上下限，也不得凭样本分位数删值/winsorize。
 3. Wave 1 Blood 文件头信息与已审核资料未提供这些指标的附属值标签/可执行有限特殊值映射。Stata 扩展缺失须继续按缺失处理；表头中缺少标签不等于证明不存在有限数值型特殊码。仅凭 assay 范围、观察分布或常用临床阈值不能批准一个有限值域。
 4. 指南说明胱抑素 C 采取年龄分层子样本检测（70岁及以上全测、较年轻者随机抽取；印刷页12），而可用资料未证明当前 `bloodweight` 同时校正该检测子抽样。因此 blood_cystatin_c 不纳入这 15 项全样本假设族。该决定与登记簿一致；15 项不是把所有可见生物指标无条件全纳入。
@@ -57,7 +57,7 @@ Blood Users' Guide 印刷第12页依据其加权密度图描述：总胆固醇�
 | CBC：白细胞、血红蛋白、红细胞压积、MCV、血小板 | Guide 未用上述密度图分类这些 CBC 结局 | 原始单位的 identity；模型若采用标准化系数，另保留可解释的原单位摘要 | 暂不根据关联结果另选 log/分段变换 | 不以临床阈值或指南 assay 范围删值/分组；需完成 Stata 特殊缺失规则审阅 |
 | 相对对称的血液分析物：总胆固醇、HDL、LDL、尿酸 | Guide 描述为均值/中位数较接近、密度较相对对称 | 原始单位 identity | 关联前没有来源理由要求 log；如审阅人要求其他尺度，须单独说明依据并冻结 | 这只是相对分布描述，不证明回归残差正态或线性关系 |
 | 右偏分析物：CRP、HbA1c、BUN、肌酐 | Guide 描述为右偏 | 原始单位 identity 作为可比的首选候选 | 自然对数尺度作为预先指定敏感性候选，仅在有效值规则完成且所有纳入值严格为正时考虑 | 不用 log 可行性倒推排除零/负值；不使用 assay detection range 作删值界限；若 log 前提不满足则该敏感性不适用并记录，不改主分析样本 |
-| 血糖、甘油三酯 | Guide 描述为右偏/可能受空腹状态影响 | 暂不可估计 | `qc1_va003` 官方编码及规则审阅前不进行任一尺度模型 | 14个登记系数均保持 `blocked_by_unresolved_measurement_rule` |
+| 血糖、甘油三酯 | Guide 描述为右偏/可能受空腹状态影响 | 原始单位 identity | fasting-only (`qc1_va003==1`) 主分析候选；全部观察血样加二元 fasting 协变量为敏感性候选，均须审阅估计目标和权重适用性 | 14个登记系数仍未获准拟合；映射已来源核实，有限特殊码与方法审阅仍待完成 |
 
 该矩阵仅把 Guide 中的先验分布描述转化为可审阅的尺度候选，不代表变量有效值已确认、模型已准入或任何系数已拟合。任何对数敏感性需要在查看暴露—结局关联之前冻结，并作为明确的敏感性分析报告；如果进行推断，必须预先说明其多重检验家族，不能把其 p/q 混入 K=240 主要结果或按显著性挑选最终尺度。
 
@@ -65,6 +65,7 @@ Blood Users' Guide 印刷第12页依据其加权密度图描述：总胆固醇�
 
 - CHARLS, *Blood Data Users' Guide*: 采血与空腹说明印刷页4；方法和检测限表印刷页6；结果/极端值、HbA1c 与胱抑素 C 子样本说明印刷页12–13。项目归档件：[`sources_official/CHARLS_2011_Blood_User_Guide.pdf`](../sources_official/CHARLS_2011_Blood_User_Guide.pdf)；可检索文本：[`sources_official/CHARLS_2011_Blood_User_Guide_extracted.txt`](../sources_official/CHARLS_2011_Blood_User_Guide_extracted.txt)。
 - Wave 1 原始变量名/单位的项目映射：[`blood_biomarker_crosswalk_v1.csv`](blood_biomarker_crosswalk_v1.csv)。这一映射本身不是有效值或模型准入批准。
+- Wave 1 空腹字段/编码来源对账：[`wave1_fasting_code_source_reconciliation_2026-10-30.md`](wave1_fasting_code_source_reconciliation_2026-10-30.md)。这核实字段来源与1/2编码，不批准估计量或运行模型。
 - 历史外部背景（不构成当前分析规则）：EAS/EFLM joint consensus, [*Fasting is not routinely required for determination of a lipid profile*](https://eas-society.org/wp-content/uploads/2022/05/2016_Consensus-lipid-profile-fasting.pdf)。此前曾引用该共识支持甘油三酯非空腹候选；该候选已被当前用户决定撤销。此一般临床共识不能替代 CHARLS Wave 1 `qc1_va003` 官方编码、研究估计目标或独立审阅，也不解锁甘油三酯模型。
 
 ## 审阅状态

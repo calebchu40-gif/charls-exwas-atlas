@@ -1,7 +1,7 @@
 # Wave 1 空腹变量编码来源复核
 
 **日期：2026-10-29**  
-**状态：官方来源说明变量存在，但本次检索未找到官方数值代码映射；分析门继续关闭。**
+**状态：本文件记录2026-10-29当时的检索结论；数值映射后来由2026-10-30新增官方 Fieldwork Plan + Wave 1 Blood header 证据补齐。当前来源映射支持1=是、2=否，但分析门仍因估计量/权重、结局规则和独立方法审阅未通过而关闭。**
 
 ## 复核问题
 
@@ -43,13 +43,17 @@ Blood 数据中的 `qc1_va003` 表示采血时是否空腹。拟定的105项试�
 - CHARLS 官方2015 CodeBook（本地官方来源归档）中的 `bl_fasting` 值标签，作为相邻波次比较；不可直接外推到2011。
 - 第三方线索：[CHARLS 常规血液检测变量索引](https://www.dbcodebook.cn/nodes/post/56/)（非官方，仅检索线索）
 
+## 2026-10-30 新增官方映射补充
+
+官方 CHARLS 2011 Fieldwork Plan 的附件2“静脉血样采集和处理记录表”将“是否空腹”编码为1=是、2=否；Wave 1 Blood 文件头将 `qc1_va003` 的字段标签记录为 “Fasting”。两项独立的来源证据共同支持字段和数值码映射。文档来源、MD5复核、受保护存储位置及边界见[`Wave 1 fasting source reconciliation`](wave1_fasting_code_source_reconciliation_2026-10-30.md)。这只解除“编码未知”，不自行决定fasting-only估计目标/血液权重适用性，也不批准14个相关系数拟合；它们仍须通过有限特殊码、模型冻结及独立方法审阅门。
+
 ### 2026-10-30 official physical-examination questionnaire clarification
 
 The official CHARLS Wave 1 page links a separate `Physical examination questionnaire` (`https://charls.charlsdata.com/Public/ashelf/public/uploads/document/public_documents/application/Biomarker-manual-2011.doc`; listed on the [official Wave 1 data page](https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html)). I retrieved and reviewed that source. It contains item `LI875`, asking whether the respondent smoked, exercised, consumed alcohol, or ate food within 30 minutes before the **blood-pressure test** (documented options 1=Yes, 5=No, 8=Don't Know). This is a pre-measurement behavior item for blood pressure, not the blood-collection fasting-status variable `qc1_va003`; its codes must not be transferred or used as a proxy for fasting status. The questionnaire contains no `qc1_va003` mapping. The source DOC is archived at `sources_official/CHARLS_2011_Physical_Examination_Questionnaire.doc` (SHA-256: `5D269E24409F0C2BCC1910BBC483498440FDDA26069AF03BFF2C5379181C71D2`). This adds an explicit guard against conflating short-term measurement context with blood fasting status and does not unlock any models.
 
 ### Official Dataverse inventory follow-up (2026-10-30)
 
-The CHARLS 2011 baseline Dataverse separately lists `Medical-questionnaire-2011.doc` as file 138 (platform MD5 `d1f9351dff8bdadb0d1f692ff58b75c6`), distinct from the CHARLS-page-linked `Biomarker-manual-2011.doc`/Physical Examination Questionnaire reviewed above. The Dataverse record indicates sign-in/access is required; the file itself is not present in the project's protected intake or public source bundle and has not been inspected. Do not infer that it contains the fasting mapping. If obtained through the user's already authorized CHARLS account, check its platform MD5 and archive it only in the private official-document intake before reviewing. Until then, `qc1_va003` remains unresolved and the 14 fasting-sensitive hypotheses remain blocked.
+The CHARLS 2011 baseline Dataverse separately lists `Medical-questionnaire-2011.doc` as file 138 (platform MD5 `d1f9351dff8bdadb0d1f692ff58b75c6`), distinct from the CHARLS-page-linked `Biomarker-manual-2011.doc`/Physical Examination Questionnaire reviewed above. The file-138 review described below found no fasting mapping. **Historical status, superseded for the numeric mapping by the 2026-10-30 official Fieldwork Plan source reconciliation:** `qc1_va003` is now source-supported as 1=fasting, 2=not fasting. This does not approve the analysis estimand or unlock the 14 hypotheses.
 
 ### Official Dataverse access-state recheck (2026-10-30)
 
