@@ -1781,3 +1781,8 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Linked the official CHARLS 2011 Fieldwork Plan Appendix 2 coding (1=Yes, 2=No) to the Wave 1 Blood header label for `qc1_va003` (`Fasting`); no participant values were read.
 - Updated the private glucose/triglyceride draft handling to a fasting-only primary candidate plus an all-observed-blood sensitivity with fasting covariate. This remains draft-only; target estimand, `bloodweight` applicability, finite outcome codes, model freeze and independent review remain unresolved, so all 14 coefficients remain blocked and no association was fitted.
 - Added a source reconciliation audit and corrected older execution-queue wording. The private review packet and logs remain owner-only on the server; no restricted results were published.
+
+# 2026-10-30 Rebind draft plan fingerprint and verify readiness stays closed
+
+- The private metadata-only configuration audit detected a stale fingerprint after registered-plan updates. Rebound the private draft config to the current registered pilot plan and refreshed its hash binding in the owner-only review packet.
+- Reran the audit: official source/provenance and plan fingerprint match, but the config remains draft, no frozen config/readiness record exists, and outcome rules still await independent review. Readiness remains closed; no participant outcome values or associations were read/fitted.
