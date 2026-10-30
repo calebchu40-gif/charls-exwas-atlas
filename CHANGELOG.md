@@ -1,3 +1,7 @@
+# 2026-10-31 Clarify Wave 1 assay-range interpretation
+
+- Clarified against the official Blood Users' Guide that assay detection limits, Table 5 observed ranges, and density-plot omission of a few extremes are distinct source statements; none is an individual-level exclusion rule. Finite numeric sentinel uncertainty remains unresolved. This documentation update did not filter or analyze CHARLS records.
+
 # 2026-10-31 Correct Wave 1 fasting-code status in public audit
 
 - Updated the public Wave 1 outcome-readiness audit to distinguish the now source-supported fasting-status mapping (1=fasting, 2=not fasting) from the still unresolved fasting estimand and `bloodweight` compatibility questions.

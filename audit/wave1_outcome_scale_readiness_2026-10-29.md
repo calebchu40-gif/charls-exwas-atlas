@@ -12,6 +12,16 @@
 
 本表根据项目公开 crosswalk 和 CHARLS 2011 Blood Sample Users' Guide 整理，不包含参与者记录或任何样本分布。对受控 Wave 1 Blood 文件仅以 metadata-only 方式核对了相关变量标签和值标签：可见变量标签提供测量名称/单位，但相关检测字段和 `qc1_va003` 均未关联 value-label set。表中“指南测定范围”是实验室 assay metadata，不是 CHARLS 分析有效值过滤线；不能据此删除超界观测、推断特殊缺失码或认定顶码。CHARLS Wave 1 官方指南描述血常规由各地实验室检测，未给这五项逐分析物的检测范围。胱抑素 C 不在当前15项普通血检结局家族内：其年龄分层抽测资格和权重需独立闭环。
 
+### 官方指南中三类“范围/极端值”信息的区分（2026-10-31）
+
+逐页复核官方 Blood Sample Users' Guide 后，结局规则卡明确区分以下信息，避免把测定能力误当成分析清洗规则：
+
+1. 第7页的 assay 表标题明确是检测方法、批内/批间变异和 **detection limits**。这些是方法学测定范围；指南没有说超出界限的发布值应编码为缺失或删除。
+2. 第14–15页的 Table 5 列出若干生化指标的描述统计和 observed ranges。它们是指南分析样本的观察范围，不是独立于样本的有效域定义。
+3. 第11页说明密度图为展示省略了少数极端观测；这是一项图形展示处理，指南没有将其定义为分析数据剔除方案。
+
+据此，默认清洗规则仍为：遵守 Stata 系统缺失表示；保留其余可解析有限值作为待审候选；不因 detection limits、Table 5 observed ranges、临床风险阈值或密度图省略做逐人过滤。有限数值型 sentinel 是否存在仍待解决，故这条候选不能被写成“所有有限值均经官方验证”，也不能单凭此段关闭结局准入。来源：[CHARLS 2011 Blood Sample Users' Guide，第7、11、14–15页](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/blood_user_guide_en_20140429.pdf)。
+
 ## 15项目录和暂定报告尺度
 
 | 结局 | Wave 1 字段 | 原始单位（报告原始效果） | 指南测定范围（仅方法元数据） | 当前处理决定 |
