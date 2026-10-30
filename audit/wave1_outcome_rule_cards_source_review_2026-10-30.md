@@ -13,7 +13,7 @@
 
 ### Wave 1 Stata 表头元数据核对（2026-10-30）
 
-受保护服务器上的 metadata-only 报告已按精确来源字段与15项结局登记表对齐。计划结局字段均为连续数值型，表头未声明 value-label set 或 Stata tagged-missing 代码；这只描述文件元数据，**不能排除有限数值型特殊码**，不能据此确认有效值域。`qc1_va003` 同样没有表头值标签，其数值编码仍未核实。此核对未读取受访者取值，不改变任何结局规则的 `candidate_not_frozen` 状态，也不开放关联模型。
+受保护服务器上的 metadata-only 报告已按精确来源字段与15项结局登记表对齐。计划结局字段均为连续数值型，表头未声明 value-label set 或 Stata tagged-missing 代码；这只描述文件元数据，**不能排除有限数值型特殊码**，不能据此确认有效值域。`qc1_va003` 同样没有表头值标签；其数值映射另由官方 Fieldwork Plan 附件2与字段标签共同支持为1=是、2=否。此核对未读取受访者取值，不改变任何结局规则的 `candidate_not_frozen` 状态，也不开放关联模型。
 
 ## 逐项来源映射和候选处理
 
@@ -27,8 +27,8 @@
 | 总胆固醇 | `newcho` | mg/dL | 酶比色法；表1报告 assay detection range 3–800 mg/dL | 检测范围不得直接用于筛值；保留连续原单位候选，是否限制空腹/是否变换待审。 |
 | HDL-C | `newhdl` | mg/dL | 酶比色法；表1报告 assay detection range 3–120 mg/dL | 检测范围不是有效值边界；保留连续候选，不按 HDL 临床风险切点筛值。 |
 | LDL-C | `newldl` | mg/dL | 酶比色法；表1报告 assay detection range 3–400 mg/dL | 检测范围不是有效值边界；保留连续候选。该字段为直接测定，仍需审核测量及非空腹解释。 |
-| 甘油三酯 | `newtg` | mg/dL | 酶比色法；表1报告 assay detection range 4–1000 mg/dL | 7项关联在权威 Wave 1 `qc1_va003` 空腹编码及规则审核前保持阻断；一般非空腹血脂共识不足以替代该研究的测量规则审查。不得把检测范围作顶码或排除阈值。 |
-| 葡萄糖 | `newglu` | mg/dL | 酶比色法；表1报告 assay detection range 2–450 mg/dL；指南提示非空腹值可能偏高 | 七项关联继续标记不可估，直到获得权威 Wave 1 空腹码映射；不猜编码、不按 `qc1_va003` 频数反推。 |
+| 甘油三酯 | `newtg` | mg/dL | 酶比色法；表1报告 assay detection range 4–1000 mg/dL | 7项关联的空腹字段/编码已由官方来源支持；fasting-only估计目标、权重适用性及有效值规则仍待审阅，因此继续阻断。一般非空腹血脂共识不足以替代研究估计目标审查。不得把检测范围作顶码或排除阈值。 |
+| 葡萄糖 | `newglu` | mg/dL | 酶比色法；表1报告 assay detection range 2–450 mg/dL；指南提示非空腹值可能偏高 | 七项关联的 `qc1_va003` 映射已有官方证据（1=空腹、2=非空腹）；但估计目标、权重适用性、有效值规则及独立审阅未完成，故仍不可估。不按字段频数反推规则。 |
 | 糖化血红蛋白 | `newhba1c` | % | 硼酸亲和 HPLC；表1报告 assay detection range 0–40%；指南讨论运输/冻存可能影响结果 | 不用临床风险切点二分；测量处理局限需披露，变换与敏感性待审；不从 Wave 3 导入规则。 |
 | 高敏 C 反应蛋白 | `newcrp` | mg/L | 免疫比浊法；表1报告 assay detection range 0.1–20 mg/L | 不把检测范围作有效值上下限；右偏及变换方式需在看关联结果前冻结。 |
 | 血尿素氮 | `newbun` | mg/dL | 尿素酶酶促紫外法；表1报告 assay detection range 5–100 mg/dL | 不把检测范围作有效值上下限；变换方式待审。 |

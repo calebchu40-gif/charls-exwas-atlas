@@ -66,7 +66,7 @@ Prepare only disclosure-cleared aggregate outputs for the site. Confirm result f
 ## Immediate schedule
 
 - **Completed in the current execution block:** visually reviewed official Codebook/questionnaire coding for sex and education; added and ran the private, outcome-free audit of joint core-covariate completeness and candidate education-group cluster support; documented the count-free review in the protected packet. No participant-derived counts or models were committed.
-- **Next execution block:** update the private candidate and draft config with the source-supported `qc1_va003==1` fasting-only candidate, then complete outcome-rule review, inspect design/weight diagnostics, and bind rules to source/table hashes. Do not transfer Wave 3 codes. Outcome validity, age target, covariance/variance specification and pilot configuration remain subject to independent methods review. No association fitting while those gates or independent review remain pending.
+- **Next execution block:** complete source-backed Wave 1 special-code/validity and transformation cards, then resolve the fasting-only estimand and `bloodweight` applicability against the 45+ domain and complete-case plan. Bind any reviewed changes to source/table/configuration hashes; do not transfer Wave 3 codes. Obtain independent methods review of outcome validity, age target, covariate/variance specification and pilot config before readiness. No association fitting while any gate or independent review remains pending.
 - **After review approval:** first model run and full QA; then K150/K90 expansion. Server compute time is not expected to dominate; official documentation gaps and review decisions are the uncertain calendar-time items.
 
 ## Progress reporting
