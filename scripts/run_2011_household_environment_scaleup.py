@@ -42,7 +42,11 @@ PILOT_OUTPUT_DIR = PRIVATE / "pilot105_2011_household_environment"
 ID_FIELD = "ID"
 OUTCOME_TERMS = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
 PILOT_EXPOSURES = {"running_water_at_residence", "cooking_fuel_main"}
-FASTING_REQUIRED_OUTCOMES = {"blood_glucose", "blood_triglycerides"}
+# CHARLS 2011's guide explicitly warns that non-fasting status may raise
+# glucose. For triglycerides, non-fasting lipid profiles are accepted by the
+# EAS/EFLM consensus; retain all observed samples as the primary candidate and
+# leave fasting-status sensitivity pending an authoritative Wave 1 code map.
+FASTING_REQUIRED_OUTCOMES = {"blood_glucose"}
 
 
 def _load_json(path: Path) -> dict[str, Any]:

@@ -146,9 +146,7 @@ def run(data_path: Path, intake: Path, output: Path) -> dict[str, Any]:
         outcome = pd.to_numeric(joined[spec["phenotype_field"]], errors="coerce")
         contrast = exposure.isin([spec["exposure_code"], spec["reference_code"]])
         nonmissing_outcome = outcome.notna()
-        analyte_fast_sensitive = spec["phenotype_concept_id"] in {
-            "blood_glucose", "blood_triglycerides"
-        }
+        analyte_fast_sensitive = spec["phenotype_concept_id"] == "blood_glucose"
         for domain_name, base in bases.items():
             mask = base & contrast
             complete = mask & nonmissing_outcome
@@ -168,7 +166,11 @@ def run(data_path: Path, intake: Path, output: Path) -> dict[str, Any]:
                 "outcome_nonmissing_values_excluded_by_validity_rules": None,
                 "distinct_parent_community_keys_in_pair_domain": int(community.loc[complete].nunique(dropna=True)),
                 "positive_weight_rows_missing_parent_community": int((complete & community.isna()).sum()),
-                "fasting_mapping_status": "unresolved_blocked" if analyte_fast_sensitive else "not_flagged_as_fasting_dependent_by_current_plan",
+                "fasting_mapping_status": (
+                    "unresolved_blocked_for_primary_handling" if analyte_fast_sensitive
+                    else "candidate_all_samples_pending_methods_review" if spec["phenotype_concept_id"] == "blood_triglycerides"
+                    else "not_flagged_as_fasting_dependent_by_current_plan"
+                ),
                 "estimability_status": "availability_only_not_model_estimability",
             })
 
@@ -199,7 +201,7 @@ def run(data_path: Path, intake: Path, output: Path) -> dict[str, Any]:
             "Nonmissing outcome values are not assumed clinically valid; no distribution-derived rule or assay range was used as an exclusion cutoff.",
             "Positive bloodweight and released parent-community keys do not approve a variance estimator or resolve split sub-PSUs.",
             "The age lower/upper domain masks use an unreviewed provisional candidate and are diagnostic only.",
-            "Wave 1 fasting status numeric mapping remains unresolved; glucose and triglyceride coefficients are marked blocked.",
+            "Wave 1 fasting status numeric mapping remains unresolved; glucose is blocked and triglycerides remain an all-sample candidate pending methods review.",
         ],
     }
     output.parent.mkdir(parents=True, exist_ok=True)

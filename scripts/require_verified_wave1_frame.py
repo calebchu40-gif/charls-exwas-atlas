@@ -73,9 +73,11 @@ ANALYSIS_PLANS = {
         "plan_files": (
             "audit/执行计划_授权确认后_2026-10-30.md",
             "audit/wave1_household_environment_pilot_execution_design_2026-10-30.md",
+            "audit/wave1_fasting_status_source_reconciliation_2026-10-30.md",
             "audit/wave1_household_environment_hypothesis_register_v0.csv",
             "audit/wave1_variance_review_recommendation_2026-10-30.md",
             "audit/wave1_pilot_pair_eligibility_review_2026-10-30.md",
+            "scripts/audit_wave1_pilot_pair_eligibility.py",
             "audit/templates/wave1_household_environment_pilot_readiness.template.json",
             "audit/templates/wave1_household_environment_pilot_model_config.template.json",
             "scripts/run_2011_household_environment_scaleup.py",

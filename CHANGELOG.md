@@ -1708,3 +1708,10 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Wave 1 glucose and triglycerides require a verified fasting rule. Until the official `qc1_va003` mapping is sourced, their 14 registered coefficients remain explicitly blocked without estimates or p/q values; the other 91 are candidates only after review.
 - Retired the command-line entry point of the legacy blood-extension runner because its rules predate the current gates. The retained file raises an actionable message directing users to the gated batch runner.
 - Static checks only; no CHARLS association models were fitted. Source identity and the user's Option A approximation are recorded, but target/age-domain, covariate and outcome freezes and independent methods review remain pending.
+
+## 2026-10-30：官方空腹说明与甘油三酯处理复核
+
+- CHARLS 2011 Blood Guide 确认采血时记录空腹状态、约8%血样非空腹，并指出非空腹血糖可能较高；官方已审阅资料仍未给出 Wave 1 `qc1_va003` 数字映射。
+- EAS/EFLM 联合共识支持常规非空腹血脂检测，因此不再把甘油三酯的7项也因未知编码自动阻断。全血样是候选主分析，基于已核实 Wave 1 编码的空腹敏感性待补；方法审阅仍须批准。
+- pilot105 模板/执行器现只强制血糖采用已验证空腹规则或显式阻断；甘油三酯可声明保留所有观察血样。该临床检验共识不替代 CHARLS 变量映射或本研究的方法审阅。没有拟合真实模型。
+- 更新配对可用性 QA 脚本中的 fasting 状态标签，分别识别“血糖编码未解而阻断”和“甘油三酯全样本候选、方法待审”。既有私有 QA 报告未重跑，不能把其中的旧 fasting 标签当作当前计划。

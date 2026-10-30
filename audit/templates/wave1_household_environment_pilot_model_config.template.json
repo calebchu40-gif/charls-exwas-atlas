@@ -225,10 +225,10 @@
       "lod_censoring_rule": "not_frozen",
       "topcode_rule": "not_frozen",
       "fasting_rule": {
-        "mode": "blocked",
+        "mode": "retain_all",
         "field": null,
         "eligible_codes": [],
-        "block_reason": "Official Wave 1 qc1_va003 numeric mapping is unresolved; do not infer codes."
+        "method_note": "Candidate: retain observed fasting and non-fasting samples under EAS/EFLM non-fasting lipid-profile consensus; Wave 1 fasting-status sensitivity awaits an authoritative qc1_va003 mapping and independent review."
       }
     },
     "blood_glucose": {

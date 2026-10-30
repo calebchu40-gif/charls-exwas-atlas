@@ -13,7 +13,7 @@ For each coefficient/domain, the private report records the exposure and referen
 
 - A positive bloodweight, nonmissing outcome, and observed community key establish only data availability. They do not establish eligibility, valid measurement, a final model N, or valid design-based inference.
 - No analyte-specific valid-value cutoff was applied. The Blood Users' Guide assay ranges are not used as sample filters, and no sample-distribution-derived trimming or transformation was performed.
-- Glucose and triglyceride coefficients remain blocked because the Wave 1 `qc1_va003` numeric fasting mapping remains unresolved in the reviewed official documentation.
+- Historical QA status before the 2026-10-30 source reconciliation marked both glucose and triglycerides as fasting-blocked. The current candidate policy blocks glucose pending an authoritative `qc1_va003` map; triglycerides remain an all-observed-sample candidate under non-fasting lipid guidance, pending independent methods review. The previously written private availability report has not been rerun or relabeled, so do not read its old fasting status as the current analysis policy.
 - The age intervals are still method-unreviewed candidates. Domain counts are diagnostic only and do not approve the 45+ estimand.
 - The parent `communityID` key is not a reconstruction of split final PSUs or the full CHARLS stratified multistage variance. The user-selected Taylor option remains approximate and subject to the independent methods-review gate.
 
