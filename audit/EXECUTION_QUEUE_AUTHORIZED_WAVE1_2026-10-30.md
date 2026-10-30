@@ -22,9 +22,9 @@
 
 ## Work queue and stop conditions
 
-### W1 — Outcome data-quality profile (now; private only)
+### W1 — Outcome data-quality profile (complete; private only)
 
-Read only the 15 predeclared outcome columns from the authorized Blood file. Produce a restricted aggregate profile (missing/nonfinite counts, quantiles, range and tail flags) in server `private/qa_outputs/`, mode 600. Do not print the profile, infer fasting codes, declare validity cutoffs from the observed distribution, winsorize, or publish the file. The profile can identify anomalies that need source-based adjudication; it cannot itself authorize exclusions.
+Read only the 15 predeclared outcome columns from the authorized Blood file. The restricted aggregate profile is at `private/qa_outputs/wave1_biomarker_value_profile_private.json` on the server (mode 600). The scan found no negative values, nonfinite values, or numeric parsing failures; some outcomes have observed extremes beyond a limit in the Guide assay-method table. Those are diagnostic flags only, and no observations were filtered. Exact field summaries remain private. No identifiers, weights, or association models were used.
 
 ### W2 — Freeze source-based outcome rules and age/frame semantics
 
@@ -48,7 +48,7 @@ Prepare only disclosure-cleared aggregate outputs for the site. Confirm result f
 
 ## Immediate schedule
 
-- **Current work session:** complete W1 and the source reconciliation document; append local and private server logs; sync only code and public-safe documentation.
+- **Completed this work session:** W1 and the authorized-work queue; code and public-safe documentation are synced to GitHub. Append the local and private server logs before ending this session.
 - **Next execution block:** complete W2/W3 and assemble W4 review packet. These are the critical path; no batch fitting is allowed while review is pending.
 - **After review approval:** first model run and full QA; then K150/K90 expansion. Server compute time is not expected to dominate; official documentation gaps and review decisions are the uncertain calendar-time items.
 

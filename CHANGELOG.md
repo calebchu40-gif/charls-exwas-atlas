@@ -3,6 +3,7 @@
 - Added a post-authorization execution queue with completed prerequisites, stop gates, privacy boundaries and dependency order. It records the user's confirmed official Wave 1 files and selected Option A approximation without equating those decisions with independent methods approval.
 - Added a protected-server-only diagnostic utility for the 15 prespecified Wave 1 biomarker columns. It reports aggregate missingness, finite-value counts, range and quantiles without reading identifiers or fitting associations. Its output is restricted to the private tree (mode 600); distributions cannot be used to infer valid-value cutoffs, special codes or fasting semantics.
 - The official outcome header review remains unchanged: no attached value labels were found. Wave 1 fasting coding, age/frame freeze and independent survey-design/method review remain gates. No association model was fitted in this code/documentation change.
+- Executed the value-profile utility on the authorized server. It covered the 15 planned outcomes, read no identifiers, and wrote only mode-600 aggregate diagnostics to the server private tree. It found no negative, nonfinite or numeric-parse-failure values; some fields have observed extremes outside a Guide assay-method range. These are source-review flags only, not exclusion rules or association results. Exact diagnostics remain private.
 
 # 2026-10-30 Add metadata-only Wave 1 Blood outcome header audit
 
