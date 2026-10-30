@@ -59,6 +59,18 @@ def protected_rar_modules(archive: Path):
     """Extract verified RAR members into a temporary protected directory."""
     scratch = private(PRIVATE_ROOT / "tmp")
     scratch.mkdir(parents=True, exist_ok=True)
+    candidates = [
+        os.environ.get("UNRAR_FREE_PATH", ""),
+        os.environ.get("UNRAR_PATH", ""),
+        str(PRIVATE_ROOT / "tools" / "unrar" / "extracted" / "usr" / "bin" / "unrar-nonfree"),
+        shutil.which("unrar-nonfree") or "",
+        shutil.which("unrar-free") or "",
+        str(PRIVATE_ROOT / "tools" / "unrar-free" / "extracted" / "usr" / "bin" / "unrar-free"),
+    ]
+    extractor_path = next((Path(item) for item in candidates if item and Path(item).is_file()), None)
+    if extractor_path is None:
+        raise FileNotFoundError("A protected RAR extractor is required for the Wave 1 module-ID audit")
+    os.environ.setdefault("UNRAR_PATH", str(extractor_path))
     listing = _rar_member_names(archive)
     members = [name for name in listing if name.casefold().endswith(".dta")]
     if not members:
@@ -67,25 +79,12 @@ def protected_rar_modules(archive: Path):
         member_path = PurePosixPath(name.replace("\\", "/"))
         if member_path.is_absolute() or ".." in member_path.parts:
             raise ValueError("Wave 1 RAR contains an unsafe member path")
-    extractor = (
-        os.environ.get("UNRAR_FREE_PATH", "")
-        or shutil.which("unrar-free")
-        or str(PRIVATE_ROOT / "tools" / "unrar-free" / "extracted" / "usr" / "bin" / "unrar-free")
-    )
-    extractor_path = Path(extractor)
-    if not extractor_path.is_file():
-        resolved_extractor = shutil.which(extractor)
-        if resolved_extractor:
-            extractor_path = Path(resolved_extractor)
-    if not extractor_path.is_file():
-        raise FileNotFoundError("A protected RAR extractor is required for the Wave 1 module-ID audit")
     with tempfile.TemporaryDirectory(prefix="wave1_module_ids_", dir=scratch) as directory:
         root = Path(directory).resolve()
-        for member in members:
-            subprocess.run(
-                [str(extractor_path), "-x", str(archive), member, str(root)],
-                capture_output=True, timeout=600, check=True,
-            )
+        subprocess.run(
+            [str(extractor_path), "x", "-inul", "-o-", str(archive), f"{root}/"],
+            capture_output=True, timeout=600, check=True,
+        )
         extracted = sorted(root.rglob("*.dta"))
         if len(extracted) != len(members) or any(not path.resolve().is_relative_to(root) for path in extracted):
             raise ValueError("Wave 1 RAR module extraction did not match the verified member list")
