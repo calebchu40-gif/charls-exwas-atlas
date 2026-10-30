@@ -1587,7 +1587,7 @@ Added a metadata-only local intake manifest for `CHARLS2015r.zip` after verifyin
 # 2026-10-30 — Add official Wave 2, 4, and 5 archives to protected local intake
 
 Copied the authorized 2013, 2018, and 2020 All Data archives from local staging into the protected CHARLS workspace after matching each archive SHA-1 to its official release listing. Ran the existing metadata-only archive audit on all three; only archive-member and Stata-header metadata were inspected, temporary extracts were cleaned, and detailed reports remain in protected local QA. This expands source readiness for the planned mult wave catalog and future analyses; sample eligibility, module weights, variance design, and model review remain open. No microdata or results were published.
-# 2026-10-30
+# 2026-10-30 Record user-confirmed Wave 1 source authorization and execution plan
 
 - Reviewed official 2018/2020 frame and weight guidance, updated the protected builder to retain the full Sample_Infor frame, and produced Wave 4/5 preparation tables. Aggregate frame/weight linkage QA passed; pair-specific analytic eligibility and survey variance remain unresolved. No associations were generated or published.
 - Added a header-only Wave 4/5 catalog coverage review and clarified that Wave 5 Exit_Module candidates are decedent/proxy mortality fields kept out of routine respondent-level pair tables pending a separate mortality estimand.
@@ -1628,3 +1628,8 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 # 2026-10-30 Align Wave 1 variance review packet with gate semantics
 
 - Updated the independent-review packet to reflect the current review ordering: `communityID` single-stage WR Taylor is the first approximation candidate, while county-prefix clustering is secondary. Clarified that the code requires separate evidence for `final_psu_mapping` and `variance_method_review`; acceptance of a parent-community proxy must not be described as recovery of the official final subcommunity PSU. No readiness record was created, no gate was promoted, and no association model was fitted.
+# 2026-10-30
+
+- Recorded the user's renewed confirmation that Wave 1 files 123/117/118/201 were obtained under their authorized CHARLS account and may be used in this project; the protected server metadata-only preflight now passes.
+- Added the active execution plan for the 45+ Wave 1 blood-target domain, the user-selected `communityID` unstratified with-replacement Taylor approximation, the fixed 105-coefficient pilot family, and the remaining review gates. No respondent-level data or model results are included.
+- Public association results remain withheld until methods, multiplicity, and disclosure review is complete.
