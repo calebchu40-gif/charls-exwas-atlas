@@ -1,3 +1,7 @@
+# 2026-10-30 Check Harmonized CHARLS as a possible design source
+
+- Reviewed the official Harmonized CHARLS Version D listing and its design/weighting description, plus a published SAGE+ data resource profile that reports CHARLS cluster and strata variables unavailable in that project. Current evidence does not establish that the harmonized product supplies the missing Wave 3 county strata or respondent-to-final-PSU mapping. Do not infer these keys from harmonized weights, age or geography. The Wave 3 variance gate and formal model count remain unchanged. Sources and limits are recorded in the Wave 3 design review.
+
 # 2026-10-30 Remove unapproved defaults from generic design template
 
 - Cleared the generic design template's `communityID` PSU, `bloodweight`, unstratified variance, and age-45 defaults. Current CHARLS review has no approved single-stage variance design and the primary blood target is not age-restricted. The template now fails closed until a wave-specific design and gates are reviewed.

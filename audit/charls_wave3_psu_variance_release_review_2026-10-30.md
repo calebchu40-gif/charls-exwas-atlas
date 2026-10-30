@@ -16,6 +16,12 @@ The current public 2015 data listing includes All Data, separate modules, Blood,
 
 `communityID` therefore represents a useful parent-community key, but should not be assumed to equal the final sampled PSU for every split community. A county prefix reconstructed from IDs is likewise a geographic grouping candidate, not documented proof of the original design-unit key after boundary changes. Neither key by itself recovers the stratified county selection, the subsequent PPS community stage, the final split-PSU assignment, or the sampling variance.
 
+## Check of the Harmonized CHARLS alternative
+
+The CHARLS site lists Harmonized CHARLS Version D (June 2021) and its codebook as a separate harmonized product. The codebook's overview says that survey-design-adjusted standard errors are available **where CHARLS provided the required design information**; this is not a claim that Version D supplies a complete PSU/strata specification for every wave. A published cross-national harmonization profile specifically reports that cluster and strata variables were unavailable for CHARLS in the CHARLS source data available to that project. Taken together, these sources do not support treating Harmonized CHARLS as a newly discovered source of the missing Wave 3 county stratum or respondent-to-final-sub-PSU mapping. Harmonized age or covariate fields must not be used as a proxy for official design variables.
+
+This is a negative source check, not proof that no later restricted design release exists. The project should only reopen this question if an official CHARLS release or codebook version explicitly supplies the design keys and their definitions. Do not derive or impute them from harmonized weights, geography, or variable names.
+
 ## Current methods decision
 
 There is **no preferred or approved single-stage variance candidate** at this time. This supersedes the earlier provisional suggestion to prioritize a county-prefix-only with-replacement Taylor approximation. The official design description identifies county and community as distinct nested stages and names the community/neighborhood units as PSUs, while the public release lacks the full strata and final split-PSU mapping needed to reproduce the complete design. A county-only approximation omits the community stage; a parent-community-only approximation can merge distinct split PSUs and omit county-stage/strata uncertainty. Neither is guaranteed conservative or nationally design-valid.
@@ -36,3 +42,6 @@ Before model fitting, a qualified survey-methods reviewer must assess the exact 
 - `sources_official/CHARLS_2015_Codebook.pdf`, “Cross-Sectional Weights” and “Sample Information”.
 - `sources_official/CHARLS_2015_Blood_Release_Note.pdf`, design context, Wave 3 dates and blood-weight scope.
 - [CHARLS 2015 Blood Data Release Note](https://charls.pku.edu.cn/en/data/Blood2015.pdf).
+- [CHARLS Harmonized data page](https://charls.charlsdata.com/pages/Data/harmonized_charls/en.html), which identifies the public regular-wave product as Version D (June 2021).
+- [Harmonized CHARLS Codebook](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/harmonized_charls/application/Harmonized_CHARLS_D.pdf), section 1.6, which qualifies design-adjusted standard errors as available where provided by CHARLS.
+- Di Lego et al., [Data Resource Profile: SAGE+ Wave 2](https://pmc.ncbi.nlm.nih.gov/articles/PMC6380306/), “Weights, clustering and stratum variables” (reports cluster and strata variables were unavailable for CHARLS in that project).
