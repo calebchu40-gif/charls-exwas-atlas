@@ -1,3 +1,7 @@
+# 2026-10-30 Remove unapproved defaults from generic design template
+
+- Cleared the generic design template's `communityID` PSU, `bloodweight`, unstratified variance, and age-45 defaults. Current CHARLS review has no approved single-stage variance design and the primary blood target is not age-restricted. The template now fails closed until a wave-specific design and gates are reviewed.
+
 # 2026-10-30 Harden generic ExWAS scan engine
 
 - Corrected logistic odds-ratio standard-error scaling, blocked missing survey design keys and pair domains with fewer than two PSUs, and required explicit model covariate sets. Preserved the tracked Wave 1 CLI's source/readiness/plan authorization gate after review found an unguarded server draft. No real data were read or fitted; no tests were run. See the runner safety review.

@@ -1,6 +1,7 @@
 # CHARLS ExWAS Atlas：执行计划与当前进度
 
 **更新时间：2026-10-30（Asia/Shanghai；Wave 3农历生日不确定性方法审阅）**
+**2026-10-30 通用设计模板校正：**发现通用 `exwas_design.template.json` 仍预填 `communityID`、`bloodweight`、未分层近似和 45+ 域，与当前官方抽样设计审阅及“45+仅作次级域”候选不一致。现已将权重/PSU/波次/年龄/协变量字段改为空的待审值，并标记不可直接运行；当前没有获批的单层方差方案。详见[`multwave_runner_configuration_compatibility_review_2026-10-29.md`](multwave_runner_configuration_compatibility_review_2026-10-29.md)。
 **2026-10-30 通用扫描引擎审阅：**修正通用引擎的二项模型 OR 标准误尺度、正权重缺失 PSU/分层键处理、低于两个 PSU 的配对域阻断和模型 ID 显式配置要求。已确认仓库受控 Wave 1 runner 原本包含来源身份、准备表 hash、冻结计划 hash、逐门审阅记录及私有扫描授权；服务器未提交草稿漏掉了该门禁，不能覆盖受控版本。服务器草稿将先私有备份，再同步带准入门的 runner。当前正式模型 0，未运行测试或真实拟合。详见[`generic_exwas_runner_safety_review_2026-10-30.md`](generic_exwas_runner_safety_review_2026-10-30.md)。
 **2026-10-30 Wave 3 农历生日方法更新：**CHARLS维护的 `lunar2solar` 使用全变量级 `leap` 选项与分开的普通/闰月表；已审Wave 3生日路由记录农历/公历类型，但没有发现逐人闰月标记。不得对全部农历日期默认调用普通月表，也不得推断闰月。拟审候选方法是对同一有效农历日期保留普通表映射，并仅在官方闰月表存在同键时保留闰月映射，随后结合访谈年月缺少日的信息计算年龄区间；45岁domain只在区间稳定跨过阈值时分类。该法尚未做官方表格解析/运行时验证或独立年龄审查，当前年龄与真实模型门仍关闭。详见[`wave3_lunar_date_uncertainty_method_review_2026-10-30.md`](wave3_lunar_date_uncertainty_method_review_2026-10-30.md)。
 **项目目标状态：进行中**  
