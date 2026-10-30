@@ -57,8 +57,8 @@ Prepare only disclosure-cleared aggregate outputs for the site. Confirm result f
 
 ## Immediate schedule
 
-- **Completed in the current execution block:** visually reviewed official Codebook/questionnaire coding for sex and education; added a private, outcome-free audit of joint core-covariate completeness and candidate education-group cluster support; recorded the distinction between documented source codes and an unapproved analytic grouping.
-- **Next execution block:** run the updated audit in the protected server tree, summarize only whether categories and joint support meet predeclared minimums (no exact counts outside private storage), and update the draft model/complete-case estimand. Continue W2 source-based biomarker missingness/validity disposition and W3 design diagnostics. No association fitting while these gates or independent methods review remain pending.
+- **Completed in the current execution block:** visually reviewed official Codebook/questionnaire coding for sex and education; added and ran the private, outcome-free audit of joint core-covariate completeness and candidate education-group cluster support; documented the count-free review in the protected packet. No participant-derived counts or models were committed.
+- **Next execution block:** continue W2 source-based biomarker missingness/validity disposition and W3 design diagnostics; bind candidate rules to the source hashes in the draft model/complete-case estimand. The candidate support audit is complete, but coding recategorization, age target, and design remain subject to independent methods review. No association fitting while those gates or independent review remain pending.
 - **After review approval:** first model run and full QA; then K150/K90 expansion. Server compute time is not expected to dominate; official documentation gaps and review decisions are the uncertain calendar-time items.
 
 ## Progress reporting
