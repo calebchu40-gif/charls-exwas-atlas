@@ -182,7 +182,11 @@ def main() -> None:
     print(f"prepared rows: {result['local_prepared_frame_n']}")
     print(f"difference from Blood Guide target (diagnostic only): {result['difference_from_blood_guide_target_n']}")
     print(f"difference from Codebook person-ID observations (diagnostic only): {result['difference_from_codebook_person_id_obs_n']}")
-    print(f"age 45+ domain rows: {result['age_domain']['age_45_plus_n']}")
+    print(
+        "lower-/upper-bound age 45+ domain rows: "
+        f"{result['age_domain']['lower_bound_age_45_plus_n']}/"
+        f"{result['age_domain']['upper_bound_age_45_plus_n']}"
+    )
     print(f"positive bloodweight rows: {result['bloodweight']['positive_finite_n']}")
     print(f"respondent PSU rows unmatched: {result['psu']['respondent_rows_unmatched_to_map_n']}")
     print(f"formal model gate: {result['gates']['formal_model_gate']}")
