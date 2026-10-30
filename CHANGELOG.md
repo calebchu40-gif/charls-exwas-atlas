@@ -2,6 +2,10 @@
 
 - Retracted the previous elevation of `communityID`-only WR Taylor as the first candidate for review. The CHARLS forum response is general and does not endorse a PSU level for this estimand; the official design describes nested county/community stages and split communities, while the released materials reviewed here do not provide the full variance mapping. The current review packet now treats county-prefix and parent-community approximations as unselected options for parallel expert assessment. Analysis gates remain closed and formal association models remain 0.
 
+# 2026-10-30 Record unanswered CHARLS forum question on PSU-only variance
+
+- Search-index review found a 2022 CHARLS data-user forum post asking whether `communityID` clustering without explicit strata is appropriate; the index lists no replies and direct access returned HTTP 502. Recorded it only as an unanswered user question, not CHARLS methodological guidance. No variance option was selected or approved.
+
 # 2026-10-30 Bind denominator reconciliation to explicit official counts
 
 - Added the official 17,587 Table 4 complete-demographic subset and its exclusion note to the protected Wave 1 reconciliation script; renamed an ambiguous `blood_target` difference field to `baseline_interview_total`. Reran only the protected ID/weight/PSU-key reconciliation, producing aggregate counts in the private QA directory. No participant answers were read, no model or tests were run, and no gate was promoted.

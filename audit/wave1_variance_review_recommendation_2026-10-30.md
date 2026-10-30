@@ -13,6 +13,10 @@
 
 **来源边界：**论坛答复署名为 CHARLS 数据论坛管理员；它是项目方一般性答疑，不等同于数据发行的正式统计手册。其内容只用于形成审阅候选，不覆盖官方用户手册、抽样文件和变量定义。
 
+## 关于“只设 communityID、无 strata 是否可行”的补充检索
+
+另检索到2022年用户论坛主题[“使用统计软件时标准误的计算问题”](https://forum.charlsdata.com/viewtopic.php?t=8603)：提问者直接询问未提供 strata 时能否使用 `svyset communityID [pweight=HH_weight_ad1]`。搜索索引显示该帖为0条回复；尝试直接打开时服务器返回502。因此它只能证明该具体用法曾被用户提出，不能证明CHARLS项目组认可或否定，更不能成为本研究的设计依据。该证据不改变“方差方案未选定、需正式规格或独立复杂抽样审阅”的结论。
+
 ## 2026-10-30 后续官方抽样页复核：县级单层候选不再优先
 
 官方 CHARLS Sample 页面明确描述县级排序/分层与系统 PPS、县内村/社区 PSU、30个大社区子社区抽样，以及替换和边界变化。公开数据页及 Codebook 未提供重建原始方差层和所有最终子 PSU 的 respondent crosswalk。县级前缀单层和 `communityID` 单层近似均不能处理完整设计阶段，不预设优先级；论坛答复也没有批准任一层级。后文候选只用于并列方法审阅，当前完整证据与门禁见[`charls_wave3_psu_variance_release_review_2026-10-30.md`](charls_wave3_psu_variance_release_review_2026-10-30.md)。
