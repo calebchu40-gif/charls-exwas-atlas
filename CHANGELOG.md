@@ -1,3 +1,9 @@
+# 2026-10-30 Clarify pilot overlap with the Wave 1 atlas family
+
+- Audited the tracked registry structure without accessing participant data: it contains 240 unique planned coefficients (150 K150 + 90 K90). The 105-coefficient pilot (`i017` and six `i022` contrasts across 15 outcomes) is contained within K150.
+- Recorded that the pilot is an execution tranche rather than 105 extra final hypotheses. After a gated pilot, reuse those coefficient rows and adjust once across the frozen 240-coefficient atlas family; do not double-count pilot and scale-up results.
+- All registry rows remain unapproved and no participant analysis was performed in this static review. See `audit/wave1_hypothesis_family_structure_review_2026-10-30.md`.
+
 # 2026-10-30 Resume gated Wave 1 execution and rebuild private eligibility QA
 
 - Rechecked the current execution plan, clean reviewed server checkout, private inputs, account resource limits, public repository head, and Pages/results endpoint. Wave 1 official inputs and the prepared table remain in the owner-only server workspace.
