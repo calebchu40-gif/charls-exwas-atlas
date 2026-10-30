@@ -1,6 +1,6 @@
 # 2026-10-30 Check Harmonized CHARLS as a possible design source
 
-- Reviewed the official Harmonized CHARLS Version D listing and its design/weighting description, plus a published SAGE+ data resource profile that reports CHARLS cluster and strata variables unavailable in that project. Current evidence does not establish that the harmonized product supplies the missing Wave 3 county strata or respondent-to-final-PSU mapping. Do not infer these keys from harmonized weights, age or geography. The Wave 3 variance gate and formal model count remain unchanged. Sources and limits are recorded in the Wave 3 design review.
+- Reviewed the CHARLS portal's Harmonized CHARLS D listing and the Gateway's current D.2 listing/creation page. D.2 is described as Waves 1–4 plus 2014 Life History, with source data released as of 2021, but the reviewed public page did not expose its versioned codebook or design-variable specification. A SAGE+ Wave 2 profile reports CHARLS cluster/strata fields unavailable in that project; this is historical supporting evidence only. The available evidence does not determine whether D.2 adds the missing Wave 3 design keys. Reopen after obtaining and checking the actual D.2 documentation; do not infer keys from weights, age or geography. Formal model count remains unchanged.
 
 # 2026-10-30 Remove unapproved defaults from generic design template
 
