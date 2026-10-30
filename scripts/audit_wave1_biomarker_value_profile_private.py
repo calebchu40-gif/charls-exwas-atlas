@@ -47,9 +47,10 @@ def run(blood_path: Path, person_path: Path, output_path: Path) -> dict[str, Any
         raise FileNotFoundError("Protected official Blood input or source-bound person table is missing")
     source = require_verified_wave1_frame(data_path=person_path)
     frame, meta = pyreadstat.read_dta(str(blood_path), usecols=list(OUTCOMES))
-    if list(frame.columns) != list(OUTCOMES):
-        missing = sorted(set(OUTCOMES) - set(frame.columns))
+    missing = sorted(set(OUTCOMES) - set(frame.columns))
+    if missing:
         raise ValueError(f"Expected outcome columns missing from official Blood file: {missing}")
+    frame = frame.loc[:, list(OUTCOMES)]
 
     fields: list[dict[str, Any]] = []
     for name in OUTCOMES:
