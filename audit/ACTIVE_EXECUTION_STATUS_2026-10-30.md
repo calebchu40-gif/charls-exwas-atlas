@@ -151,3 +151,5 @@ Wave 1 执行器对测量协议未解决的结局返回 `blocked_by_unresolved_m
 - Extended the private pilot pair audit with communityID availability support by contrast arm and single/multiple complete-case records per cluster, within each provisional domain. This adds diagnostics for the chosen approximate design without treating support counts as estimator approval or model N.
 
 - Hardened the private pair audit against nonfinite weights/outcomes and invalid age intervals, and added community-cluster support by contrast arm. Private diagnostics identify sparse exposure-arm support in some candidate contrasts; this is recorded for independent review without imposing an unapproved 30-PSU cutoff or dropping pairs.
+
+- Refreshed the independent methods brief with the current qualitative cluster-support finding for rare cooking-fuel contrasts. The reviewer must decide adequacy/estimability and a priori support rules; the public brief contains no exact pair-level QA and no automatic exclusions.
