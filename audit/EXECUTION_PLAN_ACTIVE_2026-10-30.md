@@ -177,3 +177,7 @@ Independent AI review of the public methods documents found that “treat Stata 
 ### 2026-10-31 — K=150/K=90 配对可用性审计完成
 
 已在受保护服务器运行完整 K=240 配对可用性审计，覆盖 K150 家庭环境块与 K90 供暖路由块，以及血检正权重总体、年龄区间下界45+候选域和上界45+敏感性域。K90 严格应用官方登记的 `i020=2` 跳转条件。逐对精确数值只保留在服务器 `private/qa_outputs/wave1_full240_pair_availability_private.json`（mode 600）。结构核对确认登记 240 项、三个域共 720 条聚合记录，无 participant ID；有限结局值仅作可用性标记，未应用未冻结的特殊码/有效值规则。该审计未拟合模型、未判定估计可行性，不改变方法准入门。
+
+### 2026-10-31 — glucose/TG estimand candidate for independent decision
+
+An independent AI document review judged the all-blood-sample target more defensible as the review proposal than a fasting-only primary: retain positive `bloodweight`, use source-supported `qc1_va003` (1/2) as a measurement-condition main effect for glucose/TG, and keep fasting-only as a conditional/descriptive sensitivity without broader population-representation claims. No exposure-by-fasting coefficient is added to the K=240 primary family. This is a review candidate only; it does not establish `bloodweight` validity for every conditional estimand, resolve missing/other fasting codes, approve the outcome finite-value rule, or authorize fitting. All 14 glucose/TG coefficients remain blocked until a hash-bound independent methods decision.

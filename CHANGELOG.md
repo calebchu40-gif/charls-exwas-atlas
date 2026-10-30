@@ -1899,3 +1899,8 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Completed a server-private aggregate availability audit for all 150 K150 and 90 K90 Wave 1 hypotheses across the provisional blood target, lower-age-bound 45+ domain, and upper-age-bound 45+ sensitivity domain. K90 applied the registered `i020=2` route.
 - The report contains aggregate counts only, has owner-only mode 0600, and was structurally checked for 240 unique hypotheses, three domains, no participant-ID fields, and no association estimates. Exact counts remain private.
 - Outcome validity rules, model estimability, variance approval, independent methods approval, and public disclosure were not inferred or approved.
+
+# 2026-10-31 Document glucose and triglyceride estimand recommendation
+
+- An independent AI document review compared all-blood-sample adjustment with a fasting-only primary. It recommended submitting the all-blood-sample target, `bloodweight`, and fasting-status main-effect adjustment as the primary candidate, while limiting fasting-only to conditional/descriptive sensitivity unless its weighting assumptions are independently established.
+- No exposure-by-fasting interaction is added to the K=240 primary family. All 14 coefficients remain blocked pending a signed, hash-bound independent review; this is not authorization to fit or release.

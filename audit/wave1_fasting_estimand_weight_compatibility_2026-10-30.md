@@ -34,3 +34,14 @@ None of these options has been selected or frozen. The exact option must be reco
 - How should the age-45+ domain be nested with fasting status while retaining the full design sample for variance estimation?
 
 Until this review is signed against the current draft hashes, keep all 14 fasting-sensitive coefficients registered but blocked.
+
+## 2026-10-31 AI-assisted review: proposed review priority (not frozen)
+
+An independent AI document review found the all-blood-sample candidate more defensible as the primary estimand than a fasting-only primary, because CHARLS collected non-fasting specimens and describes `bloodweight` as a blood-collection response weight. It recommended submitting this concrete proposal to the independent methods reviewer:
+
+1. Define the primary glucose/TG target as all observed Wave 1 Blood records with finite positive `bloodweight`, nested within the otherwise frozen age domain.
+2. Retain `bloodweight` and include the source-supported `qc1_va003` fasting-status main effect (1/2) as a pre-specified measurement-condition covariate for glucose/TG. Do not add an exposure-by-fasting coefficient to the primary K=240 family; that would change the hypothesis family and estimand.
+3. Keep fasting-only analysis as a conditional-domain sensitivity or descriptive check, using the complete survey object for the provisional domain variance, and do not claim that it represents the broader blood target without independent support for the selection/weight assumptions.
+4. Keep all 14 hypotheses blocked until the reviewer approves the estimand, handling of missing/other fasting codes, the no-interaction primary specification, finite-value outcome rule, Option A variance caveat, support criteria and complete hash-bound family plan.
+
+This is an AI-generated recommendation from source/method documents, not a signed independent methods decision and not permission to fit. It relies on bloodweight being applicable to the stated blood-response target and on the proposed fasting main-effect model matching the intended conditional association. It does not remove possible measurement error, fasting-related effect heterogeneity, or residual selection concerns. No fasting or biomarker observations were inspected for this recommendation.
