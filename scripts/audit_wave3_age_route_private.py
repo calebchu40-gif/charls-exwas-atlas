@@ -8,8 +8,10 @@ This is a source/eligibility preparation audit, not an age derivation or model.
 from __future__ import annotations
 
 import argparse
+import io
 import json
 import os
+import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -117,6 +119,70 @@ def audit(data_path: Path, manifest_path: Path, output_path: Path,
     calendar = pd.to_numeric(frame["ba003"], errors="coerce")
     interview_year = pd.to_numeric(frame["iyear"], errors="coerce")
     interview_month = pd.to_numeric(frame["imonth"], errors="coerce")
+
+    # Separate absent Demographic_Background rows from BA002 item-level
+    # missingness by joining only pseudonymous IDs and the route field. This
+    # avoids treating Sample_Infor frame rows without a demographic-module row
+    # as questionnaire refusals/DK responses.
+    with zipfile.ZipFile(archive_path) as source_zip:
+        demog_members = [name for name in source_zip.namelist()
+                         if name.casefold() == "demographic_background.dta"]
+        if len(demog_members) != 1:
+            raise ValueError("official Wave 3 archive must contain one Demographic_Background.dta")
+        demog_bytes = io.BytesIO(source_zip.read(demog_members[0]))
+    _, demog_metadata = pyreadstat.read_dta(demog_bytes, metadataonly=True)
+    demog_columns = field_map(demog_metadata.column_names)
+    if "id" not in demog_columns or "ba002" not in demog_columns:
+        raise ValueError("official Demographic_Background module lacks ID or BA002")
+    demog_bytes.seek(0)
+    demog_ids_routes, _ = pyreadstat.read_dta(
+        demog_bytes, usecols=[demog_columns["id"], demog_columns["ba002"]], user_missing=True
+    )
+    _, prepared_metadata = pyreadstat.read_dta(str(data_path), metadataonly=True)
+    prepared_columns = field_map(prepared_metadata.column_names)
+    prepared_ids_routes, _ = pyreadstat.read_dta(
+        str(data_path), usecols=[prepared_columns["id"], prepared_columns["ba002"]], user_missing=True
+    )
+
+    def norm_id(value: object) -> str:
+        return "" if pd.isna(value) else str(value).strip()
+
+    def norm_route(value: object) -> str:
+        return "" if pd.isna(value) else str(value).strip()
+
+    module_ids = demog_ids_routes.iloc[:, 0].map(norm_id)
+    prepared_ids = prepared_ids_routes.iloc[:, 0].map(norm_id)
+    module_route = demog_ids_routes.iloc[:, 1].map(norm_route)
+    prepared_route = prepared_ids_routes.iloc[:, 1].map(norm_route)
+    if module_ids.eq("").any() or prepared_ids.eq("").any():
+        raise ValueError("Wave 3 source or prepared IDs contain missing values")
+    if module_ids.duplicated().any() or prepared_ids.duplicated().any():
+        raise ValueError("Wave 3 source or prepared IDs are not unique")
+    module_id_set = set(module_ids)
+    module_route_by_id = dict(zip(module_ids, module_route))
+    frame_module_present = prepared_ids.isin(module_id_set)
+    prepared_route_missing = prepared_route.eq("")
+    module_route_missing = module_route.eq("")
+    route_mismatch_n = sum(
+        module_route_by_id.get(pid, "") != route
+        for pid, route, present in zip(prepared_ids, prepared_route, frame_module_present)
+        if present
+    )
+    module_ids_in_frame_n = int(module_ids.isin(set(prepared_ids)).sum())
+    module_linkage = {
+        "frame_rows": int(len(prepared_ids)),
+        "demographic_module_rows": int(len(module_ids)),
+        "unique_frame_ids": int(prepared_ids.nunique()),
+        "unique_module_ids": int(module_ids.nunique()),
+        "demographic_module_ids_found_in_frame": module_ids_in_frame_n,
+        "frame_rows_with_demographic_module": int(frame_module_present.sum()),
+        "frame_rows_without_demographic_module": int((~frame_module_present).sum()),
+        "ba002_missing_on_module_present_frame_rows": int((frame_module_present & prepared_route_missing).sum()),
+        "ba002_missing_on_module_absent_frame_rows": int(((~frame_module_present) & prepared_route_missing).sum()),
+        "ba002_present_on_module_absent_frame_rows": int(((~frame_module_present) & ~prepared_route_missing).sum()),
+        "prepared_vs_official_module_ba002_mismatches": int(route_mismatch_n),
+        "IDs_emitted": False,
+    }
     route_unknown_n = count(domain & route_unknown)
     # BA003 is observed for the separate actual-date route (BA002=2), not for
     # the much larger same-as-document route (BA002=1). Requiring BA003 on
@@ -153,9 +219,10 @@ def audit(data_path: Path, manifest_path: Path, output_path: Path,
         "official_archive_sha1_verified": True,
         "official_blood_artifact_sha1_verified": True,
         "manifest_spine": waves[0]["person_spine_module"],
-        "field_route_source": "CHARLS 2015 Codebook and Questionnaire; BA002 1=same as civil document (use BA004_W3 date), 2=separate actual date (use BA002 date); BA003 1=solar, 2=lunar is required for the separate actual-date route; questionnaire says .d/.r skip BA003",
-        "calendar_applicability_assumption": "BA003 required only when BA002=2; BA002=1 uses the civil-document date and BA003 is not applied. This is consistent with official Codebook observed-frequency counts but remains documented for methods review.",
-        "read_fields_excluding_id": True,
+        "field_route_source": "CHARLS 2015 Codebook and Questionnaire; BA002 1=same as civil document (use BA004_W3 date), 2=separate actual date (use BA002 date); BA003 1=solar, 2=lunar; questionnaire says .d/.r skip BA003",
+        "calendar_applicability_assumption": "Provisional: require BA003 when BA002=2; BA002=1 uses the civil-document date. Private cross-tab also found BA003 values on some BA002=1 records, so the route interpretation and discordant cases require independent methods review.",
+        "frame_module_linkage": module_linkage,
+        "identifiers_processed_in_memory_for_private_join_only": True,
         "participant_level_values_or_ids_emitted": False,
         "aggregate_counts_emitted": True,
         "blood_or_exposure_outcomes_read": False,
@@ -196,6 +263,7 @@ def audit(data_path: Path, manifest_path: Path, output_path: Path,
         },
         "gate_summary": {
             "unknown_birth_route_present": route_unknown_n > 0,
+            "calendar_value_on_same_as_document_route_present": count(domain & actual_doc & (calendar.eq(1) | calendar.eq(2))) > 0,
             "unrecognized_or_missing_calendar_on_separate_actual_date_route_present": calendar_unknown_n > 0,
             "birth_year_outside_documented_range_present": birth_year_invalid_n > 0,
             "birth_year_missing_present": birth_year_missing_n > 0,
@@ -203,7 +271,7 @@ def audit(data_path: Path, manifest_path: Path, output_path: Path,
             "invalid_birth_month_or_day_code_present": birth_month_invalid_n > 0 or birth_day_invalid_n > 0,
             "incomplete_interview_year_month_present": interview_time_incomplete_n > 0,
             "age_interval_ready": False,
-            "reason_age_interval_not_ready": "official route/date validity adjudication and lunar conversion parity are not yet complete",
+            "reason_age_interval_not_ready": "route/date validity and calendar applicability require review; age interval and independent methods review are not complete",
         },
         "age_derived": False,
         "eligibility_gate": "not_passed; route/date validity and age interval still require review",
