@@ -68,3 +68,7 @@ Wave 1 执行器对测量协议未解决的结局返回 `blocked_by_unresolved_m
 ## 2026-10-30 — 官方 Wave 1 Blood 标签元数据复核
 
 在服务器受控私有目录对已授权官方 Wave 1 Blood 文件执行 `pyreadstat.read_dta(metadataonly=True)`，只读文件元数据、不读取任何个人观测值：报告 11,847 行、19列，`qc1_va003` 标签为 `Fasting`，但该文件没有 variable value-label set/value-label tables。该结果确认数据中有空腹字段，却没有解释数值码；无值标签也不能证明没有有限特殊值。此前公开官方材料检索同样未得到编码，故 105项试点仍不得运行；血糖与甘油三酯14项继续暂缓。文件名及来源未变化，本轮未重跑 intake preflight。服务器仅保留汇总日志，权限 600。
+
+## 2026-10-30 — 区分官方血样权重与生物指标权重
+
+检查此前血样 ID—权重覆盖 QA 后发现：不能把 Blood 文件 `bloodweight` 和 Weight 文件 `bio_weight2` 当作同一个权重字段并要求记录级数值/覆盖一致。Blood Guide 明确说 `bloodweight` 校正血液采集未参与，CodeBook 则将 `bio_weight2` 单独描述为 biomarker weight，并未说明它包含血液采集未应答校正。更新来源说明：血液分析候选应直接使用 Blood 文件内的 `bloodweight`，不拿 `bio_weight2` 替代或据此筛掉 Blood 记录。服务器私有 QA 标记两权重覆盖不等是字段语义不同的诊断，并留在 mode 600；不外发小单元键覆盖。17,708/17,705/11,847 三种分母仍分别记录、总体框对账门仍未通过；当前权重字段来源更明确，但45+ domain及完整案例的权重适用性仍须独立审阅。本轮未读取结局值或拟合关联。
