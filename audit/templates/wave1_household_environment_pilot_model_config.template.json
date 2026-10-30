@@ -1,0 +1,345 @@
+{
+  "status": "not_frozen",
+  "plan_id": "charls_2011_household_environment_pilot_v1_K105",
+  "analysis_plan_sha256": "",
+  "source_manifest_id": "",
+  "prepared_output_sha256": "",
+  "reviewer": "",
+  "reviewed_at": "",
+  "target": {
+    "estimand": "",
+    "population_description": "",
+    "age_domain_method": ""
+  },
+  "frame": {
+    "analysis_sample_rule": "finite_positive_bloodweight_respondents",
+    "age_lower_field": "age_at_interview_lower",
+    "age_upper_field": "age_at_interview_upper",
+    "age_covariate_field": "age_at_interview_midpoint",
+    "age_domain_bound": "",
+    "minimum_age": null,
+    "full_design_frame_definition": "Observed official Wave 1 Blood-file respondents with finite positive bloodweight; target population is the 17,708 baseline main respondents and spouses described by the Blood Sample Users' Guide."
+  },
+  "design": {
+    "weight_field": "",
+    "psu_field": "",
+    "stratum_fields": [],
+    "replicate_weight_fields": [],
+    "with_replacement": null,
+    "variance_method": "",
+    "variance_limitations": "",
+    "singleton_psu_method": "",
+    "domain_singleton_method": "",
+    "on_domain_singletons": ""
+  },
+  "exposure_field_mapping": {
+    "i016": "",
+    "i017": "",
+    "i019": "",
+    "i020": "",
+    "i021": "",
+    "i022": ""
+  },
+  "model": {
+    "family": "gaussian",
+    "primary_model_id": "",
+    "continuous_covariates": [],
+    "binary_covariates": [],
+    "categorical_covariates": {},
+    "missing_data_rule": "",
+    "outcome_scale_rule": ""
+  },
+  "outcome_transformations": {
+    "blood_wbc": "not_frozen",
+    "blood_hemoglobin": "not_frozen",
+    "blood_hematocrit": "not_frozen",
+    "blood_mcv": "not_frozen",
+    "blood_platelets": "not_frozen",
+    "blood_total_cholesterol": "not_frozen",
+    "blood_hdl": "not_frozen",
+    "blood_ldl": "not_frozen",
+    "blood_triglycerides": "not_frozen",
+    "blood_glucose": "not_frozen",
+    "blood_hba1c": "not_frozen",
+    "blood_crp": "not_frozen",
+    "blood_bun": "not_frozen",
+    "blood_creatinine": "not_frozen",
+    "blood_uric_acid": "not_frozen"
+  },
+  "review_note": "Pilot-only template for the nested 105 registered hypotheses. The 14 glucose/triglyceride coefficients remain explicit blocked rows until official fasting coding is resolved. No tranche q-values; final correction is across K=240. Fill only after independent review; never treat this template as frozen.",
+  "outcome_validity_rules": {
+    "blood_wbc": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_hemoglobin": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_hematocrit": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_mcv": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_platelets": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_total_cholesterol": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_hdl": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_ldl": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_triglycerides": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "blocked",
+        "field": null,
+        "eligible_codes": [],
+        "block_reason": "Official Wave 1 qc1_va003 numeric mapping is unresolved; do not infer codes."
+      }
+    },
+    "blood_glucose": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "blocked",
+        "field": null,
+        "eligible_codes": [],
+        "block_reason": "Official Wave 1 qc1_va003 numeric mapping is unresolved; do not infer codes."
+      }
+    },
+    "blood_hba1c": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_crp": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_bun": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_creatinine": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    },
+    "blood_uric_acid": {
+      "review_status": "not_frozen",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_anchor": "",
+      "unit": "",
+      "valid_domain_rule": "",
+      "valid_min": null,
+      "valid_max": null,
+      "invalid_codes": [],
+      "lod_censoring_rule": "not_frozen",
+      "topcode_rule": "not_frozen",
+      "fasting_rule": {
+        "mode": "not_frozen",
+        "field": "",
+        "eligible_codes": []
+      }
+    }
+  },
+  "execution_batch": "pilot105"
+}

@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Protected exploratory extension: 2011 water/cooking-fuel × blood markers.
+"""Retired legacy exploratory runner; use the gated scale-up runner instead.
 
-The fixed family contains 105 coefficients: running-water Yes vs No plus six
-official cooking-fuel categories vs electricity, each paired with 15 blood
-analytes. M1 and M2 are multiplicity-adjusted separately. Microdata and all
-results stay under LOCALAPPDATA/CHARLS_ExWAS_Atlas.
+This earlier implementation predates the current estimand, outcome-validity,
+variance-df, and full-family multiplicity gates. It is retained for audit
+history, but its command-line entry point is disabled to prevent accidental
+fitting under obsolete rules. Use
+``run_2011_household_environment_scaleup.py --run --batch pilot105`` after
+independent review approves the matching private readiness/configuration.
 """
 from __future__ import annotations
 
@@ -152,13 +154,17 @@ def model_rows(data: pl.DataFrame, analyte: dict[str, str], exposure: str,
 
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(
-        description="Run the protected, exploratory CHARLS 2011 household-environment × blood extension."
+        description="Retired legacy runner; see the gated pilot105 runner."
     )
     parser.add_argument(
         "--run", action="store_true", required=True,
-        help="explicitly authorize execution of this exploratory local-data analysis",
+        help="legacy flag; execution is disabled",
     )
     parser.parse_args(argv)
+    raise RuntimeError(
+        "This legacy runner is retired. Use scripts/run_2011_household_environment_scaleup.py "
+        "--run --batch pilot105 after all independent review gates pass."
+    )
 
     # Keep help/default CLI paths free of analysis dependencies and data access.
     global np, pl, pyreadstat, svy

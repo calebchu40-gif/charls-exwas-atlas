@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Run the protected, frozen CHARLS 2011 K150/K90 household-environment block.
+"""Run a reviewed, protected CHARLS 2011 household-environment batch.
 
-This runner cannot fit models unless the exact official source/frame and a
-reviewed, hash-bound scale-up configuration pass the Wave 1 readiness gates.
-All inputs and outputs remain under LOCALAPPDATA/CHARLS_ExWAS_Atlas.
+Use ``--batch pilot105`` for the nested, separately gated 105-coefficient
+exploratory tranche, or ``--batch full240`` for the complete K150/K90 block.
+Neither can fit models unless its exact source/frame and independently
+reviewed, hash-bound configuration pass Wave 1 readiness gates. All inputs
+and outputs remain under the configured private root.
 """
 from __future__ import annotations
 
@@ -32,10 +34,15 @@ from audit_wave1_scaleup_metadata_readiness import audit as audit_scaleup_metada
 EXPECTED_SVY = "0.35.0"
 PLAN_KEY = "household_environment_scaleup"
 CONFIG_PATH = PRIVATE / "analysis_review" / "wave1_household_environment_scaleup_model_config.json"
+PILOT_PLAN_KEY = "household_environment_pilot"
+PILOT_CONFIG_PATH = PRIVATE / "analysis_review" / "wave1_household_environment_pilot_model_config.json"
 REGISTER = ROOT / "audit" / "wave1_household_environment_hypothesis_register_v0.csv"
 OUTPUT_DIR = PRIVATE / "scaleup_2011_household_environment"
+PILOT_OUTPUT_DIR = PRIVATE / "pilot105_2011_household_environment"
 ID_FIELD = "ID"
 OUTCOME_TERMS = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
+PILOT_EXPOSURES = {"running_water_at_residence", "cooking_fuel_main"}
+FASTING_REQUIRED_OUTCOMES = {"blood_glucose", "blood_triglycerides"}
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -169,7 +176,7 @@ def _validate_configuration(
         if rule["topcode_rule"] not in {"none_reported", "handled_by_invalid_codes_or_bounds"}:
             raise ValueError(f"Frozen validity rule for {concept} uses unsupported top-code handling")
         fasting = rule["fasting_rule"]
-        if not isinstance(fasting, dict) or fasting.get("mode") not in {"not_applicable", "retain_all", "restrict"}:
+        if not isinstance(fasting, dict) or fasting.get("mode") not in {"not_applicable", "retain_all", "restrict", "blocked"}:
             raise ValueError(f"Frozen validity rule for {concept} has unsupported fasting handling")
         if fasting["mode"] == "restrict":
             if not isinstance(fasting.get("field"), str) or not OUTCOME_TERMS.fullmatch(fasting["field"]):
@@ -178,8 +185,15 @@ def _validate_configuration(
                 raise ValueError(f"Frozen validity rule for {concept} fasting restriction lacks eligible codes")
             for value in fasting["eligible_codes"]:
                 _numeric_code(value, f"{concept}.fasting eligible code")
+        elif fasting["mode"] == "blocked":
+            if not isinstance(fasting.get("block_reason"), str) or not fasting["block_reason"].strip():
+                raise ValueError(f"Frozen validity rule for {concept} must document why fitting is blocked")
+            if fasting.get("field") not in (None, "") or fasting.get("eligible_codes", []) not in (None, []):
+                raise ValueError(f"Blocked fasting rule for {concept} cannot declare guessed field codes")
         elif fasting.get("field") not in (None, "") or fasting.get("eligible_codes", []) not in (None, []):
             raise ValueError(f"Frozen validity rule for {concept} must not specify fasting codes unless mode=restrict")
+        if concept in FASTING_REQUIRED_OUTCOMES and fasting["mode"] not in {"restrict", "blocked"}:
+            raise ValueError(f"{concept} requires a verified fasting restriction or an explicit blocked status")
         if rule["unit"] != analyte["unit"]:
             raise ValueError(f"Frozen validity rule for {concept} has a unit inconsistent with the reviewed crosswalk")
         if not isinstance(rule["invalid_codes"], list):
@@ -460,6 +474,12 @@ def _reference_outcome_scale(data: Any, config: dict[str, Any], analyte: dict[st
     frame = config["frame"]
     domain = _age_domain_expr(frame, pl)
     fasting = config["outcome_validity_rules"][analyte["concept_id"]]["fasting_rule"]
+    if fasting["mode"] == "blocked":
+        return {
+            "status": "blocked_by_unresolved_measurement_rule",
+            "block_reason": fasting["block_reason"],
+            "n_reference_private": 0,
+        }
     if fasting["mode"] == "restrict":
         allowed_fasting = [_numeric_code(value, f"{analyte['concept_id']}.fasting eligible code") for value in fasting["eligible_codes"]]
         domain &= pl.col(fasting["field"]).is_in(allowed_fasting)
@@ -622,18 +642,31 @@ def _finite(value: object) -> float | None:
     return result if math.isfinite(result) else None
 
 
-def run_scaleup() -> dict[str, Any]:
+def run_scaleup(batch: str = "full240") -> dict[str, Any]:
+    if batch not in {"pilot105", "full240"}:
+        raise ValueError("batch must be 'pilot105' or 'full240'")
+    plan_key = PILOT_PLAN_KEY if batch == "pilot105" else PLAN_KEY
+    config_path = PILOT_CONFIG_PATH if batch == "pilot105" else CONFIG_PATH
+    output_dir = PILOT_OUTPUT_DIR if batch == "pilot105" else OUTPUT_DIR
     if PRIVATE.resolve() != PRIVATE_ROOT.resolve() or not PRIVATE.resolve().is_relative_to(PRIVATE_ROOT.resolve()):
-        raise ValueError("Refusing to run outside the configured local protected CHARLS root")
+        raise ValueError("Refusing to run outside the configured protected CHARLS root")
     metadata = audit_scaleup_metadata()
     if metadata.get("status") != "passed_metadata_crosswalk_only":
         raise ValueError("Public-source K150/K90 metadata audit did not pass")
 
     provenance = require_verified_wave1_frame(PRIVATE, DATA)
-    readiness = require_wave1_analysis_readiness(PRIVATE, provenance, PLAN_KEY)
-    config = _load_json(CONFIG_PATH)
+    readiness = require_wave1_analysis_readiness(PRIVATE, provenance, plan_key)
+    config = _load_json(config_path)
     analytes = read_analytes()
     registry = _load_registry()
+    if batch == "pilot105":
+        registry = [
+            row for row in registry
+            if row["family_id"] == "wave1_household_environment_K150"
+            and row["exposure_concept_id"] in PILOT_EXPOSURES
+        ]
+        if len(registry) != 105 or len({row["hypothesis_id"] for row in registry}) != 105:
+            raise RuntimeError("The nested pilot tranche must contain exactly 105 unique registered hypotheses")
     _validate_configuration(config, analytes, registry)
 
     # Data-access dependencies are imported only after the source and review gates.
@@ -650,7 +683,11 @@ def run_scaleup() -> dict[str, Any]:
     }
 
     from adjust_exwas_pvalues import adjust_pvalues
-    family_ids = ("wave1_household_environment_K150", "wave1_heating_route_K90")
+    family_ids = (
+        ("wave1_household_environment_K150",)
+        if batch == "pilot105"
+        else ("wave1_household_environment_K150", "wave1_heating_route_K90")
+    )
     results: list[dict[str, Any]] = []
     pair_qa: list[dict[str, Any]] = []
     for family_id in family_ids:
@@ -705,52 +742,68 @@ def run_scaleup() -> dict[str, Any]:
 
     for family_id in family_ids:
         family_rows = [row for row in results if row["family_id"] == family_id]
-        expected_size = 150 if family_id.endswith("K150") else 90
+        expected_size = 105 if batch == "pilot105" else (150 if family_id.endswith("K150") else 90)
         if len(family_rows) != expected_size:
             raise RuntimeError(f"Predeclared family {family_id} is incomplete: expected {expected_size}, found {len(family_rows)}")
-        adjusted = adjust_pvalues([_finite(row.get("p_value")) for row in family_rows])
-        for row, q_value, bonf in zip(family_rows, adjusted["q_value_by"], adjusted["p_bonferroni"], strict=True):
-            row["q_value_by_batch"] = q_value
-            row["p_bonferroni_batch"] = bonf
-            row["multiplicity_scope"] = "provisional batch diagnostic only; final inference requires the frozen atlas-wide family"
+        if batch == "pilot105":
+            for row in family_rows:
+                row["q_value_by_batch"] = None
+                row["p_bonferroni_batch"] = None
+                row["multiplicity_scope"] = "nested execution tranche; no tranche q-values; final correction across frozen K=240 family"
+        else:
+            adjusted = adjust_pvalues([_finite(row.get("p_value")) for row in family_rows])
+            for row, q_value, bonf in zip(family_rows, adjusted["q_value_by"], adjusted["p_bonferroni"], strict=True):
+                row["q_value_by_batch"] = q_value
+                row["p_bonferroni_batch"] = bonf
+                row["multiplicity_scope"] = "provisional batch diagnostic only; final inference requires the frozen atlas-wide family"
 
     run_time = datetime.now(timezone.utc).isoformat()
     manifest = {
         "run_utc": run_time,
         "analysis_id": config["plan_id"],
-        "status": "protected exploratory scale-up; not approved for public release",
+        "execution_batch": batch,
+        "status": "protected exploratory analysis; not approved for public release",
         "source_manifest_id": provenance["source_manifest_id"],
         "prepared_frame_sha256": provenance["prepared_output_sha256"],
-        "model_configuration_sha256": readiness["frozen_scaleup_configuration_sha256"],
-        "analysis_plan_sha256": analysis_plan_fingerprint(PLAN_KEY),
+        "model_configuration_sha256": readiness[
+            "frozen_pilot_configuration_sha256" if batch == "pilot105"
+            else "frozen_scaleup_configuration_sha256"
+        ],
+        "analysis_plan_sha256": analysis_plan_fingerprint(plan_key),
         "code_commit": subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.strip(),
         "python": sys.version,
         "svy_version": svy.__version__,
         "primary_model_id": config["model"]["primary_model_id"],
         "primary_families": {family_id: sum(row["family_id"] == family_id for row in results) for family_id in family_ids},
-        "family_adjustments": "BY and Bonferroni are batch diagnostics only; do not interpret as final atlas-wide error control",
+        "family_adjustments": (
+            "No pilot-tranche q-values; final correction is across the frozen K=240 family"
+            if batch == "pilot105"
+            else "BY and Bonferroni are batch diagnostics only; do not interpret as final atlas-wide error control"
+        ),
         "participant_data_release": False,
         "public_release_status": "not_approved",
     }
-    output_dir = require_private_path(OUTPUT_DIR)
+    output_dir = require_private_path(output_dir)
     if not output_dir.is_relative_to(PRIVATE_ROOT.resolve()):
-        raise ValueError("Refusing scale-up output outside protected local storage")
+        raise ValueError("Refusing analysis output outside protected local storage")
     output_dir.mkdir(parents=True, exist_ok=True)
-    with (output_dir / "wave1_household_environment_scaleup_results_private.csv").open("w", newline="", encoding="utf-8-sig") as stream:
+    output_stem = "wave1_household_environment_pilot105" if batch == "pilot105" else "wave1_household_environment_scaleup"
+    with (output_dir / f"{output_stem}_results_private.csv").open("w", newline="", encoding="utf-8-sig") as stream:
         fields = sorted({key for row in results for key in row})
         writer = csv.DictWriter(stream, fieldnames=fields)
         writer.writeheader()
         writer.writerows(results)
-    with (output_dir / "wave1_household_environment_scaleup_pair_qa_private.csv").open("w", newline="", encoding="utf-8-sig") as stream:
+    with (output_dir / f"{output_stem}_pair_qa_private.csv").open("w", newline="", encoding="utf-8-sig") as stream:
         fields = sorted({key for row in pair_qa for key in row})
         writer = csv.DictWriter(stream, fieldnames=fields)
         writer.writeheader()
         writer.writerows(pair_qa)
-    (output_dir / "wave1_household_environment_scaleup_manifest_private.json").write_text(
+    (output_dir / f"{output_stem}_manifest_private.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
     )
     return {
         "run": "complete",
+        "execution_batch": batch,
         "result_rows": len(results),
         "families": manifest["primary_families"],
         "participant_data_release": False,
@@ -759,11 +812,12 @@ def run_scaleup() -> dict[str, Any]:
 
 
 def main(argv: list[str] | None = None) -> None:
-    parser = argparse.ArgumentParser(description="Run the approved protected Wave 1 K150/K90 scale-up.")
+    parser = argparse.ArgumentParser(description="Run a reviewed protected Wave 1 pilot or K150/K90 scale-up.")
     parser.add_argument("--run", action="store_true", required=True,
                         help="explicitly authorize a local protected analysis after all review gates pass")
-    parser.parse_args(argv)
-    print(json.dumps(run_scaleup(), ensure_ascii=False, indent=2))
+    parser.add_argument("--batch", choices=("pilot105", "full240"), default="full240")
+    args = parser.parse_args(argv)
+    print(json.dumps(run_scaleup(args.batch), ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":

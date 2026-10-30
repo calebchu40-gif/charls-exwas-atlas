@@ -1700,3 +1700,11 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Recorded the user's renewed confirmation that Wave 1 files 123/117/118/201 were obtained under their authorized CHARLS account and may be used in this project; the protected server metadata-only preflight now passes.
 - Added the active execution plan for the 45+ Wave 1 blood-target domain, the user-selected `communityID` unstratified with-replacement Taylor approximation, the fixed 105-coefficient pilot family, and the remaining review gates. No respondent-level data or model results are included.
 - Public association results remain withheld until methods, multiplicity, and disclosure review is complete.
+
+## 2026-10-30：建立单独门禁的105项试点批次
+
+- Added a separate `pilot105` route nested inside the K150 family, with its own plan fingerprint, private readiness record, frozen configuration file, and output directory. The existing `full240` route remains separately gated.
+- The pilot emits no tranche q-values. Final multiplicity adjustment remains over the full frozen K=240 hypothesis family.
+- Wave 1 glucose and triglycerides require a verified fasting rule. Until the official `qc1_va003` mapping is sourced, their 14 registered coefficients remain explicitly blocked without estimates or p/q values; the other 91 are candidates only after review.
+- Retired the command-line entry point of the legacy blood-extension runner because its rules predate the current gates. The retained file raises an actionable message directing users to the gated batch runner.
+- Static checks only; no CHARLS association models were fitted. Source identity and the user's Option A approximation are recorded, but target/age-domain, covariate and outcome freezes and independent methods review remain pending.

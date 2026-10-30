@@ -67,6 +67,23 @@ ANALYSIS_PLANS = {
         ),
         "additional_gates": ("pilot_success_and_reproducibility_review",),
     },
+    "household_environment_pilot": {
+        "filename": "wave1_household_environment_pilot.json",
+        "plan_id": "charls_2011_household_environment_pilot_v1_K105",
+        "plan_files": (
+            "audit/执行计划_授权确认后_2026-10-30.md",
+            "audit/wave1_household_environment_pilot_execution_design_2026-10-30.md",
+            "audit/wave1_household_environment_hypothesis_register_v0.csv",
+            "audit/wave1_variance_review_recommendation_2026-10-30.md",
+            "audit/wave1_pilot_pair_eligibility_review_2026-10-30.md",
+            "audit/templates/wave1_household_environment_pilot_readiness.template.json",
+            "audit/templates/wave1_household_environment_pilot_model_config.template.json",
+            "scripts/run_2011_household_environment_scaleup.py",
+        ),
+        "additional_gates": ("frozen_pilot_configuration",),
+        "config_filename": "wave1_household_environment_pilot_model_config.json",
+        "config_gate": "frozen_pilot_configuration",
+    },
     "household_environment_scaleup": {
         "filename": "wave1_household_environment_scaleup_K150_K90.json",
         "plan_id": "charls_2011_household_environment_scaleup_v1_K150_K90",
@@ -88,6 +105,8 @@ ANALYSIS_PLANS = {
             "pilot_success_and_reproducibility_review",
             "frozen_scaleup_configuration",
         ),
+        "config_filename": "wave1_household_environment_scaleup_model_config.json",
+        "config_gate": "frozen_scaleup_configuration",
     },
 }
 
@@ -275,13 +294,13 @@ def require_wave1_analysis_readiness(
         "analysis_plan_sha256": expected_plan_hash,
         "public_release_status": "not_approved",
     }
-    if analysis_plan == "household_environment_scaleup":
-        config_path = root / "analysis_review" / "wave1_household_environment_scaleup_model_config.json"
-        config = _load_json(config_path, "frozen household-environment scale-up configuration")
-        config_gate = gates["frozen_scaleup_configuration"]
+    if plan.get("config_filename"):
+        config_path = root / "analysis_review" / str(plan["config_filename"])
+        config = _load_json(config_path, "frozen household-environment analysis configuration")
+        config_gate = gates[str(plan["config_gate"])]
         config_digest = sha256_file(config_path)
         if str(config_gate.get("sha256", "")).lower() != config_digest:
-            raise ValueError("Wave 1 readiness gate: scale-up configuration hash is not approved")
+            raise ValueError("Wave 1 readiness gate: analysis configuration hash is not approved")
         for key, expected in {
             "plan_id": plan["plan_id"],
             "analysis_plan_sha256": expected_plan_hash,
@@ -291,28 +310,28 @@ def require_wave1_analysis_readiness(
             if config.get(key) != expected:
                 raise ValueError(f"Wave 1 readiness gate: frozen scale-up configuration {key} binding differs")
         if config.get("status") != "frozen":
-            raise ValueError("Wave 1 readiness gate: scale-up model configuration is not frozen")
+            raise ValueError("Wave 1 readiness gate: model configuration is not frozen")
         if not str(config.get("reviewer", "")).strip() or not str(config.get("reviewed_at", "")).strip():
-            raise ValueError("Wave 1 readiness gate: frozen scale-up configuration lacks reviewer/date")
+            raise ValueError("Wave 1 readiness gate: frozen model configuration lacks reviewer/date")
         for section in ("target", "frame", "design", "model", "outcome_transformations", "outcome_validity_rules"):
             if not isinstance(config.get(section), dict) or not config[section]:
-                raise ValueError(f"Wave 1 readiness gate: frozen scale-up configuration section {section!r} is missing")
+                raise ValueError(f"Wave 1 readiness gate: frozen analysis configuration section {section!r} is missing")
         design = config["design"]
         for field in (
             "weight_field", "psu_field", "variance_method", "variance_limitations",
             "singleton_psu_method", "domain_singleton_method", "on_domain_singletons",
         ):
             if not str(design.get(field, "")).strip():
-                raise ValueError(f"Wave 1 readiness gate: frozen scale-up design lacks {field}")
+                raise ValueError(f"Wave 1 readiness gate: frozen analysis design lacks {field}")
         strata = design.get("stratum_fields")
         if not isinstance(strata, list) or any(not str(item).strip() for item in strata):
             raise ValueError("Wave 1 readiness gate: stratum_fields must be an explicit list (possibly empty)")
         model = config["model"]
         if model.get("family") != "gaussian" or not str(model.get("primary_model_id", "")).strip():
-            raise ValueError("Wave 1 readiness gate: frozen scale-up primary model must declare its ID and Gaussian family")
+            raise ValueError("Wave 1 readiness gate: frozen primary model must declare its ID and Gaussian family")
         for key in ("continuous_covariates", "binary_covariates", "categorical_covariates"):
             if not isinstance(model.get(key), (list, dict)):
-                raise ValueError(f"Wave 1 readiness gate: frozen scale-up model lacks {key}")
+                raise ValueError(f"Wave 1 readiness gate: frozen model lacks {key}")
         transforms = config["outcome_transformations"]
         if len(transforms) != 15 or any(
             not isinstance(value, str) or value not in {"identity", "log"}
@@ -340,11 +359,16 @@ def require_wave1_analysis_readiness(
             if rule.get("topcode_rule") not in {"none_reported", "handled_by_invalid_codes_or_bounds"}:
                 raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} has unsupported top-code handling")
             fasting = rule.get("fasting_rule")
-            if not isinstance(fasting, dict) or fasting.get("mode") not in {"not_applicable", "retain_all", "restrict"}:
+            if not isinstance(fasting, dict) or fasting.get("mode") not in {"not_applicable", "retain_all", "restrict", "blocked"}:
                 raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} has unsupported fasting handling")
             if fasting["mode"] == "restrict":
                 if not str(fasting.get("field", "")).strip() or not isinstance(fasting.get("eligible_codes"), list) or not fasting["eligible_codes"]:
                     raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} has incomplete fasting restriction")
+            elif fasting["mode"] == "blocked":
+                if not str(fasting.get("block_reason", "")).strip():
+                    raise ValueError(f"Wave 1 readiness gate: blocked fasting rule for {concept} lacks a reason")
+                if fasting.get("field") not in (None, "") or fasting.get("eligible_codes", []) not in (None, []):
+                    raise ValueError(f"Wave 1 readiness gate: blocked fasting rule for {concept} cannot declare guessed codes")
             elif fasting.get("field") not in (None, "") or fasting.get("eligible_codes", []) not in (None, []):
                 raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} has unsupported fasting fields")
             if not isinstance(rule.get("invalid_codes"), list):
@@ -364,5 +388,5 @@ def require_wave1_analysis_readiness(
                 or rule["topcode_rule"] == "handled_by_invalid_codes_or_bounds"
             ) and not rule["invalid_codes"] and lower is None and upper is None:
                 raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} claims handled censoring without executable codes/bounds")
-        result["frozen_scaleup_configuration_sha256"] = config_digest
+        result[f"{plan['config_gate']}_sha256"] = config_digest
     return result
