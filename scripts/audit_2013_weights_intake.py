@@ -20,9 +20,8 @@ from project_paths import PRIVATE_ROOT, QA_OUTPUT_DIR, require_private_path
 
 EXPECTED_OFFICIAL_WEIGHTS_SHA1 = "22c4fc89df2e55fa8faf051e88830eebe0e035c0"
 REQUIRED_FIELDS = ("id", "crosssection", "longitudinal")
-DEFAULT_INTAKE = PRIVATE_ROOT / "incoming_2013_weights"
+DEFAULT_INTAKE = PRIVATE_ROOT / "intake_raw" / "files"
 DEFAULT_ARCHIVE = DEFAULT_INTAKE / "2013_318_Weights.zip"
-DEFAULT_SOURCE = DEFAULT_INTAKE / "Weights.dta"  # optional extracted copy for downstream merge
 DEFAULT_QA = QA_OUTPUT_DIR / "charls_2013_weights_intake_metadata.json"
 
 

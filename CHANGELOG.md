@@ -8,6 +8,11 @@
 - Ran the protected metadata-only gate on the authorized CHARLS 2013 weights archive. Its archive checksum matched the official listing and the DTA header contained the required identifier and sample-flag fields.
 - No respondent values, flags, IDs or weights were inspected; no merge or Wave 2 analysis was run. The private metadata report remains under server `private/`.
 
+# 2026-10-31 Align Wave 2 and Wave 3 intake gate defaults
+
+- Updated the 2013 weights and 2015 blood metadata-only scripts to locate their official ZIPs in the protected canonical `private/intake_raw/files` store. The prior defaults pointed to wave-specific folders that did not contain the archive copies, which could make automated checks report authorized files as missing.
+- The extracted wave-specific inputs remain under private storage. The change affects source discovery only; it does not alter survey design or analysis eligibility.
+
 # 2026-10-30 Repair CI compatibility and clarify public methods disclosures
 
 - Restored the compatibility names expected by the existing Wave 2 official-weight merge interface, with SHA-1 verification scoped to the official archive.

@@ -44,7 +44,7 @@ REQUIRED_FIELDS = (
     "bl_top_coding_tg",
 )
 DEFAULT_INTAKE = PRIVATE_ROOT / "incoming_2015_blood"
-DEFAULT_ARTIFACT = DEFAULT_INTAKE / "2015_2088_Blood.zip"
+DEFAULT_ARTIFACT = PRIVATE_ROOT / "intake_raw" / "files" / "2015_2088_Blood.zip"
 DEFAULT_STATA = DEFAULT_INTAKE / "Blood_Data_2015.dta"  # legacy explicit-file caller
 DEFAULT_QA = QA_OUTPUT_DIR / "blood_2015_intake_metadata.json"
 
