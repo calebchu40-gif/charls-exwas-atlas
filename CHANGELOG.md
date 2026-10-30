@@ -4,6 +4,7 @@
 - Clarified the fail-closed Wave 3 blood-frame error without exposing respondent IDs.
 - Clarified public site language for age-domain interpretation, cross-sectional weights, wave-specific survey-design distinctions, community PSU limitations, and the fact that no association estimates are published.
 - GitHub Actions at `164d5ad` passed the repository data-boundary check but failed during unit tests. This commit addresses the surfaced code/API and disclosure mismatches; the resulting CI run remains the verification source.
+- Follow-up CI run `41080874750` narrowed the failures to a legacy expected error-message phrase and one missing PSU note inside the survey-design panel; both are corrected in the next commit.
 
 # 2026-10-30 Allowlist reviewed Wave 3 outcome metadata
 

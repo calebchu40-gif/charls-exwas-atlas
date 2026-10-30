@@ -33,7 +33,7 @@ def verify_official_weights_sha1(path: Path, expected_sha1: str = EXPECTED_OFFIC
     actual = sha1_file(path).lower()
     if actual != expected_sha1.lower():
         raise ValueError(
-            "Official CHARLS Wave 2 Weights archive SHA1 does not match the expected release; "
+            "SHA1 does not match the official CHARLS Wave 2 Weights release; "
             f"expected {expected_sha1.lower()}, got {actual}. No merge performed."
         )
     return actual
