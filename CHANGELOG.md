@@ -1547,3 +1547,6 @@ This file records project-level changes that affect reproducibility, methods, da
 # 2026-10-30 Rerun protected Wave 1 age candidate after official lunar parity gate
 
 Reran the source-bound Wave 1 age-interval candidate derivation with the newly enforced official lunar-table parity check. The protected run completed; person-level output and route diagnostics remain in owner-controlled local storage. This validates the preparation path only: age-method review and survey-design approval remain pending, and no association models were fitted.
+# 2026-10-30 — Reconcile current README with completed Wave 1 intake
+
+Marked the October 27–29 “Wave 1 files missing” entries as historical snapshots and linked their status to the current execution plan. The official Wave 1 source set is now confirmed and the protected candidate respondent frame and Blood/`bloodweight` linkage have been rebuilt and checked. Formal association models remain 0 because target/frame and age methods, complete survey variance design, outcome/fasting rules, and independent methods review are still unresolved. No participant-level data or restricted outputs were changed or published.

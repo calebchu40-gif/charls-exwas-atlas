@@ -8,13 +8,13 @@
 
 **等待期基础设施（2026-10-27）：**9 项官方数据申请已提交并在审核中；审核期内在服务器完成正式分析环境（`env/venv`，`svy 0.35.0` / `pandas 2.3.3` / `pyreadstat 1.3.1` 精确锁定）、**通用 ExWAS 扫描引擎**（[`scripts/exwas_engine.py`](scripts/exwas_engine.py) + [`scripts/run_exwas_scan.py`](scripts/run_exwas_scan.py)，注册表与设计规格外部化、缺权重/PSU 即拒绝、族内 BY/Bonferroni、不可估计假设保留）以及网站**暴露×表型热图**（着色/详情/CSV 下载，仍只读经披露审查的 `association_results_v1.json`）。14 项合成测试与本地 staging 夹具（105 条私有 pilot 行、生产校验器 0 错误、热图 15×7 渲染）通过；本地全套 593 项测试通过。未读取任何 CHARLS 个体记录、未拟合任何真实模型、未发布任何结果；详见[`audit/waiting_period_infrastructure_2026-10-27.md`](audit/waiting_period_infrastructure_2026-10-27.md)。
 
-**K=150/K=90执行器准备（2026-10-27）：**新增受保护本地运行器[`scripts/run_2011_household_environment_scaleup.py`](scripts/run_2011_household_environment_scaleup.py)及私有冻结配置模板。运行器在任何读取参与者表前要求来源身份、派生表哈希、方案指纹、试点复现/成功审查、完整抽样设计、估计目标和模型配置均通过受控审批，并仅支持已固定的`svy==0.35.0`Taylor路径；不接受未审核的复制权重。整样本singleton PSU方法、子总体domain-singleton处理及诊断策略都必须在冻结配置中明确记录，不用引擎默认值替代审阅。K=150主块和K=90条件路由块都保留完整预设假设；批次校正明确只是诊断，不能代表最终Atlas全家族校正。已完成元数据/API静态核对，尚未读取参与者数据或实际运行关联模型；Wave 1官方All Data/PSU/Weight/Blood仍缺失，正式关联模型和公开结果仍为0。
+**K=150/K=90执行器准备（历史快照，2026-10-27）：**新增受保护本地运行器[`scripts/run_2011_household_environment_scaleup.py`](scripts/run_2011_household_environment_scaleup.py)及私有冻结配置模板。运行器在任何读取参与者表前要求来源身份、派生表哈希、方案指纹、试点复现/成功审查、完整抽样设计、估计目标和模型配置均通过受控审批，并仅支持已固定的`svy==0.35.0`Taylor路径；不接受未审核的复制权重。整样本singleton PSU方法、子总体domain-singleton处理及诊断策略都必须在冻结配置中明确记录，不用引擎默认值替代审阅。K=150主块和K=90条件路由块都保留完整预设假设；批次校正明确只是诊断，不能代表最终Atlas全家族校正。后续已完成受控 Wave 1 来源确认及候选准备表重建，详见执行计划；正式关联模型和公开结果仍为0。
 
 **当前目录规模：**常规五波E/P候选目录已建立 1,625 个去重概念ID、8,341 条概念—源字段映射；每条E/P字段目录行均有关联的候选概念ID。首页当前KPI显示 E 候选概念1,319、P候选概念332、常规波次5、正式关联模型0；E/P角色数相加会重复计算26个双角色概念。2014 Life History 线上目录含195个概念组、6,103条映射（E 6,042、P 61），其中新增5条受访者本人敏感背景元数据字段；亲属敏感字段仍暂缓。这些是候选目录计数，不代表最终可分析变量、实际样本量或统计结果。
 
 **当前线上版本：**CHARLS ExWAS Atlas已公开部署：[网站入口](https://calebchu40-gif.github.io/charls-exwas-atlas/)。2026-10-27直接核验首页 HTTP 200，当前加载 app v194；Life History JSON v57（195组、6,103条；E 6,042、P 61）。最近三批增加子女婚姻背景126字段、领养来源4字段、参军/下乡类别53字段；对应精确年份区间继续排除。关联结果页现支持按暴露概念、表型概念、调查波次和模型筛选；无批准发布结果时保持空结果提示。正式、经审查的关联模型仍为0。
 
-**2026-10-27试点Go/No-Go复核：**上一轮105项探索模型只证明软件链可运行，尚不能判定科学试点有效；当前Wave 1官方All Data/PSU/Weight/Blood均未进入受控入库目录，Wave 2权重和Wave 3血检文件也缺失。本轮只复查元数据门禁和受控目录，未读取个人回答、未拟合模型、未发布结果。下一步固定为官方源身份→重建与分母调和→目标/年龄域/权重/PSU与方差审核→冻结105项试点复核→独立方法审查→K=150住宅环境主块→K=90供暖路由子域。试点成败按设计有效性、可复现性及诊断判定，不按显著性；已登记240条待核假设（K=150/90），均属试点后探索；K=150其中105条与先前K=105探索重叠，批次校正不作最终全Atlas发现控制。它们不是分析样本或结果，主要模型与精确发行版编码仍未冻结。详细条件与文件到位后的自动执行顺序见[`audit/pilot_autonomous_execution_decision_2026-10-27.md`](audit/pilot_autonomous_execution_decision_2026-10-27.md)；家庭环境暴露—血液表型的候选协变量DAG首轮审阅见[`audit/wave1_household_environment_covariate_dag_review_2026-10-27.md`](audit/wave1_household_environment_covariate_dag_review_2026-10-27.md)。
+**2026-10-27试点Go/No-Go复核（历史快照，已由后续工作更新）：**上一轮105项探索模型只证明软件链可运行，尚不能判定科学试点有效；当时 Wave 1 官方数据尚未进入正式入库目录。本项目随后完成官方来源身份确认、受控入库、Wave 1 候选框重建及 ID/权重链接核验。当前阻断已转为样本目标与年龄方法、完整调查方差设计、表型有效值/空腹规则和独立方法审阅；因此正式关联模型仍为0。试点成败按设计有效性、可复现性及诊断判定，不按显著性；登记的 K=150/K=90 配对数是待核假设目录，不是分析样本或结果，主要模型与精确发行版编码仍未冻结。详细执行顺序见[`audit/pilot_autonomous_execution_decision_2026-10-27.md`](audit/pilot_autonomous_execution_decision_2026-10-27.md)；家庭环境暴露—血液表型的候选协变量DAG首轮审阅见[`audit/wave1_household_environment_covariate_dag_review_2026-10-27.md`](audit/wave1_household_environment_covariate_dag_review_2026-10-27.md)。
 
 **跨波分析规约（2026-10-27）：**新增[`audit/cross_wave_pooling_and_estimand_protocol_v1.md`](audit/cross_wave_pooling_and_estimand_protocol_v1.md)，明确CHARLS默认逐波定义目标总体、使用适用的波次/子样本权重和方差设计；只有构念、单位/协议、样本框、估计量及设计均可比时才考虑跨波汇总。重复受访者不能当独立横断面堆叠，结构性跳题/未测量不能改作零或普通缺失。此为未审阅方法规约，不改变当前数据或授权状态。
 
@@ -26,7 +26,7 @@
 
 **目录交付核验：**本项目候选目录、字段级来源追溯、查询原型、CHARLS许可边界和已知分析闸门汇总见[`audit/atlas_catalog_delivery_audit_2026-10-26.md`](audit/atlas_catalog_delivery_audit_2026-10-26.md)。目录可检索不代表统计关联已完成或变量已获准进入模型。
 
-**分析阶段更新（2026-10-26）：**受保护本机已完成2011基线内部探索试点：住所自来水与主烹饪燃料（按官方1–7类别、以电为参照），配对15项非胱抑素C血液表型，含粗模型、年龄/性别主模型及社会背景敏感性模型；M1/M2各有预设K=105假设并完成BY与Bonferroni校正。燃料支持诊断为运行后描述性QA，未据此筛除假设。代码校验了本地PSU键唯一性和个人表键覆盖，但官方Wave 1源文件仍未入库，血权重/PSU发行版来源和30个拆分社区对应关系未闭环；方差仍为未纳入隐式分层的探索性近似。另据官方血样指南，血样目标包括主受访者及其配偶，当前试点限定年龄≥45后的目标总体/权重适用范围也尚待官方资格资料核实。上述不是确认性结果，估计、p/q值和逐对样本明细均只保存在受保护本机，未上传。正式、可公开关联模型仍为0。方案、设计局限与后续门槛见[`audit/pilot_2011_water_biomarker_plan_and_gates_2026-10-26.md`](audit/pilot_2011_water_biomarker_plan_and_gates_2026-10-26.md)。
+**分析阶段更新（历史快照，2026-10-26）：**当时受保护本机已完成 2011 基线内部探索试点，涉及住所自来水/主烹饪燃料与非胱抑素 C 血液表型。该轮仅证明软件链可运行，因当时来源、样本框、权重及方差设计未闭环，不是确认性或正式 CHARLS 关联结果；之后已将其复现列为方法审查事项，不能直接作为科学试点有效或公开结果。原始估计与逐对明细继续保存在受保护区。后续的官方 Wave 1 来源审阅和当前门禁见[`audit/pilot_2011_water_biomarker_plan_and_gates_2026-10-26.md`](audit/pilot_2011_water_biomarker_plan_and_gates_2026-10-26.md)及当前执行计划。
 
 **本轮续接核验（2026-10-26）：**重跑受保护的结果表完整性审计后，试点表结构、有限数值和预设多重校正复算通过；该结论仅表示技术完整，不表示估计有效。Wave 1官方来源预检仍因全量包、PSU、Weight、Blood文件缺失而未通过，因此不重拟合、不扩展K=150/K=90，也不据现有P/q值判断效果。正式统计的下一动作是将获准官方文件放入本机受控入库目录，随后按来源→样本框/年龄域→权重→PSU与方差→冻结105系数复核的顺序放行。公开站点仅更正了状态说明并已核验加载v192；没有关联结果或个人数据发布。完整Go/No-Go与试点通过后的固定扩展顺序见[`audit/pilot_success_criteria_and_scale_up_2026-10-26.md`](audit/pilot_success_criteria_and_scale_up_2026-10-26.md)和[`audit/pilot_followup_execution_plan_2026-10-26.md`](audit/pilot_followup_execution_plan_2026-10-26.md)。
 
@@ -369,7 +369,7 @@ DA056选项编码边界更新（2026-10-23）：41个2011/2013/2015活动与设�
 
 当前本地目录快照核对项（尚未部署）：E=6,092、P=2,116、C=984；1,571 个候选概念（暴露 1,265，表型 331）；8,102 条概念—来源映射。波次目录共现配对：2011 135,445；2013 141,920；2015 143,137；2018 105,493；2020 21,630。
 
-**血液表型有效值与尺度门（2026-10-27）：**[`audit/wave1_biomarker_outcome_validity_and_scale_gate_2026-10-27.md`](audit/wave1_biomarker_outcome_validity_and_scale_gate_2026-10-27.md)已落实为 K=150/K=90 runner 的逐表型准入字段：特殊值、有效范围、检出限/顶码规则和空腹处理须依据来源审核；空腹子域限制会在调查设计 domain 中应用。任何一项未完成审核、精确单位不一致或使用执行器不支持的规则，均阻止模型读取参与者表。标准化尺度按波次—表型在冻结目标域内计算一次，供该波次全部暴露模型共用；此变更已由 [Validate #765](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40426140814) 验证通过。模板全部未冻结；官方 Wave 1 输入仍缺失，真实关联模型仍为0。
+**血液表型有效值与尺度门（历史快照，2026-10-27）：**[`audit/wave1_biomarker_outcome_validity_and_scale_gate_2026-10-27.md`](audit/wave1_biomarker_outcome_validity_and_scale_gate_2026-10-27.md)已落实为 K=150/K=90 runner 的逐表型准入字段：特殊值、有效范围、检出限/顶码规则和空腹处理须依据来源审核；空腹子域限制会在调查设计 domain 中应用。任何一项未完成审核、精确单位不一致或使用执行器不支持的规则，均阻止模型读取参与者表。标准化尺度按波次—表型在冻结目标域内计算一次，供该波次全部暴露模型共用；此变更已由 [Validate #765](https://github.com/calebchu40-gif/charls-exwas-atlas/actions/runs/40426140814) 验证通过。后续 Wave 1 输入已入库并完成候选表重建；模型门禁仍关闭，真实正式关联模型为0。
 # 当前执行计划与进度
 
 请查看 [执行计划与当前进度](audit/ACTIVE_WORK_PLAN_2026-10-29.md)：其中列出正在执行阶段、阻塞项、后续交付物、放行标准和剩余有效工作时间估算。正式 CHARLS 关联模型仍须等待 Wave 1 样本框、权重与 PSU/方差审查通过。
