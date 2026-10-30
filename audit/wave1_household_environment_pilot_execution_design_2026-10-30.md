@@ -6,7 +6,7 @@
 
 The `pilot105` batch is exactly the 105 registered coefficients nested inside K150: one running-water contrast and six cooking-fuel-versus-electricity contrasts, each crossed with the 15 predeclared blood phenotypes. It is not a new inferential family and adds no hypotheses to K=240.
 
-The official Wave 1 numeric mapping for fasting field `qc1_va003` remains unresolved. The 7 glucose coefficients stay in the output registry as `blocked_by_unresolved_measurement_rule`, with no coefficient estimate or p/q value, because CHARLS warns that non-fasting glucose may be higher. The 7 triglyceride coefficients remain candidate outcomes for all observed blood samples: an EAS/EFLM consensus supports routine non-fasting lipid profiles, while a fasting-status sensitivity remains pending an authoritative Wave 1 code map. The remaining 91 coefficients are candidates only after independent review of the outcome rules, age/target estimand, covariates, and Option A approximation. Thus 98 of 105 are candidates for fitting after approval, not a claim of actual estimability.
+The official Wave 1 numeric mapping for fasting field `qc1_va003` remains unresolved. Per the current project decision, both the 7 glucose coefficients and 7 triglyceride coefficients stay in the output registry as `blocked_by_unresolved_measurement_rule`, with no coefficient estimate or p/q value until the Wave 1 code mapping is authoritative and reviewed. CHARLS explicitly warns that non-fasting glucose may be higher. External consensus supporting routine non-fasting lipid profiles does not by itself clear this CHARLS-specific mapping and analysis-rule gate. The remaining 91 coefficients are candidates only after independent review of the outcome rules, age/target estimand, covariates, and Option A approximation; this is not a claim of actual estimability.
 
 ## Review and execution boundaries
 
@@ -18,7 +18,7 @@ The official Wave 1 numeric mapping for fasting field `qc1_va003` remains unreso
 
 ## Static implementation safeguards
 
-Configuration validation permits an explicit blocked fasting rule only when it includes a reason and no guessed fasting field/codes. Glucose must either be restricted using verified codes or remain explicitly blocked; `retain_all` and `not_applicable` are rejected for glucose. Triglycerides may use all observed samples under the non-fasting lipid-profile candidate rule; fasting restriction/sensitivity requires an authoritative Wave 1 code map and separate review. When an outcome is blocked, the runner returns a reason-coded row without computing an outcome scale or fitting a model.
+Configuration validation permits an explicit blocked fasting rule only when it includes a reason and no guessed fasting field/codes. Both glucose and triglycerides must either be analyzed using independently reviewed, authoritative Wave 1 fasting codes or remain explicitly blocked. No external-wave code is inherited. When either outcome is blocked, the runner returns a reason-coded row without computing an outcome scale or fitting a model.
 
 This document and the runner are part of the pilot plan fingerprint. Any future edit changes the fingerprint and invalidates a prior approval until re-reviewed.
 

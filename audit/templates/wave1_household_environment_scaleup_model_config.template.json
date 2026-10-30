@@ -225,9 +225,10 @@
       "lod_censoring_rule": "not_frozen",
       "topcode_rule": "not_frozen",
       "fasting_rule": {
-        "mode": "not_frozen",
+        "mode": "blocked",
         "field": "",
-        "eligible_codes": []
+        "eligible_codes": [],
+        "block_reason": "Wave 1 qc1_va003 numeric mapping is not verified from an authoritative source; keep this registered triglyceride outcome blocked without guessed codes."
       }
     },
     "blood_glucose": {
@@ -243,9 +244,10 @@
       "lod_censoring_rule": "not_frozen",
       "topcode_rule": "not_frozen",
       "fasting_rule": {
-        "mode": "not_frozen",
+        "mode": "blocked",
         "field": "",
-        "eligible_codes": []
+        "eligible_codes": [],
+        "block_reason": "Wave 1 qc1_va003 numeric mapping is not verified from an authoritative source; keep this registered glucose outcome blocked without guessed codes."
       }
     },
     "blood_hba1c": {

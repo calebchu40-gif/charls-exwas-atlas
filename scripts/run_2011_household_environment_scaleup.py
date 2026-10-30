@@ -46,11 +46,10 @@ AGE = require_private_path(PRIVATE / "age_inputs_2011" / "wave1_age_interval_can
 ID_FIELD = "ID"
 OUTCOME_TERMS = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
 PILOT_EXPOSURES = {"running_water_at_residence", "cooking_fuel_main"}
-# CHARLS 2011's guide explicitly warns that non-fasting status may raise
-# glucose. For triglycerides, non-fasting lipid profiles are accepted by the
-# EAS/EFLM consensus; retain all observed samples as the primary candidate and
-# leave fasting-status sensitivity pending an authoritative Wave 1 code map.
-FASTING_REQUIRED_OUTCOMES = {"blood_glucose"}
+# The project decision is to keep both outcomes blocked until the Wave 1
+# `qc1_va003` numeric mapping is authoritative and reviewed. External
+# non-fasting lipid guidance does not resolve this CHARLS-specific gate.
+FASTING_REQUIRED_OUTCOMES = {"blood_glucose", "blood_triglycerides"}
 
 
 def _load_json(path: Path) -> dict[str, Any]:

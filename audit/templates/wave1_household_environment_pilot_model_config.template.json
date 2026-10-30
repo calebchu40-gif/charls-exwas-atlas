@@ -67,7 +67,7 @@
     "blood_creatinine": "not_frozen",
     "blood_uric_acid": "not_frozen"
   },
-  "review_note": "Pilot-only template for the nested 105 registered hypotheses. The 14 glucose/triglyceride coefficients remain explicit blocked rows until official fasting coding is resolved. No tranche q-values; final correction is across K=240. Fill only after independent review; never treat this template as frozen.",
+  "review_note": "Pilot-only template for the nested 105 registered hypotheses. The 14 glucose/triglyceride coefficients remain explicit blocked rows until official Wave 1 fasting coding is resolved and reviewed. No tranche q-values; final correction is across K=240. Fill only after independent review; never treat this template as frozen.",
   "outcome_validity_rules": {
     "blood_wbc": {
       "review_status": "not_frozen",
@@ -226,10 +226,10 @@
       "lod_censoring_rule": "not_frozen",
       "topcode_rule": "not_frozen",
       "fasting_rule": {
-        "mode": "retain_all",
+        "mode": "blocked",
         "field": null,
         "eligible_codes": [],
-        "method_note": "Candidate: retain observed fasting and non-fasting samples under EAS/EFLM non-fasting lipid-profile consensus; Wave 1 fasting-status sensitivity awaits an authoritative qc1_va003 mapping and independent review."
+        "block_reason": "Wave 1 qc1_va003 numeric mapping is not verified from an authoritative source; keep this registered triglyceride outcome blocked without guessed codes."
       }
     },
     "blood_glucose": {

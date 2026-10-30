@@ -23,7 +23,7 @@
 | 总胆固醇 | `newcho` | mg/dL | 酶比色法；表1报告 assay detection range 3–800 mg/dL | 检测范围不得直接用于筛值；保留连续原单位候选，是否限制空腹/是否变换待审。 |
 | HDL-C | `newhdl` | mg/dL | 酶比色法；表1报告 assay detection range 3–120 mg/dL | 检测范围不是有效值边界；保留连续候选，不按 HDL 临床风险切点筛值。 |
 | LDL-C | `newldl` | mg/dL | 酶比色法；表1报告 assay detection range 3–400 mg/dL | 检测范围不是有效值边界；保留连续候选。该字段为直接测定，仍需审核测量及非空腹解释。 |
-| 甘油三酯 | `newtg` | mg/dL | 酶比色法；表1报告 assay detection range 4–1000 mg/dL | 全部观察血样是候选主处理；非空腹血脂依据和适用性须独立审阅，空腹敏感性被 `qc1_va003` 未知编码阻断。不得把检测范围作顶码或排除阈值。 |
+| 甘油三酯 | `newtg` | mg/dL | 酶比色法；表1报告 assay detection range 4–1000 mg/dL | 7项关联在权威 Wave 1 `qc1_va003` 空腹编码及规则审核前保持阻断；一般非空腹血脂共识不足以替代该研究的测量规则审查。不得把检测范围作顶码或排除阈值。 |
 | 葡萄糖 | `newglu` | mg/dL | 酶比色法；表1报告 assay detection range 2–450 mg/dL；指南提示非空腹值可能偏高 | 七项关联继续标记不可估，直到获得权威 Wave 1 空腹码映射；不猜编码、不按 `qc1_va003` 频数反推。 |
 | 糖化血红蛋白 | `newhba1c` | % | 硼酸亲和 HPLC；表1报告 assay detection range 0–40%；指南讨论运输/冻存可能影响结果 | 不用临床风险切点二分；测量处理局限需披露，变换与敏感性待审；不从 Wave 3 导入规则。 |
 | 高敏 C 反应蛋白 | `newcrp` | mg/L | 免疫比浊法；表1报告 assay detection range 0.1–20 mg/L | 不把检测范围作有效值上下限；右偏及变换方式需在看关联结果前冻结。 |
