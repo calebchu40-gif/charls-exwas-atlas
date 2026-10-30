@@ -1883,3 +1883,8 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 
 - Updated the independent methods brief with the new private pair-level community support diagnostics: some rare cooking-fuel categories have materially thinner cluster coverage than the reference group.
 - The brief requires a reviewer decision on the adequacy of Option A, any predeclared support threshold, and how non-estimable pairs remain represented in the registered family. Exact pair/domain counts remain private; no threshold or category collapse was inferred.
+
+# 2026-10-31 Record AI review of outcome-handling candidate
+
+- An independent AI document review assessed the proposed default: Stata missing values are missing; retain other finite released values; do not filter by assay ranges or observed distributions. It found this can be submitted as a transparent candidate for methods review, while emphasizing that missing finite sentinels are not ruled out.
+- The note records the limits and required review conditions. It is not a human/credentialed approval, does not freeze the 15 outcomes, and does not open the real-model gate.
