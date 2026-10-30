@@ -1590,3 +1590,8 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 # 2026-10-30 Refresh active-plan next steps
 
 - Replaced the completed Wave 2 biomarker-weight review item in the active plan with the remaining pair-specific eligibility/design work, and restated the project-critical Wave 1 path to design/age/outcome review, independent review, and pilot re-freezing. No data or model status changed.
+
+# 2026-10-30 Add CHARLS forum guidance to Wave 1 variance review
+
+- Reviewed a historical answer by a CHARLS forum administrator stating that CHARLS uses multistage PPS cluster sampling and that the clustering level should reflect the research question. Elevated the released `communityID` PSU field to the first practical candidate for independent review, while documenting that the post is general guidance and does not resolve the split-community mapping, implicit county stratification, or a Wave 1-specific variance specification.
+- Kept the candidate unapproved and the real-model gate closed; no microdata or association results were used or published.
