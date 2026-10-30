@@ -22,6 +22,7 @@ COMMUNITY = PRIVATE_ROOT / "raw_extract_2011_community" / "community.dta"
 CATALOG = ROOT / "audit" / "charls_atlas_candidate_fields_v0.csv"
 PRIOR_KEY_AUDIT = QA_OUTPUT_DIR / "community_2011_linkage_audit.json"
 OUTPUT = QA_OUTPUT_DIR / "community_exposure_split_consistency_v1.json"
+CROSSWALK = ROOT / "audit" / "community_exposure_crosswalk_v1.csv"
 
 
 def sha256(path: Path) -> str:
@@ -52,8 +53,13 @@ def normalized_values(series: pd.Series) -> set[str]:
 def main() -> None:
     community_path = require_private_path(COMMUNITY)
     output_path = require_private_path(OUTPUT)
-    if not community_path.is_file() or not CATALOG.is_file() or not PRIOR_KEY_AUDIT.is_file():
-        raise FileNotFoundError("community source, public catalog, or prior private key audit is missing")
+    if (
+        not community_path.is_file()
+        or not CATALOG.is_file()
+        or not CROSSWALK.is_file()
+        or not PRIOR_KEY_AUDIT.is_file()
+    ):
+        raise FileNotFoundError("community source, public catalog/crosswalk, or prior private key audit is missing")
 
     prior = json.loads(PRIOR_KEY_AUDIT.read_text(encoding="utf-8"))
     source_hash = sha256(community_path)
@@ -110,6 +116,48 @@ def main() -> None:
             }
         )
 
+    consistency_by_code = {
+        str(row["field_code"]).casefold(): str(row["parent_aggregation_candidate"])
+        for row in per_field
+    }
+    crosswalk = pd.read_csv(CROSSWALK, dtype=str, encoding="utf-8-sig").fillna("")
+    crosswalk_rows: list[dict[str, str]] = []
+    for _, row in crosswalk.iterrows():
+        code = str(row.get("code", "")).strip()
+        status = consistency_by_code.get(code.casefold(), "not_in_exposure_audit")
+        crosswalk_rows.append(
+            {
+                "concept_id": str(row.get("concept_id", "")),
+                "concept_label": str(row.get("concept_label", "")),
+                "field_code": code,
+                "source_label": str(row.get("source_label", "")),
+                "domain": str(row.get("domain", "")),
+                "unit": str(row.get("unit", "")),
+                "mapping_status": str(row.get("mapping_status", "")),
+                "split_consistency_status": status,
+            }
+        )
+    concept_summary: dict[str, dict[str, object]] = {}
+    for row in crosswalk_rows:
+        concept_id = row["concept_id"]
+        item = concept_summary.setdefault(
+            concept_id,
+            {
+                "concept_id": concept_id,
+                "concept_label": row["concept_label"],
+                "crosswalk_field_count": 0,
+                "parent_value_consistency_candidate_count": 0,
+                "unresolved_count": 0,
+            },
+        )
+        item["crosswalk_field_count"] = int(item["crosswalk_field_count"]) + 1
+        if row["split_consistency_status"] == "not_ambiguous_by_value_consistency_only":
+            item["parent_value_consistency_candidate_count"] = (
+                int(item["parent_value_consistency_candidate_count"]) + 1
+            )
+        else:
+            item["unresolved_count"] = int(item["unresolved_count"]) + 1
+
     output = {
         "audit_type": "protected_aggregate_community_exposure_split_consistency",
         "source_role": "official CHARLS Wave 1 Community module",
@@ -121,6 +169,8 @@ def main() -> None:
         "split_parent_row_count": int(len(split_rows)),
         "subcommunity_key_nonmissing_split_rows": int(sub.loc[split_rows.index].notna().sum()),
         "field_results": per_field,
+        "crosswalk_field_results": crosswalk_rows,
+        "crosswalk_concept_summary": list(concept_summary.values()),
         "interpretation": (
             "Uniform values only identify fields that are not ambiguous by observed value consistency; "
             "this does not establish measurement validity, sub-PSU respondent membership, survey weights, "
@@ -129,17 +179,7 @@ def main() -> None:
     }
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
-    counts: dict[str, int] = {}
-    for row in per_field:
-        label = str(row["parent_aggregation_candidate"])
-        counts[label] = counts.get(label, 0) + 1
-    print(
-        "status=aggregate_only_completed "
-        f"candidate_fields={len(available)} "
-        f"split_parent_groups={len(split_parents)} "
-        f"field_status_counts={counts} "
-        f"report={output_path}"
-    )
+    print("status=aggregate_only_completed; field and concept summaries written to protected local QA")
 
 
 if __name__ == "__main__":

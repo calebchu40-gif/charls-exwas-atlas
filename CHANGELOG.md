@@ -15,6 +15,7 @@
 - Added a source-hash-bound, local-only aggregate audit for the Wave 1 Community module. It checks each catalogued community exposure field for consistency/nonmissingness across repeated parent-community records, without reading the respondent spine or blood file and without writing IDs or field values.
 - The protected QA partitions fields into value-consistency candidates versus unresolved conflicts/missingness. Exact field codes and counts remain only in the access-controlled local report; the public commit contains the audit code and method, not the protected report.
 - Equality is only a merge-ambiguity screen, not evidence that an item represents the whole parent community or is eligible for a model. No associations or tests were run; formal approved association models remain 0.
+- Joined the protected field flags to the public community exposure crosswalk and added private concept-level summaries to the local report, so wording/unit/period review can be conducted by concept. Changed console output to a generic completion status so field counts are not echoed into process logs.
 
 # 2026-10-30 Correct Wave 1 variance-candidate ranking
 
