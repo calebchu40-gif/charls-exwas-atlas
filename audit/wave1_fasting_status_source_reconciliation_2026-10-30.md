@@ -10,15 +10,14 @@ The Wave 1 release header audit found no Stata value labels for `qc1_va003`. I a
 
 ## Candidate handling by outcome
 
-- **Glucose:** keep its seven pilot coefficients blocked until an authoritative Wave 1 mapping supports a prespecified fasting rule. The official CHARLS guide expressly warns that non-fasting glucose may be higher. Do not infer codes from value frequencies or another wave.
-- **Triglycerides:** candidate primary handling is all observed blood samples under a continuous non-fasting lipid-profile estimand. The EAS/EFLM joint consensus recommends routine non-fasting lipid profiles and says fasting sampling may be considered in selected very-high-triglyceride situations. This clinical consensus does not replace review of CHARLS assay behavior or survey-specific model assumptions. A fasting-status sensitivity is desirable only after the Wave 1 mapping is verified from an authoritative source.
+- **Glucose and triglycerides:** under the latest project decision, keep all seven pilot coefficients for each outcome (14 total) registered but blocked until an authoritative Wave 1 fasting-code mapping and measurement-rule review are complete. Do not infer codes from value frequencies or another wave. General non-fasting lipid guidance is not sufficient to unlock triglycerides.
 - **Other 13 blood outcomes:** fasting relevance must be assessed per analyte; do not apply the glucose rule to every outcome.
 
 A third-party CHARLS variable catalog was discovered during literature search and reports a candidate `qc1_va003` mapping, but it is not an official CHARLS source. It is recorded only as a lead for source reconciliation and is not used to assign codes or unblock an analysis.
 
 ## Effect on the pilot
 
-The 105 registered coefficients remain unchanged. The current implementation blocks the seven glucose coefficients and leaves the seven triglyceride coefficients eligible for review under the all-sample candidate rule. The remaining 91 coefficients also remain unapproved until their outcome validity, age/target estimand, covariates and Option A approximation are reviewed. Thus, 98 coefficients are candidates for model fitting after approval; this count is a prespecified registry count, not an analysis sample size or a claim that the coefficients are estimable.
+The 105 registered coefficients remain unchanged. The current project decision blocks seven glucose and seven triglyceride coefficients (14 total) pending authoritative Wave 1 mapping and measurement-rule review. The remaining 91 coefficients are candidates only and remain unapproved until outcome validity, age/target estimand, covariates and Option A approximation are reviewed. These are registry counts, not an analysis sample size or a claim of estimability.
 
 No CHARLS participant values were used in this source review. No association was fitted. This note is included in the pilot plan fingerprint; any subsequent change requires a fresh hash-bound approval.
 

@@ -201,7 +201,7 @@ def run(data_path: Path, intake: Path, output: Path) -> dict[str, Any]:
             "Nonmissing outcome values are not assumed clinically valid; no distribution-derived rule or assay range was used as an exclusion cutoff.",
             "Positive bloodweight and released parent-community keys do not approve a variance estimator or resolve split sub-PSUs.",
             "The age lower/upper domain masks use an unreviewed provisional candidate and are diagnostic only.",
-            "Wave 1 fasting status numeric mapping remains unresolved; glucose is blocked and triglycerides remain an all-sample candidate pending methods review.",
+            "Wave 1 fasting status numeric mapping remains unresolved; glucose and triglycerides (14 registered coefficients) are blocked pending authoritative mapping and measurement-rule review.",
         ],
     }
     output.parent.mkdir(parents=True, exist_ok=True)
