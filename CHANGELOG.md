@@ -1,3 +1,8 @@
+# 2026-10-31 Correct Wave 1 fasting-code status in public audit
+
+- Updated the public Wave 1 outcome-readiness audit to distinguish the now source-supported fasting-status mapping (1=fasting, 2=not fasting) from the still unresolved fasting estimand and `bloodweight` compatibility questions.
+- The audit continues to block all formal models pending outcome-rule, design and independent methods review. No participant-level data or result estimates were added.
+
 # 2026-10-30 Repair CI compatibility and clarify public methods disclosures
 
 - Restored the compatibility names expected by the existing Wave 2 official-weight merge interface, with SHA-1 verification scoped to the official archive.
