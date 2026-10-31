@@ -326,7 +326,11 @@ def normalize(
     weight_source = "CHARLS Wave 1 official Blood release document 201 (2014-04-29) and Weight document 118; bloodweight"
     rows: list[dict[str, str]] = []
     raw_p_values: list[float | None] = []
-    for hypothesis_id in expected_ids:
+    # The scope manifest stores public analysis IDs, while the runner and
+    # registry are keyed by hypothesis IDs. Keep iteration on the registry
+    # keys after the set-equality check above; the explicit mapping below
+    # supplies the corresponding analysis_id for each output row.
+    for hypothesis_id in register_by_id:
         reg = register_by_id[hypothesis_id]
         raw = raw_by_id[hypothesis_id]
         decision = decision_by_id[hypothesis_id]

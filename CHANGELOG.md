@@ -1970,3 +1970,4 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Re-ran the full K=240 block with the retained user-authorized configuration and current analysis code. All 240 estimates, standard errors, confidence intervals and p-values matched the first run within numerical tolerance; the comparison audit remains in server-private storage.
 - Replaced the active plan pointer with a current execution plan: Wave 1 analysis is complete, result normalization and aggregate site release are in progress, and later waves will be analyzed under separate wave-specific designs.
 - Updated the private full240 normalizer to accept an explicitly user-authorized run configuration without relabeling it as an independent review or a frozen external approval.
+- Fixed the normalizer's scope-ID iteration so its opaque analysis IDs map back to registered hypothesis IDs before row validation.
