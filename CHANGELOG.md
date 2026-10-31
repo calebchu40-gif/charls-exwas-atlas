@@ -1974,3 +1974,10 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Added the registered contrast labels to the result schema and made the association table display contrasts, standardized effect estimates with confidence intervals, BY q-values, model sample size, and the approximate-variance label.
 - Added the explicit `contrast` field to schema v3, which the public payload contract already required for interpretable result rows.
 - Verified the GitHub Pages deployment at commit `74e9d0b`: homepage and result JSON both return HTTP 200, with all 240 registered Wave 1 rows.
+
+# 2026-10-31 Complete the 2015 household-environment blood family
+
+- Ran all 225 crosswalk-available 2015 household-environment and blood-phenotype associations with the wave-specific cross-sectional blood weight, age-45+ domain, and the questionnaire-documented 2015 heating route.
+- Corrected a prior cross-wave route note: 2015 `i020=1` proceeds to `i021`, while 2011/2013/2018 retain their separately documented route. The existing 2011 K90 route remains unchanged.
+- Added the reproducible 2015 runner and updated the aggregate result browser to display separate complete K=240 (2011) and K=225 (2015) families. Participant records and exact QA remain on the private server.
+- Ran a separate 225-model sensitivity family adjusting for the seven reviewed nominal `bb001_w3_2` settlement categories. The model comparison showed some specification movement; exact sensitivity output and QA remain private and are excluded from the public main-family payload.
