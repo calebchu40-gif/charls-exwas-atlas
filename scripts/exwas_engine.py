@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Generic, protected exposure-phenotype scan engine for CHARLS.
 
 Design goals
@@ -475,7 +475,7 @@ def _blocked_row(exposure: VariableSpec, phenotype: VariableSpec, design: Design
         "exposure_concept_id": exposure.concept_id, "exposure_variable": exposure.variable,
         "exposure_term": term, "exposure_contrast": labels.get(term, term),
         "phenotype_concept_id": phenotype.concept_id, "phenotype_variable": phenotype.variable,
-        "phenotype_family": phenotype.family, "estimate_type": "",
+        "phenotype_family": phenotype.family, "estimate_type": ("odds_ratio" if phenotype.family == "binomial" else "beta"),
         "estimate": "", "standard_error": "", "ci_lower": "", "ci_upper": "", "p_value": "",
         "design_df": "", "n_model": "", "n_psu": "", "kish_effective_n": "",
         "outcome_mean": "", "outcome_sd": "", "exposure_scale": "",
