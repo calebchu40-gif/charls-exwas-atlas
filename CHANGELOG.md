@@ -1959,3 +1959,8 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 
 - Added a reproducible companion runner for the 16 registered Wave 1 exposure-to-uric-acid pairs, with creatinine, self-reported kidney disease, and both as separate adjustment sensitivities.
 - Result tables, exact support diagnostics, and run manifests are written only under the protected private root; the primary K150/K90 results are not overwritten.
+# 2026-10-31 Complete Wave 1 K150/K90 association runs and update site status
+
+- Completed all 240 user-authorized Wave 1 primary association fits, three 240-hypothesis sensitivity runs, and 48 uric-acid renal-adjustment fits on the private server.
+- Added a methods-only run-status audit and updated the homepage to show 240 completed Wave 1 model fits rather than implying that no association models had run.
+- Individual records, coefficients, exact QA, and result tables remain in server-private storage; the website has not yet loaded the normalized association-results table.
