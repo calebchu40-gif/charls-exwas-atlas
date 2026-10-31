@@ -9,7 +9,8 @@ NHANES-style ladder of nine model specifications, under both PSU definitions.
 Specifications
 --------------
 M0 unadjusted; M1 age/age^2; M2 +sex; M3 +education; M4 +urban; M5 +smoking;
-M6 +drinking; M7 +BMI (the full set).
+M6 +drinking; M7 +BMI; M8 +log eGFR (CKD-EPI); M9 +diagnosed hypertension,
+diabetes and kidney disease.
 
 Everything stays exploratory and PI-delegated: results are written to the
 protected workspace only, and no coefficient is published from here.
@@ -38,6 +39,10 @@ MODELS = {
     "M5": ["age_c", "age_c2", "female", "edu_2", "edu_3", "edu_4", "edu_5", "urban", "smoker"],
     "M6": ["age_c", "age_c2", "female", "edu_2", "edu_3", "edu_4", "edu_5", "urban", "smoker", "drinker"],
     "M7": ["age_c", "age_c2", "female", "edu_2", "edu_3", "edu_4", "edu_5", "urban", "smoker", "drinker", "bmi"],
+    "M8": ["age_c", "age_c2", "female", "edu_2", "edu_3", "edu_4", "edu_5", "urban", "smoker", "drinker", "bmi",
+           "log_egfr"],
+    "M9": ["age_c", "age_c2", "female", "edu_2", "edu_3", "edu_4", "edu_5", "urban", "smoker", "drinker", "bmi",
+           "log_egfr", "htn", "dm", "kidney"],
 }
 EXPOSURES = ("running_water_at_residence", "cooking_fuel_coal")
 PHENOTYPE = "blood_uric_acid"
@@ -48,8 +53,11 @@ def load_frame() -> pl.DataFrame:
     import pyreadstat
     frame = drv.load_private_frame()
     prepared = WAVE_DATA_DIR / "CHARLS_wave2011_person_analytic.dta"
-    extra, _ = pyreadstat.read_dta(str(prepared), usecols=["ID", "qi002", "ql002", "da059", "da067"],
-                                   output_format="polars")
+    extra, _ = pyreadstat.read_dta(
+        str(prepared),
+        usecols=["ID", "qi002", "ql002", "da059", "da067", "newcrea",
+                 "da007_1_", "da007_3_", "da007_9_"],
+        output_format="polars")
     num = lambda name: pl.col(name).cast(pl.Float64, strict=False)  # noqa: E731
     height = num("qi002")
     height = pl.when(height < 3.0).then(height * 100.0).otherwise(height)
@@ -62,8 +70,28 @@ def load_frame() -> pl.DataFrame:
           .otherwise(None).alias("smoker"),
         pl.when(num("da067") == 1).then(1.0).when(num("da067") == 3).then(0.0)
           .otherwise(None).alias("drinker"),
+        pl.when(num("da007_1_") == 1).then(1.0).when(num("da007_1_") == 2).then(0.0)
+          .otherwise(None).alias("htn"),
+        pl.when(num("da007_3_") == 1).then(1.0).when(num("da007_3_") == 2).then(0.0)
+          .otherwise(None).alias("dm"),
+        pl.when(num("da007_9_") == 1).then(1.0).when(num("da007_9_") == 2).then(0.0)
+          .otherwise(None).alias("kidney"),
     ])
-    return frame.join(extra.select(["ID", "bmi", "smoker", "drinker"]), on="ID", how="left")
+    merged = frame.join(extra.select(["ID", "bmi", "smoker", "drinker", "htn", "dm", "kidney", "newcrea"]),
+                        on="ID", how="left")
+    age = pl.col("age_mid").cast(pl.Float64, strict=False)
+    scr = pl.col("newcrea").cast(pl.Float64, strict=False)
+    female = pl.col("female").cast(pl.Float64, strict=False) == 1.0
+    kappa = pl.when(female).then(0.7).otherwise(0.9)
+    alpha = pl.when(female).then(-0.329).otherwise(-0.411)
+    ratio = scr / kappa
+    egfr = (141.0
+            * pl.min_horizontal(ratio, pl.lit(1.0)).pow(alpha)
+            * pl.max_horizontal(ratio, pl.lit(1.0)).pow(-1.209)
+            * (0.993 ** age)
+            * pl.when(female).then(1.018).otherwise(1.0))
+    egfr = pl.when((scr > 0) & (scr < 20)).then(egfr.clip(1.0, 200.0)).otherwise(None)
+    return merged.with_columns(egfr.log().alias("log_egfr"))
 
 
 def registry() -> list[engine.VariableSpec]:
