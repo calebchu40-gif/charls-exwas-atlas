@@ -22,6 +22,7 @@ from typing import Any
 from project_paths import PRIVATE_ROOT, require_private_path
 import run_2011_household_environment_scaleup as runner
 from require_verified_wave1_frame import (
+    ANALYSIS_PLANS,
     analysis_plan_fingerprint,
     require_user_authorized_internal_analysis,
     require_verified_wave1_frame,
@@ -31,7 +32,7 @@ from require_verified_wave1_frame import (
 PRIVATE = runner.PRIVATE
 PLAN_KEY = runner.PLAN_KEY
 CONFIG_PATH = PRIVATE / "analysis_review" / "wave1_household_environment_scaleup_model_config.json"
-AUTH_PATH = PRIVATE / "analysis_review" / f"{runner.ANALYSIS_PLANS[PLAN_KEY]['plan_id']}_user_internal_authorization.json"
+AUTH_PATH = PRIVATE / "analysis_review" / f"{ANALYSIS_PLANS[PLAN_KEY]['plan_id']}_user_internal_authorization.json"
 KIDNEY_FIELD = "da007_9_"
 CREATININE_FIELD = "newcrea"
 VARIANTS = {
