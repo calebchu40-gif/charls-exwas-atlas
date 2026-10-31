@@ -305,6 +305,11 @@ def _selected_fields(config: dict[str, Any], analytes: list[dict[str, str]], reg
         ID_FIELD, design["weight_field"], design["psu_field"],
         *design["stratum_fields"], *config["exposure_field_mapping"].values(),
     }
+    if design["psu_field"] == "psu_county":
+        # Sensitivity-only county-prefix clustering mirrors the earlier pilot.
+        # The primary design continues to cluster on released communityID.
+        fields.discard("psu_county")
+        fields.add("communityID")
     for item in model["continuous_covariates"]:
         if item["field"] not in generated_age_fields:
             fields.add(item["field"])
@@ -345,7 +350,14 @@ def _read_protected_frame(config: dict[str, Any], analytes: list[dict[str, str]]
     if data.height != person.height:
         raise ValueError("Age join changed the prepared frame row count")
 
+    if config["design"]["psu_field"] == "psu_county":
+        data = data.with_columns(
+            pl.col("communityID").cast(pl.String).str.slice(0, 6).alias("psu_county")
+        )
+
     numeric_fields = set(fields) - {ID_FIELD, config["design"]["psu_field"], *config["design"]["stratum_fields"]}
+    if config["design"]["psu_field"] == "psu_county":
+        numeric_fields.discard("communityID")
     numeric_fields.update(age_fields)
     numeric_exprs = []
     for field in numeric_fields:

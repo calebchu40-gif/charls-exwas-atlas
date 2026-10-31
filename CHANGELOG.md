@@ -1950,3 +1950,8 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - The user-authorized internal runner now omits singleton-stratum handling when the approved design has no strata, as required by the pinned `svy` engine.
 - This fixes a pre-fit error under the selected community-clustered, unstratified Taylor design; it does not change the estimand or add data-derived filtering.
 
+# 2026-10-31 Add county-prefix clustering sensitivity for Wave 1 scale-up
+
+- Added an explicit sensitivity-only `psu_county` path matching the earlier pilot's six-character community-ID prefix grouping; the primary design remains `communityID`-clustered with no strata.
+- The derived cluster key is created in memory inside the protected runner and is not added to the prepared respondent table.
+
