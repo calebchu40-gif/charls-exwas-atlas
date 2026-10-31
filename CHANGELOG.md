@@ -1988,3 +1988,9 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Added protected scripts to join official Wave 2 interview year/month to the verified respondent frame and resolve birth-calendar provenance only through the documented Wave 1 ID transformation plus exact date-component agreement.
 - Generated a protected provisional Wave 2 age-interval candidate using the pinned lunar conversion mapping after source-only parity validation against the CHARLS Mata lookup tables. Unsupported routes and interval uncertainty are preserved; no respondent was excluded by age and no Wave 2 association was fitted.
 - Added a methods-only audit and updated the active execution plan. The public repository contains no IDs, dates, exact QA, or estimates; the protected age inputs and exact QA remain on the server.
+
+# 2026-11-01 Add private Wave 2 age-bound family reconciliation
+
+- Added a protected reconciliation utility for the Wave 2 anthropometry midpoint, lower-bound, and upper-bound model families. It verifies the complete registered pair set, successful fits, per-family result and configuration hashes, and common code commit before comparing coefficient and standard-error movement.
+- Exact pair diagnostics are written only to the protected server QA directory. The tool does not produce a public result payload or select associations by significance.
+- Updated the active plan to distinguish already-run midpoint/lower-bound families from the upper-bound and combined private-QA verification still pending.
