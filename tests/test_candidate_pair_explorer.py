@@ -73,9 +73,13 @@ class CandidatePairExplorerTests(unittest.TestCase):
     def test_page_exposes_candidate_pair_view_without_claiming_results(self):
         html = (ROOT / "site-prototype/dist/index.html").read_text(encoding="utf-8")
         app = (ROOT / "site-prototype/dist/app.js").read_text(encoding="utf-8")
-        self.assertIn('id="candidatePairExplorer"', html)
+        start = html.index('id="candidatePairExplorer"')
+        end = html.index("</section>", start)
+        candidate_view = html[start:end]
+        self.assertIn('id="candidatePairExplorer"', candidate_view)
         self.assertIn("目录候选组合", app)
-        self.assertIn("目前没有已计算的 CHARLS 暴露—表型关联结果", html)
+        self.assertIn("不代表有实际样本", candidate_view)
+        self.assertNotIn("关联估计", candidate_view)
 
 
 if __name__ == "__main__":

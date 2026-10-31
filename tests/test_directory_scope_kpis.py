@@ -21,7 +21,7 @@ class DirectoryScopeKpiTests(unittest.TestCase):
                 (f"{scope['exposure_concept_ids_including_dual']:,}", "暴露候选概念"),
                 (f"{scope['phenotype_concept_ids_including_dual']:,}", "表型候选概念"),
                 ("5", "调查波次：2011–2020"),
-                ("0", "正式关联模型"),
+                ("465", "Wave 1 与 2015 已运行模型"),
             ],
         )
         unique = scope["candidate_concept_ids"]

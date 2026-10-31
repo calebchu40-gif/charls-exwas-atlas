@@ -340,7 +340,7 @@ class CatalogReviewStatusTests(unittest.TestCase):
         card = html[html.index("抽样、权重与方差设计状态"):html.index("</section>", html.index("抽样、权重与方差设计状态"))]
         for expected in ("2011", "2013", "2015", "2018", "2020", "communityID", "crosssection/longitudinal", "横截面生物标志物权重", "没有纵向生物标志物权重", "不得用省、市或城乡字段自行拼成设计分层", "audit/survey_design_weight_review_v1.md"):
             self.assertIn(expected, card)
-        self.assertIn("尚未发布关联估计", card)
+        self.assertIn("Wave 1结果按用户选择的无分层 WR Taylor 近似计算并标注近似", card)
 
     def test_2011_fb010_codebook_values_and_conflict_reach_main_catalog(self):
         rows = [
