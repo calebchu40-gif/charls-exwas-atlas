@@ -9,6 +9,7 @@ from __future__ import annotations
 import csv
 import json
 import math
+import subprocess
 import warnings
 from datetime import datetime, timezone
 from pathlib import Path
@@ -22,6 +23,7 @@ from project_paths import PRIVATE_ROOT
 
 
 PRIVATE = PRIVATE_ROOT
+CODE_ROOT = Path(__file__).resolve().parents[1]
 DATA = PRIVATE / "derived_wave_tables" / "CHARLS_wave2015_person_analytic_with_official_blood.dta"
 RESULT = PRIVATE / "results" / "2015_household_environment_blood_K225_schema_v3.csv"
 QA = PRIVATE / "qa_outputs" / "2015_household_environment_blood_K225_private.json"
@@ -87,7 +89,7 @@ def _read_frame() -> tuple[pl.DataFrame, int]:
 
 
 def _result_row(concept: str, field: str, code: int, ref: int, contrast: str,
-                outcome: str, outcome_field: str, n: int) -> dict[str, object]:
+                outcome: str, outcome_field: str, n: int, code_commit: str) -> dict[str, object]:
     return {
         "analysis_id": f"2015_household_environment_K225:{concept}:{field}_{code}_vs_{ref}:{outcome}",
         "data_release": "CHARLS_2015", "source_identity_status": "verified_official_source",
@@ -111,13 +113,16 @@ def _result_row(concept: str, field: str, code: int, ref: int, contrast: str,
         "n_phenotype_valid": "", "n_pair_complete": n, "n_model": n,
         "standard_error": "", "estimate": "", "ci_lower": "", "ci_upper": "",
         "p_value": "", "q_value_by": "", "p_bonferroni": "",
-        "software_versions": "Python svy 0.35.0; git commit: 42839ac",
+        "software_versions": f"Python svy 0.35.0; git commit: {code_commit}",
     }
 
 
 def run() -> dict[str, object]:
     if svy.__version__ != "0.35.0":
         raise RuntimeError(f"Expected svy 0.35.0, got {svy.__version__}")
+    code_commit = subprocess.check_output(
+        ["git", "-C", str(CODE_ROOT), "rev-parse", "--short", "HEAD"], text=True
+    ).strip()
     data, frame_n = _read_frame()
     rows: list[dict[str, object]] = []
     diagnostics: list[dict[str, object]] = []
@@ -145,7 +150,7 @@ def run() -> dict[str, object]:
                 (pl.col("__age") - 60.0).alias("__age_c"),
             )
             pair = prepared.filter(domain & pl.col("__y").is_not_null() & pl.col("__sex2").is_not_null())
-            row = _result_row(concept, field, code, ref, contrast, outcome, outcome_field, pair.height)
+            row = _result_row(concept, field, code, ref, contrast, outcome, outcome_field, pair.height, code_commit)
             warnings_count = 0
             if pair.height >= 30 and pair["__psu"].n_unique() > 8 and math.isfinite(sd) and sd > 0:
                 fit_data = prepared.select(["__psu", "__weight", "__y", "__domain", "__x", "__age_c", "__sex2"])
@@ -191,6 +196,7 @@ def run() -> dict[str, object]:
         "model": "blood-weighted outcome SD; age 45+; age linear/quadratic and gender indicator; pair-complete",
         "fasting": "glucose and triglycerides restricted to bl_fasting=1",
         "heating_route": "2015-specific i020=1 Yes proceeds to i021",
+        "code_commit": code_commit,
         "variance": "WR Taylor; communityID clusters; no released strata; approximate",
         "diagnostics_private": diagnostics,
     }
