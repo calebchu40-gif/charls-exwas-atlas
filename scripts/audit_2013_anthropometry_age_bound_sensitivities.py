@@ -64,6 +64,8 @@ def _read_family(bound: str) -> tuple[dict[tuple[str, ...], dict[str, Any]], dic
         raise ValueError(f"Unexpected private QA family metadata for {bound}")
     if qa.get("age_bound") != bound:
         raise ValueError(f"Private QA age-bound label mismatch for {bound}")
+    if qa.get("age_bound_sensitivity_not_primary") is not (bound != "midpoint"):
+        raise ValueError(f"Private QA primary/sensitivity role mismatch for {bound}")
     if qa.get("result_sha256_private") != sha256(result_path):
         raise ValueError(f"Private result checksum mismatch for {bound}")
     config_path = private_path(
@@ -97,7 +99,8 @@ def _read_family(bound: str) -> tuple[dict[tuple[str, ...], dict[str, Any]], dic
         raise ValueError(f"Incomplete registered family in {bound} output")
     if qa.get("success") != EXPECTED_K or qa.get("inestimable_or_nonconverged") != 0:
         raise ValueError(f"Private QA success totals do not match complete family for {bound}")
-    return rows, {"result_path": result_path, "qa_path": qa_path, "qa": qa}
+    return rows, {"result_path": result_path, "qa_path": qa_path,
+                  "config_path": config_path, "config": config, "qa": qa}
 
 
 def _float(row: dict[str, Any], field: str) -> float:
@@ -110,12 +113,34 @@ def audit() -> dict[str, Any]:
     if not (key_sets["midpoint"] == key_sets["lower"] == key_sets["upper"]):
         raise ValueError("Registered exposure/phenotype pairs differ across age bounds")
 
+    reference_bindings = families["midpoint"][1]["qa"].get("input_bindings_private")
+    if not isinstance(reference_bindings, dict):
+        raise ValueError("Private midpoint QA is missing its source hash bindings")
+    for bound in BOUNDS[1:]:
+        if families[bound][1]["qa"].get("input_bindings_private") != reference_bindings:
+            raise ValueError("Age-bound families do not use the same hash-bound inputs")
+    reference_config = families["midpoint"][1]["config"]
+    config_fields = set(reference_config) - {"family_id", "age_field"}
+    for bound in BOUNDS[1:]:
+        config = families[bound][1]["config"]
+        if {key: config.get(key) for key in config_fields} != {
+            key: reference_config.get(key) for key in config_fields
+        }:
+            raise ValueError("Age-bound families differ in non-age model configuration")
+
     diagnostics: list[dict[str, Any]] = []
     sign_discordance = 0
     max_abs_estimate_shift = 0.0
     max_abs_se_shift = 0.0
     for key in sorted(key_sets["midpoint"]):
         paired = {bound: families[bound][0][key] for bound in BOUNDS}
+        expected_models = {
+            "midpoint": "M1_age_midpoint_sex",
+            "lower": "M1_age_lower_sex_sensitivity",
+            "upper": "M1_age_upper_sex_sensitivity",
+        }
+        if any(paired[bound].get("model_id") != expected_models[bound] for bound in BOUNDS):
+            raise ValueError("Age-bound result model labels do not match their specification")
         estimates = {bound: _float(paired[bound], "estimate") for bound in BOUNDS}
         ses = {bound: _float(paired[bound], "standard_error") for bound in BOUNDS}
         signs = {bound: (estimates[bound] > 0) - (estimates[bound] < 0) for bound in BOUNDS}
@@ -144,6 +169,8 @@ def audit() -> dict[str, Any]:
             "result_sha256_private": sha256(artifacts["result_path"]),
             "qa_file": Path(artifacts["qa_path"]).name,
             "qa_sha256_private": sha256(artifacts["qa_path"]),
+            "config_file": Path(artifacts["config_path"]).name,
+            "config_sha256_private": sha256(artifacts["config_path"]),
             "code_commit": artifacts["qa"].get("code_commit"),
             "analysis_config_sha256_private": artifacts["qa"].get("analysis_config_sha256_private"),
         }
