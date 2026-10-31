@@ -1,4 +1,4 @@
-{
+﻿{
   "_comment": "Non-runnable template only. Wave 1 variance review has no preferred single-stage PSU; the former communityID/age-45 example is withdrawn. Fill only after source, target, official weight, PSU/strata variance, age, model, and independent-review gates pass.",
   "status": "blocked_pending_official_review",
   "wave": "",
@@ -12,5 +12,6 @@
   "age_field": "",
   "age_min": null,
   "scale_outcome": true,
+  "variance_limitations": "official CHARLS variance strata and replicate weights are not released; county-level systematic PPS implicit stratification is not reproduced",
   "covariate_sets": {}
 }

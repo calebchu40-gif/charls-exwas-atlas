@@ -87,6 +87,12 @@ class VariableSpec:
         return self.kind in {"continuous", "binary"}
 
 
+DEFAULT_VARIANCE_LIMITATION = (
+    "official CHARLS variance strata and replicate weights are not released; "
+    "the county-level systematic PPS implicit stratification is not reproduced"
+)
+
+
 @dataclass
 class DesignSpec:
     weight: str
@@ -96,16 +102,26 @@ class DesignSpec:
     age_min: int | None = None
     covariate_sets: dict[str, list[str]] = field(default_factory=dict)
     scale_outcome: bool = True
+    variance_limitations: str = ""
 
     def model_covariates(self, model_id: str) -> list[str]:
         return list(self.covariate_sets.get(model_id, []))
 
     def note(self) -> str:
+        """Describe the design used, including an explicit limitation label.
+
+        The scale-up executor requires every frozen configuration to state the
+        variance method *and* its limitation. The generic engine mirrors that
+        rule: when no official stratum column is supplied, the note carries a
+        ``limitation:`` label so a reader cannot mistake the approximation for
+        a full design-based variance.
+        """
         if self.strata:
             return (f"{self.weight} weight; {self.psu} PSU; official stratum {self.strata}; "
                     "Taylor linearisation")
+        limitation = (self.variance_limitations or "").strip() or DEFAULT_VARIANCE_LIMITATION
         return (f"{self.weight} weight; {self.psu} PSU; unstratified with-replacement "
-                "Taylor approximation; not full design variance")
+                f"Taylor approximation; not full design variance; limitation: {limitation}")
 
 
 def _to_float(value: str | None) -> float | None:
@@ -190,6 +206,7 @@ def load_design(path: Path) -> DesignSpec:
         age_min=int(age_min) if age_min is not None else None,
         covariate_sets={k: [str(x) for x in v] for k, v in covariate_sets.items()},
         scale_outcome=bool(payload.get("scale_outcome", True)),
+        variance_limitations=str(payload.get("variance_limitations", "") or "").strip(),
     )
 
 
