@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Generic, protected exposure-phenotype scan engine for CHARLS.
 
 Design goals
@@ -541,7 +541,13 @@ def scan(frame: pl.DataFrame, registry: Sequence[VariableSpec], design: DesignSp
     rows: list[dict[str, Any]] = []
     for exposure, phenotype in pairs:
         for model_id in models:
-            rows.extend(fit_pair(frame, exposure, phenotype, design, model_id))
+            try:
+                rows.extend(fit_pair(frame, exposure, phenotype, design, model_id))
+            except Exception as exc:  # noqa: BLE001 - a failed fit must become a row, not a crash
+                rows.append(_blocked_row(
+                    exposure, phenotype, design, model_id, [], {},
+                    "numerically_unavailable",
+                    f"model fit raised {type(exc).__name__}: {exc}"[:400]))
     assign_families(rows, family_prefix)
     return rows
 

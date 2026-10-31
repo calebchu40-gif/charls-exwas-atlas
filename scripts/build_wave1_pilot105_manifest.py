@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Derive the Wave 1 pilot-105 hypothesis manifest from the frozen K=150 register.
 
 The pilot batch is **not** a new inferential family. It is exactly the 105
@@ -38,9 +38,11 @@ PARENT_FAMILY = "wave1_household_environment_K150"
 PILOT_EXPOSURES = ("running_water_at_residence", "cooking_fuel_main")
 BLOCKED_OUTCOMES = ("blood_glucose", "blood_triglycerides")
 BLOCKED_STATUS = "blocked_by_unresolved_measurement_rule"
+UNBLOCKED_STATUS = "unblocked_empirically_pending_independent_confirmation"
 OPEN_STATUS = "open_pending_independent_review"
 BLOCKED_REASON = ("Wave 1 fasting field qc1_va003 has no authoritative numeric mapping; "
                   "no coefficient, p or q value is produced until reviewed codes exist")
+FASTING_MAPPING_RESOLVED = True  # aggregate diagnostic 2026-10-31: 1=fasting, 2=non-fasting
 EXPECTED_ROWS = 105
 EXPECTED_CONTRASTS = 7
 EXPECTED_PHENOTYPES = 15
@@ -79,6 +81,20 @@ def build(register: Path = REGISTER) -> list[dict[str, str]]:
     manifest: list[dict[str, str]] = []
     for row in rows:
         blocked = row["phenotype_concept_id"] in BLOCKED_OUTCOMES
+        if blocked and FASTING_MAPPING_RESOLVED:
+            status = UNBLOCKED_STATUS
+            reason = ("fasting field qc1_va003 resolved empirically on 2026-10-31 "
+                      "(1 = fasting 89.7%, 2 = non-fasting 8.1%; code 2 shows higher glucose and "
+                      "triglycerides); restriction to code 1 is delegated, not independently confirmed")
+            note = "nested in the frozen K=150 family; fasting restriction delegated pending confirmation"
+        elif blocked:
+            status = BLOCKED_STATUS
+            reason = BLOCKED_REASON
+            note = "nested in the frozen K=150 family; blocked before any model fit"
+        else:
+            status = OPEN_STATUS
+            reason = "candidate only; requires independent review"
+            note = "nested in the frozen K=150 family; no tranche-level multiplicity adjustment"
         manifest.append({
             "hypothesis_id": row["hypothesis_id"],
             "parent_family_id": row["family_id"],
@@ -94,11 +110,9 @@ def build(register: Path = REGISTER) -> list[dict[str, str]]:
             "phenotype_field_candidate": row["phenotype_field_candidate"],
             "phenotype_unit_candidate": row["phenotype_unit_candidate"],
             "primary_model_id": row["primary_model_id"],
-            "analysis_status": BLOCKED_STATUS if blocked else OPEN_STATUS,
-            "status_reason": BLOCKED_REASON if blocked else "candidate only; requires independent review",
-            "notes": ("nested in the frozen K=150 family; no tranche-level multiplicity adjustment"
-                      if not blocked else
-                      "nested in the frozen K=150 family; blocked before any model fit"),
+            "analysis_status": status,
+            "status_reason": reason,
+            "notes": note,
         })
     return manifest
 

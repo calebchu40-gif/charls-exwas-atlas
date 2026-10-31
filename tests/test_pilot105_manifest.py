@@ -1,4 +1,4 @@
-"""Tests for the pilot-105 manifest derived from the frozen K=150 register.
+﻿"""Tests for the pilot-105 manifest derived from the frozen K=150 register.
 
 The pilot batch must remain a *pure subset* of the frozen family: no new
 hypotheses, no change of family, and the fasting-blocked endpoints must never
@@ -28,18 +28,29 @@ class Pilot105ManifestTests(unittest.TestCase):
         pairs = {(row["contrast_id"], row["phenotype_concept_id"]) for row in self.rows}
         self.assertEqual(len(pairs), 105)
 
-    def test_fasting_blocked_endpoints_are_never_estimable(self):
-        blocked = [row for row in self.rows
-                   if row["analysis_status"] == pilot.BLOCKED_STATUS]
-        self.assertEqual(len(blocked), 14)
-        self.assertEqual({row["phenotype_concept_id"] for row in blocked},
+    def test_fasting_endpoints_are_unblocked_but_flagged_pending_confirmation(self):
+        fasting = [row for row in self.rows
+                   if row["analysis_status"] == pilot.UNBLOCKED_STATUS]
+        self.assertEqual(len(fasting), 14)
+        self.assertEqual({row["phenotype_concept_id"] for row in fasting},
                          {"blood_glucose", "blood_triglycerides"})
-        for row in blocked:
+        for row in fasting:
             self.assertIn("qc1_va003", row["status_reason"])
+            self.assertIn("pending confirmation", row["notes"])
         open_rows = [row for row in self.rows if row["analysis_status"] == pilot.OPEN_STATUS]
         self.assertEqual(len(open_rows), 91)
         self.assertFalse({row["phenotype_concept_id"] for row in open_rows}
                          & {"blood_glucose", "blood_triglycerides"})
+
+    def test_blocked_status_survives_if_the_mapping_is_unresolved(self):
+        original = pilot.FASTING_MAPPING_RESOLVED
+        try:
+            pilot.FASTING_MAPPING_RESOLVED = False
+            rows = pilot.build()
+            blocked = [row for row in rows if row["analysis_status"] == pilot.BLOCKED_STATUS]
+            self.assertEqual(len(blocked), 14)
+        finally:
+            pilot.FASTING_MAPPING_RESOLVED = original
 
     def test_every_row_stays_inside_the_frozen_parent_family(self):
         for row in self.rows:
@@ -71,7 +82,7 @@ class Pilot105ManifestTests(unittest.TestCase):
     def test_summary_counts(self):
         summary = pilot.summarise(self.rows)
         self.assertEqual(summary["rows"], 105)
-        self.assertEqual(summary["by_status"][pilot.BLOCKED_STATUS], 14)
+        self.assertEqual(summary["by_status"][pilot.UNBLOCKED_STATUS], 14)
         self.assertEqual(summary["by_status"][pilot.OPEN_STATUS], 91)
 
 

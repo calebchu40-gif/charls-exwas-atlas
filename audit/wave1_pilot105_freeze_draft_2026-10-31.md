@@ -24,7 +24,7 @@
 
 | 状态 | 行数 | 含义 |
 |---|---|---|
-| `blocked_by_unresolved_measurement_rule` | **14** | 血糖 7 项 + 甘油三酯 7 项：Wave 1 空腹字段 `qc1_va003` 无数值编码权威映射，**不产生系数、p 或 q** |
+| `unblocked_empirically_pending_independent_confirmation` | **14** | 血糖 7 项 + 甘油三酯 7 项：2026-10-31 聚合诊断确认 `qc1_va003` 1=空腹(89.7%)/2=非空腹(8.1%)，按委托决定限空腹分析；**待独立确认**，不冒充已通过审阅 |
 | `open_pending_independent_review` | **91** | 仅是候选；在结局规则、年龄/目标估计量、协变量与方差近似获独立审阅前，不构成"可估计"声明 |
 
 这与 [`wave1_household_environment_pilot_execution_design_2026-10-30.md`](wave1_household_environment_pilot_execution_design_2026-10-30.md)
