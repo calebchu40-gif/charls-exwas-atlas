@@ -13,6 +13,7 @@ phenotype_variable,yes,string,Wave-specific released field or derived-variable i
 eligibility_rule,yes,string,"Module participation, route, age, sample flag, and other pre-specified inclusion criteria.",Public specification
 model_id,yes,category,Named model and versioned covariate set; covariates require substantive justification.,Public
 estimate_type,yes,category,"Model family, contrast, scale, and link function.",Public
+contrast,yes,string,"Registered exposure category compared with its registered reference category.",Public metadata after review
 estimate,conditional,numeric,Association estimate on stated scale.,Disclosure review
 standard_error,conditional,numeric,Design-based SE or explicitly labeled approximation; method must be documented.,Disclosure review
 ci_lower,conditional,numeric,Lower 95% confidence limit.,Disclosure review

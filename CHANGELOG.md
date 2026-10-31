@@ -1972,3 +1972,4 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Updated the private full240 normalizer to accept an explicitly user-authorized run configuration without relabeling it as an independent review or a frozen external approval.
 - Fixed the normalizer's scope-ID iteration so its opaque analysis IDs map back to registered hypothesis IDs before row validation.
 - Added the registered contrast labels to the result schema and made the association table display contrasts, standardized effect estimates with confidence intervals, BY q-values, model sample size, and the approximate-variance label.
+- Added the explicit `contrast` field to schema v3, which the public payload contract already required for interpretable result rows.
