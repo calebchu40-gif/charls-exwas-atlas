@@ -134,7 +134,7 @@ def _validate_configuration(
         raise ValueError("Frozen design specification must provide stratum_fields, including an explicit empty list if none apply")
     if design.get("replicate_weight_fields"):
         raise ValueError("Replicate-weight designs are not supported by this Taylor-only runner; use an approved implementation")
-    if design.get("singleton_psu_method") not in {
+    if design["stratum_fields"] and design.get("singleton_psu_method") not in {
         "center", "scale", "skip", "self_representing", "collapse", "pool"
     }:
         raise ValueError("Singleton PSU method is not supported by the pinned svy engine")
@@ -580,14 +580,14 @@ def _fit_exposure_group(data: Any, config: dict[str, Any], analyte: dict[str, st
         "psu": "__design_psu",
         "wgt": "__design_weight",
         "wr": design["with_replacement"],
-        "singleton": svy.Singleton(
-            design["singleton_psu_method"],
-            domains=design["domain_singleton_method"],
-            on_domain_singletons=design["on_domain_singletons"],
-        ),
     }
     if stratum_fields:
         kwargs["stratum"] = stratum_fields[0] if len(stratum_fields) == 1 else stratum_fields
+        kwargs["singleton"] = svy.Singleton(
+            design["singleton_psu_method"],
+            domains=design["domain_singleton_method"],
+            on_domain_singletons=design["on_domain_singletons"],
+        )
     fit_columns = ["__design_psu", "__design_weight", "__outcome_z", "__model_domain", *xvars, *stratum_fields]
     fit_data = model_data.select(list(dict.fromkeys(fit_columns)))
     survey = svy.Sample(data=fit_data, design=svy.Design(**kwargs))

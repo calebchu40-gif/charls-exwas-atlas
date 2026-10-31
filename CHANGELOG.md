@@ -1945,3 +1945,8 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Static review and structural validation do not approve survey estimands, variance, outcome rules or model readiness.
 
 - Fixed the K150/K90 validator to accept grouped education categories in the same format already supported by the model-term builder.
+# 2026-10-31 Fix no-strata Taylor design construction
+
+- The user-authorized internal runner now omits singleton-stratum handling when the approved design has no strata, as required by the pinned `svy` engine.
+- This fixes a pre-fit error under the selected community-clustered, unstratified Taylor design; it does not change the estimand or add data-derived filtering.
+
