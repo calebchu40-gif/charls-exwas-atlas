@@ -1,4 +1,4 @@
-"""Consistency between the generic engine and the frozen scale-up executor.
+﻿"""Consistency between the generic engine and the frozen scale-up executor.
 
 The K=150/K=90 executor (``run_2011_household_environment_scaleup.py``) accepts
 only a frozen configuration that names the weight, PSU, strata, with-replacement
@@ -9,19 +9,25 @@ an approximation as if it were a full design-based variance.
 These tests read the public configuration template only; they never touch
 participant data.
 """
+import importlib.util
 import json
 import sys
 import unittest
 from pathlib import Path
 
+SURVEY_STACK = all(importlib.util.find_spec(name) for name in ("numpy", "polars", "svy"))
+SKIP_REASON = "survey analysis stack (svy/polars/numpy) is not installed in this job"
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-import exwas_engine as engine  # noqa: E402
+if SURVEY_STACK:
+    import exwas_engine as engine  # noqa: E402
 
 TEMPLATE = ROOT / "audit" / "templates" / "wave1_household_environment_scaleup_model_config.template.json"
 
 
+@unittest.skipUnless(SURVEY_STACK, SKIP_REASON)
 @unittest.skipUnless(TEMPLATE.is_file(), "scale-up configuration template is not present")
 class ExecutorTemplateTests(unittest.TestCase):
     @classmethod
@@ -52,6 +58,7 @@ class ExecutorTemplateTests(unittest.TestCase):
         self.assertNotIn("rep_wgts", fields)
 
 
+@unittest.skipUnless(SURVEY_STACK, SKIP_REASON)
 class DesignNoteTests(unittest.TestCase):
     def test_unstratified_note_carries_a_limitation_label(self):
         design = engine.DesignSpec(weight="bloodweight", psu="communityID")

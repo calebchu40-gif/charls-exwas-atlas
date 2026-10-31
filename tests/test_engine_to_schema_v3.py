@@ -5,19 +5,25 @@ frozen provenance states a verified source, weight and PSU, a documented
 stratum status, a reviewed estimability decision, and a code commit.
 """
 import csv
+import importlib.util
 import json
 import sys
 import tempfile
 import unittest
 from pathlib import Path
 
+SURVEY_STACK = all(importlib.util.find_spec(name) for name in ("numpy", "polars", "svy"))
+SKIP_REASON = "survey analysis stack (svy/polars/numpy) is not installed in this job"
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import engine_to_schema_v3 as mapper  # noqa: E402
-import exwas_engine as engine  # noqa: E402
-import run_exwas_scan as cli  # noqa: E402
 import validate_exwas_result_table as contract  # noqa: E402
+
+if SURVEY_STACK:
+    import exwas_engine as engine  # noqa: E402
+    import run_exwas_scan as cli  # noqa: E402
 
 PROVENANCE = {
     "data_release": "SYNTHETIC test release",
@@ -91,6 +97,7 @@ class ProvenanceTests(unittest.TestCase):
                 mapper.load_provenance(path)
 
 
+@unittest.skipUnless(SURVEY_STACK, SKIP_REASON)
 class MappingTests(unittest.TestCase):
     def test_engine_rows_round_trip_through_the_contract(self):
         engine_rows = _engine_rows()

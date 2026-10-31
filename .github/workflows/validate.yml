@@ -77,4 +77,4 @@ jobs:
         run: python audit/survey_engine_synthetic_trial.py
 
       - name: Run generic ExWAS engine synthetic tests
-        run: python -m unittest tests.test_exwas_engine -v
+        run: python -m unittest tests.test_exwas_engine tests.test_engine_to_schema_v3 tests.test_engine_executor_consistency -v
