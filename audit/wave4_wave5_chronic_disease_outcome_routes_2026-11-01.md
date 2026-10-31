@@ -15,6 +15,20 @@ The Wave 4/5 release review found no venous-blood laboratory module in these wav
 
 The official route is the reason that a single current-wave question field is insufficient for a cross-sectional “ever doctor-diagnosed by this interview” variable among returning respondents. A carry-forward field alone is also insufficient because it misses new diagnoses reported since the prior interview. In Wave 5, `DA002=99` is a route-consistency flag requiring special treatment when a prior positive is also present.
 
+## Disease-slot reconciliation
+
+The existing official concept crosswalk resolves the inserted 2020 Parkinson's item. Use disease labels, not matching slot numbers, to pair fields:
+
+| Disease concept | 2018 current / prior field | 2020 current / prior field | Cross-wave treatment |
+|---|---|---|---|
+| Hypertension through memory-related disease (concepts 1–12) | `DA007_1_`–`DA007_12_` / `Zdiagnosed_1_`–`Zdiagnosed_12_` | `da003_1_`–`da003_12_` / `zdisease_1_`–`zdisease_12_` | Candidate label-matched set; confirm each source label and route before modeling. |
+| Parkinson's disease | Included only in the 2018 memory-related disease wording/examples; no distinct 2018 diagnosis item. | `da003_13_` / `zdisease_13_` | Wave 5 standalone phenotype only; do not map to 2018 memory-related disease as equivalent. |
+| Arthritis or rheumatism | `DA007_13_` / `Zdiagnosed_13_` | `da003_14_` / `zdisease_14_` | Same concept with shifted slot. |
+| Asthma | `DA007_14_` / `Zdiagnosed_14_` | `da003_15_` / `zdisease_15_` | Same concept with shifted slot. |
+| Prostate illness excluding cancer | Male-only `DA029` with separate new/returner routes | No equivalent standalone field identified | Keep as a Wave 4-only candidate, with its route-specific fields; exclude from a shared Wave 4/5 family. |
+
+The Wave 4/5 field names above follow the archived official codebooks and are catalog candidates, not a substitute for verifying the actual protected release headers. The full legacy cross-wave mapping and caveats remain in `chronic_disease_concept_crosswalk_v2.csv`.
+
 ## Candidate, not yet frozen, derivation
 
 For each disease concept and within each wave, build an explicit outcome with Yes, No, missing, and route-conflict states from the official prior-positive indicator and current routed answer:
