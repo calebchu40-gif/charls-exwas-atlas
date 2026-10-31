@@ -1,4 +1,4 @@
-"""Tests for the engine -> schema-v3 mapper.
+﻿"""Tests for the engine -> schema-v3 mapper.
 
 The mapper must fail closed: it may only emit a ``success`` row when the
 frozen provenance states a verified source, weight and PSU, a documented
@@ -149,6 +149,15 @@ class MappingTests(unittest.TestCase):
                     "nonpositive_weight_total", "invalid_binary_outcome", "engine_omitted_term"}
         self.assertTrue(produced.issubset(set(mapper.FIT_STATUS_MAP)))
         self.assertTrue(set(mapper.FIT_STATUS_MAP.values()).issubset(contract.FIT_STATUSES))
+
+
+class TemplateTests(unittest.TestCase):
+    TEMPLATE = ROOT / "audit" / "templates" / "wave1_provenance.template.json"
+
+    def test_public_template_is_present_and_fails_closed(self):
+        self.assertTrue(self.TEMPLATE.is_file(), "provenance template must ship with the repo")
+        with self.assertRaises(mapper.MappingError):
+            mapper.load_provenance(self.TEMPLATE)
 
 
 if __name__ == "__main__":
