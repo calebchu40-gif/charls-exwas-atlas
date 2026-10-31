@@ -1,72 +1,19 @@
-# 试点 105 项探索性运行记录（2026-10-31）
+# Wave 1 pilot execution note (methods only)
 
-**状态：探索性、PI 委托决策、未经独立方法审阅；结果不发布、不进仓库、不作为正式发现。**
-本文件只记录**方法与质量核查**，不包含任何系数、CI 或 p 值；结果表保存在服务器受保护目录
-`private/results/wave1_pilot105_exploratory_v1.csv`（权限 700/640）。
+**Status:** exploratory, PI-delegated, not independently reviewed, and not approved for publication. Coefficients, uncertainty estimates, p/q values, exact analytic counts, and result-derived diagnostics remain in the protected server workspace.
 
----
+## Analysis specification used for the exploratory run
 
-## 1. 为什么可以跑
+The pilot driver is `scripts/run_wave1_pilot105_exploratory.py`. It operationalizes the registered running-water contrast and cooking-fuel contrasts against the blood phenotype catalog, using the project’s Wave 1 analytic table and the predeclared fasting handling. The run used the user-selected approximate design: blood examination weight, `communityID` PSU, no fabricated strata, and with-replacement Taylor variance. It is not the gated scale-up executor.
 
-用户于 2026-10-31 明确把决策权委托给本项目执行（"所有权限都给你"）。因此本轮对原本需要人工裁决的门
-做出一组**可追溯的委托决定**，并把它们写进运行的元数据，而不是假装"独立审阅已通过"：
+The delegated draft choices were: age-domain lower bound 45 using the lower endpoint of the age interval; the draft M1 covariate set; fasting-only handling for glucose and triglycerides; and outcome standardization using the weighted within-domain standard deviation. These are exploratory choices and remain subject to independent methods review.
 
-| 门 | 委托决定 | 依据 |
-|---|---|---|
-| 方差方案 | `bloodweight` + `communityID` PSU、无分层、WR Taylor | 用户此前已选定方案 A；执行器与引擎都强制标注 `limitation:` |
-| 年龄域 | 完整血检目标框内、年龄**下界** ≥ 45 | 项目既定的下界规则；年龄区间候选表已就绪 |
-| 空腹编码 | 血糖/甘油三酯**限空腹**（`qc1_va003 == 1`） | 本轮聚合诊断：1 占 89.7%、2 占 8.1%，非空腹组血糖/甘油三酯均更高，与官方"约 8% 非空腹"及 2015 年 `bl_fasting` 1=Yes/2=No 一致 |
-| 协变量 | 年龄、年龄²、性别、城乡、教育（参照 1–3 级） | 沿用项目配置草案的 M1 候选 |
-| 结局尺度 | 原尺度 + 域内加权 SD 标准化（每 SD 效应） | 引擎默认；便于跨表型比较 |
-| 有效性 | 仅保留有限正值；不按官方描述统计量剔除 | 官方表 4/5 是描述性统计，不是剔除边界 |
+## Source-field correction
 
-## 2. 一个必须记下的字段纠错
+An early driver revision treated `i020` as cooking fuel. Official labels identify `i020` as heating availability, `i021` as heating energy source, and `i022` as the main cooking-fuel field. The driver was corrected to use `i022`; the registration itself already named `i022`.
 
-初次运行把 `i020` 当作炊事燃料，结果只有 1/2 两个取值、4 个燃料对照秩亏。
-查官方变量标签后确认：
+## Reproducibility and interpretation limits
 
-- `i020` = **Residence Has Heating**（是否有供暖，二值）；
-- `i021` = Heating Energy Source（供暖能源，7 类）；
-- `i022` = **Main Source of Cooking Fuel**（主要炊事燃料，1 煤 / 2 天然气 / 3 沼气 / 4 液化气 / 5 电 / 6 秸秆木材 / 7 其他）。
+The result files are protected under `private/results/`. The run predates a frozen analysis configuration and does not have a contemporaneous, signed run manifest binding the exact input, configuration, and code hashes. A current-file hash inventory can document what exists now, but cannot reconstruct those historical bindings. The exploratory outputs must not be described as confirmatory findings or used for public reporting.
 
-冻结登记表里的 `exposure_field_candidate` 本来就写的是 `i022`，**错在驱动脚本，不在登记表**。
-更正后 7 个对照全部可估计。
-
-## 3. 运行与验证
-
-| 项 | 结果 |
-|---|---|
-| 运行命令 | `scripts/run_wave1_pilot105_exploratory.py --run`（服务器私有环境） |
-| 网格 | 7 对照 × 15 表型 = **105**，全部 `success` |
-| 家族 | `wave1_pilot105_exploratory.2011.M1;K=105`（BY + Bonferroni 均在 105 内计算） |
-| 模型样本 | 10,003 – 11,342 |
-| PSU 数 | 417 – 442；设计自由度 407 – 429 |
-| 引擎警告 | 0 条 |
-| 空腹子样本 | 10,627（与独立聚合诊断完全一致） |
-| **独立复算** | 另写一段直接 `svy` GLM 复算 3 对（自来水×尿酸、煤×尿酸、沼气×红细胞压积），系数与 SE 与引擎**逐位一致**（如 0.169431 / 0.032473） |
-
-## 4. 质量警示（必须在解读前读）
-
-暴露组规模差异极大（年龄 ≥45 域内、未加权）：
-
-| 对照 | 暴露人数 | 加权占比 |
-|---|---|---|
-| 自来水 Yes | 6,850 | 69.2% |
-| 秸秆/木材 | 5,242 | 36.4% |
-| 液化气 | 1,537 | 17.9% |
-| 天然气 | 1,222 | 16.5% |
-| 煤 | 1,186 | 9.3% |
-| **沼气** | **176** | **1.4%** |
-| **其他燃料** | **90** | **0.6%** |
-
-沼气与其他燃料两个对照的暴露组极小，即使 q 值通过也必须视为**不稳定、需独立复核**，
-不得据此做政策或因果解读。
-
-其余限制：近似方差（官方未发布分层/复制权重）、完整病例分析、无多重插补、
-年龄为区间中点、未做暴露测量误差校正。
-
-## 5. 下一步
-
-1. 把本轮的字段纠错与空腹实证写回登记表与结局包（已完成，见同日更新）；
-2. 若要形成可发布结果，仍需：独立方法审阅（方差与目标域）、披露审查、公开结果契约；
-3. 结果表保持私有；任何对外数字必须来自 `engine_to_schema_v3` + 披露流程，而不是本文件。
+The analysis uses complete cases, approximate variance without official strata or replicate weights, and interval-derived age. It does not include multiple imputation or exposure measurement-error correction. The association results require independent methods review, output QA, and disclosure review before any release decision.

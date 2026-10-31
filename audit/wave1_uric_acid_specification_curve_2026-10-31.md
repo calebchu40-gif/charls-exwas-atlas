@@ -1,58 +1,15 @@
-# 两项尿酸关联的多规格敏感性（2026-10-31）
+# Uric-acid specification analysis (methods only)
 
-**探索性、PI 委托、未经独立审阅。系数保留在服务器私有目录，本文件只记录设计与结论。**
+**Status:** exploratory, PI-delegated, not independently reviewed, and not approved for publication. All coefficient estimates, confidence intervals, p/q values, sample counts, and specification-curve outputs remain in the protected server workspace.
 
----
+## Model sequence
 
-## 1. 为什么做这两项
+The private analysis script is `scripts/wave1_uric_acid_specification_curve.py`. It evaluates a prespecified covariate sequence for the registered running-water and cooking-fuel contrasts against serum uric acid, under both the community-PSU and county-prefix-PSU approximations. The sequence adds age terms, sex, education, urban/rural context, smoking, alcohol, BMI, creatinine-derived eGFR, and self-reported hypertension, diabetes, and kidney disease.
 
-上一轮 105 项探索性扫描在县级聚类（150 个县）下只剩 2 项 q<0.05：
+Coding notes retained for review: smoking uses `da059`; alcohol uses `da067` with former drinkers grouped with non-drinkers in this exploratory specification; BMI is derived from `qi002` and `ql002`; eGFR is derived from `newcrea` using the CKD-EPI 2009 equation. These choices need source and population-applicability review. In particular, eGFR adjustment may represent confounding, mediation, or both, and the single creatinine measurement has limitations.
 
-- 自来水（有 vs 无）→ 血清尿酸；
-- 主炊事燃料＝煤（vs 电）→ 血清尿酸。
+## Important omissions and limits
 
-其余三项（秸秆/木材→HDL、沼气→红细胞压积、沼气→总胆固醇）在县级聚类下失去显著性，
-已在小暴露组敏感性中标记为不稳定，不再推进。
+The reviewed questionnaire material did not identify a diuretic-specific medication field or a purine-intake measure for this analysis. The current specification therefore cannot claim adjustment for either. This absence should be checked against the complete official codebook before finalizing the covariate strategy. The analysis is cross-sectional, complete-case, and uses approximate variance without official strata or replicate weights. Household water and cooking-fuel measures may share causes such as urbanicity and socioeconomic context; no causal interpretation is supported.
 
-## 2. 规格阶梯
-
-| 规格 | 协变量 |
-|---|---|
-| M0 | 无 |
-| M1 | 年龄、年龄² |
-| M2 | + 性别 |
-| M3 | + 教育（4 个指示变量，参照 1–3 级） |
-| M4 | + 城乡 |
-| M5 | + 吸烟（`da059`：1=是 / 2=否） |
-| M6 | + 饮酒（`da067`：1=是 / 3=否；2=戒酒按否处理，缺失不插补） |
-| M7 | + BMI（`qi002` 身高、`ql002` 体重；身高 <3 按米换算，BMI 只保留 10–60 可用范围） |
-| M8 | + log eGFR（CKD-EPI 2009，由 `newcrea`、年龄、性别计算） |
-| M9 | + 自报高血压（`da007_1_`）、糖尿病（`da007_3_`）、肾病（`da007_9_`） |
-
-每种规格分别在 **社区 PSU** 与 **县级 PSU** 下各拟合一次，共 **10 个规格 × 2 个暴露 × 2 种 PSU = 40** 个模型。
-结果表：`private/results/wave1_uric_acid_specification_curve_v1.csv`。
-
-## 3. 结果（定性 + 汇总统计）
-
-- **40 个模型全部与主结果同向**：自来水为正、煤为负；
-- **最大 p = 3.2×10⁻³**（自来水、县级 PSU、M9），最小 p = 2.0×10⁻¹⁰；没有哪个规格让关联消失；
-- 县级聚类使标准误放大约 20–30%，但 p 仍在 10⁻³ 量级以内；
-- **加入 eGFR 后两项都衰减**：自来水由约 0.158 降到 0.125（M8）、0.118（M9）；煤由约 0.262 降到 0.222、0.223。
-  说明肾功能与共病解释了其中约 15–25%，但**不足以解释掉关联**；
-- 加入城乡（M4）后自来水效应从约 0.26 降到约 0.17，说明**部分效应由城乡差异承载**；
-- 加入 BMI（M7）后煤的效应略增强、样本降到约 8,700，方向不变；
-- 饮水与燃料两项在**全部规格**下方向稳定，属于本轮最稳的信号。
-
-## 4. 仍然存在的限制
-
-- 横断面、完整病例（约 1.1 万人，M7 降至 8,700），无多重插补；
-- 方差是近似（无官方分层/复制权重），县级聚类只是"更保守的近似"，不是官方设计；
-- 已调整 eGFR 与自报高血压/糖尿病/肾病，但**没有利尿剂使用、没有嘌呤/肉类摄入**；
-- eGFR 由单次肌酐推算，未做尿蛋白或重复测量校正；
-- 自来水与燃料都是家庭层面暴露，存在共同成因（城镇化、收入），不能解释为因果；
-- 尿酸测量本身的冻存/批次问题未评估。
-
-## 5. 结论
-
-这两项关联**对模型规格与 PSU 定义都稳健**，值得作为下一阶段（独立审阅 + 披露审查）的重点候选；
-但在通过正式审阅前，它们仍是探索性结果，不得发布或引用。
+The private output predates a frozen configuration and lacks a contemporaneous signed run manifest binding input, code, and configuration hashes. It remains exploratory. Independent methods review, independent reproduction, and disclosure review are required before any release decision.

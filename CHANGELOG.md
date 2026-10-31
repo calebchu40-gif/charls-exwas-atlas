@@ -1,3 +1,8 @@
+# 2026-10-31 Correct public Wave 1 pilot status and remove unreviewed result summaries
+
+- Corrected the project status to distinguish completed exploratory analyses in private storage from zero formally approved association results.
+- Replaced public pilot, sensitivity, stability, and uric-acid notes with methods-only descriptions; removed result-derived estimates, significance counts, and exact analytic counts from the current public files.
+- Private result files remain on the protected server. No coefficients or restricted QA are included in this update.
 # 2026-10-31 Enforce owner-only permissions on Wave 1 result artifacts
 
 - Hardened the gated K150/K90 and 105-pilot runner so its private output directory is 0700 and result, pair-QA, and manifest files are chmodded to 0600 after writing, regardless of server umask.
