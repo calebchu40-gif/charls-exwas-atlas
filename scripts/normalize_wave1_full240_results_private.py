@@ -390,6 +390,7 @@ def normalize(
             "psu_id": str(design["psu_field"]),
             "stratum_status": "not_released",
             "variance_design": variance,
+            "contrast": f"{raw['exposure_label']} vs {raw['reference_label']}",
             "exposure_transform": f"Raw registered contrast: {raw['exposure_label']} vs {raw['reference_label']}; field {raw['exposure_variable_candidate']}",
             "phenotype_transform": f"{raw['outcome_transform']}; original unit {raw['phenotype_unit']}; standardized outcome scale",
             "missingness_rule": str(config["model"].get("missing_data_rule", "")),

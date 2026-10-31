@@ -337,18 +337,20 @@ function renderAssociationRows() {
     &&(!selected.wave||row.wave===selected.wave)
     &&(!selected.model||row.model_id===selected.model));
   const body=byId('rows'),empty=byId('empty');body.replaceChildren();
-  byId('count').textContent=`显示 ${rows.length.toLocaleString()} / ${associationRows.length.toLocaleString()} 条经统计与披露审查的关联记录`;
+  byId('count').textContent=`显示 ${rows.length.toLocaleString()} / ${associationRows.length.toLocaleString()} 条关联结果`;
   empty.hidden=rows.length>0;
   if(associationRows.length&&rows.length===0)empty.textContent='当前筛选条件下没有结果。';
   for(const item of rows){
     const tr=document.createElement('tr');
+    const fmt=(value,digits=3)=>Number.isFinite(Number(value))?Number(value).toPrecision(digits):'—';
     const effect=item.fit_status==='success'
-      ?`${item.estimate} (${item.standard_error}); 95% CI ${item.ci_lower}–${item.ci_upper}`:'—';
-    const cells=[`${item.exposure_concept_id} · ${item.exposure_variable}`,`${item.phenotype_concept_id} · ${item.phenotype_variable}`,
-      item.wave,item.model_id,effect,item.n_model,item.fit_status==='success'?'统计和披露审查通过':(item.fit_status==='blocked_measurement_rule'?'测量规则待核实（暂不估计）':item.fit_status)];
+      ?`${fmt(item.estimate)} (${fmt(item.ci_lower)} to ${fmt(item.ci_upper)})`:'—';
+    const cells=[`${item.exposure_concept_id} · ${item.exposure_variable}`,item.contrast,
+      `${item.phenotype_concept_id} · ${item.phenotype_variable}`,item.wave,item.model_id,effect,
+      fmt(item.q_value_by),Number(item.n_model).toLocaleString(),item.variance_design];
     for(let index=0;index<cells.length;index++){
       const td=document.createElement('td');td.textContent=String(cells[index]??'—');
-      if(index===4)td.title=[item.estimate_type,item.contrast,item.variance_design].filter(Boolean).join(' · ');
+      if(index===5)td.title=[item.estimate_type,`SE ${item.standard_error}`,`p ${item.p_value}`,`Bonferroni ${item.p_bonferroni}`].filter(Boolean).join(' · ');
       tr.append(td);
     }
     body.append(tr);
@@ -361,7 +363,7 @@ async function renderAssociations() {
   const empty=byId('empty');empty.hidden=false;
   byId('count').textContent='0 条已审查的真实关联结果';
   try {
-    const response=await fetch('./association_results_v1.json?v=1',{cache:'no-cache'});
+    const response=await fetch('./association_results_v1.json?v=2',{cache:'no-cache'});
     if(response.status===404)return;
     if(!response.ok)throw new Error(`HTTP ${response.status}`);
     const payload=await response.json();
