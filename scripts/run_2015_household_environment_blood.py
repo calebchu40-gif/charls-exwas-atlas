@@ -7,6 +7,7 @@ Participant files and exact QA are read/written only under PRIVATE_ROOT. The
 from __future__ import annotations
 
 import csv
+import argparse
 import json
 import math
 import subprocess
@@ -59,7 +60,7 @@ def _read_frame() -> tuple[pl.DataFrame, int]:
     fields = list(dict.fromkeys([
         "crosssection", "blood_weight", "communityID", "iyear", "imonth",
         "ba004_w3_1", "ba004_w3_2", "ba000_w2_3", "i017", "i019", "i020",
-        "i021", "i022", "bl_fasting", "bl_top_coding_tg", *PHENOTYPES.values(),
+        "i021", "i022", "bb001_w3_2", "bl_fasting", "bl_top_coding_tg", *PHENOTYPES.values(),
     ]))
     data, _ = pyreadstat.read_dta(str(DATA), usecols=fields, output_format="polars")
     numeric = [field for field in fields if field != "communityID"]
@@ -89,7 +90,8 @@ def _read_frame() -> tuple[pl.DataFrame, int]:
 
 
 def _result_row(concept: str, field: str, code: int, ref: int, contrast: str,
-                outcome: str, outcome_field: str, n: int, code_commit: str) -> dict[str, object]:
+                outcome: str, outcome_field: str, n: int, code_commit: str,
+                settlement_adjusted: bool) -> dict[str, object]:
     return {
         "analysis_id": f"2015_household_environment_K225:{concept}:{field}_{code}_vs_{ref}:{outcome}",
         "data_release": "CHARLS_2015", "source_identity_status": "verified_official_source",
@@ -98,7 +100,8 @@ def _result_row(concept: str, field: str, code: int, ref: int, contrast: str,
         "exposure_concept_id": concept, "exposure_variable": field,
         "phenotype_concept_id": outcome, "phenotype_variable": outcome_field,
         "eligibility_rule": "crosssection=1; positive Blood_weight; age 45+ from ID/hukou date and interview year/month; pair-complete",
-        "model_id": "M1_2015_age_sex", "estimate_type": "weighted_mean_difference_standardized",
+        "model_id": "M2_2015_age_sex_settlement_sensitivity" if settlement_adjusted else "M1_2015_age_sex",
+        "estimate_type": "weighted_mean_difference_standardized",
         "contrast": contrast, "multiple_testing_family": "wave2015_household_environment_blood;K=225",
         "weight_status": "verified_used", "weight_id": "blood_weight",
         "weight_source": "CHARLS 2015 Blood release", "psu_status": "verified_used",
@@ -117,13 +120,23 @@ def _result_row(concept: str, field: str, code: int, ref: int, contrast: str,
     }
 
 
-def run() -> dict[str, object]:
+def run(settlement_adjusted: bool = False) -> dict[str, object]:
     if svy.__version__ != "0.35.0":
         raise RuntimeError(f"Expected svy 0.35.0, got {svy.__version__}")
     code_commit = subprocess.check_output(
         ["git", "-C", str(CODE_ROOT), "rev-parse", "--short", "HEAD"], text=True
     ).strip()
     data, frame_n = _read_frame()
+    if settlement_adjusted:
+        # Official 2015 bb001_w3_2 categories are nominal and wave-specific.
+        # Retain all seven categories with category 1 as reference; do not
+        # manufacture an urban/rural collapse from these codes.
+        data = data.with_columns([
+            pl.when(pl.col("bb001_w3_2") == float(category)).then(1.0)
+            .when(pl.col("bb001_w3_2").is_between(1.0, 7.0)).then(0.0)
+            .otherwise(None).alias(f"__settlement_{category}")
+            for category in range(2, 8)
+        ])
     rows: list[dict[str, object]] = []
     diagnostics: list[dict[str, object]] = []
     for outcome, outcome_field in PHENOTYPES.items():
@@ -149,17 +162,25 @@ def run() -> dict[str, object]:
                 .when(pl.col(field) == float(ref)).then(0.0).otherwise(None).alias("__x"),
                 (pl.col("__age") - 60.0).alias("__age_c"),
             )
-            pair = prepared.filter(domain & pl.col("__y").is_not_null() & pl.col("__sex2").is_not_null())
-            row = _result_row(concept, field, code, ref, contrast, outcome, outcome_field, pair.height, code_commit)
+            pair_rule = domain & pl.col("__y").is_not_null() & pl.col("__sex2").is_not_null()
+            model_terms = ["__x", "__age_c", "__age_c2", "__sex2"]
+            if settlement_adjusted:
+                model_terms.extend(f"__settlement_{category}" for category in range(2, 8))
+                pair_rule &= pl.col("bb001_w3_2").is_between(1.0, 7.0)
+            pair = prepared.filter(pair_rule)
+            row = _result_row(concept, field, code, ref, contrast, outcome, outcome_field, pair.height, code_commit, settlement_adjusted)
             warnings_count = 0
             if pair.height >= 30 and pair["__psu"].n_unique() > 8 and math.isfinite(sd) and sd > 0:
-                fit_data = prepared.select(["__psu", "__weight", "__y", "__domain", "__x", "__age_c", "__sex2"])
+                fit_columns = ["__psu", "__weight", "__y", "__domain", *[term for term in model_terms if term != "__age_c2"]]
+                if settlement_adjusted:
+                    fit_columns.extend(f"__settlement_{category}" for category in range(2, 8))
+                fit_data = prepared.select(list(dict.fromkeys(fit_columns)))
                 fit_data = fit_data.with_columns((pl.col("__age_c") ** 2).alias("__age_c2"))
                 survey = svy.Sample(data=fit_data, design=svy.Design(psu="__psu", wgt="__weight", wr=True))
                 with warnings.catch_warnings(record=True) as caught:
                     warnings.simplefilter("always")
                     fitted = survey.glm.fit(
-                        y="__y", x=["__x", "__age_c", "__age_c2", "__sex2"],
+                        y="__y", x=model_terms,
                         family="gaussian", where=pl.col("__domain"), method="taylor",
                         drop_nulls=True, alpha=0.05,
                     ).to_polars()
@@ -183,9 +204,11 @@ def run() -> dict[str, object]:
         if rows[index]["fit_status"] == "success":
             rows[index]["q_value_by"] = float(qvalues[rank])
             rows[index]["p_bonferroni"] = min(1.0, float(rows[index]["p_value"]) * len(rows))
-    RESULT.parent.mkdir(parents=True, exist_ok=True)
-    QA.parent.mkdir(parents=True, exist_ok=True)
-    with RESULT.open("w", newline="", encoding="utf-8-sig") as stream:
+    result_path = RESULT.with_name("2015_household_environment_blood_K225_settlement_sensitivity_schema_v3.csv") if settlement_adjusted else RESULT
+    qa_path = QA.with_name("2015_household_environment_blood_K225_settlement_sensitivity_private.json") if settlement_adjusted else QA
+    result_path.parent.mkdir(parents=True, exist_ok=True)
+    qa_path.parent.mkdir(parents=True, exist_ok=True)
+    with result_path.open("w", newline="", encoding="utf-8-sig") as stream:
         writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
         writer.writeheader(); writer.writerows(rows)
     summary = {
@@ -193,17 +216,20 @@ def run() -> dict[str, object]:
         "success": sum(row["fit_status"] == "success" for row in rows),
         "non_success": sum(row["fit_status"] != "success" for row in rows),
         "frame_rows_after_weight_and_age_fields_private": frame_n,
-        "model": "blood-weighted outcome SD; age 45+; age linear/quadratic and gender indicator; pair-complete",
+        "model": "blood-weighted outcome SD; age 45+; age linear/quadratic and gender indicator; pair-complete" + ("; nominal bb001_w3_2 categories 2-7 vs category 1" if settlement_adjusted else ""),
         "fasting": "glucose and triglycerides restricted to bl_fasting=1",
         "heating_route": "2015-specific i020=1 Yes proceeds to i021",
         "code_commit": code_commit,
         "variance": "WR Taylor; communityID clusters; no released strata; approximate",
         "diagnostics_private": diagnostics,
     }
-    QA.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    RESULT.chmod(0o600); QA.chmod(0o600)
+    qa_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    result_path.chmod(0o600); qa_path.chmod(0o600)
     return {key: value for key, value in summary.items() if key != "diagnostics_private"}
 
 
 if __name__ == "__main__":
-    print(json.dumps(run(), ensure_ascii=False))
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--settlement-sensitivity", action="store_true")
+    args = parser.parse_args()
+    print(json.dumps(run(settlement_adjusted=args.settlement_sensitivity), ensure_ascii=False))
