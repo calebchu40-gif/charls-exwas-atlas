@@ -1994,3 +1994,9 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Added a protected reconciliation utility for the Wave 2 anthropometry midpoint, lower-bound, and upper-bound model families. It verifies the complete registered pair set, successful fits, per-family result and configuration hashes, and common code commit before comparing coefficient and standard-error movement.
 - Exact pair diagnostics are written only to the protected server QA directory. The tool does not produce a public result payload or select associations by significance.
 - Updated the active plan to distinguish already-run midpoint/lower-bound families from the upper-bound and combined private-QA verification still pending.
+
+# 2026-11-01 Reconcile Wave 4/5 chronic-disease outcome routes
+
+- Reviewed the official 2018 and 2020 questionnaires, codebooks, and 2020 route flowchart for doctor-diagnosed disease outcomes.
+- Documented that Wave 4 and Wave 5 use distinct carry-forward and current-question routes. A valid cross-sectional history variable must retain prior diagnoses, include new routed yes responses, preserve missing states, and separately flag contradictory prior-history routes.
+- Added a methods audit and advanced plan item for the later-wave disease family. No participant records, frequencies, or association results were used or published in this source review.

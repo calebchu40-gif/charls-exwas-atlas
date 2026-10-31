@@ -1,0 +1,47 @@
+# Wave 4 / Wave 5 chronic-disease outcome route review (2026-11-01)
+
+## Purpose and scope
+
+This is a questionnaire/codebook route review for possible cross-sectional disease outcomes in the 2018 and 2020 waves. It uses the official files already archived under `sources_official/`; it does not read participant records or report codebook frequencies. It creates no analysis-ready outcome and authorizes no cross-wave pooling.
+
+The Wave 4/5 release review found no venous-blood laboratory module in these waves. A future later-wave atlas block therefore needs to use survey-measured outcomes such as self-reported disease history, with the phenotype explicitly described as doctor-diagnosed disease history rather than a laboratory-confirmed condition.
+
+## Source-confirmed route facts
+
+| Wave | Prior-wave state | Current-wave question | Response rule | Evidence |
+|---|---|---|---|---|
+| 2018 / Wave 4 | Questionnaire carries forward `Zdiagnosed[i]`, indicating a doctor-diagnosed disease at the last interview. | `DA007_i` asks whether a doctor has diagnosed the listed disease. The procedure routes this question to new respondents and returners not previously diagnosed; a prior positive is retained through the carried-forward state. | `1=Yes`, `2=No`. Use a routed current answer or a prior positive state; do not code a blank/skipped answer as No. | `CHARLS_2018_Questionnaire_extracted.txt`, section D, pp. 64–67; `CHARLS_2018_Codebook_extracted.txt`, `da007_*` and `zdiagnosed_*` labels. |
+| 2020 / Wave 5 | The questionnaire preloads `ZDisease[i]` from the last interview. Previously diagnosed diseases follow the comparison route; diseases not previously diagnosed proceed to the new diagnosis question. | `DA003[i]` asks whether a doctor has diagnosed the disease. The official flowchart routes prior-disease cases through `DA002` and no-prior-disease cases through `DA003`. | `1=Yes`, `2=No`. A prior positive is retained; only an explicit routed `DA003=2` supports a No for a condition not previously reported. Other missing/routed states remain missing. | `CHARLS_2020_Questionnaire_English_extracted.txt`, DA Health Status section; `CHARLS_2020_Flowchart_Chinese_extracted.txt`, DA route; `CHARLS_2020_Codebook_extracted.txt`, `da003_*` and `zdisease_*` labels. |
+
+The official route is the reason that a single current-wave question field is insufficient for a cross-sectional “ever doctor-diagnosed by this interview” variable among returning respondents. A carry-forward field alone is also insufficient because it misses new diagnoses reported since the prior interview. In Wave 5, `DA002=99` is a route-consistency flag requiring special treatment when a prior positive is also present.
+
+## Candidate, not yet frozen, derivation
+
+For each disease concept and within each wave, build an explicit outcome with Yes, No, missing, and route-conflict states from the official prior-positive indicator and current routed answer:
+
+1. **Yes:** prior-wave carry-forward indicates the disease, or the current routed doctor-diagnosis question is explicitly `1`.
+2. **No:** the respondent is on the documented no-prior-diagnosis/current-question route and explicitly answers `2`.
+3. **Missing/unknown:** neither a prior positive nor an eligible current yes/no response is established. Do not convert skip, absent module, proxy nonresponse, refusal, or unknown to No.
+4. **Route conflict:** in Wave 5, a prior positive `ZDisease` paired with `DA002=99` (“did not have the disease in last interview”) contradicts the preloaded history. Keep this state separate for protected review; do not silently assign Yes or No until field semantics and the route are reconciled.
+
+Harmonize by the official disease label and wording, never by the numeric slot alone. The Waves 4 and 5 questionnaires have separate disease lists and route variables; retain wave-specific source fields and a disease-by-disease wording crosswalk. Do not claim that the outcome is newly incident: the combined Yes state is prevalent cumulative self-reported doctor-diagnosed history as of the wave interview.
+
+## Analysis-frame implications
+
+- Preserve `Sample_Infor.crosssection` as the frame indicator and apply the verified wave-specific individual weight, `INDV_weight_ad2`, for a cross-sectional representative-sample analysis. The official guides state that released cross-sectional weights cover the main respondent/spouse sample, including proxy and partial interviews; missing outcome response still remains pair-specific missingness.
+- The official guides say the released PSU information is continuous with earlier waves, while the protected metadata review found no released stratum or split-community final-PSU key. Under the user's selected working design, use the available `communityID` cluster with no invented strata and label WR Taylor variance as approximate.
+- Derive age at the wave-specific interview date from source-verified fields; do not apply a blanket age cutoff unless the outcome/estimand requires a prespecified domain.
+- Before model fitting, run a metadata-only input and field check, then protected outcome-state QA by route, cross-sectional eligibility, weight applicability, PSU support, and pairwise completeness. Keep exact counts and all row-level output in server-private storage.
+
+## Next execution step
+
+When server connectivity is restored, first complete and verify the pending Wave 2 age-bound reconciliation. Then, using the protected Wave 4/5 prepared tables, implement this three-state diagnosis derivation for common disease concepts, verify that outputs reproduce the official source routes, and freeze a wave-specific cross-sectional model family. The Wave 4/5 association families must be adjusted and reported separately by wave; any atlas-wide multiplicity correction must include every prespecified hypothesis from all completed waves.
+
+## Official source links
+
+- [2018 CHARLS Wave 4 data and questionnaire](https://charls.charlsdata.com/pages/Data/2018-charls-wave4/en.html)
+- [2018 CHARLS Wave 4 household questionnaire](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2018-charls-wave4/application/CHARLS_2018_Household_Questionnaire.pdf)
+- [2020 CHARLS Wave 5 data and questionnaire](https://charls.charlsdata.com/pages/Data/2020-charls-wave5/en.html)
+- [2020 CHARLS Wave 5 questionnaire](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2020-charls-wave5/application/CHARLS_2020_Questionnaire_English.pdf)
+- [2020 CHARLS Wave 5 questionnaire logic flowchart](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2020-charls-wave5/application/CHARLS_2020_Flowchart_English.pdf)
+- Wave 4/5 weight and frame details: `multwave_official_weights_blood_source_review_2026-10-29.md` and `multwave_frame_spine_build_gate_2026-10-30.md`.
