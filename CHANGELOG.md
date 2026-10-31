@@ -1,3 +1,8 @@
+# 2026-10-31 Add explicit user-authorized internal Wave 1 analysis route
+
+- Added a hash-bound internal execution route for directly user-authorized analysis, separate from independent methods review and public release.
+- The route preserves official source/frame checks, exact configuration and plan binding, private-only outputs, and full registered-family execution; it does not claim an independent review.
+- Added a private reproducibility rerun manifest for the Wave 1 pilot variants; prior outputs matched the rerun. No result estimates were added to the repository.
 # 2026-10-31 Correct public Wave 1 pilot status and remove unreviewed result summaries
 
 - Corrected the project status to distinguish completed exploratory analyses in private storage from zero formally approved association results.

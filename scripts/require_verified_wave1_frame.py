@@ -431,3 +431,55 @@ def require_wave1_analysis_readiness(
                 raise ValueError(f"Wave 1 readiness gate: validity rule for {concept} claims handled censoring without executable codes/bounds")
         result[f"{plan['config_gate']}_sha256"] = config_digest
     return result
+
+
+def require_user_authorized_internal_analysis(
+    private_root: Path,
+    source_provenance: dict[str, str],
+    analysis_plan: str,
+    config_path: Path,
+) -> dict[str, str]:
+    """Authorize an internal run from an explicit user instruction.
+
+    This route does not claim independent methods review and never approves
+    public release. The record is bound to the exact registered plan, source
+    frame, age candidate, and model configuration so the delegated decision
+    cannot silently carry over to changed inputs or specifications.
+    """
+    root = require_private_path(private_root)
+    if not root.is_relative_to(PRIVATE_ROOT.resolve()):
+        raise ValueError("Wave 1 internal authorization: root is outside protected storage")
+    plan = ANALYSIS_PLANS.get(analysis_plan)
+    if plan is None:
+        raise ValueError(f"Wave 1 internal authorization: unknown analysis plan {analysis_plan!r}")
+    path = root / "analysis_review" / f"{plan['plan_id']}_user_internal_authorization.json"
+    authorization = _load_json(path, "user-authorized internal analysis record")
+    expected_plan_hash = analysis_plan_fingerprint(analysis_plan)
+    expected = {
+        "status": "user_authorized_internal_analysis",
+        "analysis_plan_id": plan["plan_id"],
+        "analysis_plan_sha256": expected_plan_hash,
+        "source_manifest_id": source_provenance.get("source_manifest_id"),
+        "prepared_output_sha256": source_provenance.get("prepared_output_sha256"),
+        "model_configuration_sha256": sha256_file(config_path),
+        "public_release_status": "not_approved",
+    }
+    if "age_candidate_sha256" in source_provenance:
+        expected["age_candidate_sha256"] = source_provenance["age_candidate_sha256"]
+    for key, value in expected.items():
+        if authorization.get(key) != value:
+            raise ValueError(f"Wave 1 internal authorization: {key} does not match current plan/data/config")
+    if not str(authorization.get("authorized_at", "")).strip():
+        raise ValueError("Wave 1 internal authorization: authorization timestamp is missing")
+    if not str(authorization.get("authorization_evidence", "")).strip():
+        raise ValueError("Wave 1 internal authorization: user authorization evidence is missing")
+    return {
+        "status": authorization["status"],
+        "authorized_at": authorization["authorized_at"],
+        "authorized_by": authorization.get("authorized_by", "user"),
+        "analysis_plan_id": plan["plan_id"],
+        "analysis_plan_sha256": expected_plan_hash,
+        "model_configuration_sha256": expected["model_configuration_sha256"],
+        "public_release_status": "not_approved",
+        "independent_methods_review": "not_claimed",
+    }

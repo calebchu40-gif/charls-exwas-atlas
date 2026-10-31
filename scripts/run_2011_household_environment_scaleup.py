@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-"""Run a reviewed, protected CHARLS 2011 household-environment batch.
+"""Run a protected CHARLS 2011 household-environment batch.
 
-Use ``--batch pilot105`` for the nested, separately gated 105-coefficient
-exploratory tranche, or ``--batch full240`` for the complete K150/K90 block.
-Neither can fit models unless its exact source/frame and independently
-reviewed, hash-bound configuration pass Wave 1 readiness gates. All inputs
-and outputs remain under the configured private root.
+Use ``--batch full240`` for the registered K150/K90 block. The default route
+requires the independently reviewed readiness record. A separate
+``--user-authorized-internal`` route accepts an explicit, hash-bound user
+authorization for private analysis, records that independent methods review
+was not claimed, and never authorizes public release. Both routes retain the
+official source/frame checks and keep all inputs and outputs under the private
+root.
 """
 from __future__ import annotations
 
@@ -27,6 +29,7 @@ from require_verified_wave1_frame import (
     analysis_plan_fingerprint,
     require_verified_wave1_frame,
     require_wave1_analysis_readiness,
+    require_user_authorized_internal_analysis,
 )
 from audit_wave1_scaleup_metadata_readiness import audit as audit_scaleup_metadata
 
@@ -78,9 +81,13 @@ def _numeric_code(value: object, label: str) -> float:
 
 
 def _validate_configuration(
-    config: dict[str, Any], analytes: list[dict[str, str]], registry: list[dict[str, str]]
+    config: dict[str, Any], analytes: list[dict[str, str]], registry: list[dict[str, str]],
+    *, user_authorized_internal: bool = False,
 ) -> None:
-    if config.get("status") != "frozen":
+    allowed_config_statuses = {"frozen"}
+    if user_authorized_internal:
+        allowed_config_statuses.add("user_authorized_internal_analysis")
+    if config.get("status") not in allowed_config_statuses:
         raise ValueError("Scale-up configuration is not frozen")
     for section in ("target", "frame", "design", "exposure_field_mapping", "model", "outcome_transformations", "outcome_validity_rules"):
         if not isinstance(config.get(section), dict):
@@ -173,8 +180,11 @@ def _validate_configuration(
         rule = validity[concept]
         if not isinstance(rule, dict) or any(key not in rule for key in required_validity_fields):
             raise ValueError(f"Frozen validity rule for {concept} is incomplete")
-        if rule["review_status"] != "approved":
-            raise ValueError(f"Frozen validity rule for {concept} has not been independently approved")
+        allowed_rule_statuses = {"approved"}
+        if user_authorized_internal:
+            allowed_rule_statuses.add("user_authorized_internal_analysis")
+        if rule["review_status"] not in allowed_rule_statuses:
+            raise ValueError(f"Validity rule for {concept} is not approved for the selected run route")
         for key in ("reviewer", "reviewed_at", "source_anchor", "valid_domain_rule"):
             if not isinstance(rule.get(key), str) or not rule[key].strip():
                 raise ValueError(f"Frozen validity rule for {concept} lacks {key}")
@@ -453,6 +463,8 @@ def _outcome_expression(config: dict[str, Any], analyte: dict[str, str], pl: Any
     validity = config["outcome_validity_rules"][analyte["concept_id"]]
     raw_outcome = pl.col(analyte["variable"])
     valid_outcome = raw_outcome.is_finite()
+    if validity["valid_domain_rule"] == "finite_positive_raw_value":
+        valid_outcome &= raw_outcome > 0
     if validity["valid_min"] is not None:
         valid_outcome &= raw_outcome >= float(validity["valid_min"])
     if validity["valid_max"] is not None:
@@ -649,12 +661,19 @@ def _finite(value: object) -> float | None:
     return result if math.isfinite(result) else None
 
 
-def run_scaleup(batch: str = "full240") -> dict[str, Any]:
+def run_scaleup(
+    batch: str = "full240", *, user_authorized_internal: bool = False,
+    output_dir_override: Path | None = None,
+) -> dict[str, Any]:
     if batch not in {"pilot105", "full240"}:
         raise ValueError("batch must be 'pilot105' or 'full240'")
     plan_key = PILOT_PLAN_KEY if batch == "pilot105" else PLAN_KEY
     config_path = PILOT_CONFIG_PATH if batch == "pilot105" else CONFIG_PATH
     output_dir = PILOT_OUTPUT_DIR if batch == "pilot105" else OUTPUT_DIR
+    if output_dir_override is not None:
+        output_dir = require_private_path(output_dir_override)
+        if not output_dir.is_relative_to(PRIVATE_ROOT.resolve()):
+            raise ValueError("Refusing analysis output outside the configured protected CHARLS root")
     if PRIVATE.resolve() != PRIVATE_ROOT.resolve() or not PRIVATE.resolve().is_relative_to(PRIVATE_ROOT.resolve()):
         raise ValueError("Refusing to run outside the configured protected CHARLS root")
     metadata = audit_scaleup_metadata()
@@ -662,7 +681,12 @@ def run_scaleup(batch: str = "full240") -> dict[str, Any]:
         raise ValueError("Public-source K150/K90 metadata audit did not pass")
 
     provenance = require_verified_wave1_frame(PRIVATE, DATA, age_path=AGE)
-    readiness = require_wave1_analysis_readiness(PRIVATE, provenance, plan_key)
+    if user_authorized_internal:
+        readiness = require_user_authorized_internal_analysis(
+            PRIVATE, provenance, plan_key, config_path
+        )
+    else:
+        readiness = require_wave1_analysis_readiness(PRIVATE, provenance, plan_key)
     config = _load_json(config_path)
     analytes = read_analytes()
     registry = _load_registry()
@@ -674,7 +698,10 @@ def run_scaleup(batch: str = "full240") -> dict[str, Any]:
         ]
         if len(registry) != 105 or len({row["hypothesis_id"] for row in registry}) != 105:
             raise RuntimeError("The nested pilot tranche must contain exactly 105 unique registered hypotheses")
-    _validate_configuration(config, analytes, registry)
+    _validate_configuration(
+        config, analytes, registry,
+        user_authorized_internal=user_authorized_internal,
+    )
 
     # Data-access dependencies are imported only after the source and review gates.
     import numpy as np
@@ -769,12 +796,17 @@ def run_scaleup(batch: str = "full240") -> dict[str, Any]:
         "run_utc": run_time,
         "analysis_id": config["plan_id"],
         "execution_batch": batch,
-        "status": "protected exploratory analysis; not approved for public release",
+        "status": (
+            "user-authorized internal analysis; independent methods review not claimed; not approved for public release"
+            if user_authorized_internal else
+            "review-gated analysis; not approved for public release"
+        ),
         "source_manifest_id": provenance["source_manifest_id"],
         "prepared_frame_sha256": provenance["prepared_output_sha256"],
         "model_configuration_sha256": readiness[
-            "frozen_pilot_configuration_sha256" if batch == "pilot105"
-            else "frozen_scaleup_configuration_sha256"
+            "model_configuration_sha256" if user_authorized_internal else
+            ("frozen_pilot_configuration_sha256" if batch == "pilot105"
+             else "frozen_scaleup_configuration_sha256")
         ],
         "analysis_plan_sha256": analysis_plan_fingerprint(plan_key),
         "code_commit": subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, check=True, capture_output=True, text=True).stdout.strip(),
@@ -789,6 +821,8 @@ def run_scaleup(batch: str = "full240") -> dict[str, Any]:
         ),
         "participant_data_release": False,
         "public_release_status": "not_approved",
+        "analysis_authorization_route": readiness["status"],
+        "independent_methods_review": readiness.get("independent_methods_review", "passed_by_record"),
     }
     output_dir = require_private_path(output_dir)
     if not output_dir.is_relative_to(PRIVATE_ROOT.resolve()):
@@ -831,8 +865,17 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--run", action="store_true", required=True,
                         help="explicitly authorize a local protected analysis after all review gates pass")
     parser.add_argument("--batch", choices=("pilot105", "full240"), default="full240")
+    parser.add_argument(
+        "--user-authorized-internal", action="store_true",
+        help="run an explicitly user-authorized internal analysis with hash-bound inputs; does not claim independent review or public release",
+    )
+    parser.add_argument("--output-dir", help="optional unique output directory under the protected CHARLS root")
     args = parser.parse_args(argv)
-    print(json.dumps(run_scaleup(args.batch), ensure_ascii=False, indent=2))
+    print(json.dumps(run_scaleup(
+        args.batch,
+        user_authorized_internal=args.user_authorized_internal,
+        output_dir_override=Path(args.output_dir) if args.output_dir else None,
+    ), ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
