@@ -1943,3 +1943,5 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Applied independent code-review fixes to fail closed on the expected 16 exposure contrasts × 15 outcome crosswalk, duplicates and mapping changes; clarified interval-valid age domains and separated missing/nonparseable from nonfinite availability.
 - The corrected script was rerun in the protected server. Structural checks passed for all registered pairs/domains, no participant-ID fields, owner-only output mode 0600, and zero association fits. The earlier report is superseded by the refreshed private QA.
 - Static review and structural validation do not approve survey estimands, variance, outcome rules or model readiness.
+
+- Fixed the K150/K90 validator to accept grouped education categories in the same format already supported by the model-term builder.

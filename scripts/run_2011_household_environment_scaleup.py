@@ -266,14 +266,28 @@ def _validate_configuration(
             raise ValueError("Binary covariate positive and reference codes must differ")
     for label, item in model["categorical_covariates"].items():
         require_term(item.get("field"), f"categorical covariate {label}")
-        if not isinstance(item.get("levels"), list) or len(item["levels"]) < 2:
-            raise ValueError(f"Categorical covariate {label} must list at least two levels")
-        if item.get("reference") not in item["levels"]:
-            raise ValueError(f"Categorical covariate {label} reference must be one of its declared levels")
-        levels = [_numeric_code(value, f"categorical level {label}") for value in item["levels"]]
-        if len(set(levels)) != len(levels):
-            raise ValueError(f"Categorical covariate {label} has duplicate numeric levels")
-        _numeric_code(item["reference"], f"categorical reference {label}")
+        if "groups" in item:
+            groups = item["groups"]
+            if not isinstance(groups, dict) or len(groups) < 2:
+                raise ValueError(f"Grouped categorical covariate {label} must declare at least two groups")
+            all_codes: list[float] = []
+            for group_name, raw_codes in groups.items():
+                if not isinstance(group_name, str) or not group_name.strip() or not isinstance(raw_codes, list) or not raw_codes:
+                    raise ValueError(f"Grouped categorical covariate {label} has an invalid group definition")
+                all_codes.extend(_numeric_code(code, f"categorical group {label}.{group_name}") for code in raw_codes)
+            if len(set(all_codes)) != len(all_codes):
+                raise ValueError(f"Grouped categorical covariate {label} has overlapping/duplicate codes")
+            if item.get("reference_group") not in groups:
+                raise ValueError(f"Grouped categorical covariate {label} reference group must be declared")
+        else:
+            if not isinstance(item.get("levels"), list) or len(item["levels"]) < 2:
+                raise ValueError(f"Categorical covariate {label} must list at least two levels")
+            if item.get("reference") not in item["levels"]:
+                raise ValueError(f"Categorical covariate {label} reference must be one of its declared levels")
+            levels = [_numeric_code(value, f"categorical level {label}") for value in item["levels"]]
+            if len(set(levels)) != len(levels):
+                raise ValueError(f"Categorical covariate {label} has duplicate numeric levels")
+            _numeric_code(item["reference"], f"categorical reference {label}")
 
     for row in registry:
         _numeric_code(row["exposure_code_candidate"], "registered exposure code")
