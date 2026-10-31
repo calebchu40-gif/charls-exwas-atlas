@@ -1964,3 +1964,9 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Completed all 240 user-authorized Wave 1 primary association fits, three 240-hypothesis sensitivity runs, and 48 uric-acid renal-adjustment fits on the private server.
 - Added a methods-only run-status audit and updated the homepage to show 240 completed Wave 1 model fits rather than implying that no association models had run.
 - Individual records, coefficients, exact QA, and result tables remain in server-private storage; the website has not yet loaded the normalized association-results table.
+
+# 2026-10-31 Reproduce Wave 1 block and refresh active plan
+
+- Re-ran the full K=240 block with the retained user-authorized configuration and current analysis code. All 240 estimates, standard errors, confidence intervals and p-values matched the first run within numerical tolerance; the comparison audit remains in server-private storage.
+- Replaced the active plan pointer with a current execution plan: Wave 1 analysis is complete, result normalization and aggregate site release are in progress, and later waves will be analyzed under separate wave-specific designs.
+- Updated the private full240 normalizer to accept an explicitly user-authorized run configuration without relabeling it as an independent review or a frozen external approval.

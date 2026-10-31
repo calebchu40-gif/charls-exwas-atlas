@@ -1,6 +1,6 @@
 # CHARLS ExWAS Atlas：执行计划与当前进度
 
-> **Current status pointer (2026-10-30):** For current authorization, controlling decisions, execution order and open gates, use [`EXECUTION_PLAN_ACTIVE_2026-10-30.md`](EXECUTION_PLAN_ACTIVE_2026-10-30.md) and [`EXECUTION_QUEUE_AUTHORIZED_WAVE1_2026-10-30.md`](EXECUTION_QUEUE_AUTHORIZED_WAVE1_2026-10-30.md). This file is a chronological work log; older dated entries are historical snapshots and may be superseded by later entries or the active plan. Do not use old status statements about missing files, a historical age-domain preference, or a prior variance recommendation as current instructions.
+> **Current status pointer (2026-10-31):** The current authorization, completed Wave 1 runs and next actions are in [`EXECUTION_PLAN_ACTIVE_2026-10-31.md`](EXECUTION_PLAN_ACTIVE_2026-10-31.md). This file is a chronological work log. Older dated entries are historical snapshots and are superseded by the active plan; in particular, pre-run statements that model count was zero are no longer current.
 
 > **2026-10-31 更正（农历转换）：** 此前多处“农历转换尚未与 CHARLS Mata 查表逐值验证”的表述已过期。官方 `lunar2solar.mmat`（MIT）本身就是完整查表；与 `python-lunardate 0.1.4` 的直接逐格对照已在 2026-10-30 执行并在 2026-10-31 独立复现，两张表均为 **0 处不一致**（51,470 个映射）。项目现改用该 MIT 查表（[`scripts/lunar_lookup.py`](../scripts/lunar_lookup.py)）并配有 7 项回归测试；`lunardate` 因 GPLv3 **不 vendor**，仅作外部交叉验证。年龄门剩余内容为“不完整/闰月日期的区间规则 + 独立方法审阅”，不再依赖 Stata。详见[`lunar_conversion_lookup_and_parity_2026-10-31.md`](lunar_conversion_lookup_and_parity_2026-10-31.md)。
 

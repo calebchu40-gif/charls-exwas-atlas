@@ -153,8 +153,9 @@ def normalize(
         raise ValueError("only the complete full240 execution can be normalized")
     if run.get("participant_data_release") is not False or run.get("public_release_status") != "not_approved":
         raise ValueError("run manifest must confirm private-only, unapproved output")
-    if config.get("status") != "frozen":
-        raise ValueError("full240 model configuration is not frozen")
+    configuration_status = config.get("status")
+    if configuration_status not in {"frozen", "user_authorized_internal_analysis"}:
+        raise ValueError("full240 model configuration is neither frozen nor user-authorized for this run")
     if run.get("analysis_id") != config.get("plan_id") or scope.get("analysis_plan_id") != config.get("plan_id"):
         raise ValueError("run, configuration, and scope manifest plan IDs differ")
     model_id = config.get("model", {}).get("primary_model_id")
@@ -443,6 +444,7 @@ def normalize(
         "successful_rows": sum(row["fit_status"] == "success" for row in rows),
         "non_success_rows": sum(row["fit_status"] != "success" for row in rows),
         "family": family_value,
+        "configuration_status": configuration_status,
         "output_mode": "0600",
         "public_release": False,
     }
