@@ -4,6 +4,8 @@
 
 > **2026-10-31 更正（农历转换）：** 此前多处“农历转换尚未与 CHARLS Mata 查表逐值验证”的表述已过期。官方 `lunar2solar.mmat`（MIT）本身就是完整查表；与 `python-lunardate 0.1.4` 的直接逐格对照已在 2026-10-30 执行并在 2026-10-31 独立复现，两张表均为 **0 处不一致**（51,470 个映射）。项目现改用该 MIT 查表（[`scripts/lunar_lookup.py`](../scripts/lunar_lookup.py)）并配有 7 项回归测试；`lunardate` 因 GPLv3 **不 vendor**，仅作外部交叉验证。年龄门剩余内容为“不完整/闰月日期的区间规则 + 独立方法审阅”，不再依赖 Stata。详见[`lunar_conversion_lookup_and_parity_2026-10-31.md`](lunar_conversion_lookup_and_parity_2026-10-31.md)。
 
+> **2026-10-31 审阅入口：** 需要人工裁决的门已汇总成一页：[`wave1_reviewer_index_2026-10-31.md`](wave1_reviewer_index_2026-10-31.md)（含方差方案、目标估计量、空腹编码、主模型冻结、105 项多重检验、两处范围不一致与变换选择，以及披露发布）。
+
 > **2026-10-31 新增裁决材料：** 15 项血液结局的单位、官方 Table 4/5 参考统计、空腹敏感性、两处不一致与四项待裁决议题已彙整为[`wave1_outcome_rule_review_packet_2026-10-31.md`](wave1_outcome_rule_review_packet_2026-10-31.md)；同时更正胱抑素 C 的抽样描述（**≥70 岁全测 + <70 岁随机，N=8,878**，非“年龄分层”）。
 
 > **当前执行基线（2026-10-30）**：用户重新确认 Wave 1 官方资料 123/117/118/201 的来源身份与使用授权；服务器受保护入库中的四件套已由干净代码副本通过 metadata-only 预检。用户已选择 `communityID` PSU、无 strata、WR Taylor 作为有明确局限的近似方差方案，所有个体级分析只在私有服务器执行。当前按用户最近的试点计划，将完整血检目标放入 survey design，并把 45+ 作为主 domain 候选；年龄区间下界规则为主、上界及完整血检框为敏感性，需冻结并审阅。Wave 1 关联模型仍须经过结局/暴露规则、近似方差、完整假设族及方法审阅门后才运行。详见[`EXECUTION_PLAN_ACTIVE_2026-10-30.md`](EXECUTION_PLAN_ACTIVE_2026-10-30.md)。
