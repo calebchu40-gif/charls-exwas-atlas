@@ -127,16 +127,6 @@ def run(settlement_adjusted: bool = False) -> dict[str, object]:
         ["git", "-C", str(CODE_ROOT), "rev-parse", "--short", "HEAD"], text=True
     ).strip()
     data, frame_n = _read_frame()
-    if settlement_adjusted:
-        # Official 2015 bb001_w3_2 categories are nominal and wave-specific.
-        # Retain all seven categories with category 1 as reference; do not
-        # manufacture an urban/rural collapse from these codes.
-        data = data.with_columns([
-            pl.when(pl.col("bb001_w3_2") == float(category)).then(1.0)
-            .when(pl.col("bb001_w3_2").is_between(1.0, 7.0)).then(0.0)
-            .otherwise(None).alias(f"__settlement_{category}")
-            for category in range(2, 8)
-        ])
     rows: list[dict[str, object]] = []
     diagnostics: list[dict[str, object]] = []
     for outcome, outcome_field in PHENOTYPES.items():
@@ -165,27 +155,44 @@ def run(settlement_adjusted: bool = False) -> dict[str, object]:
             pair_rule = domain & pl.col("__y").is_not_null() & pl.col("__sex2").is_not_null()
             model_terms = ["__x", "__age_c", "__age_c2", "__sex2"]
             if settlement_adjusted:
-                model_terms.extend(f"__settlement_{category}" for category in range(2, 8))
                 pair_rule &= pl.col("bb001_w3_2").is_between(1.0, 7.0)
             pair = prepared.filter(pair_rule)
+            if settlement_adjusted and pair.height:
+                # Keep all supported nominal categories. For a pair where a
+                # category is absent, omit only that empty level; use the
+                # smallest observed category as the deterministic reference.
+                # If exposure and settlement remain collinear, retain the row
+                # as inestimable instead of collapsing categories post hoc.
+                active_categories = sorted(int(value) for value in pair["bb001_w3_2"].unique().to_list())
+                reference_category = active_categories[0] if active_categories else None
+                terms = [category for category in active_categories if category != reference_category]
+                prepared = prepared.with_columns([
+                    pl.when(pl.col("bb001_w3_2").is_between(1.0, 7.0))
+                    .then((pl.col("bb001_w3_2") == float(category)).cast(pl.Float64))
+                    .otherwise(None).alias(f"__settlement_{category}")
+                    for category in terms
+                ])
+                model_terms.extend(f"__settlement_{category}" for category in terms)
             row = _result_row(concept, field, code, ref, contrast, outcome, outcome_field, pair.height, code_commit, settlement_adjusted)
             warnings_count = 0
             if pair.height >= 30 and pair["__psu"].n_unique() > 8 and math.isfinite(sd) and sd > 0:
                 fit_columns = ["__psu", "__weight", "__y", "__domain", *[term for term in model_terms if term != "__age_c2"]]
-                if settlement_adjusted:
-                    fit_columns.extend(f"__settlement_{category}" for category in range(2, 8))
                 fit_data = prepared.select(list(dict.fromkeys(fit_columns)))
                 fit_data = fit_data.with_columns((pl.col("__age_c") ** 2).alias("__age_c2"))
                 survey = svy.Sample(data=fit_data, design=svy.Design(psu="__psu", wgt="__weight", wr=True))
                 with warnings.catch_warnings(record=True) as caught:
                     warnings.simplefilter("always")
-                    fitted = survey.glm.fit(
-                        y="__y", x=model_terms,
-                        family="gaussian", where=pl.col("__domain"), method="taylor",
-                        drop_nulls=True, alpha=0.05,
-                    ).to_polars()
+                    try:
+                        fitted = survey.glm.fit(
+                            y="__y", x=model_terms,
+                            family="gaussian", where=pl.col("__domain"), method="taylor",
+                            drop_nulls=True, alpha=0.05,
+                        ).to_polars()
+                    except svy.errors.model_errors.ModelError as error:
+                        fitted = None
+                        row["fit_message"] = str(error).splitlines()[0][:240]
                     warnings_count = len(caught)
-                fit = next((item for item in fitted.to_dicts() if item.get("term") == "__x"), None)
+                fit = next((item for item in fitted.to_dicts() if item.get("term") == "__x"), None) if fitted is not None else None
                 if fit:
                     beta, se, low, high, p = [float(fit[key]) for key in ("estimate", "std_err", "conf_low", "conf_high", "p_value")]
                     if all(map(math.isfinite, (beta, se, low, high, p))) and se > 0:
