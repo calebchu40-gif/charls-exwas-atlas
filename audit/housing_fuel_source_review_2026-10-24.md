@@ -8,13 +8,17 @@ Reviewed 2026-10-24 against each wave's official questionnaire and Codebook. Thi
 |---|---|---|---|
 | 2011 | `i020` / `i021` | `i022` | The baseline household questionnaire defines `i020` as heating facilities excluding earth-heating systems and heating-capable air conditioners. Yes skips the heating-source item to `i022`; No proceeds to `i021`. The cooking-fuel categories are in the Codebook; the questionnaire does not provide a separate no-cooking response category. |
 | 2013 | `i020` / `i021` | `i022` | The questionnaire repeats the heating route: Yes skips to cooking fuel, No asks the heating source. The 1–7 source categories match the documented earlier-wave categories. No explicit no-cooking category appears for cooking fuel. |
-| 2015 | `i020` / `i021` | `i022` | Same heating route and 1–7 categories. “Other, please specify” has a separate write-in field for heating and cooking; the write-in text is not a standardized exposure category. No explicit no-cooking option is listed. |
+| 2015 | `i020` / `i021` | `i022` | **Different route from 2011, 2013, and 2018:** `i020=1 Yes` proceeds to the heating-source item `i021`; `i020=2 No` skips to cooking fuel `i022`. The 1–7 source categories apply to the Yes route. “Other, please specify” has a separate write-in field for heating and cooking; the write-in text is not a standardized exposure category. No explicit no-cooking option is listed. |
 | 2018 | `i020` / `i021_w4` | `i022_w4` | Heating availability Yes skips to cooking fuel; No asks the source. The questionnaire labels heating code 8 “Concentration heating,” while the Codebook labels it “Heating Provided”; retain this source-label discrepancy. Cooking explicitly includes code 8 “Do not cook.” |
 | 2020 | `i019` / `i020` | `i021` | The questionnaire asks about XFinancialResp’s house. Heating source is presented with code 8 “No heating”; do not impose the 2011–2018 skip rule. Cooking adds code 7 “Solar,” moves “Other” to code 8, and uses code 9 “No cooking.” |
 
 The official Codebooks list the heating-source categories for Waves 1–3 as 1 Solar, 2 Coal, 3 Natural gas, 4 Liquefied Petroleum Gas, 5 Electric, 6 Crop residue/Wood burning, and 7 Other. Wave 4 adds its code-8 label as described above. Wave 5 uses 1–7 for the same fuel categories and 8 for no heating. Cooking-fuel codes 1–6 (Coal, Natural gas, Marsh gas, Liquefied Petroleum Gas, Electric, Crop residue/Wood burning) are stable through the first four waves. Wave 5 inserts Solar at 7, shifts Other to 8, and records no cooking at 9. Wave 4 records no cooking at 8. Numeric code positions are wave-specific categories, not a dose scale.
 
 ## Interpretation and analysis boundaries
+
+### 2015 route correction (2026-10-31)
+
+An earlier version of this review incorrectly described 2015 as sharing the 2011/2013/2018 route. The original 2015 questionnaire extraction says `i020=2 No` skips to `i022`, so `i020=1 Yes` is the routed population for `i021`. The 2011 baseline, 2013, and 2018 questionnaire extracts retain the opposite route: Yes skips to cooking fuel, while No proceeds to heating source. The 2015 heating-source models use the 2015-specific Yes route; the 2011 K90 route remains unchanged.
 
 - These are household/residence-reported primary-source categories. They are useful contextual exposure proxies, but CHARLS does not measure the respondent's personal fuel use, combustion concentration, ventilation, ambient pollution, or pollutant dose through these items.
 - The 2011–2018 heating-source denominator follows the heating-availability route. In 2020, keep the separately worded heating availability and source item, including the explicit no-heating response. Do not treat structural skips as a negative source category.
