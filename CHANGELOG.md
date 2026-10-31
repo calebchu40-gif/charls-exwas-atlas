@@ -1955,3 +1955,7 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Added an explicit sensitivity-only `psu_county` path matching the earlier pilot's six-character community-ID prefix grouping; the primary design remains `communityID`-clustered with no strata.
 - The derived cluster key is created in memory inside the protected runner and is not added to the prepared respondent table.
 
+# 2026-10-31 Add private uric-acid renal-adjustment sensitivity runner
+
+- Added a reproducible companion runner for the 16 registered Wave 1 exposure-to-uric-acid pairs, with creatinine, self-reported kidney disease, and both as separate adjustment sensitivities.
+- Result tables, exact support diagnostics, and run manifests are written only under the protected private root; the primary K150/K90 results are not overwritten.
