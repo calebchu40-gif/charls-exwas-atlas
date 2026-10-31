@@ -1,4 +1,4 @@
-﻿"""Synthetic tests for the generic ExWAS scan engine.
+"""Synthetic tests for the generic ExWAS scan engine.
 
 Every fixture here is fabricated. No CHARLS microdata is read, and the tests
 only assert that the engine recovers *known* effects from a fake frame and

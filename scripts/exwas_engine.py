@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Generic, protected exposure-phenotype scan engine for CHARLS.
 
 Design goals
