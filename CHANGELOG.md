@@ -1981,3 +1981,10 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Corrected a prior cross-wave route note: 2015 `i020=1` proceeds to `i021`, while 2011/2013/2018 retain their separately documented route. The existing 2011 K90 route remains unchanged.
 - Added the reproducible 2015 runner and updated the aggregate result browser to display separate complete K=240 (2011) and K=225 (2015) families. Participant records and exact QA remain on the private server.
 - Ran a separate 225-model sensitivity family adjusting for the seven reviewed nominal `bb001_w3_2` settlement categories. The model comparison showed some specification movement; exact sensitivity output and QA remain private and are excluded from the public main-family payload.
+- Synced the cleaned code to server commit `2aa197c`; historical Git commits preceding the cleanup may still contain earlier note contents, while the current branch files are sanitized.
+
+# 2026-11-01 Reconcile Wave 2 age inputs
+
+- Added protected scripts to join official Wave 2 interview year/month to the verified respondent frame and resolve birth-calendar provenance only through the documented Wave 1 ID transformation plus exact date-component agreement.
+- Generated a protected provisional Wave 2 age-interval candidate using the pinned lunar conversion mapping after source-only parity validation against the CHARLS Mata lookup tables. Unsupported routes and interval uncertainty are preserved; no respondent was excluded by age and no Wave 2 association was fitted.
+- Added a methods-only audit and updated the active execution plan. The public repository contains no IDs, dates, exact QA, or estimates; the protected age inputs and exact QA remain on the server.
