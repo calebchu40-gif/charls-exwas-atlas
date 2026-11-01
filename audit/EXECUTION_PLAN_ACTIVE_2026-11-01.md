@@ -10,6 +10,7 @@ This plan supersedes earlier active-plan snapshots where their status statements
 - CHARLS participant-level source and derived data, exact QA, and result tables stay in the user's protected server `private/` tree.
 - Only allowlisted aggregate result fields may enter the public site after a wave-specific disclosure review. No respondent records, IDs, exact support counts, private paths, or review artifacts are public.
 - The selected working variance estimator is with-replacement Taylor linearization, clustered by the available `communityID`, with no fabricated strata. The released design fields do not include the official split-community PSU map or strata; describe this as an approximation and avoid causal language for cross-sectional estimates.
+- This is the user's chosen working method, not the only possible method. CHARLS's official sample description is multistage: county units were ordered/implicitly stratified and sampled by systematic PPS, then community/neighborhood PSUs were sampled within county; 30 large communities were split into sub-neighborhood PSUs. Metadata review of the released Wave 1/2 `PSU.dta` found the parent `communityID` map and geography/type labels, but no explicit variance-stratum key, respondent-level split-subcommunity PSU key, or replicate-weight set. The public `urban_nbs`/`areatype` fields are context classifications and will not be promoted to invented strata.
 - Registered hypotheses remain in their complete wave-specific multiplicity families. Do not remove pairs based on p-values or observed effect direction.
 
 ## Current verified progress
@@ -26,10 +27,11 @@ Exact QA and support diagnostics remain private. The 2013 finalization used an e
 
 ## Next execution queue
 
-1. Complete a cross-wave primary-result audit: confirm each finalized table is bound to its source, frozen plan and code commit; compare wave-specific versus global-BY sensitivity without pooling effects or selecting hypotheses.
-2. Finish Wave 4/5 methods and disclosure review. The protected cell screen flags some contrasts for suppression/aggregation review. The existing publisher is whole-family fail-closed, so do not publish a partial family or weaken the disclosure screen to force a release. Decide whether a safe full-family aggregate is possible; otherwise retain those two families privately.
-3. If release criteria pass, convert both full K families to the public schema, generate hash-bound row-level disclosure decisions, validate the payload and repository boundary, deploy, and verify the live site. If they do not pass, document the private-only disposition and keep the site unchanged.
-4. Write a concise completion record with the five-wave model counts, unavailable rows, approximate-variance limitation, private sensitivity inventory, public release status, and final repository/live-site hashes.
+1. Add a same-model variance sensitivity for 2018/2020 comparing the selected `communityID` clustering with the already-used six-digit county-prefix clustering proxy; compare standard errors/intervals and resulting family adjustments without treating either proxy as automatically correct or selecting by p-value. This measures how much the inference depends on cluster level.
+2. Complete a cross-wave primary-result audit: confirm each finalized table is bound to its source, frozen plan and code commit; compare wave-specific versus global-BY sensitivity without pooling effects or selecting hypotheses.
+3. Finish Wave 4/5 methods and disclosure review. The protected cell screen flags some contrasts for suppression/aggregation review. The existing publisher is whole-family fail-closed, so do not publish a partial family or weaken the disclosure screen to force a release. Decide whether a safe full-family aggregate is possible; otherwise retain those two families privately.
+4. If release criteria pass, convert both full K families to the public schema, generate hash-bound row-level disclosure decisions, validate the payload and repository boundary, deploy, and verify the live site. If they do not pass, document the private-only disposition and keep the site unchanged.
+5. Write a concise completion record with the five-wave model counts, unavailable rows, variance-method comparison, private sensitivity inventory, public release status, and final repository/live-site hashes.
 
 ## Remaining-time estimate
 

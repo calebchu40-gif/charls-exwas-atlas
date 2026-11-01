@@ -2075,3 +2075,9 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Added a practical remaining-time estimate of 2–4 active workdays for the analysis-and-atlas milestone, conditional on Wave 4/5 full-family disclosure review. Manuscript writing and journal peer review remain outside that estimate.
 - Resumed the existing CHARLS heartbeat and replaced its stale Wave 1-only instructions with the current five-wave execution queue. It will continue until the user pauses or the objective is complete.
 
+# 2026-11-01 Add a variance-method comparison to the active queue
+
+- Rechecked the [official CHARLS sample-design description](https://charls.pku.edu.cn/en/About/Sample.htm) and the released PSU-file structure. The documentation describes county-level selection followed by community/neighborhood PSUs, with 30 large communities split into sub-neighborhood PSUs; the downloaded PSU tables identify parent communities but do not expose an explicit variance-stratum or respondent-level split-PSU key.
+- Kept the user's selected `communityID` Taylor method as the current primary method and added a same-model 2018/2020 county-prefix clustering comparison to the execution queue. The comparison will quantify sensitivity to cluster level; it will not treat the prefix proxy as an official PSU or select a method based on p-values.
+- The alternative closest to the original design would require official strata, split-PSU mapping and/or replicate weights. Existing files will be searched locally for those fields before the variance comparison is finalized; no third parties will be contacted.
+
