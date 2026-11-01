@@ -2001,3 +2001,9 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Documented that Wave 4 and Wave 5 use distinct carry-forward and current-question routes. A valid cross-sectional history variable must retain prior diagnoses, include new routed yes responses, preserve missing states, and separately flag contradictory prior-history routes.
 - Resolved the 2020 inserted Parkinson's slot: arthritis and asthma move from 2018 slots 13/14 to 2020 slots 14/15. The 2018 Parkinson's wording is embedded in memory-related disease, and its male-only prostate item has no 2020 standalone equivalent; these are kept out of a falsely aligned shared outcome family.
 - Added a methods audit and advanced plan item for the later-wave disease family. No participant records, frequencies, or association results were used or published in this source review.
+
+# 2026-11-02 Add protected Wave 4/5 disease outcome derivation
+
+- Added a route-aware derivation utility for cumulative doctor-diagnosed disease histories in 2018 and 2020. It hash-checks the protected prepared-table manifest, keeps prior diagnosis and current routed answers distinct, and leaves ambiguous, unsupported, or contradictory routes unresolved.
+- Produces person-level derived fields and exact route QA only beneath the protected private root. It refuses to overwrite existing private artifacts and has not been run because server SSH is currently unavailable.
+- Updated the active plan to queue this protected preparation after the pending Wave 2 age-bound QA.
