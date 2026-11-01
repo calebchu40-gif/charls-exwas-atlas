@@ -2064,3 +2064,8 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Completed a protected 2x2 exposure/outcome cell and contributing-community screen for every primary-model contrast. Small-cell contrasts are held for suppression/aggregation review. Exact counts and pair-level flags remain on the private server.
 - The public site is unchanged; no Wave 4/5 estimates or exact QA were published. The wave-specific active plan records run status, the corrected-run history, and the remaining aggregate disclosure step.
 
+# 2026-11-01 Add a private all-wave multiplicity stress test
+
+- Recomputed a secondary Benjamini-Yekutieli adjustment across the five wave-specific primary-model registrations, retaining every registered hypothesis and treating non-estimable rows as least-favorable for ranking.
+- This is a conservative cross-domain sensitivity analysis only; primary inference remains wave-specific because survey frames and outcome domains differ. The exact adjusted values and summaries remain on the protected server, and the public site was not changed.
+
