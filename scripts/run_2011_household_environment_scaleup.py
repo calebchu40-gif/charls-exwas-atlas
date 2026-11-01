@@ -32,6 +32,7 @@ from require_verified_wave1_frame import (
     require_user_authorized_internal_analysis,
 )
 from audit_wave1_scaleup_metadata_readiness import audit as audit_scaleup_metadata
+from charls_design_keys import add_documented_county_cluster
 
 
 EXPECTED_SVY = "0.35.0"
@@ -306,10 +307,11 @@ def _selected_fields(config: dict[str, Any], analytes: list[dict[str, str]], reg
         *design["stratum_fields"], *config["exposure_field_mapping"].values(),
     }
     if design["psu_field"] == "psu_county":
-        # Sensitivity-only county-prefix clustering mirrors the earlier pilot.
-        # The primary design continues to cluster on released communityID.
+        # County is the documented first-stage sampling cluster. The released
+        # data do not expose the implicit strata/FPC needed for exact variance.
         fields.discard("psu_county")
         fields.add("communityID")
+        fields.add("householdID")
     for item in model["continuous_covariates"]:
         if item["field"] not in generated_age_fields:
             fields.add(item["field"])
@@ -351,13 +353,11 @@ def _read_protected_frame(config: dict[str, Any], analytes: list[dict[str, str]]
         raise ValueError("Age join changed the prepared frame row count")
 
     if config["design"]["psu_field"] == "psu_county":
-        data = data.with_columns(
-            pl.col("communityID").cast(pl.String).str.slice(0, 6).alias("psu_county")
-        )
+        data = add_documented_county_cluster(data, output="psu_county")
 
     numeric_fields = set(fields) - {ID_FIELD, config["design"]["psu_field"], *config["design"]["stratum_fields"]}
     if config["design"]["psu_field"] == "psu_county":
-        numeric_fields.discard("communityID")
+        numeric_fields.difference_update({"communityID", "householdID"})
     numeric_fields.update(age_fields)
     numeric_exprs = []
     for field in numeric_fields:

@@ -26,17 +26,18 @@ import pyreadstat
 from project_paths import PRIVATE_ROOT, require_private_path
 from derive_wave45_chronic_disease_outcomes import DISEASES
 import exwas_engine as engine
+from charls_design_keys import add_documented_county_cluster
 
 ROOT = Path(__file__).resolve().parents[1]
 PRIVATE = PRIVATE_ROOT.resolve()
 TABLES = PRIVATE / "derived_wave_tables"
-REVIEW = PRIVATE / "analysis_review" / "wave45_environment_disease_v2"
+REVIEW = PRIVATE / "analysis_review" / "wave45_environment_disease_v3_county_stage"
 QA = PRIVATE / "qa_outputs"
-BASE = ("ID", "crosssection", "INDV_weight_ad2", "communityID")
+BASE = ("ID", "crosssection", "INDV_weight_ad2", "householdID", "communityID")
 MODELS = ("M0_unadjusted", "M1_age_sex_residence")
 VARIANCE = (
-    "User-selected with-replacement Taylor approximation clustered by communityID, "
-    "without fabricated strata; released data do not provide the official split-community PSU map or variance strata."
+    "Approximate with-replacement Taylor linearization clustered at the officially documented county stage; "
+    "released data do not provide implicit strata or county FPC; community-cluster sensitivity retained."
 )
 MIN_MODEL_N = 500
 MIN_MODEL_PSU = 30
@@ -146,7 +147,7 @@ def freeze(code_commit: str) -> dict[str, Any]:
         if prior_freeze.get("status") != "frozen_for_internal_execution":
             raise ValueError("Unrecognized prior freeze; refusing to replace it")
         for wave in ("2018", "2020"):
-            if private_path(PRIVATE / "results" / f"wave{wave}_environment_disease_M0_M1_private.csv").exists():
+            if private_path(PRIVATE / "results" / f"wave{wave}_environment_disease_M0_M1_v3_county_stage_private.csv").exists():
                 raise FileExistsError("Cannot refresh a freeze after any Wave 4/5 analysis output exists")
     all_rows = []
     bindings = {}
@@ -159,7 +160,7 @@ def freeze(code_commit: str) -> dict[str, Any]:
     if os.name == "posix":
         os.chmod(register_path, 0o600)
     plan = {
-        "plan_id": "wave45_environment_doctor_diagnosis_v2",
+        "plan_id": "wave45_environment_doctor_diagnosis_v3_county_stage",
         "frozen_at_utc": datetime.now(timezone.utc).isoformat(),
         "authorization_basis": "user-authorized internal analysis in the user's private server workspace",
         "waves": {"2018": {"exposure_contrasts": len(EXPOSURES["2018"]), "outcomes": len(DISEASES["2018"]), "registered_K": len(EXPOSURES["2018"]) * len(DISEASES["2018"])},
@@ -169,7 +170,7 @@ def freeze(code_commit: str) -> dict[str, Any]:
         "outcome_rules": "official route-derived cumulative doctor-diagnosed positive or explicit routed current Yes/No; unresolved and contradictory routes missing; not incident disease",
         "primary_model": {"id": "M1_age_sex_residence", "family": "survey-weighted logistic regression", "covariates": ["age candidate, linear and quadratic", "female indicator from XRGender 1=male/2=female", "current residence categories 2/3/4 vs category 1"], "age_source": "Wave 4 actual-birth-year questionnaire route; Wave 5 official XRAge", "settlement_source": "2018 I000_W4_2; 2020 BA008; wave-specific source categories retain city-center reference"},
         "secondary_model": {"id": "M0_unadjusted", "family": "survey-weighted logistic regression", "covariates": []},
-        "survey_design": {"weight": "INDV_weight_ad2", "frame": "crosssection=1", "psu": "communityID", "strata": None, "variance": "with-replacement Taylor approximation; no fabricated strata; label as approximate"},
+        "survey_design": {"weight": "INDV_weight_ad2", "frame": "crosssection=1", "psu": "documented county segment of householdID; validate against communityID", "strata": None, "variance": "with-replacement Taylor approximation at county stage; no fabricated strata; community-cluster sensitivity; label as approximate"},
         "multiplicity": "separate complete-family BY and Bonferroni correction for each wave and model; all registered rows retained including inestimable rows",
         "pair_support_gate": {"minimum_complete_case_n": MIN_MODEL_N, "minimum_distinct_psu": MIN_MODEL_PSU,
                               "below_threshold": "retain as inestimable hypothesis; do not lower threshold after viewing results"},
@@ -272,8 +273,9 @@ def run(waves: list[str]) -> dict[str, Any]:
                                          "residence_2", "residence_3", "residence_4",
                                          *[s.variable for s in e_specs], *[s.variable for s in p_specs]]))
         model_frame = pl.from_pandas(df[model_cols], include_index=False, nan_to_null=True)
+        model_frame = add_documented_county_cluster(model_frame, output="__county_psu")
         design = engine.DesignSpec(
-            weight="INDV_weight_ad2", psu="communityID", strata=None,
+            weight="INDV_weight_ad2", psu="__county_psu", strata=None,
             covariate_sets={"M0_unadjusted": [], "M1_age_sex_residence":
                             ["age_centered", "age_centered_sq", "female", "residence_2", "residence_3", "residence_4"]},
             scale_outcome=False, variance_limitations=VARIANCE,
@@ -318,8 +320,8 @@ def run(waves: list[str]) -> dict[str, Any]:
         expected_rows = expected_k * len(MODELS)
         if len(rows) != expected_rows:
             raise ValueError(f"Wave {wave}: expected {expected_rows} coefficient rows, found {len(rows)}")
-        output = private_path(PRIVATE / "results" / f"wave{wave}_environment_disease_M0_M1_v2_private.csv")
-        qa_path = private_path(QA / f"wave{wave}_environment_disease_run_qa_v2_private.json")
+        output = private_path(PRIVATE / "results" / f"wave{wave}_environment_disease_M0_M1_v3_county_stage_private.csv")
+        qa_path = private_path(QA / f"wave{wave}_environment_disease_run_qa_v3_county_stage_private.json")
         if output.exists() or qa_path.exists():
             raise FileExistsError(f"Wave {wave}: result artifacts already exist; refusing overwrite")
         engine.write_rows(rows, output)

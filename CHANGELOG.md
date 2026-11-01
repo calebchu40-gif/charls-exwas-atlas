@@ -1,3 +1,10 @@
+# 2026-11-01 Implement CHARLS-documented county-stage variance cluster
+
+- Added a shared county-key constructor using the official householdID county/community segments. It validates the seven-digit household/community relation and rejects mismatches before deriving the county cluster key.
+- Switched the Wave 1, 2013, 2015, and Wave 4/5 runners to use the documented county stage for the next primary rerun. Existing community-cluster outputs remain private comparison sensitivities.
+- Updated the Wave 1 county-key audit to map released PSU communities through respondent householdID rather than deriving the county key by truncating communityID.
+- Released files still omit explicit implicit-strata labels and county PPS/FPC inputs. Outputs remain labeled as a county-stage WR Taylor approximation; this change publishes no estimates.
+
 # 2026-11-01 Verify deployment of the 2013 Wave 2 association family
 
 - GitHub Pages deployed commit `9fc2ba1`. The live homepage and association JSON both returned HTTP 200; the homepage identifies the three waves and the live JSON contains the complete 2011 K=240, 2013 K=75, and 2015 K=225 families.

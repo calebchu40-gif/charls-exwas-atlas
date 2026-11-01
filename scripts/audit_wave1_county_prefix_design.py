@@ -88,14 +88,21 @@ def main() -> None:
     people["community_key"] = id_shape(people["communityID"], 7)
     psu["community_key"] = id_shape(psu["communityID"], 7)
 
-    person_county = people["person_key"].str[:6]
     household_county = people["household_key"].str[:6]
     community_county = people["community_key"].str[:6]
-    psu_county = psu["community_key"].str[:6]
+
+    community_to_county = (
+        people.dropna(subset=["household_key", "community_key"])
+        .drop_duplicates(["community_key", "household_county"])
+        .groupby("community_key")["household_county"].agg(list)
+    )
+    ambiguous_communities = int(community_to_county.map(len).gt(1).sum())
+    community_to_county = community_to_county.map(lambda values: values[0] if len(values) == 1 else pd.NA)
+    mapped_psu = psu["community_key"].map(community_to_county)
 
     person_communities = set(people["community_key"].dropna())
     psu_communities = set(psu["community_key"].dropna())
-    county_sizes = psu.dropna(subset=["community_key"]).groupby(psu_county.dropna()).community_key.nunique()
+    county_sizes = psu.assign(county_key=mapped_psu).dropna(subset=["community_key", "county_key"]).groupby("county_key").community_key.nunique()
 
     report = {
         "audit_type": "protected_aggregate_identifier_prefix_consistency",
@@ -107,15 +114,15 @@ def main() -> None:
         "person_id_shape_valid_rows": int(people["person_key"].notna().sum()),
         "household_id_shape_valid_rows": int(people["household_key"].notna().sum()),
         "community_id_shape_valid_rows": int(people["community_key"].notna().sum()),
-        "person_household_county_prefix_match": bool((person_county == household_county).fillna(False).all()),
-        "person_community_county_prefix_match": bool((person_county == community_county).fillna(False).all()),
+        "household_community_county_prefix_match": bool((household_county == community_county).fillna(False).all()),
         "respondent_community_keys_match_official_psu_map": person_communities == psu_communities,
+        "ambiguous_community_to_county_keys_private": ambiguous_communities,
         "psu_community_key_shape_valid_rows": int(psu["community_key"].notna().sum()),
-        "county_prefix_candidate_count_private": int(psu_county.nunique(dropna=True)),
+        "county_prefix_candidate_count_private": int(mapped_psu.nunique(dropna=True)),
         "nominal_selected_county_units_per_official_guide": 150,
         "reported_final_geographic_county_units_per_official_sample_page": 156,
-        "prefix_count_matches_nominal_selected_count_private": int(psu_county.nunique(dropna=True)) == 150,
-        "prefix_count_matches_final_geographic_count_private": int(psu_county.nunique(dropna=True)) == 156,
+        "prefix_count_matches_nominal_selected_count_private": int(mapped_psu.nunique(dropna=True)) == 150,
+        "prefix_count_matches_final_geographic_count_private": int(mapped_psu.nunique(dropna=True)) == 156,
         "prefix_confirmed_as_first_stage_sampling_psu": False,
         "communities_per_county_min_private": int(county_sizes.min()) if len(county_sizes) else None,
         "communities_per_county_max_private": int(county_sizes.max()) if len(county_sizes) else None,
@@ -127,8 +134,8 @@ def main() -> None:
     }
     report["candidate_key_audit_status"] = (
         "prefix_structure_pass_sample_design_identity_unconfirmed"
-        if all((report["person_household_county_prefix_match"],
-                report["person_community_county_prefix_match"],
+        if all((report["household_community_county_prefix_match"],
+                report["ambiguous_community_to_county_keys_private"] == 0,
                 report["respondent_community_keys_match_official_psu_map"]))
         else "prefix_consistency_failed"
     )

@@ -3,6 +3,9 @@
 
 Participant files and exact QA are read/written only under PRIVATE_ROOT. The
 2015 heating route differs from 2011/2013/2018: i020=1 proceeds to i021.
+Variance uses the officially documented county-stage cluster as the leading
+released-field approximation; community-cluster estimates are retained as a
+sensitivity analysis.
 """
 from __future__ import annotations
 
@@ -21,13 +24,14 @@ import pyreadstat
 import svy
 
 from project_paths import PRIVATE_ROOT
+from charls_design_keys import add_documented_county_cluster
 
 
 PRIVATE = PRIVATE_ROOT
 CODE_ROOT = Path(__file__).resolve().parents[1]
 DATA = PRIVATE / "derived_wave_tables" / "CHARLS_wave2015_person_analytic_with_official_blood.dta"
-RESULT = PRIVATE / "results" / "2015_household_environment_blood_K225_schema_v3.csv"
-QA = PRIVATE / "qa_outputs" / "2015_household_environment_blood_K225_private.json"
+RESULT = PRIVATE / "results" / "2015_household_environment_blood_K225_county_stage_primary.csv"
+QA = PRIVATE / "qa_outputs" / "2015_household_environment_blood_K225_county_stage_primary_private.json"
 
 PHENOTYPES = {
     "blood_wbc": "bl_wbc", "blood_hemoglobin": "bl_hgb",
@@ -58,12 +62,13 @@ for field, concept in (("i022", "cooking_fuel_main"), ("i021", "heating_energy")
 
 def _read_frame() -> tuple[pl.DataFrame, int]:
     fields = list(dict.fromkeys([
-        "crosssection", "blood_weight", "communityID", "iyear", "imonth",
+        "crosssection", "blood_weight", "householdID", "communityID", "iyear", "imonth",
         "ba004_w3_1", "ba004_w3_2", "ba000_w2_3", "i017", "i019", "i020",
         "i021", "i022", "bb001_w3_2", "bl_fasting", "bl_top_coding_tg", *PHENOTYPES.values(),
     ]))
     data, _ = pyreadstat.read_dta(str(DATA), usecols=fields, output_format="polars")
-    numeric = [field for field in fields if field != "communityID"]
+    data = add_documented_county_cluster(data, output="__county_psu")
+    numeric = [field for field in fields if field not in {"householdID", "communityID"}]
     data = data.with_columns([pl.col(field).cast(pl.Float64, strict=False) for field in numeric])
     data = data.filter(
         (pl.col("crosssection") == 1.0)
@@ -82,7 +87,7 @@ def _read_frame() -> tuple[pl.DataFrame, int]:
     ).cast(pl.Float64)
     data = data.with_columns(
         pl.when(birth_valid).then(age).otherwise(None).alias("__age"),
-        pl.col("communityID").cast(pl.String).alias("__psu"),
+        pl.col("__county_psu").alias("__psu"),
         pl.col("blood_weight").alias("__weight"),
         (pl.col("ba000_w2_3") == 2.0).cast(pl.Float64).alias("__sex2"),
     ).filter(pl.col("__age").is_not_null())
@@ -105,8 +110,8 @@ def _result_row(concept: str, field: str, code: int, ref: int, contrast: str,
         "contrast": contrast, "multiple_testing_family": "wave2015_household_environment_blood;K=225",
         "weight_status": "verified_used", "weight_id": "blood_weight",
         "weight_source": "CHARLS 2015 Blood release", "psu_status": "verified_used",
-        "psu_id": "communityID", "stratum_status": "not_released", "stratum_id": "",
-        "variance_design": "Approximate method: Taylor linearization WR with communityID clusters and no released strata. Limitation: final split-community PSU map and official strata are not released.",
+        "psu_id": "county segment of householdID (officially documented; validated against communityID)", "stratum_status": "not_released", "stratum_id": "",
+        "variance_design": "Approximate method: WR Taylor linearization clustered at the documented county stage; no released implicit strata or FPC; community-cluster sensitivity retained.",
         "exposure_transform": f"{field}={code} vs {ref}; official category contrast",
         "phenotype_transform": "identity; weighted SD standardization within valid age-domain blood responses",
         "missingness_rule": "pairwise complete case; no imputation; fasting restricted for glucose/triglycerides",
@@ -211,8 +216,8 @@ def run(settlement_adjusted: bool = False) -> dict[str, object]:
         if rows[index]["fit_status"] == "success":
             rows[index]["q_value_by"] = float(qvalues[rank])
             rows[index]["p_bonferroni"] = min(1.0, float(rows[index]["p_value"]) * len(rows))
-    result_path = RESULT.with_name("2015_household_environment_blood_K225_settlement_sensitivity_schema_v3.csv") if settlement_adjusted else RESULT
-    qa_path = QA.with_name("2015_household_environment_blood_K225_settlement_sensitivity_private.json") if settlement_adjusted else QA
+    result_path = RESULT.with_name("2015_household_environment_blood_K225_county_stage_settlement_sensitivity.csv") if settlement_adjusted else RESULT
+    qa_path = QA.with_name("2015_household_environment_blood_K225_county_stage_settlement_sensitivity_private.json") if settlement_adjusted else QA
     result_path.parent.mkdir(parents=True, exist_ok=True)
     qa_path.parent.mkdir(parents=True, exist_ok=True)
     with result_path.open("w", newline="", encoding="utf-8-sig") as stream:
@@ -227,7 +232,7 @@ def run(settlement_adjusted: bool = False) -> dict[str, object]:
         "fasting": "glucose and triglycerides restricted to bl_fasting=1",
         "heating_route": "2015-specific i020=1 Yes proceeds to i021",
         "code_commit": code_commit,
-        "variance": "WR Taylor; communityID clusters; no released strata; approximate",
+        "variance": "WR Taylor; documented county-stage clusters; no released implicit strata or FPC; approximate",
         "diagnostics_private": diagnostics,
     }
     qa_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

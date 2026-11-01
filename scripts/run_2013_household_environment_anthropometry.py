@@ -2,8 +2,8 @@
 """Run the complete protected Wave 2 household-environment/anthropometry family.
 
 The runner uses the official Wave 2 cross-section and Biomarker_weight, a
-source-bound age-interval candidate, and community-clustered unstratified WR
-Taylor variance. Results and exact QA are written only under PRIVATE_ROOT. The
+source-bound age-interval candidate, and a documented county-stage PSU with
+unstratified WR Taylor approximation. Results and exact QA are written only under PRIVATE_ROOT. The
 full registered family is retained and adjusted together; estimates are not
 filtered by statistical significance.
 """
@@ -32,6 +32,7 @@ if CODE_SCRIPTS.is_dir():
 else:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 from project_paths import PRIVATE_ROOT, WAVE_DATA_DIR, QA_OUTPUT_DIR, require_private_path
+from charls_design_keys import add_documented_county_cluster
 
 
 PRIVATE = PRIVATE_ROOT.resolve()
@@ -131,7 +132,7 @@ def make_family_adjustments(rows: list[dict[str, object]]) -> None:
 
 def load_data(age_bound: str) -> tuple[pl.DataFrame, int]:
     data_cols = list(dict.fromkeys([
-        "ID", "crosssection", "Biomarker_weight", "communityID", "ba000_w2_3",
+        "ID", "crosssection", "Biomarker_weight", "householdID", "communityID", "ba000_w2_3",
         *[row[1] for row in EXPOSURES], *OUTCOMES.values(),
     ]))
     dta, _ = pyreadstat.read_dta(str(DATA), usecols=data_cols, output_format="polars")
@@ -144,7 +145,8 @@ def load_data(age_bound: str) -> tuple[pl.DataFrame, int]:
     if ages.height != dta.height:
         raise ValueError("Wave 2 age table and respondent frame have different row counts")
     data = dta.join(ages, on="ID", how="left", validate="1:1")
-    numeric = [col for col in data.columns if col not in {"ID", "communityID"}]
+    data = add_documented_county_cluster(data, output="__county_psu")
+    numeric = [col for col in data.columns if col not in {"ID", "householdID", "communityID", "__county_psu"}]
     data = data.with_columns([pl.col(col).cast(pl.Float64, strict=False) for col in numeric])
     if age_bound == "midpoint":
         age_expr = (pl.col("age_at_interview_lower") + pl.col("age_at_interview_upper")) / 2.0
@@ -154,7 +156,7 @@ def load_data(age_bound: str) -> tuple[pl.DataFrame, int]:
         age_expr = pl.col("age_at_interview_upper")
     data = data.with_columns(
         age_expr.alias("__age"),
-        pl.col("communityID").cast(pl.String).alias("__psu"),
+        pl.col("__county_psu").alias("__psu"),
         pl.col("Biomarker_weight").alias("__weight"),
         (pl.col("ba000_w2_3") == 2.0).cast(pl.Float64).alias("__female"),
     ).filter(
@@ -183,9 +185,9 @@ def result_template(*, concept: str, field: str, code: int, ref: int, contrast: 
         "contrast": contrast, "multiple_testing_family": f"{FAMILY_STEM}_{age_bound};K={REGISTERED_K}",
         "weight_status": "verified_used", "weight_id": "Biomarker_weight",
         "weight_source": "CHARLS 2013 official Weights.dta; cross-sectional biomarker-response weight",
-        "psu_status": "verified_used", "psu_id": "communityID",
+        "psu_status": "verified_used", "psu_id": "county segment of householdID (officially documented; validated against communityID)",
         "stratum_status": "not_released", "stratum_id": "",
-        "variance_design": "Approximate method: WR Taylor linearization with communityID clusters and no released strata; limitation: official Wave 2 strata and split-community PSU mapping are not released.",
+        "variance_design": "Approximate method: WR Taylor linearization clustered at the documented county stage; no released implicit strata or FPC; community-cluster sensitivity retained.",
         "exposure_transform": f"{field}={code} vs {ref}; source-documented contrast; heating-energy contrasts restricted to i020=2 questionnaire route",
         "phenotype_transform": "identity; weighted SD standardization among positive-weight Wave 2 cross-sectional biomarker responses; only documented 993/999 nonmeasurement codes excluded",
         "missingness_rule": "pairwise complete case; no imputation; no assay or anthropometry range trimming",
@@ -211,10 +213,10 @@ def run(age_bound: str, code_commit: str) -> dict[str, object]:
         "wave": "2013", "family_id": f"{FAMILY_STEM}_{age_bound}", "registered_K": REGISTERED_K,
         "target_frame": "crosssection=1 and positive official Biomarker_weight; no age cutoff",
         "weight": "Biomarker_weight from the official Wave 2 Weights module",
-        "psu": "communityID",
+        "psu": "documented county segment of householdID; communityID sensitivity",
         "strata": None,
-        "variance": "Approximate method: WR Taylor linearization with communityID clusters and no released strata",
-        "variance_limitation": "official Wave 2 strata and split-community PSU mapping are not released",
+        "variance": "Approximate method: WR Taylor linearization with county-stage clusters",
+        "variance_limitation": "released data do not provide implicit strata or county FPC; community-cluster sensitivity retained",
         "age_field": f"midpoint of protected age interval bounds ({age_bound})",
         "age_domain_filter": None,
         "covariates": ["age", "age squared", "ba000_w2_3 female indicator (2=female, 1=male)"],
@@ -228,7 +230,7 @@ def run(age_bound: str, code_commit: str) -> dict[str, object]:
         "code_commit": code_commit,
         "input_bindings_private": binding,
     }
-    config_path = protected(ANALYSIS_REVIEW / f"wave2013_anthropometry_{age_bound}_config_private.json")
+    config_path = protected(ANALYSIS_REVIEW / f"wave2013_anthropometry_{age_bound}_county_stage_config_private.json")
     config_text = json.dumps(config, ensure_ascii=False, indent=2) + "\n"
     if config_path.exists() and config_path.read_text(encoding="utf-8") != config_text:
         raise RuntimeError("A different private config already exists; refusing to overwrite it")
@@ -302,7 +304,7 @@ def run(age_bound: str, code_commit: str) -> dict[str, object]:
     RESULTS.mkdir(parents=True, exist_ok=True)
     QA.mkdir(parents=True, exist_ok=True)
     os.chmod(RESULTS, 0o700); os.chmod(QA, 0o700); os.chmod(ANALYSIS_REVIEW, 0o700)
-    suffix = "midpoint_primary" if age_bound == "midpoint" else f"{age_bound}_age_sensitivity"
+    suffix = "county_stage_midpoint_primary" if age_bound == "midpoint" else f"county_stage_{age_bound}_age_sensitivity"
     result_path = protected(RESULTS / f"2013_household_environment_anthropometry_K{REGISTERED_K}_{suffix}_raw_private.csv")
     qa_path = protected(QA / f"2013_household_environment_anthropometry_K{REGISTERED_K}_{suffix}_private.json")
     fields = list(rows[0])
@@ -320,7 +322,7 @@ def run(age_bound: str, code_commit: str) -> dict[str, object]:
         "frame_rows_after_crosssection_weight_and_psu": frame_n,
         "model": "crosssection=1; positive Biomarker_weight; age interval complete case; no age exclusion; age midpoint/lower/upper plus age squared and interviewer-recorded gender",
         "weight": "CHARLS 2013 official Biomarker_weight; cross-sectional biomarker response weight",
-        "variance": "Approximate method: WR Taylor linearization with communityID clusters and no released strata; limitation: official Wave 2 strata and split-community PSU mapping are not released",
+        "variance": "Approximate method: WR Taylor linearization at documented county stage; no released implicit strata or FPC",
         "heating_route": "2013 questionnaire: i020=1 skips i021; i020=2 routes to i021",
         "measurement": "Identity scale; only official 993/999 nonmeasurement codes excluded; no range trimming",
         "multiplicity": f"BY and Bonferroni across the complete K={REGISTERED_K} family for this model specification",
