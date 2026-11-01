@@ -1,3 +1,9 @@
+# 2026-11-01 Fix association-browser model tooltip validation
+
+- Added the registered estimate type, contrast and variance design to the result-table model cell's hover text, satisfying the existing browser-filter workflow assertion.
+- GitHub validation and Pages deployment succeeded for `ecb41fc`; the published aggregate JSON endpoint returned HTTP 200. No participant-level data or private QA were accessed or published.
+- The private server connection timed out during the latest checkpoint, so pending Wave 2 artifact reconciliation and Wave 4/5 outcome derivation remain unverified.
+
 # 2026-10-31 Add explicit user-authorized internal Wave 1 analysis route
 
 - Added a hash-bound internal execution route for directly user-authorized analysis, separate from independent methods review and public release.
