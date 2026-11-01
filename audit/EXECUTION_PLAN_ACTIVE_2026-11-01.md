@@ -1,43 +1,46 @@
 # CHARLS ExWAS Atlas — active execution plan
 
 **Updated:** 2026-11-01 (UTC)  
-**Status:** Five-wave association runs exist in private storage (K=845 registered primary hypotheses; 820 coefficient rows were estimable under the earlier community-cluster approximation and 25 were retained as unavailable). On 2026-11-01 the user directed that the analysis follow official CHARLS sampling and weighting documentation. Those runs remain private historical comparisons, not the new primary results. Official-source review and a synthetic county-key implementation check are complete; the analysis runners are being converted to the documented county stage with community-only results retained as sensitivity. Three earlier aggregate families remain on Pages with their approximate-variance labels; no replacement results will be published before rerun and QA.
+**Status:** The official-guide county-stage primary analysis has completed for all five waves (complete primary family K=845). The exact output, full QA, support counts and result-bound disclosure review remain on the user's private server. The allowlisted Pages payload now carries the complete K=845 family: numerical results are shown only for rows passing the internal disclosure screen; suppressed rows remain in the family with no estimate, P/q value or sample size. Public-site validation and the deployment workflow pass. The homepage identifies 845 as registered hypotheses, not respondents or fitted models.
 
-This plan supersedes earlier active-plan snapshots where their status statements conflict. It separates analysis completion, disclosure review, public aggregate release, and journal publication. User authorization for private analysis does not by itself imply disclosure clearance.
+This plan supersedes earlier active-plan snapshots where their status statements conflict. It separates model execution, method/sensitivity QA, disclosure review, public aggregate release and journal publication. User-authorized server analysis is active; publication is limited to aggregate results screened against CHARLS terms and the project's disclosure rules.
 
-## Data handling and design
+## Analysis design and data boundary
 
-- CHARLS participant-level source and derived data, exact QA, and result tables stay in the user's protected server `private/` tree.
-- Only allowlisted aggregate result fields may enter the public site after a wave-specific disclosure review. No respondent records, IDs, exact support counts, private paths, or review artifacts are public.
-- The new governing order is: official CHARLS wave guide, official sampling/weight construction notes, official released design fields, then a survey estimator that matches those documented stages. The prior `communityID` with-replacement Taylor setup will be used only as a historical comparison unless the design audit independently establishes it as the documented implementation.
-- CHARLS describes a multistage baseline sample: county-level PPS selection after implicit stratification/sorting, followed by three community/neighborhood PSUs per county; 30 large communities were split into sub-neighborhood PSUs. The Wave 1/2 PSU tables identify parent communities and context fields, and the Wave 4/5 guides state the PSU information is the same as earlier waves. No explicit variance-stratum key, split-subcommunity respondent key, or replicate weights appeared in inspected design tables. The 2011 guide documents county/community positions in respondent IDs, so an ID-derived county key is now a source-supported candidate for validation as a sampling-stage identifier, never a stratum. Wave-specific weights and sample flags remain tied to their official target populations. `urban_nbs`/`areatype` will not be treated as complete design strata without official support.
-- Registered hypotheses remain in their complete wave-specific multiplicity families. Do not remove pairs based on p-values or observed effect direction.
+- Follow official CHARLS wave guides, sample flags, weights and documented multistage hierarchy. The available file release does not provide the implicit variance strata, county PPS probabilities/FPC, or complete split-subcommunity assignment needed to reproduce every design component.
+- The current primary variance approximation clusters the with-replacement Taylor variance at the documented county stage, derived from the first six householdID characters and validated against communityID. It is labelled approximate. The former community-only cluster runs remain method-comparison sensitivities. County is not used as a stratum.
+- Use each wave's official target flag and corresponding personal or biomarker weight. Estimates remain wave-specific; no cross-wave pooled coefficient is produced.
+- Keep respondent data, exact QA, cell counts, result CSVs, local paths and private hash manifests in server `private/`. Publish only the allowlisted aggregate payload after row-level disclosure review. No respondent-level material goes to GitHub, OneDrive or Pages.
+- Retain every predeclared hypothesis and full multiplicity K. Never remove a contrast because of p-value, sign or effect size.
 
-## Current verified progress
+## Verified primary-analysis progress
 
-| Wave | Registered primary family | Status | Public status |
-|---|---:|---|---|
-| 2011 | K=240 (K=150 household environment + K=90 heating route) | Historical community-cluster result is retained as sensitivity; county-stage rerun is queued. | Existing aggregate remains labeled approximate; no new release. |
-| 2013 | K=75 household environment × anthropometry | Historical community-cluster and age-bound sensitivities retained; county-stage reruns are queued. | Existing aggregate remains labeled approximate; no new release. |
-| 2015 | K=225 household environment × blood outcomes | Historical community-cluster and settlement-context sensitivity retained; county-stage reruns are queued. | Existing aggregate remains labeled approximate; no new release. |
-| 2018 | K=140 | Historical community-cluster primary and secondary runs retained; county-stage rerun is queued. | No results published. |
-| 2020 | K=165 | Historical community-cluster primary and secondary runs retained; county-stage rerun is queued. | No results published. |
+| Wave | Registered primary K | Current status |
+|---|---:|---|
+| 2011 | 240 = K150 household-environment + K90 heating-route | County-stage run complete; hash-bound QA passed. |
+| 2013 | 75 household-environment × anthropometry | County-stage run complete; age-bound/support reconciliation and QA passed. |
+| 2015 | 225 household-environment × blood outcomes | County-stage run complete; 2015-specific heating route retained. |
+| 2018 | 140 environment × cumulative doctor-diagnosis outcomes | County-stage run complete; unresolved/inestimable rows retained. |
+| 2020 | 165 environment × cumulative doctor-diagnosis outcomes | County-stage run complete; unresolved/inestimable rows retained. |
+| **All waves** | **845** | Global BY and Bonferroni recomputed over complete K; no effects pooled across waves. |
 
-Exact QA and support diagnostics remain private. The 2013 finalization used an explicit internal hash-bound scope audit; this is not represented as an external scientific review. The aggregate payload contains only the existing allowlisted result fields, preserves the approximate-variance label, and keeps the three wave-specific multiplicity families separate. The 2013 aggregate family was deployed in commit `9fc2ba1`; live JSON and home-page content were verified after deployment.
+The all-wave result table contains 820 estimable model rows and 25 inestimable hypotheses. A private disclosure screen has bound row decisions to the exact K845 file. The public payload contains all 845 hypotheses; 136 rows have their numerical values and sample size withheld, and 709 retain aggregate estimates. The internal 10-person/10-county-PSU cell screen and N=500 model support threshold are project screens, not numerical rules issued by CHARLS. Exact counts and decisions remain private.
 
-## Next execution queue
+The release is at `https://calebchu40-gif.github.io/charls-exwas-atlas/`. On 2026-11-01, the all-wave payload deployed successfully and the homepage KPI was corrected from the obsolete 540 to 845 registered primary hypotheses. The CI failure on the first payload commit was a stale homepage test; the homepage and test were corrected, all 636 local unit tests passed (28 skipped by design), and the validation and Pages workflows passed at commit `a9216a6`.
 
-1. Continue the source inventory in [`official_design_variance_review_2026-11-01.md`](official_design_variance_review_2026-11-01.md): re-read official CHARLS guides for all waves and extract the exact documented target frame, weight, sample flags, PSU stages, split-community treatment and any variance instruction. The NHANES paper/repository may inform reproducibility/software structure only; do not transplant NHANES sampling formulas to CHARLS.
-2. The householdID county/community segments are validated against the protected person tables for all five waves. Continue searching official codebooks for a split-subcommunity assignment, released stratum, and PPS/FPC field.
-3. The server synthetic trial confirms the documented householdID county key accepts valid mappings and rejects inconsistent household/community mappings. A separate R `survey` mechanics check confirmed that `ids=~county+community` without FPC uses the first-stage cluster for variance. These checks validate implementation behavior only. Freeze exact wave-specific target flags, weights and county-stage WR Taylor settings; retain earlier community-only runs as sensitivity.
-4. Rerun the five registered primary families using the official weights/sample flags and county-stage variance setting. Reconcile all 845 hypotheses, unavailable fits, variance estimates, target populations and family-level multiplicity. Compare against prior community-cluster results, and retain all files privately.
-5. Reassess public results under the official-design run. Keep the existing approximate-labeled site content clearly identified as historical until the replacement families pass full review; publish only complete, disclosure-cleared families and verify deployment.
-6. Write the final completion record with official sources, exact design implementation, rerun totals, sensitivity inventory, release state and live-site hash.
+## Remaining execution queue
+
+1. Confirm the live K845 payload and deployment after the current green commit; verify suppressed rows are blank for estimate, SE, CI, p, q, Bonferroni and N, and verify displayed status/variance wording.
+2. Complete one versioned private result-review package: exact inputs/config/code hashes, per-wave family completeness and status counts, coefficient-range and interval checks, county/community sensitivity comparisons, age/settlement/fasting sensitivity inventory, nonconvergence and sparse-category review. Keep all exact QA private.
+3. Recompute any sensitivity-family multiplicity over its full registered family; do not compare thresholded significant-hit counts as a substitute for coefficient/uncertainty comparisons.
+4. Review interpretation wave by wave: no cross-wave causal claim, no incident-disease wording for cumulative self-reported diagnosis, no extrapolation from blood-response complete cases to the full population, and no precision claim beyond the released design variables.
+5. Refresh the release audit and user-facing methods page against the exact deployed payload hash; rerun validators and the full regression suite after any changes.
+6. Write a private completion ledger with the analysis, sensitivity, disclosure and deployment checkpoints. Mark the project complete only after all items above pass; keep this automation active until then or the user's explicit pause.
 
 ## Remaining-time estimate
 
-The previous 2–4 day estimate assumed the variance setup remained fixed. The methods reset adds a source/design audit and a full rerun. Estimate **3–6 active workdays** if the needed official design fields are present in the downloaded files; add time if they are not immediately traceable or if the site needs a revised release flow. Computation is expected to be short; source reconciliation, design implementation and wave-by-wave validation are the time drivers. Manuscript writing and journal peer review are outside this estimate.
+The primary all-wave execution and first release are complete. Remaining work is results-integrity review, method/sensitivity reconciliation, final documentation and a final end-to-end deployment check; current estimate is **about 1–2 active workdays**, excluding manuscript writing and journal peer review. If a sensitivity rerun or material design discrepancy is found, the estimate will be revised based on that concrete issue.
 
 ## Completion criteria
 
-The analysis milestone is complete when every available registered wave family has a frozen source/estimand/design record, reproducible complete-family output, and wave-specific QA. The public-atlas milestone additionally requires disclosure-cleared aggregates for all released waves, correct family-level multiplicity, a successful site build/deployment, and a live-site content check. Journal submission and peer review are separate work and are not included in this analysis completion estimate.
+The analysis milestone is complete when all five registered primary families and the planned sensitivity families have complete hash-bound outputs, reconciled wave-specific denominators/weights/PSUs, corrected multiplicity and private QA. The public-atlas milestone is complete when only disclosure-cleared aggregates are present, all 845 hypotheses remain represented, validation and CI pass, and the live site matches the reviewed payload. Manuscript submission and peer review are separate work.
