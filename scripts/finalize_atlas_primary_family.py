@@ -18,11 +18,12 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from adjust_exwas_pvalues import adjust_pvalues
+from project_paths import PRIVATE_ROOT
 from validate_exwas_result_table import read_schema, validate_csv
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PRIVATE = Path(os.environ.get("LOCALAPPDATA", Path.home())) / "CHARLS_ExWAS_Atlas"
+PRIVATE = PRIVATE_ROOT.resolve()
 ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{2,63}$")
 MODEL_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$")
 FINALIZABLE_STATUSES = {"success", "nonconvergence", "inestimable", "blocked_measurement_rule"}

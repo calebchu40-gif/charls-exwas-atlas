@@ -1,3 +1,8 @@
+# 2026-11-01 Use configured private root for final-family adjustment
+
+- Updated the protected atlas-family finalizer to use `CHARLS_EXWAS_PRIVATE_ROOT` through the shared path resolver, matching the disclosure builder and Wave 2 private pipeline on the authorized server.
+- This fixes the server-specific path mismatch without changing adjustment logic or moving any protected input/output.
+
 # 2026-11-01 Add protected Wave 2 contrast-level support reconciliation
 
 - Added a reproducible private audit that checks the protected prepared-table and age-candidate hashes, recomputes exposure/reference support for every registered Wave 2 anthropometry contrast, and reconciles pair N and community counts against the saved runner output.
