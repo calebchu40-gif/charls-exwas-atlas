@@ -1,7 +1,7 @@
 # CHARLS ExWAS Atlas — active execution plan
 
 **Updated:** 2026-11-01 (UTC)  
-**Status:** The 2011, 2013, and 2015 registered association families are live as disclosure-reviewed aggregate results. Official 2018 and 2020 source packages are now verified in protected storage; prepared person tables, routed disease outcomes, and age candidates have been built and privately validated. The Wave 4/5 association families are being registered next; no Wave 4/5 association estimates have been fitted or published.
+**Status:** Primary association families for all five available waves (2011, 2013, 2015, 2018, 2020) have been run on the private server. Core primary family size is K=845; 820 rows yielded estimates and 25 remain numerically unavailable/inestimable, retained in their registered families. The 2011/2013/2015 disclosure-reviewed aggregate families are live. Wave 4/5 complete-family QA and a conservative pair-cell/community disclosure screen are complete; no Wave 4/5 estimates have been published.
 
 This plan supersedes earlier active-plan snapshots where their status statements conflict. It separates analysis completion, disclosure review, public aggregate release, and journal publication. User authorization for private analysis does not by itself imply disclosure clearance.
 
@@ -19,15 +19,21 @@ This plan supersedes earlier active-plan snapshots where their status statements
 | 2011 | K=240 (K=150 household environment + K=90 heating route) | Main analysis, reproducibility run, and registered sensitivity work completed; complete-family BY and Bonferroni values computed. | Aggregate family is live. |
 | 2013 | K=75 household environment × anthropometry | Midpoint-age primary family, lower/upper age-bound sensitivity families, age reconciliation, contrast-level sample/PSU support audit, schema normalization, and within-wave complete-family finalization completed in protected storage. The result table passed the project result-schema validator. | Complete K=75 aggregate family is live with the approximate-variance label. |
 | 2015 | K=225 household environment × blood outcomes | Registered primary family and settlement-context sensitivity completed; complete-family adjustment computed within wave. | Aggregate family is live. |
-| 2018 | Disease family not yet registered | Official 2018 source package and input hashes verified; prepared table, route-aware 14-disease outcome table, row-level route QA, and source-routed age candidate have passed protected validation. Exact QA remains private. | No results. |
-| 2020 | Disease family not yet registered | Official 2020 source package and input hashes verified; prepared table, route-aware 15-disease outcome table, row-level route QA, and official `XRAge` formula check have passed protected validation. Exact QA remains private. | No results. |
+| 2018 | K=140 | Primary age/sex/residence and secondary unadjusted families run; full-family BY/Bonferroni, status, support, and hash checks passed. Pair-cell/community disclosure screen completed; exact estimates and QA remain private. | No results published pending whole-family disclosure decision. |
+| 2020 | K=165 | Primary age/sex/residence and secondary unadjusted families run; full-family BY/Bonferroni, status, support, and hash checks passed. Pair-cell/community disclosure screen completed; exact estimates and QA remain private. | No results published pending whole-family disclosure decision. |
 
 Exact QA and support diagnostics remain private. The 2013 finalization used an explicit internal hash-bound scope audit; this is not represented as an external scientific review. The aggregate payload contains only the existing allowlisted result fields, preserves the approximate-variance label, and keeps the three wave-specific multiplicity families separate. The 2013 aggregate family was deployed in commit `9fc2ba1`; live JSON and home-page content were verified after deployment.
 
 ## Next execution queue
 
-1. Register wave-specific 2018/2020 disease-association families by official disease concept and the existing household-environment exposure crosswalk; specify target frame, age adjustment/domain, missingness, covariate set, and complete-family multiplicity before fitting.
-2. Run and privately QA the frozen Wave 4/5 families, preserving wave-specific disease routes and design labels. Then complete cross-wave consistency, atlas-wide multiplicity, disclosure review, and release-safe aggregate updates.
+1. Complete a cross-wave primary-result audit: confirm each finalized table is bound to its source, frozen plan and code commit; compare wave-specific versus global-BY sensitivity without pooling effects or selecting hypotheses.
+2. Finish Wave 4/5 methods and disclosure review. The protected cell screen flags some contrasts for suppression/aggregation review. The existing publisher is whole-family fail-closed, so do not publish a partial family or weaken the disclosure screen to force a release. Decide whether a safe full-family aggregate is possible; otherwise retain those two families privately.
+3. If release criteria pass, convert both full K families to the public schema, generate hash-bound row-level disclosure decisions, validate the payload and repository boundary, deploy, and verify the live site. If they do not pass, document the private-only disposition and keep the site unchanged.
+4. Write a concise completion record with the five-wave model counts, unavailable rows, approximate-variance limitation, private sensitivity inventory, public release status, and final repository/live-site hashes.
+
+## Remaining-time estimate
+
+The model runs are complete; remaining work is review, safe normalization/release, and final reconciliation rather than large-scale computation. Estimate **1–2 active workdays** to finish the private cross-wave review and disposition, plus **up to 1–2 active workdays** for a safe site update and live verification if the Wave 4/5 families pass whole-family disclosure review. Thus the remaining analysis-and-atlas milestone is about **2–4 active workdays**. If either family cannot be safely released under the current complete-family policy, analysis can still be completed in that window, while the public site will correctly remain at three waves. Manuscript writing and journal peer review are outside this estimate.
 
 ## Completion criteria
 

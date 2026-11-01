@@ -2069,3 +2069,9 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Recomputed a secondary Benjamini-Yekutieli adjustment across the five wave-specific primary-model registrations, retaining every registered hypothesis and treating non-estimable rows as least-favorable for ranking.
 - This is a conservative cross-domain sensitivity analysis only; primary inference remains wave-specific because survey frames and outcome domains differ. The exact adjusted values and summaries remain on the protected server, and the public site was not changed.
 
+# 2026-11-01 Refresh the active completion plan after five-wave analyses
+
+- Updated the active plan to reflect completed Wave 4/5 primary and secondary models, all-wave primary K=845, 820 estimated rows and 25 retained unavailable rows, plus the remaining whole-family disclosure/release decisions.
+- Added a practical remaining-time estimate of 2–4 active workdays for the analysis-and-atlas milestone, conditional on Wave 4/5 full-family disclosure review. Manuscript writing and journal peer review remain outside that estimate.
+- Resumed the existing CHARLS heartbeat and replaced its stale Wave 1-only instructions with the current five-wave execution queue. It will continue until the user pauses or the objective is complete.
+
