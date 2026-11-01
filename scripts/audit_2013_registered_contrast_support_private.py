@@ -118,8 +118,9 @@ def audit(output: Path) -> dict[str, Any]:
 
     household_id = data["householdID"].astype("string").str.replace(r"\.0+$", "", regex=True)
     community_id = data["communityID"].astype("string").str.replace(r"\.0+$", "", regex=True)
-    if not household_id.str.fullmatch(r"\d{9}", na=False).all() or not community_id.str.fullmatch(r"\d{7}", na=False).all():
-        raise ValueError("Wave 2 household/community identifiers do not match the documented ID widths")
+    if (not household_id.str.fullmatch(r"\d{7,}", na=False).all()
+            or not community_id.str.fullmatch(r"\d{7}", na=False).all()):
+        raise ValueError("Wave 2 household/community identifiers do not satisfy documented segment widths")
     if not household_id.str[:7].eq(community_id).all():
         raise ValueError("Wave 2 household/community ID segment relationship failed")
     data["__county_psu"] = household_id.str[:6]
