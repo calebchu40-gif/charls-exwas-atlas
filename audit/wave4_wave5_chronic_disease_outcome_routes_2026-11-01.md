@@ -19,7 +19,7 @@ The official route is the reason that a single current-wave question field is in
 
 The archived official Wave 5 Codebook gives `DA002` labels `1=Better`, `2=Worse`, `3=Same`, and `99=Never Had the Disease`; it gives `DA003` labels `1=Yes` and `2=No`. Its carried-forward `ZDisease_i` entries are labeled as prior doctor-diagnosed disease and list the positive value `1=Yes`; they are not a two-category current-wave question. The Wave 4 `Zdiagnosed_i` entries likewise identify the carried-forward positive state as `1=Yes`, while `DA007_i` is the current routed yes/no item. These value-label checks agree with the route logic in the questionnaires and flowchart. In particular, only a routed current `DA003/DA007=2` supplies a No; a blank carried-forward field is not itself emitted as a negative outcome by the derivation utility.
 
-This was a source-document check only. It did not inspect Wave 4/5 respondent records, estimate code frequencies, or change any outcome derivation. The protected utility remains unrun until server access is available and its actual prepared-table headers/manifests can be checked.
+This was a source-document check only. The later protected run separately verified the prepared-table hashes and source headers before deriving outcomes; exact respondent-level route counts remain on the server.
 
 ## Disease-slot reconciliation
 
@@ -53,9 +53,11 @@ Harmonize by the official disease label and wording, never by the numeric slot a
 - Derive age at the wave-specific interview date from source-verified fields; do not apply a blanket age cutoff unless the outcome/estimand requires a prespecified domain.
 - Before model fitting, run a metadata-only input and field check, then protected outcome-state QA by route, cross-sectional eligibility, weight applicability, PSU support, and pairwise completeness. Keep exact counts and all row-level output in server-private storage.
 
-## Next execution step
+## Protected derivation status (2026-11-01)
 
-When server connectivity is restored, first complete and verify the pending Wave 2 age-bound reconciliation. Then, using the protected Wave 4/5 prepared tables, implement this three-state diagnosis derivation for common disease concepts, verify that outputs reproduce the official source routes, and freeze a wave-specific cross-sectional model family. The Wave 4/5 association families must be adjusted and reported separately by wave; any atlas-wide multiplicity correction must include every prespecified hypothesis from all completed waves.
+The route-aware derivation was run for the protected 2018 and 2020 prepared tables. The 2018 table retains 14 source-aligned disease concepts; the 2020 table retains 15, with Parkinson's disease kept wave-specific. A protected readback validator confirmed source ID order and uniqueness, cross-sectional frame, individual weight, community PSU, output hashes, and consistency between route status and emitted binary outcome. Exact counts and row-level outputs remain private. These are prepared outcomes, not association estimates or evidence of incident disease.
+
+The next step is to register the 2018/2020 association families, including exposure crosswalk, age adjustment/domain, missingness rules, covariates, and complete-family multiplicity. The Wave 4/5 association families must be fitted and reported separately by wave; any atlas-wide multiplicity correction must include every prespecified hypothesis from all completed waves.
 
 ## Official source links
 

@@ -2050,3 +2050,10 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 # 2026-11-02 Clarify association table model tooltips
 
 - Added the estimate type, contrast, and variance method to the model-cell tooltip in the aggregate results table. This surfaces the model metadata on hover and resolves the existing browser-filter CI assertion without changing any result values or public payload.
+# 2026-11-01 Prepare protected Wave 4/5 disease outcomes and age candidates
+
+- Corrected the Wave 4/5 route-derivation utility to read the active protected `derived_wave_tables` directory and added a private readback validator for ID order, frame, weights, PSU, outcome coding, and route states.
+- Derived and validated the source-routed cumulative doctor-diagnosis outcomes for the 2018 and 2020 respondent tables. Exact route-state QA and all row-level tables remain in server-private storage.
+- Added age-candidate derivation following the 2018 actual-date questionnaire route and the official 2020 `XRAge` formula; the 2020 formula and protected output readback checks passed. No automatic age-45 exclusion was applied.
+- Updated the active plan: Wave 4/5 source and outcome preparation are complete, while their registered association families are the next execution step. No Wave 4/5 association estimates were fitted or published in this update.
+
