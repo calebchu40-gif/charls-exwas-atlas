@@ -1,3 +1,9 @@
+# 2026-11-01 Finalize private Wave 2 anthropometry family and refresh active plan
+
+- Completed private schema-v3 normalization and family finalization for the full registered 2013 Wave 2 anthropometry K=75 primary family, using the hash-bound age-bound and contrast-support reconciliation artifacts.
+- Recomputed BY and Bonferroni values over all registered K=75 rows and passed the project schema validator. The final result table, scope audit, and exact QA remain on the protected server; this step did not publish Wave 2 estimates.
+- Added a current active plan that identifies 2013 wave-specific disclosure review as the next step and records the protected-input status for 2018/2020.
+
 # 2026-11-01 Use configured private root for final-family adjustment
 
 - Updated the protected atlas-family finalizer to use `CHARLS_EXWAS_PRIVATE_ROOT` through the shared path resolver, matching the disclosure builder and Wave 2 private pipeline on the authorized server.
