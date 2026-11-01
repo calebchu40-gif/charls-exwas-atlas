@@ -1,3 +1,8 @@
+# 2026-11-01 Verify deployment of the 2013 Wave 2 association family
+
+- GitHub Pages deployed commit `9fc2ba1`. The live homepage and association JSON both returned HTTP 200; the homepage identifies the three waves and the live JSON contains the complete 2011 K=240, 2013 K=75, and 2015 K=225 families.
+- Confirmed that the public payload has the expected disclosure-reviewed status and controlled approximate-variance labels. Respondent data, exact support diagnostics, and private review records remain on the protected server.
+
 # 2026-11-01 Add disclosure-reviewed Wave 2 aggregate family to Pages payload
 
 - Completed a hash-bound internal disclosure review of the full Wave 2 K=75 aggregate family using the finalized result, age-bound reconciliation, contrast-support reconciliation, source status, and the existing release allowlist. No participant rows, IDs, or exact support diagnostics were added to the review output or site payload.

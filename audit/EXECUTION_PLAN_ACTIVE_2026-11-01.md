@@ -1,7 +1,7 @@
 # CHARLS ExWAS Atlas — active execution plan
 
 **Updated:** 2026-11-01 (UTC)  
-**Status:** Wave 1 and 2015 association families are live as reviewed aggregate results. The registered 2013 anthropometry family is finalized privately, passed the project's aggregate disclosure review, and is included in a payload that passed the site schema and file-boundary validators; GitHub Pages deployment and live content verification are pending.
+**Status:** The 2011, 2013, and 2015 registered association families are live as disclosure-reviewed aggregate results. The public JSON and home page both returned HTTP 200 after deployment of commit `9fc2ba1`; the live JSON contains all three complete wave-specific families.
 
 This plan supersedes earlier active-plan snapshots where their status statements conflict. It separates analysis completion, disclosure review, public aggregate release, and journal publication. User authorization for private analysis does not by itself imply disclosure clearance.
 
@@ -17,17 +17,16 @@ This plan supersedes earlier active-plan snapshots where their status statements
 | Wave | Registered primary family | Status | Public status |
 |---|---:|---|---|
 | 2011 | K=240 (K=150 household environment + K=90 heating route) | Main analysis, reproducibility run, and registered sensitivity work completed; complete-family BY and Bonferroni values computed. | Aggregate family is live. |
-| 2013 | K=75 household environment × anthropometry | Midpoint-age primary family, lower/upper age-bound sensitivity families, age reconciliation, contrast-level sample/PSU support audit, schema normalization, and within-wave complete-family finalization completed in protected storage. The result table passed the project result-schema validator. | Full-family aggregate disclosure review completed; payload passed schema and file-boundary validation. Deployment/live-site verification pending. |
+| 2013 | K=75 household environment × anthropometry | Midpoint-age primary family, lower/upper age-bound sensitivity families, age reconciliation, contrast-level sample/PSU support audit, schema normalization, and within-wave complete-family finalization completed in protected storage. The result table passed the project result-schema validator. | Complete K=75 aggregate family is live with the approximate-variance label. |
 | 2015 | K=225 household environment × blood outcomes | Registered primary family and settlement-context sensitivity completed; complete-family adjustment computed within wave. | Aggregate family is live. |
 | 2018/2020 | Not yet registered for association execution | Official outcome-route documentation and protected derivation utility are ready. The protected workspace check found no prepared analysis tables/manifest or raw package for these waves. | No results. |
 
-Exact QA and support diagnostics remain private. The 2013 finalization used an explicit internal hash-bound scope audit; this is not represented as an external scientific review. The aggregate payload contains only the existing allowlisted result fields, preserves the approximate-variance label, and keeps the three wave-specific multiplicity families separate.
+Exact QA and support diagnostics remain private. The 2013 finalization used an explicit internal hash-bound scope audit; this is not represented as an external scientific review. The aggregate payload contains only the existing allowlisted result fields, preserves the approximate-variance label, and keeps the three wave-specific multiplicity families separate. The 2013 aggregate family was deployed in commit `9fc2ba1`; live JSON and home-page content were verified after deployment.
 
 ## Next execution queue
 
-1. Deploy the validated three-family payload and verify the live JSON and home-page status after GitHub Pages completes. Keep exact QA private and each wave's multiplicity family distinct.
-2. Recheck protected intake for authorized 2018/2020 source files. When they appear, perform metadata-only provenance/header checks first, then source and design review before derivation or association execution.
-3. Complete later-wave registered families, cross-wave consistency review, full atlas multiplicity policy, and final disclosure review before declaring the multi-wave atlas complete.
+1. Recheck protected intake for authorized 2018/2020 source files. When they appear, perform metadata-only provenance/header checks first, then source and design review before derivation or association execution.
+2. Complete later-wave registered families, cross-wave consistency review, full atlas multiplicity policy, and final disclosure review before declaring the multi-wave atlas complete.
 
 ## Completion criteria
 
