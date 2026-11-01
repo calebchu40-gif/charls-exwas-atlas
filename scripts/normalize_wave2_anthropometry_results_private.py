@@ -111,10 +111,20 @@ def normalize(output: Path) -> dict[str, Any]:
     p_values = [float(row["p_value"]) for row in rows]
     adjusted = adjust_pvalues(p_values)
     normalized: list[dict[str, str]] = []
+    analysis_id_map: list[dict[str, str]] = []
     for index, source in enumerate(rows):
         row = {field: source.get(field, "") for field in schema_fields}
         if "contrast" not in schema_fields:
             row["contrast"] = source.get("contrast", "")
+        id_material = "\x1f".join((
+            "charls-wave2-anthropometry-v1", row["model_id"],
+            row["exposure_concept_id"], row["exposure_variable"], row["contrast"],
+            row["phenotype_concept_id"], row["phenotype_variable"],
+        ))
+        short_id = "charls-w2-" + hashlib.sha256(id_material.encode("utf-8")).hexdigest()[:32]
+        analysis_id_map.append({"raw_analysis_id_private": row["analysis_id"],
+                                "schema_v3_analysis_id": short_id})
+        row["analysis_id"] = short_id
         row["multiple_testing_family"] = f"{ATLAS_FAMILY};K=75"
         row["estimability_review_status"] = "reviewed_pass"
         row["estimability_review_id"] = REVIEW_ID
@@ -130,6 +140,7 @@ def normalize(output: Path) -> dict[str, Any]:
         "created_utc": datetime.now(timezone.utc).isoformat(),
         "registered_K": 75,
         "estimability_review_id": REVIEW_ID,
+        "analysis_id_mapping_private": analysis_id_map,
         "review_basis": "internal technical review, hash-bound age-bound reconciliation, and complete contrast-level support reconciliation; no p-value-based pair selection",
         "multiplicity": "BY and Bonferroni recomputed across the complete registered wave-specific K=75 primary family",
         "public_release": "not performed; separate disclosure review is required",
@@ -185,7 +196,7 @@ def normalize(output: Path) -> dict[str, Any]:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path,
-                        default=RESULTS / "wave2013_household_environment_anthropometry_K75_schema_v3_private.csv")
+                        default=RESULTS / "wave2013_household_environment_anthropometry_K75_schema_v3_v2_private.csv")
     args = parser.parse_args()
     try:
         record = normalize(args.output)
