@@ -2057,3 +2057,10 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Added age-candidate derivation following the 2018 actual-date questionnaire route and the official 2020 `XRAge` formula; the 2020 formula and protected output readback checks passed. No automatic age-45 exclusion was applied.
 - Updated the active plan: Wave 4/5 source and outcome preparation are complete, while their registered association families are the next execution step. No Wave 4/5 association estimates were fitted or published in this update.
 
+# 2026-11-01 Run and cell-screen the Wave 4/5 disease families privately
+
+- Ran the corrected, hash-bound Wave 4 and Wave 5 household-environment by doctor-diagnosed disease families for both the registered primary and secondary models. All registered rows stayed in their complete wave-by-model multiplicity families; private QA confirmed family row identity, recalculated BY/Bonferroni values, support gates, and approximate-variance labels.
+- The first draft run had an incorrect residence-indicator recode and was invalidated before release. Corrected coding was rerun under a new private freeze; the superseded output remains private and is excluded from review.
+- Completed a protected 2x2 exposure/outcome cell and contributing-community screen for every primary-model contrast. Small-cell contrasts are held for suppression/aggregation review. Exact counts and pair-level flags remain on the private server.
+- The public site is unchanged; no Wave 4/5 estimates or exact QA were published. The wave-specific active plan records run status, the corrected-run history, and the remaining aggregate disclosure step.
+
