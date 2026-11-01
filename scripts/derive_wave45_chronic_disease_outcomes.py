@@ -147,14 +147,17 @@ def _manifest_binding(wave: str, manifest_path: Path, data_path: Path) -> dict[s
     }
 
 
-def derive(wave: str, code_commit: str) -> dict[str, Any]:
+def derive(wave: str, code_commit: str, table_dir: Path | None = None) -> dict[str, Any]:
     if wave not in DISEASES:
         raise ValueError("Wave must be 2018 or 2020")
     if len(code_commit) not in range(7, 41) or any(ch not in "0123456789abcdef" for ch in code_commit):
         raise ValueError("Pass the public analysis-code commit SHA")
 
-    data_path = private_path(TABLE_DIR / f"CHARLS_wave{wave}_person_analytic.dta")
-    manifest_path = private_path(TABLE_DIR / "prepared_data_manifest.json")
+    # The active protected builder writes all waves to derived_wave_tables.
+    # Keep the older dated directory only as a caller override for archived runs.
+    selected_table_dir = private_path(table_dir) if table_dir is not None else private_path(PRIVATE / "derived_wave_tables")
+    data_path = private_path(selected_table_dir / f"CHARLS_wave{wave}_person_analytic.dta")
+    manifest_path = private_path(selected_table_dir / "prepared_data_manifest.json")
     if not data_path.is_file() or not manifest_path.is_file():
         raise FileNotFoundError("Protected Wave 4/5 prepared table or manifest is absent")
     binding = _manifest_binding(wave, manifest_path, data_path)
@@ -245,8 +248,9 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--wave", choices=("2018", "2020"), required=True)
     parser.add_argument("--code-commit", required=True)
+    parser.add_argument("--data-dir", type=Path, help="Optional protected prepared-table directory; defaults to private/derived_wave_tables")
     args = parser.parse_args()
-    print(json.dumps(derive(args.wave, args.code_commit), ensure_ascii=False))
+    print(json.dumps(derive(args.wave, args.code_commit, args.data_dir), ensure_ascii=False))
 
 
 if __name__ == "__main__":
