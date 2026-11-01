@@ -294,7 +294,16 @@ def run(waves: list[str]) -> dict[str, Any]:
                         row["n_model"], row["n_psu"] = support_n, support_psu
                         rows.append(row)
                     else:
-                        rows.extend(engine.fit_pair(prepared, exposure, phenotype, design, model))
+                        try:
+                            rows.extend(engine.fit_pair(prepared, exposure, phenotype, design, model))
+                        except Exception as exc:  # retain the registered pair and its exact failure in private QA
+                            row = engine._blocked_row(
+                                exposure, phenotype, design, model, [exposure.variable], {},
+                                "numerically_unavailable",
+                                f"prespecified model could not be estimated ({type(exc).__name__}); no post-hoc recoding",
+                            )
+                            row["n_model"], row["n_psu"] = support_n, support_psu
+                            rows.append(row)
         engine.assign_families(rows, "charls_environment_disease")
         expected_rows = expected_k * len(MODELS)
         if len(rows) != expected_rows:

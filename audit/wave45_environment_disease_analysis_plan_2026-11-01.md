@@ -28,6 +28,7 @@ Use the route-derived prior-positive/current-routed-yes/current-routed-no diseas
 - Secondary M0: survey-weighted unadjusted logistic regression.
 - Sampling: `INDV_weight_ad2`, PSU `communityID`, with-replacement Taylor approximation and no fabricated strata. This is explicitly approximate because released files do not supply the official split-community PSU map or variance strata.
 - Prespecified support gate: fit only when pair/model complete-case N is at least 500 and distinct PSU count is at least 30. Below-threshold hypotheses remain in the family as inestimable; do not lower the threshold after inspecting results.
+- Residence categories and reference groups are fixed before fitting. If the reference category is absent in a pair/model complete-case sample or the design matrix is rank-deficient, retain the hypothesis as numerically unavailable; do not switch the reference or collapse categories after looking at support/results.
 - Multiplicity: BY and Bonferroni within each complete wave-by-model family; no hypothesis is removed using p-values, effect direction, or observed support.
 
 ## Reporting and limitations
