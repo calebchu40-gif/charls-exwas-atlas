@@ -21,8 +21,8 @@ PRIVATE = PRIVATE_ROOT.resolve()
 RAW = PRIVATE / "results" / "wave1_county_stage_20261101" / "wave1_household_environment_scaleup_results_private.csv"
 PAIR_QA = PRIVATE / "results" / "wave1_county_stage_20261101" / "wave1_household_environment_scaleup_pair_qa_private.csv"
 CONFIG = PRIVATE / "analysis_review" / "wave1_household_environment_scaleup_model_config.json"
-SCOPE = PRIVATE / "analysis_review" / "wave1_county_stage_scope_manifest_private_v2.json"
-REVIEW = PRIVATE / "analysis_review" / "wave1_county_stage_pair_review_private_v2.json"
+SCOPE = PRIVATE / "analysis_review" / "wave1_county_stage_scope_manifest_private_v3.json"
+REVIEW = PRIVATE / "analysis_review" / "wave1_county_stage_pair_review_private_v3.json"
 INTERNAL_REVIEW_ID = "w1-county-stage-internal-qa-20261101-v1"
 
 
