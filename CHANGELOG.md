@@ -1,3 +1,9 @@
+# 2026-11-01 Add protected Wave 2 contrast-level support reconciliation
+
+- Added a reproducible private audit that checks the protected prepared-table and age-candidate hashes, recomputes exposure/reference support for every registered Wave 2 anthropometry contrast, and reconciles pair N and community counts against the saved runner output.
+- It retains all 75 registered hypotheses and applies no p-value selection. Exact exposure-level counts and PSU diagnostics are written only under the protected private root.
+- The audit was run on the private server after the code checkout was advanced to `df333ff`; its report is owner-only. Exact results were not copied into the repository or public site.
+
 # 2026-11-01 Cross-check later-wave disease route values
 
 - Cross-checked Wave 4/5 outcome derivation rules against official codebook value labels for `DA002`, `DA003`, and carried-forward diagnosis flags; documented that only an explicitly routed current No supports a negative outcome.
