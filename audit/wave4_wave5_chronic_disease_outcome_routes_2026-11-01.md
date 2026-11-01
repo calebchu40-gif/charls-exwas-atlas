@@ -15,6 +15,12 @@ The Wave 4/5 release review found no venous-blood laboratory module in these wav
 
 The official route is the reason that a single current-wave question field is insufficient for a cross-sectional “ever doctor-diagnosed by this interview” variable among returning respondents. A carry-forward field alone is also insufficient because it misses new diagnoses reported since the prior interview. In Wave 5, `DA002=99` is a route-consistency flag requiring special treatment when a prior positive is also present.
 
+## Codebook value-label cross-check (2026-11-01)
+
+The archived official Wave 5 Codebook gives `DA002` labels `1=Better`, `2=Worse`, `3=Same`, and `99=Never Had the Disease`; it gives `DA003` labels `1=Yes` and `2=No`. Its carried-forward `ZDisease_i` entries are labeled as prior doctor-diagnosed disease and list the positive value `1=Yes`; they are not a two-category current-wave question. The Wave 4 `Zdiagnosed_i` entries likewise identify the carried-forward positive state as `1=Yes`, while `DA007_i` is the current routed yes/no item. These value-label checks agree with the route logic in the questionnaires and flowchart. In particular, only a routed current `DA003/DA007=2` supplies a No; a blank carried-forward field is not itself emitted as a negative outcome by the derivation utility.
+
+This was a source-document check only. It did not inspect Wave 4/5 respondent records, estimate code frequencies, or change any outcome derivation. The protected utility remains unrun until server access is available and its actual prepared-table headers/manifests can be checked.
+
 ## Disease-slot reconciliation
 
 The existing official concept crosswalk resolves the inserted 2020 Parkinson's item. Use disease labels, not matching slot numbers, to pair fields:

@@ -1,3 +1,8 @@
+# 2026-11-01 Cross-check later-wave disease route values
+
+- Cross-checked Wave 4/5 outcome derivation rules against official codebook value labels for `DA002`, `DA003`, and carried-forward diagnosis flags; documented that only an explicitly routed current No supports a negative outcome.
+- This source-only review read no participant data and did not run the protected derivation or association models.
+
 # 2026-11-01 Fix association-browser model tooltip validation
 
 - Added the registered estimate type, contrast and variance design to the result-table model cell's hover text, satisfying the existing browser-filter workflow assertion.
