@@ -331,30 +331,50 @@ function renderAssociationRows() {
     phenotype:byId('associationPhenotype').value,
     wave:byId('associationWave').value,
     model:byId('associationModel').value,
+    fit:byId('associationFit').value,
+    search:byId('associationSearch').value.trim().toLocaleLowerCase(),
+    sort:byId('associationSort').value,
   };
   const rows=associationRows.filter(row=>(!selected.exposure||row.exposure_concept_id===selected.exposure)
     &&(!selected.phenotype||row.phenotype_concept_id===selected.phenotype)
     &&(!selected.wave||row.wave===selected.wave)
-    &&(!selected.model||row.model_id===selected.model));
+    &&(!selected.model||row.model_id===selected.model)
+    &&(!selected.fit||(selected.fit==='estimable'?row.fit_status==='success':row.fit_status!=='success'))
+    &&(!selected.search||[row.exposure_concept_id,row.exposure_variable,row.phenotype_concept_id,row.phenotype_variable,row.contrast,row.wave,row.model_id]
+      .some(value=>String(value||'').toLocaleLowerCase().includes(selected.search))));
+  const number=value=>value===null||value===undefined||value===''?null:Number(value);
+  if(selected.sort==='q')rows.sort((a,b)=>{
+    const av=number(a.q_value_by)??Infinity,bv=number(b.q_value_by)??Infinity;
+    return av===bv?0:av-bv;
+  });
+  if(selected.sort==='effect')rows.sort((a,b)=>{
+    const av=number(a.estimate),bv=number(b.estimate);
+    const aa=av===null?-Infinity:Math.abs(av),ba=bv===null?-Infinity:Math.abs(bv);
+    return aa===ba?0:ba-aa;
+  });
   const body=byId('rows'),empty=byId('empty');body.replaceChildren();
   byId('count').textContent=`显示 ${rows.length.toLocaleString()} / ${associationRows.length.toLocaleString()} 条关联结果`;
+  const estimable=rows.filter(row=>row.fit_status==='success').length;
+  const withheld=rows.filter(row=>row.fit_status==='withheld_disclosure').length;
+  byId('associationSummary').textContent=`当前结果：${rows.length.toLocaleString()} 条 · 可显示估计 ${estimable.toLocaleString()} 条 · 披露抑制 ${withheld.toLocaleString()} 条`;
   empty.hidden=rows.length>0;
   if(associationRows.length&&rows.length===0)empty.textContent='当前筛选条件下没有结果。';
   for(const item of rows){
     const tr=document.createElement('tr');
-    const fmt=(value,digits=3)=>Number.isFinite(Number(value))?Number(value).toPrecision(digits):'—';
+    const fmt=(value,digits=3)=>value===null||value===undefined||value===''?'—':Number.isFinite(Number(value))?Number(value).toPrecision(digits):'—';
     const effect=item.fit_status==='success'
       ?`${fmt(item.estimate)} (${fmt(item.ci_lower)} to ${fmt(item.ci_upper)})`:'—';
     const nValue=item.fit_status==='withheld_disclosure'||item.n_model===''? '—' : Number(item.n_model).toLocaleString();
     const statusLabel=item.fit_status==='withheld_disclosure'?'因披露审查抑制数值':item.fit_status;
     const cells=[`${item.exposure_concept_id} · ${item.exposure_variable}`,item.contrast,
       `${item.phenotype_concept_id} · ${item.phenotype_variable}`,item.wave,item.model_id,
-      item.fit_status==='withheld_disclosure'?statusLabel:effect,
-      fmt(item.q_value_by),nValue,item.fit_status==='withheld_disclosure'?statusLabel:item.variance_design];
+      effect,fmt(item.p_value),fmt(item.q_value_by),fmt(item.p_bonferroni),nValue,
+      item.fit_status==='withheld_disclosure'?statusLabel:item.variance_design];
     for(let index=0;index<cells.length;index++){
       const td=document.createElement('td');td.textContent=String(cells[index]??'—');
       if(index===4)td.title=[item.estimate_type,item.contrast,item.variance_design].filter(Boolean).join(' · ');
-      if(index===5)td.title=[item.estimate_type,`SE ${item.standard_error}`,`p ${item.p_value}`,`Bonferroni ${item.p_bonferroni}`].filter(Boolean).join(' · ');
+      if(index===5&&item.fit_status==='success')td.title=`SE ${fmt(item.standard_error)}`;
+      if(index===10)td.title=statusLabel;
       tr.append(td);
     }
     body.append(tr);
@@ -377,7 +397,13 @@ async function renderAssociations() {
       if(!Array.isArray(family.rows)||family.family_size!==family.rows.length)throw new Error('incomplete hypothesis family');
       associationRows.push(...family.rows);
     }
-    if(associationRows.some(row=>row.disclosure_status!=='approved_public_aggregate'))throw new Error('unreviewed row in public payload');
+    const numericFields=['estimate','standard_error','ci_lower','ci_upper','p_value','q_value_by','p_bonferroni','n_model'];
+    for(const row of associationRows){
+      if(!['approved_public_aggregate','withheld'].includes(row.disclosure_status))throw new Error('unreviewed row in public payload');
+      if(row.disclosure_status==='withheld'){
+        if(row.fit_status!=='withheld_disclosure'||numericFields.some(key=>row[key]!==''&&row[key]!==null&&row[key]!==undefined))throw new Error('withheld row contains inferential values');
+      } else if(row.fit_status==='withheld_disclosure') throw new Error('withheld fit lacks withheld disclosure status');
+    }
     const filters=[
       ['associationExposure','exposure_concept_id','exposure_variable'],
       ['associationPhenotype','phenotype_concept_id','phenotype_variable'],
@@ -405,6 +431,17 @@ async function renderAssociations() {
     if(downloadButton&&!downloadButton.dataset.bound){
       downloadButton.addEventListener('click',()=>downloadAssociationCsv(heatmapRows));
       downloadButton.dataset.bound='true';
+    }
+    for(const id of ['associationSearch','associationFit','associationSort']){
+      const control=byId(id);
+      if(!control.dataset.bound){control.addEventListener(id==='associationSearch'?'input':'change',renderAssociationRows);control.dataset.bound='true'}
+    }
+    const clearButton=byId('associationClear');
+    if(clearButton&&!clearButton.dataset.bound){
+      clearButton.addEventListener('click',()=>{
+        ['associationExposure','associationPhenotype','associationWave','associationModel','associationFit','associationSort'].forEach(id=>byId(id).value='');
+        byId('associationSearch').value='';renderAssociationRows();
+      });clearButton.dataset.bound='true';
     }
     renderAssociationRows();
   } catch(error) {

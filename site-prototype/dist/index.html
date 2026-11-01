@@ -59,6 +59,17 @@
     .heatmap-detail dt{color:var(--muted);font-size:11px}
     .heatmap-detail dd{margin:0;font-variant-numeric:tabular-nums;word-break:break-word}
   </style>
+<style>
+.catalog-tools[hidden]{display:none!important}
+#associationFilters .field:last-child .clear{width:100%}
+#associationFilters{grid-template-columns:1.7fr repeat(3,minmax(130px,1fr))}
+#associationFilters .field:nth-child(n+5){grid-column:span 1}
+#associationSummary{font-size:12px}
+#associations .tablewrap table{min-width:1180px}
+#associations tbody tr:hover{background:#f4f9fb}
+@media(max-width:760px){#associationFilters{grid-template-columns:1fr 1fr}#associationFilters .field:first-child{grid-column:1/-1}.resultbar{align-items:flex-start;flex-direction:column;gap:5px}}
+@media(max-width:460px){#associationFilters{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
   <header class="topbar"><div class="shell"><div class="brand">CHARLS <span style="color:#86d2d1">/</span> ExWAS Atlas</div><a class="toplink" href="#method">数据与方法说明 ↓</a></div></header>
@@ -110,8 +121,8 @@
     <section class="view" id="associations" hidden>
       <div class="section-head"><div><h2>关联结果浏览器</h2><p>展示完整预设结果家族，按暴露、表型、波次和模型查看效应量、置信区间、样本量与多重检验校正。</p></div></div>
       <div class="catalog-note">五波分别使用与样本框、模块和结局对应的 CHARLS 权重；结果为波次内横断面关联，不作因果解释。公开 q 值与 Bonferroni 值按完整 K=845 发布家族重算；受抑制的 p 值按 1 保守计入排序，受抑制行不显示校正值；效应并未跨波次合并。方差采用基于县级第一阶段单位聚类的无分层 WR Taylor 近似；每行标明近似限制，Wave 1 等预设社区聚类敏感性另行保留。</div>
-      <div class="catalog-tools" id="associationFilters" hidden><div class="field"><label for="associationExposure">暴露</label><select id="associationExposure"><option value="">全部</option></select></div><div class="field"><label for="associationPhenotype">表型</label><select id="associationPhenotype"><option value="">全部</option></select></div><div class="field"><label for="associationWave">波次</label><select id="associationWave"><option value="">全部</option></select></div><div class="field"><label for="associationModel">模型</label><select id="associationModel"><option value="">全部</option></select></div></div>
-      <div class="resultbar"><span id="count" aria-live="polite">0 条关联结果</span><span>BY q 值和 Bonferroni 值按完整 K=845 发布家族计算；各波系数独立估计，未合并。方差设计标签见表格</span></div>
+      <div class="catalog-tools" id="associationFilters" hidden><div class="field"><label for="associationSearch">快速搜索</label><input id="associationSearch" type="search" placeholder="暴露、表型、CHARLS 编码或模型"></div><div class="field"><label for="associationExposure">暴露</label><select id="associationExposure"><option value="">全部暴露</option></select></div><div class="field"><label for="associationPhenotype">表型</label><select id="associationPhenotype"><option value="">全部表型</option></select></div><div class="field"><label for="associationWave">波次</label><select id="associationWave"><option value="">全部波次</option></select></div><div class="field"><label for="associationModel">模型</label><select id="associationModel"><option value="">全部模型</option></select></div><div class="field"><label for="associationFit">结果状态</label><select id="associationFit"><option value="">全部状态</option><option value="estimable">可显示估计</option><option value="withheld">披露抑制</option></select></div><div class="field"><label for="associationSort">排序</label><select id="associationSort"><option value="">预登记顺序</option><option value="q">BY q 值从小到大</option><option value="effect">绝对效应量从大到小</option></select></div><div class="field"><label>&nbsp;</label><button type="button" id="associationClear" class="clear">清除筛选</button></div></div>
+      <div class="resultbar"><span id="count" aria-live="polite">正在载入结果…</span><span id="associationSummary" aria-live="polite">按完整 K=845 家族校正；各波独立估计。</span></div>
       <div class="heatmap-panel" id="associationHeatmap" hidden>
         <div class="heatmap-head">
           <div><b>暴露 × 表型 效应热图</b><span class="heatmap-sub">每个波次 × 模型一张矩阵；点格子查看完整信息</span></div>
@@ -125,7 +136,7 @@
         <div id="heatmapBlocks"></div>
         <div class="heatmap-detail" id="heatmapDetail"><p class="muted">点击任意格子查看该关联的完整信息。</p></div>
       </div>
-      <div class="tablewrap"><table><caption class="sr-only">CHARLS ExWAS Wave 1 加权关联估计与多重检验结果</caption><thead><tr><th scope="col">暴露</th><th scope="col">对比</th><th scope="col">表型</th><th scope="col">波次</th><th scope="col">模型</th><th scope="col">β（95% CI）</th><th scope="col">BY q</th><th scope="col">样本量</th><th scope="col">方差说明</th></tr></thead><tbody id="rows"></tbody></table><div id="empty" class="empty">尚无可展示的关联结果。</div></div>
+      <div class="tablewrap"><table><caption class="sr-only">CHARLS ExWAS 五波关联估计与多重检验结果</caption><thead><tr><th scope="col">暴露</th><th scope="col">对比</th><th scope="col">表型</th><th scope="col">波次</th><th scope="col">模型</th><th scope="col">β（95% CI）</th><th scope="col">P</th><th scope="col">BY q</th><th scope="col">Bonferroni</th><th scope="col">样本量</th><th scope="col">方差说明 / 状态</th></tr></thead><tbody id="rows"></tbody></table><div id="empty" class="empty">尚无可展示的关联结果。</div></div>
     </section>
     <section class="view" id="byPhenotype" hidden><h2>按表型浏览</h2><p class="view-lede">先按表型筛选目录候选；五波关联结果请打开“关联图谱”，按表型查看对应暴露。波次间测量、权重和目标人群不同，不将跨波次相似性解释为合并效应。</p><div class="catalog-note">表型目录提供CHARLS原始编码、答案标签、波次和概念ID；五波汇总关联结果见“关联图谱”。</div><div id="phenotypeBrowse" class="group-grid"></div></section>
     <section class="view" id="byExposure" hidden><h2>按暴露浏览</h2><p class="view-lede">先在暴露目录检索字段定义；五波汇总关联结果请打开“关联图谱”。结果表列出波次、模型、效应、权重/方差标签与多重检验信息。</p><div class="catalog-note">暴露目录提供CHARLS原始编码、答案标签、波次和概念ID；五波汇总关联结果见“关联图谱”。</div><div id="exposureBrowse" class="group-grid"></div></section>
