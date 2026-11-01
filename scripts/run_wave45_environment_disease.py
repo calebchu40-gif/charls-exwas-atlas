@@ -138,8 +138,16 @@ def freeze(code_commit: str) -> dict[str, Any]:
     register_path = private_path(REVIEW / "wave45_hypothesis_register_v1.csv")
     plan_path = private_path(REVIEW / "wave45_analysis_plan_v1.json")
     manifest_path = private_path(REVIEW / "wave45_freeze_manifest_v1.json")
+    prior_freeze = None
     if any(path.exists() for path in (register_path, plan_path, manifest_path)):
-        raise FileExistsError("Wave 4/5 analysis freeze already exists; refusing overwrite")
+        if not all(path.is_file() for path in (register_path, plan_path, manifest_path)):
+            raise ValueError("Partial prior freeze detected; refusing to replace it")
+        prior_freeze = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if prior_freeze.get("status") != "frozen_for_internal_execution":
+            raise ValueError("Unrecognized prior freeze; refusing to replace it")
+        for wave in ("2018", "2020"):
+            if private_path(PRIVATE / "results" / f"wave{wave}_environment_disease_M0_M1_private.csv").exists():
+                raise FileExistsError("Cannot refresh a freeze after any Wave 4/5 analysis output exists")
     all_rows = []
     bindings = {}
     for wave in ("2018", "2020"):
@@ -174,7 +182,8 @@ def freeze(code_commit: str) -> dict[str, Any]:
     freeze_manifest = {"status": "frozen_for_internal_execution", "plan_sha256": sha256(plan_path),
                        "register_sha256": sha256(register_path), "code_commit": code_commit,
                        "created_utc": datetime.now(timezone.utc).isoformat(),
-                       "hypothesis_rows_private": len(all_rows), "input_bindings_private": bindings}
+                       "hypothesis_rows_private": len(all_rows), "input_bindings_private": bindings,
+                       "supersedes_plan_sha256_private": prior_freeze.get("plan_sha256") if prior_freeze else None}
     write_json_private(manifest_path, freeze_manifest)
     return {"status": "frozen", "registered_rows_private": len(all_rows), "plan_sha256": freeze_manifest["plan_sha256"]}
 
