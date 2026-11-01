@@ -50,8 +50,11 @@ def read_csv(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(stream))
 
 
-def _key(row: dict[str, str]) -> tuple[str, str, str]:
-    return (row.get("exposure_concept_id", ""), row.get("phenotype_concept_id", ""), row.get("contrast", ""))
+def _key(row: dict[str, str]) -> tuple[str, str, str, str]:
+    # Some waves register multiple source items under one exposure concept;
+    # include the source field so same-labelled contrasts remain distinct.
+    return (row.get("exposure_concept_id", ""), row.get("exposure_variable", ""),
+            row.get("phenotype_concept_id", ""), row.get("contrast", ""))
 
 
 def _number(value: str | None) -> float | None:
