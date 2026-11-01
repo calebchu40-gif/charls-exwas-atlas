@@ -30,8 +30,8 @@ from charls_design_keys import add_documented_county_cluster
 PRIVATE = PRIVATE_ROOT
 CODE_ROOT = Path(__file__).resolve().parents[1]
 DATA = PRIVATE / "derived_wave_tables" / "CHARLS_wave2015_person_analytic_with_official_blood.dta"
-RESULT = PRIVATE / "results" / "2015_household_environment_blood_K225_county_stage_primary.csv"
-QA = PRIVATE / "qa_outputs" / "2015_household_environment_blood_K225_county_stage_primary_private.json"
+RESULT = PRIVATE / "results" / "2015_household_environment_blood_K225_county_stage_v2_primary.csv"
+QA = PRIVATE / "qa_outputs" / "2015_household_environment_blood_K225_county_stage_v2_primary_private.json"
 
 PHENOTYPES = {
     "blood_wbc": "bl_wbc", "blood_hemoglobin": "bl_hgb",
@@ -111,7 +111,7 @@ def _result_row(concept: str, field: str, code: int, ref: int, contrast: str,
         "weight_status": "verified_used", "weight_id": "blood_weight",
         "weight_source": "CHARLS 2015 Blood release", "psu_status": "verified_used",
         "psu_id": "county segment of householdID (officially documented; validated against communityID)", "stratum_status": "not_released", "stratum_id": "",
-        "variance_design": "Approximate method: WR Taylor linearization clustered at the documented county stage; no released implicit strata or FPC; community-cluster sensitivity retained.",
+        "variance_design": "Approximate method: WR Taylor linearization clustered at the documented county stage. Limitation: released implicit strata and county PPS/FPC are unavailable; community-cluster sensitivity retained.",
         "exposure_transform": f"{field}={code} vs {ref}; official category contrast",
         "phenotype_transform": "identity; weighted SD standardization within valid age-domain blood responses",
         "missingness_rule": "pairwise complete case; no imputation; fasting restricted for glucose/triglycerides",
@@ -216,8 +216,8 @@ def run(settlement_adjusted: bool = False) -> dict[str, object]:
         if rows[index]["fit_status"] == "success":
             rows[index]["q_value_by"] = float(qvalues[rank])
             rows[index]["p_bonferroni"] = min(1.0, float(rows[index]["p_value"]) * len(rows))
-    result_path = RESULT.with_name("2015_household_environment_blood_K225_county_stage_settlement_sensitivity.csv") if settlement_adjusted else RESULT
-    qa_path = QA.with_name("2015_household_environment_blood_K225_county_stage_settlement_sensitivity_private.json") if settlement_adjusted else QA
+    result_path = RESULT.with_name("2015_household_environment_blood_K225_county_stage_v2_settlement_sensitivity.csv") if settlement_adjusted else RESULT
+    qa_path = QA.with_name("2015_household_environment_blood_K225_county_stage_v2_settlement_sensitivity_private.json") if settlement_adjusted else QA
     result_path.parent.mkdir(parents=True, exist_ok=True)
     qa_path.parent.mkdir(parents=True, exist_ok=True)
     with result_path.open("w", newline="", encoding="utf-8-sig") as stream:
@@ -232,7 +232,7 @@ def run(settlement_adjusted: bool = False) -> dict[str, object]:
         "fasting": "glucose and triglycerides restricted to bl_fasting=1",
         "heating_route": "2015-specific i020=1 Yes proceeds to i021",
         "code_commit": code_commit,
-        "variance": "WR Taylor; documented county-stage clusters; no released implicit strata or FPC; approximate",
+        "variance": "WR Taylor; documented county-stage clusters. Limitation: no released implicit strata or county PPS/FPC; approximate",
         "diagnostics_private": diagnostics,
     }
     qa_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

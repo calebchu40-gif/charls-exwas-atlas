@@ -48,7 +48,7 @@ def sha256(path: Path) -> str:
 
 
 def _paths(bound: str) -> tuple[Path, Path]:
-    suffix = "midpoint_primary" if bound == "midpoint" else f"{bound}_age_sensitivity"
+    suffix = "county_stage_v2_midpoint_primary" if bound == "midpoint" else f"county_stage_v2_{bound}_age_sensitivity"
     result = RESULTS / f"{FAMILY_STEM}_{suffix}_raw_private.csv"
     qa = QA / f"{FAMILY_STEM}_{suffix}_private.json"
     return private_path(result), private_path(qa)
@@ -69,7 +69,7 @@ def _read_family(bound: str) -> tuple[dict[tuple[str, ...], dict[str, Any]], dic
     if qa.get("result_sha256_private") != sha256(result_path):
         raise ValueError(f"Private result checksum mismatch for {bound}")
     config_path = private_path(
-        PRIVATE / "analysis_review" / f"wave2013_anthropometry_{bound}_config_private.json"
+        PRIVATE / "analysis_review" / f"wave2013_anthropometry_{bound}_county_stage_v2_config_private.json"
     )
     if not config_path.is_file() or qa.get("analysis_config_sha256_private") != sha256(config_path):
         raise ValueError(f"Private analysis configuration checksum mismatch for {bound}")
@@ -198,7 +198,7 @@ def audit() -> dict[str, Any]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, default=QA / "2013_anthropometry_age_bound_reconciliation_private.json")
+    parser.add_argument("--output", type=Path, default=QA / "2013_anthropometry_age_bound_reconciliation_county_stage_v2_private.json")
     args = parser.parse_args()
     output = private_path(args.output)
     summary = audit()

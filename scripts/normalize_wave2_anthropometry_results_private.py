@@ -27,13 +27,13 @@ PRIVATE = PRIVATE_ROOT.resolve()
 RESULTS = PRIVATE / "results"
 QA = PRIVATE / "qa_outputs"
 REVIEW = PRIVATE / "analysis_review"
-RAW_NAME = "2013_household_environment_anthropometry_K75_midpoint_primary_raw_private.csv"
-RAW_QA_NAME = "2013_household_environment_anthropometry_K75_midpoint_primary_private.json"
-CONFIG_NAME = "wave2013_anthropometry_midpoint_config_private.json"
-TECH_REVIEW_NAME = "wave2013_anthropometry_technical_review_20261101_private.json"
-SUPPORT_NAME = "wave2013_registered_contrast_support_reconciliation_v2_private.json"
-AGE_RECON_NAME = "2013_anthropometry_age_bound_reconciliation_private.json"
-REVIEW_ID = "w2013-anthro-estimability-20261101-v1"
+RAW_NAME = "2013_household_environment_anthropometry_K75_county_stage_v2_midpoint_primary_raw_private.csv"
+RAW_QA_NAME = "2013_household_environment_anthropometry_K75_county_stage_v2_midpoint_primary_private.json"
+CONFIG_NAME = "wave2013_anthropometry_midpoint_county_stage_v2_config_private.json"
+TECH_REVIEW_NAME = "wave2013_anthropometry_county_stage_v2_technical_review_private.json"
+SUPPORT_NAME = "wave2013_registered_contrast_support_reconciliation_county_stage_v2_private.json"
+AGE_RECON_NAME = "2013_anthropometry_age_bound_reconciliation_county_stage_v2_private.json"
+REVIEW_ID = "w2013-county-stage-v2-internal-qa-20261101"
 ATLAS_FAMILY = "wave2013_household_environment_anthropometry"
 
 
@@ -196,7 +196,7 @@ def normalize(output: Path) -> dict[str, Any]:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path,
-                        default=RESULTS / "wave2013_household_environment_anthropometry_K75_schema_v3_v2_private.csv")
+                        default=RESULTS / "wave2013_household_environment_anthropometry_K75_county_stage_v2_schema_v3_private.csv")
     args = parser.parse_args()
     try:
         record = normalize(args.output)

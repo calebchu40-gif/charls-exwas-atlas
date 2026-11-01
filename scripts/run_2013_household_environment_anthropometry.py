@@ -187,7 +187,7 @@ def result_template(*, concept: str, field: str, code: int, ref: int, contrast: 
         "weight_source": "CHARLS 2013 official Weights.dta; cross-sectional biomarker-response weight",
         "psu_status": "verified_used", "psu_id": "county segment of householdID (officially documented; validated against communityID)",
         "stratum_status": "not_released", "stratum_id": "",
-        "variance_design": "Approximate method: WR Taylor linearization clustered at the documented county stage; no released implicit strata or FPC; community-cluster sensitivity retained.",
+        "variance_design": "Approximate method: WR Taylor linearization clustered at the documented county stage. Limitation: released implicit strata and county PPS/FPC are unavailable; community-cluster sensitivity retained.",
         "exposure_transform": f"{field}={code} vs {ref}; source-documented contrast; heating-energy contrasts restricted to i020=2 questionnaire route",
         "phenotype_transform": "identity; weighted SD standardization among positive-weight Wave 2 cross-sectional biomarker responses; only documented 993/999 nonmeasurement codes excluded",
         "missingness_rule": "pairwise complete case; no imputation; no assay or anthropometry range trimming",
@@ -215,7 +215,7 @@ def run(age_bound: str, code_commit: str) -> dict[str, object]:
         "weight": "Biomarker_weight from the official Wave 2 Weights module",
         "psu": "documented county segment of householdID; communityID sensitivity",
         "strata": None,
-        "variance": "Approximate method: WR Taylor linearization with county-stage clusters",
+        "variance": "Approximate method: WR Taylor linearization with documented county-stage clusters",
         "variance_limitation": "released data do not provide implicit strata or county FPC; community-cluster sensitivity retained",
         "age_field": f"midpoint of protected age interval bounds ({age_bound})",
         "age_domain_filter": None,
@@ -230,7 +230,7 @@ def run(age_bound: str, code_commit: str) -> dict[str, object]:
         "code_commit": code_commit,
         "input_bindings_private": binding,
     }
-    config_path = protected(ANALYSIS_REVIEW / f"wave2013_anthropometry_{age_bound}_county_stage_config_private.json")
+    config_path = protected(ANALYSIS_REVIEW / f"wave2013_anthropometry_{age_bound}_county_stage_v2_config_private.json")
     config_text = json.dumps(config, ensure_ascii=False, indent=2) + "\n"
     if config_path.exists() and config_path.read_text(encoding="utf-8") != config_text:
         raise RuntimeError("A different private config already exists; refusing to overwrite it")
@@ -304,7 +304,7 @@ def run(age_bound: str, code_commit: str) -> dict[str, object]:
     RESULTS.mkdir(parents=True, exist_ok=True)
     QA.mkdir(parents=True, exist_ok=True)
     os.chmod(RESULTS, 0o700); os.chmod(QA, 0o700); os.chmod(ANALYSIS_REVIEW, 0o700)
-    suffix = "county_stage_midpoint_primary" if age_bound == "midpoint" else f"county_stage_{age_bound}_age_sensitivity"
+    suffix = "county_stage_v2_midpoint_primary" if age_bound == "midpoint" else f"county_stage_v2_{age_bound}_age_sensitivity"
     result_path = protected(RESULTS / f"2013_household_environment_anthropometry_K{REGISTERED_K}_{suffix}_raw_private.csv")
     qa_path = protected(QA / f"2013_household_environment_anthropometry_K{REGISTERED_K}_{suffix}_private.json")
     fields = list(rows[0])
@@ -322,7 +322,7 @@ def run(age_bound: str, code_commit: str) -> dict[str, object]:
         "frame_rows_after_crosssection_weight_and_psu": frame_n,
         "model": "crosssection=1; positive Biomarker_weight; age interval complete case; no age exclusion; age midpoint/lower/upper plus age squared and interviewer-recorded gender",
         "weight": "CHARLS 2013 official Biomarker_weight; cross-sectional biomarker response weight",
-        "variance": "Approximate method: WR Taylor linearization at documented county stage; no released implicit strata or FPC",
+        "variance": "Approximate method: WR Taylor linearization at documented county stage. Limitation: no released implicit strata or county PPS/FPC",
         "heating_route": "2013 questionnaire: i020=1 skips i021; i020=2 routes to i021",
         "measurement": "Identity scale; only official 993/999 nonmeasurement codes excluded; no range trimming",
         "multiplicity": f"BY and Bonferroni across the complete K={REGISTERED_K} family for this model specification",

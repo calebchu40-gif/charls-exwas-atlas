@@ -30,9 +30,9 @@ TABLE_DIR = PRIVATE / "derived_wave_tables"
 RESULTS_DIR = PRIVATE / "results"
 QA_DIR = PRIVATE / "qa_outputs"
 REVIEW_DIR = PRIVATE / "analysis_review"
-FAMILY_FILE = "2013_household_environment_anthropometry_K75_midpoint_primary_raw_private.csv"
-FAMILY_QA_FILE = "2013_household_environment_anthropometry_K75_midpoint_primary_private.json"
-CONFIG_FILE = "wave2013_anthropometry_midpoint_config_private.json"
+FAMILY_FILE = "2013_household_environment_anthropometry_K75_county_stage_v2_midpoint_primary_raw_private.csv"
+FAMILY_QA_FILE = "2013_household_environment_anthropometry_K75_county_stage_v2_midpoint_primary_private.json"
+CONFIG_FILE = "wave2013_anthropometry_midpoint_county_stage_v2_config_private.json"
 OUTCOME_FIELDS = ("qi002", "qj002", "qk002", "ql002", "qm002")
 
 
@@ -103,7 +103,7 @@ def audit(output: Path) -> dict[str, Any]:
             or config.get("status") != "user_authorized_internal_analysis"):
         raise ValueError("The midpoint results/configuration are not the registered K=75 family")
 
-    usecols = ["ID", "crosssection", "Biomarker_weight", "communityID", "ba000_w2_3",
+    usecols = ["ID", "crosssection", "Biomarker_weight", "householdID", "communityID", "ba000_w2_3",
                "i017", "i019", "i020", "i021", "i022", *OUTCOME_FIELDS]
     people, _ = pyreadstat.read_dta(str(main), usecols=usecols)
     age_rows, _ = pyreadstat.read_dta(
@@ -116,6 +116,14 @@ def audit(output: Path) -> dict[str, Any]:
     if not data["_merge"].eq("both").all():
         raise ValueError("Age candidate does not cover the prepared Wave 2 respondent table")
 
+    household_id = data["householdID"].astype("string").str.replace(r"\.0+$", "", regex=True)
+    community_id = data["communityID"].astype("string").str.replace(r"\.0+$", "", regex=True)
+    if not household_id.str.fullmatch(r"\d{9}", na=False).all() or not community_id.str.fullmatch(r"\d{7}", na=False).all():
+        raise ValueError("Wave 2 household/community identifiers do not match the documented ID widths")
+    if not household_id.str[:7].eq(community_id).all():
+        raise ValueError("Wave 2 household/community ID segment relationship failed")
+    data["__county_psu"] = household_id.str[:6]
+
     lower = pd.to_numeric(data["age_at_interview_lower"], errors="coerce")
     upper = pd.to_numeric(data["age_at_interview_upper"], errors="coerce")
     age_mid = (lower + upper) / 2
@@ -125,7 +133,7 @@ def audit(output: Path) -> dict[str, Any]:
     finite_age = age_mid.map(lambda x: math.isfinite(x) if pd.notna(x) else False)
     finite_weight = weight.map(lambda x: math.isfinite(x) if pd.notna(x) else False)
     base = (frame.eq(1) & weight.gt(0) & finite_weight & finite_age
-            & sex.isin([1, 2]) & data["communityID"].notna())
+            & sex.isin([1, 2]) & data["__county_psu"].notna())
 
     contrasts: dict[tuple[str, str, str], tuple[int, int, bool]] = {}
     for item in config.get("exposure_contrasts", []):
@@ -161,9 +169,9 @@ def audit(output: Path) -> dict[str, Any]:
         reference = complete & exposure.eq(reference_code)
         exposed_n, reference_n = int(exposed.sum()), int(reference.sum())
         pair_n = int(complete.sum())
-        exposed_psu = int(data.loc[exposed, "communityID"].nunique())
-        reference_psu = int(data.loc[reference, "communityID"].nunique())
-        pair_psu = int(data.loc[complete, "communityID"].nunique())
+        exposed_psu = int(data.loc[exposed, "__county_psu"].nunique())
+        reference_psu = int(data.loc[reference, "__county_psu"].nunique())
+        pair_psu = int(data.loc[complete, "__county_psu"].nunique())
         match = pair_n == int(row["n_model"]) and pair_psu == int(row["n_psu_private"])
         fits = row.get("fit_status") == "success"
         support = exposed_n > 0 and reference_n > 0 and pair_n >= 500 and pair_psu >= 30
@@ -202,9 +210,9 @@ def audit(output: Path) -> dict[str, Any]:
         "status": status, "created_utc": datetime.now(timezone.utc).isoformat(),
         "code_commit": commit, "audit_script_sha256": sha256(Path(__file__).resolve()),
         "registered_K": 75,
-        "source_rules": "crosssection=1; finite positive official Biomarker_weight; communityID observed; midpoint age and recorded sex complete; pair-complete anthropometry; heating-source contrasts only where i020=2",
+        "source_rules": "crosssection=1; finite positive official Biomarker_weight; householdID county segment validated against communityID; midpoint age and recorded sex complete; pair-complete anthropometry; heating-source contrasts only where i020=2",
         "checks": checks, "all_registered_hypotheses_retained": True,
-        "design_note": "communityID clusters; strata not released; WR Taylor variance is approximate",
+        "design_note": "documented householdID county-stage clusters; no released strata or FPC; WR Taylor variance is approximate; community-only estimates remain sensitivity",
         "result_status": "private_internal_results_pending_technical_and_disclosure_review",
         "input_bindings_private": {
             "prepared_data_sha256": main_sha,
@@ -226,7 +234,7 @@ def audit(output: Path) -> dict[str, Any]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, default=QA_DIR / "wave2013_registered_contrast_support_reconciliation_v2_private.json")
+    parser.add_argument("--output", type=Path, default=QA_DIR / "wave2013_registered_contrast_support_reconciliation_county_stage_v2_private.json")
     args = parser.parse_args()
     result = audit(args.output)
     print(json.dumps({

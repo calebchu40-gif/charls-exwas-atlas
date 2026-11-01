@@ -314,13 +314,15 @@ def normalize(
     if not target:
         raise ValueError("frozen configuration lacks an explicit target population")
     design = config.get("design", {})
-    if (design.get("weight_field") != "bloodweight" or design.get("psu_field") != "communityID"
+    if (design.get("weight_field") != "bloodweight" or design.get("psu_field") not in {"communityID", "psu_county"}
             or design.get("stratum_fields") != [] or design.get("with_replacement") is not True):
         raise ValueError("frozen configuration does not match the reviewed Wave 1 approximate design")
+    cluster_label = ("CHARLS-documented county stage (householdID county segment)"
+                     if design["psu_field"] == "psu_county" else "communityID")
     variance = (
         "Approximate method: unstratified with-replacement Taylor linearization, "
-        f"clustered by {design['psu_field']}. Limitation: released CHARLS implicit strata, "
-        "PPS size measures, and the final split-community PSU map are not reproduced."
+        f"clustered at the {cluster_label}. Limitation: released CHARLS implicit strata, "
+        "county PPS selection probabilities/FPC, and respondent-level split-community mapping are not reproduced."
     )
     software = f"Python {run.get('python', 'unknown')}; svy {run.get('svy_version', 'unknown')}; commit:{commit}"
     weight_source = "CHARLS Wave 1 official Blood release document 201 (2014-04-29) and Weight document 118; bloodweight"
@@ -387,7 +389,8 @@ def normalize(
             "weight_id": "bloodweight",
             "weight_source": weight_source,
             "psu_status": "verified_used",
-            "psu_id": str(design["psu_field"]),
+            "psu_id": ("householdID documented county segment, validated against communityID"
+                       if design["psu_field"] == "psu_county" else "communityID"),
             "stratum_status": "not_released",
             "variance_design": variance,
             "contrast": f"{raw['exposure_label']} vs {raw['reference_label']}",
