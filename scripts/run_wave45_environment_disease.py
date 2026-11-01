@@ -39,6 +39,11 @@ VARIANCE = (
     "Approximate with-replacement Taylor linearization clustered at the officially documented county stage; "
     "released data do not provide implicit strata or county FPC; community-cluster sensitivity retained."
 )
+COMMUNITY_SENSITIVITY_VARIANCE = (
+    "Preplanned variance sensitivity: with-replacement Taylor linearization clustered at communityID; "
+    "the official hierarchy documents county-level PPS before community PSUs, so this is a lower-stage "
+    "cluster comparison rather than the primary variance specification."
+)
 MIN_MODEL_N = 500
 MIN_MODEL_PSU = 30
 
@@ -199,7 +204,8 @@ def _recode_binary(source: pd.Series, yes_code: int = 1, no_code: int = 2) -> pd
     return x.map({yes_code: 1.0, no_code: 0.0}).astype("float64")
 
 
-def run(waves: list[str]) -> dict[str, Any]:
+def run(waves: list[str], community_sensitivity: bool = False,
+        execution_commit: str | None = None) -> dict[str, Any]:
     manifest_path = private_path(REVIEW / "wave45_freeze_manifest_v1.json")
     plan_path = private_path(REVIEW / "wave45_analysis_plan_v1.json")
     register_path = private_path(REVIEW / "wave45_hypothesis_register_v1.csv")
@@ -209,6 +215,9 @@ def run(waves: list[str]) -> dict[str, Any]:
     if frozen.get("status") != "frozen_for_internal_execution" or frozen.get("plan_sha256") != sha256(plan_path) or frozen.get("register_sha256") != sha256(register_path):
         raise ValueError("Frozen plan/register hash binding failed")
     results = {}
+    execution_commit = execution_commit or __import__("subprocess").check_output(
+        ["git", "-C", str(ROOT), "rev-parse", "--short", "HEAD"], text=True
+    ).strip()
     for wave in waves:
         binding = _source_binding(wave)
         if binding != frozen["input_bindings_private"][wave]:
@@ -275,10 +284,10 @@ def run(waves: list[str]) -> dict[str, Any]:
         model_frame = pl.from_pandas(df[model_cols], include_index=False, nan_to_null=True)
         model_frame = add_documented_county_cluster(model_frame, output="__county_psu")
         design = engine.DesignSpec(
-            weight="INDV_weight_ad2", psu="__county_psu", strata=None,
+            weight="INDV_weight_ad2", psu="communityID" if community_sensitivity else "__county_psu", strata=None,
             covariate_sets={"M0_unadjusted": [], "M1_age_sex_residence":
                             ["age_centered", "age_centered_sq", "female", "residence_2", "residence_3", "residence_4"]},
-            scale_outcome=False, variance_limitations=VARIANCE,
+            scale_outcome=False, variance_limitations=COMMUNITY_SENSITIVITY_VARIANCE if community_sensitivity else VARIANCE,
         )
         expected_k = len(e_specs) * len(p_specs)
         registry = [*e_specs, *p_specs]
@@ -320,8 +329,9 @@ def run(waves: list[str]) -> dict[str, Any]:
         expected_rows = expected_k * len(MODELS)
         if len(rows) != expected_rows:
             raise ValueError(f"Wave {wave}: expected {expected_rows} coefficient rows, found {len(rows)}")
-        output = private_path(PRIVATE / "results" / f"wave{wave}_environment_disease_M0_M1_v3_county_stage_private.csv")
-        qa_path = private_path(QA / f"wave{wave}_environment_disease_run_qa_v3_county_stage_private.json")
+        suffix = "community_cluster_sensitivity" if community_sensitivity else "county_stage"
+        output = private_path(PRIVATE / "results" / f"wave{wave}_environment_disease_M0_M1_v3_{suffix}_private.csv")
+        qa_path = private_path(QA / f"wave{wave}_environment_disease_run_qa_v3_{suffix}_private.json")
         if output.exists() or qa_path.exists():
             raise FileExistsError(f"Wave {wave}: result artifacts already exist; refusing overwrite")
         engine.write_rows(rows, output)
@@ -334,7 +344,7 @@ def run(waves: list[str]) -> dict[str, Any]:
             models[model] = {"registered_K_private": expected_k,
                              "row_count_private": len(chosen),
                              "fit_status_private": dict(Counter(r["fit_status"] for r in chosen)),
-                             "approximate_variance_note": design.note()}
+              "approximate_variance_note": design.note()}
         qa = {"scope": "private Wave 4/5 household-environment × cumulative doctor-diagnosed disease scan",
               "created_utc": datetime.now(timezone.utc).isoformat(), "wave": wave,
               "registered_K_per_model_private": expected_k,
@@ -346,7 +356,11 @@ def run(waves: list[str]) -> dict[str, Any]:
               "pair_support_threshold_private": {"minimum_complete_case_n": MIN_MODEL_N, "minimum_distinct_psu": MIN_MODEL_PSU},
               "result_sha256_private": sha256(output), "frozen_plan_sha256": frozen["plan_sha256"],
               "hypothesis_register_sha256": frozen["register_sha256"], "input_bindings_private": binding,
-              "code_commit": frozen["code_commit"], "publication": "not approved; exact results and QA remain private"}
+              "primary_plan_code_commit": frozen["code_commit"],
+              "execution_code_commit": execution_commit,
+              "execution_script_sha256_private": sha256(Path(__file__).resolve()),
+              "variance_sensitivity": "community_cluster_only" if community_sensitivity else "documented_county_stage_primary",
+              "publication": "not approved; exact results and QA remain private"}
         write_json_private(qa_path, qa)
         results[wave] = {"registered_K_per_model": expected_k, "rows": len(rows), "status_counts": dict(statuses)}
     return {"status": "private_wave45_associations_complete", "waves": results}
@@ -359,12 +373,15 @@ def main() -> None:
     group.add_argument("--run", action="store_true")
     parser.add_argument("--wave", choices=("2018", "2020", "both"), default="both")
     parser.add_argument("--code-commit", required=True)
+    parser.add_argument("--community-cluster-sensitivity", action="store_true",
+                        help="run the preplanned lower-stage PSU sensitivity into separate private outputs")
     args = parser.parse_args()
     if args.freeze:
         print(json.dumps(freeze(args.code_commit), ensure_ascii=False))
     else:
         waves = ["2018", "2020"] if args.wave == "both" else [args.wave]
-        print(json.dumps(run(waves), ensure_ascii=False))
+        print(json.dumps(run(waves, community_sensitivity=args.community_cluster_sensitivity,
+                             execution_commit=args.code_commit), ensure_ascii=False))
 
 
 if __name__ == "__main__":
