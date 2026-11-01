@@ -20,10 +20,9 @@ from project_paths import PRIVATE_ROOT, require_private_path
 PRIVATE = PRIVATE_ROOT.resolve()
 RAW = PRIVATE / "results" / "wave1_county_stage_20261101" / "wave1_household_environment_scaleup_results_private.csv"
 PAIR_QA = PRIVATE / "results" / "wave1_county_stage_20261101" / "wave1_household_environment_scaleup_pair_qa_private.csv"
-RUN = PRIVATE / "results" / "wave1_county_stage_20261101" / "wave1_household_environment_scaleup_manifest_private.json"
 CONFIG = PRIVATE / "analysis_review" / "wave1_household_environment_scaleup_model_config.json"
-SCOPE = PRIVATE / "analysis_review" / "wave1_county_stage_scope_manifest_private.json"
-REVIEW = PRIVATE / "analysis_review" / "wave1_county_stage_pair_review_private.json"
+SCOPE = PRIVATE / "analysis_review" / "wave1_county_stage_scope_manifest_private_v2.json"
+REVIEW = PRIVATE / "analysis_review" / "wave1_county_stage_pair_review_private_v2.json"
 INTERNAL_REVIEW_ID = "w1-county-stage-internal-qa-20261101-v1"
 
 
@@ -53,7 +52,16 @@ def aid(plan_id: str, model: str, hypothesis: str, commit: str) -> str:
 
 
 def main() -> None:
-    raw_path, qa_path, run_path, config_path = map(private, (RAW, PAIR_QA, RUN, CONFIG))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--run-dir", type=Path, default=RAW.parent)
+    args = parser.parse_args()
+    run_dir = private(args.run_dir / "wave1_household_environment_scaleup_manifest_private.json")
+    result_dir = run_dir.parent
+    raw_path, qa_path, run_path, config_path = map(private, (
+        result_dir / "wave1_household_environment_scaleup_results_private.csv",
+        result_dir / "wave1_household_environment_scaleup_pair_qa_private.csv",
+        run_dir, CONFIG,
+    ))
     raw, qa = read_csv(raw_path), read_csv(qa_path)
     run, config = json.loads(run_path.read_text(encoding="utf-8")), json.loads(config_path.read_text(encoding="utf-8"))
     if run.get("execution_batch") != "full240" or len(raw) != 240 or len({x.get("hypothesis_id") for x in raw}) != 240:
