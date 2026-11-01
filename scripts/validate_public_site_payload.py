@@ -19,6 +19,7 @@ PUBLIC_VARIANCE_LABELS = {
     "Survey design verified",
     "Approximate variance; official stratum unavailable",
     "Design not fit-ready",
+    "Aggregate withheld under disclosure review",
 }
 RESULT_ROW_FIELDS = {
     "analysis_id", "data_release", "wave", "exposure_concept_id", "exposure_variable",
@@ -76,17 +77,24 @@ def validate_association_payload(payload: object) -> list[str]:
             if not isinstance(analysis_id, str) or not analysis_id or analysis_id in seen_ids:
                 errors.append(f"Association family {family_id} has duplicate or blank analysis IDs")
             seen_ids.add(str(analysis_id))
-            if row.get("disclosure_status") != "approved_public_aggregate":
-                errors.append(f"Association family {family_id} includes a row without disclosure approval")
             if row.get("variance_design") not in PUBLIC_VARIANCE_LABELS:
                 errors.append(f"Association row {analysis_id} has an unsupported public variance-design label")
-            if row.get("fit_status") not in {"success", "nonconvergence", "inestimable", "blocked_design_verification", "blocked_data_access", "blocked_measurement_rule", "code_error"}:
+            if row.get("fit_status") not in {"success", "nonconvergence", "inestimable", "blocked_design_verification", "blocked_data_access", "blocked_measurement_rule", "code_error", "withheld_disclosure"}:
                 errors.append(f"Association row {analysis_id} has unsupported fit_status")
             fit_status = row.get("fit_status")
             variance_design = row.get("variance_design")
+            disclosure_status = row.get("disclosure_status")
+            if fit_status == "withheld_disclosure":
+                if disclosure_status != "withheld" or variance_design != "Aggregate withheld under disclosure review":
+                    errors.append(f"Withheld association row {analysis_id} has inconsistent disclosure status")
+                for field in ("estimate", "standard_error", "ci_lower", "ci_upper", "p_value", "q_value_by", "p_bonferroni", "n_model"):
+                    if row.get(field) not in ("", None):
+                        errors.append(f"Withheld association row {analysis_id} exposes {field}")
+            elif disclosure_status != "approved_public_aggregate":
+                errors.append(f"Association row {analysis_id} lacks aggregate disclosure approval")
             if fit_status == "success" and variance_design == "Design not fit-ready":
                 errors.append(f"Successful association row {analysis_id} cannot be labeled Design not fit-ready")
-            elif fit_status != "success" and variance_design != "Design not fit-ready":
+            elif fit_status not in {"success", "withheld_disclosure"} and variance_design != "Design not fit-ready":
                 errors.append(f"Non-success association row {analysis_id} must be labeled Design not fit-ready")
             if row.get("fit_status") == "success":
                 numeric: dict[str, float] = {}

@@ -174,7 +174,7 @@ function showHeatmapDetail(row){
     ['模型样本量',row.n_model||'—'],
     ['方差方法',row.variance_design||'—'],
     ['可比性等级',row.comparability_grade||'—'],
-    ['拟合状态',row.fit_status==='blocked_measurement_rule'?'测量规则待核实（暂不估计）':row.fit_status],
+    ['拟合状态',row.fit_status==='blocked_measurement_rule'?'测量规则待核实（暂不估计）':row.fit_status==='withheld_disclosure'?'因披露审查抑制数值':row.fit_status],
     ['披露状态',row.disclosure_status],
     ['目标人群',row.target_population||'—'],
   ];
@@ -261,7 +261,7 @@ function renderAssociationHeatmap(rows){
         if(!row||row.fit_status!=='success'){
           td.textContent='—';
           td.className='blocked';
-          if(row)td.title=`${exposure.split('\u0000').join(' · ')} × ${phenotype}：${row.fit_status==='blocked_measurement_rule'?'测量规则待核实（暂不估计）':row.fit_status}`;
+          if(row)td.title=`${exposure.split('\u0000').join(' · ')} × ${phenotype}：${row.fit_status==='blocked_measurement_rule'?'测量规则待核实（暂不估计）':row.fit_status==='withheld_disclosure'?'因披露审查抑制数值':row.fit_status}`;
         } else {
           const value=metric==='q'?row.q_value_by:(metric==='neglog10p'?row.p_value:row.estimate);
           td.textContent=heatmapFormat(value);
@@ -345,9 +345,12 @@ function renderAssociationRows() {
     const fmt=(value,digits=3)=>Number.isFinite(Number(value))?Number(value).toPrecision(digits):'—';
     const effect=item.fit_status==='success'
       ?`${fmt(item.estimate)} (${fmt(item.ci_lower)} to ${fmt(item.ci_upper)})`:'—';
+    const nValue=item.fit_status==='withheld_disclosure'||item.n_model===''? '—' : Number(item.n_model).toLocaleString();
+    const statusLabel=item.fit_status==='withheld_disclosure'?'因披露审查抑制数值':item.fit_status;
     const cells=[`${item.exposure_concept_id} · ${item.exposure_variable}`,item.contrast,
-      `${item.phenotype_concept_id} · ${item.phenotype_variable}`,item.wave,item.model_id,effect,
-      fmt(item.q_value_by),Number(item.n_model).toLocaleString(),item.variance_design];
+      `${item.phenotype_concept_id} · ${item.phenotype_variable}`,item.wave,item.model_id,
+      item.fit_status==='withheld_disclosure'?statusLabel:effect,
+      fmt(item.q_value_by),nValue,item.fit_status==='withheld_disclosure'?statusLabel:item.variance_design];
     for(let index=0;index<cells.length;index++){
       const td=document.createElement('td');td.textContent=String(cells[index]??'—');
       if(index===4)td.title=[item.estimate_type,item.contrast,item.variance_design].filter(Boolean).join(' · ');

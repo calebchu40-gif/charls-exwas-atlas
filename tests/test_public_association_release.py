@@ -51,10 +51,50 @@ class PublicAssociationReleaseTests(unittest.TestCase):
         self.assertNotIn("multiple_testing_family", payload["families"][0]["rows"][0])
         self.assertEqual(validate_association_payload(payload), [])
 
-    def test_any_withheld_hypothesis_withholds_the_whole_family(self) -> None:
+    def test_withheld_row_is_suppressed_but_complete_family_is_retained(self) -> None:
         self.reviews["synthetic-2"]["decision"] = "withheld"
-        with self.assertRaisesRegex(ValueError, "no complete multiplicity family"):
-            build_payload(self.rows, self.reviews, "a" * 64)
+        self.rows[0].update(
+            fit_status="success", estimate="0.2", standard_error="0.1",
+            ci_lower="0.004", ci_upper="0.396", p_value="0.01",
+            q_value_by="0.03", p_bonferroni="0.02", n_model="800",
+            variance_design="Approximate variance; official stratum unavailable",
+        )
+        self.rows[1].update(
+            fit_status="success", estimate="-0.1", standard_error="0.2",
+            ci_lower="-0.492", ci_upper="0.292", p_value="0.5",
+            q_value_by="0.75", p_bonferroni="1", n_model="600",
+            variance_design="Approximate variance; official stratum unavailable",
+        )
+        payload = build_payload(self.rows, self.reviews, "a" * 64)
+        self.assertEqual(len(payload["families"]), 1)
+        self.assertEqual(payload["families"][0]["family_size"], 2)
+        withheld = payload["families"][0]["rows"][1]
+        self.assertEqual(withheld["fit_status"], "withheld_disclosure")
+        self.assertEqual(withheld["disclosure_status"], "withheld")
+        self.assertEqual(withheld["estimate"], "")
+        self.assertEqual(withheld["n_model"], "")
+        self.assertEqual(payload["families"][0]["rows"][0]["q_value_by"], 0.03)
+        self.assertEqual(validate_association_payload(payload), [])
+
+    def test_withheld_row_is_not_given_adjusted_p_values(self) -> None:
+        self.reviews["synthetic-2"]["decision"] = "withheld"
+        self.rows[0].update(
+            fit_status="success", estimate="0.2", standard_error="0.1",
+            ci_lower="0.004", ci_upper="0.396", p_value="0.01",
+            q_value_by="0.03", p_bonferroni="0.02", n_model="800",
+            variance_design="Approximate variance; official stratum unavailable",
+        )
+        self.rows[1].update(
+            fit_status="success", estimate="-0.1", standard_error="0.2",
+            ci_lower="-0.492", ci_upper="0.292", p_value="0.5",
+            q_value_by="0.75", p_bonferroni="1", n_model="600",
+            variance_design="Approximate variance; official stratum unavailable",
+        )
+        payload = build_payload(self.rows, self.reviews, "a" * 64)
+        visible, withheld = payload["families"][0]["rows"]
+        self.assertEqual(visible["p_bonferroni"], 0.02)
+        self.assertEqual(withheld["p_value"], "")
+        self.assertEqual(validate_association_payload(payload), [])
 
     def test_reviews_must_cover_exactly_all_analysis_rows(self) -> None:
         self.reviews.pop("synthetic-2")

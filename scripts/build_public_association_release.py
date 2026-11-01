@@ -3,8 +3,10 @@
 
 This command never reads respondent-level data. It requires the private result
 table and a separate row-level disclosure decision file to be under the
-protected local CHARLS workspace. A whole multiplicity family is withheld if
-any of its hypotheses is withheld; partial families are never exported.
+protected local CHARLS workspace. Every complete multiplicity family remains
+visible, but a withheld row is published only as a hypothesis label/status;
+its numeric result and sample size are suppressed. Multiplicity is recomputed
+over the full K, treating withheld and inestimable rows as p=1 for ranking.
 """
 from __future__ import annotations
 
@@ -22,6 +24,7 @@ from typing import Any
 from project_paths import PRIVATE_ROOT
 from validate_exwas_result_table import validate_csv
 from validate_public_site_payload import validate_association_payload
+from adjust_exwas_pvalues import adjust_pvalues
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -45,6 +48,7 @@ PUBLIC_VARIANCE_LABELS = {
     "verified": "Survey design verified",
     "approximate": "Approximate variance; official stratum unavailable",
     "not_fit_ready": "Design not fit-ready",
+    "withheld": "Aggregate withheld under disclosure review",
 }
 
 
@@ -141,27 +145,44 @@ def build_payload(rows: list[dict[str, str]], reviews: dict[str, dict[str, str]]
         members = families[family_id]
         if len(members) != family_sizes[family_id]:
             raise ValueError(f"family {family_id} is incomplete; public release requires all K rows")
-        # The review is all-or-nothing at family level, preventing a selected
-        # subset from misrepresenting the predeclared multiplicity family.
-        if not all(reviews[row["analysis_id"]]["decision"] == "approved_public_aggregate" for row in members):
-            continue
         public_rows = []
         for row in members:
             public_row = {key: row.get(key, "") for key in PUBLIC_ROW_FIELDS}
-            public_row["variance_design"] = _public_variance_label(row)
-            public_row["disclosure_status"] = "approved_public_aggregate"
-            if row.get("fit_status") != "success":
+            decision = reviews[row["analysis_id"]]["decision"]
+            if decision == "withheld":
+                public_row["fit_status"] = "withheld_disclosure"
+                public_row["variance_design"] = PUBLIC_VARIANCE_LABELS["withheld"]
+                public_row["disclosure_status"] = "withheld"
                 for field in ("estimate", "standard_error", "ci_lower", "ci_upper",
                               "p_value", "q_value_by", "p_bonferroni", "n_model"):
                     public_row[field] = ""
+            else:
+                public_row["variance_design"] = _public_variance_label(row)
+                public_row["disclosure_status"] = "approved_public_aggregate"
+                if row.get("fit_status") != "success":
+                    for field in ("estimate", "standard_error", "ci_lower", "ci_upper",
+                                  "p_value", "q_value_by", "p_bonferroni", "n_model"):
+                        public_row[field] = ""
             public_rows.append(public_row)
+        # Recalculate over the full declared K. Withheld/inestimable rows count
+        # as p=1 for ranking but do not receive a public adjusted value.
+        adjusted = adjust_pvalues([
+            float(row["p_value"]) if row["fit_status"] == "success"
+            and reviews[row["analysis_id"]]["decision"] == "approved_public_aggregate"
+            else None
+            for row in members
+        ])
+        for index, public_row in enumerate(public_rows):
+            if public_row["fit_status"] == "success":
+                public_row["q_value_by"] = adjusted["q_value_by"][index]
+                public_row["p_bonferroni"] = adjusted["p_bonferroni"][index]
         public_families.append({
             "family_id": family_id,
             "family_size": family_sizes[family_id],
             "rows": public_rows,
         })
     if not public_families:
-        raise ValueError("no complete multiplicity family has explicit approval; no public payload created")
+        raise ValueError("no complete multiplicity family was supplied; no public payload created")
     return {
         "schema_version": 1,
         "release_status": "disclosure_reviewed",
