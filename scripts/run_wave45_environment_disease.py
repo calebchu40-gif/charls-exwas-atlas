@@ -30,7 +30,7 @@ import exwas_engine as engine
 ROOT = Path(__file__).resolve().parents[1]
 PRIVATE = PRIVATE_ROOT.resolve()
 TABLES = PRIVATE / "derived_wave_tables"
-REVIEW = PRIVATE / "analysis_review" / "wave45_environment_disease_v1"
+REVIEW = PRIVATE / "analysis_review" / "wave45_environment_disease_v2"
 QA = PRIVATE / "qa_outputs"
 BASE = ("ID", "crosssection", "INDV_weight_ad2", "communityID")
 MODELS = ("M0_unadjusted", "M1_age_sex_residence")
@@ -159,7 +159,7 @@ def freeze(code_commit: str) -> dict[str, Any]:
     if os.name == "posix":
         os.chmod(register_path, 0o600)
     plan = {
-        "plan_id": "wave45_environment_doctor_diagnosis_v1",
+        "plan_id": "wave45_environment_doctor_diagnosis_v2",
         "frozen_at_utc": datetime.now(timezone.utc).isoformat(),
         "authorization_basis": "user-authorized internal analysis in the user's private server workspace",
         "waves": {"2018": {"exposure_contrasts": len(EXPOSURES["2018"]), "outcomes": len(DISEASES["2018"]), "registered_K": len(EXPOSURES["2018"]) * len(DISEASES["2018"])},
@@ -235,8 +235,9 @@ def run(waves: list[str]) -> dict[str, Any]:
         df["age_centered"] = df["age"] - 60.0
         df["age_centered_sq"] = df["age_centered"] ** 2
         loc = pd.to_numeric(df[location_field], errors="coerce")
+        valid_residence = loc.isin([1, 2, 3, 4])
         for level in (2, 3, 4):
-            df[f"residence_{level}"] = loc.map({1: 0.0, level: 1.0})
+            df[f"residence_{level}"] = np.where(valid_residence, loc.eq(level).astype(float), np.nan)
         df = df.merge(disease, on="ID", how="left", validate="one_to_one", sort=False)
         frame_flag = pd.to_numeric(df["crosssection"], errors="coerce")
         if frame_flag.isna().any() or not set(frame_flag.unique()).issubset({0, 1}):
@@ -317,8 +318,8 @@ def run(waves: list[str]) -> dict[str, Any]:
         expected_rows = expected_k * len(MODELS)
         if len(rows) != expected_rows:
             raise ValueError(f"Wave {wave}: expected {expected_rows} coefficient rows, found {len(rows)}")
-        output = private_path(PRIVATE / "results" / f"wave{wave}_environment_disease_M0_M1_private.csv")
-        qa_path = private_path(QA / f"wave{wave}_environment_disease_run_qa_private.json")
+        output = private_path(PRIVATE / "results" / f"wave{wave}_environment_disease_M0_M1_v2_private.csv")
+        qa_path = private_path(QA / f"wave{wave}_environment_disease_run_qa_v2_private.json")
         if output.exists() or qa_path.exists():
             raise FileExistsError(f"Wave {wave}: result artifacts already exist; refusing overwrite")
         engine.write_rows(rows, output)

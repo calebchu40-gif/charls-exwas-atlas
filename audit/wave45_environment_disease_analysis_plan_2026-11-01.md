@@ -24,7 +24,7 @@ Use the route-derived prior-positive/current-routed-yes/current-routed-no diseas
 ## Target and models
 
 - Target frame: `crosssection=1`, the official cross-sectional sample flag, with positive `INDV_weight_ad2`; no automatic age-45 cutoff. Each hypothesis uses pairwise complete cases for the exposure, routed outcome, and selected model covariates.
-- Primary M1: survey-weighted logistic regression, age candidate linear and quadratic, female indicator (`XRGender`: 1 male, 2 female), and current residence indicators (2018 `i000_w4_2`, 2020 `ba008`; categories 2/3/4 relative to category 1). Residence categories are the wave's city/town centre, urban-rural fringe, village, and special area labels.
+- Primary M1: survey-weighted logistic regression, age candidate linear and quadratic, female indicator (`XRGender`: 1 male, 2 female), and current residence indicators (2018 `i000_w4_2`, 2020 `ba008`; categories 2/3/4 relative to category 1). Residence categories are the wave's city/town centre, urban-rural fringe, village, and special area labels. Valid nonreference categories are encoded 1 and all other valid categories 0; invalid residence codes are missing. The city/town centre remains the fixed reference.
 - Secondary M0: survey-weighted unadjusted logistic regression.
 - Sampling: `INDV_weight_ad2`, PSU `communityID`, with-replacement Taylor approximation and no fabricated strata. This is explicitly approximate because released files do not supply the official split-community PSU map or variance strata.
 - Prespecified support gate: fit only when pair/model complete-case N is at least 500 and distinct PSU count is at least 30. Below-threshold hypotheses remain in the family as inestimable; do not lower the threshold after inspecting results.
