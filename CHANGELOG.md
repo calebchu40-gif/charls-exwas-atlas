@@ -2081,3 +2081,15 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Kept the user's selected `communityID` Taylor method as the current primary method and added a same-model 2018/2020 county-prefix clustering comparison to the execution queue. The comparison will quantify sensitivity to cluster level; it will not treat the prefix proxy as an official PSU or select a method based on p-values.
 - The alternative closest to the original design would require official strata, split-PSU mapping and/or replicate weights. Existing files will be searched locally for those fields before the variance comparison is finalized; no third parties will be contacted.
 
+# 2026-11-01 Reset variance plan to official CHARLS design materials
+
+- Updated the active plan following the user's instruction to prioritize official CHARLS guides and released design fields. The earlier community-cluster with-replacement Taylor runs are retained privately as historical comparisons, not designated official-design results.
+- Added a source-first review of official wave guides, target-specific weights/sample flags, PSU stages, split-subcommunity handling, and any official stratum or replicate-weight variables in the already downloaded packages.
+- Required a hash-bound design specification and synthetic software run before rerunning the five registered families. The subsequent real-data rerun will preserve all hypotheses and use wave-specific official target frames/weights.
+- Updated the remaining estimate to 3–6 active workdays, conditional on locating the required design information in the downloaded releases. The existing live families continue to be visibly labeled approximate; no new results will be published until the official-design review and rerun are complete.
+- Confirmed the project already records the NHANES Nature Medicine paper, `chiragjp/nhanespewas` repository, and `pe_catalog.Rmd` links; these are implementation references, not a replacement for CHARLS design rules.
+- Completed metadata-only inventory of Wave 1–5 sample/weight/PSU release tables. It confirmed the wave-specific cross-section flags and person/biomarker weights and found no released stratum or replicate-weight field in the inspected design tables.
+- Validated CHARLS's documented householdID county/community segments against protected identifiers in all five prepared waves. The official county component is consistent as a county-stage key across shared communities; it is not being used as an invented stratum.
+- Ran a synthetic `survey` 4.5 mechanics check: `ids=~county+community` without FPC yields the same covariance as county-only; the community-only variance was also computed as a sensitivity reference. This validates software behavior only.
+- Updated the analysis plan to make the official county/community hierarchy with county-stage WR Taylor the leading release-field approximation, retain community-only WR Taylor as a sensitivity, then rerun the complete registered families after the source design review and hash-bound freeze.
+
