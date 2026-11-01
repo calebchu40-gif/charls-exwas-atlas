@@ -31,11 +31,12 @@ The release is at `https://calebchu40-gif.github.io/charls-exwas-atlas/`. On 202
 ## Remaining execution queue
 
 1. Confirm the live K845 payload and deployment after the current green commit; verify suppressed rows are blank for estimate, SE, CI, p, q, Bonferroni and N, and verify displayed status/variance wording.
-2. Complete one versioned private result-review package: exact inputs/config/code hashes, per-wave family completeness and status counts, coefficient-range and interval checks, county/community sensitivity comparisons, age/settlement/fasting sensitivity inventory, nonconvergence and sparse-category review. Keep all exact QA private.
-3. Recompute any sensitivity-family multiplicity over its full registered family; do not compare thresholded significant-hit counts as a substitute for coefficient/uncertainty comparisons.
-4. Review interpretation wave by wave: no cross-wave causal claim, no incident-disease wording for cumulative self-reported diagnosis, no extrapolation from blood-response complete cases to the full population, and no precision claim beyond the released design variables.
-5. Refresh the release audit and user-facing methods page against the exact deployed payload hash; rerun validators and the full regression suite after any changes.
-6. Write a private completion ledger with the analysis, sensitivity, disclosure and deployment checkpoints. Mark the project complete only after all items above pass; keep this automation active until then or the user's explicit pause.
+2. Complete the official-design feasibility audit described in [`official_design_variance_review_2026-11-01.md`](official_design_variance_review_2026-11-01.md): check for an official variance specification/replicates, county PPS frame order and size measures, and split-community assignment. Test a design-preserving successive-difference/replicate approach only if its required inputs can be sourced and justified. Do not treat sampled-ID sorting or an arbitrary pseudo-stratum as official.
+3. Complete one versioned private result-review package: exact inputs/config/code hashes, per-wave family completeness and status counts, coefficient-range and interval checks, county/community sensitivity comparisons, age/settlement/fasting sensitivity inventory, nonconvergence and sparse-category review. Keep all exact QA private.
+4. Recompute any sensitivity-family multiplicity over its full registered family; do not compare thresholded significant-hit counts as a substitute for coefficient/uncertainty comparisons.
+5. Review interpretation wave by wave: no cross-wave causal claim, no incident-disease wording for cumulative self-reported diagnosis, no extrapolation from blood-response complete cases to the full population, and no precision claim beyond the released design variables.
+6. Refresh the release audit and user-facing methods page against the exact deployed payload hash; rerun validators and the full regression suite after any changes.
+7. Write a private completion ledger with the analysis, sensitivity, disclosure and deployment checkpoints. Mark the project complete only after all items above pass; keep this automation active until then or the user's explicit pause.
 
 ## Remaining-time estimate
 

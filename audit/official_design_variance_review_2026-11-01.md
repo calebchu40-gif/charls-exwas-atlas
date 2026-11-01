@@ -42,6 +42,19 @@ This inventory narrows the next step: each family must follow its registered tar
 4. If the official releases omit a variance input needed for the full design, document the closest estimator directly supported by the official sampling description, compare reasonable sensitivity estimators, and report the resulting inference scope plainly. Never call an approximation an exact official design variance.
 5. Reassess the existing Pages families only after the new design review; publish replacements only after full-family QA and disclosure review.
 
+## Additional estimator comparison prompted by the official sampling description
+
+The official description is more specific than a generic clustered sample: county-level units were ordered on region, urban-district/rural-county type and GDP per capita, then selected by systematic PPS; communities were selected within county. This makes an estimator that preserves the original county ordering a worthwhile candidate to evaluate. It does **not** make an arbitrary grouping of the 150 observed counties an official variance stratum.
+
+| Candidate | Design information it needs | Status for this project |
+|---|---|---|
+| CHARLS-supplied replicate weights or full variance specification | Official replicate factors or released strata/PSU/split-community crosswalk, with the correct wave and estimand | Preferred if located in an official release; none was present in the metadata inventory above. Recheck official documentation before final sign-off. |
+| First-stage Taylor linearization at county | Valid county-stage PSU mapping and the applicable wave/module weight; FPC/strata improve it if released | Current official-guide-aligned available-field primary approximation. It respects the documented first-stage unit better than community-only clustering, but omitting implicit stratification and PPS/FPC means it is not the full design variance. |
+| Successive-difference (SD/SDR) variance or replicate weights based on ordered systematic PPS counties | The actual county frame/order used before selection, relevant size measures/inclusion probabilities, and a replicate construction justified for this design | Evaluate as a possible improvement. Do not manufacture replicate weights from the sampled county IDs alone: the required frame/order and selection information have not yet been verified in the released files. |
+| Community-only WR Taylor | Correct final respondent-to-community PSU, including split sub-neighborhood assignment, and an explicit rationale for omitting county-stage selection | Keep as a comparison sensitivity only. It does not represent the documented first-stage county selection and may miss between-county variance. |
+
+The next variance task is therefore a **feasibility audit**, not a silent method switch: inspect the official guides/codebooks and already-released design files for the county frame/order, size measures, inclusion probabilities, exact split-community assignment, or supplied replicates. If those inputs are available, implement the design-preserving estimator on a small, predeclared set and compare it with the current county-stage Taylor and community-cluster sensitivity. If they are absent, retain the county-stage Taylor approximation as the primary analysis, label its limitations, and preserve the community run as sensitivity. A software trial can validate implementation but cannot establish that its inputs reproduce CHARLS's design.
+
 ## References
 
 - CHARLS, [2011 National Baseline Users' Guide](https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2011-charls-wave1/application/CHARLS_nationalbaseline_users_guide.pdf), sampling and sample-weight sections.
