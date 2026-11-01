@@ -1,3 +1,9 @@
+# 2026-11-01 Add disclosure-reviewed Wave 2 aggregate family to Pages payload
+
+- Completed a hash-bound internal disclosure review of the full Wave 2 K=75 aggregate family using the finalized result, age-bound reconciliation, contrast-support reconciliation, source status, and the existing release allowlist. No participant rows, IDs, or exact support diagnostics were added to the review output or site payload.
+- Rebuilt the aggregate payload with all 75 registered Wave 2 rows alongside the previously reviewed Wave 1 K=240 and 2015 K=225 families. The payload validator and public-site file-boundary check passed; the site continues to label the Wave 2 variance estimate as approximate.
+- Updated the home page to identify the three displayed wave families. Pages deployment and live-content verification are pending.
+
 # 2026-11-01 Finalize private Wave 2 anthropometry family and refresh active plan
 
 - Completed private schema-v3 normalization and family finalization for the full registered 2013 Wave 2 anthropometry K=75 primary family, using the hash-bound age-bound and contrast-support reconciliation artifacts.
