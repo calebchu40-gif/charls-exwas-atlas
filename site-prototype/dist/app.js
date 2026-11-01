@@ -350,6 +350,7 @@ function renderAssociationRows() {
       fmt(item.q_value_by),Number(item.n_model).toLocaleString(),item.variance_design];
     for(let index=0;index<cells.length;index++){
       const td=document.createElement('td');td.textContent=String(cells[index]??'—');
+      if(index===4)td.title=[item.estimate_type,item.contrast,item.variance_design].filter(Boolean).join(' · ');
       if(index===5)td.title=[item.estimate_type,`SE ${item.standard_error}`,`p ${item.p_value}`,`Bonferroni ${item.p_bonferroni}`].filter(Boolean).join(' · ');
       tr.append(td);
     }

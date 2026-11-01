@@ -2007,3 +2007,7 @@ Copied the authorized 2013, 2018, and 2020 All Data archives from local staging 
 - Added a route-aware derivation utility for cumulative doctor-diagnosed disease histories in 2018 and 2020. It hash-checks the protected prepared-table manifest, keeps prior diagnosis and current routed answers distinct, and leaves ambiguous, unsupported, or contradictory routes unresolved.
 - Produces person-level derived fields and exact route QA only beneath the protected private root. It refuses to overwrite existing private artifacts and has not been run because server SSH is currently unavailable.
 - Updated the active plan to queue this protected preparation after the pending Wave 2 age-bound QA.
+
+# 2026-11-02 Clarify association table model tooltips
+
+- Added the estimate type, contrast, and variance method to the model-cell tooltip in the aggregate results table. This surfaces the model metadata on hover and resolves the existing browser-filter CI assertion without changing any result values or public payload.
