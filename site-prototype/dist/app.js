@@ -527,7 +527,7 @@ function renderGroups(all) {
   }
 }
 function renderBrowseCards(containerId,role){
-  const root=byId(containerId);root.replaceChildren();
+  const root=byId(containerId);if(!root)return;root.replaceChildren();
   const card=document.createElement('div');card.className='group-card';
   const title=document.createElement('b');title.textContent='真实关联结果尚未生成';
   const meta=document.createElement('span');meta.textContent='当前目录记录的是CHARLS字段、波次、答案编码和候选概念。完成分析资格、调查设计和统计审查后，才会接入关联结果。';
