@@ -185,10 +185,7 @@ function renderBrowse(mode) {
   }
   const byDisplay = new Map(concepts.map(item => [browseDisplay(item), item]));
   if (!byDisplay.has(input.value)) {
-    const fallback = mode === 'phenotype' ? 'blood_hemoglobin' : 'running_water_at_residence';
-    const preferred = concepts.find(item => item.id === state.concept)
-      || concepts.find(item => item.id === fallback)
-      || concepts[0];
+    const preferred = state.concept ? concepts.find(item => item.id === state.concept) : null;
     input.value = preferred ? browseDisplay(preferred) : '';
   }
   const chosen = byDisplay.get(input.value);
@@ -199,7 +196,18 @@ function renderBrowse(mode) {
     for (const wave of waves) waveSelect.append(new Option(wave, wave));
     waveSelect.dataset.filled = 'true';
   }
-  if (!chosen) return;
+  const chartBox = byId(`browse${prefix}Chart`);
+  const tableWrap = byId(`browse${prefix}Rows`).closest('.tablewrap');
+  if (!chosen) {
+    byId(`browse${prefix}Summary`).textContent = '选择一个概念后显示关联结果';
+    chartBox.replaceChildren();
+    chartBox.hidden = true;
+    if (tableWrap) tableWrap.hidden = true;
+    byId(`browse${prefix}Rows`).replaceChildren();
+    return;
+  }
+  chartBox.hidden = false;
+  if (tableWrap) tableWrap.hidden = false;
   const { rows: filtered, otherKey } = browseFiltered(mode);
   const summary = byId(`browse${prefix}Summary`);
   summary.textContent = `${chosen.id}（${chosen.variable || '变量未记录'}）· ${filtered.length} 条关联`

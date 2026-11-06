@@ -47,6 +47,7 @@ function showView(id) {
     else btn.removeAttribute('aria-current');
   });
   syncHash(id);
+  document.body.dataset.view = id;
   deferredViewLoaders.get(id)?.();
   if (id === 'exposures' || id === 'groups') loadCatalog('e');
   if (id === 'phenotypes') loadCatalog('p');
@@ -400,6 +401,14 @@ function renderAssociationRows() {
   renderAssociationHeatmap(rows);
 }
 
+function showAssociationResults() {
+  const prompt = byId('associationPrompt');
+  if (prompt) prompt.hidden = true;
+  const wrap = byId('associationTableWrap');
+  if (wrap) wrap.hidden = false;
+  renderAssociationRows();
+}
+
 async function renderAssociations() {
   const empty=byId('empty');empty.hidden=false;
   byId('count').textContent='0 条已审查的真实关联结果';
@@ -435,7 +444,7 @@ async function renderAssociations() {
         select.append(new Option(label,value));
       }
       if(values.includes(current))select.value=current;
-      if(!select.dataset.bound){select.addEventListener('change',renderAssociationRows);select.dataset.bound='true'}
+      if(!select.dataset.bound){select.addEventListener('change',showAssociationResults);select.dataset.bound='true'}
     }
     byId('associationFilters').hidden=associationRows.length===0;
     empty.textContent='尚无可展示的真实关联结果。';
@@ -451,16 +460,24 @@ async function renderAssociations() {
     }
     for(const id of ['associationSearch','associationFit','associationSort']){
       const control=byId(id);
-      if(!control.dataset.bound){control.addEventListener(id==='associationSearch'?'input':'change',renderAssociationRows);control.dataset.bound='true'}
+      if(!control.dataset.bound){control.addEventListener(id==='associationSearch'?'input':'change',showAssociationResults);control.dataset.bound='true'}
     }
     const clearButton=byId('associationClear');
     if(clearButton&&!clearButton.dataset.bound){
       clearButton.addEventListener('click',()=>{
         ['associationExposure','associationPhenotype','associationWave','associationModel','associationFit','associationSort'].forEach(id=>byId(id).value='');
-        byId('associationSearch').value='';renderAssociationRows();
+        byId('associationSearch').value='';showAssociationResults();
       });clearButton.dataset.bound='true';
     }
-    renderAssociationRows();
+    byId('associationPrompt').hidden = false;
+    byId('associationTableWrap').hidden = true;
+    byId('associationHeatmap').hidden = true;
+    byId('count').textContent = `${associationRows.length.toLocaleString()} 条结果待查询`;
+    const showAll = byId('associationShowAll');
+    if (showAll && !showAll.dataset.bound) {
+      showAll.addEventListener('click', showAssociationResults);
+      showAll.dataset.bound = 'true';
+    }
   } catch(error) {
     byId('count').textContent='关联结果暂不可用';
     empty.textContent='没有已发布的完整披露审查结果家族，或结果载入失败。候选变量目录仍可正常查询。';
