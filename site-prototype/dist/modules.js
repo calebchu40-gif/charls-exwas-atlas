@@ -1,7 +1,7 @@
 // Special analyses: fuel gradient, jointly adjusted household model and effect
 // modification. Each tab renders one aggregate JSON produced overnight.
 
-const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null, stability: null, anthropometry: null, ageGradient: null, lifestyle: null, strata: null };
+const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null, stability: null, anthropometry: null, ageGradient: null, lifestyle: null, strata: null, replication2015: null };
 
 function moduleNumber(value) {
   const parsed = Number(value);
@@ -73,7 +73,7 @@ async function loadModules() {
     return;
   }
   try {
-    const [gradient, joint, interaction, health, solid, trajectory, replication, stability, anthropometry, ageGradient, lifestyle, strata] = await Promise.all([
+    const [gradient, joint, interaction, health, solid, trajectory, replication, stability, anthropometry, ageGradient, lifestyle, strata, replication2015] = await Promise.all([
       fetch('./fuel_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./joint_household_model_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./effect_modification_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
@@ -86,6 +86,7 @@ async function loadModules() {
       fetch('./age_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./lifestyle_restricted_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./uric_strata_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
+      fetch('./wave2015_solid_fuel_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
     ]);
     moduleData.gradient = gradient;
     moduleData.joint = joint;
@@ -99,6 +100,7 @@ async function loadModules() {
     moduleData.ageGradient = ageGradient;
     moduleData.lifestyle = lifestyle;
     moduleData.strata = strata;
+    moduleData.replication2015 = replication2015;
     renderModules();
   } catch (error) {
     byId('moduleBody').textContent = `专项分析载入失败：${error.message}`;
@@ -188,6 +190,16 @@ function renderModules() {
       { label: 'n', value: row => row.n_model },
     ]));
     byId('moduleNote').textContent = '固体燃料→尿酸在三个 BMI 层几乎相同（−0.21）；肾功能正常者显著，eGFR<60 样本少（396）不显著。';
+  } else if (active === 'replication2015') {
+    target.append(moduleTable(moduleData.replication2015.results, [
+      { label: '波次', value: row => row.wave },
+      { label: '对照', value: row => row.exposure },
+      { label: 'β', value: row => row.estimate.toFixed(3) },
+      { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
+      { label: 'p', value: row => row.p_value < 0.001 ? '<0.001' : row.p_value.toFixed(3) },
+      { label: 'n', value: row => row.n_model },
+    ]));
+    byId('moduleNote').textContent = '2015 波：年龄由出生年推算，性别为 2015 记录，城乡/教育取自 2011 基线；n=1,553。';
   } else if (active === 'trajectory') {
     target.append(moduleTable(moduleData.trajectory.by_wave, [
       { label: '波次', value: row => row.wave },
