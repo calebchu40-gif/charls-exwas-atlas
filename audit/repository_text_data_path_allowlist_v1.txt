@@ -184,6 +184,7 @@ audit/unmapped_phenotype_review_v1.csv
 audit/verified_code_examples_v1.csv
 audit/wave1_household_environment_hypothesis_register_v0.csv
 audit/wave1_pilot105_hypothesis_manifest_draft_2026-10-31.csv
+audit/results_table_pack_2026-11-02.csv
 audit/wave_module_source_estimand_weight_gate_crosswalk_v1.csv
 audit/work_exposure_crosswalk_v1.csv
 audit/work_exposure_value_labels_v1.csv
