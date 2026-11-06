@@ -1,7 +1,7 @@
 // Special analyses: fuel gradient, jointly adjusted household model and effect
 // modification. Each tab renders one aggregate JSON produced overnight.
 
-const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null, stability: null, anthropometry: null, ageGradient: null, lifestyle: null, strata: null, replication2015: null };
+const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null, stability: null, anthropometry: null, ageGradient: null, lifestyle: null, strata: null, replication2015: null, anthropometryFull: null };
 
 function moduleNumber(value) {
   const parsed = Number(value);
@@ -73,7 +73,7 @@ async function loadModules() {
     return;
   }
   try {
-    const [gradient, joint, interaction, health, solid, trajectory, replication, stability, anthropometry, ageGradient, lifestyle, strata, replication2015] = await Promise.all([
+    const [gradient, joint, interaction, health, solid, trajectory, replication, stability, anthropometry, ageGradient, lifestyle, strata, replication2015, anthropometryFull] = await Promise.all([
       fetch('./fuel_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./joint_household_model_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./effect_modification_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
@@ -87,6 +87,7 @@ async function loadModules() {
       fetch('./lifestyle_restricted_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./uric_strata_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./wave2015_solid_fuel_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
+      fetch('./wave2013_solid_fuel_full_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
     ]);
     moduleData.gradient = gradient;
     moduleData.joint = joint;
@@ -101,6 +102,7 @@ async function loadModules() {
     moduleData.lifestyle = lifestyle;
     moduleData.strata = strata;
     moduleData.replication2015 = replication2015;
+    moduleData.anthropometryFull = anthropometryFull;
     renderModules();
   } catch (error) {
     byId('moduleBody').textContent = `专项分析载入失败：${error.message}`;
@@ -200,6 +202,16 @@ function renderModules() {
       { label: 'n', value: row => row.n_model },
     ]));
     byId('moduleNote').textContent = '2015 波：年龄由出生年推算，性别为 2015 记录，城乡/教育取自 2011 基线；n=1,553。';
+  } else if (active === 'anthropometryfull') {
+    target.append(moduleTable(moduleData.anthropometryFull.results, [
+      { label: '结局', value: row => row.outcome },
+      { label: 'β', value: row => row.estimate.toFixed(3) },
+      { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
+      { label: 'p', value: row => row.p_value < 0.001 ? '<0.001' : row.p_value.toFixed(3) },
+      { label: 'n', value: row => row.n_model },
+    ]));
+    byId('moduleNote').textContent = '2013 加 2011 基线城乡/教育后：身高 −0.099、体重 −0.157、BMI −0.133，'
+      + '比未调整教育时（−0.138/−0.196/−0.158）普遍减弱，支持部分为社会经济混杂。';
   } else if (active === 'trajectory') {
     target.append(moduleTable(moduleData.trajectory.by_wave, [
       { label: '波次', value: row => row.wave },

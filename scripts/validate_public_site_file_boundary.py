@@ -33,6 +33,7 @@ ALLOWED_RELATIVE_PATHS = {
     "replication_v1.json",
     "network_stability_v1.json",
     "wave2013_solid_fuel_v1.json",
+    "wave2013_solid_fuel_full_v1.json",
     "wave2015_solid_fuel_v1.json",
     "age_gradient_v1.json",
     "lifestyle_restricted_v1.json",
