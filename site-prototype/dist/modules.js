@@ -1,7 +1,7 @@
 // Special analyses: fuel gradient, jointly adjusted household model and effect
 // modification. Each tab renders one aggregate JSON produced overnight.
 
-const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null, stability: null, anthropometry: null, ageGradient: null, lifestyle: null, strata: null, replication2015: null, anthropometryFull: null, calibration: null };
+const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null, stability: null, anthropometry: null, ageGradient: null, lifestyle: null, strata: null, replication2015: null, anthropometryFull: null, calibration: null, forest: null };
 
 function moduleNumber(value) {
   const parsed = Number(value);
@@ -73,7 +73,7 @@ async function loadModules() {
     return;
   }
   try {
-    const [gradient, joint, interaction, health, solid, trajectory, replication, stability, anthropometry, ageGradient, lifestyle, strata, replication2015, anthropometryFull, calibration] = await Promise.all([
+    const [gradient, joint, interaction, health, solid, trajectory, replication, stability, anthropometry, ageGradient, lifestyle, strata, replication2015, anthropometryFull, calibration, forest] = await Promise.all([
       fetch('./fuel_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./joint_household_model_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./effect_modification_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
@@ -89,6 +89,7 @@ async function loadModules() {
       fetch('./wave2015_solid_fuel_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./wave2013_solid_fuel_full_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./pvalue_calibration_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
+      fetch('./evidence_forest_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
     ]);
     moduleData.gradient = gradient;
     moduleData.joint = joint;
@@ -105,10 +106,45 @@ async function loadModules() {
     moduleData.replication2015 = replication2015;
     moduleData.anthropometryFull = anthropometryFull;
     moduleData.calibration = calibration;
+    moduleData.forest = forest;
     renderModules();
   } catch (error) {
     byId('moduleBody').textContent = `专项分析载入失败：${error.message}`;
   }
+}
+
+
+const SVG_NS = 'http://www.w3.org/2000/svg';
+
+function svgNode(tag, attrs) {
+  const node = document.createElementNS(SVG_NS, tag);
+  for (const [key, value] of Object.entries(attrs || {})) node.setAttribute(key, String(value));
+  return node;
+}
+
+function renderForest(payload) {
+  const entries = payload.entries;
+  const width = 900, labelWidth = 320, plotWidth = width - labelWidth - 40, rowHeight = 24;
+  const height = entries.length * rowHeight + 56;
+  const values = entries.flatMap(row => [row.ci_lower, row.ci_upper]);
+  const min = Math.min(...values, 0), max = Math.max(...values, 0);
+  const span = max - min || 1;
+  const x = value => labelWidth + ((value - min) / span) * plotWidth;
+  const svg = svgNode('svg', { viewBox: `0 0 ${width} ${height}`, width: '100%', class: 'forest' });
+
+  svg.append(svgNode('line', { x1: x(0), x2: x(0), y1: 12, y2: height - 12,
+    stroke: '#9fb3bf', 'stroke-dasharray': '3 3' }));
+  entries.forEach((row, index) => {
+    const y = 28 + index * rowHeight;
+    const label = svgNode('text', { x: 0, y: y + 4, 'font-size': 12, fill: '#2d4857' });
+    label.textContent = row.label;
+    svg.append(label);
+    svg.append(svgNode('line', { x1: x(row.ci_lower), x2: x(row.ci_upper), y1: y, y2: y,
+      stroke: '#7f9aa8', 'stroke-width': 1.5 }));
+    svg.append(svgNode('circle', { cx: x(row.estimate), cy: y, r: 4,
+      fill: row.estimate < 0 ? '#1f5f8b' : '#b26a2c' }));
+  });
+  return svg;
 }
 
 function renderModules() {
@@ -225,6 +261,12 @@ function renderModules() {
     ]));
     byId('moduleNote').textContent = 'λ 普遍远高于 1：结局相关、家庭社会经济共同因子与家族经过筛选都会抬高 λ；'
       + '这不等于计算错误，但说明本图集是探索性、不可作确证性解读。';
+  } else if (active === 'forest') {
+    target.append(renderForest(moduleData.forest));
+    const gradient = moduleData.forest.gradient;
+    byId('moduleNote').textContent = `共 ${moduleData.forest.summary.entries} 条证据，`
+      + `${moduleData.forest.summary.negative} 条为负向；梯度项（每等级 ${gradient.estimate.toFixed(3)}）量纲不同，未画入。`
+      + '结局为尿酸（标准化 β）。';
   } else if (active === 'trajectory') {
     target.append(moduleTable(moduleData.trajectory.by_wave, [
       { label: '波次', value: row => row.wave },
