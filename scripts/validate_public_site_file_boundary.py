@@ -21,6 +21,8 @@ ALLOWED_RELATIVE_PATHS = {
     ".nojekyll",
     "app.js",
     "browse.js",
+    "exposure_network_v1.json",
+    "network.js",
     "behavior_exposures_v1.json",
     "blood_biomarkers_v1.json",
     "cancer_sites_v1.json",
