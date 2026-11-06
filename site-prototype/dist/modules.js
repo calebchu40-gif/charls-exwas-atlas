@@ -79,7 +79,7 @@ async function loadModules() {
       fetch('./effect_modification_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./health_index_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./solid_fuel_blood_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
-      fetch('./trajectories_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
+      fetch('./trajectories_v1.json?v=2', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./replication_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./network_stability_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./wave2013_solid_fuel_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
@@ -171,9 +171,10 @@ function renderModules() {
       { label: '基线年龄', value: row => row.band },
       { label: '自评健康', value: row => row.srh === null ? '—' : row.srh.toFixed(2) },
       { label: '自评记忆', value: row => row.memory === null ? '—' : row.memory.toFixed(2) },
+      { label: 'BMI', value: row => row.bmi === null || row.bmi === undefined ? '—' : row.bmi.toFixed(1) },
       { label: 'n', value: row => row.n },
     ]));
-    byId('moduleNote').textContent = '1=差 5=好；按 2011 年龄分层；2018 无 da001、2020 字段含义变化，未纳入。';
+    byId('moduleNote').textContent = '1=差 5=好；BMI 由实测身高体重计算；按 2011 年龄分层；2018 无 da001、2020 字段含义变化，未纳入。';
   } else {
     target.append(moduleTable(moduleData.solid.results, [
       { label: '结局', value: row => row.phenotype_concept_id },

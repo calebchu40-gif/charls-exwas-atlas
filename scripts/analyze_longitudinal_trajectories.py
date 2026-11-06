@@ -66,6 +66,8 @@ def main(argv: list[str] | None = None) -> int:
         _, meta = pyreadstat.read_dta(str(PRIVATE_ROOT / relative), metadataonly=True)
         weight_field = next((name for name in candidates if name in meta.column_names), None)
         columns = ["ID", "da001", "dc004"] + ([weight_field] if weight_field else [])
+        if {"qi002", "ql002"} <= set(meta.column_names):
+            columns += ["qi002", "ql002"]
         frame, _ = pyreadstat.read_dta(str(PRIVATE_ROOT / relative), usecols=columns)
         if weight_field:
             frame = frame.rename(columns={weight_field: "weight"})
@@ -81,6 +83,14 @@ def main(argv: list[str] | None = None) -> int:
             frame[column] = pd.to_numeric(frame[column], errors="coerce")
         frame["srh"] = np.where(frame["da001"].between(1, 5), 6 - frame["da001"], np.nan)
         frame["memory"] = np.where(frame["dc004"].between(1, 5), 6 - frame["dc004"], np.nan)
+        if "qi002" in frame.columns and "ql002" in frame.columns:
+            height = pd.to_numeric(frame["qi002"], errors="coerce")
+            height = np.where(height < 3, height * 100, height)
+            weight = pd.to_numeric(frame["ql002"], errors="coerce")
+            valid = (height >= 100) & (height <= 250) & (weight >= 20) & (weight <= 300)
+            frame["bmi"] = np.where(valid, weight / (height / 100.0) ** 2, np.nan)
+        else:
+            frame["bmi"] = np.nan
         frames[wave] = frame
 
     by_wave = []
@@ -94,18 +104,19 @@ def main(argv: list[str] | None = None) -> int:
                 "band": label,
                 "srh": weighted_mean(subset["srh"].to_numpy(float), subset["weight"].to_numpy(float)),
                 "memory": weighted_mean(subset["memory"].to_numpy(float), subset["weight"].to_numpy(float)),
+                "bmi": weighted_mean(subset["bmi"].to_numpy(float), subset["weight"].to_numpy(float)),
                 "n": int(subset[["srh"]].notna().sum().iloc[0]),
             })
 
     changes = []
     ordered = list(WAVES)
     for left, right in zip(ordered, ordered[1:]):
-        merged = frames[left][["ID", "srh", "memory"]].merge(
-            frames[right][["ID", "srh", "memory"]], on="ID", suffixes=("_left", "_right"))
+        merged = frames[left][["ID", "srh", "memory", "bmi"]].merge(
+            frames[right][["ID", "srh", "memory", "bmi"]], on="ID", suffixes=("_left", "_right"))
         merged = merged.merge(frames[right][["ID", "weight"]], on="ID", how="left")
         if merged.empty:
             continue
-        for field in ("srh", "memory"):
+        for field in ("srh", "memory", "bmi"):
             delta = (merged[f"{field}_right"] - merged[f"{field}_left"]).to_numpy(float)
             changes.append({
                 "from": left,
