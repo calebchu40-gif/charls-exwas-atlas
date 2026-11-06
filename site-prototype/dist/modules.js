@@ -1,7 +1,7 @@
 // Special analyses: fuel gradient, jointly adjusted household model and effect
 // modification. Each tab renders one aggregate JSON produced overnight.
 
-const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null, stability: null, anthropometry: null, ageGradient: null, lifestyle: null, strata: null, replication2015: null, anthropometryFull: null, calibration: null, forest: null, gradient2015: null, mental: null };
+const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null, stability: null, anthropometry: null, ageGradient: null, lifestyle: null, strata: null, replication2015: null, anthropometryFull: null, calibration: null, forest: null, gradient2015: null, mental: null, sleep: null };
 
 function moduleNumber(value) {
   const parsed = Number(value);
@@ -73,7 +73,7 @@ async function loadModules() {
     return;
   }
   try {
-    const [gradient, joint, interaction, health, solid, trajectory, replication, stability, anthropometry, ageGradient, lifestyle, strata, replication2015, anthropometryFull, calibration, forest, gradient2015, mental] = await Promise.all([
+    const [gradient, joint, interaction, health, solid, trajectory, replication, stability, anthropometry, ageGradient, lifestyle, strata, replication2015, anthropometryFull, calibration, forest, gradient2015, mental, sleep] = await Promise.all([
       fetch('./fuel_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./joint_household_model_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./effect_modification_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
@@ -92,6 +92,7 @@ async function loadModules() {
       fetch('./evidence_forest_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./wave2015_fuel_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./mental_health_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
+      fetch('./sleep_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
     ]);
     moduleData.gradient = gradient;
     moduleData.joint = joint;
@@ -111,6 +112,7 @@ async function loadModules() {
     moduleData.forest = forest;
     moduleData.gradient2015 = gradient2015;
     moduleData.mental = mental;
+    moduleData.sleep = sleep;
     renderModules();
   } catch (error) {
     byId('moduleBody').textContent = `专项分析载入失败：${error.message}`;
@@ -292,6 +294,17 @@ function renderModules() {
     ]));
     byId('moduleNote').textContent = '抑郁（CES-D 0–30）、连续减 7、自评记忆对七类家庭暴露：自来水与天然气方向更好、'
       + '秸秆木材更差；21 项中 8 项过 q<0.05，探索性。';
+  } else if (active === 'sleep') {
+    target.append(moduleTable(moduleData.sleep.results, [
+      { label: '结局', value: row => row.outcome },
+      { label: '暴露', value: row => row.exposure },
+      { label: row => row.measure === 'OR' ? 'OR' : 'β', value: row => row.estimate.toFixed(3) },
+      { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
+      { label: 'q', value: row => row.q_value_by < 0.001 ? '<0.001' : row.q_value_by.toFixed(3) },
+      { label: 'n', value: row => row.n_model },
+    ]));
+    byId('moduleNote').textContent = '21 项全部未过 q<0.05（最强为秸秆木材→长睡眠 OR 1.54，q=0.061）。'
+      + '这是一个阴性域，说明前两组关联并非"所有结局都关联"。';
   } else if (active === 'trajectory') {
     target.append(moduleTable(moduleData.trajectory.by_wave, [
       { label: '波次', value: row => row.wave },
