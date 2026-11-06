@@ -41,6 +41,20 @@
     .browse-chart{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:14px;overflow:auto}
     .browse-legend{margin:6px 0 0;color:var(--muted);font-size:11px}
     @media(max-width:900px){.browse-controls{grid-template-columns:1fr}}
+
+    .entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:8px 0 22px}
+    .entry-card{display:flex;flex-direction:column;gap:8px;padding:22px 22px 18px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow)}
+    .entry-card .kicker{font-size:12px;font-weight:750;letter-spacing:.12em;color:var(--teal-dark);text-transform:uppercase}
+    .entry-card h3{margin:0;font-size:20px}
+    .entry-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+    .entry-card .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:10px}
+    .entry-card .links button{border:1px solid #c9d7de;background:#f7fafb;border-radius:7px;padding:7px 11px;font-size:12px;color:#24505f;cursor:pointer}
+    .entry-card .links button:hover{background:#eaf4f5}
+    .home-more{margin-top:18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .home-more>summary{cursor:pointer;padding:14px 18px;font-weight:650;color:#24485a;font-size:14px}
+    .home-more[open]>summary{border-bottom:1px solid var(--line)}
+    .home-more-inner{padding:4px 18px 10px}
+    @media(max-width:900px){.entry-grid{grid-template-columns:1fr}}
   </style>
   <style>.pair-result-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}.pair-candidate-card{padding:16px;border:1px solid var(--line);border-radius:10px;background:white;min-width:0}.pair-candidate-card h3{margin:0 0 10px;font-size:15px}.pair-fields{display:grid;gap:8px}.pair-field{padding:9px 10px;border-radius:7px;background:#f5f8fa;font-size:12px}.pair-field strong{color:var(--navy)}.pair-note{margin-top:12px;color:var(--muted);font-size:12px}@media(max-width:700px){.pair-result-grid{grid-template-columns:1fr}}</style>
   <style id="association-heatmap-style">
@@ -86,7 +100,7 @@
     <section class="hero"><div class="shell hero-grid">
     <div class="eyebrow">CHARLS · 中国中老年健康与环境图谱</div>
     <h1>从生活环境，查到健康指标</h1>
-    <p class="lede">参考 NHANES Phenome–Exposome Atlas 的查询逻辑，整理 CHARLS 各波次的环境、行为、社会情境与健康表型。先查变量，再逐步建立经过审查的关联图谱。</p>
+    <p class="lede">CHARLS 2011–2020 的暴露—表型关联图谱：先查指标，再看证据。</p>
 
     <div class="atlas-figure" role="img" aria-label="CHARLS 表型—暴露图谱示意">
 <svg viewBox="0 0 1000 250" xmlns="http://www.w3.org/2000/svg">
@@ -124,19 +138,22 @@
   </g>
 </svg>
     </div>
-    <div class="status" role="note"><strong>当前版本：2011–2020 五波关联分析</strong><span>2011、2013、2015、2018 和 2020 五波共 845 项预登记主假设均已运行；模型按波次分别估计，结果表保留全部假设。页面仅显示通过披露审查的汇总结果；受访者记录和精确 QA 留在受控服务器。</span></div>
+    <div class="status" role="note"><strong>当前版本：2011–2020 五波关联分析</strong><span>五波 845 项预登记主假设；仅展示披露审查后的汇总结果，不含个体记录。</span></div>
     <div class="stats" aria-label="目录进度">
       <div class="stat"><b>1,319</b><span>暴露候选概念</span></div>
       <div class="stat"><b>332</b><span>表型候选概念</span></div>
       <div class="stat"><b>5</b><span>调查波次：2011–2020</span></div>
       <div class="stat"><b>845</b><span>五波预登记主分析假设</span></div>
     </div>
-    <p class="stats-note">五轮常规主调查去重后共有 1,625 个 E/P 候选概念，其中 26 个同时承担暴露与表型角色；8,341 条概念—源字段映射是目录对应关系，不是样本量或关联结果。2014生命历程特殊调查单独展示，不计入上述五波统计。E 是广义解释变量候选，涵盖社区/住房、饮食与行为、社会经济/工作/保障，也包含内部血液生物标志物；1,319 不代表环境化学物数量。</p>
+    <p class="stats-note">1,625 个 E/P 候选概念 · 8,341 条概念—源字段映射；E 为广义解释变量，不等同于环境化学物。</p>
   </div></section>
   <main class="shell">
         <nav class="viewnav" aria-label="主要浏览">
       <div class="primary-nav">
         <button type="button" data-view="overview" aria-current="page">首页</button>
+        <button type="button" data-view="byPhenotype">按表型浏览</button>
+        <button type="button" data-view="byExposure">按暴露浏览</button>
+        <button type="button" data-view="groups">按暴露组浏览</button>
         <button type="button" data-view="exposures">暴露目录</button>
         <button type="button" data-view="phenotypes">表型目录</button>
         <button type="button" data-view="associations">关联矩阵</button>
@@ -150,19 +167,42 @@
       </div></details>
     </nav>
     <section class="view overview-view" id="overview">
-      <div class="intro-layout">
-        <div><div class="eyebrow">如何使用这张图谱</div><h2>先找指标，再看证据</h2><p class="view-lede">借鉴 NHANES Atlas 的检索和结果浏览方式；CHARLS 2011、2013 人体测量和 2015 血检关联结果已载入；按各波的样本标记、权重和变量路由分别估计。</p></div>
-        <div class="intro-callout"><b>现在能做什么</b><p>按关键词、代码、类别和波次查找候选变量，并查看它来自哪个问卷模块、答案如何编码、有哪些可比性限制。</p></div>
-      </div>
-      <div class="path-grid">
-        <article class="path-card"><span class="step">01</span><h3>查暴露</h3><p>生活行为、住房与燃料、社区环境、社会情境等候选指标。</p><button type="button" class="text-button" data-view="exposures">打开暴露目录 →</button></article>
-        <article class="path-card"><span class="step">02</span><h3>查表型</h3><p>慢病、实验室检查、认知、功能与健康自评等候选指标。</p><button type="button" class="text-button" data-view="phenotypes">打开表型目录 →</button></article>
-        <article class="path-card muted-card"><span class="step">03</span><h3>看关联</h3><p>五波主分析结果均已载入；效应按波次估计，不合并跨波次系数。结果表保留完整 K=845 假设家族，受抑制行不显示数值。</p><button type="button" class="text-button" data-view="associations">查看关联图谱状态 →</button></article>
-      </div>
-      <section class="wave-schedule" aria-labelledby="waveScheduleTitle"><div class="eyebrow">五轮主调查 · 2011–2020</div><h2 id="waveScheduleTitle">同一指标不会每波都测</h2><p>各波问卷、体测和实验室项目不同；以下按 CHARLS 官方指南与已发布文件列出可确认的血液检测安排和测量边界。</p><div class="wave-grid"><article class="wave-card"><b>2011 · 基线</b><strong>现场体测 + 静脉血</strong><p>有独立血检数据与专用样本权重；胱抑素C为年龄分层检测。</p></article><article class="wave-card"><b>2013 · Wave 2</b><strong>现场体测；无采血</strong><p>官方发布说明将 Biomarker.dta 定义为人体测量；本轮无静脉血化验，并提供横断面 Biomarker_weight。人体测量关联 K=75 已完成并载入图谱。部分活动题为随机子样本。</p></article><article class="wave-card"><b>2015 · Wave 3</b><strong>现场体测 + 静脉血</strong><p>血检为独立发布文件，使用专用 Blood_weight；登记的 K=225 血检关联已完成并载入图谱。</p></article><article class="wave-card"><b>2018 · Wave 4</b><strong>访谈 + 认知评估</strong><p>HCAP仅用于60岁及以上；官方指南记载非血液生物标志物在前3波收集，官方发布清单未列血检文件。</p></article><article class="wave-card"><b>2020 · Wave 5</b><strong>访谈 + COVID模块</strong><p>官方文件清单未列独立 Biomarker/Blood Data；不据此推断未发布的检验变量。</p></article></div><div class="wave-caveat">来源核对提示：<a href="https://biomarker-network.isr.umich.edu/studies-with-biomarkers/charls/" target="_blank" rel="noopener">NIA Biomarker Network</a>称2018/2020也采过血，与当前CHARLS官方指南和数据目录不一致。本站暂只列有官方字段文件支持的2011/2015血检；若后续取得CHARLS官方数据文件、字典和权重说明，再更新此表。<br>官方依据：<a href="https://charls.pku.edu.cn/en/Data/a2011_CHARLS_Wave1__Baseline_.htm" target="_blank" rel="noopener">2011</a> · <a href="https://charls.pku.edu.cn/en/data/Release2013.pdf" target="_blank" rel="noopener">2013发布说明</a> · <a href="https://charls.pku.edu.cn/en/data/Blood2015.pdf" target="_blank" rel="noopener">2015血检说明</a> · <a href="https://charls.pku.edu.cn/en/data/User2018.pdf" target="_blank" rel="noopener">2018用户指南</a> · <a href="https://charls.pku.edu.cn/en/Data/a2018_CHARLS_Wave_4.htm" target="_blank" rel="noopener">2018数据清单</a> · <a href="https://charls.charlsdata.com/pages/Data/2020-charls-wave5/en.html" target="_blank" rel="noopener">2020数据清单</a></div><button type="button" class="text-button" data-view="bloodBiomarkers">打开血液生物标志物字段目录 →</button></section>
+      <div class="entry-grid">
+  <article class="entry-card">
+    <span class="kicker">Browse</span>
+    <h3>浏览</h3>
+    <p>按表型或暴露查指标：一个概念对应的全部关联、源字段、波次与可比性限制。</p>
+    <div class="links">
+      <button type="button" data-view="exposures">暴露目录</button>
+      <button type="button" data-view="phenotypes">表型目录</button>
+    </div>
+  </article>
+  <article class="entry-card">
+    <span class="kicker">Analyze</span>
+    <h3>分析</h3>
+    <p>845 项预登记主假设的效应、置信区间与多重检验结果；按波次与模型查看完整矩阵。</p>
+    <div class="links">
+      <button type="button" data-view="associations">关联矩阵</button>
+      <button type="button" data-view="candidatePairExplorer">候选配对</button>
+    </div>
+  </article>
+  <article class="entry-card">
+    <span class="kicker">Data</span>
+    <h3>数据与方法</h3>
+    <p>目录、权重与方差方案、披露审查边界，以及每一波的测量与目标人群说明。</p>
+    <div class="links">
+      <button type="button" data-view="metadata">方法与限制</button>
+      <a href="https://github.com/calebchu40-gif/charls-exwas-atlas" target="_blank" rel="noopener"><button type="button">代码仓库 ↗</button></a>
+    </div>
+  </article>
+</div>
+      <details class="home-more"><summary>五波设计、来源核对与方法限制</summary><div class="home-more-inner">
+<p class="view-lede">五轮常规主调查去重后共有 1,625 个 E/P 候选概念，其中 26 个同时承担暴露与表型角色；8,341 条概念—源字段映射是目录对应关系，不是样本量或关联结果。2014生命历程特殊调查单独展示，不计入上述五波统计。E 是广义解释变量候选，涵盖社区/住房、饮食与行为、社会经济/工作/保障，也包含内部血液生物标志物；1,319 不代表环境化学物数量。</p>
+<section class="wave-schedule" aria-labelledby="waveScheduleTitle"><div class="eyebrow">五轮主调查 · 2011–2020</div><h2 id="waveScheduleTitle">同一指标不会每波都测</h2><p>各波问卷、体测和实验室项目不同；以下按 CHARLS 官方指南与已发布文件列出可确认的血液检测安排和测量边界。</p><div class="wave-grid"><article class="wave-card"><b>2011 · 基线</b><strong>现场体测 + 静脉血</strong><p>有独立血检数据与专用样本权重；胱抑素C为年龄分层检测。</p></article><article class="wave-card"><b>2013 · Wave 2</b><strong>现场体测；无采血</strong><p>官方发布说明将 Biomarker.dta 定义为人体测量；本轮无静脉血化验，并提供横断面 Biomarker_weight。人体测量关联 K=75 已完成并载入图谱。部分活动题为随机子样本。</p></article><article class="wave-card"><b>2015 · Wave 3</b><strong>现场体测 + 静脉血</strong><p>血检为独立发布文件，使用专用 Blood_weight；登记的 K=225 血检关联已完成并载入图谱。</p></article><article class="wave-card"><b>2018 · Wave 4</b><strong>访谈 + 认知评估</strong><p>HCAP仅用于60岁及以上；官方指南记载非血液生物标志物在前3波收集，官方发布清单未列血检文件。</p></article><article class="wave-card"><b>2020 · Wave 5</b><strong>访谈 + COVID模块</strong><p>官方文件清单未列独立 Biomarker/Blood Data；不据此推断未发布的检验变量。</p></article></div><div class="wave-caveat">来源核对提示：<a href="https://biomarker-network.isr.umich.edu/studies-with-biomarkers/charls/" target="_blank" rel="noopener">NIA Biomarker Network</a>称2018/2020也采过血，与当前CHARLS官方指南和数据目录不一致。本站暂只列有官方字段文件支持的2011/2015血检；若后续取得CHARLS官方数据文件、字典和权重说明，再更新此表。<br>官方依据：<a href="https://charls.pku.edu.cn/en/Data/a2011_CHARLS_Wave1__Baseline_.htm" target="_blank" rel="noopener">2011</a> · <a href="https://charls.pku.edu.cn/en/data/Release2013.pdf" target="_blank" rel="noopener">2013发布说明</a> · <a href="https://charls.pku.edu.cn/en/data/Blood2015.pdf" target="_blank" rel="noopener">2015血检说明</a> · <a href="https://charls.pku.edu.cn/en/data/User2018.pdf" target="_blank" rel="noopener">2018用户指南</a> · <a href="https://charls.pku.edu.cn/en/Data/a2018_CHARLS_Wave_4.htm" target="_blank" rel="noopener">2018数据清单</a> · <a href="https://charls.charlsdata.com/pages/Data/2020-charls-wave5/en.html" target="_blank" rel="noopener">2020数据清单</a></div><button type="button" class="text-button" data-view="bloodBiomarkers">打开血液生物标志物字段目录 →</button></section>
       <section class="life-history-promo" aria-labelledby="lifeHistoryPromoTitle"><div><div class="eyebrow">补充调查 · 不属于常规第五波序列</div><h3 id="lifeHistoryPromoTitle">2014 生命历程回顾性调查</h3><p>单独目录当前包含195个候选概念组、6,103条概念—字段映射（E字段6,042条、P字段61条），覆盖父母/兄弟姐妹与家庭背景、教育史、工作史、居住/迁移、财富和健康史等领域。模块字段按官方代码本逐项映射或明确暂缓/排除；教育史1,077/1,105个字段映射、工作史1,968/2,024个字段映射，家庭信息模块469/473个字段映射。字段槽位和路由分支不是独立科学概念；家庭史报告不是受访者临床表型，死亡字段不是代表性死亡率。</p><div class="wave-caveat">官方发行说明称样本包括前两轮存活纵向样本、Wave 1刷新样本及尝试补访的未应答者，可能包含45岁以下个体；该调查没有权重。Wave 1 ID需按2013发布说明调整后才能链接。查看 <a href="https://charls.charlsdata.com/pages/Data/2014-charls-wave3/en.html" target="_blank" rel="noopener">CHARLS官方数据页与文件</a>。此目录与常规五波分开检索，不纳入常规加权关联模型。</div></div><button type="button" class="text-button" data-view="lifeHistoryExposures">打开2014生命历程目录 →</button></section>
       <section class="scope-section"><div><div class="eyebrow">读图前请留意</div><h2>CHARLS 与 NHANES 的数据类型不同</h2><p>CHARLS 的环境候选以问卷报告的住房、燃料、社区和生活情境为主。E 类还包括饮食/行为、社会经济、工作与社会保障等广义解释变量及内部生物标志物，因此不能把1,208个E概念等同于环境污染物。社区计数、家庭条件、个人行为和客观实验室指标测量层级不同，不能统称为个人污染暴露，也不能因字段存在就认为能直接估计关联。</p></div><div class="scope-tags"><span>逐波次定义</span><span>问卷路由</span><span>家庭 / 社区层级</span><span>调查设计</span><span>多重检验</span></div></section>
-    </section>
+    </div></details>
+</section>
     <section class="view" id="candidatePairExplorer" hidden><h2>候选暴露—表型配对查询</h2><p class="view-lede">选择同波次配对，或探索2011基线社区环境候选与后续波次表型的目录级组合，并查看CHARLS源字段。这里不展示关联结果。</p><div class="catalog-note">配对数是同波次概念目录的笛卡尔组合，排除了同一概念与自身配对。它不代表有实际样本、有效样本量、字段都适用于同一受访者或统计上可分析。尚未纳入个体记录、配对可用样本量、效应估计、置信区间或P值；正式分析前仍须逐项核查调查资格、路由、特殊码、权重与方差设计。</div><div class="catalog-tools"><div class="field"><label for="candidatePairDesign">配对设计</label><select id="candidatePairDesign"><option value="same-wave">同波次暴露—表型</option><option value="baseline-community">2011基线社区—后续表型</option></select></div><div class="field"><label for="candidatePairWave">调查波次 / 随访波次</label><select id="candidatePairWave"><option>2011</option><option>2013</option><option>2015</option><option>2018</option><option>2020</option></select></div><div class="field"><label for="candidateExposure">暴露候选概念</label><input id="candidateExposure" list="candidateExposureOptions" placeholder="搜索概念名称或代码"></div><div class="field"><label for="candidatePhenotype">表型候选概念</label><input id="candidatePhenotype" list="candidatePhenotypeOptions" placeholder="搜索概念名称或代码"></div><datalist id="candidateExposureOptions"></datalist><datalist id="candidatePhenotypeOptions"></datalist></div><div id="candidatePairStatus" class="catalog-meta" aria-live="polite"></div><div id="candidatePairLongitudinalNote" class="catalog-note" hidden>跨波次候选设计依据CHARLS用户指南中社区ID可与前序波次对应ID匹配的说明。此页不执行ID连接，也未连接个人迁移史或判断具体迁居状态、目的地。CHARLS Wave 4指南称会尽量追访迁居者，不论其搬到哪里。基线社区指标仅代表基线社区背景，不能解释为随访时的现居环境或个人剂量。正式分析前需核查各波正式文件、迁移信息、样本资格、失访、权重及方差设计。官方依据：<a href="https://charls.pku.edu.cn/en/data/Release2013.pdf" target="_blank" rel="noopener">2013 Wave 2发布说明</a>、<a href="https://charls.pku.edu.cn/en/data/User2018.pdf" target="_blank" rel="noopener">2018 Wave 4用户指南</a>、<a href="https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2020-charls-wave5/application/CHARLS_2020_User_Guide_English.pdf" target="_blank" rel="noopener">2020 Wave 5用户指南</a>。</div><div id="candidatePairWarning" class="catalog-note" hidden></div><div class="pair-result-grid"><section class="pair-candidate-card"><h3 id="candidateExposureHeading">暴露源字段</h3><div id="candidateExposureFields" class="pair-fields"><p>选择暴露概念以查看映射字段。</p></div></section><section class="pair-candidate-card"><h3 id="candidatePhenotypeHeading">表型源字段</h3><div id="candidatePhenotypeFields" class="pair-fields"><p>选择表型概念以查看映射字段。</p></div></section></div></section>
     <section class="view" id="associations" hidden>
       <div class="section-head"><div><h2>关联结果浏览器</h2><p>展示完整预设结果家族，按暴露、表型、波次和模型查看效应量、置信区间、样本量与多重检验校正。</p></div></div>
