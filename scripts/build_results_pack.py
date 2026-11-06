@@ -180,6 +180,47 @@ def main() -> int:
             memory = "—" if row["memory"] is None else f"{row['memory']:.2f}"
             sections.append(f"| {row['wave']} | {row['band']} | {srh} | {memory} | {bmi} | {row['n']} |")
 
+
+    # 11. mental health
+    data = load("mental_health_v1.json")
+    if data:
+        sections.append("\n## 11. 心理健康与认知（2011）\n")
+        sections.append("| 结局 | 暴露 | β | 95% CI | q | n |")
+        sections.append("|---|---|---|---|---|---|")
+        for row in [item for item in data["results"] if item["q_value_by"] < 0.05]:
+            sections.append(f"| {row['outcome']} | {row['exposure']} | {fmt(row['estimate'])} | "
+                            f"{fmt(row['ci_lower'])} – {fmt(row['ci_upper'])} | "
+                            f"{plain(row['q_value_by'])} | {row['n_model']} |")
+            add("mental_health", row["exposure"], row["outcome"], row["estimate"],
+                row["ci_lower"], row["ci_upper"], row["p_value"], row["q_value_by"], row["n_model"])
+
+    # 12. sleep null domain
+    data = load("sleep_v1.json")
+    if data:
+        sections.append("\n## 12. 睡眠（阴性域，全部 q>0.05）\n")
+        sections.append("| 结局 | 暴露 | 效应 | p | q | n |")
+        sections.append("|---|---|---|---|---|---|")
+        for row in data["results"][:8]:
+            sections.append(f"| {row['outcome']} | {row['exposure']} | {row['measure']} "
+                            f"{fmt(row['estimate'])} | {plain(row['p_value'])} | "
+                            f"{plain(row['q_value_by'])} | {row['n_model']} |")
+            add("sleep", row["exposure"], row["outcome"], row["estimate"],
+                row["ci_lower"], row["ci_upper"], row["p_value"], row["q_value_by"], row["n_model"])
+
+    # 13. 2015 gradient
+    data = load("wave2015_fuel_gradient_v1.json")
+    if data:
+        sections.append("\n## 13. 2015 燃料梯度（功效不足）\n")
+        sections.append("| 结局 | 每等级 β | 95% CI | q | n |")
+        sections.append("|---|---|---|---|---|")
+        for row in data["results"]:
+            sections.append(f"| {row['phenotype_concept_id']} | {fmt(row['estimate'])} | "
+                            f"{fmt(row['ci_lower'])} – {fmt(row['ci_upper'])} | "
+                            f"{plain(row['q_value_by'])} | {row['n_model']} |")
+            add("wave2015_gradient", "cooking_fuel_rank", row["phenotype_concept_id"],
+                row["estimate"], row["ci_lower"], row["ci_upper"], row["p_value"],
+                row["q_value_by"], row["n_model"])
+
     MD.write_text("\n".join(sections) + "\n", encoding="utf-8")
     with CSV_OUT.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=["analysis", "exposure", "outcome", "estimate",
