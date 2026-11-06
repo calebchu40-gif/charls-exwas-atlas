@@ -1,7 +1,7 @@
 // Special analyses: fuel gradient, jointly adjusted household model and effect
 // modification. Each tab renders one aggregate JSON produced overnight.
 
-const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null };
+const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null };
 
 function moduleNumber(value) {
   const parsed = Number(value);
@@ -73,13 +73,14 @@ async function loadModules() {
     return;
   }
   try {
-    const [gradient, joint, interaction, health, solid, trajectory] = await Promise.all([
+    const [gradient, joint, interaction, health, solid, trajectory, replication] = await Promise.all([
       fetch('./fuel_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./joint_household_model_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./effect_modification_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./health_index_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./solid_fuel_blood_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./trajectories_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
+      fetch('./replication_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
     ]);
     moduleData.gradient = gradient;
     moduleData.joint = joint;
@@ -87,6 +88,7 @@ async function loadModules() {
     moduleData.health = health;
     moduleData.solid = solid;
     moduleData.trajectory = trajectory;
+    moduleData.replication = replication;
     renderModules();
   } catch (error) {
     byId('moduleBody').textContent = `专项分析载入失败：${error.message}`;
@@ -115,6 +117,19 @@ function renderModules() {
       { label: 'p', value: row => row.p < 0.001 ? '<0.001' : row.p.toFixed(3) },
     ]));
     byId('moduleNote').textContent = '健康指数 = 收缩压、BMI、连续减 7、自评健康、自评记忆 五项 z 分均值（0–100）；n=10,071。';
+  } else if (active === 'replication') {
+    const rows = [...moduleData.replication.pairs].sort(
+      (a, b) => (a.q_2015 ?? 1) - (b.q_2015 ?? 1)).slice(0, 40);
+    target.append(moduleTable(rows, [
+      { label: '暴露', value: row => row.exposure_concept_id },
+      { label: '结局', value: row => row.phenotype_concept_id },
+      { label: 'β 2011', value: row => row.beta_2011.toFixed(3) },
+      { label: 'β 2015', value: row => row.beta_2015.toFixed(3) },
+      { label: 'q 2015', value: row => (row.q_2015 ?? 1) < 0.001 ? '<0.001' : (row.q_2015 ?? 1).toFixed(3) },
+      { label: '同向', value: row => row.same_sign ? '是' : '否' },
+    ]));
+    byId('moduleNote').textContent = `105 项在 2015 全部可匹配：同向 ${moduleData.replication.same_sign}/105，`
+      + `Pearson r=${moduleData.replication.pearson_r}，两波 q 均<0.05 的有 ${moduleData.replication.q_both_below_05} 项。`;
   } else if (active === 'trajectory') {
     target.append(moduleTable(moduleData.trajectory.by_wave, [
       { label: '波次', value: row => row.wave },
