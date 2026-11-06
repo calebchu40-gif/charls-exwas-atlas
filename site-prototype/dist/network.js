@@ -67,16 +67,26 @@ function renderNetwork(payload) {
     }
     body.append(tr);
   }
-  byId('networkCount').textContent = `${nodes.length} 个暴露 · ${edges.length} 条 |ρ|≥${payload.min_abs_r} 且 q<${payload.alpha} 的边 · n=${payload.n_rows.toLocaleString()}`;
+  const dropped = payload.dropped_nodes && payload.dropped_nodes.length
+    ? ` · 本波无以下字段：${payload.dropped_nodes.join('、')}`
+    : '';
+  byId('networkCount').textContent = `${payload.wave} 年 · ${nodes.length} 个暴露 · ${edges.length} 条 |ρ|≥${payload.min_abs_r} 且 q<${payload.alpha} 的边 · n=${payload.n_rows.toLocaleString()}${dropped}`;
 }
 
-async function loadNetwork() {
-  if (byId('networkCanvas').dataset.loaded) return;
+const networkCache = new Map();
+
+async function loadNetwork(wave) {
+  const target = wave || byId('networkWave')?.value || '2011';
+  if (networkCache.has(target)) {
+    renderNetwork(networkCache.get(target));
+    return;
+  }
+  byId('networkCount').textContent = `正在载入 ${target} 网络…`;
   try {
-    const response = await fetch('./exposure_network_v1.json?v=1', { cache: 'no-cache' });
+    const response = await fetch(`./exposure_network_${target}_v1.json?v=1`, { cache: 'no-cache' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const payload = await response.json();
-    byId('networkCanvas').dataset.loaded = 'true';
+    networkCache.set(target, payload);
     renderNetwork(payload);
   } catch (error) {
     byId('networkCount').textContent = `网络数据载入失败：${error.message}`;
@@ -84,5 +94,7 @@ async function loadNetwork() {
 }
 
 document.querySelectorAll('[data-view="network"]').forEach(button =>
-  button.addEventListener('click', () => setTimeout(loadNetwork, 0)));
-if (location.hash === '#network') setTimeout(loadNetwork, 300);
+  button.addEventListener('click', () => setTimeout(() => loadNetwork(), 0)));
+const networkWave = byId('networkWave');
+if (networkWave) networkWave.addEventListener('change', () => loadNetwork(networkWave.value));
+if (location.hash === '#network') setTimeout(() => loadNetwork(), 300);

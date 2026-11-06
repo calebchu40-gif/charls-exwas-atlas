@@ -1,0 +1,230 @@
+{
+ "schema_version": 1,
+ "wave": "2013",
+ "method": "weighted Spearman on ranks; BH across pairs",
+ "min_abs_r": 0.15,
+ "alpha": 0.05,
+ "n_rows": 10657,
+ "nodes": [
+  {
+   "id": "water",
+   "label": "自来水",
+   "group": "住房"
+  },
+  {
+   "id": "electricity",
+   "label": "通电",
+   "group": "住房"
+  },
+  {
+   "id": "piped_gas",
+   "label": "管道燃气",
+   "group": "住房"
+  },
+  {
+   "id": "heating",
+   "label": "有供暖",
+   "group": "住房"
+  },
+  {
+   "id": "urban",
+   "label": "城镇",
+   "group": "社区"
+  },
+  {
+   "id": "education",
+   "label": "教育年限组",
+   "group": "社会经济"
+  },
+  {
+   "id": "smoker",
+   "label": "吸烟",
+   "group": "行为"
+  },
+  {
+   "id": "drinker",
+   "label": "饮酒",
+   "group": "行为"
+  },
+  {
+   "id": "fuel_coal",
+   "label": "炊事：煤",
+   "group": "燃料"
+  },
+  {
+   "id": "fuel_gas",
+   "label": "炊事：天然气",
+   "group": "燃料"
+  },
+  {
+   "id": "fuel_marsh",
+   "label": "炊事：沼气",
+   "group": "燃料"
+  },
+  {
+   "id": "fuel_lpg",
+   "label": "炊事：液化气",
+   "group": "燃料"
+  },
+  {
+   "id": "fuel_wood",
+   "label": "炊事：秸秆/木柴",
+   "group": "燃料"
+  }
+ ],
+ "edges": [
+  {
+   "source": "water",
+   "target": "piped_gas",
+   "rho": 0.2219,
+   "n": 10625,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "water",
+   "target": "urban",
+   "rho": 0.322,
+   "n": 10628,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "water",
+   "target": "fuel_gas",
+   "rho": 0.2059,
+   "n": 10619,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "water",
+   "target": "fuel_wood",
+   "rho": -0.2832,
+   "n": 10619,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "piped_gas",
+   "target": "heating",
+   "rho": 0.3709,
+   "n": 10627,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "piped_gas",
+   "target": "urban",
+   "rho": 0.3419,
+   "n": 10630,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "piped_gas",
+   "target": "fuel_gas",
+   "rho": 0.6921,
+   "n": 10622,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "piped_gas",
+   "target": "fuel_lpg",
+   "rho": -0.159,
+   "n": 10622,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "piped_gas",
+   "target": "fuel_wood",
+   "rho": -0.2584,
+   "n": 10622,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "heating",
+   "target": "urban",
+   "rho": 0.2426,
+   "n": 10629,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "heating",
+   "target": "fuel_gas",
+   "rho": 0.3246,
+   "n": 10621,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "heating",
+   "target": "fuel_wood",
+   "rho": -0.1857,
+   "n": 10621,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "urban",
+   "target": "fuel_gas",
+   "rho": 0.3612,
+   "n": 10624,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "urban",
+   "target": "fuel_lpg",
+   "rho": 0.1674,
+   "n": 10624,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "urban",
+   "target": "fuel_wood",
+   "rho": -0.4073,
+   "n": 10624,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "fuel_coal",
+   "target": "fuel_wood",
+   "rho": -0.2006,
+   "n": 10624,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "fuel_gas",
+   "target": "fuel_lpg",
+   "rho": -0.2265,
+   "n": 10624,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "fuel_gas",
+   "target": "fuel_wood",
+   "rho": -0.333,
+   "n": 10624,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "fuel_lpg",
+   "target": "fuel_wood",
+   "rho": -0.3126,
+   "n": 10624,
+   "p": 0.0,
+   "q": 0.0
+  }
+ ],
+ "dropped_nodes": []
+}

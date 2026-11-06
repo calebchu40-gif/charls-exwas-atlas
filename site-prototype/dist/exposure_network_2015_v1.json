@@ -1,0 +1,179 @@
+{
+ "schema_version": 1,
+ "wave": "2015",
+ "method": "weighted Spearman on ranks; BH across pairs",
+ "min_abs_r": 0.15,
+ "alpha": 0.05,
+ "n_rows": 15824,
+ "nodes": [
+  {
+   "id": "water",
+   "label": "自来水",
+   "group": "住房"
+  },
+  {
+   "id": "piped_gas",
+   "label": "管道燃气",
+   "group": "住房"
+  },
+  {
+   "id": "heating",
+   "label": "有供暖",
+   "group": "住房"
+  },
+  {
+   "id": "smoker",
+   "label": "吸烟",
+   "group": "行为"
+  },
+  {
+   "id": "drinker",
+   "label": "饮酒",
+   "group": "行为"
+  },
+  {
+   "id": "fuel_coal",
+   "label": "炊事：煤",
+   "group": "燃料"
+  },
+  {
+   "id": "fuel_gas",
+   "label": "炊事：天然气",
+   "group": "燃料"
+  },
+  {
+   "id": "fuel_marsh",
+   "label": "炊事：沼气",
+   "group": "燃料"
+  },
+  {
+   "id": "fuel_lpg",
+   "label": "炊事：液化气",
+   "group": "燃料"
+  },
+  {
+   "id": "fuel_wood",
+   "label": "炊事：秸秆/木柴",
+   "group": "燃料"
+  }
+ ],
+ "edges": [
+  {
+   "source": "water",
+   "target": "piped_gas",
+   "rho": 0.1811,
+   "n": 15795,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "water",
+   "target": "fuel_gas",
+   "rho": 0.2,
+   "n": 15788,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "water",
+   "target": "fuel_wood",
+   "rho": -0.2592,
+   "n": 15788,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "piped_gas",
+   "target": "heating",
+   "rho": 0.3753,
+   "n": 15791,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "piped_gas",
+   "target": "fuel_gas",
+   "rho": 0.6982,
+   "n": 15781,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "piped_gas",
+   "target": "fuel_lpg",
+   "rho": -0.1772,
+   "n": 15781,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "piped_gas",
+   "target": "fuel_wood",
+   "rho": -0.2932,
+   "n": 15781,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "heating",
+   "target": "fuel_gas",
+   "rho": 0.327,
+   "n": 15784,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "heating",
+   "target": "fuel_wood",
+   "rho": -0.1848,
+   "n": 15784,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "smoker",
+   "target": "drinker",
+   "rho": 0.3869,
+   "n": 9335,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "fuel_coal",
+   "target": "fuel_wood",
+   "rho": -0.1519,
+   "n": 15788,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "fuel_gas",
+   "target": "fuel_lpg",
+   "rho": -0.2687,
+   "n": 15788,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "fuel_gas",
+   "target": "fuel_wood",
+   "rho": -0.3568,
+   "n": 15788,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "fuel_lpg",
+   "target": "fuel_wood",
+   "rho": -0.2727,
+   "n": 15788,
+   "p": 0.0,
+   "q": 0.0
+  }
+ ],
+ "dropped_nodes": [
+  "electricity",
+  "urban",
+  "education"
+ ]
+}

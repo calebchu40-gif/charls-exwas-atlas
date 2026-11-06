@@ -9,80 +9,67 @@
   {
    "id": "water",
    "label": "自来水",
-   "group": "住房",
-   "field": "i017"
+   "group": "住房"
   },
   {
    "id": "electricity",
    "label": "通电",
-   "group": "住房",
-   "field": "i016"
+   "group": "住房"
   },
   {
    "id": "piped_gas",
    "label": "管道燃气",
-   "group": "住房",
-   "field": "i019"
+   "group": "住房"
   },
   {
    "id": "heating",
    "label": "有供暖",
-   "group": "住房",
-   "field": "i020"
-  },
-  {
-   "id": "fuel_coal",
-   "label": "炊事：煤",
-   "group": "燃料",
-   "field": "i022"
-  },
-  {
-   "id": "fuel_gas",
-   "label": "炊事：天然气",
-   "group": "燃料",
-   "field": "i022"
-  },
-  {
-   "id": "fuel_marsh",
-   "label": "炊事：沼气",
-   "group": "燃料",
-   "field": "i022"
-  },
-  {
-   "id": "fuel_lpg",
-   "label": "炊事：液化气",
-   "group": "燃料",
-   "field": "i022"
-  },
-  {
-   "id": "fuel_wood",
-   "label": "炊事：秸秆/木柴",
-   "group": "燃料",
-   "field": "i022"
+   "group": "住房"
   },
   {
    "id": "urban",
    "label": "城镇",
-   "group": "社区",
-   "field": "urban_nbs"
+   "group": "社区"
   },
   {
    "id": "education",
    "label": "教育年限组",
-   "group": "社会经济",
-   "field": "bd001"
+   "group": "社会经济"
   },
   {
    "id": "smoker",
    "label": "吸烟",
-   "group": "行为",
-   "field": "da059"
+   "group": "行为"
   },
   {
    "id": "drinker",
    "label": "饮酒",
-   "group": "行为",
-   "field": "da067"
+   "group": "行为"
+  },
+  {
+   "id": "fuel_coal",
+   "label": "炊事：煤",
+   "group": "燃料"
+  },
+  {
+   "id": "fuel_gas",
+   "label": "炊事：天然气",
+   "group": "燃料"
+  },
+  {
+   "id": "fuel_marsh",
+   "label": "炊事：沼气",
+   "group": "燃料"
+  },
+  {
+   "id": "fuel_lpg",
+   "label": "炊事：液化气",
+   "group": "燃料"
+  },
+  {
+   "id": "fuel_wood",
+   "label": "炊事：秸秆/木柴",
+   "group": "燃料"
   }
  ],
  "edges": [
@@ -112,6 +99,22 @@
   },
   {
    "source": "water",
+   "target": "urban",
+   "rho": 0.3545,
+   "n": 11366,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "water",
+   "target": "education",
+   "rho": 0.1914,
+   "n": 11355,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "water",
    "target": "fuel_gas",
    "rho": 0.2335,
    "n": 11364,
@@ -135,34 +138,10 @@
    "q": 0.0
   },
   {
-   "source": "water",
-   "target": "urban",
-   "rho": 0.3545,
-   "n": 11366,
-   "p": 0.0,
-   "q": 0.0
-  },
-  {
-   "source": "water",
-   "target": "education",
-   "rho": 0.1914,
-   "n": 11355,
-   "p": 0.0,
-   "q": 0.0
-  },
-  {
    "source": "electricity",
    "target": "piped_gas",
    "rho": 0.1672,
    "n": 11360,
-   "p": 0.0,
-   "q": 0.0
-  },
-  {
-   "source": "electricity",
-   "target": "fuel_wood",
-   "rho": -0.1853,
-   "n": 11361,
    "p": 0.0,
    "q": 0.0
   },
@@ -175,26 +154,18 @@
    "q": 0.0
   },
   {
+   "source": "electricity",
+   "target": "fuel_wood",
+   "rho": -0.1853,
+   "n": 11361,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
    "source": "piped_gas",
    "target": "heating",
    "rho": 0.3867,
    "n": 11367,
-   "p": 0.0,
-   "q": 0.0
-  },
-  {
-   "source": "piped_gas",
-   "target": "fuel_gas",
-   "rho": 0.7398,
-   "n": 11366,
-   "p": 0.0,
-   "q": 0.0
-  },
-  {
-   "source": "piped_gas",
-   "target": "fuel_wood",
-   "rho": -0.3141,
-   "n": 11366,
    "p": 0.0,
    "q": 0.0
   },
@@ -215,18 +186,18 @@
    "q": 0.0
   },
   {
-   "source": "heating",
+   "source": "piped_gas",
    "target": "fuel_gas",
-   "rho": 0.4116,
-   "n": 11368,
+   "rho": 0.7398,
+   "n": 11366,
    "p": 0.0,
    "q": 0.0
   },
   {
-   "source": "heating",
+   "source": "piped_gas",
    "target": "fuel_wood",
-   "rho": -0.2368,
-   "n": 11368,
+   "rho": -0.3141,
+   "n": 11366,
    "p": 0.0,
    "q": 0.0
   },
@@ -243,6 +214,86 @@
    "target": "education",
    "rho": 0.2493,
    "n": 11358,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "heating",
+   "target": "fuel_gas",
+   "rho": 0.4116,
+   "n": 11368,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "heating",
+   "target": "fuel_wood",
+   "rho": -0.2368,
+   "n": 11368,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "urban",
+   "target": "education",
+   "rho": 0.3247,
+   "n": 11428,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "urban",
+   "target": "fuel_gas",
+   "rho": 0.3426,
+   "n": 11369,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "urban",
+   "target": "fuel_lpg",
+   "rho": 0.2188,
+   "n": 11369,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "urban",
+   "target": "fuel_wood",
+   "rho": -0.4636,
+   "n": 11369,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "education",
+   "target": "drinker",
+   "rho": 0.1729,
+   "n": 10497,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "education",
+   "target": "fuel_gas",
+   "rho": 0.2464,
+   "n": 11358,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "education",
+   "target": "fuel_wood",
+   "rho": -0.2898,
+   "n": 11358,
+   "p": 0.0,
+   "q": 0.0
+  },
+  {
+   "source": "smoker",
+   "target": "drinker",
+   "rho": 0.4369,
+   "n": 10507,
    "p": 0.0,
    "q": 0.0
   },
@@ -271,76 +322,13 @@
    "q": 0.0
   },
   {
-   "source": "fuel_gas",
-   "target": "urban",
-   "rho": 0.3426,
-   "n": 11369,
-   "p": 0.0,
-   "q": 0.0
-  },
-  {
-   "source": "fuel_gas",
-   "target": "education",
-   "rho": 0.2464,
-   "n": 11358,
-   "p": 0.0,
-   "q": 0.0
-  },
-  {
    "source": "fuel_lpg",
    "target": "fuel_wood",
    "rho": -0.3527,
    "n": 11369,
    "p": 0.0,
    "q": 0.0
-  },
-  {
-   "source": "fuel_lpg",
-   "target": "urban",
-   "rho": 0.2188,
-   "n": 11369,
-   "p": 0.0,
-   "q": 0.0
-  },
-  {
-   "source": "fuel_wood",
-   "target": "urban",
-   "rho": -0.4636,
-   "n": 11369,
-   "p": 0.0,
-   "q": 0.0
-  },
-  {
-   "source": "fuel_wood",
-   "target": "education",
-   "rho": -0.2898,
-   "n": 11358,
-   "p": 0.0,
-   "q": 0.0
-  },
-  {
-   "source": "urban",
-   "target": "education",
-   "rho": 0.3247,
-   "n": 11428,
-   "p": 0.0,
-   "q": 0.0
-  },
-  {
-   "source": "education",
-   "target": "drinker",
-   "rho": 0.1729,
-   "n": 10497,
-   "p": 0.0,
-   "q": 0.0
-  },
-  {
-   "source": "smoker",
-   "target": "drinker",
-   "rho": 0.4369,
-   "n": 10507,
-   "p": 0.0,
-   "q": 0.0
   }
- ]
+ ],
+ "dropped_nodes": []
 }

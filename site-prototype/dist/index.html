@@ -162,6 +162,7 @@
         <button type="button" data-view="phenotypes">表型目录</button>
         <button type="button" data-view="associations">关联矩阵</button>
         <button type="button" data-view="network">互作网络</button>
+        <button type="button" data-view="crosswave">跨波一致性</button>
         <button type="button" data-view="metadata">测量与设计元数据</button>
       </div>
       <details class="special-nav"><summary>更多专题目录</summary><div class="special-nav-menu">
@@ -172,11 +173,23 @@
       </div></details>
     </nav>
     <section class="view overview-view" id="overview">
-      <div class="entry-grid"><section class="entry-col"><h3>浏览入口</h3><button type="button" class="entry-item" data-view="byPhenotype"><span class="bar b1"></span><span><b>表型探索</b><span class="desc">按表型查看关联暴露</span></span><span class="arrow">→</span></button><button type="button" class="entry-item" data-view="byExposure"><span class="bar b2"></span><span><b>暴露探索</b><span class="desc">按暴露查看关联表型</span></span><span class="arrow">→</span></button><button type="button" class="entry-item" data-view="groups"><span class="bar b3"></span><span><b>暴露组</b><span class="desc">按类别浏览暴露</span></span><span class="arrow">→</span></button><button type="button" class="entry-item" data-view="exposures"><span class="bar b4"></span><span><b>暴露目录</b><span class="desc">1,319 个候选概念</span></span><span class="arrow">→</span></button><button type="button" class="entry-item" data-view="phenotypes"><span class="bar b5"></span><span><b>表型目录</b><span class="desc">332 个候选概念</span></span><span class="arrow">→</span></button></section><section class="entry-col"><h3>分析入口</h3><button type="button" class="entry-item" data-view="associations"><span class="bar b1"></span><span><b>关联矩阵</b><span class="desc">950 条结果 · 热图与表格</span></span><span class="arrow">→</span></button><button type="button" class="entry-item" data-view="candidatePairExplorer"><span class="bar b2"></span><span><b>候选配对</b><span class="desc">目录级 E×P 组合</span></span><span class="arrow">→</span></button><button type="button" class="entry-item" data-view="network"><span class="bar b4"></span><span><b>互作网络</b><span class="desc">暴露—暴露相关网络</span></span><span class="arrow">→</span></button><button type="button" class="entry-item"  aria-disabled="true"><span class="bar b5"></span><span><b>纵向轨迹</b><span class="desc">跨波指标轨迹 · 即将上线</span></span><span class="arrow">·</span></button></section><section class="entry-col"><h3>复用入口</h3><button type="button" class="entry-item" data-view="associations"><span class="bar b3"></span><span><b>下载中心</b><span class="desc">导出 CSV · 图表导出</span></span><span class="arrow">→</span></button><a class="entry-item" href="https://github.com/calebchu40-gif/charls-exwas-atlas" target="_blank" rel="noopener"><span class="bar b1"></span><span><b>代码与文档</b><span class="desc">GitHub 仓库 · 方法与限制</span></span><span class="arrow">↗</span></a><button type="button" class="entry-item"  aria-disabled="true"><span class="bar b2"></span><span><b>API</b><span class="desc">只读结果接口 · 即将上线</span></span><span class="arrow">·</span></button></section></div>
+      <div class="entry-grid"><section class="entry-col"><h3>浏览入口</h3><button type="button" class="entry-item" data-view="byPhenotype"><span class="bar b1"></span><span><b>表型探索</b><span class="desc">按表型查看关联暴露</span></span><span class="arrow">→</span></button><button type="button" class="entry-item" data-view="byExposure"><span class="bar b2"></span><span><b>暴露探索</b><span class="desc">按暴露查看关联表型</span></span><span class="arrow">→</span></button><button type="button" class="entry-item" data-view="groups"><span class="bar b3"></span><span><b>暴露组</b><span class="desc">按类别浏览暴露</span></span><span class="arrow">→</span></button><button type="button" class="entry-item" data-view="exposures"><span class="bar b4"></span><span><b>暴露目录</b><span class="desc">1,319 个候选概念</span></span><span class="arrow">→</span></button><button type="button" class="entry-item" data-view="phenotypes"><span class="bar b5"></span><span><b>表型目录</b><span class="desc">332 个候选概念</span></span><span class="arrow">→</span></button></section><section class="entry-col"><h3>分析入口</h3><button type="button" class="entry-item" data-view="associations"><span class="bar b1"></span><span><b>关联矩阵</b><span class="desc">950 条结果 · 热图与表格</span></span><span class="arrow">→</span></button><button type="button" class="entry-item" data-view="candidatePairExplorer"><span class="bar b2"></span><span><b>候选配对</b><span class="desc">目录级 E×P 组合</span></span><span class="arrow">→</span></button><button type="button" class="entry-item" data-view="crosswave"><span class="bar b3"></span><span><b>跨波一致性</b><span class="desc">同对跨波随机效应合并</span></span><span class="arrow">→</span></button><button type="button" class="entry-item" data-view="network"><span class="bar b4"></span><span><b>互作网络</b><span class="desc">暴露—暴露相关网络</span></span><span class="arrow">→</span></button><button type="button" class="entry-item"  aria-disabled="true"><span class="bar b5"></span><span><b>纵向轨迹</b><span class="desc">跨波指标轨迹 · 即将上线</span></span><span class="arrow">·</span></button></section><section class="entry-col"><h3>复用入口</h3><button type="button" class="entry-item" data-view="associations"><span class="bar b3"></span><span><b>下载中心</b><span class="desc">导出 CSV · 图表导出</span></span><span class="arrow">→</span></button><a class="entry-item" href="https://github.com/calebchu40-gif/charls-exwas-atlas" target="_blank" rel="noopener"><span class="bar b1"></span><span><b>代码与文档</b><span class="desc">GitHub 仓库 · 方法与限制</span></span><span class="arrow">↗</span></a><button type="button" class="entry-item"  aria-disabled="true"><span class="bar b2"></span><span><b>API</b><span class="desc">只读结果接口 · 即将上线</span></span><span class="arrow">·</span></button></section></div>
       </section>
-    <section class="view" id="network" hidden>
+    <section class="view" id="crosswave" hidden>
+<h2>跨波一致性</h2>
+<p class="view-lede">同一暴露—表型对在不同波次的估计，用 DerSimonian-Laird 随机效应合并。</p>
+<div class="browse-controls">
+<label>搜索<input id="crossWaveSearch" type="search" placeholder="暴露、表型或对照"></label>
+<label>波次组合<select id="crossWaveWaves"></select></label>
+<label>说明<span id="crossWaveCount" class="browse-summary"></span></label>
+</div>
+<div class="browse-chart" id="crossWaveForest"></div>
+<div class="tablewrap"><table><thead><tr><th>暴露</th><th>对照</th><th>表型</th><th>波次</th><th>合并 β</th><th>95% CI</th><th>I²</th><th>P</th><th>方向</th></tr></thead><tbody id="crossWaveRows"></tbody></table></div>
+</section>
+<section class="view" id="network" hidden>
 <h2>暴露互作网络</h2>
-<p class="view-lede">2011 年血检子样本内，暴露之间的加权 Spearman 相关。</p>
+<p class="view-lede">暴露之间的加权 Spearman 相关。</p>
+<div class="browse-controls"><label>波次<select id="networkWave"><option value="2011">2011</option><option value="2013">2013</option><option value="2015">2015</option></select></label></div>
 <div class="browse-summary" id="networkCount">正在载入网络…</div>
 <div class="browse-chart" id="networkCanvas"></div>
 <div class="tablewrap"><table><thead><tr><th>暴露 A</th><th>暴露 B</th><th>ρ</th><th>q</th><th>n</th></tr></thead><tbody id="networkRows"></tbody></table></div>
@@ -264,9 +277,10 @@
     
   </main>
   <footer class="footer"><div class="shell"><span>CHARLS ExWAS Atlas · 候选变量目录</span><span>页面展示公开变量元数据及五波披露审查后的汇总统计结果；不含 CHARLS 微观数据或受访者答案。</span><span>数据致谢：感谢北京大学国家发展研究院中国经济研究中心提供CHARLS数据。<a href="https://charls.pku.edu.cn/en/data/User2011.pdf" target="_blank" rel="noopener">2011基线引用：CHARLS 2011-2012 National Baseline Users Guide（官方协议要求）</a></span></div></footer>
-  <script src="./app.js?v=207" defer></script>
+  <script src="./app.js?v=209" defer></script>
 <script src="./browse.js?v=7" defer></script>
-<script src="./network.js?v=2" defer></script>
+<script src="./network.js?v=3" defer></script>
+<script src="./crosswave.js?v=2" defer></script>
 </body>
 </html>
 
