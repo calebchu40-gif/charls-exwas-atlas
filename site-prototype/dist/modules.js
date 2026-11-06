@@ -1,7 +1,7 @@
 // Special analyses: fuel gradient, jointly adjusted household model and effect
 // modification. Each tab renders one aggregate JSON produced overnight.
 
-const moduleData = { gradient: null, joint: null, interaction: null };
+const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null };
 
 function moduleNumber(value) {
   const parsed = Number(value);
@@ -73,14 +73,18 @@ async function loadModules() {
     return;
   }
   try {
-    const [gradient, joint, interaction] = await Promise.all([
+    const [gradient, joint, interaction, health, solid] = await Promise.all([
       fetch('./fuel_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./joint_household_model_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./effect_modification_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
+      fetch('./health_index_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
+      fetch('./solid_fuel_blood_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
     ]);
     moduleData.gradient = gradient;
     moduleData.joint = joint;
     moduleData.interaction = interaction;
+    moduleData.health = health;
+    moduleData.solid = solid;
     renderModules();
   } catch (error) {
     byId('moduleBody').textContent = `专项分析载入失败：${error.message}`;
@@ -98,9 +102,26 @@ function renderModules() {
   } else if (active === 'joint') {
     target.append(jointTable(moduleData.joint));
     byId('moduleNote').textContent = '每个结局一个模型，同时放入自来水与 6 个燃料项；q 按 105 个系数校正。';
-  } else {
+  } else if (active === 'interaction') {
     target.append(interactionTable(moduleData.interaction));
     byId('moduleNote').textContent = '按性别、城乡、教育、≥65 岁分层；420 个层间差异检验，未通过 Bonferroni。';
+  } else if (active === 'health') {
+    target.append(moduleTable(moduleData.health.associations, [
+      { label: '暴露项', value: row => row.term },
+      { label: 'β（指数 SD）', value: row => row.estimate.toFixed(3) },
+      { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
+      { label: 'p', value: row => row.p < 0.001 ? '<0.001' : row.p.toFixed(3) },
+    ]));
+    byId('moduleNote').textContent = '健康指数 = 收缩压、BMI、连续减 7、自评健康、自评记忆 五项 z 分均值（0–100）；n=10,071。';
+  } else {
+    target.append(moduleTable(moduleData.solid.results, [
+      { label: '结局', value: row => row.phenotype_concept_id },
+      { label: 'β', value: row => row.estimate.toFixed(3) },
+      { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
+      { label: 'q', value: row => row.q < 0.001 ? '<0.001' : row.q.toFixed(3) },
+      { label: 'n', value: row => row.n },
+    ]));
+    byId('moduleNote').textContent = '固体燃料（煤/秸秆木材/其他）对 清洁燃料（天然气/液化气/电）；K=15。';
   }
 }
 
