@@ -1,7 +1,7 @@
 // Special analyses: fuel gradient, jointly adjusted household model and effect
 // modification. Each tab renders one aggregate JSON produced overnight.
 
-const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null };
+const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null };
 
 function moduleNumber(value) {
   const parsed = Number(value);
@@ -73,18 +73,20 @@ async function loadModules() {
     return;
   }
   try {
-    const [gradient, joint, interaction, health, solid] = await Promise.all([
+    const [gradient, joint, interaction, health, solid, trajectory] = await Promise.all([
       fetch('./fuel_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./joint_household_model_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./effect_modification_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./health_index_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./solid_fuel_blood_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
+      fetch('./trajectories_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
     ]);
     moduleData.gradient = gradient;
     moduleData.joint = joint;
     moduleData.interaction = interaction;
     moduleData.health = health;
     moduleData.solid = solid;
+    moduleData.trajectory = trajectory;
     renderModules();
   } catch (error) {
     byId('moduleBody').textContent = `专项分析载入失败：${error.message}`;
@@ -113,6 +115,15 @@ function renderModules() {
       { label: 'p', value: row => row.p < 0.001 ? '<0.001' : row.p.toFixed(3) },
     ]));
     byId('moduleNote').textContent = '健康指数 = 收缩压、BMI、连续减 7、自评健康、自评记忆 五项 z 分均值（0–100）；n=10,071。';
+  } else if (active === 'trajectory') {
+    target.append(moduleTable(moduleData.trajectory.by_wave, [
+      { label: '波次', value: row => row.wave },
+      { label: '基线年龄', value: row => row.band },
+      { label: '自评健康', value: row => row.srh === null ? '—' : row.srh.toFixed(2) },
+      { label: '自评记忆', value: row => row.memory === null ? '—' : row.memory.toFixed(2) },
+      { label: 'n', value: row => row.n },
+    ]));
+    byId('moduleNote').textContent = '1=差 5=好；按 2011 年龄分层；2018 无 da001、2020 字段含义变化，未纳入。';
   } else {
     target.append(moduleTable(moduleData.solid.results, [
       { label: '结局', value: row => row.phenotype_concept_id },
