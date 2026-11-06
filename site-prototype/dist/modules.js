@@ -1,7 +1,7 @@
 // Special analyses: fuel gradient, jointly adjusted household model and effect
 // modification. Each tab renders one aggregate JSON produced overnight.
 
-const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null, stability: null, anthropometry: null, ageGradient: null, lifestyle: null, strata: null, replication2015: null, anthropometryFull: null };
+const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null, stability: null, anthropometry: null, ageGradient: null, lifestyle: null, strata: null, replication2015: null, anthropometryFull: null, calibration: null };
 
 function moduleNumber(value) {
   const parsed = Number(value);
@@ -73,7 +73,7 @@ async function loadModules() {
     return;
   }
   try {
-    const [gradient, joint, interaction, health, solid, trajectory, replication, stability, anthropometry, ageGradient, lifestyle, strata, replication2015, anthropometryFull] = await Promise.all([
+    const [gradient, joint, interaction, health, solid, trajectory, replication, stability, anthropometry, ageGradient, lifestyle, strata, replication2015, anthropometryFull, calibration] = await Promise.all([
       fetch('./fuel_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./joint_household_model_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./effect_modification_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
@@ -88,6 +88,7 @@ async function loadModules() {
       fetch('./uric_strata_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./wave2015_solid_fuel_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./wave2013_solid_fuel_full_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
+      fetch('./pvalue_calibration_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
     ]);
     moduleData.gradient = gradient;
     moduleData.joint = joint;
@@ -103,6 +104,7 @@ async function loadModules() {
     moduleData.strata = strata;
     moduleData.replication2015 = replication2015;
     moduleData.anthropometryFull = anthropometryFull;
+    moduleData.calibration = calibration;
     renderModules();
   } catch (error) {
     byId('moduleBody').textContent = `专项分析载入失败：${error.message}`;
@@ -212,6 +214,17 @@ function renderModules() {
     ]));
     byId('moduleNote').textContent = '2013 加 2011 基线城乡/教育后：身高 −0.099、体重 −0.157、BMI −0.133，'
       + '比未调整教育时（−0.138/−0.196/−0.158）普遍减弱，支持部分为社会经济混杂。';
+  } else if (active === 'calibration') {
+    target.append(moduleTable(moduleData.calibration.families, [
+      { label: '家族', value: row => row.family_id },
+      { label: '模型', value: row => row.model_id },
+      { label: '检验数', value: row => row.tests },
+      { label: 'λ', value: row => row.lambda.toFixed(2) },
+      { label: 'p<0.05 占比', value: row => (row.share_p_lt_05 * 100).toFixed(0) + '%' },
+      { label: '中位 p', value: row => row.median_p.toFixed(3) },
+    ]));
+    byId('moduleNote').textContent = 'λ 普遍远高于 1：结局相关、家庭社会经济共同因子与家族经过筛选都会抬高 λ；'
+      + '这不等于计算错误，但说明本图集是探索性、不可作确证性解读。';
   } else if (active === 'trajectory') {
     target.append(moduleTable(moduleData.trajectory.by_wave, [
       { label: '波次', value: row => row.wave },
