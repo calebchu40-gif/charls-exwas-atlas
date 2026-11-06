@@ -38,6 +38,7 @@ ALLOWED_RELATIVE_PATHS = {
     "evidence_forest_v1.json",
     "wave2015_solid_fuel_v1.json",
     "wave2015_fuel_gradient_v1.json",
+    "mental_health_v1.json",
     "age_gradient_v1.json",
     "lifestyle_restricted_v1.json",
     "uric_strata_v1.json",
