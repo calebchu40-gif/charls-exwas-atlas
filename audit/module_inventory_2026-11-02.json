@@ -1,0 +1,391 @@
+{
+  "modules": [
+    {
+      "file": "age_gradient_v1.json",
+      "kb": 3.1,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "association_results_v1.json",
+      "kb": 970.4,
+      "parsed": true,
+      "referenced": true,
+      "core": true
+    },
+    {
+      "file": "behavior_exposures_v1.json",
+      "kb": 278.8,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "blood_biomarkers_v1.json",
+      "kb": 73.0,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "cancer_sites_v1.json",
+      "kb": 64.4,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "candidate_pair_explorer_v1.json",
+      "kb": 9139.8,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "catalog.json",
+      "kb": 32544.0,
+      "parsed": true,
+      "referenced": false,
+      "core": true
+    },
+    {
+      "file": "catalog_c.json",
+      "kb": 2909.8,
+      "parsed": true,
+      "referenced": false,
+      "core": false
+    },
+    {
+      "file": "catalog_e.json",
+      "kb": 23209.3,
+      "parsed": true,
+      "referenced": false,
+      "core": false
+    },
+    {
+      "file": "catalog_p.json",
+      "kb": 6919.5,
+      "parsed": true,
+      "referenced": false,
+      "core": false
+    },
+    {
+      "file": "chronic_disease_concepts_v2.json",
+      "kb": 44.3,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "cognition_items_v1.json",
+      "kb": 240.4,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "community_exposures_v1.json",
+      "kb": 789.3,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "cross_wave_meta_v1.json",
+      "kb": 210.2,
+      "parsed": true,
+      "referenced": true,
+      "core": true
+    },
+    {
+      "file": "disability_history_v1.json",
+      "kb": 56.5,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "effect_modification_v1.json",
+      "kb": 166.0,
+      "parsed": true,
+      "referenced": true,
+      "core": true
+    },
+    {
+      "file": "evidence_forest_v1.json",
+      "kb": 3.3,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "exposure_network_2011_v1.json",
+      "kb": 4.9,
+      "parsed": true,
+      "referenced": false,
+      "core": true
+    },
+    {
+      "file": "exposure_network_2013_v1.json",
+      "kb": 3.4,
+      "parsed": true,
+      "referenced": false,
+      "core": true
+    },
+    {
+      "file": "exposure_network_2015_v1.json",
+      "kb": 2.6,
+      "parsed": true,
+      "referenced": false,
+      "core": true
+    },
+    {
+      "file": "food_environment_v1.json",
+      "kb": 197.9,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "fuel_gradient_v1.json",
+      "kb": 2.5,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "functional_concepts_v1.json",
+      "kb": 67.6,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "health_index_v1.json",
+      "kb": 1.5,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "health_symptoms_v1.json",
+      "kb": 165.8,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "health_work_limitations_v1.json",
+      "kb": 9.7,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "healthcare_access_v1.json",
+      "kb": 240.9,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "household_additional_income_v1.json",
+      "kb": 1.1,
+      "parsed": true,
+      "referenced": false,
+      "core": false
+    },
+    {
+      "file": "household_agricultural_production_v1.json",
+      "kb": 27.6,
+      "parsed": true,
+      "referenced": false,
+      "core": false
+    },
+    {
+      "file": "household_covid_economic_v1.json",
+      "kb": 27.3,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "household_other_asset_rental_income_v1.json",
+      "kb": 5.8,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "household_renovation_expenditure_v1.json",
+      "kb": 2.4,
+      "parsed": true,
+      "referenced": false,
+      "core": false
+    },
+    {
+      "file": "household_transfer_compensation_v1.json",
+      "kb": 9.9,
+      "parsed": true,
+      "referenced": false,
+      "core": false
+    },
+    {
+      "file": "housing_catalog_v1.json",
+      "kb": 1035.8,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "individual_transfer_income_v1.json",
+      "kb": 201.8,
+      "parsed": true,
+      "referenced": false,
+      "core": false
+    },
+    {
+      "file": "joint_household_model_v1.json",
+      "kb": 30.7,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "land_rental_income_v1.json",
+      "kb": 14.0,
+      "parsed": true,
+      "referenced": false,
+      "core": false
+    },
+    {
+      "file": "life_history_exposures_v1.json",
+      "kb": 11226.3,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "lifestyle_restricted_v1.json",
+      "kb": 0.7,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "mood_items_v1.json",
+      "kb": 35.9,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "network_stability_v1.json",
+      "kb": 4.4,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "objective_measurements_v1.json",
+      "kb": 82.0,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "pvalue_calibration_v1.json",
+      "kb": 1.6,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "replication_v1.json",
+      "kb": 30.3,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "residential_rental_income_v1.json",
+      "kb": 3.4,
+      "parsed": true,
+      "referenced": false,
+      "core": false
+    },
+    {
+      "file": "social_exposures_v1.json",
+      "kb": 1411.2,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "solid_fuel_blood_v1.json",
+      "kb": 2.5,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "trajectories_v1.json",
+      "kb": 2.3,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "uric_strata_v1.json",
+      "kb": 1.3,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "verified_code_examples_v1.json",
+      "kb": 21.1,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "wave2013_solid_fuel_full_v1.json",
+      "kb": 0.8,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "wave2013_solid_fuel_v1.json",
+      "kb": 0.9,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "wave2015_fuel_gradient_v1.json",
+      "kb": 4.2,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "wave2015_solid_fuel_v1.json",
+      "kb": 0.5,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
+      "file": "work_exposures_v1.json",
+      "kb": 1009.3,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    }
+  ],
+  "orphans": [],
+  "broken": []
+}
