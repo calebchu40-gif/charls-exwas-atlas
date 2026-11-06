@@ -1,7 +1,7 @@
 // Special analyses: fuel gradient, jointly adjusted household model and effect
 // modification. Each tab renders one aggregate JSON produced overnight.
 
-const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null, stability: null, anthropometry: null, ageGradient: null, lifestyle: null, strata: null, replication2015: null, anthropometryFull: null, calibration: null, forest: null };
+const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null, stability: null, anthropometry: null, ageGradient: null, lifestyle: null, strata: null, replication2015: null, anthropometryFull: null, calibration: null, forest: null, gradient2015: null };
 
 function moduleNumber(value) {
   const parsed = Number(value);
@@ -73,7 +73,7 @@ async function loadModules() {
     return;
   }
   try {
-    const [gradient, joint, interaction, health, solid, trajectory, replication, stability, anthropometry, ageGradient, lifestyle, strata, replication2015, anthropometryFull, calibration, forest] = await Promise.all([
+    const [gradient, joint, interaction, health, solid, trajectory, replication, stability, anthropometry, ageGradient, lifestyle, strata, replication2015, anthropometryFull, calibration, forest, gradient2015] = await Promise.all([
       fetch('./fuel_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./joint_household_model_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./effect_modification_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
@@ -90,6 +90,7 @@ async function loadModules() {
       fetch('./wave2013_solid_fuel_full_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./pvalue_calibration_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./evidence_forest_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
+      fetch('./wave2015_fuel_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
     ]);
     moduleData.gradient = gradient;
     moduleData.joint = joint;
@@ -107,6 +108,7 @@ async function loadModules() {
     moduleData.anthropometryFull = anthropometryFull;
     moduleData.calibration = calibration;
     moduleData.forest = forest;
+    moduleData.gradient2015 = gradient2015;
     renderModules();
   } catch (error) {
     byId('moduleBody').textContent = `专项分析载入失败：${error.message}`;
@@ -267,6 +269,16 @@ function renderModules() {
     byId('moduleNote').textContent = `共 ${moduleData.forest.summary.entries} 条证据，`
       + `${moduleData.forest.summary.negative} 条为负向；梯度项（每等级 ${gradient.estimate.toFixed(3)}）量纲不同，未画入。`
       + '结局为尿酸（标准化 β）。';
+  } else if (active === 'gradient2015') {
+    target.append(moduleTable(moduleData.gradient2015.results, [
+      { label: '结局', value: row => row.phenotype_concept_id },
+      { label: '每等级 β', value: row => row.estimate.toFixed(3) },
+      { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
+      { label: 'q', value: row => row.q_value_by < 0.001 ? '<0.001' : row.q_value_by.toFixed(3) },
+      { label: 'n', value: row => row.n_model },
+    ]));
+    byId('moduleNote').textContent = '2015 波同一梯度：尿酸 −0.047（p=0.069），方向与 2011 一致但样本仅 1,553，'
+      + '15 项均未过 q<0.05——主要是功效不足，而非方向反转。';
   } else if (active === 'trajectory') {
     target.append(moduleTable(moduleData.trajectory.by_wave, [
       { label: '波次', value: row => row.wave },
