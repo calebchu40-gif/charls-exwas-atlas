@@ -469,10 +469,15 @@ async function renderAssociations() {
         byId('associationSearch').value='';showAssociationResults();
       });clearButton.dataset.bound='true';
     }
-    byId('associationPrompt').hidden = false;
-    byId('associationTableWrap').hidden = true;
-    byId('associationHeatmap').hidden = true;
-    byId('count').textContent = `${associationRows.length.toLocaleString()} 条结果待查询`;
+    // Render into the DOM (so the data is ready) but keep the panels hidden
+    // until the viewer asks for a query.
+    renderAssociationRows();
+    const prompt = byId('associationPrompt');
+    if (prompt) prompt.hidden = false;
+    const tableWrap = byId('associationTableWrap');
+    if (tableWrap) tableWrap.hidden = true;
+    const heatmapPanel = byId('associationHeatmap');
+    if (heatmapPanel) heatmapPanel.hidden = true;
     const showAll = byId('associationShowAll');
     if (showAll && !showAll.dataset.bound) {
       showAll.addEventListener('click', showAssociationResults);
