@@ -1,7 +1,7 @@
 // Special analyses: fuel gradient, jointly adjusted household model and effect
 // modification. Each tab renders one aggregate JSON produced overnight.
 
-const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null };
+const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null, stability: null };
 
 function moduleNumber(value) {
   const parsed = Number(value);
@@ -73,7 +73,7 @@ async function loadModules() {
     return;
   }
   try {
-    const [gradient, joint, interaction, health, solid, trajectory, replication] = await Promise.all([
+    const [gradient, joint, interaction, health, solid, trajectory, replication, stability] = await Promise.all([
       fetch('./fuel_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./joint_household_model_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./effect_modification_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
@@ -81,6 +81,7 @@ async function loadModules() {
       fetch('./solid_fuel_blood_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./trajectories_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./replication_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
+      fetch('./network_stability_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
     ]);
     moduleData.gradient = gradient;
     moduleData.joint = joint;
@@ -89,6 +90,7 @@ async function loadModules() {
     moduleData.solid = solid;
     moduleData.trajectory = trajectory;
     moduleData.replication = replication;
+    moduleData.stability = stability;
     renderModules();
   } catch (error) {
     byId('moduleBody').textContent = `专项分析载入失败：${error.message}`;
@@ -130,6 +132,16 @@ function renderModules() {
     ]));
     byId('moduleNote').textContent = `105 项在 2015 全部可匹配：同向 ${moduleData.replication.same_sign}/105，`
       + `Pearson r=${moduleData.replication.pearson_r}，两波 q 均<0.05 的有 ${moduleData.replication.q_both_below_05} 项。`;
+  } else if (active === 'stability') {
+    target.append(moduleTable(moduleData.stability.rows, [
+      { label: '暴露对', value: row => row.pair.join(' – ') },
+      { label: '2011 ρ', value: row => row.rho['2011'] === undefined ? '—' : row.rho['2011'].toFixed(2) },
+      { label: '2013 ρ', value: row => row.rho['2013'] === undefined ? '—' : row.rho['2013'].toFixed(2) },
+      { label: '2015 ρ', value: row => row.rho['2015'] === undefined ? '—' : row.rho['2015'].toFixed(2) },
+      { label: '方向一致', value: row => row.sign_consistent ? '是' : '否' },
+    ]));
+    byId('moduleNote').textContent = `${moduleData.stability.edges_in_multiple_waves} 条边出现在 ≥2 个波次，`
+      + `${moduleData.stability.edges_in_all_waves} 条三波都有，方向一致率 ${(moduleData.stability.sign_consistent_fraction * 100).toFixed(0)}%。`;
   } else if (active === 'trajectory') {
     target.append(moduleTable(moduleData.trajectory.by_wave, [
       { label: '波次', value: row => row.wave },
