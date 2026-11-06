@@ -1,7 +1,7 @@
 // Special analyses: fuel gradient, jointly adjusted household model and effect
 // modification. Each tab renders one aggregate JSON produced overnight.
 
-const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null, stability: null, anthropometry: null, ageGradient: null };
+const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null, stability: null, anthropometry: null, ageGradient: null, lifestyle: null };
 
 function moduleNumber(value) {
   const parsed = Number(value);
@@ -73,7 +73,7 @@ async function loadModules() {
     return;
   }
   try {
-    const [gradient, joint, interaction, health, solid, trajectory, replication, stability, anthropometry, ageGradient] = await Promise.all([
+    const [gradient, joint, interaction, health, solid, trajectory, replication, stability, anthropometry, ageGradient, lifestyle] = await Promise.all([
       fetch('./fuel_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./joint_household_model_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./effect_modification_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
@@ -84,6 +84,7 @@ async function loadModules() {
       fetch('./network_stability_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./wave2013_solid_fuel_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./age_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
+      fetch('./lifestyle_restricted_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
     ]);
     moduleData.gradient = gradient;
     moduleData.joint = joint;
@@ -95,6 +96,7 @@ async function loadModules() {
     moduleData.stability = stability;
     moduleData.anthropometry = anthropometry;
     moduleData.ageGradient = ageGradient;
+    moduleData.lifestyle = lifestyle;
     renderModules();
   } catch (error) {
     byId('moduleBody').textContent = `专项分析载入失败：${error.message}`;
@@ -165,6 +167,15 @@ function renderModules() {
       { label: 'n', value: row => row.n_model },
     ]));
     byId('moduleNote').textContent = '尿酸对燃料的效应在 65–74 岁最强，75+ 样本少且不显著；方向在所有年龄组一致。';
+  } else if (active === 'lifestyle') {
+    target.append(moduleTable(moduleData.lifestyle.results, [
+      { label: '对照', value: row => row.term },
+      { label: 'β', value: row => row.estimate.toFixed(3) },
+      { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
+      { label: 'p', value: row => row.p_value < 0.001 ? '<0.001' : row.p_value.toFixed(3) },
+      { label: 'n', value: row => row.n_model },
+    ]));
+    byId('moduleNote').textContent = '仅保留从不吸烟且过去一年不饮酒者：燃料—尿酸关联仍显著（固体 −0.244）。';
   } else if (active === 'trajectory') {
     target.append(moduleTable(moduleData.trajectory.by_wave, [
       { label: '波次', value: row => row.wave },
