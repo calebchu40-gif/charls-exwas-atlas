@@ -31,7 +31,17 @@
     .scope-section{display:grid;grid-template-columns:1.5fr .8fr;gap:24px;align-items:center;margin-top:24px;padding:22px 24px;border:1px solid var(--line);border-radius:11px;background:#f0f4f7}.scope-section h2{font-size:20px}.scope-section p{margin:0;color:#4e6472;font-size:13px}.scope-tags{display:flex;flex-wrap:wrap;gap:7px;justify-content:flex-end}.scope-tags span{padding:5px 9px;border:1px solid #d5e0e5;border-radius:20px;background:#fff;color:#476271;font-size:11px}
     @media(max-width:800px){.viewnav{align-items:flex-start;flex-direction:column}.special-nav-menu{left:0;right:auto}.intro-layout,.scope-section{grid-template-columns:1fr}.life-history-promo{grid-template-columns:1fr}.scope-tags{justify-content:flex-start}.wave-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:580px){.hero .stats{grid-template-columns:repeat(2,minmax(0,1fr))}.path-grid{grid-template-columns:1fr}.path-card{min-height:auto}.path-card p{min-height:auto}.intro-layout h2{font-size:23px}.special-nav-menu{grid-template-columns:1fr}.scope-section{padding:18px}.wave-grid{grid-template-columns:1fr}.wave-schedule{padding:18px}.life-history-promo{padding:16px}}
-    </style>
+  
+    .atlas-figure{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:14px 18px 6px;margin:20px 0 4px}
+    .atlas-figure svg{display:block;width:100%;height:auto}
+    .browse-controls{display:grid;grid-template-columns:2.2fr 1fr 1fr;gap:12px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:15px;margin-bottom:14px}
+    .browse-controls label{display:block;font-size:12px;color:#496071;font-weight:650}
+    .browse-controls input,.browse-controls select{width:100%;height:40px;border:1px solid #cbd8df;border-radius:7px;padding:0 10px;margin-top:5px;background:#fff;color:var(--ink)}
+    .browse-summary{margin:6px 2px 12px;color:var(--muted);font-size:13px}
+    .browse-chart{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:14px;overflow:auto}
+    .browse-legend{margin:6px 0 0;color:var(--muted);font-size:11px}
+    @media(max-width:900px){.browse-controls{grid-template-columns:1fr}}
+  </style>
   <style>.pair-result-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}.pair-candidate-card{padding:16px;border:1px solid var(--line);border-radius:10px;background:white;min-width:0}.pair-candidate-card h3{margin:0 0 10px;font-size:15px}.pair-fields{display:grid;gap:8px}.pair-field{padding:9px 10px;border-radius:7px;background:#f5f8fa;font-size:12px}.pair-field strong{color:var(--navy)}.pair-note{margin-top:12px;color:var(--muted);font-size:12px}@media(max-width:700px){.pair-result-grid{grid-template-columns:1fr}}</style>
   <style id="association-heatmap-style">
     .heatmap-panel{margin:20px 0 6px}
@@ -77,6 +87,43 @@
     <div class="eyebrow">CHARLS · 中国中老年健康与环境图谱</div>
     <h1>从生活环境，查到健康指标</h1>
     <p class="lede">参考 NHANES Phenome–Exposome Atlas 的查询逻辑，整理 CHARLS 各波次的环境、行为、社会情境与健康表型。先查变量，再逐步建立经过审查的关联图谱。</p>
+
+    <div class="atlas-figure" role="img" aria-label="CHARLS 表型—暴露图谱示意">
+<svg viewBox="0 0 1000 250" xmlns="http://www.w3.org/2000/svg">
+  <g font-family="Segoe UI, Microsoft YaHei, sans-serif">
+    <circle cx="160" cy="120" r="86" fill="none" stroke="#edf3f6" stroke-width="22"/>
+    <circle cx="160" cy="120" r="86" fill="none" stroke="#1f77b4" stroke-width="22" stroke-dasharray="70 470" transform="rotate(-90 160 120)"/>
+    <circle cx="160" cy="120" r="86" fill="none" stroke="#2ca02c" stroke-width="22" stroke-dasharray="70 470" stroke-dashoffset="-90" transform="rotate(-90 160 120)"/>
+    <circle cx="160" cy="120" r="86" fill="none" stroke="#ff7f0e" stroke-width="22" stroke-dasharray="60 480" stroke-dashoffset="-180" transform="rotate(-90 160 120)"/>
+    <circle cx="160" cy="120" r="86" fill="none" stroke="#9467bd" stroke-width="22" stroke-dasharray="55 485" stroke-dashoffset="-260" transform="rotate(-90 160 120)"/>
+    <circle cx="160" cy="120" r="86" fill="none" stroke="#8c564b" stroke-width="22" stroke-dasharray="50 490" stroke-dashoffset="-335" transform="rotate(-90 160 120)"/>
+    <circle cx="160" cy="120" r="86" fill="none" stroke="#d62728" stroke-width="22" stroke-dasharray="45 495" stroke-dashoffset="-405" transform="rotate(-90 160 120)"/>
+    <text x="160" y="112" text-anchor="middle" font-size="36" font-weight="700" fill="#183d54">332</text>
+    <text x="160" y="138" text-anchor="middle" font-size="14" fill="#607584">表型概念</text>
+    <text x="160" y="232" text-anchor="middle" font-size="12" fill="#607584">血液 · 认知 · 功能 · 慢病 · 心理</text>
+
+    <circle cx="840" cy="120" r="86" fill="none" stroke="#edf3f6" stroke-width="22"/>
+    <circle cx="840" cy="120" r="86" fill="none" stroke="#1f77b4" stroke-width="22" stroke-dasharray="62 478" transform="rotate(-90 840 120)"/>
+    <circle cx="840" cy="120" r="86" fill="none" stroke="#2ca02c" stroke-width="22" stroke-dasharray="58 482" stroke-dashoffset="-80" transform="rotate(-90 840 120)"/>
+    <circle cx="840" cy="120" r="86" fill="none" stroke="#ff7f0e" stroke-width="22" stroke-dasharray="54 486" stroke-dashoffset="-155" transform="rotate(-90 840 120)"/>
+    <circle cx="840" cy="120" r="86" fill="none" stroke="#9467bd" stroke-width="22" stroke-dasharray="50 490" stroke-dashoffset="-225" transform="rotate(-90 840 120)"/>
+    <circle cx="840" cy="120" r="86" fill="none" stroke="#8c564b" stroke-width="22" stroke-dasharray="46 494" stroke-dashoffset="-290" transform="rotate(-90 840 120)"/>
+    <circle cx="840" cy="120" r="86" fill="none" stroke="#d62728" stroke-width="22" stroke-dasharray="42 498" stroke-dashoffset="-350" transform="rotate(-90 840 120)"/>
+    <circle cx="840" cy="120" r="86" fill="none" stroke="#7f7f7f" stroke-width="22" stroke-dasharray="38 502" stroke-dashoffset="-405" transform="rotate(-90 840 120)"/>
+    <text x="840" y="112" text-anchor="middle" font-size="36" font-weight="700" fill="#183d54">1,319</text>
+    <text x="840" y="138" text-anchor="middle" font-size="14" fill="#607584">暴露概念</text>
+    <text x="840" y="232" text-anchor="middle" font-size="12" fill="#607584">社区 · 住房 · 饮食行为 · 社会经济 · 保障</text>
+
+    <line x1="256" y1="120" x2="418" y2="120" stroke="#9fb3c0" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="744" y1="120" x2="582" y2="120" stroke="#9fb3c0" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="420" y="76" width="160" height="88" rx="10" fill="#183d54"/>
+    <text x="500" y="110" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">P-ExWAS</text>
+    <text x="500" y="134" text-anchor="middle" font-size="12" fill="#cfe3ea">五波 · 845 主假设</text>
+    <text x="500" y="150" text-anchor="middle" font-size="11" fill="#9fc2cf">加权 · 近似方差</text>
+    <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9fb3c0"/></marker></defs>
+  </g>
+</svg>
+    </div>
     <div class="status" role="note"><strong>当前版本：2011–2020 五波关联分析</strong><span>2011、2013、2015、2018 和 2020 五波共 845 项预登记主假设均已运行；模型按波次分别估计，结果表保留全部假设。页面仅显示通过披露审查的汇总结果；受访者记录和精确 QA 留在受控服务器。</span></div>
     <div class="stats" aria-label="目录进度">
       <div class="stat"><b>1,319</b><span>暴露候选概念</span></div>
@@ -89,11 +136,10 @@
   <main class="shell">
         <nav class="viewnav" aria-label="主要浏览">
       <div class="primary-nav">
-        <button type="button" data-view="overview" aria-current="page">项目介绍</button>
-        <button type="button" data-view="associations">关联图谱</button>
-        <button type="button" data-view="candidatePairExplorer">候选配对查询</button>
+        <button type="button" data-view="overview" aria-current="page">首页</button>
         <button type="button" data-view="exposures">暴露目录</button>
         <button type="button" data-view="phenotypes">表型目录</button>
+        <button type="button" data-view="associations">关联矩阵</button>
         <button type="button" data-view="metadata">测量与设计元数据</button>
       </div>
       <details class="special-nav"><summary>更多专题目录</summary><div class="special-nav-menu">
@@ -138,8 +184,32 @@
       </div>
       <div class="tablewrap"><table><caption class="sr-only">CHARLS ExWAS 五波关联估计与多重检验结果</caption><thead><tr><th scope="col">暴露</th><th scope="col">对比</th><th scope="col">表型</th><th scope="col">波次</th><th scope="col">模型</th><th scope="col">β（95% CI）</th><th scope="col">P</th><th scope="col">BY q</th><th scope="col">Bonferroni</th><th scope="col">样本量</th><th scope="col">方差说明 / 状态</th></tr></thead><tbody id="rows"></tbody></table><div id="empty" class="empty">尚无可展示的关联结果。</div></div>
     </section>
-    <section class="view" id="byPhenotype" hidden><h2>按表型浏览</h2><p class="view-lede">先按表型筛选目录候选；五波关联结果请打开“关联图谱”，按表型查看对应暴露。波次间测量、权重和目标人群不同，不将跨波次相似性解释为合并效应。</p><div class="catalog-note">表型目录提供CHARLS原始编码、答案标签、波次和概念ID；五波汇总关联结果见“关联图谱”。</div><div id="phenotypeBrowse" class="group-grid"></div></section>
-    <section class="view" id="byExposure" hidden><h2>按暴露浏览</h2><p class="view-lede">先在暴露目录检索字段定义；五波汇总关联结果请打开“关联图谱”。结果表列出波次、模型、效应、权重/方差标签与多重检验信息。</p><div class="catalog-note">暴露目录提供CHARLS原始编码、答案标签、波次和概念ID；五波汇总关联结果见“关联图谱”。</div><div id="exposureBrowse" class="group-grid"></div></section>
+    <section class="view" id="byPhenotype" hidden>
+<h2>按表型浏览</h2>
+<p class="view-lede">选择一个表型，查看与它关联的全部暴露，按 q 值或效应大小排序；条形为每标准差效应，蓝色为正、红色为负，* 表示该族 BY q &lt; 0.05。</p>
+<div class="browse-controls">
+<label>表型概念<input id="browsePhenotypeInput" list="browsePhenotypeOptions" placeholder="输入表型名称或变量码，例如 hemoglobin"></label>
+<datalist id="browsePhenotypeOptions"></datalist>
+<label>波次<select id="browsePhenotypeWave"></select></label>
+<label>排序<select id="browsePhenotypeSort"><option value="q">按 q 值升序</option><option value="effect">按效应绝对值</option></select></label>
+</div>
+<div id="browsePhenotypeSummary" class="browse-summary"></div>
+<div id="browsePhenotypeChart" class="browse-chart"></div>
+<div class="tablewrap"><table><thead><tr><th>暴露</th><th>波次</th><th>模型</th><th>效应（95% CI）</th><th>P</th><th>BY q</th><th>n</th><th>状态</th></tr></thead><tbody id="browsePhenotypeRows"></tbody></table></div>
+</section>
+    <section class="view" id="byExposure" hidden>
+<h2>按暴露浏览</h2>
+<p class="view-lede">选择一个暴露，查看它与哪些健康表型相关。CHARLS 的暴露包含社区、住房、燃料、饮食行为与社会经济条件，属于广义解释变量，不等同于环境化学物。</p>
+<div class="browse-controls">
+<label>暴露概念<input id="browseExposureInput" list="browseExposureOptions" placeholder="输入暴露名称或变量码，例如 cooking"></label>
+<datalist id="browseExposureOptions"></datalist>
+<label>波次<select id="browseExposureWave"></select></label>
+<label>排序<select id="browseExposureSort"><option value="q">按 q 值升序</option><option value="effect">按效应绝对值</option></select></label>
+</div>
+<div id="browseExposureSummary" class="browse-summary"></div>
+<div id="browseExposureChart" class="browse-chart"></div>
+<div class="tablewrap"><table><thead><tr><th>表型</th><th>波次</th><th>模型</th><th>效应（95% CI）</th><th>P</th><th>BY q</th><th>n</th><th>状态</th></tr></thead><tbody id="browseExposureRows"></tbody></table></div>
+</section>
     <section class="view" id="groups" hidden><h2>按暴露组浏览</h2><p class="view-lede">类别沿用 NHANES Atlas“exposure group”入口的思路，名称按 CHARLS 字段范围重新定义。</p><div class="catalog-note">下方数量是经初步去重的编码—类别候选记录，不是最终概念数或可建模暴露数。家庭成员矩阵已暂时排除；跳题、路由、定义和跨波次一致性仍须人工核验。</div><div id="groupGrid" class="group-grid"></div></section>
     <section class="view" id="exposures" hidden><h2>暴露目录（E Catalog）</h2><p class="view-lede">对应 NHANES Catalog 的概念、类别和描述；按CHARLS波次逐字段展示原始变量码、来源模块、单位/分类构成和官方值标签。</p><div class="catalog-note">目录合并自动发现和已审计的领域字段映射；仅已核字段显示官方值标签，其余待核。候选字段不等于一个独立暴露指标；正式纳入须回到 CHARLS 问卷、代码本、路由和测量说明。</div><div class="catalog-tools"><div class="field"><label for="eSearch">编码或描述</label><input id="eSearch" type="search" placeholder="搜索代码或关键词"></div><div class="field"><label for="eCategory">暴露类别</label><select id="eCategory"><option value="">全部类别</option></select></div><div class="field"><label for="eWave">波次覆盖</label><select id="eWave"><option value="">全部波次</option><option>2011</option><option>2013</option><option>2015</option><option>2018</option><option>2020</option></select></div></div><div class="catalog-meta"><span id="eCount" aria-live="polite"></span><span>共展示最多100项，使用搜索缩小范围</span></div><div class="tablewrap"><table class="catalog-table"><thead><tr><th>CHARLS编码</th><th>候选概念ID</th><th>类别</th><th>官方字段标签</th><th>波次</th><th>来源模块</th><th>单位/分类构成</th><th>官方值标签/编码含义</th></tr></thead><tbody id="eRows"></tbody></table></div></section>
     <section class="view" id="phenotypes" hidden><h2>表型目录（P Catalog）</h2><p class="view-lede">按 NHANES 图谱目录显示CHARLS逐波原始字段编码、候选概念ID、类别、官方字段标签、波次和模块；不同波次分开保留。</p><div class="catalog-note">目录合并自动发现和已审计的领域字段映射；仅已核字段显示官方值标签，其余待核。一个表型概念可能由多条原始字段构成；慢病路由、测量单位、特殊码和跨波可比性确认前，不进入正式模型。</div><div class="catalog-tools"><div class="field"><label for="pSearch">编码或描述</label><input id="pSearch" type="search" placeholder="搜索代码或关键词"></div><div class="field"><label for="pCategory">表型类别</label><select id="pCategory"><option value="">全部类别</option></select></div><div class="field"><label for="pWave">波次覆盖</label><select id="pWave"><option value="">全部波次</option><option>2011</option><option>2013</option><option>2015</option><option>2018</option><option>2020</option></select></div></div><div class="catalog-meta"><span id="pCount" aria-live="polite"></span><span>共展示最多100项，使用搜索缩小范围</span></div><div class="tablewrap"><table class="catalog-table"><thead><tr><th>CHARLS编码</th><th>候选概念ID</th><th>类别</th><th>官方字段标签</th><th>波次</th><th>来源模块</th><th>单位/分类构成</th><th>官方值标签/编码含义</th></tr></thead><tbody id="pRows"></tbody></table></div></section>
@@ -171,7 +241,8 @@
     <div class="notes" id="method"><section class="note"><h3>分析状态</h3><p>当前核心概念与扩展候选映射持续审计；E/P 编码目录的记录数仍不是最终指标数。借用 NHANES Atlas 的概念目录、原始字段检索和结果浏览结构；CHARLS 的字段码、答案值标签与波次定义均按 CHARLS 官方资料建立。</p></section><section class="note"><h3>协变量与模型层次</h3><p>模型不使用一套调整集覆盖所有暴露—表型配对。五波共 K=845 项主分析已完成并载入结果页；模型和权重依各波目标、变量及抽样设计分别设定，效应不跨波次合并。Wave 1 主模型含年龄线性项与二次项、性别、城乡及教育，并完成预设聚类与协变量敏感性分析。2018/2020 的慢病指标按累积自报的医生诊断史解释，不称为新发疾病。结果按预登记假设完整呈现；无法估计或未通过披露审查的行不显示数值。权重、PSU和分层按调查设计单独处理，不与普通协变量混用。详见 <a href="https://github.com/calebchu40-gif/charls-exwas-atlas/blob/main/audit/covariate_modeling_strategy_v1.md" target="_blank" rel="noopener">协变量模型边界说明</a>和 <a href="https://github.com/calebchu40-gif/charls-exwas-atlas/blob/main/audit/wave1_household_environment_covariate_dag_review_2026-10-27.md" target="_blank" rel="noopener">家庭环境DAG候选审阅</a>。</p></section><section class="note"><h3>数据与推断边界</h3><p>目标是逐波次横断面关联探索。实际分析必须按 CHARLS 官方样本、模块资格、权重和 PSU/方差方案运行。网页只接收经审查的汇总结果。</p></section><section class="note"><h3>逐波目标人群</h3><p>每波都要按本波官方样本框、年龄来源、模块资格和权重定义确定 estimand，不能把同一个年龄限制或权重机械套到所有波次。针对2011常规血液指标，CHARLS Blood Users' Guide 将血检目标描述为基线主访者及其配偶；2018 Wave 4个体横截面权重同样覆盖其主访者及配偶记录。主要受访者及其配偶都会接受访谈；Wave 4 个体横截面权重覆盖这两类记录。crosssection 标记不能单独解释为每条记录年龄均≥45岁；应预先确定目标年龄域并说明配偶记录的处理。Wave 1 本轮主分析使用官方 bloodweight，并在观察到的血检受访者设计对象中以年龄区间下界≥45定义调查 domain；每个模型另按其预设字段采用完整案例。该估计量指向该年龄域内、相应完整案例中的加权关联，不表述为所有45岁以上居民的总体效应。相关依据和边界见<a href="https://github.com/calebchu40-gif/charls-exwas-atlas/blob/main/audit/wave1_biomarker_estimand_age_recommendation_2026-10-30.md" target="_blank" rel="noopener">Wave 1血液目标人群与年龄建议</a>。CHARLS 2020的全国代表性目标受刷新样本年龄范围限制，不能仅凭横截面标记或权重将结果表述为覆盖所有45岁以上人群；2018 HCAP仅覆盖60岁及以上子样本。参见<a href="https://charls.pku.edu.cn/en/data/User2018.pdf" target="_blank" rel="noopener">2018用户手册</a>和<a href="https://charls.charlsdata.com/Public/ashelf/public/uploads/document/2020-charls-wave5/application/CHARLS_2020_User_Guide_English.pdf" target="_blank" rel="noopener">2020 Wave 5用户手册</a>。</p></section><section class="note"><h3>抽样、权重与方差设计状态</h3><p>各波抽样标记与权重不能互换：2011、2013、2015、2018和2020分别按官方样本框、模块资格和发行权重审查；没有血液指标的波次不补造实验室结局。CHARLS 2011 National Baseline Users' Guide 报告17,708名成功访谈者；Table 4的17,587人是排除缺年龄、性别或户籍信息后的描述子集，不是完整访谈框。基线设计包含县级排序/隐式分层、系统PPS社区抽样和部分大社区的子社区抽样。现有公开发行材料未提供完整方差层、县级PPS概率/FPC及逐人最终子社区映射，因此五波主分析将县级第一阶段单位作为 PSU，采用无分层 WR Taylor 近似，并明确标注其不等同于完整官方方差设计；Wave 1 与 Wave 4/5 的 communityID 聚类结果作为敏感性分析。未自行构造设计分层或复制权重。各波的横截面与纵向权重适用不同估计目标；2013发布资料区分crosssection/longitudinal标记，包含横截面生物标志物权重，但没有纵向生物标志物权重。不得用省、市或城乡字段自行拼成设计分层。项目记录中的详细文件链接诊断留在受控分析环境，不在此公开。查看<a href="https://github.com/calebchu40-gif/charls-exwas-atlas/blob/main/audit/wave1_variance_review_recommendation_2026-10-30.md" target="_blank" rel="noopener">Wave 1方差审阅说明</a>、<a href="https://github.com/calebchu40-gif/charls-exwas-atlas/blob/main/audit/wave1_official_denominator_interpretation_2026-10-30.md" target="_blank" rel="noopener">Wave 1官方分母口径</a>、<a href="https://github.com/calebchu40-gif/charls-exwas-atlas/blob/main/audit/survey_design_weight_review_v1.md" target="_blank" rel="noopener">抽样权重与调查设计审计</a>和<a href="https://github.com/calebchu40-gif/charls-exwas-atlas/blob/main/audit/wave2_weight_estimand_source_review_2026-10-24.md" target="_blank" rel="noopener">2013权重与目标估计量说明</a>。</p></section><section class="note"><h3>数据访问与使用许可</h3><p>本网站公开的是经过整理的变量目录和方法说明，不提供 CHARLS 个体微观数据、受访者答案或可识别信息。CHARLS 官方用户条款规定数据仅用于学术研究，不得商业使用；原始微观数据不得以任何形式公开，也不得转让、出售、出借或提供给他人。用户需以真实姓名、单位和机构邮箱注册并经审核；具体下载请从 <a href="https://charls.charlsdata.com/pages/Data/2011-charls-wave1/en.html" target="_blank" rel="noopener">CHARLS 官方数据目录</a>进入，需登录的文件按官方流程申请。公开平台只展示不暴露受访者身份的学术汇总结果。请先阅读<a href="https://charls.charlsdata.com/users/sign_up/agreement/zh-cn.html" target="_blank" rel="noopener">CHARLS 官方用户条款</a>。本站不代替官方授权，也不分发数据文件。</p></section></div>
   </main>
   <footer class="footer"><div class="shell"><span>CHARLS ExWAS Atlas · 候选变量目录</span><span>页面展示公开变量元数据及五波披露审查后的汇总统计结果；不含 CHARLS 微观数据或受访者答案。</span><span>数据致谢：感谢北京大学国家发展研究院中国经济研究中心提供CHARLS数据。<a href="https://charls.pku.edu.cn/en/data/User2011.pdf" target="_blank" rel="noopener">2011基线引用：CHARLS 2011-2012 National Baseline Users Guide（官方协议要求）</a></span></div></footer>
-  <script src="./app.js?v=201" defer></script>
+  <script src="./app.js?v=202" defer></script>
+<script src="./browse.js?v=2" defer></script>
 </body>
 </html>
 

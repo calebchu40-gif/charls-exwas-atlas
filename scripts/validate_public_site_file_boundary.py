@@ -20,6 +20,7 @@ DEFAULT_SITE_DIR = ROOT / "site-prototype" / "dist"
 ALLOWED_RELATIVE_PATHS = {
     ".nojekyll",
     "app.js",
+    "browse.js",
     "behavior_exposures_v1.json",
     "blood_biomarkers_v1.json",
     "cancer_sites_v1.json",

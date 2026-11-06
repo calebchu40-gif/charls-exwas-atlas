@@ -46,6 +46,7 @@ function showView(id) {
     if (btn.dataset.view === id) btn.setAttribute('aria-current','page');
     else btn.removeAttribute('aria-current');
   });
+  syncHash(id);
   deferredViewLoaders.get(id)?.();
   if (id === 'exposures' || id === 'groups') loadCatalog('e');
   if (id === 'phenotypes') loadCatalog('p');
@@ -54,6 +55,19 @@ function showView(id) {
 }
 document.querySelectorAll('.viewnav button').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
 document.querySelectorAll('.overview-view [data-view]').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
+
+// Deep links: every view is addressable as #view-id so a result or a catalog
+// page can be shared, bookmarked and opened directly.
+function viewFromHash(){ return (location.hash || '').replace(/^#/, ''); }
+function syncHash(id){ if (viewFromHash() !== id) history.replaceState(null, '', '#' + id); }
+window.addEventListener('hashchange', () => {
+  const id = viewFromHash();
+  if (id && byId(id)) showView(id);
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const id = viewFromHash();
+  if (id && byId(id)) showView(id);
+});
 
 function renderCandidatePairExplorer(data){
  const design=byId('candidatePairDesign').value;
@@ -70,6 +84,9 @@ function renderCandidatePairExplorer(data){
  const eMap=new Map(exposureItems.map(x=>[display(x),x])),pMap=new Map(phenotypeItems.map(x=>[display(x),x]));
  if(!eMap.has(exposureInput.value))exposureInput.value='';
  if(!pMap.has(phenotypeInput.value))phenotypeInput.value='';
+ // Show a concrete example immediately instead of two empty panels.
+ if(!exposureInput.value&&exposureItems.length)exposureInput.value=display(exposureItems[0]);
+ if(!phenotypeInput.value&&phenotypeItems.length)phenotypeInput.value=display(phenotypeItems[0]);
  byId('candidateExposureHeading').textContent=longitudinal?'2011基线社区暴露源字段':'暴露源字段';
  byId('candidatePhenotypeHeading').textContent=longitudinal?`${wave}随访表型源字段`:'表型源字段';
  byId('candidatePairStatus').textContent=longitudinal?`2011基线社区：${entry.exposure_count}个暴露概念 × ${entry.followup_wave}波：${entry.phenotype_count}个表型概念，形成${entry.candidate_pair_count.toLocaleString()}个目录候选组合。官方指南说明社区ID可与前序波次对应，但此处没有匹配任何个体记录。`: `${wave}波：${entry.exposure_count}个暴露概念 × ${entry.phenotype_count}个表型概念，形成${entry.candidate_pair_count.toLocaleString()}个不同概念的目录候选组合。该数字不是人数或分析样本量。`;
