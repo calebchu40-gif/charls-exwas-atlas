@@ -28,6 +28,8 @@ ALLOWED_RELATIVE_PATHS = {
     "crosswave.js",
     "cross_wave_meta_v1.json",
     "solid_fuel_blood_v1.json",
+    "joint_household_model_v1.json",
+    "fuel_gradient_v1.json",
     "effect_modification_v1.json",
     "behavior_exposures_v1.json",
     "blood_biomarkers_v1.json",
