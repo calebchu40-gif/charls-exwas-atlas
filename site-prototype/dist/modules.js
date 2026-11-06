@@ -1,7 +1,7 @@
 // Special analyses: fuel gradient, jointly adjusted household model and effect
 // modification. Each tab renders one aggregate JSON produced overnight.
 
-const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null, stability: null };
+const moduleData = { gradient: null, joint: null, interaction: null, health: null, solid: null, trajectory: null, replication: null, stability: null, anthropometry: null };
 
 function moduleNumber(value) {
   const parsed = Number(value);
@@ -73,7 +73,7 @@ async function loadModules() {
     return;
   }
   try {
-    const [gradient, joint, interaction, health, solid, trajectory, replication, stability] = await Promise.all([
+    const [gradient, joint, interaction, health, solid, trajectory, replication, stability, anthropometry] = await Promise.all([
       fetch('./fuel_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./joint_household_model_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./effect_modification_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
@@ -82,6 +82,7 @@ async function loadModules() {
       fetch('./trajectories_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./replication_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./network_stability_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
+      fetch('./wave2013_solid_fuel_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
     ]);
     moduleData.gradient = gradient;
     moduleData.joint = joint;
@@ -91,6 +92,7 @@ async function loadModules() {
     moduleData.trajectory = trajectory;
     moduleData.replication = replication;
     moduleData.stability = stability;
+    moduleData.anthropometry = anthropometry;
     renderModules();
   } catch (error) {
     byId('moduleBody').textContent = `专项分析载入失败：${error.message}`;
@@ -142,6 +144,15 @@ function renderModules() {
     ]));
     byId('moduleNote').textContent = `${moduleData.stability.edges_in_multiple_waves} 条边出现在 ≥2 个波次，`
       + `${moduleData.stability.edges_in_all_waves} 条三波都有，方向一致率 ${(moduleData.stability.sign_consistent_fraction * 100).toFixed(0)}%。`;
+  } else if (active === 'anthropometry') {
+    target.append(moduleTable(moduleData.anthropometry.results, [
+      { label: '结局', value: row => row.outcome },
+      { label: 'β', value: row => row.estimate.toFixed(3) },
+      { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
+      { label: 'p', value: row => row.p_value < 0.001 ? '<0.001' : row.p_value.toFixed(3) },
+      { label: 'n', value: row => row.n_model },
+    ]));
+    byId('moduleNote').textContent = '2013 波：固体燃料对身高/体重/BMI 均负相关；身高成年后不可变，说明关联主要反映社会经济与城乡混杂。';
   } else if (active === 'trajectory') {
     target.append(moduleTable(moduleData.trajectory.by_wave, [
       { label: '波次', value: row => row.wave },
