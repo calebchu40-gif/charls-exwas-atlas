@@ -549,16 +549,31 @@ function renderCatalog(all, role, prefix) {
   byId(`${prefix}Count`).textContent=`筛选命中 ${matched.length.toLocaleString()} 条逐波字段—类别记录；当前展示 ${Math.min(100,matched.length)} 条。此数不是最终指标数。`;
 }
 
+const GROUP_LABELS={
+  'behavior':'行为','behavioral exposures':'行为暴露','community context':'社区环境',
+  'early-life and family socioeconomic context':'早年与家庭社会经济','environmental perception':'环境感知',
+  'family and intergenerational context':'家庭与代际','food and household environment':'饮食与家庭环境',
+  'healthcare access':'医疗可及性','housing and built environment':'住房与建成环境',
+  'internal biomarker':'体内生物标志物','life-course and reproductive history':'生命历程与生育史',
+  'pandemic and public-health context':'疫情与公共卫生','social determinants':'社会决定因素',
+  'social protection':'社会保障'
+};
 function renderGroups(all) {
   const exposures=all.filter(x=>x.epcf.split(',').includes('e'));
   const grouped=new Map();
   for(const x of exposures){const k=x.category;grouped.set(k,(grouped.get(k)||0)+1)}
   const grid=byId('groupGrid');grid.replaceChildren();
   for(const [category,n] of [...grouped].sort((a,b)=>a[0].localeCompare(b[0],'zh-CN'))){
-    const card=document.createElement('div');card.className='group-card';
-    const title=document.createElement('b');title.textContent=category;
-    const count=document.createElement('span');count.textContent=`${n.toLocaleString()} 条宽口径候选编码—类别记录（不是已确认暴露指标）`;
-    card.append(title,count);grid.append(card);
+    const card=document.createElement('button');card.type='button';card.className='group-card';
+    const title=document.createElement('b');title.textContent=GROUP_LABELS[category]||category;
+    const count=document.createElement('span');count.textContent=`${n.toLocaleString()} 条字段记录 · ${category}`;
+    card.append(title,count);
+    card.addEventListener('click',()=>{
+      showView('exposures');
+      const search=byId('eSearch');
+      if(search){search.value=category;search.dispatchEvent(new Event('input',{bubbles:true}));}
+    });
+    grid.append(card);
   }
 }
 function renderBrowseCards(containerId,role){

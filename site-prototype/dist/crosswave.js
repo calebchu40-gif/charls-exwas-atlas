@@ -1,6 +1,21 @@
 // Cross-wave consistency view: DerSimonian-Laird pooled estimates for
 // exposure-phenotype pairs measured in more than one wave.
 let crossWavePairs = [];
+const crossWaveLabels = { exposure: {}, phenotype: {} };
+const crossWaveLabelsReady = fetch('./concept_labels_v1.json?v=1', { cache: 'no-cache' })
+  .then(response => (response.ok ? response.json() : null))
+  .then(data => {
+    if (!data) return;
+    crossWaveLabels.exposure = data.exposures || {};
+    crossWaveLabels.phenotype = data.phenotypes || {};
+  })
+  .catch(() => {});
+
+function crossWaveLabel(kind, id) {
+  const entry = crossWaveLabels[kind][id];
+  return entry ? `${entry.zh}（${entry.code}）` : id;
+}
+
 
 function crossWaveForest(pair) {
   const box = byId('crossWaveForest');
@@ -29,7 +44,7 @@ function crossWaveForest(pair) {
   });
   parts.push('</svg>');
   box.innerHTML = parts.join('') +
-    `<p class="browse-legend">${pair.exposure_concept_id} × ${pair.phenotype_concept_id} · ${pair.contrast || '—'} · k=${pair.k} · I²=${pair.i2.toFixed(0)}% · ${pair.metric === 'OR' ? '优势比（对数合并后回变换）' : '标准化 β'}</p>`;
+    `<p class="browse-legend">${crossWaveLabel('exposure', pair.exposure_concept_id)} × ${crossWaveLabel('phenotype', pair.phenotype_concept_id)} · ${pair.contrast || '—'} · k=${pair.k} · I²=${pair.i2.toFixed(0)}% · ${pair.metric === 'OR' ? '优势比（对数合并后回变换）' : '标准化 β'}</p>`;
 }
 
 function renderCrossWave() {
@@ -48,9 +63,9 @@ function renderCrossWave() {
     const tr = document.createElement('tr');
     const isOR = pair.metric === 'OR';
     const cells = [
-      pair.exposure_concept_id,
+      crossWaveLabel('exposure', pair.exposure_concept_id),
       pair.contrast || '—',
-      pair.phenotype_concept_id,
+      crossWaveLabel('phenotype', pair.phenotype_concept_id),
       pair.waves.join(' / '),
       `${pair.pooled.toFixed(isOR ? 2 : 3)}${isOR ? ' (OR)' : ''}`,
       `${pair.ci_lower.toFixed(isOR ? 2 : 3)} – ${pair.ci_upper.toFixed(isOR ? 2 : 3)}`,
@@ -72,7 +87,8 @@ function renderCrossWave() {
 async function loadCrossWave() {
   if (crossWavePairs.length) return;
   try {
-    const response = await fetch('./cross_wave_meta_v1.json?v=1', { cache: 'no-cache' });
+    await crossWaveLabelsReady;
+  const response = await fetch('./cross_wave_meta_v1.json?v=1', { cache: 'no-cache' });
     const payload = await response.json();
     crossWavePairs = payload.pairs;
     const waveSelect = byId('crossWaveWaves');
