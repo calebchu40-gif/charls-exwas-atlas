@@ -184,6 +184,12 @@
   .atlas-legend-key{display:inline-block;min-width:64px;margin-right:8px;color:#1f5f8b;font-weight:600}
 }
 </style>
+<style id="figure-scroll-style">
+.figure-scroll{overflow-x:auto;overscroll-behavior-x:contain;max-width:100%}
+@media(max-width:800px){
+  .figure-scroll svg.forest{width:900px!important;min-width:900px;height:auto}
+}
+</style>
 </head>
 <body>
   <header class="topbar"><div class="shell"><div class="brand">CHARLS <span style="color:#86d2d1">/</span> ExWAS Atlas</div><a class="toplink" href="#method">数据与方法说明 ↓</a></div></header>
@@ -379,11 +385,11 @@
     
   </main>
   <footer class="footer"><div class="shell"><span>CHARLS ExWAS Atlas · 候选变量目录</span><span>页面展示公开变量元数据及五波披露审查后的汇总统计结果；不含 CHARLS 微观数据或受访者答案。</span><span>数据致谢：感谢北京大学国家发展研究院中国经济研究中心提供CHARLS数据。<a href="https://charls.pku.edu.cn/en/data/User2011.pdf" target="_blank" rel="noopener">2011基线引用：CHARLS 2011-2012 National Baseline Users Guide（官方协议要求）</a></span></div></footer>
-  <script src="./app.js?v=261" defer></script>
+  <script src="./app.js?v=262" defer></script>
 <script src="./browse.js?v=12" defer></script>
 <script src="./network.js?v=8" defer></script>
 <script src="./crosswave.js?v=4" defer></script>
-<script src="./modules.js?v=28" defer></script>
+<script src="./modules.js?v=30" defer></script>
 </body>
 </html>
 

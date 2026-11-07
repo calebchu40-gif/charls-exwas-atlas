@@ -148,6 +148,14 @@ function svgNode(tag, attrs) {
   return node;
 }
 
+function forestLabel(text) {
+  const value = String(text);
+  const cut = value.lastIndexOf('：');
+  if (cut < 0) return value;
+  const term = value.slice(cut + 1).trim();
+  return value.slice(0, cut + 1) + (TERM_LABELS[term] || term);
+}
+
 function renderForest(payload) {
   const entries = payload.entries;
   const width = 900, labelWidth = 320, plotWidth = width - labelWidth - 40, rowHeight = 24;
@@ -163,14 +171,17 @@ function renderForest(payload) {
   entries.forEach((row, index) => {
     const y = 28 + index * rowHeight;
     const label = svgNode('text', { x: 0, y: y + 4, 'font-size': 12, fill: '#2d4857' });
-    label.textContent = row.label;
+    label.textContent = forestLabel(row.label);
     svg.append(label);
     svg.append(svgNode('line', { x1: x(row.ci_lower), x2: x(row.ci_upper), y1: y, y2: y,
       stroke: '#7f9aa8', 'stroke-width': 1.5 }));
     svg.append(svgNode('circle', { cx: x(row.estimate), cy: y, r: 4,
       fill: row.estimate < 0 ? '#1f5f8b' : '#b26a2c' }));
   });
-  return svg;
+  const wrapper = document.createElement('div');
+  wrapper.className = 'figure-scroll';
+  wrapper.append(svg);
+  return wrapper;
 }
 
 function moduleTabFromUrl() {
