@@ -57,6 +57,10 @@ function showView(id) {
 }
 document.querySelectorAll('.viewnav button').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
 document.querySelectorAll('.special-nav-menu button').forEach(btn => btn.addEventListener('click', () => btn.closest('details')?.removeAttribute('open')));
+document.addEventListener('click', event => {
+  const menu = document.querySelector('details.special-nav[open]');
+  if (menu && !menu.contains(event.target)) menu.removeAttribute('open');
+});
 document.querySelectorAll('#topics [data-view]').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
 document.querySelectorAll('.overview-view [data-view]').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
 
