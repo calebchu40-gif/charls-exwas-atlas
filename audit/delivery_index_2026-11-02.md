@@ -80,11 +80,12 @@ node scripts/browser_regression.mjs http://127.0.0.1:8777/index.html
 | 暴露概念 | 1,319（E 目录 6,331 条字段） |
 | 表型概念 | 332（P 目录 2,133 条字段） |
 | C 类元数据 | 1,048 条 |
-| 概念—源字段映射 | 8,341 条 |
+| 概念—源字段映射 | 8,341 条（已审阅 crosswalk 的 E/P 行数；目录页内按行统计的概念挂载为 8,395 次，C 类另有 177 条，合计 8,572） |
 | 波次覆盖 | 2011 / 2013 / 2015 / 2018 / 2020 |
 
-所有数字均可用 `association_results_v1.json`、`catalog_e.json`、`catalog_p.json`、`catalog_c.json` 复核；
-页面显示与数据文件一致（本轮已逐项核对）。
+结果数可用 `association_results_v1.json` 复核；概念与映射数由 `scripts/summarize_directory_scope.py` 从
+`audit/ep_concept_source_crosswalk_v1.csv` 重新生成到 `audit/directory_scope_counts_v1.json`，
+测试 `test_directory_scope_kpis.py` 会校验首页数字与该文件一致（本轮已逐项核对）。
 
 ---
 
