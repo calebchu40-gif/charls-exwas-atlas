@@ -487,7 +487,12 @@ async function renderAssociations() {
       const control=byId(id);
       if(!control.dataset.bound){control.addEventListener(id==='associationSearch'?'input':'change',showAssociationResults);control.dataset.bound='true'}
     }
-    const clearButton=byId('associationClear');
+    const exportButton=byId('associationExport');
+  if(exportButton&&!exportButton.dataset.bound){
+  exportButton.addEventListener('click',()=>downloadAssociationCsv(heatmapRows.length?heatmapRows:associationRows));
+  exportButton.dataset.bound='true';
+  }
+  const clearButton=byId('associationClear');
     if(clearButton&&!clearButton.dataset.bound){
       clearButton.addEventListener('click',()=>{
         ['associationExposure','associationPhenotype','associationWave','associationModel','associationFit','associationSort'].forEach(id=>byId(id).value='');
