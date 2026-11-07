@@ -189,6 +189,18 @@ check('no network label leaves the canvas', network.outside === 0 && network.lab
   `${network.labels} labels`);
 
 // ----------------------------------------------------------------- mobile pass
+const named = await evaluate(`(() => {
+  const missing = [];
+  for (const el of document.querySelectorAll('input,select,textarea')) {
+    if (el.type === 'hidden') continue;
+    const named = (el.labels && el.labels.length) || el.getAttribute('aria-label')
+      || el.getAttribute('aria-labelledby') || el.getAttribute('title');
+    if (!named) missing.push(el.placeholder || el.tagName);
+  }
+  return missing;
+})()`);
+check('every form control has an accessible name', named.length === 0, JSON.stringify(named.slice(0, 5)));
+
 await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 2, mobile: true });
 await send('Page.navigate', { url });
 await waitFor(`document.querySelectorAll('.primary-nav > button').length === 6`, 30000);
