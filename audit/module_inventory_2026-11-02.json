@@ -274,6 +274,13 @@
       "core": false
     },
     {
+      "file": "mental_health_v1.json",
+      "kb": 5.5,
+      "parsed": true,
+      "referenced": true,
+      "core": false
+    },
+    {
       "file": "mood_items_v1.json",
       "kb": 35.9,
       "parsed": true,
@@ -290,13 +297,6 @@
     {
       "file": "objective_measurements_v1.json",
       "kb": 82.0,
-      "parsed": true,
-      "referenced": true,
-      "core": false
-    },
-    {
-      "file": "pvalue_calibration_v1.json",
-      "kb": 1.6,
       "parsed": true,
       "referenced": true,
       "core": false
@@ -351,22 +351,8 @@
       "core": false
     },
     {
-      "file": "wave2013_solid_fuel_full_v1.json",
-      "kb": 0.8,
-      "parsed": true,
-      "referenced": true,
-      "core": false
-    },
-    {
       "file": "wave2013_solid_fuel_v1.json",
       "kb": 0.9,
-      "parsed": true,
-      "referenced": true,
-      "core": false
-    },
-    {
-      "file": "wave2015_fuel_gradient_v1.json",
-      "kb": 4.2,
       "parsed": true,
       "referenced": true,
       "core": false

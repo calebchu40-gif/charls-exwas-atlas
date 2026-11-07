@@ -73,7 +73,7 @@ async function loadModules() {
     return;
   }
   try {
-    const [gradient, joint, interaction, health, solid, trajectory, replication, stability, anthropometry, ageGradient, lifestyle, strata, replication2015, anthropometryFull, calibration, forest, gradient2015, mental, sleep] = await Promise.all([
+    const [gradient, joint, interaction, health, solid, trajectory, replication, stability, anthropometry, ageGradient, lifestyle, strata, replication2015, forest, mental] = await Promise.all([
       fetch('./fuel_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./joint_household_model_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./effect_modification_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
@@ -87,12 +87,8 @@ async function loadModules() {
       fetch('./lifestyle_restricted_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./uric_strata_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./wave2015_solid_fuel_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
-      fetch('./wave2013_solid_fuel_full_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
-      fetch('./pvalue_calibration_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./evidence_forest_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
-      fetch('./wave2015_fuel_gradient_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
       fetch('./mental_health_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
-      fetch('./sleep_v1.json?v=1', { cache: 'no-cache' }).then(r => r.json()),
     ]);
     moduleData.gradient = gradient;
     moduleData.joint = joint;
@@ -107,12 +103,8 @@ async function loadModules() {
     moduleData.lifestyle = lifestyle;
     moduleData.strata = strata;
     moduleData.replication2015 = replication2015;
-    moduleData.anthropometryFull = anthropometryFull;
-    moduleData.calibration = calibration;
     moduleData.forest = forest;
-    moduleData.gradient2015 = gradient2015;
     moduleData.mental = mental;
-    moduleData.sleep = sleep;
     renderModules();
   } catch (error) {
     byId('moduleBody').textContent = `专项分析载入失败：${error.message}`;
@@ -174,7 +166,7 @@ function renderModules() {
       { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
       { label: 'p', value: row => row.p < 0.001 ? '<0.001' : row.p.toFixed(3) },
     ]));
-    byId('moduleNote').textContent = '健康指数 = 收缩压、BMI、连续减 7、自评健康、自评记忆 五项 z 分均值（0–100）；n=10,071。';
+    byId('moduleNote').textContent = '五项 z 分合成（0–100）；n=10,071。';
   } else if (active === 'replication') {
     const rows = [...moduleData.replication.pairs].sort(
       (a, b) => (a.q_2015 ?? 1) - (b.q_2015 ?? 1)).slice(0, 40);
@@ -186,8 +178,7 @@ function renderModules() {
       { label: 'q 2015', value: row => (row.q_2015 ?? 1) < 0.001 ? '<0.001' : (row.q_2015 ?? 1).toFixed(3) },
       { label: '同向', value: row => row.same_sign ? '是' : '否' },
     ]));
-    byId('moduleNote').textContent = `105 项在 2015 全部可匹配：同向 ${moduleData.replication.same_sign}/105，`
-      + `Pearson r=${moduleData.replication.pearson_r}，两波 q 均<0.05 的有 ${moduleData.replication.q_both_below_05} 项。`;
+    byId('moduleNote').textContent = `105 项在 2015 可匹配，同向 ${moduleData.replication.same_sign} 项。`;
   } else if (active === 'stability') {
     target.append(moduleTable(moduleData.stability.rows, [
       { label: '暴露对', value: row => row.pair.join(' – ') },
@@ -206,7 +197,7 @@ function renderModules() {
       { label: 'p', value: row => row.p_value < 0.001 ? '<0.001' : row.p_value.toFixed(3) },
       { label: 'n', value: row => row.n_model },
     ]));
-    byId('moduleNote').textContent = '2013 波：固体燃料对身高/体重/BMI 均负相关；身高成年后不可变，说明关联主要反映社会经济与城乡混杂。';
+    byId('moduleNote').textContent = '2013 波体测结局。';
   } else if (active === 'agegradient') {
     target.append(moduleTable(moduleData.ageGradient.results, [
       { label: '对照', value: row => row.term },
@@ -216,7 +207,7 @@ function renderModules() {
       { label: 'p', value: row => row.p_value < 0.001 ? '<0.001' : row.p_value.toFixed(3) },
       { label: 'n', value: row => row.n_model },
     ]));
-    byId('moduleNote').textContent = '尿酸对燃料的效应在 65–74 岁最强，75+ 样本少且不显著；方向在所有年龄组一致。';
+    byId('moduleNote').textContent = '尿酸按基线年龄分组。';
   } else if (active === 'lifestyle') {
     target.append(moduleTable(moduleData.lifestyle.results, [
       { label: '对照', value: row => row.term },
@@ -235,7 +226,7 @@ function renderModules() {
       { label: 'p', value: row => row.p_value < 0.001 ? '<0.001' : row.p_value.toFixed(3) },
       { label: 'n', value: row => row.n_model },
     ]));
-    byId('moduleNote').textContent = '固体燃料→尿酸在三个 BMI 层几乎相同（−0.21）；肾功能正常者显著，eGFR<60 样本少（396）不显著。';
+    byId('moduleNote').textContent = 'BMI 与 eGFR 分层。';
   } else if (active === 'replication2015') {
     target.append(moduleTable(moduleData.replication2015.results, [
       { label: '波次', value: row => row.wave },
@@ -245,7 +236,7 @@ function renderModules() {
       { label: 'p', value: row => row.p_value < 0.001 ? '<0.001' : row.p_value.toFixed(3) },
       { label: 'n', value: row => row.n_model },
     ]));
-    byId('moduleNote').textContent = '2015 波：年龄由出生年推算，性别为 2015 记录，城乡/教育取自 2011 基线；n=1,553。';
+    byId('moduleNote').textContent = '2015 波，协变量取自 2011 基线。';
   } else if (active === 'anthropometryfull') {
     target.append(moduleTable(moduleData.anthropometryFull.results, [
       { label: '结局', value: row => row.outcome },
@@ -270,9 +261,7 @@ function renderModules() {
   } else if (active === 'forest') {
     target.append(renderForest(moduleData.forest));
     const gradient = moduleData.forest.gradient;
-    byId('moduleNote').textContent = `共 ${moduleData.forest.summary.entries} 条证据，`
-      + `${moduleData.forest.summary.negative} 条为负向；梯度项（每等级 ${gradient.estimate.toFixed(3)}）量纲不同，未画入。`
-      + '结局为尿酸（标准化 β）。';
+    byId('moduleNote').textContent = '尿酸相关证据的效应量与区间；梯度项量纲不同，未画入。';
   } else if (active === 'gradient2015') {
     target.append(moduleTable(moduleData.gradient2015.results, [
       { label: '结局', value: row => row.phenotype_concept_id },
@@ -314,7 +303,7 @@ function renderModules() {
       { label: 'BMI', value: row => row.bmi === null || row.bmi === undefined ? '—' : row.bmi.toFixed(1) },
       { label: 'n', value: row => row.n },
     ]));
-    byId('moduleNote').textContent = '1=差 5=好；BMI 由实测身高体重计算；按 2011 年龄分层；2018 无 da001、2020 字段含义变化，未纳入。';
+    byId('moduleNote').textContent = '按 2011 年龄分层；2018/2020 字段不可比，未纳入。';
   } else {
     target.append(moduleTable(moduleData.solid.results, [
       { label: '结局', value: row => row.phenotype_concept_id },
@@ -332,10 +321,18 @@ document.querySelectorAll('[data-view="modules"]').forEach(button =>
 const moduleTabs = byId('moduleTabs');
 if (moduleTabs) {
   moduleTabs.addEventListener('click', event => {
+    const more = event.target.closest('#moduleMore');
+    if (more) {
+      const expanded = moduleTabs.dataset.expanded === 'true';
+      moduleTabs.dataset.expanded = expanded ? 'false' : 'true';
+      more.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      more.textContent = expanded ? '更多研究结果' : '收起';
+      return;
+    }
     const button = event.target.closest('button[data-module]');
     if (!button) return;
     moduleTabs.dataset.active = button.dataset.module;
-    moduleTabs.querySelectorAll('button').forEach(item => {
+    moduleTabs.querySelectorAll('button[data-module]').forEach(item => {
       item.setAttribute('aria-current', item === button ? 'page' : 'false');
     });
     renderModules();

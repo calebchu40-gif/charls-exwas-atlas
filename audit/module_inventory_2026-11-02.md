@@ -2,7 +2,7 @@
 
 `catalog_*.json` 由模板按角色加载，`household_*`/`individual_*`/`land_rental_*`/`residential_rental_*` 是历史遗留的数据 payload（非本轮新增、暂未绑定视图），二者不计入未接入告警。
 
-共 55 个 JSON，55 个可解析，45 个已接入页面。
+共 53 个 JSON，53 个可解析，43 个已接入页面。
 
 | 文件 | KB | 解析 | 已接入 | 核心 |
 |---|---|---|---|---|
@@ -45,10 +45,10 @@
 | land_rental_income_v1.json | 14.0 | 是 | 否 |  |
 | life_history_exposures_v1.json | 11226.3 | 是 | 是 |  |
 | lifestyle_restricted_v1.json | 0.7 | 是 | 是 |  |
+| mental_health_v1.json | 5.5 | 是 | 是 |  |
 | mood_items_v1.json | 35.9 | 是 | 是 |  |
 | network_stability_v1.json | 4.4 | 是 | 是 |  |
 | objective_measurements_v1.json | 82.0 | 是 | 是 |  |
-| pvalue_calibration_v1.json | 1.6 | 是 | 是 |  |
 | replication_v1.json | 30.3 | 是 | 是 |  |
 | residential_rental_income_v1.json | 3.4 | 是 | 否 |  |
 | social_exposures_v1.json | 1411.2 | 是 | 是 |  |
@@ -56,8 +56,6 @@
 | trajectories_v1.json | 2.3 | 是 | 是 |  |
 | uric_strata_v1.json | 1.3 | 是 | 是 |  |
 | verified_code_examples_v1.json | 21.1 | 是 | 是 |  |
-| wave2013_solid_fuel_full_v1.json | 0.8 | 是 | 是 |  |
 | wave2013_solid_fuel_v1.json | 0.9 | 是 | 是 |  |
-| wave2015_fuel_gradient_v1.json | 4.2 | 是 | 是 |  |
 | wave2015_solid_fuel_v1.json | 0.5 | 是 | 是 |  |
 | work_exposures_v1.json | 1009.3 | 是 | 是 |  |
