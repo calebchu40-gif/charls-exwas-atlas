@@ -29,6 +29,7 @@ ALLOWED_RELATIVE_PATHS = {
     "cross_wave_meta_v1.json",
     "modules.js",
     "health_index_v1.json",
+    "concept_labels_v1.json",
     "trajectories_v1.json",
     "replication_v1.json",
     "network_stability_v1.json",

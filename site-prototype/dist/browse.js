@@ -10,6 +10,24 @@ const browseState = {
   exposure: { concept: '', wave: '', sort: 'q' },
 };
 let browseInitDone = false;
+const conceptLabels = { exposure: {}, phenotype: {} };
+
+function conceptLabel(mode, id, fallbackCode) {
+  const entry = conceptLabels[mode][id];
+  if (!entry) return fallbackCode && fallbackCode !== id ? `${id}（${fallbackCode}）` : id;
+  return entry.code ? `${entry.zh}（${entry.code}）` : entry.zh;
+}
+
+function loadConceptLabels() {
+  return fetch('./concept_labels_v1.json?v=1', { cache: 'no-cache' })
+    .then(response => (response.ok ? response.json() : null))
+    .then(data => {
+      if (!data) return;
+      conceptLabels.exposure = data.exposures || {};
+      conceptLabels.phenotype = data.phenotypes || {};
+    })
+    .catch(() => {});
+}
 
 function browseNumber(value) {
   if (value === '' || value === null || value === undefined) return null;
@@ -48,8 +66,8 @@ function browseConcepts(rows, mode) {
   return [...map.values()].sort((a, b) => a.id.localeCompare(b.id));
 }
 
-function browseDisplay(item) {
-  return `${item.id} [${item.variable || '—'}]`;
+function browseDisplay(item, mode) {
+  return conceptLabel(mode, item.id, item.variable);
 }
 
 function browseFiltered(mode) {
@@ -95,8 +113,10 @@ function browseChart(mode, rows, otherKey) {
     const isOR = row.estimate_type === 'odds_ratio';
     const positive = isOR ? Math.log(Math.max(estimate, 1e-6)) >= 0 : estimate >= 0;
     const width = Math.max(1.5, magnitudeOf(row) / max * 50);
-    const contrast = row.contrast ? ' · ' + row.contrast.slice(-28) : '';
-    const label = `${row[otherKey]}${contrast}`;
+    const contrast = row.contrast ? ' · ' + row.contrast : '';
+    const otherMode = mode === 'phenotype' ? 'exposure' : 'phenotype';
+    const otherVar = otherMode === 'exposure' ? row.exposure_variable : row.phenotype_variable;
+    const label = `${conceptLabel(otherMode, row[otherKey], otherVar)}${contrast}`;
     const q = browseNumber(row.q_value_by);
 
     const line = document.createElement('div');
@@ -148,7 +168,7 @@ function browseTable(mode, rows, otherKey) {
       ? `${browseFormat(row.estimate)} (${browseFormat(row.ci_lower)} to ${browseFormat(row.ci_upper)})`
       : '—';
     const cells = [
-      `${row[otherKey]}${row.contrast ? ' · ' + row.contrast : ''}`,
+      `${conceptLabel(mode === 'phenotype' ? 'exposure' : 'phenotype', row[otherKey], mode === 'phenotype' ? row.exposure_variable : row.phenotype_variable)}${row.contrast ? ' · ' + row.contrast : ''}`,
       row.wave,
       row.model_id,
       effect,
@@ -191,15 +211,15 @@ function renderBrowse(mode) {
     list.replaceChildren();
     for (const item of concepts) {
       const option = document.createElement('option');
-      option.value = browseDisplay(item);
+      option.value = browseDisplay(item, mode);
       list.append(option);
     }
     list.dataset.filled = 'true';
   }
-  const byDisplay = new Map(concepts.map(item => [browseDisplay(item), item]));
+  const byDisplay = new Map(concepts.map(item => [browseDisplay(item, mode), item]));
   if (!byDisplay.has(input.value)) {
     const preferred = state.concept ? concepts.find(item => item.id === state.concept) : null;
-    input.value = preferred ? browseDisplay(preferred) : '';
+    input.value = preferred ? browseDisplay(preferred, mode) : '';
   }
   const chosen = byDisplay.get(input.value);
   state.concept = chosen ? chosen.id : '';
@@ -223,7 +243,7 @@ function renderBrowse(mode) {
   if (tableWrap) tableWrap.hidden = false;
   const { rows: filtered, otherKey } = browseFiltered(mode);
   const summary = byId(`browse${prefix}Summary`);
-  summary.textContent = `${chosen.id}（${chosen.variable || '变量未记录'}）· ${filtered.length} 条关联`
+  summary.textContent = `${conceptLabel(mode, state.concept, chosen.variable)} · ${filtered.length} 条关联`
     + (state.wave ? ` · ${state.wave}` : ' · 全部波次')
     + ` · 显著 q<0.05：${filtered.filter(row => (browseNumber(row.q_value_by) ?? 1) < 0.05).length}`;
   browseChart(mode, filtered, otherKey);
@@ -252,7 +272,7 @@ function initBrowse() {
       renderBrowse(mode);
     });
   }
-  browseRows().then(() => {
+  loadConceptLabels().then(browseRows).then(() => {
     for (const mode of ['phenotype', 'exposure']) {
       const prefix = mode === 'phenotype' ? 'Phenotype' : 'Exposure';
       const quick = byId(`browse${prefix}Quick`);
@@ -271,9 +291,9 @@ function initBrowse() {
         const chip = document.createElement('button');
         chip.type = 'button';
         chip.className = 'quick-chip';
-        chip.textContent = `${item.id} · ${item.count}`;
+        chip.textContent = `${conceptLabel(mode, item.id, item.variable)} · ${item.count}`;
         chip.addEventListener('click', () => {
-          input.value = browseDisplay(item);
+          input.value = browseDisplay(item, mode);
           renderBrowse(mode);
         });
         quick.append(chip);

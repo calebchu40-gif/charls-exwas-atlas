@@ -55,6 +55,8 @@ function showView(id) {
   if (id === 'candidatePairExplorer') loadCandidatePairExplorer();
 }
 document.querySelectorAll('.viewnav button').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
+document.querySelectorAll('.special-nav-menu button').forEach(btn => btn.addEventListener('click', () => btn.closest('details')?.removeAttribute('open')));
+document.querySelectorAll('#topics [data-view]').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
 document.querySelectorAll('.overview-view [data-view]').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
 
 // Deep links: every view is addressable as #view-id so a result or a catalog
