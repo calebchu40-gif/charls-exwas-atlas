@@ -114,9 +114,15 @@ function loadCandidatePairExplorer(){
 // No row is ever loaded from anywhere except association_results_v1.json.
 // ---------------------------------------------------------------------------
 let heatmapRows=[];
-const conceptLabelsPromise = fetch('./concept_labels_v1.json?v=1', { cache: 'no-cache' })
-  .then(response => (response.ok ? response.json() : { exposures: {}, phenotypes: {} }))
-  .catch(() => ({ exposures: {}, phenotypes: {} }));
+let conceptLabelsPromise = null;
+function loadConceptLabels() {
+  if (!conceptLabelsPromise) {
+    conceptLabelsPromise = fetch('./concept_labels_v1.json?v=1', { cache: 'no-cache' })
+      .then(response => (response.ok ? response.json() : { exposures: {}, phenotypes: {} }))
+      .catch(() => ({ exposures: {}, phenotypes: {} }));
+  }
+  return conceptLabelsPromise;
+}
 let heatmapSelection=null;
 
 function heatmapNumber(value){
@@ -435,7 +441,7 @@ async function renderAssociations() {
         if(row.fit_status!=='withheld_disclosure'||numericFields.some(key=>row[key]!==''&&row[key]!==null&&row[key]!==undefined))throw new Error('withheld row contains inferential values');
       } else if(row.fit_status==='withheld_disclosure') throw new Error('withheld fit lacks withheld disclosure status');
     }
-    const conceptLabels = await conceptLabelsPromise;
+    const conceptLabels = await loadConceptLabels();
     const filters=[
       ['associationExposure','exposure_concept_id','exposure_variable'],
       ['associationPhenotype','phenotype_concept_id','phenotype_variable'],
@@ -446,9 +452,10 @@ async function renderAssociations() {
       select.replaceChildren(new Option('全部',''));
       for(const value of values){
         const isConcept = key==='exposure_concept_id'||key==='phenotype_concept_id';
-        const entry = isConcept
-          ? (key==='exposure_concept_id'?conceptLabels.exposures:conceptLabels.phenotypes)[value]
-          : null;
+        const labelMap = isConcept
+          ? ((key==='exposure_concept_id'?conceptLabels.exposures:conceptLabels.phenotypes) || {})
+          : {};
+        const entry = isConcept ? labelMap[value] : null;
         const label = entry
           ? `${entry.zh}（${entry.code}）`
           : (isConcept
