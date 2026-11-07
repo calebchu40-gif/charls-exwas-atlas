@@ -155,6 +155,25 @@
   body[data-view] .catalog-tools .field:first-child{grid-column:1 / -1}
 }
 </style>
+<style id="print-styles">
+@page{size:A4 landscape;margin:12mm}
+@media print{
+  body{background:#fff;color:#111}
+  .topbar,.viewnav,.special-nav,.footer,.catalog-tools,.moduletabs,.quick-list,
+  .browse-controls,.query-prompt,.entry-grid,.hero,.catalog-meta button,.bar-value{display:none!important}
+  .shell{max-width:100%;padding:0}
+  .view[hidden]{display:none!important}
+  .tablewrap{overflow:visible!important;max-width:100%!important}
+  table{width:100%!important;min-width:0!important;table-layout:auto!important;font-size:8.5pt}
+  th,td{border-color:#999!important;padding:4px 6px!important}
+  tr{page-break-inside:avoid}
+  thead{display:table-header-group}
+  .bar-chart,.heatmap-block{page-break-inside:avoid}
+  #associationHeatmap{display:none!important}
+  #associationTableWrap{overflow:visible!important}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:8pt;color:#555}
+}
+</style>
 </head>
 <body>
   <header class="topbar"><div class="shell"><div class="brand">CHARLS <span style="color:#86d2d1">/</span> ExWAS Atlas</div><a class="toplink" href="#method">数据与方法说明 ↓</a></div></header>
@@ -349,7 +368,7 @@
     
   </main>
   <footer class="footer"><div class="shell"><span>CHARLS ExWAS Atlas · 候选变量目录</span><span>页面展示公开变量元数据及五波披露审查后的汇总统计结果；不含 CHARLS 微观数据或受访者答案。</span><span>数据致谢：感谢北京大学国家发展研究院中国经济研究中心提供CHARLS数据。<a href="https://charls.pku.edu.cn/en/data/User2011.pdf" target="_blank" rel="noopener">2011基线引用：CHARLS 2011-2012 National Baseline Users Guide（官方协议要求）</a></span></div></footer>
-  <script src="./app.js?v=256" defer></script>
+  <script src="./app.js?v=258" defer></script>
 <script src="./browse.js?v=12" defer></script>
 <script src="./network.js?v=8" defer></script>
 <script src="./crosswave.js?v=4" defer></script>
