@@ -87,38 +87,51 @@ function browseChart(mode, rows, otherKey) {
       ? Math.abs(Math.log(Math.max(estimate, 1e-6)))
       : Math.abs(estimate);
   };
-  const width = 1040, barHeight = 22, gap = 8;
-  const labelWidth = 330, plotLeft = 350, plotRight = 1005;
-  const zero = (plotLeft + plotRight) / 2;
-  const half = (plotRight - plotLeft) / 2;
-  const height = top.length * (barHeight + gap) + 26;
   const max = Math.max(...top.map(magnitudeOf), 1e-9);
-  const parts = [`<svg viewBox="0 0 ${width} ${height}" width="100%" height="${height}" role="img" aria-label="top associations">`];
-  parts.push(`<line x1="${zero}" y1="4" x2="${zero}" y2="${height - 20}" stroke="#c9d6de" stroke-width="1"/>`);
-  top.forEach((row, index) => {
-    const y = 8 + index * (barHeight + gap);
+  const wrap = document.createElement('div');
+  wrap.className = 'bar-chart';
+  for (const row of top) {
     const estimate = browseNumber(row.estimate) ?? 0;
     const isOR = row.estimate_type === 'odds_ratio';
     const positive = isOR ? Math.log(Math.max(estimate, 1e-6)) >= 0 : estimate >= 0;
-    const length = Math.max(2, magnitudeOf(row) / max * half);
-    const x = positive ? zero : zero - length;
-    const color = positive ? '#2f6fbe' : '#c0392b';
-    const contrast = row.contrast ? ' · ' + row.contrast.slice(-24) : '';
+    const width = Math.max(1.5, magnitudeOf(row) / max * 50);
+    const contrast = row.contrast ? ' · ' + row.contrast.slice(-28) : '';
     const label = `${row[otherKey]}${contrast}`;
-    const short = label.length > 42 ? label.slice(0, 41) + '…' : label;
     const q = browseNumber(row.q_value_by);
-    parts.push(`<text x="${labelWidth}" y="${y + barHeight / 2 + 4}" text-anchor="end" font-size="11.5" fill="#33475b">${escapeXml(short)}</text>`);
-    parts.push(`<rect x="${x}" y="${y}" width="${length}" height="${barHeight}" rx="3" fill="${color}" fill-opacity="0.82"><title>${escapeXml(label)}: ${estimate.toFixed(3)} (q ${q === null ? '—' : q.toExponential(1)})</title></rect>`);
-    const value = isOR ? estimate.toFixed(2) : `${estimate >= 0 ? '+' : ''}${estimate.toFixed(3)}`;
-    const valueX = positive ? x + length + 6 : x - 6;
-    parts.push(`<text x="${valueX}" y="${y + barHeight / 2 + 4}" text-anchor="${positive ? 'start' : 'end'}" font-size="11.5" fill="#33475b">${value}${q !== null && q < 0.05 ? ' *' : ''}</text>`);
-  });
-  parts.push('</svg>');
-  container.innerHTML = parts.join('');
-  container.insertAdjacentHTML('beforeend',
-    hasOR
-      ? '<p class="browse-legend">条形长度按 log 劣势比（OR）绘制，零线为 OR=1；蓝色 OR&gt;1、红色 OR&lt;1；* 表示该族 BY q &lt; 0.05。</p>'
-      : '<p class="browse-legend">条形从零线向两侧绘制，长度 = 效应绝对值（每标准差）；蓝色为正、红色为负；* 表示该族 BY q &lt; 0.05。</p>');
+
+    const line = document.createElement('div');
+    line.className = 'bar-row';
+    line.title = `${label}: ${estimate.toFixed(3)} (q ${q === null ? '—' : q.toExponential(1)})`;
+
+    const name = document.createElement('div');
+    name.className = 'bar-label';
+    name.textContent = label;
+
+    const track = document.createElement('div');
+    track.className = 'bar-track';
+    const zero = document.createElement('span');
+    zero.className = 'bar-zero';
+    const fill = document.createElement('span');
+    fill.className = `bar-fill ${positive ? 'positive' : 'negative'}`;
+    fill.style.width = `${width}%`;
+    if (positive) fill.style.left = '50%';
+    else fill.style.right = '50%';
+    track.append(zero, fill);
+
+    const value = document.createElement('div');
+    value.className = 'bar-value';
+    value.textContent = (isOR ? estimate.toFixed(2) : `${estimate >= 0 ? '+' : ''}${estimate.toFixed(3)}`)
+      + (q !== null && q < 0.05 ? ' *' : '');
+
+    line.append(name, track, value);
+    wrap.append(line);
+  }
+  const legend = document.createElement('p');
+  legend.className = 'browse-legend';
+  legend.textContent = hasOR
+    ? '条形长度按 log 劣势比（OR）绘制，中线为 OR=1；蓝色 OR>1、红色 OR<1；* 表示该族 BY q < 0.05。'
+    : '条形从中线向两侧绘制，长度 = 效应绝对值（每标准差）；蓝色为正、红色为负；* 表示该族 BY q < 0.05。';
+  container.replaceChildren(wrap, legend);
 }
 
 function escapeXml(text) {
@@ -240,6 +253,33 @@ function initBrowse() {
     });
   }
   browseRows().then(() => {
+    for (const mode of ['phenotype', 'exposure']) {
+      const prefix = mode === 'phenotype' ? 'Phenotype' : 'Exposure';
+      const quick = byId(`browse${prefix}Quick`);
+      const input = byId(`browse${prefix}Input`);
+      if (!quick || !input) continue;
+      const top = browseConcepts(associationRows, mode)
+        .sort((a, b) => b.count - a.count)
+        .slice(0, 12);
+      if (!top.length) continue;
+      quick.replaceChildren();
+      const label = document.createElement('span');
+      label.className = 'quick-label';
+      label.textContent = '常用：';
+      quick.append(label);
+      for (const item of top) {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'quick-chip';
+        chip.textContent = `${item.id} · ${item.count}`;
+        chip.addEventListener('click', () => {
+          input.value = browseDisplay(item);
+          renderBrowse(mode);
+        });
+        quick.append(chip);
+      }
+      quick.hidden = false;
+    }
     renderBrowse('phenotype');
     renderBrowse('exposure');
   });
