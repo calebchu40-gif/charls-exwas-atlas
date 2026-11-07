@@ -49,6 +49,11 @@ function showView(id) {
   syncHash(id);
   if (location.hash === '#' + id) setTimeout(() => window.scrollTo(0, 0), 0);
   document.body.dataset.view = id;
+  const heading = byId(id)?.querySelector('h2');
+  if (heading) {
+    heading.tabIndex = -1;
+    heading.focus({ preventScroll: true });
+  }
   deferredViewLoaders.get(id)?.();
   if (id === 'exposures' || id === 'groups') loadCatalog('e');
   if (id === 'phenotypes') loadCatalog('p');

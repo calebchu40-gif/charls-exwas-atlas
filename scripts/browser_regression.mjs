@@ -123,6 +123,14 @@ const anchor = await evaluate(`(async () => {
 check('the methods link scrolls instead of blanking the page',
   anchor.hasTarget && anchor.visible.length === 1, JSON.stringify(anchor.visible));
 
+const focus = await evaluate(`(async () => {
+  document.querySelector('.primary-nav [data-view="phenotypes"]').click();
+  await new Promise(r => setTimeout(r, 400));
+  const active = document.activeElement;
+  return { tag: active.tagName, text: active.textContent.slice(0, 24) };
+})()`);
+check('a view change moves focus to its heading', focus.tag === 'H2', `${focus.tag} ${focus.text}`);
+
 const modulesReady = await openView('modules');
 await waitFor(`document.querySelectorAll('#moduleTabs button[data-module]').length >= 5`);
 const tabs = await evaluate(`(async () => {
