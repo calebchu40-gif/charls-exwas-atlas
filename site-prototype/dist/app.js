@@ -119,6 +119,7 @@ function loadCandidatePairExplorer(){
 // No row is ever loaded from anywhere except association_results_v1.json.
 // ---------------------------------------------------------------------------
 let heatmapRows=[];
+let associationConceptLabels={exposures:{},phenotypes:{}};
 let associationLabelPromise = null;
 function loadAssociationConceptLabels() {
   if (!associationLabelPromise) {
@@ -229,6 +230,12 @@ function showHeatmapDetail(row){
   box.append(list);
 }
 
+function associationLabel(kind,id,fallback){
+  const entry=(associationConceptLabels[kind+'s']||{})[id];
+  if(!entry) return id;
+  return entry.code?`${entry.zh}（${entry.code}）`:entry.zh;
+}
+
 function renderAssociationHeatmap(rows){
   const panel=byId('associationHeatmap');
   if(!panel)return;
@@ -262,9 +269,10 @@ function renderAssociationHeatmap(rows){
     }
     const columnLabel=(key)=>{
       const [concept,contrast]=key.split('\u0000');
-      if(!contrast)return concept;
+      const name=associationLabel('exposure',concept);
+      if(!contrast)return name;
       const short=contrast.split(' vs ')[0].trim();
-      return short&&short!==concept?`${concept} · ${short}`:concept;
+      return short?`${name} · ${short}`:name;
     };
     const scale=heatmapScale(members);
     const table=document.createElement('table');
@@ -286,7 +294,7 @@ function renderAssociationHeatmap(rows){
       const th=document.createElement('th');
       th.scope='row';
       const example=members.find(row=>row.phenotype_concept_id===phenotype);
-      th.textContent=`${phenotype} · ${(example&&example.phenotype_variable)||''}`;
+      th.textContent=associationLabel('phenotype',phenotype,example&&example.phenotype_variable);
       th.title=th.textContent;
       tr.append(th);
       for(const exposure of columns){
@@ -300,7 +308,7 @@ function renderAssociationHeatmap(rows){
           const value=metric==='q'?row.q_value_by:(metric==='neglog10p'?row.p_value:row.estimate);
           td.textContent=heatmapFormat(value);
           td.setAttribute('style',heatmapColor(metric,row,scale));
-          td.title=`${row.exposure_concept_id} × ${phenotype}\n${row.contrast||''}`
+          td.title=`${associationLabel('exposure',row.exposure_concept_id)} × ${associationLabel('phenotype',phenotype)}\n${row.contrast||''}`
             +`\n效应 ${heatmapFormat(row.estimate)} (${heatmapFormat(row.ci_lower)}–${heatmapFormat(row.ci_upper)})`
             +`\nP ${heatmapFormat(row.p_value)} · q ${heatmapFormat(row.q_value_by)} · n ${row.n_model}`
             +`\n${row.variance_design||''}`;
@@ -423,6 +431,8 @@ function showAssociationResults() {
   const wrap = byId('associationTableWrap');
   if (wrap) wrap.hidden = false;
   renderAssociationRows();
+  const heatmap = byId('associationHeatmap');
+  if (heatmap) heatmap.hidden = false;
 }
 
 async function renderAssociations() {
@@ -447,6 +457,7 @@ async function renderAssociations() {
       } else if(row.fit_status==='withheld_disclosure') throw new Error('withheld fit lacks withheld disclosure status');
     }
     const conceptLabels = await loadAssociationConceptLabels();
+    associationConceptLabels=conceptLabels||{exposures:{},phenotypes:{}};
     const filters=[
       ['associationExposure','exposure_concept_id','exposure_variable'],
       ['associationPhenotype','phenotype_concept_id','phenotype_variable'],
