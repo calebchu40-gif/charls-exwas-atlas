@@ -35,7 +35,7 @@ function moduleTable(rows, columns) {
 function gradientTable(payload) {
   const rows = payload.results;
   return moduleTable(rows, [
-    { label: '结局', value: row => row.phenotype_concept_id },
+    { label: '结局', value: row => phenotypeLabel(row.phenotype_concept_id) },
     { label: '每等级 β', value: row => row.estimate.toFixed(3) },
     { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
     { label: 'q', value: row => row.q < 0.001 ? '<0.001' : row.q.toFixed(3) },
@@ -46,8 +46,8 @@ function gradientTable(payload) {
 function jointTable(payload) {
   const rows = payload.results;
   return moduleTable(rows, [
-    { label: '结局', value: row => row.phenotype_concept_id },
-    { label: '暴露项', value: row => row.term },
+    { label: '结局', value: row => phenotypeLabel(row.phenotype_concept_id) },
+    { label: '暴露项', value: row => termLabel(row.term) },
     { label: 'β', value: row => row.estimate.toFixed(3) },
     { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
     { label: 'q', value: row => row.q_value_by < 0.001 ? '<0.001' : row.q_value_by.toFixed(3) },
@@ -60,7 +60,7 @@ function interactionTable(payload) {
   return moduleTable(rows, [
     { label: '分层', value: row => row.stratum },
     { label: '暴露', value: row => row.exposure_concept_id },
-    { label: '结局', value: row => row.phenotype_concept_id },
+    { label: '结局', value: row => phenotypeLabel(row.phenotype_concept_id) },
     { label: '高', value: row => `${row.label_high} ${row.estimate_high.toFixed(3)}` },
     { label: '低', value: row => `${row.label_low} ${row.estimate_low.toFixed(3)}` },
     { label: '差值 p', value: row => row.p_interaction < 0.001 ? '<0.001' : row.p_interaction.toFixed(3) },
@@ -113,6 +113,28 @@ async function loadModules() {
   }
 }
 
+
+const researchLabels = { exposures: {}, phenotypes: {} };
+const researchLabelReady = fetch('./concept_labels_v1.json?v=1', { cache: 'no-cache' })
+  .then(response => (response.ok ? response.json() : null))
+  .then(data => {
+    if (!data) return;
+    researchLabels.exposures = data.exposures || {};
+    researchLabels.phenotypes = data.phenotypes || {};
+  })
+  .catch(() => {});
+
+const TERM_LABELS = {
+  coal: '煤', wood: '秸秆木材', solid: '固体燃料', water_yes: '自来水入户',
+  fuel_coal: '煤', fuel_crop_residue_or_wood: '秸秆木材', fuel_crop_wood: '秸秆木材',
+  fuel_natural_gas: '天然气', fuel_marsh_gas: '沼气', fuel_LPG: '液化气',
+  fuel_lpg: '液化气', fuel_other: '其他燃料', cooking_fuel_rank: '燃料清洁度',
+};
+function phenotypeLabel(id) {
+  const entry = researchLabels.phenotypes[id];
+  return entry ? `${entry.zh}（${entry.code}）` : id;
+}
+function termLabel(term) { return TERM_LABELS[term] || term; }
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
@@ -180,7 +202,7 @@ function renderModules() {
     byId('moduleNote').textContent = '按性别、城乡、教育、≥65 岁分层；420 个层间差异检验，未通过 Bonferroni。';
   } else if (active === 'health') {
     target.append(moduleTable(moduleData.health.associations, [
-      { label: '暴露项', value: row => row.term },
+      { label: '暴露项', value: row => termLabel(row.term) },
       { label: 'β（指数 SD）', value: row => row.estimate.toFixed(3) },
       { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
       { label: 'p', value: row => row.p < 0.001 ? '<0.001' : row.p.toFixed(3) },
@@ -191,7 +213,7 @@ function renderModules() {
       (a, b) => (a.q_2015 ?? 1) - (b.q_2015 ?? 1)).slice(0, 40);
     target.append(moduleTable(rows, [
       { label: '暴露', value: row => row.exposure_concept_id },
-      { label: '结局', value: row => row.phenotype_concept_id },
+      { label: '结局', value: row => phenotypeLabel(row.phenotype_concept_id) },
       { label: 'β 2011', value: row => row.beta_2011.toFixed(3) },
       { label: 'β 2015', value: row => row.beta_2015.toFixed(3) },
       { label: 'q 2015', value: row => (row.q_2015 ?? 1) < 0.001 ? '<0.001' : (row.q_2015 ?? 1).toFixed(3) },
@@ -219,7 +241,7 @@ function renderModules() {
     byId('moduleNote').textContent = '2013 波体测结局。';
   } else if (active === 'agegradient') {
     target.append(moduleTable(moduleData.ageGradient.results, [
-      { label: '对照', value: row => row.term },
+      { label: '对照', value: row => termLabel(row.term) },
       { label: '年龄组', value: row => row.band },
       { label: 'β', value: row => row.estimate.toFixed(3) },
       { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
@@ -229,7 +251,7 @@ function renderModules() {
     byId('moduleNote').textContent = '尿酸按基线年龄分组。';
   } else if (active === 'lifestyle') {
     target.append(moduleTable(moduleData.lifestyle.results, [
-      { label: '对照', value: row => row.term },
+      { label: '对照', value: row => termLabel(row.term) },
       { label: 'β', value: row => row.estimate.toFixed(3) },
       { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
       { label: 'p', value: row => row.p_value < 0.001 ? '<0.001' : row.p_value.toFixed(3) },
@@ -249,7 +271,7 @@ function renderModules() {
   } else if (active === 'replication2015') {
     target.append(moduleTable(moduleData.replication2015.results, [
       { label: '波次', value: row => row.wave },
-      { label: '对照', value: row => row.exposure },
+      { label: '对照', value: row => termLabel(row.exposure) },
       { label: 'β', value: row => row.estimate.toFixed(3) },
       { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
       { label: 'p', value: row => row.p_value < 0.001 ? '<0.001' : row.p_value.toFixed(3) },
@@ -283,7 +305,7 @@ function renderModules() {
     byId('moduleNote').textContent = '尿酸相关证据的效应量与区间；梯度项量纲不同，未画入。';
   } else if (active === 'gradient2015') {
     target.append(moduleTable(moduleData.gradient2015.results, [
-      { label: '结局', value: row => row.phenotype_concept_id },
+      { label: '结局', value: row => phenotypeLabel(row.phenotype_concept_id) },
       { label: '每等级 β', value: row => row.estimate.toFixed(3) },
       { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
       { label: 'q', value: row => row.q_value_by < 0.001 ? '<0.001' : row.q_value_by.toFixed(3) },
@@ -294,7 +316,7 @@ function renderModules() {
   } else if (active === 'mental') {
     target.append(moduleTable(moduleData.mental.results, [
       { label: '结局', value: row => row.outcome },
-      { label: '暴露', value: row => row.exposure },
+      { label: '暴露', value: row => termLabel(row.exposure) },
       { label: 'β', value: row => row.estimate.toFixed(3) },
       { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
       { label: 'q', value: row => row.q_value_by < 0.001 ? '<0.001' : row.q_value_by.toFixed(3) },
@@ -305,7 +327,7 @@ function renderModules() {
   } else if (active === 'sleep') {
     target.append(moduleTable(moduleData.sleep.results, [
       { label: '结局', value: row => row.outcome },
-      { label: '暴露', value: row => row.exposure },
+      { label: '暴露', value: row => termLabel(row.exposure) },
       { label: row => row.measure === 'OR' ? 'OR' : 'β', value: row => row.estimate.toFixed(3) },
       { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
       { label: 'q', value: row => row.q_value_by < 0.001 ? '<0.001' : row.q_value_by.toFixed(3) },
@@ -325,7 +347,7 @@ function renderModules() {
     byId('moduleNote').textContent = '按 2011 年龄分层；2018/2020 字段不可比，未纳入。';
   } else if (active === 'solid') {
     target.append(moduleTable(moduleData.solid.results, [
-      { label: '结局', value: row => row.phenotype_concept_id },
+      { label: '结局', value: row => phenotypeLabel(row.phenotype_concept_id) },
       { label: 'β', value: row => row.estimate.toFixed(3) },
       { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
       { label: 'q', value: row => row.q < 0.001 ? '<0.001' : row.q.toFixed(3) },
