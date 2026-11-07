@@ -171,6 +171,8 @@
   .bar-chart,.heatmap-block{page-break-inside:avoid}
   #associationHeatmap{display:none!important}
   #associationTableWrap{overflow:visible!important}
+  #associationTableWrap table{table-layout:fixed!important;width:100%!important;font-size:7.5pt}
+  #associationTableWrap th,#associationTableWrap td{overflow-wrap:anywhere;padding:3px 4px!important}
   a[href^="http"]::after{content:" (" attr(href) ")";font-size:8pt;color:#555}
 }
 </style>
@@ -368,7 +370,7 @@
     
   </main>
   <footer class="footer"><div class="shell"><span>CHARLS ExWAS Atlas · 候选变量目录</span><span>页面展示公开变量元数据及五波披露审查后的汇总统计结果；不含 CHARLS 微观数据或受访者答案。</span><span>数据致谢：感谢北京大学国家发展研究院中国经济研究中心提供CHARLS数据。<a href="https://charls.pku.edu.cn/en/data/User2011.pdf" target="_blank" rel="noopener">2011基线引用：CHARLS 2011-2012 National Baseline Users Guide（官方协议要求）</a></span></div></footer>
-  <script src="./app.js?v=258" defer></script>
+  <script src="./app.js?v=260" defer></script>
 <script src="./browse.js?v=12" defer></script>
 <script src="./network.js?v=8" defer></script>
 <script src="./crosswave.js?v=4" defer></script>

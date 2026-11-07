@@ -209,8 +209,8 @@ function showHeatmapDetail(row){
   if(!box)return;
   if(!row){box.innerHTML='<p class="muted">点击任意格子查看该关联的完整信息。</p>';return}
   const fields=[
-    ['暴露',`${row.exposure_concept_id} · ${row.exposure_variable}`],
-    ['表型',`${row.phenotype_concept_id} · ${row.phenotype_variable}`],
+    ['暴露',associationCellLabel('exposure',row.exposure_concept_id,row.exposure_variable)],
+    ['表型',associationCellLabel('phenotype',row.phenotype_concept_id,row.phenotype_variable)],
     ['波次 / 模型',`${row.wave} · ${row.model_id}`],
     ['对照',row.contrast||'—'],
     ['效应尺度',row.estimate_type||'—'],
@@ -247,6 +247,12 @@ function associationLabel(kind,id,fallback){
   const entry=(associationConceptLabels[kind+'s']||{})[id];
   if(!entry) return id;
   return entry.code?`${entry.zh}（${entry.code}）`:entry.zh;
+}
+
+function associationCellLabel(kind,id,variable){
+  const entry=(associationConceptLabels[kind+'s']||{})[id];
+  if(entry) return entry.code?`${entry.zh}（${entry.code}）`:entry.zh;
+  return variable?`${id} · ${variable}`:id;
 }
 
 function renderAssociationHeatmap(rows){
@@ -432,8 +438,8 @@ function renderAssociationRows() {
       ?`${fmt(item.estimate)} (${fmt(item.ci_lower)} to ${fmt(item.ci_upper)})`:'—';
     const nValue=item.fit_status==='withheld_disclosure'||item.n_model===''? '—' : Number(item.n_model).toLocaleString();
     const statusLabel=item.fit_status==='withheld_disclosure'?'因披露审查抑制数值':item.fit_status;
-    const cells=[`${item.exposure_concept_id} · ${item.exposure_variable}`,item.contrast,
-      `${item.phenotype_concept_id} · ${item.phenotype_variable}`,item.wave,item.model_id,
+    const cells=[associationCellLabel('exposure',item.exposure_concept_id,item.exposure_variable),item.contrast,
+      associationCellLabel('phenotype',item.phenotype_concept_id,item.phenotype_variable),item.wave,item.model_id,
       effect,fmt(item.p_value),fmt(item.q_value_by),fmt(item.p_bonferroni),nValue,
       item.fit_status==='withheld_disclosure'?statusLabel:item.variance_design];
     for(let index=0;index<cells.length;index++){
