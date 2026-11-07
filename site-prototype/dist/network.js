@@ -47,10 +47,14 @@ function renderNetwork(payload) {
     const sin = Math.sin(angle);
     const labelRadius = radius + 30;
     const anchor = cos > 0.3 ? 'start' : (cos < -0.3 ? 'end' : 'middle');
-    const labelX = centre + labelRadius * cos;
+    let labelAnchor = anchor;
+    let labelX = centre + labelRadius * cos;
+    const approxWidth = String(node.label).length * 12;
+    if (anchor === 'end' && labelX - approxWidth < 4) { labelAnchor = 'start'; labelX = x + 14; }
+    else if (anchor === 'start' && labelX + approxWidth > size - 4) { labelAnchor = 'end'; labelX = x - 14; }
     const labelY = centre + labelRadius * sin + (Math.abs(cos) <= 0.3 ? (sin > 0 ? 14 : -8) : 4);
     parts.push(`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="9" fill="${colour}"><title>${node.label}（${node.group}）· ${node.field}</title></circle>`);
-    parts.push(`<text x="${labelX.toFixed(1)}" y="${labelY.toFixed(1)}" text-anchor="${anchor}" font-size="12" fill="#24485a">${node.label}</text>`);
+    parts.push(`<text x="${labelX.toFixed(1)}" y="${labelY.toFixed(1)}" text-anchor="${labelAnchor}" font-size="12" fill="#24485a">${node.label}</text>`);
   }
   parts.push('</svg>');
   canvas.innerHTML = parts.join('');
