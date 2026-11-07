@@ -31,7 +31,7 @@ function crossWaveForest(pair) {
   const span = Math.max(max - min, 1e-6);
   const x = value => left + ((value - min) / span) * (width - left - right);
   const height = rows.length * rowHeight + 30;
-  const parts = [`<svg viewBox="0 0 ${width} ${height}" width="100%" height="${height}" role="img" aria-label="forest plot">`];
+  const parts = [`<svg viewBox="0 0 ${width} ${height}" width="100%" height="${height}" role="img" aria-label="跨波森林图：各波估计与合并效应">`];
   const zero = x(0);
   parts.push(`<line x1="${zero}" y1="6" x2="${zero}" y2="${height - 18}" stroke="#c9d6de" stroke-dasharray="3 3"/>`);
   rows.forEach((row, index) => {

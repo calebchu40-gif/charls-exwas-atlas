@@ -164,7 +164,8 @@ function renderForest(payload) {
   const min = Math.min(...values, 0), max = Math.max(...values, 0);
   const span = max - min || 1;
   const x = value => labelWidth + ((value - min) / span) * plotWidth;
-  const svg = svgNode('svg', { viewBox: `0 0 ${width} ${height}`, width: '100%', class: 'forest' });
+  const svg = svgNode('svg', { viewBox: `0 0 ${width} ${height}`, width: '100%', class: 'forest',
+    role: 'img', 'aria-label': `证据森林：${entries.length} 项尿酸相关证据的效应量与 95% 置信区间` });
 
   svg.append(svgNode('line', { x1: x(0), x2: x(0), y1: 12, y2: height - 12,
     stroke: '#9fb3bf', 'stroke-dasharray': '3 3' }));

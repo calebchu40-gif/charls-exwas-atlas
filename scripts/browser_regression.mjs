@@ -201,6 +201,19 @@ const named = await evaluate(`(() => {
 })()`);
 check('every form control has an accessible name', named.length === 0, JSON.stringify(named.slice(0, 5)));
 
+const figures = await evaluate(`(() => {
+  const bad = [];
+  for (const svg of document.querySelectorAll('svg')) {
+    if (svg.getAttribute('aria-hidden') === 'true') continue;
+    const label = svg.getAttribute('aria-label');
+    if (!svg.getAttribute('role') || !label || label.trim().length < 2) {
+      bad.push((svg.parentElement && svg.parentElement.className) || svg.className.baseVal || 'svg');
+    }
+  }
+  return bad;
+})()`);
+check('every figure carries a role and a label', figures.length === 0, JSON.stringify(figures.slice(0, 5)));
+
 await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 2, mobile: true });
 await send('Page.navigate', { url });
 await waitFor(`document.querySelectorAll('.primary-nav > button').length === 6`, 30000);
