@@ -119,14 +119,14 @@ function loadCandidatePairExplorer(){
 // No row is ever loaded from anywhere except association_results_v1.json.
 // ---------------------------------------------------------------------------
 let heatmapRows=[];
-let conceptLabelsPromise = null;
-function loadConceptLabels() {
-  if (!conceptLabelsPromise) {
-    conceptLabelsPromise = fetch('./concept_labels_v1.json?v=1', { cache: 'no-cache' })
+let associationLabelPromise = null;
+function loadAssociationConceptLabels() {
+  if (!associationLabelPromise) {
+    associationLabelPromise = fetch('./concept_labels_v1.json?v=1', { cache: 'no-cache' })
       .then(response => (response.ok ? response.json() : { exposures: {}, phenotypes: {} }))
       .catch(() => ({ exposures: {}, phenotypes: {} }));
   }
-  return conceptLabelsPromise;
+  return associationLabelPromise;
 }
 let heatmapSelection=null;
 
@@ -446,7 +446,7 @@ async function renderAssociations() {
         if(row.fit_status!=='withheld_disclosure'||numericFields.some(key=>row[key]!==''&&row[key]!==null&&row[key]!==undefined))throw new Error('withheld row contains inferential values');
       } else if(row.fit_status==='withheld_disclosure') throw new Error('withheld fit lacks withheld disclosure status');
     }
-    const conceptLabels = await loadConceptLabels();
+    const conceptLabels = await loadAssociationConceptLabels();
     const filters=[
       ['associationExposure','exposure_concept_id','exposure_variable'],
       ['associationPhenotype','phenotype_concept_id','phenotype_variable'],
@@ -599,8 +599,12 @@ function renderGroups(all) {
     card.append(title,count);
     card.addEventListener('click',()=>{
       showView('exposures');
-      const search=byId('eSearch');
-      if(search){search.value=category;search.dispatchEvent(new Event('input',{bubbles:true}));}
+      const select=byId('eCategory');
+      setTimeout(()=>{
+        if(!select) return;
+        const option=[...select.options].find(o=>o.value===category);
+        if(option){select.value=category;select.dispatchEvent(new Event('change',{bubbles:true}));}
+      },120);
     });
     grid.append(card);
   }
