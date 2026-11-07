@@ -129,6 +129,10 @@ const TERM_LABELS = {
   fuel_coal: '煤', fuel_crop_residue_or_wood: '秸秆木材', fuel_crop_wood: '秸秆木材',
   fuel_natural_gas: '天然气', fuel_marsh_gas: '沼气', fuel_LPG: '液化气',
   fuel_lpg: '液化气', fuel_other: '其他燃料', cooking_fuel_rank: '燃料清洁度',
+  coal_vs_clean: '煤 vs 清洁燃料', solid_vs_clean: '固体燃料 vs 清洁燃料',
+  wood_vs_clean: '秸秆木材 vs 清洁燃料', 'solid fuel vs clean fuel': '固体燃料 vs 清洁燃料',
+  cesd: '抑郁（CES-D）', memory: '记忆', serial7: '认知（连续减 7）',
+  bmi: 'BMI', height: '身高', weight: '体重',
 };
 function phenotypeLabel(id) {
   const entry = researchLabels.phenotypes[id];
@@ -232,7 +236,7 @@ function renderModules() {
       + `${moduleData.stability.edges_in_all_waves} 条三波都有，方向一致率 ${(moduleData.stability.sign_consistent_fraction * 100).toFixed(0)}%。`;
   } else if (active === 'anthropometry') {
     target.append(moduleTable(moduleData.anthropometry.results, [
-      { label: '结局', value: row => row.outcome },
+      { label: '结局', value: row => termLabel(row.outcome) },
       { label: 'β', value: row => row.estimate.toFixed(3) },
       { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
       { label: 'p', value: row => row.p_value < 0.001 ? '<0.001' : row.p_value.toFixed(3) },
@@ -280,7 +284,7 @@ function renderModules() {
     byId('moduleNote').textContent = '2015 波，协变量取自 2011 基线。';
   } else if (active === 'anthropometryfull') {
     target.append(moduleTable(moduleData.anthropometryFull.results, [
-      { label: '结局', value: row => row.outcome },
+      { label: '结局', value: row => termLabel(row.outcome) },
       { label: 'β', value: row => row.estimate.toFixed(3) },
       { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
       { label: 'p', value: row => row.p_value < 0.001 ? '<0.001' : row.p_value.toFixed(3) },
@@ -315,7 +319,7 @@ function renderModules() {
       + '15 项均未过 q<0.05——主要是功效不足，而非方向反转。';
   } else if (active === 'mental') {
     target.append(moduleTable(moduleData.mental.results, [
-      { label: '结局', value: row => row.outcome },
+      { label: '结局', value: row => termLabel(row.outcome) },
       { label: '暴露', value: row => termLabel(row.exposure) },
       { label: 'β', value: row => row.estimate.toFixed(3) },
       { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },
@@ -326,7 +330,7 @@ function renderModules() {
       + '秸秆木材更差；21 项中 8 项过 q<0.05，探索性。';
   } else if (active === 'sleep') {
     target.append(moduleTable(moduleData.sleep.results, [
-      { label: '结局', value: row => row.outcome },
+      { label: '结局', value: row => termLabel(row.outcome) },
       { label: '暴露', value: row => termLabel(row.exposure) },
       { label: row => row.measure === 'OR' ? 'OR' : 'β', value: row => row.estimate.toFixed(3) },
       { label: '95% CI', value: row => `${row.ci_lower.toFixed(3)} – ${row.ci_upper.toFixed(3)}` },

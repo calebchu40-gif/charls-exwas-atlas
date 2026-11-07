@@ -112,6 +112,9 @@
 - **新增脚本**：必须带 `?v=N` 版本号，且文件存在于 `dist`；不得与其他脚本重名顶层函数或常量。
 - **新增研究标签**：标签 id 必须与 `modules.js` 的 `active === '...'` 分支对应，否则守卫测试失败。
 - **公开放数据**：必须同时通过 `validate_public_site_payload.py` 与 `validate_public_site_file_boundary.py`（后者要求文件在允许清单内）。
+- **浏览器回归**：`node scripts/browser_regression.mjs [站点URL]`（需 CDP 9222 + 本地静态服务）
+  覆盖 12 项：六入口、视图切换、方法锚点、标签条、中文标签、950 行结果、目录翻页、网络标签不出画布、
+  手机菜单在视口内、无横向溢出、热图可滚动。改动导航或布局后应先跑这一项。
 - **推送**：若 `github.com` 不可达，用 `git -c http.curloptResolve=github.com:443:<可用IP> push`；先 `ls-remote` 逐个试 IP。
 
 ---
