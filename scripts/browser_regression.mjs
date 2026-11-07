@@ -238,6 +238,21 @@ const figureText = await evaluate(`(() => {
 check('figure labels stay legible on a phone', figureText !== null && figureText.min >= 9,
   figureText ? `${figureText.min}px at scale ${figureText.scale}` : 'no figure');
 
+await send('Emulation.setDeviceMetricsOverride', { width: 1400, height: 1000, deviceScaleFactor: 1, mobile: false });
+await send('Page.navigate', { url });
+await waitFor(`document.querySelectorAll('.primary-nav > button').length === 6`, 30000);
+await evaluate(`document.body.focus()`);
+await send('Input.dispatchKeyEvent', { type: 'keyDown', key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9 });
+await send('Input.dispatchKeyEvent', { type: 'keyUp', key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9 });
+await sleep(300);
+const focusRing = await evaluate(`(() => {
+  const active = document.activeElement;
+  const style = getComputedStyle(active);
+  return { tag: active.tagName, visible: active.matches(':focus-visible'), outline: style.outlineStyle + ' ' + style.outlineWidth };
+})()`);
+check('keyboard focus is visible', focusRing.visible && focusRing.outline.startsWith('solid'),
+  `${focusRing.tag} ${focusRing.outline}`);
+
 await fetch(`${base}/json/close/${target.id}`).catch(() => {});
 const failed = results.filter(r => !r.ok);
 console.log(`\n${results.length - failed.length}/${results.length} browser checks passed`);
