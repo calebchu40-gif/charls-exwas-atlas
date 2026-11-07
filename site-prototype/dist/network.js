@@ -57,10 +57,13 @@ function renderNetwork(payload) {
 
   const body = byId('networkRows');
   body.replaceChildren();
+  const labelOf = new Map(nodes.map(node => [node.id, node.label]));
   for (const edge of [...edges].sort((a, b) => Math.abs(b.rho) - Math.abs(a.rho))) {
     const tr = document.createElement('tr');
     const qText = edge.q < 0.001 ? '<0.001' : edge.q.toFixed(3);
-    for (const value of [edge.source, edge.target, edge.rho.toFixed(3), qText, edge.n]) {
+    const rows = [labelOf.get(edge.source) || edge.source, labelOf.get(edge.target) || edge.target,
+                  edge.rho.toFixed(3), qText, edge.n];
+    for (const value of rows) {
       const td = document.createElement('td');
       td.textContent = String(value);
       tr.append(td);
