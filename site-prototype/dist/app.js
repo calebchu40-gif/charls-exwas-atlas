@@ -66,6 +66,13 @@ document.addEventListener('click', event => {
   const menu = document.querySelector('details.special-nav[open]');
   if (menu && !menu.contains(event.target)) menu.removeAttribute('open');
 });
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Escape') return;
+  const menu = document.querySelector('details.special-nav[open]');
+  if (!menu) return;
+  menu.removeAttribute('open');
+  menu.querySelector('summary')?.focus();
+});
 document.querySelectorAll('#topics [data-view]').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
 document.querySelectorAll('.overview-view [data-view]').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
 

@@ -241,6 +241,25 @@ check('figure labels stay legible on a phone', figureText !== null && figureText
 await send('Emulation.setDeviceMetricsOverride', { width: 1400, height: 1000, deviceScaleFactor: 1, mobile: false });
 await send('Page.navigate', { url });
 await waitFor(`document.querySelectorAll('.primary-nav > button').length === 6`, 30000);
+
+const escapeMenu = await evaluate(`(async () => {
+  const details = document.querySelector('details.special-nav');
+  details.querySelector('summary').click();
+  await new Promise(r => setTimeout(r, 200));
+  const opened = details.hasAttribute('open');
+  details.querySelector('summary').focus();
+  return { opened };
+})()`);
+await send('Input.dispatchKeyEvent', { type: 'keyDown', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
+await send('Input.dispatchKeyEvent', { type: 'keyUp', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
+await sleep(250);
+const escapeResult = await evaluate(`(() => {
+  const details = document.querySelector('details.special-nav');
+  return { closed: !details.hasAttribute('open'), focused: document.activeElement === details.querySelector('summary') };
+})()`);
+check('Escape closes the overflow menu and restores focus',
+  escapeMenu.opened && escapeResult.closed && escapeResult.focused, JSON.stringify(escapeResult));
+
 await evaluate(`document.body.focus()`);
 await send('Input.dispatchKeyEvent', { type: 'keyDown', key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9 });
 await send('Input.dispatchKeyEvent', { type: 'keyUp', key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9 });
