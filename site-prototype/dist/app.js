@@ -654,7 +654,7 @@ function renderGroups(all) {
   for(const [category,n] of [...grouped].sort((a,b)=>a[0].localeCompare(b[0],'zh-CN'))){
     const card=document.createElement('button');card.type='button';card.className='group-card';
     const title=document.createElement('b');title.textContent=GROUP_LABELS[category]||category;
-    const count=document.createElement('span');count.textContent=`${n.toLocaleString()} 条字段记录 · ${category}`;
+    const count=document.createElement('span');count.textContent=`${n.toLocaleString()} 条字段记录`;
     card.append(title,count);
     card.addEventListener('click',()=>{
       showView('exposures');
