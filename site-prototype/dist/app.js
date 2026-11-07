@@ -47,6 +47,7 @@ function showView(id) {
     else btn.removeAttribute('aria-current');
   });
   syncHash(id);
+  if (location.hash === '#' + id) setTimeout(() => window.scrollTo(0, 0), 0);
   document.body.dataset.view = id;
   deferredViewLoaders.get(id)?.();
   if (id === 'exposures' || id === 'groups') loadCatalog('e');
@@ -63,6 +64,10 @@ document.querySelectorAll('.overview-view [data-view]').forEach(btn => btn.addEv
 // page can be shared, bookmarked and opened directly.
 function viewFromHash(){ return (location.hash || '').replace(/^#/, ''); }
 function syncHash(id){ if (viewFromHash() !== id) history.replaceState(null, '', '#' + id); }
+window.addEventListener('load', () => {
+  const id = (location.hash || '').replace(/^#/, '');
+  if (id && document.getElementById(id)) window.scrollTo(0, 0);
+});
 window.addEventListener('hashchange', () => {
   const id = viewFromHash();
   if (id && byId(id)) showView(id);
@@ -543,11 +548,14 @@ function renderCatalog(all, role, prefix) {
     const labelDisplay=role==='c'?metadataSemantics:[x.value_labels||valueStatus,x.value_labels&&valueStatus!=='官方值标签已核验'?valueStatus:'',harmonizationNote].filter(Boolean).join('；');
     const categoryDisplay=role==='c'?({'automated covariate search hit':'自动关键词命中（协变量未选定）','covariate candidate':'协变量备选字段（未选入模型）','measurement metadata':'测量/调查设计元数据'}[x.category]||x.category):({'social wellbeing':'社会关系与主观幸福感','health and symptoms':'健康与症状'}[x.category]||x.category);
     const subcategoryDisplay=role==='c'?(C_SUBCATEGORY_LABELS[x.subcategory]||x.subcategory):({'marital relationship satisfaction':'婚姻关系满意度','life satisfaction':'总体生活满意度','health satisfaction':'健康满意度','relationship with children satisfaction':'与子女关系满意度','subjective life expectancy':'主观预期寿命可能性'}[x.subcategory]||x.subcategory);
-    const displayValues=[x['Variable.Name'],conceptDisplay,categoryDisplay+' · '+subcategoryDisplay,x['Variable.Description'],x.waves,x.source_modules,role==='c'?metadataNote:(x.candidate_concept_units||'未登记单位/分类构成'),labelDisplay];
+    const rawDescription=String(x['Variable.Description']||'');
+    const shortDescription=rawDescription.split(/\(|;/)[0].trim()||rawDescription;
+    const displayValues=[x['Variable.Name'],conceptDisplay,categoryDisplay,shortDescription,x.waves,x.source_modules,role==='c'?metadataNote:(x.candidate_concept_units||'未登记单位/分类构成'),labelDisplay];
     for(const [i,value] of displayValues.entries()){
       const td=document.createElement('td');td.textContent=value;tr.append(td)
       if(i===1)td.title=role==='c'?'C类角色判定：'+(x['Candidate.Status']||'来源/测量元数据')+'；处理边界：'+(x['Harmonization.Status']||'不进入E/P关联矩阵')+'；审核：'+(x['Review.Flag']||'回查对应波次的官方问卷/代码本')+'；官方来源：'+(x['Value.Label.Source']||'见项目官方来源清单'):'候选概念：'+(x.candidate_concept_labels||'待核')+'；原始别名ID：'+(x.candidate_concept_alias_ids||'无')+'；关系：'+(x.concept_mapping_relationship||'无额外重叠')+'；映射状态：'+(x.concept_mapping_statuses||'待核')+'；解释与路由：'+(x.concept_mapping_caveats||'未登记')+'；来源表：'+(x.concept_mapping_sources||'待核')
-      if(i===2&&role==='c')td.title='原始分类说明：'+x.subcategory
+      if(i===2)td.title=role==='c'?'原始分类说明：'+x.subcategory:categoryDisplay+' · '+subcategoryDisplay
+      if(i===3)td.title=rawDescription
       if(i===6&&x.concept_mapping_sources)td.title='单位来源：'+x.concept_mapping_sources
       if(i===7&&x.value_label_source)td.title='答案标签来源：'+x.value_label_source
     }
