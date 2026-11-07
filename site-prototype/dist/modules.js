@@ -105,6 +105,8 @@ async function loadModules() {
     moduleData.replication2015 = replication2015;
     moduleData.forest = forest;
     moduleData.mental = mental;
+    const initial = moduleTabFromUrl();
+    if (initial) selectModuleTab(initial);
     renderModules();
   } catch (error) {
     byId('moduleBody').textContent = `专项分析载入失败：${error.message}`;
@@ -143,6 +145,23 @@ function renderForest(payload) {
       fill: row.estimate < 0 ? '#1f5f8b' : '#b26a2c' }));
   });
   return svg;
+}
+
+function moduleTabFromUrl() {
+  const tab = new URLSearchParams(location.search).get('tab');
+  if (!tab) return null;
+  const button = document.querySelector(`#moduleTabs button[data-module="${tab}"]`);
+  return button ? tab : null;
+}
+
+function selectModuleTab(tab) {
+  const button = document.querySelector(`#moduleTabs button[data-module="${tab}"]`);
+  if (!button) return;
+  document.getElementById('moduleTabs').dataset.active = tab;
+  document.querySelectorAll('#moduleTabs button[data-module]').forEach(item => {
+    item.setAttribute('aria-current', item === button ? 'page' : 'false');
+  });
+  history.replaceState(null, '', `${location.pathname}?tab=${tab}${location.hash || '#modules'}`);
 }
 
 function renderModules() {
@@ -332,6 +351,7 @@ if (moduleTabs) {
     const button = event.target.closest('button[data-module]');
     if (!button) return;
     moduleTabs.dataset.active = button.dataset.module;
+    history.replaceState(null, '', `${location.pathname}?tab=${button.dataset.module}${location.hash || '#modules'}`);
     moduleTabs.querySelectorAll('button[data-module]').forEach(item => {
       item.setAttribute('aria-current', item === button ? 'page' : 'false');
     });
