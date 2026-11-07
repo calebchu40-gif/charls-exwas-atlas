@@ -323,7 +323,7 @@ function renderModules() {
       { label: 'n', value: row => row.n },
     ]));
     byId('moduleNote').textContent = '按 2011 年龄分层；2018/2020 字段不可比，未纳入。';
-  } else {
+  } else if (active === 'solid') {
     target.append(moduleTable(moduleData.solid.results, [
       { label: '结局', value: row => row.phenotype_concept_id },
       { label: 'β', value: row => row.estimate.toFixed(3) },
@@ -332,6 +332,9 @@ function renderModules() {
       { label: 'n', value: row => row.n },
     ]));
     byId('moduleNote').textContent = '固体燃料（煤/秸秆木材/其他）对 清洁燃料（天然气/液化气/电）；K=15。';
+  } else {
+    target.replaceChildren();
+    byId('moduleNote').textContent = '该结果模块暂未接入公开数据。';
   }
 }
 
