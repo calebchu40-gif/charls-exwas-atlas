@@ -59,6 +59,41 @@ jobs:
       - name: Exercise reviewed association browser filters
         run: node tests/test_association_results_browser.cjs
 
+  browser-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Serve the public site
+        run: |
+          nohup python3 -m http.server 8777 --directory site-prototype/dist > /tmp/site.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8777/index.html > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/site.log
+          exit 1
+
+      - name: Start headless Chrome with CDP
+        run: |
+          nohup google-chrome --headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage \
+            --remote-debugging-port=9222 about:blank > /tmp/chrome.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:9222/json/version > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/chrome.log
+          exit 1
+
+      - name: Run the browser regression
+        run: node scripts/browser_regression.mjs http://127.0.0.1:8777/index.html
+
   synthetic-survey-engine:
     runs-on: ubuntu-latest
     steps:
