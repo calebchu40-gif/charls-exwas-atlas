@@ -68,14 +68,22 @@ window.addEventListener('load', () => {
   const id = (location.hash || '').replace(/^#/, '');
   if (id && document.getElementById(id)) window.scrollTo(0, 0);
 });
-window.addEventListener('hashchange', () => {
+function applyHashTarget() {
   const id = viewFromHash();
-  if (id && byId(id)) showView(id);
-});
-document.addEventListener('DOMContentLoaded', () => {
-  const id = viewFromHash();
-  if (id && byId(id)) showView(id);
-});
+  if (!id) return;
+  const target = byId(id);
+  if (!target) return;
+  if (target.classList.contains('view')) { showView(id); return; }
+  const owner = target.closest('.view');
+  if (owner && owner.hidden) {
+    showView(owner.id);
+    setTimeout(() => target.scrollIntoView({ block: 'start' }), 80);
+    return;
+  }
+  target.scrollIntoView({ block: 'start' });
+}
+window.addEventListener('hashchange', applyHashTarget);
+document.addEventListener('DOMContentLoaded', applyHashTarget);
 
 function renderCandidatePairExplorer(data){
  const design=byId('candidatePairDesign').value;
