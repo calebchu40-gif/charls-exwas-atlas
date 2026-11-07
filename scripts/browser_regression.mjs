@@ -218,6 +218,18 @@ const heatmap = await evaluate(`(async () => {
 check('the heatmap scrolls inside its panel instead of clipping', heatmap.scroll > heatmap.client,
   `${heatmap.client} / ${heatmap.scroll}`);
 
+await openView('modules');
+await waitFor(`document.querySelectorAll('#moduleBody svg.forest text').length > 0`, 30000);
+const figureText = await evaluate(`(() => {
+  const svg = document.querySelector('#moduleBody svg.forest');
+  if (!svg) return null;
+  const scale = svg.getBoundingClientRect().width / (svg.viewBox.baseVal.width || 1);
+  const sizes = [...svg.querySelectorAll('text')].map(node => parseFloat(getComputedStyle(node).fontSize) * scale);
+  return { scale: Math.round(scale * 100) / 100, min: Math.round(Math.min(...sizes) * 10) / 10 };
+})()`);
+check('figure labels stay legible on a phone', figureText !== null && figureText.min >= 9,
+  figureText ? `${figureText.min}px at scale ${figureText.scale}` : 'no figure');
+
 await fetch(`${base}/json/close/${target.id}`).catch(() => {});
 const failed = results.filter(r => !r.ok);
 console.log(`\n${results.length - failed.length}/${results.length} browser checks passed`);
