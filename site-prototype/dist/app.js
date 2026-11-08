@@ -61,7 +61,22 @@ function showView(id) {
   if (id === 'candidatePairExplorer') loadCandidatePairExplorer();
 }
 document.querySelectorAll('.viewnav button').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
-document.querySelectorAll('.secondary-nav button').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
+document.querySelectorAll('.navmenu-panel button').forEach(btn => btn.addEventListener('click', () => {
+  showView(btn.dataset.view);
+  btn.closest('details')?.removeAttribute('open');
+}));
+document.addEventListener('click', event => {
+  document.querySelectorAll('details.navmenu[open]').forEach(menu => {
+    if (!menu.contains(event.target)) menu.removeAttribute('open');
+  });
+});
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Escape') return;
+  const menu = document.querySelector('details.navmenu[open]');
+  if (!menu) return;
+  menu.removeAttribute('open');
+  menu.querySelector('summary')?.focus();
+});
 
 document.querySelectorAll('#topics [data-view]').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
 document.querySelectorAll('.overview-view [data-view]').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
@@ -307,6 +322,29 @@ function renderHomePreview(data) {
     item.results / waveMax * 100,
     { plain: true }
   )));
+  const sigWave = byId('previewSigWave');
+  const categories = byId('previewCategories');
+  const consistency = byId('previewConsistency');
+  if (sigWave && data.significant_by_wave) {
+    const max = Math.max(...data.significant_by_wave.map(item => item.count), 1);
+    sigWave.replaceChildren(...data.significant_by_wave.map(item => previewRow(
+      item.wave, String(item.count), item.count / max * 100, { plain: true })));
+    const total = byId('previewSigTotal');
+    if (total) total.textContent = String(data.significant_by_wave.reduce((sum, item) => sum + item.count, 0));
+  }
+  if (categories && data.categories) {
+    const max = Math.max(...data.categories.map(item => item.count), 1);
+    categories.replaceChildren(...data.categories.map(item => previewRow(
+      item.label, item.count.toLocaleString(), item.count / max * 100, { plain: true })));
+  }
+  if (consistency && data.crosswave) {
+    const cw = data.crosswave;
+    const max = Math.max(cw.consistent, cw.inconsistent, 1);
+    consistency.replaceChildren(
+      previewRow('方向一致', String(cw.consistent), cw.consistent / max * 100, { plain: true }),
+      previewRow('方向相反', String(cw.inconsistent), cw.inconsistent / max * 100, { plain: true }),
+    );
+  }
   const note = byId('previewCrosswave');
   if (note) {
     const cw = data.crosswave;

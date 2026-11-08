@@ -94,12 +94,53 @@ def main() -> None:
     consistent = sum(1 for pair in pairs if pair.get("sign_consistent"))
     all_waves = sum(1 for pair in pairs if len(pair.get("waves", [])) >= 3)
 
+    # 5. Corrected-significant results per wave.
+    significant_by_wave = Counter(
+        str(row.get("wave")) for row in results
+        if row.get("fit_status") == "success" and float(row.get("q_value_by") or 1) < 0.05
+    )
+    significant_rows = [{"wave": wave, "count": significant_by_wave[wave]}
+                        for wave in sorted(waves)]
+
+    # 6. Reviewed exposure fields per concept category.
+    catalog = load("catalog_e.json")
+    category_labels = {
+        "social determinants": "社会决定因素",
+        "social protection": "社会保障",
+        "community context": "社区环境",
+        "housing and built environment": "住房与建成环境",
+        "behavior": "行为",
+        "food and household environment": "饮食与家庭环境",
+        "family and intergenerational context": "家庭与代际",
+        "healthcare access": "医疗可及性",
+        "early-life and family socioeconomic context": "早年与家庭社会经济",
+        "environmental perception": "环境感知",
+        "internal biomarker": "体内生物标志物",
+        "life-course and reproductive history": "生命历程与生育史",
+        "behavioral exposures": "行为暴露",
+        "pandemic and public-health context": "疫情与公共卫生",
+    }
+    category_counts = Counter(str(row.get("category") or "未分类") for row in catalog)
+    categories = [{"label": category_labels.get(name, name), "count": count}
+                  for name, count in category_counts.most_common(6)]
+
+    # 7. Cross-wave agreement split.
+    wave_mix = Counter(len(pair.get("waves", [])) for pair in pairs)
+
     payload = {
         "generated": date.today().isoformat(),
         "fuel": fuel,
         "exposures": top,
         "waves": wave_rows,
-        "crosswave": {"pairs": len(pairs), "consistent": consistent, "three_wave": all_waves},
+        "significant_by_wave": significant_rows,
+        "categories": categories,
+        "crosswave": {
+            "pairs": len(pairs),
+            "consistent": consistent,
+            "inconsistent": len(pairs) - consistent,
+            "three_wave": all_waves,
+            "by_wave_count": {str(k): v for k, v in sorted(wave_mix.items())},
+        },
     }
     out = SITE / "home_preview_v1.json"
     out.write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")

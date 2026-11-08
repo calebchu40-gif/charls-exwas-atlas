@@ -110,9 +110,61 @@
    "results": 165
   }
  ],
+ "significant_by_wave": [
+  {
+   "wave": "2011",
+   "count": 8
+  },
+  {
+   "wave": "2013",
+   "count": 14
+  },
+  {
+   "wave": "2015",
+   "count": 5
+  },
+  {
+   "wave": "2018",
+   "count": 2
+  },
+  {
+   "wave": "2020",
+   "count": 2
+  }
+ ],
+ "categories": [
+  {
+   "label": "社会决定因素",
+   "count": 3173
+  },
+  {
+   "label": "社会保障",
+   "count": 1331
+  },
+  {
+   "label": "社区环境",
+   "count": 652
+  },
+  {
+   "label": "住房与建成环境",
+   "count": 480
+  },
+  {
+   "label": "行为",
+   "count": 267
+  },
+  {
+   "label": "饮食与家庭环境",
+   "count": 161
+  }
+ ],
  "crosswave": {
   "pairs": 238,
   "consistent": 153,
-  "three_wave": 0
+  "inconsistent": 85,
+  "three_wave": 0,
+  "by_wave_count": {
+   "2": 238
+  }
  }
 }

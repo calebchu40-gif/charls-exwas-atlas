@@ -26,6 +26,17 @@
     .viewnav{align-items:center;justify-content:space-between;overflow:visible;padding:0 0 12px;gap:18px}
     .primary-nav{display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-bottom:2px}
 .secondary-nav{display:flex;gap:6px;align-items:center;flex:0 0 auto;padding-left:8px;margin-left:6px;border-left:1px solid #c9d7de}
+.navmenu{position:relative}
+.navmenu>summary{list-style:none;cursor:pointer;font-size:12.5px;padding:8px 11px;border:1px solid #c9d7de;border-radius:7px;background:#fff;color:#375668;white-space:nowrap;display:inline-flex;align-items:center;gap:4px}
+.navmenu>summary::-webkit-details-marker{display:none}
+.navmenu>summary::after{content:'\25BE';font-size:9px;color:#5b7482}
+.navmenu[open]>summary{background:var(--navy);border-color:var(--navy);color:#fff}
+.navmenu[open]>summary::after{color:#fff}
+.navmenu-panel{position:absolute;top:calc(100% + 6px);left:0;z-index:40;min-width:158px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 10px 24px rgba(20,60,80,.14);padding:6px;display:grid;gap:2px}
+.navmenu-panel button{width:100%;text-align:left;border:0;background:transparent;border-radius:6px;padding:8px 10px;color:#375668}
+.navmenu-panel button:hover{background:#f0f7f9}
+.navmenu-panel button[aria-current="page"]{background:var(--navy);color:#fff}
+
 .secondary-nav button{background:#f6fafb}
     .primary-nav::-webkit-scrollbar{height:4px}.primary-nav::-webkit-scrollbar-thumb{background:#c9d7de;border-radius:2px}.viewnav button{font-size:12.5px;padding:8px 11px;white-space:nowrap}.special-nav{position:relative;flex:0 0 auto}.special-nav summary{list-style:none;cursor:pointer;border:1px solid #c9d7de;background:#fff;color:#375668;border-radius:7px;padding:9px 14px;font-size:13px}.special-nav summary::-webkit-details-marker{display:none}.special-nav summary::after{content:"⌄";margin-left:10px;color:var(--teal)}.special-nav[open] summary{background:#f1f7f8}.special-nav-menu{position:absolute;right:0;top:calc(100% + 8px);z-index:5;width:min(560px,calc(100vw - 36px));max-height:70vh;overflow:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:12px;border:1px solid var(--line);border-radius:10px;background:white;box-shadow:var(--shadow)}.special-nav-menu button{text-align:left;white-space:normal}
     .overview-view{max-width:1040px;margin:0 auto}.intro-layout{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:center;margin:12px 0 25px}.intro-layout h2,.scope-section h2{font-size:27px;letter-spacing:-.02em;margin:5px 0 8px}.intro-layout .view-lede{font-size:15px;max-width:620px;margin:0}.intro-callout{padding:18px 20px;border-left:3px solid var(--teal);background:#eaf4f3;border-radius:0 10px 10px 0}.intro-callout b{font-size:14px}.intro-callout p{margin:5px 0 0;color:#496071;font-size:13px}
@@ -104,6 +115,8 @@
   body[data-view] #associationFilters > .field:nth-last-child(-n+2){grid-column:1 / -1}
   .viewnav{flex-wrap:nowrap;overflow-x:auto}
   .primary-nav{overflow:visible;flex:0 0 auto}
+  .navmenu{position:static}
+  .navmenu-panel{position:fixed;left:10px;right:10px;top:104px;min-width:0;max-height:70vh;overflow:auto}
   .moduletabs button{padding:9px 12px}
   .primary-nav button{padding:9px 11px}
     }
@@ -222,7 +235,7 @@
   <header class="topbar"><div class="shell"><div class="brand">CHARLS <span style="color:#86d2d1">/</span> ExWAS Atlas</div><a class="toplink" href="#method">数据与方法说明 ↓</a></div></header>
     <main class="shell">
         <nav class="viewnav" aria-label="主要浏览">
-      <div class="primary-nav"><button type="button" data-view="overview" aria-current="page">首页</button><button type="button" data-view="byPhenotype">按表型浏览</button><button type="button" data-view="byExposure">按暴露浏览</button><button type="button" data-view="groups">按暴露组浏览</button><button type="button" data-view="exposures">暴露目录</button><button type="button" data-view="phenotypes">表型目录</button><div class="secondary-nav" aria-label="分析视图"><button type="button" data-view="associations">关联矩阵</button><button type="button" data-view="network">互作网络</button><button type="button" data-view="crosswave">跨波一致性</button><button type="button" data-view="modules">研究结果</button><button type="button" data-view="topics">专题目录</button><button type="button" data-view="metadata">测量与设计元数据</button></div></div>
+      <div class="primary-nav"><button type="button" data-view="overview">首页</button><details class="navmenu"><summary>浏览</summary><div class="navmenu-panel"><button type="button" data-view="byPhenotype">按表型浏览</button><button type="button" data-view="byExposure">按暴露浏览</button><button type="button" data-view="groups">按暴露组浏览</button></div></details><details class="navmenu"><summary>目录</summary><div class="navmenu-panel"><button type="button" data-view="exposures">暴露目录</button><button type="button" data-view="phenotypes">表型目录</button><button type="button" data-view="metadata">测量与设计元数据</button></div></details><details class="navmenu"><summary>分析</summary><div class="navmenu-panel"><button type="button" data-view="associations">关联矩阵</button><button type="button" data-view="network">互作网络</button><button type="button" data-view="crosswave">跨波一致性</button></div></details><details class="navmenu"><summary>结果</summary><div class="navmenu-panel"><button type="button" data-view="modules">研究结果</button><button type="button" data-view="topics">专题目录</button></div></details></div></div>
       
     </nav>
 <section class="hero"><div class="shell hero-grid">
@@ -292,6 +305,21 @@
           <p class="preview-sub">逐波结果条数</p>
           <div class="preview-bars" id="previewWaves"></div>
           <p class="preview-note" id="previewCrosswave"></p>
+        </article>
+        <article class="preview-card">
+          <h3>显著结果按波次</h3>
+          <p class="preview-sub">q &lt; 0.05 的结果数，共 <span id="previewSigTotal">—</span> 项</p>
+          <div class="preview-bars" id="previewSigWave"></div>
+        </article>
+        <article class="preview-card">
+          <h3>暴露组字段分布</h3>
+          <p class="preview-sub">E 目录中逐波字段数，前六类</p>
+          <div class="preview-bars" id="previewCategories"></div>
+        </article>
+        <article class="preview-card">
+          <h3>跨波方向一致性</h3>
+          <p class="preview-sub">可合并的暴露—表型对</p>
+          <div class="preview-bars" id="previewConsistency"></div>
         </article>
       </div>
     </section>
@@ -432,7 +460,7 @@
     
   </main>
   <footer class="footer"><div class="shell"><span>CHARLS ExWAS Atlas · 候选变量目录 · <a href="https://github.com/calebchu40-gif/charls-exwas-atlas" target="_blank" rel="noopener">代码与文档</a></span><span>页面展示公开变量元数据及五波披露审查后的汇总统计结果；不含 CHARLS 微观数据或受访者答案。</span><span>数据致谢：感谢北京大学国家发展研究院中国经济研究中心提供CHARLS数据。<a href="https://charls.pku.edu.cn/en/data/User2011.pdf" target="_blank" rel="noopener">2011基线引用：CHARLS 2011-2012 National Baseline Users Guide（官方协议要求）</a></span></div></footer>
-  <script src="./app.js?v=273" defer></script>
+  <script src="./app.js?v=275" defer></script>
 <script src="./browse.js?v=12" defer></script>
 <script src="./network.js?v=8" defer></script>
 <script src="./crosswave.js?v=5" defer></script>

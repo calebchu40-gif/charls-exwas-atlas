@@ -77,9 +77,14 @@ const check = (name, ok, detail) => {
 };
 
 const openView = async view => {
-  const selector = `.secondary-nav [data-view="${view}"], .primary-nav [data-view="${view}"]`;
+  const selector = `.primary-nav [data-view="${view}"]`;
   if (await waitFor(`!!document.querySelector('${selector}')`)) {
-    await evaluate(`document.querySelector('${selector}').click()`);
+    await evaluate(`(() => {
+      const button = document.querySelector('${selector}');
+      const menu = button.closest('details.navmenu');
+      if (menu) menu.setAttribute('open', '');
+      button.click();
+    })()`);
   }
   return waitFor(`document.body.dataset.view === '${view}'`);
 };
@@ -94,12 +99,22 @@ await waitFor(`document.querySelectorAll('.primary-nav > button').length === 6`,
 
 // ---------------------------------------------------------------- desktop pass
 const nav = await evaluate(`(() => ({
-  primary: [...document.querySelectorAll('.primary-nav > button')].length,
-  secondary: [...document.querySelectorAll('.secondary-nav > button')].length,
-  views: [...document.querySelectorAll('.primary-nav > button')].map(b => b.dataset.view),
+  menus: [...document.querySelectorAll('.primary-nav details.navmenu')].map(d => d.querySelector('summary').textContent.trim()),
+  entries: [...document.querySelectorAll('.primary-nav [data-view]')].map(b => b.dataset.view),
 }))()`);
-check('six primary plus six analysis entries in one navigation row',
-  nav.primary === 6 && nav.secondary === 6, JSON.stringify(nav.views));
+check('five top-level entries with four grouped menus',
+  nav.entries.length === 12 && nav.menus.length === 4, JSON.stringify(nav.menus));
+
+const menuOpen = await evaluate(`(async () => {
+  const menu = document.querySelector('.primary-nav details.navmenu');
+  menu.setAttribute('open', '');
+  await new Promise(r => setTimeout(r, 150));
+  const rect = menu.querySelector('.navmenu-panel').getBoundingClientRect();
+  const inside = rect.left >= 0 && rect.right <= window.innerWidth + 1 && rect.width > 80;
+  menu.removeAttribute('open');
+  return { inside, width: Math.round(rect.width) };
+})()`);
+check('a grouped menu opens inside the viewport', menuOpen.inside, `${menuOpen.width}px`);
 
 const viewWalk = await evaluate(`(async () => {
   const targets = ['overview','byPhenotype','byExposure','groups','exposures','phenotypes','topics'];

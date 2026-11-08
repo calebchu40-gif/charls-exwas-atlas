@@ -62,14 +62,18 @@ class SiteStructureGuards(unittest.TestCase):
             self.assertIn(f'id="{anchor}"', self.html, f"anchor #{anchor} has no target")
             self.assertNotIn(anchor, sections, f"anchor #{anchor} collides with a view id")
 
-    def test_primary_nav_keeps_the_reference_entry_points(self) -> None:
+    def test_navigation_keeps_the_reference_entry_points(self) -> None:
         start = self.html.index('<div class="primary-nav">')
-        stop = self.html.index('<div class="secondary-nav"', start)
+        stop = self.html.index('</nav>', start)
         segment = self.html[start:stop]
+        head = segment[:segment.index('<details')]
+        top_level = re.findall(r'<button type="button" data-view="([^"]+)"', head)
+        self.assertEqual(top_level, ["overview"], "the home button is the only bare top-level entry")
+        menus = re.findall(r'<summary>([^<]+)</summary>', segment)
+        self.assertEqual(menus, ["浏览", "目录", "分析", "结果"], "four grouped menus")
         views = re.findall(r'data-view="([^"]+)"', segment)
-        self.assertEqual(views, ["overview", "byPhenotype", "byExposure", "groups",
-                                 "exposures", "phenotypes"],
-                         "the six reference entry points and their order are fixed")
+        self.assertEqual(len(views), 12, "all twelve views stay reachable from the navigation")
+        self.assertEqual(len(set(views)), 12)
 
 
 if __name__ == "__main__":
