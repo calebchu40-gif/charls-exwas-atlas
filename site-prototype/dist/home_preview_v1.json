@@ -1,0 +1,118 @@
+{
+ "generated": "2026-11-08",
+ "fuel": [
+  {
+   "term": "煤",
+   "estimate": -0.272,
+   "ci_lower": -0.37,
+   "ci_upper": -0.174
+  },
+  {
+   "term": "其他燃料",
+   "estimate": -0.17,
+   "ci_lower": -0.325,
+   "ci_upper": -0.014
+  },
+  {
+   "term": "秸秆木材",
+   "estimate": -0.142,
+   "ci_lower": -0.225,
+   "ci_upper": -0.058
+  },
+  {
+   "term": "天然气",
+   "estimate": -0.079,
+   "ci_lower": -0.181,
+   "ci_upper": 0.023
+  },
+  {
+   "term": "沼气",
+   "estimate": 0.107,
+   "ci_lower": -0.041,
+   "ci_upper": 0.255
+  },
+  {
+   "term": "液化气",
+   "estimate": 0.111,
+   "ci_lower": -0.049,
+   "ci_upper": 0.272
+  },
+  {
+   "term": "自来水",
+   "estimate": 0.129,
+   "ci_lower": 0.07,
+   "ci_upper": 0.188
+  }
+ ],
+ "exposures": [
+  {
+   "concept": "residential_heating",
+   "label": "室内取暖",
+   "code": "i020",
+   "significant": 9,
+   "tested": 64
+  },
+  {
+   "concept": "cooking_fuel_main",
+   "label": "炊事燃料",
+   "code": "i022",
+   "significant": 6,
+   "tested": 210
+  },
+  {
+   "concept": "running_water_at_residence",
+   "label": "自来水入户",
+   "code": "i017",
+   "significant": 5,
+   "tested": 50
+  },
+  {
+   "concept": "heating_energy",
+   "label": "取暖能源",
+   "code": "i021",
+   "significant": 5,
+   "tested": 210
+  },
+  {
+   "concept": "piped_gas_access",
+   "label": "管道燃气",
+   "code": "i019",
+   "significant": 2,
+   "tested": 35
+  },
+  {
+   "concept": "cooking_fuel_marsh_gas",
+   "label": "炊事燃料：沼气",
+   "code": "i022",
+   "significant": 2,
+   "tested": 44
+  }
+ ],
+ "waves": [
+  {
+   "wave": "2011",
+   "results": 345
+  },
+  {
+   "wave": "2013",
+   "results": 75
+  },
+  {
+   "wave": "2015",
+   "results": 225
+  },
+  {
+   "wave": "2018",
+   "results": 140
+  },
+  {
+   "wave": "2020",
+   "results": 165
+  }
+ ],
+ "crosswave": {
+  "pairs": 238,
+  "consistent": 153,
+  "three_wave": 0
+ }
+}

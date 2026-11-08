@@ -25,6 +25,8 @@
     .hero-grid{max-width:1040px}.hero .lede{max-width:760px}.hero .stats{grid-template-columns:repeat(4,minmax(0,1fr));max-width:850px}.hero .status{max-width:920px}
     .viewnav{align-items:center;justify-content:space-between;overflow:visible;padding:0 0 12px;gap:18px}
     .primary-nav{display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-bottom:2px}
+.secondary-nav{display:flex;gap:6px;align-items:center;flex:0 0 auto;padding-left:8px;margin-left:6px;border-left:1px solid #c9d7de}
+.secondary-nav button{background:#f6fafb}
     .primary-nav::-webkit-scrollbar{height:4px}.primary-nav::-webkit-scrollbar-thumb{background:#c9d7de;border-radius:2px}.viewnav button{font-size:12.5px;padding:8px 11px;white-space:nowrap}.special-nav{position:relative;flex:0 0 auto}.special-nav summary{list-style:none;cursor:pointer;border:1px solid #c9d7de;background:#fff;color:#375668;border-radius:7px;padding:9px 14px;font-size:13px}.special-nav summary::-webkit-details-marker{display:none}.special-nav summary::after{content:"⌄";margin-left:10px;color:var(--teal)}.special-nav[open] summary{background:#f1f7f8}.special-nav-menu{position:absolute;right:0;top:calc(100% + 8px);z-index:5;width:min(560px,calc(100vw - 36px));max-height:70vh;overflow:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:12px;border:1px solid var(--line);border-radius:10px;background:white;box-shadow:var(--shadow)}.special-nav-menu button{text-align:left;white-space:normal}
     .overview-view{max-width:1040px;margin:0 auto}.intro-layout{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:center;margin:12px 0 25px}.intro-layout h2,.scope-section h2{font-size:27px;letter-spacing:-.02em;margin:5px 0 8px}.intro-layout .view-lede{font-size:15px;max-width:620px;margin:0}.intro-callout{padding:18px 20px;border-left:3px solid var(--teal);background:#eaf4f3;border-radius:0 10px 10px 0}.intro-callout b{font-size:14px}.intro-callout p{margin:5px 0 0;color:#496071;font-size:13px}
     .path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.path-card{min-height:210px;padding:20px;border:1px solid var(--line);border-radius:11px;background:#fff;box-shadow:0 8px 22px rgba(23,43,58,.04)}.path-card h3{margin:12px 0 6px;font-size:19px}.path-card p{min-height:54px;margin:0 0 13px;color:var(--muted);font-size:13px}.step{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#e7f5f4;color:var(--teal-dark);font-weight:750;font-size:12px}.muted-card{background:#f8fafb}.muted-card .step{background:#edf0f2;color:#627784}.text-button{border:0!important;background:transparent!important;color:var(--teal-dark)!important;padding:4px 0!important;font-size:13px!important;font-weight:700;cursor:pointer}.text-button:hover{text-decoration:underline}
@@ -100,8 +102,8 @@
       body[data-view] .catalog-tools{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px}
       body[data-view] .catalog-tools .field:first-child{grid-column:1 / -1}
   body[data-view] #associationFilters > .field:nth-last-child(-n+2){grid-column:1 / -1}
-  .special-nav-menu{position:fixed;left:10px;right:10px;top:104px;width:auto;display:grid;grid-template-columns:1fr 1fr;gap:6px;max-height:70vh;overflow:auto}
-  .special-nav-menu button{width:100%;text-align:left}
+  .viewnav{flex-wrap:nowrap;overflow-x:auto}
+  .primary-nav{overflow:visible;flex:0 0 auto}
   .moduletabs button{padding:9px 12px}
   .primary-nav button{padding:9px 11px}
     }
@@ -197,12 +199,30 @@
   #crossWaveForest svg{width:900px!important;min-width:900px;height:auto}
 }
 </style>
+<style id="preview-style">
+.preview{margin:26px 0 4px}
+.preview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.preview-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.preview-card h3{margin:0 0 2px;font-size:13px;color:#183d54}
+.preview-sub{margin:0 0 10px;font-size:11px;color:#5b7482}
+.preview-bars{display:grid;gap:6px}
+.pv-row{display:grid;grid-template-columns:96px 1fr 46px;gap:8px;align-items:center;font-size:11.5px;color:#33475b}
+.pv-label{line-height:1.25;overflow-wrap:anywhere}
+.pv-track{position:relative;height:9px;background:#eef3f6;border-radius:5px}
+.pv-track::before{content:'';position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:#c9d7de}
+.pv-track.plain::before{display:none}
+.pv-fill{position:absolute;top:0;bottom:0;border-radius:5px;background:#2f6fbe}
+.pv-fill.neg{background:#c0392b}
+.pv-value{text-align:right;font-variant-numeric:tabular-nums;color:#375668}
+.preview-note{margin:10px 0 0;font-size:11px;color:#5b7482;line-height:1.5}
+@media(max-width:800px){.preview-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
   <header class="topbar"><div class="shell"><div class="brand">CHARLS <span style="color:#86d2d1">/</span> ExWAS Atlas</div><a class="toplink" href="#method">数据与方法说明 ↓</a></div></header>
     <main class="shell">
         <nav class="viewnav" aria-label="主要浏览">
-      <div class="primary-nav"><button type="button" data-view="overview" aria-current="page">首页</button><button type="button" data-view="byPhenotype">按表型浏览</button><button type="button" data-view="byExposure">按暴露浏览</button><button type="button" data-view="groups">按暴露组浏览</button><button type="button" data-view="exposures">暴露目录</button><button type="button" data-view="phenotypes">表型目录</button><details class="special-nav"><summary>更多</summary><div class="special-nav-menu"><button type="button" data-view="associations">关联矩阵</button><button type="button" data-view="network">互作网络</button><button type="button" data-view="crosswave">跨波一致性</button><button type="button" data-view="modules">研究结果</button><button type="button" data-view="topics">专题目录</button><button type="button" data-view="metadata">测量与设计元数据</button></div></details></div>
+      <div class="primary-nav"><button type="button" data-view="overview" aria-current="page">首页</button><button type="button" data-view="byPhenotype">按表型浏览</button><button type="button" data-view="byExposure">按暴露浏览</button><button type="button" data-view="groups">按暴露组浏览</button><button type="button" data-view="exposures">暴露目录</button><button type="button" data-view="phenotypes">表型目录</button><div class="secondary-nav" aria-label="分析视图"><button type="button" data-view="associations">关联矩阵</button><button type="button" data-view="network">互作网络</button><button type="button" data-view="crosswave">跨波一致性</button><button type="button" data-view="modules">研究结果</button><button type="button" data-view="topics">专题目录</button><button type="button" data-view="metadata">测量与设计元数据</button></div></div>
       
     </nav>
 <section class="hero"><div class="shell hero-grid">
@@ -255,6 +275,26 @@
       <div class="stat"><b>845</b><span>五波预登记主分析假设</span></div>
     </div>
     <p class="stats-note">845 项五波主假设 + 105 项 2011 试点 = 950 条结果 · 1,625 个 E/P 候选概念 · 8,341 条概念—源字段映射；E 不等同于环境化学物</p>
+    <section class="preview" id="homePreview" aria-label="数据预览" hidden>
+      <div class="preview-grid">
+        <article class="preview-card">
+          <h3>家庭燃料与尿酸</h3>
+          <p class="preview-sub">联合模型 · 标准化 β 与 95% CI</p>
+          <div class="preview-bars" id="previewFuel"></div>
+        </article>
+        <article class="preview-card">
+          <h3>显著结果最多的暴露</h3>
+          <p class="preview-sub">q &lt; 0.05 的结果数 / 检验数</p>
+          <div class="preview-bars" id="previewExposures"></div>
+        </article>
+        <article class="preview-card">
+          <h3>各波已发布结果</h3>
+          <p class="preview-sub">逐波结果条数</p>
+          <div class="preview-bars" id="previewWaves"></div>
+          <p class="preview-note" id="previewCrosswave"></p>
+        </article>
+      </div>
+    </section>
   </div></section>
     <section class="view" id="topics" hidden>
 <h2>专题目录</h2>
@@ -392,7 +432,7 @@
     
   </main>
   <footer class="footer"><div class="shell"><span>CHARLS ExWAS Atlas · 候选变量目录 · <a href="https://github.com/calebchu40-gif/charls-exwas-atlas" target="_blank" rel="noopener">代码与文档</a></span><span>页面展示公开变量元数据及五波披露审查后的汇总统计结果；不含 CHARLS 微观数据或受访者答案。</span><span>数据致谢：感谢北京大学国家发展研究院中国经济研究中心提供CHARLS数据。<a href="https://charls.pku.edu.cn/en/data/User2011.pdf" target="_blank" rel="noopener">2011基线引用：CHARLS 2011-2012 National Baseline Users Guide（官方协议要求）</a></span></div></footer>
-  <script src="./app.js?v=270" defer></script>
+  <script src="./app.js?v=273" defer></script>
 <script src="./browse.js?v=12" defer></script>
 <script src="./network.js?v=8" defer></script>
 <script src="./crosswave.js?v=5" defer></script>

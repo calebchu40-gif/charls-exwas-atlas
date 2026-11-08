@@ -64,7 +64,7 @@ class SiteStructureGuards(unittest.TestCase):
 
     def test_primary_nav_keeps_the_reference_entry_points(self) -> None:
         start = self.html.index('<div class="primary-nav">')
-        stop = self.html.index('<details', start)
+        stop = self.html.index('<div class="secondary-nav"', start)
         segment = self.html[start:stop]
         views = re.findall(r'data-view="([^"]+)"', segment)
         self.assertEqual(views, ["overview", "byPhenotype", "byExposure", "groups",

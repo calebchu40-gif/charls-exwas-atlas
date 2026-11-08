@@ -61,18 +61,8 @@ function showView(id) {
   if (id === 'candidatePairExplorer') loadCandidatePairExplorer();
 }
 document.querySelectorAll('.viewnav button').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
-document.querySelectorAll('.special-nav-menu button').forEach(btn => btn.addEventListener('click', () => btn.closest('details')?.removeAttribute('open')));
-document.addEventListener('click', event => {
-  const menu = document.querySelector('details.special-nav[open]');
-  if (menu && !menu.contains(event.target)) menu.removeAttribute('open');
-});
-document.addEventListener('keydown', event => {
-  if (event.key !== 'Escape') return;
-  const menu = document.querySelector('details.special-nav[open]');
-  if (!menu) return;
-  menu.removeAttribute('open');
-  menu.querySelector('summary')?.focus();
-});
+document.querySelectorAll('.secondary-nav button').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
+
 document.querySelectorAll('#topics [data-view]').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
 document.querySelectorAll('.overview-view [data-view]').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
 
@@ -100,6 +90,7 @@ function applyHashTarget() {
 }
 window.addEventListener('hashchange', applyHashTarget);
 document.addEventListener('DOMContentLoaded', applyHashTarget);
+setTimeout(loadHomePreview, 400);
 
 function renderCandidatePairExplorer(data){
  const design=byId('candidatePairDesign').value;
@@ -260,6 +251,80 @@ function associationLabel(kind,id,fallback){
   if(!entry) return id;
   return entry.code?`${entry.zh}（${entry.code}）`:entry.zh;
 }
+
+
+// ---------------------------------------------------------------------------
+// Homepage preview: three miniature figures built from the published aggregates.
+function previewRow(label, valueText, fillPercent, options = {}) {
+  const row = document.createElement('div');
+  row.className = 'pv-row';
+  const name = document.createElement('span');
+  name.className = 'pv-label';
+  name.textContent = label;
+  name.title = label;
+  const track = document.createElement('span');
+  track.className = 'pv-track' + (options.plain ? ' plain' : '');
+  const fill = document.createElement('span');
+  fill.className = 'pv-fill' + (options.negative ? ' neg' : '');
+  fill.style.left = (options.left || 0).toFixed(1) + '%';
+  fill.style.width = Math.max(fillPercent, 1).toFixed(1) + '%';
+  track.append(fill);
+  const value = document.createElement('span');
+  value.className = 'pv-value';
+  value.textContent = valueText;
+  row.append(name, track, value);
+  return row;
+}
+
+function renderHomePreview(data) {
+  const box = byId('homePreview');
+  if (!box || !data) return;
+  const fuel = byId('previewFuel');
+  const exposures = byId('previewExposures');
+  const waves = byId('previewWaves');
+  if (!fuel || !exposures || !waves) return;
+  const fuelMax = Math.max(...data.fuel.map(item => Math.abs(item.estimate)), 0.01);
+  fuel.replaceChildren(...data.fuel.map(item => {
+    const width = Math.abs(item.estimate) / fuelMax * 50;
+    return previewRow(
+      item.term,
+      (item.estimate > 0 ? '+' : '−') + Math.abs(item.estimate).toFixed(2),
+      width,
+      { negative: item.estimate < 0, left: item.estimate < 0 ? 50 - width : 50 }
+    );
+  }));
+  const exposureMax = Math.max(...data.exposures.map(item => item.significant), 1);
+  exposures.replaceChildren(...data.exposures.map(item => previewRow(
+    item.label,
+    `${item.significant}/${item.tested}`,
+    item.significant / exposureMax * 100,
+    { plain: true }
+  )));
+  const waveMax = Math.max(...data.waves.map(item => item.results), 1);
+  waves.replaceChildren(...data.waves.map(item => previewRow(
+    item.wave,
+    String(item.results),
+    item.results / waveMax * 100,
+    { plain: true }
+  )));
+  const note = byId('previewCrosswave');
+  if (note) {
+    const cw = data.crosswave;
+    note.textContent = `跨波一致性：${cw.pairs} 对中 ${cw.consistent} 对方向一致`
+      + (cw.three_wave ? `，${cw.three_wave} 对在三波均出现。` : '。');
+  }
+  box.hidden = false;
+}
+
+function loadHomePreview() {
+  if (homePreviewLoaded) return homePreviewLoaded;
+  homePreviewLoaded = fetch('./home_preview_v1.json?v=1', { cache: 'no-cache' })
+    .then(response => (response.ok ? response.json() : null))
+    .then(data => { renderHomePreview(data); return data; })
+    .catch(() => null);
+  return homePreviewLoaded;
+}
+let homePreviewLoaded = null;
 
 function associationCellLabel(kind,id,variable){
   const entry=(associationConceptLabels[kind+'s']||{})[id];

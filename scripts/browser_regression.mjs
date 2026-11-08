@@ -6,7 +6,7 @@
 //
 // The checks mirror the regressions fixed in the November 2026 polish pass:
 // a navigation target that hides every section, a tab strip bound to the view
-// router, an in-page anchor treated as a view, an off-screen overflow menu, a
+// router, an in-page anchor treated as a view, an off-screen navigation row, a
 // clipped heatmap, labels that leave the canvas, and a catalog that cannot page.
 //
 // Every wait polls for a condition instead of sleeping a fixed time, so the same
@@ -77,11 +77,9 @@ const check = (name, ok, detail) => {
 };
 
 const openView = async view => {
-  const found = await waitFor(`!!document.querySelector('.special-nav-menu [data-view="${view}"]')`);
-  if (found) {
-    await evaluate(`document.querySelector('.special-nav summary').click()`);
-    await sleep(150);
-    await evaluate(`document.querySelector('.special-nav-menu [data-view="${view}"]').click()`);
+  const selector = `.secondary-nav [data-view="${view}"], .primary-nav [data-view="${view}"]`;
+  if (await waitFor(`!!document.querySelector('${selector}')`)) {
+    await evaluate(`document.querySelector('${selector}').click()`);
   }
   return waitFor(`document.body.dataset.view === '${view}'`);
 };
@@ -97,11 +95,11 @@ await waitFor(`document.querySelectorAll('.primary-nav > button').length === 6`,
 // ---------------------------------------------------------------- desktop pass
 const nav = await evaluate(`(() => ({
   primary: [...document.querySelectorAll('.primary-nav > button')].length,
-  hasMore: !!document.querySelector('details.special-nav'),
+  secondary: [...document.querySelectorAll('.secondary-nav > button')].length,
   views: [...document.querySelectorAll('.primary-nav > button')].map(b => b.dataset.view),
 }))()`);
-check('six primary entry points plus the overflow menu',
-  nav.primary === 6 && nav.hasMore, JSON.stringify(nav.views));
+check('six primary plus six analysis entries in one navigation row',
+  nav.primary === 6 && nav.secondary === 6, JSON.stringify(nav.views));
 
 const viewWalk = await evaluate(`(async () => {
   const targets = ['overview','byPhenotype','byExposure','groups','exposures','phenotypes','topics'];
@@ -132,6 +130,21 @@ const focus = await evaluate(`(async () => {
   return { tag: active.tagName, text: active.textContent.slice(0, 24) };
 })()`);
 check('a view change moves focus to its heading', focus.tag === 'H2', `${focus.tag} ${focus.text}`);
+
+await waitFor(`document.querySelectorAll('#previewFuel .pv-row').length === 7`, 20000);
+const preview = await evaluate(`(() => {
+  const box = document.getElementById('homePreview');
+  return {
+    hidden: !box || box.hidden,
+    fuel: document.querySelectorAll('#previewFuel .pv-row').length,
+    exposures: document.querySelectorAll('#previewExposures .pv-row').length,
+    waves: document.querySelectorAll('#previewWaves .pv-row').length,
+    note: (document.getElementById('previewCrosswave') || {}).textContent || '',
+  };
+})()`);
+check('the homepage preview renders three figures',
+  !preview.hidden && preview.fuel === 7 && preview.exposures === 6 && preview.waves === 5,
+  `${preview.fuel}/${preview.exposures}/${preview.waves}`);
 
 const modulesReady = await openView('modules');
 await waitFor(`document.querySelectorAll('#moduleTabs button[data-module]').length >= 5`);
@@ -218,17 +231,6 @@ await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, devi
 await send('Page.navigate', { url });
 await waitFor(`document.querySelectorAll('.primary-nav > button').length === 6`, 30000);
 
-const menu = await evaluate(`(async () => {
-  document.querySelector('.special-nav summary').click();
-  await new Promise(r => setTimeout(r, 250));
-  const rect = document.querySelector('.special-nav-menu').getBoundingClientRect();
-  const inside = rect.left >= 0 && rect.right <= window.innerWidth + 1;
-  document.body.click();
-  return { left: Math.round(rect.left), right: Math.round(rect.right), vw: window.innerWidth, inside };
-})()`);
-check('the overflow menu opens inside the phone viewport', menu.inside,
-  `${menu.left}–${menu.right} of ${menu.vw}`);
-
 const overflow = await evaluate(`(async () => {
   const out = [];
   for (const target of ['overview','associations','modules','exposures','topics']) {
@@ -268,26 +270,8 @@ check('figure labels stay legible on a phone', figureText !== null && figureText
 await send('Emulation.setDeviceMetricsOverride', { width: 1400, height: 1000, deviceScaleFactor: 1, mobile: false });
 await send('Page.navigate', { url });
 await waitFor(`document.querySelectorAll('.primary-nav > button').length === 6`, 30000);
-
-const escapeMenu = await evaluate(`(async () => {
-  const details = document.querySelector('details.special-nav');
-  details.querySelector('summary').click();
-  await new Promise(r => setTimeout(r, 200));
-  const opened = details.hasAttribute('open');
-  details.querySelector('summary').focus();
-  return { opened, hadFocus: document.activeElement === details.querySelector('summary') };
-})()`);
-await send('Input.dispatchKeyEvent', { type: 'keyDown', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
-await send('Input.dispatchKeyEvent', { type: 'keyUp', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 });
-await sleep(250);
-const escapeResult = await evaluate(`(() => {
-  const details = document.querySelector('details.special-nav');
-  return { closed: !details.hasAttribute('open'), focused: document.activeElement === details.querySelector('summary') };
-})()`);
-check('Escape closes the overflow menu and restores focus',
-  escapeMenu.opened && escapeResult.closed && (escapeResult.focused || !escapeMenu.hadFocus),
-  JSON.stringify({ ...escapeResult, hadFocus: escapeMenu.hadFocus }));
-
+try { await send('Page.bringToFront'); } catch {}
+try { await send('Emulation.setFocusEmulationEnabled', { enabled: true }); } catch {}
 await evaluate(`document.activeElement && document.activeElement.blur && document.activeElement.blur()`);
 let focusRing = { tag: 'none', visible: false, outline: '' };
 for (let attempt = 0; attempt < 4; attempt += 1) {
