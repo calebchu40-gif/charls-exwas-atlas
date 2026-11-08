@@ -103,7 +103,7 @@ const nav = await evaluate(`(() => ({
   entries: [...document.querySelectorAll('.primary-nav [data-view]')].map(b => b.dataset.view),
 }))()`);
 check('five top-level entries with four grouped menus',
-  nav.entries.length === 13 && nav.menus.length === 4, JSON.stringify(nav.menus));
+  nav.entries.length === 14 && nav.menus.length === 4, JSON.stringify(nav.menus));
 
 const menuOpen = await evaluate(`(async () => {
   const menu = document.querySelector('.primary-nav details.navmenu');
@@ -160,6 +160,17 @@ const preview = await evaluate(`(() => {
 check('the homepage preview renders three figures',
   !preview.hidden && preview.fuel === 7 && preview.exposures === 6 && preview.waves === 5,
   `${preview.fuel}/${preview.exposures}/${preview.waves}`);
+
+await openView('significant');
+await waitFor(`document.querySelectorAll('#significantCanvas path').length > 0`, 25000);
+const significant = await evaluate(`(() => ({
+  paths: document.querySelectorAll('#significantCanvas path').length,
+  labels: document.querySelectorAll('#significantCanvas text').length,
+  svg: !!document.querySelector('#significantCanvas svg'),
+}))()`);
+check('the significant-link map draws its links',
+  significant.svg && significant.paths > 0 && significant.labels > 0,
+  `${significant.paths} links / ${significant.labels} labels`);
 
 await openView('compare');
 await waitFor(`document.querySelectorAll('#compareRows tr').length > 0`, 25000);

@@ -56,6 +56,7 @@ function showView(id) {
   }
   deferredViewLoaders.get(id)?.();
   if (id === 'compare') loadCompare();
+  if (id === 'significant') loadSignificant();
   if (id === 'exposures' || id === 'groups') loadCatalog('e');
   if (id === 'phenotypes') loadCatalog('p');
   if (id === 'metadata') loadCatalog('c');
@@ -269,6 +270,81 @@ function associationLabel(kind,id,fallback){
 }
 
 
+
+
+// ---------------------------------------------------------------------------
+// Bipartite map of corrected-significant exposure-phenotype links.
+let significantLoaded = false;
+
+function renderSignificant() {
+  const canvas = byId('significantCanvas');
+  if (!canvas) return;
+  const rows = associationRows.filter(row => row.fit_status === 'success'
+    && Number(row.q_value_by) < 0.05 && Number.isFinite(Number(row.estimate)));
+  const count = byId('significantCount');
+  if (!rows.length) {
+    canvas.replaceChildren();
+    if (count) count.textContent = '当前公开结果中没有 q < 0.05 的关联。';
+    return;
+  }
+  const byExposure = new Map();
+  const byPhenotype = new Map();
+  for (const row of rows) {
+    byExposure.set(row.exposure_concept_id, (byExposure.get(row.exposure_concept_id) || 0) + 1);
+    byPhenotype.set(row.phenotype_concept_id, (byPhenotype.get(row.phenotype_concept_id) || 0) + 1);
+  }
+  const left = [...byExposure].sort((a, b) => b[1] - a[1]).slice(0, 12).map(item => item[0]);
+  const right = [...byPhenotype].sort((a, b) => b[1] - a[1]).slice(0, 16).map(item => item[0]);
+  const leftSet = new Set(left);
+  const rightSet = new Set(right);
+  const links = rows.filter(row => leftSet.has(row.exposure_concept_id) && rightSet.has(row.phenotype_concept_id));
+
+  const width = 880;
+  const rowHeight = 26;
+  const height = Math.max(left.length, right.length) * rowHeight + 60;
+  const leftX = 210;
+  const rightX = width - 240;
+  const top = 30;
+  const position = (index, total) => top + (height - top * 2) * ((index + 0.5) / Math.max(total, 1));
+  const leftY = new Map(left.map((id, index) => [id, position(index, left.length)]));
+  const rightY = new Map(right.map((id, index) => [id, position(index, right.length)]));
+
+  const parts = [`<svg viewBox="0 0 ${width} ${height}" width="100%" height="${height}" role="img" aria-label="显著关联图：${links.length} 条校正后显著的暴露与表型连线">`];
+  for (const row of links) {
+    const y1 = leftY.get(row.exposure_concept_id);
+    const y2 = rightY.get(row.phenotype_concept_id);
+    const curve = 0.4;
+    const c1 = leftX + (rightX - leftX) * curve;
+    const c2 = rightX - (rightX - leftX) * curve;
+    const negative = Number(row.estimate) < 0;
+    const stroke = negative ? '#c0392b' : '#2f6fbe';
+    const width2 = Math.min(4, 0.8 + Math.abs(Number(row.estimate)) * 3);
+    parts.push(`<path d="M${leftX},${y1.toFixed(1)} C${c1.toFixed(1)},${y1.toFixed(1)} ${c2.toFixed(1)},${y2.toFixed(1)} ${rightX},${y2.toFixed(1)}" fill="none" stroke="${stroke}" stroke-width="${width2.toFixed(2)}" stroke-opacity="0.55"><title>${compareLabel('exposure', row.exposure_concept_id)} → ${compareLabel('phenotype', row.phenotype_concept_id)} · β=${Number(row.estimate).toFixed(3)} · q=${Number(row.q_value_by).toFixed(4)}</title></path>`);
+  }
+  left.forEach((id, index) => {
+    const y = leftY.get(id);
+    parts.push(`<circle cx="${leftX}" cy="${y.toFixed(1)}" r="5" fill="#1f5f8b"/>`);
+    parts.push(`<text x="${leftX - 12}" y="${(y + 4).toFixed(1)}" text-anchor="end" font-size="12" fill="#33475b">${compareLabel('exposure', id)}</text>`);
+  });
+  right.forEach((id, index) => {
+    const y = rightY.get(id);
+    parts.push(`<circle cx="${rightX}" cy="${y.toFixed(1)}" r="5" fill="#b26a2c"/>`);
+    parts.push(`<text x="${rightX + 12}" y="${(y + 4).toFixed(1)}" font-size="12" fill="#33475b">${compareLabel('phenotype', id)}</text>`);
+  });
+  parts.push('</svg>');
+  canvas.innerHTML = parts.join('');
+  if (count) {
+    const positive = links.filter(row => Number(row.estimate) > 0).length;
+    count.textContent = `${links.length} 条校正后显著连线（正 ${positive} / 负 ${links.length - positive}），覆盖 ${left.length} 个暴露与 ${right.length} 个表型。`;
+  }
+}
+
+async function loadSignificant() {
+  if (significantLoaded) return;
+  significantLoaded = true;
+  if (!associationRows.length) await renderAssociations();
+  renderSignificant();
+}
 
 // ---------------------------------------------------------------------------
 // Side-by-side comparison of two household exposures across shared phenotypes.
