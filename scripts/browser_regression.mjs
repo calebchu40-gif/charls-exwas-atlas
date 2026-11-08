@@ -176,12 +176,14 @@ await openView('compare');
 await waitFor(`document.querySelectorAll('#compareRows tr').length > 0`, 25000);
 const compare = await evaluate(`(() => ({
   rows: document.querySelectorAll('#compareRows tr').length,
-  head: (document.getElementById('compareDiffHead') || {}).textContent || '',
-  a: (document.getElementById('compareExposureA') || {}).value || '',
-  b: (document.getElementById('compareExposureB') || {}).value || '',
+  chips: document.querySelectorAll('#compareChoices .quick-chip').length,
+  selected: [...document.querySelectorAll('#compareChoices .quick-chip')].filter(c => c.getAttribute('aria-pressed') === 'true').length,
+  columns: document.querySelectorAll('#compareHead th').length,
+  head: [...document.querySelectorAll('#compareHead th')].map(th => th.textContent).slice(-1)[0] || '',
 }))()`);
-check('the comparison view pairs two exposures on shared phenotypes',
-  compare.rows > 0 && compare.a !== compare.b, `${compare.rows} rows · ${compare.head}`);
+check('the comparison view compares two to four exposures',
+  compare.rows > 0 && compare.selected >= 2 && compare.columns === compare.selected + 2,
+  `${compare.rows} rows · ${compare.selected} exposures · ${compare.head}`);
 
 const modulesReady = await openView('modules');
 await waitFor(`document.querySelectorAll('#moduleTabs button[data-module]').length >= 5`);

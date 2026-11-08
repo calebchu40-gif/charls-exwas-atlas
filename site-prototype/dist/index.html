@@ -240,8 +240,13 @@
 </style>
 <style id="bipartite-style">
 .bipartite{width:100%}
-.bipartite svg{display:block}
+.bipartite svg{display:block;width:100%;height:auto}
 @media(max-width:800px){.bipartite{min-width:720px}}
+</style>
+<style id="compare-style">
+.compare-choice{margin:14px 0 4px}
+.compare-choice>span{display:block;font-size:12px;color:#5b7482;margin-bottom:6px}
+.compare-choice .quick-chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
 </style>
 </head>
 <body>
@@ -382,23 +387,22 @@
 </section>
 <section class="view" id="significant" hidden>
       <div class="section-head"><div><h2>显著关联图</h2><p>校正后仍有统计学意义（q &lt; 0.05）的暴露—表型关联连线，蓝线为正、红线为负。</p></div></div>
-      <div class="catalog-note">只绘制已通过披露审查的公开结果；连线粗细代表效应量绝对值，节点数量按关联数取前若干项。</div>
+      <div class="catalog-note">只绘制已通过披露审查的公开结果；弧长按关联数分配，蓝线为正、红线为负，透明度随效应量绝对值增大；节点数量按关联数取前若干项。</div>
       <p class="catalog-meta" id="significantCount">正在读取关联结果…</p>
       <div class="figure-scroll"><div id="significantCanvas" class="bipartite"></div></div>
     </section>
 
     <section class="view" id="compare" hidden>
-      <div class="section-head"><div><h2>暴露对比</h2><p>在同一模型与同一效应尺度下，并排查看两类家庭暴露对同一批表型的效应；波次可能不同，见表格列。</p></div></div>
-      <div class="catalog-note">只比较同一模型、同一效应尺度下同时可估计的表型；优势比行显示比值（A / B），标准化效应行显示差值（A − B）。两者都不是交互检验。</div>
+      <div class="section-head"><div><h2>暴露对比</h2><p>在同一模型与同一效应尺度下，并排查看 2–4 个家庭暴露对同一批表型的效应；波次可能不同，见单元格提示。</p></div></div>
+      <div class="catalog-note">只比较同一模型、同一效应尺度下同时可估计的表型；优势比按极差（最大/最小）汇总，标准化效应按极差（最大−最小）汇总。排序与极差都不是交互检验。</div>
+      <div class="compare-choice"><span id="compareChoiceLabel">选择 2–4 个暴露</span><div class="quick-list" id="compareChoices" role="group" aria-labelledby="compareChoiceLabel"></div></div>
       <div class="catalog-tools" id="compareFilters">
-        <div class="field"><label for="compareExposureA">暴露 A</label><select id="compareExposureA"></select></div>
-        <div class="field"><label for="compareExposureB">暴露 B</label><select id="compareExposureB"></select></div>
         <div class="field"><label for="compareWave">波次</label><select id="compareWave"><option value="">全部波次</option></select></div>
         <div class="field"><label for="compareModel">模型</label><select id="compareModel"><option value="">全部模型</option></select></div>
       </div>
       <p class="catalog-meta" id="compareCount">正在载入关联结果…</p>
       <div class="tablewrap"><table class="catalog-table" aria-label="暴露对比">
-        <thead><tr><th scope="col">表型</th><th scope="col">暴露 A 效应（95% CI）</th><th scope="col">暴露 B 效应（95% CI）</th><th scope="col" id="compareDiffHead">差值（A − B）</th><th scope="col">波次</th><th scope="col">模型</th></tr></thead>
+        <thead id="compareHead"></thead>
         <tbody id="compareRows"></tbody>
       </table></div>
     </section>
@@ -500,7 +504,7 @@
     
   </main>
   <footer class="footer"><div class="shell"><span>CHARLS ExWAS Atlas · 候选变量目录 · <a href="https://github.com/calebchu40-gif/charls-exwas-atlas" target="_blank" rel="noopener">代码与文档</a></span><span>页面展示公开变量元数据及五波披露审查后的汇总统计结果；不含 CHARLS 微观数据或受访者答案。</span><span>数据致谢：感谢北京大学国家发展研究院中国经济研究中心提供CHARLS数据。<a href="https://charls.pku.edu.cn/en/data/User2011.pdf" target="_blank" rel="noopener">2011基线引用：CHARLS 2011-2012 National Baseline Users Guide（官方协议要求）</a></span></div></footer>
-  <script src="./app.js?v=279" defer></script>
+  <script src="./app.js?v=281" defer></script>
 <script src="./browse.js?v=12" defer></script>
 <script src="./network.js?v=8" defer></script>
 <script src="./crosswave.js?v=6" defer></script>

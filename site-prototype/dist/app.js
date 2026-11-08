@@ -293,49 +293,97 @@ function renderSignificant() {
     byExposure.set(row.exposure_concept_id, (byExposure.get(row.exposure_concept_id) || 0) + 1);
     byPhenotype.set(row.phenotype_concept_id, (byPhenotype.get(row.phenotype_concept_id) || 0) + 1);
   }
-  const left = [...byExposure].sort((a, b) => b[1] - a[1]).slice(0, 12).map(item => item[0]);
-  const right = [...byPhenotype].sort((a, b) => b[1] - a[1]).slice(0, 16).map(item => item[0]);
+  const left = [...byExposure].sort((a, b) => b[1] - a[1]).slice(0, 8).map(item => item[0]);
+  const right = [...byPhenotype].sort((a, b) => b[1] - a[1]).slice(0, 10).map(item => item[0]);
   const leftSet = new Set(left);
   const rightSet = new Set(right);
   const links = rows.filter(row => leftSet.has(row.exposure_concept_id) && rightSet.has(row.phenotype_concept_id));
 
-  const width = 880;
-  const rowHeight = 26;
-  const height = Math.max(left.length, right.length) * rowHeight + 60;
-  const leftX = 210;
-  const rightX = width - 240;
-  const top = 30;
-  const position = (index, total) => top + (height - top * 2) * ((index + 0.5) / Math.max(total, 1));
-  const leftY = new Map(left.map((id, index) => [id, position(index, left.length)]));
-  const rightY = new Map(right.map((id, index) => [id, position(index, right.length)]));
-
-  const parts = [`<svg viewBox="0 0 ${width} ${height}" width="100%" height="${height}" role="img" aria-label="显著关联图：${links.length} 条校正后显著的暴露与表型连线">`];
+  const width = 980;
+  const height = 760;
+  const cx = width / 2;
+  const cy = height / 2;
+  const radius = 250;
+  const point = (angle, r = radius) => [cx + r * Math.cos(angle), cy + r * Math.sin(angle)];
+  const degree = new Map();
   for (const row of links) {
-    const y1 = leftY.get(row.exposure_concept_id);
-    const y2 = rightY.get(row.phenotype_concept_id);
-    const curve = 0.4;
-    const c1 = leftX + (rightX - leftX) * curve;
-    const c2 = rightX - (rightX - leftX) * curve;
+    degree.set(row.exposure_concept_id, (degree.get(row.exposure_concept_id) || 0) + 1);
+    degree.set(row.phenotype_concept_id, (degree.get(row.phenotype_concept_id) || 0) + 1);
+  }
+  const allocate = (ids, from, to) => {
+    const total = ids.reduce((sum, id) => sum + (degree.get(id) || 1), 0) || 1;
+    let cursor = from;
+    return new Map(ids.map(id => {
+      const span = (to - from) * ((degree.get(id) || 1) / total);
+      const node = { from: cursor, to: cursor + span, next: cursor };
+      cursor += span;
+      return [id, node];
+    }));
+  };
+  const half = Math.PI;
+  const leftNodes = allocate(left, Math.PI / 2, Math.PI / 2 + half);
+  const rightNodes = allocate(right, Math.PI * 1.5, Math.PI * 1.5 + half);
+
+  const parts = [`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="弦图：${links.length} 条校正后显著的暴露与表型关联">`];
+  const arcPath = (node, thickness) => {
+    const [x0, y0] = point(node.from);
+    const [x1, y1] = point(node.to);
+    const large = node.to - node.from > Math.PI ? 1 : 0;
+    return `<path d="M${x0.toFixed(1)},${y0.toFixed(1)} A${radius},${radius} 0 ${large} 1 ${x1.toFixed(1)},${y1.toFixed(1)}" fill="none" stroke="${thickness}" stroke-width="14" stroke-linecap="butt"/>`;
+  };
+  const slice = (node, count) => {
+    const span = (node.to - node.from) / Math.max(count, 1);
+    const from = node.next;
+    node.next += span;
+    return [from + span * 0.08, from + span * 0.92];
+  };
+  for (const row of links) {
+    const a = slice(leftNodes.get(row.exposure_concept_id), degree.get(row.exposure_concept_id));
+    const b = slice(rightNodes.get(row.phenotype_concept_id), degree.get(row.phenotype_concept_id));
+    const [ax0, ay0] = point(a[0]);
+    const [ax1, ay1] = point(a[1]);
+    const [bx0, by0] = point(b[0]);
+    const [bx1, by1] = point(b[1]);
     const negative = Number(row.estimate) < 0;
     const stroke = negative ? '#c0392b' : '#2f6fbe';
-    const width2 = Math.min(4, 0.8 + Math.abs(Number(row.estimate)) * 3);
-    parts.push(`<path d="M${leftX},${y1.toFixed(1)} C${c1.toFixed(1)},${y1.toFixed(1)} ${c2.toFixed(1)},${y2.toFixed(1)} ${rightX},${y2.toFixed(1)}" fill="none" stroke="${stroke}" stroke-width="${width2.toFixed(2)}" stroke-opacity="0.55"><title>${compareLabel('exposure', row.exposure_concept_id)} → ${compareLabel('phenotype', row.phenotype_concept_id)} · β=${Number(row.estimate).toFixed(3)} · q=${Number(row.q_value_by).toFixed(4)}</title></path>`);
+    const opacity = 0.32 + Math.min(0.4, Math.abs(Number(row.estimate)));
+    parts.push(`<path d="M${ax0.toFixed(1)},${ay0.toFixed(1)} A${radius},${radius} 0 0 1 ${ax1.toFixed(1)},${ay1.toFixed(1)} C${cx},${cy} ${cx},${cy} ${bx0.toFixed(1)},${by0.toFixed(1)} A${radius},${radius} 0 0 1 ${bx1.toFixed(1)},${by1.toFixed(1)} C${cx},${cy} ${cx},${cy} ${ax0.toFixed(1)},${ay0.toFixed(1)} Z" fill="${stroke}" fill-opacity="${opacity.toFixed(2)}"><title>${compareLabel('exposure', row.exposure_concept_id)} → ${compareLabel('phenotype', row.phenotype_concept_id)} · β=${Number(row.estimate).toFixed(3)} · q=${Number(row.q_value_by).toFixed(4)}</title></path>`);
   }
-  left.forEach((id, index) => {
-    const y = leftY.get(id);
-    parts.push(`<circle cx="${leftX}" cy="${y.toFixed(1)}" r="5" fill="#1f5f8b"/>`);
-    parts.push(`<text x="${leftX - 12}" y="${(y + 4).toFixed(1)}" text-anchor="end" font-size="12" fill="#33475b">${compareLabel('exposure', id)}</text>`);
-  });
-  right.forEach((id, index) => {
-    const y = rightY.get(id);
-    parts.push(`<circle cx="${rightX}" cy="${y.toFixed(1)}" r="5" fill="#b26a2c"/>`);
-    parts.push(`<text x="${rightX + 12}" y="${(y + 4).toFixed(1)}" font-size="12" fill="#33475b">${compareLabel('phenotype', id)}</text>`);
-  });
+  const clipLabel = text => {
+    const short = String(text).replace('（医生诊断）', '');
+    return short.length > 16 ? short.slice(0, 15) + '…' : short;
+  };
+  const drawLabels = (nodes, colour, side) => {
+    const items = [...nodes].map(([id, node]) => {
+      const mid = (node.from + node.to) / 2;
+      const [px, py] = point(mid, radius + 6);
+      return { x: px, y: py, text: clipLabel(compareLabel(side === 'left' ? 'exposure' : 'phenotype', id)) };
+    }).sort((a, b) => a.y - b.y);
+    const topLimit = cy - radius * 0.95;
+    const bottomLimit = cy + radius * 0.95;
+    if (items.length) {
+      items[0].y = Math.max(items[0].y, topLimit);
+      for (let i = 1; i < items.length; i += 1) {
+        items[i].y = Math.max(items[i].y, items[i - 1].y + 18);
+      }
+      const spill = items[items.length - 1].y - bottomLimit;
+      if (spill > 0) for (const item of items) item.y -= spill;
+    }
+    for (const item of items) {
+      const y = item.y;
+      const x = side === 'left' ? cx - radius - 12 : cx + radius + 12;
+      parts.push(`<text x="${x.toFixed(1)}" y="${(y + 4).toFixed(1)}" text-anchor="${side === 'left' ? 'end' : 'start'}" font-size="11" fill="${colour}">${item.text}</text>`);
+    }
+  };
+  for (const [, node] of leftNodes) parts.push(arcPath(node, '#1f5f8b'));
+  for (const [, node] of rightNodes) parts.push(arcPath(node, '#b26a2c'));
+  drawLabels(leftNodes, '#1f5f8b', 'left');
+  drawLabels(rightNodes, '#a4602a', 'right');
   parts.push('</svg>');
   canvas.innerHTML = parts.join('');
   if (count) {
     const positive = links.filter(row => Number(row.estimate) > 0).length;
-    count.textContent = `${links.length} 条校正后显著连线（正 ${positive} / 负 ${links.length - positive}），覆盖 ${left.length} 个暴露与 ${right.length} 个表型。`;
+    count.textContent = `${links.length} 条校正后显著连线（正 ${positive} / 负 ${links.length - positive}）；弧长按关联数分配，蓝正红负。`;
   }
 }
 
@@ -347,87 +395,113 @@ async function loadSignificant() {
 }
 
 // ---------------------------------------------------------------------------
-// Side-by-side comparison of two household exposures across shared phenotypes.
+// Grouped comparison of two to four household exposures across shared phenotypes.
 let compareLoaded = false;
+const compareState = { selected: [] };
 
-function compareFillSelect(select, values, withAll = true) {
-  if (!select) return;
-  const current = select.value;
-  select.replaceChildren();
-  if (withAll) select.append(new Option('全部', ''));
-  for (const value of values) select.append(new Option(value.label, value.value));
-  if ([...select.options].some(option => option.value === current)) select.value = current;
-}
-
-function compareLabel(kind, id) {
-  const entry = (associationConceptLabels[kind + 's'] || {})[id];
-  return entry ? `${entry.zh}（${entry.code}）` : id;
+function renderCompareChips(options) {
+  const box = byId('compareChoices');
+  if (!box) return;
+  box.replaceChildren();
+  for (const option of options) {
+    const chip = document.createElement('button');
+    chip.type = 'button';
+    chip.className = 'quick-chip';
+    chip.textContent = option.label;
+    const pressed = compareState.selected.includes(option.value);
+    chip.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+    chip.addEventListener('click', () => {
+      const current = compareState.selected;
+      if (current.includes(option.value)) {
+        compareState.selected = current.filter(value => value !== option.value);
+      } else if (current.length < 4) {
+        compareState.selected = [...current, option.value];
+      } else {
+        return;
+      }
+      renderCompareChips(options);
+      renderCompare();
+    });
+    box.append(chip);
+  }
 }
 
 function renderCompare() {
   const body = byId('compareRows');
-  if (!body) return;
+  const head = byId('compareHead');
+  const count = byId('compareCount');
+  if (!body || !head) return;
   const wave = byId('compareWave').value;
   const model = byId('compareModel').value;
-  const a = byId('compareExposureA').value;
-  const b = byId('compareExposureB').value;
-  const count = byId('compareCount');
+  const selected = compareState.selected;
   body.replaceChildren();
-  if (!a || !b) { count.textContent = '请选择两个暴露后查看对比。'; return; }
-  if (a === b) { count.textContent = '请选择两个不同的暴露。'; return; }
+  head.replaceChildren();
+  if (selected.length < 2) {
+    count.textContent = '请选择 2–4 个暴露后查看对比。';
+    return;
+  }
   const scope = associationRows.filter(row => row.fit_status === 'success'
     && (!wave || String(row.wave) === wave) && (!model || row.model_id === model));
-  const pick = (exposure) => {
+  const perExposure = new Map();
+  for (const exposure of selected) {
     const map = new Map();
     for (const row of scope) {
       if (row.exposure_concept_id !== exposure) continue;
-      const key = row.phenotype_concept_id;
-      const seen = map.get(key);
-      if (!seen || Number(row.q_value_by) < Number(seen.q_value_by)) map.set(key, row);
+      const seen = map.get(row.phenotype_concept_id);
+      if (!seen || Number(row.q_value_by) < Number(seen.q_value_by)) map.set(row.phenotype_concept_id, row);
     }
-    return map;
+    perExposure.set(exposure, map);
+  }
+  const [first, ...rest] = selected;
+  const shared = [...(perExposure.get(first) || new Map()).keys()].filter(phenotype =>
+    rest.every(exposure => (perExposure.get(exposure) || new Map()).has(phenotype)));
+  const allRows = shared.map(phenotype => {
+    const rows = selected.map(exposure => perExposure.get(exposure).get(phenotype));
+    return { phenotype, rows };
+  }).filter(item => item.rows.every((row, index) => index === 0 ? true : row.estimate_type === item.rows[0].estimate_type));
+  if (!allRows.length) {
+    count.textContent = '所选暴露在当前筛选下没有同尺度的共同表型，请换一组。';
+    return;
+  }
+  const isOdds = allRows.every(item => item.rows[0].estimate_type === 'odds_ratio');
+  const spread = item => {
+    const values = item.rows.map(row => Number(row.estimate));
+    return isOdds
+      ? Math.max(...values) / Math.min(...values)
+      : Math.max(...values) - Math.min(...values);
   };
-  const left = pick(a);
-  const right = pick(b);
+  const rows = allRows.map(item => ({ ...item, spread: spread(item) }))
+    .sort((a, b) => Math.abs(b.spread) - Math.abs(a.spread));
+
   const fmt = value => Number(value).toFixed(3);
-  const rows = [...left.keys()]
-    .filter(key => right.has(key))
-    .filter(key => left.get(key).estimate_type === right.get(key).estimate_type)
-    .map(key => {
-      const one = left.get(key);
-      const two = right.get(key);
-      return { one, two, diff: Number(one.estimate) - Number(two.estimate) };
-    }).sort((x, y) => Math.abs(y.diff) - Math.abs(x.diff));
-  const bothOddsRatios = rows.length > 0 && rows.every(item => item.one.estimate_type === 'odds_ratio');
-  const diffHead = byId('compareDiffHead');
-  if (diffHead) diffHead.textContent = bothOddsRatios ? 'OR 比值（A / B）' : '差值（A − B）';
+  const headRow = document.createElement('tr');
+  const labels = ['表型', ...selected.map(exposure => compareLabel('exposure', exposure)), isOdds ? 'OR 极差（最大/最小）' : '极差（最大 − 最小）'];
+  for (const label of labels) {
+    const th = document.createElement('th');
+    th.scope = 'col';
+    th.textContent = label;
+    headRow.append(th);
+  }
+  head.append(headRow);
+
   for (const item of rows.slice(0, 200)) {
     const tr = document.createElement('tr');
     const label = document.createElement('td');
-    label.textContent = compareLabel('phenotype', item.one.phenotype_concept_id);
-    const cellA = document.createElement('td');
-    cellA.textContent = `${fmt(item.one.estimate)}（${fmt(item.one.ci_lower)} – ${fmt(item.one.ci_upper)}）`;
-    cellA.title = `${item.one.wave} · ${item.one.model_id}`;
-    const cellB = document.createElement('td');
-    cellB.textContent = `${fmt(item.two.estimate)}（${fmt(item.two.ci_lower)} – ${fmt(item.two.ci_upper)}）`;
-    cellB.title = `${item.two.wave} · ${item.two.model_id}`;
-    const waveCell = document.createElement('td');
-    waveCell.textContent = `${item.one.wave} / ${item.two.wave}`;
-    const modelCell = document.createElement('td');
-    modelCell.textContent = item.one.model_id === item.two.model_id ? item.one.model_id : '不同模型';
-    const cellD = document.createElement('td');
-    if (bothOddsRatios) {
-      cellD.textContent = (item.one.estimate / item.two.estimate).toFixed(2);
-    } else {
-      cellD.textContent = (item.diff > 0 ? '+' : '') + fmt(item.diff);
+    label.textContent = compareLabel('phenotype', item.phenotype);
+    tr.append(label);
+    for (const row of item.rows) {
+      const cell = document.createElement('td');
+      cell.textContent = `${fmt(row.estimate)}（${fmt(row.ci_lower)} – ${fmt(row.ci_upper)}）`;
+      cell.title = `${row.wave} · ${row.model_id}`;
+      tr.append(cell);
     }
-    tr.append(label, cellA, cellB, cellD, waveCell, modelCell);
+    const spreadCell = document.createElement('td');
+    spreadCell.textContent = isOdds ? item.spread.toFixed(2) : (item.spread > 0 ? '+' : '') + fmt(item.spread);
+    tr.append(spreadCell);
     body.append(tr);
   }
-  const metricName = bothOddsRatios ? '优势比（OR）' : '标准化效应量';
-  count.textContent = rows.length
-    ? `${rows.length} 个表型在两列暴露下可同尺度比较（${metricName}）${rows.length > 200 ? '，显示差异最大的 200 个' : ''}。`
-    : '这两个暴露在当前筛选下没有同尺度的共同表型，请换一组。';
+  count.textContent = `${rows.length} 个表型在 ${selected.length} 个暴露下可同尺度比较（${isOdds ? '优势比' : '标准化效应量'}）`
+    + `${rows.length > 200 ? '，显示极差最大的 200 个' : ''}；波次与模型见单元格提示。`;
 }
 
 async function loadCompare() {
@@ -441,38 +515,41 @@ async function loadCompare() {
       exposures.set(row.exposure_concept_id, compareLabel('exposure', row.exposure_concept_id));
     }
   }
-  const options = [...exposures].map(([value, label]) => ({ value, label })).sort((x, y) => x.label.localeCompare(y.label, 'zh-CN'));
-  compareFillSelect(byId('compareExposureA'), options, false);
-  compareFillSelect(byId('compareExposureB'), options, false);
-  // Pick the pair that shares the most phenotypes so the view never opens empty.
+  const wavesByExposure = new Map();
+  for (const row of associationRows) {
+    if (row.fit_status !== 'success') continue;
+    if (!wavesByExposure.has(row.exposure_concept_id)) wavesByExposure.set(row.exposure_concept_id, new Set());
+    wavesByExposure.get(row.exposure_concept_id).add(String(row.wave));
+  }
+  const labelCount = new Map();
+  for (const [, label] of exposures) labelCount.set(label, (labelCount.get(label) || 0) + 1);
+  const options = [...exposures].map(([value, label]) => {
+    if (labelCount.get(label) > 1) {
+      const waves = [...(wavesByExposure.get(value) || [])].sort();
+      return { value, label: `${label} · ${waves.join('/') || '—'}` };
+    }
+    return { value, label };
+  }).sort((x, y) => x.label.localeCompare(y.label, 'zh-CN'));
   const phenotypesByExposure = new Map();
   for (const row of associationRows) {
     if (row.fit_status !== 'success') continue;
     if (!phenotypesByExposure.has(row.exposure_concept_id)) phenotypesByExposure.set(row.exposure_concept_id, new Set());
     phenotypesByExposure.get(row.exposure_concept_id).add(row.phenotype_concept_id);
   }
-  const ranked = [...phenotypesByExposure].sort((x, y) => y[1].size - x[1].size);
-  let best = null;
-  for (let i = 0; i < Math.min(ranked.length, 6); i += 1) {
-    for (let j = i + 1; j < Math.min(ranked.length, 12); j += 1) {
-      let overlap = 0;
-      for (const id of ranked[j][1]) if (ranked[i][1].has(id)) overlap += 1;
-      if (!best || overlap > best.overlap) best = { a: ranked[i][0], b: ranked[j][0], overlap };
-    }
-  }
-  if (best && best.overlap > 0) {
-    byId('compareExposureA').value = best.a;
-    byId('compareExposureB').value = best.b;
-  } else if (options[0]) {
-    byId('compareExposureA').value = options[0].value;
-  }
+  const ranked = [...phenotypesByExposure].sort((x, y) => y[1].size - x[1].size).map(item => item[0]);
+  const seed = ranked[0];
+  const others = ranked.slice(1).map(exposure => {
+    let overlap = 0;
+    for (const id of phenotypesByExposure.get(exposure)) if (phenotypesByExposure.get(seed).has(id)) overlap += 1;
+    return { exposure, overlap };
+  }).sort((a, b) => b.overlap - a.overlap).slice(0, 2).map(item => item.exposure);
+  compareState.selected = [seed, ...others].filter(Boolean).slice(0, 3);
   const waves = [...new Set(associationRows.map(row => String(row.wave)))].sort();
   compareFillSelect(byId('compareWave'), waves.map(wave => ({ value: wave, label: wave })));
   const models = [...new Set(associationRows.map(row => row.model_id))].sort();
   compareFillSelect(byId('compareModel'), models.map(model => ({ value: model, label: model })));
-  for (const id of ['compareExposureA', 'compareExposureB', 'compareWave', 'compareModel']) {
-    byId(id).addEventListener('change', renderCompare);
-  }
+  for (const id of ['compareWave', 'compareModel']) byId(id).addEventListener('change', renderCompare);
+  renderCompareChips(options);
   renderCompare();
 }
 
@@ -602,6 +679,20 @@ const CONTRAST_LABELS = {
   'Main cooking fuel: other vs electric: 1 vs 0': '炊事燃料：其他 vs 电（有 vs 无）',
   'Main cooking fuel: solar vs electric (Wave 5 only): 1 vs 0': '炊事燃料：太阳能 vs 电（仅 2020）',
 };
+function compareLabel(kind, id) {
+  const entry = (associationConceptLabels[kind + 's'] || {})[id];
+  return entry ? `${entry.zh}（${entry.code}）` : id;
+}
+
+function compareFillSelect(select, values, withAll = true) {
+  if (!select) return;
+  const current = select.value;
+  select.replaceChildren();
+  if (withAll) select.append(new Option('全部', ''));
+  for (const value of values) select.append(new Option(value.label, value.value));
+  if ([...select.options].some(option => option.value === current)) select.value = current;
+}
+
 function contrastLabel(text) {
   const value = String(text || '');
   return CONTRAST_LABELS[value] || value || '—';
