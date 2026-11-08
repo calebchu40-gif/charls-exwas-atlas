@@ -210,6 +210,7 @@ const associations = await evaluate(`(async () => {
     rows: document.querySelectorAll('#rows tr').length,
     heatmaps: document.querySelectorAll('.heatmap-table').length,
     firstCell: first ? first.textContent : '',
+    contrast: document.querySelector('#rows tr td:nth-child(2)')?.textContent || '',
     exportButton: !!document.getElementById('associationExport'),
   };
 })()`);
@@ -217,6 +218,8 @@ check('the association browser renders all reviewed rows', associations.rows ===
   `${associations.rows} rows / ${associations.heatmaps} heatmaps`);
 check('the association table shows label plus CHARLS code', associations.firstCell.includes('（'),
   associations.firstCell.slice(0, 40));
+check('the contrast column is in Chinese', /[\u4e00-\u9fff]/.test(associations.contrast),
+  associations.contrast);
 
 await openView('exposures');
 await waitFor(`document.querySelectorAll('#eRows tr').length > 0`, 40000);

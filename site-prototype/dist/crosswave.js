@@ -44,7 +44,7 @@ function crossWaveForest(pair) {
   });
   parts.push('</svg>');
   box.innerHTML = parts.join('') +
-    `<p class="browse-legend">${crossWaveLabel('exposure', pair.exposure_concept_id)} × ${crossWaveLabel('phenotype', pair.phenotype_concept_id)} · ${pair.contrast || '—'} · k=${pair.k} · I²=${pair.i2.toFixed(0)}% · ${pair.metric === 'OR' ? '优势比（对数合并后回变换）' : '标准化 β'}</p>`;
+    `<p class="browse-legend">${crossWaveLabel('exposure', pair.exposure_concept_id)} × ${crossWaveLabel('phenotype', pair.phenotype_concept_id)} · ${(typeof contrastLabel === 'function' ? contrastLabel(pair.contrast) : (pair.contrast || '—'))} · k=${pair.k} · I²=${pair.i2.toFixed(0)}% · ${pair.metric === 'OR' ? '优势比（对数合并后回变换）' : '标准化 β'}</p>`;
 }
 
 function renderCrossWave() {
@@ -64,7 +64,7 @@ function renderCrossWave() {
     const isOR = pair.metric === 'OR';
     const cells = [
       crossWaveLabel('exposure', pair.exposure_concept_id),
-      pair.contrast || '—',
+      (typeof contrastLabel === 'function' ? contrastLabel(pair.contrast) : (pair.contrast || '—')),
       crossWaveLabel('phenotype', pair.phenotype_concept_id),
       pair.waves.join(' / '),
       `${pair.pooled.toFixed(isOR ? 2 : 3)}${isOR ? ' (OR)' : ''}`,

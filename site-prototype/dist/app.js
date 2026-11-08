@@ -232,7 +232,7 @@ function showHeatmapDetail(row){
     ['暴露',associationCellLabel('exposure',row.exposure_concept_id,row.exposure_variable)],
     ['表型',associationCellLabel('phenotype',row.phenotype_concept_id,row.phenotype_variable)],
     ['波次 / 模型',`${row.wave} · ${row.model_id}`],
-    ['对照',row.contrast||'—'],
+    ['对照',contrastLabel(row.contrast)],
     ['效应尺度',row.estimate_type||'—'],
     ['效应估计',row.fit_status==='success'?`${heatmapFormat(row.estimate)}（SE ${heatmapFormat(row.standard_error)}）`:'—'],
     ['95% 置信区间',row.fit_status==='success'?`${heatmapFormat(row.ci_lower)} – ${heatmapFormat(row.ci_upper)}`:'—'],
@@ -572,6 +572,41 @@ function loadHomePreview() {
 }
 let homePreviewLoaded = null;
 
+const CONTRAST_LABELS = {
+  'Yes vs No': '是 vs 否',
+  'Coal vs Electric': '煤 vs 电',
+  'Crop residue/Wood vs Electric': '秸秆木材 vs 电',
+  'LPG vs Electric': '液化气 vs 电',
+  'Marsh gas vs Electric': '沼气 vs 电',
+  'Natural gas vs Electric': '天然气 vs 电',
+  'Other vs Electric': '其他 vs 电',
+  'Solar vs Electric': '太阳能 vs 电',
+  'Centralized heating: 1 vs 0': '集中供暖：有 vs 无',
+  'Coal or natural gas supply: 1 vs 0': '煤或天然气供应：有 vs 无',
+  'Electricity access: 1 vs 0': '通电：有 vs 无',
+  'Heating at residence: 1 vs 0': '住宅取暖：有 vs 无',
+  'Running water at residence: 1 vs 0': '自来水入户：有 vs 无',
+  'Running water: Yes vs No: 1 vs 0': '自来水：有 vs 无',
+  'Tap water at residence: 1 vs 0': '自来水入户：有 vs 无',
+  'LPG vs electricity: 1 vs 0': '液化气 vs 电：有 vs 无',
+  'coal vs electricity: 1 vs 0': '煤 vs 电：有 vs 无',
+  'crop_residue_or_wood vs electricity: 1 vs 0': '秸秆木材 vs 电：有 vs 无',
+  'marsh_gas vs electricity: 1 vs 0': '沼气 vs 电：有 vs 无',
+  'natural_gas vs electricity: 1 vs 0': '天然气 vs 电：有 vs 无',
+  'other vs electricity: 1 vs 0': '其他 vs 电：有 vs 无',
+  'Main cooking fuel: coal vs electric: 1 vs 0': '炊事燃料：煤 vs 电（有 vs 无）',
+  'Main cooking fuel: crop_wood vs electric: 1 vs 0': '炊事燃料：秸秆木材 vs 电（有 vs 无）',
+  'Main cooking fuel: lpg vs electric: 1 vs 0': '炊事燃料：液化气 vs 电（有 vs 无）',
+  'Main cooking fuel: marsh_gas vs electric: 1 vs 0': '炊事燃料：沼气 vs 电（有 vs 无）',
+  'Main cooking fuel: natural_gas vs electric: 1 vs 0': '炊事燃料：天然气 vs 电（有 vs 无）',
+  'Main cooking fuel: other vs electric: 1 vs 0': '炊事燃料：其他 vs 电（有 vs 无）',
+  'Main cooking fuel: solar vs electric (Wave 5 only): 1 vs 0': '炊事燃料：太阳能 vs 电（仅 2020）',
+};
+function contrastLabel(text) {
+  const value = String(text || '');
+  return CONTRAST_LABELS[value] || value || '—';
+}
+
 function associationCellLabel(kind,id,variable){
   const entry=(associationConceptLabels[kind+'s']||{})[id];
   if(entry) return entry.code?`${entry.zh}（${entry.code}）`:entry.zh;
@@ -634,7 +669,7 @@ function renderAssociationHeatmap(rows){
       if(contrastText){
         const subLine=document.createElement('div');
         subLine.className='heatmap-sub';
-        subLine.textContent=contrastText;
+        subLine.textContent=contrastLabel(contrastText);
         th.append(subLine);
       }
       th.title=column.split('\u0000').join(' · ');
@@ -761,7 +796,7 @@ function renderAssociationRows() {
       ?`${fmt(item.estimate)} (${fmt(item.ci_lower)} to ${fmt(item.ci_upper)})`:'—';
     const nValue=item.fit_status==='withheld_disclosure'||item.n_model===''? '—' : Number(item.n_model).toLocaleString();
     const statusLabel=item.fit_status==='withheld_disclosure'?'因披露审查抑制数值':item.fit_status;
-    const cells=[associationCellLabel('exposure',item.exposure_concept_id,item.exposure_variable),item.contrast,
+    const cells=[associationCellLabel('exposure',item.exposure_concept_id,item.exposure_variable),contrastLabel(item.contrast),
       associationCellLabel('phenotype',item.phenotype_concept_id,item.phenotype_variable),item.wave,item.model_id,
       effect,fmt(item.p_value),fmt(item.q_value_by),fmt(item.p_bonferroni),nValue,
       item.fit_status==='withheld_disclosure'?statusLabel:item.variance_design];
