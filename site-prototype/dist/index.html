@@ -235,7 +235,7 @@
   <header class="topbar"><div class="shell"><div class="brand">CHARLS <span style="color:#86d2d1">/</span> ExWAS Atlas</div><a class="toplink" href="#method">数据与方法说明 ↓</a></div></header>
     <main class="shell">
         <nav class="viewnav" aria-label="主要浏览">
-      <div class="primary-nav"><button type="button" data-view="overview">首页</button><details class="navmenu"><summary>浏览</summary><div class="navmenu-panel"><button type="button" data-view="byPhenotype">按表型浏览</button><button type="button" data-view="byExposure">按暴露浏览</button><button type="button" data-view="groups">按暴露组浏览</button></div></details><details class="navmenu"><summary>目录</summary><div class="navmenu-panel"><button type="button" data-view="exposures">暴露目录</button><button type="button" data-view="phenotypes">表型目录</button><button type="button" data-view="metadata">测量与设计元数据</button></div></details><details class="navmenu"><summary>分析</summary><div class="navmenu-panel"><button type="button" data-view="associations">关联矩阵</button><button type="button" data-view="network">互作网络</button><button type="button" data-view="crosswave">跨波一致性</button></div></details><details class="navmenu"><summary>结果</summary><div class="navmenu-panel"><button type="button" data-view="modules">研究结果</button><button type="button" data-view="topics">专题目录</button></div></details></div></div>
+      <div class="primary-nav"><button type="button" data-view="overview">首页</button><details class="navmenu"><summary>浏览</summary><div class="navmenu-panel"><button type="button" data-view="byPhenotype">按表型浏览</button><button type="button" data-view="byExposure">按暴露浏览</button><button type="button" data-view="groups">按暴露组浏览</button></div></details><details class="navmenu"><summary>目录</summary><div class="navmenu-panel"><button type="button" data-view="exposures">暴露目录</button><button type="button" data-view="phenotypes">表型目录</button><button type="button" data-view="metadata">测量与设计元数据</button></div></details><details class="navmenu"><summary>分析</summary><div class="navmenu-panel"><button type="button" data-view="associations">关联矩阵</button><button type="button" data-view="compare">暴露对比</button><button type="button" data-view="network">互作网络</button><button type="button" data-view="crosswave">跨波一致性</button></div></details><details class="navmenu"><summary>结果</summary><div class="navmenu-panel"><button type="button" data-view="modules">研究结果</button><button type="button" data-view="topics">专题目录</button></div></details></div></div>
       
     </nav>
 <section class="hero"><div class="shell hero-grid">
@@ -367,7 +367,23 @@
 <div class="browse-chart" id="crossWaveForest"></div>
 <div class="tablewrap"><table><th scope="col"ead><tr><th scope="col">暴露</th><th scope="col">对照</th><th scope="col">表型</th><th scope="col">波次</th><th scope="col">合并 β</th><th scope="col">95% CI</th><th scope="col">I²</th><th scope="col">P</th><th scope="col">方向</th></tr></thead><tbody id="crossWaveRows"></tbody></table></div>
 </section>
-<section class="view" id="network" hidden>
+<section class="view" id="compare" hidden>
+      <div class="section-head"><div><h2>暴露对比</h2><p>在同一模型与同一效应尺度下，并排查看两类家庭暴露对同一批表型的效应；波次可能不同，见表格列。</p></div></div>
+      <div class="catalog-note">只比较同一模型、同一效应尺度下同时可估计的表型；优势比行显示比值（A / B），标准化效应行显示差值（A − B）。两者都不是交互检验。</div>
+      <div class="catalog-tools" id="compareFilters">
+        <div class="field"><label for="compareExposureA">暴露 A</label><select id="compareExposureA"></select></div>
+        <div class="field"><label for="compareExposureB">暴露 B</label><select id="compareExposureB"></select></div>
+        <div class="field"><label for="compareWave">波次</label><select id="compareWave"><option value="">全部波次</option></select></div>
+        <div class="field"><label for="compareModel">模型</label><select id="compareModel"><option value="">全部模型</option></select></div>
+      </div>
+      <p class="catalog-meta" id="compareCount">正在载入关联结果…</p>
+      <div class="tablewrap"><table class="catalog-table" aria-label="暴露对比">
+        <thead><tr><th scope="col">表型</th><th scope="col">暴露 A 效应（95% CI）</th><th scope="col">暴露 B 效应（95% CI）</th><th scope="col" id="compareDiffHead">差值（A − B）</th><th scope="col">波次</th><th scope="col">模型</th></tr></thead>
+        <tbody id="compareRows"></tbody>
+      </table></div>
+    </section>
+
+    <section class="view" id="network" hidden>
 <h2>暴露互作网络</h2>
 <p class="view-lede">暴露之间的加权 Spearman 相关。</p>
 <div class="browse-controls"><label>波次<select id="networkWave"><option value="2011">2011</option><option value="2013">2013</option><option value="2015">2015</option></select></label></div>
@@ -460,7 +476,7 @@
     
   </main>
   <footer class="footer"><div class="shell"><span>CHARLS ExWAS Atlas · 候选变量目录 · <a href="https://github.com/calebchu40-gif/charls-exwas-atlas" target="_blank" rel="noopener">代码与文档</a></span><span>页面展示公开变量元数据及五波披露审查后的汇总统计结果；不含 CHARLS 微观数据或受访者答案。</span><span>数据致谢：感谢北京大学国家发展研究院中国经济研究中心提供CHARLS数据。<a href="https://charls.pku.edu.cn/en/data/User2011.pdf" target="_blank" rel="noopener">2011基线引用：CHARLS 2011-2012 National Baseline Users Guide（官方协议要求）</a></span></div></footer>
-  <script src="./app.js?v=275" defer></script>
+  <script src="./app.js?v=276" defer></script>
 <script src="./browse.js?v=12" defer></script>
 <script src="./network.js?v=8" defer></script>
 <script src="./crosswave.js?v=5" defer></script>

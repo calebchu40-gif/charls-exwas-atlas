@@ -103,7 +103,7 @@ const nav = await evaluate(`(() => ({
   entries: [...document.querySelectorAll('.primary-nav [data-view]')].map(b => b.dataset.view),
 }))()`);
 check('five top-level entries with four grouped menus',
-  nav.entries.length === 12 && nav.menus.length === 4, JSON.stringify(nav.menus));
+  nav.entries.length === 13 && nav.menus.length === 4, JSON.stringify(nav.menus));
 
 const menuOpen = await evaluate(`(async () => {
   const menu = document.querySelector('.primary-nav details.navmenu');
@@ -160,6 +160,17 @@ const preview = await evaluate(`(() => {
 check('the homepage preview renders three figures',
   !preview.hidden && preview.fuel === 7 && preview.exposures === 6 && preview.waves === 5,
   `${preview.fuel}/${preview.exposures}/${preview.waves}`);
+
+await openView('compare');
+await waitFor(`document.querySelectorAll('#compareRows tr').length > 0`, 25000);
+const compare = await evaluate(`(() => ({
+  rows: document.querySelectorAll('#compareRows tr').length,
+  head: (document.getElementById('compareDiffHead') || {}).textContent || '',
+  a: (document.getElementById('compareExposureA') || {}).value || '',
+  b: (document.getElementById('compareExposureB') || {}).value || '',
+}))()`);
+check('the comparison view pairs two exposures on shared phenotypes',
+  compare.rows > 0 && compare.a !== compare.b, `${compare.rows} rows · ${compare.head}`);
 
 const modulesReady = await openView('modules');
 await waitFor(`document.querySelectorAll('#moduleTabs button[data-module]').length >= 5`);

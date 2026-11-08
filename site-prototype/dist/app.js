@@ -55,6 +55,7 @@ function showView(id) {
     heading.focus({ preventScroll: true });
   }
   deferredViewLoaders.get(id)?.();
+  if (id === 'compare') loadCompare();
   if (id === 'exposures' || id === 'groups') loadCatalog('e');
   if (id === 'phenotypes') loadCatalog('p');
   if (id === 'metadata') loadCatalog('c');
@@ -267,6 +268,137 @@ function associationLabel(kind,id,fallback){
   return entry.code?`${entry.zh}（${entry.code}）`:entry.zh;
 }
 
+
+
+// ---------------------------------------------------------------------------
+// Side-by-side comparison of two household exposures across shared phenotypes.
+let compareLoaded = false;
+
+function compareFillSelect(select, values, withAll = true) {
+  if (!select) return;
+  const current = select.value;
+  select.replaceChildren();
+  if (withAll) select.append(new Option('全部', ''));
+  for (const value of values) select.append(new Option(value.label, value.value));
+  if ([...select.options].some(option => option.value === current)) select.value = current;
+}
+
+function compareLabel(kind, id) {
+  const entry = (associationConceptLabels[kind + 's'] || {})[id];
+  return entry ? `${entry.zh}（${entry.code}）` : id;
+}
+
+function renderCompare() {
+  const body = byId('compareRows');
+  if (!body) return;
+  const wave = byId('compareWave').value;
+  const model = byId('compareModel').value;
+  const a = byId('compareExposureA').value;
+  const b = byId('compareExposureB').value;
+  const count = byId('compareCount');
+  body.replaceChildren();
+  if (!a || !b) { count.textContent = '请选择两个暴露后查看对比。'; return; }
+  if (a === b) { count.textContent = '请选择两个不同的暴露。'; return; }
+  const scope = associationRows.filter(row => row.fit_status === 'success'
+    && (!wave || String(row.wave) === wave) && (!model || row.model_id === model));
+  const pick = (exposure) => {
+    const map = new Map();
+    for (const row of scope) {
+      if (row.exposure_concept_id !== exposure) continue;
+      const key = row.phenotype_concept_id;
+      const seen = map.get(key);
+      if (!seen || Number(row.q_value_by) < Number(seen.q_value_by)) map.set(key, row);
+    }
+    return map;
+  };
+  const left = pick(a);
+  const right = pick(b);
+  const fmt = value => Number(value).toFixed(3);
+  const rows = [...left.keys()]
+    .filter(key => right.has(key))
+    .filter(key => left.get(key).estimate_type === right.get(key).estimate_type)
+    .map(key => {
+      const one = left.get(key);
+      const two = right.get(key);
+      return { one, two, diff: Number(one.estimate) - Number(two.estimate) };
+    }).sort((x, y) => Math.abs(y.diff) - Math.abs(x.diff));
+  const bothOddsRatios = rows.length > 0 && rows.every(item => item.one.estimate_type === 'odds_ratio');
+  const diffHead = byId('compareDiffHead');
+  if (diffHead) diffHead.textContent = bothOddsRatios ? 'OR 比值（A / B）' : '差值（A − B）';
+  for (const item of rows.slice(0, 200)) {
+    const tr = document.createElement('tr');
+    const label = document.createElement('td');
+    label.textContent = compareLabel('phenotype', item.one.phenotype_concept_id);
+    const cellA = document.createElement('td');
+    cellA.textContent = `${fmt(item.one.estimate)}（${fmt(item.one.ci_lower)} – ${fmt(item.one.ci_upper)}）`;
+    cellA.title = `${item.one.wave} · ${item.one.model_id}`;
+    const cellB = document.createElement('td');
+    cellB.textContent = `${fmt(item.two.estimate)}（${fmt(item.two.ci_lower)} – ${fmt(item.two.ci_upper)}）`;
+    cellB.title = `${item.two.wave} · ${item.two.model_id}`;
+    const waveCell = document.createElement('td');
+    waveCell.textContent = `${item.one.wave} / ${item.two.wave}`;
+    const modelCell = document.createElement('td');
+    modelCell.textContent = item.one.model_id === item.two.model_id ? item.one.model_id : '不同模型';
+    const cellD = document.createElement('td');
+    if (bothOddsRatios) {
+      cellD.textContent = (item.one.estimate / item.two.estimate).toFixed(2);
+    } else {
+      cellD.textContent = (item.diff > 0 ? '+' : '') + fmt(item.diff);
+    }
+    tr.append(label, cellA, cellB, cellD, waveCell, modelCell);
+    body.append(tr);
+  }
+  const metricName = bothOddsRatios ? '优势比（OR）' : '标准化效应量';
+  count.textContent = rows.length
+    ? `${rows.length} 个表型在两列暴露下可同尺度比较（${metricName}）${rows.length > 200 ? '，显示差异最大的 200 个' : ''}。`
+    : '这两个暴露在当前筛选下没有同尺度的共同表型，请换一组。';
+}
+
+async function loadCompare() {
+  if (compareLoaded) return;
+  compareLoaded = true;
+  if (!associationRows.length) await renderAssociations();
+  const exposures = new Map();
+  for (const row of associationRows) {
+    if (row.fit_status !== 'success') continue;
+    if (!exposures.has(row.exposure_concept_id)) {
+      exposures.set(row.exposure_concept_id, compareLabel('exposure', row.exposure_concept_id));
+    }
+  }
+  const options = [...exposures].map(([value, label]) => ({ value, label })).sort((x, y) => x.label.localeCompare(y.label, 'zh-CN'));
+  compareFillSelect(byId('compareExposureA'), options, false);
+  compareFillSelect(byId('compareExposureB'), options, false);
+  // Pick the pair that shares the most phenotypes so the view never opens empty.
+  const phenotypesByExposure = new Map();
+  for (const row of associationRows) {
+    if (row.fit_status !== 'success') continue;
+    if (!phenotypesByExposure.has(row.exposure_concept_id)) phenotypesByExposure.set(row.exposure_concept_id, new Set());
+    phenotypesByExposure.get(row.exposure_concept_id).add(row.phenotype_concept_id);
+  }
+  const ranked = [...phenotypesByExposure].sort((x, y) => y[1].size - x[1].size);
+  let best = null;
+  for (let i = 0; i < Math.min(ranked.length, 6); i += 1) {
+    for (let j = i + 1; j < Math.min(ranked.length, 12); j += 1) {
+      let overlap = 0;
+      for (const id of ranked[j][1]) if (ranked[i][1].has(id)) overlap += 1;
+      if (!best || overlap > best.overlap) best = { a: ranked[i][0], b: ranked[j][0], overlap };
+    }
+  }
+  if (best && best.overlap > 0) {
+    byId('compareExposureA').value = best.a;
+    byId('compareExposureB').value = best.b;
+  } else if (options[0]) {
+    byId('compareExposureA').value = options[0].value;
+  }
+  const waves = [...new Set(associationRows.map(row => String(row.wave)))].sort();
+  compareFillSelect(byId('compareWave'), waves.map(wave => ({ value: wave, label: wave })));
+  const models = [...new Set(associationRows.map(row => row.model_id))].sort();
+  compareFillSelect(byId('compareModel'), models.map(model => ({ value: model, label: model })));
+  for (const id of ['compareExposureA', 'compareExposureB', 'compareWave', 'compareModel']) {
+    byId(id).addEventListener('change', renderCompare);
+  }
+  renderCompare();
+}
 
 // ---------------------------------------------------------------------------
 // Homepage preview: three miniature figures built from the published aggregates.
