@@ -57,6 +57,7 @@ function showView(id) {
   deferredViewLoaders.get(id)?.();
   if (id === 'compare') loadCompare();
   if (id === 'significant') loadSignificant();
+  if (id === 'modules') loadHomePreview();
   if (id === 'exposures' || id === 'groups') loadCatalog('e');
   if (id === 'phenotypes') loadCatalog('p');
   if (id === 'metadata') loadCatalog('c');
@@ -107,7 +108,7 @@ function applyHashTarget() {
 }
 window.addEventListener('hashchange', applyHashTarget);
 document.addEventListener('DOMContentLoaded', applyHashTarget);
-setTimeout(loadHomePreview, 400);
+setTimeout(loadHomeOverview, 300);
 
 function renderCandidatePairExplorer(data){
  const design=byId('candidatePairDesign').value;
@@ -553,6 +554,139 @@ async function loadCompare() {
   renderCompare();
 }
 
+
+// ---------------------------------------------------------------------------
+// Homepage coverage figures: what the atlas contains, not what it found.
+let homeOverviewLoaded = null;
+
+function overviewDonut(container, segments) {
+  if (!container) return;
+  const total = segments.reduce((sum, item) => sum + item.value, 0) || 1;
+  const radius = 54;
+  const circumference = 2 * Math.PI * radius;
+  let offset = 0;
+  const rings = segments.map(item => {
+    const length = circumference * (item.value / total);
+    const ring = `<circle cx="70" cy="70" r="${radius}" fill="none" stroke="${item.color}" stroke-width="18"
+      stroke-dasharray="${length.toFixed(2)} ${(circumference - length).toFixed(2)}"
+      stroke-dashoffset="${(-offset).toFixed(2)}" transform="rotate(-90 70 70)"><title>${item.label} ${item.value.toLocaleString()}</title></circle>`;
+    offset += length;
+    return ring;
+  }).join('');
+  const legend = segments.map(item =>
+    `<li><i style="background:${item.color}"></i>${item.label}<b>${item.value.toLocaleString()}</b></li>`).join('');
+  container.innerHTML = `<div class="donut-wrap"><svg viewBox="0 0 140 140" role="img" aria-label="构成环形图">${rings}
+    <text x="70" y="66" text-anchor="middle" font-size="17" font-weight="700" fill="#183d54">${total.toLocaleString()}</text>
+    <text x="70" y="84" text-anchor="middle" font-size="9" fill="#5b7482">合计</text></svg>
+    <ul class="donut-legend">${legend}</ul></div>`;
+}
+
+function overviewStacked(container, rows) {
+  if (!container) return;
+  const totalMax = Math.max(...rows.map(row => row.e + row.p + row.c), 1);
+  const segments = rows.map(row => {
+    const total = row.e + row.p + row.c;
+    return `<div class="stack-row"><span class="stack-label">${row.wave}</span>
+      <span class="stack-track" style="width:100%">
+        <i class="seg e" style="width:${(row.e / totalMax * 100).toFixed(1)}%" title="暴露 ${row.e}"></i>
+        <i class="seg p" style="width:${(row.p / totalMax * 100).toFixed(1)}%" title="表型 ${row.p}"></i>
+        <i class="seg c" style="width:${(row.c / totalMax * 100).toFixed(1)}%" title="元数据 ${row.c}"></i>
+      </span><span class="stack-value">${total.toLocaleString()}</span></div>`;
+  }).join('');
+  container.innerHTML = `<div class="stack">${segments}</div>
+    <p class="stack-legend"><i class="seg e"></i>暴露 <i class="seg p"></i>表型 <i class="seg c"></i>元数据</p>`;
+}
+
+function overviewSankey(container, flow) {
+  if (!container) return;
+  const waves = flow.waves;
+  const modules = flow.modules;
+  const width = 460;
+  const height = 260;
+  const leftX = 60;
+  const rightX = width - 60;
+  const totals = new Map();
+  for (const link of flow.links) totals.set(link.module, (totals.get(link.module) || 0) + link.count);
+  const total = [...totals.values()].reduce((sum, value) => sum + value, 0) || 1;
+  const waveTotals = new Map(waves.map(wave => [wave, flow.links.filter(link => link.wave === wave)
+    .reduce((sum, link) => sum + link.count, 0)]));
+  const waveTotal = [...waveTotals.values()].reduce((sum, value) => sum + value, 0) || 1;
+  const gap = 14;
+  const usable = height - gap * (Math.max(waves.length, modules.length) - 1);
+  const waveSpan = new Map();
+  const moduleSpan = new Map();
+  let y = 0;
+  for (const wave of waves) {
+    const span = usable * ((waveTotals.get(wave) || 0) / waveTotal);
+    waveSpan.set(wave, { y, span, cursor: y });
+    y += span + gap;
+  }
+  y = 0;
+  for (const module of modules) {
+    const span = usable * ((totals.get(module) || 0) / total);
+    moduleSpan.set(module, { y, span, cursor: y });
+    y += span + gap;
+  }
+  const parts = [];
+  const colors = ['#2f6fbe', '#4a86c8', '#c0392b', '#b26a2c', '#4c9f70', '#7a5aa6'];
+  modules.forEach((module, index) => {
+    const span = moduleSpan.get(module);
+    parts.push(`<rect x="${rightX}" y="${span.y.toFixed(1)}" width="8" height="${Math.max(span.span, 2).toFixed(1)}" fill="${colors[index % colors.length]}" rx="2"/>`);
+    parts.push(`<text x="${rightX + 12}" y="${(span.y + span.span / 2 + 4).toFixed(1)}" font-size="10" fill="#33475b">${module}</text>`);
+  });
+  for (const wave of waves) {
+    const span = waveSpan.get(wave);
+    parts.push(`<rect x="${leftX - 8}" y="${span.y.toFixed(1)}" width="8" height="${Math.max(span.span, 2).toFixed(1)}" fill="#183d54" rx="2"/>`);
+    parts.push(`<text x="${leftX - 14}" y="${(span.y + span.span / 2 + 4).toFixed(1)}" text-anchor="end" font-size="10" fill="#33475b">${wave}</text>`);
+  }
+  for (const link of flow.links) {
+    const wave = waveSpan.get(link.wave);
+    const module = moduleSpan.get(link.module);
+    if (!wave || !module) continue;
+    const thickness = usable * (link.count / total);
+    const y1 = wave.cursor + thickness / 2;
+    const y2 = module.cursor + thickness / 2;
+    wave.cursor += thickness;
+    module.cursor += thickness;
+    const colour = colors[modules.indexOf(link.module) % colors.length];
+    parts.push(`<path d="M${leftX},${y1.toFixed(1)} C${(width / 2).toFixed(1)},${y1.toFixed(1)} ${(width / 2).toFixed(1)},${y2.toFixed(1)} ${rightX},${y2.toFixed(1)}"
+      fill="none" stroke="${colour}" stroke-width="${Math.max(thickness, 1).toFixed(1)}" stroke-opacity="0.35"><title>${link.wave} → ${link.module}：${link.count} 字段</title></path>`);
+  }
+  container.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="波次与问卷模块的字段流向">${parts.join('')}</svg>`;
+}
+
+function renderHomeOverview(data) {
+  const box = byId('homeOverview');
+  if (!box || !data) return;
+  overviewDonut(byId('overviewMix'), [
+    { label: '暴露专属', value: data.concept_mix.exposure_only, color: '#1f5f8b' },
+    { label: '表型专属', value: data.concept_mix.phenotype_only, color: '#b26a2c' },
+    { label: '双角色', value: data.concept_mix.dual, color: '#4c9f70' },
+  ]);
+  overviewStacked(byId('overviewWaves'), data.waves);
+  const eCats = byId('overviewECats');
+  const pCats = byId('overviewPCats');
+  const eMax = Math.max(...data.exposure_categories.map(item => item.count), 1);
+  const pMax = Math.max(...data.phenotype_categories.map(item => item.count), 1);
+  eCats.replaceChildren(...data.exposure_categories.map(item => previewRow(item.label, item.count.toLocaleString(), item.count / eMax * 100, { plain: true })));
+  pCats.replaceChildren(...data.phenotype_categories.map(item => previewRow(item.label, item.count.toLocaleString(), item.count / pMax * 100, { plain: true })));
+  overviewSankey(byId('overviewFlow'), data.module_flow);
+  overviewDonut(byId('overviewReview'), [
+    { label: '已核验', value: data.review.reviewed, color: '#4c9f70' },
+    { label: '待核验', value: data.review.pending, color: '#c9d7de' },
+  ]);
+  box.hidden = false;
+}
+
+function loadHomeOverview() {
+  if (homeOverviewLoaded) return homeOverviewLoaded;
+  homeOverviewLoaded = fetch('./home_overview_v1.json?v=1', { cache: 'no-cache' })
+    .then(response => (response.ok ? response.json() : null))
+    .then(data => { renderHomeOverview(data); return data; })
+    .catch(() => null);
+  return homeOverviewLoaded;
+}
+
 // ---------------------------------------------------------------------------
 // Homepage preview: three miniature figures built from the published aggregates.
 function previewRow(label, valueText, fillPercent, options = {}) {
@@ -577,7 +711,7 @@ function previewRow(label, valueText, fillPercent, options = {}) {
 }
 
 function renderHomePreview(data) {
-  const box = byId('homePreview');
+  const box = byId('resultStrip') || byId('homePreview');
   if (!box || !data) return;
   const fuel = byId('previewFuel');
   const exposures = byId('previewExposures');

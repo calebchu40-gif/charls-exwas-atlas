@@ -248,6 +248,29 @@
 .compare-choice>span{display:block;font-size:12px;color:#5b7482;margin-bottom:6px}
 .compare-choice .quick-chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
 </style>
+<style id="overview-style">
+.overview-figures{margin:26px 0 4px}
+.strip-title{margin:0 0 4px;font-size:14px;color:#183d54}
+.strip-note{margin:0 0 10px;font-size:11.5px;color:#5b7482}
+.donut-wrap{display:flex;gap:12px;align-items:center}
+.donut-wrap svg{width:118px;height:118px;flex:0 0 auto}
+.donut-legend{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:11.5px;color:#33475b}
+.donut-legend li{display:flex;align-items:center;gap:6px}
+.donut-legend i{width:10px;height:10px;border-radius:3px;flex:0 0 auto}
+.donut-legend b{margin-left:auto;color:#183d54}
+.stack{display:grid;gap:7px}
+.stack-row{display:grid;grid-template-columns:38px 1fr 48px;gap:8px;align-items:center;font-size:11.5px;color:#33475b}
+.stack-track{display:flex;height:11px;background:#eef3f6;border-radius:5px;overflow:hidden}
+.stack-track .seg{display:block;height:100%}
+.seg.e{background:#1f5f8b}
+.seg.p{background:#b26a2c}
+.seg.c{background:#9fb3c0}
+.stack-value{text-align:right;color:#375668}
+.stack-legend{margin:8px 0 0;font-size:10.5px;color:#5b7482;display:flex;gap:8px;align-items:center}
+.stack-legend i{width:9px;height:9px;border-radius:2px;display:inline-block;margin-right:3px}
+.sankey-box svg{width:100%;height:auto;display:block}
+@media(max-width:800px){.donut-wrap{flex-direction:column;align-items:flex-start}}
+</style>
 </head>
 <body>
   <header class="topbar"><div class="shell"><div class="brand">CHARLS <span style="color:#86d2d1">/</span> ExWAS Atlas</div><a class="toplink" href="#method">数据与方法说明 ↓</a></div></header>
@@ -306,38 +329,37 @@
       <div class="stat"><b>845</b><span>五波预登记主分析假设</span></div>
     </div>
     <p class="stats-note">845 项五波主假设 + 105 项 2011 试点 = 950 条结果 · 1,625 个 E/P 候选概念 · 8,341 条概念—源字段映射；E 不等同于环境化学物</p>
-    <section class="preview" id="homePreview" aria-label="数据预览" hidden>
+<section class="overview-figures" id="homeOverview" aria-label="数据概览" hidden>
       <div class="preview-grid">
         <article class="preview-card">
-          <h3>家庭燃料与尿酸</h3>
-          <p class="preview-sub">联合模型 · 标准化 β 与 95% CI</p>
-          <div class="preview-bars" id="previewFuel"></div>
+          <h3>概念构成</h3>
+          <p class="preview-sub">E/P 去重后的候选概念</p>
+          <div id="overviewMix" class="donut-box"></div>
         </article>
         <article class="preview-card">
-          <h3>显著结果最多的暴露</h3>
-          <p class="preview-sub">q &lt; 0.05 的结果数 / 检验数</p>
-          <div class="preview-bars" id="previewExposures"></div>
+          <h3>五波字段数</h3>
+          <p class="preview-sub">按暴露 / 表型 / 元数据拆分</p>
+          <div id="overviewWaves" class="stack-box"></div>
         </article>
         <article class="preview-card">
-          <h3>各波已发布结果</h3>
-          <p class="preview-sub">逐波结果条数</p>
-          <div class="preview-bars" id="previewWaves"></div>
-          <p class="preview-note" id="previewCrosswave"></p>
+          <h3>暴露域字段</h3>
+          <p class="preview-sub">E 目录前八类</p>
+          <div class="preview-bars" id="overviewECats"></div>
         </article>
         <article class="preview-card">
-          <h3>显著结果按波次</h3>
-          <p class="preview-sub">q &lt; 0.05 的结果数，共 <span id="previewSigTotal">—</span> 项</p>
-          <div class="preview-bars" id="previewSigWave"></div>
+          <h3>表型域字段</h3>
+          <p class="preview-sub">P 目录前八类</p>
+          <div class="preview-bars" id="overviewPCats"></div>
         </article>
         <article class="preview-card">
-          <h3>暴露组字段分布</h3>
-          <p class="preview-sub">E 目录中逐波字段数，前六类</p>
-          <div class="preview-bars" id="previewCategories"></div>
+          <h3>波次与问卷模块</h3>
+          <p class="preview-sub">字段来源流向，取前六模块</p>
+          <div id="overviewFlow" class="sankey-box"></div>
         </article>
         <article class="preview-card">
-          <h3>跨波方向一致性</h3>
-          <p class="preview-sub">可合并的暴露—表型对</p>
-          <div class="preview-bars" id="previewConsistency"></div>
+          <h3>值标签核验</h3>
+          <p class="preview-sub">官方值标签的核验进度</p>
+          <div id="overviewReview" class="donut-box"></div>
         </article>
       </div>
     </section>
@@ -372,6 +394,43 @@
 <button type="button" id="moduleMore" aria-expanded="false" class="module-more">更多研究结果</button>
 </div>
 <div class="browse-summary" id="moduleNote"></div>
+    <section class="preview" id="resultStrip" aria-label="结果速览">
+      <h3 class="strip-title">结果速览</h3>
+      <p class="strip-note">已发布结果的小结；完整筛选、热图与导出见「关联矩阵」。</p>
+      <div class="preview-grid">
+        <article class="preview-card">
+          <h3>家庭燃料与尿酸</h3>
+          <p class="preview-sub">联合模型 · 标准化 β 与 95% CI</p>
+          <div class="preview-bars" id="previewFuel"></div>
+        </article>
+        <article class="preview-card">
+          <h3>显著结果最多的暴露</h3>
+          <p class="preview-sub">q &lt; 0.05 的结果数 / 检验数</p>
+          <div class="preview-bars" id="previewExposures"></div>
+        </article>
+        <article class="preview-card">
+          <h3>各波已发布结果</h3>
+          <p class="preview-sub">逐波结果条数</p>
+          <div class="preview-bars" id="previewWaves"></div>
+          <p class="preview-note" id="previewCrosswave"></p>
+        </article>
+        <article class="preview-card">
+          <h3>显著结果按波次</h3>
+          <p class="preview-sub">q &lt; 0.05 的结果数，共 <span id="previewSigTotal">—</span> 项</p>
+          <div class="preview-bars" id="previewSigWave"></div>
+        </article>
+        <article class="preview-card">
+          <h3>暴露组字段分布</h3>
+          <p class="preview-sub">E 目录中逐波字段数，前六类</p>
+          <div class="preview-bars" id="previewCategories"></div>
+        </article>
+        <article class="preview-card">
+          <h3>跨波方向一致性</h3>
+          <p class="preview-sub">可合并的暴露—表型对</p>
+          <div class="preview-bars" id="previewConsistency"></div>
+        </article>
+      </div>
+    </section>
 <div class="tablewrap" id="moduleBody"></div>
 </section>
 <section class="view" id="crosswave" hidden>
@@ -504,7 +563,7 @@
     
   </main>
   <footer class="footer"><div class="shell"><span>CHARLS ExWAS Atlas · 候选变量目录 · <a href="https://github.com/calebchu40-gif/charls-exwas-atlas" target="_blank" rel="noopener">代码与文档</a></span><span>页面展示公开变量元数据及五波披露审查后的汇总统计结果；不含 CHARLS 微观数据或受访者答案。</span><span>数据致谢：感谢北京大学国家发展研究院中国经济研究中心提供CHARLS数据。<a href="https://charls.pku.edu.cn/en/data/User2011.pdf" target="_blank" rel="noopener">2011基线引用：CHARLS 2011-2012 National Baseline Users Guide（官方协议要求）</a></span></div></footer>
-  <script src="./app.js?v=281" defer></script>
+  <script src="./app.js?v=282" defer></script>
 <script src="./browse.js?v=12" defer></script>
 <script src="./network.js?v=8" defer></script>
 <script src="./crosswave.js?v=6" defer></script>

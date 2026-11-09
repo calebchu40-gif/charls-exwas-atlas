@@ -146,20 +146,23 @@ const focus = await evaluate(`(async () => {
 })()`);
 check('a view change moves focus to its heading', focus.tag === 'H2', `${focus.tag} ${focus.text}`);
 
-await waitFor(`document.querySelectorAll('#previewFuel .pv-row').length === 7`, 20000);
-const preview = await evaluate(`(() => {
-  const box = document.getElementById('homePreview');
+await waitFor(`document.querySelectorAll('#overviewMix svg circle').length === 3`, 20000);
+const overview = await evaluate(`(() => {
+  const box = document.getElementById('homeOverview');
   return {
     hidden: !box || box.hidden,
-    fuel: document.querySelectorAll('#previewFuel .pv-row').length,
-    exposures: document.querySelectorAll('#previewExposures .pv-row').length,
-    waves: document.querySelectorAll('#previewWaves .pv-row').length,
-    note: (document.getElementById('previewCrosswave') || {}).textContent || '',
+    mix: document.querySelectorAll('#overviewMix svg circle').length,
+    waves: document.querySelectorAll('#overviewWaves .stack-row').length,
+    eCats: document.querySelectorAll('#overviewECats .pv-row').length,
+    pCats: document.querySelectorAll('#overviewPCats .pv-row').length,
+    flow: document.querySelectorAll('#overviewFlow path').length,
+    review: document.querySelectorAll('#overviewReview svg circle').length,
   };
 })()`);
-check('the homepage preview renders three figures',
-  !preview.hidden && preview.fuel === 7 && preview.exposures === 6 && preview.waves === 5,
-  `${preview.fuel}/${preview.exposures}/${preview.waves}`);
+check('the homepage shows a data overview, not results',
+  !overview.hidden && overview.mix === 3 && overview.waves === 5 && overview.eCats === 8
+    && overview.pCats === 8 && overview.flow > 0 && overview.review === 2,
+  `${overview.waves} waves · ${overview.eCats}/${overview.pCats} domains · ${overview.flow} flows`);
 
 await openView('significant');
 await waitFor(`document.querySelectorAll('#significantCanvas path').length > 0`, 25000);
@@ -187,6 +190,16 @@ check('the comparison view compares two to four exposures',
 
 const modulesReady = await openView('modules');
 await waitFor(`document.querySelectorAll('#moduleTabs button[data-module]').length >= 5`);
+await waitFor(`document.querySelectorAll('#previewFuel .pv-row').length === 7`, 25000);
+const strip = await evaluate(`(() => ({
+  fuel: document.querySelectorAll('#previewFuel .pv-row').length,
+  exposures: document.querySelectorAll('#previewExposures .pv-row').length,
+  waves: document.querySelectorAll('#previewWaves .pv-row').length,
+}))()`);
+check('the research page carries the result strip',
+  strip.fuel === 7 && strip.exposures === 6 && strip.waves === 5,
+  `${strip.fuel}/${strip.exposures}/${strip.waves}`);
+
 const tabs = await evaluate(`(async () => {
   const button = document.querySelector('#moduleTabs button[data-module="mental"]');
   button.click();

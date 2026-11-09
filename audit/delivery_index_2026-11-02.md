@@ -16,7 +16,8 @@
 | `catalog_e.json` | HTTP 200 · 22.7 MB（6,331 条逐波字段） |
 | `cross_wave_meta_v1.json` | HTTP 200 · 210 KB（238 对跨波） |
 | `concept_labels_v1.json` | HTTP 200 · 4 KB（18 + 35 个中文标签） |
-| `home_preview_v1.json` | 首页六张预览卡的聚合数据（燃料效应、暴露排行、逐波结果、显著结果按波、暴露组字段、跨波一致性） |
+| `home_overview_v1.json` | 首页六张数据概览图的聚合（概念构成、逐波字段、域分布、模块流向、标签核验） |
+| `home_preview_v1.json` | 研究结果页「结果速览」的聚合数据（燃料效应、暴露排行、逐波结果、显著结果按波、暴露组字段、跨波一致性） |
 
 当前前端版本：`app.js?v=269`、`modules.js?v=31`、`crosswave.js?v=5`、`network.js?v=8`。
 

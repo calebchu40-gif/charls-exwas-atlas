@@ -31,6 +31,7 @@ ALLOWED_RELATIVE_PATHS = {
     "health_index_v1.json",
     "concept_labels_v1.json",
     "home_preview_v1.json",
+    "home_overview_v1.json",
     "trajectories_v1.json",
     "replication_v1.json",
     "network_stability_v1.json",
