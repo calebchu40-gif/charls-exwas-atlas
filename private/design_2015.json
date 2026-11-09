@@ -1,0 +1,20 @@
+{
+  "weight": "Biomarker_weight",
+  "psu": "communityID",
+  "age_field": "age",
+  "age_min": 45,
+  "covariate_sets": {
+    "M0": [
+      "age",
+      "female"
+    ],
+    "M1": [
+      "age",
+      "female",
+      "edu4",
+      "urban"
+    ]
+  },
+  "scale_outcome": true,
+  "variance_limitations": "official CHARLS variance strata and replicate weights are not released; unstratified WR Taylor approximation using communityID as PSU"
+}
