@@ -62,6 +62,12 @@ def main(wave: str) -> None:
     if recodes:
         frame = frame.with_columns(recodes)
 
+    outcomes_path = BASE / "private" / "derived_wave_tables" / f"outcomes_wave{wave}.csv"
+    if outcomes_path.exists():
+        derived = pl.read_csv(outcomes_path, infer_schema_length=10000)
+        derived = derived.with_columns(pl.col("ID").cast(pl.String).str.strip_chars())
+        frame = frame.join(derived, on="ID", how="left")
+
     covariates = pl.read_csv(covariates_path, infer_schema_length=10000)
     covariates = covariates.with_columns(pl.col("ID").cast(pl.String).str.strip_chars())
     frame = frame.join(covariates, on="ID", how="left")
