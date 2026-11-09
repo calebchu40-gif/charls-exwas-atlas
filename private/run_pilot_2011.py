@@ -26,10 +26,10 @@ import exwas_engine as eng  # noqa: E402
 
 WAVE = "2011"
 TABLE = BASE / "private" / "derived_wave_tables" / "CHARLS_wave2011_person_analytic.dta"
-REGISTRY = BASE / "private" / "derived_wave_tables" / "registry_2011_core_continuous.csv"
+REGISTRY = BASE / "private" / "derived_wave_tables" / "registry_2011_core_continuous_v2.csv"
 COVARIATES = BASE / "private" / "derived_wave_tables" / "covariates_wave2011.csv"
 DESIGN = BASE / "private" / "design_2011_blood.json"
-OUT = BASE / "private" / "results" / "pilot_2011_core_continuous_v1.csv"
+OUT = BASE / "private" / "results" / "pilot_2011_core_continuous_v2.csv"
 
 
 def main() -> None:
