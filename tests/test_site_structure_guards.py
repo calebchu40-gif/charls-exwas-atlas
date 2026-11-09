@@ -72,8 +72,8 @@ class SiteStructureGuards(unittest.TestCase):
         menus = re.findall(r'<summary>([^<]+)</summary>', segment)
         self.assertEqual(menus, ["浏览", "目录", "分析", "结果"], "four grouped menus")
         views = re.findall(r'data-view="([^"]+)"', segment)
-        self.assertEqual(len(views), 14, "all fourteen views stay reachable from the navigation")
-        self.assertEqual(len(set(views)), 14)
+        self.assertEqual(len(views), 15, "all fifteen views stay reachable from the navigation")
+        self.assertEqual(len(set(views)), 15)
 
 
 if __name__ == "__main__":

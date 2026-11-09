@@ -103,7 +103,7 @@ const nav = await evaluate(`(() => ({
   entries: [...document.querySelectorAll('.primary-nav [data-view]')].map(b => b.dataset.view),
 }))()`);
 check('five top-level entries with four grouped menus',
-  nav.entries.length === 14 && nav.menus.length === 4, JSON.stringify(nav.menus));
+  nav.entries.length === 15 && nav.menus.length === 4, JSON.stringify(nav.menus));
 
 const menuOpen = await evaluate(`(async () => {
   const menu = document.querySelector('.primary-nav details.navmenu');
@@ -187,6 +187,20 @@ const compare = await evaluate(`(() => ({
 check('the comparison view compares two to four exposures',
   compare.rows > 0 && compare.selected >= 2 && compare.columns === compare.selected + 2,
   `${compare.rows} rows · ${compare.selected} exposures · ${compare.head}`);
+
+await openView('fullScan');
+await waitFor(`document.querySelectorAll('#fsSelect option').length > 0`, 120000);
+const fullScan = await evaluate(`(() => {
+  const sel = document.getElementById('fsSelect');
+  sel.value = sel.options[0].value;
+  sel.dispatchEvent(new Event('change', { bubbles: true }));
+  return { options: sel.options.length, meta: (document.getElementById('fsMeta') || {}).textContent || '' };
+})()`);
+await waitFor(`document.querySelectorAll('#fsBody tr').length > 0`, 20000);
+const fullScanRows = await evaluate(`document.querySelectorAll('#fsBody tr').length`);
+check('the full scan lists every pair for a selected exposure',
+  fullScan.options > 0 && fullScanRows > 0 && /条结果/.test(fullScan.meta),
+  `${fullScan.options} options / ${fullScanRows} rows`);
 
 const modulesReady = await openView('modules');
 await waitFor(`document.querySelectorAll('#moduleTabs button[data-module]').length >= 5`);

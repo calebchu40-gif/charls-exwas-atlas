@@ -271,12 +271,27 @@
 .sankey-box svg{width:100%;height:auto;display:block}
 @media(max-width:800px){.donut-wrap{flex-direction:column;align-items:flex-start}}
 </style>
+
+<style id="fullscan-style">
+.fs-controls{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start;margin:14px 0 8px}
+.fs-tabs{display:flex;gap:6px}
+.fs-tab{border:1px solid var(--line);background:#fff;border-radius:7px;padding:8px 12px;font-size:12.5px;color:#375668;cursor:pointer}
+.fs-tab[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.fs-pick{display:flex;flex-direction:column;gap:6px;min-width:320px;flex:1;font-size:12.5px;color:#375668}
+.fs-pick input,.fs-pick select{border:1px solid var(--line);border-radius:7px;padding:8px 10px;font-size:13px;background:#fff}
+.fs-pick select{min-height:150px}
+.fs-meta{font-size:12.5px;color:#5b7482;margin:8px 0}
+.fs-table{width:100%;border-collapse:collapse;font-size:12.5px}
+.fs-table th,.fs-table td{padding:6px 8px;border-bottom:1px solid #e6eef2;text-align:left}
+.fs-table td.num{text-align:right;font-variant-numeric:tabular-nums}
+.fs-table tr.sig{background:#f3fbf6}
+</style>
 </head>
 <body>
   <header class="topbar"><div class="shell"><div class="brand">CHARLS <span style="color:#86d2d1">/</span> ExWAS Atlas</div><a class="toplink" href="#method">数据与方法说明 ↓</a></div></header>
     <main class="shell">
         <nav class="viewnav" aria-label="主要浏览">
-      <div class="primary-nav"><button type="button" data-view="overview">首页</button><details class="navmenu"><summary>浏览</summary><div class="navmenu-panel"><button type="button" data-view="byPhenotype">按表型浏览</button><button type="button" data-view="byExposure">按暴露浏览</button><button type="button" data-view="groups">按暴露组浏览</button></div></details><details class="navmenu"><summary>目录</summary><div class="navmenu-panel"><button type="button" data-view="exposures">暴露目录</button><button type="button" data-view="phenotypes">表型目录</button><button type="button" data-view="metadata">测量与设计元数据</button></div></details><details class="navmenu"><summary>分析</summary><div class="navmenu-panel"><button type="button" data-view="associations">关联矩阵</button><button type="button" data-view="significant">显著关联图</button><button type="button" data-view="compare">暴露对比</button><button type="button" data-view="network">互作网络</button><button type="button" data-view="crosswave">跨波一致性</button></div></details><details class="navmenu"><summary>结果</summary><div class="navmenu-panel"><button type="button" data-view="modules">研究结果</button><button type="button" data-view="topics">专题目录</button></div></details></div></div>
+      <div class="primary-nav"><button type="button" data-view="overview">首页</button><details class="navmenu"><summary>浏览</summary><div class="navmenu-panel"><button type="button" data-view="byPhenotype">按表型浏览</button><button type="button" data-view="byExposure">按暴露浏览</button><button type="button" data-view="groups">按暴露组浏览</button></div></details><details class="navmenu"><summary>目录</summary><div class="navmenu-panel"><button type="button" data-view="exposures">暴露目录</button><button type="button" data-view="phenotypes">表型目录</button><button type="button" data-view="metadata">测量与设计元数据</button></div></details><details class="navmenu"><summary>分析</summary><div class="navmenu-panel"><button type="button" data-view="associations">关联矩阵</button><button type="button" data-view="fullScan">全扫描</button><button type="button" data-view="significant">显著关联图</button><button type="button" data-view="compare">暴露对比</button><button type="button" data-view="network">互作网络</button><button type="button" data-view="crosswave">跨波一致性</button></div></details><details class="navmenu"><summary>结果</summary><div class="navmenu-panel"><button type="button" data-view="modules">研究结果</button><button type="button" data-view="topics">专题目录</button></div></details></div></div>
       
     </nav>
 <section class="hero"><div class="shell hero-grid">
@@ -523,7 +538,23 @@
 <div id="browseExposureChart" class="browse-chart"></div>
 <div class="tablewrap"><table><th scope="col"ead><tr><th scope="col">表型</th><th scope="col">波次</th><th scope="col">模型</th><th scope="col">效应（95% CI）</th><th scope="col">P</th><th scope="col">BY q</th><th scope="col">n</th><th scope="col">状态</th></tr></thead><tbody id="browseExposureRows"></tbody></table></div>
 </section>
-    <section class="view" id="groups" hidden><h2>按暴露组浏览</h2><p class="view-lede">类别沿用 NHANES Atlas“exposure group”入口的思路，名称按 CHARLS 字段范围重新定义。</p><div class="catalog-note">下方数量是经初步去重的编码—类别候选记录，不是最终概念数或可建模暴露数。家庭成员矩阵已暂时排除；跳题、路由、定义和跨波次一致性仍须人工核验。</div><div id="groupGrid" class="group-grid"></div></section>
+    <section class="view" id="fullScan" hidden>
+<h2>全扫描：暴露 × 结局</h2>
+<p class="view-lede">每个"暴露—结局"配对独立估计，全部保留（含不显著结果），门槛为 n≥100。可先按暴露查结局，也可按结局查暴露。</p>
+<div class="fs-controls">
+  <div class="fs-tabs" role="tablist">
+    <button type="button" class="fs-tab" data-dir="exposure" aria-pressed="true">按暴露查结局</button>
+    <button type="button" class="fs-tab" data-dir="phenotype" aria-pressed="false">按结局查暴露</button>
+  </div>
+  <label class="fs-pick"><span id="fsPickLabel">选择暴露</span>
+    <input id="fsSearch" type="search" placeholder="输入名称筛选…" autocomplete="off" aria-label="筛选指标名称">
+    <select id="fsSelect" size="8" aria-label="选择暴露或结局"></select>
+  </label>
+</div>
+<p class="fs-meta" id="fsMeta">正在加载结果…</p>
+<div class="tablewrap"><table class="fs-table"><thead><tr><th>对方指标</th><th>对比</th><th>估计值</th><th>95% CI</th><th>p</th><th>q</th><th>n</th></tr></thead><tbody id="fsBody"></tbody></table></div>
+</section>
+<section class="view" id="groups" hidden><h2>按暴露组浏览</h2><p class="view-lede">类别沿用 NHANES Atlas“exposure group”入口的思路，名称按 CHARLS 字段范围重新定义。</p><div class="catalog-note">下方数量是经初步去重的编码—类别候选记录，不是最终概念数或可建模暴露数。家庭成员矩阵已暂时排除；跳题、路由、定义和跨波次一致性仍须人工核验。</div><div id="groupGrid" class="group-grid"></div></section>
     <section class="view" id="exposures" hidden><h2>暴露目录（E Catalog）</h2><p class="view-lede">对应 NHANES Catalog 的概念、类别和描述；按CHARLS波次逐字段展示原始变量码、来源模块、单位/分类构成和官方值标签。</p><div class="catalog-note">目录合并自动发现和已审计的领域字段映射；仅已核字段显示官方值标签，其余待核。候选字段不等于一个独立暴露指标；正式纳入须回到 CHARLS 问卷、代码本、路由和测量说明。</div><div class="catalog-tools"><div class="field"><label for="eSearch">编码或描述</label><input id="eSearch" type="search" placeholder="搜索代码或关键词"></div><div class="field"><label for="eCategory">暴露类别</label><select id="eCategory"><option value="">全部类别</option></select></div><div class="field"><label for="eWave">波次覆盖</label><select id="eWave"><option value="">全部波次</option><option>2011</option><option>2013</option><option>2015</option><option>2018</option><option>2020</option></select></div></div><div class="catalog-meta"><span id="eCount" aria-live="polite"></span><button type="button" id="eMore" class="clear" hidden>显示更多</button></div><div class="tablewrap"><table class="catalog-table"><th scope="col"ead><tr><th scope="col">CHARLS编码</th><th scope="col">候选概念ID</th><th scope="col">类别</th><th scope="col">官方字段标签</th><th scope="col">波次</th><th scope="col">来源模块</th><th scope="col">单位/分类构成</th><th scope="col">官方值标签/编码含义</th></tr></thead><tbody id="eRows"></tbody></table></div></section>
     <section class="view" id="phenotypes" hidden><h2>表型目录（P Catalog）</h2><p class="view-lede">按 NHANES 图谱目录显示CHARLS逐波原始字段编码、候选概念ID、类别、官方字段标签、波次和模块；不同波次分开保留。</p><div class="catalog-note">目录合并自动发现和已审计的领域字段映射；仅已核字段显示官方值标签，其余待核。一个表型概念可能由多条原始字段构成；慢病路由、测量单位、特殊码和跨波可比性确认前，不进入正式模型。</div><div class="catalog-tools"><div class="field"><label for="pSearch">编码或描述</label><input id="pSearch" type="search" placeholder="搜索代码或关键词"></div><div class="field"><label for="pCategory">表型类别</label><select id="pCategory"><option value="">全部类别</option></select></div><div class="field"><label for="pWave">波次覆盖</label><select id="pWave"><option value="">全部波次</option><option>2011</option><option>2013</option><option>2015</option><option>2018</option><option>2020</option></select></div></div><div class="catalog-meta"><span id="pCount" aria-live="polite"></span><button type="button" id="pMore" class="clear" hidden>显示更多</button></div><div class="tablewrap"><table class="catalog-table"><th scope="col"ead><tr><th scope="col">CHARLS编码</th><th scope="col">候选概念ID</th><th scope="col">类别</th><th scope="col">官方字段标签</th><th scope="col">波次</th><th scope="col">来源模块</th><th scope="col">单位/分类构成</th><th scope="col">官方值标签/编码含义</th></tr></thead><tbody id="pRows"></tbody></table></div></section>
     <section class="view" id="metadata" hidden><h2>测量与设计元数据（C）</h2><p class="view-lede">浏览影响变量解释、测量条件或问卷施测方式的 CHARLS 字段。C 类元数据不进入暴露—表型关联配对。</p><div class="catalog-note"><strong>如何理解这里的“协变量候选”：</strong>它只是供研究者检索的候选字段，尚未决定是否进入任何模型。年龄、性别等调整项需要针对具体研究问题、目标人群和因果结构另行选择。另一些记录描述测量资格、调查路由或问卷格式，只用于正确解释 E/P 字段。<br><br>审核状态中，“官方值标签/编码尚未逐项核验”表示还需对照对应波次的官方问卷或代码本；连续变量可能本来就没有离散答案类别。“自动关键词检索线索”只表示字段名或标签命中过检索词，不能据此判断字段含义、调整资格或研究结论。请查看每条记录的来源与适用范围。目录不含受访者答案，也不代表已完成分析。</div><div class="catalog-tools"><div class="field"><label for="cSearch">CHARLS 编码或描述</label><input id="cSearch" type="search" placeholder="例如 ba004、年龄、血压测量条件"></div><div class="field"><label for="cCategory">记录用途分类（非分析角色）</label><select id="cCategory"><option value="">全部类别</option></select></div><div class="field"><label for="cWave">调查波次</label><select id="cWave"><option value="">全部波次</option><option>2011</option><option>2013</option><option>2015</option><option>2018</option><option>2020</option></select></div></div><div class="catalog-meta"><span id="cCount" aria-live="polite"></span><button type="button" id="cMore" class="clear" hidden>显示更多</button></div><div class="tablewrap"><table class="catalog-table"><th scope="col"ead><tr><th scope="col">CHARLS编码</th><th scope="col">概念/审核状态</th><th scope="col">记录类别</th><th scope="col">官方字段标签</th><th scope="col">波次</th><th scope="col">来源模块</th><th scope="col">适用范围/说明</th><th scope="col">编码/元数据语义</th></tr></thead><tbody id="cRows"></tbody></table></div><div class="methodology-archive">

@@ -55,6 +55,7 @@ function showView(id) {
     heading.focus({ preventScroll: true });
   }
   deferredViewLoaders.get(id)?.();
+  if (id === 'fullScan') loadFullScan();
   if (id === 'compare') loadCompare();
   if (id === 'significant') loadSignificant();
   if (id === 'modules') loadHomePreview();
@@ -1482,3 +1483,115 @@ function renderLifeHistory(items){
  byId('lifeHistoryCount').textContent=`显示 ${n} 条字段映射，涉及 ${filtered.length} 个概念组；字段行数不等于独立暴露数量。`;
 }
 lifeHistoryLoaded.then(items=>{renderLifeHistory(items);['lifeHistorySearch','lifeHistoryRole'].forEach(id=>byId(id).addEventListener('input',()=>renderLifeHistory(items)));document.querySelector('[data-view="lifeHistoryExposures"]').addEventListener('click',()=>renderLifeHistory(items))}).catch(err=>{byId('lifeHistoryCount').textContent=`生命历程候选目录载入失败：${err.message}`});
+
+
+// ---- full scan (pair-driven results) ----
+const fullScanState = { loaded: false, loading: null, dir: 'exposure', index: null, edges: [], byExposure: new Map(), byPhenotype: new Map() };
+
+function fsLabel(kind, id, labels) {
+  return labels[id] || id;
+}
+
+async function loadFullScan() {
+  if (fullScanState.loaded) return;
+  if (fullScanState.loading) return fullScanState.loading;
+  fullScanState.loading = (async () => {
+    const meta = byId('fsMeta');
+    if (meta) meta.textContent = '正在加载索引…';
+    const index = await fetch('scan/index.json', { cache: 'no-store' }).then(r => r.json());
+    fullScanState.index = index;
+    const labelMap = {};
+    index.exposures.forEach(item => { labelMap[item.id] = item.label; });
+    index.outcomes.forEach(item => { labelMap[item.id] = item.label; });
+    fullScanState.labels = labelMap;
+    if (meta) meta.textContent = `索引已载入：${index.exposures.length} 个暴露、${index.outcomes.length} 个结局，正在载入结果分片…`;
+    const shards = await Promise.all(Array.from({ length: 8 }, (_, i) =>
+      fetch(`scan/edges_${i}.json`, { cache: 'no-store' }).then(r => r.json())));
+    fullScanState.edges = shards.flat();
+    for (const row of fullScanState.edges) {
+      const [e, p, term, est, se, lo, hi, pv, q, n] = row;
+      const record = { e, p, term, est, se, lo, hi, pv, q, n };
+      if (!fullScanState.byExposure.has(e)) fullScanState.byExposure.set(e, []);
+      if (!fullScanState.byPhenotype.has(p)) fullScanState.byPhenotype.set(p, []);
+      fullScanState.byExposure.get(e).push(record);
+      fullScanState.byPhenotype.get(p).push(record);
+    }
+    fullScanState.loaded = true;
+    if (meta) meta.textContent = '';
+    document.querySelectorAll('.fs-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        fullScanState.dir = btn.dataset.dir;
+        document.querySelectorAll('.fs-tab').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+        byId('fsPickLabel').textContent = fullScanState.dir === 'exposure' ? '选择暴露' : '选择结局';
+        fillFsOptions();
+      });
+    });
+    byId('fsSearch').addEventListener('input', fillFsOptions);
+    byId('fsSelect').addEventListener('change', renderFsTable);
+    fillFsOptions();
+  })();
+  return fullScanState.loading;
+}
+
+function fillFsOptions() {
+  const index = fullScanState.index;
+  if (!index) return;
+  const dir = fullScanState.dir;
+  const list = (dir === 'exposure' ? index.exposures : index.outcomes)
+    .slice().sort((a, b) => b.n_results - a.n_results);
+  const q = (byId('fsSearch').value || '').trim().toLowerCase();
+  const filtered = q ? list.filter(item => (item.label + ' ' + item.id).toLowerCase().includes(q)) : list;
+  const select = byId('fsSelect');
+  select.innerHTML = '';
+  filtered.slice(0, 400).forEach(item => {
+    const option = document.createElement('option');
+    option.value = item.id;
+    option.textContent = `${item.label}（${item.n_results} 条）`;
+    select.appendChild(option);
+  });
+  byId('fsMeta').textContent = `${filtered.length} 个可选${dir === 'exposure' ? '暴露' : '结局'}；全库 ${index.n_results.toLocaleString()} 条结果（n≥${index.min_n}）`;
+  renderFsTable();
+}
+
+function fsTermLabel(term) {
+  if (!term) return '—';
+  if (term.startsWith('__bin_')) return '是 vs 否';
+  const parts = term.split('_lvl');
+  if (parts.length > 1) return '水平 ' + parts[1];
+  return term;
+}
+
+function renderFsTable() {
+  const dir = fullScanState.dir;
+  const id = byId('fsSelect').value;
+  const body = byId('fsBody');
+  if (!body) return;
+  body.innerHTML = '';
+  if (!id) return;
+  const rows = (dir === 'exposure' ? fullScanState.byExposure : fullScanState.byPhenotype).get(id) || [];
+  if (!rows.length) {
+    body.innerHTML = '<tr><td colspan="7">该指标暂无结果</td></tr>';
+    return;
+  }
+  const sorted = rows.slice().sort((a, b) => (a.pv ?? 1) - (b.pv ?? 1));
+  const limit = Math.min(sorted.length, 400);
+  for (let i = 0; i < limit; i += 1) {
+    const row = sorted[i];
+    const otherId = dir === 'exposure' ? row.p : row.e;
+    const other = fullScanState.labels[otherId] || otherId;
+    const tr = document.createElement('tr');
+    if (row.q != null && row.q < 0.05) tr.className = 'sig';
+    tr.innerHTML = `<td>${other}</td><td>${fsTermLabel(row.term)}</td>` +
+      `<td class="num">${row.est.toFixed(3)}</td>` +
+      `<td class="num">${row.lo.toFixed(3)} ~ ${row.hi.toFixed(3)}</td>` +
+      `<td class="num">${row.pv < 0.001 ? '<0.001' : row.pv.toFixed(3)}</td>` +
+      `<td class="num">${row.q == null ? '—' : (row.q < 0.001 ? '<0.001' : row.q.toFixed(3))}</td>` +
+      `<td class="num">${row.n.toLocaleString()}</td>`;
+    body.appendChild(tr);
+  }
+  if (sorted.length > limit) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td colspan="7">仅显示前 ${limit} 条，共 ${sorted.length} 条</td>`;
+    body.appendChild(tr);
+  }
+}
