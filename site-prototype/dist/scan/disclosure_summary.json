@@ -1,0 +1,9 @@
+{
+ "n_results": 113201,
+ "min_n": 100,
+ "rule": "automated_screen_v1: n>=100, aggregate-only, finite estimate",
+ "decisions": {
+  "approved_public_aggregate": 113201,
+  "withheld": 0
+ }
+}

@@ -1536,7 +1536,12 @@ async function loadFullScan() {
     });
     byId('fsSearch').addEventListener('input', fillFsOptions);
     byId('fsSelect').addEventListener('change', renderFsTable);
+    byId('fsDownload').addEventListener('click', downloadFsCsv);
     fillFsOptions();
+    fetch('scan/disclosure_summary.json', { cache: 'no-store' }).then(r => r.json()).then(summary => {
+      const note = byId('fsDisclosure');
+      if (note) note.textContent = `披露：自动化筛查通过 ${summary.n_results.toLocaleString()} 条（规则：n≥${summary.min_n}、仅聚合、估计值有限）；逐条人工复核仍需 PI 完成。`;
+    }).catch(() => {});
   })();
   return fullScanState.loading;
 }
@@ -1602,4 +1607,29 @@ function renderFsTable() {
     tr.innerHTML = `<td colspan="7">仅显示前 ${limit} 条，共 ${sorted.length} 条</td>`;
     body.appendChild(tr);
   }
+}
+
+
+function downloadFsCsv() {
+  const dir = fullScanState.dir;
+  const id = byId('fsSelect').value;
+  if (!id) return;
+  const rows = (dir === 'exposure' ? fullScanState.byExposure : fullScanState.byPhenotype).get(id) || [];
+  if (!rows.length) return;
+  const header = ['对方指标', '暴露项', '估计值', '标准误', 'CI下限', 'CI上限', 'p', 'q', 'n'];
+  const lines = [header.join(',')];
+  for (const row of rows.slice().sort((a, b) => (a.pv ?? 1) - (b.pv ?? 1))) {
+    const otherId = dir === 'exposure' ? row.p : row.e;
+    const other = (fullScanState.labels[otherId] || otherId).replace(/,/g, '，');
+    const term = fsTermLabel(row.term).replace(/,/g, '，');
+    lines.push([other, term, row.est, row.se, row.lo, row.hi, row.pv, row.q ?? '', row.n].join(','));
+  }
+  const blob = new Blob(['\ufeff' + lines.join('\n')], { type: 'text/csv;charset=utf-8' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = `charls_full_scan_${id}.csv`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(link.href), 2000);
 }

@@ -545,6 +545,7 @@
   <div class="fs-tabs" role="tablist">
     <button type="button" class="fs-tab" data-dir="exposure" aria-pressed="true">按暴露查结局</button>
     <button type="button" class="fs-tab" data-dir="phenotype" aria-pressed="false">按结局查暴露</button>
+    <button type="button" class="fs-tab" id="fsDownload">下载当前结果 CSV</button>
   </div>
   <label class="fs-pick"><span id="fsPickLabel">选择暴露</span>
     <input id="fsSearch" type="search" placeholder="输入名称筛选…" autocomplete="off" aria-label="筛选指标名称">
@@ -552,6 +553,7 @@
   </label>
 </div>
 <p class="fs-meta" id="fsMeta">正在加载结果…</p>
+<p class="fs-meta" id="fsDisclosure"></p>
 <div class="tablewrap"><table class="fs-table"><thead><tr><th>对方指标</th><th>对比</th><th>估计值</th><th>95% CI</th><th>p</th><th>q</th><th>n</th></tr></thead><tbody id="fsBody"></tbody></table></div>
 </section>
 <section class="view" id="groups" hidden><h2>按暴露组浏览</h2><p class="view-lede">类别沿用 NHANES Atlas“exposure group”入口的思路，名称按 CHARLS 字段范围重新定义。</p><div class="catalog-note">下方数量是经初步去重的编码—类别候选记录，不是最终概念数或可建模暴露数。家庭成员矩阵已暂时排除；跳题、路由、定义和跨波次一致性仍须人工核验。</div><div id="groupGrid" class="group-grid"></div></section>
@@ -594,7 +596,7 @@
     
   </main>
   <footer class="footer"><div class="shell"><span>CHARLS ExWAS Atlas · 候选变量目录 · <a href="https://github.com/calebchu40-gif/charls-exwas-atlas" target="_blank" rel="noopener">代码与文档</a></span><span>页面展示公开变量元数据及五波披露审查后的汇总统计结果；不含 CHARLS 微观数据或受访者答案。</span><span>数据致谢：感谢北京大学国家发展研究院中国经济研究中心提供CHARLS数据。<a href="https://charls.pku.edu.cn/en/data/User2011.pdf" target="_blank" rel="noopener">2011基线引用：CHARLS 2011-2012 National Baseline Users Guide（官方协议要求）</a></span></div></footer>
-  <script src="./app.js?v=284" defer></script>
+  <script src="./app.js?v=285" defer></script>
 <script src="./browse.js?v=12" defer></script>
 <script src="./network.js?v=8" defer></script>
 <script src="./crosswave.js?v=6" defer></script>

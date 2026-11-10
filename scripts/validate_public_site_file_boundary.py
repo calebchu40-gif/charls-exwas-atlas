@@ -40,6 +40,7 @@ ALLOWED_RELATIVE_PATHS = {
     "scan/edges_6.json.gz",
     "scan/edges_7.json.gz",
     "scan/index.json",
+    "scan/disclosure_summary.json",
     "home_overview_v1.json",
     "trajectories_v1.json",
     "replication_v1.json",
