@@ -90,6 +90,7 @@ const openView = async view => {
 };
 
 await send('Page.enable');
+try { await send('Network.enable'); await send('Network.setCacheDisabled', { cacheDisabled: true }); } catch {}
 await send('Runtime.enable');
 try { await send('Page.bringToFront'); } catch {}
 try { await send('Emulation.setFocusEmulationEnabled', { enabled: true }); } catch {}

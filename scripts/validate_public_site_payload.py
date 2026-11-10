@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import gzip
 import json
 import math
 import sys
@@ -11,7 +12,7 @@ from pathlib import Path
 from adjust_exwas_pvalues import adjust_pvalues
 
 
-ALLOWED_SUFFIXES = {".css", ".gif", ".html", ".ico", ".jpeg", ".jpg", ".js", ".json", ".png", ".svg", ".webp", ".woff", ".woff2"}
+ALLOWED_SUFFIXES = {".gz", ".css", ".gif", ".html", ".ico", ".jpeg", ".jpg", ".js", ".json", ".png", ".svg", ".webp", ".woff", ".woff2"}
 ALLOWED_DOTFILES = {".nojekyll"}
 RESULT_TOP_FIELDS = {"schema_version", "release_status", "generated_at", "families"}
 RESULT_FAMILY_FIELDS = {"family_id", "family_size", "rows"}
@@ -163,6 +164,15 @@ def validate_payload(root: Path) -> list[str]:
             continue
         if path.name not in ALLOWED_DOTFILES and path.suffix.lower() not in ALLOWED_SUFFIXES:
             errors.append(f"Unexpected non-site file type: {path.relative_to(root)}")
+            continue
+        if path.suffix.lower() == ".gz":
+            if not path.name.endswith(".json.gz"):
+                errors.append(f"Compressed payload must be .json.gz: {path.relative_to(root)}")
+                continue
+            try:
+                json.loads(gzip.decompress(path.read_bytes()).decode("utf-8"))
+            except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+                errors.append(f"Invalid gzip JSON payload {path.relative_to(root)}: {exc}")
             continue
         if path.suffix.lower() == ".json":
             try:

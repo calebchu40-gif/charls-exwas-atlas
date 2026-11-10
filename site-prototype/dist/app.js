@@ -1505,8 +1505,16 @@ async function loadFullScan() {
     index.outcomes.forEach(item => { labelMap[item.id] = item.label; });
     fullScanState.labels = labelMap;
     if (meta) meta.textContent = `索引已载入：${index.exposures.length} 个暴露、${index.outcomes.length} 个结局，正在载入结果分片…`;
-    const shards = await Promise.all(Array.from({ length: 8 }, (_, i) =>
-      fetch(`scan/edges_${i}.json`, { cache: 'no-store' }).then(r => r.json())));
+    const loadShard = async (i) => {
+      const response = await fetch(`scan/edges_${i}.json.gz`, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`shard ${i} HTTP ${response.status}`);
+      if ('DecompressionStream' in window) {
+        const stream = response.body.pipeThrough(new DecompressionStream('gzip'));
+        return new Response(stream).json();
+      }
+      throw new Error('browser lacks DecompressionStream');
+    };
+    const shards = await Promise.all(Array.from({ length: 8 }, (_, i) => loadShard(i)));
     fullScanState.edges = shards.flat();
     for (const row of fullScanState.edges) {
       const [e, p, term, est, se, lo, hi, pv, q, n] = row;
