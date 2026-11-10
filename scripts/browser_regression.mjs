@@ -147,23 +147,19 @@ const focus = await evaluate(`(async () => {
 })()`);
 check('a view change moves focus to its heading', focus.tag === 'H2', `${focus.tag} ${focus.text}`);
 
-await waitFor(`document.querySelectorAll('#overviewMix svg circle').length === 3`, 20000);
-const overview = await evaluate(`(() => {
-  const box = document.getElementById('homeOverview');
+await waitFor(`document.querySelectorAll('.entry-card').length === 2`, 20000);
+const entry = await evaluate(`(() => {
+  const cards = [...document.querySelectorAll('.entry-card')];
   return {
-    hidden: !box || box.hidden,
-    mix: document.querySelectorAll('#overviewMix svg circle').length,
-    waves: document.querySelectorAll('#overviewWaves .stack-row').length,
-    eCats: document.querySelectorAll('#overviewECats .pv-row').length,
-    pCats: document.querySelectorAll('#overviewPCats .pv-row').length,
-    flow: document.querySelectorAll('#overviewFlow path').length,
-    
+    count: cards.length,
+    labels: cards.map(card => card.querySelector('b').textContent),
+    overviewGone: !document.getElementById('homeOverview'),
   };
 })()`);
-check('the homepage shows the scan scale, not just results',
-  !overview.hidden && overview.mix === 2 && overview.waves === 5 && overview.eCats >= 8
-    && overview.pCats >= 8 && overview.flow > 0,
-  `${overview.waves} waves · ${overview.eCats}/${overview.pCats} top lists · ${overview.flow} flows`);
+check('the homepage opens with two usage entries instead of result charts',
+  entry.count === 2 && entry.overviewGone && entry.labels.some(text => text.includes('按暴露'))
+    && entry.labels.some(text => text.includes('按结局')),
+  entry.labels.join(' / '));
 
 await openView('significant');
 await waitFor(`document.querySelectorAll('#significantCanvas path').length > 0`, 25000);
@@ -205,15 +201,18 @@ check('the full scan lists every pair for a selected exposure',
 
 const modulesReady = await openView('modules');
 await waitFor(`document.querySelectorAll('#moduleTabs button[data-module]').length >= 5`);
-await waitFor(`document.querySelectorAll('#previewFuel .pv-row').length === 7`, 25000);
-const strip = await evaluate(`(() => ({
-  fuel: document.querySelectorAll('#previewFuel .pv-row').length,
-  exposures: document.querySelectorAll('#previewExposures .pv-row').length,
-  waves: document.querySelectorAll('#previewWaves .pv-row').length,
+await evaluate(`(async () => {
+  const tab = document.querySelector('#moduleTabs button[data-module="gradient"]');
+  if (tab) tab.click();
+  await new Promise(r => setTimeout(r, 1200));
+})()`);
+await waitFor(`document.querySelectorAll('#moduleBody svg, #moduleBody table').length > 0`, 20000);
+const modulesPage = await evaluate(`(() => ({
+  strip: Boolean(document.getElementById('resultStrip')),
+  visual: document.querySelectorAll('#moduleBody svg, #moduleBody table').length,
 }))()`);
-check('the research page carries the result strip',
-  strip.fuel === 7 && strip.exposures === 6 && strip.waves === 5,
-  `${strip.fuel}/${strip.exposures}/${strip.waves}`);
+check('the research page shows the analysis instead of a result strip',
+  !modulesPage.strip && modulesPage.visual > 0, `${modulesPage.visual} figures`);
 
 const tabs = await evaluate(`(async () => {
   const button = document.querySelector('#moduleTabs button[data-module="mental"]');

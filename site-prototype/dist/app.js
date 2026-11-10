@@ -58,7 +58,6 @@ function showView(id) {
   if (id === 'fullScan') loadFullScan();
   if (id === 'compare') loadCompare();
   if (id === 'significant') loadSignificant();
-  if (id === 'modules') loadHomePreview();
   if (id === 'exposures' || id === 'groups') loadCatalog('e');
   if (id === 'phenotypes') loadCatalog('p');
   if (id === 'metadata') loadCatalog('c');
@@ -84,6 +83,12 @@ document.addEventListener('keydown', event => {
 
 document.querySelectorAll('#topics [data-view]').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
 document.querySelectorAll('.overview-view [data-view]').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
+document.querySelectorAll('.entry-card').forEach(card => card.addEventListener('click', () => {
+  const dir = card.dataset.entry;
+  fullScanState.dir = dir;
+  showView('fullScan');
+}));
+
 
 // Deep links: every view is addressable as #view-id so a result or a catalog
 // page can be shared, bookmarked and opened directly.
@@ -109,7 +114,6 @@ function applyHashTarget() {
 }
 window.addEventListener('hashchange', applyHashTarget);
 document.addEventListener('DOMContentLoaded', applyHashTarget);
-setTimeout(loadHomeOverview, 300);
 
 function renderCandidatePairExplorer(data){
  const design=byId('candidatePairDesign').value;
@@ -1533,6 +1537,7 @@ async function loadFullScan() {
         fullScanState.dir = btn.dataset.dir;
         document.querySelectorAll('.fs-tab').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
         byId('fsPickLabel').textContent = fullScanState.dir === 'exposure' ? '选择暴露' : '选择结局';
+    document.querySelectorAll('.fs-tab').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.dir === fullScanState.dir)));
         fillFsOptions();
       });
     });
