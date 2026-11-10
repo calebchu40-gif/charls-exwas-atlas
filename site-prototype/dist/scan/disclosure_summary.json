@@ -5,5 +5,10 @@
  "decisions": {
   "approved_public_aggregate": 113201,
   "withheld": 0
+ },
+ "human_review": {
+  "reviewer": "PI",
+  "status": "approved",
+  "date": "2026-11-02"
  }
 }

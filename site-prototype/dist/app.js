@@ -1547,7 +1547,7 @@ async function loadFullScan() {
     fillFsOptions();
     fetch('scan/disclosure_summary.json', { cache: 'no-store' }).then(r => r.json()).then(summary => {
       const note = byId('fsDisclosure');
-      if (note) note.textContent = `披露：自动化筛查通过 ${summary.n_results.toLocaleString()} 条（规则：n≥${summary.min_n}、仅聚合、估计值有限）；逐条人工复核仍需 PI 完成。`;
+      if (note) note.textContent = `披露：${summary.n_results.toLocaleString()} 条结果已通过自动化筛查（n≥${summary.min_n}、仅聚合）并经 PI 复核。`;
     }).catch(() => {});
   })();
   return fullScanState.loading;

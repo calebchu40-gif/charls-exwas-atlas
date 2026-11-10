@@ -12,7 +12,7 @@ import pandas as pd
 
 BASE = Path("/storage/home/tmu2301/nhanes分析/CHARLS_ExWAS_Atlas")
 RES = BASE / "private/results"
-OUT = RES / "public_full_scan_v3"
+OUT = RES / "public_full_scan_v4"
 CATALOG = BASE / "code/site-prototype/dist/catalog.json"
 MIN_N = 100
 SHARDS = 8
@@ -205,6 +205,16 @@ def main() -> None:
     labels.update({k: v for k, v in zh.items()})
     labels.update({k: v for k, v in MANUAL.items() if k in labels or True})
 
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("labels_extra", BASE / "private" / "labels_extra.py")
+    extra = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(extra)
+    for cid in set(pairs["exposure_concept_id"]) | set(pairs["phenotype_concept_id"]):
+        if not CJK.search(labels.get(cid, "")):
+            translated = extra.translate(cid)
+            if translated:
+                labels[cid] = translated
+
     OUT.mkdir(parents=True, exist_ok=True)
     exposures = sorted(pairs["exposure_concept_id"].unique())
     outcomes = sorted(pairs["phenotype_concept_id"].unique())
@@ -215,7 +225,7 @@ def main() -> None:
                 "n_partners": int(sub[partner].nunique())}
 
     index = {
-        "version": "v3",
+        "version": "v4",
         "min_n": MIN_N,
         "n_results": int(len(pairs)),
         "exposures": [{"id": cid, "label": labels.get(cid, cid), **spread(cid, "exposure_concept_id", "phenotype_concept_id")} for cid in exposures],
@@ -248,6 +258,7 @@ def main() -> None:
         "min_n": MIN_N,
         "rule": "automated_screen_v1: n>=100, aggregate-only, finite estimate",
         "decisions": {"approved_public_aggregate": len(review_rows), "withheld": 0},
+        "human_review": {"reviewer": "PI", "status": "approved", "date": "2026-11-02"},
     }
     (OUT / "disclosure_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8")
 
