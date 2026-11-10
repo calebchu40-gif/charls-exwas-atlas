@@ -18,20 +18,19 @@ class DirectoryScopeKpiTests(unittest.TestCase):
         self.assertEqual(
             cards,
             [
-                (f"{scope['exposure_concept_ids_including_dual']:,}", "暴露候选概念"),
-                (f"{scope['phenotype_concept_ids_including_dual']:,}", "表型候选概念"),
-                ("5", "调查波次：2011–2020"),
-                ("845", "五波预登记主分析假设"),
+                ("113,201", "公开关联结果"),
+                ("758", "暴露指标"),
+                ("181", "结局指标"),
+                ("453,993", "次加权模型拟合"),
             ],
         )
         unique = scope["candidate_concept_ids"]
         dual = scope["exposure_concept_ids_including_dual"] + scope["phenotype_concept_ids_including_dual"] - unique
-        self.assertIn(f"{unique:,} 个 E/P 候选概念", match.group(2))
-        self.assertIn("不等同于环境化学物", match.group(2))
+        self.assertIn("91,543", match.group(2))
+        self.assertIn("不发布个体数据", match.group(2))
         scope_note = re.search(r'<p class="view-lede">(五轮常规主调查去重后共有.*?)</p>', html, re.S)
         self.assertIsNotNone(scope_note, "the full scope caveat must stay on the homepage")
         self.assertIn(f"{dual} 个同时承担暴露与表型角色", scope_note.group(1))
-        self.assertIn(f"{scope['wave_field_mapping_rows']:,} 条概念—源字段映射", match.group(2))
         self.assertIn("不是样本量或关联结果", scope_note.group(1))
         self.assertIn("2014生命历程特殊调查单独展示", scope_note.group(1))
         self.assertIn("2014 生命历程回顾性调查", html)

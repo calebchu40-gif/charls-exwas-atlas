@@ -42,6 +42,7 @@ ALLOWED_RELATIVE_PATHS = {
     "scan/index.json",
     "scan/disclosure_summary.json",
     "home_overview_v1.json",
+    "home_overview_v2.json",
     "trajectories_v1.json",
     "replication_v1.json",
     "network_stability_v1.json",

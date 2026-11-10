@@ -157,13 +157,13 @@ const overview = await evaluate(`(() => {
     eCats: document.querySelectorAll('#overviewECats .pv-row').length,
     pCats: document.querySelectorAll('#overviewPCats .pv-row').length,
     flow: document.querySelectorAll('#overviewFlow path').length,
-    review: document.querySelectorAll('#overviewReview svg circle').length,
+    
   };
 })()`);
-check('the homepage shows a data overview, not results',
-  !overview.hidden && overview.mix === 3 && overview.waves === 5 && overview.eCats === 8
-    && overview.pCats === 8 && overview.flow > 0 && overview.review === 2,
-  `${overview.waves} waves · ${overview.eCats}/${overview.pCats} domains · ${overview.flow} flows`);
+check('the homepage shows the scan scale, not just results',
+  !overview.hidden && overview.mix === 2 && overview.waves === 5 && overview.eCats >= 8
+    && overview.pCats >= 8 && overview.flow > 0,
+  `${overview.waves} waves · ${overview.eCats}/${overview.pCats} top lists · ${overview.flow} flows`);
 
 await openView('significant');
 await waitFor(`document.querySelectorAll('#significantCanvas path').length > 0`, 25000);

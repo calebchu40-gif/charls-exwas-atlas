@@ -24,7 +24,7 @@
     #metadata .catalog-table th:nth-child(8),#metadata .catalog-table td:nth-child(8){width:310px}
     .hero-grid{max-width:1040px}.hero .lede{max-width:760px}.hero .stats{grid-template-columns:repeat(4,minmax(0,1fr));max-width:850px}.hero .status{max-width:920px}
     .viewnav{align-items:center;justify-content:space-between;overflow:visible;padding:0 0 12px;gap:18px}
-    .primary-nav{display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-bottom:2px}
+    .primary-nav{display:flex;gap:6px;flex-wrap:wrap;overflow:visible;padding-bottom:2px}
 .secondary-nav{display:flex;gap:6px;align-items:center;flex:0 0 auto;padding-left:8px;margin-left:6px;border-left:1px solid #c9d7de}
 .navmenu{position:relative}
 .navmenu>summary{list-style:none;cursor:pointer;font-size:12.5px;padding:8px 11px;border:1px solid #c9d7de;border-radius:7px;background:#fff;color:#375668;white-space:nowrap;display:inline-flex;align-items:center;gap:4px}
@@ -286,6 +286,19 @@
 .fs-table td.num{text-align:right;font-variant-numeric:tabular-nums}
 .fs-table tr.sig{background:#f3fbf6}
 </style>
+
+<style id="home-v2-style">
+.ov-scale{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:14px;flex-wrap:wrap}
+.ov-kpi b{display:block;font-size:26px;color:var(--navy);line-height:1.15}
+.ov-kpi span{font-size:12px;color:var(--muted)}
+.ov-kpi.accent b{color:#1f6f57}
+.ov-arrow{color:#9fb3c0;font-size:20px}
+.ov-wide{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px}
+.ov-two{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;margin-bottom:14px}
+.ov-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.ov-card h3,.ov-wide h3{margin:0 0 2px;font-size:15px}
+@media(max-width:800px){.ov-two{grid-template-columns:1fr}.ov-scale{flex-direction:column;align-items:flex-start}}
+</style>
 </head>
 <body>
   <header class="topbar"><div class="shell"><div class="brand">CHARLS <span style="color:#86d2d1">/</span> ExWAS Atlas</div><a class="toplink" href="#method">数据与方法说明 ↓</a></div></header>
@@ -310,7 +323,7 @@
     <circle cx="160" cy="120" r="86" fill="none" stroke="#8c564b" stroke-width="22" stroke-dasharray="50 490" stroke-dashoffset="-335" transform="rotate(-90 160 120)"/>
     <circle cx="160" cy="120" r="86" fill="none" stroke="#d62728" stroke-width="22" stroke-dasharray="45 495" stroke-dashoffset="-405" transform="rotate(-90 160 120)"/>
     <text x="160" y="112" text-anchor="middle" font-size="36" font-weight="700" fill="#183d54">332</text>
-    <text x="160" y="138" text-anchor="middle" font-size="14" fill="#607584">表型概念</text>
+    <text x="160" y="138" text-anchor="middle" font-size="14" fill="#607584">表型候选概念</text>
     <text x="160" y="232" text-anchor="middle" font-size="12" fill="#607584">血液 · 认知 · 功能 · 慢病 · 心理</text>
 
     <circle cx="840" cy="120" r="86" fill="none" stroke="#edf3f6" stroke-width="22"/>
@@ -322,59 +335,63 @@
     <circle cx="840" cy="120" r="86" fill="none" stroke="#d62728" stroke-width="22" stroke-dasharray="42 498" stroke-dashoffset="-350" transform="rotate(-90 840 120)"/>
     <circle cx="840" cy="120" r="86" fill="none" stroke="#7f7f7f" stroke-width="22" stroke-dasharray="38 502" stroke-dashoffset="-405" transform="rotate(-90 840 120)"/>
     <text x="840" y="112" text-anchor="middle" font-size="36" font-weight="700" fill="#183d54">1,319</text>
-    <text x="840" y="138" text-anchor="middle" font-size="14" fill="#607584">暴露概念</text>
+    <text x="840" y="138" text-anchor="middle" font-size="14" fill="#607584">暴露候选概念</text>
     <text x="840" y="232" text-anchor="middle" font-size="12" fill="#607584">社区 · 住房 · 饮食行为 · 社会经济 · 保障</text>
 
     <line x1="256" y1="120" x2="418" y2="120" stroke="#9fb3c0" stroke-width="2" marker-end="url(#arrow)"/>
     <line x1="744" y1="120" x2="582" y2="120" stroke="#9fb3c0" stroke-width="2" marker-end="url(#arrow)"/>
     <rect x="420" y="76" width="160" height="88" rx="10" fill="#183d54"/>
     <text x="500" y="110" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">P-ExWAS</text>
-    <text x="500" y="134" text-anchor="middle" font-size="12" fill="#cfe3ea">950 条已审查结果</text>
-    <text x="500" y="150" text-anchor="middle" font-size="11" fill="#9fc2cf">加权 · 近似方差</text>
+    <text x="500" y="134" text-anchor="middle" font-size="12" fill="#cfe3ea">113,201 条公开结果</text>
+    <text x="500" y="150" text-anchor="middle" font-size="11" fill="#9fc2cf">758 × 181 指标 · 跨波合并</text>
     <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9fb3c0"/></marker></defs>
   </g>
 </svg>
     </div>
     <div class="atlas-legend" aria-label="概念类别分布"><div><span class="atlas-legend-key">暴露概念</span>社区 · 住房 · 饮食行为 · 社会经济 · 保障</div><div><span class="atlas-legend-key">表型概念</span>血液 · 认知 · 功能 · 慢病 · 心理</div></div>
-    <div class="status" role="note"><strong>当前版本：2011–2020 五波关联分析</strong><span>五波 845 项预登记主假设；仅展示披露审查后的汇总结果，不含个体记录。</span></div>
-    <div class="stats" aria-label="目录进度">
-      <div class="stat"><b>1,319</b><span>暴露候选概念</span></div>
-      <div class="stat"><b>332</b><span>表型候选概念</span></div>
-      <div class="stat"><b>5</b><span>调查波次：2011–2020</span></div>
-      <div class="stat"><b>845</b><span>五波预登记主分析假设</span></div>
+    <div class="status" role="note"><strong>当前版本：全量扫描 113,201 条结果</strong><span>五波同期配对，含全部不显著结果；仅发布聚合值，不含个体记录。</span></div>
+    <div class="stats" aria-label="全库规模">
+      <div class="stat"><b>113,201</b><span>公开关联结果</span></div>
+      <div class="stat"><b>758</b><span>暴露指标</span></div>
+      <div class="stat"><b>181</b><span>结局指标</span></div>
+      <div class="stat"><b>453,993</b><span>次加权模型拟合</span></div>
     </div>
-    <p class="stats-note">845 项五波主假设 + 105 项 2011 试点 = 950 条结果 · 1,625 个 E/P 候选概念 · 8,341 条概念—源字段映射；E 不等同于环境化学物</p>
-<section class="overview-figures" id="homeOverview" aria-label="数据概览" hidden>
-      <div class="preview-grid">
-        <article class="preview-card">
-          <h3>概念构成</h3>
-          <p class="preview-sub">E/P 去重后的候选概念</p>
+    <p class="stats-note">5 个调查波次 · 91,543 个"暴露—结局"配对 · 全部结果公开（含不显著）· 不发布个体数据</p>
+    <section class="overview-figures" id="homeOverview" aria-label="数据概览" hidden>
+      <div class="ov-scale">
+        <div class="ov-kpi"><b>453,993</b><span>模型拟合</span></div>
+        <div class="ov-arrow">→</div>
+        <div class="ov-kpi"><b>136,129</b><span>配对结果</span></div>
+        <div class="ov-arrow">→</div>
+        <div class="ov-kpi accent"><b>113,201</b><span>公开结果（n≥100）</span></div>
+      </div>
+      <div class="ov-wide">
+        <h3>五波拟合量</h3>
+        <p class="preview-sub">每个波次独立拟合，跨波合并为配对结果</p>
+        <div id="overviewWaves" class="stack-box"></div>
+      </div>
+      <div class="ov-two">
+        <article class="ov-card">
+          <h3>结果构成</h3>
+          <p class="preview-sub">显著与不显著全部保留</p>
           <div id="overviewMix" class="donut-box"></div>
         </article>
-        <article class="preview-card">
-          <h3>五波字段数</h3>
-          <p class="preview-sub">按暴露 / 表型 / 元数据拆分</p>
-          <div id="overviewWaves" class="stack-box"></div>
+        <article class="ov-card">
+          <h3>结果最多的暴露</h3>
+          <p class="preview-sub">按配对数量排序</p>
+          <div id="overviewECats" class="preview-bars"></div>
         </article>
-        <article class="preview-card">
-          <h3>暴露域字段</h3>
-          <p class="preview-sub">E 目录前八类</p>
-          <div class="preview-bars" id="overviewECats"></div>
+      </div>
+      <div class="ov-two">
+        <article class="ov-card">
+          <h3>结果最多的结局</h3>
+          <p class="preview-sub">按配对数量排序</p>
+          <div id="overviewPCats" class="preview-bars"></div>
         </article>
-        <article class="preview-card">
-          <h3>表型域字段</h3>
-          <p class="preview-sub">P 目录前八类</p>
-          <div class="preview-bars" id="overviewPCats"></div>
-        </article>
-        <article class="preview-card">
+        <article class="ov-card">
           <h3>波次与问卷模块</h3>
           <p class="preview-sub">字段来源流向，取前六模块</p>
           <div id="overviewFlow" class="sankey-box"></div>
-        </article>
-        <article class="preview-card">
-          <h3>值标签核验</h3>
-          <p class="preview-sub">官方值标签的核验进度</p>
-          <div id="overviewReview" class="donut-box"></div>
         </article>
       </div>
     </section>
@@ -596,7 +613,7 @@
     
   </main>
   <footer class="footer"><div class="shell"><span>CHARLS ExWAS Atlas · 候选变量目录 · <a href="https://github.com/calebchu40-gif/charls-exwas-atlas" target="_blank" rel="noopener">代码与文档</a></span><span>页面展示公开变量元数据及五波披露审查后的汇总统计结果；不含 CHARLS 微观数据或受访者答案。</span><span>数据致谢：感谢北京大学国家发展研究院中国经济研究中心提供CHARLS数据。<a href="https://charls.pku.edu.cn/en/data/User2011.pdf" target="_blank" rel="noopener">2011基线引用：CHARLS 2011-2012 National Baseline Users Guide（官方协议要求）</a></span></div></footer>
-  <script src="./app.js?v=285" defer></script>
+  <script src="./app.js?v=286" defer></script>
 <script src="./browse.js?v=12" defer></script>
 <script src="./network.js?v=8" defer></script>
 <script src="./crosswave.js?v=6" defer></script>

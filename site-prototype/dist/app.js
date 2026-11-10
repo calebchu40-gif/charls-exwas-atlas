@@ -659,29 +659,31 @@ function overviewSankey(container, flow) {
 function renderHomeOverview(data) {
   const box = byId('homeOverview');
   if (!box || !data) return;
-  overviewDonut(byId('overviewMix'), [
-    { label: '暴露专属', value: data.concept_mix.exposure_only, color: '#1f5f8b' },
-    { label: '表型专属', value: data.concept_mix.phenotype_only, color: '#b26a2c' },
-    { label: '双角色', value: data.concept_mix.dual, color: '#4c9f70' },
-  ]);
-  overviewStacked(byId('overviewWaves'), data.waves);
-  const eCats = byId('overviewECats');
-  const pCats = byId('overviewPCats');
-  const eMax = Math.max(...data.exposure_categories.map(item => item.count), 1);
-  const pMax = Math.max(...data.phenotype_categories.map(item => item.count), 1);
-  eCats.replaceChildren(...data.exposure_categories.map(item => previewRow(item.label, item.count.toLocaleString(), item.count / eMax * 100, { plain: true })));
-  pCats.replaceChildren(...data.phenotype_categories.map(item => previewRow(item.label, item.count.toLocaleString(), item.count / pMax * 100, { plain: true })));
-  overviewSankey(byId('overviewFlow'), data.module_flow);
-  overviewDonut(byId('overviewReview'), [
-    { label: '已核验', value: data.review.reviewed, color: '#4c9f70' },
-    { label: '待核验', value: data.review.pending, color: '#c9d7de' },
-  ]);
+  const stats = data.stats || {};
+  if (byId('overviewMix')) {
+    overviewDonut(byId('overviewMix'), data.mix.map(item => ({ label: item.label, value: item.value, color: item.color })));
+  }
+  const waveBox = byId('overviewWaves');
+  if (waveBox && data.waves) {
+    const max = Math.max(...data.waves.map(row => row.fits), 1);
+    waveBox.innerHTML = data.waves.map(row => `<div class="stack-row"><span class="stack-label">${row.wave}</span>` +
+      `<span class="stack-track"><i class="seg e" style="width:${(row.fits / max * 100).toFixed(1)}%" title="拟合 ${row.fits}"></i></span>` +
+      `<span class="stack-value">${row.fits.toLocaleString()}</span></div>`).join('');
+  }
+  const drawTop = (target, rows) => {
+    if (!target || !rows) return;
+    const max = Math.max(...rows.map(item => item.n), 1);
+    target.replaceChildren(...rows.map(item => previewRow(item.label, item.n.toLocaleString(), item.n / max * 100, { plain: true })));
+  };
+  drawTop(byId('overviewECats'), data.top_exposures);
+  drawTop(byId('overviewPCats'), data.top_outcomes);
+  if (byId('overviewFlow') && data.flow) overviewSankey(byId('overviewFlow'), data.flow);
   box.hidden = false;
 }
 
 function loadHomeOverview() {
   if (homeOverviewLoaded) return homeOverviewLoaded;
-  homeOverviewLoaded = fetch('./home_overview_v1.json?v=1', { cache: 'no-cache' })
+  homeOverviewLoaded = fetch('./home_overview_v2.json?v=2', { cache: 'no-cache' })
     .then(response => (response.ok ? response.json() : null))
     .then(data => { renderHomeOverview(data); return data; })
     .catch(() => null);
